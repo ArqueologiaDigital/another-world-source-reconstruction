@@ -1,0 +1,8 @@
+# SEGA Genesis / Mega Drive Europe 1993 (Heineman / Interplay).
+# md5 of the package: f15f23e1e0fa8d827c4b045d7ce3cf90
+# Cartridge ROM filename: "Another World (Europe).md"
+
+BYTECODE_BRANCH=heineman_cartridge_1992
+CODEWHEEL_CHECK=off
+BEETLE_KICK_GATE_1=on
+BEETLE_RENDERING_GATE_2=on

@@ -5,44 +5,73 @@ archaeology project's *findings*. Several flags can't be defined
 until the archaeology has surfaced them. Phases are designed so
 that each is independently useful even if later phases stall.
 
-## Phase 0 — Scaffolding (this commit)
+## Phase 0 — Scaffolding (committed 2026-04-30)
 
 - README + PLAN + initial directory structure
 - Issues opened in `another-world-archaeology/issues/` to track
   reconstruction progress: `#0059..#0064`
 - No code yet — pure planning artifact
 
-## Phase 1 — Pick a reference port + reproduce a single resource
+## Phase 1 — Bytecode round-trip (✅ achieved 2026-05-01 for 5 ports)
 
-**Goal**: prove the reconstruction loop works end-to-end for one
-small artifact.
+**Goal**: prove the reconstruction loop works end-to-end for the
+bytecode resource of every port we have disassembly for.
 
-- Pick **MS-DOS 1992** as the reference port.
-- Reconstruct **just the level-0 bytecode** (the codewheel screen).
-  This is small (~3.5 KB), well-understood, and has a known
-  divergence (the codewheel patch) that becomes the first flag.
-- Write a Makefile rule that assembles a `.asm` source file (using
-  AWVM_Tools' `awvm-asm`) into a byte-matching `level-0.bin`.
-- Verify byte equivalence against the original.
-- Add the first flag: `CODEWHEEL_CHECK` (default on for retail,
-  off for `nologo_noprotec` Amiga presskit).
+**Achieved**: `make verify-all` now reports
+**29/29 levels round-trip byte-identically across 5 ports**:
 
-**Acceptance**: `make level-0.bin TARGET=msdos` produces a binary
-byte-identical to the DOS retail dump.
+| Port | Levels | Format |
+|---|---|---|
+| amiga          | 9/9 | resource-bin |
+| msdos          | 9/9 | resource-bin |
+| genesis_europe | 7/7 | cartridge (64 KB chunks) |
+| snes_eu        | 2/2 | cartridge (only 2 levels disasm currently) |
+| gba_usa        | 2/2 | cartridge (only 2 levels disasm currently) |
+
+The driver lives in `another-world-archaeology/tools/roundtrip_bytecode.py`
+and is invoked via `make verify TARGET=<port>` or `make verify-all`.
+
+The toolchain at this stage is: **`awvm-disasm` (in AWVM_Tools)
+extracts .asm from user-supplied originals → `awvm-asm` (in
+AWVM_Tools) re-assembles .asm → byte-compare to the original or
+to the equivalent cartridge chunk**. The `.asm` files act as
+intermediate "source" but aren't yet diverging between ports —
+they're just the disasm output. Phase 3 starts unifying them.
+
+**Genealogy bonus surfaced by Phase 1**: SNES-EU level 1 and
+Genesis-EU level 0 produce **byte-identical 64-KB cartridge
+chunks** (md5 `e24580ddb549...`), confirming research/05's
+SNES↔Genesis byte-identity finding now at the cartridge-ROM level
+(not just at the bytecode-resource level).
+
+**Not yet covered** in Phase 1 (those become later phases):
+- Atari ST 1991 (gated on memlist parser, issue #0004 — even
+  though it's known to share Amiga's bytecode byte-identically)
+- Apple IIgs 1993 (gated on WOZ extractor, issue #0014)
+- 3DO, Mac, Mega-CD, Symbian, NDS, Apple II demake
 
 ## Phase 2 — Whole-port reconstruction (DOS)
 
 **Goal**: full byte-matching MS-DOS 1992 build.
 
-- Reconstruct all 9 levels' bytecode (.asm sources)
-- Reconstruct the engine binary (the .EXE) — this is the hard
-  part; might need to be deferred and stubbed
-- Reconstruct the bank packing pipeline (memlist + bankNN)
-- Reconstruct the polygon resources (POLY_CINEMATIC + POLY_ANIM)
-  — these require a tool that converts SVG (or our internal
-  representation) back to AW polygon bytes
-- Reconstruct the palette resources, sound + music samples (just
-  copy bytes from the originals into the build)
+Bytecode is done (Phase 1). Phase 2 covers the rest of the
+on-disk artifacts:
+
+- Engine binary (the `.EXE`) — likely the hardest part; might
+  need to be deferred and stubbed (just copy from original).
+- Bank packing pipeline (`memlist.bin` + `bank01..bank0d`):
+  given a set of resources (BYTECODE, POLY_CINEMATIC, PALETTE,
+  SOUND, MUSIC), produce byte-matching bank files. The pack
+  format is well-understood — issue #0060 tracks.
+- Polygon resource builder: the inverse of
+  `another-world-archaeology/tools/polygon_render.py` — given
+  SVG/internal-rep, emit AW polygon bytes. Probably easier as a
+  Python tool that emits the canonical AW polygon binary
+  directly from the parser's representation.
+- Palette resource builder: trivial; copy bytes verbatim from
+  user-supplied originals (or, for retail+presskit, just copy
+  with one byte altered for the codewheel-patched version).
+- Sound + music samples: also trivial copy.
 
 **Acceptance**: `make TARGET=msdos` produces every original file
 byte-identical to the DOS retail dump.
