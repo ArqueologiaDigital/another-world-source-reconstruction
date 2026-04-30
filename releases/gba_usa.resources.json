@@ -1,0 +1,21 @@
+{
+  "port": "gba_usa",
+  "resources": {
+    "romset/anotherworld_chargen.rom": {
+      "md5": "db0258fd358db18b083a12c157769d12",
+      "size": 768
+    },
+    "romset/bytecode.rom": {
+      "md5": "eaa9835c57a74c7665ca617ea661f15f",
+      "size": 131072
+    },
+    "romset/str_data.rom": {
+      "md5": "6e4f0bcfc98b1e956686553d67011859",
+      "size": 4096
+    },
+    "romset/str_index.rom": {
+      "md5": "254a3e2c0a84fde07a600618b3e32744",
+      "size": 2048
+    }
+  }
+}

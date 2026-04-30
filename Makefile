@@ -43,16 +43,19 @@ help:
 	@echo ""
 	@echo "Targets:"
 	@echo "  make help                this message"
-	@echo "  make verify              round-trip BYTECODE for TARGET; report match"
-	@echo "  make verify-all          round-trip BYTECODE for every supported port"
+	@echo "  make verify              bytecode + raw-asset byte-match for TARGET"
+	@echo "  make verify-bytecode     just bytecode round-trip for TARGET"
+	@echo "  make verify-resources    just raw-asset md5 check for TARGET"
+	@echo "  make verify-all          everything for every supported port"
 	@echo "  make plan                show PLAN.md"
 	@echo "  make clean               wipe build/"
 	@echo ""
-	@echo "Supported TARGETs (Phase 1 bytecode round-trip):"
+	@echo "Supported TARGETs (Phase 1 + Phase 2 byte-match):"
 	@echo "  amiga, msdos, genesis_europe, snes_eu, gba_usa"
 	@echo ""
-	@echo "Each TARGET corresponds to a releases/<target>.flags file."
-	@echo "See README.md for the strategy + PLAN.md for the phased roadmap."
+	@echo "Each TARGET corresponds to a releases/<target>.flags file"
+	@echo "(symbolic flags) and a releases/<target>.resources.json file"
+	@echo "(per-resource md5 manifest). See README.md and PLAN.md."
 
 .PHONY: plan
 plan:
@@ -63,7 +66,10 @@ plan:
 # Driver lives in archaeology/tools/roundtrip_bytecode.py.
 
 .PHONY: verify
-verify:
+verify: verify-bytecode verify-resources
+
+.PHONY: verify-bytecode
+verify-bytecode:
 	@if [ -z "$(OUTPUT_ROOT)" ]; then \
 	  echo "no OUTPUT_ROOT_$(TARGET) configured in Makefile" >&2; exit 1; \
 	fi
@@ -74,9 +80,25 @@ verify:
 	@python3 $(ARCHAEOLOGY)/tools/roundtrip_bytecode.py \
 	    --port $(TARGET) --output-root $(OUTPUT_ROOT)
 
+.PHONY: verify-resources
+verify-resources:
+	@if [ -z "$(OUTPUT_ROOT)" ]; then \
+	  echo "no OUTPUT_ROOT_$(TARGET) configured in Makefile" >&2; exit 1; \
+	fi
+	@python3 $(ARCHAEOLOGY)/tools/verify_resources.py \
+	    --port $(TARGET) --output-root $(OUTPUT_ROOT) \
+	    --manifest releases/$(TARGET).resources.json
+
 .PHONY: verify-all
-verify-all:
+verify-all: verify-bytecode-all verify-resources-all
+
+.PHONY: verify-bytecode-all
+verify-bytecode-all:
 	@cd $(ARCHAEOLOGY) && python3 tools/roundtrip_bytecode.py --all
+
+.PHONY: verify-resources-all
+verify-resources-all:
+	@cd $(ARCHAEOLOGY) && python3 tools/verify_resources.py --port _ --all
 
 # -----------------------------------------------------------------------------
 # Phase 2 (not yet implemented): byte-matching BYTECODE + polygon resources +

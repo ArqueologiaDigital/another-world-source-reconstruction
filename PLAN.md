@@ -50,78 +50,86 @@ SNES↔Genesis byte-identity finding now at the cartridge-ROM level
 - Apple IIgs 1993 (gated on WOZ extractor, issue #0014)
 - 3DO, Mac, Mega-CD, Symbian, NDS, Apple II demake
 
-## Phase 2 — Whole-port reconstruction (DOS)
+## Phase 2 — Raw-asset byte-matching (in scope)
 
-**Goal**: full byte-matching MS-DOS 1992 build.
+**Goal**: byte-match every non-bytecode resource (POLY_CINEMATIC,
+POLY_ANIM, PALETTE, SOUND, MUSIC) for every port.
 
-Bytecode is done (Phase 1). Phase 2 covers the rest of the
-on-disk artifacts:
+Raw assets aren't "reconstructed" the way bytecode is; they're
+binary blobs. So the build pipeline for raw assets is a verbatim
+file-copy from the user's extracted originals to the build
+output, with a per-resource md5 verification step.
 
-- Engine binary (the `.EXE`) — likely the hardest part; might
-  need to be deferred and stubbed (just copy from original).
-- Bank packing pipeline (`memlist.bin` + `bank01..bank0d`):
-  given a set of resources (BYTECODE, POLY_CINEMATIC, PALETTE,
-  SOUND, MUSIC), produce byte-matching bank files. The pack
-  format is well-understood — issue #0060 tracks.
-- Polygon resource builder: the inverse of
-  `another-world-archaeology/tools/polygon_render.py` — given
-  SVG/internal-rep, emit AW polygon bytes. Probably easier as a
-  Python tool that emits the canonical AW polygon binary
-  directly from the parser's representation.
-- Palette resource builder: trivial; copy bytes verbatim from
-  user-supplied originals (or, for retail+presskit, just copy
-  with one byte altered for the codewheel-patched version).
-- Sound + music samples: also trivial copy.
+The deliverable for Phase 2 is therefore much simpler than originally
+planned:
 
-**Acceptance**: `make TARGET=msdos` produces every original file
-byte-identical to the DOS retail dump.
+- Per-port resource manifest (committed in this repo) that lists
+  every expected resource with its md5.
+- Build rule that copies raw resources from
+  `<output_root>/resources/` (or `<output_root>/romset/` for
+  cartridges) and verifies each copy against the manifest.
+- `make verify-resources TARGET=<port>` reports pass/fail per
+  resource.
 
-## Phase 3 — Add Amiga as a second target
+For the polygon resource specifically, **no inverse builder is
+required for Phase 2** — we treat the polygon bytes as opaque.
+A polygon-source language + builder would be a separate Phase 4
+research project (out of current scope).
 
-**Goal**: prove the conditional-compilation strategy works.
+**Acceptance**: every non-bytecode resource for every port byte-
+matches the manifest md5.
 
-- Add Amiga-specific code paths (different banking, different
-  palette format, different bank packing)
-- Identify the first batch of cross-port flags:
-    - `BEETLE_RENDERING_GATE_2` (off for Amiga, on for DOS)
-    - `BYTECODE_BRANCH` (chahi-1991 vs heineman-dos-1992)
-    - …others surfaced by the asset-scan work in archaeology
-      issues #0054..#0058
-- Maintain a *single* `src/` tree that compiles to both
-  byte-matching outputs
+## ~~Phase 2.5 — Whole-port packaging~~ (DROPPED FROM SCOPE)
 
-**Acceptance**: `make TARGET=amiga` and `make TARGET=msdos` both
-produce byte-identical outputs.
+**Originally planned but explicitly out of scope (2026-05-01)**:
+- Engine binary reconstruction
+- Bank packing pipeline (memlist.bin + bank01..bank0d)
+- ADF / cartridge ROM construction
+- Sound encoding pipelines
 
-## Phase 4 — Add the cartridge ports (SNES-EU, Genesis-EU, GBA)
+These are non-trivial and not part of the current research goal.
+The source-reconstruction project produces byte-matching SETS OF
+RESOURCES (bytecode + raw assets), not byte-matching distribution
+packages.
 
-**Goal**: cover the Heineman cartridge branch + Foxy 2004.
+## Phase 3 — Unified source via conditional compilation (still in scope)
 
-- Re-encode the bytecode for cartridge formats (per the SNES↔Genesis
-  byte-identity finding from archaeology research/05)
-- Add cartridge-specific flags
-- Add Foxy 2004 modifications as a flag delta off Genesis-EU
+**Goal**: a single source tree that produces byte-matching
+resources for multiple ports via flags.
 
-## Phase 5 — Atari ST 1991
+Bytecode is the only place this matters at present, since raw
+assets are passthrough. So Phase 3 reduces to:
 
-**Goal**: complete the Chahi 1991 branch.
+- Diff the per-port .asm files (e.g., amiga_level-2.asm vs
+  msdos_level-2.asm) and identify the divergent regions.
+- Refactor into a unified .asm with `#ifdef BYTECODE_BRANCH ...`
+  or similar conditionals.
+- Per-port .flags file selects the right branch.
+- The build assembles the unified .asm with the selected flags and
+  produces byte-matching bytecode.
 
-- Atari ST shares Amiga's level-2 bytecode byte-identically (per
-  archaeology research/05). So the source side might be identical
-  to Amiga; only the engine binary differs.
+The bytecode has 4 distinct branches across the 5 ports we cover:
+1. Chahi 1991 (Amiga + Atari ST)
+2. Heineman DOS 1992
+3. Heineman cartridge 1992-93 (SNES-EU + Genesis-EU)
+4. Foxy GBA 2004
 
-## Phase 6 — Mac patch chain
+Phase 3 is therefore non-trivial (it has to capture every
+between-branch divergence) but well-bounded (only 4 source trees
+to merge per level). Issue #0061 tracks.
 
-**Goal**: cover v1.0 / v1.0.2 / v1.0.3 + the two updaters.
+**Acceptance**: `make verify TARGET=<any>` succeeds with a single
+unified `src/levels/level-N.asm` per level.
 
-- Most Mac-specific flags govern the Symantec C runtime segment
-  layout. Different from the bytecode-level flags.
+## Phase 4 — Atari ST 1991 + other gated ports
 
-## Phase 7+ — Less-common ports
+Once Atari ST's memlist parser lands (issue #0004), Atari ST will
+trivially extend Phase 1 + 2 + 3 (since its bytecode is byte-
+identical to Amiga's per research/05).
 
-3DO, Apple IIgs, Mega-CD, Symbian, NDS, GBA, Apple II demake. Each
-has its own structural differences that need their own
-sub-architectures.
+Mac, Apple IIgs, 3DO, Mega-CD, Symbian, NDS, Apple II demake —
+each gated on its own extractor work. As they come online, drop
+into the same loop.
 
 ## Cross-cutting infrastructure
 

@@ -1,0 +1,609 @@
+{
+  "port": "amiga",
+  "resources": {
+    "resources/resource-0x00.bin": {
+      "md5": "d41d8cd98f00b204e9800998ecf8427e",
+      "size": 0
+    },
+    "resources/resource-0x01.bin": {
+      "md5": "65e1e71448cb638d103689d39728304c",
+      "size": 6716
+    },
+    "resources/resource-0x02.bin": {
+      "md5": "3ba07305ed8b66e75eba92bc6df92c76",
+      "size": 11828
+    },
+    "resources/resource-0x03.bin": {
+      "md5": "a11db8fb8ce245ee1402d3c53eba4f28",
+      "size": 27128
+    },
+    "resources/resource-0x04.bin": {
+      "md5": "002fb9aacb8c733a662ddf11532cc432",
+      "size": 17870
+    },
+    "resources/resource-0x05.bin": {
+      "md5": "8ef057d94c571221b8eb774b20145a14",
+      "size": 3834
+    },
+    "resources/resource-0x06.bin": {
+      "md5": "96c523d1e4ef6006fc246fae3004e7f0",
+      "size": 3366
+    },
+    "resources/resource-0x07.bin": {
+      "md5": "2f006afd3e7057ca8dd3e582c7c06933",
+      "size": 15552
+    },
+    "resources/resource-0x08.bin": {
+      "md5": "7f7c0aba4aa6f57cec33265b37256b0b",
+      "size": 9844
+    },
+    "resources/resource-0x09.bin": {
+      "md5": "f5ea0137a17b0dbcdad4d8e5e79fe2e9",
+      "size": 11190
+    },
+    "resources/resource-0x0a.bin": {
+      "md5": "43444c6c431aa069f61ee916efaa32ed",
+      "size": 11188
+    },
+    "resources/resource-0x0b.bin": {
+      "md5": "f9a98b10c2cf0538248993cd7066467c",
+      "size": 1062
+    },
+    "resources/resource-0x0c.bin": {
+      "md5": "4e3be820f3b0978ac195514cd893ef12",
+      "size": 6226
+    },
+    "resources/resource-0x0d.bin": {
+      "md5": "82753fe36504eee44bba78d14ac669a7",
+      "size": 1428
+    },
+    "resources/resource-0x0e.bin": {
+      "md5": "7fb456f35524b8f253ae87c3e154dcdc",
+      "size": 5104
+    },
+    "resources/resource-0x0f.bin": {
+      "md5": "96cfc42d94aa4239d6272bb864d7e6ae",
+      "size": 1950
+    },
+    "resources/resource-0x10.bin": {
+      "md5": "c117d3ca7a7278ffe13b7589641bfadf",
+      "size": 22178
+    },
+    "resources/resource-0x11.bin": {
+      "md5": "73b902fea374e2de026b1ae032aa1efb",
+      "size": 25108
+    },
+    "resources/resource-0x14.bin": {
+      "md5": "df057e7a2e9464ca612729da2b27d822",
+      "size": 2048
+    },
+    "resources/resource-0x15.bin": {
+      "md5": "f4bbac15c06056a97a1d12a95148ac69",
+      "size": 3544
+    },
+    "resources/resource-0x16.bin": {
+      "md5": "ac02b64fc2c72103c51b450bcfe5e35a",
+      "size": 4240
+    },
+    "resources/resource-0x17.bin": {
+      "md5": "bee71046ef63b52ec4f982d9dc19edd7",
+      "size": 2048
+    },
+    "resources/resource-0x18.bin": {
+      "md5": "c3fc7bfb163372f6f54077c9821e50eb",
+      "size": 9520
+    },
+    "resources/resource-0x19.bin": {
+      "md5": "e19cf86b299e3c613f5294378dec8457",
+      "size": 65146
+    },
+    "resources/resource-0x1a.bin": {
+      "md5": "e0cd1cdc13de5b36a6ae0befa8a9cc8b",
+      "size": 2048
+    },
+    "resources/resource-0x1b.bin": {
+      "md5": "860362f3718ca4fe4a8e65cdbe40f155",
+      "size": 19458
+    },
+    "resources/resource-0x1c.bin": {
+      "md5": "625847431a61dae773a9ab7f762689ad",
+      "size": 64954
+    },
+    "resources/resource-0x1d.bin": {
+      "md5": "5d18e73e90a570fcf0096cf6bead2eff",
+      "size": 2048
+    },
+    "resources/resource-0x1e.bin": {
+      "md5": "ea2caf0d3fddb5e0078144373648da95",
+      "size": 39094
+    },
+    "resources/resource-0x1f.bin": {
+      "md5": "62e50093581ca249acb209815ba556d9",
+      "size": 53720
+    },
+    "resources/resource-0x20.bin": {
+      "md5": "b9a7198c4f3762abf1645060b79e8758",
+      "size": 2048
+    },
+    "resources/resource-0x21.bin": {
+      "md5": "89ed75fb790eb13d9cbfababd5bf2883",
+      "size": 61022
+    },
+    "resources/resource-0x22.bin": {
+      "md5": "5365e92797dbe447c7cee9c0a8136f23",
+      "size": 64776
+    },
+    "resources/resource-0x23.bin": {
+      "md5": "2e9bdf7e96b206a4ac2bdd979e64db19",
+      "size": 2048
+    },
+    "resources/resource-0x24.bin": {
+      "md5": "80df5f434f5ba5bf28322c69a7fd29cd",
+      "size": 6912
+    },
+    "resources/resource-0x25.bin": {
+      "md5": "0006451b8d60f0dd27c678cacb472d4a",
+      "size": 24152
+    },
+    "resources/resource-0x26.bin": {
+      "md5": "d23c1d34d1999cbb378d87132dc2b943",
+      "size": 2048
+    },
+    "resources/resource-0x27.bin": {
+      "md5": "389421a553ee96495a9f826c19bb659d",
+      "size": 39388
+    },
+    "resources/resource-0x28.bin": {
+      "md5": "a4e47f49b1833423bd4449ba7ff3af58",
+      "size": 65434
+    },
+    "resources/resource-0x29.bin": {
+      "md5": "d27f667347453337f75e063bcf2c3777",
+      "size": 2048
+    },
+    "resources/resource-0x2a.bin": {
+      "md5": "dd5c174209cf22a9b7cbacbb05d05a4f",
+      "size": 2548
+    },
+    "resources/resource-0x2b.bin": {
+      "md5": "20b566f69552426a67ffa0e0a23bbb17",
+      "size": 20026
+    },
+    "resources/resource-0x2c.bin": {
+      "md5": "ea0eb6e5baf9c4a3cf14de352f49a6e4",
+      "size": 882
+    },
+    "resources/resource-0x2d.bin": {
+      "md5": "34c6b0969a90933f9f2abe80fbd31fe0",
+      "size": 7684
+    },
+    "resources/resource-0x2e.bin": {
+      "md5": "27448d149833e7b38dfc9d82253fca89",
+      "size": 2282
+    },
+    "resources/resource-0x2f.bin": {
+      "md5": "96054cb0f431851c11801b1a6cf02e4b",
+      "size": 6726
+    },
+    "resources/resource-0x30.bin": {
+      "md5": "fef3e3b5900d9afed61709087ba6dc46",
+      "size": 13374
+    },
+    "resources/resource-0x31.bin": {
+      "md5": "1b963ca2bf28ca93f4798834ebc84dee",
+      "size": 5278
+    },
+    "resources/resource-0x32.bin": {
+      "md5": "993603159c3a9312d7b9ab302070c2cb",
+      "size": 6246
+    },
+    "resources/resource-0x33.bin": {
+      "md5": "c506a4123f21ebb7c49310f3fa406f65",
+      "size": 614
+    },
+    "resources/resource-0x34.bin": {
+      "md5": "d41d8cd98f00b204e9800998ecf8427e",
+      "size": 0
+    },
+    "resources/resource-0x35.bin": {
+      "md5": "0705523b4bfb3de3c28b4b20e92fab5a",
+      "size": 424
+    },
+    "resources/resource-0x36.bin": {
+      "md5": "f0d354e4d7110d7962aabe5a815af235",
+      "size": 8172
+    },
+    "resources/resource-0x37.bin": {
+      "md5": "d2c828ceb24b34923b13677532c7e307",
+      "size": 5028
+    },
+    "resources/resource-0x38.bin": {
+      "md5": "705c23c63f9f39df135e9917d0dd05cf",
+      "size": 5572
+    },
+    "resources/resource-0x39.bin": {
+      "md5": "1566824e12fe760e81108b142309c49e",
+      "size": 3626
+    },
+    "resources/resource-0x3a.bin": {
+      "md5": "1afba789d1712a49bdf9cc6f2a72fc75",
+      "size": 870
+    },
+    "resources/resource-0x3b.bin": {
+      "md5": "ab8c97c651b697b3deb1b9247d932194",
+      "size": 120
+    },
+    "resources/resource-0x3c.bin": {
+      "md5": "778a0449229808a4bb7e9e0ed3674156",
+      "size": 5010
+    },
+    "resources/resource-0x3d.bin": {
+      "md5": "7bbac594a7056c2f0627f0c481e38a5b",
+      "size": 1760
+    },
+    "resources/resource-0x3e.bin": {
+      "md5": "17710c05f7c568d268062385bb8fd430",
+      "size": 8622
+    },
+    "resources/resource-0x3f.bin": {
+      "md5": "fda3a3aec34cd5960c210afa1246323e",
+      "size": 1274
+    },
+    "resources/resource-0x40.bin": {
+      "md5": "49fe1afd359c047f52eed81a23997b0d",
+      "size": 4766
+    },
+    "resources/resource-0x41.bin": {
+      "md5": "b753eb04c5fd2ba82d828816029194c5",
+      "size": 2484
+    },
+    "resources/resource-0x42.bin": {
+      "md5": "dd93592e07ab69cff28d17060660bd0a",
+      "size": 1260
+    },
+    "resources/resource-0x43.bin": {
+      "md5": "1cce5fe804532b85926283ac011f6819",
+      "size": 32000
+    },
+    "resources/resource-0x44.bin": {
+      "md5": "ce3b79f6b854001114f14d2bb56db641",
+      "size": 32000
+    },
+    "resources/resource-0x45.bin": {
+      "md5": "aabb5cf54354cce8f5265ff6a2d85c7a",
+      "size": 32000
+    },
+    "resources/resource-0x46.bin": {
+      "md5": "edef2e365f7a5db58ad7b24efe7f0bf9",
+      "size": 32000
+    },
+    "resources/resource-0x47.bin": {
+      "md5": "e8e473d842060ac10f73ef2b11a28604",
+      "size": 32000
+    },
+    "resources/resource-0x48.bin": {
+      "md5": "64ff35b54f47ffc1e62054605e8b50de",
+      "size": 32000
+    },
+    "resources/resource-0x49.bin": {
+      "md5": "e53dcb98c2516fbfa1580166b266b1da",
+      "size": 32000
+    },
+    "resources/resource-0x4a.bin": {
+      "md5": "8bfdb093c822a40f712489c3b93b41a3",
+      "size": 960
+    },
+    "resources/resource-0x4b.bin": {
+      "md5": "5b3b98bea2ee3bb843b785a7799f5273",
+      "size": 5094
+    },
+    "resources/resource-0x4c.bin": {
+      "md5": "2266593733530d20ae6731815de0d038",
+      "size": 1246
+    },
+    "resources/resource-0x4d.bin": {
+      "md5": "34ee36d71fa3d6d572abdf7ec1c84766",
+      "size": 1530
+    },
+    "resources/resource-0x4e.bin": {
+      "md5": "12b56ebe11f97252eec9f082a8757f6a",
+      "size": 606
+    },
+    "resources/resource-0x4f.bin": {
+      "md5": "7ecaca7155418257d6703daaa64b22f4",
+      "size": 1602
+    },
+    "resources/resource-0x50.bin": {
+      "md5": "f65d95219b5c6acd426388330fc85061",
+      "size": 6608
+    },
+    "resources/resource-0x51.bin": {
+      "md5": "73056825d7a780fea223b4c6fb09fb6d",
+      "size": 232
+    },
+    "resources/resource-0x52.bin": {
+      "md5": "bc564a24f6bf02ce4e979c5c8c9efb5b",
+      "size": 4130
+    },
+    "resources/resource-0x53.bin": {
+      "md5": "903580e5d0ba41519e2521711a55ee87",
+      "size": 32000
+    },
+    "resources/resource-0x54.bin": {
+      "md5": "cf11d1ef4d096859f567b58098783239",
+      "size": 22698
+    },
+    "resources/resource-0x55.bin": {
+      "md5": "421ad1daed65d2bc3b32d0a404c2d480",
+      "size": 2448
+    },
+    "resources/resource-0x56.bin": {
+      "md5": "d930d5f8f5f6268c0d471dd4c5eb9e62",
+      "size": 11330
+    },
+    "resources/resource-0x57.bin": {
+      "md5": "3d5087e4b592ad007fd0af0c72db4d7e",
+      "size": 5420
+    },
+    "resources/resource-0x58.bin": {
+      "md5": "baaf5bd69a937557d9757a43bef8295d",
+      "size": 1460
+    },
+    "resources/resource-0x59.bin": {
+      "md5": "bccf266fcdee1f9fd7f1b0a818a64454",
+      "size": 9140
+    },
+    "resources/resource-0x5a.bin": {
+      "md5": "faf629f9155911277922a695cd1348bb",
+      "size": 8100
+    },
+    "resources/resource-0x5b.bin": {
+      "md5": "d5e6cd51fa64373d8125d206fc3123b7",
+      "size": 3360
+    },
+    "resources/resource-0x5c.bin": {
+      "md5": "db19ea122209ae47cdb63e0879842427",
+      "size": 1320
+    },
+    "resources/resource-0x5d.bin": {
+      "md5": "0e010abe5de74365b6ea23325f7b46d9",
+      "size": 5640
+    },
+    "resources/resource-0x5e.bin": {
+      "md5": "f00261c6421d87cb98b23c496c3e7479",
+      "size": 490
+    },
+    "resources/resource-0x5f.bin": {
+      "md5": "046fe9428a098f0844dc8e17be0d8664",
+      "size": 2026
+    },
+    "resources/resource-0x60.bin": {
+      "md5": "73056825d7a780fea223b4c6fb09fb6d",
+      "size": 232
+    },
+    "resources/resource-0x61.bin": {
+      "md5": "b8d15368f1ba9cb2ae627be7b02d5f35",
+      "size": 14712
+    },
+    "resources/resource-0x62.bin": {
+      "md5": "a461f7678945ef50b0259fce75d55987",
+      "size": 4472
+    },
+    "resources/resource-0x63.bin": {
+      "md5": "ae3df7f19bd1dab52fc0fa3d857b4d32",
+      "size": 5296
+    },
+    "resources/resource-0x64.bin": {
+      "md5": "28054cf6ab48b6018fbd25703fdeaae6",
+      "size": 2724
+    },
+    "resources/resource-0x65.bin": {
+      "md5": "388ac7bd0839ee03432d1c45d2d48f0c",
+      "size": 730
+    },
+    "resources/resource-0x66.bin": {
+      "md5": "7f7c0aba4aa6f57cec33265b37256b0b",
+      "size": 9844
+    },
+    "resources/resource-0x67.bin": {
+      "md5": "327d545002f83ecc28d6834699af9111",
+      "size": 4848
+    },
+    "resources/resource-0x68.bin": {
+      "md5": "bcdcad3d1dbb3452fd019b9d838a273a",
+      "size": 23896
+    },
+    "resources/resource-0x69.bin": {
+      "md5": "6b872167bea97002990fd5c7d4356fad",
+      "size": 41506
+    },
+    "resources/resource-0x6a.bin": {
+      "md5": "649ed0348cc8453dad4cfccb06b1c46e",
+      "size": 11880
+    },
+    "resources/resource-0x6b.bin": {
+      "md5": "7e3d9630306451776663726d90cd3549",
+      "size": 20934
+    },
+    "resources/resource-0x6c.bin": {
+      "md5": "5b3b98bea2ee3bb843b785a7799f5273",
+      "size": 5094
+    },
+    "resources/resource-0x6d.bin": {
+      "md5": "1b963ca2bf28ca93f4798834ebc84dee",
+      "size": 5278
+    },
+    "resources/resource-0x6e.bin": {
+      "md5": "cf11d1ef4d096859f567b58098783239",
+      "size": 22698
+    },
+    "resources/resource-0x6f.bin": {
+      "md5": "5a3ccc9244cff3c3539ee140db1908e3",
+      "size": 17500
+    },
+    "resources/resource-0x70.bin": {
+      "md5": "5187540a48c4cf85fc2e93839cc36984",
+      "size": 3472
+    },
+    "resources/resource-0x71.bin": {
+      "md5": "0687ab897e650180a5ca12fe500dc701",
+      "size": 2532
+    },
+    "resources/resource-0x72.bin": {
+      "md5": "15dbea158aaf67ebbf5fa1799cfbb01a",
+      "size": 6538
+    },
+    "resources/resource-0x73.bin": {
+      "md5": "5e5751b2564716b72c3f520e32564b23",
+      "size": 9682
+    },
+    "resources/resource-0x74.bin": {
+      "md5": "f5e76f0627fedf4be46f891912a8db2f",
+      "size": 9264
+    },
+    "resources/resource-0x75.bin": {
+      "md5": "e219bb48aff4587af70cdfcdf5d89ff5",
+      "size": 4886
+    },
+    "resources/resource-0x76.bin": {
+      "md5": "95a2509313fc133aae9adbe0ae073ada",
+      "size": 544
+    },
+    "resources/resource-0x77.bin": {
+      "md5": "4171d3ef3f50e3be1d72c36f161d6931",
+      "size": 1514
+    },
+    "resources/resource-0x78.bin": {
+      "md5": "5619dad1537c2fb7897e98800e55346e",
+      "size": 1084
+    },
+    "resources/resource-0x79.bin": {
+      "md5": "27448d149833e7b38dfc9d82253fca89",
+      "size": 2282
+    },
+    "resources/resource-0x7a.bin": {
+      "md5": "7c2eb0137414181b593a67b3a4261855",
+      "size": 5240
+    },
+    "resources/resource-0x7b.bin": {
+      "md5": "b3c20c33117d19c07d45fa74fd5ca712",
+      "size": 17198
+    },
+    "resources/resource-0x7c.bin": {
+      "md5": "fd136d27abea9ee6c83efbd813cfc6dc",
+      "size": 1742
+    },
+    "resources/resource-0x7d.bin": {
+      "md5": "9b1209768dd3e3ce31d81588b56c0852",
+      "size": 2048
+    },
+    "resources/resource-0x7e.bin": {
+      "md5": "6ec9a3a3881371217e9e1598286639ca",
+      "size": 3270
+    },
+    "resources/resource-0x7f.bin": {
+      "md5": "d618b9ec6ca3573122aa1f8df7a3409c",
+      "size": 5048
+    },
+    "resources/resource-0x80.bin": {
+      "md5": "b73f68a50ee633a13a68be766ce3f3e3",
+      "size": 6298
+    },
+    "resources/resource-0x81.bin": {
+      "md5": "2b4895c0fc308cff5347c0b504a81a0f",
+      "size": 2008
+    },
+    "resources/resource-0x82.bin": {
+      "md5": "fdcdab5421033c8e52983f8f9e6f96dd",
+      "size": 1122
+    },
+    "resources/resource-0x83.bin": {
+      "md5": "e8d40315dbfb46f86a4e3f69c9f306a6",
+      "size": 4008
+    },
+    "resources/resource-0x84.bin": {
+      "md5": "1adb97d8372a418289e40bf93e4f5367",
+      "size": 26414
+    },
+    "resources/resource-0x85.bin": {
+      "md5": "d41d8cd98f00b204e9800998ecf8427e",
+      "size": 0
+    },
+    "resources/resource-0x86.bin": {
+      "md5": "d41d8cd98f00b204e9800998ecf8427e",
+      "size": 0
+    },
+    "resources/resource-0x87.bin": {
+      "md5": "d41d8cd98f00b204e9800998ecf8427e",
+      "size": 0
+    },
+    "resources/resource-0x88.bin": {
+      "md5": "6819a57639b3076d1bf1067e2cc5938a",
+      "size": 9340
+    },
+    "resources/resource-0x89.bin": {
+      "md5": "f8c2b0fa3d27053f862276b96b8d2575",
+      "size": 2240
+    },
+    "resources/resource-0x8a.bin": {
+      "md5": "6376a1dbefd43f4265c601b846319ece",
+      "size": 15552
+    },
+    "resources/resource-0x8b.bin": {
+      "md5": "2df7aab1dbd49a973dc502047995356e",
+      "size": 20314
+    },
+    "resources/resource-0x8c.bin": {
+      "md5": "e701e43b35008b0751e68de15e8ce70b",
+      "size": 17432
+    },
+    "resources/resource-0x8d.bin": {
+      "md5": "e2e9f4a9d92f90b2bd3499b0ad4ad06d",
+      "size": 10556
+    },
+    "resources/resource-0x8e.bin": {
+      "md5": "a0c24fb3fecfb07f7624427a799c5fe8",
+      "size": 16328
+    },
+    "resources/resource-0x8f.bin": {
+      "md5": "d41d8cd98f00b204e9800998ecf8427e",
+      "size": 0
+    },
+    "resources/resource-0x90.bin": {
+      "md5": "733ae6c33a61746a0c7bcb2c59433610",
+      "size": 32000
+    },
+    "resources/resource-0x91.bin": {
+      "md5": "46106cdfc7cd6fc353866d1a910d14ef",
+      "size": 32000
+    },
+    "romset/anotherworld_chargen.rom": {
+      "md5": "db0258fd358db18b083a12c157769d12",
+      "size": 768
+    },
+    "romset/bytecode.rom": {
+      "md5": "dbeeae497600f5ba5d51fdbf4e71ad1f",
+      "size": 589824
+    },
+    "romset/cinematic.rom": {
+      "md5": "429cb7b2c35b87de167dda491d2e3a72",
+      "size": 524288
+    },
+    "romset/palettes.rom": {
+      "md5": "8f4a9d5a5ccaefe7095f364895c009d9",
+      "size": 18432
+    },
+    "romset/str_data.rom": {
+      "md5": "6e4f0bcfc98b1e956686553d67011859",
+      "size": 4096
+    },
+    "romset/str_index.rom": {
+      "md5": "254a3e2c0a84fde07a600618b3e32744",
+      "size": 2048
+    },
+    "romset/video2.rom": {
+      "md5": "ef35800c0c9effd2dd8388d140370d61",
+      "size": 32768
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "port": "genesis_europe",
+  "resources": {
+    "romset/anotherworld_chargen.rom": {
+      "md5": "db0258fd358db18b083a12c157769d12",
+      "size": 768
+    },
+    "romset/bytecode.rom": {
+      "md5": "c855118b0ae4d5a7ea9db047c45e8018",
+      "size": 458752
+    },
+    "romset/str_data.rom": {
+      "md5": "82f1a37c7039be86e5c37c2623e9b3f1",
+      "size": 4096
+    },
+    "romset/str_index.rom": {
+      "md5": "36a92a82e2849841fb32cdda8ef37fd7",
+      "size": 2048
+    }
+  }
+}
