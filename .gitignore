@@ -10,10 +10,10 @@ build/
 *.ADF
 *.sfc
 *.gba
-*.md
-!docs/*.md
-!releases/*.md
-!*.md.example
+# Mega Drive ROM dumps use the .md extension. Avoid blanket-ignoring
+# *.md or we'll accidentally exclude README.md, PLAN.md, etc. Instead
+# only ignore .md files inside build/.
+build/*.md
 
 # Reference originals (live in another-world-archive/)
 reference/
