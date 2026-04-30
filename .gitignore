@@ -1,0 +1,25 @@
+# Build artifacts
+build/
+*.o
+*.obj
+*.exe
+*.bin
+*.bank0*
+*.BANK0*
+*.adf
+*.ADF
+*.sfc
+*.gba
+*.md
+!docs/*.md
+!releases/*.md
+!*.md.example
+
+# Reference originals (live in another-world-archive/)
+reference/
+
+# Editor + Python leftovers
+__pycache__/
+*.pyc
+*.swp
+.DS_Store

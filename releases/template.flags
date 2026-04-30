@@ -1,0 +1,64 @@
+# releases/<target>.flags — one such file per cataloged release.
+#
+# Format: shell-style KEY=VALUE pairs. Comments start with '#'.
+# Values are interpreted by the build system to drive conditional
+# compilation. Each flag is documented in docs/glossary.md.
+#
+# This template lists *every* flag known to the codebase, with
+# placeholder values. Real release files at e.g. releases/msdos.flags
+# only need to OVERRIDE the defaults — but listing all flags is
+# clearer for review.
+
+# ----- bytecode lineage -----
+#
+# Which bytecode tree this release inherits from.
+# Per archaeology research/05 (2026-04-30 cartridge cross-check):
+# the 1991 Chahi master and the Heineman lineage are byte-distinct;
+# within the Heineman lineage, DOS 1992 has its own bytecode but
+# SNES-EU 1992 + Genesis-EU 1993 share byte-identical bytecode.
+BYTECODE_BRANCH=heineman_dos_1992
+
+# ----- copy protection -----
+#
+# Whether the level-0 codewheel-protection check is enabled.
+# Per archaeology research/02: the Amiga 'nologo_noprotec' presskit
+# has this disabled (13-byte diff in level-0 bytecode); other
+# Amiga and DOS retail releases have it enabled.
+CODEWHEEL_CHECK=on
+
+# ----- beetle (level 2) -----
+#
+# Per archaeology research/05 (gate-1 + gate-2 finding):
+#
+# Gate 1 disables the kick-detector by registering a cleanup-watcher
+# on the same channel slot. Present on ALL ports — the original
+# 1991 dev master shipped with this gate already in place.
+BEETLE_KICK_GATE_1=on
+#
+# Gate 2 kills the beetle's rendering channel itself, hiding the
+# beetle entirely. Heineman-lineage only:
+# - off on Amiga (1991), Atari ST (1991)
+# - on on DOS (1992), SNES-EU (1992), Genesis-EU (1993), GBA (2004)
+BEETLE_RENDERING_GATE_2=on
+
+# ----- gun mechanic (research/01 — byte-stable across releases) -----
+#
+# These are numeric constants that match across all ports per
+# research/01. Listed here for documentation; in practice they're
+# `#define`s in the codebase, not flags.
+#GUN_TAP_COST=1
+#GUN_REGULAR_COST=10
+#GUN_SUPERBLAST_COST=50
+#GUN_SUPERBLAST_COST_LEVEL_3=100  # asymmetric — preserved across all ports
+#GUN_RECHARGE_CLAMP=1000
+#GUN_INITIAL_LEVEL_3=199
+#GUN_INITIAL_LEVEL_4=990
+#GUN_INITIAL_LEVEL_6=990
+
+# ----- Mac-specific (Symantec C runtime, per research/04) -----
+#
+# Only meaningful for Mac targets.
+MAC_SEGMENT_LAYOUT=v1.0.2
+
+# ----- additional flags will be added as the asset-scan work
+# (archaeology issues #0054-#0058) surfaces them -----
