@@ -67,22 +67,6 @@ CINEMATIC_194		EQU 0x1C80
 CINEMATIC_195		EQU 0x19D4
 CINEMATIC_196		EQU 0x1A84
 CINEMATIC_197		EQU 0x1B48
-CINEMATIC_206		EQU 0xCDFC
-CINEMATIC_207		EQU 0x017C
-CINEMATIC_208		EQU 0xCE64
-CINEMATIC_212		EQU 0xCE6C
-CINEMATIC_213		EQU 0xCEB8
-CINEMATIC_266		EQU 0xE20C
-CINEMATIC_267		EQU 0x0188
-CINEMATIC_268		EQU 0xE274
-CINEMATIC_272		EQU 0xE27C
-CINEMATIC_273		EQU 0xE2C8
-CINEMATIC_307		EQU 0xDD7E
-CINEMATIC_308		EQU 0xDD86
-CINEMATIC_309		EQU 0xDD92
-CINEMATIC_367		EQU 0xF18E
-CINEMATIC_368		EQU 0xF196
-CINEMATIC_369		EQU 0xF1A2
 CINEMATIC_660		EQU 0x08FC
 CINEMATIC_661		EQU 0x0C1E
 CINEMATIC_662		EQU 0xB808
@@ -454,9 +438,14 @@ CINEMATIC_SCENARIO_VINE_SCREEN_1		EQU 0x3DB6
 CINEMATIC_SCENARIO_VINE_SCREEN_2		EQU 0x3F52
 CINEMATIC_SCENARIO_VINE_SCREEN_3		EQU 0x4264
 CINEMATIC_SCENARIO_VINE_SCREEN_4		EQU 0xBB5C
+CINEMATIC_206		EQU 0xCDFC
+CINEMATIC_207		EQU 0x017C
+CINEMATIC_208		EQU 0xCE64
 CINEMATIC_209		EQU 0xCC98
 CINEMATIC_210		EQU 0xCCB4
 CINEMATIC_211		EQU 0xCD00
+CINEMATIC_212		EQU 0xCE6C
+CINEMATIC_213		EQU 0xCEB8
 CINEMATIC_214		EQU 0xD6C6
 CINEMATIC_215		EQU 0xD68E
 CINEMATIC_216		EQU 0xCFD0
@@ -550,6 +539,9 @@ CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_5		EQU 0x4712
 CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_6		EQU 0xBB10
 CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_7		EQU 0xD7B4
 CINEMATIC_LAKE_018		EQU 0xDD9E
+CINEMATIC_307		EQU 0xDD7E
+CINEMATIC_308		EQU 0xDD86
+CINEMATIC_309		EQU 0xDD92
 CINEMATIC_LAKE_108		EQU 0x57A2
 CINEMATIC_LAKE_101		EQU 0x57FE
 CINEMATIC_LAKE_102		EQU 0x585A
@@ -1101,9 +1093,14 @@ CINEMATIC_SCENARIO_VINE_SCREEN_1		EQU 0x5176
 CINEMATIC_SCENARIO_VINE_SCREEN_2		EQU 0x5312
 CINEMATIC_SCENARIO_VINE_SCREEN_3		EQU 0x5624
 CINEMATIC_SCENARIO_VINE_SCREEN_4		EQU 0xCF6C
+CINEMATIC_206		EQU 0xE20C
+CINEMATIC_207		EQU 0x0188
+CINEMATIC_208		EQU 0xE274
 CINEMATIC_209		EQU 0xE0A8
 CINEMATIC_210		EQU 0xE0C4
 CINEMATIC_211		EQU 0xE110
+CINEMATIC_212		EQU 0xE27C
+CINEMATIC_213		EQU 0xE2C8
 CINEMATIC_214		EQU 0xEAD6
 CINEMATIC_215		EQU 0xEA9E
 CINEMATIC_216		EQU 0xE3E0
@@ -1197,6 +1194,9 @@ CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_5		EQU 0x5AD2
 CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_6		EQU 0xCF20
 CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_7		EQU 0xEBC4
 CINEMATIC_LAKE_018		EQU 0xF1AE
+CINEMATIC_307		EQU 0xF18E
+CINEMATIC_308		EQU 0xF196
+CINEMATIC_309		EQU 0xF1A2
 CINEMATIC_LAKE_108		EQU 0x6BB2
 CINEMATIC_LAKE_101		EQU 0x6C0E
 CINEMATIC_LAKE_102		EQU 0x6C6A
@@ -3093,45 +3093,21 @@ LABEL_0BD8:
 	jmp LABEL_0BD8
 
 LABEL_0BE0:
-;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
 	video type=1, offset=CINEMATIC_307, x=[0xa2], y=[0xa3], zoom=0x40
 	video type=1, offset=CINEMATIC_308, x=[0xa4], y=[0xa5], zoom=0x40
 	video type=1, offset=CINEMATIC_307, x=[0xa6], y=[0xa7], zoom=0x40
-;@elif BRANCH == "chahi_1991"
-	video type=1, offset=CINEMATIC_367, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_368, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xa6], y=[0xa7], zoom=0x40
-;@endif
 	break
-;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
 	video type=1, offset=CINEMATIC_308, x=[0xa2], y=[0xa3], zoom=0x40
 	video type=1, offset=CINEMATIC_307, x=[0xa4], y=[0xa5], zoom=0x40
 	video type=1, offset=CINEMATIC_309, x=[0xa6], y=[0xa7], zoom=0x40
-;@elif BRANCH == "chahi_1991"
-	video type=1, offset=CINEMATIC_368, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_369, x=[0xa6], y=[0xa7], zoom=0x40
-;@endif
 	break
-;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
 	video type=1, offset=CINEMATIC_307, x=[0xa2], y=[0xa3], zoom=0x40
 	video type=1, offset=CINEMATIC_309, x=[0xa4], y=[0xa5], zoom=0x40
 	video type=1, offset=CINEMATIC_307, x=[0xa6], y=[0xa7], zoom=0x40
-;@elif BRANCH == "chahi_1991"
-	video type=1, offset=CINEMATIC_367, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_369, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xa6], y=[0xa7], zoom=0x40
-;@endif
 	break
-;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
 	video type=1, offset=CINEMATIC_309, x=[0xa2], y=[0xa3], zoom=0x40
 	video type=1, offset=CINEMATIC_307, x=[0xa4], y=[0xa5], zoom=0x40
 	video type=1, offset=CINEMATIC_308, x=[0xa6], y=[0xa7], zoom=0x40
-;@elif BRANCH == "chahi_1991"
-	video type=1, offset=CINEMATIC_369, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_368, x=[0xa6], y=[0xa7], zoom=0x40
-;@endif
 	break
 	jmp LABEL_0BE0
 	db 0x11
@@ -3157,14 +3133,14 @@ LABEL_0C24:
 	db 0x11
 ;@endif
 ;@elif BRANCH == "chahi_1991"
-	video type=1, offset=CINEMATIC_367, x=143, y=104
-	video type=1, offset=CINEMATIC_367, x=159, y=110
-	video type=1, offset=CINEMATIC_367, x=117, y=105
-	video type=1, offset=CINEMATIC_367, x=183, y=108
-	video type=1, offset=CINEMATIC_367, x=191, y=110
-	video type=1, offset=CINEMATIC_367, x=220, y=106
-	video type=1, offset=CINEMATIC_367, x=126, y=92
-	video type=1, offset=CINEMATIC_367, x=167, y=106
+	video type=1, offset=CINEMATIC_307, x=143, y=104
+	video type=1, offset=CINEMATIC_307, x=159, y=110
+	video type=1, offset=CINEMATIC_307, x=117, y=105
+	video type=1, offset=CINEMATIC_307, x=183, y=108
+	video type=1, offset=CINEMATIC_307, x=191, y=110
+	video type=1, offset=CINEMATIC_307, x=220, y=106
+	video type=1, offset=CINEMATIC_307, x=126, y=92
+	video type=1, offset=CINEMATIC_307, x=167, y=106
 	killChannel
 ;@endif
 
@@ -3222,14 +3198,14 @@ LABEL_0CB6:
 	db 0x11
 ;@endif
 ;@elif BRANCH == "chahi_1991"
-	video type=1, offset=CINEMATIC_367, x=143, y=104
-	video type=1, offset=CINEMATIC_367, x=159, y=110
-	video type=1, offset=CINEMATIC_367, x=117, y=105
-	video type=1, offset=CINEMATIC_367, x=183, y=108
-	video type=1, offset=CINEMATIC_367, x=191, y=110
-	video type=1, offset=CINEMATIC_367, x=220, y=106
-	video type=1, offset=CINEMATIC_367, x=126, y=92
-	video type=1, offset=CINEMATIC_367, x=167, y=106
+	video type=1, offset=CINEMATIC_307, x=143, y=104
+	video type=1, offset=CINEMATIC_307, x=159, y=110
+	video type=1, offset=CINEMATIC_307, x=117, y=105
+	video type=1, offset=CINEMATIC_307, x=183, y=108
+	video type=1, offset=CINEMATIC_307, x=191, y=110
+	video type=1, offset=CINEMATIC_307, x=220, y=106
+	video type=1, offset=CINEMATIC_307, x=126, y=92
+	video type=1, offset=CINEMATIC_307, x=167, y=106
 	killChannel
 ;@endif
 
@@ -3307,7 +3283,6 @@ LABEL_0D1E:
 	killChannel
 
 LABEL_0DC0:
-;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
 	video type=1, offset=CINEMATIC_307, x=[0xa2], y=[0xa3], zoom=0x40
 	video type=1, offset=CINEMATIC_308, x=[0xa4], y=[0xa5], zoom=0x40
 	video type=1, offset=CINEMATIC_307, x=[0xa6], y=[0xa7], zoom=0x40
@@ -3316,18 +3291,7 @@ LABEL_0DC0:
 	video type=1, offset=CINEMATIC_308, x=[0xac], y=[0xad], zoom=0x40
 	video type=1, offset=CINEMATIC_307, x=[0xae], y=[0xaf], zoom=0x40
 	video type=1, offset=CINEMATIC_309, x=[0xb0], y=[0xb1], zoom=0x40
-;@elif BRANCH == "chahi_1991"
-	video type=1, offset=CINEMATIC_367, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_368, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xa6], y=[0xa7], zoom=0x40
-	video type=1, offset=CINEMATIC_369, x=[0xa8], y=[0xa9], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xaa], y=[0xab], zoom=0x40
-	video type=1, offset=CINEMATIC_368, x=[0xac], y=[0xad], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xae], y=[0xaf], zoom=0x40
-	video type=1, offset=CINEMATIC_369, x=[0xb0], y=[0xb1], zoom=0x40
-;@endif
 	break
-;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
 	video type=1, offset=CINEMATIC_308, x=[0xa2], y=[0xa3], zoom=0x40
 	video type=1, offset=CINEMATIC_307, x=[0xa4], y=[0xa5], zoom=0x40
 	video type=1, offset=CINEMATIC_309, x=[0xa6], y=[0xa7], zoom=0x40
@@ -3336,18 +3300,7 @@ LABEL_0DC0:
 	video type=1, offset=CINEMATIC_307, x=[0xac], y=[0xad], zoom=0x40
 	video type=1, offset=CINEMATIC_309, x=[0xae], y=[0xaf], zoom=0x40
 	video type=1, offset=CINEMATIC_307, x=[0xb0], y=[0xb1], zoom=0x40
-;@elif BRANCH == "chahi_1991"
-	video type=1, offset=CINEMATIC_368, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_369, x=[0xa6], y=[0xa7], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xa8], y=[0xa9], zoom=0x40
-	video type=1, offset=CINEMATIC_368, x=[0xaa], y=[0xab], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xac], y=[0xad], zoom=0x40
-	video type=1, offset=CINEMATIC_369, x=[0xae], y=[0xaf], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xb0], y=[0xb1], zoom=0x40
-;@endif
 	break
-;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
 	video type=1, offset=CINEMATIC_307, x=[0xa2], y=[0xa3], zoom=0x40
 	video type=1, offset=CINEMATIC_309, x=[0xa4], y=[0xa5], zoom=0x40
 	video type=1, offset=CINEMATIC_307, x=[0xa6], y=[0xa7], zoom=0x40
@@ -3356,18 +3309,7 @@ LABEL_0DC0:
 	video type=1, offset=CINEMATIC_309, x=[0xac], y=[0xad], zoom=0x40
 	video type=1, offset=CINEMATIC_307, x=[0xae], y=[0xaf], zoom=0x40
 	video type=1, offset=CINEMATIC_308, x=[0xb0], y=[0xb1], zoom=0x40
-;@elif BRANCH == "chahi_1991"
-	video type=1, offset=CINEMATIC_367, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_369, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xa6], y=[0xa7], zoom=0x40
-	video type=1, offset=CINEMATIC_368, x=[0xa8], y=[0xa9], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xaa], y=[0xab], zoom=0x40
-	video type=1, offset=CINEMATIC_369, x=[0xac], y=[0xad], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xae], y=[0xaf], zoom=0x40
-	video type=1, offset=CINEMATIC_368, x=[0xb0], y=[0xb1], zoom=0x40
-;@endif
 	break
-;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
 	video type=1, offset=CINEMATIC_309, x=[0xa2], y=[0xa3], zoom=0x40
 	video type=1, offset=CINEMATIC_307, x=[0xa4], y=[0xa5], zoom=0x40
 	video type=1, offset=CINEMATIC_308, x=[0xa6], y=[0xa7], zoom=0x40
@@ -3376,16 +3318,6 @@ LABEL_0DC0:
 	video type=1, offset=CINEMATIC_307, x=[0xac], y=[0xad], zoom=0x40
 	video type=1, offset=CINEMATIC_308, x=[0xae], y=[0xaf], zoom=0x40
 	video type=1, offset=CINEMATIC_307, x=[0xb0], y=[0xb1], zoom=0x40
-;@elif BRANCH == "chahi_1991"
-	video type=1, offset=CINEMATIC_369, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_368, x=[0xa6], y=[0xa7], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xa8], y=[0xa9], zoom=0x40
-	video type=1, offset=CINEMATIC_369, x=[0xaa], y=[0xab], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xac], y=[0xad], zoom=0x40
-	video type=1, offset=CINEMATIC_368, x=[0xae], y=[0xaf], zoom=0x40
-	video type=1, offset=CINEMATIC_367, x=[0xb0], y=[0xb1], zoom=0x40
-;@endif
 	break
 	jmp LABEL_0DC0
 	db 0x11
@@ -3944,15 +3876,9 @@ LABEL_13B9:
 	mov [0x18], 0x006E
 	fill page=0x00, color=0x0B
 	selectVideoPage 0x00
-;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
 	video type=1, offset=CINEMATIC_206, x=160, y=100
 	video type=1, offset=CINEMATIC_207, x=[0x18], y=110, zoom=0x40
 	video type=1, offset=CINEMATIC_208, x=180, y=100
-;@elif BRANCH == "chahi_1991"
-	video type=1, offset=CINEMATIC_266, x=160, y=100
-	video type=1, offset=CINEMATIC_267, x=[0x18], y=110, zoom=0x40
-	video type=1, offset=CINEMATIC_268, x=180, y=100
-;@endif
 	selectVideoPage 0xFF
 	mov [0x19], 0x0020
 	break
@@ -3987,13 +3913,8 @@ LABEL_1403:
 	fill page=0x00, color=0x0B
 	video type=1, offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
 	setPalette 0x19
-;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
 	video type=1, offset=CINEMATIC_212, x=160, y=100
 	video type=1, offset=CINEMATIC_213, x=200, y=100
-;@elif BRANCH == "chahi_1991"
-	video type=1, offset=CINEMATIC_272, x=160, y=100
-	video type=1, offset=CINEMATIC_273, x=200, y=100
-;@endif
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 ;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
