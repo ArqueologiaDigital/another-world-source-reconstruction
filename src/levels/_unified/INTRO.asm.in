@@ -1044,17 +1044,9 @@ LABEL_0449:
 	break
 	mov [0x03], 0x0046
 
-;@if BRANCH == "heineman_cartridge"
 LABEL_044E:
-;@elif BRANCH == "foxy_gba_2004"
-LABEL_0454:
-;@endif
 	break
-;@if BRANCH == "heineman_cartridge"
 	djnz [0x03], LABEL_044E
-;@elif BRANCH == "foxy_gba_2004"
-	djnz [0x03], LABEL_0454
-;@endif
 	play id=0x000F, freq=0x0A, vol=0x3F, channel=0x00
 	video type=1, offset=CINEMATIC_374, x=160, y=100	;@raw=0xD6,0x0F,0xA0,0x64
 	break
@@ -1082,17 +1074,9 @@ LABEL_048F:
 	break
 	mov [0x04], 0x0050
 
-;@if BRANCH == "heineman_cartridge"
 LABEL_0494:
-;@elif BRANCH == "foxy_gba_2004"
-LABEL_049A:
-;@endif
 	break
-;@if BRANCH == "heineman_cartridge"
 	djnz [0x04], LABEL_0494
-;@elif BRANCH == "foxy_gba_2004"
-	djnz [0x04], LABEL_049A
-;@endif
 	video type=1, offset=CINEMATIC_368, x=160, y=100	;@raw=0xD6,0x41,0xA0,0x64
 	break
 	video type=1, offset=CINEMATIC_369, x=160, y=100	;@raw=0xD6,0x4B,0xA0,0x64
@@ -1117,17 +1101,9 @@ LABEL_04CA:
 	break
 	mov [0x05], 0x0014
 
-;@if BRANCH == "heineman_cartridge"
 LABEL_04CF:
-;@elif BRANCH == "foxy_gba_2004"
-LABEL_04D5:
-;@endif
 	break
-;@if BRANCH == "heineman_cartridge"
 	djnz [0x05], LABEL_04CF
-;@elif BRANCH == "foxy_gba_2004"
-	djnz [0x05], LABEL_04D5
-;@endif
 	play id=0x000E, freq=0x02, vol=0x3F, channel=0x00
 	video type=1, offset=CINEMATIC_358, x=160, y=100	;@raw=0xD6,0x7D,0xA0,0x64
 	break
@@ -1167,17 +1143,9 @@ LABEL_0527:
 	break
 	mov [0x06], 0x003C
 
-;@if BRANCH == "heineman_cartridge"
 LABEL_052C:
-;@elif BRANCH == "foxy_gba_2004"
-LABEL_0532:
-;@endif
 	break
-;@if BRANCH == "heineman_cartridge"
 	djnz [0x06], LABEL_052C
-;@elif BRANCH == "foxy_gba_2004"
-	djnz [0x06], LABEL_0532
-;@endif
 	setPalette 0x02	;@raw=0x0B,0x02,0xFF
 	break
 	break
@@ -2446,31 +2414,15 @@ LABEL_11F9:
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x01], 0x0001
 
-;@if BRANCH == "heineman_cartridge"
 LABEL_120D:
-;@elif BRANCH == "foxy_gba_2004"
-LABEL_1219:
-;@endif
 	break
-;@if BRANCH == "heineman_cartridge"
 	djnz [0x01], LABEL_120D
-;@elif BRANCH == "foxy_gba_2004"
-	djnz [0x01], LABEL_1219
-;@endif
 	copyVideoPage src=0x00, dst=0x03
 	mov [0x01], 0x000E
 
-;@if BRANCH == "heineman_cartridge"
 LABEL_1219:
-;@elif BRANCH == "foxy_gba_2004"
-LABEL_1225:
-;@endif
 	break
-;@if BRANCH == "heineman_cartridge"
 	djnz [0x01], LABEL_1219
-;@elif BRANCH == "foxy_gba_2004"
-	djnz [0x01], LABEL_1225
-;@endif
 	setup channel=0x3C, address=LABEL_00C1
 	break
 	selectVideoPage 0x00
@@ -2805,18 +2757,10 @@ LABEL_1593:
 LABEL_1594:
 	mov [0x03], 0x000A
 
-;@if BRANCH == "heineman_cartridge"
 LABEL_1598:
-;@elif BRANCH == "foxy_gba_2004"
-LABEL_15A4:
-;@endif
 	break
 	text id=0x0039, x=5, y=170, color=0x06 ; "       RUN EXPERIMENT ?"
-;@if BRANCH == "heineman_cartridge"
 	djnz [0x03], LABEL_1598
-;@elif BRANCH == "foxy_gba_2004"
-	djnz [0x03], LABEL_15A4
-;@endif
 	mov [0x03], 0x0008
 
 LABEL_15A7:
@@ -3429,11 +3373,7 @@ LABEL_1BEE:
 	db 0x07, 0x1B, 0xFD, 0x11
 ;@endif
 
-;@if BRANCH == "heineman_cartridge"
 LABEL_1BFA:
-;@elif BRANCH == "foxy_gba_2004"
-LABEL_1C06:
-;@endif
 	mov [0x03], 0x0064
 	mov [0x04], 0x0013
 
@@ -3459,11 +3399,7 @@ LABEL_1C1D:
 	video type=1, offset=CINEMATIC_182, x=187, y=101	;@raw=0x9F,0xB6,0xBB,0x65
 	copyVideoPage src=0xFF, dst=0x00
 	break
-;@if BRANCH == "heineman_cartridge"
 	setup channel=0x03, address=LABEL_1BFA
-;@elif BRANCH == "foxy_gba_2004"
-	setup channel=0x03, address=LABEL_1C06
-;@endif
 	setup channel=0x04, address=LABEL_1C96
 	setup channel=0x05, address=LABEL_1CBF
 	setup channel=0x0A, address=LABEL_1C84
@@ -3503,17 +3439,9 @@ LABEL_1C95:
 LABEL_1C96:
 	mov [0x05], 0x0009
 
-;@if BRANCH == "heineman_cartridge"
 LABEL_1C9A:
-;@elif BRANCH == "foxy_gba_2004"
-LABEL_1CA6:
-;@endif
 	break
-;@if BRANCH == "heineman_cartridge"
 	djnz [0x05], LABEL_1C9A
-;@elif BRANCH == "foxy_gba_2004"
-	djnz [0x05], LABEL_1CA6
-;@endif
 	play id=0x0034, freq=0x14, vol=0x3F, channel=0x02
 	mov [0x05], 0x0007
 	mov [0x06], 0x007B
@@ -3834,62 +3762,30 @@ LABEL_1FD1:
 	db 0x11
 
 LABEL_1FD2:
-;@if BRANCH == "heineman_cartridge"
 	jne [0x1E], 0x00, LABEL_1FDE
-;@elif BRANCH == "foxy_gba_2004"
-	jne [0x1E], 0x00, LABEL_1FEA
-;@endif
 	play id=0x000B, freq=0x14, vol=0x3F, channel=0x02
 
-;@if BRANCH == "heineman_cartridge"
 LABEL_1FDE:
 	jne [0x1E], 0x01, LABEL_1FEA
-;@elif BRANCH == "foxy_gba_2004"
-LABEL_1FEA:
-	jne [0x1E], 0x01, LABEL_1FF6
-;@endif
 	play id=0x000B, freq=0x16, vol=0x3F, channel=0x02
 
-;@if BRANCH == "heineman_cartridge"
 LABEL_1FEA:
 	jne [0x1E], 0x02, LABEL_1FF6
 	play id=0x000B, freq=0x12, vol=0x3F, channel=0x02
 
-;@elif BRANCH == "foxy_gba_2004"
-;@endif
 LABEL_1FF6:
-;@if BRANCH == "heineman_cartridge"
 	jne [0x1E], 0x03, LABEL_2002
-;@elif BRANCH == "foxy_gba_2004"
-	jne [0x1E], 0x02, LABEL_2002
-;@endif
 	play id=0x000B, freq=0x12, vol=0x3F, channel=0x02
 
 LABEL_2002:
-;@if BRANCH == "heineman_cartridge"
 	jne [0x1E], 0x04, LABEL_200E
 	play id=0x000B, freq=0x14, vol=0x3F, channel=0x02
-;@elif BRANCH == "foxy_gba_2004"
-	jne [0x1E], 0x03, LABEL_200E
-	play id=0x000B, freq=0x12, vol=0x3F, channel=0x02
-;@endif
 
 LABEL_200E:
-;@if BRANCH == "heineman_cartridge"
 	jne [0x1E], 0x05, LABEL_201A
-;@elif BRANCH == "foxy_gba_2004"
-	jne [0x1E], 0x04, LABEL_201A
-;@endif
 	play id=0x000B, freq=0x14, vol=0x3F, channel=0x02
 
 LABEL_201A:
-;@if BRANCH == "heineman_cartridge"
-;@elif BRANCH == "foxy_gba_2004"
-	jne [0x1E], 0x05, LABEL_2026
-	play id=0x000B, freq=0x14, vol=0x3F, channel=0x02
-
-LABEL_2026:
-;@endif
 	ret
 
 LABEL_201B:
@@ -4029,11 +3925,7 @@ LABEL_218B:
 	mov [0x07], 0x0082
 	mov [0x08], 0x0005
 
-;@if BRANCH == "heineman_cartridge"
 LABEL_2197:
-;@elif BRANCH == "foxy_gba_2004"
-LABEL_21A3:
-;@endif
 	mov [0x09], 0x0003
 
 LABEL_219B:
@@ -4043,11 +3935,7 @@ LABEL_219B:
 	djnz [0x09], LABEL_219B
 	add [0x06], 0x0002
 	sub [0x07], 0x0002
-;@if BRANCH == "heineman_cartridge"
 	djnz [0x08], LABEL_2197
-;@elif BRANCH == "foxy_gba_2004"
-	djnz [0x08], LABEL_21A3
-;@endif
 	jmp LABEL_218B
 LABEL_21B9:
 	db 0x11
@@ -4314,11 +4202,7 @@ LABEL_24D9:
 	break
 	djnz [0x01], LABEL_24D9
 	jmp LABEL_03A5
-;@if BRANCH == "heineman_cartridge"
 LABEL_24E5:
-;@elif BRANCH == "foxy_gba_2004"
-LABEL_24F1:
-;@endif
 	db 0x11
 
 LABEL_24E6:
