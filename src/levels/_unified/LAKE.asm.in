@@ -915,10 +915,8 @@ SOME_VIDEO_BUFFER_MAGIC:
 LABEL_00EE:
 	break
 	text id=0x013D, x=5, y=80, color=0x0C
-;@if BRANCH == "heineman_cartridge"
 
    PRESS START FOR CODE ENTRY"
-;@endif
 	text id=0x013C, x=5, y=180, color=0x0D
 	text id=0x015E, x=26, y=180, color=0x0E
 	call LABEL_012F
@@ -926,10 +924,8 @@ LABEL_00EE:
 
 LABEL_010A:
 	text id=0x013D, x=5, y=80, color=0x0C
-;@if BRANCH == "heineman_cartridge"
 
    PRESS START FOR CODE ENTRY"
-;@endif
 	text id=0x013C, x=5, y=180, color=0x0D
 	text id=0x015E, x=26, y=180, color=0x0E
 	break
@@ -971,11 +967,7 @@ LABEL_014D:
 	play id=0x003D, freq=0x14, vol=0x00, channel=0x02
 	play id=0x003D, freq=0x14, vol=0x00, channel=0x03
 	fill page=0x00, color=0x00
-;@if BRANCH == "heineman_cartridge"
 	deleteChannels first=0x00, last=0x3B
-;@elif BRANCH == "foxy_gba_2004"
-	deleteChannels 0x00, 0x3B
-;@endif
 	load id=0x3E80
 	killChannel
 
@@ -1048,22 +1040,19 @@ LABEL_0205:
 	break
 ;@if BRANCH == "heineman_cartridge"
 	jmp LABEL_01F9
-	killChannel
-
 ;@elif BRANCH == "foxy_gba_2004"
 	jmp LABEL_0205
-	db 0x11
 ;@endif
+	killChannel
+
 LABEL_0200:
 	selectVideoPage 0xFF
 	break
 	jmp LABEL_0200
 ;@if BRANCH == "heineman_cartridge"
 LABEL_0206:
-	killChannel
-;@elif BRANCH == "foxy_gba_2004"
-	db 0x11
 ;@endif
+	killChannel
 
 LABEL_0207:
 	add [0x6E], 0x0001
@@ -1323,7 +1312,7 @@ LABEL_04D0:
 	jmp LABEL_04C3
 ;@elif BRANCH == "foxy_gba_2004"
 	jmp LABEL_04D5
-	db 0x11
+	killChannel
 ;@endif
 LABEL_04D8:
 ;@if BRANCH == "heineman_cartridge"
@@ -1805,10 +1794,8 @@ LBL_08E5_08F7:
 	jmp LBL_08E5_08F7
 ;@if BRANCH == "heineman_cartridge"
 LABEL_0968:
-	killChannel
-;@elif BRANCH == "foxy_gba_2004"
-	db 0x11
 ;@endif
+	killChannel
 
 LBL_08E5_0969:
 	jmp LABEL_0988
@@ -2464,13 +2451,11 @@ LABEL_111F:
 	fill page=0x00, color=0x00
 	selectVideoPage 0x00
 	text id=0x01FA, x=6, y=70, color=0x0F
-;@if BRANCH == "heineman_cartridge"
 A Cinematic Action Adventure
  Coming soon to a computer
       screen near you
  from Interplay Productions
    coming soon to the IBM"
-;@endif
 	selectVideoPage 0xFF
 	break
 	setPalette 0x02	;@raw=0x0B,0x02,0xFF
@@ -3092,11 +3077,10 @@ LABEL_1704:
 ;@if BRANCH == "heineman_cartridge"
 	jmp LABEL_16F2
 LABEL_1727:
-	killChannel
 ;@elif BRANCH == "foxy_gba_2004"
 	jmp LABEL_1704
-	db 0x11
 ;@endif
+	killChannel
 
 SNEAKY_TENTACLE_FROM_THE_POOL:
 	call LABEL_03BA
@@ -5271,13 +5255,9 @@ LABEL_2EB5:
 LABEL_2EE3:
 ;@endif
 	killChannel
-;@if BRANCH == "heineman_cartridge"
 	killChannel
 	killChannel
 	killChannel
-;@elif BRANCH == "foxy_gba_2004"
-	db 0x11, 0x11, 0x11
-;@endif
 
 LABEL_2EC3:
 	mov [0x0C], [0x46]
@@ -5996,12 +5976,8 @@ LABEL_35E7:
 LABEL_362B:
 ;@endif
 	killChannel
-;@if BRANCH == "heineman_cartridge"
 	mov [0x0A], 0x0032
 	mov [0x0B], 0x00B6
-;@elif BRANCH == "foxy_gba_2004"
-	db 0x00, 0x0A, 0x00, 0x32, 0x00, 0x0B, 0x00, 0xB6
-;@endif
 
 BEETLE_WALKING_RIGHT:
 	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_0, x=[0x0a], y=[0x0b], zoom=0x40	;@raw=0x54,0x4F,0xDE,0x0A,0x0B
@@ -6318,7 +6294,7 @@ LABEL_394F:
 	jmp LABEL_38FE
 ;@elif BRANCH == "foxy_gba_2004"
 	jmp LABEL_3922
-	db 0x11
+	killChannel
 ;@endif
 LABEL_3953:
 ;@if BRANCH == "heineman_cartridge"
@@ -6359,11 +6335,10 @@ LABEL_39A5:
 ;@if BRANCH == "heineman_cartridge"
 	jmp LABEL_3954
 LABEL_39A9:
-	killChannel
 ;@elif BRANCH == "foxy_gba_2004"
 	jmp LABEL_3953
-	db 0x11
 ;@endif
+	killChannel
 
 LABEL_39AA:
 	mov [0x0B], 0x0096
@@ -6420,11 +6395,7 @@ LABEL_3A30:
 LABEL_3A5C:
 ;@endif
 	killChannel
-;@if BRANCH == "heineman_cartridge"
 	killChannel
-;@elif BRANCH == "foxy_gba_2004"
-	db 0x11
-;@endif
 
 LABEL_3A3A:
 	setup channel=0x2D, address=KILL_CHANNEL_ROUTINE
@@ -7233,13 +7204,9 @@ LABEL_4353:
 LABEL_4387:
 ;@endif
 	killChannel
-;@if BRANCH == "heineman_cartridge"
 	break
 	add [0x01], 0x0002
 	call LABEL_492C
-;@elif BRANCH == "foxy_gba_2004"
-	db 0x06, 0x03, 0x01, 0x00, 0x02, 0x04, 0x49, 0x56
-;@endif
 
 LABEL_4366:
 	break
@@ -7409,13 +7376,9 @@ LABEL_450F:
 LABEL_453D:
 ;@endif
 	killChannel
-;@if BRANCH == "heineman_cartridge"
 	break
 	sub [0x01], 0x0002
 	call LABEL_474B
-;@elif BRANCH == "foxy_gba_2004"
-	db 0x06, 0x03, 0x01, 0xFF, 0xFE, 0x04, 0x47, 0x75
-;@endif
 
 LABEL_451C:
 	break
@@ -8138,10 +8101,8 @@ LABEL_4C99:
 	jmp LABEL_44F0
 ;@if BRANCH == "heineman_cartridge"
 LABEL_4C92:
-	killChannel
-;@elif BRANCH == "foxy_gba_2004"
-	db 0x11
 ;@endif
+	killChannel
 
 LABEL_4C93:
 	mov [0x63], 0x0064
@@ -8417,10 +8378,8 @@ LABEL_502E:
 	jmp LABEL_4693
 ;@if BRANCH == "heineman_cartridge"
 LABEL_5027:
-	killChannel
-;@elif BRANCH == "foxy_gba_2004"
-	db 0x11
 ;@endif
+	killChannel
 
 LABEL_5028:
 	sub [0x01], 0x0004
