@@ -4102,6 +4102,18 @@ LABEL_23C9:
 	play id=0x0008, freq=0x01, vol=0x2D, channel=0x03	;@raw=0x18,0x00,0x08,0x01,0x2D,0x03
 	play id=0x0008, freq=0x05, vol=0x2D, channel=0x02	;@raw=0x18,0x00,0x08,0x05,0x2D,0x02
 	mov [PAUSE_SLICES], 0x0004	;@raw=0x00,0xFF,0x00,0x04
+; Frame-delay counter for the djnz loop below. [0x01] is a generic
+; temp variable used here (and elsewhere in INTRO) as a "spin N
+; frames" counter, combined with PAUSE_SLICES (=4 here) so each
+; `break` yields 4 scheduler ticks. Total wait = 4 * counter.
+;
+; THIS one location alone differs between cart and gba — every
+; other `mov [0x01], <N>` in INTRO uses the same N in both ports.
+; Cart 0x12 = 18 (4*18 = 72 ticks); gba 0x24 = 36 (4*36 = 144 ticks,
+; doubled). The preceding `play id=0x0008` is likely the trigger:
+; the GBA port may need longer to sync the sound effect's end with
+; the next animation cue (or just a tuning fix specific to this
+; one moment in the game).
 	mov [0x01], 0x0012	;@raw=0x00,0x01,0x00,0x12
 
 LABEL_23DE:
