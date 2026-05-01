@@ -39,13 +39,12 @@ CINEMATIC_217		EQU 0xDFE6
 CINEMATIC_218		EQU 0xC556
 CINEMATIC_219		EQU 0xD2D2
 CINEMATIC_220		EQU 0xD37A
-CINEMATIC_250		EQU 0xD038
+CINEMATIC_228		EQU 0xBB80
 CINEMATIC_260		EQU 0xC322
 CINEMATIC_261		EQU 0xC352
 CINEMATIC_262		EQU 0xC382
 CINEMATIC_263		EQU 0xC3B2
 CINEMATIC_264		EQU 0xC3E2
-CINEMATIC_265		EQU 0xC412
 CINEMATIC_266		EQU 0xE20C
 CINEMATIC_267		EQU 0x0188
 CINEMATIC_268		EQU 0xE274
@@ -163,6 +162,7 @@ CINEMATIC_441		EQU 0xC24E
 CINEMATIC_442		EQU 0xC29A
 CINEMATIC_443		EQU 0xC316
 CINEMATIC_444		EQU 0xC392
+CINEMATIC_445		EQU 0xC412
 CINEMATIC_446		EQU 0xC48A
 CINEMATIC_447		EQU 0xC532
 CINEMATIC_448		EQU 0xC502
@@ -285,6 +285,7 @@ CINEMATIC_657		EQU 0xB8B8
 CINEMATIC_658		EQU 0xB894
 CINEMATIC_659		EQU 0x8EB6
 CINEMATIC_662		EQU 0xB68C
+CINEMATIC_665		EQU 0xDC8A
 CINEMATIC_670		EQU 0xB808
 CINEMATIC_671		EQU 0xB820
 CINEMATIC_672		EQU 0xB87C
@@ -385,9 +386,6 @@ COMMON_VIDEO_071		EQU 0x0844
 COMMON_VIDEO_072		EQU 0x0874
 COMMON_VIDEO_073		EQU 0x08A0
 COMMON_VIDEO_074		EQU 0x0020
-;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
-COMMON_VIDEO_074		EQU 0x0020
-;@endif
 COMMON_VIDEO_075		EQU 0x00B4
 COMMON_VIDEO_076		EQU 0x0128
 COMMON_VIDEO_077		EQU 0x01B0
@@ -661,7 +659,6 @@ CINEMATIC_224		EQU 0xD576
 CINEMATIC_225		EQU 0xD6E4
 CINEMATIC_226		EQU 0xD6F0
 CINEMATIC_227		EQU 0xD6D2
-CINEMATIC_228		EQU 0xC74A
 CINEMATIC_229		EQU 0xCFF0
 CINEMATIC_230		EQU 0xD08C
 CINEMATIC_231		EQU 0xD134
@@ -683,6 +680,7 @@ CINEMATIC_246		EQU 0xCB6C
 CINEMATIC_247		EQU 0xCBC0
 CINEMATIC_248		EQU 0xC5FA
 CINEMATIC_249		EQU 0xC69A
+CINEMATIC_250		EQU 0xC48A
 CINEMATIC_251		EQU 0xC4BA
 CINEMATIC_252		EQU 0xC4EA
 CINEMATIC_253		EQU 0xC51A
@@ -872,9 +870,6 @@ CINEMATIC_497		EQU 0xB35A
 CINEMATIC_498		EQU 0xB3FA
 CINEMATIC_499		EQU 0xB4A2
 CINEMATIC_500		EQU 0xB53E
-;@if BRANCH == "foxy_gba_2004"
-CINEMATIC_665		EQU 0xB7E4
-;@endif
 CINEMATIC_515		EQU 0xB9F4
 CINEMATIC_516		EQU 0xBA14
 CINEMATIC_517		EQU 0xBA34
@@ -997,13 +992,11 @@ CINEMATIC_660		EQU 0x08FC
 CINEMATIC_661		EQU 0x0C1E
 CINEMATIC_663		EQU 0xB8A0
 CINEMATIC_664		EQU 0xB8EE
-CINEMATIC_665		EQU 0xDC8A
 CINEMATIC_666		EQU 0xDC9A
 CINEMATIC_667		EQU 0xDCB2
 CINEMATIC_668		EQU 0xDCC6
 CINEMATIC_669		EQU 0xDCF6
 ;@endif
-CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_2		EQU 0x3630
 ;@elif BRANCH == "chahi_1991"
 CINEMATIC_CONSOLE_UNDERWATER_EXPLOSION_0		EQU 0x3142
 CINEMATIC_CONSOLE_UNDERWATER_EXPLOSION_1		EQU 0x317A
@@ -1210,7 +1203,6 @@ CINEMATIC_224		EQU 0xBA20
 CINEMATIC_225		EQU 0xBA78
 CINEMATIC_226		EQU 0xBAD0
 CINEMATIC_227		EQU 0xBB28
-CINEMATIC_228		EQU 0xBB80
 CINEMATIC_229		EQU 0xBBDC
 CINEMATIC_230		EQU 0xBC34
 CINEMATIC_231		EQU 0xBC80
@@ -1232,6 +1224,7 @@ CINEMATIC_246		EQU 0x70DE
 CINEMATIC_247		EQU 0x713A
 CINEMATIC_248		EQU 0x7192
 CINEMATIC_249		EQU 0x71EA
+CINEMATIC_250		EQU 0xD038
 CINEMATIC_251		EQU 0xD090
 CINEMATIC_252		EQU 0xD0E8
 CINEMATIC_253		EQU 0xD13C
@@ -1501,7 +1494,6 @@ CINEMATIC_660		EQU 0x8E7A
 CINEMATIC_661		EQU 0xB620
 CINEMATIC_663		EQU 0xB7C0
 CINEMATIC_664		EQU 0xB798
-CINEMATIC_665		EQU 0xB7E4
 CINEMATIC_666		EQU 0xB6F8
 CINEMATIC_667		EQU 0xB720
 CINEMATIC_668		EQU 0xB748
@@ -6122,7 +6114,7 @@ LABEL_11DC:
 	add [0x01], [0x29]	;@raw=0x02,0x01,0x29
 	add [0x29], 0x0001	;@raw=0x03,0x29,0x00,0x01
 ;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
-	video type=1, offset=CINEMATIC_228, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x63,0xA5,0x01,0x02
+	video type=1, offset=CINEMATIC_556, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x63,0xA5,0x01,0x02
 ;@elif BRANCH == "chahi_1991"
 	video type=1, offset=CINEMATIC_288, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x6D,0xAD,0x01,0x02
 ;@endif
@@ -6149,7 +6141,7 @@ LABEL_11F1:
 ;@endif
 	sub [0x01], 0x0001	;@raw=0x03,0x01,0xFF,0xFF
 ;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
-	video type=1, offset=CINEMATIC_228, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x63,0xA5,0x01,0x02
+	video type=1, offset=CINEMATIC_556, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x63,0xA5,0x01,0x02
 ;@elif BRANCH == "chahi_1991"
 	video type=1, offset=CINEMATIC_288, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x6D,0xAD,0x01,0x02
 ;@endif
@@ -6170,7 +6162,7 @@ LABEL_12A0:
 ;@elif BRANCH == "foxy_gba_2004"
 LABEL_12B2:
 ;@endif
-	video type=1, offset=CINEMATIC_228, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x63,0xA5,0x01,0x02
+	video type=1, offset=CINEMATIC_556, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x63,0xA5,0x01,0x02
 ;@elif BRANCH == "chahi_1991"
 LABEL_11FF:
 	video type=1, offset=CINEMATIC_288, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x6D,0xAD,0x01,0x02
@@ -6354,7 +6346,7 @@ LABEL_131C:
 ;@elif BRANCH == "foxy_gba_2004"
 LABEL_132E:
 ;@endif
-	video type=1, offset=CINEMATIC_446, x=[0x32], y=[0x33], zoom=0x40	;@raw=0x54,0x62,0x45,0x32,0x33
+	video type=1, offset=CINEMATIC_250, x=[0x32], y=[0x33], zoom=0x40	;@raw=0x54,0x62,0x45,0x32,0x33
 ;@elif BRANCH == "chahi_1991"
 LABEL_127B:
 	video type=1, offset=CINEMATIC_310, x=[0x32], y=[0x33], zoom=0x40	;@raw=0x54,0x6C,0x4D,0x32,0x33
@@ -6400,7 +6392,7 @@ LABEL_1338:
 ;@elif BRANCH == "foxy_gba_2004"
 LABEL_134A:
 ;@endif
-	video type=1, offset=CINEMATIC_446, x=[0x32], y=[0x33], zoom=0x40	;@raw=0x54,0x62,0x45,0x32,0x33
+	video type=1, offset=CINEMATIC_250, x=[0x32], y=[0x33], zoom=0x40	;@raw=0x54,0x62,0x45,0x32,0x33
 ;@elif BRANCH == "chahi_1991"
 LABEL_1297:
 	video type=1, offset=CINEMATIC_310, x=[0x32], y=[0x33], zoom=0x40	;@raw=0x54,0x6C,0x4D,0x32,0x33
@@ -6570,7 +6562,7 @@ LABEL_13AA:
 ;@elif BRANCH == "foxy_gba_2004"
 LABEL_13BC:
 ;@endif
-	video type=1, offset=CINEMATIC_228, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x63,0xA5,0x01,0x02
+	video type=1, offset=CINEMATIC_556, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x63,0xA5,0x01,0x02
 ;@elif BRANCH == "chahi_1991"
 LABEL_1309:
 	video type=1, offset=CINEMATIC_288, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x6D,0xAD,0x01,0x02
@@ -7108,7 +7100,7 @@ LABEL_1495:
 	break	;@raw=0x06
 	sub [0x32], 0x0002	;@raw=0x03,0x32,0xFF,0xFE
 ;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
-	video type=1, offset=CINEMATIC_265, x=[0x32], y=[0x33], zoom=0x40	;@raw=0x54,0x62,0x09,0x32,0x33
+	video type=1, offset=CINEMATIC_445, x=[0x32], y=[0x33], zoom=0x40	;@raw=0x54,0x62,0x09,0x32,0x33
 ;@elif BRANCH == "chahi_1991"
 	video type=1, offset=CINEMATIC_325, x=[0x32], y=[0x33], zoom=0x40	;@raw=0x54,0x6C,0x11,0x32,0x33
 ;@endif
@@ -7223,13 +7215,13 @@ LABEL_150F:
 ;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
 	video type=1, offset=CINEMATIC_385, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x58,0x01,0x01,0x02
 ;@elif BRANCH == "chahi_1991"
-	video type=1, offset=CINEMATIC_265, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x62,0x09,0x01,0x02
+	video type=1, offset=CINEMATIC_445, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x62,0x09,0x01,0x02
 ;@endif
 	break	;@raw=0x06
 ;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
 	video type=1, offset=CINEMATIC_385, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x58,0x01,0x01,0x02
 ;@elif BRANCH == "chahi_1991"
-	video type=1, offset=CINEMATIC_265, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x62,0x09,0x01,0x02
+	video type=1, offset=CINEMATIC_445, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x62,0x09,0x01,0x02
 ;@endif
 	play id=0x003A, freq=0x14, vol=0x20, channel=0x01	;@raw=0x18,0x00,0x3A,0x14,0x20,0x01
 	break	;@raw=0x06
@@ -7938,12 +7930,11 @@ SNEAKY_TENTACLE_GOING_UP:
 ;@endif
 	break	;@raw=0x06
 ;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
-;@if BRANCH == "heineman_cartridge"
 	video type=1, offset=CINEMATIC_509, x=[0x32], y=100, zoom=0x40	;@raw=0x58,0x5B,0xF2,0x32,0x64
+;@if BRANCH == "heineman_cartridge"
 	jmp LABEL_1F15	;@raw=0x07,0x1F,0x15
 LABEL_18BF:
 ;@elif BRANCH == "foxy_gba_2004"
-	video type=1, offset=CINEMATIC_665, x=[0x32], y=100, zoom=0x40	;@raw=0x58,0x5B,0xF2,0x32,0x64
 	jmp LABEL_1F27	;@raw=0x07,0x1F,0x27
 LABEL_18D1:
 ;@endif
@@ -16649,7 +16640,7 @@ LABEL_358B:
 ;@if BRANCH in ("heineman_cartridge", "foxy_gba_2004")
 	video type=1, offset=CINEMATIC_605, x=[0x0a], y=[0x0b], zoom=0x40	;@raw=0x54,0x51,0xEA,0x0A,0x0B
 ;@elif BRANCH == "chahi_1991"
-	video type=1, offset=CINEMATIC_665, x=[0x0a], y=[0x0b], zoom=0x40	;@raw=0x54,0x5B,0xF2,0x0A,0x0B
+	video type=1, offset=CINEMATIC_509, x=[0x0a], y=[0x0b], zoom=0x40	;@raw=0x54,0x5B,0xF2,0x0A,0x0B
 ;@endif
 	break	;@raw=0x06
 	mov [0x09], 0x000A	;@raw=0x00,0x09,0x00,0x0A
