@@ -137,23 +137,81 @@ the source tree by genealogical branch rather than by port slot,
 making future deduplications trivial when more ports come online
 (Atari ST will share Amiga's chahi_1991 sources verbatim).
 
-## ~~Phase 3b — Conditional-compilation unification across branches~~ (DEFERRED)
+## Phase 3b — Conditional-compilation pipeline (✅ infrastructure achieved 2026-05-01)
 
-The original Phase 3 plan was to merge divergent branches via
-`#ifdef BYTECODE_BRANCH ... #endif` in unified .asm files. After
-diff'ing the actual per-port sources we find that branches
-diverge dramatically:
+### Initial deferral, then revival via structural diff
 
-- Different number of labels (Amiga: 208 in level 0; DOS: 254)
-- Different instruction counts and sequences
-- Different polygon-resource layouts → different EQU offsets
-- Different string tables → different mnemonic-decoded comments
+The first cut at Phase 3b was deferred (research/07) on the
+assumption that branches share too little for `#ifdef` merging
+to be useful. Then the structural-diff tool
+([research/08](../another-world-archaeology/docs/content/research/08-cross-branch-structural-similarity.md))
+revealed much higher cross-branch overlap than byte-equality had
+shown:
 
-A unified .asm would be 60-80% `#ifdef`'d code blocks — the
-unified file would actually be HARDER to read than the branch-
-organized tree. Per-branch sources are the more honest
-representation of the genealogy. Phase 3b is **deferred** unless
-a concrete research need surfaces.
+- INTRO: 83-99% structural similarity across all 4 branches
+- LAKE: 88-92% within Heineman lineage (DOS / cartridge / GBA)
+- Other stages: 50-90% similar within Heineman lineage
+
+So Phase 3b became attractive again, at least for stages within
+the Heineman lineage.
+
+### Pipeline (working)
+
+The build pipeline now supports conditional compilation via
+**comment-syntax directives**:
+
+```asm
+;@if BRANCH == "heineman_cartridge"
+    setup channel=0x09, address=LABEL_CARTRIDGE_SPECIFIC
+;@elif BRANCH == "heineman_dos"
+    setup channel=0x09, address=LABEL_DOS_SPECIFIC
+;@else
+    setup channel=0x09, address=LABEL_DEFAULT
+;@endif
+```
+
+The preprocessor (`another-world-archaeology/tools/awvm_preprocess.py`)
+reads a `releases/<target>.flags` file, evaluates each `;@if`
+condition, and emits a per-branch `.asm` ready for `awvm-asm`.
+
+`make preprocess SRC=foo.asm.in TARGET=heineman_cartridge`
+produces `build/heineman_cartridge/foo.asm`.
+
+End-to-end test passing as of 2026-05-01: a stub
+`src/levels/_phase3b_demo/LAKE.asm.in` with three conditional
+comment branches preprocesses correctly for both
+`heineman_cartridge` and `heineman_dos` targets, and (since the
+conditional content was just inline comments) the assembled
+output for the cartridge target is byte-identical to the original
+Genesis-EU level_0 chunk (`md5=e24580ddb549...`).
+
+### What's still pending
+
+The infrastructure is in place. **What's deferred** is the
+labour-intensive part: actually authoring unified
+`.asm.in` files for each (branch-pair, stage). For each pair to
+be unified, the maintainer must:
+
+1. Find every byte-level divergence between the two source files.
+2. Decide which divergences belong in `;@if` blocks (genuine
+   per-branch differences) vs which can be unified by parameter-
+   ising labels.
+3. Author the unified `.asm.in`.
+4. Verify byte-match against both ports' original output.
+
+The most promising next-step targets (highest cross-branch
+similarity):
+
+| Pair | Stage | Structural sim | Notes |
+|---|---|---|---|
+| heineman_cartridge ↔ foxy_gba_2004 | INTRO | 0.988 | Easiest target |
+| heineman_dos ↔ heineman_cartridge | INTRO | 0.979 | Next |
+| heineman_cartridge ↔ foxy_gba_2004 | LAKE | 0.920 | After INTRO |
+| heineman_dos ↔ heineman_cartridge | LAKE | 0.914 | |
+
+Cross-branch unification across to **chahi_1991** (Amiga) is
+lower-priority — most stages share 60-65% structure with the
+Heineman lineage, which would require many `;@if` blocks.
 
 ## Phase 4 — Atari ST 1991 + other gated ports
 

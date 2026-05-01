@@ -109,6 +109,17 @@ verify-stages:
 	@cd $(ARCHAEOLOGY) && python3 tools/verify_stage.py \
 	    --src-tree $(realpath src/levels)
 
+# Phase 3b: source files with `;@if BRANCH == "..."` conditional directives.
+# `make preprocess SRC=path/to/foo.asm.in TARGET=heineman_cartridge`
+# emits the per-branch .asm to build/<TARGET>/.
+.PHONY: preprocess
+preprocess:
+	@if [ -z "$(SRC)" ]; then echo "specify SRC=path/to/foo.asm.in" >&2; exit 1; fi
+	@mkdir -p $(BUILD_DIR)
+	@python3 $(ARCHAEOLOGY)/tools/awvm_preprocess.py \
+	    $(SRC) $(FLAGS_FILE) \
+	    -o $(BUILD_DIR)/$(notdir $(basename $(SRC)))
+
 # -----------------------------------------------------------------------------
 # Phase 2 (not yet implemented): byte-matching BYTECODE + polygon resources +
 # palettes + sound + bank packaging for the full DOS port. See issue #0060.
