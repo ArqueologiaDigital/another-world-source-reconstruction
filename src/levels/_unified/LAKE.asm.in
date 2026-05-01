@@ -912,8 +912,6 @@ SOME_VIDEO_BUFFER_MAGIC:
 LABEL_00EE:
 	break
 	text id=0x013D, x=5, y=80, color=0x0C
-
-   PRESS START FOR CODE ENTRY"
 	text id=0x013C, x=5, y=180, color=0x0D
 	text id=0x015E, x=26, y=180, color=0x0E
 	call LABEL_012F
@@ -921,8 +919,6 @@ LABEL_00EE:
 
 LABEL_010A:
 	text id=0x013D, x=5, y=80, color=0x0C
-
-   PRESS START FOR CODE ENTRY"
 	text id=0x013C, x=5, y=180, color=0x0D
 	text id=0x015E, x=26, y=180, color=0x0E
 	break
@@ -2318,11 +2314,6 @@ LABEL_111F:
 	fill page=0x00, color=0x00
 	selectVideoPage 0x00
 	text id=0x01FA, x=6, y=70, color=0x0F
-A Cinematic Action Adventure
- Coming soon to a computer
-      screen near you
- from Interplay Productions
-   coming soon to the IBM"
 	selectVideoPage 0xFF
 	break
 	setPalette 0x02
@@ -5163,51 +5154,54 @@ LABEL_2F77:
 	killChannel
 
 LABEL_2F85:
+	jmp CHECK_IF_BEAST_IS_NEAR_LESTER
+	mov [0x07], 0x0000
+	mov [0x12], [0x01]
+	add [0x12], [0x13]
 ;@if BRANCH == "heineman_cartridge"
-	jmp LABEL_2F9D
-;@elif BRANCH == "foxy_gba_2004"
-	jmp LABEL_2FC1
-;@endif
-	mov [0x07], 0x0000
-	mov [0x12], [0x01]
-;@if BRANCH == "foxy_gba_2004"
-	add [0x12], [0x13]
-	jg [0x0C], [0x12], LABEL_2FC0
-	mov [0x07], 0x0001
-LABEL_2FC0:
-	ret
-
-LABEL_2FC1:
-	mov [0x07], 0x0000
-	je [0xE2], 0x01, LABEL_1B46
-	mov [0x12], [0x01]
-	sub [0x12], [0x13]
-	jl [0x0C], [0x12], LABEL_2F9C
-	add [0x12], [0x13]
-;@endif
-	add [0x12], [0x13]
 	jg [0x0C], [0x12], LABEL_2F9C
+;@elif BRANCH == "foxy_gba_2004"
+	jg [0x0C], [0x12], LABEL_2FC0
+;@endif
 	mov [0x07], 0x0001
+;@if BRANCH == "heineman_cartridge"
 
 LABEL_2F9C:
+;@elif BRANCH == "foxy_gba_2004"
+LABEL_2FC0:
+;@endif
 	ret
 
-LABEL_2F9D:
-;@if BRANCH == "heineman_cartridge"
+CHECK_IF_BEAST_IS_NEAR_LESTER:
 	mov [0x07], 0x0000
 	je [0xE2], 0x01, LABEL_1B46
 	mov [0x12], [0x01]
 	sub [0x12], [0x13]
+;@if BRANCH == "heineman_cartridge"
 	jl [0x0C], [0x12], LABEL_2FC3
+;@elif BRANCH == "foxy_gba_2004"
+	jl [0x0C], [0x12], LABEL_2F9C
+;@endif
 	add [0x12], [0x13]
 	add [0x12], [0x13]
+;@if BRANCH == "heineman_cartridge"
 	jg [0x0C], [0x12], LABEL_2FC3
+;@elif BRANCH == "foxy_gba_2004"
+	jg [0x0C], [0x12], LABEL_2F9C
+;@endif
 	mov [0x07], 0x0001
 
+;@if BRANCH == "heineman_cartridge"
 LABEL_2FC3:
+;@elif BRANCH == "foxy_gba_2004"
+LABEL_2F9C:
+;@endif
 	ret
 
-LABEL_2FC4:
+;@if BRANCH == "heineman_cartridge"
+IF_BEAST_NEAR_THEN_REACT_ELSE_KILL_THREAD:
+;@elif BRANCH == "foxy_gba_2004"
+LABEL_2FC3:
 ;@endif
 	je [0x07], 0x01, LABEL_30E4
 	killChannel
@@ -5232,9 +5226,9 @@ LABEL_2FD6:
 	break
 	call LABEL_2F85
 ;@if BRANCH == "heineman_cartridge"
-	jne [0x07], 0x00, LABEL_2FC4
+	jne [0x07], 0x00, IF_BEAST_NEAR_THEN_REACT_ELSE_KILL_THREAD
 ;@elif BRANCH == "foxy_gba_2004"
-	jne [0x07], 0x00, LABEL_2F9D
+	jne [0x07], 0x00, LABEL_2FC3
 ;@endif
 	video type=1, offset=CINEMATIC_412, x=[0x0c], y=[0x0d], zoom=0x40
 	break
@@ -5280,11 +5274,7 @@ LABEL_305F:
 	break
 	video type=1, offset=CINEMATIC_336, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-;@if BRANCH == "heineman_cartridge"
-	call LABEL_2F9D
-;@elif BRANCH == "foxy_gba_2004"
-	call LABEL_2FC1
-;@endif
+	call CHECK_IF_BEAST_IS_NEAR_LESTER
 	jne [0x07], 0x00, LABEL_2FCB
 	video type=1, offset=CINEMATIC_455, x=[0x0c], y=[0x0d], zoom=0x40
 	break
