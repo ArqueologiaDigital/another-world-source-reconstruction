@@ -1612,12 +1612,10 @@ LABEL_0057:
 	mov [0x04], 0x0000
 	mov [HERO_ACTION_POS_MASK], 0x0000
 	mov [0x01], 0x0000
-;@if BRANCH == "heineman_cartridge"
+;@if BRANCH in ("chahi_1991", "heineman_cartridge")
 	mov [PAUSE_SLICES], 0x0004
 ;@elif BRANCH == "foxy_gba_2004"
 	mov [PAUSE_SLICES], 0x0007
-;@elif BRANCH == "chahi_1991"
-	mov [PAUSE_SLICES], 0x0004
 ;@endif
 	break
 	call LIKELY_A_COPY_PROTECTION_MECHANISM
