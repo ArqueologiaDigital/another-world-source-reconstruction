@@ -39,7 +39,7 @@ per-release `.flags` files.
 ### `BYTECODE_BRANCH`
 
 **Type**: enum  
-**Values**: `chahi_1991`, `dos_1992`, `heineman_cartridge_1992`, `foxy_gba_2004`  
+**Values**: `chahi_amiga_1991`, `dos_1992`, `cartridge_1992_1992`, `gba_2004`  
 **Default**: `dos_1992` (the most-archived port)
 
 Selects which bytecode tree this release inherits from. The
@@ -50,11 +50,11 @@ bytecode branches, not one — DOS has its own hash; SNES-EU +
 Genesis-EU share a byte-identical resource.
 
 Per-port mapping:
-- `chahi_1991`: Amiga 1991 + Atari ST 1991 (byte-identical bytecode)
+- `chahi_amiga_1991`: Amiga 1991 + Atari ST 1991 (byte-identical bytecode)
 - `dos_1992`: MS-DOS 1992
-- `heineman_cartridge_1992`: SNES-EU 1992 + Genesis-EU 1993
+- `cartridge_1992_1992`: SNES-EU 1992 + Genesis-EU 1993
   (byte-identical bytecode — strong cross-CPU port reuse signal)
-- `foxy_gba_2004`: GBA fan port (modified bytecode, gates preserved)
+- `gba_2004`: GBA fan port (modified bytecode, gates preserved)
 
 ### `CODEWHEEL_CHECK`
 

@@ -632,7 +632,7 @@ LABEL_0022:
 
 LABEL_007F:
 	setup channel=0x01, address=LABEL_22ED
-;@if BRANCH == "foxy_gba_2004"
+;@if BRANCH == "gba_2004"
 	song id=0x0FB9, delay=0x0000, pos=0x01
 ;@endif
 	setup channel=0x02, address=LABEL_23C9
@@ -1239,7 +1239,7 @@ LABEL_05FC:
 	setup channel=0x03, address=LABEL_0DD7
 	setup channel=0x01, address=LABEL_22ED
 	setup channel=0x3C, address=LABEL_00A6
-;@if BRANCH == "foxy_gba_2004"
+;@if BRANCH == "gba_2004"
 	song id=0x0FBA, delay=0x0000, pos=0x01
 ;@endif
 	break
@@ -4120,9 +4120,9 @@ LABEL_23C9:
 ; the GBA port may need longer to sync the sound effect's end with
 ; the next animation cue (or just a tuning fix specific to this
 ; one moment in the game).
-;@if BRANCH == "heineman_cartridge"
+;@if BRANCH == "cartridge_1992"
 	mov [0x01], 0x0012
-;@elif BRANCH == "foxy_gba_2004"
+;@elif BRANCH == "gba_2004"
 	mov [0x01], 0x0024
 ;@endif
 
@@ -4377,8 +4377,8 @@ LABEL_269E:
 	jmp LABEL_269E
 LABEL_26A6:
 	killChannel
-;@if BRANCH == "heineman_cartridge"
+;@if BRANCH == "cartridge_1992"
 	FILL(55641, 0xFF)
-;@elif BRANCH == "foxy_gba_2004"
+;@elif BRANCH == "gba_2004"
 	FILL(55629, 0xFF)
 ;@endif

@@ -1,7 +1,7 @@
 # Amiga 1991 (Chahi). archive.org dump (md5 of Disk1.adf:
 # abe1b4687448ba9754d3fb3e78929636).
 
-BYTECODE_BRANCH=chahi_1991
+BYTECODE_BRANCH=chahi_amiga_1991
 CODEWHEEL_CHECK=on
 BEETLE_KICK_GATE_1=on
 BEETLE_RENDERING_GATE_2=off

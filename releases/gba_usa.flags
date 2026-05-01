@@ -1,7 +1,7 @@
 # Game Boy Advance fan port (Foxy / Magic Pockets, 2004).
 # Modified bytecode (own md5 hash 37487368…), gates 1+2 preserved.
 
-BYTECODE_BRANCH=foxy_gba_2004
+BYTECODE_BRANCH=gba_2004
 CODEWHEEL_CHECK=off
 BEETLE_KICK_GATE_1=on
 BEETLE_RENDERING_GATE_2=on

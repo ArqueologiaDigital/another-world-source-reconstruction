@@ -104,13 +104,13 @@ files**. Source tree at `src/levels/<branch>/<stage>.asm`:
 
 | Branch | Source files | Targets covered |
 |---|---|---|
-| `chahi_1991` | 9 stages | amiga (atari_st when extractor lands) |
+| `chahi_amiga_1991` | 9 stages | amiga (atari_st when extractor lands) |
 | `dos_1992` | 9 stages | msdos |
-| `heineman_cartridge` | 8 stages | snes_eu + genesis_europe |
-| `foxy_gba_2004` | 2 stages | gba_usa |
+| `cartridge_1992` | 8 stages | snes_eu + genesis_europe |
+| `gba_2004` | 2 stages | gba_usa |
 | **Total** | **28 .asm files** | **29 (port, stage) targets** |
 
-The deduplication: `heineman_cartridge/LAKE.asm` produces
+The deduplication: `cartridge_1992/LAKE.asm` produces
 byte-identical output for **both** SNES-EU level_1 and
 Genesis-EU level_0. (Two targets, one source.)
 
@@ -135,7 +135,7 @@ likewise, etc. (See research/07 in archaeology for the full
 hash matrix.) Phase 3a's value is **structural**: organizing
 the source tree by genealogical branch rather than by port slot,
 making future deduplications trivial when more ports come online
-(Atari ST will share Amiga's chahi_1991 sources verbatim).
+(Atari ST will share Amiga's chahi_amiga_1991 sources verbatim).
 
 ## Phase 3b — Conditional-compilation pipeline (✅ infrastructure achieved 2026-05-01)
 
@@ -161,7 +161,7 @@ The build pipeline now supports conditional compilation via
 **comment-syntax directives**:
 
 ```asm
-;@if BRANCH == "heineman_cartridge"
+;@if BRANCH == "cartridge_1992"
     setup channel=0x09, address=LABEL_CARTRIDGE_SPECIFIC
 ;@elif BRANCH == "dos_1992"
     setup channel=0x09, address=LABEL_DOS_SPECIFIC
@@ -174,13 +174,13 @@ The preprocessor (`another-world-archaeology/tools/awvm_preprocess.py`)
 reads a `releases/<target>.flags` file, evaluates each `;@if`
 condition, and emits a per-branch `.asm` ready for `awvm-asm`.
 
-`make preprocess SRC=foo.asm.in TARGET=heineman_cartridge`
-produces `build/heineman_cartridge/foo.asm`.
+`make preprocess SRC=foo.asm.in TARGET=cartridge_1992`
+produces `build/cartridge_1992/foo.asm`.
 
 End-to-end test passing as of 2026-05-01: a stub
 `src/levels/_phase3b_demo/LAKE.asm.in` with three conditional
 comment branches preprocesses correctly for both
-`heineman_cartridge` and `dos_1992` targets, and (since the
+`cartridge_1992` and `dos_1992` targets, and (since the
 conditional content was just inline comments) the assembled
 output for the cartridge target is byte-identical to the original
 Genesis-EU level_0 chunk (`md5=e24580ddb549...`).
@@ -204,12 +204,12 @@ similarity):
 
 | Pair | Stage | Structural sim | Notes |
 |---|---|---|---|
-| heineman_cartridge ↔ foxy_gba_2004 | INTRO | 0.988 | Easiest target |
-| dos_1992 ↔ heineman_cartridge | INTRO | 0.979 | Next |
-| heineman_cartridge ↔ foxy_gba_2004 | LAKE | 0.920 | After INTRO |
-| dos_1992 ↔ heineman_cartridge | LAKE | 0.914 | |
+| cartridge_1992 ↔ gba_2004 | INTRO | 0.988 | Easiest target |
+| dos_1992 ↔ cartridge_1992 | INTRO | 0.979 | Next |
+| cartridge_1992 ↔ gba_2004 | LAKE | 0.920 | After INTRO |
+| dos_1992 ↔ cartridge_1992 | LAKE | 0.914 | |
 
-Cross-branch unification across to **chahi_1991** (Amiga) is
+Cross-branch unification across to **chahi_amiga_1991** (Amiga) is
 lower-priority — most stages share 60-65% structure with the
 Heineman lineage, which would require many `;@if` blocks.
 

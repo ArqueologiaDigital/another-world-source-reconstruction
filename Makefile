@@ -110,7 +110,7 @@ verify-stages:
 	    --src-tree $(realpath src/levels)
 
 # Phase 3b: source files with `;@if BRANCH == "..."` conditional directives.
-# `make preprocess SRC=path/to/foo.asm.in TARGET=heineman_cartridge`
+# `make preprocess SRC=path/to/foo.asm.in TARGET=cartridge_1992`
 # emits the per-branch .asm to build/<TARGET>/.
 .PHONY: preprocess
 preprocess:

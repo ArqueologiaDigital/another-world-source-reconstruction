@@ -4,7 +4,7 @@
 # Per research/05: shares byte-identical bytecode with Genesis-EU
 # (both descend from a single Heineman cartridge build).
 
-BYTECODE_BRANCH=heineman_cartridge_1992
+BYTECODE_BRANCH=cartridge_1992
 CODEWHEEL_CHECK=off
 BEETLE_KICK_GATE_1=on
 BEETLE_RENDERING_GATE_2=on
