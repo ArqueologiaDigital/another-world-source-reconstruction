@@ -16,7 +16,7 @@
 # the 1991 Chahi master and the Heineman lineage are byte-distinct;
 # within the Heineman lineage, DOS 1992 has its own bytecode but
 # SNES-EU 1992 + Genesis-EU 1993 share byte-identical bytecode.
-BYTECODE_BRANCH=heineman_dos_1992
+BYTECODE_BRANCH=dos_1992
 
 # ----- copy protection -----
 #

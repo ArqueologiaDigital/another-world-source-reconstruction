@@ -14,7 +14,7 @@ via [the archaeology project](../../another-world-archaeology/)).
     - `MAC_*` — Mac-specific
     - `BYTECODE_*` — bytecode lineage / branch selection
 - Boolean flags use `_*=on/off`; enums use descriptive values
-  (`BYTECODE_BRANCH=heineman_dos_1992`); ints are decimal.
+  (`BYTECODE_BRANCH=dos_1992`); ints are decimal.
 
 A flag's name describes **what feature** it governs — never **which
 release** it's used in. The release-to-flag mapping lives in the
@@ -39,19 +39,19 @@ per-release `.flags` files.
 ### `BYTECODE_BRANCH`
 
 **Type**: enum  
-**Values**: `chahi_1991`, `heineman_dos_1992`, `heineman_cartridge_1992`, `foxy_gba_2004`  
-**Default**: `heineman_dos_1992` (the most-archived port)
+**Values**: `chahi_1991`, `dos_1992`, `heineman_cartridge_1992`, `foxy_gba_2004`  
+**Default**: `dos_1992` (the most-archived port)
 
 Selects which bytecode tree this release inherits from. The
 2026-04-30 cartridge cross-check
 ([research/05](../../another-world-archaeology/docs/content/research/05-beetle-in-the-lake-stage.md))
-established that the Heineman 1992-93 ports carry **two** distinct
+established that the Heineman cartridge ports (1992-93) carry **two** distinct
 bytecode branches, not one — DOS has its own hash; SNES-EU +
 Genesis-EU share a byte-identical resource.
 
 Per-port mapping:
 - `chahi_1991`: Amiga 1991 + Atari ST 1991 (byte-identical bytecode)
-- `heineman_dos_1992`: MS-DOS 1992
+- `dos_1992`: MS-DOS 1992
 - `heineman_cartridge_1992`: SNES-EU 1992 + Genesis-EU 1993
   (byte-identical bytecode — strong cross-CPU port reuse signal)
 - `foxy_gba_2004`: GBA fan port (modified bytecode, gates preserved)

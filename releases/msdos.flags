@@ -1,7 +1,7 @@
-# MS-DOS 1992 (Heineman). Reference target for source reconstruction.
+# MS-DOS 1992 (Daniel Morais — Delphine Software). Reference target for source reconstruction.
 # md5 of the package (Aworld_1994.zip): 076117919d1dca51e486f33b8f7817e3
 
-BYTECODE_BRANCH=heineman_dos_1992
+BYTECODE_BRANCH=dos_1992
 CODEWHEEL_CHECK=on
 BEETLE_KICK_GATE_1=on
 BEETLE_RENDERING_GATE_2=on

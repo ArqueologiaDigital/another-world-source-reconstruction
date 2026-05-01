@@ -105,7 +105,7 @@ files**. Source tree at `src/levels/<branch>/<stage>.asm`:
 | Branch | Source files | Targets covered |
 |---|---|---|
 | `chahi_1991` | 9 stages | amiga (atari_st when extractor lands) |
-| `heineman_dos` | 9 stages | msdos |
+| `dos_1992` | 9 stages | msdos |
 | `heineman_cartridge` | 8 stages | snes_eu + genesis_europe |
 | `foxy_gba_2004` | 2 stages | gba_usa |
 | **Total** | **28 .asm files** | **29 (port, stage) targets** |
@@ -163,7 +163,7 @@ The build pipeline now supports conditional compilation via
 ```asm
 ;@if BRANCH == "heineman_cartridge"
     setup channel=0x09, address=LABEL_CARTRIDGE_SPECIFIC
-;@elif BRANCH == "heineman_dos"
+;@elif BRANCH == "dos_1992"
     setup channel=0x09, address=LABEL_DOS_SPECIFIC
 ;@else
     setup channel=0x09, address=LABEL_DEFAULT
@@ -180,7 +180,7 @@ produces `build/heineman_cartridge/foo.asm`.
 End-to-end test passing as of 2026-05-01: a stub
 `src/levels/_phase3b_demo/LAKE.asm.in` with three conditional
 comment branches preprocesses correctly for both
-`heineman_cartridge` and `heineman_dos` targets, and (since the
+`heineman_cartridge` and `dos_1992` targets, and (since the
 conditional content was just inline comments) the assembled
 output for the cartridge target is byte-identical to the original
 Genesis-EU level_0 chunk (`md5=e24580ddb549...`).
@@ -205,9 +205,9 @@ similarity):
 | Pair | Stage | Structural sim | Notes |
 |---|---|---|---|
 | heineman_cartridge ↔ foxy_gba_2004 | INTRO | 0.988 | Easiest target |
-| heineman_dos ↔ heineman_cartridge | INTRO | 0.979 | Next |
+| dos_1992 ↔ heineman_cartridge | INTRO | 0.979 | Next |
 | heineman_cartridge ↔ foxy_gba_2004 | LAKE | 0.920 | After INTRO |
-| heineman_dos ↔ heineman_cartridge | LAKE | 0.914 | |
+| dos_1992 ↔ heineman_cartridge | LAKE | 0.914 | |
 
 Cross-branch unification across to **chahi_1991** (Amiga) is
 lower-priority — most stages share 60-65% structure with the
