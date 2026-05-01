@@ -682,14 +682,13 @@ LABEL_00D6:
 	break
 	jmp LABEL_00D6
 LABEL_00E4:
-	db 0x03, 0xC7, 0x00, 0x01, 0x10, 0xFF, 0x0D, 0xFF
-;@if BRANCH == "heineman_cartridge"
-	db 0x0A, 0x01, 0xFA, 0x00, 0x09, 0xCA, 0x0E, 0xFF
-	db 0x01, 0x06, 0x07, 0x00, 0xE4
-;@elif BRANCH == "foxy_gba_2004"
-	db 0x0A, 0x01, 0xFA, 0x00, 0x09, 0xD6, 0x0E, 0xFF
-	db 0x01, 0x06, 0x07, 0x00, 0xEA
-;@endif
+	db 0x03, 0xC7, 0x00, 0x01
+	db 0x10, 0xFF
+	db 0x0D, 0xFF
+	jne [0xFA], 0x00, LABEL_09CA
+	db 0x0E, 0xFF, 0x01
+	break
+	jmp LABEL_00E4
 
 LABEL_00F9:
 	fill page=0x01, color=0x00
@@ -871,14 +870,14 @@ LABEL_02A7:
 	break
 	jmp LABEL_02A7
 LABEL_02AF:
-	db 0x11
+	killChannel
 
 LABEL_02B0:
 	add [0x05], 0x000A
 	break
 	jmp LABEL_02B0
 LABEL_02B8:
-	db 0x11
+	killChannel
 
 LABEL_02B9:
 	break
@@ -917,7 +916,7 @@ LABEL_02B9:
 	video type=1, offset=CINEMATIC_DNA_16, x=[0x04], y=[0x05], zoom=[0x06]	;@raw=0x55,0x7C,0x83,0x04,0x05,0x06
 	jmp LABEL_02B9
 LABEL_0333:
-	db 0x11
+	killChannel
 
 LABEL_0334:
 	video type=1, offset=CINEMATIC_166, x=160, y=100	;@raw=0xFA,0xEC,0xA0,0x64
@@ -959,7 +958,7 @@ LABEL_0382:
 	break
 	jmp LABEL_0382
 LABEL_0390:
-	db 0x11
+	killChannel
 
 LABEL_0391:
 	video type=1, offset=CINEMATIC_453, x=160, y=100	;@raw=0xF9,0xF0,0xA0,0x64
@@ -1034,7 +1033,7 @@ LABEL_041C:
 	video type=1, offset=CINEMATIC_052, x=160, y=100	;@raw=0xD5,0xFD,0xA0,0x64
 	jmp LABEL_0417
 LABEL_0448:
-	db 0x11
+	killChannel
 
 LABEL_0449:
 	break
@@ -1064,7 +1063,7 @@ LABEL_044E:
 	play id=0x0008, freq=0x0C, vol=0x3F, channel=0x03
 	jmp LABEL_0449
 LABEL_048E:
-	db 0x11
+	killChannel
 
 LABEL_048F:
 	break
@@ -1091,7 +1090,7 @@ LABEL_0494:
 	play id=0x0008, freq=0x01, vol=0x3F, channel=0x02
 	jmp LABEL_048F
 LABEL_04C9:
-	db 0x11
+	killChannel
 
 LABEL_04CA:
 	break
@@ -1133,7 +1132,7 @@ LABEL_051E:
 	djnz [0x05], LABEL_051E
 	jmp LABEL_04CA
 LABEL_0526:
-	db 0x11
+	killChannel
 
 LABEL_0527:
 	break
@@ -1201,7 +1200,7 @@ LABEL_0586:
 	video type=1, offset=CINEMATIC_357, x=[0x07], y=[0x09], zoom=0x40	;@raw=0x54,0x57,0x57,0x07,0x09
 	jmp LABEL_0586
 LABEL_05A7:
-	db 0x11
+	killChannel
 
 LABEL_05A8:
 	break
@@ -1218,7 +1217,7 @@ LABEL_05B1:
 	djnz [0x0B], LABEL_05B1
 	jmp LABEL_05A8
 LABEL_05D1:
-	db 0x11
+	killChannel
 
 LABEL_05D2:
 	break
@@ -1235,7 +1234,7 @@ LABEL_05DB:
 	djnz [0x0D], LABEL_05DB
 	jmp LABEL_05D2
 LABEL_05FB:
-	db 0x11
+	killChannel
 
 LABEL_05FC:
 	setup channel=0x03, address=LABEL_0DD7
@@ -1313,14 +1312,14 @@ LABEL_0658:
 	setup channel=0x01, address=LABEL_0090
 	jmp LABEL_06E0
 LABEL_06D7:
-	db 0x11
+	killChannel
 
 LABEL_06D8:
 	fill page=0xFF, color=0x02
 	break
 	jmp LABEL_06D8
 LABEL_06DF:
-	db 0x11
+	killChannel
 
 LABEL_06E0:
 	selectVideoPage 0x00
@@ -1379,7 +1378,7 @@ LABEL_06E0:
 	break
 	jmp LABEL_0DEB
 LABEL_0775:
-	db 0x11
+	killChannel
 
 LABEL_0776:
 	setup channel=0x3C, address=LABEL_00A6
@@ -1598,7 +1597,7 @@ LABEL_09FE:
 	djnz [0x02], LABEL_09FE
 	jmp LABEL_09DB
 LABEL_0A06:
-	db 0x11
+	killChannel
 
 LABEL_0A07:
 	video type=1, offset=CINEMATIC_340, x=160, y=100	;@raw=0xF6,0x32,0xA0,0x64
@@ -1626,7 +1625,7 @@ LABEL_0A3D:
 	djnz [0x04], LABEL_0A3D
 	jmp LABEL_0A07
 LABEL_0A45:
-	db 0x11
+	killChannel
 
 LABEL_0A46:
 	break
@@ -1642,7 +1641,7 @@ LABEL_0A59:
 	djnz [0x06], LABEL_0A59
 	jmp LABEL_0A46
 LABEL_0A61:
-	db 0x11
+	killChannel
 
 LABEL_0A62:
 	break
@@ -1661,7 +1660,7 @@ LABEL_0A80:
 	djnz [0x08], LABEL_0A80
 	jmp LABEL_0A62
 LABEL_0A88:
-	db 0x11
+	killChannel
 
 LABEL_0A89:
 	break
@@ -1705,7 +1704,7 @@ LABEL_0AE2:
 	djnz [0x0A], LABEL_0AE2
 	jmp LABEL_0A89
 LABEL_0AEA:
-	db 0x11
+	killChannel
 
 LABEL_0AEB:
 	break
@@ -1768,7 +1767,7 @@ LABEL_0B77:
 	djnz [0x0C], LABEL_0B77
 	jmp LABEL_0AEB
 LABEL_0B7F:
-	db 0x11
+	killChannel
 
 LABEL_0B80:
 	break
@@ -1811,7 +1810,7 @@ LABEL_0BC3:
 	video type=1, offset=CINEMATIC_328, x=134, y=169	;@raw=0xF7,0x56,0x86,0xA9
 	jmp LABEL_0B80
 LABEL_0BDE:
-	db 0x11
+	killChannel
 
 LABEL_0BDF:
 	break
@@ -1863,7 +1862,7 @@ LABEL_0C49:
 	djnz [0x0F], LABEL_0C49
 	jmp LABEL_0C1C
 LABEL_0C51:
-	db 0x11
+	killChannel
 
 LABEL_0C52:
 	break
@@ -1888,7 +1887,7 @@ LABEL_0C7F:
 	djnz [0x10], LABEL_0C7F
 	jmp LABEL_0C52
 LABEL_0C87:
-	db 0x11
+	killChannel
 
 LABEL_0C88:
 	setPalette 0x18	;@raw=0x0B,0x18,0xFF
@@ -1899,7 +1898,7 @@ LABEL_0C88:
 	break
 	jmp LABEL_0C88
 LABEL_0C95:
-	db 0x11
+	killChannel
 
 LABEL_0C96:
 	setPalette 0x17	;@raw=0x0B,0x17,0xFF
@@ -1923,7 +1922,7 @@ LABEL_0C9D:
 	break
 	jmp LABEL_0C96
 LABEL_0CBC:
-	db 0x11
+	killChannel
 
 LABEL_0CBD:
 	break
@@ -2012,7 +2011,7 @@ LABEL_0D71:
 	break
 	jmp LABEL_0776
 LABEL_0DD6:
-	db 0x11
+	killChannel
 
 LABEL_0DD7:
 	selectVideoPage 0x03
@@ -2125,7 +2124,7 @@ LABEL_0E5C:
 	play id=0x000E, freq=0x01, vol=0x3F, channel=0x02
 	jmp LABEL_0CBD
 LABEL_0F48:
-	db 0x11
+	killChannel
 
 LABEL_0F49:
 	fill page=0xFF, color=0x04
@@ -2343,14 +2342,14 @@ LABEL_1195:
 	break
 	jmp LABEL_1195
 LABEL_119E:
-	db 0x11
+	killChannel
 
 LABEL_119F:
 	video type=1, offset=CINEMATIC_431, x=[0x03], y=[0x04], zoom=0x40	;@raw=0x54,0x7D,0x94,0x03,0x04
 	break
 	jmp LABEL_119F
 LABEL_11A8:
-	db 0x11
+	killChannel
 
 LABEL_11A9:
 	video type=1, offset=CINEMATIC_432, x=160, y=100	;@raw=0xF1,0x0A,0xA0,0x64
@@ -2361,7 +2360,7 @@ LABEL_11A9:
 	break
 	jmp LABEL_11A9
 LABEL_11BB:
-	db 0x11
+	killChannel
 
 LABEL_11BC:
 	video type=1, offset=CINEMATIC_439, x=160, y=100	;@raw=0xEE,0xD9,0xA0,0x64
@@ -2372,7 +2371,7 @@ LABEL_11BC:
 	break
 	jmp LABEL_11BC
 LABEL_11CE:
-	db 0x11
+	killChannel
 
 LABEL_11CF:
 	video type=1, offset=CINEMATIC_435, x=160, y=100	;@raw=0xEF,0xA3,0xA0,0x64
@@ -2385,7 +2384,7 @@ LABEL_11CF:
 	break
 	jmp LABEL_11CF
 LABEL_11E6:
-	db 0x11
+	killChannel
 
 LABEL_11E7:
 	fill page=0xFF, color=0x02
@@ -2710,37 +2709,44 @@ LABEL_152E:
 	break
 	jmp LABEL_152E
 LABEL_153F:
-	db 0x11, 0x12, 0x00, 0x3E, 0x0A, 0x78, 0x04, 0x06
-	db 0x12, 0x00, 0x3F, 0x0A, 0x78, 0x04, 0x06, 0x12
-	db 0x00, 0x46, 0x0B, 0x78, 0x04, 0x06, 0x12, 0x00
-	db 0x47, 0x0B, 0x78, 0x04, 0x06, 0x12, 0x00, 0x40
-;@if BRANCH == "heineman_cartridge"
-	db 0x0A, 0x78, 0x04, 0x06, 0x07, 0x15, 0x40, 0x12
-;@elif BRANCH == "foxy_gba_2004"
-	db 0x0A, 0x78, 0x04, 0x06, 0x07, 0x15, 0x4C, 0x12
-;@endif
-	db 0x00, 0x3F, 0x0B, 0x84, 0x04, 0x06, 0x12, 0x00
-	db 0x41, 0x0B, 0x84, 0x04, 0x06, 0x12, 0x00, 0x42
-	db 0x0B, 0x84, 0x04, 0x06, 0x12, 0x00, 0x43, 0x0B
-;@if BRANCH == "heineman_cartridge"
-	db 0x84, 0x04, 0x06, 0x07, 0x15, 0x66, 0x11
-;@elif BRANCH == "foxy_gba_2004"
-	db 0x84, 0x04, 0x06, 0x07, 0x15, 0x72, 0x11
-;@endif
+	killChannel
+LABEL_1540:
+	text id=0x003E, x=10, y=120, color=0x04
+	break
+	text id=0x003F, x=10, y=120, color=0x04
+	break
+	text id=0x0046, x=11, y=120, color=0x04
+	break
+	text id=0x0047, x=11, y=120, color=0x04
+	break
+	text id=0x0040, x=10, y=120, color=0x04
+	break
+	jmp LABEL_1540
+LABEL_1566:
+	text id=0x003F, x=11, y=132, color=0x04
+	break
+	text id=0x0041, x=11, y=132, color=0x04
+	break
+	text id=0x0042, x=11, y=132, color=0x04
+	break
+	text id=0x0043, x=11, y=132, color=0x04
+	break
+	jmp LABEL_1566
+	killChannel
 
 LABEL_1586:
 	selectVideoPage 0x00
 	break
 	jmp LABEL_1586
 LABEL_158C:
-	db 0x11
+	killChannel
 
 LABEL_158D:
 	selectVideoPage 0xFF
 	break
 	jmp LABEL_158D
 LABEL_1593:
-	db 0x11
+	killChannel
 
 LABEL_1594:
 	mov [0x03], 0x000A
@@ -2756,7 +2762,7 @@ LABEL_15A7:
 	djnz [0x03], LABEL_15A7
 	jmp LABEL_1594
 LABEL_15AF:
-	db 0x11
+	killChannel
 
 LABEL_15B0:
 	break
@@ -2999,7 +3005,7 @@ LABEL_17DF:
 	djnz [0x02], LABEL_17DF
 	jmp LABEL_16E4
 LABEL_185D:
-	db 0x11
+	killChannel
 
 LABEL_185E:
 	video type=1, offset=CINEMATIC_426, x=58, y=100	;@raw=0xF1,0xDD,0x3A,0x64
@@ -3013,7 +3019,7 @@ LABEL_185E:
 	break
 	jmp LABEL_185E
 LABEL_187F:
-	db 0x11
+	killChannel
 
 LABEL_1880:
 	fill page=0xFF, color=0x08
@@ -3141,7 +3147,7 @@ LABEL_19A7:
 	djnz [0x09], LABEL_19A3
 	jmp LABEL_1996
 LABEL_19C5:
-	db 0x11
+	killChannel
 
 LABEL_19C6:
 	break
@@ -3354,12 +3360,14 @@ LABEL_1BC7:
 	break
 	jmp LABEL_1BC7
 LABEL_1BEE:
-	db 0x11, 0x06, 0x11, 0x06, 0x9F, 0xB6, 0xBB, 0x65
-;@if BRANCH == "heineman_cartridge"
-	db 0x07, 0x1B, 0xF1, 0x11
-;@elif BRANCH == "foxy_gba_2004"
-	db 0x07, 0x1B, 0xFD, 0x11
-;@endif
+	killChannel
+	break
+	killChannel
+LABEL_1BF1:
+	break
+	db 0x9F, 0xB6, 0xBB, 0x65
+	jmp LABEL_1BF1
+	killChannel
 
 LABEL_1BFA:
 	mov [0x03], 0x0064
@@ -3415,14 +3423,14 @@ LABEL_1C84:
 	break
 	jmp LABEL_1C84
 LABEL_1C8E:
-	db 0x11
+	killChannel
 
 LABEL_1C8F:
 	selectVideoPage 0xFF
 	break
 	jmp LABEL_1C8F
 LABEL_1C95:
-	db 0x11
+	killChannel
 
 LABEL_1C96:
 	mov [0x05], 0x0009
@@ -3441,7 +3449,7 @@ LABEL_1CAD:
 	djnz [0x05], LABEL_1CAD
 	jmp LABEL_1C96
 LABEL_1CBE:
-	db 0x11
+	killChannel
 
 LABEL_1CBF:
 	mov [0x07], 0x0014
@@ -3454,7 +3462,7 @@ LABEL_1CC7:
 	djnz [0x07], LABEL_1CC7
 	jmp LABEL_1CBF
 LABEL_1CD8:
-	db 0x11
+	killChannel
 
 LABEL_1CD9:
 	video type=1, offset=CINEMATIC_450, x=160, y=100	;@raw=0xEE,0x95,0xA0,0x64
@@ -3465,7 +3473,7 @@ LABEL_1CD9:
 	break
 	jmp LABEL_1CD9
 LABEL_1CEB:
-	db 0x11
+	killChannel
 
 LABEL_1CEC:
 	video type=1, offset=CINEMATIC_442, x=221, y=123	;@raw=0x83,0xBE,0xDD,0x7B
@@ -3507,7 +3515,7 @@ LABEL_1D4F:
 	djnz [0x09], LABEL_1D4F
 	jmp LABEL_1CEC
 LABEL_1D57:
-	db 0x11
+	killChannel
 
 LABEL_1D58:
 	video type=1, offset=CINEMATIC_172, x=156, y=94	;@raw=0x9D,0x38,0x9C,0x5E
@@ -3541,7 +3549,7 @@ LABEL_1DAA:
 	break
 	jmp LABEL_1DAA
 LABEL_1DB2:
-	db 0x11
+	killChannel
 
 LABEL_1DB3:
 	mov [0x01], 0x0008
@@ -3747,7 +3755,7 @@ LABEL_1F9D:
 	break
 	jmp LABEL_1F9D
 LABEL_1FD1:
-	db 0x11
+	killChannel
 
 LABEL_1FD2:
 	jne [0x1E], 0x00, LABEL_1FDE
@@ -3926,7 +3934,7 @@ LABEL_219B:
 	djnz [0x08], LABEL_2197
 	jmp LABEL_218B
 LABEL_21B9:
-	db 0x11
+	killChannel
 
 LABEL_21BA:
 	break
@@ -3948,7 +3956,7 @@ LABEL_21D8:
 	djnz [0x05], LABEL_21D8
 	jmp LABEL_21BA
 LABEL_21E0:
-	db 0x11
+	killChannel
 
 LABEL_21E1:
 	video type=1, offset=CINEMATIC_126, x=160, y=[0x01], zoom=0x40	;@raw=0x64,0x21,0xEF,0xA0,0x01
@@ -3956,7 +3964,7 @@ LABEL_21E1:
 	break
 	jmp LABEL_21E1
 LABEL_21EF:
-	db 0x11
+	killChannel
 
 LABEL_21F0:
 	video type=1, offset=CINEMATIC_128, x=160, y=111, zoom=[0x04]	;@raw=0x69,0x21,0x18,0xA0,0x6F,0x04
@@ -3993,7 +4001,7 @@ LABEL_21F0:
 	break
 	jmp LABEL_21F0
 LABEL_2263:
-	db 0x11
+	killChannel
 
 LABEL_2264:
 	video type=1, offset=CINEMATIC_468, x=160, y=111, zoom=[0x04]	;@raw=0x69,0x0C,0x3F,0xA0,0x6F,0x04
@@ -4032,14 +4040,14 @@ LABEL_2264:
 	break
 	jmp LABEL_2264
 LABEL_22E3:
-	db 0x11
+	killChannel
 
 LABEL_22E4:
 	video type=1, offset=CINEMATIC_005, x=90, y=101	;@raw=0x86,0x5C,0x5A,0x65
 	break
 	jmp LABEL_22E4
 LABEL_22EC:
-	db 0x11
+	killChannel
 
 LABEL_22ED:
 	selectVideoPage 0x00
@@ -4191,7 +4199,7 @@ LABEL_24D9:
 	djnz [0x01], LABEL_24D9
 	jmp LABEL_03A5
 LABEL_24E5:
-	db 0x11
+	killChannel
 
 LABEL_24E6:
 	break
