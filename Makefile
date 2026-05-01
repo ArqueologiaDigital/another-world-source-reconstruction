@@ -100,6 +100,15 @@ verify-bytecode-all:
 verify-resources-all:
 	@cd $(ARCHAEOLOGY) && python3 tools/verify_resources.py --port _ --all
 
+# Phase 3a: branch-organized canonical sources at src/levels/<branch>/<stage>.asm.
+# One canonical .asm per (branch, stage); each ports's level slot maps to a
+# (branch, stage) lookup at build time. The win: when two ports share
+# byte-identical bytecode, they share ONE source file.
+.PHONY: verify-stages
+verify-stages:
+	@cd $(ARCHAEOLOGY) && python3 tools/verify_stage.py \
+	    --src-tree $(realpath src/levels)
+
 # -----------------------------------------------------------------------------
 # Phase 2 (not yet implemented): byte-matching BYTECODE + polygon resources +
 # palettes + sound + bank packaging for the full DOS port. See issue #0060.

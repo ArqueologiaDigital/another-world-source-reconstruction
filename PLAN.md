@@ -92,34 +92,68 @@ The source-reconstruction project produces byte-matching SETS OF
 RESOURCES (bytecode + raw assets), not byte-matching distribution
 packages.
 
-## Phase 3 — Unified source via conditional compilation (still in scope)
+## Phase 3a — Branch-organized canonical sources (✅ achieved 2026-05-01)
 
-**Goal**: a single source tree that produces byte-matching
-resources for multiple ports via flags.
+**Goal**: collapse per-port .asm files into per-branch canonical
+sources, sharing one file across ports when their bytecode is
+byte-identical.
 
-Bytecode is the only place this matters at present, since raw
-assets are passthrough. So Phase 3 reduces to:
+**Achieved**: `make verify-stages` reports
+**29/29 (port, stage) byte-matches across 28 canonical .asm
+files**. Source tree at `src/levels/<branch>/<stage>.asm`:
 
-- Diff the per-port .asm files (e.g., amiga_level-2.asm vs
-  msdos_level-2.asm) and identify the divergent regions.
-- Refactor into a unified .asm with `#ifdef BYTECODE_BRANCH ...`
-  or similar conditionals.
-- Per-port .flags file selects the right branch.
-- The build assembles the unified .asm with the selected flags and
-  produces byte-matching bytecode.
+| Branch | Source files | Targets covered |
+|---|---|---|
+| `chahi_1991` | 9 stages | amiga (atari_st when extractor lands) |
+| `heineman_dos` | 9 stages | msdos |
+| `heineman_cartridge` | 8 stages | snes_eu + genesis_europe |
+| `foxy_gba_2004` | 2 stages | gba_usa |
+| **Total** | **28 .asm files** | **29 (port, stage) targets** |
 
-The bytecode has 4 distinct branches across the 5 ports we cover:
-1. Chahi 1991 (Amiga + Atari ST)
-2. Heineman DOS 1992
-3. Heineman cartridge 1992-93 (SNES-EU + Genesis-EU)
-4. Foxy GBA 2004
+The deduplication: `heineman_cartridge/LAKE.asm` produces
+byte-identical output for **both** SNES-EU level_1 and
+Genesis-EU level_0. (Two targets, one source.)
 
-Phase 3 is therefore non-trivial (it has to capture every
-between-branch divergence) but well-bounded (only 4 source trees
-to merge per level). Issue #0061 tracks.
+The driver (`tools/verify_stage.py` in archaeology repo) reads a
+table that maps each port's level slots to (branch, stage)
+pairs:
+- `snes_eu`: { CODE_WHEEL=0, LAKE=1 }
+- `genesis_europe`: { LAKE=0, PRISON=1, …, PASSCODE=6 }
+- `msdos`: { CODE_WHEEL=0x15, INTRO=0x18, LAKE=0x1B, … }
+- `amiga`: same indices as msdos
+- `gba_usa`: { CODE_WHEEL=0, LAKE=1 }
 
-**Acceptance**: `make verify TARGET=<any>` succeeds with a single
-unified `src/levels/level-N.asm` per level.
+For each canonical .asm, the driver finds every port that uses
+that (branch, stage) and verifies byte-match against the port's
+expected bytes (cartridge chunk or resource bin).
+
+**Honest scope note**: Phase 3a achieves only **one inter-port
+deduplication** — the SNES-EU + Genesis-EU LAKE share. That's
+because the four bytecode branches genuinely diverge:
+Amiga vs DOS share NO byte-identical stages, DOS vs cartridge
+likewise, etc. (See research/07 in archaeology for the full
+hash matrix.) Phase 3a's value is **structural**: organizing
+the source tree by genealogical branch rather than by port slot,
+making future deduplications trivial when more ports come online
+(Atari ST will share Amiga's chahi_1991 sources verbatim).
+
+## ~~Phase 3b — Conditional-compilation unification across branches~~ (DEFERRED)
+
+The original Phase 3 plan was to merge divergent branches via
+`#ifdef BYTECODE_BRANCH ... #endif` in unified .asm files. After
+diff'ing the actual per-port sources we find that branches
+diverge dramatically:
+
+- Different number of labels (Amiga: 208 in level 0; DOS: 254)
+- Different instruction counts and sequences
+- Different polygon-resource layouts → different EQU offsets
+- Different string tables → different mnemonic-decoded comments
+
+A unified .asm would be 60-80% `#ifdef`'d code blocks — the
+unified file would actually be HARDER to read than the branch-
+organized tree. Per-branch sources are the more honest
+representation of the genealogy. Phase 3b is **deferred** unless
+a concrete research need surfaces.
 
 ## Phase 4 — Atari ST 1991 + other gated ports
 
