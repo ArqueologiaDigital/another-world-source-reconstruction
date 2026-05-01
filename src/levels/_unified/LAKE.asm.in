@@ -1038,9 +1038,7 @@ ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION:
 	copyVideoPage src=0x00, dst=0xFF
 	break
 	jmp WEIRD_VIDEO_BUFFER_MANIPULATION
-;@if BRANCH == "heineman_cartridge"
 
-;@endif
 JUNK__01A5:
 ;@if BRANCH == "heineman_cartridge"
 	blitFramebuffer 0xFF
@@ -1399,9 +1397,7 @@ LABEL_04D9:
 	jne [0xF8], 0x01, LABEL_04E6
 ;@endif
 	ret
-;@if BRANCH == "heineman_cartridge"
 
-;@endif
 LABEL_04E6:
 ;@if BRANCH == "heineman_cartridge"
 	jne [0xF8], 0x01, LABEL_04ED
@@ -1410,9 +1406,7 @@ LABEL_04E6:
 	db 0x18, 0x00, 0x50, 0x16, 0x20, 0x02
 ;@endif
 	ret
-;@if BRANCH == "heineman_cartridge"
 
-;@endif
 LABEL_04ED:
 ;@if BRANCH == "heineman_cartridge"
 	jne [0xF8], 0x02, LABEL_04FA
@@ -1421,9 +1415,7 @@ LABEL_04ED:
 	jne [0xF8], 0x03, LABEL_04FA
 ;@endif
 	ret
-;@if BRANCH == "heineman_cartridge"
 
-;@endif
 LABEL_04FA:
 ;@if BRANCH == "heineman_cartridge"
 	jne [0xF8], 0x03, LABEL_0501
@@ -1432,9 +1424,7 @@ LABEL_04FA:
 	db 0x18, 0x00, 0x50, 0x05, 0x20, 0x02
 ;@endif
 	ret
-;@if BRANCH == "heineman_cartridge"
 
-;@endif
 LABEL_0501:
 ;@if BRANCH == "heineman_cartridge"
 	jne [0xF8], 0x04, LABEL_050E
@@ -1443,9 +1433,7 @@ LABEL_0501:
 	jne [0xF8], 0x05, LABEL_050E
 ;@endif
 	ret
-;@if BRANCH == "heineman_cartridge"
 
-;@endif
 LABEL_050E:
 ;@if BRANCH == "heineman_cartridge"
 	jne [0xF8], 0x05, LABEL_0515
@@ -1554,9 +1542,7 @@ LABEL_05D4:
 LABEL_05E0:
 	video type=1, offset=CINEMATIC_012, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x6E,0x3F,0x01,0x02
 	ret
-;@if BRANCH == "heineman_cartridge"
 
-;@endif
 JUNK__05E6:
 ;@if BRANCH == "heineman_cartridge"
 	video type=1, offset=CINEMATIC_665, x=[0x9a], y=[0x9b], zoom=0x40	;@raw=0x54,0x6E,0x45,0x9A,0x9B
@@ -6537,9 +6523,7 @@ LABEL_390B:
 	db 0x03, 0x0A, 0x00, 0x01
 ;@endif
 	jmp LABEL_394F
-;@if BRANCH == "heineman_cartridge"
 
-;@endif
 LABEL_3929:
 ;@if BRANCH == "heineman_cartridge"
 	sub [0x08], 0x000F
@@ -6553,9 +6537,7 @@ LABEL_3929:
 	db 0x03, 0x0A, 0x00, 0x02
 ;@endif
 	jmp LABEL_394F
-;@if BRANCH == "heineman_cartridge"
 
-;@endif
 LABEL_393A:
 ;@if BRANCH == "heineman_cartridge"
 	sub [0x08], 0x001E
@@ -6569,9 +6551,7 @@ LABEL_393A:
 	db 0x03, 0x0A, 0x00, 0x07
 ;@endif
 	jmp LABEL_394F
-;@if BRANCH == "heineman_cartridge"
 
-;@endif
 LABEL_394B:
 ;@if BRANCH == "heineman_cartridge"
 	add [0x0A], 0x000C
@@ -6626,9 +6606,7 @@ LABEL_3961:
 	db 0x03, 0x0A, 0xFF, 0xFE
 ;@endif
 	jmp LABEL_39A5
-;@if BRANCH == "heineman_cartridge"
 
-;@endif
 LABEL_397F:
 ;@if BRANCH == "heineman_cartridge"
 	add [0x08], 0x000F
@@ -6642,9 +6620,7 @@ LABEL_397F:
 	db 0x03, 0x0A, 0xFF, 0xF9
 ;@endif
 	jmp LABEL_39A5
-;@if BRANCH == "heineman_cartridge"
 
-;@endif
 LABEL_3990:
 ;@if BRANCH == "heineman_cartridge"
 	add [0x08], 0x001E
