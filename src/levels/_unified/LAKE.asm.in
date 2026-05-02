@@ -2209,7 +2209,7 @@ INVOKE_DRAW_HELPER_ON_BG_PAGE:
 	selectVideoPage 0xFF
 	ret
 
-LABEL_0520:
+DRAW_HELPER_AT_Y_PLUS_1:
 	selectVideoPage 0x00
 	add [0x02], 0x0001
 	call DRAW_HELPER_BRANCHED_ON_PROXIMITY_FLAG
@@ -8424,7 +8424,7 @@ HERO_FALL_LEFT_LOOP:
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_HERO_LEFT_PROFILE, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
-	call LABEL_0520
+	call DRAW_HELPER_AT_Y_PLUS_1
 	je [HERO_POS_MASK], 0x00, LABEL_4138
 	sub [0x01], 0x0002
 	break
@@ -8813,7 +8813,7 @@ LABEL_44D0:
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_166, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
-	call LABEL_0520
+	call DRAW_HELPER_AT_Y_PLUS_1
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	jne [HERO_POS_LEFT_RIGHT], 0x01, LABEL_44EB
 ;@endif
