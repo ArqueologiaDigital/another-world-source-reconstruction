@@ -4422,7 +4422,7 @@ HERO_INIT_Y_AND_DISPATCH_BY_X:
 ;@if BRANCH == "dos_1992"
 	je [HERO_POS_UP_DOWN], 0xFFFF, LABEL_1BCF
 ;@endif
-	jne [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_1B5A
+	jne [HERO_POS_JUMP_DOWN], 0xFFFF, INIT_HERO_LAKE_DEFAULT
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 
 LABEL_1BCF:
@@ -4431,13 +4431,13 @@ LABEL_1BCF:
 
 LABEL_1BCF:
 ;@endif
-	je [0x5E], 0x01, LABEL_1B5A
+	je [0x5E], 0x01, INIT_HERO_LAKE_DEFAULT
 	setup channel=0x06, address=LESTER_GRABS_A_VINE_AND_SWINGS
 	setup channel=0x29, address=KILL_CHANNEL_ROUTINE
 	unfreezeChannels first=0x14, last=0x16
 	killChannel
 
-LABEL_1B5A:
+INIT_HERO_LAKE_DEFAULT:
 	mov [0x01], 0x006F
 	mov [0x63], 0x0001
 	setup channel=0x14, address=HERO_STAND_LEFT_LOOP
