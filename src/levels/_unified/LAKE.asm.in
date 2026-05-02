@@ -3133,7 +3133,7 @@ LABEL_0FA1:
 	selectVideoPage 0xFF
 	killChannel
 
-LABEL_0FB9:
+SCENE_TRANSITION_TO_GETTING_OUT_OF_POOL:
 	deleteChannels first=0x0B, last=0x16
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x46], 0x0168
@@ -3143,14 +3143,14 @@ LABEL_0FB9:
 	mov [0x32], 0x0154
 	mov [0x33], 0x00A2
 	setPalette 0x06
-	setup channel=0x0B, address=LABEL_1450
-	setup channel=0x0C, address=LABEL_1495
+	setup channel=0x0B, address=MULTIPLEX_ANIM_RING3_SLOT_0
+	setup channel=0x0C, address=DRAW_LAKE_051_SEQ_FROM_WORKING_POS
 	setup channel=0x0D, address=LABEL_1209
-	setup channel=0x0E, address=LABEL_1467
-	setup channel=0x0F, address=LABEL_1495
+	setup channel=0x0E, address=MULTIPLEX_ANIM_RING3_SLOT_1
+	setup channel=0x0F, address=DRAW_LAKE_051_SEQ_FROM_WORKING_POS
 	setup channel=0x10, address=LABEL_1209
-	setup channel=0x11, address=LABEL_147E
-	setup channel=0x14, address=LABEL_1495
+	setup channel=0x11, address=MULTIPLEX_ANIM_RING3_SLOT_2
+	setup channel=0x14, address=DRAW_LAKE_051_SEQ_FROM_WORKING_POS
 	setup channel=0x15, address=LABEL_1269
 	setup channel=0x16, address=LABEL_1184
 	setup channel=0x29, address=KILL_CHANNEL_ROUTINE
@@ -3216,19 +3216,19 @@ LABEL_10C3:
 ;@endif
 	freezeChannels first=0x00, last=0x3B
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x00, address=LABEL_107E
+	setup channel=0x00, address=DISPLAY_TEXT_01FA_AND_FADE_TO_PAL_2
 ;@endif
 ;@if BRANCH == "dos_1992"
-	setup channel=0x00, address=LABEL_107E
+	setup channel=0x00, address=DISPLAY_TEXT_01FA_AND_FADE_TO_PAL_2
 ;@endif
 	deleteChannels first=0x00, last=0x3B
 	load id=0x3E83
 	killChannel
 ;@if BRANCH == "chahi_amiga_1991"
-	setup channel=0x00, address=LABEL_107E
+	setup channel=0x00, address=DISPLAY_TEXT_01FA_AND_FADE_TO_PAL_2
 ;@endif
 
-LABEL_107E:
+DISPLAY_TEXT_01FA_AND_FADE_TO_PAL_2:
 	fill page=0x00, color=0x00
 	selectVideoPage 0x00
 	text id=0x01FA, x=6, y=70, color=0x0F
@@ -3649,7 +3649,7 @@ LABEL_142A:
 	setPalette 0x06
 	killChannel
 
-LABEL_1450:
+MULTIPLEX_ANIM_RING3_SLOT_0:
 	mov [0x4C], [0x32]
 	mov [0x4D], [0x33]
 	mov [0x4E], [0x14]
@@ -3657,10 +3657,10 @@ LABEL_1450:
 	mov [0x33], [0x47]
 	mov [0x14], [0x48]
 	break
-	jmp LABEL_1450
+	jmp MULTIPLEX_ANIM_RING3_SLOT_0
 	killChannel
 
-LABEL_1467:
+MULTIPLEX_ANIM_RING3_SLOT_1:
 	mov [0x46], [0x32]
 	mov [0x47], [0x33]
 	mov [0x48], [0x14]
@@ -3668,10 +3668,10 @@ LABEL_1467:
 	mov [0x33], [0x4A]
 	mov [0x14], [0x4B]
 	break
-	jmp LABEL_1467
+	jmp MULTIPLEX_ANIM_RING3_SLOT_1
 	killChannel
 
-LABEL_147E:
+MULTIPLEX_ANIM_RING3_SLOT_2:
 	mov [0x49], [0x32]
 	mov [0x4A], [0x33]
 	mov [0x4B], [0x14]
@@ -3679,10 +3679,10 @@ LABEL_147E:
 	mov [0x33], [0x4D]
 	mov [0x14], [0x4E]
 	break
-	jmp LABEL_147E
+	jmp MULTIPLEX_ANIM_RING3_SLOT_2
 	killChannel
 
-LABEL_1495:
+DRAW_LAKE_051_SEQ_FROM_WORKING_POS:
 	sub [0x32], 0x0001
 	video type=1, offset=CINEMATIC_LAKE_051, x=[0x32], y=[0x33], zoom=0x40
 	break
@@ -3716,7 +3716,7 @@ LABEL_1495:
 	sub [0x32], 0x0002
 	video type=1, offset=CINEMATIC_LAKE_192, x=[0x32], y=[0x33], zoom=0x40
 	break
-	jmp LABEL_1495
+	jmp DRAW_LAKE_051_SEQ_FROM_WORKING_POS
 	killChannel
 
 LABEL_1507:
@@ -3771,7 +3771,7 @@ LABEL_150F:
 	jmp LABEL_1DCD
 	killChannel
 
-LABEL_158A:
+PLAYBACK_CINEMATIC_510_TO_513:
 	video type=1, offset=CINEMATIC_510, x=160, y=100
 	break
 	video type=1, offset=CINEMATIC_511, x=160, y=100
@@ -3794,7 +3794,7 @@ LABEL_158A:
 	break
 	video type=1, offset=CINEMATIC_LAKE_080, x=160, y=100
 	break
-	jmp LABEL_158A
+	jmp PLAYBACK_CINEMATIC_510_TO_513
 	killChannel
 
 REED_PLANT_ANIMATION:
@@ -4209,7 +4209,7 @@ LABEL_1978:
 LABEL_1986:
 	setup channel=0x02, address=LABEL_0E68
 	setup channel=0x03, address=LABEL_0E9A
-	setup channel=0x05, address=LABEL_158A
+	setup channel=0x05, address=PLAYBACK_CINEMATIC_510_TO_513
 	setup channel=0x08, address=SNEAKY_TENTACLE_FROM_THE_POOL
 	setup channel=0x33, address=LABEL_0AB2
 	setup channel=0x34, address=KILL_CHANNEL_ROUTINE
@@ -4247,13 +4247,13 @@ LABEL_19D3:
 	setup channel=0x07, address=THE_BEAST_WANDERS_ON_THE_FIRST_SCREEN_TO_THE_RIGHT
 
 LABEL_19EE:
-	setup channel=0x0B, address=LABEL_2D00
+	setup channel=0x0B, address=MULTIPLEX_ANIM_RING1_SLOT_0
 	setup channel=0x0C, address=LABEL_3256
-	setup channel=0x0D, address=LABEL_2D0E
+	setup channel=0x0D, address=MULTIPLEX_ANIM_RING1_SLOT_1
 	setup channel=0x0E, address=LABEL_3256
-	setup channel=0x0F, address=LABEL_2D25
+	setup channel=0x0F, address=MULTIPLEX_ANIM_RING1_SLOT_2
 	setup channel=0x10, address=LABEL_3256
-	setup channel=0x11, address=LABEL_2D3C
+	setup channel=0x11, address=MULTIPLEX_ANIM_RING1_SLOT_3
 	setup channel=0x12, address=LABEL_3256
 	setup channel=0x13, address=LABEL_2D53
 	setup channel=0x35, address=LABEL_0C24
@@ -4331,11 +4331,11 @@ LABEL_1AAA:
 	setup channel=0x07, address=THE_BEAST_WANDERS_ON_THE_SECOND_SCREEN_TO_THE_RIGHT
 
 LABEL_1AB8:
-	setup channel=0x0B, address=LABEL_2D61
+	setup channel=0x0B, address=MULTIPLEX_ANIM_RING2_SLOT_0
 	setup channel=0x0C, address=LABEL_3256
-	setup channel=0x0D, address=LABEL_2D6F
+	setup channel=0x0D, address=MULTIPLEX_ANIM_RING2_SLOT_1
 	setup channel=0x0E, address=LABEL_3256
-	setup channel=0x0F, address=LABEL_2D86
+	setup channel=0x0F, address=MULTIPLEX_ANIM_RING2_SLOT_2
 	setup channel=0x10, address=LABEL_3256
 	setup channel=0x11, address=LABEL_2D9D
 	setup channel=0x12, address=LABEL_3256
@@ -4643,7 +4643,7 @@ LABEL_1CA2:
 	jne [0x2A], 0x05, LABEL_1CB7
 	jl [0x01], 0x013D, LABEL_1CB7
 	mov [0x2A], 0x0006
-	setup channel=0x0A, address=LABEL_0FB9
+	setup channel=0x0A, address=SCENE_TRANSITION_TO_GETTING_OUT_OF_POOL
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	setup channel=0x16, address=KILL_CHANNEL_ROUTINE
 ;@endif
@@ -4813,10 +4813,10 @@ LABEL_1DF0:
 	jmp LABEL_1DF0
 	killChannel
 
-LABEL_1DFC:
+LOOP_DRAW_LAKE_093_AT_CENTER:
 	video type=1, offset=CINEMATIC_LAKE_093, x=160, y=100
 	break
-	jmp LABEL_1DFC
+	jmp LOOP_DRAW_LAKE_093_AT_CENTER
 	killChannel
 
 LOOP_DRAW_CINEMATIC_199_AT_CENTER:
@@ -4831,7 +4831,7 @@ LABEL_1E0E:
 	jmp LABEL_1E0E
 	killChannel
 
-LABEL_1E17:
+SCHEDULE_LAKE_DECORATIONS_096_TO_099:
 	setup channel=0x04, address=LOOP_DRAW_LAKE_096_DECOR_AT_72_171
 	break
 	setup channel=0x04, address=LOOP_DRAW_LAKE_097_DECOR_AT_71_171
@@ -4939,7 +4939,7 @@ LESTER_GRABS_A_VINE_AND_SWINGS:
 	break
 	video type=1, offset=CINEMATIC_STATIC_VINE_ABOUT_TO_SNAP_0, x=160, y=100
 	video type=1, offset=CINEMATIC_LESTER_GRABBING_VINE_0, x=72, y=168
-	setup channel=0x05, address=LABEL_1E17
+	setup channel=0x05, address=SCHEDULE_LAKE_DECORATIONS_096_TO_099
 	break
 	video type=1, offset=CINEMATIC_STATIC_VINE_ABOUT_TO_SNAP_1, x=160, y=100
 	video type=1, offset=CINEMATIC_LESTER_GRABBING_VINE_1, x=67, y=170
@@ -4991,7 +4991,7 @@ LESTER_GRABS_A_VINE_AND_SWINGS:
 	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x07, address=LABEL_1DFC
+	setup channel=0x07, address=LOOP_DRAW_LAKE_093_AT_CENTER
 	break
 	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_0, x=160, y=100
 	break
@@ -5099,7 +5099,7 @@ LESTER_GRABS_A_VINE_AND_SWINGS:
 KILL_IF_NOT_SCENE_4:
 	killChannel
 
-LABEL_20D8:
+INIT_GETTING_OUT_OF_POOL_ANIMATION:
 	mov [0x14], 0x00A0
 	mov [0x15], 0x00A0
 	mov [0x16], 0x0005
@@ -5219,7 +5219,7 @@ GETTING_OUT_OF_THE_POOL__ANIMATION_PART_5:
 	play id=0x0039, freq=0x07, vol=0x20, channel=0x01
 	break
 	setup channel=0x16, address=LABEL_4034
-	setup channel=0x0A, address=LABEL_20D8
+	setup channel=0x0A, address=INIT_GETTING_OUT_OF_POOL_ANIMATION
 	copyVideoPage src=0x00, dst=0x03
 	mov [0x18], 0x000F
 	mov [PAUSE_SLICES], 0x0004
@@ -6321,15 +6321,15 @@ LABEL_2CF2:
 	killChannel
 	killChannel
 
-LABEL_2D00:
+MULTIPLEX_ANIM_RING1_SLOT_0:
 	mov [0x0C], [0x46]
 	mov [0x0D], [0x47]
 	mov [0x13], [0x48]
 	break
-	jmp LABEL_2D00
+	jmp MULTIPLEX_ANIM_RING1_SLOT_0
 	killChannel
 
-LABEL_2D0E:
+MULTIPLEX_ANIM_RING1_SLOT_1:
 	mov [0x46], [0x0C]
 	mov [0x47], [0x0D]
 	mov [0x48], [0x13]
@@ -6337,10 +6337,10 @@ LABEL_2D0E:
 	mov [0x0D], [0x4A]
 	mov [0x13], [0x4B]
 	break
-	jmp LABEL_2D0E
+	jmp MULTIPLEX_ANIM_RING1_SLOT_1
 	killChannel
 
-LABEL_2D25:
+MULTIPLEX_ANIM_RING1_SLOT_2:
 	mov [0x49], [0x0C]
 	mov [0x4A], [0x0D]
 	mov [0x4B], [0x13]
@@ -6348,10 +6348,10 @@ LABEL_2D25:
 	mov [0x0D], [0x4D]
 	mov [0x13], [0x4E]
 	break
-	jmp LABEL_2D25
+	jmp MULTIPLEX_ANIM_RING1_SLOT_2
 	killChannel
 
-LABEL_2D3C:
+MULTIPLEX_ANIM_RING1_SLOT_3:
 	mov [0x4C], [0x0C]
 	mov [0x4D], [0x0D]
 	mov [0x4E], [0x13]
@@ -6359,7 +6359,7 @@ LABEL_2D3C:
 	mov [0x0D], [0x50]
 	mov [0x13], [0x51]
 	break
-	jmp LABEL_2D3C
+	jmp MULTIPLEX_ANIM_RING1_SLOT_3
 	killChannel
 
 LABEL_2D53:
@@ -6370,15 +6370,15 @@ LABEL_2D53:
 	jmp LABEL_2D53
 	killChannel
 
-LABEL_2D61:
+MULTIPLEX_ANIM_RING2_SLOT_0:
 	mov [0x0C], [0x52]
 	mov [0x0D], [0x53]
 	mov [0x13], [HACK_VAR_54]
 	break
-	jmp LABEL_2D61
+	jmp MULTIPLEX_ANIM_RING2_SLOT_0
 	killChannel
 
-LABEL_2D6F:
+MULTIPLEX_ANIM_RING2_SLOT_1:
 	mov [0x52], [0x0C]
 	mov [0x53], [0x0D]
 	mov [HACK_VAR_54], [0x13]
@@ -6386,10 +6386,10 @@ LABEL_2D6F:
 	mov [0x0D], [0x56]
 	mov [0x13], [0x57]
 	break
-	jmp LABEL_2D6F
+	jmp MULTIPLEX_ANIM_RING2_SLOT_1
 	killChannel
 
-LABEL_2D86:
+MULTIPLEX_ANIM_RING2_SLOT_2:
 	mov [0x55], [0x0C]
 	mov [0x56], [0x0D]
 	mov [0x57], [0x13]
@@ -6397,7 +6397,7 @@ LABEL_2D86:
 	mov [0x0D], [0x59]
 	mov [0x13], [0x5A]
 	break
-	jmp LABEL_2D86
+	jmp MULTIPLEX_ANIM_RING2_SLOT_2
 	killChannel
 
 LABEL_2D9D:
