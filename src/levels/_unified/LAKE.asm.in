@@ -10517,7 +10517,7 @@ LABEL_4A79:
 	jmp LABEL_4402
 	killChannel
 
-LABEL_4AAA:
+HERO_GETTING_OUT_OF_POOL_LOOP:
 	video type=1, offset=CINEMATIC_LAKE_190, x=[0x01], y=[0x02], zoom=[0x03]
 	break
 	video type=1, offset=CINEMATIC_LAKE_190, x=[0x01], y=[0x02], zoom=[0x03]
@@ -10568,7 +10568,7 @@ LABEL_4B40:
 	je [HERO_POS_MASK], 0x00, LABEL_4B40
 	break
 	add [0x02], 0x0001
-	jmp LABEL_4AAA
+	jmp HERO_GETTING_OUT_OF_POOL_LOOP
 	killChannel
 
 LABEL_4B56:
