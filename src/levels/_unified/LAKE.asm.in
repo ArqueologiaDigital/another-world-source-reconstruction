@@ -5242,7 +5242,7 @@ GETTING_OUT_OF_THE_POOL__ANIMATION_PART_5:
 	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_5, x=160, y=100
 	play id=0x0039, freq=0x07, vol=0x20, channel=0x01
 	break
-	setup channel=0x16, address=LABEL_4034
+	setup channel=0x16, address=HERO_AI_DISPATCH
 	setup channel=0x0A, address=INIT_GETTING_OUT_OF_POOL_ANIMATION
 	copyVideoPage src=0x00, dst=0x03
 	mov [0x18], 0x000F
@@ -8221,7 +8221,7 @@ LABEL_402F:
 	jmp LABEL_3FF0
 	killChannel
 
-LABEL_4034:
+HERO_AI_DISPATCH:
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_AI_DISPATCH_AIRBORNE
 	jne [0x63], 0x05, DISPATCH_HERO_RUN_RIGHT
@@ -8346,7 +8346,7 @@ LABEL_40FE:
 HERO_AI_TICK_WAIT_LOOP:
 	break
 	je [0x63], 0x64, HERO_AI_TICK_WAIT_LOOP
-	jmp LABEL_4034
+	jmp HERO_AI_DISPATCH
 	killChannel
 	break
 	add [0x01], 0x0002
