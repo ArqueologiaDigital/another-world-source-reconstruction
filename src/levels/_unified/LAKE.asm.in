@@ -5942,11 +5942,11 @@ BEAST_ARRIVAL_DECEL:
 	break
 	mov [0x10], 0x0005
 
-LABEL_297E:
+BEAST_DECEL_STEP_3_LOOP:
 	sub [0x0E], 0x0003
 	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_FRAME_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	djnz [0x10], LABEL_297E
+	djnz [0x10], BEAST_DECEL_STEP_3_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
 ;@endif
@@ -5955,11 +5955,11 @@ LABEL_297E:
 ;@endif
 	mov [0x10], 0x0007
 
-LABEL_2990:
+BEAST_DECEL_STEP_2_LOOP:
 	sub [0x0E], 0x0002
 	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_FRAME_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	djnz [0x10], LABEL_2990
+	djnz [0x10], BEAST_DECEL_STEP_2_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
 ;@endif
@@ -5968,11 +5968,11 @@ LABEL_2990:
 ;@endif
 	mov [0x10], 0x0003
 
-LABEL_29A2:
+BEAST_DECEL_STEP_1_LOOP:
 	sub [0x0E], 0x0001
 	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_FRAME_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	djnz [0x10], LABEL_29A2
+	djnz [0x10], BEAST_DECEL_STEP_1_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
 ;@endif
