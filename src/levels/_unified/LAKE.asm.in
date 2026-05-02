@@ -7530,11 +7530,11 @@ LABEL_388D:
 	add [0x09], 0x0032
 	break
 	add [0x09], 0x003C
-	setup channel=0x2D, address=LABEL_38B6
+	setup channel=0x2D, address=BEAST_FLASH_LOOP
 	fill page=0x00, color=0x00
 	killChannel
 
-LABEL_38B6:
+BEAST_FLASH_LOOP:
 	setPalette 0x0A
 	break
 	break
