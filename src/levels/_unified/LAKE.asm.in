@@ -3270,10 +3270,10 @@ LABEL_10AA:
 	video type=1, offset=CINEMATIC_LAKE_036, x=65374, y=155, zoom=0x40
 	killChannel
 
-LABEL_10C9:
+LOOP_DRAW_LAKE_037_AT_305_155:
 	video type=1, offset=CINEMATIC_LAKE_037, x=305, y=155, zoom=0x40
 	break
-	jmp LABEL_10C9
+	jmp LOOP_DRAW_LAKE_037_AT_305_155
 	killChannel
 
 LABEL_10D3:
@@ -3286,7 +3286,7 @@ LABEL_10D7:
 	copyVideoPage src=0x00, dst=0x03
 	mov [PAUSE_SLICES], 0x0005
 	setup channel=0x15, address=LABEL_10AA
-	setup channel=0x16, address=LABEL_10C9
+	setup channel=0x16, address=LOOP_DRAW_LAKE_037_AT_305_155
 	video type=1, offset=CINEMATIC_216, x=[0x01], y=[0x02], zoom=0x40
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_217, x=327, y=164, zoom=0x40
