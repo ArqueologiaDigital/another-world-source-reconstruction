@@ -8208,15 +8208,15 @@ LABEL_4007:
 	setup channel=0x14, address=KILL_CHANNEL_ROUTINE
 	sub [0x02], 0x0002
 	mov [0x63], 0x0001
-	jmp LABEL_402F
+	jmp HERO_PHYSICS_TICK_LOOP
 
 LABEL_401D:
-	jne [0x63], 0x01, LABEL_402F
+	jne [0x63], 0x01, HERO_PHYSICS_TICK_LOOP
 	sub [0x02], 0x0003
 	mov [0x63], 0x0000
 	setup channel=0x14, address=HERO_JUMP_RISE_PARABOLA
 
-LABEL_402F:
+HERO_PHYSICS_TICK_LOOP:
 	break
 	jmp HERO_PHYSICS_TICK
 	killChannel
