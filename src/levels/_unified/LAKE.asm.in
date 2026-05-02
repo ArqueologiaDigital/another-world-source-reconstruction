@@ -3175,7 +3175,7 @@ LABEL_1029:
 	jmp LABEL_1396
 	killChannel
 
-LABEL_1032:
+LAKE_PALETTE_FADE_IN:
 	break
 	mov [PAUSE_SLICES], 0x0008
 	setPalette 0x11
@@ -3331,7 +3331,7 @@ LABEL_1155:
 	break
 	sub [0x01], 0x0001
 	video type=1, offset=CINEMATIC_LAKE_041, x=[0x01], y=[0x02], zoom=0x40
-	setup channel=0x16, address=LABEL_1032
+	setup channel=0x16, address=LAKE_PALETTE_FADE_IN
 
 LABEL_117A:
 	break
