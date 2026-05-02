@@ -1612,9 +1612,9 @@ INIT_AUDIO_AND_SCENE_AFTER_LOADS:
 	play id=0x0030, freq=0x00, vol=0x00, channel=0x02
 	play id=0x0030, freq=0x00, vol=0x00, channel=0x03
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	setup channel=0x3C, address=WEIRD_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_40_LOOP
 ;@elif BRANCH == "chahi_amiga_1991"
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 	mov [0x0C], 0x0000
 	mov [0x04], 0x0000
@@ -1626,14 +1626,14 @@ INIT_AUDIO_AND_SCENE_AFTER_LOADS:
 	mov [PAUSE_SLICES], 0x0007
 ;@endif
 	break
-	call LIKELY_A_COPY_PROTECTION_MECHANISM
+	call VERIFY_INTEGRITY_OR_HALT
 	setup channel=0x03, address=A_CALM_ALIEN_POOL_BEFORE_LESTERS_ARRIVAL
 	killChannel
 
 KILL_CHANNEL_ROUTINE:
 	killChannel
 
-LIKELY_A_COPY_PROTECTION_MECHANISM:
+VERIFY_INTEGRITY_OR_HALT:
 ;@if BRANCH == "gba_2004"
 	ret
 ;@endif
@@ -1665,7 +1665,7 @@ SHUTDOWN_VM:
 	setup channel=0x3C, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
-SOME_VIDEO_BUFFER_MAGIC:
+LAKE_LEVEL_INIT:
 	fill page=0x00, color=0x00
 	fill page=0x03, color=0x00
 	fill page=0xFF, color=0x00
@@ -1673,8 +1673,8 @@ SOME_VIDEO_BUFFER_MAGIC:
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	or [0xE3], 0x0001
 ;@endif
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
-	call LIKELY_A_COPY_PROTECTION_MECHANISM
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
+	call VERIFY_INTEGRITY_OR_HALT
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	setPalette 0x1D
 ;@endif
@@ -1761,24 +1761,24 @@ SET_HERO_ACTION_TO_1_IF_GROUNDED_AND_DB_SET:
 	killChannel
 
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-WEIRD_VIDEO_BUFFER_MANIPULATION:
+BLIT_FROM_PAGE_40_LOOP:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x40, dst=0xFF
 	break
-	jmp WEIRD_VIDEO_BUFFER_MANIPULATION
+	jmp BLIT_FROM_PAGE_40_LOOP
 
 ;@endif
 ;@if BRANCH == "dos_1992"
-WEIRD_VIDEO_BUFFER_MANIPULATION:
+BLIT_FROM_PAGE_40_LOOP:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x40, dst=0xFF
 	break
-	jmp WEIRD_VIDEO_BUFFER_MANIPULATION
+	jmp BLIT_FROM_PAGE_40_LOOP
 
 ;@endif
-ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION:
+BLIT_FROM_PAGE_0_LOOP:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
@@ -1788,9 +1788,9 @@ ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION:
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 	break
-	jmp WEIRD_VIDEO_BUFFER_MANIPULATION
+	jmp BLIT_FROM_PAGE_40_LOOP
 ;@elif BRANCH == "chahi_amiga_1991"
-	jmp ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	jmp BLIT_FROM_PAGE_0_LOOP
 ;@endif
 
 JUNK__014D:
@@ -1808,30 +1808,30 @@ UNCLEAR_VIDEO_BUFFER_MANIPULATION:
 
 LABEL_0160:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	je [0x1C], 0x00, WEIRD_VIDEO_BUFFER_MANIPULATION
+	je [0x1C], 0x00, BLIT_FROM_PAGE_40_LOOP
 ;@elif BRANCH == "chahi_amiga_1991"
-	je [0x1C], 0x00, ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	je [0x1C], 0x00, BLIT_FROM_PAGE_0_LOOP
 ;@endif
 	je [0x1C], 0x02, CLEAR_FRAMEBUFFER_TO_COLOR_4_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jg [0x2A], 0x03, WEIRD_VIDEO_BUFFER_MANIPULATION
+	jg [0x2A], 0x03, BLIT_FROM_PAGE_40_LOOP
 	jne [0xDB], 0x00, LABEL_01B6
 ;@endif
 ;@if BRANCH == "dos_1992"
-	jg [0x2A], 0x03, WEIRD_VIDEO_BUFFER_MANIPULATION
+	jg [0x2A], 0x03, BLIT_FROM_PAGE_40_LOOP
 	jne [0xDB], 0x00, LABEL_01B6
 ;@endif
 	copyVideoPage src=0xFF, dst=0x03
 	copyVideoPage src=0x83, dst=0xFF
 	mov [0x65], 0x0000
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	jmp WEIRD_VIDEO_BUFFER_MANIPULATION
+	jmp BLIT_FROM_PAGE_40_LOOP
 
 LABEL_01B6:
 	copyVideoPage src=0xC0, dst=0x00
-	jmp WEIRD_VIDEO_BUFFER_MANIPULATION
+	jmp BLIT_FROM_PAGE_40_LOOP
 ;@elif BRANCH == "chahi_amiga_1991"
-	jmp ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	jmp BLIT_FROM_PAGE_0_LOOP
 	killChannel
 ;@endif
 
@@ -2061,8 +2061,8 @@ LABEL_0396:
 	ret
 
 INIT_CODEWHEEL_PROTECTION_SCENE:
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
-	call LIKELY_A_COPY_PROTECTION_MECHANISM
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
+	call VERIFY_INTEGRITY_OR_HALT
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x65], 0x0000
 	mov [0x66], 0x0000
@@ -3566,11 +3566,11 @@ LABEL_13B9:
 	break
 	djnz [0x19], LABEL_13B9
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
 ;@endif
 ;@if BRANCH == "dos_1992"
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
 ;@endif
 	unfreezeChannels first=0x0B, last=0x3B
@@ -3607,11 +3607,11 @@ LABEL_1403:
 	video type=1, offset=CINEMATIC_211, x=[0x18], y=110, zoom=0x40
 	djnz [0x19], LABEL_1403
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
 ;@endif
 ;@if BRANCH == "dos_1992"
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
 ;@endif
 	selectVideoPage 0x00
@@ -3632,11 +3632,11 @@ LABEL_142A:
 	break
 	djnz [0x19], LABEL_142A
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
 ;@endif
 ;@if BRANCH == "dos_1992"
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
 ;@endif
 	copyVideoPage src=0x03, dst=0x00
@@ -4168,10 +4168,10 @@ LABEL_1915:
 VINE_SCREEN:
 	mov [HACK_VAR_67], 0x0001
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 ;@if BRANCH == "dos_1992"
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 	call CYCLE_VIDEO_PAGES_3WAY
 	setPalette 0x09
@@ -4200,10 +4200,10 @@ LABEL_194F:
 OUTSIDE_POOL_SCREEN:
 	mov [HACK_VAR_67], 0x0002
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 ;@if BRANCH == "dos_1992"
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 	call CYCLE_VIDEO_PAGES_3WAY
 	setPalette 0x07
@@ -4237,10 +4237,10 @@ LABEL_1986:
 FIRST_SCREEN_TO_THE_RIGHT:
 	mov [HACK_VAR_67], 0x0003
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 ;@if BRANCH == "dos_1992"
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 	call CYCLE_VIDEO_PAGES_3WAY
 	setPalette 0x05
@@ -4324,10 +4324,10 @@ RET_TARGET_1A88:
 SECOND_SCREEN_TO_THE_RIGHT:
 	mov [HACK_VAR_67], 0x0004
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 ;@if BRANCH == "dos_1992"
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 	call CYCLE_VIDEO_PAGES_3WAY
 	setPalette 0x05
@@ -4364,10 +4364,10 @@ LABEL_1AB8:
 THIRD_SCREEN_TO_THE_RIGHT:
 	mov [HACK_VAR_67], 0x0005
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 ;@if BRANCH == "dos_1992"
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 	call CYCLE_VIDEO_PAGES_3WAY
 	setPalette 0x07
@@ -4818,12 +4818,12 @@ LABEL_1EC9:
 A_VIDEO_ROUTINE_OF_SOME_SORT:
 	freezeChannels first=0x00, last=0x3F
 	deleteChannels first=0x00, last=0x3F
-	setup channel=0x00, address=SOME_VIDEO_BUFFER_MAGIC
+	setup channel=0x00, address=LAKE_LEVEL_INIT
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 ;@if BRANCH == "dos_1992"
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 	killChannel
 
@@ -5630,10 +5630,10 @@ THE_BEAST_IS_CLOSE_ENOUGH:
 	jne [0x2B], 0x00, THE_BEAST_IS_STILL_AT_A_DISTANCE
 	setup channel=0x28, address=THE_BEAST_KILLS_LESTER
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 ;@if BRANCH == "dos_1992"
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 	unfreezeChannels first=0x00, last=0x27
 	unfreezeChannels first=0x2A, last=0x3B
@@ -6023,10 +6023,10 @@ LABEL_29CE:
 	unfreezeChannels first=0x29, last=0x3B
 	unfreezeChannels first=0x3D, last=0x3F
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 ;@if BRANCH == "dos_1992"
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 	break
 	setPalette 0x0D
@@ -6126,10 +6126,10 @@ LABEL_2A7E:
 	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_6, x=160, y=100
 	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_4, x=161, y=99
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 ;@if BRANCH == "dos_1992"
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 	break
 	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_6, x=160, y=100
@@ -6239,7 +6239,7 @@ LABEL_2C26:
 	break
 	djnz [0x17], LABEL_2C26
 	setPalette 0x0A
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	selectVideoPage 0x00
 	fill page=0x00, color=0x0B
 	video type=1, offset=CINEMATIC_LESTER_ATTACK_SCENE_BACKGROUND, x=160, y=100
@@ -6308,7 +6308,7 @@ LABEL_2E07:
 ;@endif
 	djnz [0x17], LABEL_2CC7
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
 	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_8, x=[0x15], y=100, zoom=[0x16]
 	je [0xDB], 0x00, LABEL_2E1C
@@ -6316,7 +6316,7 @@ LABEL_2E07:
 LABEL_2E1C:
 ;@endif
 ;@if BRANCH == "dos_1992"
-	setup channel=0x3C, address=ANOTHER_UNCLEAR_VIDEO_BUFFER_MANIPULATION
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
 	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_8, x=[0x15], y=100, zoom=[0x16]
 	je [0xDB], 0x00, LABEL_2E1C
