@@ -8402,7 +8402,7 @@ LABEL_4155:
 	break
 	add [0x01], 0x0002
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	call LABEL_48CF
+	call DRAW_VIDEO_073_AND_CIN_002
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_027, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
@@ -8508,7 +8508,7 @@ LABEL_4367:
 	break
 	play id=0x0051, freq=0x14, vol=0x1D, channel=0x01
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	call LABEL_48A9
+	call DRAW_VIDEO_070_AND_CIN_002
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_437C
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_024, x=[0x01], y=[0x02], zoom=[0x03]
@@ -8524,7 +8524,7 @@ LABEL_437C:
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	call LABEL_48B4
+	call DRAW_VIDEO_071_AND_CIN_002
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_41EC
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_025, x=[0x01], y=[0x02], zoom=[0x03]
@@ -8580,7 +8580,7 @@ LABEL_41EC:
 MAYBE_RESUME_WALK_LEFT_IF_GROUNDED:
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	break
-	call LABEL_48CF
+	call DRAW_VIDEO_073_AND_CIN_002
 	je [HERO_POS_MASK], 0x00, LABEL_4160
 	sub [0x01], 0x0002
 	break
@@ -8602,7 +8602,7 @@ LABEL_43CD:
 LABEL_43EC:
 	sub [0x01], 0x0001
 	break
-	call LABEL_4813
+	call DRAW_VIDEO_076_AND_CIN_002
 	mov [0x29], [0x01]
 	sub [0x01], 0x0001
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_4406
@@ -8610,7 +8610,7 @@ LABEL_43EC:
 
 LABEL_4406:
 	break
-	call LABEL_481E
+	call DRAW_VIDEO_077_AND_CIN_002
 	sub [0x01], 0x0001
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_4419
 	sub [0x01], 0x0001
@@ -8618,7 +8618,7 @@ LABEL_4406:
 LABEL_4419:
 	break
 	play id=0x0051, freq=0x0B, vol=0x20, channel=0x01
-	call LABEL_4829
+	call DRAW_VIDEO_078_AND_CIN_002
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_442E
 	sub [0x01], 0x0002
 
@@ -8632,7 +8632,7 @@ LABEL_443D:
 ;@endif
 ;@if BRANCH == "dos_1992"
 	break
-	call LABEL_48CF
+	call DRAW_VIDEO_073_AND_CIN_002
 	je [HERO_POS_MASK], 0x00, LABEL_4160
 	sub [0x01], 0x0002
 	break
@@ -8654,7 +8654,7 @@ LABEL_43CD:
 LABEL_43EC:
 	sub [0x01], 0x0001
 	break
-	call LABEL_4813
+	call DRAW_VIDEO_076_AND_CIN_002
 	mov [0x29], [0x01]
 	sub [0x01], 0x0001
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_4406
@@ -8662,7 +8662,7 @@ LABEL_43EC:
 
 LABEL_4406:
 	break
-	call LABEL_481E
+	call DRAW_VIDEO_077_AND_CIN_002
 	sub [0x01], 0x0001
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_4419
 	sub [0x01], 0x0001
@@ -8670,7 +8670,7 @@ LABEL_4406:
 LABEL_4419:
 	break
 	play id=0x0051, freq=0x0B, vol=0x20, channel=0x01
-	call LABEL_4829
+	call DRAW_VIDEO_078_AND_CIN_002
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_442E
 	sub [0x01], 0x0002
 
@@ -9335,17 +9335,17 @@ DRAW_VIDEO_075_AND_CINEMATIC_2_RET:
 	video type=1, offset=CINEMATIC_002, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-LABEL_4813:
+DRAW_VIDEO_076_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_076, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x00,0x94,0x01,0x02
 	video type=1, offset=CINEMATIC_002, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-LABEL_481E:
+DRAW_VIDEO_077_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_077, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x00,0xD8,0x01,0x02
 	video type=1, offset=CINEMATIC_002, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-LABEL_4829:
+DRAW_VIDEO_078_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_078, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x01,0x1A,0x01,0x02
 	video type=1, offset=CINEMATIC_002, x=[0x01], y=[0x02], zoom=0x40
 	ret
@@ -9393,12 +9393,12 @@ LABEL_4899:
 	video type=1, offset=CINEMATIC_002, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-LABEL_48A9:
+DRAW_VIDEO_070_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_070, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x04,0x0A,0x01,0x02
 	video type=1, offset=CINEMATIC_002, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-LABEL_48B4:
+DRAW_VIDEO_071_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_071, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x04,0x22,0x01,0x02
 	video type=1, offset=CINEMATIC_002, x=[0x01], y=[0x02], zoom=0x40
 	ret
@@ -9409,7 +9409,7 @@ LABEL_48BF:
 	video type=1, offset=CINEMATIC_002, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-LABEL_48CF:
+DRAW_VIDEO_073_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_073, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x04,0x50,0x01,0x02
 	video type=1, offset=CINEMATIC_002, x=[0x01], y=[0x02], zoom=0x40
 	ret
