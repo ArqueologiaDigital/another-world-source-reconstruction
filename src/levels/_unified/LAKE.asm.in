@@ -4755,7 +4755,7 @@ LABEL_1D7F:
 	djnz [0x10], LABEL_1D7F
 	setPalette 0x0A
 	mov [PAUSE_SLICES], 0x0004
-	setup channel=0x3C, address=LABEL_1DF0
+	setup channel=0x3C, address=LOOP_BLIT_AND_CLEAR_FF
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	jne [0xDB], 0x01, LABEL_1EE5
 	setPalette 0x1B
@@ -4829,12 +4829,12 @@ A_VIDEO_ROUTINE_OF_SOME_SORT:
 ;@endif
 	killChannel
 
-LABEL_1DF0:
+LOOP_BLIT_AND_CLEAR_FF:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	fill page=0xFF, color=0x00
 	break
-	jmp LABEL_1DF0
+	jmp LOOP_BLIT_AND_CLEAR_FF
 	killChannel
 
 LOOP_DRAW_LAKE_093_AT_CENTER:
