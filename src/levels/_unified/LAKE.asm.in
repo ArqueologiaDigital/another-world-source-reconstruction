@@ -2738,12 +2738,12 @@ LABEL_0ADB:
 	add [0xA2], 0x0002
 	add [0xA4], 0x0003
 	add [0xA6], 0x0002
-	call LABEL_0B4C
+	call CLASSIFY_ALL_REGIONS_VARS
 	break
 	add [0xA2], 0x0002
 	add [0xA4], 0x0002
 	add [0xA6], 0x0001
-	call LABEL_0B4C
+	call CLASSIFY_ALL_REGIONS_VARS
 	djnz [0x93], LABEL_0ADB
 	setup channel=0x34, address=KILL_CHANNEL_ROUTINE
 	break
@@ -2770,7 +2770,7 @@ LABEL_0B3A:
 	jmp WAIT_VAR_93_AND_SETUP_CH34
 	killChannel
 
-LABEL_0B4C:
+CLASSIFY_ALL_REGIONS_VARS:
 	mov [0x6C], [0xA2]
 	mov [0x6D], [0xA3]
 	call CLASSIFY_VAR_6C_INTO_REGIONS_LARGE
