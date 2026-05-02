@@ -8752,7 +8752,7 @@ LABEL_42CF:
 	break
 	sub [0x01], 0x0002
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	call LABEL_4603
+	call DRAW_VIDEO_036_037_AND_HERO_STOP_RIGHT_FRAME_2_RET
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_178, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
@@ -8947,7 +8947,7 @@ LBL_4371_453B:
 	add [0x01], 0x0002
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	call LABEL_4603
+	call DRAW_VIDEO_036_037_AND_HERO_STOP_RIGHT_FRAME_2_RET
 ;@if BRANCH == "cartridge_1992"
 	jne [HERO_POS_LEFT_RIGHT], 0x01, LABEL_4628
 ;@elif BRANCH == "gba_2004"
@@ -8956,7 +8956,7 @@ LBL_4371_453B:
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_178, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "dos_1992"
-	call LABEL_4603
+	call DRAW_VIDEO_036_037_AND_HERO_STOP_RIGHT_FRAME_2_RET
 	jne [HERO_POS_LEFT_RIGHT], 0x01, LABEL_4575
 ;@endif
 	je [HERO_POS_MASK], 0x00, LABEL_42DA
@@ -9145,7 +9145,7 @@ LBL_4371_46B1:
 	killChannel
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-LABEL_4603:
+DRAW_VIDEO_036_037_AND_HERO_STOP_RIGHT_FRAME_2_RET:
 	video type=0, offset=COMMON_VIDEO_036, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x06,0x5D,0x01,0x02
 	video type=0, offset=COMMON_VIDEO_037, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x19,0xA9,0x01,0x02
 	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
