@@ -4648,7 +4648,7 @@ ENTER_SECOND_SCREEN_FROM_RIGHT:
 ;@endif
 	mov [0x01], 0x0140
 	call ADVANCE_X_FORWARD_ONE_SCREEN
-	call LABEL_1CEC
+	call DELETE_CH_01_06_RET
 	jmp SECOND_SCREEN_TO_THE_RIGHT
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
@@ -4692,7 +4692,7 @@ CLEANUP_BEFORE_S1_OR_S3:
 	deleteChannels first=0x35, last=0x38
 	ret
 
-LABEL_1CEC:
+DELETE_CH_01_06_RET:
 	deleteChannels first=0x01, last=0x06
 	ret
 	killChannel
@@ -5822,18 +5822,18 @@ DRAW_BEAST_DRIFT_LEFT_LOOP:
 	killChannel
 
 ADVANCE_X_FORWARD_ONE_SCREEN:
-	jl [0x2A], 0x04, LABEL_2817
+	jl [0x2A], 0x04, SHIFT_X_RIGHT_320
 	add [0x0E], 0x0172
 
-LABEL_2817:
+SHIFT_X_RIGHT_320:
 	add [0x0A], 0x0140
 	ret
 
 ADVANCE_X_BACKWARD_ONE_SCREEN:
-	jl [0x2A], 0x04, LABEL_2826
+	jl [0x2A], 0x04, SHIFT_X_LEFT_320
 	sub [0x0E], 0x0172
 
-LABEL_2826:
+SHIFT_X_LEFT_320:
 	sub [0x0A], 0x0140
 	ret
 
