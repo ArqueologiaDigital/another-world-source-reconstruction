@@ -7780,7 +7780,7 @@ LABEL_3B7E:
 	mov [0x15], [0x01]
 	jg [0x16], [0x02], LABEL_3B7E
 	setup channel=0x16, address=KILL_CHANNEL_ROUTINE
-	call LABEL_3D72
+	call ADVANCE_RING_Y_POSITIONS
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	je [0xDB], 0x00, LABEL_3B93
 	setup channel=0x07, address=POOL_WATER_WAVY_GLARE_ANIMATION
@@ -7922,7 +7922,7 @@ SET_INITIAL_POSITIONS_OF_TENTACLES_INSIDE_THE_POOL:
 	mov [0x5D], 0xFFF8
 	ret
 
-LABEL_3D72:
+ADVANCE_RING_Y_POSITIONS:
 	add [0x48], 0x000A
 	add [0x4B], 0x000D
 	add [0x4E], 0x000A
