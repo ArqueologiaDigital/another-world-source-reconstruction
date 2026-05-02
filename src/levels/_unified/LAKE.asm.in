@@ -8225,23 +8225,23 @@ LABEL_4034:
 	jne [0x63], 0x05, LABEL_419D
 	setup channel=0x14, address=HERO_RUN_LEFT_LOOP
 	mov [0x63], 0x0064
-	jmp LABEL_410C
+	jmp HERO_AI_TICK_WAIT_LOOP
 
 LABEL_419D:
 	jne [0x63], 0x06, LABEL_41AE
 	setup channel=0x14, address=HERO_RUN_RIGHT_LOOP
 	mov [0x63], 0x0064
-	jmp LABEL_410C
+	jmp HERO_AI_TICK_WAIT_LOOP
 
 LABEL_41AE:
 	jne [0x63], 0x01, LABEL_41BB
 	setup channel=0x14, address=HERO_WALK_LEFT_LOOP
-	jmp LABEL_410C
+	jmp HERO_AI_TICK_WAIT_LOOP
 
 LABEL_41BB:
 	jne [0x63], 0x02, LABEL_41C8
 	setup channel=0x14, address=HERO_WALK_RIGHT_LOOP
-	jmp LABEL_410C
+	jmp HERO_AI_TICK_WAIT_LOOP
 
 LABEL_41C8:
 ;@endif
@@ -8250,23 +8250,23 @@ LABEL_41C8:
 	jne [0x63], 0x05, LABEL_419D
 	setup channel=0x14, address=HERO_RUN_LEFT_LOOP
 	mov [0x63], 0x0064
-	jmp LABEL_410C
+	jmp HERO_AI_TICK_WAIT_LOOP
 
 LABEL_419D:
 	jne [0x63], 0x06, LABEL_41AE
 	setup channel=0x14, address=HERO_RUN_RIGHT_LOOP
 	mov [0x63], 0x0064
-	jmp LABEL_410C
+	jmp HERO_AI_TICK_WAIT_LOOP
 
 LABEL_41AE:
 	jne [0x63], 0x01, LABEL_41BB
 	setup channel=0x14, address=HERO_WALK_LEFT_LOOP
-	jmp LABEL_410C
+	jmp HERO_AI_TICK_WAIT_LOOP
 
 LABEL_41BB:
 	jne [0x63], 0x02, LABEL_41C8
 	setup channel=0x14, address=HERO_WALK_RIGHT_LOOP
-	jmp LABEL_410C
+	jmp HERO_AI_TICK_WAIT_LOOP
 
 LABEL_41C8:
 ;@endif
@@ -8304,7 +8304,7 @@ LABEL_4094:
 	setup channel=0x14, address=LABEL_4A34
 
 LABEL_40A2:
-	jmp LABEL_410C
+	jmp HERO_AI_TICK_WAIT_LOOP
 
 LABEL_40A5:
 	jne [HERO_ACTION_POS_MASK], 0x82, LABEL_40C3
@@ -8334,16 +8334,16 @@ LABEL_40E1:
 	setup channel=0x14, address=LABEL_492B
 
 LABEL_40FB:
-	jmp LABEL_410C
+	jmp HERO_AI_TICK_WAIT_LOOP
 
 LABEL_40FE:
-	jne [HERO_ACTION_POS_MASK], 0x80, LABEL_410C
+	jne [HERO_ACTION_POS_MASK], 0x80, HERO_AI_TICK_WAIT_LOOP
 	mov [0x63], 0x0064
 	setup channel=0x14, address=LABEL_48D6
 
-LABEL_410C:
+HERO_AI_TICK_WAIT_LOOP:
 	break
-	je [0x63], 0x64, LABEL_410C
+	je [0x63], 0x64, HERO_AI_TICK_WAIT_LOOP
 	jmp LABEL_4034
 	killChannel
 	break
