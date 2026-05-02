@@ -1929,11 +1929,11 @@ PICK_RANDOM_X_FOR_DROPLET_005:
 	add [0x6F], [0x3D]
 	mov [0x70], 0xFFEC
 
-LABEL_025E:
+RAIN_DROPLET_FALL_LOOP:
 	break
 	video type=1, offset=CINEMATIC_LAKE_005, x=[0x6f], y=[0x70], zoom=0x40
 	add [0x70], 0x0020
-	jl [0x70], 0xB6, LABEL_025E
+	jl [0x70], 0xB6, RAIN_DROPLET_FALL_LOOP
 	break
 	mov [0x70], 0x00B6
 	call COMPUTE_RANDOM_BIT_MASKS
