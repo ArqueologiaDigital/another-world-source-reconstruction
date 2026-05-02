@@ -7258,15 +7258,15 @@ BEETLE_ANIM_FLYING_LOOP:
 	video type=1, offset=CINEMATIC_BEETLE_FLYING_FRAME_5, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_BEETLE_FLYING_FRAME_6, x=[0x0a], y=[0x0b], zoom=0x40
-	setup channel=0x2E, address=LABEL_36DB
+	setup channel=0x2E, address=BEETLE_ANIM_FLY_AWAY_INIT_COUNTER
 	break
 
-LABEL_35ED:
+BEETLE_ANIM_HOVER_INFINITE:
 	video type=1, offset=CINEMATIC_BEETLE_HOVER_FRAME_0, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_BEETLE_HOVER_FRAME_1, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	jmp LABEL_35ED
+	jmp BEETLE_ANIM_HOVER_INFINITE
 
 BEETLE_ANIM_HOVER_LAKE_181_182:
 	video type=1, offset=CINEMATIC_BEETLE_HOVER_FRAME_0, x=[0x0a], y=[0x0b], zoom=0x40
@@ -7302,7 +7302,7 @@ BEETLE_ANIM_DRIFT_RIGHT:
 	break
 	mov [0x09], 0x000A
 
-LABEL_365D:
+BEETLE_ANIM_FLY_AWAY_LOOP:
 	video type=1, offset=CINEMATIC_LAKE_186, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_LAKE_187, x=[0x0a], y=[0x0b], zoom=0x40
@@ -7313,13 +7313,13 @@ LABEL_365D:
 	break
 	video type=1, offset=CINEMATIC_BEETLE_DRIFT_RIGHT_FRAME_3, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	djnz [0x09], LABEL_365D
+	djnz [0x09], BEETLE_ANIM_FLY_AWAY_LOOP
 	video type=1, offset=CINEMATIC_594, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_595, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_596, x=[0x0a], y=[0x0b], zoom=0x40
-	setup channel=0x2E, address=LABEL_36DB
+	setup channel=0x2E, address=BEETLE_ANIM_FLY_AWAY_INIT_COUNTER
 	break
 
 LABEL_3695:
@@ -7348,7 +7348,7 @@ BEETLE_ANIM_HOVER_597_LAKE_191:
 	jmp BEETLE_ANIM_HOVER_597_LAKE_191
 	killChannel
 
-LABEL_36DB:
+BEETLE_ANIM_FLY_AWAY_INIT_COUNTER:
 	mov [0x09], 0x000A
 
 LABEL_36DF:
