@@ -75,11 +75,13 @@ CINEMATIC_661		EQU 0x0C1E
 CINEMATIC_662		EQU 0xB808
 CINEMATIC_663		EQU 0xB8A0
 CINEMATIC_664		EQU 0xB8EE
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_PARTICLE_BURST_2_FRAME_0		EQU 0xDC8A
 CINEMATIC_PARTICLE_BURST_2_FRAME_1		EQU 0xDC9A
 CINEMATIC_PARTICLE_BURST_2_FRAME_2		EQU 0xDCB2
 CINEMATIC_PARTICLE_BURST_2_FRAME_3		EQU 0xDCC6
 CINEMATIC_PARTICLE_BURST_2_FRAME_4		EQU 0xDCF6
+;@endif
 CINEMATIC_720		EQU 0x12C8
 CINEMATIC_721		EQU 0x129C
 CINEMATIC_722		EQU 0x1270
@@ -97,11 +99,13 @@ CINEMATIC_733		EQU 0x1FDE
 CINEMATIC_734		EQU 0xCC18
 CINEMATIC_735		EQU 0xCCB0
 CINEMATIC_736		EQU 0xCCFE
-CINEMATIC_737		EQU 0xF09A
-CINEMATIC_738		EQU 0xF0AA
-CINEMATIC_739		EQU 0xF0C2
-CINEMATIC_740		EQU 0xF0D6
-CINEMATIC_741		EQU 0xF106
+;@if BRANCH == "chahi_amiga_1991"
+CINEMATIC_PARTICLE_BURST_2_FRAME_0		EQU 0xF09A
+CINEMATIC_PARTICLE_BURST_2_FRAME_1		EQU 0xF0AA
+CINEMATIC_PARTICLE_BURST_2_FRAME_2		EQU 0xF0C2
+CINEMATIC_PARTICLE_BURST_2_FRAME_3		EQU 0xF0D6
+CINEMATIC_PARTICLE_BURST_2_FRAME_4		EQU 0xF106
+;@endif
 CINEMATIC_LAKE_014		EQU 0x00A4
 CINEMATIC_LAKE_192		EQU 0xB7E4
 COMMON_VIDEO_000		EQU 0x5DE4
@@ -2243,7 +2247,7 @@ PARTICLE_BURST_CYCLE_LOOP_2:
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0xDC8A, x=[0x9a], y=[0x9b], zoom=0x40
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_737, x=[0x9a], y=[0x9b], zoom=0x40
+	video type=1, offset=CINEMATIC_PARTICLE_BURST_2_FRAME_0, x=[0x9a], y=[0x9b], zoom=0x40
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2251,7 +2255,7 @@ PARTICLE_BURST_CYCLE_LOOP_2:
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0xDC9A, x=[0x9a], y=[0x9b], zoom=0x40
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_738, x=[0x9a], y=[0x9b], zoom=0x40
+	video type=1, offset=CINEMATIC_PARTICLE_BURST_2_FRAME_1, x=[0x9a], y=[0x9b], zoom=0x40
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2259,7 +2263,7 @@ PARTICLE_BURST_CYCLE_LOOP_2:
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0xDCB2, x=[0x9a], y=[0x9b], zoom=0x40
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_739, x=[0x9a], y=[0x9b], zoom=0x40
+	video type=1, offset=CINEMATIC_PARTICLE_BURST_2_FRAME_2, x=[0x9a], y=[0x9b], zoom=0x40
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2267,7 +2271,7 @@ PARTICLE_BURST_CYCLE_LOOP_2:
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0xDC9A, x=[0x9a], y=[0x9b], zoom=0x40
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_738, x=[0x9a], y=[0x9b], zoom=0x40
+	video type=1, offset=CINEMATIC_PARTICLE_BURST_2_FRAME_1, x=[0x9a], y=[0x9b], zoom=0x40
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2275,7 +2279,7 @@ PARTICLE_BURST_CYCLE_LOOP_2:
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0xDC8A, x=[0x9a], y=[0x9b], zoom=0x40
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_737, x=[0x9a], y=[0x9b], zoom=0x40
+	video type=1, offset=CINEMATIC_PARTICLE_BURST_2_FRAME_0, x=[0x9a], y=[0x9b], zoom=0x40
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2283,7 +2287,7 @@ PARTICLE_BURST_CYCLE_LOOP_2:
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0xDCC6, x=[0x9a], y=[0x9b], zoom=0x40
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_740, x=[0x9a], y=[0x9b], zoom=0x40
+	video type=1, offset=CINEMATIC_PARTICLE_BURST_2_FRAME_3, x=[0x9a], y=[0x9b], zoom=0x40
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2291,7 +2295,7 @@ PARTICLE_BURST_CYCLE_LOOP_2:
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0xDCF6, x=[0x9a], y=[0x9b], zoom=0x40
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_741, x=[0x9a], y=[0x9b], zoom=0x40
+	video type=1, offset=CINEMATIC_PARTICLE_BURST_2_FRAME_4, x=[0x9a], y=[0x9b], zoom=0x40
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2299,7 +2303,7 @@ PARTICLE_BURST_CYCLE_LOOP_2:
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0xDCC6, x=[0x9a], y=[0x9b], zoom=0x40
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_740, x=[0x9a], y=[0x9b], zoom=0x40
+	video type=1, offset=CINEMATIC_PARTICLE_BURST_2_FRAME_3, x=[0x9a], y=[0x9b], zoom=0x40
 ;@endif
 	break
 	jmp PARTICLE_BURST_CYCLE_LOOP_2
