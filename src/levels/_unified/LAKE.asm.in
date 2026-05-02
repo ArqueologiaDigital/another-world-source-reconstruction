@@ -5948,10 +5948,10 @@ LABEL_297E:
 	break
 	djnz [0x10], LABEL_297E
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jl [0x0E], [0x01], LABEL_2ADB
+	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
 ;@endif
 ;@if BRANCH == "dos_1992"
-	jl [0x0E], [0x01], LABEL_2ADB
+	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
 ;@endif
 	mov [0x10], 0x0007
 
@@ -5961,10 +5961,10 @@ LABEL_2990:
 	break
 	djnz [0x10], LABEL_2990
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jl [0x0E], [0x01], LABEL_2ADB
+	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
 ;@endif
 ;@if BRANCH == "dos_1992"
-	jl [0x0E], [0x01], LABEL_2ADB
+	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
 ;@endif
 	mov [0x10], 0x0003
 
@@ -5974,10 +5974,10 @@ LABEL_29A2:
 	break
 	djnz [0x10], LABEL_29A2
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jl [0x0E], [0x01], LABEL_2ADB
+	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
 ;@endif
 ;@if BRANCH == "dos_1992"
-	jl [0x0E], [0x01], LABEL_2ADB
+	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
 ;@endif
 	mov [0x10], 0x0005
 
@@ -5987,11 +5987,11 @@ HOLD_LAKE_139_FOR_N_FRAMES:
 	djnz [0x10], HOLD_LAKE_139_FOR_N_FRAMES
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 
-LABEL_2ADB:
+BEAST_PASS_HERO_DECEL:
 ;@endif
 ;@if BRANCH == "dos_1992"
 
-LABEL_2ADB:
+BEAST_PASS_HERO_DECEL:
 ;@endif
 	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_FRAME_4, x=[0x0e], y=[0x0f], zoom=0x40
 	break
