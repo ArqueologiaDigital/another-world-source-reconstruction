@@ -1885,11 +1885,11 @@ LABEL_01C6:
 	call COMPUTE_RANDOM_BIT_MASKS
 	mov [SCROLL_Y], 0xFFFF
 	add [SCROLL_Y], [0x38]
-	je [HACK_VAR_67], 0x05, LABEL_01F6
-	je [HACK_VAR_67], 0x02, LABEL_01F6
+	je [HACK_VAR_67], 0x05, INIT_OPENING_BG_THREADS
+	je [HACK_VAR_67], 0x02, INIT_OPENING_BG_THREADS
 	jl [0x6E], 0x96, LABEL_01C6
 
-LABEL_01F6:
+INIT_OPENING_BG_THREADS:
 	mov [0x71], 0x0000
 	mov [0x6E], 0x0001
 	mov [0x22], 0x0001
@@ -5115,7 +5115,7 @@ LESTER_GRABS_A_VINE_AND_SWINGS:
 	mov [0x63], 0x0002
 	jne [0x2A], 0x04, KILL_IF_NOT_SCENE_4
 	setup channel=0x28, address=LABEL_2682
-	setup channel=0x29, address=LABEL_2670
+	setup channel=0x29, address=WAIT_UNTIL_BEAST_CLOSE
 	mov [0x2A], 0x0005
 
 KILL_IF_NOT_SCENE_4:
@@ -5645,12 +5645,12 @@ THE_BEAST_IS_STILL_AT_A_DISTANCE:
 	jmp CHECK_IF_THE_BEAST_HAS_ALREADY_REACHED_LESTER
 	killChannel
 
-LABEL_2670:
+WAIT_UNTIL_BEAST_CLOSE:
 	mov [0x11], [0x0E]
 	add [0x11], 0x0028
 	jg [0x11], [0x01], THE_BEAST_IS_CLOSE_ENOUGH
 	break
-	jmp LABEL_2670
+	jmp WAIT_UNTIL_BEAST_CLOSE
 	killChannel
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 
@@ -5998,7 +5998,7 @@ LABEL_2ADB:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x29, address=CHECK_IF_THE_BEAST_HAS_ALREADY_REACHED_LESTER
 	jg [0x0E], [0x01], DRAW_BEAST_DRIFT_LEFT_LOOP
-	setup channel=0x29, address=LABEL_2670
+	setup channel=0x29, address=WAIT_UNTIL_BEAST_CLOSE
 	jmp LABEL_277A
 ;@elif BRANCH == "chahi_amiga_1991"
 	jmp DRAW_BEAST_DRIFT_LEFT_LOOP
