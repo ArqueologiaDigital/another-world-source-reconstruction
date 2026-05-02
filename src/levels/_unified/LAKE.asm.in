@@ -7060,12 +7060,12 @@ DRAW_BEAST_421_422_WITH_SOUND_35:
 	break
 	video type=1, offset=CINEMATIC_422, x=[0x0c], y=[0x0d], zoom=0x40
 	play id=0x0035, freq=0x14, vol=0x3F, channel=0x00
-	je [0x1B], 0x01, LABEL_33B4
-	je [0x2B], 0x01, LABEL_33B4
+	je [0x1B], 0x01, BEAST_CONT_FRAMES_423_426
+	je [0x2B], 0x01, BEAST_CONT_FRAMES_423_426
 	mov [0x2B], 0x0001
 	setup channel=0x2D, address=TRIGGER_SCENE_RESUME
 
-LABEL_33B4:
+BEAST_CONT_FRAMES_423_426:
 	break
 	video type=1, offset=CINEMATIC_423, x=[0x0c], y=[0x0d], zoom=0x40
 	break
@@ -7084,12 +7084,12 @@ SLUG_FLIP_WALKS:
 	break
 	video type=1, offset=CINEMATIC_SLUG_FLIP_WALKING_1, x=[0x0c], y=[0x0d], zoom=0x40
 	play id=0x0035, freq=0x14, vol=0x3F, channel=0x00
-	je [0x1B], 0x01, LABEL_33FA
-	je [0x2B], 0x01, LABEL_33FA
+	je [0x1B], 0x01, SLUG_FLIP_CONT_FRAMES_2_5
+	je [0x2B], 0x01, SLUG_FLIP_CONT_FRAMES_2_5
 	mov [0x2B], 0x0001
 	setup channel=0x2D, address=TRIGGER_SCENE_RESUME
 
-LABEL_33FA:
+SLUG_FLIP_CONT_FRAMES_2_5:
 	break
 	video type=1, offset=CINEMATIC_SLUG_FLIP_WALKING_2, x=[0x0c], y=[0x0d], zoom=0x40
 	break
