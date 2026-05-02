@@ -8163,7 +8163,7 @@ LABEL_3FA6:
 	mov [0x64], 0x0000
 	killChannel
 
-LABEL_3FC3:
+HERO_JUMP_RISE_PARABOLA:
 	sub [0x02], 0x0003
 	break
 	sub [0x02], 0x0002
@@ -8214,7 +8214,7 @@ LABEL_401D:
 	jne [0x63], 0x01, LABEL_402F
 	sub [0x02], 0x0003
 	mov [0x63], 0x0000
-	setup channel=0x14, address=LABEL_3FC3
+	setup channel=0x14, address=HERO_JUMP_RISE_PARABOLA
 
 LABEL_402F:
 	break
