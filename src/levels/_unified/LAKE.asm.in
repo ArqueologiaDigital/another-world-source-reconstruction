@@ -2730,7 +2730,7 @@ LABEL_0AB2:
 WAIT_VAR_93_AND_SETUP_CH34:
 	break
 	djnz [0x93], WAIT_VAR_93_AND_SETUP_CH34
-	setup channel=0x34, address=LABEL_0BE0
+	setup channel=0x34, address=DRAW_3_SCATTER_DOTS_CYCLE
 	mov [0x93], 0x0028
 
 LABEL_0ADB:
@@ -2823,7 +2823,7 @@ LOOP_DRAW_LAKE_018_AT_CENTER:
 	break
 	jmp LOOP_DRAW_LAKE_018_AT_CENTER
 
-LABEL_0BE0:
+DRAW_3_SCATTER_DOTS_CYCLE:
 	video type=1, offset=CINEMATIC_LAKE_019, x=[0xa2], y=[0xa3], zoom=0x40
 	video type=1, offset=CINEMATIC_LAKE_020, x=[0xa4], y=[0xa5], zoom=0x40
 	video type=1, offset=CINEMATIC_LAKE_019, x=[0xa6], y=[0xa7], zoom=0x40
@@ -2840,7 +2840,7 @@ LABEL_0BE0:
 	video type=1, offset=CINEMATIC_LAKE_019, x=[0xa4], y=[0xa5], zoom=0x40
 	video type=1, offset=CINEMATIC_LAKE_020, x=[0xa6], y=[0xa7], zoom=0x40
 	break
-	jmp LABEL_0BE0
+	jmp DRAW_3_SCATTER_DOTS_CYCLE
 	killChannel
 
 LABEL_0C24:
