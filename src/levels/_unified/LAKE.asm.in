@@ -5876,11 +5876,11 @@ LABEL_282B:
 	play id=0x0030, freq=0x1C, vol=0x3F, channel=0x01
 	play id=0x0030, freq=0x14, vol=0x20, channel=0x02
 
-LABEL_28BC:
+BEAST_PRE_HOLD_LOOP:
 	break
 	sub [0x0E], 0x0001
 	video type=1, offset=CINEMATIC_198, x=[0x0e], y=[0x0f], zoom=0x40
-	djnz [0x10], LABEL_28BC
+	djnz [0x10], BEAST_PRE_HOLD_LOOP
 	play id=0x004E, freq=0x1C, vol=0x30, channel=0x00
 
 BEAST_FINAL_HOLD_LOOP:
