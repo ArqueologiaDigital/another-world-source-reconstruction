@@ -5781,7 +5781,7 @@ SHIFT_X_LEFT_F_AND_JMP:
 	sub [0x0E], 0x000F
 	jmp LABEL_282B
 
-LABEL_279B:
+BEAST_APPROACH_FAST_LOOP:
 	video type=1, offset=CINEMATIC_LAKE_128, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000F
@@ -5838,9 +5838,9 @@ SHIFT_X_LEFT_320:
 	ret
 
 LABEL_282B:
-	jne [0x66], 0x01, LABEL_279B
-	jl [0x2A], 0x04, LABEL_279B
-	jg [0x0E], 0xFA, LABEL_279B
+	jne [0x66], 0x01, BEAST_APPROACH_FAST_LOOP
+	jl [0x2A], 0x04, BEAST_APPROACH_FAST_LOOP
+	jg [0x0E], 0xFA, BEAST_APPROACH_FAST_LOOP
 	sub [0x0F], 0x000A
 	video type=1, offset=CINEMATIC_LAKE_128, x=[0x0e], y=[0x0f], zoom=0x40
 	break
