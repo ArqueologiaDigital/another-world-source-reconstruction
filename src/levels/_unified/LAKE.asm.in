@@ -70,12 +70,12 @@ CINEMATIC_HERO_LEAP_LEFT_F3		EQU 0x1A84
 CINEMATIC_HERO_LEAP_LEFT_F4		EQU 0x1B48
 CINEMATIC_509		EQU 0xB7E4
 CINEMATIC_569		EQU 0xCBF4
-CINEMATIC_660		EQU 0x08FC
-CINEMATIC_661		EQU 0x0C1E
-CINEMATIC_662		EQU 0xB808
-CINEMATIC_663		EQU 0xB8A0
-CINEMATIC_664		EQU 0xB8EE
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+CINEMATIC_HERO_LAND_LEFT		EQU 0x08FC
+CINEMATIC_HERO_LAND_RIGHT		EQU 0x0C1E
+CINEMATIC_REED_PLANT_5		EQU 0xB808
+CINEMATIC_REED_PLANT_6		EQU 0xB8A0
+CINEMATIC_REED_PLANT_7		EQU 0xB8EE
 CINEMATIC_PARTICLE_BURST_2_FRAME_0		EQU 0xDC8A
 CINEMATIC_PARTICLE_BURST_2_FRAME_1		EQU 0xDC9A
 CINEMATIC_PARTICLE_BURST_2_FRAME_2		EQU 0xDCB2
@@ -94,12 +94,12 @@ CINEMATIC_728		EQU 0x0D3C
 CINEMATIC_729		EQU 0x0DDC
 CINEMATIC_730		EQU 0x0F20
 CINEMATIC_731		EQU 0x0FBC
-CINEMATIC_732		EQU 0x1CBC
-CINEMATIC_733		EQU 0x1FDE
-CINEMATIC_734		EQU 0xCC18
-CINEMATIC_735		EQU 0xCCB0
-CINEMATIC_736		EQU 0xCCFE
 ;@if BRANCH == "chahi_amiga_1991"
+CINEMATIC_HERO_LAND_LEFT		EQU 0x1CBC
+CINEMATIC_HERO_LAND_RIGHT		EQU 0x1FDE
+CINEMATIC_REED_PLANT_5		EQU 0xCC18
+CINEMATIC_REED_PLANT_6		EQU 0xCCB0
+CINEMATIC_REED_PLANT_7		EQU 0xCCFE
 CINEMATIC_PARTICLE_BURST_2_FRAME_0		EQU 0xF09A
 CINEMATIC_PARTICLE_BURST_2_FRAME_1		EQU 0xF0AA
 CINEMATIC_PARTICLE_BURST_2_FRAME_2		EQU 0xF0C2
@@ -3867,86 +3867,86 @@ JMP_TO_REED_PLANT_ANIMATION:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 
 LABEL_1640:
-	video type=1, offset=CINEMATIC_662, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 ;@elif BRANCH == "gba_2004"
 LABEL_1704:
 	video type=1, offset=0xB808, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
 
 LABEL_1640:
-	video type=1, offset=CINEMATIC_734, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-	video type=1, offset=CINEMATIC_662, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0xB808, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_734, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-	video type=1, offset=CINEMATIC_663, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0xB8A0, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_735, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-	video type=1, offset=CINEMATIC_663, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0xB8A0, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_735, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-	video type=1, offset=CINEMATIC_664, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0xB8EE, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_736, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-	video type=1, offset=CINEMATIC_664, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0xB8EE, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_736, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-	video type=1, offset=CINEMATIC_664, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0xB8EE, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_736, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-	video type=1, offset=CINEMATIC_663, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0xB8A0, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_735, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-	video type=1, offset=CINEMATIC_663, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0xB8A0, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_735, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-	video type=1, offset=CINEMATIC_662, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0xB808, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_734, x=160, y=100
+	video type=1, offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991", "dos_1992")
@@ -9788,31 +9788,31 @@ LBL_45E8_4B58:
 	killChannel
 	sub [0x01], 0x0004
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-	video type=1, offset=CINEMATIC_661, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0x0C1E, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_733, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 	break
 	add [0x01], 0x0001
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-	video type=1, offset=CINEMATIC_661, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0x0C1E, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_733, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 	add [0x01], 0x0001
 
 LABEL_465B:
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-	video type=1, offset=CINEMATIC_661, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0x0C1E, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_733, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 	je [HERO_ACTION_POS_MASK], 0x88, LABEL_465B
 	break
@@ -10275,31 +10275,31 @@ HERO_RUN_LEFT_LOOP:
 	killChannel
 	add [0x01], 0x0004
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-	video type=1, offset=CINEMATIC_660, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0x08FC, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_732, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 	break
 	sub [0x01], 0x0001
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-	video type=1, offset=CINEMATIC_660, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0x08FC, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_732, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 	sub [0x01], 0x0001
 
 LABEL_48B2:
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-	video type=1, offset=CINEMATIC_660, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "gba_2004"
 	video type=1, offset=0x08FC, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_732, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 	je [HERO_ACTION_POS_MASK], 0x88, LABEL_48B2
 	break
