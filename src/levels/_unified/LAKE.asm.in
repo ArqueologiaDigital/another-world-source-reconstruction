@@ -5979,10 +5979,10 @@ LABEL_29A2:
 ;@endif
 	mov [0x10], 0x0005
 
-LABEL_29B4:
+HOLD_LAKE_139_FOR_N_FRAMES:
 	video type=1, offset=CINEMATIC_LAKE_139, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	djnz [0x10], LABEL_29B4
+	djnz [0x10], HOLD_LAKE_139_FOR_N_FRAMES
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 
 LABEL_2ADB:
