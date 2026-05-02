@@ -4392,14 +4392,14 @@ LABEL_1B1A:
 
 LABEL_1B22:
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jl [0x01], 0x0146, LABEL_1B36
+	jl [0x01], 0x0146, HERO_INIT_Y_AND_DISPATCH_BY_X
 	je [0x63], 0x02, LABEL_1BAA
 ;@endif
 ;@if BRANCH == "dos_1992"
-	jl [0x01], 0x0146, LABEL_1B36
+	jl [0x01], 0x0146, HERO_INIT_Y_AND_DISPATCH_BY_X
 	je [0x63], 0x02, LABEL_1BAA
 ;@endif
-	jl [0x01], 0x0159, LABEL_1B36
+	jl [0x01], 0x0159, HERO_INIT_Y_AND_DISPATCH_BY_X
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 
 LABEL_1BAA:
@@ -4413,7 +4413,7 @@ LABEL_1BAA:
 	call KILL_CH_01_04_38
 	jmp OUTSIDE_POOL_SCREEN
 
-LABEL_1B36:
+HERO_INIT_Y_AND_DISPATCH_BY_X:
 	mov [0x02], 0x00B6
 	jg [0x01], 0x6E, LABEL_1B66
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
