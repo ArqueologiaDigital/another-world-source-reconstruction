@@ -2092,7 +2092,7 @@ START_LAKE_BG_MUSIC_AND_DELETE_CH_0_2:
 	setup channel=0x09, address=KILL_CHANNEL_ROUTINE
 ;@endif
 	setup channel=0x2E, address=BEETLE_KICK_DETECTOR
-	setup channel=0x2E, address=LABEL_3497
+	setup channel=0x2E, address=WAIT_FOR_BEETLE_OFFSCREEN_THEN_KILL
 	setup channel=0x2F, address=INC_VAR_6E_PER_TICK_LOOP
 	setup channel=0x30, address=WAIT_FOR_TIMER_AND_HACK_67_THEN_SETUP_31
 	setup channel=0x24, address=LABEL_0499
@@ -3202,9 +3202,9 @@ LABEL_1032:
 	jmp LABEL_10C3
 	mov [0x03], 0x0032
 
-LABEL_10BE:
+WAIT_VAR_03_FRAMES_LOOP:
 	break
-	djnz [0x03], LABEL_10BE
+	djnz [0x03], WAIT_VAR_03_FRAMES_LOOP
 
 LABEL_10C3:
 ;@endif
@@ -3212,9 +3212,9 @@ LABEL_10C3:
 	je [0xDB], 0x00, LABEL_10C3
 	mov [0x03], 0x0032
 
-LABEL_10BE:
+WAIT_VAR_03_FRAMES_LOOP:
 	break
-	djnz [0x03], LABEL_10BE
+	djnz [0x03], WAIT_VAR_03_FRAMES_LOOP
 
 LABEL_10C3:
 ;@endif
@@ -3246,9 +3246,9 @@ DISPLAY_TEXT_01FA_AND_FADE_TO_PAL_2:
 	mov [0x03], 0x001E
 ;@endif
 
-LABEL_1097:
+WAIT_VAR_03_FRAMES_LOOP:
 	break
-	djnz [0x03], LABEL_1097
+	djnz [0x03], WAIT_VAR_03_FRAMES_LOOP
 	load id=0x3E81
 	killChannel
 
@@ -7144,10 +7144,10 @@ BEETLE_WALKING_RIGHT:
 	jmp BEETLE_WALKING_RIGHT
 	killChannel
 
-LABEL_3497:
+WAIT_FOR_BEETLE_OFFSCREEN_THEN_KILL:
 	break
-	jne [HACK_VAR_67], 0x01, LABEL_3497
-	jg [0x0A], 0x014A, LABEL_3497
+	jne [HACK_VAR_67], 0x01, WAIT_FOR_BEETLE_OFFSCREEN_THEN_KILL
+	jg [0x0A], 0x014A, WAIT_FOR_BEETLE_OFFSCREEN_THEN_KILL
 	setup channel=0x09, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
