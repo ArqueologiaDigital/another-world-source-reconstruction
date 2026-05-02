@@ -3773,7 +3773,7 @@ LABEL_150F:
 	selectVideoPage 0xFF
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	jmp LABEL_1EB0
+	jmp INIT_VAR_03_TO_0x1E
 ;@elif BRANCH == "chahi_amiga_1991"
 	jmp INIT_VAR_03_TO_0x1E
 ;@endif
@@ -4071,13 +4071,13 @@ SNEAKY_TENTACLE_GOING_UP:
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	video type=1, offset=CINEMATIC_LAKE_192, x=[0x32], y=100, zoom=0x40
-	jmp LABEL_1EB0
+	jmp INIT_VAR_03_TO_0x1E
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_569, x=[0x32], y=100, zoom=0x40
 	jmp INIT_VAR_03_TO_0x1E
 ;@elif BRANCH == "dos_1992"
 	video type=1, offset=CINEMATIC_509, x=[0x32], y=100, zoom=0x40
-	jmp LABEL_1EB0
+	jmp INIT_VAR_03_TO_0x1E
 ;@endif
 	killChannel
 
@@ -4775,14 +4775,14 @@ LABEL_1EE5:
 	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_10, x=160, y=100
 	play id=0x004F, freq=0x17, vol=0x3F, channel=0x03
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	jmp LABEL_1EB0
+	jmp INIT_VAR_03_TO_0x1E
 ;@elif BRANCH == "chahi_amiga_1991"
 	jmp INIT_VAR_03_TO_0x1E
 ;@endif
 	killChannel
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-LABEL_1EB0:
+INIT_VAR_03_TO_0x1E:
 ;@elif BRANCH == "chahi_amiga_1991"
 INIT_VAR_03_TO_0x1E:
 ;@endif
@@ -7794,7 +7794,7 @@ LABEL_3B93:
 	mov [0x02], [0x16]
 	jl [0x16], 0x0104, LABEL_3B93
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	jmp LABEL_1EB0
+	jmp INIT_VAR_03_TO_0x1E
 ;@elif BRANCH == "chahi_amiga_1991"
 	jmp INIT_VAR_03_TO_0x1E
 ;@endif
