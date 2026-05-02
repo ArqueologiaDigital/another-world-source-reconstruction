@@ -5682,7 +5682,7 @@ BEAST_APPROACH_PHASE_1:
 	video type=1, offset=CINEMATIC_BEAST_APPROACH_FRAME_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 
-LABEL_26A2:
+BEAST_APPROACH_PHASE_2:
 	add [0x0E], 0x000F
 	video type=1, offset=CINEMATIC_BEAST_APPROACH_FRAME_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
@@ -5713,7 +5713,7 @@ LABEL_26A2:
 	video type=1, offset=CINEMATIC_BEAST_APPROACH_FRAME_10, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0001
-	jmp LABEL_26A2
+	jmp BEAST_APPROACH_PHASE_2
 	killChannel
 
 LABEL_270D:
