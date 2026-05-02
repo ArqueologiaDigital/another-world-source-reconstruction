@@ -46,14 +46,14 @@ CINEMATIC_HERO_WALK_RIGHT_FRAME_1		EQU 0xF2B8
 CINEMATIC_HERO_WALK_RIGHT_FRAME_2		EQU 0xF304
 CINEMATIC_HERO_WALK_RIGHT_FRAME_3		EQU 0xF350
 CINEMATIC_175		EQU 0xF39C
-CINEMATIC_176		EQU 0x181C
-CINEMATIC_177		EQU 0x1840
-CINEMATIC_178		EQU 0x13A0
-CINEMATIC_179		EQU 0x142C
-CINEMATIC_180		EQU 0x1498
-CINEMATIC_181		EQU 0x1518
-CINEMATIC_182		EQU 0x1594
-CINEMATIC_183		EQU 0x1604
+CINEMATIC_HERO_STOP_R_F015_BUNDLE		EQU 0x181C
+CINEMATIC_HERO_STOP_R_F034_BUNDLE		EQU 0x1840
+CINEMATIC_HERO_STOP_R_F036_BUNDLE		EQU 0x13A0
+CINEMATIC_HERO_STOP_R_F038_BUNDLE		EQU 0x142C
+CINEMATIC_HERO_STOP_R_F040_BUNDLE		EQU 0x1498
+CINEMATIC_HERO_STOP_R_RECOVER_F0		EQU 0x1518
+CINEMATIC_HERO_STOP_R_RECOVER_F1		EQU 0x1594
+CINEMATIC_HERO_STOP_R_RECOVER_F2		EQU 0x1604
 CINEMATIC_HERO_LEAP_RIGHT_F2		EQU 0x07B8
 CINEMATIC_HERO_LEAP_RIGHT_F3		EQU 0x0854
 CINEMATIC_HERO_LEAP_RIGHT_F4		EQU 0x08F0
@@ -8747,7 +8747,7 @@ LABEL_42BD:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_STOP_R_BUNDLE_038_039
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_179, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_STOP_R_F038_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 
 LABEL_42CF:
@@ -8756,7 +8756,7 @@ LABEL_42CF:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_VIDEO_036_037_AND_HERO_STOP_RIGHT_FRAME_2_RET
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_178, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_STOP_R_F036_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 
 LABEL_42DA:
@@ -8765,7 +8765,7 @@ LABEL_42DA:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_STOP_R_BUNDLE_034_035
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_177, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_STOP_R_F034_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 
 LABEL_42E5:
@@ -8932,7 +8932,7 @@ LBL_4371_453B:
 	jne [HERO_POS_MASK], 0x01, LBL_4371_453B
 ;@endif
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_176, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_STOP_R_F015_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
 	jne [HERO_POS_MASK], 0x01, LABEL_4371
 ;@elif BRANCH == "dos_1992"
 	call DRAW_HERO_STOP_R_BUNDLE_015_032_033
@@ -8943,7 +8943,7 @@ LBL_4371_453B:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_STOP_R_BUNDLE_034_035
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_177, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_STOP_R_F034_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 	je [HERO_POS_MASK], 0x00, LABEL_42E5
 	add [0x01], 0x0002
@@ -8956,7 +8956,7 @@ LBL_4371_453B:
 	jne [HERO_POS_LEFT_RIGHT], 0x01, LABEL_4575
 ;@endif
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_178, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_STOP_R_F036_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "dos_1992"
 	call DRAW_VIDEO_036_037_AND_HERO_STOP_RIGHT_FRAME_2_RET
 	jne [HERO_POS_LEFT_RIGHT], 0x01, LABEL_4575
@@ -8988,7 +8988,7 @@ LABEL_4575:
 	jne [HERO_POS_LEFT_RIGHT], 0x01, LABEL_458D
 ;@endif
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_179, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_STOP_R_F038_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "dos_1992"
 	call DRAW_HERO_STOP_R_BUNDLE_038_039
 	jne [HERO_POS_LEFT_RIGHT], 0x01, LABEL_458D
@@ -9016,7 +9016,7 @@ LABEL_458D:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_STOP_R_BUNDLE_040_041
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_180, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_STOP_R_F040_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 	mov [0x29], [0x01]
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
@@ -9026,16 +9026,16 @@ LABEL_458D:
 	add [0x01], 0x0003
 	break
 	call INVOKE_DRAW_HELPER_ON_BG_PAGE
-	video type=1, offset=CINEMATIC_181, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_STOP_R_RECOVER_F0, x=[0x01], y=[0x02], zoom=[0x03]
 	mov [0x29], [0x01]
 	add [0x02], 0x0000
 	add [0x01], 0x0002
 	break
 	play id=0x0051, freq=0x0B, vol=0x20, channel=0x01
-	video type=1, offset=CINEMATIC_182, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_STOP_R_RECOVER_F1, x=[0x01], y=[0x02], zoom=[0x03]
 	add [0x01], 0x0002
 	break
-	video type=1, offset=CINEMATIC_183, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_STOP_R_RECOVER_F2, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 	add [0x01], 0x0002
 
