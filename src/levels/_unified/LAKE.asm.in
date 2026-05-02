@@ -1682,7 +1682,7 @@ LAKE_LEVEL_INIT:
 	song id=0x0FA0, delay=0x0000, pos=0x00
 ;@endif
 
-LABEL_00D0:
+INTRO_WAIT_KEY_RELEASE:
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	text id=0x013D, x=5, y=80, color=0x0C
@@ -1693,7 +1693,7 @@ LABEL_00D0:
 ;@if BRANCH == "dos_1992"
 	call SET_HERO_ACTION_TO_1_IF_GROUNDED_AND_DB_SET
 ;@endif
-	jne [HERO_ACTION], 0x00, LABEL_00D0
+	jne [HERO_ACTION], 0x00, INTRO_WAIT_KEY_RELEASE
 ;@if BRANCH == "chahi_amiga_1991"
 	setPalette 0x1D
 ;@endif
@@ -1701,7 +1701,7 @@ LABEL_00D0:
 	setPalette 0x1D
 ;@endif
 
-LABEL_00DA:
+INTRO_WAIT_KEY_PRESS:
 	text id=0x013D, x=5, y=80, color=0x0C
 	text id=0x013C, x=5, y=180, color=0x0D
 	text id=0x015E, x=26, y=180, color=0x0E
@@ -1712,7 +1712,7 @@ LABEL_00DA:
 ;@if BRANCH == "dos_1992"
 	call SET_HERO_ACTION_TO_1_IF_GROUNDED_AND_DB_SET
 ;@endif
-	je [HERO_ACTION], 0x00, LABEL_00DA
+	je [HERO_ACTION], 0x00, INTRO_WAIT_KEY_PRESS
 	mov [0x00], 0x000A
 	setup channel=0x00, address=ENTRY_POINT_OF_LAKE_LEVEL
 	killChannel
