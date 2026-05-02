@@ -8379,7 +8379,7 @@ LABEL_4138:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jmp LABEL_443D
 ;@elif BRANCH == "chahi_amiga_1991"
-	jmp LABEL_427D
+	jmp MAYBE_RESUME_WALK_LEFT_IF_GROUNDED
 ;@endif
 	break
 	add [0x01], 0x0002
@@ -8542,7 +8542,7 @@ LABEL_41EC:
 ;@endif
 	jne [HERO_POS_MASK], 0x02, LABEL_41EC
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_427D
+	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, MAYBE_RESUME_WALK_LEFT_IF_GROUNDED
 ;@elif BRANCH == "chahi_amiga_1991"
 	sub [0x01], 0x0002
 	break
@@ -8577,7 +8577,7 @@ LABEL_41EC:
 ;@endif
 	sub [0x01], 0x0002
 
-LABEL_427D:
+MAYBE_RESUME_WALK_LEFT_IF_GROUNDED:
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	break
 	call LABEL_48CF
@@ -8693,7 +8693,7 @@ LABEL_4285:
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_445C
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_HERO_STANDING_LEFT_IDLE, x=[0x01], y=[0x02], zoom=[0x03]
-	jne [HERO_POS_MASK], 0x02, LABEL_427D
+	jne [HERO_POS_MASK], 0x02, MAYBE_RESUME_WALK_LEFT_IF_GROUNDED
 ;@endif
 	sub [0x01], 0x0002
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
@@ -9521,7 +9521,7 @@ DISPATCH_TO_HERO_ACTION_LEFT:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jmp LABEL_443D
 ;@elif BRANCH == "chahi_amiga_1991"
-	jmp LABEL_427D
+	jmp MAYBE_RESUME_WALK_LEFT_IF_GROUNDED
 ;@endif
 	killChannel
 
@@ -9819,7 +9819,7 @@ LABEL_465B:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jmp LABEL_443D
 ;@elif BRANCH == "chahi_amiga_1991"
-	jmp LABEL_427D
+	jmp MAYBE_RESUME_WALK_LEFT_IF_GROUNDED
 ;@endif
 	killChannel
 
@@ -10342,7 +10342,7 @@ LABEL_4903:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jmp LABEL_443D
 ;@elif BRANCH == "chahi_amiga_1991"
-	jmp LABEL_427D
+	jmp MAYBE_RESUME_WALK_LEFT_IF_GROUNDED
 ;@endif
 	killChannel
 
@@ -10425,7 +10425,7 @@ LABEL_49AD:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jmp LABEL_443D
 ;@elif BRANCH == "chahi_amiga_1991"
-	jmp LABEL_427D
+	jmp MAYBE_RESUME_WALK_LEFT_IF_GROUNDED
 ;@endif
 
 LABEL_49DA:
@@ -10487,7 +10487,7 @@ LABEL_4A3E:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jmp LABEL_443D
 ;@elif BRANCH == "chahi_amiga_1991"
-	jmp LABEL_427D
+	jmp MAYBE_RESUME_WALK_LEFT_IF_GROUNDED
 ;@endif
 	killChannel
 
