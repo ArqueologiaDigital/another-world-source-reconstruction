@@ -8311,9 +8311,9 @@ LABEL_40A2:
 LABEL_40A5:
 	jne [HERO_ACTION_POS_MASK], 0x82, LABEL_40C3
 	je [0x63], 0x05, LABEL_40C3
-	setup channel=0x14, address=LABEL_4477
+	setup channel=0x14, address=HERO_LEAP_LEFT_LOOP
 	jne [0x63], 0x02, LABEL_40BF
-	setup channel=0x14, address=LABEL_444F
+	setup channel=0x14, address=HERO_LEAP_LEFT_PRELUDE
 
 LABEL_40BF:
 	mov [0x63], 0x0005
@@ -8321,9 +8321,9 @@ LABEL_40BF:
 LABEL_40C3:
 	jne [HERO_ACTION_POS_MASK], 0x81, LABEL_40E1
 	je [0x63], 0x06, LABEL_40E1
-	setup channel=0x14, address=LABEL_458E
+	setup channel=0x14, address=HERO_LEAP_RIGHT_LOOP
 	jne [0x63], 0x01, LABEL_40DD
-	setup channel=0x14, address=LABEL_456A
+	setup channel=0x14, address=HERO_LEAP_RIGHT_PRELUDE
 
 LABEL_40DD:
 	mov [0x63], 0x0006
@@ -9525,7 +9525,7 @@ DISPATCH_TO_HERO_ACTION_LEFT:
 ;@endif
 	killChannel
 
-LABEL_444F:
+HERO_LEAP_LEFT_PRELUDE:
 	sub [0x01], 0x0004
 	video type=1, offset=CINEMATIC_137, x=[0x01], y=[0x02], zoom=[0x03]
 	add [0x01], 0x0001
@@ -9542,7 +9542,7 @@ LABEL_4464:
 	break
 	je [HERO_POS_MASK], 0x00, LABEL_4464
 
-LABEL_4477:
+HERO_LEAP_LEFT_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x15, address=LABEL_49C5
 ;@elif BRANCH == "chahi_amiga_1991"
@@ -9672,7 +9672,7 @@ DISPATCH_TO_HERO_ACTION_RIGHT:
 ;@endif
 	killChannel
 
-LABEL_456A:
+HERO_LEAP_RIGHT_PRELUDE:
 	video type=1, offset=CINEMATIC_137, x=[0x01], y=[0x02], zoom=[0x03]
 	add [0x01], 0x0003
 	je [HERO_POS_MASK], 0x00, DISPATCH_TO_HERO_ACTION_RIGHT
@@ -9688,7 +9688,7 @@ LABEL_457B:
 	break
 	je [HERO_POS_MASK], 0x00, LABEL_457B
 
-LABEL_458E:
+HERO_LEAP_RIGHT_LOOP:
 	setup channel=0x15, address=WAIT_RUN_RIGHT_THEN_DECEL
 	add [0x01], 0x0004
 
