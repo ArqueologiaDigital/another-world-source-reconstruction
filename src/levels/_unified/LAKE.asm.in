@@ -4511,7 +4511,7 @@ LABEL_1C11:
 ;@endif
 	mov [0x01], 0x0000
 	call ADVANCE_X_BACKWARD_ONE_SCREEN
-	call LABEL_1CC9
+	call DEL_CH_FOR_TRANSITION
 	jmp FIRST_SCREEN_TO_THE_RIGHT
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
@@ -4532,7 +4532,7 @@ LABEL_1CBA:
 ;@endif
 	mov [0x01], 0x0140
 	call ADVANCE_X_FORWARD_ONE_SCREEN
-	call LABEL_1CC9
+	call DEL_CH_FOR_TRANSITION
 	jmp VINE_SCREEN
 
 LABEL_1C25:
@@ -4552,7 +4552,7 @@ ENTER_SECOND_SCREEN_FROM_LEFT:
 ;@endif
 	mov [0x01], 0x0000
 	call ADVANCE_X_BACKWARD_ONE_SCREEN
-	call LABEL_1CD2
+	call KILL_CH7_DEL_RANGES_A
 	jmp SECOND_SCREEN_TO_THE_RIGHT
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
@@ -4573,7 +4573,7 @@ LABEL_1D01:
 ;@endif
 	mov [0x01], 0x0140
 	call ADVANCE_X_FORWARD_ONE_SCREEN
-	call LABEL_1CD2
+	call KILL_CH7_DEL_RANGES_A
 	jmp OUTSIDE_POOL_SCREEN
 
 LABEL_1C52:
@@ -4605,7 +4605,7 @@ LABEL_1D27:
 	mov [0x0E], 0xFE5C
 
 LABEL_1C6F:
-	call LABEL_1CDF
+	call KILL_CH7_DEL_RANGES_B
 	jmp THIRD_SCREEN_TO_THE_RIGHT
 
 LABEL_1C75:
@@ -4628,7 +4628,7 @@ ENTER_FIRST_SCREEN_TO_THE_RIGHT:
 ;@endif
 	mov [0x01], 0x0140
 	call ADVANCE_X_FORWARD_ONE_SCREEN
-	call LABEL_1CDF
+	call KILL_CH7_DEL_RANGES_B
 	jmp FIRST_SCREEN_TO_THE_RIGHT
 
 LABEL_1C89:
@@ -4675,18 +4675,18 @@ KILL_CH_01_04_38:
 	setup channel=0x38, address=KILL_CHANNEL_ROUTINE
 	ret
 
-LABEL_1CC9:
+DEL_CH_FOR_TRANSITION:
 	deleteChannels first=0x00, last=0x08
 	deleteChannels first=0x33, last=0x38
 	ret
 
-LABEL_1CD2:
+KILL_CH7_DEL_RANGES_A:
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
 	deleteChannels first=0x0B, last=0x13
 	deleteChannels first=0x35, last=0x38
 	ret
 
-LABEL_1CDF:
+KILL_CH7_DEL_RANGES_B:
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
 	deleteChannels first=0x0B, last=0x13
 	deleteChannels first=0x35, last=0x38
