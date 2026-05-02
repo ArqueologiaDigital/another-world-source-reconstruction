@@ -10537,10 +10537,10 @@ HERO_GETTING_OUT_OF_POOL_LOOP:
 	add [0x01], [HERO_POS_LEFT_RIGHT]
 	video type=1, offset=CINEMATIC_137, x=[0x01], y=[0x02], zoom=[0x03]
 
-LABEL_4AEC:
+HOLD_CIN_147_WAIT_KEY:
 	break
 	video type=1, offset=CINEMATIC_137, x=[0x01], y=[0x02], zoom=[0x03]
-	je [HERO_POS_MASK], 0x00, LABEL_4AEC
+	je [HERO_POS_MASK], 0x00, HOLD_CIN_147_WAIT_KEY
 	break
 	add [0x02], 0x0001
 	video type=1, offset=CINEMATIC_730, x=[0x01], y=[0x02], zoom=[0x03]
@@ -10562,10 +10562,10 @@ LABEL_4AEC:
 	add [0x02], 0x0002
 	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_F_1, x=[0x01], y=[0x02], zoom=[0x03]
 
-LABEL_4B40:
+HOLD_POOL_F_1_WAIT_KEY:
 	break
 	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_F_1, x=[0x01], y=[0x02], zoom=[0x03]
-	je [HERO_POS_MASK], 0x00, LABEL_4B40
+	je [HERO_POS_MASK], 0x00, HOLD_POOL_F_1_WAIT_KEY
 	break
 	add [0x02], 0x0001
 	jmp HERO_GETTING_OUT_OF_POOL_LOOP
@@ -10574,10 +10574,10 @@ LABEL_4B40:
 LABEL_4B56:
 	video type=1, offset=CINEMATIC_720, x=[0x01], y=[0x02], zoom=[0x03]
 
-LABEL_4B5C:
+HOLD_CIN_720_WAIT_KEY:
 	break
 	video type=1, offset=CINEMATIC_720, x=[0x01], y=[0x02], zoom=[0x03]
-	je [HERO_POS_MASK], 0x00, LABEL_4B5C
+	je [HERO_POS_MASK], 0x00, HOLD_CIN_720_WAIT_KEY
 	break
 	sub [0x02], 0x0002
 	video type=1, offset=CINEMATIC_721, x=[0x01], y=[0x02], zoom=[0x03]
@@ -10599,10 +10599,10 @@ LABEL_4B5C:
 	add [0x01], [HERO_POS_LEFT_RIGHT]
 	video type=1, offset=CINEMATIC_724, x=[0x01], y=[0x02], zoom=[0x03]
 
-LABEL_4BB0:
+HOLD_CIN_724_WAIT_KEY:
 	break
 	video type=1, offset=CINEMATIC_724, x=[0x01], y=[0x02], zoom=[0x03]
-	je [HERO_POS_MASK], 0x00, LABEL_4BB0
+	je [HERO_POS_MASK], 0x00, HOLD_CIN_724_WAIT_KEY
 	break
 	sub [0x02], 0x0002
 	video type=1, offset=CINEMATIC_725, x=[0x01], y=[0x02], zoom=[0x03]
