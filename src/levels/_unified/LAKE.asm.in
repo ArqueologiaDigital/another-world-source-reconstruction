@@ -8925,7 +8925,7 @@ LBL_4371_453B:
 	mov [0x29], [0x01]
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_WALK_RIGHT_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	call LABEL_46E8
+	call DRAW_HERO_STOP_R_BUNDLE_015_032_033
 ;@if BRANCH == "cartridge_1992"
 	jne [HERO_POS_MASK], 0x01, LABEL_4371
 ;@elif BRANCH == "gba_2004"
@@ -8935,7 +8935,7 @@ LBL_4371_453B:
 	video type=1, offset=CINEMATIC_176, x=[0x01], y=[0x02], zoom=[0x03]
 	jne [HERO_POS_MASK], 0x01, LABEL_4371
 ;@elif BRANCH == "dos_1992"
-	call LABEL_46E8
+	call DRAW_HERO_STOP_R_BUNDLE_015_032_033
 	jne [HERO_POS_MASK], 0x01, LBL_4371_453B
 ;@endif
 	add [0x01], 0x0002
@@ -9232,7 +9232,7 @@ DRAW_HERO_STOP_R_BUNDLE_030_031:
 	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-LABEL_46E8:
+DRAW_HERO_STOP_R_BUNDLE_015_032_033:
 	video type=0, offset=COMMON_VIDEO_015, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x2E,0xEE,0x01,0x02
 	video type=0, offset=COMMON_VIDEO_032, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x08,0xAE,0x01,0x02
 	video type=0, offset=COMMON_VIDEO_033, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x19,0xEF,0x01,0x02
