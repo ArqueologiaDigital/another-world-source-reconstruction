@@ -8223,24 +8223,24 @@ LABEL_4034:
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_41C8
 	jne [0x63], 0x05, LABEL_419D
-	setup channel=0x14, address=LABEL_4E69
+	setup channel=0x14, address=HERO_RUN_LEFT_LOOP
 	mov [0x63], 0x0064
 	jmp LABEL_410C
 
 LABEL_419D:
 	jne [0x63], 0x06, LABEL_41AE
-	setup channel=0x14, address=LABEL_4CBD
+	setup channel=0x14, address=HERO_RUN_RIGHT_LOOP
 	mov [0x63], 0x0064
 	jmp LABEL_410C
 
 LABEL_41AE:
 	jne [0x63], 0x01, LABEL_41BB
-	setup channel=0x14, address=LABEL_478C
+	setup channel=0x14, address=HERO_WALK_LEFT_LOOP
 	jmp LABEL_410C
 
 LABEL_41BB:
 	jne [0x63], 0x02, LABEL_41C8
-	setup channel=0x14, address=LABEL_467F
+	setup channel=0x14, address=HERO_WALK_RIGHT_LOOP
 	jmp LABEL_410C
 
 LABEL_41C8:
@@ -8248,24 +8248,24 @@ LABEL_41C8:
 ;@if BRANCH == "dos_1992"
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_41C8
 	jne [0x63], 0x05, LABEL_419D
-	setup channel=0x14, address=LABEL_4E69
+	setup channel=0x14, address=HERO_RUN_LEFT_LOOP
 	mov [0x63], 0x0064
 	jmp LABEL_410C
 
 LABEL_419D:
 	jne [0x63], 0x06, LABEL_41AE
-	setup channel=0x14, address=LABEL_4CBD
+	setup channel=0x14, address=HERO_RUN_RIGHT_LOOP
 	mov [0x63], 0x0064
 	jmp LABEL_410C
 
 LABEL_41AE:
 	jne [0x63], 0x01, LABEL_41BB
-	setup channel=0x14, address=LABEL_478C
+	setup channel=0x14, address=HERO_WALK_LEFT_LOOP
 	jmp LABEL_410C
 
 LABEL_41BB:
 	jne [0x63], 0x02, LABEL_41C8
-	setup channel=0x14, address=LABEL_467F
+	setup channel=0x14, address=HERO_WALK_RIGHT_LOOP
 	jmp LABEL_410C
 
 LABEL_41C8:
@@ -8532,7 +8532,7 @@ LABEL_437C:
 LABEL_41EC:
 	break
 	mov [0x29], [0x01]
-	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_478C
+	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_WALK_LEFT_LOOP
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call LABEL_48BF
 ;@elif BRANCH == "chahi_amiga_1991"
@@ -8681,7 +8681,7 @@ LABEL_442E:
 LABEL_443D:
 ;@endif
 	break
-	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_478C
+	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_WALK_LEFT_LOOP
 
 LABEL_4285:
 	mov [0x29], [0x01]
@@ -8921,7 +8921,7 @@ LBL_4371_453B:
 ;@endif
 	break
 	mov [0x29], [0x01]
-	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_467F
+	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_WALK_RIGHT_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	call LABEL_46E8
 ;@if BRANCH == "cartridge_1992"
@@ -9103,7 +9103,7 @@ LABEL_45D2:
 LABEL_45E0:
 	break
 ;@endif
-	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_467F
+	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_WALK_RIGHT_LOOP
 
 ;@if BRANCH == "cartridge_1992"
 LABEL_469B:
@@ -9821,10 +9821,10 @@ LABEL_465B:
 ;@endif
 	killChannel
 
-LABEL_467F:
+HERO_WALK_RIGHT_LOOP:
 	mov [0x63], 0x0064
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	je [HERO_POS_MASK], 0x0A, LABEL_478C
+	je [HERO_POS_MASK], 0x0A, HERO_WALK_LEFT_LOOP
 	video type=0, offset=COMMON_VIDEO_003, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x26,0xCC,0x01,0x02
 	video type=1, offset=CINEMATIC_003, x=[0x01], y=[0x02], zoom=0x40
 ;@elif BRANCH == "chahi_amiga_1991"
@@ -9944,9 +9944,9 @@ LABEL_46FB:
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
-LABEL_4CBD:
+HERO_RUN_RIGHT_LOOP:
 	setup channel=0x15, address=KILL_CHANNEL_ROUTINE
-	je [HERO_POS_MASK], 0x0A, LABEL_4E69
+	je [HERO_POS_MASK], 0x0A, HERO_RUN_LEFT_LOOP
 	video type=0, offset=COMMON_VIDEO_008, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x27,0x8A,0x01,0x02
 	add [0x01], 0x0001
 	video type=1, offset=CINEMATIC_004, x=[0x01], y=[0x02], zoom=0x40
@@ -10047,10 +10047,10 @@ LABEL_4CBD:
 ;@endif
 	killChannel
 
-LABEL_478C:
+HERO_WALK_LEFT_LOOP:
 	mov [0x63], 0x0064
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	je [HERO_POS_MASK], 0x09, LABEL_467F
+	je [HERO_POS_MASK], 0x09, HERO_WALK_RIGHT_LOOP
 	video type=0, offset=COMMON_VIDEO_048, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x29,0x60,0x01,0x02
 	video type=1, offset=CINEMATIC_016, x=[0x01], y=[0x02], zoom=0x40
 ;@elif BRANCH == "chahi_amiga_1991"
@@ -10165,15 +10165,15 @@ LABEL_4808:
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 
-LABEL_4E69:
+HERO_RUN_LEFT_LOOP:
 	setup channel=0x15, address=KILL_CHANNEL_ROUTINE
-	je [HERO_POS_MASK], 0x09, LABEL_4CBD
+	je [HERO_POS_MASK], 0x09, HERO_RUN_RIGHT_LOOP
 ;@endif
 ;@if BRANCH == "dos_1992"
 
-LABEL_4E69:
+HERO_RUN_LEFT_LOOP:
 	setup channel=0x15, address=KILL_CHANNEL_ROUTINE
-	je [HERO_POS_MASK], 0x09, LABEL_4CBD
+	je [HERO_POS_MASK], 0x09, HERO_RUN_RIGHT_LOOP
 ;@endif
 	mov [0x1B], 0x0001
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
