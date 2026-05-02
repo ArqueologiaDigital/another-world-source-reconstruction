@@ -8275,9 +8275,9 @@ HERO_AI_DISPATCH_AIRBORNE:
 	jge [HERO_ACTION_POS_MASK], 0x80, LABEL_40A5
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_4059
 	je [0x63], 0x01, LABEL_4059
-	setup channel=0x14, address=LABEL_4177
+	setup channel=0x14, address=HERO_FALL_LEFT_LOOP
 	je [0x63], 0x05, LABEL_4055
-	setup channel=0x14, address=LABEL_4168
+	setup channel=0x14, address=HERO_FALL_LEFT_PRELUDE
 
 LABEL_4055:
 	mov [0x63], 0x0001
@@ -8412,13 +8412,13 @@ LABEL_4160:
 	jmp LABEL_41EC
 	killChannel
 
-LABEL_4168:
+HERO_FALL_LEFT_PRELUDE:
 	sub [0x01], 0x0004
 	video type=1, offset=CINEMATIC_LAKE_190, x=[0x01], y=[0x02], zoom=[0x03]
 	add [0x01], 0x0001
 	break
 
-LABEL_4177:
+HERO_FALL_LEFT_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_CV_060_061_AND_CIN_002
 ;@elif BRANCH == "chahi_amiga_1991"
@@ -8705,7 +8705,7 @@ LABEL_445C:
 LABEL_445C:
 ;@endif
 	break
-	jmp LABEL_4177
+	jmp HERO_FALL_LEFT_LOOP
 	killChannel
 	break
 	sub [0x01], 0x0002
