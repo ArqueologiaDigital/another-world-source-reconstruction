@@ -9645,9 +9645,9 @@ LABEL_44DA:
 	jmp LABEL_447F
 	killChannel
 
-LABEL_453D:
+WAIT_RUN_RIGHT_THEN_DECEL:
 	break
-	je [0x63], 0x06, LABEL_453D
+	je [0x63], 0x06, WAIT_RUN_RIGHT_THEN_DECEL
 	add [0x01], 0x0003
 	break
 	add [0x01], 0x0002
@@ -9689,7 +9689,7 @@ LABEL_457B:
 	je [HERO_POS_MASK], 0x00, LABEL_457B
 
 LABEL_458E:
-	setup channel=0x15, address=LABEL_453D
+	setup channel=0x15, address=WAIT_RUN_RIGHT_THEN_DECEL
 	add [0x01], 0x0004
 
 LABEL_4596:
