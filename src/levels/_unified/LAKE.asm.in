@@ -9046,10 +9046,10 @@ MAYBE_RESUME_WALK_RIGHT_IF_GROUNDED:
 	call DRAW_HERO_STOP_R_BUNDLE_042_043
 	mov [0x29], [0x01]
 	add [0x01], 0x0001
-	jne [HERO_POS_LEFT_RIGHT], 0x01, LABEL_4422
+	jne [HERO_POS_LEFT_RIGHT], 0x01, WAIT_RUN_LEFT_THEN_DECEL
 	add [0x01], 0x0001
 
-LABEL_4422:
+WAIT_RUN_LEFT_THEN_DECEL:
 	break
 	play id=0x0051, freq=0x0B, vol=0x20, channel=0x01
 	call DRAW_VIDEO_044_045_AND_CINEMATIC_11_RET
@@ -9086,10 +9086,10 @@ LABEL_45E0:
 	call DRAW_HERO_STOP_R_BUNDLE_042_043
 	mov [0x29], [0x01]
 	add [0x01], 0x0001
-	jne [HERO_POS_LEFT_RIGHT], 0x01, LABEL_4422
+	jne [HERO_POS_LEFT_RIGHT], 0x01, WAIT_RUN_LEFT_THEN_DECEL
 	add [0x01], 0x0001
 
-LABEL_4422:
+WAIT_RUN_LEFT_THEN_DECEL:
 	break
 	play id=0x0051, freq=0x0B, vol=0x20, channel=0x01
 	call DRAW_VIDEO_044_045_AND_CINEMATIC_11_RET
@@ -9495,13 +9495,13 @@ LBL_49AD_4A60:
 
 LABEL_49C5:
 ;@elif BRANCH == "chahi_amiga_1991"
-LABEL_4422:
+WAIT_RUN_LEFT_THEN_DECEL:
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	je [0x63], 0x05, LABEL_49C5
 ;@elif BRANCH == "chahi_amiga_1991"
-	je [0x63], 0x05, LABEL_4422
+	je [0x63], 0x05, WAIT_RUN_LEFT_THEN_DECEL
 ;@endif
 	sub [0x01], 0x0003
 	break
@@ -9546,7 +9546,7 @@ LABEL_4477:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x15, address=LABEL_49C5
 ;@elif BRANCH == "chahi_amiga_1991"
-	setup channel=0x15, address=LABEL_4422
+	setup channel=0x15, address=WAIT_RUN_LEFT_THEN_DECEL
 ;@endif
 	sub [0x01], 0x0004
 
