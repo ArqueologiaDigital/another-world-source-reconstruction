@@ -5883,10 +5883,10 @@ LABEL_28BC:
 	djnz [0x10], LABEL_28BC
 	play id=0x004E, freq=0x1C, vol=0x30, channel=0x00
 
-LABEL_28D0:
+BEAST_FINAL_HOLD_LOOP:
 	break
 	video type=1, offset=CINEMATIC_198, x=[0x0e], y=[0x0f], zoom=0x40
-	jmp LABEL_28D0
+	jmp BEAST_FINAL_HOLD_LOOP
 	killChannel
 
 BEAST_ARRIVAL_DECEL:
