@@ -5775,7 +5775,7 @@ LABEL_278A:
 	video type=1, offset=CINEMATIC_LAKE_127, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 
-LABEL_2794:
+SHIFT_X_LEFT_F_AND_JMP:
 	sub [0x0E], 0x000F
 	jmp LABEL_282B
 
@@ -5816,7 +5816,7 @@ DRAW_BEAST_DRIFT_LEFT_LOOP:
 	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_FRAME_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0001
-	jmp LABEL_2794
+	jmp SHIFT_X_LEFT_F_AND_JMP
 	killChannel
 
 ADVANCE_X_FORWARD_ONE_SCREEN:
