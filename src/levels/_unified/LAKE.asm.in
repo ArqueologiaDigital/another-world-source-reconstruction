@@ -6275,7 +6275,7 @@ LABEL_2C4E:
 ;@endif
 	break
 	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_4, x=160, y=100
-	setup channel=0x2C, address=LABEL_2CF2
+	setup channel=0x2C, address=SLUG_ATTACK_LEG_LOOP
 	mov [0x16], 0x0046
 	mov [0x15], 0x00AA
 	play id=0x004E, freq=0x1A, vol=0x3F, channel=0x00
@@ -6336,10 +6336,10 @@ LABEL_2E1C:
 	setPalette 0x05
 	killChannel
 
-LABEL_2CF2:
+SLUG_ATTACK_LEG_LOOP:
 	video type=1, offset=CINEMATIC_SLUG_ATTACK__LESTERS_LEG, x=[0x15], y=100, zoom=[0x16]
 	break
-	jmp LABEL_2CF2
+	jmp SLUG_ATTACK_LEG_LOOP
 	killChannel
 	killChannel
 	killChannel
