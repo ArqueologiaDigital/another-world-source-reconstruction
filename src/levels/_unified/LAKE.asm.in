@@ -901,11 +901,11 @@ CINEMATIC_HERO_WALK_LEFT_FRAME_0		EQU 0xF738
 CINEMATIC_HERO_WALK_LEFT_FRAME_1		EQU 0xF7A8
 CINEMATIC_HERO_WALK_LEFT_FRAME_2		EQU 0xF818
 CINEMATIC_HERO_WALK_LEFT_FRAME_3		EQU 0xF888
-CINEMATIC_007		EQU 0xF8E4
-CINEMATIC_008		EQU 0xF93C
-CINEMATIC_009		EQU 0xF9A0
-CINEMATIC_010		EQU 0xFA4C
-CINEMATIC_011		EQU 0xFAA8
+CINEMATIC_HERO_RUN_LEFT_FRAME_0		EQU 0xF8E4
+CINEMATIC_HERO_RUN_LEFT_FRAME_1		EQU 0xF93C
+CINEMATIC_HERO_RUN_LEFT_FRAME_2		EQU 0xF9A0
+CINEMATIC_HERO_RUN_LEFT_FRAME_4		EQU 0xFA4C
+CINEMATIC_HERO_RUN_LEFT_FRAME_5		EQU 0xFAA8
 CINEMATIC_LAKE_013		EQU 0xF08E
 CINEMATIC_LAKE_012		EQU 0xF07E
 CINEMATIC_LAKE_011		EQU 0xF06E
@@ -10083,7 +10083,7 @@ HERO_WALK_LEFT_LOOP:
 	video type=0, offset=COMMON_VIDEO_052, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x29,0xA0,0x01,0x02
 	video type=1, offset=CINEMATIC_020, x=[0x01], y=[0x02], zoom=0x40
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_007, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_FRAME_0, x=[0x01], y=[0x02], zoom=0x40
 ;@endif
 	sub [0x01], 0x0007
 	mov [0x1B], 0x0001
@@ -10093,10 +10093,10 @@ HERO_WALK_LEFT_LOOP:
 	sub [0x01], 0x0001
 	video type=1, offset=CINEMATIC_HERO_WALK_LEFT_FRAME_1, x=[0x01], y=[0x02], zoom=0x40
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_008, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_FRAME_1, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x000D
 	break
-	video type=1, offset=CINEMATIC_009, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
 ;@endif
 	sub [0x01], 0x000C
 	break
@@ -10108,7 +10108,7 @@ HERO_WALK_LEFT_LOOP:
 	video type=0, offset=COMMON_VIDEO_055, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x29,0xE0,0x01,0x02
 	video type=1, offset=CINEMATIC_022, x=[0x01], y=[0x02], zoom=0x40
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_010, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_FRAME_4, x=[0x01], y=[0x02], zoom=0x40
 ;@endif
 	sub [0x01], 0x0002
 	break
@@ -10117,7 +10117,7 @@ HERO_WALK_LEFT_LOOP:
 	video type=0, offset=COMMON_VIDEO_056, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x29,0xF0,0x01,0x02
 	video type=1, offset=CINEMATIC_HERO_WALK_LEFT_FRAME_0, x=[0x01], y=[0x02], zoom=0x40
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_011, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_FRAME_5, x=[0x01], y=[0x02], zoom=0x40
 ;@endif
 	sub [0x01], 0x0007
 	break
@@ -10182,7 +10182,7 @@ HERO_RUN_LEFT_LOOP:
 	video type=1, offset=CINEMATIC_HERO_WALK_LEFT_FRAME_1, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x000C
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_008, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_FRAME_1, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x000D
 ;@endif
 	sub [0x02], 0x0002
@@ -10191,7 +10191,7 @@ HERO_RUN_LEFT_LOOP:
 	video type=0, offset=COMMON_VIDEO_054, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x29,0xC0,0x01,0x02
 	video type=1, offset=CINEMATIC_021, x=[0x01], y=[0x02], zoom=0x40
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_009, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
 ;@endif
 	sub [0x01], 0x000C
 	break
@@ -10201,7 +10201,7 @@ HERO_RUN_LEFT_LOOP:
 	video type=1, offset=CINEMATIC_022, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x000B
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_189, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_FRAME_3, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x000C
 ;@endif
 	add [0x02], 0x0001
@@ -10212,7 +10212,7 @@ HERO_RUN_LEFT_LOOP:
 	video type=1, offset=CINEMATIC_022, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x000B
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_189, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_FRAME_3, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x000C
 ;@endif
 	add [0x02], 0x0001
@@ -10221,7 +10221,7 @@ HERO_RUN_LEFT_LOOP:
 	video type=0, offset=COMMON_VIDEO_055, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x29,0xE0,0x01,0x02
 	video type=1, offset=CINEMATIC_022, x=[0x01], y=[0x02], zoom=0x40
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_010, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_FRAME_4, x=[0x01], y=[0x02], zoom=0x40
 ;@endif
 	sub [0x01], 0x0002
 	break
@@ -10229,7 +10229,7 @@ HERO_RUN_LEFT_LOOP:
 	video type=0, offset=COMMON_VIDEO_056, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x29,0xF0,0x01,0x02
 	video type=1, offset=CINEMATIC_HERO_WALK_LEFT_FRAME_0, x=[0x01], y=[0x02], zoom=0x40
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_011, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_FRAME_5, x=[0x01], y=[0x02], zoom=0x40
 ;@endif
 	sub [0x01], 0x0007
 	mov [0x1B], 0x0000
