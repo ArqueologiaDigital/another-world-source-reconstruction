@@ -8356,7 +8356,7 @@ HERO_AI_TICK_WAIT_LOOP:
 	video type=1, offset=CINEMATIC_021, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 
-LABEL_4122:
+HERO_TICK_BUNDLE_062_063:
 	break
 	add [0x01], 0x0002
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
@@ -8456,7 +8456,7 @@ LABEL_431E:
 ;@if BRANCH == "dos_1992"
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_433A
 ;@endif
-	je [HERO_POS_MASK], 0x00, LABEL_4122
+	je [HERO_POS_MASK], 0x00, HERO_TICK_BUNDLE_062_063
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	sub [0x01], 0x0001
 
