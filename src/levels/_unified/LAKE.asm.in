@@ -8365,7 +8365,7 @@ HERO_TICK_BUNDLE_062_063:
 	video type=1, offset=CINEMATIC_020, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 
-LABEL_412D:
+HERO_TICK_BUNDLE_060_061:
 	break
 	add [0x01], 0x0002
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
@@ -8434,7 +8434,7 @@ HERO_FALL_LEFT_LOOP:
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_020, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
-	je [HERO_POS_MASK], 0x00, LABEL_412D
+	je [HERO_POS_MASK], 0x00, HERO_TICK_BUNDLE_060_061
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	sub [0x01], 0x0001
 
