@@ -8120,7 +8120,7 @@ SWIMMING_UP:
 	mov [0x63], 0x0001
 	setup channel=0x0C, address=SWIMMING_UP_LEGS_ANIMATION
 	setup channel=0x0D, address=SWIMMING_UP_TORSO_ANIMATION
-	setup channel=0x16, address=LABEL_3FF0
+	setup channel=0x16, address=HERO_PHYSICS_TICK
 	killChannel
 
 UPDATE_POSITION_OF_BUBBLES:
@@ -8183,7 +8183,7 @@ HERO_JUMP_RISE_PARABOLA:
 	sub [0x02], 0x0001
 	killChannel
 
-LABEL_3FF0:
+HERO_PHYSICS_TICK:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	add [0x02], [HERO_POS_UP_DOWN]
 ;@elif BRANCH == "chahi_amiga_1991"
@@ -8218,7 +8218,7 @@ LABEL_401D:
 
 LABEL_402F:
 	break
-	jmp LABEL_3FF0
+	jmp HERO_PHYSICS_TICK
 	killChannel
 
 HERO_AI_DISPATCH:
