@@ -25,9 +25,9 @@ FLAGS_FILE := releases/$(TARGET).flags
 # These come from running awvm-disasm on user-supplied originals.
 # Phase 1's verify rule treats these as "reference" outputs against which
 # the build is checked. (User must populate them first.)
-OUTPUT_ROOT_amiga          := /tmp/output/amiga
-OUTPUT_ROOT_msdos          := /tmp/output/msdos
-OUTPUT_ROOT_gba_usa        := /tmp/output/gba_usa
+OUTPUT_ROOT_amiga          := $(ARCHAEOLOGY)/tmp/output/amiga
+OUTPUT_ROOT_msdos          := $(ARCHAEOLOGY)/tmp/output/msdos
+OUTPUT_ROOT_gba_usa        := $(ARCHAEOLOGY)/tmp/output/gba_usa
 OUTPUT_ROOT_genesis_europe := $(ARCHAEOLOGY)/work/f15f23e1e0fa8d827c4b045d7ce3cf90
 OUTPUT_ROOT_snes_eu        := $(ARCHAEOLOGY)/work/f65e3d6efe35900c0015bcb751ee567e
 OUTPUT_ROOT                := $(OUTPUT_ROOT_$(TARGET))
