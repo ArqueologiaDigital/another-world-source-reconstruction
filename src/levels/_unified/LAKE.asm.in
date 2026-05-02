@@ -5654,7 +5654,7 @@ WAIT_UNTIL_BEAST_CLOSE:
 	killChannel
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 
-LABEL_277A:
+BEAST_AI_INIT_POS_HEINEMAN:
 	mov [0x0E], 0x0000
 	mov [0x0F], 0x00B6
 	mov [0x10], 0x0001
@@ -5662,7 +5662,7 @@ LABEL_277A:
 ;@endif
 ;@if BRANCH == "dos_1992"
 
-LABEL_277A:
+BEAST_AI_INIT_POS_HEINEMAN:
 	mov [0x0E], 0x0000
 	mov [0x0F], 0x00B6
 	mov [0x10], 0x0001
@@ -5999,7 +5999,7 @@ LABEL_2ADB:
 	setup channel=0x29, address=CHECK_IF_THE_BEAST_HAS_ALREADY_REACHED_LESTER
 	jg [0x0E], [0x01], DRAW_BEAST_DRIFT_LEFT_LOOP
 	setup channel=0x29, address=WAIT_UNTIL_BEAST_CLOSE
-	jmp LABEL_277A
+	jmp BEAST_AI_INIT_POS_HEINEMAN
 ;@elif BRANCH == "chahi_amiga_1991"
 	jmp DRAW_BEAST_DRIFT_LEFT_LOOP
 ;@endif
