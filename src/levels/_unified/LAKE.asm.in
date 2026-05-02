@@ -4410,7 +4410,7 @@ LABEL_1BAA:
 ;@endif
 	mov [0x01], 0x0000
 	call ADVANCE_X_BACKWARD_ONE_SCREEN
-	call LABEL_1CBC
+	call KILL_CH_01_04_38
 	jmp OUTSIDE_POOL_SCREEN
 
 LABEL_1B36:
@@ -4669,7 +4669,7 @@ LABEL_1CB7:
 	jmp LABEL_1C8E
 	killChannel
 
-LABEL_1CBC:
+KILL_CH_01_04_38:
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x38, address=KILL_CHANNEL_ROUTINE
@@ -5070,7 +5070,7 @@ LESTER_GRABS_A_VINE_AND_SWINGS:
 	setup channel=0x00, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
-	call LABEL_1CBC
+	call KILL_CH_01_04_38
 	break
 	call ADVANCE_X_BACKWARD_ONE_SCREEN
 	mov [0x01], 0x008C
@@ -9043,7 +9043,7 @@ LABEL_4402:
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	call INVOKE_DRAW_HELPER_ON_BG_PAGE
-	call LABEL_4633
+	call DRAW_HERO_STOP_R_BUNDLE_042_043
 	mov [0x29], [0x01]
 	add [0x01], 0x0001
 	jne [HERO_POS_LEFT_RIGHT], 0x01, LABEL_4422
@@ -9083,7 +9083,7 @@ LABEL_45E0:
 ;@endif
 ;@if BRANCH == "dos_1992"
 	call INVOKE_DRAW_HELPER_ON_BG_PAGE
-	call LABEL_4633
+	call DRAW_HERO_STOP_R_BUNDLE_042_043
 	mov [0x29], [0x01]
 	add [0x01], 0x0001
 	jne [HERO_POS_LEFT_RIGHT], 0x01, LABEL_4422
@@ -9165,7 +9165,7 @@ LABEL_4623:
 	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-LABEL_4633:
+DRAW_HERO_STOP_R_BUNDLE_042_043:
 	video type=0, offset=COMMON_VIDEO_042, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x07,0x1C,0x01,0x02
 	video type=0, offset=COMMON_VIDEO_043, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x19,0xB8,0x01,0x02
 	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
