@@ -1914,14 +1914,14 @@ DRAW_FALLING_DROPLET_LOOP_THEN_SPLASH:
 	video type=1, offset=CINEMATIC_WATER_SPLASH_FRAME_0, x=[0x6f], y=[0x70], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_WATER_SPLASH_FRAME_1, x=[0x6f], y=[0x70], zoom=0x40
-	je [HACK_VAR_67], 0x01, LABEL_0251
+	je [HACK_VAR_67], 0x01, PICK_RANDOM_X_FOR_DROPLET_005
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_LAKE_004, x=[0x6f], y=[0x70], zoom=0x40
 	selectVideoPage 0xFF
-	jmp LABEL_0251
+	jmp PICK_RANDOM_X_FOR_DROPLET_005
 	killChannel
 
-LABEL_0251:
+PICK_RANDOM_X_FOR_DROPLET_005:
 	call COMPUTE_RANDOM_BIT_MASKS
 	mov [0x6F], [0x3F]
 	add [0x6F], [0x3D]
@@ -1940,14 +1940,14 @@ LABEL_025E:
 	play id=0x0054, freq=0x0F, vol=0x20, channel=0x03
 	break
 	video type=1, offset=CINEMATIC_LAKE_007, x=[0x6f], y=[0x70], zoom=0x40
-	je [HACK_VAR_67], 0x01, LABEL_029D
+	je [HACK_VAR_67], 0x01, PICK_RANDOM_X_FOR_DROPLET_009
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_LAKE_008, x=[0x6f], y=[0x70], zoom=0x40
 	selectVideoPage 0xFF
-	jmp LABEL_029D
+	jmp PICK_RANDOM_X_FOR_DROPLET_009
 	killChannel
 
-LABEL_029D:
+PICK_RANDOM_X_FOR_DROPLET_009:
 	call COMPUTE_RANDOM_BIT_MASKS
 	mov [0x6F], [0x3F]
 	add [0x6F], [0x3D]
@@ -1993,14 +1993,14 @@ RESET_DROPLET_72_X_IF_OFFSCREEN:
 	mov [0x76], [RANDOM_SEED]
 
 RESET_DROPLET_73_X_IF_OFFSCREEN:
-	jl [0x73], 0x012C, LABEL_034D
+	jl [0x73], 0x012C, JMP_TO_DRAW_4_DROPLETS_LOOP
 	mov [0x73], 0xFFEC
 	call COMPUTE_RANDOM_BIT_MASKS
 	mov [0x77], [0x3F]
 	call COMPUTE_RANDOM_BIT_MASKS
 	mov [0x78], [0x3F]
 
-LABEL_034D:
+JMP_TO_DRAW_4_DROPLETS_LOOP:
 	jmp DRAW_4_DROPLETS_LOOP
 
 LABEL_0350:
