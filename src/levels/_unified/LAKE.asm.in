@@ -8297,13 +8297,13 @@ LABEL_4077:
 	je [0x63], 0x01, LABEL_4094
 	jne [HERO_ACTION_POS_MASK], 0x04, LABEL_4094
 	mov [0x63], 0x0064
-	setup channel=0x14, address=LABEL_4A6F
+	setup channel=0x14, address=HERO_CROUCH_RIGHT_LOOP
 	jmp LABEL_40A2
 
 LABEL_4094:
 	jne [HERO_ACTION_POS_MASK], 0x04, LABEL_40A2
 	mov [0x63], 0x0064
-	setup channel=0x14, address=LABEL_4A34
+	setup channel=0x14, address=HERO_CROUCH_LEFT_LOOP
 
 LABEL_40A2:
 	jmp HERO_AI_TICK_WAIT_LOOP
@@ -10468,7 +10468,7 @@ LABEL_4A07:
 	jmp MAYBE_RESUME_WALK_RIGHT_IF_GROUNDED
 ;@endif
 
-LABEL_4A34:
+HERO_CROUCH_LEFT_LOOP:
 	add [0x01], 0x0002
 	video type=1, offset=CINEMATIC_LEFT_CROUCHING_0, x=[0x01], y=[0x02], zoom=[0x03]
 
@@ -10491,7 +10491,7 @@ LABEL_4A3E:
 ;@endif
 	killChannel
 
-LABEL_4A6F:
+HERO_CROUCH_RIGHT_LOOP:
 	sub [0x01], 0x0002
 	video type=1, offset=CINEMATIC_RIGHT_CROUCHING_0, x=[0x01], y=[0x02], zoom=[0x03]
 
