@@ -2727,9 +2727,9 @@ LABEL_0AB2:
 	mov [0xA7], 0x0078
 	mov [0x93], 0x0006
 
-LABEL_0ACE:
+WAIT_VAR_93_AND_SETUP_CH34:
 	break
-	djnz [0x93], LABEL_0ACE
+	djnz [0x93], WAIT_VAR_93_AND_SETUP_CH34
 	setup channel=0x34, address=LABEL_0BE0
 	mov [0x93], 0x0028
 
@@ -2765,9 +2765,9 @@ LABEL_0B2C:
 
 LABEL_0B3A:
 	and [0x3A], 0x0004
-	jne [0x3A], 0x00, LABEL_0ACE
+	jne [0x3A], 0x00, WAIT_VAR_93_AND_SETUP_CH34
 	mov [0xA6], 0x014A
-	jmp LABEL_0ACE
+	jmp WAIT_VAR_93_AND_SETUP_CH34
 	killChannel
 
 LABEL_0B4C:
