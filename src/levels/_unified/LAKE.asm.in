@@ -4383,7 +4383,7 @@ THIRD_SCREEN_TO_THE_RIGHT:
 
 LABEL_1B10:
 	jne [0x2A], 0x03, LABEL_1B1A
-	setup channel=0x28, address=LABEL_29CE
+	setup channel=0x28, address=WAIT_BEAST_TRIGGER_THEN_INIT
 
 LABEL_1B1A:
 	setup channel=0x01, address=LABEL_0A85
@@ -6007,10 +6007,10 @@ LABEL_2ADB:
 ;@endif
 	killChannel
 
-LABEL_29CE:
+WAIT_BEAST_TRIGGER_THEN_INIT:
 	break
-	jne [0x66], 0x05, LABEL_29CE
-	jl [0x01], 0x64, LABEL_29CE
+	jne [0x66], 0x05, WAIT_BEAST_TRIGGER_THEN_INIT
+	jl [0x01], 0x64, WAIT_BEAST_TRIGGER_THEN_INIT
 ;@if BRANCH == "gba_2004"
 	song id=0x0FA3, delay=0x0000, pos=0x02
 ;@endif
