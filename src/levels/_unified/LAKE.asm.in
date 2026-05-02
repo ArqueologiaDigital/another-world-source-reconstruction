@@ -1955,11 +1955,11 @@ PICK_RANDOM_X_FOR_DROPLET_009:
 	add [0x6F], [0x3D]
 	mov [0x70], 0xFFF0
 
-LABEL_02AA:
+DROPLET_009_FALL_LOOP:
 	break
 	video type=1, offset=CINEMATIC_LAKE_009, x=[0x6f], y=[0x70], zoom=0x40
 	add [0x70], 0x0023
-	jl [0x70], 0xFA, LABEL_02AA
+	jl [0x70], 0xFA, DROPLET_009_FALL_LOOP
 	je [0x71], 0x01, PICK_RANDOM_X_FOR_DROPLET_AND_PLAY_DROP_SOUND
 	killChannel
 	mov [0x72], 0x0190
