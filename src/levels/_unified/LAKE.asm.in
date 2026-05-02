@@ -8333,7 +8333,7 @@ LABEL_40E1:
 	je [0x63], 0x05, LABEL_40FE
 	jne [HERO_ACTION_POS_MASK], 0x80, LABEL_40FB
 	mov [0x63], 0x0064
-	setup channel=0x14, address=LABEL_492B
+	setup channel=0x14, address=HERO_KICK_RIGHT_LOOP
 
 LABEL_40FB:
 	jmp HERO_AI_TICK_WAIT_LOOP
@@ -8341,7 +8341,7 @@ LABEL_40FB:
 LABEL_40FE:
 	jne [HERO_ACTION_POS_MASK], 0x80, HERO_AI_TICK_WAIT_LOOP
 	mov [0x63], 0x0064
-	setup channel=0x14, address=LABEL_48D6
+	setup channel=0x14, address=HERO_KICK_LEFT_LOOP
 
 HERO_AI_TICK_WAIT_LOOP:
 	break
@@ -10312,7 +10312,7 @@ LABEL_48B2:
 ;@endif
 	killChannel
 
-LABEL_48D6:
+HERO_KICK_LEFT_LOOP:
 	sub [0x01], 0x0004
 	play id=0x003D, freq=0x0A, vol=0x0A, channel=0x00
 	video type=1, offset=CINEMATIC_LEFT_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
@@ -10346,7 +10346,7 @@ LABEL_4903:
 ;@endif
 	killChannel
 
-LABEL_492B:
+HERO_KICK_RIGHT_LOOP:
 	add [0x01], 0x0004
 	play id=0x003D, freq=0x0A, vol=0x0A, channel=0x00
 	video type=1, offset=CINEMATIC_RIGHT_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
