@@ -1847,22 +1847,22 @@ INIT_VIDEO_BUFFERS:
 	ret
 	killChannel
 
-LABEL_0190:
+SHOW_PAGE_0_LOOP:
 	selectVideoPage 0x00
 	break
-	jmp LABEL_0190
+	jmp SHOW_PAGE_0_LOOP
 	killChannel
 
-LABEL_0197:
+SHOW_PAGE_FF_LOOP:
 	selectVideoPage 0xFF
 	break
-	jmp LABEL_0197
+	jmp SHOW_PAGE_FF_LOOP
 	killChannel
 
-LABEL_019E:
+INC_VAR_6E_PER_TICK_LOOP:
 	add [0x6E], 0x0001
 	break
-	jmp LABEL_019E
+	jmp INC_VAR_6E_PER_TICK_LOOP
 	killChannel
 
 WAIT_FOR_TIMER_AND_HACK_67_THEN_SETUP_31:
@@ -2091,7 +2091,7 @@ START_LAKE_BG_MUSIC_AND_DELETE_CH_0_2:
 ;@endif
 	setup channel=0x2E, address=BEETLE_KICK_DETECTOR
 	setup channel=0x2E, address=LABEL_3497
-	setup channel=0x2F, address=LABEL_019E
+	setup channel=0x2F, address=INC_VAR_6E_PER_TICK_LOOP
 	setup channel=0x30, address=WAIT_FOR_TIMER_AND_HACK_67_THEN_SETUP_31
 	setup channel=0x24, address=LABEL_0499
 	setup channel=0x25, address=LABEL_04E0
