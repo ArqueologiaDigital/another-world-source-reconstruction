@@ -6190,7 +6190,7 @@ CLEAR_FRAMEBUFFER_TO_COLOR_4_LOOP:
 	jmp CLEAR_FRAMEBUFFER_TO_COLOR_4_LOOP
 	killChannel
 
-LABEL_2BAD:
+TRIGGER_SCENE_RESUME:
 	je [0x2B], 0x00, LABEL_2BB3
 
 LABEL_2BB3:
@@ -7063,7 +7063,7 @@ DRAW_BEAST_421_422_WITH_SOUND_35:
 	je [0x1B], 0x01, LABEL_33B4
 	je [0x2B], 0x01, LABEL_33B4
 	mov [0x2B], 0x0001
-	setup channel=0x2D, address=LABEL_2BAD
+	setup channel=0x2D, address=TRIGGER_SCENE_RESUME
 
 LABEL_33B4:
 	break
@@ -7087,7 +7087,7 @@ SLUG_FLIP_WALKS:
 	je [0x1B], 0x01, LABEL_33FA
 	je [0x2B], 0x01, LABEL_33FA
 	mov [0x2B], 0x0001
-	setup channel=0x2D, address=LABEL_2BAD
+	setup channel=0x2D, address=TRIGGER_SCENE_RESUME
 
 LABEL_33FA:
 	break
