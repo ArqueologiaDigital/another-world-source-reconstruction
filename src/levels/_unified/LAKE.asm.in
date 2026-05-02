@@ -5707,7 +5707,7 @@ BEAST_APPROACH_PHASE_2:
 	break
 	add [0x0E], 0x0006
 	video type=1, offset=CINEMATIC_BEAST_APPROACH_FRAME_9, x=[0x0e], y=[0x0f], zoom=0x40
-	call LABEL_2719
+	call RANDOM_BEAST_AMBIENT_SOUND
 	break
 	add [0x0E], 0x000C
 	video type=1, offset=CINEMATIC_BEAST_APPROACH_FRAME_10, x=[0x0e], y=[0x0f], zoom=0x40
@@ -5722,7 +5722,7 @@ LABEL_270D:
 	jmp DRAW_LAKE_133_THEN_FALL_INTO_134
 	killChannel
 
-LABEL_2719:
+RANDOM_BEAST_AMBIENT_SOUND:
 	call COMPUTE_RANDOM_BIT_MASKS
 	mov [0xF8], [0x3B]
 	jne [0xF8], 0x00, LABEL_272C
@@ -5810,7 +5810,7 @@ DRAW_BEAST_DRIFT_LEFT_LOOP:
 	break
 	sub [0x0E], 0x0006
 	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_FRAME_1, x=[0x0e], y=[0x0f], zoom=0x40
-	call LABEL_2719
+	call RANDOM_BEAST_AMBIENT_SOUND
 	break
 	sub [0x0E], 0x000C
 	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_FRAME_2, x=[0x0e], y=[0x0f], zoom=0x40
@@ -7964,7 +7964,7 @@ POOL_WATER_WAVY_GLARE_ANIMATION:
 	jmp POOL_WATER_WAVY_GLARE_ANIMATION
 	killChannel
 
-LABEL_3DE3:
+INIT_SECOND_WAVY_GLARE_POS:
 	mov [0x07], 0x0190
 	mov [0x08], 0x0064
 	mov [0x09], 0x0064
@@ -7979,7 +7979,7 @@ LABEL_3DFC:
 	add [0x07], 0x0006
 	break
 	djnz [0x09], LABEL_3DFC
-	jmp LABEL_3DE3
+	jmp INIT_SECOND_WAVY_GLARE_POS
 	killChannel
 
 LABEL_3E09:
