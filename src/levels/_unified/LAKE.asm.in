@@ -4353,7 +4353,7 @@ LABEL_1AB8:
 	setup channel=0x0E, address=BEAST_AI_DISPATCH_BY_X_AND_VAR_0D
 	setup channel=0x0F, address=MULTIPLEX_ANIM_RING2_SLOT_2
 	setup channel=0x10, address=BEAST_AI_DISPATCH_BY_X_AND_VAR_0D
-	setup channel=0x11, address=LABEL_2D9D
+	setup channel=0x11, address=MULTIPLEX_RING4_SAVE_LOOP
 	setup channel=0x12, address=BEAST_AI_DISPATCH_BY_X_AND_VAR_0D
 	setup channel=0x13, address=MULTIPLEX_RING5_SAVE_LOOP
 	setup channel=0x36, address=LABEL_0CB6
@@ -6424,7 +6424,7 @@ MULTIPLEX_ANIM_RING2_SLOT_2:
 	jmp MULTIPLEX_ANIM_RING2_SLOT_2
 	killChannel
 
-LABEL_2D9D:
+MULTIPLEX_RING4_SAVE_LOOP:
 	mov [0x58], [0x0C]
 	mov [0x59], [0x0D]
 	mov [0x5A], [0x13]
@@ -6432,7 +6432,7 @@ LABEL_2D9D:
 	mov [0x0D], [0x5C]
 	mov [0x13], [0x5D]
 	break
-	jmp LABEL_2D9D
+	jmp MULTIPLEX_RING4_SAVE_LOOP
 	killChannel
 
 MULTIPLEX_RING5_SAVE_LOOP:
