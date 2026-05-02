@@ -8285,9 +8285,9 @@ LABEL_4055:
 LABEL_4059:
 	jne [HERO_POS_LEFT_RIGHT], 0x01, LABEL_4077
 	je [0x63], 0x02, LABEL_4077
-	setup channel=0x14, address=LABEL_42FC
+	setup channel=0x14, address=HERO_FALL_RIGHT_LOOP
 	je [0x63], 0x06, LABEL_4073
-	setup channel=0x14, address=LABEL_42ED
+	setup channel=0x14, address=HERO_FALL_RIGHT_PRELUDE
 
 LABEL_4073:
 	mov [0x63], 0x0002
@@ -8777,13 +8777,13 @@ LABEL_42E5:
 ;@endif
 	killChannel
 
-LABEL_42ED:
+HERO_FALL_RIGHT_PRELUDE:
 	add [0x01], 0x0000
 	video type=1, offset=CINEMATIC_LAKE_190, x=[0x01], y=[0x02], zoom=[0x03]
 	add [0x01], 0x0003
 	break
 
-LABEL_42FC:
+HERO_FALL_RIGHT_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_STOP_R_BUNDLE_018_019
 ;@elif BRANCH == "chahi_amiga_1991"
@@ -9143,7 +9143,7 @@ LBL_4371_46B1:
 LBL_4371_46B1:
 ;@endif
 	break
-	jmp LABEL_42FC
+	jmp HERO_FALL_RIGHT_LOOP
 	killChannel
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
