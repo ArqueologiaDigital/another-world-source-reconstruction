@@ -2844,7 +2844,7 @@ LABEL_0BE0:
 	killChannel
 
 LABEL_0C24:
-	jmp LABEL_0C48
+	jmp INIT_SCATTER_DOTS_POSITIONS
 	video type=1, offset=CINEMATIC_LAKE_019, x=143, y=104
 	video type=1, offset=CINEMATIC_LAKE_019, x=159, y=110
 	video type=1, offset=CINEMATIC_LAKE_019, x=117, y=105
@@ -2855,7 +2855,7 @@ LABEL_0C24:
 	video type=1, offset=CINEMATIC_LAKE_019, x=167, y=106
 	killChannel
 
-LABEL_0C48:
+INIT_SCATTER_DOTS_POSITIONS:
 	mov [0xA2], 0x008F
 	mov [0xA4], 0x009F
 	mov [0xA6], 0x0075
@@ -2889,7 +2889,7 @@ LABEL_0C8C:
 	killChannel
 
 LABEL_0CB6:
-	jmp LABEL_0CDA
+	jmp INIT_SCATTER_DOTS_OFFSETS
 	video type=1, offset=CINEMATIC_LAKE_019, x=143, y=104
 	video type=1, offset=CINEMATIC_LAKE_019, x=159, y=110
 	video type=1, offset=CINEMATIC_LAKE_019, x=117, y=105
@@ -2900,7 +2900,7 @@ LABEL_0CB6:
 	video type=1, offset=CINEMATIC_LAKE_019, x=167, y=106
 	killChannel
 
-LABEL_0CDA:
+INIT_SCATTER_DOTS_OFFSETS:
 	mov [0xA2], 0xFFF9
 	mov [0xA4], 0x0009
 	mov [0xA6], 0xFFDF
