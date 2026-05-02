@@ -9565,7 +9565,7 @@ LABEL_447F:
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_4E52
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_188, x=[0x01], y=[0x02], zoom=[0x03]
-	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_4808
+	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_RUN_LEFT_ENTRY_WITH_PREP
 ;@endif
 	sub [0x01], 0x0008
 	break
@@ -9612,7 +9612,7 @@ LABEL_44DA:
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_4E52
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_191, x=[0x01], y=[0x02], zoom=[0x03]
-	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_4808
+	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_RUN_LEFT_ENTRY_WITH_PREP
 ;@endif
 	sub [0x01], 0x0008
 	break
@@ -9706,7 +9706,7 @@ LABEL_4596:
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_150, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
-	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_46FB
+	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_RUN_RIGHT_ENTRY_WITH_PREP
 	add [0x01], 0x0008
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
@@ -9753,7 +9753,7 @@ LBL_45E8_4B58:
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_157, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
-	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_46FB
+	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_RUN_RIGHT_ENTRY_WITH_PREP
 	add [0x01], 0x0008
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
@@ -9932,7 +9932,7 @@ HERO_WALK_RIGHT_LOOP:
 ;@endif
 	killChannel
 
-LABEL_46FB:
+HERO_RUN_RIGHT_ENTRY_WITH_PREP:
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	je [HERO_POS_MASK], 0x0A, LABEL_4E52
 ;@endif
@@ -10156,9 +10156,9 @@ HERO_WALK_LEFT_LOOP:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 LABEL_4E52:
-	je [HERO_POS_MASK], 0x09, LABEL_46FB
+	je [HERO_POS_MASK], 0x09, HERO_RUN_RIGHT_ENTRY_WITH_PREP
 ;@elif BRANCH == "chahi_amiga_1991"
-LABEL_4808:
+HERO_RUN_LEFT_ENTRY_WITH_PREP:
 ;@endif
 	sub [0x01], 0x0005
 	sub [0x01], 0x0007
