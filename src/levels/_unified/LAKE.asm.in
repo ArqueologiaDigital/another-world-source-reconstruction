@@ -10420,7 +10420,7 @@ LABEL_49AD:
 ;@elif BRANCH == "chahi_amiga_1991"
 	add [0x01], 0x0002
 ;@endif
-	je [HERO_POS_JUMP_DOWN], 0x01, LABEL_4A3E
+	je [HERO_POS_JUMP_DOWN], 0x01, HERO_CROUCH_LEFT_HOLD
 	mov [0x63], 0x0001
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jmp LABEL_443D
@@ -10458,7 +10458,7 @@ LABEL_4A07:
 ;@elif BRANCH == "chahi_amiga_1991"
 	sub [0x01], 0x0002
 ;@endif
-	je [HERO_POS_JUMP_DOWN], 0x01, LABEL_4A79
+	je [HERO_POS_JUMP_DOWN], 0x01, HERO_CROUCH_RIGHT_HOLD
 	mov [0x63], 0x0002
 ;@if BRANCH == "cartridge_1992"
 	jmp LABEL_4693
@@ -10472,11 +10472,11 @@ HERO_CROUCH_LEFT_LOOP:
 	add [0x01], 0x0002
 	video type=1, offset=CINEMATIC_LEFT_CROUCHING_0, x=[0x01], y=[0x02], zoom=[0x03]
 
-LABEL_4A3E:
+HERO_CROUCH_LEFT_HOLD:
 	break
 	je [HERO_ACTION_POS_MASK], 0x84, LABEL_4980
 	video type=1, offset=CINEMATIC_LEFT_CROUCHING_2, x=[0x01], y=[0x02], zoom=[0x03]
-	je [HERO_ACTION_POS_MASK], 0x04, LABEL_4A3E
+	je [HERO_ACTION_POS_MASK], 0x04, HERO_CROUCH_LEFT_HOLD
 	break
 	video type=1, offset=CINEMATIC_LEFT_CROUCHING_1, x=[0x01], y=[0x02], zoom=[0x03]
 	break
@@ -10495,11 +10495,11 @@ HERO_CROUCH_RIGHT_LOOP:
 	sub [0x01], 0x0002
 	video type=1, offset=CINEMATIC_RIGHT_CROUCHING_0, x=[0x01], y=[0x02], zoom=[0x03]
 
-LABEL_4A79:
+HERO_CROUCH_RIGHT_HOLD:
 	break
 	je [HERO_ACTION_POS_MASK], 0x84, LABEL_49DA
 	video type=1, offset=CINEMATIC_RIGHT_CROUCHING_2, x=[0x01], y=[0x02], zoom=[0x03]
-	je [HERO_ACTION_POS_MASK], 0x04, LABEL_4A79
+	je [HERO_ACTION_POS_MASK], 0x04, HERO_CROUCH_RIGHT_HOLD
 	break
 	video type=1, offset=CINEMATIC_RIGHT_CROUCHING_1, x=[0x01], y=[0x02], zoom=[0x03]
 	break
