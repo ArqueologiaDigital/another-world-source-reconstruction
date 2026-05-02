@@ -2082,7 +2082,7 @@ START_LAKE_BG_MUSIC_AND_DELETE_CH_0_2:
 	deleteChannels first=0x00, last=0x02
 	deleteChannels first=0x04, last=0x3B
 	deleteChannels first=0x3D, last=0x3E
-	setup channel=0x01, address=LABEL_3FA6
+	setup channel=0x01, address=INIT_HERO_AT_POOL_EXIT
 	setup channel=0x14, address=GETTING_OUT_OF_THE_POOL__ANIMATION_PART_4
 	setup channel=0x09, address=BEETLE_INIT_POS_THEN_WALK_LEFT
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
@@ -8133,7 +8133,7 @@ UPDATE_POSITION_OF_BUBBLES:
 	mov [0x11], [0x0C]
 	mov [0x12], 0x000F
 
-LABEL_3F6F:
+BUBBLE_UPDATE_PHASE_1:
 	sub [0x0C], 0x0009
 	sub [0x0D], 0x0007
 	sub [0x0E], 0x0006
@@ -8141,19 +8141,19 @@ LABEL_3F6F:
 	sub [0x10], 0x0003
 	sub [0x11], 0x0002
 	break
-	djnz [0x12], LABEL_3F6F
+	djnz [0x12], BUBBLE_UPDATE_PHASE_1
 	mov [0x12], 0x0032
 
-LABEL_3F90:
+BUBBLE_UPDATE_PHASE_2:
 	sub [0x0E], 0x0006
 	sub [0x0F], 0x0004
 	sub [0x10], 0x0003
 	sub [0x11], 0x0002
 	break
-	djnz [0x12], LABEL_3F90
+	djnz [0x12], BUBBLE_UPDATE_PHASE_2
 	killChannel
 
-LABEL_3FA6:
+INIT_HERO_AT_POOL_EXIT:
 	mov [0x01], 0x00C8
 	mov [0x02], 0x00B6
 	mov [0x03], 0x0040
