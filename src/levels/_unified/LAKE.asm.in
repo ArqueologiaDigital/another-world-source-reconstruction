@@ -7510,18 +7510,18 @@ BEAST_SURPRISE_SCENE_INIT:
 	break
 	setPalette 0x07
 
-LABEL_387C:
+BEAST_INIT_TICK_PHASE_1:
 	break
 	add [0x09], 0x0001
 	add [0x0B], 0x0014
-	djnz [0x08], LABEL_387C
+	djnz [0x08], BEAST_INIT_TICK_PHASE_1
 	mov [0x08], 0x0003
 
-LABEL_388D:
+BEAST_INIT_TICK_PHASE_2:
 	break
 	add [0x09], 0x0001
 	add [0x0B], 0x0007
-	djnz [0x08], LABEL_388D
+	djnz [0x08], BEAST_INIT_TICK_PHASE_2
 	break
 	add [0x09], 0x0028
 	break
