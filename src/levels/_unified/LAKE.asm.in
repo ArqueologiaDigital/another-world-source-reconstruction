@@ -6194,9 +6194,9 @@ CLEAR_FRAMEBUFFER_TO_COLOR_4_LOOP:
 	killChannel
 
 TRIGGER_SCENE_RESUME:
-	je [0x2B], 0x00, LABEL_2BB3
+	je [0x2B], 0x00, SLUG_ATTACK_INTRO
 
-LABEL_2BB3:
+SLUG_ATTACK_INTRO:
 	mov [PAUSE_SLICES], 0x0003
 	mov [0x1C], 0x0002
 	unfreezeChannels first=0x00, last=0x2A
@@ -6217,32 +6217,32 @@ LABEL_2BB3:
 	mov [0x17], 0x0005
 	setPalette 0x0F
 
-LABEL_2BEC:
+SLUG_ATTACK_CLAW_DRIFT_FAST:
 	video type=1, offset=CINEMATIC_SLUG_ATTACK__CLOSED_CLAW, x=[0x15], y=[0x16], zoom=0x40
 	sub [0x16], 0x000F
 	sub [0x15], 0x0003
 	break
-	djnz [0x17], LABEL_2BEC
+	djnz [0x17], SLUG_ATTACK_CLAW_DRIFT_FAST
 	mov [0x17], 0x0005
 	add [0x16], 0x000A
 
-LABEL_2C06:
+SLUG_ATTACK_CLAW_DRIFT_SLOW:
 	video type=1, offset=CINEMATIC_SLUG_ATTACK__CLOSED_CLAW, x=[0x15], y=[0x16], zoom=0x40
 	sub [0x16], 0x0005
 	sub [0x15], 0x0003
 	break
-	djnz [0x17], LABEL_2C06
+	djnz [0x17], SLUG_ATTACK_CLAW_DRIFT_SLOW
 	setup channel=0x3B, address=GOO_DRIPPING_FROM_SLUGS_CLAW_ANIMATION
 	video type=1, offset=CINEMATIC_SLUG_ATTACK__CLOSED_CLAW, x=[0x15], y=[0x16], zoom=0x40
 	break
 	mov [0x17], 0x000A
 
-LABEL_2C26:
+SLUG_ATTACK_OPEN_CLAW_LOOP:
 	video type=1, offset=CINEMATIC_SLUG_ATTACK__OPEN_CLAW, x=[0x15], y=[0x16], zoom=0x40
 	sub [0x16], 0x0002
 	sub [0x15], 0x0001
 	break
-	djnz [0x17], LABEL_2C26
+	djnz [0x17], SLUG_ATTACK_OPEN_CLAW_LOOP
 	setPalette 0x0A
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	selectVideoPage 0x00
@@ -6251,10 +6251,10 @@ LABEL_2C26:
 	selectVideoPage 0xFF
 	mov [0x17], 0x0002
 
-LABEL_2C4E:
+SLUG_ATTACK_FB_FILL_LOOP:
 	fill page=0xFF, color=0x00
 	break
-	djnz [0x17], LABEL_2C4E
+	djnz [0x17], SLUG_ATTACK_FB_FILL_LOOP
 	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_0, x=160, y=100
 	break
 	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_0, x=155, y=100
@@ -6298,35 +6298,35 @@ LABEL_2C4E:
 	mov [0x17], 0x0014
 ;@endif
 
-LABEL_2CC7:
+SLUG_ATTACK_LEG_DRAW_LOOP:
 	break
 	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_8, x=[0x15], y=100, zoom=[0x16]
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	je [0xDB], 0x00, LABEL_2E07
+	je [0xDB], 0x00, SLUG_ATTACK_LEG_LOOP_NOOP_BR
 
-LABEL_2E07:
+SLUG_ATTACK_LEG_LOOP_NOOP_BR:
 ;@endif
 ;@if BRANCH == "dos_1992"
-	je [0xDB], 0x00, LABEL_2E07
+	je [0xDB], 0x00, SLUG_ATTACK_LEG_LOOP_NOOP_BR
 
-LABEL_2E07:
+SLUG_ATTACK_LEG_LOOP_NOOP_BR:
 ;@endif
-	djnz [0x17], LABEL_2CC7
+	djnz [0x17], SLUG_ATTACK_LEG_DRAW_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
 	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_8, x=[0x15], y=100, zoom=[0x16]
-	je [0xDB], 0x00, LABEL_2E1C
+	je [0xDB], 0x00, SLUG_ATTACK_LEG_FINAL_NOOP_BR
 
-LABEL_2E1C:
+SLUG_ATTACK_LEG_FINAL_NOOP_BR:
 ;@endif
 ;@if BRANCH == "dos_1992"
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
 	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_8, x=[0x15], y=100, zoom=[0x16]
-	je [0xDB], 0x00, LABEL_2E1C
+	je [0xDB], 0x00, SLUG_ATTACK_LEG_FINAL_NOOP_BR
 
-LABEL_2E1C:
+SLUG_ATTACK_LEG_FINAL_NOOP_BR:
 ;@endif
 	mov [PAUSE_SLICES], 0x0004
 	setup channel=0x2C, address=KILL_CHANNEL_ROUTINE
