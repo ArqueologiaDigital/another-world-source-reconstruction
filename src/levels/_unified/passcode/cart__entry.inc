@@ -16,6 +16,15 @@
 ;   CLEAR_LAST_KEYCHAR  (2-arm: cart, dos)
 ;   INIT_VAR08_TO_150  (3-arm: amiga, cart, dos)
 
+; Unified source for PASSCODE with 5 folded shared bodies.
+;
+; Folded routines (in byte-address order):
+;   COPY_VAR_27_28_TO_07_08  (2-arm: cart, dos)
+;   SET_VAR_E6_F_PAUSE_4  (3-arm: amiga, cart, dos)
+;   SET_PAL_0_AND_RESTART  (2-arm: cart, dos)
+;   CLEAR_LAST_KEYCHAR  (2-arm: cart, dos)
+;   INIT_VAR08_TO_150  (3-arm: amiga, cart, dos)
+
 ; Unified source for PASSCODE with 6 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):

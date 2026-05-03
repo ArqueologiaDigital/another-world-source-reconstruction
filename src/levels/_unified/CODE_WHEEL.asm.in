@@ -18,6 +18,8 @@
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "code_wheel/amiga__entry.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "code_wheel/cart__entry.inc"
 ;@elif BRANCH == "dos_1992"
 ;@include "code_wheel/dos__entry.inc"
 ;@endif

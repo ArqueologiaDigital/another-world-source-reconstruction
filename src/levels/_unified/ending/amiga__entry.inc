@@ -1,3 +1,35 @@
+; Unified source for ENDING with 28 folded shared bodies.
+;
+; Folded routines (in byte-address order):
+;   KILL_CHANNEL_LANDING  (3-arm: amiga, cart, dos)
+;   DELETE_ALL_CHANS_AND_KILL  (3-arm: amiga, cart, dos)
+;   PRELOAD_RESOURCES_8_TO_1  (2-arm: amiga, dos)
+;   DRAW_CIN_97_TO_100  (2-arm: amiga, dos)
+;   DRAW_CIN_101_102_FADE_PAL_C  (2-arm: amiga, dos)
+;   DRAW_CIN_103_LOOP  (2-arm: amiga, dos)
+;   DRAW_CIN_58_ANIM_LOOP  (2-arm: amiga, dos)
+;   DRAW_CIN_59_TO_64_VAR_POS  (2-arm: amiga, dos)
+;   DRIFT_VAR_4_PLUS_10_LOOP  (2-arm: amiga, dos)
+;   DRIFT_VAR_3_MINUS_1_LOOP  (2-arm: amiga, dos)
+;   DRIFT_VAR_3_MINUS_1_TWO_BRKS  (2-arm: amiga, dos)
+;   DELAY_VAR6_THEN_VAR3_MINUS_1  (2-arm: amiga, dos)
+;   DELAY_VAR6_THEN_KILL_CHAN  (2-arm: amiga, dos)
+;   INIT_VARE_TO_12  (3-arm: amiga, cart, dos)
+;   DRIFT_VAR_F_PLUS_1_LOOP  (2-arm: amiga, dos)
+;   DRIFT_VAR_F_PLUS_4_LOOP  (2-arm: amiga, dos)
+;   DELAY_VARE_THEN_INIT_VARE_5  (2-arm: amiga, dos)
+;   DRIFT_VAR_F_PLUS_8_LOOP  (2-arm: amiga, dos)
+;   DRAW_CIN_70_ANIM_LOOP  (2-arm: amiga, dos)
+;   PAL_FADE_18_TO_1D  (3-arm: amiga, cart, dos)
+;   DRAW_CIN_71_72_FADE  (2-arm: amiga, dos)
+;   DRAW_CIN_106_107_FX_57  (2-arm: amiga, dos)
+;   SET_VAR_E6_5_PAL_B  (3-arm: amiga, cart, dos)
+;   INIT_VARS_07_08_09  (3-arm: amiga, cart, dos)
+;   DRAW_STARS_PAGE0_CIN_000  (2-arm: amiga, dos)
+;   DRAW_STARS_PAGE3_CIN_004  (2-arm: amiga, dos)
+;   DRAW_STARS_CIN_38_39_40_5_6  (2-arm: amiga, dos)
+;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
+
 ; Unified source for ENDING with 7 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):

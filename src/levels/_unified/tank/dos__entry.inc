@@ -1,3 +1,30 @@
+; Unified source for TANK with 23 folded shared bodies.
+;
+; Folded routines (in byte-address order):
+;   FOLD_BODY_44B_C64BCD6D  (2-arm: cart, dos)
+;   SETUP_TANK_HERO_VARS_PLAY_4SFX  (2-arm: amiga, dos)
+;   FOLD_BODY_44B_E11CC986  (2-arm: cart, dos)
+;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
+;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
+;   INCREMENT_VAR5F_BY_8  (3-arm: amiga, cart, dos)
+;   SET_VAR5F_TO_0018  (3-arm: amiga, cart, dos)
+;   SET_VAR5F_TO_0016  (3-arm: amiga, cart, dos)
+;   COPY_VAR62_TO_VAR5F  (3-arm: amiga, cart, dos)
+;   INIT_VARS_48_49_4A  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_1E2BA1E6  (3-arm: amiga, cart, dos)
+;   SUM_HASH_VARS_TO_VAR_64  (3-arm: amiga, cart, dos)
+;   INIT_TANK_DRIVE_VARS  (2-arm: cart, dos)
+;   INCREMENT_VAR44_BY_37  (3-arm: amiga, cart, dos)
+;   INIT_VARS_50_NEG40_51_32  (3-arm: amiga, cart, dos)
+;   INIT_VAR1_NEG50_PLAY_8B_TWICE  (2-arm: cart, dos)
+;   SHARED_RET  (3-arm: amiga, cart, dos)
+;   ALTERNATE_VAR06_VAR04_TIMING  (3-arm: amiga, cart, dos)
+;   INIT_VARS_A_B_PAL_1  (3-arm: amiga, cart, dos)
+;   DRAW_CIN_6_27_28_AND_RET  (2-arm: amiga, dos)
+;   DRAW_CIN_6_AND_RET  (2-arm: amiga, dos)
+;   DRAW_BG_DOTS_CIN_001_004  (2-arm: amiga, dos)
+;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
+
 ; Unified source for TANK with 19 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
