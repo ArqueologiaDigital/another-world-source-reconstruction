@@ -1489,15 +1489,15 @@ LABEL_086E:
 	play id=0x0003, freq=0x14, vol=0x0A, channel=0x03
 	setup channel=0x04, address=SET_PALETTE_17_INIT_VAR_14
 	setup channel=0x0B, address=PLAY_FX_2C_AND_DRAW_CIN_000
-	setup channel=0x0C, address=LABEL_0A07
-	setup channel=0x0D, address=LABEL_0A46
-	setup channel=0x0E, address=LABEL_0A62
-	setup channel=0x0F, address=LABEL_0A89
-	setup channel=0x10, address=LABEL_0AEB
-	setup channel=0x11, address=LABEL_0B80
-	setup channel=0x12, address=LABEL_0BDF
-	setup channel=0x14, address=LABEL_0C1C
-	setup channel=0x15, address=LABEL_0C52
+	setup channel=0x0C, address=DRAW_INTRO_DECOR_340
+	setup channel=0x0D, address=DRAW_INTRO_DECOR_337
+	setup channel=0x0E, address=DRAW_INTRO_DECOR_333
+	setup channel=0x0F, address=DRAW_INTRO_DECOR_331
+	setup channel=0x10, address=DRAW_INTRO_DECOR_329
+	setup channel=0x11, address=DRAW_INTRO_DECOR_318
+	setup channel=0x12, address=INIT_VAR_0D_THEN_LOOP
+	setup channel=0x14, address=DRAW_INTRO_DECOR_305
+	setup channel=0x15, address=DRAW_INTRO_DECOR_301
 	mov [0x01], 0x0064
 
 LABEL_08EB:
@@ -1556,7 +1556,7 @@ LABEL_08EB:
 LABEL_09A8:
 	break
 	djnz [0x01], LABEL_09A8
-	setup channel=0x12, address=LABEL_0BDF
+	setup channel=0x12, address=INIT_VAR_0D_THEN_LOOP
 	setup channel=0x0E, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x11, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x0F, address=KILL_CHANNEL_ROUTINE
@@ -1597,7 +1597,7 @@ LABEL_09FE:
 LABEL_0A06:
 	killChannel
 
-LABEL_0A07:
+DRAW_INTRO_DECOR_340:
 	video type=1, offset=CINEMATIC_340, x=160, y=100
 	break
 	video type=1, offset=CINEMATIC_341, x=160, y=100
@@ -1621,11 +1621,11 @@ LABEL_0A07:
 LABEL_0A3D:
 	break
 	djnz [0x04], LABEL_0A3D
-	jmp LABEL_0A07
+	jmp DRAW_INTRO_DECOR_340
 LABEL_0A45:
 	killChannel
 
-LABEL_0A46:
+DRAW_INTRO_DECOR_337:
 	break
 	video type=1, offset=CINEMATIC_337, x=160, y=100
 	break
@@ -1637,11 +1637,11 @@ LABEL_0A46:
 LABEL_0A59:
 	break
 	djnz [0x06], LABEL_0A59
-	jmp LABEL_0A46
+	jmp DRAW_INTRO_DECOR_337
 LABEL_0A61:
 	killChannel
 
-LABEL_0A62:
+DRAW_INTRO_DECOR_333:
 	break
 	video type=1, offset=CINEMATIC_333, x=160, y=100
 	break
@@ -1656,11 +1656,11 @@ LABEL_0A62:
 LABEL_0A80:
 	break
 	djnz [0x08], LABEL_0A80
-	jmp LABEL_0A62
+	jmp DRAW_INTRO_DECOR_333
 LABEL_0A88:
 	killChannel
 
-LABEL_0A89:
+DRAW_INTRO_DECOR_331:
 	break
 	video type=1, offset=CINEMATIC_331, x=112, y=127
 	break
@@ -1700,11 +1700,11 @@ LABEL_0A89:
 LABEL_0AE2:
 	break
 	djnz [0x0A], LABEL_0AE2
-	jmp LABEL_0A89
+	jmp DRAW_INTRO_DECOR_331
 LABEL_0AEA:
 	killChannel
 
-LABEL_0AEB:
+DRAW_INTRO_DECOR_329:
 	break
 	video type=1, offset=CINEMATIC_329, x=254, y=142
 	break
@@ -1763,11 +1763,11 @@ LABEL_0AEB:
 LABEL_0B77:
 	break
 	djnz [0x0C], LABEL_0B77
-	jmp LABEL_0AEB
+	jmp DRAW_INTRO_DECOR_329
 LABEL_0B7F:
 	killChannel
 
-LABEL_0B80:
+DRAW_INTRO_DECOR_318:
 	break
 	video type=1, offset=CINEMATIC_318, x=176, y=157
 	break
@@ -1806,11 +1806,11 @@ LABEL_0BC3:
 	video type=1, offset=CINEMATIC_327, x=134, y=169
 	break
 	video type=1, offset=CINEMATIC_328, x=134, y=169
-	jmp LABEL_0B80
+	jmp DRAW_INTRO_DECOR_318
 LABEL_0BDE:
 	killChannel
 
-LABEL_0BDF:
+INIT_VAR_0D_THEN_LOOP:
 	break
 	mov [0x0D], 0x0014
 
@@ -1837,7 +1837,7 @@ LABEL_0BE4:
 	video type=1, offset=CINEMATIC_317, x=254, y=145
 	killChannel
 
-LABEL_0C1C:
+DRAW_INTRO_DECOR_305:
 	break
 	video type=1, offset=CINEMATIC_305, x=229, y=40
 	break
@@ -1858,11 +1858,11 @@ LABEL_0C1C:
 LABEL_0C49:
 	break
 	djnz [0x0F], LABEL_0C49
-	jmp LABEL_0C1C
+	jmp DRAW_INTRO_DECOR_305
 LABEL_0C51:
 	killChannel
 
-LABEL_0C52:
+DRAW_INTRO_DECOR_301:
 	break
 	video type=1, offset=CINEMATIC_301, x=194, y=29
 	break
@@ -1883,7 +1883,7 @@ LABEL_0C52:
 LABEL_0C7F:
 	break
 	djnz [0x10], LABEL_0C7F
-	jmp LABEL_0C52
+	jmp DRAW_INTRO_DECOR_301
 LABEL_0C87:
 	killChannel
 
