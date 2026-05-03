@@ -270,30 +270,30 @@ SHOW_TEXT_21_AT_27_100_9X:
 	text id=0x0021, x=26, y=100, color=0x06
 	mov [0x01], 0x000A
 
-LABEL_12EA:
+SHOW_TEXT_21_AT_27_100_10X:
 	break
 	text id=0x0021, x=27, y=100, color=0x06
-	djnz [0x01], LABEL_12EA
+	djnz [0x01], SHOW_TEXT_21_AT_27_100_10X
 	mov [0x01], 0x0012
 
-LABEL_12F9:
+SHOW_TEXT_21_AT_26_124_18X:
 	break
 	text id=0x0021, x=26, y=124, color=0x06
-	djnz [0x01], LABEL_12F9
+	djnz [0x01], SHOW_TEXT_21_AT_26_124_18X
 	break
 	text id=0x0021, x=25, y=132, color=0x06
 	mov [0x01], 0x0012
 
-LABEL_130F:
+SHOW_TEXT_21_AT_25_156_18X:
 	break
 	text id=0x0021, x=25, y=156, color=0x06
-	djnz [0x01], LABEL_130F
+	djnz [0x01], SHOW_TEXT_21_AT_25_156_18X
 	setup channel=0x07, address=INIT_VAR_03_AND_LOOP
 	mov [0x01], 0x0024
 
-LABEL_1322:
+DELAY_36_BEFORE_BLITTER_SETUP:
 	break
-	djnz [0x01], LABEL_1322
+	djnz [0x01], DELAY_36_BEFORE_BLITTER_SETUP
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	selectVideoPage 0x00
@@ -301,9 +301,9 @@ LABEL_1322:
 	selectVideoPage 0xFF
 	mov [0x01], 0x000E
 
-LABEL_133A:
+DELAY_14_BEFORE_BLITTER_SETUP:
 	break
-	djnz [0x01], LABEL_133A
+	djnz [0x01], DELAY_14_BEFORE_BLITTER_SETUP
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	selectVideoPage 0x03
@@ -319,37 +319,37 @@ LABEL_133A:
 	setup channel=0x07, address=DRAW_CIN_382_TWICE_AT_DIFF_Y
 	mov [0x01], 0x0005
 
-LABEL_136A:
+SHOW_TEXT_31_AT_2_150_5X:
 	break
 	text id=0x0031, x=2, y=150, color=0x06
-	djnz [0x01], LABEL_136A
+	djnz [0x01], SHOW_TEXT_31_AT_2_150_5X
 	mov [0x01], 0x0040
 
-LABEL_1379:
+SHOW_TEXT_32_AT_2_156_64X:
 	break
 	text id=0x0032, x=2, y=156, color=0x06
-	djnz [0x01], LABEL_1379
+	djnz [0x01], SHOW_TEXT_32_AT_2_156_64X
 	mov [PAUSE_SLICES], 0x0005
 	mov [0x01], 0x0013
 
-LABEL_138C:
+SHOW_TEXT_33_AT_2_150_19X:
 	break
 	text id=0x0033, x=2, y=150, color=0x06
-	djnz [0x01], LABEL_138C
+	djnz [0x01], SHOW_TEXT_33_AT_2_150_19X
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x01], 0x0013
 
-LABEL_139F:
+SHOW_TEXT_34_AT_8_152_19X:
 	break
 	text id=0x0034, x=8, y=152, color=0x06
-	djnz [0x01], LABEL_139F
+	djnz [0x01], SHOW_TEXT_34_AT_8_152_19X
 	mov [0x01], 0x0019
 
-LABEL_13AE:
+SHOW_TEXT_35_AT_2_140_25X:
 	break
 	text id=0x0035, x=2, y=140, color=0x06
 	jg [MUS_MARK], 0x20, WAIT_MUS_MARK_20_THEN_TEXT_23
-	djnz [0x01], LABEL_13AE
+	djnz [0x01], SHOW_TEXT_35_AT_2_140_25X
 	mov [0x01], 0x000A
 
 LABEL_13C3:
