@@ -588,18 +588,18 @@ SCROLL_Y		EQU 0x00F9
 
 	org 0x0000
 
-LABEL_0000:
-	call LABEL_00F9
+ENTRY_POINT_OF_INTRO_LEVEL:
+	call INIT_VIDEO_BUFFERS
 	mov [PAUSE_SLICES], 0x0001
 	setup channel=0x3C, address=LABEL_0091
 	mov [MUS_MARK], 0x0000
 	break
-	je [0xDB], 0x00, LABEL_0022
+	je [0xDB], 0x00, LOAD_RESOURCES_AND_PLAY_MUSIC
 	load id=0x07D1
 	song id=0x0BDE, delay=0x0000, pos=0x00
-	jmp LABEL_007F
+	jmp SETUP_CHANNELS_AFTER_LOAD
 
-LABEL_0022:
+LOAD_RESOURCES_AND_PLAY_MUSIC:
 	song id=0x0000, delay=0x0000, pos=0x00
 	load id=0x0036
 	load id=0x0008
@@ -630,7 +630,7 @@ LABEL_0022:
 	load id=0x0040
 	song id=0x0007, delay=0x3D54, pos=0x00
 
-LABEL_007F:
+SETUP_CHANNELS_AFTER_LOAD:
 	setup channel=0x01, address=LABEL_22ED
 ;@if BRANCH == "gba_2004"
 	song id=0x0FB9, delay=0x0000, pos=0x01
@@ -640,7 +640,7 @@ LABEL_007F:
 	setup channel=0x3C, address=LABEL_00A6
 	killChannel
 
-LABEL_0090:
+KILL_CHANNEL_ROUTINE:
 	killChannel
 
 LABEL_0091:
@@ -689,7 +689,7 @@ LABEL_00E4:
 	break
 	jmp LABEL_00E4
 
-LABEL_00F9:
+INIT_VIDEO_BUFFERS:
 	fill page=0x01, color=0x00
 	fill page=0x02, color=0x00
 	selectVideoPage 0x01
@@ -1307,7 +1307,7 @@ LABEL_0658:
 	break
 	setup channel=0x3C, address=LABEL_00A6
 	break
-	setup channel=0x01, address=LABEL_0090
+	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
 	jmp LABEL_06E0
 LABEL_06D7:
 	killChannel
@@ -1455,7 +1455,7 @@ LABEL_079B:
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x00
 	play id=0x000A, freq=0x01, vol=0x3F, channel=0x02
 	break
-	setup channel=0x04, address=LABEL_0090
+	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	mov [PAUSE_SLICES], 0x0002
 	mov [0x01], 0x0003
 
@@ -1526,7 +1526,7 @@ LABEL_08EB:
 	break
 	play id=0x0003, freq=0x14, vol=0x06, channel=0x03
 	video type=1, offset=CINEMATIC_280, x=160, y=100
-	setup channel=0x04, address=LABEL_0090
+	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	play id=0x000E, freq=0x06, vol=0x3F, channel=0x01
 	break
 	play id=0x0003, freq=0x14, vol=0x04, channel=0x03
@@ -1540,13 +1540,13 @@ LABEL_08EB:
 	play id=0x000E, freq=0x00, vol=0x3F, channel=0x03
 	video type=1, offset=CINEMATIC_282, x=160, y=100
 	break
-	setup channel=0x14, address=LABEL_0090
-	setup channel=0x15, address=LABEL_0090
-	setup channel=0x0A, address=LABEL_0090
-	setup channel=0x0B, address=LABEL_0090
-	setup channel=0x0C, address=LABEL_0090
-	setup channel=0x0D, address=LABEL_0090
-	setup channel=0x10, address=LABEL_0090
+	setup channel=0x14, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x15, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x0A, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x0B, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x0C, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x0D, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x10, address=KILL_CHANNEL_ROUTINE
 	break
 	setPalette 0x18
 	break
@@ -1557,9 +1557,9 @@ LABEL_09A8:
 	break
 	djnz [0x01], LABEL_09A8
 	setup channel=0x12, address=LABEL_0BDF
-	setup channel=0x0E, address=LABEL_0090
-	setup channel=0x11, address=LABEL_0090
-	setup channel=0x0F, address=LABEL_0090
+	setup channel=0x0E, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x11, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x0F, address=KILL_CHANNEL_ROUTINE
 	mov [0x01], 0x0014
 
 LABEL_09C1:
@@ -2255,9 +2255,9 @@ LABEL_10A3:
 	setup channel=0x3C, address=LABEL_00A6
 	break
 	setup channel=0x3C, address=LABEL_00D6
-	setup channel=0x03, address=LABEL_0090
-	setup channel=0x06, address=LABEL_0090
-	setup channel=0x07, address=LABEL_0090
+	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
 	selectVideoPage 0x00
 	mov [PAUSE_SLICES], 0x0001
 	mov [0x01], 0x0006
@@ -2326,13 +2326,13 @@ LABEL_112D:
 	video type=1, offset=CINEMATIC_187, x=149, y=83
 	video type=1, offset=CINEMATIC_188, x=168, y=21
 	video type=1, offset=CINEMATIC_189, x=114, y=71
-	setup channel=0x06, address=LABEL_0090
-	setup channel=0x07, address=LABEL_0090
-	setup channel=0x03, address=LABEL_0090
+	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x01, address=LABEL_11E7
 	setup channel=0x02, address=LABEL_11F9
 	setup channel=0x3C, address=LABEL_00A6
-	setup channel=0x05, address=LABEL_0090
+	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
 LABEL_1195:
@@ -2605,10 +2605,10 @@ LABEL_1418:
 	break
 	djnz [0x01], LABEL_1418
 	text id=0x004C, x=28, y=80, color=0x06
-	setup channel=0x10, address=LABEL_0090
-	setup channel=0x0A, address=LABEL_0090
+	setup channel=0x10, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x0A, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x02, address=LABEL_0F49
-	setup channel=0x01, address=LABEL_0090
+	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x3C, address=LABEL_00A6
 	killChannel
 
@@ -2618,9 +2618,9 @@ LABEL_143E:
 	copyVideoPage src=0xFF, dst=0x00
 	mov [PAUSE_SLICES], 0x0005
 	setup channel=0x03, address=LABEL_179B
-	setup channel=0x04, address=LABEL_0090
-	setup channel=0x05, address=LABEL_0090
-	setup channel=0x06, address=LABEL_0090
+	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x01, address=LABEL_185E
 	setPalette 0x09
 	mov [0x01], 0x000B
@@ -2673,9 +2673,9 @@ LABEL_14CE:
 	copyVideoPage src=0x03, dst=0x00
 	mov [PAUSE_SLICES], 0x0004
 	setup channel=0x07, address=LABEL_17C8
-	setup channel=0x04, address=LABEL_0090
-	setup channel=0x05, address=LABEL_0090
-	setup channel=0x06, address=LABEL_0090
+	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
 	mov [0x01], 0x0027
 
 LABEL_14F3:
@@ -2691,10 +2691,10 @@ LABEL_150A:
 	djnz [0x01], LABEL_14F3
 	setup channel=0x3C, address=LABEL_00A6
 	break
-	setup channel=0x03, address=LABEL_0090
+	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x02, address=LABEL_05FC
-	setup channel=0x01, address=LABEL_0090
-	setup channel=0x07, address=LABEL_0090
+	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x3C, address=LABEL_00A6
 	fill page=0xFF, color=0x00
 	fill page=0x00, color=0x00
@@ -3050,7 +3050,7 @@ LABEL_18A4:
 LABEL_18D6:
 	break
 	djnz [0x03], LABEL_18D6
-	setup channel=0x09, address=LABEL_0090
+	setup channel=0x09, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x11, address=LABEL_0391
 	mov [0x03], 0x0009
 
@@ -3081,14 +3081,14 @@ LABEL_1905:
 LABEL_1923:
 	break
 	djnz [0x03], LABEL_1923
-	setup channel=0x11, address=LABEL_0090
-	setup channel=0x03, address=LABEL_0090
-	setup channel=0x04, address=LABEL_0090
-	setup channel=0x05, address=LABEL_0090
-	setup channel=0x06, address=LABEL_0090
-	setup channel=0x07, address=LABEL_0090
-	setup channel=0x0A, address=LABEL_0090
-	setup channel=0x10, address=LABEL_0090
+	setup channel=0x11, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x0A, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x10, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x02, address=LABEL_0108
 	setup channel=0x3C, address=LABEL_00A6
 	killChannel
@@ -3227,7 +3227,7 @@ LABEL_1A83:
 	add [0x01], 0x0001
 	djnz [0x03], LABEL_1A83
 	copyVideoPage src=0xFE, dst=0x00
-	setup channel=0x03, address=LABEL_0090
+	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x3C, address=LABEL_00A6
 	break
 	setPalette 0x0C
@@ -3406,12 +3406,12 @@ LABEL_1C5A:
 	setup channel=0x01, address=LABEL_104E
 	setup channel=0x02, address=LABEL_106C
 	setup channel=0x3C, address=LABEL_00A6
-	setup channel=0x04, address=LABEL_0090
-	setup channel=0x05, address=LABEL_0090
-	setup channel=0x0A, address=LABEL_0090
-	setup channel=0x0B, address=LABEL_0090
-	setup channel=0x0E, address=LABEL_0090
-	setup channel=0x06, address=LABEL_0090
+	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x0A, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x0B, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x0E, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
 LABEL_1C84:
@@ -3563,7 +3563,7 @@ LABEL_1DC3:
 	djnz [0x01], LABEL_1DC3
 	mov [PAUSE_SLICES], 0x0002
 	video type=1, offset=CINEMATIC_112, x=143, y=94
-	setup channel=0x03, address=LABEL_0090
+	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	copyVideoPage src=0xFF, dst=0x00
 	mov [0x01], 0x0019
 	setPalette 0x0A
@@ -3731,7 +3731,7 @@ LABEL_1F8B:
 	djnz [0x04], LABEL_1F8B
 	setup channel=0x02, address=LABEL_20B2
 	setup channel=0x3C, address=LABEL_00A6
-	setup channel=0x03, address=LABEL_0090
+	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
 LABEL_1F9D:
@@ -3801,7 +3801,7 @@ LABEL_203D:
 	add [0x04], 0x0009
 	break
 	djnz [0x06], LABEL_203D
-	setup channel=0x02, address=LABEL_0090
+	setup channel=0x02, address=KILL_CHANNEL_ROUTINE
 	fill page=0xFF, color=0x09
 	setup channel=0x3C, address=LABEL_00A6
 	break
@@ -3834,11 +3834,11 @@ LABEL_2094:
 	sub [0x04], 0x0003
 	break
 	djnz [0x06], LABEL_2094
-	setup channel=0x01, address=LABEL_0090
+	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x02, address=LABEL_1E97
 	setup channel=0x03, address=LABEL_1F9D
 	setup channel=0x3C, address=LABEL_00A6
-	setup channel=0x04, address=LABEL_0090
+	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
 LABEL_20B2:
@@ -3888,7 +3888,7 @@ LABEL_2127:
 LABEL_2139:
 	break
 	djnz [0x03], LABEL_2127
-	setup channel=0x08, address=LABEL_0090
+	setup channel=0x08, address=KILL_CHANNEL_ROUTINE
 	add [0x01], 0x0014
 	sub [0x02], 0x0014
 	break
@@ -3904,10 +3904,10 @@ LABEL_214F:
 	play id=0x0036, freq=0x0F, vol=0x3F, channel=0x02
 
 LABEL_216E:
-	setup channel=0x05, address=LABEL_0090
-	setup channel=0x04, address=LABEL_0090
-	setup channel=0x08, address=LABEL_0090
-	setup channel=0x09, address=LABEL_0090
+	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x08, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x09, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x01, address=LABEL_1880
 	setup channel=0x02, address=LABEL_18A4
 	setup channel=0x3C, address=LABEL_00A6
