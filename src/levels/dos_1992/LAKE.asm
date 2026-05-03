@@ -1002,14 +1002,12 @@ SHOW_PAGE_FF_LOOP:
 	selectVideoPage 0xFF	;@raw=0x0D,0xFF
 	break	;@raw=0x06
 	jmp SHOW_PAGE_FF_LOOP	;@raw=0x07,0x01,0xD9
-LABEL_01DF:
 	killChannel	;@raw=0x11
 
 INC_VAR_6E_PER_TICK_LOOP:
 	add [0x6E], 0x0001	;@raw=0x03,0x6E,0x00,0x01
 	break	;@raw=0x06
 	jmp INC_VAR_6E_PER_TICK_LOOP	;@raw=0x07,0x01,0xE0
-LABEL_01E8:
 	killChannel	;@raw=0x11
 
 LABEL_01E9:
@@ -1043,7 +1041,6 @@ INIT_OPENING_BG_THREADS:
 	setup channel=0x24, address=LABEL_04F9	;@raw=0x08,0x24,0x04,0xF9
 	setup channel=0x25, address=LABEL_052D	;@raw=0x08,0x25,0x05,0x2D
 	jmp LABEL_01E9	;@raw=0x07,0x01,0xE9
-LABEL_024F:
 	killChannel	;@raw=0x11
 
 LABEL_0250:
@@ -1067,7 +1064,6 @@ LABEL_0260:
 	video type=1, offset=CINEMATIC_570, x=[0x6f], y=[0x70], zoom=0x40	;@raw=0x54,0x6F,0x72,0x6F,0x70
 	selectVideoPage 0xFF	;@raw=0x0D,0xFF
 	jmp LABEL_0293	;@raw=0x07,0x02,0x93
-LABEL_0292:
 	killChannel	;@raw=0x11
 
 LABEL_0293:
@@ -1094,7 +1090,6 @@ RAIN_DROPLET_FALL_LOOP:
 	video type=1, offset=CINEMATIC_RAIN_DROPLET_F3, x=[0x6f], y=[0x70], zoom=0x40	;@raw=0x54,0x6F,0x86,0x6F,0x70
 	selectVideoPage 0xFF	;@raw=0x0D,0xFF
 	jmp LABEL_02DF	;@raw=0x07,0x02,0xDF
-LABEL_02DE:
 	killChannel	;@raw=0x11
 
 LABEL_02DF:
@@ -1240,7 +1235,6 @@ WAIT_RANDOM_DELAY_THEN_LOOP:
 	break	;@raw=0x06
 	djnz [0x24], WAIT_RANDOM_DELAY_THEN_LOOP	;@raw=0x09,0x24,0x04,0x8D
 	jmp LABEL_0480	;@raw=0x07,0x04,0x80
-LABEL_0495:
 	killChannel	;@raw=0x11
 
 LABEL_0496:
@@ -1306,7 +1300,6 @@ LABEL_0517:
 	djnz [0x22], LABEL_0517	;@raw=0x09,0x22,0x05,0x17
 	play id=0x0010, freq=0x01, vol=0x18, channel=0x03	;@raw=0x18,0x00,0x10,0x01,0x18,0x03
 	jmp LABEL_04F5	;@raw=0x07,0x04,0xF5
-LABEL_0525:
 	killChannel	;@raw=0x11
 
 LABEL_0526:
@@ -1333,7 +1326,6 @@ LABEL_054F:
 	djnz [0x23], LABEL_054F	;@raw=0x09,0x23,0x05,0x4F
 	play id=0x0010, freq=0x09, vol=0x0F, channel=0x02	;@raw=0x18,0x00,0x10,0x09,0x0F,0x02
 	jmp LABEL_052D	;@raw=0x07,0x05,0x2D
-LABEL_055D:
 	killChannel	;@raw=0x11
 
 LABEL_055E:
@@ -1563,7 +1555,6 @@ LABEL_07FF:
 	djnz [0x83], LABEL_07FF	;@raw=0x09,0x83,0x07,0xFF
 	mov [0x83], 0x0001	;@raw=0x00,0x83,0x00,0x01
 	jmp LABEL_0700	;@raw=0x07,0x07,0x00
-LABEL_080B:
 	killChannel	;@raw=0x11
 
 LABEL_080C:
@@ -1662,7 +1653,6 @@ LABEL_08A2:
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_FRAME_1, x=[0x98], y=[0x99], zoom=0x40	;@raw=0x54,0x6E,0x8D,0x98,0x99
 	break	;@raw=0x06
 	jmp LABEL_08A2	;@raw=0x07,0x08,0xA2
-LABEL_0925:
 	killChannel	;@raw=0x11
 
 LABEL_0926:
@@ -1771,7 +1761,6 @@ LABEL_09A7:
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_FRAME_3, x=[0xa0], y=[0xa1], zoom=0x40	;@raw=0x54,0x6E,0xA3,0xA0,0xA1
 	break	;@raw=0x06
 	jmp LABEL_09A7	;@raw=0x07,0x09,0xA7
-LABEL_0ACA:
 	killChannel	;@raw=0x11
 
 LABEL_0ACB:
@@ -1792,7 +1781,6 @@ LABEL_0AE2:
 	sub [0x83], 0x0001	;@raw=0x03,0x83,0xFF,0xFF
 	djnz [0x84], LABEL_0ADE	;@raw=0x09,0x84,0x0A,0xDE
 	jmp LABEL_0ACB	;@raw=0x07,0x0A,0xCB
-LABEL_0AF7:
 	killChannel	;@raw=0x11
 
 LABEL_0AF8:
@@ -1845,7 +1833,6 @@ LABEL_0B80:
 	jne [0x3A], 0x00, WAIT_VAR_93_AND_SETUP_CH34	;@raw=0x0A,0x01,0x3A,0x00,0x0B,0x14
 	mov [0xA6], 0x014A	;@raw=0x00,0xA6,0x01,0x4A
 	jmp WAIT_VAR_93_AND_SETUP_CH34	;@raw=0x07,0x0B,0x14
-LABEL_0B91:
 	killChannel	;@raw=0x11
 
 CLASSIFY_ALL_REGIONS_VARS:
@@ -1865,7 +1852,6 @@ CLASSIFY_ALL_REGIONS_VARS:
 	mov [0xA6], [0x6C]	;@raw=0x01,0xA6,0x6C
 	mov [0xA7], [0x6D]	;@raw=0x01,0xA7,0x6D
 	ret	;@raw=0x05
-LABEL_0BC0:
 	killChannel	;@raw=0x11
 
 LABEL_0BC1:
@@ -1920,7 +1906,6 @@ DRAW_3_SCATTER_DOTS_CYCLE:
 	video type=1, offset=CINEMATIC_308, x=[0xa6], y=[0xa7], zoom=0x40	;@raw=0x54,0x6E,0xC3,0xA6,0xA7
 	break	;@raw=0x06
 	jmp DRAW_3_SCATTER_DOTS_CYCLE	;@raw=0x07,0x0C,0x26
-LABEL_0C69:
 	killChannel	;@raw=0x11
 
 LABEL_0C6A:
@@ -2091,7 +2076,6 @@ LABEL_0E06:
 	video type=1, offset=CINEMATIC_307, x=[0xb0], y=[0xb1], zoom=0x40	;@raw=0x54,0x6E,0xBF,0xB0,0xB1
 	break	;@raw=0x06
 	jmp LABEL_0E06	;@raw=0x07,0x0E,0x06
-LABEL_0EAD:
 	killChannel	;@raw=0x11
 
 LABEL_0EAE:
@@ -2113,7 +2097,6 @@ LABEL_0EC5:
 	add [0x83], 0x000A	;@raw=0x03,0x83,0x00,0x0A
 	djnz [0x84], LABEL_0EC5	;@raw=0x09,0x84,0x0E,0xC5
 	jmp LABEL_0EAE	;@raw=0x07,0x0E,0xAE
-LABEL_0EDF:
 	killChannel	;@raw=0x11
 
 LABEL_0EE0:
@@ -2150,7 +2133,6 @@ LABEL_0F21:
 	sub [0x88], 0x0078	;@raw=0x03,0x88,0xFF,0x88
 	jl [0x88], 0x0140, LABEL_0F21	;@raw=0x0A,0x44,0x88,0x01,0x40,0x0F,0x21
 	jmp LABEL_0EE0	;@raw=0x07,0x0E,0xE0
-LABEL_0F4B:
 	killChannel	;@raw=0x11
 
 LABEL_0F4C:
@@ -2171,7 +2153,6 @@ LABEL_0F69:
 	break	;@raw=0x06
 	djnz [0x85], LABEL_0F69	;@raw=0x09,0x85,0x0F,0x69
 	jmp LABEL_0F4C	;@raw=0x07,0x0F,0x4C
-LABEL_0F71:
 	killChannel	;@raw=0x11
 
 THE_BEAST_IS_KILLED_BY_A_LASER_SHOT:
@@ -2254,7 +2235,6 @@ LABEL_106F:
 	break	;@raw=0x06
 	djnz [0x34], LABEL_106F	;@raw=0x09,0x34,0x10,0x6F
 	jmp LABEL_13E9	;@raw=0x07,0x13,0xE9
-LABEL_1077:
 	killChannel	;@raw=0x11
 
 LAKE_PALETTE_FADE_IN:
@@ -2313,7 +2293,6 @@ LOOP_DRAW_DECOR_215_AT_327_164:
 	video type=1, offset=CINEMATIC_LAKE_SCENE_DECOR_RIGHT, x=327, y=164, zoom=0x40	;@raw=0x78,0x6B,0x47,0x47,0xA4
 	break	;@raw=0x06
 	jmp LOOP_DRAW_DECOR_215_AT_327_164	;@raw=0x07,0x10,0xF5
-LABEL_10FE:
 	killChannel	;@raw=0x11
 
 LABEL_10FF:
@@ -2332,7 +2311,6 @@ LOOP_DRAW_LAKE_037_AT_305_155:
 	video type=1, offset=CINEMATIC_225, x=305, y=155, zoom=0x40	;@raw=0x78,0x6B,0x72,0x31,0x9B
 	break	;@raw=0x06
 	jmp LOOP_DRAW_LAKE_037_AT_305_155	;@raw=0x07,0x11,0x1E
-LABEL_1127:
 	killChannel	;@raw=0x11
 
 LABEL_1128:
@@ -2396,7 +2374,6 @@ LABEL_11CF:
 	break	;@raw=0x06
 	video type=1, offset=CINEMATIC_224, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x6A,0xBB,0x01,0x02
 	jmp LABEL_11CF	;@raw=0x07,0x11,0xCF
-LABEL_11D8:
 	killChannel	;@raw=0x11
 
 LABEL_11D9:
@@ -2448,7 +2425,6 @@ LABEL_1254:
 	video type=1, offset=CINEMATIC_LAKE_ENTITY_DROP, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x63,0xA5,0x01,0x02
 	break	;@raw=0x06
 	jmp LABEL_1254	;@raw=0x07,0x12,0x54
-LABEL_125D:
 	killChannel	;@raw=0x11
 
 LABEL_125E:
@@ -2486,7 +2462,6 @@ LABEL_128E:
 	break	;@raw=0x06
 	mov [0x14], 0x0006	;@raw=0x00,0x14,0x00,0x06
 	jmp LABEL_1262	;@raw=0x07,0x12,0x62
-LABEL_12BD:
 	killChannel	;@raw=0x11
 
 LABEL_12BE:
@@ -2540,7 +2515,6 @@ LABEL_1324:
 	djnz [0x14], LABEL_1324	;@raw=0x09,0x14,0x13,0x24
 	mov [0x14], 0x0002	;@raw=0x00,0x14,0x00,0x02
 	jmp LABEL_12C2	;@raw=0x07,0x12,0xC2
-LABEL_1335:
 	killChannel	;@raw=0x11
 
 LABEL_1336:
@@ -2606,7 +2580,6 @@ LABEL_13DB:
 	video type=1, offset=CINEMATIC_LAKE_LESTER_AT_POOL, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x67,0xE8,0x01,0x02
 	mov [PAUSE_SLICES], 0x0004	;@raw=0x00,0xFF,0x00,0x04
 	jmp LABEL_13DB	;@raw=0x07,0x13,0xDB
-LABEL_13E8:
 	killChannel	;@raw=0x11
 
 LABEL_13E9:
@@ -2692,7 +2665,6 @@ LABEL_14B2:
 	mov [0x14], [0x48]	;@raw=0x01,0x14,0x48
 	break	;@raw=0x06
 	jmp LABEL_14B2	;@raw=0x07,0x14,0xB2
-LABEL_14C8:
 	killChannel	;@raw=0x11
 
 LABEL_14C9:
@@ -2704,7 +2676,6 @@ LABEL_14C9:
 	mov [0x14], [0x4B]	;@raw=0x01,0x14,0x4B
 	break	;@raw=0x06
 	jmp LABEL_14C9	;@raw=0x07,0x14,0xC9
-LABEL_14DF:
 	killChannel	;@raw=0x11
 
 LABEL_14E0:
@@ -2716,7 +2687,6 @@ LABEL_14E0:
 	mov [0x14], [0x4E]	;@raw=0x01,0x14,0x4E
 	break	;@raw=0x06
 	jmp LABEL_14E0	;@raw=0x07,0x14,0xE0
-LABEL_14F6:
 	killChannel	;@raw=0x11
 
 LABEL_14F7:
@@ -2754,7 +2724,6 @@ LABEL_14F7:
 	video type=1, offset=CINEMATIC_265, x=[0x32], y=[0x33], zoom=0x40	;@raw=0x54,0x62,0x09,0x32,0x33
 	break	;@raw=0x06
 	jmp LABEL_14F7	;@raw=0x07,0x14,0xF7
-LABEL_1568:
 	killChannel	;@raw=0x11
 
 LABEL_1569:
@@ -2800,7 +2769,6 @@ LABEL_1571:
 	selectVideoPage 0xFF	;@raw=0x0D,0xFF
 	break	;@raw=0x06
 	jmp INIT_VAR_03_TO_0x1E	;@raw=0x07,0x1E,0xB0
-LABEL_15E9:
 	killChannel	;@raw=0x11
 
 LABEL_15EA:
@@ -2827,7 +2795,6 @@ LABEL_15EA:
 	video type=1, offset=CINEMATIC_520, x=160, y=100	;@raw=0xDD,0x3A,0xA0,0x64
 	break	;@raw=0x06
 	jmp LABEL_15EA	;@raw=0x07,0x15,0xEA
-LABEL_1624:
 	killChannel	;@raw=0x11
 
 REED_PLANT_ANIMATION:
@@ -2908,7 +2875,6 @@ LABEL_16A0:
 	video type=1, offset=CINEMATIC_REED_PLANT_5, x=160, y=100	;@raw=0xDC,0x04,0xA0,0x64
 	break	;@raw=0x06
 	jmp LABEL_16A0	;@raw=0x07,0x16,0xA0
-LABEL_16D5:
 	killChannel	;@raw=0x11
 
 SNEAKY_TENTACLE_FROM_THE_POOL:
@@ -3030,7 +2996,6 @@ SNEAKY_TENTACLE_GOING_UP:
 	break	;@raw=0x06
 	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_F12, x=[0x32], y=100, zoom=0x40	;@raw=0x58,0x5B,0xF2,0x32,0x64
 	jmp INIT_VAR_03_TO_0x1E	;@raw=0x07,0x1E,0xB0
-LABEL_186D:
 	killChannel	;@raw=0x11
 
 LABEL_186E:
@@ -3043,7 +3008,6 @@ LABEL_186E:
 	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=106, zoom=0x40	;@raw=0x58,0x58,0xF5,0x32,0x6A
 	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40	;@raw=0x58,0x6E,0x1D,0x32,0x64
 	jmp SNEAKY_TENTACLE_FROM_THE_POOL	;@raw=0x07,0x16,0xD6
-LABEL_188F:
 	killChannel	;@raw=0x11
 
 SNEAKY_TENTACLE_GIVES_UP_FOR_NOW:
@@ -3101,7 +3065,6 @@ SNEAKY_TENTACLE_GOING_DOWN:
 	break	;@raw=0x06
 	djnz [0x34], SNEAKY_TENTACLE_GOING_DOWN	;@raw=0x09,0x34,0x18,0x98
 	jmp SNEAKY_TENTACLE_FROM_THE_POOL	;@raw=0x07,0x16,0xD6
-LABEL_1953:
 	killChannel	;@raw=0x11
 
 LABEL_1954:
@@ -3146,7 +3109,6 @@ LABEL_19A9:
 LABEL_19B3:
 	setup channel=0x01, address=LABEL_06F4	;@raw=0x08,0x01,0x06,0xF4
 	jmp CHECK_HERO_LAKE_EDGE	;@raw=0x07,0x1B,0x96
-LABEL_19BA:
 	killChannel	;@raw=0x11
 
 OUTSIDE_POOL_SCREEN:
@@ -3179,7 +3141,6 @@ FIRST_SCREEN_R_SETUP_CHANNELS:
 	setup channel=0x37, address=LABEL_0F4C	;@raw=0x08,0x37,0x0F,0x4C
 	setup channel=0x38, address=REED_PLANT_ANIMATION	;@raw=0x08,0x38,0x16,0x25
 	jmp LABEL_1C85	;@raw=0x07,0x1C,0x85
-LABEL_1A19:
 	killChannel	;@raw=0x11
 
 FIRST_SCREEN_TO_THE_RIGHT:
@@ -3219,7 +3180,6 @@ LABEL_1A5A:
 	setup channel=0x38, address=LABEL_09A7	;@raw=0x08,0x38,0x09,0xA7
 	call CLAMP_SCENE_INIT_X_VARS	;@raw=0x04,0x1A,0x95
 	jmp LABEL_1CCC	;@raw=0x07,0x1C,0xCC
-LABEL_1A94:
 	killChannel	;@raw=0x11
 
 CLAMP_SCENE_INIT_X_VARS:
@@ -3294,7 +3254,6 @@ LABEL_1B28:
 	setup channel=0x38, address=LABEL_0C1E	;@raw=0x08,0x38,0x0C,0x1E
 	call CLAMP_SCENE_INIT_X_VARS	;@raw=0x04,0x1A,0x95
 	jmp LABEL_1D13	;@raw=0x07,0x1D,0x13
-LABEL_1B5E:
 	killChannel	;@raw=0x11
 
 THIRD_SCREEN_TO_THE_RIGHT:
@@ -3404,7 +3363,6 @@ LABEL_1C72:
 LABEL_1C80:
 	break	;@raw=0x06
 	jmp CHECK_HERO_LAKE_EDGE	;@raw=0x07,0x1B,0x96
-LABEL_1C84:
 	killChannel	;@raw=0x11
 
 LABEL_1C85:
@@ -3432,7 +3390,6 @@ ENTER_VINE_SCREEN_FROM_LEFT:
 LABEL_1CC7:
 	break	;@raw=0x06
 	jmp LABEL_1C85	;@raw=0x07,0x1C,0x85
-LABEL_1CCB:
 	killChannel	;@raw=0x11
 
 LABEL_1CCC:
@@ -3460,7 +3417,6 @@ ENTER_OUTSIDE_POOL_FROM_RIGHT:
 LABEL_1D0E:
 	break	;@raw=0x06
 	jmp LABEL_1CCC	;@raw=0x07,0x1C,0xCC
-LABEL_1D12:
 	killChannel	;@raw=0x11
 
 LABEL_1D13:
@@ -3492,7 +3448,6 @@ ENTER_FIRST_SCREEN_FROM_RIGHT:
 LABEL_1D5F:
 	break	;@raw=0x06
 	jmp LABEL_1D13	;@raw=0x07,0x1D,0x13
-LABEL_1D63:
 	killChannel	;@raw=0x11
 
 LABEL_1D64:
@@ -3515,7 +3470,6 @@ THIRD_SCR_BEAST_DEFEAT_CHK:
 LABEL_1D9A:
 	break	;@raw=0x06
 	jmp LABEL_1D64	;@raw=0x07,0x1D,0x64
-LABEL_1D9E:
 	killChannel	;@raw=0x11
 
 KILL_CH_01_04_38:
@@ -3544,7 +3498,6 @@ CLEANUP_BEFORE_S1_OR_S3:
 DELETE_CH_01_06_RET:
 	deleteChannels first=0x01, last=0x06	;@raw=0x0C,0x01,0x06,0x02
 	ret	;@raw=0x05
-LABEL_1DD4:
 	killChannel	;@raw=0x11
 
 THE_BEAST_KILLS_LESTER:
@@ -3608,7 +3561,6 @@ LABEL_1E62:
 	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_10, x=160, y=100	;@raw=0xD6,0x26,0xA0,0x64
 	play id=0x004F, freq=0x17, vol=0x3F, channel=0x03	;@raw=0x18,0x00,0x4F,0x17,0x3F,0x03
 	jmp INIT_VAR_03_TO_0x1E	;@raw=0x07,0x1E,0xB0
-LABEL_1EAF:
 	killChannel	;@raw=0x11
 
 INIT_VAR_03_TO_0x1E:
@@ -3640,28 +3592,24 @@ LOOP_BLIT_AND_CLEAR_FF:
 	fill page=0xFF, color=0x00	;@raw=0x0E,0xFF,0x00
 	break	;@raw=0x06
 	jmp LOOP_BLIT_AND_CLEAR_FF	;@raw=0x07,0x1E,0xE4
-LABEL_1EEF:
 	killChannel	;@raw=0x11
 
 LABEL_1EF0:
 	video type=1, offset=CINEMATIC_172, x=160, y=100	;@raw=0xC8,0x63,0xA0,0x64
 	break	;@raw=0x06
 	jmp LABEL_1EF0	;@raw=0x07,0x1E,0xF0
-LABEL_1EF8:
 	killChannel	;@raw=0x11
 
 LABEL_1EF9:
 	video type=1, offset=CINEMATIC_VINE_SCREEN_BG_DECOR, x=160, y=100	;@raw=0xA0,0x8E,0xA0,0x64
 	break	;@raw=0x06
 	jmp LABEL_1EF9	;@raw=0x07,0x1E,0xF9
-LABEL_1F01:
 	killChannel	;@raw=0x11
 
 LOOP_DRAW_VINE_FG:
 	video type=1, offset=CINEMATIC_SCENARIO_VINE_SCREEN_FOREGROUND, x=160, y=100	;@raw=0xEB,0xC4,0xA0,0x64
 	break	;@raw=0x06
 	jmp LOOP_DRAW_VINE_FG	;@raw=0x07,0x1F,0x02
-LABEL_1F0A:
 	killChannel	;@raw=0x11
 
 LABEL_1F0B:
@@ -3694,7 +3642,6 @@ LABEL_1F1A:
 	break	;@raw=0x06
 	break	;@raw=0x06
 	jmp LABEL_1F1A	;@raw=0x07,0x1F,0x1A
-LABEL_1F43:
 	killChannel	;@raw=0x11
 
 LABEL_1F44:
@@ -3703,7 +3650,6 @@ LABEL_1F44:
 	mov [0x02], 0x00AB	;@raw=0x00,0x02,0x00,0xAB
 	break	;@raw=0x06
 	jmp LABEL_1F44	;@raw=0x07,0x1F,0x44
-LABEL_1F54:
 	killChannel	;@raw=0x11
 
 LABEL_1F55:
@@ -3712,7 +3658,6 @@ LABEL_1F55:
 	mov [0x02], 0x00AB	;@raw=0x00,0x02,0x00,0xAB
 	break	;@raw=0x06
 	jmp LABEL_1F55	;@raw=0x07,0x1F,0x55
-LABEL_1F65:
 	killChannel	;@raw=0x11
 
 LABEL_1F66:
@@ -3721,7 +3666,6 @@ LABEL_1F66:
 	mov [0x02], 0x00AC	;@raw=0x00,0x02,0x00,0xAC
 	break	;@raw=0x06
 	jmp LABEL_1F66	;@raw=0x07,0x1F,0x66
-LABEL_1F76:
 	killChannel	;@raw=0x11
 
 LABEL_1F77:
@@ -3730,7 +3674,6 @@ LABEL_1F77:
 	mov [0x02], 0x00AC	;@raw=0x00,0x02,0x00,0xAC
 	break	;@raw=0x06
 	jmp LABEL_1F77	;@raw=0x07,0x1F,0x77
-LABEL_1F87:
 	killChannel	;@raw=0x11
 
 LABEL_1F88:
@@ -4182,7 +4125,6 @@ GETTING_OUT_OF_THE_POOL__ANIMATION_PART_9:
 	break	;@raw=0x06
 	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_F_1, x=199, y=182	;@raw=0x83,0x48,0xC7,0xB6
 	jmp GETTING_OUT_OF_THE_POOL__ANIMATION_PART_9	;@raw=0x07,0x24,0x44
-LABEL_244C:
 	killChannel	;@raw=0x11
 
 THE_BEAST_APPEARS_FOR_THE_FIRST_TIME_IN_THE_BACKGROUND:
@@ -4446,7 +4388,6 @@ THE_BEAST_IS_CLOSE_ENOUGH:
 THE_BEAST_IS_STILL_AT_A_DISTANCE:
 	break	;@raw=0x06
 	jmp CHECK_IF_THE_BEAST_HAS_ALREADY_REACHED_LESTER	;@raw=0x07,0x27,0x3B
-LABEL_2767:
 	killChannel	;@raw=0x11
 
 WAIT_UNTIL_BEAST_CLOSE:
@@ -4455,7 +4396,6 @@ WAIT_UNTIL_BEAST_CLOSE:
 	jg [0x11], [0x01], THE_BEAST_IS_CLOSE_ENOUGH	;@raw=0x0A,0x82,0x11,0x01,0x27,0x48
 	break	;@raw=0x06
 	jmp WAIT_UNTIL_BEAST_CLOSE	;@raw=0x07,0x27,0x68
-LABEL_2779:
 	killChannel	;@raw=0x11
 
 BEAST_AI_INIT_POS_HEINEMAN:
@@ -4509,14 +4449,12 @@ BEAST_APPROACH_PHASE_2:
 	break	;@raw=0x06
 	add [0x0E], 0x0001	;@raw=0x03,0x0E,0x00,0x01
 	jmp BEAST_APPROACH_PHASE_2	;@raw=0x07,0x27,0xA9
-LABEL_2813:
 	killChannel	;@raw=0x11
 
 LABEL_2814:
 	mov [0x0E], 0x01EC	;@raw=0x00,0x0E,0x01,0xEC
 	mov [0x0F], 0x00B6	;@raw=0x00,0x0F,0x00,0xB6
 	jmp DRAW_BEAST_DRIFT_LEFT_PREROLL_FRAME	;@raw=0x07,0x28,0xDB
-LABEL_281F:
 	killChannel	;@raw=0x11
 
 LABEL_2820:
@@ -4614,7 +4552,6 @@ DRAW_BEAST_DRIFT_LEFT_LOOP:
 	break	;@raw=0x06
 	sub [0x0E], 0x0001	;@raw=0x03,0x0E,0xFF,0xFF
 	jmp LABEL_289B	;@raw=0x07,0x28,0x9B
-LABEL_2913:
 	killChannel	;@raw=0x11
 
 LABEL_2914:
@@ -4683,7 +4620,6 @@ BEAST_FINAL_HOLD_LOOP:
 	break	;@raw=0x06
 	video type=1, offset=CINEMATIC_BEAST_HOLD_POSE, x=[0x0e], y=[0x0f], zoom=0x40	;@raw=0x54,0x2E,0x01,0x0E,0x0F
 	jmp BEAST_FINAL_HOLD_LOOP	;@raw=0x07,0x29,0xD7
-LABEL_29E0:
 	killChannel	;@raw=0x11
 
 BEAST_ARRIVAL_DECEL:
@@ -4772,7 +4708,6 @@ BEAST_PASS_HERO_DECEL:
 	jg [0x0E], [0x01], DRAW_BEAST_DRIFT_LEFT_LOOP	;@raw=0x0A,0x82,0x0E,0x01,0x28,0xE1
 	setup channel=0x29, address=WAIT_UNTIL_BEAST_CLOSE	;@raw=0x08,0x29,0x27,0x68
 	jmp BEAST_AI_INIT_POS_HEINEMAN	;@raw=0x07,0x27,0x7A
-LABEL_2AF8:
 	killChannel	;@raw=0x11
 
 WAIT_BEAST_TRIGGER_THEN_INIT:
@@ -4906,7 +4841,6 @@ LABEL_2BAD:
 	setup channel=0x24, address=LABEL_04DF	;@raw=0x08,0x24,0x04,0xDF
 	setup channel=0x25, address=LABEL_0526	;@raw=0x08,0x25,0x05,0x26
 	jmp LABEL_286F	;@raw=0x07,0x28,0x6F
-LABEL_2C90:
 	killChannel	;@raw=0x11
 
 GOO_DRIPPING_FROM_SLUGS_CLAW_ANIMATION:
@@ -4938,7 +4872,6 @@ LABEL_2CD4:
 	fill page=0xFF, color=0x04	;@raw=0x0E,0xFF,0x04
 	break	;@raw=0x06
 	jmp LABEL_2CD4	;@raw=0x07,0x2C,0xD4
-LABEL_2CDF:
 	killChannel	;@raw=0x11
 
 TRIGGER_SCENE_RESUME:
@@ -5070,7 +5003,6 @@ LABEL_2E4A:
 	mov [0x13], [0x48]	;@raw=0x01,0x13,0x48
 	break	;@raw=0x06
 	jmp LABEL_2E4A	;@raw=0x07,0x2E,0x4A
-LABEL_2E57:
 	killChannel	;@raw=0x11
 
 LABEL_2E58:
@@ -5082,7 +5014,6 @@ LABEL_2E58:
 	mov [0x13], [0x4B]	;@raw=0x01,0x13,0x4B
 	break	;@raw=0x06
 	jmp LABEL_2E58	;@raw=0x07,0x2E,0x58
-LABEL_2E6E:
 	killChannel	;@raw=0x11
 
 LABEL_2E6F:
@@ -5094,7 +5025,6 @@ LABEL_2E6F:
 	mov [0x13], [0x4E]	;@raw=0x01,0x13,0x4E
 	break	;@raw=0x06
 	jmp LABEL_2E6F	;@raw=0x07,0x2E,0x6F
-LABEL_2E85:
 	killChannel	;@raw=0x11
 
 LABEL_2E86:
@@ -5106,7 +5036,6 @@ LABEL_2E86:
 	mov [0x13], [0x51]	;@raw=0x01,0x13,0x51
 	break	;@raw=0x06
 	jmp LABEL_2E86	;@raw=0x07,0x2E,0x86
-LABEL_2E9C:
 	killChannel	;@raw=0x11
 
 MULTIPLEX_RING3_SAVE_LOOP:
@@ -5115,7 +5044,6 @@ MULTIPLEX_RING3_SAVE_LOOP:
 	mov [0x51], [0x13]	;@raw=0x01,0x51,0x13
 	break	;@raw=0x06
 	jmp MULTIPLEX_RING3_SAVE_LOOP	;@raw=0x07,0x2E,0x9D
-LABEL_2EAA:
 	killChannel	;@raw=0x11
 
 LABEL_2EAB:
@@ -5124,7 +5052,6 @@ LABEL_2EAB:
 	mov [0x13], [HACK_VAR_54]	;@raw=0x01,0x13,0x54
 	break	;@raw=0x06
 	jmp LABEL_2EAB	;@raw=0x07,0x2E,0xAB
-LABEL_2EB8:
 	killChannel	;@raw=0x11
 
 LABEL_2EB9:
@@ -5136,7 +5063,6 @@ LABEL_2EB9:
 	mov [0x13], [0x57]	;@raw=0x01,0x13,0x57
 	break	;@raw=0x06
 	jmp LABEL_2EB9	;@raw=0x07,0x2E,0xB9
-LABEL_2ECF:
 	killChannel	;@raw=0x11
 
 LABEL_2ED0:
@@ -5148,7 +5074,6 @@ LABEL_2ED0:
 	mov [0x13], [0x5A]	;@raw=0x01,0x13,0x5A
 	break	;@raw=0x06
 	jmp LABEL_2ED0	;@raw=0x07,0x2E,0xD0
-LABEL_2EE6:
 	killChannel	;@raw=0x11
 
 MULTIPLEX_RING4_SAVE_LOOP:
@@ -5160,7 +5085,6 @@ MULTIPLEX_RING4_SAVE_LOOP:
 	mov [0x13], [0x5D]	;@raw=0x01,0x13,0x5D
 	break	;@raw=0x06
 	jmp MULTIPLEX_RING4_SAVE_LOOP	;@raw=0x07,0x2E,0xE7
-LABEL_2EFD:
 	killChannel	;@raw=0x11
 
 MULTIPLEX_RING5_SAVE_LOOP:
@@ -5169,7 +5093,6 @@ MULTIPLEX_RING5_SAVE_LOOP:
 	mov [0x5D], [0x13]	;@raw=0x01,0x5D,0x13
 	break	;@raw=0x06
 	jmp MULTIPLEX_RING5_SAVE_LOOP	;@raw=0x07,0x2E,0xFE
-LABEL_2F0B:
 	killChannel	;@raw=0x11
 
 LABEL_2F0C:
@@ -5248,7 +5171,6 @@ LABEL_2F57:
 	break	;@raw=0x06
 	sub [0x0C], 0x0002	;@raw=0x03,0x0C,0xFF,0xFE
 	jmp LABEL_2F57	;@raw=0x07,0x2F,0x57
-LABEL_2FDB:
 	killChannel	;@raw=0x11
 
 LABEL_2FDC:
@@ -5295,7 +5217,6 @@ SLUG_PHASE_1_RIGHT_INIT:
 	break	;@raw=0x06
 	add [0x0C], 0x0002	;@raw=0x03,0x0C,0x00,0x02
 	jmp SLUG_PHASE_1_RIGHT_INIT	;@raw=0x07,0x2F,0xE0
-LABEL_3064:
 	killChannel	;@raw=0x11
 
 LABEL_3065:
@@ -5304,7 +5225,6 @@ LABEL_3065:
 	video type=1, offset=CINEMATIC_SLUG_R_F6, x=[0x0c], y=[0x0d], zoom=0x40	;@raw=0x54,0x3E,0xEF,0x0C,0x0D
 	break	;@raw=0x06
 	jmp LABEL_30AD	;@raw=0x07,0x30,0xAD
-LABEL_3074:
 	killChannel	;@raw=0x11
 
 LABEL_3075:
@@ -5421,7 +5341,6 @@ LABEL_314F:
 LABEL_31AA:
 	sub [0x0C], 0x0007	;@raw=0x03,0x0C,0xFF,0xF9
 	jmp SLUG_ANIMATION	;@raw=0x07,0x33,0xDF
-LABEL_31B1:
 	killChannel	;@raw=0x11
 
 LABEL_31B2:
@@ -5472,7 +5391,6 @@ LABEL_322D:
 
 LABEL_322E:
 	jmp LABEL_3232	;@raw=0x07,0x32,0x32
-LABEL_3231:
 	ret	;@raw=0x05
 
 LABEL_3232:
@@ -5583,7 +5501,6 @@ SLUG_WALK_PROX_LOOP:
 	break	;@raw=0x06
 	sub [0x0C], 0x0002	;@raw=0x03,0x0C,0xFF,0xFE
 	jmp SLUG_WALK_PROX_LOOP	;@raw=0x07,0x32,0xA6
-LABEL_339F:
 	killChannel	;@raw=0x11
 
 LABEL_33A0:
@@ -5591,14 +5508,12 @@ LABEL_33A0:
 	je [0x0D], 0x01, SLUG_PHASE_1_LEFT_INIT	;@raw=0x0A,0x00,0x0D,0x01,0x2F,0x53
 	jg [0x0D], 0x01, SLUG_WALK_GROUND_INIT	;@raw=0x0A,0x02,0x0D,0x01,0x32,0xA2
 	jmp LABEL_31F0	;@raw=0x07,0x31,0xF0
-LABEL_33B5:
 	killChannel	;@raw=0x11
 
 LABEL_33B6:
 	je [0x0D], 0x01, LABEL_2FDC	;@raw=0x0A,0x00,0x0D,0x01,0x2F,0xDC
 	jg [0x0D], 0x01, LABEL_33C6	;@raw=0x0A,0x02,0x0D,0x01,0x33,0xC6
 	jmp LABEL_31F0	;@raw=0x07,0x31,0xF0
-LABEL_33C5:
 	killChannel	;@raw=0x11
 
 LABEL_33C6:
@@ -5681,7 +5596,6 @@ LABEL_3439:
 	break	;@raw=0x06
 	add [0x0C], 0x0002	;@raw=0x03,0x0C,0x00,0x02
 	jmp SLUG_ANIMATION	;@raw=0x07,0x33,0xDF
-LABEL_34D8:
 	killChannel	;@raw=0x11
 
 LABEL_34D9:
@@ -5706,7 +5620,6 @@ BEAST_CONT_FRAMES_423_426:
 	break	;@raw=0x06
 	add [0x0C], 0x000C	;@raw=0x03,0x0C,0x00,0x0C
 	jmp SLUG_WALK_PROX_LOOP	;@raw=0x07,0x32,0xA6
-LABEL_351E:
 	killChannel	;@raw=0x11
 
 SLUG_FLIP_WALKS:
@@ -5772,7 +5685,6 @@ BEETLE_WALKING_RIGHT:
 	add [0x0A], 0x0001	;@raw=0x03,0x0A,0x00,0x01
 	break	;@raw=0x06
 	jmp BEETLE_WALKING_RIGHT	;@raw=0x07,0x35,0x6D
-LABEL_35E0:
 	killChannel	;@raw=0x11
 
 WAIT_FOR_BEETLE_OFFSCREEN_THEN_KILL:
@@ -5815,7 +5727,6 @@ MAYBE_RESTART_BEETLE_WALKING_LEFT:
 
 LABEL_3656:
 	jmp BEETLE_KICK_DETECTOR	;@raw=0x07,0x35,0xF4
-LABEL_3659:
 	killChannel	;@raw=0x11
 
 LABEL_365A:
@@ -5919,7 +5830,6 @@ BEETLE_ANIM_HOVER_BOBBING_LOOP:
 	add [0x0B], 0x0001	;@raw=0x03,0x0B,0x00,0x01
 	video type=1, offset=CINEMATIC_BEETLE_HOVER_FRAME_1, x=[0x0a], y=[0x0b], zoom=0x40	;@raw=0x54,0x3D,0x35,0x0A,0x0B
 	jmp BEETLE_ANIM_HOVER_BOBBING_LOOP	;@raw=0x07,0x37,0x46
-LABEL_377C:
 	killChannel	;@raw=0x11
 
 LABEL_377D:
@@ -5981,7 +5891,6 @@ LABEL_37EE:
 	add [0x0B], 0x0001	;@raw=0x03,0x0B,0x00,0x01
 	video type=1, offset=CINEMATIC_BEETLE_HOVER_VERT_FRAME_1, x=[0x0a], y=[0x0b], zoom=0x40	;@raw=0x54,0x52,0x42,0x0A,0x0B
 	jmp LABEL_37EE	;@raw=0x07,0x37,0xEE
-LABEL_3824:
 	killChannel	;@raw=0x11
 
 BEETLE_ANIM_FLY_AWAY_INIT_COUNTER:
@@ -6040,7 +5949,6 @@ LABEL_38A8:
 LABEL_38AC:
 	break	;@raw=0x06
 	jmp BEETLE_AI_DISPATCH_BY_HERO_X	;@raw=0x07,0x38,0x5B
-LABEL_38B0:
 	killChannel	;@raw=0x11
 
 LABEL_38B1:
@@ -6075,7 +5983,6 @@ LABEL_38FE:
 LABEL_3902:
 	break	;@raw=0x06
 	jmp LABEL_38B1	;@raw=0x07,0x38,0xB1
-LABEL_3906:
 	killChannel	;@raw=0x11
 
 BEETLE_AI_HOVER_RANDOM_DURATION:
@@ -6195,7 +6102,6 @@ DRAW_SCENARIO_OF_VINE_SCREEN:
 	video type=1, offset=CINEMATIC_SCENARIO_VINE_SCREEN_4, x=160, y=100	;@raw=0xDD,0xAE,0xA0,0x64
 	video type=1, offset=CINEMATIC_SCENARIO_VINE_SCREEN_FOREGROUND, x=160, y=100	;@raw=0xEB,0xC4,0xA0,0x64
 	ret	;@raw=0x05
-LABEL_3A34:
 	killChannel	;@raw=0x11
 
 DRAW_SCENARIO_OF_SECOND_SCREEN_TO_THE_RIGHT:
@@ -6210,7 +6116,6 @@ DRAW_SCENARIO_OF_SECOND_SCREEN_TO_THE_RIGHT:
 	video type=1, offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_6, x=160, y=100	;@raw=0x9E,0xA3,0xA0,0x64
 	video type=1, offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_7, x=160, y=100	;@raw=0xDD,0x60,0xA0,0x64
 	ret	;@raw=0x05
-LABEL_3A5E:
 	killChannel	;@raw=0x11
 
 DRAW_SCENARIO_OF_THIRD_SCREEN_TO_THE_RIGHT:
@@ -6226,7 +6131,6 @@ DRAW_SCENARIO_OF_THIRD_SCREEN_TO_THE_RIGHT:
 	video type=1, offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_6, x=160, y=100	;@raw=0xDD,0x88,0xA0,0x64
 	video type=1, offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_7, x=160, y=100	;@raw=0xEB,0xDA,0xA0,0x64
 	ret	;@raw=0x05
-LABEL_3A8C:
 	killChannel	;@raw=0x11
 
 DRAW_SCENARIO_OF_FIRST_SCREEN_TO_THE_RIGHT:
@@ -6244,7 +6148,6 @@ DRAW_SCENARIO_OF_FIRST_SCREEN_TO_THE_RIGHT:
 	video type=1, offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_9, x=160, y=100	;@raw=0xDD,0x4C,0xA0,0x64
 	video type=1, offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_10, x=160, y=100	;@raw=0xEE,0xD9,0xA0,0x64
 	ret	;@raw=0x05
-LABEL_3AC2:
 	killChannel	;@raw=0x11
 
 DRAW_OUTSIDE_POOL_SCENARIO:
@@ -6267,7 +6170,6 @@ DRAW_OUTSIDE_POOL_SCENARIO:
 	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_16, x=160, y=100	;@raw=0x96,0xB8,0xA0,0x64
 	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_17, x=160, y=100	;@raw=0xDD,0xC8,0xA0,0x64
 	ret	;@raw=0x05
-LABEL_3B0C:
 	killChannel	;@raw=0x11
 
 DRAW_INSIDE_ALIEN_POOL_SCENARIO:
@@ -6394,7 +6296,6 @@ LABEL_3C89:
 	break	;@raw=0x06
 	play id=0x0032, freq=0x14, vol=0x02, channel=0x02	;@raw=0x18,0x00,0x32,0x14,0x02,0x02
 	jmp LABEL_3C89	;@raw=0x07,0x3C,0x89
-LABEL_3CB5:
 	killChannel	;@raw=0x11
 
 SETUP_TENTACLE_ANIMATIONS:
@@ -6418,7 +6319,6 @@ LABEL_3CDD:
 	mov [0x02], [0x16]	;@raw=0x01,0x02,0x16
 	jl [0x16], 0x0104, LABEL_3CDD	;@raw=0x0A,0x44,0x16,0x01,0x04,0x3C,0xDD
 	jmp INIT_VAR_03_TO_0x1E	;@raw=0x07,0x1E,0xB0
-LABEL_3CEF:
 	killChannel	;@raw=0x11
 
 MAIN_TENTACLE_INSIDE_POOL_ANIMATION:
@@ -6572,7 +6472,6 @@ POOL_SURFACE_WAVES_ANIMATION:
 	video type=1, offset=CINEMATIC_POOL_SURFACE_WAVES_6, x=160, y=100	;@raw=0x8B,0x29,0xA0,0x64
 	break	;@raw=0x06
 	jmp POOL_SURFACE_WAVES_ANIMATION	;@raw=0x07,0x3E,0xDD
-LABEL_3F03:
 	killChannel	;@raw=0x11
 
 POOL_WATER_WAVY_GLARE_ANIMATION:
@@ -6586,7 +6485,6 @@ POOL_WATER_WAVY_GLARE_ANIMATION:
 	sub [0x07], 0x00A0	;@raw=0x03,0x07,0xFF,0x60
 	break	;@raw=0x06
 	jmp POOL_WATER_WAVY_GLARE_ANIMATION	;@raw=0x07,0x3F,0x04
-LABEL_3F2C:
 	killChannel	;@raw=0x11
 
 INIT_SECOND_WAVY_GLARE_POS:
@@ -6605,7 +6503,6 @@ LABEL_3F46:
 	break	;@raw=0x06
 	djnz [0x09], LABEL_3F46	;@raw=0x09,0x09,0x3F,0x46
 	jmp INIT_SECOND_WAVY_GLARE_POS	;@raw=0x07,0x3F,0x2D
-LABEL_3F52:
 	killChannel	;@raw=0x11
 
 LABEL_3F53:
@@ -6624,7 +6521,6 @@ LABEL_3F6C:
 	break	;@raw=0x06
 	djnz [0x06], LABEL_3F6C	;@raw=0x09,0x06,0x3F,0x6C
 	jmp LABEL_3F53	;@raw=0x07,0x3F,0x53
-LABEL_3F78:
 	killChannel	;@raw=0x11
 
 SWIMMING_UP_TORSO_ANIMATION:
@@ -6637,7 +6533,6 @@ SWIMMING_UP_TORSO_ANIMATION:
 	video type=1, offset=CINEMATIC_SWIMMING_UP_TORSO_1, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x0F,0xCE,0x01,0x02
 	break	;@raw=0x06
 	jmp SWIMMING_UP_TORSO_ANIMATION	;@raw=0x07,0x3F,0x79
-LABEL_3F94:
 	killChannel	;@raw=0x11
 
 BUBBLES_A_ANIMATION:
@@ -6654,7 +6549,6 @@ BUBBLES_A_ANIMATION:
 	video type=1, offset=CINEMATIC_BUBBLES_B_4, x=[0x13], y=[0x11], zoom=0x40	;@raw=0x54,0x0E,0x7B,0x13,0x11
 	break	;@raw=0x06
 	jmp BUBBLES_A_ANIMATION	;@raw=0x07,0x3F,0x95
-LABEL_3FCC:
 	killChannel	;@raw=0x11
 
 BUBBLES_B_ANIMATION:
@@ -6669,7 +6563,6 @@ BUBBLES_B_ANIMATION:
 	video type=1, offset=CINEMATIC_BUBBLES_A_0, x=[0x13], y=[0x0c], zoom=0x40	;@raw=0x54,0x0E,0x25,0x13,0x0C
 	break	;@raw=0x06
 	jmp BUBBLES_B_ANIMATION	;@raw=0x07,0x3F,0xCD
-LABEL_3FEE:
 	killChannel	;@raw=0x11
 
 SWIMMING_UP_LEGS_ANIMATION:
@@ -6690,7 +6583,6 @@ SWIMMING_UP_LEGS_ANIMATION:
 	video type=1, offset=CINEMATIC_SWIMMING_UP_LEGS_7, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x0C,0x2A,0x01,0x02
 	break	;@raw=0x06
 	jmp SWIMMING_UP_LEGS_ANIMATION	;@raw=0x07,0x3F,0xEF
-LABEL_4022:
 	killChannel	;@raw=0x11
 
 LAB_CONSOLE_SINKING_ANIMATION:
@@ -6825,7 +6717,6 @@ HERO_PHYSICS_QUEUE_JUMP_RISE:
 HERO_PHYSICS_TICK_LOOP:
 	break	;@raw=0x06
 	jmp HERO_PHYSICS_TICK	;@raw=0x07,0x41,0x41
-LABEL_4184:
 	killChannel	;@raw=0x11
 
 HERO_AI_DISPATCH:
@@ -6962,7 +6853,6 @@ HERO_TICK_VIDEO_073:
 LABEL_42E2:
 	add [0x01], 0x0001	;@raw=0x03,0x01,0x00,0x01
 	jmp LABEL_438B	;@raw=0x07,0x43,0x8B
-LABEL_42E9:
 	killChannel	;@raw=0x11
 
 HERO_FALL_LEFT_PRELUDE:
@@ -7128,7 +7018,6 @@ LABEL_4490:
 LABEL_4498:
 	sub [0x01], 0x0001	;@raw=0x03,0x01,0xFF,0xFF
 	jmp LABEL_453B	;@raw=0x07,0x45,0x3B
-LABEL_449F:
 	killChannel	;@raw=0x11
 
 HERO_FALL_RIGHT_PRELUDE:
@@ -7256,7 +7145,6 @@ HERO_LEAP_R_F5_TO_F9_ENTRY:
 LABEL_45FE:
 	break	;@raw=0x06
 	jmp HERO_FALL_RIGHT_LOOP	;@raw=0x07,0x44,0xAF
-LABEL_4602:
 	killChannel	;@raw=0x11
 
 DRAW_VIDEO_036_037_AND_HERO_STOP_RIGHT_FRAME_2_RET:
@@ -7624,7 +7512,6 @@ WAIT_RUN_LEFT_THEN_DECEL:
 LABEL_49EA:
 	mov [0x63], 0x0001	;@raw=0x00,0x63,0x00,0x01
 	jmp MAYBE_RESUME_WALK_LEFT_IF_GROUNDED	;@raw=0x07,0x44,0x3D
-LABEL_49F1:
 	killChannel	;@raw=0x11
 
 HERO_LEAP_LEFT_PRELUDE:
@@ -7695,7 +7582,6 @@ LABEL_4A6B:
 	sub [0x01], 0x000A	;@raw=0x03,0x01,0xFF,0xF6
 	break	;@raw=0x06
 	jmp LABEL_4A1F	;@raw=0x07,0x4A,0x1F
-LABEL_4ABE:
 	killChannel	;@raw=0x11
 
 WAIT_RUN_RIGHT_THEN_DECEL:
@@ -7717,7 +7603,6 @@ WAIT_RUN_RIGHT_THEN_DECEL:
 LABEL_4AE4:
 	mov [0x63], 0x0002	;@raw=0x00,0x63,0x00,0x02
 	jmp MAYBE_RESUME_WALK_RIGHT_IF_GROUNDED	;@raw=0x07,0x45,0xE0
-LABEL_4AEB:
 	killChannel	;@raw=0x11
 
 HERO_LEAP_RIGHT_PRELUDE:
@@ -7799,7 +7684,6 @@ LABEL_4BBC:
 	mov [0x63], 0x0001	;@raw=0x00,0x63,0x00,0x01
 	add [0x01], 0x0002	;@raw=0x03,0x01,0x00,0x02
 	jmp MAYBE_RESUME_WALK_LEFT_IF_GROUNDED	;@raw=0x07,0x44,0x3D
-LABEL_4BDF:
 	killChannel	;@raw=0x11
 
 HERO_WALK_RIGHT_LOOP:
@@ -7855,7 +7739,6 @@ HERO_WALK_RIGHT_LOOP:
 	break	;@raw=0x06
 	mov [0x63], 0x0002	;@raw=0x00,0x63,0x00,0x02
 	jmp HERO_LEAP_R_F5_TO_F9_ENTRY	;@raw=0x07,0x45,0xE8
-LABEL_4CA5:
 	killChannel	;@raw=0x11
 
 HERO_RUN_RIGHT_ENTRY_WITH_PREP:
@@ -7918,7 +7801,6 @@ HERO_RUN_RIGHT_LOOP:
 	break	;@raw=0x06
 	mov [0x63], 0x0002	;@raw=0x00,0x63,0x00,0x02
 	jmp HERO_LEAP_R_F5_TO_F9_ENTRY	;@raw=0x07,0x45,0xE8
-LABEL_4D83:
 	killChannel	;@raw=0x11
 
 HERO_WALK_LEFT_LOOP:
@@ -7976,7 +7858,6 @@ HERO_WALK_LEFT_LOOP:
 	break	;@raw=0x06
 	mov [0x63], 0x0001	;@raw=0x00,0x63,0x00,0x01
 	jmp HERO_STAND_LEFT_LOOP	;@raw=0x07,0x44,0x45
-LABEL_4E51:
 	killChannel	;@raw=0x11
 
 HERO_RUN_LEFT_ENTRY_WITH_PREP:
@@ -8059,7 +7940,6 @@ LABEL_4F51:
 	mov [0x63], 0x0002	;@raw=0x00,0x63,0x00,0x02
 	sub [0x01], 0x0002	;@raw=0x03,0x01,0xFF,0xFE
 	jmp MAYBE_RESUME_WALK_RIGHT_IF_GROUNDED	;@raw=0x07,0x45,0xE0
-LABEL_4F74:
 	killChannel	;@raw=0x11
 
 HERO_KICK_LEFT_LOOP:
@@ -8086,7 +7966,6 @@ LABEL_4FA2:
 	add [0x01], 0x0001	;@raw=0x03,0x01,0x00,0x01
 	mov [0x63], 0x0001	;@raw=0x00,0x63,0x00,0x01
 	jmp MAYBE_RESUME_WALK_LEFT_IF_GROUNDED	;@raw=0x07,0x44,0x3D
-LABEL_4FC9:
 	killChannel	;@raw=0x11
 
 HERO_KICK_RIGHT_LOOP:
@@ -8113,7 +7992,6 @@ LABEL_4FF7:
 	sub [0x01], 0x0001	;@raw=0x03,0x01,0xFF,0xFF
 	mov [0x63], 0x0002	;@raw=0x00,0x63,0x00,0x02
 	jmp MAYBE_RESUME_WALK_RIGHT_IF_GROUNDED	;@raw=0x07,0x45,0xE0
-LABEL_501E:
 	killChannel	;@raw=0x11
 
 HERO_CROUCH_KICK_LEFT:
@@ -8185,7 +8063,6 @@ HERO_CROUCH_LEFT_HOLD:
 	mov [0x63], 0x0001	;@raw=0x00,0x63,0x00,0x01
 	add [0x01], 0x0002	;@raw=0x03,0x01,0x00,0x02
 	jmp MAYBE_RESUME_WALK_LEFT_IF_GROUNDED	;@raw=0x07,0x44,0x3D
-LABEL_510D:
 	killChannel	;@raw=0x11
 
 HERO_CROUCH_RIGHT_LOOP:
@@ -8205,7 +8082,6 @@ HERO_CROUCH_RIGHT_HOLD:
 	mov [0x63], 0x0002	;@raw=0x00,0x63,0x00,0x02
 	sub [0x01], 0x0002	;@raw=0x03,0x01,0xFF,0xFE
 	jmp MAYBE_RESUME_WALK_RIGHT_IF_GROUNDED	;@raw=0x07,0x45,0xE0
-LABEL_5148:
 	killChannel	;@raw=0x11
 	killChannel	;@raw=0x11
 	FILL(44726, 0xFF)
