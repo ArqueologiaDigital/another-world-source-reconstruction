@@ -1,3 +1,49 @@
+wrote src/levels/_unified/ending/amiga__entry.inc (530 lines)
+wrote src/levels/_unified/ending/amiga__post_PRELOAD_RESOURCES_8_TO_1.inc (0 lines)
+wrote src/levels/_unified/ending/amiga__post_DRAW_CIN_97_TO_100.inc (3 lines)
+wrote src/levels/_unified/ending/amiga__post_DRAW_CIN_101_102_FADE_PAL_C.inc (34 lines)
+wrote src/levels/_unified/ending/amiga__post_DRAW_CIN_58_ANIM_LOOP.inc (3 lines)
+wrote src/levels/_unified/ending/amiga__post_DRAW_CIN_59_TO_64_VAR_POS.inc (18 lines)
+wrote src/levels/_unified/ending/amiga__post_DRIFT_VAR_4_PLUS_10_LOOP.inc (0 lines)
+wrote src/levels/_unified/ending/amiga__post_DRIFT_VAR_3_MINUS_1_LOOP.inc (0 lines)
+wrote src/levels/_unified/ending/amiga__post_DRIFT_VAR_3_MINUS_1_TWO_BRKS.inc (0 lines)
+wrote src/levels/_unified/ending/amiga__post_DELAY_VAR6_THEN_VAR3_MINUS_1.inc (9 lines)
+wrote src/levels/_unified/ending/amiga__post_DRIFT_VAR_F_PLUS_1_LOOP.inc (0 lines)
+wrote src/levels/_unified/ending/amiga__post_DRIFT_VAR_F_PLUS_4_LOOP.inc (5 lines)
+wrote src/levels/_unified/ending/amiga__post_DRIFT_VAR_F_PLUS_8_LOOP.inc (110 lines)
+wrote src/levels/_unified/ending/amiga__post_PAL_FADE_18_TO_1D.inc (0 lines)
+wrote src/levels/_unified/ending/amiga__post_DRAW_CIN_71_72_FADE.inc (12 lines)
+wrote src/levels/_unified/ending/amiga__post_DRAW_CIN_106_107_FX_57.inc (234 lines)
+wrote src/levels/_unified/ending/amiga__post_INIT_VARS_07_08_09.inc (165 lines)
+wrote src/levels/_unified/ending/amiga__post_DRAW_STARS_PAGE0_CIN_000.inc (3 lines)
+wrote src/levels/_unified/ending/amiga__post_DRAW_STARS_PAGE3_CIN_004.inc (3 lines)
+wrote src/levels/_unified/ending/amiga__post_DRAW_STARS_CIN_38_39_40_5_6.inc (17 lines)
+wrote src/levels/_unified/ending/amiga__post_CLEAR_PAGES_1_2_AND_BLIT.inc (7875 lines)
+wrote src/levels/_unified/ending/cart__entry.inc (1055 lines)
+wrote src/levels/_unified/ending/cart__post_PAL_FADE_18_TO_1D.inc (281 lines)
+wrote src/levels/_unified/ending/cart__post_INIT_VARS_07_08_09.inc (313 lines)
+wrote src/levels/_unified/ending/cart__post_CLEAR_PAGES_1_2_AND_BLIT.inc (7830 lines)
+wrote src/levels/_unified/ending/dos__entry.inc (536 lines)
+wrote src/levels/_unified/ending/dos__post_PRELOAD_RESOURCES_8_TO_1.inc (0 lines)
+wrote src/levels/_unified/ending/dos__post_DRAW_CIN_97_TO_100.inc (3 lines)
+wrote src/levels/_unified/ending/dos__post_DRAW_CIN_101_102_FADE_PAL_C.inc (34 lines)
+wrote src/levels/_unified/ending/dos__post_DRAW_CIN_58_ANIM_LOOP.inc (3 lines)
+wrote src/levels/_unified/ending/dos__post_DRAW_CIN_59_TO_64_VAR_POS.inc (18 lines)
+wrote src/levels/_unified/ending/dos__post_DRIFT_VAR_4_PLUS_10_LOOP.inc (0 lines)
+wrote src/levels/_unified/ending/dos__post_DRIFT_VAR_3_MINUS_1_LOOP.inc (0 lines)
+wrote src/levels/_unified/ending/dos__post_DRIFT_VAR_3_MINUS_1_TWO_BRKS.inc (0 lines)
+wrote src/levels/_unified/ending/dos__post_DELAY_VAR6_THEN_VAR3_MINUS_1.inc (9 lines)
+wrote src/levels/_unified/ending/dos__post_DRIFT_VAR_F_PLUS_1_LOOP.inc (0 lines)
+wrote src/levels/_unified/ending/dos__post_DRIFT_VAR_F_PLUS_4_LOOP.inc (5 lines)
+wrote src/levels/_unified/ending/dos__post_DRIFT_VAR_F_PLUS_8_LOOP.inc (207 lines)
+wrote src/levels/_unified/ending/dos__post_PAL_FADE_18_TO_1D.inc (0 lines)
+wrote src/levels/_unified/ending/dos__post_DRAW_CIN_71_72_FADE.inc (12 lines)
+wrote src/levels/_unified/ending/dos__post_DRAW_CIN_106_107_FX_57.inc (234 lines)
+wrote src/levels/_unified/ending/dos__post_INIT_VARS_07_08_09.inc (167 lines)
+wrote src/levels/_unified/ending/dos__post_DRAW_STARS_PAGE0_CIN_000.inc (3 lines)
+wrote src/levels/_unified/ending/dos__post_DRAW_STARS_PAGE3_CIN_004.inc (3 lines)
+wrote src/levels/_unified/ending/dos__post_DRAW_STARS_CIN_38_39_40_5_6.inc (51 lines)
+wrote src/levels/_unified/ending/dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc (7833 lines)
 ; Unified source for ENDING with 20 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
@@ -23,11 +69,11 @@
 ;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_0.inc"
+;@include "ending/amiga__entry.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "ending/cart_chunk_0.inc"
+;@include "ending/cart__entry.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_0.inc"
+;@include "ending/dos__entry.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -49,9 +95,9 @@ PRELOAD_RESOURCES_8_TO_1:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_1.inc"
+;@include "ending/amiga__post_PRELOAD_RESOURCES_8_TO_1.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_1.inc"
+;@include "ending/dos__post_PRELOAD_RESOURCES_8_TO_1.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -72,9 +118,9 @@ DRAW_CIN_97_TO_100:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_2.inc"
+;@include "ending/amiga__post_DRAW_CIN_97_TO_100.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_2.inc"
+;@include "ending/dos__post_DRAW_CIN_97_TO_100.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -98,9 +144,9 @@ DRAW_CIN_101_102_FADE_PAL_C:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_3.inc"
+;@include "ending/amiga__post_DRAW_CIN_101_102_FADE_PAL_C.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_3.inc"
+;@include "ending/dos__post_DRAW_CIN_101_102_FADE_PAL_C.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -111,9 +157,9 @@ DRAW_CIN_58_ANIM_LOOP:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_4.inc"
+;@include "ending/amiga__post_DRAW_CIN_58_ANIM_LOOP.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_4.inc"
+;@include "ending/dos__post_DRAW_CIN_58_ANIM_LOOP.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -136,9 +182,9 @@ DRAW_CIN_59_TO_64_VAR_POS:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_5.inc"
+;@include "ending/amiga__post_DRAW_CIN_59_TO_64_VAR_POS.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_5.inc"
+;@include "ending/dos__post_DRAW_CIN_59_TO_64_VAR_POS.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -151,9 +197,9 @@ DRIFT_VAR_4_PLUS_10_LOOP:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_6.inc"
+;@include "ending/amiga__post_DRIFT_VAR_4_PLUS_10_LOOP.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_6.inc"
+;@include "ending/dos__post_DRIFT_VAR_4_PLUS_10_LOOP.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -168,9 +214,9 @@ DRIFT_VAR_3_MINUS_1_LOOP:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_7.inc"
+;@include "ending/amiga__post_DRIFT_VAR_3_MINUS_1_LOOP.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_7.inc"
+;@include "ending/dos__post_DRIFT_VAR_3_MINUS_1_LOOP.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -183,9 +229,9 @@ DRIFT_VAR_3_MINUS_1_TWO_BRKS:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_8.inc"
+;@include "ending/amiga__post_DRIFT_VAR_3_MINUS_1_TWO_BRKS.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_8.inc"
+;@include "ending/dos__post_DRIFT_VAR_3_MINUS_1_TWO_BRKS.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -197,9 +243,9 @@ DELAY_VAR6_THEN_VAR3_MINUS_1:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_9.inc"
+;@include "ending/amiga__post_DELAY_VAR6_THEN_VAR3_MINUS_1.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_9.inc"
+;@include "ending/dos__post_DELAY_VAR6_THEN_VAR3_MINUS_1.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -211,9 +257,9 @@ DRIFT_VAR_F_PLUS_1_LOOP:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_10.inc"
+;@include "ending/amiga__post_DRIFT_VAR_F_PLUS_1_LOOP.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_10.inc"
+;@include "ending/dos__post_DRIFT_VAR_F_PLUS_1_LOOP.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -225,9 +271,9 @@ DRIFT_VAR_F_PLUS_4_LOOP:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_11.inc"
+;@include "ending/amiga__post_DRIFT_VAR_F_PLUS_4_LOOP.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_11.inc"
+;@include "ending/dos__post_DRIFT_VAR_F_PLUS_4_LOOP.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -248,9 +294,9 @@ DRIFT_VAR_F_PLUS_8_LOOP:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_12.inc"
+;@include "ending/amiga__post_DRIFT_VAR_F_PLUS_8_LOOP.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_12.inc"
+;@include "ending/dos__post_DRIFT_VAR_F_PLUS_8_LOOP.inc"
 ;@endif
 
 PAL_FADE_18_TO_1D:
@@ -282,11 +328,11 @@ PAL_FADE_18_TO_1D:
 	killChannel	;@raw=0x11
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_13.inc"
+;@include "ending/amiga__post_PAL_FADE_18_TO_1D.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "ending/cart_chunk_1.inc"
+;@include "ending/cart__post_PAL_FADE_18_TO_1D.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_13.inc"
+;@include "ending/dos__post_PAL_FADE_18_TO_1D.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -307,9 +353,9 @@ DRAW_CIN_71_72_FADE:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_14.inc"
+;@include "ending/amiga__post_DRAW_CIN_71_72_FADE.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_14.inc"
+;@include "ending/dos__post_DRAW_CIN_71_72_FADE.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -331,9 +377,9 @@ DRAW_CIN_106_107_FX_57:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_15.inc"
+;@include "ending/amiga__post_DRAW_CIN_106_107_FX_57.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_15.inc"
+;@include "ending/dos__post_DRAW_CIN_106_107_FX_57.inc"
 ;@endif
 
 INIT_VARS_07_08_09:
@@ -342,11 +388,11 @@ INIT_VARS_07_08_09:
 	mov [0x09], 0x0003	;@raw=0x00,0x09,0x00,0x03
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_16.inc"
+;@include "ending/amiga__post_INIT_VARS_07_08_09.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "ending/cart_chunk_2.inc"
+;@include "ending/cart__post_INIT_VARS_07_08_09.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_16.inc"
+;@include "ending/dos__post_INIT_VARS_07_08_09.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -385,9 +431,9 @@ DRAW_STARS_PAGE0_CIN_000:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_17.inc"
+;@include "ending/amiga__post_DRAW_STARS_PAGE0_CIN_000.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_17.inc"
+;@include "ending/dos__post_DRAW_STARS_PAGE0_CIN_000.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -426,9 +472,9 @@ DRAW_STARS_PAGE3_CIN_004:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_18.inc"
+;@include "ending/amiga__post_DRAW_STARS_PAGE3_CIN_004.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_18.inc"
+;@include "ending/dos__post_DRAW_STARS_PAGE3_CIN_004.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -453,9 +499,9 @@ DRAW_STARS_CIN_38_39_40_5_6:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_19.inc"
+;@include "ending/amiga__post_DRAW_STARS_CIN_38_39_40_5_6.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_19.inc"
+;@include "ending/dos__post_DRAW_STARS_CIN_38_39_40_5_6.inc"
 ;@endif
 
 CLEAR_PAGES_1_2_AND_BLIT:
@@ -468,10 +514,10 @@ CLEAR_PAGES_1_2_AND_BLIT:
 	ret	;@raw=0x05
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga_chunk_20.inc"
+;@include "ending/amiga__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "ending/cart_chunk_3.inc"
+;@include "ending/cart__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos_chunk_20.inc"
+;@include "ending/dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
 ;@endif
 

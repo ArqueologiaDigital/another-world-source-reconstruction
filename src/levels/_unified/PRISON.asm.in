@@ -15,11 +15,11 @@
 ;   INIT_RANGE_48_TO_4D_TO_MAX  (3-arm: amiga, cart, dos)
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga_chunk_0.inc"
+;@include "prison/amiga__entry.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart_chunk_0.inc"
+;@include "prison/cart__entry.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos_chunk_0.inc"
+;@include "prison/dos__entry.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -54,9 +54,9 @@ PRELOAD_PRISON_RESOURCES:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga_chunk_1.inc"
+;@include "prison/amiga__post_PRELOAD_PRISON_RESOURCES.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos_chunk_1.inc"
+;@include "prison/dos__post_PRELOAD_PRISON_RESOURCES.inc"
 ;@endif
 
 COPY_HASH_VAR_37_TO_RANGE:
@@ -96,11 +96,11 @@ COPY_HASH_VAR_37_TO_RANGE:
 	ret	;@raw=0x05
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga_chunk_2.inc"
+;@include "prison/amiga__post_COPY_HASH_VAR_37_TO_RANGE.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart_chunk_1.inc"
+;@include "prison/cart__post_COPY_HASH_VAR_37_TO_RANGE.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos_chunk_2.inc"
+;@include "prison/dos__post_COPY_HASH_VAR_37_TO_RANGE.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -120,9 +120,9 @@ DRAW_CIN_315_PROGRESSIVE:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga_chunk_3.inc"
+;@include "prison/amiga__post_DRAW_CIN_315_PROGRESSIVE.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos_chunk_3.inc"
+;@include "prison/dos__post_DRAW_CIN_315_PROGRESSIVE.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -161,9 +161,9 @@ DRAW_CIN_284_BLOCK_95B:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga_chunk_4.inc"
+;@include "prison/amiga__post_DRAW_CIN_284_BLOCK_95B.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos_chunk_4.inc"
+;@include "prison/dos__post_DRAW_CIN_284_BLOCK_95B.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -197,9 +197,9 @@ DRAW_CIN_137_138_BLOCK:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga_chunk_5.inc"
+;@include "prison/amiga__post_DRAW_CIN_137_138_BLOCK.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos_chunk_5.inc"
+;@include "prison/dos__post_DRAW_CIN_137_138_BLOCK.inc"
 ;@endif
 
 DERIVE_VAR12_11_10_FROM_VAR9:
@@ -225,11 +225,11 @@ DERIVE_VAR12_11_10_FROM_VAR9:
 	ret	;@raw=0x05
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga_chunk_6.inc"
+;@include "prison/amiga__post_DERIVE_VAR12_11_10_FROM_VAR9.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart_chunk_2.inc"
+;@include "prison/cart__post_DERIVE_VAR12_11_10_FROM_VAR9.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos_chunk_6.inc"
+;@include "prison/dos__post_DERIVE_VAR12_11_10_FROM_VAR9.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -255,9 +255,9 @@ DRAW_CIN_406_408_BLOCK:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga_chunk_7.inc"
+;@include "prison/amiga__post_DRAW_CIN_406_408_BLOCK.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos_chunk_7.inc"
+;@include "prison/dos__post_DRAW_CIN_406_408_BLOCK.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -282,9 +282,9 @@ DRAW_CIN_570_574_BLOCK:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga_chunk_8.inc"
+;@include "prison/amiga__post_DRAW_CIN_570_574_BLOCK.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos_chunk_8.inc"
+;@include "prison/dos__post_DRAW_CIN_570_574_BLOCK.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -317,9 +317,9 @@ DRAW_CIN_576_578_BLOCK:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga_chunk_9.inc"
+;@include "prison/amiga__post_DRAW_CIN_576_578_BLOCK.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos_chunk_9.inc"
+;@include "prison/dos__post_DRAW_CIN_576_578_BLOCK.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -340,9 +340,9 @@ FILL_AND_DRAW_CIN_24_28:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga_chunk_10.inc"
+;@include "prison/amiga__post_FILL_AND_DRAW_CIN_24_28.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos_chunk_10.inc"
+;@include "prison/dos__post_FILL_AND_DRAW_CIN_24_28.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -370,9 +370,9 @@ DRAW_CIN_540_543_WITH_SFX_57:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga_chunk_11.inc"
+;@include "prison/amiga__post_DRAW_CIN_540_543_WITH_SFX_57.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos_chunk_11.inc"
+;@include "prison/dos__post_DRAW_CIN_540_543_WITH_SFX_57.inc"
 ;@endif
 
 INIT_RANGE_48_TO_4D_TO_MAX:
@@ -394,10 +394,10 @@ INIT_RANGE_48_TO_4D_TO_MAX:
 	ret	;@raw=0x05
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga_chunk_12.inc"
+;@include "prison/amiga__post_INIT_RANGE_48_TO_4D_TO_MAX.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart_chunk_3.inc"
+;@include "prison/cart__post_INIT_RANGE_48_TO_4D_TO_MAX.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos_chunk_12.inc"
+;@include "prison/dos__post_INIT_RANGE_48_TO_4D_TO_MAX.inc"
 ;@endif
 

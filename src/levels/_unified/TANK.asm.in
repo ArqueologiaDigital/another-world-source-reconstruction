@@ -1,3 +1,42 @@
+wrote src/levels/_unified/tank/amiga__entry.inc (674 lines)
+wrote src/levels/_unified/tank/amiga__post_SETUP_TANK_HERO_VARS_PLAY_4SFX.inc (1095 lines)
+wrote src/levels/_unified/tank/amiga__post_INIT_VARS_48_49_4A.inc (110 lines)
+wrote src/levels/_unified/tank/amiga__post_SUM_HASH_VARS_TO_VAR_64.inc (262 lines)
+wrote src/levels/_unified/tank/amiga__post_INIT_VARS_50_NEG40_51_32.inc (488 lines)
+wrote src/levels/_unified/tank/amiga__post_ALTERNATE_VAR06_VAR04_TIMING.inc (91 lines)
+wrote src/levels/_unified/tank/amiga__post_INIT_VARS_A_B_PAL_1.inc (32 lines)
+wrote src/levels/_unified/tank/amiga__post_DRAW_CIN_6_27_28_AND_RET.inc (10 lines)
+wrote src/levels/_unified/tank/amiga__post_DRAW_CIN_6_AND_RET.inc (84 lines)
+wrote src/levels/_unified/tank/amiga__post_DRAW_BG_DOTS_CIN_001_004.inc (3 lines)
+wrote src/levels/_unified/tank/amiga__post_DRAW_BG_DOTS_CIN_007_008.inc (34 lines)
+wrote src/levels/_unified/tank/amiga__post_CLEAR_PAGES_1_2_AND_BLIT.inc (7330 lines)
+wrote src/levels/_unified/tank/cart__entry.inc (1216 lines)
+wrote src/levels/_unified/tank/cart__post_INCR_VAR_6C_BY_10_3X.inc (285 lines)
+wrote src/levels/_unified/tank/cart__post_BANKSWITCH_6_FOR_CODE_ENTRY.inc (675 lines)
+wrote src/levels/_unified/tank/cart__post_INIT_VARS_48_49_4A.inc (110 lines)
+wrote src/levels/_unified/tank/cart__post_SUM_HASH_VARS_TO_VAR_64.inc (0 lines)
+wrote src/levels/_unified/tank/cart__post_INIT_TANK_DRIVE_VARS.inc (252 lines)
+wrote src/levels/_unified/tank/cart__post_INIT_VARS_50_NEG40_51_32.inc (234 lines)
+wrote src/levels/_unified/tank/cart__post_INIT_VAR1_NEG50_PLAY_8B_TWICE.inc (255 lines)
+wrote src/levels/_unified/tank/cart__post_ALTERNATE_VAR06_VAR04_TIMING.inc (97 lines)
+wrote src/levels/_unified/tank/cart__post_INIT_VARS_A_B_PAL_1.inc (342 lines)
+wrote src/levels/_unified/tank/cart__post_CLEAR_PAGES_1_2_AND_BLIT.inc (7185 lines)
+wrote src/levels/_unified/tank/dos__entry.inc (741 lines)
+wrote src/levels/_unified/tank/dos__post_SETUP_TANK_HERO_VARS_PLAY_4SFX.inc (495 lines)
+wrote src/levels/_unified/tank/dos__post_INCR_VAR_6C_BY_10_3X.inc (273 lines)
+wrote src/levels/_unified/tank/dos__post_BANKSWITCH_6_FOR_CODE_ENTRY.inc (757 lines)
+wrote src/levels/_unified/tank/dos__post_INIT_VARS_48_49_4A.inc (110 lines)
+wrote src/levels/_unified/tank/dos__post_SUM_HASH_VARS_TO_VAR_64.inc (0 lines)
+wrote src/levels/_unified/tank/dos__post_INIT_TANK_DRIVE_VARS.inc (254 lines)
+wrote src/levels/_unified/tank/dos__post_INIT_VARS_50_NEG40_51_32.inc (234 lines)
+wrote src/levels/_unified/tank/dos__post_INIT_VAR1_NEG50_PLAY_8B_TWICE.inc (255 lines)
+wrote src/levels/_unified/tank/dos__post_ALTERNATE_VAR06_VAR04_TIMING.inc (91 lines)
+wrote src/levels/_unified/tank/dos__post_INIT_VARS_A_B_PAL_1.inc (33 lines)
+wrote src/levels/_unified/tank/dos__post_DRAW_CIN_6_27_28_AND_RET.inc (34 lines)
+wrote src/levels/_unified/tank/dos__post_DRAW_CIN_6_AND_RET.inc (101 lines)
+wrote src/levels/_unified/tank/dos__post_DRAW_BG_DOTS_CIN_001_004.inc (9 lines)
+wrote src/levels/_unified/tank/dos__post_DRAW_BG_DOTS_CIN_007_008.inc (38 lines)
+wrote src/levels/_unified/tank/dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc (7158 lines)
 ; Unified source for TANK with 15 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
@@ -18,11 +57,11 @@
 ;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "tank/amiga_chunk_0.inc"
+;@include "tank/amiga__entry.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "tank/cart_chunk_0.inc"
+;@include "tank/cart__entry.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos_chunk_0.inc"
+;@include "tank/dos__entry.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -38,9 +77,9 @@ SETUP_TANK_HERO_VARS_PLAY_4SFX:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "tank/amiga_chunk_1.inc"
+;@include "tank/amiga__post_SETUP_TANK_HERO_VARS_PLAY_4SFX.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos_chunk_1.inc"
+;@include "tank/dos__post_SETUP_TANK_HERO_VARS_PLAY_4SFX.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -53,9 +92,9 @@ INCR_VAR_6C_BY_10_3X:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "tank/cart_chunk_1.inc"
+;@include "tank/cart__post_INCR_VAR_6C_BY_10_3X.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos_chunk_2.inc"
+;@include "tank/dos__post_INCR_VAR_6C_BY_10_3X.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -66,9 +105,9 @@ BANKSWITCH_6_FOR_CODE_ENTRY:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "tank/cart_chunk_2.inc"
+;@include "tank/cart__post_BANKSWITCH_6_FOR_CODE_ENTRY.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos_chunk_3.inc"
+;@include "tank/dos__post_BANKSWITCH_6_FOR_CODE_ENTRY.inc"
 ;@endif
 
 INIT_VARS_48_49_4A:
@@ -77,11 +116,11 @@ INIT_VARS_48_49_4A:
 	mov [0x4A], 0x0004	;@raw=0x00,0x4A,0x00,0x04
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "tank/amiga_chunk_2.inc"
+;@include "tank/amiga__post_INIT_VARS_48_49_4A.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "tank/cart_chunk_3.inc"
+;@include "tank/cart__post_INIT_VARS_48_49_4A.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos_chunk_4.inc"
+;@include "tank/dos__post_INIT_VARS_48_49_4A.inc"
 ;@endif
 
 SUM_HASH_VARS_TO_VAR_64:
@@ -96,11 +135,11 @@ SUM_HASH_VARS_TO_VAR_64:
 	ret	;@raw=0x05
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "tank/amiga_chunk_3.inc"
+;@include "tank/amiga__post_SUM_HASH_VARS_TO_VAR_64.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "tank/cart_chunk_4.inc"
+;@include "tank/cart__post_SUM_HASH_VARS_TO_VAR_64.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos_chunk_5.inc"
+;@include "tank/dos__post_SUM_HASH_VARS_TO_VAR_64.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -137,9 +176,9 @@ INIT_TANK_DRIVE_VARS:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "tank/cart_chunk_5.inc"
+;@include "tank/cart__post_INIT_TANK_DRIVE_VARS.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos_chunk_6.inc"
+;@include "tank/dos__post_INIT_TANK_DRIVE_VARS.inc"
 ;@endif
 
 INIT_VARS_50_NEG40_51_32:
@@ -147,11 +186,11 @@ INIT_VARS_50_NEG40_51_32:
 	mov [0x51], 0x0020	;@raw=0x00,0x51,0x00,0x20
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "tank/amiga_chunk_4.inc"
+;@include "tank/amiga__post_INIT_VARS_50_NEG40_51_32.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "tank/cart_chunk_6.inc"
+;@include "tank/cart__post_INIT_VARS_50_NEG40_51_32.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos_chunk_7.inc"
+;@include "tank/dos__post_INIT_VARS_50_NEG40_51_32.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -166,9 +205,9 @@ INIT_VAR1_NEG50_PLAY_8B_TWICE:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "tank/cart_chunk_7.inc"
+;@include "tank/cart__post_INIT_VAR1_NEG50_PLAY_8B_TWICE.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos_chunk_8.inc"
+;@include "tank/dos__post_INIT_VAR1_NEG50_PLAY_8B_TWICE.inc"
 ;@endif
 
 ALTERNATE_VAR06_VAR04_TIMING:
@@ -199,11 +238,11 @@ ALTERNATE_VAR06_VAR04_TIMING:
 	killChannel	;@raw=0x11
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "tank/amiga_chunk_5.inc"
+;@include "tank/amiga__post_ALTERNATE_VAR06_VAR04_TIMING.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "tank/cart_chunk_8.inc"
+;@include "tank/cart__post_ALTERNATE_VAR06_VAR04_TIMING.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos_chunk_9.inc"
+;@include "tank/dos__post_ALTERNATE_VAR06_VAR04_TIMING.inc"
 ;@endif
 
 INIT_VARS_A_B_PAL_1:
@@ -212,11 +251,11 @@ INIT_VARS_A_B_PAL_1:
 	setPalette 0x01	;@raw=0x0B,0x01,0xFF
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "tank/amiga_chunk_6.inc"
+;@include "tank/amiga__post_INIT_VARS_A_B_PAL_1.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "tank/cart_chunk_9.inc"
+;@include "tank/cart__post_INIT_VARS_A_B_PAL_1.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos_chunk_10.inc"
+;@include "tank/dos__post_INIT_VARS_A_B_PAL_1.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -228,9 +267,9 @@ DRAW_CIN_6_27_28_AND_RET:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "tank/amiga_chunk_7.inc"
+;@include "tank/amiga__post_DRAW_CIN_6_27_28_AND_RET.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos_chunk_11.inc"
+;@include "tank/dos__post_DRAW_CIN_6_27_28_AND_RET.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -240,9 +279,9 @@ DRAW_CIN_6_AND_RET:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "tank/amiga_chunk_8.inc"
+;@include "tank/amiga__post_DRAW_CIN_6_AND_RET.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos_chunk_12.inc"
+;@include "tank/dos__post_DRAW_CIN_6_AND_RET.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -303,9 +342,9 @@ DRAW_BG_DOTS_CIN_001_004:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "tank/amiga_chunk_9.inc"
+;@include "tank/amiga__post_DRAW_BG_DOTS_CIN_001_004.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos_chunk_13.inc"
+;@include "tank/dos__post_DRAW_BG_DOTS_CIN_001_004.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -366,9 +405,9 @@ DRAW_BG_DOTS_CIN_007_008:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "tank/amiga_chunk_10.inc"
+;@include "tank/amiga__post_DRAW_BG_DOTS_CIN_007_008.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos_chunk_14.inc"
+;@include "tank/dos__post_DRAW_BG_DOTS_CIN_007_008.inc"
 ;@endif
 
 CLEAR_PAGES_1_2_AND_BLIT:
@@ -381,10 +420,10 @@ CLEAR_PAGES_1_2_AND_BLIT:
 	ret	;@raw=0x05
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "tank/amiga_chunk_11.inc"
+;@include "tank/amiga__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "tank/cart_chunk_10.inc"
+;@include "tank/cart__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos_chunk_15.inc"
+;@include "tank/dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
 ;@endif
 
