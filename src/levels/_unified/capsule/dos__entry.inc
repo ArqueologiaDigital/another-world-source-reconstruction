@@ -34,8 +34,8 @@
 ;   SET_VARB1_TO_0000  (3-arm: amiga, cart, dos)
 ;   SET_VARB3_TO_0000  (3-arm: amiga, cart, dos)
 ;   INCREMENT_VAR31  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_151B_84319FC2  (2-arm: cart, dos)
-;   FOLD_BODY_281B_FD3BB94A  (2-arm: cart, dos)
+;   SCROLL_BLIT_P80_TO_PFF_OFFSET_00C8  (2-arm: cart, dos)
+;   CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8  (2-arm: cart, dos)
 ;   COPY_HASH_VAR_37_TO_RANGE  (3-arm: amiga, cart, dos)
 ;   ACCUMULATE_HASH_INTO_VAR37_38  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_97B_E091A810  (2-arm: cart, dos)
@@ -45,7 +45,7 @@
 ;   INLINE_SET_VARE6_TO_F  (2-arm: cart, dos)
 ;   DERIVE_VAR12_11_10_FROM_VAR9  (3-arm: amiga, cart, dos)
 ;   INLINE_COPY_VAR22_TO_VAR08  (2-arm: cart, dos)
-;   FOLD_BODY_274B_363F48D1  (3-arm: amiga, cart, dos)
+;   SPLIT_VAR09_BITS_INTO_VAR0D  (3-arm: amiga, cart, dos)
 ;   AND_VAR11_WITH_EFFF  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_58B_A2D4469A  (3-arm: amiga, cart, dos)
 ;   SET_VAR2F_TO_000F  (3-arm: amiga, cart, dos)
@@ -217,8 +217,8 @@
 ;   SET_VARB1_TO_0000  (3-arm: amiga, cart, dos)
 ;   SET_VARB3_TO_0000  (3-arm: amiga, cart, dos)
 ;   INCREMENT_VAR31  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_151B_84319FC2  (2-arm: cart, dos)
-;   FOLD_BODY_281B_FD3BB94A  (2-arm: cart, dos)
+;   SCROLL_BLIT_P80_TO_PFF_OFFSET_00C8  (2-arm: cart, dos)
+;   CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8  (2-arm: cart, dos)
 ;   COPY_HASH_VAR_37_TO_RANGE  (3-arm: amiga, cart, dos)
 ;   ACCUMULATE_HASH_INTO_VAR37_38  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_97B_E091A810  (2-arm: cart, dos)
@@ -228,7 +228,7 @@
 ;   INLINE_SET_VARE6_TO_F  (2-arm: cart, dos)
 ;   DERIVE_VAR12_11_10_FROM_VAR9  (3-arm: amiga, cart, dos)
 ;   INLINE_COPY_VAR22_TO_VAR08  (2-arm: cart, dos)
-;   FOLD_BODY_274B_363F48D1  (3-arm: amiga, cart, dos)
+;   SPLIT_VAR09_BITS_INTO_VAR0D  (3-arm: amiga, cart, dos)
 ;   AND_VAR11_WITH_EFFF  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_58B_A2D4469A  (3-arm: amiga, cart, dos)
 ;   SET_VAR2F_TO_000F  (3-arm: amiga, cart, dos)
@@ -400,8 +400,8 @@
 ;   SET_VARB1_TO_0000  (3-arm: amiga, cart, dos)
 ;   SET_VARB3_TO_0000  (3-arm: amiga, cart, dos)
 ;   INCREMENT_VAR31  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_151B_84319FC2  (2-arm: cart, dos)
-;   FOLD_BODY_281B_FD3BB94A  (2-arm: cart, dos)
+;   SCROLL_BLIT_P80_TO_PFF_OFFSET_00C8  (2-arm: cart, dos)
+;   CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8  (2-arm: cart, dos)
 ;   COPY_HASH_VAR_37_TO_RANGE  (3-arm: amiga, cart, dos)
 ;   ACCUMULATE_HASH_INTO_VAR37_38  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_97B_E091A810  (2-arm: cart, dos)
@@ -411,7 +411,7 @@
 ;   INLINE_SET_VARE6_TO_F  (2-arm: cart, dos)
 ;   DERIVE_VAR12_11_10_FROM_VAR9  (3-arm: amiga, cart, dos)
 ;   INLINE_COPY_VAR22_TO_VAR08  (2-arm: cart, dos)
-;   FOLD_BODY_274B_363F48D1  (3-arm: amiga, cart, dos)
+;   SPLIT_VAR09_BITS_INTO_VAR0D  (3-arm: amiga, cart, dos)
 ;   AND_VAR11_WITH_EFFF  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_58B_A2D4469A  (3-arm: amiga, cart, dos)
 ;   SET_VAR2F_TO_000F  (3-arm: amiga, cart, dos)
@@ -1739,7 +1739,7 @@ COMMON_VIDEO_357		EQU 0x40BE
 	org 0x0000
 
 LABEL_0000:
-	call FOLD_BODY_281B_FD3BB94A	;@raw=0x04,0x30,0x23
+	call CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8	;@raw=0x04,0x30,0x23
 	setup channel=0x3C, address=LABEL_2E43	;@raw=0x08,0x3C,0x2E,0x43
 	mov [PAUSE_SLICES], 0x0006	;@raw=0x00,0xFF,0x00,0x06
 	mov [0xF6], 0x0001	;@raw=0x00,0xF6,0x00,0x01
