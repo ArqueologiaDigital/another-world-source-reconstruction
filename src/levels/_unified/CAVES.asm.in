@@ -10,11 +10,12 @@
 ;   COPY_HASH_VAR_37_TO_RANGE  (117 bytes — also in CAPSULE, PRISON, 3-arm)
 ;   INIT_HASH_VARS_67_66_65_68_69  (97 bytes — amiga+cart only, NOT dos)
 ;   DERIVE_VAR12_11_10_FROM_VAR9  (69 bytes — also in CAPSULE, PRISON, 3-arm)
+;   INIT_RANGE_48_TO_4D_TO_MAX  (61 bytes — also in CAPSULE, PRISON, 3-arm)
 ;
 ; Per-arm split layout:
-;   amiga: pre, post_a, post_b, post_c
-;   cart:  pre, post_a, post_b, post_c
-;   dos:   pre, post_a, post_c (no post_b; INIT_HASH_67 absent in dos)
+;   amiga: pre, post_a, post_b, post_c, post_d
+;   cart:  pre, post_a, post_b, post_c, post_d
+;   dos:   pre, post_a, post_c, post_d (no post_b; INIT_HASH_67 absent in dos)
 
 ;@if BRANCH == "cartridge_1992"
 ;@include "caves/cart_pre.inc"
@@ -132,4 +133,30 @@ DERIVE_VAR12_11_10_FROM_VAR9:
 ;@include "caves/dos_post_c.inc"
 ;@elif BRANCH == "chahi_amiga_1991"
 ;@include "caves/amiga_post_c.inc"
+;@endif
+
+INIT_RANGE_48_TO_4D_TO_MAX:
+	mov [0x48], 0x7FFF	;@raw=0x00,0x48,0x7F,0xFF
+	mov [0x49], 0x7FFF	;@raw=0x00,0x49,0x7F,0xFF
+	mov [0x4A], 0x7FFF	;@raw=0x00,0x4A,0x7F,0xFF
+	mov [0x4B], 0x7FFF	;@raw=0x00,0x4B,0x7F,0xFF
+	mov [0x4C], 0x7FFF	;@raw=0x00,0x4C,0x7F,0xFF
+	mov [0x4D], 0x7FFF	;@raw=0x00,0x4D,0x7F,0xFF
+	mov [0x4E], 0x2000	;@raw=0x00,0x4E,0x20,0x00
+	mov [0x4F], 0x2000	;@raw=0x00,0x4F,0x20,0x00
+	mov [0x50], 0x0FA0	;@raw=0x00,0x50,0x0F,0xA0
+	mov [0x88], 0xFFFF	;@raw=0x00,0x88,0xFF,0xFF
+	mov [0x89], 0xFFFF	;@raw=0x00,0x89,0xFF,0xFF
+	mov [0x8A], 0xFFFF	;@raw=0x00,0x8A,0xFF,0xFF
+	mov [0x8B], 0xFFFF	;@raw=0x00,0x8B,0xFF,0xFF
+	mov [0x8C], 0xFFFF	;@raw=0x00,0x8C,0xFF,0xFF
+	mov [0x8D], 0xFFFF	;@raw=0x00,0x8D,0xFF,0xFF
+	ret	;@raw=0x05
+
+;@if BRANCH == "cartridge_1992"
+;@include "caves/cart_post_d.inc"
+;@elif BRANCH == "dos_1992"
+;@include "caves/dos_post_d.inc"
+;@elif BRANCH == "chahi_amiga_1991"
+;@include "caves/amiga_post_d.inc"
 ;@endif
