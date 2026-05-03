@@ -2380,16 +2380,16 @@ PARTICLE_BURST_CYCLE_LOOP_2:
 	mov [SCROLL_Y], 0x0000
 	ret
 
-LABEL_06AE:
+DROPLET_FALL_AND_IMPACT_LOOP:
 	mov [0x82], 0x00A7
 	mov [0x83], 0x0000
 	mov [0x84], 0x004E
 
-LABEL_06BA:
+DROPLET_FALL_LOOP_BODY:
 	break
 	video type=1, offset=CINEMATIC_DROPLET_FALL_TRAIL, x=[0x82], y=[0x83], zoom=0x40
 	add [0x83], 0x000E
-	jl [0x83], [0x84], LABEL_06BA
+	jl [0x83], [0x84], DROPLET_FALL_LOOP_BODY
 	break
 	video type=1, offset=CINEMATIC_DROPLET_IMPACT_F0, x=[0x82], y=[0x84], zoom=0x40
 	break
@@ -2480,24 +2480,24 @@ LABEL_07B9:
 	break
 	djnz [0x83], LABEL_07B9
 	mov [0x83], 0x0001
-	jmp LABEL_06BA
+	jmp DROPLET_FALL_LOOP_BODY
 	killChannel
 
-LABEL_07C6:
+SCATTER_DOTS_BURST_RIGHT_SEQ:
 	mov [0x9C], 0x0032
 
-LABEL_07CA:
+SCATTER_DOTS_BURST_RIGHT_DELAY:
 	break
-	djnz [0x9C], LABEL_07CA
+	djnz [0x9C], SCATTER_DOTS_BURST_RIGHT_DELAY
 	mov [0x9A], 0x0054
 	mov [0x9B], 0x005A
 	mov [0x9C], 0x0015
 	setup channel=0x36, address=PARTICLE_BURST_CYCLE_LOOP
 
-LABEL_07DF:
+SCATTER_DOTS_BURST_RIGHT_DRIFT:
 	break
 	add [0x9A], 0x0003
-	djnz [0x9C], LABEL_07DF
+	djnz [0x9C], SCATTER_DOTS_BURST_RIGHT_DRIFT
 	setup channel=0x36, address=KILL_CHANNEL_ROUTINE
 	break
 	break
@@ -2507,13 +2507,13 @@ LABEL_07DF:
 	mov [0x9A], 0x009B
 	mov [0x9C], 0x0010
 
-LABEL_07FC:
+SCATTER_DOTS_BURST_RIGHT_PHASE2:
 	break
 	add [0x9A], 0x0003
 	break
 	add [0x9A], 0x0003
 	add [0x9B], 0x0001
-	djnz [0x9C], LABEL_07FC
+	djnz [0x9C], SCATTER_DOTS_BURST_RIGHT_PHASE2
 	mov [0x9C], 0x000A
 	sub [0x9A], 0x0001
 	sub [0x9B], 0x0001
@@ -2846,7 +2846,7 @@ DRAW_3_SCATTER_DOTS_CYCLE:
 	jmp DRAW_3_SCATTER_DOTS_CYCLE
 	killChannel
 
-LABEL_0C24:
+SCATTER_3DOT_BURST_LEFT:
 	jmp INIT_SCATTER_DOTS_POSITIONS
 	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=143, y=104
 	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=159, y=110
@@ -2891,7 +2891,7 @@ LABEL_0C8C:
 	setup channel=0x36, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
-LABEL_0CB6:
+SCATTER_3DOT_BURST_RIGHT:
 	jmp INIT_SCATTER_DOTS_OFFSETS
 	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=143, y=104
 	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=159, y=110
@@ -3016,40 +3016,40 @@ DRAW_8_SCATTER_DOTS_CYCLE:
 	jmp DRAW_8_SCATTER_DOTS_CYCLE
 	killChannel
 
-LABEL_0E68:
+SCATTER_8DOT_LOOP_LEFT:
 	call COMPUTE_RANDOM_BIT_MASKS
 	mov [0x84], [0x3D]
 
-LABEL_0E6E:
+SCATTER_8DOT_LEFT_DELAY:
 	break
-	djnz [0x84], LABEL_0E6E
+	djnz [0x84], SCATTER_8DOT_LEFT_DELAY
 	mov [0x82], 0x0050
 	mov [0x83], 0x005A
 	mov [0x84], 0x0012
 
-LABEL_0E7F:
+SCATTER_8DOT_LEFT_BODY:
 	break
 	video type=1, offset=CINEMATIC_SCATTER_8DOT_F0, x=[0x82], y=109, zoom=0x40
 	add [0x82], 0x0008
 	video type=1, offset=CINEMATIC_SCATTER_8DOT_F1, x=[0x83], y=109, zoom=0x40
 	add [0x83], 0x000A
-	djnz [0x84], LABEL_0E7F
-	jmp LABEL_0E68
+	djnz [0x84], SCATTER_8DOT_LEFT_BODY
+	jmp SCATTER_8DOT_LOOP_LEFT
 	killChannel
 
-LABEL_0E9A:
+SCATTER_8DOT_LOOP_RIGHT:
 	call COMPUTE_RANDOM_BIT_MASKS
 	mov [0x88], 0x001E
 	add [0x88], [RANDOM_SEED]
 
-LABEL_0EA4:
+SCATTER_8DOT_RIGHT_DELAY:
 	break
-	djnz [0x88], LABEL_0EA4
+	djnz [0x88], SCATTER_8DOT_RIGHT_DELAY
 	mov [0x88], 0xFEAC
 	mov [0x89], 0x0064
 	mov [0x8A], 0x006E
 
-LABEL_0EB5:
+SCATTER_8DOT_RIGHT_BODY:
 	break
 	sub [0x8A], 0x0001
 	video type=1, offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
@@ -3058,7 +3058,7 @@ LABEL_0EB5:
 	add [0x88], 0x0064
 	video type=1, offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
 	sub [0x88], 0x0078
-	jl [0x88], 0x00, LABEL_0EB5
+	jl [0x88], 0x00, SCATTER_8DOT_RIGHT_BODY
 
 LABEL_0EDB:
 	break
@@ -3070,18 +3070,18 @@ LABEL_0EDB:
 	video type=1, offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
 	sub [0x88], 0x0078
 	jl [0x88], 0x0140, LABEL_0EDB
-	jmp LABEL_0E9A
+	jmp SCATTER_8DOT_LOOP_RIGHT
 	killChannel
 
-LABEL_0F06:
+SCATTER_8DOT_F3_BLINK_LOOP:
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_SCATTER_8DOT_F3, x=212, y=138
 	selectVideoPage 0xFF
 	mov [0x85], 0x0032
 
-LABEL_0F12:
+SCATTER_8DOT_F3_BLINK_DELAY:
 	break
-	djnz [0x85], LABEL_0F12
+	djnz [0x85], SCATTER_8DOT_F3_BLINK_DELAY
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_SCATTER_8DOT_F3, x=211, y=138
 	selectVideoPage 0xFF
@@ -3090,7 +3090,7 @@ LABEL_0F12:
 LABEL_0F23:
 	break
 	djnz [0x85], LABEL_0F23
-	jmp LABEL_0F06
+	jmp SCATTER_8DOT_F3_BLINK_LOOP
 	killChannel
 
 THE_BEAST_IS_KILLED_BY_A_LASER_SHOT:
@@ -3152,14 +3152,14 @@ SCENE_TRANSITION_TO_GETTING_OUT_OF_POOL:
 	setPalette 0x06
 	setup channel=0x0B, address=MULTIPLEX_ANIM_RING3_SLOT_0
 	setup channel=0x0C, address=DRAW_LAKE_051_SEQ_FROM_WORKING_POS
-	setup channel=0x0D, address=LABEL_1209
+	setup channel=0x0D, address=DECOR_F7_BLINK_3X_LOOP
 	setup channel=0x0E, address=MULTIPLEX_ANIM_RING3_SLOT_1
 	setup channel=0x0F, address=DRAW_LAKE_051_SEQ_FROM_WORKING_POS
-	setup channel=0x10, address=LABEL_1209
+	setup channel=0x10, address=DECOR_F7_BLINK_3X_LOOP
 	setup channel=0x11, address=MULTIPLEX_ANIM_RING3_SLOT_2
 	setup channel=0x14, address=DRAW_LAKE_051_SEQ_FROM_WORKING_POS
-	setup channel=0x15, address=LABEL_1269
-	setup channel=0x16, address=LABEL_1184
+	setup channel=0x15, address=DECOR_F9_THEN_F10_LOOP
+	setup channel=0x16, address=LESTER_FALLING_PLAY_AND_ANIM
 	setup channel=0x29, address=KILL_CHANNEL_ROUTINE
 	deleteChannels first=0x0B, last=0x13
 	mov [0x34], 0x0036
@@ -3261,7 +3261,7 @@ LOOP_DRAW_DECOR_215_AT_327_164:
 	jmp LOOP_DRAW_DECOR_215_AT_327_164
 	killChannel
 
-LABEL_10AA:
+DECOR_AT_327_164_BLINK_LOOP:
 	video type=1, offset=CINEMATIC_DECOR_AT_327_164_F0, x=245, y=155
 	play id=0x0052, freq=0x1E, vol=0x3F, channel=0x00
 	break
@@ -3279,16 +3279,16 @@ LOOP_DRAW_LAKE_037_AT_305_155:
 	jmp LOOP_DRAW_LAKE_037_AT_305_155
 	killChannel
 
-LABEL_10D3:
+LESTER_AT_POOL_LOOP:
 	mov [0x28], 0x0014
 
-LABEL_10D7:
+LESTER_AT_POOL_LOOP_BODY:
 	video type=1, offset=CINEMATIC_LAKE_LESTER_AT_POOL, x=[0x01], y=[0x02], zoom=0x40
 	break
-	djnz [0x28], LABEL_10D7
+	djnz [0x28], LESTER_AT_POOL_LOOP_BODY
 	copyVideoPage src=0x00, dst=0x03
 	mov [PAUSE_SLICES], 0x0005
-	setup channel=0x15, address=LABEL_10AA
+	setup channel=0x15, address=DECOR_AT_327_164_BLINK_LOOP
 	setup channel=0x16, address=LOOP_DRAW_LAKE_037_AT_305_155
 	video type=1, offset=CINEMATIC_LAKE_LESTER_AT_POOL, x=[0x01], y=[0x02], zoom=0x40
 	selectVideoPage 0x00
@@ -3342,7 +3342,7 @@ LABEL_117A:
 	jmp LABEL_117A
 	killChannel
 
-LABEL_1184:
+LESTER_FALLING_PLAY_AND_ANIM:
 	break
 	mov [0x01], 0x0135
 	mov [0x02], 0x00B6
@@ -3393,13 +3393,13 @@ LABEL_11FF:
 	jmp LABEL_11FF
 	killChannel
 
-LABEL_1209:
+DECOR_F7_BLINK_3X_LOOP:
 	mov [0x14], 0x0003
 
-LABEL_120D:
+DECOR_F7_BLINK_3X_LOOP_BODY:
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F7, x=[0x32], y=[0x33], zoom=0x40
 	break
-	djnz [0x14], LABEL_120D
+	djnz [0x14], DECOR_F7_BLINK_3X_LOOP_BODY
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F7, x=[0x32], y=[0x33], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F7, x=[0x32], y=[0x33], zoom=0x40
@@ -3427,22 +3427,22 @@ LABEL_1239:
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F7, x=[0x32], y=[0x33], zoom=0x40
 	break
 	mov [0x14], 0x0006
-	jmp LABEL_120D
+	jmp DECOR_F7_BLINK_3X_LOOP_BODY
 	killChannel
 
-LABEL_1269:
+DECOR_F9_THEN_F10_LOOP:
 	mov [0x14], 0x0002
 
-LABEL_126D:
+DECOR_F9_THEN_F10_F9_BODY:
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F9, x=[0x32], y=[0x33], zoom=0x40
 	break
-	djnz [0x14], LABEL_126D
+	djnz [0x14], DECOR_F9_THEN_F10_F9_BODY
 	mov [0x14], 0x0003
 
-LABEL_127B:
+DECOR_F9_THEN_F10_F10_BODY:
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F10, x=[0x32], y=[0x33], zoom=0x40
 	break
-	djnz [0x14], LABEL_127B
+	djnz [0x14], DECOR_F9_THEN_F10_F10_BODY
 	mov [0x14], 0x0003
 
 LABEL_1289:
@@ -3480,10 +3480,10 @@ LABEL_12CF:
 	break
 	djnz [0x14], LABEL_12CF
 	mov [0x14], 0x0002
-	jmp LABEL_126D
+	jmp DECOR_F9_THEN_F10_F9_BODY
 	killChannel
 
-LABEL_12E1:
+DECOR_AT_305_155_F14_F9_BG:
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F14, x=[0x32], y=[0x33], zoom=0x40
@@ -3495,14 +3495,14 @@ LABEL_12E1:
 	setPalette 0x06
 	killChannel
 
-LABEL_1301:
+ENTITY_DROP_THEN_F15_LOOP:
 	mov [PAUSE_SLICES], 0x0006
 	mov [0x1A], 0x000A
 
-LABEL_1309:
+ENTITY_DROP_LOOP_BODY:
 	video type=1, offset=CINEMATIC_LAKE_ENTITY_DROP, x=[0x01], y=[0x02], zoom=0x40
 	break
-	djnz [0x1A], LABEL_1309
+	djnz [0x1A], ENTITY_DROP_LOOP_BODY
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F15, x=[0x01], y=[0x02], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F16, x=[0x01], y=[0x02], zoom=0x40
@@ -3557,8 +3557,8 @@ LABEL_1396:
 	unfreezeChannels first=0x0B, last=0x3B
 	copyVideoPage src=0x00, dst=0x03
 	freezeChannels first=0x14, last=0x17
-	setup channel=0x17, address=LABEL_12E1
-	setup channel=0x14, address=LABEL_1301
+	setup channel=0x17, address=DECOR_AT_305_155_F14_F9_BG
+	setup channel=0x14, address=ENTITY_DROP_THEN_F15_LOOP
 	setup channel=0x15, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x16, address=KILL_CHANNEL_ROUTINE
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
@@ -3646,7 +3646,7 @@ LABEL_142A:
 ;@endif
 	copyVideoPage src=0x03, dst=0x00
 	freezeChannels first=0x14, last=0x16
-	setup channel=0x14, address=LABEL_10D3
+	setup channel=0x14, address=LESTER_AT_POOL_LOOP
 	setup channel=0x15, address=LOOP_DRAW_DECOR_215_AT_327_164
 	deleteChannels first=0x16, last=0x16
 	selectVideoPage 0x00
@@ -3726,18 +3726,18 @@ DRAW_LAKE_051_SEQ_FROM_WORKING_POS:
 	jmp DRAW_LAKE_051_SEQ_FROM_WORKING_POS
 	killChannel
 
-LABEL_1507:
+LESTER_FRAME_LOOP:
 	mov [0x14], 0x000A
 	mov [0x02], 0x00B6
 
-LABEL_150F:
+LESTER_FRAME_LOOP_BODY:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_LESTER_FRAME_BUNDLE
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_LESTER_FRAME, x=[0x01], y=[0x02], zoom=0x40
 ;@endif
 	break
-	djnz [0x14], LABEL_150F
+	djnz [0x14], LESTER_FRAME_LOOP_BODY
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	song id=0x0BDD, delay=0x0000, pos=0x00
 ;@endif
@@ -4198,7 +4198,7 @@ LABEL_1945:
 	setup channel=0x28, address=BEAST_AI_SPAWN_FAR_RIGHT
 
 LABEL_194F:
-	setup channel=0x01, address=LABEL_06AE
+	setup channel=0x01, address=DROPLET_FALL_AND_IMPACT_LOOP
 	jmp CHECK_HERO_LAKE_EDGE
 	killChannel
 
@@ -4226,15 +4226,15 @@ LABEL_1978:
 	setup channel=0x07, address=THE_BEAST_APPEARS_FOR_THE_FIRST_TIME_IN_THE_BACKGROUND
 
 LABEL_1986:
-	setup channel=0x02, address=LABEL_0E68
-	setup channel=0x03, address=LABEL_0E9A
+	setup channel=0x02, address=SCATTER_8DOT_LOOP_LEFT
+	setup channel=0x03, address=SCATTER_8DOT_LOOP_RIGHT
 	setup channel=0x05, address=PLAYBACK_CINEMATIC_TENTACLE_RETREAT_F0_TO_513
 	setup channel=0x08, address=SNEAKY_TENTACLE_FROM_THE_POOL
 	setup channel=0x33, address=LABEL_0AB2
 	setup channel=0x34, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x35, address=LABEL_07C6
+	setup channel=0x35, address=SCATTER_DOTS_BURST_RIGHT_SEQ
 	setup channel=0x36, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x37, address=LABEL_0F06
+	setup channel=0x37, address=SCATTER_8DOT_F3_BLINK_LOOP
 	setup channel=0x38, address=REED_PLANT_ANIMATION
 	jmp LABEL_1BFD
 	killChannel
@@ -4275,7 +4275,7 @@ LABEL_19EE:
 	setup channel=0x11, address=MULTIPLEX_ANIM_RING1_SLOT_3
 	setup channel=0x12, address=BEAST_AI_DISPATCH_BY_X_AND_VAR_0D
 	setup channel=0x13, address=MULTIPLEX_RING3_SAVE_LOOP
-	setup channel=0x35, address=LABEL_0C24
+	setup channel=0x35, address=SCATTER_3DOT_BURST_LEFT
 	setup channel=0x36, address=DRAW_8_SCATTER_DOTS_CYCLE
 ;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991")
 	setup channel=0x37, address=LABEL_08E0
@@ -4359,7 +4359,7 @@ LABEL_1AB8:
 	setup channel=0x11, address=MULTIPLEX_RING4_SAVE_LOOP
 	setup channel=0x12, address=BEAST_AI_DISPATCH_BY_X_AND_VAR_0D
 	setup channel=0x13, address=MULTIPLEX_RING5_SAVE_LOOP
-	setup channel=0x36, address=LABEL_0CB6
+	setup channel=0x36, address=SCATTER_3DOT_BURST_RIGHT
 	setup channel=0x37, address=DRAW_8_SCATTER_DOTS_CYCLE
 	setup channel=0x38, address=LOOP_DRAW_LAKE_018_AT_CENTER
 	call CLAMP_SCENE_INIT_X_VARS
@@ -4922,28 +4922,28 @@ LOOP_DRAW_LAKE_099_DECOR_AT_69_172:
 	jmp LOOP_DRAW_LAKE_099_DECOR_AT_69_172
 	killChannel
 
-LABEL_1E94:
+LESTER_DRIFT_RIGHT_SEQ:
 	add [0x01], 0x0001
 	break
 	add [0x01], 0x0001
 	mov [0x02], 0x0007
 
-LABEL_1EA1:
+LESTER_DRIFT_R_PHASE_1:
 	break
 	add [0x01], 0x0004
-	djnz [0x02], LABEL_1EA1
+	djnz [0x02], LESTER_DRIFT_R_PHASE_1
 	mov [0x02], 0x0007
 
-LABEL_1EAE:
+LESTER_DRIFT_R_PHASE_2:
 	break
 	add [0x01], 0x0005
-	djnz [0x02], LABEL_1EAE
+	djnz [0x02], LESTER_DRIFT_R_PHASE_2
 	mov [0x02], 0x000A
 
-LABEL_1EBB:
+LESTER_DRIFT_R_PHASE_3:
 	break
 	add [0x01], 0x0006
-	djnz [0x02], LABEL_1EBB
+	djnz [0x02], LESTER_DRIFT_R_PHASE_3
 	killChannel
 
 LESTER_GRABS_A_VINE_AND_SWINGS:
@@ -5028,7 +5028,7 @@ LESTER_GRABS_A_VINE_AND_SWINGS:
 	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_2, x=[0x01], y=100, zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_3, x=[0x01], y=100, zoom=0x40
-	setup channel=0x04, address=LABEL_1E94
+	setup channel=0x04, address=LESTER_DRIFT_RIGHT_SEQ
 	break
 	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_4, x=[0x01], y=100, zoom=0x40
 	break
@@ -5171,7 +5171,7 @@ GETTING_OUT_OF_THE_POOL__ANIMATION_PART_2:
 	djnz [0x16], GETTING_OUT_OF_THE_POOL__ANIMATION_PART_2
 	killChannel
 
-LABEL_2147:
+GETTING_OUT_POOL_PART_3_RPT:
 	mov [0x17], 0x0002
 
 GETTING_OUT_OF_THE_POOL__ANIMATION_PART_3:
@@ -5258,7 +5258,7 @@ GETTING_OUT_OF_THE_POOL__ANIMATION_PART_6:
 	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_1, x=160, y=100
 	break
 	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_1, x=160, y=100
-	setup channel=0x17, address=LABEL_2147
+	setup channel=0x17, address=GETTING_OUT_POOL_PART_3_RPT
 	break
 	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_2, x=160, y=100
 	break
@@ -6332,7 +6332,7 @@ LABEL_2E1C:
 	setup channel=0x2C, address=KILL_CHANNEL_ROUTINE
 	freezeChannels first=0x00, last=0x3F
 	deleteChannels first=0x14, last=0x16
-	setup channel=0x2B, address=LABEL_1507
+	setup channel=0x2B, address=LESTER_FRAME_LOOP
 	copyVideoPage src=0x03, dst=0x00
 	mov [0x1C], 0x0001
 	break
