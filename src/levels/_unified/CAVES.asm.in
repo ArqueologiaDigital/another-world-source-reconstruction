@@ -9,11 +9,12 @@
 ; Currently folded routines (in byte-address order within the file):
 ;   COPY_HASH_VAR_37_TO_RANGE  (117 bytes — also in CAPSULE, PRISON, 3-arm)
 ;   INIT_HASH_VARS_67_66_65_68_69  (97 bytes — amiga+cart only, NOT dos)
+;   DERIVE_VAR12_11_10_FROM_VAR9  (69 bytes — also in CAPSULE, PRISON, 3-arm)
 ;
 ; Per-arm split layout:
-;   amiga: pre + post_a + post_b
-;   cart:  pre + post_a + post_b
-;   dos:   pre + post (single chunk after COPY_HASH; INIT_HASH_67 absent)
+;   amiga: pre, post_a, post_b, post_c
+;   cart:  pre, post_a, post_b, post_c
+;   dos:   pre, post_a, post_c (no post_b; INIT_HASH_67 absent in dos)
 
 ;@if BRANCH == "cartridge_1992"
 ;@include "caves/cart_pre.inc"
@@ -62,7 +63,7 @@ COPY_HASH_VAR_37_TO_RANGE:
 ;@if BRANCH == "cartridge_1992"
 ;@include "caves/cart_post_a.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos_post.inc"
+;@include "caves/dos_post_a.inc"
 ;@elif BRANCH == "chahi_amiga_1991"
 ;@include "caves/amiga_post_a.inc"
 ;@endif
@@ -100,4 +101,35 @@ INIT_HASH_VARS_67_66_65_68_69:
 ;@include "caves/cart_post_b.inc"
 ;@elif BRANCH == "chahi_amiga_1991"
 ;@include "caves/amiga_post_b.inc"
+;@endif
+; (dos has no chunk here — dos_post_a above already spans through to DERIVE)
+
+DERIVE_VAR12_11_10_FROM_VAR9:
+	and [0x09], 0x03FF	;@raw=0x14,0x09,0x03,0xFF
+	mov [0x12], [0x09]	;@raw=0x01,0x12,0x09
+	shr [0x12], 0x0007	;@raw=0x17,0x12,0x00,0x07
+	mov [0x11], [0x12]	;@raw=0x01,0x11,0x12
+	shr [0x11], 0x0001	;@raw=0x17,0x11,0x00,0x01
+	mov [0x10], [0x11]	;@raw=0x01,0x10,0x11
+	shr [0x10], 0x0001	;@raw=0x17,0x10,0x00,0x01
+	and [0x12], 0x0001	;@raw=0x14,0x12,0x00,0x01
+	and [0x11], 0x0001	;@raw=0x14,0x11,0x00,0x01
+	mov [0x13], [0x10]	;@raw=0x01,0x13,0x10
+	add [0x13], [0x11]	;@raw=0x02,0x13,0x11
+	add [0x13], [0x12]	;@raw=0x02,0x13,0x12
+	and [0x09], 0x007F	;@raw=0x14,0x09,0x00,0x7F
+	mov [0x0E], [0x09]	;@raw=0x01,0x0E,0x09
+	shr [0x0E], 0x0003	;@raw=0x17,0x0E,0x00,0x03
+	mov [0x0D], [0x0E]	;@raw=0x01,0x0D,0x0E
+	shr [0x0D], 0x0002	;@raw=0x17,0x0D,0x00,0x02
+	and [0x0E], 0x0003	;@raw=0x14,0x0E,0x00,0x03
+	and [0x09], 0x0007	;@raw=0x14,0x09,0x00,0x07
+	ret	;@raw=0x05
+
+;@if BRANCH == "cartridge_1992"
+;@include "caves/cart_post_c.inc"
+;@elif BRANCH == "dos_1992"
+;@include "caves/dos_post_c.inc"
+;@elif BRANCH == "chahi_amiga_1991"
+;@include "caves/amiga_post_c.inc"
 ;@endif
