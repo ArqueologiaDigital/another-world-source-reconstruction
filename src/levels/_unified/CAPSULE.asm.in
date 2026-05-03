@@ -15,13 +15,16 @@
 ;     amiga: 0x2CDF   cart: 0x4261   dos: 0x428F
 ;   INIT_RANGE_48_TO_4D_TO_MAX  (61 bytes — also in PRISON, CAVES)
 ;     amiga: 0x8480   cart: 0xB2DF   dos: 0xB1FE
+;   INIT_BIRD_AI_VARS  (40 bytes — cart+dos only)
+;     cart: 0xB6FE    dos:  0xB61A
 ;
-; Per-arm split layout (each arm has 5 chunks: pre1, pre2, mid1, mid2, post3):
-;   pre1:   [0x0000 .. before RAMP_VAR1_PLUS_C_9_5_3_BREAKS]
-;   pre2:   [after RAMP .. before COPY_HASH_VAR_37_TO_RANGE]
-;   mid1:   [after COPY_HASH .. before DERIVE_VAR12_11_10_FROM_VAR9]
-;   mid2:   [after DERIVE .. before INIT_RANGE_48_TO_4D_TO_MAX]
-;   post3:  [after INIT_RANGE .. EOF]
+; Per-arm split layout:
+;   amiga has 5 chunks: pre1, pre2, mid1, mid2, post3
+;   cart/dos have 6 chunks: pre1, pre2, mid1, mid2, post3_a, post3_b
+;     (INIT_BIRD_AI_VARS sits between post3_a and post3_b in cart/dos.
+;      Doesn't exist in amiga — wrapped in `;@if BRANCH in (cart, dos)`
+;      and amiga's post3 is single-chunk, spanning the same byte range
+;      as cart/dos's post3_a + INIT_BIRD_AI_VARS + post3_b.)
 ;
 ; FOLD-SAFETY NOTE: routines with cross-branch-differing CINEMATIC_xxx
 ; offsets (or other EQU-resolved operands whose bytes differ per
@@ -160,9 +163,30 @@ INIT_RANGE_48_TO_4D_TO_MAX:
 	ret	;@raw=0x05
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart_post3.inc"
+;@include "capsule/cart_post3_a.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos_post3.inc"
+;@include "capsule/dos_post3_a.inc"
 ;@elif BRANCH == "chahi_amiga_1991"
 ;@include "capsule/amiga_post3.inc"
+;@endif
+
+;@if BRANCH in ("cartridge_1992", "dos_1992")
+INIT_BIRD_AI_VARS:
+	mov [0x01], 0x0091	;@raw=0x00,0x01,0x00,0x91
+	mov [0x02], 0x008F	;@raw=0x00,0x02,0x00,0x8F
+	mov [0x0F], 0x0000	;@raw=0x00,0x0F,0x00,0x00
+	mov [0x28], [0x01]	;@raw=0x01,0x28,0x01
+	mov [0x04], 0x0020	;@raw=0x00,0x04,0x00,0x20
+	mov [0x05], 0x0000	;@raw=0x00,0x05,0x00,0x00
+	mov [0x06], 0x03DE	;@raw=0x00,0x06,0x03,0xDE
+	mov [0x0A], 0x0001	;@raw=0x00,0x0A,0x00,0x01
+	mov [0x63], 0x0001	;@raw=0x00,0x63,0x00,0x01
+	mov [0x2A], 0x000F	;@raw=0x00,0x2A,0x00,0x0F
+	ret	;@raw=0x05
+;@endif
+
+;@if BRANCH == "cartridge_1992"
+;@include "capsule/cart_post3_b.inc"
+;@elif BRANCH == "dos_1992"
+;@include "capsule/dos_post3_b.inc"
 ;@endif
