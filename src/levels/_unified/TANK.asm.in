@@ -1,3 +1,16 @@
+; STAGE TANK: alien arena tank-combat sequence.
+;
+; Gameplay role: Lester pilots an alien tank in an arena, fighting
+; enemy tanks and obstacles. The smallest of the action stages.
+;
+; Branches that ship TANK:
+;   chahi_amiga_1991, dos_1992, cartridge_1992 (genesis_eu).
+;
+; Structure: only 24 folded shared bodies (vs 264 in CAVES) — the
+; bytecode is tightly focused on tank movement, projectile state
+; machines, and HUD updates. Most of the per-arm divergence is
+; concentrated in initial banker setups and music marks.
+;
 ; Unified source for TANK with 24 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):

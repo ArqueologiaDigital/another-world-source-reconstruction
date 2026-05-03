@@ -1,3 +1,16 @@
+; STAGE ENDING: final cinematic + escape on the pteranodon-creature.
+;
+; Gameplay role: closing cinematic after all gameplay stages
+; complete. The alien friend rescues Lester one last time and they
+; ride off together on a giant flying creature.
+;
+; Branches that ship ENDING:
+;   chahi_amiga_1991, dos_1992, cartridge_1992 (genesis_eu).
+;
+; Structure: only 28 folded bodies. Mostly DRAW_CIN_<N>_TO_<M>
+; sequences and PALETTE_FADE animations. Like CAVES, has empty
+; post-fold chunks blocking the cleanup pass.
+;
 ; Unified source for ENDING with 28 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):

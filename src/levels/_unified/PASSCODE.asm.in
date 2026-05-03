@@ -1,3 +1,18 @@
+; STAGE PASSCODE: password-entry screen for save-state restoration.
+;
+; Gameplay role: shown before the game starts (or between sessions)
+; to let players resume from a stored checkpoint. Hashes the entered
+; characters into per-stage save vectors. Replaces the checkpoint
+; system on platforms without battery-backed save.
+;
+; Branches that ship PASSCODE:
+;   chahi_amiga_1991, dos_1992, cartridge_1992 (genesis_eu).
+;
+; Smallest unified file (only 6 folded bodies). The hashing logic
+; (SUM_HASH_VARS_TO_VAR_37) is one of the most analyzed routines
+; in the genealogy work — it's structurally identical across all
+; three branches.
+;
 ; Unified source for PASSCODE with 6 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
