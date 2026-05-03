@@ -107,7 +107,7 @@ LABEL_0E5C:
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	play id=0x000E, freq=0x05, vol=0x3F, channel=0x03
 	play id=0x000E, freq=0x01, vol=0x3F, channel=0x02
-	jmp LABEL_0CBD
+	jmp PHASE_PAGE3_DRAW_CIN_172_175
 LABEL_0F48:
 	killChannel
 

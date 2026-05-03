@@ -226,9 +226,9 @@ DELAY_7_BEFORE_CIN_322:
 	video type=1, offset=CINEMATIC_323, x=151, y=160
 	mov [0x0E], 0x0005
 
-LABEL_0BC3:
+DELAY_5_BEFORE_CIN_325:
 	break
-	djnz [0x0E], LABEL_0BC3
+	djnz [0x0E], DELAY_5_BEFORE_CIN_325
 	video type=1, offset=CINEMATIC_325, x=134, y=166
 	break
 	video type=1, offset=CINEMATIC_326, x=134, y=170
@@ -244,9 +244,9 @@ INIT_VAR_0D_THEN_LOOP:
 	break
 	mov [0x0D], 0x0014
 
-LABEL_0BE4:
+DELAY_20_BEFORE_PLAY_2C_CIN_309:
 	break
-	djnz [0x0D], LABEL_0BE4
+	djnz [0x0D], DELAY_20_BEFORE_PLAY_2C_CIN_309
 	play id=0x002C, freq=0x08, vol=0x20, channel=0x01
 	video type=1, offset=CINEMATIC_309, x=198, y=136
 	break
@@ -285,9 +285,9 @@ DRAW_INTRO_DECOR_305:
 	video type=1, offset=CINEMATIC_305, x=229, y=40
 	mov [0x0F], 0x0016
 
-LABEL_0C49:
+DELAY_22_BEFORE_DECOR_305:
 	break
-	djnz [0x0F], LABEL_0C49
+	djnz [0x0F], DELAY_22_BEFORE_DECOR_305
 	jmp DRAW_INTRO_DECOR_305
 LABEL_0C51:
 	killChannel
@@ -310,9 +310,9 @@ DRAW_INTRO_DECOR_301:
 	video type=1, offset=CINEMATIC_301, x=194, y=29
 	mov [0x10], 0x0019
 
-LABEL_0C7F:
+DELAY_25_BEFORE_DECOR_301:
 	break
-	djnz [0x10], LABEL_0C7F
+	djnz [0x10], DELAY_25_BEFORE_DECOR_301
 	jmp DRAW_INTRO_DECOR_301
 LABEL_0C87:
 	killChannel
@@ -332,9 +332,9 @@ SET_PALETTE_17_INIT_VAR_14:
 	setPalette 0x17
 	mov [0x14], 0x001E
 
-LABEL_0C9D:
+DELAY_30_THEN_SET_PAL_18:
 	break
-	djnz [0x14], LABEL_0C9D
+	djnz [0x14], DELAY_30_THEN_SET_PAL_18
 	setPalette 0x18
 	break
 	setPalette 0x1A
@@ -352,7 +352,7 @@ LABEL_0C9D:
 LABEL_0CBC:
 	killChannel
 
-LABEL_0CBD:
+PHASE_PAGE3_DRAW_CIN_172_175:
 	break
 	selectVideoPage 0x03
 	fill page=0x03, color=0x02
