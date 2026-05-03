@@ -83,9 +83,9 @@ DRAW_INTRO_DECOR_333:
 	video type=1, offset=CINEMATIC_336, x=160, y=100
 	mov [0x08], 0x0032
 
-LABEL_0A80:
+DELAY_50_BEFORE_DECOR_333:
 	break
-	djnz [0x08], LABEL_0A80
+	djnz [0x08], DELAY_50_BEFORE_DECOR_333
 	jmp DRAW_INTRO_DECOR_333
 LABEL_0A88:
 	killChannel
@@ -127,9 +127,9 @@ DRAW_INTRO_DECOR_331:
 	video type=1, offset=CINEMATIC_331, x=133, y=162
 	mov [0x0A], 0x001E
 
-LABEL_0AE2:
+DELAY_30_BEFORE_DECOR_331:
 	break
-	djnz [0x0A], LABEL_0AE2
+	djnz [0x0A], DELAY_30_BEFORE_DECOR_331
 	jmp DRAW_INTRO_DECOR_331
 LABEL_0AEA:
 	killChannel
@@ -190,9 +190,9 @@ DRAW_INTRO_DECOR_329:
 	video type=1, offset=CINEMATIC_325, x=145, y=171
 	mov [0x0C], 0x000A
 
-LABEL_0B77:
+DELAY_10_BEFORE_DECOR_329:
 	break
-	djnz [0x0C], LABEL_0B77
+	djnz [0x0C], DELAY_10_BEFORE_DECOR_329
 	jmp DRAW_INTRO_DECOR_329
 LABEL_0B7F:
 	killChannel
@@ -214,9 +214,9 @@ DRAW_INTRO_DECOR_318:
 	video type=1, offset=CINEMATIC_318, x=176, y=157
 	mov [0x0E], 0x0007
 
-LABEL_0BA7:
+DELAY_7_BEFORE_CIN_322:
 	break
-	djnz [0x0E], LABEL_0BA7
+	djnz [0x0E], DELAY_7_BEFORE_CIN_322
 	video type=1, offset=CINEMATIC_322, x=149, y=158
 	break
 	video type=1, offset=CINEMATIC_323, x=150, y=159
