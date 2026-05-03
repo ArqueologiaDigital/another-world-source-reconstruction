@@ -1,7 +1,131 @@
-;@if BRANCH == "cartridge_1992"
-;@include "ending/cart.inc"
+; Unified source for ENDING with 7 folded shared bodies.
+;
+; Folded routines (in byte-address order):
+;   KILL_CHANNEL_LANDING  (3-arm: amiga, cart, dos)
+;   DELETE_ALL_CHANS_AND_KILL  (3-arm: amiga, cart, dos)
+;   INIT_VARE_TO_12  (3-arm: amiga, cart, dos)
+;   PAL_FADE_18_TO_1D  (3-arm: amiga, cart, dos)
+;   SET_VAR_E6_5_PAL_B  (3-arm: amiga, cart, dos)
+;   INIT_VARS_07_08_09  (3-arm: amiga, cart, dos)
+;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
+
+;@if BRANCH == "chahi_amiga_1991"
+;@include "ending/amiga__entry.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "ending/cart__entry.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos.inc"
-;@elif BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga.inc"
+;@include "ending/dos__entry.inc"
 ;@endif
+
+KILL_CHANNEL_LANDING:
+	killChannel	;@raw=0x11
+
+;@if BRANCH == "chahi_amiga_1991"
+;@include "ending/amiga__post_KILL_CHANNEL_LANDING.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "ending/cart__post_KILL_CHANNEL_LANDING.inc"
+;@elif BRANCH == "dos_1992"
+;@include "ending/dos__post_KILL_CHANNEL_LANDING.inc"
+;@endif
+
+DELETE_ALL_CHANS_AND_KILL:
+	deleteChannels first=0x00, last=0x3F	;@raw=0x0C,0x00,0x3F,0x02
+	killChannel	;@raw=0x11
+
+;@if BRANCH == "chahi_amiga_1991"
+;@include "ending/amiga__post_DELETE_ALL_CHANS_AND_KILL.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "ending/cart__post_DELETE_ALL_CHANS_AND_KILL.inc"
+;@elif BRANCH == "dos_1992"
+;@include "ending/dos__post_DELETE_ALL_CHANS_AND_KILL.inc"
+;@endif
+
+INIT_VARE_TO_12:
+	mov [0x0E], 0x000C	;@raw=0x00,0x0E,0x00,0x0C
+
+;@if BRANCH == "chahi_amiga_1991"
+;@include "ending/amiga__post_INIT_VARE_TO_12.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "ending/cart__post_INIT_VARE_TO_12.inc"
+;@elif BRANCH == "dos_1992"
+;@include "ending/dos__post_INIT_VARE_TO_12.inc"
+;@endif
+
+PAL_FADE_18_TO_1D:
+	setPalette 0x18	;@raw=0x0B,0x18,0xFF
+	break	;@raw=0x06
+	setPalette 0x19	;@raw=0x0B,0x19,0xFF
+	break	;@raw=0x06
+	setPalette 0x1A	;@raw=0x0B,0x1A,0xFF
+	break	;@raw=0x06
+	setPalette 0x1B	;@raw=0x0B,0x1B,0xFF
+	break	;@raw=0x06
+	setPalette 0x1C	;@raw=0x0B,0x1C,0xFF
+	break	;@raw=0x06
+	setPalette 0x1D	;@raw=0x0B,0x1D,0xFF
+	killChannel	;@raw=0x11
+	setPalette 0x1D	;@raw=0x0B,0x1D,0xFF
+	break	;@raw=0x06
+	setPalette 0x1C	;@raw=0x0B,0x1C,0xFF
+	break	;@raw=0x06
+	setPalette 0x1B	;@raw=0x0B,0x1B,0xFF
+	break	;@raw=0x06
+	setPalette 0x1A	;@raw=0x0B,0x1A,0xFF
+	break	;@raw=0x06
+	setPalette 0x19	;@raw=0x0B,0x19,0xFF
+	break	;@raw=0x06
+	setPalette 0x18	;@raw=0x0B,0x18,0xFF
+	break	;@raw=0x06
+	setPalette 0x17	;@raw=0x0B,0x17,0xFF
+	killChannel	;@raw=0x11
+
+;@if BRANCH == "chahi_amiga_1991"
+;@include "ending/amiga__post_PAL_FADE_18_TO_1D.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "ending/cart__post_PAL_FADE_18_TO_1D.inc"
+;@elif BRANCH == "dos_1992"
+;@include "ending/dos__post_PAL_FADE_18_TO_1D.inc"
+;@endif
+
+SET_VAR_E6_5_PAL_B:
+	mov [0xE6], 0x0005	;@raw=0x00,0xE6,0x00,0x05
+	setPalette 0x0B	;@raw=0x0B,0x0B,0xFF
+
+;@if BRANCH == "chahi_amiga_1991"
+;@include "ending/amiga__post_SET_VAR_E6_5_PAL_B.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "ending/cart__post_SET_VAR_E6_5_PAL_B.inc"
+;@elif BRANCH == "dos_1992"
+;@include "ending/dos__post_SET_VAR_E6_5_PAL_B.inc"
+;@endif
+
+INIT_VARS_07_08_09:
+	mov [0x07], 0x004C	;@raw=0x00,0x07,0x00,0x4C
+	mov [0x08], 0x0097	;@raw=0x00,0x08,0x00,0x97
+	mov [0x09], 0x0003	;@raw=0x00,0x09,0x00,0x03
+
+;@if BRANCH == "chahi_amiga_1991"
+;@include "ending/amiga__post_INIT_VARS_07_08_09.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "ending/cart__post_INIT_VARS_07_08_09.inc"
+;@elif BRANCH == "dos_1992"
+;@include "ending/dos__post_INIT_VARS_07_08_09.inc"
+;@endif
+
+CLEAR_PAGES_1_2_AND_BLIT:
+	fill page=0x01, color=0x00	;@raw=0x0E,0x01,0x00
+	fill page=0x02, color=0x00	;@raw=0x0E,0x02,0x00
+	selectVideoPage 0x01	;@raw=0x0D,0x01
+	blitFramebuffer 0x01	;@raw=0x10,0x01
+	blitFramebuffer 0xFF	;@raw=0x10,0xFF
+	blitFramebuffer 0x02	;@raw=0x10,0x02
+	ret	;@raw=0x05
+
+;@if BRANCH == "chahi_amiga_1991"
+;@include "ending/amiga__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "ending/cart__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
+;@elif BRANCH == "dos_1992"
+;@include "ending/dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
+;@endif
+
