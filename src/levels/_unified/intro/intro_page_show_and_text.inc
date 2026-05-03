@@ -123,10 +123,10 @@ DRAW_CITY_SEQ_419_420:
 	video type=1, offset=CINEMATIC_192, x=234, y=163
 	killChannel
 
-LABEL_16E4:
+CIN_382_PUFFS_PHASE_INIT:
 	mov [0x02], 0x0002
 
-LABEL_16E8:
+DRAW_CIN_382_PUFFS_2X:
 	break
 	video type=1, offset=CINEMATIC_382, x=165, y=74
 	break
@@ -151,10 +151,10 @@ LABEL_16E8:
 	video type=1, offset=CINEMATIC_382, x=189, y=130
 	break
 	video type=1, offset=CINEMATIC_382, x=170, y=104
-	djnz [0x02], LABEL_16E8
+	djnz [0x02], DRAW_CIN_382_PUFFS_2X
 	mov [0x02], 0x0003
 
-LABEL_1731:
+DRAW_CIN_382_PUFFS_3X:
 	break
 	video type=1, offset=CINEMATIC_382, x=165, y=74
 	break
@@ -169,7 +169,7 @@ LABEL_1731:
 	video type=1, offset=CINEMATIC_382, x=236, y=145
 	break
 	video type=1, offset=CINEMATIC_382, x=185, y=127
-	djnz [0x02], LABEL_1731
+	djnz [0x02], DRAW_CIN_382_PUFFS_3X
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_383, x=237, y=156
@@ -197,7 +197,7 @@ INIT_VAR_02_AND_BREAK_LOOP:
 	break
 	mov [0x02], 0x0012
 
-LABEL_17A0:
+BLINK_TEXTS_14_15_AT_10_150_18X:
 	text id=0x0014, x=10, y=150, color=0x05
 	break
 	text id=0x0015, x=10, y=150, color=0x05
@@ -208,7 +208,7 @@ LABEL_17A0:
 	break
 	text id=0x0018, x=10, y=150, color=0x05
 	break
-	djnz [0x02], LABEL_17A0
+	djnz [0x02], BLINK_TEXTS_14_15_AT_10_150_18X
 	killChannel
 
 DRAW_CIN_382_TWICE_AT_DIFF_Y:
@@ -221,7 +221,7 @@ DRAW_CIN_382_TWICE_AT_DIFF_Y:
 	video type=1, offset=CINEMATIC_382, x=164, y=99
 	mov [0x02], 0x0001
 
-LABEL_17DF:
+DRAW_CIN_382_PUFFS_1X:
 	break
 	video type=1, offset=CINEMATIC_382, x=165, y=74
 	break
@@ -266,8 +266,8 @@ LABEL_17DF:
 	video type=1, offset=CINEMATIC_382, x=173, y=112
 	break
 	video type=1, offset=CINEMATIC_382, x=167, y=94
-	djnz [0x02], LABEL_17DF
-	jmp LABEL_16E4
+	djnz [0x02], DRAW_CIN_382_PUFFS_1X
+	jmp CIN_382_PUFFS_PHASE_INIT
 LABEL_185D:
 	killChannel
 
