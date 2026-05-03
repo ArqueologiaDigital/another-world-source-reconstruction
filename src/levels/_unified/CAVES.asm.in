@@ -266,6 +266,8 @@
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_261B_43CF2CB1  (2-arm: cart, dos)
 
+;@include "../_common_vars.inc"
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "caves/amiga__entry.inc"
 ;@elif BRANCH == "cartridge_1992"

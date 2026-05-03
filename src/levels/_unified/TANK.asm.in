@@ -26,6 +26,8 @@
 ;   DRAW_BG_DOTS_CIN_007_008  (2-arm: amiga, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
 
+;@include "../_common_vars.inc"
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "tank/amiga__entry.inc"
 ;@elif BRANCH == "cartridge_1992"

@@ -181,6 +181,8 @@
 ;   FOLD_BODY_206B_44F9C1BD  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_206B_F444FCB9  (3-arm: amiga, cart, dos)
 
+;@include "../_common_vars.inc"
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "capsule/amiga__entry.inc"
 ;@elif BRANCH == "cartridge_1992"

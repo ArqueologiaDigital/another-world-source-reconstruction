@@ -30,6 +30,8 @@
 ;   DRAW_STARS_CIN_38_39_40_5_6  (2-arm: amiga, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
 
+;@include "../_common_vars.inc"
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "ending/amiga__entry.inc"
 ;@elif BRANCH == "cartridge_1992"

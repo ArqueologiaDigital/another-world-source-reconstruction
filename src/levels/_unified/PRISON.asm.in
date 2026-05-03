@@ -301,6 +301,8 @@
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
 
+;@include "../_common_vars.inc"
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "prison/amiga__entry.inc"
 ;@elif BRANCH == "cartridge_1992"

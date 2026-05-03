@@ -8,6 +8,8 @@
 ;   CLEAR_LAST_KEYCHAR  (2-arm: cart, dos)
 ;   INIT_VAR08_TO_150  (3-arm: amiga, cart, dos)
 
+;@include "../_common_vars.inc"
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "passcode/amiga__entry.inc"
 ;@elif BRANCH == "cartridge_1992"

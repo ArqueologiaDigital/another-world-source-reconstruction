@@ -16,6 +16,8 @@
 ;   COMPUTE_VAR07_TIMES_44_PLUS_20  (2-arm: amiga, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (2-arm: amiga, dos)
 
+;@include "../_common_vars.inc"
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "code_wheel/amiga__entry.inc"
 ;@elif BRANCH == "cartridge_1992"
