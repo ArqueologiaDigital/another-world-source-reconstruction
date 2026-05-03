@@ -112,9 +112,9 @@ DRAW_CIN_442_443_444_DESC_Y:
 	video type=1, offset=CINEMATIC_446, x=134, y=107
 	mov [0x09], 0x000A
 
-LABEL_1D04:
+DELAY_10F_BEFORE_CIN_444_443:
 	break
-	djnz [0x09], LABEL_1D04
+	djnz [0x09], DELAY_10F_BEFORE_CIN_444_443
 	video type=1, offset=CINEMATIC_444, x=221, y=123
 	video type=1, offset=CINEMATIC_443, x=217, y=127
 	video type=1, offset=CINEMATIC_442, x=219, y=125
@@ -122,9 +122,9 @@ LABEL_1D04:
 	video type=1, offset=CINEMATIC_445, x=134, y=107
 	mov [0x09], 0x000A
 
-LABEL_1D21:
+DELAY_10F_BEFORE_CIN_442_443:
 	break
-	djnz [0x09], LABEL_1D21
+	djnz [0x09], DELAY_10F_BEFORE_CIN_442_443
 	video type=1, offset=CINEMATIC_442, x=217, y=127
 	video type=1, offset=CINEMATIC_443, x=221, y=123
 	video type=1, offset=CINEMATIC_444, x=219, y=125
@@ -132,16 +132,16 @@ LABEL_1D21:
 	video type=1, offset=CINEMATIC_446, x=135, y=109
 	mov [0x09], 0x000A
 
-LABEL_1D3E:
+DELAY_10F_BEFORE_CIN_446_445:
 	break
-	djnz [0x09], LABEL_1D3E
+	djnz [0x09], DELAY_10F_BEFORE_CIN_446_445
 	video type=1, offset=CINEMATIC_446, x=131, y=109
 	video type=1, offset=CINEMATIC_445, x=135, y=109
 	mov [0x09], 0x000A
 
-LABEL_1D4F:
+DELAY_10F_BEFORE_RESTART_443:
 	break
-	djnz [0x09], LABEL_1D4F
+	djnz [0x09], DELAY_10F_BEFORE_RESTART_443
 	jmp DRAW_CIN_442_443_444_DESC_Y
 LABEL_1D57:
 	killChannel
@@ -186,13 +186,13 @@ CH_02_INIT_VARS_01_02_03:
 	mov [0x03], 0x0090
 	mov [PAUSE_SLICES], 0x0002
 
-LABEL_1DC3:
+DRIFT_CIN_113_X_PLUS_Y_MINUS_8X:
 	break
 	add [0x02], 0x0001
 	sub [0x03], 0x0001
 	video type=1, offset=CINEMATIC_113, x=[0x02], y=94, zoom=0x40
 	video type=1, offset=CINEMATIC_114, x=[0x03], y=94, zoom=0x40
-	djnz [0x01], LABEL_1DC3
+	djnz [0x01], DRIFT_CIN_113_X_PLUS_Y_MINUS_8X
 	mov [PAUSE_SLICES], 0x0002
 	video type=1, offset=CINEMATIC_112, x=143, y=94
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
@@ -200,16 +200,16 @@ LABEL_1DC3:
 	mov [0x01], 0x0019
 	setPalette 0x0A
 
-LABEL_1DF0:
+DELAY_25F_AFTER_SET_PAL_A:
 	break
-	djnz [0x01], LABEL_1DF0
+	djnz [0x01], DELAY_25F_AFTER_SET_PAL_A
 	mov [PAUSE_SLICES], 0x0001
 	mov [0x01], 0x0050
 	mov [0x02], 0x0004
 	mov [0x03], 0x001A
 	setup channel=0x3C, address=BLIT_DISPATCH_HERO_ACTION_ALT
 
-LABEL_1E09:
+BLITTER_CYCLE_VAR2_80X_LOOP:
 	jne [0x02], 0x01, LABEL_1E13
 	mov [0x02], 0x0002
 
@@ -223,7 +223,7 @@ LABEL_1E1A:
 	video type=1, offset=CINEMATIC_116, x=121, y=187
 	djnz [0x04], LABEL_1E1A
 	add [0x03], 0x0002
-	djnz [0x01], LABEL_1E09
+	djnz [0x01], BLITTER_CYCLE_VAR2_80X_LOOP
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	mov [PAUSE_SLICES], 0x0001
