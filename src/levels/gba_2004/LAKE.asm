@@ -2890,7 +2890,7 @@ LABEL_16F6:
 	jmp REED_PLANT_ANIMATION	;@raw=0x07,0x16,0x89
 LABEL_1703:
 	killChannel	;@raw=0x11
-LABEL_1704:
+REED_PLANT_FRAMES_5_TO_7_LOOP:
 	video type=1, offset=0xB808, x=160, y=100	;@raw=0xDC,0x04,0xA0,0x64
 	break	;@raw=0x06
 	video type=1, offset=0xB808, x=160, y=100	;@raw=0xDC,0x04,0xA0,0x64
@@ -2911,7 +2911,7 @@ LABEL_1704:
 	break	;@raw=0x06
 	video type=1, offset=0xB808, x=160, y=100	;@raw=0xDC,0x04,0xA0,0x64
 	break	;@raw=0x06
-	jmp LABEL_1704	;@raw=0x07,0x17,0x04
+	jmp REED_PLANT_FRAMES_5_TO_7_LOOP	;@raw=0x07,0x17,0x04
 	killChannel	;@raw=0x11
 
 SNEAKY_TENTACLE_FROM_THE_POOL:
