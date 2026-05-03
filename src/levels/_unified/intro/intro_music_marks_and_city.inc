@@ -88,9 +88,9 @@ CITY_PAN_X_M1_Y_M1_5X:
 	djnz [0x01], CITY_PAN_X_M1_Y_M1_5X
 	mov [0x01], 0x0009
 
-LABEL_112D:
+DELAY_9_BEFORE_BLITTER_SETUP:
 	break
-	djnz [0x01], LABEL_112D
+	djnz [0x01], DELAY_9_BEFORE_BLITTER_SETUP
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	selectVideoPage 0x00
@@ -185,15 +185,15 @@ SETUP_INTRO_CITY_CHANNELS:
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x01], 0x0001
 
-LABEL_120D:
+WAIT_1_BEFORE_COPY_PAGE_03:
 	break
-	djnz [0x01], LABEL_120D
+	djnz [0x01], WAIT_1_BEFORE_COPY_PAGE_03
 	copyVideoPage src=0x00, dst=0x03
 	mov [0x01], 0x000E
 
-LABEL_1219:
+DELAY_14_BEFORE_BLIT_DISPATCH:
 	break
-	djnz [0x01], LABEL_1219
+	djnz [0x01], DELAY_14_BEFORE_BLIT_DISPATCH
 	setup channel=0x3C, address=BLIT_AND_DISPATCH_VAR3
 	break
 	selectVideoPage 0x00
