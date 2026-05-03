@@ -3175,7 +3175,7 @@ LABEL_1010:
 LABEL_1029:
 	break
 	djnz [0x34], LABEL_1029
-	jmp LABEL_1396
+	jmp LAKE_INTRO_SETUP
 	killChannel
 
 LAKE_PALETTE_FADE_IN:
@@ -3308,27 +3308,27 @@ LESTER_AT_POOL_LOOP_BODY:
 	selectVideoPage 0xFF
 	mov [0x28], 0x0002
 
-LABEL_1129:
+LESTER_RISE_LOOP:
 	sub [0x01], 0x000C
 	add [0x02], 0x0003
 	video type=1, offset=CINEMATIC_LAKE_LESTER_RISE, x=[0x01], y=[0x02], zoom=0x40
 	break
-	djnz [0x28], LABEL_1129
+	djnz [0x28], LESTER_RISE_LOOP
 	mov [0x28], 0x0002
 
-LABEL_113F:
+DECOR_F1_DRIFT_LOOP:
 	sub [0x01], 0x000A
 	add [0x02], 0x0005
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F1, x=[0x01], y=[0x02], zoom=0x40
 	break
-	djnz [0x28], LABEL_113F
+	djnz [0x28], DECOR_F1_DRIFT_LOOP
 	mov [0x28], 0x0004
 
-LABEL_1155:
+DECOR_F2_DRIFT_LOOP:
 	sub [0x01], 0x0003
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F2, x=[0x01], y=[0x02], zoom=0x40
 	break
-	djnz [0x28], LABEL_1155
+	djnz [0x28], DECOR_F2_DRIFT_LOOP
 	sub [0x01], 0x0002
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F3, x=[0x01], y=[0x02], zoom=0x40
 	break
@@ -3336,10 +3336,10 @@ LABEL_1155:
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F4, x=[0x01], y=[0x02], zoom=0x40
 	setup channel=0x16, address=LAKE_PALETTE_FADE_IN
 
-LABEL_117A:
+DECOR_F4_HOLD_LOOP:
 	break
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F4, x=[0x01], y=[0x02], zoom=0x40
-	jmp LABEL_117A
+	jmp DECOR_F4_HOLD_LOOP
 	killChannel
 
 LESTER_FALLING_PLAY_AND_ANIM:
@@ -3356,41 +3356,41 @@ LESTER_FALLING_PLAY_AND_ANIM:
 	break
 	mov [0x28], 0x0002
 
-LABEL_11AC:
+LESTER_FALL_PHASE_1:
 	sub [0x01], 0x000C
 	add [0x02], 0x0003
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F5, x=[0x01], y=[0x02], zoom=0x40
 	break
-	djnz [0x28], LABEL_11AC
+	djnz [0x28], LESTER_FALL_PHASE_1
 	mov [0x28], 0x0002
 
-LABEL_11C2:
+LESTER_FALL_PHASE_2:
 	sub [0x01], 0x000A
 	add [0x02], 0x0005
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F6, x=[0x01], y=[0x02], zoom=0x40
 	break
-	djnz [0x28], LABEL_11C2
+	djnz [0x28], LESTER_FALL_PHASE_2
 	mov [0x28], 0x0005
 	mov [0x29], 0xFFFB
 
-LABEL_11DC:
+ENTITY_DROP_BOUNCE_LOOP:
 	add [0x01], [0x29]
 	add [0x29], 0x0001
 	video type=1, offset=CINEMATIC_LAKE_ENTITY_DROP, x=[0x01], y=[0x02], zoom=0x40
 	break
-	djnz [0x28], LABEL_11DC
+	djnz [0x28], ENTITY_DROP_BOUNCE_LOOP
 	mov [0x28], 0x0003
 
-LABEL_11F1:
+ENTITY_DROP_FINAL_PHASE:
 	sub [0x01], 0x0001
 	video type=1, offset=CINEMATIC_LAKE_ENTITY_DROP, x=[0x01], y=[0x02], zoom=0x40
 	break
-	djnz [0x28], LABEL_11F1
+	djnz [0x28], ENTITY_DROP_FINAL_PHASE
 
-LABEL_11FF:
+ENTITY_DROP_HOLD_LOOP:
 	video type=1, offset=CINEMATIC_LAKE_ENTITY_DROP, x=[0x01], y=[0x02], zoom=0x40
 	break
-	jmp LABEL_11FF
+	jmp ENTITY_DROP_HOLD_LOOP
 	killChannel
 
 DECOR_F7_BLINK_3X_LOOP:
@@ -3412,10 +3412,10 @@ DECOR_F7_BLINK_3X_LOOP_BODY:
 	break
 	mov [0x14], 0x0006
 
-LABEL_1239:
+DECOR_F8_HOLD_LOOP:
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F8, x=[0x32], y=[0x33], zoom=0x40
 	break
-	djnz [0x14], LABEL_1239
+	djnz [0x14], DECOR_F8_HOLD_LOOP
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F8, x=[0x32], y=[0x33], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F8, x=[0x32], y=[0x33], zoom=0x40
@@ -3445,40 +3445,40 @@ DECOR_F9_THEN_F10_F10_BODY:
 	djnz [0x14], DECOR_F9_THEN_F10_F10_BODY
 	mov [0x14], 0x0003
 
-LABEL_1289:
+DECOR_F11_HOLD_LOOP:
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F11, x=[0x32], y=[0x33], zoom=0x40
 	break
-	djnz [0x14], LABEL_1289
+	djnz [0x14], DECOR_F11_HOLD_LOOP
 	mov [0x14], 0x0003
 
-LABEL_1297:
+DECOR_F10_REPEAT_LOOP:
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F10, x=[0x32], y=[0x33], zoom=0x40
 	break
-	djnz [0x14], LABEL_1297
+	djnz [0x14], DECOR_F10_REPEAT_LOOP
 	mov [0x14], 0x0002
 
-LABEL_12A5:
+DECOR_F9_REPEAT_LOOP:
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F9, x=[0x32], y=[0x33], zoom=0x40
 	break
-	djnz [0x14], LABEL_12A5
+	djnz [0x14], DECOR_F9_REPEAT_LOOP
 	mov [0x14], 0x0003
 
-LABEL_12B3:
+DECOR_F12_HOLD_LOOP:
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F12, x=[0x32], y=[0x33], zoom=0x40
 	break
-	djnz [0x14], LABEL_12B3
+	djnz [0x14], DECOR_F12_HOLD_LOOP
 	mov [0x14], 0x0003
 
-LABEL_12C1:
+DECOR_F13_HOLD_LOOP:
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F13, x=[0x32], y=[0x33], zoom=0x40
 	break
-	djnz [0x14], LABEL_12C1
+	djnz [0x14], DECOR_F13_HOLD_LOOP
 	mov [0x14], 0x0003
 
-LABEL_12CF:
+DECOR_F12_REPEAT_LOOP:
 	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F12, x=[0x32], y=[0x33], zoom=0x40
 	break
-	djnz [0x14], LABEL_12CF
+	djnz [0x14], DECOR_F12_REPEAT_LOOP
 	mov [0x14], 0x0002
 	jmp DECOR_F9_THEN_F10_F9_BODY
 	killChannel
@@ -3545,14 +3545,14 @@ LESTER_RAISES_A_HAND:
 	break
 	video type=1, offset=CINEMATIC_LESTER_RAISE_HAND_F3, x=[0x01], y=[0x02], zoom=0x40
 
-LABEL_1388:
+LESTER_AT_POOL_HOLD_LOOP:
 	break
 	video type=1, offset=CINEMATIC_LAKE_LESTER_AT_POOL, x=[0x01], y=[0x02], zoom=0x40
 	mov [PAUSE_SLICES], 0x0004
-	jmp LABEL_1388
+	jmp LESTER_AT_POOL_HOLD_LOOP
 	killChannel
 
-LABEL_1396:
+LAKE_INTRO_SETUP:
 	unfreezeChannels first=0x00, last=0x09
 	unfreezeChannels first=0x0B, last=0x3B
 	copyVideoPage src=0x00, dst=0x03
@@ -3567,9 +3567,9 @@ LABEL_1396:
 	mov [0x19], 0x003C
 ;@endif
 
-LABEL_13B9:
+LAKE_INTRO_PRE_DELAY:
 	break
-	djnz [0x19], LABEL_13B9
+	djnz [0x19], LAKE_INTRO_PRE_DELAY
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
@@ -3591,26 +3591,26 @@ LABEL_13B9:
 	setPalette 0x0B
 	video type=1, offset=CINEMATIC_LAKE_INTRO_ANIM_F0, x=[0x18], y=110, zoom=0x40
 
-LABEL_13E7:
+LAKE_INTRO_ANIM_F0_LOOP:
 	break
 	video type=1, offset=CINEMATIC_LAKE_INTRO_ANIM_F0, x=[0x18], y=110, zoom=0x40
-	djnz [0x19], LABEL_13E7
+	djnz [0x19], LAKE_INTRO_ANIM_F0_LOOP
 	mov [0x19], 0x0010
 
-LABEL_13F5:
+LAKE_INTRO_ANIM_F1_LOOP:
 	break
 	video type=1, offset=CINEMATIC_LAKE_INTRO_ANIM_F1, x=[0x18], y=110, zoom=0x40
-	djnz [0x19], LABEL_13F5
+	djnz [0x19], LAKE_INTRO_ANIM_F1_LOOP
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	mov [0x19], 0x000F
 ;@elif BRANCH == "chahi_amiga_1991"
 	mov [0x19], 0x0010
 ;@endif
 
-LABEL_1403:
+LAKE_INTRO_ANIM_F2_LOOP:
 	break
 	video type=1, offset=CINEMATIC_LAKE_INTRO_ANIM_F2, x=[0x18], y=110, zoom=0x40
-	djnz [0x19], LABEL_1403
+	djnz [0x19], LAKE_INTRO_ANIM_F2_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
