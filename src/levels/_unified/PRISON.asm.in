@@ -3,15 +3,15 @@
 ; Folded routines (in byte-address order):
 ;   DELAY_4_QUANTUMS  (2-arm: amiga, dos)
 ;   PRELOAD_PRISON_RESOURCES  (2-arm: amiga, dos)
-;   INLINE_KILL_039  (3-arm: amiga, cart, dos)
+;   KILL_CHANNEL_LANDING  (3-arm: amiga, cart, dos)
 ;   BANK4_AFTER_CIN_414  (2-arm: amiga, dos)
 ;   DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB  (2-arm: amiga, dos)
 ;   INLINE_SET_VAR03_TO_7  (3-arm: amiga, cart, dos)
-;   INCREMENT_VAR31_BY_1  (3-arm: amiga, cart, dos)
+;   INCREMENT_VAR31  (3-arm: amiga, cart, dos)
 ;   SCROLL_BLIT_P80_TO_PFF_OFFSET_00C8  (2-arm: cart, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8  (2-arm: cart, dos)
 ;   COPY_HASH_VAR_37_TO_RANGE  (3-arm: amiga, cart, dos)
-;   ACCUMULATE_HASH_VAR37_38_X3  (3-arm: amiga, cart, dos)
+;   ACCUMULATE_HASH_INTO_VAR37_38  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_311_THEN_CIN_314  (2-arm: amiga, dos)
 ;   DRAW_CIN_311_TO_313_2F_AT_6BB0E3FE  (2-arm: amiga, dos)
 ;   DRAW_CIN_311_TO_312_2F_AT_1550824C  (2-arm: amiga, dos)
@@ -27,7 +27,7 @@
 ;   INLINE_SET_VARE7_TO_5  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_E7_E8  (3-arm: amiga, cart, dos)
 ;   INLINE_SET_VARE9_TO_8  (3-arm: amiga, cart, dos)
-;   INLINE_KILL_040  (3-arm: amiga, cart, dos)
+;   KILL_CHANNEL_LANDING  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_154_TO_156_3F_AT_A74B7DB1  (2-arm: amiga, dos)
 ;   DRAW_CIN_151_TO_153_3F_AT_40D20636  (2-arm: amiga, dos)
 ;   DRAW_CIN_149_TO_150_2F_AT_F63AB95D  (2-arm: amiga, dos)
@@ -67,8 +67,8 @@
 ;   INIT_VARS_07_2F  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_2F_29_1  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_99B_32B55F1E  (2-arm: amiga, dos)
-;   DEDUP_PRISON_5B_022  (3-arm: amiga, cart, dos)
-;   DEDUP_PRISON_5B_023  (3-arm: amiga, cart, dos)
+;   SET_VAR2F_TO_000F  (3-arm: amiga, cart, dos)
+;   SET_VAR2F_TO_000F  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_104B_F18A2F7D  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_94B_44BEEF04  (3-arm: amiga, cart, dos)
 ;   INCREMENT_VAR21_BY_F  (3-arm: amiga, cart, dos)
@@ -93,14 +93,14 @@
 ;   COPY_VARAD_TO_VAR11  (3-arm: amiga, cart, dos)
 ;   COPY_VAR11_TO_VARAD  (3-arm: amiga, cart, dos)
 ;   DECREMENT_VAR22  (3-arm: amiga, cart, dos)
-;   DEDUP_PRISON_5B_031  (3-arm: amiga, cart, dos)
-;   DEDUP_PRISON_5B_032  (3-arm: amiga, cart, dos)
+;   DEDUP_CAVES_5B_003  (3-arm: amiga, cart, dos)
+;   DEDUP_CAVES_5B_003  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_79B_5AA87B0D  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_84B_B2820056  (3-arm: amiga, cart, dos)
-;   DEDUP_PRISON_6B_001  (3-arm: amiga, cart, dos)
-;   TRIVIAL_RET  (3-arm: amiga, cart, dos)
+;   DEDUP_CAVES_6B_001  (3-arm: amiga, cart, dos)
+;   SHARED_RET  (3-arm: amiga, cart, dos)
 ;   COPY_VAR01_TO_VAR28  (3-arm: amiga, cart, dos)
-;   DEDUP_PRISON_6B_002  (3-arm: amiga, cart, dos)
+;   DEDUP_CAVES_6B_001  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_104B_22B91458  (2-arm: cart, dos)
 ;   DRAW_CIN_SEQ_085_085_086  (2-arm: amiga, dos)
 ;   DRAW_CIN_305_TO_309_5F_AT_AACB4DF5  (2-arm: amiga, dos)
@@ -139,36 +139,36 @@
 ;   INLINE_DRAW_CV_216_027  (2-arm: cart, dos)
 ;   INLINE_DRAW_CV_220_008  (2-arm: cart, dos)
 ;   FOLD_BODY_99B_D8CF1AF9  (2-arm: cart, dos)
-;   INLINE_DRAW_CV_228_020  (2-arm: cart, dos)
-;   INLINE_DRAW_CV_228_021  (2-arm: cart, dos)
-;   INLINE_DRAW_CV_220_009  (2-arm: cart, dos)
-;   INLINE_DRAW_CV_216_028  (2-arm: cart, dos)
+;   INLINE_DRAW_CV_228_018  (2-arm: cart, dos)
+;   INLINE_DRAW_CV_228_018  (2-arm: cart, dos)
+;   INLINE_DRAW_CV_220_008  (2-arm: cart, dos)
+;   INLINE_DRAW_CV_216_027  (2-arm: cart, dos)
 ;   FOLD_BODY_99B_535C94C0  (2-arm: cart, dos)
-;   INLINE_DRAW_CV_266_029  (2-arm: cart, dos)
+;   INLINE_DRAW_CV_266_005  (2-arm: cart, dos)
 ;   INLINE_DRAW_CV_269_024  (2-arm: cart, dos)
 ;   INLINE_DRAW_CV_272_003  (2-arm: cart, dos)
 ;   FOLD_BODY_99B_76C60EB2  (2-arm: cart, dos)
-;   INLINE_DRAW_CV_272_004  (2-arm: cart, dos)
-;   INLINE_DRAW_CV_272_005  (2-arm: cart, dos)
-;   INLINE_DRAW_CV_269_025  (2-arm: cart, dos)
-;   INLINE_DRAW_CV_269_026  (2-arm: cart, dos)
-;   INLINE_DRAW_CV_266_030  (2-arm: cart, dos)
+;   INLINE_DRAW_CV_272_003  (2-arm: cart, dos)
+;   INLINE_DRAW_CV_272_003  (2-arm: cart, dos)
+;   INLINE_DRAW_CV_269_024  (2-arm: cart, dos)
+;   INLINE_DRAW_CV_269_024  (2-arm: cart, dos)
+;   INLINE_DRAW_CV_266_005  (2-arm: cart, dos)
 ;   INLINE_DRAW_CV_243_012  (2-arm: cart, dos)
-;   DEDUP_PRISON_5B_006  (3-arm: amiga, cart, dos)
+;   DEDUP_CAVES_5B_020  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_99B_95D61F48  (2-arm: cart, dos)
 ;   FOLD_BODY_99B_3F1B076D  (2-arm: cart, dos)
-;   DEDUP_PRISON_5B_014  (3-arm: amiga, cart, dos)
+;   DEDUP_CAVES_5B_007  (3-arm: amiga, cart, dos)
 ;   INLINE_DRAW_CV_252_018  (2-arm: cart, dos)
-;   DEDUP_PRISON_5B_015  (3-arm: amiga, cart, dos)
+;   DEDUP_CAVES_5B_007  (3-arm: amiga, cart, dos)
 ;   INLINE_DRAW_CV_255_010  (2-arm: cart, dos)
-;   INLINE_DRAW_CV_255_011  (2-arm: cart, dos)
-;   DEDUP_PRISON_5B_007  (3-arm: amiga, cart, dos)
-;   INLINE_DRAW_CV_252_019  (2-arm: cart, dos)
+;   INLINE_DRAW_CV_255_010  (2-arm: cart, dos)
+;   DEDUP_CAVES_5B_020  (3-arm: amiga, cart, dos)
+;   INLINE_DRAW_CV_252_018  (2-arm: cart, dos)
 ;   FOLD_BODY_99B_D1658A70  (2-arm: cart, dos)
-;   DEDUP_PRISON_5B_016  (3-arm: amiga, cart, dos)
+;   DEDUP_CAVES_5B_007  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_99B_3B6BC4B3  (2-arm: cart, dos)
-;   DEDUP_PRISON_5B_017  (3-arm: amiga, cart, dos)
-;   INLINE_DRAW_CV_243_013  (2-arm: cart, dos)
+;   DEDUP_CAVES_5B_007  (3-arm: amiga, cart, dos)
+;   INLINE_DRAW_CV_243_012  (2-arm: cart, dos)
 ;   INCREMENT_VAR07_BY_1  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_164  (2-arm: amiga, dos)
 ;   DRAW_CIN_165  (2-arm: amiga, dos)
@@ -184,7 +184,7 @@
 ;   DRAW_CIN_168  (2-arm: amiga, dos)
 ;   DRAW_CIN_169  (2-arm: amiga, dos)
 ;   DECREMENT_VAR08_BY_D  (3-arm: amiga, cart, dos)
-;   INLINE_KILL_041  (3-arm: amiga, cart, dos)
+;   KILL_CHANNEL_LANDING  (3-arm: amiga, cart, dos)
 ;   DRAW_CV_074  (2-arm: cart, dos)
 ;   DRAW_CV_075  (2-arm: cart, dos)
 ;   DRAW_CV_076  (2-arm: cart, dos)
@@ -295,11 +295,11 @@
 ;   FOLD_BODY_203B_06F694A2  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_203B_4BED9F88  (3-arm: amiga, cart, dos)
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
-;   INLINE_BREAK_036  (3-arm: amiga, cart, dos)
+;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_187_TO_222_2F_AT_8E66E193  (2-arm: amiga, dos)
 ;   DRAW_CIN_212_TO_213_2F_AT_6B0D0A47  (2-arm: amiga, dos)
-;   INLINE_BREAK_037  (3-arm: amiga, cart, dos)
-;   INLINE_BREAK_038  (3-arm: amiga, cart, dos)
+;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
+;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "prison/amiga__entry.inc"
@@ -360,7 +360,7 @@ PRELOAD_PRISON_RESOURCES:
 ;@include "prison/dos__post_PRELOAD_PRISON_RESOURCES.inc"
 ;@endif
 
-INLINE_KILL_039:
+KILL_CHANNEL_LANDING:
 	killChannel	;@raw=0x11
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -417,7 +417,7 @@ INLINE_SET_VAR03_TO_7:
 ;@include "prison/dos__post_INLINE_SET_VAR03_TO_7.inc"
 ;@endif
 
-INCREMENT_VAR31_BY_1:
+INCREMENT_VAR31:
 	add [0x31], 0x0001	;@raw=0x03,0x31,0x00,0x01
 	ret	;@raw=0x05
 
@@ -504,7 +504,7 @@ COPY_HASH_VAR_37_TO_RANGE:
 ;@include "prison/dos__post_COPY_HASH_VAR_37_TO_RANGE.inc"
 ;@endif
 
-ACCUMULATE_HASH_VAR37_38_X3:
+ACCUMULATE_HASH_INTO_VAR37_38:
 	add [0x37], [0x01]	;@raw=0x02,0x37,0x01
 	add [0x37], [HERO_ACTION_POS_MASK]	;@raw=0x02,0x37,0xFE
 	add [0x37], [0x31]	;@raw=0x02,0x37,0x31
@@ -733,7 +733,7 @@ INLINE_SET_VARE9_TO_8:
 ;@include "prison/dos__post_INLINE_SET_VARE9_TO_8.inc"
 ;@endif
 
-INLINE_KILL_040:
+KILL_CHANNEL_LANDING:
 	killChannel	;@raw=0x11
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -1387,7 +1387,7 @@ FOLD_BODY_99B_32B55F1E:
 ;@include "prison/dos__post_FOLD_BODY_99B_32B55F1E.inc"
 ;@endif
 
-DEDUP_PRISON_5B_022:
+SET_VAR2F_TO_000F:
 	mov [0x2F], 0x000F	;@raw=0x00,0x2F,0x00,0x0F
 	ret	;@raw=0x05
 
@@ -1399,7 +1399,7 @@ DEDUP_PRISON_5B_022:
 ;@include "prison/dos__post_DEDUP_PRISON_5B_022.inc"
 ;@endif
 
-DEDUP_PRISON_5B_023:
+SET_VAR2F_TO_000F:
 	mov [0x2F], 0x000F	;@raw=0x00,0x2F,0x00,0x0F
 	ret	;@raw=0x05
 
@@ -1698,7 +1698,7 @@ DECREMENT_VAR22:
 ;@include "prison/dos__post_DECREMENT_VAR22.inc"
 ;@endif
 
-DEDUP_PRISON_5B_031:
+DEDUP_CAVES_5B_003:
 	mov [0x0F], 0x0000	;@raw=0x00,0x0F,0x00,0x00
 	killChannel	;@raw=0x11
 
@@ -1710,7 +1710,7 @@ DEDUP_PRISON_5B_031:
 ;@include "prison/dos__post_DEDUP_PRISON_5B_031.inc"
 ;@endif
 
-DEDUP_PRISON_5B_032:
+DEDUP_CAVES_5B_003:
 	mov [0x0F], 0x0000	;@raw=0x00,0x0F,0x00,0x00
 	killChannel	;@raw=0x11
 
@@ -1746,7 +1746,7 @@ FOLD_BODY_84B_B2820056:
 ;@include "prison/dos__post_FOLD_BODY_84B_B2820056.inc"
 ;@endif
 
-DEDUP_PRISON_6B_001:
+DEDUP_CAVES_6B_001:
 	mov [0x22], [0x24]	;@raw=0x01,0x22,0x24
 	mov [0x1D], [0x1C]	;@raw=0x01,0x1D,0x1C
 
@@ -1758,7 +1758,7 @@ DEDUP_PRISON_6B_001:
 ;@include "prison/dos__post_DEDUP_PRISON_6B_001.inc"
 ;@endif
 
-TRIVIAL_RET:
+SHARED_RET:
 	ret	;@raw=0x05
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -1781,7 +1781,7 @@ COPY_VAR01_TO_VAR28:
 ;@include "prison/dos__post_COPY_VAR01_TO_VAR28.inc"
 ;@endif
 
-DEDUP_PRISON_6B_002:
+DEDUP_CAVES_6B_001:
 	mov [0x22], [0x24]	;@raw=0x01,0x22,0x24
 	mov [0x1D], [0x1C]	;@raw=0x01,0x1D,0x1C
 
@@ -2308,7 +2308,7 @@ FOLD_BODY_99B_D8CF1AF9:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-INLINE_DRAW_CV_228_020:
+INLINE_DRAW_CV_228_018:
 	video type=0, offset=COMMON_VIDEO_228, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x16,0xAB,0x07,0x08
 ;@endif
 
@@ -2319,7 +2319,7 @@ INLINE_DRAW_CV_228_020:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-INLINE_DRAW_CV_228_021:
+INLINE_DRAW_CV_228_018:
 	video type=0, offset=COMMON_VIDEO_228, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x16,0xAB,0x07,0x08
 ;@endif
 
@@ -2330,7 +2330,7 @@ INLINE_DRAW_CV_228_021:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-INLINE_DRAW_CV_220_009:
+INLINE_DRAW_CV_220_008:
 	video type=0, offset=COMMON_VIDEO_220, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x16,0xAF,0x07,0x08
 ;@endif
 
@@ -2341,7 +2341,7 @@ INLINE_DRAW_CV_220_009:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-INLINE_DRAW_CV_216_028:
+INLINE_DRAW_CV_216_027:
 	video type=0, offset=COMMON_VIDEO_216, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x16,0xB3,0x07,0x08
 ;@endif
 
@@ -2363,7 +2363,7 @@ FOLD_BODY_99B_535C94C0:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-INLINE_DRAW_CV_266_029:
+INLINE_DRAW_CV_266_005:
 	video type=0, offset=COMMON_VIDEO_266, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x19,0x00,0x07,0x08
 ;@endif
 
@@ -2407,7 +2407,7 @@ FOLD_BODY_99B_76C60EB2:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-INLINE_DRAW_CV_272_004:
+INLINE_DRAW_CV_272_003:
 	video type=0, offset=COMMON_VIDEO_272, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x18,0xF6,0x07,0x08
 ;@endif
 
@@ -2418,7 +2418,7 @@ INLINE_DRAW_CV_272_004:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-INLINE_DRAW_CV_272_005:
+INLINE_DRAW_CV_272_003:
 	video type=0, offset=COMMON_VIDEO_272, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x18,0xF6,0x07,0x08
 ;@endif
 
@@ -2429,7 +2429,7 @@ INLINE_DRAW_CV_272_005:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-INLINE_DRAW_CV_269_025:
+INLINE_DRAW_CV_269_024:
 	video type=0, offset=COMMON_VIDEO_269, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x18,0xFB,0x07,0x08
 ;@endif
 
@@ -2440,7 +2440,7 @@ INLINE_DRAW_CV_269_025:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-INLINE_DRAW_CV_269_026:
+INLINE_DRAW_CV_269_024:
 	video type=0, offset=COMMON_VIDEO_269, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x18,0xFB,0x07,0x08
 ;@endif
 
@@ -2451,7 +2451,7 @@ INLINE_DRAW_CV_269_026:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-INLINE_DRAW_CV_266_030:
+INLINE_DRAW_CV_266_005:
 	video type=0, offset=COMMON_VIDEO_266, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x19,0x00,0x07,0x08
 ;@endif
 
@@ -2472,7 +2472,7 @@ INLINE_DRAW_CV_243_012:
 ;@include "prison/dos__post_INLINE_DRAW_CV_243_012.inc"
 ;@endif
 
-DEDUP_PRISON_5B_006:
+DEDUP_CAVES_5B_020:
 	add [0x08], 0x0001	;@raw=0x03,0x08,0x00,0x01
 	ret	;@raw=0x05
 
@@ -2506,7 +2506,7 @@ FOLD_BODY_99B_3F1B076D:
 ;@include "prison/dos__post_FOLD_BODY_99B_3F1B076D.inc"
 ;@endif
 
-DEDUP_PRISON_5B_014:
+DEDUP_CAVES_5B_007:
 	sub [0x08], 0x0001	;@raw=0x03,0x08,0xFF,0xFF
 	ret	;@raw=0x05
 
@@ -2529,7 +2529,7 @@ INLINE_DRAW_CV_252_018:
 ;@include "prison/dos__post_INLINE_DRAW_CV_252_018.inc"
 ;@endif
 
-DEDUP_PRISON_5B_015:
+DEDUP_CAVES_5B_007:
 	sub [0x08], 0x0001	;@raw=0x03,0x08,0xFF,0xFF
 	ret	;@raw=0x05
 
@@ -2553,7 +2553,7 @@ INLINE_DRAW_CV_255_010:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-INLINE_DRAW_CV_255_011:
+INLINE_DRAW_CV_255_010:
 	video type=0, offset=COMMON_VIDEO_255, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x11,0x09,0x07,0x08
 ;@endif
 
@@ -2563,7 +2563,7 @@ INLINE_DRAW_CV_255_011:
 ;@include "prison/dos__post_INLINE_DRAW_CV_255_011.inc"
 ;@endif
 
-DEDUP_PRISON_5B_007:
+DEDUP_CAVES_5B_020:
 	add [0x08], 0x0001	;@raw=0x03,0x08,0x00,0x01
 	ret	;@raw=0x05
 
@@ -2576,7 +2576,7 @@ DEDUP_PRISON_5B_007:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-INLINE_DRAW_CV_252_019:
+INLINE_DRAW_CV_252_018:
 	video type=0, offset=COMMON_VIDEO_252, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x11,0x00,0x07,0x08
 ;@endif
 
@@ -2597,7 +2597,7 @@ FOLD_BODY_99B_D1658A70:
 ;@include "prison/dos__post_FOLD_BODY_99B_D1658A70.inc"
 ;@endif
 
-DEDUP_PRISON_5B_016:
+DEDUP_CAVES_5B_007:
 	sub [0x08], 0x0001	;@raw=0x03,0x08,0xFF,0xFF
 	ret	;@raw=0x05
 
@@ -2620,7 +2620,7 @@ FOLD_BODY_99B_3B6BC4B3:
 ;@include "prison/dos__post_FOLD_BODY_99B_3B6BC4B3.inc"
 ;@endif
 
-DEDUP_PRISON_5B_017:
+DEDUP_CAVES_5B_007:
 	sub [0x08], 0x0001	;@raw=0x03,0x08,0xFF,0xFF
 	ret	;@raw=0x05
 
@@ -2633,7 +2633,7 @@ DEDUP_PRISON_5B_017:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-INLINE_DRAW_CV_243_013:
+INLINE_DRAW_CV_243_012:
 	video type=0, offset=COMMON_VIDEO_243, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x30,0x84,0x07,0x08
 ;@endif
 
@@ -2823,7 +2823,7 @@ DECREMENT_VAR08_BY_D:
 ;@include "prison/dos__post_DECREMENT_VAR08_BY_D.inc"
 ;@endif
 
-INLINE_KILL_041:
+KILL_CHANNEL_LANDING:
 	killChannel	;@raw=0x11
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -4208,7 +4208,7 @@ INLINE_BREAK_035:
 ;@include "prison/dos__post_INLINE_BREAK_035.inc"
 ;@endif
 
-INLINE_BREAK_036:
+INLINE_BREAK_035:
 	break	;@raw=0x06
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -4251,7 +4251,7 @@ DRAW_CIN_212_TO_213_2F_AT_6B0D0A47:
 ;@include "prison/dos__post_DRAW_CIN_212_TO_213_2F_AT_6B0D0A47.inc"
 ;@endif
 
-INLINE_BREAK_037:
+INLINE_BREAK_035:
 	break	;@raw=0x06
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -4262,7 +4262,7 @@ INLINE_BREAK_037:
 ;@include "prison/dos__post_INLINE_BREAK_037.inc"
 ;@endif
 
-INLINE_BREAK_038:
+INLINE_BREAK_035:
 	break	;@raw=0x06
 
 ;@if BRANCH == "chahi_amiga_1991"

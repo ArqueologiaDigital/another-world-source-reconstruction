@@ -57,7 +57,7 @@
 ;   INIT_VARS_2F_29  (2-arm: cart, dos)
 ;   INIT_VARS_2F_29_12  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_189B_29E88AAE  (3-arm: amiga, cart, dos)
-;   INIT_VARS_2F_29_12_1  (3-arm: amiga, cart, dos)
+;   INIT_VARS_2F_29_12  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_94B_44BEEF04  (3-arm: amiga, cart, dos)
 ;   INCREMENT_VAR21_BY_F  (3-arm: amiga, cart, dos)
 ;   INLINE_SUB_VAR22_BY_23  (3-arm: amiga, cart, dos)
@@ -956,7 +956,7 @@ FOLD_BODY_189B_29E88AAE:
 ;@include "capsule/dos__post_FOLD_BODY_189B_29E88AAE.inc"
 ;@endif
 
-INIT_VARS_2F_29_12_1:
+INIT_VARS_2F_29_12:
 	mov [0x2F], 0x0009	;@raw=0x00,0x2F,0x00,0x09
 	mov [0x29], 0x0000	;@raw=0x00,0x29,0x00,0x00
 	mov [0x12], 0x4010	;@raw=0x00,0x12,0x40,0x10

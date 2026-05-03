@@ -6,11 +6,11 @@
 ;   BANK4_AFTER_CIN_414  (2-arm: amiga, dos)
 ;   DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB  (2-arm: amiga, dos)
 ;   INLINE_SET_VAR03_TO_7  (3-arm: amiga, cart, dos)
-;   INCREMENT_VAR31_BY_1  (3-arm: amiga, cart, dos)
+;   INCREMENT_VAR31  (3-arm: amiga, cart, dos)
 ;   SCROLL_BLIT_P80_TO_PFF_OFFSET_00C8  (2-arm: cart, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8  (2-arm: cart, dos)
 ;   COPY_HASH_VAR_37_TO_RANGE  (3-arm: amiga, cart, dos)
-;   ACCUMULATE_HASH_VAR37_38_X3  (3-arm: amiga, cart, dos)
+;   ACCUMULATE_HASH_INTO_VAR37_38  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_311_THEN_CIN_314  (2-arm: amiga, dos)
 ;   DRAW_CIN_311_TO_313_2F_AT_6BB0E3FE  (2-arm: amiga, dos)
 ;   DRAW_CIN_311_TO_312_2F_AT_1550824C  (2-arm: amiga, dos)
@@ -266,11 +266,11 @@
 ;   BANK4_AFTER_CIN_414  (2-arm: amiga, dos)
 ;   DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB  (2-arm: amiga, dos)
 ;   INLINE_SET_VAR03_TO_7  (3-arm: amiga, cart, dos)
-;   INCREMENT_VAR31_BY_1  (3-arm: amiga, cart, dos)
+;   INCREMENT_VAR31  (3-arm: amiga, cart, dos)
 ;   SCROLL_BLIT_P80_TO_PFF_OFFSET_00C8  (2-arm: cart, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8  (2-arm: cart, dos)
 ;   COPY_HASH_VAR_37_TO_RANGE  (3-arm: amiga, cart, dos)
-;   ACCUMULATE_HASH_VAR37_38_X3  (3-arm: amiga, cart, dos)
+;   ACCUMULATE_HASH_INTO_VAR37_38  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_311_THEN_CIN_314  (2-arm: amiga, dos)
 ;   DRAW_CIN_311_TO_313_2F_AT_6BB0E3FE  (2-arm: amiga, dos)
 ;   DRAW_CIN_311_TO_312_2F_AT_1550824C  (2-arm: amiga, dos)
@@ -526,11 +526,11 @@
 ;   BANK4_AFTER_CIN_414  (2-arm: amiga, dos)
 ;   DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB  (2-arm: amiga, dos)
 ;   INLINE_SET_VAR03_TO_7  (3-arm: amiga, cart, dos)
-;   INCREMENT_VAR31_BY_1  (3-arm: amiga, cart, dos)
+;   INCREMENT_VAR31  (3-arm: amiga, cart, dos)
 ;   SCROLL_BLIT_P80_TO_PFF_OFFSET_00C8  (2-arm: cart, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8  (2-arm: cart, dos)
 ;   COPY_HASH_VAR_37_TO_RANGE  (3-arm: amiga, cart, dos)
-;   ACCUMULATE_HASH_VAR37_38_X3  (3-arm: amiga, cart, dos)
+;   ACCUMULATE_HASH_INTO_VAR37_38  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_311_THEN_CIN_314  (2-arm: amiga, dos)
 ;   DRAW_CIN_311_TO_313_2F_AT_6BB0E3FE  (2-arm: amiga, dos)
 ;   DRAW_CIN_311_TO_312_2F_AT_1550824C  (2-arm: amiga, dos)
@@ -764,11 +764,11 @@
 ;
 ; Folded routines (in byte-address order):
 ;   INLINE_SET_VAR03_TO_7  (3-arm: amiga, cart, dos)
-;   INCREMENT_VAR31_BY_1  (3-arm: amiga, cart, dos)
+;   INCREMENT_VAR31  (3-arm: amiga, cart, dos)
 ;   SCROLL_BLIT_P80_TO_PFF_OFFSET_00C8  (2-arm: cart, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8  (2-arm: cart, dos)
 ;   COPY_HASH_VAR_37_TO_RANGE  (3-arm: amiga, cart, dos)
-;   ACCUMULATE_HASH_VAR37_38_X3  (3-arm: amiga, cart, dos)
+;   ACCUMULATE_HASH_INTO_VAR37_38  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_311_THEN_CIN_314  (2-arm: amiga, dos)
 ;   DRAW_CIN_315_PROGRESSIVE  (2-arm: amiga, dos)
 ;   INLINE_SET_VARE6_TO_50  (3-arm: amiga, cart, dos)
@@ -973,11 +973,11 @@
 ;
 ; Folded routines (in byte-address order):
 ;   INLINE_SET_VAR03_TO_7  (3-arm: amiga, cart, dos)
-;   INCREMENT_VAR31_BY_1  (3-arm: amiga, cart, dos)
+;   INCREMENT_VAR31  (3-arm: amiga, cart, dos)
 ;   SCROLL_BLIT_P80_TO_PFF_OFFSET_00C8  (2-arm: cart, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8  (2-arm: cart, dos)
 ;   COPY_HASH_VAR_37_TO_RANGE  (3-arm: amiga, cart, dos)
-;   ACCUMULATE_HASH_VAR37_38_X3  (3-arm: amiga, cart, dos)
+;   ACCUMULATE_HASH_INTO_VAR37_38  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_311_THEN_CIN_314  (2-arm: amiga, dos)
 ;   DRAW_CIN_315_PROGRESSIVE  (2-arm: amiga, dos)
 ;   INLINE_SET_VARE6_TO_50  (3-arm: amiga, cart, dos)
@@ -2270,5 +2270,5 @@ LIKELY_A_COPY_PROTECTION_MECHANISM:
 
 LABEL_0095:
 	deleteChannels first=0x00, last=0x3F	;@raw=0x0C,0x00,0x3F,0x02
-	setup channel=0x3C, address=INLINE_KILL_039	;@raw=0x08,0x3C,0x01,0x7F
+	setup channel=0x3C, address=KILL_CHANNEL_LANDING	;@raw=0x08,0x3C,0x01,0x7F
 	killChannel	;@raw=0x11
