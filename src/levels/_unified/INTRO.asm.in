@@ -716,23 +716,23 @@ INTRO_PAUSE_3_AND_DRAW_CIN_138:
 	setup channel=0x06, address=SCENE_TRANSITION_NEXT_PHASE
 	mov [0x01], 0x0032
 
-LABEL_014B:
+WAIT_VAR_01_50_TICKS:
 	break
-	djnz [0x01], LABEL_014B
+	djnz [0x01], WAIT_VAR_01_50_TICKS
 	mov [0x01], 0x0023
 	mov [PAUSE_SLICES], 0x0005
 
-LABEL_0158:
+DISPLAY_TEXT_190_LOOP:
 	break
 	text id=0x0190, x=3, y=168, color=0x0B
-	djnz [0x01], LABEL_0158
+	djnz [0x01], DISPLAY_TEXT_190_LOOP
 	mov [0x01], 0x0031
 	mov [PAUSE_SLICES], 0x0005
 
-LABEL_016B:
+DISPLAY_TEXT_191_LOOP:
 	break
 	text id=0x0191, x=3, y=168, color=0x0B
-	djnz [0x01], LABEL_016B
+	djnz [0x01], DISPLAY_TEXT_191_LOOP
 	setup channel=0x08, address=DELETE_CHANNELS_0A_TO_1F
 	break
 	text id=0x0191, x=3, y=168, color=0x0B
@@ -936,18 +936,18 @@ INIT_VARS_10_11_AND_SELECT_PAGE0:
 	selectVideoPage 0xFF
 	mov [0x0F], 0x001E
 
-LABEL_0362:
+WAIT_VAR_0F_30_TICKS:
 	break
-	djnz [0x0F], LABEL_0362
+	djnz [0x0F], WAIT_VAR_0F_30_TICKS
 	setup channel=0x3C, address=BLIT_AND_DISPATCH_VAR3
 	mov [0x0F], 0x000A
 
-LABEL_036F:
+DRIFT_VAR_10_INC_BY_1_LOOP:
 	add [0x10], 0x0001
 	break
 	sub [0x11], 0x0001
 	break
-	djnz [0x0F], LABEL_036F
+	djnz [0x0F], DRIFT_VAR_10_INC_BY_1_LOOP
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	killChannel
 
