@@ -665,14 +665,14 @@ BLIT_AND_COPY_PAGE_FF_LOOP:
 	break
 	jmp BLIT_AND_DISPATCH_HERO_ACTION
 
-LABEL_00C1:
+BLIT_AND_DISPATCH_VAR3:
 	add [0xC7], 0x0001
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	jne [HERO_ACTION], 0x00, LABEL_09CA
 	copyVideoPage src=0x00, dst=0xFF
 	break
-	jmp LABEL_00C1
+	jmp BLIT_AND_DISPATCH_VAR3
 
 LABEL_00D6:
 	blitFramebuffer 0xFF
@@ -736,7 +736,7 @@ LABEL_016B:
 	setup channel=0x08, address=DELETE_CHANNELS_0A_TO_1F
 	break
 	text id=0x0191, x=3, y=168, color=0x0B
-	setup channel=0x02, address=LABEL_1C1D
+	setup channel=0x02, address=INTRO_TRANSITION_TO_LAKE_SCENE
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	killChannel
 
@@ -939,7 +939,7 @@ LABEL_034E:
 LABEL_0362:
 	break
 	djnz [0x0F], LABEL_0362
-	setup channel=0x3C, address=LABEL_00C1
+	setup channel=0x3C, address=BLIT_AND_DISPATCH_VAR3
 	mov [0x0F], 0x000A
 
 LABEL_036F:
@@ -1006,13 +1006,13 @@ LABEL_03FD:
 	break
 	video type=1, offset=CINEMATIC_048, x=160, y=100
 	djnz [0x01], LABEL_03FD
-	setup channel=0x01, address=LABEL_266A
-	setup channel=0x02, address=LABEL_24E6
-	setup channel=0x03, address=LABEL_269E
+	setup channel=0x01, address=INTRO_FILL_AND_DRAW_CIN_103
+	setup channel=0x02, address=INTRO_PLAY_FX_AND_PALETTE_4_LOOP
+	setup channel=0x03, address=DRAW_CINEMATIC_053_LOOP
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	killChannel
 
-LABEL_0417:
+CH_0A_INIT_VAR_02:
 	break
 	mov [0x02], 0x0032
 
@@ -1030,11 +1030,11 @@ LABEL_041C:
 	video type=1, offset=CINEMATIC_051, x=160, y=100
 	break
 	video type=1, offset=CINEMATIC_052, x=160, y=100
-	jmp LABEL_0417
+	jmp CH_0A_INIT_VAR_02
 LABEL_0448:
 	killChannel
 
-LABEL_0449:
+CH_0B_INIT_VAR_03:
 	break
 	mov [0x03], 0x0046
 
@@ -1060,11 +1060,11 @@ LABEL_044E:
 	break
 	video type=1, offset=CINEMATIC_374, x=160, y=100
 	play id=0x0008, freq=0x0C, vol=0x3F, channel=0x03
-	jmp LABEL_0449
+	jmp CH_0B_INIT_VAR_03
 LABEL_048E:
 	killChannel
 
-LABEL_048F:
+CH_0C_INIT_VAR_04:
 	break
 	mov [0x04], 0x0050
 
@@ -1087,11 +1087,11 @@ LABEL_0494:
 	break
 	video type=1, offset=CINEMATIC_372, x=200, y=100
 	play id=0x0008, freq=0x01, vol=0x3F, channel=0x02
-	jmp LABEL_048F
+	jmp CH_0C_INIT_VAR_04
 LABEL_04C9:
 	killChannel
 
-LABEL_04CA:
+CH_0D_INIT_VAR_05:
 	break
 	mov [0x05], 0x0014
 
@@ -1129,7 +1129,7 @@ LABEL_04FD:
 LABEL_051E:
 	break
 	djnz [0x05], LABEL_051E
-	jmp LABEL_04CA
+	jmp CH_0D_INIT_VAR_05
 LABEL_0526:
 	killChannel
 
@@ -1236,7 +1236,7 @@ LABEL_05FB:
 	killChannel
 
 LABEL_05FC:
-	setup channel=0x03, address=LABEL_0DD7
+	setup channel=0x03, address=INTRO_TRANSITION_TO_LAKE_SETUP
 	setup channel=0x01, address=INTRO_SCENE_INIT_PARTICLES
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 ;@if BRANCH == "gba_2004"
@@ -1248,10 +1248,10 @@ LABEL_05FC:
 	play id=0x0008, freq=0x05, vol=0x3F, channel=0x03
 	play id=0x0008, freq=0x00, vol=0x3F, channel=0x02
 	setPalette 0x19
-	setup channel=0x0A, address=LABEL_0417
-	setup channel=0x0B, address=LABEL_0449
-	setup channel=0x0C, address=LABEL_048F
-	setup channel=0x0D, address=LABEL_04CA
+	setup channel=0x0A, address=CH_0A_INIT_VAR_02
+	setup channel=0x0B, address=CH_0B_INIT_VAR_03
+	setup channel=0x0C, address=CH_0C_INIT_VAR_04
+	setup channel=0x0D, address=CH_0D_INIT_VAR_05
 	setup channel=0x0E, address=LABEL_0527
 	setup channel=0x0F, address=LABEL_055A
 	setup channel=0x10, address=LABEL_0586
@@ -2011,7 +2011,7 @@ LABEL_0D71:
 LABEL_0DD6:
 	killChannel
 
-LABEL_0DD7:
+INTRO_TRANSITION_TO_LAKE_SETUP:
 	selectVideoPage 0x03
 	fill page=0x03, color=0x01
 	video type=1, offset=CINEMATIC_379, x=160, y=100
@@ -2408,7 +2408,7 @@ LABEL_120D:
 LABEL_1219:
 	break
 	djnz [0x01], LABEL_1219
-	setup channel=0x3C, address=LABEL_00C1
+	setup channel=0x3C, address=BLIT_AND_DISPATCH_VAR3
 	break
 	selectVideoPage 0x00
 	text id=0x0002, x=1, y=24, color=0x06
@@ -2418,7 +2418,7 @@ LABEL_1219:
 LABEL_1231:
 	break
 	djnz [0x01], LABEL_1231
-	setup channel=0x3C, address=LABEL_00C1
+	setup channel=0x3C, address=BLIT_AND_DISPATCH_VAR3
 	break
 	mov [0x01], 0x0014
 	selectVideoPage 0x00
@@ -3381,7 +3381,7 @@ LABEL_1C02:
 	setup channel=0x06, address=LABEL_1CD9
 	killChannel
 
-LABEL_1C1D:
+INTRO_TRANSITION_TO_LAKE_SCENE:
 	mov [PAUSE_SLICES], 0x0003
 	mov [0x01], 0x002E
 	mov [0x02], 0x00FF
@@ -4210,7 +4210,7 @@ LABEL_24D9:
 LABEL_24E5:
 	killChannel
 
-LABEL_24E6:
+INTRO_PLAY_FX_AND_PALETTE_4_LOOP:
 	break
 	setPalette 0x04
 	play id=0x000D, freq=0x14, vol=0x19, channel=0x02
@@ -4354,7 +4354,7 @@ LABEL_2654:
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	killChannel
 
-LABEL_266A:
+INTRO_FILL_AND_DRAW_CIN_103:
 	fill page=0x00, color=0x02
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_103, x=192, y=100
@@ -4371,10 +4371,10 @@ LABEL_266A:
 	selectVideoPage 0xFF
 	killChannel
 
-LABEL_269E:
+DRAW_CINEMATIC_053_LOOP:
 	video type=1, offset=CINEMATIC_053, x=14, y=80
 	break
-	jmp LABEL_269E
+	jmp DRAW_CINEMATIC_053_LOOP
 LABEL_26A6:
 	killChannel
 ;@if BRANCH == "cartridge_1992"
