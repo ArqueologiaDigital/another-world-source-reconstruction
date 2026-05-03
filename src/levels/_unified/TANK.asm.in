@@ -40,9 +40,9 @@ INLINE_SET_VAR6D_TO_0:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "tank/cart__post_FOLD_BODY_44B_C64BCD6D.inc"
+;@include "tank/cart__post_INLINE_SET_VAR6D_TO_0.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos__post_FOLD_BODY_44B_C64BCD6D.inc"
+;@include "tank/dos__post_INLINE_SET_VAR6D_TO_0.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -69,9 +69,9 @@ INLINE_SET_VAR6B_TO_50:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "tank/cart__post_FOLD_BODY_44B_E11CC986.inc"
+;@include "tank/cart__post_INLINE_SET_VAR6B_TO_50.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos__post_FOLD_BODY_44B_E11CC986.inc"
+;@include "tank/dos__post_INLINE_SET_VAR6B_TO_50.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -167,11 +167,11 @@ INLINE_SET_VAR66_TO_32:
 	mov [0x66], 0x0032	;@raw=0x00,0x66,0x00,0x32
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "tank/amiga__post_FOLD_BODY_44B_1E2BA1E6.inc"
+;@include "tank/amiga__post_INLINE_SET_VAR66_TO_32.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "tank/cart__post_FOLD_BODY_44B_1E2BA1E6.inc"
+;@include "tank/cart__post_INLINE_SET_VAR66_TO_32.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "tank/dos__post_FOLD_BODY_44B_1E2BA1E6.inc"
+;@include "tank/dos__post_INLINE_SET_VAR66_TO_32.inc"
 ;@endif
 
 SUM_HASH_VARS_TO_VAR_64:

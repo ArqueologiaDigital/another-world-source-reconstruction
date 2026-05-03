@@ -318,9 +318,9 @@ DELAY_4_QUANTUMS:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_67B_C7A458A1.inc"
+;@include "prison/amiga__post_DELAY_4_QUANTUMS.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_67B_C7A458A1.inc"
+;@include "prison/dos__post_DELAY_4_QUANTUMS.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -364,11 +364,11 @@ INLINE_KILL_039:
 	killChannel	;@raw=0x11
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_DEDUP_PRISON_1B_039.inc"
+;@include "prison/amiga__post_INLINE_KILL_039.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_1B_039.inc"
+;@include "prison/cart__post_INLINE_KILL_039.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_1B_039.inc"
+;@include "prison/dos__post_INLINE_KILL_039.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -387,9 +387,9 @@ BANK4_AFTER_CIN_414:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_539B_5BCBB80F.inc"
+;@include "prison/amiga__post_BANK4_AFTER_CIN_414.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_539B_5BCBB80F.inc"
+;@include "prison/dos__post_BANK4_AFTER_CIN_414.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -401,20 +401,20 @@ DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_231B_C7A1BFCB.inc"
+;@include "prison/amiga__post_DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_231B_C7A1BFCB.inc"
+;@include "prison/dos__post_DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB.inc"
 ;@endif
 
 INLINE_SET_VAR03_TO_7:
 	mov [0x03], 0x0007	;@raw=0x00,0x03,0x00,0x07
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_44B_D0081C02.inc"
+;@include "prison/amiga__post_INLINE_SET_VAR03_TO_7.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_44B_D0081C02.inc"
+;@include "prison/cart__post_INLINE_SET_VAR03_TO_7.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_44B_D0081C02.inc"
+;@include "prison/dos__post_INLINE_SET_VAR03_TO_7.inc"
 ;@endif
 
 INCREMENT_VAR31_BY_1:
@@ -437,9 +437,9 @@ SCROLL_BLIT_P80_TO_PFF_OFFSET_00C8:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_151B_84319FC2.inc"
+;@include "prison/cart__post_SCROLL_BLIT_P80_TO_PFF_OFFSET_00C8.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_151B_84319FC2.inc"
+;@include "prison/dos__post_SCROLL_BLIT_P80_TO_PFF_OFFSET_00C8.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -455,9 +455,9 @@ CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_281B_FD3BB94A.inc"
+;@include "prison/cart__post_CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_281B_FD3BB94A.inc"
+;@include "prison/dos__post_CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8.inc"
 ;@endif
 
 COPY_HASH_VAR_37_TO_RANGE:
@@ -512,11 +512,11 @@ ACCUMULATE_HASH_VAR37_38_X3:
 	ret	;@raw=0x05
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_190B_C7117085.inc"
+;@include "prison/amiga__post_ACCUMULATE_HASH_VAR37_38_X3.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_190B_C7117085.inc"
+;@include "prison/cart__post_ACCUMULATE_HASH_VAR37_38_X3.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_190B_C7117085.inc"
+;@include "prison/dos__post_ACCUMULATE_HASH_VAR37_38_X3.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -542,9 +542,9 @@ DRAW_CIN_311_TO_313_2F_AT_6BB0E3FE:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_298B_6BB0E3FE.inc"
+;@include "prison/amiga__post_DRAW_CIN_311_TO_313_2F_AT_6BB0E3FE.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_298B_6BB0E3FE.inc"
+;@include "prison/dos__post_DRAW_CIN_311_TO_313_2F_AT_6BB0E3FE.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -557,9 +557,9 @@ DRAW_CIN_311_TO_312_2F_AT_1550824C:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_298B_1550824C.inc"
+;@include "prison/amiga__post_DRAW_CIN_311_TO_312_2F_AT_1550824C.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_298B_1550824C.inc"
+;@include "prison/dos__post_DRAW_CIN_311_TO_312_2F_AT_1550824C.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -572,9 +572,9 @@ DRAW_CIN_311_TO_312_2F_AT_26843400:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_298B_26843400.inc"
+;@include "prison/amiga__post_DRAW_CIN_311_TO_312_2F_AT_26843400.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_298B_26843400.inc"
+;@include "prison/dos__post_DRAW_CIN_311_TO_312_2F_AT_26843400.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -587,9 +587,9 @@ DRAW_CIN_311_TO_312_2F_AT_2A88A18A:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_298B_2A88A18A.inc"
+;@include "prison/amiga__post_DRAW_CIN_311_TO_312_2F_AT_2A88A18A.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_298B_2A88A18A.inc"
+;@include "prison/dos__post_DRAW_CIN_311_TO_312_2F_AT_2A88A18A.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -602,9 +602,9 @@ DRAW_CIN_311_TO_312_2F_AT_76F1E2F4:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_298B_76F1E2F4.inc"
+;@include "prison/amiga__post_DRAW_CIN_311_TO_312_2F_AT_76F1E2F4.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_298B_76F1E2F4.inc"
+;@include "prison/dos__post_DRAW_CIN_311_TO_312_2F_AT_76F1E2F4.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -617,9 +617,9 @@ DRAW_CIN_311_TO_312_2F_AT_A6494EF7:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_298B_A6494EF7.inc"
+;@include "prison/amiga__post_DRAW_CIN_311_TO_312_2F_AT_A6494EF7.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_298B_A6494EF7.inc"
+;@include "prison/dos__post_DRAW_CIN_311_TO_312_2F_AT_A6494EF7.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -655,9 +655,9 @@ DRAW_CIN_316_TO_316_2F_AT_A17C45BF:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_329B_A17C45BF.inc"
+;@include "prison/amiga__post_DRAW_CIN_316_TO_316_2F_AT_A17C45BF.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_329B_A17C45BF.inc"
+;@include "prison/dos__post_DRAW_CIN_316_TO_316_2F_AT_A17C45BF.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -669,9 +669,9 @@ DRAW_CIN_319_TO_319_4F_AT_9E666694:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_314B_9E666694.inc"
+;@include "prison/amiga__post_DRAW_CIN_319_TO_319_4F_AT_9E666694.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_314B_9E666694.inc"
+;@include "prison/dos__post_DRAW_CIN_319_TO_319_4F_AT_9E666694.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -683,31 +683,31 @@ DRAW_CIN_318_TO_318_2F_AT_93A8CE70:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_237B_93A8CE70.inc"
+;@include "prison/amiga__post_DRAW_CIN_318_TO_318_2F_AT_93A8CE70.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_237B_93A8CE70.inc"
+;@include "prison/dos__post_DRAW_CIN_318_TO_318_2F_AT_93A8CE70.inc"
 ;@endif
 
 INLINE_SET_VARE6_TO_50:
 	mov [0xE6], 0x0050	;@raw=0x00,0xE6,0x00,0x50
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_44B_9347543C.inc"
+;@include "prison/amiga__post_INLINE_SET_VARE6_TO_50.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_44B_9347543C.inc"
+;@include "prison/cart__post_INLINE_SET_VARE6_TO_50.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_44B_9347543C.inc"
+;@include "prison/dos__post_INLINE_SET_VARE6_TO_50.inc"
 ;@endif
 
 INLINE_SET_VARE7_TO_5:
 	mov [0xE7], 0x0005	;@raw=0x00,0xE7,0x00,0x05
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_44B_EB350B4D.inc"
+;@include "prison/amiga__post_INLINE_SET_VARE7_TO_5.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_44B_EB350B4D.inc"
+;@include "prison/cart__post_INLINE_SET_VARE7_TO_5.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_44B_EB350B4D.inc"
+;@include "prison/dos__post_INLINE_SET_VARE7_TO_5.inc"
 ;@endif
 
 INIT_VARS_E7_E8:
@@ -726,22 +726,22 @@ INLINE_SET_VARE9_TO_8:
 	mov [0xE9], 0x0008	;@raw=0x00,0xE9,0x00,0x08
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_44B_67AF0E37.inc"
+;@include "prison/amiga__post_INLINE_SET_VARE9_TO_8.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_44B_67AF0E37.inc"
+;@include "prison/cart__post_INLINE_SET_VARE9_TO_8.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_44B_67AF0E37.inc"
+;@include "prison/dos__post_INLINE_SET_VARE9_TO_8.inc"
 ;@endif
 
 INLINE_KILL_040:
 	killChannel	;@raw=0x11
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_DEDUP_PRISON_1B_040.inc"
+;@include "prison/amiga__post_INLINE_KILL_040.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_1B_040.inc"
+;@include "prison/cart__post_INLINE_KILL_040.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_1B_040.inc"
+;@include "prison/dos__post_INLINE_KILL_040.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -756,9 +756,9 @@ DRAW_CIN_154_TO_156_3F_AT_A74B7DB1:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_424B_A74B7DB1.inc"
+;@include "prison/amiga__post_DRAW_CIN_154_TO_156_3F_AT_A74B7DB1.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_424B_A74B7DB1.inc"
+;@include "prison/dos__post_DRAW_CIN_154_TO_156_3F_AT_A74B7DB1.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -773,9 +773,9 @@ DRAW_CIN_151_TO_153_3F_AT_40D20636:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_424B_40D20636.inc"
+;@include "prison/amiga__post_DRAW_CIN_151_TO_153_3F_AT_40D20636.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_424B_40D20636.inc"
+;@include "prison/dos__post_DRAW_CIN_151_TO_153_3F_AT_40D20636.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -788,9 +788,9 @@ DRAW_CIN_149_TO_150_2F_AT_F63AB95D:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_313B_F63AB95D.inc"
+;@include "prison/amiga__post_DRAW_CIN_149_TO_150_2F_AT_F63AB95D.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_313B_F63AB95D.inc"
+;@include "prison/dos__post_DRAW_CIN_149_TO_150_2F_AT_F63AB95D.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -803,9 +803,9 @@ DRAW_CIN_132_TO_133_2F_AT_BB9185F0:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_313B_BB9185F0.inc"
+;@include "prison/amiga__post_DRAW_CIN_132_TO_133_2F_AT_BB9185F0.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_313B_BB9185F0.inc"
+;@include "prison/dos__post_DRAW_CIN_132_TO_133_2F_AT_BB9185F0.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -820,9 +820,9 @@ DRAW_CIN_280_TO_281_2F_AT_75ED3E60:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_390B_75ED3E60.inc"
+;@include "prison/amiga__post_DRAW_CIN_280_TO_281_2F_AT_75ED3E60.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_390B_75ED3E60.inc"
+;@include "prison/dos__post_DRAW_CIN_280_TO_281_2F_AT_75ED3E60.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -878,9 +878,9 @@ DRAW_CIN_146_TO_147_4F_AT_8AA18039:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_438B_8AA18039.inc"
+;@include "prison/amiga__post_DRAW_CIN_146_TO_147_4F_AT_8AA18039.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_438B_8AA18039.inc"
+;@include "prison/dos__post_DRAW_CIN_146_TO_147_4F_AT_8AA18039.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -953,11 +953,11 @@ INLINE_COPY_VAR22_TO_VAR08:
 	mov [0x08], [0x22]	;@raw=0x01,0x08,0x22
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_39B_8DD0C9CC.inc"
+;@include "prison/amiga__post_INLINE_COPY_VAR22_TO_VAR08.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_39B_8DD0C9CC.inc"
+;@include "prison/cart__post_INLINE_COPY_VAR22_TO_VAR08.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_39B_8DD0C9CC.inc"
+;@include "prison/dos__post_INLINE_COPY_VAR22_TO_VAR08.inc"
 ;@endif
 
 SPLIT_VAR09_BITS_INTO_VAR0D:
@@ -970,11 +970,11 @@ SPLIT_VAR09_BITS_INTO_VAR0D:
 	ret	;@raw=0x05
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_274B_363F48D1.inc"
+;@include "prison/amiga__post_SPLIT_VAR09_BITS_INTO_VAR0D.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_274B_363F48D1.inc"
+;@include "prison/cart__post_SPLIT_VAR09_BITS_INTO_VAR0D.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_274B_363F48D1.inc"
+;@include "prison/dos__post_SPLIT_VAR09_BITS_INTO_VAR0D.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -993,33 +993,33 @@ INLINE_SET_VAR29_TO_5:
 	mov [0x29], 0x0005	;@raw=0x00,0x29,0x00,0x05
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_44B_0D0BA00D.inc"
+;@include "prison/amiga__post_INLINE_SET_VAR29_TO_5.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_44B_0D0BA00D.inc"
+;@include "prison/cart__post_INLINE_SET_VAR29_TO_5.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_44B_0D0BA00D.inc"
+;@include "prison/dos__post_INLINE_SET_VAR29_TO_5.inc"
 ;@endif
 
 INLINE_SET_VAR29_TO_6:
 	mov [0x29], 0x0006	;@raw=0x00,0x29,0x00,0x06
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_44B_B503219D.inc"
+;@include "prison/amiga__post_INLINE_SET_VAR29_TO_6.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_44B_B503219D.inc"
+;@include "prison/cart__post_INLINE_SET_VAR29_TO_6.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_44B_B503219D.inc"
+;@include "prison/dos__post_INLINE_SET_VAR29_TO_6.inc"
 ;@endif
 
 INLINE_SET_VARF1_TO_64:
 	mov [0xF1], 0x0064	;@raw=0x00,0xF1,0x00,0x64
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_44B_7F1B8293.inc"
+;@include "prison/amiga__post_INLINE_SET_VARF1_TO_64.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_44B_7F1B8293.inc"
+;@include "prison/cart__post_INLINE_SET_VARF1_TO_64.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_44B_7F1B8293.inc"
+;@include "prison/dos__post_INLINE_SET_VARF1_TO_64.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -1054,11 +1054,11 @@ INLINE_SET_VAR29_TO_28:
 	mov [0x29], 0x0028	;@raw=0x00,0x29,0x00,0x28
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_44B_FCFA9FDA.inc"
+;@include "prison/amiga__post_INLINE_SET_VAR29_TO_28.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_44B_FCFA9FDA.inc"
+;@include "prison/cart__post_INLINE_SET_VAR29_TO_28.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_44B_FCFA9FDA.inc"
+;@include "prison/dos__post_INLINE_SET_VAR29_TO_28.inc"
 ;@endif
 
 FOLD_BODY_89B_179104BB:
@@ -1141,9 +1141,9 @@ DRAW_CIN_569_TO_572_6F_AT_F8680E45:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_597B_F8680E45.inc"
+;@include "prison/amiga__post_DRAW_CIN_569_TO_572_6F_AT_F8680E45.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_597B_F8680E45.inc"
+;@include "prison/dos__post_DRAW_CIN_569_TO_572_6F_AT_F8680E45.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -1453,11 +1453,11 @@ INLINE_SUB_VAR22_BY_23:
 	sub [0x22], 0x0023	;@raw=0x03,0x22,0xFF,0xDD
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_44B_F42C389F.inc"
+;@include "prison/amiga__post_INLINE_SUB_VAR22_BY_23.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_44B_F42C389F.inc"
+;@include "prison/cart__post_INLINE_SUB_VAR22_BY_23.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_44B_F42C389F.inc"
+;@include "prison/dos__post_INLINE_SUB_VAR22_BY_23.inc"
 ;@endif
 
 FOLD_BODY_43B_757368B2:
@@ -1643,11 +1643,11 @@ INLINE_ADD_VAR2C_BY_1:
 	add [0x2C], 0x0001	;@raw=0x03,0x2C,0x00,0x01
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_44B_A00965BC.inc"
+;@include "prison/amiga__post_INLINE_ADD_VAR2C_BY_1.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_44B_A00965BC.inc"
+;@include "prison/cart__post_INLINE_ADD_VAR2C_BY_1.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_44B_A00965BC.inc"
+;@include "prison/dos__post_INLINE_ADD_VAR2C_BY_1.inc"
 ;@endif
 
 COPY_VAR40_TO_VAR27:
@@ -1833,9 +1833,9 @@ DRAW_CIN_305_TO_309_5F_AT_AACB4DF5:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_437B_AACB4DF5.inc"
+;@include "prison/amiga__post_DRAW_CIN_305_TO_309_5F_AT_AACB4DF5.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_437B_AACB4DF5.inc"
+;@include "prison/dos__post_DRAW_CIN_305_TO_309_5F_AT_AACB4DF5.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -1852,9 +1852,9 @@ DRAW_CIN_305_TO_333_7F_AT_96C7E6A8:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_587B_96C7E6A8.inc"
+;@include "prison/amiga__post_DRAW_CIN_305_TO_333_7F_AT_96C7E6A8.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_587B_96C7E6A8.inc"
+;@include "prison/dos__post_DRAW_CIN_305_TO_333_7F_AT_96C7E6A8.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -1895,9 +1895,9 @@ DRAW_CIN_624_TO_628_5F_AT_499AFE0A:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_465B_499AFE0A.inc"
+;@include "prison/amiga__post_DRAW_CIN_624_TO_628_5F_AT_499AFE0A.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_465B_499AFE0A.inc"
+;@include "prison/dos__post_DRAW_CIN_624_TO_628_5F_AT_499AFE0A.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -1913,9 +1913,9 @@ DRAW_CIN_628_TO_625_4F_AT_2F47D6D0:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_367B_2F47D6D0.inc"
+;@include "prison/amiga__post_DRAW_CIN_628_TO_625_4F_AT_2F47D6D0.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_367B_2F47D6D0.inc"
+;@include "prison/dos__post_DRAW_CIN_628_TO_625_4F_AT_2F47D6D0.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -1925,9 +1925,9 @@ DRAW_CIN_229_TO_632_2F_AT_1C4A817A:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_193B_1C4A817A.inc"
+;@include "prison/amiga__post_DRAW_CIN_229_TO_632_2F_AT_1C4A817A.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_193B_1C4A817A.inc"
+;@include "prison/dos__post_DRAW_CIN_229_TO_632_2F_AT_1C4A817A.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -1947,9 +1947,9 @@ DRAW_CIN_683_TO_685_3F_AT_1EB7324B:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_617B_1EB7324B.inc"
+;@include "prison/amiga__post_DRAW_CIN_683_TO_685_3F_AT_1EB7324B.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_617B_1EB7324B.inc"
+;@include "prison/dos__post_DRAW_CIN_683_TO_685_3F_AT_1EB7324B.inc"
 ;@endif
 
 INIT_VARS_16_17:
@@ -1981,9 +1981,9 @@ INLINE_DRAW_CIN_659_AT_160_100:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_74B_2A13494B.inc"
+;@include "prison/amiga__post_INLINE_DRAW_CIN_659_AT_160_100.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_74B_2A13494B.inc"
+;@include "prison/dos__post_INLINE_DRAW_CIN_659_AT_160_100.inc"
 ;@endif
 
 FOLD_BODY_338B_C0D45EFA:
@@ -2210,9 +2210,9 @@ DRAW_CIN_169_WITH_POS_STEP_AT_B673C5FF:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_291B_B673C5FF.inc"
+;@include "prison/amiga__post_DRAW_CIN_169_WITH_POS_STEP_AT_B673C5FF.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_291B_B673C5FF.inc"
+;@include "prison/dos__post_DRAW_CIN_169_WITH_POS_STEP_AT_B673C5FF.inc"
 ;@endif
 
 SHARED_RET:
@@ -2280,9 +2280,9 @@ INLINE_DRAW_CV_216_027:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_027.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_216_027.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_027.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_216_027.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2291,9 +2291,9 @@ INLINE_DRAW_CV_220_008:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_008.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_220_008.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_008.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_220_008.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2313,9 +2313,9 @@ INLINE_DRAW_CV_228_020:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_020.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_228_020.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_020.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_228_020.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2324,9 +2324,9 @@ INLINE_DRAW_CV_228_021:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_021.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_228_021.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_021.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_228_021.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2335,9 +2335,9 @@ INLINE_DRAW_CV_220_009:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_009.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_220_009.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_009.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_220_009.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2346,9 +2346,9 @@ INLINE_DRAW_CV_216_028:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_028.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_216_028.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_028.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_216_028.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2368,9 +2368,9 @@ INLINE_DRAW_CV_266_029:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_029.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_266_029.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_029.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_266_029.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2379,9 +2379,9 @@ INLINE_DRAW_CV_269_024:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_024.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_269_024.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_024.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_269_024.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2390,9 +2390,9 @@ INLINE_DRAW_CV_272_003:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_003.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_272_003.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_003.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_272_003.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2412,9 +2412,9 @@ INLINE_DRAW_CV_272_004:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_004.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_272_004.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_004.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_272_004.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2423,9 +2423,9 @@ INLINE_DRAW_CV_272_005:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_005.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_272_005.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_005.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_272_005.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2434,9 +2434,9 @@ INLINE_DRAW_CV_269_025:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_025.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_269_025.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_025.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_269_025.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2445,9 +2445,9 @@ INLINE_DRAW_CV_269_026:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_026.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_269_026.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_026.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_269_026.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2456,9 +2456,9 @@ INLINE_DRAW_CV_266_030:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_030.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_266_030.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_030.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_266_030.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2467,9 +2467,9 @@ INLINE_DRAW_CV_243_012:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_012.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_243_012.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_012.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_243_012.inc"
 ;@endif
 
 DEDUP_PRISON_5B_006:
@@ -2524,9 +2524,9 @@ INLINE_DRAW_CV_252_018:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_018.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_252_018.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_018.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_252_018.inc"
 ;@endif
 
 DEDUP_PRISON_5B_015:
@@ -2547,9 +2547,9 @@ INLINE_DRAW_CV_255_010:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_010.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_255_010.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_010.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_255_010.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2558,9 +2558,9 @@ INLINE_DRAW_CV_255_011:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_011.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_255_011.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_011.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_255_011.inc"
 ;@endif
 
 DEDUP_PRISON_5B_007:
@@ -2581,9 +2581,9 @@ INLINE_DRAW_CV_252_019:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_019.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_252_019.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_019.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_252_019.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2638,9 +2638,9 @@ INLINE_DRAW_CV_243_013:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_5B_013.inc"
+;@include "prison/cart__post_INLINE_DRAW_CV_243_013.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_5B_013.inc"
+;@include "prison/dos__post_INLINE_DRAW_CV_243_013.inc"
 ;@endif
 
 INCREMENT_VAR07_BY_1:
@@ -2827,11 +2827,11 @@ INLINE_KILL_041:
 	killChannel	;@raw=0x11
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_DEDUP_PRISON_1B_041.inc"
+;@include "prison/amiga__post_INLINE_KILL_041.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_1B_041.inc"
+;@include "prison/cart__post_INLINE_KILL_041.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_1B_041.inc"
+;@include "prison/dos__post_INLINE_KILL_041.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -3311,11 +3311,11 @@ INLINE_SET_VAR20_TO_1:
 	mov [0x20], 0x0001	;@raw=0x00,0x20,0x00,0x01
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_44B_06BD16B8.inc"
+;@include "prison/amiga__post_INLINE_SET_VAR20_TO_1.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_44B_06BD16B8.inc"
+;@include "prison/cart__post_INLINE_SET_VAR20_TO_1.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_44B_06BD16B8.inc"
+;@include "prison/dos__post_INLINE_SET_VAR20_TO_1.inc"
 ;@endif
 
 INIT_VARS_02_06:
@@ -3793,20 +3793,20 @@ DRAW_CIN_090_TO_104_3F_AT_8C208B32:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_500B_8C208B32.inc"
+;@include "prison/amiga__post_DRAW_CIN_090_TO_104_3F_AT_8C208B32.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_500B_8C208B32.inc"
+;@include "prison/dos__post_DRAW_CIN_090_TO_104_3F_AT_8C208B32.inc"
 ;@endif
 
 INLINE_SET_VAR16_TO_0:
 	mov [0x16], 0x0000	;@raw=0x00,0x16,0x00,0x00
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_44B_2CFB2376.inc"
+;@include "prison/amiga__post_INLINE_SET_VAR16_TO_0.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_44B_2CFB2376.inc"
+;@include "prison/cart__post_INLINE_SET_VAR16_TO_0.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_44B_2CFB2376.inc"
+;@include "prison/dos__post_INLINE_SET_VAR16_TO_0.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -3886,11 +3886,11 @@ INLINE_SUB_VAR50_BY_14:
 	sub [0x50], 0x0014	;@raw=0x03,0x50,0xFF,0xEC
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_44B_2D26434E.inc"
+;@include "prison/amiga__post_INLINE_SUB_VAR50_BY_14.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_44B_2D26434E.inc"
+;@include "prison/cart__post_INLINE_SUB_VAR50_BY_14.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_44B_2D26434E.inc"
+;@include "prison/dos__post_INLINE_SUB_VAR50_BY_14.inc"
 ;@endif
 
 FOLD_BODY_89B_5CFB4923:
@@ -4093,44 +4093,44 @@ INLINE_SET_VAR63_TO_1:
 	mov [0x63], 0x0001	;@raw=0x00,0x63,0x00,0x01
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_44B_B8F4589C.inc"
+;@include "prison/amiga__post_INLINE_SET_VAR63_TO_1.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_44B_B8F4589C.inc"
+;@include "prison/cart__post_INLINE_SET_VAR63_TO_1.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_44B_B8F4589C.inc"
+;@include "prison/dos__post_INLINE_SET_VAR63_TO_1.inc"
 ;@endif
 
 INLINE_SET_VAR63_TO_2:
 	mov [0x63], 0x0002	;@raw=0x00,0x63,0x00,0x02
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_44B_9969BA71.inc"
+;@include "prison/amiga__post_INLINE_SET_VAR63_TO_2.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_44B_9969BA71.inc"
+;@include "prison/cart__post_INLINE_SET_VAR63_TO_2.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_44B_9969BA71.inc"
+;@include "prison/dos__post_INLINE_SET_VAR63_TO_2.inc"
 ;@endif
 
 INLINE_SET_VAR63_TO_5:
 	mov [0x63], 0x0005	;@raw=0x00,0x63,0x00,0x05
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_44B_43C274AC.inc"
+;@include "prison/amiga__post_INLINE_SET_VAR63_TO_5.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_44B_43C274AC.inc"
+;@include "prison/cart__post_INLINE_SET_VAR63_TO_5.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_44B_43C274AC.inc"
+;@include "prison/dos__post_INLINE_SET_VAR63_TO_5.inc"
 ;@endif
 
 INLINE_SET_VAR63_TO_6:
 	mov [0x63], 0x0006	;@raw=0x00,0x63,0x00,0x06
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_44B_93E8A02A.inc"
+;@include "prison/amiga__post_INLINE_SET_VAR63_TO_6.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_44B_93E8A02A.inc"
+;@include "prison/cart__post_INLINE_SET_VAR63_TO_6.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_44B_93E8A02A.inc"
+;@include "prison/dos__post_INLINE_SET_VAR63_TO_6.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -4201,22 +4201,22 @@ INLINE_BREAK_035:
 	break	;@raw=0x06
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_DEDUP_PRISON_1B_035.inc"
+;@include "prison/amiga__post_INLINE_BREAK_035.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_1B_035.inc"
+;@include "prison/cart__post_INLINE_BREAK_035.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_1B_035.inc"
+;@include "prison/dos__post_INLINE_BREAK_035.inc"
 ;@endif
 
 INLINE_BREAK_036:
 	break	;@raw=0x06
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_DEDUP_PRISON_1B_036.inc"
+;@include "prison/amiga__post_INLINE_BREAK_036.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_1B_036.inc"
+;@include "prison/cart__post_INLINE_BREAK_036.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_1B_036.inc"
+;@include "prison/dos__post_INLINE_BREAK_036.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -4230,9 +4230,9 @@ DRAW_CIN_187_TO_222_2F_AT_8E66E193:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_345B_8E66E193.inc"
+;@include "prison/amiga__post_DRAW_CIN_187_TO_222_2F_AT_8E66E193.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_345B_8E66E193.inc"
+;@include "prison/dos__post_DRAW_CIN_187_TO_222_2F_AT_8E66E193.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -4246,30 +4246,30 @@ DRAW_CIN_212_TO_213_2F_AT_6B0D0A47:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_345B_6B0D0A47.inc"
+;@include "prison/amiga__post_DRAW_CIN_212_TO_213_2F_AT_6B0D0A47.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_345B_6B0D0A47.inc"
+;@include "prison/dos__post_DRAW_CIN_212_TO_213_2F_AT_6B0D0A47.inc"
 ;@endif
 
 INLINE_BREAK_037:
 	break	;@raw=0x06
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_DEDUP_PRISON_1B_037.inc"
+;@include "prison/amiga__post_INLINE_BREAK_037.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_1B_037.inc"
+;@include "prison/cart__post_INLINE_BREAK_037.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_1B_037.inc"
+;@include "prison/dos__post_INLINE_BREAK_037.inc"
 ;@endif
 
 INLINE_BREAK_038:
 	break	;@raw=0x06
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_DEDUP_PRISON_1B_038.inc"
+;@include "prison/amiga__post_INLINE_BREAK_038.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_DEDUP_PRISON_1B_038.inc"
+;@include "prison/cart__post_INLINE_BREAK_038.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_DEDUP_PRISON_1B_038.inc"
+;@include "prison/dos__post_INLINE_BREAK_038.inc"
 ;@endif
 
