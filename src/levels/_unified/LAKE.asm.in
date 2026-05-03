@@ -1879,7 +1879,7 @@ WAIT_FOR_TIMER_AND_HACK_67_THEN_SETUP_31:
 	deleteChannels first=0x24, last=0x25
 	mov [0x71], 0x0001
 
-LABEL_01C6:
+SCROLL_BG_RANDOM_LOOP:
 	setup channel=0x3C, address=RENDER_FRAME_DISPATCH
 	break
 	call COMPUTE_RANDOM_BIT_MASKS
@@ -1892,7 +1892,7 @@ LABEL_01C6:
 	add [SCROLL_Y], [0x38]
 	je [HACK_VAR_67], 0x05, INIT_OPENING_BG_THREADS
 	je [HACK_VAR_67], 0x02, INIT_OPENING_BG_THREADS
-	jl [0x6E], 0x96, LABEL_01C6
+	jl [0x6E], 0x96, SCROLL_BG_RANDOM_LOOP
 
 INIT_OPENING_BG_THREADS:
 	mov [0x71], 0x0000
@@ -1986,7 +1986,7 @@ DRAW_4_DROPLETS_LOOP:
 	je [0x71], 0x01, RESET_DROPLET_72_X_IF_OFFSCREEN
 	jl [0x72], 0x012C, DRAW_4_DROPLETS_LOOP
 	jl [0x73], 0x012C, DRAW_4_DROPLETS_LOOP
-	jmp LABEL_0350
+	jmp DRAW_4_DROPLETS_END_KILL
 
 RESET_DROPLET_72_X_IF_OFFSCREEN:
 	jl [0x72], 0x012C, RESET_DROPLET_73_X_IF_OFFSCREEN
@@ -2008,7 +2008,7 @@ RESET_DROPLET_73_X_IF_OFFSCREEN:
 JMP_TO_DRAW_4_DROPLETS_LOOP:
 	jmp DRAW_4_DROPLETS_LOOP
 
-LABEL_0350:
+DRAW_4_DROPLETS_END_KILL:
 	killChannel
 
 COMPUTE_RANDOM_BIT_MASKS:
@@ -2034,7 +2034,7 @@ COMPUTE_RANDOM_BIT_MASKS:
 	and [0x38], 0x0001
 	ret
 
-LABEL_0396:
+INIT_LAKE_VARS:
 	mov [0x2A], 0x0000
 	mov [0x2B], 0x0000
 	mov [0x5E], 0x0000
@@ -2075,7 +2075,7 @@ INIT_CODEWHEEL_PROTECTION_SCENE:
 	killChannel
 
 START_LAKE_BG_MUSIC_AND_DELETE_CH_0_2:
-	call LABEL_0396
+	call INIT_LAKE_VARS
 ;@if BRANCH == "gba_2004"
 	song id=0x0FA2, delay=0x0000, pos=0x03
 ;@endif
@@ -2877,7 +2877,7 @@ INIT_SCATTER_DOTS_POSITIONS:
 	mov [0xB1], 0x006A
 	mov [0x92], 0x006E
 
-LABEL_0C8C:
+SCATTER_8DOT_DRIFT_RAW:
 	add [0xA2], 0x0003
 	add [0xA4], 0x0002
 	add [0xA6], 0x0002
@@ -2887,7 +2887,7 @@ LABEL_0C8C:
 	add [0xAE], 0x0002
 	add [0xB0], 0x0002
 	break
-	djnz [0x92], LABEL_0C8C
+	djnz [0x92], SCATTER_8DOT_DRIFT_RAW
 	setup channel=0x36, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
@@ -2922,7 +2922,7 @@ INIT_SCATTER_DOTS_OFFSETS:
 	mov [0xB1], 0x006A
 	mov [0x92], 0x00D2
 
-LABEL_0D1E:
+SCATTER_8DOT_DRIFT_CLASSIFIED:
 	add [0xA2], 0x0003
 	add [0xA4], 0x0002
 	add [0xA6], 0x0002
@@ -2972,7 +2972,7 @@ LABEL_0D1E:
 	mov [0xB0], [0x6C]
 	mov [0xB1], [0x6D]
 	break
-	djnz [0x92], LABEL_0D1E
+	djnz [0x92], SCATTER_8DOT_DRIFT_CLASSIFIED
 	deleteChannels first=0x37, last=0x38
 	killChannel
 
@@ -3633,9 +3633,9 @@ LAKE_INTRO_ANIM_F2_LOOP:
 	mov [0x19], 0x0020
 ;@endif
 
-LABEL_142A:
+LAKE_INTRO_PRE_TRANS_DELAY:
 	break
-	djnz [0x19], LABEL_142A
+	djnz [0x19], LAKE_INTRO_PRE_TRANS_DELAY
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
@@ -4039,9 +4039,9 @@ SNEAKY_TENTACLE_GOING_UP:
 	break
 	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_F7, x=[0x32], y=100, zoom=0x40
 	add [0x32], 0x0012
-	jg [0x32], [0x01], LABEL_180E
+	jg [0x32], [0x01], SNEAKY_TENTACLE_HIT_HERO
 	add [0x32], 0x0004
-	jl [0x32], [0x01], LABEL_180E
+	jl [0x32], [0x01], SNEAKY_TENTACLE_HIT_HERO
 	deleteChannels first=0x14, last=0x16
 	sub [0x32], 0x0012
 	break
@@ -4084,7 +4084,7 @@ SNEAKY_TENTACLE_GOING_UP:
 ;@endif
 	killChannel
 
-LABEL_180E:
+SNEAKY_TENTACLE_HIT_HERO:
 	break
 	sub [0x32], 0x0005
 	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=100, zoom=0x40
@@ -4154,7 +4154,7 @@ SNEAKY_TENTACLE_GOING_DOWN:
 	killChannel
 
 CYCLE_VIDEO_PAGES_3WAY:
-	jne [HACK_VAR_67], [0x65], LABEL_190F
+	jne [HACK_VAR_67], [0x65], CYCLE_VIDEO_PAGES_2WAY
 	copyVideoPage src=0x03, dst=0xFF
 	copyVideoPage src=0x00, dst=0x03
 	copyVideoPage src=0xFF, dst=0x00
@@ -4163,7 +4163,7 @@ CYCLE_VIDEO_PAGES_3WAY:
 	mov [0x66], [HACK_VAR_67]
 	jmp RET_TARGET_1915
 
-LABEL_190F:
+CYCLE_VIDEO_PAGES_2WAY:
 	copyVideoPage src=0x00, dst=0x03
 	mov [0x65], [0x66]
 
@@ -4180,7 +4180,7 @@ VINE_SCREEN:
 ;@endif
 	call CYCLE_VIDEO_PAGES_3WAY
 	setPalette 0x09
-	je [0x66], 0x01, LABEL_1937
+	je [0x66], 0x01, VINE_SCREEN_AFTER_BG_INIT
 	mov [0x66], 0x0001
 	fill page=0x00, color=0x02
 	selectVideoPage 0x00
@@ -4188,16 +4188,16 @@ VINE_SCREEN:
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 
-LABEL_1937:
+VINE_SCREEN_AFTER_BG_INIT:
 	setup channel=0x38, address=LOOP_DRAW_VINE_FG
-	je [0x5E], 0x01, LABEL_1945
+	je [0x5E], 0x01, VINE_SCREEN_AFTER_VINE_FG
 	setup channel=0x04, address=LOOP_DRAW_CINEMATIC_VINE_SCREEN_BG_DECOR_AT_CENTER
 
-LABEL_1945:
-	jne [0x2A], 0x04, LABEL_194F
+VINE_SCREEN_AFTER_VINE_FG:
+	jne [0x2A], 0x04, VINE_SCREEN_AFTER_BEAST_AI
 	setup channel=0x28, address=BEAST_AI_SPAWN_FAR_RIGHT
 
-LABEL_194F:
+VINE_SCREEN_AFTER_BEAST_AI:
 	setup channel=0x01, address=DROPLET_FALL_AND_IMPACT_LOOP
 	jmp CHECK_HERO_LAKE_EDGE
 	killChannel
