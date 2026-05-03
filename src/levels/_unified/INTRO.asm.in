@@ -2213,7 +2213,7 @@ LABEL_102E:
 	djnz [0x02], LABEL_100D
 
 LABEL_1045:
-	setup channel=0x02, address=LABEL_143E
+	setup channel=0x02, address=COPY_BG_PAGE_AND_DISPLAY_TEXT_23
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	killChannel
 
@@ -2229,10 +2229,10 @@ LABEL_104E:
 	killChannel
 
 LABEL_106C:
-	setup channel=0x06, address=LABEL_11BC
-	setup channel=0x07, address=LABEL_11CF
-	setup channel=0x03, address=LABEL_11A9
-	setup channel=0x01, address=LABEL_1195
+	setup channel=0x06, address=DRAW_CITY_SEQ_439_440
+	setup channel=0x07, address=DRAW_CITY_SEQ_435_436
+	setup channel=0x03, address=DRAW_CITY_SEQ_432_433
+	setup channel=0x01, address=DRAW_CIN_190_LOOP
 	mov [0x03], 0x00C3
 	mov [0x04], 0x0064
 	mov [0x01], 0x0006
@@ -2290,7 +2290,7 @@ LABEL_10FA:
 	djnz [0x01], LABEL_10FA
 	setup channel=0x3C, address=BLIT_AND_DISPATCH_HERO_ACTION
 	break
-	setup channel=0x01, address=LABEL_119F
+	setup channel=0x01, address=DRAW_CIN_431_LOOP
 	sub [0x03], 0x0001
 	sub [0x04], 0x0001
 	mov [0x01], 0x0005
@@ -2329,49 +2329,49 @@ LABEL_112D:
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x01, address=LABEL_11E7
-	setup channel=0x02, address=LABEL_11F9
+	setup channel=0x01, address=INTRO_FILL_AND_DRAW_CIN_429_430
+	setup channel=0x02, address=SETUP_INTRO_CITY_CHANNELS
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
-LABEL_1195:
+DRAW_CIN_190_LOOP:
 	video type=1, offset=CINEMATIC_190, x=[0x03], y=[0x04], zoom=0x40
 	break
-	jmp LABEL_1195
+	jmp DRAW_CIN_190_LOOP
 LABEL_119E:
 	killChannel
 
-LABEL_119F:
+DRAW_CIN_431_LOOP:
 	video type=1, offset=CINEMATIC_431, x=[0x03], y=[0x04], zoom=0x40
 	break
-	jmp LABEL_119F
+	jmp DRAW_CIN_431_LOOP
 LABEL_11A8:
 	killChannel
 
-LABEL_11A9:
+DRAW_CITY_SEQ_432_433:
 	video type=1, offset=CINEMATIC_432, x=160, y=100
 	break
 	video type=1, offset=CINEMATIC_433, x=160, y=100
 	break
 	video type=1, offset=CINEMATIC_434, x=160, y=100
 	break
-	jmp LABEL_11A9
+	jmp DRAW_CITY_SEQ_432_433
 LABEL_11BB:
 	killChannel
 
-LABEL_11BC:
+DRAW_CITY_SEQ_439_440:
 	video type=1, offset=CINEMATIC_439, x=160, y=100
 	break
 	video type=1, offset=CINEMATIC_440, x=160, y=100
 	break
 	video type=1, offset=CINEMATIC_441, x=160, y=100
 	break
-	jmp LABEL_11BC
+	jmp DRAW_CITY_SEQ_439_440
 LABEL_11CE:
 	killChannel
 
-LABEL_11CF:
+DRAW_CITY_SEQ_435_436:
 	video type=1, offset=CINEMATIC_435, x=160, y=100
 	break
 	video type=1, offset=CINEMATIC_436, x=160, y=100
@@ -2380,11 +2380,11 @@ LABEL_11CF:
 	break
 	video type=1, offset=CINEMATIC_438, x=160, y=100
 	break
-	jmp LABEL_11CF
+	jmp DRAW_CITY_SEQ_435_436
 LABEL_11E6:
 	killChannel
 
-LABEL_11E7:
+INTRO_FILL_AND_DRAW_CIN_429_430:
 	fill page=0xFF, color=0x02
 	video type=1, offset=CINEMATIC_429, x=160, y=100
 	video type=1, offset=CINEMATIC_430, x=160, y=100
@@ -2392,9 +2392,9 @@ LABEL_11E7:
 	copyVideoPage src=0xFF, dst=0x00
 	killChannel
 
-LABEL_11F9:
-	setup channel=0x01, address=LABEL_185E
-	setup channel=0x0A, address=LABEL_1586
+SETUP_INTRO_CITY_CHANNELS:
+	setup channel=0x01, address=DRAW_CIN_426_427_TWICE
+	setup channel=0x0A, address=SHOW_PAGE_0_LOOP_INTRO
 	setup channel=0x10, address=LABEL_158D
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x01], 0x0001
@@ -2612,7 +2612,7 @@ LABEL_1418:
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	killChannel
 
-LABEL_143E:
+COPY_BG_PAGE_AND_DISPLAY_TEXT_23:
 	copyVideoPage src=0x03, dst=0xFF
 	text id=0x0023, x=0, y=80, color=0x06
 	copyVideoPage src=0xFF, dst=0x00
@@ -2621,7 +2621,7 @@ LABEL_143E:
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x01, address=LABEL_185E
+	setup channel=0x01, address=DRAW_CIN_426_427_TWICE
 	setPalette 0x09
 	mov [0x01], 0x000B
 
@@ -2732,10 +2732,10 @@ LABEL_1566:
 	jmp LABEL_1566
 	db 0x11
 
-LABEL_1586:
+SHOW_PAGE_0_LOOP_INTRO:
 	selectVideoPage 0x00
 	break
-	jmp LABEL_1586
+	jmp SHOW_PAGE_0_LOOP_INTRO
 LABEL_158C:
 	killChannel
 
@@ -3005,7 +3005,7 @@ LABEL_17DF:
 LABEL_185D:
 	killChannel
 
-LABEL_185E:
+DRAW_CIN_426_427_TWICE:
 	video type=1, offset=CINEMATIC_426, x=58, y=100
 	video type=1, offset=CINEMATIC_427, x=292, y=100, zoom=0x40
 	break
@@ -3015,7 +3015,7 @@ LABEL_185E:
 	video type=1, offset=CINEMATIC_428, x=58, y=100
 	video type=1, offset=CINEMATIC_426, x=292, y=100, zoom=0x40
 	break
-	jmp LABEL_185E
+	jmp DRAW_CIN_426_427_TWICE
 LABEL_187F:
 	killChannel
 
@@ -3041,7 +3041,7 @@ LABEL_18A4:
 	setup channel=0x05, address=LABEL_197F
 	setup channel=0x06, address=LABEL_19C6
 	setup channel=0x07, address=LABEL_1996
-	setup channel=0x0A, address=LABEL_1586
+	setup channel=0x0A, address=SHOW_PAGE_0_LOOP_INTRO
 	setup channel=0x10, address=LABEL_158D
 	setup channel=0x08, address=LABEL_034E
 	setup channel=0x09, address=LABEL_0382
