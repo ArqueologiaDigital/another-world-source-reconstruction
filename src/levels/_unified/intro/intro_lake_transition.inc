@@ -343,24 +343,24 @@ DRIFT_VAR2_PLUS_18_3X:
 	mov [0x1E], 0x0004
 	mov [0x04], 0x0003
 
-LABEL_1F65:
+DELAY_3F_BEFORE_VAR2_PLUS_1:
 	break
-	djnz [0x04], LABEL_1F65
+	djnz [0x04], DELAY_3F_BEFORE_VAR2_PLUS_1
 	mov [0x04], 0x0002
 	add [0x02], 0x0001
 
-LABEL_1F72:
+DRIFT_VAR1_MINUS_E_2X:
 	sub [0x01], 0x000E
 	add [0x02], 0x0000
 	break
-	djnz [0x04], LABEL_1F72
+	djnz [0x04], DRIFT_VAR1_MINUS_E_2X
 	mov [0x1E], 0x0005
 	mov [0x03], 0x0000
 	mov [0x04], 0x0006
 
-LABEL_1F8B:
+DELAY_6F_BEFORE_PAL_E_INIT:
 	break
-	djnz [0x04], LABEL_1F8B
+	djnz [0x04], DELAY_6F_BEFORE_PAL_E_INIT
 	setup channel=0x02, address=INIT_VAR_04_PAL_E_VAR_01
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
@@ -376,7 +376,7 @@ DRAW_CIN_120_LOOP_VAR03:
 	video type=1, offset=CINEMATIC_122, x=[0x01], y=[0x02], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_123, x=[0x01], y=[0x02], zoom=0x40
-	call LABEL_1FD2
+	call PLAY_FX_BY_PHASE_VAR1E
 	break
 	video type=1, offset=CINEMATIC_124, x=[0x01], y=[0x02], zoom=0x40
 	break
@@ -386,15 +386,15 @@ DRAW_CIN_120_LOOP_VAR03:
 LABEL_1FD1:
 	killChannel
 
-LABEL_1FD2:
-	jne [0x1E], 0x00, LABEL_1FDE
+PLAY_FX_BY_PHASE_VAR1E:
+	jne [0x1E], 0x00, PLAY_FX_PHASE_1_FREQ_22
 	play id=0x000B, freq=0x14, vol=0x3F, channel=0x02
 
-LABEL_1FDE:
-	jne [0x1E], 0x01, LABEL_1FEA
+PLAY_FX_PHASE_1_FREQ_22:
+	jne [0x1E], 0x01, PLAY_FX_PHASE_2_FREQ_18
 	play id=0x000B, freq=0x16, vol=0x3F, channel=0x02
 
-LABEL_1FEA:
+PLAY_FX_PHASE_2_FREQ_18:
 	jne [0x1E], 0x02, LABEL_1FF6
 	play id=0x000B, freq=0x12, vol=0x3F, channel=0x02
 
