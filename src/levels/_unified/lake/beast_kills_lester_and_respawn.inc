@@ -1,0 +1,132 @@
+THE_BEAST_KILLS_LESTER:
+	mov [0x0E], 0x0082
+	mov [0x0F], 0x001E
+	mov [PAUSE_SLICES], 0x0005
+	setPalette 0x07
+	fill page=0x00, color=0x0B
+	selectVideoPage 0x00
+	deleteChannels first=0x24, last=0x25
+	deleteChannels first=0x2F, last=0x30
+	video type=1, offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
+;@if BRANCH == "chahi_amiga_1991"
+	copyVideoPage src=0x00, dst=0xFF
+;@endif
+	selectVideoPage 0xFF
+;@if BRANCH in ("cartridge_1992", "gba_2004")
+	copyVideoPage src=0x00, dst=0xFF
+;@endif
+;@if BRANCH == "dos_1992"
+	copyVideoPage src=0x00, dst=0xFF
+;@endif
+	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_0, x=160, y=[0x0e], zoom=[0x0f]
+	play id=0x0030, freq=0x0A, vol=0x20, channel=0x01
+	break
+	add [0x0F], 0x0004
+	sub [0x0E], 0x0005
+	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_1, x=160, y=[0x0e], zoom=[0x0f]
+	break
+	add [0x0F], 0x0006
+	sub [0x0E], 0x000A
+;@if BRANCH in ("cartridge_1992", "gba_2004")
+	song id=0x0BDD, delay=0x0000, pos=0x00
+;@endif
+	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_2, x=160, y=[0x0e], zoom=[0x0f]
+	play id=0x0030, freq=0x14, vol=0x3F, channel=0x01
+	break
+	add [0x0F], 0x0009
+	sub [0x0E], 0x000F
+	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_3, x=160, y=[0x0e], zoom=[0x0f]
+	break
+	add [0x0F], 0x000C
+	sub [0x0E], 0x000F
+	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_4, x=160, y=[0x0e], zoom=[0x0f]
+	break
+	add [0x0F], 0x000F
+	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_5, x=160, y=[0x0e], zoom=[0x0f]
+	break
+	add [0x0F], 0x000F
+	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_6, x=160, y=[0x0e], zoom=[0x0f]
+	mov [0x10], 0x0003
+
+BEAST_KILLS_LESTER_F6_LOOP:
+	break
+	add [0x0F], 0x0032
+	add [0x0E], 0x001E
+	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_6, x=160, y=[0x0e], zoom=[0x0f]
+	djnz [0x10], BEAST_KILLS_LESTER_F6_LOOP
+	setPalette 0x0A
+	mov [PAUSE_SLICES], 0x0004
+	setup channel=0x3C, address=LOOP_BLIT_AND_CLEAR_FF
+;@if BRANCH in ("cartridge_1992", "gba_2004")
+	jne [0xDB], 0x01, BEAST_KILLS_LESTER_PHASE_2
+	setPalette 0x1B
+
+BEAST_KILLS_LESTER_PHASE_2:
+;@endif
+	break
+	play id=0x004D, freq=0x0F, vol=0x3F, channel=0x01
+	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_7, x=160, y=100
+	break
+	play id=0x004F, freq=0x11, vol=0x3F, channel=0x02
+	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_8, x=160, y=100
+	break
+	play id=0x004F, freq=0x14, vol=0x3F, channel=0x00
+	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_9, x=160, y=100
+	break
+	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_10, x=160, y=100
+	play id=0x004F, freq=0x17, vol=0x3F, channel=0x03
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+	jmp INIT_VAR_03_TO_0x1E
+;@elif BRANCH == "chahi_amiga_1991"
+	jmp INIT_VAR_03_TO_0x1E
+;@endif
+	killChannel
+
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+INIT_VAR_03_TO_0x1E:
+;@elif BRANCH == "chahi_amiga_1991"
+INIT_VAR_03_TO_0x1E:
+;@endif
+	mov [0x03], 0x001E
+
+WAIT_HERO_ACTION_TO_RESPAWN:
+	break
+;@if BRANCH in ("cartridge_1992", "gba_2004")
+	je [HERO_ACTION], 0x00, POST_HERO_ACTION_RESET_VAR03
+	djnz [0x03], WAIT_HERO_ACTION_TO_RESPAWN
+
+POST_HERO_ACTION_RESET_VAR03:
+	mov [0x03], 0x001E
+;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+	je [HERO_ACTION], 0x01, WAIT_HERO_ACTION_TO_RESPAWN
+;@endif
+
+WAIT_HERO_RESPAWN_LOOP:
+	break
+;@if BRANCH in ("cartridge_1992", "gba_2004")
+	je [0xDB], 0x00, WAIT_HERO_JUMP_DOWN_INPUT
+	je [HERO_POS_JUMP_DOWN], 0xFFFF, A_VIDEO_ROUTINE_OF_SOME_SORT
+
+WAIT_HERO_JUMP_DOWN_INPUT:
+;@endif
+;@if BRANCH == "dos_1992"
+	je [0xDB], 0x00, WAIT_HERO_JUMP_DOWN_INPUT
+	je [HERO_POS_JUMP_DOWN], 0xFFFF, A_VIDEO_ROUTINE_OF_SOME_SORT
+
+WAIT_HERO_JUMP_DOWN_INPUT:
+;@endif
+	je [HERO_ACTION], 0x01, A_VIDEO_ROUTINE_OF_SOME_SORT
+	djnz [0x03], WAIT_HERO_RESPAWN_LOOP
+
+A_VIDEO_ROUTINE_OF_SOME_SORT:
+	freezeChannels first=0x00, last=0x3F
+	deleteChannels first=0x00, last=0x3F
+	setup channel=0x00, address=LAKE_LEVEL_INIT
+;@if BRANCH in ("cartridge_1992", "gba_2004")
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
+;@endif
+;@if BRANCH == "dos_1992"
+	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
+;@endif
+	killChannel
+

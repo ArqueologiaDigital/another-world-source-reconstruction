@@ -1,0 +1,72 @@
+SLUG_WALK_GROUND_INIT:
+	mov [0x0D], 0x00B7
+
+SLUG_WALK_PROX_LOOP:
+	call FLAG_PROXIMITY_TRUE_THEN_CHECK
+	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
+	video type=1, offset=CINEMATIC_BEAST_AI_F7, x=[0x0c], y=[0x0d], zoom=0x40
+	break
+	call FLAG_PROXIMITY_TRUE_THEN_CHECK
+	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
+	video type=1, offset=CINEMATIC_BEAST_AI_F8, x=[0x0c], y=[0x0d], zoom=0x40
+	break
+	call FLAG_PROXIMITY_TRUE_THEN_CHECK
+	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
+	video type=1, offset=CINEMATIC_BEAST_AI_F9, x=[0x0c], y=[0x0d], zoom=0x40
+	break
+	call FLAG_PROXIMITY_TRUE_THEN_CHECK
+	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
+	video type=1, offset=CINEMATIC_BEAST_AI_F10, x=[0x0c], y=[0x0d], zoom=0x40
+	break
+	call FLAG_PROXIMITY_TRUE_THEN_CHECK
+	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
+	video type=1, offset=CINEMATIC_BEAST_AI_F11, x=[0x0c], y=[0x0d], zoom=0x40
+	break
+	call FLAG_PROXIMITY_TRUE_THEN_CHECK
+	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
+	video type=1, offset=CINEMATIC_BEAST_AI_F12, x=[0x0c], y=[0x0d], zoom=0x40
+	break
+	call FLAG_PROXIMITY_TRUE_THEN_CHECK
+	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
+	add [0x0C], 0x0001
+	video type=1, offset=CINEMATIC_BEAST_AI_F13, x=[0x0c], y=[0x0d], zoom=0x40
+	break
+	call FLAG_PROXIMITY_TRUE_THEN_CHECK
+	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
+	add [0x0C], 0x0001
+	video type=1, offset=CINEMATIC_BEAST_AI_F14, x=[0x0c], y=[0x0d], zoom=0x40
+	break
+	call FLAG_PROXIMITY_TRUE_THEN_CHECK
+	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
+	add [0x0C], 0x0001
+	video type=1, offset=CINEMATIC_BEAST_AI_F15, x=[0x0c], y=[0x0d], zoom=0x40
+	break
+	call FLAG_PROXIMITY_TRUE_THEN_CHECK
+	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
+	add [0x0C], 0x0003
+	video type=1, offset=CINEMATIC_BEAST_AI_F16, x=[0x0c], y=[0x0d], zoom=0x40
+	break
+	call FLAG_PROXIMITY_TRUE_THEN_CHECK
+	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
+	add [0x0C], 0x0002
+	video type=1, offset=CINEMATIC_BEAST_AI_F17, x=[0x0c], y=[0x0d], zoom=0x40
+	break
+	call FLAG_PROXIMITY_TRUE_THEN_CHECK
+	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
+	add [0x0C], 0x0001
+	video type=1, offset=CINEMATIC_BEAST_AI_F18, x=[0x0c], y=[0x0d], zoom=0x40
+	break
+	call FLAG_PROXIMITY_TRUE_THEN_CHECK
+	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
+	add [0x0C], 0x0001
+	video type=1, offset=CINEMATIC_SLUG_PROX_F0, x=[0x0c], y=[0x0d], zoom=0x40
+	break
+	call FLAG_PROXIMITY_TRUE_THEN_CHECK
+	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
+	add [0x0C], 0x0001
+	video type=1, offset=CINEMATIC_SLUG_PROX_F1, x=[0x0c], y=[0x0d], zoom=0x40
+	break
+	sub [0x0C], 0x0002
+	jmp SLUG_WALK_PROX_LOOP
+	killChannel
+

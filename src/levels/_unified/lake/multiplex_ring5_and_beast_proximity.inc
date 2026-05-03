@@ -1,0 +1,43 @@
+MULTIPLEX_RING5_SAVE_LOOP:
+	mov [0x5B], [0x0C]
+	mov [0x5C], [0x0D]
+	mov [0x5D], [0x13]
+	break
+	jmp MULTIPLEX_RING5_SAVE_LOOP
+	killChannel
+
+JMP_TO_CHECK_BEAST_NEAR:
+	jmp CHECK_IF_BEAST_IS_NEAR_LESTER
+	mov [0x07], 0x0000
+	mov [0x12], [0x01]
+	add [0x12], [0x13]
+	jg [0x0C], [0x12], DEAD_LABEL_2F85_RET
+	mov [0x07], 0x0001
+
+DEAD_LABEL_2F85_RET:
+	ret
+
+CHECK_IF_BEAST_IS_NEAR_LESTER:
+	mov [0x07], 0x0000
+;@if BRANCH in ("cartridge_1992", "gba_2004")
+	je [0xE2], 0x01, RET_TARGET_1A88
+;@endif
+	mov [0x12], [0x01]
+	sub [0x12], [0x13]
+	jl [0x0C], [0x12], CHECK_IF_BEAST_IS_NEAR_LESTER__OUT_OF_RANGE_RET
+	add [0x12], [0x13]
+	add [0x12], [0x13]
+	jg [0x0C], [0x12], CHECK_IF_BEAST_IS_NEAR_LESTER__OUT_OF_RANGE_RET
+	mov [0x07], 0x0001
+
+CHECK_IF_BEAST_IS_NEAR_LESTER__OUT_OF_RANGE_RET:
+	ret
+
+IF_BEAST_NEAR_THEN_REACT_ELSE_KILL_THREAD:
+	je [0x07], 0x01, SLUG_R_PHASE1_F6_THEN_DEATH
+	killChannel
+
+IF_BEAST_NEAR_THEN_REACT_ELSE_KILL_THREAD_2:
+	je [0x07], 0x01, SLUG_R_F4_RAND_DELAY_INIT
+	killChannel
+

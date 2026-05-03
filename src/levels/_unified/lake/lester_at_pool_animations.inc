@@ -1,0 +1,114 @@
+LESTER_AT_POOL_LOOP:
+	mov [0x28], 0x0014
+
+LESTER_AT_POOL_LOOP_BODY:
+	video type=1, offset=CINEMATIC_LAKE_LESTER_AT_POOL, x=[0x01], y=[0x02], zoom=0x40
+	break
+	djnz [0x28], LESTER_AT_POOL_LOOP_BODY
+	copyVideoPage src=0x00, dst=0x03
+	mov [PAUSE_SLICES], 0x0005
+	setup channel=0x15, address=DECOR_AT_327_164_BLINK_LOOP
+	setup channel=0x16, address=LOOP_DRAW_LAKE_037_AT_305_155
+	video type=1, offset=CINEMATIC_LAKE_LESTER_AT_POOL, x=[0x01], y=[0x02], zoom=0x40
+	selectVideoPage 0x00
+	video type=1, offset=CINEMATIC_LAKE_DECOR_AT_327_164, x=327, y=164, zoom=0x40
+	selectVideoPage 0xFF
+	break
+	video type=1, offset=CINEMATIC_LAKE_LESTER_FALLING, x=[0x01], y=[0x02], zoom=0x40
+	break
+	sub [0x01], 0x0003
+	sub [0x02], 0x0002
+	video type=1, offset=CINEMATIC_LAKE_LESTER_RECOVER, x=[0x01], y=[0x02], zoom=0x40
+	play id=0x003C, freq=0x0A, vol=0x18, channel=0x01
+	break
+	copyVideoPage src=0x03, dst=0x00
+	selectVideoPage 0x00
+	video type=1, offset=CINEMATIC_LAKE_SCENE_DECOR_RIGHT, x=327, y=164, zoom=0x40
+	selectVideoPage 0xFF
+	mov [0x28], 0x0002
+
+LESTER_RISE_LOOP:
+	sub [0x01], 0x000C
+	add [0x02], 0x0003
+	video type=1, offset=CINEMATIC_LAKE_LESTER_RISE, x=[0x01], y=[0x02], zoom=0x40
+	break
+	djnz [0x28], LESTER_RISE_LOOP
+	mov [0x28], 0x0002
+
+DECOR_F1_DRIFT_LOOP:
+	sub [0x01], 0x000A
+	add [0x02], 0x0005
+	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F1, x=[0x01], y=[0x02], zoom=0x40
+	break
+	djnz [0x28], DECOR_F1_DRIFT_LOOP
+	mov [0x28], 0x0004
+
+DECOR_F2_DRIFT_LOOP:
+	sub [0x01], 0x0003
+	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F2, x=[0x01], y=[0x02], zoom=0x40
+	break
+	djnz [0x28], DECOR_F2_DRIFT_LOOP
+	sub [0x01], 0x0002
+	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F3, x=[0x01], y=[0x02], zoom=0x40
+	break
+	sub [0x01], 0x0001
+	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F4, x=[0x01], y=[0x02], zoom=0x40
+	setup channel=0x16, address=LAKE_PALETTE_FADE_IN
+
+DECOR_F4_HOLD_LOOP:
+	break
+	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F4, x=[0x01], y=[0x02], zoom=0x40
+	jmp DECOR_F4_HOLD_LOOP
+	killChannel
+
+LESTER_FALLING_PLAY_AND_ANIM:
+	break
+	mov [0x01], 0x0135
+	mov [0x02], 0x00B6
+	break
+	play id=0x0051, freq=0x0A, vol=0x30, channel=0x01
+	video type=1, offset=CINEMATIC_LAKE_LESTER_FALLING, x=[0x01], y=[0x02], zoom=0x40
+	break
+	sub [0x01], 0x0003
+	sub [0x02], 0x0002
+	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F5, x=[0x01], y=[0x02], zoom=0x40
+	break
+	mov [0x28], 0x0002
+
+LESTER_FALL_PHASE_1:
+	sub [0x01], 0x000C
+	add [0x02], 0x0003
+	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F5, x=[0x01], y=[0x02], zoom=0x40
+	break
+	djnz [0x28], LESTER_FALL_PHASE_1
+	mov [0x28], 0x0002
+
+LESTER_FALL_PHASE_2:
+	sub [0x01], 0x000A
+	add [0x02], 0x0005
+	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F6, x=[0x01], y=[0x02], zoom=0x40
+	break
+	djnz [0x28], LESTER_FALL_PHASE_2
+	mov [0x28], 0x0005
+	mov [0x29], 0xFFFB
+
+ENTITY_DROP_BOUNCE_LOOP:
+	add [0x01], [0x29]
+	add [0x29], 0x0001
+	video type=1, offset=CINEMATIC_LAKE_ENTITY_DROP, x=[0x01], y=[0x02], zoom=0x40
+	break
+	djnz [0x28], ENTITY_DROP_BOUNCE_LOOP
+	mov [0x28], 0x0003
+
+ENTITY_DROP_FINAL_PHASE:
+	sub [0x01], 0x0001
+	video type=1, offset=CINEMATIC_LAKE_ENTITY_DROP, x=[0x01], y=[0x02], zoom=0x40
+	break
+	djnz [0x28], ENTITY_DROP_FINAL_PHASE
+
+ENTITY_DROP_HOLD_LOOP:
+	video type=1, offset=CINEMATIC_LAKE_ENTITY_DROP, x=[0x01], y=[0x02], zoom=0x40
+	break
+	jmp ENTITY_DROP_HOLD_LOOP
+	killChannel
+

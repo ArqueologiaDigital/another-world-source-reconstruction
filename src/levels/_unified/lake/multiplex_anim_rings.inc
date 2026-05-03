@@ -1,0 +1,90 @@
+MULTIPLEX_ANIM_RING1_SLOT_0:
+	mov [0x0C], [0x46]
+	mov [0x0D], [0x47]
+	mov [0x13], [0x48]
+	break
+	jmp MULTIPLEX_ANIM_RING1_SLOT_0
+	killChannel
+
+MULTIPLEX_ANIM_RING1_SLOT_1:
+	mov [0x46], [0x0C]
+	mov [0x47], [0x0D]
+	mov [0x48], [0x13]
+	mov [0x0C], [0x49]
+	mov [0x0D], [0x4A]
+	mov [0x13], [0x4B]
+	break
+	jmp MULTIPLEX_ANIM_RING1_SLOT_1
+	killChannel
+
+MULTIPLEX_ANIM_RING1_SLOT_2:
+	mov [0x49], [0x0C]
+	mov [0x4A], [0x0D]
+	mov [0x4B], [0x13]
+	mov [0x0C], [0x4C]
+	mov [0x0D], [0x4D]
+	mov [0x13], [0x4E]
+	break
+	jmp MULTIPLEX_ANIM_RING1_SLOT_2
+	killChannel
+
+MULTIPLEX_ANIM_RING1_SLOT_3:
+	mov [0x4C], [0x0C]
+	mov [0x4D], [0x0D]
+	mov [0x4E], [0x13]
+	mov [0x0C], [0x4F]
+	mov [0x0D], [0x50]
+	mov [0x13], [0x51]
+	break
+	jmp MULTIPLEX_ANIM_RING1_SLOT_3
+	killChannel
+
+MULTIPLEX_RING3_SAVE_LOOP:
+	mov [0x4F], [0x0C]
+	mov [0x50], [0x0D]
+	mov [0x51], [0x13]
+	break
+	jmp MULTIPLEX_RING3_SAVE_LOOP
+	killChannel
+
+MULTIPLEX_ANIM_RING2_SLOT_0:
+	mov [0x0C], [0x52]
+	mov [0x0D], [0x53]
+	mov [0x13], [HACK_VAR_54]
+	break
+	jmp MULTIPLEX_ANIM_RING2_SLOT_0
+	killChannel
+
+MULTIPLEX_ANIM_RING2_SLOT_1:
+	mov [0x52], [0x0C]
+	mov [0x53], [0x0D]
+	mov [HACK_VAR_54], [0x13]
+	mov [0x0C], [0x55]
+	mov [0x0D], [0x56]
+	mov [0x13], [0x57]
+	break
+	jmp MULTIPLEX_ANIM_RING2_SLOT_1
+	killChannel
+
+MULTIPLEX_ANIM_RING2_SLOT_2:
+	mov [0x55], [0x0C]
+	mov [0x56], [0x0D]
+	mov [0x57], [0x13]
+	mov [0x0C], [0x58]
+	mov [0x0D], [0x59]
+	mov [0x13], [0x5A]
+	break
+	jmp MULTIPLEX_ANIM_RING2_SLOT_2
+	killChannel
+
+MULTIPLEX_RING4_SAVE_LOOP:
+	mov [0x58], [0x0C]
+	mov [0x59], [0x0D]
+	mov [0x5A], [0x13]
+	mov [0x0C], [0x5B]
+	mov [0x0D], [0x5C]
+	mov [0x13], [0x5D]
+	break
+	jmp MULTIPLEX_RING4_SAVE_LOOP
+	killChannel
+

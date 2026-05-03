@@ -1,0 +1,77 @@
+SCATTER_8DOT_LOOP_LEFT:
+	call COMPUTE_RANDOM_BIT_MASKS
+	mov [0x84], [0x3D]
+
+SCATTER_8DOT_LEFT_DELAY:
+	break
+	djnz [0x84], SCATTER_8DOT_LEFT_DELAY
+	mov [0x82], 0x0050
+	mov [0x83], 0x005A
+	mov [0x84], 0x0012
+
+SCATTER_8DOT_LEFT_BODY:
+	break
+	video type=1, offset=CINEMATIC_SCATTER_8DOT_F0, x=[0x82], y=109, zoom=0x40
+	add [0x82], 0x0008
+	video type=1, offset=CINEMATIC_SCATTER_8DOT_F1, x=[0x83], y=109, zoom=0x40
+	add [0x83], 0x000A
+	djnz [0x84], SCATTER_8DOT_LEFT_BODY
+	jmp SCATTER_8DOT_LOOP_LEFT
+	killChannel
+
+SCATTER_8DOT_LOOP_RIGHT:
+	call COMPUTE_RANDOM_BIT_MASKS
+	mov [0x88], 0x001E
+	add [0x88], [RANDOM_SEED]
+
+SCATTER_8DOT_RIGHT_DELAY:
+	break
+	djnz [0x88], SCATTER_8DOT_RIGHT_DELAY
+	mov [0x88], 0xFEAC
+	mov [0x89], 0x0064
+	mov [0x8A], 0x006E
+
+SCATTER_8DOT_RIGHT_BODY:
+	break
+	sub [0x8A], 0x0001
+	video type=1, offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
+	add [0x88], 0x003C
+	video type=1, offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x8a], zoom=0x40
+	add [0x88], 0x0064
+	video type=1, offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
+	sub [0x88], 0x0078
+	jl [0x88], 0x00, SCATTER_8DOT_RIGHT_BODY
+
+SCATTER_8DOT_RIGHT_WIDE_LOOP:
+	break
+	sub [0x8A], 0x0003
+	video type=1, offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
+	add [0x88], 0x003C
+	video type=1, offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x8a], zoom=0x40
+	add [0x88], 0x0064
+	video type=1, offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
+	sub [0x88], 0x0078
+	jl [0x88], 0x0140, SCATTER_8DOT_RIGHT_WIDE_LOOP
+	jmp SCATTER_8DOT_LOOP_RIGHT
+	killChannel
+
+SCATTER_8DOT_F3_BLINK_LOOP:
+	selectVideoPage 0x00
+	video type=1, offset=CINEMATIC_SCATTER_8DOT_F3, x=212, y=138
+	selectVideoPage 0xFF
+	mov [0x85], 0x0032
+
+SCATTER_8DOT_F3_BLINK_DELAY:
+	break
+	djnz [0x85], SCATTER_8DOT_F3_BLINK_DELAY
+	selectVideoPage 0x00
+	video type=1, offset=CINEMATIC_SCATTER_8DOT_F3, x=211, y=138
+	selectVideoPage 0xFF
+	mov [0x85], 0x0032
+
+SCATTER_8DOT_F3_LONG_DELAY:
+	break
+	djnz [0x85], SCATTER_8DOT_F3_LONG_DELAY
+	jmp SCATTER_8DOT_F3_BLINK_LOOP
+	killChannel
+

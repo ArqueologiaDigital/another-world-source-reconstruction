@@ -1,0 +1,26 @@
+LOOP_BLIT_AND_CLEAR_FF:
+	blitFramebuffer 0xFF
+	selectVideoPage 0xFF
+	fill page=0xFF, color=0x00
+	break
+	jmp LOOP_BLIT_AND_CLEAR_FF
+	killChannel
+
+LOOP_DRAW_LAKE_093_AT_CENTER:
+	video type=1, offset=CINEMATIC_VINE_CENTER_BG, x=160, y=100
+	break
+	jmp LOOP_DRAW_LAKE_093_AT_CENTER
+	killChannel
+
+LOOP_DRAW_CINEMATIC_VINE_SCREEN_BG_DECOR_AT_CENTER:
+	video type=1, offset=CINEMATIC_VINE_SCREEN_BG_DECOR, x=160, y=100
+	break
+	jmp LOOP_DRAW_CINEMATIC_VINE_SCREEN_BG_DECOR_AT_CENTER
+	killChannel
+
+LOOP_DRAW_VINE_FG:
+	video type=1, offset=CINEMATIC_SCENARIO_VINE_SCREEN_FOREGROUND, x=160, y=100
+	break
+	jmp LOOP_DRAW_VINE_FG
+	killChannel
+

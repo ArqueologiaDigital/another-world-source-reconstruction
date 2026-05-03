@@ -1,0 +1,132 @@
+SCROLL_BG_RANDOM_LOOP:
+	setup channel=0x3C, address=RENDER_FRAME_DISPATCH
+	break
+	call COMPUTE_RANDOM_BIT_MASKS
+	mov [SCROLL_Y], [0x38]
+	add [SCROLL_Y], 0x0001
+	setup channel=0x3C, address=RENDER_FRAME_DISPATCH
+	break
+	call COMPUTE_RANDOM_BIT_MASKS
+	mov [SCROLL_Y], 0xFFFF
+	add [SCROLL_Y], [0x38]
+	je [HACK_VAR_67], 0x05, INIT_OPENING_BG_THREADS
+	je [HACK_VAR_67], 0x02, INIT_OPENING_BG_THREADS
+	jl [0x6E], 0x96, SCROLL_BG_RANDOM_LOOP
+
+INIT_OPENING_BG_THREADS:
+	mov [0x71], 0x0000
+	mov [0x6E], 0x0001
+	mov [0x22], 0x0001
+	setup channel=0x24, address=AMBIENT_CH24_DELAY_F1
+	setup channel=0x25, address=AMBIENT_CH25_RESTART
+	jmp WAIT_FOR_TIMER_AND_HACK_67_THEN_SETUP_31
+	killChannel
+
+PICK_RANDOM_X_FOR_DROPLET_AND_PLAY_DROP_SOUND:
+	call COMPUTE_RANDOM_BIT_MASKS
+	mov [0x6F], [0x3F]
+	mov [0x70], 0xFFEC
+	play id=0x0054, freq=0x0A, vol=0x20, channel=0x02
+
+DRAW_FALLING_DROPLET_LOOP_THEN_SPLASH:
+	break
+	video type=1, offset=CINEMATIC_WATER_DROPLET_FALLING, x=[0x6f], y=[0x70], zoom=0x40
+	add [0x70], 0x0020
+	jl [0x70], 0xB6, DRAW_FALLING_DROPLET_LOOP_THEN_SPLASH
+	mov [0x70], 0x00BA
+	break
+	video type=1, offset=CINEMATIC_WATER_SPLASH_FRAME_0, x=[0x6f], y=[0x70], zoom=0x40
+	break
+	video type=1, offset=CINEMATIC_WATER_SPLASH_FRAME_1, x=[0x6f], y=[0x70], zoom=0x40
+	je [HACK_VAR_67], 0x01, PICK_RANDOM_X_FOR_DROPLET_005
+	selectVideoPage 0x00
+	video type=1, offset=CINEMATIC_DROPLET_LARGE, x=[0x6f], y=[0x70], zoom=0x40
+	selectVideoPage 0xFF
+	jmp PICK_RANDOM_X_FOR_DROPLET_005
+	killChannel
+
+PICK_RANDOM_X_FOR_DROPLET_005:
+	call COMPUTE_RANDOM_BIT_MASKS
+	mov [0x6F], [0x3F]
+	add [0x6F], [0x3D]
+	mov [0x70], 0xFFEC
+
+RAIN_DROPLET_FALL_LOOP:
+	break
+	video type=1, offset=CINEMATIC_RAIN_DROPLET_F0, x=[0x6f], y=[0x70], zoom=0x40
+	add [0x70], 0x0020
+	jl [0x70], 0xB6, RAIN_DROPLET_FALL_LOOP
+	break
+	mov [0x70], 0x00B6
+	call COMPUTE_RANDOM_BIT_MASKS
+	add [0x70], [0x39]
+	video type=1, offset=CINEMATIC_RAIN_DROPLET_F1, x=[0x6f], y=[0x70], zoom=0x40
+	play id=0x0054, freq=0x0F, vol=0x20, channel=0x03
+	break
+	video type=1, offset=CINEMATIC_RAIN_DROPLET_F2, x=[0x6f], y=[0x70], zoom=0x40
+	je [HACK_VAR_67], 0x01, PICK_RANDOM_X_FOR_DROPLET_009
+	selectVideoPage 0x00
+	video type=1, offset=CINEMATIC_RAIN_DROPLET_F3, x=[0x6f], y=[0x70], zoom=0x40
+	selectVideoPage 0xFF
+	jmp PICK_RANDOM_X_FOR_DROPLET_009
+	killChannel
+
+PICK_RANDOM_X_FOR_DROPLET_009:
+	call COMPUTE_RANDOM_BIT_MASKS
+	mov [0x6F], [0x3F]
+	add [0x6F], [0x3D]
+	mov [0x70], 0xFFF0
+
+DROPLET_009_FALL_LOOP:
+	break
+	video type=1, offset=CINEMATIC_DROPLET_RANDOM_X, x=[0x6f], y=[0x70], zoom=0x40
+	add [0x70], 0x0023
+	jl [0x70], 0xFA, DROPLET_009_FALL_LOOP
+	je [0x71], 0x01, PICK_RANDOM_X_FOR_DROPLET_AND_PLAY_DROP_SOUND
+	killChannel
+	mov [0x72], 0x0190
+	mov [0x73], 0x012C
+	play id=0x0054, freq=0x14, vol=0x10, channel=0x03
+
+DRAW_4_DROPLETS_LOOP:
+	break
+	add [0x72], 0x0014
+	add [0x73], 0x0010
+	video type=1, offset=COMMON_VIDEO_074, x=[0x74], y=[0x72], zoom=0x40
+	sub [0x72], 0x0014
+	video type=1, offset=COMMON_VIDEO_074, x=[0x75], y=[0x72], zoom=0x40
+	sub [0x72], 0x0028
+	video type=1, offset=COMMON_VIDEO_074, x=[0x76], y=[0x72], zoom=0x40
+	video type=1, offset=COMMON_VIDEO_074, x=[0x77], y=[0x73], zoom=0x40
+	sub [0x73], 0x003C
+	video type=1, offset=COMMON_VIDEO_074, x=[0x78], y=[0x73], zoom=0x40
+	add [0x72], 0x003C
+	add [0x73], 0x003C
+	je [0x71], 0x01, RESET_DROPLET_72_X_IF_OFFSCREEN
+	jl [0x72], 0x012C, DRAW_4_DROPLETS_LOOP
+	jl [0x73], 0x012C, DRAW_4_DROPLETS_LOOP
+	jmp DRAW_4_DROPLETS_END_KILL
+
+RESET_DROPLET_72_X_IF_OFFSCREEN:
+	jl [0x72], 0x012C, RESET_DROPLET_73_X_IF_OFFSCREEN
+	mov [0x72], 0xFFEC
+	call COMPUTE_RANDOM_BIT_MASKS
+	mov [0x74], [0x3F]
+	call COMPUTE_RANDOM_BIT_MASKS
+	mov [0x75], [0x3F]
+	mov [0x76], [RANDOM_SEED]
+
+RESET_DROPLET_73_X_IF_OFFSCREEN:
+	jl [0x73], 0x012C, JMP_TO_DRAW_4_DROPLETS_LOOP
+	mov [0x73], 0xFFEC
+	call COMPUTE_RANDOM_BIT_MASKS
+	mov [0x77], [0x3F]
+	call COMPUTE_RANDOM_BIT_MASKS
+	mov [0x78], [0x3F]
+
+JMP_TO_DRAW_4_DROPLETS_LOOP:
+	jmp DRAW_4_DROPLETS_LOOP
+
+DRAW_4_DROPLETS_END_KILL:
+	killChannel
+

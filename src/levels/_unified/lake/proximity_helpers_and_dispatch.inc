@@ -1,0 +1,64 @@
+CHECK_HORIZONTAL_PROXIMITY:
+	mov [0x07], 0x0000
+	mov [0x12], [0x01]
+	sub [0x12], 0x0007
+	jl [0x0C], [0x12], EXIT_PATH_FROM_PROXIMITY_OUT_OF_RANGE
+	add [0x12], 0x000F
+	jg [0x0C], [0x12], EXIT_PATH_FROM_PROXIMITY_OUT_OF_RANGE
+	mov [0x07], 0x0001
+
+EXIT_PATH_FROM_PROXIMITY_OUT_OF_RANGE:
+	je [0x06], 0x00, RET_TARGET_313D
+	jg [0x06], 0x02, RET_TARGET_313D
+;@if BRANCH in ("cartridge_1992", "gba_2004")
+	jg [0x01], [0x04], BEAST_AI_RANGE_CHECK_INIT_CART
+;@endif
+	mov [0x12], [0x04]
+	mov [0x13], [0x04]
+;@if BRANCH in ("cartridge_1992", "gba_2004")
+	add [0x12], 0x0008
+	sub [0x13], 0x000C
+	jmp BEAST_AI_RANGE_CHECK_VAR_39
+;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+	sub [0x13], 0x0007
+	jl [0x01], [0x04], BEAST_AI_RANGE_CHECK_INIT_CART
+	mov [0x13], [0x04]
+	mov [0x12], [0x04]
+	add [0x12], 0x0007
+;@endif
+
+BEAST_AI_RANGE_CHECK_INIT_CART:
+;@if BRANCH in ("cartridge_1992", "gba_2004")
+	mov [0x13], [0x04]
+	mov [0x12], [0x04]
+	sub [0x13], 0x0008
+	add [0x12], 0x000C
+
+BEAST_AI_RANGE_CHECK_VAR_39:
+	mov [0x3A], [0x0C]
+	sub [0x3A], 0x0004
+	je [0x39], 0x01, BEAST_AI_RANGE_BOUNDS_CHK
+	add [0x3A], 0x0008
+
+BEAST_AI_RANGE_BOUNDS_CHK:
+	jg [0x3A], [0x12], RET_TARGET_313D
+	jl [0x3A], [0x13], RET_TARGET_313D
+;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+	jg [0x0C], [0x12], RET_TARGET_313D
+	jl [0x0C], [0x13], RET_TARGET_313D
+;@endif
+	mov [0x07], 0x0002
+
+RET_TARGET_313D:
+	ret
+
+DISPATCH_ON_PROXIMITY_TO_338F_OR_3068:
+	je [0x07], 0x01, DRAW_BEAST_421_422_WITH_SOUND_35
+	je [0x07], 0x02, SHIFT_X_LEFT_THEN_DRAW_LAKE_167_169
+	killChannel
+
+DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C:
+	je [0x07], 0x01, SLUG_FLIP_WALKS
+	je [0x07], 0x02, DRAW_LAKE_167_169_WITH_SOUND_35
+	killChannel
+
