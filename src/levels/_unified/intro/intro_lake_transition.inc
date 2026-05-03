@@ -279,9 +279,9 @@ INTRO_FILL_PAGE0_DRAW_CIN_118:
 	mov [0x04], 0x0005
 	mov [PAUSE_SLICES], 0x0004
 
-LABEL_1EC4:
+DELAY_VAR4_BEFORE_VAR1_PLUS_E:
 	break
-	djnz [0x04], LABEL_1EC4
+	djnz [0x04], DELAY_VAR4_BEFORE_VAR1_PLUS_E
 	add [0x01], 0x000E
 	break
 	add [0x01], 0x000E
@@ -290,9 +290,9 @@ LABEL_1EC4:
 	mov [0x1E], 0x0001
 	mov [0x04], 0x0004
 
-LABEL_1EDF:
+DELAY_4F_BEFORE_VAR_SHIFT_9:
 	break
-	djnz [0x04], LABEL_1EDF
+	djnz [0x04], DELAY_4F_BEFORE_VAR_SHIFT_9
 	sub [0x01], 0x0009
 	add [0x02], 0x0009
 	break
@@ -306,23 +306,23 @@ LABEL_1EDF:
 	mov [0x1E], 0x0002
 	mov [0x04], 0x0004
 
-LABEL_1F0B:
+DELAY_4F_BEFORE_PHASE_2_INIT:
 	break
-	djnz [0x04], LABEL_1F0B
+	djnz [0x04], DELAY_4F_BEFORE_PHASE_2_INIT
 	mov [0x04], 0x0004
 	mov [0x1E], 0x0002
 	mov [0x03], 0x0000
 
-LABEL_1F1C:
+DELAY_4F_BEFORE_DRIFT_15_M15:
 	break
-	djnz [0x04], LABEL_1F1C
+	djnz [0x04], DELAY_4F_BEFORE_DRIFT_15_M15
 	mov [0x04], 0x0003
 
-LABEL_1F25:
+DRIFT_VAR1_PLUS_F_VAR2_M_F_3X:
 	add [0x01], 0x000F
 	sub [0x02], 0x000F
 	break
-	djnz [0x04], LABEL_1F25
+	djnz [0x04], DRIFT_VAR1_PLUS_F_VAR2_M_F_3X
 	add [0x01], 0x000B
 	sub [0x02], 0x0009
 	break
@@ -330,15 +330,15 @@ LABEL_1F25:
 	mov [0x1E], 0x0003
 	mov [0x04], 0x0004
 
-LABEL_1F47:
+DELAY_4F_BEFORE_DRIFT_VAR2_18:
 	break
-	djnz [0x04], LABEL_1F47
+	djnz [0x04], DELAY_4F_BEFORE_DRIFT_VAR2_18
 	mov [0x04], 0x0003
 
-LABEL_1F50:
+DRIFT_VAR2_PLUS_18_3X:
 	add [0x02], 0x0012
 	break
-	djnz [0x04], LABEL_1F50
+	djnz [0x04], DRIFT_VAR2_PLUS_18_3X
 	mov [0x03], 0x0000
 	mov [0x1E], 0x0004
 	mov [0x04], 0x0003
