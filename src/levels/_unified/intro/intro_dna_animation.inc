@@ -162,7 +162,7 @@ DRAW_CIN_453_454_SEQ:
 	video type=1, offset=CINEMATIC_456, x=160, y=100
 	killChannel
 
-LABEL_03A5:
+DRAW_CIN_035_PAL_3_REPEAT_HEAD:
 	setPalette 0x03
 	mov [PAUSE_SLICES], 0x0003
 	video type=1, offset=CINEMATIC_035, x=160, y=100

@@ -85,9 +85,9 @@ INTRO_PLAY_BG_AUDIO_LOOP:
 	mov [0x01], 0x0024
 ;@endif
 
-LABEL_23DE:
+DELAY_BEFORE_PLAY_FX_9_DUAL:
 	break
-	djnz [0x01], LABEL_23DE
+	djnz [0x01], DELAY_BEFORE_PLAY_FX_9_DUAL
 	play id=0x0009, freq=0x14, vol=0x1E, channel=0x00
 	play id=0x0009, freq=0x14, vol=0x3F, channel=0x01
 	mov [PAUSE_SLICES], 0x0003
@@ -153,19 +153,19 @@ LABEL_23DE:
 	selectVideoPage 0xFF
 	mov [PAUSE_SLICES], 0x0002
 
-LABEL_24C5:
+DRAW_CIN_31_33_LOOP:
 	video type=1, offset=CINEMATIC_031, x=42, y=120
 	video type=1, offset=CINEMATIC_033, x=160, y=100
 	break
-	djnz [0x01], LABEL_24C5
+	djnz [0x01], DRAW_CIN_31_33_LOOP
 	setPalette 0x03
 	mov [0x01], 0x001E
 
-LABEL_24D9:
+DRAW_CIN_034_30X_BEFORE_REPEAT:
 	video type=1, offset=CINEMATIC_034, x=160, y=100
 	break
-	djnz [0x01], LABEL_24D9
-	jmp LABEL_03A5
+	djnz [0x01], DRAW_CIN_034_30X_BEFORE_REPEAT
+	jmp DRAW_CIN_035_PAL_3_REPEAT_HEAD
 LABEL_24E5:
 	killChannel
 
@@ -290,9 +290,9 @@ INTRO_PLAY_FX_AND_PALETTE_4_LOOP:
 	mov [PAUSE_SLICES], 0x0002
 	mov [0x01], 0x001C
 
-LABEL_262F:
+DELAY_28F_BEFORE_BLITTER_SETUP:
 	break
-	djnz [0x01], LABEL_262F
+	djnz [0x01], DELAY_28F_BEFORE_BLITTER_SETUP
 	break
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
@@ -304,9 +304,9 @@ LABEL_262F:
 	play id=0x000D, freq=0x0C, vol=0x3F, channel=0x03
 	mov [0x01], 0x0014
 
-LABEL_2654:
+DELAY_20F_BEFORE_PAL_7_INIT:
 	break
-	djnz [0x01], LABEL_2654
+	djnz [0x01], DELAY_20F_BEFORE_PAL_7_INIT
 	setup channel=0x01, address=INTRO_SET_PAL_7_FILL_PAGE0_5
 	setup channel=0x02, address=CH_02_INIT_VARS_01_02_03
 	setup channel=0x03, address=DRAW_CIN_112_AT_143_94_LOOP

@@ -78,11 +78,11 @@ CH_05_INIT_VARS_06_07_08:
 DRAW_CIN_130_NESTED_OUTER:
 	mov [0x09], 0x0003
 
-LABEL_219B:
+DRAW_CIN_130_AT_VAR67_INNER:
 	video type=1, offset=CINEMATIC_130, x=[0x06], y=16, zoom=0x40
 	video type=1, offset=CINEMATIC_130, x=[0x07], y=18, zoom=0x40
 	break
-	djnz [0x09], LABEL_219B
+	djnz [0x09], DRAW_CIN_130_AT_VAR67_INNER
 	add [0x06], 0x0002
 	sub [0x07], 0x0002
 	djnz [0x08], DRAW_CIN_130_NESTED_OUTER
@@ -97,17 +97,17 @@ INTRO_DRAW_CIN_528_AT_96_131:
 	selectVideoPage 0xFF
 	mov [0x05], 0x0003
 
-LABEL_21C7:
+DELAY_3F_BEFORE_CIN_130_DRAW:
 	break
-	djnz [0x05], LABEL_21C7
+	djnz [0x05], DELAY_3F_BEFORE_CIN_130_DRAW
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_130, x=96, y=131
 	selectVideoPage 0xFF
 	mov [0x05], 0x0004
 
-LABEL_21D8:
+DELAY_4F_BEFORE_CIN_528_RESTART:
 	break
-	djnz [0x05], LABEL_21D8
+	djnz [0x05], DELAY_4F_BEFORE_CIN_528_RESTART
 	jmp INTRO_DRAW_CIN_528_AT_96_131
 LABEL_21E0:
 	killChannel
