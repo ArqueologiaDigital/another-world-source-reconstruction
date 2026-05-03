@@ -12,16 +12,16 @@ INTRO_PAUSE_3_PLAY_SONG_INIT:
 	setup channel=0x09, address=DRAW_CIN_170_171_AT_VAR10_VAR11
 	mov [0x03], 0x0032
 
-LABEL_18D6:
+DELAY_50F_THEN_DRAW_CIN_454:
 	break
-	djnz [0x03], LABEL_18D6
+	djnz [0x03], DELAY_50F_THEN_DRAW_CIN_454
 	setup channel=0x09, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x11, address=DRAW_CIN_453_454_SEQ
 	mov [0x03], 0x0009
 
-LABEL_18E7:
+DELAY_9F_THEN_DRAW_CIN_132:
 	break
-	djnz [0x03], LABEL_18E7
+	djnz [0x03], DELAY_9F_THEN_DRAW_CIN_132
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	selectVideoPage 0x00
@@ -31,9 +31,9 @@ LABEL_18E7:
 	setup channel=0x11, address=DRAW_CIN_453_454_SEQ
 	mov [0x03], 0x0009
 
-LABEL_1905:
+DELAY_9F_THEN_DRAW_CIN_133:
 	break
-	djnz [0x03], LABEL_1905
+	djnz [0x03], DELAY_9F_THEN_DRAW_CIN_133
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	selectVideoPage 0x00
@@ -43,9 +43,9 @@ LABEL_1905:
 	setup channel=0x11, address=DRAW_CIN_453_454_SEQ
 	mov [0x03], 0x000A
 
-LABEL_1923:
+DELAY_10F_BEFORE_KILL_CHANNELS:
 	break
-	djnz [0x03], LABEL_1923
+	djnz [0x03], DELAY_10F_BEFORE_KILL_CHANNELS
 	setup channel=0x11, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
@@ -62,11 +62,11 @@ CH_03_INIT_VAR_01_02_FFF6:
 	mov [0x01], 0xFFF6
 	mov [0x02], 0x0017
 
-LABEL_1959:
+DROP_CIN_134_DOWN_BY_10_23X:
 	video type=1, offset=CINEMATIC_134, x=110, y=[0x01], zoom=0x40
 	add [0x01], 0x000A
 	break
-	djnz [0x02], LABEL_1959
+	djnz [0x02], DROP_CIN_134_DOWN_BY_10_23X
 	killChannel
 
 CH_04_INIT_VAR_04_05:

@@ -291,10 +291,10 @@ FILL_FF_8_AND_DRAW_CIN_517_518:
 	video type=1, offset=CINEMATIC_518, x=160, y=100
 	video type=1, offset=CINEMATIC_519, x=110, y=101
 	video type=1, offset=CINEMATIC_520, x=228, y=85
-	je [0xDB], 0x00, LABEL_189D
+	je [0xDB], 0x00, IF_DB_ZERO_SWAP_PAGE_PAL_11
 	video type=1, offset=CINEMATIC_352, x=128, y=30
 
-LABEL_189D:
+IF_DB_ZERO_SWAP_PAGE_PAL_11:
 	copyVideoPage src=0xFF, dst=0x00
 	setPalette 0x11
 	killChannel
