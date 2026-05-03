@@ -674,12 +674,12 @@ BLIT_AND_DISPATCH_VAR3:
 	break
 	jmp BLIT_AND_DISPATCH_VAR3
 
-LABEL_00D6:
+BLIT_DISPATCH_HERO_ACTION_ALT:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	jne [HERO_ACTION], 0x00, LABEL_09CA
 	break
-	jmp LABEL_00D6
+	jmp BLIT_DISPATCH_HERO_ACTION_ALT
 LABEL_00E4:
 	add [0xC7], 0x0001
 	blitFramebuffer 0xFF
@@ -1133,7 +1133,7 @@ LABEL_051E:
 LABEL_0526:
 	killChannel
 
-LABEL_0527:
+CH_0E_INIT_VAR_06:
 	break
 	mov [0x06], 0x003C
 
@@ -1166,7 +1166,7 @@ LABEL_053F:
 	setPalette 0x19
 	killChannel
 
-LABEL_055A:
+CH_0F_INIT_PARTICLE_POS:
 	break
 	mov [0x09], 0x0096
 	mov [0x07], 0x0000
@@ -1186,7 +1186,7 @@ LABEL_057C:
 	djnz [0x08], LABEL_057C
 	killChannel
 
-LABEL_0586:
+CH_10_DRAW_CIN_353_PARTICLE:
 	break
 	video type=1, offset=CINEMATIC_353, x=[0x07], y=[0x09], zoom=0x40
 	break
@@ -1197,11 +1197,11 @@ LABEL_0586:
 	video type=1, offset=CINEMATIC_356, x=[0x07], y=[0x09], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_357, x=[0x07], y=[0x09], zoom=0x40
-	jmp LABEL_0586
+	jmp CH_10_DRAW_CIN_353_PARTICLE
 LABEL_05A7:
 	killChannel
 
-LABEL_05A8:
+CH_11_INIT_PARTICLE_POS_2:
 	break
 	mov [0x0A], 0xFFCE
 	mov [0x0B], 0x0032
@@ -1214,11 +1214,11 @@ LABEL_05B1:
 	add [0x0A], 0x000A
 	break
 	djnz [0x0B], LABEL_05B1
-	jmp LABEL_05A8
+	jmp CH_11_INIT_PARTICLE_POS_2
 LABEL_05D1:
 	killChannel
 
-LABEL_05D2:
+CH_12_INIT_PARTICLE_POS_3:
 	break
 	mov [0x0C], 0xFFB0
 	mov [0x0D], 0x003C
@@ -1231,7 +1231,7 @@ LABEL_05DB:
 	add [0x0C], 0x0009
 	break
 	djnz [0x0D], LABEL_05DB
-	jmp LABEL_05D2
+	jmp CH_12_INIT_PARTICLE_POS_3
 LABEL_05FB:
 	killChannel
 
@@ -1252,11 +1252,11 @@ LABEL_05FC:
 	setup channel=0x0B, address=CH_0B_INIT_VAR_03
 	setup channel=0x0C, address=CH_0C_INIT_VAR_04
 	setup channel=0x0D, address=CH_0D_INIT_VAR_05
-	setup channel=0x0E, address=LABEL_0527
-	setup channel=0x0F, address=LABEL_055A
-	setup channel=0x10, address=LABEL_0586
-	setup channel=0x11, address=LABEL_05A8
-	setup channel=0x12, address=LABEL_05D2
+	setup channel=0x0E, address=CH_0E_INIT_VAR_06
+	setup channel=0x0F, address=CH_0F_INIT_PARTICLE_POS
+	setup channel=0x10, address=CH_10_DRAW_CIN_353_PARTICLE
+	setup channel=0x11, address=CH_11_INIT_PARTICLE_POS_2
+	setup channel=0x12, address=CH_12_INIT_PARTICLE_POS_3
 	mov [PAUSE_SLICES], 0x0003
 	video type=1, offset=CINEMATIC_032, x=215, y=100
 	video type=1, offset=CINEMATIC_005, x=90, y=101
@@ -1265,7 +1265,7 @@ LABEL_05FC:
 LABEL_0658:
 	break
 	djnz [0x01], LABEL_0658
-	setup channel=0x3C, address=LABEL_00D6
+	setup channel=0x3C, address=BLIT_DISPATCH_HERO_ACTION_ALT
 	deleteChannels first=0x0A, last=0x12
 	break
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x00
@@ -1276,7 +1276,7 @@ LABEL_0658:
 	break
 	fill page=0xFF, color=0x08
 	play id=0x000A, freq=0x0A, vol=0x3F, channel=0x01
-	setup channel=0x01, address=LABEL_06D8
+	setup channel=0x01, address=FILL_FF_PAGE_LOOP
 	break
 	video type=1, offset=CINEMATIC_193, x=160, y=100
 	break
@@ -1300,7 +1300,7 @@ LABEL_0658:
 	fill page=0xFF, color=0x08
 	break
 	fill page=0xFF, color=0x08
-	setup channel=0x01, address=LABEL_06D8
+	setup channel=0x01, address=FILL_FF_PAGE_LOOP
 	break
 	break
 	break
@@ -1312,10 +1312,10 @@ LABEL_0658:
 LABEL_06D7:
 	killChannel
 
-LABEL_06D8:
+FILL_FF_PAGE_LOOP:
 	fill page=0xFF, color=0x02
 	break
-	jmp LABEL_06D8
+	jmp FILL_FF_PAGE_LOOP
 LABEL_06DF:
 	killChannel
 
@@ -1395,7 +1395,7 @@ LABEL_079B:
 	fill page=0xFF, color=0x08
 	break
 	djnz [0x01], LABEL_079B
-	setup channel=0x04, address=LABEL_0C88
+	setup channel=0x04, address=SET_PALETTE_18
 	video type=1, offset=CINEMATIC_274, x=160, y=100
 	play id=0x002C, freq=0x14, vol=0x3F, channel=0x03
 	break
@@ -1487,8 +1487,8 @@ LABEL_086E:
 	break
 	setPalette 0x17
 	play id=0x0003, freq=0x14, vol=0x0A, channel=0x03
-	setup channel=0x04, address=LABEL_0C96
-	setup channel=0x0B, address=LABEL_09DB
+	setup channel=0x04, address=SET_PALETTE_17_INIT_VAR_14
+	setup channel=0x0B, address=PLAY_FX_2C_AND_DRAW_CIN_000
 	setup channel=0x0C, address=LABEL_0A07
 	setup channel=0x0D, address=LABEL_0A46
 	setup channel=0x0E, address=LABEL_0A62
@@ -1576,7 +1576,7 @@ LABEL_09CA:
 	blitFramebuffer 0xFF
 	load id=0x3E82
 
-LABEL_09DB:
+PLAY_FX_2C_AND_DRAW_CIN_000:
 	break
 	play id=0x002C, freq=0x14, vol=0x3F, channel=0x00
 	video type=1, offset=CINEMATIC_000, x=160, y=100
@@ -1593,7 +1593,7 @@ LABEL_09DB:
 LABEL_09FE:
 	break
 	djnz [0x02], LABEL_09FE
-	jmp LABEL_09DB
+	jmp PLAY_FX_2C_AND_DRAW_CIN_000
 LABEL_0A06:
 	killChannel
 
@@ -1887,18 +1887,18 @@ LABEL_0C7F:
 LABEL_0C87:
 	killChannel
 
-LABEL_0C88:
+SET_PALETTE_18:
 	setPalette 0x18
 	break
 	break
 	break
 	setPalette 0x1A
 	break
-	jmp LABEL_0C88
+	jmp SET_PALETTE_18
 LABEL_0C95:
 	killChannel
 
-LABEL_0C96:
+SET_PALETTE_17_INIT_VAR_14:
 	setPalette 0x17
 	mov [0x14], 0x001E
 
@@ -1918,7 +1918,7 @@ LABEL_0C9D:
 	break
 	setPalette 0x18
 	break
-	jmp LABEL_0C96
+	jmp SET_PALETTE_17_INIT_VAR_14
 LABEL_0CBC:
 	killChannel
 
@@ -2254,7 +2254,7 @@ LABEL_10A3:
 	djnz [0x01], LABEL_10A3
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
-	setup channel=0x3C, address=LABEL_00D6
+	setup channel=0x3C, address=BLIT_DISPATCH_HERO_ACTION_ALT
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
@@ -3193,7 +3193,7 @@ LABEL_1A2A:
 	selectVideoPage 0xFF
 	fill page=0xFF, color=0x01
 	video type=1, offset=CINEMATIC_466, x=153, y=114
-	setup channel=0x3C, address=LABEL_00D6
+	setup channel=0x3C, address=BLIT_DISPATCH_HERO_ACTION_ALT
 	setPalette 0x0D
 	mov [0x01], 0xFC45
 	mov [0x03], 0x0073
@@ -3575,7 +3575,7 @@ LABEL_1DF0:
 	mov [0x01], 0x0050
 	mov [0x02], 0x0004
 	mov [0x03], 0x001A
-	setup channel=0x3C, address=LABEL_00D6
+	setup channel=0x3C, address=BLIT_DISPATCH_HERO_ACTION_ALT
 
 LABEL_1E09:
 	jne [0x02], 0x01, LABEL_1E13
