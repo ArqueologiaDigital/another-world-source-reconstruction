@@ -1,0 +1,5 @@
+LABEL_4E75:
+	break	;@raw=0x06
+	jmp LABEL_4D31	;@raw=0x07,0x4D,0x31
+LABEL_4E79:
+	db 0x11

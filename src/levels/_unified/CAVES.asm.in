@@ -1,10 +1,13 @@
-; Unified source for CAVES with 213 folded shared bodies.
+; Unified source for CAVES with 218 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
+;   FOLD_BODY_446B_2519A417  (2-arm: amiga, dos)
+;   PRELOAD_CAVES_RESOURCES  (2-arm: amiga, dos)
 ;   FOLD_BODY_254B_838374D1  (3-arm: amiga, cart, dos)
 ;   COPY_VAR00_TO_VARF8  (3-arm: amiga, cart, dos)
 ;   COPY_VARF8_TO_VAR00  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_237B_F9B523AC  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_774E53C0  (2-arm: amiga, dos)
+;   INIT_VARS_E6_E7_E8  (2-arm: amiga, dos)
 ;   INIT_VARS_E6_E7_E8_E8_PLUS3  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_6D_71_70  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_44B_19E62B8E  (3-arm: amiga, cart, dos)
@@ -41,6 +44,7 @@
 ;   FOLD_BODY_219B_89086759  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_44B_6382DEF7  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_44B_FDAF3AA3  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_AC46978F  (2-arm: amiga, dos)
 ;   INIT_VARS_6C_6B  (3-arm: amiga, cart, dos)
 ;   INCREMENT_VAR31_BY_1  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_151B_F79ED944  (3-arm: amiga, cart, dos)
@@ -54,6 +58,7 @@
 ;   FOLD_BODY_156B_62098AC6  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_156B_189DA618  (2-arm: cart, dos)
 ;   FOLD_BODY_245B_6670034A  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_290B_04233270  (2-arm: amiga, dos)
 ;   INIT_HASH_VARS_67_66_65_68_69  (2-arm: amiga, cart)
 ;   INIT_VARS_29_07_08  (3-arm: amiga, cart, dos)
 ;   INCREMENT_VAR07_BY_4  (3-arm: amiga, cart, dos)
@@ -223,6 +228,59 @@
 ;@include "caves/dos__entry.inc"
 ;@endif
 
+;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+FOLD_BODY_446B_2519A417:
+	load id=0x006A	;@raw=0x19,0x00,0x6A
+	load id=0x0077	;@raw=0x19,0x00,0x77
+	load id=0x006D	;@raw=0x19,0x00,0x6D
+	load id=0x006E	;@raw=0x19,0x00,0x6E
+	load id=0x0074	;@raw=0x19,0x00,0x74
+	load id=0x0076	;@raw=0x19,0x00,0x76
+	load id=0x0078	;@raw=0x19,0x00,0x78
+	load id=0x007C	;@raw=0x19,0x00,0x7C
+	load id=0x0079	;@raw=0x19,0x00,0x79
+	load id=0x007A	;@raw=0x19,0x00,0x7A
+	load id=0x007B	;@raw=0x19,0x00,0x7B
+	load id=0x006C	;@raw=0x19,0x00,0x6C
+	ret	;@raw=0x05
+;@endif
+
+;@if BRANCH == "chahi_amiga_1991"
+;@include "caves/amiga__post_FOLD_BODY_446B_2519A417.inc"
+;@elif BRANCH == "dos_1992"
+;@include "caves/dos__post_FOLD_BODY_446B_2519A417.inc"
+;@endif
+
+;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+PRELOAD_CAVES_RESOURCES:
+	load id=0x006B	;@raw=0x19,0x00,0x6B
+	load id=0x0055	;@raw=0x19,0x00,0x55
+	load id=0x0056	;@raw=0x19,0x00,0x56
+	load id=0x0057	;@raw=0x19,0x00,0x57
+	load id=0x005E	;@raw=0x19,0x00,0x5E
+	load id=0x005F	;@raw=0x19,0x00,0x5F
+	load id=0x006B	;@raw=0x19,0x00,0x6B
+	load id=0x006C	;@raw=0x19,0x00,0x6C
+	load id=0x006D	;@raw=0x19,0x00,0x6D
+	load id=0x0075	;@raw=0x19,0x00,0x75
+	load id=0x0074	;@raw=0x19,0x00,0x74
+	load id=0x0078	;@raw=0x19,0x00,0x78
+	load id=0x007A	;@raw=0x19,0x00,0x7A
+	load id=0x0077	;@raw=0x19,0x00,0x77
+	load id=0x0066	;@raw=0x19,0x00,0x66
+	load id=0x0088	;@raw=0x19,0x00,0x88
+	load id=0x0070	;@raw=0x19,0x00,0x70
+	load id=0x0071	;@raw=0x19,0x00,0x71
+	load id=0x0072	;@raw=0x19,0x00,0x72
+	ret	;@raw=0x05
+;@endif
+
+;@if BRANCH == "chahi_amiga_1991"
+;@include "caves/amiga__post_PRELOAD_CAVES_RESOURCES.inc"
+;@elif BRANCH == "dos_1992"
+;@include "caves/dos__post_PRELOAD_CAVES_RESOURCES.inc"
+;@endif
+
 FOLD_BODY_254B_838374D1:
 	mov [0xF8], [0xB1]	;@raw=0x01,0xF8,0xB1
 	and [0xF8], 0x0005	;@raw=0x14,0xF8,0x00,0x05
@@ -263,20 +321,28 @@ COPY_VARF8_TO_VAR00:
 ;@include "caves/dos__post_COPY_VARF8_TO_VAR00.inc"
 ;@endif
 
-FOLD_BODY_237B_F9B523AC:
-	mov [0x8B], 0x006E	;@raw=0x00,0x8B,0x00,0x6E
-	or [0x8B], 0x8000	;@raw=0x15,0x8B,0x80,0x00
-	mov [0x96], 0x0000	;@raw=0x00,0x96,0x00,0x00
-	mov [0x97], 0x00B7	;@raw=0x00,0x97,0x00,0xB7
-	or [0x97], 0x4000	;@raw=0x15,0x97,0x40,0x00
-	ret	;@raw=0x05
+;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+FOLD_BODY_44B_774E53C0:
+	mov [0xE6], 0x0003	;@raw=0x00,0xE6,0x00,0x03
+;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_237B_F9B523AC.inc"
-;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_237B_F9B523AC.inc"
+;@include "caves/amiga__post_FOLD_BODY_44B_774E53C0.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_237B_F9B523AC.inc"
+;@include "caves/dos__post_FOLD_BODY_44B_774E53C0.inc"
+;@endif
+
+;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+INIT_VARS_E6_E7_E8:
+	mov [0xE6], 0x0008	;@raw=0x00,0xE6,0x00,0x08
+	mov [0xE7], 0x0050	;@raw=0x00,0xE7,0x00,0x50
+	mov [0xE8], 0x00AA	;@raw=0x00,0xE8,0x00,0xAA
+;@endif
+
+;@if BRANCH == "chahi_amiga_1991"
+;@include "caves/amiga__post_INIT_VARS_E6_E7_E8.inc"
+;@elif BRANCH == "dos_1992"
+;@include "caves/dos__post_INIT_VARS_E6_E7_E8.inc"
 ;@endif
 
 INIT_VARS_E6_E7_E8_E8_PLUS3:
@@ -721,6 +787,17 @@ FOLD_BODY_44B_FDAF3AA3:
 ;@include "caves/dos__post_FOLD_BODY_44B_FDAF3AA3.inc"
 ;@endif
 
+;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+FOLD_BODY_44B_AC46978F:
+	mov [0x6B], 0x0001	;@raw=0x00,0x6B,0x00,0x01
+;@endif
+
+;@if BRANCH == "chahi_amiga_1991"
+;@include "caves/amiga__post_FOLD_BODY_44B_AC46978F.inc"
+;@elif BRANCH == "dos_1992"
+;@include "caves/dos__post_FOLD_BODY_44B_AC46978F.inc"
+;@endif
+
 INIT_VARS_6C_6B:
 	mov [0x6C], 0x03E8	;@raw=0x00,0x6C,0x03,0xE8
 	mov [0x6B], 0x000A	;@raw=0x00,0x6B,0x00,0x0A
@@ -927,6 +1004,23 @@ FOLD_BODY_245B_6670034A:
 ;@include "caves/cart__post_FOLD_BODY_245B_6670034A.inc"
 ;@elif BRANCH == "dos_1992"
 ;@include "caves/dos__post_FOLD_BODY_245B_6670034A.inc"
+;@endif
+
+;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+FOLD_BODY_290B_04233270:
+	mov [HACK_VAR_67], 0x00A7	;@raw=0x00,0x67,0x00,0xA7
+	mov [0xB0], 0x0002	;@raw=0x00,0xB0,0x00,0x02
+	mov [0x02], 0x005D	;@raw=0x00,0x02,0x00,0x5D
+	mov [0x01], 0x007F	;@raw=0x00,0x01,0x00,0x7F
+	mov [0xBE], 0x0003	;@raw=0x00,0xBE,0x00,0x03
+	or [0xB1], 0x00C0	;@raw=0x15,0xB1,0x00,0xC0
+	ret	;@raw=0x05
+;@endif
+
+;@if BRANCH == "chahi_amiga_1991"
+;@include "caves/amiga__post_FOLD_BODY_290B_04233270.inc"
+;@elif BRANCH == "dos_1992"
+;@include "caves/dos__post_FOLD_BODY_290B_04233270.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "cartridge_1992")
