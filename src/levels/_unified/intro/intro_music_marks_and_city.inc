@@ -201,9 +201,9 @@ DELAY_14_BEFORE_BLIT_DISPATCH:
 	selectVideoPage 0xFF
 	mov [0x01], 0x0009
 
-LABEL_1231:
+DELAY_9_BEFORE_BLIT_DISPATCH:
 	break
-	djnz [0x01], LABEL_1231
+	djnz [0x01], DELAY_9_BEFORE_BLIT_DISPATCH
 	setup channel=0x3C, address=BLIT_AND_DISPATCH_VAR3
 	break
 	mov [0x01], 0x0014
@@ -211,25 +211,25 @@ LABEL_1231:
 	text id=0x0007, x=1, y=150, color=0x06
 	selectVideoPage 0xFF
 
-LABEL_1249:
+SHOW_TEXT_21_AT_3_150_20X:
 	break
 	text id=0x0021, x=3, y=150, color=0x06
-	djnz [0x01], LABEL_1249
+	djnz [0x01], SHOW_TEXT_21_AT_3_150_20X
 	setup channel=0x0C, address=DISPLAY_TEXT_0A_0B_PLAY_FX
 	setup channel=0x05, address=DISPLAY_TEXT_21
 	mov [0x01], 0x0031
 
-LABEL_1260:
+DELAY_49_BEFORE_COPY_PAGE_3_0:
 	break
-	djnz [0x01], LABEL_1260
+	djnz [0x01], DELAY_49_BEFORE_COPY_PAGE_3_0
 	break
 	copyVideoPage src=0x03, dst=0x00
 	setup channel=0x0B, address=DRAW_CITY_SEQ_419_420
 	mov [0x01], 0x0013
 
-LABEL_1271:
+DELAY_19_BEFORE_BLITTER_SETUP:
 	break
-	djnz [0x01], LABEL_1271
+	djnz [0x01], DELAY_19_BEFORE_BLITTER_SETUP
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	copyVideoPage src=0x00, dst=0x03
@@ -239,24 +239,24 @@ LABEL_1271:
 	selectVideoPage 0xFF
 	mov [0x01], 0x000A
 
-LABEL_1292:
+SHOW_TEXT_21_AT_26_60_10X:
 	break
 	text id=0x0021, x=26, y=60, color=0x06
-	djnz [0x01], LABEL_1292
+	djnz [0x01], SHOW_TEXT_21_AT_26_60_10X
 	mov [0x01], 0x000F
 
-LABEL_12A1:
+SHOW_TEXT_21_AT_27_68_15X:
 	break
 	text id=0x0021, x=27, y=68, color=0x06
-	djnz [0x01], LABEL_12A1
+	djnz [0x01], SHOW_TEXT_21_AT_27_68_15X
 	break
 	text id=0x0021, x=29, y=84, color=0x06
 	mov [0x01], 0x0009
 
-LABEL_12B7:
+SHOW_TEXT_21_AT_27_100_9X:
 	break
 	text id=0x0021, x=27, y=100, color=0x06
-	djnz [0x01], LABEL_12B7
+	djnz [0x01], SHOW_TEXT_21_AT_27_100_9X
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	selectVideoPage 0x00
