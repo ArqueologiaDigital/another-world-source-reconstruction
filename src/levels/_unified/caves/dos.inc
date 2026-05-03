@@ -20896,7 +20896,7 @@ LABEL_CF56:
 LABEL_CF68:
 	db 0x11
 
-LABEL_CF69:
+DRAW_CIN_SEQ_423_423_423_AT_CF69:
 	video type=1, offset=CINEMATIC_423, x=158, y=70	;@raw=0xD2,0x8C,0x9E,0x46
 	video type=1, offset=CINEMATIC_423, x=158, y=59	;@raw=0xD2,0x8C,0x9E,0x3B
 	video type=1, offset=CINEMATIC_423, x=159, y=51	;@raw=0xD2,0x8C,0x9F,0x33
@@ -20904,7 +20904,7 @@ LABEL_CF69:
 	video type=1, offset=CINEMATIC_423, x=158, y=27	;@raw=0xD2,0x8C,0x9E,0x1B
 	ret	;@raw=0x05
 
-LABEL_CF7E:
+DRAW_CIN_SEQ_423_423_423_AT_CF7E:
 	video type=1, offset=CINEMATIC_423, x=157, y=70	;@raw=0xD2,0x8C,0x9D,0x46
 	video type=1, offset=CINEMATIC_423, x=158, y=59	;@raw=0xD2,0x8C,0x9E,0x3B
 	video type=1, offset=CINEMATIC_423, x=159, y=51	;@raw=0xD2,0x8C,0x9F,0x33
@@ -20912,7 +20912,7 @@ LABEL_CF7E:
 	video type=1, offset=CINEMATIC_423, x=158, y=27	;@raw=0xD2,0x8C,0x9E,0x1B
 	ret	;@raw=0x05
 
-LABEL_CF93:
+DRAW_CIN_SEQ_423_423_423_AT_CF93:
 	video type=1, offset=CINEMATIC_423, x=156, y=70	;@raw=0xD2,0x8C,0x9C,0x46
 	video type=1, offset=CINEMATIC_423, x=157, y=59	;@raw=0xD2,0x8C,0x9D,0x3B
 	video type=1, offset=CINEMATIC_423, x=158, y=51	;@raw=0xD2,0x8C,0x9E,0x33
@@ -20920,7 +20920,7 @@ LABEL_CF93:
 	video type=1, offset=CINEMATIC_423, x=158, y=27	;@raw=0xD2,0x8C,0x9E,0x1B
 	ret	;@raw=0x05
 
-LABEL_CFA8:
+DRAW_CIN_SEQ_423_423_423_AT_CFA8:
 	video type=1, offset=CINEMATIC_423, x=155, y=70	;@raw=0xD2,0x8C,0x9B,0x46
 	video type=1, offset=CINEMATIC_423, x=156, y=59	;@raw=0xD2,0x8C,0x9C,0x3B
 	video type=1, offset=CINEMATIC_423, x=157, y=51	;@raw=0xD2,0x8C,0x9D,0x33
@@ -20928,7 +20928,7 @@ LABEL_CFA8:
 	video type=1, offset=CINEMATIC_423, x=157, y=27	;@raw=0xD2,0x8C,0x9D,0x1B
 	ret	;@raw=0x05
 
-LABEL_CFBD:
+DRAW_CIN_SEQ_423_423_423_AT_CFBD:
 	video type=1, offset=CINEMATIC_423, x=159, y=70	;@raw=0xD2,0x8C,0x9F,0x46
 	video type=1, offset=CINEMATIC_423, x=159, y=59	;@raw=0xD2,0x8C,0x9F,0x3B
 	video type=1, offset=CINEMATIC_423, x=159, y=51	;@raw=0xD2,0x8C,0x9F,0x33
@@ -20936,7 +20936,7 @@ LABEL_CFBD:
 	video type=1, offset=CINEMATIC_423, x=158, y=27	;@raw=0xD2,0x8C,0x9E,0x1B
 	ret	;@raw=0x05
 
-LABEL_CFD2:
+DRAW_CIN_SEQ_423_423_423_AT_CFD2:
 	video type=1, offset=CINEMATIC_423, x=160, y=70	;@raw=0xD2,0x8C,0xA0,0x46
 	video type=1, offset=CINEMATIC_423, x=159, y=59	;@raw=0xD2,0x8C,0x9F,0x3B
 	video type=1, offset=CINEMATIC_423, x=160, y=51	;@raw=0xD2,0x8C,0xA0,0x33
@@ -20944,7 +20944,7 @@ LABEL_CFD2:
 	video type=1, offset=CINEMATIC_423, x=158, y=27	;@raw=0xD2,0x8C,0x9E,0x1B
 	ret	;@raw=0x05
 
-LABEL_CFE7:
+DRAW_CIN_SEQ_423_423_423_AT_CFE7:
 	video type=1, offset=CINEMATIC_423, x=161, y=70	;@raw=0xD2,0x8C,0xA1,0x46
 	video type=1, offset=CINEMATIC_423, x=160, y=59	;@raw=0xD2,0x8C,0xA0,0x3B
 	video type=1, offset=CINEMATIC_423, x=161, y=51	;@raw=0xD2,0x8C,0xA1,0x33
@@ -20955,33 +20955,33 @@ LABEL_CFFC:
 	db 0x11
 
 LABEL_CFFD:
-	call LABEL_CFA8	;@raw=0x04,0xCF,0xA8
+	call DRAW_CIN_SEQ_423_423_423_AT_CFA8	;@raw=0x04,0xCF,0xA8
 	break	;@raw=0x06
-	call LABEL_CF93	;@raw=0x04,0xCF,0x93
+	call DRAW_CIN_SEQ_423_423_423_AT_CF93	;@raw=0x04,0xCF,0x93
 	break	;@raw=0x06
-	call LABEL_CF7E	;@raw=0x04,0xCF,0x7E
+	call DRAW_CIN_SEQ_423_423_423_AT_CF7E	;@raw=0x04,0xCF,0x7E
 	break	;@raw=0x06
-	call LABEL_CF69	;@raw=0x04,0xCF,0x69
+	call DRAW_CIN_SEQ_423_423_423_AT_CF69	;@raw=0x04,0xCF,0x69
 	break	;@raw=0x06
-	call LABEL_CFBD	;@raw=0x04,0xCF,0xBD
+	call DRAW_CIN_SEQ_423_423_423_AT_CFBD	;@raw=0x04,0xCF,0xBD
 	break	;@raw=0x06
-	call LABEL_CFD2	;@raw=0x04,0xCF,0xD2
+	call DRAW_CIN_SEQ_423_423_423_AT_CFD2	;@raw=0x04,0xCF,0xD2
 	break	;@raw=0x06
-	call LABEL_CFE7	;@raw=0x04,0xCF,0xE7
+	call DRAW_CIN_SEQ_423_423_423_AT_CFE7	;@raw=0x04,0xCF,0xE7
 	break	;@raw=0x06
-	call LABEL_CFE7	;@raw=0x04,0xCF,0xE7
+	call DRAW_CIN_SEQ_423_423_423_AT_CFE7	;@raw=0x04,0xCF,0xE7
 	break	;@raw=0x06
-	call LABEL_CFD2	;@raw=0x04,0xCF,0xD2
+	call DRAW_CIN_SEQ_423_423_423_AT_CFD2	;@raw=0x04,0xCF,0xD2
 	break	;@raw=0x06
-	call LABEL_CFBD	;@raw=0x04,0xCF,0xBD
+	call DRAW_CIN_SEQ_423_423_423_AT_CFBD	;@raw=0x04,0xCF,0xBD
 	break	;@raw=0x06
-	call LABEL_CF69	;@raw=0x04,0xCF,0x69
+	call DRAW_CIN_SEQ_423_423_423_AT_CF69	;@raw=0x04,0xCF,0x69
 	break	;@raw=0x06
-	call LABEL_CF7E	;@raw=0x04,0xCF,0x7E
+	call DRAW_CIN_SEQ_423_423_423_AT_CF7E	;@raw=0x04,0xCF,0x7E
 	break	;@raw=0x06
-	call LABEL_CF93	;@raw=0x04,0xCF,0x93
+	call DRAW_CIN_SEQ_423_423_423_AT_CF93	;@raw=0x04,0xCF,0x93
 	break	;@raw=0x06
-	call LABEL_CFA8	;@raw=0x04,0xCF,0xA8
+	call DRAW_CIN_SEQ_423_423_423_AT_CFA8	;@raw=0x04,0xCF,0xA8
 	break	;@raw=0x06
 	jmp LABEL_CFFD	;@raw=0x07,0xCF,0xFD
 LABEL_D038:
