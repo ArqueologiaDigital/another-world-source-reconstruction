@@ -8693,7 +8693,7 @@ HERO_STAND_LEFT_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_CV_000_001_002_AND_CIN_002
 	jne [HERO_POS_MASK], 0x02, LABEL_443D
-	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_445C
+	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, STAND_L_FALL_LEFT_PATH
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_HERO_STANDING_LEFT_IDLE, x=[0x01], y=[0x02], zoom=[0x03]
 	jne [HERO_POS_MASK], 0x02, MAYBE_RESUME_WALK_LEFT_IF_GROUNDED
@@ -8701,11 +8701,11 @@ HERO_STAND_LEFT_LOOP:
 	sub [0x01], 0x0002
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 
-LABEL_445C:
+STAND_L_FALL_LEFT_PATH:
 ;@endif
 ;@if BRANCH == "dos_1992"
 
-LABEL_445C:
+STAND_L_FALL_LEFT_PATH:
 ;@endif
 	break
 	jmp HERO_FALL_LEFT_LOOP
@@ -8718,7 +8718,7 @@ LABEL_445C:
 	video type=1, offset=CINEMATIC_HERO_RESUME_RIGHT_F2, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 
-LABEL_42A8:
+STAND_L_LAND_AFTER_RESUME_R_F2:
 	break
 	sub [0x01], 0x0002
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
@@ -8727,7 +8727,7 @@ LABEL_42A8:
 	video type=1, offset=CINEMATIC_HERO_RESUME_RIGHT_F1, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 
-LABEL_42B3:
+STAND_L_LAND_AFTER_RESUME_R_F1:
 	break
 	sub [0x01], 0x0002
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
@@ -8736,7 +8736,7 @@ LABEL_42B3:
 	video type=1, offset=CINEMATIC_HERO_RESUME_RIGHT_F0, x=[0x01], y=[0x02], zoom=0x40
 ;@endif
 
-LABEL_42BD:
+STAND_L_LAND_AFTER_RESUME_R_F0:
 	sub [0x01], 0x0001
 ;@if BRANCH == "cartridge_1992"
 	jmp LABEL_4693
@@ -8753,7 +8753,7 @@ LABEL_42BD:
 	video type=1, offset=CINEMATIC_HERO_LEAP_RIGHT_F038_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 
-LABEL_42CF:
+STAND_L_LAND_AFTER_LEAP_R_F2:
 	break
 	sub [0x01], 0x0002
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
@@ -8762,7 +8762,7 @@ LABEL_42CF:
 	video type=1, offset=CINEMATIC_HERO_LEAP_RIGHT_F036_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 
-LABEL_42DA:
+STAND_L_LAND_AFTER_LEAP_R_F1:
 	break
 	sub [0x01], 0x0002
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
@@ -8771,7 +8771,7 @@ LABEL_42DA:
 	video type=1, offset=CINEMATIC_HERO_LEAP_RIGHT_F034_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 
-LABEL_42E5:
+STAND_L_LAND_AFTER_LEAP_R_F0:
 	sub [0x01], 0x0001
 ;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991")
 	jmp LABEL_4371
@@ -8792,7 +8792,7 @@ HERO_FALL_RIGHT_LOOP:
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_HERO_RESUME_RIGHT_F0, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
-	je [HERO_POS_MASK], 0x00, LABEL_42BD
+	je [HERO_POS_MASK], 0x00, STAND_L_LAND_AFTER_RESUME_R_F0
 	add [0x01], 0x0002
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
@@ -8801,7 +8801,7 @@ HERO_FALL_RIGHT_LOOP:
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_HERO_RESUME_RIGHT_F1, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
-	je [HERO_POS_MASK], 0x00, LABEL_42B3
+	je [HERO_POS_MASK], 0x00, STAND_L_LAND_AFTER_RESUME_R_F1
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	add [0x01], 0x0001
 
@@ -8823,7 +8823,7 @@ LABEL_44D0:
 ;@if BRANCH == "dos_1992"
 	jne [HERO_POS_LEFT_RIGHT], 0x01, LABEL_44EB
 ;@endif
-	je [HERO_POS_MASK], 0x00, LABEL_42A8
+	je [HERO_POS_MASK], 0x00, STAND_L_LAND_AFTER_RESUME_R_F2
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	add [0x01], 0x0001
 
@@ -8948,7 +8948,7 @@ LBL_4371_453B:
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_HERO_LEAP_RIGHT_F034_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
-	je [HERO_POS_MASK], 0x00, LABEL_42E5
+	je [HERO_POS_MASK], 0x00, STAND_L_LAND_AFTER_LEAP_R_F0
 	add [0x01], 0x0002
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
@@ -8964,7 +8964,7 @@ LBL_4371_453B:
 	call DRAW_VIDEO_036_037_AND_HERO_STOP_RIGHT_FRAME_2_RET
 	jne [HERO_POS_LEFT_RIGHT], 0x01, LABEL_4575
 ;@endif
-	je [HERO_POS_MASK], 0x00, LABEL_42DA
+	je [HERO_POS_MASK], 0x00, STAND_L_LAND_AFTER_LEAP_R_F1
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	add [0x01], 0x0001
 
@@ -8996,7 +8996,7 @@ LABEL_4575:
 	call DRAW_HERO_STOP_R_BUNDLE_038_039
 	jne [HERO_POS_LEFT_RIGHT], 0x01, LABEL_458D
 ;@endif
-	je [HERO_POS_MASK], 0x00, LABEL_42CF
+	je [HERO_POS_MASK], 0x00, STAND_L_LAND_AFTER_LEAP_R_F2
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	add [0x01], 0x0001
 
