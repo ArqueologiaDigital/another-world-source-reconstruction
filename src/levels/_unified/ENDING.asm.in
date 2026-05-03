@@ -1,14 +1,114 @@
-; Skeleton unified source for ENDING.
-; Each branch gets its own per-branch source verbatim via ;@include.
-; This is a starting point — folding cross-branch shared code into a
-; single body (the way LAKE.asm.in / INTRO.asm.in are written) is
-; future work; this skeleton is just the bare minimum that makes
-; verify_unified pass for ENDING.
+; Unified source for ENDING with two folded shared bodies.
+;
+; cart's ENDING bytecode lacks the star-scatter routines, so cart
+; gets a single verbatim include. amiga and dos both have the
+; routines (byte-identical between amiga and dos because their
+; CINEMATIC_000..007 EQU values match), so they're folded into the
+; top-level body wrapped in `;@if BRANCH in ("amiga","dos")`.
+;
+; Currently folded routines (in byte-address order within the file):
+;   DRAW_STARS_PAGE0_CIN_000  (149 bytes — amiga+dos only)
+;     amiga: byte addr ~0x0844   dos: ~0x094E
+;   DRAW_STARS_PAGE3_CIN_004  (149 bytes — amiga+dos only)
+;     amiga: byte addr ~0x08DA   dos: ~0x09E4
+;
+; Per-arm split layout:
+;   amiga: pre + (small mid) + post — 3 chunks
+;   dos:   pre + (small mid) + post — 3 chunks
+;   cart:  single chunk (cart.inc — neither star-scatter routine present)
+;
+; The bodies draw a fixed scatter pattern of CINEMATIC_000..007 at
+; many positions on pages 0x00 and 0x03 — the dust/sparks visible
+; during the ending sequence (Lester's escape on the dragon).
 
 ;@if BRANCH == "cartridge_1992"
 ;@include "ending/cart.inc"
-;@elif BRANCH == "dos_1992"
-;@include "ending/dos.inc"
+;@endif
+
+;@if BRANCH == "dos_1992"
+;@include "ending/dos_pre.inc"
 ;@elif BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga.inc"
+;@include "ending/amiga_pre.inc"
+;@endif
+
+;@if BRANCH in ("dos_1992", "chahi_amiga_1991")
+DRAW_STARS_PAGE0_CIN_000:
+	selectVideoPage 0x00	;@raw=0x0D,0x00
+	fill page=0x00, color=0x01	;@raw=0x0E,0x00,0x01
+	video type=1, offset=CINEMATIC_000, x=253, y=34, zoom=[0x0a]	;@raw=0x6A,0x09,0x0E,0xFD,0x22,0x0A
+	video type=1, offset=CINEMATIC_000, x=269, y=29, zoom=[0x10]	;@raw=0x7A,0x09,0x0E,0x0D,0x1D,0x10
+	video type=1, offset=CINEMATIC_000, x=273, y=78, zoom=[0x10]	;@raw=0x7A,0x09,0x0E,0x11,0x4E,0x10
+	video type=1, offset=CINEMATIC_000, x=303, y=57, zoom=[0x10]	;@raw=0x7A,0x09,0x0E,0x2F,0x39,0x10
+	video type=1, offset=CINEMATIC_000, x=140, y=79, zoom=[0x08]	;@raw=0x6A,0x09,0x0E,0x8C,0x4F,0x08
+	video type=1, offset=CINEMATIC_000, x=214, y=85, zoom=[0x10]	;@raw=0x6A,0x09,0x0E,0xD6,0x55,0x10
+	video type=1, offset=CINEMATIC_000, x=66, y=79, zoom=[0x10]	;@raw=0x6A,0x09,0x0E,0x42,0x4F,0x10
+	video type=1, offset=CINEMATIC_000, x=111, y=52, zoom=[0x20]	;@raw=0x6A,0x09,0x0E,0x6F,0x34,0x20
+	video type=1, offset=CINEMATIC_000, x=95, y=103, zoom=[0x10]	;@raw=0x6A,0x09,0x0E,0x5F,0x67,0x10
+	video type=1, offset=CINEMATIC_000, x=153, y=89, zoom=[0x10]	;@raw=0x6A,0x09,0x0E,0x99,0x59,0x10
+	video type=1, offset=CINEMATIC_000, x=132, y=107, zoom=[0x10]	;@raw=0x6A,0x09,0x0E,0x84,0x6B,0x10
+	video type=1, offset=CINEMATIC_000, x=4, y=85, zoom=[0x10]	;@raw=0x6A,0x09,0x0E,0x04,0x55,0x10
+	video type=1, offset=CINEMATIC_000, x=65, y=115, zoom=[0x20]	;@raw=0x6A,0x09,0x0E,0x41,0x73,0x20
+	video type=1, offset=CINEMATIC_000, x=293, y=139, zoom=0x40	;@raw=0x78,0x09,0x0E,0x25,0x8B
+	video type=1, offset=CINEMATIC_000, x=11, y=109, zoom=[0x1c]	;@raw=0x6A,0x09,0x0E,0x0B,0x6D,0x1C
+	video type=1, offset=CINEMATIC_000, x=11, y=146	;@raw=0x89,0x0E,0x0B,0x92
+	video type=1, offset=CINEMATIC_001, x=31, y=187	;@raw=0x86,0xEE,0x1F,0xBB
+	video type=1, offset=CINEMATIC_002, x=301, y=14, zoom=0x40	;@raw=0x78,0x08,0x3C,0x2D,0x0E
+	video type=1, offset=CINEMATIC_001, x=294, y=188, zoom=0x40	;@raw=0x78,0x06,0xEE,0x26,0xBC
+	video type=1, offset=CINEMATIC_003, x=2, y=167	;@raw=0x86,0xB2,0x02,0xA7
+	video type=1, offset=CINEMATIC_002, x=92, y=30	;@raw=0x88,0x3C,0x5C,0x1E
+	video type=1, offset=CINEMATIC_002, x=128, y=11	;@raw=0x88,0x3C,0x80,0x0B
+	video type=1, offset=CINEMATIC_002, x=166, y=10	;@raw=0x88,0x3C,0xA6,0x0A
+	video type=1, offset=CINEMATIC_002, x=85, y=19	;@raw=0x88,0x3C,0x55,0x13
+	video type=1, offset=CINEMATIC_002, x=48, y=12	;@raw=0x88,0x3C,0x30,0x0C
+	video type=1, offset=CINEMATIC_002, x=111, y=3	;@raw=0x88,0x3C,0x6F,0x03
+	video type=1, offset=CINEMATIC_002, x=13, y=11, zoom=[0x20]	;@raw=0x6A,0x08,0x3C,0x0D,0x0B,0x20
+	selectVideoPage 0xFF	;@raw=0x0D,0xFF
+	ret	;@raw=0x05
+;@endif
+
+;@if BRANCH == "dos_1992"
+;@include "ending/dos_mid.inc"
+;@elif BRANCH == "chahi_amiga_1991"
+;@include "ending/amiga_mid.inc"
+;@endif
+
+;@if BRANCH in ("dos_1992", "chahi_amiga_1991")
+DRAW_STARS_PAGE3_CIN_004:
+	selectVideoPage 0x03	;@raw=0x0D,0x03
+	fill page=0x03, color=0x01	;@raw=0x0E,0x03,0x01
+	video type=1, offset=CINEMATIC_004, x=253, y=34, zoom=[0x0a]	;@raw=0x6A,0x17,0x68,0xFD,0x22,0x0A
+	video type=1, offset=CINEMATIC_004, x=269, y=29, zoom=[0x10]	;@raw=0x7A,0x17,0x68,0x0D,0x1D,0x10
+	video type=1, offset=CINEMATIC_004, x=273, y=78, zoom=[0x10]	;@raw=0x7A,0x17,0x68,0x11,0x4E,0x10
+	video type=1, offset=CINEMATIC_004, x=303, y=57, zoom=[0x10]	;@raw=0x7A,0x17,0x68,0x2F,0x39,0x10
+	video type=1, offset=CINEMATIC_004, x=140, y=79, zoom=[0x08]	;@raw=0x6A,0x17,0x68,0x8C,0x4F,0x08
+	video type=1, offset=CINEMATIC_004, x=214, y=85, zoom=[0x10]	;@raw=0x6A,0x17,0x68,0xD6,0x55,0x10
+	video type=1, offset=CINEMATIC_004, x=66, y=79, zoom=[0x10]	;@raw=0x6A,0x17,0x68,0x42,0x4F,0x10
+	video type=1, offset=CINEMATIC_004, x=111, y=52, zoom=[0x20]	;@raw=0x6A,0x17,0x68,0x6F,0x34,0x20
+	video type=1, offset=CINEMATIC_004, x=95, y=103, zoom=[0x10]	;@raw=0x6A,0x17,0x68,0x5F,0x67,0x10
+	video type=1, offset=CINEMATIC_004, x=153, y=89, zoom=[0x10]	;@raw=0x6A,0x17,0x68,0x99,0x59,0x10
+	video type=1, offset=CINEMATIC_004, x=132, y=107, zoom=[0x10]	;@raw=0x6A,0x17,0x68,0x84,0x6B,0x10
+	video type=1, offset=CINEMATIC_004, x=4, y=85, zoom=[0x10]	;@raw=0x6A,0x17,0x68,0x04,0x55,0x10
+	video type=1, offset=CINEMATIC_004, x=65, y=115, zoom=[0x20]	;@raw=0x6A,0x17,0x68,0x41,0x73,0x20
+	video type=1, offset=CINEMATIC_004, x=293, y=139, zoom=0x40	;@raw=0x78,0x17,0x68,0x25,0x8B
+	video type=1, offset=CINEMATIC_004, x=11, y=109, zoom=[0x1c]	;@raw=0x6A,0x17,0x68,0x0B,0x6D,0x1C
+	video type=1, offset=CINEMATIC_004, x=11, y=146	;@raw=0x97,0x68,0x0B,0x92
+	video type=1, offset=CINEMATIC_005, x=31, y=187	;@raw=0x92,0xD8,0x1F,0xBB
+	video type=1, offset=CINEMATIC_006, x=301, y=14, zoom=0x40	;@raw=0x78,0x14,0x12,0x2D,0x0E
+	video type=1, offset=CINEMATIC_005, x=294, y=188, zoom=0x40	;@raw=0x78,0x12,0xD8,0x26,0xBC
+	video type=1, offset=CINEMATIC_007, x=2, y=167	;@raw=0x99,0xBE,0x02,0xA7
+	video type=1, offset=CINEMATIC_006, x=92, y=30	;@raw=0x94,0x12,0x5C,0x1E
+	video type=1, offset=CINEMATIC_006, x=128, y=11	;@raw=0x94,0x12,0x80,0x0B
+	video type=1, offset=CINEMATIC_006, x=166, y=10	;@raw=0x94,0x12,0xA6,0x0A
+	video type=1, offset=CINEMATIC_006, x=85, y=19	;@raw=0x94,0x12,0x55,0x13
+	video type=1, offset=CINEMATIC_006, x=48, y=12	;@raw=0x94,0x12,0x30,0x0C
+	video type=1, offset=CINEMATIC_006, x=111, y=3	;@raw=0x94,0x12,0x6F,0x03
+	video type=1, offset=CINEMATIC_006, x=13, y=11, zoom=[0x20]	;@raw=0x6A,0x14,0x12,0x0D,0x0B,0x20
+	selectVideoPage 0xFF	;@raw=0x0D,0xFF
+	ret	;@raw=0x05
+;@endif
+
+;@if BRANCH == "dos_1992"
+;@include "ending/dos_post.inc"
+;@elif BRANCH == "chahi_amiga_1991"
+;@include "ending/amiga_post.inc"
 ;@endif
