@@ -1332,11 +1332,11 @@ LABEL_0CD7:
 	killChannel	;@raw=0x11
 
 LABEL_0D22:
-	call LABEL_0D2A	;@raw=0x04,0x0D,0x2A
+	call CALL_LABEL_0D2E_AND_RET	;@raw=0x04,0x0D,0x2A
 	or [0xE4], 0x0014	;@raw=0x15,0xE4,0x00,0x14
 	ret	;@raw=0x05
 
-LABEL_0D2A:
+CALL_LABEL_0D2E_AND_RET:
 	call LABEL_0D2E	;@raw=0x04,0x0D,0x2E
 	ret	;@raw=0x05
 
@@ -1346,11 +1346,11 @@ LABEL_0D2E:
 	ret	;@raw=0x05
 
 LABEL_0D36:
-	call LABEL_0D3D	;@raw=0x04,0x0D,0x3D
+	call WRAP_SUM_HASH_VARS_TO_VAR_37	;@raw=0x04,0x0D,0x3D
 	call INIT_PROGRESS_HASH_VARS	;@raw=0x04,0x00,0x15
 	ret	;@raw=0x05
 
-LABEL_0D3D:
+WRAP_SUM_HASH_VARS_TO_VAR_37:
 	call SUM_HASH_VARS_TO_VAR_37	;@raw=0x04,0x0A,0x15
 	ret	;@raw=0x05
 
