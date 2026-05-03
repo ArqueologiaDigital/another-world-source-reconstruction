@@ -10283,7 +10283,7 @@ HERO_RUN_LEFT_LOOP:
 ;@endif
 	sub [0x01], 0x0001
 
-LABEL_48B2:
+HERO_LAND_LEFT_HOLD_LOOP:
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video type=1, offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
@@ -10292,7 +10292,7 @@ LABEL_48B2:
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
-	je [HERO_ACTION_POS_MASK], 0x88, LABEL_48B2
+	je [HERO_ACTION_POS_MASK], 0x88, HERO_LAND_LEFT_HOLD_LOOP
 	break
 	sub [0x01], 0x0002
 	video type=1, offset=CINEMATIC_RIGHT_KICK_1, x=[0x01], y=[0x02], zoom=[0x03]
@@ -10324,11 +10324,11 @@ HERO_KICK_LEFT_LOOP:
 	add [0x01], 0x0001
 ;@endif
 
-LABEL_4903:
+HERO_LEFT_KICK_LOOP:
 	break
 	mov [0x06], 0x0000
 	video type=1, offset=CINEMATIC_LEFT_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
-	je [HERO_ACTION_POS_MASK], 0x80, LABEL_4903
+	je [HERO_ACTION_POS_MASK], 0x80, HERO_LEFT_KICK_LOOP
 	break
 	add [0x01], 0x0002
 	video type=1, offset=CINEMATIC_LEFT_KICK_1, x=[0x01], y=[0x02], zoom=[0x03]
@@ -10358,11 +10358,11 @@ HERO_KICK_RIGHT_LOOP:
 	video type=1, offset=CINEMATIC_RIGHT_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
 	sub [0x01], 0x0001
 
-LABEL_4958:
+HERO_RIGHT_KICK_LOOP:
 	break
 	mov [0x06], 0x0000
 	video type=1, offset=CINEMATIC_RIGHT_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
-	je [HERO_ACTION_POS_MASK], 0x80, LABEL_4958
+	je [HERO_ACTION_POS_MASK], 0x80, HERO_RIGHT_KICK_LOOP
 	break
 	sub [0x01], 0x0002
 	video type=1, offset=CINEMATIC_RIGHT_KICK_1, x=[0x01], y=[0x02], zoom=[0x03]
@@ -10395,17 +10395,17 @@ HERO_CROUCH_KICK_LEFT:
 	add [0x01], 0x0001
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-LBL_49AD_504C:
+HERO_LEFT_CROUCH_KICK_LOOP:
 ;@elif BRANCH == "chahi_amiga_1991"
-LABEL_49AD:
+HERO_LEFT_CROUCH_KICK_LOOP:
 ;@endif
 	break
 	mov [0x06], 0x0000
 	video type=1, offset=CINEMATIC_LEFT_CROUCH_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	je [HERO_ACTION_POS_MASK], 0x84, LBL_49AD_504C
+	je [HERO_ACTION_POS_MASK], 0x84, HERO_LEFT_CROUCH_KICK_LOOP
 ;@elif BRANCH == "chahi_amiga_1991"
-	je [HERO_ACTION_POS_MASK], 0x84, LABEL_49AD
+	je [HERO_ACTION_POS_MASK], 0x84, HERO_LEFT_CROUCH_KICK_LOOP
 ;@endif
 	add [0x01], 0x0002
 	break
@@ -10440,11 +10440,11 @@ HERO_CROUCH_KICK_RIGHT:
 	video type=1, offset=CINEMATIC_RIGHT_CROUCH_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
 	sub [0x01], 0x0001
 
-LABEL_4A07:
+HERO_RIGHT_CROUCH_KICK_LOOP:
 	break
 	mov [0x06], 0x0000
 	video type=1, offset=CINEMATIC_RIGHT_CROUCH_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
-	je [HERO_ACTION_POS_MASK], 0x84, LABEL_4A07
+	je [HERO_ACTION_POS_MASK], 0x84, HERO_RIGHT_CROUCH_KICK_LOOP
 	sub [0x01], 0x0002
 	break
 	video type=1, offset=CINEMATIC_RIGHT_CROUCH_KICK_1, x=[0x01], y=[0x02], zoom=[0x03]
@@ -10568,7 +10568,7 @@ HOLD_POOL_F_1_WAIT_KEY:
 	jmp HERO_GETTING_OUT_OF_POOL_LOOP
 	killChannel
 
-LABEL_4B56:
+HOLD_POOL_LESTER_F0_WAIT:
 	video type=1, offset=CINEMATIC_POOL_LESTER_F0, x=[0x01], y=[0x02], zoom=[0x03]
 
 HOLD_CIN_720_WAIT_KEY:
@@ -10619,7 +10619,7 @@ HOLD_CIN_724_WAIT_KEY:
 	break
 	add [0x01], [HERO_POS_LEFT_RIGHT]
 	sub [0x02], 0x0001
-	jmp LABEL_4B56
+	jmp HOLD_POOL_LESTER_F0_WAIT
 	killChannel
 	FILL(46078, 0xFF)
 ;@elif BRANCH == "dos_1992"
