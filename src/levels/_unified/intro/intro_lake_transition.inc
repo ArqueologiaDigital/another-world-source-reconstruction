@@ -2,14 +2,14 @@ CH_03_INIT_VAR_03_04:
 	mov [0x03], 0x0064
 	mov [0x04], 0x0013
 
-LABEL_1C02:
+SLIDE_CIN_448_BY_VAR3_19X:
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_448, x=160, y=[0x03], zoom=0x40
 	video type=1, offset=CINEMATIC_449, x=160, y=101
 	sub [0x03], 0x0001
 	selectVideoPage 0xFF
 	break
-	djnz [0x04], LABEL_1C02
+	djnz [0x04], SLIDE_CIN_448_BY_VAR3_19X
 	setup channel=0x06, address=DRAW_CIN_450_451_SEQ
 	killChannel
 
@@ -32,9 +32,9 @@ INTRO_TRANSITION_TO_LAKE_SCENE:
 	setup channel=0x0E, address=SELECT_PAGE_FF_LOOP
 	mov [0x01], 0x0032
 
-LABEL_1C5A:
+DELAY_50F_THEN_SETUP_CITY_SEQ:
 	break
-	djnz [0x01], LABEL_1C5A
+	djnz [0x01], DELAY_50F_THEN_SETUP_CITY_SEQ
 	setup channel=0x01, address=INTRO_FILL_AND_DRAW_413_414
 	setup channel=0x02, address=SETUP_CITY_SEQ_CHANNELS
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
@@ -64,18 +64,18 @@ LABEL_1C95:
 CH_04_INIT_VAR_05:
 	mov [0x05], 0x0009
 
-LABEL_1C9A:
+DELAY_9F_THEN_PLAY_FX_34:
 	break
-	djnz [0x05], LABEL_1C9A
+	djnz [0x05], DELAY_9F_THEN_PLAY_FX_34
 	play id=0x0034, freq=0x14, vol=0x3F, channel=0x02
 	mov [0x05], 0x0007
 	mov [0x06], 0x007B
 
-LABEL_1CAD:
+RISE_CIN_447_BY_2_FOR_7X:
 	video type=1, offset=CINEMATIC_447, x=204, y=[0x06], zoom=0x40
 	sub [0x06], 0x0002
 	break
-	djnz [0x05], LABEL_1CAD
+	djnz [0x05], RISE_CIN_447_BY_2_FOR_7X
 	jmp CH_04_INIT_VAR_05
 LABEL_1CBE:
 	killChannel
@@ -84,11 +84,11 @@ CH_05_INIT_VAR_07_08:
 	mov [0x07], 0x0014
 	mov [0x08], 0x007B
 
-LABEL_1CC7:
+RISE_CIN_130_BY_1_FOR_20X:
 	video type=1, offset=CINEMATIC_130, x=204, y=[0x08], zoom=0x40
 	sub [0x08], 0x0001
 	break
-	djnz [0x07], LABEL_1CC7
+	djnz [0x07], RISE_CIN_130_BY_1_FOR_20X
 	jmp CH_05_INIT_VAR_07_08
 LABEL_1CD8:
 	killChannel

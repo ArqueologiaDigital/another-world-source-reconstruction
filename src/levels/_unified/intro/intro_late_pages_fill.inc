@@ -139,7 +139,7 @@ DELAY_25F_BEFORE_VAR1_4E:
 	mov [0x02], 0x00E8
 	mov [0x05], 0x000A
 
-LABEL_1B94:
+DRIFT_CIN_502_503_BY_2_10X:
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_502, x=[0x01], y=100, zoom=0x40
 	video type=1, offset=CINEMATIC_503, x=[0x02], y=100, zoom=0x40
@@ -147,12 +147,12 @@ LABEL_1B94:
 	sub [0x02], 0x0002
 	selectVideoPage 0xFF
 	break
-	djnz [0x05], LABEL_1B94
+	djnz [0x05], DRIFT_CIN_502_503_BY_2_10X
 	mov [0x05], 0x001A
 
-LABEL_1BB3:
+DELAY_26F_THEN_PLAY_FX_36:
 	break
-	djnz [0x05], LABEL_1BB3
+	djnz [0x05], DELAY_26F_THEN_PLAY_FX_36
 	play id=0x0036, freq=0x0F, vol=0x30, channel=0x03
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_504, x=165, y=100
@@ -173,9 +173,9 @@ DRAW_CIN_505_LOOP_VAR_02:
 LABEL_1BEE:
 	killChannel
 	db 0x06, 0x11
-LABEL_1BF1:
+DRAW_CIN_182_AT_187_101_LOOP:
 	break
 	video type=1, offset=CINEMATIC_182, x=187, y=101
-	jmp LABEL_1BF1
+	jmp DRAW_CIN_182_AT_187_101_LOOP
 	db 0x11
 
