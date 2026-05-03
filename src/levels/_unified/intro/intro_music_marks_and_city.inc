@@ -23,9 +23,9 @@ SETUP_CITY_SEQ_CHANNELS:
 	mov [0x04], 0x0064
 	mov [0x01], 0x0006
 
-LABEL_1088:
+DELAY_6_BEFORE_BLITTER_SETUP:
 	break
-	djnz [0x01], LABEL_1088
+	djnz [0x01], DELAY_6_BEFORE_BLITTER_SETUP
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	selectVideoPage 0x00
@@ -35,9 +35,9 @@ LABEL_1088:
 	break
 	mov [0x01], 0x0007
 
-LABEL_10A3:
+DELAY_7_BEFORE_BLITTER_SETUP:
 	break
-	djnz [0x01], LABEL_10A3
+	djnz [0x01], DELAY_7_BEFORE_BLITTER_SETUP
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	setup channel=0x3C, address=BLIT_DISPATCH_HERO_ACTION_ALT
@@ -48,32 +48,32 @@ LABEL_10A3:
 	mov [PAUSE_SLICES], 0x0001
 	mov [0x01], 0x0006
 
-LABEL_10C7:
+CITY_PAN_X_M2_Y_P1_6X:
 	break
 	sub [0x03], 0x0002
 	add [0x04], 0x0001
-	djnz [0x01], LABEL_10C7
+	djnz [0x01], CITY_PAN_X_M2_Y_P1_6X
 	mov [0x01], 0x0004
 
-LABEL_10D8:
+CITY_PAN_X_M3_Y_0_4X:
 	break
 	sub [0x03], 0x0003
 	add [0x04], 0x0000
-	djnz [0x01], LABEL_10D8
+	djnz [0x01], CITY_PAN_X_M3_Y_0_4X
 	mov [0x01], 0x000A
 
-LABEL_10E9:
+CITY_PAN_X_M3_Y_M1_10X:
 	break
 	sub [0x03], 0x0003
 	sub [0x04], 0x0001
-	djnz [0x01], LABEL_10E9
+	djnz [0x01], CITY_PAN_X_M3_Y_M1_10X
 	mov [0x01], 0x0004
 
-LABEL_10FA:
+CITY_PAN_X_M2_Y_M1_4X:
 	break
 	sub [0x03], 0x0002
 	sub [0x04], 0x0001
-	djnz [0x01], LABEL_10FA
+	djnz [0x01], CITY_PAN_X_M2_Y_M1_4X
 	setup channel=0x3C, address=BLIT_AND_DISPATCH_HERO_ACTION
 	break
 	setup channel=0x01, address=DRAW_CIN_431_LOOP
@@ -81,11 +81,11 @@ LABEL_10FA:
 	sub [0x04], 0x0001
 	mov [0x01], 0x0005
 
-LABEL_111C:
+CITY_PAN_X_M1_Y_M1_5X:
 	break
 	sub [0x03], 0x0001
 	sub [0x04], 0x0001
-	djnz [0x01], LABEL_111C
+	djnz [0x01], CITY_PAN_X_M1_Y_M1_5X
 	mov [0x01], 0x0009
 
 LABEL_112D:

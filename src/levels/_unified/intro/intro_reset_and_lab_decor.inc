@@ -409,9 +409,9 @@ PHASE_PAGE3_DRAW_CIN_172_175:
 	play id=0x000E, freq=0x02, vol=0x3F, channel=0x03
 	mov [0x01], 0x0012
 
-LABEL_0D71:
+DELAY_18_THEN_PAL_15_CIN_267:
 	break
-	djnz [0x01], LABEL_0D71
+	djnz [0x01], DELAY_18_THEN_PAL_15_CIN_267
 	setPalette 0x15
 	video type=1, offset=CINEMATIC_267, x=160, y=100
 	play id=0x000E, freq=0x14, vol=0x3F, channel=0x03

@@ -7,15 +7,15 @@ INTRO_TRANSITION_TO_LAKE_SETUP:
 	selectVideoPage 0xFF
 	killChannel
 
-LABEL_0DEB:
+PHASE_PAGE3_TO_0_PAL_16:
 	copyVideoPage src=0x03, dst=0x00
 	break
 	setPalette 0x16
 	mov [0x01], 0x0009
 
-LABEL_0DF6:
+DELAY_9_BEFORE_CIN_222:
 	break
-	djnz [0x01], LABEL_0DF6
+	djnz [0x01], DELAY_9_BEFORE_CIN_222
 	video type=1, offset=CINEMATIC_222, x=160, y=100
 	play id=0x002C, freq=0x1E, vol=0x3F, channel=0x03
 	break
@@ -44,9 +44,9 @@ LABEL_0DF6:
 	break
 	mov [0x01], 0x0007
 
-LABEL_0E5C:
+DELAY_7_THEN_PAL_15_CIN_231:
 	break
-	djnz [0x01], LABEL_0E5C
+	djnz [0x01], DELAY_7_THEN_PAL_15_CIN_231
 	setPalette 0x15
 	video type=1, offset=CINEMATIC_231, x=160, y=100
 	play id=0x000A, freq=0x1E, vol=0x3F, channel=0x03
@@ -179,23 +179,23 @@ INTRO_FILL_AND_DRAW_CIN_385:
 	video type=1, offset=CINEMATIC_410, x=180, y=100
 	mov [0x02], 0x0003
 
-LABEL_100D:
+CITY_OUTER_3X_LOOP:
 	mov [0x01], 0x0002
 
-LABEL_1011:
+CITY_DRAW_411_412_LOOP:
 	break
 	video type=1, offset=CINEMATIC_411, x=154, y=123
 	video type=1, offset=CINEMATIC_412, x=180, y=100
 	je [MUS_MARK], 0x2B, WAIT_MUS_MARK_2B_THEN_TEXT
-	djnz [0x01], LABEL_1011
+	djnz [0x01], CITY_DRAW_411_412_LOOP
 	mov [0x01], 0x0004
 	play id=0x0041, freq=0x14, vol=0x3F, channel=0x03
 
-LABEL_102E:
+CITY_DRAW_418_412_LOOP:
 	break
 	video type=1, offset=CINEMATIC_418, x=154, y=123
 	video type=1, offset=CINEMATIC_412, x=181, y=100
 	je [MUS_MARK], 0x2B, WAIT_MUS_MARK_2B_THEN_TEXT
-	djnz [0x01], LABEL_102E
-	djnz [0x02], LABEL_100D
+	djnz [0x01], CITY_DRAW_418_412_LOOP
+	djnz [0x02], CITY_OUTER_3X_LOOP
 

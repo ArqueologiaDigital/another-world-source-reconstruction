@@ -137,7 +137,7 @@ SETUP_PAL19_AND_PAGE_FLIP:
 	video type=1, offset=CINEMATIC_221, x=183, y=100
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
-	jmp LABEL_0DEB
+	jmp PHASE_PAGE3_TO_0_PAL_16
 LABEL_0775:
 	killChannel
 
