@@ -12,11 +12,12 @@
 ;   INIT_HASH_VARS_67_66_65_68_69  (97 bytes — amiga+cart only, NOT dos)
 ;   DERIVE_VAR12_11_10_FROM_VAR9  (69 bytes — also in CAPSULE, PRISON, 3-arm)
 ;   INIT_RANGE_48_TO_4D_TO_MAX  (61 bytes — also in CAPSULE, PRISON, 3-arm)
+;   INIT_AI_VARS_AT_280_10  (44 bytes — 3-arm, late-stage object init)
 ;
 ; Per-arm split layout:
-;   amiga: pre_a, pre_b, post_a, post_b, post_c, post_d
-;   cart:  pre,                post_a, post_b, post_c, post_d  (no pre split — PRELOAD absent)
-;   dos:   pre_a, pre_b, post_a,         post_c, post_d        (no post_b — INIT_HASH_67 absent)
+;   amiga: pre_a, pre_b, post_a, post_b, post_c, post_d, post_e
+;   cart:  pre,                post_a, post_b, post_c, post_d, post_e
+;   dos:   pre_a, pre_b, post_a,         post_c, post_d, post_e
 
 ;@if BRANCH == "cartridge_1992"
 ;@include "caves/cart_pre.inc"
@@ -191,4 +192,26 @@ INIT_RANGE_48_TO_4D_TO_MAX:
 ;@include "caves/dos_post_d.inc"
 ;@elif BRANCH == "chahi_amiga_1991"
 ;@include "caves/amiga_post_d.inc"
+;@endif
+
+INIT_AI_VARS_AT_280_10:
+	mov [0x01], 0x0118	;@raw=0x00,0x01,0x01,0x18
+	mov [0x0F], 0x0000	;@raw=0x00,0x0F,0x00,0x00
+	mov [0x28], [0x01]	;@raw=0x01,0x28,0x01
+	mov [0x02], 0x000A	;@raw=0x00,0x02,0x00,0x0A
+	mov [0x04], 0x0020	;@raw=0x00,0x04,0x00,0x20
+	mov [0x05], 0x0000	;@raw=0x00,0x05,0x00,0x00
+	mov [0x06], 0x03DE	;@raw=0x00,0x06,0x03,0xDE
+	mov [0x0A], 0x0001	;@raw=0x00,0x0A,0x00,0x01
+	mov [0xBE], 0x0001	;@raw=0x00,0xBE,0x00,0x01
+	mov [0x63], 0x0000	;@raw=0x00,0x63,0x00,0x00
+	mov [0x2A], 0x000F	;@raw=0x00,0x2A,0x00,0x0F
+	ret	;@raw=0x05
+
+;@if BRANCH == "cartridge_1992"
+;@include "caves/cart_post_e.inc"
+;@elif BRANCH == "dos_1992"
+;@include "caves/dos_post_e.inc"
+;@elif BRANCH == "chahi_amiga_1991"
+;@include "caves/amiga_post_e.inc"
 ;@endif
