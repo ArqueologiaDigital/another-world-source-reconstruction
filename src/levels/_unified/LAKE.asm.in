@@ -9480,7 +9480,7 @@ DRAW_HERO_SHADOW_BUNDLE_103_104:
 	sub [0x02], 0x0001
 	ret
 
-LBL_49AD_4A60:
+DRAW_HERO_SHADOW_BUNDLE_105_106:
 	video type=0, offset=COMMON_VIDEO_105, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x1B,0x36,0x01,0x02
 	video type=0, offset=COMMON_VIDEO_106, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x0A,0xD1,0x01,0x02
 	add [0x02], 0x0001
@@ -9488,13 +9488,13 @@ LBL_49AD_4A60:
 	sub [0x02], 0x0001
 	ret
 
-LABEL_49C5:
+POST_RUN_LEFT_DECEL_LOOP:
 ;@elif BRANCH == "chahi_amiga_1991"
 WAIT_RUN_LEFT_THEN_DECEL:
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	je [0x63], 0x05, LABEL_49C5
+	je [0x63], 0x05, POST_RUN_LEFT_DECEL_LOOP
 ;@elif BRANCH == "chahi_amiga_1991"
 	je [0x63], 0x05, WAIT_RUN_LEFT_THEN_DECEL
 ;@endif
@@ -9539,7 +9539,7 @@ HERO_STAND_L_IDLE_LOOP:
 
 HERO_LEAP_LEFT_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	setup channel=0x15, address=LABEL_49C5
+	setup channel=0x15, address=POST_RUN_LEFT_DECEL_LOOP
 ;@elif BRANCH == "chahi_amiga_1991"
 	setup channel=0x15, address=WAIT_RUN_LEFT_THEN_DECEL
 ;@endif
@@ -9628,7 +9628,7 @@ HERO_LEAP_LEFT_F5_LOOP:
 	add [0x02], 0x0000
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	call LBL_49AD_4A60
+	call DRAW_HERO_SHADOW_BUNDLE_105_106
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_HERO_LEAP_LEFT_F9, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
