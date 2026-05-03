@@ -9,58 +9,58 @@ INIT_VAR_04_PAL_E_VAR_01:
 	copyVideoPage src=0x00, dst=0xFF
 	play id=0x000C, freq=0x0F, vol=0x3F, channel=0x02
 
-LABEL_20D5:
+PARALLAX_CIN_126_127_LOOP:
 	sub [0x01], 0x0014
 	add [0x02], 0x0014
 	video type=1, offset=CINEMATIC_126, x=160, y=[0x01], zoom=0x40
 	video type=1, offset=CINEMATIC_127, x=160, y=[0x02], zoom=0x40
 	video type=1, offset=CINEMATIC_128, x=160, y=111, zoom=[0x04]
-	je [MUS_MARK], 0x10, LABEL_20F3
+	je [MUS_MARK], 0x10, PARALLAX_LOOP_BREAK_AND_DJNZ
 
-LABEL_20F3:
+PARALLAX_LOOP_BREAK_AND_DJNZ:
 	break
-	djnz [0x03], LABEL_20D5
+	djnz [0x03], PARALLAX_CIN_126_127_LOOP
 	video type=1, offset=CINEMATIC_128, x=160, y=111, zoom=[0x04]
 	setup channel=0x08, address=DRAW_CIN_128_521_ZOOM_VAR04
 	setup channel=0x09, address=DRAW_CIN_126_127_AT_VAR01_02
 	setup channel=0x05, address=CH_05_INIT_VARS_06_07_08
 	mov [0x03], 0x0007
 
-LABEL_210E:
+ZOOM_OUT_VAR4_M3_LOOP:
 	sub [0x04], 0x0003
-	je [MUS_MARK], 0x10, LABEL_2118
+	je [MUS_MARK], 0x10, ZOOM_OUT_BREAK_AND_DJNZ
 
-LABEL_2118:
+ZOOM_OUT_BREAK_AND_DJNZ:
 	break
-	djnz [0x03], LABEL_210E
+	djnz [0x03], ZOOM_OUT_VAR4_M3_LOOP
 	play id=0x000C, freq=0x0A, vol=0x32, channel=0x02
 	mov [0x03], 0x0003
 
-LABEL_2127:
+PARALLAX_REVERSE_3X:
 	add [0x01], 0x0014
 	sub [0x02], 0x0014
 	add [0x04], 0x0000
-	je [MUS_MARK], 0x10, LABEL_2139
+	je [MUS_MARK], 0x10, PARALLAX_REV_BREAK_AND_DJNZ
 
-LABEL_2139:
+PARALLAX_REV_BREAK_AND_DJNZ:
 	break
-	djnz [0x03], LABEL_2127
+	djnz [0x03], PARALLAX_REVERSE_3X
 	setup channel=0x08, address=KILL_CHANNEL_ROUTINE
 	add [0x01], 0x0014
 	sub [0x02], 0x0014
 	break
 	mov [0x03], 0x0005
 
-LABEL_214F:
+DRIFT_CIN_129_PARALLAX_5X:
 	add [0x01], 0x0014
 	sub [0x02], 0x0014
 	video type=1, offset=CINEMATIC_129, x=160, y=111, zoom=[0x04]
-	je [MUS_MARK], 0x10, LABEL_216E
+	je [MUS_MARK], 0x10, MUS_10_FORCE_KILL_CHANNELS
 	break
-	djnz [0x03], LABEL_214F
+	djnz [0x03], DRIFT_CIN_129_PARALLAX_5X
 	play id=0x0036, freq=0x0F, vol=0x3F, channel=0x02
 
-LABEL_216E:
+MUS_10_FORCE_KILL_CHANNELS:
 	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x08, address=KILL_CHANNEL_ROUTINE
@@ -75,7 +75,7 @@ CH_05_INIT_VARS_06_07_08:
 	mov [0x07], 0x0082
 	mov [0x08], 0x0005
 
-LABEL_2197:
+DRAW_CIN_130_NESTED_OUTER:
 	mov [0x09], 0x0003
 
 LABEL_219B:
@@ -85,7 +85,7 @@ LABEL_219B:
 	djnz [0x09], LABEL_219B
 	add [0x06], 0x0002
 	sub [0x07], 0x0002
-	djnz [0x08], LABEL_2197
+	djnz [0x08], DRAW_CIN_130_NESTED_OUTER
 	jmp CH_05_INIT_VARS_06_07_08
 LABEL_21B9:
 	killChannel
