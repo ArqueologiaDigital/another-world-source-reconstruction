@@ -1,12 +1,33 @@
-; Skeleton unified source for CODE_WHEEL.
-; Each branch gets its own per-branch source verbatim via ;@include.
-; This is a starting point — folding cross-branch shared code into a
-; single body (the way LAKE.asm.in / INTRO.asm.in are written) is
-; future work; this skeleton is just the bare minimum that makes
-; verify_unified pass for CODE_WHEEL.
+; Unified source for CODE_WHEEL with one folded shared body.
+;
+; Cross-arm shared bodies (routines whose symbolic source is identical
+; between dos_1992 and chahi_amiga_1991) live at the top level and are
+; emitted into both arms. Each per-arm `.inc` file is split into a
+; `_pre` chunk (everything before the shared body's byte address) and
+; a `_post` chunk (everything after). This way the natural assembled
+; layout puts the shared body at byte 0x10D0 in dos and 0x0DC6 in
+; amiga without any explicit `org` directives.
+;
+; Currently folded:
+;   CLEAR_PAGES_1_2_AND_BLIT  (15 bytes)
 
 ;@if BRANCH == "dos_1992"
-;@include "code_wheel/dos.inc"
+;@include "code_wheel/dos_pre.inc"
 ;@elif BRANCH == "chahi_amiga_1991"
-;@include "code_wheel/amiga.inc"
+;@include "code_wheel/amiga_pre.inc"
+;@endif
+
+CLEAR_PAGES_1_2_AND_BLIT:
+	fill page=0x01, color=0x00	;@raw=0x0E,0x01,0x00
+	fill page=0x02, color=0x00	;@raw=0x0E,0x02,0x00
+	selectVideoPage 0x01	;@raw=0x0D,0x01
+	blitFramebuffer 0x01	;@raw=0x10,0x01
+	blitFramebuffer 0xFF	;@raw=0x10,0xFF
+	blitFramebuffer 0x02	;@raw=0x10,0x02
+	ret	;@raw=0x05
+
+;@if BRANCH == "dos_1992"
+;@include "code_wheel/dos_post.inc"
+;@elif BRANCH == "chahi_amiga_1991"
+;@include "code_wheel/amiga_post.inc"
 ;@endif
