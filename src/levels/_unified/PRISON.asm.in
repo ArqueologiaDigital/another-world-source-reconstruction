@@ -45,16 +45,16 @@
 ;   INLINE_SET_VARF1_TO_64  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_406_408_BLOCK  (2-arm: amiga, dos)
 ;   INLINE_SET_VAR29_TO_28  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_89B_179104BB  (3-arm: amiga, cart, dos)
+;   INLINE_SUB_VAR08_INIT_VAR29  (3-arm: amiga, cart, dos)
 ;   SET_VAR29_TO_000A  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_0E_29  (3-arm: amiga, cart, dos)
 ;   DECREMENT_VAR29_BY_1  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_144B_C55279EA  (3-arm: amiga, cart, dos)
+;   BIT_EXTRACT_FROM_VAR24_TO_VAR25  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_569_TO_572_6F_AT_F8680E45  (2-arm: amiga, dos)
 ;   DRAW_CIN_570_574_BLOCK  (2-arm: amiga, dos)
 ;   DRAW_CIN_576_578_BLOCK  (2-arm: amiga, dos)
 ;   AND_VAR11_WITH_EFFF  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_58B_A2D4469A  (3-arm: amiga, cart, dos)
+;   INLINE_OR_VAR11_WITH_1000  (3-arm: amiga, cart, dos)
 ;   SET_VAR2F_TO_001A  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_2F_29_3  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_2F_29  (3-arm: amiga, cart, dos)
@@ -66,14 +66,14 @@
 ;   INIT_VARS_29_2F  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_07_2F  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_2F_29_1  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_99B_32B55F1E  (2-arm: amiga, dos)
+;   SET_VARS_29_2F  (2-arm: amiga, dos)
 ;   SET_VAR2F_TO_000F  (3-arm: amiga, cart, dos)
 ;   SET_VAR2F_TO_000F  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_104B_F18A2F7D  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_94B_44BEEF04  (3-arm: amiga, cart, dos)
 ;   INCREMENT_VAR21_BY_F  (3-arm: amiga, cart, dos)
 ;   INLINE_SUB_VAR22_BY_23  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_43B_757368B2  (3-arm: amiga, cart, dos)
+;   INLINE_OR_VAR2B_WITH_4000  (3-arm: amiga, cart, dos)
 ;   COPY_VAR22_TO_VAR07  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_39B_42136843  (3-arm: amiga, cart, dos)
 ;   COPY_VAR27_TO_VAR07  (3-arm: amiga, cart, dos)
@@ -113,8 +113,8 @@
 ;   INIT_VARS_16_17  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_96B_2FC90B25  (2-arm: amiga, dos)
 ;   INLINE_DRAW_CIN_659_AT_160_100  (2-arm: amiga, dos)
-;   FOLD_BODY_338B_C0D45EFA  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_275B_86243111  (3-arm: amiga, cart, dos)
+;   FILL_PFF_PLAY_SFX_0061_AT_C0D45EFA  (3-arm: amiga, cart, dos)
+;   SET_PAL_07_FILL_TWO_PAGES_86243111  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_236  (2-arm: amiga, dos)
 ;   DRAW_CIN_237  (2-arm: amiga, dos)
 ;   DRAW_CIN_238  (2-arm: amiga, dos)
@@ -1061,7 +1061,7 @@ INLINE_SET_VAR29_TO_28:
 ;@include "prison/dos__post_INLINE_SET_VAR29_TO_28.inc"
 ;@endif
 
-FOLD_BODY_89B_179104BB:
+INLINE_SUB_VAR08_INIT_VAR29:
 	sub [0x08], 0x0005	;@raw=0x03,0x08,0xFF,0xFB
 	mov [0x29], 0x000A	;@raw=0x00,0x29,0x00,0x0A
 
@@ -1110,7 +1110,7 @@ DECREMENT_VAR29_BY_1:
 ;@include "prison/dos__post_DECREMENT_VAR29_BY_1.inc"
 ;@endif
 
-FOLD_BODY_144B_C55279EA:
+BIT_EXTRACT_FROM_VAR24_TO_VAR25:
 	mov [0x25], [0x24]	;@raw=0x01,0x25,0x24
 	and [0x25], 0x00FF	;@raw=0x14,0x25,0x00,0xFF
 	shr [0x24], 0x0008	;@raw=0x17,0x24,0x00,0x08
@@ -1220,7 +1220,7 @@ AND_VAR11_WITH_EFFF:
 ;@include "prison/dos__post_AND_VAR11_WITH_EFFF.inc"
 ;@endif
 
-FOLD_BODY_58B_A2D4469A:
+INLINE_OR_VAR11_WITH_1000:
 	or [0x11], 0x1000	;@raw=0x15,0x11,0x10,0x00
 	ret	;@raw=0x05
 
@@ -1375,7 +1375,7 @@ INIT_VARS_2F_29_1:
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-FOLD_BODY_99B_32B55F1E:
+SET_VARS_29_2F:
 	mov [0x29], [0x01]	;@raw=0x01,0x29,0x01
 	mov [0x2F], 0x0018	;@raw=0x00,0x2F,0x00,0x18
 	ret	;@raw=0x05
@@ -1460,7 +1460,7 @@ INLINE_SUB_VAR22_BY_23:
 ;@include "prison/dos__post_INLINE_SUB_VAR22_BY_23.inc"
 ;@endif
 
-FOLD_BODY_43B_757368B2:
+INLINE_OR_VAR2B_WITH_4000:
 	or [0x2B], 0x4000	;@raw=0x15,0x2B,0x40,0x00
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -1986,7 +1986,7 @@ INLINE_DRAW_CIN_659_AT_160_100:
 ;@include "prison/dos__post_INLINE_DRAW_CIN_659_AT_160_100.inc"
 ;@endif
 
-FOLD_BODY_338B_C0D45EFA:
+FILL_PFF_PLAY_SFX_0061_AT_C0D45EFA:
 	fill page=0xFF, color=0x00	;@raw=0x0E,0xFF,0x00
 	play id=0x0061, freq=0x0A, vol=0x0A, channel=0x00	;@raw=0x18,0x00,0x61,0x0A,0x0A,0x00
 	break	;@raw=0x06
@@ -2003,7 +2003,7 @@ FOLD_BODY_338B_C0D45EFA:
 ;@include "prison/dos__post_FOLD_BODY_338B_C0D45EFA.inc"
 ;@endif
 
-FOLD_BODY_275B_86243111:
+SET_PAL_07_FILL_TWO_PAGES_86243111:
 	setPalette 0x07	;@raw=0x0B,0x07,0xFF
 	fill page=0x00, color=0x00	;@raw=0x0E,0x00,0x00
 	fill page=0xFF, color=0x00	;@raw=0x0E,0xFF,0x00

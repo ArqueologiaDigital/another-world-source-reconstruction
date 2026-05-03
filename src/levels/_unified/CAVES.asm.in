@@ -71,7 +71,7 @@
 ;   INLINE_COPY_VAR22_TO_VAR08  (2-arm: cart, dos)
 ;   SPLIT_VAR09_BITS_INTO_VAR0D  (3-arm: amiga, cart, dos)
 ;   AND_VAR11_WITH_EFFF  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_58B_A2D4469A  (3-arm: amiga, cart, dos)
+;   INLINE_OR_VAR11_WITH_1000  (3-arm: amiga, cart, dos)
 ;   SET_VAR2F_TO_000F  (3-arm: amiga, cart, dos)
 ;   SET_VAR2F_TO_001D  (3-arm: amiga, cart, dos)
 ;   SET_VAR2F_TO_000D  (3-arm: amiga, cart, dos)
@@ -83,8 +83,8 @@
 ;   FOLD_BODY_94B_44BEEF04  (3-arm: amiga, cart, dos)
 ;   INCREMENT_VAR21_BY_F  (3-arm: amiga, cart, dos)
 ;   INLINE_SUB_VAR22_BY_23  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_43B_757368B2  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_94B_9F1D7AF8  (3-arm: amiga, cart, dos)
+;   INLINE_OR_VAR2B_WITH_4000  (3-arm: amiga, cart, dos)
+;   SET_VARS_07_08  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_39B_42136843  (3-arm: amiga, cart, dos)
 ;   COPY_VAR27_TO_VAR07  (3-arm: amiga, cart, dos)
 ;   SET_VAR13_TO_FFFF  (3-arm: amiga, cart, dos)
@@ -1254,7 +1254,7 @@ AND_VAR11_WITH_EFFF:
 ;@include "caves/dos__post_AND_VAR11_WITH_EFFF.inc"
 ;@endif
 
-FOLD_BODY_58B_A2D4469A:
+INLINE_OR_VAR11_WITH_1000:
 	or [0x11], 0x1000	;@raw=0x15,0x11,0x10,0x00
 	ret	;@raw=0x05
 
@@ -1406,7 +1406,7 @@ INLINE_SUB_VAR22_BY_23:
 ;@include "caves/dos__post_INLINE_SUB_VAR22_BY_23.inc"
 ;@endif
 
-FOLD_BODY_43B_757368B2:
+INLINE_OR_VAR2B_WITH_4000:
 	or [0x2B], 0x4000	;@raw=0x15,0x2B,0x40,0x00
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -1417,7 +1417,7 @@ FOLD_BODY_43B_757368B2:
 ;@include "caves/dos__post_FOLD_BODY_43B_757368B2.inc"
 ;@endif
 
-FOLD_BODY_94B_9F1D7AF8:
+SET_VARS_07_08:
 	mov [0x07], [0x22]	;@raw=0x01,0x07,0x22
 	mov [0x08], [0x40]	;@raw=0x01,0x08,0x40
 	ret	;@raw=0x05
