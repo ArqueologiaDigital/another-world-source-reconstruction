@@ -1,3 +1,14 @@
+; Unified source for ENDING with 7 folded shared bodies.
+;
+; Folded routines (in byte-address order):
+;   KILL_CHANNEL_LANDING  (3-arm: amiga, cart, dos)
+;   DELETE_ALL_CHANS_AND_KILL  (3-arm: amiga, cart, dos)
+;   INIT_VARE_TO_12  (3-arm: amiga, cart, dos)
+;   PAL_FADE_18_TO_1D  (3-arm: amiga, cart, dos)
+;   SET_VAR_E6_5_PAL_B  (3-arm: amiga, cart, dos)
+;   INIT_VARS_07_08_09  (3-arm: amiga, cart, dos)
+;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
+
 wrote src/levels/_unified/ending/amiga__entry.inc (530 lines)
 wrote src/levels/_unified/ending/amiga__post_PRELOAD_RESOURCES_8_TO_1.inc (0 lines)
 wrote src/levels/_unified/ending/amiga__post_DRAW_CIN_97_TO_100.inc (3 lines)

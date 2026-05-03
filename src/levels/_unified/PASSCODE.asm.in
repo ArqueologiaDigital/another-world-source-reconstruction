@@ -1,7 +1,6 @@
-; Unified source for PASSCODE with 6 folded shared bodies.
+; Unified source for PASSCODE with 5 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   SUM_HASH_VARS_TO_VAR_37  (2-arm: amiga, dos)
 ;   COPY_VAR_27_28_TO_07_08  (2-arm: cart, dos)
 ;   SET_VAR_E6_F_PAUSE_4  (3-arm: amiga, cart, dos)
 ;   SET_PAL_0_AND_RESTART  (2-arm: cart, dos)
@@ -14,27 +13,6 @@
 ;@include "passcode/cart__entry.inc"
 ;@elif BRANCH == "dos_1992"
 ;@include "passcode/dos__entry.inc"
-;@endif
-
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-SUM_HASH_VARS_TO_VAR_37:
-	add [0x37], [HERO_ACTION]	;@raw=0x02,0x37,0xFA
-	add [0x37], [HERO_POS_JUMP_DOWN]	;@raw=0x02,0x37,0xFB
-	add [0x37], [HACK_VAR_F7]	;@raw=0x02,0x37,0xF7
-	add [0x37], [HERO_ACTION_POS_MASK]	;@raw=0x02,0x37,0xFE
-	add [0x37], [0x0A]	;@raw=0x02,0x37,0x0A
-	add [0x37], [0x14]	;@raw=0x02,0x37,0x14
-	add [0x37], [0x0B]	;@raw=0x02,0x37,0x0B
-	add [0x37], [0x28]	;@raw=0x02,0x37,0x28
-	add [0x37], [0x01]	;@raw=0x02,0x37,0x01
-	add [0x37], [0x04]	;@raw=0x02,0x37,0x04
-	ret	;@raw=0x05
-;@endif
-
-;@if BRANCH == "chahi_amiga_1991"
-;@include "passcode/amiga__post_SUM_HASH_VARS_TO_VAR_37.inc"
-;@elif BRANCH == "dos_1992"
-;@include "passcode/dos__post_SUM_HASH_VARS_TO_VAR_37.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")

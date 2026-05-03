@@ -1,3 +1,21 @@
+; Unified source for TANK with 14 folded shared bodies.
+;
+; Folded routines (in byte-address order):
+;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
+;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
+;   SET_VAR5F_TO_0018  (3-arm: amiga, cart, dos)
+;   SET_VAR5F_TO_0016  (3-arm: amiga, cart, dos)
+;   COPY_VAR62_TO_VAR5F  (3-arm: amiga, cart, dos)
+;   INIT_VARS_48_49_4A  (3-arm: amiga, cart, dos)
+;   SUM_HASH_VARS_TO_VAR_64  (3-arm: amiga, cart, dos)
+;   INIT_TANK_DRIVE_VARS  (2-arm: cart, dos)
+;   INIT_VARS_50_NEG40_51_32  (3-arm: amiga, cart, dos)
+;   INIT_VAR1_NEG50_PLAY_8B_TWICE  (2-arm: cart, dos)
+;   SHARED_RET  (3-arm: amiga, cart, dos)
+;   ALTERNATE_VAR06_VAR04_TIMING  (3-arm: amiga, cart, dos)
+;   INIT_VARS_A_B_PAL_1  (3-arm: amiga, cart, dos)
+;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
+
 wrote src/levels/_unified/tank/amiga__entry.inc (674 lines)
 wrote src/levels/_unified/tank/amiga__post_SETUP_TANK_HERO_VARS_PLAY_4SFX.inc (1095 lines)
 wrote src/levels/_unified/tank/amiga__post_INIT_VARS_48_49_4A.inc (110 lines)
@@ -690,7 +708,7 @@ LABEL_001B:
 	setup channel=0x0A, address=LABEL_141E	;@raw=0x08,0x0A,0x14,0x1E
 	setup channel=0x0B, address=WAIT_VAR3E_DEC_AND_RANDOMIZE	;@raw=0x08,0x0B,0x11,0x75
 	setup channel=0x0E, address=WAIT_VAR4E_PLAY_8C_DRAW_CIN_201	;@raw=0x08,0x0E,0x11,0x42
-	setup channel=0x1C, address=LABEL_0E6C	;@raw=0x08,0x1C,0x0E,0x6C
+	setup channel=0x1C, address=FOLD_BODY_186B_85A3A196	;@raw=0x08,0x1C,0x0E,0x6C
 	setup channel=0x1F, address=LABEL_0BE9	;@raw=0x08,0x1F,0x0B,0xE9
 	setup channel=0x20, address=LABEL_0B7F	;@raw=0x08,0x20,0x0B,0x7F
 	setup channel=0x21, address=LABEL_0D41	;@raw=0x08,0x21,0x0D,0x41
@@ -701,7 +719,7 @@ LABEL_001B:
 	setup channel=0x28, address=LABEL_050E	;@raw=0x08,0x28,0x05,0x0E
 	setup channel=0x30, address=WAIT_VAR45_PLAY_8C_DRAW_CIN_011	;@raw=0x08,0x30,0x10,0x9B
 	setup channel=0x31, address=WAIT_VAR46_PLAY_8E_DRAW_CIN_056	;@raw=0x08,0x31,0x11,0xE5
-	setup channel=0x35, address=LABEL_0CD8	;@raw=0x08,0x35,0x0C,0xD8
+	setup channel=0x35, address=FOLD_BODY_44B_1E2BA1E6	;@raw=0x08,0x35,0x0C,0xD8
 	setup channel=0x37, address=LABEL_0E21	;@raw=0x08,0x37,0x0E,0x21
 	call LABEL_0DD4	;@raw=0x04,0x0D,0xD4
 	call LABEL_179B	;@raw=0x04,0x17,0x9B
@@ -1235,15 +1253,6 @@ SET_VAR5F_TO_001B:
 	ret	;@raw=0x05
 
 LABEL_0661:
-	je [0x62], 0x02, LABEL_066C	;@raw=0x0A,0x00,0x62,0x02,0x06,0x6C
+	je [0x62], 0x02, INCREMENT_VAR5F_BY_8	;@raw=0x0A,0x00,0x62,0x02,0x06,0x6C
 	mov [0x5F], 0x0002	;@raw=0x00,0x5F,0x00,0x02
-	ret	;@raw=0x05
-
-LABEL_066C:
-	add [0x5F], 0x0008	;@raw=0x03,0x5F,0x00,0x08
-	ret	;@raw=0x05
-
-SET_VAR5F_14_OR_COPY_VAR62:
-	jne [0x62], 0x16, COPY_VAR62_TO_VAR5F	;@raw=0x0A,0x01,0x62,0x16,0x06,0xA1
-	mov [0x5F], 0x000E	;@raw=0x00,0x5F,0x00,0x0E
 	ret	;@raw=0x05
