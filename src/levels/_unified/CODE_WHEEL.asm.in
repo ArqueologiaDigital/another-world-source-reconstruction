@@ -81,11 +81,6 @@ PAL_FADE_DOWN_17_TO_11:
 	killChannel
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "code_wheel/amiga__post_PAL_FADE_DOWN_17_TO_11.inc"
-;@elif BRANCH == "dos_1992"
-;@include "code_wheel/dos__post_PAL_FADE_DOWN_17_TO_11.inc"
-;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PAL_FADE_4_TO_18_AND_BACK:
@@ -107,11 +102,6 @@ PAL_FADE_4_TO_18_AND_BACK:
 	killChannel
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "code_wheel/amiga__post_PAL_FADE_4_TO_18_AND_BACK.inc"
-;@elif BRANCH == "dos_1992"
-;@include "code_wheel/dos__post_PAL_FADE_4_TO_18_AND_BACK.inc"
-;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PAL_FADE_DOWN_1A_TO_4:
@@ -131,11 +121,6 @@ PAL_FADE_DOWN_1A_TO_4:
 	killChannel
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "code_wheel/amiga__post_PAL_FADE_DOWN_1A_TO_4.inc"
-;@elif BRANCH == "dos_1992"
-;@include "code_wheel/dos__post_PAL_FADE_DOWN_1A_TO_4.inc"
-;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PAL_FADE_DOWN_E_TO_8:
@@ -153,11 +138,6 @@ PAL_FADE_DOWN_E_TO_8:
 	killChannel
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "code_wheel/amiga__post_PAL_FADE_DOWN_E_TO_8.inc"
-;@elif BRANCH == "dos_1992"
-;@include "code_wheel/dos__post_PAL_FADE_DOWN_E_TO_8.inc"
-;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PAL_FADE_UP_9_TO_F:
@@ -246,11 +226,6 @@ INIT_VAR08_TO_178:
 	mov [0x08], 0x00B2
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "code_wheel/amiga__post_INIT_VAR08_TO_178.inc"
-;@elif BRANCH == "dos_1992"
-;@include "code_wheel/dos__post_INIT_VAR08_TO_178.inc"
-;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 COMPUTE_VAR07_TIMES_44_PLUS_20:

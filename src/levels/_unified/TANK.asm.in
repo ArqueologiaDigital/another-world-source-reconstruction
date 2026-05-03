@@ -187,10 +187,6 @@ SUM_HASH_VARS_TO_VAR_64:
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "tank/amiga__post_SUM_HASH_VARS_TO_VAR_64.inc"
-;@elif BRANCH == "cartridge_1992"
-;@include "tank/cart__post_SUM_HASH_VARS_TO_VAR_64.inc"
-;@elif BRANCH == "dos_1992"
-;@include "tank/dos__post_SUM_HASH_VARS_TO_VAR_64.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
