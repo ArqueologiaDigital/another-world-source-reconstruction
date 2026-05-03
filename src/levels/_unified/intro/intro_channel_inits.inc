@@ -2,9 +2,9 @@ CH_0A_INIT_VAR_02:
 	break
 	mov [0x02], 0x0032
 
-LABEL_041C:
+CH_0A_VAR_02_WAIT_LOOP:
 	break
-	djnz [0x02], LABEL_041C
+	djnz [0x02], CH_0A_VAR_02_WAIT_LOOP
 	play id=0x000E, freq=0x0A, vol=0x3F, channel=0x00
 	video type=1, offset=CINEMATIC_049, x=160, y=100
 	break
@@ -24,9 +24,9 @@ CH_0B_INIT_VAR_03:
 	break
 	mov [0x03], 0x0046
 
-LABEL_044E:
+CH_0B_VAR_03_WAIT_LOOP:
 	break
-	djnz [0x03], LABEL_044E
+	djnz [0x03], CH_0B_VAR_03_WAIT_LOOP
 	play id=0x000F, freq=0x0A, vol=0x3F, channel=0x00
 	video type=1, offset=CINEMATIC_374, x=160, y=100
 	break
@@ -54,9 +54,9 @@ CH_0C_INIT_VAR_04:
 	break
 	mov [0x04], 0x0050
 
-LABEL_0494:
+CH_0C_VAR_04_WAIT_LOOP:
 	break
-	djnz [0x04], LABEL_0494
+	djnz [0x04], CH_0C_VAR_04_WAIT_LOOP
 	video type=1, offset=CINEMATIC_368, x=160, y=100
 	break
 	video type=1, offset=CINEMATIC_369, x=160, y=100
@@ -81,9 +81,9 @@ CH_0D_INIT_VAR_05:
 	break
 	mov [0x05], 0x0014
 
-LABEL_04CF:
+CH_0D_VAR_05_WAIT_20:
 	break
-	djnz [0x05], LABEL_04CF
+	djnz [0x05], CH_0D_VAR_05_WAIT_20
 	play id=0x000E, freq=0x02, vol=0x3F, channel=0x00
 	video type=1, offset=CINEMATIC_358, x=160, y=100
 	break
@@ -98,9 +98,9 @@ LABEL_04CF:
 	break
 	mov [0x05], 0x006E
 
-LABEL_04FD:
+CH_0D_VAR_05_WAIT_110:
 	break
-	djnz [0x05], LABEL_04FD
+	djnz [0x05], CH_0D_VAR_05_WAIT_110
 	video type=1, offset=CINEMATIC_363, x=160, y=100
 	break
 	video type=1, offset=CINEMATIC_364, x=160, y=100
@@ -112,9 +112,9 @@ LABEL_04FD:
 	video type=1, offset=CINEMATIC_367, x=160, y=100
 	mov [0x05], 0x0046
 
-LABEL_051E:
+CH_0D_VAR_05_WAIT_70:
 	break
-	djnz [0x05], LABEL_051E
+	djnz [0x05], CH_0D_VAR_05_WAIT_70
 	jmp CH_0D_INIT_VAR_05
 LABEL_0526:
 	killChannel
@@ -123,9 +123,9 @@ CH_0E_INIT_VAR_06:
 	break
 	mov [0x06], 0x003C
 
-LABEL_052C:
+CH_0E_VAR_06_WAIT_60:
 	break
-	djnz [0x06], LABEL_052C
+	djnz [0x06], CH_0E_VAR_06_WAIT_60
 	setPalette 0x02
 	break
 	break
@@ -134,9 +134,9 @@ LABEL_052C:
 	break
 	mov [0x06], 0x0064
 
-LABEL_053F:
+CH_0E_VAR_06_WAIT_100:
 	break
-	djnz [0x06], LABEL_053F
+	djnz [0x06], CH_0E_VAR_06_WAIT_100
 	setPalette 0x02
 	break
 	break
@@ -158,18 +158,18 @@ CH_0F_INIT_PARTICLE_POS:
 	mov [0x07], 0x0000
 	mov [0x08], 0x0046
 
-LABEL_0567:
+DRIFT_VAR07_BY_7_FOR_70:
 	break
 	add [0x07], 0x0007
-	djnz [0x08], LABEL_0567
+	djnz [0x08], DRIFT_VAR07_BY_7_FOR_70
 	mov [0x09], 0x0082
 	mov [0x07], 0x0000
 	mov [0x08], 0x0032
 
-LABEL_057C:
+DRIFT_VAR07_BY_7_FOR_50:
 	break
 	add [0x07], 0x0007
-	djnz [0x08], LABEL_057C
+	djnz [0x08], DRIFT_VAR07_BY_7_FOR_50
 	killChannel
 
 CH_10_DRAW_CIN_353_PARTICLE:

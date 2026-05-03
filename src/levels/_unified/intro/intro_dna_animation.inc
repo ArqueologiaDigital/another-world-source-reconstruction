@@ -195,10 +195,10 @@ LABEL_03A5:
 	video type=1, offset=CINEMATIC_047, x=160, y=100
 	mov [0x01], 0x000F
 
-LABEL_03FD:
+DRAW_CIN_048_15_FRAMES_LOOP:
 	break
 	video type=1, offset=CINEMATIC_048, x=160, y=100
-	djnz [0x01], LABEL_03FD
+	djnz [0x01], DRAW_CIN_048_15_FRAMES_LOOP
 	setup channel=0x01, address=INTRO_FILL_AND_DRAW_CIN_103
 	setup channel=0x02, address=INTRO_PLAY_FX_AND_PALETTE_4_LOOP
 	setup channel=0x03, address=DRAW_CINEMATIC_053_LOOP
