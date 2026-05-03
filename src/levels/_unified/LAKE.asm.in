@@ -9103,21 +9103,21 @@ LABEL_45E0:
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_WALK_RIGHT_LOOP
 
 ;@if BRANCH == "cartridge_1992"
-LABEL_469B:
+DRAW_LESTER_FRAME_THEN_FALL:
 ;@elif BRANCH in ("dos_1992", "gba_2004")
-LBL_45E8_469B:
+DRAW_LESTER_FRAME_THEN_FALL:
 ;@elif BRANCH == "chahi_amiga_1991"
-LABEL_440A:
+DRAW_LESTER_FRAME_THEN_FALL:
 ;@endif
 	mov [0x29], [0x01]
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	call DRAW_LESTER_FRAME_BUNDLE
 ;@if BRANCH == "cartridge_1992"
 	jne [HERO_POS_MASK], 0x01, LABEL_4693
-	jne [HERO_POS_LEFT_RIGHT], 0x01, LABEL_46B1
+	jne [HERO_POS_LEFT_RIGHT], 0x01, JMP_TO_HERO_FALL_RIGHT_LOOP
 ;@elif BRANCH == "gba_2004"
 	jne [HERO_POS_MASK], 0x01, LABEL_45E0
-	jne [HERO_POS_LEFT_RIGHT], 0x01, LBL_4371_46B1
+	jne [HERO_POS_LEFT_RIGHT], 0x01, JMP_TO_HERO_FALL_RIGHT_LOOP
 ;@endif
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_LESTER_FRAME, x=[0x01], y=[0x02], zoom=[0x03]
@@ -9125,17 +9125,17 @@ LABEL_440A:
 ;@elif BRANCH == "dos_1992"
 	call DRAW_LESTER_FRAME_BUNDLE
 	jne [HERO_POS_MASK], 0x01, LABEL_45E0
-	jne [HERO_POS_LEFT_RIGHT], 0x01, LBL_4371_46B1
+	jne [HERO_POS_LEFT_RIGHT], 0x01, JMP_TO_HERO_FALL_RIGHT_LOOP
 ;@endif
 	add [0x01], 0x0002
 
 ;@if BRANCH == "cartridge_1992"
-LABEL_46B1:
+JMP_TO_HERO_FALL_RIGHT_LOOP:
 ;@elif BRANCH == "gba_2004"
-LBL_4371_46B1:
+JMP_TO_HERO_FALL_RIGHT_LOOP:
 ;@endif
 ;@if BRANCH == "dos_1992"
-LBL_4371_46B1:
+JMP_TO_HERO_FALL_RIGHT_LOOP:
 ;@endif
 	break
 	jmp HERO_FALL_RIGHT_LOOP
@@ -9730,9 +9730,9 @@ HERO_LEAP_R_F0_LOOP:
 	break
 
 ;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991")
-LABEL_45E8:
+HERO_LEAP_R_F5_TO_F9_ENTRY:
 ;@elif BRANCH in ("dos_1992", "gba_2004")
-LBL_45E8_4B58:
+HERO_LEAP_R_F5_TO_F9_ENTRY:
 ;@endif
 	mov [0x63], 0x0006
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
@@ -9919,11 +9919,11 @@ HERO_WALK_RIGHT_LOOP:
 	break
 	mov [0x63], 0x0002
 ;@if BRANCH == "cartridge_1992"
-	jmp LABEL_469B
+	jmp DRAW_LESTER_FRAME_THEN_FALL
 ;@elif BRANCH in ("dos_1992", "gba_2004")
-	jmp LBL_45E8_469B
+	jmp DRAW_LESTER_FRAME_THEN_FALL
 ;@elif BRANCH == "chahi_amiga_1991"
-	jmp LABEL_440A
+	jmp DRAW_LESTER_FRAME_THEN_FALL
 ;@endif
 	killChannel
 
@@ -10004,9 +10004,9 @@ HERO_RUN_RIGHT_LOOP:
 	break
 	add [0x01], 0x0005
 ;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991")
-	je [HERO_ACTION], 0x01, LABEL_45E8
+	je [HERO_ACTION], 0x01, HERO_LEAP_R_F5_TO_F9_ENTRY
 ;@elif BRANCH in ("dos_1992", "gba_2004")
-	je [HERO_ACTION], 0x01, LBL_45E8_4B58
+	je [HERO_ACTION], 0x01, HERO_LEAP_R_F5_TO_F9_ENTRY
 ;@endif
 	sub [0x01], 0x0005
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
@@ -10036,11 +10036,11 @@ HERO_RUN_RIGHT_LOOP:
 	break
 	mov [0x63], 0x0002
 ;@if BRANCH == "cartridge_1992"
-	jmp LABEL_469B
+	jmp DRAW_LESTER_FRAME_THEN_FALL
 ;@elif BRANCH in ("dos_1992", "gba_2004")
-	jmp LBL_45E8_469B
+	jmp DRAW_LESTER_FRAME_THEN_FALL
 ;@elif BRANCH == "chahi_amiga_1991"
-	jmp LABEL_440A
+	jmp DRAW_LESTER_FRAME_THEN_FALL
 ;@endif
 	killChannel
 
