@@ -1,47 +1,38 @@
-; Unified source for CAPSULE with two folded shared bodies.
+wrote src/levels/_unified/capsule/amiga__entry.inc (1215 lines)
+wrote src/levels/_unified/capsule/amiga__post_RAMP_VAR1_PLUS_C_9_5_3_BREAKS.inc (2464 lines)
+wrote src/levels/_unified/capsule/amiga__post_COPY_HASH_VAR_37_TO_RANGE.inc (639 lines)
+wrote src/levels/_unified/capsule/amiga__post_DERIVE_VAR12_11_10_FROM_VAR9.inc (8146 lines)
+wrote src/levels/_unified/capsule/amiga__post_INIT_RANGE_48_TO_4D_TO_MAX.inc (5134 lines)
+wrote src/levels/_unified/capsule/cart__entry.inc (3022 lines)
+wrote src/levels/_unified/capsule/cart__post_RAMP_VAR1_PLUS_C_9_5_3_BREAKS.inc (2822 lines)
+wrote src/levels/_unified/capsule/cart__post_COPY_HASH_VAR_37_TO_RANGE.inc (1507 lines)
+wrote src/levels/_unified/capsule/cart__post_DERIVE_VAR12_11_10_FROM_VAR9.inc (8568 lines)
+wrote src/levels/_unified/capsule/cart__post_INIT_HASH_VARS_A9_TO_AD.inc (1892 lines)
+wrote src/levels/_unified/capsule/cart__post_INIT_RANGE_48_TO_4D_TO_MAX.inc (346 lines)
+wrote src/levels/_unified/capsule/cart__post_INIT_BIRD_AI_VARS.inc (3265 lines)
+wrote src/levels/_unified/capsule/dos__entry.inc (2961 lines)
+wrote src/levels/_unified/capsule/dos__post_RAMP_VAR1_PLUS_C_9_5_3_BREAKS.inc (2772 lines)
+wrote src/levels/_unified/capsule/dos__post_COPY_HASH_VAR_37_TO_RANGE.inc (1676 lines)
+wrote src/levels/_unified/capsule/dos__post_DERIVE_VAR12_11_10_FROM_VAR9.inc (8523 lines)
+wrote src/levels/_unified/capsule/dos__post_INIT_HASH_VARS_A9_TO_AD.inc (1870 lines)
+wrote src/levels/_unified/capsule/dos__post_INIT_RANGE_48_TO_4D_TO_MAX.inc (345 lines)
+wrote src/levels/_unified/capsule/dos__post_INIT_BIRD_AI_VARS.inc (3293 lines)
+; Unified source for CAPSULE with 6 folded shared bodies.
 ;
-; Architecture: each per-arm `.inc` file is split into chunks separated
-; by the byte addresses of the shared routines. The shared bodies live
-; at the top level and are emitted into the assembled output for each
-; branch at the correct byte address (the natural assembled layout
-; takes care of address alignment — no `org` directives needed).
-;
-; Currently folded routines (in byte-address order within the file):
-;   RAMP_VAR1_PLUS_C_9_5_3_BREAKS  (40 bytes — pos-init ease curve)
-;     amiga: 0x02FD   cart: 0x1457   dos: 0x136A
-;   COPY_HASH_VAR_37_TO_RANGE  (117 bytes — also in PRISON, CAVES)
-;     amiga: 0x231A   cart: 0x31BE   dos: 0x3041
-;   DERIVE_VAR12_11_10_FROM_VAR9  (69 bytes — also in PRISON, CAVES)
-;     amiga: 0x2CDF   cart: 0x4261   dos: 0x428F
-;   INIT_RANGE_48_TO_4D_TO_MAX  (61 bytes — also in PRISON, CAVES)
-;     amiga: 0x8480   cart: 0xB2DF   dos: 0xB1FE
-;   INIT_BIRD_AI_VARS  (40 bytes — cart+dos only)
-;     cart: 0xB6FE    dos:  0xB61A
-;
-; Per-arm split layout:
-;   amiga has 5 chunks: pre1, pre2, mid1, mid2, post3
-;   cart/dos have 6 chunks: pre1, pre2, mid1, mid2, post3_a, post3_b
-;     (INIT_BIRD_AI_VARS sits between post3_a and post3_b in cart/dos.
-;      Doesn't exist in amiga — wrapped in `;@if BRANCH in (cart, dos)`
-;      and amiga's post3 is single-chunk, spanning the same byte range
-;      as cart/dos's post3_a + INIT_BIRD_AI_VARS + post3_b.)
-;
-; FOLD-SAFETY NOTE: routines with cross-branch-differing CINEMATIC_xxx
-; offsets (or other EQU-resolved operands whose bytes differ per
-; branch) cannot be folded into a single shared body — the assembler
-; uses `;@raw=...` annotations as authoritative, and a single body
-; with one set of `;@raw=` only matches one branch's bytes. PLAY_3SFX_PAL_3_PAUSE_4
-; was attempted but reverted (see TASK #95 commits). Operand-free
-; routines (mov [reg], CONST / fill / blit / arithmetic) are
-; safely foldable; routines with per-branch EQU operands need a
-; different approach (e.g., per-branch body conditionals).
+; Folded routines (in byte-address order):
+;   RAMP_VAR1_PLUS_C_9_5_3_BREAKS  (3-arm: amiga, cart, dos)
+;   COPY_HASH_VAR_37_TO_RANGE  (3-arm: amiga, cart, dos)
+;   DERIVE_VAR12_11_10_FROM_VAR9  (3-arm: amiga, cart, dos)
+;   INIT_HASH_VARS_A9_TO_AD  (2-arm: cart, dos)
+;   INIT_RANGE_48_TO_4D_TO_MAX  (3-arm: amiga, cart, dos)
+;   INIT_BIRD_AI_VARS  (2-arm: cart, dos)
 
-;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart_pre1.inc"
+;@if BRANCH == "chahi_amiga_1991"
+;@include "capsule/amiga__entry.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "capsule/cart__entry.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos_pre1.inc"
-;@elif BRANCH == "chahi_amiga_1991"
-;@include "capsule/amiga_pre1.inc"
+;@include "capsule/dos__entry.inc"
 ;@endif
 
 RAMP_VAR1_PLUS_C_9_5_3_BREAKS:
@@ -62,12 +53,12 @@ RAMP_VAR1_PLUS_C_9_5_3_BREAKS:
 	add [0x01], 0x0001	;@raw=0x03,0x01,0x00,0x01
 	killChannel	;@raw=0x11
 
-;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart_pre2.inc"
+;@if BRANCH == "chahi_amiga_1991"
+;@include "capsule/amiga__post_RAMP_VAR1_PLUS_C_9_5_3_BREAKS.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "capsule/cart__post_RAMP_VAR1_PLUS_C_9_5_3_BREAKS.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos_pre2.inc"
-;@elif BRANCH == "chahi_amiga_1991"
-;@include "capsule/amiga_pre2.inc"
+;@include "capsule/dos__post_RAMP_VAR1_PLUS_C_9_5_3_BREAKS.inc"
 ;@endif
 
 COPY_HASH_VAR_37_TO_RANGE:
@@ -106,12 +97,12 @@ COPY_HASH_VAR_37_TO_RANGE:
 	add [0x37], [0x3F]	;@raw=0x02,0x37,0x3F
 	ret	;@raw=0x05
 
-;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart_mid1.inc"
+;@if BRANCH == "chahi_amiga_1991"
+;@include "capsule/amiga__post_COPY_HASH_VAR_37_TO_RANGE.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "capsule/cart__post_COPY_HASH_VAR_37_TO_RANGE.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos_mid1.inc"
-;@elif BRANCH == "chahi_amiga_1991"
-;@include "capsule/amiga_mid1.inc"
+;@include "capsule/dos__post_COPY_HASH_VAR_37_TO_RANGE.inc"
 ;@endif
 
 DERIVE_VAR12_11_10_FROM_VAR9:
@@ -136,12 +127,12 @@ DERIVE_VAR12_11_10_FROM_VAR9:
 	and [0x09], 0x0007	;@raw=0x14,0x09,0x00,0x07
 	ret	;@raw=0x05
 
-;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart_mid2_a.inc"
+;@if BRANCH == "chahi_amiga_1991"
+;@include "capsule/amiga__post_DERIVE_VAR12_11_10_FROM_VAR9.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "capsule/cart__post_DERIVE_VAR12_11_10_FROM_VAR9.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos_mid2_a.inc"
-;@elif BRANCH == "chahi_amiga_1991"
-;@include "capsule/amiga_mid2.inc"
+;@include "capsule/dos__post_DERIVE_VAR12_11_10_FROM_VAR9.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -159,9 +150,9 @@ INIT_HASH_VARS_A9_TO_AD:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart_mid2_b.inc"
+;@include "capsule/cart__post_INIT_HASH_VARS_A9_TO_AD.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos_mid2_b.inc"
+;@include "capsule/dos__post_INIT_HASH_VARS_A9_TO_AD.inc"
 ;@endif
 
 INIT_RANGE_48_TO_4D_TO_MAX:
@@ -182,12 +173,12 @@ INIT_RANGE_48_TO_4D_TO_MAX:
 	mov [0x8D], 0xFFFF	;@raw=0x00,0x8D,0xFF,0xFF
 	ret	;@raw=0x05
 
-;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart_post3_a.inc"
+;@if BRANCH == "chahi_amiga_1991"
+;@include "capsule/amiga__post_INIT_RANGE_48_TO_4D_TO_MAX.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "capsule/cart__post_INIT_RANGE_48_TO_4D_TO_MAX.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos_post3_a.inc"
-;@elif BRANCH == "chahi_amiga_1991"
-;@include "capsule/amiga_post3.inc"
+;@include "capsule/dos__post_INIT_RANGE_48_TO_4D_TO_MAX.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -206,7 +197,8 @@ INIT_BIRD_AI_VARS:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart_post3_b.inc"
+;@include "capsule/cart__post_INIT_BIRD_AI_VARS.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos_post3_b.inc"
+;@include "capsule/dos__post_INIT_BIRD_AI_VARS.inc"
 ;@endif
+

@@ -1,33 +1,41 @@
-; Unified source for CAVES with one folded shared body.
+wrote src/levels/_unified/caves/amiga__entry.inc (1335 lines)
+wrote src/levels/_unified/caves/amiga__post_PRELOAD_CAVES_RESOURCES.inc (5841 lines)
+wrote src/levels/_unified/caves/amiga__post_COPY_HASH_VAR_37_TO_RANGE.inc (316 lines)
+wrote src/levels/_unified/caves/amiga__post_INIT_HASH_VARS_67_66_65_68_69.inc (520 lines)
+wrote src/levels/_unified/caves/amiga__post_DERIVE_VAR12_11_10_FROM_VAR9.inc (12771 lines)
+wrote src/levels/_unified/caves/amiga__post_INIT_RANGE_48_TO_4D_TO_MAX.inc (294 lines)
+wrote src/levels/_unified/caves/amiga__post_INIT_AI_VARS_AT_280_10.inc (2492 lines)
+wrote src/levels/_unified/caves/cart__entry.inc (7594 lines)
+wrote src/levels/_unified/caves/cart__post_COPY_HASH_VAR_37_TO_RANGE.inc (322 lines)
+wrote src/levels/_unified/caves/cart__post_INIT_HASH_VARS_67_66_65_68_69.inc (522 lines)
+wrote src/levels/_unified/caves/cart__post_DERIVE_VAR12_11_10_FROM_VAR9.inc (13258 lines)
+wrote src/levels/_unified/caves/cart__post_INIT_RANGE_48_TO_4D_TO_MAX.inc (319 lines)
+wrote src/levels/_unified/caves/cart__post_INIT_AI_VARS_AT_280_10.inc (2433 lines)
+wrote src/levels/_unified/caves/dos__entry.inc (1383 lines)
+wrote src/levels/_unified/caves/dos__post_PRELOAD_CAVES_RESOURCES.inc (6221 lines)
+wrote src/levels/_unified/caves/dos__post_COPY_HASH_VAR_37_TO_RANGE.inc (995 lines)
+wrote src/levels/_unified/caves/dos__post_DERIVE_VAR12_11_10_FROM_VAR9.inc (13122 lines)
+wrote src/levels/_unified/caves/dos__post_INIT_RANGE_48_TO_4D_TO_MAX.inc (318 lines)
+wrote src/levels/_unified/caves/dos__post_INIT_AI_VARS_AT_280_10.inc (2450 lines)
+; Unified source for CAVES with 6 folded shared bodies.
 ;
-; Architecture: each per-arm `.inc` file is split into `_pre` and
-; `_post` chunks separated by the byte address of the shared
-; routine. Shared bodies live at the top level and are emitted into
-; the assembled output for each branch at the natural assembled
-; layout's byte address (no `org` directive needed).
-;
-; Currently folded routines (in byte-address order within the file):
-;   PRELOAD_CAVES_RESOURCES  (58 bytes — amiga+dos only, NOT cart)
-;   COPY_HASH_VAR_37_TO_RANGE  (117 bytes — also in CAPSULE, PRISON, 3-arm)
-;   INIT_HASH_VARS_67_66_65_68_69  (97 bytes — amiga+cart only, NOT dos)
-;   DERIVE_VAR12_11_10_FROM_VAR9  (69 bytes — also in CAPSULE, PRISON, 3-arm)
-;   INIT_RANGE_48_TO_4D_TO_MAX  (61 bytes — also in CAPSULE, PRISON, 3-arm)
-;   INIT_AI_VARS_AT_280_10  (44 bytes — 3-arm, late-stage object init)
-;
-; Per-arm split layout:
-;   amiga: pre_a, pre_b, post_a, post_b, post_c, post_d, post_e
-;   cart:  pre,                post_a, post_b, post_c, post_d, post_e
-;   dos:   pre_a, pre_b, post_a,         post_c, post_d, post_e
+; Folded routines (in byte-address order):
+;   PRELOAD_CAVES_RESOURCES  (2-arm: amiga, dos)
+;   COPY_HASH_VAR_37_TO_RANGE  (3-arm: amiga, cart, dos)
+;   INIT_HASH_VARS_67_66_65_68_69  (2-arm: amiga, cart)
+;   DERIVE_VAR12_11_10_FROM_VAR9  (3-arm: amiga, cart, dos)
+;   INIT_RANGE_48_TO_4D_TO_MAX  (3-arm: amiga, cart, dos)
+;   INIT_AI_VARS_AT_280_10  (3-arm: amiga, cart, dos)
 
-;@if BRANCH == "cartridge_1992"
-;@include "caves/cart_pre.inc"
+;@if BRANCH == "chahi_amiga_1991"
+;@include "caves/amiga__entry.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "caves/cart__entry.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos_pre_a.inc"
-;@elif BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga_pre_a.inc"
+;@include "caves/dos__entry.inc"
 ;@endif
 
-;@if BRANCH in ("dos_1992", "chahi_amiga_1991")
+;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PRELOAD_CAVES_RESOURCES:
 	load id=0x006B	;@raw=0x19,0x00,0x6B
 	load id=0x0055	;@raw=0x19,0x00,0x55
@@ -51,12 +59,11 @@ PRELOAD_CAVES_RESOURCES:
 	ret	;@raw=0x05
 ;@endif
 
-;@if BRANCH == "dos_1992"
-;@include "caves/dos_pre_b.inc"
-;@elif BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga_pre_b.inc"
+;@if BRANCH == "chahi_amiga_1991"
+;@include "caves/amiga__post_PRELOAD_CAVES_RESOURCES.inc"
+;@elif BRANCH == "dos_1992"
+;@include "caves/dos__post_PRELOAD_CAVES_RESOURCES.inc"
 ;@endif
-; (cart has no chunk here — cart_pre above already spans through to COPY_HASH)
 
 COPY_HASH_VAR_37_TO_RANGE:
 	mov [0x38], [0x37]	;@raw=0x01,0x38,0x37
@@ -94,15 +101,15 @@ COPY_HASH_VAR_37_TO_RANGE:
 	add [0x37], [0x3F]	;@raw=0x02,0x37,0x3F
 	ret	;@raw=0x05
 
-;@if BRANCH == "cartridge_1992"
-;@include "caves/cart_post_a.inc"
+;@if BRANCH == "chahi_amiga_1991"
+;@include "caves/amiga__post_COPY_HASH_VAR_37_TO_RANGE.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "caves/cart__post_COPY_HASH_VAR_37_TO_RANGE.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos_post_a.inc"
-;@elif BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga_post_a.inc"
+;@include "caves/dos__post_COPY_HASH_VAR_37_TO_RANGE.inc"
 ;@endif
 
-;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991")
+;@if BRANCH in ("chahi_amiga_1991", "cartridge_1992")
 INIT_HASH_VARS_67_66_65_68_69:
 	mov [HACK_VAR_67], 0x0001	;@raw=0x00,0x67,0x00,0x01
 	mov [0x66], 0x0001	;@raw=0x00,0x66,0x00,0x01
@@ -131,12 +138,11 @@ INIT_HASH_VARS_67_66_65_68_69:
 	ret	;@raw=0x05
 ;@endif
 
-;@if BRANCH == "cartridge_1992"
-;@include "caves/cart_post_b.inc"
-;@elif BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga_post_b.inc"
+;@if BRANCH == "chahi_amiga_1991"
+;@include "caves/amiga__post_INIT_HASH_VARS_67_66_65_68_69.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "caves/cart__post_INIT_HASH_VARS_67_66_65_68_69.inc"
 ;@endif
-; (dos has no chunk here — dos_post_a above already spans through to DERIVE)
 
 DERIVE_VAR12_11_10_FROM_VAR9:
 	and [0x09], 0x03FF	;@raw=0x14,0x09,0x03,0xFF
@@ -160,12 +166,12 @@ DERIVE_VAR12_11_10_FROM_VAR9:
 	and [0x09], 0x0007	;@raw=0x14,0x09,0x00,0x07
 	ret	;@raw=0x05
 
-;@if BRANCH == "cartridge_1992"
-;@include "caves/cart_post_c.inc"
+;@if BRANCH == "chahi_amiga_1991"
+;@include "caves/amiga__post_DERIVE_VAR12_11_10_FROM_VAR9.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "caves/cart__post_DERIVE_VAR12_11_10_FROM_VAR9.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos_post_c.inc"
-;@elif BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga_post_c.inc"
+;@include "caves/dos__post_DERIVE_VAR12_11_10_FROM_VAR9.inc"
 ;@endif
 
 INIT_RANGE_48_TO_4D_TO_MAX:
@@ -186,12 +192,12 @@ INIT_RANGE_48_TO_4D_TO_MAX:
 	mov [0x8D], 0xFFFF	;@raw=0x00,0x8D,0xFF,0xFF
 	ret	;@raw=0x05
 
-;@if BRANCH == "cartridge_1992"
-;@include "caves/cart_post_d.inc"
+;@if BRANCH == "chahi_amiga_1991"
+;@include "caves/amiga__post_INIT_RANGE_48_TO_4D_TO_MAX.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "caves/cart__post_INIT_RANGE_48_TO_4D_TO_MAX.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos_post_d.inc"
-;@elif BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga_post_d.inc"
+;@include "caves/dos__post_INIT_RANGE_48_TO_4D_TO_MAX.inc"
 ;@endif
 
 INIT_AI_VARS_AT_280_10:
@@ -208,10 +214,11 @@ INIT_AI_VARS_AT_280_10:
 	mov [0x2A], 0x000F	;@raw=0x00,0x2A,0x00,0x0F
 	ret	;@raw=0x05
 
-;@if BRANCH == "cartridge_1992"
-;@include "caves/cart_post_e.inc"
+;@if BRANCH == "chahi_amiga_1991"
+;@include "caves/amiga__post_INIT_AI_VARS_AT_280_10.inc"
+;@elif BRANCH == "cartridge_1992"
+;@include "caves/cart__post_INIT_AI_VARS_AT_280_10.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos_post_e.inc"
-;@elif BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga_post_e.inc"
+;@include "caves/dos__post_INIT_AI_VARS_AT_280_10.inc"
 ;@endif
+
