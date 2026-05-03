@@ -1898,8 +1898,8 @@ INIT_OPENING_BG_THREADS:
 	mov [0x71], 0x0000
 	mov [0x6E], 0x0001
 	mov [0x22], 0x0001
-	setup channel=0x24, address=LABEL_04B3
-	setup channel=0x25, address=LABEL_04E7
+	setup channel=0x24, address=AMBIENT_CH24_DELAY_F1
+	setup channel=0x25, address=AMBIENT_CH25_RESTART
 	jmp WAIT_FOR_TIMER_AND_HACK_67_THEN_SETUP_31
 	killChannel
 
@@ -2098,8 +2098,8 @@ START_LAKE_BG_MUSIC_AND_DELETE_CH_0_2:
 	setup channel=0x2E, address=WAIT_FOR_BEETLE_OFFSCREEN_THEN_KILL
 	setup channel=0x2F, address=INC_VAR_6E_PER_TICK_LOOP
 	setup channel=0x30, address=WAIT_FOR_TIMER_AND_HACK_67_THEN_SETUP_31
-	setup channel=0x24, address=LABEL_0499
-	setup channel=0x25, address=LABEL_04E0
+	setup channel=0x24, address=AMBIENT_LOOP_CH24
+	setup channel=0x25, address=AMBIENT_LOOP_CH25
 	jmp OUTSIDE_POOL_SCREEN
 	killChannel
 
@@ -2107,7 +2107,7 @@ RANDOM_AMBIENT_SOUND_LOOP:
 	call COMPUTE_RANDOM_BIT_MASKS
 	mov [0x24], [0x3A]
 	add [0x24], 0x0028
-	call LABEL_0450
+	call PLAY_RANDOM_AMBIENT_SOUND
 
 WAIT_RANDOM_DELAY_THEN_LOOP:
 	break
@@ -2115,95 +2115,95 @@ WAIT_RANDOM_DELAY_THEN_LOOP:
 	jmp RANDOM_AMBIENT_SOUND_LOOP
 	killChannel
 
-LABEL_0450:
+PLAY_RANDOM_AMBIENT_SOUND:
 	call COMPUTE_RANDOM_BIT_MASKS
 	mov [0xF8], [0x3A]
-	jne [0xF8], 0x00, LABEL_045D
+	jne [0xF8], 0x00, AMBIENT_RND_CASE_1
 	ret
 
-LABEL_045D:
-	jne [0xF8], 0x01, LABEL_0464
+AMBIENT_RND_CASE_1:
+	jne [0xF8], 0x01, PLAY_AMBIENT_F16
 	ret
 
-LABEL_0464:
-	jne [0xF8], 0x02, LABEL_0471
+PLAY_AMBIENT_F16:
+	jne [0xF8], 0x02, AMBIENT_RND_CASE_3
 	play id=0x0050, freq=0x16, vol=0x20, channel=0x02
 	ret
 
-LABEL_0471:
-	jne [0xF8], 0x03, LABEL_0478
+AMBIENT_RND_CASE_3:
+	jne [0xF8], 0x03, PLAY_AMBIENT_F05
 	ret
 
-LABEL_0478:
-	jne [0xF8], 0x04, LABEL_0485
+PLAY_AMBIENT_F05:
+	jne [0xF8], 0x04, AMBIENT_RND_CASE_5
 	play id=0x0050, freq=0x05, vol=0x20, channel=0x02
 	ret
 
-LABEL_0485:
-	jne [0xF8], 0x05, LABEL_048C
+AMBIENT_RND_CASE_5:
+	jne [0xF8], 0x05, PLAY_AMBIENT_F19
 	ret
 
-LABEL_048C:
+PLAY_AMBIENT_F19:
 	jne [0xF8], 0x06, RET_TARGET_1A88
 	play id=0x0050, freq=0x19, vol=0x10, channel=0x02
 	ret
 
-LABEL_0499:
+AMBIENT_LOOP_CH24:
 	play id=0x0010, freq=0x01, vol=0x3F, channel=0x03
 	mov [0x22], 0x001E
 
-LABEL_04A3:
+AMBIENT_CH24_DELAY_F0:
 	break
-	djnz [0x22], LABEL_04A3
+	djnz [0x22], AMBIENT_CH24_DELAY_F0
 	play id=0x0010, freq=0x01, vol=0x2E, channel=0x03
 	break
 
-LABEL_04AF:
+AMBIENT_CH24_RESTART:
 	mov [0x22], 0x003C
 
-LABEL_04B3:
+AMBIENT_CH24_DELAY_F1:
 	break
-	djnz [0x22], LABEL_04B3
+	djnz [0x22], AMBIENT_CH24_DELAY_F1
 	play id=0x0008, freq=0x03, vol=0x1F, channel=0x03
 	mov [0x22], 0x001E
 
-LABEL_04C2:
+AMBIENT_CH24_DELAY_F2:
 	break
-	djnz [0x22], LABEL_04C2
+	djnz [0x22], AMBIENT_CH24_DELAY_F2
 	play id=0x0010, freq=0x04, vol=0x14, channel=0x03
 	mov [0x22], 0x005A
 
-LABEL_04D1:
+AMBIENT_CH24_DELAY_F3:
 	break
-	djnz [0x22], LABEL_04D1
+	djnz [0x22], AMBIENT_CH24_DELAY_F3
 	play id=0x0010, freq=0x01, vol=0x18, channel=0x03
-	jmp LABEL_04AF
+	jmp AMBIENT_CH24_RESTART
 	killChannel
 
-LABEL_04E0:
+AMBIENT_LOOP_CH25:
 	play id=0x0010, freq=0x09, vol=0x20, channel=0x02
 	break
 
-LABEL_04E7:
+AMBIENT_CH25_RESTART:
 	mov [0x23], 0x0033
 
-LABEL_04EB:
+AMBIENT_CH25_DELAY_F0:
 	break
-	djnz [0x23], LABEL_04EB
+	djnz [0x23], AMBIENT_CH25_DELAY_F0
 	play id=0x0008, freq=0x03, vol=0x0A, channel=0x02
 	mov [0x23], 0x004B
 
-LABEL_04FA:
+AMBIENT_CH25_DELAY_F1:
 	break
-	djnz [0x23], LABEL_04FA
+	djnz [0x23], AMBIENT_CH25_DELAY_F1
 	play id=0x0008, freq=0x00, vol=0x16, channel=0x02
 	mov [0x23], 0x001E
 
-LABEL_0509:
+AMBIENT_CH25_DELAY_F2:
 	break
-	djnz [0x23], LABEL_0509
+	djnz [0x23], AMBIENT_CH25_DELAY_F2
 	play id=0x0010, freq=0x09, vol=0x0F, channel=0x02
-	jmp LABEL_04E7
+	jmp AMBIENT_CH25_RESTART
 	killChannel
 
 INVOKE_DRAW_HELPER_ON_BG_PAGE:
@@ -2222,21 +2222,21 @@ DRAW_HELPER_AT_Y_PLUS_1:
 
 DRAW_HELPER_BRANCHED_ON_PROXIMITY_FLAG:
 	call COMPUTE_RANDOM_BIT_MASKS
-	jne [0x39], 0x00, LABEL_053F
+	jne [0x39], 0x00, DROPLET_VARIANT_CASE_1
 	video type=1, offset=CINEMATIC_DROPLET_VARIANT_0, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-LABEL_053F:
-	jne [0x39], 0x01, LABEL_054B
+DROPLET_VARIANT_CASE_1:
+	jne [0x39], 0x01, DROPLET_VARIANT_CASE_2
 	video type=1, offset=CINEMATIC_DROPLET_VARIANT_1, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-LABEL_054B:
-	jne [0x39], 0x00, LABEL_0557
+DROPLET_VARIANT_CASE_2:
+	jne [0x39], 0x00, DROPLET_VARIANT_CASE_3
 	video type=1, offset=CINEMATIC_DROPLET_VARIANT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-LABEL_0557:
+DROPLET_VARIANT_CASE_3:
 	video type=1, offset=CINEMATIC_DROPLET_VARIANT_3, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
@@ -6151,8 +6151,8 @@ LABEL_2A7E:
 	break
 	setPalette 0x06
 	mov [PAUSE_SLICES], 0x0003
-	setup channel=0x24, address=LABEL_0499
-	setup channel=0x25, address=LABEL_04E0
+	setup channel=0x24, address=AMBIENT_LOOP_CH24
+	setup channel=0x25, address=AMBIENT_LOOP_CH25
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	song id=0x0BBA, delay=0x0000, pos=0x00
 ;@endif
