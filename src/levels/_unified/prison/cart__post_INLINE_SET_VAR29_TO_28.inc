@@ -1,5 +1,5 @@
 LABEL_1A27:
 	call GUARDED_DRAW_CIN_242_243	;@raw=0x04,0x57,0xD5
-	break	;@raw=0x06
+	break
 	djnz [0x29], LABEL_1A27	;@raw=0x09,0x29,0x1A,0x27
-	killChannel	;@raw=0x11
+	killChannel

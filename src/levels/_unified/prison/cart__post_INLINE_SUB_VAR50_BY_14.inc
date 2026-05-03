@@ -1,5 +1,5 @@
 LABEL_80C7:
-	ret	;@raw=0x05
+	ret
 LABEL_80C8:
 	db 0x11
 
@@ -21,7 +21,7 @@ JUMP_TO_LABEL_7B2E:
 	jmp LABEL_7B2E	;@raw=0x07,0x7B,0x2E
 
 LABEL_810A:
-	break	;@raw=0x06
+	break
 	jmp LABEL_80C9	;@raw=0x07,0x80,0xC9
 LABEL_810E:
 	db 0x11

@@ -1,12 +1,12 @@
 LABEL_31B0:
-	selectVideoPage 0x00	;@raw=0x0D,0x00
-	break	;@raw=0x06
+	selectVideoPage 0x00
+	break
 	jmp LABEL_31B0	;@raw=0x07,0x31,0xB0
-	killChannel	;@raw=0x11
+	killChannel
 
 LABEL_31B7:
-	selectVideoPage 0xFF	;@raw=0x0D,0xFF
-	break	;@raw=0x06
+	selectVideoPage 0xFF
+	break
 	jmp LABEL_31B7	;@raw=0x07,0x31,0xB7
 LABEL_31BD:
 	db 0x11

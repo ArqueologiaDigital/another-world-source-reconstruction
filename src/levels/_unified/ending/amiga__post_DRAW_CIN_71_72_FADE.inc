@@ -1,5 +1,5 @@
 LABEL_0397:
-	break	;@raw=0x06
+	break
 	video type=1, offset=CINEMATIC_074, x=160, y=100	;@raw=0xA3,0x2A,0xA0,0x64
 	jmp LABEL_0397	;@raw=0x07,0x03,0x97
 LABEL_039F:
@@ -7,5 +7,5 @@ LABEL_039F:
 
 HANG_DRAWING_CIN_071:
 	video type=1, offset=CINEMATIC_071, x=160, y=100	;@raw=0xA3,0x74,0xA0,0x64
-	break	;@raw=0x06
+	break
 	jmp HANG_DRAWING_CIN_071	;@raw=0x07,0x03,0xA0
