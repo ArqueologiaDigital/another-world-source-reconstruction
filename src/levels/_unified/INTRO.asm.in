@@ -647,7 +647,7 @@ BLIT_AND_DISPATCH_HERO_ACTION:
 	add [0xC7], 0x0001
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
-	jne [HERO_ACTION], 0x00, LABEL_09CA
+	jne [HERO_ACTION], 0x00, INTRO_RESET_PAGES_AND_PAL_0
 	copyVideoPage src=0x40, dst=0xFF
 	break
 	jmp BLIT_AND_DISPATCH_HERO_ACTION
@@ -669,7 +669,7 @@ BLIT_AND_DISPATCH_VAR3:
 	add [0xC7], 0x0001
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
-	jne [HERO_ACTION], 0x00, LABEL_09CA
+	jne [HERO_ACTION], 0x00, INTRO_RESET_PAGES_AND_PAL_0
 	copyVideoPage src=0x00, dst=0xFF
 	break
 	jmp BLIT_AND_DISPATCH_VAR3
@@ -677,17 +677,17 @@ BLIT_AND_DISPATCH_VAR3:
 BLIT_DISPATCH_HERO_ACTION_ALT:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
-	jne [HERO_ACTION], 0x00, LABEL_09CA
+	jne [HERO_ACTION], 0x00, INTRO_RESET_PAGES_AND_PAL_0
 	break
 	jmp BLIT_DISPATCH_HERO_ACTION_ALT
-LABEL_00E4:
+BLIT_DISPATCH_VAR3_LOOP:
 	add [0xC7], 0x0001
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
-	jne [HERO_ACTION], 0x00, LABEL_09CA
+	jne [HERO_ACTION], 0x00, INTRO_RESET_PAGES_AND_PAL_0
 	fill page=0xFF, color=0x01
 	break
-	jmp LABEL_00E4
+	jmp BLIT_DISPATCH_VAR3_LOOP
 
 INIT_VIDEO_BUFFERS:
 	fill page=0x01, color=0x00
@@ -1568,7 +1568,7 @@ LABEL_09C1:
 	load id=0x3E82
 	killChannel
 
-LABEL_09CA:
+INTRO_RESET_PAGES_AND_PAL_0:
 	fill page=0x00, color=0x00
 	fill page=0xFF, color=0x00
 	fill page=0x03, color=0x00
@@ -1926,7 +1926,7 @@ LABEL_0CBD:
 	break
 	selectVideoPage 0x03
 	fill page=0x03, color=0x02
-	call LABEL_1D58
+	call DRAW_CINEMATICS_172_TO_175
 	video type=1, offset=CINEMATIC_248, x=160, y=101
 	video type=1, offset=CINEMATIC_182, x=187, y=101
 	selectVideoPage 0xFF
@@ -2199,7 +2199,7 @@ LABEL_1011:
 	break
 	video type=1, offset=CINEMATIC_411, x=154, y=123
 	video type=1, offset=CINEMATIC_412, x=180, y=100
-	je [MUS_MARK], 0x2B, LABEL_1045
+	je [MUS_MARK], 0x2B, WAIT_MUS_MARK_2B_THEN_TEXT
 	djnz [0x01], LABEL_1011
 	mov [0x01], 0x0004
 	play id=0x0041, freq=0x14, vol=0x3F, channel=0x03
@@ -2208,11 +2208,11 @@ LABEL_102E:
 	break
 	video type=1, offset=CINEMATIC_418, x=154, y=123
 	video type=1, offset=CINEMATIC_412, x=181, y=100
-	je [MUS_MARK], 0x2B, LABEL_1045
+	je [MUS_MARK], 0x2B, WAIT_MUS_MARK_2B_THEN_TEXT
 	djnz [0x01], LABEL_102E
 	djnz [0x02], LABEL_100D
 
-LABEL_1045:
+WAIT_MUS_MARK_2B_THEN_TEXT:
 	setup channel=0x02, address=COPY_BG_PAGE_AND_DISPLAY_TEXT_23
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	killChannel
@@ -2562,17 +2562,17 @@ LABEL_139F:
 LABEL_13AE:
 	break
 	text id=0x0035, x=2, y=140, color=0x06
-	jg [MUS_MARK], 0x20, LABEL_13D4
+	jg [MUS_MARK], 0x20, WAIT_MUS_MARK_20_THEN_TEXT_23
 	djnz [0x01], LABEL_13AE
 	mov [0x01], 0x000A
 
 LABEL_13C3:
 	break
 	text id=0x0036, x=2, y=80, color=0x06
-	jg [MUS_MARK], 0x20, LABEL_13D4
+	jg [MUS_MARK], 0x20, WAIT_MUS_MARK_20_THEN_TEXT_23
 	djnz [0x01], LABEL_13C3
 
-LABEL_13D4:
+WAIT_MUS_MARK_20_THEN_TEXT_23:
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0x00
@@ -3386,7 +3386,7 @@ INTRO_TRANSITION_TO_LAKE_SCENE:
 	mov [0x01], 0x002E
 	mov [0x02], 0x00FF
 	fill page=0xFF, color=0x02
-	call LABEL_1D58
+	call DRAW_CINEMATICS_172_TO_175
 	setPalette 0x08
 	video type=1, offset=CINEMATIC_181, x=160, y=101
 	video type=1, offset=CINEMATIC_182, x=187, y=101
@@ -3514,7 +3514,7 @@ LABEL_1D4F:
 LABEL_1D57:
 	killChannel
 
-LABEL_1D58:
+DRAW_CINEMATICS_172_TO_175:
 	video type=1, offset=CINEMATIC_172, x=156, y=94
 	video type=1, offset=CINEMATIC_173, x=160, y=100
 	video type=1, offset=CINEMATIC_174, x=161, y=99
@@ -3541,14 +3541,14 @@ INTRO_SET_PAL_7_FILL_PAGE0_5:
 	selectVideoPage 0xFF
 	killChannel
 
-LABEL_1DAA:
+DRAW_CIN_112_AT_143_94_LOOP:
 	video type=1, offset=CINEMATIC_112, x=143, y=94
 	break
-	jmp LABEL_1DAA
+	jmp DRAW_CIN_112_AT_143_94_LOOP
 LABEL_1DB2:
 	killChannel
 
-LABEL_1DB3:
+CH_02_INIT_VARS_01_02_03:
 	mov [0x01], 0x0008
 	mov [0x02], 0x008F
 	mov [0x03], 0x0090
@@ -4349,8 +4349,8 @@ LABEL_2654:
 	break
 	djnz [0x01], LABEL_2654
 	setup channel=0x01, address=INTRO_SET_PAL_7_FILL_PAGE0_5
-	setup channel=0x02, address=LABEL_1DB3
-	setup channel=0x03, address=LABEL_1DAA
+	setup channel=0x02, address=CH_02_INIT_VARS_01_02_03
+	setup channel=0x03, address=DRAW_CIN_112_AT_143_94_LOOP
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	killChannel
 
