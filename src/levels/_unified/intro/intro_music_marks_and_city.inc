@@ -486,15 +486,15 @@ SONG_LOOP_END_THEN_BLIT_SETUP:
 	fill page=0x00, color=0x00
 	killChannel
 
-LABEL_152E:
+BLINK_TEXTS_44_45_AT_2_20:
 	text id=0x0044, x=2, y=20, color=0x05
 	break
 	text id=0x0045, x=2, y=20, color=0x05
 	break
-	jmp LABEL_152E
+	jmp BLINK_TEXTS_44_45_AT_2_20
 LABEL_153F:
 	killChannel
-LABEL_1540:
+BLINK_TEXTS_3E_3F_AT_10_120:
 	text id=0x003E, x=10, y=120, color=0x04
 	break
 	text id=0x003F, x=10, y=120, color=0x04
@@ -505,8 +505,8 @@ LABEL_1540:
 	break
 	text id=0x0040, x=10, y=120, color=0x04
 	break
-	jmp LABEL_1540
-LABEL_1566:
+	jmp BLINK_TEXTS_3E_3F_AT_10_120
+BLINK_TEXTS_3F_41_AT_11_132:
 	text id=0x003F, x=11, y=132, color=0x04
 	break
 	text id=0x0041, x=11, y=132, color=0x04
@@ -515,6 +515,6 @@ LABEL_1566:
 	break
 	text id=0x0043, x=11, y=132, color=0x04
 	break
-	jmp LABEL_1566
+	jmp BLINK_TEXTS_3F_41_AT_11_132
 	db 0x11
 

@@ -15,15 +15,15 @@ LABEL_1593:
 INIT_VAR_03_AND_LOOP:
 	mov [0x03], 0x000A
 
-LABEL_1598:
+SHOW_TEXT_39_AT_5_170_10X:
 	break
 	text id=0x0039, x=5, y=170, color=0x06
-	djnz [0x03], LABEL_1598
+	djnz [0x03], SHOW_TEXT_39_AT_5_170_10X
 	mov [0x03], 0x0008
 
-LABEL_15A7:
+INTRO_TEXT_39_REST_8X:
 	break
-	djnz [0x03], LABEL_15A7
+	djnz [0x03], INTRO_TEXT_39_REST_8X
 	jmp INIT_VAR_03_AND_LOOP
 LABEL_15AF:
 	killChannel
@@ -58,10 +58,10 @@ DISPLAY_TEXT_21:
 	break
 	mov [0x02], 0x000A
 
-LABEL_1610:
+SHOW_TEXT_21_AT_17_150_10X:
 	text id=0x0021, x=17, y=150, color=0x06
 	break
-	djnz [0x02], LABEL_1610
+	djnz [0x02], SHOW_TEXT_21_AT_17_150_10X
 	selectVideoPage 0x00
 	text id=0x0021, x=3, y=158, color=0x06
 	selectVideoPage 0xFF
