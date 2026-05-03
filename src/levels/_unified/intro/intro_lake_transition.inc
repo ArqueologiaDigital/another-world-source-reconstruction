@@ -210,18 +210,18 @@ DELAY_25F_AFTER_SET_PAL_A:
 	setup channel=0x3C, address=BLIT_DISPATCH_HERO_ACTION_ALT
 
 BLITTER_CYCLE_VAR2_80X_LOOP:
-	jne [0x02], 0x01, LABEL_1E13
+	jne [0x02], 0x01, COPY_VAR2_TO_VAR4_DEC
 	mov [0x02], 0x0002
 
-LABEL_1E13:
+COPY_VAR2_TO_VAR4_DEC:
 	mov [0x04], [0x02]
 	sub [0x02], 0x0001
 
-LABEL_1E1A:
+DRAW_CIN_115_116_VAR4_LOOP:
 	break
 	video type=1, offset=CINEMATIC_115, x=121, y=[0x03], zoom=0x40
 	video type=1, offset=CINEMATIC_116, x=121, y=187
-	djnz [0x04], LABEL_1E1A
+	djnz [0x04], DRAW_CIN_115_116_VAR4_LOOP
 	add [0x03], 0x0002
 	djnz [0x01], BLITTER_CYCLE_VAR2_80X_LOOP
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
@@ -231,34 +231,34 @@ LABEL_1E1A:
 	setPalette 0x10
 	mov [0x01], 0x001E
 
-LABEL_1E43:
+DRIFT_CIN_117_AT_193_NEG9_30X:
 	video type=1, offset=CINEMATIC_117, x=193, y=65527, zoom=0x40
 	break
-	djnz [0x01], LABEL_1E43
+	djnz [0x01], DRIFT_CIN_117_AT_193_NEG9_30X
 	mov [0x01], 0x001E
 
-LABEL_1E52:
+DRIFT_CIN_117_AT_196_NEG6_30X:
 	video type=1, offset=CINEMATIC_117, x=196, y=65530, zoom=0x40
 	break
-	djnz [0x01], LABEL_1E52
+	djnz [0x01], DRIFT_CIN_117_AT_196_NEG6_30X
 	mov [0x01], 0x001E
 
-LABEL_1E61:
+DRIFT_CIN_117_AT_189_NEG7_30X:
 	video type=1, offset=CINEMATIC_117, x=189, y=65529, zoom=0x40
 	break
-	djnz [0x01], LABEL_1E61
+	djnz [0x01], DRIFT_CIN_117_AT_189_NEG7_30X
 	mov [0x01], 0x001E
 
-LABEL_1E70:
+DRIFT_CIN_117_AT_193_NEG5_30X:
 	video type=1, offset=CINEMATIC_117, x=193, y=65531, zoom=0x40
 	break
-	djnz [0x01], LABEL_1E70
+	djnz [0x01], DRIFT_CIN_117_AT_193_NEG5_30X
 	mov [0x01], 0x001E
 
-LABEL_1E7F:
+DRIFT_CIN_117_AT_196_NEG2_30X:
 	video type=1, offset=CINEMATIC_117, x=196, y=65534, zoom=0x40
 	break
-	djnz [0x01], LABEL_1E7F
+	djnz [0x01], DRIFT_CIN_117_AT_196_NEG2_30X
 	setup channel=0x02, address=INIT_PAGE0_PAUSE2_FILL1
 	setup channel=0x03, address=DRAW_CIN_505_LOOP_VAR_02
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
