@@ -22,6 +22,16 @@
 ;   mid1:   [after COPY_HASH .. before DERIVE_VAR12_11_10_FROM_VAR9]
 ;   mid2:   [after DERIVE .. before INIT_RANGE_48_TO_4D_TO_MAX]
 ;   post3:  [after INIT_RANGE .. EOF]
+;
+; FOLD-SAFETY NOTE: routines with cross-branch-differing CINEMATIC_xxx
+; offsets (or other EQU-resolved operands whose bytes differ per
+; branch) cannot be folded into a single shared body — the assembler
+; uses `;@raw=...` annotations as authoritative, and a single body
+; with one set of `;@raw=` only matches one branch's bytes. PLAY_3SFX_PAL_3_PAUSE_4
+; was attempted but reverted (see TASK #95 commits). Operand-free
+; routines (mov [reg], CONST / fill / blit / arithmetic) are
+; safely foldable; routines with per-branch EQU operands need a
+; different approach (e.g., per-branch body conditionals).
 
 ;@if BRANCH == "cartridge_1992"
 ;@include "capsule/cart_pre1.inc"
