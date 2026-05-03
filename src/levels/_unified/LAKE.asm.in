@@ -2546,9 +2546,9 @@ PARTICLE_BURST_CYCLE_LOOP:
 	killChannel
 ;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991")
 
-LABEL_085C:
+PARTICLE_BURST_3X_LOOP:
 ;@elif BRANCH in ("dos_1992", "gba_2004")
-LBL_085C_08E5:
+PARTICLE_BURST_3X_LOOP:
 ;@endif
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_FRAME_0, x=[0x94], y=[0x95], zoom=0x40
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_FRAME_1, x=[0x96], y=[0x97], zoom=0x40
@@ -2583,18 +2583,18 @@ LBL_085C_08E5:
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_FRAME_1, x=[0x98], y=[0x99], zoom=0x40
 	break
 ;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991")
-	jmp LABEL_085C
+	jmp PARTICLE_BURST_3X_LOOP
 ;@elif BRANCH in ("dos_1992", "gba_2004")
-	jmp LBL_085C_08E5
+	jmp PARTICLE_BURST_3X_LOOP
 ;@endif
 	killChannel
 
 ;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991")
-LABEL_08E0:
+PARTICLE_BURST_7X_ENTRY:
 ;@elif BRANCH in ("dos_1992", "gba_2004")
-LBL_085C_08E0:
+PARTICLE_BURST_7X_ENTRY:
 ;@endif
-	jmp LABEL_08FF
+	jmp PARTICLE_BURST_7X_INIT_POS
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_FRAME_0, x=212, y=121
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_FRAME_1, x=186, y=113
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_FRAME_2, x=202, y=102
@@ -2603,7 +2603,7 @@ LBL_085C_08E0:
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_FRAME_4, x=220, y=106
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_FRAME_3, x=153, y=91
 
-LABEL_08FF:
+PARTICLE_BURST_7X_INIT_POS:
 	mov [0x94], 0x00D4
 	mov [0x95], 0x0079
 	mov [0x96], 0x00BA
@@ -2620,7 +2620,7 @@ LABEL_08FF:
 	mov [0xA1], 0x005B
 	mov [0x91], 0x0064
 
-LABEL_093B:
+PARTICLE_BURST_7X_DRIFT_TICK:
 	add [0x94], 0x0002
 	add [0x96], 0x0003
 	add [0x98], 0x0003
@@ -2629,11 +2629,11 @@ LABEL_093B:
 	add [0x9E], 0x0002
 	add [0xA0], 0x0003
 	break
-	djnz [0x91], LABEL_093B
+	djnz [0x91], PARTICLE_BURST_7X_DRIFT_TICK
 	setup channel=0x38, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
-LABEL_0961:
+PARTICLE_BURST_7X_LOOP:
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_FRAME_0, x=[0x94], y=[0x95], zoom=0x40
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_FRAME_1, x=[0x96], y=[0x97], zoom=0x40
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_FRAME_2, x=[0x98], y=[0x99], zoom=0x40
@@ -2698,10 +2698,10 @@ LABEL_0961:
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_FRAME_0, x=[0x9e], y=[0x9f], zoom=0x40
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_FRAME_3, x=[0xa0], y=[0xa1], zoom=0x40
 	break
-	jmp LABEL_0961
+	jmp PARTICLE_BURST_7X_LOOP
 	killChannel
 
-LABEL_0A85:
+DROPLET_DRIP_LOOP_RANDOM_X:
 	break
 	call COMPUTE_RANDOM_BIT_MASKS
 	mov [0x82], 0x00AC
@@ -2709,19 +2709,19 @@ LABEL_0A85:
 	mov [0x83], 0x0087
 	mov [0x84], 0x0003
 
-LABEL_0A98:
+DROPLET_DRIP_NEW_ROW:
 	mov [0x85], 0x0005
 
-LABEL_0A9C:
+DROPLET_DRIP_FRAME_REPEAT:
 	video type=1, offset=CINEMATIC_DROPLET_FALL_TRAIL, x=[0x82], y=[0x83], zoom=0x40
 	break
-	djnz [0x85], LABEL_0A9C
+	djnz [0x85], DROPLET_DRIP_FRAME_REPEAT
 	sub [0x83], 0x0001
-	djnz [0x84], LABEL_0A98
-	jmp LABEL_0A85
+	djnz [0x84], DROPLET_DRIP_NEW_ROW
+	jmp DROPLET_DRIP_LOOP_RANDOM_X
 	killChannel
 
-LABEL_0AB2:
+SCATTER_3DOTS_INIT_RIGHT:
 	mov [0xA2], 0x00D2
 	mov [0xA4], 0x014A
 	mov [0xA6], 0x0096
@@ -2736,7 +2736,7 @@ WAIT_VAR_93_AND_SETUP_CH34:
 	setup channel=0x34, address=DRAW_3_SCATTER_DOTS_CYCLE
 	mov [0x93], 0x0028
 
-LABEL_0ADB:
+SCATTER_3DOTS_DRIFT_LOOP:
 	break
 	add [0xA2], 0x0002
 	add [0xA4], 0x0003
@@ -2747,7 +2747,7 @@ LABEL_0ADB:
 	add [0xA4], 0x0002
 	add [0xA6], 0x0001
 	call CLASSIFY_ALL_REGIONS_VARS
-	djnz [0x93], LABEL_0ADB
+	djnz [0x93], SCATTER_3DOTS_DRIFT_LOOP
 	setup channel=0x34, address=KILL_CHANNEL_ROUTINE
 	break
 	call COMPUTE_RANDOM_BIT_MASKS
@@ -2758,15 +2758,15 @@ LABEL_0ADB:
 	mov [0xA5], 0x0078
 	mov [0xA7], 0x0078
 	mov [0x93], [0x3D]
-	jne [0x38], 0x01, LABEL_0B2C
+	jne [0x38], 0x01, SCATTER_3DOTS_RAND_X_LEFT_OVR
 	mov [0xA4], 0x014A
 
-LABEL_0B2C:
+SCATTER_3DOTS_RAND_X_LEFT_OVR:
 	and [0x39], 0x0002
-	jne [0x39], 0x00, LABEL_0B3A
+	jne [0x39], 0x00, SCATTER_3DOTS_RAND_X_RIGHT_OVR
 	mov [0xA2], 0x014A
 
-LABEL_0B3A:
+SCATTER_3DOTS_RAND_X_RIGHT_OVR:
 	and [0x3A], 0x0004
 	jne [0x3A], 0x00, WAIT_VAR_93_AND_SETUP_CH34
 	mov [0xA6], 0x014A
@@ -4230,7 +4230,7 @@ LABEL_1986:
 	setup channel=0x03, address=SCATTER_8DOT_LOOP_RIGHT
 	setup channel=0x05, address=PLAYBACK_CINEMATIC_TENTACLE_RETREAT_F0_TO_513
 	setup channel=0x08, address=SNEAKY_TENTACLE_FROM_THE_POOL
-	setup channel=0x33, address=LABEL_0AB2
+	setup channel=0x33, address=SCATTER_3DOTS_INIT_RIGHT
 	setup channel=0x34, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x35, address=SCATTER_DOTS_BURST_RIGHT_SEQ
 	setup channel=0x36, address=KILL_CHANNEL_ROUTINE
@@ -4278,11 +4278,11 @@ LABEL_19EE:
 	setup channel=0x35, address=SCATTER_3DOT_BURST_LEFT
 	setup channel=0x36, address=DRAW_8_SCATTER_DOTS_CYCLE
 ;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991")
-	setup channel=0x37, address=LABEL_08E0
+	setup channel=0x37, address=PARTICLE_BURST_7X_ENTRY
 ;@elif BRANCH in ("dos_1992", "gba_2004")
-	setup channel=0x37, address=LBL_085C_08E0
+	setup channel=0x37, address=PARTICLE_BURST_7X_ENTRY
 ;@endif
-	setup channel=0x38, address=LABEL_0961
+	setup channel=0x38, address=PARTICLE_BURST_7X_LOOP
 	call CLAMP_SCENE_INIT_X_VARS
 	jmp LABEL_1C2A
 	killChannel
@@ -4389,7 +4389,7 @@ LABEL_1B10:
 	setup channel=0x28, address=WAIT_BEAST_TRIGGER_THEN_INIT
 
 LABEL_1B1A:
-	setup channel=0x01, address=LABEL_0A85
+	setup channel=0x01, address=DROPLET_DRIP_LOOP_RANDOM_X
 	jmp LABEL_1C8E
 	killChannel
 
