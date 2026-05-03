@@ -2712,7 +2712,7 @@ LABEL_150F:
 LABEL_1589:
 	killChannel	;@raw=0x11
 
-PLAYBACK_CINEMATIC_510_TO_513:
+PLAYBACK_CINEMATIC_TENTACLE_RETREAT_F0_TO_513:
 	video type=1, offset=CINEMATIC_570, x=160, y=100	;@raw=0xE6,0xCC,0xA0,0x64
 	break	;@raw=0x06
 	video type=1, offset=CINEMATIC_571, x=160, y=100	;@raw=0xE6,0xD2,0xA0,0x64
@@ -2735,7 +2735,7 @@ PLAYBACK_CINEMATIC_510_TO_513:
 	break	;@raw=0x06
 	video type=1, offset=CINEMATIC_580, x=160, y=100	;@raw=0xE7,0x42,0xA0,0x64
 	break	;@raw=0x06
-	jmp PLAYBACK_CINEMATIC_510_TO_513	;@raw=0x07,0x15,0x8A
+	jmp PLAYBACK_CINEMATIC_TENTACLE_RETREAT_F0_TO_513	;@raw=0x07,0x15,0x8A
 LABEL_15C4:
 	killChannel	;@raw=0x11
 
@@ -3077,7 +3077,7 @@ LABEL_1978:
 LABEL_1986:
 	setup channel=0x02, address=LABEL_0E68	;@raw=0x08,0x02,0x0E,0x68
 	setup channel=0x03, address=LABEL_0E9A	;@raw=0x08,0x03,0x0E,0x9A
-	setup channel=0x05, address=PLAYBACK_CINEMATIC_510_TO_513	;@raw=0x08,0x05,0x15,0x8A
+	setup channel=0x05, address=PLAYBACK_CINEMATIC_TENTACLE_RETREAT_F0_TO_513	;@raw=0x08,0x05,0x15,0x8A
 	setup channel=0x08, address=SNEAKY_TENTACLE_FROM_THE_POOL	;@raw=0x08,0x08,0x16,0x76
 	setup channel=0x33, address=LABEL_0AB2	;@raw=0x08,0x33,0x0A,0xB2
 	setup channel=0x34, address=KILL_CHANNEL_ROUTINE	;@raw=0x08,0x34,0x00,0x90
