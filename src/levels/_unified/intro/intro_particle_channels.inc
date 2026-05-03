@@ -222,12 +222,12 @@ FILL_PAGE_FF_COLOR_8_ONCE:
 	mov [PAUSE_SLICES], 0x0002
 	mov [0x01], 0x0003
 
-LABEL_086E:
+BLINK_PAGE_FF_3X_LOOP:
 	fill page=0xFF, color=0x08
 	break
 	fill page=0xFF, color=0x00
 	break
-	djnz [0x01], LABEL_086E
+	djnz [0x01], BLINK_PAGE_FF_3X_LOOP
 	fill page=0xFF, color=0x08
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_298, x=160, y=100
@@ -263,9 +263,9 @@ LABEL_086E:
 	setup channel=0x15, address=DRAW_INTRO_DECOR_301
 	mov [0x01], 0x0064
 
-LABEL_08EB:
+WAIT_100_THEN_CIN_274:
 	break
-	djnz [0x01], LABEL_08EB
+	djnz [0x01], WAIT_100_THEN_CIN_274
 	play id=0x0003, freq=0x14, vol=0x12, channel=0x03
 	video type=1, offset=CINEMATIC_274, x=160, y=100
 	break
@@ -316,18 +316,18 @@ LABEL_08EB:
 	setPalette 0x17
 	mov [0x01], 0x001E
 
-LABEL_09A8:
+WAIT_30_THEN_SETUP_CH12:
 	break
-	djnz [0x01], LABEL_09A8
+	djnz [0x01], WAIT_30_THEN_SETUP_CH12
 	setup channel=0x12, address=INIT_VAR_0D_THEN_LOOP
 	setup channel=0x0E, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x11, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x0F, address=KILL_CHANNEL_ROUTINE
 	mov [0x01], 0x0014
 
-LABEL_09C1:
+WAIT_20_THEN_LOAD_3E82:
 	break
-	djnz [0x01], LABEL_09C1
+	djnz [0x01], WAIT_20_THEN_LOAD_3E82
 	load id=0x3E82
 	killChannel
 
