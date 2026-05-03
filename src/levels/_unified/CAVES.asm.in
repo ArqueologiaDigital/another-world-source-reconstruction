@@ -7,11 +7,11 @@
 ;   FOLD_BODY_254B_838374D1  (3-arm: amiga, cart, dos)
 ;   COPY_VAR00_TO_VARF8  (3-arm: amiga, cart, dos)
 ;   COPY_VARF8_TO_VAR00  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_774E53C0  (2-arm: amiga, dos)
+;   INLINE_SET_VARE6_TO_3  (2-arm: amiga, dos)
 ;   INIT_VARS_E6_E7_E8  (2-arm: amiga, dos)
 ;   INIT_VARS_E6_E7_E8_E8_PLUS3  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_6D_71_70  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_19E62B8E  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR70_TO_8  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_71_6C_6D  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_6C_6D_71_70  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_E6_E7_2  (3-arm: amiga, cart, dos)
@@ -20,41 +20,41 @@
 ;   INIT_VARS_E6_E7_E9_E8  (2-arm: cart, dos)
 ;   INIT_VARS_0E_29  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_EE_EF  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_E9BEDF6C  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_62C100C1  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_1848FF42  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_32F1E7BB  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_5A1F1C72  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAREF_TO_5  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR68_TO_32  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR6A_TO_2F  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR01_TO_E  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VARE6_TO_1E  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_E8_E6  (2-arm: cart, dos)
 ;   INIT_VARS_E6_68_69_6B  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_EB_EC_ED  (3-arm: amiga, cart, dos)
 ;   DEDUP_CAVES_4B_037  (3-arm: amiga, cart, dos)
 ;   DEDUP_CAVES_4B_038  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_D834B636  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR79_TO_1  (3-arm: amiga, cart, dos)
 ;   DEDUP_CAVES_4B_039  (3-arm: amiga, cart, dos)
 ;   DEDUP_CAVES_4B_040  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_84B_8EB32F8E  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_0F6F9405  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_D4C0F830  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_FEDFB72F  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_83AABBA7  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR74_TO_6  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR75_TO_6  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR76_TO_6  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR73_TO_6  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_104B_DD7FE6E8  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_104B_1F1C2592  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_E6_E7  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_4692F165  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VARE8_TO_8  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_EA_EB  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_159B_CB73A242  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_134B_B0E8D936  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_84B_B02DE811  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_219B_89086759  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_6382DEF7  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_FDAF3AA3  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_AC46978F  (2-arm: amiga, dos)
+;   INLINE_SET_VARE6_TO_32  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VARE8_TO_2F  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR6B_TO_1  (2-arm: amiga, dos)
 ;   INIT_VARS_6C_6B  (3-arm: amiga, cart, dos)
 ;   INCREMENT_VAR31_BY_1  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_151B_F79ED944  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_E6_E7_EB  (2-arm: cart, dos)
-;   FOLD_BODY_44B_123FA366  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR7F_TO_6  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_67B_EB770918  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_281B_FD3BB94A  (2-arm: cart, dos)
 ;   COPY_HASH_VAR_37_TO_RANGE  (3-arm: amiga, cart, dos)
@@ -68,7 +68,7 @@
 ;   INIT_VARS_29_07_08  (3-arm: amiga, cart, dos)
 ;   INCREMENT_VAR07_BY_4  (3-arm: amiga, cart, dos)
 ;   DERIVE_VAR12_11_10_FROM_VAR9  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_39B_8DD0C9CC  (2-arm: cart, dos)
+;   INLINE_COPY_VAR22_TO_VAR08  (2-arm: cart, dos)
 ;   FOLD_BODY_274B_363F48D1  (3-arm: amiga, cart, dos)
 ;   AND_VAR11_WITH_EFFF  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_58B_A2D4469A  (3-arm: amiga, cart, dos)
@@ -82,7 +82,7 @@
 ;   INIT_VARS_2F_29_12  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_94B_44BEEF04  (3-arm: amiga, cart, dos)
 ;   INCREMENT_VAR21_BY_F  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_F42C389F  (3-arm: amiga, cart, dos)
+;   INLINE_SUB_VAR22_BY_23  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_43B_757368B2  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_94B_9F1D7AF8  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_39B_42136843  (3-arm: amiga, cart, dos)
@@ -90,7 +90,7 @@
 ;   SET_VAR13_TO_FFFF  (3-arm: amiga, cart, dos)
 ;   PLAY_SFX_005C_CH00  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_89B_E0F8C267  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_A00965BC  (3-arm: amiga, cart, dos)
+;   INLINE_ADD_VAR2C_BY_1  (3-arm: amiga, cart, dos)
 ;   COPY_VAR40_TO_VAR27  (3-arm: amiga, cart, dos)
 ;   COPY_VARAD_TO_VAR11  (3-arm: amiga, cart, dos)
 ;   COPY_VAR11_TO_VARAD  (3-arm: amiga, cart, dos)
@@ -99,7 +99,7 @@
 ;   DEDUP_CAVES_5B_003  (3-arm: amiga, cart, dos)
 ;   DEDUP_CAVES_5B_004  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_79B_5AA87B0D  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_39B_7450DA13  (3-arm: amiga, cart, dos)
+;   INLINE_COPY_VAR44_TO_VAR25  (3-arm: amiga, cart, dos)
 ;   DEDUP_CAVES_6B_001  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_124B_BC056530  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_39B_1F847B0B  (3-arm: amiga, cart, dos)
@@ -187,12 +187,12 @@
 ;   FOLD_BODY_99B_DC229063  (2-arm: cart, dos)
 ;   DRAW_CV_104  (2-arm: cart, dos)
 ;   FOLD_BODY_99B_C53D6EC4  (2-arm: cart, dos)
-;   FOLD_BODY_44B_06BD16B8  (2-arm: cart, dos)
+;   INLINE_SET_VAR20_TO_1  (2-arm: cart, dos)
 ;   FOLD_BODY_93B_2C2B4311  (2-arm: cart, dos)
 ;   FOLD_BODY_62B_70C62EFD  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_62B_8F5AB86B  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_127B_F42DCE4F  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_2D26434E  (3-arm: amiga, cart, dos)
+;   INLINE_SUB_VAR50_BY_14  (3-arm: amiga, cart, dos)
 ;   SET_VAR22_TO_006B  (3-arm: amiga, cart, dos)
 ;   SET_VAR22_TO_0061  (3-arm: amiga, cart, dos)
 ;   SET_VAR22_TO_00C8  (3-arm: amiga, cart, dos)
@@ -251,10 +251,10 @@
 ;   DEDUP_CAVES_5B_035  (3-arm: amiga, cart, dos)
 ;   DEDUP_CAVES_5B_036  (3-arm: amiga, cart, dos)
 ;   SET_VAR18_TO_0122  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_B8F4589C  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_9969BA71  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_43C274AC  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_93E8A02A  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR63_TO_1  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR63_TO_2  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR63_TO_5  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR63_TO_6  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_358B_6F629262  (2-arm: cart, dos)
 ;   FOLD_BODY_223B_DDF457BD  (2-arm: cart, dos)
 ;   FOLD_BODY_206B_44F9C1BD  (3-arm: amiga, cart, dos)
@@ -379,7 +379,7 @@ COPY_VARF8_TO_VAR00:
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-FOLD_BODY_44B_774E53C0:
+INLINE_SET_VARE6_TO_3:
 	mov [0xE6], 0x0003	;@raw=0x00,0xE6,0x00,0x03
 ;@endif
 
@@ -432,7 +432,7 @@ INIT_VARS_6D_71_70:
 ;@include "caves/dos__post_INIT_VARS_6D_71_70.inc"
 ;@endif
 
-FOLD_BODY_44B_19E62B8E:
+INLINE_SET_VAR70_TO_8:
 	mov [0x70], 0x0008	;@raw=0x00,0x70,0x00,0x08
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -545,7 +545,7 @@ INIT_VARS_EE_EF:
 ;@include "caves/dos__post_INIT_VARS_EE_EF.inc"
 ;@endif
 
-FOLD_BODY_44B_E9BEDF6C:
+INLINE_SET_VAREF_TO_5:
 	mov [0xEF], 0x0005	;@raw=0x00,0xEF,0x00,0x05
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -556,7 +556,7 @@ FOLD_BODY_44B_E9BEDF6C:
 ;@include "caves/dos__post_FOLD_BODY_44B_E9BEDF6C.inc"
 ;@endif
 
-FOLD_BODY_44B_62C100C1:
+INLINE_SET_VAR68_TO_32:
 	mov [0x68], 0x0032	;@raw=0x00,0x68,0x00,0x32
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -567,7 +567,7 @@ FOLD_BODY_44B_62C100C1:
 ;@include "caves/dos__post_FOLD_BODY_44B_62C100C1.inc"
 ;@endif
 
-FOLD_BODY_44B_1848FF42:
+INLINE_SET_VAR6A_TO_2F:
 	mov [0x6A], 0x002F	;@raw=0x00,0x6A,0x00,0x2F
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -578,7 +578,7 @@ FOLD_BODY_44B_1848FF42:
 ;@include "caves/dos__post_FOLD_BODY_44B_1848FF42.inc"
 ;@endif
 
-FOLD_BODY_44B_32F1E7BB:
+INLINE_SET_VAR01_TO_E:
 	mov [0x01], 0x000E	;@raw=0x00,0x01,0x00,0x0E
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -589,7 +589,7 @@ FOLD_BODY_44B_32F1E7BB:
 ;@include "caves/dos__post_FOLD_BODY_44B_32F1E7BB.inc"
 ;@endif
 
-FOLD_BODY_44B_5A1F1C72:
+INLINE_SET_VARE6_TO_1E:
 	mov [0xE6], 0x001E	;@raw=0x00,0xE6,0x00,0x1E
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -661,7 +661,7 @@ DEDUP_CAVES_4B_038:
 ;@include "caves/dos__post_DEDUP_CAVES_4B_038.inc"
 ;@endif
 
-FOLD_BODY_44B_D834B636:
+INLINE_SET_VAR79_TO_1:
 	mov [0x79], 0x0001	;@raw=0x00,0x79,0x00,0x01
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -706,7 +706,7 @@ FOLD_BODY_84B_8EB32F8E:
 ;@include "caves/dos__post_FOLD_BODY_84B_8EB32F8E.inc"
 ;@endif
 
-FOLD_BODY_44B_0F6F9405:
+INLINE_SET_VAR74_TO_6:
 	mov [0x74], 0x0006	;@raw=0x00,0x74,0x00,0x06
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -717,7 +717,7 @@ FOLD_BODY_44B_0F6F9405:
 ;@include "caves/dos__post_FOLD_BODY_44B_0F6F9405.inc"
 ;@endif
 
-FOLD_BODY_44B_D4C0F830:
+INLINE_SET_VAR75_TO_6:
 	mov [0x75], 0x0006	;@raw=0x00,0x75,0x00,0x06
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -728,7 +728,7 @@ FOLD_BODY_44B_D4C0F830:
 ;@include "caves/dos__post_FOLD_BODY_44B_D4C0F830.inc"
 ;@endif
 
-FOLD_BODY_44B_FEDFB72F:
+INLINE_SET_VAR76_TO_6:
 	mov [0x76], 0x0006	;@raw=0x00,0x76,0x00,0x06
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -739,7 +739,7 @@ FOLD_BODY_44B_FEDFB72F:
 ;@include "caves/dos__post_FOLD_BODY_44B_FEDFB72F.inc"
 ;@endif
 
-FOLD_BODY_44B_83AABBA7:
+INLINE_SET_VAR73_TO_6:
 	mov [0x73], 0x0006	;@raw=0x00,0x73,0x00,0x06
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -788,7 +788,7 @@ INIT_VARS_E6_E7:
 ;@include "caves/dos__post_INIT_VARS_E6_E7.inc"
 ;@endif
 
-FOLD_BODY_44B_4692F165:
+INLINE_SET_VARE8_TO_8:
 	mov [0xE8], 0x0008	;@raw=0x00,0xE8,0x00,0x08
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -866,7 +866,7 @@ FOLD_BODY_219B_89086759:
 ;@include "caves/dos__post_FOLD_BODY_219B_89086759.inc"
 ;@endif
 
-FOLD_BODY_44B_6382DEF7:
+INLINE_SET_VARE6_TO_32:
 	mov [0xE6], 0x0032	;@raw=0x00,0xE6,0x00,0x32
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -877,7 +877,7 @@ FOLD_BODY_44B_6382DEF7:
 ;@include "caves/dos__post_FOLD_BODY_44B_6382DEF7.inc"
 ;@endif
 
-FOLD_BODY_44B_FDAF3AA3:
+INLINE_SET_VARE8_TO_2F:
 	mov [0xE8], 0x002F	;@raw=0x00,0xE8,0x00,0x2F
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -889,7 +889,7 @@ FOLD_BODY_44B_FDAF3AA3:
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-FOLD_BODY_44B_AC46978F:
+INLINE_SET_VAR6B_TO_1:
 	mov [0x6B], 0x0001	;@raw=0x00,0x6B,0x00,0x01
 ;@endif
 
@@ -949,7 +949,7 @@ INIT_VARS_E6_E7_EB:
 ;@include "caves/dos__post_INIT_VARS_E6_E7_EB.inc"
 ;@endif
 
-FOLD_BODY_44B_123FA366:
+INLINE_SET_VAR7F_TO_6:
 	mov [0x7F], 0x0006	;@raw=0x00,0x7F,0x00,0x06
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -1215,7 +1215,7 @@ DERIVE_VAR12_11_10_FROM_VAR9:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_39B_8DD0C9CC:
+INLINE_COPY_VAR22_TO_VAR08:
 	mov [0x08], [0x22]	;@raw=0x01,0x08,0x22
 ;@endif
 
@@ -1395,7 +1395,7 @@ INCREMENT_VAR21_BY_F:
 ;@include "caves/dos__post_INCREMENT_VAR21_BY_F.inc"
 ;@endif
 
-FOLD_BODY_44B_F42C389F:
+INLINE_SUB_VAR22_BY_23:
 	sub [0x22], 0x0023	;@raw=0x03,0x22,0xFF,0xDD
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -1489,7 +1489,7 @@ FOLD_BODY_89B_E0F8C267:
 ;@include "caves/dos__post_FOLD_BODY_89B_E0F8C267.inc"
 ;@endif
 
-FOLD_BODY_44B_A00965BC:
+INLINE_ADD_VAR2C_BY_1:
 	add [0x2C], 0x0001	;@raw=0x03,0x2C,0x00,0x01
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -1597,7 +1597,7 @@ FOLD_BODY_79B_5AA87B0D:
 ;@include "caves/dos__post_FOLD_BODY_79B_5AA87B0D.inc"
 ;@endif
 
-FOLD_BODY_39B_7450DA13:
+INLINE_COPY_VAR44_TO_VAR25:
 	mov [0x25], [0x44]	;@raw=0x01,0x25,0x44
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -2620,7 +2620,7 @@ FOLD_BODY_99B_C53D6EC4:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_44B_06BD16B8:
+INLINE_SET_VAR20_TO_1:
 	mov [0x20], 0x0001	;@raw=0x00,0x20,0x00,0x01
 ;@endif
 
@@ -2679,7 +2679,7 @@ FOLD_BODY_127B_F42DCE4F:
 ;@include "caves/dos__post_FOLD_BODY_127B_F42DCE4F.inc"
 ;@endif
 
-FOLD_BODY_44B_2D26434E:
+INLINE_SUB_VAR50_BY_14:
 	sub [0x50], 0x0014	;@raw=0x03,0x50,0xFF,0xEC
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -3463,7 +3463,7 @@ SET_VAR18_TO_0122:
 ;@include "caves/dos__post_SET_VAR18_TO_0122.inc"
 ;@endif
 
-FOLD_BODY_44B_B8F4589C:
+INLINE_SET_VAR63_TO_1:
 	mov [0x63], 0x0001	;@raw=0x00,0x63,0x00,0x01
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -3474,7 +3474,7 @@ FOLD_BODY_44B_B8F4589C:
 ;@include "caves/dos__post_FOLD_BODY_44B_B8F4589C.inc"
 ;@endif
 
-FOLD_BODY_44B_9969BA71:
+INLINE_SET_VAR63_TO_2:
 	mov [0x63], 0x0002	;@raw=0x00,0x63,0x00,0x02
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -3485,7 +3485,7 @@ FOLD_BODY_44B_9969BA71:
 ;@include "caves/dos__post_FOLD_BODY_44B_9969BA71.inc"
 ;@endif
 
-FOLD_BODY_44B_43C274AC:
+INLINE_SET_VAR63_TO_5:
 	mov [0x63], 0x0005	;@raw=0x00,0x63,0x00,0x05
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -3496,7 +3496,7 @@ FOLD_BODY_44B_43C274AC:
 ;@include "caves/dos__post_FOLD_BODY_44B_43C274AC.inc"
 ;@endif
 
-FOLD_BODY_44B_93E8A02A:
+INLINE_SET_VAR63_TO_6:
 	mov [0x63], 0x0006	;@raw=0x00,0x63,0x00,0x06
 
 ;@if BRANCH == "chahi_amiga_1991"

@@ -1,9 +1,9 @@
 ; Unified source for TANK with 24 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   FOLD_BODY_44B_C64BCD6D  (2-arm: cart, dos)
+;   INLINE_SET_VAR6D_TO_0  (2-arm: cart, dos)
 ;   SETUP_TANK_HERO_VARS_PLAY_4SFX  (2-arm: amiga, dos)
-;   FOLD_BODY_44B_E11CC986  (2-arm: cart, dos)
+;   INLINE_SET_VAR6B_TO_50  (2-arm: cart, dos)
 ;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
 ;   INCREMENT_VAR5F_BY_8  (3-arm: amiga, cart, dos)
@@ -11,7 +11,7 @@
 ;   SET_VAR5F_TO_0016  (3-arm: amiga, cart, dos)
 ;   COPY_VAR62_TO_VAR5F  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_48_49_4A  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_1E2BA1E6  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR66_TO_32  (3-arm: amiga, cart, dos)
 ;   SUM_HASH_VARS_TO_VAR_64  (3-arm: amiga, cart, dos)
 ;   INIT_TANK_DRIVE_VARS  (2-arm: cart, dos)
 ;   INCREMENT_VAR44_BY_37  (3-arm: amiga, cart, dos)
@@ -35,7 +35,7 @@
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_44B_C64BCD6D:
+INLINE_SET_VAR6D_TO_0:
 	mov [0x6D], 0x0000	;@raw=0x00,0x6D,0x00,0x00
 ;@endif
 
@@ -64,7 +64,7 @@ SETUP_TANK_HERO_VARS_PLAY_4SFX:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_44B_E11CC986:
+INLINE_SET_VAR6B_TO_50:
 	mov [0x6B], 0x0050	;@raw=0x00,0x6B,0x00,0x50
 ;@endif
 
@@ -163,7 +163,7 @@ INIT_VARS_48_49_4A:
 ;@include "tank/dos__post_INIT_VARS_48_49_4A.inc"
 ;@endif
 
-FOLD_BODY_44B_1E2BA1E6:
+INLINE_SET_VAR66_TO_32:
 	mov [0x66], 0x0032	;@raw=0x00,0x66,0x00,0x32
 
 ;@if BRANCH == "chahi_amiga_1991"

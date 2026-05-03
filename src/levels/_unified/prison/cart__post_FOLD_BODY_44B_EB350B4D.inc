@@ -13,6 +13,6 @@ LABEL_0C57:
 	video type=1, offset=CINEMATIC_456, x=170, y=197	;@raw=0x80,0x10,0xAA,0xC5
 	break	;@raw=0x06
 	video type=1, offset=CINEMATIC_455, x=170, y=197	;@raw=0x80,0x3A,0xAA,0xC5
-	jmp FOLD_BODY_44B_EB350B4D	;@raw=0x07,0x0C,0x46
+	jmp INLINE_SET_VARE7_TO_5	;@raw=0x07,0x0C,0x46
 LABEL_0C75:
 	db 0x11

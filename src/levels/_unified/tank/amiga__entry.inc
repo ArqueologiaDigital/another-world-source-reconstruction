@@ -1,9 +1,9 @@
 ; Unified source for TANK with 24 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   FOLD_BODY_44B_C64BCD6D  (2-arm: cart, dos)
+;   INLINE_SET_VAR6D_TO_0  (2-arm: cart, dos)
 ;   SETUP_TANK_HERO_VARS_PLAY_4SFX  (2-arm: amiga, dos)
-;   FOLD_BODY_44B_E11CC986  (2-arm: cart, dos)
+;   INLINE_SET_VAR6B_TO_50  (2-arm: cart, dos)
 ;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
 ;   INCREMENT_VAR5F_BY_8  (3-arm: amiga, cart, dos)
@@ -11,7 +11,7 @@
 ;   SET_VAR5F_TO_0016  (3-arm: amiga, cart, dos)
 ;   COPY_VAR62_TO_VAR5F  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_48_49_4A  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_1E2BA1E6  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR66_TO_32  (3-arm: amiga, cart, dos)
 ;   SUM_HASH_VARS_TO_VAR_64  (3-arm: amiga, cart, dos)
 ;   INIT_TANK_DRIVE_VARS  (2-arm: cart, dos)
 ;   INCREMENT_VAR44_BY_37  (3-arm: amiga, cart, dos)
@@ -29,9 +29,9 @@
 ; Unified source for TANK with 23 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   FOLD_BODY_44B_C64BCD6D  (2-arm: cart, dos)
+;   INLINE_SET_VAR6D_TO_0  (2-arm: cart, dos)
 ;   SETUP_TANK_HERO_VARS_PLAY_4SFX  (2-arm: amiga, dos)
-;   FOLD_BODY_44B_E11CC986  (2-arm: cart, dos)
+;   INLINE_SET_VAR6B_TO_50  (2-arm: cart, dos)
 ;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
 ;   INCREMENT_VAR5F_BY_8  (3-arm: amiga, cart, dos)
@@ -39,7 +39,7 @@
 ;   SET_VAR5F_TO_0016  (3-arm: amiga, cart, dos)
 ;   COPY_VAR62_TO_VAR5F  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_48_49_4A  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_1E2BA1E6  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR66_TO_32  (3-arm: amiga, cart, dos)
 ;   SUM_HASH_VARS_TO_VAR_64  (3-arm: amiga, cart, dos)
 ;   INIT_TANK_DRIVE_VARS  (2-arm: cart, dos)
 ;   INCREMENT_VAR44_BY_37  (3-arm: amiga, cart, dos)
@@ -56,8 +56,8 @@
 ; Unified source for TANK with 19 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   FOLD_BODY_44B_C64BCD6D  (2-arm: cart, dos)
-;   FOLD_BODY_44B_E11CC986  (2-arm: cart, dos)
+;   INLINE_SET_VAR6D_TO_0  (2-arm: cart, dos)
+;   INLINE_SET_VAR6B_TO_50  (2-arm: cart, dos)
 ;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
 ;   INCREMENT_VAR5F_BY_8  (3-arm: amiga, cart, dos)
@@ -65,7 +65,7 @@
 ;   SET_VAR5F_TO_0016  (3-arm: amiga, cart, dos)
 ;   COPY_VAR62_TO_VAR5F  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_48_49_4A  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_1E2BA1E6  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR66_TO_32  (3-arm: amiga, cart, dos)
 ;   SUM_HASH_VARS_TO_VAR_64  (3-arm: amiga, cart, dos)
 ;   INIT_TANK_DRIVE_VARS  (2-arm: cart, dos)
 ;   INCREMENT_VAR44_BY_37  (3-arm: amiga, cart, dos)
@@ -79,8 +79,8 @@
 ; Unified source for TANK with 19 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   FOLD_BODY_44B_C64BCD6D  (2-arm: cart, dos)
-;   FOLD_BODY_44B_E11CC986  (2-arm: cart, dos)
+;   INLINE_SET_VAR6D_TO_0  (2-arm: cart, dos)
+;   INLINE_SET_VAR6B_TO_50  (2-arm: cart, dos)
 ;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
 ;   INCREMENT_VAR5F_BY_8  (3-arm: amiga, cart, dos)
@@ -88,7 +88,7 @@
 ;   SET_VAR5F_TO_0016  (3-arm: amiga, cart, dos)
 ;   COPY_VAR62_TO_VAR5F  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_48_49_4A  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_44B_1E2BA1E6  (3-arm: amiga, cart, dos)
+;   INLINE_SET_VAR66_TO_32  (3-arm: amiga, cart, dos)
 ;   SUM_HASH_VARS_TO_VAR_64  (3-arm: amiga, cart, dos)
 ;   INIT_TANK_DRIVE_VARS  (2-arm: cart, dos)
 ;   INCREMENT_VAR44_BY_37  (3-arm: amiga, cart, dos)
@@ -820,7 +820,7 @@ LABEL_001B:
 	setup channel=0x28, address=LABEL_050E	;@raw=0x08,0x28,0x05,0x0E
 	setup channel=0x30, address=WAIT_VAR45_PLAY_8C_DRAW_CIN_011	;@raw=0x08,0x30,0x10,0x9B
 	setup channel=0x31, address=WAIT_VAR46_PLAY_8E_DRAW_CIN_056	;@raw=0x08,0x31,0x11,0xE5
-	setup channel=0x35, address=FOLD_BODY_44B_1E2BA1E6	;@raw=0x08,0x35,0x0C,0xD8
+	setup channel=0x35, address=INLINE_SET_VAR66_TO_32	;@raw=0x08,0x35,0x0C,0xD8
 	setup channel=0x37, address=LABEL_0E21	;@raw=0x08,0x37,0x0E,0x21
 	call LABEL_0DD4	;@raw=0x04,0x0D,0xD4
 	call LABEL_179B	;@raw=0x04,0x17,0x9B
