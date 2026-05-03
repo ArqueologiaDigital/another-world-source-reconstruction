@@ -745,9 +745,9 @@ SCENE_TRANSITION_NEXT_PHASE:
 	mov [0x02], 0x0001
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 
-LABEL_0193:
+WAIT_INTRO_SCENE_1:
 	break
-	djnz [0x02], LABEL_0193
+	djnz [0x02], WAIT_INTRO_SCENE_1
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_144, x=80, y=80
 	video type=1, offset=CINEMATIC_145, x=160, y=100
@@ -755,9 +755,9 @@ LABEL_0193:
 	setup channel=0x09, address=DRAW_CINEMATICS_166_TO_171
 	mov [0x02], 0x0009
 
-LABEL_01AC:
+WAIT_INTRO_SCENE_2:
 	break
-	djnz [0x02], LABEL_01AC
+	djnz [0x02], WAIT_INTRO_SCENE_2
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	selectVideoPage 0x00
@@ -767,9 +767,9 @@ LABEL_01AC:
 	setup channel=0x09, address=DRAW_CINEMATICS_166_TO_171
 	mov [0x02], 0x0009
 
-LABEL_01CA:
+WAIT_INTRO_SCENE_3:
 	break
-	djnz [0x02], LABEL_01CA
+	djnz [0x02], WAIT_INTRO_SCENE_3
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	selectVideoPage 0x00
@@ -779,9 +779,9 @@ LABEL_01CA:
 	setup channel=0x09, address=DRAW_CINEMATICS_166_TO_171
 	mov [0x02], 0x0009
 
-LABEL_01EA:
+WAIT_INTRO_SCENE_4:
 	break
-	djnz [0x02], LABEL_01EA
+	djnz [0x02], WAIT_INTRO_SCENE_4
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	selectVideoPage 0x00
@@ -789,13 +789,13 @@ LABEL_01EA:
 	video type=1, offset=CINEMATIC_147, x=80, y=80
 	selectVideoPage 0xFF
 	setup channel=0x09, address=DRAW_CINEMATICS_166_TO_171
-	setup channel=0x08, address=LABEL_022B
+	setup channel=0x08, address=SETUP_INTRO_DNA_CHANNELS
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x02], 0x0032
 
-LABEL_0210:
+WAIT_INTRO_SCENE_5:
 	break
-	djnz [0x02], LABEL_0210
+	djnz [0x02], WAIT_INTRO_SCENE_5
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	selectVideoPage 0x00
@@ -805,80 +805,80 @@ LABEL_0210:
 	setup channel=0x09, address=DRAW_CINEMATICS_166_TO_171
 	killChannel
 
-LABEL_022B:
-	setup channel=0x0A, address=LABEL_02A7
-	setup channel=0x0B, address=LABEL_02B9
+SETUP_INTRO_DNA_CHANNELS:
+	setup channel=0x0A, address=DNA_VAR_05_HOLD_LOOP
+	setup channel=0x0B, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x0C, address=LABEL_02B0
-	setup channel=0x0D, address=LABEL_02B9
+	setup channel=0x0C, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x0D, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x0E, address=LABEL_02B0
-	setup channel=0x0F, address=LABEL_02B9
+	setup channel=0x0E, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x0F, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x10, address=LABEL_02B0
-	setup channel=0x11, address=LABEL_02B9
+	setup channel=0x10, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x11, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x12, address=LABEL_02B0
-	setup channel=0x13, address=LABEL_02B9
+	setup channel=0x12, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x13, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x14, address=LABEL_02B0
-	setup channel=0x15, address=LABEL_02B9
+	setup channel=0x14, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x15, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x16, address=LABEL_02B0
-	setup channel=0x17, address=LABEL_02B9
+	setup channel=0x16, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x17, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x18, address=LABEL_02B0
-	setup channel=0x19, address=LABEL_02B9
+	setup channel=0x18, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x19, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x1A, address=LABEL_02B0
-	setup channel=0x1B, address=LABEL_02B9
+	setup channel=0x1A, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x1B, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x1C, address=LABEL_02B0
-	setup channel=0x1D, address=LABEL_02B9
+	setup channel=0x1C, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x1D, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x1E, address=LABEL_02B0
-	setup channel=0x1F, address=LABEL_02B9
+	setup channel=0x1E, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x1F, address=DRAW_DNA_ANIMATION_LOOP
 	killChannel
 
 DELETE_CHANNELS_0A_TO_1F:
 	deleteChannels first=0x0A, last=0x1F
 	killChannel
 
-LABEL_02A7:
+DNA_VAR_05_HOLD_LOOP:
 	mov [0x05], 0x002A
 	break
-	jmp LABEL_02A7
+	jmp DNA_VAR_05_HOLD_LOOP
 LABEL_02AF:
 	killChannel
 
-LABEL_02B0:
+DNA_VAR_05_DRIFT_LOOP:
 	add [0x05], 0x000A
 	break
-	jmp LABEL_02B0
+	jmp DNA_VAR_05_DRIFT_LOOP
 LABEL_02B8:
 	killChannel
 
-LABEL_02B9:
+DRAW_DNA_ANIMATION_LOOP:
 	break
 	video type=1, offset=CINEMATIC_DNA_0, x=[0x04], y=[0x05], zoom=[0x06]
 	break
@@ -913,7 +913,7 @@ LABEL_02B9:
 	video type=1, offset=CINEMATIC_DNA_15, x=[0x04], y=[0x05], zoom=[0x06]
 	break
 	video type=1, offset=CINEMATIC_DNA_16, x=[0x04], y=[0x05], zoom=[0x06]
-	jmp LABEL_02B9
+	jmp DRAW_DNA_ANIMATION_LOOP
 LABEL_0333:
 	killChannel
 
