@@ -7,23 +7,55 @@
 ; layout's byte address (no `org` directive needed).
 ;
 ; Currently folded routines (in byte-address order within the file):
+;   PRELOAD_CAVES_RESOURCES  (58 bytes — amiga+dos only, NOT cart)
 ;   COPY_HASH_VAR_37_TO_RANGE  (117 bytes — also in CAPSULE, PRISON, 3-arm)
 ;   INIT_HASH_VARS_67_66_65_68_69  (97 bytes — amiga+cart only, NOT dos)
 ;   DERIVE_VAR12_11_10_FROM_VAR9  (69 bytes — also in CAPSULE, PRISON, 3-arm)
 ;   INIT_RANGE_48_TO_4D_TO_MAX  (61 bytes — also in CAPSULE, PRISON, 3-arm)
 ;
 ; Per-arm split layout:
-;   amiga: pre, post_a, post_b, post_c, post_d
-;   cart:  pre, post_a, post_b, post_c, post_d
-;   dos:   pre, post_a, post_c, post_d (no post_b; INIT_HASH_67 absent in dos)
+;   amiga: pre_a, pre_b, post_a, post_b, post_c, post_d
+;   cart:  pre,                post_a, post_b, post_c, post_d  (no pre split — PRELOAD absent)
+;   dos:   pre_a, pre_b, post_a,         post_c, post_d        (no post_b — INIT_HASH_67 absent)
 
 ;@if BRANCH == "cartridge_1992"
 ;@include "caves/cart_pre.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos_pre.inc"
+;@include "caves/dos_pre_a.inc"
 ;@elif BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga_pre.inc"
+;@include "caves/amiga_pre_a.inc"
 ;@endif
+
+;@if BRANCH in ("dos_1992", "chahi_amiga_1991")
+PRELOAD_CAVES_RESOURCES:
+	load id=0x006B	;@raw=0x19,0x00,0x6B
+	load id=0x0055	;@raw=0x19,0x00,0x55
+	load id=0x0056	;@raw=0x19,0x00,0x56
+	load id=0x0057	;@raw=0x19,0x00,0x57
+	load id=0x005E	;@raw=0x19,0x00,0x5E
+	load id=0x005F	;@raw=0x19,0x00,0x5F
+	load id=0x006B	;@raw=0x19,0x00,0x6B
+	load id=0x006C	;@raw=0x19,0x00,0x6C
+	load id=0x006D	;@raw=0x19,0x00,0x6D
+	load id=0x0075	;@raw=0x19,0x00,0x75
+	load id=0x0074	;@raw=0x19,0x00,0x74
+	load id=0x0078	;@raw=0x19,0x00,0x78
+	load id=0x007A	;@raw=0x19,0x00,0x7A
+	load id=0x0077	;@raw=0x19,0x00,0x77
+	load id=0x0066	;@raw=0x19,0x00,0x66
+	load id=0x0088	;@raw=0x19,0x00,0x88
+	load id=0x0070	;@raw=0x19,0x00,0x70
+	load id=0x0071	;@raw=0x19,0x00,0x71
+	load id=0x0072	;@raw=0x19,0x00,0x72
+	ret	;@raw=0x05
+;@endif
+
+;@if BRANCH == "dos_1992"
+;@include "caves/dos_pre_b.inc"
+;@elif BRANCH == "chahi_amiga_1991"
+;@include "caves/amiga_pre_b.inc"
+;@endif
+; (cart has no chunk here — cart_pre above already spans through to COPY_HASH)
 
 COPY_HASH_VAR_37_TO_RANGE:
 	mov [0x38], [0x37]	;@raw=0x01,0x38,0x37
