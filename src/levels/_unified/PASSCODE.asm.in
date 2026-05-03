@@ -1,14 +1,59 @@
-; Skeleton unified source for PASSCODE.
-; Each branch gets its own per-branch source verbatim via ;@include.
-; This is a starting point — folding cross-branch shared code into a
-; single body (the way LAKE.asm.in / INTRO.asm.in are written) is
-; future work; this skeleton is just the bare minimum that makes
-; verify_unified pass for PASSCODE.
+; Unified source for PASSCODE with two folded shared bodies.
+;
+; Currently folded routines (in byte-address order within the file):
+;   SUM_HASH_VARS_TO_VAR_37  (31 bytes — amiga+dos only, NOT cart)
+;     amiga: ~0x05DC   dos: ~0x05F6
+;   CLEAR_PAGES_1_2_AND_BLIT  (15 bytes — also in CODE_WHEEL/ENDING/TANK; 3-arm)
+;     amiga: ~0x0CB5   cart: ~0x0BD2   dos: ~0x1090
+;
+; Per-arm split layout:
+;   amiga: pre + mid + post (around the two routines)
+;   dos:   pre + mid + post
+;   cart:  pre + post (no mid — SUM_HASH not in cart)
 
 ;@if BRANCH == "cartridge_1992"
-;@include "passcode/cart.inc"
+;@include "passcode/cart_pre.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "passcode/dos.inc"
+;@include "passcode/dos_pre.inc"
 ;@elif BRANCH == "chahi_amiga_1991"
-;@include "passcode/amiga.inc"
+;@include "passcode/amiga_pre.inc"
+;@endif
+
+;@if BRANCH in ("dos_1992", "chahi_amiga_1991")
+SUM_HASH_VARS_TO_VAR_37:
+	add [0x37], [HERO_ACTION]	;@raw=0x02,0x37,0xFA
+	add [0x37], [HERO_POS_JUMP_DOWN]	;@raw=0x02,0x37,0xFB
+	add [0x37], [HACK_VAR_F7]	;@raw=0x02,0x37,0xF7
+	add [0x37], [HERO_ACTION_POS_MASK]	;@raw=0x02,0x37,0xFE
+	add [0x37], [0x0A]	;@raw=0x02,0x37,0x0A
+	add [0x37], [0x14]	;@raw=0x02,0x37,0x14
+	add [0x37], [0x0B]	;@raw=0x02,0x37,0x0B
+	add [0x37], [0x28]	;@raw=0x02,0x37,0x28
+	add [0x37], [0x01]	;@raw=0x02,0x37,0x01
+	add [0x37], [0x04]	;@raw=0x02,0x37,0x04
+	ret	;@raw=0x05
+;@endif
+
+;@if BRANCH == "dos_1992"
+;@include "passcode/dos_mid.inc"
+;@elif BRANCH == "chahi_amiga_1991"
+;@include "passcode/amiga_mid.inc"
+;@endif
+; (cart has no chunk here — cart_pre above already spans through to CLEAR_PAGES_1_2_AND_BLIT)
+
+CLEAR_PAGES_1_2_AND_BLIT:
+	fill page=0x01, color=0x00	;@raw=0x0E,0x01,0x00
+	fill page=0x02, color=0x00	;@raw=0x0E,0x02,0x00
+	selectVideoPage 0x01	;@raw=0x0D,0x01
+	blitFramebuffer 0x01	;@raw=0x10,0x01
+	blitFramebuffer 0xFF	;@raw=0x10,0xFF
+	blitFramebuffer 0x02	;@raw=0x10,0x02
+	ret	;@raw=0x05
+
+;@if BRANCH == "cartridge_1992"
+;@include "passcode/cart_post.inc"
+;@elif BRANCH == "dos_1992"
+;@include "passcode/dos_post.inc"
+;@elif BRANCH == "chahi_amiga_1991"
+;@include "passcode/amiga_post.inc"
 ;@endif
