@@ -395,22 +395,22 @@ PLAY_FX_PHASE_1_FREQ_22:
 	play id=0x000B, freq=0x16, vol=0x3F, channel=0x02
 
 PLAY_FX_PHASE_2_FREQ_18:
-	jne [0x1E], 0x02, LABEL_1FF6
+	jne [0x1E], 0x02, PLAY_FX_PHASE_3_FREQ_18
 	play id=0x000B, freq=0x12, vol=0x3F, channel=0x02
 
-LABEL_1FF6:
-	jne [0x1E], 0x03, LABEL_2002
+PLAY_FX_PHASE_3_FREQ_18:
+	jne [0x1E], 0x03, PLAY_FX_PHASE_4_FREQ_20
 	play id=0x000B, freq=0x12, vol=0x3F, channel=0x02
 
-LABEL_2002:
-	jne [0x1E], 0x04, LABEL_200E
+PLAY_FX_PHASE_4_FREQ_20:
+	jne [0x1E], 0x04, PLAY_FX_PHASE_5_FREQ_20
 	play id=0x000B, freq=0x14, vol=0x3F, channel=0x02
 
-LABEL_200E:
-	jne [0x1E], 0x05, LABEL_201A
+PLAY_FX_PHASE_5_FREQ_20:
+	jne [0x1E], 0x05, PLAY_FX_DISPATCH_RET
 	play id=0x000B, freq=0x14, vol=0x3F, channel=0x02
 
-LABEL_201A:
+PLAY_FX_DISPATCH_RET:
 	ret
 
 CH_01_INIT_VAR_04_06:
