@@ -417,22 +417,22 @@ CH_01_INIT_VAR_04_06:
 	mov [0x04], 0x0040
 	mov [0x06], 0x000F
 
-LABEL_2023:
+DRIFT_VAR4_PLUS_3_FOR_15X:
 	add [0x04], 0x0003
 	break
-	djnz [0x06], LABEL_2023
+	djnz [0x06], DRIFT_VAR4_PLUS_3_FOR_15X
 	mov [0x06], 0x000A
 
-LABEL_2030:
+DRIFT_VAR4_PLUS_5_FOR_10X:
 	add [0x04], 0x0005
 	break
-	djnz [0x06], LABEL_2030
+	djnz [0x06], DRIFT_VAR4_PLUS_5_FOR_10X
 	mov [0x06], 0x0014
 
-LABEL_203D:
+DRIFT_VAR4_PLUS_9_FOR_20X:
 	add [0x04], 0x0009
 	break
-	djnz [0x06], LABEL_203D
+	djnz [0x06], DRIFT_VAR4_PLUS_9_FOR_20X
 	setup channel=0x02, address=KILL_CHANNEL_ROUTINE
 	fill page=0xFF, color=0x09
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
@@ -450,22 +450,22 @@ LABEL_203D:
 	mov [0x04], 0x0153
 	mov [0x06], 0x0014
 
-LABEL_207A:
+DRIFT_VAR4_MINUS_9_FOR_20X:
 	sub [0x04], 0x0009
 	break
-	djnz [0x06], LABEL_207A
+	djnz [0x06], DRIFT_VAR4_MINUS_9_FOR_20X
 	mov [0x06], 0x000A
 
-LABEL_2087:
+DRIFT_VAR4_MINUS_5_FOR_10X:
 	sub [0x04], 0x0005
 	break
-	djnz [0x06], LABEL_2087
+	djnz [0x06], DRIFT_VAR4_MINUS_5_FOR_10X
 	mov [0x06], 0x0005
 
-LABEL_2094:
+DRIFT_VAR4_MINUS_3_FOR_5X:
 	sub [0x04], 0x0003
 	break
-	djnz [0x06], LABEL_2094
+	djnz [0x06], DRIFT_VAR4_MINUS_3_FOR_5X
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x02, address=INTRO_FILL_PAGE0_DRAW_CIN_118
 	setup channel=0x03, address=DRAW_CIN_120_LOOP_VAR03
