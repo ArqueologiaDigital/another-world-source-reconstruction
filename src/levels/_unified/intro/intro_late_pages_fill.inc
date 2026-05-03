@@ -11,34 +11,34 @@ INIT_PAGE0_PAUSE2_FILL1:
 	mov [0x01], 0xFC45
 	mov [0x03], 0x0073
 
-LABEL_1A4F:
+DRIFT_VAR1_PLUS_5_FOR_115X:
 	break
 	add [0x01], 0x0005
-	djnz [0x03], LABEL_1A4F
+	djnz [0x03], DRIFT_VAR1_PLUS_5_FOR_115X
 	mov [0x03], 0x0019
 
-LABEL_1A5C:
+DRIFT_VAR1_PLUS_4_FOR_25X:
 	break
 	add [0x01], 0x0004
-	djnz [0x03], LABEL_1A5C
+	djnz [0x03], DRIFT_VAR1_PLUS_4_FOR_25X
 	mov [0x03], 0x0064
 
-LABEL_1A69:
+DRIFT_VAR1_PLUS_3_FOR_100X:
 	break
 	add [0x01], 0x0003
-	djnz [0x03], LABEL_1A69
+	djnz [0x03], DRIFT_VAR1_PLUS_3_FOR_100X
 	mov [0x03], 0x001E
 
-LABEL_1A76:
+DRIFT_VAR1_PLUS_2_FOR_30X:
 	break
 	add [0x01], 0x0002
-	djnz [0x03], LABEL_1A76
+	djnz [0x03], DRIFT_VAR1_PLUS_2_FOR_30X
 	mov [0x03], 0x0010
 
-LABEL_1A83:
+DRIFT_VAR1_PLUS_1_FOR_16X:
 	break
 	add [0x01], 0x0001
-	djnz [0x03], LABEL_1A83
+	djnz [0x03], DRIFT_VAR1_PLUS_1_FOR_16X
 	copyVideoPage src=0xFE, dst=0x00
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
@@ -132,9 +132,9 @@ LABEL_1A83:
 	selectVideoPage 0xFF
 	mov [0x05], 0x0019
 
-LABEL_1B83:
+DELAY_25F_BEFORE_VAR1_4E:
 	break
-	djnz [0x05], LABEL_1B83
+	djnz [0x05], DELAY_25F_BEFORE_VAR1_4E
 	mov [0x01], 0x004E
 	mov [0x02], 0x00E8
 	mov [0x05], 0x000A

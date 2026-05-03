@@ -73,22 +73,22 @@ CH_04_INIT_VAR_04_05:
 	mov [0x04], 0x0032
 	mov [0x05], 0x0050
 
-LABEL_1970:
+DRIFT_CIN_135_RIGHT_BY_2_80X:
 	video type=1, offset=CINEMATIC_135, x=[0x04], y=100, zoom=0x40
 	add [0x04], 0x0002
 	break
-	djnz [0x05], LABEL_1970
+	djnz [0x05], DRIFT_CIN_135_RIGHT_BY_2_80X
 	killChannel
 
 CH_05_INIT_VAR_06_07:
 	mov [0x06], 0x00DC
 	mov [0x07], 0x0017
 
-LABEL_1987:
+RISE_CIN_136_BY_10_FOR_23X:
 	break
 	video type=1, offset=CINEMATIC_136, x=110, y=[0x06], zoom=0x40
 	sub [0x06], 0x000A
-	djnz [0x07], LABEL_1987
+	djnz [0x07], RISE_CIN_136_BY_10_FOR_23X
 	killChannel
 
 CH_07_INIT_VAR_08_09:
@@ -97,17 +97,17 @@ CH_07_INIT_VAR_08_09:
 	mov [0x09], 0x0006
 	mov [0x0B], 0x008E
 
-LABEL_19A3:
+DRAW_CIN_137_DOUBLE_OUTER:
 	mov [0x0A], 0x0002
 
-LABEL_19A7:
+DRAW_CIN_137_AT_280_283_TWICE:
 	break
 	video type=1, offset=CINEMATIC_137, x=280, y=[0x08], zoom=0x40
 	video type=1, offset=CINEMATIC_137, x=283, y=[0x0b], zoom=0x40
-	djnz [0x0A], LABEL_19A7
+	djnz [0x0A], DRAW_CIN_137_AT_280_283_TWICE
 	add [0x08], 0x0003
 	sub [0x0B], 0x0003
-	djnz [0x09], LABEL_19A3
+	djnz [0x09], DRAW_CIN_137_DOUBLE_OUTER
 	jmp CH_07_INIT_VAR_08_09
 LABEL_19C5:
 	killChannel
