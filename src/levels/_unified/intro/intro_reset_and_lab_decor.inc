@@ -437,7 +437,7 @@ LABEL_0D71:
 	video type=1, offset=CINEMATIC_273, x=160, y=100, zoom=[0x50]	;@raw=0x6A,0x4A,0x61,0xA0,0x64,0x50
 	play id=0x000A, freq=0x0A, vol=0x3F, channel=0x03
 	break
-	jmp LABEL_0776
+	jmp TRANSITION_TO_BLITTER_LOOP
 LABEL_0DD6:
 	killChannel
 

@@ -192,14 +192,14 @@ CH_11_INIT_PARTICLE_POS_2:
 	mov [0x0A], 0xFFCE
 	mov [0x0B], 0x0032
 
-LABEL_05B1:
+CH_11_DRAW_PARTICLES_LOOP:
 	video type=1, offset=CINEMATIC_352, x=[0x0a], y=50, zoom=0x40
 	video type=1, offset=CINEMATIC_350, x=[0x0a], y=20, zoom=0x40
 	video type=1, offset=CINEMATIC_351, x=[0x0a], y=110, zoom=0x40
 	video type=1, offset=CINEMATIC_350, x=[0x0a], y=180, zoom=0x40
 	add [0x0A], 0x000A
 	break
-	djnz [0x0B], LABEL_05B1
+	djnz [0x0B], CH_11_DRAW_PARTICLES_LOOP
 	jmp CH_11_INIT_PARTICLE_POS_2
 LABEL_05D1:
 	killChannel
@@ -209,14 +209,14 @@ CH_12_INIT_PARTICLE_POS_3:
 	mov [0x0C], 0xFFB0
 	mov [0x0D], 0x003C
 
-LABEL_05DB:
+CH_12_DRAW_PARTICLES_LOOP:
 	video type=1, offset=CINEMATIC_349, x=[0x0c], y=140, zoom=0x40
 	video type=1, offset=CINEMATIC_350, x=[0x0c], y=100, zoom=0x40
 	video type=1, offset=CINEMATIC_350, x=[0x0c], y=80, zoom=0x40
 	video type=1, offset=CINEMATIC_351, x=[0x0c], y=10, zoom=0x40
 	add [0x0C], 0x0009
 	break
-	djnz [0x0D], LABEL_05DB
+	djnz [0x0D], CH_12_DRAW_PARTICLES_LOOP
 	jmp CH_12_INIT_PARTICLE_POS_3
 LABEL_05FB:
 	killChannel

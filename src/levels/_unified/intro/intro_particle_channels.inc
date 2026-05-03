@@ -25,9 +25,9 @@ SETUP_INTRO_PARTICLE_CHANNELS:
 	video type=1, offset=CINEMATIC_005, x=90, y=101
 	mov [0x01], 0x015E
 
-LABEL_0658:
+PARTICLE_PHASE_350_FRAME_TIMER:
 	break
-	djnz [0x01], LABEL_0658
+	djnz [0x01], PARTICLE_PHASE_350_FRAME_TIMER
 	setup channel=0x3C, address=BLIT_DISPATCH_HERO_ACTION_ALT
 	deleteChannels first=0x0A, last=0x12
 	break
@@ -71,7 +71,7 @@ LABEL_0658:
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
-	jmp LABEL_06E0
+	jmp SETUP_PAL19_AND_PAGE_FLIP
 LABEL_06D7:
 	killChannel
 
@@ -82,7 +82,7 @@ FILL_FF_PAGE_LOOP:
 LABEL_06DF:
 	killChannel
 
-LABEL_06E0:
+SETUP_PAL19_AND_PAGE_FLIP:
 	selectVideoPage 0x00
 	selectVideoPage 0xFF
 	mov [PAUSE_SLICES], 0x0002
@@ -141,7 +141,7 @@ LABEL_06E0:
 LABEL_0775:
 	killChannel
 
-LABEL_0776:
+TRANSITION_TO_BLITTER_LOOP:
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	play id=0x000A, freq=0x07, vol=0x3F, channel=0x03
@@ -153,11 +153,11 @@ LABEL_0776:
 	setPalette 0x18
 	mov [0x01], 0x0001
 
-LABEL_079B:
+FILL_PAGE_FF_COLOR_8_ONCE:
 	break
 	fill page=0xFF, color=0x08
 	break
-	djnz [0x01], LABEL_079B
+	djnz [0x01], FILL_PAGE_FF_COLOR_8_ONCE
 	setup channel=0x04, address=SET_PALETTE_18
 	video type=1, offset=CINEMATIC_274, x=160, y=100
 	play id=0x002C, freq=0x14, vol=0x3F, channel=0x03
