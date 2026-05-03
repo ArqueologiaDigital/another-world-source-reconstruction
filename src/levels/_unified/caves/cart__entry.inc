@@ -220,6 +220,672 @@
 ;   FOLD_BODY_261B_7A9CE2F7  (2-arm: cart, dos)
 ;   FOLD_BODY_261B_43CF2CB1  (2-arm: cart, dos)
 
+; Unified source for CAVES with 218 folded shared bodies.
+;
+; Folded routines (in byte-address order):
+;   FOLD_BODY_446B_2519A417  (2-arm: amiga, dos)
+;   PRELOAD_CAVES_RESOURCES  (2-arm: amiga, dos)
+;   FOLD_BODY_254B_838374D1  (3-arm: amiga, cart, dos)
+;   COPY_VAR00_TO_VARF8  (3-arm: amiga, cart, dos)
+;   COPY_VARF8_TO_VAR00  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_774E53C0  (2-arm: amiga, dos)
+;   INIT_VARS_E6_E7_E8  (2-arm: amiga, dos)
+;   INIT_VARS_E6_E7_E8_E8_PLUS3  (3-arm: amiga, cart, dos)
+;   INIT_VARS_6D_71_70  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_19E62B8E  (3-arm: amiga, cart, dos)
+;   INIT_VARS_71_6C_6D  (3-arm: amiga, cart, dos)
+;   INIT_VARS_6C_6D_71_70  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E6_E7_2  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E6_E7_1  (2-arm: cart, dos)
+;   INIT_VARS_E6_E9_E8  (2-arm: cart, dos)
+;   INIT_VARS_E6_E7_E9_E8  (2-arm: cart, dos)
+;   INIT_VARS_0E_29  (3-arm: amiga, cart, dos)
+;   INIT_VARS_EE_EF  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_E9BEDF6C  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_62C100C1  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_1848FF42  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_32F1E7BB  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_5A1F1C72  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E8_E6  (2-arm: cart, dos)
+;   INIT_VARS_E6_68_69_6B  (3-arm: amiga, cart, dos)
+;   INIT_VARS_EB_EC_ED  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_D834B636  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_84B_8EB32F8E  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_0F6F9405  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_D4C0F830  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_FEDFB72F  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_83AABBA7  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_104B_DD7FE6E8  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_104B_1F1C2592  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E6_E7  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_4692F165  (3-arm: amiga, cart, dos)
+;   INIT_VARS_EA_EB  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_159B_CB73A242  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_134B_B0E8D936  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_84B_B02DE811  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_219B_89086759  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_6382DEF7  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_FDAF3AA3  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_AC46978F  (2-arm: amiga, dos)
+;   INIT_VARS_6C_6B  (3-arm: amiga, cart, dos)
+;   INCREMENT_VAR31_BY_1  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_151B_F79ED944  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E6_E7_EB  (2-arm: cart, dos)
+;   FOLD_BODY_44B_123FA366  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_67B_EB770918  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_281B_FD3BB94A  (2-arm: cart, dos)
+;   COPY_HASH_VAR_37_TO_RANGE  (3-arm: amiga, cart, dos)
+;   ACCUMULATE_HASH_INTO_VAR37_38  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_156B_579DE25B  (2-arm: cart, dos)
+;   FOLD_BODY_156B_62098AC6  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_156B_189DA618  (2-arm: cart, dos)
+;   FOLD_BODY_245B_6670034A  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_290B_04233270  (2-arm: amiga, dos)
+;   INIT_HASH_VARS_67_66_65_68_69  (2-arm: amiga, cart)
+;   INIT_VARS_29_07_08  (3-arm: amiga, cart, dos)
+;   INCREMENT_VAR07_BY_4  (3-arm: amiga, cart, dos)
+;   DERIVE_VAR12_11_10_FROM_VAR9  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_39B_8DD0C9CC  (2-arm: cart, dos)
+;   FOLD_BODY_274B_363F48D1  (3-arm: amiga, cart, dos)
+;   AND_VAR11_WITH_EFFF  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_58B_A2D4469A  (3-arm: amiga, cart, dos)
+;   SET_VAR2F_TO_000F  (3-arm: amiga, cart, dos)
+;   SET_VAR2F_TO_001D  (3-arm: amiga, cart, dos)
+;   SET_VAR2F_TO_000D  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_104B_F18A2F7D  (3-arm: amiga, cart, dos)
+;   SET_VAR21_TO_0001  (3-arm: amiga, cart, dos)
+;   INIT_VARS_2F_29_12_1  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_29E88AAE  (3-arm: amiga, cart, dos)
+;   INIT_VARS_2F_29_12  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_94B_44BEEF04  (3-arm: amiga, cart, dos)
+;   INCREMENT_VAR21_BY_F  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_F42C389F  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_43B_757368B2  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_94B_9F1D7AF8  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_39B_42136843  (3-arm: amiga, cart, dos)
+;   COPY_VAR27_TO_VAR07  (3-arm: amiga, cart, dos)
+;   SET_VAR13_TO_FFFF  (3-arm: amiga, cart, dos)
+;   PLAY_SFX_005C_CH00  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_89B_E0F8C267  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_A00965BC  (3-arm: amiga, cart, dos)
+;   COPY_VAR40_TO_VAR27  (3-arm: amiga, cart, dos)
+;   COPY_VARAD_TO_VAR11  (3-arm: amiga, cart, dos)
+;   COPY_VAR11_TO_VARAD  (3-arm: amiga, cart, dos)
+;   DECREMENT_VAR22  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_99B_913256B4  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_79B_5AA87B0D  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_39B_7450DA13  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_124B_BC056530  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_39B_1F847B0B  (3-arm: amiga, cart, dos)
+;   COPY_VAR40_TO_VAR22  (3-arm: amiga, cart, dos)
+;   DECREMENT_VARF8_BY_10  (3-arm: amiga, cart, dos)
+;   DECREMENT_VAR22_BY_10  (3-arm: amiga, cart, dos)
+;   COPY_VAR01_TO_VAR28  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_99B_C6015BD9  (2-arm: cart, dos)
+;   FOLD_BODY_189B_794E4590  (2-arm: cart, dos)
+;   FOLD_BODY_99B_D8CF1AF9  (2-arm: cart, dos)
+;   FOLD_BODY_99B_535C94C0  (2-arm: cart, dos)
+;   FOLD_BODY_99B_76C60EB2  (2-arm: cart, dos)
+;   FOLD_BODY_99B_95D61F48  (2-arm: cart, dos)
+;   FOLD_BODY_99B_3F1B076D  (2-arm: cart, dos)
+;   FOLD_BODY_99B_D1658A70  (2-arm: cart, dos)
+;   FOLD_BODY_99B_3B6BC4B3  (2-arm: cart, dos)
+;   INCREMENT_VAR07_BY_1  (3-arm: amiga, cart, dos)
+;   DRAW_CV_301  (2-arm: cart, dos)
+;   DRAW_CV_355  (2-arm: cart, dos)
+;   DECREMENT_VAR08_BY_D  (3-arm: amiga, cart, dos)
+;   DRAW_CV_074  (2-arm: cart, dos)
+;   DRAW_CV_075  (2-arm: cart, dos)
+;   DRAW_CV_076  (2-arm: cart, dos)
+;   DRAW_CV_077  (2-arm: cart, dos)
+;   FOLD_BODY_200B_1AFE2B0B  (2-arm: cart, dos)
+;   DRAW_CV_080  (2-arm: cart, dos)
+;   DRAW_CV_061  (2-arm: cart, dos)
+;   DRAW_CV_063  (2-arm: cart, dos)
+;   DRAW_CV_065  (2-arm: cart, dos)
+;   DRAW_CV_067  (2-arm: cart, dos)
+;   DRAW_CV_069  (2-arm: cart, dos)
+;   FOLD_BODY_200B_5D805D1F  (2-arm: cart, dos)
+;   DRAW_CV_071  (2-arm: cart, dos)
+;   DRAW_CV_072  (2-arm: cart, dos)
+;   DRAW_CV_073  (2-arm: cart, dos)
+;   DRAW_CV_300  (2-arm: cart, dos)
+;   DRAW_CV_299  (2-arm: cart, dos)
+;   DRAW_CV_295  (2-arm: cart, dos)
+;   DRAW_CV_296  (2-arm: cart, dos)
+;   DRAW_CV_297  (2-arm: cart, dos)
+;   DRAW_CV_298  (2-arm: cart, dos)
+;   FOLD_BODY_99B_8CB26FD2  (2-arm: cart, dos)
+;   FOLD_BODY_200B_37F93421  (2-arm: cart, dos)
+;   FOLD_BODY_99B_B1A35EFA  (2-arm: cart, dos)
+;   DRAW_CV_110  (2-arm: cart, dos)
+;   FOLD_BODY_99B_79867FEB  (2-arm: cart, dos)
+;   DRAW_CV_112  (2-arm: cart, dos)
+;   FOLD_BODY_99B_AA083516  (2-arm: cart, dos)
+;   DRAW_CV_114  (2-arm: cart, dos)
+;   DRAW_CV_115  (2-arm: cart, dos)
+;   FOLD_BODY_99B_903D2AE1  (2-arm: cart, dos)
+;   FOLD_BODY_200B_44886950  (2-arm: cart, dos)
+;   FOLD_BODY_99B_A1B2ECF4  (2-arm: cart, dos)
+;   DRAW_CV_100  (2-arm: cart, dos)
+;   FOLD_BODY_99B_6E4C0150  (2-arm: cart, dos)
+;   DRAW_CV_102  (2-arm: cart, dos)
+;   FOLD_BODY_99B_DC229063  (2-arm: cart, dos)
+;   DRAW_CV_104  (2-arm: cart, dos)
+;   FOLD_BODY_99B_C53D6EC4  (2-arm: cart, dos)
+;   FOLD_BODY_44B_06BD16B8  (2-arm: cart, dos)
+;   FOLD_BODY_93B_2C2B4311  (2-arm: cart, dos)
+;   FOLD_BODY_62B_70C62EFD  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_62B_8F5AB86B  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_127B_F42DCE4F  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_2D26434E  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_006B  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_0061  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_00C8  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_79EC0326  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_04CB328E  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_00AB  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_38FD38E3  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_C4F9E873  (3-arm: amiga, cart, dos)
+;   INIT_VARS_01_22  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_A75D286E  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_57569B89  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_4CB9AFF5  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_E4233737  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_69E7A9C1  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_615E7707  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_3714FA4E  (2-arm: cart, dos)
+;   SET_VAR22_TO_007D  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_0080  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_00AC  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_0087  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_144B_FF58C6C8  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_0085  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_00C3  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_41906E76  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_144B_552673A7  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_0042  (2-arm: cart, dos)
+;   SET_VAR22_TO_00AE  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_1A09E69C  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_00B8  (3-arm: amiga, cart, dos)
+;   INIT_VARS_EB_47  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_108B_0013C19A  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E6_EA  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_50B_2E2F4B8F  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_104B_FC3A9361  (2-arm: cart, dos)
+;   INIT_RANGE_48_TO_4D_TO_MAX  (3-arm: amiga, cart, dos)
+;   INIT_VARS_AA_AD_5B_5E_PLUS1  (3-arm: amiga, cart, dos)
+;   INIT_VARS_A1_A4_A7  (3-arm: amiga, cart, dos)
+;   DELETE_GAME_AND_FX_CHANNELS  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_61B_7F8B309C  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_66B_160F1222  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_66B_53AF86AC  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_66B_46DFEAE8  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_66B_F424839D  (3-arm: amiga, cart, dos)
+;   INIT_AI_VARS_AT_280_10  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_20  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0030  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0000  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0010  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0008  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0034  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0024  (3-arm: amiga, cart, dos)
+;   SET_VAR18_TO_0122  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_B8F4589C  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_9969BA71  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_43C274AC  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_93E8A02A  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_358B_6F629262  (2-arm: cart, dos)
+;   FOLD_BODY_223B_DDF457BD  (2-arm: cart, dos)
+;   FOLD_BODY_206B_44F9C1BD  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_206B_F444FCB9  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_261B_7A9CE2F7  (2-arm: cart, dos)
+;   FOLD_BODY_261B_43CF2CB1  (2-arm: cart, dos)
+
+; Unified source for CAVES with 218 folded shared bodies.
+;
+; Folded routines (in byte-address order):
+;   FOLD_BODY_446B_2519A417  (2-arm: amiga, dos)
+;   PRELOAD_CAVES_RESOURCES  (2-arm: amiga, dos)
+;   FOLD_BODY_254B_838374D1  (3-arm: amiga, cart, dos)
+;   COPY_VAR00_TO_VARF8  (3-arm: amiga, cart, dos)
+;   COPY_VARF8_TO_VAR00  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_774E53C0  (2-arm: amiga, dos)
+;   INIT_VARS_E6_E7_E8  (2-arm: amiga, dos)
+;   INIT_VARS_E6_E7_E8_E8_PLUS3  (3-arm: amiga, cart, dos)
+;   INIT_VARS_6D_71_70  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_19E62B8E  (3-arm: amiga, cart, dos)
+;   INIT_VARS_71_6C_6D  (3-arm: amiga, cart, dos)
+;   INIT_VARS_6C_6D_71_70  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E6_E7_2  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E6_E7_1  (2-arm: cart, dos)
+;   INIT_VARS_E6_E9_E8  (2-arm: cart, dos)
+;   INIT_VARS_E6_E7_E9_E8  (2-arm: cart, dos)
+;   INIT_VARS_0E_29  (3-arm: amiga, cart, dos)
+;   INIT_VARS_EE_EF  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_E9BEDF6C  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_62C100C1  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_1848FF42  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_32F1E7BB  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_5A1F1C72  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E8_E6  (2-arm: cart, dos)
+;   INIT_VARS_E6_68_69_6B  (3-arm: amiga, cart, dos)
+;   INIT_VARS_EB_EC_ED  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_D834B636  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_84B_8EB32F8E  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_0F6F9405  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_D4C0F830  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_FEDFB72F  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_83AABBA7  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_104B_DD7FE6E8  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_104B_1F1C2592  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E6_E7  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_4692F165  (3-arm: amiga, cart, dos)
+;   INIT_VARS_EA_EB  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_159B_CB73A242  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_134B_B0E8D936  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_84B_B02DE811  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_219B_89086759  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_6382DEF7  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_FDAF3AA3  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_AC46978F  (2-arm: amiga, dos)
+;   INIT_VARS_6C_6B  (3-arm: amiga, cart, dos)
+;   INCREMENT_VAR31_BY_1  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_151B_F79ED944  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E6_E7_EB  (2-arm: cart, dos)
+;   FOLD_BODY_44B_123FA366  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_67B_EB770918  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_281B_FD3BB94A  (2-arm: cart, dos)
+;   COPY_HASH_VAR_37_TO_RANGE  (3-arm: amiga, cart, dos)
+;   ACCUMULATE_HASH_INTO_VAR37_38  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_156B_579DE25B  (2-arm: cart, dos)
+;   FOLD_BODY_156B_62098AC6  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_156B_189DA618  (2-arm: cart, dos)
+;   FOLD_BODY_245B_6670034A  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_290B_04233270  (2-arm: amiga, dos)
+;   INIT_HASH_VARS_67_66_65_68_69  (2-arm: amiga, cart)
+;   INIT_VARS_29_07_08  (3-arm: amiga, cart, dos)
+;   INCREMENT_VAR07_BY_4  (3-arm: amiga, cart, dos)
+;   DERIVE_VAR12_11_10_FROM_VAR9  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_39B_8DD0C9CC  (2-arm: cart, dos)
+;   FOLD_BODY_274B_363F48D1  (3-arm: amiga, cart, dos)
+;   AND_VAR11_WITH_EFFF  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_58B_A2D4469A  (3-arm: amiga, cart, dos)
+;   SET_VAR2F_TO_000F  (3-arm: amiga, cart, dos)
+;   SET_VAR2F_TO_001D  (3-arm: amiga, cart, dos)
+;   SET_VAR2F_TO_000D  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_104B_F18A2F7D  (3-arm: amiga, cart, dos)
+;   SET_VAR21_TO_0001  (3-arm: amiga, cart, dos)
+;   INIT_VARS_2F_29_12_1  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_29E88AAE  (3-arm: amiga, cart, dos)
+;   INIT_VARS_2F_29_12  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_94B_44BEEF04  (3-arm: amiga, cart, dos)
+;   INCREMENT_VAR21_BY_F  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_F42C389F  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_43B_757368B2  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_94B_9F1D7AF8  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_39B_42136843  (3-arm: amiga, cart, dos)
+;   COPY_VAR27_TO_VAR07  (3-arm: amiga, cart, dos)
+;   SET_VAR13_TO_FFFF  (3-arm: amiga, cart, dos)
+;   PLAY_SFX_005C_CH00  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_89B_E0F8C267  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_A00965BC  (3-arm: amiga, cart, dos)
+;   COPY_VAR40_TO_VAR27  (3-arm: amiga, cart, dos)
+;   COPY_VARAD_TO_VAR11  (3-arm: amiga, cart, dos)
+;   COPY_VAR11_TO_VARAD  (3-arm: amiga, cart, dos)
+;   DECREMENT_VAR22  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_99B_913256B4  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_79B_5AA87B0D  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_39B_7450DA13  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_124B_BC056530  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_39B_1F847B0B  (3-arm: amiga, cart, dos)
+;   COPY_VAR40_TO_VAR22  (3-arm: amiga, cart, dos)
+;   DECREMENT_VARF8_BY_10  (3-arm: amiga, cart, dos)
+;   DECREMENT_VAR22_BY_10  (3-arm: amiga, cart, dos)
+;   COPY_VAR01_TO_VAR28  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_99B_C6015BD9  (2-arm: cart, dos)
+;   FOLD_BODY_189B_794E4590  (2-arm: cart, dos)
+;   FOLD_BODY_99B_D8CF1AF9  (2-arm: cart, dos)
+;   FOLD_BODY_99B_535C94C0  (2-arm: cart, dos)
+;   FOLD_BODY_99B_76C60EB2  (2-arm: cart, dos)
+;   FOLD_BODY_99B_95D61F48  (2-arm: cart, dos)
+;   FOLD_BODY_99B_3F1B076D  (2-arm: cart, dos)
+;   FOLD_BODY_99B_D1658A70  (2-arm: cart, dos)
+;   FOLD_BODY_99B_3B6BC4B3  (2-arm: cart, dos)
+;   INCREMENT_VAR07_BY_1  (3-arm: amiga, cart, dos)
+;   DRAW_CV_301  (2-arm: cart, dos)
+;   DRAW_CV_355  (2-arm: cart, dos)
+;   DECREMENT_VAR08_BY_D  (3-arm: amiga, cart, dos)
+;   DRAW_CV_074  (2-arm: cart, dos)
+;   DRAW_CV_075  (2-arm: cart, dos)
+;   DRAW_CV_076  (2-arm: cart, dos)
+;   DRAW_CV_077  (2-arm: cart, dos)
+;   FOLD_BODY_200B_1AFE2B0B  (2-arm: cart, dos)
+;   DRAW_CV_080  (2-arm: cart, dos)
+;   DRAW_CV_061  (2-arm: cart, dos)
+;   DRAW_CV_063  (2-arm: cart, dos)
+;   DRAW_CV_065  (2-arm: cart, dos)
+;   DRAW_CV_067  (2-arm: cart, dos)
+;   DRAW_CV_069  (2-arm: cart, dos)
+;   FOLD_BODY_200B_5D805D1F  (2-arm: cart, dos)
+;   DRAW_CV_071  (2-arm: cart, dos)
+;   DRAW_CV_072  (2-arm: cart, dos)
+;   DRAW_CV_073  (2-arm: cart, dos)
+;   DRAW_CV_300  (2-arm: cart, dos)
+;   DRAW_CV_299  (2-arm: cart, dos)
+;   DRAW_CV_295  (2-arm: cart, dos)
+;   DRAW_CV_296  (2-arm: cart, dos)
+;   DRAW_CV_297  (2-arm: cart, dos)
+;   DRAW_CV_298  (2-arm: cart, dos)
+;   FOLD_BODY_99B_8CB26FD2  (2-arm: cart, dos)
+;   FOLD_BODY_200B_37F93421  (2-arm: cart, dos)
+;   FOLD_BODY_99B_B1A35EFA  (2-arm: cart, dos)
+;   DRAW_CV_110  (2-arm: cart, dos)
+;   FOLD_BODY_99B_79867FEB  (2-arm: cart, dos)
+;   DRAW_CV_112  (2-arm: cart, dos)
+;   FOLD_BODY_99B_AA083516  (2-arm: cart, dos)
+;   DRAW_CV_114  (2-arm: cart, dos)
+;   DRAW_CV_115  (2-arm: cart, dos)
+;   FOLD_BODY_99B_903D2AE1  (2-arm: cart, dos)
+;   FOLD_BODY_200B_44886950  (2-arm: cart, dos)
+;   FOLD_BODY_99B_A1B2ECF4  (2-arm: cart, dos)
+;   DRAW_CV_100  (2-arm: cart, dos)
+;   FOLD_BODY_99B_6E4C0150  (2-arm: cart, dos)
+;   DRAW_CV_102  (2-arm: cart, dos)
+;   FOLD_BODY_99B_DC229063  (2-arm: cart, dos)
+;   DRAW_CV_104  (2-arm: cart, dos)
+;   FOLD_BODY_99B_C53D6EC4  (2-arm: cart, dos)
+;   FOLD_BODY_44B_06BD16B8  (2-arm: cart, dos)
+;   FOLD_BODY_93B_2C2B4311  (2-arm: cart, dos)
+;   FOLD_BODY_62B_70C62EFD  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_62B_8F5AB86B  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_127B_F42DCE4F  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_2D26434E  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_006B  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_0061  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_00C8  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_79EC0326  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_04CB328E  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_00AB  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_38FD38E3  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_C4F9E873  (3-arm: amiga, cart, dos)
+;   INIT_VARS_01_22  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_A75D286E  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_57569B89  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_4CB9AFF5  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_E4233737  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_69E7A9C1  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_615E7707  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_3714FA4E  (2-arm: cart, dos)
+;   SET_VAR22_TO_007D  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_0080  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_00AC  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_0087  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_144B_FF58C6C8  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_0085  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_00C3  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_41906E76  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_144B_552673A7  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_0042  (2-arm: cart, dos)
+;   SET_VAR22_TO_00AE  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_1A09E69C  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_00B8  (3-arm: amiga, cart, dos)
+;   INIT_VARS_EB_47  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_108B_0013C19A  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E6_EA  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_50B_2E2F4B8F  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_104B_FC3A9361  (2-arm: cart, dos)
+;   INIT_RANGE_48_TO_4D_TO_MAX  (3-arm: amiga, cart, dos)
+;   INIT_VARS_AA_AD_5B_5E_PLUS1  (3-arm: amiga, cart, dos)
+;   INIT_VARS_A1_A4_A7  (3-arm: amiga, cart, dos)
+;   DELETE_GAME_AND_FX_CHANNELS  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_61B_7F8B309C  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_66B_160F1222  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_66B_53AF86AC  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_66B_46DFEAE8  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_66B_F424839D  (3-arm: amiga, cart, dos)
+;   INIT_AI_VARS_AT_280_10  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_20  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0030  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0000  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0010  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0008  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0034  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0024  (3-arm: amiga, cart, dos)
+;   SET_VAR18_TO_0122  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_B8F4589C  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_9969BA71  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_43C274AC  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_93E8A02A  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_358B_6F629262  (2-arm: cart, dos)
+;   FOLD_BODY_223B_DDF457BD  (2-arm: cart, dos)
+;   FOLD_BODY_206B_44F9C1BD  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_206B_F444FCB9  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_261B_7A9CE2F7  (2-arm: cart, dos)
+;   FOLD_BODY_261B_43CF2CB1  (2-arm: cart, dos)
+
+; Unified source for CAVES with 218 folded shared bodies.
+;
+; Folded routines (in byte-address order):
+;   FOLD_BODY_446B_2519A417  (2-arm: amiga, dos)
+;   PRELOAD_CAVES_RESOURCES  (2-arm: amiga, dos)
+;   FOLD_BODY_254B_838374D1  (3-arm: amiga, cart, dos)
+;   COPY_VAR00_TO_VARF8  (3-arm: amiga, cart, dos)
+;   COPY_VARF8_TO_VAR00  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_774E53C0  (2-arm: amiga, dos)
+;   INIT_VARS_E6_E7_E8  (2-arm: amiga, dos)
+;   INIT_VARS_E6_E7_E8_E8_PLUS3  (3-arm: amiga, cart, dos)
+;   INIT_VARS_6D_71_70  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_19E62B8E  (3-arm: amiga, cart, dos)
+;   INIT_VARS_71_6C_6D  (3-arm: amiga, cart, dos)
+;   INIT_VARS_6C_6D_71_70  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E6_E7_2  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E6_E7_1  (2-arm: cart, dos)
+;   INIT_VARS_E6_E9_E8  (2-arm: cart, dos)
+;   INIT_VARS_E6_E7_E9_E8  (2-arm: cart, dos)
+;   INIT_VARS_0E_29  (3-arm: amiga, cart, dos)
+;   INIT_VARS_EE_EF  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_E9BEDF6C  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_62C100C1  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_1848FF42  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_32F1E7BB  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_5A1F1C72  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E8_E6  (2-arm: cart, dos)
+;   INIT_VARS_E6_68_69_6B  (3-arm: amiga, cart, dos)
+;   INIT_VARS_EB_EC_ED  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_D834B636  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_84B_8EB32F8E  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_0F6F9405  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_D4C0F830  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_FEDFB72F  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_83AABBA7  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_104B_DD7FE6E8  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_104B_1F1C2592  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E6_E7  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_4692F165  (3-arm: amiga, cart, dos)
+;   INIT_VARS_EA_EB  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_159B_CB73A242  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_134B_B0E8D936  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_84B_B02DE811  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_219B_89086759  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_6382DEF7  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_FDAF3AA3  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_AC46978F  (2-arm: amiga, dos)
+;   INIT_VARS_6C_6B  (3-arm: amiga, cart, dos)
+;   INCREMENT_VAR31_BY_1  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_151B_F79ED944  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E6_E7_EB  (2-arm: cart, dos)
+;   FOLD_BODY_44B_123FA366  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_67B_EB770918  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_281B_FD3BB94A  (2-arm: cart, dos)
+;   COPY_HASH_VAR_37_TO_RANGE  (3-arm: amiga, cart, dos)
+;   ACCUMULATE_HASH_INTO_VAR37_38  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_156B_579DE25B  (2-arm: cart, dos)
+;   FOLD_BODY_156B_62098AC6  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_156B_189DA618  (2-arm: cart, dos)
+;   FOLD_BODY_245B_6670034A  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_290B_04233270  (2-arm: amiga, dos)
+;   INIT_HASH_VARS_67_66_65_68_69  (2-arm: amiga, cart)
+;   INIT_VARS_29_07_08  (3-arm: amiga, cart, dos)
+;   INCREMENT_VAR07_BY_4  (3-arm: amiga, cart, dos)
+;   DERIVE_VAR12_11_10_FROM_VAR9  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_39B_8DD0C9CC  (2-arm: cart, dos)
+;   FOLD_BODY_274B_363F48D1  (3-arm: amiga, cart, dos)
+;   AND_VAR11_WITH_EFFF  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_58B_A2D4469A  (3-arm: amiga, cart, dos)
+;   SET_VAR2F_TO_000F  (3-arm: amiga, cart, dos)
+;   SET_VAR2F_TO_001D  (3-arm: amiga, cart, dos)
+;   SET_VAR2F_TO_000D  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_104B_F18A2F7D  (3-arm: amiga, cart, dos)
+;   SET_VAR21_TO_0001  (3-arm: amiga, cart, dos)
+;   INIT_VARS_2F_29_12_1  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_29E88AAE  (3-arm: amiga, cart, dos)
+;   INIT_VARS_2F_29_12  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_94B_44BEEF04  (3-arm: amiga, cart, dos)
+;   INCREMENT_VAR21_BY_F  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_F42C389F  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_43B_757368B2  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_94B_9F1D7AF8  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_39B_42136843  (3-arm: amiga, cart, dos)
+;   COPY_VAR27_TO_VAR07  (3-arm: amiga, cart, dos)
+;   SET_VAR13_TO_FFFF  (3-arm: amiga, cart, dos)
+;   PLAY_SFX_005C_CH00  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_89B_E0F8C267  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_A00965BC  (3-arm: amiga, cart, dos)
+;   COPY_VAR40_TO_VAR27  (3-arm: amiga, cart, dos)
+;   COPY_VARAD_TO_VAR11  (3-arm: amiga, cart, dos)
+;   COPY_VAR11_TO_VARAD  (3-arm: amiga, cart, dos)
+;   DECREMENT_VAR22  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_99B_913256B4  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_79B_5AA87B0D  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_39B_7450DA13  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_124B_BC056530  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_39B_1F847B0B  (3-arm: amiga, cart, dos)
+;   COPY_VAR40_TO_VAR22  (3-arm: amiga, cart, dos)
+;   DECREMENT_VARF8_BY_10  (3-arm: amiga, cart, dos)
+;   DECREMENT_VAR22_BY_10  (3-arm: amiga, cart, dos)
+;   COPY_VAR01_TO_VAR28  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_99B_C6015BD9  (2-arm: cart, dos)
+;   FOLD_BODY_189B_794E4590  (2-arm: cart, dos)
+;   FOLD_BODY_99B_D8CF1AF9  (2-arm: cart, dos)
+;   FOLD_BODY_99B_535C94C0  (2-arm: cart, dos)
+;   FOLD_BODY_99B_76C60EB2  (2-arm: cart, dos)
+;   FOLD_BODY_99B_95D61F48  (2-arm: cart, dos)
+;   FOLD_BODY_99B_3F1B076D  (2-arm: cart, dos)
+;   FOLD_BODY_99B_D1658A70  (2-arm: cart, dos)
+;   FOLD_BODY_99B_3B6BC4B3  (2-arm: cart, dos)
+;   INCREMENT_VAR07_BY_1  (3-arm: amiga, cart, dos)
+;   DRAW_CV_301  (2-arm: cart, dos)
+;   DRAW_CV_355  (2-arm: cart, dos)
+;   DECREMENT_VAR08_BY_D  (3-arm: amiga, cart, dos)
+;   DRAW_CV_074  (2-arm: cart, dos)
+;   DRAW_CV_075  (2-arm: cart, dos)
+;   DRAW_CV_076  (2-arm: cart, dos)
+;   DRAW_CV_077  (2-arm: cart, dos)
+;   FOLD_BODY_200B_1AFE2B0B  (2-arm: cart, dos)
+;   DRAW_CV_080  (2-arm: cart, dos)
+;   DRAW_CV_061  (2-arm: cart, dos)
+;   DRAW_CV_063  (2-arm: cart, dos)
+;   DRAW_CV_065  (2-arm: cart, dos)
+;   DRAW_CV_067  (2-arm: cart, dos)
+;   DRAW_CV_069  (2-arm: cart, dos)
+;   FOLD_BODY_200B_5D805D1F  (2-arm: cart, dos)
+;   DRAW_CV_071  (2-arm: cart, dos)
+;   DRAW_CV_072  (2-arm: cart, dos)
+;   DRAW_CV_073  (2-arm: cart, dos)
+;   DRAW_CV_300  (2-arm: cart, dos)
+;   DRAW_CV_299  (2-arm: cart, dos)
+;   DRAW_CV_295  (2-arm: cart, dos)
+;   DRAW_CV_296  (2-arm: cart, dos)
+;   DRAW_CV_297  (2-arm: cart, dos)
+;   DRAW_CV_298  (2-arm: cart, dos)
+;   FOLD_BODY_99B_8CB26FD2  (2-arm: cart, dos)
+;   FOLD_BODY_200B_37F93421  (2-arm: cart, dos)
+;   FOLD_BODY_99B_B1A35EFA  (2-arm: cart, dos)
+;   DRAW_CV_110  (2-arm: cart, dos)
+;   FOLD_BODY_99B_79867FEB  (2-arm: cart, dos)
+;   DRAW_CV_112  (2-arm: cart, dos)
+;   FOLD_BODY_99B_AA083516  (2-arm: cart, dos)
+;   DRAW_CV_114  (2-arm: cart, dos)
+;   DRAW_CV_115  (2-arm: cart, dos)
+;   FOLD_BODY_99B_903D2AE1  (2-arm: cart, dos)
+;   FOLD_BODY_200B_44886950  (2-arm: cart, dos)
+;   FOLD_BODY_99B_A1B2ECF4  (2-arm: cart, dos)
+;   DRAW_CV_100  (2-arm: cart, dos)
+;   FOLD_BODY_99B_6E4C0150  (2-arm: cart, dos)
+;   DRAW_CV_102  (2-arm: cart, dos)
+;   FOLD_BODY_99B_DC229063  (2-arm: cart, dos)
+;   DRAW_CV_104  (2-arm: cart, dos)
+;   FOLD_BODY_99B_C53D6EC4  (2-arm: cart, dos)
+;   FOLD_BODY_44B_06BD16B8  (2-arm: cart, dos)
+;   FOLD_BODY_93B_2C2B4311  (2-arm: cart, dos)
+;   FOLD_BODY_62B_70C62EFD  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_62B_8F5AB86B  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_127B_F42DCE4F  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_2D26434E  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_006B  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_0061  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_00C8  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_79EC0326  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_04CB328E  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_00AB  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_38FD38E3  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_C4F9E873  (3-arm: amiga, cart, dos)
+;   INIT_VARS_01_22  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_A75D286E  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_57569B89  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_4CB9AFF5  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_E4233737  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_69E7A9C1  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_615E7707  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_3714FA4E  (2-arm: cart, dos)
+;   SET_VAR22_TO_007D  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_0080  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_00AC  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_0087  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_144B_FF58C6C8  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_0085  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_00C3  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_41906E76  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_144B_552673A7  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_0042  (2-arm: cart, dos)
+;   SET_VAR22_TO_00AE  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_189B_1A09E69C  (3-arm: amiga, cart, dos)
+;   SET_VAR22_TO_00B8  (3-arm: amiga, cart, dos)
+;   INIT_VARS_EB_47  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_108B_0013C19A  (3-arm: amiga, cart, dos)
+;   INIT_VARS_E6_EA  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_50B_2E2F4B8F  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_104B_FC3A9361  (2-arm: cart, dos)
+;   INIT_RANGE_48_TO_4D_TO_MAX  (3-arm: amiga, cart, dos)
+;   INIT_VARS_AA_AD_5B_5E_PLUS1  (3-arm: amiga, cart, dos)
+;   INIT_VARS_A1_A4_A7  (3-arm: amiga, cart, dos)
+;   DELETE_GAME_AND_FX_CHANNELS  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_61B_7F8B309C  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_66B_160F1222  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_66B_53AF86AC  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_66B_46DFEAE8  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_66B_F424839D  (3-arm: amiga, cart, dos)
+;   INIT_AI_VARS_AT_280_10  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_20  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0030  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0000  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0010  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0008  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0034  (3-arm: amiga, cart, dos)
+;   SET_VAR04_TO_0024  (3-arm: amiga, cart, dos)
+;   SET_VAR18_TO_0122  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_B8F4589C  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_9969BA71  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_43C274AC  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_44B_93E8A02A  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_358B_6F629262  (2-arm: cart, dos)
+;   FOLD_BODY_223B_DDF457BD  (2-arm: cart, dos)
+;   FOLD_BODY_206B_44F9C1BD  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_206B_F444FCB9  (3-arm: amiga, cart, dos)
+;   FOLD_BODY_261B_7A9CE2F7  (2-arm: cart, dos)
+;   FOLD_BODY_261B_43CF2CB1  (2-arm: cart, dos)
+
 ; Unified source for CAVES with 213 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
@@ -2184,150 +2850,3 @@ LABEL_01EE:
 	djnz [0x01], LABEL_01EE	;@raw=0x09,0x01,0x01,0xEE
 	break	;@raw=0x06
 	setPalette 0x0C	;@raw=0x0B,0x0C,0xFF
-
-KILL_CHANNEL_LANDING:
-	killChannel	;@raw=0x11
-
-KILL_CHAN_AT_01FB:
-	killChannel	;@raw=0x11
-
-LABEL_01FC:
-	or [HERO_ACTION_POS_MASK], 0x0004	;@raw=0x15,0xFE,0x00,0x04
-	and [HERO_ACTION_POS_MASK], 0x0007	;@raw=0x14,0xFE,0x00,0x07
-	or [HERO_POS_MASK], 0x0004	;@raw=0x15,0xFD,0x00,0x04
-	and [HERO_POS_MASK], 0x0007	;@raw=0x14,0xFD,0x00,0x07
-	break	;@raw=0x06
-	jmp LABEL_01FC	;@raw=0x07,0x01,0xFC
-LABEL_0210:
-	db 0x11
-
-LABEL_0211:
-	break	;@raw=0x06
-	break	;@raw=0x06
-	break	;@raw=0x06
-	break	;@raw=0x06
-	break	;@raw=0x06
-
-LABEL_0216:
-	break	;@raw=0x06
-	call LABEL_02C1	;@raw=0x04,0x02,0xC1
-	je [HERO_ACTION], 0x00, LABEL_0228	;@raw=0x0A,0x00,0xFA,0x00,0x02,0x28
-	djnz [0x03], LABEL_0216	;@raw=0x09,0x03,0x02,0x16
-	add [0x03], 0x0001	;@raw=0x03,0x03,0x00,0x01
-
-LABEL_0228:
-	break	;@raw=0x06
-	call LABEL_02C1	;@raw=0x04,0x02,0xC1
-	jne [HERO_ACTION], 0x00, LABEL_0236	;@raw=0x0A,0x01,0xFA,0x00,0x02,0x36
-	djnz [0x03], LABEL_0228	;@raw=0x09,0x03,0x02,0x28
-
-LABEL_0236:
-	deleteChannels first=0x00, last=0x3F	;@raw=0x0C,0x00,0x3F,0x02
-	freezeChannels first=0x00, last=0x3F	;@raw=0x0C,0x00,0x3F,0x00
-	setup channel=0x00, address=LABEL_0247	;@raw=0x08,0x00,0x02,0x47
-	setup channel=0x3C, address=LABEL_3F46	;@raw=0x08,0x3C,0x3F,0x46
-	killChannel	;@raw=0x11
-
-LABEL_0247:
-	fill page=0x00, color=0x00	;@raw=0x0E,0x00,0x00
-	fill page=0x03, color=0x00	;@raw=0x0E,0x03,0x00
-	fill page=0xFF, color=0x00	;@raw=0x0E,0xFF,0x00
-	play id=0x0052, freq=0x14, vol=0x00, channel=0x02	;@raw=0x18,0x00,0x52,0x14,0x00,0x02
-	play id=0x0052, freq=0x14, vol=0x00, channel=0x03	;@raw=0x18,0x00,0x52,0x14,0x00,0x03
-	play id=0x0052, freq=0x14, vol=0x00, channel=0x01	;@raw=0x18,0x00,0x52,0x14,0x00,0x01
-	play id=0x0052, freq=0x14, vol=0x00, channel=0x00	;@raw=0x18,0x00,0x52,0x14,0x00,0x00
-	call LABEL_00FB	;@raw=0x04,0x00,0xFB
-	setup channel=0x3C, address=LABEL_3F46	;@raw=0x08,0x3C,0x3F,0x46
-	or [0xE3], 0x0001	;@raw=0x15,0xE3,0x00,0x01
-	mov [PAUSE_SLICES], 0x0005	;@raw=0x00,0xFF,0x00,0x05
-	break	;@raw=0x06
-	setPalette 0x1D	;@raw=0x0B,0x1D,0xFF
-	je [0xE1], 0x01, LABEL_02B8	;@raw=0x0A,0x00,0xE1,0x01,0x02,0xB8
-
-LABEL_0281:
-	break	;@raw=0x06
-	text id=0x013D, x=5, y=80, color=0x0E ; "    PRESS BUTTON TO CONTINUE
-
-   PRESS START FOR CODE ENTRY"	;@raw=0x12,0x01,0x3D,0x05,0x50,0x0E
-	text id=0x013C, x=5, y=180, color=0x0D ; "        ACCESS CODE:"	;@raw=0x12,0x01,0x3C,0x05,0xB4,0x0D
-	call LABEL_03B9	;@raw=0x04,0x03,0xB9
-	call LABEL_02C1	;@raw=0x04,0x02,0xC1
-	jne [HERO_ACTION], 0x00, LABEL_0281	;@raw=0x0A,0x01,0xFA,0x00,0x02,0x81
-
-LABEL_029A:
-	text id=0x013D, x=5, y=80, color=0x0E ; "    PRESS BUTTON TO CONTINUE
-
-   PRESS START FOR CODE ENTRY"	;@raw=0x12,0x01,0x3D,0x05,0x50,0x0E
-	text id=0x013C, x=5, y=180, color=0x0D ; "        ACCESS CODE:"	;@raw=0x12,0x01,0x3C,0x05,0xB4,0x0D
-	call LABEL_03B9	;@raw=0x04,0x03,0xB9
-	break	;@raw=0x06
-	call LABEL_02C1	;@raw=0x04,0x02,0xC1
-	je [HERO_ACTION], 0x00, LABEL_029A	;@raw=0x0A,0x00,0xFA,0x00,0x02,0x9A
-	setup channel=0x00, address=LABEL_0000	;@raw=0x08,0x00,0x00,0x00
-	killChannel	;@raw=0x11
-
-LABEL_02B8:
-	load id=0x3E8A	;@raw=0x19,0x3E,0x8A
-	break	;@raw=0x06
-	setup channel=0x00, address=LABEL_0000	;@raw=0x08,0x00,0x00,0x00
-	killChannel	;@raw=0x11
-
-LABEL_02C1:
-	je [0xDB], 0x00, SHARED_RET	;@raw=0x0A,0x00,0xDB,0x00,0x82,0x87
-	jne [HERO_POS_JUMP_DOWN], 0xFFFF, SHARED_RET	;@raw=0x0A,0x41,0xFB,0xFF,0xFF,0x82,0x87
-	mov [HERO_ACTION], 0x0001	;@raw=0x00,0xFA,0x00,0x01
-	ret	;@raw=0x05
-
-LABEL_02D3:
-	call COPY_VAR00_TO_VARF8	;@raw=0x04,0x03,0xB1
-	jne [HACK_VAR_67], 0xCE, LABEL_02EC	;@raw=0x0A,0x01,0x67,0xCE,0x02,0xEC
-	jge [0xF8], 0x23, LABEL_02EC	;@raw=0x0A,0x03,0xF8,0x23,0x02,0xEC
-	jne [0xB0], 0x02, LABEL_02EC	;@raw=0x0A,0x01,0xB0,0x02,0x02,0xEC
-	mov [0xF8], 0x0023	;@raw=0x00,0xF8,0x00,0x23
-
-LABEL_02EC:
-	jne [HACK_VAR_67], 0xA7, LABEL_0308	;@raw=0x0A,0x01,0x67,0xA7,0x03,0x08
-	jge [0xF8], 0x25, LABEL_0308	;@raw=0x0A,0x03,0xF8,0x25,0x03,0x08
-	jne [0xB0], 0x02, LABEL_0308	;@raw=0x0A,0x01,0xB0,0x02,0x03,0x08
-	jg [0x02], 0x64, LABEL_0308	;@raw=0x0A,0x02,0x02,0x64,0x03,0x08
-	mov [0xF8], 0x0025	;@raw=0x00,0xF8,0x00,0x25
-
-LABEL_0308:
-	jne [HACK_VAR_67], 0x25, LABEL_0318	;@raw=0x0A,0x01,0x67,0x25,0x03,0x18
-	jge [0xF8], 0x1E, LABEL_0318	;@raw=0x0A,0x03,0xF8,0x1E,0x03,0x18
-	mov [0xF8], 0x001E	;@raw=0x00,0xF8,0x00,0x1E
-
-LABEL_0318:
-	jne [HACK_VAR_67], 0x45, LABEL_0328	;@raw=0x0A,0x01,0x67,0x45,0x03,0x28
-	jge [0xF8], 0x1F, LABEL_0328	;@raw=0x0A,0x03,0xF8,0x1F,0x03,0x28
-	mov [0xF8], 0x001F	;@raw=0x00,0xF8,0x00,0x1F
-
-LABEL_0328:
-	jne [HACK_VAR_67], 0x67, LABEL_0341	;@raw=0x0A,0x01,0x67,0x67,0x03,0x41
-	jge [0xF8], 0x21, LABEL_0341	;@raw=0x0A,0x03,0xF8,0x21,0x03,0x41
-	load id=0x0000	;@raw=0x19,0x00,0x00
-	call LABEL_01B3	;@raw=0x04,0x01,0xB3
-	call LABEL_0148	;@raw=0x04,0x01,0x48
-	mov [0xF8], 0x0021	;@raw=0x00,0xF8,0x00,0x21
-
-LABEL_0341:
-	je [HACK_VAR_67], 0x6B, LABEL_034D	;@raw=0x0A,0x00,0x67,0x6B,0x03,0x4D
-	jne [HACK_VAR_67], 0x4B, LABEL_036A	;@raw=0x0A,0x01,0x67,0x4B,0x03,0x6A
-
-LABEL_034D:
-	jne [0xB0], 0x03, LABEL_036A	;@raw=0x0A,0x01,0xB0,0x03,0x03,0x6A
-	jge [0xF8], 0x27, LABEL_036A	;@raw=0x0A,0x03,0xF8,0x27,0x03,0x6A
-	mov [HACK_VAR_67], 0x004B	;@raw=0x00,0x67,0x00,0x4B
-	load id=0x0000	;@raw=0x19,0x00,0x00
-	call LABEL_01B3	;@raw=0x04,0x01,0xB3
-	call LABEL_0173	;@raw=0x04,0x01,0x73
-	mov [0xF8], 0x0027	;@raw=0x00,0xF8,0x00,0x27
-
-LABEL_036A:
-	jne [0xB0], 0x03, LABEL_039D	;@raw=0x0A,0x01,0xB0,0x03,0x03,0x9D
-	jge [0xF8], 0x30, LABEL_039D	;@raw=0x0A,0x03,0xF8,0x30,0x03,0x9D
-	jle [0xF8], 0x2C, LABEL_0382	;@raw=0x0A,0x05,0xF8,0x2C,0x03,0x82
-	jge [0xF8], 0x29, FOLD_BODY_254B_838374D1	;@raw=0x0A,0x03,0xF8,0x29,0x03,0x88
-
-LABEL_0382:
-	jne [HACK_VAR_67], 0x6F, LABEL_039D	;@raw=0x0A,0x01,0x67,0x6F,0x03,0x9D
