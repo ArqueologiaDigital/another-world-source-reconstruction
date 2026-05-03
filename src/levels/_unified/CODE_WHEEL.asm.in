@@ -1,0 +1,12 @@
+; Skeleton unified source for CODE_WHEEL.
+; Each branch gets its own per-branch source verbatim via ;@include.
+; This is a starting point — folding cross-branch shared code into a
+; single body (the way LAKE.asm.in / INTRO.asm.in are written) is
+; future work; this skeleton is just the bare minimum that makes
+; verify_unified pass for CODE_WHEEL.
+
+;@if BRANCH == "dos_1992"
+;@include "code_wheel/dos.inc"
+;@elif BRANCH == "chahi_amiga_1991"
+;@include "code_wheel/amiga.inc"
+;@endif

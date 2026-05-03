@@ -1,0 +1,14 @@
+; Skeleton unified source for ENDING.
+; Each branch gets its own per-branch source verbatim via ;@include.
+; This is a starting point — folding cross-branch shared code into a
+; single body (the way LAKE.asm.in / INTRO.asm.in are written) is
+; future work; this skeleton is just the bare minimum that makes
+; verify_unified pass for ENDING.
+
+;@if BRANCH == "cartridge_1992"
+;@include "ending/cart.inc"
+;@elif BRANCH == "dos_1992"
+;@include "ending/dos.inc"
+;@elif BRANCH == "chahi_amiga_1991"
+;@include "ending/amiga.inc"
+;@endif
