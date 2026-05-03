@@ -3060,7 +3060,7 @@ SCATTER_8DOT_RIGHT_BODY:
 	sub [0x88], 0x0078
 	jl [0x88], 0x00, SCATTER_8DOT_RIGHT_BODY
 
-LABEL_0EDB:
+SCATTER_8DOT_RIGHT_WIDE_LOOP:
 	break
 	sub [0x8A], 0x0003
 	video type=1, offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
@@ -3069,7 +3069,7 @@ LABEL_0EDB:
 	add [0x88], 0x0064
 	video type=1, offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
 	sub [0x88], 0x0078
-	jl [0x88], 0x0140, LABEL_0EDB
+	jl [0x88], 0x0140, SCATTER_8DOT_RIGHT_WIDE_LOOP
 	jmp SCATTER_8DOT_LOOP_RIGHT
 	killChannel
 
@@ -3087,9 +3087,9 @@ SCATTER_8DOT_F3_BLINK_DELAY:
 	selectVideoPage 0xFF
 	mov [0x85], 0x0032
 
-LABEL_0F23:
+SCATTER_8DOT_F3_LONG_DELAY:
 	break
-	djnz [0x85], LABEL_0F23
+	djnz [0x85], SCATTER_8DOT_F3_LONG_DELAY
 	jmp SCATTER_8DOT_F3_BLINK_LOOP
 	killChannel
 
@@ -3127,11 +3127,11 @@ THE_BEAST_IS_KILLED_BY_A_LASER_SHOT:
 	video type=1, offset=CINEMATIC_BEAST_KILLED_F8, x=[0x0e], y=[0x0f], zoom=0x40
 	mov [0x10], 0x0005
 
-LABEL_0FA1:
+BEAST_KILLED_F8_REPEAT:
 	break
 	sub [0x0E], 0x0001
 	video type=1, offset=CINEMATIC_BEAST_KILLED_F8, x=[0x0e], y=[0x0f], zoom=0x40
-	djnz [0x10], LABEL_0FA1
+	djnz [0x10], BEAST_KILLED_F8_REPEAT
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	song id=0x0BBB, delay=0x0000, pos=0x00
 ;@endif
@@ -3164,17 +3164,17 @@ SCENE_TRANSITION_TO_GETTING_OUT_OF_POOL:
 	deleteChannels first=0x0B, last=0x13
 	mov [0x34], 0x0036
 
-LABEL_1010:
+BEAST_PRE_KILL_WAIT:
 	break
 	sub [0x34], 0x0001
-	je [0x34], 0x01, LABEL_1029
-	jl [0x0E], 0xB4, LABEL_1010
+	je [0x34], 0x01, BEAST_KILLED_POST_DELAY
+	jl [0x0E], 0xB4, BEAST_PRE_KILL_WAIT
 	setup channel=0x28, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x29, address=THE_BEAST_IS_KILLED_BY_A_LASER_SHOT
 
-LABEL_1029:
+BEAST_KILLED_POST_DELAY:
 	break
-	djnz [0x34], LABEL_1029
+	djnz [0x34], BEAST_KILLED_POST_DELAY
 	jmp LAKE_INTRO_SETUP
 	killChannel
 
@@ -3201,25 +3201,25 @@ LAKE_PALETTE_FADE_IN:
 	play id=0x003D, freq=0x14, vol=0x00, channel=0x02
 	play id=0x003D, freq=0x14, vol=0x00, channel=0x03
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	je [0xDB], 0x00, LABEL_10C3
-	jmp LABEL_10C3
+	je [0xDB], 0x00, POST_LAKE_INTRO_FADE_AND_TEXT
+	jmp POST_LAKE_INTRO_FADE_AND_TEXT
 	mov [0x03], 0x0032
 
 WAIT_VAR_03_FRAMES_LOOP:
 	break
 	djnz [0x03], WAIT_VAR_03_FRAMES_LOOP
 
-LABEL_10C3:
+POST_LAKE_INTRO_FADE_AND_TEXT:
 ;@endif
 ;@if BRANCH == "dos_1992"
-	je [0xDB], 0x00, LABEL_10C3
+	je [0xDB], 0x00, POST_LAKE_INTRO_FADE_AND_TEXT
 	mov [0x03], 0x0032
 
 WAIT_VAR_03_FRAMES_LOOP:
 	break
 	djnz [0x03], WAIT_VAR_03_FRAMES_LOOP
 
-LABEL_10C3:
+POST_LAKE_INTRO_FADE_AND_TEXT:
 ;@endif
 	freezeChannels first=0x00, last=0x3B
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
