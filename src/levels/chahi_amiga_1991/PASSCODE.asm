@@ -417,7 +417,7 @@ LABEL_0283:
 
 LABEL_05D5:
 	call DERIVE_VAR07_VAR08_FROM_VAR05
-	call LABEL_0AA1
+	call DRAW_CIN_054_IF_VAR06_EQ_1
 	ret
 
 SUM_HASH_VARS_TO_VAR_37:
@@ -772,16 +772,16 @@ LABEL_0A3D:
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_056, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x04,0x84,0x07,0x08
 	mov [0x06], [0x1E]
-	call LABEL_0AA1
+	call DRAW_CIN_054_IF_VAR06_EQ_1
 	add [0x07], 0x0008
 	mov [0x06], [0x1F]
-	call LABEL_0AA1
+	call DRAW_CIN_054_IF_VAR06_EQ_1
 	add [0x07], 0x0008
 	mov [0x06], [0x20]
-	call LABEL_0AA1
+	call DRAW_CIN_054_IF_VAR06_EQ_1
 	add [0x07], 0x0008
 	mov [0x06], [0x21]
-	call LABEL_0AA1
+	call DRAW_CIN_054_IF_VAR06_EQ_1
 	selectVideoPage 0xFF
 	ret
 
@@ -804,12 +804,12 @@ SCALE_VAR07_TIMES_9_PLUS_4A:
 	add [0x07], 0x004A
 	ret
 
-LABEL_0AA1:
-	jne [0x06], 0x01, LABEL_0AAE
+DRAW_CIN_054_IF_VAR06_EQ_1:
+	jne [0x06], 0x01, DRAW_CIN_053_IF_VAR06_EQ_2
 	video type=1, offset=CINEMATIC_054, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x06,0xD2,0x07,0x08,0x04
 	ret
 
-LABEL_0AAE:
+DRAW_CIN_053_IF_VAR06_EQ_2:
 	jne [0x06], 0x02, DRAW_GLYPH_KEY03_CIN_052
 	video type=1, offset=CINEMATIC_053, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x07,0x78,0x07,0x08,0x04
 	ret

@@ -668,7 +668,7 @@ LABEL_05EE:
 
 LABEL_05EF:
 	call DERIVE_VAR07_VAR08_FROM_VAR05
-	call LABEL_0E6A
+	call BLINK_LETTER_DISPATCHER
 	ret
 
 SUM_HASH_VARS_TO_VAR_37:
@@ -1113,16 +1113,16 @@ LABEL_0B6F:
 	video type=1, offset=CINEMATIC_056, x=160, y=100	;@raw=0x84,0x84,0xA0,0x64
 	text id=0x013C, x=2, y=80, color=0x06 ; "        ACCESS CODE:"
 	mov [0x06], [0x1E]
-	call LABEL_0E6A
+	call BLINK_LETTER_DISPATCHER
 	add [0x07], 0x0008
 	mov [0x06], [0x1F]
-	call LABEL_0E6A
+	call BLINK_LETTER_DISPATCHER
 	add [0x07], 0x0008
 	mov [0x06], [0x20]
-	call LABEL_0E6A
+	call BLINK_LETTER_DISPATCHER
 	add [0x07], 0x0008
 	mov [0x06], [0x21]
-	call LABEL_0E6A
+	call BLINK_LETTER_DISPATCHER
 	selectVideoPage 0xFF
 	ret
 
@@ -1391,15 +1391,15 @@ DRAW_LETTER_D_AT_X26:
 	text id=0x0139, x=26, y=80, color=0x04 ; "D"
 	ret
 
-LABEL_0E6A:
-	je [0x06], 0x62, LABEL_0E89
-	je [0x06], 0x63, LABEL_0E89
+BLINK_LETTER_DISPATCHER:
+	je [0x06], 0x62, DRAW_CIN_053_IF_VAR06_EQ_2
+	je [0x06], 0x63, DRAW_CIN_053_IF_VAR06_EQ_2
 	jne [0xDB], 0x00, DRAW_LETTER_2_DISPATCH_BY_X
-	jne [0x06], 0x01, LABEL_0E89
+	jne [0x06], 0x01, DRAW_CIN_053_IF_VAR06_EQ_2
 	video type=1, offset=CINEMATIC_054, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x06,0xD2,0x07,0x08,0x04
 	ret
 
-LABEL_0E89:
+DRAW_CIN_053_IF_VAR06_EQ_2:
 	jne [0x06], 0x02, DRAW_GLYPH_KEY03_CIN_052
 	video type=1, offset=CINEMATIC_053, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x07,0x78,0x07,0x08,0x04
 	ret
