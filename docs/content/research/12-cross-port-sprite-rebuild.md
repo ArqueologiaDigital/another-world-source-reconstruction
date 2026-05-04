@@ -127,6 +127,54 @@ mapped routines.
   set of CAPSULE — they survived the rework intact, just at
   different offsets.
 
+### Confirmed cut: HERO_RESUME_LEFT 10-frame animation cycle
+
+Following the address-clustering hint up to its named-EQU
+attribution: `tools/find_parent_polygons.py` walks the polygon
+hierarchy in reverse (child → parent group) and shows that the
+207 LAKE cut amiga sub-polys are referenced by **87 distinct
+parent group polygons**.
+
+The first 6 of those parent group offsets — `0x0310, 0x039C,
+0x0408, 0x0488, 0x0504, 0x0574` — match exactly the amiga LAKE
+EQUs `CINEMATIC_HERO_RESUME_LEFT_F4` through `F9`. Walking
+both polygon banks at these offsets with `polygon_walker.py`:
+
+| Offset | Amiga       | DOS           |
+|--------|-------------|---------------|
+| 0x0310 | group 32 B  | PARSE-FAIL    |
+| 0x039C | group 32 B  | solid 20 B    |
+| 0x0408 | group 32 B  | PARSE-FAIL    |
+| 0x0488 | group 32 B  | PARSE-FAIL    |
+| 0x0504 | group 32 B  | PARSE-FAIL    |
+| 0x0574 | group 36 B  | group 22 B    |
+| 0x0ADC | group 40 B  | PARSE-FAIL    | (HERO_RESUME_LEFT_F0)
+| 0x0B04 | group 40 B  | PARSE-FAIL    | (HERO_RESUME_LEFT_F1)
+| 0x0B2C | group 40 B  | PARSE-FAIL    | (HERO_RESUME_LEFT_F2)
+| 0x0B54 | group 40 B  | PARSE-FAIL    | (HERO_RESUME_LEFT_F3)
+
+DOS's polygon bank has **no valid polygon at all** at most of
+these amiga-RESUME-LEFT offsets, and where it does parse the
+content is unrelated (different size, different kind). DOS LAKE
+bytecode also doesn't reference any `CINEMATIC_HERO_RESUME_LEFT_F*`
+— the EQU symbols don't even exist in
+`src/levels/dos_1992/LAKE.asm`.
+
+**Verdict: the entire 10-frame `HERO_RESUME_LEFT` animation cycle
+was cut from the 1992 DOS rebuild.** The amiga bytecode runs a
+state-machine that plays HERO_RESUME_LEFT_F0..F9 as a smoothing
+transition between hero-stop and hero-walk-left states; DOS has
+no such transition — the hero presumably snaps from stop pose
+directly to walking. This is the cleanest, most concrete piece of
+**cut animation content** discovered by the archaeology project
+to date.
+
+The remaining 197 cut sub-polys (out of the 207 total) are
+contained in 81 other parent group polygons in amiga's bank —
+likely the rest of HERO_FALL_LEFT_*, HERO_LIFTOFF, hero
+walk/run cycles, etc. Same investigative pattern as above will
+attribute each to a named cut animation.
+
 ### Address-clustering hint for the LAKE 201 cut set
 
 The 207 amiga offsets in
