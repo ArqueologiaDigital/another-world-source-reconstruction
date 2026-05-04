@@ -342,5 +342,6 @@
 ;@include "prison/prison_sfx_and_dedup_helpers.inc"
 ;@include "prison/prison_pagefill_inits.inc"
 ;@include "prison/prison_dedups_and_landing_kill.inc"
-;@include "prison/prison_late_phase_var_setup_and_scroll.inc"
+;@include "prison/prison_late_phase_var_setup.inc"
+;@include "prison/prison_late_phase_scroll_and_pages.inc"
 ;@include "prison/prison_step_draws_and_breaks.inc"
