@@ -1,0 +1,3 @@
+DEDUP_CAVES_5B_007:
+	sub [0x08], 0x0001
+	ret

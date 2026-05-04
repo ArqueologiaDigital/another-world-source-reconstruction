@@ -1,0 +1,2 @@
+ADD_VAR2C_TO_VAR22:
+	add [0x22], [0x2C]

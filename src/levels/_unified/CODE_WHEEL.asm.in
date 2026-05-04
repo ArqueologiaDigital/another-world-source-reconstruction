@@ -261,14 +261,7 @@ COMPUTE_VAR07_TIMES_44_PLUS_20:
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-CLEAR_PAGES_1_2_AND_BLIT:
-	fill page=0x01, color=0x00
-	fill page=0x02, color=0x00
-	selectVideoPage 0x01
-	blitFramebuffer 0x01
-	blitFramebuffer 0xFF
-	blitFramebuffer 0x02
-	ret
+;@include "_helpers/CLEAR_PAGES_1_2_AND_BLIT.inc"
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"

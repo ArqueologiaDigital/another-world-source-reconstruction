@@ -1,0 +1,2 @@
+INLINE_SET_VAR29_TO_6:
+	mov [0x29], 0x0006

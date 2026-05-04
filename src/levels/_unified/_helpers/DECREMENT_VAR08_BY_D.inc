@@ -1,0 +1,3 @@
+DECREMENT_VAR08_BY_D:
+	sub [0x08], 0x000D
+	ret

@@ -1,0 +1,2 @@
+INLINE_SUB_VAR50_BY_14:
+	sub [0x50], 0x0014

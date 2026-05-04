@@ -1,0 +1,3 @@
+INCREMENT_VAR07_BY_1:
+	add [0x07], 0x0001
+	ret

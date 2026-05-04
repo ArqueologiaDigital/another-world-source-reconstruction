@@ -1,0 +1,3 @@
+COPY_VAR52_TO_VAR02_KILL_CHANNEL:
+	mov [0x02], [0x52]
+	killChannel

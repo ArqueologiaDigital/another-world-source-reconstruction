@@ -1,0 +1,4 @@
+STEP_VAR29_DOWN10_SET_VAR2F_11:
+	sub [0x29], 0x000A
+	mov [0x2F], 0x0011
+	ret

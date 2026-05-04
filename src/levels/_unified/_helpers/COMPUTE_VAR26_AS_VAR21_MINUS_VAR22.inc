@@ -1,0 +1,4 @@
+COMPUTE_VAR26_AS_VAR21_MINUS_VAR22:
+	mov [0x26], [0x21]
+	sub [0x26], [0x22]
+	ret

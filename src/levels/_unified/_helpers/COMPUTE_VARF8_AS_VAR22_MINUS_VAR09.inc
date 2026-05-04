@@ -1,0 +1,3 @@
+COMPUTE_VARF8_AS_VAR22_MINUS_VAR09:
+	mov [0xF8], [0x22]
+	sub [0xF8], [0x09]

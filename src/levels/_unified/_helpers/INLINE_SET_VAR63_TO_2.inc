@@ -1,0 +1,2 @@
+INLINE_SET_VAR63_TO_2:
+	mov [0x63], 0x0002

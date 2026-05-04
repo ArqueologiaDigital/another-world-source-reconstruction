@@ -1,0 +1,2 @@
+INLINE_ADD_VAR2C_BY_1:
+	add [0x2C], 0x0001

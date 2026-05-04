@@ -1,0 +1,6 @@
+ACCUMULATE_HASH_INTO_VAR37_38:
+	add [0x37], [0x01]
+	add [0x37], [HERO_ACTION_POS_MASK]
+	add [0x37], [0x31]
+	mov [0x38], [0x37]
+	ret

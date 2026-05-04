@@ -1,0 +1,3 @@
+DECREMENT_VARF8_BY_10:
+	sub [0xF8], 0x0010
+	ret

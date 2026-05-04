@@ -1,0 +1,3 @@
+INCREMENT_VAR21_BY_F:
+	add [0x21], 0x000F
+	ret

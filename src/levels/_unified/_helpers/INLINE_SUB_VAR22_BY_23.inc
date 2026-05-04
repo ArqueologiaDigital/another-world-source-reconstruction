@@ -1,0 +1,2 @@
+INLINE_SUB_VAR22_BY_23:
+	sub [0x22], 0x0023

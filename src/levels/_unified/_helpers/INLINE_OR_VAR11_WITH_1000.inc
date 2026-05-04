@@ -1,0 +1,3 @@
+INLINE_OR_VAR11_WITH_1000:
+	or [0x11], 0x1000
+	ret

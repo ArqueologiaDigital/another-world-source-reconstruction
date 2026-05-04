@@ -1,0 +1,3 @@
+INCREMENT_VAR31:
+	add [0x31], 0x0001
+	ret

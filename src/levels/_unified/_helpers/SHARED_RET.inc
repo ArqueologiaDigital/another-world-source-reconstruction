@@ -1,0 +1,2 @@
+SHARED_RET:
+	ret

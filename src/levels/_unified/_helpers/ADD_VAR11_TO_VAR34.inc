@@ -1,0 +1,2 @@
+ADD_VAR11_TO_VAR34:
+	add [0x34], [0x11]

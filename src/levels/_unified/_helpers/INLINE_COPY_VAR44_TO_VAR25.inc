@@ -1,0 +1,2 @@
+INLINE_COPY_VAR44_TO_VAR25:
+	mov [0x25], [0x44]

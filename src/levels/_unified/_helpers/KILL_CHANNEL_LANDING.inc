@@ -1,0 +1,2 @@
+KILL_CHANNEL_LANDING:
+	killChannel

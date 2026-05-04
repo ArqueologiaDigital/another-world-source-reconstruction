@@ -1,0 +1,3 @@
+DECREMENT_VAR22_BY_10:
+	sub [0x22], 0x0010
+	ret

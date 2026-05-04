@@ -1,0 +1,3 @@
+AND_VAR11_WITH_EFFF:
+	and [0x11], 0xEFFF
+	ret

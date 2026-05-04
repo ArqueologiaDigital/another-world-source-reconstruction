@@ -53,9 +53,7 @@
 ;@include "ending/dos__entry.inc"
 ;@endif
 
-KILL_CHANNEL_LANDING:
-	killChannel
-
+;@include "_helpers/KILL_CHANNEL_LANDING.inc"
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "ending/amiga__post_KILL_CHANNEL_LANDING.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -552,15 +550,7 @@ DRAW_STARS_CIN_38_39_40_5_6:
 ;@include "ending/dos__post_DRAW_STARS_CIN_38_39_40_5_6.inc"
 ;@endif
 
-CLEAR_PAGES_1_2_AND_BLIT:
-	fill page=0x01, color=0x00
-	fill page=0x02, color=0x00
-	selectVideoPage 0x01
-	blitFramebuffer 0x01
-	blitFramebuffer 0xFF
-	blitFramebuffer 0x02
-	ret
-
+;@include "_helpers/CLEAR_PAGES_1_2_AND_BLIT.inc"
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "ending/amiga__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
 ;@elif BRANCH == "cartridge_1992"

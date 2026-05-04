@@ -1,0 +1,2 @@
+INLINE_SET_VAR20_TO_1:
+	mov [0x20], 0x0001

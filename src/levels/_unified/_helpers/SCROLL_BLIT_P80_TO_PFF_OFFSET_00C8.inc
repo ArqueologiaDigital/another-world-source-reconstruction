@@ -1,0 +1,4 @@
+SCROLL_BLIT_P80_TO_PFF_OFFSET_00C8:
+	add [SCROLL_Y], 0x00C8
+	copyVideoPage src=0x80, dst=0xFF
+	sub [SCROLL_Y], 0x00C8

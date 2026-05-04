@@ -1,0 +1,2 @@
+INLINE_COPY_VAR22_TO_VAR08:
+	mov [0x08], [0x22]
