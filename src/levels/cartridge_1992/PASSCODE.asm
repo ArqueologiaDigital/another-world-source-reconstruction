@@ -73,10 +73,10 @@ LABEL_005E:
 	mov [0x06], [0x11]
 
 LABEL_0067:
-	jne [0x05], 0x08, LABEL_0070
+	jne [0x05], 0x08, LOAD_VAR13_TO_VAR06
 	mov [0x06], [0x12]
 
-LABEL_0070:
+LOAD_VAR13_TO_VAR06:
 	jne [0x05], 0x09, LOAD_VAR14_TO_VAR06
 	mov [0x06], [0x13]
 
@@ -332,11 +332,11 @@ LABEL_02D9:
 	ret
 
 LABEL_02E3:
-	jne [0x22], 0x08, LABEL_02ED
+	jne [0x22], 0x08, SAVE_HASH_VAR1D_TO_VAR13
 	mov [0x12], [0x1D]
 	ret
 
-LABEL_02ED:
+SAVE_HASH_VAR1D_TO_VAR13:
 	jne [0x22], 0x09, SAVE_HASH_VAR1D_TO_VAR14
 	mov [0x13], [0x1D]
 	ret
@@ -866,11 +866,11 @@ LABEL_0944:
 	ret
 
 LABEL_0951:
-	jne [0x06], 0x10, LABEL_095E
+	jne [0x06], 0x10, DRAW_LETTER_H_AT_X23
 	text id=0x0132, x=23, y=80, color=0x04 ; "G"
 	ret
 
-LABEL_095E:
+DRAW_LETTER_H_AT_X23:
 	jne [0x06], 0x11, DRAW_LETTER_J_AT_X23
 	text id=0x0133, x=23, y=80, color=0x04 ; "H"
 	ret
@@ -926,11 +926,11 @@ LABEL_09E0:
 	ret
 
 LABEL_09ED:
-	jne [0x06], 0x10, LABEL_09FA
+	jne [0x06], 0x10, DRAW_LETTER_H_AT_X24
 	text id=0x0132, x=24, y=80, color=0x04 ; "G"
 	ret
 
-LABEL_09FA:
+DRAW_LETTER_H_AT_X24:
 	jne [0x06], 0x11, DRAW_LETTER_J_AT_X24
 	text id=0x0133, x=24, y=80, color=0x04 ; "H"
 	ret
@@ -986,11 +986,11 @@ LABEL_0A7C:
 	ret
 
 LABEL_0A89:
-	jne [0x06], 0x10, LABEL_0A96
+	jne [0x06], 0x10, DRAW_LETTER_H_AT_X25
 	text id=0x0132, x=25, y=80, color=0x04 ; "G"
 	ret
 
-LABEL_0A96:
+DRAW_LETTER_H_AT_X25:
 	jne [0x06], 0x11, DRAW_LETTER_J_AT_X25
 	text id=0x0133, x=25, y=80, color=0x04 ; "H"
 	ret
@@ -1046,11 +1046,11 @@ LABEL_0B18:
 	ret
 
 LABEL_0B25:
-	jne [0x06], 0x10, LABEL_0B32
+	jne [0x06], 0x10, DRAW_LETTER_H_AT_X26
 	text id=0x0132, x=26, y=80, color=0x04 ; "G"
 	ret
 
-LABEL_0B32:
+DRAW_LETTER_H_AT_X26:
 	jne [0x06], 0x11, DRAW_LETTER_J_AT_X26
 	text id=0x0133, x=26, y=80, color=0x04 ; "H"
 	ret
