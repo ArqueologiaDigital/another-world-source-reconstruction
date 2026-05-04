@@ -7,6 +7,6 @@ LABEL_8CAA:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_250, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_256, x=[0x07], y=[0x08], zoom=0x40
-	je [0x0D], 0x00, 0x8CCD
+	je [0x0D], 0x00, INLINE_DRAW_CV_255_010
 	call LABEL_8B7B
-	jmp 0x8CD2
+	jmp DEDUP_CAVES_5B_020

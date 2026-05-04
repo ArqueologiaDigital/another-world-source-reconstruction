@@ -124,14 +124,14 @@ LABEL_4A1D:
 	jl [0x25], 0x0200, LABEL_4A33
 	jl [0x24], [0x21], LABEL_4A33
 	jg [0x24], [0x22], LABEL_4A33
-	jmp 0x4A63
+	jmp DEDUP_CAVES_6B_001
 
 LABEL_4A33:
 	add [0x24], 0x000A
 	jl [0x25], 0x0100, LABEL_4A4D
 	jl [0x24], [0x21], LABEL_4A4D
 	jg [0x24], [0x22], LABEL_4A4D
-	jmp 0x4A63
+	jmp DEDUP_CAVES_6B_001
 
 LABEL_4A4D:
 	add [0x24], 0x000A

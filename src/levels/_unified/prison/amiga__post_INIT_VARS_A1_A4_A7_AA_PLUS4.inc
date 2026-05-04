@@ -1,7 +1,7 @@
 TEARDOWN_CHANS_AND_KILL_LANDING:
 	deleteChannels first=0x00, last=0x08
 	deleteChannels first=0x34, last=0x37
-	setup channel=0x3B, address=0x017F
+	setup channel=0x3B, address=KILL_CHANNEL_LANDING
 	ret
 
 LABEL_85D9:
@@ -25,7 +25,7 @@ LABEL_85F5:
 	call LIKELY_A_COPY_PROTECTION_MECHANISM
 	setup channel=0x18, address=LABEL_41E3
 	setup channel=0x2F, address=LABEL_3807
-	setup channel=0x3B, address=0x017F
+	setup channel=0x3B, address=KILL_CHANNEL_LANDING
 	call LABEL_85D9
 	call INIT_RANGE_48_TO_4D_TO_MAX
 	call INIT_VARS_A1_A4_A7_AA_PLUS4

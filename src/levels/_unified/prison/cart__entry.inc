@@ -2276,7 +2276,7 @@ LABEL_00F7:
 
 LABEL_010D:
 	deleteChannels first=0x00, last=0x3F
-	setup channel=0x3C, address=0x020F
+	setup channel=0x3C, address=KILL_CHANNEL_LANDING
 	killChannel
 
 LABEL_0116:

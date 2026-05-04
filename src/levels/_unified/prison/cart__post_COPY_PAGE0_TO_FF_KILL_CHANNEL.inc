@@ -12,10 +12,10 @@ LABEL_81B6:
 	jg [0x01], 0x0104, LABEL_82CC
 	jge [0x04], 0x20, LABEL_82CC
 	break
-	jge [0x04], 0x4000, 0x020F
+	jge [0x04], 0x4000, KILL_CHANNEL_LANDING
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
 	break
-	jge [0x04], 0x4000, 0x020F
+	jge [0x04], 0x4000, KILL_CHANNEL_LANDING
 	mov [0x0A], 0x0001
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_172, x=253, y=181

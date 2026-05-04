@@ -227,7 +227,7 @@ INLINE_SET_VARE9_TO_8:
 ;@include "dos__post_INLINE_SET_VARE9_TO_8.inc"
 ;@endif
 
-KILL_CHANNEL_LANDING:
+KILL_CHANNEL_LANDING__PRISON_INLINE_SETTERS_AND_INIT:
 	killChannel
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -1947,7 +1947,7 @@ DRAW_CIN_169:
 ;@include "dos__post_DECREMENT_VAR08_BY_D.inc"
 ;@endif
 
-KILL_CHANNEL_LANDING:
+KILL_CHANNEL_LANDING__PRISON_INLINE_SETTERS_AND_INIT:
 	killChannel
 
 ;@if BRANCH == "chahi_amiga_1991"

@@ -365,9 +365,9 @@ LABEL_7788:
 	setup channel=0x24, address=LABEL_14D3
 	setup channel=0x25, address=LABEL_267B
 	setup channel=0x26, address=LABEL_150E
-	setup channel=0x27, address=0x020F
+	setup channel=0x27, address=KILL_CHANNEL_LANDING
 	setup channel=0x28, address=LABEL_1549
-	setup channel=0x3A, address=0x020F
+	setup channel=0x3A, address=KILL_CHANNEL_LANDING
 	setup channel=0x3F, address=LABEL_897B
 	call LABEL_0860
 	call LABEL_884B

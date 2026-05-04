@@ -124,14 +124,14 @@ LABEL_497C:
 	jl [0x25], 0x0200, LABEL_4992
 	jl [0x24], [0x21], LABEL_4992
 	jg [0x24], [0x22], LABEL_4992
-	jmp 0x49C2
+	jmp DEDUP_CAVES_6B_001
 
 LABEL_4992:
 	add [0x24], 0x000A
 	jl [0x25], 0x0100, LABEL_49AC
 	jl [0x24], [0x21], LABEL_49AC
 	jg [0x24], [0x22], LABEL_49AC
-	jmp 0x49C2
+	jmp DEDUP_CAVES_6B_001
 
 LABEL_49AC:
 	add [0x24], 0x000A

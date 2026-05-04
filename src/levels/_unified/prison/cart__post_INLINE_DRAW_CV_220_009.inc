@@ -8,6 +8,6 @@ LABEL_5722:
 LABEL_5731:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	play id=0x0055, freq=0x14, vol=0x14, channel=0x01
-	je [0x0D], 0x00, 0x5749
+	je [0x0D], 0x00, INLINE_DRAW_CV_216_027
 	call LABEL_53CB
 	jmp LABEL_574E

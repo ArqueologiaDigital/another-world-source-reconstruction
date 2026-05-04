@@ -124,14 +124,14 @@ LABEL_7D03:
 	jl [0x25], 0x0200, LABEL_7D19
 	jl [0x24], [0x21], LABEL_7D19
 	jg [0x24], [0x22], LABEL_7D19
-	jmp 0x7D49
+	jmp DEDUP_CAVES_6B_001
 
 LABEL_7D19:
 	add [0x24], 0x000A
 	jl [0x25], 0x0100, LABEL_7D33
 	jl [0x24], [0x21], LABEL_7D33
 	jg [0x24], [0x22], LABEL_7D33
-	jmp 0x7D49
+	jmp DEDUP_CAVES_6B_001
 
 LABEL_7D33:
 	add [0x24], 0x000A

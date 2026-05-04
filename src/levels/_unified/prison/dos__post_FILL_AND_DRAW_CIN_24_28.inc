@@ -37,7 +37,7 @@ LABEL_4B6A:
 	video type=1, offset=CINEMATIC_613, x=[0x07], y=[0x08], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_614, x=[0x07], y=[0x08], zoom=0x40
-	setup channel=0x22, address=0x01A1
+	setup channel=0x22, address=KILL_CHANNEL_LANDING
 	break
 	video type=1, offset=CINEMATIC_342, x=[0x07], y=[0x08], zoom=0x40
 	break

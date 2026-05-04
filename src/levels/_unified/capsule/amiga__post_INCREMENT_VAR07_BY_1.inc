@@ -3,45 +3,45 @@ LABEL_6B46:
 	shr [0xF8], 0x0004
 	and [0xF8], 0x000F
 	jne [0x0E], 0x00, LABEL_6B82
-	je [0xF8], 0x00, DRAW_CV_298
+	je [0xF8], 0x00, DRAW_CV_298__AMIGA__POST_INCREMENT_VAR07_BY_1
 	je [0xF8], 0x01, DRAW_CIN_174
-	je [0xF8], 0x02, DRAW_CIN_175
+	je [0xF8], 0x02, DRAW_CIN_175__AMIGA__POST_INCREMENT_VAR07_BY_1
 	je [0xF8], 0x03, DRAW_CIN_176
-	je [0xF8], 0x04, DRAW_CIN_177
+	je [0xF8], 0x04, DRAW_CIN_177__AMIGA__POST_INCREMENT_VAR07_BY_1
 	je [0xF8], 0x05, DRAW_CIN_178
 	je [0xF8], 0x06, DRAW_CIN_179
 	ret
 
 LABEL_6B82:
 	jne [0x0E], 0x01, LABEL_6B8B
-	jmp DRAW_CIN_173
+	jmp DRAW_CIN_173__AMIGA__POST_INCREMENT_VAR07_BY_1
 
 LABEL_6B8B:
 	jne [0x0E], 0x02, LABEL_6B94
-	jmp DRAW_CIN_172
+	jmp DRAW_CIN_172__AMIGA__POST_INCREMENT_VAR07_BY_1
 
 LABEL_6B94:
 	jne [0x0E], 0x03, LABEL_6B9D
-	jmp DRAW_CIN_171
+	jmp DRAW_CIN_171__AMIGA__POST_INCREMENT_VAR07_BY_1
 
 LABEL_6B9D:
 	jne [0x0E], 0x04, LABEL_6BAC
-	je [0xF8], 0x01, DRAW_CIN_169
+	je [0xF8], 0x01, DRAW_CIN_169__AMIGA__POST_INCREMENT_VAR07_BY_1
 	jmp DRAW_CIN_170
 
 LABEL_6BAC:
 	jne [0x0E], 0x05, LABEL_6BB5
-	jmp DRAW_CIN_168
+	jmp DRAW_CIN_168__AMIGA__POST_INCREMENT_VAR07_BY_1
 
 LABEL_6BB5:
 	jne [0x0E], 0x07, LABEL_6BC2
-	je [0xF8], 0x01, DRAW_CIN_167
+	je [0xF8], 0x01, DRAW_CIN_167__AMIGA__POST_INCREMENT_VAR07_BY_1
 	ret
 
 LABEL_6BC2:
 	ret
 
-DRAW_CV_298:
+DRAW_CV_298__AMIGA__POST_INCREMENT_VAR07_BY_1:
 	video type=0, offset=COMMON_VIDEO_298, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
@@ -49,7 +49,7 @@ DRAW_CIN_174:
 	video type=1, offset=CINEMATIC_174, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
-DRAW_CIN_175:
+DRAW_CIN_175__AMIGA__POST_INCREMENT_VAR07_BY_1:
 	video type=1, offset=CINEMATIC_175, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
@@ -57,7 +57,7 @@ DRAW_CIN_176:
 	video type=1, offset=CINEMATIC_176, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
-DRAW_CIN_177:
+DRAW_CIN_177__AMIGA__POST_INCREMENT_VAR07_BY_1:
 	video type=1, offset=CINEMATIC_177, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
@@ -65,15 +65,15 @@ DRAW_CIN_179:
 	video type=1, offset=CINEMATIC_179, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
-DRAW_CIN_173:
+DRAW_CIN_173__AMIGA__POST_INCREMENT_VAR07_BY_1:
 	video type=1, offset=CINEMATIC_173, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
-DRAW_CIN_172:
+DRAW_CIN_172__AMIGA__POST_INCREMENT_VAR07_BY_1:
 	video type=1, offset=CINEMATIC_172, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
-DRAW_CIN_171:
+DRAW_CIN_171__AMIGA__POST_INCREMENT_VAR07_BY_1:
 	video type=1, offset=CINEMATIC_171, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
@@ -81,15 +81,15 @@ DRAW_CIN_170:
 	video type=1, offset=CINEMATIC_170, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
-DRAW_CIN_169:
+DRAW_CIN_169__AMIGA__POST_INCREMENT_VAR07_BY_1:
 	video type=1, offset=CINEMATIC_169, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
-DRAW_CIN_168:
+DRAW_CIN_168__AMIGA__POST_INCREMENT_VAR07_BY_1:
 	video type=1, offset=CINEMATIC_168, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
-DRAW_CIN_167:
+DRAW_CIN_167__AMIGA__POST_INCREMENT_VAR07_BY_1:
 	video type=1, offset=CINEMATIC_167, x=[0x07], y=[0x08], zoom=0x40
 	ret
 LABEL_6C11:

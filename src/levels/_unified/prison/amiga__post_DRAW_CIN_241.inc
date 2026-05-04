@@ -908,7 +908,7 @@ LABEL_5C00:
 	video type=0, offset=COMMON_VIDEO_198, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, LABEL_5C29
 	call LABEL_5BA2
-	jmp 0x5C2E
+	jmp DEDUP_CAVES_5B_020__HELPER_DEDUP_CAVES_5B_020
 
 LABEL_5C29:
 	video type=0, offset=COMMON_VIDEO_199, x=[0x07], y=[0x08], zoom=0x40

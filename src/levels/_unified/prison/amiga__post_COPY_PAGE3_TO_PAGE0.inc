@@ -204,7 +204,7 @@ LABEL_83A1:
 	setup channel=0x04, address=LABEL_0BA8
 	setup channel=0x05, address=INLINE_SET_VARE7_TO_5
 	je [0xB4], 0x00, LABEL_83BB
-	setup channel=0x05, address=0x017F
+	setup channel=0x05, address=KILL_CHANNEL_LANDING
 	and [0x49], 0xFFBF
 
 LABEL_83BB:
@@ -275,8 +275,8 @@ LABEL_844C:
 	setup channel=0x01, address=INIT_VARS_E7_E8
 	setup channel=0x02, address=INLINE_SET_VARE9_TO_8
 	je [0xB4], 0x00, TRAMP_848D
-	setup channel=0x01, address=0x017F
-	setup channel=0x02, address=0x017F
+	setup channel=0x01, address=KILL_CHANNEL_LANDING
+	setup channel=0x02, address=KILL_CHANNEL_LANDING
 
 TRAMP_848D:
 	jmp VAR66_RANGE_DISPATCH_BY_VAR01

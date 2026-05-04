@@ -124,14 +124,14 @@ LABEL_7FD8:
 	jl [0x25], 0x0200, LABEL_7FEE
 	jl [0x24], [0x21], LABEL_7FEE
 	jg [0x24], [0x22], LABEL_7FEE
-	jmp 0x801E
+	jmp DEDUP_CAVES_6B_001
 
 LABEL_7FEE:
 	add [0x24], 0x000A
 	jl [0x25], 0x0100, LABEL_8008
 	jl [0x24], [0x21], LABEL_8008
 	jg [0x24], [0x22], LABEL_8008
-	jmp 0x801E
+	jmp DEDUP_CAVES_6B_001
 
 LABEL_8008:
 	add [0x24], 0x000A

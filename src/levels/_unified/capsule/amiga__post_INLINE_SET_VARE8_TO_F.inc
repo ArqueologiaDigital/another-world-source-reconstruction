@@ -155,7 +155,7 @@ LABEL_144F:
 	break
 	video type=1, offset=CINEMATIC_081, x=141, y=127
 	setup channel=0x0F, address=HANG_DRAW_CIN_083
-	setup channel=0x1D, address=HANG_DRAW_CIN_119
+	setup channel=0x1D, address=HANG_DRAW_CIN_119__AMIGA__POST_INLINE_SET_VARE8_TO_F
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_082, x=141, y=127
 	selectVideoPage 0xFF
@@ -171,10 +171,10 @@ HANG_DRAW_CIN_083:
 	break
 	jmp HANG_DRAW_CIN_083
 
-HANG_DRAW_CIN_119:
+HANG_DRAW_CIN_119__AMIGA__POST_INLINE_SET_VARE8_TO_F:
 	video type=1, offset=CINEMATIC_119, x=141, y=127
 	break
-	jmp HANG_DRAW_CIN_119
+	jmp HANG_DRAW_CIN_119__AMIGA__POST_INLINE_SET_VARE8_TO_F
 LABEL_14A6:
 	db 0x11, 0x54, 0x09, 0x5B, 0x01, 0x02, 0x06, 0x54
 	db 0x0A, 0x00, 0x01, 0x02, 0x06, 0x54, 0x4A, 0x6A

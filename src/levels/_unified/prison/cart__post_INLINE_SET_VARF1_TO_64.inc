@@ -33,7 +33,7 @@ LABEL_198A:
 	mov [0x2A], 0x0005
 	mov [0x42], 0x0037
 	mov [0x43], 0x0098
-	setup channel=0x15, address=0x020F
+	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	setup channel=0x14, address=LABEL_0501
 	setup channel=0x16, address=LABEL_0DB0
 	break

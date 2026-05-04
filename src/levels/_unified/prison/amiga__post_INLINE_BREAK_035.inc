@@ -73,7 +73,7 @@ LABEL_9364:
 LABEL_9365:
 	sub [0x01], 0x0005
 	sub [0x01], 0x0007
-	setup channel=0x15, address=0x017F
+	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	mov [0x63], 0x0064
 	break
 	video type=0, offset=COMMON_VIDEO_092, x=[0x01], y=[0x02], zoom=0x40
@@ -157,7 +157,7 @@ LABEL_946D:
 LABEL_946E:
 	add [0x01], 0x0005
 	add [0x01], 0x0007
-	setup channel=0x15, address=0x017F
+	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	mov [0x63], 0x0064
 	break
 	video type=0, offset=COMMON_VIDEO_039, x=[0x01], y=[0x02], zoom=0x40

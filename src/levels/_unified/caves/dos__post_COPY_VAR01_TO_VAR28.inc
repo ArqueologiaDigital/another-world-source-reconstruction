@@ -124,14 +124,14 @@ LABEL_8061:
 	jl [0x25], 0x0200, LABEL_8077
 	jl [0x24], [0x21], LABEL_8077
 	jg [0x24], [0x22], LABEL_8077
-	jmp 0x80A7
+	jmp DEDUP_CAVES_6B_001
 
 LABEL_8077:
 	add [0x24], 0x000A
 	jl [0x25], 0x0100, LABEL_8091
 	jl [0x24], [0x21], LABEL_8091
 	jg [0x24], [0x22], LABEL_8091
-	jmp 0x80A7
+	jmp DEDUP_CAVES_6B_001
 
 LABEL_8091:
 	add [0x24], 0x000A

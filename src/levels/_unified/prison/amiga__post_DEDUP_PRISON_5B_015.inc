@@ -22,7 +22,7 @@ LABEL_5CD7:
 	video type=0, offset=COMMON_VIDEO_212, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, LABEL_5D00
 	call LABEL_5BA2
-	jmp 0x5D05
+	jmp DEDUP_CAVES_5B_020
 
 LABEL_5D00:
 	video type=0, offset=COMMON_VIDEO_211, x=[0x07], y=[0x08], zoom=0x40

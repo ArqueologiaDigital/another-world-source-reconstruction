@@ -4,6 +4,6 @@ LABEL_8D56:
 	video type=0, offset=COMMON_VIDEO_244, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_262, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x07], 0x0001
-	je [0x0D], 0x00, 0x8D79
+	je [0x0D], 0x00, INLINE_DRAW_CV_243_012
 	call LABEL_8BAA
 	jmp INCREMENT_VAR07_BY_1
