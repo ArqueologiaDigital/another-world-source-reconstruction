@@ -118,8 +118,11 @@ new location:
 - `_helpers/X.inc` → `../_helpers/X.inc`
 
 After the chapter-split sweep, the 9 unified `.asm.in` files
-total ~1700 lines (down from ~14,000+ before any chapter cuts).
-Average ~190 lines per `.asm.in`; max ~340 (LAKE/PRISON).
+total ~1630 lines (down from ~14,000+ before any chapter cuts).
+Average ~180 lines per `.asm.in`; max ~344 (PRISON), ~307 (CAVES).
+Largest single chapter chunk is now ~1065 lines
+(`lake/hero_leap_right_kicks_crouch_pool.inc`); typical chunks
+are 30–800 lines.
 
 ### (2b) Per-arm chunks — multi-fold technique
 
