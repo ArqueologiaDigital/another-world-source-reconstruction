@@ -1,5 +1,5 @@
 ;@if BRANCH == "chahi_amiga_1991"
-CINEMATIC_HERO_FALL_LEFT_F2		EQU 0x0A64
+CINEMATIC_HERO_FALL_LEFT_2		EQU 0x0A64
 ;@endif
 
 HERO_AI_DISPATCH:
@@ -134,6 +134,6 @@ HERO_AI_TICK_WAIT_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_VIDEO_064_065_AND_CINEMATIC_HERO_SHADOW_RET
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_HERO_FALL_LEFT_F2, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=CINEMATIC_HERO_FALL_LEFT_2, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 

@@ -1,7 +1,7 @@
-CINEMATIC_HERO_STOP_RIGHT_FRAME_2		EQU 0xF608
+CINEMATIC_HERO_STOP_RIGHT_2		EQU 0xF608
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_HERO_SHADOW		EQU 0xDFFC
-CINEMATIC_HERO_STOP_RIGHT_FRAME_2		EQU 0xDFF2
+CINEMATIC_HERO_STOP_RIGHT_2		EQU 0xDFF2
 ;@endif
 
 COMMON_VIDEO_000		EQU 0x5DE4
@@ -210,106 +210,106 @@ JMP_TO_HERO_FALL_RIGHT_LOOP:
 DRAW_VIDEO_036_037_AND_HERO_STOP_RIGHT_FRAME_2_RET:
 	video type=0, offset=COMMON_VIDEO_036, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_037, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_038_039:
 	video type=0, offset=COMMON_VIDEO_038, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_039, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_040_041:
 	video type=0, offset=COMMON_VIDEO_040, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_041, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_042_043:
 	video type=0, offset=COMMON_VIDEO_042, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_043, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_VIDEO_044_045_AND_CINEMATIC_11_RET:
 	video type=0, offset=COMMON_VIDEO_044, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_045, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_046_047:
 	video type=0, offset=COMMON_VIDEO_046, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_047, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_LESTER_FRAME_BUNDLE:
 	video type=0, offset=COMMON_VIDEO_015, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_016, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_017, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_018_019:
 	video type=0, offset=COMMON_VIDEO_018, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_019, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_020_021:
 	video type=0, offset=COMMON_VIDEO_020, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_021, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_022_023:
 	video type=0, offset=COMMON_VIDEO_022, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_023, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_024_025:
 	video type=0, offset=COMMON_VIDEO_024, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_025, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_026_027:
 	video type=0, offset=COMMON_VIDEO_026, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_027, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_028_029:
 	video type=0, offset=COMMON_VIDEO_028, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_029, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_030_031:
 	video type=0, offset=COMMON_VIDEO_030, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_031, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_015_032_033:
 	video type=0, offset=COMMON_VIDEO_015, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_032, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_033, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_034_035:
 	video type=0, offset=COMMON_VIDEO_034, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_035, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_081_082:
 	video type=0, offset=COMMON_VIDEO_081, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_082, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0003
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0003
 	ret
 
@@ -317,7 +317,7 @@ DRAW_HERO_STOP_R_BUNDLE_083_084:
 	video type=0, offset=COMMON_VIDEO_083, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_084, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0004
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0004
 	ret
 
@@ -325,7 +325,7 @@ DRAW_HERO_STOP_R_BUNDLE_116_117:
 	video type=0, offset=COMMON_VIDEO_116, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_117, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0002
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0002
 	ret
 
@@ -333,7 +333,7 @@ DRAW_HERO_STOP_R_BUNDLE_118_119:
 	video type=0, offset=COMMON_VIDEO_118, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_119, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0001
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0001
 	ret
 
@@ -341,7 +341,7 @@ DRAW_HERO_STOP_R_BUNDLE_120_121:
 	video type=0, offset=COMMON_VIDEO_120, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_121, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0001
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0001
 	ret
 
@@ -349,7 +349,7 @@ DRAW_HERO_STOP_R_BUNDLE_086_087:
 	video type=0, offset=COMMON_VIDEO_086, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_087, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0003
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0003
 	ret
 
@@ -357,7 +357,7 @@ DRAW_HERO_STOP_R_BUNDLE_088_089:
 	video type=0, offset=COMMON_VIDEO_088, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_089, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0004
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0004
 	ret
 
@@ -365,7 +365,7 @@ DRAW_HERO_STOP_R_BUNDLE_090_091:
 	video type=0, offset=COMMON_VIDEO_090, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_091, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0002
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0002
 	ret
 
@@ -373,7 +373,7 @@ DRAW_HERO_STOP_R_BUNDLE_092_093:
 	video type=0, offset=COMMON_VIDEO_092, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_093, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0001
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0001
 	ret
 
@@ -381,7 +381,7 @@ DRAW_HERO_STOP_R_BUNDLE_094_095:
 	video type=0, offset=COMMON_VIDEO_094, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_095, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0001
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_FRAME_2, x=[0x01], y=[0x02], zoom=0x40
+	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0001
 	ret
 

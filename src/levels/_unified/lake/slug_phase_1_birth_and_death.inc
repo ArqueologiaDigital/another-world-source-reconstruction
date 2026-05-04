@@ -1,5 +1,5 @@
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-CINEMATIC_BEAST_AI_F0		EQU 0x9F94
+CINEMATIC_BEAST_AI_0		EQU 0x9F94
 CINEMATIC_LAKE_167_F1		EQU 0x808A
 CINEMATIC_LAKE_167_F1_F0		EQU 0x8072
 CINEMATIC_LAKE_167_F2		EQU 0x80C2
@@ -8,49 +8,49 @@ CINEMATIC_LAKE_167_F4		EQU 0x8132
 CINEMATIC_LAKE_167_F5		EQU 0x8166
 CINEMATIC_LAKE_167_F6		EQU 0x819A
 CINEMATIC_LAKE_167_F7		EQU 0x81CE
-CINEMATIC_SLUG_AFTER_F0		EQU 0x4F4E
-CINEMATIC_SLUG_AFTER_F1		EQU 0x4F7A
-CINEMATIC_SLUG_AFTER_F2		EQU 0x4FA6
-CINEMATIC_SLUG_L_F0		EQU 0x9D68
-CINEMATIC_SLUG_L_F1		EQU 0x9D8C
-CINEMATIC_SLUG_L_F10		EQU 0x9F14
-CINEMATIC_SLUG_L_F11		EQU 0x9F40
-CINEMATIC_SLUG_L_F12		EQU 0x9F6C
-CINEMATIC_SLUG_L_F2		EQU 0x9DB4
-CINEMATIC_SLUG_L_F3		EQU 0x9DE0
-CINEMATIC_SLUG_L_F4		EQU 0x9E0C
-CINEMATIC_SLUG_L_F5		EQU 0x9E38
-CINEMATIC_SLUG_L_F6		EQU 0x9E64
-CINEMATIC_SLUG_L_F7		EQU 0x9E90
-CINEMATIC_SLUG_L_F8		EQU 0x9EBC
-CINEMATIC_SLUG_L_F9		EQU 0x9EE8
-CINEMATIC_SLUG_R_F0		EQU 0x4E7E
-CINEMATIC_SLUG_R_F1		EQU 0x4EA2
-CINEMATIC_SLUG_R_F10		EQU 0x7E72
-CINEMATIC_SLUG_R_F11		EQU 0x7EA6
-CINEMATIC_SLUG_R_F12		EQU 0x7E5A
-CINEMATIC_SLUG_R_F13		EQU 0x7E42
-CINEMATIC_SLUG_R_F14		EQU 0x7EDA
-CINEMATIC_SLUG_R_F15		EQU 0x7EF2
-CINEMATIC_SLUG_R_F16		EQU 0x7F12
-CINEMATIC_SLUG_R_F17		EQU 0x7F32
-CINEMATIC_SLUG_R_F18		EQU 0x7F52
-CINEMATIC_SLUG_R_F19		EQU 0x7F76
-CINEMATIC_SLUG_R_F2		EQU 0x4ECA
-CINEMATIC_SLUG_R_F20		EQU 0x7F8E
-CINEMATIC_SLUG_R_F21		EQU 0x7FA6
-CINEMATIC_SLUG_R_F22		EQU 0x7FC2
-CINEMATIC_SLUG_R_F23		EQU 0x7FDE
-CINEMATIC_SLUG_R_F24		EQU 0x7FFA
-CINEMATIC_SLUG_R_F25		EQU 0x802E
-CINEMATIC_SLUG_R_F26		EQU 0x8046
-CINEMATIC_SLUG_R_F3		EQU 0x4EF6
-CINEMATIC_SLUG_R_F4		EQU 0x4F22
-CINEMATIC_SLUG_R_F5		EQU 0x7DC2
-CINEMATIC_SLUG_R_F6		EQU 0x7DDE
-CINEMATIC_SLUG_R_F7		EQU 0x7DF6
-CINEMATIC_SLUG_R_F8		EQU 0x7E0E
-CINEMATIC_SLUG_R_F9		EQU 0x7E2A
+CINEMATIC_SLUG_AFTER_0		EQU 0x4F4E
+CINEMATIC_SLUG_AFTER_1		EQU 0x4F7A
+CINEMATIC_SLUG_AFTER_2		EQU 0x4FA6
+CINEMATIC_SLUG_L_0		EQU 0x9D68
+CINEMATIC_SLUG_L_1		EQU 0x9D8C
+CINEMATIC_SLUG_L_10		EQU 0x9F14
+CINEMATIC_SLUG_L_11		EQU 0x9F40
+CINEMATIC_SLUG_L_12		EQU 0x9F6C
+CINEMATIC_SLUG_L_2		EQU 0x9DB4
+CINEMATIC_SLUG_L_3		EQU 0x9DE0
+CINEMATIC_SLUG_L_4		EQU 0x9E0C
+CINEMATIC_SLUG_L_5		EQU 0x9E38
+CINEMATIC_SLUG_L_6		EQU 0x9E64
+CINEMATIC_SLUG_L_7		EQU 0x9E90
+CINEMATIC_SLUG_L_8		EQU 0x9EBC
+CINEMATIC_SLUG_L_9		EQU 0x9EE8
+CINEMATIC_SLUG_R_0		EQU 0x4E7E
+CINEMATIC_SLUG_R_1		EQU 0x4EA2
+CINEMATIC_SLUG_R_10		EQU 0x7E72
+CINEMATIC_SLUG_R_11		EQU 0x7EA6
+CINEMATIC_SLUG_R_12		EQU 0x7E5A
+CINEMATIC_SLUG_R_13		EQU 0x7E42
+CINEMATIC_SLUG_R_14		EQU 0x7EDA
+CINEMATIC_SLUG_R_15		EQU 0x7EF2
+CINEMATIC_SLUG_R_16		EQU 0x7F12
+CINEMATIC_SLUG_R_17		EQU 0x7F32
+CINEMATIC_SLUG_R_18		EQU 0x7F52
+CINEMATIC_SLUG_R_19		EQU 0x7F76
+CINEMATIC_SLUG_R_2		EQU 0x4ECA
+CINEMATIC_SLUG_R_20		EQU 0x7F8E
+CINEMATIC_SLUG_R_21		EQU 0x7FA6
+CINEMATIC_SLUG_R_22		EQU 0x7FC2
+CINEMATIC_SLUG_R_23		EQU 0x7FDE
+CINEMATIC_SLUG_R_24		EQU 0x7FFA
+CINEMATIC_SLUG_R_25		EQU 0x802E
+CINEMATIC_SLUG_R_26		EQU 0x8046
+CINEMATIC_SLUG_R_3		EQU 0x4EF6
+CINEMATIC_SLUG_R_4		EQU 0x4F22
+CINEMATIC_SLUG_R_5		EQU 0x7DC2
+CINEMATIC_SLUG_R_6		EQU 0x7DDE
+CINEMATIC_SLUG_R_7		EQU 0x7DF6
+CINEMATIC_SLUG_R_8		EQU 0x7E0E
+CINEMATIC_SLUG_R_9		EQU 0x7E2A
 CINEMATIC_SLUG_R_PHASE1_F0		EQU 0x4FD2
 CINEMATIC_SLUG_R_PHASE1_F1		EQU 0x4FFE
 CINEMATIC_SLUG_R_PHASE1_F2		EQU 0x502A
@@ -61,7 +61,7 @@ CINEMATIC_SLUG_R_PHASE1_F6		EQU 0x7EBE
 CINEMATIC_SLUG_R_PHASE1_F7		EQU 0x8016
 ;@endif
 ;@if BRANCH == "chahi_amiga_1991"
-CINEMATIC_BEAST_AI_F0		EQU 0xB3A4
+CINEMATIC_BEAST_AI_0		EQU 0xB3A4
 CINEMATIC_LAKE_167_F1		EQU 0x949A
 CINEMATIC_LAKE_167_F1_F0		EQU 0x9482
 CINEMATIC_LAKE_167_F2		EQU 0x94D2
@@ -70,49 +70,49 @@ CINEMATIC_LAKE_167_F4		EQU 0x9542
 CINEMATIC_LAKE_167_F5		EQU 0x9576
 CINEMATIC_LAKE_167_F6		EQU 0x95AA
 CINEMATIC_LAKE_167_F7		EQU 0x95DE
-CINEMATIC_SLUG_AFTER_F0		EQU 0x635E
-CINEMATIC_SLUG_AFTER_F1		EQU 0x638A
-CINEMATIC_SLUG_AFTER_F2		EQU 0x63B6
-CINEMATIC_SLUG_L_F0		EQU 0xB178
-CINEMATIC_SLUG_L_F1		EQU 0xB19C
-CINEMATIC_SLUG_L_F10		EQU 0xB324
-CINEMATIC_SLUG_L_F11		EQU 0xB350
-CINEMATIC_SLUG_L_F12		EQU 0xB37C
-CINEMATIC_SLUG_L_F2		EQU 0xB1C4
-CINEMATIC_SLUG_L_F3		EQU 0xB1F0
-CINEMATIC_SLUG_L_F4		EQU 0xB21C
-CINEMATIC_SLUG_L_F5		EQU 0xB248
-CINEMATIC_SLUG_L_F6		EQU 0xB274
-CINEMATIC_SLUG_L_F7		EQU 0xB2A0
-CINEMATIC_SLUG_L_F8		EQU 0xB2CC
-CINEMATIC_SLUG_L_F9		EQU 0xB2F8
-CINEMATIC_SLUG_R_F0		EQU 0x628E
-CINEMATIC_SLUG_R_F1		EQU 0x62B2
-CINEMATIC_SLUG_R_F10		EQU 0x9282
-CINEMATIC_SLUG_R_F11		EQU 0x92B6
-CINEMATIC_SLUG_R_F12		EQU 0x926A
-CINEMATIC_SLUG_R_F13		EQU 0x9252
-CINEMATIC_SLUG_R_F14		EQU 0x92EA
-CINEMATIC_SLUG_R_F15		EQU 0x9302
-CINEMATIC_SLUG_R_F16		EQU 0x9322
-CINEMATIC_SLUG_R_F17		EQU 0x9342
-CINEMATIC_SLUG_R_F18		EQU 0x9362
-CINEMATIC_SLUG_R_F19		EQU 0x9386
-CINEMATIC_SLUG_R_F2		EQU 0x62DA
-CINEMATIC_SLUG_R_F20		EQU 0x939E
-CINEMATIC_SLUG_R_F21		EQU 0x93B6
-CINEMATIC_SLUG_R_F22		EQU 0x93D2
-CINEMATIC_SLUG_R_F23		EQU 0x93EE
-CINEMATIC_SLUG_R_F24		EQU 0x940A
-CINEMATIC_SLUG_R_F25		EQU 0x943E
-CINEMATIC_SLUG_R_F26		EQU 0x9456
-CINEMATIC_SLUG_R_F3		EQU 0x6306
-CINEMATIC_SLUG_R_F4		EQU 0x6332
-CINEMATIC_SLUG_R_F5		EQU 0x91D2
-CINEMATIC_SLUG_R_F6		EQU 0x91EE
-CINEMATIC_SLUG_R_F7		EQU 0x9206
-CINEMATIC_SLUG_R_F8		EQU 0x921E
-CINEMATIC_SLUG_R_F9		EQU 0x923A
+CINEMATIC_SLUG_AFTER_0		EQU 0x635E
+CINEMATIC_SLUG_AFTER_1		EQU 0x638A
+CINEMATIC_SLUG_AFTER_2		EQU 0x63B6
+CINEMATIC_SLUG_L_0		EQU 0xB178
+CINEMATIC_SLUG_L_1		EQU 0xB19C
+CINEMATIC_SLUG_L_10		EQU 0xB324
+CINEMATIC_SLUG_L_11		EQU 0xB350
+CINEMATIC_SLUG_L_12		EQU 0xB37C
+CINEMATIC_SLUG_L_2		EQU 0xB1C4
+CINEMATIC_SLUG_L_3		EQU 0xB1F0
+CINEMATIC_SLUG_L_4		EQU 0xB21C
+CINEMATIC_SLUG_L_5		EQU 0xB248
+CINEMATIC_SLUG_L_6		EQU 0xB274
+CINEMATIC_SLUG_L_7		EQU 0xB2A0
+CINEMATIC_SLUG_L_8		EQU 0xB2CC
+CINEMATIC_SLUG_L_9		EQU 0xB2F8
+CINEMATIC_SLUG_R_0		EQU 0x628E
+CINEMATIC_SLUG_R_1		EQU 0x62B2
+CINEMATIC_SLUG_R_10		EQU 0x9282
+CINEMATIC_SLUG_R_11		EQU 0x92B6
+CINEMATIC_SLUG_R_12		EQU 0x926A
+CINEMATIC_SLUG_R_13		EQU 0x9252
+CINEMATIC_SLUG_R_14		EQU 0x92EA
+CINEMATIC_SLUG_R_15		EQU 0x9302
+CINEMATIC_SLUG_R_16		EQU 0x9322
+CINEMATIC_SLUG_R_17		EQU 0x9342
+CINEMATIC_SLUG_R_18		EQU 0x9362
+CINEMATIC_SLUG_R_19		EQU 0x9386
+CINEMATIC_SLUG_R_2		EQU 0x62DA
+CINEMATIC_SLUG_R_20		EQU 0x939E
+CINEMATIC_SLUG_R_21		EQU 0x93B6
+CINEMATIC_SLUG_R_22		EQU 0x93D2
+CINEMATIC_SLUG_R_23		EQU 0x93EE
+CINEMATIC_SLUG_R_24		EQU 0x940A
+CINEMATIC_SLUG_R_25		EQU 0x943E
+CINEMATIC_SLUG_R_26		EQU 0x9456
+CINEMATIC_SLUG_R_3		EQU 0x6306
+CINEMATIC_SLUG_R_4		EQU 0x6332
+CINEMATIC_SLUG_R_5		EQU 0x91D2
+CINEMATIC_SLUG_R_6		EQU 0x91EE
+CINEMATIC_SLUG_R_7		EQU 0x9206
+CINEMATIC_SLUG_R_8		EQU 0x921E
+CINEMATIC_SLUG_R_9		EQU 0x923A
 CINEMATIC_SLUG_R_PHASE1_F0		EQU 0x63E2
 CINEMATIC_SLUG_R_PHASE1_F1		EQU 0x640E
 CINEMATIC_SLUG_R_PHASE1_F2		EQU 0x643A
@@ -127,43 +127,43 @@ SLUG_PHASE_1_LEFT_INIT:
 	mov [0x0D], 0x0001
 
 SLUG_L_BIRTH_LOOP:
-	video type=1, offset=CINEMATIC_SLUG_L_F0, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_L_0, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_L_F1, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_L_1, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_L_F2, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_L_2, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_L_F3, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_L_3, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_L_F4, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_L_4, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call JMP_TO_CHECK_BEAST_NEAR
 	jne [0x07], 0x00, IF_BEAST_NEAR_THEN_REACT_ELSE_KILL_THREAD
-	video type=1, offset=CINEMATIC_SLUG_L_F5, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_L_5, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_L_F6, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_L_6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_L_F7, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_L_7, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_L_F8, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_L_8, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0003
-	video type=1, offset=CINEMATIC_SLUG_L_F9, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_L_9, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0002
-	video type=1, offset=CINEMATIC_SLUG_L_F10, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_L_10, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_L_F11, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_L_11, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_L_F12, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_L_12, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_BEAST_AI_F0, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_BEAST_AI_0, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	sub [0x0C], 0x0002
 	jmp SLUG_L_BIRTH_LOOP
@@ -173,25 +173,25 @@ SLUG_PHASE_1_RIGHT_INIT:
 	mov [0x0D], 0x0001
 
 SLUG_R_BIRTH_LOOP:
-	video type=1, offset=CINEMATIC_SLUG_R_F0, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_0, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F1, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_1, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F2, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_2, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F3, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_3, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F4, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_4, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call CHECK_IF_BEAST_IS_NEAR_LESTER
 	jne [0x07], 0x00, IF_BEAST_NEAR_THEN_REACT_ELSE_KILL_THREAD_2
-	video type=1, offset=CINEMATIC_SLUG_AFTER_F0, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_AFTER_0, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	sub [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_AFTER_F1, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_AFTER_1, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	sub [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_AFTER_F2, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_AFTER_2, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	sub [0x0C], 0x0001
 	video type=1, offset=CINEMATIC_SLUG_R_PHASE1_F0, x=[0x0c], y=[0x0d], zoom=0x40
@@ -218,7 +218,7 @@ SLUG_R_BIRTH_LOOP:
 SLUG_R_PHASE1_F6_THEN_DEATH:
 	video type=1, offset=CINEMATIC_SLUG_R_PHASE1_F6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F6, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	jmp SLUG_R_DEATH_F10_TO_F26
 	killChannel
@@ -229,50 +229,50 @@ SLUG_R_F4_RAND_DELAY_INIT:
 	add [0x13], 0x0001
 
 SLUG_R_F4_REPEAT_LOOP:
-	video type=1, offset=CINEMATIC_SLUG_R_F4, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_4, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	djnz [0x13], SLUG_R_F4_REPEAT_LOOP
-	video type=1, offset=CINEMATIC_SLUG_R_F5, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_5, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F6, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F7, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_7, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F8, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_8, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F9, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_9, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F6, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 
 SLUG_R_DEATH_F10_TO_F26:
-	video type=1, offset=CINEMATIC_SLUG_R_F10, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_10, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F11, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_11, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F10, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_10, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F12, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_12, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F6, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F13, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_13, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F9, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_9, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F13, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_13, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F14, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F6, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F6, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F14, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F14, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F14, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d], zoom=0x40
 	call COMPUTE_RANDOM_BIT_MASKS
 	mov [0x13], [0x39]
 	add [0x13], 0x0002
@@ -283,7 +283,7 @@ SLUG_R_F6_RAND_HOLD:
 SLUG_R_F6_RAND_HOLD:
 ;@endif
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F6, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
 ;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991", "dos_1992")
 	djnz [0x13], SLUG_R_F6_RAND_HOLD
 ;@elif BRANCH == "gba_2004"
@@ -294,48 +294,48 @@ SLUG_R_F6_RAND_HOLD:
 
 SLUG_R_F15_DRIFT_DOWN:
 	add [0x0D], 0x0009
-	video type=1, offset=CINEMATIC_SLUG_R_F15, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_15, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	djnz [0x13], SLUG_R_F15_DRIFT_DOWN
 	mov [0x13], 0x0003
 
 SLUG_R_F16_DRIFT_DOWN:
 	add [0x0D], 0x000A
-	video type=1, offset=CINEMATIC_SLUG_R_F16, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_16, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	djnz [0x13], SLUG_R_F16_DRIFT_DOWN
 	mov [0x13], 0x0003
 
 SLUG_R_F17_DRIFT_DOWN:
 	add [0x0D], 0x000C
-	video type=1, offset=CINEMATIC_SLUG_R_F17, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_17, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	djnz [0x13], SLUG_R_F17_DRIFT_DOWN
 	mov [0x13], 0x0007
 
 SLUG_R_F18_DRIFT_DOWN:
 	add [0x0D], 0x000E
-	video type=1, offset=CINEMATIC_SLUG_R_F18, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_18, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	djnz [0x13], SLUG_R_F18_DRIFT_DOWN
 	play id=0x003A, freq=0x14, vol=0x3F, channel=0x00
-	video type=1, offset=CINEMATIC_SLUG_R_F19, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_19, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F20, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_20, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F21, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_21, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F22, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_22, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F23, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_23, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F24, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_24, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_SLUG_R_PHASE1_F7, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F25, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_25, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_F26, x=[0x0c], y=[0x0d], zoom=0x40
+	video type=1, offset=CINEMATIC_SLUG_R_26, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	sub [0x0C], 0x0008
 	jl [0x01], [0x0C], JMP_TO_SLUG_ANIMATION
