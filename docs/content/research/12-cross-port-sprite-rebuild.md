@@ -170,6 +170,14 @@ for the rendering follow-on task.
    ports inherit Heineman's DOS bytecode, these +90 sprites may
    also be present in the SNES/Genesis polygon banks (gated on
    cart polygon extraction — issue [#0068](#/issues/0068-awvm-tools-cartridge-ports-extract-cinematic-rom-too)).
+
+   The +90 cluster sits in a contiguous 8 KB block (0x5e00..0x7100)
+   of DOS's TANK polygon resource. That range contains CINEMATIC_036,
+   037, 088–105+ (18 sequential cinematic indices), suggesting
+   a single multi-frame animation sequence added in the DOS port.
+   Likely candidates: tank enemy sprite cycles, projectile
+   variants, or HUD elements. Visual rendering would identify
+   which.
 4. **CAPSULE's bidirectional rework (107+360) is unique.** Worth
    investigating which scene transitions or character animations
    trigger the rebuild — the alien sub-anim renumbering (issue
