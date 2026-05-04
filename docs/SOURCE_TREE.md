@@ -118,11 +118,16 @@ new location:
 - `_helpers/X.inc` → `../_helpers/X.inc`
 
 After the chapter-split sweep, the 9 unified `.asm.in` files
-total ~1630 lines (down from ~14,000+ before any chapter cuts).
-Average ~180 lines per `.asm.in`; max ~344 (PRISON), ~307 (CAVES).
-Largest single chapter chunk is now ~1065 lines
-(`lake/hero_leap_right_kicks_crouch_pool.inc`); typical chunks
-are 30–800 lines.
+total ~1650 lines (down from ~14,000+ before any chapter cuts).
+Average ~180 lines per `.asm.in`; max ~347 (PRISON), ~307 (CAVES).
+122 named chapter chunks across the 9 stages. Largest single
+chapter chunk is `capsule/capsule_init_dispatch.inc` at 816
+lines (only 2 depth-0 labels — mostly fold-body include
+scaffolding, not productively splittable). Largest chapter
+with multiple labels is `caves/caves_dedup_helpers_cluster.inc`
+at 786 lines (5 labels). Most chapters are 100–500 lines;
+chapters with many small init/setter routines are typically
+200–400 lines.
 
 ### (2b) Per-arm chunks — multi-fold technique
 
