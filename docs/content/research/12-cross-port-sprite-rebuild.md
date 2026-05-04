@@ -160,20 +160,60 @@ bytecode also doesn't reference any `CINEMATIC_HERO_RESUME_LEFT_F*`
 — the EQU symbols don't even exist in
 `src/levels/dos_1992/LAKE.asm`.
 
-**Verdict: the entire 10-frame `HERO_RESUME_LEFT` animation cycle
-was cut from the 1992 DOS rebuild.** The amiga bytecode runs a
-state-machine that plays HERO_RESUME_LEFT_F0..F9 as a smoothing
-transition between hero-stop and hero-walk-left states; DOS has
-no such transition — the hero presumably snaps from stop pose
-directly to walking. This is the cleanest, most concrete piece of
-**cut animation content** discovered by the archaeology project
-to date.
+**Verdict: the 10-frame `HERO_RESUME_LEFT` animation cycle was
+either cut entirely or radically simplified in the 1992 DOS
+rebuild.** The amiga bytecode runs a state-machine that plays
+HERO_RESUME_LEFT_F0..F9 as a smoothing transition between
+hero-stop and hero-walk-left states. DOS has the routine label
+`HERO_RESUME_LEFT_F3_DONE:` as a control-flow waypoint but no
+matching cinematic frames at any offset. DOS uses a simpler
+helper (`DRAW_VIDEO_073_AND_CIN_002`) instead of the per-frame
+video calls amiga makes.
 
-The remaining 197 cut sub-polys (out of the 207 total) are
-contained in 81 other parent group polygons in amiga's bank —
-likely the rest of HERO_FALL_LEFT_*, HERO_LIFTOFF, hero
-walk/run cycles, etc. Same investigative pattern as above will
-attribute each to a named cut animation.
+This is the cleanest, most concrete piece of **cut/simplified
+animation content** discovered by the archaeology project to
+date. Visual rendering of the amiga group polygons at offsets
+0x0ADC, 0x0B04, 0x0B2C, 0x0B54, 0x0310, 0x039C, 0x0408, 0x0488,
+0x0504, 0x0574 (via `tools/polygon_render_png.py`) would produce
+the 10 frames as a viewable animation strip showing the hero's
+gradual return to walking.
+
+### The other 81 parent groups
+
+The remaining 197 cut sub-polys (out of 207 total) are contained
+in 81 other parent group polygons in amiga's bank. The next 16
+parent offsets attribute to:
+
+| Offset | Amiga EQU                                |
+|--------|------------------------------------------|
+| 0x061C | CINEMATIC_HERO_STANDING_LEFT_IDLE        |
+| 0x0640 | CINEMATIC_HERO_LEFT_PROFILE              |
+| 0x06A4 | CINEMATIC_HERO_LEAP_RIGHT_F0             |
+| 0x0734 | CINEMATIC_HERO_LEAP_RIGHT_F1             |
+| 0x07B8 | CINEMATIC_HERO_LEAP_RIGHT_F2             |
+| 0x0854 | CINEMATIC_HERO_LEAP_RIGHT_F3             |
+| 0x08F0 | CINEMATIC_HERO_LEAP_RIGHT_F4             |
+| 0x0970 | CINEMATIC_HERO_LEAP_RIGHT_F5             |
+| 0x0998 | CINEMATIC_HERO_LEAP_RIGHT_F6             |
+| 0x09C0 | CINEMATIC_HERO_LEAP_RIGHT_F7             |
+| 0x09E8 | CINEMATIC_HERO_LEAP_RIGHT_F8             |
+| 0x0A14 | CINEMATIC_HERO_LEAP_RIGHT_F9             |
+| 0x0A3C | CINEMATIC_HERO_FALL_LEFT_F1              |
+| 0x0A64 | CINEMATIC_HERO_FALL_LEFT_F2              |
+| 0x0A8C | CINEMATIC_HERO_FALL_LEFT_F3              |
+| 0x0AB4 | CINEMATIC_HERO_FALL_LEFT_F4              |
+
+That's 16 more named hero-animation frames — bringing the
+attributed total to **26+ named hero animation frames** that
+amiga 1991 used at LAKE. Note: HERO_LEAP_RIGHT does have a DOS
+equivalent (`HERO_LEAP_RIGHT_LOOP`), but the latter calls
+`DRAW_HERO_STOP_R_BUNDLE_NN_MM` helpers that draw COMPOSITE
+cinematics (paired sub-frames), not the 10 individual amiga
+frames. So LEAP_RIGHT was *rebuilt* (different sprite-bundling
+strategy), not strictly cut.
+
+HERO_FALL_LEFT and HERO_RESUME_LEFT appear to be the cleanest
+"cut" cases. The remaining 65 parent groups still need attribution.
 
 ### Address-clustering hint for the LAKE 201 cut set
 
