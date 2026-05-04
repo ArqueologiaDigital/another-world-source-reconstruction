@@ -47,6 +47,11 @@ help:
 	@echo "  make verify-bytecode     just bytecode round-trip for TARGET"
 	@echo "  make verify-resources    just raw-asset md5 check for TARGET"
 	@echo "  make verify-all          everything for every supported port"
+	@echo "  make verify-stages       per-port .asm round-trip (29/29)"
+	@echo "  make verify-unified      unified .asm.in round-trip (27/27)"
+	@echo "  make test                CI-style aggregate gate"
+	@echo "                           (verify-stages + verify-unified + verify-all + lint)"
+	@echo "  make lint                run all linters (lint-raw, ...)"
 	@echo "  make plan                show PLAN.md"
 	@echo "  make clean               wipe build/"
 	@echo ""
@@ -99,6 +104,29 @@ verify-bytecode-all:
 .PHONY: verify-resources-all
 verify-resources-all:
 	@cd $(ARCHAEOLOGY) && python3 tools/verify_resources.py --port _ --all
+
+# CI-style aggregate gate: all the byte-equivalence checks the project
+# considers blocking, in one rule. Pre-commit / CI should run this
+# before merging any change to src/, releases/, or the unified
+# .asm.in tree.
+#
+# Currently wraps:
+#   - verify-stages   (28 canonical per-port .asm files round-trip OK)
+#   - verify-all      (5 ports × stages: bytecode + resources)
+#   - lint            (currently just lint-raw — no `;@raw=` markers)
+# Plus the unified-source byte-match check (verify_unified.py).
+#
+# Tracks issue #0064: "Byte-equivalence test framework for source-
+# reconstruction repo (CI gate)".
+.PHONY: test
+test: verify-stages verify-unified verify-all lint
+	@echo
+	@echo "=== test gate: PASS ==="
+
+.PHONY: verify-unified
+verify-unified:
+	@cd $(ARCHAEOLOGY) && python3 tools/verify_unified.py \
+	    --src-tree $(realpath src/levels)
 
 # Phase 3a: branch-organized canonical sources at src/levels/<branch>/<stage>.asm.
 # One canonical .asm per (branch, stage); each ports's level slot maps to a
