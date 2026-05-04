@@ -196,6 +196,7 @@
 ; `intro_transition_to_lake_setup.inc` — the setup chunk wires the
 ; channels, this chunk runs the visible animation.
 ;@include "intro/intro_lake_transition.inc"
+;@include "intro/intro_lake_phase_fx_drifts.inc"
 
 ; Late-intro parallax-scrolling phase
 ; (`PARALLAX_CIN_126_127_LOOP`, `ZOOM_OUT_VAR4_M3_LOOP`,
