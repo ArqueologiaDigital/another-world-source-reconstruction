@@ -154,7 +154,17 @@
 ; are parameterised pan steps (delta-x, delta-y, repeat count); each
 ; runs a few frames then chains to the next pan delta. Music marks
 ; (e.g. mark 0x2B) gate transitions on song beats.
-;@include "intro/intro_music_marks_and_city.inc"
+;@include "intro/intro_music_marks_and_city_pans.inc"
+
+; City-sequence draw routines: DRAW_CITY_SEQ_432_433,
+; DRAW_CITY_SEQ_435_436, DRAW_CITY_SEQ_439_440,
+; INTRO_FILL_AND_DRAW_CIN_429_430, SETUP_INTRO_CITY_CHANNELS,
+; the WAIT_*_BEFORE_COPY_PAGE_03 / DELAY_*_BEFORE_BLIT_DISPATCH
+; cluster, plus DRAW_CIN_190_LOOP / DRAW_CIN_431_LOOP. The
+; "draw routines" half of the city pan; corresponds to the
+; per-frame video calls that the music_marks_and_city_pans
+; chunk schedules onto channels.
+;@include "intro/intro_city_seq_draws.inc"
 
 ; Page-flip + on-screen-text helpers (`SHOW_PAGE_0_LOOP_INTRO`,
 ; `SHOW_PAGE_FF_LOOP_INTRO`, `SHOW_TEXT_39_AT_5_170_10X`). Used to
