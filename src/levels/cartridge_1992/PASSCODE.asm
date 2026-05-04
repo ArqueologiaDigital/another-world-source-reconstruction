@@ -49,14 +49,14 @@ LABEL_0028:
 	mov [0x06], [0x0B]
 
 LABEL_0031:
-	jne [0x05], 0x02, LABEL_003A
+	jne [0x05], 0x02, LOAD_VAR0D_TO_VAR06
 	mov [0x06], [0x0C]
 
-LABEL_003A:
-	jne [0x05], 0x03, LABEL_0043
+LOAD_VAR0D_TO_VAR06:
+	jne [0x05], 0x03, LOAD_VAR0E_TO_VAR06
 	mov [0x06], [0x0D]
 
-LABEL_0043:
+LOAD_VAR0E_TO_VAR06:
 	jne [0x05], 0x04, LOAD_VAR0F_TO_VAR06
 	mov [0x06], [0x0E]
 
@@ -163,10 +163,10 @@ INIT_BITMASKS_BC_C6:
 	video type=1, offset=CINEMATIC_005, x=0, y=0	;@raw=0x80,0x10,0x00,0x00
 
 DRAW_PROGRESS_MARKERS:
-	je [0xC6], 0x00, LABEL_0167
+	je [0xC6], 0x00, DRAW_CIN_058_AT_0_16_IF_VARF2_EQ_FA0
 	video type=1, offset=CINEMATIC_005, x=16, y=0	;@raw=0x80,0x10,0x10,0x00
 
-LABEL_0167:
+DRAW_CIN_058_AT_0_16_IF_VARF2_EQ_FA0:
 	jne [0xF2], 0x0FA0, DRAW_CIN_058_AT_16_16_IF_VARDC_EQ_21
 	video type=1, offset=CINEMATIC_005, x=0, y=16	;@raw=0x80,0x10,0x00,0x10
 
@@ -302,16 +302,16 @@ LABEL_029D:
 	ret
 
 LABEL_02A7:
-	jne [0x22], 0x02, LABEL_02B1
+	jne [0x22], 0x02, SAVE_HASH_VAR1D_TO_VAR0D
 	mov [0x0C], [0x1D]
 	ret
 
-LABEL_02B1:
-	jne [0x22], 0x03, LABEL_02BB
+SAVE_HASH_VAR1D_TO_VAR0D:
+	jne [0x22], 0x03, SAVE_HASH_VAR1D_TO_VAR0E
 	mov [0x0D], [0x1D]
 	ret
 
-LABEL_02BB:
+SAVE_HASH_VAR1D_TO_VAR0E:
 	jne [0x22], 0x04, SAVE_HASH_VAR1D_TO_VAR0F
 	mov [0x0E], [0x1D]
 	ret
@@ -841,10 +841,10 @@ SCALE_VAR07_TIMES_9_PLUS_4A:
 	add [0x07], 0x0004
 	ret
 
-LABEL_0905:
-	je [0x07], 0xC4, LABEL_09B9
-	je [0x07], 0xCC, LABEL_0A55
-	je [0x07], 0xD4, LABEL_0AF1
+DRAW_LETTER_DISPATCH_BY_X:
+	je [0x07], 0xC4, DRAW_LETTER_AT_X24
+	je [0x07], 0xCC, DRAW_LETTER_AT_X25
+	je [0x07], 0xD4, DRAW_LETTER_AT_X26
 	jne [0x07], 0xBC, SHARED_RET
 	jne [0x06], 0x0B, DRAW_LETTER_C_AT_X23
 	text id=0x012E, x=23, y=80, color=0x04 ; "B"
@@ -905,7 +905,7 @@ DRAW_LETTER_T_AT_X23:
 	text id=0x0139, x=23, y=80, color=0x04 ; "T"
 	ret
 
-LABEL_09B9:
+DRAW_LETTER_AT_X24:
 	jne [0x06], 0x0B, DRAW_LETTER_C_AT_X24
 	text id=0x012E, x=24, y=80, color=0x04 ; "B"
 	ret
@@ -965,7 +965,7 @@ DRAW_LETTER_T_AT_X24:
 	text id=0x0139, x=24, y=80, color=0x04 ; "T"
 	ret
 
-LABEL_0A55:
+DRAW_LETTER_AT_X25:
 	jne [0x06], 0x0B, DRAW_LETTER_C_AT_X25
 	text id=0x012E, x=25, y=80, color=0x04 ; "B"
 	ret
@@ -1025,7 +1025,7 @@ DRAW_LETTER_T_AT_X25:
 	text id=0x0139, x=25, y=80, color=0x04 ; "T"
 	ret
 
-LABEL_0AF1:
+DRAW_LETTER_AT_X26:
 	jne [0x06], 0x0B, DRAW_LETTER_C_AT_X26
 	text id=0x012E, x=26, y=80, color=0x04 ; "B"
 	ret
@@ -1088,7 +1088,7 @@ DRAW_LETTER_T_AT_X26:
 LABEL_0B8D:
 	je [0x06], 0x62, DRAW_LETTER_VIA_CIN_DISPATCH
 	je [0x06], 0x63, DRAW_LETTER_VIA_CIN_DISPATCH
-	jne [0xDB], 0x00, LABEL_0905
+	jne [0xDB], 0x00, DRAW_LETTER_DISPATCH_BY_X
 
 DRAW_LETTER_VIA_CIN_DISPATCH:
 	jne [0x06], 0x62, DRAW_CIN_000_LETTER_BLANK

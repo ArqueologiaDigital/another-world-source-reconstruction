@@ -3721,7 +3721,7 @@ DRAW_CIN_120_LOOP_VAR03:
 	video type=1, offset=CINEMATIC_122, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x0F,0x41,0x01,0x02
 	break
 	video type=1, offset=CINEMATIC_123, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x0F,0x87,0x01,0x02
-	call LABEL_1FD2
+	call PLAY_FX_BY_PHASE_VAR1E
 	break
 	video type=1, offset=CINEMATIC_124, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x0E,0x39,0x01,0x02
 	break
@@ -3731,7 +3731,7 @@ DRAW_CIN_120_LOOP_VAR03:
 LABEL_1FD1:
 	db 0x11
 
-LABEL_1FD2:
+PLAY_FX_BY_PHASE_VAR1E:
 	jne [0x1E], 0x00, PLAY_FX_PHASE_1_FREQ_22
 	play id=0x000B, freq=0x14, vol=0x3F, channel=0x02
 
