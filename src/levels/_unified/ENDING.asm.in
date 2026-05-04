@@ -69,11 +69,9 @@ DELETE_ALL_CHANS_AND_KILL:
 	killChannel
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga__post_DELETE_ALL_CHANS_AND_KILL.inc"
 ;@elif BRANCH == "cartridge_1992"
 ;@include "ending/cart__post_DELETE_ALL_CHANS_AND_KILL.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos__post_DELETE_ALL_CHANS_AND_KILL.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -95,9 +93,7 @@ PRELOAD_RESOURCES_8_TO_1:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga__post_PRELOAD_RESOURCES_8_TO_1.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos__post_PRELOAD_RESOURCES_8_TO_1.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -144,9 +140,7 @@ DRAW_CIN_101_102_FADE_PAL_C:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga__post_DRAW_CIN_101_102_FADE_PAL_C.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos__post_DRAW_CIN_101_102_FADE_PAL_C.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -210,9 +204,7 @@ DRIFT_VAR_4_PLUS_10_LOOP:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga__post_DRIFT_VAR_4_PLUS_10_LOOP.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos__post_DRIFT_VAR_4_PLUS_10_LOOP.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -227,9 +219,7 @@ DRIFT_VAR_3_MINUS_1_LOOP:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga__post_DRIFT_VAR_3_MINUS_1_LOOP.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos__post_DRIFT_VAR_3_MINUS_1_LOOP.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -242,9 +232,7 @@ DRIFT_VAR_3_MINUS_1_TWO_BRKS:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga__post_DRIFT_VAR_3_MINUS_1_TWO_BRKS.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos__post_DRIFT_VAR_3_MINUS_1_TWO_BRKS.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -256,9 +244,7 @@ DELAY_VAR6_THEN_VAR3_MINUS_1:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga__post_DELAY_VAR6_THEN_VAR3_MINUS_1.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos__post_DELAY_VAR6_THEN_VAR3_MINUS_1.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -270,20 +256,16 @@ DELAY_VAR6_THEN_KILL_CHAN:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga__post_DELAY_VAR6_THEN_KILL_CHAN.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos__post_DELAY_VAR6_THEN_KILL_CHAN.inc"
 ;@endif
 
 INIT_VARE_TO_12:
 	mov [0x0E], 0x000C
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga__post_INIT_VARE_TO_12.inc"
 ;@elif BRANCH == "cartridge_1992"
 ;@include "ending/cart__post_INIT_VARE_TO_12.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos__post_INIT_VARE_TO_12.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -295,9 +277,7 @@ DRIFT_VAR_F_PLUS_1_LOOP:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga__post_DRIFT_VAR_F_PLUS_1_LOOP.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos__post_DRIFT_VAR_F_PLUS_1_LOOP.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -309,9 +289,7 @@ DRIFT_VAR_F_PLUS_4_LOOP:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga__post_DRIFT_VAR_F_PLUS_4_LOOP.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos__post_DRIFT_VAR_F_PLUS_4_LOOP.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -322,9 +300,7 @@ DELAY_VARE_THEN_INIT_VARE_5:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga__post_DELAY_VARE_THEN_INIT_VARE_5.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos__post_DELAY_VARE_THEN_INIT_VARE_5.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -345,9 +321,7 @@ DRIFT_VAR_F_PLUS_8_LOOP:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga__post_DRIFT_VAR_F_PLUS_8_LOOP.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos__post_DRIFT_VAR_F_PLUS_8_LOOP.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -392,11 +366,9 @@ PAL_FADE_18_TO_1D:
 	killChannel
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "ending/amiga__post_PAL_FADE_18_TO_1D.inc"
 ;@elif BRANCH == "cartridge_1992"
 ;@include "ending/cart__post_PAL_FADE_18_TO_1D.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "ending/dos__post_PAL_FADE_18_TO_1D.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
