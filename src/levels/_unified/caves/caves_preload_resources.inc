@@ -15,9 +15,6 @@ PRELOAD_RES_6A_77_6D_6E_74_76_78_7C:
 	ret
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PRELOAD_CAVES_RESOURCES:

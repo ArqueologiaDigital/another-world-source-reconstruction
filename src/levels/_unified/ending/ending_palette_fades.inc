@@ -26,10 +26,8 @@ PAL_FADE_18_TO_1D:
 	setPalette 0x17	;@raw=0x0B,0x17,0xFF
 	killChannel
 
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "cartridge_1992"
+;@if BRANCH == "cartridge_1992"
 ;@include "cart__post_PAL_FADE_18_TO_1D.inc"
-;@elif BRANCH == "dos_1992"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")

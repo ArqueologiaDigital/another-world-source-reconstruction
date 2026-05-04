@@ -36,12 +36,7 @@
 CINEMATIC_LAKE_UNUSED_175		EQU 0x8A8E
 CINEMATIC_LAKE_UNUSED_189		EQU 0x5DDA
 ;@endif
-;@if BRANCH == "chahi_amiga_1991"
-;@endif
 ;@include "../_common_vars.inc"
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-;@elif BRANCH == "chahi_amiga_1991"
-;@endif
 
 
 	org 0x0000

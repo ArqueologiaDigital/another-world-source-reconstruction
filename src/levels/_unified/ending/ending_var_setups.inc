@@ -1,10 +1,8 @@
 INIT_VARE_TO_12:
 	mov [0x0E], 0x000C
 
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "cartridge_1992"
+;@if BRANCH == "cartridge_1992"
 ;@include "cart__post_INIT_VARE_TO_12.inc"
-;@elif BRANCH == "dos_1992"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -15,9 +13,6 @@ DRIFT_VAR_F_PLUS_1_LOOP:
 	mov [0x0E], 0x0009
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRIFT_VAR_F_PLUS_4_LOOP:
@@ -27,9 +22,6 @@ DRIFT_VAR_F_PLUS_4_LOOP:
 	mov [0x0E], 0x0032
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DELAY_VARE_THEN_INIT_VARE_5:
@@ -38,9 +30,6 @@ DELAY_VARE_THEN_INIT_VARE_5:
 	mov [0x0E], 0x0005
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRIFT_VAR_F_PLUS_8_LOOP:
@@ -59,9 +48,6 @@ DRIFT_VAR_F_PLUS_8_LOOP:
 	killChannel
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_70_ANIM_LOOP:

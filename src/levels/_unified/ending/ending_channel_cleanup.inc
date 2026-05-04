@@ -2,10 +2,8 @@ DELETE_ALL_CHANS_AND_KILL:
 	deleteChannels first=0x00, last=0x3F
 	killChannel
 
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "cartridge_1992"
+;@if BRANCH == "cartridge_1992"
 ;@include "cart__post_DELETE_ALL_CHANS_AND_KILL.inc"
-;@elif BRANCH == "dos_1992"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -26,9 +24,6 @@ PRELOAD_RESOURCES_8_TO_1:
 	ret
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_97_TO_100:
@@ -73,9 +68,6 @@ DRAW_CIN_101_102_FADE_PAL_C:
 	video type=1, offset=CINEMATIC_103, x=160, y=115	;@raw=0xA0,0x9C,0xA0,0x73
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_103_LOOP:
@@ -137,9 +129,6 @@ DRIFT_VAR_4_PLUS_10_LOOP:
 	mov [0x06], 0x0030
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRIFT_VAR_3_MINUS_1_LOOP:
@@ -152,9 +141,6 @@ DRIFT_VAR_3_MINUS_1_LOOP:
 	mov [0x06], 0x000C
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRIFT_VAR_3_MINUS_1_TWO_BRKS:
@@ -165,9 +151,6 @@ DRIFT_VAR_3_MINUS_1_TWO_BRKS:
 	mov [0x06], 0x0019
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DELAY_VAR6_THEN_VAR3_MINUS_1:
@@ -177,9 +160,6 @@ DELAY_VAR6_THEN_VAR3_MINUS_1:
 	mov [0x06], 0x0019
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DELAY_VAR6_THEN_KILL_CHAN:
@@ -189,6 +169,3 @@ DELAY_VAR6_THEN_KILL_CHAN:
 	killChannel
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "dos_1992"
-;@endif

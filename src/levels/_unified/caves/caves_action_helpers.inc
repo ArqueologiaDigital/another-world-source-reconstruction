@@ -36,16 +36,8 @@ COPY_PAGE0_TO_3_LOAD_RES45:
 ;@endif
 
 ;@include "../_helpers/INIT_RANGE_48_TO_4D_TO_MAX.inc"
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "cartridge_1992"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@include "../_helpers/INIT_VARS_AA_AD_5B_5E_PLUS1.inc"
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "cartridge_1992"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@include "../_helpers/INIT_VARS_A1_A4_A7.inc"
 ;@if BRANCH == "chahi_amiga_1991"
@@ -129,46 +121,18 @@ INIT_AI_VARS_AT_280_10:
 	mov [0x2A], 0x000F
 	ret
 
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "cartridge_1992"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@include "../_helpers/SET_VAR04_TO_0020.inc"
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "cartridge_1992"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@include "../_helpers/SET_VAR04_TO_0030.inc"
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "cartridge_1992"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@include "../_helpers/SET_VAR04_TO_0000.inc"
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "cartridge_1992"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@include "../_helpers/SET_VAR04_TO_0010.inc"
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "cartridge_1992"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@include "../_helpers/SET_VAR04_TO_0008.inc"
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "cartridge_1992"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@include "../_helpers/SET_VAR04_TO_0034.inc"
-;@if BRANCH == "chahi_amiga_1991"
-;@elif BRANCH == "cartridge_1992"
-;@elif BRANCH == "dos_1992"
-;@endif
 
 ;@include "../_helpers/SET_VAR04_TO_0024.inc"
 ;@if BRANCH == "chahi_amiga_1991"
