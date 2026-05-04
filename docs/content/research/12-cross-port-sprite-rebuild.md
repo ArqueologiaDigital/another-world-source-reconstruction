@@ -192,6 +192,23 @@ overlays for stage-specific bits. The 1992 rebuild is therefore
 a *re-pipelining* (composite-sprite based) rather than a
 content cut.
 
+**The pipeline shift propagated to all subsequent ports.** Both
+`cartridge_1992/LAKE.asm` (Heineman SNES + Genesis cart) and
+`gba_2004/LAKE.asm` (Foxy GBA port) use the DOS-style composite
+helpers (`DRAW_VIDEO_073_AND_CIN_002`,
+`DRAW_VIDEO_074_AND_CINEMATIC_HERO_SHADOW_RET`,
+`DRAW_HERO_SHADOW_BUNDLE_NN_MM`, etc.) — confirming the 1991→1992
+pipeline rebuild was the inflection point. Every port from 1992
+onward inherits the shared-sprite + composite-helper architecture;
+only the original 1991 amiga release uses the per-stage
+detail-sprite pipeline.
+
+This is consistent with research/05's finding that SNES-EU and
+Genesis-EU bytecode is byte-identical to each other (both inherit
+the 1992 cartridge build). Add this finding: those carts also
+inherit the DOS port's sprite pipeline, not the amiga-original
+pipeline.
+
 The 207 amiga LAKE cut sub-polys are nonetheless real artifacts
 of this pipelining shift: amiga's per-stage detailed sprites
 literally don't exist in DOS's polygon bank because DOS uses the
