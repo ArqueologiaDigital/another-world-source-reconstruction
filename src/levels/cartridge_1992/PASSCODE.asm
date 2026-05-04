@@ -34,7 +34,7 @@ LABEL_0000:
 	mov [LAST_KEYCHAR], 0x0000
 	break
 	fill page=0x00, color=0x00
-	setup channel=0x14, address=LABEL_00B0
+	setup channel=0x14, address=SETUP_PASSCODE_SCREEN
 	killChannel
 
 AMIGA_PASSCODE_BANK_INIT:
@@ -105,7 +105,7 @@ LOAD_VAR19_TO_VAR06:
 	mov [0x06], [0x19]
 	ret
 
-LABEL_00B0:
+SETUP_PASSCODE_SCREEN:
 	mov [0x09], 0x0010
 	fill page=0xFF, color=0x00
 	mov [0x04], 0x0040
@@ -113,7 +113,7 @@ LABEL_00B0:
 	mov [0x05], [0x37]
 	and [0x05], 0x000F
 	mov [0x2F], [0x05]
-	call LABEL_01A0
+	call INIT_PASSCODE_LETTER_ALPHABET
 	mov [0x2D], 0x0072
 	mov [0x2E], 0x003E
 	mov [0x19], 0x0062
@@ -189,7 +189,7 @@ KILL_ALL_CHANNELS_AND_KILL:
 	setup channel=0x3C, address=AMIGA_PASSCODE_BANK_INIT
 	killChannel
 
-LABEL_01A0:
+INIT_PASSCODE_LETTER_ALPHABET:
 	mov [0x2C], 0x0000
 	mov [0x0A], 0x000B
 	mov [0x0B], 0x000C
@@ -213,11 +213,11 @@ LABEL_01A0:
 	mov [0x14], [0x2B]
 	mov [0x17], [0x2C]
 	ret
-	jne [0x22], 0x00, LABEL_01FC
+	jne [0x22], 0x00, LOAD_VAR0B_TO_HASH_VAR1D
 	mov [0x1D], [0x0A]
 	ret
 
-LABEL_01FC:
+LOAD_VAR0B_TO_HASH_VAR1D:
 	jne [0x22], 0x01, LOAD_VAR0C_TO_HASH_VAR1D
 	mov [0x1D], [0x0B]
 	ret
