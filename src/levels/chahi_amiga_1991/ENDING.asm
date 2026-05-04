@@ -156,7 +156,7 @@ LABEL_0000:
 	mov [PAUSE_SLICES], 0x0004
 	break
 	song id=0x0000, delay=0x0000, pos=0x00
-	call LABEL_0032
+	call PRELOAD_RESOURCES_8_TO_1
 	call LABEL_0025
 	setup channel=0x1E, address=LABEL_0558
 	killChannel
@@ -168,14 +168,14 @@ LABEL_0024:
 	killChannel
 
 LABEL_0025:
-	jne [0xF2], 0x1770, LABEL_002D
+	jne [0xF2], 0x1770, DELETE_ALL_CHANS_AND_KILL
 	ret
 
-LABEL_002D:
+DELETE_ALL_CHANS_AND_KILL:
 	deleteChannels first=0x00, last=0x3F
 	killChannel
 
-LABEL_0032:
+PRELOAD_RESOURCES_8_TO_1:
 	load id=0x0008
 	load id=0x008A
 	load id=0x0081
@@ -313,7 +313,7 @@ LABEL_0199:
 	break
 	sub [0x03], 0x0001
 	djnz [0x06], LABEL_0199
-	setup channel=0x10, address=LABEL_01D7
+	setup channel=0x10, address=INIT_VARE_TO_12
 	setup channel=0x11, address=LABEL_0220
 	mov [0x0F], 0x0001
 	mov [0x06], 0x000C
@@ -337,7 +337,7 @@ LABEL_01CD:
 	sub [0x03], 0x0001
 	killChannel
 
-LABEL_01D7:
+INIT_VARE_TO_12:
 	mov [0x0E], 0x000C
 
 LABEL_01DB:
@@ -414,7 +414,7 @@ LABEL_022B:
 LABEL_028A:
 	break
 	djnz [0x01], LABEL_028A
-	setup channel=0x14, address=LABEL_0341
+	setup channel=0x14, address=PAL_FADE_18_TO_1D
 	mov [0x01], 0x00AF
 
 LABEL_0297:
@@ -482,7 +482,7 @@ LABEL_0312:
 	selectVideoPage 0xFF
 	killChannel
 
-LABEL_0341:
+PAL_FADE_18_TO_1D:
 	setPalette 0x18	;@raw=0x0B,0x18,0xFF
 	break
 	setPalette 0x19	;@raw=0x0B,0x19,0xFF
@@ -652,7 +652,7 @@ LABEL_046F:
 LABEL_04E9:
 	db 0x11
 
-LABEL_04EA:
+SET_VAR_E6_5_PAL_B:
 	mov [0xE6], 0x0005
 	setPalette 0x0B	;@raw=0x0B,0x0B,0xFF
 
@@ -778,7 +778,7 @@ LABEL_0610:
 	djnz [0x03], LABEL_05E6
 	mov [PAUSE_SLICES], 0x0006
 	video type=1, offset=CINEMATIC_019, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x0C,0x00,0x01,0x02
-	setup channel=0x14, address=LABEL_0673
+	setup channel=0x14, address=INIT_VARS_07_08_09
 
 LABEL_0669:
 	break
@@ -787,7 +787,7 @@ LABEL_0669:
 LABEL_0672:
 	db 0x11
 
-LABEL_0673:
+INIT_VARS_07_08_09:
 	mov [0x07], 0x004C
 	mov [0x08], 0x0097
 	mov [0x09], 0x0003
@@ -856,7 +856,7 @@ LABEL_06FB:
 	call DRAW_STARS_CIN_38_39_40_5_6
 	selectVideoPage 0xFF
 	setup channel=0x05, address=LABEL_0024
-	setup channel=0x0A, address=LABEL_04EA
+	setup channel=0x0A, address=SET_VAR_E6_5_PAL_B
 	killChannel
 
 LABEL_0740:

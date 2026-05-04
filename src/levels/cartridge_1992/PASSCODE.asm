@@ -37,7 +37,7 @@ LABEL_0000:
 	setup channel=0x14, address=LABEL_00B0
 	killChannel
 
-LABEL_001E:
+AMIGA_PASSCODE_BANK_INIT:
 	killChannel
 
 LABEL_001F:
@@ -69,10 +69,10 @@ LABEL_0055:
 	mov [0x06], [0x10]
 
 LABEL_005E:
-	jne [0x05], 0x07, LABEL_0067
+	jne [0x05], 0x07, LOAD_VAR12_TO_VAR06
 	mov [0x06], [0x11]
 
-LABEL_0067:
+LOAD_VAR12_TO_VAR06:
 	jne [0x05], 0x08, LOAD_VAR13_TO_VAR06
 	mov [0x06], [0x12]
 
@@ -186,7 +186,7 @@ ENTRY_2ND_PASSCODE_INSTANCE:
 
 KILL_ALL_CHANNELS_AND_KILL:
 	deleteChannels first=0x00, last=0x3F
-	setup channel=0x3C, address=LABEL_001E
+	setup channel=0x3C, address=AMIGA_PASSCODE_BANK_INIT
 	killChannel
 
 LABEL_01A0:
@@ -327,11 +327,11 @@ LABEL_02CF:
 	ret
 
 LABEL_02D9:
-	jne [0x22], 0x07, LABEL_02E3
+	jne [0x22], 0x07, SAVE_HASH_VAR1D_TO_VAR12
 	mov [0x11], [0x1D]
 	ret
 
-LABEL_02E3:
+SAVE_HASH_VAR1D_TO_VAR12:
 	jne [0x22], 0x08, SAVE_HASH_VAR1D_TO_VAR13
 	mov [0x12], [0x1D]
 	ret
@@ -437,7 +437,7 @@ LABEL_03E8:
 	mov [0x07], [0x25]
 	mov [0x08], [0x26]
 	mov [0x24], 0x0003
-	jmp LABEL_044C
+	jmp COPY_VAR_27_28_TO_07_08
 
 JUNK__03F5:
 	jg [0x25], [0x27], LABEL_0407
@@ -468,7 +468,7 @@ LABEL_043D:
 	jne [0x08], [0x28], JUNK__0467
 	jmp LABEL_033B
 
-LABEL_044C:
+COPY_VAR_27_28_TO_07_08:
 	mov [0x07], [0x27]
 	mov [0x08], [0x28]
 
@@ -694,15 +694,15 @@ LABEL_075D:
 	jmp LABEL_07BB
 
 LABEL_077F:
-	jne [0x1E], 0xFFFF, LABEL_07A5
-	jne [0x1F], 0xFFFF, LABEL_07A5
-	jne [0x20], 0xFFFF, LABEL_07A5
-	jne [0x21], 0xFFFF, LABEL_07A5
+	jne [0x1E], 0xFFFF, SET_VAR_E6_F_PAUSE_4
+	jne [0x1F], 0xFFFF, SET_VAR_E6_F_PAUSE_4
+	jne [0x20], 0xFFFF, SET_VAR_E6_F_PAUSE_4
+	jne [0x21], 0xFFFF, SET_VAR_E6_F_PAUSE_4
 	mov [0x00], 0x0000
 	bankSwitch 1;  Prison	;@raw=0x19,0x3E,0x81
 	jmp LABEL_07BB
 
-LABEL_07A5:
+SET_VAR_E6_F_PAUSE_4:
 	mov [0xE6], 0x000F
 	mov [PAUSE_SLICES], 0x0004
 
@@ -729,13 +729,13 @@ LABEL_07CD:
 	ret
 
 LABEL_07D8:
-	jl [LAST_KEYCHAR], 0x41, LABEL_07EC
-	jg [LAST_KEYCHAR], 0x5A, LABEL_07EC
+	jl [LAST_KEYCHAR], 0x41, CLEAR_LAST_KEYCHAR
+	jg [LAST_KEYCHAR], 0x5A, CLEAR_LAST_KEYCHAR
 	mov [0x06], [LAST_KEYCHAR]
 	sub [0x06], 0x0037
 	ret
 
-LABEL_07EC:
+CLEAR_LAST_KEYCHAR:
 	mov [LAST_KEYCHAR], 0x0000
 	ret
 
@@ -825,11 +825,11 @@ LABEL_08CD:
 	mov [0x08], [0x05]
 	and [0x07], 0x0007
 	and [0x08], 0x0008
-	jne [0x08], 0x00, LABEL_08E8
+	jne [0x08], 0x00, INIT_VAR08_TO_150
 	mov [0x08], 0x0086
 	jmp SCALE_VAR07_TIMES_9_PLUS_4A
 
-LABEL_08E8:
+INIT_VAR08_TO_150:
 	mov [0x08], 0x0096
 
 SCALE_VAR07_TIMES_9_PLUS_4A:
@@ -861,11 +861,11 @@ LABEL_0937:
 	ret
 
 LABEL_0944:
-	jne [0x06], 0x0F, LABEL_0951
+	jne [0x06], 0x0F, DRAW_LETTER_G_AT_X23
 	text id=0x0131, x=23, y=80, color=0x04 ; "F"
 	ret
 
-LABEL_0951:
+DRAW_LETTER_G_AT_X23:
 	jne [0x06], 0x10, DRAW_LETTER_H_AT_X23
 	text id=0x0132, x=23, y=80, color=0x04 ; "G"
 	ret
@@ -921,11 +921,11 @@ LABEL_09D3:
 	ret
 
 LABEL_09E0:
-	jne [0x06], 0x0F, LABEL_09ED
+	jne [0x06], 0x0F, DRAW_LETTER_G_AT_X24
 	text id=0x0131, x=24, y=80, color=0x04 ; "F"
 	ret
 
-LABEL_09ED:
+DRAW_LETTER_G_AT_X24:
 	jne [0x06], 0x10, DRAW_LETTER_H_AT_X24
 	text id=0x0132, x=24, y=80, color=0x04 ; "G"
 	ret
@@ -981,11 +981,11 @@ LABEL_0A6F:
 	ret
 
 LABEL_0A7C:
-	jne [0x06], 0x0F, LABEL_0A89
+	jne [0x06], 0x0F, DRAW_LETTER_G_AT_X25
 	text id=0x0131, x=25, y=80, color=0x04 ; "F"
 	ret
 
-LABEL_0A89:
+DRAW_LETTER_G_AT_X25:
 	jne [0x06], 0x10, DRAW_LETTER_H_AT_X25
 	text id=0x0132, x=25, y=80, color=0x04 ; "G"
 	ret
@@ -1041,11 +1041,11 @@ LABEL_0B0B:
 	ret
 
 LABEL_0B18:
-	jne [0x06], 0x0F, LABEL_0B25
+	jne [0x06], 0x0F, DRAW_LETTER_G_AT_X26
 	text id=0x0131, x=26, y=80, color=0x04 ; "F"
 	ret
 
-LABEL_0B25:
+DRAW_LETTER_G_AT_X26:
 	jne [0x06], 0x10, DRAW_LETTER_H_AT_X26
 	text id=0x0132, x=26, y=80, color=0x04 ; "G"
 	ret

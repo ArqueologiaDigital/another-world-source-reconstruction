@@ -120,10 +120,10 @@ LABEL_0054:
 	mov [0x06], [0x10]
 
 LABEL_005D:
-	jne [0x05], 0x07, LABEL_0066
+	jne [0x05], 0x07, LOAD_VAR12_TO_VAR06
 	mov [0x06], [0x11]
 
-LABEL_0066:
+LOAD_VAR12_TO_VAR06:
 	jne [0x05], 0x08, LOAD_VAR13_TO_VAR06
 	mov [0x06], [0x12]
 
@@ -251,10 +251,10 @@ LABEL_01CF:
 	video type=1, offset=CINEMATIC_009, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x07,0xE2,0x2D,0x2E
 
 LABEL_01DA:
-	jne [0x05], 0x08, LABEL_01E5
+	jne [0x05], 0x08, DRAW_CIN_007_AT_2D_2E_KEY09
 	video type=1, offset=CINEMATIC_008, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x07,0xFA,0x2D,0x2E
 
-LABEL_01E5:
+DRAW_CIN_007_AT_2D_2E_KEY09:
 	jne [0x05], 0x09, DRAW_CIN_006_AT_2D_2E_KEY0A
 	video type=1, offset=CINEMATIC_007, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x07,0xDA,0x2D,0x2E
 
@@ -420,7 +420,7 @@ LABEL_05D5:
 	call LABEL_0AA1
 	ret
 
-LABEL_05DC:
+SUM_HASH_VARS_TO_VAR_37:
 	add [0x37], [HERO_ACTION]
 	add [0x37], [HERO_POS_JUMP_DOWN]
 	add [0x37], [HACK_VAR_F7]
@@ -434,7 +434,7 @@ LABEL_05DC:
 	ret
 
 LABEL_05FB:
-	call LABEL_05DC
+	call SUM_HASH_VARS_TO_VAR_37
 	jne [HERO_ACTION], 0x00, LABEL_09C5
 	mov [0x23], [0x01]
 	jne [HERO_POS_JUMP_DOWN], 0x01, LABEL_061A
@@ -695,15 +695,15 @@ LABEL_0960:
 	jmp LABEL_09BE
 
 LABEL_0982:
-	jne [0x1E], 0xFFFF, LABEL_09A8
-	jne [0x1F], 0xFFFF, LABEL_09A8
-	jne [0x20], 0xFFFF, LABEL_09A8
-	jne [0x21], 0xFFFF, LABEL_09A8
+	jne [0x1E], 0xFFFF, SET_VAR_E6_F_PAUSE_4
+	jne [0x1F], 0xFFFF, SET_VAR_E6_F_PAUSE_4
+	jne [0x20], 0xFFFF, SET_VAR_E6_F_PAUSE_4
+	jne [0x21], 0xFFFF, SET_VAR_E6_F_PAUSE_4
 	mov [0x00], 0x0000
 	bankSwitch 1;  Intro Sequence	;@raw=0x19,0x3E,0x81
 	jmp LABEL_09BE
 
-LABEL_09A8:
+SET_VAR_E6_F_PAUSE_4:
 	mov [0xE6], 0x000F
 	mov [PAUSE_SLICES], 0x0004
 
@@ -790,11 +790,11 @@ LABEL_0A73:
 	mov [0x08], [0x05]
 	and [0x07], 0x0007
 	and [0x08], 0x0008
-	jne [0x08], 0x00, LABEL_0A8E
+	jne [0x08], 0x00, INIT_VAR08_TO_150
 	mov [0x08], 0x0086
 	jmp SCALE_VAR07_TIMES_9_PLUS_4A
 
-LABEL_0A8E:
+INIT_VAR08_TO_150:
 	mov [0x08], 0x0096
 
 SCALE_VAR07_TIMES_9_PLUS_4A:
@@ -955,11 +955,11 @@ LABEL_0C1A:
 	ret
 
 LABEL_0C27:
-	jne [0x06], 0x1C, LABEL_0C34
+	jne [0x06], 0x1C, DRAW_LETTER_T_CIN_024
 	video type=1, offset=CINEMATIC_025, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x09,0x2C,0x07,0x08,0x04
 	ret
 
-LABEL_0C34:
+DRAW_LETTER_T_CIN_024:
 	jne [0x06], 0x1D, DRAW_LETTER_U_CIN_023
 	video type=1, offset=CINEMATIC_024, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x09,0x46,0x07,0x08,0x04
 	ret

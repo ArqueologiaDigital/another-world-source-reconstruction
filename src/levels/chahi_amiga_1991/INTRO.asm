@@ -2497,12 +2497,12 @@ LABEL_12E2:
 	break
 
 LABEL_12F8:
-	je [MUS_MARK], 0x22, LABEL_1309
+	je [MUS_MARK], 0x22, SHOW_TEXT_25_PHASE_INIT
 	text id=0x0024, x=28, y=80, color=0x06 ; "  20"
 	break
 	djnz [0x01], LABEL_12F8
 
-LABEL_1309:
+SHOW_TEXT_25_PHASE_INIT:
 	mov [0x01], 0x000A
 
 LABEL_130D:
@@ -2539,12 +2539,12 @@ LABEL_1344:
 	mov [0x01], 0x000B
 
 LABEL_136F:
-	je [MUS_MARK], 0x2C, LABEL_1380
+	je [MUS_MARK], 0x2C, SHOW_TEXT_27_PHASE_INIT
 	text id=0x004B, x=28, y=80, color=0x06 ; "  5"
 	break
 	djnz [0x01], LABEL_136F
 
-LABEL_1380:
+SHOW_TEXT_27_PHASE_INIT:
 	mov [0x01], 0x000B
 
 LABEL_1384:
@@ -3630,10 +3630,10 @@ LABEL_1E91:
 	play id=0x000B, freq=0x16, vol=0x3F, channel=0x02
 
 LABEL_1E9D:
-	jne [0x1E], 0x02, LABEL_1EA9
+	jne [0x1E], 0x02, PLAY_FX_PHASE_3_FREQ_18
 	play id=0x000B, freq=0x12, vol=0x3F, channel=0x02
 
-LABEL_1EA9:
+PLAY_FX_PHASE_3_FREQ_18:
 	jne [0x1E], 0x03, PLAY_FX_PHASE_4_FREQ_20
 	play id=0x000B, freq=0x12, vol=0x3F, channel=0x02
 

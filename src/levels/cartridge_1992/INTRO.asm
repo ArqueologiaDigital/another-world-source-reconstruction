@@ -2580,12 +2580,12 @@ WAIT_MUS_MARK_20_THEN_TEXT_23:
 	break
 
 LABEL_13EE:
-	je [MUS_MARK], 0x22, LABEL_13FF
+	je [MUS_MARK], 0x22, SHOW_TEXT_25_PHASE_INIT
 	text id=0x0024, x=28, y=80, color=0x06 ; "  20"
 	break
 	djnz [0x01], LABEL_13EE
 
-LABEL_13FF:
+SHOW_TEXT_25_PHASE_INIT:
 	mov [0x01], 0x000A
 
 LABEL_1403:
@@ -2623,12 +2623,12 @@ COPY_BG_PAGE_AND_DISPLAY_TEXT_23:
 	mov [0x01], 0x000B
 
 LABEL_1469:
-	je [MUS_MARK], 0x2C, LABEL_147A
+	je [MUS_MARK], 0x2C, SHOW_TEXT_27_PHASE_INIT
 	text id=0x004B, x=28, y=80, color=0x06 ; "  5"
 	break
 	djnz [0x01], LABEL_1469
 
-LABEL_147A:
+SHOW_TEXT_27_PHASE_INIT:
 	mov [0x01], 0x000B
 
 LABEL_147E:
@@ -3740,10 +3740,10 @@ LABEL_1FDE:
 	play id=0x000B, freq=0x16, vol=0x3F, channel=0x02
 
 LABEL_1FEA:
-	jne [0x1E], 0x02, LABEL_1FF6
+	jne [0x1E], 0x02, PLAY_FX_PHASE_3_FREQ_18
 	play id=0x000B, freq=0x12, vol=0x3F, channel=0x02
 
-LABEL_1FF6:
+PLAY_FX_PHASE_3_FREQ_18:
 	jne [0x1E], 0x03, PLAY_FX_PHASE_4_FREQ_20
 	play id=0x000B, freq=0x12, vol=0x3F, channel=0x02
 

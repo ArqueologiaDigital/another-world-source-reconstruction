@@ -159,7 +159,7 @@ LABEL_0000:
 	mov [PAUSE_SLICES], 0x0004
 	break
 	song id=0x0000, delay=0x0000, pos=0x00
-	call LABEL_0032
+	call PRELOAD_RESOURCES_8_TO_1
 	call LIKELY_A_COPY_PROTECTION_MECHANISM
 	setup channel=0x1E, address=LABEL_0662
 	killChannel
@@ -171,14 +171,14 @@ LABEL_0024:
 	killChannel
 
 LIKELY_A_COPY_PROTECTION_MECHANISM:
-	jne [0xF2], 0x0FA0, LABEL_002D
+	jne [0xF2], 0x0FA0, DELETE_ALL_CHANS_AND_KILL
 	ret
 
-LABEL_002D:
+DELETE_ALL_CHANS_AND_KILL:
 	deleteChannels first=0x00, last=0x3F
 	killChannel
 
-LABEL_0032:
+PRELOAD_RESOURCES_8_TO_1:
 	load id=0x0008
 	load id=0x008A
 	load id=0x0081
@@ -316,7 +316,7 @@ LABEL_0199:
 	break
 	sub [0x03], 0x0001
 	djnz [0x06], LABEL_0199
-	setup channel=0x10, address=LABEL_01D7
+	setup channel=0x10, address=INIT_VARE_TO_12
 	setup channel=0x11, address=LABEL_0220
 	mov [0x0F], 0x0001
 	mov [0x06], 0x000C
@@ -340,7 +340,7 @@ LABEL_01CD:
 	sub [0x03], 0x0001
 	killChannel
 
-LABEL_01D7:
+INIT_VARE_TO_12:
 	mov [0x0E], 0x000C
 
 LABEL_01DB:
@@ -419,7 +419,7 @@ LABEL_022B:
 LABEL_0293:
 	break
 	djnz [0x01], LABEL_0293
-	setup channel=0x14, address=LABEL_044B
+	setup channel=0x14, address=PAL_FADE_18_TO_1D
 	mov [0x01], 0x00AF
 
 LABEL_02A0:
@@ -502,7 +502,7 @@ LABEL_034A:
 LABEL_0376:
 	break
 	djnz [0x01], LABEL_0376
-	setup channel=0x14, address=LABEL_044B
+	setup channel=0x14, address=PAL_FADE_18_TO_1D
 	mov [0x01], 0x00C8
 
 LABEL_0383:
@@ -582,7 +582,7 @@ LABEL_043E:
 	killChannel
 	killChannel
 
-LABEL_044B:
+PAL_FADE_18_TO_1D:
 	setPalette 0x18	;@raw=0x0B,0x18,0xFF
 	break
 	setPalette 0x19	;@raw=0x0B,0x19,0xFF
@@ -752,7 +752,7 @@ LABEL_0579:
 LABEL_05F3:
 	db 0x11
 
-LABEL_05F4:
+SET_VAR_E6_5_PAL_B:
 	mov [0xE6], 0x0005
 	setPalette 0x0B	;@raw=0x0B,0x0B,0xFF
 
@@ -878,7 +878,7 @@ LABEL_071A:
 	djnz [0x03], LABEL_06F0
 	mov [PAUSE_SLICES], 0x0006
 	video type=1, offset=CINEMATIC_019, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x0C,0x00,0x01,0x02
-	setup channel=0x14, address=LABEL_077D
+	setup channel=0x14, address=INIT_VARS_07_08_09
 
 LABEL_0773:
 	break
@@ -887,7 +887,7 @@ LABEL_0773:
 LABEL_077C:
 	db 0x11
 
-LABEL_077D:
+INIT_VARS_07_08_09:
 	mov [0x07], 0x004C
 	mov [0x08], 0x0097
 	mov [0x09], 0x0003
@@ -956,7 +956,7 @@ LABEL_0805:
 	call DRAW_STARS_CIN_38_39_40_5_6
 	selectVideoPage 0xFF
 	setup channel=0x05, address=LABEL_0024
-	setup channel=0x0A, address=LABEL_05F4
+	setup channel=0x0A, address=SET_VAR_E6_5_PAL_B
 	killChannel
 
 LABEL_084A:

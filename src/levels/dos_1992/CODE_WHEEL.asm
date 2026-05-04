@@ -109,7 +109,7 @@ LABEL_0000:
 	killChannel
 	killChannel
 
-LABEL_0015:
+INIT_PROGRESS_HASH_VARS:
 	add [0x63], 0x0001
 	add [0x5A], 0x000D
 	add [0x4F], 0x0005
@@ -149,14 +149,14 @@ LABEL_007F:
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_076, x=160, y=100	;@raw=0x88,0x3E,0xA0,0x64
 	selectVideoPage 0xFF
-	setup channel=0x2C, address=LABEL_01F1
+	setup channel=0x2C, address=PAL_FADE_DOWN_1A_TO_4
 	mov [0x03], 0x0028
 
 LABEL_009E:
 	break
 	jne [HERO_ACTION], 0x00, BANK1_INTRO_TRANSITION
 	djnz [0x03], LABEL_009E
-	setup channel=0x2C, address=LABEL_01D1
+	setup channel=0x2C, address=PAL_FADE_4_TO_18_AND_BACK
 	mov [0x03], 0x000A
 
 LABEL_00B1:
@@ -169,7 +169,7 @@ LABEL_00BF:
 	setPalette 0x17	;@raw=0x0B,0x17,0xFF
 	fill page=0xFF, color=0x00
 	load id=0x0047
-	setup channel=0x2C, address=LABEL_01AD
+	setup channel=0x2C, address=PAL_FADE_DOWN_17_TO_11
 	mov [0x03], 0x0014
 
 LABEL_00D0:
@@ -181,25 +181,25 @@ LABEL_00D0:
 LABEL_00DE:
 	fill page=0xFF, color=0x00
 	setPalette 0x0E	;@raw=0x0B,0x0E,0xFF
-	jge [HACK_VAR_54], 0x80, LABEL_00F6
+	jge [HACK_VAR_54], 0x80, LOAD_RESOURCE_13
 	load id=0x0053
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_075, x=160, y=100	;@raw=0x88,0x2C,0xA0,0x64
 	jmp LABEL_00F9
 
-LABEL_00F6:
+LOAD_RESOURCE_13:
 	load id=0x0013
 
 LABEL_00F9:
 	selectVideoPage 0xFF
-	setup channel=0x2C, address=LABEL_020D
+	setup channel=0x2C, address=PAL_FADE_DOWN_E_TO_8
 	mov [0x03], 0x0050
 
 LABEL_0103:
 	break
 	jne [HERO_ACTION], 0x00, BANK1_INTRO_TRANSITION
 	djnz [0x03], LABEL_0103
-	setup channel=0x2C, address=LABEL_0225
+	setup channel=0x2C, address=PAL_FADE_UP_9_TO_F
 	mov [0x03], 0x000A
 
 LABEL_0116:
@@ -256,7 +256,7 @@ BANK1_INTRO_TRANSITION:
 	bankSwitch 1;  Intro Sequence	;@raw=0x19,0x3E,0x81
 	killChannel
 
-LABEL_01AD:
+PAL_FADE_DOWN_17_TO_11:
 	setPalette 0x17	;@raw=0x0B,0x17,0xFF
 	break
 	setPalette 0x16	;@raw=0x0B,0x16,0xFF
@@ -276,7 +276,7 @@ LABEL_01AD:
 	setPalette 0x0F	;@raw=0x0B,0x0F,0xFF
 	killChannel
 
-LABEL_01D1:
+PAL_FADE_4_TO_18_AND_BACK:
 	setPalette 0x04	;@raw=0x0B,0x04,0xFF
 	break
 	setPalette 0x05	;@raw=0x0B,0x05,0xFF
@@ -294,7 +294,7 @@ LABEL_01D1:
 	setPalette 0x00	;@raw=0x0B,0x00,0xFF
 	killChannel
 
-LABEL_01F1:
+PAL_FADE_DOWN_1A_TO_4:
 	setPalette 0x1A	;@raw=0x0B,0x1A,0xFF
 	break
 	setPalette 0x19	;@raw=0x0B,0x19,0xFF
@@ -310,7 +310,7 @@ LABEL_01F1:
 	setPalette 0x04	;@raw=0x0B,0x04,0xFF
 	killChannel
 
-LABEL_020D:
+PAL_FADE_DOWN_E_TO_8:
 	setPalette 0x0E	;@raw=0x0B,0x0E,0xFF
 	break
 	setPalette 0x0D	;@raw=0x0B,0x0D,0xFF
@@ -324,7 +324,7 @@ LABEL_020D:
 	setPalette 0x09	;@raw=0x0B,0x09,0xFF
 	killChannel
 
-LABEL_0225:
+PAL_FADE_UP_9_TO_F:
 	setPalette 0x09	;@raw=0x0B,0x09,0xFF
 	break
 	setPalette 0x0A	;@raw=0x0B,0x0A,0xFF
@@ -447,7 +447,7 @@ LABEL_02FD:
 	mov [0x17], 0x000C
 	mov [0x18], 0x0000
 	mov [0x19], 0x0062
-	call LABEL_0A15
+	call SUM_HASH_VARS_TO_VAR_37
 	mov [0x05], [0x37]
 	and [0x05], 0x001F
 	jne [0x05], [0x53], LABEL_037E
@@ -473,7 +473,7 @@ LABEL_037E:
 	call LABEL_041A
 	mov [0x19], 0x0062
 	mov [0x11], 0x0063
-	call LABEL_07F4
+	call COPY_HERO_VARS_TO_29_2A_2B_2C
 	mov [0x1E], 0x0000
 	mov [0x1F], 0x0000
 	mov [0x20], 0x0000
@@ -837,7 +837,7 @@ LABEL_07E1:
 	mov [0x2B], 0x0023
 	ret
 
-LABEL_07F4:
+COPY_HERO_VARS_TO_29_2A_2B_2C:
 	mov [0x0A], [0x29]
 	mov [0x0C], [0x2A]
 	mov [0x14], [0x2B]
@@ -863,7 +863,7 @@ LABEL_0833:
 	je [0x21], 0x07, INCREMENT_VAR21_LOOP_TO_16
 	je [0x21], 0x06, INCREMENT_VAR21_LOOP_TO_16
 	jg [0x21], 0x0D, INCREMENT_VAR21_LOOP_TO_16
-	call LABEL_0A15
+	call SUM_HASH_VARS_TO_VAR_37
 	mov [0x24], [0x37]
 	mov [0x22], [0x24]
 	and [0x22], 0x000F
@@ -894,16 +894,16 @@ LABEL_088F:
 	and [0x30], 0x001D
 	add [0x30], 0x0001
 
-LABEL_08A0:
+CLEAR_VAR_22:
 	mov [0x22], 0x0000
 
 LABEL_08A4:
 	call SAVE_VAR0A_TO_VAR1D
 	jne [0x1D], [0x30], LABEL_08BE
 	add [0x30], 0x0001
-	jl [0x30], 0x1F, LABEL_08A0
+	jl [0x30], 0x1F, CLEAR_VAR_22
 	mov [0x30], 0x0001
-	jmp LABEL_08A0
+	jmp CLEAR_VAR_22
 
 LABEL_08BE:
 	add [0x22], 0x0001
@@ -1080,7 +1080,7 @@ LABEL_0A0E:
 	call DRAW_CIN_073_IF_VAR06_EQ_1
 	ret
 
-LABEL_0A15:
+SUM_HASH_VARS_TO_VAR_37:
 	add [0x37], [HERO_ACTION]
 	add [0x37], [HERO_POS_JUMP_DOWN]
 	add [0x37], [HACK_VAR_F7]
@@ -1143,11 +1143,11 @@ LABEL_0AD9:
 
 LABEL_0B0A:
 	mov [HERO_POS_JUMP_DOWN], [HERO_POS_UP_DOWN]
-	call LABEL_0A15
+	call SUM_HASH_VARS_TO_VAR_37
 	call LABEL_0ABD
 	call LABEL_0A7A
 	call LABEL_0A37
-	call LABEL_0015
+	call INIT_PROGRESS_HASH_VARS
 	mov [0xBF], [0x37]
 	add [0xC1], [HERO_ACTION_POS_MASK]
 	or [0x50], 0x0001
@@ -1277,7 +1277,7 @@ LABEL_0C9C:
 	jmp LABEL_0D4F
 
 LABEL_0CB7:
-	call LABEL_0A15
+	call SUM_HASH_VARS_TO_VAR_37
 	setup channel=0x0A, address=LABEL_0D70
 	setup channel=0x1E, address=LABEL_0D78
 	je [0x31], 0x01, LABEL_0CD7
@@ -1293,32 +1293,32 @@ LABEL_0CD7:
 	and [0x32], 0x001F
 	jl [0x32], 0x06, LABEL_0D4F
 	jl [0x64], 0x14, LABEL_0D4F
-	call LABEL_0A15
-	call LABEL_0015
+	call SUM_HASH_VARS_TO_VAR_37
+	call INIT_PROGRESS_HASH_VARS
 	mov [0xC6], [0x37]
 	or [0xC6], 0x0080
-	call LABEL_0015
-	setup channel=0x32, address=LABEL_0D41
+	call INIT_PROGRESS_HASH_VARS
+	setup channel=0x32, address=MARK_VAR67_AND_KILL
 	setup channel=0x3F, address=LABEL_0D46
 	mov [0xE4], [0x68]
 	break
 	break
-	call LABEL_0015
+	call INIT_PROGRESS_HASH_VARS
 	mov [0xF2], 0x0FA0
 	break
-	call LABEL_0015
-	call LABEL_0A15
+	call INIT_PROGRESS_HASH_VARS
+	call SUM_HASH_VARS_TO_VAR_37
 	call LABEL_0D22
 	jmp LABEL_007F
 	bankSwitch 1;  Intro Sequence	;@raw=0x19,0x3E,0x81
 	killChannel
 
 LABEL_0D22:
-	call LABEL_0D2A
+	call CALL_LABEL_0D2E_AND_RET
 	or [0xE4], 0x0014
 	ret
 
-LABEL_0D2A:
+CALL_LABEL_0D2E_AND_RET:
 	call LABEL_0D2E
 	ret
 
@@ -1329,14 +1329,14 @@ LABEL_0D2E:
 
 LABEL_0D36:
 	call LABEL_0D3D
-	call LABEL_0015
+	call INIT_PROGRESS_HASH_VARS
 	ret
 
 LABEL_0D3D:
-	call LABEL_0A15
+	call SUM_HASH_VARS_TO_VAR_37
 	ret
 
-LABEL_0D41:
+MARK_VAR67_AND_KILL:
 	mov [HACK_VAR_67], 0x0001
 	killChannel
 
@@ -1350,7 +1350,7 @@ LABEL_0D4E:
 LABEL_0D4F:
 	deleteChannels first=0x00, last=0x3F
 	mov [0x02], [0x37]
-	call LABEL_0015
+	call INIT_PROGRESS_HASH_VARS
 	setup channel=0x0E, address=LABEL_0D62
 	setup channel=0x1E, address=LABEL_10A3
 	killChannel
@@ -1451,14 +1451,14 @@ LABEL_0E49:
 	mov [0x08], [0x05]
 	and [0x07], 0x0007
 	and [0x08], 0x0008
-	jne [0x08], 0x00, LABEL_0E64
+	jne [0x08], 0x00, INIT_VAR08_TO_178
 	mov [0x08], 0x0086
-	jmp LABEL_0E68
+	jmp COMPUTE_VAR07_TIMES_44_PLUS_20
 
-LABEL_0E64:
+INIT_VAR08_TO_178:
 	mov [0x08], 0x00B2
 
-LABEL_0E68:
+COMPUTE_VAR07_TIMES_44_PLUS_20:
 	shl [0x07], 0x0003
 	mov [0xF8], [0x07]
 	shl [0xF8], 0x0002
