@@ -220,3 +220,4 @@
 ; (the city scene background), and the trailing-data label
 ; `LABEL_26A6` (research/10 — 55 KB of cart cinematic ROM data).
 ;@include "intro/intro_scene_final.inc"
+;@include "intro/intro_scene_final_fx_phase.inc"
