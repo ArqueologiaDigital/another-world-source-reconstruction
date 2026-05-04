@@ -100,6 +100,7 @@ CINEMATIC_LAKE_UNUSED_189		EQU 0x5DDA
 ;@include "lake/beast_surprise_scene.inc"
 ;@include "lake/screen_scenarios.inc"
 ;@include "lake/pool_underwater_cinematic.inc"
+;@include "lake/pool_lab_console_and_bubbles.inc"
 ;@include "lake/hero_physics_jump.inc"
 ;@include "lake/hero_ai_dispatch_airborne.inc"
 ;@include "lake/hero_tick_bundle_helpers.inc"
