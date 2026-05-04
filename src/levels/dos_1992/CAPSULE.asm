@@ -16738,11 +16738,11 @@ LABEL_A3EF:
 	call LABEL_344B
 	call LABEL_33C8
 	call LABEL_33A7
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_A413:
 	video type=1, offset=CINEMATIC_002, x=160, y=100	;@raw=0xFE,0xC5,0xA0,0x64
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_A41A:
 	db 0x11
 
@@ -16788,11 +16788,11 @@ LABEL_A48F:
 	setup channel=0x23, address=LABEL_4170
 	setup channel=0x27, address=LABEL_4AE8
 	mov [0x78], 0x00C8
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_A4B9:
 	setup channel=0x34, address=LABEL_00BC
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_A4C0:
 	jge [0x73], 0x4000, LABEL_A4CE
@@ -16807,7 +16807,7 @@ LABEL_A4CE:
 
 LABEL_A4E0:
 	mov [0x01], 0x0008
-	jg [0x02], 0xA0, LABEL_B3EC
+	jg [0x02], 0xA0, VAR66_MOD_32_DRAW_DISPATCH
 	jge [0x73], 0x4000, LABEL_A4F5
 	setup channel=0x25, address=LABEL_0128
 
@@ -16824,7 +16824,7 @@ LABEL_A500:
 	setup channel=0x35, address=LABEL_2096
 	mov [0x01], 0x0046
 	mov [0x02], 0x0095
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_A523:
 	db 0x11
 
@@ -16851,7 +16851,7 @@ LABEL_A524:
 	setup channel=0x37, address=LABEL_23EA
 	setup channel=0x38, address=LABEL_237B
 	setup channel=0x39, address=INLINE_SET_VAREF_TO_A0
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_A57C:
 	db 0x11
 
@@ -16876,7 +16876,7 @@ LABEL_A57D:
 	setup channel=0x01, address=LABEL_3F6C
 	mov [0xEF], 0x0005
 	play id=0x0066, freq=0x07, vol=0x10, channel=0x03
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_A5CF:
 	db 0x11
 
@@ -16893,7 +16893,7 @@ LABEL_A5D0:
 	call LABEL_9E1F
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x07, address=LABEL_2500
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 	killChannel
 	mov [0x46], 0xF060
 	mov [0x47], 0x0FA0
@@ -16907,7 +16907,7 @@ LABEL_A5D0:
 	call JUNK__9DD7
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x01, address=LABEL_3F6C
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_A631:
 	db 0x11
 
@@ -16924,7 +16924,7 @@ LABEL_A632:
 	call LABEL_9E0B
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x01, address=LABEL_3F6C
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_A662:
 	mov [0x46], 0xF060
@@ -16941,7 +16941,7 @@ LABEL_A662:
 	setup channel=0x36, address=LABEL_3E0B
 	add [0x68], 0x0019
 	setup channel=0x01, address=LABEL_3F6C
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_A69A:
 	mov [0x46], 0xF060
@@ -16959,7 +16959,7 @@ LABEL_A69A:
 	setup channel=0x37, address=LABEL_1F80
 	setup channel=0x01, address=LABEL_3FBA
 	mov [0x69], 0x00AC
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 	mov [0x46], 0xF060
 	mov [0x47], 0x0FA0
 	mov [0x42], 0xF060
@@ -16972,7 +16972,7 @@ LABEL_A69A:
 	call LABEL_9DF3
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x01, address=LABEL_3F6C
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_A706:
 	mov [0x46], 0xF060
@@ -16987,7 +16987,7 @@ LABEL_A706:
 	call LABEL_9E1F
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x01, address=LABEL_3FBA
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 	mov [0x46], 0xFFFB
 	mov [0x47], 0x0FA0
 	mov [0x42], 0xFFFB
@@ -17008,7 +17008,7 @@ LABEL_A706:
 	setup channel=0x01, address=LABEL_3F6C
 	mov [0xEF], 0x0005
 	play id=0x0066, freq=0x07, vol=0x10, channel=0x03
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_A788:
 	db 0x11
 
@@ -17035,10 +17035,10 @@ LABEL_A789:
 LABEL_A7D3:
 	mov [0xF8], [0xBB]
 	and [0xF8], 0x0008
-	je [0xF8], 0x00, LABEL_B3EC
-	jge [0x7B], 0x4000, LABEL_B3EC
+	je [0xF8], 0x00, VAR66_MOD_32_DRAW_DISPATCH
+	jge [0x7B], 0x4000, VAR66_MOD_32_DRAW_DISPATCH
 	setup channel=0x23, address=KILL_CHAN_AT_59A3
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_A7EE:
 	db 0x11
 
@@ -17058,9 +17058,9 @@ LABEL_A7EF:
 	mov [0xF8], [0xB9]
 	and [0xF8], 0x0010
 	setup channel=0x37, address=LABEL_2005
-	jne [0xF8], 0x00, LABEL_B3EC
+	jne [0xF8], 0x00, VAR66_MOD_32_DRAW_DISPATCH
 	setup channel=0x04, address=LABEL_39DA
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_A836:
 	db 0x11
 
@@ -17077,14 +17077,14 @@ LABEL_A837:
 	call LABEL_9E85
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x37, address=LABEL_1F77
-	jg [0x01], 0x0140, LABEL_B3EC
+	jg [0x01], 0x0140, VAR66_MOD_32_DRAW_DISPATCH
 	mov [0x46], 0x0052
 	mov [0x47], 0x0FA0
 	mov [0x42], 0x008B
 	mov [0x41], 0x0062
 	mov [0x43], 0x0FA0
 	mov [0x40], 0x007F
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_A886:
 	mov [0x46], 0xF060
@@ -17130,10 +17130,10 @@ LABEL_A90D:
 	setup channel=0x37, address=LABEL_3A7F
 	mov [0xF8], [0xB9]
 	and [0xF8], 0x0008
-	jne [0xF8], 0x00, LABEL_B3EC
+	jne [0xF8], 0x00, VAR66_MOD_32_DRAW_DISPATCH
 	setup channel=0x04, address=LABEL_39E3
 	setup channel=0x37, address=LABEL_39EC
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_A929:
 	db 0x11
 
@@ -17149,7 +17149,7 @@ LABEL_A92A:
 	setPalette 0x01	;@raw=0x0B,0x01,0xFF
 	call LABEL_9EA5
 	call DELETE_CHANS_0_8_AND_RET
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_A956:
 	db 0x11
 
@@ -17165,7 +17165,7 @@ LABEL_A957:
 	setPalette 0x01	;@raw=0x0B,0x01,0xFF
 	call LABEL_9EB1
 	call DELETE_CHANS_0_8_AND_RET
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_A983:
 	mov [0x46], 0x00A3
@@ -17181,19 +17181,19 @@ LABEL_A983:
 	call DELETE_CHANS_0_8_AND_RET
 	jl [0x02], 0xC8, LABEL_A9B9
 	setup channel=0x14, address=LABEL_70E2
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_A9B9:
 	setup channel=0x03, address=LABEL_3D70
 	setup channel=0x01, address=INLINE_SET_VARE6_TO_F
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_A9C4:
 	deleteChannels first=0x00, last=0x3B
 	deleteChannels first=0x3D, last=0x3F
 	copyVideoPage src=0x03, dst=0x00
 	setup channel=0x04, address=LABEL_1A72
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_A9D6:
 	mov [0x46], 0xF060
@@ -17214,7 +17214,7 @@ LABEL_A9D6:
 	mov [PAUSE_SLICES], 0x0006
 	play id=0x0066, freq=0x05, vol=0x0F, channel=0x03
 	play id=0x0066, freq=0x07, vol=0x0A, channel=0x02
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_AA21:
 	db 0x11
 
@@ -17235,7 +17235,7 @@ LABEL_AA22:
 	mov [0x02], 0x009D
 	mov [0x2A], 0x000F
 	setup channel=0x14, address=SET_VAR01_TO_6E_KILL_CHANNEL
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_AA62:
 	db 0x11
 
@@ -17251,7 +17251,7 @@ LABEL_AA63:
 	setPalette 0x11	;@raw=0x0B,0x11,0xFF
 	call LABEL_9C8B
 	call DELETE_CHANS_0_8_AND_RET
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 	killChannel
 	mov [0x46], 0xF060
 	mov [0x47], 0x0FA0
@@ -17265,7 +17265,7 @@ LABEL_AA63:
 	setup channel=0x3C, address=LABEL_2E2D
 	call LABEL_9CA7
 	call DELETE_CHANS_0_8_AND_RET
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_AAC0:
 	db 0x11
 
@@ -17288,10 +17288,10 @@ LABEL_AAC1:
 	mov [0xF8], [0xB9]
 	and [0xF8], 0x0001
 	setup channel=0x3C, address=LABEL_2E43
-	jne [0xF8], 0x00, LABEL_B3EC
+	jne [0xF8], 0x00, VAR66_MOD_32_DRAW_DISPATCH
 	setup channel=0x3C, address=LABEL_2E43
 	setup channel=0x02, address=LABEL_0C0E
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_AB16:
 	mov [0x46], 0xF060
@@ -17311,10 +17311,10 @@ LABEL_AB16:
 	setup channel=0x37, address=LABEL_1F55
 	mov [0xF8], [0xB9]
 	and [0xF8], 0x0001
-	je [0xF8], 0x00, LABEL_B3EC
+	je [0xF8], 0x00, VAR66_MOD_32_DRAW_DISPATCH
 	setup channel=0x02, address=KILL_CHAN_AT_59A3
 	setup channel=0x3C, address=LABEL_2E2D
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 	killChannel
 	mov [0x46], 0xF060
 	mov [0x47], 0x0FA0
@@ -17330,7 +17330,7 @@ LABEL_AB16:
 	call LABEL_9CA7
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x37, address=SET_VARE6_TO_A
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_AB9F:
 	db 0x11
 
@@ -17353,7 +17353,7 @@ LABEL_ABA0:
 	call LABEL_3317
 	call LABEL_333B
 	call LABEL_335F
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_ABE5:
 	mov [0x46], 0x0018
@@ -17427,11 +17427,11 @@ LABEL_ACB0:
 LABEL_ACD2:
 	mov [0xF8], [0xB4]
 	and [0xF8], 0x0004
-	jne [0xF8], 0x00, LABEL_B3EC
+	jne [0xF8], 0x00, VAR66_MOD_32_DRAW_DISPATCH
 	call LABEL_327A
 	call INIT_HASH_VARS_A9_TO_AD
 	setup channel=0x34, address=LABEL_289B
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_ACEC:
 	db 0x11
 
@@ -17456,17 +17456,17 @@ LABEL_AD0F:
 	call LABEL_333B
 	call LABEL_335F
 	setup channel=0x1B, address=LABEL_28A8
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_AD34:
 	video type=1, offset=CINEMATIC_322, x=160, y=100	;@raw=0xF8,0x8F,0xA0,0x64
 	mov [0xF8], [0xB4]
 	and [0xF8], 0x0020
-	jne [0xF8], 0x00, LABEL_B3EC
+	jne [0xF8], 0x00, VAR66_MOD_32_DRAW_DISPATCH
 	call LABEL_335F
 	setup channel=0x27, address=LABEL_0DE4
 	setup channel=0x1B, address=LABEL_28A8
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_AD53:
 	mov [0x46], 0x007F
@@ -17492,9 +17492,9 @@ LABEL_AD53:
 	setup channel=0x37, address=LABEL_1F40
 	mov [0xF8], [0xB4]
 	and [0xF8], 0x0002
-	jne [0xF8], 0x00, LABEL_B3EC
+	jne [0xF8], 0x00, VAR66_MOD_32_DRAW_DISPATCH
 	call LABEL_3259
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_ADB5:
 	mov [0x46], 0xF060
@@ -17517,15 +17517,15 @@ LABEL_ADB5:
 	mov [0xF8], [0xB9]
 	shr [0xF8], 0x0008
 	and [0xF8], 0x0007
-	jl [0xF8], 0x01, LABEL_B3EC
+	jl [0xF8], 0x01, VAR66_MOD_32_DRAW_DISPATCH
 	video type=1, offset=CINEMATIC_502, x=160, y=100	;@raw=0xF0,0x62,0xA0,0x64
-	jl [0xF8], 0x02, LABEL_B3EC
+	jl [0xF8], 0x02, VAR66_MOD_32_DRAW_DISPATCH
 	video type=1, offset=CINEMATIC_503, x=160, y=100	;@raw=0xF0,0x89,0xA0,0x64
-	jl [0xF8], 0x03, LABEL_B3EC
+	jl [0xF8], 0x03, VAR66_MOD_32_DRAW_DISPATCH
 	video type=1, offset=CINEMATIC_504, x=160, y=100	;@raw=0xF0,0x99,0xA0,0x64
-	jl [0xF8], 0x04, LABEL_B3EC
+	jl [0xF8], 0x04, VAR66_MOD_32_DRAW_DISPATCH
 	video type=1, offset=CINEMATIC_505, x=160, y=100	;@raw=0xF2,0xDF,0xA0,0x64
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_AE2C:
 	mov [0x46], 0xF060
@@ -17539,7 +17539,7 @@ LABEL_AE2C:
 	setPalette 0x01	;@raw=0x0B,0x01,0xFF
 	call LABEL_9CE3
 	call DELETE_CHANS_0_8_AND_RET
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_AE58:
 	mov [0x46], 0xF060
@@ -17556,7 +17556,7 @@ LABEL_AE58:
 	setPalette 0x01	;@raw=0x0B,0x01,0xFF
 	call LABEL_9E95
 	call DELETE_CHANS_0_8_AND_RET
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_AE90:
 	mov [0x46], 0xF060
@@ -17575,7 +17575,7 @@ LABEL_AE90:
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x01, address=INLINE_SET_VARE6_TO_F
 	setup channel=0x03, address=LABEL_3D70
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_AED0:
 	mov [0x46], 0xF060
@@ -17594,7 +17594,7 @@ LABEL_AED0:
 	setup channel=0x3C, address=LABEL_2F4F
 	call LABEL_9EB9
 	call DELETE_CHANS_0_8_AND_RET
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_AF10:
 	mov [0x46], 0xF060
@@ -17614,13 +17614,13 @@ LABEL_AF10:
 	jne [0xF8], 0x00, LABEL_AF54
 	call LABEL_26C9
 	setup channel=0x01, address=LABEL_289B
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_AF54:
 	video type=1, offset=CINEMATIC_345, x=180, y=149	;@raw=0x85,0x8C,0xB4,0x95
 	setup channel=0x01, address=INLINE_SET_VARE6_TO_F
 	setup channel=0x03, address=LABEL_3D70
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_AF63:
 	db 0x11
 
@@ -17641,10 +17641,10 @@ LABEL_AF64:
 	setup channel=0x37, address=LABEL_0AE1
 	mov [0xF8], [0xB9]
 	and [0xF8], 0x0001
-	jne [0xF8], 0x00, LABEL_B3EC
+	jne [0xF8], 0x00, VAR66_MOD_32_DRAW_DISPATCH
 	or [0xB9], 0x0004
 	setup channel=0x3C, address=LABEL_2E2D
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_AFB0:
 	mov [0x46], 0xF060
@@ -17664,9 +17664,9 @@ LABEL_AFB0:
 	setup channel=0x02, address=LABEL_0683
 	mov [0xF8], [0xB9]
 	and [0xF8], 0x0080
-	jne [0xF8], 0x00, LABEL_B3EC
+	jne [0xF8], 0x00, VAR66_MOD_32_DRAW_DISPATCH
 	setup channel=0x37, address=LABEL_05A7
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_AFFD:
 	mov [0x46], 0xF060
@@ -17685,7 +17685,7 @@ LABEL_AFFD:
 	jne [0xF8], 0x00, LABEL_B03E
 	setup channel=0x03, address=INIT_VARS_E6_E7
 	setup channel=0x04, address=LABEL_0A97
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_B03E:
 	setup channel=0x02, address=INLINE_SET_VARE6_TO_14
@@ -17699,7 +17699,7 @@ LABEL_B03E:
 	setup channel=0x38, address=LABEL_2C05
 	call LABEL_32BF
 	call LABEL_329B
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_B06B:
 	db 0x11
 
@@ -17721,7 +17721,7 @@ LABEL_B06C:
 	mov [0xA9], 0x00A5
 	mov [0xAA], 0x03E8
 	mov [0xAB], 0x00EA
-	jmp LABEL_B3EC
+	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_B0AD:
 	db 0x11
 
@@ -17977,7 +17977,7 @@ LABEL_B2CA:
 	je [HACK_VAR_67], 0xEE, LABEL_AE90
 	je [HACK_VAR_67], 0xEF, LABEL_A69A
 
-LABEL_B3EC:
+VAR66_MOD_32_DRAW_DISPATCH:
 	selectVideoPage 0xFF
 	call LABEL_B28A
 	je [0x66], [HACK_VAR_67], COPY_HACK67_TO_VAR66

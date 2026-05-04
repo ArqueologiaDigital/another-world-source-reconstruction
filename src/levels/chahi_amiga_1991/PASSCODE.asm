@@ -116,10 +116,10 @@ LABEL_004B:
 	mov [0x06], [0x0F]
 
 LABEL_0054:
-	jne [0x05], 0x06, LABEL_005D
+	jne [0x05], 0x06, LOAD_VAR11_TO_VAR06
 	mov [0x06], [0x10]
 
-LABEL_005D:
+LOAD_VAR11_TO_VAR06:
 	jne [0x05], 0x07, LOAD_VAR12_TO_VAR06
 	mov [0x06], [0x11]
 
@@ -191,7 +191,7 @@ LABEL_0102:
 	mov [0x07], 0x00A0
 	mov [0x08], 0x0064
 	mov [0x05], [0x01]
-	call LABEL_0A73
+	call DERIVE_VAR07_VAR08_FROM_VAR05
 	jmp LABEL_05FB
 LABEL_0129:
 	db 0x11
@@ -247,10 +247,10 @@ LABEL_01C4:
 	video type=1, offset=CINEMATIC_010, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x07,0xEA,0x2D,0x2E
 
 LABEL_01CF:
-	jne [0x05], 0x07, LABEL_01DA
+	jne [0x05], 0x07, DRAW_CIN_008_AT_2D_2E_KEY08
 	video type=1, offset=CINEMATIC_009, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x07,0xE2,0x2D,0x2E
 
-LABEL_01DA:
+DRAW_CIN_008_AT_2D_2E_KEY08:
 	jne [0x05], 0x08, DRAW_CIN_007_AT_2D_2E_KEY09
 	video type=1, offset=CINEMATIC_008, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x07,0xFA,0x2D,0x2E
 
@@ -416,7 +416,7 @@ LABEL_0283:
 	db 0x05, 0x11
 
 LABEL_05D5:
-	call LABEL_0A73
+	call DERIVE_VAR07_VAR08_FROM_VAR05
 	call LABEL_0AA1
 	ret
 
@@ -471,7 +471,7 @@ LABEL_0669:
 	mov [0x05], [0x01]
 	mov [0x25], [0x07]
 	mov [0x26], [0x08]
-	call LABEL_0A73
+	call DERIVE_VAR07_VAR08_FROM_VAR05
 	mov [0x27], [0x07]
 	mov [0x28], [0x08]
 	jne [0x25], [0x27], SETUP_DRAW_FROM_VAR25_26
@@ -758,7 +758,7 @@ LABEL_0A21:
 
 LABEL_0A27:
 	mov [0x05], [0x01]
-	call LABEL_0A73
+	call DERIVE_VAR07_VAR08_FROM_VAR05
 	video type=1, offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x04,0x62,0x07,0x08
 	break
 	jne [HERO_ACTION], 0x00, LABEL_0A27
@@ -785,7 +785,7 @@ LABEL_0A3D:
 	selectVideoPage 0xFF
 	ret
 
-LABEL_0A73:
+DERIVE_VAR07_VAR08_FROM_VAR05:
 	mov [0x07], [0x05]
 	mov [0x08], [0x05]
 	and [0x07], 0x0007
@@ -950,11 +950,11 @@ LABEL_0C0D:
 	ret
 
 LABEL_0C1A:
-	jne [0x06], 0x1B, LABEL_0C27
+	jne [0x06], 0x1B, DRAW_LETTER_S_CIN_025
 	video type=1, offset=CINEMATIC_026, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x09,0x1A,0x07,0x08,0x04
 	ret
 
-LABEL_0C27:
+DRAW_LETTER_S_CIN_025:
 	jne [0x06], 0x1C, DRAW_LETTER_T_CIN_024
 	video type=1, offset=CINEMATIC_025, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x09,0x2C,0x07,0x08,0x04
 	ret

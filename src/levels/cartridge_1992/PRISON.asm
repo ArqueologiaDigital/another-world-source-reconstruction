@@ -2726,7 +2726,7 @@ LABEL_112E:
 
 LABEL_112F:
 	call LABEL_2BAC
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	break
 	jmp LABEL_112F
 LABEL_113C:
@@ -3320,7 +3320,7 @@ LABEL_170E:
 	mov [0x0E], 0x0000
 	break
 	mov [0x2F], 0x0006
-	jmp LABEL_2AB6
+	jmp DISPATCH_VAR2F_STATE
 LABEL_1722:
 	db 0x11
 
@@ -3594,7 +3594,7 @@ LABEL_19F8:
 	break
 	mov [0x2F], 0x0018
 	mov [0x29], 0xFFF0
-	jmp LABEL_2AB6
+	jmp DISPATCH_VAR2F_STATE
 LABEL_1A22:
 	db 0x11
 
@@ -3761,7 +3761,7 @@ LABEL_1BB7:
 	song id=0x0BC0, delay=0x0000, pos=0x00
 	mov [0x29], 0x01A4
 	mov [0x2F], 0x0019
-	jmp LABEL_2AB6
+	jmp DISPATCH_VAR2F_STATE
 LABEL_1BD9:
 	db 0x11
 
@@ -4808,7 +4808,7 @@ LABEL_25F9:
 	call LABEL_64C2
 	break
 	call LABEL_318E
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	jmp LABEL_25F9
 LABEL_2609:
 	db 0x11
@@ -4823,7 +4823,7 @@ LABEL_2619:
 	call LABEL_6737
 	break
 	call LABEL_318E
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	jmp LABEL_2619
 LABEL_2629:
 	db 0x11
@@ -4838,13 +4838,13 @@ LABEL_2639:
 	call LABEL_57D5
 	break
 	call LABEL_318E
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	jmp LABEL_2639
 LABEL_2649:
 	db 0x11
 
 LABEL_264A:
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call LABEL_57D5
 	break
 	call LABEL_318E
@@ -4853,7 +4853,7 @@ LABEL_265A:
 	db 0x11
 
 LABEL_265B:
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call LABEL_57D5
 	break
 	call LABEL_318E
@@ -4871,13 +4871,13 @@ LABEL_267B:
 	call LABEL_636F
 	break
 	call LABEL_318E
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	jmp LABEL_267B
 LABEL_268B:
 	db 0x11
 
 LABEL_268C:
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call LABEL_636F
 	break
 	call LABEL_318E
@@ -4886,7 +4886,7 @@ LABEL_269C:
 	db 0x11
 
 LABEL_269D:
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call LABEL_636F
 	break
 	call LABEL_318E
@@ -4972,7 +4972,7 @@ LABEL_275E:
 LABEL_276A:
 	break
 	call LABEL_318E
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call LABEL_64C2
 	jmp LABEL_276A
 	killChannel
@@ -5007,7 +5007,7 @@ LABEL_27AB:
 LABEL_27B7:
 	break
 	call LABEL_318E
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call LABEL_6737
 	jmp LABEL_27B7
 LABEL_27C7:
@@ -5055,7 +5055,7 @@ LABEL_2815:
 LABEL_2835:
 	break
 	call LABEL_318E
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call LABEL_57D5
 	jmp LABEL_2835
 LABEL_2845:
@@ -5087,7 +5087,7 @@ LABEL_286E:
 LABEL_287A:
 	break
 	call LABEL_318E
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call LABEL_64C2
 	jmp LABEL_287A
 LABEL_288A:
@@ -5119,7 +5119,7 @@ LABEL_28B3:
 LABEL_28BF:
 	break
 	call LABEL_318E
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call LABEL_64C2
 	jmp LABEL_28BF
 	killChannel
@@ -5153,7 +5153,7 @@ LABEL_28BF:
 	mov [0x29], [0x07]
 	add [0x29], 0x003C
 	mov [0x2F], 0x0019
-	jmp LABEL_2AB6
+	jmp DISPATCH_VAR2F_STATE
 LABEL_2929:
 	db 0x11
 
@@ -5197,7 +5197,7 @@ LABEL_2968:
 LABEL_2988:
 	break
 	call LABEL_318E
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call LABEL_636F
 	jmp LABEL_2988
 LABEL_2998:
@@ -5229,7 +5229,7 @@ LABEL_29C1:
 LABEL_29CD:
 	break
 	call LABEL_318E
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call LABEL_6737
 	jmp LABEL_29CD
 LABEL_29DD:
@@ -5261,7 +5261,7 @@ LABEL_2A06:
 LABEL_2A12:
 	break
 	call LABEL_318E
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call LABEL_6737
 	jmp LABEL_2A12
 LABEL_2A22:
@@ -5302,7 +5302,7 @@ LABEL_2A56:
 LABEL_2A70:
 	break
 	call LABEL_318E
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call LABEL_57D5
 	jmp LABEL_2A70
 LABEL_2A80:
@@ -5322,7 +5322,7 @@ LABEL_2A81:
 LABEL_2A9B:
 	break
 	call LABEL_318E
-	jne [0x2F], 0x00, LABEL_2AB6
+	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call LABEL_636F
 	jmp LABEL_2A9B
 LABEL_2AAB:
@@ -5336,7 +5336,7 @@ LABEL_2AB1:
 	or [0x11], 0x1000
 	ret
 
-LABEL_2AB6:
+DISPATCH_VAR2F_STATE:
 	je [0x2F], 0x01, LABEL_26CF
 	je [0x2F], 0x02, LABEL_26CF
 	je [0x2F], 0x03, LABEL_68DA
@@ -5757,7 +5757,7 @@ LABEL_2F7C:
 	mov [0x2F], 0x0016
 	ret
 
-LABEL_2FA7:
+STATE_VAR12_BIG_DISPATCH_CASE_18:
 	jg [0x07], 0x1E, INIT_VARS_07_2F
 	mov [0x29], 0x001F
 	mov [0x2F], 0x0001
@@ -5924,7 +5924,7 @@ LABEL_318E:
 	jl [0x12], 0x08, LABEL_305F
 	mov [0xF8], [0x12]
 	and [0xF8], 0x1FFF
-	je [0xF8], 0x18, LABEL_2FA7
+	je [0xF8], 0x18, STATE_VAR12_BIG_DISPATCH_CASE_18
 	je [0xF8], 0x20, SET_VAR2F_TO_001A
 	je [0xF8], 0x28, SET_VAR2F_TO_001B
 	je [0xF8], 0x30, LABEL_2E2E
@@ -13987,7 +13987,7 @@ LABEL_8385:
 	mov [0x41], 0x006E
 	mov [0x44], [0x22]
 	mov [0x45], 0x0014
-	call LABEL_8822
+	call TEARDOWN_CHANS_AND_KILL_LANDING
 	selectVideoPage 0x00
 	call DRAW_CIN_305_TO_309_5F_AT_AACB4DF5
 	selectVideoPage 0xFF
@@ -14011,7 +14011,7 @@ LABEL_83C9:
 	mov [0x44], [0x22]
 	mov [0x45], 0x0014
 	setPalette 0x02	;@raw=0x0B,0x02,0xFF
-	call LABEL_8822
+	call TEARDOWN_CHANS_AND_KILL_LANDING
 	selectVideoPage 0x00
 	call DRAW_CIN_305_TO_333_7F_AT_96C7E6A8
 	selectVideoPage 0xFF
@@ -14033,7 +14033,7 @@ LABEL_8412:
 	mov [0x44], [0x22]
 	mov [0x45], 0x0014
 	setPalette 0x02	;@raw=0x0B,0x02,0xFF
-	call LABEL_8822
+	call TEARDOWN_CHANS_AND_KILL_LANDING
 	selectVideoPage 0x00
 	call LABEL_4BC6
 	jne [0x6C], 0x04, LABEL_8456
@@ -14062,7 +14062,7 @@ LABEL_8470:
 	mov [0x41], 0x006E
 	mov [0x44], [0x22]
 	mov [0x45], 0x0014
-	call LABEL_8822
+	call TEARDOWN_CHANS_AND_KILL_LANDING
 	call LABEL_82D1
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
@@ -14089,7 +14089,7 @@ LABEL_84C1:
 	mov [0x41], 0x008C
 	mov [0x44], [0x22]
 	mov [0x45], 0x0014
-	call LABEL_8822
+	call TEARDOWN_CHANS_AND_KILL_LANDING
 	call LABEL_82D1
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
@@ -14156,7 +14156,7 @@ LABEL_8582:
 	mov [0x41], 0x006E
 	mov [0x44], [0x22]
 	mov [0x45], 0x0014
-	call LABEL_8822
+	call TEARDOWN_CHANS_AND_KILL_LANDING
 	selectVideoPage 0x00
 	call LABEL_4BEF
 	setPalette 0x02	;@raw=0x0B,0x02,0xFF
@@ -14194,7 +14194,7 @@ LABEL_85F1:
 	mov [0x41], 0x006E
 	mov [0x44], [0x22]
 	mov [0x45], 0x0014
-	call LABEL_8822
+	call TEARDOWN_CHANS_AND_KILL_LANDING
 	selectVideoPage 0x00
 	call LABEL_4C08
 	selectVideoPage 0xFF
@@ -14219,7 +14219,7 @@ LABEL_863D:
 	mov [0x41], 0x006E
 	mov [0x44], [0x22]
 	mov [0x45], 0x0014
-	call LABEL_8822
+	call TEARDOWN_CHANS_AND_KILL_LANDING
 	call LABEL_82D1
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
@@ -14250,7 +14250,7 @@ LABEL_86A2:
 	mov [0x41], 0x0050
 	mov [0x44], [0x22]
 	mov [0x45], 0x0014
-	call LABEL_8822
+	call TEARDOWN_CHANS_AND_KILL_LANDING
 	setPalette 0x02	;@raw=0x0B,0x02,0xFF
 	selectVideoPage 0x00
 	call LABEL_4C25
@@ -14275,7 +14275,7 @@ LABEL_86E7:
 	mov [0x41], 0x006E
 	mov [0x44], [0x22]
 	mov [0x45], 0x0014
-	call LABEL_8822
+	call TEARDOWN_CHANS_AND_KILL_LANDING
 	call LABEL_82D1
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
@@ -14382,7 +14382,7 @@ INIT_VARS_A1_A4_A7_AA_PLUS4:
 	mov [0x61], 0x0FA0
 	ret
 
-LABEL_8822:
+TEARDOWN_CHANS_AND_KILL_LANDING:
 	deleteChannels first=0x00, last=0x08
 	deleteChannels first=0x34, last=0x37
 	setup channel=0x3B, address=KILL_CHANNEL_LANDING

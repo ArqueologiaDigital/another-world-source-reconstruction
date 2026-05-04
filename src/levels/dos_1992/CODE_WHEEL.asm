@@ -141,7 +141,7 @@ INIT_GAME_STATE_VARS:
 	ret
 	mov [HACK_VAR_54], 0x0080
 
-LABEL_007F:
+GAME_INTRO_PHASE_DRAW_CIN_076:
 	jl [HACK_VAR_54], 0x80, LABEL_00BF
 	fill page=0xFF, color=0x00
 	setPalette 0x00	;@raw=0x0B,0x00,0xFF
@@ -490,7 +490,7 @@ LABEL_03D5:
 	mov [0x07], 0x00A0
 	mov [0x08], 0x0064
 	mov [0x05], [0x01]
-	call LABEL_0E49
+	call DERIVE_VAR07_VAR08_FROM_VAR05
 	selectVideoPage 0xFF
 	break
 	jne [0x1E], 0x00, LABEL_0D4F
@@ -1076,7 +1076,7 @@ LABEL_0A0D:
 	db 0x11
 
 LABEL_0A0E:
-	call LABEL_0E49
+	call DERIVE_VAR07_VAR08_FROM_VAR05
 	call DRAW_CIN_073_IF_VAR06_EQ_1
 	ret
 
@@ -1187,7 +1187,7 @@ LABEL_0B91:
 	mov [0x05], [0x01]
 	mov [0x25], [0x07]
 	mov [0x26], [0x08]
-	call LABEL_0E49
+	call DERIVE_VAR07_VAR08_FROM_VAR05
 	mov [0x27], [0x07]
 	mov [0x28], [0x08]
 	jne [0x25], [0x27], LABEL_0BB9
@@ -1309,7 +1309,7 @@ LABEL_0CD7:
 	call INIT_PROGRESS_HASH_VARS
 	call SUM_HASH_VARS_TO_VAR_37
 	call LABEL_0D22
-	jmp LABEL_007F
+	jmp GAME_INTRO_PHASE_DRAW_CIN_076
 	bankSwitch 1;  Intro Sequence	;@raw=0x19,0x3E,0x81
 	killChannel
 
@@ -1328,11 +1328,11 @@ LABEL_0D2E:
 	ret
 
 LABEL_0D36:
-	call LABEL_0D3D
+	call WRAP_SUM_HASH_VARS_TO_VAR_37
 	call INIT_PROGRESS_HASH_VARS
 	ret
 
-LABEL_0D3D:
+WRAP_SUM_HASH_VARS_TO_VAR_37:
 	call SUM_HASH_VARS_TO_VAR_37
 	ret
 
@@ -1419,7 +1419,7 @@ LABEL_0DF7:
 
 LABEL_0DFD:
 	mov [0x05], [0x01]
-	call LABEL_0E49
+	call DERIVE_VAR07_VAR08_FROM_VAR05
 	video type=1, offset=CINEMATIC_077, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x04,0x62,0x07,0x08
 	break
 	jne [HERO_ACTION], 0x00, LABEL_0DFD
@@ -1446,7 +1446,7 @@ LABEL_0E13:
 	selectVideoPage 0xFF
 	ret
 
-LABEL_0E49:
+DERIVE_VAR07_VAR08_FROM_VAR05:
 	mov [0x07], [0x05]
 	mov [0x08], [0x05]
 	and [0x07], 0x0007

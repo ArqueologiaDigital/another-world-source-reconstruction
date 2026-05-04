@@ -65,10 +65,10 @@ LABEL_004C:
 	mov [0x06], [0x0F]
 
 LABEL_0055:
-	jne [0x05], 0x06, LABEL_005E
+	jne [0x05], 0x06, LOAD_VAR11_TO_VAR06
 	mov [0x06], [0x10]
 
-LABEL_005E:
+LOAD_VAR11_TO_VAR06:
 	jne [0x05], 0x07, LOAD_VAR12_TO_VAR06
 	mov [0x06], [0x11]
 
@@ -147,7 +147,7 @@ LABEL_012B:
 	mov [0x07], 0x00A0
 	mov [0x08], 0x0064
 	mov [0x05], [0x01]
-	call LABEL_08CD
+	call DERIVE_VAR07_VAR08_FROM_VAR05
 	setPalette 0x05	;@raw=0x0B,0x05,0xFF
 	copyVideoPage src=0x00, dst=0xFF
 	jmp LABEL_033B
@@ -322,11 +322,11 @@ LABEL_02C5:
 	ret
 
 LABEL_02CF:
-	jne [0x22], 0x06, LABEL_02D9
+	jne [0x22], 0x06, SAVE_HASH_VAR1D_TO_VAR11
 	mov [0x10], [0x1D]
 	ret
 
-LABEL_02D9:
+SAVE_HASH_VAR1D_TO_VAR11:
 	jne [0x22], 0x07, SAVE_HASH_VAR1D_TO_VAR12
 	mov [0x11], [0x1D]
 	ret
@@ -374,7 +374,7 @@ LABEL_0333:
 	db 0x11
 
 LABEL_0334:
-	call LABEL_08CD
+	call DERIVE_VAR07_VAR08_FROM_VAR05
 	call LABEL_0B8D
 	ret
 
@@ -422,18 +422,18 @@ LABEL_03C0:
 	mov [0x05], [0x01]
 	mov [0x25], [0x07]
 	mov [0x26], [0x08]
-	call LABEL_08CD
+	call DERIVE_VAR07_VAR08_FROM_VAR05
 	mov [0x27], [0x07]
 	mov [0x28], [0x08]
-	jne [0x25], [0x27], LABEL_03E8
-	jne [0x26], [0x28], LABEL_03E8
+	jne [0x25], [0x27], ANIMATE_CURSOR_TRANSITION
+	jne [0x26], [0x28], ANIMATE_CURSOR_TRANSITION
 	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x00,0xC4,0x07,0x08
 	break
 	jmp LABEL_033B
 LABEL_03E7:
 	db 0x11
 
-LABEL_03E8:
+ANIMATE_CURSOR_TRANSITION:
 	mov [0x07], [0x25]
 	mov [0x08], [0x26]
 	mov [0x24], 0x0003
@@ -724,11 +724,11 @@ LABEL_07C2:
 	ret
 
 LABEL_07CD:
-	jne [LAST_KEYCHAR], 0x08, LABEL_07D8
+	jne [LAST_KEYCHAR], 0x08, MAP_KEY_A_TO_Z_TO_INDEX
 	mov [0x06], 0x0062
 	ret
 
-LABEL_07D8:
+MAP_KEY_A_TO_Z_TO_INDEX:
 	jl [LAST_KEYCHAR], 0x41, CLEAR_LAST_KEYCHAR
 	jg [LAST_KEYCHAR], 0x5A, CLEAR_LAST_KEYCHAR
 	mov [0x06], [LAST_KEYCHAR]
@@ -786,7 +786,7 @@ LABEL_085F:
 
 LABEL_0865:
 	mov [0x05], [0x01]
-	call LABEL_08CD
+	call DERIVE_VAR07_VAR08_FROM_VAR05
 	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x00,0xC4,0x07,0x08
 	break
 	jne [LAST_KEYCHAR], 0x00, LABEL_0865
@@ -820,7 +820,7 @@ LABEL_0892:
 	selectVideoPage 0xFF
 	ret
 
-LABEL_08CD:
+DERIVE_VAR07_VAR08_FROM_VAR05:
 	mov [0x07], [0x05]
 	mov [0x08], [0x05]
 	and [0x07], 0x0007
@@ -856,11 +856,11 @@ LABEL_092A:
 	ret
 
 LABEL_0937:
-	jne [0x06], 0x0D, LABEL_0944
+	jne [0x06], 0x0D, DRAW_LETTER_F_AT_X23
 	text id=0x0130, x=23, y=80, color=0x04 ; "D"
 	ret
 
-LABEL_0944:
+DRAW_LETTER_F_AT_X23:
 	jne [0x06], 0x0F, DRAW_LETTER_G_AT_X23
 	text id=0x0131, x=23, y=80, color=0x04 ; "F"
 	ret
@@ -916,11 +916,11 @@ LABEL_09C6:
 	ret
 
 LABEL_09D3:
-	jne [0x06], 0x0D, LABEL_09E0
+	jne [0x06], 0x0D, DRAW_LETTER_F_AT_X24
 	text id=0x0130, x=24, y=80, color=0x04 ; "D"
 	ret
 
-LABEL_09E0:
+DRAW_LETTER_F_AT_X24:
 	jne [0x06], 0x0F, DRAW_LETTER_G_AT_X24
 	text id=0x0131, x=24, y=80, color=0x04 ; "F"
 	ret
@@ -976,11 +976,11 @@ LABEL_0A62:
 	ret
 
 LABEL_0A6F:
-	jne [0x06], 0x0D, LABEL_0A7C
+	jne [0x06], 0x0D, DRAW_LETTER_F_AT_X25
 	text id=0x0130, x=25, y=80, color=0x04 ; "D"
 	ret
 
-LABEL_0A7C:
+DRAW_LETTER_F_AT_X25:
 	jne [0x06], 0x0F, DRAW_LETTER_G_AT_X25
 	text id=0x0131, x=25, y=80, color=0x04 ; "F"
 	ret
@@ -1036,11 +1036,11 @@ LABEL_0AFE:
 	ret
 
 LABEL_0B0B:
-	jne [0x06], 0x0D, LABEL_0B18
+	jne [0x06], 0x0D, DRAW_LETTER_F_AT_X26
 	text id=0x0130, x=26, y=80, color=0x04 ; "D"
 	ret
 
-LABEL_0B18:
+DRAW_LETTER_F_AT_X26:
 	jne [0x06], 0x0F, DRAW_LETTER_G_AT_X26
 	text id=0x0131, x=26, y=80, color=0x04 ; "F"
 	ret

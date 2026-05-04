@@ -114,7 +114,7 @@ LABEL_004A:
 LABEL_0077:
 	db 0x00, 0x54, 0x00, 0x01
 
-LABEL_007B:
+GAME_INTRO_PHASE_DRAW_CIN_076:
 	jl [HACK_VAR_54], 0x80, LABEL_00AF
 	fill page=0xFF, color=0x00
 	setPalette 0x00	;@raw=0x0B,0x00,0xFF
@@ -443,7 +443,7 @@ LABEL_037D:
 	mov [0x07], 0x00A0
 	mov [0x08], 0x0064
 	mov [0x05], [0x01]
-	call LABEL_0BC1
+	call DERIVE_VAR07_VAR08_FROM_VAR05
 	selectVideoPage 0xFF
 	mov [0x32], 0x0000
 	break
@@ -884,7 +884,7 @@ LABEL_0816:
 	db 0x11
 
 LABEL_0817:
-	call LABEL_0BC1
+	call DERIVE_VAR07_VAR08_FROM_VAR05
 	call DRAW_CIN_073_IF_VAR06_EQ_1
 	ret
 
@@ -983,7 +983,7 @@ LABEL_0966:
 	mov [0x05], [0x01]
 	mov [0x25], [0x07]
 	mov [0x26], [0x08]
-	call LABEL_0BC1
+	call DERIVE_VAR07_VAR08_FROM_VAR05
 	mov [0x27], [0x07]
 	mov [0x28], [0x08]
 	jne [0x25], [0x27], LABEL_098E
@@ -1037,11 +1037,11 @@ LABEL_09F8:
 
 LABEL_09F9:
 	setPalette 0x00	;@raw=0x0B,0x00,0xFF
-	je [0x29], [0x1E], LABEL_0A68
-	je [0x29], [0x1F], LABEL_0A68
-	je [0x29], [0x20], LABEL_0A68
-	je [0x29], [0x21], LABEL_0A68
-	jmp LABEL_0A68
+	je [0x29], [0x1E], SETUP_CODEWHEEL_CHANNELS
+	je [0x29], [0x1F], SETUP_CODEWHEEL_CHANNELS
+	je [0x29], [0x20], SETUP_CODEWHEEL_CHANNELS
+	je [0x29], [0x21], SETUP_CODEWHEEL_CHANNELS
+	jmp SETUP_CODEWHEEL_CHANNELS
 LABEL_0A17:
 	db 0x0A, 0x80, 0x2A, 0x1E, 0x0A, 0x32, 0x0A, 0x80
 	db 0x2A, 0x1F, 0x0A, 0x32, 0x0A, 0x80, 0x2A, 0x20
@@ -1055,7 +1055,7 @@ LABEL_0A17:
 	db 0x0A, 0x80, 0x2C, 0x21, 0x0A, 0x68, 0x07, 0x0A
 	db 0xD5
 
-LABEL_0A68:
+SETUP_CODEWHEEL_CHANNELS:
 	call SUM_HASH_VARS_TO_VAR_37
 	setup channel=0x0A, address=LABEL_0AF3
 	setup channel=0x1E, address=LABEL_0AFB
@@ -1084,7 +1084,7 @@ LABEL_0A88:
 	call INIT_PROGRESS_HASH_VARS
 	mov [0xF2], 0x1770
 	break
-	jmp LABEL_007B
+	jmp GAME_INTRO_PHASE_DRAW_CIN_076
 LABEL_0AC3:
 	db 0x19, 0x3E, 0x81, 0x11
 
@@ -1166,7 +1166,7 @@ LABEL_0B6F:
 
 LABEL_0B75:
 	mov [0x05], [0x01]
-	call LABEL_0BC1
+	call DERIVE_VAR07_VAR08_FROM_VAR05
 	video type=1, offset=CINEMATIC_051, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x04,0x62,0x07,0x08
 	break
 	jne [HERO_ACTION], 0x00, LABEL_0B75
@@ -1193,7 +1193,7 @@ LABEL_0B8B:
 	selectVideoPage 0xFF
 	ret
 
-LABEL_0BC1:
+DERIVE_VAR07_VAR08_FROM_VAR05:
 	mov [0x07], [0x05]
 	mov [0x08], [0x05]
 	and [0x07], 0x0007
