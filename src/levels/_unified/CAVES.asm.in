@@ -302,6 +302,7 @@
 ;@include "caves/caves_inline_setters_and_init.inc"
 ;@include "caves/caves_inline_setters_part1c.inc"
 ;@include "caves/caves_scroll_setup_and_helpers.inc"
+;@include "caves/caves_scroll_init_and_sfx.inc"
 ;@include "caves/caves_dedup_helpers_cluster.inc"
 ;@include "caves/caves_var22_setters_and_projections.inc"
 ;@include "caves/caves_action_helpers.inc"
