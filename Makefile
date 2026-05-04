@@ -109,6 +109,20 @@ verify-stages:
 	@cd $(ARCHAEOLOGY) && python3 tools/verify_stage.py \
 	    --src-tree $(realpath src/levels)
 
+# Phase 2 of the `;@raw=` migration: source must contain ZERO
+# `;@raw=` annotations. awvm-asm now panics on any line carrying
+# the marker (see AnotherWorld_VMTools commit a1c6661); this rule
+# is the cheaper text-only check that catches it before the
+# assembler does. Wire it into pre-commit / CI as
+# `make lint-raw`.
+.PHONY: lint-raw
+lint-raw:
+	@cd $(ARCHAEOLOGY) && python3 tools/audit_raw_annotations.py --strict
+
+# Aggregate lint target. Add new lint rules here.
+.PHONY: lint
+lint: lint-raw
+
 # Phase 3b: source files with `;@if BRANCH == "..."` conditional directives.
 # `make preprocess SRC=path/to/foo.asm.in TARGET=cartridge_1992`
 # emits the per-branch .asm to build/<TARGET>/.
