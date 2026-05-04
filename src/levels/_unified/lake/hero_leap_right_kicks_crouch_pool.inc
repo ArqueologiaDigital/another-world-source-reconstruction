@@ -216,7 +216,7 @@ HERO_LEAP_R_F5_TO_F9_ENTRY:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video type=1, offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "gba_2004"
-	video type=1, offset=0x0C1E, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=LOOP_DRAW_LAKE_018_AT_CENTER_AT_0C1E, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
@@ -225,7 +225,7 @@ HERO_LEAP_R_F5_TO_F9_ENTRY:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video type=1, offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "gba_2004"
-	video type=1, offset=0x0C1E, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=LOOP_DRAW_LAKE_018_AT_CENTER_AT_0C1E, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
@@ -236,7 +236,7 @@ HERO_LAND_RIGHT_HOLD_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video type=1, offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "gba_2004"
-	video type=1, offset=0x0C1E, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=LOOP_DRAW_LAKE_018_AT_CENTER_AT_0C1E, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
@@ -703,7 +703,7 @@ HERO_RUN_LEFT_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video type=1, offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "gba_2004"
-	video type=1, offset=0x08FC, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=ADDR_AT_08FC, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
@@ -712,7 +712,7 @@ HERO_RUN_LEFT_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video type=1, offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "gba_2004"
-	video type=1, offset=0x08FC, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=ADDR_AT_08FC, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
@@ -723,7 +723,7 @@ HERO_LAND_LEFT_HOLD_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video type=1, offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "gba_2004"
-	video type=1, offset=0x08FC, x=[0x01], y=[0x02], zoom=[0x03]
+	video type=1, offset=ADDR_AT_08FC, x=[0x01], y=[0x02], zoom=[0x03]
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif

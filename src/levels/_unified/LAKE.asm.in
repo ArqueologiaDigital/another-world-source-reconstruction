@@ -37,6 +37,7 @@ CINEMATIC_LAKE_UNUSED_175		EQU 0x8A8E
 CINEMATIC_LAKE_UNUSED_189		EQU 0x5DDA
 ;@endif
 ;@include "../_common_vars.inc"
+;@include "lake/lake_equ_aliases.inc"
 
 
 	org 0x0000

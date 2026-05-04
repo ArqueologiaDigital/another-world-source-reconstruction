@@ -503,7 +503,7 @@ LABEL_57DB:
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_57F2:
-	call 0x55E9
+	call GUARDED_DRAW_CIN_338_339_AT_55E9
 	sub [0x07], 0x0003
 	break
 	jg [0x07], [0x29], LABEL_5809
@@ -563,7 +563,7 @@ LABEL_5855:
 	call LABEL_55CB
 	sub [0x07], 0x0003
 	break
-	call 0x55E9
+	call GUARDED_DRAW_CIN_338_339_AT_55E9
 	sub [0x07], 0x0003
 	break
 	call LABEL_5607

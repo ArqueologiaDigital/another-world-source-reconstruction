@@ -80,7 +80,7 @@ REED_PLANT_FRAMES_5_TO_7_LOOP:
 	video type=1, offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 ;@elif BRANCH == "gba_2004"
 REED_PLANT_FRAMES_5_TO_7_LOOP:
-	video type=1, offset=0xB808, x=160, y=100
+	video type=1, offset=ADDR_AT_B808, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
 
 REED_PLANT_FRAMES_5_TO_7_LOOP:
@@ -90,7 +90,7 @@ REED_PLANT_FRAMES_5_TO_7_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video type=1, offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 ;@elif BRANCH == "gba_2004"
-	video type=1, offset=0xB808, x=160, y=100
+	video type=1, offset=ADDR_AT_B808, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 ;@endif
@@ -98,7 +98,7 @@ REED_PLANT_FRAMES_5_TO_7_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 ;@elif BRANCH == "gba_2004"
-	video type=1, offset=0xB8A0, x=160, y=100
+	video type=1, offset=ADDR_AT_B8A0, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 ;@endif
@@ -106,7 +106,7 @@ REED_PLANT_FRAMES_5_TO_7_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 ;@elif BRANCH == "gba_2004"
-	video type=1, offset=0xB8A0, x=160, y=100
+	video type=1, offset=ADDR_AT_B8A0, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 ;@endif
@@ -114,7 +114,7 @@ REED_PLANT_FRAMES_5_TO_7_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video type=1, offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 ;@elif BRANCH == "gba_2004"
-	video type=1, offset=0xB8EE, x=160, y=100
+	video type=1, offset=ADDR_AT_B8EE, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 ;@endif
@@ -122,7 +122,7 @@ REED_PLANT_FRAMES_5_TO_7_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video type=1, offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 ;@elif BRANCH == "gba_2004"
-	video type=1, offset=0xB8EE, x=160, y=100
+	video type=1, offset=ADDR_AT_B8EE, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 ;@endif
@@ -130,7 +130,7 @@ REED_PLANT_FRAMES_5_TO_7_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video type=1, offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 ;@elif BRANCH == "gba_2004"
-	video type=1, offset=0xB8EE, x=160, y=100
+	video type=1, offset=ADDR_AT_B8EE, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 ;@endif
@@ -138,7 +138,7 @@ REED_PLANT_FRAMES_5_TO_7_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 ;@elif BRANCH == "gba_2004"
-	video type=1, offset=0xB8A0, x=160, y=100
+	video type=1, offset=ADDR_AT_B8A0, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 ;@endif
@@ -146,7 +146,7 @@ REED_PLANT_FRAMES_5_TO_7_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 ;@elif BRANCH == "gba_2004"
-	video type=1, offset=0xB8A0, x=160, y=100
+	video type=1, offset=ADDR_AT_B8A0, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 ;@endif
@@ -154,7 +154,7 @@ REED_PLANT_FRAMES_5_TO_7_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video type=1, offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 ;@elif BRANCH == "gba_2004"
-	video type=1, offset=0xB808, x=160, y=100
+	video type=1, offset=ADDR_AT_B808, x=160, y=100
 ;@elif BRANCH == "chahi_amiga_1991"
 	video type=1, offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 ;@endif
