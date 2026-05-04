@@ -9,4 +9,4 @@ LABEL_8CB4:
 	video type=0, offset=COMMON_VIDEO_248, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, DRAW_CV249_AT_X07_Y08
 	call LABEL_8BE1
-	jmp DEDUP_CAVES_5B_007	;@raw=0x07,0x8C,0xDC
+	jmp 0x8CDC

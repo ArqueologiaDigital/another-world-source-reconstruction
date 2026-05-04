@@ -3,6 +3,6 @@ LABEL_5DB7:
 	call DRAW_SPRITE_CIN_164_167_BY_VAR09
 	video type=0, offset=COMMON_VIDEO_250, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_257, x=[0x07], y=[0x08], zoom=0x40
-	je [0x0D], 0x00, INLINE_DRAW_CV_252_018	;@raw=0x0A,0x00,0x0D,0x00,0x5D,0xD6
+	je [0x0D], 0x00, 0x5DD6
 	call LABEL_5C4F
 	jmp LABEL_5DDB

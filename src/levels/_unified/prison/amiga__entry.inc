@@ -2255,5 +2255,5 @@ LIKELY_A_COPY_PROTECTION_MECHANISM:
 
 LABEL_0095:
 	deleteChannels first=0x00, last=0x3F
-	setup channel=0x3C, address=KILL_CHANNEL_LANDING	;@raw=0x08,0x3C,0x01,0x7F
+	setup channel=0x3C, address=0x017F
 	killChannel

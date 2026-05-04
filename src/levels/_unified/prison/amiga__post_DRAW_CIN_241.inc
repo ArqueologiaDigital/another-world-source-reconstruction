@@ -503,7 +503,7 @@ LABEL_57DB:
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_57F2:
-	call GUARDED_DRAW_CIN_338_339	;@raw=0x04,0x55,0xE9
+	call 0x55E9
 	sub [0x07], 0x0003
 	break
 	jg [0x07], [0x29], LABEL_5809
@@ -563,7 +563,7 @@ LABEL_5855:
 	call LABEL_55CB
 	sub [0x07], 0x0003
 	break
-	call GUARDED_DRAW_CIN_338_339	;@raw=0x04,0x55,0xE9
+	call 0x55E9
 	sub [0x07], 0x0003
 	break
 	call LABEL_5607
@@ -908,7 +908,7 @@ LABEL_5C00:
 	video type=0, offset=COMMON_VIDEO_198, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, LABEL_5C29
 	call LABEL_5BA2
-	jmp DEDUP_CAVES_5B_020	;@raw=0x07,0x5C,0x2E
+	jmp 0x5C2E
 
 LABEL_5C29:
 	video type=0, offset=COMMON_VIDEO_199, x=[0x07], y=[0x08], zoom=0x40

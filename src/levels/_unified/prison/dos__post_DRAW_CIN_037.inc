@@ -88,9 +88,9 @@ LABEL_7685:
 	setup channel=0x24, address=LABEL_1441
 	setup channel=0x25, address=LABEL_25D9
 	setup channel=0x26, address=LABEL_147C
-	setup channel=0x27, address=KILL_CHANNEL_LANDING	;@raw=0x08,0x27,0x01,0xA1
+	setup channel=0x27, address=0x01A1
 	setup channel=0x28, address=LABEL_14B7
-	setup channel=0x3A, address=KILL_CHANNEL_LANDING	;@raw=0x08,0x3A,0x01,0xA1
+	setup channel=0x3A, address=0x01A1
 	setup channel=0x3F, address=LABEL_8824
 	call LABEL_07D8
 	call LABEL_86FA

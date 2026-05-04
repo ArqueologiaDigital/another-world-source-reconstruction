@@ -19,7 +19,7 @@ LABEL_5027:
 	mov [PAUSE_SLICES], 0x000B
 	break
 	copyVideoPage src=0xFE, dst=0x00
-	setup channel=0x02, address=KILL_CHANNEL_LANDING	;@raw=0x08,0x02,0x01,0x7F
+	setup channel=0x02, address=0x017F
 	break
 	mov [PAUSE_SLICES], 0x0008
 	video type=1, offset=CINEMATIC_686, x=160, y=100

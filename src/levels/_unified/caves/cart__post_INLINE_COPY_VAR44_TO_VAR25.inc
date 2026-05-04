@@ -38,7 +38,7 @@ LABEL_7815:
 	jg [0x21], [0x22], LABEL_7830
 	jl [0x24], [0x21], TRIVIAL_RET_2
 	jg [0x24], [0x22], TRIVIAL_RET_2
-	jmp DEDUP_CAVES_6B_001	;@raw=0x07,0x78,0x3C
+	jmp 0x783C
 
 LABEL_7830:
 	jg [0x24], [0x21], TRIVIAL_RET_2

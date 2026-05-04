@@ -132,7 +132,7 @@ LABEL_7B67:
 	setup channel=0x3C, address=LABEL_0711
 	setPalette 0x04
 	mov [0x0F], 0x0000
-	setup channel=0x17, address=KILL_CHANNEL_LANDING	;@raw=0x08,0x17,0x02,0x0F
+	setup channel=0x17, address=0x020F
 	unfreezeChannels first=0x00, last=0x33
 	unfreezeChannels first=0x3D, last=0x3F
 	deleteChannels first=0x35, last=0x3B

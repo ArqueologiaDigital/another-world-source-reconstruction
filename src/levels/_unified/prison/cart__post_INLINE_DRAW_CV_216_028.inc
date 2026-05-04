@@ -224,7 +224,7 @@ LABEL_598B:
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_59A2:
-	call GUARDED_DRAW_CIN_338_339	;@raw=0x04,0x57,0x99
+	call 0x5799
 	sub [0x07], 0x0003
 	break
 	jg [0x07], [0x29], LABEL_59B9
@@ -284,7 +284,7 @@ LABEL_5A05:
 	call LABEL_577B
 	sub [0x07], 0x0003
 	break
-	call GUARDED_DRAW_CIN_338_339	;@raw=0x04,0x57,0x99
+	call 0x5799
 	sub [0x07], 0x0003
 	break
 	call LABEL_57B7

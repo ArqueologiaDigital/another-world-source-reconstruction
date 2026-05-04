@@ -107,7 +107,7 @@ INCR_VAR_6C_BY_10_3X:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 BANKSWITCH_6_FOR_CODE_ENTRY:
 	mov [0x00], 0x003C
-	bankSwitch 6;  Secret Code Entry Screen	;@raw=0x19,0x3E,0x86
+		bankSwitch 6;  Secret Code Entry Screen	;  Secret Code Entry Screen
 	killChannel
 ;@endif
 

@@ -2240,5 +2240,5 @@ LABEL_0080:
 
 LABEL_0095:
 	deleteChannels first=0x00, last=0x3F
-	setup channel=0x3C, address=KILL_CHANNEL_LANDING	;@raw=0x08,0x3C,0x01,0xA1
+	setup channel=0x3C, address=0x01A1
 	killChannel

@@ -21,7 +21,7 @@ LABEL_8A27:
 	video type=0, offset=COMMON_VIDEO_214, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, LABEL_8A4A
 	call LABEL_88D5
-	jmp DEDUP_CAVES_5B_007	;@raw=0x07,0x8A,0x4F
+	jmp 0x8A4F
 
 LABEL_8A4A:
 	video type=0, offset=COMMON_VIDEO_215, x=[0x07], y=[0x08], zoom=0x40

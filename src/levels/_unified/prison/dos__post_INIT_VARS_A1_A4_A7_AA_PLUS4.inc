@@ -1,7 +1,7 @@
 TEARDOWN_CHANS_AND_KILL_LANDING:
 	deleteChannels first=0x00, last=0x08
 	deleteChannels first=0x34, last=0x37
-	setup channel=0x3B, address=KILL_CHANNEL_LANDING	;@raw=0x08,0x3B,0x01,0xA1
+	setup channel=0x3B, address=0x01A1
 	ret
 
 LABEL_86DE:
@@ -25,7 +25,7 @@ LABEL_86FA:
 	call LABEL_0080
 	setup channel=0x18, address=LABEL_4245
 	setup channel=0x2F, address=LABEL_3869
-	setup channel=0x3B, address=KILL_CHANNEL_LANDING	;@raw=0x08,0x3B,0x01,0xA1
+	setup channel=0x3B, address=0x01A1
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
 	call LABEL_86DE
 	call INIT_RANGE_48_TO_4D_TO_MAX
