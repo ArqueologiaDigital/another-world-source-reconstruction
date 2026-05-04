@@ -127,6 +127,32 @@ mapped routines.
   set of CAPSULE — they survived the rework intact, just at
   different offsets.
 
+### Address-clustering hint for the LAKE 201 cut set
+
+The 207 amiga offsets in
+`docs/cut_content/cut_polygons_amiga_only.json["LAKE"]` cluster
+bimodally:
+
+- **Low region** (0x300..0x1FFF): adjacent to amiga LAKE's
+  named hero-animation EQUs `HERO_FALL_LEFT_*`,
+  `HERO_RESUME_LEFT_*`, `HERO_LIFTOFF`,
+  `GETTING_OUT_OF_THE_POOL_*`, `RIGHT_KICK_1`.
+- **High region** (0xF400..0xFAFF): adjacent to
+  `HERO_WALK_LEFT_FRAME_*`, `HERO_RUN_LEFT_FRAME_*`,
+  `HERO_STOP_LEFT_FRAME_*`, `HERO_RUN_RIGHT_FRAME_*`.
+
+**Strong hypothesis**: most of the 201 cut sprites are **extra
+hero animation in-between frames** that the 1991 amiga release
+shipped at a higher frame count than the 1992 DOS rebuild
+preserved. Not "removed cutscene actors", more like "decimated
+walk/run/jump animation cycles". This recasts LAKE's cut content
+as a smoothness-vs-bank-size tradeoff during the DOS port rather
+than a content cut.
+
+Per-sprite rendering would confirm or refute this on a per-cluster
+basis. See [issue #0082](#/issues/0082-render-lake-201-cut-sprites-for-visual-identification)
+for the rendering follow-on task.
+
 ## Implications
 
 1. **The 1992 DOS port wasn't a uniform translation of the 1991
