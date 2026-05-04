@@ -1,2 +1,2 @@
 DRAW_CV109_AT_X01_Y02:
-	video type=0, offset=LABEL_3638_AT_3638, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=LABEL_3638, x=[0x01], y=[0x02], zoom=0x40
