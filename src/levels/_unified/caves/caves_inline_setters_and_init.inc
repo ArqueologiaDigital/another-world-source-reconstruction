@@ -1,4 +1,4 @@
-FOLD_BODY_254B_838374D1:
+DERIVE_VARF8_FROM_VARB1_LO5_VARB2_LO2_PLUS_29:
 	mov [0xF8], [0xB1]
 	and [0xF8], 0x0005
 	mov [0xF5], [0xB2]
@@ -7,11 +7,11 @@ FOLD_BODY_254B_838374D1:
 	add [0xF8], 0x0029
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_FOLD_BODY_254B_838374D1.inc"
+;@include "amiga__post_DERIVE_VARF8_FROM_VARB1_LO5_VARB2_LO2_PLUS_29.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "cart__post_FOLD_BODY_254B_838374D1.inc"
+;@include "cart__post_DERIVE_VARF8_FROM_VARB1_LO5_VARB2_LO2_PLUS_29.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "dos__post_FOLD_BODY_254B_838374D1.inc"
+;@include "dos__post_DERIVE_VARF8_FROM_VARB1_LO5_VARB2_LO2_PLUS_29.inc"
 ;@endif
 
 COPY_VAR00_TO_VARF8:

@@ -1,5 +1,5 @@
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_177B_6AEF7E27:
+INCR_VAR07_OR_VARBB_VAR73_INIT_VAR29:
 	add [0x07], 0x0014
 	or [0xBB], 0x0004
 	or [0x73], 0x4000
@@ -7,9 +7,9 @@ FOLD_BODY_177B_6AEF7E27:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "cart__post_FOLD_BODY_177B_6AEF7E27.inc"
+;@include "cart__post_INCR_VAR07_OR_VARBB_VAR73_INIT_VAR29.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "dos__post_FOLD_BODY_177B_6AEF7E27.inc"
+;@include "dos__post_INCR_VAR07_OR_VARBB_VAR73_INIT_VAR29.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")

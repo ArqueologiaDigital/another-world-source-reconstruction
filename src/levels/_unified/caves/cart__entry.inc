@@ -4,7 +4,7 @@
 ;   PRELOAD_RES_6A_77_6D_6E_74_76_78_7C  (2-arm: amiga, dos)
 ;   PRELOAD_CAVES_RESOURCES  (2-arm: amiga, dos)
 ;   KILL_CHANNEL_LANDING  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_254B_838374D1  (3-arm: amiga, cart, dos)
+;   DERIVE_VARF8_FROM_VARB1_LO5_VARB2_LO2_PLUS_29  (3-arm: amiga, cart, dos)
 ;   COPY_VAR00_TO_VARF8  (3-arm: amiga, cart, dos)
 ;   COPY_VARF8_TO_VAR00  (3-arm: amiga, cart, dos)
 ;   INLINE_SET_VARE6_TO_3  (2-arm: amiga, dos)
@@ -272,7 +272,7 @@
 ;   PRELOAD_RES_6A_77_6D_6E_74_76_78_7C  (2-arm: amiga, dos)
 ;   PRELOAD_CAVES_RESOURCES  (2-arm: amiga, dos)
 ;   KILL_CHANNEL_LANDING  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_254B_838374D1  (3-arm: amiga, cart, dos)
+;   DERIVE_VARF8_FROM_VARB1_LO5_VARB2_LO2_PLUS_29  (3-arm: amiga, cart, dos)
 ;   COPY_VAR00_TO_VARF8  (3-arm: amiga, cart, dos)
 ;   COPY_VARF8_TO_VAR00  (3-arm: amiga, cart, dos)
 ;   INLINE_SET_VARE6_TO_3  (2-arm: amiga, dos)
@@ -539,7 +539,7 @@
 ; Folded routines (in byte-address order):
 ;   PRELOAD_RES_6A_77_6D_6E_74_76_78_7C  (2-arm: amiga, dos)
 ;   PRELOAD_CAVES_RESOURCES  (2-arm: amiga, dos)
-;   FOLD_BODY_254B_838374D1  (3-arm: amiga, cart, dos)
+;   DERIVE_VARF8_FROM_VARB1_LO5_VARB2_LO2_PLUS_29  (3-arm: amiga, cart, dos)
 ;   COPY_VAR00_TO_VARF8  (3-arm: amiga, cart, dos)
 ;   COPY_VARF8_TO_VAR00  (3-arm: amiga, cart, dos)
 ;   INLINE_SET_VARE6_TO_3  (2-arm: amiga, dos)
@@ -761,7 +761,7 @@
 ; Folded routines (in byte-address order):
 ;   PRELOAD_RES_6A_77_6D_6E_74_76_78_7C  (2-arm: amiga, dos)
 ;   PRELOAD_CAVES_RESOURCES  (2-arm: amiga, dos)
-;   FOLD_BODY_254B_838374D1  (3-arm: amiga, cart, dos)
+;   DERIVE_VARF8_FROM_VARB1_LO5_VARB2_LO2_PLUS_29  (3-arm: amiga, cart, dos)
 ;   COPY_VAR00_TO_VARF8  (3-arm: amiga, cart, dos)
 ;   COPY_VARF8_TO_VAR00  (3-arm: amiga, cart, dos)
 ;   INLINE_SET_VARE6_TO_3  (2-arm: amiga, dos)
@@ -983,7 +983,7 @@
 ; Folded routines (in byte-address order):
 ;   PRELOAD_RES_6A_77_6D_6E_74_76_78_7C  (2-arm: amiga, dos)
 ;   PRELOAD_CAVES_RESOURCES  (2-arm: amiga, dos)
-;   FOLD_BODY_254B_838374D1  (3-arm: amiga, cart, dos)
+;   DERIVE_VARF8_FROM_VARB1_LO5_VARB2_LO2_PLUS_29  (3-arm: amiga, cart, dos)
 ;   COPY_VAR00_TO_VARF8  (3-arm: amiga, cart, dos)
 ;   COPY_VARF8_TO_VAR00  (3-arm: amiga, cart, dos)
 ;   INLINE_SET_VARE6_TO_3  (2-arm: amiga, dos)
@@ -1205,7 +1205,7 @@
 ; Folded routines (in byte-address order):
 ;   PRELOAD_RES_6A_77_6D_6E_74_76_78_7C  (2-arm: amiga, dos)
 ;   PRELOAD_CAVES_RESOURCES  (2-arm: amiga, dos)
-;   FOLD_BODY_254B_838374D1  (3-arm: amiga, cart, dos)
+;   DERIVE_VARF8_FROM_VARB1_LO5_VARB2_LO2_PLUS_29  (3-arm: amiga, cart, dos)
 ;   COPY_VAR00_TO_VARF8  (3-arm: amiga, cart, dos)
 ;   COPY_VARF8_TO_VAR00  (3-arm: amiga, cart, dos)
 ;   INLINE_SET_VARE6_TO_3  (2-arm: amiga, dos)
@@ -1425,7 +1425,7 @@
 ; Unified source for CAVES with 213 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   FOLD_BODY_254B_838374D1  (3-arm: amiga, cart, dos)
+;   DERIVE_VARF8_FROM_VARB1_LO5_VARB2_LO2_PLUS_29  (3-arm: amiga, cart, dos)
 ;   COPY_VAR00_TO_VARF8  (3-arm: amiga, cart, dos)
 ;   COPY_VARF8_TO_VAR00  (3-arm: amiga, cart, dos)
 ;   SETUP_VAR8B_6E_VAR97_B7_VAR96_0  (3-arm: amiga, cart, dos)
@@ -1642,7 +1642,7 @@
 ; Unified source for CAVES with 213 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   FOLD_BODY_254B_838374D1  (3-arm: amiga, cart, dos)
+;   DERIVE_VARF8_FROM_VARB1_LO5_VARB2_LO2_PLUS_29  (3-arm: amiga, cart, dos)
 ;   COPY_VAR00_TO_VARF8  (3-arm: amiga, cart, dos)
 ;   COPY_VARF8_TO_VAR00  (3-arm: amiga, cart, dos)
 ;   SETUP_VAR8B_6E_VAR97_B7_VAR96_0  (3-arm: amiga, cart, dos)

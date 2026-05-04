@@ -1,7 +1,7 @@
 ; Unified source for CAPSULE with 179 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   FOLD_BODY_177B_6AEF7E27  (2-arm: cart, dos)
+;   INCR_VAR07_OR_VARBB_VAR73_INIT_VAR29  (2-arm: cart, dos)
 ;   INIT_VARS_29_0E  (2-arm: cart, dos)
 ;   INIT_VARS_E6_07_08  (2-arm: cart, dos)
 ;   INIT_VARS_0E_29  (2-arm: cart, dos)
@@ -184,7 +184,7 @@
 ; Unified source for CAPSULE with 179 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   FOLD_BODY_177B_6AEF7E27  (2-arm: cart, dos)
+;   INCR_VAR07_OR_VARBB_VAR73_INIT_VAR29  (2-arm: cart, dos)
 ;   INIT_VARS_29_0E  (2-arm: cart, dos)
 ;   INIT_VARS_E6_07_08  (2-arm: cart, dos)
 ;   INIT_VARS_0E_29  (2-arm: cart, dos)
@@ -367,7 +367,7 @@
 ; Unified source for CAPSULE with 179 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   FOLD_BODY_177B_6AEF7E27  (2-arm: cart, dos)
+;   INCR_VAR07_OR_VARBB_VAR73_INIT_VAR29  (2-arm: cart, dos)
 ;   INIT_VARS_29_0E  (2-arm: cart, dos)
 ;   INIT_VARS_E6_07_08  (2-arm: cart, dos)
 ;   INIT_VARS_0E_29  (2-arm: cart, dos)
@@ -1865,6 +1865,6 @@ LABEL_01D3:
 
 LABEL_01E8:
 	call LABEL_0165	;@raw=0x04,0x01,0x65
-	je [0x21], 0x00, FOLD_BODY_177B_6AEF7E27	;@raw=0x0A,0x00,0x21,0x00,0x01,0xF7
+	je [0x21], 0x00, INCR_VAR07_OR_VARBB_VAR73_INIT_VAR29	;@raw=0x0A,0x00,0x21,0x00,0x01,0xF7
 	call GUARDED_ALIEN_ANIM_CV_128	;@raw=0x04,0x88,0xB0
 	jmp LABEL_02C1	;@raw=0x07,0x02,0xC1

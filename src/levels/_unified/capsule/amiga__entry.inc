@@ -1,7 +1,7 @@
 ; Unified source for CAPSULE with 179 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   FOLD_BODY_177B_6AEF7E27  (2-arm: cart, dos)
+;   INCR_VAR07_OR_VARBB_VAR73_INIT_VAR29  (2-arm: cart, dos)
 ;   INIT_VARS_29_0E  (2-arm: cart, dos)
 ;   INIT_VARS_E6_07_08  (2-arm: cart, dos)
 ;   INIT_VARS_0E_29  (2-arm: cart, dos)
@@ -184,7 +184,7 @@
 ; Unified source for CAPSULE with 179 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   FOLD_BODY_177B_6AEF7E27  (2-arm: cart, dos)
+;   INCR_VAR07_OR_VARBB_VAR73_INIT_VAR29  (2-arm: cart, dos)
 ;   INIT_VARS_29_0E  (2-arm: cart, dos)
 ;   INIT_VARS_E6_07_08  (2-arm: cart, dos)
 ;   INIT_VARS_0E_29  (2-arm: cart, dos)
@@ -367,7 +367,7 @@
 ; Unified source for CAPSULE with 179 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   FOLD_BODY_177B_6AEF7E27  (2-arm: cart, dos)
+;   INCR_VAR07_OR_VARBB_VAR73_INIT_VAR29  (2-arm: cart, dos)
 ;   INIT_VARS_29_0E  (2-arm: cart, dos)
 ;   INIT_VARS_E6_07_08  (2-arm: cart, dos)
 ;   INIT_VARS_0E_29  (2-arm: cart, dos)
