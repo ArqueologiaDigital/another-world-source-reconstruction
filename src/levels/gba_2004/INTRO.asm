@@ -3734,10 +3734,10 @@ LABEL_1FDD:
 	db 0x11
 
 LABEL_1FDE:
-	jne [0x1E], 0x00, LABEL_1FEA
+	jne [0x1E], 0x00, PLAY_FX_PHASE_1_FREQ_22
 	play id=0x000B, freq=0x14, vol=0x3F, channel=0x02
 
-LABEL_1FEA:
+PLAY_FX_PHASE_1_FREQ_22:
 	jne [0x1E], 0x01, PLAY_FX_PHASE_2_FREQ_18
 	play id=0x000B, freq=0x16, vol=0x3F, channel=0x02
 

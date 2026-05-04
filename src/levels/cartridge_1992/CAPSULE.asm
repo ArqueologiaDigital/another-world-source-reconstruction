@@ -2923,7 +2923,7 @@ LABEL_1389:
 LABEL_13A1:
 	db 0x11
 
-LABEL_13A2:
+STATE_VAR12_BIG_DISPATCH_CASE_38:
 	call LABEL_8919
 	break
 	video type=1, offset=CINEMATIC_114, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x22,0x4F,0x07,0x08
@@ -3601,7 +3601,7 @@ LABEL_1AD1:
 LABEL_1AE5:
 	db 0x11
 
-LABEL_1AE6:
+STATE_VAR12_BIG_DISPATCH_CASE_28:
 	call LABEL_8919
 	break
 	video type=1, offset=CINEMATIC_114, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x22,0x4F,0x07,0x08
@@ -8857,9 +8857,9 @@ LABEL_51B4:
 	je [0xF8], 0x50, LABEL_5478
 	je [0xF8], 0x60, INIT_VARS_2F_29
 	je [0xF8], 0x68, LABEL_5542
-	je [0xF8], 0x28, LABEL_1AE6
+	je [0xF8], 0x28, STATE_VAR12_BIG_DISPATCH_CASE_28
 	je [0xF8], 0x30, STATE_VAR12_BIG_DISPATCH_CASE_30
-	je [0xF8], 0x38, LABEL_13A2
+	je [0xF8], 0x38, STATE_VAR12_BIG_DISPATCH_CASE_38
 
 LABEL_5213:
 	mov [0x2B], [0x11]
@@ -14408,7 +14408,7 @@ LABEL_8C53:
 
 LABEL_8C7F:
 	jne [HACK_VAR_67], [0x10], LABEL_791E
-	call LABEL_8CE0
+	call DRAW_CV_298
 	video type=0, offset=COMMON_VIDEO_357, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x20,0x5F,0x07,0x08
 	video type=0, offset=COMMON_VIDEO_356, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0xEA,0x07,0x08
 	ret
@@ -14418,7 +14418,7 @@ LABEL_8C93:
 	video type=1, offset=CINEMATIC_245, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x08,0x56,0x07,0x08
 	ret
 	jne [HACK_VAR_67], [0x10], LABEL_791E
-	call LABEL_8CE0
+	call DRAW_CV_298
 	video type=0, offset=COMMON_VIDEO_356, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0xEA,0x07,0x08
 	ret
 	jne [HACK_VAR_67], [0x10], LABEL_791E
@@ -14443,7 +14443,7 @@ JUNK__8CDA:
 	video type=1, offset=CINEMATIC_703, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x08,0x0E,0x07,0x08
 	ret
 
-LABEL_8CE0:
+DRAW_CV_298:
 	video type=0, offset=COMMON_VIDEO_355, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0xDC,0x07,0x08
 	ret
 
@@ -15144,10 +15144,10 @@ LABEL_947C:
 	ret
 
 LABEL_947D:
-	je [0x0A], 0x00, LABEL_9486
+	je [0x0A], 0x00, DRAW_CV_113
 	call GUARDED_DRAW_CV_126
 
-LABEL_9486:
+DRAW_CV_113:
 	video type=0, offset=COMMON_VIDEO_074, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x00,0x10,0x01,0x02
 	ret
 

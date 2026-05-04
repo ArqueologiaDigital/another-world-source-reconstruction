@@ -15595,10 +15595,10 @@ DRAW_CV_116:
 	ret
 
 LABEL_9AE5:
-	je [0x0A], 0x00, LABEL_9AEE
+	je [0x0A], 0x00, DRAW_CV078_PLAY_60_F0B_V22_C1
 	call GUARDED_DRAW_CV_126
 
-LABEL_9AEE:
+DRAW_CV078_PLAY_60_F0B_V22_C1:
 	video type=0, offset=COMMON_VIDEO_117, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x01,0x1A,0x01,0x02
 	play id=0x0060, freq=0x0B, vol=0x22, channel=0x01
 	ret
@@ -15689,10 +15689,10 @@ DRAW_CV_107:
 	ret
 
 LABEL_9B9E:
-	je [0x0A], 0x00, LABEL_9BA7
+	je [0x0A], 0x00, DRAW_CV070_PLAY_60_F14_V20_C1
 	call GUARDED_DRAW_CV_126
 
-LABEL_9BA7:
+DRAW_CV070_PLAY_60_F14_V20_C1:
 	video type=0, offset=COMMON_VIDEO_109, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x04,0x0A,0x01,0x02
 	play id=0x0060, freq=0x14, vol=0x20, channel=0x01
 	ret
@@ -15811,12 +15811,12 @@ DRAW_CV_279:
 LABEL_9CBD:
 	je [0x0A], 0x00, LABEL_9CC9
 	call DRAW_CV_279
-	jmp LABEL_9CCE
+	jmp DRAW_CV108_PLAY_60_F0F_V2A_C1
 
 LABEL_9CC9:
 	video type=0, offset=COMMON_VIDEO_277, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x1B,0x18,0x01,0x02
 
-LABEL_9CCE:
+DRAW_CV108_PLAY_60_F0F_V2A_C1:
 	video type=0, offset=COMMON_VIDEO_278, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x08,0xDC,0x01,0x02
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x01
 	ret
@@ -15868,12 +15868,12 @@ DRAW_CV_297:
 LABEL_9D2E:
 	je [0x0A], 0x00, LABEL_9D3A
 	call DRAW_CV_279
-	jmp LABEL_9D3F
+	jmp DRAW_CV098_PLAY_60_F0A_V2A_C1
 
 LABEL_9D3A:
 	video type=0, offset=COMMON_VIDEO_283, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x1B,0x28,0x01,0x02
 
-LABEL_9D3F:
+DRAW_CV098_PLAY_60_F0A_V2A_C1:
 	video type=0, offset=COMMON_VIDEO_284, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x0A,0x85,0x01,0x02
 	play id=0x0060, freq=0x0A, vol=0x2A, channel=0x01
 	ret
@@ -23024,11 +23024,11 @@ LABEL_ED35:
 	mov [0x63], 0x0064
 	call LABEL_D87B
 	jne [0x0A], 0x00, LABEL_ECF1
-	jne [HACK_VAR_67], 0x6D, LABEL_ED54
-	jl [0x01], 0x5A, LABEL_ED54
+	jne [HACK_VAR_67], 0x6D, STEP_DRAW_CV336_THEN_CV340
+	jl [0x01], 0x5A, STEP_DRAW_CV336_THEN_CV340
 	jl [0x01], 0x82, LABEL_1681
 
-LABEL_ED54:
+STEP_DRAW_CV336_THEN_CV340:
 	add [0x01], 0x0002
 	video type=0, offset=COMMON_VIDEO_333, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x0B,0xD4,0x01,0x02
 	break
@@ -23100,11 +23100,11 @@ LABEL_EE06:
 	mov [0x63], 0x0064
 	call LABEL_D880
 	jne [0x0A], 0x00, LABEL_EDC6
-	jne [HACK_VAR_67], 0x6D, LABEL_EE25
-	jl [0x01], 0x5A, LABEL_EE25
+	jne [HACK_VAR_67], 0x6D, STEP_DRAW_CV329_THEN_CV335
+	jl [0x01], 0x5A, STEP_DRAW_CV329_THEN_CV335
 	jl [0x01], 0x82, LABEL_1681
 
-LABEL_EE25:
+STEP_DRAW_CV329_THEN_CV335:
 	sub [0x01], 0x0002
 	video type=0, offset=COMMON_VIDEO_326, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x0B,0x00,0x01,0x02
 	break

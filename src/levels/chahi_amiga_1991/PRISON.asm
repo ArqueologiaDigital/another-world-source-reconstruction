@@ -11703,12 +11703,12 @@ DRAW_CV_279:
 LABEL_6F57:
 	je [0x0A], 0x00, LABEL_6F63
 	call DRAW_CV_279
-	jmp LABEL_6F68
+	jmp DRAW_CV108_PLAY_60_F0F_V2A_C0
 
 LABEL_6F63:
 	video type=0, offset=COMMON_VIDEO_277, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x1B,0x18,0x01,0x02
 
-LABEL_6F68:
+DRAW_CV108_PLAY_60_F0F_V2A_C0:
 	video type=0, offset=COMMON_VIDEO_278, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x08,0xDC,0x01,0x02
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x00
 	ret

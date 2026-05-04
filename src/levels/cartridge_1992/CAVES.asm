@@ -15303,7 +15303,7 @@ LABEL_947C:
 
 JUNK__94A8:
 	jne [HACK_VAR_67], [0x10], LABEL_8287
-	call LABEL_9509
+	call DRAW_CV_298
 	video type=0, offset=COMMON_VIDEO_357, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x20,0x5F,0x07,0x08
 	video type=0, offset=COMMON_VIDEO_356, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0xEA,0x07,0x08
 	ret
@@ -15313,7 +15313,7 @@ LABEL_94BC:
 	video type=1, offset=CINEMATIC_059, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x08,0xA0,0x07,0x08
 	ret
 	jne [HACK_VAR_67], [0x10], LABEL_8287
-	call LABEL_9509
+	call DRAW_CV_298
 	video type=0, offset=COMMON_VIDEO_356, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0xEA,0x07,0x08
 	ret
 	jne [HACK_VAR_67], [0x10], LABEL_8287
@@ -15338,7 +15338,7 @@ JUNK__9503:
 	video type=1, offset=CINEMATIC_882, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x08,0x60,0x07,0x08
 	ret
 
-LABEL_9509:
+DRAW_CV_298:
 	video type=0, offset=COMMON_VIDEO_355, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0xDC,0x07,0x08
 	ret
 
@@ -16141,10 +16141,10 @@ LABEL_9D7D:
 	ret
 
 LABEL_9D7E:
-	je [0x0A], 0x00, LABEL_9D87
+	je [0x0A], 0x00, DRAW_CV_113
 	call GUARDED_DRAW_CV_126
 
-LABEL_9D87:
+DRAW_CV_113:
 	video type=0, offset=COMMON_VIDEO_074, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x00,0x10,0x01,0x02
 	ret
 

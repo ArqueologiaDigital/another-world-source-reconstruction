@@ -11879,10 +11879,10 @@ LABEL_6EFE:
 	ret
 
 LABEL_6EFF:
-	je [0x0A], 0x00, LABEL_6F08
+	je [0x0A], 0x00, DRAW_CV_113
 	call GUARDED_DRAW_CV_126
 
-LABEL_6F08:
+DRAW_CV_113:
 	video type=0, offset=COMMON_VIDEO_074, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x00,0x10,0x01,0x02
 	ret
 

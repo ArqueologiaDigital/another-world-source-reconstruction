@@ -11633,10 +11633,10 @@ DRAW_CV_116:
 	ret
 
 LABEL_7AF9:
-	je [0x0A], 0x00, LABEL_7B02
+	je [0x0A], 0x00, DRAW_CV078_PLAY_60_F0B_V22_C1
 	call GUARDED_DRAW_CV_126
 
-LABEL_7B02:
+DRAW_CV078_PLAY_60_F0B_V22_C1:
 	video type=0, offset=COMMON_VIDEO_117, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x01,0x1A,0x01,0x02
 	play id=0x0060, freq=0x0B, vol=0x22, channel=0x01
 	ret
@@ -11727,10 +11727,10 @@ DRAW_CV_107:
 	ret
 
 LABEL_7BB2:
-	je [0x0A], 0x00, LABEL_7BBB
+	je [0x0A], 0x00, DRAW_CV070_PLAY_60_F14_V20_C1
 	call GUARDED_DRAW_CV_126
 
-LABEL_7BBB:
+DRAW_CV070_PLAY_60_F14_V20_C1:
 	video type=0, offset=COMMON_VIDEO_109, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x04,0x0A,0x01,0x02
 	play id=0x0060, freq=0x14, vol=0x20, channel=0x01
 	ret
@@ -11847,14 +11847,14 @@ DRAW_CV_279:
 	ret
 
 LABEL_7CD1:
-	je [0x0A], 0x00, LABEL_7CDD
+	je [0x0A], 0x00, DRAW_CV139_AT_X01_Y02
 	call DRAW_CV_279
-	jmp LABEL_7CE2
+	jmp DRAW_CV108_PLAY_60_F0F_V2A_C1
 
-LABEL_7CDD:
+DRAW_CV139_AT_X01_Y02:
 	video type=0, offset=COMMON_VIDEO_277, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x1B,0x18,0x01,0x02
 
-LABEL_7CE2:
+DRAW_CV108_PLAY_60_F0F_V2A_C1:
 	video type=0, offset=COMMON_VIDEO_278, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x08,0xDC,0x01,0x02
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x01
 	ret
@@ -11906,12 +11906,12 @@ DRAW_CV_297:
 LABEL_7D42:
 	je [0x0A], 0x00, LABEL_7D4E
 	call DRAW_CV_279
-	jmp LABEL_7D53
+	jmp DRAW_CV098_PLAY_60_F0A_V2A_C1
 
 LABEL_7D4E:
 	video type=0, offset=COMMON_VIDEO_283, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x1B,0x28,0x01,0x02
 
-LABEL_7D53:
+DRAW_CV098_PLAY_60_F0A_V2A_C1:
 	video type=0, offset=COMMON_VIDEO_284, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x0A,0x85,0x01,0x02
 	play id=0x0060, freq=0x0A, vol=0x2A, channel=0x01
 	ret
