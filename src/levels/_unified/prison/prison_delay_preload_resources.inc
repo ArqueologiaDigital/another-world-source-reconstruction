@@ -92,6 +92,3 @@ DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB:
 ;@elif BRANCH == "dos_1992"
 ;@include "dos__post_DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB.inc"
 ;@endif
-
-;@include "prison_inline_setters_and_init.inc"
-;@include "prison_step_draws_and_breaks.inc"

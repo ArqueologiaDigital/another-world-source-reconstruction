@@ -335,3 +335,5 @@
 ;@endif
 
 ;@include "prison/prison_delay_preload_resources.inc"
+;@include "prison/prison_inline_setters_and_init.inc"
+;@include "prison/prison_step_draws_and_breaks.inc"
