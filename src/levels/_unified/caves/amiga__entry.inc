@@ -3178,7 +3178,7 @@ LABEL_0000:
 	play id=0x006A, freq=0x14, vol=0x00, channel=0x01
 	play id=0x006A, freq=0x14, vol=0x00, channel=0x00
 	call INIT_HASH_VARS_67_66_65_68_69
-	call 0xD845
+	call INIT_AI_VARS_AT_280_10
 	call LABEL_40B6
 	call LABEL_12FB
 	setup channel=0x14, address=LABEL_37D0
