@@ -1,7 +1,7 @@
-ANIM_CIN_438_LOOP_VAR29:
+ANIM_CIN_438_LOOP_VAR29__DOS__POST_FOLD_BODY_89B_179104BB:
 	video type=1, offset=CINEMATIC_438, x=[0x07], y=[0x08], zoom=0x40
 	break
-	djnz [0x29], ANIM_CIN_438_LOOP_VAR29
+	djnz [0x29], ANIM_CIN_438_LOOP_VAR29__DOS__POST_FOLD_BODY_89B_179104BB
 	add [0x08], 0x0005
 	video type=1, offset=CINEMATIC_439, x=[0x07], y=[0x08], zoom=0x40
 	break

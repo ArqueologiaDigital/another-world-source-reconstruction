@@ -82,16 +82,16 @@ LABEL_3E79:
 	mov [0x7F], 0x000A
 	mov [0xF8], [0xBB]
 	and [0xF8], 0x0001
-	je [0xF8], 0x00, DELAY_LOOP_VAR7F
+	je [0xF8], 0x00, DELAY_LOOP_VAR7F__AMIGA__POST_SCROLL_BLIT_P83_TO_PFF_OFFSET_00C8
 	play id=0x006E, freq=0x0A, vol=0x22, channel=0x03
 	mov [0x7F], 0x0001
 	mov [0x75], 0xFFEC
 	mov [0x78], 0xFFE2
 	mov [0x7B], 0xFFF6
 
-DELAY_LOOP_VAR7F:
+DELAY_LOOP_VAR7F__AMIGA__POST_SCROLL_BLIT_P83_TO_PFF_OFFSET_00C8:
 	break
-	djnz [0x7F], DELAY_LOOP_VAR7F
+	djnz [0x7F], DELAY_LOOP_VAR7F__AMIGA__POST_SCROLL_BLIT_P83_TO_PFF_OFFSET_00C8
 	play id=0x006E, freq=0x07, vol=0x22, channel=0x03
 	setup channel=0x34, address=LABEL_3E5D
 	mov [0x7F], 0x0001

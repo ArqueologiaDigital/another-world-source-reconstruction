@@ -1,6 +1,6 @@
-DELAY_LOOP_VAR09:
+DELAY_LOOP_VAR09__CART__POST_INIT_VARS_07_08_09:
 	break
-	djnz [0x09], DELAY_LOOP_VAR09
+	djnz [0x09], DELAY_LOOP_VAR09__CART__POST_INIT_VARS_07_08_09
 	play id=0x0057, freq=0x0F, vol=0x20, channel=0x03
 	video type=1, offset=CINEMATIC_021, x=[0x07], y=[0x08], zoom=0x40
 	break
@@ -14,10 +14,10 @@ LABEL_07BD:
 	video type=1, offset=CINEMATIC_024, x=[0x07], y=[0x08], zoom=0x40
 	video type=1, offset=CINEMATIC_025, x=[0x07], y=[0x08], zoom=0x40
 	djnz [0x09], LABEL_07BD
-	setup channel=0x11, address=DRAW_CIN_024_LOOP
-	setup channel=0x12, address=DRAW_CV_192_195_196_SEQ
-	setup channel=0x13, address=DRAW_CV_193_185_181_SEQ
-	setup channel=0x0C, address=DRIFT_VAR07_PLUS_2_3X
+	setup channel=0x11, address=DRAW_CIN_024_LOOP__CART__POST_INIT_VARS_07_08_09
+	setup channel=0x12, address=DRAW_CV_192_195_196_SEQ__CART__POST_INIT_VARS_07_08_09
+	setup channel=0x13, address=DRAW_CV_193_185_181_SEQ__CART__POST_INIT_VARS_07_08_09
+	setup channel=0x0C, address=DRIFT_VAR07_PLUS_2_3X__CART__POST_INIT_VARS_07_08_09
 	mov [0x09], 0x0010
 
 DELAY_LOOP_VAR09_AT_07E0:
@@ -59,20 +59,20 @@ LABEL_0819:
 	video type=1, offset=CINEMATIC_037, x=[0x07], y=[0x08], zoom=0x40
 	selectVideoPage 0x00
 	fill page=0x00, color=0x01
-	call DRAW_STARS_CIN_38_39_40_5_6
+	call DRAW_STARS_CIN_38_39_40_5_6__CART__POST_INIT_VARS_07_08_09
 	selectVideoPage 0xFF
 	setup channel=0x05, address=KILL_CHANNEL_LANDING
 	setup channel=0x0A, address=SET_VAR_E6_5_PAL_B
 	killChannel
 
-DRAW_CIN_024_LOOP:
+DRAW_CIN_024_LOOP__CART__POST_INIT_VARS_07_08_09:
 	video type=1, offset=CINEMATIC_024, x=[0x07], y=[0x08], zoom=0x40
 	break
-	jmp DRAW_CIN_024_LOOP
+	jmp DRAW_CIN_024_LOOP__CART__POST_INIT_VARS_07_08_09
 LABEL_0867:
 	db 0x11
 
-DRAW_CV_192_195_196_SEQ:
+DRAW_CV_192_195_196_SEQ__CART__POST_INIT_VARS_07_08_09:
 	video type=0, offset=COMMON_VIDEO_192, x=[0x07], y=[0x08], zoom=0x40
 	break
 	video type=0, offset=COMMON_VIDEO_195, x=[0x07], y=[0x08], zoom=0x40
@@ -105,11 +105,11 @@ DRAW_CV_192_195_196_SEQ:
 	break
 	video type=0, offset=COMMON_VIDEO_188, x=[0x07], y=[0x08], zoom=0x40
 	break
-	jmp DRAW_CV_192_195_196_SEQ
+	jmp DRAW_CV_192_195_196_SEQ__CART__POST_INIT_VARS_07_08_09
 LABEL_08CB:
 	db 0x11
 
-DRAW_CV_193_185_181_SEQ:
+DRAW_CV_193_185_181_SEQ__CART__POST_INIT_VARS_07_08_09:
 	video type=0, offset=COMMON_VIDEO_193, x=[0x07], y=[0x08], zoom=0x40
 	break
 	video type=0, offset=COMMON_VIDEO_185, x=[0x07], y=[0x08], zoom=0x40
@@ -142,22 +142,22 @@ DRAW_CV_193_185_181_SEQ:
 	break
 	video type=0, offset=COMMON_VIDEO_189, x=[0x07], y=[0x08], zoom=0x40
 	break
-	jmp DRAW_CV_193_185_181_SEQ
+	jmp DRAW_CV_193_185_181_SEQ__CART__POST_INIT_VARS_07_08_09
 LABEL_092F:
 	db 0x11
 
-DRIFT_VAR07_PLUS_2_3X:
+DRIFT_VAR07_PLUS_2_3X__CART__POST_INIT_VARS_07_08_09:
 	mov [0x0A], 0x0003
 	add [0x07], 0x0002
 	break
-	djnz [0x0A], DRIFT_VAR07_PLUS_2_3X
+	djnz [0x0A], DRIFT_VAR07_PLUS_2_3X__CART__POST_INIT_VARS_07_08_09
 	mov [0x0A], 0x0005
 
 LABEL_0941:
 	add [0x07], 0x0003
 	break
 	djnz [0x0A], LABEL_0941
-	jmp DRIFT_VAR07_PLUS_2_3X
+	jmp DRIFT_VAR07_PLUS_2_3X__CART__POST_INIT_VARS_07_08_09
 	killChannel
 	video type=1, offset=CINEMATIC_108, x=160, y=100
 	video type=0, offset=COMMON_VIDEO_301, x=160, y=100, zoom=0x40
@@ -235,7 +235,7 @@ DRAW_STARS_PAGE3_CIN_004:
 LABEL_0A8D:
 	db 0x11
 
-DRAW_STARS_CIN_38_39_40_5_6:
+DRAW_STARS_CIN_38_39_40_5_6__CART__POST_INIT_VARS_07_08_09:
 	video type=1, offset=CINEMATIC_006, x=126, y=25
 	video type=1, offset=CINEMATIC_038, x=133, y=102, zoom=[0x20]	;@enc=alt
 	video type=1, offset=CINEMATIC_038, x=129, y=114, zoom=[0x20]	;@enc=alt
@@ -278,11 +278,11 @@ BLITTER_LOOP_COPY_PAGE_80:
 SCROLL_Y_BLIT_DISPATCHER:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
-	jg [SCROLL_Y], 0xFF38, SCROLL_Y_UP_PAGE_80_THEN_83
+	jg [SCROLL_Y], 0xFF38, SCROLL_Y_UP_PAGE_80_THEN_83__CART__POST_INIT_VARS_07_08_09
 	add [SCROLL_Y], 0x00C8
-	jmp SCROLL_Y_DOWN_PAGE_83_THEN_80
+	jmp SCROLL_Y_DOWN_PAGE_83_THEN_80__CART__POST_INIT_VARS_07_08_09
 
-SCROLL_Y_UP_PAGE_80_THEN_83:
+SCROLL_Y_UP_PAGE_80_THEN_83__CART__POST_INIT_VARS_07_08_09:
 	copyVideoPage src=0x80, dst=0xFF
 	add [SCROLL_Y], 0x00C8
 	copyVideoPage src=0x83, dst=0xFF
@@ -290,17 +290,17 @@ SCROLL_Y_UP_PAGE_80_THEN_83:
 	break
 	jmp SCROLL_Y_BLIT_DISPATCHER
 
-SCROLL_Y_BLIT_DISPATCHER_VARIANT:
+SCROLL_Y_BLIT_DISPATCHER_VARIANT__CART__POST_INIT_VARS_07_08_09:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
-	jg [SCROLL_Y], 0xFF38, SCROLL_Y_DOWN_PAGE_83_THEN_80
+	jg [SCROLL_Y], 0xFF38, SCROLL_Y_DOWN_PAGE_83_THEN_80__CART__POST_INIT_VARS_07_08_09
 	add [SCROLL_Y], 0x00C8
-	jmp SCROLL_Y_UP_PAGE_80_THEN_83
+	jmp SCROLL_Y_UP_PAGE_80_THEN_83__CART__POST_INIT_VARS_07_08_09
 
-SCROLL_Y_DOWN_PAGE_83_THEN_80:
+SCROLL_Y_DOWN_PAGE_83_THEN_80__CART__POST_INIT_VARS_07_08_09:
 	copyVideoPage src=0x83, dst=0xFF
 	add [SCROLL_Y], 0x00C8
 	copyVideoPage src=0x80, dst=0xFF
 	sub [SCROLL_Y], 0x00C8
 	break
-	jmp SCROLL_Y_BLIT_DISPATCHER_VARIANT
+	jmp SCROLL_Y_BLIT_DISPATCHER_VARIANT__CART__POST_INIT_VARS_07_08_09

@@ -89,22 +89,22 @@ LABEL_1332:
 	mov [0xE9], 0xFFFF
 	play id=0x0057, freq=0x19, vol=0x20, channel=0x02
 	video type=1, offset=CINEMATIC_191, x=[0xe6], y=[0xe7], zoom=0x40
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call BOUNDS_CHECK_VARE7_VS_VAR02__DOS__POST_INIT_VARS_E6_E7_E9_E8
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_209, x=[0xe6], y=[0xe7], zoom=0x40
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call BOUNDS_CHECK_VARE7_VS_VAR02__DOS__POST_INIT_VARS_E6_E7_E9_E8
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_210, x=[0xe6], y=[0xe7], zoom=0x40
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call BOUNDS_CHECK_VARE7_VS_VAR02__DOS__POST_INIT_VARS_E6_E7_E9_E8
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_211, x=[0xe6], y=[0xe7], zoom=0x40
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call BOUNDS_CHECK_VARE7_VS_VAR02__DOS__POST_INIT_VARS_E6_E7_E9_E8
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
@@ -120,17 +120,17 @@ LABEL_1386:
 	selectVideoPage 0x00
 	play id=0x0057, freq=0x19, vol=0x20, channel=0x03
 	video type=1, offset=CINEMATIC_214, x=[0xe6], y=[0xe7], zoom=0x40
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call BOUNDS_CHECK_VARE7_VS_VAR02__DOS__POST_INIT_VARS_E6_E7_E9_E8
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_215, x=[0xe6], y=[0xe7], zoom=0x40
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call BOUNDS_CHECK_VARE7_VS_VAR02__DOS__POST_INIT_VARS_E6_E7_E9_E8
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_216, x=[0xe6], y=[0xe7], zoom=0x40
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call BOUNDS_CHECK_VARE7_VS_VAR02__DOS__POST_INIT_VARS_E6_E7_E9_E8
 	selectVideoPage 0xFF
 	break
 
@@ -139,22 +139,22 @@ LABEL_13B3:
 	play id=0x0057, freq=0x19, vol=0x0A, channel=0x02
 	call LABEL_11C8
 	call LABEL_11FA
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call BOUNDS_CHECK_VARE7_VS_VAR02__DOS__POST_INIT_VARS_E6_E7_E9_E8
 	break
 	call LABEL_11D2
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call BOUNDS_CHECK_VARE7_VS_VAR02__DOS__POST_INIT_VARS_E6_E7_E9_E8
 	break
 	call LABEL_11C8
 	call LABEL_11DC
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call BOUNDS_CHECK_VARE7_VS_VAR02__DOS__POST_INIT_VARS_E6_E7_E9_E8
 	break
 	call LABEL_11D2
 	call LABEL_11E6
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call BOUNDS_CHECK_VARE7_VS_VAR02__DOS__POST_INIT_VARS_E6_E7_E9_E8
 	break
 	call LABEL_11DC
 	call LABEL_11F0
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call BOUNDS_CHECK_VARE7_VS_VAR02__DOS__POST_INIT_VARS_E6_E7_E9_E8
 	break
 	jg [0xE9], 0x00, LABEL_13B3
 	mov [0xE9], 0xFFFF
@@ -170,7 +170,7 @@ LABEL_1401:
 	jg [0xE9], 0x00, LABEL_1386
 	jmp LABEL_1401
 
-BOUNDS_CHECK_VARE7_VS_VAR02:
+BOUNDS_CHECK_VARE7_VS_VAR02__DOS__POST_INIT_VARS_E6_E7_E9_E8:
 	mov [0xF8], [0x02]
 	sub [0xF8], 0x000A
 	jl [0xE7], [0xF8], SHARED_RET

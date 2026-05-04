@@ -392,7 +392,7 @@ LABEL_6282:
 LABEL_628E:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call LABEL_5B19
-	call DRAW_SPRITE_236_239_Y_PLUS_D
+	call DRAW_SPRITE_236_239_Y_PLUS_D__AMIGA__POST_DRAW_CIN_169
 	video type=0, offset=COMMON_VIDEO_241, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_52B6
@@ -405,7 +405,7 @@ LABEL_62AB:
 	sub [0x08], 0x0001
 	call LABEL_5B37
 	add [0x08], 0x0001
-	call DRAW_SPRITE_236_239_Y_PLUS_D
+	call DRAW_SPRITE_236_239_Y_PLUS_D__AMIGA__POST_DRAW_CIN_169
 	video type=0, offset=COMMON_VIDEO_242, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_52CC
@@ -416,7 +416,7 @@ LABEL_62AB:
 LABEL_62D8:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call LABEL_5B55
-	call DRAW_SPRITE_236_239_Y_PLUS_D
+	call DRAW_SPRITE_236_239_Y_PLUS_D__AMIGA__POST_DRAW_CIN_169
 	video type=0, offset=COMMON_VIDEO_241, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_52B6
@@ -426,7 +426,7 @@ LABEL_62D8:
 LABEL_62F5:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call LABEL_5B37
-	call DRAW_SPRITE_236_239_Y_PLUS_D
+	call DRAW_SPRITE_236_239_Y_PLUS_D__AMIGA__POST_DRAW_CIN_169
 	video type=0, offset=COMMON_VIDEO_241, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_52B6
@@ -441,7 +441,7 @@ LABEL_6312:
 	sub [0x08], 0x000D
 
 LABEL_6329:
-	call DRAW_SPRITE_236_239_Y_PLUS_D
+	call DRAW_SPRITE_236_239_Y_PLUS_D__AMIGA__POST_DRAW_CIN_169
 	video type=0, offset=COMMON_VIDEO_241, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_52CC
@@ -460,7 +460,7 @@ LABEL_634C:
 	sub [0x08], 0x0001
 	video type=0, offset=COMMON_VIDEO_243, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x0001
-	call DRAW_SPRITE_236_239_Y_PLUS_D
+	call DRAW_SPRITE_236_239_Y_PLUS_D__AMIGA__POST_DRAW_CIN_169
 	video type=1, offset=CINEMATIC_349, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_52CC
@@ -471,7 +471,7 @@ LABEL_634C:
 LABEL_637B:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video type=0, offset=COMMON_VIDEO_243, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_SPRITE_236_239_Y_PLUS_D
+	call DRAW_SPRITE_236_239_Y_PLUS_D__AMIGA__POST_DRAW_CIN_169
 	video type=0, offset=COMMON_VIDEO_241, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_52B6
@@ -485,7 +485,7 @@ LABEL_639A:
 	video type=0, offset=COMMON_VIDEO_231, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x07], 0x0004
 	sub [0x08], 0x000D
-	call DRAW_SPRITE_236_239_Y_PLUS_D
+	call DRAW_SPRITE_236_239_Y_PLUS_D__AMIGA__POST_DRAW_CIN_169
 	video type=0, offset=COMMON_VIDEO_241, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_52E2
@@ -494,7 +494,7 @@ LABEL_639A:
 
 LABEL_63C9:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	call DRAW_SPRITE_236_239_Y_PLUS_D
+	call DRAW_SPRITE_236_239_Y_PLUS_D__AMIGA__POST_DRAW_CIN_169
 	video type=0, offset=COMMON_VIDEO_241, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_52E2
@@ -506,7 +506,7 @@ LABEL_63E3:
 	add [0x08], 0x000D
 	video type=1, offset=CINEMATIC_388, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x000D
-	call DRAW_SPRITE_236_239_Y_PLUS_D
+	call DRAW_SPRITE_236_239_Y_PLUS_D__AMIGA__POST_DRAW_CIN_169
 	video type=0, offset=COMMON_VIDEO_241, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_52E2
@@ -519,7 +519,7 @@ LABEL_640A:
 	add [0x08], 0x000D
 	video type=1, offset=CINEMATIC_387, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x000D
-	call DRAW_SPRITE_236_239_Y_PLUS_D
+	call DRAW_SPRITE_236_239_Y_PLUS_D__AMIGA__POST_DRAW_CIN_169
 	video type=0, offset=COMMON_VIDEO_242, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_52CC
@@ -588,7 +588,7 @@ DRAW_SPRITE_164_167_Y_PLUS_E:
 	sub [0x08], 0x000E
 	ret
 
-DRAW_SPRITE_236_239_Y_PLUS_D:
+DRAW_SPRITE_236_239_Y_PLUS_D__AMIGA__POST_DRAW_CIN_169:
 	add [0x08], 0x000D
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
 	sub [0x08], 0x000D

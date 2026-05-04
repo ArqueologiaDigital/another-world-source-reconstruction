@@ -341,7 +341,7 @@ LABEL_D0DE:
 	jg [SCROLL_Y], 0xFF38, LABEL_D0DE
 	copyVideoPage src=0x03, dst=0x00
 	setup channel=0x3C, address=LABEL_3F46
-	setup channel=0x37, address=HANG_DRAW_CIN_287
+	setup channel=0x37, address=HANG_DRAW_CIN_287__CART__POST_INIT_VARS_E6_EA
 	mov [SCROLL_Y], 0xFF38
 	mov [0x44], 0x005D
 	mov [0x41], 0x0078
@@ -352,10 +352,10 @@ LABEL_D0DE:
 	mov [0x49], 0x1216
 	killChannel
 
-HANG_DRAW_CIN_287:
+HANG_DRAW_CIN_287__CART__POST_INIT_VARS_E6_EA:
 	video type=1, offset=CINEMATIC_287, x=160, y=100
 	break
-	jmp HANG_DRAW_CIN_287
+	jmp HANG_DRAW_CIN_287__CART__POST_INIT_VARS_E6_EA
 LABEL_D13C:
 	db 0x11
 

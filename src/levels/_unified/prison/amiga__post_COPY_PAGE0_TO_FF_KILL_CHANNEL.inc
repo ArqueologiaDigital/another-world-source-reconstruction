@@ -88,9 +88,9 @@ LABEL_8040:
 	video type=1, offset=CINEMATIC_185, x=160, y=100
 	mov [0xC8], 0x000A
 
-DELAY_LOOP_VARC8:
+DELAY_LOOP_VARC8__AMIGA__POST_COPY_PAGE0_TO_FF_KILL_CHANNEL:
 	break
-	djnz [0xC8], DELAY_LOOP_VARC8
+	djnz [0xC8], DELAY_LOOP_VARC8__AMIGA__POST_COPY_PAGE0_TO_FF_KILL_CHANNEL
 	freezeChannels first=0x00, last=0x3A
 	copyVideoPage src=0x03, dst=0x00
 	add [0x68], 0x0014

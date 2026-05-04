@@ -1,20 +1,20 @@
 DRAW_CIN_240_IF_VAR09_EQ_1:
 	mov [0xF8], [0x09]
 	and [0xF8], 0x000F
-	je [0xF8], 0x01, DRAW_CIN_240
+	je [0xF8], 0x01, DRAW_CIN_240__CART__POST_SHARED_RET
 	ret
 
-DRAW_CIN_240:
+DRAW_CIN_240__CART__POST_SHARED_RET:
 	video type=1, offset=CINEMATIC_240, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DISPATCH_VAR09_BIT0_TO_5460:
 	mov [0xF8], [0x09]
 	and [0xF8], 0x000F
-	je [0xF8], 0x01, DRAW_CIN_241
+	je [0xF8], 0x01, DRAW_CIN_241__CART__POST_SHARED_RET
 	ret
 
-DRAW_CIN_241:
+DRAW_CIN_241__CART__POST_SHARED_RET:
 	video type=1, offset=CINEMATIC_241, x=[0xf5], y=[0x08], zoom=0x40
 	ret
 

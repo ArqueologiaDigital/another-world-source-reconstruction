@@ -9,10 +9,10 @@ WAIT_VAR45_PLAY_8C_DRAW_CIN_011:
 	video type=1, offset=CINEMATIC_082, x=[0x42], y=[0x43], zoom=[0x44]
 	break
 	video type=1, offset=CINEMATIC_083, x=[0x42], y=[0x43], zoom=[0x44]
-	je [0x57], 0x00, DRAW_CIN_84_ON_PAGE_3
+	je [0x57], 0x00, DRAW_CIN_84_ON_PAGE_3__AMIGA__POST_INCREMENT_VAR44_BY_37
 	jl [0x43], 0x69, LABEL_10D9
 
-DRAW_CIN_84_ON_PAGE_3:
+DRAW_CIN_84_ON_PAGE_3__AMIGA__POST_INCREMENT_VAR44_BY_37:
 	selectVideoPage 0x03
 	video type=1, offset=CINEMATIC_084, x=[0x42], y=[0x43], zoom=[0x44]
 	selectVideoPage 0xFF

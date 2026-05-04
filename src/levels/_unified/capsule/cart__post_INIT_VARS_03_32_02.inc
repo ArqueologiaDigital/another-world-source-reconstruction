@@ -24,11 +24,11 @@ LABEL_99EB:
 LABEL_9A31:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
-	jne [0xF8], 0x00, DRAW_CIN_092
+	jne [0xF8], 0x00, DRAW_CIN_092__CART__POST_INIT_VARS_03_32_02
 	video type=1, offset=CINEMATIC_093, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-DRAW_CIN_092:
+DRAW_CIN_092__CART__POST_INIT_VARS_03_32_02:
 	video type=1, offset=CINEMATIC_092, x=[0x01], y=[0x02], zoom=0x40
 	ret
 LABEL_9A4A:

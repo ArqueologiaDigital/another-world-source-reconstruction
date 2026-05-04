@@ -6,36 +6,36 @@ INIT_VARE_TO_12:
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRIFT_VAR_F_PLUS_1_LOOP:
+DRIFT_VAR_F_PLUS_1_LOOP__ENDING_VAR_SETUPS:
 	break
 	add [0x0F], 0x0001
-	djnz [0x0E], DRIFT_VAR_F_PLUS_1_LOOP
+	djnz [0x0E], DRIFT_VAR_F_PLUS_1_LOOP__ENDING_VAR_SETUPS
 	mov [0x0E], 0x0009
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRIFT_VAR_F_PLUS_4_LOOP:
+DRIFT_VAR_F_PLUS_4_LOOP__ENDING_VAR_SETUPS:
 	break
 	add [0x0F], 0x0004
-	djnz [0x0E], DRIFT_VAR_F_PLUS_4_LOOP
+	djnz [0x0E], DRIFT_VAR_F_PLUS_4_LOOP__ENDING_VAR_SETUPS
 	mov [0x0E], 0x0032
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DELAY_VARE_THEN_INIT_VARE_5:
+DELAY_VARE_THEN_INIT_VARE_5__ENDING_VAR_SETUPS:
 	break
-	djnz [0x0E], DELAY_VARE_THEN_INIT_VARE_5
+	djnz [0x0E], DELAY_VARE_THEN_INIT_VARE_5__ENDING_VAR_SETUPS
 	mov [0x0E], 0x0005
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRIFT_VAR_F_PLUS_8_LOOP:
+DRIFT_VAR_F_PLUS_8_LOOP__ENDING_VAR_SETUPS:
 	break
 	add [0x0F], 0x0008
-	djnz [0x0E], DRIFT_VAR_F_PLUS_8_LOOP
+	djnz [0x0E], DRIFT_VAR_F_PLUS_8_LOOP__ENDING_VAR_SETUPS
 	setup channel=0x36, address=LABEL_022B
 	break
 	add [0x0F], 0x000C

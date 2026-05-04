@@ -78,11 +78,11 @@ LABEL_1568:
 	db 0x11
 
 DRAW_CIN_393_IF_VAR1_LE_EB:
-	jg [0x01], 0xEB, DRAW_CIN_389
+	jg [0x01], 0xEB, DRAW_CIN_389__CART__POST_SPLIT_VAR09_BITS_INTO_VAR0D
 	video type=1, offset=CINEMATIC_393, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
-DRAW_CIN_389:
+DRAW_CIN_389__CART__POST_SPLIT_VAR09_BITS_INTO_VAR0D:
 	video type=1, offset=CINEMATIC_389, x=[0x07], y=[0x08], zoom=0x40
 	ret
 

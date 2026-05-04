@@ -186,10 +186,10 @@ LABEL_C75A:
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0xFF
 
-HANG_DRAW_CIN_222:
+HANG_DRAW_CIN_222__DOS__POST_SET_VAR22_TO_00B8:
 	video type=1, offset=CINEMATIC_222, x=[0x01], y=[0x02], zoom=0x40
 	break
-	jmp HANG_DRAW_CIN_222
+	jmp HANG_DRAW_CIN_222__DOS__POST_SET_VAR22_TO_00B8
 
 LABEL_C770:
 	jg [0x49], 0x0100, LABEL_C77F

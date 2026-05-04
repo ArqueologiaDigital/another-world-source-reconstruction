@@ -72,11 +72,11 @@ LABEL_3D0F:
 	ret
 
 LABEL_3D2B:
-	jle [0x13], 0x04, DRAW_CIN_486
+	jle [0x13], 0x04, DRAW_CIN_486__CART__POST_FOLD_BODY_37B_9FD2CEA6
 	video type=1, offset=CINEMATIC_487, x=[0x21], y=[0x27], zoom=0x40
 	ret
 
-DRAW_CIN_486:
+DRAW_CIN_486__CART__POST_FOLD_BODY_37B_9FD2CEA6:
 	video type=1, offset=CINEMATIC_486, x=[0x21], y=[0x27], zoom=0x40
 	ret
 
@@ -86,11 +86,11 @@ LABEL_3D3D:
 	ret
 
 LABEL_3D49:
-	jle [0x13], 0x01, DRAW_CIN_483
+	jle [0x13], 0x01, DRAW_CIN_483__CART__POST_FOLD_BODY_37B_9FD2CEA6
 	video type=1, offset=CINEMATIC_484, x=[0x21], y=[0x27], zoom=0x40
 	ret
 
-DRAW_CIN_483:
+DRAW_CIN_483__CART__POST_FOLD_BODY_37B_9FD2CEA6:
 	video type=1, offset=CINEMATIC_483, x=[0x21], y=[0x27], zoom=0x40
 	ret
 
@@ -212,11 +212,11 @@ LABEL_3E6C:
 	ret
 
 LABEL_3E88:
-	jle [0x13], 0x04, DRAW_CIN_502
+	jle [0x13], 0x04, DRAW_CIN_502__CART__POST_FOLD_BODY_37B_9FD2CEA6
 	video type=1, offset=CINEMATIC_503, x=[0x21], y=[0x27], zoom=0x40
 	ret
 
-DRAW_CIN_502:
+DRAW_CIN_502__CART__POST_FOLD_BODY_37B_9FD2CEA6:
 	video type=1, offset=CINEMATIC_502, x=[0x21], y=[0x27], zoom=0x40
 	ret
 
@@ -226,11 +226,11 @@ LABEL_3E9A:
 	ret
 
 LABEL_3EA6:
-	jle [0x13], 0x01, DRAW_CIN_499
+	jle [0x13], 0x01, DRAW_CIN_499__CART__POST_FOLD_BODY_37B_9FD2CEA6
 	video type=1, offset=CINEMATIC_500, x=[0x21], y=[0x27], zoom=0x40
 	ret
 
-DRAW_CIN_499:
+DRAW_CIN_499__CART__POST_FOLD_BODY_37B_9FD2CEA6:
 	video type=1, offset=CINEMATIC_499, x=[0x21], y=[0x27], zoom=0x40
 	ret
 

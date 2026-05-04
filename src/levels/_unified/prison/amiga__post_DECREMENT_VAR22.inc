@@ -158,12 +158,12 @@ LABEL_444C:
 
 LABEL_444D:
 	mov [0x0F], 0x0000
-	jle [0x06], 0x00, 0x4560
+	jle [0x06], 0x00, DEDUP_CAVES_5B_003
 
 LABEL_4457:
 	break
 	add [0x0F], 0x0001
-	je [HERO_ACTION], 0x00, 0x4560
+	je [HERO_ACTION], 0x00, DEDUP_CAVES_5B_003
 	jl [0x0F], 0x04, LABEL_4457
 	call PROJECT_POS_VAR04_OR_7E81
 	video type=1, offset=CINEMATIC_196, x=[0x21], y=[0x22], zoom=0x40
@@ -184,13 +184,13 @@ LABEL_449A:
 
 LABEL_449B:
 	mov [0x0F], 0x0000
-	jle [0x06], 0x00, 0x4560
+	jle [0x06], 0x00, DEDUP_CAVES_5B_003
 
 LABEL_44A5:
 	break
 	add [0x0F], 0x0001
-	jne [HERO_POS_LEFT_RIGHT], 0x00, 0x4560
-	je [HERO_ACTION], 0x00, 0x4560
+	jne [HERO_POS_LEFT_RIGHT], 0x00, DEDUP_CAVES_5B_003
+	je [HERO_ACTION], 0x00, DEDUP_CAVES_5B_003
 	jl [0x0F], 0x04, LABEL_44A5
 	call PROJECT_POS_VAR04_OR_7E81
 	video type=1, offset=CINEMATIC_196, x=[0x21], y=[0x22], zoom=0x40

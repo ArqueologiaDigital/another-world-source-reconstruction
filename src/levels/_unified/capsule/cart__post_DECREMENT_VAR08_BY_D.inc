@@ -442,11 +442,11 @@ LABEL_921B:
 
 LABEL_921C:
 	video type=0, offset=COMMON_VIDEO_036, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
+	jne [0x0A], 0x00, GUARDED_DRAW_CV_159__CART__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_037, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-GUARDED_DRAW_CV_159:
+GUARDED_DRAW_CV_159__CART__POST_DECREMENT_VAR08_BY_D:
 	call LABEL_9179
 	jne [0x0A], 0x01, LABEL_9254
 	video type=0, offset=COMMON_VIDEO_159, x=[0x01], y=[0x02], zoom=0x40
@@ -488,95 +488,95 @@ LABEL_929C:
 
 LABEL_92BA:
 	video type=0, offset=COMMON_VIDEO_038, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
+	jne [0x0A], 0x00, GUARDED_DRAW_CV_159__CART__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_039, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_92CB:
 	video type=0, offset=COMMON_VIDEO_040, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
+	jne [0x0A], 0x00, GUARDED_DRAW_CV_159__CART__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_041, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_92DC:
 	video type=0, offset=COMMON_VIDEO_042, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
+	jne [0x0A], 0x00, GUARDED_DRAW_CV_159__CART__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_043, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_92ED:
 	video type=0, offset=COMMON_VIDEO_044, x=[0x01], y=[0x02], zoom=0x40
 	play id=0x0060, freq=0x0B, vol=0x22, channel=0x01
-	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
+	jne [0x0A], 0x00, GUARDED_DRAW_CV_159__CART__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_045, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9304:
 	video type=0, offset=COMMON_VIDEO_046, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
+	jne [0x0A], 0x00, GUARDED_DRAW_CV_159__CART__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_047, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9315:
 	call LABEL_91EB
 	video type=0, offset=COMMON_VIDEO_016, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
+	jne [0x0A], 0x00, GUARDED_DRAW_CV_159__CART__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_017, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9329:
 	video type=0, offset=COMMON_VIDEO_018, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
+	jne [0x0A], 0x00, GUARDED_DRAW_CV_159__CART__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_019, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_933A:
 	video type=0, offset=COMMON_VIDEO_020, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
+	jne [0x0A], 0x00, GUARDED_DRAW_CV_159__CART__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_021, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_934B:
 	video type=0, offset=COMMON_VIDEO_022, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
+	jne [0x0A], 0x00, GUARDED_DRAW_CV_159__CART__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_023, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_935C:
 	video type=0, offset=COMMON_VIDEO_024, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
+	jne [0x0A], 0x00, GUARDED_DRAW_CV_159__CART__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_025, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_936D:
 	video type=0, offset=COMMON_VIDEO_026, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
+	jne [0x0A], 0x00, GUARDED_DRAW_CV_159__CART__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_027, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_937E:
 	video type=0, offset=COMMON_VIDEO_028, x=[0x01], y=[0x02], zoom=0x40
 	play id=0x0060, freq=0x14, vol=0x20, channel=0x01
-	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
+	jne [0x0A], 0x00, GUARDED_DRAW_CV_159__CART__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_029, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9395:
 	video type=0, offset=COMMON_VIDEO_030, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
+	jne [0x0A], 0x00, GUARDED_DRAW_CV_159__CART__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_031, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_93A6:
 	call LABEL_91EB
 	video type=0, offset=COMMON_VIDEO_032, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
+	jne [0x0A], 0x00, GUARDED_DRAW_CV_159__CART__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_033, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_93BA:
 	video type=0, offset=COMMON_VIDEO_034, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
+	jne [0x0A], 0x00, GUARDED_DRAW_CV_159__CART__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_035, x=[0x01], y=[0x02], zoom=0x40
 	ret
 

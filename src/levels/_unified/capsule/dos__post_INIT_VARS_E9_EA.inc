@@ -1,6 +1,6 @@
-DELAY_LOOP_VAREA:
+DELAY_LOOP_VAREA__DOS__POST_INIT_VARS_E9_EA:
 	break
-	djnz [0xEA], DELAY_LOOP_VAREA
+	djnz [0xEA], DELAY_LOOP_VAREA__DOS__POST_INIT_VARS_E9_EA
 	play id=0x0030, freq=0x0A, vol=0x40, channel=0x03
 	video type=1, offset=CINEMATIC_595, x=[0xe9], y=[0x40], zoom=0x40
 	break

@@ -64,11 +64,11 @@ LABEL_7536:
 	ret
 
 LABEL_7543:
-	jne [0x06], 0xFFFA, DRAW_CIN_581
+	jne [0x06], 0xFFFA, DRAW_CIN_581__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
 	video type=1, offset=CINEMATIC_582, x=[0x03], y=[0x04], zoom=0x40
 	ret
 
-DRAW_CIN_581:
+DRAW_CIN_581__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2:
 	video type=1, offset=CINEMATIC_581, x=[0x03], y=[0x04], zoom=0x40
 	ret
 	killChannel
@@ -97,12 +97,12 @@ LABEL_7587:
 	jne [0x06], 0x01, LABEL_75A6
 	jg [0x14], 0x00, LABEL_759B
 	video type=1, offset=CINEMATIC_077, x=[0x03], y=[0x04], zoom=0x40
-	jmp DRAW_CIN_076
+	jmp DRAW_CIN_076__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
 
 LABEL_759B:
 	video type=1, offset=CINEMATIC_075, x=[0x03], y=[0x04], zoom=0x40
 
-DRAW_CIN_076:
+DRAW_CIN_076__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2:
 	video type=1, offset=CINEMATIC_076, x=[0x03], y=[0x04], zoom=0x40
 	ret
 
@@ -110,12 +110,12 @@ LABEL_75A6:
 	jne [0x06], 0x02, LABEL_75C5
 	jg [0x14], 0x00, LABEL_75BA
 	video type=1, offset=CINEMATIC_074, x=[0x03], y=[0x04], zoom=0x40
-	jmp DRAW_CIN_073
+	jmp DRAW_CIN_073__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
 
 LABEL_75BA:
 	video type=1, offset=CINEMATIC_072, x=[0x03], y=[0x04], zoom=0x40
 
-DRAW_CIN_073:
+DRAW_CIN_073__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2:
 	video type=1, offset=CINEMATIC_073, x=[0x03], y=[0x04], zoom=0x40
 	ret
 
@@ -123,12 +123,12 @@ LABEL_75C5:
 	jne [0x06], 0x03, LABEL_75E4
 	jg [0x14], 0x00, LABEL_75D9
 	video type=1, offset=CINEMATIC_071, x=[0x03], y=[0x04], zoom=0x40
-	jmp DRAW_CIN_070
+	jmp DRAW_CIN_070__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
 
 LABEL_75D9:
 	video type=1, offset=CINEMATIC_069, x=[0x03], y=[0x04], zoom=0x40
 
-DRAW_CIN_070:
+DRAW_CIN_070__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2:
 	video type=1, offset=CINEMATIC_070, x=[0x03], y=[0x04], zoom=0x40
 	ret
 
@@ -136,12 +136,12 @@ LABEL_75E4:
 	jne [0x06], 0x04, LABEL_7603
 	jg [0x14], 0x00, LABEL_75F8
 	video type=1, offset=CINEMATIC_068, x=[0x03], y=[0x04], zoom=0x40
-	jmp DRAW_CIN_067
+	jmp DRAW_CIN_067__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
 
 LABEL_75F8:
 	video type=1, offset=CINEMATIC_066, x=[0x03], y=[0x04], zoom=0x40
 
-DRAW_CIN_067:
+DRAW_CIN_067__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2:
 	video type=1, offset=CINEMATIC_067, x=[0x03], y=[0x04], zoom=0x40
 	ret
 
@@ -149,12 +149,12 @@ LABEL_7603:
 	jne [0x06], 0x05, LABEL_7622
 	jg [0x14], 0x00, LABEL_7617
 	video type=1, offset=CINEMATIC_065, x=[0x03], y=[0x04], zoom=0x40
-	jmp DRAW_CIN_064
+	jmp DRAW_CIN_064__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
 
 LABEL_7617:
 	video type=1, offset=CINEMATIC_063, x=[0x03], y=[0x04], zoom=0x40
 
-DRAW_CIN_064:
+DRAW_CIN_064__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2:
 	video type=1, offset=CINEMATIC_064, x=[0x03], y=[0x04], zoom=0x40
 	ret
 
@@ -162,12 +162,12 @@ LABEL_7622:
 	jne [0x06], 0x06, LABEL_7641
 	jg [0x14], 0x00, LABEL_7636
 	video type=1, offset=CINEMATIC_062, x=[0x03], y=[0x04], zoom=0x40
-	jmp DRAW_CIN_061
+	jmp DRAW_CIN_061__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
 
 LABEL_7636:
 	video type=1, offset=CINEMATIC_060, x=[0x03], y=[0x04], zoom=0x40
 
-DRAW_CIN_061:
+DRAW_CIN_061__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2:
 	video type=1, offset=CINEMATIC_061, x=[0x03], y=[0x04], zoom=0x40
 	ret
 
@@ -175,12 +175,12 @@ LABEL_7641:
 	jl [0x06], 0x07, LABEL_7660
 	jg [0x14], 0x00, LABEL_7655
 	video type=1, offset=CINEMATIC_059, x=[0x03], y=[0x04], zoom=0x40
-	jmp DRAW_CIN_058
+	jmp DRAW_CIN_058__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
 
 LABEL_7655:
 	video type=1, offset=CINEMATIC_057, x=[0x03], y=[0x04], zoom=0x40
 
-DRAW_CIN_058:
+DRAW_CIN_058__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2:
 	video type=1, offset=CINEMATIC_058, x=[0x03], y=[0x04], zoom=0x40
 	ret
 
@@ -201,12 +201,12 @@ LABEL_7680:
 	jne [0x06], 0xFFFE, LABEL_76A0
 	jl [0x14], 0x00, LABEL_7695
 	video type=1, offset=CINEMATIC_053, x=[0x03], y=[0x04], zoom=0x40
-	jmp DRAW_CIN_052
+	jmp DRAW_CIN_052__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
 
 LABEL_7695:
 	video type=1, offset=CINEMATIC_051, x=[0x03], y=[0x04], zoom=0x40
 
-DRAW_CIN_052:
+DRAW_CIN_052__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2:
 	video type=1, offset=CINEMATIC_052, x=[0x03], y=[0x04], zoom=0x40
 	ret
 
@@ -214,12 +214,12 @@ LABEL_76A0:
 	jne [0x06], 0xFFFD, LABEL_76C0
 	jl [0x14], 0x00, LABEL_76B5
 	video type=1, offset=CINEMATIC_050, x=[0x03], y=[0x04], zoom=0x40
-	jmp DRAW_CIN_049
+	jmp DRAW_CIN_049__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
 
 LABEL_76B5:
 	video type=1, offset=CINEMATIC_048, x=[0x03], y=[0x04], zoom=0x40
 
-DRAW_CIN_049:
+DRAW_CIN_049__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2:
 	video type=1, offset=CINEMATIC_049, x=[0x03], y=[0x04], zoom=0x40
 	ret
 
@@ -227,12 +227,12 @@ LABEL_76C0:
 	jne [0x06], 0xFFFC, LABEL_76E0
 	jl [0x14], 0x00, LABEL_76D5
 	video type=1, offset=CINEMATIC_047, x=[0x03], y=[0x04], zoom=0x40
-	jmp DRAW_CIN_046
+	jmp DRAW_CIN_046__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
 
 LABEL_76D5:
 	video type=1, offset=CINEMATIC_045, x=[0x03], y=[0x04], zoom=0x40
 
-DRAW_CIN_046:
+DRAW_CIN_046__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2:
 	video type=1, offset=CINEMATIC_046, x=[0x03], y=[0x04], zoom=0x40
 	ret
 
@@ -240,12 +240,12 @@ LABEL_76E0:
 	jne [0x06], 0xFFFB, LABEL_7700
 	jl [0x14], 0x00, LABEL_76F5
 	video type=1, offset=CINEMATIC_044, x=[0x03], y=[0x04], zoom=0x40
-	jmp DRAW_CIN_043
+	jmp DRAW_CIN_043__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
 
 LABEL_76F5:
 	video type=1, offset=CINEMATIC_042, x=[0x03], y=[0x04], zoom=0x40
 
-DRAW_CIN_043:
+DRAW_CIN_043__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2:
 	video type=1, offset=CINEMATIC_043, x=[0x03], y=[0x04], zoom=0x40
 	ret
 
@@ -253,24 +253,24 @@ LABEL_7700:
 	jne [0x06], 0xFFFA, LABEL_7720
 	jl [0x14], 0x00, LABEL_7715
 	video type=1, offset=CINEMATIC_041, x=[0x03], y=[0x04], zoom=0x40
-	jmp DRAW_CIN_040
+	jmp DRAW_CIN_040__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
 
 LABEL_7715:
 	video type=1, offset=CINEMATIC_039, x=[0x03], y=[0x04], zoom=0x40
 
-DRAW_CIN_040:
+DRAW_CIN_040__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2:
 	video type=1, offset=CINEMATIC_040, x=[0x03], y=[0x04], zoom=0x40
 	ret
 
 LABEL_7720:
 	jl [0x14], 0x00, LABEL_772E
 	video type=1, offset=CINEMATIC_038, x=[0x03], y=[0x04], zoom=0x40
-	jmp DRAW_CIN_037
+	jmp DRAW_CIN_037__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
 
 LABEL_772E:
 	video type=1, offset=CINEMATIC_036, x=[0x03], y=[0x04], zoom=0x40
 
-DRAW_CIN_037:
+DRAW_CIN_037__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2:
 	video type=1, offset=CINEMATIC_037, x=[0x03], y=[0x04], zoom=0x40
 	ret
 
@@ -350,8 +350,8 @@ LABEL_7788:
 	selectVideoPage 0xFF
 	call LABEL_1D30
 	setup channel=0x11, address=LABEL_1FA0
-	setup channel=0x34, address=HANG_DRAW_CIN_549
-	setup channel=0x35, address=DRAW_CIN_540_543_WITH_SFX_57
+	setup channel=0x34, address=HANG_DRAW_CIN_549__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
+	setup channel=0x35, address=DRAW_CIN_540_543_WITH_SFX_57__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
 	setup channel=0x15, address=SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01
 	mov [PAUSE_SLICES], 0x0004
 	video type=1, offset=CINEMATIC_083, x=[0x03], y=[0x04], zoom=0x40
@@ -374,7 +374,7 @@ LABEL_7788:
 	mov [0x42], 0x00A0
 	killChannel
 
-DRAW_CIN_540_543_WITH_SFX_57:
+DRAW_CIN_540_543_WITH_SFX_57__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2:
 	video type=1, offset=CINEMATIC_540, x=[0x1a], y=[0x1b], zoom=0x40
 	video type=1, offset=CINEMATIC_541, x=[0x1a], y=[0x1b], zoom=0x40
 	break
@@ -396,10 +396,10 @@ DRAW_CIN_540_543_WITH_SFX_57:
 	video type=1, offset=CINEMATIC_548, x=[0x1a], y=[0x1b], zoom=0x40
 	killChannel
 
-HANG_DRAW_CIN_549:
+HANG_DRAW_CIN_549__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2:
 	video type=1, offset=CINEMATIC_549, x=181, y=146
 	break
-	jmp HANG_DRAW_CIN_549
+	jmp HANG_DRAW_CIN_549__CART__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
 LABEL_78A4:
 	db 0x11
 

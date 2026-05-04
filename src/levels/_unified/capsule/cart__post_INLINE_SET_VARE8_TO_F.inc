@@ -202,7 +202,7 @@ LABEL_27B6:
 	video type=1, offset=CINEMATIC_430, x=141, y=127
 	break
 	video type=1, offset=CINEMATIC_431, x=141, y=127
-	setup channel=0x0F, address=HANG_DRAW_CIN_433
+	setup channel=0x0F, address=HANG_DRAW_CIN_433__CART__POST_INLINE_SET_VARE8_TO_F
 	setup channel=0x1D, address=HANG_DRAW_CIN_434
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_432, x=141, y=127
@@ -215,10 +215,10 @@ LABEL_27B6:
 	setup channel=0x16, address=LABEL_B74A
 	killChannel
 
-HANG_DRAW_CIN_433:
+HANG_DRAW_CIN_433__CART__POST_INLINE_SET_VARE8_TO_F:
 	video type=1, offset=CINEMATIC_433, x=141, y=127
 	break
-	jmp HANG_DRAW_CIN_433
+	jmp HANG_DRAW_CIN_433__CART__POST_INLINE_SET_VARE8_TO_F
 
 HANG_DRAW_CIN_434:
 	video type=1, offset=CINEMATIC_434, x=141, y=127

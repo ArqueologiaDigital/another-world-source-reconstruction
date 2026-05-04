@@ -1,6 +1,6 @@
-DELAY_LOOP_VAR66:
+DELAY_LOOP_VAR66__DOS__POST_INLINE_SET_VAR66_TO_32:
 	break
-	djnz [0x66], DELAY_LOOP_VAR66
+	djnz [0x66], DELAY_LOOP_VAR66__DOS__POST_INLINE_SET_VAR66_TO_32
 	play id=0x0052, freq=0x1E, vol=0x20, channel=0x01
 	video type=1, offset=CINEMATIC_048, x=160, y=100
 	break
@@ -32,7 +32,7 @@ DELAY_LOOP_VAR66:
 	video type=1, offset=CINEMATIC_060, x=160, y=100
 	break
 	mov [0x66], 0x0005
-	jmp DELAY_LOOP_VAR66
+	jmp DELAY_LOOP_VAR66__DOS__POST_INLINE_SET_VAR66_TO_32
 
 LABEL_121F:
 	break

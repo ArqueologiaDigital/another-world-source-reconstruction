@@ -117,11 +117,11 @@ LABEL_369C:
 	ret
 
 LABEL_36A8:
-	jne [0x6D], 0x03, DRAW_CIN_805
+	jne [0x6D], 0x03, DRAW_CIN_805__DOS__POST_INIT_VAR08_FROM_VARE9_VAR09_TO_4
 	video type=1, offset=CINEMATIC_806, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
-DRAW_CIN_805:
+DRAW_CIN_805__DOS__POST_INIT_VAR08_FROM_VARE9_VAR09_TO_4:
 	video type=1, offset=CINEMATIC_805, x=[0x07], y=[0x08], zoom=0x40
 	ret
 

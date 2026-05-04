@@ -43,7 +43,7 @@ LABEL_0085:
 	setup channel=0x02, address=DRAW_CIN_224_MULTI_FRAME
 	setup channel=0x00, address=LABEL_1C05
 	setup channel=0x20, address=HANG_DRAW_CIN_223
-	setup channel=0x28, address=HANG_DRAW_CIN_222
+	setup channel=0x28, address=HANG_DRAW_CIN_222__CART__POST_INLINE_SET_VAR6D_TO_0
 	setup channel=0x23, address=LABEL_00DD
 	call INIT_TANK_DRIVE_VARS
 	killChannel
@@ -105,10 +105,10 @@ HANG_DRAW_CIN_223:
 	break
 	jmp HANG_DRAW_CIN_223
 
-HANG_DRAW_CIN_222:
+HANG_DRAW_CIN_222__CART__POST_INLINE_SET_VAR6D_TO_0:
 	video type=1, offset=CINEMATIC_222, x=160, y=100
 	break
-	jmp HANG_DRAW_CIN_222
+	jmp HANG_DRAW_CIN_222__CART__POST_INLINE_SET_VAR6D_TO_0
 LABEL_013C:
 	db 0x11
 
@@ -300,9 +300,9 @@ LABEL_02E5:
 	deleteChannels first=0x09, last=0x0B
 	mov [0x03], 0x0014
 
-DELAY_LOOP_VAR03:
+DELAY_LOOP_VAR03__CART__POST_INLINE_SET_VAR6D_TO_0:
 	break
-	djnz [0x03], DELAY_LOOP_VAR03
+	djnz [0x03], DELAY_LOOP_VAR03__CART__POST_INLINE_SET_VAR6D_TO_0
 	setup channel=0x37, address=RESET_PAGES_AND_SETUP_CH_0A
 	break
 	jmp LABEL_0323

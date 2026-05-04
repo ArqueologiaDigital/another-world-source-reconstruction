@@ -384,16 +384,16 @@ LABEL_9702:
 
 LABEL_9703:
 	video type=0, offset=COMMON_VIDEO_327, x=[0x01], y=[0x02], zoom=0x40
-	je [0xBE], 0x03, DRAW_CIN_149
+	je [0xBE], 0x03, DRAW_CIN_149__AMIGA__POST_DECREMENT_VAR08_BY_D
 	ret
 
-DRAW_CIN_149:
+DRAW_CIN_149__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=1, offset=CINEMATIC_149, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9715:
 	video type=0, offset=COMMON_VIDEO_328, x=[0x01], y=[0x02], zoom=0x40
-	je [0xBE], 0x03, DRAW_CIN_150
+	je [0xBE], 0x03, DRAW_CIN_150__AMIGA__POST_DECREMENT_VAR08_BY_D
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
@@ -401,31 +401,31 @@ LABEL_9715:
 	video type=0, offset=COMMON_VIDEO_329, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-DRAW_CIN_150:
+DRAW_CIN_150__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=1, offset=CINEMATIC_150, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_973F:
 	video type=0, offset=COMMON_VIDEO_330, x=[0x01], y=[0x02], zoom=0x40
-	je [0xBE], 0x03, DRAW_CIN_151
+	je [0xBE], 0x03, DRAW_CIN_151__AMIGA__POST_DECREMENT_VAR08_BY_D
 	ret
 
-DRAW_CIN_151:
+DRAW_CIN_151__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=1, offset=CINEMATIC_151, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9751:
 	video type=0, offset=COMMON_VIDEO_348, x=[0x01], y=[0x02], zoom=0x40
-	je [0xBE], 0x03, DRAW_CIN_175
+	je [0xBE], 0x03, DRAW_CIN_175__AMIGA__POST_DECREMENT_VAR08_BY_D
 	ret
 
-DRAW_CIN_175:
+DRAW_CIN_175__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=1, offset=CINEMATIC_175, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9763:
 	video type=1, offset=CINEMATIC_176, x=[0x01], y=[0x02], zoom=0x40
-	je [0xBE], 0x03, DRAW_CIN_177
+	je [0xBE], 0x03, DRAW_CIN_177__AMIGA__POST_DECREMENT_VAR08_BY_D
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
@@ -433,16 +433,16 @@ LABEL_9763:
 	video type=0, offset=COMMON_VIDEO_349, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-DRAW_CIN_177:
+DRAW_CIN_177__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=1, offset=CINEMATIC_177, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_978D:
 	video type=0, offset=COMMON_VIDEO_350, x=[0x01], y=[0x02], zoom=0x40
-	je [0xBE], 0x03, DRAW_CIN_178
+	je [0xBE], 0x03, DRAW_CIN_178__AMIGA__POST_DECREMENT_VAR08_BY_D
 	ret
 
-DRAW_CIN_178:
+DRAW_CIN_178__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=1, offset=CINEMATIC_178, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
@@ -508,7 +508,7 @@ LABEL_982C:
 
 LABEL_9850:
 	video type=0, offset=COMMON_VIDEO_047, x=[0x01], y=[0x02], zoom=0x40
-	je [0xBE], 0x03, DRAW_CIN_148
+	je [0xBE], 0x03, DRAW_CIN_148__AMIGA__POST_DECREMENT_VAR08_BY_D
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
@@ -516,7 +516,7 @@ LABEL_9850:
 	video type=0, offset=COMMON_VIDEO_048, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-DRAW_CIN_148:
+DRAW_CIN_148__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=1, offset=CINEMATIC_148, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
@@ -616,16 +616,16 @@ LABEL_997A:
 
 LABEL_998B:
 	video type=0, offset=COMMON_VIDEO_334, x=[0x01], y=[0x02], zoom=0x40
-	je [0xBE], 0x03, DRAW_CIN_162
+	je [0xBE], 0x03, DRAW_CIN_162__AMIGA__POST_DECREMENT_VAR08_BY_D
 	ret
 
-DRAW_CIN_162:
+DRAW_CIN_162__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=1, offset=CINEMATIC_162, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_999D:
 	video type=0, offset=COMMON_VIDEO_012, x=[0x01], y=[0x02], zoom=0x40
-	je [0xBE], 0x03, DRAW_CIN_163
+	je [0xBE], 0x03, DRAW_CIN_163__AMIGA__POST_DECREMENT_VAR08_BY_D
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
@@ -633,31 +633,31 @@ LABEL_999D:
 	video type=0, offset=COMMON_VIDEO_013, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-DRAW_CIN_163:
+DRAW_CIN_163__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=1, offset=CINEMATIC_163, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_99C7:
 	video type=0, offset=COMMON_VIDEO_335, x=[0x01], y=[0x02], zoom=0x40
-	je [0xBE], 0x03, DRAW_CIN_164
+	je [0xBE], 0x03, DRAW_CIN_164__AMIGA__POST_DECREMENT_VAR08_BY_D
 	ret
 
-DRAW_CIN_164:
+DRAW_CIN_164__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=1, offset=CINEMATIC_164, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_99D9:
 	video type=0, offset=COMMON_VIDEO_346, x=[0x01], y=[0x02], zoom=0x40
-	je [0xBE], 0x03, DRAW_CIN_171
+	je [0xBE], 0x03, DRAW_CIN_171__AMIGA__POST_DECREMENT_VAR08_BY_D
 	ret
 
-DRAW_CIN_171:
+DRAW_CIN_171__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=1, offset=CINEMATIC_171, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_99EB:
 	video type=0, offset=COMMON_VIDEO_249, x=[0x01], y=[0x02], zoom=0x40
-	je [0xBE], 0x03, DRAW_CIN_172
+	je [0xBE], 0x03, DRAW_CIN_172__AMIGA__POST_DECREMENT_VAR08_BY_D
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
@@ -665,20 +665,20 @@ LABEL_99EB:
 	video type=0, offset=COMMON_VIDEO_250, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-DRAW_CIN_172:
+DRAW_CIN_172__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=1, offset=CINEMATIC_172, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9A15:
 	video type=0, offset=COMMON_VIDEO_347, x=[0x01], y=[0x02], zoom=0x40
-	je [0xBE], 0x03, DRAW_CIN_173
+	je [0xBE], 0x03, DRAW_CIN_173__AMIGA__POST_DECREMENT_VAR08_BY_D
 	ret
 
-DRAW_CIN_173:
+DRAW_CIN_173__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=1, offset=CINEMATIC_173, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-GUARDED_DRAW_CV_126:
+GUARDED_DRAW_CV_126__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	call LABEL_96CD
 	jne [0x0A], 0x01, LABEL_9A36
 	video type=0, offset=COMMON_VIDEO_004, x=[0x01], y=[0x02], zoom=0x40
@@ -696,7 +696,7 @@ LABEL_9A42:
 
 LABEL_9A4E:
 	video type=0, offset=COMMON_VIDEO_000, x=[0x01], y=[0x02], zoom=0x40
-	je [0xBE], 0x03, DRAW_CIN_165
+	je [0xBE], 0x03, DRAW_CIN_165__AMIGA__POST_DECREMENT_VAR08_BY_D
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
@@ -704,7 +704,7 @@ LABEL_9A4E:
 	video type=0, offset=COMMON_VIDEO_001, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-DRAW_CIN_165:
+DRAW_CIN_165__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=1, offset=CINEMATIC_165, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
@@ -732,40 +732,40 @@ LABEL_9AA8:
 	ret
 
 LABEL_9AA9:
-	je [0x0A], 0x00, DRAW_CV_113
-	call GUARDED_DRAW_CV_126
+	je [0x0A], 0x00, DRAW_CV_113__AMIGA__POST_DECREMENT_VAR08_BY_D
+	call GUARDED_DRAW_CV_126__AMIGA__POST_DECREMENT_VAR08_BY_D
 
-DRAW_CV_113:
+DRAW_CV_113__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_113, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9AB8:
-	je [0x0A], 0x00, DRAW_CV_114
-	call GUARDED_DRAW_CV_126
+	je [0x0A], 0x00, DRAW_CV_114__AMIGA__POST_DECREMENT_VAR08_BY_D
+	call GUARDED_DRAW_CV_126__AMIGA__POST_DECREMENT_VAR08_BY_D
 
-DRAW_CV_114:
+DRAW_CV_114__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_114, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9AC7:
-	je [0x0A], 0x00, DRAW_CV_115
-	call GUARDED_DRAW_CV_126
+	je [0x0A], 0x00, DRAW_CV_115__AMIGA__POST_DECREMENT_VAR08_BY_D
+	call GUARDED_DRAW_CV_126__AMIGA__POST_DECREMENT_VAR08_BY_D
 
-DRAW_CV_115:
+DRAW_CV_115__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_115, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9AD6:
-	je [0x0A], 0x00, DRAW_CV_116
-	call GUARDED_DRAW_CV_126
+	je [0x0A], 0x00, DRAW_CV_116__AMIGA__POST_DECREMENT_VAR08_BY_D
+	call GUARDED_DRAW_CV_126__AMIGA__POST_DECREMENT_VAR08_BY_D
 
-DRAW_CV_116:
+DRAW_CV_116__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_116, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9AE5:
 	je [0x0A], 0x00, LABEL_9AEE
-	call GUARDED_DRAW_CV_126
+	call GUARDED_DRAW_CV_126__AMIGA__POST_DECREMENT_VAR08_BY_D
 
 LABEL_9AEE:
 	video type=0, offset=COMMON_VIDEO_117, x=[0x01], y=[0x02], zoom=0x40
@@ -775,12 +775,12 @@ LABEL_9AEE:
 LABEL_9AFA:
 	jne [0x0A], 0x00, LABEL_9B08
 	video type=0, offset=COMMON_VIDEO_119, x=[0x01], y=[0x02], zoom=0x40
-	jmp DRAW_CV_118
+	jmp DRAW_CV_118__AMIGA__POST_DECREMENT_VAR08_BY_D
 
 LABEL_9B08:
-	call GUARDED_DRAW_CV_126
+	call GUARDED_DRAW_CV_126__AMIGA__POST_DECREMENT_VAR08_BY_D
 
-DRAW_CV_118:
+DRAW_CV_118__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_118, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
@@ -790,7 +790,7 @@ LABEL_9B11:
 	jmp LABEL_9B22
 
 LABEL_9B1F:
-	call GUARDED_DRAW_CV_126
+	call GUARDED_DRAW_CV_126__AMIGA__POST_DECREMENT_VAR08_BY_D
 
 LABEL_9B22:
 	call LABEL_9A78
@@ -800,66 +800,66 @@ LABEL_9B22:
 LABEL_9B2B:
 	jne [0x0A], 0x00, LABEL_9B39
 	video type=0, offset=COMMON_VIDEO_100, x=[0x01], y=[0x02], zoom=0x40
-	jmp DRAW_CV_099
+	jmp DRAW_CV_099__AMIGA__POST_DECREMENT_VAR08_BY_D
 
 LABEL_9B39:
-	call GUARDED_DRAW_CV_126
+	call GUARDED_DRAW_CV_126__AMIGA__POST_DECREMENT_VAR08_BY_D
 
-DRAW_CV_099:
+DRAW_CV_099__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_099, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9B42:
 	jne [0x0A], 0x00, LABEL_9B50
 	video type=0, offset=COMMON_VIDEO_102, x=[0x01], y=[0x02], zoom=0x40
-	jmp DRAW_CV_101
+	jmp DRAW_CV_101__AMIGA__POST_DECREMENT_VAR08_BY_D
 
 LABEL_9B50:
-	call GUARDED_DRAW_CV_126
+	call GUARDED_DRAW_CV_126__AMIGA__POST_DECREMENT_VAR08_BY_D
 
-DRAW_CV_101:
+DRAW_CV_101__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_101, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9B59:
 	jne [0x0A], 0x00, LABEL_9B67
 	video type=0, offset=COMMON_VIDEO_104, x=[0x01], y=[0x02], zoom=0x40
-	jmp DRAW_CV_103
+	jmp DRAW_CV_103__AMIGA__POST_DECREMENT_VAR08_BY_D
 
 LABEL_9B67:
-	call GUARDED_DRAW_CV_126
+	call GUARDED_DRAW_CV_126__AMIGA__POST_DECREMENT_VAR08_BY_D
 
-DRAW_CV_103:
+DRAW_CV_103__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_103, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9B70:
 	jne [0x0A], 0x00, LABEL_9B7E
 	video type=0, offset=COMMON_VIDEO_106, x=[0x01], y=[0x02], zoom=0x40
-	jmp DRAW_CV_105
+	jmp DRAW_CV_105__AMIGA__POST_DECREMENT_VAR08_BY_D
 
 LABEL_9B7E:
-	call GUARDED_DRAW_CV_126
+	call GUARDED_DRAW_CV_126__AMIGA__POST_DECREMENT_VAR08_BY_D
 
-DRAW_CV_105:
+DRAW_CV_105__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_105, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9B87:
 	jne [0x0A], 0x00, LABEL_9B95
 	video type=0, offset=COMMON_VIDEO_108, x=[0x01], y=[0x02], zoom=0x40
-	jmp DRAW_CV_107
+	jmp DRAW_CV_107__AMIGA__POST_DECREMENT_VAR08_BY_D
 
 LABEL_9B95:
-	call GUARDED_DRAW_CV_126
+	call GUARDED_DRAW_CV_126__AMIGA__POST_DECREMENT_VAR08_BY_D
 
-DRAW_CV_107:
+DRAW_CV_107__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_107, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9B9E:
 	je [0x0A], 0x00, LABEL_9BA7
-	call GUARDED_DRAW_CV_126
+	call GUARDED_DRAW_CV_126__AMIGA__POST_DECREMENT_VAR08_BY_D
 
 LABEL_9BA7:
 	video type=0, offset=COMMON_VIDEO_109, x=[0x01], y=[0x02], zoom=0x40
@@ -867,119 +867,119 @@ LABEL_9BA7:
 	ret
 
 LABEL_9BB3:
-	je [0x0A], 0x00, DRAW_CV_110
-	call GUARDED_DRAW_CV_126
+	je [0x0A], 0x00, DRAW_CV_110__AMIGA__POST_DECREMENT_VAR08_BY_D
+	call GUARDED_DRAW_CV_126__AMIGA__POST_DECREMENT_VAR08_BY_D
 
-DRAW_CV_110:
+DRAW_CV_110__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_110, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9BC2:
 	call LABEL_9A78
-	je [0x0A], 0x00, DRAW_CV_111
-	call GUARDED_DRAW_CV_126
+	je [0x0A], 0x00, DRAW_CV_111__AMIGA__POST_DECREMENT_VAR08_BY_D
+	call GUARDED_DRAW_CV_126__AMIGA__POST_DECREMENT_VAR08_BY_D
 
-DRAW_CV_111:
+DRAW_CV_111__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_111, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9BD4:
-	je [0x0A], 0x00, DRAW_CV_112
-	call GUARDED_DRAW_CV_126
+	je [0x0A], 0x00, DRAW_CV_112__AMIGA__POST_DECREMENT_VAR08_BY_D
+	call GUARDED_DRAW_CV_126__AMIGA__POST_DECREMENT_VAR08_BY_D
 
-DRAW_CV_112:
+DRAW_CV_112__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_112, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-DRAW_CV_273:
+DRAW_CV_273__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_273, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-DRAW_CV_270:
+DRAW_CV_270__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_270, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-DRAW_CV_252:
+DRAW_CV_252__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_252, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-DRAW_CV_255:
+DRAW_CV_255__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_255, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-DRAW_CV_265:
+DRAW_CV_265__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_265, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9C01:
 	video type=0, offset=COMMON_VIDEO_251, x=[0x01], y=[0x02], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x01
-	jne [0x0A], 0x00, DRAW_CV_252
+	jne [0x0A], 0x00, DRAW_CV_252__AMIGA__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_253, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9C18:
 	video type=0, offset=COMMON_VIDEO_254, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, DRAW_CV_255
+	jne [0x0A], 0x00, DRAW_CV_255__AMIGA__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_256, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9C29:
 	video type=0, offset=COMMON_VIDEO_269, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, DRAW_CV_270
+	jne [0x0A], 0x00, DRAW_CV_270__AMIGA__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_271, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9C3A:
 	video type=0, offset=COMMON_VIDEO_272, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, DRAW_CV_273
+	jne [0x0A], 0x00, DRAW_CV_273__AMIGA__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_274, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9C4B:
 	video type=0, offset=COMMON_VIDEO_275, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, DRAW_CV_273
+	jne [0x0A], 0x00, DRAW_CV_273__AMIGA__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_276, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9C5C:
 	video type=0, offset=COMMON_VIDEO_258, x=[0x01], y=[0x02], zoom=0x40
 	play id=0x0060, freq=0x0A, vol=0x2A, channel=0x01
-	jne [0x0A], 0x00, DRAW_CV_252
+	jne [0x0A], 0x00, DRAW_CV_252__AMIGA__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_259, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9C73:
 	video type=0, offset=COMMON_VIDEO_260, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, DRAW_CV_252
+	jne [0x0A], 0x00, DRAW_CV_252__AMIGA__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_261, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9C84:
 	video type=0, offset=COMMON_VIDEO_262, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, DRAW_CV_255
+	jne [0x0A], 0x00, DRAW_CV_255__AMIGA__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_263, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9C95:
 	video type=0, offset=COMMON_VIDEO_264, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, DRAW_CV_265
+	jne [0x0A], 0x00, DRAW_CV_265__AMIGA__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_266, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9CA6:
 	video type=0, offset=COMMON_VIDEO_267, x=[0x01], y=[0x02], zoom=0x40
-	jne [0x0A], 0x00, DRAW_CV_265
+	jne [0x0A], 0x00, DRAW_CV_265__AMIGA__POST_DECREMENT_VAR08_BY_D
 	video type=0, offset=COMMON_VIDEO_268, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-DRAW_CV_279:
+DRAW_CV_279__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_279, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9CBD:
 	je [0x0A], 0x00, LABEL_9CC9
-	call DRAW_CV_279
+	call DRAW_CV_279__AMIGA__POST_DECREMENT_VAR08_BY_D
 	jmp LABEL_9CCE
 
 LABEL_9CC9:
@@ -992,51 +992,51 @@ LABEL_9CCE:
 
 LABEL_9CDA:
 	je [0x0A], 0x00, LABEL_9CE6
-	call DRAW_CV_279
-	jmp DRAW_CV_281
+	call DRAW_CV_279__AMIGA__POST_DECREMENT_VAR08_BY_D
+	jmp DRAW_CV_281__AMIGA__POST_DECREMENT_VAR08_BY_D
 
 LABEL_9CE6:
 	video type=0, offset=COMMON_VIDEO_280, x=[0x01], y=[0x02], zoom=0x40
 
-DRAW_CV_281:
+DRAW_CV_281__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_281, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9CF1:
 	je [0x0A], 0x00, LABEL_9CFD
-	call DRAW_CV_279
-	jmp DRAW_CV_294
+	call DRAW_CV_279__AMIGA__POST_DECREMENT_VAR08_BY_D
+	jmp DRAW_CV_294__AMIGA__POST_DECREMENT_VAR08_BY_D
 
 LABEL_9CFD:
 	video type=0, offset=COMMON_VIDEO_293, x=[0x01], y=[0x02], zoom=0x40
 
-DRAW_CV_294:
+DRAW_CV_294__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_294, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9D08:
 	je [0x0A], 0x00, LABEL_9D14
-	call DRAW_CV_279
-	jmp DRAW_CV_296
+	call DRAW_CV_279__AMIGA__POST_DECREMENT_VAR08_BY_D
+	jmp DRAW_CV_296__AMIGA__POST_DECREMENT_VAR08_BY_D
 
 LABEL_9D14:
 	video type=0, offset=COMMON_VIDEO_295, x=[0x01], y=[0x02], zoom=0x40
 
-DRAW_CV_296:
+DRAW_CV_296__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_296, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9D1F:
-	je [0x0A], 0x00, DRAW_CV_297
-	call DRAW_CV_279
+	je [0x0A], 0x00, DRAW_CV_297__AMIGA__POST_DECREMENT_VAR08_BY_D
+	call DRAW_CV_279__AMIGA__POST_DECREMENT_VAR08_BY_D
 
-DRAW_CV_297:
+DRAW_CV_297__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_297, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9D2E:
 	je [0x0A], 0x00, LABEL_9D3A
-	call DRAW_CV_279
+	call DRAW_CV_279__AMIGA__POST_DECREMENT_VAR08_BY_D
 	jmp LABEL_9D3F
 
 LABEL_9D3A:
@@ -1049,49 +1049,49 @@ LABEL_9D3F:
 
 LABEL_9D4B:
 	je [0x0A], 0x00, LABEL_9D57
-	call DRAW_CV_279
-	jmp DRAW_CV_286
+	call DRAW_CV_279__AMIGA__POST_DECREMENT_VAR08_BY_D
+	jmp DRAW_CV_286__AMIGA__POST_DECREMENT_VAR08_BY_D
 
 LABEL_9D57:
 	video type=0, offset=COMMON_VIDEO_285, x=[0x01], y=[0x02], zoom=0x40
 
-DRAW_CV_286:
+DRAW_CV_286__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_286, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9D62:
 	je [0x0A], 0x00, LABEL_9D6E
-	call DRAW_CV_279
-	jmp DRAW_CV_288
+	call DRAW_CV_279__AMIGA__POST_DECREMENT_VAR08_BY_D
+	jmp DRAW_CV_288__AMIGA__POST_DECREMENT_VAR08_BY_D
 
 LABEL_9D6E:
 	video type=0, offset=COMMON_VIDEO_287, x=[0x01], y=[0x02], zoom=0x40
 
-DRAW_CV_288:
+DRAW_CV_288__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_288, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9D79:
 	je [0x0A], 0x00, LABEL_9D85
-	call DRAW_CV_279
-	jmp DRAW_CV_290
+	call DRAW_CV_279__AMIGA__POST_DECREMENT_VAR08_BY_D
+	jmp DRAW_CV_290__AMIGA__POST_DECREMENT_VAR08_BY_D
 
 LABEL_9D85:
 	video type=0, offset=COMMON_VIDEO_289, x=[0x01], y=[0x02], zoom=0x40
 
-DRAW_CV_290:
+DRAW_CV_290__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_290, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9D90:
 	je [0x0A], 0x00, LABEL_9D9C
-	call DRAW_CV_279
-	jmp DRAW_CV_292
+	call DRAW_CV_279__AMIGA__POST_DECREMENT_VAR08_BY_D
+	jmp DRAW_CV_292__AMIGA__POST_DECREMENT_VAR08_BY_D
 
 LABEL_9D9C:
 	video type=0, offset=COMMON_VIDEO_291, x=[0x01], y=[0x02], zoom=0x40
 
-DRAW_CV_292:
+DRAW_CV_292__AMIGA__POST_DECREMENT_VAR08_BY_D:
 	video type=0, offset=COMMON_VIDEO_292, x=[0x01], y=[0x02], zoom=0x40
 	ret
 LABEL_9DA7:

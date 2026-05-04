@@ -158,7 +158,7 @@ LABEL_0F58:
 	video type=1, offset=CINEMATIC_136, x=[0x01], y=[0x02], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_135, x=[0x01], y=[0x02], zoom=0x40
-	jmp DRAW_CIN_137_138_BLOCK
+	jmp DRAW_CIN_137_138_BLOCK__CART__POST_INLINE_KILL_040
 LABEL_0F7E:
 	db 0x11
 
@@ -175,18 +175,18 @@ LABEL_0F9A:
 	break
 	video type=1, offset=CINEMATIC_282, x=[0x01], y=[0x02], zoom=0x40
 	djnz [0x03], LABEL_0F9A
-	setup channel=0x15, address=DRAW_CIN_284_BLOCK_95B
+	setup channel=0x15, address=DRAW_CIN_284_BLOCK_95B__CART__POST_INLINE_KILL_040
 	mov [0x03], 0x0003
 
 LABEL_0FAC:
 	break
 	video type=1, offset=CINEMATIC_283, x=[0x01], y=[0x02], zoom=0x40
 	djnz [0x03], LABEL_0FAC
-	jmp DRAW_CIN_137_138_BLOCK
+	jmp DRAW_CIN_137_138_BLOCK__CART__POST_INLINE_KILL_040
 LABEL_0FB9:
 	db 0x11
 
-DRAW_CIN_284_BLOCK_95B:
+DRAW_CIN_284_BLOCK_95B__CART__POST_INLINE_KILL_040:
 	video type=1, offset=CINEMATIC_284, x=[0x01], y=[0x02], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_285, x=[0x01], y=[0x02], zoom=0x40
@@ -234,7 +234,7 @@ LABEL_1023:
 	video type=1, offset=CINEMATIC_300, x=[0x01], y=[0x02], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_299, x=[0x01], y=[0x02], zoom=0x40
-	jmp DRAW_CIN_137_138_BLOCK
+	jmp DRAW_CIN_137_138_BLOCK__CART__POST_INLINE_KILL_040
 LABEL_103D:
 	db 0x11
 
@@ -247,7 +247,7 @@ LABEL_103E:
 	break
 	video type=1, offset=CINEMATIC_147, x=[0x01], y=[0x02], zoom=0x40
 
-DRAW_CIN_137_138_BLOCK:
+DRAW_CIN_137_138_BLOCK__CART__POST_INLINE_KILL_040:
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_137, x=[0x01], y=[0x02], zoom=0x40
 	selectVideoPage 0xFF

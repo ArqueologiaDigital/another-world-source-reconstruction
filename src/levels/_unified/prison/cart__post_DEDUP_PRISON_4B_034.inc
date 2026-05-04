@@ -18,12 +18,12 @@ LABEL_7CB0:
 
 LABEL_7CC5:
 	mov [0x21], 0x0064
-	jg [0x14], 0x22A0, DRAW_CIN_092
+	jg [0x14], 0x22A0, DRAW_CIN_092__CART__POST_DEDUP_PRISON_4B_034
 	mov [0x21], [0x14]
 	sub [0x21], 0x22A0
 	add [0x21], 0x0064
 
-DRAW_CIN_092:
+DRAW_CIN_092__CART__POST_DEDUP_PRISON_4B_034:
 	video type=1, offset=CINEMATIC_092, x=160, y=[0x21], zoom=0x40
 	ret
 
