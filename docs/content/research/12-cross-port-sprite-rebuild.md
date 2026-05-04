@@ -178,42 +178,65 @@ date. Visual rendering of the amiga group polygons at offsets
 the 10 frames as a viewable animation strip showing the hero's
 gradual return to walking.
 
-### The other 81 parent groups
+### Full parent-group attribution
 
-The remaining 197 cut sub-polys (out of 207 total) are contained
-in 81 other parent group polygons in amiga's bank. The next 16
-parent offsets attribute to:
+86 of the 87 parent group offsets in amiga's polygon bank match
+named EQUs in `chahi_amiga_1991/LAKE.asm`. The breakdown by
+animation cycle:
 
-| Offset | Amiga EQU                                |
-|--------|------------------------------------------|
-| 0x061C | CINEMATIC_HERO_STANDING_LEFT_IDLE        |
-| 0x0640 | CINEMATIC_HERO_LEFT_PROFILE              |
-| 0x06A4 | CINEMATIC_HERO_LEAP_RIGHT_F0             |
-| 0x0734 | CINEMATIC_HERO_LEAP_RIGHT_F1             |
-| 0x07B8 | CINEMATIC_HERO_LEAP_RIGHT_F2             |
-| 0x0854 | CINEMATIC_HERO_LEAP_RIGHT_F3             |
-| 0x08F0 | CINEMATIC_HERO_LEAP_RIGHT_F4             |
-| 0x0970 | CINEMATIC_HERO_LEAP_RIGHT_F5             |
-| 0x0998 | CINEMATIC_HERO_LEAP_RIGHT_F6             |
-| 0x09C0 | CINEMATIC_HERO_LEAP_RIGHT_F7             |
-| 0x09E8 | CINEMATIC_HERO_LEAP_RIGHT_F8             |
-| 0x0A14 | CINEMATIC_HERO_LEAP_RIGHT_F9             |
-| 0x0A3C | CINEMATIC_HERO_FALL_LEFT_F1              |
-| 0x0A64 | CINEMATIC_HERO_FALL_LEFT_F2              |
-| 0x0A8C | CINEMATIC_HERO_FALL_LEFT_F3              |
-| 0x0AB4 | CINEMATIC_HERO_FALL_LEFT_F4              |
+| Animation cycle              | # frames cut at sub-poly level |
+|------------------------------|---------------------------------|
+| HERO_LEAP_LEFT               | 10                              |
+| HERO_LEAP_RIGHT              | 10                              |
+| HERO_RESUME_LEFT             | 10                              |
+| HERO_RESUME_RIGHT            | 7                               |
+| POOL_LESTER                  | 7                               |
+| HERO_RUN_LEFT                | 6                               |
+| HERO_RUN_RIGHT               | 6                               |
+| HERO_FALL_LEFT               | 4                               |
+| HERO_WALK_LEFT               | 4                               |
+| HERO_WALK_RIGHT              | 4                               |
+| HERO_STOP_LEFT               | 3                               |
+| HERO_STOP_RIGHT              | 3                               |
+| HERO_LEAP_RIGHT_F0??_BUNDLE  | 3                               |
+| HERO_OUT_POOL                | 2                               |
+| LESTER_WAIT                  | 2                               |
+| HERO_RESUME_WALK_R           | 2                               |
+| HERO_STANDING_LEFT_IDLE      | 1                               |
+| HERO_LEFT_PROFILE            | 1                               |
+| HERO_STAND_R_BG_GHOST        | 1                               |
 
-That's 16 more named hero-animation frames — bringing the
-attributed total to **26+ named hero animation frames** that
-amiga 1991 used at LAKE. Note: HERO_LEAP_RIGHT does have a DOS
-equivalent (`HERO_LEAP_RIGHT_LOOP`), but the latter calls
-`DRAW_HERO_STOP_R_BUNDLE_NN_MM` helpers that draw COMPOSITE
-cinematics (paired sub-frames), not the 10 individual amiga
-frames. So LEAP_RIGHT was *rebuilt* (different sprite-bundling
-strategy), not strictly cut.
+Plus 1 unattributed parent at 0x1354 (no matching EQU; possibly
+an internal sub-group rather than a named animation root).
 
-HERO_FALL_LEFT and HERO_RESUME_LEFT appear to be the cleanest
-"cut" cases. The remaining 65 parent groups still need attribution.
+**Total: ~85 named hero/Lester animation frames are affected** —
+i.e., their sub-polygon content in amiga's polygon bank includes
+bytes that the 1992 DOS rebuild doesn't carry. Whether each
+specific animation was cut entirely vs. rebuilt with different
+sub-polys depends on whether DOS has a parsable polygon at the
+same offset:
+
+- **Cleanly cut** (DOS has no polygon at the offset): the
+  HERO_RESUME_LEFT_F4..F9 set sample (0x0310..0x0574) shows
+  most fail to parse in DOS.
+- **Rebuilt** (DOS has a different polygon at the offset): the
+  HERO_LEAP_RIGHT cycle has a DOS equivalent routine
+  (`HERO_LEAP_RIGHT_LOOP`) that draws COMPOSITE cinematics
+  via `DRAW_HERO_STOP_R_BUNDLE_NN_MM` helpers — different
+  sprite-bundling strategy.
+
+The general pattern: the 1992 DOS port redrew amiga's
+fine-grained per-frame hero animations as composite/bundled
+sprites, possibly to fit the polygon bank into cartridge-target
+size budgets. The amiga 1991 release had richer hero animations
+(more individual frames per cycle, more sub-polygon detail per
+frame); DOS 1992 simplified both the frame count and the
+per-frame sub-polygon composition.
+
+Visual rendering (`tools/polygon_render_png.py` against amiga's
+LAKE palette 5..7) of any of the affected parent group offsets
+would show the original-fidelity 1991 sprite. The same offset
+in DOS, where it parses, would show the simplified 1992 version.
 
 ### Address-clustering hint for the LAKE 201 cut set
 
