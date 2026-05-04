@@ -57,7 +57,7 @@
 ;   CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8  (2-arm: cart, dos)
 ;   COPY_HASH_VAR_37_TO_RANGE  (3-arm: amiga, cart, dos)
 ;   ACCUMULATE_HASH_INTO_VAR37_38  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_97B_E091A810  (2-arm: cart, dos)
+;   INIT_VAR6F_TO_A_PAUSE_3  (2-arm: cart, dos)
 ;   INLINE_SET_VAR29_TO_6  (2-arm: cart, dos)
 ;   INLINE_SET_VAR29_TO_8  (2-arm: cart, dos)
 ;   INIT_VARS_03_01_02  (2-arm: cart, dos)
@@ -98,20 +98,20 @@
 ;   INLINE_COPY_VAR44_TO_VAR25  (3-arm: amiga, cart, dos)
 ;   INIT_VAR2B_2C_FROM_VAR01_VAR29_10  (3-arm: amiga, cart, dos)
 ;   ADD_VAR11_TO_VAR34  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_99B_5D0924A3  (2-arm: cart, dos)
+;   DRAW_CV139_AT_X01_Y02  (2-arm: cart, dos)
 ;   COPY_VAR40_TO_VAR22  (3-arm: amiga, cart, dos)
 ;   DECREMENT_VARF8_BY_10  (3-arm: amiga, cart, dos)
 ;   DECREMENT_VAR22_BY_10  (3-arm: amiga, cart, dos)
 ;   COPY_VAR01_TO_VAR28  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_99B_C6015BD9  (2-arm: cart, dos)
+;   DRAW_CV204_AT_X07_Y08  (2-arm: cart, dos)
 ;   FOLD_BODY_189B_794E4590  (2-arm: cart, dos)
-;   FOLD_BODY_99B_D8CF1AF9  (2-arm: cart, dos)
-;   FOLD_BODY_99B_535C94C0  (2-arm: cart, dos)
-;   FOLD_BODY_99B_76C60EB2  (2-arm: cart, dos)
-;   FOLD_BODY_99B_95D61F48  (2-arm: cart, dos)
-;   FOLD_BODY_99B_3F1B076D  (2-arm: cart, dos)
-;   FOLD_BODY_99B_D1658A70  (2-arm: cart, dos)
-;   FOLD_BODY_99B_3B6BC4B3  (2-arm: cart, dos)
+;   DRAW_CV224_AT_X07_Y08  (2-arm: cart, dos)
+;   DRAW_CV263_AT_X07_Y08  (2-arm: cart, dos)
+;   DRAW_CV275_AT_X07_Y08  (2-arm: cart, dos)
+;   DRAW_CV246_AT_X07_Y08  (2-arm: cart, dos)
+;   DRAW_CV249_AT_X07_Y08  (2-arm: cart, dos)
+;   DRAW_CV259_AT_X07_Y08  (2-arm: cart, dos)
+;   DRAW_CV261_AT_X07_Y08  (2-arm: cart, dos)
 ;   INCREMENT_VAR07_BY_1  (3-arm: amiga, cart, dos)
 ;   DRAW_CV_355  (2-arm: cart, dos)
 ;   DECREMENT_VAR08_BY_D  (3-arm: amiga, cart, dos)
@@ -119,14 +119,14 @@
 ;   DRAW_CV_075  (2-arm: cart, dos)
 ;   DRAW_CV_076  (2-arm: cart, dos)
 ;   DRAW_CV_077  (2-arm: cart, dos)
-;   FOLD_BODY_200B_1AFE2B0B  (2-arm: cart, dos)
+;   DRAW_CV078_PLAY_60_F0B_V22_C1  (2-arm: cart, dos)
 ;   DRAW_CV_080  (2-arm: cart, dos)
 ;   DRAW_CV_061  (2-arm: cart, dos)
 ;   DRAW_CV_063  (2-arm: cart, dos)
 ;   DRAW_CV_065  (2-arm: cart, dos)
 ;   DRAW_CV_067  (2-arm: cart, dos)
 ;   DRAW_CV_069  (2-arm: cart, dos)
-;   FOLD_BODY_200B_5D805D1F  (2-arm: cart, dos)
+;   DRAW_CV070_PLAY_60_F14_V20_C1  (2-arm: cart, dos)
 ;   DRAW_CV_071  (2-arm: cart, dos)
 ;   DRAW_CV_072  (2-arm: cart, dos)
 ;   DRAW_CV_073  (2-arm: cart, dos)
@@ -136,24 +136,24 @@
 ;   DRAW_CV_296  (2-arm: cart, dos)
 ;   DRAW_CV_297  (2-arm: cart, dos)
 ;   DRAW_CV_298  (2-arm: cart, dos)
-;   FOLD_BODY_99B_8CB26FD2  (2-arm: cart, dos)
-;   FOLD_BODY_200B_37F93421  (2-arm: cart, dos)
-;   FOLD_BODY_99B_B1A35EFA  (2-arm: cart, dos)
+;   DRAW_CV107_AT_X01_Y02  (2-arm: cart, dos)
+;   DRAW_CV108_PLAY_60_F0F_V2A_C1  (2-arm: cart, dos)
+;   DRAW_CV109_AT_X01_Y02  (2-arm: cart, dos)
 ;   DRAW_CV_110  (2-arm: cart, dos)
-;   FOLD_BODY_99B_79867FEB  (2-arm: cart, dos)
+;   DRAW_CV111_AT_X01_Y02  (2-arm: cart, dos)
 ;   DRAW_CV_112  (2-arm: cart, dos)
-;   FOLD_BODY_99B_AA083516  (2-arm: cart, dos)
+;   DRAW_CV113_AT_X01_Y02  (2-arm: cart, dos)
 ;   DRAW_CV_114  (2-arm: cart, dos)
 ;   DRAW_CV_115  (2-arm: cart, dos)
-;   FOLD_BODY_99B_903D2AE1  (2-arm: cart, dos)
-;   FOLD_BODY_200B_44886950  (2-arm: cart, dos)
-;   FOLD_BODY_99B_A1B2ECF4  (2-arm: cart, dos)
+;   DRAW_CV097_AT_X01_Y02  (2-arm: cart, dos)
+;   DRAW_CV098_PLAY_60_F0A_V2A_C1  (2-arm: cart, dos)
+;   DRAW_CV099_AT_X01_Y02  (2-arm: cart, dos)
 ;   DRAW_CV_100  (2-arm: cart, dos)
-;   FOLD_BODY_99B_6E4C0150  (2-arm: cart, dos)
+;   DRAW_CV101_AT_X01_Y02  (2-arm: cart, dos)
 ;   DRAW_CV_102  (2-arm: cart, dos)
-;   FOLD_BODY_99B_DC229063  (2-arm: cart, dos)
+;   DRAW_CV103_AT_X01_Y02  (2-arm: cart, dos)
 ;   DRAW_CV_104  (2-arm: cart, dos)
-;   FOLD_BODY_99B_C53D6EC4  (2-arm: cart, dos)
+;   DRAW_CV105_AT_X01_Y02  (2-arm: cart, dos)
 ;   INLINE_SET_VAR20_TO_1  (2-arm: cart, dos)
 ;   FOLD_BODY_93B_2C2B4311  (2-arm: cart, dos)
 ;   COPY_VAR51_TO_VAR02_KILL_CHANNEL  (3-arm: amiga, cart, dos)
@@ -707,15 +707,15 @@ ACCUMULATE_HASH_INTO_VAR37_38:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_97B_E091A810:
+INIT_VAR6F_TO_A_PAUSE_3:
 	mov [0x6F], 0x000A
 	mov [PAUSE_SLICES], 0x0003
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_97B_E091A810.inc"
+;@include "capsule/cart__post_INIT_VAR6F_TO_A_PAUSE_3.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_97B_E091A810.inc"
+;@include "capsule/dos__post_INIT_VAR6F_TO_A_PAUSE_3.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -1195,14 +1195,14 @@ ADD_VAR11_TO_VAR34:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_5D0924A3:
+DRAW_CV139_AT_X01_Y02:
 	video type=0, offset=COMMON_VIDEO_139, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x23,0xAA,0x01,0x02
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_99B_5D0924A3.inc"
+;@include "capsule/cart__post_DRAW_CV139_AT_X01_Y02.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_99B_5D0924A3.inc"
+;@include "capsule/dos__post_DRAW_CV139_AT_X01_Y02.inc"
 ;@endif
 
 COPY_VAR40_TO_VAR22:
@@ -1254,14 +1254,14 @@ COPY_VAR01_TO_VAR28:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_C6015BD9:
+DRAW_CV204_AT_X07_Y08:
 	video type=0, offset=COMMON_VIDEO_204, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x16,0xB7,0x07,0x08
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_99B_C6015BD9.inc"
+;@include "capsule/cart__post_DRAW_CV204_AT_X07_Y08.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_99B_C6015BD9.inc"
+;@include "capsule/dos__post_DRAW_CV204_AT_X07_Y08.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -1278,80 +1278,80 @@ FOLD_BODY_189B_794E4590:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_D8CF1AF9:
+DRAW_CV224_AT_X07_Y08:
 	video type=0, offset=COMMON_VIDEO_224, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x16,0xA7,0x07,0x08
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_99B_D8CF1AF9.inc"
+;@include "capsule/cart__post_DRAW_CV224_AT_X07_Y08.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_99B_D8CF1AF9.inc"
+;@include "capsule/dos__post_DRAW_CV224_AT_X07_Y08.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_535C94C0:
+DRAW_CV263_AT_X07_Y08:
 	video type=0, offset=COMMON_VIDEO_263, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x19,0x05,0x07,0x08
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_99B_535C94C0.inc"
+;@include "capsule/cart__post_DRAW_CV263_AT_X07_Y08.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_99B_535C94C0.inc"
+;@include "capsule/dos__post_DRAW_CV263_AT_X07_Y08.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_76C60EB2:
+DRAW_CV275_AT_X07_Y08:
 	video type=0, offset=COMMON_VIDEO_275, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x19,0x09,0x07,0x08
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_99B_76C60EB2.inc"
+;@include "capsule/cart__post_DRAW_CV275_AT_X07_Y08.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_99B_76C60EB2.inc"
+;@include "capsule/dos__post_DRAW_CV275_AT_X07_Y08.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_95D61F48:
+DRAW_CV246_AT_X07_Y08:
 	video type=0, offset=COMMON_VIDEO_246, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x10,0xD4,0x07,0x08
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_99B_95D61F48.inc"
+;@include "capsule/cart__post_DRAW_CV246_AT_X07_Y08.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_99B_95D61F48.inc"
+;@include "capsule/dos__post_DRAW_CV246_AT_X07_Y08.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_3F1B076D:
+DRAW_CV249_AT_X07_Y08:
 	video type=0, offset=COMMON_VIDEO_249, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x10,0xEB,0x07,0x08
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_99B_3F1B076D.inc"
+;@include "capsule/cart__post_DRAW_CV249_AT_X07_Y08.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_99B_3F1B076D.inc"
+;@include "capsule/dos__post_DRAW_CV249_AT_X07_Y08.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_D1658A70:
+DRAW_CV259_AT_X07_Y08:
 	video type=0, offset=COMMON_VIDEO_259, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x11,0x26,0x07,0x08
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_99B_D1658A70.inc"
+;@include "capsule/cart__post_DRAW_CV259_AT_X07_Y08.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_99B_D1658A70.inc"
+;@include "capsule/dos__post_DRAW_CV259_AT_X07_Y08.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_3B6BC4B3:
+DRAW_CV261_AT_X07_Y08:
 	video type=0, offset=COMMON_VIDEO_261, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x11,0x3B,0x07,0x08
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_99B_3B6BC4B3.inc"
+;@include "capsule/cart__post_DRAW_CV261_AT_X07_Y08.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_99B_3B6BC4B3.inc"
+;@include "capsule/dos__post_DRAW_CV261_AT_X07_Y08.inc"
 ;@endif
 
 INCREMENT_VAR07_BY_1:
@@ -1439,16 +1439,16 @@ DRAW_CV_077:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_200B_1AFE2B0B:
+DRAW_CV078_PLAY_60_F0B_V22_C1:
 	video type=0, offset=COMMON_VIDEO_078, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x01,0x1A,0x01,0x02
 	play id=0x0060, freq=0x0B, vol=0x22, channel=0x01
 	ret
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_200B_1AFE2B0B.inc"
+;@include "capsule/cart__post_DRAW_CV078_PLAY_60_F0B_V22_C1.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_200B_1AFE2B0B.inc"
+;@include "capsule/dos__post_DRAW_CV078_PLAY_60_F0B_V22_C1.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -1524,16 +1524,16 @@ DRAW_CV_069:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_200B_5D805D1F:
+DRAW_CV070_PLAY_60_F14_V20_C1:
 	video type=0, offset=COMMON_VIDEO_070, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x04,0x0A,0x01,0x02
 	play id=0x0060, freq=0x14, vol=0x20, channel=0x01
 	ret
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_200B_5D805D1F.inc"
+;@include "capsule/cart__post_DRAW_CV070_PLAY_60_F14_V20_C1.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_200B_5D805D1F.inc"
+;@include "capsule/dos__post_DRAW_CV070_PLAY_60_F14_V20_C1.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -1620,26 +1620,26 @@ DRAW_CV_298:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_8CB26FD2:
+DRAW_CV107_AT_X01_Y02:
 	video type=0, offset=COMMON_VIDEO_107, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x1B,0x18,0x01,0x02
 ;@endif
 
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_200B_37F93421:
+DRAW_CV108_PLAY_60_F0F_V2A_C1:
 	video type=0, offset=COMMON_VIDEO_108, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x08,0xDC,0x01,0x02
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x01
 	ret
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_200B_37F93421.inc"
+;@include "capsule/cart__post_DRAW_CV108_PLAY_60_F0F_V2A_C1.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_200B_37F93421.inc"
+;@include "capsule/dos__post_DRAW_CV108_PLAY_60_F0F_V2A_C1.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_B1A35EFA:
+DRAW_CV109_AT_X01_Y02:
 	video type=0, offset=COMMON_VIDEO_109, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x1B,0x1C,0x01,0x02
 ;@endif
 
@@ -1657,7 +1657,7 @@ DRAW_CV_110:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_79867FEB:
+DRAW_CV111_AT_X01_Y02:
 	video type=0, offset=COMMON_VIDEO_111, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x1B,0x20,0x01,0x02
 ;@endif
 
@@ -1675,7 +1675,7 @@ DRAW_CV_112:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_AA083516:
+DRAW_CV113_AT_X01_Y02:
 	video type=0, offset=COMMON_VIDEO_113, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x1B,0x24,0x01,0x02
 ;@endif
 
@@ -1705,26 +1705,26 @@ DRAW_CV_115:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_903D2AE1:
+DRAW_CV097_AT_X01_Y02:
 	video type=0, offset=COMMON_VIDEO_097, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x1B,0x28,0x01,0x02
 ;@endif
 
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_200B_44886950:
+DRAW_CV098_PLAY_60_F0A_V2A_C1:
 	video type=0, offset=COMMON_VIDEO_098, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x0A,0x85,0x01,0x02
 	play id=0x0060, freq=0x0A, vol=0x2A, channel=0x01
 	ret
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_200B_44886950.inc"
+;@include "capsule/cart__post_DRAW_CV098_PLAY_60_F0A_V2A_C1.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_200B_44886950.inc"
+;@include "capsule/dos__post_DRAW_CV098_PLAY_60_F0A_V2A_C1.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_A1B2ECF4:
+DRAW_CV099_AT_X01_Y02:
 	video type=0, offset=COMMON_VIDEO_099, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x1B,0x3A,0x01,0x02
 ;@endif
 
@@ -1742,7 +1742,7 @@ DRAW_CV_100:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_6E4C0150:
+DRAW_CV101_AT_X01_Y02:
 	video type=0, offset=COMMON_VIDEO_101, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x1B,0x2C,0x01,0x02
 ;@endif
 
@@ -1760,7 +1760,7 @@ DRAW_CV_102:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_DC229063:
+DRAW_CV103_AT_X01_Y02:
 	video type=0, offset=COMMON_VIDEO_103, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x1B,0x30,0x01,0x02
 ;@endif
 
@@ -1778,14 +1778,14 @@ DRAW_CV_104:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_99B_C53D6EC4:
+DRAW_CV105_AT_X01_Y02:
 	video type=0, offset=COMMON_VIDEO_105, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x1B,0x36,0x01,0x02
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_99B_C53D6EC4.inc"
+;@include "capsule/cart__post_DRAW_CV105_AT_X01_Y02.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_99B_C53D6EC4.inc"
+;@include "capsule/dos__post_DRAW_CV105_AT_X01_Y02.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")

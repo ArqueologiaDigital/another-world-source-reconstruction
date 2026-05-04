@@ -542,5 +542,5 @@ LABEL_36D7:
 
 LABEL_36F3:
 	call GUARDED_ALIEN_ANIM_CV_128	;@raw=0x04,0x88,0xB0
-	setup channel=0x0F, address=FOLD_BODY_97B_E091A810	;@raw=0x08,0x0F,0x36,0xFB
+	setup channel=0x0F, address=INIT_VAR6F_TO_A_PAUSE_3	;@raw=0x08,0x0F,0x36,0xFB
 	killChannel

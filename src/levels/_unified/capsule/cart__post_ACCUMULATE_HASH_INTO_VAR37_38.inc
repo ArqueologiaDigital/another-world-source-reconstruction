@@ -435,5 +435,5 @@ LABEL_3740:
 
 LABEL_375C:
 	call GUARDED_ALIEN_ANIM_CV_128	;@raw=0x04,0x89,0x19
-	setup channel=0x0F, address=FOLD_BODY_97B_E091A810	;@raw=0x08,0x0F,0x37,0x64
+	setup channel=0x0F, address=INIT_VAR6F_TO_A_PAUSE_3	;@raw=0x08,0x0F,0x37,0x64
 	killChannel
