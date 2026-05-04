@@ -108,5 +108,6 @@ CINEMATIC_LAKE_UNUSED_189		EQU 0x5DDA
 ;@include "lake/hero_fall_right.inc"
 ;@include "lake/hero_fall_right_and_drawers.inc"
 ;@include "lake/hero_dispatch_and_leap_left.inc"
-;@include "lake/hero_movement_walk_leap_land.inc"
+;@include "lake/hero_leap_and_land.inc"
+;@include "lake/hero_walk_run_movement.inc"
 ;@include "lake/hero_kicks_and_crouches.inc"
