@@ -1,4 +1,4 @@
-LABEL_601F:
+STATE_VAR12_BIG_DISPATCH_CASE_08:
 	mov [0x2B], [0x12]
 	and [0x2B], 0x1FFF
 	shr [0x2B], 0x0003

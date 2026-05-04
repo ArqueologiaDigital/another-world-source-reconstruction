@@ -81,7 +81,7 @@ LABEL_022F:
 LABEL_0247:
 	db 0x11
 
-LABEL_0248:
+STATE_VAR12_BIG_DISPATCH_CASE_38:
 	call LABEL_6F95	;@raw=0x04,0x6F,0x95
 	break
 	video type=1, offset=CINEMATIC_334, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x28,0x9C,0x07,0x08

@@ -81,7 +81,7 @@ LABEL_129C:
 LABEL_12B4:
 	db 0x11
 
-LABEL_12B5:
+STATE_VAR12_BIG_DISPATCH_CASE_38:
 	call GUARDED_ALIEN_ANIM_CV_128	;@raw=0x04,0x88,0xB0
 	break
 	video type=1, offset=CINEMATIC_113, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x24,0xFF,0x07,0x08
