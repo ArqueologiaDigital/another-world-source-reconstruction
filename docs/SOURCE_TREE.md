@@ -12,6 +12,10 @@ src/levels/
 │   ├── INTRO.asm.in
 │   ├── LAKE.asm.in
 │   ├── ...
+│   ├── _helpers/             (2c) cross-stage shared routines
+│   │   ├── KILL_CHANNEL_LANDING.inc
+│   │   ├── DRAW_CV_NNN.inc
+│   │   └── ...
 │   ├── intro/                (2a) per-stage chunk tree
 │   │   ├── intro_entry_and_dispatchers.inc
 │   │   ├── intro_first_scene_init.inc
@@ -100,10 +104,42 @@ cascade of `<arm>__post_<ROUTINE>.inc` chunks per arm.
 
 #### Body-localised EQUs
 
-EQUs that are referenced by a single chunk are stored in that
-chunk file rather than in the `.asm.in`. Per-branch values are
-preserved via `;@if BRANCH == "<branch>"` blocks at the top of
-the chunk. See `tools/localize_single_use_equs.py`.
+EQUs that are not referenced by the `.asm.in` body itself are
+stored in the chunk file that uses them rather than at the top
+of the `.asm.in`. Per-branch values are preserved via
+`;@if BRANCH == "<branch>"` blocks at the top of the chunk. When
+multiple chunks reference the same EQU, it lives in the chunk
+that's `;@include`d earliest (so the symbol is in scope for any
+later chunk that also needs it). See
+`tools/localize_single_use_equs.py`.
+
+**Exception**: any EQU whose name contains `_UNUSED_` (e.g.
+`CINEMATIC_LAKE_UNUSED_175`) stays at the top of the `.asm.in` as
+a research-flag annotation. Those declarations document slots
+present in the resource bank but never invoked by gameplay
+bytecode, and the localizer skips them so they remain visible to
+anyone reading the file's banner.
+
+### (2c) Cross-stage shared helpers — `_unified/_helpers/`
+
+When a routine appears in 2+ stages with byte-identical body and
+no internal jumps/calls (the bytes are stage-independent — see the
+constraint discussion below), the body is hoisted to a single
+shared file under `_unified/_helpers/<NAME>.inc`. Each stage's
+`.asm.in` then references it via `;@include "_helpers/<NAME>.inc"`
+in place of redefining the routine.
+
+**Why the jump/call-free constraint**: AW VM bytecode encodes
+jumps/calls as 2-byte absolute addresses. A routine with internal
+flow control would emit different bytes per stage even from
+identical source text, since the call/jmp operand depends on the
+target's stage-specific resolved address. Jump-free routines (only
+var moves, arithmetic, page copies, video draws with literal/var
+operands) emit the same bytes regardless of where they land in the
+stage's bytecode bank, so they can be safely shared.
+
+See `tools/scan_cross_stage_helpers.py` (candidate finder) and
+`tools/extract_cross_stage_helpers.py` (extraction driver).
 
 ## (3) Per-branch sources — `<branch>/<STAGE>.asm`
 
@@ -148,7 +184,9 @@ Both verifiers must pass for any change to merge.
 | `tools/strip_unused_equs.py` | Per-file unused-EQU stripper |
 | `tools/strip_unused_equs_unified.py` | Unified-tree unused-EQU stripper |
 | `tools/consolidate_common_vars.py` | Replace inline shared EQUs with `;@include` |
-| `tools/localize_single_use_equs.py` | Move single-use EQUs from `.asm.in` into chunks |
+| `tools/localize_single_use_equs.py` | Move EQUs from `.asm.in` into the chunks that reference them |
+| `tools/scan_cross_stage_helpers.py` | Find jump-free routines defined in 2+ stages with identical body |
+| `tools/extract_cross_stage_helpers.py` | Hoist cross-stage helpers to `_unified/_helpers/` |
 | `tools/multi_fold.py` | Chunk split + unified body emit |
 | `tools/match_arms.py` | Body-shape matching for fold candidates |
 | `tools/auto_fold.py` | Automatic fold orchestration |
@@ -178,3 +216,9 @@ Both verifiers must pass for any change to merge.
   bankSwitch, video, setPalette, and any cross-chunk call/je/jmp
   whose target offset can't be known without preprocessing). Strip
   only the redundant ones (see `tools/strip_redundant_raw.py`).
+- **`_UNUSED_` EQUs are research flags**: cinematic-bank slots that
+  exist in the resource ROM but are never invoked by gameplay
+  bytecode keep their `_UNUSED_` named EQU declarations at the top
+  of the unified `.asm.in`, scoped to the branches where the slot
+  is actually present. Never strip or relocate these (the
+  localizer was patched to enforce this).
