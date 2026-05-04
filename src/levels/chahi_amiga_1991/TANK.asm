@@ -259,7 +259,7 @@ LABEL_001B:
 	setup channel=0x0A, address=LABEL_141E
 	setup channel=0x0B, address=LABEL_1175
 	setup channel=0x0E, address=LABEL_1142
-	setup channel=0x1C, address=LABEL_0E6C
+	setup channel=0x1C, address=INIT_VARS_52_17C_53_75_54_40_55_8
 	setup channel=0x1F, address=LABEL_0BE9
 	setup channel=0x20, address=LABEL_0B7F
 	setup channel=0x21, address=LABEL_0D41
@@ -1582,7 +1582,7 @@ LABEL_0E34:
 	video type=1, offset=CINEMATIC_036, x=576, y=91, zoom=0x40	;@raw=0x48,0x0E,0xDF,0x02,0x40,0x5B
 	killChannel
 
-LABEL_0E6C:
+INIT_VARS_52_17C_53_75_54_40_55_8:
 	mov [0x52], 0x017C
 	mov [0x53], 0x0075
 	mov [HACK_VAR_54], 0x0040
@@ -1616,7 +1616,7 @@ LABEL_0E7C:
 LABEL_0ECF:
 	break
 	djnz [0x55], LABEL_0ECF
-	jmp LABEL_0E6C
+	jmp INIT_VARS_52_17C_53_75_54_40_55_8
 LABEL_0ED7:
 	db 0x11, 0x00, 0x52, 0x01, 0x7C, 0x00, 0x53, 0x00
 	db 0x75, 0x00, 0x54, 0x00, 0x40, 0x00, 0x55, 0x00
