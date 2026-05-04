@@ -161,22 +161,45 @@ bytecode also doesn't reference any `CINEMATIC_HERO_RESUME_LEFT_F*`
 `src/levels/dos_1992/LAKE.asm`.
 
 **Verdict: the 10-frame `HERO_RESUME_LEFT` animation cycle was
-either cut entirely or radically simplified in the 1992 DOS
-rebuild.** The amiga bytecode runs a state-machine that plays
-HERO_RESUME_LEFT_F0..F9 as a smoothing transition between
-hero-stop and hero-walk-left states. DOS has the routine label
-`HERO_RESUME_LEFT_F3_DONE:` as a control-flow waypoint but no
-matching cinematic frames at any offset. DOS uses a simpler
-helper (`DRAW_VIDEO_073_AND_CIN_002`) instead of the per-frame
-video calls amiga makes.
+**REBUILT** in the 1992 DOS port, not strictly cut.** Refined
+finding: walking the DOS bytecode at the equivalent state shows
+DOS DOES have a hero-resume-left animation, but it uses
+COMPOSITE COMMON_VIDEO helpers instead of the bespoke
+LAKE-specific CINEMATIC_HERO_RESUME_LEFT_F* frames:
 
-This is the cleanest, most concrete piece of **cut/simplified
-animation content** discovered by the archaeology project to
-date. Visual rendering of the amiga group polygons at offsets
-0x0ADC, 0x0B04, 0x0B2C, 0x0B54, 0x0310, 0x039C, 0x0408, 0x0488,
-0x0504, 0x0574 (via `tools/polygon_render_png.py`) would produce
-the 10 frames as a viewable animation strip showing the hero's
-gradual return to walking.
+```
+DOS LAKE (line 6932 onward):
+MAYBE_RESUME_WALK_LEFT_DRAW:
+    call DRAW_VIDEO_073_AND_CIN_002
+    ...
+    call DRAW_VIDEO_074_AND_CINEMATIC_HERO_SHADOW_RET
+    ...
+    call DRAW_VIDEO_075_AND_CINEMATIC_2_RET
+    ...
+    call DRAW_VIDEO_076_AND_CIN_002
+```
+
+The `DRAW_VIDEO_NNN_*` calls draw COMMON_VIDEO sprites (shared
+across all stages, indexed by NNN) plus a small CINEMATIC overlay.
+amiga's per-stage detailed sprite frames have been replaced with
+shared common-video sprites composited together.
+
+**Architectural shift surfaced by this finding**: amiga 1991
+gave each stage its own dedicated detail sprites for hero
+animations; DOS 1992 unified hero animations across stages by
+using the COMMON_VIDEO bank for shared sprites + per-stage
+overlays for stage-specific bits. The 1992 rebuild is therefore
+a *re-pipelining* (composite-sprite based) rather than a
+content cut.
+
+The 207 amiga LAKE cut sub-polys are nonetheless real artifacts
+of this pipelining shift: amiga's per-stage detailed sprites
+literally don't exist in DOS's polygon bank because DOS uses the
+shared COMMON_VIDEO bank instead. Visual rendering of the amiga
+group polygons at offsets 0x0ADC..0x0B54 + 0x0310..0x0574 (via
+`tools/polygon_render_png.py`) would produce the original
+amiga-1991 detailed frames; DOS displays the same animation more
+crudely via shared sprites.
 
 ### Full parent-group attribution
 
