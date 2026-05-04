@@ -24,19 +24,19 @@ BEAST_APPROACH_F1_TICK:
 	jl [0x2A], 0x04, BEAST_APPROACH_FAST_LOOP
 	jg [0x0E], 0xFA, BEAST_APPROACH_FAST_LOOP
 	sub [0x0F], 0x000A
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_F1, x=[0x0e], y=[0x0f], zoom=0x40
+	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000F
 	sub [0x0F], 0x0008
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_F2, x=[0x0e], y=[0x0f], zoom=0x40
+	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
 	sub [0x0F], 0x0005
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_F3, x=[0x0e], y=[0x0f], zoom=0x40
+	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
 	sub [0x0F], 0x0005
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_F4, x=[0x0e], y=[0x0f], zoom=0x40
+	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_4, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
 	sub [0x0F], 0x0002
