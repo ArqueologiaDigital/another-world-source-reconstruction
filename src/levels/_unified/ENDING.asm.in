@@ -44,6 +44,7 @@
 ;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
 
 ;@include "../_common_vars.inc"
+;@include "_helpers/_helpers_equ_aliases.inc"
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "ending/amiga__entry.inc"

@@ -1,3 +1,3 @@
 DRAW_CV_115:
-	video type=0, offset=0x1474, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=ADDR_AT_1474, x=[0x01], y=[0x02], zoom=0x40
 	ret
