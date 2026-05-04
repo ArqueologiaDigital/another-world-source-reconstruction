@@ -819,7 +819,7 @@ LABEL_7EBB:
 
 
 
-FOLD_BODY_127B_F42DCE4F:
+RESET_HERO_ACTION_KEEP_POS_4LSB:
 	and [HERO_ACTION_POS_MASK], 0x000F
 	mov [HERO_ACTION], 0x0000
 	ret
@@ -853,7 +853,7 @@ LABEL_7F03:
 
 
 
-FOLD_BODY_140B_B5EAC4C0:
+LOAD_RES90_COPY_PAGE0_TO_3_LOAD_RES91:
 	load id=0x0090	;@raw=0x19,0x00,0x90
 	copyVideoPage src=0x00, dst=0x03
 	load id=0x0091	;@raw=0x19,0x00,0x91
@@ -912,7 +912,7 @@ LABEL_7F7E:
 	mov [0x41], 0x0082
 	mov [0x40], 0x008F
 	setPalette 0x01	;@raw=0x0B,0x01,0xFF
-	call FOLD_BODY_140B_B5EAC4C0	;@raw=0x04,0x7F,0x04
+	call LOAD_RES90_COPY_PAGE0_TO_3_LOAD_RES91	;@raw=0x04,0x7F,0x04
 	call LABEL_84E8	;@raw=0x04,0x84,0xE8
 	setup channel=0x01, address=INLINE_SET_VARED_TO_6	;@raw=0x08,0x01,0x0D,0x2A
 	setup channel=0x03, address=INLINE_SET_VARE8_TO_F	;@raw=0x08,0x03,0x12,0xA2

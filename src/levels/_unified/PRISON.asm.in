@@ -92,7 +92,7 @@
 ;   SET_VARS_29_2F  (2-arm: amiga, dos)
 ;   SET_VAR2F_TO_000F  (3-arm: amiga, cart, dos)
 ;   SET_VAR2F_TO_000F  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_104B_F18A2F7D  (3-arm: amiga, cart, dos)
+;   STEP_VAR29_DOWN10_SET_VAR2F_11  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_94B_44BEEF04  (3-arm: amiga, cart, dos)
 ;   INCREMENT_VAR21_BY_F  (3-arm: amiga, cart, dos)
 ;   INLINE_SUB_VAR22_BY_23  (3-arm: amiga, cart, dos)
@@ -106,10 +106,10 @@
 ;   FOLD_BODY_37B_9FD2CEA6  (2-arm: cart, dos)
 ;   DRAW_CIN_486  (2-arm: amiga, dos)
 ;   DRAW_CIN_483  (2-arm: amiga, dos)
-;   FOLD_BODY_156B_9635F3D1  (2-arm: amiga, dos)
+;   DRAW_CIN473_AT_X21_Y27_ZOOM_40  (2-arm: amiga, dos)
 ;   DRAW_CIN_502  (2-arm: amiga, dos)
 ;   DRAW_CIN_499  (2-arm: amiga, dos)
-;   FOLD_BODY_156B_C0A1A8CA  (2-arm: amiga, dos)
+;   DRAW_CIN489_AT_X21_Y27_ZOOM_40  (2-arm: amiga, dos)
 ;   FOLD_BODY_89B_E0F8C267  (3-arm: amiga, cart, dos)
 ;   INLINE_ADD_VAR2C_BY_1  (3-arm: amiga, cart, dos)
 ;   COPY_VAR40_TO_VAR27  (3-arm: amiga, cart, dos)
@@ -251,7 +251,7 @@
 ;   INLINE_SET_VAR20_TO_1  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_02_06  (3-arm: amiga, cart, dos)
 ;   ACCUMULATE_VAR_03_04_BY_01_02  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_104B_04347EF0  (3-arm: amiga, cart, dos)
+;   STEP_VAR1A_DOWN5_VAR1B_UP2  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_96B_7EA5CCF5  (2-arm: amiga, dos)
 ;   DRAW_CIN_076  (2-arm: amiga, dos)
 ;   FOLD_BODY_96B_B0A5B60F  (2-arm: amiga, dos)
@@ -284,7 +284,7 @@
 ;   DEDUP_PRISON_4B_033  (3-arm: amiga, cart, dos)
 ;   DEDUP_PRISON_4B_034  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_092  (2-arm: amiga, dos)
-;   FOLD_BODY_153B_C643A158  (3-arm: amiga, cart, dos)
+;   SCROLL_UP_16_VAR14_VAR18_AND_SCROLL_Y  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_56B_4EE7BD2B  (2-arm: cart, dos)
 ;   DRAW_CIN_090_TO_104_3F_AT_8C208B32  (2-arm: amiga, dos)
 ;   INLINE_SET_VAR16_TO_0  (3-arm: amiga, cart, dos)
@@ -293,7 +293,7 @@
 ;   FOLD_BODY_62B_8F5AB86B  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_552  (2-arm: amiga, dos)
 ;   DRAW_CIN_550  (2-arm: amiga, dos)
-;   FOLD_BODY_127B_F42DCE4F  (3-arm: amiga, cart, dos)
+;   RESET_HERO_ACTION_KEEP_POS_4LSB  (3-arm: amiga, cart, dos)
 ;   INLINE_SUB_VAR50_BY_14  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_89B_5CFB4923  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_76B_D2CE1407  (3-arm: amiga, cart, dos)
@@ -1336,17 +1336,17 @@ SET_VAR2F_TO_000F:
 ;@include "prison/dos__post_DEDUP_PRISON_5B_023.inc"
 ;@endif
 
-FOLD_BODY_104B_F18A2F7D:
+STEP_VAR29_DOWN10_SET_VAR2F_11:
 	sub [0x29], 0x000A
 	mov [0x2F], 0x0011
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_104B_F18A2F7D.inc"
+;@include "prison/amiga__post_STEP_VAR29_DOWN10_SET_VAR2F_11.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_104B_F18A2F7D.inc"
+;@include "prison/cart__post_STEP_VAR29_DOWN10_SET_VAR2F_11.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_104B_F18A2F7D.inc"
+;@include "prison/dos__post_STEP_VAR29_DOWN10_SET_VAR2F_11.inc"
 ;@endif
 
 FOLD_BODY_94B_44BEEF04:
@@ -1496,16 +1496,16 @@ DRAW_CIN_483:
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-FOLD_BODY_156B_9635F3D1:
+DRAW_CIN473_AT_X21_Y27_ZOOM_40:
 	video type=1, offset=CINEMATIC_473, x=[0x21], y=[0x27], zoom=0x40	;@raw=0x54,0x3B,0x5B,0x21,0x27
 	mov [0x13], 0xFFFE
 	ret
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_156B_9635F3D1.inc"
+;@include "prison/amiga__post_DRAW_CIN473_AT_X21_Y27_ZOOM_40.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_156B_9635F3D1.inc"
+;@include "prison/dos__post_DRAW_CIN473_AT_X21_Y27_ZOOM_40.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -1533,16 +1533,16 @@ DRAW_CIN_499:
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-FOLD_BODY_156B_C0A1A8CA:
+DRAW_CIN489_AT_X21_Y27_ZOOM_40:
 	video type=1, offset=CINEMATIC_489, x=[0x21], y=[0x27], zoom=0x40	;@raw=0x54,0x5B,0x5D,0x21,0x27
 	mov [0x13], 0xFFFE
 	ret
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_156B_C0A1A8CA.inc"
+;@include "prison/amiga__post_DRAW_CIN489_AT_X21_Y27_ZOOM_40.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_156B_C0A1A8CA.inc"
+;@include "prison/dos__post_DRAW_CIN489_AT_X21_Y27_ZOOM_40.inc"
 ;@endif
 
 FOLD_BODY_89B_E0F8C267:
@@ -3014,17 +3014,17 @@ ACCUMULATE_VAR_03_04_BY_01_02:
 ;@include "prison/dos__post_ACCUMULATE_VAR_03_04_BY_01_02.inc"
 ;@endif
 
-FOLD_BODY_104B_04347EF0:
+STEP_VAR1A_DOWN5_VAR1B_UP2:
 	sub [0x1A], 0x0005
 	add [0x1B], 0x0002
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_104B_04347EF0.inc"
+;@include "prison/amiga__post_STEP_VAR1A_DOWN5_VAR1B_UP2.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_104B_04347EF0.inc"
+;@include "prison/cart__post_STEP_VAR1A_DOWN5_VAR1B_UP2.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_104B_04347EF0.inc"
+;@include "prison/dos__post_STEP_VAR1A_DOWN5_VAR1B_UP2.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -3356,18 +3356,18 @@ DRAW_CIN_092:
 ;@include "prison/dos__post_DRAW_CIN_092.inc"
 ;@endif
 
-FOLD_BODY_153B_C643A158:
+SCROLL_UP_16_VAR14_VAR18_AND_SCROLL_Y:
 	sub [0x14], 0x0010
 	sub [0x18], 0x0010
 	sub [SCROLL_Y], 0x0010
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_153B_C643A158.inc"
+;@include "prison/amiga__post_SCROLL_UP_16_VAR14_VAR18_AND_SCROLL_Y.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_153B_C643A158.inc"
+;@include "prison/cart__post_SCROLL_UP_16_VAR14_VAR18_AND_SCROLL_Y.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_153B_C643A158.inc"
+;@include "prison/dos__post_SCROLL_UP_16_VAR14_VAR18_AND_SCROLL_Y.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -3474,17 +3474,17 @@ DRAW_CIN_550:
 ;@include "prison/dos__post_DRAW_CIN_550.inc"
 ;@endif
 
-FOLD_BODY_127B_F42DCE4F:
+RESET_HERO_ACTION_KEEP_POS_4LSB:
 	and [HERO_ACTION_POS_MASK], 0x000F
 	mov [HERO_ACTION], 0x0000
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_127B_F42DCE4F.inc"
+;@include "prison/amiga__post_RESET_HERO_ACTION_KEEP_POS_4LSB.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_127B_F42DCE4F.inc"
+;@include "prison/cart__post_RESET_HERO_ACTION_KEEP_POS_4LSB.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_127B_F42DCE4F.inc"
+;@include "prison/dos__post_RESET_HERO_ACTION_KEEP_POS_4LSB.inc"
 ;@endif
 
 INLINE_SUB_VAR50_BY_14:
