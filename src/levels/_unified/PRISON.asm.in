@@ -338,7 +338,8 @@
 
 ;@include "prison/prison_delay_preload_resources.inc"
 ;@include "prison/prison_inline_setters_and_init.inc"
-;@include "prison/prison_var29_var2f_state_machine.inc"
+;@include "prison/prison_var29_state_machine.inc"
+;@include "prison/prison_var2f_state_machine.inc"
 ;@include "prison/prison_sfx_and_dedup_helpers.inc"
 ;@include "prison/prison_pagefill_inits.inc"
 ;@include "prison/prison_dedups_and_landing_kill.inc"
