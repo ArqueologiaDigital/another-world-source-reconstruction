@@ -1,3 +1,10 @@
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+CINEMATIC_BEAST_APPROACH_F0		EQU 0x5C72
+;@endif
+;@if BRANCH == "chahi_amiga_1991"
+CINEMATIC_BEAST_APPROACH_F0		EQU 0x7082
+;@endif
+
 BEAST_AMBIENT_CASE_5:
 	jne [0xF8], 0x05, BEAST_AMBIENT_CASE_6
 	ret
