@@ -138,6 +138,7 @@
 ; `DRAW_INTRO_DECOR_340`, `DRAW_INTRO_DECOR_337`) so the player can
 ; advance through the intro.
 ;@include "intro/intro_reset_and_lab_decor.inc"
+;@include "intro/intro_lab_decor_late_phase.inc"
 
 ; Transition-to-LAKE scene assembly
 ; (`INTRO_TRANSITION_TO_LAKE_SETUP`,
