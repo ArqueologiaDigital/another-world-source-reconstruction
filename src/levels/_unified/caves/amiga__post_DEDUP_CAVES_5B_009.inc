@@ -6,7 +6,7 @@ LABEL_8A54:
 	video type=0, offset=COMMON_VIDEO_216, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, LABEL_8A77
 	call LABEL_88F8
-	jmp DEDUP_CAVES_5B_007__CAVES_INLINE_SETTERS_AND_INIT_003
+	jmp DEDUP_CAVES_5B_007_003
 
 LABEL_8A77:
 	video type=0, offset=COMMON_VIDEO_217, x=[0x07], y=[0x08], zoom=0x40
