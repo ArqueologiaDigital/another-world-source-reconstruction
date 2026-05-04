@@ -1,4 +1,11 @@
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+CINEMATIC_BEAST_HOLD_POSE		EQU 0x5C02
+;@endif
+;@if BRANCH == "chahi_amiga_1991"
+CINEMATIC_BEAST_HOLD_POSE		EQU 0x7012
+;@endif
+
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_BEAST_APPROACH_F0		EQU 0x5C72
 ;@endif
 ;@if BRANCH == "chahi_amiga_1991"

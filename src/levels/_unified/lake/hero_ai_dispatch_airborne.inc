@@ -1,3 +1,7 @@
+;@if BRANCH == "chahi_amiga_1991"
+CINEMATIC_HERO_FALL_LEFT_F2		EQU 0x0A64
+;@endif
+
 HERO_AI_DISPATCH:
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_AI_DISPATCH_AIRBORNE
