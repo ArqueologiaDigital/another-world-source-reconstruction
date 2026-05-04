@@ -117,54 +117,7 @@ BANKSWITCH_6_FOR_CODE_ENTRY:
 ;@include "tank/dos__post_BANKSWITCH_6_FOR_CODE_ENTRY.inc"
 ;@endif
 
-INCREMENT_VAR5F_BY_8:
-	add [0x5F], 0x0008
-	ret
-
-;@if BRANCH == "chahi_amiga_1991"
-;@include "tank/amiga__post_INCREMENT_VAR5F_BY_8.inc"
-;@elif BRANCH == "cartridge_1992"
-;@include "tank/cart__post_INCREMENT_VAR5F_BY_8.inc"
-;@elif BRANCH == "dos_1992"
-;@include "tank/dos__post_INCREMENT_VAR5F_BY_8.inc"
-;@endif
-
-SET_VAR5F_TO_0018:
-	mov [0x5F], 0x0018
-	ret
-
-;@if BRANCH == "chahi_amiga_1991"
-;@include "tank/amiga__post_SET_VAR5F_TO_0018.inc"
-;@elif BRANCH == "cartridge_1992"
-;@include "tank/cart__post_SET_VAR5F_TO_0018.inc"
-;@elif BRANCH == "dos_1992"
-;@include "tank/dos__post_SET_VAR5F_TO_0018.inc"
-;@endif
-
-SET_VAR5F_TO_0016:
-	mov [0x5F], 0x0016
-	ret
-
-;@if BRANCH == "chahi_amiga_1991"
-;@include "tank/amiga__post_SET_VAR5F_TO_0016.inc"
-;@elif BRANCH == "cartridge_1992"
-;@include "tank/cart__post_SET_VAR5F_TO_0016.inc"
-;@elif BRANCH == "dos_1992"
-;@include "tank/dos__post_SET_VAR5F_TO_0016.inc"
-;@endif
-
-COPY_VAR62_TO_VAR5F:
-	mov [0x5F], [0x62]
-	ret
-
-;@if BRANCH == "chahi_amiga_1991"
-;@include "tank/amiga__post_COPY_VAR62_TO_VAR5F.inc"
-;@elif BRANCH == "cartridge_1992"
-;@include "tank/cart__post_COPY_VAR62_TO_VAR5F.inc"
-;@elif BRANCH == "dos_1992"
-;@include "tank/dos__post_COPY_VAR62_TO_VAR5F.inc"
-;@endif
-
+;@include "tank/tank_var5f_manipulation.inc"
 INIT_VARS_48_49_4A:
 	mov [0x48], 0xFFEC
 	mov [0x49], 0x0064
