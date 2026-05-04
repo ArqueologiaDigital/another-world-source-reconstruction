@@ -67,7 +67,7 @@
 ;   COPY_VARE6E7_TO_VARE8_E9_EA_EB  (3-arm: amiga, cart, dos)
 ;   STEP_VARE9_UP10_VARE8_DOWN1_RESET_VAREC_6  (3-arm: amiga, cart, dos)
 ;   INIT_VAR08_FROM_VARE9_VAR09_TO_4  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_219B_89086759  (3-arm: amiga, cart, dos)
+;   MUL_VAR6B_BY_11_INTO_VAR21  (3-arm: amiga, cart, dos)
 ;   INLINE_SET_VARE6_TO_32  (3-arm: amiga, cart, dos)
 ;   INLINE_SET_VARE8_TO_2F  (3-arm: amiga, cart, dos)
 ;   INLINE_SET_VAR6B_TO_1  (2-arm: amiga, dos)
@@ -110,13 +110,13 @@
 ;   COPY_VAR27_TO_VAR07  (3-arm: amiga, cart, dos)
 ;   SET_VAR13_TO_FFFF  (3-arm: amiga, cart, dos)
 ;   PLAY_SFX_005C_CH00  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_89B_E0F8C267  (3-arm: amiga, cart, dos)
+;   MASK_VAR11_NOSIGN_INCR_VAR21_BY_14  (3-arm: amiga, cart, dos)
 ;   INLINE_ADD_VAR2C_BY_1  (3-arm: amiga, cart, dos)
 ;   COPY_VAR40_TO_VAR27  (3-arm: amiga, cart, dos)
 ;   COPY_VARAD_TO_VAR11  (3-arm: amiga, cart, dos)
 ;   COPY_VAR11_TO_VARAD  (3-arm: amiga, cart, dos)
 ;   DECREMENT_VAR22  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_99B_913256B4  (3-arm: amiga, cart, dos)
+;   COMPUTE_VAR22_AS_VAR40_MINUS_28  (3-arm: amiga, cart, dos)
 ;   DEDUP_CAVES_5B_003  (3-arm: amiga, cart, dos)
 ;   DEDUP_CAVES_5B_003  (3-arm: amiga, cart, dos)
 ;   COMPUTE_VARF8_AS_VAR22_MINUS_VAR09  (3-arm: amiga, cart, dos)
@@ -209,7 +209,7 @@
 ;   DRAW_CV_104  (2-arm: cart, dos)
 ;   DRAW_CV105_AT_X01_Y02  (2-arm: cart, dos)
 ;   INLINE_SET_VAR20_TO_1  (2-arm: cart, dos)
-;   FOLD_BODY_93B_2C2B4311  (2-arm: cart, dos)
+;   COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65  (2-arm: cart, dos)
 ;   COPY_VAR51_TO_VAR02_KILL_CHANNEL  (3-arm: amiga, cart, dos)
 ;   COPY_VAR52_TO_VAR02_KILL_CHANNEL  (3-arm: amiga, cart, dos)
 ;   RESET_HERO_ACTION_KEEP_POS_4LSB  (3-arm: amiga, cart, dos)
@@ -276,16 +276,16 @@
 ;   INLINE_SET_VAR63_TO_2  (3-arm: amiga, cart, dos)
 ;   INLINE_SET_VAR63_TO_5  (3-arm: amiga, cart, dos)
 ;   INLINE_SET_VAR63_TO_6  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_358B_6F629262  (2-arm: cart, dos)
-;   FOLD_BODY_223B_DDF457BD  (2-arm: cart, dos)
-;   FOLD_BODY_206B_44F9C1BD  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_206B_F444FCB9  (3-arm: amiga, cart, dos)
+;   WALK_RIGHT_DRAW_CV142_MULTISTEP  (2-arm: cart, dos)
+;   STEP_LEFT4_DRAW_CV140_LEFT4  (2-arm: cart, dos)
+;   STEP_DRAW_CV352_LEFT4_RIGHT1  (3-arm: amiga, cart, dos)
+;   DRAW_CV352_STEP_RIGHT3  (3-arm: amiga, cart, dos)
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_261B_7A9CE2F7  (2-arm: cart, dos)
+;   STEP_DRAW_CV336_THEN_CV340  (2-arm: cart, dos)
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_261B_43CF2CB1  (2-arm: cart, dos)
+;   STEP_DRAW_CV329_THEN_CV335  (2-arm: cart, dos)
 
 ;@include "../_common_vars.inc"
 
@@ -873,7 +873,7 @@ INIT_VAR08_FROM_VARE9_VAR09_TO_4:
 ;@include "caves/dos__post_INIT_VAR08_FROM_VARE9_VAR09_TO_4.inc"
 ;@endif
 
-FOLD_BODY_219B_89086759:
+MUL_VAR6B_BY_11_INTO_VAR21:
 	mov [0x21], [0x6B]
 	shl [0x21], 0x0003
 	add [0x21], [0x6B]
@@ -882,11 +882,11 @@ FOLD_BODY_219B_89086759:
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_219B_89086759.inc"
+;@include "caves/amiga__post_MUL_VAR6B_BY_11_INTO_VAR21.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_219B_89086759.inc"
+;@include "caves/cart__post_MUL_VAR6B_BY_11_INTO_VAR21.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_219B_89086759.inc"
+;@include "caves/dos__post_MUL_VAR6B_BY_11_INTO_VAR21.inc"
 ;@endif
 
 INLINE_SET_VARE6_TO_32:
@@ -1500,16 +1500,16 @@ PLAY_SFX_005C_CH00:
 ;@include "caves/dos__post_PLAY_SFX_005C_CH00.inc"
 ;@endif
 
-FOLD_BODY_89B_E0F8C267:
+MASK_VAR11_NOSIGN_INCR_VAR21_BY_14:
 	and [0x11], 0xFF7F
 	add [0x21], 0x0014
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_89B_E0F8C267.inc"
+;@include "caves/amiga__post_MASK_VAR11_NOSIGN_INCR_VAR21_BY_14.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_89B_E0F8C267.inc"
+;@include "caves/cart__post_MASK_VAR11_NOSIGN_INCR_VAR21_BY_14.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_89B_E0F8C267.inc"
+;@include "caves/dos__post_MASK_VAR11_NOSIGN_INCR_VAR21_BY_14.inc"
 ;@endif
 
 INLINE_ADD_VAR2C_BY_1:
@@ -1571,17 +1571,17 @@ DECREMENT_VAR22:
 ;@include "caves/dos__post_DECREMENT_VAR22.inc"
 ;@endif
 
-FOLD_BODY_99B_913256B4:
+COMPUTE_VAR22_AS_VAR40_MINUS_28:
 	mov [0x22], [0x40]
 	sub [0x22], 0x0028
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_99B_913256B4.inc"
+;@include "caves/amiga__post_COMPUTE_VAR22_AS_VAR40_MINUS_28.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_99B_913256B4.inc"
+;@include "caves/cart__post_COMPUTE_VAR22_AS_VAR40_MINUS_28.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_99B_913256B4.inc"
+;@include "caves/dos__post_COMPUTE_VAR22_AS_VAR40_MINUS_28.inc"
 ;@endif
 
 DEDUP_CAVES_5B_003:
@@ -2654,15 +2654,15 @@ INLINE_SET_VAR20_TO_1:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_93B_2C2B4311:
+COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65:
 	copyVideoPage src=0x00, dst=0x03
 	mov [0x65], [0x66]
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_93B_2C2B4311.inc"
+;@include "caves/cart__post_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_93B_2C2B4311.inc"
+;@include "caves/dos__post_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65.inc"
 ;@endif
 
 COPY_VAR51_TO_VAR02_KILL_CHANNEL:
@@ -3531,7 +3531,7 @@ INLINE_SET_VAR63_TO_6:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_358B_6F629262:
+WALK_RIGHT_DRAW_CV142_MULTISTEP:
 	add [0x01], 0x0002
 	add [0x01], 0x0003
 	break
@@ -3543,13 +3543,13 @@ FOLD_BODY_358B_6F629262:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_358B_6F629262.inc"
+;@include "caves/cart__post_WALK_RIGHT_DRAW_CV142_MULTISTEP.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_358B_6F629262.inc"
+;@include "caves/dos__post_WALK_RIGHT_DRAW_CV142_MULTISTEP.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_223B_DDF457BD:
+STEP_LEFT4_DRAW_CV140_LEFT4:
 	sub [0x01], 0x0004
 	break
 	video type=0, offset=COMMON_VIDEO_140, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x24,0x2E,0x01,0x02
@@ -3558,37 +3558,37 @@ FOLD_BODY_223B_DDF457BD:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_223B_DDF457BD.inc"
+;@include "caves/cart__post_STEP_LEFT4_DRAW_CV140_LEFT4.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_223B_DDF457BD.inc"
+;@include "caves/dos__post_STEP_LEFT4_DRAW_CV140_LEFT4.inc"
 ;@endif
 
-FOLD_BODY_206B_44F9C1BD:
+STEP_DRAW_CV352_LEFT4_RIGHT1:
 	sub [0x01], 0x0004
 	video type=0, offset=COMMON_VIDEO_352, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x04,0xFB,0x01,0x02
 	add [0x01], 0x0001
 	break
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_206B_44F9C1BD.inc"
+;@include "caves/amiga__post_STEP_DRAW_CV352_LEFT4_RIGHT1.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_206B_44F9C1BD.inc"
+;@include "caves/cart__post_STEP_DRAW_CV352_LEFT4_RIGHT1.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_206B_44F9C1BD.inc"
+;@include "caves/dos__post_STEP_DRAW_CV352_LEFT4_RIGHT1.inc"
 ;@endif
 
-FOLD_BODY_206B_F444FCB9:
+DRAW_CV352_STEP_RIGHT3:
 	add [0x01], 0x0000
 	video type=0, offset=COMMON_VIDEO_352, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x04,0xFB,0x01,0x02
 	add [0x01], 0x0003
 	break
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_206B_F444FCB9.inc"
+;@include "caves/amiga__post_DRAW_CV352_STEP_RIGHT3.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_206B_F444FCB9.inc"
+;@include "caves/cart__post_DRAW_CV352_STEP_RIGHT3.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_206B_F444FCB9.inc"
+;@include "caves/dos__post_DRAW_CV352_STEP_RIGHT3.inc"
 ;@endif
 
 INLINE_BREAK_035:
@@ -3625,7 +3625,7 @@ INLINE_BREAK_035:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_261B_7A9CE2F7:
+STEP_DRAW_CV336_THEN_CV340:
 	add [0x01], 0x0002
 	video type=0, offset=COMMON_VIDEO_336, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x0B,0xD4,0x01,0x02
 	break
@@ -3633,9 +3633,9 @@ FOLD_BODY_261B_7A9CE2F7:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_261B_7A9CE2F7.inc"
+;@include "caves/cart__post_STEP_DRAW_CV336_THEN_CV340.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_261B_7A9CE2F7.inc"
+;@include "caves/dos__post_STEP_DRAW_CV336_THEN_CV340.inc"
 ;@endif
 
 INLINE_BREAK_035:
@@ -3650,7 +3650,7 @@ INLINE_BREAK_035:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_261B_43CF2CB1:
+STEP_DRAW_CV329_THEN_CV335:
 	sub [0x01], 0x0002
 	video type=0, offset=COMMON_VIDEO_329, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x0B,0x00,0x01,0x02
 	break
@@ -3658,8 +3658,8 @@ FOLD_BODY_261B_43CF2CB1:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_261B_43CF2CB1.inc"
+;@include "caves/cart__post_STEP_DRAW_CV329_THEN_CV335.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_261B_43CF2CB1.inc"
+;@include "caves/dos__post_STEP_DRAW_CV329_THEN_CV335.inc"
 ;@endif
 

@@ -87,13 +87,13 @@
 ;   SET_VAR13_TO_FFFF  (3-arm: amiga, cart, dos)
 ;   PLAY_SFX_005C_CH00  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_37B_9FD2CEA6  (2-arm: cart, dos)
-;   FOLD_BODY_89B_E0F8C267  (3-arm: amiga, cart, dos)
+;   MASK_VAR11_NOSIGN_INCR_VAR21_BY_14  (3-arm: amiga, cart, dos)
 ;   INLINE_ADD_VAR2C_BY_1  (3-arm: amiga, cart, dos)
 ;   COPY_VAR40_TO_VAR27  (3-arm: amiga, cart, dos)
 ;   COPY_VARAD_TO_VAR11  (3-arm: amiga, cart, dos)
 ;   COPY_VAR11_TO_VARAD  (3-arm: amiga, cart, dos)
 ;   DECREMENT_VAR22  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_99B_913256B4  (3-arm: amiga, cart, dos)
+;   COMPUTE_VAR22_AS_VAR40_MINUS_28  (3-arm: amiga, cart, dos)
 ;   COMPUTE_VARF8_AS_VAR22_MINUS_VAR09  (3-arm: amiga, cart, dos)
 ;   INLINE_COPY_VAR44_TO_VAR25  (3-arm: amiga, cart, dos)
 ;   INIT_VAR2B_2C_FROM_VAR01_VAR29_10  (3-arm: amiga, cart, dos)
@@ -155,7 +155,7 @@
 ;   DRAW_CV_104  (2-arm: cart, dos)
 ;   DRAW_CV105_AT_X01_Y02  (2-arm: cart, dos)
 ;   INLINE_SET_VAR20_TO_1  (2-arm: cart, dos)
-;   FOLD_BODY_93B_2C2B4311  (2-arm: cart, dos)
+;   COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65  (2-arm: cart, dos)
 ;   COPY_VAR51_TO_VAR02_KILL_CHANNEL  (3-arm: amiga, cart, dos)
 ;   COPY_VAR52_TO_VAR02_KILL_CHANNEL  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_03_32_02_1  (2-arm: cart, dos)
@@ -195,10 +195,10 @@
 ;   INLINE_SET_VAR63_TO_2  (3-arm: amiga, cart, dos)
 ;   INLINE_SET_VAR63_TO_5  (3-arm: amiga, cart, dos)
 ;   INLINE_SET_VAR63_TO_6  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_358B_6F629262  (2-arm: cart, dos)
-;   FOLD_BODY_358B_DF9AE0DF  (2-arm: cart, dos)
-;   FOLD_BODY_206B_44F9C1BD  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_206B_F444FCB9  (3-arm: amiga, cart, dos)
+;   WALK_RIGHT_DRAW_CV142_MULTISTEP  (2-arm: cart, dos)
+;   WALK_LEFT_DRAW_CV140_MULTISTEP  (2-arm: cart, dos)
+;   STEP_DRAW_CV352_LEFT4_RIGHT1  (3-arm: amiga, cart, dos)
+;   DRAW_CV352_STEP_RIGHT3  (3-arm: amiga, cart, dos)
 
 ;@include "../_common_vars.inc"
 
@@ -1063,16 +1063,16 @@ FOLD_BODY_37B_9FD2CEA6:
 ;@include "capsule/dos__post_FOLD_BODY_37B_9FD2CEA6.inc"
 ;@endif
 
-FOLD_BODY_89B_E0F8C267:
+MASK_VAR11_NOSIGN_INCR_VAR21_BY_14:
 	and [0x11], 0xFF7F
 	add [0x21], 0x0014
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "capsule/amiga__post_FOLD_BODY_89B_E0F8C267.inc"
+;@include "capsule/amiga__post_MASK_VAR11_NOSIGN_INCR_VAR21_BY_14.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_89B_E0F8C267.inc"
+;@include "capsule/cart__post_MASK_VAR11_NOSIGN_INCR_VAR21_BY_14.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_89B_E0F8C267.inc"
+;@include "capsule/dos__post_MASK_VAR11_NOSIGN_INCR_VAR21_BY_14.inc"
 ;@endif
 
 INLINE_ADD_VAR2C_BY_1:
@@ -1134,17 +1134,17 @@ DECREMENT_VAR22:
 ;@include "capsule/dos__post_DECREMENT_VAR22.inc"
 ;@endif
 
-FOLD_BODY_99B_913256B4:
+COMPUTE_VAR22_AS_VAR40_MINUS_28:
 	mov [0x22], [0x40]
 	sub [0x22], 0x0028
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "capsule/amiga__post_FOLD_BODY_99B_913256B4.inc"
+;@include "capsule/amiga__post_COMPUTE_VAR22_AS_VAR40_MINUS_28.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_99B_913256B4.inc"
+;@include "capsule/cart__post_COMPUTE_VAR22_AS_VAR40_MINUS_28.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_99B_913256B4.inc"
+;@include "capsule/dos__post_COMPUTE_VAR22_AS_VAR40_MINUS_28.inc"
 ;@endif
 
 COMPUTE_VARF8_AS_VAR22_MINUS_VAR09:
@@ -1800,15 +1800,15 @@ INLINE_SET_VAR20_TO_1:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_93B_2C2B4311:
+COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65:
 	copyVideoPage src=0x00, dst=0x03
 	mov [0x65], [0x66]
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_93B_2C2B4311.inc"
+;@include "capsule/cart__post_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_93B_2C2B4311.inc"
+;@include "capsule/dos__post_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65.inc"
 ;@endif
 
 COPY_VAR51_TO_VAR02_KILL_CHANNEL:
@@ -2250,7 +2250,7 @@ INLINE_SET_VAR63_TO_6:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_358B_6F629262:
+WALK_RIGHT_DRAW_CV142_MULTISTEP:
 	add [0x01], 0x0002
 	add [0x01], 0x0003
 	break
@@ -2262,13 +2262,13 @@ FOLD_BODY_358B_6F629262:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_358B_6F629262.inc"
+;@include "capsule/cart__post_WALK_RIGHT_DRAW_CV142_MULTISTEP.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_358B_6F629262.inc"
+;@include "capsule/dos__post_WALK_RIGHT_DRAW_CV142_MULTISTEP.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_358B_DF9AE0DF:
+WALK_LEFT_DRAW_CV140_MULTISTEP:
 	sub [0x01], 0x0002
 	sub [0x01], 0x0003
 	break
@@ -2280,36 +2280,36 @@ FOLD_BODY_358B_DF9AE0DF:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_358B_DF9AE0DF.inc"
+;@include "capsule/cart__post_WALK_LEFT_DRAW_CV140_MULTISTEP.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_358B_DF9AE0DF.inc"
+;@include "capsule/dos__post_WALK_LEFT_DRAW_CV140_MULTISTEP.inc"
 ;@endif
 
-FOLD_BODY_206B_44F9C1BD:
+STEP_DRAW_CV352_LEFT4_RIGHT1:
 	sub [0x01], 0x0004
 	video type=0, offset=COMMON_VIDEO_352, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x04,0xFB,0x01,0x02
 	add [0x01], 0x0001
 	break
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "capsule/amiga__post_FOLD_BODY_206B_44F9C1BD.inc"
+;@include "capsule/amiga__post_STEP_DRAW_CV352_LEFT4_RIGHT1.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_206B_44F9C1BD.inc"
+;@include "capsule/cart__post_STEP_DRAW_CV352_LEFT4_RIGHT1.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_206B_44F9C1BD.inc"
+;@include "capsule/dos__post_STEP_DRAW_CV352_LEFT4_RIGHT1.inc"
 ;@endif
 
-FOLD_BODY_206B_F444FCB9:
+DRAW_CV352_STEP_RIGHT3:
 	add [0x01], 0x0000
 	video type=0, offset=COMMON_VIDEO_352, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x57,0x04,0xFB,0x01,0x02
 	add [0x01], 0x0003
 	break
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "capsule/amiga__post_FOLD_BODY_206B_F444FCB9.inc"
+;@include "capsule/amiga__post_DRAW_CV352_STEP_RIGHT3.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_206B_F444FCB9.inc"
+;@include "capsule/cart__post_DRAW_CV352_STEP_RIGHT3.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_206B_F444FCB9.inc"
+;@include "capsule/dos__post_DRAW_CV352_STEP_RIGHT3.inc"
 ;@endif
 
