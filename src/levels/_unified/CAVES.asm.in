@@ -22,7 +22,7 @@
 ; Unified source for CAVES with 264 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   FOLD_BODY_446B_2519A417  (2-arm: amiga, dos)
+;   PRELOAD_RES_6A_77_6D_6E_74_76_78_7C  (2-arm: amiga, dos)
 ;   PRELOAD_CAVES_RESOURCES  (2-arm: amiga, dos)
 ;   KILL_CHANNEL_LANDING  (3-arm: amiga, cart, dos)
 ;   FOLD_BODY_254B_838374D1  (3-arm: amiga, cart, dos)
@@ -83,8 +83,8 @@
 ;   SETUP_67_45_VAR01_46_VARB1_NOSIGN  (2-arm: cart, dos)
 ;   SETUP_67_67_VAR01_1E_VARBE_3  (3-arm: amiga, cart, dos)
 ;   SETUP_67_25_VAR06_0_VARB1_NOSIGN  (2-arm: cart, dos)
-;   FOLD_BODY_245B_6670034A  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_290B_04233270  (2-arm: amiga, dos)
+;   SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1  (3-arm: amiga, cart, dos)
+;   SETUP_67_A7_VARS_B0_2_02_5D_01_7F_BE_3  (2-arm: amiga, dos)
 ;   INIT_HASH_VARS_67_66_65_68_69  (2-arm: amiga, cart)
 ;   INIT_VARS_29_07_08  (3-arm: amiga, cart, dos)
 ;   INCREMENT_VAR07_BY_4  (3-arm: amiga, cart, dos)
@@ -131,7 +131,7 @@
 ;   DEDUP_CAVES_6B_001  (3-arm: amiga, cart, dos)
 ;   SHARED_RET  (3-arm: amiga, cart, dos)
 ;   DRAW_CV204_AT_X07_Y08  (2-arm: cart, dos)
-;   FOLD_BODY_189B_794E4590  (2-arm: cart, dos)
+;   DRAW_CV204_AT_X07_PLUS1_Y08  (2-arm: cart, dos)
 ;   INLINE_DRAW_CV_216_027  (2-arm: cart, dos)
 ;   INLINE_DRAW_CV_220_008  (2-arm: cart, dos)
 ;   DRAW_CV224_AT_X07_Y08  (2-arm: cart, dos)
@@ -217,35 +217,35 @@
 ;   SET_VAR22_TO_006B  (3-arm: amiga, cart, dos)
 ;   SET_VAR22_TO_0061  (3-arm: amiga, cart, dos)
 ;   SET_VAR22_TO_00C8  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_189B_79EC0326  (3-arm: amiga, cart, dos)
+;   PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4  (3-arm: amiga, cart, dos)
 ;   DEDUP_CAVES_5B_027  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_189B_04CB328E  (3-arm: amiga, cart, dos)
+;   PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1  (3-arm: amiga, cart, dos)
 ;   SET_VAR22_TO_00AB  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_189B_38FD38E3  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_189B_C4F9E873  (3-arm: amiga, cart, dos)
+;   PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3  (3-arm: amiga, cart, dos)
+;   PROJ_VAR22_AA_MINUS_VAR21_MINUS_115_SHR3  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_01_22  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_189B_A75D286E  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_189B_57569B89  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_189B_4CB9AFF5  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_189B_E4233737  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_189B_69E7A9C1  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_189B_615E7707  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_189B_3714FA4E  (2-arm: cart, dos)
+;   PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3  (3-arm: amiga, cart, dos)
+;   PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3  (3-arm: amiga, cart, dos)
+;   PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3  (3-arm: amiga, cart, dos)
+;   PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4  (3-arm: amiga, cart, dos)
+;   PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6  (3-arm: amiga, cart, dos)
+;   PROJ_VAR22_76_MINUS_VAR21_MINUS_108_SHR5  (3-arm: amiga, cart, dos)
+;   PROJ_VAR22_49_MINUS_VAR21_MINUS_113_SHR4  (2-arm: cart, dos)
 ;   SET_VAR22_TO_007D  (3-arm: amiga, cart, dos)
 ;   SET_VAR22_TO_0080  (3-arm: amiga, cart, dos)
 ;   SET_VAR22_TO_00AC  (3-arm: amiga, cart, dos)
 ;   SET_VAR22_TO_0087  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_144B_FF58C6C8  (3-arm: amiga, cart, dos)
+;   PROJ_VAR22_85_PLUS_VAR21_MINUS_56  (3-arm: amiga, cart, dos)
 ;   SET_VAR22_TO_0085  (3-arm: amiga, cart, dos)
 ;   SET_VAR22_TO_00C3  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_189B_41906E76  (3-arm: amiga, cart, dos)
+;   PROJ_VAR22_A8_MINUS_VAR21_MINUS_112_SHR4  (3-arm: amiga, cart, dos)
 ;   DEDUP_CAVES_5B_011  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_144B_552673A7  (3-arm: amiga, cart, dos)
+;   PROJ_VAR22_B0_PLUS_VAR21_MINUS_69  (3-arm: amiga, cart, dos)
 ;   DEDUP_CAVES_5B_012  (3-arm: amiga, cart, dos)
 ;   DEDUP_CAVES_5B_028  (3-arm: amiga, cart, dos)
 ;   SET_VAR22_TO_0042  (2-arm: cart, dos)
 ;   SET_VAR22_TO_00AE  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_189B_1A09E69C  (3-arm: amiga, cart, dos)
+;   PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3  (3-arm: amiga, cart, dos)
 ;   SET_VAR22_TO_00B8  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_EB_47  (3-arm: amiga, cart, dos)
 ;   PLAY_FX_6B_THEN_KILL_CHANNEL  (3-arm: amiga, cart, dos)
@@ -298,7 +298,7 @@
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-FOLD_BODY_446B_2519A417:
+PRELOAD_RES_6A_77_6D_6E_74_76_78_7C:
 	load id=0x006A
 	load id=0x0077
 	load id=0x006D
@@ -1042,7 +1042,7 @@ SETUP_67_25_VAR06_0_VARB1_NOSIGN:
 ;@elif BRANCH == "dos_1992"
 ;@endif
 
-FOLD_BODY_245B_6670034A:
+SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1:
 	mov [HACK_VAR_67], 0x004B
 	mov [0xB0], 0x0003
 	mov [0x01], 0x0050
@@ -1052,12 +1052,12 @@ FOLD_BODY_245B_6670034A:
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_245B_6670034A.inc"
+;@include "caves/cart__post_SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1.inc"
 ;@elif BRANCH == "dos_1992"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-FOLD_BODY_290B_04233270:
+SETUP_67_A7_VARS_B0_2_02_5D_01_7F_BE_3:
 	mov [HACK_VAR_67], 0x00A7
 	mov [0xB0], 0x0002
 	mov [0x02], 0x005D
@@ -1068,9 +1068,9 @@ FOLD_BODY_290B_04233270:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_290B_04233270.inc"
+;@include "caves/amiga__post_SETUP_67_A7_VARS_B0_2_02_5D_01_7F_BE_3.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_290B_04233270.inc"
+;@include "caves/dos__post_SETUP_67_A7_VARS_B0_2_02_5D_01_7F_BE_3.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "cartridge_1992")
@@ -1527,13 +1527,13 @@ DEDUP_CAVES_6B_001:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-;@include "_helpers/FOLD_BODY_189B_794E4590.inc"
+;@include "_helpers/DRAW_CV204_AT_X07_PLUS1_Y08.inc"
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_189B_794E4590.inc"
+;@include "caves/cart__post_DRAW_CV204_AT_X07_PLUS1_Y08.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_189B_794E4590.inc"
+;@include "caves/dos__post_DRAW_CV204_AT_X07_PLUS1_Y08.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -2374,7 +2374,7 @@ SET_VAR22_TO_00C8:
 ;@include "caves/dos__post_SET_VAR22_TO_00C8.inc"
 ;@endif
 
-FOLD_BODY_189B_79EC0326:
+PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4:
 	sub [0x21], 0x00F2
 	shr [0x21], 0x0004
 	mov [0x22], 0x0068
@@ -2382,11 +2382,11 @@ FOLD_BODY_189B_79EC0326:
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_189B_79EC0326.inc"
+;@include "caves/amiga__post_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_189B_79EC0326.inc"
+;@include "caves/cart__post_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_189B_79EC0326.inc"
+;@include "caves/dos__post_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4.inc"
 ;@endif
 
 DEDUP_CAVES_5B_027:
@@ -2401,7 +2401,7 @@ DEDUP_CAVES_5B_027:
 ;@include "caves/dos__post_DEDUP_CAVES_5B_027.inc"
 ;@endif
 
-FOLD_BODY_189B_04CB328E:
+PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1:
 	sub [0x21], 0x00ED
 	shr [0x21], 0x0001
 	mov [0x22], 0x002F
@@ -2409,11 +2409,11 @@ FOLD_BODY_189B_04CB328E:
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_189B_04CB328E.inc"
+;@include "caves/amiga__post_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_189B_04CB328E.inc"
+;@include "caves/cart__post_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_189B_04CB328E.inc"
+;@include "caves/dos__post_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1.inc"
 ;@endif
 
 SET_VAR22_TO_00AB:
@@ -2428,7 +2428,7 @@ SET_VAR22_TO_00AB:
 ;@include "caves/dos__post_SET_VAR22_TO_00AB.inc"
 ;@endif
 
-FOLD_BODY_189B_38FD38E3:
+PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3:
 	sub [0x21], 0x00F0
 	shl [0x21], 0x0003
 	mov [0x22], 0x0017
@@ -2436,14 +2436,14 @@ FOLD_BODY_189B_38FD38E3:
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_189B_38FD38E3.inc"
+;@include "caves/amiga__post_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_189B_38FD38E3.inc"
+;@include "caves/cart__post_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_189B_38FD38E3.inc"
+;@include "caves/dos__post_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3.inc"
 ;@endif
 
-FOLD_BODY_189B_C4F9E873:
+PROJ_VAR22_AA_MINUS_VAR21_MINUS_115_SHR3:
 	sub [0x21], 0x0115
 	shr [0x21], 0x0003
 	mov [0x22], 0x00AA
@@ -2451,11 +2451,11 @@ FOLD_BODY_189B_C4F9E873:
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_189B_C4F9E873.inc"
+;@include "caves/amiga__post_PROJ_VAR22_AA_MINUS_VAR21_MINUS_115_SHR3.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_189B_C4F9E873.inc"
+;@include "caves/cart__post_PROJ_VAR22_AA_MINUS_VAR21_MINUS_115_SHR3.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_189B_C4F9E873.inc"
+;@include "caves/dos__post_PROJ_VAR22_AA_MINUS_VAR21_MINUS_115_SHR3.inc"
 ;@endif
 
 INIT_VARS_01_22:
@@ -2471,7 +2471,7 @@ INIT_VARS_01_22:
 ;@include "caves/dos__post_INIT_VARS_01_22.inc"
 ;@endif
 
-FOLD_BODY_189B_A75D286E:
+PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3:
 	sub [0x21], 0x0109
 	shr [0x21], 0x0003
 	mov [0x22], 0x00B3
@@ -2479,14 +2479,14 @@ FOLD_BODY_189B_A75D286E:
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_189B_A75D286E.inc"
+;@include "caves/amiga__post_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_189B_A75D286E.inc"
+;@include "caves/cart__post_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_189B_A75D286E.inc"
+;@include "caves/dos__post_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3.inc"
 ;@endif
 
-FOLD_BODY_189B_57569B89:
+PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3:
 	sub [0x21], 0x0106
 	shr [0x21], 0x0003
 	mov [0x22], 0x0053
@@ -2494,14 +2494,14 @@ FOLD_BODY_189B_57569B89:
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_189B_57569B89.inc"
+;@include "caves/amiga__post_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_189B_57569B89.inc"
+;@include "caves/cart__post_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_189B_57569B89.inc"
+;@include "caves/dos__post_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3.inc"
 ;@endif
 
-FOLD_BODY_189B_4CB9AFF5:
+PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3:
 	sub [0x21], 0x0121
 	shr [0x21], 0x0003
 	mov [0x22], 0x009E
@@ -2509,14 +2509,14 @@ FOLD_BODY_189B_4CB9AFF5:
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_189B_4CB9AFF5.inc"
+;@include "caves/amiga__post_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_189B_4CB9AFF5.inc"
+;@include "caves/cart__post_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_189B_4CB9AFF5.inc"
+;@include "caves/dos__post_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3.inc"
 ;@endif
 
-FOLD_BODY_189B_E4233737:
+PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4:
 	sub [0x21], 0x011B
 	shr [0x21], 0x0004
 	mov [0x22], 0x007E
@@ -2524,14 +2524,14 @@ FOLD_BODY_189B_E4233737:
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_189B_E4233737.inc"
+;@include "caves/amiga__post_PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_189B_E4233737.inc"
+;@include "caves/cart__post_PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_189B_E4233737.inc"
+;@include "caves/dos__post_PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4.inc"
 ;@endif
 
-FOLD_BODY_189B_69E7A9C1:
+PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6:
 	sub [0x21], 0x00FD
 	shr [0x21], 0x0006
 	mov [0x22], 0x0075
@@ -2539,14 +2539,14 @@ FOLD_BODY_189B_69E7A9C1:
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_189B_69E7A9C1.inc"
+;@include "caves/amiga__post_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_189B_69E7A9C1.inc"
+;@include "caves/cart__post_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_189B_69E7A9C1.inc"
+;@include "caves/dos__post_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6.inc"
 ;@endif
 
-FOLD_BODY_189B_615E7707:
+PROJ_VAR22_76_MINUS_VAR21_MINUS_108_SHR5:
 	sub [0x21], 0x0108
 	shr [0x21], 0x0005
 	mov [0x22], 0x0076
@@ -2554,15 +2554,15 @@ FOLD_BODY_189B_615E7707:
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_189B_615E7707.inc"
+;@include "caves/amiga__post_PROJ_VAR22_76_MINUS_VAR21_MINUS_108_SHR5.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_189B_615E7707.inc"
+;@include "caves/cart__post_PROJ_VAR22_76_MINUS_VAR21_MINUS_108_SHR5.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_189B_615E7707.inc"
+;@include "caves/dos__post_PROJ_VAR22_76_MINUS_VAR21_MINUS_108_SHR5.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_189B_3714FA4E:
+PROJ_VAR22_49_MINUS_VAR21_MINUS_113_SHR4:
 	sub [0x21], 0x0113
 	shr [0x21], 0x0004
 	mov [0x22], 0x0049
@@ -2571,9 +2571,9 @@ FOLD_BODY_189B_3714FA4E:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_189B_3714FA4E.inc"
+;@include "caves/cart__post_PROJ_VAR22_49_MINUS_VAR21_MINUS_113_SHR4.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_189B_3714FA4E.inc"
+;@include "caves/dos__post_PROJ_VAR22_49_MINUS_VAR21_MINUS_113_SHR4.inc"
 ;@endif
 
 SET_VAR22_TO_007D:
@@ -2624,7 +2624,7 @@ SET_VAR22_TO_0087:
 ;@include "caves/dos__post_SET_VAR22_TO_0087.inc"
 ;@endif
 
-FOLD_BODY_144B_FF58C6C8:
+PROJ_VAR22_85_PLUS_VAR21_MINUS_56:
 	sub [0x21], 0x0056
 	mov [0x22], 0x0085
 	add [0x22], [0x21]
@@ -2659,7 +2659,7 @@ SET_VAR22_TO_00C3:
 ;@include "caves/dos__post_SET_VAR22_TO_00C3.inc"
 ;@endif
 
-FOLD_BODY_189B_41906E76:
+PROJ_VAR22_A8_MINUS_VAR21_MINUS_112_SHR4:
 	sub [0x21], 0x0112
 	shr [0x21], 0x0004
 	mov [0x22], 0x00A8
@@ -2667,11 +2667,11 @@ FOLD_BODY_189B_41906E76:
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_189B_41906E76.inc"
+;@include "caves/amiga__post_PROJ_VAR22_A8_MINUS_VAR21_MINUS_112_SHR4.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_189B_41906E76.inc"
+;@include "caves/cart__post_PROJ_VAR22_A8_MINUS_VAR21_MINUS_112_SHR4.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_189B_41906E76.inc"
+;@include "caves/dos__post_PROJ_VAR22_A8_MINUS_VAR21_MINUS_112_SHR4.inc"
 ;@endif
 
 DEDUP_CAVES_5B_011:
@@ -2686,7 +2686,7 @@ DEDUP_CAVES_5B_011:
 ;@include "caves/dos__post_DEDUP_CAVES_5B_011.inc"
 ;@endif
 
-FOLD_BODY_144B_552673A7:
+PROJ_VAR22_B0_PLUS_VAR21_MINUS_69:
 	sub [0x21], 0x0069
 	mov [0x22], 0x00B0
 	add [0x22], [0x21]
@@ -2745,7 +2745,7 @@ SET_VAR22_TO_00AE:
 ;@include "caves/dos__post_SET_VAR22_TO_00AE.inc"
 ;@endif
 
-FOLD_BODY_189B_1A09E69C:
+PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3:
 	sub [0x21], 0x0125
 	shr [0x21], 0x0003
 	mov [0x22], 0x00A7
@@ -2753,11 +2753,11 @@ FOLD_BODY_189B_1A09E69C:
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "caves/amiga__post_FOLD_BODY_189B_1A09E69C.inc"
+;@include "caves/amiga__post_PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "caves/cart__post_FOLD_BODY_189B_1A09E69C.inc"
+;@include "caves/cart__post_PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "caves/dos__post_FOLD_BODY_189B_1A09E69C.inc"
+;@include "caves/dos__post_PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3.inc"
 ;@endif
 
 ;@include "_helpers/SET_VAR22_TO_00B8.inc"

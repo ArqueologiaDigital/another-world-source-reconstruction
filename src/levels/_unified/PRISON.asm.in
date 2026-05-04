@@ -85,7 +85,7 @@
 ;   INIT_VARS_B2_2F_29  (3-arm: amiga, cart, dos)
 ;   SET_VAR2F_TO_0009  (3-arm: amiga, cart, dos)
 ;   SET_VAR2F_TO_001B  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_144B_5C7E9C90  (3-arm: amiga, cart, dos)
+;   INIT_VAR29_FROM_VAR50_PLUS_A_VAR2F_10  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_29_2F  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_07_2F  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_2F_29_1  (3-arm: amiga, cart, dos)
@@ -158,7 +158,7 @@
 ;   DRAW_CIN_240  (2-arm: amiga, dos)
 ;   DRAW_CIN_241  (2-arm: amiga, dos)
 ;   DRAW_CV204_AT_X07_Y08  (2-arm: cart, dos)
-;   FOLD_BODY_189B_794E4590  (2-arm: cart, dos)
+;   DRAW_CV204_AT_X07_PLUS1_Y08  (2-arm: cart, dos)
 ;   INLINE_DRAW_CV_216_027  (2-arm: cart, dos)
 ;   INLINE_DRAW_CV_220_008  (2-arm: cart, dos)
 ;   DRAW_CV224_AT_X07_Y08  (2-arm: cart, dos)
@@ -303,7 +303,7 @@
 ;   COPY_PAGE0_TO_PAGE_FF  (3-arm: amiga, cart, dos)
 ;   COPY_HACK67_TO_VAR66  (3-arm: amiga, cart, dos)
 ;   DECREMENT_VAR10_BY_1  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_467B_FEBF74B5  (3-arm: amiga, cart, dos)
+;   SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01  (3-arm: amiga, cart, dos)
 ;   SET_VAR04_TO_0020  (3-arm: amiga, cart, dos)
 ;   SET_VAR04_TO_0030  (3-arm: amiga, cart, dos)
 ;   SET_VAR04_TO_0000  (3-arm: amiga, cart, dos)
@@ -1155,18 +1155,18 @@ SET_VAR2F_TO_001B:
 ;@include "prison/dos__post_SET_VAR2F_TO_001B.inc"
 ;@endif
 
-FOLD_BODY_144B_5C7E9C90:
+INIT_VAR29_FROM_VAR50_PLUS_A_VAR2F_10:
 	mov [0x29], [0x50]
 	add [0x29], 0x000A
 	mov [0x2F], 0x0010
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "prison/amiga__post_FOLD_BODY_144B_5C7E9C90.inc"
+;@include "prison/amiga__post_INIT_VAR29_FROM_VAR50_PLUS_A_VAR2F_10.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_144B_5C7E9C90.inc"
+;@include "prison/cart__post_INIT_VAR29_FROM_VAR50_PLUS_A_VAR2F_10.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_144B_5C7E9C90.inc"
+;@include "prison/dos__post_INIT_VAR29_FROM_VAR50_PLUS_A_VAR2F_10.inc"
 ;@endif
 
 INIT_VARS_29_2F:
@@ -1933,13 +1933,13 @@ DRAW_CIN_241:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-;@include "_helpers/FOLD_BODY_189B_794E4590.inc"
+;@include "_helpers/DRAW_CV204_AT_X07_PLUS1_Y08.inc"
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "prison/cart__post_FOLD_BODY_189B_794E4590.inc"
+;@include "prison/cart__post_DRAW_CV204_AT_X07_PLUS1_Y08.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "prison/dos__post_FOLD_BODY_189B_794E4590.inc"
+;@include "prison/dos__post_DRAW_CV204_AT_X07_PLUS1_Y08.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -3306,7 +3306,7 @@ DECREMENT_VAR10_BY_1:
 ;@include "prison/dos__post_DECREMENT_VAR10_BY_1.inc"
 ;@endif
 
-FOLD_BODY_467B_FEBF74B5:
+SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01:
 	mov [0x01], 0x00B0
 	mov [0x0F], 0x0000
 	mov [0x28], [0x01]

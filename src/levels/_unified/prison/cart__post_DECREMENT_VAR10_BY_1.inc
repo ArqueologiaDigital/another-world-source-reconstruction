@@ -49,7 +49,7 @@ LABEL_89F2:
 	mov [0x66], 0x0001
 	fill page=0x00, color=0x02
 	selectVideoPage 0x00
-	call FOLD_BODY_467B_FEBF74B5	;@raw=0x04,0x8B,0x83
+	call SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01	;@raw=0x04,0x8B,0x83
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 
@@ -66,7 +66,7 @@ LABEL_8A17:
 	mov [0x66], 0x0002
 	fill page=0x00, color=0x0E
 	selectVideoPage 0x00
-	call FOLD_BODY_467B_FEBF74B5	;@raw=0x04,0x8B,0x83
+	call SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01	;@raw=0x04,0x8B,0x83
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 
@@ -82,7 +82,7 @@ LABEL_8A3C:
 	mov [0x66], 0x0003
 	fill page=0x00, color=0x0E
 	selectVideoPage 0x00
-	call FOLD_BODY_467B_FEBF74B5	;@raw=0x04,0x8B,0x83
+	call SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01	;@raw=0x04,0x8B,0x83
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 
@@ -99,7 +99,7 @@ LABEL_8A61:
 	mov [0x66], 0x0004
 	fill page=0x00, color=0x0E
 	selectVideoPage 0x00
-	call FOLD_BODY_467B_FEBF74B5	;@raw=0x04,0x8B,0x83
+	call SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01	;@raw=0x04,0x8B,0x83
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 
@@ -116,7 +116,7 @@ LABEL_8A86:
 	mov [0x66], 0x0005
 	fill page=0x00, color=0x0E
 	selectVideoPage 0x00
-	call FOLD_BODY_467B_FEBF74B5	;@raw=0x04,0x8B,0x83
+	call SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01	;@raw=0x04,0x8B,0x83
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 

@@ -43,7 +43,7 @@
 ;   INLINE_SET_VAREC_TO_AF  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_07_08_29  (3-arm: amiga, cart, dos)
 ;   SET_VAR01_TO_6E_KILL_CHANNEL  (3-arm: amiga, cart, dos)
-;   FOLD_BODY_326B_82B23B8C  (3-arm: amiga, cart, dos)
+;   TWEEN_VARE8_DOWN_8_STEPS  (3-arm: amiga, cart, dos)
 ;   INLINE_SET_VARED_TO_6  (3-arm: amiga, cart, dos)
 ;   INLINE_SET_VARED_TO_5  (3-arm: amiga, cart, dos)
 ;   INLINE_SET_VARE6_TO_4  (3-arm: amiga, cart, dos)
@@ -104,7 +104,7 @@
 ;   DECREMENT_VAR22_BY_10  (3-arm: amiga, cart, dos)
 ;   COPY_VAR01_TO_VAR28  (3-arm: amiga, cart, dos)
 ;   DRAW_CV204_AT_X07_Y08  (2-arm: cart, dos)
-;   FOLD_BODY_189B_794E4590  (2-arm: cart, dos)
+;   DRAW_CV204_AT_X07_PLUS1_Y08  (2-arm: cart, dos)
 ;   DRAW_CV224_AT_X07_Y08  (2-arm: cart, dos)
 ;   DRAW_CV263_AT_X07_Y08  (2-arm: cart, dos)
 ;   DRAW_CV275_AT_X07_Y08  (2-arm: cart, dos)
@@ -169,8 +169,8 @@
 ;   SET_VAR22_TO_00B4  (2-arm: cart, dos)
 ;   SET_VAR22_TO_0097  (2-arm: cart, dos)
 ;   SET_VAR22_TO_00FA  (2-arm: cart, dos)
-;   FOLD_BODY_144B_7EE4E4CB  (2-arm: cart, dos)
-;   FOLD_BODY_144B_B5377D0B  (2-arm: cart, dos)
+;   PROJ_VAR22_B0_PLUS_VAR21_MINUS_9A  (2-arm: cart, dos)
+;   PROJ_VAR22_37_PLUS_VAR21_PLUS_A  (2-arm: cart, dos)
 ;   SET_VAR22_TO_003E  (2-arm: cart, dos)
 ;   INLINE_SET_VAR02_TO_97  (2-arm: cart, dos)
 ;   INIT_RANGE_48_TO_4D_TO_MAX  (3-arm: amiga, cart, dos)
@@ -499,7 +499,7 @@ SET_VAR01_TO_6E_KILL_CHANNEL:
 ;@include "capsule/dos__post_SET_VAR01_TO_6E_KILL_CHANNEL.inc"
 ;@endif
 
-FOLD_BODY_326B_82B23B8C:
+TWEEN_VARE8_DOWN_8_STEPS:
 	sub [0xE8], 0x0001
 	break
 	sub [0xE8], 0x0002
@@ -513,11 +513,11 @@ FOLD_BODY_326B_82B23B8C:
 	break
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "capsule/amiga__post_FOLD_BODY_326B_82B23B8C.inc"
+;@include "capsule/amiga__post_TWEEN_VARE8_DOWN_8_STEPS.inc"
 ;@elif BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_326B_82B23B8C.inc"
+;@include "capsule/cart__post_TWEEN_VARE8_DOWN_8_STEPS.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_326B_82B23B8C.inc"
+;@include "capsule/dos__post_TWEEN_VARE8_DOWN_8_STEPS.inc"
 ;@endif
 
 INLINE_SET_VARED_TO_6:
@@ -1074,13 +1074,13 @@ DRAW_CV139_AT_X01_Y02:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-;@include "_helpers/FOLD_BODY_189B_794E4590.inc"
+;@include "_helpers/DRAW_CV204_AT_X07_PLUS1_Y08.inc"
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_189B_794E4590.inc"
+;@include "capsule/cart__post_DRAW_CV204_AT_X07_PLUS1_Y08.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_189B_794E4590.inc"
+;@include "capsule/dos__post_DRAW_CV204_AT_X07_PLUS1_Y08.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -1694,7 +1694,7 @@ SET_VAR22_TO_00FA:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_144B_7EE4E4CB:
+PROJ_VAR22_B0_PLUS_VAR21_MINUS_9A:
 	sub [0x21], 0x009A
 	mov [0x22], 0x00B0
 	add [0x22], [0x21]
@@ -1702,13 +1702,13 @@ FOLD_BODY_144B_7EE4E4CB:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_144B_7EE4E4CB.inc"
+;@include "capsule/cart__post_PROJ_VAR22_B0_PLUS_VAR21_MINUS_9A.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_144B_7EE4E4CB.inc"
+;@include "capsule/dos__post_PROJ_VAR22_B0_PLUS_VAR21_MINUS_9A.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-FOLD_BODY_144B_B5377D0B:
+PROJ_VAR22_37_PLUS_VAR21_PLUS_A:
 	add [0x21], 0x000A
 	mov [0x22], 0x0037
 	add [0x22], [0x21]
@@ -1716,9 +1716,9 @@ FOLD_BODY_144B_B5377D0B:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "capsule/cart__post_FOLD_BODY_144B_B5377D0B.inc"
+;@include "capsule/cart__post_PROJ_VAR22_37_PLUS_VAR21_PLUS_A.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "capsule/dos__post_FOLD_BODY_144B_B5377D0B.inc"
+;@include "capsule/dos__post_PROJ_VAR22_37_PLUS_VAR21_PLUS_A.inc"
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
