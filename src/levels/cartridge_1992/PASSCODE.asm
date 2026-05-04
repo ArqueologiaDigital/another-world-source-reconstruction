@@ -148,7 +148,7 @@ LABEL_012B:
 	mov [0x08], 0x0064
 	mov [0x05], [0x01]
 	call DERIVE_VAR07_VAR08_FROM_VAR05
-	setPalette 0x05	;@raw=0x0B,0x05,0xFF
+	setPalette 0x05
 	copyVideoPage src=0x00, dst=0xFF
 	jmp LABEL_033B
 LABEL_0146:
@@ -160,19 +160,19 @@ INIT_BITMASKS_BC_C6:
 	ret
 	jmp ENTRY_2ND_PASSCODE_INSTANCE
 	je [0xBC], 0x00, DRAW_PROGRESS_MARKERS
-	video type=1, offset=CINEMATIC_005, x=0, y=0	;@raw=0x80,0x10,0x00,0x00
+	video type=1, offset=CINEMATIC_005, x=0, y=0
 
 DRAW_PROGRESS_MARKERS:
 	je [0xC6], 0x00, DRAW_CIN_058_AT_0_16_IF_VARF2_EQ_FA0
-	video type=1, offset=CINEMATIC_005, x=16, y=0	;@raw=0x80,0x10,0x10,0x00
+	video type=1, offset=CINEMATIC_005, x=16, y=0
 
 DRAW_CIN_058_AT_0_16_IF_VARF2_EQ_FA0:
 	jne [0xF2], 0x0FA0, DRAW_CIN_058_AT_16_16_IF_VARDC_EQ_21
-	video type=1, offset=CINEMATIC_005, x=0, y=16	;@raw=0x80,0x10,0x00,0x10
+	video type=1, offset=CINEMATIC_005, x=0, y=16
 
 DRAW_CIN_058_AT_16_16_IF_VARDC_EQ_21:
 	jne [HACK_VAR_DC], 0x21, TRIVIAL_RET
-	video type=1, offset=CINEMATIC_005, x=16, y=16	;@raw=0x80,0x10,0x10,0x10
+	video type=1, offset=CINEMATIC_005, x=16, y=16
 
 TRIVIAL_RET:
 	ret
@@ -427,7 +427,7 @@ LABEL_03C0:
 	mov [0x28], [0x08]
 	jne [0x25], [0x27], ANIMATE_CURSOR_TRANSITION
 	jne [0x26], [0x28], ANIMATE_CURSOR_TRANSITION
-	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x00,0xC4,0x07,0x08
+	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp LABEL_033B
 LABEL_03E7:
@@ -473,14 +473,14 @@ COPY_VAR_27_28_TO_07_08:
 	mov [0x08], [0x28]
 
 LABEL_0452:
-	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x00,0xC4,0x07,0x08
+	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jne [HERO_POS_UP_DOWN], 0x00, LABEL_0452
 	jne [HERO_POS_MASK], 0x00, LABEL_0452
 	jmp LABEL_033B
 
 JUNK__0467:
-	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x00,0xC4,0x07,0x08
+	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp JUNK__03F5
 LABEL_0470:
@@ -492,7 +492,7 @@ LABEL_0471:
 	jne [0x20], 0x14, LABEL_0493
 	jne [0x21], 0x0D, LABEL_0493
 	mov [0x00], 0x000A
-	bankSwitch 2;  TODO - Name this stage (bank number #2)	;@raw=0x19,0x3E,0x82
+	bankSwitch 2;  TODO - Name this stage (bank number #2)
 	jmp LABEL_07BB
 
 LABEL_0493:
@@ -501,7 +501,7 @@ LABEL_0493:
 	jne [0x20], 0x0D, LABEL_04B5
 	jne [0x21], 0x0C, LABEL_04B5
 	mov [0x00], 0x0014
-	bankSwitch 3;  TODO - Name this stage (bank number #3)	;@raw=0x19,0x3E,0x83
+	bankSwitch 3;  TODO - Name this stage (bank number #3)
 	jmp LABEL_07BB
 
 LABEL_04B5:
@@ -510,7 +510,7 @@ LABEL_04B5:
 	jne [0x20], 0x15, LABEL_04D7
 	jne [0x21], 0x0D, LABEL_04D7
 	mov [0x00], 0x001E
-	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  TODO - Name this stage (bank number #4)
 	jmp LABEL_07BB
 
 LABEL_04D7:
@@ -519,7 +519,7 @@ LABEL_04D7:
 	jne [0x20], 0x15, LABEL_04F9
 	jne [0x21], 0x0C, LABEL_04F9
 	mov [0x00], 0x0023
-	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  TODO - Name this stage (bank number #4)
 	jmp LABEL_07BB
 
 LABEL_04F9:
@@ -528,7 +528,7 @@ LABEL_04F9:
 	jne [0x20], 0x0F, LABEL_051B
 	jne [0x21], 0x14, LABEL_051B
 	mov [0x00], 0x0025
-	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  TODO - Name this stage (bank number #4)
 	jmp LABEL_07BB
 
 LABEL_051B:
@@ -537,7 +537,7 @@ LABEL_051B:
 	jne [0x20], 0x0D, LABEL_053D
 	jne [0x21], 0x13, LABEL_053D
 	mov [0x00], 0x0021
-	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  TODO - Name this stage (bank number #4)
 	jmp LABEL_07BB
 
 LABEL_053D:
@@ -546,7 +546,7 @@ LABEL_053D:
 	jne [0x20], 0x14, LABEL_055F
 	jne [0x21], 0x10, LABEL_055F
 	mov [0x00], 0x001F
-	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  TODO - Name this stage (bank number #4)
 	jmp LABEL_07BB
 
 LABEL_055F:
@@ -555,7 +555,7 @@ LABEL_055F:
 	jne [0x20], 0x0F, LABEL_0581
 	jne [0x21], 0x0B, LABEL_0581
 	mov [0x00], 0x0027
-	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  TODO - Name this stage (bank number #4)
 	jmp LABEL_07BB
 
 LABEL_0581:
@@ -564,7 +564,7 @@ LABEL_0581:
 	jne [0x20], 0x0C, LABEL_05A3
 	jne [0x21], 0x1D, LABEL_05A3
 	mov [0x00], 0x0029
-	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  TODO - Name this stage (bank number #4)
 	jmp LABEL_07BB
 
 LABEL_05A3:
@@ -573,7 +573,7 @@ LABEL_05A3:
 	jne [0x20], 0x1B, LABEL_05C5
 	jne [0x21], 0x21, LABEL_05C5
 	mov [0x00], 0x002A
-	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  TODO - Name this stage (bank number #4)
 	jmp LABEL_07BB
 
 LABEL_05C5:
@@ -582,7 +582,7 @@ LABEL_05C5:
 	jne [0x20], 0x11, LABEL_05E7
 	jne [0x21], 0x14, LABEL_05E7
 	mov [0x00], 0x002B
-	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  TODO - Name this stage (bank number #4)
 	jmp LABEL_07BB
 
 LABEL_05E7:
@@ -591,7 +591,7 @@ LABEL_05E7:
 	jne [0x20], 0x1D, LABEL_0609
 	jne [0x21], 0x0D, LABEL_0609
 	mov [0x00], 0x0031
-	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  TODO - Name this stage (bank number #4)
 	jmp LABEL_07BB
 
 LABEL_0609:
@@ -600,7 +600,7 @@ LABEL_0609:
 	jne [0x20], 0x13, LABEL_062B
 	jne [0x21], 0x15, LABEL_062B
 	mov [0x00], 0x0032
-	bankSwitch 5;  TODO - Name this stage (bank number #5)	;@raw=0x19,0x3E,0x85
+	bankSwitch 5;  TODO - Name this stage (bank number #5)
 	jmp LABEL_07BB
 
 LABEL_062B:
@@ -609,7 +609,7 @@ LABEL_062B:
 	jne [0x20], 0x0C, LABEL_064D
 	jne [0x21], 0x14, LABEL_064D
 	mov [0x00], 0x003C
-	bankSwitch 6;  Secret Code Entry Screen	;@raw=0x19,0x3E,0x86
+	bankSwitch 6;  Secret Code Entry Screen
 	jmp LABEL_07BB
 
 LABEL_064D:
@@ -618,7 +618,7 @@ LABEL_064D:
 	jne [0x20], 0x15, LABEL_066F
 	jne [0x21], 0x21, LABEL_066F
 	mov [0x00], 0x002C
-	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  TODO - Name this stage (bank number #4)
 	jmp LABEL_07BB
 
 LABEL_066F:
@@ -627,7 +627,7 @@ LABEL_066F:
 	jne [0x20], 0x1B, LABEL_0691
 	jne [0x21], 0x1D, LABEL_0691
 	mov [0x00], 0x002D
-	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  TODO - Name this stage (bank number #4)
 	jmp LABEL_07BB
 
 LABEL_0691:
@@ -636,7 +636,7 @@ LABEL_0691:
 	jne [0x20], 0x1D, LABEL_06B3
 	jne [0x21], 0x0B, LABEL_06B3
 	mov [0x00], 0x002E
-	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  TODO - Name this stage (bank number #4)
 	jmp LABEL_07BB
 
 LABEL_06B3:
@@ -645,7 +645,7 @@ LABEL_06B3:
 	jne [0x20], 0x11, LABEL_06D5
 	jne [0x21], 0x14, LABEL_06D5
 	mov [0x00], 0x002F
-	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  TODO - Name this stage (bank number #4)
 	jmp LABEL_07BB
 
 LABEL_06D5:
@@ -654,7 +654,7 @@ LABEL_06D5:
 	jne [0x20], 0x10, LABEL_06F7
 	jne [0x21], 0x0B, LABEL_06F7
 	mov [0x00], 0x0030
-	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  TODO - Name this stage (bank number #4)
 	jmp LABEL_07BB
 
 LABEL_06F7:
@@ -663,7 +663,7 @@ LABEL_06F7:
 	jne [0x20], 0x0F, LABEL_0719
 	jne [0x21], 0x15, LABEL_0719
 	mov [0x00], 0x003E
-	bankSwitch 6;  Secret Code Entry Screen	;@raw=0x19,0x3E,0x86
+	bankSwitch 6;  Secret Code Entry Screen
 	jmp LABEL_07BB
 
 LABEL_0719:
@@ -672,7 +672,7 @@ LABEL_0719:
 	jne [0x20], 0x0B, LABEL_073B
 	jne [0x21], 0x0B, LABEL_073B
 	mov [0x00], 0x0040
-	bankSwitch 6;  Secret Code Entry Screen	;@raw=0x19,0x3E,0x86
+	bankSwitch 6;  Secret Code Entry Screen
 	jmp LABEL_07BB
 
 LABEL_073B:
@@ -681,7 +681,7 @@ LABEL_073B:
 	jne [0x20], 0x11, LABEL_075D
 	jne [0x21], 0x0F, LABEL_075D
 	mov [0x00], 0x0042
-	bankSwitch 6;  Secret Code Entry Screen	;@raw=0x19,0x3E,0x86
+	bankSwitch 6;  Secret Code Entry Screen
 	jmp LABEL_07BB
 
 LABEL_075D:
@@ -699,7 +699,7 @@ LABEL_077F:
 	jne [0x20], 0xFFFF, SET_VAR_E6_F_PAUSE_4
 	jne [0x21], 0xFFFF, SET_VAR_E6_F_PAUSE_4
 	mov [0x00], 0x0000
-	bankSwitch 1;  Prison	;@raw=0x19,0x3E,0x81
+	bankSwitch 1;  Prison
 	jmp LABEL_07BB
 
 SET_VAR_E6_F_PAUSE_4:
@@ -713,7 +713,7 @@ LABEL_07AD:
 	jmp LABEL_0000
 
 LABEL_07BB:
-	setPalette 0x00	;@raw=0x0B,0x00,0xFF
+	setPalette 0x00
 	jmp LABEL_0000
 LABEL_07C1:
 	db 0x11
@@ -787,7 +787,7 @@ SETUP_VAR02_FROM_VAR22:
 LABEL_0865:
 	mov [0x05], [0x01]
 	call DERIVE_VAR07_VAR08_FROM_VAR05
-	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x00,0xC4,0x07,0x08
+	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jne [LAST_KEYCHAR], 0x00, LABEL_0865
 	je [0xDB], 0x00, LABEL_0888
@@ -804,7 +804,7 @@ DRAW_CIN_003_AT_BC_54:
 	mov [0x07], 0x00BC
 	mov [0x08], 0x0054
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_003, x=160, y=100	;@raw=0x80,0xE6,0xA0,0x64
+	video type=1, offset=CINEMATIC_003, x=160, y=100
 	text id=0x013C, x=2, y=80, color=0x06 ; "        ACCESS CODE:"
 	mov [0x06], [0x1E]
 	call DRAW_OR_BLINK_LETTER
@@ -1092,18 +1092,18 @@ DRAW_OR_BLINK_LETTER:
 
 DRAW_LETTER_VIA_CIN_DISPATCH:
 	jne [0x06], 0x62, DRAW_CIN_000_LETTER_BLANK
-	video type=1, offset=CINEMATIC_001, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x01,0x6C,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_001, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_CIN_000_LETTER_BLANK:
 	jne [0x06], 0x63, SHARED_RET
-	video type=1, offset=CINEMATIC_000, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x01,0x4C,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_000, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 SHARED_RET:
 	ret
 	killChannel
-	video type=1, offset=CINEMATIC_004, x=160, y=100	;@raw=0x80,0x06,0xA0,0x64
+	video type=1, offset=CINEMATIC_004, x=160, y=100
 
 LABEL_0BBF:
 	blitFramebuffer 0xFF

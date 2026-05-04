@@ -86,7 +86,7 @@ LABEL_0000:
 	fill page=0xFF, color=0x00
 	mov [LAST_KEYCHAR], 0x0000
 	break
-	setPalette 0x05	;@raw=0x0B,0x05,0xFF
+	setPalette 0x05
 	fill page=0x00, color=0x00
 	setup channel=0x14, address=SETUP_PASSCODE_SCREEN
 	killChannel
@@ -211,19 +211,19 @@ COPY_PROTECTION_VAR_BC_C6:
 	and [0xC6], 0x0080
 	jmp LIKELY_A_COPY_PROTECTION_MECHANISM
 	je [0xBC], 0x00, DRAW_PROGRESS_MARKERS
-	video type=1, offset=CINEMATIC_058, x=0, y=0	;@raw=0x80,0x10,0x00,0x00
+	video type=1, offset=CINEMATIC_058, x=0, y=0
 
 DRAW_PROGRESS_MARKERS:
 	je [0xC6], 0x00, DRAW_CIN_058_AT_0_16_IF_VARF2_EQ_FA0
-	video type=1, offset=CINEMATIC_058, x=16, y=0	;@raw=0x80,0x10,0x10,0x00
+	video type=1, offset=CINEMATIC_058, x=16, y=0
 
 DRAW_CIN_058_AT_0_16_IF_VARF2_EQ_FA0:
 	jne [0xF2], 0x0FA0, DRAW_CIN_058_AT_16_16_IF_VARDC_EQ_21
-	video type=1, offset=CINEMATIC_058, x=0, y=16	;@raw=0x80,0x10,0x00,0x10
+	video type=1, offset=CINEMATIC_058, x=0, y=16
 
 DRAW_CIN_058_AT_16_16_IF_VARDC_EQ_21:
 	jne [HACK_VAR_DC], 0x21, TRIVIAL_RET
-	video type=1, offset=CINEMATIC_058, x=16, y=16	;@raw=0x80,0x10,0x10,0x10
+	video type=1, offset=CINEMATIC_058, x=16, y=16
 
 TRIVIAL_RET:
 	ret
@@ -240,71 +240,71 @@ PASSCODE_RESTART_OR_DRAW_CIN_016:
 	setup channel=0x3C, address=KILL_CHAN_AT_0021
 	killChannel
 	jne [0x05], 0x00, DRAW_CIN_015_AT_2D_2E_KEY01
-	video type=1, offset=CINEMATIC_016, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x07,0xB2,0x2D,0x2E
+	video type=1, offset=CINEMATIC_016, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_015_AT_2D_2E_KEY01:
 	jne [0x05], 0x01, DRAW_CIN_014_AT_2D_2E_KEY02
-	video type=1, offset=CINEMATIC_015, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x07,0xBA,0x2D,0x2E
+	video type=1, offset=CINEMATIC_015, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_014_AT_2D_2E_KEY02:
 	jne [0x05], 0x02, DRAW_CIN_013_AT_2D_2E_KEY03
-	video type=1, offset=CINEMATIC_014, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x07,0xC2,0x2D,0x2E
+	video type=1, offset=CINEMATIC_014, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_013_AT_2D_2E_KEY03:
 	jne [0x05], 0x03, DRAW_CIN_012_AT_2D_2E_KEY04
-	video type=1, offset=CINEMATIC_013, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x07,0xCA,0x2D,0x2E
+	video type=1, offset=CINEMATIC_013, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_012_AT_2D_2E_KEY04:
 	jne [0x05], 0x04, DRAW_CIN_011_AT_2D_2E_KEY05
-	video type=1, offset=CINEMATIC_012, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x07,0xD2,0x2D,0x2E
+	video type=1, offset=CINEMATIC_012, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_011_AT_2D_2E_KEY05:
 	jne [0x05], 0x05, DRAW_CIN_010_AT_2D_2E_KEY06
-	video type=1, offset=CINEMATIC_011, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x07,0xF2,0x2D,0x2E
+	video type=1, offset=CINEMATIC_011, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_010_AT_2D_2E_KEY06:
 	jne [0x05], 0x06, DRAW_CIN_009_AT_2D_2E_KEY07
-	video type=1, offset=CINEMATIC_010, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x07,0xEA,0x2D,0x2E
+	video type=1, offset=CINEMATIC_010, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_009_AT_2D_2E_KEY07:
 	jne [0x05], 0x07, DRAW_CIN_008_AT_2D_2E_KEY08
-	video type=1, offset=CINEMATIC_009, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x07,0xE2,0x2D,0x2E
+	video type=1, offset=CINEMATIC_009, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_008_AT_2D_2E_KEY08:
 	jne [0x05], 0x08, DRAW_CIN_007_AT_2D_2E_KEY09
-	video type=1, offset=CINEMATIC_008, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x07,0xFA,0x2D,0x2E
+	video type=1, offset=CINEMATIC_008, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_007_AT_2D_2E_KEY09:
 	jne [0x05], 0x09, DRAW_CIN_006_AT_2D_2E_KEY0A
-	video type=1, offset=CINEMATIC_007, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x07,0xDA,0x2D,0x2E
+	video type=1, offset=CINEMATIC_007, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_006_AT_2D_2E_KEY0A:
 	jne [0x05], 0x0A, DRAW_CIN_005_AT_2D_2E_KEY0B
-	video type=1, offset=CINEMATIC_006, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x08,0x02,0x2D,0x2E
+	video type=1, offset=CINEMATIC_006, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_005_AT_2D_2E_KEY0B:
 	jne [0x05], 0x0B, DRAW_CIN_004_AT_2D_2E_KEY0C
-	video type=1, offset=CINEMATIC_005, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x08,0x0E,0x2D,0x2E
+	video type=1, offset=CINEMATIC_005, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_004_AT_2D_2E_KEY0C:
 	jne [0x05], 0x0C, DRAW_CIN_003_AT_2D_2E_KEY0D
-	video type=1, offset=CINEMATIC_004, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x08,0x08,0x2D,0x2E
+	video type=1, offset=CINEMATIC_004, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_003_AT_2D_2E_KEY0D:
 	jne [0x05], 0x0D, DRAW_CIN_002_AT_2D_2E_KEY0E
-	video type=1, offset=CINEMATIC_003, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x08,0x14,0x2D,0x2E
+	video type=1, offset=CINEMATIC_003, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_002_AT_2D_2E_KEY0E:
 	jne [0x05], 0x0E, DRAW_CIN_001_AT_2D_2E_KEY0F
-	video type=1, offset=CINEMATIC_002, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x08,0x1A,0x2D,0x2E
+	video type=1, offset=CINEMATIC_002, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_001_AT_2D_2E_KEY0F:
 	jne [0x05], 0x0F, DRAW_CIN_000_AT_2D_2E_KEY10
-	video type=1, offset=CINEMATIC_001, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x08,0x20,0x2D,0x2E
+	video type=1, offset=CINEMATIC_001, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_000_AT_2D_2E_KEY10:
 	jne [0x05], 0x10, SHARED_RET
-	video type=1, offset=CINEMATIC_000, x=[0x2d], y=[0x2e], zoom=0x40	;@raw=0x54,0x08,0x26,0x2D,0x2E
+	video type=1, offset=CINEMATIC_000, x=[0x2d], y=[0x2e], zoom=0x40
 	ret
 
 INIT_PASSCODE_LETTER_ALPHABET:
@@ -729,7 +729,7 @@ LABEL_068C:
 	mov [0x28], [0x08]
 	jne [0x25], [0x27], ANIMATE_CURSOR_TRANSITION
 	jne [0x26], [0x28], ANIMATE_CURSOR_TRANSITION
-	video type=1, offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x04,0x62,0x07,0x08
+	video type=1, offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp LABEL_0615
 LABEL_06B3:
@@ -775,14 +775,14 @@ COPY_VAR_27_28_TO_07_08:
 	mov [0x08], [0x28]
 
 LABEL_071E:
-	video type=1, offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x04,0x62,0x07,0x08
+	video type=1, offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jne [HERO_POS_UP_DOWN], 0x00, LABEL_071E
 	jne [HERO_POS_MASK], 0x00, LABEL_071E
 	jmp LABEL_0615
 
 JUNK__0733:
-	video type=1, offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x04,0x62,0x07,0x08
+	video type=1, offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp JUNK__06C1
 LABEL_073C:
@@ -794,7 +794,7 @@ LABEL_073D:
 	jne [0x20], 0x14, LABEL_075F
 	jne [0x21], 0x0D, LABEL_075F
 	mov [0x00], 0x000A
-	bankSwitch 2;  Arrival at the Lake & Beast Chase	;@raw=0x19,0x3E,0x82
+	bankSwitch 2;  Arrival at the Lake & Beast Chase
 	jmp LABEL_0AA9
 
 LABEL_075F:
@@ -803,7 +803,7 @@ LABEL_075F:
 	jne [0x20], 0x0D, LABEL_0781
 	jne [0x21], 0x0C, LABEL_0781
 	mov [0x00], 0x0014
-	bankSwitch 3;  Prison Escape	;@raw=0x19,0x3E,0x83
+	bankSwitch 3;  Prison Escape
 	jmp LABEL_0AA9
 
 LABEL_0781:
@@ -812,7 +812,7 @@ LABEL_0781:
 	jne [0x20], 0x15, LABEL_07A3
 	jne [0x21], 0x0D, LABEL_07A3
 	mov [0x00], 0x001E
-	bankSwitch 4;  Gas tunnels, Caves and Pool	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  Gas tunnels, Caves and Pool
 	jmp LABEL_0AA9
 
 LABEL_07A3:
@@ -821,7 +821,7 @@ LABEL_07A3:
 	jne [0x20], 0x15, LABEL_07C5
 	jne [0x21], 0x0C, LABEL_07C5
 	mov [0x00], 0x0023
-	bankSwitch 4;  Gas tunnels, Caves and Pool	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  Gas tunnels, Caves and Pool
 	jmp LABEL_0AA9
 
 LABEL_07C5:
@@ -830,7 +830,7 @@ LABEL_07C5:
 	jne [0x20], 0x0F, LABEL_07E7
 	jne [0x21], 0x14, LABEL_07E7
 	mov [0x00], 0x0025
-	bankSwitch 4;  Gas tunnels, Caves and Pool	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  Gas tunnels, Caves and Pool
 	jmp LABEL_0AA9
 
 LABEL_07E7:
@@ -839,7 +839,7 @@ LABEL_07E7:
 	jne [0x20], 0x0D, LABEL_0809
 	jne [0x21], 0x13, LABEL_0809
 	mov [0x00], 0x0021
-	bankSwitch 4;  Gas tunnels, Caves and Pool	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  Gas tunnels, Caves and Pool
 	jmp LABEL_0AA9
 
 LABEL_0809:
@@ -848,7 +848,7 @@ LABEL_0809:
 	jne [0x20], 0x14, LABEL_082B
 	jne [0x21], 0x10, LABEL_082B
 	mov [0x00], 0x001F
-	bankSwitch 4;  Gas tunnels, Caves and Pool	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  Gas tunnels, Caves and Pool
 	jmp LABEL_0AA9
 
 LABEL_082B:
@@ -857,7 +857,7 @@ LABEL_082B:
 	jne [0x20], 0x0F, LABEL_084D
 	jne [0x21], 0x0B, LABEL_084D
 	mov [0x00], 0x0027
-	bankSwitch 4;  Gas tunnels, Caves and Pool	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  Gas tunnels, Caves and Pool
 	jmp LABEL_0AA9
 
 LABEL_084D:
@@ -866,7 +866,7 @@ LABEL_084D:
 	jne [0x20], 0x0C, LABEL_086F
 	jne [0x21], 0x1D, LABEL_086F
 	mov [0x00], 0x0029
-	bankSwitch 4;  Gas tunnels, Caves and Pool	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  Gas tunnels, Caves and Pool
 	jmp LABEL_0AA9
 
 LABEL_086F:
@@ -875,7 +875,7 @@ LABEL_086F:
 	jne [0x20], 0x1B, LABEL_0891
 	jne [0x21], 0x21, LABEL_0891
 	mov [0x00], 0x002A
-	bankSwitch 4;  Gas tunnels, Caves and Pool	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  Gas tunnels, Caves and Pool
 	jmp LABEL_0AA9
 
 LABEL_0891:
@@ -884,7 +884,7 @@ LABEL_0891:
 	jne [0x20], 0x11, LABEL_08B3
 	jne [0x21], 0x14, LABEL_08B3
 	mov [0x00], 0x002B
-	bankSwitch 4;  Gas tunnels, Caves and Pool	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  Gas tunnels, Caves and Pool
 	jmp LABEL_0AA9
 
 LABEL_08B3:
@@ -893,7 +893,7 @@ LABEL_08B3:
 	jne [0x20], 0x1D, LABEL_08D5
 	jne [0x21], 0x0D, LABEL_08D5
 	mov [0x00], 0x0031
-	bankSwitch 4;  Gas tunnels, Caves and Pool	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  Gas tunnels, Caves and Pool
 	jmp LABEL_0AA9
 
 LABEL_08D5:
@@ -902,7 +902,7 @@ LABEL_08D5:
 	jne [0x20], 0x13, LABEL_08F7
 	jne [0x21], 0x15, LABEL_08F7
 	mov [0x00], 0x0032
-	bankSwitch 5;  Tank in the Battle Arena	;@raw=0x19,0x3E,0x85
+	bankSwitch 5;  Tank in the Battle Arena
 	jmp LABEL_0AA9
 
 LABEL_08F7:
@@ -911,7 +911,7 @@ LABEL_08F7:
 	jne [0x20], 0x0C, LABEL_0919
 	jne [0x21], 0x14, LABEL_0919
 	mov [0x00], 0x003C
-	bankSwitch 6;  Capsule Lands at the Bath	;@raw=0x19,0x3E,0x86
+	bankSwitch 6;  Capsule Lands at the Bath
 	jmp LABEL_0AA9
 
 LABEL_0919:
@@ -920,7 +920,7 @@ LABEL_0919:
 	jne [0x20], 0x15, LABEL_093B
 	jne [0x21], 0x21, LABEL_093B
 	mov [0x00], 0x002C
-	bankSwitch 4;  Gas tunnels, Caves and Pool	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  Gas tunnels, Caves and Pool
 	jmp LABEL_0AA9
 
 LABEL_093B:
@@ -929,7 +929,7 @@ LABEL_093B:
 	jne [0x20], 0x1B, LABEL_095D
 	jne [0x21], 0x1D, LABEL_095D
 	mov [0x00], 0x002D
-	bankSwitch 4;  Gas tunnels, Caves and Pool	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  Gas tunnels, Caves and Pool
 	jmp LABEL_0AA9
 
 LABEL_095D:
@@ -938,7 +938,7 @@ LABEL_095D:
 	jne [0x20], 0x1D, LABEL_097F
 	jne [0x21], 0x0B, LABEL_097F
 	mov [0x00], 0x002E
-	bankSwitch 4;  Gas tunnels, Caves and Pool	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  Gas tunnels, Caves and Pool
 	jmp LABEL_0AA9
 
 LABEL_097F:
@@ -947,7 +947,7 @@ LABEL_097F:
 	jne [0x20], 0x11, LABEL_09A1
 	jne [0x21], 0x14, LABEL_09A1
 	mov [0x00], 0x002F
-	bankSwitch 4;  Gas tunnels, Caves and Pool	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  Gas tunnels, Caves and Pool
 	jmp LABEL_0AA9
 
 LABEL_09A1:
@@ -956,7 +956,7 @@ LABEL_09A1:
 	jne [0x20], 0x10, LABEL_09C3
 	jne [0x21], 0x0B, LABEL_09C3
 	mov [0x00], 0x0030
-	bankSwitch 4;  Gas tunnels, Caves and Pool	;@raw=0x19,0x3E,0x84
+	bankSwitch 4;  Gas tunnels, Caves and Pool
 	jmp LABEL_0AA9
 
 LABEL_09C3:
@@ -965,7 +965,7 @@ LABEL_09C3:
 	jne [0x20], 0x0F, LABEL_09E5
 	jne [0x21], 0x15, LABEL_09E5
 	mov [0x00], 0x003E
-	bankSwitch 6;  Capsule Lands at the Bath	;@raw=0x19,0x3E,0x86
+	bankSwitch 6;  Capsule Lands at the Bath
 	jmp LABEL_0AA9
 
 LABEL_09E5:
@@ -974,7 +974,7 @@ LABEL_09E5:
 	jne [0x20], 0x0B, LABEL_0A07
 	jne [0x21], 0x0B, LABEL_0A07
 	mov [0x00], 0x0040
-	bankSwitch 6;  Capsule Lands at the Bath	;@raw=0x19,0x3E,0x86
+	bankSwitch 6;  Capsule Lands at the Bath
 	jmp LABEL_0AA9
 
 LABEL_0A07:
@@ -983,7 +983,7 @@ LABEL_0A07:
 	jne [0x20], 0x11, LABEL_0A29
 	jne [0x21], 0x0F, LABEL_0A29
 	mov [0x00], 0x0042
-	bankSwitch 6;  Capsule Lands at the Bath	;@raw=0x19,0x3E,0x86
+	bankSwitch 6;  Capsule Lands at the Bath
 	jmp LABEL_0AA9
 
 LABEL_0A29:
@@ -992,7 +992,7 @@ LABEL_0A29:
 	jne [0x20], 0x13, LABEL_0A4B
 	jne [0x21], 0x15, LABEL_0A4B
 	mov [0x00], 0x0044
-	bankSwitch 6;  Capsule Lands at the Bath	;@raw=0x19,0x3E,0x86
+	bankSwitch 6;  Capsule Lands at the Bath
 	jmp LABEL_0AA9
 
 LABEL_0A4B:
@@ -1001,7 +1001,7 @@ LABEL_0A4B:
 	jne [0x20], 0x1D, LABEL_0A6D
 	jne [0x21], 0x0D, LABEL_0A6D
 	mov [0x00], 0x0046
-	bankSwitch 7;  Game Ending Sequence	;@raw=0x19,0x3E,0x87
+	bankSwitch 7;  Game Ending Sequence
 	jmp LABEL_0AA9
 
 LABEL_0A6D:
@@ -1010,7 +1010,7 @@ LABEL_0A6D:
 	jne [0x20], 0xFFFF, SET_VAR_E6_F_PAUSE_4
 	jne [0x21], 0xFFFF, SET_VAR_E6_F_PAUSE_4
 	mov [0x00], 0x0000
-	bankSwitch 1;  Intro Sequence	;@raw=0x19,0x3E,0x81
+	bankSwitch 1;  Intro Sequence
 	jmp LABEL_0AA9
 
 SET_VAR_E6_F_PAUSE_4:
@@ -1024,7 +1024,7 @@ LABEL_0A9B:
 	jmp LABEL_0000
 
 LABEL_0AA9:
-	setPalette 0x00	;@raw=0x0B,0x00,0xFF
+	setPalette 0x00
 	jmp LABEL_0000
 LABEL_0AAF:
 	db 0x11
@@ -1098,7 +1098,7 @@ SETUP_VAR02_FROM_VAR22:
 LABEL_0B53:
 	mov [0x05], [0x01]
 	call DERIVE_VAR07_VAR08_FROM_VAR05
-	video type=1, offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x04,0x62,0x07,0x08
+	video type=1, offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jne [LAST_KEYCHAR], 0x00, LABEL_0B53
 	jne [HERO_ACTION], 0x00, LABEL_0B53
@@ -1110,7 +1110,7 @@ DRAW_CIN_056_AT_BC_54:
 	mov [0x07], 0x00BC
 	mov [0x08], 0x0054
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_056, x=160, y=100	;@raw=0x84,0x84,0xA0,0x64
+	video type=1, offset=CINEMATIC_056, x=160, y=100
 	text id=0x013C, x=2, y=80, color=0x06 ; "        ACCESS CODE:"
 	mov [0x06], [0x1E]
 	call BLINK_LETTER_DISPATCHER
@@ -1396,203 +1396,203 @@ BLINK_LETTER_DISPATCHER:
 	je [0x06], 0x63, DRAW_CIN_053_IF_VAR06_EQ_2
 	jne [0xDB], 0x00, DRAW_LETTER_2_DISPATCH_BY_X
 	jne [0x06], 0x01, DRAW_CIN_053_IF_VAR06_EQ_2
-	video type=1, offset=CINEMATIC_054, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x06,0xD2,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_054, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_CIN_053_IF_VAR06_EQ_2:
 	jne [0x06], 0x02, DRAW_GLYPH_KEY03_CIN_052
-	video type=1, offset=CINEMATIC_053, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x07,0x78,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_053, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_GLYPH_KEY03_CIN_052:
 	jne [0x06], 0x03, DRAW_GLYPH_KEY04_CIN_051
-	video type=1, offset=CINEMATIC_052, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x07,0x5A,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_052, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_GLYPH_KEY04_CIN_051:
 	jne [0x06], 0x04, DRAW_GLYPH_KEY05_CIN_050
-	video type=1, offset=CINEMATIC_051, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x07,0x98,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_051, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_GLYPH_KEY05_CIN_050:
 	jne [0x06], 0x05, DRAW_GLYPH_KEY06_CIN_049
-	video type=1, offset=CINEMATIC_050, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x06,0xE0,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_050, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_GLYPH_KEY06_CIN_049:
 	jne [0x06], 0x06, DRAW_GLYPH_KEY07_CIN_048
-	video type=1, offset=CINEMATIC_049, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x07,0x0C,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_049, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_GLYPH_KEY07_CIN_048:
 	jne [0x06], 0x07, DRAW_GLYPH_KEY08_CIN_047
-	video type=1, offset=CINEMATIC_048, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x07,0x40,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_048, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_GLYPH_KEY08_CIN_047:
 	jne [0x06], 0x08, DRAW_GLYPH_KEY09_CIN_046
-	video type=1, offset=CINEMATIC_047, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x07,0x22,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_047, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_GLYPH_KEY09_CIN_046:
 	jne [0x06], 0x09, DRAW_LETTER_A_CIN_045
-	video type=1, offset=CINEMATIC_046, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x06,0xF6,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_046, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_A_CIN_045:
 	jne [0x06], 0x0A, DRAW_LETTER_B_CIN_044
-	video type=1, offset=CINEMATIC_045, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x08,0x2A,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_045, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_B_CIN_044:
 	jne [0x06], 0x0B, DRAW_LETTER_C_CIN_043
-	video type=1, offset=CINEMATIC_044, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x08,0x40,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_044, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_C_CIN_043:
 	jne [0x06], 0x0C, DRAW_LETTER_D_CIN_042
-	video type=1, offset=CINEMATIC_043, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x08,0x5C,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_043, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_D_CIN_042:
 	jne [0x06], 0x0D, DRAW_LETTER_E_CIN_041
-	video type=1, offset=CINEMATIC_042, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x08,0x76,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_042, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_E_CIN_041:
 	jne [0x06], 0x0E, DRAW_LETTER_F_CIN_040
-	video type=1, offset=CINEMATIC_041, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x08,0x92,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_041, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_F_CIN_040:
 	jne [0x06], 0x0F, DRAW_LETTER_G_CIN_039
-	video type=1, offset=CINEMATIC_040, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x08,0xA6,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_040, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_G_CIN_039:
 	jne [0x06], 0x10, DRAW_LETTER_VIA_CIN_DISPATCH
-	video type=1, offset=CINEMATIC_039, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x06,0xAC,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_039, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_VIA_CIN_DISPATCH:
 	jne [0x06], 0x62, DRAW_CIN_000_LETTER_BLANK
-	video type=1, offset=CINEMATIC_038, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x04,0x8E,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_038, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_CIN_000_LETTER_BLANK:
 	jne [0x06], 0x63, DRAW_GLYPH_KEY00_CIN_036
-	video type=1, offset=CINEMATIC_037, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x04,0xBE,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_037, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_GLYPH_KEY00_CIN_036:
 	jne [0x06], 0x00, DRAW_LETTER_H_CIN_035
-	video type=1, offset=CINEMATIC_036, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x06,0xC0,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_036, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_H_CIN_035:
 	jne [0x06], 0x11, DRAW_LETTER_I_CIN_034
-	video type=1, offset=CINEMATIC_035, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x08,0xBA,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_035, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_I_CIN_034:
 	jne [0x06], 0x12, DRAW_LETTER_J_CIN_033
-	video type=1, offset=CINEMATIC_034, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x06,0x8A,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_034, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_J_CIN_033:
 	jne [0x06], 0x13, DRAW_LETTER_K_CIN_032
-	video type=1, offset=CINEMATIC_033, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x08,0xD2,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_033, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_K_CIN_032:
 	jne [0x06], 0x14, DRAW_LETTER_L_CIN_031
-	video type=1, offset=CINEMATIC_032, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x06,0x98,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_032, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_L_CIN_031:
 	jne [0x06], 0x15, DRAW_LETTER_M_CIN_030
-	video type=1, offset=CINEMATIC_031, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x08,0xE4,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_031, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_M_CIN_030:
 	jne [0x06], 0x16, DRAW_LETTER_N_CIN_029
-	video type=1, offset=CINEMATIC_030, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x08,0xF4,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_030, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_N_CIN_029:
 	jne [0x06], 0x17, DRAW_LETTER_O_CIN_028
-	video type=1, offset=CINEMATIC_029, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x06,0x4E,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_029, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_O_CIN_028:
 	jne [0x06], 0x18, DRAW_LETTER_P_CIN_027
-	video type=1, offset=CINEMATIC_028, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x06,0x68,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_028, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_P_CIN_027:
 	jne [0x06], 0x19, DRAW_LETTER_Q_CIN_026
-	video type=1, offset=CINEMATIC_027, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x09,0x04,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_027, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_Q_CIN_026:
 	jne [0x06], 0x1A, DRAW_LETTER_R_CIN_025
-	video type=1, offset=CINEMATIC_026, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x09,0x1A,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_026, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_R_CIN_025:
 	jne [0x06], 0x1B, DRAW_LETTER_S_CIN_024
-	video type=1, offset=CINEMATIC_025, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x09,0x2C,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_025, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_S_CIN_024:
 	jne [0x06], 0x1C, DRAW_LETTER_T_CIN_023
-	video type=1, offset=CINEMATIC_024, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x09,0x46,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_024, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_T_CIN_023:
 	jne [0x06], 0x1D, DRAW_LETTER_U_CIN_022
-	video type=1, offset=CINEMATIC_023, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x09,0x60,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_023, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_U_CIN_022:
 	jne [0x06], 0x1E, DRAW_LETTER_V_CIN_021
-	video type=1, offset=CINEMATIC_022, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x06,0x7E,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_022, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_V_CIN_021:
 	jne [0x06], 0x1F, DRAW_LETTER_W_CIN_020
-	video type=1, offset=CINEMATIC_021, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x09,0x6C,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_021, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_W_CIN_020:
 	jne [0x06], 0x20, DRAW_LETTER_X_CIN_019
-	video type=1, offset=CINEMATIC_020, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x09,0xA2,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_020, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_X_CIN_019:
 	jne [0x06], 0x21, DRAW_LETTER_Y_CIN_018
-	video type=1, offset=CINEMATIC_019, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x09,0x86,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_019, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_Y_CIN_018:
 	jne [0x06], 0x22, DRAW_LETTER_Z_CIN_017
-	video type=1, offset=CINEMATIC_018, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x09,0xCA,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_018, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_LETTER_Z_CIN_017:
 	jne [0x06], 0x23, DRAW_GLYPH_KEY24_CIN_017
-	video type=1, offset=CINEMATIC_017, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x09,0xB2,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_017, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_GLYPH_KEY24_CIN_017:
 	jne [0x06], 0x24, SHARED_RET
-	video type=1, offset=CINEMATIC_017, x=[0x07], y=[0x08], zoom=[0x04]	;@raw=0x55,0x09,0xB2,0x07,0x08,0x04
+	video type=1, offset=CINEMATIC_017, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 SHARED_RET:
 	ret
 	killChannel
-	video type=1, offset=CINEMATIC_057, x=160, y=100	;@raw=0x80,0x06,0xA0,0x64
+	video type=1, offset=CINEMATIC_057, x=160, y=100
 
 LABEL_107D:
 	blitFramebuffer 0xFF
