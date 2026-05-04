@@ -180,7 +180,3 @@ INIT_VARS_03_01:
 ;@elif BRANCH == "dos_1992"
 ;@include "dos__post_INIT_VARS_03_01.inc"
 ;@endif
-
-;@include "capsule_inline_setters_and_init.inc"
-;@include "capsule_init_dispatch.inc"
-;@include "capsule_load_helpers_and_anim.inc"

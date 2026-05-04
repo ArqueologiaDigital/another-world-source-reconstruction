@@ -211,3 +211,6 @@
 ;@endif
 
 ;@include "capsule/capsule_init_vars_cluster.inc"
+;@include "capsule/capsule_inline_setters_and_init.inc"
+;@include "capsule/capsule_init_dispatch.inc"
+;@include "capsule/capsule_load_helpers_and_anim.inc"
