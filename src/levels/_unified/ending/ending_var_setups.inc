@@ -75,5 +75,3 @@ DRAW_CIN_70_ANIM_LOOP:
 ;@elif BRANCH == "dos_1992"
 ;@include "dos__post_DRAW_CIN_70_ANIM_LOOP.inc"
 ;@endif
-
-;@include "ending_palette_fades.inc"

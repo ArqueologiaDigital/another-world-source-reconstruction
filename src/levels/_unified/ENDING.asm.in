@@ -63,4 +63,6 @@
 ;@endif
 
 ;@include "ending/ending_channel_cleanup.inc"
+;@include "ending/ending_var_setups.inc"
+;@include "ending/ending_palette_fades.inc"
 ;@include "ending/ending_pal_var_setup.inc"

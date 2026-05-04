@@ -192,5 +192,3 @@ DELAY_VAR6_THEN_KILL_CHAN:
 ;@if BRANCH == "chahi_amiga_1991"
 ;@elif BRANCH == "dos_1992"
 ;@endif
-
-;@include "ending_var_setups.inc"
