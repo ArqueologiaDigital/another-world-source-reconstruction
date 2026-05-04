@@ -186,7 +186,7 @@ LOAD_VAR18_TO_VAR06__AMIGA__ENTRY:
 	mov [0x06], [0x18]
 
 LOAD_VAR19_TO_VAR06__AMIGA__ENTRY:
-	jne [0x05], 0x0F, TRIVIAL_RET_PASSCODE
+	jne [0x05], 0x0F, TRIVIAL_RET
 	mov [0x06], [0x19]
 	ret
 
@@ -317,7 +317,7 @@ DRAW_CIN_001_AT_2D_2E_KEY0F__AMIGA__ENTRY:
 	video type=1, offset=CINEMATIC_001, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_000_AT_2D_2E_KEY10__AMIGA__ENTRY:
-	jne [0x05], 0x10, TRIVIAL_RET_PASSCODE
+	jne [0x05], 0x10, TRIVIAL_RET
 	video type=1, offset=CINEMATIC_000, x=[0x2d], y=[0x2e], zoom=0x40
 	ret
 
