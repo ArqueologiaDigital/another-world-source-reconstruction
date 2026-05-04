@@ -15,7 +15,7 @@ LABEL_15D4:
 	mov [0x04], 0x0004
 	break
 	break
-	jmp LABEL_1600	;@raw=0x07,0x16,0x00
+	jmp LABEL_1600
 LABEL_15FF:
 	db 0x11
 
@@ -36,6 +36,6 @@ LABEL_1600:
 	mov [0x04], 0x0002
 	break
 	break
-	jmp LABEL_1600	;@raw=0x07,0x16,0x00
+	jmp LABEL_1600
 LABEL_162B:
 	db 0x11

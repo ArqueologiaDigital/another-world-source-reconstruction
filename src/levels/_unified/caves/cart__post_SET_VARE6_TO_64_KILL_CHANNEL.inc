@@ -1,16 +1,16 @@
 DELAY_LOOP_VARE6_AT_429E:
 	break
-	djnz [0xE6], DELAY_LOOP_VARE6_AT_429E	;@raw=0x09,0xE6,0x42,0x9E
+	djnz [0xE6], DELAY_LOOP_VARE6_AT_429E
 	mov [SCROLL_Y], 0xFF6A
-	setup channel=0x3C, address=LABEL_3F87	;@raw=0x08,0x3C,0x3F,0x87
+	setup channel=0x3C, address=LABEL_3F87
 	break
 	add [SCROLL_Y], 0x000E
-	setup channel=0x3C, address=LABEL_3F87	;@raw=0x08,0x3C,0x3F,0x87
+	setup channel=0x3C, address=LABEL_3F87
 	break
-	setup channel=0x3C, address=LABEL_3F8D	;@raw=0x08,0x3C,0x3F,0x8D
+	setup channel=0x3C, address=LABEL_3F8D
 	add [SCROLL_Y], 0x0012
 	selectVideoPage 0x03
-	video type=1, offset=CINEMATIC_394, x=160, y=100	;@raw=0xF2,0x28,0xA0,0x64
+	video type=1, offset=CINEMATIC_394, x=160, y=100
 	copyVideoPage src=0x83, dst=0x00
 	selectVideoPage 0xFF
 	killChannel

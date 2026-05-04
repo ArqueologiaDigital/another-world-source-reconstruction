@@ -112,11 +112,11 @@ CINEMATIC_052		EQU 0x0908
 	org 0x0000
 
 LABEL_0000:
-	call CLEAR_PAGES_1_2_AND_BLIT	;@raw=0x04,0x0D,0xC6
+	call CLEAR_PAGES_1_2_AND_BLIT
 	mov [PAUSE_SLICES], 0x0002
-	setup channel=0x3C, address=LABEL_0D99	;@raw=0x08,0x3C,0x0D,0x99
+	setup channel=0x3C, address=LABEL_0D99
 	break
 	fill page=0x00, color=0x07
-	setup channel=0x14, address=ENTRY_CALL_INIT_4A	;@raw=0x08,0x14,0x02,0x9A
+	setup channel=0x14, address=ENTRY_CALL_INIT_4A
 	killChannel
 	killChannel

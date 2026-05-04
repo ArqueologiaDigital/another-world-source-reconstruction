@@ -3,7 +3,7 @@ BLITTER_LOOP_COPY_PAGE_00:
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 	break
-	jmp BLITTER_LOOP_COPY_PAGE_00	;@raw=0x07,0x09,0xC2
+	jmp BLITTER_LOOP_COPY_PAGE_00
 LABEL_09CD:
 	db 0x10, 0xFF, 0x0D, 0xFF, 0x06, 0x07, 0x09, 0xCD
 
@@ -13,4 +13,4 @@ BLITTER_LOOP_COPY_PAGE_80:
 	fill page=0xFF, color=0x00
 	copyVideoPage src=0x80, dst=0xFF
 	break
-	jmp BLITTER_LOOP_COPY_PAGE_80	;@raw=0x07,0x09,0xD5
+	jmp BLITTER_LOOP_COPY_PAGE_80

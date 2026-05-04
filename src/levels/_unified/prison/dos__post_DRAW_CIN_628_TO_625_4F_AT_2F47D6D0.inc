@@ -1,7 +1,7 @@
 HANG_DRAW_CIN_624:
-	video type=1, offset=CINEMATIC_624, x=160, y=100	;@raw=0xA8,0xA6,0xA0,0x64
+	video type=1, offset=CINEMATIC_624, x=160, y=100
 	break
-	jmp HANG_DRAW_CIN_624	;@raw=0x07,0x4C,0xB0
+	jmp HANG_DRAW_CIN_624
 LABEL_4CB8:
 	db 0x11
 
@@ -9,8 +9,8 @@ LABEL_4CB9:
 	mov [0x07], 0x0118
 	mov [0x08], 0x00B6
 	mov [PAUSE_SLICES], 0x0007
-	video type=1, offset=CINEMATIC_633, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x24,0x1B,0x07,0x08
+	video type=1, offset=CINEMATIC_633, x=[0x07], y=[0x08], zoom=0x40
 	break
-	jmp LABEL_4CB9	;@raw=0x07,0x4C,0xB9
+	jmp LABEL_4CB9
 LABEL_4CCE:
 	db 0x11

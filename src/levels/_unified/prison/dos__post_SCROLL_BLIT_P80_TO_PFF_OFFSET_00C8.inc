@@ -1,5 +1,5 @@
 LABEL_06F7:
 	break
-	jmp JUNK__06BC	;@raw=0x07,0x06,0xBC
+	jmp JUNK__06BC
 LABEL_06FB:
 	db 0x11

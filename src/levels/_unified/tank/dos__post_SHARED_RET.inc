@@ -15,7 +15,7 @@ LABEL_1ADA:
 	mov [0x04], 0x0004
 	break
 	break
-	jmp LABEL_1B06	;@raw=0x07,0x1B,0x06
+	jmp LABEL_1B06
 LABEL_1B05:
 	db 0x11
 
@@ -36,6 +36,6 @@ LABEL_1B06:
 	mov [0x04], 0x0002
 	break
 	break
-	jmp LABEL_1B06	;@raw=0x07,0x1B,0x06
+	jmp LABEL_1B06
 LABEL_1B31:
 	db 0x11

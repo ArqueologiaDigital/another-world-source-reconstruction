@@ -1,20 +1,20 @@
 JUNK__016F:
-	video type=1, offset=CINEMATIC_705, x=259, y=103, zoom=0x40	;@raw=0x78,0x68,0xB0,0x03,0x67
+	video type=1, offset=CINEMATIC_705, x=259, y=103, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_706, x=259, y=103, zoom=0x40	;@raw=0x78,0x68,0xBA,0x03,0x67
+	video type=1, offset=CINEMATIC_706, x=259, y=103, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_707, x=259, y=103, zoom=0x40	;@raw=0x78,0x68,0xC4,0x03,0x67
+	video type=1, offset=CINEMATIC_707, x=259, y=103, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_708, x=259, y=103, zoom=0x40	;@raw=0x78,0x68,0xCE,0x03,0x67
+	video type=1, offset=CINEMATIC_708, x=259, y=103, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_709, x=259, y=103, zoom=0x40	;@raw=0x78,0x68,0xD8,0x03,0x67
+	video type=1, offset=CINEMATIC_709, x=259, y=103, zoom=0x40
 	break
-	jmp JUNK__016F	;@raw=0x07,0x01,0x6F
+	jmp JUNK__016F
 	killChannel
 	mov [0x01], 0x03E8
 
 LABEL_0195:
-	video type=1, offset=CINEMATIC_704, x=160, y=100	;@raw=0x81,0x90,0xA0,0x64
-	djnz [0x01], LABEL_0195	;@raw=0x09,0x01,0x01,0x95
+	video type=1, offset=CINEMATIC_704, x=160, y=100
+	djnz [0x01], LABEL_0195
 	break
-	setPalette 0x0C	;@raw=0x0B,0x0C,0xFF
+	setPalette 0x0C

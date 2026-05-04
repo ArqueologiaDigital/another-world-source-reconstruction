@@ -1,5 +1,5 @@
 DELAY_LOOP_VARF1:
 	break
-	djnz [0xF1], DELAY_LOOP_VARF1	;@raw=0x09,0xF1,0x18,0xB9
+	djnz [0xF1], DELAY_LOOP_VARF1
 	and [0x49], 0x7F9F
 	killChannel

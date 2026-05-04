@@ -3,4 +3,4 @@ LABEL_0691:
 	mov [0xF8], [HERO_POS_JUMP_DOWN]
 	shl [0xF8], 0x0003
 	add [0x5F], [0xF8]
-	jmp LABEL_05C3	;@raw=0x07,0x05,0xC3
+	jmp LABEL_05C3

@@ -1,9 +1,9 @@
 LABEL_17B5:
 	selectVideoPage 0x00
 	fill page=0x00, color=0x0C
-	video type=1, offset=CINEMATIC_000, x=160, y=100	;@raw=0x88,0xD0,0xA0,0x64
-	call DRAW_CIN_SEQ_001_001_003	;@raw=0x04,0x18,0x48
-	call DRAW_BG_DOTS_CIN_001_004	;@raw=0x04,0x18,0xF1
-	call DRAW_CIN_6_AND_RET	;@raw=0x04,0x17,0xCA
+	video type=1, offset=CINEMATIC_000, x=160, y=100
+	call DRAW_CIN_SEQ_001_001_003
+	call DRAW_BG_DOTS_CIN_001_004
+	call DRAW_CIN_6_AND_RET
 	selectVideoPage 0xFF
 	ret

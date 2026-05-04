@@ -1,6 +1,6 @@
 COPY_HASH_AND_SPLIT_VAR38_3F_3E:
-	call COPY_HASH_VAR_37_TO_RANGE	;@raw=0x04,0x07,0x3E
-	call ACCUMULATE_HASH_INTO_VAR37_38	;@raw=0x04,0x07,0xB3
+	call COPY_HASH_VAR_37_TO_RANGE
+	call ACCUMULATE_HASH_INTO_VAR37_38
 	and [0x38], 0x00FF
 	mov [0x3F], [0x38]
 	and [0x38], 0x007F
@@ -58,14 +58,14 @@ LABEL_0869:
 LABEL_0895:
 	mov [0xE8], 0xFF9C
 	mov [0xE9], 0x0064
-	setup channel=0x39, address=LABEL_08B6	;@raw=0x08,0x39,0x08,0xB6
+	setup channel=0x39, address=LABEL_08B6
 
 LABEL_08A1:
 	break
 	add [0xE8], 0x000C
-	video type=1, offset=CINEMATIC_310, x=[0xe8], y=[0xe9], zoom=0x40	;@raw=0x54,0x61,0xBF,0xE8,0xE9
-	jl [0xE8], 0x0190, LABEL_08A1	;@raw=0x0A,0x44,0xE8,0x01,0x90,0x08,0xA1
-	jmp LABEL_08D2	;@raw=0x07,0x08,0xD2
+	video type=1, offset=CINEMATIC_310, x=[0xe8], y=[0xe9], zoom=0x40
+	jl [0xE8], 0x0190, LABEL_08A1
+	jmp LABEL_08D2
 LABEL_08B5:
 	db 0x11
 
@@ -84,75 +84,75 @@ LABEL_08B6:
 	break
 	break
 	break
-	jmp LABEL_08B6	;@raw=0x07,0x08,0xB6
+	jmp LABEL_08B6
 LABEL_08D1:
 	db 0x11
 
 LABEL_08D2:
 	mov [0xE6], 0x0190
 	mov [0xE7], 0x0078
-	setup channel=0x39, address=LABEL_08EF	;@raw=0x08,0x39,0x08,0xEF
+	setup channel=0x39, address=LABEL_08EF
 
 LABEL_08DE:
 	break
 	sub [0xE6], 0x0008
-	jl [0xE6], 0x0190, LABEL_08DE	;@raw=0x0A,0x44,0xE6,0x01,0x90,0x08,0xDE
-	setup channel=0x39, address=KILL_CHANNEL_LANDING	;@raw=0x08,0x39,0x01,0x7F
+	jl [0xE6], 0x0190, LABEL_08DE
+	setup channel=0x39, address=KILL_CHANNEL_LANDING
 	killChannel
 
 LABEL_08EF:
 	add [0xE7], 0x0003
-	call DRAW_CIN_311_TO_312_2F_AT_26843400	;@raw=0x04,0x09,0xB8
+	call DRAW_CIN_311_TO_312_2F_AT_26843400
 	break
 	add [0xE7], 0x0001
-	call DRAW_CIN_311_TO_312_2F_AT_2A88A18A	;@raw=0x04,0x09,0xCB
+	call DRAW_CIN_311_TO_312_2F_AT_2A88A18A
 	break
 	add [0xE7], 0x0001
-	call DRAW_CIN_311_TO_312_2F_AT_76F1E2F4	;@raw=0x04,0x09,0xDE
+	call DRAW_CIN_311_TO_312_2F_AT_76F1E2F4
 	break
 	sub [0xE7], 0x0001
 	add [0xE6], 0x0002
-	call DRAW_CIN_311_TO_312_2F_AT_76F1E2F4	;@raw=0x04,0x09,0xDE
+	call DRAW_CIN_311_TO_312_2F_AT_76F1E2F4
 	break
 	sub [0xE7], 0x0002
 	add [0xE6], 0x0003
-	call DRAW_CIN_311_TO_312_2F_AT_76F1E2F4	;@raw=0x04,0x09,0xDE
+	call DRAW_CIN_311_TO_312_2F_AT_76F1E2F4
 	break
 	sub [0xE7], 0x0002
 	add [0xE6], 0x0002
 	play id=0x0055, freq=0x14, vol=0x10, channel=0x02
-	call DRAW_CIN_311_TO_312_2F_AT_A6494EF7	;@raw=0x04,0x09,0xF1
+	call DRAW_CIN_311_TO_312_2F_AT_A6494EF7
 	break
-	call DRAW_CIN_311_TO_312_2F_AT_76F1E2F4	;@raw=0x04,0x09,0xDE
+	call DRAW_CIN_311_TO_312_2F_AT_76F1E2F4
 	break
-	call DRAW_CIN_311_TO_312_2F_AT_2A88A18A	;@raw=0x04,0x09,0xCB
+	call DRAW_CIN_311_TO_312_2F_AT_2A88A18A
 	break
 	add [0xE7], 0x0003
-	call DRAW_CIN_311_TO_312_2F_AT_26843400	;@raw=0x04,0x09,0xB8
+	call DRAW_CIN_311_TO_312_2F_AT_26843400
 	break
 	add [0xE7], 0x0001
-	call DRAW_CIN_311_TO_312_2F_AT_1550824C	;@raw=0x04,0x09,0xA5
+	call DRAW_CIN_311_TO_312_2F_AT_1550824C
 	break
 	add [0xE7], 0x0001
-	call DRAW_CIN_311_TO_313_2F_AT_6BB0E3FE	;@raw=0x04,0x09,0x92
+	call DRAW_CIN_311_TO_313_2F_AT_6BB0E3FE
 	break
 	sub [0xE7], 0x0001
 	add [0xE6], 0x0002
-	call DRAW_CIN_311_THEN_CIN_314	;@raw=0x04,0x09,0x87
+	call DRAW_CIN_311_THEN_CIN_314
 	break
 	sub [0xE7], 0x0002
 	add [0xE6], 0x0003
 	play id=0x0055, freq=0x14, vol=0x10, channel=0x01
-	call DRAW_CIN_311_THEN_CIN_314	;@raw=0x04,0x09,0x87
+	call DRAW_CIN_311_THEN_CIN_314
 	break
 	sub [0xE7], 0x0002
 	add [0xE6], 0x0002
-	call DRAW_CIN_311_THEN_CIN_314	;@raw=0x04,0x09,0x87
+	call DRAW_CIN_311_THEN_CIN_314
 	break
-	call DRAW_CIN_311_TO_313_2F_AT_6BB0E3FE	;@raw=0x04,0x09,0x92
+	call DRAW_CIN_311_TO_313_2F_AT_6BB0E3FE
 	break
-	call DRAW_CIN_311_TO_312_2F_AT_1550824C	;@raw=0x04,0x09,0xA5
+	call DRAW_CIN_311_TO_312_2F_AT_1550824C
 	break
-	jmp LABEL_08EF	;@raw=0x07,0x08,0xEF
+	jmp LABEL_08EF
 LABEL_0986:
 	db 0x11

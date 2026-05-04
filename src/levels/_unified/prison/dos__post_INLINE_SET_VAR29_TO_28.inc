@@ -1,5 +1,5 @@
 LABEL_198B:
-	call GUARDED_DRAW_CIN_242_243	;@raw=0x04,0x56,0xD2
+	call GUARDED_DRAW_CIN_242_243
 	break
-	djnz [0x29], LABEL_198B	;@raw=0x09,0x29,0x19,0x8B
+	djnz [0x29], LABEL_198B
 	killChannel

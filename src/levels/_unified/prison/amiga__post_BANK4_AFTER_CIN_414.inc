@@ -1,6 +1,6 @@
 LABEL_053D:
 	unfreezeChannels first=0x00, last=0x39
-	setup channel=0x3C, address=LABEL_06AD	;@raw=0x08,0x3C,0x06,0xAD
+	setup channel=0x3C, address=LABEL_06AD
 	mov [0x14], 0x0006
 	mov [SCROLL_Y], 0x00CA
 
@@ -11,17 +11,17 @@ LABEL_054D:
 	copyVideoPage src=0x80, dst=0xFF
 	add [SCROLL_Y], 0x00B8
 	sub [SCROLL_Y], 0x000A
-	video type=1, offset=CINEMATIC_416, x=160, y=[0xf9], zoom=0x40	;@raw=0x64,0x5A,0x04,0xA0,0xF9
+	video type=1, offset=CINEMATIC_416, x=160, y=[0xf9], zoom=0x40
 	add [SCROLL_Y], 0x000A
-	video type=1, offset=CINEMATIC_415, x=[0x01], y=[0x02], zoom=0x40	;@raw=0x54,0x5F,0xF6,0x01,0x02
-	djnz [0x14], LABEL_054D	;@raw=0x09,0x14,0x05,0x4D
+	video type=1, offset=CINEMATIC_415, x=[0x01], y=[0x02], zoom=0x40
+	djnz [0x14], LABEL_054D
 	selectVideoPage 0x00
 	copyVideoPage src=0xFF, dst=0x00
-	video type=1, offset=CINEMATIC_410, x=160, y=22	;@raw=0xE0,0x07,0xA0,0x16
-	video type=1, offset=CINEMATIC_417, x=160, y=96	;@raw=0xE0,0x88,0xA0,0x60
-	video type=1, offset=CINEMATIC_413, x=160, y=22	;@raw=0xE0,0x34,0xA0,0x16
+	video type=1, offset=CINEMATIC_410, x=160, y=22
+	video type=1, offset=CINEMATIC_417, x=160, y=96
+	video type=1, offset=CINEMATIC_413, x=160, y=22
 	selectVideoPage 0xFF
-	setup channel=0x3C, address=LABEL_069F	;@raw=0x08,0x3C,0x06,0x9F
+	setup channel=0x3C, address=LABEL_069F
 	freezeChannels first=0x00, last=0x39
 	mov [0xF8], 0x004E
 	sub [0x41], [0xF8]
@@ -32,11 +32,11 @@ LABEL_054D:
 	killChannel
 
 LABEL_05A1:
-	call LABEL_652F	;@raw=0x04,0x65,0x2F
-	call LABEL_652F	;@raw=0x04,0x65,0x2F
-	call LABEL_652F	;@raw=0x04,0x65,0x2F
+	call LABEL_652F
+	call LABEL_652F
+	call LABEL_652F
 	mov [0x10], [HACK_VAR_67]
 	mov [0x0D], 0x0001
 	mov [0x0E], 0x0000
 	break
-	jmp LABEL_05A1	;@raw=0x07,0x05,0xA1
+	jmp LABEL_05A1

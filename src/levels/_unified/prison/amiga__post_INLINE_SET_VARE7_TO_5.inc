@@ -1,18 +1,18 @@
 DELAY_LOOP_VARE7:
 	break
-	djnz [0xE7], DELAY_LOOP_VARE7	;@raw=0x09,0xE7,0x0B,0xE2
+	djnz [0xE7], DELAY_LOOP_VARE7
 	mov [0xE7], 0x0002
 	mov [0xE8], 0x00C6
 
 LABEL_0BEF:
-	video type=1, offset=CINEMATIC_454, x=163, y=[0xe8], zoom=0x40	;@raw=0x64,0x60,0x4E,0xA3,0xE8
+	video type=1, offset=CINEMATIC_454, x=163, y=[0xe8], zoom=0x40
 	sub [0xE8], 0x0002
 	break
-	djnz [0xE7], LABEL_0BEF	;@raw=0x09,0xE7,0x0B,0xEF
-	video type=1, offset=CINEMATIC_455, x=170, y=198	;@raw=0x80,0x3A,0xAA,0xC6
-	video type=1, offset=CINEMATIC_456, x=170, y=197	;@raw=0x80,0x10,0xAA,0xC5
+	djnz [0xE7], LABEL_0BEF
+	video type=1, offset=CINEMATIC_455, x=170, y=198
+	video type=1, offset=CINEMATIC_456, x=170, y=197
 	break
-	video type=1, offset=CINEMATIC_455, x=170, y=197	;@raw=0x80,0x3A,0xAA,0xC5
-	jmp INLINE_SET_VARE7_TO_5	;@raw=0x07,0x0B,0xDE
+	video type=1, offset=CINEMATIC_455, x=170, y=197
+	jmp INLINE_SET_VARE7_TO_5
 LABEL_0C0D:
 	db 0x11

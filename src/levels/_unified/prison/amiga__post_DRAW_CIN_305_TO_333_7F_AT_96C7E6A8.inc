@@ -1,41 +1,41 @@
 LABEL_4A2B:
 	mov [0x65], 0x0000
-	call LABEL_80AA	;@raw=0x04,0x80,0xAA
+	call LABEL_80AA
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	video type=1, offset=CINEMATIC_428, x=160, y=100	;@raw=0xD4,0x26,0xA0,0x64
-	video type=1, offset=CINEMATIC_429, x=160, y=100	;@raw=0xD5,0x5A,0xA0,0x64
-	video type=1, offset=CINEMATIC_430, x=160, y=100	;@raw=0xD3,0xFD,0xA0,0x64
-	video type=1, offset=CINEMATIC_305, x=160, y=100	;@raw=0xA6,0x89,0xA0,0x64
-	video type=1, offset=CINEMATIC_431, x=160, y=100	;@raw=0xD2,0xB0,0xA0,0x64
-	video type=1, offset=CINEMATIC_432, x=160, y=100	;@raw=0xD2,0x6C,0xA0,0x64
-	video type=1, offset=CINEMATIC_433, x=160, y=100	;@raw=0xD3,0x44,0xA0,0x64
+	video type=1, offset=CINEMATIC_428, x=160, y=100
+	video type=1, offset=CINEMATIC_429, x=160, y=100
+	video type=1, offset=CINEMATIC_430, x=160, y=100
+	video type=1, offset=CINEMATIC_305, x=160, y=100
+	video type=1, offset=CINEMATIC_431, x=160, y=100
+	video type=1, offset=CINEMATIC_432, x=160, y=100
+	video type=1, offset=CINEMATIC_433, x=160, y=100
 	ret
 
 LABEL_4A54:
-	call LABEL_80AA	;@raw=0x04,0x80,0xAA
+	call LABEL_80AA
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	video type=1, offset=CINEMATIC_448, x=160, y=100	;@raw=0xD7,0xCF,0xA0,0x64
-	video type=1, offset=CINEMATIC_449, x=160, y=100	;@raw=0xD9,0x36,0xA0,0x64
-	video type=1, offset=CINEMATIC_450, x=160, y=100	;@raw=0xD9,0x66,0xA0,0x64
-	video type=1, offset=CINEMATIC_451, x=160, y=100	;@raw=0xD9,0xB2,0xA0,0x64
+	video type=1, offset=CINEMATIC_448, x=160, y=100
+	video type=1, offset=CINEMATIC_449, x=160, y=100
+	video type=1, offset=CINEMATIC_450, x=160, y=100
+	video type=1, offset=CINEMATIC_451, x=160, y=100
 	ret
 
 LABEL_4A6D:
 	mov [0x65], 0x0000
-	call LABEL_80AA	;@raw=0x04,0x80,0xAA
+	call LABEL_80AA
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	video type=1, offset=CINEMATIC_434, x=160, y=100	;@raw=0xD8,0x49,0xA0,0x64
-	video type=1, offset=CINEMATIC_435, x=160, y=100	;@raw=0xE0,0x3B,0xA0,0x64
-	video type=1, offset=CINEMATIC_436, x=160, y=100	;@raw=0xE3,0x15,0xA0,0x64
-	video type=1, offset=CINEMATIC_437, x=160, y=100	;@raw=0xE3,0x4B,0xA0,0x64
+	video type=1, offset=CINEMATIC_434, x=160, y=100
+	video type=1, offset=CINEMATIC_435, x=160, y=100
+	video type=1, offset=CINEMATIC_436, x=160, y=100
+	video type=1, offset=CINEMATIC_437, x=160, y=100
 	ret
 
 LABEL_4A8A:
-	call LABEL_80AA	;@raw=0x04,0x80,0xAA
+	call LABEL_80AA
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	video type=1, offset=CINEMATIC_458, x=160, y=100	;@raw=0xDB,0xC4,0xA0,0x64
+	video type=1, offset=CINEMATIC_458, x=160, y=100
 	ret

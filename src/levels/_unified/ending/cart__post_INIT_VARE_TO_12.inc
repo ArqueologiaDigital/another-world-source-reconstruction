@@ -1,25 +1,25 @@
 DRIFT_VAR_F_PLUS_1_LOOP:
 	break
 	add [0x0F], 0x0001
-	djnz [0x0E], DRIFT_VAR_F_PLUS_1_LOOP	;@raw=0x09,0x0E,0x01,0xEB
+	djnz [0x0E], DRIFT_VAR_F_PLUS_1_LOOP
 	mov [0x0E], 0x0009
 
 DRIFT_VAR_F_PLUS_4_LOOP:
 	break
 	add [0x0F], 0x0004
-	djnz [0x0E], DRIFT_VAR_F_PLUS_4_LOOP	;@raw=0x09,0x0E,0x01,0xF8
+	djnz [0x0E], DRIFT_VAR_F_PLUS_4_LOOP
 	mov [0x0E], 0x0032
 
 DELAY_VARE_THEN_INIT_VARE_5:
 	break
-	djnz [0x0E], DELAY_VARE_THEN_INIT_VARE_5	;@raw=0x09,0x0E,0x02,0x05
+	djnz [0x0E], DELAY_VARE_THEN_INIT_VARE_5
 	mov [0x0E], 0x0005
 
 DRIFT_VAR_F_PLUS_8_LOOP:
 	break
 	add [0x0F], 0x0008
-	djnz [0x0E], DRIFT_VAR_F_PLUS_8_LOOP	;@raw=0x09,0x0E,0x02,0x0E
-	setup channel=0x36, address=LABEL_023B	;@raw=0x08,0x36,0x02,0x3B
+	djnz [0x0E], DRIFT_VAR_F_PLUS_8_LOOP
+	setup channel=0x36, address=LABEL_023B
 	break
 	add [0x0F], 0x000C
 	break
@@ -31,33 +31,33 @@ DRIFT_VAR_F_PLUS_8_LOOP:
 	killChannel
 
 DRAW_CIN_70_ANIM_LOOP:
-	video type=1, offset=CINEMATIC_070, x=[0x01], y=[0x02], zoom=[0x0f]	;@raw=0x55,0x20,0x63,0x01,0x02,0x0F
+	video type=1, offset=CINEMATIC_070, x=[0x01], y=[0x02], zoom=[0x0f]
 	break
-	jmp DRAW_CIN_70_ANIM_LOOP	;@raw=0x07,0x02,0x30
+	jmp DRAW_CIN_70_ANIM_LOOP
 LABEL_023A:
 	db 0x11
 
 LABEL_023B:
-	setPalette 0x10	;@raw=0x0B,0x10,0xFF
+	setPalette 0x10
 	break
-	setPalette 0x11	;@raw=0x0B,0x11,0xFF
+	setPalette 0x11
 	break
-	setPalette 0x12	;@raw=0x0B,0x12,0xFF
+	setPalette 0x12
 	break
-	setPalette 0x13	;@raw=0x0B,0x13,0xFF
+	setPalette 0x13
 	break
-	setPalette 0x14	;@raw=0x0B,0x14,0xFF
+	setPalette 0x14
 	break
-	setPalette 0x15	;@raw=0x0B,0x15,0xFF
+	setPalette 0x15
 	break
-	setPalette 0x16	;@raw=0x0B,0x16,0xFF
+	setPalette 0x16
 	break
-	setPalette 0x17	;@raw=0x0B,0x17,0xFF
+	setPalette 0x17
 	deleteChannels first=0x0A, last=0x11
 	fill page=0x00, color=0x00
 	fill page=0x03, color=0x00
 	break
-	jne [0xDB], 0x01, LABEL_035A	;@raw=0x0A,0x01,0xDB,0x01,0x03,0x5A
+	jne [0xDB], 0x01, LABEL_035A
 	selectVideoPage 0x00
 	text id=0x0258, x=2, y=10, color=0x0C ; "Design ............... Eric Chahi"
 	text id=0x0259, x=2, y=40, color=0x0C ; "Original Programmer .. Eric Chahi"
@@ -82,31 +82,31 @@ Exec. Producer. Stephen Clarke-Willson"
 	text id=0x025D, x=2, y=140, color=0x0C ; "string_025D"
 	selectVideoPage 0xFF
 	mov [SCROLL_Y], 0x00C8
-	setup channel=0x3C, address=BLITTER_LOOP_COPY_PAGE_80	;@raw=0x08,0x3C,0x0A,0xF3
+	setup channel=0x3C, address=BLITTER_LOOP_COPY_PAGE_80
 	mov [PAUSE_SLICES], 0x0002
 	mov [0x01], 0x000A
 
 DELAY_LOOP_VAR01:
 	break
-	djnz [0x01], DELAY_LOOP_VAR01	;@raw=0x09,0x01,0x02,0xA3
-	setup channel=0x14, address=PAL_FADE_18_TO_1D	;@raw=0x08,0x14,0x04,0x5F
+	djnz [0x01], DELAY_LOOP_VAR01
+	setup channel=0x14, address=PAL_FADE_18_TO_1D
 	mov [0x01], 0x00AF
 
 LABEL_02B0:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_02B0	;@raw=0x09,0x01,0x02,0xB0
+	djnz [0x01], LABEL_02B0
 	mov [0x01], 0x00C8
 
 DELAY_LOOP_VAR01_AT_02BD:
 	break
-	djnz [0x01], DELAY_LOOP_VAR01_AT_02BD	;@raw=0x09,0x01,0x02,0xBD
+	djnz [0x01], DELAY_LOOP_VAR01_AT_02BD
 	mov [0x01], 0x00B4
 
 LABEL_02C6:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_02C6	;@raw=0x09,0x01,0x02,0xC6
+	djnz [0x01], LABEL_02C6
 	selectVideoPage 0x00
 	fill page=0x00, color=0x00
 	text id=0x0263, x=6, y=0, color=0x0C ; "Title Animation . Jason Magness
@@ -139,18 +139,18 @@ Bill Heineman      Jason Ferris
 LABEL_02EA:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_02EA	;@raw=0x09,0x01,0x02,0xEA
+	djnz [0x01], LABEL_02EA
 	mov [0x01], 0x00C8
 
 DELAY_LOOP_VAR01_AT_02F7:
 	break
-	djnz [0x01], DELAY_LOOP_VAR01_AT_02F7	;@raw=0x09,0x01,0x02,0xF7
+	djnz [0x01], DELAY_LOOP_VAR01_AT_02F7
 	mov [0x01], 0x00C8
 
 LABEL_0300:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_0300	;@raw=0x09,0x01,0x03,0x00
+	djnz [0x01], LABEL_0300
 	selectVideoPage 0x00
 	fill page=0x00, color=0x00
 	text id=0x0265, x=6, y=0, color=0x0C ; "   Now Go Out Of This World"
@@ -161,12 +161,12 @@ LABEL_0300:
 LABEL_031E:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_031E	;@raw=0x09,0x01,0x03,0x1E
+	djnz [0x01], LABEL_031E
 	mov [0x01], 0x00AA
 
 DELAY_LOOP_VAR01_AT_032B:
 	break
-	djnz [0x01], DELAY_LOOP_VAR01_AT_032B	;@raw=0x09,0x01,0x03,0x2B
+	djnz [0x01], DELAY_LOOP_VAR01_AT_032B
 	GameOver
 	killChannel
 	killChannel
@@ -184,7 +184,7 @@ DELAY_LOOP_VAR01_AT_032B:
 	killChannel
 
 LABEL_035A:
-	load id=0x3E89	;@raw=0x19,0x3E,0x89
+	load id=0x3E89
 	killChannel
 	selectVideoPage 0x03
 	text id=0x0258, x=2, y=20, color=0x0C ; "Design ............... Eric Chahi"
@@ -208,20 +208,20 @@ Exec. Producer. Stephen Clarke-Willson"
 "
 	selectVideoPage 0xFF
 	mov [SCROLL_Y], 0x0000
-	setup channel=0x3C, address=SCROLL_Y_BLIT_DISPATCHER	;@raw=0x08,0x3C,0x0B,0x01
+	setup channel=0x3C, address=SCROLL_Y_BLIT_DISPATCHER
 	mov [PAUSE_SLICES], 0x0002
 	mov [0x01], 0x000A
 
 DELAY_LOOP_VAR01_AT_038A:
 	break
-	djnz [0x01], DELAY_LOOP_VAR01_AT_038A	;@raw=0x09,0x01,0x03,0x8A
-	setup channel=0x14, address=PAL_FADE_18_TO_1D	;@raw=0x08,0x14,0x04,0x5F
+	djnz [0x01], DELAY_LOOP_VAR01_AT_038A
+	setup channel=0x14, address=PAL_FADE_18_TO_1D
 	mov [0x01], 0x00C8
 
 LABEL_0397:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_0397	;@raw=0x09,0x01,0x03,0x97
+	djnz [0x01], LABEL_0397
 	selectVideoPage 0x00
 	text id=0x025C, x=2, y=2, color=0x0C ; "string_025C"
 	text id=0x025E, x=2, y=82, color=0x0C ; "string_025E"
@@ -232,7 +232,7 @@ LABEL_0397:
 LABEL_03BA:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_03BA	;@raw=0x09,0x01,0x03,0xBA
+	djnz [0x01], LABEL_03BA
 	fill page=0x03, color=0x00
 	selectVideoPage 0x03
 	text id=0x0260, x=2, y=45, color=0x0C ; "string_0260"
@@ -243,14 +243,14 @@ LABEL_03BA:
 LABEL_03DA:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_03DA	;@raw=0x09,0x01,0x03,0xDA
+	djnz [0x01], LABEL_03DA
 	fill page=0x00, color=0x00
 	mov [0x01], 0x00C8
 
 LABEL_03EA:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_03EA	;@raw=0x09,0x01,0x03,0xEA
+	djnz [0x01], LABEL_03EA
 	fill page=0x03, color=0x00
 	selectVideoPage 0x03
 	text id=0x0263, x=5, y=50, color=0x0C ; "Title Animation . Jason Magness
@@ -283,19 +283,19 @@ Bill Heineman      Jason Ferris
 LABEL_040E:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_040E	;@raw=0x09,0x01,0x04,0x0E
+	djnz [0x01], LABEL_040E
 	mov [0x01], 0x0028
 
 DELAY_LOOP_VAR01_AT_041B:
 	break
-	djnz [0x01], DELAY_LOOP_VAR01_AT_041B	;@raw=0x09,0x01,0x04,0x1B
+	djnz [0x01], DELAY_LOOP_VAR01_AT_041B
 	fill page=0x00, color=0x00
 	mov [0x01], 0x00BE
 
 LABEL_0427:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_0427	;@raw=0x09,0x01,0x04,0x27
+	djnz [0x01], LABEL_0427
 	sub [SCROLL_Y], 0x000A
 	selectVideoPage 0x03
 	fill page=0x03, color=0x00
@@ -306,7 +306,7 @@ LABEL_0427:
 LABEL_0445:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_0445	;@raw=0x09,0x01,0x04,0x45
+	djnz [0x01], LABEL_0445
 	mov [0x01], 0x0096
 	GameOver
 	killChannel

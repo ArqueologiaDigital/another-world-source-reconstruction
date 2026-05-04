@@ -2,62 +2,62 @@ LABEL_0675:
 	break
 	sub [0xE7], 0x0008
 	sub [0xE8], 0x0008
-	video type=1, offset=CINEMATIC_583, x=159, y=[0xe7], zoom=0x40	;@raw=0x64,0x7B,0x59,0x9F,0xE7
-	jge [0x04], 0x4000, LABEL_068F	;@raw=0x0A,0x43,0x04,0x40,0x00,0x06,0x8F
-	video type=1, offset=CINEMATIC_584, x=179, y=[0xe8], zoom=0x40	;@raw=0x64,0x7B,0xBA,0xB3,0xE8
+	video type=1, offset=CINEMATIC_583, x=159, y=[0xe7], zoom=0x40
+	jge [0x04], 0x4000, LABEL_068F
+	video type=1, offset=CINEMATIC_584, x=179, y=[0xe8], zoom=0x40
 
 LABEL_068F:
-	djnz [0xE6], LABEL_0675	;@raw=0x09,0xE6,0x06,0x75
-	jge [0x04], 0x4000, KILL_CHAN_AT_016E	;@raw=0x0A,0x43,0x04,0x40,0x00,0x01,0x6E
+	djnz [0xE6], LABEL_0675
+	jge [0x04], 0x4000, KILL_CHAN_AT_016E
 	mov [0x00], 0x0040
-	bankSwitch 6;  Capsule Lands at the Bath	;@raw=0x19,0x3E,0x86
+	bankSwitch 6;  Capsule Lands at the Bath
 	killChannel
 	mov [0x02], 0xFFB0
 	killChannel
 
 LABEL_06A7:
-	jge [0x04], 0x4000, KILL_CHAN_AT_016E	;@raw=0x0A,0x43,0x04,0x40,0x00,0x01,0x6E
+	jge [0x04], 0x4000, KILL_CHAN_AT_016E
 	deleteChannels first=0x14, last=0x16
 	killChannel
 
 LABEL_06B3:
-	video type=1, offset=CINEMATIC_458, x=179, y=31	;@raw=0xEF,0x46,0xB3,0x1F
-	video type=1, offset=CINEMATIC_458, x=179, y=62	;@raw=0xEF,0x46,0xB3,0x3E
-	video type=1, offset=CINEMATIC_458, x=179, y=93	;@raw=0xEF,0x46,0xB3,0x5D
+	video type=1, offset=CINEMATIC_458, x=179, y=31
+	video type=1, offset=CINEMATIC_458, x=179, y=62
+	video type=1, offset=CINEMATIC_458, x=179, y=93
 	break
-	jmp LABEL_06B3	;@raw=0x07,0x06,0xB3
+	jmp LABEL_06B3
 LABEL_06C3:
 	db 0x11
 
 LABEL_06C4:
-	video type=1, offset=CINEMATIC_636, x=2, y=186	;@raw=0xF9,0xD8,0x02,0xBA
-	video type=1, offset=CINEMATIC_636, x=2, y=195	;@raw=0xF9,0xD8,0x02,0xC3
+	video type=1, offset=CINEMATIC_636, x=2, y=186
+	video type=1, offset=CINEMATIC_636, x=2, y=195
 	break
-	video type=1, offset=CINEMATIC_636, x=2, y=185	;@raw=0xF9,0xD8,0x02,0xB9
-	video type=1, offset=CINEMATIC_636, x=2, y=194	;@raw=0xF9,0xD8,0x02,0xC2
+	video type=1, offset=CINEMATIC_636, x=2, y=185
+	video type=1, offset=CINEMATIC_636, x=2, y=194
 	break
-	video type=1, offset=CINEMATIC_445, x=3, y=184	;@raw=0x80,0x10,0x03,0xB8
-	video type=1, offset=CINEMATIC_637, x=3, y=185	;@raw=0xAA,0x48,0x03,0xB9
-	video type=1, offset=CINEMATIC_636, x=2, y=193	;@raw=0xF9,0xD8,0x02,0xC1
+	video type=1, offset=CINEMATIC_445, x=3, y=184
+	video type=1, offset=CINEMATIC_637, x=3, y=185
+	video type=1, offset=CINEMATIC_636, x=2, y=193
 	break
-	video type=1, offset=CINEMATIC_637, x=3, y=184	;@raw=0xAA,0x48,0x03,0xB8
-	video type=1, offset=CINEMATIC_636, x=2, y=192	;@raw=0xF9,0xD8,0x02,0xC0
+	video type=1, offset=CINEMATIC_637, x=3, y=184
+	video type=1, offset=CINEMATIC_636, x=2, y=192
 	break
-	video type=1, offset=CINEMATIC_636, x=2, y=191	;@raw=0xF9,0xD8,0x02,0xBF
-	video type=1, offset=CINEMATIC_636, x=2, y=200, zoom=0x40	;@raw=0x68,0x79,0xD8,0x02,0xC8
+	video type=1, offset=CINEMATIC_636, x=2, y=191
+	video type=1, offset=CINEMATIC_636, x=2, y=200, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_636, x=2, y=190	;@raw=0xF9,0xD8,0x02,0xBE
-	video type=1, offset=CINEMATIC_636, x=2, y=199	;@raw=0xF9,0xD8,0x02,0xC7
+	video type=1, offset=CINEMATIC_636, x=2, y=190
+	video type=1, offset=CINEMATIC_636, x=2, y=199
 	break
-	video type=1, offset=CINEMATIC_636, x=2, y=189	;@raw=0xF9,0xD8,0x02,0xBD
-	video type=1, offset=CINEMATIC_636, x=2, y=198	;@raw=0xF9,0xD8,0x02,0xC6
+	video type=1, offset=CINEMATIC_636, x=2, y=189
+	video type=1, offset=CINEMATIC_636, x=2, y=198
 	break
-	video type=1, offset=CINEMATIC_636, x=2, y=188	;@raw=0xF9,0xD8,0x02,0xBC
-	video type=1, offset=CINEMATIC_636, x=2, y=197	;@raw=0xF9,0xD8,0x02,0xC5
+	video type=1, offset=CINEMATIC_636, x=2, y=188
+	video type=1, offset=CINEMATIC_636, x=2, y=197
 	break
-	video type=1, offset=CINEMATIC_636, x=2, y=187	;@raw=0xF9,0xD8,0x02,0xBB
-	video type=1, offset=CINEMATIC_636, x=2, y=196	;@raw=0xF9,0xD8,0x02,0xC4
+	video type=1, offset=CINEMATIC_636, x=2, y=187
+	video type=1, offset=CINEMATIC_636, x=2, y=196
 	break
-	jmp LABEL_06C4	;@raw=0x07,0x06,0xC4
+	jmp LABEL_06C4
 LABEL_071D:
 	db 0x11

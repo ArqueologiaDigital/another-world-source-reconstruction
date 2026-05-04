@@ -2,15 +2,15 @@ LABEL_06EC:
 	db 0x11
 
 LABEL_06ED:
-	call INCREMENT_VAR31	;@raw=0x04,0x06,0xE7
+	call INCREMENT_VAR31
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x40, dst=0xFF
 	break
-	jmp LABEL_06ED	;@raw=0x07,0x06,0xED
+	jmp LABEL_06ED
 
 BLIT_PAGE_00_TO_FF_AND_BREAK:
-	call INCREMENT_VAR31	;@raw=0x04,0x06,0xE7
+	call INCREMENT_VAR31
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
@@ -19,49 +19,49 @@ BLIT_PAGE_00_TO_FF_AND_BREAK:
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 	break
-	jmp LABEL_06ED	;@raw=0x07,0x06,0xED
+	jmp LABEL_06ED
 
 LABEL_0711:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	break
-	jmp LABEL_0711	;@raw=0x07,0x07,0x11
+	jmp LABEL_0711
 
 JUNK__0719:
-	call INCREMENT_VAR31	;@raw=0x04,0x06,0xE7
+	call INCREMENT_VAR31
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x03, dst=0xFF
 	break
-	jmp JUNK__0719	;@raw=0x07,0x07,0x19
+	jmp JUNK__0719
 
 LABEL_0727:
-	setPalette 0x1F	;@raw=0x0B,0x1F,0xFF
+	setPalette 0x1F
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	mov [0xF8], [PAUSE_SLICES]
 	mov [PAUSE_SLICES], 0x0001
-	setPalette 0x02	;@raw=0x0B,0x02,0xFF
+	setPalette 0x02
 	blitFramebuffer 0xFE
 	copyVideoPage src=0x00, dst=0xFF
 	mov [PAUSE_SLICES], [0xF8]
 	break
-	jmp LABEL_06ED	;@raw=0x07,0x06,0xED
+	jmp LABEL_06ED
 
 JUNK__0744:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
-	jg [SCROLL_Y], 0xFF38, LABEL_0753	;@raw=0x0A,0x42,0xF9,0xFF,0x38,0x07,0x53
+	jg [SCROLL_Y], 0xFF38, LABEL_0753
 	add [SCROLL_Y], 0x00C8
 
 LABEL_0753:
-	jl [SCROLL_Y], 0xC8, LABEL_075D	;@raw=0x0A,0x04,0xF9,0xC8,0x07,0x5D
+	jl [SCROLL_Y], 0xC8, LABEL_075D
 	sub [SCROLL_Y], 0x00C8
 
 LABEL_075D:
 	copyVideoPage src=0x80, dst=0xFF
-	jl [SCROLL_Y], 0x00, SCROLL_BLIT_P80_TO_PFF_OFFSET_00C8	;@raw=0x0A,0x04,0xF9,0x00,0x07,0x74
+	jl [SCROLL_Y], 0x00, SCROLL_BLIT_P80_TO_PFF_OFFSET_00C8
 	sub [SCROLL_Y], 0x00C8
 	copyVideoPage src=0x80, dst=0xFF
 	add [SCROLL_Y], 0x00C8
-	jmp LABEL_077F	;@raw=0x07,0x07,0x7F
+	jmp LABEL_077F

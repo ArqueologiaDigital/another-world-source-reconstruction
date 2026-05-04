@@ -1,32 +1,32 @@
 LABEL_1C72:
 	add [0x0A], 0x0001
 	break
-	djnz [0x0B], LABEL_1C72	;@raw=0x09,0x0B,0x1C,0x72
+	djnz [0x0B], LABEL_1C72
 	mov [0x0B], 0x0032
 
 LABEL_1C7F:
 	sub [0x0A], 0x0001
 	break
-	djnz [0x0B], LABEL_1C7F	;@raw=0x09,0x0B,0x1C,0x7F
-	jmp INIT_VARS_A_B_PAL_1	;@raw=0x07,0x1C,0x67
+	djnz [0x0B], LABEL_1C7F
+	jmp INIT_VARS_A_B_PAL_1
 LABEL_1C8B:
 	db 0x11
 
 LABEL_1C8C:
-	je [0x6D], 0x01, SHARED_RET	;@raw=0x0A,0x00,0x6D,0x01,0x1A,0xD9
+	je [0x6D], 0x01, SHARED_RET
 	selectVideoPage 0x03
 	fill page=0x03, color=0x0C
-	video type=1, offset=CINEMATIC_000, x=160, y=100	;@raw=0x88,0xD0,0xA0,0x64
-	call DRAW_CIN_061_HORIZ_THEN_062	;@raw=0x04,0x1D,0x96
-	call DRAW_BG_DOTS_CIN_007_008	;@raw=0x04,0x1F,0x30
-	call DRAW_CIN_6_AND_RET	;@raw=0x04,0x1D,0x12
+	video type=1, offset=CINEMATIC_000, x=160, y=100
+	call DRAW_CIN_061_HORIZ_THEN_062
+	call DRAW_BG_DOTS_CIN_007_008
+	call DRAW_CIN_6_AND_RET
 	selectVideoPage 0xFF
 	ret
 
 LABEL_1CA7:
 	selectVideoPage 0x00
-	call DRAW_CIN_6_27_28_AND_RET	;@raw=0x04,0x1C,0xB4
+	call DRAW_CIN_6_27_28_AND_RET
 	selectVideoPage 0x03
-	call DRAW_CIN_6_27_28_AND_RET	;@raw=0x04,0x1C,0xB4
+	call DRAW_CIN_6_27_28_AND_RET
 	selectVideoPage 0xFF
 	ret

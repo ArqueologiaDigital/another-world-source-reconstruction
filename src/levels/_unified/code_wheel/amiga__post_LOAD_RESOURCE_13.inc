@@ -1,29 +1,29 @@
 LABEL_00E3:
 	selectVideoPage 0xFF
-	setup channel=0x2C, address=PAL_FADE_DOWN_E_TO_8	;@raw=0x08,0x2C,0x01,0xD9
+	setup channel=0x2C, address=PAL_FADE_DOWN_E_TO_8
 	mov [0x03], 0x0028
 
 DELAY_LOOP_VAR03_AT_00ED:
 	break
-	djnz [0x03], DELAY_LOOP_VAR03_AT_00ED	;@raw=0x09,0x03,0x00,0xED
-	setup channel=0x2C, address=PAL_FADE_UP_9_TO_F	;@raw=0x08,0x2C,0x01,0xF1
+	djnz [0x03], DELAY_LOOP_VAR03_AT_00ED
+	setup channel=0x2C, address=PAL_FADE_UP_9_TO_F
 	mov [0x03], 0x000A
 
 DELAY_LOOP_VAR03_AT_00FA:
 	break
-	djnz [0x03], DELAY_LOOP_VAR03_AT_00FA	;@raw=0x09,0x03,0x00,0xFA
+	djnz [0x03], DELAY_LOOP_VAR03_AT_00FA
 	fill page=0x00, color=0x00
 	selectVideoPage 0x00
 	text id=0x0181, x=18, y=80, color=0x02 ; " BY"
 	text id=0x0182, x=15, y=100, color=0x03 ; "ERIC CHAHI"
 	selectVideoPage 0xFF
 	break
-	setPalette 0x1B	;@raw=0x0B,0x1B,0xFF
+	setPalette 0x1B
 	mov [0x03], 0x003C
 
 DELAY_LOOP_VAR03_AT_011A:
 	break
-	djnz [0x03], DELAY_LOOP_VAR03_AT_011A	;@raw=0x09,0x03,0x01,0x1A
+	djnz [0x03], DELAY_LOOP_VAR03_AT_011A
 	break
 	fill page=0x00, color=0x00
 	selectVideoPage 0x00
@@ -33,11 +33,11 @@ DELAY_LOOP_VAR03_AT_011A:
 	selectVideoPage 0xFF
 	mov [0x03], 0x003C
 	and [HACK_VAR_54], 0x0001
-	je [HACK_VAR_54], 0x00, DELAY_LOOP_VAR03_AT_016B	;@raw=0x0A,0x00,0x54,0x00,0x01,0x6B
+	je [HACK_VAR_54], 0x00, DELAY_LOOP_VAR03_AT_016B
 
 DELAY_LOOP_VAR03_AT_0147:
 	break
-	djnz [0x03], DELAY_LOOP_VAR03_AT_0147	;@raw=0x09,0x03,0x01,0x47
+	djnz [0x03], DELAY_LOOP_VAR03_AT_0147
 	break
 	fill page=0x00, color=0x00
 	selectVideoPage 0x00
@@ -50,9 +50,9 @@ DELAY_LOOP_VAR03_AT_0147:
 
 DELAY_LOOP_VAR03_AT_016B:
 	break
-	djnz [0x03], DELAY_LOOP_VAR03_AT_016B	;@raw=0x09,0x03,0x01,0x6B
+	djnz [0x03], DELAY_LOOP_VAR03_AT_016B
 	fill page=0x00, color=0x00
 	break
 	break
-	bankSwitch 1;  Intro Sequence	;@raw=0x19,0x3E,0x81
+	bankSwitch 1;  Intro Sequence
 	killChannel

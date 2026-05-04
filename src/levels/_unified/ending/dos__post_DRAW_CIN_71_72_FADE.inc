@@ -1,11 +1,11 @@
 LABEL_04A1:
 	break
-	video type=1, offset=CINEMATIC_074, x=160, y=100	;@raw=0xA3,0x2A,0xA0,0x64
-	jmp LABEL_04A1	;@raw=0x07,0x04,0xA1
+	video type=1, offset=CINEMATIC_074, x=160, y=100
+	jmp LABEL_04A1
 LABEL_04A9:
 	db 0x06
 
 HANG_DRAWING_CIN_071:
-	video type=1, offset=CINEMATIC_071, x=160, y=100	;@raw=0xA3,0x74,0xA0,0x64
+	video type=1, offset=CINEMATIC_071, x=160, y=100
 	break
-	jmp HANG_DRAWING_CIN_071	;@raw=0x07,0x04,0xAA
+	jmp HANG_DRAWING_CIN_071

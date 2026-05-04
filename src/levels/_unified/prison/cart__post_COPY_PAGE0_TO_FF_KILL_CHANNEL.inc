@@ -1,122 +1,122 @@
 LABEL_8193:
-	jne [0x0A], 0x00, LABEL_82CC	;@raw=0x0A,0x01,0x0A,0x00,0x82,0xCC
+	jne [0x0A], 0x00, LABEL_82CC
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
-	je [0xF8], 0x00, LABEL_81B6	;@raw=0x0A,0x00,0xF8,0x00,0x81,0xB6
-	video type=1, offset=CINEMATIC_186, x=258, y=181, zoom=0x40	;@raw=0x78,0x00,0x34,0x02,0xB5
-	jl [0x01], 0xFA, LABEL_81B6	;@raw=0x0A,0x04,0x01,0xFA,0x81,0xB6
-	video type=1, offset=CINEMATIC_186, x=257, y=181, zoom=0x40	;@raw=0x78,0x00,0x34,0x01,0xB5
+	je [0xF8], 0x00, LABEL_81B6
+	video type=1, offset=CINEMATIC_186, x=258, y=181, zoom=0x40
+	jl [0x01], 0xFA, LABEL_81B6
+	video type=1, offset=CINEMATIC_186, x=257, y=181, zoom=0x40
 
 LABEL_81B6:
-	jl [0x01], 0xF0, LABEL_82CC	;@raw=0x0A,0x04,0x01,0xF0,0x82,0xCC
-	jg [0x01], 0x0104, LABEL_82CC	;@raw=0x0A,0x42,0x01,0x01,0x04,0x82,0xCC
-	jge [0x04], 0x20, LABEL_82CC	;@raw=0x0A,0x03,0x04,0x20,0x82,0xCC
+	jl [0x01], 0xF0, LABEL_82CC
+	jg [0x01], 0x0104, LABEL_82CC
+	jge [0x04], 0x20, LABEL_82CC
 	break
 	jge [0x04], 0x4000, KILL_CHANNEL_LANDING	;@raw=0x0A,0x43,0x04,0x40,0x00,0x02,0x0F
-	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK	;@raw=0x08,0x3C,0x06,0xFB
+	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
 	break
 	jge [0x04], 0x4000, KILL_CHANNEL_LANDING	;@raw=0x0A,0x43,0x04,0x40,0x00,0x02,0x0F
 	mov [0x0A], 0x0001
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_172, x=253, y=181	;@raw=0xC3,0xEC,0xFD,0xB5
+	video type=1, offset=CINEMATIC_172, x=253, y=181
 	selectVideoPage 0xFF
 	unfreezeChannels first=0x00, last=0x3A
 	copyVideoPage src=0x00, dst=0x03
 	fill page=0x00, color=0x05
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_173, x=160, y=100	;@raw=0xDB,0x37,0xA0,0x64
-	video type=1, offset=CINEMATIC_174, x=160, y=100	;@raw=0xDB,0x25,0xA0,0x64
-	video type=1, offset=CINEMATIC_175, x=160, y=100	;@raw=0xDA,0xD7,0xA0,0x64
+	video type=1, offset=CINEMATIC_173, x=160, y=100
+	video type=1, offset=CINEMATIC_174, x=160, y=100
+	video type=1, offset=CINEMATIC_175, x=160, y=100
 	selectVideoPage 0xFF
 	mov [PAUSE_SLICES], 0x0001
 	break
-	setPalette 0x15	;@raw=0x0B,0x15,0xFF
+	setPalette 0x15
 	break
-	setPalette 0x14	;@raw=0x0B,0x14,0xFF
+	setPalette 0x14
 	break
-	setPalette 0x13	;@raw=0x0B,0x13,0xFF
+	setPalette 0x13
 	break
-	setPalette 0x12	;@raw=0x0B,0x12,0xFF
+	setPalette 0x12
 	break
-	setPalette 0x06	;@raw=0x0B,0x06,0xFF
-	video type=1, offset=CINEMATIC_176, x=160, y=100	;@raw=0xDB,0xB1,0xA0,0x64
-	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK	;@raw=0x08,0x3C,0x06,0xFB
+	setPalette 0x06
+	video type=1, offset=CINEMATIC_176, x=160, y=100
+	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
 	break
 	fill page=0x00, color=0x05
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_173, x=160, y=100	;@raw=0xDB,0x37,0xA0,0x64
-	video type=1, offset=CINEMATIC_174, x=160, y=100	;@raw=0xDB,0x25,0xA0,0x64
+	video type=1, offset=CINEMATIC_173, x=160, y=100
+	video type=1, offset=CINEMATIC_174, x=160, y=100
 	selectVideoPage 0xFF
-	video type=1, offset=CINEMATIC_176, x=160, y=100	;@raw=0xDB,0xB1,0xA0,0x64
+	video type=1, offset=CINEMATIC_176, x=160, y=100
 	break
 	mov [PAUSE_SLICES], 0x0004
 	mov [0xC8], 0x0005
 
 LABEL_8240:
-	video type=1, offset=CINEMATIC_175, x=160, y=100	;@raw=0xDA,0xD7,0xA0,0x64
-	video type=1, offset=CINEMATIC_177, x=160, y=100	;@raw=0xDB,0xA7,0xA0,0x64
+	video type=1, offset=CINEMATIC_175, x=160, y=100
+	video type=1, offset=CINEMATIC_177, x=160, y=100
 	break
-	djnz [0xC8], LABEL_8240	;@raw=0x09,0xC8,0x82,0x40
+	djnz [0xC8], LABEL_8240
 	mov [0xC8], 0x0005
 
 LABEL_8251:
-	video type=1, offset=CINEMATIC_175, x=160, y=100	;@raw=0xDA,0xD7,0xA0,0x64
-	video type=1, offset=CINEMATIC_176, x=160, y=100	;@raw=0xDB,0xB1,0xA0,0x64
+	video type=1, offset=CINEMATIC_175, x=160, y=100
+	video type=1, offset=CINEMATIC_176, x=160, y=100
 	break
-	djnz [0xC8], LABEL_8251	;@raw=0x09,0xC8,0x82,0x51
+	djnz [0xC8], LABEL_8251
 	mov [0xC8], 0x0005
 
 LABEL_8262:
-	video type=1, offset=CINEMATIC_175, x=160, y=100	;@raw=0xDA,0xD7,0xA0,0x64
-	video type=1, offset=CINEMATIC_177, x=160, y=100	;@raw=0xDB,0xA7,0xA0,0x64
+	video type=1, offset=CINEMATIC_175, x=160, y=100
+	video type=1, offset=CINEMATIC_177, x=160, y=100
 	break
-	djnz [0xC8], LABEL_8262	;@raw=0x09,0xC8,0x82,0x62
-	video type=1, offset=CINEMATIC_178, x=160, y=100	;@raw=0xD8,0x5B,0xA0,0x64
-	video type=1, offset=CINEMATIC_177, x=160, y=100	;@raw=0xDB,0xA7,0xA0,0x64
+	djnz [0xC8], LABEL_8262
+	video type=1, offset=CINEMATIC_178, x=160, y=100
+	video type=1, offset=CINEMATIC_177, x=160, y=100
 	break
 	play id=0x0055, freq=0x14, vol=0x40, channel=0x00
-	video type=1, offset=CINEMATIC_179, x=160, y=100	;@raw=0xD8,0xD9,0xA0,0x64
-	video type=1, offset=CINEMATIC_176, x=160, y=100	;@raw=0xDB,0xB1,0xA0,0x64
+	video type=1, offset=CINEMATIC_179, x=160, y=100
+	video type=1, offset=CINEMATIC_176, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_180, x=160, y=100	;@raw=0xD9,0x0F,0xA0,0x64
-	video type=1, offset=CINEMATIC_176, x=160, y=100	;@raw=0xDB,0xB1,0xA0,0x64
+	video type=1, offset=CINEMATIC_180, x=160, y=100
+	video type=1, offset=CINEMATIC_176, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_181, x=160, y=100	;@raw=0xD9,0x39,0xA0,0x64
-	video type=1, offset=CINEMATIC_176, x=160, y=100	;@raw=0xDB,0xB1,0xA0,0x64
+	video type=1, offset=CINEMATIC_181, x=160, y=100
+	video type=1, offset=CINEMATIC_176, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_182, x=160, y=100	;@raw=0xD9,0x77,0xA0,0x64
+	video type=1, offset=CINEMATIC_182, x=160, y=100
 	break
-	setPalette 0x08	;@raw=0x0B,0x08,0xFF
-	video type=1, offset=CINEMATIC_183, x=160, y=100	;@raw=0xD9,0xE9,0xA0,0x64
+	setPalette 0x08
+	video type=1, offset=CINEMATIC_183, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_184, x=160, y=100	;@raw=0xDA,0x56,0xA0,0x64
+	video type=1, offset=CINEMATIC_184, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_185, x=160, y=100	;@raw=0xDA,0xA1,0xA0,0x64
+	video type=1, offset=CINEMATIC_185, x=160, y=100
 	mov [0xC8], 0x0009
 
 DELAY_LOOP_VARC8:
 	break
-	djnz [0xC8], DELAY_LOOP_VARC8	;@raw=0x09,0xC8,0x82,0xB3
-	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK	;@raw=0x08,0x3C,0x06,0xFB
+	djnz [0xC8], DELAY_LOOP_VARC8
+	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
 	break
 	freezeChannels first=0x00, last=0x3A
 	copyVideoPage src=0x03, dst=0x00
 	add [0x68], 0x0014
 	break
-	setPalette 0x02	;@raw=0x0B,0x02,0xFF
+	setPalette 0x02
 
 LABEL_82CC:
 	break
-	jmp LABEL_8193	;@raw=0x07,0x81,0x93
+	jmp LABEL_8193
 LABEL_82D0:
 	db 0x11
 
 LABEL_82D1:
-	je [0x65], 0x05, SHARED_RET	;@raw=0x0A,0x00,0x65,0x05,0x54,0x3D
+	je [0x65], 0x05, SHARED_RET
 	fill page=0x03, color=0x00
 	fill page=0x00, color=0x00
 	selectVideoPage 0x03
-	call DRAW_CIN_SEQ_085_085_086	;@raw=0x04,0x4B,0x7A
+	call DRAW_CIN_SEQ_085_085_086
 	selectVideoPage 0xFF
 	mov [SCROLL_Y], 0x0000
 	copyVideoPage src=0x83, dst=0x00
@@ -129,15 +129,15 @@ LABEL_82D1:
 	copyVideoPage src=0x80, dst=0x03
 	mov [0x65], 0x0005
 	selectVideoPage 0x03
-	video type=1, offset=CINEMATIC_087, x=160, y=100	;@raw=0xD0,0xC7,0xA0,0x64
-	video type=1, offset=CINEMATIC_088, x=160, y=100	;@raw=0xD1,0x4B,0xA0,0x64
-	video type=1, offset=CINEMATIC_089, x=160, y=100	;@raw=0xD1,0xDF,0xA0,0x64
-	video type=1, offset=CINEMATIC_089, x=0, y=100	;@raw=0xD1,0xDF,0x00,0x64
+	video type=1, offset=CINEMATIC_087, x=160, y=100
+	video type=1, offset=CINEMATIC_088, x=160, y=100
+	video type=1, offset=CINEMATIC_089, x=160, y=100
+	video type=1, offset=CINEMATIC_089, x=0, y=100
 	selectVideoPage 0xFF
 	ret
 
 LABEL_831C:
-	setup channel=0x3B, address=LABEL_8193	;@raw=0x08,0x3B,0x81,0x93
+	setup channel=0x3B, address=LABEL_8193
 	mov [0x42], 0x00BC
 	mov [0x43], 0x0FA0
 	mov [0x46], 0x0064
@@ -149,13 +149,13 @@ LABEL_831C:
 	mov [0x50], 0x05DC
 	mov [0x51], [0x44]
 	mov [0x52], [0x40]
-	setup channel=0x29, address=LABEL_2BF4	;@raw=0x08,0x29,0x2B,0xF4
-	je [0x66], 0x01, VAR66_RANGE_DISPATCH_BY_VAR01	;@raw=0x0A,0x00,0x66,0x01,0x88,0xB3
-	call LABEL_1D63	;@raw=0x04,0x1D,0x63
-	setup channel=0x34, address=HANG_DRAW_CIN_275	;@raw=0x08,0x34,0x78,0xA5
-	je [0x65], 0x01, COPY_PAGE3_TO_PAGE0	;@raw=0x0A,0x00,0x65,0x01,0x83,0x6D
+	setup channel=0x29, address=LABEL_2BF4
+	je [0x66], 0x01, VAR66_RANGE_DISPATCH_BY_VAR01
+	call LABEL_1D63
+	setup channel=0x34, address=HANG_DRAW_CIN_275
+	je [0x65], 0x01, COPY_PAGE3_TO_PAGE0
 	selectVideoPage 0x00
-	call FILL_AND_DRAW_CIN_24_28	;@raw=0x04,0x4C,0x32
+	call FILL_AND_DRAW_CIN_24_28
 	selectVideoPage 0xFF
 	mov [0x65], 0x0001
-	jmp LABEL_8370	;@raw=0x07,0x83,0x70
+	jmp LABEL_8370

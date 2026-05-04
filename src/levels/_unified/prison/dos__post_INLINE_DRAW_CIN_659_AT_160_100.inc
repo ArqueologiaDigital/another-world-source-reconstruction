@@ -1,5 +1,5 @@
 LABEL_4F1E:
 	break
-	jmp LABEL_4DDA	;@raw=0x07,0x4D,0xDA
+	jmp LABEL_4DDA
 LABEL_4F22:
 	db 0x11

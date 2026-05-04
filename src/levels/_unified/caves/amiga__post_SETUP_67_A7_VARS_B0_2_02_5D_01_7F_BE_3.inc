@@ -1,5 +1,5 @@
 LABEL_41D8:
-	call SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1	;@raw=0x04,0x41,0xAA
+	call SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1
 	mov [0x01], 0x0014
 	mov [0x02], 0x007D
 	mov [0x63], 0x0001
@@ -20,7 +20,7 @@ LABEL_41D8:
 	ret
 
 LABEL_421B:
-	call SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1	;@raw=0x04,0x41,0xAA
+	call SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1
 	or [0xB1], 0x0004
 	mov [0x01], 0x008C
 	mov [0x02], 0x00AC
@@ -42,7 +42,7 @@ LABEL_424B:
 	mov [0x7C], 0x0018
 	mov [0x7D], 0x0831
 	mov [0x7E], 0x2710
-	setup channel=0x27, address=LABEL_534D	;@raw=0x08,0x27,0x53,0x4D
+	setup channel=0x27, address=LABEL_534D
 	ret
 
 LABEL_426C:
@@ -53,7 +53,7 @@ LABEL_426C:
 	mov [0x6C], 0x0040
 	mov [0x6D], 0x0831
 	mov [0x6E], 0x2710
-	setup channel=0x23, address=GAME_LOOP_HERO_DISPATCH_LAST	;@raw=0x08,0x23,0x53,0x8F
+	setup channel=0x23, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
 LABEL_428D:
@@ -64,7 +64,7 @@ LABEL_428D:
 	mov [0x74], 0x2008
 	mov [0x75], 0x0863
 	mov [0x76], 0x0064
-	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST	;@raw=0x08,0x25,0x53,0x8F
+	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
 LABEL_42AD:
@@ -75,7 +75,7 @@ LABEL_42AD:
 	mov [0x7C], 0x0028
 	mov [0x7D], 0x0811
 	mov [0x7E], 0x0032
-	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST	;@raw=0x08,0x27,0x53,0x8F
+	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
 LABEL_42CD:
@@ -86,7 +86,7 @@ LABEL_42CD:
 	mov [0x7C], 0x0030
 	mov [0x7D], 0x0811
 	mov [0x7E], 0x0064
-	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST	;@raw=0x08,0x27,0x53,0x8F
+	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
 LABEL_42EC:
@@ -97,7 +97,7 @@ LABEL_42EC:
 	mov [0x74], 0x0008
 	mov [0x75], 0x0821
 	mov [0x76], 0x0064
-	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST	;@raw=0x08,0x25,0x53,0x8F
+	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
 LABEL_430C:
@@ -108,7 +108,7 @@ LABEL_430C:
 	mov [0x7C], 0x0020
 	mov [0x7D], 0x0841
 	mov [0x7E], 0x2710
-	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST	;@raw=0x08,0x27,0x53,0x8F
+	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
 LABEL_432D:
@@ -119,7 +119,7 @@ LABEL_432D:
 	mov [0x74], 0x0028
 	mov [0x75], 0x0831
 	mov [0x76], 0x03E8
-	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST	;@raw=0x08,0x25,0x53,0x8F
+	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
 LABEL_434E:
@@ -131,7 +131,7 @@ LABEL_434E:
 	mov [0x74], 0x4010
 	mov [0x75], 0x0823
 	mov [0x76], 0x0064
-	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST	;@raw=0x08,0x25,0x53,0x8F
+	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
 LABEL_4372:
@@ -143,7 +143,7 @@ LABEL_4372:
 	mov [0x7C], 0x4010
 	mov [0x7D], 0x0830
 	mov [0x7E], 0x2710
-	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST	;@raw=0x08,0x27,0x53,0x8F
+	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
 LABEL_4396:
@@ -156,7 +156,7 @@ LABEL_4396:
 	or [0x74], 0x4000
 	mov [0x75], 0x0863
 	mov [0x76], 0x2710
-	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST	;@raw=0x08,0x25,0x53,0x8F
+	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
 LABEL_43BE:
@@ -169,7 +169,7 @@ LABEL_43BE:
 	or [0x7C], 0x4000
 	mov [0x7D], 0x0811
 	mov [0x7E], 0x2710
-	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST	;@raw=0x08,0x27,0x53,0x8F
+	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
 LABEL_43E6:
@@ -180,7 +180,7 @@ LABEL_43E6:
 	mov [0x6C], 0x0000
 	mov [0x6D], 0x0811
 	mov [0x6E], 0x2710
-	setup channel=0x23, address=INIT_VARS_29_07_08	;@raw=0x08,0x23,0x45,0xCB
+	setup channel=0x23, address=INIT_VARS_29_07_08
 	ret
 
 LABEL_4407:
@@ -191,5 +191,5 @@ LABEL_4407:
 	mov [0x6C], 0x0001
 	mov [0x6D], 0x0000
 	mov [0x6E], 0x2710
-	setup channel=0x23, address=LABEL_04A3	;@raw=0x08,0x23,0x04,0xA3
+	setup channel=0x23, address=LABEL_04A3
 	ret

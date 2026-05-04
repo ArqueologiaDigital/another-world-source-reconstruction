@@ -1,49 +1,49 @@
 LABEL_34F6:
 	sub [0xE9], 0x0008
 	mov [0x21], [0xE9]
-	call LABEL_351C	;@raw=0x04,0x35,0x1C
+	call LABEL_351C
 	break
-	djnz [0xE8], LABEL_34F6	;@raw=0x09,0xE8,0x34,0xF6
+	djnz [0xE8], LABEL_34F6
 	mov [0xE8], 0x002F
 
 LABEL_3509:
 	add [0xE9], 0x0008
 	mov [0x21], [0xE9]
-	call LABEL_351C	;@raw=0x04,0x35,0x1C
+	call LABEL_351C
 	break
-	djnz [0xE8], LABEL_3509	;@raw=0x09,0xE8,0x35,0x09
-	jmp INLINE_SET_VARE8_TO_2F	;@raw=0x07,0x34,0xF2
+	djnz [0xE8], LABEL_3509
+	jmp INLINE_SET_VARE8_TO_2F
 LABEL_351B:
 	db 0x11
 
 LABEL_351C:
-	video type=1, offset=CINEMATIC_013, x=[0x21], y=100, zoom=0x40	;@raw=0x58,0x28,0x32,0x21,0x64
+	video type=1, offset=CINEMATIC_013, x=[0x21], y=100, zoom=0x40
 	sub [0x21], 0x0064
-	video type=1, offset=CINEMATIC_013, x=[0x21], y=100, zoom=0x40	;@raw=0x58,0x28,0x32,0x21,0x64
+	video type=1, offset=CINEMATIC_013, x=[0x21], y=100, zoom=0x40
 	add [0x21], 0x00AA
-	video type=1, offset=CINEMATIC_013, x=[0x21], y=100, zoom=0x40	;@raw=0x58,0x28,0x32,0x21,0x64
+	video type=1, offset=CINEMATIC_013, x=[0x21], y=100, zoom=0x40
 	ret
 LABEL_3534:
 	db 0x11
 
 LABEL_3535:
-	setup channel=0x06, address=INIT_VARS_EB_EC_ED	;@raw=0x08,0x06,0x27,0x47
+	setup channel=0x06, address=INIT_VARS_EB_EC_ED
 	selectVideoPage 0x03
-	video type=1, offset=CINEMATIC_800, x=160, y=100	;@raw=0xC7,0x4F,0xA0,0x64
+	video type=1, offset=CINEMATIC_800, x=160, y=100
 	selectVideoPage 0xFF
-	video type=1, offset=CINEMATIC_801, x=160, y=100	;@raw=0xC5,0x6C,0xA0,0x64
+	video type=1, offset=CINEMATIC_801, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_802, x=160, y=100	;@raw=0xC5,0x95,0xA0,0x64
+	video type=1, offset=CINEMATIC_802, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_803, x=160, y=100	;@raw=0xC5,0xCB,0xA0,0x64
+	video type=1, offset=CINEMATIC_803, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_804, x=160, y=100	;@raw=0xC7,0x61,0xA0,0x64
+	video type=1, offset=CINEMATIC_804, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_805, x=160, y=100	;@raw=0xC7,0x7C,0xA0,0x64
+	video type=1, offset=CINEMATIC_805, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_804, x=160, y=100	;@raw=0xC7,0x61,0xA0,0x64
+	video type=1, offset=CINEMATIC_804, x=160, y=100
 	selectVideoPage 0x03
-	video type=1, offset=CINEMATIC_806, x=169, y=136	;@raw=0xC7,0x6C,0xA9,0x88
-	video type=1, offset=CINEMATIC_806, x=169, y=160	;@raw=0xC7,0x6C,0xA9,0xA0
+	video type=1, offset=CINEMATIC_806, x=169, y=136
+	video type=1, offset=CINEMATIC_806, x=169, y=160
 	selectVideoPage 0xFF
 	killChannel

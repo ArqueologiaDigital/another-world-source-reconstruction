@@ -277,14 +277,14 @@ COMMON_VIDEO_301		EQU 0x1C78
 	org 0x0000
 
 LABEL_0000:
-	call CLEAR_PAGES_1_2_AND_BLIT	;@raw=0x04,0x0B,0x35
-	setup channel=0x3C, address=BLITTER_LOOP_COPY_PAGE_00	;@raw=0x08,0x3C,0x0A,0xCC
+	call CLEAR_PAGES_1_2_AND_BLIT
+	setup channel=0x3C, address=BLITTER_LOOP_COPY_PAGE_00
 	mov [PAUSE_SLICES], 0x0004
 	break
-	song id=0x0000, delay=0x0000, pos=0x00	;@raw=0x1A,0x00,0x00,0x00,0x00,0x00
-	call PRELOAD_RESOURCES_8_TO_1	;@raw=0x04,0x00,0x32
-	call LIKELY_A_COPY_PROTECTION_MECHANISM	;@raw=0x04,0x00,0x25
-	setup channel=0x1E, address=LABEL_0662	;@raw=0x08,0x1E,0x06,0x62
+	song id=0x0000, delay=0x0000, pos=0x00
+	call PRELOAD_RESOURCES_8_TO_1
+	call LIKELY_A_COPY_PROTECTION_MECHANISM
+	setup channel=0x1E, address=LABEL_0662
 	killChannel
 	copyVideoPage src=0x00, dst=0x03
 	killChannel
