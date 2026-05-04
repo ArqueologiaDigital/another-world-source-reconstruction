@@ -61,10 +61,10 @@ LABEL_0043:
 	mov [0x06], [0x0E]
 
 LABEL_004C:
-	jne [0x05], 0x05, LABEL_0055
+	jne [0x05], 0x05, LOAD_VAR10_TO_VAR06
 	mov [0x06], [0x0F]
 
-LABEL_0055:
+LOAD_VAR10_TO_VAR06:
 	jne [0x05], 0x06, LOAD_VAR11_TO_VAR06
 	mov [0x06], [0x10]
 
@@ -317,11 +317,11 @@ LABEL_02BB:
 	ret
 
 LABEL_02C5:
-	jne [0x22], 0x05, LABEL_02CF
+	jne [0x22], 0x05, SAVE_HASH_VAR1D_TO_VAR10
 	mov [0x0F], [0x1D]
 	ret
 
-LABEL_02CF:
+SAVE_HASH_VAR1D_TO_VAR10:
 	jne [0x22], 0x06, SAVE_HASH_VAR1D_TO_VAR11
 	mov [0x10], [0x1D]
 	ret
@@ -719,11 +719,11 @@ LABEL_07C1:
 	db 0x11
 
 LABEL_07C2:
-	jne [LAST_KEYCHAR], 0x0D, LABEL_07CD
+	jne [LAST_KEYCHAR], 0x0D, HANDLE_BACKSPACE_KEY
 	mov [0x06], 0x0063
 	ret
 
-LABEL_07CD:
+HANDLE_BACKSPACE_KEY:
 	jne [LAST_KEYCHAR], 0x08, MAP_KEY_A_TO_Z_TO_INDEX
 	mov [0x06], 0x0062
 	ret
@@ -851,11 +851,11 @@ LABEL_0905:
 	ret
 
 LABEL_092A:
-	jne [0x06], 0x0C, LABEL_0937
+	jne [0x06], 0x0C, DRAW_LETTER_D_AT_X23
 	text id=0x012F, x=23, y=80, color=0x04 ; "C"
 	ret
 
-LABEL_0937:
+DRAW_LETTER_D_AT_X23:
 	jne [0x06], 0x0D, DRAW_LETTER_F_AT_X23
 	text id=0x0130, x=23, y=80, color=0x04 ; "D"
 	ret
@@ -911,11 +911,11 @@ LABEL_09B9:
 	ret
 
 LABEL_09C6:
-	jne [0x06], 0x0C, LABEL_09D3
+	jne [0x06], 0x0C, DRAW_LETTER_D_AT_X24
 	text id=0x012F, x=24, y=80, color=0x04 ; "C"
 	ret
 
-LABEL_09D3:
+DRAW_LETTER_D_AT_X24:
 	jne [0x06], 0x0D, DRAW_LETTER_F_AT_X24
 	text id=0x0130, x=24, y=80, color=0x04 ; "D"
 	ret
@@ -971,11 +971,11 @@ LABEL_0A55:
 	ret
 
 LABEL_0A62:
-	jne [0x06], 0x0C, LABEL_0A6F
+	jne [0x06], 0x0C, DRAW_LETTER_D_AT_X25
 	text id=0x012F, x=25, y=80, color=0x04 ; "C"
 	ret
 
-LABEL_0A6F:
+DRAW_LETTER_D_AT_X25:
 	jne [0x06], 0x0D, DRAW_LETTER_F_AT_X25
 	text id=0x0130, x=25, y=80, color=0x04 ; "D"
 	ret
@@ -1031,11 +1031,11 @@ LABEL_0AF1:
 	ret
 
 LABEL_0AFE:
-	jne [0x06], 0x0C, LABEL_0B0B
+	jne [0x06], 0x0C, DRAW_LETTER_D_AT_X26
 	text id=0x012F, x=26, y=80, color=0x04 ; "C"
 	ret
 
-LABEL_0B0B:
+DRAW_LETTER_D_AT_X26:
 	jne [0x06], 0x0D, DRAW_LETTER_F_AT_X26
 	text id=0x0130, x=26, y=80, color=0x04 ; "D"
 	ret

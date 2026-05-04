@@ -15322,7 +15322,7 @@ LABEL_94BC:
 	call JUNK__9503
 	ret
 
-LABEL_94EB:
+DRAW_HERO_Y_PLUS_E:
 	add [0x08], 0x000E
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	sub [0x08], 0x000E
@@ -15344,7 +15344,7 @@ LABEL_9509:
 
 LABEL_950F:
 	jne [HACK_VAR_67], [0x10], LABEL_8287
-	call LABEL_94EB
+	call DRAW_HERO_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0x27,0x07,0x08
 	call LABEL_8181
 	ret
@@ -15352,7 +15352,7 @@ LABEL_950F:
 LABEL_9521:
 	jne [HACK_VAR_67], [0x10], LABEL_8287
 	sub [0x07], 0x0001
-	call LABEL_94EB
+	call DRAW_HERO_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_289, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x21,0x92,0x07,0x08
 	sub [0x08], 0x0001
 	call LABEL_81AF
@@ -15362,21 +15362,21 @@ LABEL_9521:
 
 LABEL_9543:
 	jne [HACK_VAR_67], [0x10], LABEL_8287
-	call LABEL_94EB
+	call DRAW_HERO_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0x27,0x07,0x08
 	call LABEL_81E1
 	ret
 
 LABEL_9555:
 	jne [HACK_VAR_67], [0x10], LABEL_8287
-	call LABEL_94EB
+	call DRAW_HERO_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0x27,0x07,0x08
 	call LABEL_81AF
 	ret
 
 LABEL_9567:
 	jne [HACK_VAR_67], [0x10], LABEL_8287
-	call LABEL_94EB
+	call DRAW_HERO_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0x27,0x07,0x08
 	add [0x08], 0x000D
 	je [0x0D], 0x00, LABEL_9585
@@ -15399,7 +15399,7 @@ LABEL_958D:
 LABEL_959C:
 	jne [HACK_VAR_67], [0x10], LABEL_8287
 	sub [0x07], 0x0001
-	call LABEL_94EB
+	call DRAW_HERO_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_289, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x21,0x92,0x07,0x08
 	sub [0x08], 0x0001
 	call LABEL_8201
@@ -15409,7 +15409,7 @@ LABEL_959C:
 
 LABEL_95BE:
 	jne [HACK_VAR_67], [0x10], LABEL_8287
-	call LABEL_94EB
+	call DRAW_HERO_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0x27,0x07,0x08
 	call LABEL_8201
 	ret
@@ -15421,7 +15421,7 @@ LABEL_95D0:
 	video type=0, offset=COMMON_VIDEO_253, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x12,0xB8,0x07,0x08
 	add [0x07], 0x0004
 	sub [0x08], 0x000D
-	call LABEL_94EB
+	call DRAW_HERO_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0x27,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_8EC7
@@ -15430,7 +15430,7 @@ LABEL_95D0:
 
 LABEL_95FF:
 	jne [HACK_VAR_67], [0x10], LABEL_8287
-	call LABEL_94EB
+	call DRAW_HERO_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0x27,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_8EC7
@@ -15442,7 +15442,7 @@ LABEL_9619:
 	add [0x08], 0x000D
 	video type=1, offset=CINEMATIC_138, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x1B,0x02,0x07,0x08
 	sub [0x08], 0x000D
-	call LABEL_94EB
+	call DRAW_HERO_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0x27,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_8EC7
@@ -15455,7 +15455,7 @@ LABEL_9640:
 	add [0x08], 0x000D
 	video type=1, offset=CINEMATIC_137, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x1B,0x1A,0x07,0x08
 	sub [0x08], 0x000D
-	call LABEL_94EB
+	call DRAW_HERO_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_289, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x21,0x92,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_8EB1

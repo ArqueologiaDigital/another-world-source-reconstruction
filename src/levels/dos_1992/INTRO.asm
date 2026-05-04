@@ -3754,10 +3754,10 @@ LABEL_1FBA:
 	play id=0x000B, freq=0x14, vol=0x3F, channel=0x02
 
 LABEL_1FC6:
-	jne [0x1E], 0x01, LABEL_1FD2
+	jne [0x1E], 0x01, PLAY_FX_PHASE_2_FREQ_18
 	play id=0x000B, freq=0x16, vol=0x3F, channel=0x02
 
-LABEL_1FD2:
+PLAY_FX_PHASE_2_FREQ_18:
 	jne [0x1E], 0x02, PLAY_FX_PHASE_3_FREQ_18
 	play id=0x000B, freq=0x12, vol=0x3F, channel=0x02
 

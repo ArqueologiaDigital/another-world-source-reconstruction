@@ -11218,7 +11218,7 @@ LABEL_69E6:
 	call LABEL_666C
 	killChannel
 
-LABEL_6A1A:
+PROJECT_POS_VAR_B8_PLUS_7:
 	mov [0x21], [0x01]
 	add [0xB8], 0x0007
 	mov [0x22], [0x02]
@@ -11409,23 +11409,23 @@ LABEL_6C5C:
 
 LABEL_6C73:
 	break
-	call LABEL_6A1A
+	call PROJECT_POS_VAR_B8_PLUS_7
 	video type=1, offset=CINEMATIC_069, x=[0x21], y=[0x22], zoom=0x40	;@raw=0x54,0x0E,0xD1,0x21,0x22
 	jne [HERO_POS_LEFT_RIGHT], 0x00, LABEL_6CD4
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_6CD4
 	je [HERO_ACTION], 0x00, LABEL_6CD4
 	break
-	call LABEL_6A1A
+	call PROJECT_POS_VAR_B8_PLUS_7
 	video type=1, offset=CINEMATIC_070, x=[0x21], y=[0x22], zoom=0x40	;@raw=0x54,0x0E,0xEB,0x21,0x22
 	je [HERO_ACTION], 0x00, LABEL_6CD4
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_6CD4
 	break
-	call LABEL_6A1A
+	call PROJECT_POS_VAR_B8_PLUS_7
 	video type=1, offset=CINEMATIC_071, x=[0x21], y=[0x22], zoom=0x40	;@raw=0x54,0x0F,0x05,0x21,0x22
 	je [HERO_ACTION], 0x00, LABEL_6CD4
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_6CD4
 	break
-	call LABEL_6A1A
+	call PROJECT_POS_VAR_B8_PLUS_7
 	video type=1, offset=CINEMATIC_072, x=[0x21], y=[0x22], zoom=0x40	;@raw=0x54,0x0F,0x0B,0x21,0x22
 	je [HERO_ACTION], 0x00, LABEL_6CD4
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_6CD4
@@ -11434,7 +11434,7 @@ LABEL_6C73:
 LABEL_6CD4:
 	break
 	sub [0x06], 0x0032
-	call LABEL_6A1A
+	call PROJECT_POS_VAR_B8_PLUS_7
 	mov [0x90], [0x21]
 	mov [0x91], [0x22]
 	mov [0x88], 0x0064

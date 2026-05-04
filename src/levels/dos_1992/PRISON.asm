@@ -10824,7 +10824,7 @@ LABEL_632F:
 LABEL_633B:
 	jne [HACK_VAR_67], [0x10], LABEL_533A
 	call LABEL_5BC6
-	call LABEL_65C4
+	call DRAW_SPRITE_236_239_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_285, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x20,0x99,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_5363
@@ -10837,7 +10837,7 @@ LABEL_6358:
 	sub [0x08], 0x0001
 	call LABEL_5BE4
 	add [0x08], 0x0001
-	call LABEL_65C4
+	call DRAW_SPRITE_236_239_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_286, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x21,0x5D,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_5379
@@ -10848,7 +10848,7 @@ LABEL_6358:
 LABEL_6385:
 	jne [HACK_VAR_67], [0x10], LABEL_533A
 	call LABEL_5C02
-	call LABEL_65C4
+	call DRAW_SPRITE_236_239_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_285, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x20,0x99,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_5363
@@ -10858,7 +10858,7 @@ LABEL_6385:
 LABEL_63A2:
 	jne [HACK_VAR_67], [0x10], LABEL_533A
 	call LABEL_5BE4
-	call LABEL_65C4
+	call DRAW_SPRITE_236_239_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_285, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x20,0x99,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_5363
@@ -10873,7 +10873,7 @@ LABEL_63BF:
 	sub [0x08], 0x000D
 
 LABEL_63D6:
-	call LABEL_65C4
+	call DRAW_SPRITE_236_239_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_285, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x20,0x99,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_5379
@@ -10892,7 +10892,7 @@ LABEL_63F9:
 	sub [0x08], 0x0001
 	video type=0, offset=COMMON_VIDEO_287, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x21,0x8A,0x07,0x08
 	add [0x08], 0x0001
-	call LABEL_65C4
+	call DRAW_SPRITE_236_239_Y_PLUS_D
 	video type=1, offset=CINEMATIC_349, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x30,0x65,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_5379
@@ -10903,7 +10903,7 @@ LABEL_63F9:
 LABEL_6428:
 	jne [HACK_VAR_67], [0x10], LABEL_533A
 	video type=0, offset=COMMON_VIDEO_287, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x21,0x8A,0x07,0x08
-	call LABEL_65C4
+	call DRAW_SPRITE_236_239_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_285, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x20,0x99,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_5363
@@ -10917,7 +10917,7 @@ LABEL_6447:
 	video type=0, offset=COMMON_VIDEO_275, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x19,0x09,0x07,0x08
 	sub [0x07], 0x0004
 	sub [0x08], 0x000D
-	call LABEL_65C4
+	call DRAW_SPRITE_236_239_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_285, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x20,0x99,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_538F
@@ -10926,7 +10926,7 @@ LABEL_6447:
 
 LABEL_6476:
 	jne [HACK_VAR_67], [0x10], LABEL_533A
-	call LABEL_65C4
+	call DRAW_SPRITE_236_239_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_285, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x20,0x99,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_538F
@@ -10938,7 +10938,7 @@ LABEL_6490:
 	add [0x08], 0x000D
 	video type=1, offset=CINEMATIC_388, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x44,0x3B,0x07,0x08
 	sub [0x08], 0x000D
-	call LABEL_65C4
+	call DRAW_SPRITE_236_239_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_285, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x20,0x99,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_538F
@@ -10951,7 +10951,7 @@ LABEL_64B7:
 	add [0x08], 0x000D
 	video type=1, offset=CINEMATIC_387, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x44,0x53,0x07,0x08
 	sub [0x08], 0x000D
-	call LABEL_65C4
+	call DRAW_SPRITE_236_239_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_286, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x21,0x5D,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_5379
@@ -11025,13 +11025,13 @@ LABEL_6589:
 	call JUNK__65D0
 	ret
 
-LABEL_65B8:
+DRAW_SPRITE_164_167_Y_PLUS_E:
 	add [0x08], 0x000E
 	call DRAW_SPRITE_CIN_164_167_BY_VAR09
 	sub [0x08], 0x000E
 	ret
 
-LABEL_65C4:
+DRAW_SPRITE_236_239_Y_PLUS_D:
 	add [0x08], 0x000D
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
 	sub [0x08], 0x000D
@@ -11047,7 +11047,7 @@ DRAW_CIN_390:
 
 LABEL_65DC:
 	jne [HACK_VAR_67], [0x10], LABEL_533A
-	call LABEL_65B8
+	call DRAW_SPRITE_164_167_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0x27,0x07,0x08
 	call LABEL_5234
 	ret
@@ -11055,7 +11055,7 @@ LABEL_65DC:
 LABEL_65EE:
 	jne [HACK_VAR_67], [0x10], LABEL_533A
 	sub [0x07], 0x0001
-	call LABEL_65B8
+	call DRAW_SPRITE_164_167_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_289, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x21,0x92,0x07,0x08
 	sub [0x08], 0x0001
 	call LABEL_5262
@@ -11065,21 +11065,21 @@ LABEL_65EE:
 
 LABEL_6610:
 	jne [HACK_VAR_67], [0x10], LABEL_533A
-	call LABEL_65B8
+	call DRAW_SPRITE_164_167_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0x27,0x07,0x08
 	call LABEL_5294
 	ret
 
 LABEL_6622:
 	jne [HACK_VAR_67], [0x10], LABEL_533A
-	call LABEL_65B8
+	call DRAW_SPRITE_164_167_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0x27,0x07,0x08
 	call LABEL_5262
 	ret
 
 LABEL_6634:
 	jne [HACK_VAR_67], [0x10], LABEL_533A
-	call LABEL_65B8
+	call DRAW_SPRITE_164_167_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0x27,0x07,0x08
 	add [0x08], 0x000D
 	je [0x0D], 0x00, LABEL_6652
@@ -11102,7 +11102,7 @@ LABEL_665A:
 LABEL_6669:
 	jne [HACK_VAR_67], [0x10], LABEL_533A
 	sub [0x07], 0x0001
-	call LABEL_65B8
+	call DRAW_SPRITE_164_167_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_289, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x21,0x92,0x07,0x08
 	sub [0x08], 0x0001
 	call LABEL_52B4
@@ -11112,7 +11112,7 @@ LABEL_6669:
 
 LABEL_668B:
 	jne [HACK_VAR_67], [0x10], LABEL_533A
-	call LABEL_65B8
+	call DRAW_SPRITE_164_167_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0x27,0x07,0x08
 	call LABEL_52B4
 	ret
@@ -11124,7 +11124,7 @@ JUNK__669D:
 	video type=0, offset=COMMON_VIDEO_253, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x12,0xB8,0x07,0x08
 	add [0x07], 0x0004
 	sub [0x08], 0x000D
-	call LABEL_65B8
+	call DRAW_SPRITE_164_167_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0x27,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_5F61
@@ -11133,7 +11133,7 @@ JUNK__669D:
 
 LABEL_66CC:
 	jne [HACK_VAR_67], [0x10], LABEL_533A
-	call LABEL_65B8
+	call DRAW_SPRITE_164_167_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0x27,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_5F61
@@ -11145,7 +11145,7 @@ LABEL_66E6:
 	add [0x08], 0x000D
 	video type=1, offset=CINEMATIC_701, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x44,0x59,0x07,0x08
 	sub [0x08], 0x000D
-	call LABEL_65B8
+	call DRAW_SPRITE_164_167_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x1F,0x27,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_5F61
@@ -11158,7 +11158,7 @@ LABEL_670D:
 	add [0x08], 0x000D
 	video type=1, offset=CINEMATIC_700, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x54,0x44,0x71,0x07,0x08
 	sub [0x08], 0x000D
-	call LABEL_65B8
+	call DRAW_SPRITE_164_167_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_289, x=[0x07], y=[0x08], zoom=0x40	;@raw=0x57,0x21,0x92,0x07,0x08
 	add [0x08], 0x000D
 	call LABEL_5F4B
