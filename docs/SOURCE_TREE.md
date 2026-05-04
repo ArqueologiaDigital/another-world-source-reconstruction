@@ -79,14 +79,47 @@ A typical `.asm.in` is structured as:
 
 The chunk tree under each stage's directory holds:
 
-- **Chapter chunks** (e.g. `intro_first_scene_init.inc`): named
-  thematically by the gameplay scene or routine cluster they
-  contain. Used by INTRO and LAKE, where bytecode has been
-  divided into named chapters.
+- **Chapter chunks** (e.g. `intro_first_scene_init.inc`,
+  `lake/beast_ai_dispatch.inc`,
+  `tank/tank_var5f_manipulation.inc`): named thematically by the
+  gameplay scene or routine cluster they contain. **Every stage
+  except CODE_WHEEL has chapter chunks** — they're the primary
+  organizing unit of the unified source. Created by
+  `tools/split_asm_chapter.py` (see "chapter-split" below).
 - **Per-arm fold chunks**: `<arm>__entry.inc` and
   `<arm>__post_<ROUTINE>.inc` are arm-specific (amiga / cart /
   dos) and hold the divergent prefix or suffix of the bytecode
   around a folded shared body.
+
+#### Chapter-split
+
+`tools/split_asm_chapter.py STAGE CHAPTER START_SPEC END_SPEC`
+moves a contiguous range of bytecode from the unified `.asm.in`
+into a chapter chunk file at
+`_unified/<stage>/<chapter>.inc`, then replaces the moved range
+in the `.asm.in` with `;@include "<stage>/<chapter>.inc"`.
+
+`START_SPEC` / `END_SPEC` accept four forms:
+- `<LABEL>` — line where `LABEL:` is at depth 0
+- `AFTER:<LABEL>` — first depth-0 boundary after the body of
+  `LABEL`
+- `INCLUDE_NEXT` — first depth-0 `;@include` after start
+- `LINE:<N>` — direct line-number cut (use when no depth-0
+  routine labels are available, as in CODE_WHEEL where every
+  routine is `;@if`-wrapped)
+
+The cut MUST happen at "entering depth==0" boundaries — the
+chapter must not split the middle of an open `;@if` block.
+
+When extracting a chapter, the tool rewrites the chunk's internal
+`;@include` paths so they resolve correctly from the chunk's
+new location:
+- `<stage>/<arm>__post_X.inc` → `<arm>__post_X.inc`
+- `_helpers/X.inc` → `../_helpers/X.inc`
+
+After the chapter-split sweep, the 9 unified `.asm.in` files
+total ~1700 lines (down from ~14,000+ before any chapter cuts).
+Average ~190 lines per `.asm.in`; max ~340 (LAKE/PRISON).
 
 ### (2b) Per-arm chunks — multi-fold technique
 
