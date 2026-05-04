@@ -1648,15 +1648,15 @@ LABEL_0E32:
 	break
 	video type=1, offset=CINEMATIC_004, x=42, y=122
 	video type=1, offset=CINEMATIC_001, x=259, y=129, zoom=0x40
-	video type=1, offset=CINEMATIC_006, x=172, y=70, zoom=[0x64]	;@raw=0x6A,0x13,0xE5,0xAC,0x46,0x64
+	video type=1, offset=CINEMATIC_006, x=172, y=70, zoom=[0x64]	;@enc=alt
 	break
 	video type=1, offset=CINEMATIC_004, x=21, y=134
 	video type=1, offset=CINEMATIC_001, x=278, y=141, zoom=0x40
-	video type=1, offset=CINEMATIC_006, x=172, y=143, zoom=[0x8e]	;@raw=0x6A,0x13,0xE5,0xAC,0x8F,0x8E
+	video type=1, offset=CINEMATIC_006, x=172, y=143, zoom=[0x8e]	;@enc=alt
 	break
 	video type=1, offset=CINEMATIC_000, x=4, y=149
 	video type=1, offset=CINEMATIC_003, x=287, y=148, zoom=0x40
-	video type=1, offset=CINEMATIC_006, x=172, y=250, zoom=[0xdc]	;@raw=0x6A,0x13,0xE5,0xAC,0xFA,0xDC
+	video type=1, offset=CINEMATIC_006, x=172, y=250, zoom=[0xdc]	;@enc=alt
 	selectVideoPage 0x03
 	play id=0x008C, freq=0x1E, vol=0x40, channel=0x01
 	play id=0x008C, freq=0x0A, vol=0x40, channel=0x00
@@ -2345,15 +2345,15 @@ LABEL_1624:
 	break
 	video type=1, offset=CINEMATIC_022, x=269, y=80, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_022, x=272, y=77, zoom=[0x3c]	;@raw=0x7A,0x12,0x3A,0x10,0x4D,0x3C
+	video type=1, offset=CINEMATIC_022, x=272, y=77, zoom=[0x3c]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_022, x=275, y=74, zoom=[0x32]	;@raw=0x7A,0x12,0x3A,0x13,0x4A,0x32
+	video type=1, offset=CINEMATIC_022, x=275, y=74, zoom=[0x32]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_022, x=278, y=71, zoom=[0x2d]	;@raw=0x7A,0x12,0x3A,0x16,0x47,0x2D
+	video type=1, offset=CINEMATIC_022, x=278, y=71, zoom=[0x2d]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_022, x=278, y=68, zoom=[0x22]	;@raw=0x7A,0x12,0x3A,0x16,0x44,0x22
+	video type=1, offset=CINEMATIC_022, x=278, y=68, zoom=[0x22]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_022, x=280, y=65, zoom=[0x1f]	;@raw=0x7A,0x12,0x3A,0x18,0x41,0x1F
+	video type=1, offset=CINEMATIC_022, x=280, y=65, zoom=[0x1f]	;@enc=alt
 	break
 	selectVideoPage 0x00
 	play id=0x008C, freq=0x14, vol=0x40, channel=0x01

@@ -1050,17 +1050,17 @@ LABEL_0000:
 
 LABEL_004A:
 	je [0xDB], 0x00, LABEL_543D
-	bankSwitch 3;  TODO - Name this stage (bank number #3)	;@raw=0x19,0x07,0xD3
+	bankSwitch 3;  TODO - Name this stage (bank number #3)	;@enc=legacy_d
 	ret
 
 LABEL_0054:
 	je [0xDB], 0x00, LABEL_543D
-	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@raw=0x19,0x07,0xD4
+	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@enc=legacy_d
 	ret
 
 LABEL_005E:
 	je [0xDB], 0x00, LABEL_543D
-	bankSwitch 5;  TODO - Name this stage (bank number #5)	;@raw=0x19,0x07,0xD5
+	bankSwitch 5;  TODO - Name this stage (bank number #5)	;@enc=legacy_d
 	ret
 
 LABEL_0068:
@@ -6273,7 +6273,7 @@ LABEL_3524:
 	call LABEL_3691
 
 LABEL_358D:
-	video type=1, offset=CINEMATIC_384, x=[0x07], y=[0x08], zoom=[0x96]	;@raw=0x56,0x40,0x74,0x07,0x08,0x96
+	video type=1, offset=CINEMATIC_384, x=[0x07], y=[0x08], zoom=[0x96]	;@enc=alt
 	mov [0x2B], 0x0FA0
 	call LABEL_361B
 	break

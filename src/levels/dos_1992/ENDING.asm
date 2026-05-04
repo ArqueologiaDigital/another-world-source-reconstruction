@@ -1062,21 +1062,21 @@ LABEL_092D:
 DRAW_STARS_PAGE0_CIN_000:
 	selectVideoPage 0x00
 	fill page=0x00, color=0x01
-	video type=1, offset=CINEMATIC_000, x=253, y=34, zoom=[0x0a]	;@raw=0x6A,0x09,0x0E,0xFD,0x22,0x0A
-	video type=1, offset=CINEMATIC_000, x=269, y=29, zoom=[0x10]	;@raw=0x7A,0x09,0x0E,0x0D,0x1D,0x10
-	video type=1, offset=CINEMATIC_000, x=273, y=78, zoom=[0x10]	;@raw=0x7A,0x09,0x0E,0x11,0x4E,0x10
-	video type=1, offset=CINEMATIC_000, x=303, y=57, zoom=[0x10]	;@raw=0x7A,0x09,0x0E,0x2F,0x39,0x10
-	video type=1, offset=CINEMATIC_000, x=140, y=79, zoom=[0x08]	;@raw=0x6A,0x09,0x0E,0x8C,0x4F,0x08
-	video type=1, offset=CINEMATIC_000, x=214, y=85, zoom=[0x10]	;@raw=0x6A,0x09,0x0E,0xD6,0x55,0x10
-	video type=1, offset=CINEMATIC_000, x=66, y=79, zoom=[0x10]	;@raw=0x6A,0x09,0x0E,0x42,0x4F,0x10
-	video type=1, offset=CINEMATIC_000, x=111, y=52, zoom=[0x20]	;@raw=0x6A,0x09,0x0E,0x6F,0x34,0x20
-	video type=1, offset=CINEMATIC_000, x=95, y=103, zoom=[0x10]	;@raw=0x6A,0x09,0x0E,0x5F,0x67,0x10
-	video type=1, offset=CINEMATIC_000, x=153, y=89, zoom=[0x10]	;@raw=0x6A,0x09,0x0E,0x99,0x59,0x10
-	video type=1, offset=CINEMATIC_000, x=132, y=107, zoom=[0x10]	;@raw=0x6A,0x09,0x0E,0x84,0x6B,0x10
-	video type=1, offset=CINEMATIC_000, x=4, y=85, zoom=[0x10]	;@raw=0x6A,0x09,0x0E,0x04,0x55,0x10
-	video type=1, offset=CINEMATIC_000, x=65, y=115, zoom=[0x20]	;@raw=0x6A,0x09,0x0E,0x41,0x73,0x20
+	video type=1, offset=CINEMATIC_000, x=253, y=34, zoom=[0x0a]	;@enc=alt
+	video type=1, offset=CINEMATIC_000, x=269, y=29, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_000, x=273, y=78, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_000, x=303, y=57, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_000, x=140, y=79, zoom=[0x08]	;@enc=alt
+	video type=1, offset=CINEMATIC_000, x=214, y=85, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_000, x=66, y=79, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_000, x=111, y=52, zoom=[0x20]	;@enc=alt
+	video type=1, offset=CINEMATIC_000, x=95, y=103, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_000, x=153, y=89, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_000, x=132, y=107, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_000, x=4, y=85, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_000, x=65, y=115, zoom=[0x20]	;@enc=alt
 	video type=1, offset=CINEMATIC_000, x=293, y=139, zoom=0x40
-	video type=1, offset=CINEMATIC_000, x=11, y=109, zoom=[0x1c]	;@raw=0x6A,0x09,0x0E,0x0B,0x6D,0x1C
+	video type=1, offset=CINEMATIC_000, x=11, y=109, zoom=[0x1c]	;@enc=alt
 	video type=1, offset=CINEMATIC_000, x=11, y=146
 	video type=1, offset=CINEMATIC_001, x=31, y=187
 	video type=1, offset=CINEMATIC_002, x=301, y=14, zoom=0x40
@@ -1088,7 +1088,7 @@ DRAW_STARS_PAGE0_CIN_000:
 	video type=1, offset=CINEMATIC_002, x=85, y=19
 	video type=1, offset=CINEMATIC_002, x=48, y=12
 	video type=1, offset=CINEMATIC_002, x=111, y=3
-	video type=1, offset=CINEMATIC_002, x=13, y=11, zoom=[0x20]	;@raw=0x6A,0x08,0x3C,0x0D,0x0B,0x20
+	video type=1, offset=CINEMATIC_002, x=13, y=11, zoom=[0x20]	;@enc=alt
 	selectVideoPage 0xFF
 	ret
 LABEL_09E3:
@@ -1097,21 +1097,21 @@ LABEL_09E3:
 DRAW_STARS_PAGE3_CIN_004:
 	selectVideoPage 0x03
 	fill page=0x03, color=0x01
-	video type=1, offset=CINEMATIC_004, x=253, y=34, zoom=[0x0a]	;@raw=0x6A,0x17,0x68,0xFD,0x22,0x0A
-	video type=1, offset=CINEMATIC_004, x=269, y=29, zoom=[0x10]	;@raw=0x7A,0x17,0x68,0x0D,0x1D,0x10
-	video type=1, offset=CINEMATIC_004, x=273, y=78, zoom=[0x10]	;@raw=0x7A,0x17,0x68,0x11,0x4E,0x10
-	video type=1, offset=CINEMATIC_004, x=303, y=57, zoom=[0x10]	;@raw=0x7A,0x17,0x68,0x2F,0x39,0x10
-	video type=1, offset=CINEMATIC_004, x=140, y=79, zoom=[0x08]	;@raw=0x6A,0x17,0x68,0x8C,0x4F,0x08
-	video type=1, offset=CINEMATIC_004, x=214, y=85, zoom=[0x10]	;@raw=0x6A,0x17,0x68,0xD6,0x55,0x10
-	video type=1, offset=CINEMATIC_004, x=66, y=79, zoom=[0x10]	;@raw=0x6A,0x17,0x68,0x42,0x4F,0x10
-	video type=1, offset=CINEMATIC_004, x=111, y=52, zoom=[0x20]	;@raw=0x6A,0x17,0x68,0x6F,0x34,0x20
-	video type=1, offset=CINEMATIC_004, x=95, y=103, zoom=[0x10]	;@raw=0x6A,0x17,0x68,0x5F,0x67,0x10
-	video type=1, offset=CINEMATIC_004, x=153, y=89, zoom=[0x10]	;@raw=0x6A,0x17,0x68,0x99,0x59,0x10
-	video type=1, offset=CINEMATIC_004, x=132, y=107, zoom=[0x10]	;@raw=0x6A,0x17,0x68,0x84,0x6B,0x10
-	video type=1, offset=CINEMATIC_004, x=4, y=85, zoom=[0x10]	;@raw=0x6A,0x17,0x68,0x04,0x55,0x10
-	video type=1, offset=CINEMATIC_004, x=65, y=115, zoom=[0x20]	;@raw=0x6A,0x17,0x68,0x41,0x73,0x20
+	video type=1, offset=CINEMATIC_004, x=253, y=34, zoom=[0x0a]	;@enc=alt
+	video type=1, offset=CINEMATIC_004, x=269, y=29, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_004, x=273, y=78, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_004, x=303, y=57, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_004, x=140, y=79, zoom=[0x08]	;@enc=alt
+	video type=1, offset=CINEMATIC_004, x=214, y=85, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_004, x=66, y=79, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_004, x=111, y=52, zoom=[0x20]	;@enc=alt
+	video type=1, offset=CINEMATIC_004, x=95, y=103, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_004, x=153, y=89, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_004, x=132, y=107, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_004, x=4, y=85, zoom=[0x10]	;@enc=alt
+	video type=1, offset=CINEMATIC_004, x=65, y=115, zoom=[0x20]	;@enc=alt
 	video type=1, offset=CINEMATIC_004, x=293, y=139, zoom=0x40
-	video type=1, offset=CINEMATIC_004, x=11, y=109, zoom=[0x1c]	;@raw=0x6A,0x17,0x68,0x0B,0x6D,0x1C
+	video type=1, offset=CINEMATIC_004, x=11, y=109, zoom=[0x1c]	;@enc=alt
 	video type=1, offset=CINEMATIC_004, x=11, y=146
 	video type=1, offset=CINEMATIC_005, x=31, y=187
 	video type=1, offset=CINEMATIC_006, x=301, y=14, zoom=0x40
@@ -1123,7 +1123,7 @@ DRAW_STARS_PAGE3_CIN_004:
 	video type=1, offset=CINEMATIC_006, x=85, y=19
 	video type=1, offset=CINEMATIC_006, x=48, y=12
 	video type=1, offset=CINEMATIC_006, x=111, y=3
-	video type=1, offset=CINEMATIC_006, x=13, y=11, zoom=[0x20]	;@raw=0x6A,0x14,0x12,0x0D,0x0B,0x20
+	video type=1, offset=CINEMATIC_006, x=13, y=11, zoom=[0x20]	;@enc=alt
 	selectVideoPage 0xFF
 	ret
 LABEL_0A79:
@@ -1131,21 +1131,21 @@ LABEL_0A79:
 
 DRAW_STARS_CIN_38_39_40_5_6:
 	video type=1, offset=CINEMATIC_006, x=126, y=25
-	video type=1, offset=CINEMATIC_038, x=133, y=102, zoom=[0x20]	;@raw=0x6A,0x13,0xAC,0x85,0x66,0x20
-	video type=1, offset=CINEMATIC_038, x=129, y=114, zoom=[0x20]	;@raw=0x6A,0x13,0xAC,0x81,0x72,0x20
-	video type=1, offset=CINEMATIC_038, x=114, y=126, zoom=[0x20]	;@raw=0x6A,0x13,0xAC,0x72,0x7E,0x20
-	video type=1, offset=CINEMATIC_006, x=91, y=8, zoom=[0x20]	;@raw=0x6A,0x14,0x12,0x5B,0x08,0x20
+	video type=1, offset=CINEMATIC_038, x=133, y=102, zoom=[0x20]	;@enc=alt
+	video type=1, offset=CINEMATIC_038, x=129, y=114, zoom=[0x20]	;@enc=alt
+	video type=1, offset=CINEMATIC_038, x=114, y=126, zoom=[0x20]	;@enc=alt
+	video type=1, offset=CINEMATIC_006, x=91, y=8, zoom=[0x20]	;@enc=alt
 	video type=1, offset=CINEMATIC_039, x=16, y=114
-	video type=1, offset=CINEMATIC_039, x=74, y=177, zoom=[0x20]	;@raw=0x6A,0x14,0x85,0x4A,0xB1,0x20
+	video type=1, offset=CINEMATIC_039, x=74, y=177, zoom=[0x20]	;@enc=alt
 	video type=1, offset=CINEMATIC_040, x=78, y=166
 	video type=1, offset=CINEMATIC_005, x=283, y=175, zoom=0x40
 	video type=1, offset=CINEMATIC_005, x=294, y=183, zoom=0x40
 	video type=1, offset=CINEMATIC_005, x=58, y=185
 	video type=1, offset=CINEMATIC_005, x=5, y=170
-	video type=1, offset=CINEMATIC_041, x=197, y=160, zoom=[0x20]	;@raw=0x6A,0x14,0xE4,0xC5,0xA0,0x20
+	video type=1, offset=CINEMATIC_041, x=197, y=160, zoom=[0x20]	;@enc=alt
 	video type=1, offset=CINEMATIC_041, x=61, y=169
 	video type=1, offset=CINEMATIC_041, x=300, y=28, zoom=0x40
-	video type=1, offset=CINEMATIC_041, x=202, y=86, zoom=[0x30]	;@raw=0x6A,0x14,0xE4,0xCA,0x56,0x30
+	video type=1, offset=CINEMATIC_041, x=202, y=86, zoom=[0x30]	;@enc=alt
 	ret
 
 LABEL_0ACC:

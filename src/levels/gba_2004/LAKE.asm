@@ -815,7 +815,7 @@ ENTRY_POINT_OF_LAKE_LEVEL:
 	song id=0x0FA1, delay=0x0000, pos=0x03
 	mov [0xE3], 0x0000
 	je [0xDB], 0x00, EXTRA_RESOURCE_LOADS_BLOCK_2
-	bankSwitch 2;  Prison	;@raw=0x19,0x07,0xD2
+	bankSwitch 2;  Prison	;@enc=legacy_d
 	jmp INIT_AUDIO_AND_SCENE_AFTER_LOADS
 
 EXTRA_RESOURCE_LOADS_BLOCK_2:
@@ -4965,9 +4965,9 @@ SLUG_ATTACK_FB_FILL_LOOP:
 	break
 	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_1, x=155, y=100
 	break
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_2, x=160, y=100, zoom=[0x82]	;@raw=0x6A,0x3E,0x25,0xA0,0x64,0x82
+	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_2, x=160, y=100, zoom=[0x82]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_3, x=160, y=100, zoom=[0x5a]	;@raw=0x6A,0x3E,0x39,0xA0,0x64,0x5A
+	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_3, x=160, y=100, zoom=[0x5a]	;@enc=alt
 	break
 	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_4, x=160, y=100
 	setup channel=0x2C, address=SLUG_ATTACK_LEG_LOOP
