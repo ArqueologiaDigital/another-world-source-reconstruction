@@ -215,8 +215,8 @@ DELAY_BEFORE_PLAY_FX_9_DUAL:
 	play id=0x0009, freq=0x14, vol=0x3F, channel=0x01
 	mov [PAUSE_SLICES], 0x0003
 	video type=1, offset=CINEMATIC_006, x=158, y=100
-	video type=1, offset=CINEMATIC_007, x=43, y=132, zoom=[0x7c]	;@raw=0x6A,0x04,0x9C,0x2B,0x84,0x7C
-	video type=1, offset=CINEMATIC_007, x=392, y=136, zoom=[0x7c]	;@raw=0x7A,0x04,0x9C,0x88,0x88,0x7C
+	video type=1, offset=CINEMATIC_007, x=43, y=132, zoom=[0x7c]	;@enc=alt
+	video type=1, offset=CINEMATIC_007, x=392, y=136, zoom=[0x7c]	;@enc=alt
 	break
 	video type=1, offset=CINEMATIC_008, x=188, y=101
 	video type=1, offset=CINEMATIC_007, x=125, y=107
@@ -224,21 +224,21 @@ DELAY_BEFORE_PLAY_FX_9_DUAL:
 	break
 	video type=1, offset=CINEMATIC_009, x=133, y=100
 	video type=1, offset=CINEMATIC_010, x=189, y=99
-	video type=1, offset=CINEMATIC_007, x=210, y=117, zoom=[0x20]	;@raw=0x6A,0x04,0x9C,0xD2,0x75,0x20
-	video type=1, offset=CINEMATIC_007, x=339, y=118, zoom=[0x22]	;@raw=0x7A,0x04,0x9C,0x53,0x76,0x22
+	video type=1, offset=CINEMATIC_007, x=210, y=117, zoom=[0x20]	;@enc=alt
+	video type=1, offset=CINEMATIC_007, x=339, y=118, zoom=[0x22]	;@enc=alt
 	break
 	video type=1, offset=CINEMATIC_011, x=153, y=102
 	video type=1, offset=CINEMATIC_012, x=188, y=100
-	video type=1, offset=CINEMATIC_007, x=261, y=120, zoom=[0x1b]	;@raw=0x7A,0x04,0x9C,0x05,0x78,0x1B
-	video type=1, offset=CINEMATIC_007, x=337, y=122, zoom=[0x1b]	;@raw=0x7A,0x04,0x9C,0x51,0x7A,0x1B
+	video type=1, offset=CINEMATIC_007, x=261, y=120, zoom=[0x1b]	;@enc=alt
+	video type=1, offset=CINEMATIC_007, x=337, y=122, zoom=[0x1b]	;@enc=alt
 	break
 	video type=1, offset=CINEMATIC_013, x=128, y=107
 	video type=1, offset=CINEMATIC_014, x=188, y=100
-	video type=1, offset=CINEMATIC_007, x=305, y=119, zoom=[0x17]	;@raw=0x7A,0x04,0x9C,0x31,0x77,0x17
+	video type=1, offset=CINEMATIC_007, x=305, y=119, zoom=[0x17]	;@enc=alt
 	break
 	video type=1, offset=CINEMATIC_015, x=188, y=101
 	video type=1, offset=CINEMATIC_016, x=85, y=110
-	video type=1, offset=CINEMATIC_007, x=327, y=120, zoom=[0x13]	;@raw=0x7A,0x04,0x9C,0x47,0x78,0x13
+	video type=1, offset=CINEMATIC_007, x=327, y=120, zoom=[0x13]	;@enc=alt
 	break
 	video type=1, offset=CINEMATIC_017, x=187, y=101
 	video type=1, offset=CINEMATIC_018, x=64, y=114

@@ -2206,17 +2206,17 @@ LABEL_0000:
 
 LABEL_004A:
 	je [0xDB], 0x00, SHARED_RET
-	bankSwitch 3;  TODO - Name this stage (bank number #3)	;@raw=0x19,0x07,0xD3
+	bankSwitch 3;  TODO - Name this stage (bank number #3)	;@enc=legacy_d
 	ret
 
 LABEL_0054:
 	je [0xDB], 0x00, SHARED_RET
-	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@raw=0x19,0x07,0xD4
+	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@enc=legacy_d
 	ret
 
 LABEL_005E:
 	je [0xDB], 0x00, SHARED_RET
-	bankSwitch 5;  TODO - Name this stage (bank number #5)	;@raw=0x19,0x07,0xD5
+	bankSwitch 5;  TODO - Name this stage (bank number #5)	;@enc=legacy_d
 	ret
 
 LABEL_0068:

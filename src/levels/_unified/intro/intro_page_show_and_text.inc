@@ -202,13 +202,13 @@ DRAW_CIN_382_PUFFS_3X:
 	video type=1, offset=CINEMATIC_382, x=249, y=148
 	break
 	video type=1, offset=CINEMATIC_384, x=237, y=156
-	video type=1, offset=CINEMATIC_384, x=287, y=150, zoom=[0x14]	;@raw=0x7A,0x74,0x50,0x1F,0x96,0x14
+	video type=1, offset=CINEMATIC_384, x=287, y=150, zoom=[0x14]	;@enc=alt
 	break
 	video type=1, offset=CINEMATIC_384, x=287, y=150, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_384, x=287, y=150, zoom=[0x78]	;@raw=0x7A,0x74,0x50,0x1F,0x96,0x78
+	video type=1, offset=CINEMATIC_384, x=287, y=150, zoom=[0x78]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_384, x=287, y=150, zoom=[0xbe]	;@raw=0x7A,0x74,0x50,0x1F,0x96,0xBE
+	video type=1, offset=CINEMATIC_384, x=287, y=150, zoom=[0xbe]	;@enc=alt
 	killChannel
 
 INIT_VAR_02_AND_BREAK_LOOP:

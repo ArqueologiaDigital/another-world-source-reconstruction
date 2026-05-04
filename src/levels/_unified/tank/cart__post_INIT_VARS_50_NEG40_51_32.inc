@@ -124,15 +124,15 @@ WAIT_VAR56_PLAY_8E_DRAW_CIN_020:
 	break
 	video type=1, offset=CINEMATIC_022, x=269, y=80, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_022, x=272, y=77, zoom=[0x3c]	;@raw=0x7A,0x12,0x3A,0x10,0x4D,0x3C
+	video type=1, offset=CINEMATIC_022, x=272, y=77, zoom=[0x3c]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_022, x=275, y=74, zoom=[0x32]	;@raw=0x7A,0x12,0x3A,0x13,0x4A,0x32
+	video type=1, offset=CINEMATIC_022, x=275, y=74, zoom=[0x32]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_022, x=278, y=71, zoom=[0x2d]	;@raw=0x7A,0x12,0x3A,0x16,0x47,0x2D
+	video type=1, offset=CINEMATIC_022, x=278, y=71, zoom=[0x2d]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_022, x=278, y=68, zoom=[0x22]	;@raw=0x7A,0x12,0x3A,0x16,0x44,0x22
+	video type=1, offset=CINEMATIC_022, x=278, y=68, zoom=[0x22]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_022, x=280, y=65, zoom=[0x1f]	;@raw=0x7A,0x12,0x3A,0x18,0x41,0x1F
+	video type=1, offset=CINEMATIC_022, x=280, y=65, zoom=[0x1f]	;@enc=alt
 	break
 	selectVideoPage 0x00
 	play id=0x008C, freq=0x14, vol=0x40, channel=0x01

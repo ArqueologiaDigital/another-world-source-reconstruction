@@ -421,15 +421,15 @@ LABEL_0E32:
 	break
 	video type=1, offset=CINEMATIC_004, x=42, y=122
 	video type=1, offset=CINEMATIC_001, x=259, y=129, zoom=0x40
-	video type=1, offset=CINEMATIC_006, x=172, y=70, zoom=[0x64]	;@raw=0x6A,0x13,0xE5,0xAC,0x46,0x64
+	video type=1, offset=CINEMATIC_006, x=172, y=70, zoom=[0x64]	;@enc=alt
 	break
 	video type=1, offset=CINEMATIC_004, x=21, y=134
 	video type=1, offset=CINEMATIC_001, x=278, y=141, zoom=0x40
-	video type=1, offset=CINEMATIC_006, x=172, y=143, zoom=[0x8e]	;@raw=0x6A,0x13,0xE5,0xAC,0x8F,0x8E
+	video type=1, offset=CINEMATIC_006, x=172, y=143, zoom=[0x8e]	;@enc=alt
 	break
 	video type=1, offset=CINEMATIC_000, x=4, y=149
 	video type=1, offset=CINEMATIC_003, x=287, y=148, zoom=0x40
-	video type=1, offset=CINEMATIC_006, x=172, y=250, zoom=[0xdc]	;@raw=0x6A,0x13,0xE5,0xAC,0xFA,0xDC
+	video type=1, offset=CINEMATIC_006, x=172, y=250, zoom=[0xdc]	;@enc=alt
 	selectVideoPage 0x03
 	play id=0x008C, freq=0x1E, vol=0x40, channel=0x01
 	play id=0x008C, freq=0x0A, vol=0x40, channel=0x00

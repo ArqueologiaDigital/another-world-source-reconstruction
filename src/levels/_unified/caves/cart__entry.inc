@@ -3212,7 +3212,7 @@ LABEL_0080:
 
 LABEL_008A:
 	je [0xDB], 0x00, SHARED_RET
-	bankSwitch 0;  Arrival at the Lake & Beast Chase	;@raw=0x19,0x07,0xE0
+	bankSwitch 0;  Arrival at the Lake & Beast Chase	;@enc=legacy_e
 	ret
 
 LABEL_0094:

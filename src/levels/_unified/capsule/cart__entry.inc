@@ -1744,12 +1744,12 @@ LABEL_00BF:
 
 LABEL_00C9:
 	je [0xDB], 0x00, SHARED_RET
-	bankSwitch 0;  Arrival at the Lake & Beast Chase	;@raw=0x19,0x07,0xE0
+	bankSwitch 0;  Arrival at the Lake & Beast Chase	;@enc=legacy_e
 	ret
 
 LABEL_00D3:
 	je [0xDB], 0x00, SHARED_RET
-	bankSwitch 1;  Prison	;@raw=0x19,0x07,0xE1
+	bankSwitch 1;  Prison	;@enc=legacy_e
 	ret
 
 LABEL_00DD:

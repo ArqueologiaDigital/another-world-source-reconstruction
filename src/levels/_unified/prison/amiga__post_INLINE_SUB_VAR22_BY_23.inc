@@ -98,7 +98,7 @@ LABEL_33E0:
 	call ADVANCE_VAR0D_RESTORE_STATE
 
 LABEL_3449:
-	video type=1, offset=CINEMATIC_384, x=[0x07], y=[0x08], zoom=[0x96]	;@raw=0x56,0x43,0xAD,0x07,0x08,0x96
+	video type=1, offset=CINEMATIC_384, x=[0x07], y=[0x08], zoom=[0x96]	;@enc=alt
 	mov [0x2B], 0x0FA0
 	call LABEL_34D7
 	break

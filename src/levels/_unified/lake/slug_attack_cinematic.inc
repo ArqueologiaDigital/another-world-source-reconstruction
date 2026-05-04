@@ -151,15 +151,15 @@ SLUG_ATTACK_FB_FILL_LOOP:
 	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_1, x=155, y=100
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_2, x=160, y=100, zoom=[0x82]	;@raw=0x6A,0x3E,0x25,0xA0,0x64,0x82
+	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_2, x=160, y=100, zoom=[0x82]	;@enc=alt
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_2, x=160, y=100, zoom=[0x82]	;@raw=0x6A,0x48,0x2D,0xA0,0x64,0x82
+	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_2, x=160, y=100, zoom=[0x82]	;@enc=alt
 ;@endif
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_3, x=160, y=100, zoom=[0x5a]	;@raw=0x6A,0x3E,0x39,0xA0,0x64,0x5A
+	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_3, x=160, y=100, zoom=[0x5a]	;@enc=alt
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_3, x=160, y=100, zoom=[0x5a]	;@raw=0x6A,0x48,0x41,0xA0,0x64,0x5A
+	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_3, x=160, y=100, zoom=[0x5a]	;@enc=alt
 ;@endif
 	break
 	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_4, x=160, y=100

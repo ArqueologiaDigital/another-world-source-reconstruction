@@ -84,7 +84,7 @@ INTRO_RESET_PAGES_AND_PAL_0:
 	fill page=0x00, color=0x00
 	fill page=0xFF, color=0x00
 	fill page=0x03, color=0x00
-	setPalette 0x00	;@raw=0x0B,0x00,0x00
+	setPalette 0x00, _trailing=0x00
 	blitFramebuffer 0xFF
 	load id=0x3E82
 
@@ -516,7 +516,7 @@ DELAY_18_THEN_PAL_15_CIN_267:
 	video type=1, offset=CINEMATIC_273, x=160, y=100
 	play id=0x000E, freq=0x14, vol=0x3F, channel=0x03
 	break
-	video type=1, offset=CINEMATIC_273, x=160, y=100, zoom=[0x50]	;@raw=0x6A,0x4A,0x61,0xA0,0x64,0x50
+	video type=1, offset=CINEMATIC_273, x=160, y=100, zoom=[0x50]	;@enc=alt
 	play id=0x000A, freq=0x0A, vol=0x3F, channel=0x03
 	break
 	jmp TRANSITION_TO_BLITTER_LOOP

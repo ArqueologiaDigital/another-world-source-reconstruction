@@ -38,7 +38,7 @@ WAIT_INTRO_SCENE_3:
 	break
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_144, x=82, y=82
-	video type=1, offset=CINEMATIC_147, x=80, y=80, zoom=[0x20]	;@raw=0x6A,0x7A,0xC2,0x50,0x50,0x20
+	video type=1, offset=CINEMATIC_147, x=80, y=80, zoom=[0x20]	;@enc=alt
 	selectVideoPage 0xFF
 	setup channel=0x09, address=DRAW_CINEMATICS_166_TO_171
 	mov [0x02], 0x0009

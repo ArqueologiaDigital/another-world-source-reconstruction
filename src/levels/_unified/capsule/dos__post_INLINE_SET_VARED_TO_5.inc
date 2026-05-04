@@ -84,10 +84,10 @@ LABEL_1DEB:
 	killChannel
 
 LABEL_1E24:
-	video type=1, offset=CINEMATIC_379, x=160, y=100, zoom=[0x50]	;@raw=0x6A,0x42,0x47,0xA0,0x64,0x50
+	video type=1, offset=CINEMATIC_379, x=160, y=100, zoom=[0x50]	;@enc=alt
 	play id=0x0075, freq=0x0C, vol=0x10, channel=0x03
 	break
-	video type=1, offset=CINEMATIC_379, x=160, y=100, zoom=[0x46]	;@raw=0x6A,0x42,0x47,0xA0,0x64,0x46
+	video type=1, offset=CINEMATIC_379, x=160, y=100, zoom=[0x46]	;@enc=alt
 	break
 
 HANG_DRAW_CIN_379:
@@ -97,7 +97,7 @@ HANG_DRAW_CIN_379:
 
 LABEL_1E40:
 	video type=1, offset=CINEMATIC_394, x=160, y=100
-	video type=1, offset=CINEMATIC_379, x=160, y=100, zoom=[0x43]	;@raw=0x6A,0x42,0x47,0xA0,0x64,0x43
+	video type=1, offset=CINEMATIC_379, x=160, y=100, zoom=[0x43]	;@enc=alt
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x03
 	setup channel=0x06, address=LABEL_1E7E
 	break
@@ -106,7 +106,7 @@ LABEL_1E40:
 	jmp HANG_DRAW_CIN_379
 	killChannel
 	video type=1, offset=CINEMATIC_394, x=190, y=100
-	video type=1, offset=CINEMATIC_379, x=160, y=100, zoom=[0x43]	;@raw=0x6A,0x42,0x47,0xA0,0x64,0x43
+	video type=1, offset=CINEMATIC_379, x=160, y=100, zoom=[0x43]	;@enc=alt
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x03
 	break
 	video type=1, offset=CINEMATIC_395, x=210, y=100
