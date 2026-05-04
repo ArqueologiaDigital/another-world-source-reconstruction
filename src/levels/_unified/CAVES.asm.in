@@ -300,5 +300,6 @@
 
 ;@include "caves/caves_preload_resources.inc"
 ;@include "caves/caves_inline_setters_and_init.inc"
+;@include "caves/caves_inline_setters_part2.inc"
 ;@include "caves/caves_action_helpers.inc"
 ;@include "caves/caves_inline_breaks.inc"
