@@ -12,7 +12,7 @@ SET_VAR_E6_F_PAUSE_4:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 SET_PAL_0_AND_RESTART:
-	setPalette 0x00	;@raw=0x0B,0x00,0xFF
+	setPalette 0x00
 	jmp PASSCODE_ENTRY
 ;@endif
 

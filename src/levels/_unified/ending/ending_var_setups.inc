@@ -51,7 +51,7 @@ DRIFT_VAR_F_PLUS_8_LOOP:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_70_ANIM_LOOP:
-	video type=1, offset=CINEMATIC_070, x=[0x01], y=[0x02], zoom=[0x0f]	;@raw=0x55,0x26,0xB5,0x01,0x02,0x0F
+	video type=1, offset=CINEMATIC_070, x=[0x01], y=[0x02], zoom=[0x0f]
 	break
 	jmp DRAW_CIN_70_ANIM_LOOP
 ;@endif
