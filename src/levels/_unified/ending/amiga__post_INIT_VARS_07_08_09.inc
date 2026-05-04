@@ -1,6 +1,6 @@
-DELAY_LOOP_VAR09__AMIGA__POST_INIT_VARS_07_08_09:
+DELAY_LOOP_VAR09:
 	break
-	djnz [0x09], DELAY_LOOP_VAR09__AMIGA__POST_INIT_VARS_07_08_09
+	djnz [0x09], DELAY_LOOP_VAR09
 	play id=0x0057, freq=0x0F, vol=0x20, channel=0x03
 	video type=1, offset=CINEMATIC_021, x=[0x07], y=[0x08], zoom=0x40
 	break
@@ -14,10 +14,10 @@ LABEL_069F:
 	video type=1, offset=CINEMATIC_024, x=[0x07], y=[0x08], zoom=0x40
 	video type=1, offset=CINEMATIC_025, x=[0x07], y=[0x08], zoom=0x40
 	djnz [0x09], LABEL_069F
-	setup channel=0x11, address=DRAW_CIN_024_LOOP__AMIGA__POST_INIT_VARS_07_08_09
+	setup channel=0x11, address=DRAW_CIN_024_LOOP
 	setup channel=0x12, address=DRAW_COMMON_VIDS_148_151_152_153
 	setup channel=0x13, address=DRAW_COMMON_VIDS_149_141_137_10
-	setup channel=0x0C, address=DRIFT_VAR07_PLUS_2_3X__AMIGA__POST_INIT_VARS_07_08_09
+	setup channel=0x0C, address=DRIFT_VAR07_PLUS_2_3X
 	mov [0x09], 0x0010
 
 DELAY_LOOP_VAR09_AT_06C2:
@@ -65,10 +65,10 @@ LABEL_06FB:
 	setup channel=0x0A, address=SET_VAR_E6_5_PAL_B
 	killChannel
 
-DRAW_CIN_024_LOOP__AMIGA__POST_INIT_VARS_07_08_09:
+DRAW_CIN_024_LOOP:
 	video type=1, offset=CINEMATIC_024, x=[0x07], y=[0x08], zoom=0x40
 	break
-	jmp DRAW_CIN_024_LOOP__AMIGA__POST_INIT_VARS_07_08_09
+	jmp DRAW_CIN_024_LOOP
 LABEL_0749:
 	db 0x11
 
@@ -146,18 +146,18 @@ DRAW_COMMON_VIDS_149_141_137_10:
 LABEL_0811:
 	db 0x11
 
-DRIFT_VAR07_PLUS_2_3X__AMIGA__POST_INIT_VARS_07_08_09:
+DRIFT_VAR07_PLUS_2_3X:
 	mov [0x0A], 0x0003
 	add [0x07], 0x0002
 	break
-	djnz [0x0A], DRIFT_VAR07_PLUS_2_3X__AMIGA__POST_INIT_VARS_07_08_09
+	djnz [0x0A], DRIFT_VAR07_PLUS_2_3X
 	mov [0x0A], 0x0005
 
 LABEL_0823:
 	add [0x07], 0x0003
 	break
 	djnz [0x0A], LABEL_0823
-	jmp DRIFT_VAR07_PLUS_2_3X__AMIGA__POST_INIT_VARS_07_08_09
+	jmp DRIFT_VAR07_PLUS_2_3X
 LABEL_082F:
 	db 0x11, 0x80, 0x06, 0xA0, 0x64, 0x6B, 0x0E, 0x3C
 	db 0xA0, 0x64, 0x6B, 0x21, 0xA3, 0xA0, 0x64, 0x6B

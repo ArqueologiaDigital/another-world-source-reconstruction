@@ -64,11 +64,11 @@ LABEL_7433:
 	ret
 
 LABEL_7440:
-	jne [0x06], 0xFFFA, DRAW_CIN_581__DOS__POST_STEP_VAR1A_DOWN5_VAR1B_UP2
+	jne [0x06], 0xFFFA, DRAW_CIN_581
 	video type=1, offset=CINEMATIC_582, x=[0x03], y=[0x04], zoom=0x40
 	ret
 
-DRAW_CIN_581__DOS__POST_STEP_VAR1A_DOWN5_VAR1B_UP2:
+DRAW_CIN_581:
 	video type=1, offset=CINEMATIC_581, x=[0x03], y=[0x04], zoom=0x40
 	ret
 	killChannel

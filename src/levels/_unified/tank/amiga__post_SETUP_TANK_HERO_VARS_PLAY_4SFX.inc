@@ -7,7 +7,7 @@ LABEL_00D2:
 	djnz [0x2B], LABEL_00D2
 	jmp LABEL_001B
 
-RESET_PAGES_AND_SETUP_CH_0A__AMIGA__POST_SETUP_TANK_HERO_VARS_PLAY_4SFX:
+RESET_PAGES_AND_SETUP_CH_0A:
 	killChannel
 	copyVideoPage src=0x03, dst=0x00
 	killChannel
@@ -180,7 +180,7 @@ LABEL_024B:
 	selectVideoPage 0xFF
 	break
 	setPalette 0x0B
-	setup channel=0x3B, address=HANG_DRAW_CIN_222__AMIGA__POST_SETUP_TANK_HERO_VARS_PLAY_4SFX
+	setup channel=0x3B, address=HANG_DRAW_CIN_222
 	mov [0x02], 0x00FA
 	mov [0x03], 0x0014
 
@@ -212,10 +212,10 @@ LABEL_02A3:
 	deleteChannels first=0x09, last=0x0B
 	mov [0x03], 0x0014
 
-DELAY_LOOP_VAR03__AMIGA__POST_SETUP_TANK_HERO_VARS_PLAY_4SFX:
+DELAY_LOOP_VAR03:
 	break
-	djnz [0x03], DELAY_LOOP_VAR03__AMIGA__POST_SETUP_TANK_HERO_VARS_PLAY_4SFX
-	setup channel=0x37, address=RESET_PAGES_AND_SETUP_CH_0A__AMIGA__POST_SETUP_TANK_HERO_VARS_PLAY_4SFX
+	djnz [0x03], DELAY_LOOP_VAR03
+	setup channel=0x37, address=RESET_PAGES_AND_SETUP_CH_0A
 	break
 	jmp LABEL_02E1
 LABEL_02E0:
@@ -223,7 +223,7 @@ LABEL_02E0:
 
 LABEL_02E1:
 	setup channel=0x3C, address=HANG_BLITTING_PAGE_FF
-	setup channel=0x3B, address=HANG_DRAW_CIN_222__AMIGA__POST_SETUP_TANK_HERO_VARS_PLAY_4SFX
+	setup channel=0x3B, address=HANG_DRAW_CIN_222
 	setup channel=0x37, address=LABEL_0328
 	play id=0x008B, freq=0x14, vol=0x40, channel=0x00
 	deleteChannels first=0x09, last=0x0B
@@ -322,10 +322,10 @@ LABEL_03F3:
 	db 0x02, 0x00, 0x02, 0x0D, 0x00, 0x64, 0x20, 0x7D
 	db 0xA0, 0x02, 0x0D, 0xFF, 0x07, 0x02, 0x4B, 0x11
 
-HANG_DRAW_CIN_222__AMIGA__POST_SETUP_TANK_HERO_VARS_PLAY_4SFX:
+HANG_DRAW_CIN_222:
 	video type=1, offset=CINEMATIC_222, x=160, y=100
 	break
-	jmp HANG_DRAW_CIN_222__AMIGA__POST_SETUP_TANK_HERO_VARS_PLAY_4SFX
+	jmp HANG_DRAW_CIN_222
 LABEL_0453:
 	db 0x11
 
@@ -396,8 +396,8 @@ LABEL_050D:
 LABEL_050E:
 	break
 	je [0x63], 0x00, LABEL_050E
-	setup channel=0x35, address=RESET_PAGES_AND_SETUP_CH_0A__AMIGA__POST_SETUP_TANK_HERO_VARS_PLAY_4SFX
-	setup channel=0x01, address=RESET_PAGES_AND_SETUP_CH_0A__AMIGA__POST_SETUP_TANK_HERO_VARS_PLAY_4SFX
+	setup channel=0x35, address=RESET_PAGES_AND_SETUP_CH_0A
+	setup channel=0x01, address=RESET_PAGES_AND_SETUP_CH_0A
 	unfreezeChannels first=0x00, last=0x22
 	deleteChannels first=0x39, last=0x3B
 	selectVideoPage 0x00
@@ -484,11 +484,11 @@ LABEL_0642:
 	jmp COPY_VAR62_TO_VAR5F
 
 LABEL_0651:
-	je [0x62], 0x22, SET_VAR5F_TO_001B__AMIGA__POST_SETUP_TANK_HERO_VARS_PLAY_4SFX
+	je [0x62], 0x22, SET_VAR5F_TO_001B
 	mov [0x5F], 0x0022
 	ret
 
-SET_VAR5F_TO_001B__AMIGA__POST_SETUP_TANK_HERO_VARS_PLAY_4SFX:
+SET_VAR5F_TO_001B:
 	mov [0x5F], 0x001B
 	ret
 

@@ -1,6 +1,6 @@
-DELAY_LOOP_VARE8__CART__POST_INIT_VARS_E7_E8:
+DELAY_LOOP_VARE8:
 	break
-	djnz [0xE8], DELAY_LOOP_VARE8__CART__POST_INIT_VARS_E7_E8
+	djnz [0xE8], DELAY_LOOP_VARE8
 	play id=0x0030, freq=0x19, vol=0x20, channel=0x02
 	video type=1, offset=CINEMATIC_610, x=[0xe7], y=[0x40], zoom=0x40
 	break

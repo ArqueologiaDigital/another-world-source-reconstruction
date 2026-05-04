@@ -17,7 +17,7 @@ LABEL_1BAF:
 	selectVideoPage 0x03
 	fill page=0x03, color=0x0C
 	video type=1, offset=CINEMATIC_060, x=160, y=100
-	call DRAW_CIN_061_HORIZ_THEN_062__CART__POST_INIT_VARS_A_B_PAL_1
+	call DRAW_CIN_061_HORIZ_THEN_062
 	call DRAW_CIN_064_065_FIELD
 	call DRAW_CIN_069
 	selectVideoPage 0xFF
@@ -43,7 +43,7 @@ BLACKHOLE_FRAME_DRAW:
 	selectVideoPage 0x00
 	fill page=0x00, color=0x0C
 	video type=1, offset=CINEMATIC_060, x=160, y=100
-	call DRAW_CIN_061_HORIZ_THEN_062__CART__POST_INIT_VARS_A_B_PAL_1
+	call DRAW_CIN_061_HORIZ_THEN_062
 	call DRAW_CIN_091_061_FIELD
 	call DRAW_CIN_069
 	selectVideoPage 0xFF
@@ -79,11 +79,11 @@ DRAW_CIN_069:
 	fill page=0x00, color=0x0C
 	video type=1, offset=CINEMATIC_060, x=160, y=100
 	copyVideoPage src=0x00, dst=0x03
-	call DRAW_CIN_061_HORIZ_THEN_062__CART__POST_INIT_VARS_A_B_PAL_1
+	call DRAW_CIN_061_HORIZ_THEN_062
 	call DRAW_CIN_091_061_FIELD
 	call DRAW_CIN_069
 	selectVideoPage 0x03
-	call DRAW_CIN_061_HORIZ_THEN_062__CART__POST_INIT_VARS_A_B_PAL_1
+	call DRAW_CIN_061_HORIZ_THEN_062
 	call DRAW_CIN_064_065_FIELD
 	call DRAW_CIN_069
 	selectVideoPage 0xFF
@@ -124,7 +124,7 @@ DRAW_CIN_093_TO_097_VAR:
 	video type=1, offset=CINEMATIC_097, x=[0x01], y=[0x02], zoom=[0x03]
 	ret
 
-DRAW_CIN_061_HORIZ_THEN_062__CART__POST_INIT_VARS_A_B_PAL_1:
+DRAW_CIN_061_HORIZ_THEN_062:
 	video type=1, offset=CINEMATIC_061, x=114, y=22
 	video type=1, offset=CINEMATIC_061, x=86, y=21
 	video type=1, offset=CINEMATIC_061, x=53, y=21

@@ -1,7 +1,7 @@
-ANIM_CIN_042_LOOP_VARE6__CART__POST_SET_VAR_E6_5_PAL_B:
+ANIM_CIN_042_LOOP_VARE6:
 	video type=1, offset=CINEMATIC_042, x=160, y=100
 	break
-	djnz [0xE6], ANIM_CIN_042_LOOP_VARE6__CART__POST_SET_VAR_E6_5_PAL_B
+	djnz [0xE6], ANIM_CIN_042_LOOP_VARE6
 	play id=0x0057, freq=0x0F, vol=0x20, channel=0x03
 	video type=1, offset=CINEMATIC_043, x=160, y=100
 	break
@@ -54,9 +54,9 @@ LABEL_0676:
 	mov [0x02], 0x0064
 	setPalette 0x0A
 
-DELAY_LOOP_VAR03__CART__POST_SET_VAR_E6_5_PAL_B:
+DELAY_LOOP_VAR03:
 	break
-	djnz [0x03], DELAY_LOOP_VAR03__CART__POST_SET_VAR_E6_5_PAL_B
+	djnz [0x03], DELAY_LOOP_VAR03
 	setup channel=0x05, address=DRAW_CIN_71_72_FADE
 	video type=1, offset=CINEMATIC_011, x=[0x01], y=[0x02], zoom=0x40
 	play id=0x0008, freq=0x0A, vol=0x16, channel=0x00

@@ -52,9 +52,9 @@ LABEL_3778:
 	mov [0x6B], 0x0001
 	song id=0x0BC7, delay=0x0000, pos=0x00
 
-DELAY_LOOP_VAR6B__CART__POST_INLINE_SET_VARE8_TO_2F:
+DELAY_LOOP_VAR6B:
 	break
-	djnz [0x6B], DELAY_LOOP_VAR6B__CART__POST_INLINE_SET_VARE8_TO_2F
+	djnz [0x6B], DELAY_LOOP_VAR6B
 	mov [0x6B], 0x0003
 	setup channel=0x3B, address=KILL_CHANNEL_LANDING
 	setup channel=0x05, address=LABEL_3742

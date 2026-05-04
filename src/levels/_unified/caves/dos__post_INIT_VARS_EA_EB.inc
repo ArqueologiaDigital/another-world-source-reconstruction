@@ -18,11 +18,11 @@ LABEL_3457:
 
 LABEL_3458:
 	mov [0xEE], [0x21]
-	je [HACK_VAR_67], 0x6A, DRAW_CIN_315__DOS__POST_INIT_VARS_EA_EB
+	je [HACK_VAR_67], 0x6A, DRAW_CIN_315
 	video type=1, offset=CINEMATIC_315, x=[0x21], y=98, zoom=0x40
 	ret
 
-DRAW_CIN_315__DOS__POST_INIT_VARS_EA_EB:
+DRAW_CIN_315:
 	video type=1, offset=CINEMATIC_315, x=[0x21], y=85, zoom=0x40
 	ret
 

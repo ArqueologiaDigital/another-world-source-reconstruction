@@ -17,7 +17,7 @@ HANDLE_HERO_UD_INPUT:
 LABEL_0A9C:
 	db 0x05
 
-SET_VAR5A_5B_INIT_OR_CONTINUE__DOS__POST_COPY_VAR62_TO_VAR5F:
+SET_VAR5A_5B_INIT_OR_CONTINUE:
 	jne [0x59], 0x00, LABEL_0AAC
 	mov [0x5A], 0x0022
 	mov [0x5B], 0x0019
@@ -171,13 +171,13 @@ WAIT_LOOP_VAR_5C:
 
 LABEL_0C19:
 	mov [0x59], [0x5C]
-	call SET_VAR5A_5B_INIT_OR_CONTINUE__DOS__POST_COPY_VAR62_TO_VAR5F
+	call SET_VAR5A_5B_INIT_OR_CONTINUE
 	mov [0x5D], [0x5A]
 	mov [0x5E], [0x5B]
 	add [0x5D], 0x000A
 	add [0x5D], 0x000A
 	mov [0x59], [0x5C]
-	call SET_VAR5A_5B_INIT_OR_CONTINUE__DOS__POST_COPY_VAR62_TO_VAR5F
+	call SET_VAR5A_5B_INIT_OR_CONTINUE
 	video type=1, offset=CINEMATIC_164, x=[0x5a], y=[0x5b], zoom=0x40
 	call DRAW_CIN_SEQ_165_166_167
 	break
@@ -194,7 +194,7 @@ LABEL_0C44:
 	add [0x5F], [0xF8]
 	call TANK_HERO_67_5F_DISPATCH
 	mov [0x59], [0x5F]
-	call SET_VAR5A_5B_INIT_OR_CONTINUE__DOS__POST_COPY_VAR62_TO_VAR5F
+	call SET_VAR5A_5B_INIT_OR_CONTINUE
 	mov [0x60], [0x5A]
 	mov [0x61], [0x5B]
 	video type=1, offset=CINEMATIC_165, x=[0x60], y=[0x61], zoom=0x40
@@ -391,10 +391,10 @@ LABEL_0E1C:
 	mov [0x63], 0x0001
 	ret
 
-HANG_DRAW_CIN_225__DOS__POST_COPY_VAR62_TO_VAR5F:
+HANG_DRAW_CIN_225:
 	video type=1, offset=CINEMATIC_225, x=160, y=100
 	break
-	jmp HANG_DRAW_CIN_225__DOS__POST_COPY_VAR62_TO_VAR5F
+	jmp HANG_DRAW_CIN_225
 
 LABEL_0E2F:
 	call LABEL_1D17
@@ -402,7 +402,7 @@ LABEL_0E2F:
 	video type=1, offset=CINEMATIC_012, x=160, y=100
 	video type=1, offset=CINEMATIC_013, x=160, y=100
 	selectVideoPage 0xFF
-	setup channel=0x0A, address=HANG_DRAW_CIN_225__DOS__POST_COPY_VAR62_TO_VAR5F
+	setup channel=0x0A, address=HANG_DRAW_CIN_225
 	break
 	break
 	selectVideoPage 0x00
@@ -419,9 +419,9 @@ LABEL_0E2F:
 	break
 	mov [0x11], 0x0001
 
-DELAY_LOOP_VAR11__DOS__POST_COPY_VAR62_TO_VAR5F:
+DELAY_LOOP_VAR11:
 	break
-	djnz [0x11], DELAY_LOOP_VAR11__DOS__POST_COPY_VAR62_TO_VAR5F
+	djnz [0x11], DELAY_LOOP_VAR11
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_017, x=160, y=100
 	selectVideoPage 0xFF
@@ -655,8 +655,8 @@ LABEL_1131:
 	break
 	mov [0x4A], 0x0014
 
-DELAY_LOOP_VAR4A__DOS__POST_COPY_VAR62_TO_VAR5F:
+DELAY_LOOP_VAR4A:
 	break
-	djnz [0x4A], DELAY_LOOP_VAR4A__DOS__POST_COPY_VAR62_TO_VAR5F
+	djnz [0x4A], DELAY_LOOP_VAR4A
 	setup channel=0x0F, address=INIT_VARS_48_49_4A
 	killChannel

@@ -127,9 +127,9 @@ JUNK__498E:
 	mov [0xAF], [0x3A]
 	add [0xAF], 0x0001
 
-DELAY_LOOP_VARAF__CART__POST_INCREMENT_VAR07_BY_4:
+DELAY_LOOP_VARAF:
 	break
-	djnz [0xAF], DELAY_LOOP_VARAF__CART__POST_INCREMENT_VAR07_BY_4
+	djnz [0xAF], DELAY_LOOP_VARAF
 	jmp JUNK__498E
 
 KILL_CHAN_AT_49CD:
@@ -211,7 +211,7 @@ LABEL_4A5B:
 	video type=1, offset=CINEMATIC_126, x=[0x01], y=[0x02], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_125, x=[0x01], y=[0x02], zoom=0x40
-	jmp DRAW_CIN_98_99_BLOCK__CART__POST_INCREMENT_VAR07_BY_4
+	jmp DRAW_CIN_98_99_BLOCK
 LABEL_4A81:
 	db 0x11
 
@@ -228,18 +228,18 @@ LABEL_4A9D:
 	break
 	video type=1, offset=CINEMATIC_096, x=[0x01], y=[0x02], zoom=0x40
 	djnz [0x03], LABEL_4A9D
-	setup channel=0x15, address=DRAW_CIN_110_BLOCK__CART__POST_INCREMENT_VAR07_BY_4
+	setup channel=0x15, address=DRAW_CIN_110_BLOCK
 	mov [0x03], 0x0003
 
 LABEL_4AAF:
 	break
 	video type=1, offset=CINEMATIC_097, x=[0x01], y=[0x02], zoom=0x40
 	djnz [0x03], LABEL_4AAF
-	jmp DRAW_CIN_98_99_BLOCK__CART__POST_INCREMENT_VAR07_BY_4
+	jmp DRAW_CIN_98_99_BLOCK
 LABEL_4ABC:
 	db 0x11
 
-DRAW_CIN_110_BLOCK__CART__POST_INCREMENT_VAR07_BY_4:
+DRAW_CIN_110_BLOCK:
 	video type=1, offset=CINEMATIC_110, x=[0x01], y=[0x02], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_111, x=[0x01], y=[0x02], zoom=0x40
@@ -287,7 +287,7 @@ LABEL_4B26:
 	video type=1, offset=CINEMATIC_129, x=[0x01], y=[0x02], zoom=0x40
 	break
 	video type=1, offset=CINEMATIC_128, x=[0x01], y=[0x02], zoom=0x40
-	jmp DRAW_CIN_98_99_BLOCK__CART__POST_INCREMENT_VAR07_BY_4
+	jmp DRAW_CIN_98_99_BLOCK
 LABEL_4B40:
 	db 0x11
 
@@ -300,7 +300,7 @@ LABEL_4B41:
 	break
 	video type=1, offset=CINEMATIC_108, x=[0x01], y=[0x02], zoom=0x40
 
-DRAW_CIN_98_99_BLOCK__CART__POST_INCREMENT_VAR07_BY_4:
+DRAW_CIN_98_99_BLOCK:
 	selectVideoPage 0x00
 	video type=1, offset=CINEMATIC_098, x=[0x01], y=[0x02], zoom=0x40
 	selectVideoPage 0xFF

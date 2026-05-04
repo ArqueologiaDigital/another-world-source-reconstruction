@@ -29,11 +29,11 @@ LABEL_802E:
 LABEL_802F:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
-	jne [0xF8], 0x00, DRAW_CIN_552__CART__POST_COPY_VAR52_TO_VAR02_KILL_CHANNEL
+	jne [0xF8], 0x00, DRAW_CIN_552
 	video type=1, offset=CINEMATIC_553, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-DRAW_CIN_552__CART__POST_COPY_VAR52_TO_VAR02_KILL_CHANNEL:
+DRAW_CIN_552:
 	video type=1, offset=CINEMATIC_552, x=[0x01], y=[0x02], zoom=0x40
 	ret
 LABEL_8048:
@@ -42,11 +42,11 @@ LABEL_8048:
 LABEL_8049:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
-	jne [0xF8], 0x00, DRAW_CIN_550__CART__POST_COPY_VAR52_TO_VAR02_KILL_CHANNEL
+	jne [0xF8], 0x00, DRAW_CIN_550
 	video type=1, offset=CINEMATIC_551, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
-DRAW_CIN_550__CART__POST_COPY_VAR52_TO_VAR02_KILL_CHANNEL:
+DRAW_CIN_550:
 	video type=1, offset=CINEMATIC_550, x=[0x01], y=[0x02], zoom=0x40
 	ret
 

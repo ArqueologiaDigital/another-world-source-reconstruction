@@ -94,9 +94,9 @@ LABEL_8262:
 	video type=1, offset=CINEMATIC_185, x=160, y=100
 	mov [0xC8], 0x0009
 
-DELAY_LOOP_VARC8__CART__POST_COPY_PAGE0_TO_FF_KILL_CHANNEL:
+DELAY_LOOP_VARC8:
 	break
-	djnz [0xC8], DELAY_LOOP_VARC8__CART__POST_COPY_PAGE0_TO_FF_KILL_CHANNEL
+	djnz [0xC8], DELAY_LOOP_VARC8
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
 	break
 	freezeChannels first=0x00, last=0x3A

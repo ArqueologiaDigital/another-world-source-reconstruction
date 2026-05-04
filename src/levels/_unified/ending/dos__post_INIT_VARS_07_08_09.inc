@@ -1,6 +1,6 @@
-DELAY_LOOP_VAR09__DOS__POST_INIT_VARS_07_08_09:
+DELAY_LOOP_VAR09:
 	break
-	djnz [0x09], DELAY_LOOP_VAR09__DOS__POST_INIT_VARS_07_08_09
+	djnz [0x09], DELAY_LOOP_VAR09
 	play id=0x0057, freq=0x0F, vol=0x20, channel=0x03
 	video type=1, offset=CINEMATIC_021, x=[0x07], y=[0x08], zoom=0x40
 	break
@@ -14,10 +14,10 @@ LABEL_07A9:
 	video type=1, offset=CINEMATIC_024, x=[0x07], y=[0x08], zoom=0x40
 	video type=1, offset=CINEMATIC_025, x=[0x07], y=[0x08], zoom=0x40
 	djnz [0x09], LABEL_07A9
-	setup channel=0x11, address=DRAW_CIN_024_LOOP__DOS__POST_INIT_VARS_07_08_09
-	setup channel=0x12, address=DRAW_CV_192_195_196_SEQ__DOS__POST_INIT_VARS_07_08_09
-	setup channel=0x13, address=DRAW_CV_193_185_181_SEQ__DOS__POST_INIT_VARS_07_08_09
-	setup channel=0x0C, address=DRIFT_VAR07_PLUS_2_3X__DOS__POST_INIT_VARS_07_08_09
+	setup channel=0x11, address=DRAW_CIN_024_LOOP
+	setup channel=0x12, address=DRAW_CV_192_195_196_SEQ
+	setup channel=0x13, address=DRAW_CV_193_185_181_SEQ
+	setup channel=0x0C, address=DRIFT_VAR07_PLUS_2_3X
 	mov [0x09], 0x0010
 
 DELAY_LOOP_VAR09_AT_07CC:
@@ -65,14 +65,14 @@ LABEL_0805:
 	setup channel=0x0A, address=SET_VAR_E6_5_PAL_B
 	killChannel
 
-DRAW_CIN_024_LOOP__DOS__POST_INIT_VARS_07_08_09:
+DRAW_CIN_024_LOOP:
 	video type=1, offset=CINEMATIC_024, x=[0x07], y=[0x08], zoom=0x40
 	break
-	jmp DRAW_CIN_024_LOOP__DOS__POST_INIT_VARS_07_08_09
+	jmp DRAW_CIN_024_LOOP
 LABEL_0853:
 	db 0x11
 
-DRAW_CV_192_195_196_SEQ__DOS__POST_INIT_VARS_07_08_09:
+DRAW_CV_192_195_196_SEQ:
 	video type=0, offset=COMMON_VIDEO_192, x=[0x07], y=[0x08], zoom=0x40
 	break
 	video type=0, offset=COMMON_VIDEO_195, x=[0x07], y=[0x08], zoom=0x40
@@ -105,11 +105,11 @@ DRAW_CV_192_195_196_SEQ__DOS__POST_INIT_VARS_07_08_09:
 	break
 	video type=0, offset=COMMON_VIDEO_188, x=[0x07], y=[0x08], zoom=0x40
 	break
-	jmp DRAW_CV_192_195_196_SEQ__DOS__POST_INIT_VARS_07_08_09
+	jmp DRAW_CV_192_195_196_SEQ
 LABEL_08B7:
 	db 0x11
 
-DRAW_CV_193_185_181_SEQ__DOS__POST_INIT_VARS_07_08_09:
+DRAW_CV_193_185_181_SEQ:
 	video type=0, offset=COMMON_VIDEO_193, x=[0x07], y=[0x08], zoom=0x40
 	break
 	video type=0, offset=COMMON_VIDEO_185, x=[0x07], y=[0x08], zoom=0x40
@@ -142,22 +142,22 @@ DRAW_CV_193_185_181_SEQ__DOS__POST_INIT_VARS_07_08_09:
 	break
 	video type=0, offset=COMMON_VIDEO_189, x=[0x07], y=[0x08], zoom=0x40
 	break
-	jmp DRAW_CV_193_185_181_SEQ__DOS__POST_INIT_VARS_07_08_09
+	jmp DRAW_CV_193_185_181_SEQ
 LABEL_091B:
 	db 0x11
 
-DRIFT_VAR07_PLUS_2_3X__DOS__POST_INIT_VARS_07_08_09:
+DRIFT_VAR07_PLUS_2_3X:
 	mov [0x0A], 0x0003
 	add [0x07], 0x0002
 	break
-	djnz [0x0A], DRIFT_VAR07_PLUS_2_3X__DOS__POST_INIT_VARS_07_08_09
+	djnz [0x0A], DRIFT_VAR07_PLUS_2_3X
 	mov [0x0A], 0x0005
 
 LABEL_092D:
 	add [0x07], 0x0003
 	break
 	djnz [0x0A], LABEL_092D
-	jmp DRIFT_VAR07_PLUS_2_3X__DOS__POST_INIT_VARS_07_08_09
+	jmp DRIFT_VAR07_PLUS_2_3X
 	killChannel
 	video type=1, offset=CINEMATIC_108, x=160, y=100
 	video type=0, offset=COMMON_VIDEO_301, x=160, y=100, zoom=0x40

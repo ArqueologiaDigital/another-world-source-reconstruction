@@ -122,9 +122,9 @@ LABEL_04B3:
 	video type=1, offset=CINEMATIC_566, x=178, y=110
 	mov [0xE6], 0x000A
 
-DELAY_LOOP_VARE6__CART__POST_COPY_VARF8_TO_VAR00:
+DELAY_LOOP_VARE6:
 	break
-	djnz [0xE6], DELAY_LOOP_VARE6__CART__POST_COPY_VARF8_TO_VAR00
+	djnz [0xE6], DELAY_LOOP_VARE6
 	video type=1, offset=CINEMATIC_568, x=155, y=98
 	break
 	video type=1, offset=CINEMATIC_568, x=155, y=100

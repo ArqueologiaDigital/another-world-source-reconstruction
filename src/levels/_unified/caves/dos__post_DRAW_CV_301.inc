@@ -48,38 +48,38 @@ DRAW_CIN_015:
 LABEL_8ED7:
 	db 0x11
 
-DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301:
+DRAW_CIN_028_029_030_VAR09:
 	mov [0xF8], [0x09]
 	and [0xF8], 0x000F
-	je [0xF8], 0x01, DRAW_CIN_028__DOS__POST_DRAW_CV_301
-	je [0xF8], 0x02, DRAW_CIN_029__DOS__POST_DRAW_CV_301
-	je [0xF8], 0x03, DRAW_CIN_030__DOS__POST_DRAW_CV_301
+	je [0xF8], 0x01, DRAW_CIN_028
+	je [0xF8], 0x02, DRAW_CIN_029
+	je [0xF8], 0x03, DRAW_CIN_030
 	ret
 
-DRAW_CIN_028__DOS__POST_DRAW_CV_301:
+DRAW_CIN_028:
 	video type=1, offset=CINEMATIC_028, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
-DRAW_CIN_029__DOS__POST_DRAW_CV_301:
+DRAW_CIN_029:
 	video type=1, offset=CINEMATIC_029, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
-DRAW_CIN_030__DOS__POST_DRAW_CV_301:
+DRAW_CIN_030:
 	video type=1, offset=CINEMATIC_030, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_031_032_VAR09_LOW:
 	mov [0xF8], [0x09]
 	and [0xF8], 0x000F
-	je [0xF8], 0x01, DRAW_CIN_031__DOS__POST_DRAW_CV_301
-	je [0xF8], 0x02, DRAW_CIN_032__DOS__POST_DRAW_CV_301
+	je [0xF8], 0x01, DRAW_CIN_031
+	je [0xF8], 0x02, DRAW_CIN_032
 	ret
 
-DRAW_CIN_031__DOS__POST_DRAW_CV_301:
+DRAW_CIN_031:
 	video type=1, offset=CINEMATIC_031, x=[0xf5], y=[0x08], zoom=0x40
 	ret
 
-DRAW_CIN_032__DOS__POST_DRAW_CV_301:
+DRAW_CIN_032:
 	video type=1, offset=CINEMATIC_032, x=[0xf5], y=[0x08], zoom=0x40
 	ret
 
@@ -157,7 +157,7 @@ LABEL_9002:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_167, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_168, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_9024
 	call LABEL_8BD5
 	jmp LABEL_9027
@@ -175,7 +175,7 @@ LABEL_9028:
 	video type=0, offset=COMMON_VIDEO_167, x=[0x07], y=[0x08], zoom=0x40
 	add [0x07], 0x0001
 	video type=0, offset=COMMON_VIDEO_171, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_9052
 	call LABEL_8BD5
 	jmp LABEL_9055
@@ -190,7 +190,7 @@ LABEL_9056:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_172, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_9073
 	call LABEL_8BE1
 	jmp LABEL_9076
@@ -206,7 +206,7 @@ LABEL_9077:
 	play id=0x0055, freq=0x0F, vol=0x14, channel=0x00
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_175, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_909A
 	call LABEL_8BE1
 	jmp LABEL_909D
@@ -221,7 +221,7 @@ LABEL_909E:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_178, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_90BB
 	call LABEL_8BE1
 	jmp LABEL_90BE
@@ -237,7 +237,7 @@ LABEL_90BF:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_179, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_180, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_90E1
 	call LABEL_8C04
 	jmp LABEL_90E4
@@ -253,7 +253,7 @@ LABEL_90E5:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_183, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_184, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_9107
 	call LABEL_8C10
 	jmp LABEL_910A
@@ -269,7 +269,7 @@ LABEL_910B:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_187, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_188, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_912D
 	call LABEL_8C33
 	jmp LABEL_9130
@@ -285,7 +285,7 @@ LABEL_9131:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_191, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_192, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_9153
 	call LABEL_8C56
 	jmp LABEL_9156
@@ -301,7 +301,7 @@ LABEL_9157:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_191, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_195, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_9179
 	call LABEL_8C56
 	jmp LABEL_9184
@@ -319,7 +319,7 @@ LABEL_9185:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_183, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_196, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_91A7
 	call LABEL_8C33
 	jmp LABEL_91AA
@@ -336,7 +336,7 @@ LABEL_91AB:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_179, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_197, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_91D3
 	call LABEL_8C33
 	jmp LABEL_91D6
@@ -351,7 +351,7 @@ LABEL_91D7:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_198, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_91F4
 	call LABEL_8C33
 	jmp LABEL_91F7
@@ -366,7 +366,7 @@ LABEL_91F8:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_199, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_9215
 	call LABEL_8C10
 	jmp LABEL_9218
@@ -381,7 +381,7 @@ LABEL_9219:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_200, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_9236
 	call LABEL_8C04
 	jmp LABEL_9239
@@ -396,7 +396,7 @@ LABEL_923A:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_201, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_9257
 	call LABEL_8BE1
 	jmp LABEL_925A
@@ -411,7 +411,7 @@ GUARDED_HERO_ANIM_CV_128:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_128, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_9278
 	call LABEL_8BE1
 	jmp LABEL_927B
@@ -426,7 +426,7 @@ LABEL_927C:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_128, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_9299
 	call LABEL_8C04
 	jmp LABEL_929C
@@ -441,7 +441,7 @@ LABEL_929D:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_128, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09__DOS__POST_DRAW_CV_301
+	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_92BA
 	call LABEL_8C10
 	jmp LABEL_92BD
@@ -465,7 +465,7 @@ LABEL_92CA:
 LABEL_92D6:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call LABEL_8B7B
-	call DRAW_BEAST_Y_PLUS_D__DOS__POST_DRAW_CV_301
+	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_285, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_835D
@@ -478,7 +478,7 @@ LABEL_92F3:
 	sub [0x08], 0x0001
 	call LABEL_8B99
 	add [0x08], 0x0001
-	call DRAW_BEAST_Y_PLUS_D__DOS__POST_DRAW_CV_301
+	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_286, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_837A
@@ -489,7 +489,7 @@ LABEL_92F3:
 LABEL_9320:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call LABEL_8BB7
-	call DRAW_BEAST_Y_PLUS_D__DOS__POST_DRAW_CV_301
+	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_285, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_835D
@@ -499,7 +499,7 @@ LABEL_9320:
 LABEL_933D:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call LABEL_8B99
-	call DRAW_BEAST_Y_PLUS_D__DOS__POST_DRAW_CV_301
+	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_285, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_835D
@@ -514,7 +514,7 @@ LABEL_935A:
 	sub [0x08], 0x000D
 
 LABEL_9371:
-	call DRAW_BEAST_Y_PLUS_D__DOS__POST_DRAW_CV_301
+	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_285, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_837A
@@ -533,7 +533,7 @@ LABEL_9394:
 	sub [0x08], 0x0001
 	video type=0, offset=COMMON_VIDEO_287, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x0001
-	call DRAW_BEAST_Y_PLUS_D__DOS__POST_DRAW_CV_301
+	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_286, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_837A
@@ -544,7 +544,7 @@ LABEL_9394:
 LABEL_93C3:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video type=0, offset=COMMON_VIDEO_287, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_BEAST_Y_PLUS_D__DOS__POST_DRAW_CV_301
+	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_285, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_835D
@@ -558,7 +558,7 @@ LABEL_93E2:
 	video type=0, offset=COMMON_VIDEO_275, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x07], 0x0004
 	sub [0x08], 0x000D
-	call DRAW_BEAST_Y_PLUS_D__DOS__POST_DRAW_CV_301
+	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_285, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call DRAW_BEAST_HEAD_CV165_166
@@ -567,7 +567,7 @@ LABEL_93E2:
 
 LABEL_9411:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	call DRAW_BEAST_Y_PLUS_D__DOS__POST_DRAW_CV_301
+	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_285, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call DRAW_BEAST_HEAD_CV165_166
@@ -579,7 +579,7 @@ LABEL_942B:
 	add [0x08], 0x000D
 	video type=1, offset=CINEMATIC_075, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x000D
-	call DRAW_BEAST_Y_PLUS_D__DOS__POST_DRAW_CV_301
+	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_285, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call DRAW_BEAST_HEAD_CV165_166
@@ -592,7 +592,7 @@ LABEL_9452:
 	add [0x08], 0x000D
 	video type=1, offset=CINEMATIC_074, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x000D
-	call DRAW_BEAST_Y_PLUS_D__DOS__POST_DRAW_CV_301
+	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_286, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_837A
@@ -682,7 +682,7 @@ DRAW_HERO_Y_PLUS_E:
 	sub [0x08], 0x000E
 	ret
 
-DRAW_BEAST_Y_PLUS_D__DOS__POST_DRAW_CV_301:
+DRAW_BEAST_Y_PLUS_D:
 	add [0x08], 0x000D
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
 	sub [0x08], 0x000D
