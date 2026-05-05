@@ -1,5 +1,0 @@
-DRAW_CIN_241_IF_VAR09_EQ_1:
-	mov [0xF8], [0x09]
-	and [0xF8], 0x000F
-	je [0xF8], 0x01, DRAW_CIN_241
-	ret

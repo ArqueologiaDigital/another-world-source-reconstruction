@@ -40,13 +40,7 @@ COPY_PAGE0_TO_3_LOAD_RES45:
 ;@include "../_helpers/INIT_VARS_AA_AD_5B_5E_PLUS1.inc"
 
 ;@include "../_helpers/INIT_VARS_A1_A4_A7.inc"
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_INIT_VARS_A1_A4_A7.inc"
-;@elif BRANCH == "cartridge_1992"
-;@include "cart__post_INIT_VARS_A1_A4_A7.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_INIT_VARS_A1_A4_A7.inc"
-;@endif
+;@include "post_INIT_VARS_A1_A4_A7.inc"
 
 DELETE_GAME_AND_FX_CHANNELS:
 	deleteChannels first=0x22, last=0x2E

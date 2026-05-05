@@ -42,10 +42,8 @@ DRAW_CIN_97_TO_100:
 	jmp DRAW_CIN_97_TO_100
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_DRAW_CIN_97_TO_100.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_DRAW_CIN_97_TO_100.inc"
+;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+;@include "post_DRAW_CIN_97_TO_100.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -76,10 +74,8 @@ DRAW_CIN_103_LOOP__ENDING_CHANNEL_CLEANUP:
 	jmp DRAW_CIN_103_LOOP__ENDING_CHANNEL_CLEANUP
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_DRAW_CIN_103_LOOP.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_DRAW_CIN_103_LOOP.inc"
+;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+;@include "post_DRAW_CIN_103_LOOP.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -89,10 +85,8 @@ DRAW_CIN_58_ANIM_LOOP:
 	jmp DRAW_CIN_58_ANIM_LOOP
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_DRAW_CIN_58_ANIM_LOOP.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_DRAW_CIN_58_ANIM_LOOP.inc"
+;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+;@include "post_DRAW_CIN_58_ANIM_LOOP.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")

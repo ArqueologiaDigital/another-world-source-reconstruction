@@ -213,10 +213,8 @@ DRAW_CIN_240:
 	ret
 ;@endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_DRAW_CIN_240.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_DRAW_CIN_240.inc"
+;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+;@include "post_DRAW_CIN_240.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
