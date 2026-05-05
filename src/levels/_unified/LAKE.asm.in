@@ -41,79 +41,222 @@ HERO_X		EQU 0x01
 HERO_Y		EQU 0x02
 
 COUNTER		EQU 0x10
+
+; Engine-managed special-purpose VM variables (HERO_POS_*, RANDOM_SEED, PAUSE_SLICES, etc.).
 ;@include "../_common_vars.inc"
+
+; Cross-stage helper EQUs (LABEL_0128 / ADDR_AT_* placeholders shared between levels).
 ;@include "_helpers/_helpers_equ_aliases.inc"
+
+; Auto-generated EQU aliases for stuck literal-address operands (LABEL_<HEX>, ADDR_AT_*).
 ;@include "lake/lake_equ_aliases.inc"
 
 
 	org 0x0000
 
+; Stage entry point + first-frame channel/state initialisation.
 ;@include "lake/lake_entry_and_init.inc"
+
+; Background blit channels — page-0 and page-FF copy loops that run every frame.
 ;@include "lake/blit_loops.inc"
+
+; Frame dispatcher: video-page cycle scheduler + per-frame timer tick.
 ;@include "lake/video_pages_and_timer.inc"
+
+; Opening-scene background droplet sprinkles (random scrolling).
 ;@include "lake/opening_bg_droplet_sprinkles.inc"
+
+; RNG seed init + music/SFX preload (includes the dead-code 0x89 preload, see issue #0076).
 ;@include "lake/random_init_and_music_setup.inc"
+
+; Random-delay ambient SFX scheduler (sparse background hits).
 ;@include "lake/ambient_audio.inc"
+
+; Generic per-page draw helpers + the 4 droplet sprite variants drawn at HERO_X / HERO_Y.
 ;@include "lake/draw_helpers_and_droplet_variants.inc"
+
+; Particle-burst secondary loop (residue trail behind effects).
 ;@include "lake/particle_burst_cycle_loop_2.inc"
+
+; Falling-droplet animation channel + random-position picker.
 ;@include "lake/droplet_fall_and_random_pos.inc"
+
+; Scatter-dot particle effect: burst-right then drift.
 ;@include "lake/scatter_dots_burst_right_drift.inc"
+
+; Combined particle-burst cycle + droplet-drip animation.
 ;@include "lake/particle_bursts_and_droplet_drip.inc"
+
+; 3-dot scatter effect with screen-region classification.
 ;@include "lake/scatter_3dots_classify_regions.inc"
+
+; 4-dot scatter init + drift loop variants.
 ;@include "lake/scatter_dots_init_and_drift.inc"
+
+; 8-dot scatter loops (left and right variants).
 ;@include "lake/scatter_8dots_loops.inc"
+
+; Beast-killed-by-laser death sequence (after Lester gets the gun).
 ;@include "lake/beast_killed_by_laser.inc"
+
+; Scene-transition handler from intro into getting-out-of-pool + misc decor.
 ;@include "lake/scene_transition_and_decor.inc"
+
+; Lester at-pool idle / breathing / falling / recover poses.
 ;@include "lake/lester_at_pool_animations.inc"
+
+; Decoration animation set F7..F14 (blink / cycle effects on environment props).
 ;@include "lake/decor_f7_through_f14.inc"
+
+; LAKE intro cinematic setup (pre-gameplay scripted sequence).
 ;@include "lake/lake_intro_setup.inc"
+
+; Animation-multiplex ring 3 + LAKE_051 cinematic frame draws.
 ;@include "lake/multiplex_ring3_and_lake051.inc"
+
+; Lester drowning-frame loop + tentacle retreat after Lester surfaces.
 ;@include "lake/lester_frame_and_tentacle_retreat.inc"
+
+; Reed-plant decoration animation cycle (background plants by the pool).
 ;@include "lake/reed_plant.inc"
+
+; SNEAKY_TENTACLE_FROM_THE_POOL — tentacle rising from underwater to grab Lester.
 ;@include "lake/sneaky_tentacle.inc"
+
+; 3-way video-page cycler helper (used by frame dispatcher).
 ;@include "lake/cycle_video_pages.inc"
+
+; Vine-screen and outside-pool screen background rendering.
 ;@include "lake/vine_and_outside_pool_screens.inc"
+
+; Per-screen-to-the-right setup (which channels / NPCs / decor that screen owns).
 ;@include "lake/screen_to_the_right_setups.inc"
+
+; Hero position-clamp + bounds checks at lake screen edges.
 ;@include "lake/hero_lake_edge_and_init.inc"
+
+; Terrain Y-from-X lookup — derives HERO_Y from HERO_X per screen zone.
 ;@include "lake/hero_y_from_x_terrain.inc"
+
+; Screen-edge transition loops (vine / first-screen-right boundary handlers).
 ;@include "lake/screen_edge_loops.inc"
+
+; Channel-kill helpers — KILL_CH_<list> teardown routines.
 ;@include "lake/channel_cleanup_helpers.inc"
+
+; Beast-kills-Lester death sequence + respawn handler.
 ;@include "lake/beast_kills_lester_and_respawn.inc"
+
+; Vine-screen background blit loop (cliff edge with hanging vine).
 ;@include "lake/vine_bg_loops.inc"
+
+; Decor scheduler for cinematic indices 096..099 (background props).
 ;@include "lake/lake_decorations_096_099.inc"
+
+; Lester drifting (in water) and vine-swing animations.
 ;@include "lake/lester_drift_and_swing.inc"
+
+; Getting-out-of-pool animation sequence (Lester climbs from the lake to shore).
 ;@include "lake/getting_out_of_pool_animation.inc"
+
+; Beast's first scripted appearance — background scene-setting, no attack yet.
 ;@include "lake/beast_first_appearance.inc"
+
+; Beast walking across the first / second screen (background, sets up the later ambush).
 ;@include "lake/beast_wanders.inc"
+
+; Beast-vs-Lester distance gating + per-screen spawn dispatch.
 ;@include "lake/beast_distance_check_and_spawns.inc"
+
+; Random-pick ambient growl / footstep cue for the beast.
 ;@include "lake/beast_ambient_sound.inc"
+
+; Beast AI: mid- and right-screen spawn case dispatcher.
 ;@include "lake/beast_ai_spawn_mid_right.inc"
+
+; Beast drift movement + cross-screen shift bookkeeping.
 ;@include "lake/beast_drift_and_screen_shift.inc"
+
+; Beast approach-and-decelerate animation tick.
 ;@include "lake/beast_approach_decel.inc"
+
+; Beast-surprises-Lester ambush trigger (the iconic bursting-from-foliage moment).
 ;@include "lake/beast_surprises_lester.inc"
+
+; Slug-attack cinematic (claw strike + dripping-goo overlay).
 ;@include "lake/slug_attack_cinematic.inc"
+
+; Animation multiplex rings (slot-rotation scheduler shared by several anims).
 ;@include "lake/multiplex_anim_rings.inc"
+
+; Multiplex ring 5 + beast-proximity gating.
 ;@include "lake/multiplex_ring5_and_beast_proximity.inc"
+
+; Slug enemy phase 1: birth and death animations.
 ;@include "lake/slug_phase_1_birth_and_death.inc"
+
+; Beast AI: direction-pick + proximity-based decisions.
 ;@include "lake/beast_ai_pick_dir_and_proximity.inc"
+
+; Generic horizontal/vertical proximity helpers used by enemy AI.
 ;@include "lake/proximity_helpers_and_dispatch.inc"
+
+; Slug walk movement gated by proximity to Lester.
 ;@include "lake/slug_walk_proximity.inc"
+
+; Top-level beast AI dispatcher keyed off HERO_X + state var.
 ;@include "lake/beast_ai_dispatch.inc"
+
+; Slug animation cycle + sprite-flip helpers.
 ;@include "lake/slug_anim_and_flip.inc"
+
+; Beetle walking-right loop + kick-collision detector.
 ;@include "lake/beetle_walking_and_kick_detector.inc"
+
+; Beetle ambient flight (hover-bobbing) channel.
 ;@include "lake/beetle.inc"
+
+; Beast-surprise-scene entry / init wiring.
 ;@include "lake/beast_surprise_scene.inc"
+
+; Per-screen background scenarios (vine-screen, pool-screen draws).
 ;@include "lake/screen_scenarios.inc"
+
+; Calm-alien-pool cinematic (pre-Lester-arrival establishing shot).
 ;@include "lake/pool_underwater_cinematic.inc"
+
+; Lab-console-sinking animation + rising bubbles (Lester's lab, sinking from above).
 ;@include "lake/pool_lab_console_and_bubbles.inc"
+
+; Hero jump-rise parabola physics.
 ;@include "lake/hero_physics_jump.inc"
+
+; Hero AI dispatch (airborne / falling state).
 ;@include "lake/hero_ai_dispatch_airborne.inc"
+
+; Per-tick hero state-update bundle helpers.
 ;@include "lake/hero_tick_bundle_helpers.inc"
+
+; Hero fall-left animation prelude + loop.
 ;@include "lake/hero_fall_left.inc"
+
+; Hero standing-left idle loop.
 ;@include "lake/hero_stand_left.inc"
+
+; Hero fall-right animation prelude + loop.
 ;@include "lake/hero_fall_right.inc"
+
+; Hero fall-right + maybe-resume-walk-right drawers (post-fall recovery).
 ;@include "lake/hero_fall_right_and_drawers.inc"
+
+; Hero left-action dispatcher + leap-left animation.
 ;@include "lake/hero_dispatch_and_leap_left.inc"
+
+; Hero leap-right loop + landing handler.
 ;@include "lake/hero_leap_and_land.inc"
+
+; Hero walk-right / run movement loop.
 ;@include "lake/hero_walk_run_movement.inc"
+
+; Hero kick-left/right + crouch animations.
 ;@include "lake/hero_kicks_and_crouches.inc"
