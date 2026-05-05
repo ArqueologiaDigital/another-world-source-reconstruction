@@ -23,14 +23,19 @@ THE_BEAST_WANDERS_ON_THE_FIRST_SCREEN_TO_THE_RIGHT:
 	mov [0x0E], 0x0045
 	mov [0x0F], 0x0063
 
-; Beast loiters in frame 1 (idle/poised stance) while Lester is still
-; in the left 60 px of the screen. Var 0x01 is HERO_X (per the
-; BEETLE_AI_DISPATCH_BY_HERO_X / HERO_INIT_Y_AND_DISPATCH_BY_X
-; routines that key off the same var). The beast itself is fixed at
-; screen x=0x45=69 (set just above), so the threshold sits ~9 px west
-; of its foot — as soon as Lester walks east past x=0x3C=60, the
-; loop exits and the beast launches its full attack animation
-; (FIRST_6 → FIRST_11 walk-up + WANDER_2..0 charge).
+; Beast holds frame 1 (idle stance) while Lester is still in the left
+; 60 px of the screen. Var 0x01 is HERO_X (same var keyed off by
+; BEETLE_AI_DISPATCH_BY_HERO_X and HERO_INIT_Y_AND_DISPATCH_BY_X).
+; The beast itself stands at screen x=0x45=69 (set just above), so
+; the threshold sits ~9 px west of its foot — once Lester walks east
+; past x=0x3C=60, the loop exits and the beast strolls away to the
+; right (FIRST_6 → FIRST_11 walk cycle, +0x1C step, then WANDER_2..0
+; tail). This is background scene-setting, not an attack: the beast
+; is just crossing the first screen to set up the ambush that fires
+; later, on a screen further to the right (see also the sibling
+; THE_BEAST_WANDERS_ON_THE_SECOND_SCREEN_TO_THE_RIGHT below). The
+; faint footstep `play id=0x003C, freq=0x0A, vol=0x0C` after WANDER_2
+; is consistent with a distant footfall, not a roar.
 BEAST_WANDER_F1_WHILE_HERO_X_LT_3C:
 	video offset=CINEMATIC_BEAST_WANDER_1, x=[0x0e], y=[0x0f]
 	break
