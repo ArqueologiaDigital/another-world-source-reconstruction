@@ -2,13 +2,7 @@ INCREMENT_VAR5F_BY_8:
 	add [0x5F], 0x0008
 	ret
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_INCREMENT_VAR5F_BY_8.inc"
-;@elif BRANCH == "cartridge_1992"
-;@include "cart__post_INCREMENT_VAR5F_BY_8.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_INCREMENT_VAR5F_BY_8.inc"
-;@endif
+;@include "post_INCREMENT_VAR5F_BY_8.inc"
 
 SET_VAR5F_TO_0018:
 	mov [0x5F], 0x0018
