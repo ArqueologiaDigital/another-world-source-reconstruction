@@ -94,11 +94,7 @@ LESTER_FRAME_LOOP_BODY:
 	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F13, x=[0x01], y=[0x02], zoom=0x40
 	selectVideoPage 0xFF
 	break
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jmp INIT_VAR_03_TO_0x1E
-;@elif BRANCH == "chahi_amiga_1991"
-	jmp INIT_VAR_03_TO_0x1E
-;@endif
 	killChannel
 
 PLAYBACK_CINEMATIC_TENTACLE_RETREAT_F0_TO_513:

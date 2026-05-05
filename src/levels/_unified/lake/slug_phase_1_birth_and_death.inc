@@ -277,18 +277,10 @@ SLUG_R_DEATH_F10_TO_F26:
 	mov [0x13], [0x39]
 	add [0x13], 0x0002
 
-;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991", "dos_1992")
 SLUG_R_F6_RAND_HOLD:
-;@elif BRANCH == "gba_2004"
-SLUG_R_F6_RAND_HOLD:
-;@endif
 	break
 	video type=1, offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
-;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991", "dos_1992")
 	djnz [0x13], SLUG_R_F6_RAND_HOLD
-;@elif BRANCH == "gba_2004"
-	djnz [0x13], SLUG_R_F6_RAND_HOLD
-;@endif
 	break
 	mov [0x13], 0x0002
 

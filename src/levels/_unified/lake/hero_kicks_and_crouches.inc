@@ -85,19 +85,11 @@ HERO_CROUCH_KICK_LEFT:
 	video type=1, offset=CINEMATIC_LEFT_CROUCH_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
 	add [0x01], 0x0001
 
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 HERO_LEFT_CROUCH_KICK_LOOP:
-;@elif BRANCH == "chahi_amiga_1991"
-HERO_LEFT_CROUCH_KICK_LOOP:
-;@endif
 	break
 	mov [0x06], 0x0000
 	video type=1, offset=CINEMATIC_LEFT_CROUCH_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	je [HERO_ACTION_POS_MASK], 0x84, HERO_LEFT_CROUCH_KICK_LOOP
-;@elif BRANCH == "chahi_amiga_1991"
-	je [HERO_ACTION_POS_MASK], 0x84, HERO_LEFT_CROUCH_KICK_LOOP
-;@endif
 	add [0x01], 0x0002
 	break
 	video type=1, offset=CINEMATIC_LEFT_CROUCH_KICK_1, x=[0x01], y=[0x02], zoom=[0x03]

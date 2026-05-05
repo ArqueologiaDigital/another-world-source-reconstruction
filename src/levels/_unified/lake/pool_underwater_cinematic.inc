@@ -218,11 +218,7 @@ POOL_INIT_VAR_16_RISE:
 	add [0x16], 0x0014
 	mov [0x02], [0x16]
 	jl [0x16], 0x0104, POOL_INIT_VAR_16_RISE
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jmp INIT_VAR_03_TO_0x1E
-;@elif BRANCH == "chahi_amiga_1991"
-	jmp INIT_VAR_03_TO_0x1E
-;@endif
 	killChannel
 
 MAIN_TENTACLE_INSIDE_POOL_ANIMATION:

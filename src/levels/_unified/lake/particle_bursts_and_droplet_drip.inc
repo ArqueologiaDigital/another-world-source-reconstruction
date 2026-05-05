@@ -70,18 +70,10 @@ PARTICLE_BURST_3X_LOOP:
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x96], y=[0x97], zoom=0x40
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x98], y=[0x99], zoom=0x40
 	break
-;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991")
 	jmp PARTICLE_BURST_3X_LOOP
-;@elif BRANCH in ("dos_1992", "gba_2004")
-	jmp PARTICLE_BURST_3X_LOOP
-;@endif
 	killChannel
 
-;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991")
 PARTICLE_BURST_7X_ENTRY:
-;@elif BRANCH in ("dos_1992", "gba_2004")
-PARTICLE_BURST_7X_ENTRY:
-;@endif
 	jmp PARTICLE_BURST_7X_INIT_POS
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=212, y=121
 	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=186, y=113

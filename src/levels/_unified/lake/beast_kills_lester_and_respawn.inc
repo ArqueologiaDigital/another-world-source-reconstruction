@@ -102,18 +102,10 @@ BEAST_KILLS_LESTER_PHASE_2:
 	break
 	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_10, x=160, y=100
 	play id=0x004F, freq=0x17, vol=0x3F, channel=0x03
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jmp INIT_VAR_03_TO_0x1E
-;@elif BRANCH == "chahi_amiga_1991"
-	jmp INIT_VAR_03_TO_0x1E
-;@endif
 	killChannel
 
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 INIT_VAR_03_TO_0x1E:
-;@elif BRANCH == "chahi_amiga_1991"
-INIT_VAR_03_TO_0x1E:
-;@endif
 	mov [0x03], 0x001E
 
 WAIT_HERO_ACTION_TO_RESPAWN:

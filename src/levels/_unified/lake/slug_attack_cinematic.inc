@@ -150,17 +150,9 @@ SLUG_ATTACK_FB_FILL_LOOP:
 	break
 	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_1, x=155, y=100
 	break
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_2, x=160, y=100, zoom=[0x82]	;@enc=alt
-;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_2, x=160, y=100, zoom=[0x82]	;@enc=alt
-;@endif
 	break
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_3, x=160, y=100, zoom=[0x5a]	;@enc=alt
-;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_3, x=160, y=100, zoom=[0x5a]	;@enc=alt
-;@endif
 	break
 	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_4, x=160, y=100
 	setup channel=0x2C, address=SLUG_ATTACK_LEG_LOOP

@@ -159,10 +159,6 @@ REED_PLANT_FRAMES_5_TO_7_LOOP:
 	video type=1, offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 ;@endif
 	break
-;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991", "dos_1992")
 	jmp REED_PLANT_FRAMES_5_TO_7_LOOP
-;@elif BRANCH == "gba_2004"
-	jmp REED_PLANT_FRAMES_5_TO_7_LOOP
-;@endif
 	killChannel
 

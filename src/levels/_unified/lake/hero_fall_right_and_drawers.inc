@@ -167,13 +167,7 @@ RESUME_R_AFTER_VINE_LAND:
 ;@endif
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_WALK_RIGHT_LOOP
 
-;@if BRANCH == "cartridge_1992"
 DRAW_LESTER_FRAME_THEN_FALL:
-;@elif BRANCH in ("dos_1992", "gba_2004")
-DRAW_LESTER_FRAME_THEN_FALL:
-;@elif BRANCH == "chahi_amiga_1991"
-DRAW_LESTER_FRAME_THEN_FALL:
-;@endif
 	mov [0x29], [0x01]
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	call DRAW_LESTER_FRAME_BUNDLE
@@ -194,11 +188,7 @@ DRAW_LESTER_FRAME_THEN_FALL:
 ;@endif
 	add [0x01], 0x0002
 
-;@if BRANCH == "cartridge_1992"
 JMP_TO_HERO_FALL_RIGHT_LOOP:
-;@elif BRANCH == "gba_2004"
-JMP_TO_HERO_FALL_RIGHT_LOOP:
-;@endif
 ;@if BRANCH == "dos_1992"
 JMP_TO_HERO_FALL_RIGHT_LOOP:
 ;@endif

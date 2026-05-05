@@ -36,11 +36,7 @@ FIRST_SCREEN_R_SETUP_CHANNELS:
 	setup channel=0x13, address=MULTIPLEX_RING3_SAVE_LOOP
 	setup channel=0x35, address=SCATTER_3DOT_BURST_LEFT
 	setup channel=0x36, address=DRAW_8_SCATTER_DOTS_CYCLE
-;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991")
 	setup channel=0x37, address=PARTICLE_BURST_7X_ENTRY
-;@elif BRANCH in ("dos_1992", "gba_2004")
-	setup channel=0x37, address=PARTICLE_BURST_7X_ENTRY
-;@endif
 	setup channel=0x38, address=PARTICLE_BURST_7X_LOOP
 	call CLAMP_SCENE_INIT_X_VARS
 	jmp CHECK_HERO_FIRST_SCR_R_EDGE

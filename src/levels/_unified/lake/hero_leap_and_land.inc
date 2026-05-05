@@ -164,11 +164,7 @@ HERO_LEAP_R_F0_LOOP:
 	add [0x01], 0x000A
 	break
 
-;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991")
 HERO_LEAP_R_F5_TO_F9_ENTRY:
-;@elif BRANCH in ("dos_1992", "gba_2004")
-HERO_LEAP_R_F5_TO_F9_ENTRY:
-;@endif
 	mov [0x63], 0x0006
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_STOP_R_BUNDLE_086_087

@@ -176,16 +176,8 @@ SNEAKY_TENTACLE_GOING_UP:
 	break
 	video type=1, offset=CINEMATIC_TENTACLE_RISE_7, x=[0x32], y=100, zoom=0x40
 	break
-;@if BRANCH in ("cartridge_1992", "gba_2004")
 	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_12, x=[0x32], y=100, zoom=0x40
 	jmp INIT_VAR_03_TO_0x1E
-;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_12, x=[0x32], y=100, zoom=0x40
-	jmp INIT_VAR_03_TO_0x1E
-;@elif BRANCH == "dos_1992"
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_12, x=[0x32], y=100, zoom=0x40
-	jmp INIT_VAR_03_TO_0x1E
-;@endif
 	killChannel
 
 SNEAKY_TENTACLE_HIT_HERO:
