@@ -26,13 +26,13 @@ CINEMATIC_001		EQU 0x69B2
 CINEMATIC_002		EQU 0xB7F2
 CINEMATIC_003		EQU 0xB6A6
 CINEMATIC_004		EQU 0xB752
-CINEMATIC_005		EQU 0xB662
-CINEMATIC_006		EQU 0xB6CE
-CINEMATIC_007		EQU 0xB6FA
-CINEMATIC_008		EQU 0xB726
-CINEMATIC_009		EQU 0xB776
-CINEMATIC_010		EQU 0xB78E
-CINEMATIC_011		EQU 0xB7BE
+CINEMATIC_BUDDY_PULLS_LESTER_0		EQU 0xB662
+CINEMATIC_BUDDY_PULLS_LESTER_1		EQU 0xB6CE
+CINEMATIC_BUDDY_PULLS_LESTER_2		EQU 0xB6FA
+CINEMATIC_BUDDY_PULLS_LESTER_3		EQU 0xB726
+CINEMATIC_BUDDY_PULLS_LESTER_4		EQU 0xB776
+CINEMATIC_BUDDY_PULLS_LESTER_5		EQU 0xB78E
+CINEMATIC_BUDDY_PULLS_LESTER_6		EQU 0xB7BE
 CINEMATIC_012		EQU 0xB7A6
 CINEMATIC_013		EQU 0xB75A
 CINEMATIC_014		EQU 0xA238
@@ -2541,19 +2541,19 @@ LABEL_11FD:
 	break
 
 LABEL_1203:
-	video offset=CINEMATIC_005, x=[0xeb], y=[0xec]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_0, x=[0xeb], y=[0xec]
 	break
 	jmp LABEL_1203
 
 LABEL_120C:
-	video offset=CINEMATIC_005, x=[0xe9], y=[0xea]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_0, x=[0xe9], y=[0xea]
 	break
-	video offset=CINEMATIC_006, x=[0xe9], y=[0xea]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_1, x=[0xe9], y=[0xea]
 	break
 	play id=0x0070, freq=0x1E, vol=0x0A, channel=0x01
-	video offset=CINEMATIC_007, x=[0xe9], y=[0xea]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_2, x=[0xe9], y=[0xea]
 	break
-	video offset=CINEMATIC_008, x=[0xe9], y=[0xea]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_3, x=[0xe9], y=[0xea]
 	break
 
 LABEL_122A:
@@ -2566,18 +2566,18 @@ LABEL_1233:
 	break
 
 LABEL_1239:
-	video offset=CINEMATIC_005, x=[0xe9], y=[0xea]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_0, x=[0xe9], y=[0xea]
 	break
 	jmp LABEL_1239
 
 LABEL_1242:
-	video offset=CINEMATIC_005, x=[0xeb], y=[0xec]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_0, x=[0xeb], y=[0xec]
 	break
-	video offset=CINEMATIC_006, x=[0xeb], y=[0xec]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_1, x=[0xeb], y=[0xec]
 	break
-	video offset=CINEMATIC_007, x=[0xeb], y=[0xec]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_2, x=[0xeb], y=[0xec]
 	break
-	video offset=CINEMATIC_008, x=[0xeb], y=[0xec]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_3, x=[0xeb], y=[0xec]
 	break
 
 LABEL_125A:
@@ -2595,17 +2595,17 @@ LABEL_126C:
 	break
 
 LABEL_1272:
-	video offset=CINEMATIC_011, x=[0xe9], y=[0xea]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_6, x=[0xe9], y=[0xea]
 	break
 	jmp LABEL_1272
 
 LABEL_127B:
-	video offset=CINEMATIC_009, x=[0xe9], y=[0xea]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_4, x=[0xe9], y=[0xea]
 	break
-	video offset=CINEMATIC_010, x=[0xe9], y=[0xea]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_5, x=[0xe9], y=[0xea]
 	break
 	play id=0x008D, freq=0x1E, vol=0x0A, channel=0x02
-	video offset=CINEMATIC_011, x=[0xe9], y=[0xea]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_6, x=[0xe9], y=[0xea]
 	break
 	video offset=CINEMATIC_012, x=[0xe9], y=[0xea]
 	break
