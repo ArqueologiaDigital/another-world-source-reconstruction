@@ -21,12 +21,10 @@ INLINE_SET_VAR29_TO_5:
 INLINE_SET_VARF1_TO_64:
 	mov [0xF1], 0x0064
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_INLINE_SET_VARF1_TO_64.inc"
+;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+;@include "amiga_dos__post_INLINE_SET_VARF1_TO_64.inc"
 ;@elif BRANCH == "cartridge_1992"
 ;@include "cart__post_INLINE_SET_VARF1_TO_64.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_INLINE_SET_VARF1_TO_64.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")

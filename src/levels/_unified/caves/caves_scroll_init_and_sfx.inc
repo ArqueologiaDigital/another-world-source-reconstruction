@@ -192,12 +192,10 @@ DEDUP_CAVES_5B_003__CAVES_INLINE_SETTERS_AND_INIT:
 ;@endif
 
 ;@include "../_helpers/DEDUP_CAVES_6B_001.inc"
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_DEDUP_CAVES_6B_001.inc"
+;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+;@include "amiga_dos__post_DEDUP_CAVES_6B_001.inc"
 ;@elif BRANCH == "cartridge_1992"
 ;@include "cart__post_DEDUP_CAVES_6B_001.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_DEDUP_CAVES_6B_001.inc"
 ;@endif
 
 ;@include "../_helpers/INIT_VAR2B_2C_FROM_VAR01_VAR29_10.inc"

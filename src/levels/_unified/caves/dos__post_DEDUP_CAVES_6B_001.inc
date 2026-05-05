@@ -1,2 +1,0 @@
-TRIVIAL_RET_3:
-	ret

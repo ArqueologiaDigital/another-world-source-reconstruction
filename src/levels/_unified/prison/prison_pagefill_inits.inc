@@ -199,12 +199,10 @@ DRAW_CIN_169_WITH_POS_STEP_AT_B673C5FF:
 SHARED_RET:
 	ret
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_SHARED_RET.inc"
+;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+;@include "amiga_dos__post_SHARED_RET.inc"
 ;@elif BRANCH == "cartridge_1992"
 ;@include "cart__post_SHARED_RET.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_SHARED_RET.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")

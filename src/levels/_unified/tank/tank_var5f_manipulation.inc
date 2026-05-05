@@ -22,10 +22,8 @@ SET_VAR5F_TO_0016:
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR5F_TO_0016.inc"
-;@elif BRANCH == "cartridge_1992"
-;@include "cart__post_SET_VAR5F_TO_0016.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_SET_VAR5F_TO_0016.inc"
+;@elif BRANCH in ("cartridge_1992", "dos_1992")
+;@include "cart_dos__post_SET_VAR5F_TO_0016.inc"
 ;@endif
 
 COPY_VAR62_TO_VAR5F:
