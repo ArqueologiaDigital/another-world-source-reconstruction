@@ -21,7 +21,7 @@ LABEL_8956:
 	video type=0, offset=COMMON_VIDEO_204, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, LABEL_8979
 	call LABEL_8883
-	jmp DEDUP_CAVES_5B_007__HELPER_DEDUP_CAVES_5B_007
+	jmp DEDUP_CAVES_5B_007__HELPER
 
 LABEL_8979:
 	video type=0, offset=COMMON_VIDEO_205, x=[0x07], y=[0x08], zoom=0x40
