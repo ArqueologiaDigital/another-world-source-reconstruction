@@ -67,98 +67,98 @@ SET_PAL_07_FILL_TWO_PAGES_86243111:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_236:
-	video offset=CINEMATIC_236, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_236, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_237:
-	video offset=CINEMATIC_237, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_237, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_238:
-	video offset=CINEMATIC_238, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_238, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_239:
-	video offset=CINEMATIC_239, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_239, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_235:
-	video offset=CINEMATIC_235, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_235, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_234:
-	video offset=CINEMATIC_234, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_234, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_233:
-	video offset=CINEMATIC_233, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_233, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_232:
-	video offset=CINEMATIC_232, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_232, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_231:
-	video offset=CINEMATIC_231, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_231, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_230:
-	video offset=CINEMATIC_230, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_230, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_229:
-	video offset=CINEMATIC_229, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_229, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_228:
-	video offset=CINEMATIC_228, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_228, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_225:
-	video offset=CINEMATIC_225, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_225, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_226:
-	video offset=CINEMATIC_226, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_226, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
@@ -170,7 +170,7 @@ DRAW_CIN_226:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_352:
-	video offset=CINEMATIC_352, x=[0xf5], y=[0x08]
+	video offset=CINEMATIC_352, x=[0xf5], y=[BUDDY_Y]
 	ret
 ;@endif
 
@@ -182,11 +182,11 @@ DRAW_CIN_352:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_169_WITH_POS_STEP_AT_B673C5FF:
-	add [0x08], 0x000D
-	sub [0x07], 0x0002
-	video offset=CINEMATIC_169, x=[0x07], y=[0x08]
-	add [0x07], 0x0002
-	sub [0x08], 0x000D
+	add [BUDDY_Y], 0x000D
+	sub [BUDDY_X], 0x0002
+	video offset=CINEMATIC_169, x=[BUDDY_X], y=[BUDDY_Y]
+	add [BUDDY_X], 0x0002
+	sub [BUDDY_Y], 0x000D
 	ret
 ;@endif
 
@@ -207,7 +207,7 @@ SHARED_RET:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_240:
-	video offset=CINEMATIC_240, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_240, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
@@ -217,7 +217,7 @@ DRAW_CIN_240:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_241:
-	video offset=CINEMATIC_241, x=[0xf5], y=[0x08]
+	video offset=CINEMATIC_241, x=[0xf5], y=[BUDDY_Y]
 	ret
 ;@endif
 
@@ -289,7 +289,7 @@ DRAW_CIN_241:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_228_018:
-	video type=0, offset=COMMON_VIDEO_228, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_228, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -300,7 +300,7 @@ INLINE_DRAW_CV_228_018:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_220_008:
-	video type=0, offset=COMMON_VIDEO_220, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_220, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -311,7 +311,7 @@ INLINE_DRAW_CV_220_008:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_216_027:
-	video type=0, offset=COMMON_VIDEO_216, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_216, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -372,7 +372,7 @@ INLINE_DRAW_CV_216_027:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_272_003_001:
-	video type=0, offset=COMMON_VIDEO_272, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_272, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -383,7 +383,7 @@ INLINE_DRAW_CV_272_003_001:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_272_003_002:
-	video type=0, offset=COMMON_VIDEO_272, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_272, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -394,7 +394,7 @@ INLINE_DRAW_CV_272_003_002:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_269_024_001:
-	video type=0, offset=COMMON_VIDEO_269, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_269, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -405,7 +405,7 @@ INLINE_DRAW_CV_269_024_001:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_269_024_002:
-	video type=0, offset=COMMON_VIDEO_269, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_269, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -416,7 +416,7 @@ INLINE_DRAW_CV_269_024_002:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_266_005:
-	video type=0, offset=COMMON_VIDEO_266, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_266, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"

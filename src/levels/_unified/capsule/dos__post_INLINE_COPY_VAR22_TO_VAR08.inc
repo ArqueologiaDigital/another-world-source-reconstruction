@@ -3,7 +3,7 @@ LABEL_4548:
 	and [0x27], 0x0200
 	jne [0x27], 0x00, SHARED_RET
 	call LABEL_731A
-	mov [0x08], [0x22]
+	mov [BUDDY_Y], [0x22]
 	ret
 
 LABEL_455C:

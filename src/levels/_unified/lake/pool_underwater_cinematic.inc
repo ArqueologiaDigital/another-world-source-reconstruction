@@ -439,13 +439,13 @@ BUBBLES_A_ANIMATION:
 	video offset=CINEMATIC_BUBBLES_B_0, x=[0x13], y=[0x0d]
 	video offset=CINEMATIC_BUBBLES_B_1, x=[0x13], y=[0x0e]
 	video offset=CINEMATIC_BUBBLES_B_2, x=[0x13], y=[0x0f]
-	video offset=CINEMATIC_BUBBLES_B_3, x=[0x13], y=[0x10]
+	video offset=CINEMATIC_BUBBLES_B_3, x=[0x13], y=[COUNTER]
 	video offset=CINEMATIC_BUBBLES_B_4, x=[0x13], y=[0x11]
 	break
 	video offset=CINEMATIC_BUBBLES_B_5, x=[0x13], y=[0x0d]
 	video offset=CINEMATIC_BUBBLES_B_1, x=[0x13], y=[0x0e]
 	video offset=CINEMATIC_BUBBLES_B_2, x=[0x13], y=[0x0f]
-	video offset=CINEMATIC_BUBBLES_B_3, x=[0x13], y=[0x10]
+	video offset=CINEMATIC_BUBBLES_B_3, x=[0x13], y=[COUNTER]
 	video offset=CINEMATIC_BUBBLES_B_4, x=[0x13], y=[0x11]
 	break
 	jmp BUBBLES_A_ANIMATION

@@ -60,9 +60,9 @@ LABEL_124E:
 	db 0x11
 
 LABEL_124F:
-	jne [0x08], [0x25], LABEL_1273
-	mov [0x21], [0x07]
-	mov [0x22], [0x07]
+	jne [BUDDY_Y], [0x25], LABEL_1273
+	mov [0x21], [BUDDY_X]
+	mov [0x22], [BUDDY_X]
 	sub [0x21], 0x001E
 	add [0x22], 0x0032
 	jl [0x24], [0x21], LABEL_1273
@@ -73,7 +73,7 @@ LABEL_1273:
 	ret
 
 LABEL_1274:
-	mov [0x26], [0x07]
+	mov [0x26], [BUDDY_X]
 	jne [0x10], 0x01, LABEL_1280
 	call LABEL_129C
 
@@ -100,23 +100,23 @@ LABEL_12A3:
 
 LABEL_12A8:
 	jne [0x09], 0x02, LABEL_12B4
-	video offset=CINEMATIC_539, x=[0x26], y=[0x08]
+	video offset=CINEMATIC_539, x=[0x26], y=[BUDDY_Y]
 	ret
 
 LABEL_12B4:
 	jne [0x09], 0x03, LABEL_12C9
 	selectVideoPage 0x00
-	video offset=CINEMATIC_537, x=[0x26], y=[0x08]
+	video offset=CINEMATIC_537, x=[0x26], y=[BUDDY_Y]
 	selectVideoPage 0xFF
-	video offset=CINEMATIC_538, x=[0x26], y=[0x08]
+	video offset=CINEMATIC_538, x=[0x26], y=[BUDDY_Y]
 	ret
 
 LABEL_12C9:
 	jne [0x09], 0x04, LABEL_12DE
 	selectVideoPage 0x00
-	video offset=CINEMATIC_453, x=[0x26], y=[0x08]
+	video offset=CINEMATIC_453, x=[0x26], y=[BUDDY_Y]
 	selectVideoPage 0xFF
-	video offset=CINEMATIC_453, x=[0x26], y=[0x08]
+	video offset=CINEMATIC_453, x=[0x26], y=[BUDDY_Y]
 	ret
 
 LABEL_12DE:
@@ -127,7 +127,7 @@ LABEL_12DF:
 LABEL_12E0:
 	je [0x49], 0x7FFF, LABEL_12FA
 	jge [0x49], 0x4000, LABEL_12FA
-	mov [0x07], [0x48]
+	mov [BUDDY_X], [0x48]
 	mov [0x09], [0x49]
 	call LABEL_11AD
 	mov [0x49], [0x29]
@@ -135,7 +135,7 @@ LABEL_12E0:
 LABEL_12FA:
 	je [0x4B], 0x7FFF, LABEL_1314
 	jge [0x4B], 0x4000, LABEL_1314
-	mov [0x07], [0x4A]
+	mov [BUDDY_X], [0x4A]
 	mov [0x09], [0x4B]
 	call LABEL_11AD
 	mov [0x4B], [0x29]
@@ -143,7 +143,7 @@ LABEL_12FA:
 LABEL_1314:
 	je [0x4D], 0x7FFF, LABEL_132E
 	jge [0x4D], 0x4000, LABEL_132E
-	mov [0x07], [0x4C]
+	mov [BUDDY_X], [0x4C]
 	mov [0x09], [0x4D]
 	call LABEL_11AD
 	mov [0x4D], [0x29]
@@ -156,19 +156,19 @@ LABEL_1332:
 
 LABEL_1333:
 	je [0x49], 0x7FFF, LABEL_1343
-	mov [0x07], [0x48]
+	mov [BUDDY_X], [0x48]
 	mov [0x09], [0x49]
 	call LABEL_1364
 
 LABEL_1343:
 	je [0x4B], 0x7FFF, LABEL_1353
-	mov [0x07], [0x4A]
+	mov [BUDDY_X], [0x4A]
 	mov [0x09], [0x4B]
 	call LABEL_1364
 
 LABEL_1353:
 	je [0x4D], 0x7FFF, SHARED_RET
-	mov [0x07], [0x4C]
+	mov [BUDDY_X], [0x4C]
 	mov [0x09], [0x4D]
 	call LABEL_1364
 	ret
@@ -179,41 +179,41 @@ LABEL_1364:
 	ret
 
 LABEL_136B:
-	video offset=CINEMATIC_452, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_452, x=[BUDDY_X], y=[BUDDY_Y]
 	jne [0x10], 0x01, LABEL_137B
-	video offset=CINEMATIC_453, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_453, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_137B:
-	add [0x07], 0x000A
+	add [BUDDY_X], 0x000A
 	jl [0x0E], 0x02, SHARED_RET
-	video offset=CINEMATIC_452, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_452, x=[BUDDY_X], y=[BUDDY_Y]
 	jne [0x11], 0x01, LABEL_1395
-	video offset=CINEMATIC_453, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_453, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_1395:
-	add [0x07], 0x000A
+	add [BUDDY_X], 0x000A
 	jl [0x0E], 0x03, SHARED_RET
-	video offset=CINEMATIC_452, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_452, x=[BUDDY_X], y=[BUDDY_Y]
 	jne [0x12], 0x01, SHARED_RET
-	video offset=CINEMATIC_453, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_453, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 LABEL_13B0:
 	db 0x11
 
 LABEL_13B1:
-	jl [0x07], 0x0150, LABEL_13CA
+	jl [BUDDY_X], 0x0150, LABEL_13CA
 	mov [0x2C], [0x10]
 	add [0x10], 0x0001
 	sub [0x29], 0x0154
-	sub [0x07], 0x015F
+	sub [BUDDY_X], 0x015F
 	jmp LABEL_13E0
 
 LABEL_13CA:
-	jg [0x07], 0xFFF0, LABEL_13FC
+	jg [BUDDY_X], 0xFFF0, LABEL_13FC
 	mov [0x2C], [0x10]
 	sub [0x10], 0x0001
 	add [0x29], 0x0154
-	add [0x07], 0x015F
+	add [BUDDY_X], 0x015F
 
 LABEL_13E0:
 	mov [0x27], [0x2C]
@@ -221,6 +221,6 @@ LABEL_13E0:
 	mov [0x2C], [0x21]
 	mov [0x27], [0x10]
 	call LABEL_84D5
-	jne [0x08], [0x2C], INLINE_COPY_VAR22_TO_VAR08
-	mov [0x08], [0x21]
+	jne [BUDDY_Y], [0x2C], INLINE_COPY_VAR22_TO_VAR08
+	mov [BUDDY_Y], [0x21]
 	ret

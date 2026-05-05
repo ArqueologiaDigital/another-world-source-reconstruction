@@ -80,8 +80,8 @@ INLINE_SET_VAREC_TO_AF:
 ;@endif
 
 INIT_VARS_07_08_29:
-	mov [0x07], 0x009D
-	mov [0x08], 0x009D
+	mov [BUDDY_X], 0x009D
+	mov [BUDDY_Y], 0x009D
 	mov [0x29], 0x000A
 
 ;@if BRANCH == "chahi_amiga_1991"

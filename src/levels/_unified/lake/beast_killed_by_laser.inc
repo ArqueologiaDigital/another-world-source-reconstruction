@@ -53,13 +53,13 @@ THE_BEAST_IS_KILLED_BY_A_LASER_SHOT:
 	break
 	sub [0x0E], 0x0002
 	video offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f]
-	mov [0x10], 0x0005
+	mov [COUNTER], 0x0005
 
 BEAST_KILLED_F8_REPEAT:
 	break
 	sub [0x0E], 0x0001
 	video offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f]
-	djnz [0x10], BEAST_KILLED_F8_REPEAT
+	djnz [COUNTER], BEAST_KILLED_F8_REPEAT
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	song id=0x0BBB, delay=0x0000, pos=0x00
 ;@endif

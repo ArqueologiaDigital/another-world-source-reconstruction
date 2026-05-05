@@ -422,7 +422,7 @@ DRAW_CIN_137_138_BLOCK:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_393_AT_VAR07_08:
-	video offset=CINEMATIC_393, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_393, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 

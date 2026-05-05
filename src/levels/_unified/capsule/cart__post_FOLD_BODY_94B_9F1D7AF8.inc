@@ -16,8 +16,8 @@ LABEL_59FD:
 	jmp LABEL_5A04
 
 LABEL_5A04:
-	mov [0x07], [0x22]
-	mov [0x08], [0x40]
+	mov [BUDDY_X], [0x22]
+	mov [BUDDY_Y], [0x40]
 	mov [0x22], [0x21]
 	add [0x21], 0x000C
 	sub [0x22], 0x000C
@@ -25,9 +25,9 @@ LABEL_5A04:
 	call LABEL_6DBF
 	jl [0x1D], 0x1E, LABEL_5A40
 	mov [0x09], 0x0001
-	mov [0x07], [0x22]
+	mov [BUDDY_X], [0x22]
 	jne [0x1D], 0x1E, LABEL_5A37
-	jg [0x07], 0xC3, LABEL_5A40
+	jg [BUDDY_X], 0xC3, LABEL_5A40
 	call LABEL_5F5D
 
 LABEL_5A37:

@@ -90,12 +90,12 @@ LABEL_383E:
 LABEL_3856:
 	mov [PAUSE_SLICES], 0x0004
 	jne [HACK_VAR_67], [0x6A], LABEL_3865
-	video offset=CINEMATIC_284, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_284, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_3865:
 	break
 	jne [HACK_VAR_67], [0x6A], LABEL_3871
-	video offset=CINEMATIC_283, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_283, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_3871:
 	break

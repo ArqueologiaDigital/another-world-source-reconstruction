@@ -1,8 +1,8 @@
 LABEL_5BA4:
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
-	video type=0, offset=COMMON_VIDEO_282, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_282, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_557B
-	sub [0x08], 0x0001
+	sub [BUDDY_Y], 0x0001
 	ret
 
 LABEL_5BB4:

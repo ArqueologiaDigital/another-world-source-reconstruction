@@ -16,7 +16,7 @@ LABEL_3729:
 	jmp LABEL_3730
 
 LABEL_3730:
-	mov [0x07], [0x22]
+	mov [BUDDY_X], [0x22]
 	mov [0x22], [0x21]
 	add [0x21], 0x000C
 	sub [0x22], 0x000C
@@ -24,7 +24,7 @@ LABEL_3730:
 	call LABEL_47E2
 	jl [0x1D], 0x1E, LABEL_3763
 	mov [0x09], 0x0001
-	mov [0x07], [0x22]
+	mov [BUDDY_X], [0x22]
 	jne [0x1D], 0x1E, LABEL_375A
 	call LABEL_3B5C
 

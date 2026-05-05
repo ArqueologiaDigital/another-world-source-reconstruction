@@ -1,7 +1,7 @@
 LABEL_3188:
 	call LABEL_32D0
 	jg [0x1D], 0x1D, LABEL_31CA
-	mov [0x21], [0x07]
+	mov [0x21], [BUDDY_X]
 	call LABEL_3262
 	mov [0x25], [0x26]
 	mov [0x21], [HERO_X]
@@ -10,7 +10,7 @@ LABEL_3188:
 	jg [0x25], 0x32, LABEL_31CA
 	jle [0x24], [0x25], LABEL_31CA
 	mov [0x29], [0x22]
-	jl [0x07], [HERO_X], STEP_VAR29_DOWN10_SET_VAR2F_11
+	jl [BUDDY_X], [HERO_X], STEP_VAR29_DOWN10_SET_VAR2F_11
 	add [0x29], 0x000A
 	mov [0x2F], 0x0011
 	ret

@@ -16,7 +16,7 @@ LABEL_3647:
 	jmp LABEL_364E
 
 LABEL_364E:
-	mov [0x07], [0x22]
+	mov [BUDDY_X], [0x22]
 	mov [0x22], [0x21]
 	add [0x21], 0x000C
 	sub [0x22], 0x000C
@@ -24,7 +24,7 @@ LABEL_364E:
 	call LABEL_46E8
 	jl [0x1D], 0x1E, LABEL_3681
 	mov [0x09], 0x0001
-	mov [0x07], [0x22]
+	mov [BUDDY_X], [0x22]
 	jne [0x1D], 0x1E, LABEL_3678
 	call LABEL_3A68
 

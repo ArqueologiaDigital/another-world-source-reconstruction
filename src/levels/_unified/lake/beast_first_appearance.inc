@@ -69,11 +69,11 @@ CINEMATIC_BEAST_FIRST_1		EQU 0x6986
 THE_BEAST_APPEARS_FOR_THE_FIRST_TIME_IN_THE_BACKGROUND:
 	mov [0x0E], 0x0148
 	mov [0x0F], 0x005B
-	mov [0x10], 0x0019
+	mov [COUNTER], 0x0019
 
 BEAST_INTRO_INITIAL_DELAY:
 	break
-	djnz [0x10], BEAST_INTRO_INITIAL_DELAY
+	djnz [COUNTER], BEAST_INTRO_INITIAL_DELAY
 	video offset=CINEMATIC_BEAST_FIRST_0, x=[0x0e], y=[0x0f]
 	break
 	video offset=CINEMATIC_BEAST_BG_0, x=[0x0e], y=[0x0f]
@@ -105,12 +105,12 @@ BEAST_INTRO_INITIAL_DELAY:
 	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f]
 	break
 	sub [0x0E], 0x0001
-	mov [0x10], 0x0014
+	mov [COUNTER], 0x0014
 
 BEAST_BG_F7_HOLD_LOOP:
 	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], BEAST_BG_F7_HOLD_LOOP
+	djnz [COUNTER], BEAST_BG_F7_HOLD_LOOP
 	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f]
 	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_0, x=[0x0e], y=[0x0f]
 	break
@@ -120,13 +120,13 @@ BEAST_BG_F7_HOLD_LOOP:
 	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f]
 	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_2, x=[0x0e], y=[0x0f]
 	break
-	mov [0x10], 0x001E
+	mov [COUNTER], 0x001E
 
 BEAST_HEAD_TURNING_3_LOOP:
 	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f]
 	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_3, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], BEAST_HEAD_TURNING_3_LOOP
+	djnz [COUNTER], BEAST_HEAD_TURNING_3_LOOP
 	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f]
 	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_1, x=[0x0e], y=[0x0f]
 	break
@@ -136,12 +136,12 @@ BEAST_HEAD_TURNING_3_LOOP:
 	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f]
 	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_0, x=[0x0e], y=[0x0f]
 	break
-	mov [0x10], 0x0002
+	mov [COUNTER], 0x0002
 
 BEAST_BG_F7_HOLD_LOOP_SHORT:
 	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], BEAST_BG_F7_HOLD_LOOP_SHORT
+	djnz [COUNTER], BEAST_BG_F7_HOLD_LOOP_SHORT
 	video offset=CINEMATIC_BEAST_BG_8, x=[0x0e], y=[0x0f]
 	break
 	video offset=CINEMATIC_BEAST_BG_9, x=[0x0e], y=[0x0f]

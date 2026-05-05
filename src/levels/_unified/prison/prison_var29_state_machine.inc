@@ -29,24 +29,24 @@ INLINE_SET_VARF1_TO_64:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_406_408_BLOCK:
-	video offset=CINEMATIC_406, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_406, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_407, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_407, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_408, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_408, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_409, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_409, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_409, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_409, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_408, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_408, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_409, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_409, x=[BUDDY_X], y=[BUDDY_Y]
 	selectVideoPage 0x00
 	video offset=CINEMATIC_410, x=160, y=100
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_411, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_411, x=[BUDDY_X], y=[BUDDY_Y]
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -67,7 +67,7 @@ INLINE_SET_VAR29_TO_28:
 ;@endif
 
 INLINE_SUB_VAR08_INIT_VAR29:
-	sub [0x08], 0x0005
+	sub [BUDDY_Y], 0x0005
 	mov [0x29], 0x000A
 
 ;@if BRANCH == "chahi_amiga_1991"

@@ -6,9 +6,9 @@ LABEL_4C17:
 	db 0x11
 
 LABEL_4C18:
-	mov [0x07], 0x0118
-	mov [0x08], 0x00B6
-	video offset=CINEMATIC_633, x=[0x07], y=[0x08]
+	mov [BUDDY_X], 0x0118
+	mov [BUDDY_Y], 0x00B6
+	video offset=CINEMATIC_633, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jmp LABEL_4C18
 LABEL_4C29:

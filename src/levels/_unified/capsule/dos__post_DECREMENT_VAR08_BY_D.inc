@@ -1,114 +1,114 @@
 LABEL_8CFB:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	video offset=CINEMATIC_245, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_245, x=[BUDDY_X], y=[BUDDY_Y]
 	call LABEL_8CD5
 	ret
 
 LABEL_8D0A:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 	call LABEL_8C59
-	video type=0, offset=COMMON_VIDEO_289, x=[0x07], y=[0x08], zoom=0x40
-	sub [0x08], 0x0001
+	video type=0, offset=COMMON_VIDEO_289, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	sub [BUDDY_Y], 0x0001
 	call LABEL_782F
-	add [0x08], 0x0001
-	add [0x07], 0x0001
+	add [BUDDY_Y], 0x0001
+	add [BUDDY_X], 0x0001
 	ret
 
 LABEL_8D2C:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call LABEL_8C59
-	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_288, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_782F
 	ret
 
 LABEL_8D3E:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	add [0x08], 0x000D
-	sub [0x07], 0x0004
-	video type=0, offset=COMMON_VIDEO_253, x=[0x07], y=[0x08], zoom=0x40
-	add [0x07], 0x0004
-	sub [0x08], 0x000D
+	add [BUDDY_Y], 0x000D
+	sub [BUDDY_X], 0x0004
+	video type=0, offset=COMMON_VIDEO_253, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	add [BUDDY_X], 0x0004
+	sub [BUDDY_Y], 0x000D
 	call LABEL_8C59
-	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40
-	add [0x08], 0x000D
+	video type=0, offset=COMMON_VIDEO_288, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	add [BUDDY_Y], 0x000D
 	call LABEL_8599
-	sub [0x08], 0x000D
+	sub [BUDDY_Y], 0x000D
 	ret
 
 LABEL_8D6D:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call LABEL_8C59
-	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40
-	add [0x08], 0x000D
+	video type=0, offset=COMMON_VIDEO_288, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	add [BUDDY_Y], 0x000D
 	call LABEL_8599
-	sub [0x08], 0x000D
+	sub [BUDDY_Y], 0x000D
 	ret
 
 LABEL_8D87:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	add [0x08], 0x000D
-	video offset=CINEMATIC_262, x=[0x07], y=[0x08]
-	sub [0x08], 0x000D
+	add [BUDDY_Y], 0x000D
+	video offset=CINEMATIC_262, x=[BUDDY_X], y=[BUDDY_Y]
+	sub [BUDDY_Y], 0x000D
 	call LABEL_8C59
-	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40
-	add [0x08], 0x000D
+	video type=0, offset=COMMON_VIDEO_288, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	add [BUDDY_Y], 0x000D
 	call LABEL_8599
-	sub [0x08], 0x000D
+	sub [BUDDY_Y], 0x000D
 	ret
 
 LABEL_8DAE:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	sub [0x07], 0x0001
-	add [0x08], 0x000D
-	video offset=CINEMATIC_261, x=[0x07], y=[0x08]
-	sub [0x08], 0x000D
+	sub [BUDDY_X], 0x0001
+	add [BUDDY_Y], 0x000D
+	video offset=CINEMATIC_261, x=[BUDDY_X], y=[BUDDY_Y]
+	sub [BUDDY_Y], 0x000D
 	call LABEL_8C59
-	video type=0, offset=COMMON_VIDEO_289, x=[0x07], y=[0x08], zoom=0x40
-	add [0x08], 0x000D
+	video type=0, offset=COMMON_VIDEO_289, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	add [BUDDY_Y], 0x000D
 	call LABEL_8583
-	sub [0x08], 0x000D
-	add [0x07], 0x0001
+	sub [BUDDY_Y], 0x000D
+	add [BUDDY_X], 0x0001
 	ret
 
 LABEL_8DDD:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_291, x=[0x07], y=[0x08], zoom=0x40
-	sub [0x08], 0x000D
+	video type=0, offset=COMMON_VIDEO_291, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	sub [BUDDY_Y], 0x000D
 	call LABEL_77AF
-	add [0x08], 0x000D
+	add [BUDDY_Y], 0x000D
 	ret
 
 LABEL_8DF7:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_292, x=[0x07], y=[0x08], zoom=0x40
-	sub [0x08], 0x000E
+	video type=0, offset=COMMON_VIDEO_292, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	sub [BUDDY_Y], 0x000E
 	call LABEL_77DD
-	add [0x08], 0x000E
-	add [0x07], 0x0001
+	add [BUDDY_Y], 0x000E
+	add [BUDDY_X], 0x0001
 	ret
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_291, x=[0x07], y=[0x08], zoom=0x40
-	sub [0x08], 0x000D
+	video type=0, offset=COMMON_VIDEO_291, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	sub [BUDDY_Y], 0x000D
 	call LABEL_780F
-	add [0x08], 0x000D
+	add [BUDDY_Y], 0x000D
 	ret
 
 LABEL_8E33:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_291, x=[0x07], y=[0x08], zoom=0x40
-	sub [0x08], 0x000D
+	video type=0, offset=COMMON_VIDEO_291, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	sub [BUDDY_Y], 0x000D
 	call LABEL_77DD
-	add [0x08], 0x000D
+	add [BUDDY_Y], 0x000D
 	ret
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_291, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_291, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
 JUNK__8E5C:
@@ -117,10 +117,10 @@ JUNK__8E5C:
 	call LABEL_8C7D
 	break
 	call LABEL_8C7D
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 	break
 	call LABEL_8C8F
-	add [0x07], 0x0001
+	add [BUDDY_X], 0x0001
 	break
 	jmp JUNK__8E5C
 LABEL_8E77:
@@ -134,79 +134,79 @@ LABEL_8E78:
 
 LABEL_8E87:
 	call LABEL_8293
-	add [0x07], 0x0007
+	add [BUDDY_X], 0x0007
 	break
-	jl [0x07], [0x29], LABEL_8E9E
+	jl [BUDDY_X], [0x29], LABEL_8E9E
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x03, LABEL_4B4C
 
 LABEL_8E9E:
 	call LABEL_82C0
-	add [0x07], 0x0009
+	add [BUDDY_X], 0x0009
 	break
-	jl [0x07], [0x29], LABEL_8EB5
+	jl [BUDDY_X], [0x29], LABEL_8EB5
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x03, LABEL_4B4C
 
 LABEL_8EB5:
 	call LABEL_82E5
-	add [0x07], 0x0009
+	add [BUDDY_X], 0x0009
 	break
-	jl [0x07], [0x29], LABEL_8ECC
+	jl [BUDDY_X], [0x29], LABEL_8ECC
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x03, LABEL_4B4C
 
 LABEL_8ECC:
 	call LABEL_8318
-	add [0x07], 0x0008
+	add [BUDDY_X], 0x0008
 	break
-	jl [0x07], [0x29], LABEL_8EE3
+	jl [BUDDY_X], [0x29], LABEL_8EE3
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x03, LABEL_4B4C
 
 LABEL_8EE3:
 	call LABEL_8345
-	add [0x07], 0x000A
+	add [BUDDY_X], 0x000A
 	break
-	jl [0x07], [0x29], LABEL_8EFA
+	jl [BUDDY_X], [0x29], LABEL_8EFA
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x03, LABEL_4B4C
 
 LABEL_8EFA:
 	call LABEL_836A
-	add [0x07], 0x0007
+	add [BUDDY_X], 0x0007
 	break
-	jl [0x07], [0x29], LABEL_8F11
+	jl [BUDDY_X], [0x29], LABEL_8F11
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x03, LABEL_4B4C
 
 LABEL_8F11:
 	call LABEL_8397
-	add [0x07], 0x0009
+	add [BUDDY_X], 0x0009
 	break
-	jl [0x07], [0x29], LABEL_8F28
+	jl [BUDDY_X], [0x29], LABEL_8F28
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x03, LABEL_4B4C
 
 LABEL_8F28:
 	call LABEL_83BC
-	add [0x07], 0x0009
+	add [BUDDY_X], 0x0009
 	break
-	jl [0x07], [0x29], LABEL_8F3F
+	jl [BUDDY_X], [0x29], LABEL_8F3F
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x03, LABEL_4B4C
 
 LABEL_8F3F:
 	call LABEL_83EF
-	add [0x07], 0x0008
+	add [BUDDY_X], 0x0008
 	break
-	jl [0x07], [0x29], LABEL_8F56
+	jl [BUDDY_X], [0x29], LABEL_8F56
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x03, LABEL_4B4C
 
 LABEL_8F56:
 	call LABEL_841C
-	add [0x07], 0x000A
+	add [BUDDY_X], 0x000A
 	break
 	jmp LABEL_8E78
 	killChannel
@@ -226,127 +226,127 @@ LABEL_8F6A:
 
 LABEL_8F79:
 	call LABEL_864B
-	add [0x07], 0x0002
+	add [BUDDY_X], 0x0002
 	break
-	jl [0x07], [0x29], LABEL_8F90
+	jl [BUDDY_X], [0x29], LABEL_8F90
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x01, GAME_LOOP_ALIEN_CV128
 
 LABEL_8F90:
 	call LABEL_8671
-	add [0x07], 0x0002
+	add [BUDDY_X], 0x0002
 	break
-	jl [0x07], [0x29], LABEL_8FA7
+	jl [BUDDY_X], [0x29], LABEL_8FA7
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x01, GAME_LOOP_ALIEN_CV128
 
 LABEL_8FA7:
 	call LABEL_869F
-	add [0x07], 0x0003
+	add [BUDDY_X], 0x0003
 	break
-	jl [0x07], [0x29], LABEL_8FBE
+	jl [BUDDY_X], [0x29], LABEL_8FBE
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x01, GAME_LOOP_ALIEN_CV128
 
 LABEL_8FBE:
 	call LABEL_86C0
-	add [0x07], 0x0003
+	add [BUDDY_X], 0x0003
 	break
-	jl [0x07], [0x29], LABEL_8FD5
+	jl [BUDDY_X], [0x29], LABEL_8FD5
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x01, GAME_LOOP_ALIEN_CV128
 
 LABEL_8FD5:
 	call LABEL_86ED
-	add [0x07], 0x0003
+	add [BUDDY_X], 0x0003
 	break
-	jl [0x07], [0x29], LABEL_8FEC
+	jl [BUDDY_X], [0x29], LABEL_8FEC
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x01, GAME_LOOP_ALIEN_CV128
 
 LABEL_8FEC:
 	call LABEL_870E
-	add [0x07], 0x0003
+	add [BUDDY_X], 0x0003
 	break
-	jl [0x07], [0x29], LABEL_9003
+	jl [BUDDY_X], [0x29], LABEL_9003
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x01, GAME_LOOP_ALIEN_CV128
 
 LABEL_9003:
 	call LABEL_8734
-	add [0x07], 0x0003
+	add [BUDDY_X], 0x0003
 	break
-	jl [0x07], [0x29], LABEL_901A
+	jl [BUDDY_X], [0x29], LABEL_901A
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x01, GAME_LOOP_ALIEN_CV128
 
 LABEL_901A:
 	call LABEL_875A
-	add [0x07], 0x0002
+	add [BUDDY_X], 0x0002
 	break
-	jl [0x07], [0x29], LABEL_9031
+	jl [BUDDY_X], [0x29], LABEL_9031
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x01, GAME_LOOP_ALIEN_CV128
 
 LABEL_9031:
 	call LABEL_8780
-	add [0x07], 0x0002
+	add [BUDDY_X], 0x0002
 	break
-	jl [0x07], [0x29], LABEL_9048
+	jl [BUDDY_X], [0x29], LABEL_9048
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x01, GAME_LOOP_ALIEN_CV128
 
 LABEL_9048:
 	call LABEL_87A6
-	add [0x07], 0x0002
+	add [BUDDY_X], 0x0002
 	break
-	jl [0x07], [0x29], LABEL_905F
+	jl [BUDDY_X], [0x29], LABEL_905F
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x01, GAME_LOOP_ALIEN_CV128
 
 LABEL_905F:
 	call LABEL_87D4
-	add [0x07], 0x0003
+	add [BUDDY_X], 0x0003
 	break
-	jl [0x07], [0x29], LABEL_9076
+	jl [BUDDY_X], [0x29], LABEL_9076
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x01, GAME_LOOP_ALIEN_CV128
 
 LABEL_9076:
 	call LABEL_87FA
-	add [0x07], 0x0003
+	add [BUDDY_X], 0x0003
 	break
-	jl [0x07], [0x29], LABEL_908D
+	jl [BUDDY_X], [0x29], LABEL_908D
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x01, GAME_LOOP_ALIEN_CV128
 
 LABEL_908D:
 	call LABEL_882C
-	add [0x07], 0x0003
+	add [BUDDY_X], 0x0003
 	break
-	jl [0x07], [0x29], LABEL_90A4
+	jl [BUDDY_X], [0x29], LABEL_90A4
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x01, GAME_LOOP_ALIEN_CV128
 
 LABEL_90A4:
 	call LABEL_884D
-	add [0x07], 0x0003
+	add [BUDDY_X], 0x0003
 	break
-	jl [0x07], [0x29], LABEL_90BB
+	jl [BUDDY_X], [0x29], LABEL_90BB
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x01, GAME_LOOP_ALIEN_CV128
 
 LABEL_90BB:
 	call LABEL_886E
-	add [0x07], 0x0003
+	add [BUDDY_X], 0x0003
 	break
-	jl [0x07], [0x29], LABEL_90D2
+	jl [BUDDY_X], [0x29], LABEL_90D2
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x01, GAME_LOOP_ALIEN_CV128
 
 LABEL_90D2:
 	call LABEL_888F
-	add [0x07], 0x0002
+	add [BUDDY_X], 0x0002
 	break
 	jmp LABEL_8F6A
 LABEL_90DD:

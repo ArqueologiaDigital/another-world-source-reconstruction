@@ -16,7 +16,7 @@ LABEL_35E5:
 	jmp LABEL_35EC
 
 LABEL_35EC:
-	mov [0x07], [0x22]
+	mov [BUDDY_X], [0x22]
 	mov [0x22], [0x21]
 	add [0x21], 0x000C
 	sub [0x22], 0x000C
@@ -24,7 +24,7 @@ LABEL_35EC:
 	call LABEL_4647
 	jl [0x1D], 0x1E, LABEL_361F
 	mov [0x09], 0x0001
-	mov [0x07], [0x22]
+	mov [BUDDY_X], [0x22]
 	jne [0x1D], 0x1E, LABEL_3616
 	call LABEL_3A06
 

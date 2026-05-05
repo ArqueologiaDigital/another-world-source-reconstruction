@@ -68,7 +68,7 @@ LABEL_2614:
 
 LABEL_2627:
 	mov [0x2F], 0x001F
-	jg [0x07], 0x78, SHARED_RET
+	jg [BUDDY_X], 0x78, SHARED_RET
 	mov [0x2F], 0x0019
 	mov [0x29], 0x0096
 	ret
@@ -83,7 +83,7 @@ LABEL_263A:
 
 LABEL_2653:
 	mov [0x2F], 0x0012
-	jg [0x07], 0xA0, SHARED_RET
+	jg [BUDDY_X], 0xA0, SHARED_RET
 	mov [0x2F], 0x0019
 	mov [0x29], 0x00BA
 	ret
@@ -289,7 +289,7 @@ LABEL_28A0:
 	call LABEL_7D43
 	break
 	djnz [0x29], LABEL_28A0
-	mov [0xF8], [0x07]
+	mov [0xF8], [BUDDY_X]
 	sub [0xF8], [HERO_X]
 	jl [0xF8], 0x64, LABEL_28C7
 	call LABEL_53FF

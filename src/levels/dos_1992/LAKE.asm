@@ -27,6 +27,7 @@
 CINEMATIC_CONSOLE_UNDERWATER_EXPLOSION_0		EQU 0x1D82
 HERO_X		EQU 0x01
 HERO_Y		EQU 0x02
+COUNTER		EQU 0x10
 CINEMATIC_CONSOLE_UNDERWATER_EXPLOSION_1		EQU 0x1DBA
 CINEMATIC_HERO_SHADOW		EQU 0xDFFC
 CINEMATIC_HERO_WALK_RIGHT_0		EQU 0xE056
@@ -1408,7 +1409,7 @@ PARTICLE_BURST_CYCLE_LOOP_2:
 	mov [0x0D], 0x0000
 	mov [0x0E], 0x0000
 	mov [0x0F], 0x0000
-	mov [0x10], 0x0000
+	mov [COUNTER], 0x0000
 	mov [0x11], 0x0000
 	mov [0x12], 0x0000
 	mov [0x13], 0x0000
@@ -2199,13 +2200,13 @@ THE_BEAST_IS_KILLED_BY_A_LASER_SHOT:
 	break
 	sub [0x0E], 0x0002
 	video offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f]
-	mov [0x10], 0x0005
+	mov [COUNTER], 0x0005
 
 BEAST_KILLED_F8_REPEAT:
 	break
 	sub [0x0E], 0x0001
 	video offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f]
-	djnz [0x10], BEAST_KILLED_F8_REPEAT
+	djnz [COUNTER], BEAST_KILLED_F8_REPEAT
 	selectVideoPage 0x00
 	video offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f]
 	selectVideoPage 0xFF
@@ -3549,14 +3550,14 @@ THE_BEAST_KILLS_LESTER:
 	break
 	add [0x0F], 0x000F
 	video offset=CINEMATIC_BEAST_KILLING_LESTER_6, x=160, y=[0x0e], zoom=[0x0f]
-	mov [0x10], 0x0003
+	mov [COUNTER], 0x0003
 
 BEAST_KILLS_LESTER_F6_LOOP:
 	break
 	add [0x0F], 0x0032
 	add [0x0E], 0x001E
 	video offset=CINEMATIC_BEAST_KILLING_LESTER_6, x=160, y=[0x0e], zoom=[0x0f]
-	djnz [0x10], BEAST_KILLS_LESTER_F6_LOOP
+	djnz [COUNTER], BEAST_KILLS_LESTER_F6_LOOP
 	setPalette 0x0A
 	mov [PAUSE_SLICES], 0x0004
 	setup channel=0x3C, address=LOOP_BLIT_AND_CLEAR_FF
@@ -4142,11 +4143,11 @@ GETTING_OUT_OF_THE_POOL__ANIMATION_PART_9:
 THE_BEAST_APPEARS_FOR_THE_FIRST_TIME_IN_THE_BACKGROUND:
 	mov [0x0E], 0x0148
 	mov [0x0F], 0x005B
-	mov [0x10], 0x0019
+	mov [COUNTER], 0x0019
 
 BEAST_INTRO_INITIAL_DELAY:
 	break
-	djnz [0x10], BEAST_INTRO_INITIAL_DELAY
+	djnz [COUNTER], BEAST_INTRO_INITIAL_DELAY
 	video offset=CINEMATIC_BEAST_FIRST_0, x=[0x0e], y=[0x0f]
 	break
 	video offset=CINEMATIC_BEAST_BG_0, x=[0x0e], y=[0x0f]
@@ -4178,12 +4179,12 @@ BEAST_INTRO_INITIAL_DELAY:
 	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f]
 	break
 	sub [0x0E], 0x0001
-	mov [0x10], 0x0014
+	mov [COUNTER], 0x0014
 
 BEAST_BG_F7_HOLD_LOOP:
 	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], BEAST_BG_F7_HOLD_LOOP
+	djnz [COUNTER], BEAST_BG_F7_HOLD_LOOP
 	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f]
 	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_0, x=[0x0e], y=[0x0f]
 	break
@@ -4193,13 +4194,13 @@ BEAST_BG_F7_HOLD_LOOP:
 	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f]
 	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_2, x=[0x0e], y=[0x0f]
 	break
-	mov [0x10], 0x001E
+	mov [COUNTER], 0x001E
 
 BEAST_HEAD_TURNING_3_LOOP:
 	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f]
 	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_3, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], BEAST_HEAD_TURNING_3_LOOP
+	djnz [COUNTER], BEAST_HEAD_TURNING_3_LOOP
 	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f]
 	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_1, x=[0x0e], y=[0x0f]
 	break
@@ -4209,12 +4210,12 @@ BEAST_HEAD_TURNING_3_LOOP:
 	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f]
 	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_0, x=[0x0e], y=[0x0f]
 	break
-	mov [0x10], 0x0002
+	mov [COUNTER], 0x0002
 
 BEAST_BG_F7_HOLD_LOOP_SHORT:
 	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], BEAST_BG_F7_HOLD_LOOP_SHORT
+	djnz [COUNTER], BEAST_BG_F7_HOLD_LOOP_SHORT
 	video offset=CINEMATIC_BEAST_BG_8, x=[0x0e], y=[0x0f]
 	break
 	video offset=CINEMATIC_BEAST_BG_9, x=[0x0e], y=[0x0f]
@@ -4295,12 +4296,12 @@ BEAST_WANDER_F1_WHILE_HERO_X_LT_3C:
 	break
 	video offset=CINEMATIC_BEAST_FIRST_11, x=[0x0e], y=[0x0f]
 	add [0x0E], 0x001C
-	mov [0x10], 0x0014
+	mov [COUNTER], 0x0014
 
 BEAST_WANDER_F1_HOLD_20A:
 	break
 	video offset=CINEMATIC_BEAST_WANDER_1, x=[0x0e], y=[0x0f]
-	djnz [0x10], BEAST_WANDER_F1_HOLD_20A
+	djnz [COUNTER], BEAST_WANDER_F1_HOLD_20A
 	break
 	video offset=CINEMATIC_BEAST_FIRST_4, x=[0x0e], y=[0x0f]
 	break
@@ -4326,12 +4327,12 @@ BEAST_WANDER_F1_HOLD_20A:
 THE_BEAST_WANDERS_ON_THE_SECOND_SCREEN_TO_THE_RIGHT:
 	mov [0x0E], 0x008B
 	mov [0x0F], 0x008C
-	mov [0x10], 0x0006
+	mov [COUNTER], 0x0006
 
 BEAST_WANDER_F1_HOLD_6:
 	video offset=CINEMATIC_BEAST_WANDER_1, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], BEAST_WANDER_F1_HOLD_6
+	djnz [COUNTER], BEAST_WANDER_F1_HOLD_6
 	video offset=CINEMATIC_BEAST_FIRST_5, x=[0x0e], y=[0x0f]
 	break
 	video offset=CINEMATIC_BEAST_FIRST_6, x=[0x0e], y=[0x0f]
@@ -4358,12 +4359,12 @@ BEAST_WANDER_F1_HOLD_6:
 	add [0x0E], 0x0001
 	video offset=CINEMATIC_BEAST_FIRST_11, x=[0x0e], y=[0x0f]
 	add [0x0E], 0x001D
-	mov [0x10], 0x0014
+	mov [COUNTER], 0x0014
 
 BEAST_WANDER_F1_HOLD_20B:
 	break
 	video offset=CINEMATIC_BEAST_WANDER_1, x=[0x0e], y=[0x0f]
-	djnz [0x10], BEAST_WANDER_F1_HOLD_20B
+	djnz [COUNTER], BEAST_WANDER_F1_HOLD_20B
 	break
 	video offset=CINEMATIC_BEAST_FIRST_4, x=[0x0e], y=[0x0f]
 	break
@@ -4413,18 +4414,18 @@ WAIT_UNTIL_BEAST_CLOSE:
 BEAST_AI_INIT_POS_HEINEMAN:
 	mov [0x0E], 0x0000
 	mov [0x0F], 0x00B6
-	mov [0x10], 0x0001
+	mov [COUNTER], 0x0001
 	jmp BEAST_APPROACH_PHASE_1
 
 BEAST_AI_SPAWN_FAR_LEFT:
 	mov [0x0E], 0xFFC4
 	mov [0x0F], 0x00B6
-	mov [0x10], 0x0023
+	mov [COUNTER], 0x0023
 
 BEAST_APPROACH_PHASE_1:
 	video offset=CINEMATIC_BEAST_APPROACH_0, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], BEAST_APPROACH_PHASE_1
+	djnz [COUNTER], BEAST_APPROACH_PHASE_1
 	add [0x0E], 0x000F
 	video offset=CINEMATIC_BEAST_APPROACH_1, x=[0x0e], y=[0x0f]
 	break
@@ -4506,7 +4507,7 @@ BEAST_AMBIENT_CASE_6:
 BEAST_AI_SPAWN_MID_RIGHT:
 	mov [0x0E], 0x0104
 	mov [0x0F], 0x00B6
-	mov [0x10], 0x001A
+	mov [COUNTER], 0x001A
 
 BEAST_AI_SPAWN_MR_HOLD_LOOP:
 	jne [HACK_VAR_67], 0x05, BEAST_AI_SPAWN_MR_DRAW_BODY
@@ -4515,7 +4516,7 @@ BEAST_AI_SPAWN_MR_HOLD_LOOP:
 BEAST_AI_SPAWN_MR_DRAW_BODY:
 	video offset=CINEMATIC_BEAST_HOLD_POSE, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], BEAST_AI_SPAWN_MR_HOLD_LOOP
+	djnz [COUNTER], BEAST_AI_SPAWN_MR_HOLD_LOOP
 
 BEAST_AI_SPAWN_MR_AFTER_HOLD:
 	sub [0x0E], 0x000F
@@ -4616,7 +4617,7 @@ BEAST_APPROACH_F1_TICK:
 	break
 	sub [0x0E], 0x000C
 	video offset=CINEMATIC_BEAST_DRIFT_LEFT_2, x=[0x0e], y=[0x0f]
-	mov [0x10], 0x0003
+	mov [COUNTER], 0x0003
 	play id=0x004E, freq=0x1C, vol=0x3F, channel=0x00
 	play id=0x0030, freq=0x1C, vol=0x3F, channel=0x01
 	play id=0x0030, freq=0x14, vol=0x20, channel=0x02
@@ -4625,7 +4626,7 @@ BEAST_PRE_HOLD_LOOP:
 	break
 	sub [0x0E], 0x0001
 	video offset=CINEMATIC_BEAST_HOLD_POSE, x=[0x0e], y=[0x0f]
-	djnz [0x10], BEAST_PRE_HOLD_LOOP
+	djnz [COUNTER], BEAST_PRE_HOLD_LOOP
 	play id=0x004E, freq=0x1C, vol=0x30, channel=0x00
 
 BEAST_FINAL_HOLD_LOOP:
@@ -4680,36 +4681,36 @@ BEAST_ARRIVAL_DECEL:
 	sub [0x0E], 0x0004
 	video offset=CINEMATIC_BEAST_DECEL_0, x=[0x0e], y=[0x0f]
 	break
-	mov [0x10], 0x0005
+	mov [COUNTER], 0x0005
 
 BEAST_DECEL_STEP_3_LOOP:
 	sub [0x0E], 0x0003
 	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], BEAST_DECEL_STEP_3_LOOP
+	djnz [COUNTER], BEAST_DECEL_STEP_3_LOOP
 	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
-	mov [0x10], 0x0007
+	mov [COUNTER], 0x0007
 
 BEAST_DECEL_STEP_2_LOOP:
 	sub [0x0E], 0x0002
 	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], BEAST_DECEL_STEP_2_LOOP
+	djnz [COUNTER], BEAST_DECEL_STEP_2_LOOP
 	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
-	mov [0x10], 0x0003
+	mov [COUNTER], 0x0003
 
 BEAST_DECEL_STEP_1_LOOP:
 	sub [0x0E], 0x0001
 	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], BEAST_DECEL_STEP_1_LOOP
+	djnz [COUNTER], BEAST_DECEL_STEP_1_LOOP
 	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
-	mov [0x10], 0x0005
+	mov [COUNTER], 0x0005
 
 HOLD_LAKE_139_FOR_N_FRAMES:
 	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], HOLD_LAKE_139_FOR_N_FRAMES
+	djnz [COUNTER], HOLD_LAKE_139_FOR_N_FRAMES
 
 BEAST_PASS_HERO_DECEL:
 	video offset=CINEMATIC_BEAST_DRIFT_LEFT_4, x=[0x0e], y=[0x0f]
@@ -4739,11 +4740,11 @@ WAIT_BEAST_TRIGGER_THEN_INIT:
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
 	setPalette 0x0D
-	mov [0x10], 0x0002
+	mov [COUNTER], 0x0002
 
 THE_BEAST_SURPRISES_LESTER:
 	break
-	djnz [0x10], THE_BEAST_SURPRISES_LESTER
+	djnz [COUNTER], THE_BEAST_SURPRISES_LESTER
 	video offset=CINEMATIC_BEAST_SURPRISE_BODY_0, x=160, y=65506
 	break
 	video offset=CINEMATIC_BEAST_SURPRISE_BODY_0, x=160, y=50
@@ -4776,13 +4777,13 @@ THE_BEAST_SURPRISES_LESTER:
 	break
 	video offset=CINEMATIC_BEAST_SURPRISE_BODY_7, x=160, y=100
 	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_4, x=160, y=100
-	mov [0x10], 0x0001
+	mov [COUNTER], 0x0001
 
 BEAST_SURPRISE_PHASE7_HOLD:
 	break
 	video offset=CINEMATIC_BEAST_SURPRISE_BODY_7, x=160, y=100
 	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_5, x=160, y=100
-	djnz [0x10], BEAST_SURPRISE_PHASE7_HOLD
+	djnz [COUNTER], BEAST_SURPRISE_PHASE7_HOLD
 	break
 	video offset=CINEMATIC_BEAST_SURPRISE_BODY_7, x=160, y=100
 	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_6, x=158, y=100
@@ -6551,13 +6552,13 @@ BUBBLES_A_ANIMATION:
 	video offset=CINEMATIC_BUBBLES_B_0, x=[0x13], y=[0x0d]
 	video offset=CINEMATIC_BUBBLES_B_1, x=[0x13], y=[0x0e]
 	video offset=CINEMATIC_BUBBLES_B_2, x=[0x13], y=[0x0f]
-	video offset=CINEMATIC_BUBBLES_B_3, x=[0x13], y=[0x10]
+	video offset=CINEMATIC_BUBBLES_B_3, x=[0x13], y=[COUNTER]
 	video offset=CINEMATIC_BUBBLES_B_4, x=[0x13], y=[0x11]
 	break
 	video offset=CINEMATIC_BUBBLES_B_5, x=[0x13], y=[0x0d]
 	video offset=CINEMATIC_BUBBLES_B_1, x=[0x13], y=[0x0e]
 	video offset=CINEMATIC_BUBBLES_B_2, x=[0x13], y=[0x0f]
-	video offset=CINEMATIC_BUBBLES_B_3, x=[0x13], y=[0x10]
+	video offset=CINEMATIC_BUBBLES_B_3, x=[0x13], y=[COUNTER]
 	video offset=CINEMATIC_BUBBLES_B_4, x=[0x13], y=[0x11]
 	break
 	jmp BUBBLES_A_ANIMATION
@@ -6651,7 +6652,7 @@ UPDATE_POSITION_OF_BUBBLES:
 	mov [0x0D], [0x0C]
 	mov [0x0E], [0x0C]
 	mov [0x0F], [0x0C]
-	mov [0x10], [0x0C]
+	mov [COUNTER], [0x0C]
 	mov [0x11], [0x0C]
 	mov [0x12], 0x000F
 
@@ -6660,7 +6661,7 @@ BUBBLE_UPDATE_PHASE_1:
 	sub [0x0D], 0x0007
 	sub [0x0E], 0x0006
 	sub [0x0F], 0x0004
-	sub [0x10], 0x0003
+	sub [COUNTER], 0x0003
 	sub [0x11], 0x0002
 	break
 	djnz [0x12], BUBBLE_UPDATE_PHASE_1
@@ -6669,7 +6670,7 @@ BUBBLE_UPDATE_PHASE_1:
 BUBBLE_UPDATE_PHASE_2:
 	sub [0x0E], 0x0006
 	sub [0x0F], 0x0004
-	sub [0x10], 0x0003
+	sub [COUNTER], 0x0003
 	sub [0x11], 0x0002
 	break
 	djnz [0x12], BUBBLE_UPDATE_PHASE_2

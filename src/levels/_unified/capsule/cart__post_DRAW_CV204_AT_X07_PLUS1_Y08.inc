@@ -1,6 +1,6 @@
 LABEL_7B1A:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_208, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_208, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_7988
 	ret
@@ -12,7 +12,7 @@ LABEL_7B29:
 
 LABEL_7B38:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_209, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_209, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_79A5
 	ret
@@ -25,7 +25,7 @@ LABEL_7B47:
 
 LABEL_7B5C:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_210, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_210, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_79C6
 	play id=0x0055, freq=0x0F, vol=0x14, channel=0x00
@@ -38,7 +38,7 @@ LABEL_7B71:
 
 LABEL_7B80:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_213, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_213, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_79E3
 	ret
@@ -50,11 +50,11 @@ LABEL_7B8F:
 	jmp LABEL_7BA6
 
 LABEL_7BA1:
-	video type=0, offset=COMMON_VIDEO_216, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_216, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_7BA6:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_217, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_217, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_7A04
 	ret
@@ -66,11 +66,11 @@ LABEL_7BB5:
 	jmp LABEL_7BCC
 
 LABEL_7BC7:
-	video type=0, offset=COMMON_VIDEO_220, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_220, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_7BCC:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_221, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_221, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_7A25
 	ret

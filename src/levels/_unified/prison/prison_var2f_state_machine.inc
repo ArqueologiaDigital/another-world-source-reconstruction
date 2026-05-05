@@ -108,7 +108,7 @@ INIT_VARS_29_2F:
 ;@endif
 
 INIT_VARS_07_2F:
-	mov [0x07], 0x001F
+	mov [BUDDY_X], 0x001F
 	mov [0x2F], 0x0015
 	ret
 
@@ -197,7 +197,7 @@ SET_VAR2F_TO_000F:
 
 ;@include "../_helpers/INLINE_OR_VAR2B_WITH_4000.inc"
 COPY_VAR22_TO_VAR07:
-	mov [0x07], [0x22]
+	mov [BUDDY_X], [0x22]
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"

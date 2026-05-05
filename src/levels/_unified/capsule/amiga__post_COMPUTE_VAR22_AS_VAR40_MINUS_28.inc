@@ -12,7 +12,7 @@ LABEL_5240:
 	break
 	video offset=CINEMATIC_096, x=17, y=[0x40]
 	mov [0x21], 0x0011
-	mov [0x08], [0x40]
+	mov [BUDDY_Y], [0x40]
 	mov [0x10], [HACK_VAR_67]
 	call LABEL_4EFE
 	killChannel
@@ -31,7 +31,7 @@ LABEL_5274:
 	break
 	video offset=CINEMATIC_096, x=299, y=[0x40]
 	mov [0x21], 0x0122
-	mov [0x08], [0x40]
+	mov [BUDDY_Y], [0x40]
 	mov [0x10], [HACK_VAR_67]
 	call LABEL_4EFE
 	killChannel

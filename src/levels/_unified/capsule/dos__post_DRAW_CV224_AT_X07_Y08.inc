@@ -1,6 +1,6 @@
 LABEL_7B89:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_225, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_225, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_79DD
 	ret
@@ -12,11 +12,11 @@ LABEL_7B98:
 	jmp LABEL_7BAF
 
 LABEL_7BAA:
-	video type=0, offset=COMMON_VIDEO_228, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_228, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_7BAF:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_229, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_229, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_79FE
 	ret
@@ -28,15 +28,15 @@ LABEL_7BBE:
 	jmp LABEL_7BD5
 
 LABEL_7BD0:
-	video type=0, offset=COMMON_VIDEO_228, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_228, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_7BD5:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_232, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_232, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
-	add [0x07], 0x0001
+	add [BUDDY_X], 0x0001
 	call LABEL_79FE
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 	ret
 
 LABEL_7BEC:
@@ -46,11 +46,11 @@ LABEL_7BEC:
 	jmp LABEL_7C03
 
 LABEL_7BFE:
-	video type=0, offset=COMMON_VIDEO_220, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_220, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_7C03:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_233, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_233, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_79BC
 	ret
@@ -63,11 +63,11 @@ LABEL_7C12:
 	jmp LABEL_7C2F
 
 LABEL_7C2A:
-	video type=0, offset=COMMON_VIDEO_216, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_216, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_7C2F:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_234, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_234, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_799B
 	play id=0x0055, freq=0x14, vol=0x14, channel=0x00
@@ -80,7 +80,7 @@ LABEL_7C44:
 
 LABEL_7C53:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_235, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_235, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_797A
 	ret
@@ -92,7 +92,7 @@ LABEL_7C62:
 
 LABEL_7C71:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_236, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_236, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_795D
 	ret
@@ -104,7 +104,7 @@ LABEL_7C80:
 
 LABEL_7C8F:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_237, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_237, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_793C
 	ret
@@ -116,7 +116,7 @@ LABEL_7C9E:
 
 LABEL_7CAD:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_238, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_238, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_7902
 	ret
@@ -128,7 +128,7 @@ GUARDED_DRAW_CV_304_305:
 
 LABEL_7CCB:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_164, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_164, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_793C
 	ret
@@ -140,7 +140,7 @@ LABEL_7CDA:
 
 LABEL_7CE9:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_164, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_164, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_795D
 	ret
@@ -152,58 +152,58 @@ LABEL_7CF8:
 
 LABEL_7D07:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_164, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_164, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_797A
 	ret
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	video offset=CINEMATIC_702, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_702, x=[BUDDY_X], y=[BUDDY_Y]
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_164, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_164, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
 	call LABEL_795D
 	ret
 
 LABEL_7D30:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	video type=0, offset=COMMON_VIDEO_216, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_216, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_164, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_164, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
-	video offset=CINEMATIC_293, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_293, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 LABEL_7D4C:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	video type=0, offset=COMMON_VIDEO_216, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_216, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_164, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_164, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_030_031_032_VAR09
-	video offset=CINEMATIC_294, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_294, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 LABEL_7D68:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video offset=CINEMATIC_309, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_309, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 LABEL_7D77:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video offset=CINEMATIC_310, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_310, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 LABEL_7D86:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video offset=CINEMATIC_317, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_317, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 LABEL_7D95:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video offset=CINEMATIC_318, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_318, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 JUNK__7DA4:
@@ -221,127 +221,127 @@ LABEL_7DAC:
 
 LABEL_7DBB:
 	call LABEL_7A6C
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
-	jg [0x07], [0x29], LABEL_7DD2
+	jg [BUDDY_X], [0x29], LABEL_7DD2
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_CV_304_305
 
 LABEL_7DD2:
 	call LABEL_7A92
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
-	jg [0x07], [0x29], LABEL_7DE9
+	jg [BUDDY_X], [0x29], LABEL_7DE9
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_CV_304_305
 
 LABEL_7DE9:
 	call LABEL_7AC0
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_7E00
+	jg [BUDDY_X], [0x29], LABEL_7E00
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_CV_304_305
 
 LABEL_7E00:
 	call LABEL_7ADE
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_7E17
+	jg [BUDDY_X], [0x29], LABEL_7E17
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_CV_304_305
 
 LABEL_7E17:
 	call LABEL_7B08
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_7E2E
+	jg [BUDDY_X], [0x29], LABEL_7E2E
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_CV_304_305
 
 LABEL_7E2E:
 	call LABEL_7B26
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_7E45
+	jg [BUDDY_X], [0x29], LABEL_7E45
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_CV_304_305
 
 LABEL_7E45:
 	call LABEL_7B4C
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_7E5C
+	jg [BUDDY_X], [0x29], LABEL_7E5C
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_CV_304_305
 
 LABEL_7E5C:
 	call LABEL_7B72
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
-	jg [0x07], [0x29], LABEL_7E73
+	jg [BUDDY_X], [0x29], LABEL_7E73
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_CV_304_305
 
 LABEL_7E73:
 	call LABEL_7B98
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
-	jg [0x07], [0x29], LABEL_7E8A
+	jg [BUDDY_X], [0x29], LABEL_7E8A
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_CV_304_305
 
 LABEL_7E8A:
 	call LABEL_7BBE
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
-	jg [0x07], [0x29], LABEL_7EA1
+	jg [BUDDY_X], [0x29], LABEL_7EA1
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_CV_304_305
 
 LABEL_7EA1:
 	call LABEL_7BEC
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_7EB8
+	jg [BUDDY_X], [0x29], LABEL_7EB8
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_CV_304_305
 
 LABEL_7EB8:
 	call LABEL_7C12
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_7ECF
+	jg [BUDDY_X], [0x29], LABEL_7ECF
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_CV_304_305
 
 LABEL_7ECF:
 	call LABEL_7C44
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_7EE6
+	jg [BUDDY_X], [0x29], LABEL_7EE6
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_CV_304_305
 
 LABEL_7EE6:
 	call LABEL_7C62
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_7EFD
+	jg [BUDDY_X], [0x29], LABEL_7EFD
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_CV_304_305
 
 LABEL_7EFD:
 	call LABEL_7C80
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_7F14
+	jg [BUDDY_X], [0x29], LABEL_7F14
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_CV_304_305
 
 LABEL_7F14:
 	call LABEL_7C9E
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
 	jmp LABEL_7DAC
 LABEL_7F1F:
@@ -349,7 +349,7 @@ LABEL_7F1F:
 
 LABEL_7F20:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	sub [0x08], 0x0001
+	sub [BUDDY_Y], 0x0001
 	je [0x0D], 0x00, DRAW_CV263_AT_X07_Y08
 	call LABEL_7861
 	jmp LABEL_7F3B

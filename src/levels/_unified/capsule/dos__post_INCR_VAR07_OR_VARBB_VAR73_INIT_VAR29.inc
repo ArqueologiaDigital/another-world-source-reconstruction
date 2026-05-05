@@ -1,38 +1,38 @@
 LABEL_0207:
 	jne [0x10], [HACK_VAR_67], LABEL_0222
-	video offset=CINEMATIC_124, x=[0x07], y=[0x08]
-	video offset=CINEMATIC_344, x=[0x07], y=[0x08]
-	video offset=CINEMATIC_125, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_124, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_344, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_125, x=[BUDDY_X], y=[BUDDY_Y]
 	play id=0x005E, freq=0x1C, vol=0x40, channel=0x02
 
 LABEL_0222:
 	break
 	jne [0x10], [HACK_VAR_67], LABEL_0238
-	video offset=CINEMATIC_126, x=[0x07], y=[0x08]
-	video offset=CINEMATIC_344, x=[0x07], y=[0x08]
-	video offset=CINEMATIC_125, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_126, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_344, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_125, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_0238:
 	break
 	jne [0x10], [HACK_VAR_67], LABEL_0254
-	video offset=CINEMATIC_127, x=[0x07], y=[0x08]
-	video offset=CINEMATIC_344, x=[0x07], y=[0x08]
-	video offset=CINEMATIC_128, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_127, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_344, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_128, x=[BUDDY_X], y=[BUDDY_Y]
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x02
 
 LABEL_0254:
 	break
 	jne [0x10], [HACK_VAR_67], LABEL_026A
-	video offset=CINEMATIC_129, x=[0x07], y=[0x08]
-	video offset=CINEMATIC_344, x=[0x07], y=[0x08]
-	video offset=CINEMATIC_128, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_129, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_344, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_128, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_026A:
 	break
 	jne [0x10], [HACK_VAR_67], LABEL_0280
-	video offset=CINEMATIC_126, x=[0x07], y=[0x08]
-	video offset=CINEMATIC_344, x=[0x07], y=[0x08]
-	video offset=CINEMATIC_125, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_126, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_344, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_125, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_0280:
 	break
@@ -41,16 +41,16 @@ LABEL_0280:
 
 LABEL_028C:
 	jne [0x10], [HACK_VAR_67], LABEL_02C1
-	video offset=CINEMATIC_124, x=[0x07], y=[0x08]
-	video offset=CINEMATIC_344, x=[0x07], y=[0x08]
-	video offset=CINEMATIC_125, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_124, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_344, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_125, x=[BUDDY_X], y=[BUDDY_Y]
 	play id=0x005E, freq=0x1C, vol=0x40, channel=0x02
 	selectVideoPage 0x00
-	video offset=CINEMATIC_345, x=[0x07], y=[0x08]
-	add [0x08], 0x0004
-	sub [0x07], 0x0004
-	video offset=CINEMATIC_344, x=[0x07], y=[0x08]
-	sub [0x08], 0x0004
+	video offset=CINEMATIC_345, x=[BUDDY_X], y=[BUDDY_Y]
+	add [BUDDY_Y], 0x0004
+	sub [BUDDY_X], 0x0004
+	video offset=CINEMATIC_344, x=[BUDDY_X], y=[BUDDY_Y]
+	sub [BUDDY_Y], 0x0004
 	selectVideoPage 0xFF
 
 LABEL_02C1:

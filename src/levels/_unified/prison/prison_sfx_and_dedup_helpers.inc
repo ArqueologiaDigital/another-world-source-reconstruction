@@ -334,8 +334,8 @@ DRAW_CIN_628_TO_625_4F_AT_2F47D6D0:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_229_TO_632_2F_AT_1C4A817A:
-	video offset=CINEMATIC_229, x=[0x07], y=[0x08]
-	video offset=CINEMATIC_632, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_229, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_632, x=[BUDDY_X], y=[BUDDY_Y]
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"

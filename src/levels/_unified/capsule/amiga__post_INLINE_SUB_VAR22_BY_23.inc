@@ -5,56 +5,56 @@ LABEL_3FF7:
 
 LABEL_3FF8:
 	call LABEL_41D4
-	sub [0x08], 0x000A
-	video offset=CINEMATIC_212, x=[0x07], y=[0x08]
+	sub [BUDDY_Y], 0x000A
+	video offset=CINEMATIC_212, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_41D4
-	sub [0x08], 0x0006
-	video offset=CINEMATIC_213, x=[0x07], y=[0x08]
+	sub [BUDDY_Y], 0x0006
+	video offset=CINEMATIC_213, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_41D4
-	video offset=CINEMATIC_214, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_214, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_41D4
-	sub [0x08], 0x0001
-	video offset=CINEMATIC_215, x=[0x07], y=[0x08]
+	sub [BUDDY_Y], 0x0001
+	video offset=CINEMATIC_215, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_41D4
-	sub [0x08], 0x0002
-	video offset=CINEMATIC_214, x=[0x07], y=[0x08]
+	sub [BUDDY_Y], 0x0002
+	video offset=CINEMATIC_214, x=[BUDDY_X], y=[BUDDY_Y]
 	mov [0x29], 0x0001
 
 LABEL_4038:
 	call LABEL_41AD
 	break
 	call LABEL_41D4
-	video offset=CINEMATIC_213, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_213, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_41D4
-	video offset=CINEMATIC_214, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_214, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_41D4
-	video offset=CINEMATIC_215, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_215, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_41D4
-	video offset=CINEMATIC_212, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_212, x=[BUDDY_X], y=[BUDDY_Y]
 	djnz [0x29], LABEL_4038
 	break
 	call LABEL_4223
-	video offset=CINEMATIC_266, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_266, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_4223
-	video offset=CINEMATIC_267, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_267, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_4223
-	video offset=CINEMATIC_268, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_268, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_4223
-	sub [0x08], 0x0003
-	video offset=CINEMATIC_269, x=[0x07], y=[0x08]
+	sub [BUDDY_Y], 0x0003
+	video offset=CINEMATIC_269, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_4223
-	video offset=CINEMATIC_268, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_268, x=[BUDDY_X], y=[BUDDY_Y]
 	mov [0x29], 0x000A
 
 LABEL_4098:
@@ -71,34 +71,34 @@ LABEL_40B6:
 	break
 	call LABEL_4223
 	je [0x09], 0x01, LABEL_411F
-	video offset=CINEMATIC_270, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_270, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_4223
 	je [0x09], 0x01, LABEL_411F
-	video offset=CINEMATIC_271, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_271, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_4223
 	je [0x09], 0x01, LABEL_411F
-	video offset=CINEMATIC_269, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_269, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_4223
 	je [0x09], 0x01, LABEL_411F
-	sub [0x08], 0x0001
-	video offset=CINEMATIC_269, x=[0x07], y=[0x08]
+	sub [BUDDY_Y], 0x0001
+	video offset=CINEMATIC_269, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_4223
 	je [0x09], 0x01, LABEL_411F
-	video offset=CINEMATIC_271, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_271, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_4223
 	je [0x09], 0x01, LABEL_411F
-	video offset=CINEMATIC_270, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_270, x=[BUDDY_X], y=[BUDDY_Y]
 	djnz [0x29], LABEL_4098
 	break
 	call LABEL_4223
 
 LABEL_411F:
-	video offset=CINEMATIC_000, x=[0x07], y=[0x08], zoom=[0x96]	;@enc=alt
+	video offset=CINEMATIC_000, x=[BUDDY_X], y=[BUDDY_Y], zoom=[0x96]	;@enc=alt
 	mov [0x2B], 0x0FA0
 	call LABEL_41AD
 	break
@@ -185,7 +185,7 @@ LABEL_41D4:
 	mov [0x2B], [0x5B]
 	mov [0x29], [0x5C]
 	call LABEL_4272
-	mov [0x5A], [0x07]
+	mov [0x5A], [BUDDY_X]
 	mov [0x5B], [0x2B]
 	ret
 
@@ -195,7 +195,7 @@ LABEL_41F1:
 	mov [0x2B], [0x5E]
 	mov [0x29], [0x5F]
 	call LABEL_4272
-	mov [0x5D], [0x07]
+	mov [0x5D], [BUDDY_X]
 	mov [0x5E], [0x2B]
 	ret
 
@@ -205,7 +205,7 @@ LABEL_420A:
 	mov [0x2B], [0x61]
 	mov [0x29], [0x62]
 	call LABEL_4272
-	mov [0x60], [0x07]
+	mov [0x60], [BUDDY_X]
 	mov [0x61], [0x2B]
 
 LABEL_4222:
@@ -218,7 +218,7 @@ LABEL_4223:
 	mov [0x2B], [0x5B]
 	mov [0x29], [0x5C]
 	call LABEL_429C
-	mov [0x5A], [0x07]
+	mov [0x5A], [BUDDY_X]
 	mov [0x5B], [0x2B]
 	ret
 
@@ -228,7 +228,7 @@ LABEL_4240:
 	mov [0x2B], [0x5E]
 	mov [0x29], [0x5F]
 	call LABEL_429C
-	mov [0x5D], [0x07]
+	mov [0x5D], [BUDDY_X]
 	mov [0x5E], [0x2B]
 	ret
 
@@ -238,7 +238,7 @@ LABEL_4259:
 	mov [0x2B], [0x61]
 	mov [0x29], [0x62]
 	call LABEL_429C
-	mov [0x60], [0x07]
+	mov [0x60], [BUDDY_X]
 	mov [0x61], [0x2B]
 
 LABEL_4271:

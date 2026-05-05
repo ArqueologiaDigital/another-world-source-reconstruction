@@ -1,5 +1,7 @@
 HERO_X		EQU 0x01
 HERO_Y		EQU 0x02
+BUDDY_X		EQU 0x07
+BUDDY_Y		EQU 0x08
 ; STAGE CAPSULE: alien city, capsule ride, escape sequences.
 ;
 ; Gameplay role: after the cave-flooding rescue, Lester is in the

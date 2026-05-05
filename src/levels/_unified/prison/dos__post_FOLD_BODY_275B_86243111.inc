@@ -77,7 +77,7 @@ LABEL_517E:
 
 LABEL_5187:
 	jne [0x0E], 0x06, LABEL_5193
-	video offset=CINEMATIC_227, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_227, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 LABEL_5193:

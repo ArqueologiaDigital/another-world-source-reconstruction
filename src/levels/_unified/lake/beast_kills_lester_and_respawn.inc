@@ -73,14 +73,14 @@ THE_BEAST_KILLS_LESTER:
 	break
 	add [0x0F], 0x000F
 	video offset=CINEMATIC_BEAST_KILLING_LESTER_6, x=160, y=[0x0e], zoom=[0x0f]
-	mov [0x10], 0x0003
+	mov [COUNTER], 0x0003
 
 BEAST_KILLS_LESTER_F6_LOOP:
 	break
 	add [0x0F], 0x0032
 	add [0x0E], 0x001E
 	video offset=CINEMATIC_BEAST_KILLING_LESTER_6, x=160, y=[0x0e], zoom=[0x0f]
-	djnz [0x10], BEAST_KILLS_LESTER_F6_LOOP
+	djnz [COUNTER], BEAST_KILLS_LESTER_F6_LOOP
 	setPalette 0x0A
 	mov [PAUSE_SLICES], 0x0004
 	setup channel=0x3C, address=LOOP_BLIT_AND_CLEAR_FF

@@ -5,7 +5,7 @@ LABEL_2F5E:
 	je [0x10], 0x04, LABEL_2ED3
 	je [0x10], 0x05, LABEL_2EFC
 	jne [0x10], 0x25, LABEL_2F86
-	mov [0x08], 0x0081
+	mov [BUDDY_Y], 0x0081
 
 LABEL_2F86:
 	jne [0x10], [HACK_VAR_67], LABEL_3007
@@ -13,7 +13,7 @@ LABEL_2F86:
 	and [0xF8], 0x001F
 	je [0xF8], 0x05, LABEL_2EFC
 	je [0x12], 0x01, LABEL_2E7B
-	je [0x08], [HERO_Y], LABEL_2FB1
+	je [BUDDY_Y], [HERO_Y], LABEL_2FB1
 	je [HACK_VAR_67], 0x24, LABEL_2E51
 	je [HACK_VAR_67], 0x23, LABEL_2E51
 
@@ -21,10 +21,10 @@ LABEL_2FB1:
 	call LABEL_3276
 	je [0x1D], 0x1E, LABEL_2FF6
 	mov [0x21], [HERO_X]
-	mov [0x22], [0x07]
+	mov [0x22], [BUDDY_X]
 	call LABEL_3262
 	mov [0x29], [HERO_X]
-	jg [HERO_X], [0x07], LABEL_2FE1
+	jg [HERO_X], [BUDDY_X], LABEL_2FE1
 	mov [0x2F], 0x0004
 	add [0x29], 0x0014
 	jg [0x26], 0x64, LABEL_3067
@@ -40,7 +40,7 @@ LABEL_2FE1:
 
 LABEL_2FF6:
 	mov [0x2F], 0x0012
-	jg [HERO_X], [0x07], LABEL_3067
+	jg [HERO_X], [BUDDY_X], LABEL_3067
 	mov [0x2F], 0x0013
 	jmp LABEL_3067
 
@@ -52,8 +52,8 @@ LABEL_3007:
 	jne [0xF8], [0x2B], LABEL_3067
 	jg [HACK_VAR_67], [0x10], LABEL_303A
 	jne [0x10], 0x24, LABEL_302F
-	mov [0x07], 0x00A0
-	mov [0x08], 0x00B6
+	mov [BUDDY_X], 0x00A0
+	mov [BUDDY_Y], 0x00B6
 
 LABEL_302F:
 	mov [0x2F], 0x0004
@@ -62,14 +62,14 @@ LABEL_302F:
 
 LABEL_303A:
 	jne [0x10], 0x23, LABEL_3048
-	mov [0x07], 0x00FA
-	mov [0x08], 0x00B6
+	mov [BUDDY_X], 0x00FA
+	mov [BUDDY_Y], 0x00B6
 
 LABEL_3048:
 	jne [0x10], 0x24, LABEL_305C
 	je [0xB2], 0x00, LABEL_305C
-	mov [0x07], 0x0078
-	mov [0x08], 0x005D
+	mov [BUDDY_X], 0x0078
+	mov [BUDDY_Y], 0x005D
 
 LABEL_305C:
 	mov [0x2F], 0x0003
@@ -94,8 +94,8 @@ STATE_VAR12_BIG_DISPATCH:
 	jne [0x10], [HACK_VAR_67], LABEL_30FD
 	mov [0x2B], [0x11]
 	and [0x2B], 0xDFFF
-	jg [0x08], [HERO_Y], LABEL_3169
-	jl [HERO_X], [0x07], LABEL_30BF
+	jg [BUDDY_Y], [HERO_Y], LABEL_3169
+	jl [HERO_X], [BUDDY_X], LABEL_30BF
 	jge [0x2B], 0x1000, LABEL_30CD
 	mov [0x2F], 0x0006
 	jmp LABEL_3169
@@ -108,7 +108,7 @@ LABEL_30BF:
 LABEL_30CD:
 	call LABEL_3293
 	mov [0x2C], [0x1D]
-	mov [0x21], [0x07]
+	mov [0x21], [BUDDY_X]
 	mov [0x22], [HERO_X]
 	call LABEL_3262
 	jl [0x26], 0x46, LABEL_316B
@@ -138,7 +138,7 @@ LABEL_30FD:
 	jne [0xF8], [HACK_VAR_67], LABEL_3169
 
 LABEL_314A:
-	mov [0x29], [0x07]
+	mov [0x29], [BUDDY_X]
 	jg [HACK_VAR_67], [0x10], LABEL_315E
 	mov [0x2F], 0x0004
 	sub [0x29], 0x0010

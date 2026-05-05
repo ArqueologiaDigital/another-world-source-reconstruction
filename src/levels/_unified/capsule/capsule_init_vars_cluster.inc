@@ -1,6 +1,6 @@
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 INCR_VAR07_OR_VARBB_VAR73_INIT_VAR29:
-	add [0x07], 0x0014
+	add [BUDDY_X], 0x0014
 	or [0xBB], 0x0004
 	or [0x73], 0x4000
 	mov [0x29], 0x0010
@@ -27,8 +27,8 @@ INIT_VARS_29_0E:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 INIT_VARS_E6_07_08:
 	mov [0xE6], 0x0003
-	mov [0x07], 0x007B
-	mov [0x08], 0x00AC
+	mov [BUDDY_X], 0x007B
+	mov [BUDDY_Y], 0x00AC
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"

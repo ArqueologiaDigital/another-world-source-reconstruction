@@ -118,24 +118,24 @@ LABEL_9D9F:
 	video offset=CINEMATIC_600, x=212, y=15
 	call LABEL_3708
 	mov [0x10], [HACK_VAR_67]
-	mov [0x08], [0x40]
-	mov [0x07], 0x0064
+	mov [BUDDY_Y], [0x40]
+	mov [BUDDY_X], 0x0064
 	mov [0x09], 0x0001
 	call GUARDED_ALIEN_ANIM_CV_128
 	mov [0x09], 0x0033
-	mov [0x07], 0x0050
+	mov [BUDDY_X], 0x0050
 	call GUARDED_ALIEN_ANIM_CV_128
 	mov [0x09], 0x0001
-	mov [0x07], 0x046A
+	mov [BUDDY_X], 0x046A
 	call GUARDED_ALIEN_ANIM_CV_128
 	mov [0x09], 0x0001
-	mov [0x07], 0x0032
+	mov [BUDDY_X], 0x0032
 	call GUARDED_ALIEN_ANIM_CV_128
 	mov [0x09], 0x0001
-	mov [0x07], 0x005A
+	mov [BUDDY_X], 0x005A
 	call GUARDED_ALIEN_ANIM_CV_128
 	mov [0x09], 0x0033
-	mov [0x07], 0x047E
+	mov [BUDDY_X], 0x047E
 	call GUARDED_ALIEN_ANIM_CV_128
 	ret
 

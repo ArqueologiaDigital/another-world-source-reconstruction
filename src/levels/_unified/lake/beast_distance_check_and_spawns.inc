@@ -61,7 +61,7 @@ WAIT_UNTIL_BEAST_CLOSE:
 BEAST_AI_INIT_POS_HEINEMAN:
 	mov [0x0E], 0x0000
 	mov [0x0F], 0x00B6
-	mov [0x10], 0x0001
+	mov [COUNTER], 0x0001
 	jmp BEAST_APPROACH_PHASE_1
 ;@endif
 ;@if BRANCH == "dos_1992"
@@ -69,19 +69,19 @@ BEAST_AI_INIT_POS_HEINEMAN:
 BEAST_AI_INIT_POS_HEINEMAN:
 	mov [0x0E], 0x0000
 	mov [0x0F], 0x00B6
-	mov [0x10], 0x0001
+	mov [COUNTER], 0x0001
 	jmp BEAST_APPROACH_PHASE_1
 ;@endif
 
 BEAST_AI_SPAWN_FAR_LEFT:
 	mov [0x0E], 0xFFC4
 	mov [0x0F], 0x00B6
-	mov [0x10], 0x0023
+	mov [COUNTER], 0x0023
 
 BEAST_APPROACH_PHASE_1:
 	video offset=CINEMATIC_BEAST_APPROACH_0, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], BEAST_APPROACH_PHASE_1
+	djnz [COUNTER], BEAST_APPROACH_PHASE_1
 	add [0x0E], 0x000F
 	video offset=CINEMATIC_BEAST_APPROACH_1, x=[0x0e], y=[0x0f]
 	break

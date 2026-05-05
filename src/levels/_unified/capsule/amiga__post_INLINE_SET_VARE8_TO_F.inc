@@ -266,7 +266,7 @@ LABEL_1666:
 	call LABEL_6463
 	break
 	djnz [0x29], LABEL_1666
-	mov [0xF8], [0x07]
+	mov [0xF8], [BUDDY_X]
 	sub [0xF8], [HERO_X]
 	jl [0xF8], 0x64, LABEL_168D
 	call LABEL_3DB2

@@ -1,6 +1,6 @@
 LABEL_55D6:
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
-	video type=0, offset=COMMON_VIDEO_208, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_208, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_547C
 	ret
@@ -12,7 +12,7 @@ LABEL_55E5:
 
 LABEL_55F4:
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
-	video type=0, offset=COMMON_VIDEO_209, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_209, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_5492
 	ret
@@ -25,7 +25,7 @@ LABEL_5603:
 
 LABEL_5618:
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
-	video type=0, offset=COMMON_VIDEO_210, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_210, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_54AC
 	ret
@@ -37,7 +37,7 @@ LABEL_5627:
 
 LABEL_5636:
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
-	video type=0, offset=COMMON_VIDEO_213, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_213, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_54C2
 	ret

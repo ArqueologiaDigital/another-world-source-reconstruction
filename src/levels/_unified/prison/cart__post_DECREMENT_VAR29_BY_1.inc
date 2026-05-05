@@ -4,7 +4,7 @@ LABEL_1C5E:
 
 LABEL_1C66:
 	break
-	jg [0x07], 0xFA, LABEL_1C66
+	jg [BUDDY_X], 0xFA, LABEL_1C66
 	mov [0x0E], 0x0000
 	mov [0x29], 0x0005
 
@@ -12,14 +12,14 @@ LABEL_1C75:
 	break
 	call LABEL_1BDA
 	jg [0x15], 0x14, LABEL_1CAC
-	jg [0x07], 0xC8, LABEL_1C75
+	jg [BUDDY_X], 0xC8, LABEL_1C75
 	setup channel=0x23, address=LABEL_2066
 
 LABEL_1C89:
 	break
 	call LABEL_1BDA
 	jg [0x15], 0x14, LABEL_1CA1
-	jl [0x07], 0x010E, LABEL_1C89
+	jl [BUDDY_X], 0x010E, LABEL_1C89
 	setup channel=0x23, address=LABEL_203A
 	jmp LABEL_1C75
 
@@ -34,7 +34,7 @@ LABEL_1CAC:
 
 LABEL_1CB4:
 	break
-	jg [0x07], 0xC8, LABEL_1CB4
+	jg [BUDDY_X], 0xC8, LABEL_1CB4
 	setup channel=0x23, address=LABEL_20DA
 
 LABEL_1CBF:

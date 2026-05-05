@@ -1,7 +1,7 @@
 LABEL_32AD:
 	call LABEL_3414
 	jg [0x1D], 0x1D, LABEL_32EF
-	mov [0x21], [0x07]
+	mov [0x21], [BUDDY_X]
 	call LABEL_33A6
 	mov [0x25], [0x26]
 	mov [0x21], [HERO_X]
@@ -10,7 +10,7 @@ LABEL_32AD:
 	jg [0x25], 0x32, LABEL_32EF
 	jle [0x24], [0x25], LABEL_32EF
 	mov [0x29], [0x22]
-	jl [0x07], [HERO_X], STEP_VAR29_DOWN10_SET_VAR2F_11
+	jl [BUDDY_X], [HERO_X], STEP_VAR29_DOWN10_SET_VAR2F_11
 	add [0x29], 0x000A
 	mov [0x2F], 0x0011
 	ret

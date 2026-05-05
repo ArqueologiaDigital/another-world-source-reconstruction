@@ -1,9 +1,9 @@
 LABEL_1F98:
 	call LABEL_62AE
-	add [0x07], 0x0001
+	add [BUDDY_X], 0x0001
 	break
 	call LABEL_628D
-	add [0x07], 0x0001
+	add [BUDDY_X], 0x0001
 	break
 	call GUARDED_HERO_ANIM_CV_128
 	break
@@ -11,7 +11,7 @@ LABEL_1F98:
 	sub [HERO_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_242_243
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_242_243
 	break
@@ -21,18 +21,18 @@ LABEL_1FC3:
 
 LABEL_1FC4:
 	call LABEL_570E
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_338_339
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_242_243
 	break
 	call GUARDED_DRAW_CIN_342
-	add [0x07], 0x0001
+	add [BUDDY_X], 0x0001
 	break
 	call GUARDED_HERO_ANIM_CV_128
-	add [0x07], 0x0001
+	add [BUDDY_X], 0x0001
 	break
 	call GUARDED_HERO_ANIM_CV_128
 	break
@@ -43,10 +43,10 @@ LABEL_1FEF:
 LABEL_1FF0:
 	mov [0x29], 0x0002
 	call LABEL_570E
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_338_339
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 	break
 	mov [0x29], 0x000A
 	mov [0x0E], 0x0002
@@ -75,10 +75,10 @@ LABEL_2037:
 LABEL_2038:
 	call LABEL_570E
 	mov [0x0E], 0x0005
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_338_339
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 
 LABEL_204B:
 	break
@@ -185,14 +185,14 @@ LABEL_2150:
 	break
 	setPalette 0x0F
 	play id=0x0052, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_630, x=[0x07], y=110
+	video offset=CINEMATIC_630, x=[BUDDY_X], y=110
 	call LABEL_572C
 	break
 	setPalette 0x02
-	video offset=CINEMATIC_631, x=[0x07], y=80
+	video offset=CINEMATIC_631, x=[BUDDY_X], y=80
 	call GUARDED_DRAW_CIN_338_339
 	break
-	video offset=CINEMATIC_630, x=[0x07], y=65516
+	video offset=CINEMATIC_630, x=[BUDDY_X], y=65516
 	call GUARDED_DRAW_CIN_242_243
 	je [0x57], 0x02, LABEL_204B
 	setup channel=0x11, address=DRAW_CIN_570_574_BLOCK
@@ -228,11 +228,11 @@ LABEL_21C3:
 
 LABEL_21C4:
 	call LABEL_628D
-	add [0x07], 0x0001
+	add [BUDDY_X], 0x0001
 	break
 	mov [0x0E], 0x0001
 	call GUARDED_HERO_ANIM_CV_128
-	add [0x07], 0x0001
+	add [BUDDY_X], 0x0001
 	break
 	mov [0x0D], 0x0001
 	mov [0x0E], 0x0000
@@ -248,12 +248,12 @@ LABEL_21EC:
 	call GUARDED_DRAW_CIN_342
 	break
 	mov [0x0E], 0x0000
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 	call GUARDED_DRAW_CIN_242_243
 	break
 
 LABEL_2204:
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 	mov [0x0D], 0x0001
 	mov [0x0E], 0x0003
 	call GUARDED_DRAW_CIN_338_339
@@ -266,16 +266,16 @@ LABEL_221F:
 
 COMPUTE_OFFSET_VAR21_22:
 	call LABEL_633B
-	mov [0x21], [0x07]
-	mov [0x22], [0x08]
+	mov [0x21], [BUDDY_X]
+	mov [0x22], [BUDDY_Y]
 	sub [0x21], 0x0023
 	sub [0x22], 0x0026
 	ret
 
 LABEL_2232:
 	call LABEL_65DC
-	mov [0x21], [0x07]
-	mov [0x22], [0x08]
+	mov [0x21], [BUDDY_X]
+	mov [0x22], [BUDDY_Y]
 	add [0x21], 0x0023
 	sub [0x22], 0x0026
 	ret
@@ -325,7 +325,7 @@ LABEL_22A7:
 	break
 	call LABEL_2232
 	jne [0x10], [HACK_VAR_67], LABEL_22B9
-	video offset=CINEMATIC_200, x=[0x21], y=[0x08]
+	video offset=CINEMATIC_200, x=[0x21], y=[BUDDY_Y]
 	call LABEL_4137
 
 LABEL_22B9:
@@ -369,7 +369,7 @@ LABEL_2311:
 	break
 	call COMPUTE_OFFSET_VAR21_22
 	jne [0x10], [HACK_VAR_67], LABEL_2323
-	video offset=CINEMATIC_200, x=[0x21], y=[0x08]
+	video offset=CINEMATIC_200, x=[0x21], y=[BUDDY_Y]
 	call LABEL_4137
 
 LABEL_2323:
@@ -388,28 +388,28 @@ LABEL_2339:
 	jne [HACK_VAR_67], 0x04, LABEL_234D
 	call LABEL_23AC
 	je [0x23], 0x00, LABEL_2390
-	video offset=CINEMATIC_202, x=[0x21], y=[0x08]
+	video offset=CINEMATIC_202, x=[0x21], y=[BUDDY_Y]
 
 LABEL_234D:
 	break
 	jne [HACK_VAR_67], 0x04, LABEL_2362
 	call LABEL_23AC
 	je [0x23], 0x00, LABEL_2390
-	video offset=CINEMATIC_203, x=[0x21], y=[0x08]
+	video offset=CINEMATIC_203, x=[0x21], y=[BUDDY_Y]
 
 LABEL_2362:
 	break
 	jne [HACK_VAR_67], 0x04, LABEL_2377
 	call LABEL_23AC
 	je [0x23], 0x00, LABEL_2390
-	video offset=CINEMATIC_204, x=[0x21], y=[0x08]
+	video offset=CINEMATIC_204, x=[0x21], y=[BUDDY_Y]
 
 LABEL_2377:
 	break
 	jne [HACK_VAR_67], 0x04, LABEL_238C
 	call LABEL_23AC
 	je [0x23], 0x00, LABEL_2390
-	video offset=CINEMATIC_203, x=[0x21], y=[0x08]
+	video offset=CINEMATIC_203, x=[0x21], y=[BUDDY_Y]
 
 LABEL_238C:
 	break
@@ -417,18 +417,18 @@ LABEL_238C:
 
 LABEL_2390:
 	call LABEL_23AC
-	video offset=CINEMATIC_210, x=[0x21], y=[0x08]
+	video offset=CINEMATIC_210, x=[0x21], y=[BUDDY_Y]
 	break
 	call LABEL_23AC
 	video offset=CINEMATIC_200, x=[0x21], y=[0x71]
-	mov [0x08], [0x71]
+	mov [BUDDY_Y], [0x71]
 	mov [0x10], 0x0004
 	call LABEL_4137
 	killChannel
 
 LABEL_23AC:
-	mov [0x08], [0x71]
-	sub [0x08], 0x0028
+	mov [BUDDY_Y], [0x71]
+	sub [BUDDY_Y], 0x0028
 	mov [0x21], [0x33]
 	mov [0x23], 0x0001
 	jg [0x33], 0x14, LABEL_23C5
@@ -441,7 +441,7 @@ LABEL_23C5:
 	ret
 
 LABEL_23D1:
-	je [0x08], [0x52], LABEL_246B
+	je [BUDDY_Y], [0x52], LABEL_246B
 	jmp LABEL_23EB
 
 LABEL_23DA:
@@ -452,11 +452,11 @@ LABEL_23DA:
 	jmp LABEL_25D9
 
 LABEL_23EB:
-	mov [0x08], [0x52]
-	sub [0x08], 0x001E
+	mov [BUDDY_Y], [0x52]
+	sub [BUDDY_Y], 0x001E
 	call LABEL_632F
 	break
-	mov [0x08], [0x52]
+	mov [BUDDY_Y], [0x52]
 	call LABEL_632F
 	jmp LABEL_23DA
 
@@ -506,11 +506,11 @@ LABEL_245F:
 	ret
 
 LABEL_246B:
-	mov [0x08], [0x51]
-	add [0x08], 0x001E
+	mov [BUDDY_Y], [0x51]
+	add [BUDDY_Y], 0x001E
 	call LABEL_6323
 	break
-	mov [0x08], [0x51]
+	mov [BUDDY_Y], [0x51]
 	call LABEL_6323
 	jmp LABEL_23DA
 LABEL_247F:
@@ -718,12 +718,12 @@ LABEL_264D:
 
 LABEL_264E:
 	mov [0x2F], 0x0001
-	jg [0x29], [0x07], LABEL_262D
+	jg [0x29], [BUDDY_X], LABEL_262D
 	mov [0x2F], 0x0002
 	jmp LABEL_262D
 
 LABEL_265F:
-	jg [0x29], [0x07], LABEL_67D7
+	jg [0x29], [BUDDY_X], LABEL_67D7
 	jmp LABEL_5ADC
 	killChannel
 	mov [0xF8], [0x11]
@@ -747,8 +747,8 @@ LABEL_2697:
 	break
 	call LABEL_6476
 	djnz [0x29], LABEL_2697
-	mov [0x21], [0x07]
-	mov [0x27], [0x08]
+	mov [0x21], [BUDDY_X]
+	mov [0x27], [BUDDY_Y]
 	mov [0x22], 0x4008
 	call LABEL_34BD
 	break
@@ -782,8 +782,8 @@ LABEL_26E4:
 	break
 	call LABEL_66CC
 	djnz [0x29], LABEL_26E4
-	mov [0x21], [0x07]
-	mov [0x27], [0x08]
+	mov [0x21], [BUDDY_X]
+	mov [0x27], [BUDDY_Y]
 	mov [0x22], 0x0008
 	call LABEL_34BD
 	break
@@ -836,8 +836,8 @@ LABEL_2772:
 
 LABEL_2773:
 	call LABEL_64E6
-	mov [0x21], [0x07]
-	mov [0x27], [0x08]
+	mov [0x21], [BUDDY_X]
+	mov [0x27], [BUDDY_Y]
 	sub [0x21], 0x0028
 	sub [0x27], 0x0036
 	call LABEL_378D
@@ -866,8 +866,8 @@ LABEL_27A4:
 
 LABEL_27B5:
 	jne [HACK_VAR_67], [0x10], LABEL_27CC
-	mov [0x21], [0x07]
-	mov [0x27], [0x08]
+	mov [0x21], [BUDDY_X]
+	mov [0x27], [BUDDY_Y]
 	sub [0x21], 0x0028
 	sub [0x27], 0x0029
 	call LABEL_378D
@@ -898,8 +898,8 @@ LABEL_27E9:
 
 LABEL_27FA:
 	jne [HACK_VAR_67], [0x10], LABEL_2811
-	mov [0x21], [0x07]
-	mov [0x27], [0x08]
+	mov [0x21], [BUDDY_X]
+	mov [0x27], [BUDDY_Y]
 	sub [0x21], 0x0019
 	sub [0x27], 0x001E
 	call LABEL_378D
@@ -920,33 +920,33 @@ LABEL_281D:
 	jmp LABEL_281D
 	killChannel
 	call LABEL_62AE
-	add [0x07], 0x0002
+	add [BUDDY_X], 0x0002
 	deleteChannels first=0x14, last=0x16
 	setup channel=0x15, address=DRAW_CIN_694_695_PROGRESSIVE
-	mov [HERO_X], [0x07]
+	mov [HERO_X], [BUDDY_X]
 	add [HERO_X], 0x0010
 	break
 	call JUNK__62CF
-	add [0x07], 0x0002
+	add [BUDDY_X], 0x0002
 	break
 	call LABEL_630E
-	add [0x07], 0x0002
+	add [BUDDY_X], 0x0002
 	break
 	call LABEL_630E
-	add [0x07], 0x0001
+	add [BUDDY_X], 0x0001
 	break
 	call LABEL_630E
-	add [0x07], 0x0001
+	add [BUDDY_X], 0x0001
 	break
 	call LABEL_630E
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
 	call LABEL_62F9
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
 	call LABEL_62E4
 	break
-	mov [0x29], [0x07]
+	mov [0x29], [BUDDY_X]
 	add [0x29], 0x003C
 	mov [0x2F], 0x0019
 	jmp DISPATCH_VAR2F_STATE
@@ -962,24 +962,24 @@ LABEL_2888:
 
 LABEL_289B:
 	break
-	video offset=CINEMATIC_426, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_426, x=[BUDDY_X], y=[BUDDY_Y]
 	djnz [0x29], LABEL_289B
 	break
-	video offset=CINEMATIC_427, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_427, x=[BUDDY_X], y=[BUDDY_Y]
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x01
 	mov [0x29], 0x0003
 
 LABEL_28B5:
 	break
-	video offset=CINEMATIC_427, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_427, x=[BUDDY_X], y=[BUDDY_Y]
 	djnz [0x29], LABEL_28B5
 	mov [0x29], 0x0002
 	jmp LABEL_289B
 
 LABEL_28C6:
 	call LABEL_673C
-	mov [0x21], [0x07]
-	mov [0x27], [0x08]
+	mov [0x21], [BUDDY_X]
+	mov [0x27], [BUDDY_Y]
 	add [0x21], 0x0028
 	sub [0x27], 0x0036
 	call LABEL_37A6
@@ -1008,8 +1008,8 @@ LABEL_28F7:
 
 LABEL_2908:
 	jne [HACK_VAR_67], [0x10], LABEL_291F
-	mov [0x21], [0x07]
-	mov [0x27], [0x08]
+	mov [0x21], [BUDDY_X]
+	mov [0x27], [BUDDY_Y]
 	add [0x21], 0x0028
 	sub [0x27], 0x0029
 	call LABEL_37A6
@@ -1040,8 +1040,8 @@ LABEL_293C:
 
 LABEL_294D:
 	jne [HACK_VAR_67], [0x10], LABEL_2964
-	mov [0x21], [0x07]
-	mov [0x27], [0x08]
+	mov [0x21], [BUDDY_X]
+	mov [0x27], [BUDDY_Y]
 	add [0x21], 0x0019
 	sub [0x27], 0x001E
 	call LABEL_37A6
@@ -1086,14 +1086,14 @@ LABEL_29B3:
 
 LABEL_29B4:
 	call LABEL_62AE
-	add [0x07], 0x0001
+	add [BUDDY_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_342
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_338_339
 	call AND_VAR11_WITH_EFFF
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 
 LABEL_29CE:
 	break
@@ -1106,14 +1106,14 @@ LABEL_29DE:
 
 LABEL_29DF:
 	call LABEL_570E
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_342
-	add [0x07], 0x0001
+	add [BUDDY_X], 0x0001
 	break
 	call LABEL_628D
 	call INLINE_OR_VAR11_WITH_1000
-	add [0x07], 0x0001
+	add [BUDDY_X], 0x0001
 
 LABEL_29F9:
 	break

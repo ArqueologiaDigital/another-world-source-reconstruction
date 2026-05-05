@@ -53,7 +53,7 @@ BEAST_APPROACH_F1_TICK:
 	break
 	sub [0x0E], 0x000C
 	video offset=CINEMATIC_BEAST_DRIFT_LEFT_2, x=[0x0e], y=[0x0f]
-	mov [0x10], 0x0003
+	mov [COUNTER], 0x0003
 	play id=0x004E, freq=0x1C, vol=0x3F, channel=0x00
 	play id=0x0030, freq=0x1C, vol=0x3F, channel=0x01
 	play id=0x0030, freq=0x14, vol=0x20, channel=0x02
@@ -62,7 +62,7 @@ BEAST_PRE_HOLD_LOOP:
 	break
 	sub [0x0E], 0x0001
 	video offset=CINEMATIC_BEAST_HOLD_POSE, x=[0x0e], y=[0x0f]
-	djnz [0x10], BEAST_PRE_HOLD_LOOP
+	djnz [COUNTER], BEAST_PRE_HOLD_LOOP
 	play id=0x004E, freq=0x1C, vol=0x30, channel=0x00
 
 BEAST_FINAL_HOLD_LOOP:
@@ -122,51 +122,51 @@ BEAST_ARRIVAL_DECEL:
 	sub [0x0E], 0x0004
 	video offset=CINEMATIC_BEAST_DECEL_0, x=[0x0e], y=[0x0f]
 	break
-	mov [0x10], 0x0005
+	mov [COUNTER], 0x0005
 
 BEAST_DECEL_STEP_3_LOOP:
 	sub [0x0E], 0x0003
 	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], BEAST_DECEL_STEP_3_LOOP
+	djnz [COUNTER], BEAST_DECEL_STEP_3_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
 ;@endif
 ;@if BRANCH == "dos_1992"
 	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
 ;@endif
-	mov [0x10], 0x0007
+	mov [COUNTER], 0x0007
 
 BEAST_DECEL_STEP_2_LOOP:
 	sub [0x0E], 0x0002
 	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], BEAST_DECEL_STEP_2_LOOP
+	djnz [COUNTER], BEAST_DECEL_STEP_2_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
 ;@endif
 ;@if BRANCH == "dos_1992"
 	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
 ;@endif
-	mov [0x10], 0x0003
+	mov [COUNTER], 0x0003
 
 BEAST_DECEL_STEP_1_LOOP:
 	sub [0x0E], 0x0001
 	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], BEAST_DECEL_STEP_1_LOOP
+	djnz [COUNTER], BEAST_DECEL_STEP_1_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
 ;@endif
 ;@if BRANCH == "dos_1992"
 	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
 ;@endif
-	mov [0x10], 0x0005
+	mov [COUNTER], 0x0005
 
 HOLD_LAKE_139_FOR_N_FRAMES:
 	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], HOLD_LAKE_139_FOR_N_FRAMES
+	djnz [COUNTER], HOLD_LAKE_139_FOR_N_FRAMES
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 
 BEAST_PASS_HERO_DECEL:
@@ -214,5 +214,5 @@ WAIT_BEAST_TRIGGER_THEN_INIT:
 ;@endif
 	break
 	setPalette 0x0D
-	mov [0x10], 0x0002
+	mov [COUNTER], 0x0002
 

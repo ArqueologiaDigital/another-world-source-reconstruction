@@ -1,6 +1,6 @@
 LABEL_574E:
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
-	video type=0, offset=COMMON_VIDEO_234, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_234, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_54DC
 	ret
@@ -12,7 +12,7 @@ LABEL_575D:
 
 LABEL_576C:
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
-	video type=0, offset=COMMON_VIDEO_235, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_235, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_54C2
 	ret
@@ -24,7 +24,7 @@ LABEL_577B:
 
 LABEL_578A:
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
-	video type=0, offset=COMMON_VIDEO_236, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_236, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_54AC
 	ret
@@ -36,7 +36,7 @@ GUARDED_DRAW_CIN_338_339:
 
 LABEL_57A8:
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
-	video type=0, offset=COMMON_VIDEO_237, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_237, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_5492
 	ret
@@ -48,7 +48,7 @@ LABEL_57B7:
 
 LABEL_57C6:
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
-	video type=0, offset=COMMON_VIDEO_238, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_238, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_5466
 	ret
@@ -60,7 +60,7 @@ GUARDED_DRAW_CIN_242_243:
 
 LABEL_57E4:
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
-	video type=0, offset=COMMON_VIDEO_164, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_164, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_5492
 	ret
@@ -72,7 +72,7 @@ GUARDED_DRAW_CIN_338_339:
 
 LABEL_5802:
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
-	video type=0, offset=COMMON_VIDEO_164, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_164, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_54AC
 	ret
@@ -84,16 +84,16 @@ LABEL_5811:
 
 LABEL_5820:
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
-	video type=0, offset=COMMON_VIDEO_164, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_164, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_54C2
 	ret
 
 LABEL_582F:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	video offset=CINEMATIC_629, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_629, x=[BUDDY_X], y=[BUDDY_Y]
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
-	video type=0, offset=COMMON_VIDEO_164, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_164, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_54AC
 	ret
@@ -113,127 +113,127 @@ LABEL_5851:
 
 LABEL_5860:
 	call LABEL_5591
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
-	jg [0x07], [0x29], LABEL_5877
+	jg [BUDDY_X], [0x29], LABEL_5877
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_5877:
 	call LABEL_55B7
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
-	jg [0x07], [0x29], LABEL_588E
+	jg [BUDDY_X], [0x29], LABEL_588E
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_588E:
 	call LABEL_55E5
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_58A5
+	jg [BUDDY_X], [0x29], LABEL_58A5
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_58A5:
 	call LABEL_5603
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_58BC
+	jg [BUDDY_X], [0x29], LABEL_58BC
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_58BC:
 	call LABEL_5627
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_58D3
+	jg [BUDDY_X], [0x29], LABEL_58D3
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_58D3:
 	call LABEL_5645
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_58EA
+	jg [BUDDY_X], [0x29], LABEL_58EA
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_58EA:
 	call LABEL_566B
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_5901
+	jg [BUDDY_X], [0x29], LABEL_5901
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_5901:
 	call LABEL_5691
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
-	jg [0x07], [0x29], LABEL_5918
+	jg [BUDDY_X], [0x29], LABEL_5918
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_5918:
 	call LABEL_56B7
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
-	jg [0x07], [0x29], LABEL_592F
+	jg [BUDDY_X], [0x29], LABEL_592F
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_592F:
 	call LABEL_56DD
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
-	jg [0x07], [0x29], LABEL_5946
+	jg [BUDDY_X], [0x29], LABEL_5946
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_5946:
 	call LABEL_570B
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_595D
+	jg [BUDDY_X], [0x29], LABEL_595D
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_595D:
 	call LABEL_5731
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_5974
+	jg [BUDDY_X], [0x29], LABEL_5974
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_5974:
 	call LABEL_575D
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_598B
+	jg [BUDDY_X], [0x29], LABEL_598B
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_598B:
 	call LABEL_577B
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_59A2
+	jg [BUDDY_X], [0x29], LABEL_59A2
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_59A2:
 	call GUARDED_DRAW_CIN_338_339_AT_5799
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
-	jg [0x07], [0x29], LABEL_59B9
+	jg [BUDDY_X], [0x29], LABEL_59B9
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x02, GAME_LOOP_DRAW_CIN_242_243
 
 LABEL_59B9:
 	call LABEL_57B7
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
 	jmp LABEL_5851
 LABEL_59C4:
@@ -241,54 +241,54 @@ LABEL_59C4:
 
 LABEL_59C5:
 	call LABEL_5591
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
 	call LABEL_55B7
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
 	call LABEL_55E5
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
 	call LABEL_5603
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
 	call LABEL_5627
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
 	call LABEL_5645
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
 	call LABEL_566B
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
 	call LABEL_5691
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
 
 LABEL_5A05:
 	call LABEL_56B7
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
 	call LABEL_56DD
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
 	call LABEL_570B
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
 	call LABEL_5731
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
 	call LABEL_575D
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
 	call LABEL_577B
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
 	call GUARDED_DRAW_CIN_338_339_AT_5799
-	sub [0x07], 0x0003
+	sub [BUDDY_X], 0x0003
 	break
 	call LABEL_57B7
-	sub [0x07], 0x0002
+	sub [BUDDY_X], 0x0002
 	break
 	jmp LABEL_59C5
 LABEL_5A48:
@@ -296,7 +296,7 @@ LABEL_5A48:
 
 LABEL_5A49:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	sub [0x08], 0x0001
+	sub [BUDDY_Y], 0x0001
 	je [0x0D], 0x00, DRAW_CV263_AT_X07_Y08
 	call LABEL_53E9
 	jmp LABEL_5A64

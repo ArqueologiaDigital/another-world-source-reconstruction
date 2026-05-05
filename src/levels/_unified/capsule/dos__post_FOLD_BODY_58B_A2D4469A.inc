@@ -75,7 +75,7 @@ SET_VAR2F_TO_0000:
 	jl [HACK_VAR_67], 0x03, LABEL_50EE
 	mov [0x10], 0x0001
 	call LABEL_30C3
-	mov [0x07], [0x3F]
+	mov [BUDDY_X], [0x3F]
 	mov [0x12], 0x6010
 	mov [0x0E], 0x0000
 	mov [0x0D], 0x0001
@@ -97,16 +97,16 @@ LABEL_50EF:
 	jne [0x10], [HACK_VAR_67], LABEL_517C
 	mov [0xF8], [0x10]
 	and [0xF8], 0x001F
-	je [0x08], [HERO_Y], LABEL_5126
+	je [BUDDY_Y], [HERO_Y], LABEL_5126
 
 LABEL_5126:
 	call LABEL_565E
 	je [0x1D], 0x1E, LABEL_516B
 	mov [0x21], [HERO_X]
-	mov [0x22], [0x07]
+	mov [0x22], [BUDDY_X]
 	call LABEL_564A
 	mov [0x29], [HERO_X]
-	jg [HERO_X], [0x07], LABEL_5156
+	jg [HERO_X], [BUDDY_X], LABEL_5156
 	mov [0x2F], 0x0004
 	add [0x29], 0x0014
 	jg [0x26], 0x64, LABEL_51D6
@@ -122,7 +122,7 @@ LABEL_5156:
 
 LABEL_516B:
 	mov [0x2F], 0x0012
-	jg [HERO_X], [0x07], LABEL_51D6
+	jg [HERO_X], [BUDDY_X], LABEL_51D6
 	mov [0x2F], 0x0013
 	jmp LABEL_51D6
 
@@ -134,8 +134,8 @@ LABEL_517C:
 	jne [0xF8], [0x2B], LABEL_51D6
 	jg [HACK_VAR_67], [0x10], LABEL_51AF
 	jne [0x10], 0x24, LABEL_51A4
-	mov [0x07], 0x00A0
-	mov [0x08], 0x00B6
+	mov [BUDDY_X], 0x00A0
+	mov [BUDDY_Y], 0x00B6
 
 LABEL_51A4:
 	mov [0x2F], 0x0004
@@ -144,13 +144,13 @@ LABEL_51A4:
 
 LABEL_51AF:
 	jne [0x10], 0x23, LABEL_51BD
-	mov [0x07], 0x00FA
-	mov [0x08], 0x00B6
+	mov [BUDDY_X], 0x00FA
+	mov [BUDDY_Y], 0x00B6
 
 LABEL_51BD:
 	jne [0x10], 0x24, LABEL_51CB
-	mov [0x07], 0x0078
-	mov [0x08], 0x005D
+	mov [BUDDY_X], 0x0078
+	mov [BUDDY_Y], 0x005D
 
 LABEL_51CB:
 	mov [0x2F], 0x0003
@@ -184,8 +184,8 @@ STATE_VAR12_BIG_DISPATCH:
 STATE_VAR12_BIG_DISPATCH_CASE_10:
 	mov [0x2B], [0x11]
 	and [0x2B], 0xDFFF
-	jg [0x08], [HERO_Y], TRIVIAL_RET
-	jl [HERO_X], [0x07], LABEL_5258
+	jg [BUDDY_Y], [HERO_Y], TRIVIAL_RET
+	jl [HERO_X], [BUDDY_X], LABEL_5258
 	jge [0x2B], 0x1000, LABEL_5266
 	mov [0x2F], 0x0006
 	jmp TRIVIAL_RET
@@ -198,7 +198,7 @@ LABEL_5258:
 LABEL_5266:
 	call LABEL_567B
 	mov [0x2C], [0x1D]
-	mov [0x21], [0x07]
+	mov [0x21], [BUDDY_X]
 	mov [0x22], [HERO_X]
 	call LABEL_564A
 	jge [0x04], 0x4000, LABEL_535D
@@ -237,7 +237,7 @@ LABEL_52EA:
 	sub [0xF8], 0x0002
 
 LABEL_5302:
-	mov [0x29], [0x07]
+	mov [0x29], [BUDDY_X]
 	jg [HACK_VAR_67], [0x10], LABEL_5332
 	mov [0x2F], 0x0004
 	sub [0x29], 0x0010

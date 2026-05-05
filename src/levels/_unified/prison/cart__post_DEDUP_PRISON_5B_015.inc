@@ -1,8 +1,8 @@
 LABEL_5E62:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_SPRITE_CIN_164_167_BY_VAR09
-	video type=0, offset=COMMON_VIDEO_253, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=COMMON_VIDEO_254, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_253, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_254, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, INLINE_DRAW_CV_255_010__HELPER
 	call LABEL_5D2F
 	jmp LABEL_5E86

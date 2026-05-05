@@ -10,71 +10,71 @@ ANIM_CIN_078_LOOP_VAR03_AT_3AB0:
 	jmp HERO_WALK_LEFT_LOOP
 	killChannel
 	mov [0x29], 0x0008
-	mov [0x07], 0x012C
-	mov [0x08], 0x000A
+	mov [BUDDY_X], 0x012C
+	mov [BUDDY_Y], 0x000A
 
 LABEL_3ADC:
 	break
 	call LABEL_3B29
 	break
 	call LABEL_3B29
-	add [0x07], 0x0003
+	add [BUDDY_X], 0x0003
 	break
 	call LABEL_3B35
 	break
 	call LABEL_3B35
-	add [0x07], 0x0003
+	add [BUDDY_X], 0x0003
 	break
 	call LABEL_3B41
 	break
 	call LABEL_3B41
-	add [0x07], 0x0002
+	add [BUDDY_X], 0x0002
 	break
 	call LABEL_3B4D
 	break
 	call LABEL_3B4D
-	add [0x07], 0x0003
+	add [BUDDY_X], 0x0003
 	break
 	call LABEL_3B59
 	break
 	call LABEL_3B59
-	add [0x07], 0x0003
+	add [BUDDY_X], 0x0003
 	break
 	call LABEL_3B65
 	break
 	call LABEL_3B65
-	add [0x07], 0x0003
+	add [BUDDY_X], 0x0003
 	djnz [0x29], LABEL_3ADC
 	killChannel
 
 LABEL_3B29:
 	jne [0x10], [HACK_VAR_67], SHARED_RET
-	video offset=CINEMATIC_708, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_708, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 LABEL_3B35:
 	jne [0x10], [HACK_VAR_67], SHARED_RET
-	video offset=CINEMATIC_709, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_709, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 LABEL_3B41:
 	jne [0x10], [HACK_VAR_67], SHARED_RET
-	video offset=CINEMATIC_710, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_710, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 LABEL_3B4D:
 	jne [0x10], [HACK_VAR_67], SHARED_RET
-	video offset=CINEMATIC_711, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_711, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 LABEL_3B59:
 	jne [0x10], [HACK_VAR_67], SHARED_RET
-	video offset=CINEMATIC_712, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_712, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 LABEL_3B65:
 	jne [0x10], [HACK_VAR_67], SHARED_RET
-	video offset=CINEMATIC_713, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_713, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 LABEL_3B71:

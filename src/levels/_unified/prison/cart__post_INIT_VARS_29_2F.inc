@@ -1,5 +1,5 @@
 LABEL_2F7C:
-	mov [0x07], 0x00A2
+	mov [BUDDY_X], 0x00A2
 	mov [0x2F], 0x0013
 	mov [0xF8], [0x11]
 	and [0xF8], 0x1000
@@ -11,7 +11,7 @@ LABEL_2F7C:
 	ret
 
 STATE_VAR12_BIG_DISPATCH_CASE_18:
-	jg [0x07], 0x1E, INIT_VARS_07_2F
+	jg [BUDDY_X], 0x1E, INIT_VARS_07_2F
 	mov [0x29], 0x001F
 	mov [0x2F], 0x0001
 	ret

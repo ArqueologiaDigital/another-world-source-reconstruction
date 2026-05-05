@@ -60,9 +60,9 @@ LABEL_2DC6:
 	db 0x11
 
 LABEL_2DC7:
-	jne [0x08], [0x25], LABEL_2DEB
-	mov [0x21], [0x07]
-	mov [0x22], [0x07]
+	jne [BUDDY_Y], [0x25], LABEL_2DEB
+	mov [0x21], [BUDDY_X]
+	mov [0x22], [BUDDY_X]
 	sub [0x21], 0x001E
 	add [0x22], 0x0032
 	jl [0x24], [0x21], LABEL_2DEB
@@ -73,7 +73,7 @@ LABEL_2DEB:
 	ret
 
 LABEL_2DEC:
-	mov [0x26], [0x07]
+	mov [0x26], [BUDDY_X]
 	jne [0x10], 0x01, LABEL_2DF8
 	call LABEL_2E14
 
@@ -100,23 +100,23 @@ LABEL_2E1B:
 
 LABEL_2E20:
 	jne [0x09], 0x02, LABEL_2E2C
-	video offset=CINEMATIC_543, x=[0x26], y=[0x08]
+	video offset=CINEMATIC_543, x=[0x26], y=[BUDDY_Y]
 	ret
 
 LABEL_2E2C:
 	jne [0x09], 0x03, LABEL_2E41
 	selectVideoPage 0x00
-	video offset=CINEMATIC_541, x=[0x26], y=[0x08]
+	video offset=CINEMATIC_541, x=[0x26], y=[BUDDY_Y]
 	selectVideoPage 0xFF
-	video offset=CINEMATIC_542, x=[0x26], y=[0x08]
+	video offset=CINEMATIC_542, x=[0x26], y=[BUDDY_Y]
 	ret
 
 LABEL_2E41:
 	jne [0x09], 0x04, LABEL_2E56
 	selectVideoPage 0x00
-	video offset=CINEMATIC_540, x=[0x26], y=[0x08]
+	video offset=CINEMATIC_540, x=[0x26], y=[BUDDY_Y]
 	selectVideoPage 0xFF
-	video offset=CINEMATIC_540, x=[0x26], y=[0x08]
+	video offset=CINEMATIC_540, x=[0x26], y=[BUDDY_Y]
 	ret
 
 LABEL_2E56:
@@ -127,7 +127,7 @@ LABEL_2E57:
 LABEL_2E58:
 	je [0x49], 0x7FFF, LABEL_2E72
 	jge [0x49], 0x4000, LABEL_2E72
-	mov [0x07], [0x48]
+	mov [BUDDY_X], [0x48]
 	mov [0x09], [0x49]
 	call LABEL_2D25
 	mov [0x49], [0x29]
@@ -135,7 +135,7 @@ LABEL_2E58:
 LABEL_2E72:
 	je [0x4B], 0x7FFF, LABEL_2E8C
 	jge [0x4B], 0x4000, LABEL_2E8C
-	mov [0x07], [0x4A]
+	mov [BUDDY_X], [0x4A]
 	mov [0x09], [0x4B]
 	call LABEL_2D25
 	mov [0x4B], [0x29]
@@ -143,7 +143,7 @@ LABEL_2E72:
 LABEL_2E8C:
 	je [0x4D], 0x7FFF, LABEL_2EA6
 	jge [0x4D], 0x4000, LABEL_2EA6
-	mov [0x07], [0x4C]
+	mov [BUDDY_X], [0x4C]
 	mov [0x09], [0x4D]
 	call LABEL_2D25
 	mov [0x4D], [0x29]
@@ -170,24 +170,24 @@ LABEL_2EAA:
 	db 0x54, 0x11, 0x11, 0x07, 0x08, 0x05, 0x11
 
 LABEL_2F29:
-	jl [0x07], 0x0150, LABEL_2F42
+	jl [BUDDY_X], 0x0150, LABEL_2F42
 	mov [0x2C], [0x10]
 	add [0x10], 0x0001
 	sub [0x29], 0x0154
-	sub [0x07], 0x015F
+	sub [BUDDY_X], 0x015F
 	jmp LABEL_2F58
 
 LABEL_2F42:
-	jg [0x07], 0xFFF0, LABEL_2F78
+	jg [BUDDY_X], 0xFFF0, LABEL_2F78
 	mov [0x2C], [0x10]
 	sub [0x10], 0x0001
 	add [0x29], 0x0154
-	add [0x07], 0x015F
+	add [BUDDY_X], 0x015F
 
 LABEL_2F58:
 	mov [0x27], [0x2C]
 	call LABEL_5AF6
-	mov [0x08], [0x22]
+	mov [BUDDY_Y], [0x22]
 	ret
 LABEL_2F62:
 	db 0x01, 0x2C, 0x21, 0x01, 0x27, 0x10, 0x04, 0x5A
@@ -199,7 +199,7 @@ LABEL_2F78:
 	and [0x27], 0x0200
 	jne [0x27], 0x00, SHARED_RET
 	call LABEL_5AF6
-	mov [0x08], [0x22]
+	mov [BUDDY_Y], [0x22]
 	ret
 
 LABEL_2F8C:

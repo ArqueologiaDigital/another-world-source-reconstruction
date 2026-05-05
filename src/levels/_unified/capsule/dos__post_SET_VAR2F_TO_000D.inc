@@ -2,7 +2,7 @@ LABEL_53A1:
 	call LABEL_56B8
 	jg [0x1D], 0x1D, LABEL_53E3
 	je [0x12], 0x58, SET_VAR2F_TO_000D
-	mov [0x21], [0x07]
+	mov [0x21], [BUDDY_X]
 	call LABEL_564A
 	mov [0x25], [0x26]
 	mov [0x21], [HERO_X]
@@ -10,7 +10,7 @@ LABEL_53A1:
 	mov [0x24], [0x26]
 	jle [0x24], [0x25], LABEL_53E3
 	mov [0x29], [0x22]
-	jl [0x07], [HERO_X], STEP_VAR29_DOWN10_SET_VAR2F_11
+	jl [BUDDY_X], [HERO_X], STEP_VAR29_DOWN10_SET_VAR2F_11
 	add [0x29], 0x000A
 	mov [0x2F], 0x0011
 	ret

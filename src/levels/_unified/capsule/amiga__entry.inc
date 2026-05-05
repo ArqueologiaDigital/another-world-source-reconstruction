@@ -1599,25 +1599,25 @@ LABEL_0070:
 LABEL_00B3:
 	break
 	jl [0x70], 0x012C, LABEL_00B3
-	mov [0x07], 0x008C
-	video offset=CINEMATIC_339, x=[0x07], y=50
+	mov [BUDDY_X], 0x008C
+	video offset=CINEMATIC_339, x=[BUDDY_X], y=50
 	break
-	video offset=CINEMATIC_339, x=[0x07], y=73
+	video offset=CINEMATIC_339, x=[BUDDY_X], y=73
 	break
-	video offset=CINEMATIC_339, x=[0x07], y=96
+	video offset=CINEMATIC_339, x=[BUDDY_X], y=96
 	break
-	video offset=CINEMATIC_339, x=[0x07], y=122
+	video offset=CINEMATIC_339, x=[BUDDY_X], y=122
 	break
-	video offset=CINEMATIC_339, x=[0x07], y=153
+	video offset=CINEMATIC_339, x=[BUDDY_X], y=153
 	break
 	play id=0x0055, freq=0x14, vol=0x30, channel=0x01
-	video offset=CINEMATIC_340, x=[0x07], y=157
+	video offset=CINEMATIC_340, x=[BUDDY_X], y=157
 	break
-	video offset=CINEMATIC_340, x=[0x07], y=157
+	video offset=CINEMATIC_340, x=[BUDDY_X], y=157
 	break
-	video offset=CINEMATIC_340, x=[0x07], y=157
+	video offset=CINEMATIC_340, x=[BUDDY_X], y=157
 	break
-	video offset=CINEMATIC_341, x=[0x07], y=157
+	video offset=CINEMATIC_341, x=[BUDDY_X], y=157
 
 LABEL_00FA:
 	break
@@ -1635,14 +1635,14 @@ LABEL_0104:
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
 	video offset=CINEMATIC_342, x=25, y=112
 	break
-	mov [0x07], 0x0041
-	video offset=CINEMATIC_343, x=[0x07], y=[0x08]
+	mov [BUDDY_X], 0x0041
+	video offset=CINEMATIC_343, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	add [0x07], 0x000F
-	video offset=CINEMATIC_344, x=[0x07], y=[0x08]
+	add [BUDDY_X], 0x000F
+	video offset=CINEMATIC_344, x=[BUDDY_X], y=[BUDDY_Y]
 	setup channel=0x13, address=RAMP_VAR1_PLUS_C_9_5_3_BREAKS
 	break
-	add [0x07], 0x000A
+	add [BUDDY_X], 0x000A
 
 SET_VAREF_TO_6:
 	mov [0xEF], 0x0006

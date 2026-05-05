@@ -1,6 +1,6 @@
 LABEL_32D8:
-	mov [0x21], [0x07]
-	mov [0x27], [0x08]
+	mov [0x21], [BUDDY_X]
+	mov [0x27], [BUDDY_Y]
 	sub [0x27], 0x000B
 	mov [0x22], [0x21]
 	add [0x21], 0x0028
@@ -10,29 +10,29 @@ LABEL_32D8:
 	ret
 
 LABEL_32F5:
-	mov [0x21], [0x07]
+	mov [0x21], [BUDDY_X]
 	mov [0x22], [HERO_X]
-	mov [0x27], [0x08]
+	mov [0x27], [BUDDY_Y]
 	call LABEL_46E5
 	ret
 
 LABEL_3302:
 	call LABEL_3348
-	mov [0x22], [0x07]
-	mov [0x27], [0x08]
+	mov [0x22], [BUDDY_X]
+	mov [0x27], [BUDDY_Y]
 	call LABEL_46E5
 	ret
-	mov [0x21], [0x07]
+	mov [0x21], [BUDDY_X]
 	call LABEL_335C
 	mov [0x29], [HERO_X]
 	mov [HERO_X], [0x22]
-	mov [0x27], [0x08]
+	mov [0x27], [BUDDY_Y]
 	call LABEL_46E5
 	mov [HERO_X], [0x29]
 	ret
 	call LABEL_3348
 	mov [0x22], [HERO_X]
-	mov [0x27], [0x08]
+	mov [0x27], [BUDDY_Y]
 	call LABEL_46E5
 	ret
 
@@ -41,13 +41,13 @@ LABEL_3332:
 	call LABEL_335C
 	mov [0x29], [HERO_X]
 	mov [HERO_X], [0x22]
-	mov [0x27], [0x08]
+	mov [0x27], [BUDDY_Y]
 	call LABEL_46E5
 	mov [HERO_X], [0x29]
 	ret
 
 LABEL_3348:
-	mov [0x21], [0x07]
+	mov [0x21], [BUDDY_X]
 	jge [0x2B], 0x1000, INCREMENT_VAR21_BY_F
 	sub [0x21], 0x000F
 	ret

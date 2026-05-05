@@ -1,12 +1,12 @@
 LABEL_5988:
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
-	video type=0, offset=COMMON_VIDEO_267, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_267, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_5441
 	ret
 
 LABEL_5994:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	add [0x08], 0x0001
+	add [BUDDY_Y], 0x0001
 	je [0x0D], 0x00, INLINE_DRAW_CV_269_024__HELPER
 	call DRAW_CIN_242_THEN_243
 	jmp LABEL_59AF

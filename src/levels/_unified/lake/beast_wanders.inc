@@ -76,12 +76,12 @@ BEAST_WANDER_F1_WHILE_HERO_X_LT_3C:
 	break
 	video offset=CINEMATIC_BEAST_FIRST_11, x=[0x0e], y=[0x0f]
 	add [0x0E], 0x001C
-	mov [0x10], 0x0014
+	mov [COUNTER], 0x0014
 
 BEAST_WANDER_F1_HOLD_20A:
 	break
 	video offset=CINEMATIC_BEAST_WANDER_1, x=[0x0e], y=[0x0f]
-	djnz [0x10], BEAST_WANDER_F1_HOLD_20A
+	djnz [COUNTER], BEAST_WANDER_F1_HOLD_20A
 	break
 	video offset=CINEMATIC_BEAST_FIRST_4, x=[0x0e], y=[0x0f]
 	break
@@ -107,12 +107,12 @@ BEAST_WANDER_F1_HOLD_20A:
 THE_BEAST_WANDERS_ON_THE_SECOND_SCREEN_TO_THE_RIGHT:
 	mov [0x0E], 0x008B
 	mov [0x0F], 0x008C
-	mov [0x10], 0x0006
+	mov [COUNTER], 0x0006
 
 BEAST_WANDER_F1_HOLD_6:
 	video offset=CINEMATIC_BEAST_WANDER_1, x=[0x0e], y=[0x0f]
 	break
-	djnz [0x10], BEAST_WANDER_F1_HOLD_6
+	djnz [COUNTER], BEAST_WANDER_F1_HOLD_6
 	video offset=CINEMATIC_BEAST_FIRST_5, x=[0x0e], y=[0x0f]
 	break
 	video offset=CINEMATIC_BEAST_FIRST_6, x=[0x0e], y=[0x0f]
@@ -139,12 +139,12 @@ BEAST_WANDER_F1_HOLD_6:
 	add [0x0E], 0x0001
 	video offset=CINEMATIC_BEAST_FIRST_11, x=[0x0e], y=[0x0f]
 	add [0x0E], 0x001D
-	mov [0x10], 0x0014
+	mov [COUNTER], 0x0014
 
 BEAST_WANDER_F1_HOLD_20B:
 	break
 	video offset=CINEMATIC_BEAST_WANDER_1, x=[0x0e], y=[0x0f]
-	djnz [0x10], BEAST_WANDER_F1_HOLD_20B
+	djnz [COUNTER], BEAST_WANDER_F1_HOLD_20B
 	break
 	video offset=CINEMATIC_BEAST_FIRST_4, x=[0x0e], y=[0x0f]
 	break

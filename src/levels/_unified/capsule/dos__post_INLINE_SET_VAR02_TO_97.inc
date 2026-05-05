@@ -675,7 +675,7 @@ LABEL_AC44:
 	call LABEL_369F
 	call GUARDED_DRAW_CV_304_305
 	call LABEL_369F
-	mov [0x07], 0x0064
+	mov [BUDDY_X], 0x0064
 	call LABEL_8C16
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
@@ -690,7 +690,7 @@ LABEL_ACB0:
 	jne [0xF8], 0x00, LABEL_ACD2
 	call LABEL_335F
 	call LABEL_36D7
-	mov [0x07], 0x000F
+	mov [BUDDY_X], 0x000F
 	call GUARDED_ALIEN_ANIM_CV_128
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
 

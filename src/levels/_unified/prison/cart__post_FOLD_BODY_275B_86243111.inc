@@ -78,7 +78,7 @@ LABEL_5281:
 
 LABEL_528A:
 	jne [0x0E], 0x06, LABEL_5296
-	video offset=CINEMATIC_227, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_227, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 LABEL_5296:
@@ -93,59 +93,59 @@ LABEL_52AA:
 	db 0x11
 
 DRAW_CIN_236:
-	video offset=CINEMATIC_236, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_236, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_237:
-	video offset=CINEMATIC_237, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_237, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_238:
-	video offset=CINEMATIC_238, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_238, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_239:
-	video offset=CINEMATIC_239, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_239, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_235:
-	video offset=CINEMATIC_235, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_235, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_234:
-	video offset=CINEMATIC_234, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_234, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_233:
-	video offset=CINEMATIC_233, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_233, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_232:
-	video offset=CINEMATIC_232, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_232, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_231:
-	video offset=CINEMATIC_231, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_231, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_230:
-	video offset=CINEMATIC_230, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_230, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_229:
-	video offset=CINEMATIC_229, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_229, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_228:
-	video offset=CINEMATIC_228, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_228, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_225:
-	video offset=CINEMATIC_225, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_225, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_226:
-	video offset=CINEMATIC_226, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_226, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 LABEL_52FF:
@@ -155,7 +155,7 @@ LABEL_52FF:
 	ret
 
 DRAW_CIN_352:
-	video offset=CINEMATIC_352, x=[0xf5], y=[0x08]
+	video offset=CINEMATIC_352, x=[0xf5], y=[BUDDY_Y]
 	ret
 
 LABEL_5313:
@@ -165,96 +165,96 @@ LABEL_5313:
 	ret
 
 LABEL_5321:
-	add [0x08], 0x000D
-	sub [0x07], 0x0002
-	video offset=CINEMATIC_169, x=[0x07], y=[0x08]
-	add [0x07], 0x0002
-	sub [0x08], 0x000D
+	add [BUDDY_Y], 0x000D
+	sub [BUDDY_X], 0x0002
+	video offset=CINEMATIC_169, x=[BUDDY_X], y=[BUDDY_Y]
+	add [BUDDY_X], 0x0002
+	sub [BUDDY_Y], 0x000D
 	ret
 
 LABEL_5337:
-	video offset=CINEMATIC_351, x=[0x07], y=[0x08]
-	mov [0xF5], [0x07]
+	video offset=CINEMATIC_351, x=[BUDDY_X], y=[BUDDY_Y]
+	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, LABEL_534A
-	video offset=CINEMATIC_354, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_354, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_534A:
 	jg [0x13], [0x30], LABEL_52FF
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, LABEL_52FF
-	video offset=CINEMATIC_353, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_353, x=[BUDDY_X], y=[BUDDY_Y]
 	jmp LABEL_52FF
 
 LABEL_5365:
-	video offset=CINEMATIC_355, x=[0x07], y=[0x08]
-	mov [0xF5], [0x07]
+	video offset=CINEMATIC_355, x=[BUDDY_X], y=[BUDDY_Y]
+	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0001
 	jg [0xF6], 0x00, LABEL_537C
-	video offset=CINEMATIC_357, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_357, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_537C:
 	jg [0x13], [0x30], LABEL_52FF
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, LABEL_52FF
-	video offset=CINEMATIC_356, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_356, x=[BUDDY_X], y=[BUDDY_Y]
 	jmp LABEL_52FF
 
 LABEL_5397:
-	video offset=CINEMATIC_358, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_358, x=[BUDDY_X], y=[BUDDY_Y]
 	jg [0x13], [0x30], LABEL_5313
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, LABEL_5313
-	video offset=CINEMATIC_359, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_359, x=[BUDDY_X], y=[BUDDY_Y]
 	jmp LABEL_5313
 
 LABEL_53B7:
-	video offset=CINEMATIC_360, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_360, x=[BUDDY_X], y=[BUDDY_Y]
 	jmp LABEL_5313
 
 LABEL_53BF:
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 	call LABEL_53CB
-	add [0x07], 0x0001
+	add [BUDDY_X], 0x0001
 	ret
 
 LABEL_53CB:
-	video offset=CINEMATIC_340, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_340, x=[BUDDY_X], y=[BUDDY_Y]
 	jg [0x13], [0x30], SHARED_RET_AT_543D
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET_AT_543D
-	video offset=CINEMATIC_341, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_341, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 LABEL_53E9:
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 	call DRAW_CIN_338_THEN_339
-	add [0x07], 0x0001
+	add [BUDDY_X], 0x0001
 	ret
 
 DRAW_CIN_338_THEN_339:
-	video offset=CINEMATIC_338, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_338, x=[BUDDY_X], y=[BUDDY_Y]
 	jg [0x13], [0x30], SHARED_RET_AT_543D
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET_AT_543D
-	video offset=CINEMATIC_339, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_339, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_242_THEN_243:
-	video offset=CINEMATIC_242, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_242, x=[BUDDY_X], y=[BUDDY_Y]
 	jg [0x13], [0x30], SHARED_RET_AT_543D
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET_AT_543D
-	video offset=CINEMATIC_243, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_243, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 LABEL_5431:
-	add [0x07], 0x0001
+	add [BUDDY_X], 0x0001
 	call DRAW_CIN_242_THEN_243
-	sub [0x07], 0x0001
+	sub [BUDDY_X], 0x0001
 	ret

@@ -3,19 +3,19 @@ LABEL_0385:
 	video offset=CINEMATIC_004, x=114, y=160
 	break
 	djnz [0xE6], LABEL_0385
-	video offset=CINEMATIC_BUDDY_PULLS_LESTER_0, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_0, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_BUDDY_PULLS_LESTER_1, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_1, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_BUDDY_PULLS_LESTER_2, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_2, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_BUDDY_PULLS_LESTER_3, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_3, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_BUDDY_PULLS_LESTER_3, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_3, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_BUDDY_PULLS_LESTER_4, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_4, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_BUDDY_PULLS_LESTER_5, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_5, x=[BUDDY_X], y=[BUDDY_Y]
 	mov [HERO_X], 0x005C
 	mov [HERO_Y], [0x40]
 	mov [0x63], 0x0002
@@ -29,7 +29,7 @@ LABEL_0385:
 
 LABEL_03E2:
 	break
-	video offset=CINEMATIC_BUDDY_PULLS_LESTER_6, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_BUDDY_PULLS_LESTER_6, x=[BUDDY_X], y=[BUDDY_Y]
 	djnz [0x29], LABEL_03E2
 	break
 	jmp INIT_VARS_0E_29

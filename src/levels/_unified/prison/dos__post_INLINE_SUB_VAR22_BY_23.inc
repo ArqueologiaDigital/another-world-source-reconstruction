@@ -5,56 +5,56 @@ LABEL_3383:
 
 LABEL_3384:
 	call LABEL_3560
-	sub [0x08], 0x000A
-	video offset=CINEMATIC_361, x=[0x07], y=[0x08]
+	sub [BUDDY_Y], 0x000A
+	video offset=CINEMATIC_361, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_3560
-	sub [0x08], 0x0006
-	video offset=CINEMATIC_362, x=[0x07], y=[0x08]
+	sub [BUDDY_Y], 0x0006
+	video offset=CINEMATIC_362, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_3560
-	video offset=CINEMATIC_363, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_363, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_3560
-	sub [0x08], 0x0001
-	video offset=CINEMATIC_364, x=[0x07], y=[0x08]
+	sub [BUDDY_Y], 0x0001
+	video offset=CINEMATIC_364, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_3560
-	sub [0x08], 0x0002
-	video offset=CINEMATIC_363, x=[0x07], y=[0x08]
+	sub [BUDDY_Y], 0x0002
+	video offset=CINEMATIC_363, x=[BUDDY_X], y=[BUDDY_Y]
 	mov [0x29], 0x0001
 
 LABEL_33C4:
 	call LABEL_3539
 	break
 	call LABEL_3560
-	video offset=CINEMATIC_362, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_362, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_3560
-	video offset=CINEMATIC_363, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_363, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_3560
-	video offset=CINEMATIC_364, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_364, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call LABEL_3560
-	video offset=CINEMATIC_361, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_361, x=[BUDDY_X], y=[BUDDY_Y]
 	djnz [0x29], LABEL_33C4
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
-	video offset=CINEMATIC_380, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_380, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
-	video offset=CINEMATIC_381, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_381, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
-	video offset=CINEMATIC_382, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_382, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
-	sub [0x08], 0x0003
-	video offset=CINEMATIC_383, x=[0x07], y=[0x08]
+	sub [BUDDY_Y], 0x0003
+	video offset=CINEMATIC_383, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
-	video offset=CINEMATIC_382, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_382, x=[BUDDY_X], y=[BUDDY_Y]
 	mov [0x29], 0x000A
 
 LABEL_3424:
@@ -71,34 +71,34 @@ LABEL_3442:
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	je [0x09], 0x01, LABEL_34AB
-	video offset=CINEMATIC_385, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_385, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	je [0x09], 0x01, LABEL_34AB
-	video offset=CINEMATIC_386, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_386, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	je [0x09], 0x01, LABEL_34AB
-	video offset=CINEMATIC_383, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_383, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	je [0x09], 0x01, LABEL_34AB
-	sub [0x08], 0x0001
-	video offset=CINEMATIC_383, x=[0x07], y=[0x08]
+	sub [BUDDY_Y], 0x0001
+	video offset=CINEMATIC_383, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	je [0x09], 0x01, LABEL_34AB
-	video offset=CINEMATIC_386, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_386, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	je [0x09], 0x01, LABEL_34AB
-	video offset=CINEMATIC_385, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_385, x=[BUDDY_X], y=[BUDDY_Y]
 	djnz [0x29], LABEL_3424
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 
 LABEL_34AB:
-	video offset=CINEMATIC_384, x=[0x07], y=[0x08], zoom=[0x96]	;@enc=alt
+	video offset=CINEMATIC_384, x=[BUDDY_X], y=[BUDDY_Y], zoom=[0x96]	;@enc=alt
 	mov [0x2B], 0x0FA0
 	call LABEL_3539
 	break
@@ -185,7 +185,7 @@ LABEL_3560:
 	mov [0x2B], [0x5B]
 	mov [0x29], [0x5C]
 	call LABEL_35FE
-	mov [0x5A], [0x07]
+	mov [0x5A], [BUDDY_X]
 	mov [0x5B], [0x2B]
 	ret
 
@@ -195,7 +195,7 @@ LABEL_357D:
 	mov [0x2B], [0x5E]
 	mov [0x29], [0x5F]
 	call LABEL_35FE
-	mov [0x5D], [0x07]
+	mov [0x5D], [BUDDY_X]
 	mov [0x5E], [0x2B]
 	ret
 
@@ -205,7 +205,7 @@ LABEL_3596:
 	mov [0x2B], [0x61]
 	mov [0x29], [0x62]
 	call LABEL_35FE
-	mov [0x60], [0x07]
+	mov [0x60], [BUDDY_X]
 	mov [0x61], [0x2B]
 
 LABEL_35AE:
@@ -218,7 +218,7 @@ ADVANCE_VAR0D_RESTORE_STATE:
 	mov [0x2B], [0x5B]
 	mov [0x29], [0x5C]
 	call LABEL_3625
-	mov [0x5A], [0x07]
+	mov [0x5A], [BUDDY_X]
 	mov [0x5B], [0x2B]
 	ret
 
@@ -228,7 +228,7 @@ LABEL_35CC:
 	mov [0x2B], [0x5E]
 	mov [0x29], [0x5F]
 	call LABEL_3625
-	mov [0x5D], [0x07]
+	mov [0x5D], [BUDDY_X]
 	mov [0x5E], [0x2B]
 	ret
 
@@ -238,7 +238,7 @@ LABEL_35E5:
 	mov [0x2B], [0x61]
 	mov [0x29], [0x62]
 	call LABEL_3625
-	mov [0x60], [0x07]
+	mov [0x60], [BUDDY_X]
 	mov [0x61], [0x2B]
 
 LABEL_35FD:
