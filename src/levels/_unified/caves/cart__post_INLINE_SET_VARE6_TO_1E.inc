@@ -297,8 +297,8 @@ LABEL_210D:
 
 LABEL_21B1:
 	setPalette 0x11
-	jl [0x01], 0xAE, LABEL_21C3
-	jg [0x01], 0xE1, LABEL_21C3
+	jl [HERO_X], 0xAE, LABEL_21C3
+	jg [HERO_X], 0xE1, LABEL_21C3
 	setPalette 0x09
 
 LABEL_21C3:

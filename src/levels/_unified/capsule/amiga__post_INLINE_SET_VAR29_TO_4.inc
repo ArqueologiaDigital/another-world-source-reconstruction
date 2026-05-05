@@ -74,7 +74,7 @@ LABEL_022F:
 	video offset=CINEMATIC_354, x=[0x07], y=[0x08]
 	break
 	mov [0x12], 0x0038
-	mov [0x29], [0x01]
+	mov [0x29], [HERO_X]
 	sub [0x29], 0x001A
 	mov [0x2F], 0x0018
 	jmp DISPATCH_VAR2F_STATE
@@ -111,16 +111,16 @@ LABEL_02A0:
 
 LABEL_02A1:
 	mov [0x32], 0x0001
-	video offset=CINEMATIC_421, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_421, x=[HERO_X], y=[HERO_Y]
 	break
-	add [0x02], 0x000E
-	video offset=CINEMATIC_421, x=[0x01], y=[0x02]
+	add [HERO_Y], 0x000E
+	video offset=CINEMATIC_421, x=[HERO_X], y=[HERO_Y]
 	break
-	add [0x02], 0x0012
-	video offset=CINEMATIC_421, x=[0x01], y=[0x02]
+	add [HERO_Y], 0x0012
+	video offset=CINEMATIC_421, x=[HERO_X], y=[HERO_Y]
 	break
-	add [0x02], 0x0018
-	video offset=CINEMATIC_421, x=[0x01], y=[0x02]
+	add [HERO_Y], 0x0018
+	video offset=CINEMATIC_421, x=[HERO_X], y=[HERO_Y]
 	deleteChannels first=0x00, last=0x3B
 	setup channel=0x14, address=PLAY_3SFX_PAL_3_PAUSE_4
 	killChannel

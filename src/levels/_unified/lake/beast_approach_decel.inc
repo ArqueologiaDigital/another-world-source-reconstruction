@@ -130,10 +130,10 @@ BEAST_DECEL_STEP_3_LOOP:
 	break
 	djnz [0x10], BEAST_DECEL_STEP_3_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
+	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
 ;@endif
 ;@if BRANCH == "dos_1992"
-	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
+	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
 ;@endif
 	mov [0x10], 0x0007
 
@@ -143,10 +143,10 @@ BEAST_DECEL_STEP_2_LOOP:
 	break
 	djnz [0x10], BEAST_DECEL_STEP_2_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
+	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
 ;@endif
 ;@if BRANCH == "dos_1992"
-	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
+	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
 ;@endif
 	mov [0x10], 0x0003
 
@@ -156,10 +156,10 @@ BEAST_DECEL_STEP_1_LOOP:
 	break
 	djnz [0x10], BEAST_DECEL_STEP_1_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
+	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
 ;@endif
 ;@if BRANCH == "dos_1992"
-	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
+	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
 ;@endif
 	mov [0x10], 0x0005
 
@@ -181,7 +181,7 @@ BEAST_PASS_HERO_DECEL:
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x29, address=CHECK_IF_THE_BEAST_HAS_ALREADY_REACHED_LESTER
-	jg [0x0E], [0x01], DRAW_BEAST_DRIFT_LEFT_LOOP
+	jg [0x0E], [HERO_X], DRAW_BEAST_DRIFT_LEFT_LOOP
 	setup channel=0x29, address=WAIT_UNTIL_BEAST_CLOSE
 	jmp BEAST_AI_INIT_POS_HEINEMAN
 ;@elif BRANCH == "chahi_amiga_1991"
@@ -192,7 +192,7 @@ BEAST_PASS_HERO_DECEL:
 WAIT_BEAST_TRIGGER_THEN_INIT:
 	break
 	jne [0x66], 0x05, WAIT_BEAST_TRIGGER_THEN_INIT
-	jl [0x01], 0x64, WAIT_BEAST_TRIGGER_THEN_INIT
+	jl [HERO_X], 0x64, WAIT_BEAST_TRIGGER_THEN_INIT
 ;@if BRANCH == "gba_2004"
 	song id=0x0FA3, delay=0x0000, pos=0x02
 ;@endif

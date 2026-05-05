@@ -199,7 +199,7 @@ PLAY_SFX_005C_CH00:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV139_AT_X01_Y02:
-	video type=0, offset=COMMON_VIDEO_139, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_139, x=[HERO_X], y=[HERO_Y], zoom=0x40
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -404,7 +404,7 @@ DRAW_CV139_AT_X01_Y02:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV078_PLAY_60_F0B_V22_C1:
-	video type=0, offset=COMMON_VIDEO_078, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_078, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0B, vol=0x22, channel=0x01
 	ret
 ;@endif
@@ -477,7 +477,7 @@ DRAW_CV078_PLAY_60_F0B_V22_C1:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV070_PLAY_60_F14_V20_C1:
-	video type=0, offset=COMMON_VIDEO_070, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_070, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x14, vol=0x20, channel=0x01
 	ret
 ;@endif
@@ -560,7 +560,7 @@ DRAW_CV070_PLAY_60_F14_V20_C1:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV108_PLAY_60_F0F_V2A_C1:
-	video type=0, offset=COMMON_VIDEO_108, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_108, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x01
 	ret
 ;@endif
@@ -633,7 +633,7 @@ DRAW_CV108_PLAY_60_F0F_V2A_C1:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV098_PLAY_60_F0A_V2A_C1:
-	video type=0, offset=COMMON_VIDEO_098, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_098, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0A, vol=0x2A, channel=0x01
 	ret
 ;@endif
@@ -741,7 +741,7 @@ DRAW_CV098_PLAY_60_F0A_V2A_C1:
 INIT_VARS_03_32_02_1:
 	mov [0x03], 0x0006
 	mov [0x32], 0x0001
-	mov [0x02], 0x00DC
+	mov [HERO_Y], 0x00DC
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -754,7 +754,7 @@ INIT_VARS_03_32_02_1:
 INIT_VARS_03_32_02:
 	mov [0x03], 0x0006
 	mov [0x32], 0x0001
-	mov [0x02], 0x0000
+	mov [HERO_Y], 0x0000
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"

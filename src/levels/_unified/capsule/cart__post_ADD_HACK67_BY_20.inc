@@ -6,5 +6,5 @@ LABEL_B570:
 LABEL_B57B:
 	jne [HACK_VAR_67], 0xC8, SUB_HACK67_BY_20
 	mov [HACK_VAR_67], 0x00AA
-	mov [0x01], 0x00BE
+	mov [HERO_X], 0x00BE
 	ret

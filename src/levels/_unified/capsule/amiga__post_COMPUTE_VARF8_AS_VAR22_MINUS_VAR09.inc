@@ -36,8 +36,8 @@ LABEL_5598:
 	call LABEL_56C4
 
 LABEL_55AE:
-	mov [0x24], [0x01]
-	mov [0x25], [0x02]
+	mov [0x24], [HERO_X]
+	mov [0x25], [HERO_Y]
 	mov [0x26], [0x04]
 	mov [0x1C], 0x001E
 	call LABEL_5695

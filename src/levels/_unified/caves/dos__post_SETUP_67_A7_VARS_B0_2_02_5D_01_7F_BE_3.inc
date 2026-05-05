@@ -1,7 +1,7 @@
 LABEL_44E9:
 	call SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1
-	mov [0x01], 0x0014
-	mov [0x02], 0x007D
+	mov [HERO_X], 0x0014
+	mov [HERO_Y], 0x007D
 	mov [0x63], 0x0001
 	mov [HACK_VAR_67], 0x006F
 	or [0xB2], 0x0080
@@ -22,8 +22,8 @@ LABEL_44E9:
 LABEL_452C:
 	call SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1
 	or [0xB1], 0x0004
-	mov [0x01], 0x008C
-	mov [0x02], 0x00AC
+	mov [HERO_X], 0x008C
+	mov [HERO_Y], 0x00AC
 	mov [0x63], 0x0001
 	mov [HACK_VAR_67], 0x0071
 	or [0xB2], 0x0083

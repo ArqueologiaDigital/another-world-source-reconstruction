@@ -43,7 +43,7 @@ LABEL_8903:
 	ret
 
 LABEL_8943:
-	jg [0x01], 0x0A, SHARED_RET
+	jg [HERO_X], 0x0A, SHARED_RET
 	jg [0x07], 0x28, LABEL_895A
 	jne [0x10], [HACK_VAR_67], LABEL_895A
 	mov [0x07], 0x002A

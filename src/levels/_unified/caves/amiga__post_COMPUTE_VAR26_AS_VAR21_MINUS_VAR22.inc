@@ -1,5 +1,5 @@
 LABEL_5D81:
-	mov [0x21], [0x01]
+	mov [0x21], [HERO_X]
 	mov [0x22], [0x07]
 	jmp LABEL_5D6D
 
@@ -16,7 +16,7 @@ LABEL_5D8A:
 
 LABEL_5DA7:
 	mov [0x21], [0x07]
-	mov [0x22], [0x01]
+	mov [0x22], [HERO_X]
 	mov [0x27], [0x08]
 	call LABEL_7404
 	ret
@@ -29,7 +29,7 @@ LABEL_5DB4:
 
 LABEL_5DD7:
 	call LABEL_5DFA
-	mov [0x22], [0x01]
+	mov [0x22], [HERO_X]
 	mov [0x27], [0x08]
 	call LABEL_7404
 	ret
@@ -37,11 +37,11 @@ LABEL_5DD7:
 LABEL_5DE4:
 	call LABEL_5DFA
 	call LABEL_5E0E
-	mov [0x29], [0x01]
-	mov [0x01], [0x22]
+	mov [0x29], [HERO_X]
+	mov [HERO_X], [0x22]
 	mov [0x27], [0x08]
 	call LABEL_7404
-	mov [0x01], [0x29]
+	mov [HERO_X], [0x29]
 	ret
 
 LABEL_5DFA:

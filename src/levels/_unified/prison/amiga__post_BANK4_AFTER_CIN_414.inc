@@ -13,7 +13,7 @@ LABEL_054D:
 	sub [SCROLL_Y], 0x000A
 	video offset=CINEMATIC_416, x=160, y=[0xf9]
 	add [SCROLL_Y], 0x000A
-	video offset=CINEMATIC_415, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_415, x=[HERO_X], y=[HERO_Y]
 	djnz [0x14], LABEL_054D
 	selectVideoPage 0x00
 	copyVideoPage src=0xFF, dst=0x00

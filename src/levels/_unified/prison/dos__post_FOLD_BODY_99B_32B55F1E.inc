@@ -13,18 +13,18 @@ LABEL_2FC4:
 	and [0xF8], 0x001F
 	je [0xF8], 0x05, LABEL_2F3A
 	je [0x12], 0x01, LABEL_2EB9
-	je [0x08], [0x02], LABEL_2FEF
+	je [0x08], [HERO_Y], LABEL_2FEF
 	je [HACK_VAR_67], 0x24, LABEL_2E8F
 	je [HACK_VAR_67], 0x23, LABEL_2E8F
 
 LABEL_2FEF:
 	call LABEL_32D8
 	je [0x1D], 0x1E, LABEL_3034
-	mov [0x21], [0x01]
+	mov [0x21], [HERO_X]
 	mov [0x22], [0x07]
 	call LABEL_32C4
-	mov [0x29], [0x01]
-	jg [0x01], [0x07], LABEL_301F
+	mov [0x29], [HERO_X]
+	jg [HERO_X], [0x07], LABEL_301F
 	mov [0x2F], 0x0004
 	add [0x29], 0x0014
 	jg [0x26], 0x64, LABEL_30B4
@@ -39,12 +39,12 @@ LABEL_301F:
 	jmp LABEL_30B4
 
 LABEL_3034:
-	mov [0x21], [0x01]
+	mov [0x21], [HERO_X]
 	mov [0x22], [0x07]
 	call LABEL_32C4
 	jl [0x26], 0x02, LABEL_30B4
 	mov [0x2F], 0x0012
-	jg [0x01], [0x07], LABEL_30B4
+	jg [HERO_X], [0x07], LABEL_30B4
 	mov [0x2F], 0x0013
 	jmp LABEL_30B4
 
@@ -98,8 +98,8 @@ STATE_VAR12_BIG_DISPATCH:
 	jne [0x10], [HACK_VAR_67], LABEL_314A
 	mov [0x2B], [0x11]
 	and [0x2B], 0xDFFF
-	jg [0x08], [0x02], LABEL_31B6
-	jl [0x01], [0x07], LABEL_310C
+	jg [0x08], [HERO_Y], LABEL_31B6
+	jl [HERO_X], [0x07], LABEL_310C
 	jge [0x2B], 0x1000, LABEL_311A
 	mov [0x2F], 0x0006
 	jmp LABEL_31B6
@@ -113,7 +113,7 @@ LABEL_311A:
 	call LABEL_32F5
 	mov [0x2C], [0x1D]
 	mov [0x21], [0x07]
-	mov [0x22], [0x01]
+	mov [0x22], [HERO_X]
 	call LABEL_32C4
 	jl [0x26], 0x46, LABEL_31B8
 	jl [0x2C], 0x0A, SET_VAR2F_TO_000F_AT_31CB

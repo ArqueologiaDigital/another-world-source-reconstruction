@@ -176,7 +176,7 @@ LABEL_200E:
 
 LABEL_200F:
 	video offset=CINEMATIC_563, x=0, y=137
-	jl [0x01], 0xA0, LABEL_201D
+	jl [HERO_X], 0xA0, LABEL_201D
 	video offset=CINEMATIC_564, x=160, y=100
 
 LABEL_201D:
@@ -187,7 +187,7 @@ LABEL_2021:
 
 LABEL_2022:
 	break
-	jg [0x01], 0x28, LABEL_2022
+	jg [HERO_X], 0x28, LABEL_2022
 	video offset=CINEMATIC_570, x=23, y=62
 	jmp LABEL_2022
 LABEL_2030:
@@ -195,19 +195,19 @@ LABEL_2030:
 
 LABEL_2031:
 	break
-	jg [0x02], 0xA6, LABEL_2031
+	jg [HERO_Y], 0xA6, LABEL_2031
 	video offset=CINEMATIC_502, x=65, y=131
 	video offset=CINEMATIC_502, x=1, y=67
 	video offset=CINEMATIC_501, x=24, y=129
-	jg [0x01], 0x3C, LABEL_2031
-	jl [0x01], 0x14, LABEL_2031
+	jg [HERO_X], 0x3C, LABEL_2031
+	jl [HERO_X], 0x14, LABEL_2031
 	jmp LABEL_2031
 LABEL_2053:
 	db 0x11
 
 LABEL_2054:
 	break
-	jl [0x02], 0xB1, LABEL_2054
+	jl [HERO_Y], 0xB1, LABEL_2054
 	video offset=CINEMATIC_501, x=270, y=210
 	video offset=CINEMATIC_502, x=178, y=203, zoom=0x40
 	jmp LABEL_2054
@@ -216,7 +216,7 @@ LABEL_2068:
 
 LABEL_2069:
 	break
-	jg [0x01], 0x73, LABEL_2069
+	jg [HERO_X], 0x73, LABEL_2069
 	video offset=CINEMATIC_501, x=42, y=184
 	jmp LABEL_2069
 LABEL_2077:
@@ -224,7 +224,7 @@ LABEL_2077:
 
 LABEL_2078:
 	break
-	jg [0x01], 0xBE, LABEL_2078
+	jg [HERO_X], 0xBE, LABEL_2078
 	video offset=CINEMATIC_570, x=174, y=199
 	video offset=CINEMATIC_347, x=160, y=184
 	jmp LABEL_2078
@@ -248,16 +248,16 @@ LABEL_209C:
 LABEL_209D:
 	video offset=CINEMATIC_336, x=280, y=101
 	video offset=CINEMATIC_337, x=226, y=140
-	jg [0x01], 0x82, LABEL_20BC
-	jl [0x02], 0x7C, LABEL_20B8
-	jg [0x01], 0x4B, LABEL_20BC
+	jg [HERO_X], 0x82, LABEL_20BC
+	jl [HERO_Y], 0x7C, LABEL_20B8
+	jg [HERO_X], 0x4B, LABEL_20BC
 
 LABEL_20B8:
 	video offset=CINEMATIC_339, x=160, y=100
 
 LABEL_20BC:
-	jl [0x01], 0xC8, LABEL_20CD
-	jg [0x02], 0xA0, LABEL_20CD
+	jl [HERO_X], 0xC8, LABEL_20CD
+	jg [HERO_Y], 0xA0, LABEL_20CD
 	video offset=CINEMATIC_338, x=300, y=101
 
 LABEL_20CD:
@@ -275,7 +275,7 @@ LABEL_20DA:
 
 LABEL_20DB:
 	video offset=CINEMATIC_336, x=65498, y=30
-	jg [0x02], 0x5A, LABEL_20ED
+	jg [HERO_Y], 0x5A, LABEL_20ED
 	video offset=CINEMATIC_338, x=65534, y=31
 
 LABEL_20ED:
@@ -285,11 +285,11 @@ LABEL_20F1:
 	db 0x11
 
 LABEL_20F2:
-	jl [0x01], 0xC8, LABEL_20FC
+	jl [HERO_X], 0xC8, LABEL_20FC
 	video offset=CINEMATIC_348, x=231, y=111
 
 LABEL_20FC:
-	jg [0x01], 0x64, LABEL_2110
+	jg [HERO_X], 0x64, LABEL_2110
 	video offset=CINEMATIC_347, x=64, y=160
 	video offset=CINEMATIC_348, x=66, y=105
 	video offset=CINEMATIC_336, x=65513, y=83
@@ -306,43 +306,43 @@ LABEL_2119:
 	jmp LABEL_2119
 
 LABEL_2121:
-	jl [0x01], 0x14, LABEL_2131
-	jg [0x01], 0x93, LABEL_2131
+	jl [HERO_X], 0x14, LABEL_2131
+	jg [HERO_X], 0x93, LABEL_2131
 	video offset=CINEMATIC_338, x=61, y=100
 
 LABEL_2131:
-	jl [0x01], 0xE6, LABEL_2143
-	jg [0x01], 0x0138, LABEL_2143
+	jl [HERO_X], 0xE6, LABEL_2143
+	jg [HERO_X], 0x0138, LABEL_2143
 	video offset=CINEMATIC_338, x=270, y=100
 
 LABEL_2143:
-	jl [0x01], 0x2A, LABEL_2153
-	jg [0x01], 0xA2, LABEL_2153
+	jl [HERO_X], 0x2A, LABEL_2153
+	jg [HERO_X], 0xA2, LABEL_2153
 	video offset=CINEMATIC_344, x=160, y=100
 
 LABEL_2153:
-	jl [0x01], 0x4E, LABEL_2163
-	jg [0x01], 0xA5, LABEL_2163
+	jl [HERO_X], 0x4E, LABEL_2163
+	jg [HERO_X], 0xA5, LABEL_2163
 	video offset=CINEMATIC_343, x=160, y=100
 
 LABEL_2163:
-	jl [0x01], 0x5E, LABEL_2173
-	jg [0x01], 0xBE, LABEL_2173
+	jl [HERO_X], 0x5E, LABEL_2173
+	jg [HERO_X], 0xBE, LABEL_2173
 	video offset=CINEMATIC_342, x=160, y=100
 
 LABEL_2173:
-	jl [0x01], 0x82, LABEL_2183
-	jg [0x01], 0xF0, LABEL_2183
+	jl [HERO_X], 0x82, LABEL_2183
+	jg [HERO_X], 0xF0, LABEL_2183
 	video offset=CINEMATIC_344, x=251, y=101
 
 LABEL_2183:
-	jl [0x01], 0xA2, LABEL_2194
-	jg [0x01], 0x0118, LABEL_2194
+	jl [HERO_X], 0xA2, LABEL_2194
+	jg [HERO_X], 0x0118, LABEL_2194
 	video offset=CINEMATIC_343, x=251, y=101
 
 LABEL_2194:
-	jl [0x01], 0xB6, LABEL_21A5
-	jg [0x01], 0x0122, LABEL_21A5
+	jl [HERO_X], 0xB6, LABEL_21A5
+	jg [HERO_X], 0x0122, LABEL_21A5
 	video offset=CINEMATIC_342, x=251, y=101
 
 LABEL_21A5:
@@ -352,14 +352,14 @@ LABEL_21A9:
 	db 0x11
 
 LABEL_21AA:
-	jg [0x01], 0x32, LABEL_21BC
-	mov [0x01], 0xFFE2
-	mov [0x02], 0x005A
+	jg [HERO_X], 0x32, LABEL_21BC
+	mov [HERO_X], 0xFFE2
+	mov [HERO_Y], 0x005A
 	mov [0x32], 0x0001
 
 LABEL_21BC:
-	jl [0x01], 0x010E, LABEL_21C7
-	mov [0x01], 0x015E
+	jl [HERO_X], 0x010E, LABEL_21C7
+	mov [HERO_X], 0x015E
 
 LABEL_21C7:
 	break

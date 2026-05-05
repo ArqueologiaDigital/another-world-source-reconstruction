@@ -26,8 +26,8 @@ LABEL_11DC:
 
 LABEL_11EB:
 	jl [0x0D], 0x02, LABEL_11FA
-	mov [0x24], [0x01]
-	mov [0x25], [0x02]
+	mov [0x24], [HERO_X]
+	mov [0x25], [HERO_Y]
 	call LABEL_1247
 
 LABEL_11FA:

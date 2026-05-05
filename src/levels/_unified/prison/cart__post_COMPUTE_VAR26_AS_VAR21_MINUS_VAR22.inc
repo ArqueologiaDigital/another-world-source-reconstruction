@@ -11,7 +11,7 @@ LABEL_33BA:
 
 LABEL_33D7:
 	mov [0x21], [0x07]
-	mov [0x22], [0x01]
+	mov [0x22], [HERO_X]
 	mov [0x27], [0x08]
 	call LABEL_47DF
 	ret
@@ -24,14 +24,14 @@ LABEL_33E4:
 	ret
 	mov [0x21], [0x07]
 	call LABEL_343E
-	mov [0x29], [0x01]
-	mov [0x01], [0x22]
+	mov [0x29], [HERO_X]
+	mov [HERO_X], [0x22]
 	mov [0x27], [0x08]
 	call LABEL_47DF
-	mov [0x01], [0x29]
+	mov [HERO_X], [0x29]
 	ret
 	call LABEL_342A
-	mov [0x22], [0x01]
+	mov [0x22], [HERO_X]
 	mov [0x27], [0x08]
 	call LABEL_47DF
 	ret
@@ -39,11 +39,11 @@ LABEL_33E4:
 LABEL_3414:
 	call LABEL_342A
 	call LABEL_343E
-	mov [0x29], [0x01]
-	mov [0x01], [0x22]
+	mov [0x29], [HERO_X]
+	mov [HERO_X], [0x22]
 	mov [0x27], [0x08]
 	call LABEL_47DF
-	mov [0x01], [0x29]
+	mov [HERO_X], [0x29]
 	ret
 
 LABEL_342A:

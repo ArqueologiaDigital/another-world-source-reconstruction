@@ -31,22 +31,22 @@ LABEL_8BF5:
 	db 0x11
 
 LABEL_8BF6:
-	video type=0, offset=COMMON_VIDEO_152, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_152, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_151, x=[0x01], y=[0x02], zoom=0x40
-	add [0x01], 0x0006
+	video type=0, offset=COMMON_VIDEO_151, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	add [HERO_X], 0x0006
 	break
-	video type=0, offset=COMMON_VIDEO_150, x=[0x01], y=[0x02], zoom=0x40
-	add [0x01], 0x0001
+	video type=0, offset=COMMON_VIDEO_150, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	add [HERO_X], 0x0001
 	call SET_VAR04_TO_0008
 	break
-	video type=0, offset=COMMON_VIDEO_161, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_161, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_149, x=[0x01], y=[0x02], zoom=0x40
-	add [0x01], 0x0003
+	video type=0, offset=COMMON_VIDEO_149, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	add [HERO_X], 0x0003
 	break
-	video type=0, offset=COMMON_VIDEO_162, x=[0x01], y=[0x02], zoom=0x40
-	add [0x01], 0x0005
+	video type=0, offset=COMMON_VIDEO_162, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	add [HERO_X], 0x0005
 	break
 	mov [0x2A], 0x000F
 	jmp LABEL_8CAE
@@ -55,7 +55,7 @@ LABEL_8C34:
 
 LABEL_8C35:
 	break
-	video type=0, offset=COMMON_VIDEO_147, x=[0x01], y=[0x02], zoom=0x40
-	add [0x01], 0x0003
+	video type=0, offset=COMMON_VIDEO_147, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	add [HERO_X], 0x0003
 	break
 	jmp LABEL_8C5E

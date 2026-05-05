@@ -15,6 +15,6 @@ LABEL_A3E7:
 	setup channel=0x19, address=KILL_CHANNEL_LANDING
 	setup channel=0x37, address=LABEL_209D
 	play id=0x0066, freq=0x07, vol=0x10, channel=0x03
-	jl [0x02], 0x64, INLINE_SET_VAR02_TO_97
-	mov [0x02], 0x00AC
+	jl [HERO_Y], 0x64, INLINE_SET_VAR02_TO_97
+	mov [HERO_Y], 0x00AC
 	jmp LABEL_A439

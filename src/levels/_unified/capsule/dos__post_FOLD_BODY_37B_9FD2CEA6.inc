@@ -1,26 +1,26 @@
 LABEL_6051:
-	video offset=CINEMATIC_703, x=[0x01], y=[0x02]
-	add [0x01], 0x0001
+	video offset=CINEMATIC_703, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0001
 	break
-	video offset=CINEMATIC_704, x=[0x01], y=[0x02]
-	add [0x01], 0x0004
+	video offset=CINEMATIC_704, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0004
 	break
-	video offset=CINEMATIC_704, x=[0x01], y=[0x02]
-	add [0x01], 0x0003
+	video offset=CINEMATIC_704, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0003
 	break
-	video offset=CINEMATIC_705, x=[0x01], y=[0x02]
-	add [0x01], 0x0002
+	video offset=CINEMATIC_705, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0002
 	break
-	video offset=CINEMATIC_705, x=[0x01], y=[0x02]
-	add [0x01], 0x0001
+	video offset=CINEMATIC_705, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0001
 	break
-	video offset=CINEMATIC_704, x=[0x01], y=[0x02]
-	add [0x01], 0x0001
+	video offset=CINEMATIC_704, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0001
 	mov [0x03], 0x0028
 
 LABEL_6090:
 	break
-	video offset=CINEMATIC_706, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_706, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_6090
 LABEL_6099:
 	db 0x11

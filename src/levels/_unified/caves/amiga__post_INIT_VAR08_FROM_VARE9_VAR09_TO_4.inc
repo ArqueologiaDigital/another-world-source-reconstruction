@@ -89,11 +89,11 @@ LABEL_342D:
 	jg [HACK_VAR_67], [0x09], LABEL_344C
 	jne [HACK_VAR_67], [0x09], SHARED_RET
 	jl [0x04], 0x4000, LABEL_3446
-	mov [0x01], [0x07]
+	mov [HERO_X], [0x07]
 	jmp LABEL_345B
 
 LABEL_3446:
-	jl [0x01], [0x07], LABEL_345B
+	jl [HERO_X], [0x07], LABEL_345B
 
 LABEL_344C:
 	deleteChannels first=0x14, last=0x16

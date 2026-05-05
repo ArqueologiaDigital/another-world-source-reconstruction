@@ -27,8 +27,8 @@ LABEL_70C4:
 	db 0x11
 
 LABEL_70C5:
-	mov [0x21], [0x01]
-	mov [0x22], [0x02]
+	mov [0x21], [HERO_X]
+	mov [0x22], [HERO_Y]
 	mov [0x23], 0x0000
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
@@ -38,15 +38,15 @@ LABEL_70C5:
 
 LABEL_70E4:
 	call LABEL_7333
-	sub [0x22], [0x02]
+	sub [0x22], [HERO_Y]
 	call LABEL_7486
 	jl [0x22], 0x10, SHARED_RET
 	setup channel=0x14, address=LABEL_71F0
 	mov [0x35], 0x0000
 	sub [0x34], 0x000D
-	add [0x01], 0x0019
+	add [HERO_X], 0x0019
 	je [0xF8], 0x00, SHARED_RET
-	sub [0x01], 0x0032
+	sub [HERO_X], 0x0032
 	add [0x34], 0x001A
 	ret
 
@@ -57,7 +57,7 @@ LABEL_7112:
 	mov [0x35], 0x0008
 	call SET_VAR04_TO_0024
 	setup channel=0x14, address=LABEL_71F0
-	jge [0x2B], [0x01], SHARED_RET
+	jge [0x2B], [HERO_X], SHARED_RET
 	mov [0x34], 0x0005
 	call SET_VAR04_TO_0034
 	setup channel=0x14, address=LABEL_71F0
@@ -67,16 +67,16 @@ LABEL_713A:
 	mov [0x2F], [0x35]
 	call LABEL_6F93
 	mov [0x34], 0x0000
-	jg [0x02], 0xF0, LABEL_7150
-	jge [0x02], [0x22], LABEL_717B
+	jg [HERO_Y], 0xF0, LABEL_7150
+	jge [HERO_Y], [0x22], LABEL_717B
 
 LABEL_7150:
 	jl [0x04], 0x00, LABEL_7177
 	jl [0x2F], 0x1E, LABEL_7164
-	video offset=CINEMATIC_083, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_083, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_7177
 
 LABEL_7164:
 	jl [0x2F], 0x14, DRAW_CV139_AT_X01_Y02
-	video offset=CINEMATIC_082, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_082, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_7177

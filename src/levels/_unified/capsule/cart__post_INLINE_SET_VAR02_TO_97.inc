@@ -43,8 +43,8 @@ LABEL_A465:
 	video offset=CINEMATIC_345, x=108, y=157
 
 LABEL_A4C5:
-	jg [0x01], 0x0140, LABEL_A524
-	mov [0x02], [0x40]
+	jg [HERO_X], 0x0140, LABEL_A524
+	mov [HERO_Y], [0x40]
 	mov [0xF8], [0xB4]
 	and [0xF8], 0x0040
 	jne [0xF8], 0x00, LABEL_A4E6
@@ -83,8 +83,8 @@ LABEL_A532:
 	setup channel=0x27, address=LABEL_4AC4
 
 LABEL_A544:
-	mov [0x01], 0x0008
-	jg [0x02], 0xA0, VAR66_MOD_32_DRAW_DISPATCH
+	mov [HERO_X], 0x0008
+	jg [HERO_Y], 0xA0, VAR66_MOD_32_DRAW_DISPATCH
 	jge [0x73], 0x4000, LABEL_A559
 	setup channel=0x25, address=LABEL_0195
 
@@ -99,8 +99,8 @@ LABEL_A564:
 	setup channel=0x1B, address=LABEL_67CB
 	setup channel=0x2F, address=KILL_CHANNEL_LANDING
 	setup channel=0x35, address=LABEL_21AA
-	mov [0x01], 0x0046
-	mov [0x02], 0x0095
+	mov [HERO_X], 0x0046
+	mov [HERO_Y], 0x0095
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_A587:
 	db 0x11
@@ -301,9 +301,9 @@ LABEL_A7DD:
 	setup channel=0x19, address=KILL_CHANNEL_LANDING
 	setup channel=0x1B, address=KILL_CHANNEL_LANDING
 	setup channel=0x37, address=LABEL_20DB
-	jg [0x02], 0x96, LABEL_A827
-	jl [0x02], 0x82, LABEL_A827
-	mov [0x02], [0x44]
+	jg [HERO_Y], 0x96, LABEL_A827
+	jl [HERO_Y], 0x82, LABEL_A827
+	mov [HERO_Y], [0x44]
 
 LABEL_A827:
 	mov [0xF8], [0xBB]
@@ -353,7 +353,7 @@ LABEL_A899:
 	call LABEL_9EC3
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x37, address=HANG_DRAW_CIN_494
-	jg [0x01], 0x0140, VAR66_MOD_32_DRAW_DISPATCH
+	jg [HERO_X], 0x0140, VAR66_MOD_32_DRAW_DISPATCH
 	mov [0x46], 0x0052
 	mov [0x47], 0x0FA0
 	mov [0x42], 0x008B
@@ -376,7 +376,7 @@ LABEL_A8E8:
 	call DELETE_CHANS_0_8_AND_RET
 	mov [0xE6], 0x0000
 	play id=0x0066, freq=0x07, vol=0x00, channel=0x03
-	jl [0x01], 0x00, LABEL_A92C
+	jl [HERO_X], 0x00, LABEL_A92C
 	video offset=CINEMATIC_524, x=160, y=100
 	mov [0x43], 0x0125
 	jmp LABEL_A945
@@ -390,17 +390,17 @@ LABEL_A92C:
 	setup channel=0x23, address=INLINE_SET_VAR29_TO_8
 
 LABEL_A945:
-	jl [0x01], 0xC8, LABEL_A965
-	jg [0x01], 0xF0, LABEL_A96F
+	jl [HERO_X], 0xC8, LABEL_A965
+	jg [HERO_X], 0xF0, LABEL_A96F
 	mov [0xF8], [0xB9]
 	and [0xF8], 0x0020
 	je [0xF8], 0x00, LABEL_A96F
-	mov [0x01], 0x00D3
+	mov [HERO_X], 0x00D3
 	jmp LABEL_A96F
 
 LABEL_A965:
-	jl [0x01], 0xBE, LABEL_A96F
-	mov [0x01], 0x00BE
+	jl [HERO_X], 0xBE, LABEL_A96F
+	mov [HERO_X], 0x00BE
 
 LABEL_A96F:
 	setup channel=0x37, address=HANG_DRAW_CIN_518
@@ -455,7 +455,7 @@ LABEL_A9E5:
 	setPalette 0x01
 	call LABEL_9F0C
 	call DELETE_CHANS_0_8_AND_RET
-	jl [0x02], 0xC8, LABEL_AA1B
+	jl [HERO_Y], 0xC8, LABEL_AA1B
 	setup channel=0x14, address=LABEL_713A
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 
@@ -507,8 +507,8 @@ LABEL_AA84:
 	call LABEL_9CC3
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x16, address=LABEL_18E2
-	mov [0x01], 0x00A0
-	mov [0x02], 0x009D
+	mov [HERO_X], 0x00A0
+	mov [HERO_Y], 0x009D
 	mov [0x2A], 0x000F
 	setup channel=0x14, address=SET_VAR01_TO_6E_KILL_CHANNEL
 	jmp VAR66_MOD_32_DRAW_DISPATCH
@@ -671,7 +671,7 @@ LABEL_ACAC:
 	mov [0xE9], 0x000A
 	setup channel=0x35, address=LABEL_0545
 	setup channel=0x04, address=LABEL_1087
-	jl [0x01], 0x00, LABEL_AD6D
+	jl [HERO_X], 0x00, LABEL_AD6D
 	mov [0xEA], 0x00BE
 	mov [0xEB], 0x005F
 	setup channel=0x36, address=LABEL_0565

@@ -1,5 +1,5 @@
 DRAW_CV_106:
-	video type=0, offset=COMMON_VIDEO_106, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_106, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 	je [0x1F], 0x00, LABEL_97AA
 	jl [0x1E], 0x00, INLINE_SET_VAR20_TO_1

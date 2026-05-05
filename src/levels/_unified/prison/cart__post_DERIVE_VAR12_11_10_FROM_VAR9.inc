@@ -26,8 +26,8 @@ LABEL_1264:
 
 LABEL_1273:
 	jl [0x0D], 0x02, LABEL_1282
-	mov [0x24], [0x01]
-	mov [0x25], [0x02]
+	mov [0x24], [HERO_X]
+	mov [0x25], [HERO_Y]
 	call LABEL_12CF
 
 LABEL_1282:

@@ -24,9 +24,9 @@ LABEL_75B3:
 	ret
 
 LABEL_75B4:
-	jl [0x01], 0x1B, LABEL_75D2
+	jl [HERO_X], 0x1B, LABEL_75D2
 	add [0x21], 0x0001
-	jl [0x01], 0x24, LABEL_75C8
+	jl [HERO_X], 0x24, LABEL_75C8
 	add [0x21], 0x0001
 
 LABEL_75C8:

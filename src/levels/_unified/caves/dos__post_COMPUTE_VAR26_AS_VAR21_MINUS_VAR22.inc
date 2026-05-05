@@ -1,5 +1,5 @@
 LABEL_60A4:
-	mov [0x21], [0x01]
+	mov [0x21], [HERO_X]
 	mov [0x22], [0x07]
 	jmp LABEL_6090
 
@@ -16,7 +16,7 @@ LABEL_60AD:
 
 LABEL_60CA:
 	mov [0x21], [0x07]
-	mov [0x22], [0x01]
+	mov [0x22], [HERO_X]
 	mov [0x27], [0x08]
 	call LABEL_775C
 	ret
@@ -29,16 +29,16 @@ JUNK__60D7:
 	ret
 	mov [0x21], [0x07]
 	call LABEL_6131
-	mov [0x29], [0x01]
-	mov [0x01], [0x22]
+	mov [0x29], [HERO_X]
+	mov [HERO_X], [0x22]
 	mov [0x27], [0x08]
 	call LABEL_775C
-	mov [0x01], [0x29]
+	mov [HERO_X], [0x29]
 	ret
 
 LABEL_60FA:
 	call LABEL_611D
-	mov [0x22], [0x01]
+	mov [0x22], [HERO_X]
 	mov [0x27], [0x08]
 	call LABEL_775C
 	ret
@@ -46,11 +46,11 @@ LABEL_60FA:
 LABEL_6107:
 	call LABEL_611D
 	call LABEL_6131
-	mov [0x29], [0x01]
-	mov [0x01], [0x22]
+	mov [0x29], [HERO_X]
+	mov [HERO_X], [0x22]
 	mov [0x27], [0x08]
 	call LABEL_775C
-	mov [0x01], [0x29]
+	mov [HERO_X], [0x29]
 	ret
 
 LABEL_611D:

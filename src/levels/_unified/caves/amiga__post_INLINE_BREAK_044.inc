@@ -8,8 +8,8 @@ LABEL_EDC5:
 LABEL_EDC6:
 	mov [0x2A], 0x0020
 	call LABEL_7B5E
-	sub [0x01], 0x0002
-	video type=0, offset=COMMON_VIDEO_326, x=[0x01], y=[0x02], zoom=0x40
+	sub [HERO_X], 0x0002
+	video type=0, offset=COMMON_VIDEO_326, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	call LABEL_9703
 
@@ -20,8 +20,8 @@ LABEL_EDDA:
 	call LABEL_9715
 	je [HERO_POS_MASK], 0x04, LABEL_EDDA
 	break
-	add [0x01], 0x0002
-	video type=0, offset=COMMON_VIDEO_331, x=[0x01], y=[0x02], zoom=0x40
+	add [HERO_X], 0x0002
+	video type=0, offset=COMMON_VIDEO_331, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x63], 0x0002
 	mov [0x0A], 0x0003
 	jmp HERO_WALK_RIGHT_LOOP
@@ -33,22 +33,22 @@ LABEL_EE06:
 	call SET_VAR04_TO_0010
 	jne [0x0A], 0x00, LABEL_EDC6
 	jne [HACK_VAR_67], 0x6D, LABEL_EE25
-	jl [0x01], 0x5A, LABEL_EE25
-	jl [0x01], 0x82, LABEL_1681
+	jl [HERO_X], 0x5A, LABEL_EE25
+	jl [HERO_X], 0x82, LABEL_1681
 
 LABEL_EE25:
-	sub [0x01], 0x0002
-	video type=0, offset=COMMON_VIDEO_326, x=[0x01], y=[0x02], zoom=0x40
+	sub [HERO_X], 0x0002
+	video type=0, offset=COMMON_VIDEO_326, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_332, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_332, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 LABEL_EE34:
 	break
-	video type=0, offset=COMMON_VIDEO_332, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_332, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [HERO_POS_JUMP_DOWN], 0x01, LABEL_EE34
 	break
-	add [0x01], 0x0002
-	video type=0, offset=COMMON_VIDEO_331, x=[0x01], y=[0x02], zoom=0x40
+	add [HERO_X], 0x0002
+	video type=0, offset=COMMON_VIDEO_331, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x63], 0x0002
 	jmp HERO_WALK_RIGHT_LOOP
 LABEL_EE51:

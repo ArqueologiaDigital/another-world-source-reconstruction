@@ -11,7 +11,7 @@ LABEL_3276:
 
 LABEL_3293:
 	mov [0x21], [0x07]
-	mov [0x22], [0x01]
+	mov [0x22], [HERO_X]
 	mov [0x27], [0x08]
 	call LABEL_4644
 	ret
@@ -32,11 +32,11 @@ LABEL_32AD:
 LABEL_32D0:
 	call LABEL_32E6
 	call LABEL_32FA
-	mov [0x29], [0x01]
-	mov [0x01], [0x22]
+	mov [0x29], [HERO_X]
+	mov [HERO_X], [0x22]
 	mov [0x27], [0x08]
 	call LABEL_4644
-	mov [0x01], [0x29]
+	mov [HERO_X], [0x29]
 	ret
 
 LABEL_32E6:

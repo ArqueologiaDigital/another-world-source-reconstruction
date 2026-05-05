@@ -264,7 +264,7 @@ KILL_CHANNEL_LANDING_002:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV_078:
-	video type=0, offset=COMMON_VIDEO_078, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_078, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 ;@endif
 
@@ -336,7 +336,7 @@ DRAW_CV_078:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV_070:
-	video type=0, offset=COMMON_VIDEO_070, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_070, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 ;@endif
 
@@ -418,7 +418,7 @@ DRAW_CV_070:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV108_PLAY_60_F0F_V2A_C0:
-	video type=0, offset=COMMON_VIDEO_108, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_108, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x00
 	ret
 ;@endif
@@ -491,7 +491,7 @@ DRAW_CV108_PLAY_60_F0F_V2A_C0:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV098_PLAY_60_F0F_V2A_C0:
-	video type=0, offset=COMMON_VIDEO_098, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_098, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x00
 	ret
 ;@endif
@@ -554,7 +554,7 @@ DRAW_CV098_PLAY_60_F0F_V2A_C0:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV_106:
-	video type=0, offset=COMMON_VIDEO_106, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_106, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 ;@endif
 

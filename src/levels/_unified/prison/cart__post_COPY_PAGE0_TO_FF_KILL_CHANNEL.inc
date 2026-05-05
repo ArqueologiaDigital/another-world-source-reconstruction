@@ -4,12 +4,12 @@ LABEL_8193:
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, LABEL_81B6
 	video offset=CINEMATIC_186, x=258, y=181
-	jl [0x01], 0xFA, LABEL_81B6
+	jl [HERO_X], 0xFA, LABEL_81B6
 	video offset=CINEMATIC_186, x=257, y=181
 
 LABEL_81B6:
-	jl [0x01], 0xF0, LABEL_82CC
-	jg [0x01], 0x0104, LABEL_82CC
+	jl [HERO_X], 0xF0, LABEL_82CC
+	jg [HERO_X], 0x0104, LABEL_82CC
 	jge [0x04], 0x20, LABEL_82CC
 	break
 	jge [0x04], 0x4000, KILL_CHANNEL_LANDING

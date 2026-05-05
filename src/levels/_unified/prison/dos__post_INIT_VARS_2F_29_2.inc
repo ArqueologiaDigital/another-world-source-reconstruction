@@ -31,7 +31,7 @@ LABEL_2DDC:
 
 LABEL_2DEB:
 	jne [0xB2], 0x05, LABEL_2E01
-	jl [0x01], 0x0104, INIT_VARS_B2_2F_29
+	jl [HERO_X], 0x0104, INIT_VARS_B2_2F_29
 	mov [0xB2], 0x0006
 	mov [0x2F], 0x000B
 	ret

@@ -3201,7 +3201,7 @@ LABEL_0000:
 	mov [0xF8], [0x00]
 	and [0xF8], 0x00FF
 	video offset=CINEMATIC_424, x=[0xf8], y=1
-	video offset=CINEMATIC_852, x=[0x01], y=2
+	video offset=CINEMATIC_852, x=[HERO_X], y=2
 	killChannel
 
 LIKELY_A_COPY_PROTECTION_MECHANISM:

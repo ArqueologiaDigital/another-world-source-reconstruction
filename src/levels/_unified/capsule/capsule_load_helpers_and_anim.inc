@@ -100,7 +100,7 @@ SET_VAR22_TO_003E:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_SET_VAR02_TO_97:
-	mov [0x02], 0x0097
+	mov [HERO_Y], 0x0097
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -181,10 +181,10 @@ SET_VARHACK_VAR_67_TO_00AA:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 INIT_BIRD_AI_VARS:
-	mov [0x01], 0x0091
-	mov [0x02], 0x008F
+	mov [HERO_X], 0x0091
+	mov [HERO_Y], 0x008F
 	mov [0x0F], 0x0000
-	mov [0x28], [0x01]
+	mov [0x28], [HERO_X]
 	mov [0x04], 0x0020
 	mov [0x05], 0x0000
 	mov [0x06], 0x03DE

@@ -50,7 +50,7 @@ LABEL_130E:
 	mov [0x68], 0x0090
 	mov [0x69], 0x0062
 	break
-	jl [0x01], 0x28, LABEL_130E
+	jl [HERO_X], 0x28, LABEL_130E
 	selectVideoPage 0x00
 	video offset=CINEMATIC_150, x=[0x68], y=[0x69]
 	selectVideoPage 0xFF
@@ -267,7 +267,7 @@ LABEL_1666:
 	break
 	djnz [0x29], LABEL_1666
 	mov [0xF8], [0x07]
-	sub [0xF8], [0x01]
+	sub [0xF8], [HERO_X]
 	jl [0xF8], 0x64, LABEL_168D
 	call LABEL_3DB2
 	jne [0x12], 0x28, LABEL_168D

@@ -135,7 +135,7 @@ INIT_VARS_2F_29_1:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 SET_VARS_29_2F:
-	mov [0x29], [0x01]
+	mov [0x29], [HERO_X]
 	mov [0x2F], 0x0018
 	ret
 ;@endif

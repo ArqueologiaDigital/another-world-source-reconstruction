@@ -39,9 +39,9 @@ LABEL_69F2:
 	killChannel
 
 LABEL_6A29:
-	mov [0x21], [0x01]
+	mov [0x21], [HERO_X]
 	add [0xB8], 0x0007
-	mov [0x22], [0x02]
+	mov [0x22], [HERO_Y]
 	mov [0xF8], [0x04]
 	jl [0xF8], 0x4000, LABEL_6A40
 	call RESET_HERO_ACTION_KEEP_POS_4LSB
@@ -68,9 +68,9 @@ LABEL_6A74:
 	db 0x11
 
 PROJECT_POS_VAR_B8_PLUS_7:
-	mov [0x21], [0x01]
+	mov [0x21], [HERO_X]
 	add [0xB8], 0x0007
-	mov [0x22], [0x02]
+	mov [0x22], [HERO_Y]
 	mov [0xF8], [0x04]
 	jl [0xF8], 0x4000, LABEL_6A8C
 	call RESET_HERO_ACTION_KEEP_POS_4LSB
@@ -182,32 +182,32 @@ LABEL_6B9C:
 LABEL_6BF6:
 	call PROJECT_POS_VAR_B8_PLUS_7
 	jne [HACK_VAR_67], 0x6B, LABEL_6C1D
-	jg [0x02], 0x96, LABEL_6C1D
+	jg [HERO_Y], 0x96, LABEL_6C1D
 	jl [0x21], 0x64, LABEL_6C22
 	jl [0x21], 0x8A, LABEL_6C1D
 	jl [0x21], 0xC1, LABEL_6C22
 	jg [0x21], 0xDE, LABEL_6C22
 
 LABEL_6C1D:
-	video offset=CINEMATIC_063, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_063, x=[0x21], y=[HERO_Y]
 
 LABEL_6C22:
 	break
 	play id=0x0058, freq=0x14, vol=0x40, channel=0x01
 	call PROJECT_POS_VAR_B8_PLUS_7
 	jne [HACK_VAR_67], 0x6B, LABEL_6C58
-	jg [0x02], 0x96, LABEL_6C58
+	jg [HERO_Y], 0x96, LABEL_6C58
 	jl [0x21], 0x64, DRAW_CIN_052_THEN_053_PAIR
 	jl [0x21], 0x8A, LABEL_6C50
 	jl [0x21], 0xC1, DRAW_CIN_052_THEN_053_PAIR
 	jg [0x21], 0xDE, DRAW_CIN_052_THEN_053_PAIR
 
 LABEL_6C50:
-	video offset=CINEMATIC_062, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_062, x=[0x21], y=[HERO_Y]
 	jmp DRAW_CIN_052_THEN_053_PAIR
 
 LABEL_6C58:
-	video offset=CINEMATIC_062, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_062, x=[0x21], y=[HERO_Y]
 	sub [0x06], 0x000A
 	call LABEL_66CB
 	mov [0x0F], 0x0000
@@ -217,21 +217,21 @@ DRAW_CIN_052_THEN_053_PAIR:
 	killChannel
 	break
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video offset=CINEMATIC_052, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_052, x=[0x21], y=[HERO_Y]
 	sub [0x21], 0x0005
-	video offset=CINEMATIC_053, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_053, x=[0x21], y=[HERO_Y]
 	add [0x21], 0x000A
-	video offset=CINEMATIC_054, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_054, x=[0x21], y=[HERO_Y]
 	break
 	call PROJECT_POS_VAR_B8_PLUS_7
 	sub [0x21], 0x0007
-	video offset=CINEMATIC_055, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_055, x=[0x21], y=[HERO_Y]
 	sub [0x21], 0x000A
-	video offset=CINEMATIC_056, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_056, x=[0x21], y=[HERO_Y]
 	add [0x21], 0x0018
-	video offset=CINEMATIC_053, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_053, x=[0x21], y=[HERO_Y]
 	add [0x21], 0x000A
-	video offset=CINEMATIC_057, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_057, x=[0x21], y=[HERO_Y]
 	jmp DRAW_CIN_052_THEN_053_PAIR
 LABEL_6CB3:
 	db 0x11

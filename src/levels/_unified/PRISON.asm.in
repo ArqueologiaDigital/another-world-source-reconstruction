@@ -1,3 +1,5 @@
+HERO_X		EQU 0x01
+HERO_Y		EQU 0x02
 ; STAGE PRISON: alien cell, cage break-out, gun pickup, jailbreak.
 ;
 ; Gameplay role: after capture in LAKE, player wakes up caged

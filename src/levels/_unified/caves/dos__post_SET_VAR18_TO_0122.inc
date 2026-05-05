@@ -4,28 +4,28 @@ LABEL_E2DD:
 	jne [HACK_VAR_67], 0x6F, LABEL_E2F6
 	call LABEL_149E
 	call LABEL_14BB
-	mov [0x01], 0x00E6
-	mov [0x02], 0x007D
+	mov [HERO_X], 0x00E6
+	mov [HERO_Y], 0x007D
 
 LABEL_E2F6:
 	jne [HACK_VAR_67], 0xED, LABEL_E304
-	mov [0x01], 0x00BE
-	mov [0x02], 0x0050
+	mov [HERO_X], 0x00BE
+	mov [HERO_Y], 0x0050
 
 LABEL_E304:
-	add [0x01], 0x000A
-	video offset=CINEMATIC_472, x=[0x01], y=[0x02]
+	add [HERO_X], 0x000A
+	video offset=CINEMATIC_472, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_515, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_515, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_516, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_516, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_517, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_517, x=[HERO_X], y=[HERO_Y]
 	play id=0x006C, freq=0x14, vol=0x40, channel=0x01
 	break
-	video offset=CINEMATIC_518, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_518, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_519, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_519, x=[HERO_X], y=[HERO_Y]
 	mov [0x63], 0x0002
 	mov [0x05], 0x0000
 	mov [PAUSE_SLICES], 0x0004
@@ -33,10 +33,10 @@ LABEL_E304:
 	setup channel=0x16, address=SETUP_CHAN_14_BY_VAR63
 	setup channel=0x14, address=LABEL_EB39
 	setup channel=0x3E, address=LABEL_CBE2
-	mov [0x01], 0x00D9
+	mov [HERO_X], 0x00D9
 	jne [HACK_VAR_67], 0x6F, KILL_CHAN_AT_E35F
 	setup channel=0x3E, address=LABEL_CBA1
-	mov [0x01], 0x010E
+	mov [HERO_X], 0x010E
 
 KILL_CHAN_AT_E35F:
 	killChannel
@@ -46,21 +46,21 @@ LABEL_E360:
 	call LABEL_149E
 	call LABEL_14BB
 	break
-	mov [0x01], 0x005A
-	mov [0x02], 0x007D
-	sub [0x01], 0x000A
-	video offset=CINEMATIC_490, x=[0x01], y=[0x02]
+	mov [HERO_X], 0x005A
+	mov [HERO_Y], 0x007D
+	sub [HERO_X], 0x000A
+	video offset=CINEMATIC_490, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_520, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_520, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_521, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_521, x=[HERO_X], y=[HERO_Y]
 	break
 	play id=0x006C, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_522, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_522, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_523, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_523, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_524, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_524, x=[HERO_X], y=[HERO_Y]
 	mov [0x05], 0x0000
 	mov [0x63], 0x0001
 	mov [PAUSE_SLICES], 0x0004
@@ -68,18 +68,18 @@ LABEL_E360:
 	setup channel=0x16, address=SETUP_CHAN_14_BY_VAR63
 	setup channel=0x14, address=LABEL_E9A5
 	setup channel=0x3E, address=LABEL_CBA1
-	mov [0x01], 0x003C
+	mov [HERO_X], 0x003C
 	killChannel
 
 LABEL_E3C1:
 	jne [HACK_VAR_67], 0x6F, LABEL_E3D2
-	jg [0x02], 0x8C, SHARED_RET
+	jg [HERO_Y], 0x8C, SHARED_RET
 	mov [0x22], 0x03E8
 	ret
 
 LABEL_E3D2:
 	jne [HACK_VAR_67], 0xED, SHARED_RET
-	jg [0x02], 0x5A, SHARED_RET
+	jg [HERO_Y], 0x5A, SHARED_RET
 	mov [0x22], 0x03E8
 	ret
 
@@ -87,8 +87,8 @@ LABEL_E3E3:
 	je [0x63], 0x03, SHARED_RET
 	je [0x63], 0x64, SHARED_RET
 	jne [HACK_VAR_67], 0x6F, LABEL_E429
-	jg [0x02], 0x85, SHARED_RET
-	mov [0xF8], [0x01]
+	jg [HERO_Y], 0x85, SHARED_RET
+	mov [0xF8], [HERO_X]
 	add [0xF8], [0x2A]
 	jl [0xF8], 0xFF, LABEL_E412
 	je [0x63], 0x01, SHARED_RET
@@ -96,7 +96,7 @@ LABEL_E3E3:
 	ret
 
 LABEL_E412:
-	mov [0xF8], [0x01]
+	mov [0xF8], [HERO_X]
 	sub [0xF8], [0x2A]
 	jg [0xF8], 0x4B, SHARED_RET
 	je [0x63], 0x02, SHARED_RET
@@ -105,8 +105,8 @@ LABEL_E412:
 
 LABEL_E429:
 	jne [HACK_VAR_67], 0xED, SHARED_RET
-	jg [0x02], 0x55, SHARED_RET
-	mov [0xF8], [0x01]
+	jg [HERO_Y], 0x55, SHARED_RET
+	mov [0xF8], [HERO_X]
 	add [0xF8], [0x2A]
 	jl [0xF8], 0xD2, SHARED_RET
 	je [0x63], 0x01, SHARED_RET

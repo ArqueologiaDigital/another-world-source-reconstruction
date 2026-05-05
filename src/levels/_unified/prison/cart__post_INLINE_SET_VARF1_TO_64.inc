@@ -27,8 +27,8 @@ DRAW_CIN_406_408_BLOCK:
 LABEL_198A:
 	break
 	video offset=CINEMATIC_412, x=[0x07], y=[0x08]
-	jg [0x01], 0xA0, LABEL_198A
-	jl [0x01], 0x91, LABEL_198A
+	jg [HERO_X], 0xA0, LABEL_198A
+	jl [HERO_X], 0x91, LABEL_198A
 	mov [0xB6], 0x0001
 	mov [0x2A], 0x0005
 	mov [0x42], 0x0037

@@ -4,13 +4,13 @@ LABEL_862A:
 LABEL_862B:
 	jne [HACK_VAR_67], 0xA7, LABEL_863A
 	mov [HACK_VAR_67], 0x00C8
-	mov [0x02], 0x008C
+	mov [HERO_Y], 0x008C
 	ret
 
 LABEL_863A:
 	jne [HACK_VAR_67], 0xCE, LABEL_8654
 	mov [HACK_VAR_67], 0x00AF
-	mov [0x02], 0x0078
+	mov [HERO_Y], 0x0078
 	mov [0x23], 0x0000
 	ret
 LABEL_864D:
@@ -18,7 +18,7 @@ LABEL_864D:
 
 LABEL_8654:
 	jne [HACK_VAR_67], 0x87, INCR_HACK67_BY_1
-	jg [0x02], 0x64, INCR_HACK67_BY_1
+	jg [HERO_Y], 0x64, INCR_HACK67_BY_1
 	mov [HACK_VAR_67], 0x0068
-	mov [0x02], 0x00A0
+	mov [HERO_Y], 0x00A0
 	ret

@@ -1,12 +1,12 @@
 INIT_VARS_02_06:
-	mov [0x02], 0xFFF7
+	mov [HERO_Y], 0xFFF7
 	mov [0x06], 0xFFF9
 
 
 ACCUMULATE_VAR_03_04_BY_01_02:
-	add [0x03], [0x01]
-	add [0x04], [0x02]
-	mov [0x01], [0x1E]
+	add [0x03], [HERO_X]
+	add [0x04], [HERO_Y]
+	mov [HERO_X], [0x1E]
 	ret
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -311,8 +311,8 @@ INIT_VARS_15_19_18_14_PLUS4:
 	mov [0x18], 0x0000
 	mov [0x14], 0x0000
 	mov [0x06], 0x0001
-	mov [0x01], 0x0000
-	mov [0x02], 0x0000
+	mov [HERO_X], 0x0000
+	mov [HERO_Y], 0x0000
 	mov [0x21], 0xFFE2
 
 ;@if BRANCH == "chahi_amiga_1991"

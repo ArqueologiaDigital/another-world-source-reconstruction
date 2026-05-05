@@ -45,8 +45,8 @@ LABEL_A247:
 	mov [0x41], 0x0050
 	mov [0x44], 0x004D
 	mov [0x45], 0x0000
-	mov [0x01], 0x00A0
-	mov [0x02], 0xFFFD
+	mov [HERO_X], 0x00A0
+	mov [HERO_Y], 0xFFFD
 	setPalette 0x01
 	fill page=0x00, color=0x00
 	call DELETE_GAME_CHANS_AND_TEARDOWN
@@ -95,12 +95,12 @@ LABEL_A2A4:
 	setup channel=0x08, address=LABEL_10A3
 	deleteChannels first=0x06, last=0x08
 	setup channel=0x36, address=LABEL_3457
-	jg [0x02], 0xC8, LABEL_A32C
-	jl [0x02], 0x14, LABEL_A32C
+	jg [HERO_Y], 0xC8, LABEL_A32C
+	jl [HERO_Y], 0x14, LABEL_A32C
 	jmp CHECK_VAR66_VAR67_AND_BLIT
 
 LABEL_A32C:
-	mov [0x01], 0x00AD
+	mov [HERO_X], 0x00AD
 	setup channel=0x14, address=LABEL_EA2E
 	setup channel=0x16, address=SETUP_CHAN_14_BY_VAR63
 	setup channel=0x3B, address=LABEL_7B10
@@ -293,7 +293,7 @@ LABEL_A52A:
 	mov [0x47], 0x0FA0
 
 LABEL_A57B:
-	jl [0x01], 0x0140, LABEL_A59D
+	jl [HERO_X], 0x0140, LABEL_A59D
 	jmp LABEL_A597
 	je [0x0A], 0x00, LABEL_A59A
 	je [0xB6], 0x00, LABEL_A597
@@ -342,9 +342,9 @@ LABEL_A5DD:
 	mov [0x51], [0x44]
 	mov [0x52], [0x40]
 	mov [0xB7], 0x0000
-	jl [0x02], 0xF9, LABEL_A618
+	jl [HERO_Y], 0xF9, LABEL_A618
 	call LABEL_1456
-	mov [0x01], 0x007D
+	mov [HERO_X], 0x007D
 
 LABEL_A618:
 	setPalette 0x11
@@ -487,7 +487,7 @@ LABEL_A7A4:
 	mov [0x41], 0x0078
 	mov [0x44], 0x0061
 	mov [0x45], 0x0000
-	mov [0x01], 0x0073
+	mov [HERO_X], 0x0073
 	mov [0x34], 0x0000
 	call LABEL_D4C9
 	call DELETE_GAME_AND_FX_CHANNELS
@@ -511,7 +511,7 @@ LABEL_A7EF:
 	mov [0x44], 0x003C
 	mov [0x45], 0x0000
 	setPalette 0x0F
-	jl [0x01], 0x0A, LABEL_A82C
+	jl [HERO_X], 0x0A, LABEL_A82C
 	mov [0x40], 0x00C7
 	mov [0x41], 0x0096
 	mov [0x44], 0x003C
@@ -526,7 +526,7 @@ LABEL_A82C:
 	je [0xF8], 0xC0, LABEL_A85F
 	jne [0xF8], 0x40, LABEL_A857
 	sub [0x6C], 0x0140
-	jg [0x01], 0x0140, LABEL_A85F
+	jg [HERO_X], 0x0140, LABEL_A85F
 	add [0x6C], 0x0280
 	jmp LABEL_A85F
 
@@ -577,7 +577,7 @@ LABEL_A8B0:
 	je [0xF8], 0xC0, LABEL_A8FE
 	jne [0xF8], 0x40, LABEL_A905
 	sub [0x6C], 0x0140
-	jg [0x01], 0x0140, LABEL_A917
+	jg [HERO_X], 0x0140, LABEL_A917
 	add [0x6C], 0x0280
 	jmp LABEL_A917
 
@@ -588,7 +588,7 @@ LABEL_A8FE:
 LABEL_A905:
 	setup channel=0x1C, address=LABEL_08FA
 	setup channel=0x1B, address=INIT_VARS_6C_6D_71_70
-	jg [0x02], 0x6E, LABEL_A917
+	jg [HERO_Y], 0x6E, LABEL_A917
 	setup channel=0x1B, address=INIT_VARS_71_6C_6D
 
 LABEL_A917:
@@ -728,7 +728,7 @@ LABEL_AA85:
 	setup channel=0x26, address=LABEL_2A4E
 	setup channel=0x27, address=HANG_DRAW_CIN_734_VAR09_GUARD
 	je [0xB0], 0x03, TRAMP_AB64
-	mov [0x02], 0x0082
+	mov [HERO_Y], 0x0082
 	mov [0xF8], [0xBD]
 	and [0xF8], 0x0004
 	jne [0xF8], 0x00, LABEL_AB14
@@ -834,7 +834,7 @@ LABEL_AC1F:
 	setup channel=0x01, address=KILL_CHANNEL_LANDING
 
 LABEL_AC31:
-	jg [0x01], 0x00, LABEL_AC3B
+	jg [HERO_X], 0x00, LABEL_AC3B
 	setup channel=0x3E, address=LABEL_CBCD
 
 LABEL_AC3B:
@@ -1038,7 +1038,7 @@ LABEL_AE88:
 	setPalette 0x11
 	call LABEL_D6A5
 	call DELETE_GAME_CHANS_AND_TEARDOWN
-	jl [0x01], 0x0140, LABEL_AEC1
+	jl [HERO_X], 0x0140, LABEL_AEC1
 	call LABEL_1439
 	call LABEL_1456
 
@@ -1096,9 +1096,9 @@ LABEL_AF41:
 	mov [0x44], 0x0077
 	mov [0x45], 0x0000
 	play id=0x006E, freq=0x08, vol=0x22, channel=0x03
-	jg [0x02], 0x00, LABEL_AF74
+	jg [HERO_Y], 0x00, LABEL_AF74
 	call LABEL_1456
-	mov [0x01], 0x007D
+	mov [HERO_X], 0x007D
 
 LABEL_AF74:
 	setPalette 0x11
@@ -1265,7 +1265,7 @@ LABEL_B14A:
 	jne [0xB0], 0x03, TRAMP_B194
 	mov [0xE6], 0x0066
 	setup channel=0x01, address=LABEL_3136
-	jl [0x02], 0x00, TRAMP_B194
+	jl [HERO_Y], 0x00, TRAMP_B194
 	setup channel=0x3E, address=LABEL_CB8C
 
 TRAMP_B194:
@@ -1363,8 +1363,8 @@ LABEL_B2A0:
 	call LABEL_D856
 	call DELETE_GAME_AND_FX_CHANNELS
 	je [0xB0], 0x03, TRAMP_B2BD
-	add [0x01], 0x000A
-	jl [0x02], 0xC8, TRAMP_B2BD
+	add [HERO_X], 0x000A
+	jl [HERO_Y], 0xC8, TRAMP_B2BD
 	setup channel=0x14, address=LABEL_7A43
 
 TRAMP_B2BD:

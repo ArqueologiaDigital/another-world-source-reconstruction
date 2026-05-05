@@ -94,28 +94,28 @@ LABEL_6A65:
 LABEL_6A6E:
 	ret
 	killChannel
-	video offset=CINEMATIC_893, x=[0x01], y=[0x02]
-	add [0x01], 0x0001
+	video offset=CINEMATIC_893, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0001
 	break
-	video offset=CINEMATIC_894, x=[0x01], y=[0x02]
-	add [0x01], 0x0004
+	video offset=CINEMATIC_894, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0004
 	break
-	video offset=CINEMATIC_894, x=[0x01], y=[0x02]
-	add [0x01], 0x0003
+	video offset=CINEMATIC_894, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0003
 	break
-	video offset=CINEMATIC_895, x=[0x01], y=[0x02]
-	add [0x01], 0x0002
+	video offset=CINEMATIC_895, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0002
 	break
-	video offset=CINEMATIC_895, x=[0x01], y=[0x02]
-	add [0x01], 0x0001
+	video offset=CINEMATIC_895, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0001
 	break
-	video offset=CINEMATIC_894, x=[0x01], y=[0x02]
-	add [0x01], 0x0001
+	video offset=CINEMATIC_894, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0001
 	mov [0x03], 0x0028
 
 LABEL_6AAF:
 	break
-	video offset=CINEMATIC_896, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_896, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_6AAF
 LABEL_6AB8:
 	db 0x11

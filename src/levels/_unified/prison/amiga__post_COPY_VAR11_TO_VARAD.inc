@@ -83,7 +83,7 @@ LABEL_4123:
 	call PROJECT_POS_VAR04_OR_7E81
 	mov [0x22], 0x0096
 	mov [0x26], [HACK_VAR_67]
-	jg [0x02], [0x41], LABEL_4137
+	jg [HERO_Y], [0x41], LABEL_4137
 	or [0x26], 0x8000
 
 LABEL_4137:

@@ -41,8 +41,8 @@ LABEL_732D:
 	killChannel
 
 PROJECT_POS_VAR04_OR_A212:
-	mov [0x21], [0x01]
-	mov [0x22], [0x02]
+	mov [0x21], [HERO_X]
+	mov [0x22], [HERO_Y]
 	mov [0xF8], [0x04]
 	jl [0xF8], 0x4000, LABEL_7383
 	call RESET_HERO_ACTION_KEEP_POS_4LSB
@@ -69,8 +69,8 @@ LABEL_73B7:
 	db 0x11
 
 PROJECT_POS_VAR04_OR_CALL_A189:
-	mov [0x21], [0x01]
-	mov [0x22], [0x02]
+	mov [0x21], [HERO_X]
+	mov [0x22], [HERO_Y]
 	mov [0xF8], [0x04]
 	jl [0xF8], 0x4000, LABEL_73CB
 	call RESET_HERO_ACTION_KEEP_POS_4LSB
@@ -178,12 +178,12 @@ LABEL_74C6:
 
 LABEL_7520:
 	call PROJECT_POS_VAR04_OR_CALL_A189
-	video offset=CINEMATIC_036, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_036, x=[0x21], y=[HERO_Y]
 
 LABEL_7528:
 	break
 	call PROJECT_POS_VAR04_OR_CALL_A189
-	video offset=CINEMATIC_037, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_037, x=[0x21], y=[HERO_Y]
 	play id=0x0058, freq=0x14, vol=0x40, channel=0x01
 	je [HACK_VAR_67], 0xA7, LABEL_756B
 	jge [HACK_VAR_67], 0xC8, LABEL_756B

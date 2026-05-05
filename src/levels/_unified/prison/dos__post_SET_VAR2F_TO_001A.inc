@@ -1,6 +1,6 @@
 LABEL_2CEA:
 	je [0xB0], 0x00, INIT_VARS_2F_29_3
 	jne [HACK_VAR_67], [0x10], INIT_VARS_2F_29_3
-	jg [0x01], 0x010E, INIT_VARS_2F_29_3
+	jg [HERO_X], 0x010E, INIT_VARS_2F_29_3
 	mov [0x2F], 0x0013
 	ret

@@ -297,8 +297,8 @@ LABEL_1F82:
 
 LABEL_2026:
 	setPalette 0x11
-	jl [0x01], 0xAE, LABEL_2038
-	jg [0x01], 0xE1, LABEL_2038
+	jl [HERO_X], 0xAE, LABEL_2038
+	jg [HERO_X], 0xE1, LABEL_2038
 	setPalette 0x09
 
 LABEL_2038:

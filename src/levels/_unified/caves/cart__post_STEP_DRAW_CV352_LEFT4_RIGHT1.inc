@@ -3,47 +3,47 @@ LABEL_EA2E:
 	mov [0x2A], 0x000F
 	call LABEL_9E00
 	je [HERO_POS_MASK], 0x00, LABEL_E9F9
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0002
 	break
 	call LABEL_9E17
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_EA57
 	je [HERO_POS_MASK], 0x00, LABEL_E9F1
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 
 LABEL_EA57:
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 	break
 	call LABEL_9E2E
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_EA70
 	je [HERO_POS_MASK], 0x00, LABEL_E9E9
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 
 LABEL_EA70:
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 	break
 	call LABEL_9E45
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_EA87
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0002
 
 LABEL_EA87:
 	break
 	call LABEL_9E5C
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_EA9A
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 
 LABEL_EA9A:
 	break
 	call LABEL_9E73
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_EAA9
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0002
 
 LABEL_EAA9:
 	break
 	call LABEL_9E88
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_EAB8
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0002
 
 LABEL_EAB8:
 	call SET_VAR04_TO_0020
@@ -51,51 +51,51 @@ LABEL_EAB8:
 	je [HERO_POS_MASK], 0x0A, LABEL_EFE3
 	call LABEL_9E97
 	jne [HERO_POS_MASK], 0x02, LABEL_EAB8
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0002
 	break
 	call LABEL_9EA9
 	je [HERO_POS_MASK], 0x00, LABEL_EA18
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0002
 	break
 	call LABEL_9D7E
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_EAF2
 	je [HERO_POS_MASK], 0x00, LABEL_EA10
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 
 LABEL_EAF2:
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 	break
 	call LABEL_9D8D
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_EB0B
 	je [HERO_POS_MASK], 0x00, LABEL_EA08
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 
 LABEL_EB0B:
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 	break
 	call LABEL_9D9C
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_EB22
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0002
 
 LABEL_EB22:
 	break
 	call LABEL_9DAB
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_EB35
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 
 LABEL_EB35:
 	break
 	call LABEL_9DBA
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_EB44
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0002
 
 LABEL_EB44:
 	break
 	call LABEL_9DCF
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, HERO_WALK_LEFT_LOOP
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0002
 
 HERO_WALK_LEFT_LOOP:
 	break
@@ -106,43 +106,43 @@ LABEL_EB60:
 	call LABEL_9DE6
 	call SET_VAR04_TO_0020
 	jne [HERO_POS_MASK], 0x02, HERO_WALK_LEFT_LOOP
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0002
 	break
 	jmp LABEL_EA2E
 	killChannel
 	break
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0002
 	call LABEL_9BE0
 
 LABEL_EB7D:
 	break
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0002
 	call LABEL_9BCF
 
 LABEL_EB85:
 	break
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0002
 	call LABEL_9BBE
 
 LABEL_EB8D:
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 	jmp HERO_WALK_RIGHT_LOOP
 	break
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0002
 	call LABEL_9B4F
 
 LABEL_EB9C:
 	break
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0002
 	call LABEL_9AA5
 
 LABEL_EBA4:
 	break
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0002
 	call LABEL_9C4F
 
 LABEL_EBAC:
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 	jmp LABEL_EC62
 LABEL_EBB3:
 	db 0x11

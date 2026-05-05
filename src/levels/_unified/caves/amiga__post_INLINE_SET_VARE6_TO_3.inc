@@ -19,8 +19,8 @@ LABEL_03C7:
 	video offset=CINEMATIC_551, x=123, y=172
 	break
 	video offset=CINEMATIC_552, x=123, y=172
-	mov [0x01], 0x005C
-	mov [0x02], 0x00AC
+	mov [HERO_X], 0x005C
+	mov [HERO_Y], 0x00AC
 	mov [0x63], 0x0002
 	setup channel=0x14, address=LABEL_E54E
 	setup channel=0x16, address=LABEL_DF3B
@@ -126,7 +126,7 @@ LABEL_04DF:
 
 LABEL_0507:
 	break
-	jl [0x01], 0xE4, LABEL_0507
+	jl [HERO_X], 0xE4, LABEL_0507
 	bankSwitch 5;  Tank in the Battle Arena
 	killChannel
 
@@ -206,7 +206,7 @@ DELAY_LOOP_VARE6_AT_05AE:
 LABEL_05D5:
 	break
 	video offset=CINEMATIC_562, x=159, y=92
-	jl [0x01], 0xAA, LABEL_05D5
+	jl [HERO_X], 0xAA, LABEL_05D5
 	deleteChannels first=0x14, last=0x16
 	setup channel=0x36, address=LABEL_0686
 	break
@@ -243,5 +243,5 @@ LABEL_0638:
 	video offset=CINEMATIC_562, x=159, y=80
 	jge [0x04], 0x4000, INIT_VARS_E6_E7_E8
 	video offset=CINEMATIC_563, x=179, y=170
-	mov [0x02], 0x0064
+	mov [HERO_Y], 0x0064
 	mov [0x32], 0x0009

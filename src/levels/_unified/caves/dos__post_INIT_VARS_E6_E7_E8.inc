@@ -12,7 +12,7 @@ LABEL_068F:
 	mov [0x00], 0x0040
 	bankSwitch 6;  Capsule Lands at the Bath
 	killChannel
-	mov [0x02], 0xFFB0
+	mov [HERO_Y], 0xFFB0
 	killChannel
 
 LABEL_06A7:

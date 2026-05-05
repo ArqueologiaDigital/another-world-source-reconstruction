@@ -65,7 +65,7 @@ INIT_AUDIO_AND_SCENE_AFTER_LOADS:
 	mov [0x0C], 0x0000
 	mov [0x04], 0x0000
 	mov [HERO_ACTION_POS_MASK], 0x0000
-	mov [0x01], 0x0000
+	mov [HERO_X], 0x0000
 ;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991", "dos_1992")
 	mov [PAUSE_SLICES], 0x0004
 ;@elif BRANCH == "gba_2004"

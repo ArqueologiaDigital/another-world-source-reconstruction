@@ -46,7 +46,7 @@ LABEL_03C6:
 
 LABEL_03C7:
 	break
-	jl [0x01], 0x96, LABEL_03C7
+	jl [HERO_X], 0x96, LABEL_03C7
 	deleteChannels first=0x14, last=0x16
 
 LABEL_03D2:

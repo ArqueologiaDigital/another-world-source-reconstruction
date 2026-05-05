@@ -107,7 +107,7 @@ DELAY_LOOP_VAR7F_AT_41EB:
 DELAY_LOOP_VAR7F_AT_420A:
 	break
 	djnz [0x7F], DELAY_LOOP_VAR7F_AT_420A
-	mov [0x74], [0x01]
+	mov [0x74], [HERO_X]
 	mov [0x75], 0xFFE2
 	mov [0x76], 0x0001
 	setup channel=0x2B, address=INLINE_SET_VAR76_TO_0001_038

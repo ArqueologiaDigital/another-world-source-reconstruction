@@ -1,5 +1,5 @@
 COMPUTE_RANDOM_BIT_MASKS:
-	add [0x37], [0x01]
+	add [0x37], [HERO_X]
 	add [0x37], [HERO_ACTION_POS_MASK]
 	add [0x37], [0x0C]
 	add [0x37], [0x04]

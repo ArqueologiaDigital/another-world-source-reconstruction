@@ -153,7 +153,7 @@ LABEL_7B9F:
 
 LABEL_7BB1:
 	mov [0x2A], 0x000F
-	mov [0x01], [0x28]
+	mov [HERO_X], [0x28]
 	call LABEL_6F61
 	mov [0x11], 0x0000
 	jne [0x6A], [HACK_VAR_67], LABEL_7BE6

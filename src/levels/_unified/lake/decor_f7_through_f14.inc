@@ -154,31 +154,31 @@ ENTITY_DROP_THEN_F15_LOOP:
 	mov [0x1A], 0x000A
 
 ENTITY_DROP_LOOP_BODY:
-	video offset=CINEMATIC_LAKE_ENTITY_DROP, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_LAKE_ENTITY_DROP, x=[HERO_X], y=[HERO_Y]
 	break
 	djnz [0x1A], ENTITY_DROP_LOOP_BODY
-	video offset=CINEMATIC_DECOR_AT_305_155_F15, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_DECOR_AT_305_155_F15, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_DECOR_AT_305_155_F16, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_DECOR_AT_305_155_F16, x=[HERO_X], y=[HERO_Y]
 	play id=0x0051, freq=0x0A, vol=0x30, channel=0x01
 	break
-	video offset=CINEMATIC_DECOR_AT_305_155_F17, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_DECOR_AT_305_155_F17, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_DECOR_AT_305_155_F18, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_DECOR_AT_305_155_F18, x=[HERO_X], y=[HERO_Y]
 	break
-	sub [0x01], 0x0007
-	sub [0x02], 0x000E
-	video offset=CINEMATIC_RIGHT_CROUCHING_2, x=[0x01], y=[0x02]
+	sub [HERO_X], 0x0007
+	sub [HERO_Y], 0x000E
+	video offset=CINEMATIC_RIGHT_CROUCHING_2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_RIGHT_CROUCHING_2, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_RIGHT_CROUCHING_2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_RIGHT_CROUCHING_1, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_RIGHT_CROUCHING_1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_RIGHT_CROUCHING_1, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_RIGHT_CROUCHING_1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_RIGHT_CROUCHING_0, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_RIGHT_CROUCHING_0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_RIGHT_CROUCHING_0, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_RIGHT_CROUCHING_0, x=[HERO_X], y=[HERO_Y]
 	play id=0x0051, freq=0x0A, vol=0x1C, channel=0x01
 	mov [0x1A], 0x0014
 
@@ -187,21 +187,21 @@ LESTER_RAISES_A_HAND:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_LESTER_FRAME_BUNDLE
 ;@elif BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_LESTER_FRAME, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_LESTER_FRAME, x=[HERO_X], y=[HERO_Y]
 ;@endif
 	djnz [0x1A], LESTER_RAISES_A_HAND
 	break
-	video offset=CINEMATIC_LESTER_RAISE_HAND_0, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_LESTER_RAISE_HAND_0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_LESTER_RAISE_HAND_1, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_LESTER_RAISE_HAND_1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_LESTER_RAISE_HAND_2, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_LESTER_RAISE_HAND_2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_LESTER_RAISE_HAND_3, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_LESTER_RAISE_HAND_3, x=[HERO_X], y=[HERO_Y]
 
 LESTER_AT_POOL_HOLD_LOOP:
 	break
-	video offset=CINEMATIC_LAKE_LESTER_AT_POOL, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_LAKE_LESTER_AT_POOL, x=[HERO_X], y=[HERO_Y]
 	mov [PAUSE_SLICES], 0x0004
 	jmp LESTER_AT_POOL_HOLD_LOOP
 	killChannel

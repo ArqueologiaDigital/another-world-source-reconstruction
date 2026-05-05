@@ -13,7 +13,7 @@ LABEL_29A6:
 	db 0x11
 
 LABEL_29A7:
-	video offset=CINEMATIC_604, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_604, x=[HERO_X], y=[HERO_Y]
 	or [0x04], 0x4000
 	break
 	jmp LABEL_29A7
@@ -40,10 +40,10 @@ LABEL_29E9:
 	jl [0x21], [0x22], SHARED_RET
 	mov [0x09], 0x0002
 	sub [0xF8], 0x0014
-	jl [0x01], [0xF8], SHARED_RET
+	jl [HERO_X], [0xF8], SHARED_RET
 	add [0xF8], 0x0024
-	jg [0x01], [0xF8], SHARED_RET
-	jl [0x02], 0x7C, SHARED_RET
+	jg [HERO_X], [0xF8], SHARED_RET
+	jl [HERO_Y], 0x7C, SHARED_RET
 	setup channel=0x3C, address=LABEL_3E04
 	deleteChannels first=0x14, last=0x16
 	setup channel=0x14, address=LABEL_29A7

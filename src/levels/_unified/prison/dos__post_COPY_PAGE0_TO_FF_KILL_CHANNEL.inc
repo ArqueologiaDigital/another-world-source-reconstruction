@@ -6,8 +6,8 @@ LABEL_8064:
 	video offset=CINEMATIC_186, x=258, y=181
 
 LABEL_807C:
-	jl [0x01], 0xF0, LABEL_8184
-	jg [0x01], 0x0104, LABEL_8184
+	jl [HERO_X], 0xF0, LABEL_8184
+	jg [HERO_X], 0x0104, LABEL_8184
 	jge [0x04], 0x20, LABEL_8184
 	break
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK

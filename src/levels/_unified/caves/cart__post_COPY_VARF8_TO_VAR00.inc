@@ -162,7 +162,7 @@ DELAY_LOOP_VARE6_AT_053B:
 LABEL_0562:
 	break
 	video offset=CINEMATIC_572, x=159, y=92
-	jl [0x01], 0xAA, LABEL_0562
+	jl [HERO_X], 0xAA, LABEL_0562
 	deleteChannels first=0x14, last=0x16
 	setup channel=0x36, address=LABEL_0627
 	break
@@ -201,7 +201,7 @@ LABEL_05CD:
 	video offset=CINEMATIC_572, x=159, y=80
 	jge [0x04], 0x4000, LABEL_05E5
 	video offset=CINEMATIC_573, x=179, y=170
-	mov [0x02], 0x0064
+	mov [HERO_Y], 0x0064
 	mov [0x32], 0x0009
 
 LABEL_05E5:
@@ -224,7 +224,7 @@ LABEL_060F:
 	mov [0x00], 0x0040
 	bankSwitch 6;  Secret Code Entry Screen
 	killChannel
-	mov [0x02], 0xFFB0
+	mov [HERO_Y], 0xFFB0
 	killChannel
 
 LABEL_0627:

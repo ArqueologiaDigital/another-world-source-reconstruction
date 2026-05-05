@@ -36,8 +36,8 @@ LABEL_76BC:
 	call LABEL_77E8
 
 LABEL_76D2:
-	mov [0x24], [0x01]
-	mov [0x25], [0x02]
+	mov [0x24], [HERO_X]
+	mov [0x25], [HERO_Y]
 	mov [0x26], [0x04]
 	mov [0x1C], 0x001E
 	call LABEL_77B9

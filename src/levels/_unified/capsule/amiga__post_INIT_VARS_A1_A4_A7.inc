@@ -14,16 +14,16 @@ LABEL_84F0:
 
 LABEL_8505:
 	mov [0x23], 0x0001
-	jl [0x02], [0x41], LABEL_8513
+	jl [HERO_Y], [0x41], LABEL_8513
 	mov [0x23], 0x0000
 
 LABEL_8513:
 	ret
 
 LABEL_8514:
-	mov [0x02], [0x40]
+	mov [HERO_Y], [0x40]
 	je [0x23], 0x00, LABEL_8520
-	mov [0x02], [0x44]
+	mov [HERO_Y], [0x44]
 
 LABEL_8520:
 	ret

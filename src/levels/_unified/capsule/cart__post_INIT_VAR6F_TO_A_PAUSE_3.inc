@@ -2,12 +2,12 @@ LABEL_376C:
 	call LABEL_3724
 	call GUARDED_ALIEN_ANIM_CV_128
 	break
-	jg [0x01], 0xAA, LABEL_376C
+	jg [HERO_X], 0xAA, LABEL_376C
 	djnz [0x6F], LABEL_376C
 	mov [0x6F], 0x0003
 
 LABEL_3781:
-	jg [0x01], 0x7D, LABEL_37A7
+	jg [HERO_X], 0x7D, LABEL_37A7
 	call LABEL_3724
 	call LABEL_7D99
 	break
@@ -15,7 +15,7 @@ LABEL_3781:
 	mov [0x6F], 0x0003
 
 LABEL_3796:
-	jg [0x01], 0x7D, LABEL_37A7
+	jg [HERO_X], 0x7D, LABEL_37A7
 	call LABEL_3724
 	call LABEL_7DB5
 	break
@@ -26,8 +26,8 @@ LABEL_37A7:
 	call GUARDED_DRAW_CV_304_305
 	break
 	jne [HACK_VAR_67], 0x6D, INIT_VAR6F_TO_A_PAUSE_3
-	jl [0x01], 0x8F, LABEL_37A7
-	jg [0x01], 0xA2, LABEL_37A7
+	jl [HERO_X], 0x8F, LABEL_37A7
+	jg [HERO_X], 0xA2, LABEL_37A7
 	mov [0x63], 0x0064
 	deleteChannels first=0x14, last=0x16
 	call LABEL_3724

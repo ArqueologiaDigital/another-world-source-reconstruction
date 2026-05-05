@@ -330,7 +330,7 @@ SLUG_R_F18_DRIFT_DOWN:
 	video offset=CINEMATIC_SLUG_R_26, x=[0x0c], y=[0x0d]
 	break
 	sub [0x0C], 0x0008
-	jl [0x01], [0x0C], JMP_TO_SLUG_ANIMATION
+	jl [HERO_X], [0x0C], JMP_TO_SLUG_ANIMATION
 	add [0x0C], 0x0008
 	jmp SLUG_WALK_PROX_LOOP
 

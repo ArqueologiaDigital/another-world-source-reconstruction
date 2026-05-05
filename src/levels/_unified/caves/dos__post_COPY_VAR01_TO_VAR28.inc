@@ -3,9 +3,9 @@ LABEL_7EF8:
 	sub [0x22], [0x2A]
 	call LABEL_7F20
 	add [0x22], [0x2A]
-	jle [0x22], [0x01], COPY_VAR01_TO_VAR28
-	mov [0x01], [0x22]
-	mov [0x28], [0x01]
+	jle [0x22], [HERO_X], COPY_VAR01_TO_VAR28
+	mov [HERO_X], [0x22]
+	mov [0x28], [HERO_X]
 	ret
 LABEL_7F11:
 	db 0x11

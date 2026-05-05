@@ -43,7 +43,7 @@ LABEL_86A9:
 	ret
 
 LABEL_86E9:
-	jg [0x01], 0x0A, SHARED_RET
+	jg [HERO_X], 0x0A, SHARED_RET
 	jg [0x07], 0x28, LABEL_8700
 	jne [0x10], [HACK_VAR_67], LABEL_8700
 	mov [0x07], 0x002A

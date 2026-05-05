@@ -1,21 +1,21 @@
 LABEL_760E:
 	break
 	call PROJECT_POS_VAR04_OR_A212
-	video offset=CINEMATIC_152, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_152, x=[0x21], y=[HERO_Y]
 	sub [0x21], 0x0005
-	video offset=CINEMATIC_153, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_153, x=[0x21], y=[HERO_Y]
 	add [0x21], 0x000A
-	video offset=CINEMATIC_154, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_154, x=[0x21], y=[HERO_Y]
 	break
 	call PROJECT_POS_VAR04_OR_A212
 	sub [0x21], 0x0007
-	video offset=CINEMATIC_155, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_155, x=[0x21], y=[HERO_Y]
 	sub [0x21], 0x000A
-	video offset=CINEMATIC_156, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_156, x=[0x21], y=[HERO_Y]
 	add [0x21], 0x0018
-	video offset=CINEMATIC_153, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_153, x=[0x21], y=[HERO_Y]
 	add [0x21], 0x000A
-	video offset=CINEMATIC_157, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_157, x=[0x21], y=[HERO_Y]
 	jmp DEDUP_CAVES_5B_003
 LABEL_7654:
 	db 0x11

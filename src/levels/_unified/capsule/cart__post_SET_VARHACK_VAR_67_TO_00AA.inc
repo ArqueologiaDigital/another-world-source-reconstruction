@@ -5,9 +5,9 @@ LABEL_B5AD:
 
 LABEL_B5B8:
 	jne [HACK_VAR_67], 0x68, LABEL_B5CD
-	jl [0x02], 0x96, DECR_HACK67_BY_1
+	jl [HERO_Y], 0x96, DECR_HACK67_BY_1
 	mov [HACK_VAR_67], 0x0087
-	mov [0x02], 0x0028
+	mov [HERO_Y], 0x0028
 	ret
 
 LABEL_B5CD:

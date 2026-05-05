@@ -1707,7 +1707,7 @@ LABEL_003E:
 	mov [0xF8], [0x00]
 	and [0xF8], 0x00FF
 	video offset=CINEMATIC_699, x=[0xf8], y=1
-	video offset=CINEMATIC_700, x=[0x01], y=2
+	video offset=CINEMATIC_700, x=[HERO_X], y=2
 	killChannel
 
 LABEL_0073:
@@ -1773,7 +1773,7 @@ LABEL_00F7:
 
 LABEL_0129:
 	break
-	jl [0x01], 0x0122, LABEL_013A
+	jl [HERO_X], 0x0122, LABEL_013A
 	call LABEL_53FF
 	je [0x21], 0x00, LABEL_0129
 

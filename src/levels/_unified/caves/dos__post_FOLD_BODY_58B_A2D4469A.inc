@@ -88,16 +88,16 @@ LABEL_5C0C:
 	jne [0x10], [HACK_VAR_67], LABEL_5C7B
 	mov [0xF8], [0x10]
 	and [0xF8], 0x001F
-	je [0x08], [0x02], LABEL_5C25
+	je [0x08], [HERO_Y], LABEL_5C25
 
 LABEL_5C25:
 	call LABEL_60AD
 	je [0x1D], 0x1E, LABEL_5C6A
-	mov [0x21], [0x01]
+	mov [0x21], [HERO_X]
 	mov [0x22], [0x07]
 	call LABEL_6090
-	mov [0x29], [0x01]
-	jg [0x01], [0x07], LABEL_5C55
+	mov [0x29], [HERO_X]
+	jg [HERO_X], [0x07], LABEL_5C55
 	mov [0x2F], 0x0004
 	add [0x29], 0x0014
 	jg [0x26], 0x64, LABEL_5CD5
@@ -113,7 +113,7 @@ LABEL_5C55:
 
 LABEL_5C6A:
 	mov [0x2F], 0x0012
-	jg [0x01], [0x07], LABEL_5CD5
+	jg [HERO_X], [0x07], LABEL_5CD5
 	mov [0x2F], 0x0013
 	jmp LABEL_5CD5
 
@@ -169,10 +169,10 @@ STATE_VAR12_BIG_DISPATCH:
 	je [0xF8], 0x30, STATE_VAR12_BIG_DISPATCH_CASE_30
 	mov [0x2B], [0x11]
 	and [0x2B], 0xDFFF
-	jg [0x08], [0x02], LABEL_5D2B
+	jg [0x08], [HERO_Y], LABEL_5D2B
 
 LABEL_5D2B:
-	jl [0x01], [0x07], LABEL_5D3F
+	jl [HERO_X], [0x07], LABEL_5D3F
 	jge [0x2B], 0x1000, LABEL_5D4D
 	mov [0x2F], 0x0006
 	jmp TRIVIAL_RET
@@ -186,7 +186,7 @@ LABEL_5D4D:
 	call LABEL_60CA
 	mov [0x2C], [0x1D]
 	mov [0x21], [0x07]
-	mov [0x22], [0x01]
+	mov [0x22], [HERO_X]
 	call LABEL_6090
 	jge [0x04], 0x4000, LABEL_5E44
 	jl [0x26], 0x46, LABEL_5E5B
@@ -253,7 +253,7 @@ LABEL_5E43:
 LABEL_5E44:
 	jl [0x26], 0x1E, SHARED_RET
 	mov [0x2F], 0x0018
-	mov [0x29], [0x01]
+	mov [0x29], [HERO_X]
 	sub [0x29], 0x000A
 	ret
 	mov [0x2F], 0x0005

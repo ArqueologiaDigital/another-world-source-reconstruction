@@ -341,8 +341,8 @@ LABEL_1B1F:
 
 LABEL_1BBD:
 	setPalette 0x11
-	jl [0x01], 0xAE, LABEL_1BCF
-	jg [0x01], 0xE1, LABEL_1BCF
+	jl [HERO_X], 0xAE, LABEL_1BCF
+	jg [HERO_X], 0xE1, LABEL_1BCF
 	setPalette 0x09
 
 LABEL_1BCF:
@@ -442,40 +442,40 @@ LABEL_1E93:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	setup channel=0x01, address=LABEL_1FFB
-	mov [0x02], 0x0056
+	mov [HERO_Y], 0x0056
 	jne [HACK_VAR_67], 0x6F, LABEL_1EBA
 	setup channel=0x01, address=LABEL_1FD3
-	mov [0x02], 0x0086
-	jg [0x01], 0x50, LABEL_1EBA
-	mov [0x01], 0x0050
+	mov [HERO_Y], 0x0086
+	jg [HERO_X], 0x50, LABEL_1EBA
+	mov [HERO_X], 0x0050
 
 LABEL_1EBA:
 	jne [0xF8], 0x00, LABEL_1EDC
-	video offset=CINEMATIC_112, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_112, x=[HERO_X], y=[HERO_Y]
 	break
-	add [0x02], 0x000C
-	video offset=CINEMATIC_112, x=[0x01], y=[0x02]
+	add [HERO_Y], 0x000C
+	video offset=CINEMATIC_112, x=[HERO_X], y=[HERO_Y]
 	break
-	add [0x02], 0x000D
-	video offset=CINEMATIC_112, x=[0x01], y=[0x02]
+	add [HERO_Y], 0x000D
+	video offset=CINEMATIC_112, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_1EF5
 
 LABEL_1EDC:
-	video offset=CINEMATIC_110, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_110, x=[HERO_X], y=[HERO_Y]
 	break
-	add [0x02], 0x000C
-	video offset=CINEMATIC_110, x=[0x01], y=[0x02]
+	add [HERO_Y], 0x000C
+	video offset=CINEMATIC_110, x=[HERO_X], y=[HERO_Y]
 	break
-	add [0x02], 0x000D
-	video offset=CINEMATIC_110, x=[0x01], y=[0x02]
+	add [HERO_Y], 0x000D
+	video offset=CINEMATIC_110, x=[HERO_X], y=[HERO_Y]
 
 LABEL_1EF5:
 	break
-	sub [0x02], 0x0018
-	video offset=CINEMATIC_307, x=[0x01], y=[0x02]
+	sub [HERO_Y], 0x0018
+	video offset=CINEMATIC_307, x=[HERO_X], y=[HERO_Y]
 	break
-	sub [0x02], 0x0002
-	video offset=CINEMATIC_307, x=[0x01], y=[0x02]
+	sub [HERO_Y], 0x0002
+	video offset=CINEMATIC_307, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0005
 	call LABEL_875B
 	setup channel=0x14, address=LABEL_87CF
@@ -485,9 +485,9 @@ LABEL_1EF5:
 	mov [0x34], 0x0000
 	mov [0x35], 0x0000
 	mov [0x05], 0x0003
-	mov [0x02], 0x0054
+	mov [HERO_Y], 0x0054
 	jne [HACK_VAR_67], 0x6F, LABEL_1F39
-	mov [0x02], 0x0084
+	mov [HERO_Y], 0x0084
 
 LABEL_1F39:
 	break

@@ -85,7 +85,7 @@ LABEL_4F54:
 	call LABEL_52F0
 	mov [0x22], 0x0096
 	mov [0x26], [HACK_VAR_67]
-	jg [0x02], [0x41], LABEL_4F68
+	jg [HERO_Y], [0x41], LABEL_4F68
 	or [0x26], 0x8000
 
 LABEL_4F68:

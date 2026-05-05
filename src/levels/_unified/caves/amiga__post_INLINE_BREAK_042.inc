@@ -26,17 +26,17 @@ LABEL_ECA4:
 
 LABEL_ECAC:
 	jne [0x0F], 0x00, LABEL_ECE4
-	sub [0x01], 0x0003
+	sub [HERO_X], 0x0003
 	call LABEL_7B5E
 	call LABEL_99C7
-	mov [0x21], [0x01]
-	mov [0x27], [0x02]
+	mov [0x21], [HERO_X]
+	mov [0x27], [HERO_Y]
 	sub [0x21], 0x001E
 	sub [0x27], 0x0016
 	call LABEL_6265
 	break
-	add [0x01], 0x0002
+	add [HERO_X], 0x0002
 	call LABEL_998B
-	add [0x01], 0x0001
+	add [HERO_X], 0x0001
 	jne [HERO_ACTION_POS_MASK], 0x84, LABEL_ED09
 	setup channel=0x17, address=LABEL_71A7

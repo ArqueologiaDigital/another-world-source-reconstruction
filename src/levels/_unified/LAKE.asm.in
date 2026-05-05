@@ -36,6 +36,10 @@
 CINEMATIC_LAKE_UNUSED_175		EQU 0x8A8E
 CINEMATIC_LAKE_UNUSED_189		EQU 0x5DDA
 ;@endif
+
+HERO_X		EQU 0x01
+HERO_Y		EQU 0x02
+
 ;@include "../_common_vars.inc"
 ;@include "_helpers/_helpers_equ_aliases.inc"
 ;@include "lake/lake_equ_aliases.inc"

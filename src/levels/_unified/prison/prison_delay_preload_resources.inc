@@ -60,13 +60,13 @@ PRELOAD_PRISON_RESOURCES:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 BANK4_AFTER_CIN_414:
-	mov [0x01], 0x0041
-	add [0x02], 0x0016
-	video offset=CINEMATIC_414, x=[0x01], y=[0x02]
-	add [0x02], 0x001A
+	mov [HERO_X], 0x0041
+	add [HERO_Y], 0x0016
+	video offset=CINEMATIC_414, x=[HERO_X], y=[HERO_Y]
+	add [HERO_Y], 0x001A
 	break
-	add [0x02], 0x0020
-	video offset=CINEMATIC_415, x=[0x01], y=[0x02]
+	add [HERO_Y], 0x0020
+	video offset=CINEMATIC_415, x=[HERO_X], y=[HERO_Y]
 	break
 	mov [0x00], 0x001E
 	bankSwitch 4;  Gas tunnels, Caves and Pool
@@ -81,9 +81,9 @@ BANK4_AFTER_CIN_414:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB:
-	sub [0x02], 0x0009
-	video offset=CINEMATIC_422, x=[0x01], y=[0x02]
-	sub [0x01], 0x0001
+	sub [HERO_Y], 0x0009
+	video offset=CINEMATIC_422, x=[HERO_X], y=[HERO_Y]
+	sub [HERO_X], 0x0001
 	mov [0x03], 0x000B
 ;@endif
 

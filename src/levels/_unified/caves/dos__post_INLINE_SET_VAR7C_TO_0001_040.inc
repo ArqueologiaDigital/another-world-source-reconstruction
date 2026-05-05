@@ -13,13 +13,13 @@ LABEL_2BA7:
 	db 0x11
 
 LABEL_2BA8:
-	video offset=CINEMATIC_625, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_625, x=[HERO_X], y=[HERO_Y]
 	call LABEL_2BCB
 	or [0x04], 0x4000
 	jne [0xDB], 0x01, LABEL_2BC7
-	sub [0x01], 0x000C
-	video offset=CINEMATIC_230, x=[0x01], y=[0x02]
-	add [0x01], 0x000C
+	sub [HERO_X], 0x000C
+	video offset=CINEMATIC_230, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x000C
 
 LABEL_2BC7:
 	break
@@ -27,7 +27,7 @@ LABEL_2BC7:
 
 LABEL_2BCB:
 	jne [0xDB], 0x01, SHARED_RET
-	video offset=CINEMATIC_230, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_230, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_2BD7:
@@ -52,10 +52,10 @@ LABEL_2C0C:
 	jl [0x21], [0x22], SHARED_RET
 	mov [0x09], 0x0002
 	sub [0xF8], 0x0014
-	jl [0x01], [0xF8], SHARED_RET
+	jl [HERO_X], [0xF8], SHARED_RET
 	add [0xF8], 0x0024
-	jg [0x01], [0xF8], SHARED_RET
-	jl [0x02], 0x7C, SHARED_RET
+	jg [HERO_X], [0xF8], SHARED_RET
+	jl [HERO_Y], 0x7C, SHARED_RET
 	setup channel=0x3C, address=LABEL_4046
 	deleteChannels first=0x14, last=0x16
 	setup channel=0x14, address=LABEL_2BA8

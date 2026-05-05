@@ -9,27 +9,27 @@ LABEL_2753:
 
 LABEL_276B:
 	break
-	jl [0x01], 0x7A, LABEL_276B
-	jg [0x01], 0xA1, LABEL_276B
-	jl [0x02], 0x96, LABEL_276B
-	jg [0x02], 0xCE, LABEL_276B
-	mov [0x02], 0x00B4
+	jl [HERO_X], 0x7A, LABEL_276B
+	jg [HERO_X], 0xA1, LABEL_276B
+	jl [HERO_Y], 0x96, LABEL_276B
+	jg [HERO_Y], 0xCE, LABEL_276B
+	mov [HERO_Y], 0x00B4
 	jmp LABEL_27CE
 LABEL_278B:
 	db 0x11
 
 LABEL_278C:
 	break
-	jl [0x02], 0x46, LABEL_278C
-	mov [0x02], 0x006E
+	jl [HERO_Y], 0x46, LABEL_278C
+	mov [HERO_Y], 0x006E
 	jmp LABEL_27CE
 LABEL_279A:
 	db 0x11
 
 LABEL_279B:
 	break
-	jl [0x02], 0x64, LABEL_279B
-	mov [0x02], 0x0094
+	jl [HERO_Y], 0x64, LABEL_279B
+	mov [HERO_Y], 0x0094
 	jmp LABEL_27CE
 LABEL_27A9:
 	db 0x11, 0x06, 0x0A, 0x04, 0x02, 0xAA, 0x27, 0xAA
@@ -37,9 +37,9 @@ LABEL_27A9:
 
 LABEL_27B9:
 	break
-	jg [0x01], 0xA7, LABEL_27B9
-	jl [0x02], 0xAA, LABEL_27B9
-	mov [0x02], 0x00BE
+	jg [HERO_X], 0xA7, LABEL_27B9
+	jl [HERO_Y], 0xAA, LABEL_27B9
+	mov [HERO_Y], 0x00BE
 	jmp LABEL_27CE
 LABEL_27CD:
 	db 0x11
@@ -56,37 +56,37 @@ LABEL_27CE:
 LABEL_27F0:
 	break
 	je [HACK_VAR_67], 0x28, LABEL_2822
-	video offset=CINEMATIC_272, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_272, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_273, x=[0x01], y=[0x02]
-	add [0x02], 0x0001
+	video offset=CINEMATIC_273, x=[HERO_X], y=[HERO_Y]
+	add [HERO_Y], 0x0001
 	break
-	video offset=CINEMATIC_273, x=[0x01], y=[0x02]
-	add [0x02], 0x0001
+	video offset=CINEMATIC_273, x=[HERO_X], y=[HERO_Y]
+	add [HERO_Y], 0x0001
 	mov [0x03], 0x000A
 	setup channel=0x3F, address=LABEL_016F
 
 LABEL_2818:
 	break
-	video offset=CINEMATIC_273, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_273, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_2818
 LABEL_2821:
 	db 0x11
 
 LABEL_2822:
-	video offset=CINEMATIC_270, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_270, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_271, x=[0x01], y=[0x02]
-	add [0x02], 0x0001
+	video offset=CINEMATIC_271, x=[HERO_X], y=[HERO_Y]
+	add [HERO_Y], 0x0001
 	break
-	video offset=CINEMATIC_271, x=[0x01], y=[0x02]
-	add [0x02], 0x0001
+	video offset=CINEMATIC_271, x=[HERO_X], y=[HERO_Y]
+	add [HERO_Y], 0x0001
 	mov [0x03], 0x000A
 	setup channel=0x3F, address=LABEL_016F
 
 LABEL_2843:
 	break
-	video offset=CINEMATIC_271, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_271, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_2843
 LABEL_284C:
 	db 0x11
@@ -131,14 +131,14 @@ LABEL_288E:
 	mov [0x22], [0x07]
 	sub [0x21], 0x000A
 	add [0x22], 0x000A
-	jl [0x01], [0x21], LABEL_28E3
-	jg [0x01], [0x22], LABEL_28E3
+	jl [HERO_X], [0x21], LABEL_28E3
+	jg [HERO_X], [0x22], LABEL_28E3
 	mov [0x21], [0x08]
 	sub [0x21], 0x0002
 	mov [0x22], [0x08]
 	add [0x22], 0x0002
-	jl [0x02], [0x21], SHARED_RET
-	jg [0x02], [0x22], SHARED_RET
+	jl [HERO_Y], [0x21], SHARED_RET
+	jg [HERO_Y], [0x22], SHARED_RET
 	jge [0x04], 0x4000, SHARED_RET
 	or [0x04], 0x4000
 	mov [0xF8], [0x04]
@@ -151,7 +151,7 @@ LABEL_28E3:
 	sub [0x21], 0x0014
 	add [0x22], 0x0014
 	je [0x09], 0x02, SHARED_RET
-	jl [0x01], [0x21], SHARED_RET
-	jg [0x01], [0x22], SHARED_RET
+	jl [HERO_X], [0x21], SHARED_RET
+	jg [HERO_X], [0x22], SHARED_RET
 	mov [0x09], 0x0002
 	ret

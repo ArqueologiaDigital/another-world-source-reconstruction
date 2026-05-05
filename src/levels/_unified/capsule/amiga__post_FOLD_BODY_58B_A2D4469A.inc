@@ -78,16 +78,16 @@ LABEL_3AA8:
 	jne [0x10], [HACK_VAR_67], LABEL_3B1D
 	mov [0xF8], [0x10]
 	and [0xF8], 0x001F
-	je [0x08], [0x02], LABEL_3AC7
+	je [0x08], [HERO_Y], LABEL_3AC7
 
 LABEL_3AC7:
 	call LABEL_3F4C
 	je [0x1D], 0x1E, LABEL_3B0C
-	mov [0x21], [0x01]
+	mov [0x21], [HERO_X]
 	mov [0x22], [0x07]
 	call LABEL_3F38
-	mov [0x29], [0x01]
-	jg [0x01], [0x07], LABEL_3AF7
+	mov [0x29], [HERO_X]
+	jg [HERO_X], [0x07], LABEL_3AF7
 	mov [0x2F], 0x0004
 	add [0x29], 0x0014
 	jg [0x26], 0x64, LABEL_3B77
@@ -103,7 +103,7 @@ LABEL_3AF7:
 
 LABEL_3B0C:
 	mov [0x2F], 0x0012
-	jg [0x01], [0x07], LABEL_3B77
+	jg [HERO_X], [0x07], LABEL_3B77
 	mov [0x2F], 0x0013
 	jmp LABEL_3B77
 
@@ -160,8 +160,8 @@ STATE_VAR12_BIG_DISPATCH:
 	je [0xF8], 0x38, STATE_VAR12_BIG_DISPATCH_CASE_38
 	mov [0x2B], [0x11]
 	and [0x2B], 0xDFFF
-	jg [0x08], [0x02], LABEL_3CEA
-	jl [0x01], [0x07], LABEL_3BE7
+	jg [0x08], [HERO_Y], LABEL_3CEA
+	jl [HERO_X], [0x07], LABEL_3BE7
 	jge [0x2B], 0x1000, LABEL_3BF5
 	mov [0x2F], 0x0006
 	jmp LABEL_3CEA
@@ -175,7 +175,7 @@ LABEL_3BF5:
 	call LABEL_3F69
 	mov [0x2C], [0x1D]
 	mov [0x21], [0x07]
-	mov [0x22], [0x01]
+	mov [0x22], [HERO_X]
 	call LABEL_3F38
 	jge [0x04], 0x4000, LABEL_3CEC
 	jl [0x26], 0x46, LABEL_3D03
@@ -242,7 +242,7 @@ LABEL_3CEB:
 LABEL_3CEC:
 	jl [0x26], 0x1E, SHARED_RET
 	mov [0x2F], 0x0018
-	mov [0x29], [0x01]
+	mov [0x29], [HERO_X]
 	sub [0x29], 0x000A
 	ret
 LABEL_3CFE:

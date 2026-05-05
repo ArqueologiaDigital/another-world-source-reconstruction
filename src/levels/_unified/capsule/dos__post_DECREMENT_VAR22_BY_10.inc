@@ -1,22 +1,22 @@
 LABEL_742F:
 	je [0x0F], 0x00, LABEL_743F
 	mov [0x2A], 0x002A
-	je [0x28], [0x01], LABEL_743F
+	je [0x28], [HERO_X], LABEL_743F
 
 LABEL_743F:
 	jl [0x32], 0x08, LABEL_7449
-	mov [0x28], [0x01]
+	mov [0x28], [HERO_X]
 	ret
 
 LABEL_7449:
 	call LABEL_B28A
-	mov [0x22], [0x01]
+	mov [0x22], [HERO_X]
 	jne [HACK_VAR_67], 0xAA, LABEL_745B
-	jl [0x02], 0x96, LABEL_7467
+	jl [HERO_Y], 0x96, LABEL_7467
 
 LABEL_745B:
-	jl [0x01], [0x28], LABEL_7491
-	jg [0x01], [0x28], LABEL_7474
+	jl [HERO_X], [0x28], LABEL_7491
+	jg [HERO_X], [0x28], LABEL_7474
 
 LABEL_7467:
 	mov [0x21], [0x04]
@@ -28,7 +28,7 @@ LABEL_7474:
 	add [0x22], [0x2A]
 	call LABEL_74B9
 	sub [0x22], [0x2A]
-	jge [0x22], [0x01], COPY_VAR01_TO_VAR28
-	mov [0x01], [0x22]
-	mov [0x28], [0x01]
+	jge [0x22], [HERO_X], COPY_VAR01_TO_VAR28
+	mov [HERO_X], [0x22]
+	mov [0x28], [HERO_X]
 	ret

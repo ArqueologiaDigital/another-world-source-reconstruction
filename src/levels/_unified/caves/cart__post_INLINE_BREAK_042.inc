@@ -34,17 +34,17 @@ LABEL_F3B1:
 
 LABEL_F3B2:
 	jne [0x0F], 0x00, LABEL_F3EA
-	sub [0x01], 0x0003
+	sub [HERO_X], 0x0003
 	call LABEL_7E33
 	call LABEL_9C9C
-	mov [0x21], [0x01]
-	mov [0x27], [0x02]
+	mov [0x21], [HERO_X]
+	mov [0x27], [HERO_Y]
 	sub [0x21], 0x001E
 	sub [0x27], 0x0016
 	call LABEL_64AF
 	break
-	add [0x01], 0x0002
+	add [HERO_X], 0x0002
 	call LABEL_9C60
-	add [0x01], 0x0001
+	add [HERO_X], 0x0001
 	jne [HERO_ACTION_POS_MASK], 0x84, LABEL_F40F
 	setup channel=0x17, address=LABEL_7400

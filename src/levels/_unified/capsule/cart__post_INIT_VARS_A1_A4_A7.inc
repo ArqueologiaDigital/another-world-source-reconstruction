@@ -19,7 +19,7 @@ DELETE_CHANS_0_8_AND_RET:
 
 LABEL_B36B:
 	mov [0x23], 0x0001
-	jl [0x02], [0x41], LABEL_B379
+	jl [HERO_Y], [0x41], LABEL_B379
 	mov [0x23], 0x0000
 
 LABEL_B379:
@@ -32,9 +32,9 @@ LABEL_B37A:
 	je [HACK_VAR_67], 0xC9, SHARED_RET
 	je [HACK_VAR_67], 0x6E, SHARED_RET
 	je [HACK_VAR_67], 0x6A, SHARED_RET
-	mov [0x02], [0x40]
+	mov [HERO_Y], [0x40]
 	je [0x23], 0x00, LABEL_B3AA
-	mov [0x02], [0x44]
+	mov [HERO_Y], [0x44]
 
 LABEL_B3AA:
 	ret

@@ -1,12 +1,12 @@
 LABEL_9B7F:
-	jg [0x01], [0x50], LABEL_9BB4
-	jne [0x02], [0x52], LABEL_9B9A
+	jg [HERO_X], [0x50], LABEL_9BB4
+	jne [HERO_Y], [0x52], LABEL_9B9A
 	jne [HERO_POS_UP_DOWN], 0xFFFF, LABEL_9BB4
 	mov [0x32], 0x0001
 	setup channel=0x14, address=LABEL_9821
 
 LABEL_9B9A:
-	jne [0x02], [0x51], LABEL_9BB4
+	jne [HERO_Y], [0x51], LABEL_9BB4
 	je [0x32], 0x01, LABEL_9BB4
 	jne [HERO_POS_UP_DOWN], 0x01, LABEL_9BB4
 	mov [0x32], 0x0001

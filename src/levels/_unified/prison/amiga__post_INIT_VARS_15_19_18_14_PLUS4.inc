@@ -143,7 +143,7 @@ LABEL_79C9:
 
 LABEL_79DB:
 	mov [0x2A], 0x000F
-	mov [0x01], [0x28]
+	mov [HERO_X], [0x28]
 	call LABEL_6DB1
 	mov [0x11], 0x0000
 	jne [0x6A], [HACK_VAR_67], LABEL_7A1D

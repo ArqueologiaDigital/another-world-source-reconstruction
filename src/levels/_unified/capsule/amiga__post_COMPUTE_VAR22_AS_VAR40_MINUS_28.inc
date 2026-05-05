@@ -37,8 +37,8 @@ LABEL_5274:
 	killChannel
 
 LABEL_52A8:
-	mov [0x21], [0x01]
-	mov [0x22], [0x02]
+	mov [0x21], [HERO_X]
+	mov [0x22], [HERO_Y]
 	mov [0xF8], [0x04]
 	jl [0xF8], 0x4000, LABEL_52BB
 	call RESET_HERO_ACTION_KEEP_POS_4LSB
@@ -65,8 +65,8 @@ LABEL_52EF:
 	db 0x11
 
 LABEL_52F0:
-	mov [0x21], [0x01]
-	mov [0x22], [0x02]
+	mov [0x21], [HERO_X]
+	mov [0x22], [HERO_Y]
 	mov [0xF8], [0x04]
 	jl [0xF8], 0x4000, LABEL_5303
 	call RESET_HERO_ACTION_KEEP_POS_4LSB
@@ -169,13 +169,13 @@ LABEL_53E2:
 
 LABEL_5435:
 	call LABEL_52F0
-	video offset=CINEMATIC_097, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_097, x=[0x21], y=[HERO_Y]
 
 LABEL_543D:
 	break
 	play id=0x0058, freq=0x14, vol=0x40, channel=0x01
 	call LABEL_52F0
-	video offset=CINEMATIC_096, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_096, x=[0x21], y=[HERO_Y]
 	jge [HACK_VAR_67], 0xC8, LABEL_5462
 	sub [0x06], 0x000A
 	call LABEL_4F54
@@ -188,21 +188,21 @@ LABEL_545D:
 LABEL_5462:
 	break
 	call LABEL_52F0
-	video offset=CINEMATIC_086, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_086, x=[0x21], y=[HERO_Y]
 	sub [0x21], 0x0005
-	video offset=CINEMATIC_087, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_087, x=[0x21], y=[HERO_Y]
 	add [0x21], 0x000A
-	video offset=CINEMATIC_088, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_088, x=[0x21], y=[HERO_Y]
 	break
 	call LABEL_52F0
 	sub [0x21], 0x0007
-	video offset=CINEMATIC_089, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_089, x=[0x21], y=[HERO_Y]
 	sub [0x21], 0x000A
-	video offset=CINEMATIC_090, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_090, x=[0x21], y=[HERO_Y]
 	add [0x21], 0x0018
-	video offset=CINEMATIC_087, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_087, x=[0x21], y=[HERO_Y]
 	add [0x21], 0x000A
-	video offset=CINEMATIC_091, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_091, x=[0x21], y=[HERO_Y]
 	jmp LABEL_545D
 LABEL_54A8:
 	db 0x11

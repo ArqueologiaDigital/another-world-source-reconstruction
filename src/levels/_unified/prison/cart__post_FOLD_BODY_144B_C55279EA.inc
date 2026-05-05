@@ -313,7 +313,7 @@ LABEL_203A:
 	call GUARDED_HERO_ANIM_CV_128
 	break
 	call GUARDED_DRAW_CIN_342
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_242_243
 	sub [0x07], 0x0001
@@ -1228,8 +1228,8 @@ LABEL_28BF:
 	add [0x07], 0x0002
 	deleteChannels first=0x14, last=0x16
 	setup channel=0x15, address=DRAW_CIN_694_695_PROGRESSIVE
-	mov [0x01], [0x07]
-	add [0x01], 0x0010
+	mov [HERO_X], [0x07]
+	add [HERO_X], 0x0010
 	break
 	call JUNK__63D2
 	add [0x07], 0x0002

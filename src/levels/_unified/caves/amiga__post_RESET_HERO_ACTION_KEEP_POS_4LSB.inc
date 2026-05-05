@@ -1,15 +1,15 @@
 LABEL_9EBD:
-	jl [0x01], [0x50], LABEL_9F01
+	jl [HERO_X], [0x50], LABEL_9F01
 	jge [0x04], 0x4000, LABEL_9F01
 	add [0x50], 0x0014
-	jg [0x01], [0x50], INLINE_SUB_VAR50_BY_14
-	jne [0x02], [0x52], LABEL_9EE9
+	jg [HERO_X], [0x50], INLINE_SUB_VAR50_BY_14
+	jne [HERO_Y], [0x52], LABEL_9EE9
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, INLINE_SUB_VAR50_BY_14
 	mov [0x32], 0x0001
 	setup channel=0x14, address=LABEL_9E41
 
 LABEL_9EE9:
-	jne [0x02], [0x51], INLINE_SUB_VAR50_BY_14
+	jne [HERO_Y], [0x51], INLINE_SUB_VAR50_BY_14
 	jne [HERO_POS_JUMP_DOWN], 0x01, INLINE_SUB_VAR50_BY_14
 	mov [0x32], 0x0001
 	setup channel=0x14, address=LABEL_9E1E

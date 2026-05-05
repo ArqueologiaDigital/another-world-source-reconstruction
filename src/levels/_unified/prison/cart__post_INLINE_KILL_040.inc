@@ -148,136 +148,136 @@ LABEL_0F46:
 	killChannel
 
 LABEL_0F58:
-	add [0x01], 0x0003
-	video offset=CINEMATIC_134, x=[0x01], y=[0x02]
-	add [0x01], 0x0002
+	add [HERO_X], 0x0003
+	video offset=CINEMATIC_134, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0002
 	break
-	video offset=CINEMATIC_135, x=[0x01], y=[0x02]
-	add [0x01], 0x0001
+	video offset=CINEMATIC_135, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0001
 	break
-	video offset=CINEMATIC_136, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_136, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_135, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_135, x=[HERO_X], y=[HERO_Y]
 	jmp DRAW_CIN_137_138_BLOCK
 LABEL_0F7E:
 	db 0x11
 
 LABEL_0F7F:
-	sub [0x01], 0x0003
-	video offset=CINEMATIC_280, x=[0x01], y=[0x02]
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0003
+	video offset=CINEMATIC_280, x=[HERO_X], y=[HERO_Y]
+	sub [HERO_X], 0x0002
 	break
-	video offset=CINEMATIC_281, x=[0x01], y=[0x02]
-	sub [0x01], 0x0001
+	video offset=CINEMATIC_281, x=[HERO_X], y=[HERO_Y]
+	sub [HERO_X], 0x0001
 	mov [0x03], 0x0003
 
 LABEL_0F9A:
 	break
-	video offset=CINEMATIC_282, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_282, x=[HERO_X], y=[HERO_Y]
 	djnz [0x03], LABEL_0F9A
 	setup channel=0x15, address=DRAW_CIN_284_BLOCK_95B
 	mov [0x03], 0x0003
 
 LABEL_0FAC:
 	break
-	video offset=CINEMATIC_283, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_283, x=[HERO_X], y=[HERO_Y]
 	djnz [0x03], LABEL_0FAC
 	jmp DRAW_CIN_137_138_BLOCK
 LABEL_0FB9:
 	db 0x11
 
 DRAW_CIN_284_BLOCK_95B:
-	video offset=CINEMATIC_284, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_284, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_285, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_285, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_286, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_286, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_287, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_287, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_288, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_288, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_289, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_289, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_290, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_290, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_291, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_291, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_292, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_292, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_293, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_293, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_294, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_294, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_295, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_295, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_296, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_296, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_297, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_297, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_296, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_296, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_296, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_296, x=[HERO_X], y=[HERO_Y]
 
 LABEL_1019:
 	break
-	video offset=CINEMATIC_295, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_295, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_1019
 LABEL_1022:
 	db 0x11
 
 LABEL_1023:
-	video offset=CINEMATIC_298, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_298, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_299, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_299, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_300, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_300, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_299, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_299, x=[HERO_X], y=[HERO_Y]
 	jmp DRAW_CIN_137_138_BLOCK
 LABEL_103D:
 	db 0x11
 
 LABEL_103E:
-	video offset=CINEMATIC_146, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_146, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_147, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_147, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_148, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_148, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_147, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_147, x=[HERO_X], y=[HERO_Y]
 
 DRAW_CIN_137_138_BLOCK:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_137, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_137, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0xFF
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x00
 	break
-	video offset=CINEMATIC_138, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_138, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_139, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_139, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_140, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_140, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_141, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_141, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_142, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_142, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_143, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_143, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_144, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_144, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_145, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_145, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0xFF
 	killChannel
-	video offset=CINEMATIC_146, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_146, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_147, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_147, x=[HERO_X], y=[HERO_Y]
 
 LABEL_10A6:
 	break
-	video offset=CINEMATIC_148, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_148, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_10A6
 	killChannel
 	video offset=CINEMATIC_376, x=[0x07], y=[0x08]

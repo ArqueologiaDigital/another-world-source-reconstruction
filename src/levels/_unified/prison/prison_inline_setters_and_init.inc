@@ -289,12 +289,12 @@ DRAW_CIN_132_TO_133_2F_AT_BB9185F0:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_280_TO_281_2F_AT_75ED3E60:
-	sub [0x01], 0x0003
-	video offset=CINEMATIC_280, x=[0x01], y=[0x02]
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0003
+	video offset=CINEMATIC_280, x=[HERO_X], y=[HERO_Y]
+	sub [HERO_X], 0x0002
 	break
-	video offset=CINEMATIC_281, x=[0x01], y=[0x02]
-	sub [0x01], 0x0001
+	video offset=CINEMATIC_281, x=[HERO_X], y=[HERO_Y]
+	sub [HERO_X], 0x0001
 	mov [0x03], 0x0003
 ;@endif
 
@@ -306,37 +306,37 @@ DRAW_CIN_280_TO_281_2F_AT_75ED3E60:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_284_BLOCK_95B:
-	video offset=CINEMATIC_284, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_284, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_285, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_285, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_286, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_286, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_287, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_287, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_288, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_288, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_289, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_289, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_290, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_290, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_291, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_291, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_292, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_292, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_293, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_293, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_294, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_294, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_295, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_295, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_296, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_296, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_297, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_297, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_296, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_296, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_296, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_296, x=[HERO_X], y=[HERO_Y]
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -347,44 +347,44 @@ DRAW_CIN_284_BLOCK_95B:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_146_TO_147_4F_AT_8AA18039:
-	video offset=CINEMATIC_146, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_146, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_147, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_147, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_148, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_148, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_147, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_147, x=[HERO_X], y=[HERO_Y]
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_137_138_BLOCK:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_137, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_137, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0xFF
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x00
 	break
-	video offset=CINEMATIC_138, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_138, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_139, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_139, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_140, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_140, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_141, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_141, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_142, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_142, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_143, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_143, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_144, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_144, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_145, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_145, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0xFF
 	killChannel
-	video offset=CINEMATIC_146, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_146, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_147, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_147, x=[HERO_X], y=[HERO_Y]
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"

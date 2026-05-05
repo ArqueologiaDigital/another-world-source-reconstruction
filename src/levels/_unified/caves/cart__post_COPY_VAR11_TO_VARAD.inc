@@ -85,7 +85,7 @@ LABEL_700A:
 	call PROJECT_POS_VAR04_OR_CALL_A189
 	mov [0x22], 0x0096
 	mov [0x26], [HACK_VAR_67]
-	jg [0x02], [0x41], LABEL_701E
+	jg [HERO_Y], [0x41], LABEL_701E
 	or [0x26], 0x8000
 
 LABEL_701E:

@@ -6,16 +6,16 @@ TEARDOWN_CHANS_AND_KILL_LANDING:
 
 LABEL_86DE:
 	mov [0x23], 0x0001
-	jl [0x02], [0x41], LABEL_86EC
+	jl [HERO_Y], [0x41], LABEL_86EC
 	mov [0x23], 0x0000
 
 LABEL_86EC:
 	ret
 
 LABEL_86ED:
-	mov [0x02], [0x40]
+	mov [HERO_Y], [0x40]
 	je [0x23], 0x00, LABEL_86F9
-	mov [0x02], [0x44]
+	mov [HERO_Y], [0x44]
 
 LABEL_86F9:
 	ret
@@ -49,5 +49,5 @@ VAR66_RANGE_DISPATCH_BY_VAR01:
 	mov [0xF8], [0x66]
 	and [0xF8], 0x001F
 	jne [0xF8], 0x05, COPY_PAGE0_TO_PAGE_FF
-	jl [0x01], 0x8C, COPY_PAGE0_TO_PAGE_FF
-	jl [0x01], 0xBE, COPY_HACK67_TO_VAR66
+	jl [HERO_X], 0x8C, COPY_PAGE0_TO_PAGE_FF
+	jl [HERO_X], 0xBE, COPY_HACK67_TO_VAR66

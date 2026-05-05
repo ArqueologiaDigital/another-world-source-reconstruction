@@ -26,8 +26,8 @@ LABEL_2D5C:
 
 LABEL_2D6B:
 	jl [0x0D], 0x02, LABEL_2D7A
-	mov [0x24], [0x01]
-	mov [0x25], [0x02]
+	mov [0x24], [HERO_X]
+	mov [0x25], [HERO_Y]
 	call LABEL_2DC7
 
 LABEL_2D7A:

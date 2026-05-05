@@ -101,8 +101,8 @@ LABEL_441E:
 	db 0x11
 
 PROJECT_POS_BY_VAR04_OR_807B:
-	mov [0x21], [0x01]
-	mov [0x22], [0x02]
+	mov [0x21], [HERO_X]
+	mov [0x22], [HERO_Y]
 	mov [0xF8], [0x04]
 	jl [0xF8], 0x4000, LABEL_4432
 	call RESET_HERO_ACTION_KEEP_POS_4LSB
@@ -129,8 +129,8 @@ LABEL_4466:
 	db 0x11
 
 PROJECT_POS_VAR04_OR_7F4C:
-	mov [0x21], [0x01]
-	mov [0x22], [0x02]
+	mov [0x21], [HERO_X]
+	mov [0x22], [HERO_Y]
 	mov [0xF8], [0x04]
 	jl [0xF8], 0x4000, LABEL_447A
 	call RESET_HERO_ACTION_KEEP_POS_4LSB
@@ -236,13 +236,13 @@ LABEL_4569:
 
 LABEL_45C3:
 	call PROJECT_POS_VAR04_OR_7F4C
-	video offset=CINEMATIC_201, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_201, x=[0x21], y=[HERO_Y]
 
 LABEL_45CB:
 	break
 	play id=0x0058, freq=0x14, vol=0x40, channel=0x00
 	call PROJECT_POS_VAR04_OR_7F4C
-	video offset=CINEMATIC_200, x=[0x21], y=[0x02]
+	video offset=CINEMATIC_200, x=[0x21], y=[HERO_Y]
 	sub [0x06], 0x000A
 	call LABEL_4185
 	mov [0x0F], 0x0000

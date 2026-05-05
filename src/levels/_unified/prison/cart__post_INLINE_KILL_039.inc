@@ -8,7 +8,7 @@ LABEL_021C:
 
 LABEL_021D:
 	break
-	jl [0x01], 0xF0, LABEL_021D
+	jl [HERO_X], 0xF0, LABEL_021D
 	fill page=0xFF, color=0x00
 	setPalette 0x19
 	setup channel=0x3C, address=LABEL_04E7
@@ -228,32 +228,32 @@ LABEL_0500:
 	db 0x11
 
 LABEL_0501:
-	mov [0x01], 0x0091
-	add [0x02], 0x0014
-	video offset=CINEMATIC_415, x=[0x01], y=[0x02]
+	mov [HERO_X], 0x0091
+	add [HERO_Y], 0x0014
+	video offset=CINEMATIC_415, x=[HERO_X], y=[HERO_Y]
 	break
 	setup channel=0x3A, address=LABEL_0583
-	add [0x02], 0x0018
-	video offset=CINEMATIC_415, x=[0x01], y=[0x02]
+	add [HERO_Y], 0x0018
+	video offset=CINEMATIC_415, x=[HERO_X], y=[HERO_Y]
 	break
-	add [0x02], 0x0020
-	video offset=CINEMATIC_415, x=[0x01], y=[0x02]
+	add [HERO_Y], 0x0020
+	video offset=CINEMATIC_415, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_212, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_212, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_211, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_211, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_418, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_418, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_419, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_419, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_420, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_420, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_421, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_421, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_422, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_422, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_423, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_423, x=[HERO_X], y=[HERO_Y]
 	setup channel=0x00, address=LABEL_0210
 	break
 	jmp LABEL_8DF6
@@ -261,13 +261,13 @@ LABEL_055E:
 	db 0x11
 
 LABEL_055F:
-	mov [0x01], 0x0041
-	add [0x02], 0x0016
-	video offset=CINEMATIC_414, x=[0x01], y=[0x02]
-	add [0x02], 0x001A
+	mov [HERO_X], 0x0041
+	add [HERO_Y], 0x0016
+	video offset=CINEMATIC_414, x=[HERO_X], y=[HERO_Y]
+	add [HERO_Y], 0x001A
 	break
-	add [0x02], 0x0020
-	video offset=CINEMATIC_415, x=[0x01], y=[0x02]
+	add [HERO_Y], 0x0020
+	video offset=CINEMATIC_415, x=[HERO_X], y=[HERO_Y]
 	break
 	mov [0x00], 0x001E
 	bankSwitch 4;  TODO - Name this stage (bank number #4)
@@ -278,7 +278,7 @@ LABEL_0583:
 	setup channel=0x3C, address=LABEL_0711
 	mov [0x14], 0x0006
 	mov [SCROLL_Y], 0x00CA
-	sub [0x02], 0x0001
+	sub [HERO_Y], 0x0001
 
 LABEL_0597:
 	break
@@ -289,9 +289,9 @@ LABEL_0597:
 	sub [SCROLL_Y], 0x000A
 	video offset=CINEMATIC_416, x=160, y=[0xf9]
 	add [SCROLL_Y], 0x000A
-	video offset=CINEMATIC_415, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_415, x=[HERO_X], y=[HERO_Y]
 	djnz [0x14], LABEL_0597
-	add [0x02], 0x0001
+	add [HERO_Y], 0x0001
 	selectVideoPage 0x00
 	copyVideoPage src=0xFF, dst=0x00
 	video offset=CINEMATIC_410, x=160, y=22
@@ -319,33 +319,33 @@ LABEL_05EF:
 	jmp LABEL_05EF
 
 LABEL_0607:
-	sub [0x02], 0x0009
-	video offset=CINEMATIC_422, x=[0x01], y=[0x02]
-	sub [0x01], 0x0001
+	sub [HERO_Y], 0x0009
+	video offset=CINEMATIC_422, x=[HERO_X], y=[HERO_Y]
+	sub [HERO_X], 0x0001
 	mov [0x03], 0x000B
 
 LABEL_0618:
 	break
-	video offset=CINEMATIC_422, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_422, x=[HERO_X], y=[HERO_Y]
 	djnz [0x03], LABEL_0618
 	break
-	video offset=CINEMATIC_421, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_421, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_420, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_420, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_419, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_419, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_418, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_418, x=[HERO_X], y=[HERO_Y]
 	mov [0x03], 0x0009
 
 LABEL_063E:
 	break
-	video offset=CINEMATIC_215, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_215, x=[HERO_X], y=[HERO_Y]
 	djnz [0x03], LABEL_063E
 	break
-	video offset=CINEMATIC_212, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_212, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_211, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_211, x=[HERO_X], y=[HERO_Y]
 	mov [0x63], 0x0002
 	break
 	play id=0x0060, freq=0x14, vol=0x1E, channel=0x00

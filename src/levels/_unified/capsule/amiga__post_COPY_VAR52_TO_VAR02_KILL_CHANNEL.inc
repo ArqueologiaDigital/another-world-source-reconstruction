@@ -1,10 +1,10 @@
 LABEL_7E32:
 	mov [0x63], 0x0064
-	mov [0x02], [0x52]
-	sub [0x02], 0x001E
+	mov [HERO_Y], [0x52]
+	sub [HERO_Y], 0x001E
 	call LABEL_7E86
 	break
-	mov [0x02], [0x52]
+	mov [HERO_Y], [0x52]
 	call LABEL_7E86
 	setup channel=0x1A, address=LABEL_7E20
 	jmp LABEL_7E9F
@@ -13,11 +13,11 @@ LABEL_7E4E:
 
 LABEL_7E4F:
 	mov [0x63], 0x0064
-	mov [0x02], [0x51]
-	add [0x02], 0x001E
+	mov [HERO_Y], [0x51]
+	add [HERO_Y], 0x001E
 	call LABEL_7E6C
 	break
-	mov [0x02], [0x51]
+	mov [HERO_Y], [0x51]
 	call LABEL_7E6C
 	setup channel=0x1A, address=LABEL_7E0E
 	jmp LABEL_7E9F
@@ -28,11 +28,11 @@ LABEL_7E6C:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_305
-	video offset=CINEMATIC_306, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_306, x=[HERO_X], y=[HERO_Y]
 	ret
 
 DRAW_CIN_305:
-	video offset=CINEMATIC_305, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_305, x=[HERO_X], y=[HERO_Y]
 	ret
 LABEL_7E85:
 	db 0x11
@@ -41,11 +41,11 @@ LABEL_7E86:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_303
-	video offset=CINEMATIC_304, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_304, x=[HERO_X], y=[HERO_Y]
 	ret
 
 DRAW_CIN_303:
-	video offset=CINEMATIC_303, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_303, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_7E9F:

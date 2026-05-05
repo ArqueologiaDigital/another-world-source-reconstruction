@@ -800,8 +800,8 @@ LABEL_4D4E:
 	add [0x07], 0x0002
 	deleteChannels first=0x14, last=0x16
 	setup channel=0x15, address=LABEL_605A
-	mov [0x01], [0x07]
-	add [0x01], 0x0010
+	mov [HERO_X], [0x07]
+	add [HERO_X], 0x0010
 	break
 	call JUNK__897C
 	add [0x07], 0x0002
@@ -831,7 +831,7 @@ LABEL_4DB8:
 	db 0x11
 
 LABEL_4DB9:
-	jg [0x01], 0x07, LABEL_4DFD
+	jg [HERO_X], 0x07, LABEL_4DFD
 	call LABEL_8A24
 	deleteChannels first=0x14, last=0x16
 	setup channel=0x3F, address=BREAK_5X_THEN_INIT_VAR03_14

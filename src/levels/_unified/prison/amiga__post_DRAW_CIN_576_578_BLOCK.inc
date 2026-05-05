@@ -8,7 +8,7 @@ LABEL_1FA0:
 	call GUARDED_HERO_ANIM_CV_009
 	break
 	call GUARDED_DRAW_CIN_342
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_242_243
 	sub [0x07], 0x0001

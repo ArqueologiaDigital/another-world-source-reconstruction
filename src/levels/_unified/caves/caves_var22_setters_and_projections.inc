@@ -112,7 +112,7 @@ PROJ_VAR22_AA_MINUS_VAR21_MINUS_115_SHR3:
 ;@endif
 
 INIT_VARS_01_22:
-	mov [0x01], 0x0078
+	mov [HERO_X], 0x0078
 	mov [0x22], 0x0064
 	ret
 

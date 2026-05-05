@@ -80,8 +80,8 @@ PARTICLE_BURST_CYCLE_LOOP_2:
 	break
 	jmp PARTICLE_BURST_CYCLE_LOOP_2
 	killChannel
-	mov [0x01], 0x0000
-	mov [0x02], 0x0000
+	mov [HERO_X], 0x0000
+	mov [HERO_Y], 0x0000
 	mov [0x03], 0x0000
 	mov [0x04], 0x0000
 	mov [0x05], 0x0000

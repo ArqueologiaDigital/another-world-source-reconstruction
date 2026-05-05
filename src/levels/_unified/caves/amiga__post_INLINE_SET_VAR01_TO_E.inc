@@ -8,7 +8,7 @@ LABEL_1C13:
 	add [0xEE], 0x000F
 	sub [0xEF], 0x000C
 	break
-	djnz [0x01], LABEL_1C13
+	djnz [HERO_X], LABEL_1C13
 	setup channel=0x13, address=KILL_CHANNEL_LANDING
 	mov [0x03], 0x0005
 	setup channel=0x3F, address=LABEL_016F

@@ -49,8 +49,8 @@ SWIMMING_UP:
 	video offset=CINEMATIC_SWIM_OUT_OF_CONSOLE_1, x=160, y=[0x0a]
 	break
 	video offset=CINEMATIC_SWIM_OUT_OF_CONSOLE_2, x=160, y=[0x0a]
-	mov [0x02], [0x0A]
-	sub [0x02], 0x000D
+	mov [HERO_Y], [0x0A]
+	sub [HERO_Y], 0x000D
 	mov [0x63], 0x0001
 	setup channel=0x0C, address=SWIMMING_UP_LEGS_ANIMATION
 	setup channel=0x0D, address=SWIMMING_UP_TORSO_ANIMATION
@@ -88,8 +88,8 @@ BUBBLE_UPDATE_PHASE_2:
 	killChannel
 
 INIT_HERO_AT_POOL_EXIT:
-	mov [0x01], 0x00C8
-	mov [0x02], 0x00B6
+	mov [HERO_X], 0x00C8
+	mov [HERO_Y], 0x00B6
 	mov [0x03], 0x0040
 	mov [0x1B], 0x0000
 	mov [0x06], 0x0000

@@ -4,11 +4,11 @@ LABEL_D6D1:
 LABEL_D6D2:
 	jne [HACK_VAR_67], 0x28, LABEL_D6E1
 	mov [HACK_VAR_67], 0x0067
-	mov [0x01], 0x000A
+	mov [HERO_X], 0x000A
 	ret
 
 LABEL_D6E1:
 	jne [HACK_VAR_67], 0x49, ADD_HACK67_BY_20
 	mov [HACK_VAR_67], 0x0069
-	mov [0x01], 0x0032
+	mov [HERO_X], 0x0032
 	ret

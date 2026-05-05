@@ -83,8 +83,8 @@ CINEMATIC_TENTACLE_WAVING_3		EQU 0x7EB0
 
 A_CALM_ALIEN_POOL_BEFORE_LESTERS_ARRIVAL:
 	setup channel=0x3C, address=BLIT_FROM_PAGE_3_LOOP
-	mov [0x01], 0x0085
-	mov [0x02], 0x0064
+	mov [HERO_X], 0x0085
+	mov [HERO_Y], 0x0064
 	mov [0x03], 0x0040
 	mov [0x63], 0x0000
 	fill page=0x00, color=0x00
@@ -165,30 +165,30 @@ POST_BEETLE_PRE_PALETTE_03:
 	break
 	play id=0x0032, freq=0x14, vol=0x20, channel=0x03
 	break
-	jle [0x02], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
+	jle [HERO_Y], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
 	break
-	jle [0x02], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
+	jle [HERO_Y], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
 	play id=0x0031, freq=0x14, vol=0x08, channel=0x03
 	break
-	jle [0x02], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
+	jle [HERO_Y], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
 	break
-	jle [0x02], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
+	jle [HERO_Y], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
 	play id=0x0032, freq=0x14, vol=0x10, channel=0x02
 	break
-	jle [0x02], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
+	jle [HERO_Y], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
 	break
 	play id=0x0031, freq=0x14, vol=0x08, channel=0x03
 
 POOL_INTRO_PROTECT_DELAY_LOOP:
-	jle [0x02], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
+	jle [HERO_Y], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
 	break
-	jle [0x02], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
+	jle [HERO_Y], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
 	break
-	jle [0x02], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
+	jle [HERO_Y], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
 	play id=0x0031, freq=0x14, vol=0x04, channel=0x02
 	break
 	break
-	jle [0x02], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
+	jle [HERO_Y], 0x0A, INIT_CODEWHEEL_PROTECTION_SCENE
 	break
 	play id=0x0032, freq=0x14, vol=0x02, channel=0x02
 	jmp POOL_INTRO_PROTECT_DELAY_LOOP
@@ -198,14 +198,14 @@ SETUP_TENTACLE_ANIMATIONS:
 	setup channel=0x17, address=MAIN_TENTACLE_INSIDE_POOL_ANIMATION
 	setup channel=0x34, address=OTHER_TENTACLES_INSIDE_POOL_ANIMATION
 	call SET_INITIAL_POSITIONS_OF_TENTACLES_INSIDE_THE_POOL
-	mov [0x15], [0x01]
+	mov [0x15], [HERO_X]
 	mov [0x16], 0x012C
 
 POOL_INIT_VAR_16_DESCENT:
 	break
 	sub [0x16], 0x000A
-	mov [0x15], [0x01]
-	jg [0x16], [0x02], POOL_INIT_VAR_16_DESCENT
+	mov [0x15], [HERO_X]
+	jg [0x16], [HERO_Y], POOL_INIT_VAR_16_DESCENT
 	setup channel=0x16, address=KILL_CHANNEL_ROUTINE
 	call ADVANCE_RING_Y_POSITIONS
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
@@ -216,7 +216,7 @@ POOL_INIT_VAR_16_DESCENT:
 POOL_INIT_VAR_16_RISE:
 	break
 	add [0x16], 0x0014
-	mov [0x02], [0x16]
+	mov [HERO_Y], [0x16]
 	jl [0x16], 0x0104, POOL_INIT_VAR_16_RISE
 	jmp INIT_VAR_03_TO_0x1E
 	killChannel
@@ -424,13 +424,13 @@ SECOND_WAVY_GLARE_DRIFT:
 	killChannel
 
 SWIMMING_UP_TORSO_ANIMATION:
-	video offset=CINEMATIC_SWIMMING_UP_TORSO_0, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_SWIMMING_UP_TORSO_0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_TORSO_1, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_SWIMMING_UP_TORSO_1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_TORSO_2, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_SWIMMING_UP_TORSO_2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_TORSO_1, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_SWIMMING_UP_TORSO_1, x=[HERO_X], y=[HERO_Y]
 	break
 	jmp SWIMMING_UP_TORSO_ANIMATION
 	killChannel
@@ -466,21 +466,21 @@ BUBBLES_B_ANIMATION:
 	killChannel
 
 SWIMMING_UP_LEGS_ANIMATION:
-	video offset=CINEMATIC_SWIMMING_UP_LEGS_0, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_LEGS_1, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_LEGS_2, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_LEGS_3, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_LEGS_4, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_4, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_LEGS_5, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_5, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_LEGS_6, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_6, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_LEGS_7, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_7, x=[HERO_X], y=[HERO_Y]
 	break
 	jmp SWIMMING_UP_LEGS_ANIMATION
 	killChannel

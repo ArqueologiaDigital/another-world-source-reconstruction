@@ -2243,9 +2243,9 @@ LABEL_0088:
 	call LABEL_884B
 	setup channel=0x23, address=DRAW_CIN_406_408_BLOCK
 	setup channel=0x3F, address=LABEL_897B
-	mov [0x01], 0x0092
-	mov [0x02], 0x005C
-	mov [0x28], [0x01]
+	mov [HERO_X], 0x0092
+	mov [HERO_Y], 0x005C
+	mov [0x28], [HERO_X]
 	video offset=CINEMATIC_704, x=0, y=182
 	killChannel
 	killChannel

@@ -44,7 +44,7 @@ LABEL_25DC:
 	break
 	jl [HACK_VAR_67], [0x6A], LABEL_25DC
 	jg [HACK_VAR_67], [0x6A], LABEL_25FA
-	mov [0xF8], [0x01]
+	mov [0xF8], [HERO_X]
 	add [0xF8], 0x001E
 	jg [0x68], [0xF8], LABEL_25DC
 
@@ -97,7 +97,7 @@ LABEL_2671:
 	mov [0x68], 0x0090
 	mov [0x69], 0x0062
 	break
-	jl [0x01], 0x28, LABEL_2671
+	jl [HERO_X], 0x28, LABEL_2671
 	or [0xB9], 0x0040
 	selectVideoPage 0x00
 	video offset=CINEMATIC_465, x=[0x68], y=[0x69]
@@ -228,7 +228,7 @@ HANG_DRAW_CIN_434:
 
 LABEL_2814:
 	break
-	jl [0x01], 0xB4, LABEL_2814
+	jl [HERO_X], 0xB4, LABEL_2814
 	or [0x74], 0x4000
 	setPalette 0x09
 	killChannel
@@ -290,7 +290,7 @@ LABEL_28A0:
 	break
 	djnz [0x29], LABEL_28A0
 	mov [0xF8], [0x07]
-	sub [0xF8], [0x01]
+	sub [0xF8], [HERO_X]
 	jl [0xF8], 0x64, LABEL_28C7
 	call LABEL_53FF
 	jne [0x12], 0x28, LABEL_28C7
@@ -371,8 +371,8 @@ HANG_DRAW_CIN_711:
 LABEL_297B:
 	je [0xB6], 0x00, KILL_CHAN_AT_157F
 	jne [HACK_VAR_67], [0xB6], KILL_CHAN_AT_157F
-	jl [0x01], 0x0148, LABEL_299B
-	mov [0x01], 0x0148
+	jl [HERO_X], 0x0148, LABEL_299B
+	mov [HERO_X], 0x0148
 	deleteChannels first=0x14, last=0x16
 	setup channel=0x14, address=LABEL_297B
 	killChannel
@@ -384,8 +384,8 @@ LABEL_299B:
 
 LABEL_29A0:
 	break
-	jl [0x01], 0x78, LABEL_29A0
-	jg [0x01], 0xF0, LABEL_29A0
+	jl [HERO_X], 0x78, LABEL_29A0
+	jg [HERO_X], 0xF0, LABEL_29A0
 	mov [0xF8], [0xB2]
 	and [0xF8], 0x0100
 	jne [0xF8], 0x00, KILL_CHAN_AT_157F

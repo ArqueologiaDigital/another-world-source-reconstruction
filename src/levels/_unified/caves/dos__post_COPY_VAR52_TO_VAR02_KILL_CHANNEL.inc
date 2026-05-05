@@ -1,11 +1,11 @@
 LABEL_A17C:
 	mov [0x63], 0x0064
-	mov [0x02], [0x52]
-	sub [0x02], 0x001E
+	mov [HERO_Y], [0x52]
+	sub [HERO_Y], 0x001E
 	call LABEL_A1DC
 	play id=0x0057, freq=0x1C, vol=0x40, channel=0x00
 	break
-	mov [0x02], [0x52]
+	mov [HERO_Y], [0x52]
 	call LABEL_A1DC
 	setup channel=0x1A, address=LABEL_A16A
 	jmp LABEL_A1F5
@@ -14,12 +14,12 @@ LABEL_A19E:
 
 LABEL_A19F:
 	mov [0x63], 0x0064
-	mov [0x02], [0x51]
-	add [0x02], 0x001E
+	mov [HERO_Y], [0x51]
+	add [HERO_Y], 0x001E
 	call LABEL_A1C2
 	play id=0x0057, freq=0x1C, vol=0x40, channel=0x00
 	break
-	mov [0x02], [0x51]
+	mov [HERO_Y], [0x51]
 	call LABEL_A1C2
 	setup channel=0x1A, address=LABEL_A158
 	jmp LABEL_A1F5
@@ -30,11 +30,11 @@ LABEL_A1C2:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_878
-	video offset=CINEMATIC_879, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_879, x=[HERO_X], y=[HERO_Y]
 	ret
 
 DRAW_CIN_878:
-	video offset=CINEMATIC_878, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_878, x=[HERO_X], y=[HERO_Y]
 	ret
 LABEL_A1DB:
 	db 0x11
@@ -43,11 +43,11 @@ LABEL_A1DC:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_876
-	video offset=CINEMATIC_877, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_877, x=[HERO_X], y=[HERO_Y]
 	ret
 
 DRAW_CIN_876:
-	video offset=CINEMATIC_876, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_876, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_A1F5:

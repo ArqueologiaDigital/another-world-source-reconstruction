@@ -1,10 +1,10 @@
 LABEL_F53A:
 	break
-	video type=0, offset=COMMON_VIDEO_335, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_335, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [HERO_POS_JUMP_DOWN], 0x01, LABEL_F53A
 	break
-	add [0x01], 0x0002
-	video type=0, offset=COMMON_VIDEO_334, x=[0x01], y=[0x02], zoom=0x40
+	add [HERO_X], 0x0002
+	video type=0, offset=COMMON_VIDEO_334, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x63], 0x0002
 	jmp HERO_WALK_RIGHT_LOOP
 LABEL_F557:

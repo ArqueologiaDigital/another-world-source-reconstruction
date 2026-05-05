@@ -27,15 +27,15 @@ LABEL_1A64:
 	db 0x11
 
 LABEL_1A65:
-	add [0x02], 0x0019
+	add [HERO_Y], 0x0019
 	or [0x04], 0x4000
-	video offset=CINEMATIC_000, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_000, x=[HERO_X], y=[HERO_Y]
 	break
-	jg [0x02], 0xC8, LABEL_1A8C
-	add [0x02], 0x0019
-	video offset=CINEMATIC_014, x=[0x01], y=[0x02]
+	jg [HERO_Y], 0xC8, LABEL_1A8C
+	add [HERO_Y], 0x0019
+	video offset=CINEMATIC_014, x=[HERO_X], y=[HERO_Y]
 	break
-	jg [0x02], 0xC8, LABEL_1A8C
+	jg [HERO_Y], 0xC8, LABEL_1A8C
 	jmp LABEL_1A65
 
 LABEL_1A8C:

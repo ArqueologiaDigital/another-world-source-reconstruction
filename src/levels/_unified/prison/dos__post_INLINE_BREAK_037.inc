@@ -7,12 +7,12 @@ LABEL_9991:
 
 LABEL_9992:
 	mov [0x2A], 0x0021
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 	call HANDLE_HORIZ_VAR01_VS_VAR28
-	add [0x01], 0x0003
-	video offset=CINEMATIC_187, x=[0x01], y=[0x02]
+	add [HERO_X], 0x0003
+	video offset=CINEMATIC_187, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_188, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_188, x=[HERO_X], y=[HERO_Y]
 
 LABEL_99AC:
 	break
@@ -25,8 +25,8 @@ LABEL_99B9:
 	call LABEL_6D4A
 	je [HERO_ACTION_POS_MASK], 0x04, LABEL_99AC
 	break
-	sub [0x01], 0x0002
-	video offset=CINEMATIC_205, x=[0x01], y=[0x02]
+	sub [HERO_X], 0x0002
+	video offset=CINEMATIC_205, x=[HERO_X], y=[HERO_Y]
 	mov [0x63], 0x0001
 	mov [0x0A], 0x0003
 	jmp HERO_WALK_LEFT_LOOP
@@ -37,38 +37,38 @@ LABEL_99E4:
 	mov [0x63], 0x0064
 	call SET_VAR04_TO_0000
 	jne [0x0A], 0x00, LABEL_9992
-	add [0x01], 0x0002
-	video offset=CINEMATIC_187, x=[0x01], y=[0x02]
+	add [HERO_X], 0x0002
+	video offset=CINEMATIC_187, x=[HERO_X], y=[HERO_Y]
 
 LABEL_99FA:
 	break
 	je [HERO_ACTION_POS_MASK], 0x84, DRAW_CIN_187_TO_222_2F_AT_8E66E193
-	video offset=CINEMATIC_224, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_224, x=[HERO_X], y=[HERO_Y]
 	je [HERO_ACTION_POS_MASK], 0x04, LABEL_99FA
 	break
-	video offset=CINEMATIC_187, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_187, x=[HERO_X], y=[HERO_Y]
 	break
-	sub [0x01], 0x0002
-	video offset=CINEMATIC_205, x=[0x01], y=[0x02]
+	sub [HERO_X], 0x0002
+	video offset=CINEMATIC_205, x=[HERO_X], y=[HERO_Y]
 	mov [0x63], 0x0001
-	add [0x01], 0x0002
+	add [HERO_X], 0x0002
 	jmp HERO_WALK_LEFT_LOOP
 LABEL_9A27:
 	db 0x11
 
 LABEL_9A28:
 	jne [0x0F], 0x00, LABEL_9A64
-	add [0x01], 0x0003
+	add [HERO_X], 0x0003
 	call HANDLE_HORIZ_VAR01_VS_VAR28
-	video offset=CINEMATIC_208, x=[0x01], y=[0x02]
-	mov [0x21], [0x01]
-	mov [0x27], [0x02]
+	video offset=CINEMATIC_208, x=[HERO_X], y=[HERO_Y]
+	mov [0x21], [HERO_X]
+	mov [0x27], [HERO_Y]
 	add [0x21], 0x001E
 	sub [0x27], 0x0016
 	call LABEL_3801
 	break
-	sub [0x01], 0x0002
-	video offset=CINEMATIC_209, x=[0x01], y=[0x02]
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0002
+	video offset=CINEMATIC_209, x=[HERO_X], y=[HERO_Y]
+	sub [HERO_X], 0x0001
 	jne [HERO_ACTION_POS_MASK], 0x84, LABEL_9A87
 	setup channel=0x17, address=LABEL_450B

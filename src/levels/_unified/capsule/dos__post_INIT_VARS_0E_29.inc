@@ -94,7 +94,7 @@ LABEL_04EC:
 
 LABEL_050D:
 	video offset=CINEMATIC_324, x=160, y=100
-	jg [0x01], 0x96, LABEL_0525
+	jg [HERO_X], 0x96, LABEL_0525
 	play id=0x005F, freq=0x0A, vol=0x40, channel=0x02
 	selectVideoPage 0x00
 	video offset=CINEMATIC_324, x=160, y=100
@@ -102,7 +102,7 @@ LABEL_050D:
 
 LABEL_0525:
 	break
-	jg [0x01], 0x0139, LABEL_050D
+	jg [HERO_X], 0x0139, LABEL_050D
 	video offset=CINEMATIC_325, x=160, y=100
 	break
 
@@ -115,7 +115,7 @@ LABEL_053A:
 
 LABEL_053B:
 	break
-	jg [0x01], 0x012C, LABEL_053B
+	jg [HERO_X], 0x012C, LABEL_053B
 	play id=0x0057, freq=0x14, vol=0x40, channel=0x02
 	mov [0xE6], 0x0001
 	video offset=CINEMATIC_519, x=160, y=100
@@ -138,7 +138,7 @@ LABEL_0579:
 	video offset=CINEMATIC_519, x=120, y=100
 	video offset=CINEMATIC_520, x=160, y=100
 	break
-	jg [0x01], 0x96, LABEL_0579
+	jg [HERO_X], 0x96, LABEL_0579
 	jl [0x68], 0x011D, LABEL_0579
 	mov [0xE6], 0x0000
 	video offset=CINEMATIC_519, x=160, y=100
@@ -149,7 +149,7 @@ LABEL_0579:
 
 LABEL_05A7:
 	break
-	jl [0x01], 0xBE, LABEL_05A7
+	jl [HERO_X], 0xBE, LABEL_05A7
 	mov [0x63], 0x0064
 	setup channel=0x14, address=INIT_VARS_63_01_02_03
 	killChannel

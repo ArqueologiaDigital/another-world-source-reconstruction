@@ -5,39 +5,39 @@ LABEL_866F:
 	call LABEL_5BDC
 	call LABEL_5B0D
 	call LABEL_7EC5
-	jl [0x01], 0x0150, LABEL_8693
+	jl [HERO_X], 0x0150, LABEL_8693
 	call LABEL_862B
 	call LABEL_8521
 	call LABEL_8514
 	mov [0x28], 0x0008
-	mov [0x01], 0x0008
+	mov [HERO_X], 0x0008
 	jmp LABEL_86E3
 
 LABEL_8693:
-	jg [0x01], 0xFFF0, LABEL_86AE
+	jg [HERO_X], 0xFFF0, LABEL_86AE
 	call LABEL_85D3
 	call LABEL_8521
 	call LABEL_8514
 	mov [0x28], 0x0140
-	mov [0x01], 0x0140
+	mov [HERO_X], 0x0140
 	jmp LABEL_86E3
 
 LABEL_86AE:
-	jl [0x02], 0xF9, LABEL_86C8
+	jl [HERO_Y], 0xF9, LABEL_86C8
 	call SET_VARHACK_VAR_67_TO_0064
 	call LABEL_8521
 	call LABEL_8514
 	mov [0x28], 0x0008
-	mov [0x02], 0xFFFD
+	mov [HERO_Y], 0xFFFD
 	jmp LABEL_86E3
 
 LABEL_86C8:
-	jg [0x02], 0xFFEC, LABEL_86E3
+	jg [HERO_Y], 0xFFEC, LABEL_86E3
 	call LABEL_85BF
 	call LABEL_8521
 	call LABEL_8514
 	mov [0x28], 0x0008
-	mov [0x02], 0x00C8
+	mov [HERO_Y], 0x00C8
 	jmp LABEL_86E3
 
 LABEL_86E3:
@@ -59,10 +59,10 @@ LABEL_8702:
 	db 0x06, 0x07, 0x87, 0x03, 0x11
 
 LABEL_870F:
-	mov [0x01], 0x0091
-	mov [0x02], 0x008F
+	mov [HERO_X], 0x0091
+	mov [HERO_Y], 0x008F
 	mov [0x0F], 0x0000
-	mov [0x28], [0x01]
+	mov [0x28], [HERO_X]
 	mov [0x04], 0x0020
 	mov [0x05], 0x0000
 	mov [0x06], 0x03DE

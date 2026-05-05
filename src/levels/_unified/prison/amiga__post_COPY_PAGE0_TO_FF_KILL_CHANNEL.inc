@@ -6,8 +6,8 @@ LABEL_7F92:
 	video offset=CINEMATIC_186, x=258, y=181
 
 LABEL_7FAA:
-	jl [0x01], 0xF0, LABEL_80A5
-	jg [0x01], 0x0104, LABEL_80A5
+	jl [HERO_X], 0xF0, LABEL_80A5
+	jg [HERO_X], 0x0104, LABEL_80A5
 	jge [0x04], 0x20, LABEL_80A5
 	break
 	break

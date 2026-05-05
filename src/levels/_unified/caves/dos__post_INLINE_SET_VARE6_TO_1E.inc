@@ -297,8 +297,8 @@ LABEL_2146:
 
 LABEL_21EA:
 	setPalette 0x11
-	jl [0x01], 0xAE, LABEL_21FC
-	jg [0x01], 0xE1, LABEL_21FC
+	jl [HERO_X], 0xAE, LABEL_21FC
+	jg [HERO_X], 0xE1, LABEL_21FC
 	setPalette 0x09
 
 LABEL_21FC:

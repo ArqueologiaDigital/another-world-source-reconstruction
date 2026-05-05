@@ -26,9 +26,9 @@ DISPATCH_TO_HERO_ACTION_LEFT:
 	killChannel
 
 HERO_LEAP_LEFT_PRELUDE:
-	sub [0x01], 0x0004
-	video offset=CINEMATIC_HERO_LIFTOFF, x=[0x01], y=[0x02], zoom=[0x03]
-	add [0x01], 0x0001
+	sub [HERO_X], 0x0004
+	video offset=CINEMATIC_HERO_LIFTOFF, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
+	add [HERO_X], 0x0001
 	je [HERO_POS_MASK], 0x00, DISPATCH_TO_HERO_ACTION_LEFT
 	break
 
@@ -36,7 +36,7 @@ HERO_STAND_L_IDLE_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_CV_000_001_002_AND_CIN_002
 ;@elif BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_HERO_STANDING_LEFT_IDLE, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_STANDING_LEFT_IDLE, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif
 	je [HERO_POS_MASK], 0x00, DISPATCH_TO_HERO_ACTION_LEFT
 	break
@@ -48,52 +48,52 @@ HERO_LEAP_LEFT_LOOP:
 ;@elif BRANCH == "chahi_amiga_1991"
 	setup channel=0x15, address=WAIT_RUN_LEFT_THEN_DECEL
 ;@endif
-	sub [0x01], 0x0004
+	sub [HERO_X], 0x0004
 
 HERO_LEAP_LEFT_F0_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_SHADOW_2NDSCR_108
 ;@elif BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_HERO_LEAP_LEFT_0, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LEAP_LEFT_0, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif
-	mov [0x29], [0x01]
-	sub [0x01], 0x0006
+	mov [0x29], [HERO_X]
+	sub [HERO_X], 0x0006
 	play id=0x0051, freq=0x0F, vol=0x28, channel=0x01
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_SHADOW_BUNDLE_109_110
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_RUN_LEFT_ENTRY_WITH_PREP
 ;@elif BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_HERO_LEAP_LEFT_1, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LEAP_LEFT_1, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_RUN_LEFT_ENTRY_WITH_PREP
 ;@endif
-	sub [0x01], 0x0008
+	sub [HERO_X], 0x0008
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_SHADOW_BUNDLE_111_112
 ;@elif BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_HERO_LEAP_LEFT_2, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LEAP_LEFT_2, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif
-	sub [0x01], 0x0008
+	sub [HERO_X], 0x0008
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_SHADOW_BUNDLE_113_114
 ;@elif BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_HERO_LEAP_LEFT_3, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LEAP_LEFT_3, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif
-	mov [0x29], [0x01]
-	sub [0x01], 0x0008
-	add [0x02], 0x0000
+	mov [0x29], [HERO_X]
+	sub [HERO_X], 0x0008
+	add [HERO_Y], 0x0000
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_SHADOW_115
 ;@elif BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_HERO_LEAP_LEFT_4, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LEAP_LEFT_4, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif
-	mov [0x29], [0x01]
-	add [0x02], 0x0000
+	mov [0x29], [HERO_X]
+	add [HERO_Y], 0x0000
 	je [HERO_POS_MASK], 0x00, DISPATCH_TO_HERO_ACTION_LEFT
-	sub [0x01], 0x000A
+	sub [HERO_X], 0x000A
 	break
 
 HERO_LEAP_LEFT_F5_LOOP:
@@ -101,46 +101,46 @@ HERO_LEAP_LEFT_F5_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_SHADOW_BUNDLE_097_098
 ;@elif BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_HERO_LEAP_LEFT_5, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LEAP_LEFT_5, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif
-	mov [0x29], [0x01]
-	sub [0x01], 0x0006
+	mov [0x29], [HERO_X]
+	sub [HERO_X], 0x0006
 	play id=0x0051, freq=0x0A, vol=0x28, channel=0x01
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_SHADOW_BUNDLE_099_100
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_RUN_LEFT_ENTRY_WITH_PREP
 ;@elif BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_HERO_LEAP_LEFT_6, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LEAP_LEFT_6, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_RUN_LEFT_ENTRY_WITH_PREP
 ;@endif
-	sub [0x01], 0x0008
+	sub [HERO_X], 0x0008
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_SHADOW_BUNDLE_101_102
 ;@elif BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_HERO_LEAP_LEFT_7, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LEAP_LEFT_7, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif
-	sub [0x01], 0x0008
+	sub [HERO_X], 0x0008
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_SHADOW_BUNDLE_103_104
 ;@elif BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_HERO_LEAP_LEFT_8, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LEAP_LEFT_8, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif
-	mov [0x29], [0x01]
-	sub [0x01], 0x0008
-	add [0x02], 0x0000
+	mov [0x29], [HERO_X]
+	sub [HERO_X], 0x0008
+	add [HERO_Y], 0x0000
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_SHADOW_BUNDLE_105_106
 ;@elif BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_HERO_LEAP_LEFT_9, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LEAP_LEFT_9, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif
-	mov [0x29], [0x01]
-	add [0x02], 0x0000
+	mov [0x29], [HERO_X]
+	add [HERO_Y], 0x0000
 	je [HERO_POS_MASK], 0x00, DISPATCH_TO_HERO_ACTION_LEFT
-	sub [0x01], 0x000A
+	sub [HERO_X], 0x000A
 	break
 	jmp HERO_LEAP_LEFT_F0_LOOP
 	killChannel
@@ -148,17 +148,17 @@ HERO_LEAP_LEFT_F5_LOOP:
 WAIT_RUN_RIGHT_THEN_DECEL:
 	break
 	je [0x63], 0x06, WAIT_RUN_RIGHT_THEN_DECEL
-	add [0x01], 0x0003
+	add [HERO_X], 0x0003
 	break
-	add [0x01], 0x0002
+	add [HERO_X], 0x0002
 	break
-	add [0x01], 0x0002
+	add [HERO_X], 0x0002
 	break
-	add [0x01], 0x0001
+	add [HERO_X], 0x0001
 	break
-	add [0x01], 0x0001
+	add [HERO_X], 0x0001
 	break
-	add [0x01], 0x0001
+	add [HERO_X], 0x0001
 	killChannel
 
 DISPATCH_TO_HERO_ACTION_RIGHT:
@@ -173,8 +173,8 @@ DISPATCH_TO_HERO_ACTION_RIGHT:
 	killChannel
 
 HERO_LEAP_RIGHT_PRELUDE:
-	video offset=CINEMATIC_HERO_LIFTOFF, x=[0x01], y=[0x02], zoom=[0x03]
-	add [0x01], 0x0003
+	video offset=CINEMATIC_HERO_LIFTOFF, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
+	add [HERO_X], 0x0003
 	je [HERO_POS_MASK], 0x00, DISPATCH_TO_HERO_ACTION_RIGHT
 	break
 
@@ -182,7 +182,7 @@ MAYBE_LESTER_FRAME_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_LESTER_FRAME_BUNDLE
 ;@elif BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_LESTER_FRAME, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_LESTER_FRAME, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif
 	je [HERO_POS_MASK], 0x00, DISPATCH_TO_HERO_ACTION_RIGHT
 	break

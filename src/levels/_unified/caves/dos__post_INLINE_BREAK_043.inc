@@ -7,10 +7,10 @@ LABEL_F36D:
 
 LABEL_F36E:
 	mov [0x2A], 0x0020
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
 	call LABEL_7EBC
-	add [0x01], 0x0003
-	video type=0, offset=COMMON_VIDEO_336, x=[0x01], y=[0x02], zoom=0x40
+	add [HERO_X], 0x0003
+	video type=0, offset=COMMON_VIDEO_336, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	call LABEL_9CE9
 
@@ -21,8 +21,8 @@ LABEL_F386:
 	call LABEL_9CFB
 	je [HERO_ACTION_POS_MASK], 0x04, LABEL_F386
 	break
-	sub [0x01], 0x0002
-	video type=0, offset=COMMON_VIDEO_339, x=[0x01], y=[0x02], zoom=0x40
+	sub [HERO_X], 0x0002
+	video type=0, offset=COMMON_VIDEO_339, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x63], 0x0001
 	mov [0x0A], 0x0003
 	jmp HERO_WALK_LEFT_LOOP
@@ -34,5 +34,5 @@ LABEL_F3B2:
 	call SET_VAR04_TO_0000
 	jne [0x0A], 0x00, LABEL_F36E
 	jne [HACK_VAR_67], 0x6D, STEP_DRAW_CV336_THEN_CV340
-	jl [0x01], 0x5A, STEP_DRAW_CV336_THEN_CV340
-	jl [0x01], 0x82, LABEL_1841
+	jl [HERO_X], 0x5A, STEP_DRAW_CV336_THEN_CV340
+	jl [HERO_X], 0x82, LABEL_1841

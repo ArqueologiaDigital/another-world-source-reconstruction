@@ -150,7 +150,7 @@ LABEL_1296:
 
 LABEL_12CF:
 	break
-	jl [0x01], 0xB4, LABEL_12CF
+	jl [HERO_X], 0xB4, LABEL_12CF
 	or [0x74], 0x4000
 	setPalette 0x09
 	killChannel

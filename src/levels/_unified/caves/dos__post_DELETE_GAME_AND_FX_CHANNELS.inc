@@ -5,16 +5,16 @@ LABEL_D9F8:
 
 LABEL_DA00:
 	mov [0x23], 0x0001
-	jl [0x02], [0x41], LABEL_DA0E
+	jl [HERO_Y], [0x41], LABEL_DA0E
 	mov [0x23], 0x0000
 
 LABEL_DA0E:
 	ret
 
 LABEL_DA0F:
-	mov [0x02], [0x40]
+	mov [HERO_Y], [0x40]
 	je [0x23], 0x00, LABEL_DA1B
-	mov [0x02], [0x44]
+	mov [HERO_Y], [0x44]
 
 LABEL_DA1B:
 	ret
@@ -23,14 +23,14 @@ LABEL_DA1C:
 	je [HACK_VAR_67], 0xCC, LABEL_DA3A
 	je [HACK_VAR_67], 0xC8, LABEL_DA3A
 	je [HACK_VAR_67], 0x6B, LABEL_DA3A
-	mov [0x02], [0x40]
+	mov [HERO_Y], [0x40]
 	je [0x23], 0x00, LABEL_DA3A
-	mov [0x02], [0x44]
+	mov [HERO_Y], [0x44]
 
 LABEL_DA3A:
 	call LABEL_7CDA
-	jl [0x02], [0x22], SHARED_RET
-	mov [0x02], [0x22]
+	jl [HERO_Y], [0x22], SHARED_RET
+	mov [HERO_Y], [0x22]
 	ret
 
 LABEL_DA47:

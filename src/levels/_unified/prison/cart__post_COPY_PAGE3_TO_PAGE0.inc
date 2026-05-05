@@ -147,7 +147,7 @@ LABEL_852D:
 
 LABEL_852E:
 	mov [0x78], 0x0008
-	mov [0x79], [0x02]
+	mov [0x79], [HERO_Y]
 	mov [0x7A], [HACK_VAR_67]
 	mov [0x7B], 0x3000
 	mov [0x7C], 0x0038
@@ -161,8 +161,8 @@ LABEL_854D:
 	jne [0xB2], 0x00, LABEL_854D
 	jg [0x06], 0x00, LABEL_854D
 	jne [HACK_VAR_67], 0x05, LABEL_854D
-	jl [0x01], 0x14, LABEL_854D
-	jg [0x01], 0x64, LABEL_854D
+	jl [HERO_X], 0x14, LABEL_854D
+	jg [HERO_X], 0x64, LABEL_854D
 	call LABEL_852E
 
 LABEL_856F:

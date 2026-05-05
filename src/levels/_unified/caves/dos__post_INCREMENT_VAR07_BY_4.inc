@@ -63,7 +63,7 @@ LABEL_4A37:
 	mov [0xF8], [0xF1]
 	add [0xF8], 0x0001
 	jg [HACK_VAR_67], [0xF8], LABEL_4A67
-	jl [0x02], 0x64, LABEL_4A73
+	jl [HERO_Y], 0x64, LABEL_4A73
 	mov [0x22], 0x0092
 	call LABEL_4985
 	je [0xF1], 0x94, LABEL_4A67
@@ -201,136 +201,136 @@ LABEL_4B9D:
 	db 0x11
 
 LABEL_4B9E:
-	add [0x01], 0x0003
-	video offset=CINEMATIC_124, x=[0x01], y=[0x02]
-	add [0x01], 0x0002
+	add [HERO_X], 0x0003
+	video offset=CINEMATIC_124, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0002
 	break
-	video offset=CINEMATIC_125, x=[0x01], y=[0x02]
-	add [0x01], 0x0001
+	video offset=CINEMATIC_125, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0001
 	break
-	video offset=CINEMATIC_126, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_126, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_125, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_125, x=[HERO_X], y=[HERO_Y]
 	jmp DRAW_CIN_98_99_BLOCK
 LABEL_4BC4:
 	db 0x11
 
 LABEL_4BC5:
-	sub [0x01], 0x0003
-	video offset=CINEMATIC_094, x=[0x01], y=[0x02]
-	sub [0x01], 0x0002
+	sub [HERO_X], 0x0003
+	video offset=CINEMATIC_094, x=[HERO_X], y=[HERO_Y]
+	sub [HERO_X], 0x0002
 	break
-	video offset=CINEMATIC_095, x=[0x01], y=[0x02]
-	sub [0x01], 0x0001
+	video offset=CINEMATIC_095, x=[HERO_X], y=[HERO_Y]
+	sub [HERO_X], 0x0001
 	mov [0x03], 0x0003
 
 LABEL_4BE0:
 	break
-	video offset=CINEMATIC_096, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_096, x=[HERO_X], y=[HERO_Y]
 	djnz [0x03], LABEL_4BE0
 	setup channel=0x15, address=DRAW_CIN_110_BLOCK
 	mov [0x03], 0x0003
 
 LABEL_4BF2:
 	break
-	video offset=CINEMATIC_097, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_097, x=[HERO_X], y=[HERO_Y]
 	djnz [0x03], LABEL_4BF2
 	jmp DRAW_CIN_98_99_BLOCK
 LABEL_4BFF:
 	db 0x11
 
 DRAW_CIN_110_BLOCK:
-	video offset=CINEMATIC_110, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_110, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_111, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_111, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_112, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_112, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_113, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_113, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_114, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_114, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_115, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_115, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_116, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_116, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_117, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_117, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_118, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_118, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_119, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_119, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_120, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_120, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_121, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_121, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_122, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_122, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_123, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_123, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_122, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_122, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_122, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_122, x=[HERO_X], y=[HERO_Y]
 
 LABEL_4C5F:
 	break
-	video offset=CINEMATIC_121, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_121, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_4C5F
 LABEL_4C68:
 	db 0x11
 
 LABEL_4C69:
-	video offset=CINEMATIC_127, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_127, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_128, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_128, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_129, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_129, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_128, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_128, x=[HERO_X], y=[HERO_Y]
 	jmp DRAW_CIN_98_99_BLOCK
 LABEL_4C83:
 	db 0x11
 
 LABEL_4C84:
-	video offset=CINEMATIC_107, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_107, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_108, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_108, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_109, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_109, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_108, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_108, x=[HERO_X], y=[HERO_Y]
 
 DRAW_CIN_98_99_BLOCK:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_098, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_098, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0xFF
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x01
 	break
-	video offset=CINEMATIC_099, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_099, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_100, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_100, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_101, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_101, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_102, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_102, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_103, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_103, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_104, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_104, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_105, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_105, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_106, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_106, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0xFF
 	killChannel
-	video offset=CINEMATIC_107, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_107, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_108, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_108, x=[HERO_X], y=[HERO_Y]
 
 LABEL_4CEC:
 	break
-	video offset=CINEMATIC_109, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_109, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_4CEC
 	killChannel
 	video offset=CINEMATIC_091, x=[0x07], y=[0x08]

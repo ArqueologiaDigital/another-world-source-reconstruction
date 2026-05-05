@@ -45,32 +45,32 @@ SCHED_LAKE_DECOR_099_BACK:
 
 LOOP_DRAW_LAKE_096_DECOR_AT_72_171:
 	video offset=CINEMATIC_VINE_DECOR_0, x=160, y=100
-	mov [0x01], 0x0048
-	mov [0x02], 0x00AB
+	mov [HERO_X], 0x0048
+	mov [HERO_Y], 0x00AB
 	break
 	jmp LOOP_DRAW_LAKE_096_DECOR_AT_72_171
 	killChannel
 
 LOOP_DRAW_LAKE_097_DECOR_AT_71_171:
 	video offset=CINEMATIC_VINE_DECOR_1, x=160, y=100
-	mov [0x01], 0x0047
-	mov [0x02], 0x00AB
+	mov [HERO_X], 0x0047
+	mov [HERO_Y], 0x00AB
 	break
 	jmp LOOP_DRAW_LAKE_097_DECOR_AT_71_171
 	killChannel
 
 LOOP_DRAW_LAKE_098_DECOR_AT_70_172:
 	video offset=CINEMATIC_VINE_DECOR_2, x=160, y=100
-	mov [0x01], 0x0046
-	mov [0x02], 0x00AC
+	mov [HERO_X], 0x0046
+	mov [HERO_Y], 0x00AC
 	break
 	jmp LOOP_DRAW_LAKE_098_DECOR_AT_70_172
 	killChannel
 
 LOOP_DRAW_LAKE_099_DECOR_AT_69_172:
 	video offset=CINEMATIC_VINE_DECOR_3, x=160, y=100
-	mov [0x01], 0x0045
-	mov [0x02], 0x00AC
+	mov [HERO_X], 0x0045
+	mov [HERO_Y], 0x00AC
 	break
 	jmp LOOP_DRAW_LAKE_099_DECOR_AT_69_172
 	killChannel

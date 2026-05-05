@@ -1,7 +1,7 @@
 STEP_DRAW_CIN555_LEFT4_RIGHT1:
-	sub [0x01], 0x0004
-	video offset=CINEMATIC_555, x=[0x01], y=[0x02]
-	add [0x01], 0x0001
+	sub [HERO_X], 0x0004
+	video offset=CINEMATIC_555, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0001
 	break
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -13,9 +13,9 @@ STEP_DRAW_CIN555_LEFT4_RIGHT1:
 ;@endif
 
 DRAW_CIN555_STEP_RIGHT3:
-	add [0x01], 0x0000
-	video offset=CINEMATIC_555, x=[0x01], y=[0x02]
-	add [0x01], 0x0003
+	add [HERO_X], 0x0000
+	video offset=CINEMATIC_555, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0003
 	break
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -48,12 +48,12 @@ INLINE_BREAK_035:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_187_TO_222_2F_AT_8E66E193:
-	sub [0x01], 0x0004
-	video offset=CINEMATIC_187, x=[0x01], y=[0x02]
+	sub [HERO_X], 0x0004
+	video offset=CINEMATIC_187, x=[HERO_X], y=[HERO_Y]
 	break
-	add [0x01], 0x0001
-	video offset=CINEMATIC_222, x=[0x01], y=[0x02]
-	add [0x01], 0x0001
+	add [HERO_X], 0x0001
+	video offset=CINEMATIC_222, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0001
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -64,12 +64,12 @@ DRAW_CIN_187_TO_222_2F_AT_8E66E193:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_212_TO_213_2F_AT_6B0D0A47:
-	add [0x01], 0x0004
-	video offset=CINEMATIC_212, x=[0x01], y=[0x02]
+	add [HERO_X], 0x0004
+	video offset=CINEMATIC_212, x=[HERO_X], y=[HERO_Y]
 	break
-	sub [0x01], 0x0001
-	video offset=CINEMATIC_213, x=[0x01], y=[0x02]
-	sub [0x01], 0x0001
+	sub [HERO_X], 0x0001
+	video offset=CINEMATIC_213, x=[HERO_X], y=[HERO_Y]
+	sub [HERO_X], 0x0001
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"

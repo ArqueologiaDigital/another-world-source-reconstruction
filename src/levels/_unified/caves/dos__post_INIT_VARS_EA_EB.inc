@@ -35,15 +35,15 @@ LABEL_3473:
 	jg [0x06], 0x03DE, LABEL_3473
 	jne [0x04], 0x20, LABEL_3473
 	je [HACK_VAR_67], 0x4F, LABEL_3490
-	jg [0x01], 0x67, LABEL_3473
+	jg [HERO_X], 0x67, LABEL_3473
 	jmp LABEL_349C
 
 LABEL_3490:
-	jg [0x01], 0x6E, LABEL_3473
-	jg [0x02], 0x64, LABEL_3473
+	jg [HERO_X], 0x6E, LABEL_3473
+	jg [HERO_Y], 0x64, LABEL_3473
 
 LABEL_349C:
-	mov [0x01], 0x0069
+	mov [HERO_X], 0x0069
 	mov [0x06], 0x03E8
 	setPalette 0x05
 	deleteChannels first=0x14, last=0x16
@@ -54,7 +54,7 @@ LABEL_349C:
 	jne [HACK_VAR_67], 0x4F, LABEL_3473
 	mov [0xED], 0x00A7
 	mov [0xEE], 0x000A
-	mov [0x01], 0x0070
+	mov [HERO_X], 0x0070
 	jmp LABEL_3473
 LABEL_34D0:
 	db 0x11

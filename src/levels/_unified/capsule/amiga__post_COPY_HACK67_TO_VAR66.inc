@@ -14,5 +14,5 @@ LABEL_859C:
 LABEL_85BF:
 	jne [HACK_VAR_67], 0x69, SUB_HACK67_BY_20
 	mov [HACK_VAR_67], 0x0049
-	mov [0x01], 0x00AA
+	mov [HERO_X], 0x00AA
 	ret

@@ -24,9 +24,9 @@ LABEL_7660:
 	ret
 
 LABEL_7661:
-	jl [0x01], 0x1B, LABEL_767F
+	jl [HERO_X], 0x1B, LABEL_767F
 	add [0x21], 0x0001
-	jl [0x01], 0x24, LABEL_7675
+	jl [HERO_X], 0x24, LABEL_7675
 	add [0x21], 0x0001
 
 LABEL_7675:

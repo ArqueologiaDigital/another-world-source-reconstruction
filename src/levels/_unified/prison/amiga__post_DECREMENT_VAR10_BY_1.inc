@@ -1,30 +1,30 @@
 LABEL_871B:
 	call LABEL_47BD
 	call LABEL_7E8A
-	jl [0x01], 0x0150, LABEL_8740
+	jl [HERO_X], 0x0150, LABEL_8740
 	add [HACK_VAR_67], 0x0001
 	call LABEL_85F5
 	call LABEL_85E8
 	mov [0x28], 0x0008
-	mov [0x01], 0x0008
+	mov [HERO_X], 0x0008
 	call LABEL_86A9
 	jmp LABEL_876C
 
 LABEL_8740:
-	jg [0x01], 0xFFF0, LABEL_875F
+	jg [HERO_X], 0xFFF0, LABEL_875F
 	sub [HACK_VAR_67], 0x0001
 	call LABEL_85F5
 	call LABEL_85E8
 	mov [0x28], 0x0140
-	mov [0x01], 0x0140
+	mov [HERO_X], 0x0140
 	call LABEL_86A9
 	jmp LABEL_876C
 
 LABEL_875F:
-	jl [0x02], 0xDC, LABEL_8765
+	jl [HERO_Y], 0xDC, LABEL_8765
 
 LABEL_8765:
-	jg [0x02], 0xFFEC, LABEL_876C
+	jg [HERO_Y], 0xFFEC, LABEL_876C
 
 LABEL_876C:
 	break

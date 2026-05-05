@@ -12,10 +12,10 @@ LABEL_012C:
 	load id=0x005D
 	load id=0x0060
 	ret
-	mov [0x01], 0x03E8
+	mov [HERO_X], 0x03E8
 
 LABEL_0161:
 	video offset=CINEMATIC_907, x=160, y=100
-	djnz [0x01], LABEL_0161
+	djnz [HERO_X], LABEL_0161
 	break
 	setPalette 0x0C

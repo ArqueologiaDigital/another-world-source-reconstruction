@@ -7,7 +7,7 @@ LABEL_2A12:
 
 LABEL_2A1F:
 	break
-	jg [0x01], 0x78, LABEL_2A1F
+	jg [HERO_X], 0x78, LABEL_2A1F
 	call LABEL_53FF
 	je [0x21], 0x00, LABEL_2A1F
 	mov [0x9C], 0x0320
@@ -16,7 +16,7 @@ LABEL_2A1F:
 
 LABEL_2A38:
 	break
-	jg [0x01], 0x64, LABEL_2A38
+	jg [HERO_X], 0x64, LABEL_2A38
 	jl [0x7B], 0x4000, LABEL_2A38
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	mov [0x21], 0xFFE2
@@ -445,8 +445,8 @@ LABEL_2EBF:
 
 LABEL_2F5D:
 	setPalette 0x11
-	jl [0x01], 0xAE, LABEL_2F6F
-	jg [0x01], 0xE1, LABEL_2F6F
+	jl [HERO_X], 0xAE, LABEL_2F6F
+	jg [HERO_X], 0xE1, LABEL_2F6F
 	setPalette 0x09
 
 LABEL_2F6F:
@@ -456,18 +456,18 @@ LABEL_2F6F:
 
 LABEL_2F74:
 	break
-	jl [0x01], 0x7A, LABEL_2F74
-	jg [0x01], 0xA1, LABEL_2F74
-	jl [0x02], 0x96, LABEL_2F74
-	jg [0x02], 0xCE, LABEL_2F74
-	mov [0x02], 0x00B4
+	jl [HERO_X], 0x7A, LABEL_2F74
+	jg [HERO_X], 0xA1, LABEL_2F74
+	jl [HERO_Y], 0x96, LABEL_2F74
+	jg [HERO_Y], 0xCE, LABEL_2F74
+	mov [HERO_Y], 0x00B4
 	jmp INCREMENT_VAR31
 	killChannel
 
 LABEL_2F95:
 	break
-	jl [0x02], 0x46, LABEL_2F95
-	mov [0x02], 0x006E
+	jl [HERO_Y], 0x46, LABEL_2F95
+	mov [HERO_Y], 0x006E
 	jmp INCREMENT_VAR31
 LABEL_2FA3:
 	db 0x11

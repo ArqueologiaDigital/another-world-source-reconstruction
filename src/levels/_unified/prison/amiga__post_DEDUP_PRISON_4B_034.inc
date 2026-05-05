@@ -12,7 +12,7 @@ LABEL_7AC0:
 	call LABEL_78E3
 	add [0x22], 0x0032
 	djnz [0x2B], LABEL_7AC0
-	video offset=CINEMATIC_102, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_102, x=[HERO_X], y=[HERO_Y]
 	video offset=CINEMATIC_103, x=160, y=129
 	ret
 

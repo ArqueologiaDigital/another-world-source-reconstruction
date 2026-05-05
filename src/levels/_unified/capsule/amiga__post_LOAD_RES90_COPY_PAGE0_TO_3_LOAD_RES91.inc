@@ -172,8 +172,8 @@ LABEL_80F2:
 	call LABEL_7F22
 	call LABEL_84E8
 	setup channel=0x16, address=LABEL_0826
-	mov [0x01], 0x00A0
-	mov [0x02], 0x009D
+	mov [HERO_X], 0x00A0
+	mov [HERO_Y], 0x009D
 	mov [0x2A], 0x000F
 	setup channel=0x14, address=SET_VAR01_TO_6E_KILL_CHANNEL
 	jmp VAR66_MOD_32_DRAW_DISPATCH

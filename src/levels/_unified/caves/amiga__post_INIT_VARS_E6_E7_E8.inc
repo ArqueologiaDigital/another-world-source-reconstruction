@@ -9,7 +9,7 @@ LABEL_065C:
 LABEL_0676:
 	djnz [0xE6], LABEL_065C
 	jge [0x04], 0x4000, KILL_CHAN_AT_0161
-	mov [0x02], 0xFFB0
+	mov [HERO_Y], 0xFFB0
 	killChannel
 
 LABEL_0686:

@@ -130,10 +130,10 @@ HERO_AI_TICK_WAIT_LOOP:
 	jmp HERO_AI_DISPATCH
 	killChannel
 	break
-	add [0x01], 0x0002
+	add [HERO_X], 0x0002
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_VIDEO_064_065_AND_CINEMATIC_HERO_SHADOW_RET
 ;@elif BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_HERO_FALL_LEFT_2, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_FALL_LEFT_2, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif
 

@@ -16,22 +16,22 @@ LABEL_7D4A:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, LABEL_7D70
-	jl [0x02], [0x22], SHARED_RET
+	jl [HERO_Y], [0x22], SHARED_RET
 	jmp LABEL_7DB4
 
 LABEL_7D70:
 	mov [0xF8], [0x22]
-	sub [0xF8], [0x02]
+	sub [0xF8], [HERO_Y]
 	call LABEL_7DF5
 	jl [0xF8], 0x10, LABEL_7DB4
 	jg [0x63], 0x02, LABEL_7DA6
 	jne [HERO_POS_LEFT_RIGHT], 0x00, LABEL_7DA6
 	call INIT_VAR2B_2C_FROM_VAR01_VAR29_10
-	mov [0x21], [0x01]
+	mov [0x21], [HERO_X]
 	mov [0x22], [0x2B]
 	call LABEL_5FA5
 	jg [0x26], 0x0A, LABEL_7DA6
-	mov [0x01], [0x2B]
+	mov [HERO_X], [0x2B]
 	call LABEL_7C51
 	jmp LABEL_7DB4
 
@@ -42,7 +42,7 @@ LABEL_7DA6:
 	ret
 
 LABEL_7DB4:
-	mov [0x02], [0x22]
+	mov [HERO_Y], [0x22]
 	mov [0xF8], [0x23]
 	and [0xF8], 0x0010
 	je [0xF8], 0x00, SHARED_RET

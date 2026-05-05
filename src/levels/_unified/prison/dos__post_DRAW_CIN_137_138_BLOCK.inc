@@ -1,6 +1,6 @@
 LABEL_101E:
 	break
-	video offset=CINEMATIC_148, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_148, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_101E
 	killChannel
 	video offset=CINEMATIC_376, x=[0x07], y=[0x08]

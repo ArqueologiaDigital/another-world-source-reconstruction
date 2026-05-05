@@ -1,7 +1,7 @@
 LABEL_0C8B:
 	break
 	call LABEL_5F0A
-	jg [0x02], 0x48, LABEL_0C8B
+	jg [HERO_Y], 0x48, LABEL_0C8B
 	je [0x21], 0x00, LABEL_0C8B
 	or [0xB1], 0x0040
 	mov [0x71], 0xFFFF

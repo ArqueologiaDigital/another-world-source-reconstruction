@@ -71,5 +71,5 @@ LABEL_4171:
 
 LABEL_4172:
 	mov [HACK_VAR_67], 0x0045
-	mov [0x01], 0x0046
+	mov [HERO_X], 0x0046
 	ret

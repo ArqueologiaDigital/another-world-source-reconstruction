@@ -400,349 +400,349 @@ LABEL_9A60:
 	ret
 
 LABEL_9A61:
-	video type=0, offset=COMMON_VIDEO_330, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_330, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_149
 	ret
 
 DRAW_CIN_149:
-	video offset=CINEMATIC_149, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_149, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_9A73:
-	video type=0, offset=COMMON_VIDEO_331, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_331, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_150
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_332, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_332, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 DRAW_CIN_150:
-	video offset=CINEMATIC_150, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_150, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_9A9D:
-	video type=0, offset=COMMON_VIDEO_333, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_333, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_151
 	ret
 
 DRAW_CIN_151:
-	video offset=CINEMATIC_151, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_151, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_9AAF:
-	video type=0, offset=COMMON_VIDEO_348, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_348, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_175
 	ret
 
 DRAW_CIN_175:
-	video offset=CINEMATIC_175, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_175, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_9AC1:
-	video offset=CINEMATIC_176, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_176, x=[HERO_X], y=[HERO_Y]
 	je [0xBE], 0x03, DRAW_CIN_177
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_349, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_349, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 DRAW_CIN_177:
-	video offset=CINEMATIC_177, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_177, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_9AEB:
-	video type=0, offset=COMMON_VIDEO_350, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_350, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_178
 	ret
 
 DRAW_CIN_178:
-	video offset=CINEMATIC_178, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_178, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_9AFD:
 	jne [0x05], 0x00, LABEL_9B09
-	video type=0, offset=COMMON_VIDEO_015, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_015, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9B09:
 	jne [0x05], 0x01, LABEL_9B15
-	video type=0, offset=COMMON_VIDEO_345, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_345, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9B15:
 	jne [0x05], 0x02, LABEL_9B21
-	video type=0, offset=COMMON_VIDEO_344, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_344, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9B21:
 	jne [0x05], 0x03, LABEL_9B2D
-	video type=0, offset=COMMON_VIDEO_343, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_343, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9B2D:
 	ret
 
 LABEL_9B2E:
-	video type=0, offset=COMMON_VIDEO_036, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_036, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=COMMON_VIDEO_037, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_037, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 GUARDED_DRAW_CV_159:
 	call LABEL_9A2B
 	jne [0x0A], 0x01, LABEL_9B66
-	video type=0, offset=COMMON_VIDEO_159, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_159, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0002
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_160, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_160, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9B66:
 	jne [0x0A], 0x02, LABEL_9B8A
-	video type=0, offset=COMMON_VIDEO_157, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_157, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_158, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_158, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9B8A:
 	jne [0x0A], 0x03, LABEL_9BAE
-	video type=0, offset=COMMON_VIDEO_155, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_155, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_156, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_156, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9BAE:
-	video type=0, offset=COMMON_VIDEO_153, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_153, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_148
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_154, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_154, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 DRAW_CIN_148:
-	video offset=CINEMATIC_148, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_148, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_9BD8:
-	video type=0, offset=COMMON_VIDEO_038, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_038, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=COMMON_VIDEO_039, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_039, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9BE9:
-	video type=0, offset=COMMON_VIDEO_040, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_040, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=COMMON_VIDEO_041, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_041, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9BFA:
-	video type=0, offset=COMMON_VIDEO_042, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_042, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=COMMON_VIDEO_043, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_043, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9C0B:
-	video type=0, offset=COMMON_VIDEO_044, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_044, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0B, vol=0x22, channel=0x01
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=COMMON_VIDEO_045, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_045, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9C22:
-	video type=0, offset=COMMON_VIDEO_046, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_046, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=COMMON_VIDEO_047, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_047, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9C33:
 	call LABEL_9AFD
-	video type=0, offset=COMMON_VIDEO_016, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_016, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=COMMON_VIDEO_017, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_017, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9C47:
-	video type=0, offset=COMMON_VIDEO_018, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_018, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=COMMON_VIDEO_019, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_019, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9C58:
-	video type=0, offset=COMMON_VIDEO_020, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_020, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=COMMON_VIDEO_021, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_021, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9C69:
-	video type=0, offset=COMMON_VIDEO_022, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_022, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=COMMON_VIDEO_023, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_023, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9C7A:
-	video type=0, offset=COMMON_VIDEO_024, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_024, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=COMMON_VIDEO_025, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_025, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9C8B:
-	video type=0, offset=COMMON_VIDEO_026, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_026, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=COMMON_VIDEO_027, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_027, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9C9C:
-	video type=0, offset=COMMON_VIDEO_028, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_028, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x14, vol=0x22, channel=0x01
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=COMMON_VIDEO_029, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_029, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9CB3:
-	video type=0, offset=COMMON_VIDEO_030, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_030, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=COMMON_VIDEO_031, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_031, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9CC4:
 	call LABEL_9AFD
-	video type=0, offset=COMMON_VIDEO_032, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_032, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=COMMON_VIDEO_033, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_033, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9CD8:
-	video type=0, offset=COMMON_VIDEO_034, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_034, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=COMMON_VIDEO_035, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_035, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9CE9:
-	video type=0, offset=COMMON_VIDEO_337, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_337, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_162
 	ret
 
 DRAW_CIN_162:
-	video offset=CINEMATIC_162, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_162, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_9CFB:
-	video type=0, offset=COMMON_VIDEO_131, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_131, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_163
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_132, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_132, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 DRAW_CIN_163:
-	video offset=CINEMATIC_163, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_163, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_9D25:
-	video type=0, offset=COMMON_VIDEO_338, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_338, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_164
 	ret
 
 DRAW_CIN_164:
-	video offset=CINEMATIC_164, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_164, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_9D37:
-	video type=0, offset=COMMON_VIDEO_346, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_346, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_171
 	ret
 
 DRAW_CIN_171:
-	video offset=CINEMATIC_171, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_171, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_9D49:
-	video type=0, offset=COMMON_VIDEO_293, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_293, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_172
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_294, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_294, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 DRAW_CIN_172:
-	video offset=CINEMATIC_172, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_172, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_9D73:
-	video type=0, offset=COMMON_VIDEO_347, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_347, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_173
 	ret
 
 DRAW_CIN_173:
-	video offset=CINEMATIC_173, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_173, x=[HERO_X], y=[HERO_Y]
 	ret
 
 GUARDED_DRAW_CV_126:
 	call LABEL_9A2B
 	jne [0x0A], 0x01, LABEL_9D94
-	video type=0, offset=COMMON_VIDEO_126, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_126, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9D94:
 	jne [0x0A], 0x02, LABEL_9DA0
-	video type=0, offset=COMMON_VIDEO_125, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_125, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9DA0:
 	jne [0x0A], 0x03, LABEL_9DAC
-	video type=0, offset=COMMON_VIDEO_124, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_124, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9DAC:
-	video type=0, offset=COMMON_VIDEO_122, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_122, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_165
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_123, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_123, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 DRAW_CIN_165:
-	video offset=CINEMATIC_165, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_165, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_9DD6:
 	jne [0x05], 0x00, LABEL_9DE2
-	video type=0, offset=COMMON_VIDEO_000, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_000, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9DE2:
 	jne [0x05], 0x01, LABEL_9DEE
-	video type=0, offset=COMMON_VIDEO_342, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_342, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9DEE:
 	jne [0x05], 0x02, LABEL_9DFA
-	video type=0, offset=COMMON_VIDEO_127, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_127, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9DFA:
 	jne [0x05], 0x03, LABEL_9E06
-	video type=0, offset=COMMON_VIDEO_341, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_341, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 LABEL_9E06:

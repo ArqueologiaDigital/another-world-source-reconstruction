@@ -55,7 +55,7 @@ LABEL_32E0:
 LABEL_32EC:
 	call LABEL_3308
 	mov [HACK_VAR_67], 0x008E
-	mov [0x01], 0x000A
+	mov [HERO_X], 0x000A
 	mov [0xB0], 0x0000
 	mov [0xB1], 0x0000
 	mov [0xB2], 0x0000
@@ -64,8 +64,8 @@ LABEL_32EC:
 
 LABEL_3308:
 	mov [HACK_VAR_67], 0x008B
-	mov [0x01], 0x00A0
-	mov [0x02], 0x00AA
+	mov [HERO_X], 0x00A0
+	mov [HERO_Y], 0x00AA
 	or [0xB9], 0x0008
 	or [0xB4], 0x0001
 	call LABEL_00D3
@@ -77,8 +77,8 @@ LABEL_3308:
 LABEL_332E:
 	mov [HACK_VAR_67], 0x006A
 	call LABEL_00D3
-	mov [0x01], 0x0064
-	mov [0x02], 0x00AC
+	mov [HERO_X], 0x0064
+	mov [HERO_Y], 0x00AC
 	mov [0xB0], 0x0000
 	mov [0xB1], 0x0000
 	mov [0xB2], 0x0000
@@ -89,7 +89,7 @@ LABEL_332E:
 	ret
 	mov [HACK_VAR_67], 0x004B
 	mov [0xB0], 0x0003
-	mov [0x01], 0x0050
+	mov [HERO_X], 0x0050
 	ret
 
 LABEL_3364:

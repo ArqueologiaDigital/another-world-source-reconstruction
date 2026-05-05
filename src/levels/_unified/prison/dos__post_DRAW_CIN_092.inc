@@ -57,8 +57,8 @@ LABEL_7C4B:
 	call LABEL_7E0D
 	call LABEL_7B09
 	call LABEL_7B7A
-	video offset=CINEMATIC_102, x=[0x01], y=[0x02]
-	video offset=CINEMATIC_103, x=160, y=[0x02]
+	video offset=CINEMATIC_102, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_103, x=160, y=[HERO_Y]
 	je [0x11], 0x00, SHARED_RET
 	video offset=CINEMATIC_131, x=[0x07], y=[0x08]
 	ret

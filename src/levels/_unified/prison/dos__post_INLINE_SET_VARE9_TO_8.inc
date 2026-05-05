@@ -95,7 +95,7 @@ LABEL_0CC6:
 
 LABEL_0CC7:
 	break
-	jg [0x01], 0xBE, LABEL_0CC7
+	jg [HERO_X], 0xBE, LABEL_0CC7
 	mov [0xF8], [0x6A]
 	and [0xF8], 0x00E0
 	jne [0xF8], 0x20, LABEL_0CE7
@@ -129,7 +129,7 @@ LABEL_0D0F:
 
 LABEL_0D28:
 	break
-	jg [0x01], 0x41, LABEL_0D28
+	jg [HERO_X], 0x41, LABEL_0D28
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
 	setup channel=0x14, address=BANK4_AFTER_CIN_414
 	killChannel

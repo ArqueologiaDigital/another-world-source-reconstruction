@@ -71,7 +71,7 @@ SET_VARE6_TO_64_KILL_CHANNEL:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 SETUP_67_45_VAR01_46_VARB1_NOSIGN:
 	mov [HACK_VAR_67], 0x0045
-	mov [0x01], 0x0046
+	mov [HERO_X], 0x0046
 	and [0xB1], 0x7FFF
 	ret
 ;@endif
@@ -79,7 +79,7 @@ SETUP_67_45_VAR01_46_VARB1_NOSIGN:
 
 SETUP_67_67_VAR01_1E_VARBE_3:
 	mov [HACK_VAR_67], 0x0067
-	mov [0x01], 0x001E
+	mov [HERO_X], 0x001E
 	mov [0xBE], 0x0003
 	ret
 
@@ -103,7 +103,7 @@ SETUP_67_25_VAR06_0_VARB1_NOSIGN:
 SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1:
 	mov [HACK_VAR_67], 0x004B
 	mov [0xB0], 0x0003
-	mov [0x01], 0x0050
+	mov [HERO_X], 0x0050
 	mov [0xAF], 0x0058
 	or [0xB1], 0x0010
 	ret
@@ -116,8 +116,8 @@ SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1:
 SETUP_67_A7_VARS_B0_2_02_5D_01_7F_BE_3:
 	mov [HACK_VAR_67], 0x00A7
 	mov [0xB0], 0x0002
-	mov [0x02], 0x005D
-	mov [0x01], 0x007F
+	mov [HERO_Y], 0x005D
+	mov [HERO_X], 0x007F
 	mov [0xBE], 0x0003
 	or [0xB1], 0x00C0
 	ret

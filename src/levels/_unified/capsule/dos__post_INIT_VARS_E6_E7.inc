@@ -1,7 +1,7 @@
 LABEL_0A2D:
 	video offset=CINEMATIC_588, x=[0xe6], y=[0xe7]
 	break
-	jl [0x01], 0xB4, LABEL_0A2D
+	jl [HERO_X], 0xB4, LABEL_0A2D
 	video offset=CINEMATIC_607, x=[0xe6], y=[0xe7]
 	break
 	video offset=CINEMATIC_608, x=[0xe6], y=[0xe7]
@@ -36,7 +36,7 @@ LABEL_0A8A:
 LABEL_0A97:
 	video offset=CINEMATIC_589, x=[0xe6], y=[0xe7]
 	break
-	jl [0x01], 0xB4, LABEL_0A97
+	jl [HERO_X], 0xB4, LABEL_0A97
 	video offset=CINEMATIC_605, x=[0xe6], y=[0xe7]
 	break
 	video offset=CINEMATIC_590, x=[0xe6], y=[0xe7]
@@ -66,7 +66,7 @@ LABEL_0AE0:
 LABEL_0AE1:
 	break
 	jne [HACK_VAR_67], 0xCA, LABEL_0AE1
-	jg [0x01], 0x6E, LABEL_0B08
+	jg [HERO_X], 0x6E, LABEL_0B08
 	mov [0xF8], [0xB9]
 	and [0xF8], 0x0004
 	jne [0xF8], 0x00, LABEL_0B08
@@ -77,11 +77,11 @@ LABEL_0AE1:
 LABEL_0B08:
 	break
 	call LABEL_30C3
-	jg [0x01], 0xE0, LABEL_0B08
-	jg [0x01], 0x6E, LABEL_0B3E
-	jl [0x01], 0x0A, LABEL_0B08
-	jl [0x01], 0x14, LABEL_0B2A
-	jl [0x01], 0x4C, LABEL_0B08
+	jg [HERO_X], 0xE0, LABEL_0B08
+	jg [HERO_X], 0x6E, LABEL_0B3E
+	jl [HERO_X], 0x0A, LABEL_0B08
+	jl [HERO_X], 0x14, LABEL_0B2A
+	jl [HERO_X], 0x4C, LABEL_0B08
 
 LABEL_0B2A:
 	mov [0xE6], 0x0048
@@ -91,7 +91,7 @@ LABEL_0B2A:
 	jmp LABEL_0B89
 
 LABEL_0B3E:
-	mov [0xE6], [0x01]
+	mov [0xE6], [HERO_X]
 	play id=0x0052, freq=0x14, vol=0x40, channel=0x03
 	add [0xB8], 0x0008
 	video offset=CINEMATIC_319, x=[0xe6], y=100
@@ -100,7 +100,7 @@ LABEL_0B3E:
 	video offset=CINEMATIC_319, x=[0xe6], y=100
 	mov [0xF8], [0xE6]
 	add [0xF8], 0x0003
-	jg [0x01], [0xF8], LABEL_0B6B
+	jg [HERO_X], [0xF8], LABEL_0B6B
 	call LABEL_0BCA
 
 LABEL_0B6B:
@@ -124,7 +124,7 @@ LABEL_0B89:
 	video offset=CINEMATIC_573, x=[0xe6], y=100
 	mov [0xF8], [0xE6]
 	add [0xF8], 0x0003
-	jl [0x01], [0xF8], LABEL_0BB4
+	jl [HERO_X], [0xF8], LABEL_0BB4
 	call LABEL_0BCA
 
 LABEL_0BB4:
@@ -209,8 +209,8 @@ LABEL_0C7B:
 	video offset=CINEMATIC_295, x=[0xe6], y=100
 	mov [0xF8], [0xE6]
 	add [0xF8], 0x0004
-	jl [0x01], [0xE6], LABEL_0CA6
-	jg [0x01], [0xF8], LABEL_0CA6
+	jl [HERO_X], [0xE6], LABEL_0CA6
+	jg [HERO_X], [0xF8], LABEL_0CA6
 	call LABEL_0BCA
 
 LABEL_0CA6:
@@ -232,8 +232,8 @@ DELAY_LOOP_VARE6_AT_0CC8:
 
 LABEL_0CD0:
 	break
-	jl [0x01], 0xBB, LABEL_0CD0
-	jg [0x01], 0xD4, LABEL_0CD0
+	jl [HERO_X], 0xBB, LABEL_0CD0
+	jg [HERO_X], 0xD4, LABEL_0CD0
 	je [HERO_POS_UP_DOWN], 0xFFFF, LABEL_0CEB
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_0CD0
 

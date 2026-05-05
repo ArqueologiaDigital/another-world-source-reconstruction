@@ -4,11 +4,11 @@ LABEL_DBBD:
 LABEL_DBBE:
 	jne [HACK_VAR_67], 0x28, LABEL_DBCD
 	mov [HACK_VAR_67], 0x0067
-	mov [0x01], 0x000A
+	mov [HERO_X], 0x000A
 	ret
 
 LABEL_DBCD:
 	jne [HACK_VAR_67], 0x49, ADD_HACK67_BY_20
 	mov [HACK_VAR_67], 0x0069
-	mov [0x01], 0x0032
+	mov [HERO_X], 0x0032
 	ret

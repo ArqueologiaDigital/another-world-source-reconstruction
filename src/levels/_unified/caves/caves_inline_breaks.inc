@@ -58,10 +58,10 @@ SET_VAR18_TO_0122:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 STEP_LEFT4_DRAW_CV140_LEFT4:
-	sub [0x01], 0x0004
+	sub [HERO_X], 0x0004
 	break
-	video type=0, offset=COMMON_VIDEO_140, x=[0x01], y=[0x02], zoom=0x40
-	sub [0x01], 0x0004
+	video type=0, offset=COMMON_VIDEO_140, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	sub [HERO_X], 0x0004
 	break
 ;@endif
 
@@ -122,10 +122,10 @@ INLINE_BREAK_035:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 STEP_DRAW_CV336_THEN_CV340:
-	add [0x01], 0x0002
-	video type=0, offset=COMMON_VIDEO_336, x=[0x01], y=[0x02], zoom=0x40
+	add [HERO_X], 0x0002
+	video type=0, offset=COMMON_VIDEO_336, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_340, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_340, x=[HERO_X], y=[HERO_Y], zoom=0x40
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -147,10 +147,10 @@ INLINE_BREAK_035:
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 STEP_DRAW_CV329_THEN_CV335:
-	sub [0x01], 0x0002
-	video type=0, offset=COMMON_VIDEO_329, x=[0x01], y=[0x02], zoom=0x40
+	sub [HERO_X], 0x0002
+	video type=0, offset=COMMON_VIDEO_329, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_335, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=COMMON_VIDEO_335, x=[HERO_X], y=[HERO_Y], zoom=0x40
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"

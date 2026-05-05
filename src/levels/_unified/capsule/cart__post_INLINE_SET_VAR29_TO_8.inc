@@ -61,10 +61,10 @@ LABEL_3A1A:
 	setup channel=0x16, address=LABEL_B74A
 	mov [0x63], 0x0002
 	call SET_VAR04_TO_0020
-	mov [0x01], 0x012A
-	video offset=CINEMATIC_073, x=[0x01], y=[0x02]
+	mov [HERO_X], 0x012A
+	video offset=CINEMATIC_073, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_074, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_074, x=[HERO_X], y=[HERO_Y]
 	jmp HERO_WALK_RIGHT_LOOP
 LABEL_3A42:
 	db 0x11
@@ -83,10 +83,10 @@ LABEL_3A54:
 
 LABEL_3A55:
 	break
-	jg [0x02], 0x7F, LABEL_3A55
-	jl [0x02], 0x64, LABEL_3A55
-	jl [0x01], 0xC8, LABEL_3AF1
-	jg [0x01], 0xDC, LABEL_3A55
+	jg [HERO_Y], 0x7F, LABEL_3A55
+	jl [HERO_Y], 0x64, LABEL_3A55
+	jl [HERO_X], 0xC8, LABEL_3AF1
+	jg [HERO_X], 0xDC, LABEL_3A55
 	mov [0xF8], [0xB9]
 	and [0xF8], 0x0020
 	je [0xF8], 0x00, LABEL_3AF1

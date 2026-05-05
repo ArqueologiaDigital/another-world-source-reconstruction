@@ -10,21 +10,21 @@ INLINE_SET_VAR29_TO_4:
 ;@endif
 
 RAMP_VAR1_PLUS_C_9_5_3_BREAKS:
-	add [0x01], 0x000C
+	add [HERO_X], 0x000C
 	break
-	add [0x01], 0x0009
+	add [HERO_X], 0x0009
 	break
-	add [0x01], 0x0005
+	add [HERO_X], 0x0005
 	break
-	add [0x01], 0x0004
+	add [HERO_X], 0x0004
 	break
-	add [0x01], 0x0003
+	add [HERO_X], 0x0003
 	break
-	add [0x01], 0x0002
+	add [HERO_X], 0x0002
 	break
-	add [0x01], 0x0001
+	add [HERO_X], 0x0001
 	break
-	add [0x01], 0x0001
+	add [HERO_X], 0x0001
 	killChannel
 
 
@@ -59,7 +59,7 @@ INLINE_SET_VAR03_TO_14:
 DRAW_TEXT_0174_AT_26_180:
 	text id=0x0174, x=26, y=180, color=0x0D ; "string_0174"
 	ret
-	mov [0x01], 0x03E8
+	mov [HERO_X], 0x03E8
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -93,7 +93,7 @@ INIT_VARS_07_08_29:
 ;@endif
 
 SET_VAR01_TO_6E_KILL_CHANNEL:
-	mov [0x01], 0x006E
+	mov [HERO_X], 0x006E
 	killChannel
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -291,8 +291,8 @@ INLINE_SET_VAR29_TO_8:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 INIT_VARS_03_01_02:
 	mov [0x03], 0x0003
-	mov [0x01], 0x0063
-	mov [0x02], 0x00A8
+	mov [HERO_X], 0x0063
+	mov [HERO_Y], 0x00A8
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"

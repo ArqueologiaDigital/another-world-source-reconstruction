@@ -232,7 +232,7 @@ INLINE_SET_VAR6A_TO_2F:
 ;@endif
 
 INLINE_SET_VAR01_TO_E:
-	mov [0x01], 0x000E
+	mov [HERO_X], 0x000E
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INLINE_SET_VAR01_TO_E.inc"

@@ -11,10 +11,10 @@ JUNK__016F:
 	break
 	jmp JUNK__016F
 	killChannel
-	mov [0x01], 0x03E8
+	mov [HERO_X], 0x03E8
 
 LABEL_0195:
 	video offset=CINEMATIC_704, x=160, y=100
-	djnz [0x01], LABEL_0195
+	djnz [HERO_X], LABEL_0195
 	break
 	setPalette 0x0C

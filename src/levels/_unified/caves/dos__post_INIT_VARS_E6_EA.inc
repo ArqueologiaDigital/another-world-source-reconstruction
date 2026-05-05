@@ -292,10 +292,10 @@ LABEL_D097:
 
 LABEL_D098:
 	break
-	jl [0x02], 0x8C, LABEL_D098
-	add [0x01], 0x000A
-	jl [0x01], 0xA0, LABEL_D0AD
-	sub [0x01], 0x000F
+	jl [HERO_Y], 0x8C, LABEL_D098
+	add [HERO_X], 0x000A
+	jl [HERO_X], 0xA0, LABEL_D0AD
+	sub [HERO_X], 0x000F
 
 LABEL_D0AD:
 	setup channel=0x3C, address=LABEL_3FCA
@@ -307,7 +307,7 @@ LABEL_D0B5:
 	setup channel=0x36, address=LABEL_298E
 	mov [0x35], 0x0010
 	sub [SCROLL_Y], [0x35]
-	sub [0x02], [0x35]
+	sub [HERO_Y], [0x35]
 	mov [0x44], 0x0135
 	add [0x44], [SCROLL_Y]
 	mov [0x41], [0x44]
@@ -347,7 +347,7 @@ LABEL_D125:
 	video offset=CINEMATIC_297, x=121, y=203, zoom=0x40
 	video offset=CINEMATIC_359, x=262, y=145
 	video offset=CINEMATIC_359, x=85, y=145
-	jl [0x02], 0xD2, LABEL_D142
+	jl [HERO_Y], 0xD2, LABEL_D142
 	video offset=CINEMATIC_298, x=203, y=208, zoom=0x40
 
 LABEL_D142:
@@ -365,7 +365,7 @@ LABEL_D153:
 	db 0x11
 
 LABEL_D154:
-	jg [0x02], 0x65, LABEL_D16E
+	jg [HERO_Y], 0x65, LABEL_D16E
 	video offset=CINEMATIC_410, x=112, y=69
 	video offset=CINEMATIC_298, x=37, y=31
 	video offset=CINEMATIC_298, x=149, y=11
@@ -384,7 +384,7 @@ LABEL_D17A:
 	db 0x11
 
 LABEL_D17B:
-	jg [0x02], 0x78, LABEL_D18D
+	jg [HERO_Y], 0x78, LABEL_D18D
 	video offset=CINEMATIC_410, x=226, y=87
 	video offset=CINEMATIC_410, x=150, y=27
 	video offset=CINEMATIC_446, x=226, y=136
@@ -430,7 +430,7 @@ LABEL_D1D0:
 LABEL_D1D1:
 	video offset=CINEMATIC_297, x=46, y=139
 	mov [0x42], 0xF060
-	jl [0x01], 0x35, LABEL_D1E3
+	jl [HERO_X], 0x35, LABEL_D1E3
 	mov [0x42], 0x001D
 
 LABEL_D1E3:

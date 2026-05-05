@@ -8,7 +8,7 @@ LABEL_018C:
 
 LABEL_018D:
 	break
-	jl [0x01], 0xF0, LABEL_018D
+	jl [HERO_X], 0xF0, LABEL_018D
 	fill page=0xFF, color=0x00
 	setPalette 0x19
 	setup channel=0x3C, address=LABEL_04A1
@@ -271,32 +271,32 @@ LABEL_04BA:
 	db 0x11
 
 LABEL_04BB:
-	mov [0x01], 0x0091
-	add [0x02], 0x0014
-	video offset=CINEMATIC_415, x=[0x01], y=[0x02]
+	mov [HERO_X], 0x0091
+	add [HERO_Y], 0x0014
+	video offset=CINEMATIC_415, x=[HERO_X], y=[HERO_Y]
 	break
 	setup channel=0x3A, address=LABEL_053D
-	add [0x02], 0x0018
-	video offset=CINEMATIC_415, x=[0x01], y=[0x02]
+	add [HERO_Y], 0x0018
+	video offset=CINEMATIC_415, x=[HERO_X], y=[HERO_Y]
 	break
-	add [0x02], 0x0020
-	video offset=CINEMATIC_415, x=[0x01], y=[0x02]
+	add [HERO_Y], 0x0020
+	video offset=CINEMATIC_415, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_212, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_212, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_211, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_211, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_418, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_418, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_419, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_419, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_420, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_420, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_421, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_421, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_422, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_422, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_423, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_423, x=[HERO_X], y=[HERO_Y]
 	setup channel=0x00, address=LABEL_0180
 	break
 	jmp LABEL_8B32

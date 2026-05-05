@@ -83,7 +83,7 @@ LABEL_427F:
 	call PROJECT_POS_BY_VAR04_OR_807B
 	mov [0x22], 0x0096
 	mov [0x26], [HACK_VAR_67]
-	jg [0x02], [0x41], LABEL_4293
+	jg [HERO_Y], [0x41], LABEL_4293
 	or [0x26], 0x8000
 
 LABEL_4293:

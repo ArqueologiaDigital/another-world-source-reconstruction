@@ -52,8 +52,8 @@ INIT_VARS_0E_29:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 INIT_VARS_63_01_02_03:
 	mov [0x63], 0x0064
-	mov [0x01], 0x00C4
-	mov [0x02], 0x00B9
+	mov [HERO_X], 0x00C4
+	mov [HERO_Y], 0x00B9
 	mov [0x03], 0x0004
 ;@endif
 
@@ -172,7 +172,7 @@ INIT_VARS_E6_E7:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 INIT_VARS_03_01:
 	mov [0x03], 0x000A
-	mov [0x01], 0x00C7
+	mov [HERO_X], 0x00C7
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"

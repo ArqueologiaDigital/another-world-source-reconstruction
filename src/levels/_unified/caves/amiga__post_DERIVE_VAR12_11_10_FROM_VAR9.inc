@@ -26,8 +26,8 @@ LABEL_4B85:
 
 LABEL_4B94:
 	jl [0x0D], 0x02, LABEL_4BA3
-	mov [0x24], [0x01]
-	mov [0x25], [0x02]
+	mov [0x24], [HERO_X]
+	mov [0x25], [HERO_Y]
 	call LABEL_4BFC
 
 LABEL_4BA3:

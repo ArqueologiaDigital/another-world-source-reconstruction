@@ -26,8 +26,8 @@ LABEL_4D65:
 
 LABEL_4D74:
 	jl [0x0D], 0x02, LABEL_4D83
-	mov [0x24], [0x01]
-	mov [0x25], [0x02]
+	mov [0x24], [HERO_X]
+	mov [0x25], [HERO_Y]
 	call LABEL_4DDC
 
 LABEL_4D83:

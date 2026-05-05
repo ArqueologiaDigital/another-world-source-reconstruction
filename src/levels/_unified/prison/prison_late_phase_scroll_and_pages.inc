@@ -86,7 +86,7 @@ INLINE_SET_VAR16_TO_0:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_552:
-	video offset=CINEMATIC_552, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_552, x=[HERO_X], y=[HERO_Y]
 	ret
 ;@endif
 
@@ -98,7 +98,7 @@ DRAW_CIN_552:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_550:
-	video offset=CINEMATIC_550, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_550, x=[HERO_X], y=[HERO_Y]
 	ret
 ;@endif
 
@@ -204,10 +204,10 @@ DECREMENT_VAR10_BY_1:
 ;@endif
 
 SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01:
-	mov [0x01], 0x00B0
+	mov [HERO_X], 0x00B0
 	mov [0x0F], 0x0000
-	mov [0x28], [0x01]
-	mov [0x02], 0x00B6
+	mov [0x28], [HERO_X]
+	mov [HERO_Y], 0x00B6
 	mov [0x04], 0x0020
 	mov [0x05], 0x0000
 	mov [0x06], 0x00C7

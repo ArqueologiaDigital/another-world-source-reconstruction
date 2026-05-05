@@ -16,8 +16,8 @@ LABEL_03F2:
 	video offset=CINEMATIC_009, x=[0x07], y=[0x08]
 	break
 	video offset=CINEMATIC_010, x=[0x07], y=[0x08]
-	mov [0x01], 0x005C
-	mov [0x02], [0x40]
+	mov [HERO_X], 0x005C
+	mov [HERO_Y], [0x40]
 	mov [0x63], 0x0002
 	setup channel=0x14, address=LABEL_9A9E
 	setup channel=0x14, address=LABEL_BE04

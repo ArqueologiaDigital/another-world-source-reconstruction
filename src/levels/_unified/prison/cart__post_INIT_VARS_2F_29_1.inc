@@ -3,7 +3,7 @@ LABEL_2FE8:
 	and [0x2B], 0x0010
 	je [0x10], 0x65, LABEL_302B
 	jne [0x2B], 0x00, LABEL_300A
-	jg [0x01], 0x8C, LABEL_300A
+	jg [HERO_X], 0x8C, LABEL_300A
 	mov [0x29], 0x001E
 	mov [0x2F], 0x0002
 	ret
@@ -22,14 +22,14 @@ LABEL_3019:
 	ret
 
 LABEL_302B:
-	mov [0xF8], [0x01]
+	mov [0xF8], [HERO_X]
 	sub [0xF8], 0x000A
 	jl [0x07], [0xF8], LABEL_3042
 	add [0xF8], 0x0014
 	jl [0x07], [0xF8], SHARED_RET
 
 LABEL_3042:
-	mov [0x29], [0x01]
+	mov [0x29], [HERO_X]
 	mov [0x2F], 0x0018
 	jl [0x29], 0xA0, SHARED_RET
 	jg [0x07], 0xA0, SET_VAR2F_TO_0000
@@ -55,13 +55,13 @@ LABEL_3087:
 	and [0xF8], 0x001F
 	je [0xF8], 0x05, LABEL_2FE8
 	je [0x12], 0x01, LABEL_2F67
-	je [0x08], [0x02], LABEL_30C7
+	je [0x08], [HERO_Y], LABEL_30C7
 	jg [0x08], 0x6E, LABEL_30B5
-	jle [0x02], 0x6E, LABEL_30C7
+	jle [HERO_Y], 0x6E, LABEL_30C7
 	jmp LABEL_30BB
 
 LABEL_30B5:
-	jg [0x02], 0x6E, LABEL_30C7
+	jg [HERO_Y], 0x6E, LABEL_30C7
 
 LABEL_30BB:
 	je [HACK_VAR_67], 0x24, LABEL_2F31
@@ -70,11 +70,11 @@ LABEL_30BB:
 LABEL_30C7:
 	call LABEL_33BA
 	je [0x1D], 0x1E, LABEL_310C
-	mov [0x21], [0x01]
+	mov [0x21], [HERO_X]
 	mov [0x22], [0x07]
 	call LABEL_33A6
-	mov [0x29], [0x01]
-	jg [0x01], [0x07], LABEL_30F7
+	mov [0x29], [HERO_X]
+	jg [HERO_X], [0x07], LABEL_30F7
 	mov [0x2F], 0x0004
 	add [0x29], 0x0014
 	jg [0x26], 0x64, LABEL_318C
@@ -89,12 +89,12 @@ LABEL_30F7:
 	jmp LABEL_318C
 
 LABEL_310C:
-	mov [0x21], [0x01]
+	mov [0x21], [HERO_X]
 	mov [0x22], [0x07]
 	call LABEL_33A6
 	jl [0x26], 0x02, LABEL_318C
 	mov [0x2F], 0x0012
-	jg [0x01], [0x07], LABEL_318C
+	jg [HERO_X], [0x07], LABEL_318C
 	mov [0x2F], 0x0013
 	jmp LABEL_318C
 
@@ -148,8 +148,8 @@ STATE_VAR12_BIG_DISPATCH:
 	jne [0x10], [HACK_VAR_67], LABEL_3222
 	mov [0x2B], [0x11]
 	and [0x2B], 0xDFFF
-	jg [0x08], [0x02], LABEL_328E
-	jl [0x01], [0x07], LABEL_31E4
+	jg [0x08], [HERO_Y], LABEL_328E
+	jl [HERO_X], [0x07], LABEL_31E4
 	jge [0x2B], 0x1000, LABEL_31F2
 	mov [0x2F], 0x0006
 	jmp LABEL_328E
@@ -163,7 +163,7 @@ LABEL_31F2:
 	call LABEL_33D7
 	mov [0x2C], [0x1D]
 	mov [0x21], [0x07]
-	mov [0x22], [0x01]
+	mov [0x22], [HERO_X]
 	call LABEL_33A6
 	jl [0x26], 0x46, LABEL_3290
 	jl [0x2C], 0x0A, SET_VAR2F_TO_000F_AT_32A3

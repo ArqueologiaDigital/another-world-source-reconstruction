@@ -85,7 +85,7 @@ LABEL_66C2:
 	call PROJECT_POS_VAR_B8_PLUS_7
 	mov [0x22], 0x0096
 	mov [0x26], [HACK_VAR_67]
-	jg [0x02], [0x41], LABEL_66D6
+	jg [HERO_Y], [0x41], LABEL_66D6
 	or [0x26], 0x8000
 
 LABEL_66D6:

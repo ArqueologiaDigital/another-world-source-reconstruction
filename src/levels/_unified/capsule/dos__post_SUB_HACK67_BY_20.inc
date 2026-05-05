@@ -1,7 +1,7 @@
 LABEL_B4AE:
 	jne [HACK_VAR_67], 0x8B, LABEL_B4CC
-	jg [0x02], 0x96, SET_VARHACK_VAR_67_TO_00AA
+	jg [HERO_Y], 0x96, SET_VARHACK_VAR_67_TO_00AA
 	mov [HACK_VAR_67], 0x008A
-	mov [0x01], 0x00CB
-	mov [0x02], 0x00E0
+	mov [HERO_X], 0x00CB
+	mov [HERO_Y], 0x00E0
 	ret

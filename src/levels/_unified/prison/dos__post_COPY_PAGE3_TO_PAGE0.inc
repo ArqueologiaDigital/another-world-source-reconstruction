@@ -146,7 +146,7 @@ LABEL_83DF:
 
 LABEL_83E0:
 	mov [0x78], 0x0008
-	mov [0x79], [0x02]
+	mov [0x79], [HERO_Y]
 	mov [0x7A], [HACK_VAR_67]
 	mov [0x7B], 0x3000
 	mov [0x7C], 0x0038
@@ -160,8 +160,8 @@ LABEL_83FF:
 	jne [0xB2], 0x00, LABEL_83FF
 	jg [0x06], 0x00, LABEL_83FF
 	jne [HACK_VAR_67], 0x05, LABEL_83FF
-	jl [0x01], 0x14, LABEL_83FF
-	jg [0x01], 0x64, LABEL_83FF
+	jl [HERO_X], 0x14, LABEL_83FF
+	jg [HERO_X], 0x64, LABEL_83FF
 	call LABEL_83E0
 
 LABEL_8421:

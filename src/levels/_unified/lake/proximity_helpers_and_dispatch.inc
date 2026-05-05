@@ -1,6 +1,6 @@
 CHECK_HORIZONTAL_PROXIMITY:
 	mov [0x07], 0x0000
-	mov [0x12], [0x01]
+	mov [0x12], [HERO_X]
 	sub [0x12], 0x0007
 	jl [0x0C], [0x12], EXIT_PATH_FROM_PROXIMITY_OUT_OF_RANGE
 	add [0x12], 0x000F
@@ -11,7 +11,7 @@ EXIT_PATH_FROM_PROXIMITY_OUT_OF_RANGE:
 	je [0x06], 0x00, RET_TARGET_313D
 	jg [0x06], 0x02, RET_TARGET_313D
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jg [0x01], [0x04], BEAST_AI_RANGE_CHECK_INIT_CART
+	jg [HERO_X], [0x04], BEAST_AI_RANGE_CHECK_INIT_CART
 ;@endif
 	mov [0x12], [0x04]
 	mov [0x13], [0x04]
@@ -21,7 +21,7 @@ EXIT_PATH_FROM_PROXIMITY_OUT_OF_RANGE:
 	jmp BEAST_AI_RANGE_CHECK_VAR_39
 ;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	sub [0x13], 0x0007
-	jl [0x01], [0x04], BEAST_AI_RANGE_CHECK_INIT_CART
+	jl [HERO_X], [0x04], BEAST_AI_RANGE_CHECK_INIT_CART
 	mov [0x13], [0x04]
 	mov [0x12], [0x04]
 	add [0x12], 0x0007
