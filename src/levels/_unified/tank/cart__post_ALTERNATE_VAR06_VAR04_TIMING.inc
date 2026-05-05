@@ -41,56 +41,56 @@ LABEL_1AED:
 	db 0x11
 
 HANG_DRAW_CIN_225:
-	video offset=CINEMATIC_225, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_225, x=[0x0a], y=100
 	break
 	jmp HANG_DRAW_CIN_225
 
 DRAW_CIN_224_MULTI_FRAME:
-	video offset=CINEMATIC_224, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_224, x=[0x0a], y=100
 	je [0xDB], 0x01, HANG_DRAW_CIN_225
 	break
-	video offset=CINEMATIC_224, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_224, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_224, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_224, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_224, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_224, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_226, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_226, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_226, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_226, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_226, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_226, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_226, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_226, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_227, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_227, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_227, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_227, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_227, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_227, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_227, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_227, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_228, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_228, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_228, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_228, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_228, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_228, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_228, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_228, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_227, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_227, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_227, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_227, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_227, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_227, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_227, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_227, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_226, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_226, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_226, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_226, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_226, x=[0x0a], y=100, zoom=0x40
+	video offset=CINEMATIC_226, x=[0x0a], y=100
 	break
 	jmp DRAW_CIN_224_MULTI_FRAME

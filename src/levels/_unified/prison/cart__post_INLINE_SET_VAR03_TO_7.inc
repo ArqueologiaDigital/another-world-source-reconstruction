@@ -14,7 +14,7 @@ DELAY_LOOP_VAR03_AT_0689:
 	setup channel=0x14, address=KILL_CHANNEL_LANDING
 	break
 	add [0x01], 0x0001
-	video offset=CINEMATIC_554, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_554, x=[0x01], y=[0x02]
 	mov [0x05], 0x0001
 	mov [0x03], 0x0006
 
@@ -23,7 +23,7 @@ LABEL_06A4:
 	call LABEL_6D9D
 	djnz [0x03], LABEL_06A4
 	break
-	video offset=CINEMATIC_555, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_555, x=[0x01], y=[0x02]
 	add [0x01], 0x0003
 	mov [0x03], 0x0002
 

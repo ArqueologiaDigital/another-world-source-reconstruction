@@ -3,9 +3,9 @@ LABEL_8193:
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, LABEL_81B6
-	video offset=CINEMATIC_186, x=258, y=181, zoom=0x40
+	video offset=CINEMATIC_186, x=258, y=181
 	jl [0x01], 0xFA, LABEL_81B6
-	video offset=CINEMATIC_186, x=257, y=181, zoom=0x40
+	video offset=CINEMATIC_186, x=257, y=181
 
 LABEL_81B6:
 	jl [0x01], 0xF0, LABEL_82CC

@@ -86,7 +86,7 @@ INLINE_SET_VAR16_TO_0:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_552:
-	video offset=CINEMATIC_552, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_552, x=[0x01], y=[0x02]
 	ret
 ;@endif
 
@@ -98,7 +98,7 @@ DRAW_CIN_552:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_550:
-	video offset=CINEMATIC_550, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_550, x=[0x01], y=[0x02]
 	ret
 ;@endif
 

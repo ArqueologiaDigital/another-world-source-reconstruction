@@ -15,43 +15,43 @@ LABEL_9A35:
 
 LABEL_9A44:
 	sub [0x01], 0x0001
-	video offset=CINEMATIC_332, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_332, x=[0x01], y=[0x02]
 	break
 	add [0x01], 0x0001
-	video offset=CINEMATIC_332, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_332, x=[0x01], y=[0x02]
 	break
 	add [0x01], 0x0002
-	video offset=CINEMATIC_332, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_332, x=[0x01], y=[0x02]
 	break
 	add [0x01], 0x0003
-	video offset=CINEMATIC_333, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_333, x=[0x01], y=[0x02]
 	break
 	add [0x01], 0x0004
-	video offset=CINEMATIC_333, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_333, x=[0x01], y=[0x02]
 	break
 	add [0x01], 0x0003
-	video offset=CINEMATIC_333, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_333, x=[0x01], y=[0x02]
 	break
 	add [0x01], 0x0002
-	video offset=CINEMATIC_332, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_332, x=[0x01], y=[0x02]
 	break
 	add [0x01], 0x0001
-	video offset=CINEMATIC_333, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_333, x=[0x01], y=[0x02]
 	break
 	add [0x01], 0x0001
-	video offset=CINEMATIC_334, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_334, x=[0x01], y=[0x02]
 	break
 	add [0x01], 0x0001
-	video offset=CINEMATIC_334, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_334, x=[0x01], y=[0x02]
 	break
 	sub [0x02], 0x0001
-	video offset=CINEMATIC_334, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_334, x=[0x01], y=[0x02]
 	break
 	add [0x02], 0x0001
 	add [0x01], 0x0001
 
 LABEL_9ABA:
-	video offset=CINEMATIC_334, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_334, x=[0x01], y=[0x02]
 	break
 	je [HERO_POS_LEFT_RIGHT], 0x01, LABEL_9A44
 	je [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_9AD1
@@ -61,43 +61,43 @@ LABEL_9AD0:
 
 LABEL_9AD1:
 	add [0x01], 0x0001
-	video offset=CINEMATIC_332, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_332, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0001
-	video offset=CINEMATIC_332, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_332, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0002
-	video offset=CINEMATIC_332, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_332, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0003
-	video offset=CINEMATIC_333, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_333, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0004
-	video offset=CINEMATIC_333, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_333, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0003
-	video offset=CINEMATIC_333, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_333, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0002
-	video offset=CINEMATIC_332, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_332, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0001
-	video offset=CINEMATIC_333, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_333, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0001
-	video offset=CINEMATIC_334, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_334, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0001
-	video offset=CINEMATIC_334, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_334, x=[0x01], y=[0x02]
 	break
 	sub [0x02], 0x0001
-	video offset=CINEMATIC_334, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_334, x=[0x01], y=[0x02]
 	break
 	add [0x02], 0x0001
 	sub [0x01], 0x0001
 
 LABEL_9B47:
-	video offset=CINEMATIC_334, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_334, x=[0x01], y=[0x02]
 	break
 	je [HERO_POS_LEFT_RIGHT], 0x01, LABEL_9A44
 	je [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_9AD1

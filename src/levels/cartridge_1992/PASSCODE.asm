@@ -427,7 +427,7 @@ LABEL_03C0:
 	mov [0x28], [0x08]
 	jne [0x25], [0x27], ANIMATE_CURSOR_TRANSITION
 	jne [0x26], [0x28], ANIMATE_CURSOR_TRANSITION
-	video offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_002, x=[0x07], y=[0x08]
 	break
 	jmp LABEL_033B
 LABEL_03E7:
@@ -473,14 +473,14 @@ COPY_VAR_27_28_TO_07_08:
 	mov [0x08], [0x28]
 
 LABEL_0452:
-	video offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_002, x=[0x07], y=[0x08]
 	break
 	jne [HERO_POS_UP_DOWN], 0x00, LABEL_0452
 	jne [HERO_POS_MASK], 0x00, LABEL_0452
 	jmp LABEL_033B
 
 JUNK__0467:
-	video offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_002, x=[0x07], y=[0x08]
 	break
 	jmp JUNK__03F5
 LABEL_0470:
@@ -787,7 +787,7 @@ SETUP_VAR02_FROM_VAR22:
 LABEL_0865:
 	mov [0x05], [0x01]
 	call DERIVE_VAR07_VAR08_FROM_VAR05
-	video offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_002, x=[0x07], y=[0x08]
 	break
 	jne [LAST_KEYCHAR], 0x00, LABEL_0865
 	je [0xDB], 0x00, LABEL_0888

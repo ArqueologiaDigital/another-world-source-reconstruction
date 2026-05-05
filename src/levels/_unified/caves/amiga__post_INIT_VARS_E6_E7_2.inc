@@ -4,7 +4,7 @@ LABEL_113D:
 	add [0x21], [0xE7]
 
 LABEL_1148:
-	video offset=CINEMATIC_748, x=[0xe6], y=[0x21], zoom=0x40
+	video offset=CINEMATIC_748, x=[0xe6], y=[0x21]
 	add [0x21], 0x0028
 	djnz [0x22], LABEL_1148
 	break
@@ -56,82 +56,82 @@ LABEL_11B6:
 LABEL_11B7:
 	selectVideoPage 0x00
 	play id=0x0057, freq=0x19, vol=0x10, channel=0x02
-	video offset=CINEMATIC_194, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_194, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_195, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_195, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_196, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_196, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_197, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_197, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_198, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_198, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_199, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_199, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 
 LABEL_11F9:
 	selectVideoPage 0x00
 	play id=0x0057, freq=0x19, vol=0x10, channel=0x03
-	video offset=CINEMATIC_191, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_191, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_192, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_192, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_193, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_193, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 
 LABEL_121D:
 	jle [0xE8], 0x06, LABEL_11B7
 	selectVideoPage 0x00
-	video offset=CINEMATIC_194, x=[0xe6], y=[0xe7], zoom=0x40
-	video offset=CINEMATIC_199, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_194, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_199, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_195, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_195, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_194, x=[0xe6], y=[0xe7], zoom=0x40
-	video offset=CINEMATIC_196, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_194, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_196, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_195, x=[0xe6], y=[0xe7], zoom=0x40
-	video offset=CINEMATIC_197, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_195, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_197, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_196, x=[0xe6], y=[0xe7], zoom=0x40
-	video offset=CINEMATIC_198, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_196, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_198, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	jg [0xE8], 0x04, LABEL_121D
 	selectVideoPage 0x00
-	video offset=CINEMATIC_197, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_197, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_198, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_198, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_199, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_199, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 
 LABEL_128C:
@@ -220,7 +220,7 @@ LABEL_1383:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
 	add [0x07], 0x000A
 	sub [0x08], 0x0015
-	video offset=CINEMATIC_141, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_141, x=[0x07], y=[0x08]
 	djnz [0x29], LABEL_1383
 	mov [0x0E], 0x0000
 	and [0x11], 0xF7FF

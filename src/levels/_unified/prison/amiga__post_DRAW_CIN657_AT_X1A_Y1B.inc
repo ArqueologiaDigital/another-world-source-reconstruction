@@ -1,5 +1,5 @@
 LABEL_4D8F:
-	video offset=CINEMATIC_658, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_658, x=[0x1a], y=[0x1b]
 	jg [0x15], 0x00, LABEL_4DA1
 	video offset=CINEMATIC_676, x=160, y=100
 	jmp LABEL_4E75

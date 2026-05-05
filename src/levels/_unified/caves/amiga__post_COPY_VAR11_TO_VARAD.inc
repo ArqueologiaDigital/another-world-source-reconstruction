@@ -237,13 +237,13 @@ LABEL_6F40:
 LABEL_6F50:
 	jne [0x27], [HACK_VAR_67], DECREMENT_VAR22
 	jne [0x22], 0x00, LABEL_6F64
-	video offset=CINEMATIC_036, x=[0x21], y=[0x26], zoom=0x40
+	video offset=CINEMATIC_036, x=[0x21], y=[0x26]
 	jmp DECREMENT_VAR22
 
 LABEL_6F64:
 	jl [0x22], 0x2000, LABEL_6F77
 	sub [0x22], 0x2000
-	video offset=CINEMATIC_036, x=[0x21], y=[0x26], zoom=0x40
+	video offset=CINEMATIC_036, x=[0x21], y=[0x26]
 	jmp DECREMENT_VAR22
 
 LABEL_6F77:

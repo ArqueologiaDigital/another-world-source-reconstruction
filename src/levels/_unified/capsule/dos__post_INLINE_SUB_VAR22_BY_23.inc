@@ -6,56 +6,56 @@ LABEL_5709:
 LABEL_570A:
 	call LABEL_591A
 	sub [0x08], 0x000A
-	video offset=CINEMATIC_250, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_250, x=[0x07], y=[0x08]
 	break
 	call LABEL_591A
 	sub [0x08], 0x0006
-	video offset=CINEMATIC_251, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_251, x=[0x07], y=[0x08]
 	break
 	call LABEL_591A
-	video offset=CINEMATIC_252, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_252, x=[0x07], y=[0x08]
 	break
 	call LABEL_591A
 	sub [0x08], 0x0001
-	video offset=CINEMATIC_253, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_253, x=[0x07], y=[0x08]
 	break
 	call LABEL_591A
 	sub [0x08], 0x0002
-	video offset=CINEMATIC_252, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_252, x=[0x07], y=[0x08]
 	mov [0x29], 0x0001
 
 LABEL_574A:
 	call LABEL_58F3
 	break
 	call LABEL_591A
-	video offset=CINEMATIC_251, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_251, x=[0x07], y=[0x08]
 	break
 	call LABEL_591A
-	video offset=CINEMATIC_252, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_252, x=[0x07], y=[0x08]
 	break
 	call LABEL_591A
-	video offset=CINEMATIC_253, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_253, x=[0x07], y=[0x08]
 	break
 	call LABEL_591A
-	video offset=CINEMATIC_250, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_250, x=[0x07], y=[0x08]
 	djnz [0x29], LABEL_574A
 	break
 	play id=0x0059, freq=0x14, vol=0x20, channel=0x02
 	call LABEL_5969
-	video offset=CINEMATIC_254, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_254, x=[0x07], y=[0x08]
 	break
 	call LABEL_5969
-	video offset=CINEMATIC_255, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_255, x=[0x07], y=[0x08]
 	break
 	call LABEL_5969
-	video offset=CINEMATIC_256, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_256, x=[0x07], y=[0x08]
 	break
 	call LABEL_5969
 	sub [0x08], 0x0003
-	video offset=CINEMATIC_257, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_257, x=[0x07], y=[0x08]
 	break
 	call LABEL_5969
-	video offset=CINEMATIC_256, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_256, x=[0x07], y=[0x08]
 	mov [0x29], 0x000A
 
 LABEL_57B0:
@@ -72,28 +72,28 @@ LABEL_57CE:
 	break
 	call LABEL_5969
 	je [0x09], 0x01, LABEL_5837
-	video offset=CINEMATIC_259, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_259, x=[0x07], y=[0x08]
 	break
 	call LABEL_5969
 	je [0x09], 0x01, LABEL_5837
-	video offset=CINEMATIC_260, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_260, x=[0x07], y=[0x08]
 	break
 	call LABEL_5969
 	je [0x09], 0x01, LABEL_5837
-	video offset=CINEMATIC_257, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_257, x=[0x07], y=[0x08]
 	break
 	call LABEL_5969
 	je [0x09], 0x01, LABEL_5837
 	sub [0x08], 0x0001
-	video offset=CINEMATIC_257, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_257, x=[0x07], y=[0x08]
 	break
 	call LABEL_5969
 	je [0x09], 0x01, LABEL_5837
-	video offset=CINEMATIC_260, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_260, x=[0x07], y=[0x08]
 	break
 	call LABEL_5969
 	je [0x09], 0x01, LABEL_5837
-	video offset=CINEMATIC_259, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_259, x=[0x07], y=[0x08]
 	djnz [0x29], LABEL_57B0
 	break
 	call LABEL_5969

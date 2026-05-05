@@ -186,7 +186,7 @@ LABEL_7722:
 
 LABEL_7731:
 	jne [0x0E], 0x06, LABEL_773D
-	video offset=CINEMATIC_014, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_014, x=[0x07], y=[0x08]
 	ret
 
 LABEL_773D:
@@ -201,71 +201,71 @@ LABEL_7751:
 	db 0x11
 
 DRAW_CIN_022:
-	video offset=CINEMATIC_022, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_022, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_023:
-	video offset=CINEMATIC_023, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_023, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_024:
-	video offset=CINEMATIC_024, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_024, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_025:
-	video offset=CINEMATIC_025, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_025, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_026:
-	video offset=CINEMATIC_026, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_026, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_027:
-	video offset=CINEMATIC_027, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_027, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_028:
-	video offset=CINEMATIC_028, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_028, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_029:
-	video offset=CINEMATIC_029, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_029, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_021:
-	video offset=CINEMATIC_021, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_021, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_020:
-	video offset=CINEMATIC_020, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_020, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_019:
-	video offset=CINEMATIC_019, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_019, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_015:
-	video offset=CINEMATIC_015, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_015, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_018:
-	video offset=CINEMATIC_018, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_018, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_017:
-	video offset=CINEMATIC_017, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_017, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_016:
-	video offset=CINEMATIC_016, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_016, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_012:
-	video offset=CINEMATIC_012, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_012, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_013:
-	video offset=CINEMATIC_013, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_013, x=[0x07], y=[0x08]
 	ret
 
 LABEL_77B8:
@@ -276,11 +276,11 @@ LABEL_77B8:
 	ret
 
 DRAW_CIN_247:
-	video offset=CINEMATIC_247, x=[0xf5], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_247, x=[0xf5], y=[0x08]
 	ret
 
 DRAW_CIN_248:
-	video offset=CINEMATIC_248, x=[0xf5], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_248, x=[0xf5], y=[0x08]
 	ret
 
 LABEL_77D8:
@@ -293,7 +293,7 @@ LABEL_77D8:
 LABEL_77EC:
 	add [0x08], 0x000D
 	sub [0x07], 0x0002
-	video offset=CINEMATIC_112, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_112, x=[0x07], y=[0x08]
 	add [0x07], 0x0002
 	sub [0x08], 0x000D
 	ret
@@ -301,7 +301,7 @@ LABEL_77EC:
 LABEL_7802:
 	add [0x08], 0x000D
 	sub [0x07], 0x0002
-	video offset=CINEMATIC_113, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_113, x=[0x07], y=[0x08]
 	add [0x07], 0x0002
 	sub [0x08], 0x000D
 	ret
@@ -405,15 +405,15 @@ DRAW_CIN_030_031_032_VAR09:
 	ret
 
 DRAW_CIN_030:
-	video offset=CINEMATIC_030, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_030, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_031:
-	video offset=CINEMATIC_031, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_031, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_032:
-	video offset=CINEMATIC_032, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_032, x=[0x07], y=[0x08]
 	ret
 
 DRAW_CIN_033_034_VAR09_LOW:
@@ -424,11 +424,11 @@ DRAW_CIN_033_034_VAR09_LOW:
 	ret
 
 DRAW_CIN_033:
-	video offset=CINEMATIC_033, x=[0xf5], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_033, x=[0xf5], y=[0x08]
 	ret
 
 DRAW_CIN_034:
-	video offset=CINEMATIC_034, x=[0xf5], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_034, x=[0xf5], y=[0x08]
 	ret
 
 LABEL_796B:

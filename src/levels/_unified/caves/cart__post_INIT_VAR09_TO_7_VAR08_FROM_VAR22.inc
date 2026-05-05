@@ -28,17 +28,17 @@ LABEL_2C72:
 	ret
 
 HANG_DRAW_CIN_637:
-	video offset=CINEMATIC_637, x=[0x74], y=[0x75], zoom=0x40
+	video offset=CINEMATIC_637, x=[0x74], y=[0x75]
 	break
 	jmp HANG_DRAW_CIN_637
 
 HANG_DRAW_CIN_636:
-	video offset=CINEMATIC_636, x=[0x77], y=[0x78], zoom=0x40
+	video offset=CINEMATIC_636, x=[0x77], y=[0x78]
 	break
 	jmp HANG_DRAW_CIN_636
 
 HANG_DRAW_CIN_720:
-	video offset=CINEMATIC_720, x=[0x7a], y=[0x7b], zoom=0x40
+	video offset=CINEMATIC_720, x=[0x7a], y=[0x7b]
 	break
 	jmp HANG_DRAW_CIN_720
 LABEL_2CA6:
@@ -46,12 +46,12 @@ LABEL_2CA6:
 
 LABEL_2CA7:
 	jg [0x09], 0x07, LABEL_2CBF
-	video offset=CINEMATIC_637, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_637, x=[0x07], y=[0x08]
 	ret
 
 LABEL_2CB3:
 	jg [0x09], 0x07, LABEL_2CBF
-	video offset=CINEMATIC_636, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_636, x=[0x07], y=[0x08]
 	ret
 
 LABEL_2CBF:
@@ -61,7 +61,7 @@ LABEL_2CBF:
 
 LABEL_2CCE:
 	jg [0x09], 0x07, LABEL_2CDA
-	video offset=CINEMATIC_720, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_720, x=[0x07], y=[0x08]
 	ret
 
 LABEL_2CDA:

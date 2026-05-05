@@ -1,12 +1,12 @@
 DRAW_CIN_190_LOOP:
-	video offset=CINEMATIC_190, x=[0x03], y=[0x04], zoom=0x40
+	video offset=CINEMATIC_190, x=[0x03], y=[0x04]
 	break
 	jmp DRAW_CIN_190_LOOP
 LABEL_119E:
 	killChannel
 
 DRAW_CIN_431_LOOP:
-	video offset=CINEMATIC_431, x=[0x03], y=[0x04], zoom=0x40
+	video offset=CINEMATIC_431, x=[0x03], y=[0x04]
 	break
 	jmp DRAW_CIN_431_LOOP
 LABEL_11A8:

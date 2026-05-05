@@ -48,25 +48,25 @@ CINEMATIC_SLUG_ATTACK__OPEN_CLAW		EQU 0x919A
 ;@endif
 
 GOO_DRIPPING_FROM_SLUGS_CLAW_ANIMATION:
-	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_0, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_0, x=[0x15], y=[0x16]
 	break
 	play id=0x004A, freq=0x14, vol=0x3F, channel=0x01
-	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_1, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_1, x=[0x15], y=[0x16]
 	play id=0x004A, freq=0x0F, vol=0x3F, channel=0x00
 	break
-	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_2, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_2, x=[0x15], y=[0x16]
 	break
-	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_3, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_3, x=[0x15], y=[0x16]
 	break
-	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_4, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_4, x=[0x15], y=[0x16]
 	break
-	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_5, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_5, x=[0x15], y=[0x16]
 	break
-	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_6, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_6, x=[0x15], y=[0x16]
 	break
-	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_7, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_7, x=[0x15], y=[0x16]
 	break
-	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_8, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_8, x=[0x15], y=[0x16]
 	break
 	killChannel
 
@@ -103,7 +103,7 @@ SLUG_ATTACK_INTRO:
 	setPalette 0x0F
 
 SLUG_ATTACK_CLAW_DRIFT_FAST:
-	video offset=CINEMATIC_SLUG_ATTACK__CLOSED_CLAW, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_SLUG_ATTACK__CLOSED_CLAW, x=[0x15], y=[0x16]
 	sub [0x16], 0x000F
 	sub [0x15], 0x0003
 	break
@@ -112,18 +112,18 @@ SLUG_ATTACK_CLAW_DRIFT_FAST:
 	add [0x16], 0x000A
 
 SLUG_ATTACK_CLAW_DRIFT_SLOW:
-	video offset=CINEMATIC_SLUG_ATTACK__CLOSED_CLAW, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_SLUG_ATTACK__CLOSED_CLAW, x=[0x15], y=[0x16]
 	sub [0x16], 0x0005
 	sub [0x15], 0x0003
 	break
 	djnz [0x17], SLUG_ATTACK_CLAW_DRIFT_SLOW
 	setup channel=0x3B, address=GOO_DRIPPING_FROM_SLUGS_CLAW_ANIMATION
-	video offset=CINEMATIC_SLUG_ATTACK__CLOSED_CLAW, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_SLUG_ATTACK__CLOSED_CLAW, x=[0x15], y=[0x16]
 	break
 	mov [0x17], 0x000A
 
 SLUG_ATTACK_OPEN_CLAW_LOOP:
-	video offset=CINEMATIC_SLUG_ATTACK__OPEN_CLAW, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_SLUG_ATTACK__OPEN_CLAW, x=[0x15], y=[0x16]
 	sub [0x16], 0x0002
 	sub [0x15], 0x0001
 	break

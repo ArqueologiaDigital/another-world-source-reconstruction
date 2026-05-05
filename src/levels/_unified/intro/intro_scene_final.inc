@@ -136,13 +136,13 @@ INTRO_SCENE_INIT_PARTICLES:
 	video offset=CINEMATIC_535, x=45, y=50
 	video offset=CINEMATIC_536, x=247, y=108
 	video offset=CINEMATIC_537, x=171, y=100
-	video offset=CINEMATIC_538, x=275, y=44, zoom=0x40
-	video offset=CINEMATIC_539, x=268, y=79, zoom=0x40
-	video offset=CINEMATIC_540, x=297, y=91, zoom=0x40
+	video offset=CINEMATIC_538, x=275, y=44
+	video offset=CINEMATIC_539, x=268, y=79
+	video offset=CINEMATIC_540, x=297, y=91
 	video offset=CINEMATIC_541, x=251, y=98
-	video offset=CINEMATIC_542, x=309, y=96, zoom=0x40
-	video offset=CINEMATIC_543, x=284, y=101, zoom=0x40
-	video offset=CINEMATIC_544, x=357, y=119, zoom=0x40
+	video offset=CINEMATIC_542, x=309, y=96
+	video offset=CINEMATIC_543, x=284, y=101
+	video offset=CINEMATIC_544, x=357, y=119
 	video offset=CINEMATIC_545, x=190, y=143
 	video offset=CINEMATIC_546, x=19, y=78
 	video offset=CINEMATIC_547, x=160, y=78
@@ -178,7 +178,7 @@ INTRO_SCENE_INIT_PARTICLES:
 	video offset=CINEMATIC_563, x=221, y=91
 	video offset=CINEMATIC_562, x=83, y=109
 	video offset=CINEMATIC_564, x=251, y=116
-	video offset=CINEMATIC_565, x=258, y=131, zoom=0x40
+	video offset=CINEMATIC_565, x=258, y=131
 	video offset=CINEMATIC_566, x=2, y=26
 	video offset=CINEMATIC_567, x=31, y=12
 	video offset=CINEMATIC_568, x=32, y=169
@@ -220,7 +220,7 @@ DELAY_BEFORE_PLAY_FX_9_DUAL:
 	break
 	video offset=CINEMATIC_008, x=188, y=101
 	video offset=CINEMATIC_007, x=125, y=107
-	video offset=CINEMATIC_007, x=314, y=111, zoom=0x40
+	video offset=CINEMATIC_007, x=314, y=111
 	break
 	video offset=CINEMATIC_009, x=133, y=100
 	video offset=CINEMATIC_010, x=189, y=99

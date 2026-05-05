@@ -214,9 +214,9 @@ LABEL_05F5:
 	break
 	sub [0xE7], 0x0008
 	sub [0xE8], 0x0008
-	video offset=CINEMATIC_572, x=159, y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_572, x=159, y=[0xe7]
 	jge [0x04], 0x4000, LABEL_060F
-	video offset=CINEMATIC_573, x=179, y=[0xe8], zoom=0x40
+	video offset=CINEMATIC_573, x=179, y=[0xe8]
 
 LABEL_060F:
 	djnz [0xE6], LABEL_05F5

@@ -127,43 +127,43 @@ SLUG_PHASE_1_LEFT_INIT:
 	mov [0x0D], 0x0001
 
 SLUG_L_BIRTH_LOOP:
-	video offset=CINEMATIC_SLUG_L_0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_0, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_L_1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_1, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_L_2, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_2, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_L_3, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_3, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_L_4, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_4, x=[0x0c], y=[0x0d]
 	break
 	call JMP_TO_CHECK_BEAST_NEAR
 	jne [0x07], 0x00, IF_BEAST_NEAR_THEN_REACT_ELSE_KILL_THREAD
-	video offset=CINEMATIC_SLUG_L_5, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_5, x=[0x0c], y=[0x0d]
 	break
 	add [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_L_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_6, x=[0x0c], y=[0x0d]
 	break
 	add [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_L_7, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_7, x=[0x0c], y=[0x0d]
 	break
 	add [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_L_8, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_8, x=[0x0c], y=[0x0d]
 	break
 	add [0x0C], 0x0003
-	video offset=CINEMATIC_SLUG_L_9, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_9, x=[0x0c], y=[0x0d]
 	break
 	add [0x0C], 0x0002
-	video offset=CINEMATIC_SLUG_L_10, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_10, x=[0x0c], y=[0x0d]
 	break
 	add [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_L_11, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_11, x=[0x0c], y=[0x0d]
 	break
 	add [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_L_12, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_12, x=[0x0c], y=[0x0d]
 	break
 	add [0x0C], 0x0001
-	video offset=CINEMATIC_BEAST_AI_0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_0, x=[0x0c], y=[0x0d]
 	break
 	sub [0x0C], 0x0002
 	jmp SLUG_L_BIRTH_LOOP
@@ -173,52 +173,52 @@ SLUG_PHASE_1_RIGHT_INIT:
 	mov [0x0D], 0x0001
 
 SLUG_R_BIRTH_LOOP:
-	video offset=CINEMATIC_SLUG_R_0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_0, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_1, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_2, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_2, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_3, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_3, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_4, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_4, x=[0x0c], y=[0x0d]
 	break
 	call CHECK_IF_BEAST_IS_NEAR_LESTER
 	jne [0x07], 0x00, IF_BEAST_NEAR_THEN_REACT_ELSE_KILL_THREAD_2
-	video offset=CINEMATIC_SLUG_AFTER_0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_AFTER_0, x=[0x0c], y=[0x0d]
 	break
 	sub [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_AFTER_1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_AFTER_1, x=[0x0c], y=[0x0d]
 	break
 	sub [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_AFTER_2, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_AFTER_2, x=[0x0c], y=[0x0d]
 	break
 	sub [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_R_PHASE1_F0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_PHASE1_F0, x=[0x0c], y=[0x0d]
 	break
 	sub [0x0C], 0x0003
-	video offset=CINEMATIC_SLUG_R_PHASE1_F1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_PHASE1_F1, x=[0x0c], y=[0x0d]
 	break
 	sub [0x0C], 0x0002
-	video offset=CINEMATIC_SLUG_R_PHASE1_F2, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_PHASE1_F2, x=[0x0c], y=[0x0d]
 	break
 	sub [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_R_PHASE1_F3, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_PHASE1_F3, x=[0x0c], y=[0x0d]
 	break
 	sub [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_R_PHASE1_F4, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_PHASE1_F4, x=[0x0c], y=[0x0d]
 	break
 	sub [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_R_PHASE1_F5, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_PHASE1_F5, x=[0x0c], y=[0x0d]
 	break
 	add [0x0C], 0x0002
 	jmp SLUG_R_BIRTH_LOOP
 	killChannel
 
 SLUG_R_PHASE1_F6_THEN_DEATH:
-	video offset=CINEMATIC_SLUG_R_PHASE1_F6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_PHASE1_F6, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d]
 	break
 	jmp SLUG_R_DEATH_F10_TO_F26
 	killChannel
@@ -229,105 +229,105 @@ SLUG_R_F4_RAND_DELAY_INIT:
 	add [0x13], 0x0001
 
 SLUG_R_F4_REPEAT_LOOP:
-	video offset=CINEMATIC_SLUG_R_4, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_4, x=[0x0c], y=[0x0d]
 	break
 	djnz [0x13], SLUG_R_F4_REPEAT_LOOP
-	video offset=CINEMATIC_SLUG_R_5, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_5, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_7, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_7, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_8, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_8, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_9, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_9, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d]
 	break
 
 SLUG_R_DEATH_F10_TO_F26:
-	video offset=CINEMATIC_SLUG_R_10, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_10, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_11, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_11, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_10, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_10, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_12, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_12, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_13, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_13, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_9, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_9, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_13, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_13, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d]
 	call COMPUTE_RANDOM_BIT_MASKS
 	mov [0x13], [0x39]
 	add [0x13], 0x0002
 
 SLUG_R_F6_RAND_HOLD:
 	break
-	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d]
 	djnz [0x13], SLUG_R_F6_RAND_HOLD
 	break
 	mov [0x13], 0x0002
 
 SLUG_R_F15_DRIFT_DOWN:
 	add [0x0D], 0x0009
-	video offset=CINEMATIC_SLUG_R_15, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_15, x=[0x0c], y=[0x0d]
 	break
 	djnz [0x13], SLUG_R_F15_DRIFT_DOWN
 	mov [0x13], 0x0003
 
 SLUG_R_F16_DRIFT_DOWN:
 	add [0x0D], 0x000A
-	video offset=CINEMATIC_SLUG_R_16, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_16, x=[0x0c], y=[0x0d]
 	break
 	djnz [0x13], SLUG_R_F16_DRIFT_DOWN
 	mov [0x13], 0x0003
 
 SLUG_R_F17_DRIFT_DOWN:
 	add [0x0D], 0x000C
-	video offset=CINEMATIC_SLUG_R_17, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_17, x=[0x0c], y=[0x0d]
 	break
 	djnz [0x13], SLUG_R_F17_DRIFT_DOWN
 	mov [0x13], 0x0007
 
 SLUG_R_F18_DRIFT_DOWN:
 	add [0x0D], 0x000E
-	video offset=CINEMATIC_SLUG_R_18, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_18, x=[0x0c], y=[0x0d]
 	break
 	djnz [0x13], SLUG_R_F18_DRIFT_DOWN
 	play id=0x003A, freq=0x14, vol=0x3F, channel=0x00
-	video offset=CINEMATIC_SLUG_R_19, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_19, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_20, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_20, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_21, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_21, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_22, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_22, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_23, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_23, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_24, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_24, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_PHASE1_F7, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_PHASE1_F7, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_25, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_25, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_R_26, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_26, x=[0x0c], y=[0x0d]
 	break
 	sub [0x0C], 0x0008
 	jl [0x01], [0x0C], JMP_TO_SLUG_ANIMATION
@@ -344,21 +344,21 @@ SHIFT_X_LEFT_THEN_DRAW_LAKE_167_169:
 
 DRAW_LAKE_167_169_WITH_SOUND_35:
 	add [0x0C], 0x0002
-	video offset=CINEMATIC_LAKE_167_F1_F0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_LAKE_167_F1_F0, x=[0x0c], y=[0x0d]
 	break
 	play id=0x0035, freq=0x0A, vol=0x3F, channel=0x00
-	video offset=CINEMATIC_LAKE_167_F1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_LAKE_167_F1, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_LAKE_167_F2, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_LAKE_167_F2, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_LAKE_167_F3, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_LAKE_167_F3, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_LAKE_167_F4, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_LAKE_167_F4, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_LAKE_167_F5, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_LAKE_167_F5, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_LAKE_167_F6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_LAKE_167_F6, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_LAKE_167_F7, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_LAKE_167_F7, x=[0x0c], y=[0x0d]
 	break
 

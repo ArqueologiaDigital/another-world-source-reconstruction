@@ -187,7 +187,7 @@ LABEL_C73B:
 	selectVideoPage 0xFF
 
 HANG_DRAW_CIN_222:
-	video offset=CINEMATIC_222, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_222, x=[0x01], y=[0x02]
 	break
 	jmp HANG_DRAW_CIN_222
 
@@ -265,7 +265,7 @@ LABEL_C7F5:
 	video offset=CINEMATIC_399, x=192, y=140
 	jg [0x02], 0x96, LABEL_C817
 	video offset=CINEMATIC_404, x=248, y=112
-	video offset=CINEMATIC_405, x=258, y=31, zoom=0x40
+	video offset=CINEMATIC_405, x=258, y=31
 	video offset=CINEMATIC_402, x=127, y=39
 	video offset=CINEMATIC_406, x=144, y=74
 	jmp LABEL_C827
@@ -299,7 +299,7 @@ LABEL_C83D:
 	jmp LABEL_C866
 
 LABEL_C861:
-	video offset=CINEMATIC_405, x=292, y=115, zoom=0x40
+	video offset=CINEMATIC_405, x=292, y=115
 
 LABEL_C866:
 	break
@@ -321,7 +321,7 @@ LABEL_C87B:
 	video offset=CINEMATIC_402, x=116, y=95
 	video offset=CINEMATIC_402, x=151, y=86
 	video offset=CINEMATIC_402, x=178, y=115
-	video offset=CINEMATIC_402, x=272, y=39, zoom=0x40
+	video offset=CINEMATIC_402, x=272, y=39
 	video offset=CINEMATIC_406, x=137, y=135
 	video offset=CINEMATIC_406, x=141, y=135
 	video offset=CINEMATIC_406, x=135, y=133
@@ -330,7 +330,7 @@ LABEL_C87B:
 	video offset=CINEMATIC_403, x=206, y=145
 	video offset=CINEMATIC_403, x=213, y=144
 	jl [0x01], 0xC8, LABEL_C8D5
-	video offset=CINEMATIC_400, x=261, y=41, zoom=0x40
+	video offset=CINEMATIC_400, x=261, y=41
 	video offset=CINEMATIC_402, x=246, y=27
 	video offset=CINEMATIC_402, x=239, y=24
 	video offset=CINEMATIC_402, x=233, y=27
@@ -386,7 +386,7 @@ LABEL_C949:
 	db 0x11
 
 LABEL_C94A:
-	video offset=CINEMATIC_459, x=286, y=27, zoom=0x40
+	video offset=CINEMATIC_459, x=286, y=27
 	video offset=CINEMATIC_721, x=66, y=143
 	jg [0x02], 0x78, LABEL_C98F
 	jg [0x01], 0x64, LABEL_C96C
@@ -457,7 +457,7 @@ LABEL_C9F6:
 	video offset=CINEMATIC_401, x=235, y=76
 	video offset=CINEMATIC_403, x=243, y=67
 	video offset=CINEMATIC_406, x=255, y=62
-	video offset=CINEMATIC_402, x=271, y=25, zoom=0x40
+	video offset=CINEMATIC_402, x=271, y=25
 	jmp LABEL_CA2A
 
 LABEL_CA15:
@@ -487,7 +487,7 @@ LABEL_CA43:
 
 LABEL_CA44:
 	video offset=CINEMATIC_400, x=46, y=65
-	video offset=CINEMATIC_644, x=268, y=18, zoom=0x40
+	video offset=CINEMATIC_644, x=268, y=18
 	video offset=CINEMATIC_404, x=177, y=18
 	video offset=CINEMATIC_590, x=69, y=67
 	break
@@ -588,8 +588,8 @@ LABEL_CB60:
 
 LABEL_CB70:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_589, x=125, y=[0xe8], zoom=0x40
-	video offset=CINEMATIC_589, x=160, y=[0xe8], zoom=0x40
+	video offset=CINEMATIC_589, x=125, y=[0xe8]
+	video offset=CINEMATIC_589, x=160, y=[0xe8]
 	selectVideoPage 0xFF
 	sub [0xE8], 0x0003
 	sub [0xE6], 0x0003

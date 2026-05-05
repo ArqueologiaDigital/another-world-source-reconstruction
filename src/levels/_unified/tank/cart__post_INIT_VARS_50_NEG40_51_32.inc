@@ -54,21 +54,21 @@ WAIT_VAR3E_DEC_AND_RANDOMIZE:
 	and [0x3D], 0x001F
 	add [0x3D], 0x005A
 	play id=0x008C, freq=0x19, vol=0x0D, channel=0x00
-	video offset=CINEMATIC_205, x=[0x3c], y=[0x3d], zoom=0x40
+	video offset=CINEMATIC_205, x=[0x3c], y=[0x3d]
 	selectVideoPage 0x03
 	call SUM_HASH_VARS_TO_VAR_64
 	mov [0xF8], [0x64]
 	and [0xF8], 0x0003
 	jne [0xF8], 0x00, LABEL_15CD
-	video offset=CINEMATIC_208, x=[0x3c], y=[0x3d], zoom=0x40
+	video offset=CINEMATIC_208, x=[0x3c], y=[0x3d]
 
 LABEL_15CD:
 	jne [0xF8], 0x01, LABEL_15D8
-	video offset=CINEMATIC_207, x=[0x3c], y=[0x3d], zoom=0x40
+	video offset=CINEMATIC_207, x=[0x3c], y=[0x3d]
 
 LABEL_15D8:
 	jl [0xF8], 0x02, LABEL_15E3
-	video offset=CINEMATIC_206, x=[0x3c], y=[0x3d], zoom=0x40
+	video offset=CINEMATIC_206, x=[0x3c], y=[0x3d]
 
 LABEL_15E3:
 	selectVideoPage 0xFF
@@ -77,12 +77,12 @@ LABEL_15E8:
 	db 0x11
 
 HANG_DRAW_CIN_089:
-	video offset=CINEMATIC_089, x=[0x0f], y=[0x10], zoom=0x40
+	video offset=CINEMATIC_089, x=[0x0f], y=[0x10]
 	break
 	jmp HANG_DRAW_CIN_089
 
 HANG_DRAW_CIN_090:
-	video offset=CINEMATIC_090, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_090, x=[0x01], y=[0x02]
 	break
 	jmp HANG_DRAW_CIN_090
 
@@ -120,9 +120,9 @@ WAIT_VAR56_PLAY_8E_DRAW_CIN_020:
 	break
 	video offset=CINEMATIC_001, x=247, y=61
 	break
-	video offset=CINEMATIC_002, x=258, y=73, zoom=0x40
+	video offset=CINEMATIC_002, x=258, y=73
 	break
-	video offset=CINEMATIC_022, x=269, y=80, zoom=0x40
+	video offset=CINEMATIC_022, x=269, y=80
 	break
 	video offset=CINEMATIC_022, x=272, y=77, zoom=[0x3c]	;@enc=alt
 	break
@@ -136,24 +136,24 @@ WAIT_VAR56_PLAY_8E_DRAW_CIN_020:
 	break
 	selectVideoPage 0x00
 	play id=0x008C, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_045, x=264, y=103, zoom=0x40
+	video offset=CINEMATIC_045, x=264, y=103
 	selectVideoPage 0x03
-	video offset=CINEMATIC_045, x=264, y=103, zoom=0x40
+	video offset=CINEMATIC_045, x=264, y=103
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_046, x=264, y=105, zoom=0x40
+	video offset=CINEMATIC_046, x=264, y=105
 	break
-	video offset=CINEMATIC_047, x=264, y=105, zoom=0x40
+	video offset=CINEMATIC_047, x=264, y=105
 	break
-	video offset=CINEMATIC_048, x=264, y=103, zoom=0x40
+	video offset=CINEMATIC_048, x=264, y=103
 	break
-	video offset=CINEMATIC_049, x=264, y=103, zoom=0x40
+	video offset=CINEMATIC_049, x=264, y=103
 	break
-	video offset=CINEMATIC_050, x=264, y=103, zoom=0x40
+	video offset=CINEMATIC_050, x=264, y=103
 	break
-	video offset=CINEMATIC_051, x=264, y=103, zoom=0x40
+	video offset=CINEMATIC_051, x=264, y=103
 	break
-	video offset=CINEMATIC_052, x=264, y=103, zoom=0x40
+	video offset=CINEMATIC_052, x=264, y=103
 	killChannel
 
 LABEL_16BF:
@@ -213,7 +213,7 @@ LABEL_1731:
 	break
 	video offset=CINEMATIC_053, x=159, y=100
 	video offset=CINEMATIC_054, x=160, y=100
-	video offset=CINEMATIC_055, x=300, y=91, zoom=0x40
+	video offset=CINEMATIC_055, x=300, y=91
 	selectVideoPage 0x00
 	video offset=CINEMATIC_053, x=160, y=100
 	selectVideoPage 0xFF

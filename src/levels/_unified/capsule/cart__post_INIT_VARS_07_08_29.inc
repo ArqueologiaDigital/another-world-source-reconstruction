@@ -1,29 +1,29 @@
 ANIM_CIN_532_LOOP_VAR29:
-	video offset=CINEMATIC_532, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_532, x=[0x07], y=[0x08]
 	break
 	djnz [0x29], ANIM_CIN_532_LOOP_VAR29
-	video offset=CINEMATIC_533, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_533, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_534, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_534, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_535, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_535, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_536, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_536, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_537, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_537, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_538, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_538, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_539, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_539, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_540, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_540, x=[0x07], y=[0x08]
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x01
 	play id=0x0079, freq=0x19, vol=0x40, channel=0x00
 	add [0x07], 0x0007
 	setup channel=0x14, address=LABEL_1995
 	mov [0x29], 0x0014
 	break
-	video offset=CINEMATIC_541, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_541, x=[0x07], y=[0x08]
 	add [0x07], 0x0008
 
 LABEL_1AD1:
@@ -40,23 +40,23 @@ LABEL_1AE5:
 STATE_VAR12_BIG_DISPATCH_CASE_28:
 	call GUARDED_ALIEN_ANIM_CV_128
 	break
-	video offset=CINEMATIC_114, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_114, x=[0x07], y=[0x08]
 	video type=0, offset=COMMON_VIDEO_169, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xE8], 0x0001
 	break
-	video offset=CINEMATIC_115, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_115, x=[0x07], y=[0x08]
 	video type=0, offset=COMMON_VIDEO_173, x=[0x07], y=[0x08], zoom=0x40
 	break
 	add [0x07], 0x0002
-	video offset=CINEMATIC_116, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_116, x=[0x07], y=[0x08]
 	video type=0, offset=COMMON_VIDEO_129, x=[0x07], y=[0x08], zoom=0x40
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x01
 	play id=0x0079, freq=0x19, vol=0x40, channel=0x00
 	break
-	video offset=CINEMATIC_117, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_117, x=[0x07], y=[0x08]
 	video type=0, offset=COMMON_VIDEO_181, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video offset=CINEMATIC_118, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_118, x=[0x07], y=[0x08]
 	video type=0, offset=COMMON_VIDEO_189, x=[0x07], y=[0x08], zoom=0x40
 	mov [0x12], 0x0030
 	mov [0x29], 0x000A

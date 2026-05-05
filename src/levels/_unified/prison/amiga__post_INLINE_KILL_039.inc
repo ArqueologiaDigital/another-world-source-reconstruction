@@ -273,30 +273,30 @@ LABEL_04BA:
 LABEL_04BB:
 	mov [0x01], 0x0091
 	add [0x02], 0x0014
-	video offset=CINEMATIC_415, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_415, x=[0x01], y=[0x02]
 	break
 	setup channel=0x3A, address=LABEL_053D
 	add [0x02], 0x0018
-	video offset=CINEMATIC_415, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_415, x=[0x01], y=[0x02]
 	break
 	add [0x02], 0x0020
-	video offset=CINEMATIC_415, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_415, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_212, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_212, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_211, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_211, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_418, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_418, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_419, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_419, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_420, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_420, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_421, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_421, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_422, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_422, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_423, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_423, x=[0x01], y=[0x02]
 	setup channel=0x00, address=LABEL_0180
 	break
 	jmp LABEL_8B32

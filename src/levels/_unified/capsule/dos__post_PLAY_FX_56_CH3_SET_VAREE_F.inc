@@ -29,30 +29,30 @@ DELAY_LOOP_VAREE_AT_09B4:
 
 LABEL_09BC:
 	mov [0xEB], 0x00A0
-	video offset=CINEMATIC_237, x=[0xeb], y=[0x40], zoom=0x40
-	video offset=CINEMATIC_593, x=[0xeb], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_237, x=[0xeb], y=[0x40]
+	video offset=CINEMATIC_593, x=[0xeb], y=[0x40]
 	break
-	video offset=CINEMATIC_238, x=[0xeb], y=[0x40], zoom=0x40
-	video offset=CINEMATIC_593, x=[0xeb], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_238, x=[0xeb], y=[0x40]
+	video offset=CINEMATIC_593, x=[0xeb], y=[0x40]
 	break
-	video offset=CINEMATIC_239, x=[0xeb], y=[0x40], zoom=0x40
-	video offset=CINEMATIC_594, x=[0xeb], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_239, x=[0xeb], y=[0x40]
+	video offset=CINEMATIC_594, x=[0xeb], y=[0x40]
 	break
-	video offset=CINEMATIC_241, x=[0xeb], y=[0x40], zoom=0x40
-	video offset=CINEMATIC_594, x=[0xeb], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_241, x=[0xeb], y=[0x40]
+	video offset=CINEMATIC_594, x=[0xeb], y=[0x40]
 	break
-	video offset=CINEMATIC_238, x=[0xeb], y=[0x40], zoom=0x40
-	video offset=CINEMATIC_594, x=[0xeb], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_238, x=[0xeb], y=[0x40]
+	video offset=CINEMATIC_594, x=[0xeb], y=[0x40]
 	break
 	jmp LABEL_09BC
 LABEL_09FA:
 	db 0x11
 
 LABEL_09FB:
-	video offset=CINEMATIC_573, x=125, y=65508, zoom=0x40
+	video offset=CINEMATIC_573, x=125, y=65508
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x00
 	break
-	video offset=CINEMATIC_574, x=125, y=65508, zoom=0x40
+	video offset=CINEMATIC_574, x=125, y=65508
 	break
 	break
 	break

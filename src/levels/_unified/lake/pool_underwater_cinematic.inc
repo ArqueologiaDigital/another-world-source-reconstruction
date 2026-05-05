@@ -222,79 +222,79 @@ POOL_INIT_VAR_16_RISE:
 	killChannel
 
 MAIN_TENTACLE_INSIDE_POOL_ANIMATION:
-	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x15], y=[0x16]
 	break
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x15], y=[0x16]
 	break
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x15], y=[0x16]
 	break
-	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x15], y=[0x16]
 	break
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x15], y=[0x16]
 	break
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x15], y=[0x16]
 	break
 	jmp MAIN_TENTACLE_INSIDE_POOL_ANIMATION
 
 OTHER_TENTACLES_INSIDE_POOL_ANIMATION:
-	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x46], y=[0x47], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x49], y=[0x4a], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x4c], y=[0x4d], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x4f], y=[0x50], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x52], y=[0x53], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x55], y=[0x56], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x58], y=[0x59], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x5b], y=[0x5c], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x46], y=[0x47]
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x49], y=[0x4a]
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x4c], y=[0x4d]
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x4f], y=[0x50]
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x52], y=[0x53]
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x55], y=[0x56]
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x58], y=[0x59]
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x5b], y=[0x5c]
 	call UPDATE_POSITIONS_OF_TENTACLES_INSIDE_THE_POOL
 	break
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x46], y=[0x47], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x49], y=[0x4a], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x4c], y=[0x4d], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x4f], y=[0x50], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x52], y=[0x53], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x55], y=[0x56], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x58], y=[0x59], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x5b], y=[0x5c], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x46], y=[0x47]
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x49], y=[0x4a]
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x4c], y=[0x4d]
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x4f], y=[0x50]
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x52], y=[0x53]
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x55], y=[0x56]
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x58], y=[0x59]
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x5b], y=[0x5c]
 	call UPDATE_POSITIONS_OF_TENTACLES_INSIDE_THE_POOL
 	break
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x46], y=[0x47], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x49], y=[0x4a], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x4c], y=[0x4d], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x4f], y=[0x50], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x52], y=[0x53], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x55], y=[0x56], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x58], y=[0x59], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x5b], y=[0x5c], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x46], y=[0x47]
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x49], y=[0x4a]
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x4c], y=[0x4d]
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x4f], y=[0x50]
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x52], y=[0x53]
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x55], y=[0x56]
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x58], y=[0x59]
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x5b], y=[0x5c]
 	call UPDATE_POSITIONS_OF_TENTACLES_INSIDE_THE_POOL
 	break
-	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x46], y=[0x47], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x49], y=[0x4a], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x4c], y=[0x4d], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x4f], y=[0x50], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x52], y=[0x53], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x55], y=[0x56], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x58], y=[0x59], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x5b], y=[0x5c], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x46], y=[0x47]
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x49], y=[0x4a]
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x4c], y=[0x4d]
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x4f], y=[0x50]
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x52], y=[0x53]
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x55], y=[0x56]
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x58], y=[0x59]
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x5b], y=[0x5c]
 	call UPDATE_POSITIONS_OF_TENTACLES_INSIDE_THE_POOL
 	break
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x46], y=[0x47], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x49], y=[0x4a], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x4c], y=[0x4d], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x4f], y=[0x50], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x52], y=[0x53], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x55], y=[0x56], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x58], y=[0x59], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x5b], y=[0x5c], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x46], y=[0x47]
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x49], y=[0x4a]
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x4c], y=[0x4d]
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x4f], y=[0x50]
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x52], y=[0x53]
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x55], y=[0x56]
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x58], y=[0x59]
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x5b], y=[0x5c]
 	call UPDATE_POSITIONS_OF_TENTACLES_INSIDE_THE_POOL
 	break
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x46], y=[0x47], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x49], y=[0x4a], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x4c], y=[0x4d], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x4f], y=[0x50], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x52], y=[0x53], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x55], y=[0x56], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x58], y=[0x59], zoom=0x40
-	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x5b], y=[0x5c], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x46], y=[0x47]
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x49], y=[0x4a]
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x4c], y=[0x4d]
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x4f], y=[0x50]
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x52], y=[0x53]
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x55], y=[0x56]
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x58], y=[0x59]
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x5b], y=[0x5c]
 	call UPDATE_POSITIONS_OF_TENTACLES_INSIDE_THE_POOL
 	break
 	jmp OTHER_TENTACLES_INSIDE_POOL_ANIMATION
@@ -375,13 +375,13 @@ POOL_SURFACE_WAVES_ANIMATION:
 	killChannel
 
 POOL_WATER_WAVY_GLARE_ANIMATION:
-	video offset=CINEMATIC_POOL_WATER_WAVY_GLARE_EFFECT, x=[0x04], y=[0x05], zoom=0x40
+	video offset=CINEMATIC_POOL_WATER_WAVY_GLARE_EFFECT, x=[0x04], y=[0x05]
 	sub [0x04], 0x0064
-	video offset=CINEMATIC_POOL_WATER_WAVY_GLARE_EFFECT, x=[0x04], y=[0x05], zoom=0x40
+	video offset=CINEMATIC_POOL_WATER_WAVY_GLARE_EFFECT, x=[0x04], y=[0x05]
 	add [0x04], 0x0064
-	video offset=CINEMATIC_POOL_WATER_WAVY_GLARE_EFFECT, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_POOL_WATER_WAVY_GLARE_EFFECT, x=[0x07], y=[0x08]
 	add [0x07], 0x00A0
-	video offset=CINEMATIC_POOL_WATER_WAVY_GLARE_EFFECT, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_POOL_WATER_WAVY_GLARE_EFFECT, x=[0x07], y=[0x08]
 	sub [0x07], 0x00A0
 	break
 	jmp POOL_WATER_WAVY_GLARE_ANIMATION
@@ -424,63 +424,63 @@ SECOND_WAVY_GLARE_DRIFT:
 	killChannel
 
 SWIMMING_UP_TORSO_ANIMATION:
-	video offset=CINEMATIC_SWIMMING_UP_TORSO_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_TORSO_0, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_TORSO_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_TORSO_1, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_TORSO_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_TORSO_2, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_TORSO_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_TORSO_1, x=[0x01], y=[0x02]
 	break
 	jmp SWIMMING_UP_TORSO_ANIMATION
 	killChannel
 
 BUBBLES_A_ANIMATION:
-	video offset=CINEMATIC_BUBBLES_B_0, x=[0x13], y=[0x0d], zoom=0x40
-	video offset=CINEMATIC_BUBBLES_B_1, x=[0x13], y=[0x0e], zoom=0x40
-	video offset=CINEMATIC_BUBBLES_B_2, x=[0x13], y=[0x0f], zoom=0x40
-	video offset=CINEMATIC_BUBBLES_B_3, x=[0x13], y=[0x10], zoom=0x40
-	video offset=CINEMATIC_BUBBLES_B_4, x=[0x13], y=[0x11], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_B_0, x=[0x13], y=[0x0d]
+	video offset=CINEMATIC_BUBBLES_B_1, x=[0x13], y=[0x0e]
+	video offset=CINEMATIC_BUBBLES_B_2, x=[0x13], y=[0x0f]
+	video offset=CINEMATIC_BUBBLES_B_3, x=[0x13], y=[0x10]
+	video offset=CINEMATIC_BUBBLES_B_4, x=[0x13], y=[0x11]
 	break
-	video offset=CINEMATIC_BUBBLES_B_5, x=[0x13], y=[0x0d], zoom=0x40
-	video offset=CINEMATIC_BUBBLES_B_1, x=[0x13], y=[0x0e], zoom=0x40
-	video offset=CINEMATIC_BUBBLES_B_2, x=[0x13], y=[0x0f], zoom=0x40
-	video offset=CINEMATIC_BUBBLES_B_3, x=[0x13], y=[0x10], zoom=0x40
-	video offset=CINEMATIC_BUBBLES_B_4, x=[0x13], y=[0x11], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_B_5, x=[0x13], y=[0x0d]
+	video offset=CINEMATIC_BUBBLES_B_1, x=[0x13], y=[0x0e]
+	video offset=CINEMATIC_BUBBLES_B_2, x=[0x13], y=[0x0f]
+	video offset=CINEMATIC_BUBBLES_B_3, x=[0x13], y=[0x10]
+	video offset=CINEMATIC_BUBBLES_B_4, x=[0x13], y=[0x11]
 	break
 	jmp BUBBLES_A_ANIMATION
 	killChannel
 
 BUBBLES_B_ANIMATION:
-	video offset=CINEMATIC_BUBBLES_A_0, x=[0x13], y=[0x0c], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_A_0, x=[0x13], y=[0x0c]
 	break
-	video offset=CINEMATIC_BUBBLES_A_1, x=[0x13], y=[0x0c], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_A_1, x=[0x13], y=[0x0c]
 	break
-	video offset=CINEMATIC_BUBBLES_A_2, x=[0x13], y=[0x0c], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_A_2, x=[0x13], y=[0x0c]
 	break
-	video offset=CINEMATIC_BUBBLES_A_1, x=[0x13], y=[0x0c], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_A_1, x=[0x13], y=[0x0c]
 	break
-	video offset=CINEMATIC_BUBBLES_A_0, x=[0x13], y=[0x0c], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_A_0, x=[0x13], y=[0x0c]
 	break
 	jmp BUBBLES_B_ANIMATION
 	killChannel
 
 SWIMMING_UP_LEGS_ANIMATION:
-	video offset=CINEMATIC_SWIMMING_UP_LEGS_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_0, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_LEGS_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_1, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_LEGS_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_2, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_LEGS_3, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_3, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_LEGS_4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_4, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_LEGS_5, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_5, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_LEGS_6, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_6, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_SWIMMING_UP_LEGS_7, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_7, x=[0x01], y=[0x02]
 	break
 	jmp SWIMMING_UP_LEGS_ANIMATION
 	killChannel

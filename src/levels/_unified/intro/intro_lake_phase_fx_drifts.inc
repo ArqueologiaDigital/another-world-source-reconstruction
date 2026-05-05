@@ -1,18 +1,18 @@
 DRAW_CIN_120_LOOP_VAR03:
-	video offset=CINEMATIC_120, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_120, x=[0x01], y=[0x02]
 	break
 	jne [0x03], 0x00, DRAW_CIN_120_LOOP_VAR03
 	mov [0x03], 0x00FF
-	video offset=CINEMATIC_121, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_121, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_122, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_122, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_123, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_123, x=[0x01], y=[0x02]
 	call PLAY_FX_BY_PHASE_VAR1E
 	break
-	video offset=CINEMATIC_124, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_124, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_125, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_125, x=[0x01], y=[0x02]
 	break
 	jmp DRAW_CIN_120_LOOP_VAR03
 LABEL_1FD1:

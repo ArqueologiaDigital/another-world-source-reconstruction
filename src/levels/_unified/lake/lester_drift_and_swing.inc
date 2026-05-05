@@ -156,49 +156,49 @@ LESTER_GRABS_A_VINE_AND_SWINGS:
 	break
 	video offset=CINEMATIC_LESTER_GRABBING_VINE_2, x=65, y=171
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_3, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_3, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_3, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_3, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_3, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_3, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02]
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x07, address=LOOP_DRAW_LAKE_093_AT_CENTER
@@ -208,51 +208,51 @@ LESTER_GRABS_A_VINE_AND_SWINGS:
 	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_1, x=160, y=100
 	break
 	mov [0x01], 0x00A0
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_2, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_2, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_3, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_3, x=[0x01], y=100
 	setup channel=0x04, address=LESTER_DRIFT_RIGHT_SEQ
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_4, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_4, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_5, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_5, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_6, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_6, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_7, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_7, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_8, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_8, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_9, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_9, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_10, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_10, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_11, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_11, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_12, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_12, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_13, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_13, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_14, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_14, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_15, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_15, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_16, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_16, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_17, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_17, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_18, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_18, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_19, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_19, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_20, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_20, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_21, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_21, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_22, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_22, x=[0x01], y=100
 	setup channel=0x3F, address=OUTSIDE_POOL_SCREEN
 	break
-	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_23, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_23, x=[0x01], y=100
 	setup channel=0x00, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
@@ -261,30 +261,30 @@ LESTER_GRABS_A_VINE_AND_SWINGS:
 	call ADVANCE_X_BACKWARD_ONE_SCREEN
 	mov [0x01], 0x008C
 	mov [0x02], 0x0050
-	video offset=CINEMATIC_LANDING_AFTER_SWING_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_0, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LANDING_AFTER_SWING_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_1, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LANDING_AFTER_SWING_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_2, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LANDING_AFTER_SWING_3, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_3, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LANDING_AFTER_SWING_4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_4, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LANDING_AFTER_SWING_5, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_5, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LANDING_AFTER_SWING_6, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_6, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LANDING_AFTER_SWING_7, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_7, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LANDING_AFTER_SWING_8, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_8, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LANDING_AFTER_SWING_9, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_9, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LANDING_AFTER_SWING_10, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_10, x=[0x01], y=[0x02]
 	play id=0x0051, freq=0x0A, vol=0x3F, channel=0x00
 	break
-	video offset=CINEMATIC_LANDING_AFTER_SWING_11, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_11, x=[0x01], y=[0x02]
 	freezeChannels first=0x14, last=0x16
 ;@if BRANCH == "cartridge_1992"
 	setup channel=0x14, address=RESUME_R_AFTER_VINE_LAND
@@ -295,7 +295,7 @@ LESTER_GRABS_A_VINE_AND_SWINGS:
 ;@endif
 	setup channel=0x15, address=KILL_CHANNEL_ROUTINE
 	break
-	video offset=CINEMATIC_LANDING_AFTER_SWING_12, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_12, x=[0x01], y=[0x02]
 	break
 	mov [0x5E], 0x0001
 	mov [0x01], 0x0061

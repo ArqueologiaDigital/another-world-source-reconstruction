@@ -189,10 +189,10 @@ LABEL_0F53:
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	add [0xE9], [0x3D]
 	setPalette 0x02
-	video offset=CINEMATIC_141, x=[0xe8], y=[0xe9], zoom=0x40
+	video offset=CINEMATIC_141, x=[0xe8], y=[0xe9]
 	break
 	setPalette 0x01
-	video offset=CINEMATIC_142, x=[0xe8], y=[0xe9], zoom=0x40
+	video offset=CINEMATIC_142, x=[0xe8], y=[0xe9]
 	break
 	sub [0xE8], 0x005F
 	sub [0xE9], 0x0018
@@ -213,10 +213,10 @@ LABEL_0F9F:
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	add [0xEB], [0x3D]
 	setPalette 0x02
-	video offset=CINEMATIC_143, x=[0xea], y=[0xeb], zoom=0x40
+	video offset=CINEMATIC_143, x=[0xea], y=[0xeb]
 	break
 	setPalette 0x01
-	video offset=CINEMATIC_144, x=[0xea], y=[0xeb], zoom=0x40
+	video offset=CINEMATIC_144, x=[0xea], y=[0xeb]
 	break
 	add [0xEA], 0x0014
 	sub [0xEB], 0x0018

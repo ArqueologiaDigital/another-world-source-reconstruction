@@ -73,7 +73,7 @@ LABEL_0B6F:
 LABEL_0B75:
 	mov [0x05], [0x01]
 	call DERIVE_VAR07_VAR08_FROM_VAR05
-	video offset=CINEMATIC_051, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_051, x=[0x07], y=[0x08]
 	break
 	jne [HERO_ACTION], 0x00, LABEL_0B75
 	jmp LABEL_08E2
@@ -84,7 +84,7 @@ LABEL_0B8B:
 	mov [0x07], 0x0064
 	mov [0x08], 0x0019
 	selectVideoPage 0x00
-	video offset=CINEMATIC_052, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_052, x=[0x07], y=[0x08]
 	mov [0x06], [0x1E]
 	call DRAW_CIN_073_IF_VAR06_EQ_1
 	add [0x07], 0x0028

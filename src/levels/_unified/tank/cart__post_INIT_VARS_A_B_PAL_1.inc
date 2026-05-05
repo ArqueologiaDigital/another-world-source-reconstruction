@@ -62,7 +62,7 @@ LABEL_1C0E:
 	call DRAW_CIN_SEQ_068_068_068
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0xFF
-	video offset=CINEMATIC_089, x=[0x0f], y=[0x10], zoom=0x40
+	video offset=CINEMATIC_089, x=[0x0f], y=[0x10]
 	video offset=CINEMATIC_090, x=160, y=90
 	copyVideoPage src=0xFF, dst=0x00
 	selectVideoPage 0x00
@@ -90,19 +90,19 @@ DRAW_CIN_069:
 	ret
 
 DRAW_CIN_186_THEN_CIN_187:
-	video offset=CINEMATIC_186, x=[0x0f], y=[0x10], zoom=0x40
-	video offset=CINEMATIC_187, x=[0x0f], y=[0x10], zoom=0x40
+	video offset=CINEMATIC_186, x=[0x0f], y=[0x10]
+	video offset=CINEMATIC_187, x=[0x0f], y=[0x10]
 	ret
 
 LABEL_1C6E:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_196, x=[0x0f], y=[0x10], zoom=0x40
+	video offset=CINEMATIC_196, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
 	ret
 
 LABEL_1C78:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_193, x=[0x0f], y=[0x10], zoom=0x40
+	video offset=CINEMATIC_193, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
 	jg [HACK_VAR_67], 0x02, SHARED_RET
 	mov [HACK_VAR_67], 0x0002
@@ -111,7 +111,7 @@ LABEL_1C78:
 LABEL_1C8C:
 	jge [HACK_VAR_67], 0x03, SHARED_RET
 	selectVideoPage 0x00
-	video offset=CINEMATIC_192, x=[0x0f], y=[0x10], zoom=0x40
+	video offset=CINEMATIC_192, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
 	mov [HACK_VAR_67], 0x0003
 	ret
@@ -176,40 +176,40 @@ DRAW_CIN_061_HORIZ_THEN_062:
 	killChannel
 
 DRAW_CIN_091_061_FIELD:
-	video offset=CINEMATIC_091, x=299, y=37, zoom=0x40
-	video offset=CINEMATIC_091, x=289, y=23, zoom=0x40
+	video offset=CINEMATIC_091, x=299, y=37
+	video offset=CINEMATIC_091, x=289, y=23
 	video offset=CINEMATIC_061, x=205, y=21
 	video offset=CINEMATIC_061, x=187, y=27
 	video offset=CINEMATIC_061, x=247, y=25
 	video offset=CINEMATIC_061, x=167, y=20
 	video offset=CINEMATIC_061, x=142, y=21
 	video offset=CINEMATIC_061, x=228, y=22
-	video offset=CINEMATIC_061, x=279, y=21, zoom=0x40
-	video offset=CINEMATIC_061, x=310, y=20, zoom=0x40
+	video offset=CINEMATIC_061, x=279, y=21
+	video offset=CINEMATIC_061, x=310, y=20
 	video offset=CINEMATIC_062, x=186, y=24
 	video offset=CINEMATIC_062, x=207, y=21
 	video offset=CINEMATIC_062, x=161, y=22
 	video offset=CINEMATIC_062, x=240, y=21
-	video offset=CINEMATIC_062, x=303, y=18, zoom=0x40
+	video offset=CINEMATIC_062, x=303, y=18
 	video offset=CINEMATIC_062, x=140, y=20
 	video offset=CINEMATIC_062, x=242, y=22
 	video offset=CINEMATIC_062, x=224, y=21
-	video offset=CINEMATIC_062, x=287, y=21, zoom=0x40
-	video offset=CINEMATIC_062, x=259, y=27, zoom=0x40
+	video offset=CINEMATIC_062, x=287, y=21
+	video offset=CINEMATIC_062, x=259, y=27
 	video offset=CINEMATIC_062, x=140, y=20
 	video offset=CINEMATIC_063, x=164, y=23
 	video offset=CINEMATIC_063, x=198, y=21
 	video offset=CINEMATIC_063, x=216, y=25
 	video offset=CINEMATIC_063, x=147, y=24
-	video offset=CINEMATIC_063, x=302, y=17, zoom=0x40
-	video offset=CINEMATIC_063, x=273, y=21, zoom=0x40
+	video offset=CINEMATIC_063, x=302, y=17
+	video offset=CINEMATIC_063, x=273, y=21
 	video offset=CINEMATIC_063, x=255, y=21
 	video offset=CINEMATIC_063, x=222, y=18
 	video offset=CINEMATIC_063, x=134, y=21
 	video offset=CINEMATIC_063, x=114, y=23
 	video offset=CINEMATIC_063, x=190, y=20
 	video offset=CINEMATIC_063, x=245, y=23
-	video offset=CINEMATIC_063, x=294, y=19, zoom=0x40
+	video offset=CINEMATIC_063, x=294, y=19
 	video offset=CINEMATIC_092, x=211, y=26
 	video offset=CINEMATIC_092, x=196, y=19
 	video offset=CINEMATIC_092, x=156, y=17
@@ -217,11 +217,11 @@ DRAW_CIN_091_061_FIELD:
 	video offset=CINEMATIC_092, x=124, y=23
 	video offset=CINEMATIC_092, x=182, y=13
 	video offset=CINEMATIC_092, x=221, y=17
-	video offset=CINEMATIC_092, x=257, y=18, zoom=0x40
+	video offset=CINEMATIC_092, x=257, y=18
 	video offset=CINEMATIC_092, x=242, y=18
-	video offset=CINEMATIC_092, x=295, y=21, zoom=0x40
-	video offset=CINEMATIC_092, x=303, y=19, zoom=0x40
-	video offset=CINEMATIC_092, x=280, y=17, zoom=0x40
+	video offset=CINEMATIC_092, x=295, y=21
+	video offset=CINEMATIC_092, x=303, y=19
+	video offset=CINEMATIC_092, x=280, y=17
 	video offset=CINEMATIC_092, x=87, y=20
 	video offset=CINEMATIC_092, x=107, y=22
 	video offset=CINEMATIC_092, x=35, y=17
@@ -240,40 +240,40 @@ LABEL_1E58:
 	db 0x11
 
 DRAW_CIN_064_065_FIELD:
-	video offset=CINEMATIC_064, x=299, y=37, zoom=0x40
-	video offset=CINEMATIC_064, x=289, y=23, zoom=0x40
+	video offset=CINEMATIC_064, x=299, y=37
+	video offset=CINEMATIC_064, x=289, y=23
 	video offset=CINEMATIC_065, x=205, y=21
 	video offset=CINEMATIC_065, x=187, y=27
 	video offset=CINEMATIC_065, x=247, y=25
 	video offset=CINEMATIC_065, x=167, y=20
 	video offset=CINEMATIC_065, x=142, y=21
 	video offset=CINEMATIC_065, x=228, y=22
-	video offset=CINEMATIC_065, x=279, y=21, zoom=0x40
-	video offset=CINEMATIC_065, x=310, y=20, zoom=0x40
+	video offset=CINEMATIC_065, x=279, y=21
+	video offset=CINEMATIC_065, x=310, y=20
 	video offset=CINEMATIC_066, x=186, y=24
 	video offset=CINEMATIC_066, x=207, y=21
 	video offset=CINEMATIC_066, x=161, y=22
 	video offset=CINEMATIC_066, x=240, y=21
-	video offset=CINEMATIC_066, x=303, y=18, zoom=0x40
+	video offset=CINEMATIC_066, x=303, y=18
 	video offset=CINEMATIC_066, x=140, y=20
 	video offset=CINEMATIC_066, x=242, y=22
 	video offset=CINEMATIC_066, x=224, y=21
-	video offset=CINEMATIC_066, x=287, y=21, zoom=0x40
-	video offset=CINEMATIC_066, x=259, y=27, zoom=0x40
+	video offset=CINEMATIC_066, x=287, y=21
+	video offset=CINEMATIC_066, x=259, y=27
 	video offset=CINEMATIC_066, x=140, y=20
 	video offset=CINEMATIC_067, x=164, y=23
 	video offset=CINEMATIC_067, x=198, y=21
 	video offset=CINEMATIC_067, x=216, y=25
 	video offset=CINEMATIC_067, x=147, y=24
-	video offset=CINEMATIC_067, x=302, y=17, zoom=0x40
-	video offset=CINEMATIC_067, x=273, y=21, zoom=0x40
+	video offset=CINEMATIC_067, x=302, y=17
+	video offset=CINEMATIC_067, x=273, y=21
 	video offset=CINEMATIC_067, x=255, y=21
 	video offset=CINEMATIC_067, x=222, y=18
 	video offset=CINEMATIC_067, x=134, y=21
 	video offset=CINEMATIC_067, x=114, y=23
 	video offset=CINEMATIC_067, x=190, y=20
 	video offset=CINEMATIC_067, x=245, y=23
-	video offset=CINEMATIC_067, x=294, y=19, zoom=0x40
+	video offset=CINEMATIC_067, x=294, y=19
 	video offset=CINEMATIC_068, x=211, y=26
 	video offset=CINEMATIC_068, x=196, y=19
 	video offset=CINEMATIC_068, x=156, y=17
@@ -281,11 +281,11 @@ DRAW_CIN_064_065_FIELD:
 	video offset=CINEMATIC_068, x=124, y=23
 	video offset=CINEMATIC_068, x=182, y=13
 	video offset=CINEMATIC_068, x=221, y=17
-	video offset=CINEMATIC_068, x=257, y=18, zoom=0x40
+	video offset=CINEMATIC_068, x=257, y=18
 	video offset=CINEMATIC_068, x=242, y=18
-	video offset=CINEMATIC_068, x=295, y=21, zoom=0x40
-	video offset=CINEMATIC_068, x=303, y=19, zoom=0x40
-	video offset=CINEMATIC_068, x=280, y=17, zoom=0x40
+	video offset=CINEMATIC_068, x=295, y=21
+	video offset=CINEMATIC_068, x=303, y=19
+	video offset=CINEMATIC_068, x=280, y=17
 	video offset=CINEMATIC_068, x=87, y=20
 	video offset=CINEMATIC_068, x=107, y=22
 	video offset=CINEMATIC_068, x=35, y=17

@@ -111,7 +111,7 @@ LABEL_E689:
 
 LABEL_E68A:
 	sub [0x01], 0x0004
-	video offset=CINEMATIC_170, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_170, x=[0x01], y=[0x02]
 	add [0x01], 0x0001
 	je [HERO_POS_MASK], 0x00, LABEL_E682
 	break
@@ -199,7 +199,7 @@ LABEL_E773:
 	db 0x11
 
 LABEL_E774:
-	video offset=CINEMATIC_170, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_170, x=[0x01], y=[0x02]
 	add [0x01], 0x0003
 	je [HERO_POS_MASK], 0x00, LABEL_E76C
 	break
@@ -299,7 +299,7 @@ LABEL_E87C:
 	call LABEL_99D9
 	add [0x01], 0x0002
 	break
-	video offset=CINEMATIC_174, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_174, x=[0x01], y=[0x02]
 	mov [0x63], 0x0001
 	mov [0x0A], 0x0001
 	jmp HERO_WALK_LEFT_LOOP

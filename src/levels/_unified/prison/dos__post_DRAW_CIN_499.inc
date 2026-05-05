@@ -6,47 +6,47 @@ LABEL_3DBE:
 	jne [0x13], 0x6E, LABEL_3DF1
 	play id=0x0056, freq=0x14, vol=0x40, channel=0x00
 	selectVideoPage 0x00
-	video offset=CINEMATIC_452, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_452, x=[0x21], y=[0x27]
 	selectVideoPage 0xFF
-	video offset=CINEMATIC_498, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_498, x=[0x21], y=[0x27]
 	ret
 
 LABEL_3DF1:
 	jne [0x13], 0x6F, LABEL_3DFD
-	video offset=CINEMATIC_497, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_497, x=[0x21], y=[0x27]
 	ret
 
 LABEL_3DFD:
 	jne [0x13], 0x70, LABEL_3E09
-	video offset=CINEMATIC_496, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_496, x=[0x21], y=[0x27]
 	ret
 
 LABEL_3E09:
 	jne [0x13], 0x71, LABEL_3E15
-	video offset=CINEMATIC_495, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_495, x=[0x21], y=[0x27]
 	ret
 
 LABEL_3E15:
 	jne [0x13], 0x72, LABEL_3E21
-	video offset=CINEMATIC_494, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_494, x=[0x21], y=[0x27]
 	ret
 
 LABEL_3E21:
 	jne [0x13], 0x73, LABEL_3E2D
-	video offset=CINEMATIC_493, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_493, x=[0x21], y=[0x27]
 	ret
 
 LABEL_3E2D:
 	jne [0x13], 0x74, LABEL_3E39
-	video offset=CINEMATIC_492, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_492, x=[0x21], y=[0x27]
 	ret
 
 LABEL_3E39:
 	jne [0x13], 0x75, LABEL_3E45
-	video offset=CINEMATIC_491, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_491, x=[0x21], y=[0x27]
 	ret
 
 LABEL_3E45:
 	jne [0x13], 0x76, DRAW_CIN489_AT_X21_Y27_ZOOM_40
-	video offset=CINEMATIC_490, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_490, x=[0x21], y=[0x27]
 	ret

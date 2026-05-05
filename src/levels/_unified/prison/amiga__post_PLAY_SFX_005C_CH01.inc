@@ -149,11 +149,11 @@ LABEL_3BB3:
 	jge [0x13], 0x64, LABEL_3BFF
 	jle [0x13], 0x03, LABEL_3BE1
 	jle [0x13], 0x05, LABEL_3BCF
-	video offset=CINEMATIC_488, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_488, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
 
 LABEL_3BCF:
 	jle [0x13], 0x04, DRAW_CIN_486
-	video offset=CINEMATIC_487, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_487, x=[0x21], y=[0x27]
 	ret

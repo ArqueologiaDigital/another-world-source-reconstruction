@@ -1,12 +1,12 @@
 ANIM_CIN_078_LOOP_VAR03_AT_3B19:
-	video offset=CINEMATIC_078, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_078, x=[0x01], y=[0x02]
 	break
 	djnz [0x03], ANIM_CIN_078_LOOP_VAR03_AT_3B19
 	mov [0x63], 0x0001
 	call SET_VAR04_TO_0020
-	video offset=CINEMATIC_076, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_076, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_077, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_077, x=[0x01], y=[0x02]
 	jmp HERO_WALK_LEFT_LOOP
 LABEL_3B38:
 	db 0x11

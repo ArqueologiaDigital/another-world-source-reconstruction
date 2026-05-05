@@ -186,8 +186,8 @@ DELAY_25F_BEFORE_VAR1_4E:
 
 DRIFT_CIN_502_503_BY_2_10X:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_502, x=[0x01], y=100, zoom=0x40
-	video offset=CINEMATIC_503, x=[0x02], y=100, zoom=0x40
+	video offset=CINEMATIC_502, x=[0x01], y=100
+	video offset=CINEMATIC_503, x=[0x02], y=100
 	add [0x01], 0x0002
 	sub [0x02], 0x0002
 	selectVideoPage 0xFF
@@ -206,13 +206,13 @@ DELAY_26F_THEN_PLAY_FX_36:
 
 DRAW_CIN_505_LOOP_VAR_02:
 	mov [0x02], [0x01]
-	video offset=CINEMATIC_505, x=153, y=[0x02], zoom=0x40
+	video offset=CINEMATIC_505, x=153, y=[0x02]
 	add [0x02], 0x0186
-	video offset=CINEMATIC_506, x=153, y=[0x02], zoom=0x40
+	video offset=CINEMATIC_506, x=153, y=[0x02]
 	add [0x02], 0x0124
-	video offset=CINEMATIC_507, x=153, y=[0x02], zoom=0x40
+	video offset=CINEMATIC_507, x=153, y=[0x02]
 	add [0x02], 0x0183
-	video offset=CINEMATIC_508, x=153, y=[0x02], zoom=0x40
+	video offset=CINEMATIC_508, x=153, y=[0x02]
 	break
 	jmp DRAW_CIN_505_LOOP_VAR_02
 LABEL_1BEE:

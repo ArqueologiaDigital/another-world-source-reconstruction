@@ -1,26 +1,26 @@
 DRAW_CIN_694_695_PROGRESSIVE:
-	video offset=CINEMATIC_694, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_694, x=[0x01], y=[0x02]
 	add [0x01], 0x0001
 	break
-	video offset=CINEMATIC_695, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_695, x=[0x01], y=[0x02]
 	add [0x01], 0x0004
 	break
-	video offset=CINEMATIC_695, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_695, x=[0x01], y=[0x02]
 	add [0x01], 0x0003
 	break
-	video offset=CINEMATIC_696, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_696, x=[0x01], y=[0x02]
 	add [0x01], 0x0002
 	break
-	video offset=CINEMATIC_696, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_696, x=[0x01], y=[0x02]
 	add [0x01], 0x0001
 	break
-	video offset=CINEMATIC_695, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_695, x=[0x01], y=[0x02]
 	add [0x01], 0x0001
 	mov [0x03], 0x0028
 
 LABEL_3BA9:
 	break
-	video offset=CINEMATIC_422, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_422, x=[0x01], y=[0x02]
 	jmp LABEL_3BA9
 LABEL_3BB2:
 	db 0x11
@@ -67,11 +67,11 @@ LABEL_3C15:
 	jge [0x13], 0x64, LABEL_3C61
 	jle [0x13], 0x03, LABEL_3C43
 	jle [0x13], 0x05, LABEL_3C31
-	video offset=CINEMATIC_488, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_488, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
 
 LABEL_3C31:
 	jle [0x13], 0x04, DRAW_CIN_486
-	video offset=CINEMATIC_487, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_487, x=[0x21], y=[0x27]
 	ret

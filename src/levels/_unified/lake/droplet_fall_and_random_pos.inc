@@ -18,15 +18,15 @@ DROPLET_FALL_AND_IMPACT_LOOP:
 
 DROPLET_FALL_LOOP_BODY:
 	break
-	video offset=CINEMATIC_DROPLET_FALL_TRAIL, x=[0x82], y=[0x83], zoom=0x40
+	video offset=CINEMATIC_DROPLET_FALL_TRAIL, x=[0x82], y=[0x83]
 	add [0x83], 0x000E
 	jl [0x83], [0x84], DROPLET_FALL_LOOP_BODY
 	break
-	video offset=CINEMATIC_DROPLET_IMPACT_0, x=[0x82], y=[0x84], zoom=0x40
+	video offset=CINEMATIC_DROPLET_IMPACT_0, x=[0x82], y=[0x84]
 	break
-	video offset=CINEMATIC_DROPLET_IMPACT_1, x=[0x82], y=[0x84], zoom=0x40
+	video offset=CINEMATIC_DROPLET_IMPACT_1, x=[0x82], y=[0x84]
 	break
-	video offset=CINEMATIC_DROPLET_IMPACT_2, x=[0x82], y=[0x84], zoom=0x40
+	video offset=CINEMATIC_DROPLET_IMPACT_2, x=[0x82], y=[0x84]
 	break
 	call COMPUTE_RANDOM_BIT_MASKS
 	jne [0x3B], 0x00, DROPLET_POS_CHECK_CASE_1

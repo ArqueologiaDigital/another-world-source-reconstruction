@@ -152,15 +152,15 @@ SETUP_CHAN_0F_AT_RET:
 	ret
 
 LABEL_E2AE:
-	video offset=CINEMATIC_525, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_525, x=[0x1a], y=[0x1b]
 	play id=0x006D, freq=0x14, vol=0x20, channel=0x00
 	break
-	video offset=CINEMATIC_526, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_526, x=[0x1a], y=[0x1b]
 	break
-	video offset=CINEMATIC_527, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_527, x=[0x1a], y=[0x1b]
 	break
 	play id=0x006D, freq=0x19, vol=0x10, channel=0x01
-	video offset=CINEMATIC_528, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_528, x=[0x1a], y=[0x1b]
 	break
-	video offset=CINEMATIC_529, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_529, x=[0x1a], y=[0x1b]
 	killChannel

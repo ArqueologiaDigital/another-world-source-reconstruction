@@ -96,7 +96,7 @@ DERIVE_FOUR_POS_25_26_27_28:
 	mov [0x28], [0x08]
 	jne [0x25], [0x27], LABEL_0BB9
 	jne [0x26], [0x28], LABEL_0BB9
-	video offset=CINEMATIC_077, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_077, x=[0x07], y=[0x08]
 	break
 	jmp SAVE_HERO_INPUT_AND_HASH
 LABEL_0BB8:
@@ -134,12 +134,12 @@ LABEL_0BF9:
 LABEL_0C0B:
 	jne [0x07], [0x27], LABEL_0C20
 	jne [0x08], [0x28], LABEL_0C20
-	video offset=CINEMATIC_077, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_077, x=[0x07], y=[0x08]
 	break
 	jmp SAVE_HERO_INPUT_AND_HASH
 
 LABEL_0C20:
-	video offset=CINEMATIC_077, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_077, x=[0x07], y=[0x08]
 	break
 	jmp LABEL_0BC3
 LABEL_0C29:

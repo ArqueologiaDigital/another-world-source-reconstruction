@@ -112,19 +112,19 @@ LABEL_5203:
 	call LABEL_95DE
 	break
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_063, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_063, x=[0x21], y=[0x22]
 	break
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_064, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_064, x=[0x21], y=[0x22]
 	break
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_065, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_065, x=[0x21], y=[0x22]
 	break
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_067, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_067, x=[0x21], y=[0x22]
 	break
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_037, x=[0x21], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_037, x=[0x21], y=[0x08]
 	call LABEL_7087
 	break
 	jmp LABEL_5650
@@ -139,19 +139,19 @@ LABEL_5243:
 	call LABEL_933D
 	break
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_063, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_063, x=[0x21], y=[0x22]
 	break
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_064, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_064, x=[0x21], y=[0x22]
 	break
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_065, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_065, x=[0x21], y=[0x22]
 	break
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_066, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_066, x=[0x21], y=[0x22]
 	break
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_037, x=[0x21], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_037, x=[0x21], y=[0x08]
 	call LABEL_7087
 	break
 	jmp LABEL_5630
@@ -167,28 +167,28 @@ LABEL_5294:
 	jne [HACK_VAR_67], 0x04, LABEL_52A8
 	call LABEL_5307
 	je [0x23], 0x00, LABEL_52EB
-	video offset=CINEMATIC_033, x=[0x21], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_033, x=[0x21], y=[0x08]
 
 LABEL_52A8:
 	break
 	jne [HACK_VAR_67], 0x04, LABEL_52BD
 	call LABEL_5307
 	je [0x23], 0x00, LABEL_52EB
-	video offset=CINEMATIC_034, x=[0x21], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_034, x=[0x21], y=[0x08]
 
 LABEL_52BD:
 	break
 	jne [HACK_VAR_67], 0x04, LABEL_52D2
 	call LABEL_5307
 	je [0x23], 0x00, LABEL_52EB
-	video offset=CINEMATIC_035, x=[0x21], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_035, x=[0x21], y=[0x08]
 
 LABEL_52D2:
 	break
 	jne [HACK_VAR_67], 0x04, LABEL_52E7
 	call LABEL_5307
 	je [0x23], 0x00, LABEL_52EB
-	video offset=CINEMATIC_034, x=[0x21], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_034, x=[0x21], y=[0x08]
 
 LABEL_52E7:
 	break
@@ -196,10 +196,10 @@ LABEL_52E7:
 
 LABEL_52EB:
 	call LABEL_5307
-	video offset=CINEMATIC_067, x=[0x21], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_067, x=[0x21], y=[0x08]
 	break
 	call LABEL_5307
-	video offset=CINEMATIC_037, x=[0x21], y=[0x71], zoom=0x40
+	video offset=CINEMATIC_037, x=[0x21], y=[0x71]
 	mov [0x08], [0x71]
 	mov [0x10], 0x0004
 	call LABEL_7087
@@ -252,68 +252,68 @@ LABEL_536E:
 
 LABEL_536F:
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_063, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_063, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_064, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_064, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_065, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_065, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_066, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_066, x=[0x21], y=[0x22]
 	break
 	mov [0x29], 0x0003
 
 LABEL_53A9:
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_033, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_033, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_034, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_034, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_035, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_035, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_034, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_034, x=[0x21], y=[0x22]
 	break
 	djnz [0x29], LABEL_53A9
 
 LABEL_53E9:
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_068, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_068, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_069, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_069, x=[0x21], y=[0x22]
 	break
 	mov [0x29], 0x0002
 
 LABEL_540B:
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_070, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_070, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_071, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_071, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_072, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_072, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_073, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_073, x=[0x21], y=[0x22]
 	break
 	djnz [0x29], LABEL_540B
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
@@ -334,38 +334,38 @@ LABEL_546A:
 	and [0xF8], 0x1000
 	jne [0xF8], 0x00, LABEL_54F5
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_063, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_063, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_064, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_064, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_065, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_065, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_066, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_066, x=[0x21], y=[0x22]
 	break
 	mov [0x29], 0x0001
 
 LABEL_54B1:
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_033, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_033, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_034, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_034, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_035, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_035, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_034, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_034, x=[0x21], y=[0x22]
 	break
 	djnz [0x29], LABEL_54B1
 	jmp LABEL_53E9
@@ -374,19 +374,19 @@ LABEL_54F4:
 
 LABEL_54F5:
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_063, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_063, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5650
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_064, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_064, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5650
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_065, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_065, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5650
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_066, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_066, x=[0x21], y=[0x22]
 	break
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	mov [0x29], [0x38]
@@ -395,47 +395,47 @@ LABEL_54F5:
 LABEL_5535:
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5650
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_033, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_033, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5650
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_034, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_034, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5650
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_035, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_035, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5650
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_034, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_034, x=[0x21], y=[0x22]
 	break
 	djnz [0x29], LABEL_5535
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5650
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_068, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_068, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5650
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_069, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_069, x=[0x21], y=[0x22]
 	break
 	mov [0x29], 0x0001
 
 LABEL_5597:
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5650
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_070, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_070, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5650
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_071, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_071, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5650
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_072, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_072, x=[0x21], y=[0x22]
 	break
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5650
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_073, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_073, x=[0x21], y=[0x22]
 	break
 	djnz [0x29], LABEL_5597
 	jne [HACK_VAR_67], [0x10], JUMP_TO_LABEL_5650
@@ -822,7 +822,7 @@ LABEL_594A:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
 	add [0x07], 0x000A
 	sub [0x08], 0x0015
-	video offset=CINEMATIC_190, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_190, x=[0x07], y=[0x08]
 	djnz [0x29], LABEL_594A
 	break
 	sub [0x07], 0x000B
@@ -830,7 +830,7 @@ LABEL_594A:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
 	add [0x07], 0x000B
 	sub [0x08], 0x0015
-	video offset=CINEMATIC_141, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_141, x=[0x07], y=[0x08]
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x00
 	mov [0x29], 0x0003
 
@@ -841,7 +841,7 @@ LABEL_598A:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
 	add [0x07], 0x000B
 	sub [0x08], 0x0015
-	video offset=CINEMATIC_141, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_141, x=[0x07], y=[0x08]
 	djnz [0x29], LABEL_598A
 	mov [0x29], 0x0002
 	jmp LABEL_594A

@@ -11,9 +11,9 @@ LABEL_054D:
 	copyVideoPage src=0x80, dst=0xFF
 	add [SCROLL_Y], 0x00B8
 	sub [SCROLL_Y], 0x000A
-	video offset=CINEMATIC_416, x=160, y=[0xf9], zoom=0x40
+	video offset=CINEMATIC_416, x=160, y=[0xf9]
 	add [SCROLL_Y], 0x000A
-	video offset=CINEMATIC_415, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_415, x=[0x01], y=[0x02]
 	djnz [0x14], LABEL_054D
 	selectVideoPage 0x00
 	copyVideoPage src=0xFF, dst=0x00

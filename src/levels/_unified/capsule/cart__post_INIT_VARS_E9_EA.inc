@@ -2,43 +2,43 @@ DELAY_LOOP_VAREA:
 	break
 	djnz [0xEA], DELAY_LOOP_VAREA
 	play id=0x0030, freq=0x0A, vol=0x40, channel=0x03
-	video offset=CINEMATIC_604, x=[0xe9], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_604, x=[0xe9], y=[0x40]
 	break
 	sub [0xE9], 0x000F
-	video offset=CINEMATIC_605, x=[0xe9], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_605, x=[0xe9], y=[0x40]
 	break
 	sub [0xE9], 0x000F
-	video offset=CINEMATIC_606, x=[0xe9], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_606, x=[0xe9], y=[0x40]
 	sub [0xE9], 0x0005
 	break
 	mov [0xEA], 0x0005
 
 LABEL_07D5:
 	sub [0xE9], 0x0001
-	video offset=CINEMATIC_607, x=[0xe9], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_607, x=[0xe9], y=[0x40]
 	break
 	djnz [0xEA], LABEL_07D5
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x02
 	play id=0x005D, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_608, x=[0xe9], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_608, x=[0xe9], y=[0x40]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_609, x=[0xe9], y=98, zoom=0x40
+	video offset=CINEMATIC_609, x=[0xe9], y=98
 	selectVideoPage 0xFF
 	break
 	sub [0xE9], 0x000C
-	video offset=CINEMATIC_217, x=[0xe9], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_217, x=[0xe9], y=[0x40]
 	break
-	video offset=CINEMATIC_218, x=[0xe9], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_218, x=[0xe9], y=[0x40]
 	break
-	video offset=CINEMATIC_219, x=[0xe9], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_219, x=[0xe9], y=[0x40]
 	break
-	video offset=CINEMATIC_220, x=[0xe9], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_220, x=[0xe9], y=[0x40]
 	break
-	video offset=CINEMATIC_221, x=[0xe9], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_221, x=[0xe9], y=[0x40]
 	break
-	video offset=CINEMATIC_222, x=[0xe9], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_222, x=[0xe9], y=[0x40]
 	break
-	video offset=CINEMATIC_223, x=[0xe9], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_223, x=[0xe9], y=[0x40]
 	break
-	video offset=CINEMATIC_224, x=[0xe9], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_224, x=[0xe9], y=[0x40]
 	killChannel

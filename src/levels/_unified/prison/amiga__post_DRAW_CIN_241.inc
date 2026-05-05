@@ -374,7 +374,7 @@ LABEL_5670:
 
 LABEL_567F:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	video offset=CINEMATIC_629, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_629, x=[0x07], y=[0x08]
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
 	video type=0, offset=COMMON_VIDEO_120, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
@@ -825,30 +825,30 @@ LABEL_5B18:
 	db 0x11
 
 LABEL_5B19:
-	video offset=CINEMATIC_343, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_343, x=[0x07], y=[0x08]
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0002
 	je [0xF8], 0x00, SHARED_RET
-	video offset=CINEMATIC_344, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_344, x=[0x07], y=[0x08]
 	ret
 
 LABEL_5B37:
-	video offset=CINEMATIC_345, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_345, x=[0x07], y=[0x08]
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0002
 	je [0xF8], 0x00, SHARED_RET
-	video offset=CINEMATIC_346, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_346, x=[0x07], y=[0x08]
 	ret
 
 LABEL_5B55:
-	video offset=CINEMATIC_347, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_347, x=[0x07], y=[0x08]
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video offset=CINEMATIC_348, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_348, x=[0x07], y=[0x08]
 	ret
 
 LABEL_5B73:
@@ -858,13 +858,13 @@ LABEL_5B73:
 	ret
 
 LABEL_5B7F:
-	video offset=CINEMATIC_170, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_170, x=[0x07], y=[0x08]
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DRAW_CIN_169_IF_VAR09_EQ_1
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_CIN_169_IF_VAR09_EQ_1
-	video offset=CINEMATIC_171, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_171, x=[0x07], y=[0x08]
 	jmp DRAW_CIN_169_IF_VAR09_EQ_1
 
 LABEL_5BA2:
@@ -874,23 +874,23 @@ LABEL_5BA2:
 	ret
 
 LABEL_5BAE:
-	video offset=CINEMATIC_334, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_334, x=[0x07], y=[0x08]
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DRAW_CIN_169_IF_VAR09_EQ_1
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_CIN_169_IF_VAR09_EQ_1
-	video offset=CINEMATIC_335, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_335, x=[0x07], y=[0x08]
 	jmp DRAW_CIN_169_IF_VAR09_EQ_1
 
 LABEL_5BD1:
-	video offset=CINEMATIC_336, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_336, x=[0x07], y=[0x08]
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DRAW_CIN_169_IF_VAR09_EQ_1
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_CIN_169_IF_VAR09_EQ_1
-	video offset=CINEMATIC_337, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_337, x=[0x07], y=[0x08]
 	jmp DRAW_CIN_169_IF_VAR09_EQ_1
 
 LABEL_5BF4:

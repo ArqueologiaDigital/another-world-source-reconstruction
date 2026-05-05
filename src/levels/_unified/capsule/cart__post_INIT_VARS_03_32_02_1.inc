@@ -1,14 +1,14 @@
 LABEL_99B2:
-	video offset=CINEMATIC_092, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_092, x=[0x01], y=[0x02]
 	add [SCROLL_Y], 0x0000
 	sub [0x02], 0x0028
 	break
 	djnz [0x03], LABEL_99B2
-	video offset=CINEMATIC_092, x=[0x01], y=65516, zoom=0x40
+	video offset=CINEMATIC_092, x=[0x01], y=65516
 	break
 	mov [0x02], [0x51]
 	break
-	video offset=CINEMATIC_092, x=[0x01], y=180, zoom=0x40
+	video offset=CINEMATIC_092, x=[0x01], y=180
 	mov [0x02], [0x51]
 	setup channel=0x1A, address=LABEL_97CE
 	jmp LABEL_9A64

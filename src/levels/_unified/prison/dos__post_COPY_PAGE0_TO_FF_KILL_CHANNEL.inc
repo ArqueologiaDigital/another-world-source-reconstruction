@@ -3,7 +3,7 @@ LABEL_8064:
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, LABEL_807C
-	video offset=CINEMATIC_186, x=258, y=181, zoom=0x40
+	video offset=CINEMATIC_186, x=258, y=181
 
 LABEL_807C:
 	jl [0x01], 0xF0, LABEL_8184

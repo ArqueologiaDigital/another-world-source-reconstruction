@@ -13,12 +13,12 @@ LABEL_2B74:
 	db 0x11
 
 LABEL_2B75:
-	video offset=CINEMATIC_616, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_616, x=[0x01], y=[0x02]
 	call LABEL_2B98
 	or [0x04], 0x4000
 	jne [0xDB], 0x01, LABEL_2B94
 	sub [0x01], 0x000C
-	video offset=CINEMATIC_613, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_613, x=[0x01], y=[0x02]
 	add [0x01], 0x000C
 
 LABEL_2B94:
@@ -27,7 +27,7 @@ LABEL_2B94:
 
 LABEL_2B98:
 	jne [0xDB], 0x01, SHARED_RET
-	video offset=CINEMATIC_613, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_613, x=[0x01], y=[0x02]
 	ret
 
 LABEL_2BA4:

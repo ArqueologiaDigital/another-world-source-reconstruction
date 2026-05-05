@@ -210,15 +210,15 @@ DRIFT_VAR07_BY_7_FOR_50:
 
 CH_10_DRAW_CIN_353_PARTICLE:
 	break
-	video offset=CINEMATIC_353, x=[0x07], y=[0x09], zoom=0x40
+	video offset=CINEMATIC_353, x=[0x07], y=[0x09]
 	break
-	video offset=CINEMATIC_354, x=[0x07], y=[0x09], zoom=0x40
+	video offset=CINEMATIC_354, x=[0x07], y=[0x09]
 	break
-	video offset=CINEMATIC_355, x=[0x07], y=[0x09], zoom=0x40
+	video offset=CINEMATIC_355, x=[0x07], y=[0x09]
 	break
-	video offset=CINEMATIC_356, x=[0x07], y=[0x09], zoom=0x40
+	video offset=CINEMATIC_356, x=[0x07], y=[0x09]
 	break
-	video offset=CINEMATIC_357, x=[0x07], y=[0x09], zoom=0x40
+	video offset=CINEMATIC_357, x=[0x07], y=[0x09]
 	jmp CH_10_DRAW_CIN_353_PARTICLE
 LABEL_05A7:
 	killChannel
@@ -229,10 +229,10 @@ CH_11_INIT_PARTICLE_POS_2:
 	mov [0x0B], 0x0032
 
 CH_11_DRAW_PARTICLES_LOOP:
-	video offset=CINEMATIC_352, x=[0x0a], y=50, zoom=0x40
-	video offset=CINEMATIC_350, x=[0x0a], y=20, zoom=0x40
-	video offset=CINEMATIC_351, x=[0x0a], y=110, zoom=0x40
-	video offset=CINEMATIC_350, x=[0x0a], y=180, zoom=0x40
+	video offset=CINEMATIC_352, x=[0x0a], y=50
+	video offset=CINEMATIC_350, x=[0x0a], y=20
+	video offset=CINEMATIC_351, x=[0x0a], y=110
+	video offset=CINEMATIC_350, x=[0x0a], y=180
 	add [0x0A], 0x000A
 	break
 	djnz [0x0B], CH_11_DRAW_PARTICLES_LOOP
@@ -246,10 +246,10 @@ CH_12_INIT_PARTICLE_POS_3:
 	mov [0x0D], 0x003C
 
 CH_12_DRAW_PARTICLES_LOOP:
-	video offset=CINEMATIC_349, x=[0x0c], y=140, zoom=0x40
-	video offset=CINEMATIC_350, x=[0x0c], y=100, zoom=0x40
-	video offset=CINEMATIC_350, x=[0x0c], y=80, zoom=0x40
-	video offset=CINEMATIC_351, x=[0x0c], y=10, zoom=0x40
+	video offset=CINEMATIC_349, x=[0x0c], y=140
+	video offset=CINEMATIC_350, x=[0x0c], y=100
+	video offset=CINEMATIC_350, x=[0x0c], y=80
+	video offset=CINEMATIC_351, x=[0x0c], y=10
 	add [0x0C], 0x0009
 	break
 	djnz [0x0D], CH_12_DRAW_PARTICLES_LOOP

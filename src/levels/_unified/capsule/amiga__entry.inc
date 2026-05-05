@@ -1564,11 +1564,11 @@ LABEL_0000:
 	mov [0x00], [0x18]
 	mov [0xF8], [0x00]
 	shr [0xF8], 0x0008
-	video offset=CINEMATIC_545, x=[0xf8], y=0, zoom=0x40
+	video offset=CINEMATIC_545, x=[0xf8], y=0
 	mov [0xF8], [0x00]
 	and [0xF8], 0x00FF
-	video offset=CINEMATIC_545, x=[0xf8], y=1, zoom=0x40
-	video offset=CINEMATIC_546, x=[0x01], y=2, zoom=0x40
+	video offset=CINEMATIC_545, x=[0xf8], y=1
+	video offset=CINEMATIC_546, x=[0x01], y=2
 	killChannel
 
 LABEL_0070:
@@ -1600,24 +1600,24 @@ LABEL_00B3:
 	break
 	jl [0x70], 0x012C, LABEL_00B3
 	mov [0x07], 0x008C
-	video offset=CINEMATIC_339, x=[0x07], y=50, zoom=0x40
+	video offset=CINEMATIC_339, x=[0x07], y=50
 	break
-	video offset=CINEMATIC_339, x=[0x07], y=73, zoom=0x40
+	video offset=CINEMATIC_339, x=[0x07], y=73
 	break
-	video offset=CINEMATIC_339, x=[0x07], y=96, zoom=0x40
+	video offset=CINEMATIC_339, x=[0x07], y=96
 	break
-	video offset=CINEMATIC_339, x=[0x07], y=122, zoom=0x40
+	video offset=CINEMATIC_339, x=[0x07], y=122
 	break
-	video offset=CINEMATIC_339, x=[0x07], y=153, zoom=0x40
+	video offset=CINEMATIC_339, x=[0x07], y=153
 	break
 	play id=0x0055, freq=0x14, vol=0x30, channel=0x01
-	video offset=CINEMATIC_340, x=[0x07], y=157, zoom=0x40
+	video offset=CINEMATIC_340, x=[0x07], y=157
 	break
-	video offset=CINEMATIC_340, x=[0x07], y=157, zoom=0x40
+	video offset=CINEMATIC_340, x=[0x07], y=157
 	break
-	video offset=CINEMATIC_340, x=[0x07], y=157, zoom=0x40
+	video offset=CINEMATIC_340, x=[0x07], y=157
 	break
-	video offset=CINEMATIC_341, x=[0x07], y=157, zoom=0x40
+	video offset=CINEMATIC_341, x=[0x07], y=157
 
 LABEL_00FA:
 	break
@@ -1628,7 +1628,7 @@ LABEL_0104:
 	break
 	jl [0x70], 0x32, LABEL_0104
 	break
-	video offset=CINEMATIC_342, x=65517, y=110, zoom=0x40
+	video offset=CINEMATIC_342, x=65517, y=110
 	break
 	video offset=CINEMATIC_342, x=0, y=105
 	break
@@ -1636,10 +1636,10 @@ LABEL_0104:
 	video offset=CINEMATIC_342, x=25, y=112
 	break
 	mov [0x07], 0x0041
-	video offset=CINEMATIC_343, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_343, x=[0x07], y=[0x08]
 	break
 	add [0x07], 0x000F
-	video offset=CINEMATIC_344, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_344, x=[0x07], y=[0x08]
 	setup channel=0x13, address=RAMP_VAR1_PLUS_C_9_5_3_BREAKS
 	break
 	add [0x07], 0x000A

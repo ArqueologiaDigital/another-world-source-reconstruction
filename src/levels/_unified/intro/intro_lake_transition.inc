@@ -50,7 +50,7 @@ CH_03_INIT_VAR_03_04:
 
 SLIDE_CIN_448_BY_VAR3_19X:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_448, x=160, y=[0x03], zoom=0x40
+	video offset=CINEMATIC_448, x=160, y=[0x03]
 	video offset=CINEMATIC_449, x=160, y=101
 	sub [0x03], 0x0001
 	selectVideoPage 0xFF
@@ -118,7 +118,7 @@ DELAY_9F_THEN_PLAY_FX_34:
 	mov [0x06], 0x007B
 
 RISE_CIN_447_BY_2_FOR_7X:
-	video offset=CINEMATIC_447, x=204, y=[0x06], zoom=0x40
+	video offset=CINEMATIC_447, x=204, y=[0x06]
 	sub [0x06], 0x0002
 	break
 	djnz [0x05], RISE_CIN_447_BY_2_FOR_7X
@@ -131,7 +131,7 @@ CH_05_INIT_VAR_07_08:
 	mov [0x08], 0x007B
 
 RISE_CIN_130_BY_1_FOR_20X:
-	video offset=CINEMATIC_130, x=204, y=[0x08], zoom=0x40
+	video offset=CINEMATIC_130, x=204, y=[0x08]
 	sub [0x08], 0x0001
 	break
 	djnz [0x07], RISE_CIN_130_BY_1_FOR_20X
@@ -210,10 +210,10 @@ INTRO_SET_PAL_7_FILL_PAGE0_5:
 	fill page=0x00, color=0x05
 	video offset=CINEMATIC_529, x=133, y=90
 	video offset=CINEMATIC_530, x=245, y=86
-	video offset=CINEMATIC_531, x=287, y=118, zoom=0x40
-	video offset=CINEMATIC_532, x=287, y=101, zoom=0x40
+	video offset=CINEMATIC_531, x=287, y=118
+	video offset=CINEMATIC_532, x=287, y=101
 	video offset=CINEMATIC_533, x=248, y=100
-	video offset=CINEMATIC_534, x=288, y=158, zoom=0x40
+	video offset=CINEMATIC_534, x=288, y=158
 	copyVideoPage src=0x00, dst=0xFF
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	selectVideoPage 0xFF
@@ -236,8 +236,8 @@ DRIFT_CIN_113_X_PLUS_Y_MINUS_8X:
 	break
 	add [0x02], 0x0001
 	sub [0x03], 0x0001
-	video offset=CINEMATIC_113, x=[0x02], y=94, zoom=0x40
-	video offset=CINEMATIC_114, x=[0x03], y=94, zoom=0x40
+	video offset=CINEMATIC_113, x=[0x02], y=94
+	video offset=CINEMATIC_114, x=[0x03], y=94
 	djnz [0x01], DRIFT_CIN_113_X_PLUS_Y_MINUS_8X
 	mov [PAUSE_SLICES], 0x0002
 	video offset=CINEMATIC_112, x=143, y=94
@@ -265,7 +265,7 @@ COPY_VAR2_TO_VAR4_DEC:
 
 DRAW_CIN_115_116_VAR4_LOOP:
 	break
-	video offset=CINEMATIC_115, x=121, y=[0x03], zoom=0x40
+	video offset=CINEMATIC_115, x=121, y=[0x03]
 	video offset=CINEMATIC_116, x=121, y=187
 	djnz [0x04], DRAW_CIN_115_116_VAR4_LOOP
 	add [0x03], 0x0002
@@ -278,31 +278,31 @@ DRAW_CIN_115_116_VAR4_LOOP:
 	mov [0x01], 0x001E
 
 DRIFT_CIN_117_AT_193_NEG9_30X:
-	video offset=CINEMATIC_117, x=193, y=65527, zoom=0x40
+	video offset=CINEMATIC_117, x=193, y=65527
 	break
 	djnz [0x01], DRIFT_CIN_117_AT_193_NEG9_30X
 	mov [0x01], 0x001E
 
 DRIFT_CIN_117_AT_196_NEG6_30X:
-	video offset=CINEMATIC_117, x=196, y=65530, zoom=0x40
+	video offset=CINEMATIC_117, x=196, y=65530
 	break
 	djnz [0x01], DRIFT_CIN_117_AT_196_NEG6_30X
 	mov [0x01], 0x001E
 
 DRIFT_CIN_117_AT_189_NEG7_30X:
-	video offset=CINEMATIC_117, x=189, y=65529, zoom=0x40
+	video offset=CINEMATIC_117, x=189, y=65529
 	break
 	djnz [0x01], DRIFT_CIN_117_AT_189_NEG7_30X
 	mov [0x01], 0x001E
 
 DRIFT_CIN_117_AT_193_NEG5_30X:
-	video offset=CINEMATIC_117, x=193, y=65531, zoom=0x40
+	video offset=CINEMATIC_117, x=193, y=65531
 	break
 	djnz [0x01], DRIFT_CIN_117_AT_193_NEG5_30X
 	mov [0x01], 0x001E
 
 DRIFT_CIN_117_AT_196_NEG2_30X:
-	video offset=CINEMATIC_117, x=196, y=65534, zoom=0x40
+	video offset=CINEMATIC_117, x=196, y=65534
 	break
 	djnz [0x01], DRIFT_CIN_117_AT_196_NEG2_30X
 	setup channel=0x02, address=INIT_PAGE0_PAUSE2_FILL1

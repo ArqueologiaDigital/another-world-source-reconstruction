@@ -17,11 +17,11 @@ LABEL_351B:
 	db 0x11
 
 LABEL_351C:
-	video offset=CINEMATIC_013, x=[0x21], y=100, zoom=0x40
+	video offset=CINEMATIC_013, x=[0x21], y=100
 	sub [0x21], 0x0064
-	video offset=CINEMATIC_013, x=[0x21], y=100, zoom=0x40
+	video offset=CINEMATIC_013, x=[0x21], y=100
 	add [0x21], 0x00AA
-	video offset=CINEMATIC_013, x=[0x21], y=100, zoom=0x40
+	video offset=CINEMATIC_013, x=[0x21], y=100
 	ret
 LABEL_3534:
 	db 0x11

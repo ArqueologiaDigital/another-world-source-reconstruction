@@ -28,11 +28,11 @@ LABEL_7E6C:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_305
-	video offset=CINEMATIC_306, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_306, x=[0x01], y=[0x02]
 	ret
 
 DRAW_CIN_305:
-	video offset=CINEMATIC_305, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_305, x=[0x01], y=[0x02]
 	ret
 LABEL_7E85:
 	db 0x11
@@ -41,11 +41,11 @@ LABEL_7E86:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_303
-	video offset=CINEMATIC_304, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_304, x=[0x01], y=[0x02]
 	ret
 
 DRAW_CIN_303:
-	video offset=CINEMATIC_303, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_303, x=[0x01], y=[0x02]
 	ret
 
 LABEL_7E9F:

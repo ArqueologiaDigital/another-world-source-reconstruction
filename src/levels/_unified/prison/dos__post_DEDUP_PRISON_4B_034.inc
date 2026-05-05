@@ -12,7 +12,7 @@ LABEL_7B8B:
 	call LABEL_7994
 	add [0x22], 0x0032
 	djnz [0x2B], LABEL_7B8B
-	video offset=CINEMATIC_102, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_102, x=[0x01], y=[0x02]
 	video offset=CINEMATIC_103, x=160, y=129
 	ret
 

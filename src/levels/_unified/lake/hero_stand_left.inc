@@ -53,7 +53,7 @@ STAND_L_LAND_AFTER_RESUME_R_F1:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_STOP_R_BUNDLE_018_019
 ;@elif BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_HERO_RESUME_RIGHT_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_RESUME_RIGHT_0, x=[0x01], y=[0x02]
 ;@endif
 
 STAND_L_LAND_AFTER_RESUME_R_F0:

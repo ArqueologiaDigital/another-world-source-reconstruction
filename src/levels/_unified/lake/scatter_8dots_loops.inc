@@ -24,9 +24,9 @@ SCATTER_8DOT_LEFT_DELAY:
 
 SCATTER_8DOT_LEFT_BODY:
 	break
-	video offset=CINEMATIC_SCATTER_8DOT_F0, x=[0x82], y=109, zoom=0x40
+	video offset=CINEMATIC_SCATTER_8DOT_F0, x=[0x82], y=109
 	add [0x82], 0x0008
-	video offset=CINEMATIC_SCATTER_8DOT_F1, x=[0x83], y=109, zoom=0x40
+	video offset=CINEMATIC_SCATTER_8DOT_F1, x=[0x83], y=109
 	add [0x83], 0x000A
 	djnz [0x84], SCATTER_8DOT_LEFT_BODY
 	jmp SCATTER_8DOT_LOOP_LEFT
@@ -47,22 +47,22 @@ SCATTER_8DOT_RIGHT_DELAY:
 SCATTER_8DOT_RIGHT_BODY:
 	break
 	sub [0x8A], 0x0001
-	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
+	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89]
 	add [0x88], 0x003C
-	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x8a], zoom=0x40
+	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x8a]
 	add [0x88], 0x0064
-	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
+	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89]
 	sub [0x88], 0x0078
 	jl [0x88], 0x00, SCATTER_8DOT_RIGHT_BODY
 
 SCATTER_8DOT_RIGHT_WIDE_LOOP:
 	break
 	sub [0x8A], 0x0003
-	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
+	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89]
 	add [0x88], 0x003C
-	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x8a], zoom=0x40
+	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x8a]
 	add [0x88], 0x0064
-	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
+	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89]
 	sub [0x88], 0x0078
 	jl [0x88], 0x0140, SCATTER_8DOT_RIGHT_WIDE_LOOP
 	jmp SCATTER_8DOT_LOOP_RIGHT

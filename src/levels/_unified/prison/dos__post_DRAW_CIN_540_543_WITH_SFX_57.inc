@@ -122,6 +122,6 @@ LABEL_78B4:
 	killChannel
 	call LABEL_711F
 	call LABEL_72D4
-	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b]
 	call LABEL_739F
 	ret

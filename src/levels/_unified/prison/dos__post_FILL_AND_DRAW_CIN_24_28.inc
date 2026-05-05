@@ -1,77 +1,77 @@
 LABEL_4B6A:
-	video offset=CINEMATIC_596, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_596, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_597, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_597, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_598, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_598, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_599, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_599, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_600, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_600, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_601, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_601, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_602, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_602, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_603, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_603, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_604, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_604, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_605, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_605, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_606, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_606, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_607, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_607, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_608, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_608, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_609, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_609, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_610, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_610, x=[0x07], y=[0x08]
 	setup channel=0x22, address=DRAW_CIN_229_TO_632_2F_AT_1C4A817A
 	break
-	video offset=CINEMATIC_611, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_611, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_612, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_612, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_613, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_613, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_614, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_614, x=[0x07], y=[0x08]
 	setup channel=0x22, address=KILL_CHANNEL_LANDING
 	break
-	video offset=CINEMATIC_342, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_342, x=[0x07], y=[0x08]
 	break
 	setup channel=0x08, address=DRAW_CIN_628_TO_625_4F_AT_2F47D6D0
-	video offset=CINEMATIC_615, x=[0x07], y=[0x08], zoom=0x40
-	video offset=CINEMATIC_616, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_615, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_616, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_617, x=[0x07], y=[0x08], zoom=0x40
-	video offset=CINEMATIC_618, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_617, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_618, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_619, x=[0x07], y=[0x08], zoom=0x40
-	video offset=CINEMATIC_620, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_619, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_620, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_621, x=[0x07], y=[0x08], zoom=0x40
-	video offset=CINEMATIC_622, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_621, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_622, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_623, x=[0x07], y=[0x08], zoom=0x40
-	video offset=CINEMATIC_622, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_623, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_622, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_620, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_620, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_618, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_618, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_620, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_620, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_622, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_622, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_622, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_622, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_618, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_618, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_616, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_616, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_616, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_616, x=[0x07], y=[0x08]
 	setup channel=0x21, address=LABEL_141E
 	setup channel=0x22, address=LABEL_1BBC
 	setup channel=0x24, address=LABEL_1441
@@ -82,6 +82,6 @@ LABEL_4B6A:
 	mov [0x6B], 0x2000
 	mov [0x6D], 0x0011
 	break
-	video offset=CINEMATIC_616, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_616, x=[0x07], y=[0x08]
 	setup channel=0x08, address=DRAW_CIN_624_TO_628_5F_AT_499AFE0A
 	killChannel

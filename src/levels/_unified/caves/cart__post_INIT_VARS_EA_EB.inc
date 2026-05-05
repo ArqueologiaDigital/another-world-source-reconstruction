@@ -19,15 +19,15 @@ LABEL_343B:
 LABEL_343C:
 	mov [0xEE], [0x21]
 	je [HACK_VAR_67], 0x6A, DRAW_CIN_314
-	video offset=CINEMATIC_314, x=[0x21], y=98, zoom=0x40
+	video offset=CINEMATIC_314, x=[0x21], y=98
 	ret
 
 DRAW_CIN_314:
-	video offset=CINEMATIC_314, x=[0x21], y=85, zoom=0x40
+	video offset=CINEMATIC_314, x=[0x21], y=85
 	ret
 
 DRAW_CIN_315:
-	video offset=CINEMATIC_315, x=160, y=[0x21], zoom=0x40
+	video offset=CINEMATIC_315, x=160, y=[0x21]
 	ret
 
 LABEL_3457:

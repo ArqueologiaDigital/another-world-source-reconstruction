@@ -208,7 +208,7 @@ LABEL_1F3F:
 LABEL_1F40:
 	break
 	jl [0x02], 0xB1, LABEL_1F40
-	video offset=CINEMATIC_498, x=270, y=210, zoom=0x40
+	video offset=CINEMATIC_498, x=270, y=210
 	video offset=CINEMATIC_499, x=178, y=203, zoom=0x40
 	jmp LABEL_1F40
 LABEL_1F54:
@@ -246,7 +246,7 @@ LABEL_1F88:
 	db 0x11
 
 LABEL_1F89:
-	video offset=CINEMATIC_335, x=280, y=101, zoom=0x40
+	video offset=CINEMATIC_335, x=280, y=101
 	video offset=CINEMATIC_336, x=226, y=140
 	jg [0x01], 0x82, LABEL_1FA8
 	jl [0x02], 0x7C, LABEL_1FA4
@@ -258,7 +258,7 @@ LABEL_1FA4:
 LABEL_1FA8:
 	jl [0x01], 0xC8, LABEL_1FB9
 	jg [0x02], 0xA0, LABEL_1FB9
-	video offset=CINEMATIC_337, x=300, y=101, zoom=0x40
+	video offset=CINEMATIC_337, x=300, y=101
 
 LABEL_1FB9:
 	break
@@ -274,9 +274,9 @@ LABEL_1FC6:
 	db 0x11
 
 LABEL_1FC7:
-	video offset=CINEMATIC_335, x=65498, y=30, zoom=0x40
+	video offset=CINEMATIC_335, x=65498, y=30
 	jg [0x02], 0x5A, LABEL_1FD9
-	video offset=CINEMATIC_337, x=65534, y=31, zoom=0x40
+	video offset=CINEMATIC_337, x=65534, y=31
 
 LABEL_1FD9:
 	break
@@ -292,7 +292,7 @@ LABEL_1FE8:
 	jg [0x01], 0x64, LABEL_1FFC
 	video offset=CINEMATIC_346, x=64, y=160
 	video offset=CINEMATIC_347, x=66, y=105
-	video offset=CINEMATIC_335, x=65513, y=83, zoom=0x40
+	video offset=CINEMATIC_335, x=65513, y=83
 
 LABEL_1FFC:
 	break
@@ -313,7 +313,7 @@ LABEL_200D:
 LABEL_201D:
 	jl [0x01], 0xE6, LABEL_202F
 	jg [0x01], 0x0138, LABEL_202F
-	video offset=CINEMATIC_337, x=270, y=100, zoom=0x40
+	video offset=CINEMATIC_337, x=270, y=100
 
 LABEL_202F:
 	jl [0x01], 0x2A, LABEL_203F
@@ -388,10 +388,10 @@ LABEL_20DA:
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	add [0xE9], [0x3D]
 	setPalette 0x02
-	video offset=CINEMATIC_452, x=[0xe8], y=[0xe9], zoom=0x40
+	video offset=CINEMATIC_452, x=[0xe8], y=[0xe9]
 	break
 	setPalette 0x01
-	video offset=CINEMATIC_453, x=[0xe8], y=[0xe9], zoom=0x40
+	video offset=CINEMATIC_453, x=[0xe8], y=[0xe9]
 	break
 	sub [0xE8], 0x005F
 	sub [0xE9], 0x0018
@@ -412,10 +412,10 @@ LABEL_2126:
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	add [0xEB], [0x3D]
 	setPalette 0x02
-	video offset=CINEMATIC_454, x=[0xea], y=[0xeb], zoom=0x40
+	video offset=CINEMATIC_454, x=[0xea], y=[0xeb]
 	break
 	setPalette 0x01
-	video offset=CINEMATIC_455, x=[0xea], y=[0xeb], zoom=0x40
+	video offset=CINEMATIC_455, x=[0xea], y=[0xeb]
 	break
 	add [0xEA], 0x0014
 	sub [0xEB], 0x0018

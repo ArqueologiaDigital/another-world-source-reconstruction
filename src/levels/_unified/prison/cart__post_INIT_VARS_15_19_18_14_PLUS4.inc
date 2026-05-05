@@ -37,7 +37,7 @@ LABEL_7A6D:
 LABEL_7A77:
 	call LABEL_7222
 	call LABEL_73D7
-	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b]
 	call LABEL_74A2
 	call LABEL_7576
 	break
@@ -62,47 +62,47 @@ LABEL_7A9D:
 
 LABEL_7AB1:
 	jg [0x22], 0x16, LABEL_7ABF
-	video offset=CINEMATIC_101, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_101, x=[0x21], y=[0x22]
 	jmp LABEL_7B2C
 
 LABEL_7ABF:
 	jg [0x22], 0x2C, LABEL_7ACD
-	video offset=CINEMATIC_100, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_100, x=[0x21], y=[0x22]
 	jmp LABEL_7B2C
 
 LABEL_7ACD:
 	jg [0x22], 0x42, LABEL_7ADB
-	video offset=CINEMATIC_099, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_099, x=[0x21], y=[0x22]
 	jmp LABEL_7B2C
 
 LABEL_7ADB:
 	jg [0x22], 0x58, LABEL_7AE9
-	video offset=CINEMATIC_098, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_098, x=[0x21], y=[0x22]
 	jmp LABEL_7B2C
 
 LABEL_7AE9:
 	jg [0x22], 0x6E, LABEL_7AF7
-	video offset=CINEMATIC_097, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_097, x=[0x21], y=[0x22]
 	jmp LABEL_7B2C
 
 LABEL_7AF7:
 	jg [0x22], 0x84, LABEL_7B05
-	video offset=CINEMATIC_096, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_096, x=[0x21], y=[0x22]
 	jmp LABEL_7B2C
 
 LABEL_7B05:
 	jg [0x22], 0x9A, LABEL_7B13
-	video offset=CINEMATIC_095, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_095, x=[0x21], y=[0x22]
 	jmp LABEL_7B2C
 
 LABEL_7B13:
 	jg [0x22], 0xB0, LABEL_7B21
-	video offset=CINEMATIC_094, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_094, x=[0x21], y=[0x22]
 	jmp LABEL_7B2C
 
 LABEL_7B21:
 	jg [0x22], 0xC8, LABEL_7B2C
-	video offset=CINEMATIC_093, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_093, x=[0x21], y=[0x22]
 
 LABEL_7B2C:
 	ret

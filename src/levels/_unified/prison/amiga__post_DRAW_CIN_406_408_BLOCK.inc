@@ -1,6 +1,6 @@
 LABEL_18FA:
 	break
-	video offset=CINEMATIC_412, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_412, x=[0x07], y=[0x08]
 	jl [0x01], 0x8C, LABEL_18FA
 	jl [0x01], 0x91, LABEL_18FA
 	mov [0xB6], 0x0001
@@ -10,16 +10,16 @@ LABEL_18FA:
 	setup channel=0x14, address=LABEL_04BB
 	setup channel=0x16, address=LABEL_0D48
 	break
-	video offset=CINEMATIC_411, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_411, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_409, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_409, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_408, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_408, x=[0x07], y=[0x08]
 	selectVideoPage 0x00
 	video offset=CINEMATIC_413, x=160, y=36
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_407, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_407, x=[0x07], y=[0x08]
 	break
 	call LABEL_633D
 	break

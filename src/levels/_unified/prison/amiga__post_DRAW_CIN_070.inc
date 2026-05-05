@@ -1,5 +1,5 @@
 LABEL_7434:
 	jne [0x06], 0x04, LABEL_7453
 	jg [0x14], 0x00, DRAW_CIN066_AT_X03_Y04
-	video offset=CINEMATIC_068, x=[0x03], y=[0x04], zoom=0x40
+	video offset=CINEMATIC_068, x=[0x03], y=[0x04]
 	jmp DRAW_CIN_067

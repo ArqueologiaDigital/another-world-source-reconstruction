@@ -74,107 +74,107 @@ THE_BEAST_APPEARS_FOR_THE_FIRST_TIME_IN_THE_BACKGROUND:
 BEAST_INTRO_INITIAL_DELAY:
 	break
 	djnz [0x10], BEAST_INTRO_INITIAL_DELAY
-	video offset=CINEMATIC_BEAST_FIRST_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_0, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BEAST_BG_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_0, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BEAST_BG_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_1, x=[0x0e], y=[0x0f]
 	break
 	sub [0x0E], 0x0006
-	video offset=CINEMATIC_BEAST_BG_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_2, x=[0x0e], y=[0x0f]
 	break
 	sub [0x0E], 0x0007
-	video offset=CINEMATIC_BEAST_BG_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_3, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BEAST_BG_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_4, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BEAST_BG_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_5, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BEAST_BG_6, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_6, x=[0x0e], y=[0x0f]
 	break
 	sub [0x0E], 0x001E
 	play id=0x003C, freq=0x0A, vol=0x0C, channel=0x00
-	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f]
 	break
 	sub [0x0E], 0x0001
-	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f]
 	break
 	sub [0x0E], 0x0001
-	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f]
 	break
 	sub [0x0E], 0x0001
 	mov [0x10], 0x0014
 
 BEAST_BG_F7_HOLD_LOOP:
-	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f]
 	break
 	djnz [0x10], BEAST_BG_F7_HOLD_LOOP
-	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
-	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f]
+	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_0, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
-	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f]
+	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_1, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
-	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f]
+	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_2, x=[0x0e], y=[0x0f]
 	break
 	mov [0x10], 0x001E
 
 BEAST_HEAD_TURNING_3_LOOP:
-	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
-	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f]
+	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_3, x=[0x0e], y=[0x0f]
 	break
 	djnz [0x10], BEAST_HEAD_TURNING_3_LOOP
-	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
-	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f]
+	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_1, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
-	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f]
+	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_0, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
-	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f]
+	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_0, x=[0x0e], y=[0x0f]
 	break
 	mov [0x10], 0x0002
 
 BEAST_BG_F7_HOLD_LOOP_SHORT:
-	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f]
 	break
 	djnz [0x10], BEAST_BG_F7_HOLD_LOOP_SHORT
-	video offset=CINEMATIC_BEAST_BG_8, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_8, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BEAST_BG_9, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_9, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BEAST_BG_10, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_10, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BEAST_FIRST_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_1, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BEAST_BG_11, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_11, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BEAST_FIRST_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_2, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BEAST_FIRST_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_3, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BEAST_FIRST_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_4, x=[0x0e], y=[0x0f]
 	break
 	add [0x0E], 0x0005
-	video offset=CINEMATIC_BEAST_FIRST_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_5, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BEAST_FIRST_6, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_6, x=[0x0e], y=[0x0f]
 	break
 	add [0x0E], 0x0001
-	video offset=CINEMATIC_BEAST_FIRST_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_7, x=[0x0e], y=[0x0f]
 	break
 	add [0x0E], 0x0006
-	video offset=CINEMATIC_BEAST_FIRST_8, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_8, x=[0x0e], y=[0x0f]
 	break
 	add [0x0E], 0x0007
-	video offset=CINEMATIC_BEAST_FIRST_9, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_9, x=[0x0e], y=[0x0f]
 	break
 	add [0x0E], 0x0001
-	video offset=CINEMATIC_BEAST_FIRST_10, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_10, x=[0x0e], y=[0x0f]
 	break
-	video offset=CINEMATIC_BEAST_FIRST_11, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_11, x=[0x0e], y=[0x0f]
 	killChannel
 

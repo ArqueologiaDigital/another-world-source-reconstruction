@@ -34,15 +34,15 @@ LABEL_4F83:
 	mov [0x15], 0x0014
 
 LABEL_4F92:
-	video offset=CINEMATIC_634, x=[0x14], y=100, zoom=0x40
-	video offset=CINEMATIC_635, x=[0x17], y=100, zoom=0x40
-	video offset=CINEMATIC_636, x=[0x17], y=100, zoom=0x40
+	video offset=CINEMATIC_634, x=[0x14], y=100
+	video offset=CINEMATIC_635, x=[0x17], y=100
+	video offset=CINEMATIC_636, x=[0x17], y=100
 	break
 	djnz [0x15], LABEL_4F92
 	play id=0x0061, freq=0x07, vol=0x07, channel=0x00
-	video offset=CINEMATIC_634, x=[0x14], y=100, zoom=0x40
-	video offset=CINEMATIC_635, x=[0x17], y=100, zoom=0x40
-	video offset=CINEMATIC_636, x=[0x17], y=100, zoom=0x40
+	video offset=CINEMATIC_634, x=[0x14], y=100
+	video offset=CINEMATIC_635, x=[0x17], y=100
+	video offset=CINEMATIC_636, x=[0x17], y=100
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
 	setup channel=0x01, address=DRAW_CIN_683_TO_685_3F_AT_1EB7324B
 	setup channel=0x02, address=INIT_VARS_16_17

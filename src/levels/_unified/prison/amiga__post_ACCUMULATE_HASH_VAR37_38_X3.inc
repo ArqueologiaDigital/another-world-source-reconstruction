@@ -63,7 +63,7 @@ LABEL_0895:
 LABEL_08A1:
 	break
 	add [0xE8], 0x000C
-	video offset=CINEMATIC_310, x=[0xe8], y=[0xe9], zoom=0x40
+	video offset=CINEMATIC_310, x=[0xe8], y=[0xe9]
 	jl [0xE8], 0x0190, LABEL_08A1
 	jmp LABEL_08D2
 LABEL_08B5:

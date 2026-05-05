@@ -134,8 +134,8 @@ INIT_GETTING_OUT_OF_POOL_ANIMATION:
 
 GETTING_OUT_OF_THE_POOL__ANIMATION_PART_0:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_0, x=[0x14], y=100, zoom=0x40
-	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_1, x=[0x15], y=100, zoom=0x40
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_0, x=[0x14], y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_1, x=[0x15], y=100
 	sub [0x14], 0x0001
 	add [0x15], 0x0001
 	selectVideoPage 0xFF
@@ -148,8 +148,8 @@ GETTING_OUT_OF_THE_POOL__ANIMATION_PART_0:
 
 GETTING_OUT_OF_THE_POOL__ANIMATION_PART_1:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_2, x=[0x14], y=100, zoom=0x40
-	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_3, x=[0x15], y=100, zoom=0x40
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_2, x=[0x14], y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_3, x=[0x15], y=100
 	sub [0x14], 0x0001
 	add [0x15], 0x0001
 	selectVideoPage 0xFF
@@ -162,7 +162,7 @@ GETTING_OUT_OF_THE_POOL__ANIMATION_PART_1:
 
 GETTING_OUT_OF_THE_POOL__ANIMATION_PART_2:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_4, x=[0x14], y=100, zoom=0x40
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_4, x=[0x14], y=100
 	sub [0x14], 0x0001
 	selectVideoPage 0xFF
 	break

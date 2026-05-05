@@ -99,7 +99,7 @@ LABEL_9D0B:
 	ret
 
 DRAW_CIN_591_THEN_CIN_345:
-	video offset=CINEMATIC_591, x=151, y=65496, zoom=0x40
+	video offset=CINEMATIC_591, x=151, y=65496
 	video offset=CINEMATIC_345, x=6, y=99
 	ret
 
@@ -113,10 +113,10 @@ LABEL_9D37:
 	video offset=CINEMATIC_587, x=191, y=65
 	video offset=CINEMATIC_588, x=191, y=65
 	video offset=CINEMATIC_589, x=191, y=65
-	video offset=CINEMATIC_587, x=295, y=64, zoom=0x40
-	video offset=CINEMATIC_588, x=295, y=64, zoom=0x40
-	video offset=CINEMATIC_590, x=295, y=64, zoom=0x40
-	video offset=CINEMATIC_591, x=65528, y=15, zoom=0x40
+	video offset=CINEMATIC_587, x=295, y=64
+	video offset=CINEMATIC_588, x=295, y=64
+	video offset=CINEMATIC_590, x=295, y=64
+	video offset=CINEMATIC_591, x=65528, y=15
 	video offset=CINEMATIC_591, x=107, y=14
 	video offset=CINEMATIC_591, x=212, y=15
 	call LABEL_369F
@@ -196,7 +196,7 @@ LABEL_9E37:
 	video offset=CINEMATIC_460, x=160, y=100
 	video offset=CINEMATIC_486, x=160, y=100
 	ret
-	video offset=CINEMATIC_694, x=4, y=65518, zoom=0x40
+	video offset=CINEMATIC_694, x=4, y=65518
 
 LABEL_9E59:
 	fill page=0x00, color=0x01

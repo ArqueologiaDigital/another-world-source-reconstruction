@@ -11,19 +11,19 @@ LABEL_94D0:
 	jne [0x0A], 0x00, LABEL_9487
 	sub [0x01], 0x0004
 	call HANDLE_HORIZ_VAR01_VS_VAR28
-	video offset=CINEMATIC_560, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_560, x=[0x01], y=[0x02]
 	break
 	add [0x01], 0x0001
-	video offset=CINEMATIC_560, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_560, x=[0x01], y=[0x02]
 	add [0x01], 0x0001
 
 LABEL_94F7:
 	break
-	video offset=CINEMATIC_560, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_560, x=[0x01], y=[0x02]
 	je [HERO_ACTION_POS_MASK], 0x88, LABEL_94F7
 	break
 	add [0x01], 0x0002
-	video offset=CINEMATIC_557, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_557, x=[0x01], y=[0x02]
 	mov [0x63], 0x0001
 	add [0x01], 0x0002
 	jmp HERO_WALK_LEFT_LOOP
@@ -216,7 +216,7 @@ LABEL_9757:
 	mov [0x2A], 0x0021
 	call HANDLE_HORIZ_VAR01_VS_VAR28
 	add [0x01], 0x0004
-	video offset=CINEMATIC_565, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_565, x=[0x01], y=[0x02]
 	add [0x01], 0x0001
 
 LABEL_9774:
@@ -226,10 +226,10 @@ LABEL_9774:
 	je [HERO_ACTION_POS_MASK], 0x00, LABEL_9774
 	break
 	sub [0x01], 0x0002
-	video offset=CINEMATIC_565, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_565, x=[0x01], y=[0x02]
 	sub [0x01], 0x0002
 	break
-	video offset=CINEMATIC_562, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_562, x=[0x01], y=[0x02]
 	mov [0x63], 0x0002
 	mov [0x0A], 0x0004
 	jmp HERO_WALK_RIGHT_LOOP
@@ -245,7 +245,7 @@ LABEL_97AB:
 LABEL_97AC:
 	jne [0x0F], 0x00, LABEL_97E5
 	add [0x01], 0x0002
-	video offset=CINEMATIC_566, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_566, x=[0x01], y=[0x02]
 	mov [0x21], [0x01]
 	mov [0x27], [0x02]
 	add [0x21], 0x001E
@@ -253,7 +253,7 @@ LABEL_97AC:
 	call LABEL_3801
 	break
 	sub [0x01], 0x0001
-	video offset=CINEMATIC_565, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_565, x=[0x01], y=[0x02]
 	sub [0x01], 0x0001
 	jne [HERO_ACTION_POS_MASK], 0x80, LABEL_9774
 	setup channel=0x17, address=LABEL_450B

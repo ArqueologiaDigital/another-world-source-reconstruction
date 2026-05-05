@@ -1,6 +1,6 @@
 LABEL_2917:
-	video offset=CINEMATIC_469, x=160, y=[0xec], zoom=0x40
-	video offset=CINEMATIC_470, x=160, y=[0xed], zoom=0x40
+	video offset=CINEMATIC_469, x=160, y=[0xec]
+	video offset=CINEMATIC_470, x=160, y=[0xed]
 	sub [0xEC], 0x0010
 	sub [0xED], 0x000C
 	break
@@ -68,9 +68,9 @@ LABEL_29A3:
 LABEL_29C5:
 	break
 	je [HACK_VAR_67], 0x28, LABEL_2A0D
-	video offset=CINEMATIC_292, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_292, x=[0x01], y=[0x02]
 	je [0xDB], 0x00, LABEL_29DC
-	video offset=CINEMATIC_294, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_294, x=[0x01], y=[0x02]
 
 LABEL_29DC:
 	break
@@ -90,15 +90,15 @@ LABEL_29FB:
 	db 0x11
 
 LABEL_29FC:
-	video offset=CINEMATIC_293, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_293, x=[0x01], y=[0x02]
 	je [0xDB], 0x00, SHARED_RET
-	video offset=CINEMATIC_294, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_294, x=[0x01], y=[0x02]
 	ret
 
 LABEL_2A0D:
-	video offset=CINEMATIC_289, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_289, x=[0x01], y=[0x02]
 	je [0xDB], 0x00, LABEL_2A1D
-	video offset=CINEMATIC_291, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_291, x=[0x01], y=[0x02]
 
 LABEL_2A1D:
 	break
@@ -118,9 +118,9 @@ LABEL_2A3C:
 	db 0x11
 
 LABEL_2A3D:
-	video offset=CINEMATIC_290, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_290, x=[0x01], y=[0x02]
 	je [0xDB], 0x00, SHARED_RET
-	video offset=CINEMATIC_291, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_291, x=[0x01], y=[0x02]
 	ret
 
 LABEL_2A4E:

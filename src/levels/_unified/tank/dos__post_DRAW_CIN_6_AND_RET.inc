@@ -14,19 +14,19 @@ LABEL_1D17:
 	ret
 
 DRAW_CIN_113_114_AND_RET:
-	video offset=CINEMATIC_162, x=[0x0f], y=[0x10], zoom=0x40
-	video offset=CINEMATIC_163, x=[0x0f], y=[0x10], zoom=0x40
+	video offset=CINEMATIC_162, x=[0x0f], y=[0x10]
+	video offset=CINEMATIC_163, x=[0x0f], y=[0x10]
 	ret
 
 DRAW_CIN_122_ON_PAGE_0:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_173, x=[0x0f], y=[0x10], zoom=0x40
+	video offset=CINEMATIC_173, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
 	ret
 
 LABEL_1D4F:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_169, x=[0x0f], y=[0x10], zoom=0x40
+	video offset=CINEMATIC_169, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
 	jg [HACK_VAR_67], 0x02, SHARED_RET
 	mov [HACK_VAR_67], 0x0002
@@ -35,7 +35,7 @@ LABEL_1D4F:
 LABEL_1D63:
 	jge [HACK_VAR_67], 0x03, SHARED_RET
 	selectVideoPage 0x00
-	video offset=CINEMATIC_168, x=[0x0f], y=[0x10], zoom=0x40
+	video offset=CINEMATIC_168, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
 	mov [HACK_VAR_67], 0x0003
 	ret

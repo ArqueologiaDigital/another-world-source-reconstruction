@@ -93,30 +93,30 @@ LABEL_5CC8:
 	db 0x11
 
 LABEL_5CC9:
-	video offset=CINEMATIC_343, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_343, x=[0x07], y=[0x08]
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0002
 	je [0xF8], 0x00, SHARED_RET
-	video offset=CINEMATIC_344, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_344, x=[0x07], y=[0x08]
 	ret
 
 LABEL_5CE7:
-	video offset=CINEMATIC_345, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_345, x=[0x07], y=[0x08]
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0002
 	je [0xF8], 0x00, SHARED_RET
-	video offset=CINEMATIC_346, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_346, x=[0x07], y=[0x08]
 	ret
 
 LABEL_5D05:
-	video offset=CINEMATIC_347, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_347, x=[0x07], y=[0x08]
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video offset=CINEMATIC_348, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_348, x=[0x07], y=[0x08]
 	ret
 
 LABEL_5D23:
@@ -126,13 +126,13 @@ LABEL_5D23:
 	ret
 
 LABEL_5D2F:
-	video offset=CINEMATIC_170, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_170, x=[0x07], y=[0x08]
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DISPATCH_VAR09_LOW_NIBBLE
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DISPATCH_VAR09_LOW_NIBBLE
-	video offset=CINEMATIC_171, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_171, x=[0x07], y=[0x08]
 	jmp DISPATCH_VAR09_LOW_NIBBLE
 
 LABEL_5D52:
@@ -142,23 +142,23 @@ LABEL_5D52:
 	ret
 
 LABEL_5D5E:
-	video offset=CINEMATIC_334, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_334, x=[0x07], y=[0x08]
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DISPATCH_VAR09_LOW_NIBBLE
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DISPATCH_VAR09_LOW_NIBBLE
-	video offset=CINEMATIC_335, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_335, x=[0x07], y=[0x08]
 	jmp DISPATCH_VAR09_LOW_NIBBLE
 
 LABEL_5D81:
-	video offset=CINEMATIC_336, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_336, x=[0x07], y=[0x08]
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DISPATCH_VAR09_LOW_NIBBLE
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DISPATCH_VAR09_LOW_NIBBLE
-	video offset=CINEMATIC_337, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_337, x=[0x07], y=[0x08]
 	jmp DISPATCH_VAR09_LOW_NIBBLE
 
 LABEL_5DA4:

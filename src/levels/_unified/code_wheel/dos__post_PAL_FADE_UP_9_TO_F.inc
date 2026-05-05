@@ -163,131 +163,131 @@ LABEL_0419:
 
 LABEL_041A:
 	jne [0x05], 0x00, LABEL_0425
-	video offset=CINEMATIC_031, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_031, x=[0x2d], y=[0x2e]
 
 LABEL_0425:
 	jne [0x05], 0x01, LABEL_0430
-	video offset=CINEMATIC_030, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_030, x=[0x2d], y=[0x2e]
 
 LABEL_0430:
 	jne [0x05], 0x02, LABEL_043B
-	video offset=CINEMATIC_029, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_029, x=[0x2d], y=[0x2e]
 
 LABEL_043B:
 	jne [0x05], 0x03, LABEL_0446
-	video offset=CINEMATIC_028, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_028, x=[0x2d], y=[0x2e]
 
 LABEL_0446:
 	jne [0x05], 0x04, LABEL_0451
-	video offset=CINEMATIC_027, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_027, x=[0x2d], y=[0x2e]
 
 LABEL_0451:
 	jne [0x05], 0x05, LABEL_045C
-	video offset=CINEMATIC_026, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_026, x=[0x2d], y=[0x2e]
 
 LABEL_045C:
 	jne [0x05], 0x06, LABEL_0467
-	video offset=CINEMATIC_025, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_025, x=[0x2d], y=[0x2e]
 
 LABEL_0467:
 	jne [0x05], 0x07, LABEL_0472
-	video offset=CINEMATIC_024, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_024, x=[0x2d], y=[0x2e]
 
 LABEL_0472:
 	jne [0x05], 0x08, LABEL_047D
-	video offset=CINEMATIC_023, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_023, x=[0x2d], y=[0x2e]
 
 LABEL_047D:
 	jne [0x05], 0x09, LABEL_0488
-	video offset=CINEMATIC_022, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_022, x=[0x2d], y=[0x2e]
 
 LABEL_0488:
 	jne [0x05], 0x0A, LABEL_0493
-	video offset=CINEMATIC_021, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_021, x=[0x2d], y=[0x2e]
 
 LABEL_0493:
 	jne [0x05], 0x0B, LABEL_049E
-	video offset=CINEMATIC_020, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_020, x=[0x2d], y=[0x2e]
 
 LABEL_049E:
 	jne [0x05], 0x0C, LABEL_04A9
-	video offset=CINEMATIC_019, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_019, x=[0x2d], y=[0x2e]
 
 LABEL_04A9:
 	jne [0x05], 0x0D, LABEL_04B4
-	video offset=CINEMATIC_018, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_018, x=[0x2d], y=[0x2e]
 
 LABEL_04B4:
 	jne [0x05], 0x0E, LABEL_04BF
-	video offset=CINEMATIC_017, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_017, x=[0x2d], y=[0x2e]
 
 LABEL_04BF:
 	jne [0x05], 0x0F, LABEL_04CA
-	video offset=CINEMATIC_016, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_016, x=[0x2d], y=[0x2e]
 
 LABEL_04CA:
 	jne [0x05], 0x10, LABEL_04D5
-	video offset=CINEMATIC_015, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_015, x=[0x2d], y=[0x2e]
 
 LABEL_04D5:
 	jne [0x05], 0x11, LABEL_04E0
-	video offset=CINEMATIC_014, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_014, x=[0x2d], y=[0x2e]
 
 LABEL_04E0:
 	jne [0x05], 0x12, LABEL_04EB
-	video offset=CINEMATIC_013, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_013, x=[0x2d], y=[0x2e]
 
 LABEL_04EB:
 	jne [0x05], 0x13, LABEL_04F6
-	video offset=CINEMATIC_012, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_012, x=[0x2d], y=[0x2e]
 
 LABEL_04F6:
 	jne [0x05], 0x14, LABEL_0501
-	video offset=CINEMATIC_011, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_011, x=[0x2d], y=[0x2e]
 
 LABEL_0501:
 	jne [0x05], 0x15, LABEL_050C
-	video offset=CINEMATIC_010, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_010, x=[0x2d], y=[0x2e]
 
 LABEL_050C:
 	jne [0x05], 0x16, LABEL_0517
-	video offset=CINEMATIC_009, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_009, x=[0x2d], y=[0x2e]
 
 LABEL_0517:
 	jne [0x05], 0x17, LABEL_0522
-	video offset=CINEMATIC_008, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_008, x=[0x2d], y=[0x2e]
 
 LABEL_0522:
 	jne [0x05], 0x18, LABEL_052D
-	video offset=CINEMATIC_007, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_007, x=[0x2d], y=[0x2e]
 
 LABEL_052D:
 	jne [0x05], 0x19, LABEL_0538
-	video offset=CINEMATIC_006, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_006, x=[0x2d], y=[0x2e]
 
 LABEL_0538:
 	jne [0x05], 0x1A, LABEL_0543
-	video offset=CINEMATIC_005, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_005, x=[0x2d], y=[0x2e]
 
 LABEL_0543:
 	jne [0x05], 0x1B, LABEL_054E
-	video offset=CINEMATIC_004, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_004, x=[0x2d], y=[0x2e]
 
 LABEL_054E:
 	jne [0x05], 0x1C, LABEL_0559
-	video offset=CINEMATIC_003, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_003, x=[0x2d], y=[0x2e]
 
 LABEL_0559:
 	jne [0x05], 0x1D, LABEL_0564
-	video offset=CINEMATIC_002, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_002, x=[0x2d], y=[0x2e]
 
 LABEL_0564:
 	jne [0x05], 0x1E, LABEL_056F
-	video offset=CINEMATIC_001, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_001, x=[0x2d], y=[0x2e]
 
 LABEL_056F:
 	jne [0x05], 0x1F, SHARED_RET
-	video offset=CINEMATIC_000, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_000, x=[0x2d], y=[0x2e]
 	ret
 
 LABEL_057B:

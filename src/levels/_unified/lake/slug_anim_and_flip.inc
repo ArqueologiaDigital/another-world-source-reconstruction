@@ -62,7 +62,7 @@ SLUG_ANIMATION:
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
-	video offset=CINEMATIC_SLUG_0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_0, x=[0x0c], y=[0x0d]
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
@@ -70,7 +70,7 @@ SLUG_ANIMATION:
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
-	video offset=CINEMATIC_SLUG_1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_1, x=[0x0c], y=[0x0d]
 	break
 
 SLUG_F1_PROXIMITY_CHK:
@@ -80,7 +80,7 @@ SLUG_F1_PROXIMITY_CHK:
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
-	video offset=CINEMATIC_SLUG_2, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_2, x=[0x0c], y=[0x0d]
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
@@ -88,7 +88,7 @@ SLUG_F1_PROXIMITY_CHK:
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
-	video offset=CINEMATIC_SLUG_3, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_3, x=[0x0c], y=[0x0d]
 	break
 
 SLUG_F3_PROXIMITY_CHK:
@@ -98,7 +98,7 @@ SLUG_F3_PROXIMITY_CHK:
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
-	video offset=CINEMATIC_SLUG_4, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_4, x=[0x0c], y=[0x0d]
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
@@ -106,7 +106,7 @@ SLUG_F3_PROXIMITY_CHK:
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
-	video offset=CINEMATIC_SLUG_5, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_5, x=[0x0c], y=[0x0d]
 	break
 
 SLUG_F5_PROXIMITY_CHK:
@@ -117,7 +117,7 @@ SLUG_F5_PROXIMITY_CHK:
 ;@endif
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
 	sub [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_6, x=[0x0c], y=[0x0d]
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
@@ -126,7 +126,7 @@ SLUG_F5_PROXIMITY_CHK:
 ;@endif
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
 	sub [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_7, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_7, x=[0x0c], y=[0x0d]
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
@@ -135,7 +135,7 @@ SLUG_F5_PROXIMITY_CHK:
 ;@endif
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
 	sub [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_8, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_8, x=[0x0c], y=[0x0d]
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
@@ -144,7 +144,7 @@ SLUG_F5_PROXIMITY_CHK:
 ;@endif
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
 	sub [0x0C], 0x0003
-	video offset=CINEMATIC_SLUG_9, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_9, x=[0x0c], y=[0x0d]
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
@@ -153,7 +153,7 @@ SLUG_F5_PROXIMITY_CHK:
 ;@endif
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
 	sub [0x0C], 0x0002
-	video offset=CINEMATIC_SLUG_10, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_10, x=[0x0c], y=[0x0d]
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
@@ -162,7 +162,7 @@ SLUG_F5_PROXIMITY_CHK:
 ;@endif
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
 	sub [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_11, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_11, x=[0x0c], y=[0x0d]
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
@@ -171,7 +171,7 @@ SLUG_F5_PROXIMITY_CHK:
 ;@endif
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
 	sub [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_12, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_12, x=[0x0c], y=[0x0d]
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
@@ -180,16 +180,16 @@ SLUG_F5_PROXIMITY_CHK:
 ;@endif
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
 	sub [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_13, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_13, x=[0x0c], y=[0x0d]
 	break
 	add [0x0C], 0x0002
 	jmp SLUG_ANIMATION
 	killChannel
 
 DRAW_BEAST_421_422_WITH_SOUND_35:
-	video offset=CINEMATIC_BEAST_AI_1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_1, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_BEAST_AI_2, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_2, x=[0x0c], y=[0x0d]
 	play id=0x0035, freq=0x14, vol=0x3F, channel=0x00
 	je [0x1B], 0x01, BEAST_CONT_FRAMES_423_426
 	je [0x2B], 0x01, BEAST_CONT_FRAMES_423_426
@@ -198,22 +198,22 @@ DRAW_BEAST_421_422_WITH_SOUND_35:
 
 BEAST_CONT_FRAMES_423_426:
 	break
-	video offset=CINEMATIC_BEAST_AI_3, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_3, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_BEAST_AI_4, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_4, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_BEAST_AI_5, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_5, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_BEAST_AI_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_6, x=[0x0c], y=[0x0d]
 	break
 	add [0x0C], 0x000C
 	jmp SLUG_WALK_PROX_LOOP
 	killChannel
 
 SLUG_FLIP_WALKS:
-	video offset=CINEMATIC_SLUG_FLIP_WALKING_0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_FLIP_WALKING_0, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_FLIP_WALKING_1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_FLIP_WALKING_1, x=[0x0c], y=[0x0d]
 	play id=0x0035, freq=0x14, vol=0x3F, channel=0x00
 	je [0x1B], 0x01, SLUG_FLIP_CONT_FRAMES_2_5
 	je [0x2B], 0x01, SLUG_FLIP_CONT_FRAMES_2_5
@@ -222,13 +222,13 @@ SLUG_FLIP_WALKS:
 
 SLUG_FLIP_CONT_FRAMES_2_5:
 	break
-	video offset=CINEMATIC_SLUG_FLIP_WALKING_2, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_FLIP_WALKING_2, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_FLIP_WALKING_3, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_FLIP_WALKING_3, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_FLIP_WALKING_4, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_FLIP_WALKING_4, x=[0x0c], y=[0x0d]
 	break
-	video offset=CINEMATIC_SLUG_FLIP_WALKING_5, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_FLIP_WALKING_5, x=[0x0c], y=[0x0d]
 	break
 	sub [0x0C], 0x000C
 	jmp SLUG_ANIMATION

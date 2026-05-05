@@ -240,71 +240,71 @@ PASSCODE_RESTART_OR_DRAW_CIN_016:
 	setup channel=0x3C, address=KILL_CHAN_AT_0021
 	killChannel
 	jne [0x05], 0x00, DRAW_CIN_015_AT_2D_2E_KEY01
-	video offset=CINEMATIC_016, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_016, x=[0x2d], y=[0x2e]
 
 DRAW_CIN_015_AT_2D_2E_KEY01:
 	jne [0x05], 0x01, DRAW_CIN_014_AT_2D_2E_KEY02
-	video offset=CINEMATIC_015, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_015, x=[0x2d], y=[0x2e]
 
 DRAW_CIN_014_AT_2D_2E_KEY02:
 	jne [0x05], 0x02, DRAW_CIN_013_AT_2D_2E_KEY03
-	video offset=CINEMATIC_014, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_014, x=[0x2d], y=[0x2e]
 
 DRAW_CIN_013_AT_2D_2E_KEY03:
 	jne [0x05], 0x03, DRAW_CIN_012_AT_2D_2E_KEY04
-	video offset=CINEMATIC_013, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_013, x=[0x2d], y=[0x2e]
 
 DRAW_CIN_012_AT_2D_2E_KEY04:
 	jne [0x05], 0x04, DRAW_CIN_011_AT_2D_2E_KEY05
-	video offset=CINEMATIC_012, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_012, x=[0x2d], y=[0x2e]
 
 DRAW_CIN_011_AT_2D_2E_KEY05:
 	jne [0x05], 0x05, DRAW_CIN_010_AT_2D_2E_KEY06
-	video offset=CINEMATIC_011, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_011, x=[0x2d], y=[0x2e]
 
 DRAW_CIN_010_AT_2D_2E_KEY06:
 	jne [0x05], 0x06, DRAW_CIN_009_AT_2D_2E_KEY07
-	video offset=CINEMATIC_010, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_010, x=[0x2d], y=[0x2e]
 
 DRAW_CIN_009_AT_2D_2E_KEY07:
 	jne [0x05], 0x07, DRAW_CIN_008_AT_2D_2E_KEY08
-	video offset=CINEMATIC_009, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_009, x=[0x2d], y=[0x2e]
 
 DRAW_CIN_008_AT_2D_2E_KEY08:
 	jne [0x05], 0x08, DRAW_CIN_007_AT_2D_2E_KEY09
-	video offset=CINEMATIC_008, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_008, x=[0x2d], y=[0x2e]
 
 DRAW_CIN_007_AT_2D_2E_KEY09:
 	jne [0x05], 0x09, DRAW_CIN_006_AT_2D_2E_KEY0A
-	video offset=CINEMATIC_007, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_007, x=[0x2d], y=[0x2e]
 
 DRAW_CIN_006_AT_2D_2E_KEY0A:
 	jne [0x05], 0x0A, DRAW_CIN_005_AT_2D_2E_KEY0B
-	video offset=CINEMATIC_006, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_006, x=[0x2d], y=[0x2e]
 
 DRAW_CIN_005_AT_2D_2E_KEY0B:
 	jne [0x05], 0x0B, DRAW_CIN_004_AT_2D_2E_KEY0C
-	video offset=CINEMATIC_005, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_005, x=[0x2d], y=[0x2e]
 
 DRAW_CIN_004_AT_2D_2E_KEY0C:
 	jne [0x05], 0x0C, DRAW_CIN_003_AT_2D_2E_KEY0D
-	video offset=CINEMATIC_004, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_004, x=[0x2d], y=[0x2e]
 
 DRAW_CIN_003_AT_2D_2E_KEY0D:
 	jne [0x05], 0x0D, DRAW_CIN_002_AT_2D_2E_KEY0E
-	video offset=CINEMATIC_003, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_003, x=[0x2d], y=[0x2e]
 
 DRAW_CIN_002_AT_2D_2E_KEY0E:
 	jne [0x05], 0x0E, DRAW_CIN_001_AT_2D_2E_KEY0F
-	video offset=CINEMATIC_002, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_002, x=[0x2d], y=[0x2e]
 
 DRAW_CIN_001_AT_2D_2E_KEY0F:
 	jne [0x05], 0x0F, DRAW_CIN_000_AT_2D_2E_KEY10
-	video offset=CINEMATIC_001, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_001, x=[0x2d], y=[0x2e]
 
 DRAW_CIN_000_AT_2D_2E_KEY10:
 	jne [0x05], 0x10, SHARED_RET
-	video offset=CINEMATIC_000, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_000, x=[0x2d], y=[0x2e]
 	ret
 
 INIT_PASSCODE_LETTER_ALPHABET:
@@ -729,7 +729,7 @@ LABEL_068C:
 	mov [0x28], [0x08]
 	jne [0x25], [0x27], ANIMATE_CURSOR_TRANSITION
 	jne [0x26], [0x28], ANIMATE_CURSOR_TRANSITION
-	video offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_055, x=[0x07], y=[0x08]
 	break
 	jmp LABEL_0615
 LABEL_06B3:
@@ -775,14 +775,14 @@ COPY_VAR_27_28_TO_07_08:
 	mov [0x08], [0x28]
 
 LABEL_071E:
-	video offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_055, x=[0x07], y=[0x08]
 	break
 	jne [HERO_POS_UP_DOWN], 0x00, LABEL_071E
 	jne [HERO_POS_MASK], 0x00, LABEL_071E
 	jmp LABEL_0615
 
 JUNK__0733:
-	video offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_055, x=[0x07], y=[0x08]
 	break
 	jmp JUNK__06C1
 LABEL_073C:
@@ -1098,7 +1098,7 @@ SETUP_VAR02_FROM_VAR22:
 LABEL_0B53:
 	mov [0x05], [0x01]
 	call DERIVE_VAR07_VAR08_FROM_VAR05
-	video offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_055, x=[0x07], y=[0x08]
 	break
 	jne [LAST_KEYCHAR], 0x00, LABEL_0B53
 	jne [HERO_ACTION], 0x00, LABEL_0B53

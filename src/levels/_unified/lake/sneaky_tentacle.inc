@@ -73,52 +73,52 @@ SNEAKY_TENTACLE_INIT_DELAY:
 	mov [0x34], 0x0004
 
 SNEAKY_TENTACLE_GOING_UP:
-	video offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	sub [0x33], 0x0001
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	sub [0x33], 0x0001
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_1, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_1, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	sub [0x33], 0x0001
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_1, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_1, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	sub [0x33], 0x0001
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	sub [0x33], 0x0001
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	sub [0x33], 0x0001
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_3, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_3, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	sub [0x33], 0x0001
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_3, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_3, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	sub [0x33], 0x0001
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_4, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_4, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	sub [0x33], 0x0001
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_4, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_4, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	sub [0x33], 0x0001
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_5, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_5, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	sub [0x33], 0x0001
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_5, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_5, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	sub [0x33], 0x0001
 	break
 	djnz [0x34], SNEAKY_TENTACLE_GOING_UP
@@ -127,21 +127,21 @@ SNEAKY_TENTACLE_GOING_UP:
 	jg [0x33], [0x01], SNEAKY_TENTACLE_GIVES_UP_FOR_NOW
 	add [0x33], 0x0010
 	jl [0x33], [0x01], SNEAKY_TENTACLE_GIVES_UP_FOR_NOW
-	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_0, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_0, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_1, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_1, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_2, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_2, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_3, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_3, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_4, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_4, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_5, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_5, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_6, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_6, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_7, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_7, x=[0x32], y=100
 	add [0x32], 0x0012
 	jg [0x32], [0x01], SNEAKY_TENTACLE_HIT_HERO
 	add [0x32], 0x0004
@@ -150,45 +150,45 @@ SNEAKY_TENTACLE_GOING_UP:
 	sub [0x32], 0x0012
 	break
 	setup channel=0x14, address=KILL_CHANNEL_ROUTINE
-	video offset=CINEMATIC_SNEAKY_TENTACLE_8, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_8, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_9, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_9, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_10, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_10, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_11, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_11, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_TENTACLE_RISE_0, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_TENTACLE_RISE_0, x=[0x32], y=100
 	mov [PAUSE_SLICES], 0x0004
 	break
 	play id=0x004B, freq=0x0A, vol=0x3F, channel=0x01
-	video offset=CINEMATIC_TENTACLE_RISE_1, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_TENTACLE_RISE_1, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_TENTACLE_RISE_2, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_TENTACLE_RISE_2, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_TENTACLE_RISE_3, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_TENTACLE_RISE_3, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_TENTACLE_RISE_4, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_TENTACLE_RISE_4, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_TENTACLE_RISE_5, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_TENTACLE_RISE_5, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_TENTACLE_RISE_6, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_TENTACLE_RISE_6, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_TENTACLE_RISE_7, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_TENTACLE_RISE_7, x=[0x32], y=100
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_12, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_12, x=[0x32], y=100
 	jmp INIT_VAR_03_TO_0x1E
 	killChannel
 
 SNEAKY_TENTACLE_HIT_HERO:
 	break
 	sub [0x32], 0x0005
-	video offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=100, zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=100
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	break
 	add [0x32], 0x0002
-	video offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=106, zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=106
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	jmp SNEAKY_TENTACLE_FROM_THE_POOL
 	killChannel
 
@@ -197,52 +197,52 @@ SNEAKY_TENTACLE_GIVES_UP_FOR_NOW:
 	mov [0x33], 0x004C
 
 SNEAKY_TENTACLE_GOING_DOWN:
-	video offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	add [0x33], 0x0002
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	add [0x33], 0x0002
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_1, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_1, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	add [0x33], 0x0002
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_1, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_1, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	add [0x33], 0x0002
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	add [0x33], 0x0002
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	add [0x33], 0x0002
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_3, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_3, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	add [0x33], 0x0002
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_3, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_3, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	add [0x33], 0x0002
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_4, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_4, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	add [0x33], 0x0002
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_4, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_4, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	add [0x33], 0x0002
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_5, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_5, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	add [0x33], 0x0002
 	break
-	video offset=CINEMATIC_SNEAKY_TENTACLE_5, x=[0x32], y=[0x33], zoom=0x40
-	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_5, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100
 	add [0x33], 0x0002
 	break
 	djnz [0x34], SNEAKY_TENTACLE_GOING_DOWN

@@ -461,7 +461,7 @@ REDRAW_CURSOR_AT_VAR01:
 	mov [0x28], [0x08]
 	jne [0x25], [0x27], ANIMATE_CURSOR_TRANSITION
 	jne [0x26], [0x28], ANIMATE_CURSOR_TRANSITION
-	video offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_002, x=[0x07], y=[0x08]
 	break
 	jmp PASSCODE_INPUT_LOOP
 JUNK__03E7:

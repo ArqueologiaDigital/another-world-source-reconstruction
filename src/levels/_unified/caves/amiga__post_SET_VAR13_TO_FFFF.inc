@@ -86,7 +86,7 @@ LABEL_65CB:
 	setup channel=0x02, address=KILL_CHANNEL_LANDING
 	setup channel=0x3C, address=LABEL_3E21
 	selectVideoPage 0x00
-	video offset=CINEMATIC_839, x=287, y=50, zoom=0x40
+	video offset=CINEMATIC_839, x=287, y=50
 	selectVideoPage 0xFF
 	play id=0x0057, freq=0x1C, vol=0x40, channel=0x00
 	ret

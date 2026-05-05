@@ -53,45 +53,45 @@ LESTER_FRAME_LOOP_BODY:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_LESTER_FRAME_BUNDLE
 ;@elif BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_LESTER_FRAME, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LESTER_FRAME, x=[0x01], y=[0x02]
 ;@endif
 	break
 	djnz [0x14], LESTER_FRAME_LOOP_BODY
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	song id=0x0BDD, delay=0x0000, pos=0x00
 ;@endif
-	video offset=CINEMATIC_LAKE_051_SEQ_F4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F4, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LAKE_051_SEQ_F4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F4, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LAKE_051_SEQ_F4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F4, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LAKE_051_SEQ_F5, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F5, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LAKE_051_SEQ_F5, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F5, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LAKE_051_SEQ_F6, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F6, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LAKE_051_SEQ_F6, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F6, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LAKE_051_SEQ_F7, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F7, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LAKE_051_SEQ_F8, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F8, x=[0x01], y=[0x02]
 	break
 	play id=0x003A, freq=0x14, vol=0x3F, channel=0x01
-	video offset=CINEMATIC_LAKE_051_SEQ_F9, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F9, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LAKE_051_SEQ_F10, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F10, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LAKE_051_SEQ_F10, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F10, x=[0x01], y=[0x02]
 	play id=0x003A, freq=0x14, vol=0x20, channel=0x01
 	break
-	video offset=CINEMATIC_LAKE_051_SEQ_F11, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F11, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_LAKE_051_SEQ_F12, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F12, x=[0x01], y=[0x02]
 	mov [0x03], 0x0014
 	selectVideoPage 0x00
-	video offset=CINEMATIC_LAKE_051_SEQ_F13, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F13, x=[0x01], y=[0x02]
 	selectVideoPage 0xFF
 	break
 	jmp INIT_VAR_03_TO_0x1E

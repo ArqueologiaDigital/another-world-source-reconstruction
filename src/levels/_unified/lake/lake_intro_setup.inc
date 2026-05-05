@@ -59,23 +59,23 @@ LAKE_INTRO_PRE_DELAY:
 	fill page=0x00, color=0x0B
 	selectVideoPage 0x00
 	video offset=CINEMATIC_LAKE_INTRO_BG, x=160, y=100
-	video offset=CINEMATIC_LAKE_INTRO_LESTER, x=[0x18], y=110, zoom=0x40
+	video offset=CINEMATIC_LAKE_INTRO_LESTER, x=[0x18], y=110
 	video offset=CINEMATIC_LAKE_INTRO_DECOR, x=180, y=100
 	selectVideoPage 0xFF
 	mov [0x19], 0x0020
 	break
 	setPalette 0x0B
-	video offset=CINEMATIC_LAKE_INTRO_ANIM_0, x=[0x18], y=110, zoom=0x40
+	video offset=CINEMATIC_LAKE_INTRO_ANIM_0, x=[0x18], y=110
 
 LAKE_INTRO_ANIM_F0_LOOP:
 	break
-	video offset=CINEMATIC_LAKE_INTRO_ANIM_0, x=[0x18], y=110, zoom=0x40
+	video offset=CINEMATIC_LAKE_INTRO_ANIM_0, x=[0x18], y=110
 	djnz [0x19], LAKE_INTRO_ANIM_F0_LOOP
 	mov [0x19], 0x0010
 
 LAKE_INTRO_ANIM_F1_LOOP:
 	break
-	video offset=CINEMATIC_LAKE_INTRO_ANIM_1, x=[0x18], y=110, zoom=0x40
+	video offset=CINEMATIC_LAKE_INTRO_ANIM_1, x=[0x18], y=110
 	djnz [0x19], LAKE_INTRO_ANIM_F1_LOOP
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	mov [0x19], 0x000F
@@ -85,7 +85,7 @@ LAKE_INTRO_ANIM_F1_LOOP:
 
 LAKE_INTRO_ANIM_F2_LOOP:
 	break
-	video offset=CINEMATIC_LAKE_INTRO_ANIM_2, x=[0x18], y=110, zoom=0x40
+	video offset=CINEMATIC_LAKE_INTRO_ANIM_2, x=[0x18], y=110
 	djnz [0x19], LAKE_INTRO_ANIM_F2_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
@@ -126,7 +126,7 @@ LAKE_INTRO_PRE_TRANS_DELAY:
 	setup channel=0x15, address=LOOP_DRAW_DECOR_215_AT_327_164
 	deleteChannels first=0x16, last=0x16
 	selectVideoPage 0x00
-	video offset=CINEMATIC_LAKE_SCENE3_DECOR, x=275, y=162, zoom=0x40
+	video offset=CINEMATIC_LAKE_SCENE3_DECOR, x=275, y=162
 	selectVideoPage 0xFF
 	break
 	setPalette 0x06

@@ -186,15 +186,15 @@ SETUP_CHAN_0F_AT_RET:
 	ret
 
 LABEL_8988:
-	video offset=CINEMATIC_324, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_324, x=[0x1a], y=[0x1b]
 	break
-	video offset=CINEMATIC_325, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_325, x=[0x1a], y=[0x1b]
 	break
-	video offset=CINEMATIC_326, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_326, x=[0x1a], y=[0x1b]
 	break
-	video offset=CINEMATIC_327, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_327, x=[0x1a], y=[0x1b]
 	break
-	video offset=CINEMATIC_328, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_328, x=[0x1a], y=[0x1b]
 	killChannel
 
 SET_VAR18_TO_010E:
@@ -217,17 +217,17 @@ LABEL_89C4:
 
 LABEL_89D2:
 	add [0x01], 0x000A
-	video offset=CINEMATIC_308, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_308, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_309, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_309, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_310, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_310, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_311, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_311, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_312, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_312, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_313, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_313, x=[0x01], y=[0x02]
 	mov [0x63], 0x0002
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x32], 0x0000
@@ -250,17 +250,17 @@ LABEL_8A24:
 	mov [0x01], 0x005A
 	mov [0x02], 0x007D
 	sub [0x01], 0x000A
-	video offset=CINEMATIC_314, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_314, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_315, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_315, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_316, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_316, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_317, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_317, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_318, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_318, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_319, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_319, x=[0x01], y=[0x02]
 	mov [0x63], 0x0001
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x32], 0x0000

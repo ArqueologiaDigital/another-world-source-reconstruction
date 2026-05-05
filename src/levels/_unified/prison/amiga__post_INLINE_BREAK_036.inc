@@ -11,19 +11,19 @@ LABEL_9598:
 	call HANDLE_HORIZ_VAR01_VS_VAR28
 	jne [0x0A], 0x00, LABEL_9552
 	add [0x01], 0x0004
-	video offset=CINEMATIC_567, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_567, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0001
-	video offset=CINEMATIC_567, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_567, x=[0x01], y=[0x02]
 	sub [0x01], 0x0001
 
 LABEL_95BF:
 	break
-	video offset=CINEMATIC_567, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_567, x=[0x01], y=[0x02]
 	je [HERO_ACTION_POS_MASK], 0x88, LABEL_95BF
 	break
 	sub [0x01], 0x0002
-	video offset=CINEMATIC_562, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_562, x=[0x01], y=[0x02]
 	mov [0x63], 0x0002
 	sub [0x01], 0x0002
 	jmp HERO_WALK_LOOP
@@ -36,19 +36,19 @@ LABEL_95E1:
 	jne [0x0A], 0x00, LABEL_96EF
 	sub [0x01], 0x0004
 	call HANDLE_HORIZ_VAR01_VS_VAR28
-	video offset=CINEMATIC_556, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_556, x=[0x01], y=[0x02]
 	break
 	add [0x01], 0x0001
-	video offset=CINEMATIC_556, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_556, x=[0x01], y=[0x02]
 	add [0x01], 0x0001
 
 LABEL_9608:
 	break
-	video offset=CINEMATIC_556, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_556, x=[0x01], y=[0x02]
 	je [HERO_ACTION_POS_MASK], 0x84, LABEL_9608
 	break
 	add [0x01], 0x0002
-	video offset=CINEMATIC_557, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_557, x=[0x01], y=[0x02]
 	add [0x01], 0x0001
 	mov [0x63], 0x0001
 	jmp HERO_WALK_LEFT_LOOP
@@ -61,19 +61,19 @@ LABEL_962A:
 	jne [0x0A], 0x00, LABEL_97CE
 	call HANDLE_HORIZ_VAR01_VS_VAR28
 	add [0x01], 0x0004
-	video offset=CINEMATIC_561, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_561, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0001
-	video offset=CINEMATIC_561, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_561, x=[0x01], y=[0x02]
 	sub [0x01], 0x0001
 
 LABEL_9651:
 	break
-	video offset=CINEMATIC_561, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_561, x=[0x01], y=[0x02]
 	je [HERO_ACTION_POS_MASK], 0x84, LABEL_9651
 	break
 	sub [0x01], 0x0002
-	video offset=CINEMATIC_562, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_562, x=[0x01], y=[0x02]
 	sub [0x01], 0x0001
 	mov [0x63], 0x0002
 	jmp HERO_WALK_LOOP

@@ -1,6 +1,6 @@
 LABEL_65AD:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	video offset=CINEMATIC_350, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_350, x=[0x07], y=[0x08]
 	call LABEL_6587
 	ret
 

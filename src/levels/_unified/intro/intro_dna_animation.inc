@@ -187,8 +187,8 @@ DRIFT_VAR_10_INC_BY_1_LOOP:
 	killChannel
 
 DRAW_CIN_170_171_AT_VAR10_VAR11:
-	video offset=CINEMATIC_170, x=[0x10], y=44, zoom=0x40
-	video offset=CINEMATIC_171, x=[0x11], y=44, zoom=0x40
+	video offset=CINEMATIC_170, x=[0x10], y=44
+	video offset=CINEMATIC_171, x=[0x11], y=44
 	break
 	jmp DRAW_CIN_170_171_AT_VAR10_VAR11
 LABEL_0390:

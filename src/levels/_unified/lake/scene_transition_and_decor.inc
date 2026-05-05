@@ -132,7 +132,7 @@ WAIT_VAR_03_FRAMES_LOOP:
 	killChannel
 
 LOOP_DRAW_DECOR_215_AT_327_164:
-	video offset=CINEMATIC_LAKE_SCENE_DECOR_RIGHT, x=327, y=164, zoom=0x40
+	video offset=CINEMATIC_LAKE_SCENE_DECOR_RIGHT, x=327, y=164
 	break
 	jmp LOOP_DRAW_DECOR_215_AT_327_164
 	killChannel
@@ -144,13 +144,13 @@ DECOR_AT_327_164_BLINK_LOOP:
 	break
 	video offset=CINEMATIC_DECOR_AT_327_164_F1, x=105, y=155
 	break
-	video offset=CINEMATIC_DECOR_AT_327_164_F1, x=65501, y=155, zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_327_164_F1, x=65501, y=155
 	break
-	video offset=CINEMATIC_DECOR_AT_327_164_F1, x=65374, y=155, zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_327_164_F1, x=65374, y=155
 	killChannel
 
 LOOP_DRAW_LAKE_037_AT_305_155:
-	video offset=CINEMATIC_DECOR_AT_305_155_F0, x=305, y=155, zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F0, x=305, y=155
 	break
 	jmp LOOP_DRAW_LAKE_037_AT_305_155
 	killChannel

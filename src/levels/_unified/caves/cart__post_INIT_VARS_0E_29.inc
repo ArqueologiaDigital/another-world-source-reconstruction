@@ -61,14 +61,14 @@ LABEL_15B4:
 	db 0x11
 
 LABEL_15B5:
-	video offset=CINEMATIC_179, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_179, x=[0x78], y=[0x79]
 	break
-	video offset=CINEMATIC_180, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_180, x=[0x78], y=[0x79]
 	mov [0xB7], 0x0001
 
 LABEL_15C4:
 	break
-	video offset=CINEMATIC_181, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_181, x=[0x78], y=[0x79]
 	jne [HERO_ACTION], 0x01, LABEL_15C4
 	and [0x04], 0x3FFF
 	setup channel=0x14, address=LABEL_1606
@@ -76,11 +76,11 @@ LABEL_15C4:
 
 LABEL_15DC:
 	break
-	video offset=CINEMATIC_142, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_142, x=[0x78], y=[0x79]
 	jmp LABEL_15DC
 
 LABEL_15E5:
-	video offset=CINEMATIC_142, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_142, x=[0x78], y=[0x79]
 	and [0x04], 0x3FFF
 	setup channel=0x27, address=LABEL_1649
 	setup channel=0x16, address=SETUP_CHAN_14_BY_VAR63
@@ -91,15 +91,15 @@ LABEL_15E5:
 	killChannel
 
 LABEL_1606:
-	video offset=CINEMATIC_143, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_143, x=[0x78], y=[0x79]
 	mov [PAUSE_SLICES], 0x0004
-	video offset=CINEMATIC_144, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_144, x=[0x78], y=[0x79]
 	break
 	song id=0x0BCD, delay=0x0000, pos=0x00
-	video offset=CINEMATIC_145, x=[0x78], y=[0x79], zoom=0x40
-	video offset=CINEMATIC_146, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_145, x=[0x78], y=[0x79]
+	video offset=CINEMATIC_146, x=[0x78], y=[0x79]
 	break
-	video offset=CINEMATIC_147, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_147, x=[0x78], y=[0x79]
 	setup channel=0x16, address=SETUP_CHAN_14_BY_VAR63
 	break
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x01
@@ -137,22 +137,22 @@ LABEL_1670:
 	and [0x09], 0xFBFF
 	break
 	play id=0x0075, freq=0x0F, vol=0x40, channel=0x03
-	video offset=CINEMATIC_182, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_182, x=[0x78], y=[0x79]
 	break
-	video offset=CINEMATIC_183, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_183, x=[0x78], y=[0x79]
 	mov [0x29], 0x0003
 
 LABEL_1696:
 	break
 	call LABEL_173C
-	video offset=CINEMATIC_184, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_184, x=[0x78], y=[0x79]
 	djnz [0x29], LABEL_1696
 	mov [0x29], 0x0005
 
 LABEL_16A7:
 	break
 	call LABEL_173C
-	video offset=CINEMATIC_185, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_185, x=[0x78], y=[0x79]
 	djnz [0x29], LABEL_16A7
 	play id=0x0088, freq=0x0A, vol=0x40, channel=0x03
 	mov [0x29], 0x0004
@@ -160,14 +160,14 @@ LABEL_16A7:
 LABEL_16BE:
 	break
 	call LABEL_173C
-	video offset=CINEMATIC_184, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_184, x=[0x78], y=[0x79]
 	djnz [0x29], LABEL_16BE
 	mov [0x29], 0x0003
 
 LABEL_16CF:
 	break
 	call LABEL_173C
-	video offset=CINEMATIC_185, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_185, x=[0x78], y=[0x79]
 	djnz [0x29], LABEL_16CF
 	mov [0x29], [0x78]
 
@@ -186,7 +186,7 @@ LABEL_16DF:
 	video type=0, offset=COMMON_VIDEO_287, x=[0x78], y=[0x79], zoom=0x40
 	sub [0x79], 0x0006
 	add [0x78], 0x0007
-	video offset=CINEMATIC_184, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_184, x=[0x78], y=[0x79]
 	mov [0x21], [0x07]
 	mov [0x27], [0x08]
 	sub [0x21], 0x0023
@@ -216,25 +216,25 @@ LABEL_1752:
 	db 0x11
 
 LABEL_1753:
-	video offset=CINEMATIC_187, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_187, x=[0x78], y=[0x79]
 	mov [PAUSE_SLICES], 0x0008
 	break
-	video offset=CINEMATIC_188, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_188, x=[0x78], y=[0x79]
 	break
-	video offset=CINEMATIC_189, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_189, x=[0x78], y=[0x79]
 	break
-	video offset=CINEMATIC_189, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_189, x=[0x78], y=[0x79]
 	break
-	video offset=CINEMATIC_188, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_188, x=[0x78], y=[0x79]
 	break
-	video offset=CINEMATIC_187, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_187, x=[0x78], y=[0x79]
 	break
 	jmp LABEL_1753
 LABEL_177E:
 	db 0x11
 
 HANG_DRAW_CIN_186:
-	video offset=CINEMATIC_186, x=[0x78], y=[0x79], zoom=0x40
+	video offset=CINEMATIC_186, x=[0x78], y=[0x79]
 	break
 	jmp HANG_DRAW_CIN_186
 LABEL_1788:

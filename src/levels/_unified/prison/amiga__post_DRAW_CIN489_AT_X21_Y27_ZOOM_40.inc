@@ -1,47 +1,47 @@
 LABEL_3DF9:
 	jne [0x13], 0x81, LABEL_3E0B
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_472, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_472, x=[0x21], y=[0x27]
 	ret
 
 LABEL_3E0B:
 	jne [0x13], 0x82, LABEL_3E17
-	video offset=CINEMATIC_471, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_471, x=[0x21], y=[0x27]
 	ret
 
 LABEL_3E17:
 	jne [0x13], 0x83, LABEL_3E23
-	video offset=CINEMATIC_470, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_470, x=[0x21], y=[0x27]
 	ret
 
 LABEL_3E23:
 	jne [0x13], 0x84, LABEL_3E2F
-	video offset=CINEMATIC_469, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_469, x=[0x21], y=[0x27]
 	ret
 
 LABEL_3E2F:
 	jne [0x13], 0x85, LABEL_3E3B
-	video offset=CINEMATIC_468, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_468, x=[0x21], y=[0x27]
 	ret
 
 LABEL_3E3B:
 	jne [0x13], 0x86, LABEL_3E47
-	video offset=CINEMATIC_467, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_467, x=[0x21], y=[0x27]
 	ret
 
 LABEL_3E47:
 	jne [0x13], 0x87, LABEL_3E53
-	video offset=CINEMATIC_466, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_466, x=[0x21], y=[0x27]
 	ret
 
 LABEL_3E53:
 	jne [0x13], 0x88, LABEL_3E5F
-	video offset=CINEMATIC_465, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_465, x=[0x21], y=[0x27]
 	ret
 
 LABEL_3E5F:
 	jne [0x13], 0x89, LABEL_3E6B
-	video offset=CINEMATIC_464, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_464, x=[0x21], y=[0x27]
 	ret
 
 LABEL_3E6B:
@@ -57,7 +57,7 @@ LABEL_3E6D:
 	call LABEL_3FBB
 	mov [0x2C], 0x0001
 	jne [0x1D], 0x00, LABEL_3EDD
-	video offset=CINEMATIC_463, x=[0x22], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_463, x=[0x22], y=[0x27]
 	ret
 
 LABEL_3E8D:
@@ -79,7 +79,7 @@ LABEL_3EA5:
 	call LABEL_3FBB
 	mov [0x2C], 0x0000
 	jne [0x1D], 0x00, LABEL_3EDD
-	video offset=CINEMATIC_463, x=[0x22], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_463, x=[0x22], y=[0x27]
 	ret
 
 LABEL_3EC5:

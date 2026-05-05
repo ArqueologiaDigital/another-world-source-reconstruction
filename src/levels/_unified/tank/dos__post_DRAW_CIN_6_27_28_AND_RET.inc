@@ -22,7 +22,7 @@ LABEL_1CE5:
 	call DRAW_CIN_SEQ_011_011_011
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0xFF
-	video offset=CINEMATIC_029, x=[0x0f], y=[0x10], zoom=0x40
+	video offset=CINEMATIC_029, x=[0x0f], y=[0x10]
 	video offset=CINEMATIC_030, x=160, y=90
 	copyVideoPage src=0xFF, dst=0x00
 	selectVideoPage 0x00

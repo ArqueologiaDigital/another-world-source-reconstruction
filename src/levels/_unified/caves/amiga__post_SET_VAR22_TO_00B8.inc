@@ -186,7 +186,7 @@ LABEL_C307:
 	selectVideoPage 0xFF
 
 HANG_DRAW_CIN_205:
-	video offset=CINEMATIC_205, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_205, x=[0x01], y=[0x02]
 	break
 	jmp HANG_DRAW_CIN_205
 
@@ -263,7 +263,7 @@ LABEL_C3C1:
 	video offset=CINEMATIC_378, x=153, y=108
 	video offset=CINEMATIC_379, x=192, y=140
 	jg [0x02], 0x96, LABEL_C3DF
-	video offset=CINEMATIC_384, x=258, y=31, zoom=0x40
+	video offset=CINEMATIC_384, x=258, y=31
 	video offset=CINEMATIC_382, x=127, y=39
 	video offset=CINEMATIC_385, x=144, y=74
 	jmp LABEL_C3EF
@@ -297,7 +297,7 @@ LABEL_C405:
 	jmp LABEL_C42E
 
 LABEL_C429:
-	video offset=CINEMATIC_384, x=292, y=115, zoom=0x40
+	video offset=CINEMATIC_384, x=292, y=115
 
 LABEL_C42E:
 	break
@@ -313,7 +313,7 @@ LABEL_C433:
 	video offset=CINEMATIC_382, x=116, y=95
 	video offset=CINEMATIC_382, x=151, y=86
 	video offset=CINEMATIC_382, x=178, y=115
-	video offset=CINEMATIC_382, x=272, y=39, zoom=0x40
+	video offset=CINEMATIC_382, x=272, y=39
 	video offset=CINEMATIC_385, x=53, y=131
 	video offset=CINEMATIC_385, x=137, y=135
 	video offset=CINEMATIC_385, x=141, y=135
@@ -322,7 +322,7 @@ LABEL_C433:
 	video offset=CINEMATIC_383, x=104, y=138
 	video offset=CINEMATIC_383, x=206, y=145
 	video offset=CINEMATIC_383, x=213, y=144
-	video offset=CINEMATIC_380, x=261, y=41, zoom=0x40
+	video offset=CINEMATIC_380, x=261, y=41
 	video offset=CINEMATIC_382, x=246, y=27
 	video offset=CINEMATIC_382, x=239, y=24
 	video offset=CINEMATIC_382, x=233, y=27
@@ -349,7 +349,7 @@ LABEL_C497:
 	video offset=CINEMATIC_385, x=173, y=104
 	video offset=CINEMATIC_383, x=253, y=103
 	video offset=CINEMATIC_382, x=155, y=63
-	video offset=CINEMATIC_382, x=270, y=69, zoom=0x40
+	video offset=CINEMATIC_382, x=270, y=69
 	video offset=CINEMATIC_382, x=235, y=61
 	video offset=CINEMATIC_382, x=130, y=69
 	video offset=CINEMATIC_382, x=137, y=67
@@ -360,7 +360,7 @@ LABEL_C4D4:
 	db 0x11
 
 LABEL_C4D5:
-	video offset=CINEMATIC_437, x=286, y=27, zoom=0x40
+	video offset=CINEMATIC_437, x=286, y=27
 	video offset=CINEMATIC_709, x=66, y=143
 	jg [0x02], 0x78, LABEL_C51A
 	jg [0x01], 0x64, LABEL_C4F7
@@ -431,7 +431,7 @@ LABEL_C581:
 	video offset=CINEMATIC_381, x=235, y=76
 	video offset=CINEMATIC_383, x=243, y=67
 	video offset=CINEMATIC_385, x=255, y=62
-	video offset=CINEMATIC_382, x=271, y=25, zoom=0x40
+	video offset=CINEMATIC_382, x=271, y=25
 	jmp LABEL_C5B5
 
 LABEL_C5A0:
@@ -461,7 +461,7 @@ LABEL_C5CE:
 
 LABEL_C5CF:
 	video offset=CINEMATIC_380, x=46, y=65
-	video offset=CINEMATIC_631, x=268, y=18, zoom=0x40
+	video offset=CINEMATIC_631, x=268, y=18
 	video offset=CINEMATIC_632, x=177, y=18
 	video offset=CINEMATIC_580, x=69, y=67
 	break
@@ -559,8 +559,8 @@ LABEL_C6E2:
 
 LABEL_C6F2:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_579, x=125, y=[0xe8], zoom=0x40
-	video offset=CINEMATIC_579, x=160, y=[0xe8], zoom=0x40
+	video offset=CINEMATIC_579, x=125, y=[0xe8]
+	video offset=CINEMATIC_579, x=160, y=[0xe8]
 	selectVideoPage 0xFF
 	sub [0xE8], 0x0003
 	sub [0xE6], 0x0003

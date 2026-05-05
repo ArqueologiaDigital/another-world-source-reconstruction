@@ -69,8 +69,8 @@ LABEL_81EB:
 	jne [0x6C], 0x04, LABEL_822F
 	video offset=CINEMATIC_379, x=160, y=100
 	jge [0x6B], 0x4000, LABEL_822F
-	video offset=CINEMATIC_389, x=260, y=182, zoom=0x40
-	video offset=CINEMATIC_390, x=260, y=182, zoom=0x40
+	video offset=CINEMATIC_389, x=260, y=182
+	video offset=CINEMATIC_390, x=260, y=182
 
 LABEL_822F:
 	selectVideoPage 0xFF

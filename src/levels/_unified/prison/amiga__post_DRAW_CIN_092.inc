@@ -57,10 +57,10 @@ LABEL_7B80:
 	call LABEL_7D42
 	call LABEL_7A3E
 	call LABEL_7AAF
-	video offset=CINEMATIC_102, x=[0x01], y=[0x02], zoom=0x40
-	video offset=CINEMATIC_103, x=160, y=[0x02], zoom=0x40
+	video offset=CINEMATIC_102, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_103, x=160, y=[0x02]
 	je [0x11], 0x00, SHARED_RET
-	video offset=CINEMATIC_131, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_131, x=[0x07], y=[0x08]
 	ret
 
 LABEL_7B9F:

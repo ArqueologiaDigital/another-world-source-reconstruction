@@ -58,37 +58,37 @@ MULTIPLEX_ANIM_RING3_SLOT_2:
 
 DRAW_LAKE_051_SEQ_FROM_WORKING_POS:
 	sub [0x32], 0x0001
-	video offset=CINEMATIC_DECOR_AT_305_155_F14, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F14, x=[0x32], y=[0x33]
 	break
 	sub [0x32], 0x0001
-	video offset=CINEMATIC_LAKE_051_SEQ_F0, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F0, x=[0x32], y=[0x33]
 	break
 	sub [0x32], 0x0001
-	video offset=CINEMATIC_LAKE_051_SEQ_F1, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F1, x=[0x32], y=[0x33]
 	break
 	sub [0x32], 0x0001
-	video offset=CINEMATIC_LAKE_051_SEQ_F2, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F2, x=[0x32], y=[0x33]
 	break
 	sub [0x32], 0x0001
-	video offset=CINEMATIC_LAKE_051_SEQ_F3, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F3, x=[0x32], y=[0x33]
 	break
 	sub [0x32], 0x0001
-	video offset=CINEMATIC_REED_RING_0, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_REED_RING_0, x=[0x32], y=[0x33]
 	break
 	sub [0x32], 0x0001
-	video offset=CINEMATIC_REED_RING_1, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_REED_RING_1, x=[0x32], y=[0x33]
 	break
 	sub [0x32], 0x0001
-	video offset=CINEMATIC_REED_RING_2, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_REED_RING_2, x=[0x32], y=[0x33]
 	break
 	sub [0x32], 0x0002
-	video offset=CINEMATIC_REED_RING_3, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_REED_RING_3, x=[0x32], y=[0x33]
 	break
 	sub [0x32], 0x0001
-	video offset=CINEMATIC_REED_RING_4, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_REED_RING_4, x=[0x32], y=[0x33]
 	break
 	sub [0x32], 0x0002
-	video offset=CINEMATIC_LAKE_051_SEQ_F14, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F14, x=[0x32], y=[0x33]
 	break
 	jmp DRAW_LAKE_051_SEQ_FROM_WORKING_POS
 	killChannel

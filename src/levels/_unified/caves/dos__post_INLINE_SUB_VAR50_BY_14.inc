@@ -12,7 +12,7 @@ LABEL_A266:
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	selectVideoPage 0x00
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video offset=CINEMATIC_875, x=100, y=[0x44], zoom=0x40
+	video offset=CINEMATIC_875, x=100, y=[0x44]
 	selectVideoPage 0xFF
 	setPalette 0x02
 	mov [0x50], 0x0064

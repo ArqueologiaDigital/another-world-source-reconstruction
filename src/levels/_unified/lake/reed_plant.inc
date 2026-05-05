@@ -27,49 +27,49 @@ REED_PLANT_ANIMATION:
 	mov [0x20], [0x21]
 
 REED_PLANT_F0_REPEAT:
-	video offset=CINEMATIC_REED_PLANT_0, x=[0x1e], y=[0x1f], zoom=0x40
+	video offset=CINEMATIC_REED_PLANT_0, x=[0x1e], y=[0x1f]
 	break
 	djnz [0x20], REED_PLANT_F0_REPEAT
 	mov [0x20], [0x21]
 
 REED_PLANT_F1_REPEAT:
-	video offset=CINEMATIC_REED_PLANT_1, x=[0x1e], y=[0x1f], zoom=0x40
+	video offset=CINEMATIC_REED_PLANT_1, x=[0x1e], y=[0x1f]
 	break
 	djnz [0x20], REED_PLANT_F1_REPEAT
 	mov [0x20], [0x21]
 
 REED_PLANT_F2_REPEAT:
-	video offset=CINEMATIC_REED_PLANT_2, x=[0x1e], y=[0x1f], zoom=0x40
+	video offset=CINEMATIC_REED_PLANT_2, x=[0x1e], y=[0x1f]
 	break
 	djnz [0x20], REED_PLANT_F2_REPEAT
 	mov [0x20], [0x21]
 
 REED_PLANT_F3_REPEAT:
-	video offset=CINEMATIC_REED_PLANT_3, x=[0x1e], y=[0x1f], zoom=0x40
+	video offset=CINEMATIC_REED_PLANT_3, x=[0x1e], y=[0x1f]
 	break
 	djnz [0x20], REED_PLANT_F3_REPEAT
 	mov [0x20], [0x21]
 
 REED_PLANT_F4_REPEAT:
-	video offset=CINEMATIC_REED_PLANT_4, x=[0x1e], y=[0x1f], zoom=0x40
+	video offset=CINEMATIC_REED_PLANT_4, x=[0x1e], y=[0x1f]
 	break
 	djnz [0x20], REED_PLANT_F4_REPEAT
 	mov [0x20], [0x21]
 
 REED_PLANT_F3_RETURN:
-	video offset=CINEMATIC_REED_PLANT_3, x=[0x1e], y=[0x1f], zoom=0x40
+	video offset=CINEMATIC_REED_PLANT_3, x=[0x1e], y=[0x1f]
 	break
 	djnz [0x20], REED_PLANT_F3_RETURN
 	mov [0x20], [0x21]
 
 REED_PLANT_F2_RETURN:
-	video offset=CINEMATIC_REED_PLANT_2, x=[0x1e], y=[0x1f], zoom=0x40
+	video offset=CINEMATIC_REED_PLANT_2, x=[0x1e], y=[0x1f]
 	break
 	djnz [0x20], REED_PLANT_F2_RETURN
 	mov [0x20], [0x21]
 
 JMP_TO_REED_PLANT_ANIMATION:
-	video offset=CINEMATIC_REED_PLANT_1, x=[0x1e], y=[0x1f], zoom=0x40
+	video offset=CINEMATIC_REED_PLANT_1, x=[0x1e], y=[0x1f]
 	break
 	djnz [0x20], JMP_TO_REED_PLANT_ANIMATION
 	jmp REED_PLANT_ANIMATION

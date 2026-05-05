@@ -344,7 +344,7 @@ LABEL_CC78:
 LABEL_CC79:
 	video offset=CINEMATIC_338, x=181, y=144
 	video offset=CINEMATIC_276, x=121, y=203, zoom=0x40
-	video offset=CINEMATIC_338, x=262, y=145, zoom=0x40
+	video offset=CINEMATIC_338, x=262, y=145
 	video offset=CINEMATIC_338, x=85, y=145
 	jl [0x02], 0xD2, LABEL_CC96
 	video offset=CINEMATIC_277, x=203, y=208, zoom=0x40
@@ -394,7 +394,7 @@ LABEL_CCE1:
 
 LABEL_CCE5:
 	video offset=CINEMATIC_412, x=184, y=143
-	video offset=CINEMATIC_412, x=278, y=150, zoom=0x40
+	video offset=CINEMATIC_412, x=278, y=150
 	video offset=CINEMATIC_412, x=80, y=147
 	break
 	jmp LABEL_CCE5
@@ -403,7 +403,7 @@ LABEL_CCF6:
 
 LABEL_CCF7:
 	video offset=CINEMATIC_412, x=79, y=119
-	video offset=CINEMATIC_412, x=279, y=117, zoom=0x40
+	video offset=CINEMATIC_412, x=279, y=117
 	break
 	jmp LABEL_CCF7
 LABEL_CD04:
@@ -411,9 +411,9 @@ LABEL_CD04:
 
 LABEL_CD05:
 	video offset=CINEMATIC_412, x=230, y=151
-	video offset=CINEMATIC_412, x=270, y=183, zoom=0x40
+	video offset=CINEMATIC_412, x=270, y=183
 	video offset=CINEMATIC_412, x=77, y=168
-	video offset=CINEMATIC_541, x=265, y=138, zoom=0x40
+	video offset=CINEMATIC_541, x=265, y=138
 	break
 	jmp LABEL_CD05
 LABEL_CD1B:

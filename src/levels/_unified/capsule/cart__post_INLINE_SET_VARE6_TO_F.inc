@@ -239,7 +239,7 @@ LABEL_3DD3:
 	video offset=CINEMATIC_486, x=[0x01], y=[0x02], zoom=[0xc8]	;@enc=alt
 	play id=0x0052, freq=0x0A, vol=0x40, channel=0x02
 	break
-	video offset=CINEMATIC_486, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_486, x=[0x01], y=[0x02]
 	break
 	video offset=CINEMATIC_486, x=[0x01], y=[0x02], zoom=[0x10]	;@enc=alt
 	setup channel=0x04, address=LABEL_3E09
@@ -250,11 +250,11 @@ LABEL_3DD3:
 
 LABEL_3E09:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_488, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_488, x=[0x01], y=[0x02]
 	selectVideoPage 0xFF
 	break
 	or [0x04], 0x0010
-	video offset=CINEMATIC_487, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_487, x=[0x01], y=[0x02]
 	deleteChannels first=0x14, last=0x16
 	setup channel=0x16, address=LABEL_3E2E
 	break
@@ -263,27 +263,27 @@ LABEL_3E09:
 	killChannel
 
 LABEL_3E2E:
-	video offset=CINEMATIC_039, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_039, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_040, x=[0x01], y=103, zoom=0x40
+	video offset=CINEMATIC_040, x=[0x01], y=103
 	break
-	video offset=CINEMATIC_041, x=[0x01], y=105, zoom=0x40
+	video offset=CINEMATIC_041, x=[0x01], y=105
 	break
-	video offset=CINEMATIC_042, x=[0x01], y=106, zoom=0x40
+	video offset=CINEMATIC_042, x=[0x01], y=106
 	break
-	video offset=CINEMATIC_043, x=[0x01], y=107, zoom=0x40
-	break
-	sub [0x01], 0x0003
-	video offset=CINEMATIC_043, x=[0x01], y=125, zoom=0x40
+	video offset=CINEMATIC_043, x=[0x01], y=107
 	break
 	sub [0x01], 0x0003
-	video offset=CINEMATIC_079, x=[0x01], y=153, zoom=0x40
+	video offset=CINEMATIC_043, x=[0x01], y=125
 	break
 	sub [0x01], 0x0003
-	video offset=CINEMATIC_079, x=[0x01], y=188, zoom=0x40
+	video offset=CINEMATIC_079, x=[0x01], y=153
 	break
 	sub [0x01], 0x0003
-	video offset=CINEMATIC_079, x=[0x01], y=228, zoom=0x40
+	video offset=CINEMATIC_079, x=[0x01], y=188
+	break
+	sub [0x01], 0x0003
+	video offset=CINEMATIC_079, x=[0x01], y=228
 	mov [0x6C], 0x0002
 	setup channel=0x23, address=LABEL_3E8A
 	break
@@ -299,52 +299,52 @@ LABEL_3E8A:
 	jmp DISPATCH_VAR2F_STATE
 
 LABEL_3E95:
-	video offset=CINEMATIC_035, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_035, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_035, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_035, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_035, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_035, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_036, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_036, x=[0x07], y=[0x08]
 	break
 	mov [0x29], 0x0005
 
 ANIM_CIN_037_LOOP_VAR29_AT_3EB1:
-	video offset=CINEMATIC_037, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_037, x=[0x07], y=[0x08]
 	break
 	djnz [0x29], ANIM_CIN_037_LOOP_VAR29_AT_3EB1
-	video offset=CINEMATIC_036, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_036, x=[0x07], y=[0x08]
 	break
 	mov [0x29], 0x0005
 
 ANIM_CIN_038_LOOP_VAR29:
-	video offset=CINEMATIC_038, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_038, x=[0x07], y=[0x08]
 	break
 	djnz [0x29], ANIM_CIN_038_LOOP_VAR29
-	video offset=CINEMATIC_036, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_036, x=[0x07], y=[0x08]
 	break
 	mov [0x29], 0x0006
 
 ANIM_CIN_037_LOOP_VAR29_AT_3ED9:
-	video offset=CINEMATIC_037, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_037, x=[0x07], y=[0x08]
 	break
 	djnz [0x29], ANIM_CIN_037_LOOP_VAR29_AT_3ED9
-	video offset=CINEMATIC_037, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_037, x=[0x07], y=[0x08]
 	deleteChannels first=0x00, last=0x3B
 	setup channel=0x3F, address=KILL_CHANNEL_LANDING
 	setup channel=0x04, address=LABEL_1B80
 	killChannel
-	video offset=CINEMATIC_039, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_039, x=[0x01], y=100
 	break
-	video offset=CINEMATIC_040, x=[0x01], y=103, zoom=0x40
+	video offset=CINEMATIC_040, x=[0x01], y=103
 	break
-	video offset=CINEMATIC_041, x=[0x01], y=123, zoom=0x40
+	video offset=CINEMATIC_041, x=[0x01], y=123
 	break
-	video offset=CINEMATIC_042, x=[0x01], y=153, zoom=0x40
+	video offset=CINEMATIC_042, x=[0x01], y=153
 	break
-	video offset=CINEMATIC_043, x=[0x01], y=188, zoom=0x40
+	video offset=CINEMATIC_043, x=[0x01], y=188
 	break
-	video offset=CINEMATIC_043, x=[0x01], y=228, zoom=0x40
+	video offset=CINEMATIC_043, x=[0x01], y=228
 	sub [0x01], 0x0003
 	break
 	sub [0x01], 0x0003
@@ -412,142 +412,142 @@ LABEL_3FA7:
 
 LABEL_3FCE:
 	add [0x01], 0x0003
-	video offset=CINEMATIC_176, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_176, x=[0x01], y=[0x02]
 	add [0x01], 0x0002
 	break
-	video offset=CINEMATIC_177, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_177, x=[0x01], y=[0x02]
 	add [0x01], 0x0001
 	break
-	video offset=CINEMATIC_178, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_178, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_177, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_177, x=[0x01], y=[0x02]
 	jmp LABEL_40CB
 LABEL_3FF4:
 	db 0x11
 
 LABEL_3FF5:
 	sub [0x01], 0x0003
-	video offset=CINEMATIC_146, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_146, x=[0x01], y=[0x02]
 	sub [0x01], 0x0002
 	break
-	video offset=CINEMATIC_147, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_147, x=[0x01], y=[0x02]
 	sub [0x01], 0x0001
 	mov [0x03], 0x0003
 
 LABEL_4010:
 	break
-	video offset=CINEMATIC_148, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_148, x=[0x01], y=[0x02]
 	djnz [0x03], LABEL_4010
 	setup channel=0x15, address=LABEL_4030
 	mov [0x03], 0x0003
 
 LABEL_4022:
 	break
-	video offset=CINEMATIC_149, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_149, x=[0x01], y=[0x02]
 	djnz [0x03], LABEL_4022
 	jmp LABEL_40CB
 LABEL_402F:
 	db 0x11
 
 LABEL_4030:
-	video offset=CINEMATIC_162, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_162, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_163, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_163, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_164, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_164, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_165, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_165, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_166, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_166, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_167, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_167, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_168, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_168, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_169, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_169, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_170, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_170, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_171, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_171, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_172, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_172, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_173, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_173, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_174, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_174, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_175, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_175, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_174, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_174, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_174, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_174, x=[0x01], y=[0x02]
 
 LABEL_408F:
 	break
-	video offset=CINEMATIC_173, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_173, x=[0x01], y=[0x02]
 	jmp LABEL_408F
 LABEL_4098:
 	db 0x11
 
 LABEL_4099:
-	video offset=CINEMATIC_179, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_179, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_180, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_180, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_181, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_181, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_180, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_180, x=[0x01], y=[0x02]
 	jmp LABEL_40CB
 LABEL_40B3:
 	db 0x11
 
 LABEL_40B4:
-	video offset=CINEMATIC_159, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_159, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_160, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_160, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_161, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_161, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_160, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_160, x=[0x01], y=[0x02]
 
 LABEL_40CB:
 	selectVideoPage 0x00
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_150, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_150, x=[0x01], y=[0x02]
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_151, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_151, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_152, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_152, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_153, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_153, x=[0x01], y=[0x02]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_154, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_154, x=[0x01], y=[0x02]
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_155, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_155, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_156, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_156, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_157, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_157, x=[0x01], y=[0x02]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_158, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_158, x=[0x01], y=[0x02]
 	selectVideoPage 0xFF
 	killChannel
-	video offset=CINEMATIC_159, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_159, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_160, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_160, x=[0x01], y=[0x02]
 
 LABEL_411C:
 	break
-	video offset=CINEMATIC_161, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_161, x=[0x01], y=[0x02]
 	jmp LABEL_411C
 	killChannel
-	video offset=CINEMATIC_227, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_227, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_710, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_710, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_228, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_228, x=[0x07], y=[0x08]
 	break
 	jmp LABEL_413C
 LABEL_413B:
@@ -557,27 +557,27 @@ LABEL_413C:
 	or [0x11], 0x4000
 	jne [0x10], [HACK_VAR_67], LABEL_41A2
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x00
-	video offset=CINEMATIC_217, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_217, x=[0x07], y=[0x08]
 	break
 	jne [0x10], [HACK_VAR_67], LABEL_41A2
-	video offset=CINEMATIC_218, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_218, x=[0x07], y=[0x08]
 	break
 	jne [0x10], [HACK_VAR_67], LABEL_41A2
-	video offset=CINEMATIC_219, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_219, x=[0x07], y=[0x08]
 	break
 	jne [0x10], [HACK_VAR_67], LABEL_41A2
-	video offset=CINEMATIC_220, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_220, x=[0x07], y=[0x08]
 	break
 	jne [0x10], [HACK_VAR_67], LABEL_41A2
-	video offset=CINEMATIC_221, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_221, x=[0x07], y=[0x08]
 	break
 	jne [0x10], [HACK_VAR_67], LABEL_41A2
-	video offset=CINEMATIC_222, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_222, x=[0x07], y=[0x08]
 	break
 	jne [0x10], [HACK_VAR_67], LABEL_41A2
-	video offset=CINEMATIC_223, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_223, x=[0x07], y=[0x08]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_224, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_224, x=[0x07], y=[0x08]
 	selectVideoPage 0xFF
 
 LABEL_41A2:
@@ -596,41 +596,41 @@ LABEL_41B6:
 
 LABEL_41B7:
 	jne [0x10], [HACK_VAR_67], LABEL_413C
-	video offset=CINEMATIC_227, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_227, x=[0x07], y=[0x08]
 	break
 	jne [0x10], [HACK_VAR_67], LABEL_413C
-	video offset=CINEMATIC_228, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_228, x=[0x07], y=[0x08]
 	mov [0x29], 0x0014
 
 LABEL_41D2:
 	break
 	jne [0x10], [HACK_VAR_67], LABEL_413C
-	video offset=CINEMATIC_229, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_229, x=[0x07], y=[0x08]
 	jge [0x11], 0x4000, LABEL_41E9
 	djnz [0x29], LABEL_41D2
 
 LABEL_41E9:
 	break
 	jne [0x10], [HACK_VAR_67], LABEL_413C
-	video offset=CINEMATIC_228, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_228, x=[0x07], y=[0x08]
 	break
 	jmp LABEL_413C
 	killChannel
-	video offset=CINEMATIC_216, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_216, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_710, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_710, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_226, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_226, x=[0x07], y=[0x08]
 	break
 	jmp LABEL_413C
 LABEL_420F:
 	db 0x11
 
 LABEL_4210:
-	video offset=CINEMATIC_216, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_216, x=[0x07], y=[0x08]
 	break
 	jne [0x10], [HACK_VAR_67], LABEL_4221
-	video offset=CINEMATIC_226, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_226, x=[0x07], y=[0x08]
 
 LABEL_4221:
 	mov [0x29], 0x0014
@@ -638,14 +638,14 @@ LABEL_4221:
 LABEL_4225:
 	break
 	jne [0x10], [HACK_VAR_67], LABEL_413C
-	video offset=CINEMATIC_225, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_225, x=[0x07], y=[0x08]
 	jge [0x11], 0x4000, LABEL_423C
 	djnz [0x29], LABEL_4225
 
 LABEL_423C:
 	break
 	jne [0x10], [HACK_VAR_67], LABEL_413C
-	video offset=CINEMATIC_226, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_226, x=[0x07], y=[0x08]
 	break
 	jmp LABEL_413C
 LABEL_424C:

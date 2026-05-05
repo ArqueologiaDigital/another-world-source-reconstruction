@@ -55,17 +55,17 @@ PICK_RANDOM_X_FOR_DROPLET_AND_PLAY_DROP_SOUND:
 
 DRAW_FALLING_DROPLET_LOOP_THEN_SPLASH:
 	break
-	video offset=CINEMATIC_WATER_DROPLET_FALLING, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_WATER_DROPLET_FALLING, x=[0x6f], y=[0x70]
 	add [0x70], 0x0020
 	jl [0x70], 0xB6, DRAW_FALLING_DROPLET_LOOP_THEN_SPLASH
 	mov [0x70], 0x00BA
 	break
-	video offset=CINEMATIC_WATER_SPLASH_0, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_WATER_SPLASH_0, x=[0x6f], y=[0x70]
 	break
-	video offset=CINEMATIC_WATER_SPLASH_1, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_WATER_SPLASH_1, x=[0x6f], y=[0x70]
 	je [HACK_VAR_67], 0x01, PICK_RANDOM_X_FOR_DROPLET_005
 	selectVideoPage 0x00
-	video offset=CINEMATIC_DROPLET_LARGE, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_DROPLET_LARGE, x=[0x6f], y=[0x70]
 	selectVideoPage 0xFF
 	jmp PICK_RANDOM_X_FOR_DROPLET_005
 	killChannel
@@ -78,20 +78,20 @@ PICK_RANDOM_X_FOR_DROPLET_005:
 
 RAIN_DROPLET_FALL_LOOP:
 	break
-	video offset=CINEMATIC_RAIN_DROPLET_0, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_RAIN_DROPLET_0, x=[0x6f], y=[0x70]
 	add [0x70], 0x0020
 	jl [0x70], 0xB6, RAIN_DROPLET_FALL_LOOP
 	break
 	mov [0x70], 0x00B6
 	call COMPUTE_RANDOM_BIT_MASKS
 	add [0x70], [0x39]
-	video offset=CINEMATIC_RAIN_DROPLET_1, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_RAIN_DROPLET_1, x=[0x6f], y=[0x70]
 	play id=0x0054, freq=0x0F, vol=0x20, channel=0x03
 	break
-	video offset=CINEMATIC_RAIN_DROPLET_2, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_RAIN_DROPLET_2, x=[0x6f], y=[0x70]
 	je [HACK_VAR_67], 0x01, PICK_RANDOM_X_FOR_DROPLET_009
 	selectVideoPage 0x00
-	video offset=CINEMATIC_RAIN_DROPLET_3, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_RAIN_DROPLET_3, x=[0x6f], y=[0x70]
 	selectVideoPage 0xFF
 	jmp PICK_RANDOM_X_FOR_DROPLET_009
 	killChannel
@@ -104,7 +104,7 @@ PICK_RANDOM_X_FOR_DROPLET_009:
 
 DROPLET_009_FALL_LOOP:
 	break
-	video offset=CINEMATIC_DROPLET_RANDOM_X, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_DROPLET_RANDOM_X, x=[0x6f], y=[0x70]
 	add [0x70], 0x0023
 	jl [0x70], 0xFA, DROPLET_009_FALL_LOOP
 	je [0x71], 0x01, PICK_RANDOM_X_FOR_DROPLET_AND_PLAY_DROP_SOUND
@@ -117,14 +117,14 @@ DRAW_4_DROPLETS_LOOP:
 	break
 	add [0x72], 0x0014
 	add [0x73], 0x0010
-	video offset=COMMON_VIDEO_074, x=[0x74], y=[0x72], zoom=0x40
+	video offset=COMMON_VIDEO_074, x=[0x74], y=[0x72]
 	sub [0x72], 0x0014
-	video offset=COMMON_VIDEO_074, x=[0x75], y=[0x72], zoom=0x40
+	video offset=COMMON_VIDEO_074, x=[0x75], y=[0x72]
 	sub [0x72], 0x0028
-	video offset=COMMON_VIDEO_074, x=[0x76], y=[0x72], zoom=0x40
-	video offset=COMMON_VIDEO_074, x=[0x77], y=[0x73], zoom=0x40
+	video offset=COMMON_VIDEO_074, x=[0x76], y=[0x72]
+	video offset=COMMON_VIDEO_074, x=[0x77], y=[0x73]
 	sub [0x73], 0x003C
-	video offset=COMMON_VIDEO_074, x=[0x78], y=[0x73], zoom=0x40
+	video offset=COMMON_VIDEO_074, x=[0x78], y=[0x73]
 	add [0x72], 0x003C
 	add [0x73], 0x003C
 	je [0x71], 0x01, RESET_DROPLET_72_X_IF_OFFSCREEN

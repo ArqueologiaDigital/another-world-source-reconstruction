@@ -12,7 +12,7 @@ LABEL_7CB0:
 	call LABEL_7AB1
 	add [0x22], 0x0032
 	djnz [0x2B], LABEL_7CB0
-	video offset=CINEMATIC_102, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_102, x=[0x01], y=[0x02]
 	video offset=CINEMATIC_103, x=160, y=129
 	ret
 
@@ -24,7 +24,7 @@ LABEL_7CC5:
 	add [0x21], 0x0064
 
 DRAW_CIN_092:
-	video offset=CINEMATIC_092, x=160, y=[0x21], zoom=0x40
+	video offset=CINEMATIC_092, x=160, y=[0x21]
 	ret
 
 LABEL_7CE1:
@@ -86,10 +86,10 @@ LABEL_7D70:
 	call LABEL_7F3C
 	call LABEL_7C2E
 	call LABEL_7C9F
-	video offset=CINEMATIC_102, x=[0x01], y=[0x02], zoom=0x40
-	video offset=CINEMATIC_103, x=160, y=[0x02], zoom=0x40
+	video offset=CINEMATIC_102, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_103, x=160, y=[0x02]
 	je [0x11], 0x00, SHARED_RET
-	video offset=CINEMATIC_131, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_131, x=[0x07], y=[0x08]
 	ret
 
 LABEL_7D8F:

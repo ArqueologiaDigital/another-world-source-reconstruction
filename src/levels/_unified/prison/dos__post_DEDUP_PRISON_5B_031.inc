@@ -1,31 +1,31 @@
 LABEL_45EA:
 	play id=0x0059, freq=0x14, vol=0x40, channel=0x00
 	call PROJECT_POS_VAR04_OR_7F4C
-	video offset=CINEMATIC_190, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_190, x=[0x21], y=[0x22]
 	break
 	call PROJECT_POS_VAR04_OR_7F4C
-	video offset=CINEMATIC_191, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_191, x=[0x21], y=[0x22]
 
 LABEL_4601:
 	break
 	call PROJECT_POS_BY_VAR04_OR_807B
-	video offset=CINEMATIC_192, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_192, x=[0x21], y=[0x22]
 	jne [HERO_POS_LEFT_RIGHT], 0x00, LABEL_4662
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_4662
 	je [HERO_ACTION], 0x00, LABEL_4662
 	break
 	call PROJECT_POS_BY_VAR04_OR_807B
-	video offset=CINEMATIC_193, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_193, x=[0x21], y=[0x22]
 	je [HERO_ACTION], 0x00, LABEL_4662
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_4662
 	break
 	call PROJECT_POS_BY_VAR04_OR_807B
-	video offset=CINEMATIC_194, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_194, x=[0x21], y=[0x22]
 	je [HERO_ACTION], 0x00, LABEL_4662
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_4662
 	break
 	call PROJECT_POS_BY_VAR04_OR_807B
-	video offset=CINEMATIC_195, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_195, x=[0x21], y=[0x22]
 	je [HERO_ACTION], 0x00, LABEL_4662
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_4662
 	jmp LABEL_4601

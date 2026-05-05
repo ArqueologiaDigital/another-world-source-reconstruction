@@ -73,10 +73,10 @@ LABEL_713A:
 LABEL_7150:
 	jl [0x04], 0x00, LABEL_7177
 	jl [0x2F], 0x1E, LABEL_7164
-	video offset=CINEMATIC_083, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_083, x=[0x01], y=[0x02]
 	jmp LABEL_7177
 
 LABEL_7164:
 	jl [0x2F], 0x14, DRAW_CV139_AT_X01_Y02
-	video offset=CINEMATIC_082, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_082, x=[0x01], y=[0x02]
 	jmp LABEL_7177

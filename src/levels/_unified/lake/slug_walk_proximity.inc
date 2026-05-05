@@ -37,67 +37,67 @@ SLUG_WALK_GROUND_INIT:
 SLUG_WALK_PROX_LOOP:
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
-	video offset=CINEMATIC_BEAST_AI_7, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_7, x=[0x0c], y=[0x0d]
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
-	video offset=CINEMATIC_BEAST_AI_8, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_8, x=[0x0c], y=[0x0d]
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
-	video offset=CINEMATIC_BEAST_AI_9, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_9, x=[0x0c], y=[0x0d]
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
-	video offset=CINEMATIC_BEAST_AI_10, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_10, x=[0x0c], y=[0x0d]
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
-	video offset=CINEMATIC_BEAST_AI_11, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_11, x=[0x0c], y=[0x0d]
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
-	video offset=CINEMATIC_BEAST_AI_12, x=[0x0c], y=[0x0d], zoom=0x40
-	break
-	call FLAG_PROXIMITY_TRUE_THEN_CHECK
-	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
-	add [0x0C], 0x0001
-	video offset=CINEMATIC_BEAST_AI_13, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_12, x=[0x0c], y=[0x0d]
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
 	add [0x0C], 0x0001
-	video offset=CINEMATIC_BEAST_AI_14, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_13, x=[0x0c], y=[0x0d]
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
 	add [0x0C], 0x0001
-	video offset=CINEMATIC_BEAST_AI_15, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_14, x=[0x0c], y=[0x0d]
+	break
+	call FLAG_PROXIMITY_TRUE_THEN_CHECK
+	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
+	add [0x0C], 0x0001
+	video offset=CINEMATIC_BEAST_AI_15, x=[0x0c], y=[0x0d]
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
 	add [0x0C], 0x0003
-	video offset=CINEMATIC_BEAST_AI_16, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_16, x=[0x0c], y=[0x0d]
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
 	add [0x0C], 0x0002
-	video offset=CINEMATIC_BEAST_AI_17, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_17, x=[0x0c], y=[0x0d]
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
 	add [0x0C], 0x0001
-	video offset=CINEMATIC_BEAST_AI_18, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_18, x=[0x0c], y=[0x0d]
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
 	add [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_PROX_0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_PROX_0, x=[0x0c], y=[0x0d]
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
 	add [0x0C], 0x0001
-	video offset=CINEMATIC_SLUG_PROX_1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_PROX_1, x=[0x0c], y=[0x0d]
 	break
 	sub [0x0C], 0x0002
 	jmp SLUG_WALK_PROX_LOOP

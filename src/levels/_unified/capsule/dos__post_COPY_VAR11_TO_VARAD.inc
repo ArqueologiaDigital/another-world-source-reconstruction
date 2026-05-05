@@ -236,13 +236,13 @@ LABEL_683F:
 LABEL_6853:
 	jne [0x27], [HACK_VAR_67], DECREMENT_VAR22
 	jne [0x22], 0x00, LABEL_6867
-	video offset=CINEMATIC_063, x=[0x21], y=[0x26], zoom=0x40
+	video offset=CINEMATIC_063, x=[0x21], y=[0x26]
 	jmp DECREMENT_VAR22
 
 LABEL_6867:
 	jl [0x22], 0x2000, LABEL_687A
 	sub [0x22], 0x2000
-	video offset=CINEMATIC_063, x=[0x21], y=[0x26], zoom=0x40
+	video offset=CINEMATIC_063, x=[0x21], y=[0x26]
 	jmp DECREMENT_VAR22
 
 LABEL_687A:

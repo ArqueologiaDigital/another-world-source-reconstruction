@@ -25,7 +25,7 @@ LABEL_0496:
 	break
 	video offset=CINEMATIC_298, x=111, y=30
 	break
-	video offset=CINEMATIC_320, x=111, y=65508, zoom=0x40
+	video offset=CINEMATIC_320, x=111, y=65508
 	break
 	video offset=CINEMATIC_300, x=111, y=3
 	break
@@ -44,7 +44,7 @@ LABEL_0496:
 	break
 	video offset=CINEMATIC_298, x=109, y=32
 	break
-	video offset=CINEMATIC_320, x=109, y=65511, zoom=0x40
+	video offset=CINEMATIC_320, x=109, y=65511
 	selectVideoPage 0x00
 	video offset=CINEMATIC_002, x=160, y=100
 	selectVideoPage 0xFF
@@ -56,16 +56,16 @@ LABEL_0496:
 	mov [0xE7], 0x0008
 
 LABEL_0505:
-	video offset=CINEMATIC_321, x=110, y=[0xe8], zoom=0x40
-	video offset=CINEMATIC_321, x=114, y=[0xe9], zoom=0x40
-	video offset=CINEMATIC_322, x=106, y=[0xea], zoom=0x40
+	video offset=CINEMATIC_321, x=110, y=[0xe8]
+	video offset=CINEMATIC_321, x=114, y=[0xe9]
+	video offset=CINEMATIC_322, x=106, y=[0xea]
 	add [0xE8], 0x0028
 	add [0xE9], 0x0014
 	add [0xEA], 0x001C
 	break
 	djnz [0xE7], LABEL_0505
 	sub [0xE9], 0x0014
-	video offset=CINEMATIC_321, x=112, y=[0xe9], zoom=0x40
+	video offset=CINEMATIC_321, x=112, y=[0xe9]
 	play id=0x0075, freq=0x0C, vol=0x18, channel=0x02
 	play id=0x0075, freq=0x07, vol=0x18, channel=0x03
 	play id=0x005E, freq=0x0A, vol=0x20, channel=0x01
@@ -73,41 +73,41 @@ LABEL_0505:
 	killChannel
 
 LABEL_0545:
-	video offset=CINEMATIC_323, x=[0xe8], y=[0xe9], zoom=0x40
+	video offset=CINEMATIC_323, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_324, x=[0xe8], y=[0xe9], zoom=0x40
+	video offset=CINEMATIC_324, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_325, x=[0xe8], y=[0xe9], zoom=0x40
+	video offset=CINEMATIC_325, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_326, x=[0xe8], y=[0xe9], zoom=0x40
+	video offset=CINEMATIC_326, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_327, x=[0xe8], y=[0xe9], zoom=0x40
+	video offset=CINEMATIC_327, x=[0xe8], y=[0xe9]
 	jmp LABEL_0545
 
 LABEL_0565:
-	video offset=CINEMATIC_326, x=[0xea], y=[0xeb], zoom=0x40
+	video offset=CINEMATIC_326, x=[0xea], y=[0xeb]
 	break
-	video offset=CINEMATIC_327, x=[0xea], y=[0xeb], zoom=0x40
+	video offset=CINEMATIC_327, x=[0xea], y=[0xeb]
 	break
-	video offset=CINEMATIC_323, x=[0xea], y=[0xeb], zoom=0x40
+	video offset=CINEMATIC_323, x=[0xea], y=[0xeb]
 	break
-	video offset=CINEMATIC_324, x=[0xea], y=[0xeb], zoom=0x40
+	video offset=CINEMATIC_324, x=[0xea], y=[0xeb]
 	break
-	video offset=CINEMATIC_325, x=[0xea], y=[0xeb], zoom=0x40
+	video offset=CINEMATIC_325, x=[0xea], y=[0xeb]
 	break
 	jmp LABEL_0565
 
 LABEL_0586:
 	mov [0xE6], 0x0014
 	mov [0xE7], 0x0028
-	video offset=CINEMATIC_565, x=160, y=[0xe6], zoom=0x40
+	video offset=CINEMATIC_565, x=160, y=[0xe6]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_565, x=160, y=[0xe6], zoom=0x40
+	video offset=CINEMATIC_565, x=160, y=[0xe6]
 
 LABEL_059A:
 	selectVideoPage 0x00
 	add [0xE6], 0x0002
-	video offset=CINEMATIC_566, x=160, y=[0xe6], zoom=0x40
+	video offset=CINEMATIC_566, x=160, y=[0xe6]
 	selectVideoPage 0xFF
 	break
 	djnz [0xE7], LABEL_059A

@@ -89,7 +89,7 @@ BEAST_ANIM_HEAD_CV214:
 	call DRAW_BEAST_HEAD_CV214_215
 	ret
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	video offset=CINEMATIC_883, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_883, x=[0x07], y=[0x08]
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_164, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_CIN_054_055_056_VAR09

@@ -59,57 +59,57 @@ LABEL_0E0B:
 	db 0x11
 
 LABEL_0E0C:
-	video offset=CINEMATIC_113, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_113, x=160, y=[0x19]
 	play id=0x005B, freq=0x05, vol=0x0A, channel=0x02
 	break
-	video offset=CINEMATIC_114, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_114, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_115, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_115, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_116, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_116, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_117, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_117, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_118, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_118, x=160, y=[0x19]
 	break
 	jmp LABEL_0E0C
 LABEL_0E39:
 	db 0x11
 
 LABEL_0E3A:
-	video offset=CINEMATIC_107, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_107, x=160, y=[0x19]
 	play id=0x005B, freq=0x07, vol=0x0A, channel=0x03
 	break
-	video offset=CINEMATIC_108, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_108, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_109, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_109, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_110, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_110, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_111, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_111, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_112, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_112, x=160, y=[0x19]
 	break
 	jmp LABEL_0E3A
 LABEL_0E67:
 	db 0x11
 
 LABEL_0E68:
-	video offset=CINEMATIC_119, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_119, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_120, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_120, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_121, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_121, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_122, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_122, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_123, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_123, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_124, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_124, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_125, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_125, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_126, x=160, y=[0x19], zoom=0x40
+	video offset=CINEMATIC_126, x=160, y=[0x19]
 	break
 	jmp LABEL_0E68
 LABEL_0E9B:

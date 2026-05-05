@@ -80,7 +80,7 @@ CH_03_INIT_VAR_01_02_FFF6:
 	mov [0x02], 0x0017
 
 DROP_CIN_134_DOWN_BY_10_23X:
-	video offset=CINEMATIC_134, x=110, y=[0x01], zoom=0x40
+	video offset=CINEMATIC_134, x=110, y=[0x01]
 	add [0x01], 0x000A
 	break
 	djnz [0x02], DROP_CIN_134_DOWN_BY_10_23X
@@ -91,7 +91,7 @@ CH_04_INIT_VAR_04_05:
 	mov [0x05], 0x0050
 
 DRIFT_CIN_135_RIGHT_BY_2_80X:
-	video offset=CINEMATIC_135, x=[0x04], y=100, zoom=0x40
+	video offset=CINEMATIC_135, x=[0x04], y=100
 	add [0x04], 0x0002
 	break
 	djnz [0x05], DRIFT_CIN_135_RIGHT_BY_2_80X
@@ -103,7 +103,7 @@ CH_05_INIT_VAR_06_07:
 
 RISE_CIN_136_BY_10_FOR_23X:
 	break
-	video offset=CINEMATIC_136, x=110, y=[0x06], zoom=0x40
+	video offset=CINEMATIC_136, x=110, y=[0x06]
 	sub [0x06], 0x000A
 	djnz [0x07], RISE_CIN_136_BY_10_FOR_23X
 	killChannel
@@ -119,8 +119,8 @@ DRAW_CIN_137_DOUBLE_OUTER:
 
 DRAW_CIN_137_AT_280_283_TWICE:
 	break
-	video offset=CINEMATIC_137, x=280, y=[0x08], zoom=0x40
-	video offset=CINEMATIC_137, x=283, y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_137, x=280, y=[0x08]
+	video offset=CINEMATIC_137, x=283, y=[0x0b]
 	djnz [0x0A], DRAW_CIN_137_AT_280_283_TWICE
 	add [0x08], 0x0003
 	sub [0x0B], 0x0003
@@ -131,11 +131,11 @@ LABEL_19C5:
 
 CH_06_DRAW_CIN_457_PARTICLES:
 	break
-	video offset=CINEMATIC_457, x=318, y=139, zoom=0x40
-	video offset=CINEMATIC_457, x=298, y=139, zoom=0x40
+	video offset=CINEMATIC_457, x=318, y=139
+	video offset=CINEMATIC_457, x=298, y=139
 	break
-	video offset=CINEMATIC_457, x=278, y=139, zoom=0x40
-	video offset=CINEMATIC_457, x=258, y=139, zoom=0x40
+	video offset=CINEMATIC_457, x=278, y=139
+	video offset=CINEMATIC_457, x=258, y=139
 	break
 	video offset=CINEMATIC_457, x=238, y=139
 	video offset=CINEMATIC_457, x=218, y=139
@@ -152,7 +152,7 @@ CH_06_DRAW_CIN_457_PARTICLES:
 	break
 	video offset=CINEMATIC_460, x=19, y=144
 	break
-	video offset=CINEMATIC_461, x=65532, y=152, zoom=0x40
+	video offset=CINEMATIC_461, x=65532, y=152
 	break
 	video offset=CINEMATIC_462, x=25, y=167
 	break
@@ -164,6 +164,6 @@ CH_06_DRAW_CIN_457_PARTICLES:
 	break
 	video offset=CINEMATIC_465, x=219, y=181
 	break
-	video offset=CINEMATIC_465, x=307, y=181, zoom=0x40
+	video offset=CINEMATIC_465, x=307, y=181
 	killChannel
 

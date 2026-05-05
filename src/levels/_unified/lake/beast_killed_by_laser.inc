@@ -22,49 +22,49 @@ CINEMATIC_BEAST_KILLED_8		EQU 0xDFD0
 ;@endif
 
 THE_BEAST_IS_KILLED_BY_A_LASER_SHOT:
-	video offset=CINEMATIC_BEAST_KILLED_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_0, x=[0x0e], y=[0x0f]
 	break
 	sub [0x0E], 0x000A
-	video offset=CINEMATIC_BEAST_KILLED_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_1, x=[0x0e], y=[0x0f]
 	play id=0x0052, freq=0x1E, vol=0x3F, channel=0x00
 	break
 	sub [0x0E], 0x0010
-	video offset=CINEMATIC_BEAST_KILLED_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_2, x=[0x0e], y=[0x0f]
 	break
 	sub [0x0E], 0x0018
-	video offset=CINEMATIC_BEAST_KILLED_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_3, x=[0x0e], y=[0x0f]
 	play id=0x0030, freq=0x1E, vol=0x3F, channel=0x02
 	break
 	sub [0x0E], 0x0012
-	video offset=CINEMATIC_BEAST_KILLED_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_4, x=[0x0e], y=[0x0f]
 	break
 	sub [0x0E], 0x000C
-	video offset=CINEMATIC_BEAST_KILLED_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_5, x=[0x0e], y=[0x0f]
 	break
 	sub [0x0E], 0x0008
-	video offset=CINEMATIC_BEAST_KILLED_6, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_6, x=[0x0e], y=[0x0f]
 	break
 	sub [0x0E], 0x0006
-	video offset=CINEMATIC_BEAST_KILLED_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_7, x=[0x0e], y=[0x0f]
 	break
 	sub [0x0E], 0x0004
 	play id=0x003C, freq=0x0A, vol=0x18, channel=0x00
-	video offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f]
 	break
 	sub [0x0E], 0x0002
-	video offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f]
 	mov [0x10], 0x0005
 
 BEAST_KILLED_F8_REPEAT:
 	break
 	sub [0x0E], 0x0001
-	video offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f]
 	djnz [0x10], BEAST_KILLED_F8_REPEAT
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	song id=0x0BBB, delay=0x0000, pos=0x00
 ;@endif
 	selectVideoPage 0x00
-	video offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f]
 	selectVideoPage 0xFF
 	killChannel
 

@@ -258,10 +258,10 @@ LABEL_0866:
 	video offset=CINEMATIC_147, x=237, y=126
 	break
 	video offset=CINEMATIC_148, x=138, y=24
-	video offset=CINEMATIC_149, x=287, y=79, zoom=0x40
+	video offset=CINEMATIC_149, x=287, y=79
 	break
-	video offset=CINEMATIC_146, x=148, y=65533, zoom=0x40
-	video offset=CINEMATIC_147, x=336, y=32, zoom=0x40
+	video offset=CINEMATIC_146, x=148, y=65533
+	video offset=CINEMATIC_147, x=336, y=32
 	break
 	break
 	je [0xDB], 0x00, BANKSWITCH_6_FOR_CODE_ENTRY

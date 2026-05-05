@@ -5,7 +5,7 @@ LABEL_0ABF:
 	jne [0xF8], 0x00, LABEL_0ABF
 	selectVideoPage 0x00
 	video offset=CINEMATIC_319, x=225, y=50
-	video offset=CINEMATIC_319, x=278, y=50, zoom=0x40
+	video offset=CINEMATIC_319, x=278, y=50
 	selectVideoPage 0xFF
 
 LABEL_0ADA:

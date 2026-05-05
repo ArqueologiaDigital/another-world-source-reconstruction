@@ -154,15 +154,15 @@ DRAW_CIN_382_PUFFS_2X:
 	break
 	video offset=CINEMATIC_382, x=235, y=16
 	break
-	video offset=CINEMATIC_382, x=267, y=27, zoom=0x40
+	video offset=CINEMATIC_382, x=267, y=27
 	break
-	video offset=CINEMATIC_382, x=289, y=52, zoom=0x40
+	video offset=CINEMATIC_382, x=289, y=52
 	break
-	video offset=CINEMATIC_382, x=296, y=83, zoom=0x40
+	video offset=CINEMATIC_382, x=296, y=83
 	break
-	video offset=CINEMATIC_382, x=287, y=113, zoom=0x40
+	video offset=CINEMATIC_382, x=287, y=113
 	break
-	video offset=CINEMATIC_382, x=264, y=136, zoom=0x40
+	video offset=CINEMATIC_382, x=264, y=136
 	break
 	video offset=CINEMATIC_382, x=225, y=145
 	break
@@ -180,9 +180,9 @@ DRAW_CIN_382_PUFFS_3X:
 	break
 	video offset=CINEMATIC_382, x=255, y=20
 	break
-	video offset=CINEMATIC_382, x=293, y=61, zoom=0x40
+	video offset=CINEMATIC_382, x=293, y=61
 	break
-	video offset=CINEMATIC_382, x=287, y=114, zoom=0x40
+	video offset=CINEMATIC_382, x=287, y=114
 	break
 	video offset=CINEMATIC_382, x=236, y=145
 	break
@@ -197,14 +197,14 @@ DRAW_CIN_382_PUFFS_3X:
 	break
 	video offset=CINEMATIC_382, x=233, y=15
 	break
-	video offset=CINEMATIC_382, x=296, y=84, zoom=0x40
+	video offset=CINEMATIC_382, x=296, y=84
 	break
 	video offset=CINEMATIC_382, x=249, y=148
 	break
 	video offset=CINEMATIC_384, x=237, y=156
 	video offset=CINEMATIC_384, x=287, y=150, zoom=[0x14]	;@enc=alt
 	break
-	video offset=CINEMATIC_384, x=287, y=150, zoom=0x40
+	video offset=CINEMATIC_384, x=287, y=150
 	break
 	video offset=CINEMATIC_384, x=287, y=150, zoom=[0x78]	;@enc=alt
 	break
@@ -255,23 +255,23 @@ DRAW_CIN_382_PUFFS_1X:
 	break
 	video offset=CINEMATIC_382, x=246, y=16
 	break
-	video offset=CINEMATIC_382, x=263, y=24, zoom=0x40
+	video offset=CINEMATIC_382, x=263, y=24
 	break
-	video offset=CINEMATIC_382, x=278, y=36, zoom=0x40
+	video offset=CINEMATIC_382, x=278, y=36
 	break
-	video offset=CINEMATIC_382, x=288, y=49, zoom=0x40
+	video offset=CINEMATIC_382, x=288, y=49
 	break
-	video offset=CINEMATIC_382, x=294, y=66, zoom=0x40
+	video offset=CINEMATIC_382, x=294, y=66
 	break
-	video offset=CINEMATIC_382, x=297, y=82, zoom=0x40
+	video offset=CINEMATIC_382, x=297, y=82
 	break
-	video offset=CINEMATIC_382, x=293, y=101, zoom=0x40
+	video offset=CINEMATIC_382, x=293, y=101
 	break
-	video offset=CINEMATIC_382, x=284, y=117, zoom=0x40
+	video offset=CINEMATIC_382, x=284, y=117
 	break
-	video offset=CINEMATIC_382, x=271, y=131, zoom=0x40
+	video offset=CINEMATIC_382, x=271, y=131
 	break
-	video offset=CINEMATIC_382, x=256, y=141, zoom=0x40
+	video offset=CINEMATIC_382, x=256, y=141
 	break
 	video offset=CINEMATIC_382, x=237, y=145
 	break
@@ -291,13 +291,13 @@ LABEL_185D:
 
 DRAW_CIN_426_427_TWICE:
 	video offset=CINEMATIC_426, x=58, y=100
-	video offset=CINEMATIC_427, x=292, y=100, zoom=0x40
+	video offset=CINEMATIC_427, x=292, y=100
 	break
 	video offset=CINEMATIC_427, x=58, y=100
-	video offset=CINEMATIC_428, x=292, y=100, zoom=0x40
+	video offset=CINEMATIC_428, x=292, y=100
 	break
 	video offset=CINEMATIC_428, x=58, y=100
-	video offset=CINEMATIC_426, x=292, y=100, zoom=0x40
+	video offset=CINEMATIC_426, x=292, y=100
 	break
 	jmp DRAW_CIN_426_427_TWICE
 LABEL_187F:

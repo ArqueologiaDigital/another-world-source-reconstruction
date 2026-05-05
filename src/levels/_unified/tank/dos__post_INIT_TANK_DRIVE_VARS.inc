@@ -6,7 +6,7 @@ LABEL_1323:
 	break
 	video offset=CINEMATIC_038, x=221, y=109
 	break
-	video offset=CINEMATIC_038, x=486, y=102, zoom=0x40
+	video offset=CINEMATIC_038, x=486, y=102
 	killChannel
 
 LABEL_1336:
@@ -20,16 +20,16 @@ LABEL_1336:
 	selectVideoPage 0xFF
 	video offset=CINEMATIC_038, x=221, y=109
 	break
-	video offset=CINEMATIC_038, x=486, y=102, zoom=0x40
+	video offset=CINEMATIC_038, x=486, y=102
 	killChannel
 	break
 	break
 	break
 	video offset=CINEMATIC_038, x=73, y=56
 	break
-	video offset=CINEMATIC_038, x=266, y=79, zoom=0x40
+	video offset=CINEMATIC_038, x=266, y=79
 	break
-	video offset=CINEMATIC_038, x=576, y=91, zoom=0x40
+	video offset=CINEMATIC_038, x=576, y=91
 	killChannel
 
 LABEL_136E:
@@ -152,45 +152,45 @@ LABEL_14B4:
 	db 0x11
 
 LABEL_14B5:
-	video offset=CINEMATIC_150, x=[0x39], y=[0x3a], zoom=0x40
+	video offset=CINEMATIC_150, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
 	jne [0x45], 0x00, SHARED_RET
-	video offset=CINEMATIC_151, x=[0x39], y=[0x3a], zoom=0x40
+	video offset=CINEMATIC_151, x=[0x39], y=[0x3a]
 	ret
 
 LABEL_14CC:
-	video offset=CINEMATIC_152, x=[0x39], y=[0x3a], zoom=0x40
+	video offset=CINEMATIC_152, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
 	jne [0x45], 0x00, SHARED_RET
-	video offset=CINEMATIC_153, x=[0x39], y=[0x3a], zoom=0x40
+	video offset=CINEMATIC_153, x=[0x39], y=[0x3a]
 	ret
 
 LABEL_14E3:
-	video offset=CINEMATIC_154, x=[0x39], y=[0x3a], zoom=0x40
+	video offset=CINEMATIC_154, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
 	jne [0x45], 0x00, SHARED_RET
-	video offset=CINEMATIC_155, x=[0x39], y=[0x3a], zoom=0x40
+	video offset=CINEMATIC_155, x=[0x39], y=[0x3a]
 	ret
 
 LABEL_14FA:
-	video offset=CINEMATIC_156, x=[0x39], y=[0x3a], zoom=0x40
+	video offset=CINEMATIC_156, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
 	jne [0x45], 0x00, SHARED_RET
-	video offset=CINEMATIC_157, x=[0x39], y=[0x3a], zoom=0x40
+	video offset=CINEMATIC_157, x=[0x39], y=[0x3a]
 	ret
 
 LABEL_1511:
-	video offset=CINEMATIC_158, x=[0x39], y=[0x3a], zoom=0x40
+	video offset=CINEMATIC_158, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
 	jne [0x45], 0x00, SHARED_RET
-	video offset=CINEMATIC_159, x=[0x39], y=[0x3a], zoom=0x40
+	video offset=CINEMATIC_159, x=[0x39], y=[0x3a]
 	ret
 
 LABEL_1528:
-	video offset=CINEMATIC_160, x=[0x39], y=[0x3a], zoom=0x40
+	video offset=CINEMATIC_160, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
 	jne [0x45], 0x00, SHARED_RET
-	video offset=CINEMATIC_161, x=[0x39], y=[0x3a], zoom=0x40
+	video offset=CINEMATIC_161, x=[0x39], y=[0x3a]
 	ret
 
 APPLY_HERO_DAMAGE_AND_HIT:

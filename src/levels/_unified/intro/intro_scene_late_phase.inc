@@ -31,8 +31,8 @@ INIT_VAR_04_PAL_E_VAR_01:
 PARALLAX_CIN_126_127_LOOP:
 	sub [0x01], 0x0014
 	add [0x02], 0x0014
-	video offset=CINEMATIC_126, x=160, y=[0x01], zoom=0x40
-	video offset=CINEMATIC_127, x=160, y=[0x02], zoom=0x40
+	video offset=CINEMATIC_126, x=160, y=[0x01]
+	video offset=CINEMATIC_127, x=160, y=[0x02]
 	video offset=CINEMATIC_128, x=160, y=111, zoom=[0x04]
 	je [MUS_MARK], 0x10, PARALLAX_LOOP_BREAK_AND_DJNZ
 
@@ -98,8 +98,8 @@ DRAW_CIN_130_NESTED_OUTER:
 	mov [0x09], 0x0003
 
 DRAW_CIN_130_AT_VAR67_INNER:
-	video offset=CINEMATIC_130, x=[0x06], y=16, zoom=0x40
-	video offset=CINEMATIC_130, x=[0x07], y=18, zoom=0x40
+	video offset=CINEMATIC_130, x=[0x06], y=16
+	video offset=CINEMATIC_130, x=[0x07], y=18
 	break
 	djnz [0x09], DRAW_CIN_130_AT_VAR67_INNER
 	add [0x06], 0x0002
@@ -132,8 +132,8 @@ LABEL_21E0:
 	killChannel
 
 DRAW_CIN_126_127_AT_VAR01_02:
-	video offset=CINEMATIC_126, x=160, y=[0x01], zoom=0x40
-	video offset=CINEMATIC_127, x=160, y=[0x02], zoom=0x40
+	video offset=CINEMATIC_126, x=160, y=[0x01]
+	video offset=CINEMATIC_127, x=160, y=[0x02]
 	break
 	jmp DRAW_CIN_126_127_AT_VAR01_02
 LABEL_21EF:

@@ -22,7 +22,7 @@ PLAY_SFX_005C_CH01:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_486:
-	video offset=CINEMATIC_486, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_486, x=[0x21], y=[0x27]
 	ret
 ;@endif
 
@@ -34,7 +34,7 @@ DRAW_CIN_486:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_483:
-	video offset=CINEMATIC_483, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_483, x=[0x21], y=[0x27]
 	ret
 ;@endif
 
@@ -46,7 +46,7 @@ DRAW_CIN_483:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN473_AT_X21_Y27_ZOOM_40:
-	video offset=CINEMATIC_473, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_473, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
 ;@endif
@@ -59,7 +59,7 @@ DRAW_CIN473_AT_X21_Y27_ZOOM_40:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_502:
-	video offset=CINEMATIC_502, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_502, x=[0x21], y=[0x27]
 	ret
 ;@endif
 
@@ -71,7 +71,7 @@ DRAW_CIN_502:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_499:
-	video offset=CINEMATIC_499, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_499, x=[0x21], y=[0x27]
 	ret
 ;@endif
 
@@ -83,7 +83,7 @@ DRAW_CIN_499:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN489_AT_X21_Y27_ZOOM_40:
-	video offset=CINEMATIC_489, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_489, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
 ;@endif
@@ -233,9 +233,9 @@ FOLD_BODY_104B_22B91458:
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_SEQ_085_085_086:
 	video offset=CINEMATIC_085, x=132, y=39
-	video offset=CINEMATIC_085, x=297, y=39, zoom=0x40
+	video offset=CINEMATIC_085, x=297, y=39
 	video offset=CINEMATIC_086, x=132, y=39
-	video offset=CINEMATIC_086, x=297, y=39, zoom=0x40
+	video offset=CINEMATIC_086, x=297, y=39
 	ret
 ;@endif
 
@@ -284,7 +284,7 @@ FILL_AND_DRAW_CIN_24_28:
 	video offset=CINEMATIC_026, x=160, y=100
 	video offset=CINEMATIC_027, x=160, y=100
 	video offset=CINEMATIC_028, x=160, y=100
-	video offset=CINEMATIC_029, x=160, y=400, zoom=0x40
+	video offset=CINEMATIC_029, x=160, y=400
 	video offset=CINEMATIC_030, x=160, y=100
 	video offset=CINEMATIC_031, x=160, y=100
 	video offset=CINEMATIC_032, x=160, y=100
@@ -334,8 +334,8 @@ DRAW_CIN_628_TO_625_4F_AT_2F47D6D0:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_229_TO_632_2F_AT_1C4A817A:
-	video offset=CINEMATIC_229, x=[0x07], y=[0x08], zoom=0x40
-	video offset=CINEMATIC_632, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_229, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_632, x=[0x07], y=[0x08]
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"

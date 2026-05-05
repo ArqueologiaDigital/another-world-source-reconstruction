@@ -1,7 +1,7 @@
 LABEL_0B4C:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_457, x=84, y=[0xe6], zoom=0x40
-	video offset=CINEMATIC_186, x=82, y=[0xe6], zoom=0x40
+	video offset=CINEMATIC_457, x=84, y=[0xe6]
+	video offset=CINEMATIC_186, x=82, y=[0xe6]
 	selectVideoPage 0xFF
 	add [0xE6], 0x0002
 	break
@@ -11,8 +11,8 @@ LABEL_0B4C:
 
 LABEL_0B6A:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_186, x=84, y=[0xe6], zoom=0x40
-	video offset=CINEMATIC_457, x=82, y=[0xe6], zoom=0x40
+	video offset=CINEMATIC_186, x=84, y=[0xe6]
+	video offset=CINEMATIC_457, x=82, y=[0xe6]
 	selectVideoPage 0xFF
 	add [0xE6], 0x0002
 	break

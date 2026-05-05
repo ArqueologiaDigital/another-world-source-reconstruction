@@ -228,7 +228,7 @@ COPY_VAR22_TO_VAR07:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN505_AT_X21_Y27:
-	video offset=CINEMATIC_505, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_505, x=[0x21], y=[0x27]
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"

@@ -3,19 +3,19 @@ LABEL_03F2:
 	video offset=CINEMATIC_004, x=114, y=160
 	break
 	djnz [0xE6], LABEL_03F2
-	video offset=CINEMATIC_005, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_005, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_006, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_006, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_007, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_007, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_008, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_008, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_008, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_008, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_009, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_009, x=[0x07], y=[0x08]
 	break
-	video offset=CINEMATIC_010, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_010, x=[0x07], y=[0x08]
 	mov [0x01], 0x005C
 	mov [0x02], [0x40]
 	mov [0x63], 0x0002
@@ -29,7 +29,7 @@ LABEL_03F2:
 
 LABEL_044F:
 	break
-	video offset=CINEMATIC_011, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_011, x=[0x07], y=[0x08]
 	djnz [0x29], LABEL_044F
 	break
 	jmp INIT_VARS_0E_29

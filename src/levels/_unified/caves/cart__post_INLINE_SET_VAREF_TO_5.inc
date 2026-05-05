@@ -21,18 +21,18 @@ LABEL_1926:
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x01
 	play id=0x005E, freq=0x1C, vol=0x40, channel=0x02
 	song id=0x0BCC, delay=0x0000, pos=0x00
-	video offset=CINEMATIC_448, x=[0x01], y=[0x02], zoom=0x40
-	video offset=CINEMATIC_449, x=330, y=[0x02], zoom=0x40
+	video offset=CINEMATIC_448, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_449, x=330, y=[0x02]
 	break
 	sub [0x01], 0x000A
-	video offset=CINEMATIC_448, x=[0x01], y=[0x02], zoom=0x40
-	video offset=CINEMATIC_449, x=340, y=[0x02], zoom=0x40
+	video offset=CINEMATIC_448, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_449, x=340, y=[0x02]
 	break
 	sub [0x01], 0x000A
-	video offset=CINEMATIC_450, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_450, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x000A
-	video offset=CINEMATIC_451, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_451, x=[0x01], y=[0x02]
 	je [0x0A], 0x00, LABEL_1983
 	setup channel=0x02, address=INIT_VARS_EE_EF
 	mov [0x0A], 0x0000
@@ -40,43 +40,43 @@ LABEL_1926:
 LABEL_1983:
 	break
 	sub [0x01], 0x000A
-	video offset=CINEMATIC_452, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_452, x=[0x01], y=[0x02]
 	call LABEL_45DE
 	break
 	sub [0x01], 0x000E
-	video offset=CINEMATIC_453, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_453, x=[0x01], y=[0x02]
 	play id=0x0060, freq=0x14, vol=0x40, channel=0x01
 	break
 	sub [0x01], 0x0005
-	video offset=CINEMATIC_453, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_453, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0004
-	video offset=CINEMATIC_453, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_453, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0003
-	video offset=CINEMATIC_453, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_453, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0003
-	video offset=CINEMATIC_453, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_453, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0003
-	video offset=CINEMATIC_453, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_453, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0002
-	video offset=CINEMATIC_453, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_453, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0001
-	video offset=CINEMATIC_453, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_453, x=[0x01], y=[0x02]
 	break
 	sub [0x01], 0x0001
-	video offset=CINEMATIC_453, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_453, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_453, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_453, x=[0x01], y=[0x02]
 	sub [0x01], 0x0001
 
 LABEL_19FA:
 	break
-	video offset=CINEMATIC_453, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_453, x=[0x01], y=[0x02]
 	jmp LABEL_19FA
 LABEL_1A03:
 	db 0x11

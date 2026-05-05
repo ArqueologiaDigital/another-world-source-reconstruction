@@ -2,8 +2,8 @@ LABEL_38B4:
 	break
 	je [HACK_VAR_67], 0x8D, INLINE_SET_VAR29_TO_8
 	jne [HACK_VAR_67], [0x6A], LABEL_38CB
-	video offset=CINEMATIC_269, x=283, y=98, zoom=0x40
-	video offset=CINEMATIC_118, x=284, y=225, zoom=0x40
+	video offset=CINEMATIC_269, x=283, y=98
+	video offset=CINEMATIC_118, x=284, y=225
 
 LABEL_38CB:
 	djnz [0x29], LABEL_38B4
@@ -13,8 +13,8 @@ LABEL_38D3:
 	break
 	je [HACK_VAR_67], 0x8D, INLINE_SET_VAR29_TO_8
 	jne [HACK_VAR_67], [0x6A], LABEL_38EA
-	video offset=CINEMATIC_270, x=283, y=98, zoom=0x40
-	video offset=CINEMATIC_118, x=283, y=224, zoom=0x40
+	video offset=CINEMATIC_270, x=283, y=98
+	video offset=CINEMATIC_118, x=283, y=224
 
 LABEL_38EA:
 	djnz [0x29], LABEL_38D3
@@ -24,8 +24,8 @@ LABEL_38F2:
 	break
 	je [HACK_VAR_67], 0x8D, INLINE_SET_VAR29_TO_8
 	jne [HACK_VAR_67], [0x6A], LABEL_3909
-	video offset=CINEMATIC_269, x=283, y=98, zoom=0x40
-	video offset=CINEMATIC_118, x=284, y=224, zoom=0x40
+	video offset=CINEMATIC_269, x=283, y=98
+	video offset=CINEMATIC_118, x=284, y=224
 
 LABEL_3909:
 	djnz [0x29], LABEL_38F2

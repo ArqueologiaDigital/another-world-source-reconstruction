@@ -76,7 +76,7 @@ LABEL_50D1:
 
 LABEL_50DA:
 	jne [0x0E], 0x06, LABEL_50E6
-	video offset=CINEMATIC_227, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_227, x=[0x07], y=[0x08]
 	ret
 
 LABEL_50E6:

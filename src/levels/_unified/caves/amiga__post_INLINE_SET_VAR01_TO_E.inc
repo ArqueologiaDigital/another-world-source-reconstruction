@@ -17,27 +17,27 @@ LABEL_1C13:
 	killChannel
 
 LABEL_1C4B:
-	video offset=CINEMATIC_008, x=160, y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_008, x=160, y=[0xe7]
 	break
 	setPalette 0x0D
 	play id=0x0052, freq=0x0A, vol=0x40, channel=0x02
-	video offset=CINEMATIC_009, x=160, y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_009, x=160, y=[0xe7]
 	break
 	setPalette 0x08
-	video offset=CINEMATIC_010, x=160, y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_010, x=160, y=[0xe7]
 	break
-	video offset=CINEMATIC_011, x=160, y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_011, x=160, y=[0xe7]
 	killChannel
 
 LABEL_1C6F:
-	video offset=CINEMATIC_008, x=160, y=[0xe8], zoom=0x40
+	video offset=CINEMATIC_008, x=160, y=[0xe8]
 	break
 	play id=0x0052, freq=0x14, vol=0x40, channel=0x02
-	video offset=CINEMATIC_009, x=160, y=[0xe8], zoom=0x40
+	video offset=CINEMATIC_009, x=160, y=[0xe8]
 	break
-	video offset=CINEMATIC_010, x=160, y=[0xe8], zoom=0x40
+	video offset=CINEMATIC_010, x=160, y=[0xe8]
 	break
-	video offset=CINEMATIC_011, x=160, y=[0xe8], zoom=0x40
+	video offset=CINEMATIC_011, x=160, y=[0xe8]
 	killChannel
 
 HANG_DRAW_CIN_012:

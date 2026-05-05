@@ -1710,11 +1710,11 @@ LABEL_0041:
 	mov [0x00], [0x18]
 	mov [0xF8], [0x00]
 	shr [0xF8], 0x0008
-	video offset=CINEMATIC_690, x=[0xf8], y=0, zoom=0x40
+	video offset=CINEMATIC_690, x=[0xf8], y=0
 	mov [0xF8], [0x00]
 	and [0xF8], 0x00FF
-	video offset=CINEMATIC_690, x=[0xf8], y=1, zoom=0x40
-	video offset=CINEMATIC_691, x=[0x01], y=2, zoom=0x40
+	video offset=CINEMATIC_690, x=[0xf8], y=1
+	video offset=CINEMATIC_691, x=[0x01], y=2
 	killChannel
 
 LABEL_0076:
@@ -1847,8 +1847,8 @@ LABEL_01A6:
 	call LABEL_8967
 	break
 	add [0x07], 0x0018
-	video offset=CINEMATIC_282, x=[0x07], y=[0x08], zoom=0x40
-	video offset=CINEMATIC_316, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_282, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_316, x=[0x07], y=[0x08]
 	call LABEL_0165
 	jne [0x21], 0x00, LABEL_02C1
 	setup channel=0x23, address=LABEL_01D3
@@ -1859,7 +1859,7 @@ LABEL_01D3:
 	add [0x07], 0x0002
 	jmp LABEL_01E8
 	add [0x08], 0x0004
-	video offset=CINEMATIC_123, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_123, x=[0x07], y=[0x08]
 	sub [0x08], 0x0004
 	break
 
