@@ -20,13 +20,13 @@ LABEL_9821:
 	sub [0x02], 0x0050
 	mov [0x32], 0x0001
 	jne [HACK_VAR_67], 0xAA, LABEL_983F
-	video type=1, offset=CINEMATIC_090, x=[0x01], y=160, zoom=0x40
+	video offset=CINEMATIC_090, x=[0x01], y=160, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_090, x=[0x01], y=200, zoom=0x40
+	video offset=CINEMATIC_090, x=[0x01], y=200, zoom=0x40
 	break
 
 LABEL_983F:
-	video type=1, offset=CINEMATIC_090, x=[0x01], y=240, zoom=0x40
+	video offset=CINEMATIC_090, x=[0x01], y=240, zoom=0x40
 	mov [0x02], 0x012C
 	setup channel=0x17, address=KILL_CHANNEL_LANDING
 	break
@@ -38,13 +38,13 @@ LABEL_983F:
 	break
 	je [HACK_VAR_67], 0xCE, INIT_VARS_03_32_02
 	mov [0x32], 0x0001
-	video type=1, offset=CINEMATIC_090, x=[0x01], y=77, zoom=0x40
+	video offset=CINEMATIC_090, x=[0x01], y=77, zoom=0x40
 	mov [0x02], [0x52]
 	break
 	mov [0x32], 0x0001
-	video type=1, offset=CINEMATIC_090, x=[0x01], y=146, zoom=0x40
+	video offset=CINEMATIC_090, x=[0x01], y=146, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_090, x=[0x01], y=189, zoom=0x40
+	video offset=CINEMATIC_090, x=[0x01], y=189, zoom=0x40
 	mov [0x02], [0x52]
 	setup channel=0x1A, address=LABEL_97DD
 	jmp LABEL_9A64
@@ -71,27 +71,27 @@ LABEL_98BF:
 	sub [0x02], 0x0064
 	je [HACK_VAR_67], 0xAA, LABEL_98D7
 	mov [0x32], 0x0001
-	video type=1, offset=CINEMATIC_092, x=[0x01], y=115, zoom=0x40
+	video offset=CINEMATIC_092, x=[0x01], y=115, zoom=0x40
 	break
 
 LABEL_98D7:
 	mov [0x32], 0x0001
-	video type=1, offset=CINEMATIC_092, x=[0x01], y=60, zoom=0x40
+	video offset=CINEMATIC_092, x=[0x01], y=60, zoom=0x40
 	setup channel=0x17, address=KILL_CHANNEL_LANDING
 	break
 	mov [0x0F], 0x0000
 	mov [0x32], 0x0001
-	video type=1, offset=CINEMATIC_092, x=[0x01], y=65529, zoom=0x40
+	video offset=CINEMATIC_092, x=[0x01], y=65529, zoom=0x40
 	break
 	mov [0x02], [0x51]
 	break
 	je [HACK_VAR_67], 0xCE, INIT_VARS_03_32_02_1
-	video type=1, offset=CINEMATIC_092, x=[0x01], y=180, zoom=0x40
+	video offset=CINEMATIC_092, x=[0x01], y=180, zoom=0x40
 	jne [HACK_VAR_67], 0xAA, LABEL_9915
 	break
-	video type=1, offset=CINEMATIC_092, x=[0x01], y=130, zoom=0x40
+	video offset=CINEMATIC_092, x=[0x01], y=130, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_092, x=[0x01], y=70, zoom=0x40
+	video offset=CINEMATIC_092, x=[0x01], y=70, zoom=0x40
 
 LABEL_9915:
 	mov [0x02], [0x51]
@@ -102,7 +102,7 @@ LABEL_991F:
 	mov [0x63], 0x0064
 	sub [0x02], 0x001E
 	mov [0x32], 0x0001
-	video type=1, offset=CINEMATIC_090, x=[0x01], y=240, zoom=0x40
+	video offset=CINEMATIC_090, x=[0x01], y=240, zoom=0x40
 	mov [0x02], 0x012C
 	break
 	setup channel=0x17, address=KILL_CHANNEL_LANDING
@@ -114,11 +114,11 @@ LABEL_991F:
 	break
 	mov [0x01], 0x0036
 	mov [0x32], 0x0009
-	video type=1, offset=CINEMATIC_090, x=[0x01], y=40, zoom=0x40
+	video offset=CINEMATIC_090, x=[0x01], y=40, zoom=0x40
 	mov [0x02], [0x52]
 	break
 	mov [0x32], 0x0009
-	video type=1, offset=CINEMATIC_090, x=[0x01], y=80, zoom=0x40
+	video offset=CINEMATIC_090, x=[0x01], y=80, zoom=0x40
 	mov [0x02], [0x52]
 	setup channel=0x1A, address=LABEL_97DD
 	jmp LABEL_9A64
@@ -127,16 +127,16 @@ LABEL_996E:
 	mov [0x63], 0x0064
 	sub [0x02], 0x0064
 	mov [0x32], 0x0001
-	video type=1, offset=CINEMATIC_092, x=[0x01], y=40, zoom=0x40
+	video offset=CINEMATIC_092, x=[0x01], y=40, zoom=0x40
 	break
 	mov [0x32], 0x0001
-	video type=1, offset=CINEMATIC_092, x=[0x01], y=65524, zoom=0x40
+	video offset=CINEMATIC_092, x=[0x01], y=65524, zoom=0x40
 	break
 	mov [0x02], [0x51]
 	break
 	mov [0x32], 0x0009
 	mov [0x01], 0x0029
-	video type=1, offset=CINEMATIC_092, x=[0x01], y=180, zoom=0x40
+	video offset=CINEMATIC_092, x=[0x01], y=180, zoom=0x40
 	mov [0x02], [0x51]
 	setup channel=0x1A, address=LABEL_97CE
 	jmp LABEL_9A64

@@ -1,6 +1,6 @@
 LABEL_7D12:
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_106, x=160, y=100
 	call LABEL_7C8B
 	selectVideoPage 0xFF
 	killChannel
@@ -12,14 +12,14 @@ LABEL_7D1E:
 
 LABEL_7D25:
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_106, x=160, y=100
 	call LABEL_7C92
 	selectVideoPage 0xFF
 	killChannel
 
 LABEL_7D31:
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_106, x=160, y=100
 	call LABEL_7C99
 	selectVideoPage 0xFF
 	killChannel

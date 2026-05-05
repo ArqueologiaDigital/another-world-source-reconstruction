@@ -43,7 +43,7 @@ REDRAW_CURSOR_AT_VAR01:
 	mov [0x28], [0x08]
 	jne [0x25], [0x27], ANIMATE_CURSOR_TRANSITION
 	jne [0x26], [0x28], ANIMATE_CURSOR_TRANSITION
-	video type=1, offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp HANDLE_PASSCODE_INPUT_OR_DISPATCH
 LABEL_06B3:

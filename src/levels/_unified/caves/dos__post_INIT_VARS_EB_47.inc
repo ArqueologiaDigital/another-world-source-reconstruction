@@ -1,6 +1,6 @@
 LABEL_CC08:
 	add [0xE8], 0x000C
-	video type=1, offset=CINEMATIC_372, x=[0xe7], y=[0xe8], zoom=[0xe9]
+	video offset=CINEMATIC_372, x=[0xe7], y=[0xe8], zoom=[0xe9]
 	break
 	djnz [0xEB], LABEL_CC08
 	play id=0x006B, freq=0x14, vol=0x40, channel=0x00

@@ -7,15 +7,15 @@ DRAW_CIN_054_055_056_VAR09:
 	ret
 
 DRAW_CIN_054:
-	video type=1, offset=CINEMATIC_054, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_054, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_055:
-	video type=1, offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_056:
-	video type=1, offset=CINEMATIC_056, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_056, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_057_058_VAR09_LOW:
@@ -26,11 +26,11 @@ DRAW_CIN_057_058_VAR09_LOW:
 	ret
 
 DRAW_CIN_057:
-	video type=1, offset=CINEMATIC_057, x=[0xf5], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_057, x=[0xf5], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_058:
-	video type=1, offset=CINEMATIC_058, x=[0xf5], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_058, x=[0xf5], y=[0x08], zoom=0x40
 	ret
 
 LABEL_835D:

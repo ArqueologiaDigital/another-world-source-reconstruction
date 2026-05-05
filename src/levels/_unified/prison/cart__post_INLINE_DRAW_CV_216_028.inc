@@ -91,7 +91,7 @@ LABEL_5820:
 
 LABEL_582F:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	video type=1, offset=CINEMATIC_629, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_629, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_SPRITE_CIN_236_239_BY_VAR09
 	video type=0, offset=COMMON_VIDEO_164, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1

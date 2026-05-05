@@ -22,7 +22,7 @@ PLAY_SFX_005C_CH01:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_486:
-	video type=1, offset=CINEMATIC_486, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_486, x=[0x21], y=[0x27], zoom=0x40
 	ret
 ;@endif
 
@@ -34,7 +34,7 @@ DRAW_CIN_486:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_483:
-	video type=1, offset=CINEMATIC_483, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_483, x=[0x21], y=[0x27], zoom=0x40
 	ret
 ;@endif
 
@@ -46,7 +46,7 @@ DRAW_CIN_483:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN473_AT_X21_Y27_ZOOM_40:
-	video type=1, offset=CINEMATIC_473, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_473, x=[0x21], y=[0x27], zoom=0x40
 	mov [0x13], 0xFFFE
 	ret
 ;@endif
@@ -59,7 +59,7 @@ DRAW_CIN473_AT_X21_Y27_ZOOM_40:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_502:
-	video type=1, offset=CINEMATIC_502, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_502, x=[0x21], y=[0x27], zoom=0x40
 	ret
 ;@endif
 
@@ -71,7 +71,7 @@ DRAW_CIN_502:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_499:
-	video type=1, offset=CINEMATIC_499, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_499, x=[0x21], y=[0x27], zoom=0x40
 	ret
 ;@endif
 
@@ -83,7 +83,7 @@ DRAW_CIN_499:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN489_AT_X21_Y27_ZOOM_40:
-	video type=1, offset=CINEMATIC_489, x=[0x21], y=[0x27], zoom=0x40
+	video offset=CINEMATIC_489, x=[0x21], y=[0x27], zoom=0x40
 	mov [0x13], 0xFFFE
 	ret
 ;@endif
@@ -232,10 +232,10 @@ FOLD_BODY_104B_22B91458:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_SEQ_085_085_086:
-	video type=1, offset=CINEMATIC_085, x=132, y=39
-	video type=1, offset=CINEMATIC_085, x=297, y=39, zoom=0x40
-	video type=1, offset=CINEMATIC_086, x=132, y=39
-	video type=1, offset=CINEMATIC_086, x=297, y=39, zoom=0x40
+	video offset=CINEMATIC_085, x=132, y=39
+	video offset=CINEMATIC_085, x=297, y=39, zoom=0x40
+	video offset=CINEMATIC_086, x=132, y=39
+	video offset=CINEMATIC_086, x=297, y=39, zoom=0x40
 	ret
 ;@endif
 
@@ -248,11 +248,11 @@ DRAW_CIN_SEQ_085_085_086:
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_305_TO_309_5F_AT_AACB4DF5:
 	fill page=0x00, color=0x03
-	video type=1, offset=CINEMATIC_305, x=160, y=100
-	video type=1, offset=CINEMATIC_306, x=160, y=100
-	video type=1, offset=CINEMATIC_307, x=160, y=100
-	video type=1, offset=CINEMATIC_308, x=160, y=100
-	video type=1, offset=CINEMATIC_309, x=160, y=100
+	video offset=CINEMATIC_305, x=160, y=100
+	video offset=CINEMATIC_306, x=160, y=100
+	video offset=CINEMATIC_307, x=160, y=100
+	video offset=CINEMATIC_308, x=160, y=100
+	video offset=CINEMATIC_309, x=160, y=100
 	ret
 ;@endif
 
@@ -260,13 +260,13 @@ DRAW_CIN_305_TO_309_5F_AT_AACB4DF5:
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_305_TO_333_7F_AT_96C7E6A8:
 	fill page=0x00, color=0x03
-	video type=1, offset=CINEMATIC_305, x=160, y=100
-	video type=1, offset=CINEMATIC_328, x=160, y=100
-	video type=1, offset=CINEMATIC_329, x=160, y=100
-	video type=1, offset=CINEMATIC_330, x=160, y=100
-	video type=1, offset=CINEMATIC_331, x=160, y=100
-	video type=1, offset=CINEMATIC_332, x=160, y=100
-	video type=1, offset=CINEMATIC_333, x=160, y=100
+	video offset=CINEMATIC_305, x=160, y=100
+	video offset=CINEMATIC_328, x=160, y=100
+	video offset=CINEMATIC_329, x=160, y=100
+	video offset=CINEMATIC_330, x=160, y=100
+	video offset=CINEMATIC_331, x=160, y=100
+	video offset=CINEMATIC_332, x=160, y=100
+	video offset=CINEMATIC_333, x=160, y=100
 	ret
 ;@endif
 
@@ -279,17 +279,17 @@ DRAW_CIN_305_TO_333_7F_AT_96C7E6A8:
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 FILL_AND_DRAW_CIN_24_28:
 	fill page=0x00, color=0x00
-	video type=1, offset=CINEMATIC_024, x=160, y=100
-	video type=1, offset=CINEMATIC_025, x=160, y=100
-	video type=1, offset=CINEMATIC_026, x=160, y=100
-	video type=1, offset=CINEMATIC_027, x=160, y=100
-	video type=1, offset=CINEMATIC_028, x=160, y=100
-	video type=1, offset=CINEMATIC_029, x=160, y=400, zoom=0x40
-	video type=1, offset=CINEMATIC_030, x=160, y=100
-	video type=1, offset=CINEMATIC_031, x=160, y=100
-	video type=1, offset=CINEMATIC_032, x=160, y=100
-	video type=1, offset=CINEMATIC_033, x=160, y=100
-	video type=1, offset=CINEMATIC_034, x=160, y=100
+	video offset=CINEMATIC_024, x=160, y=100
+	video offset=CINEMATIC_025, x=160, y=100
+	video offset=CINEMATIC_026, x=160, y=100
+	video offset=CINEMATIC_027, x=160, y=100
+	video offset=CINEMATIC_028, x=160, y=100
+	video offset=CINEMATIC_029, x=160, y=400, zoom=0x40
+	video offset=CINEMATIC_030, x=160, y=100
+	video offset=CINEMATIC_031, x=160, y=100
+	video offset=CINEMATIC_032, x=160, y=100
+	video offset=CINEMATIC_033, x=160, y=100
+	video offset=CINEMATIC_034, x=160, y=100
 	ret
 ;@endif
 
@@ -301,28 +301,28 @@ FILL_AND_DRAW_CIN_24_28:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_624_TO_628_5F_AT_499AFE0A:
-	video type=1, offset=CINEMATIC_624, x=160, y=100
+	video offset=CINEMATIC_624, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_625, x=160, y=100
+	video offset=CINEMATIC_625, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_626, x=160, y=100
+	video offset=CINEMATIC_626, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_627, x=160, y=100
+	video offset=CINEMATIC_627, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_628, x=160, y=100
+	video offset=CINEMATIC_628, x=160, y=100
 	killChannel
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_628_TO_625_4F_AT_2F47D6D0:
-	video type=1, offset=CINEMATIC_628, x=160, y=100
+	video offset=CINEMATIC_628, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_627, x=160, y=100
+	video offset=CINEMATIC_627, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_626, x=160, y=100
+	video offset=CINEMATIC_626, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_625, x=160, y=100
+	video offset=CINEMATIC_625, x=160, y=100
 	break
 ;@endif
 
@@ -334,8 +334,8 @@ DRAW_CIN_628_TO_625_4F_AT_2F47D6D0:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_229_TO_632_2F_AT_1C4A817A:
-	video type=1, offset=CINEMATIC_229, x=[0x07], y=[0x08], zoom=0x40
-	video type=1, offset=CINEMATIC_632, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_229, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_632, x=[0x07], y=[0x08], zoom=0x40
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -349,9 +349,9 @@ DRAW_CIN_683_TO_685_3F_AT_1EB7324B:
 	setPalette 0x0B
 	selectVideoPage 0x00
 	fill page=0x00, color=0x04
-	video type=1, offset=CINEMATIC_683, x=160, y=100
-	video type=1, offset=CINEMATIC_684, x=160, y=100
-	video type=1, offset=CINEMATIC_685, x=160, y=100
+	video offset=CINEMATIC_683, x=160, y=100
+	video offset=CINEMATIC_684, x=160, y=100
+	video offset=CINEMATIC_685, x=160, y=100
 	copyVideoPage src=0x00, dst=0xFF
 	selectVideoPage 0xFF
 	mov [0x1A], 0x00A0

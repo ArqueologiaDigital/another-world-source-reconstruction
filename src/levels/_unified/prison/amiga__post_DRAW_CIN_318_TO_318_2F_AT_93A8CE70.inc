@@ -4,8 +4,8 @@ LABEL_0ADF:
 	and [0xF8], 0x0007
 	jne [0xF8], 0x00, LABEL_0ADF
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_319, x=225, y=50
-	video type=1, offset=CINEMATIC_319, x=278, y=50, zoom=0x40
+	video offset=CINEMATIC_319, x=225, y=50
+	video offset=CINEMATIC_319, x=278, y=50, zoom=0x40
 	selectVideoPage 0xFF
 
 LABEL_0AFA:

@@ -1,12 +1,12 @@
 CURSOR_ANIM_DONE_WAIT_RELEASE:
-	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jne [HERO_POS_UP_DOWN], 0x00, CURSOR_ANIM_DONE_WAIT_RELEASE
 	jne [HERO_POS_MASK], 0x00, CURSOR_ANIM_DONE_WAIT_RELEASE
 	jmp PASSCODE_INPUT_LOOP
 
 JUNK__0467:
-	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp JUNK__03F5
 JUNK__0470:

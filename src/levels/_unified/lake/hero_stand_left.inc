@@ -15,7 +15,7 @@ HERO_STAND_LEFT_LOOP:
 	jne [HERO_POS_MASK], 0x02, RESUME_L_CV079080_DONE
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, STAND_L_FALL_LEFT_PATH
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_HERO_STANDING_LEFT_IDLE, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_STANDING_LEFT_IDLE, x=[0x01], y=[0x02], zoom=[0x03]
 	jne [HERO_POS_MASK], 0x02, MAYBE_RESUME_WALK_LEFT_IF_GROUNDED
 ;@endif
 	sub [0x01], 0x0002
@@ -35,7 +35,7 @@ STAND_L_FALL_LEFT_PATH:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_STOP_R_BUNDLE_022_023
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_HERO_RESUME_RIGHT_2, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_RESUME_RIGHT_2, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 
 STAND_L_LAND_AFTER_RESUME_R_F2:
@@ -44,7 +44,7 @@ STAND_L_LAND_AFTER_RESUME_R_F2:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_STOP_R_BUNDLE_020_021
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_HERO_RESUME_RIGHT_1, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_RESUME_RIGHT_1, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 
 STAND_L_LAND_AFTER_RESUME_R_F1:
@@ -53,7 +53,7 @@ STAND_L_LAND_AFTER_RESUME_R_F1:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_STOP_R_BUNDLE_018_019
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_HERO_RESUME_RIGHT_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_RESUME_RIGHT_0, x=[0x01], y=[0x02], zoom=0x40
 ;@endif
 
 STAND_L_LAND_AFTER_RESUME_R_F0:
@@ -70,7 +70,7 @@ STAND_L_LAND_AFTER_RESUME_R_F0:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_STOP_R_BUNDLE_038_039
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_HERO_LEAP_RIGHT_F038_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LEAP_RIGHT_F038_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 
 STAND_L_LAND_AFTER_LEAP_R_F2:
@@ -79,7 +79,7 @@ STAND_L_LAND_AFTER_LEAP_R_F2:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_VIDEO_036_037_AND_HERO_STOP_RIGHT_FRAME_2_RET
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_HERO_LEAP_RIGHT_F036_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LEAP_RIGHT_F036_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 
 STAND_L_LAND_AFTER_LEAP_R_F1:
@@ -88,7 +88,7 @@ STAND_L_LAND_AFTER_LEAP_R_F1:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_HERO_STOP_R_BUNDLE_034_035
 ;@elif BRANCH == "chahi_amiga_1991"
-	video type=1, offset=CINEMATIC_HERO_LEAP_RIGHT_F034_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LEAP_RIGHT_F034_BUNDLE, x=[0x01], y=[0x02], zoom=[0x03]
 ;@endif
 
 STAND_L_LAND_AFTER_LEAP_R_F0:

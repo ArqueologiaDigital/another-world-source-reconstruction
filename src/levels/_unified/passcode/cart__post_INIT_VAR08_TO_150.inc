@@ -258,18 +258,18 @@ DRAW_OR_BLINK_LETTER:
 
 DRAW_LETTER_VIA_CIN_DISPATCH:
 	jne [0x06], 0x62, DRAW_CIN_000_LETTER_BLANK
-	video type=1, offset=CINEMATIC_001, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_001, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_CIN_000_LETTER_BLANK:
 	jne [0x06], 0x63, SHARED_RET
-	video type=1, offset=CINEMATIC_000, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_000, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 SHARED_RET:
 	ret
 	killChannel
-	video type=1, offset=CINEMATIC_004, x=160, y=100
+	video offset=CINEMATIC_004, x=160, y=100
 
 BLITTER_LOOP_COPY_PAGE_00:
 	blitFramebuffer 0xFF

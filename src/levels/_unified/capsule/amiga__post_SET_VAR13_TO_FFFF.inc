@@ -70,7 +70,7 @@ LABEL_4756:
 	setup channel=0x35, address=LABEL_83FA
 	setup channel=0x34, address=LABEL_83FA
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_530, x=162, y=70
+	video offset=CINEMATIC_530, x=162, y=70
 	selectVideoPage 0xFF
 	mov [0x47], 0x0FA0
 	ret

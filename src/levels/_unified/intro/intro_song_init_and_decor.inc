@@ -42,8 +42,8 @@ DELAY_9F_THEN_DRAW_CIN_132:
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_131, x=228, y=44
-	video type=1, offset=CINEMATIC_132, x=160, y=100
+	video offset=CINEMATIC_131, x=228, y=44
+	video offset=CINEMATIC_132, x=160, y=100
 	selectVideoPage 0xFF
 	setup channel=0x11, address=DRAW_CIN_453_454_SEQ
 	mov [0x03], 0x0009
@@ -54,8 +54,8 @@ DELAY_9F_THEN_DRAW_CIN_133:
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_131, x=228, y=44
-	video type=1, offset=CINEMATIC_133, x=160, y=100
+	video offset=CINEMATIC_131, x=228, y=44
+	video offset=CINEMATIC_133, x=160, y=100
 	selectVideoPage 0xFF
 	setup channel=0x11, address=DRAW_CIN_453_454_SEQ
 	mov [0x03], 0x000A
@@ -80,7 +80,7 @@ CH_03_INIT_VAR_01_02_FFF6:
 	mov [0x02], 0x0017
 
 DROP_CIN_134_DOWN_BY_10_23X:
-	video type=1, offset=CINEMATIC_134, x=110, y=[0x01], zoom=0x40
+	video offset=CINEMATIC_134, x=110, y=[0x01], zoom=0x40
 	add [0x01], 0x000A
 	break
 	djnz [0x02], DROP_CIN_134_DOWN_BY_10_23X
@@ -91,7 +91,7 @@ CH_04_INIT_VAR_04_05:
 	mov [0x05], 0x0050
 
 DRIFT_CIN_135_RIGHT_BY_2_80X:
-	video type=1, offset=CINEMATIC_135, x=[0x04], y=100, zoom=0x40
+	video offset=CINEMATIC_135, x=[0x04], y=100, zoom=0x40
 	add [0x04], 0x0002
 	break
 	djnz [0x05], DRIFT_CIN_135_RIGHT_BY_2_80X
@@ -103,7 +103,7 @@ CH_05_INIT_VAR_06_07:
 
 RISE_CIN_136_BY_10_FOR_23X:
 	break
-	video type=1, offset=CINEMATIC_136, x=110, y=[0x06], zoom=0x40
+	video offset=CINEMATIC_136, x=110, y=[0x06], zoom=0x40
 	sub [0x06], 0x000A
 	djnz [0x07], RISE_CIN_136_BY_10_FOR_23X
 	killChannel
@@ -119,8 +119,8 @@ DRAW_CIN_137_DOUBLE_OUTER:
 
 DRAW_CIN_137_AT_280_283_TWICE:
 	break
-	video type=1, offset=CINEMATIC_137, x=280, y=[0x08], zoom=0x40
-	video type=1, offset=CINEMATIC_137, x=283, y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_137, x=280, y=[0x08], zoom=0x40
+	video offset=CINEMATIC_137, x=283, y=[0x0b], zoom=0x40
 	djnz [0x0A], DRAW_CIN_137_AT_280_283_TWICE
 	add [0x08], 0x0003
 	sub [0x0B], 0x0003
@@ -131,39 +131,39 @@ LABEL_19C5:
 
 CH_06_DRAW_CIN_457_PARTICLES:
 	break
-	video type=1, offset=CINEMATIC_457, x=318, y=139, zoom=0x40
-	video type=1, offset=CINEMATIC_457, x=298, y=139, zoom=0x40
+	video offset=CINEMATIC_457, x=318, y=139, zoom=0x40
+	video offset=CINEMATIC_457, x=298, y=139, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_457, x=278, y=139, zoom=0x40
-	video type=1, offset=CINEMATIC_457, x=258, y=139, zoom=0x40
+	video offset=CINEMATIC_457, x=278, y=139, zoom=0x40
+	video offset=CINEMATIC_457, x=258, y=139, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_457, x=238, y=139
-	video type=1, offset=CINEMATIC_457, x=218, y=139
+	video offset=CINEMATIC_457, x=238, y=139
+	video offset=CINEMATIC_457, x=218, y=139
 	break
-	video type=1, offset=CINEMATIC_457, x=198, y=139
-	video type=1, offset=CINEMATIC_457, x=178, y=139
+	video offset=CINEMATIC_457, x=198, y=139
+	video offset=CINEMATIC_457, x=178, y=139
 	break
-	video type=1, offset=CINEMATIC_457, x=158, y=139
+	video offset=CINEMATIC_457, x=158, y=139
 	break
 	break
 	break
-	video type=1, offset=CINEMATIC_458, x=59, y=140
-	video type=1, offset=CINEMATIC_459, x=39, y=140
+	video offset=CINEMATIC_458, x=59, y=140
+	video offset=CINEMATIC_459, x=39, y=140
 	break
-	video type=1, offset=CINEMATIC_460, x=19, y=144
+	video offset=CINEMATIC_460, x=19, y=144
 	break
-	video type=1, offset=CINEMATIC_461, x=65532, y=152, zoom=0x40
+	video offset=CINEMATIC_461, x=65532, y=152, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_462, x=25, y=167
+	video offset=CINEMATIC_462, x=25, y=167
 	break
-	video type=1, offset=CINEMATIC_463, x=26, y=183
+	video offset=CINEMATIC_463, x=26, y=183
 	break
-	video type=1, offset=CINEMATIC_464, x=70, y=193
+	video offset=CINEMATIC_464, x=70, y=193
 	break
-	video type=1, offset=CINEMATIC_465, x=132, y=181
+	video offset=CINEMATIC_465, x=132, y=181
 	break
-	video type=1, offset=CINEMATIC_465, x=219, y=181
+	video offset=CINEMATIC_465, x=219, y=181
 	break
-	video type=1, offset=CINEMATIC_465, x=307, y=181, zoom=0x40
+	video offset=CINEMATIC_465, x=307, y=181, zoom=0x40
 	killChannel
 

@@ -2,7 +2,7 @@ LABEL_1CC1:
 	jne [0x6D], 0x00, LABEL_1CE5
 	selectVideoPage 0x00
 	fill page=0x00, color=0x0C
-	video type=1, offset=CINEMATIC_000, x=160, y=100
+	video offset=CINEMATIC_000, x=160, y=100
 	call DRAW_CIN_061_HORIZ_THEN_062
 	call DRAW_BG_DOTS_CIN_001_004
 	call DRAW_CIN_6_AND_RET
@@ -22,8 +22,8 @@ LABEL_1CE5:
 	call DRAW_CIN_SEQ_011_011_011
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0xFF
-	video type=1, offset=CINEMATIC_029, x=[0x0f], y=[0x10], zoom=0x40
-	video type=1, offset=CINEMATIC_030, x=160, y=90
+	video offset=CINEMATIC_029, x=[0x0f], y=[0x10], zoom=0x40
+	video offset=CINEMATIC_030, x=160, y=90
 	copyVideoPage src=0xFF, dst=0x00
 	selectVideoPage 0x00
 	call DRAW_CIN_6_AND_RET

@@ -17,31 +17,31 @@ LABEL_1DD7:
 	killChannel
 
 LABEL_1E0F:
-	video type=1, offset=CINEMATIC_008, x=160, y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_008, x=160, y=[0xe7], zoom=0x40
 	break
 	setPalette 0x0D
 	play id=0x0052, freq=0x0A, vol=0x40, channel=0x02
-	video type=1, offset=CINEMATIC_009, x=160, y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_009, x=160, y=[0xe7], zoom=0x40
 	break
 	setPalette 0x08
-	video type=1, offset=CINEMATIC_010, x=160, y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_010, x=160, y=[0xe7], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_011, x=160, y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_011, x=160, y=[0xe7], zoom=0x40
 	killChannel
 
 LABEL_1E33:
-	video type=1, offset=CINEMATIC_008, x=160, y=[0xe8], zoom=0x40
+	video offset=CINEMATIC_008, x=160, y=[0xe8], zoom=0x40
 	break
 	play id=0x0052, freq=0x14, vol=0x40, channel=0x02
-	video type=1, offset=CINEMATIC_009, x=160, y=[0xe8], zoom=0x40
+	video offset=CINEMATIC_009, x=160, y=[0xe8], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_010, x=160, y=[0xe8], zoom=0x40
+	video offset=CINEMATIC_010, x=160, y=[0xe8], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_011, x=160, y=[0xe8], zoom=0x40
+	video offset=CINEMATIC_011, x=160, y=[0xe8], zoom=0x40
 	killChannel
 
 HANG_DRAW_CIN_012:
-	video type=1, offset=CINEMATIC_012, x=160, y=100
+	video offset=CINEMATIC_012, x=160, y=100
 	break
 	jmp HANG_DRAW_CIN_012
 LABEL_1E59:

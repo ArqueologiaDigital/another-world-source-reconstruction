@@ -28,17 +28,17 @@ LABEL_2C72:
 	ret
 
 HANG_DRAW_CIN_637:
-	video type=1, offset=CINEMATIC_637, x=[0x74], y=[0x75], zoom=0x40
+	video offset=CINEMATIC_637, x=[0x74], y=[0x75], zoom=0x40
 	break
 	jmp HANG_DRAW_CIN_637
 
 HANG_DRAW_CIN_636:
-	video type=1, offset=CINEMATIC_636, x=[0x77], y=[0x78], zoom=0x40
+	video offset=CINEMATIC_636, x=[0x77], y=[0x78], zoom=0x40
 	break
 	jmp HANG_DRAW_CIN_636
 
 HANG_DRAW_CIN_720:
-	video type=1, offset=CINEMATIC_720, x=[0x7a], y=[0x7b], zoom=0x40
+	video offset=CINEMATIC_720, x=[0x7a], y=[0x7b], zoom=0x40
 	break
 	jmp HANG_DRAW_CIN_720
 LABEL_2CA6:
@@ -46,12 +46,12 @@ LABEL_2CA6:
 
 LABEL_2CA7:
 	jg [0x09], 0x07, LABEL_2CBF
-	video type=1, offset=CINEMATIC_637, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_637, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_2CB3:
 	jg [0x09], 0x07, LABEL_2CBF
-	video type=1, offset=CINEMATIC_636, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_636, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_2CBF:
@@ -61,7 +61,7 @@ LABEL_2CBF:
 
 LABEL_2CCE:
 	jg [0x09], 0x07, LABEL_2CDA
-	video type=1, offset=CINEMATIC_720, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_720, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_2CDA:
@@ -72,48 +72,48 @@ LABEL_2CDA:
 LABEL_2CE9:
 	jne [0x09], 0x08, LABEL_2D16
 	sub [0x08], 0x0008
-	video type=1, offset=CINEMATIC_636, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_636, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
 	sub [0x07], 0x000A
-	video type=1, offset=CINEMATIC_720, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_720, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
 	add [0x08], 0x0008
 	add [0x07], 0x0014
-	video type=1, offset=CINEMATIC_637, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_637, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
 	sub [0x07], 0x000A
 	ret
 
 LABEL_2D16:
 	jne [0x09], 0x09, LABEL_2D43
 	sub [0x08], 0x000A
-	video type=1, offset=CINEMATIC_636, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_636, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
 	add [0x08], 0x000A
 	sub [0x07], 0x0011
-	video type=1, offset=CINEMATIC_720, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_720, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
 	add [0x07], 0x0022
-	video type=1, offset=CINEMATIC_637, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_637, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
 	sub [0x07], 0x0011
 	ret
 
 LABEL_2D43:
 	jne [0x09], 0x0A, LABEL_2D70
-	video type=1, offset=CINEMATIC_636, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_636, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
 	sub [0x07], 0x0014
 	add [0x08], 0x0001
-	video type=1, offset=CINEMATIC_720, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_720, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
 	sub [0x08], 0x0001
 	add [0x07], 0x0028
-	video type=1, offset=CINEMATIC_637, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_637, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
 	sub [0x07], 0x0014
 	ret
 
 LABEL_2D70:
 	jl [0x09], 0x0B, SHARED_RET
-	video type=1, offset=CINEMATIC_636, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_636, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
 	sub [0x07], 0x001E
 	add [0x08], 0x0007
-	video type=1, offset=CINEMATIC_720, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_720, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
 	sub [0x08], 0x0007
 	add [0x07], 0x0032
-	video type=1, offset=CINEMATIC_637, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_637, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
 	sub [0x07], 0x0014
 	ret
 

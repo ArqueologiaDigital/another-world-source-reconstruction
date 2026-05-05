@@ -13,7 +13,7 @@ LABEL_29A6:
 	db 0x11
 
 LABEL_29A7:
-	video type=1, offset=CINEMATIC_604, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_604, x=[0x01], y=[0x02], zoom=0x40
 	or [0x04], 0x4000
 	break
 	jmp LABEL_29A7

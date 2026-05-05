@@ -73,10 +73,10 @@ LABEL_70E2:
 LABEL_70F8:
 	jl [0x04], 0x00, LABEL_711F
 	jl [0x2F], 0x1E, LABEL_710C
-	video type=1, offset=CINEMATIC_083, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_083, x=[0x01], y=[0x02], zoom=0x40
 	jmp LABEL_711F
 
 LABEL_710C:
 	jl [0x2F], 0x14, DRAW_CV139_AT_X01_Y02
-	video type=1, offset=CINEMATIC_082, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_082, x=[0x01], y=[0x02], zoom=0x40
 	jmp LABEL_711F

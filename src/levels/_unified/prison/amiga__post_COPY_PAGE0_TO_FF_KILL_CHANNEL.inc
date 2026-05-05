@@ -3,7 +3,7 @@ LABEL_7F92:
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, LABEL_7FAA
-	video type=1, offset=CINEMATIC_186, x=258, y=181, zoom=0x40
+	video offset=CINEMATIC_186, x=258, y=181, zoom=0x40
 
 LABEL_7FAA:
 	jl [0x01], 0xF0, LABEL_80A5
@@ -13,15 +13,15 @@ LABEL_7FAA:
 	break
 	mov [0x0A], 0x0001
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_172, x=253, y=181
+	video offset=CINEMATIC_172, x=253, y=181
 	selectVideoPage 0xFF
 	unfreezeChannels first=0x00, last=0x3A
 	copyVideoPage src=0x00, dst=0x03
 	fill page=0x00, color=0x05
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_173, x=160, y=100
-	video type=1, offset=CINEMATIC_174, x=160, y=100
-	video type=1, offset=CINEMATIC_175, x=160, y=100
+	video offset=CINEMATIC_173, x=160, y=100
+	video offset=CINEMATIC_174, x=160, y=100
+	video offset=CINEMATIC_175, x=160, y=100
 	selectVideoPage 0xFF
 	mov [PAUSE_SLICES], 0x0001
 	break
@@ -34,58 +34,58 @@ LABEL_7FAA:
 	setPalette 0x12
 	break
 	setPalette 0x06
-	video type=1, offset=CINEMATIC_176, x=160, y=100
+	video offset=CINEMATIC_176, x=160, y=100
 	break
 	fill page=0x00, color=0x05
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_173, x=160, y=100
-	video type=1, offset=CINEMATIC_174, x=160, y=100
+	video offset=CINEMATIC_173, x=160, y=100
+	video offset=CINEMATIC_174, x=160, y=100
 	selectVideoPage 0xFF
-	video type=1, offset=CINEMATIC_176, x=160, y=100
+	video offset=CINEMATIC_176, x=160, y=100
 	break
 	mov [PAUSE_SLICES], 0x0004
 	mov [0xC8], 0x0005
 
 LABEL_801E:
-	video type=1, offset=CINEMATIC_175, x=160, y=100
-	video type=1, offset=CINEMATIC_177, x=160, y=100
+	video offset=CINEMATIC_175, x=160, y=100
+	video offset=CINEMATIC_177, x=160, y=100
 	break
 	djnz [0xC8], LABEL_801E
 	mov [0xC8], 0x0005
 
 LABEL_802F:
-	video type=1, offset=CINEMATIC_175, x=160, y=100
-	video type=1, offset=CINEMATIC_176, x=160, y=100
+	video offset=CINEMATIC_175, x=160, y=100
+	video offset=CINEMATIC_176, x=160, y=100
 	break
 	djnz [0xC8], LABEL_802F
 	mov [0xC8], 0x0005
 
 LABEL_8040:
-	video type=1, offset=CINEMATIC_175, x=160, y=100
-	video type=1, offset=CINEMATIC_177, x=160, y=100
+	video offset=CINEMATIC_175, x=160, y=100
+	video offset=CINEMATIC_177, x=160, y=100
 	break
 	djnz [0xC8], LABEL_8040
-	video type=1, offset=CINEMATIC_178, x=160, y=100
-	video type=1, offset=CINEMATIC_177, x=160, y=100
+	video offset=CINEMATIC_178, x=160, y=100
+	video offset=CINEMATIC_177, x=160, y=100
 	break
 	play id=0x0055, freq=0x14, vol=0x40, channel=0x00
-	video type=1, offset=CINEMATIC_179, x=160, y=100
-	video type=1, offset=CINEMATIC_176, x=160, y=100
+	video offset=CINEMATIC_179, x=160, y=100
+	video offset=CINEMATIC_176, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_180, x=160, y=100
-	video type=1, offset=CINEMATIC_176, x=160, y=100
+	video offset=CINEMATIC_180, x=160, y=100
+	video offset=CINEMATIC_176, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_181, x=160, y=100
-	video type=1, offset=CINEMATIC_176, x=160, y=100
+	video offset=CINEMATIC_181, x=160, y=100
+	video offset=CINEMATIC_176, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_182, x=160, y=100
+	video offset=CINEMATIC_182, x=160, y=100
 	break
 	setPalette 0x08
-	video type=1, offset=CINEMATIC_183, x=160, y=100
+	video offset=CINEMATIC_183, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_184, x=160, y=100
+	video offset=CINEMATIC_184, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_185, x=160, y=100
+	video offset=CINEMATIC_185, x=160, y=100
 	mov [0xC8], 0x000A
 
 DELAY_LOOP_VARC8:
@@ -121,10 +121,10 @@ LABEL_80AA:
 	copyVideoPage src=0x80, dst=0x03
 	mov [0x65], 0x0005
 	selectVideoPage 0x03
-	video type=1, offset=CINEMATIC_087, x=160, y=100
-	video type=1, offset=CINEMATIC_088, x=160, y=100
-	video type=1, offset=CINEMATIC_089, x=160, y=100
-	video type=1, offset=CINEMATIC_089, x=0, y=100
+	video offset=CINEMATIC_087, x=160, y=100
+	video offset=CINEMATIC_088, x=160, y=100
+	video offset=CINEMATIC_089, x=160, y=100
+	video offset=CINEMATIC_089, x=0, y=100
 	selectVideoPage 0xFF
 	ret
 

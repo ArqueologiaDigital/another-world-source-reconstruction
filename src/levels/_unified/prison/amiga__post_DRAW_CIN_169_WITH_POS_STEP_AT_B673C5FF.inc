@@ -1,43 +1,43 @@
 LABEL_5187:
-	video type=1, offset=CINEMATIC_351, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_351, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0xF6], 0x00, LABEL_519A
-	video type=1, offset=CINEMATIC_354, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_354, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_519A:
 	jg [0x13], [0x30], LABEL_514F
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, LABEL_514F
-	video type=1, offset=CINEMATIC_353, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_353, x=[0x07], y=[0x08], zoom=0x40
 	jmp LABEL_514F
 
 LABEL_51B5:
-	video type=1, offset=CINEMATIC_355, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_355, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	sub [0xF5], 0x0001
 	jg [0xF6], 0x00, LABEL_51CC
-	video type=1, offset=CINEMATIC_357, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_357, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_51CC:
 	jg [0x13], [0x30], LABEL_514F
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, LABEL_514F
-	video type=1, offset=CINEMATIC_356, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_356, x=[0x07], y=[0x08], zoom=0x40
 	jmp LABEL_514F
 
 LABEL_51E7:
-	video type=1, offset=CINEMATIC_358, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_358, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], LABEL_5163
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, LABEL_5163
-	video type=1, offset=CINEMATIC_359, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_359, x=[0x07], y=[0x08], zoom=0x40
 	jmp LABEL_5163
 
 LABEL_5207:
-	video type=1, offset=CINEMATIC_360, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_360, x=[0x07], y=[0x08], zoom=0x40
 	jmp LABEL_5163
 
 LABEL_520F:
@@ -47,12 +47,12 @@ LABEL_520F:
 	ret
 
 LABEL_521B:
-	video type=1, offset=CINEMATIC_340, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_340, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET_AT_528D
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET_AT_528D
-	video type=1, offset=CINEMATIC_341, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_341, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_5239:
@@ -62,21 +62,21 @@ LABEL_5239:
 	ret
 
 DRAW_CIN_338_THEN_339:
-	video type=1, offset=CINEMATIC_338, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_338, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET_AT_528D
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET_AT_528D
-	video type=1, offset=CINEMATIC_339, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_339, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_242_THEN_243:
-	video type=1, offset=CINEMATIC_242, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_242, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET_AT_528D
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET_AT_528D
-	video type=1, offset=CINEMATIC_243, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_243, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_5281:

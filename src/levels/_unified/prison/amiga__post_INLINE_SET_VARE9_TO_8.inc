@@ -4,7 +4,7 @@ DELAY_LOOP_VARE9:
 	mov [0xE9], 0x0008
 
 ANIM_CIN_186_LOOP_VARE9:
-	video type=1, offset=CINEMATIC_186, x=145, y=100
+	video offset=CINEMATIC_186, x=145, y=100
 	break
 	djnz [0xE9], ANIM_CIN_186_LOOP_VARE9
 	jmp INLINE_SET_VARE9_TO_8
@@ -13,8 +13,8 @@ LABEL_0C4E:
 
 LABEL_0C4F:
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_326, x=160, y=100
-	video type=1, offset=CINEMATIC_327, x=192, y=65
+	video offset=CINEMATIC_326, x=160, y=100
+	video offset=CINEMATIC_327, x=192, y=65
 	selectVideoPage 0xFF
 	break
 	break
@@ -24,14 +24,14 @@ LABEL_0C4F:
 	break
 	break
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_326, x=160, y=101
-	video type=1, offset=CINEMATIC_279, x=192, y=65
+	video offset=CINEMATIC_326, x=160, y=101
+	video offset=CINEMATIC_279, x=192, y=65
 	selectVideoPage 0xFF
 	break
 	break
 	break
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_326, x=160, y=102
+	video offset=CINEMATIC_326, x=160, y=102
 	selectVideoPage 0xFF
 	break
 	break
@@ -40,7 +40,7 @@ LABEL_0C4F:
 	break
 	break
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_326, x=160, y=101
+	video offset=CINEMATIC_326, x=160, y=101
 	selectVideoPage 0xFF
 	break
 	break
@@ -50,25 +50,25 @@ LABEL_0C8D:
 	db 0x11
 
 LABEL_0C8E:
-	video type=1, offset=CINEMATIC_320, x=160, y=100
+	video offset=CINEMATIC_320, x=160, y=100
 	jmp LABEL_0CC3
 
 LABEL_0C95:
-	video type=1, offset=CINEMATIC_321, x=160, y=100
+	video offset=CINEMATIC_321, x=160, y=100
 	jmp LABEL_0CC3
 
 LABEL_0C9C:
-	video type=1, offset=CINEMATIC_322, x=160, y=100
+	video offset=CINEMATIC_322, x=160, y=100
 	selectVideoPage 0xFF
 	break
 	break
 	break
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_323, x=160, y=100
+	video offset=CINEMATIC_323, x=160, y=100
 	jmp LABEL_0CC3
 
 LABEL_0CAE:
-	video type=1, offset=CINEMATIC_324, x=160, y=100
+	video offset=CINEMATIC_324, x=160, y=100
 	selectVideoPage 0xFF
 	break
 	break
@@ -77,7 +77,7 @@ LABEL_0CAE:
 	break
 	break
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_325, x=160, y=100
+	video offset=CINEMATIC_325, x=160, y=100
 	jmp LABEL_0CC3
 
 LABEL_0CC3:

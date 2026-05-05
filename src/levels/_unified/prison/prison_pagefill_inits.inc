@@ -12,7 +12,7 @@ INIT_VARS_16_17:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN657_AT_X1A_Y1B:
-	video type=1, offset=CINEMATIC_657, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_657, x=[0x1a], y=[0x1b], zoom=0x40
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -23,7 +23,7 @@ DRAW_CIN657_AT_X1A_Y1B:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 INLINE_DRAW_CIN_659_AT_160_100:
-	video type=1, offset=CINEMATIC_659, x=160, y=100
+	video offset=CINEMATIC_659, x=160, y=100
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -67,98 +67,98 @@ SET_PAL_07_FILL_TWO_PAGES_86243111:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_236:
-	video type=1, offset=CINEMATIC_236, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_236, x=[0x07], y=[0x08], zoom=0x40
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_237:
-	video type=1, offset=CINEMATIC_237, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_237, x=[0x07], y=[0x08], zoom=0x40
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_238:
-	video type=1, offset=CINEMATIC_238, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_238, x=[0x07], y=[0x08], zoom=0x40
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_239:
-	video type=1, offset=CINEMATIC_239, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_239, x=[0x07], y=[0x08], zoom=0x40
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_235:
-	video type=1, offset=CINEMATIC_235, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_235, x=[0x07], y=[0x08], zoom=0x40
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_234:
-	video type=1, offset=CINEMATIC_234, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_234, x=[0x07], y=[0x08], zoom=0x40
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_233:
-	video type=1, offset=CINEMATIC_233, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_233, x=[0x07], y=[0x08], zoom=0x40
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_232:
-	video type=1, offset=CINEMATIC_232, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_232, x=[0x07], y=[0x08], zoom=0x40
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_231:
-	video type=1, offset=CINEMATIC_231, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_231, x=[0x07], y=[0x08], zoom=0x40
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_230:
-	video type=1, offset=CINEMATIC_230, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_230, x=[0x07], y=[0x08], zoom=0x40
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_229:
-	video type=1, offset=CINEMATIC_229, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_229, x=[0x07], y=[0x08], zoom=0x40
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_228:
-	video type=1, offset=CINEMATIC_228, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_228, x=[0x07], y=[0x08], zoom=0x40
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_225:
-	video type=1, offset=CINEMATIC_225, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_225, x=[0x07], y=[0x08], zoom=0x40
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_226:
-	video type=1, offset=CINEMATIC_226, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_226, x=[0x07], y=[0x08], zoom=0x40
 	ret
 ;@endif
 
@@ -170,7 +170,7 @@ DRAW_CIN_226:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_352:
-	video type=1, offset=CINEMATIC_352, x=[0xf5], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_352, x=[0xf5], y=[0x08], zoom=0x40
 	ret
 ;@endif
 
@@ -184,7 +184,7 @@ DRAW_CIN_352:
 DRAW_CIN_169_WITH_POS_STEP_AT_B673C5FF:
 	add [0x08], 0x000D
 	sub [0x07], 0x0002
-	video type=1, offset=CINEMATIC_169, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_169, x=[0x07], y=[0x08], zoom=0x40
 	add [0x07], 0x0002
 	sub [0x08], 0x000D
 	ret
@@ -207,7 +207,7 @@ SHARED_RET:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_240:
-	video type=1, offset=CINEMATIC_240, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_240, x=[0x07], y=[0x08], zoom=0x40
 	ret
 ;@endif
 
@@ -217,7 +217,7 @@ DRAW_CIN_240:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_241:
-	video type=1, offset=CINEMATIC_241, x=[0xf5], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_241, x=[0xf5], y=[0x08], zoom=0x40
 	ret
 ;@endif
 

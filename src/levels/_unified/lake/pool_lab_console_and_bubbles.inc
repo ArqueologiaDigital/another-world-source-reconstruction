@@ -3,14 +3,14 @@ LAB_CONSOLE_SINKING_ANIMATION:
 	mov [0x0B], 0x000F
 
 FLOATING_LAB_CONSOLE_PHASE_1:
-	video type=1, offset=CINEMATIC_FLOATING_LAB_CONSOLE, x=160, y=[0x0a], zoom=0x40
+	video offset=CINEMATIC_FLOATING_LAB_CONSOLE, x=160, y=[0x0a], zoom=0x40
 	add [0x0A], 0x0002
 	break
 	djnz [0x0B], FLOATING_LAB_CONSOLE_PHASE_1
 	mov [0x0B], 0x000A
 
 FLOATING_LAB_CONSOLE_PHASE_2:
-	video type=1, offset=CINEMATIC_FLOATING_LAB_CONSOLE, x=160, y=[0x0a], zoom=0x40
+	video offset=CINEMATIC_FLOATING_LAB_CONSOLE, x=160, y=[0x0a], zoom=0x40
 	add [0x0A], 0x0003
 	break
 	djnz [0x0B], FLOATING_LAB_CONSOLE_PHASE_2
@@ -19,7 +19,7 @@ FLOATING_LAB_CONSOLE_PHASE_2:
 	mov [0x0B], 0x000F
 
 FLOATING_LAB_CONSOLE_PHASE_3:
-	video type=1, offset=CINEMATIC_FLOATING_LAB_CONSOLE, x=160, y=[0x0a], zoom=0x40
+	video offset=CINEMATIC_FLOATING_LAB_CONSOLE, x=160, y=[0x0a], zoom=0x40
 	add [0x0A], 0x0004
 	break
 	djnz [0x0B], FLOATING_LAB_CONSOLE_PHASE_3
@@ -27,7 +27,7 @@ FLOATING_LAB_CONSOLE_PHASE_3:
 	jmp SETUP_TENTACLE_ANIMATIONS
 
 SINKING_AT_CONSOLE:
-	video type=1, offset=CINEMATIC_SITTING_AT_SINKING_CONSOLE, x=160, y=[0x0a], zoom=0x40
+	video offset=CINEMATIC_SITTING_AT_SINKING_CONSOLE, x=160, y=[0x0a], zoom=0x40
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	je [HERO_POS_UP_DOWN], 0xFFFF, SWIMMING_UP
@@ -44,11 +44,11 @@ SWIMMING_UP:
 
 SWIMMING_UP:
 ;@endif
-	video type=1, offset=CINEMATIC_SWIM_OUT_OF_CONSOLE_0, x=160, y=[0x0a], zoom=0x40
+	video offset=CINEMATIC_SWIM_OUT_OF_CONSOLE_0, x=160, y=[0x0a], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWIM_OUT_OF_CONSOLE_1, x=160, y=[0x0a], zoom=0x40
+	video offset=CINEMATIC_SWIM_OUT_OF_CONSOLE_1, x=160, y=[0x0a], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWIM_OUT_OF_CONSOLE_2, x=160, y=[0x0a], zoom=0x40
+	video offset=CINEMATIC_SWIM_OUT_OF_CONSOLE_2, x=160, y=[0x0a], zoom=0x40
 	mov [0x02], [0x0A]
 	sub [0x02], 0x000D
 	mov [0x63], 0x0001

@@ -30,11 +30,11 @@ LABEL_9E64:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_855
-	video type=1, offset=CINEMATIC_856, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_856, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_CIN_855:
-	video type=1, offset=CINEMATIC_855, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_855, x=[0x01], y=[0x02], zoom=0x40
 	ret
 LABEL_9E7D:
 	db 0x11
@@ -43,11 +43,11 @@ LABEL_9E7E:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_853
-	video type=1, offset=CINEMATIC_854, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_854, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_CIN_853:
-	video type=1, offset=CINEMATIC_853, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_853, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9E97:

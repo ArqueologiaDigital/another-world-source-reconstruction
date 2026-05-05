@@ -154,7 +154,7 @@ LABEL_ECE2:
 
 LABEL_ECE3:
 	sub [0x01], 0x0004
-	video type=1, offset=CINEMATIC_170, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_170, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0001
 	je [HERO_POS_MASK], 0x00, LABEL_ECDB
 	break
@@ -242,7 +242,7 @@ LABEL_EDCC:
 	db 0x11
 
 LABEL_EDCD:
-	video type=1, offset=CINEMATIC_170, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_170, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0003
 	je [HERO_POS_MASK], 0x00, LABEL_EDC5
 	break
@@ -342,7 +342,7 @@ LABEL_EED5:
 	call LABEL_9D37
 	add [0x01], 0x0002
 	break
-	video type=1, offset=CINEMATIC_174, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_174, x=[0x01], y=[0x02], zoom=0x40
 	mov [0x63], 0x0001
 	mov [0x0A], 0x0001
 	jmp HERO_WALK_LEFT_LOOP

@@ -22,23 +22,23 @@ LABEL_32E5:
 	je [0x23], 0x0C, DRAW_CIN_255
 
 DRAW_CIN_254:
-	video type=1, offset=CINEMATIC_254, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_254, x=[0x21], y=[0x22], zoom=0x40
 	ret
 
 DRAW_CIN_255:
-	video type=1, offset=CINEMATIC_255, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_255, x=[0x21], y=[0x22], zoom=0x40
 	ret
 
 DRAW_CIN_256:
-	video type=1, offset=CINEMATIC_256, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_256, x=[0x21], y=[0x22], zoom=0x40
 	ret
 
 DRAW_CIN_257:
-	video type=1, offset=CINEMATIC_257, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_257, x=[0x21], y=[0x22], zoom=0x40
 	ret
 
 HANG_DRAW_CIN_253:
-	video type=1, offset=CINEMATIC_253, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_253, x=[0xe6], y=[0xe7], zoom=0x40
 	break
 	jmp HANG_DRAW_CIN_253
 LABEL_334E:

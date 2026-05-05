@@ -1,47 +1,47 @@
 DRAW_CIN_190_LOOP:
-	video type=1, offset=CINEMATIC_190, x=[0x03], y=[0x04], zoom=0x40
+	video offset=CINEMATIC_190, x=[0x03], y=[0x04], zoom=0x40
 	break
 	jmp DRAW_CIN_190_LOOP
 LABEL_119E:
 	killChannel
 
 DRAW_CIN_431_LOOP:
-	video type=1, offset=CINEMATIC_431, x=[0x03], y=[0x04], zoom=0x40
+	video offset=CINEMATIC_431, x=[0x03], y=[0x04], zoom=0x40
 	break
 	jmp DRAW_CIN_431_LOOP
 LABEL_11A8:
 	killChannel
 
 DRAW_CITY_SEQ_432_433:
-	video type=1, offset=CINEMATIC_432, x=160, y=100
+	video offset=CINEMATIC_432, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_433, x=160, y=100
+	video offset=CINEMATIC_433, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_434, x=160, y=100
+	video offset=CINEMATIC_434, x=160, y=100
 	break
 	jmp DRAW_CITY_SEQ_432_433
 LABEL_11BB:
 	killChannel
 
 DRAW_CITY_SEQ_439_440:
-	video type=1, offset=CINEMATIC_439, x=160, y=100
+	video offset=CINEMATIC_439, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_440, x=160, y=100
+	video offset=CINEMATIC_440, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_441, x=160, y=100
+	video offset=CINEMATIC_441, x=160, y=100
 	break
 	jmp DRAW_CITY_SEQ_439_440
 LABEL_11CE:
 	killChannel
 
 DRAW_CITY_SEQ_435_436:
-	video type=1, offset=CINEMATIC_435, x=160, y=100
+	video offset=CINEMATIC_435, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_436, x=160, y=100
+	video offset=CINEMATIC_436, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_437, x=160, y=100
+	video offset=CINEMATIC_437, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_438, x=160, y=100
+	video offset=CINEMATIC_438, x=160, y=100
 	break
 	jmp DRAW_CITY_SEQ_435_436
 LABEL_11E6:
@@ -49,8 +49,8 @@ LABEL_11E6:
 
 INTRO_FILL_AND_DRAW_CIN_429_430:
 	fill page=0xFF, color=0x02
-	video type=1, offset=CINEMATIC_429, x=160, y=100
-	video type=1, offset=CINEMATIC_430, x=160, y=100
+	video offset=CINEMATIC_429, x=160, y=100
+	video offset=CINEMATIC_430, x=160, y=100
 	setPalette 0x09
 	copyVideoPage src=0xFF, dst=0x00
 	killChannel
@@ -184,8 +184,8 @@ DELAY_14_BEFORE_BLITTER_SETUP:
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	selectVideoPage 0x03
-	video type=1, offset=CINEMATIC_191, x=162, y=100
-	video type=1, offset=CINEMATIC_192, x=234, y=163
+	video offset=CINEMATIC_191, x=162, y=100
+	video offset=CINEMATIC_192, x=234, y=163
 	selectVideoPage 0xFF
 	copyVideoPage src=0x03, dst=0x00
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP

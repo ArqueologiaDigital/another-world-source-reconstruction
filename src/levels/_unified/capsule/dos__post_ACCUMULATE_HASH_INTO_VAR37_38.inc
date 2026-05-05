@@ -458,49 +458,49 @@ LABEL_3621:
 	db 0x11
 
 DRAW_CIN_714_THEN_CIN_717:
-	video type=1, offset=CINEMATIC_714, x=[0xe6], y=[0xe7], zoom=0x40
-	video type=1, offset=CINEMATIC_717, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_714, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_717, x=[0xe6], y=[0xe7], zoom=0x40
 	ret
 
 LABEL_362D:
-	video type=1, offset=CINEMATIC_714, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_714, x=[0xe6], y=[0xe7], zoom=0x40
 	add [0xE6], 0x0001
-	video type=1, offset=CINEMATIC_716, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_716, x=[0xe6], y=[0xe7], zoom=0x40
 	sub [0xE6], 0x0001
 	ret
 
 LABEL_3640:
-	video type=1, offset=CINEMATIC_714, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_714, x=[0xe6], y=[0xe7], zoom=0x40
 	add [0xE6], 0x0002
-	video type=1, offset=CINEMATIC_715, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_715, x=[0xe6], y=[0xe7], zoom=0x40
 	sub [0xE6], 0x0002
 	ret
 
 LABEL_3653:
-	video type=1, offset=CINEMATIC_714, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_714, x=[0xe6], y=[0xe7], zoom=0x40
 	add [0xE6], 0x0003
-	video type=1, offset=CINEMATIC_715, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_715, x=[0xe6], y=[0xe7], zoom=0x40
 	sub [0xE6], 0x0003
 	ret
 
 LABEL_3666:
-	video type=1, offset=CINEMATIC_714, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_714, x=[0xe6], y=[0xe7], zoom=0x40
 	add [0xE6], 0x0004
-	video type=1, offset=CINEMATIC_715, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_715, x=[0xe6], y=[0xe7], zoom=0x40
 	sub [0xE6], 0x0004
 	ret
 
 LABEL_3679:
-	video type=1, offset=CINEMATIC_714, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_714, x=[0xe6], y=[0xe7], zoom=0x40
 	add [0xE6], 0x0006
-	video type=1, offset=CINEMATIC_715, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_715, x=[0xe6], y=[0xe7], zoom=0x40
 	sub [0xE6], 0x0006
 	ret
 
 LABEL_368C:
-	video type=1, offset=CINEMATIC_714, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_714, x=[0xe6], y=[0xe7], zoom=0x40
 	add [0xE6], 0x0008
-	video type=1, offset=CINEMATIC_715, x=[0xe6], y=[0xe7], zoom=0x40
+	video offset=CINEMATIC_715, x=[0xe6], y=[0xe7], zoom=0x40
 	sub [0xE6], 0x0008
 	ret
 

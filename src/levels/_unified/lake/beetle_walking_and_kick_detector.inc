@@ -32,39 +32,39 @@ CINEMATIC_BEETLE_WALKING_RIGHT_6		EQU 0xB4C8
 ;@endif
 
 BEETLE_WALKING_RIGHT:
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_0, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_0, x=[0x0a], y=[0x0b], zoom=0x40
 	add [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_1, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_1, x=[0x0a], y=[0x0b], zoom=0x40
 	add [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_2, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_2, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_2, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_2, x=[0x0a], y=[0x0b], zoom=0x40
 	add [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_3, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_3, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_3, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_3, x=[0x0a], y=[0x0b], zoom=0x40
 	add [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_4, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_4, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_4, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_4, x=[0x0a], y=[0x0b], zoom=0x40
 	add [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_5, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_5, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_5, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_5, x=[0x0a], y=[0x0b], zoom=0x40
 	add [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_6, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_6, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_6, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_6, x=[0x0a], y=[0x0b], zoom=0x40
 	add [0x0A], 0x0001
 	break
 	jmp BEETLE_WALKING_RIGHT
@@ -117,39 +117,39 @@ BEETLE_INIT_POS_THEN_WALK_LEFT:
 	mov [0x0B], 0x00B6
 
 BEETLE_WALKING_LEFT:
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_0, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_0, x=[0x0a], y=[0x0b], zoom=0x40
 	sub [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_1, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_1, x=[0x0a], y=[0x0b], zoom=0x40
 	sub [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_2, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_2, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_2, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_2, x=[0x0a], y=[0x0b], zoom=0x40
 	sub [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_3, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_3, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_3, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_3, x=[0x0a], y=[0x0b], zoom=0x40
 	sub [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_4, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_4, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_4, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_4, x=[0x0a], y=[0x0b], zoom=0x40
 	sub [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_5, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_5, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_5, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_5, x=[0x0a], y=[0x0b], zoom=0x40
 	sub [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_6, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_6, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_6, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_6, x=[0x0a], y=[0x0b], zoom=0x40
 	sub [0x0A], 0x0001
 	break
 	jmp BEETLE_WALKING_LEFT

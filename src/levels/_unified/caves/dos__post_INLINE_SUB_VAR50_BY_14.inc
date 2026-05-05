@@ -12,7 +12,7 @@ LABEL_A266:
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	selectVideoPage 0x00
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=1, offset=CINEMATIC_875, x=100, y=[0x44], zoom=0x40
+	video offset=CINEMATIC_875, x=100, y=[0x44], zoom=0x40
 	selectVideoPage 0xFF
 	setPalette 0x02
 	mov [0x50], 0x0064
@@ -221,7 +221,7 @@ LABEL_A4D7:
 	je [0xF8], 0x00, LABEL_A528
 	mov [0x48], 0x7FFF
 	mov [0x49], 0x7FFF
-	video type=1, offset=CINEMATIC_407, x=160, y=100
+	video offset=CINEMATIC_407, x=160, y=100
 
 LABEL_A528:
 	call DELETE_GAME_CHANS_AND_TEARDOWN
@@ -278,8 +278,8 @@ LABEL_A593:
 	je [0xF8], 0x00, LABEL_A5E1
 	setup channel=0x34, address=LABEL_CFFD
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_421, x=162, y=70
-	video type=1, offset=CINEMATIC_422, x=169, y=180
+	video offset=CINEMATIC_421, x=162, y=70
+	video offset=CINEMATIC_422, x=169, y=180
 	selectVideoPage 0xFF
 	mov [0x47], 0x0FA0
 
@@ -1270,13 +1270,13 @@ LABEL_B1BE:
 	mov [0xF8], [0xB2]
 	and [0xF8], 0x0002
 	je [0xF8], 0x00, LABEL_B223
-	video type=1, offset=CINEMATIC_560, x=160, y=100
+	video offset=CINEMATIC_560, x=160, y=100
 	mov [0xAA], 0xFFFF
 	mov [0xAD], 0xFFFF
 	jmp LABEL_B22E
 
 LABEL_B223:
-	video type=1, offset=CINEMATIC_559, x=160, y=100
+	video offset=CINEMATIC_559, x=160, y=100
 	mov [0xF8], [0xB2]
 	and [0xF8], 0x0002
 

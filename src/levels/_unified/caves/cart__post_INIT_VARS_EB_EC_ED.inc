@@ -1,6 +1,6 @@
 LABEL_28DE:
-	video type=1, offset=CINEMATIC_470, x=160, y=[0xec], zoom=0x40
-	video type=1, offset=CINEMATIC_471, x=160, y=[0xed], zoom=0x40
+	video offset=CINEMATIC_470, x=160, y=[0xec], zoom=0x40
+	video offset=CINEMATIC_471, x=160, y=[0xed], zoom=0x40
 	sub [0xEC], 0x0010
 	sub [0xED], 0x000C
 	break
@@ -69,9 +69,9 @@ LABEL_296A:
 LABEL_2992:
 	break
 	je [HACK_VAR_67], 0x28, LABEL_29DA
-	video type=1, offset=CINEMATIC_291, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_291, x=[0x01], y=[0x02], zoom=0x40
 	je [0xDB], 0x00, LABEL_29A9
-	video type=1, offset=CINEMATIC_293, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_293, x=[0x01], y=[0x02], zoom=0x40
 
 LABEL_29A9:
 	break
@@ -91,15 +91,15 @@ LABEL_29C8:
 	db 0x11
 
 LABEL_29C9:
-	video type=1, offset=CINEMATIC_292, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_292, x=[0x01], y=[0x02], zoom=0x40
 	je [0xDB], 0x00, SHARED_RET
-	video type=1, offset=CINEMATIC_293, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_293, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_29DA:
-	video type=1, offset=CINEMATIC_288, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_288, x=[0x01], y=[0x02], zoom=0x40
 	je [0xDB], 0x00, LABEL_29EA
-	video type=1, offset=CINEMATIC_290, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_290, x=[0x01], y=[0x02], zoom=0x40
 
 LABEL_29EA:
 	break
@@ -119,9 +119,9 @@ LABEL_2A09:
 	db 0x11
 
 LABEL_2A0A:
-	video type=1, offset=CINEMATIC_289, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_289, x=[0x01], y=[0x02], zoom=0x40
 	je [0xDB], 0x00, SHARED_RET
-	video type=1, offset=CINEMATIC_290, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_290, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_2A1B:

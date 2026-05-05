@@ -93,30 +93,30 @@ LABEL_5BC5:
 	db 0x11
 
 LABEL_5BC6:
-	video type=1, offset=CINEMATIC_343, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_343, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0002
 	je [0xF8], 0x00, SHARED_RET
-	video type=1, offset=CINEMATIC_344, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_344, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_5BE4:
-	video type=1, offset=CINEMATIC_345, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_345, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0002
 	je [0xF8], 0x00, SHARED_RET
-	video type=1, offset=CINEMATIC_346, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_346, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_5C02:
-	video type=1, offset=CINEMATIC_347, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_347, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=1, offset=CINEMATIC_348, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_348, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_5C20:
@@ -126,13 +126,13 @@ LABEL_5C20:
 	ret
 
 LABEL_5C2C:
-	video type=1, offset=CINEMATIC_170, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_170, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DRAW_CIN_169_IF_VAR09_EQ_1
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_CIN_169_IF_VAR09_EQ_1
-	video type=1, offset=CINEMATIC_171, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_171, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_CIN_169_IF_VAR09_EQ_1
 
 LABEL_5C4F:
@@ -142,23 +142,23 @@ LABEL_5C4F:
 	ret
 
 LABEL_5C5B:
-	video type=1, offset=CINEMATIC_334, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_334, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DRAW_CIN_169_IF_VAR09_EQ_1
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_CIN_169_IF_VAR09_EQ_1
-	video type=1, offset=CINEMATIC_335, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_335, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_CIN_169_IF_VAR09_EQ_1
 
 LABEL_5C7E:
-	video type=1, offset=CINEMATIC_336, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_336, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DRAW_CIN_169_IF_VAR09_EQ_1
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_CIN_169_IF_VAR09_EQ_1
-	video type=1, offset=CINEMATIC_337, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_337, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_CIN_169_IF_VAR09_EQ_1
 
 LABEL_5CA1:

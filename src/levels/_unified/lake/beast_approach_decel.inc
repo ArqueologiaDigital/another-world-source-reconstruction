@@ -24,35 +24,35 @@ BEAST_APPROACH_F1_TICK:
 	jl [0x2A], 0x04, BEAST_APPROACH_FAST_LOOP
 	jg [0x0E], 0xFA, BEAST_APPROACH_FAST_LOOP
 	sub [0x0F], 0x000A
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_FAST_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000F
 	sub [0x0F], 0x0008
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_FAST_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
 	sub [0x0F], 0x0005
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_FAST_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
 	sub [0x0F], 0x0005
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_FAST_4, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
 	sub [0x0F], 0x0002
-	video type=1, offset=CINEMATIC_BEAST_PREROLL, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_PREROLL, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000B
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_FRAME, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_FRAME, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0006
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000C
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_2, x=[0x0e], y=[0x0f], zoom=0x40
 	mov [0x10], 0x0003
 	play id=0x004E, freq=0x1C, vol=0x3F, channel=0x00
 	play id=0x0030, freq=0x1C, vol=0x3F, channel=0x01
@@ -61,13 +61,13 @@ BEAST_APPROACH_F1_TICK:
 BEAST_PRE_HOLD_LOOP:
 	break
 	sub [0x0E], 0x0001
-	video type=1, offset=CINEMATIC_BEAST_HOLD_POSE, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_HOLD_POSE, x=[0x0e], y=[0x0f], zoom=0x40
 	djnz [0x10], BEAST_PRE_HOLD_LOOP
 	play id=0x004E, freq=0x1C, vol=0x30, channel=0x00
 
 BEAST_FINAL_HOLD_LOOP:
 	break
-	video type=1, offset=CINEMATIC_BEAST_HOLD_POSE, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_HOLD_POSE, x=[0x0e], y=[0x0f], zoom=0x40
 	jmp BEAST_FINAL_HOLD_LOOP
 	killChannel
 
@@ -83,50 +83,50 @@ BEAST_ARRIVAL_DECEL:
 ;@if BRANCH == "dos_1992"
 	setup channel=0x29, address=KILL_CHANNEL_ROUTINE
 ;@endif
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_3, x=[0x0e], y=[0x0f], zoom=0x40
 	play id=0x0030, freq=0x1C, vol=0x20, channel=0x00
 	break
 	sub [0x0E], 0x000B
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000B
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_4, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000A
-	video type=1, offset=CINEMATIC_BEAST_DECEL_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0009
-	video type=1, offset=CINEMATIC_BEAST_DECEL_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0009
-	video type=1, offset=CINEMATIC_BEAST_DECEL_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0008
-	video type=1, offset=CINEMATIC_BEAST_DECEL_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0008
-	video type=1, offset=CINEMATIC_BEAST_DECEL_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_4, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0008
-	video type=1, offset=CINEMATIC_BEAST_DECEL_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0006
-	video type=1, offset=CINEMATIC_BEAST_DECEL_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0005
-	video type=1, offset=CINEMATIC_BEAST_DECEL_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0004
-	video type=1, offset=CINEMATIC_BEAST_DECEL_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	mov [0x10], 0x0005
 
 BEAST_DECEL_STEP_3_LOOP:
 	sub [0x0E], 0x0003
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	djnz [0x10], BEAST_DECEL_STEP_3_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
@@ -139,7 +139,7 @@ BEAST_DECEL_STEP_3_LOOP:
 
 BEAST_DECEL_STEP_2_LOOP:
 	sub [0x0E], 0x0002
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	djnz [0x10], BEAST_DECEL_STEP_2_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
@@ -152,7 +152,7 @@ BEAST_DECEL_STEP_2_LOOP:
 
 BEAST_DECEL_STEP_1_LOOP:
 	sub [0x0E], 0x0001
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	djnz [0x10], BEAST_DECEL_STEP_1_LOOP
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
@@ -164,7 +164,7 @@ BEAST_DECEL_STEP_1_LOOP:
 	mov [0x10], 0x0005
 
 HOLD_LAKE_139_FOR_N_FRAMES:
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	djnz [0x10], HOLD_LAKE_139_FOR_N_FRAMES
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
@@ -175,9 +175,9 @@ BEAST_PASS_HERO_DECEL:
 
 BEAST_PASS_HERO_DECEL:
 ;@endif
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_4, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x29, address=CHECK_IF_THE_BEAST_HAS_ALREADY_REACHED_LESTER
@@ -201,7 +201,7 @@ WAIT_BEAST_TRIGGER_THEN_INIT:
 	mov [0x65], 0x0005
 	fill page=0x00, color=0x0B
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
 	selectVideoPage 0xFF
 	unfreezeChannels first=0x00, last=0x27
 	unfreezeChannels first=0x29, last=0x3B

@@ -1,5 +1,5 @@
 LABEL_755D:
 	jne [0x06], 0xFFFF, LABEL_757D
 	jl [0x14], 0x00, DRAW_CIN054_AT_X03_Y04
-	video type=1, offset=CINEMATIC_056, x=[0x03], y=[0x04], zoom=0x40
+	video offset=CINEMATIC_056, x=[0x03], y=[0x04], zoom=0x40
 	jmp DRAW_CIN_055_AT_7577

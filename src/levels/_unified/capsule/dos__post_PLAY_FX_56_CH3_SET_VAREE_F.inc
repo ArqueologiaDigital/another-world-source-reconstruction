@@ -29,38 +29,38 @@ DELAY_LOOP_VAREE_AT_09B4:
 
 LABEL_09BC:
 	mov [0xEB], 0x00A0
-	video type=1, offset=CINEMATIC_237, x=[0xeb], y=[0x40], zoom=0x40
-	video type=1, offset=CINEMATIC_593, x=[0xeb], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_237, x=[0xeb], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_593, x=[0xeb], y=[0x40], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_238, x=[0xeb], y=[0x40], zoom=0x40
-	video type=1, offset=CINEMATIC_593, x=[0xeb], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_238, x=[0xeb], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_593, x=[0xeb], y=[0x40], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_239, x=[0xeb], y=[0x40], zoom=0x40
-	video type=1, offset=CINEMATIC_594, x=[0xeb], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_239, x=[0xeb], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_594, x=[0xeb], y=[0x40], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_241, x=[0xeb], y=[0x40], zoom=0x40
-	video type=1, offset=CINEMATIC_594, x=[0xeb], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_241, x=[0xeb], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_594, x=[0xeb], y=[0x40], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_238, x=[0xeb], y=[0x40], zoom=0x40
-	video type=1, offset=CINEMATIC_594, x=[0xeb], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_238, x=[0xeb], y=[0x40], zoom=0x40
+	video offset=CINEMATIC_594, x=[0xeb], y=[0x40], zoom=0x40
 	break
 	jmp LABEL_09BC
 LABEL_09FA:
 	db 0x11
 
 LABEL_09FB:
-	video type=1, offset=CINEMATIC_573, x=125, y=65508, zoom=0x40
+	video offset=CINEMATIC_573, x=125, y=65508, zoom=0x40
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x00
 	break
-	video type=1, offset=CINEMATIC_574, x=125, y=65508, zoom=0x40
+	video offset=CINEMATIC_574, x=125, y=65508, zoom=0x40
 	break
 	break
 	break
-	video type=1, offset=CINEMATIC_231, x=176, y=90
+	video offset=CINEMATIC_231, x=176, y=90
 	break
-	video type=1, offset=CINEMATIC_229, x=211, y=125
+	video offset=CINEMATIC_229, x=211, y=125
 	break
-	video type=1, offset=CINEMATIC_231, x=114, y=28
+	video offset=CINEMATIC_231, x=114, y=28
 	break
 	break
 	jmp LABEL_09FB

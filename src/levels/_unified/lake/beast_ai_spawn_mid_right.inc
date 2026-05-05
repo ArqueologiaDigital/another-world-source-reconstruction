@@ -30,12 +30,12 @@ BEAST_AI_SPAWN_MR_HOLD_LOOP:
 	jg [0x01], 0x96, BEAST_AI_SPAWN_MR_AFTER_HOLD
 
 BEAST_AI_SPAWN_MR_DRAW_BODY:
-	video type=1, offset=CINEMATIC_BEAST_HOLD_POSE, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_HOLD_POSE, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	djnz [0x10], BEAST_AI_SPAWN_MR_HOLD_LOOP
 
 BEAST_AI_SPAWN_MR_AFTER_HOLD:
 	sub [0x0E], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_FAST_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 

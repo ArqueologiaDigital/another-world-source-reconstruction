@@ -3239,11 +3239,11 @@ LABEL_00C0:
 	mov [0x00], [0x18]
 	mov [0xF8], [0x00]
 	shr [0xF8], 0x0008
-	video type=1, offset=CINEMATIC_445, x=[0xf8], y=0, zoom=0x40
+	video offset=CINEMATIC_445, x=[0xf8], y=0, zoom=0x40
 	mov [0xF8], [0x00]
 	and [0xF8], 0x00FF
-	video type=1, offset=CINEMATIC_445, x=[0xf8], y=1, zoom=0x40
-	video type=1, offset=CINEMATIC_881, x=[0x01], y=2, zoom=0x40
+	video offset=CINEMATIC_445, x=[0xf8], y=1, zoom=0x40
+	video offset=CINEMATIC_881, x=[0x01], y=2, zoom=0x40
 	killChannel
 
 LABEL_00FB:
@@ -3327,7 +3327,7 @@ LABEL_01B3:
 	mov [0x01], 0x03E8
 
 LABEL_01EE:
-	video type=1, offset=CINEMATIC_893, x=160, y=100
+	video offset=CINEMATIC_893, x=160, y=100
 	djnz [0x01], LABEL_01EE
 	break
 	setPalette 0x0C

@@ -245,19 +245,19 @@ COPY_PROTECTION_VAR_BC_C6:
 	and [0xC6], 0x0080
 	jmp LIKELY_A_COPY_PROTECTION_MECHANISM
 	je [0xBC], 0x00, DRAW_PROGRESS_MARKERS
-	video type=1, offset=CINEMATIC_058, x=0, y=0
+	video offset=CINEMATIC_058, x=0, y=0
 
 DRAW_PROGRESS_MARKERS:
 	je [0xC6], 0x00, DRAW_CIN_058_AT_0_16_IF_VARF2_EQ_FA0
-	video type=1, offset=CINEMATIC_058, x=16, y=0
+	video offset=CINEMATIC_058, x=16, y=0
 
 DRAW_CIN_058_AT_0_16_IF_VARF2_EQ_FA0:
 	jne [0xF2], 0x0FA0, DRAW_CIN_058_AT_16_16_IF_VARDC_EQ_21
-	video type=1, offset=CINEMATIC_058, x=0, y=16
+	video offset=CINEMATIC_058, x=0, y=16
 
 DRAW_CIN_058_AT_16_16_IF_VARDC_EQ_21:
 	jne [HACK_VAR_DC], 0x21, TRIVIAL_RET
-	video type=1, offset=CINEMATIC_058, x=16, y=16
+	video offset=CINEMATIC_058, x=16, y=16
 
 TRIVIAL_RET:
 	ret
@@ -274,71 +274,71 @@ PASSCODE_RESTART_OR_DRAW_CIN_016:
 	setup channel=0x3C, address=KILL_CHAN_AT_0021
 	killChannel
 	jne [0x05], 0x00, DRAW_CIN_015_AT_2D_2E_KEY01
-	video type=1, offset=CINEMATIC_016, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_016, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_015_AT_2D_2E_KEY01:
 	jne [0x05], 0x01, DRAW_CIN_014_AT_2D_2E_KEY02
-	video type=1, offset=CINEMATIC_015, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_015, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_014_AT_2D_2E_KEY02:
 	jne [0x05], 0x02, DRAW_CIN_013_AT_2D_2E_KEY03
-	video type=1, offset=CINEMATIC_014, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_014, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_013_AT_2D_2E_KEY03:
 	jne [0x05], 0x03, DRAW_CIN_012_AT_2D_2E_KEY04
-	video type=1, offset=CINEMATIC_013, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_013, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_012_AT_2D_2E_KEY04:
 	jne [0x05], 0x04, DRAW_CIN_011_AT_2D_2E_KEY05
-	video type=1, offset=CINEMATIC_012, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_012, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_011_AT_2D_2E_KEY05:
 	jne [0x05], 0x05, DRAW_CIN_010_AT_2D_2E_KEY06
-	video type=1, offset=CINEMATIC_011, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_011, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_010_AT_2D_2E_KEY06:
 	jne [0x05], 0x06, DRAW_CIN_009_AT_2D_2E_KEY07
-	video type=1, offset=CINEMATIC_010, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_010, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_009_AT_2D_2E_KEY07:
 	jne [0x05], 0x07, DRAW_CIN_008_AT_2D_2E_KEY08
-	video type=1, offset=CINEMATIC_009, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_009, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_008_AT_2D_2E_KEY08:
 	jne [0x05], 0x08, DRAW_CIN_007_AT_2D_2E_KEY09
-	video type=1, offset=CINEMATIC_008, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_008, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_007_AT_2D_2E_KEY09:
 	jne [0x05], 0x09, DRAW_CIN_006_AT_2D_2E_KEY0A
-	video type=1, offset=CINEMATIC_007, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_007, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_006_AT_2D_2E_KEY0A:
 	jne [0x05], 0x0A, DRAW_CIN_005_AT_2D_2E_KEY0B
-	video type=1, offset=CINEMATIC_006, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_006, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_005_AT_2D_2E_KEY0B:
 	jne [0x05], 0x0B, DRAW_CIN_004_AT_2D_2E_KEY0C
-	video type=1, offset=CINEMATIC_005, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_005, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_004_AT_2D_2E_KEY0C:
 	jne [0x05], 0x0C, DRAW_CIN_003_AT_2D_2E_KEY0D
-	video type=1, offset=CINEMATIC_004, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_004, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_003_AT_2D_2E_KEY0D:
 	jne [0x05], 0x0D, DRAW_CIN_002_AT_2D_2E_KEY0E
-	video type=1, offset=CINEMATIC_003, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_003, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_002_AT_2D_2E_KEY0E:
 	jne [0x05], 0x0E, DRAW_CIN_001_AT_2D_2E_KEY0F
-	video type=1, offset=CINEMATIC_002, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_002, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_001_AT_2D_2E_KEY0F:
 	jne [0x05], 0x0F, DRAW_CIN_000_AT_2D_2E_KEY10
-	video type=1, offset=CINEMATIC_001, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_001, x=[0x2d], y=[0x2e], zoom=0x40
 
 DRAW_CIN_000_AT_2D_2E_KEY10:
 	jne [0x05], 0x10, SHARED_RET
-	video type=1, offset=CINEMATIC_000, x=[0x2d], y=[0x2e], zoom=0x40
+	video offset=CINEMATIC_000, x=[0x2d], y=[0x2e], zoom=0x40
 	ret
 
 INIT_PASSCODE_LETTER_ALPHABET:

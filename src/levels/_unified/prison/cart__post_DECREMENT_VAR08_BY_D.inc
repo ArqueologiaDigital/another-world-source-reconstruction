@@ -1,6 +1,6 @@
 LABEL_675D:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	video type=1, offset=CINEMATIC_350, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_350, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_6737
 	ret
 
@@ -48,7 +48,7 @@ LABEL_67CF:
 LABEL_67E9:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	add [0x08], 0x000D
-	video type=1, offset=CINEMATIC_701, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_701, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x000D
 	call DRAW_SPRITE_164_167_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40
@@ -61,7 +61,7 @@ LABEL_6810:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	sub [0x07], 0x0001
 	add [0x08], 0x000D
-	video type=1, offset=CINEMATIC_700, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_700, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x000D
 	call DRAW_SPRITE_164_167_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_289, x=[0x07], y=[0x08], zoom=0x40

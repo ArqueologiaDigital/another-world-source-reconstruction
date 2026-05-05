@@ -2,17 +2,17 @@ DELAY_LOOP_VAR09:
 	break
 	djnz [0x09], DELAY_LOOP_VAR09
 	play id=0x0057, freq=0x0F, vol=0x20, channel=0x03
-	video type=1, offset=CINEMATIC_021, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_021, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_022, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_022, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_023, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_023, x=[0x07], y=[0x08], zoom=0x40
 	mov [0x09], 0x000A
 
 LABEL_07A9:
 	break
-	video type=1, offset=CINEMATIC_024, x=[0x07], y=[0x08], zoom=0x40
-	video type=1, offset=CINEMATIC_025, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_024, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_025, x=[0x07], y=[0x08], zoom=0x40
 	djnz [0x09], LABEL_07A9
 	setup channel=0x11, address=DRAW_CIN_024_LOOP
 	setup channel=0x12, address=DRAW_CV_192_195_196_SEQ
@@ -26,37 +26,37 @@ DELAY_LOOP_VAR09_AT_07CC:
 	setup channel=0x0C, address=KILL_CHANNEL_LANDING
 	deleteChannels first=0x11, last=0x13
 	break
-	video type=1, offset=CINEMATIC_026, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_026, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_027, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_027, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_028, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_028, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_029, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_029, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_030, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_030, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_031, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_031, x=[0x07], y=[0x08], zoom=0x40
 	setup channel=0x05, address=DRAW_CIN_106_107_FX_57
 	mov [0x09], 0x000A
 
 LABEL_0805:
 	break
-	video type=1, offset=CINEMATIC_032, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_032, x=[0x07], y=[0x08], zoom=0x40
 	djnz [0x09], LABEL_0805
 	setup channel=0x1E, address=KILL_CHANNEL_LANDING
 	break
-	video type=1, offset=CINEMATIC_033, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_033, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_034, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_034, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_035, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_035, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_036, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_036, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_037, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_037, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_037, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_037, x=[0x07], y=[0x08], zoom=0x40
 	selectVideoPage 0x00
 	fill page=0x00, color=0x01
 	call DRAW_STARS_CIN_38_39_40_5_6
@@ -66,7 +66,7 @@ LABEL_0805:
 	killChannel
 
 DRAW_CIN_024_LOOP:
-	video type=1, offset=CINEMATIC_024, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_024, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp DRAW_CIN_024_LOOP
 LABEL_0853:
@@ -159,7 +159,7 @@ LABEL_092D:
 	djnz [0x0A], LABEL_092D
 	jmp DRIFT_VAR07_PLUS_2_3X
 	killChannel
-	video type=1, offset=CINEMATIC_108, x=160, y=100
+	video offset=CINEMATIC_108, x=160, y=100
 	video type=0, offset=COMMON_VIDEO_301, x=160, y=100, zoom=0x40
 	video type=0, offset=COMMON_VIDEO_291, x=160, y=100, zoom=0x40
 	video type=0, offset=COMMON_VIDEO_202, x=160, y=100, zoom=0x40

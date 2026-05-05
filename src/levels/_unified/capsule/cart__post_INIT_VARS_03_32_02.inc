@@ -1,22 +1,22 @@
 LABEL_99EB:
-	video type=1, offset=CINEMATIC_090, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_090, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0028
 	break
 	djnz [0x03], LABEL_99EB
-	video type=1, offset=CINEMATIC_090, x=[0x01], y=240, zoom=0x40
+	video offset=CINEMATIC_090, x=[0x01], y=240, zoom=0x40
 	break
 	mov [0x32], 0x0001
-	video type=1, offset=CINEMATIC_090, x=[0x01], y=280, zoom=0x40
+	video offset=CINEMATIC_090, x=[0x01], y=280, zoom=0x40
 	break
 	mov [0x02], [0x52]
 	break
 	mov [0x32], 0x0001
-	video type=1, offset=CINEMATIC_090, x=[0x01], y=77, zoom=0x40
+	video offset=CINEMATIC_090, x=[0x01], y=77, zoom=0x40
 	break
 	mov [0x32], 0x0001
-	video type=1, offset=CINEMATIC_090, x=[0x01], y=146, zoom=0x40
+	video offset=CINEMATIC_090, x=[0x01], y=146, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_090, x=[0x01], y=189, zoom=0x40
+	video offset=CINEMATIC_090, x=[0x01], y=189, zoom=0x40
 	mov [0x02], [0x52]
 	setup channel=0x1A, address=LABEL_97DD
 	jmp LABEL_9A64
@@ -25,11 +25,11 @@ LABEL_9A31:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_092
-	video type=1, offset=CINEMATIC_093, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_093, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_CIN_092:
-	video type=1, offset=CINEMATIC_092, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_092, x=[0x01], y=[0x02], zoom=0x40
 	ret
 LABEL_9A4A:
 	db 0x11
@@ -38,11 +38,11 @@ LABEL_9A4B:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_090
-	video type=1, offset=CINEMATIC_091, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_091, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_CIN_090:
-	video type=1, offset=CINEMATIC_090, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_090, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_9A64:

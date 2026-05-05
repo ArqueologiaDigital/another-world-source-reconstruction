@@ -12,40 +12,40 @@ CINEMATIC_SCATTER_3DOT_F2		EQU 0xF1A2
 ;@endif
 
 LOOP_DRAW_LAKE_018_AT_CENTER:
-	video type=1, offset=CINEMATIC_LAKE_018_CENTER_BG, x=160, y=100
+	video offset=CINEMATIC_LAKE_018_CENTER_BG, x=160, y=100
 	break
 	jmp LOOP_DRAW_LAKE_018_AT_CENTER
 
 DRAW_3_SCATTER_DOTS_CYCLE:
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa6], y=[0xa7], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa2], y=[0xa3], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa4], y=[0xa5], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa6], y=[0xa7], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa6], y=[0xa7], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa2], y=[0xa3], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa4], y=[0xa5], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa6], y=[0xa7], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa6], y=[0xa7], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa2], y=[0xa3], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa4], y=[0xa5], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa6], y=[0xa7], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa6], y=[0xa7], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa2], y=[0xa3], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa4], y=[0xa5], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa6], y=[0xa7], zoom=0x40
 	break
 	jmp DRAW_3_SCATTER_DOTS_CYCLE
 	killChannel
 
 SCATTER_3DOT_BURST_LEFT:
 	jmp INIT_SCATTER_DOTS_POSITIONS
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=143, y=104
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=159, y=110
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=117, y=105
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=183, y=108
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=191, y=110
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=220, y=106
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=126, y=92
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=167, y=106
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=143, y=104
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=159, y=110
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=117, y=105
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=183, y=108
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=191, y=110
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=220, y=106
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=126, y=92
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=167, y=106
 	killChannel
 
 INIT_SCATTER_DOTS_POSITIONS:
@@ -83,14 +83,14 @@ SCATTER_8DOT_DRIFT_RAW:
 
 SCATTER_3DOT_BURST_RIGHT:
 	jmp INIT_SCATTER_DOTS_OFFSETS
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=143, y=104
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=159, y=110
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=117, y=105
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=183, y=108
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=191, y=110
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=220, y=106
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=126, y=92
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=167, y=106
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=143, y=104
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=159, y=110
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=117, y=105
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=183, y=108
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=191, y=110
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=220, y=106
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=126, y=92
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=167, y=106
 	killChannel
 
 INIT_SCATTER_DOTS_OFFSETS:
@@ -167,41 +167,41 @@ SCATTER_8DOT_DRIFT_CLASSIFIED:
 	killChannel
 
 DRAW_8_SCATTER_DOTS_CYCLE:
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa6], y=[0xa7], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa8], y=[0xa9], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xaa], y=[0xab], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xac], y=[0xad], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xae], y=[0xaf], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xb0], y=[0xb1], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa2], y=[0xa3], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa4], y=[0xa5], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa6], y=[0xa7], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa8], y=[0xa9], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xaa], y=[0xab], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xac], y=[0xad], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xae], y=[0xaf], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xb0], y=[0xb1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa6], y=[0xa7], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa8], y=[0xa9], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xaa], y=[0xab], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xac], y=[0xad], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xae], y=[0xaf], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xb0], y=[0xb1], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa2], y=[0xa3], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa4], y=[0xa5], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa6], y=[0xa7], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa8], y=[0xa9], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xaa], y=[0xab], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xac], y=[0xad], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xae], y=[0xaf], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xb0], y=[0xb1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa6], y=[0xa7], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa8], y=[0xa9], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xaa], y=[0xab], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xac], y=[0xad], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xae], y=[0xaf], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xb0], y=[0xb1], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa2], y=[0xa3], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa4], y=[0xa5], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa6], y=[0xa7], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa8], y=[0xa9], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xaa], y=[0xab], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xac], y=[0xad], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xae], y=[0xaf], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xb0], y=[0xb1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa6], y=[0xa7], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa8], y=[0xa9], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xaa], y=[0xab], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xac], y=[0xad], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xae], y=[0xaf], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xb0], y=[0xb1], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa2], y=[0xa3], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa4], y=[0xa5], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa6], y=[0xa7], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa8], y=[0xa9], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xaa], y=[0xab], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xac], y=[0xad], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xae], y=[0xaf], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xb0], y=[0xb1], zoom=0x40
 	break
 	jmp DRAW_8_SCATTER_DOTS_CYCLE
 	killChannel

@@ -46,7 +46,7 @@ SETUP_VAR02_FROM_VAR22:
 WAIT_KEY_OR_FIRE_LOOP:
 	mov [0x05], [0x01]
 	call DERIVE_VAR07_VAR08_FROM_VAR05
-	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jne [LAST_KEYCHAR], 0x00, WAIT_KEY_OR_FIRE_LOOP
 	je [0xDB], 0x00, RESUME_PASSCODE_INPUT
@@ -63,7 +63,7 @@ DRAW_CIN_003_AT_BC_54:
 	mov [0x07], 0x00BC
 	mov [0x08], 0x0054
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_003, x=160, y=100
+	video offset=CINEMATIC_003, x=160, y=100
 	text id=0x013C, x=2, y=80, color=0x06 ; "        ACCESS CODE:"
 	mov [0x06], [0x1E]
 	call DRAW_OR_BLINK_LETTER

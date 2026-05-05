@@ -34,7 +34,7 @@ THE_BEAST_KILLS_LESTER:
 	selectVideoPage 0x00
 	deleteChannels first=0x24, last=0x25
 	deleteChannels first=0x2F, last=0x30
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
 ;@if BRANCH == "chahi_amiga_1991"
 	copyVideoPage src=0x00, dst=0xFF
 ;@endif
@@ -45,41 +45,41 @@ THE_BEAST_KILLS_LESTER:
 ;@if BRANCH == "dos_1992"
 	copyVideoPage src=0x00, dst=0xFF
 ;@endif
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_0, x=160, y=[0x0e], zoom=[0x0f]
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_0, x=160, y=[0x0e], zoom=[0x0f]
 	play id=0x0030, freq=0x0A, vol=0x20, channel=0x01
 	break
 	add [0x0F], 0x0004
 	sub [0x0E], 0x0005
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_1, x=160, y=[0x0e], zoom=[0x0f]
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_1, x=160, y=[0x0e], zoom=[0x0f]
 	break
 	add [0x0F], 0x0006
 	sub [0x0E], 0x000A
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	song id=0x0BDD, delay=0x0000, pos=0x00
 ;@endif
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_2, x=160, y=[0x0e], zoom=[0x0f]
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_2, x=160, y=[0x0e], zoom=[0x0f]
 	play id=0x0030, freq=0x14, vol=0x3F, channel=0x01
 	break
 	add [0x0F], 0x0009
 	sub [0x0E], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_3, x=160, y=[0x0e], zoom=[0x0f]
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_3, x=160, y=[0x0e], zoom=[0x0f]
 	break
 	add [0x0F], 0x000C
 	sub [0x0E], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_4, x=160, y=[0x0e], zoom=[0x0f]
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_4, x=160, y=[0x0e], zoom=[0x0f]
 	break
 	add [0x0F], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_5, x=160, y=[0x0e], zoom=[0x0f]
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_5, x=160, y=[0x0e], zoom=[0x0f]
 	break
 	add [0x0F], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_6, x=160, y=[0x0e], zoom=[0x0f]
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_6, x=160, y=[0x0e], zoom=[0x0f]
 	mov [0x10], 0x0003
 
 BEAST_KILLS_LESTER_F6_LOOP:
 	break
 	add [0x0F], 0x0032
 	add [0x0E], 0x001E
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_6, x=160, y=[0x0e], zoom=[0x0f]
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_6, x=160, y=[0x0e], zoom=[0x0f]
 	djnz [0x10], BEAST_KILLS_LESTER_F6_LOOP
 	setPalette 0x0A
 	mov [PAUSE_SLICES], 0x0004
@@ -92,15 +92,15 @@ BEAST_KILLS_LESTER_PHASE_2:
 ;@endif
 	break
 	play id=0x004D, freq=0x0F, vol=0x3F, channel=0x01
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_7, x=160, y=100
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_7, x=160, y=100
 	break
 	play id=0x004F, freq=0x11, vol=0x3F, channel=0x02
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_8, x=160, y=100
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_8, x=160, y=100
 	break
 	play id=0x004F, freq=0x14, vol=0x3F, channel=0x00
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_9, x=160, y=100
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_9, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_10, x=160, y=100
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_10, x=160, y=100
 	play id=0x004F, freq=0x17, vol=0x3F, channel=0x03
 	jmp INIT_VAR_03_TO_0x1E
 	killChannel

@@ -14,18 +14,18 @@ LABEL_E37F:
 
 LABEL_E38D:
 	add [0x01], 0x000A
-	video type=1, offset=CINEMATIC_473, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_473, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_516, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_516, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_517, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_517, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_518, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_518, x=[0x01], y=[0x02], zoom=0x40
 	play id=0x006C, freq=0x14, vol=0x40, channel=0x01
 	break
-	video type=1, offset=CINEMATIC_519, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_519, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_520, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_520, x=[0x01], y=[0x02], zoom=0x40
 	mov [0x63], 0x0002
 	mov [0x05], 0x0000
 	mov [PAUSE_SLICES], 0x0004
@@ -49,18 +49,18 @@ LABEL_E3E9:
 	mov [0x01], 0x005A
 	mov [0x02], 0x007D
 	sub [0x01], 0x000A
-	video type=1, offset=CINEMATIC_491, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_491, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_521, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_521, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_522, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_522, x=[0x01], y=[0x02], zoom=0x40
 	break
 	play id=0x006C, freq=0x14, vol=0x40, channel=0x01
-	video type=1, offset=CINEMATIC_523, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_523, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_524, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_524, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_525, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_525, x=[0x01], y=[0x02], zoom=0x40
 	mov [0x05], 0x0000
 	mov [0x63], 0x0001
 	mov [PAUSE_SLICES], 0x0004

@@ -5,7 +5,7 @@ BEAST_SURPRISE_SCENE_INIT:
 	unfreezeChannels first=0x3D, last=0x3F
 	selectVideoPage 0x00
 	fill page=0x00, color=0x0B
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
 	selectVideoPage 0xFF
 	mov [0x0A], 0x00A0
 	mov [0x0B], 0x0000

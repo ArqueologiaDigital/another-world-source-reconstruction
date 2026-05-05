@@ -15,7 +15,7 @@ LABEL_012C:
 	mov [0x01], 0x03E8
 
 LABEL_0161:
-	video type=1, offset=CINEMATIC_907, x=160, y=100
+	video offset=CINEMATIC_907, x=160, y=100
 	djnz [0x01], LABEL_0161
 	break
 	setPalette 0x0C

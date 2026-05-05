@@ -1,20 +1,20 @@
 LABEL_7AF1:
 	je [HACK_VAR_67], 0x65, LABEL_7B0D
-	video type=1, offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_106, x=160, y=100
 	je [HACK_VAR_67], 0x45, LABEL_7B05
-	video type=1, offset=CINEMATIC_092, x=160, y=100
+	video offset=CINEMATIC_092, x=160, y=100
 
 LABEL_7B05:
 	call LABEL_7AAF
-	video type=1, offset=CINEMATIC_105, x=160, y=129
+	video offset=CINEMATIC_105, x=160, y=129
 	ret
 
 LABEL_7B0D:
-	video type=1, offset=CINEMATIC_090, x=160, y=100
-	video type=1, offset=CINEMATIC_091, x=160, y=100
+	video offset=CINEMATIC_090, x=160, y=100
+	video offset=CINEMATIC_091, x=160, y=100
 	call LABEL_7AAF
-	video type=1, offset=CINEMATIC_104, x=200, y=100
-	video type=1, offset=CINEMATIC_105, x=160, y=129
+	video offset=CINEMATIC_104, x=200, y=100
+	video offset=CINEMATIC_105, x=160, y=129
 	ret
 LABEL_7B21:
 	db 0x11
@@ -57,10 +57,10 @@ LABEL_7B80:
 	call LABEL_7D42
 	call LABEL_7A3E
 	call LABEL_7AAF
-	video type=1, offset=CINEMATIC_102, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_103, x=160, y=[0x02], zoom=0x40
+	video offset=CINEMATIC_102, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_103, x=160, y=[0x02], zoom=0x40
 	je [0x11], 0x00, SHARED_RET
-	video type=1, offset=CINEMATIC_131, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_131, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_7B9F:

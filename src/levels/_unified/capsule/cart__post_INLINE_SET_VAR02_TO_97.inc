@@ -11,7 +11,7 @@ LABEL_A439:
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_A45D:
-	video type=1, offset=CINEMATIC_002, x=160, y=100
+	video offset=CINEMATIC_002, x=160, y=100
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_A464:
 	db 0x11
@@ -39,8 +39,8 @@ LABEL_A465:
 	mov [0xF8], [0xBB]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, LABEL_A4C5
-	video type=1, offset=CINEMATIC_346, x=108, y=153
-	video type=1, offset=CINEMATIC_345, x=108, y=157
+	video offset=CINEMATIC_346, x=108, y=153
+	video offset=CINEMATIC_345, x=108, y=157
 
 LABEL_A4C5:
 	jg [0x01], 0x0140, LABEL_A524
@@ -178,7 +178,7 @@ LABEL_A634:
 LABEL_A671:
 	setup channel=0x01, address=LABEL_3F38
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_465, x=144, y=98
+	video offset=CINEMATIC_465, x=144, y=98
 	selectVideoPage 0xFF
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 	killChannel
@@ -377,7 +377,7 @@ LABEL_A8E8:
 	mov [0xE6], 0x0000
 	play id=0x0066, freq=0x07, vol=0x00, channel=0x03
 	jl [0x01], 0x00, LABEL_A92C
-	video type=1, offset=CINEMATIC_524, x=160, y=100
+	video offset=CINEMATIC_524, x=160, y=100
 	mov [0x43], 0x0125
 	jmp LABEL_A945
 
@@ -697,7 +697,7 @@ LABEL_ACAC:
 	jmp LABEL_AD52
 
 LABEL_AD30:
-	video type=1, offset=CINEMATIC_565, x=160, y=100
+	video offset=CINEMATIC_565, x=160, y=100
 	mov [0xF8], [0xB4]
 	and [0xF8], 0x0020
 	jne [0xF8], 0x00, LABEL_AD52
@@ -742,7 +742,7 @@ LABEL_AD8F:
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_ADB4:
-	video type=1, offset=CINEMATIC_565, x=160, y=100
+	video offset=CINEMATIC_565, x=160, y=100
 	mov [0xF8], [0xB4]
 	and [0xF8], 0x0020
 	jne [0xF8], 0x00, VAR66_MOD_32_DRAW_DISPATCH
@@ -804,13 +804,13 @@ LABEL_AE41:
 	shr [0xF8], 0x0008
 	and [0xF8], 0x0007
 	jl [0xF8], 0x01, VAR66_MOD_32_DRAW_DISPATCH
-	video type=1, offset=CINEMATIC_505, x=160, y=100
+	video offset=CINEMATIC_505, x=160, y=100
 	jl [0xF8], 0x02, VAR66_MOD_32_DRAW_DISPATCH
-	video type=1, offset=CINEMATIC_506, x=160, y=100
+	video offset=CINEMATIC_506, x=160, y=100
 	jl [0xF8], 0x03, VAR66_MOD_32_DRAW_DISPATCH
-	video type=1, offset=CINEMATIC_507, x=160, y=100
+	video offset=CINEMATIC_507, x=160, y=100
 	jl [0xF8], 0x04, VAR66_MOD_32_DRAW_DISPATCH
-	video type=1, offset=CINEMATIC_508, x=160, y=100
+	video offset=CINEMATIC_508, x=160, y=100
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_AEB8:
@@ -923,7 +923,7 @@ LABEL_AFEE:
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_B032:
-	video type=1, offset=CINEMATIC_346, x=180, y=149
+	video offset=CINEMATIC_346, x=180, y=149
 	setup channel=0x01, address=INLINE_SET_VARE6_TO_F
 	setup channel=0x03, address=LABEL_3D38
 	jmp VAR66_MOD_32_DRAW_DISPATCH
@@ -1038,7 +1038,7 @@ LABEL_B18F:
 	setup channel=0x08, address=INCREMENT_VAR31
 	setup channel=0x3C, address=LABEL_310C
 	selectVideoPage 0x03
-	video type=1, offset=CINEMATIC_653, x=160, y=100
+	video offset=CINEMATIC_653, x=160, y=100
 	selectVideoPage 0xFF
 	or [0xB0], 0x0001
 	ret
@@ -1051,7 +1051,7 @@ LABEL_B1AE:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x4B], 0x7FFF
-	video type=1, offset=CINEMATIC_259, x=[0x70], y=93, zoom=[0x5a]	;@enc=alt
+	video offset=CINEMATIC_259, x=[0x70], y=93, zoom=[0x5a]	;@enc=alt
 	ret
 
 LABEL_B1D5:
@@ -1061,7 +1061,7 @@ LABEL_B1D5:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x49], 0x7FFF
-	video type=1, offset=CINEMATIC_259, x=[0x6e], y=93, zoom=[0x5a]	;@enc=alt
+	video offset=CINEMATIC_259, x=[0x6e], y=93, zoom=[0x5a]	;@enc=alt
 	ret
 
 LABEL_B1F6:
@@ -1071,7 +1071,7 @@ LABEL_B1F6:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x4D], 0x7FFF
-	video type=1, offset=CINEMATIC_259, x=[0x72], y=93, zoom=[0x5a]	;@enc=alt
+	video offset=CINEMATIC_259, x=[0x72], y=93, zoom=[0x5a]	;@enc=alt
 	ret
 LABEL_B217:
 	db 0x11

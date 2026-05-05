@@ -30,11 +30,11 @@ LABEL_A139:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_868
-	video type=1, offset=CINEMATIC_869, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_869, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_CIN_868:
-	video type=1, offset=CINEMATIC_868, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_868, x=[0x01], y=[0x02], zoom=0x40
 	ret
 LABEL_A152:
 	db 0x11
@@ -43,11 +43,11 @@ LABEL_A153:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_866
-	video type=1, offset=CINEMATIC_867, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_867, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_CIN_866:
-	video type=1, offset=CINEMATIC_866, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_866, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 LABEL_A16C:

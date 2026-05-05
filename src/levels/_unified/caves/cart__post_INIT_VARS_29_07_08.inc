@@ -35,30 +35,30 @@ LABEL_47A5:
 
 LABEL_47F5:
 	jne [0x10], [HACK_VAR_67], INCREMENT_VAR07_BY_4
-	video type=1, offset=CINEMATIC_344, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_344, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_4801:
 	jne [0x10], [HACK_VAR_67], INCREMENT_VAR07_BY_4
-	video type=1, offset=CINEMATIC_346, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_346, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_480D:
 	jne [0x10], [HACK_VAR_67], INCREMENT_VAR07_BY_4
-	video type=1, offset=CINEMATIC_347, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_347, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_4819:
 	jne [0x10], [HACK_VAR_67], SHARED_RET
-	video type=1, offset=CINEMATIC_348, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_348, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_4825:
 	jne [0x10], [HACK_VAR_67], SHARED_RET
-	video type=1, offset=CINEMATIC_349, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_349, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_4831:
 	jne [0x10], [HACK_VAR_67], SHARED_RET
-	video type=1, offset=CINEMATIC_350, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_350, x=[0x07], y=[0x08], zoom=0x40
 	ret

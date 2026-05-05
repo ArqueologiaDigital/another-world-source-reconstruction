@@ -29,55 +29,55 @@ PLAY_3SFX_PAL_3_PAUSE_4:
 	mov [0xE6], 0x0083
 	mov [0xE7], 0x0078
 	mov [0xE8], 0x00FA
-	video type=1, offset=CINEMATIC_045, x=[0xe6], y=[0xe7], zoom=[0x91]	;@enc=alt
+	video offset=CINEMATIC_045, x=[0xe6], y=[0xe7], zoom=[0x91]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_045, x=[0xe6], y=[0xe7], zoom=[0x54]	;@enc=alt
+	video offset=CINEMATIC_045, x=[0xe6], y=[0xe7], zoom=[0x54]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xfa]	;@enc=alt
+	video offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xfa]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xc8]	;@enc=alt
+	video offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xc8]	;@enc=alt
 	break
 	mov [0xE8], 0x00C8
 	mov [0xE9], 0x0003
 
 LABEL_1D59:
 	sub [0xE8], 0x0016
-	video type=1, offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xe8]
+	video offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xe8]
 	break
 	djnz [0xE9], LABEL_1D59
 	mov [0xE9], 0x0002
 
 LABEL_1D6C:
 	sub [0xE8], 0x0014
-	video type=1, offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xe8]
+	video offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xe8]
 	break
 	djnz [0xE9], LABEL_1D6C
 	mov [0xE9], 0x0005
 
 LABEL_1D7F:
 	sub [0xE8], 0x000A
-	video type=1, offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xe8]
+	video offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xe8]
 	break
 	djnz [0xE9], LABEL_1D7F
 	mov [0xE9], 0x0007
 
 LABEL_1D92:
 	sub [0xE8], 0x0005
-	video type=1, offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xe8]
+	video offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xe8]
 	break
 	djnz [0xE9], LABEL_1D92
 	mov [0xE9], 0x0003
 
 LABEL_1DA5:
 	sub [0xE8], 0x0003
-	video type=1, offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xe8]
+	video offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xe8]
 	break
 	djnz [0xE9], LABEL_1DA5
 
 LABEL_1DB4:
 	sub [0xE8], 0x0001
 	jle [0xE8], 0x00, LABEL_1DC8
-	video type=1, offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xe8]
+	video offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xe8]
 	break
 	jmp LABEL_1DB4
 
@@ -87,17 +87,17 @@ LABEL_1DC8:
 	killChannel
 
 LABEL_1DD0:
-	video type=1, offset=CINEMATIC_094, x=242, y=103
+	video offset=CINEMATIC_094, x=242, y=103
 	break
-	video type=1, offset=CINEMATIC_094, x=216, y=98
+	video offset=CINEMATIC_094, x=216, y=98
 	break
-	video type=1, offset=CINEMATIC_094, x=183, y=100
+	video offset=CINEMATIC_094, x=183, y=100
 	break
-	video type=1, offset=CINEMATIC_094, x=160, y=100
+	video offset=CINEMATIC_094, x=160, y=100
 
 LABEL_1DE3:
 	break
-	video type=1, offset=CINEMATIC_094, x=165, y=102
+	video offset=CINEMATIC_094, x=165, y=102
 	jmp LABEL_1DE3
 LABEL_1DEB:
 	db 0x11

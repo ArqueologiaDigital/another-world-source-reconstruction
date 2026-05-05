@@ -71,7 +71,7 @@ LABEL_68C3:
 	setup channel=0x35, address=DRAW_CIN_424_426_VERTICAL
 	setup channel=0x34, address=LABEL_CFFD
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_421, x=162, y=70
+	video offset=CINEMATIC_421, x=162, y=70
 	selectVideoPage 0xFF
 	mov [0x47], 0x0FA0
 	ret

@@ -14,21 +14,21 @@ CINEMATIC_PARTICLE_BURST_4		EQU 0xF16E
 ;@endif
 
 PARTICLE_BURST_CYCLE_LOOP:
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9a], y=[0x9b], zoom=0x40
 	break
 	jmp PARTICLE_BURST_CYCLE_LOOP
 	killChannel
@@ -38,50 +38,50 @@ PARTICLE_BURST_3X_LOOP:
 ;@elif BRANCH in ("dos_1992", "gba_2004")
 PARTICLE_BURST_3X_LOOP:
 ;@endif
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x98], y=[0x99], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x98], y=[0x99], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x98], y=[0x99], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x98], y=[0x99], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x98], y=[0x99], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x98], y=[0x99], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x98], y=[0x99], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x98], y=[0x99], zoom=0x40
 	break
 	jmp PARTICLE_BURST_3X_LOOP
 	killChannel
 
 PARTICLE_BURST_7X_ENTRY:
 	jmp PARTICLE_BURST_7X_INIT_POS
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=212, y=121
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=186, y=113
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=202, y=102
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=225, y=115
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=248, y=113
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=220, y=106
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=153, y=91
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=212, y=121
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=186, y=113
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=202, y=102
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=225, y=115
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=248, y=113
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=220, y=106
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=153, y=91
 
 PARTICLE_BURST_7X_INIT_POS:
 	mov [0x94], 0x00D4
@@ -114,69 +114,69 @@ PARTICLE_BURST_7X_DRIFT_TICK:
 	killChannel
 
 PARTICLE_BURST_7X_LOOP:
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x98], y=[0x99], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9a], y=[0x9b], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9c], y=[0x9d], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9e], y=[0x9f], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0xa0], y=[0xa1], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9c], y=[0x9d], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9e], y=[0x9f], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0xa0], y=[0xa1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x98], y=[0x99], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9a], y=[0x9b], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9c], y=[0x9d], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x9e], y=[0x9f], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0xa0], y=[0xa1], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9c], y=[0x9d], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x9e], y=[0x9f], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0xa0], y=[0xa1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x98], y=[0x99], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9a], y=[0x9b], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x9c], y=[0x9d], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9e], y=[0x9f], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0xa0], y=[0xa1], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x9c], y=[0x9d], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9e], y=[0x9f], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0xa0], y=[0xa1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x98], y=[0x99], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x9a], y=[0x9b], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9c], y=[0x9d], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9e], y=[0x9f], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0xa0], y=[0xa1], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9c], y=[0x9d], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9e], y=[0x9f], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0xa0], y=[0xa1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x98], y=[0x99], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9a], y=[0x9b], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9c], y=[0x9d], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9e], y=[0x9f], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0xa0], y=[0xa1], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9c], y=[0x9d], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9e], y=[0x9f], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0xa0], y=[0xa1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x98], y=[0x99], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9a], y=[0x9b], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9c], y=[0x9d], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x9e], y=[0x9f], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0xa0], y=[0xa1], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9c], y=[0x9d], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x9e], y=[0x9f], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0xa0], y=[0xa1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x98], y=[0x99], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9a], y=[0x9b], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x9c], y=[0x9d], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9e], y=[0x9f], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0xa0], y=[0xa1], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x9c], y=[0x9d], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9e], y=[0x9f], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0xa0], y=[0xa1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x98], y=[0x99], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x9a], y=[0x9b], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9c], y=[0x9d], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9e], y=[0x9f], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0xa0], y=[0xa1], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9c], y=[0x9d], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9e], y=[0x9f], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0xa0], y=[0xa1], zoom=0x40
 	break
 	jmp PARTICLE_BURST_7X_LOOP
 	killChannel
@@ -193,7 +193,7 @@ DROPLET_DRIP_NEW_ROW:
 	mov [0x85], 0x0005
 
 DROPLET_DRIP_FRAME_REPEAT:
-	video type=1, offset=CINEMATIC_DROPLET_FALL_TRAIL, x=[0x82], y=[0x83], zoom=0x40
+	video offset=CINEMATIC_DROPLET_FALL_TRAIL, x=[0x82], y=[0x83], zoom=0x40
 	break
 	djnz [0x85], DROPLET_DRIP_FRAME_REPEAT
 	sub [0x83], 0x0001

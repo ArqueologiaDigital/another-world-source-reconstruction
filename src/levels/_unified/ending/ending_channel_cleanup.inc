@@ -27,17 +27,17 @@ PRELOAD_RESOURCES_8_TO_1:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_97_TO_100:
-	video type=1, offset=CINEMATIC_097, x=160, y=100
+	video offset=CINEMATIC_097, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_098, x=160, y=100
+	video offset=CINEMATIC_098, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_099, x=160, y=100
+	video offset=CINEMATIC_099, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_100, x=160, y=100
+	video offset=CINEMATIC_100, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_099, x=160, y=100
+	video offset=CINEMATIC_099, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_098, x=160, y=100
+	video offset=CINEMATIC_098, x=160, y=100
 	break
 	jmp DRAW_CIN_97_TO_100
 ;@endif
@@ -48,29 +48,29 @@ DRAW_CIN_97_TO_100:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_101_102_FADE_PAL_C:
-	video type=1, offset=CINEMATIC_101, x=160, y=125
+	video offset=CINEMATIC_101, x=160, y=125
 	setPalette 0x0C
 	break
-	video type=1, offset=CINEMATIC_101, x=160, y=118
+	video offset=CINEMATIC_101, x=160, y=118
 	break
-	video type=1, offset=CINEMATIC_102, x=160, y=112
+	video offset=CINEMATIC_102, x=160, y=112
 	break
-	video type=1, offset=CINEMATIC_103, x=160, y=107
+	video offset=CINEMATIC_103, x=160, y=107
 	break
-	video type=1, offset=CINEMATIC_104, x=160, y=105
+	video offset=CINEMATIC_104, x=160, y=105
 	break
-	video type=1, offset=CINEMATIC_104, x=160, y=109
+	video offset=CINEMATIC_104, x=160, y=109
 	break
-	video type=1, offset=CINEMATIC_104, x=160, y=110
+	video offset=CINEMATIC_104, x=160, y=110
 	break
-	video type=1, offset=CINEMATIC_103, x=160, y=115
+	video offset=CINEMATIC_103, x=160, y=115
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_103_LOOP__ENDING_CHANNEL_CLEANUP:
 	break
-	video type=1, offset=CINEMATIC_103, x=160, y=118
+	video offset=CINEMATIC_103, x=160, y=118
 	jmp DRAW_CIN_103_LOOP__ENDING_CHANNEL_CLEANUP
 ;@endif
 
@@ -80,7 +80,7 @@ DRAW_CIN_103_LOOP__ENDING_CHANNEL_CLEANUP:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_58_ANIM_LOOP:
-	video type=1, offset=CINEMATIC_058, x=160, y=100, zoom=[0x04]
+	video offset=CINEMATIC_058, x=160, y=100, zoom=[0x04]
 	break
 	jmp DRAW_CIN_58_ANIM_LOOP
 ;@endif
@@ -91,19 +91,19 @@ DRAW_CIN_58_ANIM_LOOP:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_59_TO_64_VAR_POS:
-	video type=1, offset=CINEMATIC_059, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_059, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video type=1, offset=CINEMATIC_060, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_060, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video type=1, offset=CINEMATIC_061, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_061, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video type=1, offset=CINEMATIC_062, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_062, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video type=1, offset=CINEMATIC_063, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_063, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video type=1, offset=CINEMATIC_064, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_064, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video type=1, offset=CINEMATIC_065, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_065, x=[0x01], y=[0x02], zoom=[0x03]
 	break
 	jmp DRAW_CIN_59_TO_64_VAR_POS
 ;@endif

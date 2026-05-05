@@ -1,12 +1,12 @@
 HANG_DRAW_CIN_549:
-	video type=1, offset=CINEMATIC_549, x=181, y=146
+	video offset=CINEMATIC_549, x=181, y=146
 	break
 	jmp HANG_DRAW_CIN_549
 LABEL_779B:
 	db 0x11
 
 HANG_DRAW_CIN_275:
-	video type=1, offset=CINEMATIC_275, x=181, y=146
+	video offset=CINEMATIC_275, x=181, y=146
 	break
 	jmp HANG_DRAW_CIN_275
 
@@ -122,6 +122,6 @@ LABEL_78B4:
 	killChannel
 	call LABEL_711F
 	call LABEL_72D4
-	video type=1, offset=CINEMATIC_035, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b], zoom=0x40
 	call LABEL_739F
 	ret

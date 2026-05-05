@@ -1,16 +1,16 @@
 LABEL_69B2:
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
-	video type=1, offset=CINEMATIC_064, x=5, y=[0x22], zoom=0x40
+	video offset=CINEMATIC_064, x=5, y=[0x22], zoom=0x40
 	break
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
-	video type=1, offset=CINEMATIC_065, x=10, y=[0x22], zoom=0x40
+	video offset=CINEMATIC_065, x=10, y=[0x22], zoom=0x40
 	break
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
-	video type=1, offset=CINEMATIC_066, x=15, y=[0x22], zoom=0x40
+	video offset=CINEMATIC_066, x=15, y=[0x22], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_063, x=16, y=[0x40], zoom=0x40
+	video offset=CINEMATIC_063, x=16, y=[0x40], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_062, x=17, y=[0x40], zoom=0x40
+	video offset=CINEMATIC_062, x=17, y=[0x40], zoom=0x40
 	mov [0x21], 0x0011
 	mov [0x08], [0x40]
 	mov [0x10], [HACK_VAR_67]
@@ -19,17 +19,17 @@ LABEL_69B2:
 
 LABEL_69E6:
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
-	video type=1, offset=CINEMATIC_064, x=315, y=[0x22], zoom=0x40
+	video offset=CINEMATIC_064, x=315, y=[0x22], zoom=0x40
 	break
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
-	video type=1, offset=CINEMATIC_065, x=307, y=[0x22], zoom=0x40
+	video offset=CINEMATIC_065, x=307, y=[0x22], zoom=0x40
 	break
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
-	video type=1, offset=CINEMATIC_066, x=303, y=[0x22], zoom=0x40
+	video offset=CINEMATIC_066, x=303, y=[0x22], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_063, x=300, y=[0x40], zoom=0x40
+	video offset=CINEMATIC_063, x=300, y=[0x40], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_062, x=299, y=[0x40], zoom=0x40
+	video offset=CINEMATIC_062, x=299, y=[0x40], zoom=0x40
 	mov [0x21], 0x0122
 	mov [0x08], [0x40]
 	mov [0x10], [HACK_VAR_67]
@@ -107,17 +107,17 @@ LABEL_6ABC:
 	je [HERO_ACTION], 0x00, ZERO_VAR0F_AND_KILL
 	jl [0x0F], 0x04, LABEL_6ABC
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video type=1, offset=CINEMATIC_058, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_058, x=[0x21], y=[0x22], zoom=0x40
 	break
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video type=1, offset=CINEMATIC_059, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_059, x=[0x21], y=[0x22], zoom=0x40
 	break
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video type=1, offset=CINEMATIC_060, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_060, x=[0x21], y=[0x22], zoom=0x40
 	break
 	jge [0x04], 0x4000, ZERO_VAR0F_AND_KILL
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video type=1, offset=CINEMATIC_061, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_061, x=[0x21], y=[0x22], zoom=0x40
 	play id=0x005B, freq=0x14, vol=0x40, channel=0x01
 	je [HERO_ACTION], 0x00, LABEL_6BEF
 	jmp LABEL_6B8D
@@ -137,17 +137,17 @@ LABEL_6B25:
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, ZERO_VAR0F_AND_KILL
 	jl [0x0F], 0x04, LABEL_6B25
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video type=1, offset=CINEMATIC_058, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_058, x=[0x21], y=[0x22], zoom=0x40
 	break
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video type=1, offset=CINEMATIC_059, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_059, x=[0x21], y=[0x22], zoom=0x40
 	break
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video type=1, offset=CINEMATIC_060, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_060, x=[0x21], y=[0x22], zoom=0x40
 	break
 	jge [0x04], 0x4000, ZERO_VAR0F_AND_KILL
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video type=1, offset=CINEMATIC_075, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_075, x=[0x21], y=[0x22], zoom=0x40
 	play id=0x005B, freq=0x14, vol=0x40, channel=0x01
 	jne [HERO_POS_LEFT_RIGHT], 0x00, ZERO_VAR0F_AND_KILL
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, ZERO_VAR0F_AND_KILL
@@ -159,19 +159,19 @@ LABEL_6B8D:
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_6BE7
 	je [HERO_ACTION], 0x00, LABEL_6BE7
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video type=1, offset=CINEMATIC_064, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_064, x=[0x21], y=[0x22], zoom=0x40
 	break
 	je [HERO_ACTION], 0x00, LABEL_6BE7
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video type=1, offset=CINEMATIC_065, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_065, x=[0x21], y=[0x22], zoom=0x40
 	break
 	je [HERO_ACTION], 0x00, LABEL_6BE7
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video type=1, offset=CINEMATIC_066, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_066, x=[0x21], y=[0x22], zoom=0x40
 	break
 	je [HERO_ACTION], 0x00, LABEL_6BE7
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video type=1, offset=CINEMATIC_065, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_065, x=[0x21], y=[0x22], zoom=0x40
 	add [0x0F], 0x0004
 	jl [0x0F], 0x14, LABEL_6B8D
 	break
@@ -179,13 +179,13 @@ LABEL_6B8D:
 
 LABEL_6BE7:
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video type=1, offset=CINEMATIC_063, x=[0x21], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_063, x=[0x21], y=[0x02], zoom=0x40
 
 LABEL_6BEF:
 	break
 	play id=0x0058, freq=0x14, vol=0x40, channel=0x01
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video type=1, offset=CINEMATIC_062, x=[0x21], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_062, x=[0x21], y=[0x02], zoom=0x40
 	jge [HACK_VAR_67], 0x03E8, LABEL_6C15
 	sub [0x06], 0x000A
 	call LABEL_66C2
@@ -198,53 +198,53 @@ ZERO_VAR0F_AND_KILL:
 LABEL_6C15:
 	break
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video type=1, offset=CINEMATIC_052, x=[0x21], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_052, x=[0x21], y=[0x02], zoom=0x40
 	sub [0x21], 0x0005
-	video type=1, offset=CINEMATIC_053, x=[0x21], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_053, x=[0x21], y=[0x02], zoom=0x40
 	add [0x21], 0x000A
-	video type=1, offset=CINEMATIC_054, x=[0x21], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_054, x=[0x21], y=[0x02], zoom=0x40
 	break
 	call PROJECT_POS_VAR_B8_PLUS_7
 	sub [0x21], 0x0007
-	video type=1, offset=CINEMATIC_055, x=[0x21], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_055, x=[0x21], y=[0x02], zoom=0x40
 	sub [0x21], 0x000A
-	video type=1, offset=CINEMATIC_056, x=[0x21], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_056, x=[0x21], y=[0x02], zoom=0x40
 	add [0x21], 0x0018
-	video type=1, offset=CINEMATIC_053, x=[0x21], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_053, x=[0x21], y=[0x02], zoom=0x40
 	add [0x21], 0x000A
-	video type=1, offset=CINEMATIC_057, x=[0x21], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_057, x=[0x21], y=[0x02], zoom=0x40
 	jmp ZERO_VAR0F_AND_KILL
 LABEL_6C5B:
 	db 0x11
 
 LABEL_6C5C:
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video type=1, offset=CINEMATIC_067, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_067, x=[0x21], y=[0x22], zoom=0x40
 	play id=0x0059, freq=0x14, vol=0x40, channel=0x01
 	break
 	call PROJECT_POS_VAR_B8_PLUS_7
-	video type=1, offset=CINEMATIC_068, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_068, x=[0x21], y=[0x22], zoom=0x40
 
 LABEL_6C73:
 	break
 	call LABEL_6A1A
-	video type=1, offset=CINEMATIC_069, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_069, x=[0x21], y=[0x22], zoom=0x40
 	jne [HERO_POS_LEFT_RIGHT], 0x00, LABEL_6CD4
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_6CD4
 	je [HERO_ACTION], 0x00, LABEL_6CD4
 	break
 	call LABEL_6A1A
-	video type=1, offset=CINEMATIC_070, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_070, x=[0x21], y=[0x22], zoom=0x40
 	je [HERO_ACTION], 0x00, LABEL_6CD4
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_6CD4
 	break
 	call LABEL_6A1A
-	video type=1, offset=CINEMATIC_071, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_071, x=[0x21], y=[0x22], zoom=0x40
 	je [HERO_ACTION], 0x00, LABEL_6CD4
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_6CD4
 	break
 	call LABEL_6A1A
-	video type=1, offset=CINEMATIC_072, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_072, x=[0x21], y=[0x22], zoom=0x40
 	je [HERO_ACTION], 0x00, LABEL_6CD4
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_6CD4
 	jmp LABEL_6C73

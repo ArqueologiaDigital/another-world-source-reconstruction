@@ -160,19 +160,19 @@ INIT_BITMASKS_BC_C6:
 	ret
 	jmp ENTRY_2ND_PASSCODE_INSTANCE
 	je [0xBC], 0x00, DRAW_PROGRESS_MARKERS
-	video type=1, offset=CINEMATIC_005, x=0, y=0
+	video offset=CINEMATIC_005, x=0, y=0
 
 DRAW_PROGRESS_MARKERS:
 	je [0xC6], 0x00, DRAW_CIN_058_AT_0_16_IF_VARF2_EQ_FA0
-	video type=1, offset=CINEMATIC_005, x=16, y=0
+	video offset=CINEMATIC_005, x=16, y=0
 
 DRAW_CIN_058_AT_0_16_IF_VARF2_EQ_FA0:
 	jne [0xF2], 0x0FA0, DRAW_CIN_058_AT_16_16_IF_VARDC_EQ_21
-	video type=1, offset=CINEMATIC_005, x=0, y=16
+	video offset=CINEMATIC_005, x=0, y=16
 
 DRAW_CIN_058_AT_16_16_IF_VARDC_EQ_21:
 	jne [HACK_VAR_DC], 0x21, TRIVIAL_RET
-	video type=1, offset=CINEMATIC_005, x=16, y=16
+	video offset=CINEMATIC_005, x=16, y=16
 
 TRIVIAL_RET:
 	ret
@@ -427,7 +427,7 @@ LABEL_03C0:
 	mov [0x28], [0x08]
 	jne [0x25], [0x27], ANIMATE_CURSOR_TRANSITION
 	jne [0x26], [0x28], ANIMATE_CURSOR_TRANSITION
-	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp LABEL_033B
 LABEL_03E7:
@@ -473,14 +473,14 @@ COPY_VAR_27_28_TO_07_08:
 	mov [0x08], [0x28]
 
 LABEL_0452:
-	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jne [HERO_POS_UP_DOWN], 0x00, LABEL_0452
 	jne [HERO_POS_MASK], 0x00, LABEL_0452
 	jmp LABEL_033B
 
 JUNK__0467:
-	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp JUNK__03F5
 LABEL_0470:
@@ -787,7 +787,7 @@ SETUP_VAR02_FROM_VAR22:
 LABEL_0865:
 	mov [0x05], [0x01]
 	call DERIVE_VAR07_VAR08_FROM_VAR05
-	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jne [LAST_KEYCHAR], 0x00, LABEL_0865
 	je [0xDB], 0x00, LABEL_0888
@@ -804,7 +804,7 @@ DRAW_CIN_003_AT_BC_54:
 	mov [0x07], 0x00BC
 	mov [0x08], 0x0054
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_003, x=160, y=100
+	video offset=CINEMATIC_003, x=160, y=100
 	text id=0x013C, x=2, y=80, color=0x06 ; "        ACCESS CODE:"
 	mov [0x06], [0x1E]
 	call DRAW_OR_BLINK_LETTER
@@ -1092,18 +1092,18 @@ DRAW_OR_BLINK_LETTER:
 
 DRAW_LETTER_VIA_CIN_DISPATCH:
 	jne [0x06], 0x62, DRAW_CIN_000_LETTER_BLANK
-	video type=1, offset=CINEMATIC_001, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_001, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 DRAW_CIN_000_LETTER_BLANK:
 	jne [0x06], 0x63, SHARED_RET
-	video type=1, offset=CINEMATIC_000, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_000, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 SHARED_RET:
 	ret
 	killChannel
-	video type=1, offset=CINEMATIC_004, x=160, y=100
+	video offset=CINEMATIC_004, x=160, y=100
 
 LABEL_0BBF:
 	blitFramebuffer 0xFF

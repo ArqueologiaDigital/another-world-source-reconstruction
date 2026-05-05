@@ -71,7 +71,7 @@ LABEL_65A0:
 	setup channel=0x35, address=DRAW_CIN_424_426_VERTICAL
 	setup channel=0x34, address=LABEL_CB57
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_400, x=162, y=70
+	video offset=CINEMATIC_400, x=162, y=70
 	selectVideoPage 0xFF
 	mov [0x47], 0x0FA0
 	ret
@@ -86,7 +86,7 @@ LABEL_65CB:
 	setup channel=0x02, address=KILL_CHANNEL_LANDING
 	setup channel=0x3C, address=LABEL_3E21
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_839, x=287, y=50, zoom=0x40
+	video offset=CINEMATIC_839, x=287, y=50, zoom=0x40
 	selectVideoPage 0xFF
 	play id=0x0057, freq=0x1C, vol=0x40, channel=0x00
 	ret

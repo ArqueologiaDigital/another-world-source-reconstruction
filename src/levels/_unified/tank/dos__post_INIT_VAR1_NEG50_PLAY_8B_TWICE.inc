@@ -145,65 +145,65 @@ LABEL_1A2F:
 
 LABEL_1A30:
 	jne [0x06], 0x01, LABEL_1A3D
-	video type=1, offset=CINEMATIC_220, x=[0x07], y=[0x08], zoom=[0x09]
+	video offset=CINEMATIC_220, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 LABEL_1A3D:
 	jne [0x06], 0x02, LABEL_1A4A
-	video type=1, offset=CINEMATIC_219, x=[0x07], y=[0x08], zoom=[0x09]
+	video offset=CINEMATIC_219, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 LABEL_1A4A:
 	jne [0x06], 0x03, LABEL_1A57
-	video type=1, offset=CINEMATIC_218, x=[0x07], y=[0x08], zoom=[0x09]
+	video offset=CINEMATIC_218, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 LABEL_1A57:
 	jne [0x06], 0x04, LABEL_1A64
-	video type=1, offset=CINEMATIC_217, x=[0x07], y=[0x08], zoom=[0x09]
+	video offset=CINEMATIC_217, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 LABEL_1A64:
 	jne [0x06], 0x05, LABEL_1A71
-	video type=1, offset=CINEMATIC_216, x=[0x07], y=[0x08], zoom=[0x09]
+	video offset=CINEMATIC_216, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 LABEL_1A71:
 	jne [0x06], 0x06, LABEL_1A7E
-	video type=1, offset=CINEMATIC_215, x=[0x07], y=[0x08], zoom=[0x09]
+	video offset=CINEMATIC_215, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 LABEL_1A7E:
 	jne [0x06], 0x07, LABEL_1A8B
-	video type=1, offset=CINEMATIC_214, x=[0x07], y=[0x08], zoom=[0x09]
+	video offset=CINEMATIC_214, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 LABEL_1A8B:
 	jne [0x06], 0x08, LABEL_1A98
-	video type=1, offset=CINEMATIC_213, x=[0x07], y=[0x08], zoom=[0x09]
+	video offset=CINEMATIC_213, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 LABEL_1A98:
 	jne [0x06], 0x09, LABEL_1AA5
-	video type=1, offset=CINEMATIC_212, x=[0x07], y=[0x08], zoom=[0x09]
+	video offset=CINEMATIC_212, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 LABEL_1AA5:
 	jne [0x06], 0x0A, LABEL_1AB2
-	video type=1, offset=CINEMATIC_211, x=[0x07], y=[0x08], zoom=[0x09]
+	video offset=CINEMATIC_211, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 LABEL_1AB2:
 	jne [0x06], 0x0B, LABEL_1ABF
-	video type=1, offset=CINEMATIC_210, x=[0x07], y=[0x08], zoom=[0x09]
+	video offset=CINEMATIC_210, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 LABEL_1ABF:
 	jne [0x06], 0x0C, LABEL_1ACC
-	video type=1, offset=CINEMATIC_209, x=[0x07], y=[0x08], zoom=[0x09]
+	video offset=CINEMATIC_209, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 LABEL_1ACC:
 	jne [0x06], 0x0D, SHARED_RET
-	video type=1, offset=CINEMATIC_208, x=[0x07], y=[0x08], zoom=[0x09]
+	video offset=CINEMATIC_208, x=[0x07], y=[0x08], zoom=[0x09]
 	ret

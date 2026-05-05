@@ -29,12 +29,12 @@ DRAW_CIN_090_TO_104_3F_AT_8C208B32:
 	copyVideoPage src=0x03, dst=0x00
 	break
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_090, x=160, y=100
-	video type=1, offset=CINEMATIC_091, x=160, y=100
+	video offset=CINEMATIC_090, x=160, y=100
+	video offset=CINEMATIC_091, x=160, y=100
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_104, x=200, y=100
+	video offset=CINEMATIC_104, x=200, y=100
 	selectVideoPage 0xFF
 	killChannel
 ;@endif
@@ -86,7 +86,7 @@ INLINE_SET_VAR16_TO_0:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_552:
-	video type=1, offset=CINEMATIC_552, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_552, x=[0x01], y=[0x02], zoom=0x40
 	ret
 ;@endif
 
@@ -98,7 +98,7 @@ DRAW_CIN_552:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_550:
-	video type=1, offset=CINEMATIC_550, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_550, x=[0x01], y=[0x02], zoom=0x40
 	ret
 ;@endif
 

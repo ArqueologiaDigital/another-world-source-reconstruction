@@ -47,7 +47,7 @@ LABEL_7685:
 	add [0x04], 0x0010
 	sub [0x06], 0x0003
 	call LABEL_72D4
-	video type=1, offset=CINEMATIC_035, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b], zoom=0x40
 	call LABEL_7473
 	break
 	play id=0x0063, freq=0x14, vol=0x0A, channel=0x01
@@ -55,21 +55,21 @@ LABEL_7685:
 	add [0x04], 0x0016
 	sub [0x06], 0x0003
 	call LABEL_72D4
-	video type=1, offset=CINEMATIC_035, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b], zoom=0x40
 	call LABEL_7473
 	deleteChannels first=0x21, last=0x24
 	break
 	add [0x04], 0x0020
 	play id=0x0063, freq=0x14, vol=0x40, channel=0x01
-	video type=1, offset=CINEMATIC_080, x=[0x03], y=[0x04], zoom=0x40
+	video offset=CINEMATIC_080, x=[0x03], y=[0x04], zoom=0x40
 	break
 	add [0x04], 0x0016
 	setPalette 0x02
-	video type=1, offset=CINEMATIC_081, x=[0x03], y=[0x04], zoom=0x40
+	video offset=CINEMATIC_081, x=[0x03], y=[0x04], zoom=0x40
 	break
 	play id=0x0064, freq=0x14, vol=0x40, channel=0x02
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_082, x=[0x03], y=[0x04], zoom=0x40
+	video offset=CINEMATIC_082, x=[0x03], y=[0x04], zoom=0x40
 	selectVideoPage 0xFF
 	call LABEL_1C8E
 	setup channel=0x11, address=DRAW_CIN_569_TO_572_6F_AT_F8680E45
@@ -77,11 +77,11 @@ LABEL_7685:
 	setup channel=0x35, address=DRAW_CIN_540_543_WITH_SFX_57
 	setup channel=0x15, address=SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01
 	mov [PAUSE_SLICES], 0x0004
-	video type=1, offset=CINEMATIC_083, x=[0x03], y=[0x04], zoom=0x40
+	video offset=CINEMATIC_083, x=[0x03], y=[0x04], zoom=0x40
 	mov [0x1A], [0x03]
 	mov [0x1B], [0x04]
 	break
-	video type=1, offset=CINEMATIC_084, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_084, x=[0x1a], y=[0x1b], zoom=0x40
 	setup channel=0x14, address=DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB
 	setup channel=0x22, address=LABEL_141E
 	setup channel=0x23, address=INLINE_SUB_VAR08_INIT_VAR29

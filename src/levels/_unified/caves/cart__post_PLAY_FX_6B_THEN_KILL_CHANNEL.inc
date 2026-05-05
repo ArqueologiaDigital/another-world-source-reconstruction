@@ -1,15 +1,15 @@
 LABEL_CC3D:
 	jne [0x24], 0x00, LABEL_CC4A
-	video type=1, offset=CINEMATIC_390, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_390, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 LABEL_CC4A:
 	je [0x24], 0x02, DRAW_CIN_388
-	video type=1, offset=CINEMATIC_389, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_389, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 DRAW_CIN_388:
-	video type=1, offset=CINEMATIC_388, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_388, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 LABEL_CC5E:
@@ -49,38 +49,38 @@ LABEL_CC99:
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x00
 	mov [0x24], 0x0000
 	call LABEL_CC5E
-	video type=1, offset=CINEMATIC_391, x=128, y=201, zoom=0x40
+	video offset=CINEMATIC_391, x=128, y=201, zoom=0x40
 	break
 	mov [0x24], 0x0001
 	call LABEL_CC5E
-	video type=1, offset=CINEMATIC_391, x=88, y=161
-	video type=1, offset=CINEMATIC_391, x=117, y=190
+	video offset=CINEMATIC_391, x=88, y=161
+	video offset=CINEMATIC_391, x=117, y=190
 	break
 	mov [0x24], 0x0002
 	call LABEL_CC5E
 	mov [0x8B], 0x8001
 	mov [0x96], 0x0046
 	mov [0x97], 0x0094
-	video type=1, offset=CINEMATIC_391, x=88, y=161
+	video offset=CINEMATIC_391, x=88, y=161
 	break
 	break
 	break
 	break
 	mov [0x24], 0x0000
 	call LABEL_CC5E
-	video type=1, offset=CINEMATIC_391, x=132, y=201, zoom=0x40
+	video offset=CINEMATIC_391, x=132, y=201, zoom=0x40
 	break
 	mov [0x24], 0x0001
 	call LABEL_CC5E
-	video type=1, offset=CINEMATIC_391, x=92, y=161
-	video type=1, offset=CINEMATIC_391, x=121, y=190
+	video offset=CINEMATIC_391, x=92, y=161
+	video offset=CINEMATIC_391, x=121, y=190
 	break
 	mov [0x24], 0x0002
 	call LABEL_CC5E
 	mov [0x8B], 0x8001
 	mov [0x96], 0x004C
 	mov [0x97], 0x0094
-	video type=1, offset=CINEMATIC_391, x=92, y=161
+	video offset=CINEMATIC_391, x=92, y=161
 	break
 	break
 	break
@@ -89,7 +89,7 @@ LABEL_CD19:
 	db 0x11
 
 HANG_DRAW_CIN_371:
-	video type=1, offset=CINEMATIC_371, x=[0xe7], y=[0xe8], zoom=[0xe9]
+	video offset=CINEMATIC_371, x=[0xe7], y=[0xe8], zoom=[0xe9]
 	break
 	jmp HANG_DRAW_CIN_371
 LABEL_CD24:

@@ -123,22 +123,22 @@ DISPLAY_TEXT_0A_0B_PLAY_FX:
 	killChannel
 
 DRAW_CITY_SEQ_419_420:
-	video type=1, offset=CINEMATIC_419, x=160, y=100
+	video offset=CINEMATIC_419, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_420, x=160, y=100
+	video offset=CINEMATIC_420, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_421, x=160, y=100
-	video type=1, offset=CINEMATIC_422, x=19, y=8
-	video type=1, offset=CINEMATIC_423, x=21, y=8
-	video type=1, offset=CINEMATIC_424, x=104, y=92
+	video offset=CINEMATIC_421, x=160, y=100
+	video offset=CINEMATIC_422, x=19, y=8
+	video offset=CINEMATIC_423, x=21, y=8
+	video offset=CINEMATIC_424, x=104, y=92
 	break
-	video type=1, offset=CINEMATIC_422, x=19, y=93
-	video type=1, offset=CINEMATIC_425, x=18, y=93
-	video type=1, offset=CINEMATIC_424, x=104, y=7
+	video offset=CINEMATIC_422, x=19, y=93
+	video offset=CINEMATIC_425, x=18, y=93
+	video offset=CINEMATIC_424, x=104, y=7
 	killChannel
-	video type=1, offset=CINEMATIC_191, x=162, y=100
+	video offset=CINEMATIC_191, x=162, y=100
 	break
-	video type=1, offset=CINEMATIC_192, x=234, y=163
+	video offset=CINEMATIC_192, x=234, y=163
 	killChannel
 
 CIN_382_PUFFS_PHASE_INIT:
@@ -146,69 +146,69 @@ CIN_382_PUFFS_PHASE_INIT:
 
 DRAW_CIN_382_PUFFS_2X:
 	break
-	video type=1, offset=CINEMATIC_382, x=165, y=74
+	video offset=CINEMATIC_382, x=165, y=74
 	break
-	video type=1, offset=CINEMATIC_382, x=178, y=43
+	video offset=CINEMATIC_382, x=178, y=43
 	break
-	video type=1, offset=CINEMATIC_382, x=202, y=22
+	video offset=CINEMATIC_382, x=202, y=22
 	break
-	video type=1, offset=CINEMATIC_382, x=235, y=16
+	video offset=CINEMATIC_382, x=235, y=16
 	break
-	video type=1, offset=CINEMATIC_382, x=267, y=27, zoom=0x40
+	video offset=CINEMATIC_382, x=267, y=27, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_382, x=289, y=52, zoom=0x40
+	video offset=CINEMATIC_382, x=289, y=52, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_382, x=296, y=83, zoom=0x40
+	video offset=CINEMATIC_382, x=296, y=83, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_382, x=287, y=113, zoom=0x40
+	video offset=CINEMATIC_382, x=287, y=113, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_382, x=264, y=136, zoom=0x40
+	video offset=CINEMATIC_382, x=264, y=136, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_382, x=225, y=145
+	video offset=CINEMATIC_382, x=225, y=145
 	break
-	video type=1, offset=CINEMATIC_382, x=189, y=130
+	video offset=CINEMATIC_382, x=189, y=130
 	break
-	video type=1, offset=CINEMATIC_382, x=170, y=104
+	video offset=CINEMATIC_382, x=170, y=104
 	djnz [0x02], DRAW_CIN_382_PUFFS_2X
 	mov [0x02], 0x0003
 
 DRAW_CIN_382_PUFFS_3X:
 	break
-	video type=1, offset=CINEMATIC_382, x=165, y=74
+	video offset=CINEMATIC_382, x=165, y=74
 	break
-	video type=1, offset=CINEMATIC_382, x=193, y=28
+	video offset=CINEMATIC_382, x=193, y=28
 	break
-	video type=1, offset=CINEMATIC_382, x=255, y=20
+	video offset=CINEMATIC_382, x=255, y=20
 	break
-	video type=1, offset=CINEMATIC_382, x=293, y=61, zoom=0x40
+	video offset=CINEMATIC_382, x=293, y=61, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_382, x=287, y=114, zoom=0x40
+	video offset=CINEMATIC_382, x=287, y=114, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_382, x=236, y=145
+	video offset=CINEMATIC_382, x=236, y=145
 	break
-	video type=1, offset=CINEMATIC_382, x=185, y=127
+	video offset=CINEMATIC_382, x=185, y=127
 	djnz [0x02], DRAW_CIN_382_PUFFS_3X
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_383, x=237, y=156
+	video offset=CINEMATIC_383, x=237, y=156
 	selectVideoPage 0xFF
 	break
-	video type=1, offset=CINEMATIC_382, x=165, y=74
+	video offset=CINEMATIC_382, x=165, y=74
 	break
-	video type=1, offset=CINEMATIC_382, x=233, y=15
+	video offset=CINEMATIC_382, x=233, y=15
 	break
-	video type=1, offset=CINEMATIC_382, x=296, y=84, zoom=0x40
+	video offset=CINEMATIC_382, x=296, y=84, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_382, x=249, y=148
+	video offset=CINEMATIC_382, x=249, y=148
 	break
-	video type=1, offset=CINEMATIC_384, x=237, y=156
-	video type=1, offset=CINEMATIC_384, x=287, y=150, zoom=[0x14]	;@enc=alt
+	video offset=CINEMATIC_384, x=237, y=156
+	video offset=CINEMATIC_384, x=287, y=150, zoom=[0x14]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_384, x=287, y=150, zoom=0x40
+	video offset=CINEMATIC_384, x=287, y=150, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_384, x=287, y=150, zoom=[0x78]	;@enc=alt
+	video offset=CINEMATIC_384, x=287, y=150, zoom=[0x78]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_384, x=287, y=150, zoom=[0xbe]	;@enc=alt
+	video offset=CINEMATIC_384, x=287, y=150, zoom=[0xbe]	;@enc=alt
 	killChannel
 
 INIT_VAR_02_AND_BREAK_LOOP:
@@ -230,74 +230,74 @@ BLINK_TEXTS_14_15_AT_10_150_18X:
 	killChannel
 
 DRAW_CIN_382_TWICE_AT_DIFF_Y:
-	video type=1, offset=CINEMATIC_382, x=164, y=123
+	video offset=CINEMATIC_382, x=164, y=123
 	break
-	video type=1, offset=CINEMATIC_382, x=164, y=118
+	video offset=CINEMATIC_382, x=164, y=118
 	break
-	video type=1, offset=CINEMATIC_382, x=164, y=110
+	video offset=CINEMATIC_382, x=164, y=110
 	break
-	video type=1, offset=CINEMATIC_382, x=164, y=99
+	video offset=CINEMATIC_382, x=164, y=99
 	mov [0x02], 0x0001
 
 DRAW_CIN_382_PUFFS_1X:
 	break
-	video type=1, offset=CINEMATIC_382, x=165, y=74
+	video offset=CINEMATIC_382, x=165, y=74
 	break
-	video type=1, offset=CINEMATIC_382, x=170, y=55
+	video offset=CINEMATIC_382, x=170, y=55
 	break
-	video type=1, offset=CINEMATIC_382, x=180, y=41
+	video offset=CINEMATIC_382, x=180, y=41
 	break
-	video type=1, offset=CINEMATIC_382, x=191, y=29
+	video offset=CINEMATIC_382, x=191, y=29
 	break
-	video type=1, offset=CINEMATIC_382, x=206, y=20
+	video offset=CINEMATIC_382, x=206, y=20
 	break
-	video type=1, offset=CINEMATIC_382, x=224, y=15
+	video offset=CINEMATIC_382, x=224, y=15
 	break
-	video type=1, offset=CINEMATIC_382, x=246, y=16
+	video offset=CINEMATIC_382, x=246, y=16
 	break
-	video type=1, offset=CINEMATIC_382, x=263, y=24, zoom=0x40
+	video offset=CINEMATIC_382, x=263, y=24, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_382, x=278, y=36, zoom=0x40
+	video offset=CINEMATIC_382, x=278, y=36, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_382, x=288, y=49, zoom=0x40
+	video offset=CINEMATIC_382, x=288, y=49, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_382, x=294, y=66, zoom=0x40
+	video offset=CINEMATIC_382, x=294, y=66, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_382, x=297, y=82, zoom=0x40
+	video offset=CINEMATIC_382, x=297, y=82, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_382, x=293, y=101, zoom=0x40
+	video offset=CINEMATIC_382, x=293, y=101, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_382, x=284, y=117, zoom=0x40
+	video offset=CINEMATIC_382, x=284, y=117, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_382, x=271, y=131, zoom=0x40
+	video offset=CINEMATIC_382, x=271, y=131, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_382, x=256, y=141, zoom=0x40
+	video offset=CINEMATIC_382, x=256, y=141, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_382, x=237, y=145
+	video offset=CINEMATIC_382, x=237, y=145
 	break
-	video type=1, offset=CINEMATIC_382, x=217, y=144
+	video offset=CINEMATIC_382, x=217, y=144
 	break
-	video type=1, offset=CINEMATIC_382, x=200, y=138
+	video offset=CINEMATIC_382, x=200, y=138
 	break
-	video type=1, offset=CINEMATIC_382, x=184, y=127
+	video offset=CINEMATIC_382, x=184, y=127
 	break
-	video type=1, offset=CINEMATIC_382, x=173, y=112
+	video offset=CINEMATIC_382, x=173, y=112
 	break
-	video type=1, offset=CINEMATIC_382, x=167, y=94
+	video offset=CINEMATIC_382, x=167, y=94
 	djnz [0x02], DRAW_CIN_382_PUFFS_1X
 	jmp CIN_382_PUFFS_PHASE_INIT
 LABEL_185D:
 	killChannel
 
 DRAW_CIN_426_427_TWICE:
-	video type=1, offset=CINEMATIC_426, x=58, y=100
-	video type=1, offset=CINEMATIC_427, x=292, y=100, zoom=0x40
+	video offset=CINEMATIC_426, x=58, y=100
+	video offset=CINEMATIC_427, x=292, y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_427, x=58, y=100
-	video type=1, offset=CINEMATIC_428, x=292, y=100, zoom=0x40
+	video offset=CINEMATIC_427, x=58, y=100
+	video offset=CINEMATIC_428, x=292, y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_428, x=58, y=100
-	video type=1, offset=CINEMATIC_426, x=292, y=100, zoom=0x40
+	video offset=CINEMATIC_428, x=58, y=100
+	video offset=CINEMATIC_426, x=292, y=100, zoom=0x40
 	break
 	jmp DRAW_CIN_426_427_TWICE
 LABEL_187F:
@@ -305,12 +305,12 @@ LABEL_187F:
 
 FILL_FF_8_AND_DRAW_CIN_517_518:
 	fill page=0xFF, color=0x08
-	video type=1, offset=CINEMATIC_517, x=160, y=100
-	video type=1, offset=CINEMATIC_518, x=160, y=100
-	video type=1, offset=CINEMATIC_519, x=110, y=101
-	video type=1, offset=CINEMATIC_520, x=228, y=85
+	video offset=CINEMATIC_517, x=160, y=100
+	video offset=CINEMATIC_518, x=160, y=100
+	video offset=CINEMATIC_519, x=110, y=101
+	video offset=CINEMATIC_520, x=228, y=85
 	je [0xDB], 0x00, IF_DB_ZERO_SWAP_PAGE_PAL_11
-	video type=1, offset=CINEMATIC_352, x=128, y=30
+	video offset=CINEMATIC_352, x=128, y=30
 
 IF_DB_ZERO_SWAP_PAGE_PAL_11:
 	copyVideoPage src=0xFF, dst=0x00

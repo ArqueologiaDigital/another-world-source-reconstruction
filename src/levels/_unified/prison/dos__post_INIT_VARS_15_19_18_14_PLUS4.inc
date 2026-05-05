@@ -29,7 +29,7 @@ LABEL_7950:
 LABEL_795A:
 	call LABEL_711F
 	call LABEL_72D4
-	video type=1, offset=CINEMATIC_035, x=[0x1a], y=[0x1b], zoom=0x40
+	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b], zoom=0x40
 	call LABEL_739F
 	call LABEL_7473
 	break
@@ -54,47 +54,47 @@ LABEL_7980:
 
 LABEL_7994:
 	jg [0x22], 0x16, LABEL_79A2
-	video type=1, offset=CINEMATIC_101, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_101, x=[0x21], y=[0x22], zoom=0x40
 	jmp LABEL_7A0F
 
 LABEL_79A2:
 	jg [0x22], 0x2C, LABEL_79B0
-	video type=1, offset=CINEMATIC_100, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_100, x=[0x21], y=[0x22], zoom=0x40
 	jmp LABEL_7A0F
 
 LABEL_79B0:
 	jg [0x22], 0x42, LABEL_79BE
-	video type=1, offset=CINEMATIC_099, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_099, x=[0x21], y=[0x22], zoom=0x40
 	jmp LABEL_7A0F
 
 LABEL_79BE:
 	jg [0x22], 0x58, LABEL_79CC
-	video type=1, offset=CINEMATIC_098, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_098, x=[0x21], y=[0x22], zoom=0x40
 	jmp LABEL_7A0F
 
 LABEL_79CC:
 	jg [0x22], 0x6E, LABEL_79DA
-	video type=1, offset=CINEMATIC_097, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_097, x=[0x21], y=[0x22], zoom=0x40
 	jmp LABEL_7A0F
 
 LABEL_79DA:
 	jg [0x22], 0x84, LABEL_79E8
-	video type=1, offset=CINEMATIC_096, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_096, x=[0x21], y=[0x22], zoom=0x40
 	jmp LABEL_7A0F
 
 LABEL_79E8:
 	jg [0x22], 0x9A, LABEL_79F6
-	video type=1, offset=CINEMATIC_095, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_095, x=[0x21], y=[0x22], zoom=0x40
 	jmp LABEL_7A0F
 
 LABEL_79F6:
 	jg [0x22], 0xB0, LABEL_7A04
-	video type=1, offset=CINEMATIC_094, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_094, x=[0x21], y=[0x22], zoom=0x40
 	jmp LABEL_7A0F
 
 LABEL_7A04:
 	jg [0x22], 0xC8, LABEL_7A0F
-	video type=1, offset=CINEMATIC_093, x=[0x21], y=[0x22], zoom=0x40
+	video offset=CINEMATIC_093, x=[0x21], y=[0x22], zoom=0x40
 
 LABEL_7A0F:
 	ret
@@ -131,15 +131,15 @@ LABEL_7A4A:
 	mov [0x63], [HERO_POS_UP_DOWN]
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	video type=1, offset=CINEMATIC_127, x=160, y=100
+	video offset=CINEMATIC_127, x=160, y=100
 	je [HACK_VAR_67], 0x65, LABEL_7A7A
-	video type=1, offset=CINEMATIC_106, x=218, y=100
+	video offset=CINEMATIC_106, x=218, y=100
 
 LABEL_7A7A:
 	jne [HACK_VAR_67], 0x65, LABEL_7A8C
-	video type=1, offset=CINEMATIC_090, x=160, y=100
-	video type=1, offset=CINEMATIC_091, x=160, y=100
-	video type=1, offset=CINEMATIC_104, x=200, y=100
+	video offset=CINEMATIC_090, x=160, y=100
+	video offset=CINEMATIC_091, x=160, y=100
+	video offset=CINEMATIC_104, x=200, y=100
 
 LABEL_7A8C:
 	mov [0x2A], 0x000F
@@ -173,13 +173,13 @@ LABEL_7ADB:
 	mov [0x11], 0x0001
 
 LABEL_7AE8:
-	video type=1, offset=CINEMATIC_105, x=160, y=129
+	video offset=CINEMATIC_105, x=160, y=129
 	selectVideoPage 0xFF
 	mov [SCROLL_Y], 0x0000
 	mov [0x17], 0x0000
 	mov [0x18], 0x0000
 	selectVideoPage 0x03
-	video type=1, offset=CINEMATIC_130, x=160, y=100
+	video offset=CINEMATIC_130, x=160, y=100
 	selectVideoPage 0xFF
 	call LABEL_7C6A
 	jmp LABEL_7C8B

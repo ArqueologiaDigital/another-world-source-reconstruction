@@ -3,11 +3,11 @@ LABEL_10F3:
 	mov [0x21], 0x005A
 	mov [0x23], 0x0127
 	sub [0x23], [0xE7]
-	video type=1, offset=CINEMATIC_759, x=[0x23], y=100, zoom=0x40
+	video offset=CINEMATIC_759, x=[0x23], y=100, zoom=0x40
 	add [0x21], [0xE7]
 
 LABEL_110A:
-	video type=1, offset=CINEMATIC_760, x=[0xe6], y=[0x21], zoom=0x40
+	video offset=CINEMATIC_760, x=[0xe6], y=[0x21], zoom=0x40
 	add [0x21], 0x0028
 	djnz [0x22], LABEL_110A
 	break

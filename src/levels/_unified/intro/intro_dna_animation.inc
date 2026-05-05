@@ -115,59 +115,59 @@ LABEL_02B8:
 
 DRAW_DNA_ANIMATION_LOOP:
 	break
-	video type=1, offset=CINEMATIC_DNA_0, x=[0x04], y=[0x05], zoom=[0x06]
+	video offset=CINEMATIC_DNA_0, x=[0x04], y=[0x05], zoom=[0x06]
 	break
-	video type=1, offset=CINEMATIC_DNA_1, x=[0x04], y=[0x05], zoom=[0x06]
+	video offset=CINEMATIC_DNA_1, x=[0x04], y=[0x05], zoom=[0x06]
 	break
-	video type=1, offset=CINEMATIC_DNA_2, x=[0x04], y=[0x05], zoom=[0x06]
+	video offset=CINEMATIC_DNA_2, x=[0x04], y=[0x05], zoom=[0x06]
 	break
-	video type=1, offset=CINEMATIC_DNA_3, x=[0x04], y=[0x05], zoom=[0x06]
+	video offset=CINEMATIC_DNA_3, x=[0x04], y=[0x05], zoom=[0x06]
 	break
-	video type=1, offset=CINEMATIC_DNA_4, x=[0x04], y=[0x05], zoom=[0x06]
+	video offset=CINEMATIC_DNA_4, x=[0x04], y=[0x05], zoom=[0x06]
 	break
-	video type=1, offset=CINEMATIC_DNA_5, x=[0x04], y=[0x05], zoom=[0x06]
+	video offset=CINEMATIC_DNA_5, x=[0x04], y=[0x05], zoom=[0x06]
 	break
-	video type=1, offset=CINEMATIC_DNA_6, x=[0x04], y=[0x05], zoom=[0x06]
+	video offset=CINEMATIC_DNA_6, x=[0x04], y=[0x05], zoom=[0x06]
 	break
-	video type=1, offset=CINEMATIC_DNA_7, x=[0x04], y=[0x05], zoom=[0x06]
+	video offset=CINEMATIC_DNA_7, x=[0x04], y=[0x05], zoom=[0x06]
 	break
-	video type=1, offset=CINEMATIC_DNA_8, x=[0x04], y=[0x05], zoom=[0x06]
+	video offset=CINEMATIC_DNA_8, x=[0x04], y=[0x05], zoom=[0x06]
 	break
-	video type=1, offset=CINEMATIC_DNA_9, x=[0x04], y=[0x05], zoom=[0x06]
+	video offset=CINEMATIC_DNA_9, x=[0x04], y=[0x05], zoom=[0x06]
 	break
-	video type=1, offset=CINEMATIC_DNA_10, x=[0x04], y=[0x05], zoom=[0x06]
+	video offset=CINEMATIC_DNA_10, x=[0x04], y=[0x05], zoom=[0x06]
 	break
-	video type=1, offset=CINEMATIC_DNA_11, x=[0x04], y=[0x05], zoom=[0x06]
+	video offset=CINEMATIC_DNA_11, x=[0x04], y=[0x05], zoom=[0x06]
 	break
-	video type=1, offset=CINEMATIC_DNA_12, x=[0x04], y=[0x05], zoom=[0x06]
+	video offset=CINEMATIC_DNA_12, x=[0x04], y=[0x05], zoom=[0x06]
 	break
-	video type=1, offset=CINEMATIC_DNA_13, x=[0x04], y=[0x05], zoom=[0x06]
+	video offset=CINEMATIC_DNA_13, x=[0x04], y=[0x05], zoom=[0x06]
 	break
-	video type=1, offset=CINEMATIC_DNA_14, x=[0x04], y=[0x05], zoom=[0x06]
+	video offset=CINEMATIC_DNA_14, x=[0x04], y=[0x05], zoom=[0x06]
 	break
-	video type=1, offset=CINEMATIC_DNA_15, x=[0x04], y=[0x05], zoom=[0x06]
+	video offset=CINEMATIC_DNA_15, x=[0x04], y=[0x05], zoom=[0x06]
 	break
-	video type=1, offset=CINEMATIC_DNA_16, x=[0x04], y=[0x05], zoom=[0x06]
+	video offset=CINEMATIC_DNA_16, x=[0x04], y=[0x05], zoom=[0x06]
 	jmp DRAW_DNA_ANIMATION_LOOP
 LABEL_0333:
 	killChannel
 
 DRAW_CINEMATICS_166_TO_171:
-	video type=1, offset=CINEMATIC_166, x=160, y=100
+	video offset=CINEMATIC_166, x=160, y=100
 	play id=0x002C, freq=0x0F, vol=0x3F, channel=0x02
 	break
-	video type=1, offset=CINEMATIC_167, x=160, y=100
+	video offset=CINEMATIC_167, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_168, x=160, y=100
+	video offset=CINEMATIC_168, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_166, x=160, y=100
+	video offset=CINEMATIC_166, x=160, y=100
 	killChannel
 
 INIT_VARS_10_11_AND_SELECT_PAGE0:
 	mov [0x10], 0x00E4
 	mov [0x11], 0x00E4
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_169, x=157, y=100
+	video offset=CINEMATIC_169, x=157, y=100
 	selectVideoPage 0xFF
 	mov [0x0F], 0x001E
 
@@ -187,59 +187,59 @@ DRIFT_VAR_10_INC_BY_1_LOOP:
 	killChannel
 
 DRAW_CIN_170_171_AT_VAR10_VAR11:
-	video type=1, offset=CINEMATIC_170, x=[0x10], y=44, zoom=0x40
-	video type=1, offset=CINEMATIC_171, x=[0x11], y=44, zoom=0x40
+	video offset=CINEMATIC_170, x=[0x10], y=44, zoom=0x40
+	video offset=CINEMATIC_171, x=[0x11], y=44, zoom=0x40
 	break
 	jmp DRAW_CIN_170_171_AT_VAR10_VAR11
 LABEL_0390:
 	killChannel
 
 DRAW_CIN_453_454_SEQ:
-	video type=1, offset=CINEMATIC_453, x=160, y=100
+	video offset=CINEMATIC_453, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_454, x=160, y=100
+	video offset=CINEMATIC_454, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_455, x=160, y=100
+	video offset=CINEMATIC_455, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_456, x=160, y=100
+	video offset=CINEMATIC_456, x=160, y=100
 	killChannel
 
 DRAW_CIN_035_PAL_3_REPEAT_HEAD:
 	setPalette 0x03
 	mov [PAUSE_SLICES], 0x0003
-	video type=1, offset=CINEMATIC_035, x=160, y=100
+	video offset=CINEMATIC_035, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_036, x=160, y=100
+	video offset=CINEMATIC_036, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_037, x=160, y=100
+	video offset=CINEMATIC_037, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_038, x=160, y=100
+	video offset=CINEMATIC_038, x=160, y=100
 	play id=0x003C, freq=0x16, vol=0x0F, channel=0x00
 	break
-	video type=1, offset=CINEMATIC_039, x=160, y=100
+	video offset=CINEMATIC_039, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_040, x=160, y=100
+	video offset=CINEMATIC_040, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_041, x=160, y=100
+	video offset=CINEMATIC_041, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_042, x=160, y=100
+	video offset=CINEMATIC_042, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_043, x=160, y=100
+	video offset=CINEMATIC_043, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_044, x=160, y=100
+	video offset=CINEMATIC_044, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_045, x=160, y=100
+	video offset=CINEMATIC_045, x=160, y=100
 	break
 	mov [PAUSE_SLICES], 0x0004
 	setPalette 0x1B
-	video type=1, offset=CINEMATIC_046, x=160, y=100
+	video offset=CINEMATIC_046, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_047, x=160, y=100
+	video offset=CINEMATIC_047, x=160, y=100
 	mov [0x01], 0x000F
 
 DRAW_CIN_048_15_FRAMES_LOOP:
 	break
-	video type=1, offset=CINEMATIC_048, x=160, y=100
+	video offset=CINEMATIC_048, x=160, y=100
 	djnz [0x01], DRAW_CIN_048_15_FRAMES_LOOP
 	setup channel=0x01, address=INTRO_FILL_AND_DRAW_CIN_103
 	setup channel=0x02, address=INTRO_PLAY_FX_AND_PALETTE_4_LOOP

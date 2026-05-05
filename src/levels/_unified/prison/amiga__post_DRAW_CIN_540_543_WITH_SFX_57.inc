@@ -1,12 +1,12 @@
 HANG_DRAW_CIN_549:
-	video type=1, offset=CINEMATIC_549, x=181, y=146
+	video offset=CINEMATIC_549, x=181, y=146
 	break
 	jmp HANG_DRAW_CIN_549
 LABEL_76EA:
 	db 0x11
 
 HANG_DRAW_CIN_275:
-	video type=1, offset=CINEMATIC_275, x=181, y=146
+	video offset=CINEMATIC_275, x=181, y=146
 	break
 	jmp HANG_DRAW_CIN_275
 

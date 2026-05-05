@@ -1,6 +1,6 @@
 LABEL_2753:
-	video type=1, offset=CINEMATIC_448, x=160, y=[0xec], zoom=0x40
-	video type=1, offset=CINEMATIC_449, x=160, y=[0xed], zoom=0x40
+	video offset=CINEMATIC_448, x=160, y=[0xec], zoom=0x40
+	video offset=CINEMATIC_449, x=160, y=[0xed], zoom=0x40
 	sub [0xEC], 0x0010
 	sub [0xED], 0x000C
 	break
@@ -56,37 +56,37 @@ LABEL_27CE:
 LABEL_27F0:
 	break
 	je [HACK_VAR_67], 0x28, LABEL_2822
-	video type=1, offset=CINEMATIC_272, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_272, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_273, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_273, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0001
 	break
-	video type=1, offset=CINEMATIC_273, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_273, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0001
 	mov [0x03], 0x000A
 	setup channel=0x3F, address=LABEL_016F
 
 LABEL_2818:
 	break
-	video type=1, offset=CINEMATIC_273, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_273, x=[0x01], y=[0x02], zoom=0x40
 	jmp LABEL_2818
 LABEL_2821:
 	db 0x11
 
 LABEL_2822:
-	video type=1, offset=CINEMATIC_270, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_270, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_271, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_271, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0001
 	break
-	video type=1, offset=CINEMATIC_271, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_271, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0001
 	mov [0x03], 0x000A
 	setup channel=0x3F, address=LABEL_016F
 
 LABEL_2843:
 	break
-	video type=1, offset=CINEMATIC_271, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_271, x=[0x01], y=[0x02], zoom=0x40
 	jmp LABEL_2843
 LABEL_284C:
 	db 0x11

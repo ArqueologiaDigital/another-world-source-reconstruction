@@ -28,20 +28,20 @@ DRAW_HELPER_AT_Y_PLUS_1:
 DRAW_HELPER_BRANCHED_ON_PROXIMITY_FLAG:
 	call COMPUTE_RANDOM_BIT_MASKS
 	jne [0x39], 0x00, DROPLET_VARIANT_CASE_1
-	video type=1, offset=CINEMATIC_DROPLET_VARIANT_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DROPLET_VARIANT_0, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DROPLET_VARIANT_CASE_1:
 	jne [0x39], 0x01, DROPLET_VARIANT_CASE_2
-	video type=1, offset=CINEMATIC_DROPLET_VARIANT_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DROPLET_VARIANT_1, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DROPLET_VARIANT_CASE_2:
 	jne [0x39], 0x00, DROPLET_VARIANT_CASE_3
-	video type=1, offset=CINEMATIC_DROPLET_VARIANT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DROPLET_VARIANT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DROPLET_VARIANT_CASE_3:
-	video type=1, offset=CINEMATIC_DROPLET_VARIANT_3, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DROPLET_VARIANT_3, x=[0x01], y=[0x02], zoom=0x40
 	ret
 

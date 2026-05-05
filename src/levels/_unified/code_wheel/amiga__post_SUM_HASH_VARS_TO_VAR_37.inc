@@ -84,7 +84,7 @@ DERIVE_FOUR_POS_25_26_27_28:
 	mov [0x28], [0x08]
 	jne [0x25], [0x27], LABEL_098E
 	jne [0x26], [0x28], LABEL_098E
-	video type=1, offset=CINEMATIC_051, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_051, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp LABEL_08E2
 LABEL_098D:
@@ -125,7 +125,7 @@ LABEL_09E0:
 	jmp LABEL_08E2
 
 LABEL_09EF:
-	video type=1, offset=CINEMATIC_051, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_051, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp LABEL_0998
 LABEL_09F8:

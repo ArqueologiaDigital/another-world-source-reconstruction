@@ -73,16 +73,16 @@ LABEL_5913:
 LABEL_5929:
 	jl [0x04], 0x00, LABEL_5950
 	jl [0x2F], 0x1E, LABEL_593D
-	video type=1, offset=CINEMATIC_297, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_297, x=[0x01], y=[0x02], zoom=0x40
 	jmp LABEL_5950
 
 LABEL_593D:
 	jl [0x2F], 0x14, LABEL_594B
-	video type=1, offset=CINEMATIC_296, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_296, x=[0x01], y=[0x02], zoom=0x40
 	jmp LABEL_5950
 
 LABEL_594B:
-	video type=1, offset=CINEMATIC_295, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_295, x=[0x01], y=[0x02], zoom=0x40
 
 LABEL_5950:
 	break
@@ -95,18 +95,18 @@ LABEL_5954:
 	setup channel=0x3C, address=LABEL_21F2
 
 LABEL_5968:
-	video type=1, offset=CINEMATIC_299, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_299, x=[0x01], y=[0x02], zoom=0x40
 	call DRAW_CIN_298_THEN_CIN_298
 	break
-	video type=1, offset=CINEMATIC_300, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_300, x=[0x01], y=[0x02], zoom=0x40
 	call DRAW_CIN_298_THEN_CIN_298
 	break
-	video type=1, offset=CINEMATIC_301, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_301, x=[0x01], y=[0x02], zoom=0x40
 	call DRAW_CIN_298_THEN_CIN_298
 
 LABEL_5982:
 	break
-	video type=1, offset=CINEMATIC_302, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_302, x=[0x01], y=[0x02], zoom=0x40
 	call DRAW_CIN_298_THEN_CIN_298
 	jmp LABEL_5982
 LABEL_598E:
@@ -123,8 +123,8 @@ KILL_CHAN_AT_59A3:
 	killChannel
 
 DRAW_CIN_298_THEN_CIN_298:
-	video type=1, offset=CINEMATIC_298, x=320, y=184, zoom=0x40
-	video type=1, offset=CINEMATIC_298, x=16, y=184
+	video offset=CINEMATIC_298, x=320, y=184, zoom=0x40
+	video offset=CINEMATIC_298, x=16, y=184
 	ret
 LABEL_59AE:
 	db 0xC0, 0xE4, 0xA0, 0x13, 0x06, 0x0A, 0x04, 0x02
@@ -152,22 +152,22 @@ LABEL_59EE:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	je [0xF8], 0x10, LABEL_5A04
-	video type=1, offset=CINEMATIC_112, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_112, x=[0x01], y=[0x02], zoom=0x40
 	break
 	jmp LABEL_59BA
 
 LABEL_5A04:
 	jl [0x34], 0x05, LABEL_5A12
-	video type=1, offset=CINEMATIC_111, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_111, x=[0x01], y=[0x02], zoom=0x40
 	jmp LABEL_5A25
 
 LABEL_5A12:
 	jl [0x34], 0x03, LABEL_5A20
-	video type=1, offset=CINEMATIC_110, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_110, x=[0x01], y=[0x02], zoom=0x40
 	jmp LABEL_5A25
 
 LABEL_5A20:
-	video type=1, offset=CINEMATIC_110, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_110, x=[0x01], y=[0x02], zoom=0x40
 
 LABEL_5A25:
 	break
@@ -179,21 +179,21 @@ LABEL_5A29:
 	je [0xF8], 0x10, LABEL_5A6C
 	je [HACK_VAR_67], 0x88, LABEL_5A56
 	je [HACK_VAR_67], 0x89, LABEL_5A56
-	video type=1, offset=CINEMATIC_107, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_107, x=[0x01], y=[0x02], zoom=0x40
 	break
 	mov [0x03], 0x0003
 
 ANIM_CIN_109_LOOP_VAR03:
-	video type=1, offset=CINEMATIC_109, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_109, x=[0x01], y=[0x02], zoom=0x40
 	break
 	djnz [0x03], ANIM_CIN_109_LOOP_VAR03
 
 LABEL_5A56:
 	mov [0x63], 0x0001
 	call SET_VAR04_TO_0020
-	video type=1, offset=CINEMATIC_107, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_107, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_108, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_108, x=[0x01], y=[0x02], zoom=0x40
 	jmp HERO_WALK_LEFT_LOOP
 LABEL_5A6B:
 	db 0x11
@@ -201,7 +201,7 @@ LABEL_5A6B:
 LABEL_5A6C:
 	je [HACK_VAR_67], 0x88, LABEL_5A8C
 	je [HACK_VAR_67], 0x89, LABEL_5A8C
-	video type=1, offset=CINEMATIC_084, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_084, x=[0x01], y=[0x02], zoom=0x40
 	break
 	mov [0x03], 0x0003
 
@@ -213,9 +213,9 @@ ANIM_CV_332_LOOP_VAR03:
 LABEL_5A8C:
 	mov [0x63], 0x0002
 	call SET_VAR04_TO_0020
-	video type=1, offset=CINEMATIC_084, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_084, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_085, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_085, x=[0x01], y=[0x02], zoom=0x40
 	jmp HERO_WALK_RIGHT_LOOP
 LABEL_5AA1:
 	db 0x11

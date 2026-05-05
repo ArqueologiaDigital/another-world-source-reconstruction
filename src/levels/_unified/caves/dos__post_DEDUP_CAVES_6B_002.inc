@@ -40,7 +40,7 @@ LABEL_811A:
 
 LABEL_8129:
 	jne [0x0E], 0x06, LABEL_8135
-	video type=1, offset=CINEMATIC_040, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_040, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_8135:
@@ -55,67 +55,67 @@ LABEL_8149:
 	db 0x11
 
 DRAW_CIN_048:
-	video type=1, offset=CINEMATIC_048, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_048, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_049:
-	video type=1, offset=CINEMATIC_049, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_049, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_050:
-	video type=1, offset=CINEMATIC_050, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_050, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_051:
-	video type=1, offset=CINEMATIC_051, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_051, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_052:
-	video type=1, offset=CINEMATIC_052, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_052, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_026:
-	video type=1, offset=CINEMATIC_026, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_026, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_053:
-	video type=1, offset=CINEMATIC_053, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_053, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_047:
-	video type=1, offset=CINEMATIC_047, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_047, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_046:
-	video type=1, offset=CINEMATIC_046, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_046, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_045:
-	video type=1, offset=CINEMATIC_045, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_045, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_041:
-	video type=1, offset=CINEMATIC_041, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_041, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_044:
-	video type=1, offset=CINEMATIC_044, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_044, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_043:
-	video type=1, offset=CINEMATIC_043, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_043, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_042:
-	video type=1, offset=CINEMATIC_042, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_042, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_038:
-	video type=1, offset=CINEMATIC_038, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_038, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_039:
-	video type=1, offset=CINEMATIC_039, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_039, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_81AA:
@@ -126,11 +126,11 @@ LABEL_81AA:
 	ret
 
 DRAW_CIN_061:
-	video type=1, offset=CINEMATIC_061, x=[0xf5], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_061, x=[0xf5], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_062:
-	video type=1, offset=CINEMATIC_062, x=[0xf5], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_062, x=[0xf5], y=[0x08], zoom=0x40
 	ret
 
 LABEL_81CA:
@@ -143,7 +143,7 @@ LABEL_81CA:
 LABEL_81DE:
 	add [0x08], 0x000D
 	sub [0x07], 0x0002
-	video type=1, offset=CINEMATIC_031, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_031, x=[0x07], y=[0x08], zoom=0x40
 	add [0x07], 0x0002
 	sub [0x08], 0x000D
 	ret
@@ -151,7 +151,7 @@ LABEL_81DE:
 LABEL_81F4:
 	add [0x08], 0x000D
 	sub [0x07], 0x0002
-	video type=1, offset=CINEMATIC_032, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_032, x=[0x07], y=[0x08], zoom=0x40
 	add [0x07], 0x0002
 	sub [0x08], 0x000D
 	ret

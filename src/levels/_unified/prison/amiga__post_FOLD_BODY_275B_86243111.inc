@@ -22,9 +22,9 @@ LABEL_5027:
 	setup channel=0x02, address=KILL_CHANNEL_LANDING
 	break
 	mov [PAUSE_SLICES], 0x0008
-	video type=1, offset=CINEMATIC_686, x=160, y=100
+	video offset=CINEMATIC_686, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_687, x=160, y=100
+	video offset=CINEMATIC_687, x=160, y=100
 	break
 	mov [0x16], 0x0005
 
@@ -76,7 +76,7 @@ LABEL_50D1:
 
 LABEL_50DA:
 	jne [0x0E], 0x06, LABEL_50E6
-	video type=1, offset=CINEMATIC_227, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_227, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_50E6:

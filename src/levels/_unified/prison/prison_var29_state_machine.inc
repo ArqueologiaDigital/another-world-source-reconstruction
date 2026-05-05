@@ -29,24 +29,24 @@ INLINE_SET_VARF1_TO_64:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_406_408_BLOCK:
-	video type=1, offset=CINEMATIC_406, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_406, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_407, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_407, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_408, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_408, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_409, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_409, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_409, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_409, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_408, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_408, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_409, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_409, x=[0x07], y=[0x08], zoom=0x40
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_410, x=160, y=100
+	video offset=CINEMATIC_410, x=160, y=100
 	selectVideoPage 0xFF
 	break
-	video type=1, offset=CINEMATIC_411, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_411, x=[0x07], y=[0x08], zoom=0x40
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -125,16 +125,16 @@ BIT_EXTRACT_FROM_VAR24_TO_VAR25:
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_569_TO_572_6F_AT_F8680E45:
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_569, x=160, y=100
+	video offset=CINEMATIC_569, x=160, y=100
 	selectVideoPage 0xFF
 	break
-	video type=1, offset=CINEMATIC_570, x=228, y=175
+	video offset=CINEMATIC_570, x=228, y=175
 	break
-	video type=1, offset=CINEMATIC_571, x=232, y=175
-	video type=1, offset=CINEMATIC_572, x=160, y=100
+	video offset=CINEMATIC_571, x=232, y=175
+	video offset=CINEMATIC_572, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_573, x=245, y=175
-	video type=1, offset=CINEMATIC_572, x=160, y=100
+	video offset=CINEMATIC_573, x=245, y=175
+	video offset=CINEMATIC_572, x=160, y=100
 	killChannel
 ;@endif
 
@@ -142,20 +142,20 @@ DRAW_CIN_569_TO_572_6F_AT_F8680E45:
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_570_574_BLOCK:
 	mov [0x57], 0x0002
-	video type=1, offset=CINEMATIC_574, x=239, y=175
-	video type=1, offset=CINEMATIC_572, x=160, y=100
+	video offset=CINEMATIC_574, x=239, y=175
+	video offset=CINEMATIC_572, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_570, x=230, y=175
-	video type=1, offset=CINEMATIC_574, x=230, y=175
-	video type=1, offset=CINEMATIC_572, x=160, y=100
+	video offset=CINEMATIC_570, x=230, y=175
+	video offset=CINEMATIC_574, x=230, y=175
+	video offset=CINEMATIC_572, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_570, x=228, y=175
+	video offset=CINEMATIC_570, x=228, y=175
 	break
-	video type=1, offset=CINEMATIC_575, x=227, y=175
+	video offset=CINEMATIC_575, x=227, y=175
 	break
-	video type=1, offset=CINEMATIC_575, x=226, y=175
+	video offset=CINEMATIC_575, x=226, y=175
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_575, x=226, y=175
+	video offset=CINEMATIC_575, x=226, y=175
 	selectVideoPage 0xFF
 	killChannel
 ;@endif
@@ -163,29 +163,29 @@ DRAW_CIN_570_574_BLOCK:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_576_578_BLOCK:
-	video type=1, offset=CINEMATIC_576, x=215, y=131
+	video offset=CINEMATIC_576, x=215, y=131
 	break
-	video type=1, offset=CINEMATIC_577, x=227, y=141
+	video offset=CINEMATIC_577, x=227, y=141
 	break
 	mov [0x31], 0x0000
-	video type=1, offset=CINEMATIC_578, x=231, y=158
+	video offset=CINEMATIC_578, x=231, y=158
 	break
-	video type=1, offset=CINEMATIC_579, x=239, y=175
+	video offset=CINEMATIC_579, x=239, y=175
 	break
-	video type=1, offset=CINEMATIC_578, x=243, y=174
+	video offset=CINEMATIC_578, x=243, y=174
 	break
 	play id=0x0060, freq=0x14, vol=0x40, channel=0x01
-	video type=1, offset=CINEMATIC_274, x=245, y=175
+	video offset=CINEMATIC_274, x=245, y=175
 	mov [0x31], 0x0000
 	break
-	video type=1, offset=CINEMATIC_580, x=247, y=175
+	video offset=CINEMATIC_580, x=247, y=175
 	break
 	play id=0x0060, freq=0x14, vol=0x40, channel=0x01
-	video type=1, offset=CINEMATIC_274, x=249, y=175
+	video offset=CINEMATIC_274, x=249, y=175
 	break
-	video type=1, offset=CINEMATIC_274, x=250, y=175
+	video offset=CINEMATIC_274, x=250, y=175
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_274, x=251, y=175
+	video offset=CINEMATIC_274, x=251, y=175
 	selectVideoPage 0xFF
 	killChannel
 ;@endif

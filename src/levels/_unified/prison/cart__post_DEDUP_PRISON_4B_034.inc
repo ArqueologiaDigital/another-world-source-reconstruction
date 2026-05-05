@@ -12,8 +12,8 @@ LABEL_7CB0:
 	call LABEL_7AB1
 	add [0x22], 0x0032
 	djnz [0x2B], LABEL_7CB0
-	video type=1, offset=CINEMATIC_102, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_103, x=160, y=129
+	video offset=CINEMATIC_102, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_103, x=160, y=129
 	ret
 
 LABEL_7CC5:
@@ -24,26 +24,26 @@ LABEL_7CC5:
 	add [0x21], 0x0064
 
 DRAW_CIN_092:
-	video type=1, offset=CINEMATIC_092, x=160, y=[0x21], zoom=0x40
+	video offset=CINEMATIC_092, x=160, y=[0x21], zoom=0x40
 	ret
 
 LABEL_7CE1:
 	je [HACK_VAR_67], 0x65, LABEL_7CFD
-	video type=1, offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_106, x=160, y=100
 	je [HACK_VAR_67], 0x45, LABEL_7CF5
-	video type=1, offset=CINEMATIC_092, x=160, y=100
+	video offset=CINEMATIC_092, x=160, y=100
 
 LABEL_7CF5:
 	call LABEL_7C9F
-	video type=1, offset=CINEMATIC_105, x=160, y=129
+	video offset=CINEMATIC_105, x=160, y=129
 	ret
 
 LABEL_7CFD:
-	video type=1, offset=CINEMATIC_090, x=160, y=100
-	video type=1, offset=CINEMATIC_091, x=160, y=100
+	video offset=CINEMATIC_090, x=160, y=100
+	video offset=CINEMATIC_091, x=160, y=100
 	call LABEL_7C9F
-	video type=1, offset=CINEMATIC_104, x=200, y=100
-	video type=1, offset=CINEMATIC_105, x=160, y=129
+	video offset=CINEMATIC_104, x=200, y=100
+	video offset=CINEMATIC_105, x=160, y=129
 	ret
 LABEL_7D11:
 	db 0x11
@@ -86,10 +86,10 @@ LABEL_7D70:
 	call LABEL_7F3C
 	call LABEL_7C2E
 	call LABEL_7C9F
-	video type=1, offset=CINEMATIC_102, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_103, x=160, y=[0x02], zoom=0x40
+	video offset=CINEMATIC_102, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_103, x=160, y=[0x02], zoom=0x40
 	je [0x11], 0x00, SHARED_RET
-	video type=1, offset=CINEMATIC_131, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_131, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 LABEL_7D8F:

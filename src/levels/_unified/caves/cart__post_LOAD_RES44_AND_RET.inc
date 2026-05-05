@@ -1,4 +1,4 @@
 LABEL_D2D9:
 	load id=0x0046
 	jg [0xB1], 0x00, COPY_PAGE0_TO_3_LOAD_RES45
-	video type=1, offset=CINEMATIC_286, x=160, y=100
+	video offset=CINEMATIC_286, x=160, y=100

@@ -2212,8 +2212,8 @@ LABEL_0000:
 	setup channel=0x0A, address=LABEL_0567
 	call LABEL_07D8
 	copyVideoPage src=0x03, dst=0x00
-	video type=1, offset=CINEMATIC_457, x=0, y=90
-	video type=1, offset=CINEMATIC_710, x=0, y=182
+	video offset=CINEMATIC_457, x=0, y=90
+	video offset=CINEMATIC_710, x=0, y=182
 	killChannel
 	killChannel
 

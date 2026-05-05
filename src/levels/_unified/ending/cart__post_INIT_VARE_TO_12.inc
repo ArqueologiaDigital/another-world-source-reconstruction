@@ -31,7 +31,7 @@ DRIFT_VAR_F_PLUS_8_LOOP:
 	killChannel
 
 DRAW_CIN_70_ANIM_LOOP:
-	video type=1, offset=CINEMATIC_070, x=[0x01], y=[0x02], zoom=[0x0f]
+	video offset=CINEMATIC_070, x=[0x01], y=[0x02], zoom=[0x0f]
 	break
 	jmp DRAW_CIN_70_ANIM_LOOP
 LABEL_023A:

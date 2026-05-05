@@ -1,5 +1,5 @@
 LABEL_0C16:
-	video type=1, offset=CINEMATIC_459, x=160, y=[0xe8], zoom=0x40
+	video offset=CINEMATIC_459, x=160, y=[0xe8], zoom=0x40
 	sub [0xE8], 0x0002
 	break
 	djnz [0xE7], LABEL_0C16

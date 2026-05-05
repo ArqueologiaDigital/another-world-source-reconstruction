@@ -6,57 +6,57 @@ LABEL_606D:
 LABEL_606E:
 	call LABEL_6262
 	sub [0x08], 0x000A
-	video type=1, offset=CINEMATIC_076, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_076, x=[0x07], y=[0x08], zoom=0x40
 	break
 	call LABEL_6262
 	sub [0x08], 0x0006
-	video type=1, offset=CINEMATIC_077, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_077, x=[0x07], y=[0x08], zoom=0x40
 	break
 	call LABEL_6262
-	video type=1, offset=CINEMATIC_078, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_078, x=[0x07], y=[0x08], zoom=0x40
 	break
 	call LABEL_6262
 	sub [0x08], 0x0001
-	video type=1, offset=CINEMATIC_079, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_079, x=[0x07], y=[0x08], zoom=0x40
 	break
 	call LABEL_6262
 	sub [0x08], 0x0002
-	video type=1, offset=CINEMATIC_078, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_078, x=[0x07], y=[0x08], zoom=0x40
 	mov [0x29], 0x0001
 
 LABEL_60AE:
 	call LABEL_623B
 	break
 	call LABEL_6262
-	video type=1, offset=CINEMATIC_077, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_077, x=[0x07], y=[0x08], zoom=0x40
 	break
 	call LABEL_6262
-	video type=1, offset=CINEMATIC_078, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_078, x=[0x07], y=[0x08], zoom=0x40
 	break
 	call LABEL_6262
-	video type=1, offset=CINEMATIC_079, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_079, x=[0x07], y=[0x08], zoom=0x40
 	break
 	call LABEL_6262
-	video type=1, offset=CINEMATIC_076, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_076, x=[0x07], y=[0x08], zoom=0x40
 	djnz [0x29], LABEL_60AE
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	play id=0x0059, freq=0x14, vol=0x20, channel=0x02
-	video type=1, offset=CINEMATIC_130, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_130, x=[0x07], y=[0x08], zoom=0x40
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	play id=0x0059, freq=0x16, vol=0x20, channel=0x00
-	video type=1, offset=CINEMATIC_131, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_131, x=[0x07], y=[0x08], zoom=0x40
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
-	video type=1, offset=CINEMATIC_132, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_132, x=[0x07], y=[0x08], zoom=0x40
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	sub [0x08], 0x0003
-	video type=1, offset=CINEMATIC_133, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_133, x=[0x07], y=[0x08], zoom=0x40
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
-	video type=1, offset=CINEMATIC_132, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_132, x=[0x07], y=[0x08], zoom=0x40
 	mov [0x29], 0x000A
 
 LABEL_611A:
@@ -73,34 +73,34 @@ LABEL_6138:
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	je [0x09], 0x01, LABEL_61A1
-	video type=1, offset=CINEMATIC_135, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_135, x=[0x07], y=[0x08], zoom=0x40
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	je [0x09], 0x01, LABEL_61A1
-	video type=1, offset=CINEMATIC_136, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_136, x=[0x07], y=[0x08], zoom=0x40
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	je [0x09], 0x01, LABEL_61A1
-	video type=1, offset=CINEMATIC_133, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_133, x=[0x07], y=[0x08], zoom=0x40
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	je [0x09], 0x01, LABEL_61A1
 	sub [0x08], 0x0001
-	video type=1, offset=CINEMATIC_133, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_133, x=[0x07], y=[0x08], zoom=0x40
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	je [0x09], 0x01, LABEL_61A1
-	video type=1, offset=CINEMATIC_136, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_136, x=[0x07], y=[0x08], zoom=0x40
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	je [0x09], 0x01, LABEL_61A1
-	video type=1, offset=CINEMATIC_135, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_135, x=[0x07], y=[0x08], zoom=0x40
 	djnz [0x29], LABEL_611A
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 
 LABEL_61A1:
-	video type=1, offset=CINEMATIC_134, x=[0x07], y=[0x08], zoom=[0x96]	;@enc=alt
+	video offset=CINEMATIC_134, x=[0x07], y=[0x08], zoom=[0x96]	;@enc=alt
 	play id=0x005B, freq=0x14, vol=0x40, channel=0x02
 	play id=0x005B, freq=0x07, vol=0x40, channel=0x00
 	mov [0x2B], 0x0FA0

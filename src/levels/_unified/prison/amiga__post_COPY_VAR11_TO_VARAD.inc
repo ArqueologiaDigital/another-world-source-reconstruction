@@ -218,13 +218,13 @@ LABEL_4260:
 LABEL_4270:
 	jne [0x27], [HACK_VAR_67], DECREMENT_VAR22
 	jne [0x22], 0x00, LABEL_4284
-	video type=1, offset=CINEMATIC_201, x=[0x21], y=[0x26], zoom=0x40
+	video offset=CINEMATIC_201, x=[0x21], y=[0x26], zoom=0x40
 	jmp DECREMENT_VAR22
 
 LABEL_4284:
 	jl [0x22], 0x2000, LABEL_4297
 	sub [0x22], 0x2000
-	video type=1, offset=CINEMATIC_201, x=[0x21], y=[0x26], zoom=0x40
+	video offset=CINEMATIC_201, x=[0x21], y=[0x26], zoom=0x40
 	jmp DECREMENT_VAR22
 
 LABEL_4297:

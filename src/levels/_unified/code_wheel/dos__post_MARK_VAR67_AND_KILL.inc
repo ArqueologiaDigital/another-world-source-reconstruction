@@ -33,7 +33,7 @@ ZERO_VAR31_LOOP:
 LABEL_0D80:
 	mov [0x05], [0x01]
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_074, x=160, y=100
+	video offset=CINEMATIC_074, x=160, y=100
 	selectVideoPage 0xFF
 	call LABEL_0AD9
 	call LABEL_023D
@@ -78,7 +78,7 @@ LABEL_0DF7:
 LABEL_0DFD:
 	mov [0x05], [0x01]
 	call DERIVE_VAR07_VAR08_FROM_VAR05
-	video type=1, offset=CINEMATIC_077, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_077, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jne [HERO_ACTION], 0x00, LABEL_0DFD
 	jmp SAVE_HERO_INPUT_AND_HASH
@@ -89,7 +89,7 @@ LABEL_0E13:
 	mov [0x07], 0x0064
 	mov [0x08], 0x0019
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_078, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_078, x=[0x07], y=[0x08], zoom=0x40
 	mov [0x06], [0x1E]
 	call DRAW_CIN_073_IF_VAR06_EQ_1
 	add [0x07], 0x0028

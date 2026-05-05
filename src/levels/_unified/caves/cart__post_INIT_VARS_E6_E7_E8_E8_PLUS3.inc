@@ -20,11 +20,11 @@ LABEL_06E4:
 	break
 	je [0xE7], 0x00, LABEL_06E4
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_624, x=[0xe6], y=100, zoom=0x40
+	video offset=CINEMATIC_624, x=[0xe6], y=100, zoom=0x40
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_625, x=[0xe6], y=100, zoom=0x40
+	video offset=CINEMATIC_625, x=[0xe6], y=100, zoom=0x40
 	selectVideoPage 0xFF
 
 LABEL_06FE:
@@ -34,56 +34,56 @@ LABEL_06FE:
 
 LABEL_0709:
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_626, x=[0xe6], y=100, zoom=0x40
+	video offset=CINEMATIC_626, x=[0xe6], y=100, zoom=0x40
 	selectVideoPage 0xFF
 	mov [0xE7], 0x0000
 	break
-	video type=1, offset=CINEMATIC_624, x=[0xe6], y=100, zoom=0x40
+	video offset=CINEMATIC_624, x=[0xe6], y=100, zoom=0x40
 	jmp LABEL_06E4
 LABEL_071F:
 	db 0x11
 
 LABEL_0720:
-	video type=1, offset=CINEMATIC_255, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_255, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_254, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_254, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_253, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_253, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_252, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_252, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_250, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_251, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_250, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_251, x=[0x01], y=[0x02], zoom=0x40
 	mov [0x32], 0x0009
 	sub [0x02], 0x0001
 
 LABEL_074A:
 	break
-	video type=1, offset=CINEMATIC_250, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_263, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_250, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_263, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_250, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_264, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_250, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_264, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_250, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_265, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_250, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_265, x=[0x01], y=[0x02], zoom=0x40
 	jmp LABEL_074A
 LABEL_076E:
 	db 0x11
 
 LABEL_076F:
-	video type=1, offset=CINEMATIC_250, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_251, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_250, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_251, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_252, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_252, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_253, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_253, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_254, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_254, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_255, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_255, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_174, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_174, x=[0x01], y=[0x02], zoom=0x40
 	mov [0x63], 0x0001
 	setup channel=0x14, address=LABEL_EA2E
 	setup channel=0x16, address=SETUP_CHAN_14_BY_VAR63
@@ -91,58 +91,58 @@ LABEL_076F:
 
 LABEL_07A4:
 	break
-	video type=1, offset=CINEMATIC_256, x=160, y=100
+	video offset=CINEMATIC_256, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_257, x=160, y=100
+	video offset=CINEMATIC_257, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_258, x=160, y=100
+	video offset=CINEMATIC_258, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_259, x=160, y=100
+	video offset=CINEMATIC_259, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_260, x=160, y=100
+	video offset=CINEMATIC_260, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_261, x=160, y=100
+	video offset=CINEMATIC_261, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_262, x=160, y=100
+	video offset=CINEMATIC_262, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_261, x=160, y=100
+	video offset=CINEMATIC_261, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_260, x=160, y=100
+	video offset=CINEMATIC_260, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_259, x=160, y=100
+	video offset=CINEMATIC_259, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_258, x=160, y=100
+	video offset=CINEMATIC_258, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_257, x=160, y=100
+	video offset=CINEMATIC_257, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_256, x=160, y=100
+	video offset=CINEMATIC_256, x=160, y=100
 	break
 	jmp LABEL_07A4
 LABEL_07E9:
 	db 0x11
 
 DRAW_CIN_437_439_BLOCK:
-	video type=1, offset=CINEMATIC_437, x=160, y=100
+	video offset=CINEMATIC_437, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_438, x=160, y=100
+	video offset=CINEMATIC_438, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_439, x=160, y=100
+	video offset=CINEMATIC_439, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_440, x=160, y=100
+	video offset=CINEMATIC_440, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_441, x=160, y=100
+	video offset=CINEMATIC_441, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_442, x=160, y=100
+	video offset=CINEMATIC_442, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_441, x=160, y=100
+	video offset=CINEMATIC_441, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_439, x=160, y=100
+	video offset=CINEMATIC_439, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_443, x=160, y=100
+	video offset=CINEMATIC_443, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_438, x=160, y=100
+	video offset=CINEMATIC_438, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_437, x=160, y=100
+	video offset=CINEMATIC_437, x=160, y=100
 
 LABEL_0820:
 	break
@@ -154,85 +154,85 @@ LABEL_082B:
 LABEL_082C:
 	break
 	break
-	video type=1, offset=CINEMATIC_230, x=[0xed], y=[0xee], zoom=0x40
+	video offset=CINEMATIC_230, x=[0xed], y=[0xee], zoom=0x40
 	play id=0x0059, freq=0x08, vol=0x40, channel=0x00
 	break
-	video type=1, offset=CINEMATIC_231, x=[0xed], y=[0xee], zoom=0x40
+	video offset=CINEMATIC_231, x=[0xed], y=[0xee], zoom=0x40
 	break
 	play id=0x006F, freq=0x14, vol=0x40, channel=0x01
-	video type=1, offset=CINEMATIC_232, x=[0xed], y=[0xee], zoom=0x40
+	video offset=CINEMATIC_232, x=[0xed], y=[0xee], zoom=0x40
 	break
 	play id=0x005B, freq=0x0A, vol=0x40, channel=0x02
-	video type=1, offset=CINEMATIC_233, x=[0xed], y=[0xee], zoom=0x40
+	video offset=CINEMATIC_233, x=[0xed], y=[0xee], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_234, x=[0xed], y=[0xee], zoom=0x40
+	video offset=CINEMATIC_234, x=[0xed], y=[0xee], zoom=0x40
 	break
 	play id=0x0058, freq=0x14, vol=0x40, channel=0x03
-	video type=1, offset=CINEMATIC_235, x=[0xed], y=[0xee], zoom=0x40
+	video offset=CINEMATIC_235, x=[0xed], y=[0xee], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_236, x=[0xed], y=[0xee], zoom=0x40
+	video offset=CINEMATIC_236, x=[0xed], y=[0xee], zoom=0x40
 	break
 	play id=0x0058, freq=0x14, vol=0x20, channel=0x00
-	video type=1, offset=CINEMATIC_237, x=[0xed], y=[0xee], zoom=0x40
+	video offset=CINEMATIC_237, x=[0xed], y=[0xee], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_238, x=[0xed], y=[0xee], zoom=0x40
+	video offset=CINEMATIC_238, x=[0xed], y=[0xee], zoom=0x40
 	mov [0x32], 0x0000
 	break
-	video type=1, offset=CINEMATIC_239, x=[0xed], y=[0xee], zoom=0x40
+	video offset=CINEMATIC_239, x=[0xed], y=[0xee], zoom=0x40
 	setup channel=0x14, address=LABEL_076F
 	killChannel
 
 LABEL_0890:
-	video type=1, offset=CINEMATIC_240, x=[0x6c], y=[0x6d], zoom=0x40
+	video offset=CINEMATIC_240, x=[0x6c], y=[0x6d], zoom=0x40
 	break
 	jne [0x71], 0xFFFF, LABEL_08FA
-	video type=1, offset=CINEMATIC_244, x=[0x6c], y=[0x6d], zoom=0x40
+	video offset=CINEMATIC_244, x=[0x6c], y=[0x6d], zoom=0x40
 	break
 
 LABEL_08A3:
-	video type=1, offset=CINEMATIC_242, x=[0x6c], y=[0x6d], zoom=0x40
+	video offset=CINEMATIC_242, x=[0x6c], y=[0x6d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_243, x=[0x6c], y=[0x6d], zoom=0x40
+	video offset=CINEMATIC_243, x=[0x6c], y=[0x6d], zoom=0x40
 	break
 	jne [0x71], 0xFFFF, LABEL_08FA
-	video type=1, offset=CINEMATIC_242, x=[0x6c], y=[0x6d], zoom=0x40
+	video offset=CINEMATIC_242, x=[0x6c], y=[0x6d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_244, x=[0x6c], y=[0x6d], zoom=0x40
+	video offset=CINEMATIC_244, x=[0x6c], y=[0x6d], zoom=0x40
 	break
 	jmp LABEL_0890
 LABEL_08C5:
 	db 0x11
 
 LABEL_08C6:
-	video type=1, offset=CINEMATIC_248, x=[0x6c], y=[0x6d], zoom=0x40
+	video offset=CINEMATIC_248, x=[0x6c], y=[0x6d], zoom=0x40
 	break
 	jne [0x71], 0x01, LABEL_08FA
-	video type=1, offset=CINEMATIC_247, x=[0x6c], y=[0x6d], zoom=0x40
+	video offset=CINEMATIC_247, x=[0x6c], y=[0x6d], zoom=0x40
 	break
 
 LABEL_08D8:
-	video type=1, offset=CINEMATIC_245, x=[0x6c], y=[0x6d], zoom=0x40
+	video offset=CINEMATIC_245, x=[0x6c], y=[0x6d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_246, x=[0x6c], y=[0x6d], zoom=0x40
+	video offset=CINEMATIC_246, x=[0x6c], y=[0x6d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_245, x=[0x6c], y=[0x6d], zoom=0x40
+	video offset=CINEMATIC_245, x=[0x6c], y=[0x6d], zoom=0x40
 	break
 	jne [0x71], 0x01, LABEL_08FA
-	video type=1, offset=CINEMATIC_247, x=[0x6c], y=[0x6d], zoom=0x40
+	video offset=CINEMATIC_247, x=[0x6c], y=[0x6d], zoom=0x40
 	break
 	jmp LABEL_08C6
 LABEL_08F9:
 	db 0x11
 
 LABEL_08FA:
-	video type=1, offset=CINEMATIC_241, x=[0x6c], y=[0x6d], zoom=0x40
+	video offset=CINEMATIC_241, x=[0x6c], y=[0x6d], zoom=0x40
 
 LABEL_08FF:
 	break
 	je [0x71], 0x00, LABEL_08FA
 	je [0x71], 0xFFFF, LABEL_08A3
 	je [0x71], 0x01, LABEL_08D8
-	video type=1, offset=CINEMATIC_249, x=[0x6c], y=[0x6d], zoom=0x40
+	video offset=CINEMATIC_249, x=[0x6c], y=[0x6d], zoom=0x40
 	jmp LABEL_08FF
 LABEL_091B:
 	db 0x11

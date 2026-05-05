@@ -216,13 +216,13 @@ LABEL_43BC:
 LABEL_43CC:
 	jne [0x27], [HACK_VAR_67], DECREMENT_VAR22
 	jne [0x22], 0x00, LABEL_43E0
-	video type=1, offset=CINEMATIC_201, x=[0x21], y=[0x26], zoom=0x40
+	video offset=CINEMATIC_201, x=[0x21], y=[0x26], zoom=0x40
 	jmp DECREMENT_VAR22
 
 LABEL_43E0:
 	jl [0x22], 0x2000, LABEL_43F3
 	sub [0x22], 0x2000
-	video type=1, offset=CINEMATIC_201, x=[0x21], y=[0x26], zoom=0x40
+	video offset=CINEMATIC_201, x=[0x21], y=[0x26], zoom=0x40
 	jmp DECREMENT_VAR22
 
 LABEL_43F3:

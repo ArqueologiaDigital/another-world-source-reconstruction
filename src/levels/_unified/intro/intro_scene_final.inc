@@ -122,7 +122,7 @@ CINEMATIC_WALKING_FEET_ENTERING_8		EQU 0x16A2
 CINEMATIC_WALKING_FEET_ENTERING_9		EQU 0x16EA
 
 DRAW_CINEMATIC_005_LOOP:
-	video type=1, offset=CINEMATIC_005, x=90, y=101
+	video offset=CINEMATIC_005, x=90, y=101
 	break
 	jmp DRAW_CINEMATIC_005_LOOP
 LABEL_22EC:
@@ -132,57 +132,57 @@ INTRO_SCENE_INIT_PARTICLES:
 	selectVideoPage 0x00
 	fill page=0x00, color=0x02
 	setPalette 0x01
-	video type=1, offset=CINEMATIC_535, x=192, y=59
-	video type=1, offset=CINEMATIC_535, x=45, y=50
-	video type=1, offset=CINEMATIC_536, x=247, y=108
-	video type=1, offset=CINEMATIC_537, x=171, y=100
-	video type=1, offset=CINEMATIC_538, x=275, y=44, zoom=0x40
-	video type=1, offset=CINEMATIC_539, x=268, y=79, zoom=0x40
-	video type=1, offset=CINEMATIC_540, x=297, y=91, zoom=0x40
-	video type=1, offset=CINEMATIC_541, x=251, y=98
-	video type=1, offset=CINEMATIC_542, x=309, y=96, zoom=0x40
-	video type=1, offset=CINEMATIC_543, x=284, y=101, zoom=0x40
-	video type=1, offset=CINEMATIC_544, x=357, y=119, zoom=0x40
-	video type=1, offset=CINEMATIC_545, x=190, y=143
-	video type=1, offset=CINEMATIC_546, x=19, y=78
-	video type=1, offset=CINEMATIC_547, x=160, y=78
-	video type=1, offset=CINEMATIC_548, x=196, y=94
-	video type=1, offset=CINEMATIC_548, x=61, y=94
-	video type=1, offset=CINEMATIC_549, x=161, y=96
-	video type=1, offset=CINEMATIC_550, x=244, y=78
-	video type=1, offset=CINEMATIC_551, x=245, y=78
-	video type=1, offset=CINEMATIC_552, x=245, y=78
-	video type=1, offset=CINEMATIC_553, x=29, y=32
-	video type=1, offset=CINEMATIC_554, x=194, y=43
-	video type=1, offset=CINEMATIC_555, x=75, y=120
-	video type=1, offset=CINEMATIC_556, x=89, y=123
-	video type=1, offset=CINEMATIC_556, x=105, y=123
-	video type=1, offset=CINEMATIC_556, x=180, y=123
-	video type=1, offset=CINEMATIC_556, x=181, y=123
-	video type=1, offset=CINEMATIC_555, x=210, y=120
-	video type=1, offset=CINEMATIC_557, x=62, y=114
-	video type=1, offset=CINEMATIC_558, x=45, y=121
-	video type=1, offset=CINEMATIC_558, x=140, y=116
-	video type=1, offset=CINEMATIC_558, x=63, y=126
-	video type=1, offset=CINEMATIC_559, x=137, y=59
-	video type=1, offset=CINEMATIC_559, x=103, y=121
-	video type=1, offset=CINEMATIC_557, x=152, y=117
-	video type=1, offset=CINEMATIC_559, x=42, y=117
-	video type=1, offset=CINEMATIC_557, x=180, y=55
-	video type=1, offset=CINEMATIC_559, x=19, y=113
-	video type=1, offset=CINEMATIC_545, x=142, y=125
-	video type=1, offset=CINEMATIC_545, x=11, y=126
-	video type=1, offset=CINEMATIC_560, x=108, y=138
-	video type=1, offset=CINEMATIC_561, x=208, y=114
-	video type=1, offset=CINEMATIC_562, x=163, y=111
-	video type=1, offset=CINEMATIC_563, x=221, y=91
-	video type=1, offset=CINEMATIC_562, x=83, y=109
-	video type=1, offset=CINEMATIC_564, x=251, y=116
-	video type=1, offset=CINEMATIC_565, x=258, y=131, zoom=0x40
-	video type=1, offset=CINEMATIC_566, x=2, y=26
-	video type=1, offset=CINEMATIC_567, x=31, y=12
-	video type=1, offset=CINEMATIC_568, x=32, y=169
-	video type=1, offset=CINEMATIC_569, x=7, y=175
+	video offset=CINEMATIC_535, x=192, y=59
+	video offset=CINEMATIC_535, x=45, y=50
+	video offset=CINEMATIC_536, x=247, y=108
+	video offset=CINEMATIC_537, x=171, y=100
+	video offset=CINEMATIC_538, x=275, y=44, zoom=0x40
+	video offset=CINEMATIC_539, x=268, y=79, zoom=0x40
+	video offset=CINEMATIC_540, x=297, y=91, zoom=0x40
+	video offset=CINEMATIC_541, x=251, y=98
+	video offset=CINEMATIC_542, x=309, y=96, zoom=0x40
+	video offset=CINEMATIC_543, x=284, y=101, zoom=0x40
+	video offset=CINEMATIC_544, x=357, y=119, zoom=0x40
+	video offset=CINEMATIC_545, x=190, y=143
+	video offset=CINEMATIC_546, x=19, y=78
+	video offset=CINEMATIC_547, x=160, y=78
+	video offset=CINEMATIC_548, x=196, y=94
+	video offset=CINEMATIC_548, x=61, y=94
+	video offset=CINEMATIC_549, x=161, y=96
+	video offset=CINEMATIC_550, x=244, y=78
+	video offset=CINEMATIC_551, x=245, y=78
+	video offset=CINEMATIC_552, x=245, y=78
+	video offset=CINEMATIC_553, x=29, y=32
+	video offset=CINEMATIC_554, x=194, y=43
+	video offset=CINEMATIC_555, x=75, y=120
+	video offset=CINEMATIC_556, x=89, y=123
+	video offset=CINEMATIC_556, x=105, y=123
+	video offset=CINEMATIC_556, x=180, y=123
+	video offset=CINEMATIC_556, x=181, y=123
+	video offset=CINEMATIC_555, x=210, y=120
+	video offset=CINEMATIC_557, x=62, y=114
+	video offset=CINEMATIC_558, x=45, y=121
+	video offset=CINEMATIC_558, x=140, y=116
+	video offset=CINEMATIC_558, x=63, y=126
+	video offset=CINEMATIC_559, x=137, y=59
+	video offset=CINEMATIC_559, x=103, y=121
+	video offset=CINEMATIC_557, x=152, y=117
+	video offset=CINEMATIC_559, x=42, y=117
+	video offset=CINEMATIC_557, x=180, y=55
+	video offset=CINEMATIC_559, x=19, y=113
+	video offset=CINEMATIC_545, x=142, y=125
+	video offset=CINEMATIC_545, x=11, y=126
+	video offset=CINEMATIC_560, x=108, y=138
+	video offset=CINEMATIC_561, x=208, y=114
+	video offset=CINEMATIC_562, x=163, y=111
+	video offset=CINEMATIC_563, x=221, y=91
+	video offset=CINEMATIC_562, x=83, y=109
+	video offset=CINEMATIC_564, x=251, y=116
+	video offset=CINEMATIC_565, x=258, y=131, zoom=0x40
+	video offset=CINEMATIC_566, x=2, y=26
+	video offset=CINEMATIC_567, x=31, y=12
+	video offset=CINEMATIC_568, x=32, y=169
+	video offset=CINEMATIC_569, x=7, y=175
 	killChannel
 
 INTRO_PLAY_BG_AUDIO_LOOP:
@@ -214,78 +214,78 @@ DELAY_BEFORE_PLAY_FX_9_DUAL:
 	play id=0x0009, freq=0x14, vol=0x1E, channel=0x00
 	play id=0x0009, freq=0x14, vol=0x3F, channel=0x01
 	mov [PAUSE_SLICES], 0x0003
-	video type=1, offset=CINEMATIC_006, x=158, y=100
-	video type=1, offset=CINEMATIC_007, x=43, y=132, zoom=[0x7c]	;@enc=alt
-	video type=1, offset=CINEMATIC_007, x=392, y=136, zoom=[0x7c]	;@enc=alt
+	video offset=CINEMATIC_006, x=158, y=100
+	video offset=CINEMATIC_007, x=43, y=132, zoom=[0x7c]	;@enc=alt
+	video offset=CINEMATIC_007, x=392, y=136, zoom=[0x7c]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_008, x=188, y=101
-	video type=1, offset=CINEMATIC_007, x=125, y=107
-	video type=1, offset=CINEMATIC_007, x=314, y=111, zoom=0x40
+	video offset=CINEMATIC_008, x=188, y=101
+	video offset=CINEMATIC_007, x=125, y=107
+	video offset=CINEMATIC_007, x=314, y=111, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_009, x=133, y=100
-	video type=1, offset=CINEMATIC_010, x=189, y=99
-	video type=1, offset=CINEMATIC_007, x=210, y=117, zoom=[0x20]	;@enc=alt
-	video type=1, offset=CINEMATIC_007, x=339, y=118, zoom=[0x22]	;@enc=alt
+	video offset=CINEMATIC_009, x=133, y=100
+	video offset=CINEMATIC_010, x=189, y=99
+	video offset=CINEMATIC_007, x=210, y=117, zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_007, x=339, y=118, zoom=[0x22]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_011, x=153, y=102
-	video type=1, offset=CINEMATIC_012, x=188, y=100
-	video type=1, offset=CINEMATIC_007, x=261, y=120, zoom=[0x1b]	;@enc=alt
-	video type=1, offset=CINEMATIC_007, x=337, y=122, zoom=[0x1b]	;@enc=alt
+	video offset=CINEMATIC_011, x=153, y=102
+	video offset=CINEMATIC_012, x=188, y=100
+	video offset=CINEMATIC_007, x=261, y=120, zoom=[0x1b]	;@enc=alt
+	video offset=CINEMATIC_007, x=337, y=122, zoom=[0x1b]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_013, x=128, y=107
-	video type=1, offset=CINEMATIC_014, x=188, y=100
-	video type=1, offset=CINEMATIC_007, x=305, y=119, zoom=[0x17]	;@enc=alt
+	video offset=CINEMATIC_013, x=128, y=107
+	video offset=CINEMATIC_014, x=188, y=100
+	video offset=CINEMATIC_007, x=305, y=119, zoom=[0x17]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_015, x=188, y=101
-	video type=1, offset=CINEMATIC_016, x=85, y=110
-	video type=1, offset=CINEMATIC_007, x=327, y=120, zoom=[0x13]	;@enc=alt
+	video offset=CINEMATIC_015, x=188, y=101
+	video offset=CINEMATIC_016, x=85, y=110
+	video offset=CINEMATIC_007, x=327, y=120, zoom=[0x13]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_017, x=187, y=101
-	video type=1, offset=CINEMATIC_018, x=64, y=114
+	video offset=CINEMATIC_017, x=187, y=101
+	video offset=CINEMATIC_018, x=64, y=114
 	break
-	video type=1, offset=CINEMATIC_019, x=212, y=96
-	video type=1, offset=CINEMATIC_020, x=42, y=117
+	video offset=CINEMATIC_019, x=212, y=96
+	video offset=CINEMATIC_020, x=42, y=117
 	break
-	video type=1, offset=CINEMATIC_021, x=212, y=96
-	video type=1, offset=CINEMATIC_022, x=49, y=119
+	video offset=CINEMATIC_021, x=212, y=96
+	video offset=CINEMATIC_022, x=49, y=119
 	break
-	video type=1, offset=CINEMATIC_023, x=211, y=96
-	video type=1, offset=CINEMATIC_022, x=44, y=118
+	video offset=CINEMATIC_023, x=211, y=96
+	video offset=CINEMATIC_022, x=44, y=118
 	break
-	video type=1, offset=CINEMATIC_024, x=212, y=96
-	video type=1, offset=CINEMATIC_025, x=45, y=120
+	video offset=CINEMATIC_024, x=212, y=96
+	video offset=CINEMATIC_025, x=45, y=120
 	break
-	video type=1, offset=CINEMATIC_026, x=212, y=96
-	video type=1, offset=CINEMATIC_025, x=39, y=118
+	video offset=CINEMATIC_026, x=212, y=96
+	video offset=CINEMATIC_025, x=39, y=118
 	break
-	video type=1, offset=CINEMATIC_027, x=213, y=96
-	video type=1, offset=CINEMATIC_028, x=40, y=120
+	video offset=CINEMATIC_027, x=213, y=96
+	video offset=CINEMATIC_028, x=40, y=120
 	break
-	video type=1, offset=CINEMATIC_029, x=216, y=100
-	video type=1, offset=CINEMATIC_028, x=36, y=121
+	video offset=CINEMATIC_029, x=216, y=100
+	video offset=CINEMATIC_028, x=36, y=121
 	break
-	video type=1, offset=CINEMATIC_030, x=216, y=100
-	video type=1, offset=CINEMATIC_031, x=42, y=120
+	video offset=CINEMATIC_030, x=216, y=100
+	video offset=CINEMATIC_031, x=42, y=120
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	setPalette 0x05
 	mov [0x01], 0x0014
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_032, x=215, y=100
+	video offset=CINEMATIC_032, x=215, y=100
 	copyVideoPage src=0x00, dst=0xFF
 	selectVideoPage 0xFF
 	mov [PAUSE_SLICES], 0x0002
 
 DRAW_CIN_31_33_LOOP:
-	video type=1, offset=CINEMATIC_031, x=42, y=120
-	video type=1, offset=CINEMATIC_033, x=160, y=100
+	video offset=CINEMATIC_031, x=42, y=120
+	video offset=CINEMATIC_033, x=160, y=100
 	break
 	djnz [0x01], DRAW_CIN_31_33_LOOP
 	setPalette 0x03
 	mov [0x01], 0x001E
 
 DRAW_CIN_034_30X_BEFORE_REPEAT:
-	video type=1, offset=CINEMATIC_034, x=160, y=100
+	video offset=CINEMATIC_034, x=160, y=100
 	break
 	djnz [0x01], DRAW_CIN_034_30X_BEFORE_REPEAT
 	jmp DRAW_CIN_035_PAL_3_REPEAT_HEAD

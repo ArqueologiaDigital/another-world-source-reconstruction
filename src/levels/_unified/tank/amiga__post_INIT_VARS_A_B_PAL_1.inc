@@ -15,7 +15,7 @@ LABEL_1785:
 LABEL_1786:
 	selectVideoPage 0x03
 	fill page=0x03, color=0x0C
-	video type=1, offset=CINEMATIC_000, x=160, y=100
+	video offset=CINEMATIC_000, x=160, y=100
 	call DRAW_CIN_SEQ_001_001_003
 	call DRAW_BG_DOTS_CIN_007_008
 	call DRAW_CIN_6_AND_RET

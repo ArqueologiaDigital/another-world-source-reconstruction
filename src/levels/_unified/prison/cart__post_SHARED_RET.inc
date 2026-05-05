@@ -5,7 +5,7 @@ DRAW_CIN_240_IF_VAR09_EQ_1:
 	ret
 
 DRAW_CIN_240:
-	video type=1, offset=CINEMATIC_240, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_240, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 DRAW_CIN_241_IF_VAR09_EQ_1:
@@ -15,7 +15,7 @@ DRAW_CIN_241_IF_VAR09_EQ_1:
 	ret
 
 DRAW_CIN_241:
-	video type=1, offset=CINEMATIC_241, x=[0xf5], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_241, x=[0xf5], y=[0x08], zoom=0x40
 	ret
 
 LABEL_5466:

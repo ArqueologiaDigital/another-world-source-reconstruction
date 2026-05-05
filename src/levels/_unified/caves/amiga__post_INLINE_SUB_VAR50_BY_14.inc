@@ -203,7 +203,7 @@ LABEL_A172:
 	je [0xF8], 0x00, LABEL_A1C3
 	mov [0x48], 0x7FFF
 	mov [0x49], 0x7FFF
-	video type=1, offset=CINEMATIC_386, x=160, y=100
+	video offset=CINEMATIC_386, x=160, y=100
 
 LABEL_A1C3:
 	call DELETE_GAME_CHANS_AND_TEARDOWN
@@ -260,8 +260,8 @@ LABEL_A22E:
 	je [0xF8], 0x00, LABEL_A27C
 	setup channel=0x34, address=LABEL_CB57
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_400, x=162, y=70
-	video type=1, offset=CINEMATIC_401, x=169, y=180
+	video offset=CINEMATIC_400, x=162, y=70
+	video offset=CINEMATIC_401, x=169, y=180
 	selectVideoPage 0xFF
 	mov [0x47], 0x0FA0
 
@@ -1203,13 +1203,13 @@ LABEL_ADAB:
 	mov [0xF8], [0xB2]
 	and [0xF8], 0x0002
 	je [0xF8], 0x00, LABEL_AE10
-	video type=1, offset=CINEMATIC_539, x=160, y=100
+	video offset=CINEMATIC_539, x=160, y=100
 	mov [0xAA], 0xFFFF
 	mov [0xAD], 0xFFFF
 	jmp LABEL_AE1B
 
 LABEL_AE10:
-	video type=1, offset=CINEMATIC_538, x=160, y=100
+	video offset=CINEMATIC_538, x=160, y=100
 	mov [0xF8], [0xB2]
 	and [0xF8], 0x0002
 

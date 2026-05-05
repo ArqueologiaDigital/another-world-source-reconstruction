@@ -32,19 +32,19 @@ PAL_FADE_18_TO_1D:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_71_72_FADE:
-	video type=1, offset=CINEMATIC_071, x=160, y=100
+	video offset=CINEMATIC_071, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_071, x=160, y=100
+	video offset=CINEMATIC_071, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_071, x=160, y=100
+	video offset=CINEMATIC_071, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_072, x=160, y=100
+	video offset=CINEMATIC_072, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_072, x=160, y=100
+	video offset=CINEMATIC_072, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_073, x=160, y=100
+	video offset=CINEMATIC_073, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_073, x=160, y=100
+	video offset=CINEMATIC_073, x=160, y=100
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -55,20 +55,20 @@ DRAW_CIN_71_72_FADE:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_106_107_FX_57:
-	video type=1, offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_106, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_106, x=160, y=100
 	break
 	play id=0x0057, freq=0x22, vol=0x20, channel=0x03
-	video type=1, offset=CINEMATIC_107, x=160, y=100
+	video offset=CINEMATIC_107, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_107, x=160, y=100
+	video offset=CINEMATIC_107, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_107, x=160, y=100
+	video offset=CINEMATIC_107, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_107, x=160, y=100
+	video offset=CINEMATIC_107, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_106, x=160, y=100
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"

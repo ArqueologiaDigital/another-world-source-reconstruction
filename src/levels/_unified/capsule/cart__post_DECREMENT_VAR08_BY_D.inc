@@ -1,6 +1,6 @@
 LABEL_8D64:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	video type=1, offset=CINEMATIC_246, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_246, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_8D3E
 	ret
 
@@ -48,7 +48,7 @@ LABEL_8DD6:
 LABEL_8DF0:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	add [0x08], 0x000D
-	video type=1, offset=CINEMATIC_263, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_263, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x000D
 	call LABEL_8CC2
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40
@@ -61,7 +61,7 @@ LABEL_8E17:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	sub [0x07], 0x0001
 	add [0x08], 0x000D
-	video type=1, offset=CINEMATIC_262, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_262, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x000D
 	call LABEL_8CC2
 	video type=0, offset=COMMON_VIDEO_289, x=[0x07], y=[0x08], zoom=0x40
@@ -409,7 +409,7 @@ LABEL_91AF:
 	ret
 
 LABEL_91CD:
-	video type=1, offset=CINEMATIC_332, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_332, x=[0x01], y=[0x02], zoom=0x40
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004

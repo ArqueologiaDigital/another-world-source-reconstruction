@@ -62,11 +62,11 @@ PRELOAD_PRISON_RESOURCES:
 BANK4_AFTER_CIN_414:
 	mov [0x01], 0x0041
 	add [0x02], 0x0016
-	video type=1, offset=CINEMATIC_414, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_414, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x001A
 	break
 	add [0x02], 0x0020
-	video type=1, offset=CINEMATIC_415, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_415, x=[0x01], y=[0x02], zoom=0x40
 	break
 	mov [0x00], 0x001E
 	bankSwitch 4;  Gas tunnels, Caves and Pool
@@ -82,7 +82,7 @@ BANK4_AFTER_CIN_414:
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB:
 	sub [0x02], 0x0009
-	video type=1, offset=CINEMATIC_422, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_422, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x0001
 	mov [0x03], 0x000B
 ;@endif

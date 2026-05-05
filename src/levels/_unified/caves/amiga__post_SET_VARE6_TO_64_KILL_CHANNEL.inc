@@ -10,7 +10,7 @@ DELAY_LOOP_VARE6_AT_3FAF:
 	setup channel=0x3C, address=LABEL_3D61
 	add [SCROLL_Y], 0x0012
 	selectVideoPage 0x03
-	video type=1, offset=CINEMATIC_374, x=160, y=100
+	video offset=CINEMATIC_374, x=160, y=100
 	copyVideoPage src=0x83, dst=0x00
 	selectVideoPage 0xFF
 	killChannel

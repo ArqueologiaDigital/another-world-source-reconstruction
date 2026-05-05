@@ -194,19 +194,19 @@ INIT_BITMASKS_BC_C6:
 	ret
 	jmp ENTRY_2ND_PASSCODE_INSTANCE
 	je [0xBC], 0x00, DRAW_PROGRESS_MARKERS
-	video type=1, offset=CINEMATIC_005, x=0, y=0
+	video offset=CINEMATIC_005, x=0, y=0
 
 DRAW_PROGRESS_MARKERS:
 	je [0xC6], 0x00, LABEL_0167
-	video type=1, offset=CINEMATIC_005, x=16, y=0
+	video offset=CINEMATIC_005, x=16, y=0
 
 LABEL_0167:
 	jne [0xF2], 0x0FA0, LABEL_0172
-	video type=1, offset=CINEMATIC_005, x=0, y=16
+	video offset=CINEMATIC_005, x=0, y=16
 
 LABEL_0172:
 	jne [HACK_VAR_DC], 0x21, TRIVIAL_RET
-	video type=1, offset=CINEMATIC_005, x=16, y=16
+	video offset=CINEMATIC_005, x=16, y=16
 
 TRIVIAL_RET:
 	ret
@@ -461,7 +461,7 @@ REDRAW_CURSOR_AT_VAR01:
 	mov [0x28], [0x08]
 	jne [0x25], [0x27], ANIMATE_CURSOR_TRANSITION
 	jne [0x26], [0x28], ANIMATE_CURSOR_TRANSITION
-	video type=1, offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_002, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp PASSCODE_INPUT_LOOP
 JUNK__03E7:

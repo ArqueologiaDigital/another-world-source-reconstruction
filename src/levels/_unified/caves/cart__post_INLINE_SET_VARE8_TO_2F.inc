@@ -17,11 +17,11 @@ LABEL_3728:
 	db 0x11
 
 LABEL_3729:
-	video type=1, offset=CINEMATIC_013, x=[0x21], y=100, zoom=0x40
+	video offset=CINEMATIC_013, x=[0x21], y=100, zoom=0x40
 	sub [0x21], 0x0064
-	video type=1, offset=CINEMATIC_013, x=[0x21], y=100, zoom=0x40
+	video offset=CINEMATIC_013, x=[0x21], y=100, zoom=0x40
 	add [0x21], 0x00AA
-	video type=1, offset=CINEMATIC_013, x=[0x21], y=100, zoom=0x40
+	video offset=CINEMATIC_013, x=[0x21], y=100, zoom=0x40
 	ret
 LABEL_3741:
 	db 0x11
@@ -29,22 +29,22 @@ LABEL_3741:
 LABEL_3742:
 	setup channel=0x06, address=INIT_VARS_EB_EC_ED
 	selectVideoPage 0x03
-	video type=1, offset=CINEMATIC_815, x=160, y=100
+	video offset=CINEMATIC_815, x=160, y=100
 	selectVideoPage 0xFF
-	video type=1, offset=CINEMATIC_816, x=160, y=100
+	video offset=CINEMATIC_816, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_817, x=160, y=100
+	video offset=CINEMATIC_817, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_818, x=160, y=100
+	video offset=CINEMATIC_818, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_819, x=160, y=100
+	video offset=CINEMATIC_819, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_820, x=160, y=100
+	video offset=CINEMATIC_820, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_819, x=160, y=100
+	video offset=CINEMATIC_819, x=160, y=100
 	selectVideoPage 0x03
-	video type=1, offset=CINEMATIC_821, x=169, y=136
-	video type=1, offset=CINEMATIC_821, x=169, y=160
+	video offset=CINEMATIC_821, x=169, y=136
+	video offset=CINEMATIC_821, x=169, y=160
 	selectVideoPage 0xFF
 	killChannel
 

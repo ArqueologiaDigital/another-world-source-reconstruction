@@ -11,15 +11,15 @@ LABEL_0513:
 	copyVideoPage src=0x80, dst=0xFF
 	add [SCROLL_Y], 0x00B8
 	sub [SCROLL_Y], 0x000A
-	video type=1, offset=CINEMATIC_416, x=160, y=[0xf9], zoom=0x40
+	video offset=CINEMATIC_416, x=160, y=[0xf9], zoom=0x40
 	add [SCROLL_Y], 0x000A
-	video type=1, offset=CINEMATIC_415, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_415, x=[0x01], y=[0x02], zoom=0x40
 	djnz [0x14], LABEL_0513
 	selectVideoPage 0x00
 	copyVideoPage src=0xFF, dst=0x00
-	video type=1, offset=CINEMATIC_410, x=160, y=22
-	video type=1, offset=CINEMATIC_417, x=160, y=96
-	video type=1, offset=CINEMATIC_413, x=160, y=22
+	video offset=CINEMATIC_410, x=160, y=22
+	video offset=CINEMATIC_417, x=160, y=96
+	video offset=CINEMATIC_413, x=160, y=22
 	selectVideoPage 0xFF
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
 	freezeChannels first=0x00, last=0x39

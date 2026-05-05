@@ -14,18 +14,18 @@ LABEL_DDA6:
 
 LABEL_DDB4:
 	add [0x01], 0x000A
-	video type=1, offset=CINEMATIC_451, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_451, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_494, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_494, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_495, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_495, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_496, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_496, x=[0x01], y=[0x02], zoom=0x40
 	play id=0x006C, freq=0x14, vol=0x40, channel=0x01
 	break
-	video type=1, offset=CINEMATIC_497, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_497, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_498, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_498, x=[0x01], y=[0x02], zoom=0x40
 	mov [0x63], 0x0002
 	mov [0x05], 0x0000
 	mov [PAUSE_SLICES], 0x0004
@@ -49,18 +49,18 @@ LABEL_DE10:
 	mov [0x01], 0x005A
 	mov [0x02], 0x007D
 	sub [0x01], 0x000A
-	video type=1, offset=CINEMATIC_469, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_469, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_499, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_499, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_500, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_500, x=[0x01], y=[0x02], zoom=0x40
 	break
 	play id=0x006C, freq=0x14, vol=0x40, channel=0x01
-	video type=1, offset=CINEMATIC_501, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_501, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_502, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_502, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_503, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_503, x=[0x01], y=[0x02], zoom=0x40
 	mov [0x05], 0x0000
 	mov [0x63], 0x0001
 	mov [PAUSE_SLICES], 0x0004

@@ -5,28 +5,28 @@ DELAY_LOOP_VARF1:
 	killChannel
 
 DRAW_CIN_406_408_BLOCK:
-	video type=1, offset=CINEMATIC_406, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_406, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_407, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_407, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_408, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_408, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_409, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_409, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_409, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_409, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_408, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_408, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_409, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_409, x=[0x07], y=[0x08], zoom=0x40
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_410, x=160, y=100
+	video offset=CINEMATIC_410, x=160, y=100
 	selectVideoPage 0xFF
 	break
-	video type=1, offset=CINEMATIC_411, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_411, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_198A:
 	break
-	video type=1, offset=CINEMATIC_412, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_412, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x01], 0xA0, LABEL_198A
 	jl [0x01], 0x91, LABEL_198A
 	mov [0xB6], 0x0001
@@ -37,16 +37,16 @@ LABEL_198A:
 	setup channel=0x14, address=LABEL_0501
 	setup channel=0x16, address=LABEL_0DB0
 	break
-	video type=1, offset=CINEMATIC_411, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_411, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_409, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_409, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_408, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_408, x=[0x07], y=[0x08], zoom=0x40
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_413, x=160, y=36
+	video offset=CINEMATIC_413, x=160, y=36
 	selectVideoPage 0xFF
 	break
-	video type=1, offset=CINEMATIC_407, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_407, x=[0x07], y=[0x08], zoom=0x40
 	break
 	call LABEL_64ED
 	break

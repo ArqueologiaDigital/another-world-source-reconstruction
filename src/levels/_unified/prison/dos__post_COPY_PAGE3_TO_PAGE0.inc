@@ -1,10 +1,10 @@
 LABEL_8228:
 	selectVideoPage 0x00
 	jne [0x0A], 0x00, LABEL_8234
-	video type=1, offset=CINEMATIC_274, x=251, y=175
+	video offset=CINEMATIC_274, x=251, y=175
 
 LABEL_8234:
-	video type=1, offset=CINEMATIC_082, x=181, y=146
+	video offset=CINEMATIC_082, x=181, y=146
 	selectVideoPage 0xFF
 	jmp VAR66_RANGE_DISPATCH_BY_VAR01
 
@@ -67,10 +67,10 @@ LABEL_82CA:
 	selectVideoPage 0x00
 	call LABEL_4ACC
 	jne [0x6C], 0x04, LABEL_830E
-	video type=1, offset=CINEMATIC_379, x=160, y=100
+	video offset=CINEMATIC_379, x=160, y=100
 	jge [0x6B], 0x4000, LABEL_830E
-	video type=1, offset=CINEMATIC_389, x=260, y=182, zoom=0x40
-	video type=1, offset=CINEMATIC_390, x=260, y=182, zoom=0x40
+	video offset=CINEMATIC_389, x=260, y=182, zoom=0x40
+	video offset=CINEMATIC_390, x=260, y=182, zoom=0x40
 
 LABEL_830E:
 	selectVideoPage 0xFF

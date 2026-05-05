@@ -114,19 +114,19 @@ LABEL_7EEE:
 	copyVideoPage src=0x03, dst=0x00
 	break
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_090, x=160, y=100
-	video type=1, offset=CINEMATIC_091, x=160, y=100
+	video offset=CINEMATIC_090, x=160, y=100
+	video offset=CINEMATIC_091, x=160, y=100
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_104, x=200, y=100
+	video offset=CINEMATIC_104, x=200, y=100
 	call LABEL_7E90
 	selectVideoPage 0xFF
 	killChannel
 
 LABEL_7F0C:
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_106, x=160, y=100
 	call LABEL_7E7B
 	selectVideoPage 0xFF
 	killChannel
@@ -138,14 +138,14 @@ LABEL_7F18:
 
 LABEL_7F1F:
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_106, x=160, y=100
 	call LABEL_7E82
 	selectVideoPage 0xFF
 	killChannel
 
 LABEL_7F2B:
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_106, x=160, y=100
 	call LABEL_7E89
 	selectVideoPage 0xFF
 	killChannel

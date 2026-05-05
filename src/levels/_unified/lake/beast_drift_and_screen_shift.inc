@@ -26,16 +26,16 @@ SHIFT_X_LEFT_F_AND_JMP:
 	jmp BEAST_APPROACH_F1_TICK
 
 BEAST_APPROACH_FAST_LOOP:
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_FAST_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_FAST_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_FAST_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_FAST_4, x=[0x0e], y=[0x0f], zoom=0x40
 	mov [SCROLL_Y], 0x0001
 	setup channel=0x3C, address=RENDER_FRAME_DISPATCH
 	break
@@ -44,22 +44,22 @@ BEAST_APPROACH_FAST_LOOP:
 	jmp BEAST_ARRIVAL_DECEL
 
 DRAW_BEAST_DRIFT_LEFT_PREROLL_FRAME:
-	video type=1, offset=CINEMATIC_BEAST_PREROLL, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_PREROLL, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 
 DRAW_BEAST_DRIFT_LEFT_LOOP:
 	sub [0x0E], 0x000B
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_FRAME, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_FRAME, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0006
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_1, x=[0x0e], y=[0x0f], zoom=0x40
 	call RANDOM_BEAST_AMBIENT_SOUND
 	break
 	sub [0x0E], 0x000C
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0001
 	jmp SHIFT_X_LEFT_F_AND_JMP

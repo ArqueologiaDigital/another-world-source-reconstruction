@@ -79,42 +79,42 @@ BEAST_AI_SPAWN_FAR_LEFT:
 	mov [0x10], 0x0023
 
 BEAST_APPROACH_PHASE_1:
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	djnz [0x10], BEAST_APPROACH_PHASE_1
 	add [0x0E], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 
 BEAST_APPROACH_PHASE_2:
 	add [0x0E], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_4, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	play id=0x003A, freq=0x0A, vol=0x18, channel=0x00
 	add [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_6, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_6, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x000B
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_7, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_8, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_8, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0006
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_9, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_9, x=[0x0e], y=[0x0f], zoom=0x40
 	call RANDOM_BEAST_AMBIENT_SOUND
 	break
 	add [0x0E], 0x000C
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_10, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_10, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0001
 	jmp BEAST_APPROACH_PHASE_2

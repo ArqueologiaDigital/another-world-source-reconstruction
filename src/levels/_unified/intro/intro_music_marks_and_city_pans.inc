@@ -35,11 +35,11 @@ WAIT_MUS_MARK_2B_THEN_TEXT:
 
 INTRO_FILL_AND_DRAW_413_414:
 	fill page=0xFF, color=0x02
-	video type=1, offset=CINEMATIC_413, x=145, y=117
-	video type=1, offset=CINEMATIC_414, x=160, y=100
-	video type=1, offset=CINEMATIC_415, x=145, y=108
-	video type=1, offset=CINEMATIC_416, x=145, y=108
-	video type=1, offset=CINEMATIC_417, x=95, y=100
+	video offset=CINEMATIC_413, x=145, y=117
+	video offset=CINEMATIC_414, x=160, y=100
+	video offset=CINEMATIC_415, x=145, y=108
+	video offset=CINEMATIC_416, x=145, y=108
+	video offset=CINEMATIC_417, x=95, y=100
 	copyVideoPage src=0xFF, dst=0x00
 	setPalette 0x12
 	killChannel
@@ -59,8 +59,8 @@ DELAY_6_BEFORE_BLITTER_SETUP:
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_183, x=200, y=102
-	video type=1, offset=CINEMATIC_184, x=125, y=99
+	video offset=CINEMATIC_183, x=200, y=102
+	video offset=CINEMATIC_184, x=125, y=99
 	selectVideoPage 0xFF
 	break
 	mov [0x01], 0x0007
@@ -124,24 +124,24 @@ DELAY_9_BEFORE_BLITTER_SETUP:
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_185, x=131, y=48
+	video offset=CINEMATIC_185, x=131, y=48
 	selectVideoPage 0xFF
 	play id=0x0005, freq=0x1E, vol=0x3F, channel=0x02
 	break
-	video type=1, offset=CINEMATIC_186, x=117, y=39
-	video type=1, offset=CINEMATIC_187, x=137, y=64
-	video type=1, offset=CINEMATIC_188, x=143, y=40
-	video type=1, offset=CINEMATIC_189, x=129, y=56
+	video offset=CINEMATIC_186, x=117, y=39
+	video offset=CINEMATIC_187, x=137, y=64
+	video offset=CINEMATIC_188, x=143, y=40
+	video offset=CINEMATIC_189, x=129, y=56
 	break
-	video type=1, offset=CINEMATIC_189, x=121, y=64
-	video type=1, offset=CINEMATIC_188, x=153, y=33
-	video type=1, offset=CINEMATIC_187, x=143, y=73
-	video type=1, offset=CINEMATIC_186, x=107, y=31
+	video offset=CINEMATIC_189, x=121, y=64
+	video offset=CINEMATIC_188, x=153, y=33
+	video offset=CINEMATIC_187, x=143, y=73
+	video offset=CINEMATIC_186, x=107, y=31
 	break
-	video type=1, offset=CINEMATIC_186, x=96, y=20
-	video type=1, offset=CINEMATIC_187, x=149, y=83
-	video type=1, offset=CINEMATIC_188, x=168, y=21
-	video type=1, offset=CINEMATIC_189, x=114, y=71
+	video offset=CINEMATIC_186, x=96, y=20
+	video offset=CINEMATIC_187, x=149, y=83
+	video offset=CINEMATIC_188, x=168, y=21
+	video offset=CINEMATIC_189, x=114, y=71
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE

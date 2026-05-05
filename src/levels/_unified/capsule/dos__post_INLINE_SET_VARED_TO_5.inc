@@ -30,97 +30,97 @@ LABEL_1D9A:
 	db 0x11
 
 LABEL_1D9B:
-	video type=1, offset=CINEMATIC_375, x=216, y=149
+	video offset=CINEMATIC_375, x=216, y=149
 	play id=0x0057, freq=0x14, vol=0x10, channel=0x00
 	break
-	video type=1, offset=CINEMATIC_375, x=218, y=149
+	video offset=CINEMATIC_375, x=218, y=149
 	break
-	video type=1, offset=CINEMATIC_376, x=220, y=149
+	video offset=CINEMATIC_376, x=220, y=149
 	break
-	video type=1, offset=CINEMATIC_376, x=222, y=149
-	video type=1, offset=CINEMATIC_377, x=223, y=149
+	video offset=CINEMATIC_376, x=222, y=149
+	video offset=CINEMATIC_377, x=223, y=149
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_377, x=223, y=148
+	video offset=CINEMATIC_377, x=223, y=148
 	selectVideoPage 0xFF
 	killChannel
 
 LABEL_1DC1:
-	video type=1, offset=CINEMATIC_375, x=72, y=143
+	video offset=CINEMATIC_375, x=72, y=143
 	play id=0x0057, freq=0x14, vol=0x10, channel=0x00
-	video type=1, offset=CINEMATIC_372, x=93, y=90
+	video offset=CINEMATIC_372, x=93, y=90
 	break
-	video type=1, offset=CINEMATIC_375, x=75, y=143
-	video type=1, offset=CINEMATIC_372, x=94, y=90
+	video offset=CINEMATIC_375, x=75, y=143
+	video offset=CINEMATIC_372, x=94, y=90
 	break
-	video type=1, offset=CINEMATIC_376, x=77, y=143
+	video offset=CINEMATIC_376, x=77, y=143
 	break
-	video type=1, offset=CINEMATIC_377, x=79, y=143
+	video offset=CINEMATIC_377, x=79, y=143
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_377, x=80, y=144
+	video offset=CINEMATIC_377, x=80, y=144
 	selectVideoPage 0xFF
 	killChannel
 
 LABEL_1DEB:
-	video type=1, offset=CINEMATIC_375, x=213, y=149
+	video offset=CINEMATIC_375, x=213, y=149
 	play id=0x0075, freq=0x12, vol=0x18, channel=0x03
 	break
-	video type=1, offset=CINEMATIC_375, x=231, y=150
+	video offset=CINEMATIC_375, x=231, y=150
 	break
-	video type=1, offset=CINEMATIC_375, x=233, y=150
+	video offset=CINEMATIC_375, x=233, y=150
 	break
-	video type=1, offset=CINEMATIC_376, x=235, y=150
+	video offset=CINEMATIC_376, x=235, y=150
 	break
-	video type=1, offset=CINEMATIC_376, x=236, y=150
+	video offset=CINEMATIC_376, x=236, y=150
 	break
-	video type=1, offset=CINEMATIC_377, x=238, y=149
+	video offset=CINEMATIC_377, x=238, y=149
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_377, x=239, y=149
+	video offset=CINEMATIC_377, x=239, y=149
 	selectVideoPage 0xFF
 	killChannel
-	video type=1, offset=CINEMATIC_375, x=80, y=148
+	video offset=CINEMATIC_375, x=80, y=148
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_378, x=89, y=149
+	video offset=CINEMATIC_378, x=89, y=149
 	selectVideoPage 0xFF
 	killChannel
 
 LABEL_1E24:
-	video type=1, offset=CINEMATIC_379, x=160, y=100, zoom=[0x50]	;@enc=alt
+	video offset=CINEMATIC_379, x=160, y=100, zoom=[0x50]	;@enc=alt
 	play id=0x0075, freq=0x0C, vol=0x10, channel=0x03
 	break
-	video type=1, offset=CINEMATIC_379, x=160, y=100, zoom=[0x46]	;@enc=alt
+	video offset=CINEMATIC_379, x=160, y=100, zoom=[0x46]	;@enc=alt
 	break
 
 HANG_DRAW_CIN_379:
-	video type=1, offset=CINEMATIC_379, x=160, y=100
+	video offset=CINEMATIC_379, x=160, y=100
 	break
 	jmp HANG_DRAW_CIN_379
 
 LABEL_1E40:
-	video type=1, offset=CINEMATIC_394, x=160, y=100
-	video type=1, offset=CINEMATIC_379, x=160, y=100, zoom=[0x43]	;@enc=alt
+	video offset=CINEMATIC_394, x=160, y=100
+	video offset=CINEMATIC_379, x=160, y=100, zoom=[0x43]	;@enc=alt
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x03
 	setup channel=0x06, address=LABEL_1E7E
 	break
-	video type=1, offset=CINEMATIC_395, x=160, y=100
-	video type=1, offset=CINEMATIC_379, x=160, y=100
+	video offset=CINEMATIC_395, x=160, y=100
+	video offset=CINEMATIC_379, x=160, y=100
 	jmp HANG_DRAW_CIN_379
 	killChannel
-	video type=1, offset=CINEMATIC_394, x=190, y=100
-	video type=1, offset=CINEMATIC_379, x=160, y=100, zoom=[0x43]	;@enc=alt
+	video offset=CINEMATIC_394, x=190, y=100
+	video offset=CINEMATIC_379, x=160, y=100, zoom=[0x43]	;@enc=alt
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x03
 	break
-	video type=1, offset=CINEMATIC_395, x=210, y=100
-	video type=1, offset=CINEMATIC_379, x=160, y=100
+	video offset=CINEMATIC_395, x=210, y=100
+	video offset=CINEMATIC_379, x=160, y=100
 	jmp HANG_DRAW_CIN_379
 LABEL_1E7D:
 	db 0x11
 
 LABEL_1E7E:
-	video type=1, offset=CINEMATIC_382, x=160, y=100
+	video offset=CINEMATIC_382, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_396, x=160, y=100
+	video offset=CINEMATIC_396, x=160, y=100
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_383, x=188, y=100, zoom=[0xe8]
+	video offset=CINEMATIC_383, x=188, y=100, zoom=[0xe8]
 	add [0xE8], 0x000A
 	selectVideoPage 0xFF
 	jl [0xE8], 0xA0, KILL_CHAN_AT_1471
@@ -128,56 +128,56 @@ LABEL_1E7E:
 	killChannel
 
 LABEL_1EA0:
-	video type=1, offset=CINEMATIC_380, x=160, y=100
+	video offset=CINEMATIC_380, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_381, x=160, y=100
+	video offset=CINEMATIC_381, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_382, x=78, y=84
+	video offset=CINEMATIC_382, x=78, y=84
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_383, x=107, y=84
+	video offset=CINEMATIC_383, x=107, y=84
 	selectVideoPage 0xFF
 	break
-	video type=1, offset=CINEMATIC_384, x=160, y=100
+	video offset=CINEMATIC_384, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_385, x=160, y=100
+	video offset=CINEMATIC_385, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_386, x=160, y=100
+	video offset=CINEMATIC_386, x=160, y=100
 	break
 	killChannel
-	video type=1, offset=CINEMATIC_387, x=160, y=100
+	video offset=CINEMATIC_387, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_388, x=160, y=100
+	video offset=CINEMATIC_388, x=160, y=100
 	killChannel
-	video type=1, offset=CINEMATIC_389, x=160, y=100
+	video offset=CINEMATIC_389, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_390, x=160, y=100
+	video offset=CINEMATIC_390, x=160, y=100
 	setup channel=0x38, address=LABEL_1EDF
 	killChannel
 
 LABEL_1EDF:
-	video type=1, offset=CINEMATIC_391, x=160, y=100
+	video offset=CINEMATIC_391, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_392, x=160, y=100
+	video offset=CINEMATIC_392, x=160, y=100
 	killChannel
 
 HANG_DRAW_CIN_393:
-	video type=1, offset=CINEMATIC_393, x=160, y=100
+	video offset=CINEMATIC_393, x=160, y=100
 	break
 	jmp HANG_DRAW_CIN_393
 LABEL_1EF1:
 	db 0x11
 
 HANG_DRAW_CIN_456:
-	video type=1, offset=CINEMATIC_456, x=160, y=100
+	video offset=CINEMATIC_456, x=160, y=100
 	break
 	jmp HANG_DRAW_CIN_456
 LABEL_1EFA:
 	db 0x11
 
 LABEL_1EFB:
-	video type=1, offset=CINEMATIC_557, x=0, y=137
+	video offset=CINEMATIC_557, x=0, y=137
 	jl [0x01], 0xA0, LABEL_1F09
-	video type=1, offset=CINEMATIC_558, x=160, y=100
+	video offset=CINEMATIC_558, x=160, y=100
 
 LABEL_1F09:
 	break
@@ -188,7 +188,7 @@ LABEL_1F0D:
 LABEL_1F0E:
 	break
 	jg [0x01], 0x28, LABEL_1F0E
-	video type=1, offset=CINEMATIC_561, x=23, y=62
+	video offset=CINEMATIC_561, x=23, y=62
 	jmp LABEL_1F0E
 LABEL_1F1C:
 	db 0x11
@@ -196,9 +196,9 @@ LABEL_1F1C:
 LABEL_1F1D:
 	break
 	jg [0x02], 0xA6, LABEL_1F1D
-	video type=1, offset=CINEMATIC_499, x=65, y=131
-	video type=1, offset=CINEMATIC_499, x=1, y=67
-	video type=1, offset=CINEMATIC_498, x=24, y=129
+	video offset=CINEMATIC_499, x=65, y=131
+	video offset=CINEMATIC_499, x=1, y=67
+	video offset=CINEMATIC_498, x=24, y=129
 	jg [0x01], 0x3C, LABEL_1F1D
 	jl [0x01], 0x14, LABEL_1F1D
 	jmp LABEL_1F1D
@@ -208,8 +208,8 @@ LABEL_1F3F:
 LABEL_1F40:
 	break
 	jl [0x02], 0xB1, LABEL_1F40
-	video type=1, offset=CINEMATIC_498, x=270, y=210, zoom=0x40
-	video type=1, offset=CINEMATIC_499, x=178, y=203, zoom=0x40
+	video offset=CINEMATIC_498, x=270, y=210, zoom=0x40
+	video offset=CINEMATIC_499, x=178, y=203, zoom=0x40
 	jmp LABEL_1F40
 LABEL_1F54:
 	db 0x11
@@ -217,7 +217,7 @@ LABEL_1F54:
 LABEL_1F55:
 	break
 	jg [0x01], 0x73, LABEL_1F55
-	video type=1, offset=CINEMATIC_498, x=42, y=184
+	video offset=CINEMATIC_498, x=42, y=184
 	jmp LABEL_1F55
 LABEL_1F63:
 	db 0x11
@@ -225,40 +225,40 @@ LABEL_1F63:
 LABEL_1F64:
 	break
 	jg [0x01], 0xBE, LABEL_1F64
-	video type=1, offset=CINEMATIC_561, x=174, y=199
-	video type=1, offset=CINEMATIC_346, x=160, y=184
+	video offset=CINEMATIC_561, x=174, y=199
+	video offset=CINEMATIC_346, x=160, y=184
 	jmp LABEL_1F64
 LABEL_1F76:
 	db 0x11
 
 HANG_DRAW_CIN_491:
-	video type=1, offset=CINEMATIC_491, x=160, y=100
+	video offset=CINEMATIC_491, x=160, y=100
 	break
 	jmp HANG_DRAW_CIN_491
 LABEL_1F7F:
 	db 0x11
 
 HANG_DRAW_CIN_494:
-	video type=1, offset=CINEMATIC_494, x=160, y=100
+	video offset=CINEMATIC_494, x=160, y=100
 	break
 	jmp HANG_DRAW_CIN_494
 LABEL_1F88:
 	db 0x11
 
 LABEL_1F89:
-	video type=1, offset=CINEMATIC_335, x=280, y=101, zoom=0x40
-	video type=1, offset=CINEMATIC_336, x=226, y=140
+	video offset=CINEMATIC_335, x=280, y=101, zoom=0x40
+	video offset=CINEMATIC_336, x=226, y=140
 	jg [0x01], 0x82, LABEL_1FA8
 	jl [0x02], 0x7C, LABEL_1FA4
 	jg [0x01], 0x4B, LABEL_1FA8
 
 LABEL_1FA4:
-	video type=1, offset=CINEMATIC_338, x=160, y=100
+	video offset=CINEMATIC_338, x=160, y=100
 
 LABEL_1FA8:
 	jl [0x01], 0xC8, LABEL_1FB9
 	jg [0x02], 0xA0, LABEL_1FB9
-	video type=1, offset=CINEMATIC_337, x=300, y=101, zoom=0x40
+	video offset=CINEMATIC_337, x=300, y=101, zoom=0x40
 
 LABEL_1FB9:
 	break
@@ -267,16 +267,16 @@ LABEL_1FBD:
 	db 0x11
 
 HANG_DRAW_CIN_335:
-	video type=1, offset=CINEMATIC_335, x=76, y=177
+	video offset=CINEMATIC_335, x=76, y=177
 	break
 	jmp HANG_DRAW_CIN_335
 LABEL_1FC6:
 	db 0x11
 
 LABEL_1FC7:
-	video type=1, offset=CINEMATIC_335, x=65498, y=30, zoom=0x40
+	video offset=CINEMATIC_335, x=65498, y=30, zoom=0x40
 	jg [0x02], 0x5A, LABEL_1FD9
-	video type=1, offset=CINEMATIC_337, x=65534, y=31, zoom=0x40
+	video offset=CINEMATIC_337, x=65534, y=31, zoom=0x40
 
 LABEL_1FD9:
 	break
@@ -286,64 +286,64 @@ LABEL_1FDD:
 
 LABEL_1FDE:
 	jl [0x01], 0xC8, LABEL_1FE8
-	video type=1, offset=CINEMATIC_347, x=231, y=111
+	video offset=CINEMATIC_347, x=231, y=111
 
 LABEL_1FE8:
 	jg [0x01], 0x64, LABEL_1FFC
-	video type=1, offset=CINEMATIC_346, x=64, y=160
-	video type=1, offset=CINEMATIC_347, x=66, y=105
-	video type=1, offset=CINEMATIC_335, x=65513, y=83, zoom=0x40
+	video offset=CINEMATIC_346, x=64, y=160
+	video offset=CINEMATIC_347, x=66, y=105
+	video offset=CINEMATIC_335, x=65513, y=83, zoom=0x40
 
 LABEL_1FFC:
 	break
 	jmp LABEL_1FDE
-	video type=1, offset=CINEMATIC_336, x=226, y=140
+	video offset=CINEMATIC_336, x=226, y=140
 	killChannel
 
 LABEL_2005:
 	break
-	video type=1, offset=CINEMATIC_347, x=56, y=60
+	video offset=CINEMATIC_347, x=56, y=60
 	jmp LABEL_2005
 
 LABEL_200D:
 	jl [0x01], 0x14, LABEL_201D
 	jg [0x01], 0x93, LABEL_201D
-	video type=1, offset=CINEMATIC_337, x=61, y=100
+	video offset=CINEMATIC_337, x=61, y=100
 
 LABEL_201D:
 	jl [0x01], 0xE6, LABEL_202F
 	jg [0x01], 0x0138, LABEL_202F
-	video type=1, offset=CINEMATIC_337, x=270, y=100, zoom=0x40
+	video offset=CINEMATIC_337, x=270, y=100, zoom=0x40
 
 LABEL_202F:
 	jl [0x01], 0x2A, LABEL_203F
 	jg [0x01], 0xA2, LABEL_203F
-	video type=1, offset=CINEMATIC_343, x=160, y=100
+	video offset=CINEMATIC_343, x=160, y=100
 
 LABEL_203F:
 	jl [0x01], 0x4E, LABEL_204F
 	jg [0x01], 0xA5, LABEL_204F
-	video type=1, offset=CINEMATIC_342, x=160, y=100
+	video offset=CINEMATIC_342, x=160, y=100
 
 LABEL_204F:
 	jl [0x01], 0x5E, LABEL_205F
 	jg [0x01], 0xB2, LABEL_205F
-	video type=1, offset=CINEMATIC_341, x=160, y=100
+	video offset=CINEMATIC_341, x=160, y=100
 
 LABEL_205F:
 	jl [0x01], 0x8F, LABEL_206F
 	jg [0x01], 0xF0, LABEL_206F
-	video type=1, offset=CINEMATIC_343, x=251, y=101
+	video offset=CINEMATIC_343, x=251, y=101
 
 LABEL_206F:
 	jl [0x01], 0xAC, LABEL_2080
 	jg [0x01], 0x0114, LABEL_2080
-	video type=1, offset=CINEMATIC_342, x=251, y=101
+	video offset=CINEMATIC_342, x=251, y=101
 
 LABEL_2080:
 	jl [0x01], 0xC0, LABEL_2091
 	jg [0x01], 0x0122, LABEL_2091
-	video type=1, offset=CINEMATIC_341, x=251, y=101
+	video offset=CINEMATIC_341, x=251, y=101
 
 LABEL_2091:
 	break
@@ -366,16 +366,16 @@ LABEL_20B3:
 	jmp LABEL_2096
 
 LABEL_20B7:
-	video type=1, offset=CINEMATIC_448, x=160, y=100
+	video offset=CINEMATIC_448, x=160, y=100
 	play id=0x0052, freq=0x22, vol=0x40, channel=0x02
 	setPalette 0x02
 	break
 	setPalette 0x01
-	video type=1, offset=CINEMATIC_449, x=160, y=100
-	video type=1, offset=CINEMATIC_450, x=72, y=56
+	video offset=CINEMATIC_449, x=160, y=100
+	video offset=CINEMATIC_450, x=72, y=56
 	break
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_451, x=72, y=56
+	video offset=CINEMATIC_451, x=72, y=56
 	selectVideoPage 0xFF
 	killChannel
 
@@ -388,18 +388,18 @@ LABEL_20DA:
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	add [0xE9], [0x3D]
 	setPalette 0x02
-	video type=1, offset=CINEMATIC_452, x=[0xe8], y=[0xe9], zoom=0x40
+	video offset=CINEMATIC_452, x=[0xe8], y=[0xe9], zoom=0x40
 	break
 	setPalette 0x01
-	video type=1, offset=CINEMATIC_453, x=[0xe8], y=[0xe9], zoom=0x40
+	video offset=CINEMATIC_453, x=[0xe8], y=[0xe9], zoom=0x40
 	break
 	sub [0xE8], 0x005F
 	sub [0xE9], 0x0018
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	add [RANDOM_SEED], 0x0020
-	video type=1, offset=CINEMATIC_450, x=[0xe8], y=[0xe9], zoom=[0x3c]
+	video offset=CINEMATIC_450, x=[0xe8], y=[0xe9], zoom=[0x3c]
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_451, x=[0xe8], y=[0xe9], zoom=[0x3c]
+	video offset=CINEMATIC_451, x=[0xe8], y=[0xe9], zoom=[0x3c]
 	selectVideoPage 0xFF
 	killChannel
 
@@ -412,17 +412,17 @@ LABEL_2126:
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	add [0xEB], [0x3D]
 	setPalette 0x02
-	video type=1, offset=CINEMATIC_454, x=[0xea], y=[0xeb], zoom=0x40
+	video offset=CINEMATIC_454, x=[0xea], y=[0xeb], zoom=0x40
 	break
 	setPalette 0x01
-	video type=1, offset=CINEMATIC_455, x=[0xea], y=[0xeb], zoom=0x40
+	video offset=CINEMATIC_455, x=[0xea], y=[0xeb], zoom=0x40
 	break
 	add [0xEA], 0x0014
 	sub [0xEB], 0x0018
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	add [RANDOM_SEED], 0x0020
-	video type=1, offset=CINEMATIC_450, x=[0xea], y=[0xeb], zoom=[0x3c]
+	video offset=CINEMATIC_450, x=[0xea], y=[0xeb], zoom=[0x3c]
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_451, x=[0xea], y=[0xeb], zoom=[0x3c]
+	video offset=CINEMATIC_451, x=[0xea], y=[0xeb], zoom=[0x3c]
 	selectVideoPage 0xFF
 	killChannel

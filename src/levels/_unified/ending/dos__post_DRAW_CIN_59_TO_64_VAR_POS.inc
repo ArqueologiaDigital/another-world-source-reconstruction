@@ -5,13 +5,13 @@ LABEL_0149:
 	mov [0x04], 0x0040
 	setPalette 0x0B
 	add [0x04], 0x0002
-	video type=1, offset=CINEMATIC_067, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_067, x=[0x01], y=[0x02], zoom=[0x03]
 	break
 	add [0x04], 0x0005
-	video type=1, offset=CINEMATIC_068, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_068, x=[0x01], y=[0x02], zoom=[0x03]
 	break
 	add [0x04], 0x0008
-	video type=1, offset=CINEMATIC_069, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_069, x=[0x01], y=[0x02], zoom=[0x03]
 	setup channel=0x0C, address=DRAW_CIN_086_087_088_SEQ
 	setup channel=0x0D, address=DRAW_CIN_075_076_077_SEQ
 	mov [0x06], 0x000A

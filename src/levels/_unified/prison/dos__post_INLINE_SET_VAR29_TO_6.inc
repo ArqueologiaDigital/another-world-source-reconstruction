@@ -19,7 +19,7 @@ LABEL_1846:
 LABEL_186E:
 	jne [HACK_VAR_67], 0x04, LABEL_187C
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_379, x=160, y=100
+	video offset=CINEMATIC_379, x=160, y=100
 	selectVideoPage 0xFF
 
 LABEL_187C:

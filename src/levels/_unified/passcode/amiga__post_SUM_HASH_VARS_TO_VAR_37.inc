@@ -41,7 +41,7 @@ REDRAW_CURSOR_AT_VAR01:
 	mov [0x28], [0x08]
 	jne [0x25], [0x27], SETUP_DRAW_FROM_VAR25_26
 	jne [0x26], [0x28], SETUP_DRAW_FROM_VAR25_26
-	video type=1, offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp HANDLE_PASSCODE_INPUT_OR_DISPATCH
 LABEL_0690:
@@ -82,7 +82,7 @@ CURSOR_ANIM_CHECK_DESTINATION:
 	jmp HANDLE_PASSCODE_INPUT_OR_DISPATCH
 
 BREAK_DRAW_CIN_055_THEN_LOOP:
-	video type=1, offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_055, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp ADVANCE_CURSOR_X_VAR07
 LABEL_06FB:

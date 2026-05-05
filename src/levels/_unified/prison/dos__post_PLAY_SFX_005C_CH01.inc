@@ -33,7 +33,7 @@ LABEL_3AAD:
 	setup channel=0x23, address=LABEL_1111
 	jne [0x6C], 0x04, LABEL_3AEC
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_379, x=160, y=100
+	video offset=CINEMATIC_379, x=160, y=100
 	selectVideoPage 0xFF
 
 LABEL_3AEC:

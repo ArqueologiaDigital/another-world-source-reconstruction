@@ -235,13 +235,13 @@ LABEL_725A:
 LABEL_726A:
 	jne [0x27], [HACK_VAR_67], DECREMENT_VAR22
 	jne [0x22], 0x00, LABEL_727E
-	video type=1, offset=CINEMATIC_036, x=[0x21], y=[0x26], zoom=0x40
+	video offset=CINEMATIC_036, x=[0x21], y=[0x26], zoom=0x40
 	jmp DECREMENT_VAR22
 
 LABEL_727E:
 	jl [0x22], 0x2000, LABEL_7291
 	sub [0x22], 0x2000
-	video type=1, offset=CINEMATIC_036, x=[0x21], y=[0x26], zoom=0x40
+	video offset=CINEMATIC_036, x=[0x21], y=[0x26], zoom=0x40
 	jmp DECREMENT_VAR22
 
 LABEL_7291:

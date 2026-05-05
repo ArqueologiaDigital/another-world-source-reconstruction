@@ -100,23 +100,23 @@ LABEL_2E1B:
 
 LABEL_2E20:
 	jne [0x09], 0x02, LABEL_2E2C
-	video type=1, offset=CINEMATIC_543, x=[0x26], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_543, x=[0x26], y=[0x08], zoom=0x40
 	ret
 
 LABEL_2E2C:
 	jne [0x09], 0x03, LABEL_2E41
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_541, x=[0x26], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_541, x=[0x26], y=[0x08], zoom=0x40
 	selectVideoPage 0xFF
-	video type=1, offset=CINEMATIC_542, x=[0x26], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_542, x=[0x26], y=[0x08], zoom=0x40
 	ret
 
 LABEL_2E41:
 	jne [0x09], 0x04, LABEL_2E56
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_540, x=[0x26], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_540, x=[0x26], y=[0x08], zoom=0x40
 	selectVideoPage 0xFF
-	video type=1, offset=CINEMATIC_540, x=[0x26], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_540, x=[0x26], y=[0x08], zoom=0x40
 	ret
 
 LABEL_2E56:

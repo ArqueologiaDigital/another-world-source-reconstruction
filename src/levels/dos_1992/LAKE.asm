@@ -1061,17 +1061,17 @@ PICK_RANDOM_X_FOR_DROPLET_AND_PLAY_DROP_SOUND:
 
 DRAW_FALLING_DROPLET_LOOP_THEN_SPLASH:
 	break
-	video type=1, offset=CINEMATIC_WATER_DROPLET_FALLING, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_WATER_DROPLET_FALLING, x=[0x6f], y=[0x70], zoom=0x40
 	add [0x70], 0x0020
 	jl [0x70], 0xB6, DRAW_FALLING_DROPLET_LOOP_THEN_SPLASH
 	mov [0x70], 0x00BA
 	break
-	video type=1, offset=CINEMATIC_WATER_SPLASH_0, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_WATER_SPLASH_0, x=[0x6f], y=[0x70], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_WATER_SPLASH_1, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_WATER_SPLASH_1, x=[0x6f], y=[0x70], zoom=0x40
 	je [HACK_VAR_67], 0x01, PICK_RANDOM_X_FOR_DROPLET_005
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_DROPLET_LARGE, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_DROPLET_LARGE, x=[0x6f], y=[0x70], zoom=0x40
 	selectVideoPage 0xFF
 	jmp PICK_RANDOM_X_FOR_DROPLET_005
 	killChannel
@@ -1084,20 +1084,20 @@ PICK_RANDOM_X_FOR_DROPLET_005:
 
 RAIN_DROPLET_FALL_LOOP:
 	break
-	video type=1, offset=CINEMATIC_RAIN_DROPLET_0, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_RAIN_DROPLET_0, x=[0x6f], y=[0x70], zoom=0x40
 	add [0x70], 0x0020
 	jl [0x70], 0xB6, RAIN_DROPLET_FALL_LOOP
 	break
 	mov [0x70], 0x00B6
 	call COMPUTE_RANDOM_BIT_MASKS
 	add [0x70], [0x39]
-	video type=1, offset=CINEMATIC_RAIN_DROPLET_1, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_RAIN_DROPLET_1, x=[0x6f], y=[0x70], zoom=0x40
 	play id=0x0054, freq=0x0F, vol=0x20, channel=0x03
 	break
-	video type=1, offset=CINEMATIC_RAIN_DROPLET_2, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_RAIN_DROPLET_2, x=[0x6f], y=[0x70], zoom=0x40
 	je [HACK_VAR_67], 0x01, PICK_RANDOM_X_FOR_DROPLET_009
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_RAIN_DROPLET_3, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_RAIN_DROPLET_3, x=[0x6f], y=[0x70], zoom=0x40
 	selectVideoPage 0xFF
 	jmp PICK_RANDOM_X_FOR_DROPLET_009
 	killChannel
@@ -1110,7 +1110,7 @@ PICK_RANDOM_X_FOR_DROPLET_009:
 
 DROPLET_009_FALL_LOOP:
 	break
-	video type=1, offset=CINEMATIC_DROPLET_RANDOM_X, x=[0x6f], y=[0x70], zoom=0x40
+	video offset=CINEMATIC_DROPLET_RANDOM_X, x=[0x6f], y=[0x70], zoom=0x40
 	add [0x70], 0x0023
 	jl [0x70], 0xFA, DROPLET_009_FALL_LOOP
 	je [0x71], 0x01, PICK_RANDOM_X_FOR_DROPLET_AND_PLAY_DROP_SOUND
@@ -1123,14 +1123,14 @@ DRAW_4_DROPLETS_LOOP:
 	break
 	add [0x72], 0x0014
 	add [0x73], 0x0010
-	video type=1, offset=COMMON_VIDEO_074, x=[0x74], y=[0x72], zoom=0x40
+	video offset=COMMON_VIDEO_074, x=[0x74], y=[0x72], zoom=0x40
 	sub [0x72], 0x0014
-	video type=1, offset=COMMON_VIDEO_074, x=[0x75], y=[0x72], zoom=0x40
+	video offset=COMMON_VIDEO_074, x=[0x75], y=[0x72], zoom=0x40
 	sub [0x72], 0x0028
-	video type=1, offset=COMMON_VIDEO_074, x=[0x76], y=[0x72], zoom=0x40
-	video type=1, offset=COMMON_VIDEO_074, x=[0x77], y=[0x73], zoom=0x40
+	video offset=COMMON_VIDEO_074, x=[0x76], y=[0x72], zoom=0x40
+	video offset=COMMON_VIDEO_074, x=[0x77], y=[0x73], zoom=0x40
 	sub [0x73], 0x003C
-	video type=1, offset=COMMON_VIDEO_074, x=[0x78], y=[0x73], zoom=0x40
+	video offset=COMMON_VIDEO_074, x=[0x78], y=[0x73], zoom=0x40
 	add [0x72], 0x003C
 	add [0x73], 0x003C
 	je [0x71], 0x01, RESET_DROPLET_72_X_IF_OFFSCREEN
@@ -1355,39 +1355,39 @@ DRAW_HELPER_AT_Y_PLUS_1:
 DRAW_HELPER_BRANCHED_ON_PROXIMITY_FLAG:
 	call COMPUTE_RANDOM_BIT_MASKS
 	jne [0x39], 0x00, DROPLET_VARIANT_CASE_1
-	video type=1, offset=CINEMATIC_DROPLET_VARIANT_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DROPLET_VARIANT_0, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DROPLET_VARIANT_CASE_1:
 	jne [0x39], 0x01, DROPLET_VARIANT_CASE_2
-	video type=1, offset=CINEMATIC_DROPLET_VARIANT_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DROPLET_VARIANT_1, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DROPLET_VARIANT_CASE_2:
 	jne [0x39], 0x00, DROPLET_VARIANT_CASE_3
-	video type=1, offset=CINEMATIC_DROPLET_VARIANT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DROPLET_VARIANT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DROPLET_VARIANT_CASE_3:
-	video type=1, offset=CINEMATIC_DROPLET_VARIANT_3, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DROPLET_VARIANT_3, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 PARTICLE_BURST_CYCLE_LOOP_2:
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2_FRAME_0, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2_FRAME_0, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2_FRAME_1, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2_FRAME_1, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2_FRAME_2, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2_FRAME_2, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2_FRAME_1, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2_FRAME_1, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2_FRAME_0, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2_FRAME_0, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2_FRAME_3, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2_FRAME_3, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2_FRAME_4, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2_FRAME_4, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2_FRAME_3, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2_FRAME_3, x=[0x9a], y=[0x9b], zoom=0x40
 	break
 	jmp PARTICLE_BURST_CYCLE_LOOP_2
 	killChannel
@@ -1471,15 +1471,15 @@ DROPLET_FALL_AND_IMPACT_LOOP:
 
 DROPLET_FALL_LOOP_BODY:
 	break
-	video type=1, offset=CINEMATIC_DROPLET_FALL_TRAIL, x=[0x82], y=[0x83], zoom=0x40
+	video offset=CINEMATIC_DROPLET_FALL_TRAIL, x=[0x82], y=[0x83], zoom=0x40
 	add [0x83], 0x000E
 	jl [0x83], [0x84], DROPLET_FALL_LOOP_BODY
 	break
-	video type=1, offset=CINEMATIC_DROPLET_IMPACT_0, x=[0x82], y=[0x84], zoom=0x40
+	video offset=CINEMATIC_DROPLET_IMPACT_0, x=[0x82], y=[0x84], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_DROPLET_IMPACT_1, x=[0x82], y=[0x84], zoom=0x40
+	video offset=CINEMATIC_DROPLET_IMPACT_1, x=[0x82], y=[0x84], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_DROPLET_IMPACT_2, x=[0x82], y=[0x84], zoom=0x40
+	video offset=CINEMATIC_DROPLET_IMPACT_2, x=[0x82], y=[0x84], zoom=0x40
 	break
 	call COMPUTE_RANDOM_BIT_MASKS
 	jne [0x3B], 0x00, DROPLET_POS_CHECK_CASE_1
@@ -1610,70 +1610,70 @@ SCATTER_DOTS_BURST_R_PHASE3:
 	killChannel
 
 PARTICLE_BURST_CYCLE_LOOP:
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x9a], y=[0x9b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9a], y=[0x9b], zoom=0x40
 	break
 	jmp PARTICLE_BURST_CYCLE_LOOP
 	killChannel
 
 PARTICLE_BURST_3X_LOOP:
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x98], y=[0x99], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x98], y=[0x99], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x98], y=[0x99], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x98], y=[0x99], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x98], y=[0x99], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x98], y=[0x99], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x98], y=[0x99], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x98], y=[0x99], zoom=0x40
 	break
 	jmp PARTICLE_BURST_3X_LOOP
 	killChannel
 
 PARTICLE_BURST_7X_ENTRY:
 	jmp PARTICLE_BURST_7X_INIT_POS
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=212, y=121
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=186, y=113
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=202, y=102
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=225, y=115
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=248, y=113
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=220, y=106
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=153, y=91
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=212, y=121
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=186, y=113
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=202, y=102
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=225, y=115
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=248, y=113
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=220, y=106
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=153, y=91
 
 PARTICLE_BURST_7X_INIT_POS:
 	mov [0x94], 0x00D4
@@ -1706,69 +1706,69 @@ PARTICLE_BURST_7X_DRIFT_TICK:
 	killChannel
 
 PARTICLE_BURST_7X_LOOP:
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x98], y=[0x99], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9a], y=[0x9b], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9c], y=[0x9d], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9e], y=[0x9f], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0xa0], y=[0xa1], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9c], y=[0x9d], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9e], y=[0x9f], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0xa0], y=[0xa1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x98], y=[0x99], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9a], y=[0x9b], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9c], y=[0x9d], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x9e], y=[0x9f], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0xa0], y=[0xa1], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9c], y=[0x9d], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x9e], y=[0x9f], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0xa0], y=[0xa1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x98], y=[0x99], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9a], y=[0x9b], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x9c], y=[0x9d], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9e], y=[0x9f], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0xa0], y=[0xa1], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x9c], y=[0x9d], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9e], y=[0x9f], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0xa0], y=[0xa1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x98], y=[0x99], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x9a], y=[0x9b], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9c], y=[0x9d], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9e], y=[0x9f], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0xa0], y=[0xa1], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9c], y=[0x9d], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9e], y=[0x9f], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0xa0], y=[0xa1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x98], y=[0x99], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9a], y=[0x9b], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9c], y=[0x9d], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9e], y=[0x9f], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0xa0], y=[0xa1], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9c], y=[0x9d], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9e], y=[0x9f], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0xa0], y=[0xa1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x98], y=[0x99], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9a], y=[0x9b], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9c], y=[0x9d], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x9e], y=[0x9f], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0xa0], y=[0xa1], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9c], y=[0x9d], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x9e], y=[0x9f], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0xa0], y=[0xa1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_4, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x98], y=[0x99], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9a], y=[0x9b], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x9c], y=[0x9d], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9e], y=[0x9f], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0xa0], y=[0xa1], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_4, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x9c], y=[0x9d], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9e], y=[0x9f], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0xa0], y=[0xa1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0x94], y=[0x95], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x96], y=[0x97], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x98], y=[0x99], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_2, x=[0x9a], y=[0x9b], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9c], y=[0x9d], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9e], y=[0x9f], zoom=0x40
-	video type=1, offset=CINEMATIC_PARTICLE_BURST_3, x=[0xa0], y=[0xa1], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0x94], y=[0x95], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x96], y=[0x97], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x98], y=[0x99], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_2, x=[0x9a], y=[0x9b], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_1, x=[0x9c], y=[0x9d], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_0, x=[0x9e], y=[0x9f], zoom=0x40
+	video offset=CINEMATIC_PARTICLE_BURST_3, x=[0xa0], y=[0xa1], zoom=0x40
 	break
 	jmp PARTICLE_BURST_7X_LOOP
 	killChannel
@@ -1785,7 +1785,7 @@ DROPLET_DRIP_NEW_ROW:
 	mov [0x85], 0x0005
 
 DROPLET_DRIP_FRAME_REPEAT:
-	video type=1, offset=CINEMATIC_DROPLET_FALL_TRAIL, x=[0x82], y=[0x83], zoom=0x40
+	video offset=CINEMATIC_DROPLET_FALL_TRAIL, x=[0x82], y=[0x83], zoom=0x40
 	break
 	djnz [0x85], DROPLET_DRIP_FRAME_REPEAT
 	sub [0x83], 0x0001
@@ -1894,40 +1894,40 @@ CLASSIFY_VAR_6C_INTO_REGIONS_SMALL:
 	ret
 
 LOOP_DRAW_LAKE_018_AT_CENTER:
-	video type=1, offset=CINEMATIC_LAKE_018_CENTER_BG, x=160, y=100
+	video offset=CINEMATIC_LAKE_018_CENTER_BG, x=160, y=100
 	break
 	jmp LOOP_DRAW_LAKE_018_AT_CENTER
 
 DRAW_3_SCATTER_DOTS_CYCLE:
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa6], y=[0xa7], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa2], y=[0xa3], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa4], y=[0xa5], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa6], y=[0xa7], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa6], y=[0xa7], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa2], y=[0xa3], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa4], y=[0xa5], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa6], y=[0xa7], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa6], y=[0xa7], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa2], y=[0xa3], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa4], y=[0xa5], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa6], y=[0xa7], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa6], y=[0xa7], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa2], y=[0xa3], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa4], y=[0xa5], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa6], y=[0xa7], zoom=0x40
 	break
 	jmp DRAW_3_SCATTER_DOTS_CYCLE
 	killChannel
 
 SCATTER_3DOT_BURST_LEFT:
 	jmp INIT_SCATTER_DOTS_POSITIONS
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=143, y=104
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=159, y=110
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=117, y=105
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=183, y=108
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=191, y=110
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=220, y=106
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=126, y=92
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=167, y=106
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=143, y=104
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=159, y=110
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=117, y=105
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=183, y=108
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=191, y=110
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=220, y=106
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=126, y=92
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=167, y=106
 	killChannel
 
 INIT_SCATTER_DOTS_POSITIONS:
@@ -1965,14 +1965,14 @@ SCATTER_8DOT_DRIFT_RAW:
 
 SCATTER_3DOT_BURST_RIGHT:
 	jmp INIT_SCATTER_DOTS_OFFSETS
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=143, y=104
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=159, y=110
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=117, y=105
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=183, y=108
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=191, y=110
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=220, y=106
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=126, y=92
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=167, y=106
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=143, y=104
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=159, y=110
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=117, y=105
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=183, y=108
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=191, y=110
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=220, y=106
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=126, y=92
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=167, y=106
 	killChannel
 
 INIT_SCATTER_DOTS_OFFSETS:
@@ -2049,41 +2049,41 @@ SCATTER_8DOT_DRIFT_CLASSIFIED:
 	killChannel
 
 DRAW_8_SCATTER_DOTS_CYCLE:
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa6], y=[0xa7], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa8], y=[0xa9], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xaa], y=[0xab], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xac], y=[0xad], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xae], y=[0xaf], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xb0], y=[0xb1], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa2], y=[0xa3], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa4], y=[0xa5], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa6], y=[0xa7], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa8], y=[0xa9], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xaa], y=[0xab], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xac], y=[0xad], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xae], y=[0xaf], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xb0], y=[0xb1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa6], y=[0xa7], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa8], y=[0xa9], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xaa], y=[0xab], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xac], y=[0xad], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xae], y=[0xaf], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xb0], y=[0xb1], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa2], y=[0xa3], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa4], y=[0xa5], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa6], y=[0xa7], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa8], y=[0xa9], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xaa], y=[0xab], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xac], y=[0xad], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xae], y=[0xaf], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xb0], y=[0xb1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa6], y=[0xa7], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa8], y=[0xa9], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xaa], y=[0xab], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xac], y=[0xad], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xae], y=[0xaf], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xb0], y=[0xb1], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa2], y=[0xa3], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa4], y=[0xa5], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa6], y=[0xa7], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa8], y=[0xa9], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xaa], y=[0xab], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xac], y=[0xad], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xae], y=[0xaf], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xb0], y=[0xb1], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa2], y=[0xa3], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa4], y=[0xa5], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa6], y=[0xa7], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa8], y=[0xa9], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xaa], y=[0xab], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xac], y=[0xad], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xae], y=[0xaf], zoom=0x40
-	video type=1, offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xb0], y=[0xb1], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xa2], y=[0xa3], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa4], y=[0xa5], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xa6], y=[0xa7], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xa8], y=[0xa9], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F2, x=[0xaa], y=[0xab], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xac], y=[0xad], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F1, x=[0xae], y=[0xaf], zoom=0x40
+	video offset=CINEMATIC_SCATTER_3DOT_F0, x=[0xb0], y=[0xb1], zoom=0x40
 	break
 	jmp DRAW_8_SCATTER_DOTS_CYCLE
 	killChannel
@@ -2101,9 +2101,9 @@ SCATTER_8DOT_LEFT_DELAY:
 
 SCATTER_8DOT_LEFT_BODY:
 	break
-	video type=1, offset=CINEMATIC_SCATTER_8DOT_F0, x=[0x82], y=109, zoom=0x40
+	video offset=CINEMATIC_SCATTER_8DOT_F0, x=[0x82], y=109, zoom=0x40
 	add [0x82], 0x0008
-	video type=1, offset=CINEMATIC_SCATTER_8DOT_F1, x=[0x83], y=109, zoom=0x40
+	video offset=CINEMATIC_SCATTER_8DOT_F1, x=[0x83], y=109, zoom=0x40
 	add [0x83], 0x000A
 	djnz [0x84], SCATTER_8DOT_LEFT_BODY
 	jmp SCATTER_8DOT_LOOP_LEFT
@@ -2124,22 +2124,22 @@ SCATTER_8DOT_RIGHT_DELAY:
 SCATTER_8DOT_RIGHT_BODY:
 	break
 	sub [0x8A], 0x0001
-	video type=1, offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
+	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
 	add [0x88], 0x003C
-	video type=1, offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x8a], zoom=0x40
+	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x8a], zoom=0x40
 	add [0x88], 0x0064
-	video type=1, offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
+	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
 	sub [0x88], 0x0078
 	jl [0x88], 0x00, SCATTER_8DOT_RIGHT_BODY
 
 SCATTER_8DOT_RIGHT_WIDE_LOOP:
 	break
 	sub [0x8A], 0x0003
-	video type=1, offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
+	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
 	add [0x88], 0x003C
-	video type=1, offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x8a], zoom=0x40
+	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x8a], zoom=0x40
 	add [0x88], 0x0064
-	video type=1, offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
+	video offset=CINEMATIC_SCATTER_8DOT_F2, x=[0x88], y=[0x89], zoom=0x40
 	sub [0x88], 0x0078
 	jl [0x88], 0x0140, SCATTER_8DOT_RIGHT_WIDE_LOOP
 	jmp SCATTER_8DOT_LOOP_RIGHT
@@ -2147,7 +2147,7 @@ SCATTER_8DOT_RIGHT_WIDE_LOOP:
 
 SCATTER_8DOT_F3_BLINK_LOOP:
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_SCATTER_8DOT_F3, x=212, y=138
+	video offset=CINEMATIC_SCATTER_8DOT_F3, x=212, y=138
 	selectVideoPage 0xFF
 	mov [0x85], 0x0032
 
@@ -2155,7 +2155,7 @@ SCATTER_8DOT_F3_BLINK_DELAY:
 	break
 	djnz [0x85], SCATTER_8DOT_F3_BLINK_DELAY
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_SCATTER_8DOT_F3, x=211, y=138
+	video offset=CINEMATIC_SCATTER_8DOT_F3, x=211, y=138
 	selectVideoPage 0xFF
 	mov [0x85], 0x0032
 
@@ -2166,46 +2166,46 @@ SCATTER_8DOT_F3_LONG_DELAY:
 	killChannel
 
 THE_BEAST_IS_KILLED_BY_A_LASER_SHOT:
-	video type=1, offset=CINEMATIC_BEAST_KILLED_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000A
-	video type=1, offset=CINEMATIC_BEAST_KILLED_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_1, x=[0x0e], y=[0x0f], zoom=0x40
 	play id=0x0052, freq=0x1E, vol=0x3F, channel=0x00
 	break
 	sub [0x0E], 0x0010
-	video type=1, offset=CINEMATIC_BEAST_KILLED_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0018
-	video type=1, offset=CINEMATIC_BEAST_KILLED_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_3, x=[0x0e], y=[0x0f], zoom=0x40
 	play id=0x0030, freq=0x1E, vol=0x3F, channel=0x02
 	break
 	sub [0x0E], 0x0012
-	video type=1, offset=CINEMATIC_BEAST_KILLED_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_4, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000C
-	video type=1, offset=CINEMATIC_BEAST_KILLED_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0008
-	video type=1, offset=CINEMATIC_BEAST_KILLED_6, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_6, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0006
-	video type=1, offset=CINEMATIC_BEAST_KILLED_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_7, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0004
 	play id=0x003C, freq=0x0A, vol=0x18, channel=0x00
-	video type=1, offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0002
-	video type=1, offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f], zoom=0x40
 	mov [0x10], 0x0005
 
 BEAST_KILLED_F8_REPEAT:
 	break
 	sub [0x0E], 0x0001
-	video type=1, offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f], zoom=0x40
 	djnz [0x10], BEAST_KILLED_F8_REPEAT
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_KILLED_8, x=[0x0e], y=[0x0f], zoom=0x40
 	selectVideoPage 0xFF
 	killChannel
 
@@ -2300,25 +2300,25 @@ WAIT_VAR_03_THEN_BANKSWITCH:
 	killChannel
 
 LOOP_DRAW_DECOR_215_AT_327_164:
-	video type=1, offset=CINEMATIC_LAKE_SCENE_DECOR_RIGHT, x=327, y=164, zoom=0x40
+	video offset=CINEMATIC_LAKE_SCENE_DECOR_RIGHT, x=327, y=164, zoom=0x40
 	break
 	jmp LOOP_DRAW_DECOR_215_AT_327_164
 	killChannel
 
 DECOR_AT_327_164_BLINK_LOOP:
-	video type=1, offset=CINEMATIC_DECOR_AT_327_164_F0, x=245, y=155
+	video offset=CINEMATIC_DECOR_AT_327_164_F0, x=245, y=155
 	play id=0x0052, freq=0x1E, vol=0x3F, channel=0x00
 	break
 	break
-	video type=1, offset=CINEMATIC_DECOR_AT_327_164_F1, x=105, y=155
+	video offset=CINEMATIC_DECOR_AT_327_164_F1, x=105, y=155
 	break
-	video type=1, offset=CINEMATIC_DECOR_AT_327_164_F1, x=65501, y=155, zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_327_164_F1, x=65501, y=155, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_DECOR_AT_327_164_F1, x=65374, y=155, zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_327_164_F1, x=65374, y=155, zoom=0x40
 	killChannel
 
 LOOP_DRAW_LAKE_037_AT_305_155:
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F0, x=305, y=155, zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F0, x=305, y=155, zoom=0x40
 	break
 	jmp LOOP_DRAW_LAKE_037_AT_305_155
 	killChannel
@@ -2327,35 +2327,35 @@ LABEL_1128:
 	mov [0x28], 0x0014
 
 LESTER_AT_POOL_LOOP_BODY:
-	video type=1, offset=CINEMATIC_LAKE_LESTER_AT_POOL, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_LESTER_AT_POOL, x=[0x01], y=[0x02], zoom=0x40
 	break
 	djnz [0x28], LESTER_AT_POOL_LOOP_BODY
 	copyVideoPage src=0x00, dst=0x03
 	mov [PAUSE_SLICES], 0x0005
 	setup channel=0x15, address=DECOR_AT_327_164_BLINK_LOOP
 	setup channel=0x16, address=LOOP_DRAW_LAKE_037_AT_305_155
-	video type=1, offset=CINEMATIC_LAKE_LESTER_AT_POOL, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_LESTER_AT_POOL, x=[0x01], y=[0x02], zoom=0x40
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_LAKE_DECOR_AT_327_164, x=327, y=164, zoom=0x40
+	video offset=CINEMATIC_LAKE_DECOR_AT_327_164, x=327, y=164, zoom=0x40
 	selectVideoPage 0xFF
 	break
-	video type=1, offset=CINEMATIC_LAKE_LESTER_FALLING, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_LESTER_FALLING, x=[0x01], y=[0x02], zoom=0x40
 	break
 	sub [0x01], 0x0003
 	sub [0x02], 0x0002
-	video type=1, offset=CINEMATIC_LAKE_LESTER_RECOVER, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_LESTER_RECOVER, x=[0x01], y=[0x02], zoom=0x40
 	play id=0x003C, freq=0x0A, vol=0x18, channel=0x01
 	break
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_LAKE_SCENE_DECOR_RIGHT, x=327, y=164, zoom=0x40
+	video offset=CINEMATIC_LAKE_SCENE_DECOR_RIGHT, x=327, y=164, zoom=0x40
 	selectVideoPage 0xFF
 	mov [0x28], 0x0002
 
 LESTER_RISE_LOOP:
 	sub [0x01], 0x000C
 	add [0x02], 0x0003
-	video type=1, offset=CINEMATIC_LAKE_LESTER_RISE, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_LESTER_RISE, x=[0x01], y=[0x02], zoom=0x40
 	break
 	djnz [0x28], LESTER_RISE_LOOP
 	mov [0x28], 0x0002
@@ -2363,26 +2363,26 @@ LESTER_RISE_LOOP:
 DECOR_F1_DRIFT_LOOP:
 	sub [0x01], 0x000A
 	add [0x02], 0x0005
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F1, x=[0x01], y=[0x02], zoom=0x40
 	break
 	djnz [0x28], DECOR_F1_DRIFT_LOOP
 	mov [0x28], 0x0004
 
 DECOR_F2_DRIFT_LOOP:
 	sub [0x01], 0x0003
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F2, x=[0x01], y=[0x02], zoom=0x40
 	break
 	djnz [0x28], DECOR_F2_DRIFT_LOOP
 	sub [0x01], 0x0002
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F3, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F3, x=[0x01], y=[0x02], zoom=0x40
 	break
 	sub [0x01], 0x0001
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F4, x=[0x01], y=[0x02], zoom=0x40
 	setup channel=0x16, address=LAKE_PALETTE_FADE_IN
 
 DECOR_F4_HOLD_LOOP:
 	break
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F4, x=[0x01], y=[0x02], zoom=0x40
 	jmp DECOR_F4_HOLD_LOOP
 	killChannel
 
@@ -2392,18 +2392,18 @@ LESTER_FALLING_PLAY_AND_ANIM:
 	mov [0x02], 0x00B6
 	break
 	play id=0x0051, freq=0x0A, vol=0x30, channel=0x01
-	video type=1, offset=CINEMATIC_LAKE_LESTER_FALLING, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_LESTER_FALLING, x=[0x01], y=[0x02], zoom=0x40
 	break
 	sub [0x01], 0x0003
 	sub [0x02], 0x0002
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F5, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F5, x=[0x01], y=[0x02], zoom=0x40
 	break
 	mov [0x28], 0x0002
 
 LESTER_FALL_PHASE_1:
 	sub [0x01], 0x000C
 	add [0x02], 0x0003
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F5, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F5, x=[0x01], y=[0x02], zoom=0x40
 	break
 	djnz [0x28], LESTER_FALL_PHASE_1
 	mov [0x28], 0x0002
@@ -2411,7 +2411,7 @@ LESTER_FALL_PHASE_1:
 LESTER_FALL_PHASE_2:
 	sub [0x01], 0x000A
 	add [0x02], 0x0005
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F6, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F6, x=[0x01], y=[0x02], zoom=0x40
 	break
 	djnz [0x28], LESTER_FALL_PHASE_2
 	mov [0x28], 0x0005
@@ -2420,19 +2420,19 @@ LESTER_FALL_PHASE_2:
 ENTITY_DROP_BOUNCE_LOOP:
 	add [0x01], [0x29]
 	add [0x29], 0x0001
-	video type=1, offset=CINEMATIC_LAKE_ENTITY_DROP, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_ENTITY_DROP, x=[0x01], y=[0x02], zoom=0x40
 	break
 	djnz [0x28], ENTITY_DROP_BOUNCE_LOOP
 	mov [0x28], 0x0003
 
 ENTITY_DROP_FINAL_PHASE:
 	sub [0x01], 0x0001
-	video type=1, offset=CINEMATIC_LAKE_ENTITY_DROP, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_ENTITY_DROP, x=[0x01], y=[0x02], zoom=0x40
 	break
 	djnz [0x28], ENTITY_DROP_FINAL_PHASE
 
 ENTITY_DROP_HOLD_LOOP:
-	video type=1, offset=CINEMATIC_LAKE_ENTITY_DROP, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_ENTITY_DROP, x=[0x01], y=[0x02], zoom=0x40
 	break
 	jmp ENTITY_DROP_HOLD_LOOP
 	killChannel
@@ -2441,34 +2441,34 @@ DECOR_F7_BLINK_3X_LOOP:
 	mov [0x14], 0x0003
 
 DECOR_F7_BLINK_3X_LOOP_BODY:
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F7, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F7, x=[0x32], y=[0x33], zoom=0x40
 	break
 	djnz [0x14], DECOR_F7_BLINK_3X_LOOP_BODY
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F7, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F7, x=[0x32], y=[0x33], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F7, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F7, x=[0x32], y=[0x33], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F7, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F7, x=[0x32], y=[0x33], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F8, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F8, x=[0x32], y=[0x33], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F8, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F8, x=[0x32], y=[0x33], zoom=0x40
 	break
 	mov [0x14], 0x0006
 
 DECOR_F8_HOLD_LOOP:
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F8, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F8, x=[0x32], y=[0x33], zoom=0x40
 	break
 	djnz [0x14], DECOR_F8_HOLD_LOOP
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F8, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F8, x=[0x32], y=[0x33], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F8, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F8, x=[0x32], y=[0x33], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F8, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F8, x=[0x32], y=[0x33], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F7, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F7, x=[0x32], y=[0x33], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F7, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F7, x=[0x32], y=[0x33], zoom=0x40
 	break
 	mov [0x14], 0x0006
 	jmp DECOR_F7_BLINK_3X_LOOP_BODY
@@ -2478,49 +2478,49 @@ DECOR_F9_THEN_F10_LOOP:
 	mov [0x14], 0x0002
 
 DECOR_F9_THEN_F10_F9_BODY:
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F9, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F9, x=[0x32], y=[0x33], zoom=0x40
 	break
 	djnz [0x14], DECOR_F9_THEN_F10_F9_BODY
 	mov [0x14], 0x0003
 
 DECOR_F9_THEN_F10_F10_BODY:
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F10, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F10, x=[0x32], y=[0x33], zoom=0x40
 	break
 	djnz [0x14], DECOR_F9_THEN_F10_F10_BODY
 	mov [0x14], 0x0003
 
 DECOR_F11_HOLD_LOOP:
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F11, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F11, x=[0x32], y=[0x33], zoom=0x40
 	break
 	djnz [0x14], DECOR_F11_HOLD_LOOP
 	mov [0x14], 0x0003
 
 DECOR_F10_REPEAT_LOOP:
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F10, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F10, x=[0x32], y=[0x33], zoom=0x40
 	break
 	djnz [0x14], DECOR_F10_REPEAT_LOOP
 	mov [0x14], 0x0002
 
 DECOR_F9_REPEAT_LOOP:
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F9, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F9, x=[0x32], y=[0x33], zoom=0x40
 	break
 	djnz [0x14], DECOR_F9_REPEAT_LOOP
 	mov [0x14], 0x0003
 
 DECOR_F12_HOLD_LOOP:
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F12, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F12, x=[0x32], y=[0x33], zoom=0x40
 	break
 	djnz [0x14], DECOR_F12_HOLD_LOOP
 	mov [0x14], 0x0003
 
 DECOR_F13_HOLD_LOOP:
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F13, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F13, x=[0x32], y=[0x33], zoom=0x40
 	break
 	djnz [0x14], DECOR_F13_HOLD_LOOP
 	mov [0x14], 0x0003
 
 DECOR_F12_REPEAT_LOOP:
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F12, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F12, x=[0x32], y=[0x33], zoom=0x40
 	break
 	djnz [0x14], DECOR_F12_REPEAT_LOOP
 	mov [0x14], 0x0002
@@ -2530,11 +2530,11 @@ DECOR_F12_REPEAT_LOOP:
 DECOR_AT_305_155_F14_F9_BG:
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F14, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F9, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F14, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F9, x=[0x32], y=[0x33], zoom=0x40
 	selectVideoPage 0xFF
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F14, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F9, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F14, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F9, x=[0x32], y=[0x33], zoom=0x40
 	break
 	setPalette 0x06
 	killChannel
@@ -2544,31 +2544,31 @@ ENTITY_DROP_THEN_F15_LOOP:
 	mov [0x1A], 0x000A
 
 ENTITY_DROP_LOOP_BODY:
-	video type=1, offset=CINEMATIC_LAKE_ENTITY_DROP, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_ENTITY_DROP, x=[0x01], y=[0x02], zoom=0x40
 	break
 	djnz [0x1A], ENTITY_DROP_LOOP_BODY
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F15, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F15, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F16, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F16, x=[0x01], y=[0x02], zoom=0x40
 	play id=0x0051, freq=0x0A, vol=0x30, channel=0x01
 	break
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F17, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F17, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F18, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F18, x=[0x01], y=[0x02], zoom=0x40
 	break
 	sub [0x01], 0x0007
 	sub [0x02], 0x000E
-	video type=1, offset=CINEMATIC_RIGHT_CROUCHING_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_RIGHT_CROUCHING_2, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_RIGHT_CROUCHING_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_RIGHT_CROUCHING_2, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_RIGHT_CROUCHING_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_RIGHT_CROUCHING_1, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_RIGHT_CROUCHING_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_RIGHT_CROUCHING_1, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_RIGHT_CROUCHING_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_RIGHT_CROUCHING_0, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_RIGHT_CROUCHING_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_RIGHT_CROUCHING_0, x=[0x01], y=[0x02], zoom=0x40
 	play id=0x0051, freq=0x0A, vol=0x1C, channel=0x01
 	mov [0x1A], 0x0014
 
@@ -2577,17 +2577,17 @@ LESTER_RAISES_A_HAND:
 	call DRAW_LESTER_FRAME_BUNDLE
 	djnz [0x1A], LESTER_RAISES_A_HAND
 	break
-	video type=1, offset=CINEMATIC_LESTER_RAISE_HAND_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LESTER_RAISE_HAND_0, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LESTER_RAISE_HAND_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LESTER_RAISE_HAND_1, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LESTER_RAISE_HAND_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LESTER_RAISE_HAND_2, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LESTER_RAISE_HAND_3, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LESTER_RAISE_HAND_3, x=[0x01], y=[0x02], zoom=0x40
 
 LESTER_AT_POOL_HOLD_LOOP:
 	break
-	video type=1, offset=CINEMATIC_LAKE_LESTER_AT_POOL, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_LESTER_AT_POOL, x=[0x01], y=[0x02], zoom=0x40
 	mov [PAUSE_SLICES], 0x0004
 	jmp LESTER_AT_POOL_HOLD_LOOP
 	killChannel
@@ -2612,39 +2612,39 @@ LAKE_INTRO_PRE_DELAY:
 	mov [0x18], 0x006E
 	fill page=0x00, color=0x0B
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_LAKE_INTRO_BG, x=160, y=100
-	video type=1, offset=CINEMATIC_LAKE_INTRO_LESTER, x=[0x18], y=110, zoom=0x40
-	video type=1, offset=CINEMATIC_LAKE_INTRO_DECOR, x=180, y=100
+	video offset=CINEMATIC_LAKE_INTRO_BG, x=160, y=100
+	video offset=CINEMATIC_LAKE_INTRO_LESTER, x=[0x18], y=110, zoom=0x40
+	video offset=CINEMATIC_LAKE_INTRO_DECOR, x=180, y=100
 	selectVideoPage 0xFF
 	mov [0x19], 0x0020
 	break
 	setPalette 0x0B
-	video type=1, offset=CINEMATIC_LAKE_INTRO_ANIM_0, x=[0x18], y=110, zoom=0x40
+	video offset=CINEMATIC_LAKE_INTRO_ANIM_0, x=[0x18], y=110, zoom=0x40
 
 LAKE_INTRO_ANIM_F0_LOOP:
 	break
-	video type=1, offset=CINEMATIC_LAKE_INTRO_ANIM_0, x=[0x18], y=110, zoom=0x40
+	video offset=CINEMATIC_LAKE_INTRO_ANIM_0, x=[0x18], y=110, zoom=0x40
 	djnz [0x19], LAKE_INTRO_ANIM_F0_LOOP
 	mov [0x19], 0x0010
 
 LAKE_INTRO_ANIM_F1_LOOP:
 	break
-	video type=1, offset=CINEMATIC_LAKE_INTRO_ANIM_1, x=[0x18], y=110, zoom=0x40
+	video offset=CINEMATIC_LAKE_INTRO_ANIM_1, x=[0x18], y=110, zoom=0x40
 	djnz [0x19], LAKE_INTRO_ANIM_F1_LOOP
 	mov [0x19], 0x000F
 
 LAKE_INTRO_ANIM_F2_LOOP:
 	break
-	video type=1, offset=CINEMATIC_LAKE_INTRO_ANIM_2, x=[0x18], y=110, zoom=0x40
+	video offset=CINEMATIC_LAKE_INTRO_ANIM_2, x=[0x18], y=110, zoom=0x40
 	djnz [0x19], LAKE_INTRO_ANIM_F2_LOOP
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
 	selectVideoPage 0x00
 	fill page=0x00, color=0x0B
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
 	setPalette 0x19
-	video type=1, offset=CINEMATIC_LAKE_SCENE2_BG, x=160, y=100
-	video type=1, offset=CINEMATIC_LAKE_SCENE2_DECOR, x=200, y=100
+	video offset=CINEMATIC_LAKE_SCENE2_BG, x=160, y=100
+	video offset=CINEMATIC_LAKE_SCENE2_DECOR, x=200, y=100
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 	mov [0x19], 0x001F
@@ -2660,7 +2660,7 @@ LAKE_INTRO_PRE_TRANS_DELAY:
 	setup channel=0x15, address=LOOP_DRAW_DECOR_215_AT_327_164
 	deleteChannels first=0x16, last=0x16
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_LAKE_SCENE3_DECOR, x=275, y=162, zoom=0x40
+	video offset=CINEMATIC_LAKE_SCENE3_DECOR, x=275, y=162, zoom=0x40
 	selectVideoPage 0xFF
 	break
 	setPalette 0x06
@@ -2701,37 +2701,37 @@ MULTIPLEX_ANIM_RING3_SLOT_2:
 
 DRAW_LAKE_051_SEQ_FROM_WORKING_POS:
 	sub [0x32], 0x0001
-	video type=1, offset=CINEMATIC_DECOR_AT_305_155_F14, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_DECOR_AT_305_155_F14, x=[0x32], y=[0x33], zoom=0x40
 	break
 	sub [0x32], 0x0001
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F0, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F0, x=[0x32], y=[0x33], zoom=0x40
 	break
 	sub [0x32], 0x0001
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F1, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F1, x=[0x32], y=[0x33], zoom=0x40
 	break
 	sub [0x32], 0x0001
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F2, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F2, x=[0x32], y=[0x33], zoom=0x40
 	break
 	sub [0x32], 0x0001
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F3, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F3, x=[0x32], y=[0x33], zoom=0x40
 	break
 	sub [0x32], 0x0001
-	video type=1, offset=CINEMATIC_REED_RING_0, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_REED_RING_0, x=[0x32], y=[0x33], zoom=0x40
 	break
 	sub [0x32], 0x0001
-	video type=1, offset=CINEMATIC_REED_RING_1, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_REED_RING_1, x=[0x32], y=[0x33], zoom=0x40
 	break
 	sub [0x32], 0x0001
-	video type=1, offset=CINEMATIC_REED_RING_2, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_REED_RING_2, x=[0x32], y=[0x33], zoom=0x40
 	break
 	sub [0x32], 0x0002
-	video type=1, offset=CINEMATIC_REED_RING_3, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_REED_RING_3, x=[0x32], y=[0x33], zoom=0x40
 	break
 	sub [0x32], 0x0001
-	video type=1, offset=CINEMATIC_REED_RING_4, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_REED_RING_4, x=[0x32], y=[0x33], zoom=0x40
 	break
 	sub [0x32], 0x0002
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F14, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F14, x=[0x32], y=[0x33], zoom=0x40
 	break
 	jmp DRAW_LAKE_051_SEQ_FROM_WORKING_POS
 	killChannel
@@ -2744,65 +2744,65 @@ LESTER_FRAME_LOOP_BODY:
 	call DRAW_LESTER_FRAME_BUNDLE
 	break
 	djnz [0x14], LESTER_FRAME_LOOP_BODY
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F4, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F4, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F4, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F5, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F5, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F5, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F5, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F6, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F6, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F6, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F6, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F7, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F7, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F8, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F8, x=[0x01], y=[0x02], zoom=0x40
 	break
 	play id=0x003A, freq=0x14, vol=0x3F, channel=0x01
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F9, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F9, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F10, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F10, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F10, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F10, x=[0x01], y=[0x02], zoom=0x40
 	play id=0x003A, freq=0x14, vol=0x20, channel=0x01
 	break
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F11, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F11, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F12, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F12, x=[0x01], y=[0x02], zoom=0x40
 	mov [0x03], 0x0014
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_LAKE_051_SEQ_F13, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LAKE_051_SEQ_F13, x=[0x01], y=[0x02], zoom=0x40
 	selectVideoPage 0xFF
 	break
 	jmp INIT_VAR_03_TO_0x1E
 	killChannel
 
 PLAYBACK_CINEMATIC_TENTACLE_RETREAT_F0_TO_513:
-	video type=1, offset=CINEMATIC_TENTACLE_RETREAT_0, x=160, y=100
+	video offset=CINEMATIC_TENTACLE_RETREAT_0, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_RETREAT_1, x=160, y=100
+	video offset=CINEMATIC_TENTACLE_RETREAT_1, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_RETREAT_2, x=160, y=100
+	video offset=CINEMATIC_TENTACLE_RETREAT_2, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_RETREAT_3, x=160, y=100
+	video offset=CINEMATIC_TENTACLE_RETREAT_3, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_RETREAT_4, x=160, y=100
+	video offset=CINEMATIC_TENTACLE_RETREAT_4, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_RETREAT_BG_0, x=160, y=100
+	video offset=CINEMATIC_TENTACLE_RETREAT_BG_0, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_RETREAT_BG_1, x=160, y=100
+	video offset=CINEMATIC_TENTACLE_RETREAT_BG_1, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_RETREAT_BG_2, x=160, y=100
+	video offset=CINEMATIC_TENTACLE_RETREAT_BG_2, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_RETREAT_BG_3, x=160, y=100
+	video offset=CINEMATIC_TENTACLE_RETREAT_BG_3, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_RETREAT_BG_4, x=160, y=100
+	video offset=CINEMATIC_TENTACLE_RETREAT_BG_4, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_RETREAT_BG_5, x=160, y=100
+	video offset=CINEMATIC_TENTACLE_RETREAT_BG_5, x=160, y=100
 	break
 	jmp PLAYBACK_CINEMATIC_TENTACLE_RETREAT_F0_TO_513
 	killChannel
@@ -2815,74 +2815,74 @@ REED_PLANT_ANIMATION:
 	mov [0x20], [0x21]
 
 REED_PLANT_F0_REPEAT:
-	video type=1, offset=CINEMATIC_REED_PLANT_0, x=[0x1e], y=[0x1f], zoom=0x40
+	video offset=CINEMATIC_REED_PLANT_0, x=[0x1e], y=[0x1f], zoom=0x40
 	break
 	djnz [0x20], REED_PLANT_F0_REPEAT
 	mov [0x20], [0x21]
 
 REED_PLANT_F1_REPEAT:
-	video type=1, offset=CINEMATIC_REED_PLANT_1, x=[0x1e], y=[0x1f], zoom=0x40
+	video offset=CINEMATIC_REED_PLANT_1, x=[0x1e], y=[0x1f], zoom=0x40
 	break
 	djnz [0x20], REED_PLANT_F1_REPEAT
 	mov [0x20], [0x21]
 
 REED_PLANT_F2_REPEAT:
-	video type=1, offset=CINEMATIC_REED_PLANT_2, x=[0x1e], y=[0x1f], zoom=0x40
+	video offset=CINEMATIC_REED_PLANT_2, x=[0x1e], y=[0x1f], zoom=0x40
 	break
 	djnz [0x20], REED_PLANT_F2_REPEAT
 	mov [0x20], [0x21]
 
 REED_PLANT_F3_REPEAT:
-	video type=1, offset=CINEMATIC_REED_PLANT_3, x=[0x1e], y=[0x1f], zoom=0x40
+	video offset=CINEMATIC_REED_PLANT_3, x=[0x1e], y=[0x1f], zoom=0x40
 	break
 	djnz [0x20], REED_PLANT_F3_REPEAT
 	mov [0x20], [0x21]
 
 REED_PLANT_F4_REPEAT:
-	video type=1, offset=CINEMATIC_REED_PLANT_4, x=[0x1e], y=[0x1f], zoom=0x40
+	video offset=CINEMATIC_REED_PLANT_4, x=[0x1e], y=[0x1f], zoom=0x40
 	break
 	djnz [0x20], REED_PLANT_F4_REPEAT
 	mov [0x20], [0x21]
 
 REED_PLANT_F3_RETURN:
-	video type=1, offset=CINEMATIC_REED_PLANT_3, x=[0x1e], y=[0x1f], zoom=0x40
+	video offset=CINEMATIC_REED_PLANT_3, x=[0x1e], y=[0x1f], zoom=0x40
 	break
 	djnz [0x20], REED_PLANT_F3_RETURN
 	mov [0x20], [0x21]
 
 REED_PLANT_F2_RETURN:
-	video type=1, offset=CINEMATIC_REED_PLANT_2, x=[0x1e], y=[0x1f], zoom=0x40
+	video offset=CINEMATIC_REED_PLANT_2, x=[0x1e], y=[0x1f], zoom=0x40
 	break
 	djnz [0x20], REED_PLANT_F2_RETURN
 	mov [0x20], [0x21]
 
 JMP_TO_REED_PLANT_ANIMATION:
-	video type=1, offset=CINEMATIC_REED_PLANT_1, x=[0x1e], y=[0x1f], zoom=0x40
+	video offset=CINEMATIC_REED_PLANT_1, x=[0x1e], y=[0x1f], zoom=0x40
 	break
 	djnz [0x20], JMP_TO_REED_PLANT_ANIMATION
 	jmp REED_PLANT_ANIMATION
 	killChannel
 
 REED_PLANT_FRAMES_5_TO_7_LOOP:
-	video type=1, offset=CINEMATIC_REED_PLANT_5, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_REED_PLANT_5, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_REED_PLANT_7, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_REED_PLANT_7, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_REED_PLANT_7, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_REED_PLANT_6, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_REED_PLANT_5, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 	break
 	jmp REED_PLANT_FRAMES_5_TO_7_LOOP
 	killChannel
@@ -2901,52 +2901,52 @@ SNEAKY_TENTACLE_INIT_DELAY:
 	mov [0x34], 0x0004
 
 SNEAKY_TENTACLE_GOING_UP:
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	sub [0x33], 0x0001
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	sub [0x33], 0x0001
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_1, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_1, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	sub [0x33], 0x0001
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_1, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_1, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	sub [0x33], 0x0001
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	sub [0x33], 0x0001
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	sub [0x33], 0x0001
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_3, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_3, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	sub [0x33], 0x0001
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_3, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_3, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	sub [0x33], 0x0001
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_4, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_4, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	sub [0x33], 0x0001
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_4, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_4, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	sub [0x33], 0x0001
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_5, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_5, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	sub [0x33], 0x0001
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_5, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_5, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	sub [0x33], 0x0001
 	break
 	djnz [0x34], SNEAKY_TENTACLE_GOING_UP
@@ -2955,21 +2955,21 @@ SNEAKY_TENTACLE_GOING_UP:
 	jg [0x33], [0x01], SNEAKY_TENTACLE_GIVES_UP_FOR_NOW
 	add [0x33], 0x0010
 	jl [0x33], [0x01], SNEAKY_TENTACLE_GIVES_UP_FOR_NOW
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_0, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_0, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_1, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_1, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_2, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_2, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_3, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_3, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_4, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_4, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_5, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_PEEK_5, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_6, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_6, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_7, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_7, x=[0x32], y=100, zoom=0x40
 	add [0x32], 0x0012
 	jg [0x32], [0x01], SNEAKY_TENTACLE_HIT_HERO
 	add [0x32], 0x0004
@@ -2978,45 +2978,45 @@ SNEAKY_TENTACLE_GOING_UP:
 	sub [0x32], 0x0012
 	break
 	setup channel=0x14, address=KILL_CHANNEL_ROUTINE
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_8, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_8, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_9, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_9, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_10, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_10, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_11, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_11, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_RISE_0, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_TENTACLE_RISE_0, x=[0x32], y=100, zoom=0x40
 	mov [PAUSE_SLICES], 0x0004
 	break
 	play id=0x004B, freq=0x0A, vol=0x3F, channel=0x01
-	video type=1, offset=CINEMATIC_TENTACLE_RISE_1, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_TENTACLE_RISE_1, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_RISE_2, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_TENTACLE_RISE_2, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_RISE_3, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_TENTACLE_RISE_3, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_RISE_4, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_TENTACLE_RISE_4, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_RISE_5, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_TENTACLE_RISE_5, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_RISE_6, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_TENTACLE_RISE_6, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_RISE_7, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_TENTACLE_RISE_7, x=[0x32], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_12, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_12, x=[0x32], y=100, zoom=0x40
 	jmp INIT_VAR_03_TO_0x1E
 	killChannel
 
 SNEAKY_TENTACLE_HIT_HERO:
 	break
 	sub [0x32], 0x0005
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=100, zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	break
 	add [0x32], 0x0002
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=106, zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=106, zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	jmp SNEAKY_TENTACLE_FROM_THE_POOL
 	killChannel
 
@@ -3025,52 +3025,52 @@ SNEAKY_TENTACLE_GIVES_UP_FOR_NOW:
 	mov [0x33], 0x004C
 
 SNEAKY_TENTACLE_GOING_DOWN:
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	add [0x33], 0x0002
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_0, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	add [0x33], 0x0002
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_1, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_1, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	add [0x33], 0x0002
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_1, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_1, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	add [0x33], 0x0002
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	add [0x33], 0x0002
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_2, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	add [0x33], 0x0002
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_3, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_3, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	add [0x33], 0x0002
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_3, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_3, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	add [0x33], 0x0002
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_4, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_4, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	add [0x33], 0x0002
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_4, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_4, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	add [0x33], 0x0002
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_5, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_5, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	add [0x33], 0x0002
 	break
-	video type=1, offset=CINEMATIC_SNEAKY_TENTACLE_5, x=[0x32], y=[0x33], zoom=0x40
-	video type=1, offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
+	video offset=CINEMATIC_SNEAKY_TENTACLE_5, x=[0x32], y=[0x33], zoom=0x40
+	video offset=CINEMATIC_VIDEO_MASK_FOR_SNEAKY_TENTACLE_ANIMATION, x=[0x32], y=100, zoom=0x40
 	add [0x33], 0x0002
 	break
 	djnz [0x34], SNEAKY_TENTACLE_GOING_DOWN
@@ -3519,56 +3519,56 @@ THE_BEAST_KILLS_LESTER:
 	selectVideoPage 0x00
 	deleteChannels first=0x24, last=0x25
 	deleteChannels first=0x2F, last=0x30
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_0, x=160, y=[0x0e], zoom=[0x0f]
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_0, x=160, y=[0x0e], zoom=[0x0f]
 	play id=0x0030, freq=0x0A, vol=0x20, channel=0x01
 	break
 	add [0x0F], 0x0004
 	sub [0x0E], 0x0005
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_1, x=160, y=[0x0e], zoom=[0x0f]
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_1, x=160, y=[0x0e], zoom=[0x0f]
 	break
 	add [0x0F], 0x0006
 	sub [0x0E], 0x000A
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_2, x=160, y=[0x0e], zoom=[0x0f]
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_2, x=160, y=[0x0e], zoom=[0x0f]
 	play id=0x0030, freq=0x14, vol=0x3F, channel=0x01
 	break
 	add [0x0F], 0x0009
 	sub [0x0E], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_3, x=160, y=[0x0e], zoom=[0x0f]
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_3, x=160, y=[0x0e], zoom=[0x0f]
 	break
 	add [0x0F], 0x000C
 	sub [0x0E], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_4, x=160, y=[0x0e], zoom=[0x0f]
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_4, x=160, y=[0x0e], zoom=[0x0f]
 	break
 	add [0x0F], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_5, x=160, y=[0x0e], zoom=[0x0f]
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_5, x=160, y=[0x0e], zoom=[0x0f]
 	break
 	add [0x0F], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_6, x=160, y=[0x0e], zoom=[0x0f]
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_6, x=160, y=[0x0e], zoom=[0x0f]
 	mov [0x10], 0x0003
 
 BEAST_KILLS_LESTER_F6_LOOP:
 	break
 	add [0x0F], 0x0032
 	add [0x0E], 0x001E
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_6, x=160, y=[0x0e], zoom=[0x0f]
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_6, x=160, y=[0x0e], zoom=[0x0f]
 	djnz [0x10], BEAST_KILLS_LESTER_F6_LOOP
 	setPalette 0x0A
 	mov [PAUSE_SLICES], 0x0004
 	setup channel=0x3C, address=LOOP_BLIT_AND_CLEAR_FF
 	break
 	play id=0x004D, freq=0x0F, vol=0x3F, channel=0x01
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_7, x=160, y=100
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_7, x=160, y=100
 	break
 	play id=0x004F, freq=0x11, vol=0x3F, channel=0x02
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_8, x=160, y=100
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_8, x=160, y=100
 	break
 	play id=0x004F, freq=0x14, vol=0x3F, channel=0x00
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_9, x=160, y=100
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_9, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_BEAST_KILLING_LESTER_10, x=160, y=100
+	video offset=CINEMATIC_BEAST_KILLING_LESTER_10, x=160, y=100
 	play id=0x004F, freq=0x17, vol=0x3F, channel=0x03
 	jmp INIT_VAR_03_TO_0x1E
 	killChannel
@@ -3605,19 +3605,19 @@ LOOP_BLIT_AND_CLEAR_FF:
 	killChannel
 
 LOOP_DRAW_LAKE_093_AT_CENTER:
-	video type=1, offset=CINEMATIC_VINE_CENTER_BG, x=160, y=100
+	video offset=CINEMATIC_VINE_CENTER_BG, x=160, y=100
 	break
 	jmp LOOP_DRAW_LAKE_093_AT_CENTER
 	killChannel
 
 LOOP_DRAW_CINEMATIC_VINE_SCREEN_BG_DECOR_AT_CENTER:
-	video type=1, offset=CINEMATIC_VINE_SCREEN_BG_DECOR, x=160, y=100
+	video offset=CINEMATIC_VINE_SCREEN_BG_DECOR, x=160, y=100
 	break
 	jmp LOOP_DRAW_CINEMATIC_VINE_SCREEN_BG_DECOR_AT_CENTER
 	killChannel
 
 LOOP_DRAW_VINE_FG:
-	video type=1, offset=CINEMATIC_SCENARIO_VINE_SCREEN_FOREGROUND, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_VINE_SCREEN_FOREGROUND, x=160, y=100
 	break
 	jmp LOOP_DRAW_VINE_FG
 	killChannel
@@ -3655,7 +3655,7 @@ SCHED_LAKE_DECOR_099_BACK:
 	killChannel
 
 LOOP_DRAW_LAKE_096_DECOR_AT_72_171:
-	video type=1, offset=CINEMATIC_VINE_DECOR_0, x=160, y=100
+	video offset=CINEMATIC_VINE_DECOR_0, x=160, y=100
 	mov [0x01], 0x0048
 	mov [0x02], 0x00AB
 	break
@@ -3663,7 +3663,7 @@ LOOP_DRAW_LAKE_096_DECOR_AT_72_171:
 	killChannel
 
 DRAW_LAKE_UNUSED_175_HOLD_LOOP:
-	video type=1, offset=CINEMATIC_LAKE_UNUSED_175, x=160, y=100
+	video offset=CINEMATIC_LAKE_UNUSED_175, x=160, y=100
 	mov [0x01], 0x0047
 	mov [0x02], 0x00AB
 	break
@@ -3671,7 +3671,7 @@ DRAW_LAKE_UNUSED_175_HOLD_LOOP:
 	killChannel
 
 LOOP_DRAW_LAKE_098_DECOR_AT_70_172:
-	video type=1, offset=CINEMATIC_VINE_DECOR_2, x=160, y=100
+	video offset=CINEMATIC_VINE_DECOR_2, x=160, y=100
 	mov [0x01], 0x0046
 	mov [0x02], 0x00AC
 	break
@@ -3679,7 +3679,7 @@ LOOP_DRAW_LAKE_098_DECOR_AT_70_172:
 	killChannel
 
 LOOP_DRAW_LAKE_099_DECOR_AT_69_172:
-	video type=1, offset=CINEMATIC_VINE_DECOR_3, x=160, y=100
+	video offset=CINEMATIC_VINE_DECOR_3, x=160, y=100
 	mov [0x01], 0x0045
 	mov [0x02], 0x00AC
 	break
@@ -3711,129 +3711,129 @@ WAIT_BLINK_BG_FROM_VAR_02:
 	killChannel
 
 LESTER_GRABS_A_VINE_AND_SWINGS:
-	video type=1, offset=CINEMATIC_JUMPING_TOWARDS_VINE_0, x=107, y=148
+	video offset=CINEMATIC_JUMPING_TOWARDS_VINE_0, x=107, y=148
 	break
-	video type=1, offset=CINEMATIC_JUMPING_TOWARDS_VINE_1, x=107, y=148
+	video offset=CINEMATIC_JUMPING_TOWARDS_VINE_1, x=107, y=148
 	break
-	video type=1, offset=CINEMATIC_JUMPING_TOWARDS_VINE_2, x=106, y=151
+	video offset=CINEMATIC_JUMPING_TOWARDS_VINE_2, x=106, y=151
 	break
-	video type=1, offset=CINEMATIC_JUMPING_TOWARDS_VINE_3, x=101, y=150
+	video offset=CINEMATIC_JUMPING_TOWARDS_VINE_3, x=101, y=150
 	break
-	video type=1, offset=CINEMATIC_JUMPING_TOWARDS_VINE_3, x=97, y=149
+	video offset=CINEMATIC_JUMPING_TOWARDS_VINE_3, x=97, y=149
 	break
-	video type=1, offset=CINEMATIC_JUMPING_TOWARDS_VINE_4, x=86, y=153
+	video offset=CINEMATIC_JUMPING_TOWARDS_VINE_4, x=86, y=153
 	break
 	play id=0x002D, freq=0x14, vol=0x40, channel=0x00
-	video type=1, offset=CINEMATIC_JUMPING_TOWARDS_VINE_4, x=82, y=160
+	video offset=CINEMATIC_JUMPING_TOWARDS_VINE_4, x=82, y=160
 	mov [0x1B], 0x0000
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	break
-	video type=1, offset=CINEMATIC_STATIC_VINE_ABOUT_TO_SNAP_0, x=160, y=100
-	video type=1, offset=CINEMATIC_LESTER_GRABBING_VINE_0, x=72, y=168
+	video offset=CINEMATIC_STATIC_VINE_ABOUT_TO_SNAP_0, x=160, y=100
+	video offset=CINEMATIC_LESTER_GRABBING_VINE_0, x=72, y=168
 	setup channel=0x05, address=SCHEDULE_LAKE_DECORATIONS_096_TO_099
 	break
-	video type=1, offset=CINEMATIC_STATIC_VINE_ABOUT_TO_SNAP_1, x=160, y=100
-	video type=1, offset=CINEMATIC_LESTER_GRABBING_VINE_1, x=67, y=170
+	video offset=CINEMATIC_STATIC_VINE_ABOUT_TO_SNAP_1, x=160, y=100
+	video offset=CINEMATIC_LESTER_GRABBING_VINE_1, x=67, y=170
 	break
-	video type=1, offset=CINEMATIC_LESTER_GRABBING_VINE_2, x=65, y=171
+	video offset=CINEMATIC_LESTER_GRABBING_VINE_2, x=65, y=171
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_3, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_3, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_3, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_3, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_3, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_3, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_2, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_0, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[0x01], y=[0x02], zoom=0x40
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x07, address=LOOP_DRAW_LAKE_093_AT_CENTER
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_0, x=160, y=100
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_0, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_1, x=160, y=100
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_1, x=160, y=100
 	break
 	mov [0x01], 0x00A0
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_2, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_2, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_3, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_3, x=[0x01], y=100, zoom=0x40
 	setup channel=0x04, address=LESTER_DRIFT_RIGHT_SEQ
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_4, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_4, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_5, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_5, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_6, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_6, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_7, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_7, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_8, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_8, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_9, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_9, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_10, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_10, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_11, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_11, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_12, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_12, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_13, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_13, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_14, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_14, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_15, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_15, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_16, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_16, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_17, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_17, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_18, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_18, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_19, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_19, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_20, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_20, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_21, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_21, x=[0x01], y=100, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_22, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_22, x=[0x01], y=100, zoom=0x40
 	setup channel=0x3F, address=OUTSIDE_POOL_SCREEN
 	break
-	video type=1, offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_23, x=[0x01], y=100, zoom=0x40
+	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_23, x=[0x01], y=100, zoom=0x40
 	setup channel=0x00, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
@@ -3842,35 +3842,35 @@ LESTER_GRABS_A_VINE_AND_SWINGS:
 	call ADVANCE_X_BACKWARD_ONE_SCREEN
 	mov [0x01], 0x008C
 	mov [0x02], 0x0050
-	video type=1, offset=CINEMATIC_LANDING_AFTER_SWING_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_0, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LANDING_AFTER_SWING_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_1, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LANDING_AFTER_SWING_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_2, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LANDING_AFTER_SWING_3, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_3, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LANDING_AFTER_SWING_4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_4, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LANDING_AFTER_SWING_5, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_5, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LANDING_AFTER_SWING_6, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_6, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LANDING_AFTER_SWING_7, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_7, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LANDING_AFTER_SWING_8, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_8, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LANDING_AFTER_SWING_9, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_9, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LANDING_AFTER_SWING_10, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_10, x=[0x01], y=[0x02], zoom=0x40
 	play id=0x0051, freq=0x0A, vol=0x3F, channel=0x00
 	break
-	video type=1, offset=CINEMATIC_LANDING_AFTER_SWING_11, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_11, x=[0x01], y=[0x02], zoom=0x40
 	freezeChannels first=0x14, last=0x16
 	setup channel=0x14, address=MAYBE_RESUME_WALK_RIGHT_IF_GROUNDED
 	setup channel=0x15, address=KILL_CHANNEL_ROUTINE
 	break
-	video type=1, offset=CINEMATIC_LANDING_AFTER_SWING_12, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_LANDING_AFTER_SWING_12, x=[0x01], y=[0x02], zoom=0x40
 	break
 	mov [0x5E], 0x0001
 	mov [0x01], 0x0061
@@ -3891,8 +3891,8 @@ INIT_GETTING_OUT_OF_POOL_ANIMATION:
 
 GETTING_OUT_OF_THE_POOL__ANIMATION_PART_0:
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_0, x=[0x14], y=100, zoom=0x40
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_1, x=[0x15], y=100, zoom=0x40
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_0, x=[0x14], y=100, zoom=0x40
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_1, x=[0x15], y=100, zoom=0x40
 	sub [0x14], 0x0001
 	add [0x15], 0x0001
 	selectVideoPage 0xFF
@@ -3905,8 +3905,8 @@ GETTING_OUT_OF_THE_POOL__ANIMATION_PART_0:
 
 GETTING_OUT_OF_THE_POOL__ANIMATION_PART_1:
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_2, x=[0x14], y=100, zoom=0x40
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_3, x=[0x15], y=100, zoom=0x40
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_2, x=[0x14], y=100, zoom=0x40
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_3, x=[0x15], y=100, zoom=0x40
 	sub [0x14], 0x0001
 	add [0x15], 0x0001
 	selectVideoPage 0xFF
@@ -3919,7 +3919,7 @@ GETTING_OUT_OF_THE_POOL__ANIMATION_PART_1:
 
 GETTING_OUT_OF_THE_POOL__ANIMATION_PART_2:
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_4, x=[0x14], y=100, zoom=0x40
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_4, x=[0x14], y=100, zoom=0x40
 	sub [0x14], 0x0001
 	selectVideoPage 0xFF
 	break
@@ -3933,15 +3933,15 @@ GETTING_OUT_POOL_PART_3_RPT:
 	mov [0x17], 0x0002
 
 GETTING_OUT_OF_THE_POOL__ANIMATION_PART_3:
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_5, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_5, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_6, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_6, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_7, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_7, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_8, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_8, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_9, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_A_9, x=160, y=100
 	break
 	djnz [0x17], GETTING_OUT_OF_THE_POOL__ANIMATION_PART_3
 	killChannel
@@ -3949,55 +3949,55 @@ GETTING_OUT_OF_THE_POOL__ANIMATION_PART_3:
 GETTING_OUT_OF_THE_POOL__ANIMATION_PART_4:
 	mov [0x33], 0x0078
 	play id=0x004B, freq=0x0F, vol=0x3F, channel=0x01
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_0, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_0, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_1, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_1, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_2, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_2, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_2, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_2, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_1, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_1, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_3, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_3, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_0, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_0, x=160, y=100
 	play id=0x004B, freq=0x0F, vol=0x20, channel=0x01
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_4, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_4, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_5, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_5, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_6, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_B_6, x=160, y=100
 	mov [0x18], 0x000A
 
 GETTING_OUT_OF_THE_POOL__ANIMATION_PART_5:
 	break
 	djnz [0x18], GETTING_OUT_OF_THE_POOL__ANIMATION_PART_5
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_0, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_0, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_0, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_0, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_1, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_1, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_1, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_1, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_2, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_2, x=160, y=100
 	break
 	play id=0x0039, freq=0x0F, vol=0x3F, channel=0x01
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_2, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_2, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_3, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_3, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_3, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_3, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_4, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_4, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_4, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_4, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_5, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_5, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_5, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_C_5, x=160, y=100
 	play id=0x0039, freq=0x07, vol=0x20, channel=0x01
 	break
 	setup channel=0x16, address=HERO_AI_DISPATCH
@@ -4007,133 +4007,133 @@ GETTING_OUT_OF_THE_POOL__ANIMATION_PART_5:
 	mov [PAUSE_SLICES], 0x0004
 
 GETTING_OUT_OF_THE_POOL__ANIMATION_PART_6:
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_0, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_0, x=160, y=100
 	break
 	djnz [0x18], GETTING_OUT_OF_THE_POOL__ANIMATION_PART_6
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_1, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_1, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_1, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_1, x=160, y=100
 	setup channel=0x17, address=GETTING_OUT_POOL_PART_3_RPT
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_2, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_2, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_3, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_3, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_4, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_4, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_5, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_5, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_6, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_6, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_7, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_7, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_8, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_8, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_9, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_9, x=160, y=100
 	break
 	play id=0x004B, freq=0x14, vol=0x14, channel=0x01
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_10, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_10, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_11, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_11, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_12, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_12, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_13, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_13, x=160, y=100
 	mov [0x18], 0x0014
 
 GETTING_OUT_OF_THE_POOL__ANIMATION_PART_7:
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_14, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_14, x=160, y=100
 	djnz [0x18], GETTING_OUT_OF_THE_POOL__ANIMATION_PART_7
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_15, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_15, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_15, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_15, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_16, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_16, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_16, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_16, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_17, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_17, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_17, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_17, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_18, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_18, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_18, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_18, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_19, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_19, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_19, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_19, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_20, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_20, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_20, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_20, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_21, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_21, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_21, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_D_21, x=160, y=100
 	mov [0x18], 0x0014
 
 GETTING_OUT_OF_THE_POOL__ANIMATION_PART_8:
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_0, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_0, x=160, y=100
 	djnz [0x18], GETTING_OUT_OF_THE_POOL__ANIMATION_PART_8
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_1, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_1, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_1, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_1, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_2, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_2, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_2, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_2, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_3, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_3, x=160, y=100
 	play id=0x0051, freq=0x14, vol=0x20, channel=0x01
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_3, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_3, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_4, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_4, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_4, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_4, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_5, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_5, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_5, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_5, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_6, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_6, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_6, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_6, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_7, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_7, x=160, y=100
 	play id=0x0051, freq=0x16, vol=0x1D, channel=0x01
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_7, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_7, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_8, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_8, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_8, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_8, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_9, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_9, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_9, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_9, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_10, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_10, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_10, x=160, y=100
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_E_10, x=160, y=100
 	break
 	play id=0x0051, freq=0x14, vol=0x20, channel=0x01
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_F_0, x=199, y=182
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_F_0, x=199, y=182
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_F_0, x=199, y=182
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_F_0, x=199, y=182
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_F_1, x=199, y=182
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_F_1, x=199, y=182
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_F_1, x=199, y=182
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_F_1, x=199, y=182
 
 GETTING_OUT_OF_THE_POOL__ANIMATION_PART_9:
 	break
-	video type=1, offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_F_1, x=199, y=182
+	video offset=CINEMATIC_GETTING_OUT_OF_THE_POOL_F_1, x=199, y=182
 	jmp GETTING_OUT_OF_THE_POOL__ANIMATION_PART_9
 	killChannel
 
@@ -4145,108 +4145,108 @@ THE_BEAST_APPEARS_FOR_THE_FIRST_TIME_IN_THE_BACKGROUND:
 BEAST_INTRO_INITIAL_DELAY:
 	break
 	djnz [0x10], BEAST_INTRO_INITIAL_DELAY
-	video type=1, offset=CINEMATIC_BEAST_FIRST_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_BG_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_BG_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0006
-	video type=1, offset=CINEMATIC_BEAST_BG_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0007
-	video type=1, offset=CINEMATIC_BEAST_BG_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_BG_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_4, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_BG_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_BG_6, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_6, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x001E
 	play id=0x003C, freq=0x0A, vol=0x0C, channel=0x00
-	video type=1, offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0001
-	video type=1, offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0001
-	video type=1, offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0001
 	mov [0x10], 0x0014
 
 BEAST_BG_F7_HOLD_LOOP:
-	video type=1, offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	djnz [0x10], BEAST_BG_F7_HOLD_LOOP
-	video type=1, offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
-	video type=1, offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
-	video type=1, offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
-	video type=1, offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	mov [0x10], 0x001E
 
 BEAST_HEAD_TURNING_3_LOOP:
-	video type=1, offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
-	video type=1, offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	djnz [0x10], BEAST_HEAD_TURNING_3_LOOP
-	video type=1, offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
-	video type=1, offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
-	video type=1, offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
-	video type=1, offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_BODY, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BACKGROUND_BEAST_HEAD_TURNING_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	mov [0x10], 0x0002
 
 BEAST_BG_F7_HOLD_LOOP_SHORT:
-	video type=1, offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_7, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	djnz [0x10], BEAST_BG_F7_HOLD_LOOP_SHORT
-	video type=1, offset=CINEMATIC_BEAST_BG_8, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_8, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_BG_9, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_9, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_BG_10, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_10, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_FIRST_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_BG_11, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_BG_11, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_FIRST_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_FIRST_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_FIRST_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_4, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0005
-	video type=1, offset=CINEMATIC_BEAST_FIRST_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_FIRST_6, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_6, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0001
-	video type=1, offset=CINEMATIC_BEAST_FIRST_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_7, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0006
-	video type=1, offset=CINEMATIC_BEAST_FIRST_8, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_8, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0007
-	video type=1, offset=CINEMATIC_BEAST_FIRST_9, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_9, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0001
-	video type=1, offset=CINEMATIC_BEAST_FIRST_10, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_10, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_FIRST_11, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_11, x=[0x0e], y=[0x0f], zoom=0x40
 	killChannel
 
 THE_BEAST_WANDERS_ON_THE_FIRST_SCREEN_TO_THE_RIGHT:
@@ -4254,71 +4254,71 @@ THE_BEAST_WANDERS_ON_THE_FIRST_SCREEN_TO_THE_RIGHT:
 	mov [0x0F], 0x0063
 
 BEAST_WANDER_F1_UNTIL_X_LT_3C:
-	video type=1, offset=CINEMATIC_BEAST_WANDER_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_WANDER_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	jl [0x01], 0x3C, BEAST_WANDER_F1_UNTIL_X_LT_3C
-	video type=1, offset=CINEMATIC_BEAST_FIRST_6, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_6, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0000
-	video type=1, offset=CINEMATIC_BEAST_FIRST_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_7, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0007
 	sub [0x0F], 0x0002
-	video type=1, offset=CINEMATIC_BEAST_FIRST_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_7, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0007
-	video type=1, offset=CINEMATIC_BEAST_FIRST_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_7, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0007
 	add [0x0F], 0x0003
-	video type=1, offset=CINEMATIC_BEAST_FIRST_8, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_8, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0007
 	add [0x0F], 0x0004
-	video type=1, offset=CINEMATIC_BEAST_FIRST_8, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_8, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0007
 	add [0x0F], 0x0006
-	video type=1, offset=CINEMATIC_BEAST_FIRST_9, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_9, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0006
 	add [0x0F], 0x0007
-	video type=1, offset=CINEMATIC_BEAST_FIRST_9, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_9, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0F], 0x0003
-	video type=1, offset=CINEMATIC_BEAST_FIRST_10, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_10, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_WANDER_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_WANDER_2, x=[0x0e], y=[0x0f], zoom=0x40
 	play id=0x003C, freq=0x0A, vol=0x0C, channel=0x00
 	break
-	video type=1, offset=CINEMATIC_BEAST_FIRST_11, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_11, x=[0x0e], y=[0x0f], zoom=0x40
 	add [0x0E], 0x001C
 	mov [0x10], 0x0014
 
 BEAST_WANDER_F1_HOLD_20A:
 	break
-	video type=1, offset=CINEMATIC_BEAST_WANDER_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_WANDER_1, x=[0x0e], y=[0x0f], zoom=0x40
 	djnz [0x10], BEAST_WANDER_F1_HOLD_20A
 	break
-	video type=1, offset=CINEMATIC_BEAST_FIRST_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_4, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_FIRST_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_FIRST_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_WANDER_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_WANDER_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_WANDER_4, x=[0x0e], y=[0x0f], zoom=0x40
-	video type=1, offset=CINEMATIC_BEAST_WANDER_5, x=160, y=100
+	video offset=CINEMATIC_BEAST_WANDER_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_WANDER_5, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_BEAST_WANDER_6, x=[0x0e], y=[0x0f], zoom=0x40
-	video type=1, offset=CINEMATIC_BEAST_WANDER_5, x=160, y=100
+	video offset=CINEMATIC_BEAST_WANDER_6, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_WANDER_5, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_BEAST_WANDER_7, x=[0x0e], y=[0x0f], zoom=0x40
-	video type=1, offset=CINEMATIC_BEAST_WANDER_5, x=160, y=100
+	video offset=CINEMATIC_BEAST_WANDER_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_WANDER_5, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_BEAST_WANDER_0, x=[0x0e], y=[0x0f], zoom=0x40
-	video type=1, offset=CINEMATIC_BEAST_WANDER_5, x=160, y=100
+	video offset=CINEMATIC_BEAST_WANDER_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_WANDER_5, x=160, y=100
 	killChannel
 
 THE_BEAST_WANDERS_ON_THE_SECOND_SCREEN_TO_THE_RIGHT:
@@ -4327,58 +4327,58 @@ THE_BEAST_WANDERS_ON_THE_SECOND_SCREEN_TO_THE_RIGHT:
 	mov [0x10], 0x0006
 
 BEAST_WANDER_F1_HOLD_6:
-	video type=1, offset=CINEMATIC_BEAST_WANDER_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_WANDER_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	djnz [0x10], BEAST_WANDER_F1_HOLD_6
-	video type=1, offset=CINEMATIC_BEAST_FIRST_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_FIRST_6, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_6, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0002
-	video type=1, offset=CINEMATIC_BEAST_FIRST_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_7, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0009
-	video type=1, offset=CINEMATIC_BEAST_FIRST_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_7, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0009
-	video type=1, offset=CINEMATIC_BEAST_FIRST_8, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_8, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0009
-	video type=1, offset=CINEMATIC_BEAST_FIRST_9, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_9, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0003
 	add [0x0F], 0x0001
-	video type=1, offset=CINEMATIC_BEAST_FIRST_10, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_10, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_WANDER_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_WANDER_2, x=[0x0e], y=[0x0f], zoom=0x40
 	play id=0x003C, freq=0x0A, vol=0x0C, channel=0x00
 	break
 	add [0x0E], 0x0001
-	video type=1, offset=CINEMATIC_BEAST_FIRST_11, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_11, x=[0x0e], y=[0x0f], zoom=0x40
 	add [0x0E], 0x001D
 	mov [0x10], 0x0014
 
 BEAST_WANDER_F1_HOLD_20B:
 	break
-	video type=1, offset=CINEMATIC_BEAST_WANDER_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_WANDER_1, x=[0x0e], y=[0x0f], zoom=0x40
 	djnz [0x10], BEAST_WANDER_F1_HOLD_20B
 	break
-	video type=1, offset=CINEMATIC_BEAST_FIRST_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_4, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_FIRST_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_FIRST_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_FIRST_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_WANDER_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_WANDER_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_WANDER_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_WANDER_4, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	play id=0x0050, freq=0x14, vol=0x20, channel=0x00
-	video type=1, offset=CINEMATIC_BEAST_WANDER_6, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_WANDER_6, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_WANDER_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_WANDER_7, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_WANDER_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_WANDER_0, x=[0x0e], y=[0x0f], zoom=0x40
 	killChannel
 
 CHECK_IF_THE_BEAST_HAS_ALREADY_REACHED_LESTER:
@@ -4420,42 +4420,42 @@ BEAST_AI_SPAWN_FAR_LEFT:
 	mov [0x10], 0x0023
 
 BEAST_APPROACH_PHASE_1:
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	djnz [0x10], BEAST_APPROACH_PHASE_1
 	add [0x0E], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 
 BEAST_APPROACH_PHASE_2:
 	add [0x0E], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_4, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	play id=0x003A, freq=0x0A, vol=0x18, channel=0x00
 	add [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_6, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_6, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x000B
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_7, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_7, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_8, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_8, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0006
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_9, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_9, x=[0x0e], y=[0x0f], zoom=0x40
 	call RANDOM_BEAST_AMBIENT_SOUND
 	break
 	add [0x0E], 0x000C
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_10, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_10, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	add [0x0E], 0x0001
 	jmp BEAST_APPROACH_PHASE_2
@@ -4511,13 +4511,13 @@ BEAST_AI_SPAWN_MR_HOLD_LOOP:
 	jg [0x01], 0x96, BEAST_AI_SPAWN_MR_AFTER_HOLD
 
 BEAST_AI_SPAWN_MR_DRAW_BODY:
-	video type=1, offset=CINEMATIC_BEAST_HOLD_POSE, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_HOLD_POSE, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	djnz [0x10], BEAST_AI_SPAWN_MR_HOLD_LOOP
 
 BEAST_AI_SPAWN_MR_AFTER_HOLD:
 	sub [0x0E], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_FAST_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 
 SHIFT_X_LEFT_F_AND_JMP:
@@ -4525,16 +4525,16 @@ SHIFT_X_LEFT_F_AND_JMP:
 	jmp BEAST_APPROACH_F1_TICK
 
 BEAST_APPROACH_FAST_LOOP:
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_FAST_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000F
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_FAST_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_FAST_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_LAKE_UNUSED_189, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_LAKE_UNUSED_189, x=[0x0e], y=[0x0f], zoom=0x40
 	mov [SCROLL_Y], 0x0001
 	setup channel=0x3C, address=RENDER_FRAME_DISPATCH
 	break
@@ -4543,22 +4543,22 @@ BEAST_APPROACH_FAST_LOOP:
 	jmp BEAST_ARRIVAL_DECEL
 
 DRAW_BEAST_DRIFT_LEFT_PREROLL_FRAME:
-	video type=1, offset=CINEMATIC_BEAST_PREROLL, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_PREROLL, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 
 DRAW_BEAST_DRIFT_LEFT_LOOP:
 	sub [0x0E], 0x000B
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_FRAME, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_FRAME, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0006
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_1, x=[0x0e], y=[0x0f], zoom=0x40
 	call RANDOM_BEAST_AMBIENT_SOUND
 	break
 	sub [0x0E], 0x000C
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0001
 	jmp SHIFT_X_LEFT_F_AND_JMP
@@ -4585,35 +4585,35 @@ BEAST_APPROACH_F1_TICK:
 	jl [0x2A], 0x04, BEAST_APPROACH_FAST_LOOP
 	jg [0x0E], 0xFA, BEAST_APPROACH_FAST_LOOP
 	sub [0x0F], 0x000A
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_FAST_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000F
 	sub [0x0F], 0x0008
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_FAST_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
 	sub [0x0F], 0x0005
-	video type=1, offset=CINEMATIC_BEAST_APPROACH_FAST_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_APPROACH_FAST_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
 	sub [0x0F], 0x0005
-	video type=1, offset=CINEMATIC_LAKE_UNUSED_189, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_LAKE_UNUSED_189, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
 	sub [0x0F], 0x0002
-	video type=1, offset=CINEMATIC_BEAST_PREROLL, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_PREROLL, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000B
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_FRAME, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_FRAME, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0006
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000C
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_2, x=[0x0e], y=[0x0f], zoom=0x40
 	mov [0x10], 0x0003
 	play id=0x004E, freq=0x1C, vol=0x3F, channel=0x00
 	play id=0x0030, freq=0x1C, vol=0x3F, channel=0x01
@@ -4622,13 +4622,13 @@ BEAST_APPROACH_F1_TICK:
 BEAST_PRE_HOLD_LOOP:
 	break
 	sub [0x0E], 0x0001
-	video type=1, offset=CINEMATIC_BEAST_HOLD_POSE, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_HOLD_POSE, x=[0x0e], y=[0x0f], zoom=0x40
 	djnz [0x10], BEAST_PRE_HOLD_LOOP
 	play id=0x004E, freq=0x1C, vol=0x30, channel=0x00
 
 BEAST_FINAL_HOLD_LOOP:
 	break
-	video type=1, offset=CINEMATIC_BEAST_HOLD_POSE, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_HOLD_POSE, x=[0x0e], y=[0x0f], zoom=0x40
 	jmp BEAST_FINAL_HOLD_LOOP
 	killChannel
 
@@ -4639,50 +4639,50 @@ BEAST_ARRIVAL_DECEL:
 	jg [0x0E], 0xF0, DRAW_BEAST_DRIFT_LEFT_PREROLL_FRAME
 	mov [0x6E], 0x0078
 	setup channel=0x29, address=KILL_CHANNEL_ROUTINE
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_3, x=[0x0e], y=[0x0f], zoom=0x40
 	play id=0x0030, freq=0x1C, vol=0x20, channel=0x00
 	break
 	sub [0x0E], 0x000B
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000B
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_4, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000D
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x000A
-	video type=1, offset=CINEMATIC_BEAST_DECEL_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0009
-	video type=1, offset=CINEMATIC_BEAST_DECEL_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0009
-	video type=1, offset=CINEMATIC_BEAST_DECEL_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0008
-	video type=1, offset=CINEMATIC_BEAST_DECEL_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0008
-	video type=1, offset=CINEMATIC_BEAST_DECEL_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_4, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0008
-	video type=1, offset=CINEMATIC_BEAST_DECEL_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0006
-	video type=1, offset=CINEMATIC_BEAST_DECEL_2, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_2, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0005
-	video type=1, offset=CINEMATIC_BEAST_DECEL_1, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_1, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	sub [0x0E], 0x0004
-	video type=1, offset=CINEMATIC_BEAST_DECEL_0, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DECEL_0, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	mov [0x10], 0x0005
 
 BEAST_DECEL_STEP_3_LOOP:
 	sub [0x0E], 0x0003
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	djnz [0x10], BEAST_DECEL_STEP_3_LOOP
 	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
@@ -4690,7 +4690,7 @@ BEAST_DECEL_STEP_3_LOOP:
 
 BEAST_DECEL_STEP_2_LOOP:
 	sub [0x0E], 0x0002
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	djnz [0x10], BEAST_DECEL_STEP_2_LOOP
 	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
@@ -4698,21 +4698,21 @@ BEAST_DECEL_STEP_2_LOOP:
 
 BEAST_DECEL_STEP_1_LOOP:
 	sub [0x0E], 0x0001
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	djnz [0x10], BEAST_DECEL_STEP_1_LOOP
 	jl [0x0E], [0x01], BEAST_PASS_HERO_DECEL
 	mov [0x10], 0x0005
 
 HOLD_LAKE_139_FOR_N_FRAMES:
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	djnz [0x10], HOLD_LAKE_139_FOR_N_FRAMES
 
 BEAST_PASS_HERO_DECEL:
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_4, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_4, x=[0x0e], y=[0x0f], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_DRIFT_LEFT_3, x=[0x0e], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BEAST_DRIFT_LEFT_3, x=[0x0e], y=[0x0f], zoom=0x40
 	break
 	setup channel=0x29, address=CHECK_IF_THE_BEAST_HAS_ALREADY_REACHED_LESTER
 	jg [0x0E], [0x01], DRAW_BEAST_DRIFT_LEFT_LOOP
@@ -4729,7 +4729,7 @@ WAIT_BEAST_TRIGGER_THEN_INIT:
 	mov [0x65], 0x0005
 	fill page=0x00, color=0x0B
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
 	selectVideoPage 0xFF
 	unfreezeChannels first=0x00, last=0x27
 	unfreezeChannels first=0x29, last=0x3B
@@ -4742,100 +4742,100 @@ WAIT_BEAST_TRIGGER_THEN_INIT:
 THE_BEAST_SURPRISES_LESTER:
 	break
 	djnz [0x10], THE_BEAST_SURPRISES_LESTER
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_0, x=160, y=65506, zoom=0x40
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_0, x=160, y=65506, zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_0, x=160, y=50
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_0, x=160, y=50
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_1, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_1, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_2, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_2, x=160, y=100
 	play id=0x003D, freq=0x14, vol=0x3F, channel=0x00
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_3, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_3, x=160, y=100
 	play id=0x003D, freq=0x12, vol=0x3F, channel=0x01
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_4, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_4, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_5, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_0, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_5, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_0, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_5, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_1, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_5, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_1, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_6, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_2, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_6, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_2, x=160, y=100
 	play id=0x0030, freq=0x14, vol=0x3F, channel=0x00
 	play id=0x0030, freq=0x14, vol=0x3F, channel=0x01
 	play id=0x0030, freq=0x14, vol=0x3F, channel=0x02
 	play id=0x0030, freq=0x14, vol=0x3F, channel=0x03
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_6, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_3, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_6, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_3, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_7, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_4, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_7, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_4, x=160, y=100
 	mov [0x10], 0x0001
 
 BEAST_SURPRISE_PHASE7_HOLD:
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_7, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_5, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_7, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_5, x=160, y=100
 	djnz [0x10], BEAST_SURPRISE_PHASE7_HOLD
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_7, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_6, x=158, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_7, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_6, x=158, y=100
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_6, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_7, x=155, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_6, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_7, x=155, y=100
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_5, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_8, x=152, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_5, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_8, x=152, y=100
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_8, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_8, x=149, y=98
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_8, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_8, x=149, y=98
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_9, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_9, x=147, y=97
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_9, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_9, x=147, y=97
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_9, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_9, x=145, y=94
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_9, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_9, x=145, y=94
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_9, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_9, x=144, y=92
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_9, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_9, x=144, y=92
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_8, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_7, x=144, y=92
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_8, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_7, x=144, y=92
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_8, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_7, x=146, y=93
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_8, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_7, x=146, y=93
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_5, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_10, x=150, y=94
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_5, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_10, x=150, y=94
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_6, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_6, x=154, y=96
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_6, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_6, x=154, y=96
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_7, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_5, x=158, y=98
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_7, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_5, x=158, y=98
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_7, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_4, x=161, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_7, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_4, x=161, y=100
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_7, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_4, x=163, y=101
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_7, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_4, x=163, y=101
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_7, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_4, x=164, y=101
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_7, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_4, x=164, y=101
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_6, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_4, x=163, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_6, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_4, x=163, y=100
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_6, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_4, x=161, y=99
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_6, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_4, x=161, y=99
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_BODY_6, x=160, y=100
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_4, x=161, y=99
+	video offset=CINEMATIC_BEAST_SURPRISE_BODY_6, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_4, x=161, y=99
 	freezeChannels first=0x00, last=0x3F
 	setup channel=0x29, address=CHECK_IF_THE_BEAST_HAS_ALREADY_REACHED_LESTER
 	copyVideoPage src=0x03, dst=0x00
@@ -4854,25 +4854,25 @@ BEAST_SURPRISE_PHASE7_HOLD:
 	killChannel
 
 GOO_DRIPPING_FROM_SLUGS_CLAW_ANIMATION:
-	video type=1, offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_0, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_0, x=[0x15], y=[0x16], zoom=0x40
 	break
 	play id=0x004A, freq=0x14, vol=0x3F, channel=0x01
-	video type=1, offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_1, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_1, x=[0x15], y=[0x16], zoom=0x40
 	play id=0x004A, freq=0x0F, vol=0x3F, channel=0x00
 	break
-	video type=1, offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_2, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_2, x=[0x15], y=[0x16], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_3, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_3, x=[0x15], y=[0x16], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_4, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_4, x=[0x15], y=[0x16], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_5, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_5, x=[0x15], y=[0x16], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_6, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_6, x=[0x15], y=[0x16], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_7, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_7, x=[0x15], y=[0x16], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_8, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_GOO_DRIPPING_FROM_SLUGS_CLAW_8, x=[0x15], y=[0x16], zoom=0x40
 	break
 	killChannel
 
@@ -4906,7 +4906,7 @@ SLUG_ATTACK_INTRO:
 	setPalette 0x0F
 
 SLUG_ATTACK_CLAW_DRIFT_FAST:
-	video type=1, offset=CINEMATIC_SLUG_ATTACK__CLOSED_CLAW, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_SLUG_ATTACK__CLOSED_CLAW, x=[0x15], y=[0x16], zoom=0x40
 	sub [0x16], 0x000F
 	sub [0x15], 0x0003
 	break
@@ -4915,18 +4915,18 @@ SLUG_ATTACK_CLAW_DRIFT_FAST:
 	add [0x16], 0x000A
 
 SLUG_ATTACK_CLAW_DRIFT_SLOW:
-	video type=1, offset=CINEMATIC_SLUG_ATTACK__CLOSED_CLAW, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_SLUG_ATTACK__CLOSED_CLAW, x=[0x15], y=[0x16], zoom=0x40
 	sub [0x16], 0x0005
 	sub [0x15], 0x0003
 	break
 	djnz [0x17], SLUG_ATTACK_CLAW_DRIFT_SLOW
 	setup channel=0x3B, address=GOO_DRIPPING_FROM_SLUGS_CLAW_ANIMATION
-	video type=1, offset=CINEMATIC_SLUG_ATTACK__CLOSED_CLAW, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_SLUG_ATTACK__CLOSED_CLAW, x=[0x15], y=[0x16], zoom=0x40
 	break
 	mov [0x17], 0x000A
 
 SLUG_ATTACK_OPEN_CLAW_LOOP:
-	video type=1, offset=CINEMATIC_SLUG_ATTACK__OPEN_CLAW, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_SLUG_ATTACK__OPEN_CLAW, x=[0x15], y=[0x16], zoom=0x40
 	sub [0x16], 0x0002
 	sub [0x15], 0x0001
 	break
@@ -4935,7 +4935,7 @@ SLUG_ATTACK_OPEN_CLAW_LOOP:
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	selectVideoPage 0x00
 	fill page=0x00, color=0x0B
-	video type=1, offset=CINEMATIC_LESTER_ATTACK_SCENE_BACKGROUND, x=160, y=100
+	video offset=CINEMATIC_LESTER_ATTACK_SCENE_BACKGROUND, x=160, y=100
 	selectVideoPage 0xFF
 	mov [0x17], 0x0002
 
@@ -4943,47 +4943,47 @@ SLUG_ATTACK_FB_FILL_LOOP:
 	fill page=0xFF, color=0x00
 	break
 	djnz [0x17], SLUG_ATTACK_FB_FILL_LOOP
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_0, x=160, y=100
+	video offset=CINEMATIC_SLUG_ATTACKING_LEG_0, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_0, x=155, y=100
+	video offset=CINEMATIC_SLUG_ATTACKING_LEG_0, x=155, y=100
 	play id=0x004F, freq=0x1A, vol=0x3F, channel=0x00
 	break
 	play id=0x004F, freq=0x14, vol=0x3F, channel=0x01
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_1, x=160, y=100
+	video offset=CINEMATIC_SLUG_ATTACKING_LEG_1, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_1, x=155, y=100
+	video offset=CINEMATIC_SLUG_ATTACKING_LEG_1, x=155, y=100
 	break
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_2, x=160, y=100, zoom=[0x82]	;@enc=alt
+	video offset=CINEMATIC_SLUG_ATTACKING_LEG_2, x=160, y=100, zoom=[0x82]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_3, x=160, y=100, zoom=[0x5a]	;@enc=alt
+	video offset=CINEMATIC_SLUG_ATTACKING_LEG_3, x=160, y=100, zoom=[0x5a]	;@enc=alt
 	break
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_4, x=160, y=100
+	video offset=CINEMATIC_SLUG_ATTACKING_LEG_4, x=160, y=100
 	setup channel=0x2C, address=SLUG_ATTACK_LEG_LOOP
 	mov [0x16], 0x0046
 	mov [0x15], 0x00AA
 	play id=0x004E, freq=0x1A, vol=0x3F, channel=0x00
 	break
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_5, x=[0x15], y=100, zoom=[0x16]
+	video offset=CINEMATIC_SLUG_ATTACKING_LEG_5, x=[0x15], y=100, zoom=[0x16]
 	mov [0x16], 0x0050
 	play id=0x004E, freq=0x14, vol=0x3F, channel=0x01
 	break
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_6, x=[0x15], y=100, zoom=[0x16]
+	video offset=CINEMATIC_SLUG_ATTACKING_LEG_6, x=[0x15], y=100, zoom=[0x16]
 	mov [0x16], 0x005A
 	break
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_7, x=[0x15], y=100, zoom=[0x16]
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_6, x=[0x15], y=160, zoom=[0x16]
+	video offset=CINEMATIC_SLUG_ATTACKING_LEG_7, x=[0x15], y=100, zoom=[0x16]
+	video offset=CINEMATIC_SLUG_ATTACKING_LEG_6, x=[0x15], y=160, zoom=[0x16]
 	mov [0x17], 0x0013
 
 SLUG_ATTACK_LEG_DRAW_LOOP:
 	break
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_8, x=[0x15], y=100, zoom=[0x16]
+	video offset=CINEMATIC_SLUG_ATTACKING_LEG_8, x=[0x15], y=100, zoom=[0x16]
 	je [0xDB], 0x00, SLUG_ATTACK_LEG_LOOP_NOOP_BR
 
 SLUG_ATTACK_LEG_LOOP_NOOP_BR:
 	djnz [0x17], SLUG_ATTACK_LEG_DRAW_LOOP
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
-	video type=1, offset=CINEMATIC_SLUG_ATTACKING_LEG_8, x=[0x15], y=100, zoom=[0x16]
+	video offset=CINEMATIC_SLUG_ATTACKING_LEG_8, x=[0x15], y=100, zoom=[0x16]
 	je [0xDB], 0x00, SLUG_ATTACK_LEG_FINAL_NOOP_BR
 
 SLUG_ATTACK_LEG_FINAL_NOOP_BR:
@@ -4999,7 +4999,7 @@ SLUG_ATTACK_LEG_FINAL_NOOP_BR:
 	killChannel
 
 SLUG_ATTACK_LEG_LOOP:
-	video type=1, offset=CINEMATIC_SLUG_ATTACK__LESTERS_LEG, x=[0x15], y=100, zoom=[0x16]
+	video offset=CINEMATIC_SLUG_ATTACK__LESTERS_LEG, x=[0x15], y=100, zoom=[0x16]
 	break
 	jmp SLUG_ATTACK_LEG_LOOP
 	killChannel
@@ -5141,43 +5141,43 @@ SLUG_PHASE_1_LEFT_INIT:
 	mov [0x0D], 0x0001
 
 SLUG_L_BIRTH_LOOP:
-	video type=1, offset=CINEMATIC_SLUG_L_0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_0, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_L_1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_1, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_L_2, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_2, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_L_3, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_3, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_L_4, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_4, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call JMP_TO_CHECK_BEAST_NEAR
 	jne [0x07], 0x00, IF_BEAST_NEAR_THEN_REACT_ELSE_KILL_THREAD
-	video type=1, offset=CINEMATIC_SLUG_L_5, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_5, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_L_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_L_7, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_7, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_L_8, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_8, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0003
-	video type=1, offset=CINEMATIC_SLUG_L_9, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_9, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0002
-	video type=1, offset=CINEMATIC_SLUG_L_10, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_10, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_L_11, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_11, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_L_12, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_L_12, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_BEAST_AI_0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_0, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	sub [0x0C], 0x0002
 	jmp SLUG_L_BIRTH_LOOP
@@ -5187,52 +5187,52 @@ SLUG_PHASE_1_LEFT_INIT_PRELUDE:
 	mov [0x0D], 0x0001
 
 SLUG_PHASE_1_RIGHT_INIT:
-	video type=1, offset=CINEMATIC_SLUG_R_0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_0, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_1, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_2, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_2, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_3, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_3, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_4, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_4, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call CHECK_IF_BEAST_IS_NEAR_LESTER
 	jne [0x07], 0x00, IF_BEAST_NEAR_THEN_REACT_ELSE_KILL_THREAD_2
-	video type=1, offset=CINEMATIC_SLUG_AFTER_0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_AFTER_0, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	sub [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_AFTER_1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_AFTER_1, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	sub [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_AFTER_2, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_AFTER_2, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	sub [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_R_PHASE1_F0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_PHASE1_F0, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	sub [0x0C], 0x0003
-	video type=1, offset=CINEMATIC_SLUG_R_PHASE1_F1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_PHASE1_F1, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	sub [0x0C], 0x0002
-	video type=1, offset=CINEMATIC_SLUG_R_PHASE1_F2, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_PHASE1_F2, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	sub [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_R_PHASE1_F3, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_PHASE1_F3, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	sub [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_R_PHASE1_F4, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_PHASE1_F4, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	sub [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_R_PHASE1_F5, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_PHASE1_F5, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0002
 	jmp SLUG_PHASE_1_RIGHT_INIT
 	killChannel
 
 SLUG_R_PHASE1_F6_THEN_DEATH:
-	video type=1, offset=CINEMATIC_SLUG_R_PHASE1_F6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_PHASE1_F6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	jmp SLUG_R_DEATH_F10_TO_F26
 	killChannel
@@ -5243,105 +5243,105 @@ SLUG_R_F4_RAND_DELAY_INIT:
 	add [0x13], 0x0001
 
 SLUG_R_F4_REPEAT_LOOP:
-	video type=1, offset=CINEMATIC_SLUG_R_4, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_4, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	djnz [0x13], SLUG_R_F4_REPEAT_LOOP
-	video type=1, offset=CINEMATIC_SLUG_R_5, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_5, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_7, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_7, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_8, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_8, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_9, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_9, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 
 SLUG_R_DEATH_F10_TO_F26:
-	video type=1, offset=CINEMATIC_SLUG_R_10, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_10, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_11, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_11, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_10, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_10, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_12, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_12, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_13, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_13, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_9, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_9, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_13, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_13, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_14, x=[0x0c], y=[0x0d], zoom=0x40
 	call COMPUTE_RANDOM_BIT_MASKS
 	mov [0x13], [0x39]
 	add [0x13], 0x0002
 
 SLUG_R_F6_RAND_HOLD:
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_6, x=[0x0c], y=[0x0d], zoom=0x40
 	djnz [0x13], SLUG_R_F6_RAND_HOLD
 	break
 	mov [0x13], 0x0002
 
 SLUG_R_F15_DRIFT_DOWN:
 	add [0x0D], 0x0009
-	video type=1, offset=CINEMATIC_SLUG_R_15, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_15, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	djnz [0x13], SLUG_R_F15_DRIFT_DOWN
 	mov [0x13], 0x0003
 
 SLUG_R_F16_DRIFT_DOWN:
 	add [0x0D], 0x000A
-	video type=1, offset=CINEMATIC_SLUG_R_16, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_16, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	djnz [0x13], SLUG_R_F16_DRIFT_DOWN
 	mov [0x13], 0x0003
 
 SLUG_R_F17_DRIFT_DOWN:
 	add [0x0D], 0x000C
-	video type=1, offset=CINEMATIC_SLUG_R_17, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_17, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	djnz [0x13], SLUG_R_F17_DRIFT_DOWN
 	mov [0x13], 0x0007
 
 SLUG_R_F18_DRIFT_DOWN:
 	add [0x0D], 0x000E
-	video type=1, offset=CINEMATIC_SLUG_R_18, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_18, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	djnz [0x13], SLUG_R_F18_DRIFT_DOWN
 	play id=0x003A, freq=0x14, vol=0x3F, channel=0x00
-	video type=1, offset=CINEMATIC_SLUG_R_19, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_19, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_20, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_20, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_21, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_21, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_22, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_22, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_23, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_23, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_24, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_24, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_PHASE1_F7, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_PHASE1_F7, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_25, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_25, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_R_26, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_R_26, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	sub [0x0C], 0x0008
 	jl [0x01], [0x0C], JMP_TO_SLUG_ANIMATION
@@ -5358,22 +5358,22 @@ SHIFT_X_LEFT_THEN_DRAW_LAKE_167_169:
 
 DRAW_LAKE_167_169_WITH_SOUND_35:
 	add [0x0C], 0x0002
-	video type=1, offset=CINEMATIC_LAKE_167_F1_F0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_LAKE_167_F1_F0, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	play id=0x0035, freq=0x0A, vol=0x3F, channel=0x00
-	video type=1, offset=CINEMATIC_LAKE_167_F1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_LAKE_167_F1, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LAKE_167_F2, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_LAKE_167_F2, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LAKE_167_F3, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_LAKE_167_F3, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LAKE_167_F4, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_LAKE_167_F4, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LAKE_167_F5, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_LAKE_167_F5, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LAKE_167_F6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_LAKE_167_F6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_LAKE_167_F7, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_LAKE_167_F7, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 
 BEAST_AI_BRANCH_ON_VAR_66_AND_2C:
@@ -5447,67 +5447,67 @@ SLUG_WALK_GROUND_INIT:
 SLUG_WALK_PROX_LOOP:
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
-	video type=1, offset=CINEMATIC_BEAST_AI_7, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_7, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
-	video type=1, offset=CINEMATIC_BEAST_AI_8, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_8, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
-	video type=1, offset=CINEMATIC_BEAST_AI_9, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_9, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
-	video type=1, offset=CINEMATIC_BEAST_AI_10, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_10, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
-	video type=1, offset=CINEMATIC_BEAST_AI_11, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_11, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
-	video type=1, offset=CINEMATIC_BEAST_AI_12, x=[0x0c], y=[0x0d], zoom=0x40
-	break
-	call FLAG_PROXIMITY_TRUE_THEN_CHECK
-	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
-	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_BEAST_AI_13, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_12, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
 	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_BEAST_AI_14, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_13, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
 	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_BEAST_AI_15, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_14, x=[0x0c], y=[0x0d], zoom=0x40
+	break
+	call FLAG_PROXIMITY_TRUE_THEN_CHECK
+	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
+	add [0x0C], 0x0001
+	video offset=CINEMATIC_BEAST_AI_15, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
 	add [0x0C], 0x0003
-	video type=1, offset=CINEMATIC_BEAST_AI_16, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_16, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
 	add [0x0C], 0x0002
-	video type=1, offset=CINEMATIC_BEAST_AI_17, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_17, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
 	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_BEAST_AI_18, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_18, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
 	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_PROX_0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_PROX_0, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call FLAG_PROXIMITY_TRUE_THEN_CHECK
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_338F_OR_3068
 	add [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_PROX_1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_PROX_1, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	sub [0x0C], 0x0002
 	jmp SLUG_WALK_PROX_LOOP
@@ -5536,82 +5536,82 @@ BEAST_AI_RAND_PICK_FRAME:
 SLUG_ANIMATION:
 	call CHECK_HORIZONTAL_PROXIMITY
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
-	video type=1, offset=CINEMATIC_SLUG_0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_0, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call CHECK_HORIZONTAL_PROXIMITY
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
-	video type=1, offset=CINEMATIC_SLUG_1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_1, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 
 SLUG_F1_PROXIMITY_CHK:
 	call CHECK_HORIZONTAL_PROXIMITY
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
-	video type=1, offset=CINEMATIC_SLUG_2, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_2, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call CHECK_HORIZONTAL_PROXIMITY
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
-	video type=1, offset=CINEMATIC_SLUG_3, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_3, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 
 SLUG_F3_PROXIMITY_CHK:
 	call CHECK_HORIZONTAL_PROXIMITY
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
-	video type=1, offset=CINEMATIC_SLUG_4, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_4, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call CHECK_HORIZONTAL_PROXIMITY
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
-	video type=1, offset=CINEMATIC_SLUG_5, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_5, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 
 SLUG_F5_PROXIMITY_CHK:
 	call CHECK_HORIZONTAL_PROXIMITY
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
 	sub [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call CHECK_HORIZONTAL_PROXIMITY
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
 	sub [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_7, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_7, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call CHECK_HORIZONTAL_PROXIMITY
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
 	sub [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_8, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_8, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call CHECK_HORIZONTAL_PROXIMITY
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
 	sub [0x0C], 0x0003
-	video type=1, offset=CINEMATIC_SLUG_9, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_9, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call CHECK_HORIZONTAL_PROXIMITY
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
 	sub [0x0C], 0x0002
-	video type=1, offset=CINEMATIC_SLUG_10, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_10, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call CHECK_HORIZONTAL_PROXIMITY
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
 	sub [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_11, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_11, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call CHECK_HORIZONTAL_PROXIMITY
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
 	sub [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_12, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_12, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	call CHECK_HORIZONTAL_PROXIMITY
 	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
 	sub [0x0C], 0x0001
-	video type=1, offset=CINEMATIC_SLUG_13, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_13, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x0002
 	jmp SLUG_ANIMATION
 	killChannel
 
 DRAW_BEAST_421_422_WITH_SOUND_35:
-	video type=1, offset=CINEMATIC_BEAST_AI_1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_1, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_AI_2, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_2, x=[0x0c], y=[0x0d], zoom=0x40
 	play id=0x0035, freq=0x14, vol=0x3F, channel=0x00
 	je [0x1B], 0x01, BEAST_CONT_FRAMES_423_426
 	je [0x2B], 0x01, BEAST_CONT_FRAMES_423_426
@@ -5620,22 +5620,22 @@ DRAW_BEAST_421_422_WITH_SOUND_35:
 
 BEAST_CONT_FRAMES_423_426:
 	break
-	video type=1, offset=CINEMATIC_BEAST_AI_3, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_3, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_AI_4, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_4, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_AI_5, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_5, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEAST_AI_6, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BEAST_AI_6, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	add [0x0C], 0x000C
 	jmp SLUG_WALK_PROX_LOOP
 	killChannel
 
 SLUG_FLIP_WALKS:
-	video type=1, offset=CINEMATIC_SLUG_FLIP_WALKING_0, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_FLIP_WALKING_0, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_FLIP_WALKING_1, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_FLIP_WALKING_1, x=[0x0c], y=[0x0d], zoom=0x40
 	play id=0x0035, freq=0x14, vol=0x3F, channel=0x00
 	je [0x1B], 0x01, SLUG_FLIP_CONT_FRAMES_2_5
 	je [0x2B], 0x01, SLUG_FLIP_CONT_FRAMES_2_5
@@ -5644,13 +5644,13 @@ SLUG_FLIP_WALKS:
 
 SLUG_FLIP_CONT_FRAMES_2_5:
 	break
-	video type=1, offset=CINEMATIC_SLUG_FLIP_WALKING_2, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_FLIP_WALKING_2, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_FLIP_WALKING_3, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_FLIP_WALKING_3, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_FLIP_WALKING_4, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_FLIP_WALKING_4, x=[0x0c], y=[0x0d], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SLUG_FLIP_WALKING_5, x=[0x0c], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_SLUG_FLIP_WALKING_5, x=[0x0c], y=[0x0d], zoom=0x40
 	break
 	sub [0x0C], 0x000C
 	jmp SLUG_ANIMATION
@@ -5659,39 +5659,39 @@ SLUG_FLIP_CONT_FRAMES_2_5:
 	mov [0x0B], 0x00B6
 
 BEETLE_WALKING_RIGHT:
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_0, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_0, x=[0x0a], y=[0x0b], zoom=0x40
 	add [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_1, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_1, x=[0x0a], y=[0x0b], zoom=0x40
 	add [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_2, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_2, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_2, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_2, x=[0x0a], y=[0x0b], zoom=0x40
 	add [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_3, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_3, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_3, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_3, x=[0x0a], y=[0x0b], zoom=0x40
 	add [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_4, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_4, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_4, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_4, x=[0x0a], y=[0x0b], zoom=0x40
 	add [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_5, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_5, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_5, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_5, x=[0x0a], y=[0x0b], zoom=0x40
 	add [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_6, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_6, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_RIGHT_6, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_RIGHT_6, x=[0x0a], y=[0x0b], zoom=0x40
 	add [0x0A], 0x0001
 	break
 	jmp BEETLE_WALKING_RIGHT
@@ -5744,162 +5744,162 @@ BEETLE_INIT_POS_THEN_WALK_LEFT:
 	mov [0x0B], 0x00B6
 
 BEETLE_WALKING_LEFT:
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_0, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_0, x=[0x0a], y=[0x0b], zoom=0x40
 	sub [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_1, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_1, x=[0x0a], y=[0x0b], zoom=0x40
 	sub [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_2, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_2, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_2, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_2, x=[0x0a], y=[0x0b], zoom=0x40
 	sub [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_3, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_3, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_3, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_3, x=[0x0a], y=[0x0b], zoom=0x40
 	sub [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_4, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_4, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_4, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_4, x=[0x0a], y=[0x0b], zoom=0x40
 	sub [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_5, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_5, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_5, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_5, x=[0x0a], y=[0x0b], zoom=0x40
 	sub [0x0A], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_6, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_6, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_WALKING_LEFT_6, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_WALKING_LEFT_6, x=[0x0a], y=[0x0b], zoom=0x40
 	sub [0x0A], 0x0001
 	break
 	jmp BEETLE_WALKING_LEFT
 
 BEETLE_ANIM_LIFT_AND_FLY:
-	video type=1, offset=CINEMATIC_BEETLE_LIFT_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_LIFT_0, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_LIFT_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_LIFT_1, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	sub [0x0A], 0x000F
 	sub [0x0B], 0x0001
-	video type=1, offset=CINEMATIC_BEETLE_LIFT_3, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_LIFT_3, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_LIFT_4, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_LIFT_4, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_LIFT_2, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_LIFT_2, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	mov [0x09], 0x000A
 
 BEETLE_ANIM_FLYING_LOOP:
-	video type=1, offset=CINEMATIC_BEETLE_FLYING_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_FLYING_0, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_FLYING_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_FLYING_1, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_FLYING_2, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_FLYING_2, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_FLYING_3, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_FLYING_3, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_LIFT_4, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_LIFT_4, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	djnz [0x09], BEETLE_ANIM_FLYING_LOOP
-	video type=1, offset=CINEMATIC_BEETLE_FLYING_4, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_FLYING_4, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_FLYING_5, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_FLYING_5, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_FLYING_6, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_FLYING_6, x=[0x0a], y=[0x0b], zoom=0x40
 	setup channel=0x2E, address=BEETLE_ANIM_FLY_AWAY_INIT_COUNTER
 	break
 
 BEETLE_ANIM_HOVER_INFINITE:
-	video type=1, offset=CINEMATIC_BEETLE_HOVER_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_HOVER_0, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_HOVER_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_HOVER_1, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	jmp BEETLE_ANIM_HOVER_INFINITE
 
 BEETLE_ANIM_HOVER_BOBBING_LOOP:
-	video type=1, offset=CINEMATIC_BEETLE_HOVER_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_HOVER_0, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	sub [0x0B], 0x0001
-	video type=1, offset=CINEMATIC_BEETLE_HOVER_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_HOVER_1, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	sub [0x0B], 0x0001
-	video type=1, offset=CINEMATIC_BEETLE_HOVER_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_HOVER_0, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_HOVER_1, x=[0x0a], y=[0x0b], zoom=0x40
-	break
-	add [0x0B], 0x0001
-	video type=1, offset=CINEMATIC_BEETLE_HOVER_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_HOVER_1, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	add [0x0B], 0x0001
-	video type=1, offset=CINEMATIC_BEETLE_HOVER_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_HOVER_0, x=[0x0a], y=[0x0b], zoom=0x40
+	break
+	add [0x0B], 0x0001
+	video offset=CINEMATIC_BEETLE_HOVER_1, x=[0x0a], y=[0x0b], zoom=0x40
 	jmp BEETLE_ANIM_HOVER_BOBBING_LOOP
 	killChannel
 
 BEETLE_ANIM_DRIFT_RIGHT:
-	video type=1, offset=CINEMATIC_BEETLE_DRIFT_RIGHT_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_DRIFT_RIGHT_0, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_DRIFT_RIGHT_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_DRIFT_RIGHT_1, x=[0x0a], y=[0x0b], zoom=0x40
 	add [0x0A], 0x000F
 	sub [0x0B], 0x0001
 	break
-	video type=1, offset=CINEMATIC_BEETLE_DRIFT_RIGHT_2, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_DRIFT_RIGHT_2, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_DRIFT_RIGHT_3, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_DRIFT_RIGHT_3, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_DRIFT_RIGHT_4, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_DRIFT_RIGHT_4, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	mov [0x09], 0x000A
 
 BEETLE_ANIM_FLY_AWAY_LOOP:
-	video type=1, offset=CINEMATIC_BEETLE_FLY_AWAY_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_FLY_AWAY_0, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_FLY_AWAY_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_FLY_AWAY_1, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_FLY_AWAY_2, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_FLY_AWAY_2, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_FLY_AWAY_3, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_FLY_AWAY_3, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_DRIFT_RIGHT_3, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_DRIFT_RIGHT_3, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	djnz [0x09], BEETLE_ANIM_FLY_AWAY_LOOP
-	video type=1, offset=CINEMATIC_BEETLE_FLY_AWAY_END_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_FLY_AWAY_END_0, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_FLY_AWAY_END_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_FLY_AWAY_END_1, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_FLY_AWAY_END_2, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_FLY_AWAY_END_2, x=[0x0a], y=[0x0b], zoom=0x40
 	setup channel=0x2E, address=BEETLE_ANIM_FLY_AWAY_INIT_COUNTER
 	break
 
 BEETLE_ANIM_HOVER_VERT_INFINITE:
-	video type=1, offset=CINEMATIC_BEETLE_HOVER_VERT_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_HOVER_VERT_0, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_HOVER_VERT_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_HOVER_VERT_1, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	jmp BEETLE_ANIM_HOVER_VERT_INFINITE
 
 BEETLE_ANIM_HOVER_VERTICAL_LOOP:
-	video type=1, offset=CINEMATIC_BEETLE_HOVER_VERT_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_HOVER_VERT_0, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	sub [0x0B], 0x0001
-	video type=1, offset=CINEMATIC_BEETLE_HOVER_VERT_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_HOVER_VERT_1, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	sub [0x0B], 0x0001
-	video type=1, offset=CINEMATIC_BEETLE_HOVER_VERT_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_HOVER_VERT_0, x=[0x0a], y=[0x0b], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BEETLE_HOVER_VERT_1, x=[0x0a], y=[0x0b], zoom=0x40
-	break
-	add [0x0B], 0x0001
-	video type=1, offset=CINEMATIC_BEETLE_HOVER_VERT_0, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_HOVER_VERT_1, x=[0x0a], y=[0x0b], zoom=0x40
 	break
 	add [0x0B], 0x0001
-	video type=1, offset=CINEMATIC_BEETLE_HOVER_VERT_1, x=[0x0a], y=[0x0b], zoom=0x40
+	video offset=CINEMATIC_BEETLE_HOVER_VERT_0, x=[0x0a], y=[0x0b], zoom=0x40
+	break
+	add [0x0B], 0x0001
+	video offset=CINEMATIC_BEETLE_HOVER_VERT_1, x=[0x0a], y=[0x0b], zoom=0x40
 	jmp BEETLE_ANIM_HOVER_VERTICAL_LOOP
 	killChannel
 
@@ -6056,7 +6056,7 @@ BEAST_SURPRISE_SCENE_INIT:
 	unfreezeChannels first=0x3D, last=0x3F
 	selectVideoPage 0x00
 	fill page=0x00, color=0x0B
-	video type=1, offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
+	video offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
 	selectVideoPage 0xFF
 	mov [0x0A], 0x00A0
 	mov [0x0B], 0x0000
@@ -6105,80 +6105,80 @@ BEAST_FLASH_LOOP:
 	killChannel
 
 DRAW_SCENARIO_OF_VINE_SCREEN:
-	video type=1, offset=CINEMATIC_SCENARIO_VINE_SCREEN_0, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_VINE_SCREEN_1, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_VINE_SCREEN_2, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_VINE_SCREEN_3, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_VINE_SCREEN_4, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_VINE_SCREEN_FOREGROUND, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_VINE_SCREEN_0, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_VINE_SCREEN_1, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_VINE_SCREEN_2, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_VINE_SCREEN_3, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_VINE_SCREEN_4, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_VINE_SCREEN_FOREGROUND, x=160, y=100
 	ret
 	killChannel
 
 DRAW_SCENARIO_OF_SECOND_SCREEN_TO_THE_RIGHT:
-	video type=1, offset=CINEMATIC_BACKGROUND_SUN_RAYS, x=160, y=100
-	video type=1, offset=CINEMATIC_BACKGROUND_LANDSCAPE_TERRAIN, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_0, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_1, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_2, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_3, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_4, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_5, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_6, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_7, x=160, y=100
+	video offset=CINEMATIC_BACKGROUND_SUN_RAYS, x=160, y=100
+	video offset=CINEMATIC_BACKGROUND_LANDSCAPE_TERRAIN, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_0, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_1, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_2, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_3, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_4, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_5, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_6, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_7, x=160, y=100
 	ret
 	killChannel
 
 DRAW_SCENARIO_OF_THIRD_SCREEN_TO_THE_RIGHT:
-	video type=1, offset=CINEMATIC_BACKGROUND_SUN_RAYS, x=160, y=100
-	video type=1, offset=CINEMATIC_BACKGROUND_LANDSCAPE_TERRAIN, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_0, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_1, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_2, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_3, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_4, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_5, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_5, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_6, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_7, x=160, y=100
+	video offset=CINEMATIC_BACKGROUND_SUN_RAYS, x=160, y=100
+	video offset=CINEMATIC_BACKGROUND_LANDSCAPE_TERRAIN, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_0, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_1, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_2, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_3, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_4, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_5, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_5, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_6, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_3RD_SCREEN_TO_THE_RIGHT_7, x=160, y=100
 	ret
 	killChannel
 
 DRAW_SCENARIO_OF_FIRST_SCREEN_TO_THE_RIGHT:
-	video type=1, offset=CINEMATIC_BACKGROUND_SUN_RAYS, x=160, y=100
-	video type=1, offset=CINEMATIC_BACKGROUND_LANDSCAPE_TERRAIN, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_0, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_1, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_2, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_3, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_4, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_5, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_6, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_7, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_8, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_9, x=160, y=100
-	video type=1, offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_10, x=160, y=100
+	video offset=CINEMATIC_BACKGROUND_SUN_RAYS, x=160, y=100
+	video offset=CINEMATIC_BACKGROUND_LANDSCAPE_TERRAIN, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_0, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_1, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_2, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_3, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_4, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_5, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_6, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_7, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_8, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_9, x=160, y=100
+	video offset=CINEMATIC_SCENARIO_1ST_SCREEN_TO_THE_RIGHT_10, x=160, y=100
 	ret
 	killChannel
 
 DRAW_OUTSIDE_POOL_SCENARIO:
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_0, x=160, y=100
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_1, x=160, y=100
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_2, x=160, y=100
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_3, x=160, y=100
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_4, x=160, y=100
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_5, x=160, y=100
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_6, x=160, y=100
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_7, x=160, y=100
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_8, x=160, y=100
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_9, x=160, y=100
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_10, x=160, y=100
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_11, x=160, y=100
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_12, x=160, y=100
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_13, x=160, y=100
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_14, x=160, y=100
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_15, x=160, y=100
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_16, x=160, y=100
-	video type=1, offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_17, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_0, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_1, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_2, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_3, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_4, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_5, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_6, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_7, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_8, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_9, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_10, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_11, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_12, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_13, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_14, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_15, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_16, x=160, y=100
+	video offset=CINEMATIC_OUTSIDE_POOL_SCENARIO_17, x=160, y=100
 	ret
 	killChannel
 
@@ -6186,26 +6186,26 @@ DRAW_INSIDE_ALIEN_POOL_SCENARIO:
 	selectVideoPage 0x03
 	fill page=0x03, color=0x02
 	setPalette 0x03
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_0, x=160, y=100
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_1, x=160, y=100
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_2, x=160, y=100
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_3, x=160, y=100
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_4, x=160, y=100
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_5, x=160, y=100
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_6, x=160, y=100
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_7, x=160, y=100
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SURFACE_0, x=160, y=100
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_0, x=160, y=100
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_1, x=160, y=100
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_2, x=160, y=100
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_3, x=160, y=100
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_4, x=160, y=100
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_5, x=160, y=100
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_6, x=160, y=100
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_7, x=160, y=100
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SURFACE_0, x=160, y=100
 	fill page=0x00, color=0x02
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_0, x=161, y=101
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_1, x=161, y=101
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_2, x=161, y=101
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_3, x=161, y=101
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_4, x=161, y=101
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_5, x=161, y=101
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_6, x=161, y=101
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_7, x=161, y=101
-	video type=1, offset=CINEMATIC_INSIDE_ALIEN_POOL_SURFACE_1, x=160, y=100
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_0, x=161, y=101
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_1, x=161, y=101
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_2, x=161, y=101
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_3, x=161, y=101
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_4, x=161, y=101
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_5, x=161, y=101
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_6, x=161, y=101
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SCENARIO_7, x=161, y=101
+	video offset=CINEMATIC_INSIDE_ALIEN_POOL_SURFACE_1, x=160, y=100
 	selectVideoPage 0xFF
 	killChannel
 
@@ -6240,14 +6240,14 @@ THE_LAB_CONSOLE_SUDDENLY_APPEARS_INSIDE_THE_ALIEN_POOL:
 	setup channel=0x0A, address=KILL_CHANNEL_ROUTINE
 	break
 	fill page=0xFF, color=0x0C
-	video type=1, offset=CINEMATIC_CONSOLE_UNDERWATER_EXPLOSION_0, x=160, y=100
+	video offset=CINEMATIC_CONSOLE_UNDERWATER_EXPLOSION_0, x=160, y=100
 	break
 	setPalette 0x02
 	play id=0x003E, freq=0x01, vol=0x3F, channel=0x00
 	play id=0x003E, freq=0x05, vol=0x3F, channel=0x01
 	play id=0x003E, freq=0x07, vol=0x3F, channel=0x02
 	play id=0x0031, freq=0x14, vol=0x3F, channel=0x03
-	video type=1, offset=CINEMATIC_CONSOLE_UNDERWATER_EXPLOSION_1, x=160, y=100
+	video offset=CINEMATIC_CONSOLE_UNDERWATER_EXPLOSION_1, x=160, y=100
 	setup channel=0x0B, address=LAB_CONSOLE_SINKING_ANIMATION
 	setup channel=0x0E, address=UPDATE_POSITION_OF_BUBBLES
 	setup channel=0x0F, address=BUBBLES_A_ANIMATION
@@ -6332,79 +6332,79 @@ POOL_INIT_VAR_16_RISE:
 	killChannel
 
 MAIN_TENTACLE_INSIDE_POOL_ANIMATION:
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x15], y=[0x16], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x15], y=[0x16], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x15], y=[0x16], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x15], y=[0x16], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x15], y=[0x16], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x15], y=[0x16], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x15], y=[0x16], zoom=0x40
 	break
 	jmp MAIN_TENTACLE_INSIDE_POOL_ANIMATION
 
 OTHER_TENTACLES_INSIDE_POOL_ANIMATION:
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x46], y=[0x47], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x49], y=[0x4a], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x4c], y=[0x4d], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x4f], y=[0x50], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x52], y=[0x53], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x55], y=[0x56], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x58], y=[0x59], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x5b], y=[0x5c], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x46], y=[0x47], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x49], y=[0x4a], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x4c], y=[0x4d], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x4f], y=[0x50], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x52], y=[0x53], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x55], y=[0x56], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x58], y=[0x59], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x5b], y=[0x5c], zoom=0x40
 	call UPDATE_POSITIONS_OF_TENTACLES_INSIDE_THE_POOL
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x46], y=[0x47], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x49], y=[0x4a], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x4c], y=[0x4d], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x4f], y=[0x50], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x52], y=[0x53], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x55], y=[0x56], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x58], y=[0x59], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x5b], y=[0x5c], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x46], y=[0x47], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x49], y=[0x4a], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x4c], y=[0x4d], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x4f], y=[0x50], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x52], y=[0x53], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x55], y=[0x56], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x58], y=[0x59], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x5b], y=[0x5c], zoom=0x40
 	call UPDATE_POSITIONS_OF_TENTACLES_INSIDE_THE_POOL
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x46], y=[0x47], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x49], y=[0x4a], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x4c], y=[0x4d], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x4f], y=[0x50], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x52], y=[0x53], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x55], y=[0x56], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x58], y=[0x59], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x5b], y=[0x5c], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x46], y=[0x47], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x49], y=[0x4a], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x4c], y=[0x4d], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x4f], y=[0x50], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x52], y=[0x53], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x55], y=[0x56], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x58], y=[0x59], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x5b], y=[0x5c], zoom=0x40
 	call UPDATE_POSITIONS_OF_TENTACLES_INSIDE_THE_POOL
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x46], y=[0x47], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x49], y=[0x4a], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x4c], y=[0x4d], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x4f], y=[0x50], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x52], y=[0x53], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x55], y=[0x56], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x58], y=[0x59], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x5b], y=[0x5c], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x46], y=[0x47], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x49], y=[0x4a], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x4c], y=[0x4d], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x4f], y=[0x50], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x52], y=[0x53], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x55], y=[0x56], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x58], y=[0x59], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x5b], y=[0x5c], zoom=0x40
 	call UPDATE_POSITIONS_OF_TENTACLES_INSIDE_THE_POOL
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x46], y=[0x47], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x49], y=[0x4a], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x4c], y=[0x4d], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x4f], y=[0x50], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x52], y=[0x53], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x55], y=[0x56], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x58], y=[0x59], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x5b], y=[0x5c], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x46], y=[0x47], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x49], y=[0x4a], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x4c], y=[0x4d], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x4f], y=[0x50], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x52], y=[0x53], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x55], y=[0x56], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x58], y=[0x59], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x5b], y=[0x5c], zoom=0x40
 	call UPDATE_POSITIONS_OF_TENTACLES_INSIDE_THE_POOL
 	break
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x46], y=[0x47], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x49], y=[0x4a], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x4c], y=[0x4d], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x4f], y=[0x50], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x52], y=[0x53], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x55], y=[0x56], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x58], y=[0x59], zoom=0x40
-	video type=1, offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x5b], y=[0x5c], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x46], y=[0x47], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x49], y=[0x4a], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x4c], y=[0x4d], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x4f], y=[0x50], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_2, x=[0x52], y=[0x53], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_3, x=[0x55], y=[0x56], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_1, x=[0x58], y=[0x59], zoom=0x40
+	video offset=CINEMATIC_TENTACLE_WAVING_0, x=[0x5b], y=[0x5c], zoom=0x40
 	call UPDATE_POSITIONS_OF_TENTACLES_INSIDE_THE_POOL
 	break
 	jmp OTHER_TENTACLES_INSIDE_POOL_ANIMATION
@@ -6467,31 +6467,31 @@ ADVANCE_RING_Y_POSITIONS:
 	ret
 
 POOL_SURFACE_WAVES_ANIMATION:
-	video type=1, offset=CINEMATIC_POOL_SURFACE_WAVES_0, x=160, y=100
+	video offset=CINEMATIC_POOL_SURFACE_WAVES_0, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_POOL_SURFACE_WAVES_1, x=160, y=100
+	video offset=CINEMATIC_POOL_SURFACE_WAVES_1, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_POOL_SURFACE_WAVES_2, x=160, y=100
+	video offset=CINEMATIC_POOL_SURFACE_WAVES_2, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_POOL_SURFACE_WAVES_3, x=160, y=100
+	video offset=CINEMATIC_POOL_SURFACE_WAVES_3, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_POOL_SURFACE_WAVES_4, x=160, y=100
+	video offset=CINEMATIC_POOL_SURFACE_WAVES_4, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_POOL_SURFACE_WAVES_5, x=160, y=100
+	video offset=CINEMATIC_POOL_SURFACE_WAVES_5, x=160, y=100
 	break
-	video type=1, offset=CINEMATIC_POOL_SURFACE_WAVES_6, x=160, y=100
+	video offset=CINEMATIC_POOL_SURFACE_WAVES_6, x=160, y=100
 	break
 	jmp POOL_SURFACE_WAVES_ANIMATION
 	killChannel
 
 POOL_WATER_WAVY_GLARE_ANIMATION:
-	video type=1, offset=CINEMATIC_POOL_WATER_WAVY_GLARE_EFFECT, x=[0x04], y=[0x05], zoom=0x40
+	video offset=CINEMATIC_POOL_WATER_WAVY_GLARE_EFFECT, x=[0x04], y=[0x05], zoom=0x40
 	sub [0x04], 0x0064
-	video type=1, offset=CINEMATIC_POOL_WATER_WAVY_GLARE_EFFECT, x=[0x04], y=[0x05], zoom=0x40
+	video offset=CINEMATIC_POOL_WATER_WAVY_GLARE_EFFECT, x=[0x04], y=[0x05], zoom=0x40
 	add [0x04], 0x0064
-	video type=1, offset=CINEMATIC_POOL_WATER_WAVY_GLARE_EFFECT, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_POOL_WATER_WAVY_GLARE_EFFECT, x=[0x07], y=[0x08], zoom=0x40
 	add [0x07], 0x00A0
-	video type=1, offset=CINEMATIC_POOL_WATER_WAVY_GLARE_EFFECT, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_POOL_WATER_WAVY_GLARE_EFFECT, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x07], 0x00A0
 	break
 	jmp POOL_WATER_WAVY_GLARE_ANIMATION
@@ -6534,63 +6534,63 @@ SECOND_WAVY_GLARE_DRIFT:
 	killChannel
 
 SWIMMING_UP_TORSO_ANIMATION:
-	video type=1, offset=CINEMATIC_SWIMMING_UP_TORSO_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_TORSO_0, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWIMMING_UP_TORSO_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_TORSO_1, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWIMMING_UP_TORSO_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_TORSO_2, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWIMMING_UP_TORSO_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_TORSO_1, x=[0x01], y=[0x02], zoom=0x40
 	break
 	jmp SWIMMING_UP_TORSO_ANIMATION
 	killChannel
 
 BUBBLES_A_ANIMATION:
-	video type=1, offset=CINEMATIC_BUBBLES_B_0, x=[0x13], y=[0x0d], zoom=0x40
-	video type=1, offset=CINEMATIC_BUBBLES_B_1, x=[0x13], y=[0x0e], zoom=0x40
-	video type=1, offset=CINEMATIC_BUBBLES_B_2, x=[0x13], y=[0x0f], zoom=0x40
-	video type=1, offset=CINEMATIC_BUBBLES_B_3, x=[0x13], y=[0x10], zoom=0x40
-	video type=1, offset=CINEMATIC_BUBBLES_B_4, x=[0x13], y=[0x11], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_B_0, x=[0x13], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_B_1, x=[0x13], y=[0x0e], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_B_2, x=[0x13], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_B_3, x=[0x13], y=[0x10], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_B_4, x=[0x13], y=[0x11], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BUBBLES_B_5, x=[0x13], y=[0x0d], zoom=0x40
-	video type=1, offset=CINEMATIC_BUBBLES_B_1, x=[0x13], y=[0x0e], zoom=0x40
-	video type=1, offset=CINEMATIC_BUBBLES_B_2, x=[0x13], y=[0x0f], zoom=0x40
-	video type=1, offset=CINEMATIC_BUBBLES_B_3, x=[0x13], y=[0x10], zoom=0x40
-	video type=1, offset=CINEMATIC_BUBBLES_B_4, x=[0x13], y=[0x11], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_B_5, x=[0x13], y=[0x0d], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_B_1, x=[0x13], y=[0x0e], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_B_2, x=[0x13], y=[0x0f], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_B_3, x=[0x13], y=[0x10], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_B_4, x=[0x13], y=[0x11], zoom=0x40
 	break
 	jmp BUBBLES_A_ANIMATION
 	killChannel
 
 BUBBLES_B_ANIMATION:
-	video type=1, offset=CINEMATIC_BUBBLES_A_0, x=[0x13], y=[0x0c], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_A_0, x=[0x13], y=[0x0c], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BUBBLES_A_1, x=[0x13], y=[0x0c], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_A_1, x=[0x13], y=[0x0c], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BUBBLES_A_2, x=[0x13], y=[0x0c], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_A_2, x=[0x13], y=[0x0c], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BUBBLES_A_1, x=[0x13], y=[0x0c], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_A_1, x=[0x13], y=[0x0c], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_BUBBLES_A_0, x=[0x13], y=[0x0c], zoom=0x40
+	video offset=CINEMATIC_BUBBLES_A_0, x=[0x13], y=[0x0c], zoom=0x40
 	break
 	jmp BUBBLES_B_ANIMATION
 	killChannel
 
 SWIMMING_UP_LEGS_ANIMATION:
-	video type=1, offset=CINEMATIC_SWIMMING_UP_LEGS_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_0, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWIMMING_UP_LEGS_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_1, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWIMMING_UP_LEGS_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_2, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWIMMING_UP_LEGS_3, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_3, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWIMMING_UP_LEGS_4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_4, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWIMMING_UP_LEGS_5, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_5, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWIMMING_UP_LEGS_6, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_6, x=[0x01], y=[0x02], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWIMMING_UP_LEGS_7, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_SWIMMING_UP_LEGS_7, x=[0x01], y=[0x02], zoom=0x40
 	break
 	jmp SWIMMING_UP_LEGS_ANIMATION
 	killChannel
@@ -6600,14 +6600,14 @@ LAB_CONSOLE_SINKING_ANIMATION:
 	mov [0x0B], 0x000F
 
 FLOATING_LAB_CONSOLE_PHASE_1:
-	video type=1, offset=CINEMATIC_FLOATING_LAB_CONSOLE, x=160, y=[0x0a], zoom=0x40
+	video offset=CINEMATIC_FLOATING_LAB_CONSOLE, x=160, y=[0x0a], zoom=0x40
 	add [0x0A], 0x0002
 	break
 	djnz [0x0B], FLOATING_LAB_CONSOLE_PHASE_1
 	mov [0x0B], 0x000A
 
 FLOATING_LAB_CONSOLE_PHASE_2:
-	video type=1, offset=CINEMATIC_FLOATING_LAB_CONSOLE, x=160, y=[0x0a], zoom=0x40
+	video offset=CINEMATIC_FLOATING_LAB_CONSOLE, x=160, y=[0x0a], zoom=0x40
 	add [0x0A], 0x0003
 	break
 	djnz [0x0B], FLOATING_LAB_CONSOLE_PHASE_2
@@ -6616,7 +6616,7 @@ FLOATING_LAB_CONSOLE_PHASE_2:
 	mov [0x0B], 0x000F
 
 FLOATING_LAB_CONSOLE_PHASE_3:
-	video type=1, offset=CINEMATIC_FLOATING_LAB_CONSOLE, x=160, y=[0x0a], zoom=0x40
+	video offset=CINEMATIC_FLOATING_LAB_CONSOLE, x=160, y=[0x0a], zoom=0x40
 	add [0x0A], 0x0004
 	break
 	djnz [0x0B], FLOATING_LAB_CONSOLE_PHASE_3
@@ -6624,17 +6624,17 @@ FLOATING_LAB_CONSOLE_PHASE_3:
 	jmp SETUP_TENTACLE_ANIMATIONS
 
 SINKING_AT_CONSOLE:
-	video type=1, offset=CINEMATIC_SITTING_AT_SINKING_CONSOLE, x=160, y=[0x0a], zoom=0x40
+	video offset=CINEMATIC_SITTING_AT_SINKING_CONSOLE, x=160, y=[0x0a], zoom=0x40
 	break
 	je [HERO_POS_UP_DOWN], 0xFFFF, SWIMMING_UP
 	je [HERO_ACTION_POS_MASK], 0x00, SINKING_AT_CONSOLE
 
 SWIMMING_UP:
-	video type=1, offset=CINEMATIC_SWIM_OUT_OF_CONSOLE_0, x=160, y=[0x0a], zoom=0x40
+	video offset=CINEMATIC_SWIM_OUT_OF_CONSOLE_0, x=160, y=[0x0a], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWIM_OUT_OF_CONSOLE_1, x=160, y=[0x0a], zoom=0x40
+	video offset=CINEMATIC_SWIM_OUT_OF_CONSOLE_1, x=160, y=[0x0a], zoom=0x40
 	break
-	video type=1, offset=CINEMATIC_SWIM_OUT_OF_CONSOLE_2, x=160, y=[0x0a], zoom=0x40
+	video offset=CINEMATIC_SWIM_OUT_OF_CONSOLE_2, x=160, y=[0x0a], zoom=0x40
 	mov [0x02], [0x0A]
 	sub [0x02], 0x000D
 	mov [0x63], 0x0001
@@ -6867,7 +6867,7 @@ HERO_RESUME_LEFT_F3_DONE:
 
 HERO_FALL_LEFT_PRELUDE:
 	sub [0x01], 0x0004
-	video type=1, offset=CINEMATIC_HERO_FALL_PRELUDE_FRAME, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_FALL_PRELUDE_FRAME, x=[0x01], y=[0x02], zoom=[0x03]
 	add [0x01], 0x0001
 	break
 
@@ -7032,7 +7032,7 @@ STAND_L_LAND_AFTER_LEAP_R_F0:
 
 HERO_FALL_RIGHT_PRELUDE:
 	add [0x01], 0x0000
-	video type=1, offset=CINEMATIC_HERO_FALL_PRELUDE_FRAME, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_FALL_PRELUDE_FRAME, x=[0x01], y=[0x02], zoom=[0x03]
 	add [0x01], 0x0003
 	break
 
@@ -7160,106 +7160,106 @@ JMP_TO_HERO_FALL_RIGHT_LOOP:
 DRAW_VIDEO_036_037_AND_HERO_STOP_RIGHT_FRAME_2_RET:
 	video type=0, offset=COMMON_VIDEO_036, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_037, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_038_039:
 	video type=0, offset=COMMON_VIDEO_038, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_039, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_040_041:
 	video type=0, offset=COMMON_VIDEO_040, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_041, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_042_043:
 	video type=0, offset=COMMON_VIDEO_042, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_043, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_VIDEO_044_045_AND_CINEMATIC_11_RET:
 	video type=0, offset=COMMON_VIDEO_044, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_045, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_046_047:
 	video type=0, offset=COMMON_VIDEO_046, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_047, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_LESTER_FRAME_BUNDLE:
 	video type=0, offset=COMMON_VIDEO_015, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_016, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_017, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_018_019:
 	video type=0, offset=COMMON_VIDEO_018, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_019, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_020_021:
 	video type=0, offset=COMMON_VIDEO_020, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_021, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_022_023:
 	video type=0, offset=COMMON_VIDEO_022, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_023, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_024_025:
 	video type=0, offset=COMMON_VIDEO_024, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_025, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_026_027:
 	video type=0, offset=COMMON_VIDEO_026, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_027, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_028_029:
 	video type=0, offset=COMMON_VIDEO_028, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_029, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_030_031:
 	video type=0, offset=COMMON_VIDEO_030, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_031, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_015_032_033:
 	video type=0, offset=COMMON_VIDEO_015, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_032, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_033, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_034_035:
 	video type=0, offset=COMMON_VIDEO_034, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_035, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_STOP_R_BUNDLE_081_082:
 	video type=0, offset=COMMON_VIDEO_081, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_082, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0003
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0003
 	ret
 
@@ -7267,7 +7267,7 @@ DRAW_HERO_STOP_R_BUNDLE_083_084:
 	video type=0, offset=COMMON_VIDEO_083, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_084, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0004
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0004
 	ret
 
@@ -7275,7 +7275,7 @@ DRAW_HERO_STOP_R_BUNDLE_116_117:
 	video type=0, offset=COMMON_VIDEO_116, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_117, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0002
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0002
 	ret
 
@@ -7283,7 +7283,7 @@ DRAW_HERO_STOP_R_BUNDLE_118_119:
 	video type=0, offset=COMMON_VIDEO_118, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_119, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0001
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0001
 	ret
 
@@ -7291,7 +7291,7 @@ DRAW_HERO_STOP_R_BUNDLE_120_121:
 	video type=0, offset=COMMON_VIDEO_120, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_121, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0001
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0001
 	ret
 
@@ -7299,7 +7299,7 @@ DRAW_HERO_STOP_R_BUNDLE_086_087:
 	video type=0, offset=COMMON_VIDEO_086, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_087, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0003
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0003
 	ret
 
@@ -7307,7 +7307,7 @@ DRAW_HERO_STOP_R_BUNDLE_088_089:
 	video type=0, offset=COMMON_VIDEO_088, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_089, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0004
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0004
 	ret
 
@@ -7315,7 +7315,7 @@ DRAW_HERO_STOP_R_BUNDLE_090_091:
 	video type=0, offset=COMMON_VIDEO_090, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_091, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0002
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0002
 	ret
 
@@ -7323,7 +7323,7 @@ DRAW_HERO_STOP_R_BUNDLE_092_093:
 	video type=0, offset=COMMON_VIDEO_092, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_093, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0001
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0001
 	ret
 
@@ -7331,104 +7331,104 @@ DRAW_HERO_STOP_R_BUNDLE_094_095:
 	video type=0, offset=COMMON_VIDEO_094, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_095, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0001
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0001
 	ret
 
 DRAW_VIDEO_074_AND_CINEMATIC_HERO_SHADOW_RET:
 	video type=0, offset=COMMON_VIDEO_074, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_VIDEO_075_AND_CINEMATIC_2_RET:
 	video type=0, offset=COMMON_VIDEO_075, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_VIDEO_076_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_076, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_VIDEO_077_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_077, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_VIDEO_078_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_078, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_CV_079_080_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_079, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_080, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_CV_000_001_002_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_000, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_001, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_002, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_CV_060_061_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_060, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_061, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_CV_062_063_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_062, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_063, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_VIDEO_064_065_AND_CINEMATIC_HERO_SHADOW_RET:
 	video type=0, offset=COMMON_VIDEO_064, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_065, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_CV_066_067_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_066, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_067, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_CV_068_069_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_068, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_069, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_VIDEO_070_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_070, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_VIDEO_071_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_071, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_CV_000_072_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_000, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_072, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_VIDEO_073_AND_CIN_002:
 	video type=0, offset=COMMON_VIDEO_073, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	ret
 
 DRAW_HERO_SHADOW_2NDSCR_108:
 	video type=0, offset=COMMON_VIDEO_107, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_108, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0003
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0003
 	ret
 
@@ -7436,7 +7436,7 @@ DRAW_HERO_SHADOW_BUNDLE_109_110:
 	video type=0, offset=COMMON_VIDEO_109, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_110, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0004
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0004
 	ret
 
@@ -7444,7 +7444,7 @@ DRAW_HERO_SHADOW_BUNDLE_111_112:
 	video type=0, offset=COMMON_VIDEO_111, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_112, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0002
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0002
 	ret
 
@@ -7452,14 +7452,14 @@ DRAW_HERO_SHADOW_BUNDLE_113_114:
 	video type=0, offset=COMMON_VIDEO_113, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_114, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0001
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0001
 	ret
 
 DRAW_HERO_SHADOW_115:
 	video type=0, offset=COMMON_VIDEO_115, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0001
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0001
 	ret
 
@@ -7467,7 +7467,7 @@ DRAW_HERO_SHADOW_BUNDLE_097_098:
 	video type=0, offset=COMMON_VIDEO_097, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_098, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0003
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0003
 	ret
 
@@ -7475,7 +7475,7 @@ DRAW_HERO_SHADOW_BUNDLE_099_100:
 	video type=0, offset=COMMON_VIDEO_099, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_100, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0004
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0004
 	ret
 
@@ -7483,7 +7483,7 @@ DRAW_HERO_SHADOW_BUNDLE_101_102:
 	video type=0, offset=COMMON_VIDEO_101, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_102, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0002
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0002
 	ret
 
@@ -7491,7 +7491,7 @@ DRAW_HERO_SHADOW_BUNDLE_103_104:
 	video type=0, offset=COMMON_VIDEO_103, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_104, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0001
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0001
 	ret
 
@@ -7499,7 +7499,7 @@ HERO_LEFT_CROUCH_KICK_LOOP:
 	video type=0, offset=COMMON_VIDEO_105, x=[0x01], y=[0x02], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_106, x=[0x01], y=[0x02], zoom=0x40
 	add [0x02], 0x0001
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x02], 0x0001
 	ret
 
@@ -7526,7 +7526,7 @@ DISPATCH_TO_HERO_ACTION_LEFT:
 
 HERO_LEAP_LEFT_PRELUDE:
 	sub [0x01], 0x0004
-	video type=1, offset=CINEMATIC_HERO_LIFTOFF, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LIFTOFF, x=[0x01], y=[0x02], zoom=[0x03]
 	add [0x01], 0x0001
 	je [HERO_POS_MASK], 0x00, DISPATCH_TO_HERO_ACTION_LEFT
 	break
@@ -7616,7 +7616,7 @@ DISPATCH_TO_HERO_ACTION_RIGHT:
 	killChannel
 
 HERO_LEAP_RIGHT_PRELUDE:
-	video type=1, offset=CINEMATIC_HERO_LIFTOFF, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LIFTOFF, x=[0x01], y=[0x02], zoom=[0x03]
 	add [0x01], 0x0003
 	je [HERO_POS_MASK], 0x00, DISPATCH_TO_HERO_ACTION_RIGHT
 	break
@@ -7678,19 +7678,19 @@ LABEL_4B58:
 	jmp HERO_LEAP_R_F0_LOOP
 	killChannel
 	sub [0x01], 0x0004
-	video type=1, offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
 	break
 	add [0x01], 0x0001
-	video type=1, offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
 	add [0x01], 0x0001
 
 HERO_LAND_RIGHT_HOLD_LOOP:
 	break
-	video type=1, offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LAND_RIGHT, x=[0x01], y=[0x02], zoom=[0x03]
 	je [HERO_ACTION_POS_MASK], 0x88, HERO_LAND_RIGHT_HOLD_LOOP
 	break
 	add [0x01], 0x0002
-	video type=1, offset=CINEMATIC_LEFT_KICK_1, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_LEFT_KICK_1, x=[0x01], y=[0x02], zoom=[0x03]
 	mov [0x63], 0x0001
 	add [0x01], 0x0002
 	jmp MAYBE_RESUME_WALK_LEFT_IF_GROUNDED
@@ -7700,52 +7700,52 @@ HERO_WALK_RIGHT_LOOP:
 	mov [0x63], 0x0064
 	je [HERO_POS_MASK], 0x0A, HERO_WALK_LEFT_LOOP
 	video type=0, offset=COMMON_VIDEO_003, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_WALK_RIGHT_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_RIGHT_0, x=[0x01], y=[0x02], zoom=0x40
 	break
 	video type=0, offset=COMMON_VIDEO_004, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_WALK_RIGHT_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_RIGHT_1, x=[0x01], y=[0x02], zoom=0x40
 	break
 	video type=0, offset=COMMON_VIDEO_005, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_WALK_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	break
 	video type=0, offset=COMMON_VIDEO_006, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_WALK_RIGHT_3, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_RIGHT_3, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0005
 	break
 	video type=0, offset=COMMON_VIDEO_007, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_RUN_RIGHT_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_RUN_RIGHT_0, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0007
 	mov [0x1B], 0x0001
 	break
 	video type=0, offset=COMMON_VIDEO_008, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0001
-	video type=1, offset=CINEMATIC_HERO_WALK_RIGHT_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_RIGHT_1, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x000C
 	break
 	video type=0, offset=COMMON_VIDEO_009, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_RUN_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_RUN_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x000C
 	break
 	video type=0, offset=COMMON_VIDEO_010, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0002
 	break
 	mov [0x1B], 0x0000
 	video type=0, offset=COMMON_VIDEO_011, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_WALK_RIGHT_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_RIGHT_0, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0007
 	break
 	video type=0, offset=COMMON_VIDEO_012, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_0, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0004
 	break
 	video type=0, offset=COMMON_VIDEO_013, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x0005
-	video type=1, offset=CINEMATIC_HERO_WALK_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x000C
 	break
 	video type=0, offset=COMMON_VIDEO_014, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	break
 	mov [0x63], 0x0002
 	jmp HERO_LEAP_R_F5_TO_F9_ENTRY
@@ -7764,33 +7764,33 @@ HERO_RUN_RIGHT_LOOP:
 	je [HERO_POS_MASK], 0x0A, HERO_RUN_LEFT_LOOP
 	video type=0, offset=COMMON_VIDEO_008, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0001
-	video type=1, offset=CINEMATIC_HERO_WALK_RIGHT_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_RIGHT_1, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x000C
 	sub [0x02], 0x0002
 	mov [0x1B], 0x0001
 	break
 	video type=0, offset=COMMON_VIDEO_009, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_RUN_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_RUN_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x000C
 	break
 	video type=0, offset=COMMON_VIDEO_085, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0001
-	video type=1, offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x000B
 	add [0x02], 0x0001
 	break
 	video type=0, offset=COMMON_VIDEO_085, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0001
-	video type=1, offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x000B
 	add [0x02], 0x0001
 	break
 	video type=0, offset=COMMON_VIDEO_010, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0002
 	break
 	video type=0, offset=COMMON_VIDEO_011, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_WALK_RIGHT_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_RIGHT_0, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0007
 	mov [0x1B], 0x0000
 	break
@@ -7798,16 +7798,16 @@ HERO_RUN_RIGHT_LOOP:
 	je [HERO_ACTION], 0x01, LABEL_4B58
 	sub [0x01], 0x0005
 	video type=0, offset=COMMON_VIDEO_012, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_0, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0004
 	break
 	video type=0, offset=COMMON_VIDEO_013, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x0005
-	video type=1, offset=CINEMATIC_HERO_WALK_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x000C
 	break
 	video type=0, offset=COMMON_VIDEO_014, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[0x01], y=[0x02], zoom=0x40
 	break
 	mov [0x63], 0x0002
 	jmp HERO_LEAP_R_F5_TO_F9_ENTRY
@@ -7817,53 +7817,53 @@ HERO_WALK_LEFT_LOOP:
 	mov [0x63], 0x0064
 	je [HERO_POS_MASK], 0x09, HERO_WALK_RIGHT_LOOP
 	video type=0, offset=COMMON_VIDEO_048, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_WALK_LEFT_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_LEFT_0, x=[0x01], y=[0x02], zoom=0x40
 	break
 	video type=0, offset=COMMON_VIDEO_049, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_WALK_LEFT_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_LEFT_1, x=[0x01], y=[0x02], zoom=0x40
 	break
 	video type=0, offset=COMMON_VIDEO_050, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_WALK_LEFT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_LEFT_2, x=[0x01], y=[0x02], zoom=0x40
 	break
 	video type=0, offset=COMMON_VIDEO_051, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_WALK_LEFT_3, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_LEFT_3, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x0005
 	break
 	video type=0, offset=COMMON_VIDEO_052, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_RUN_LEFT_0, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x0007
 	mov [0x1B], 0x0001
 	break
 	video type=0, offset=COMMON_VIDEO_053, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x0001
-	video type=1, offset=CINEMATIC_HERO_WALK_LEFT_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_LEFT_1, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x000C
 	break
 	video type=0, offset=COMMON_VIDEO_054, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_RUN_LEFT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x000C
 	break
 	video type=0, offset=COMMON_VIDEO_055, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_RUN_LEFT_4, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x0002
 	break
 	mov [0x1B], 0x0000
 	video type=0, offset=COMMON_VIDEO_056, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_WALK_LEFT_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_LEFT_0, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x0007
 	break
 	video type=0, offset=COMMON_VIDEO_057, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_LEFT_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_LEFT_0, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x0004
 	break
 	video type=0, offset=COMMON_VIDEO_058, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0006
-	video type=1, offset=CINEMATIC_HERO_WALK_LEFT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_LEFT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x000D
 	break
 	video type=0, offset=COMMON_VIDEO_059, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x0001
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0001
 	break
 	mov [0x63], 0x0001
@@ -7884,32 +7884,32 @@ HERO_RUN_LEFT_LOOP:
 	mov [0x1B], 0x0001
 	video type=0, offset=COMMON_VIDEO_053, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x0001
-	video type=1, offset=CINEMATIC_HERO_WALK_LEFT_1, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_LEFT_1, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x000C
 	sub [0x02], 0x0002
 	break
 	video type=0, offset=COMMON_VIDEO_054, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_RUN_LEFT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x000C
 	break
 	video type=0, offset=COMMON_VIDEO_096, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x0001
-	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_RUN_LEFT_4, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x000B
 	add [0x02], 0x0001
 	break
 	video type=0, offset=COMMON_VIDEO_096, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x0001
-	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_RUN_LEFT_4, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x000B
 	add [0x02], 0x0001
 	break
 	video type=0, offset=COMMON_VIDEO_055, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_RUN_LEFT_4, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_RUN_LEFT_4, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x0002
 	break
 	video type=0, offset=COMMON_VIDEO_056, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_WALK_LEFT_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_LEFT_0, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x0007
 	mov [0x1B], 0x0000
 	break
@@ -7917,36 +7917,36 @@ HERO_RUN_LEFT_LOOP:
 	je [HERO_ACTION], 0x01, HERO_LEAP_LEFT_F5_LOOP
 	add [0x01], 0x0005
 	video type=0, offset=COMMON_VIDEO_057, x=[0x01], y=[0x02], zoom=0x40
-	video type=1, offset=CINEMATIC_HERO_STOP_LEFT_0, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_STOP_LEFT_0, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x0004
 	break
 	video type=0, offset=COMMON_VIDEO_058, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0006
-	video type=1, offset=CINEMATIC_HERO_WALK_LEFT_2, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_WALK_LEFT_2, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x000D
 	break
 	video type=0, offset=COMMON_VIDEO_059, x=[0x01], y=[0x02], zoom=0x40
 	sub [0x01], 0x0001
-	video type=1, offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
+	video offset=CINEMATIC_HERO_SHADOW, x=[0x01], y=[0x02], zoom=0x40
 	add [0x01], 0x0001
 	break
 	mov [0x63], 0x0001
 	jmp HERO_STAND_LEFT_LOOP
 	killChannel
 	add [0x01], 0x0004
-	video type=1, offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
 	break
 	sub [0x01], 0x0001
-	video type=1, offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
 	sub [0x01], 0x0001
 
 HERO_LAND_LEFT_HOLD_LOOP:
 	break
-	video type=1, offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LAND_LEFT, x=[0x01], y=[0x02], zoom=[0x03]
 	je [HERO_ACTION_POS_MASK], 0x88, HERO_LAND_LEFT_HOLD_LOOP
 	break
 	sub [0x01], 0x0002
-	video type=1, offset=CINEMATIC_RIGHT_KICK_1, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_RIGHT_KICK_1, x=[0x01], y=[0x02], zoom=[0x03]
 	mov [0x63], 0x0002
 	sub [0x01], 0x0002
 	jmp MAYBE_RESUME_WALK_RIGHT_IF_GROUNDED
@@ -7955,24 +7955,24 @@ HERO_LAND_LEFT_HOLD_LOOP:
 HERO_KICK_LEFT_LOOP:
 	sub [0x01], 0x0004
 	play id=0x003D, freq=0x0A, vol=0x0A, channel=0x00
-	video type=1, offset=CINEMATIC_LEFT_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_LEFT_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
 	mov [0x06], 0x0002
 	mov [0x04], [0x01]
 	mov [0x05], [0x02]
 	sub [0x04], 0x000E
 	break
 	add [0x01], 0x0001
-	video type=1, offset=CINEMATIC_LEFT_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_LEFT_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
 	add [0x01], 0x0000
 
 HERO_LEFT_KICK_LOOP:
 	break
 	mov [0x06], 0x0000
-	video type=1, offset=CINEMATIC_LEFT_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_LEFT_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
 	je [HERO_ACTION_POS_MASK], 0x80, HERO_LEFT_KICK_LOOP
 	break
 	add [0x01], 0x0002
-	video type=1, offset=CINEMATIC_LEFT_KICK_1, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_LEFT_KICK_1, x=[0x01], y=[0x02], zoom=[0x03]
 	add [0x01], 0x0001
 	mov [0x63], 0x0001
 	jmp MAYBE_RESUME_WALK_LEFT_IF_GROUNDED
@@ -7981,24 +7981,24 @@ HERO_LEFT_KICK_LOOP:
 HERO_KICK_RIGHT_LOOP:
 	add [0x01], 0x0004
 	play id=0x003D, freq=0x0A, vol=0x0A, channel=0x00
-	video type=1, offset=CINEMATIC_RIGHT_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_RIGHT_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
 	mov [0x06], 0x0002
 	mov [0x04], [0x01]
 	mov [0x05], [0x02]
 	add [0x04], 0x000E
 	break
 	add [0x01], 0x0000
-	video type=1, offset=CINEMATIC_RIGHT_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_RIGHT_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
 	sub [0x01], 0x0001
 
 HERO_RIGHT_KICK_LOOP:
 	break
 	mov [0x06], 0x0000
-	video type=1, offset=CINEMATIC_RIGHT_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_RIGHT_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
 	je [HERO_ACTION_POS_MASK], 0x80, HERO_RIGHT_KICK_LOOP
 	break
 	sub [0x01], 0x0002
-	video type=1, offset=CINEMATIC_RIGHT_KICK_1, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_RIGHT_KICK_1, x=[0x01], y=[0x02], zoom=[0x03]
 	sub [0x01], 0x0001
 	mov [0x63], 0x0002
 	jmp MAYBE_RESUME_WALK_RIGHT_IF_GROUNDED
@@ -8006,7 +8006,7 @@ HERO_RIGHT_KICK_LOOP:
 
 HERO_CROUCH_KICK_LEFT:
 	sub [0x01], 0x0004
-	video type=1, offset=CINEMATIC_LEFT_CROUCHING_1, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_LEFT_CROUCHING_1, x=[0x01], y=[0x02], zoom=[0x03]
 	mov [0x06], 0x0001
 	mov [0x04], [0x01]
 	mov [0x05], [0x02]
@@ -8014,17 +8014,17 @@ HERO_CROUCH_KICK_LEFT:
 	break
 	add [0x01], 0x0000
 	play id=0x003D, freq=0x0A, vol=0x0A, channel=0x00
-	video type=1, offset=CINEMATIC_LEFT_CROUCH_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_LEFT_CROUCH_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
 	add [0x01], 0x0001
 
 LABEL_504C:
 	break
 	mov [0x06], 0x0000
-	video type=1, offset=CINEMATIC_LEFT_CROUCH_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_LEFT_CROUCH_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
 	je [HERO_ACTION_POS_MASK], 0x84, LABEL_504C
 	add [0x01], 0x0002
 	break
-	video type=1, offset=CINEMATIC_LEFT_CROUCH_KICK_1, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_LEFT_CROUCH_KICK_1, x=[0x01], y=[0x02], zoom=[0x03]
 	add [0x01], 0x0001
 	je [HERO_POS_JUMP_DOWN], 0x01, HERO_CROUCH_LEFT_HOLD
 	mov [0x63], 0x0001
@@ -8032,7 +8032,7 @@ LABEL_504C:
 
 HERO_CROUCH_KICK_RIGHT:
 	add [0x01], 0x0004
-	video type=1, offset=CINEMATIC_RIGHT_CROUCHING_1, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_RIGHT_CROUCHING_1, x=[0x01], y=[0x02], zoom=[0x03]
 	mov [0x06], 0x0001
 	mov [0x04], [0x01]
 	mov [0x05], [0x02]
@@ -8040,17 +8040,17 @@ HERO_CROUCH_KICK_RIGHT:
 	break
 	add [0x01], 0x0000
 	play id=0x003D, freq=0x0A, vol=0x0A, channel=0x00
-	video type=1, offset=CINEMATIC_RIGHT_CROUCH_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_RIGHT_CROUCH_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
 	sub [0x01], 0x0001
 
 LABEL_50A6:
 	break
 	mov [0x06], 0x0000
-	video type=1, offset=CINEMATIC_RIGHT_CROUCH_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_RIGHT_CROUCH_KICK_0, x=[0x01], y=[0x02], zoom=[0x03]
 	je [HERO_ACTION_POS_MASK], 0x84, LABEL_50A6
 	sub [0x01], 0x0002
 	break
-	video type=1, offset=CINEMATIC_RIGHT_CROUCH_KICK_1, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_RIGHT_CROUCH_KICK_1, x=[0x01], y=[0x02], zoom=[0x03]
 	sub [0x01], 0x0001
 	je [HERO_POS_JUMP_DOWN], 0x01, HERO_CROUCH_RIGHT_HOLD
 	mov [0x63], 0x0002
@@ -8058,18 +8058,18 @@ LABEL_50A6:
 
 HERO_CROUCH_LEFT_LOOP:
 	add [0x01], 0x0002
-	video type=1, offset=CINEMATIC_LEFT_CROUCHING_0, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_LEFT_CROUCHING_0, x=[0x01], y=[0x02], zoom=[0x03]
 
 HERO_CROUCH_LEFT_HOLD:
 	break
 	je [HERO_ACTION_POS_MASK], 0x84, HERO_CROUCH_KICK_LEFT
-	video type=1, offset=CINEMATIC_LEFT_CROUCHING_2, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_LEFT_CROUCHING_2, x=[0x01], y=[0x02], zoom=[0x03]
 	je [HERO_ACTION_POS_MASK], 0x04, HERO_CROUCH_LEFT_HOLD
 	break
-	video type=1, offset=CINEMATIC_LEFT_CROUCHING_1, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_LEFT_CROUCHING_1, x=[0x01], y=[0x02], zoom=[0x03]
 	break
 	sub [0x01], 0x0002
-	video type=1, offset=CINEMATIC_LEFT_CROUCHING_0, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_LEFT_CROUCHING_0, x=[0x01], y=[0x02], zoom=[0x03]
 	mov [0x63], 0x0001
 	add [0x01], 0x0002
 	jmp MAYBE_RESUME_WALK_LEFT_IF_GROUNDED
@@ -8077,18 +8077,18 @@ HERO_CROUCH_LEFT_HOLD:
 
 HERO_CROUCH_RIGHT_LOOP:
 	sub [0x01], 0x0002
-	video type=1, offset=CINEMATIC_RIGHT_CROUCHING_0, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_RIGHT_CROUCHING_0, x=[0x01], y=[0x02], zoom=[0x03]
 
 HERO_CROUCH_RIGHT_HOLD:
 	break
 	je [HERO_ACTION_POS_MASK], 0x84, HERO_CROUCH_KICK_RIGHT
-	video type=1, offset=CINEMATIC_RIGHT_CROUCHING_2, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_RIGHT_CROUCHING_2, x=[0x01], y=[0x02], zoom=[0x03]
 	je [HERO_ACTION_POS_MASK], 0x04, HERO_CROUCH_RIGHT_HOLD
 	break
-	video type=1, offset=CINEMATIC_RIGHT_CROUCHING_1, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_RIGHT_CROUCHING_1, x=[0x01], y=[0x02], zoom=[0x03]
 	break
 	add [0x01], 0x0002
-	video type=1, offset=CINEMATIC_RIGHT_CROUCHING_0, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_RIGHT_CROUCHING_0, x=[0x01], y=[0x02], zoom=[0x03]
 	mov [0x63], 0x0002
 	sub [0x01], 0x0002
 	jmp MAYBE_RESUME_WALK_RIGHT_IF_GROUNDED

@@ -20,7 +20,7 @@ GAME_INTRO_PHASE_DRAW_CIN_076:
 	setPalette 0x00
 	load id=0x0012
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_076, x=160, y=100
+	video offset=CINEMATIC_076, x=160, y=100
 	selectVideoPage 0xFF
 	setup channel=0x2C, address=PAL_FADE_DOWN_1A_TO_4
 	mov [0x03], 0x0028
@@ -57,5 +57,5 @@ LABEL_00DE:
 	jge [HACK_VAR_54], 0x80, LOAD_RESOURCE_13
 	load id=0x0053
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_075, x=160, y=100
+	video offset=CINEMATIC_075, x=160, y=100
 	jmp LABEL_00F9

@@ -5,14 +5,14 @@ DELAY_LOOP_VARE7:
 	mov [0xE8], 0x00C6
 
 LABEL_0BCF:
-	video type=1, offset=CINEMATIC_454, x=163, y=[0xe8], zoom=0x40
+	video offset=CINEMATIC_454, x=163, y=[0xe8], zoom=0x40
 	sub [0xE8], 0x0002
 	break
 	djnz [0xE7], LABEL_0BCF
-	video type=1, offset=CINEMATIC_455, x=170, y=198
-	video type=1, offset=CINEMATIC_456, x=170, y=197
+	video offset=CINEMATIC_455, x=170, y=198
+	video offset=CINEMATIC_456, x=170, y=197
 	break
-	video type=1, offset=CINEMATIC_455, x=170, y=197
+	video offset=CINEMATIC_455, x=170, y=197
 	jmp INLINE_SET_VARE7_TO_5
 LABEL_0BED:
 	db 0x11

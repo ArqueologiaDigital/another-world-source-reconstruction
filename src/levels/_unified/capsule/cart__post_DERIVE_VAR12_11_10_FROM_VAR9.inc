@@ -101,27 +101,27 @@ LABEL_43B5:
 LABEL_43B6:
 	jne [0x09], 0x01, LABEL_43C2
 	ret
-	video type=1, offset=CINEMATIC_695, x=[0x26], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_695, x=[0x26], y=[0x08], zoom=0x40
 
 LABEL_43C2:
 	jne [0x09], 0x02, LABEL_43CE
-	video type=1, offset=CINEMATIC_697, x=[0x26], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_697, x=[0x26], y=[0x08], zoom=0x40
 	ret
 
 LABEL_43CE:
 	jne [0x09], 0x03, LABEL_43E3
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_695, x=[0x26], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_695, x=[0x26], y=[0x08], zoom=0x40
 	selectVideoPage 0xFF
-	video type=1, offset=CINEMATIC_696, x=[0x26], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_696, x=[0x26], y=[0x08], zoom=0x40
 	ret
 
 LABEL_43E3:
 	jne [0x09], 0x04, LABEL_43F8
 	selectVideoPage 0x00
-	video type=1, offset=CINEMATIC_500, x=[0x26], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_500, x=[0x26], y=[0x08], zoom=0x40
 	selectVideoPage 0xFF
-	video type=1, offset=CINEMATIC_500, x=[0x26], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_500, x=[0x26], y=[0x08], zoom=0x40
 	ret
 
 LABEL_43F8:
@@ -184,23 +184,23 @@ LABEL_447E:
 	ret
 
 LABEL_4485:
-	video type=1, offset=CINEMATIC_499, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_499, x=[0x07], y=[0x08], zoom=0x40
 	jne [0x10], 0x01, LABEL_4495
-	video type=1, offset=CINEMATIC_500, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_500, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_4495:
 	add [0x07], 0x000A
 	jl [0x0E], 0x02, SHARED_RET
-	video type=1, offset=CINEMATIC_499, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_499, x=[0x07], y=[0x08], zoom=0x40
 	jne [0x11], 0x01, LABEL_44AF
-	video type=1, offset=CINEMATIC_500, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_500, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_44AF:
 	add [0x07], 0x000A
 	jl [0x0E], 0x03, SHARED_RET
-	video type=1, offset=CINEMATIC_499, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_499, x=[0x07], y=[0x08], zoom=0x40
 	jne [0x12], 0x01, SHARED_RET
-	video type=1, offset=CINEMATIC_500, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_500, x=[0x07], y=[0x08], zoom=0x40
 	ret
 LABEL_44CA:
 	db 0x11

@@ -1699,15 +1699,15 @@ LABEL_003E:
 	killChannel
 	copyVideoPage src=0x00, dst=0x03
 	killChannel
-	video type=1, offset=CINEMATIC_698, x=160, y=100
+	video offset=CINEMATIC_698, x=160, y=100
 	mov [0x00], [0x18]
 	mov [0xF8], [0x00]
 	shr [0xF8], 0x0008
-	video type=1, offset=CINEMATIC_699, x=[0xf8], y=0, zoom=0x40
+	video offset=CINEMATIC_699, x=[0xf8], y=0, zoom=0x40
 	mov [0xF8], [0x00]
 	and [0xF8], 0x00FF
-	video type=1, offset=CINEMATIC_699, x=[0xf8], y=1, zoom=0x40
-	video type=1, offset=CINEMATIC_700, x=[0x01], y=2, zoom=0x40
+	video offset=CINEMATIC_699, x=[0xf8], y=1, zoom=0x40
+	video offset=CINEMATIC_700, x=[0x01], y=2, zoom=0x40
 	killChannel
 
 LABEL_0073:
@@ -1875,8 +1875,8 @@ LABEL_0213:
 	call LABEL_89D0
 	break
 	add [0x07], 0x0018
-	video type=1, offset=CINEMATIC_283, x=[0x07], y=[0x08], zoom=0x40
-	video type=1, offset=CINEMATIC_317, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_283, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_317, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_01D2
 	jne [0x21], 0x00, LABEL_032E
 	setup channel=0x23, address=LABEL_0240
@@ -1887,7 +1887,7 @@ LABEL_0240:
 	add [0x07], 0x0002
 	jmp LABEL_0255
 	add [0x08], 0x0004
-	video type=1, offset=CINEMATIC_124, x=[0x07], y=[0x08], zoom=0x40
+	video offset=CINEMATIC_124, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x0004
 	break
 
