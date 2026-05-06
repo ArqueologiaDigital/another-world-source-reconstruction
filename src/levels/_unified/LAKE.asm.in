@@ -75,8 +75,11 @@ COUNTER		EQU 0x10
 ; Generic per-page draw helpers + the 4 droplet sprite variants drawn at HERO_X / HERO_Y.
 ;@include "lake/draw_helpers_and_droplet_variants.inc"
 
-; Particle-burst secondary loop (residue trail behind effects).
+; Particle-burst secondary loop (residue trail behind effects). The cycle plays 8 frames at [0x9a]/[0x9b], jmps to itself, then killChannel — never returns.
 ;@include "lake/particle_burst_cycle_loop_2.inc"
+
+; Unreachable bytecode (~70 mov-zero instructions + ret) sitting at the next byte address after PARTICLE_BURST_CYCLE_LOOP_2's killChannel; preserved verbatim for round-trip byte identity. No labels point at it.
+;@include "lake/_dead_var_reset_block.inc"
 
 ; Falling-droplet animation channel + random-position picker.
 ;@include "lake/droplet_fall_and_random_pos.inc"
