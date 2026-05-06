@@ -360,10 +360,10 @@ BUDDY_Y		EQU 0x08
 ; PRISON inline single-instruction setters and small init helpers.
 ;@include "prison/prison_inline_setters_and_init.inc"
 
-; PRISON var-29 state machine (animation/state dispatch).
+; INLINE_SET_VAR29_TO_N setter helpers (5, 6, 28, A, …) + DRAW_CIN_406_408_BLOCK and DECREMENT_VAR29_BY_1 — the shared draw/set helpers that the var-29 state machine (in arm-specific entry chunks) dispatches into.
 ;@include "prison/prison_var29_state_machine.inc"
 
-; PRISON var-2F state machine (animation/state dispatch).
+; SET_VAR2F_TO_NN setters + INIT_VARS_2F_29_* helpers — same pattern as var29 above: shared setter helpers called BY the var-2F state machine (in arm-specific entry chunks), not the state machine itself.
 ;@include "prison/prison_var2f_state_machine.inc"
 
 ; PRISON SFX players + deduplicated helpers (PLAY_SFX_005C_CH01).
