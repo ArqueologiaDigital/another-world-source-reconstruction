@@ -289,23 +289,52 @@ HERO_Y		EQU 0x02
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
 ;   STEP_DRAW_CV329_THEN_CV335  (2-arm: cart, dos)
 
+; Engine-managed special-purpose VM variables (HERO_POS_*, RANDOM_SEED, PAUSE_SLICES, etc.).
 ;@include "../_common_vars.inc"
+
+; Cross-stage helper EQUs (LABEL_<HEX> / ADDR_AT_* placeholders shared between levels).
 ;@include "_helpers/_helpers_equ_aliases.inc"
 
 ;@if BRANCH == "chahi_amiga_1991"
+
+; Amiga CAVES: level-entry bytecode (level start through the first shared folded routine).
 ;@include "caves/amiga__entry.inc"
+
 ;@elif BRANCH == "cartridge_1992"
+
+; Cartridge CAVES: level-entry bytecode (level start through the first shared folded routine).
 ;@include "caves/cart__entry.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS CAVES: level-entry bytecode (level start through the first shared folded routine).
 ;@include "caves/dos__entry.inc"
+
 ;@endif
 
+; CAVES resource preload (PRELOAD_RES_6A_77_6D_6E_74_76_78_7C — 8 resources).
 ;@include "caves/caves_preload_resources.inc"
+
+; CAVES inline setters / small init helpers (var-derivation chains).
 ;@include "caves/caves_inline_setters_and_init.inc"
+
+; CAVES inline setters cluster (INIT_VARS_E6_68_69_6B et al.).
 ;@include "caves/caves_inline_setters_part1c.inc"
+
+; CAVES scroll setup + scroll-blit helpers (SCROLL_BLIT_P83_TO_PFF).
 ;@include "caves/caves_scroll_setup_and_helpers.inc"
+
+; CAVES scroll init + SFX setup (vertical scroll + audio cues).
 ;@include "caves/caves_scroll_init_and_sfx.inc"
+
+; CAVES deduplicated short-body routines (DEDUP_CAVES_6B_*) — auto-salvaged from match_arms rounds.
 ;@include "caves/caves_dedup_helpers_cluster.inc"
+
+; CAVES var22 setters + projection helpers (state-machine bookkeeping).
 ;@include "caves/caves_var22_setters_and_projections.inc"
+
+; CAVES gameplay action helpers (INIT_VARS_E6_EA et al.).
 ;@include "caves/caves_action_helpers.inc"
+
+; CAVES inline break-then-set sequences (SET_VAR18 + chained breaks).
 ;@include "caves/caves_inline_breaks.inc"

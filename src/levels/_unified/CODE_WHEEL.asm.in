@@ -31,15 +31,27 @@
 ;   COMPUTE_VAR07_TIMES_44_PLUS_20  (2-arm: amiga, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (2-arm: amiga, dos)
 
+; Engine-managed special-purpose VM variables (HERO_POS_*, RANDOM_SEED, PAUSE_SLICES, etc.).
 ;@include "../_common_vars.inc"
+
+; Cross-stage helper EQUs (LABEL_<HEX> / ADDR_AT_* placeholders shared between levels).
 ;@include "_helpers/_helpers_equ_aliases.inc"
 
 ;@if BRANCH == "chahi_amiga_1991"
+
+; Amiga CODE_WHEEL: level-entry bytecode (level start through the first shared folded routine).
 ;@include "code_wheel/amiga__entry.inc"
+
 ;@elif BRANCH == "cartridge_1992"
+
+; Cartridge CODE_WHEEL: level-entry bytecode (level start through the first shared folded routine).
 ;@include "code_wheel/cart__entry.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS CODE_WHEEL: level-entry bytecode (level start through the first shared folded routine).
 ;@include "code_wheel/dos__entry.inc"
+
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -61,9 +73,15 @@ INIT_PROGRESS_HASH_VARS:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
+
+; Amiga CODE_WHEEL: port-specific body chunk after the shared `INIT_PROGRESS_HASH_VARS` routine.
 ;@include "code_wheel/amiga__post_INIT_PROGRESS_HASH_VARS.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS CODE_WHEEL: port-specific body chunk after the shared `INIT_PROGRESS_HASH_VARS` routine.
 ;@include "code_wheel/dos__post_INIT_PROGRESS_HASH_VARS.inc"
+
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -72,16 +90,30 @@ LOAD_RESOURCE_13:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
+
+; Amiga CODE_WHEEL: port-specific body chunk after the shared `LOAD_RESOURCE_13` routine.
 ;@include "code_wheel/amiga__post_LOAD_RESOURCE_13.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS CODE_WHEEL: port-specific body chunk after the shared `LOAD_RESOURCE_13` routine.
 ;@include "code_wheel/dos__post_LOAD_RESOURCE_13.inc"
+
 ;@endif
 
+; Shared palette-fade helpers used during code-wheel screen transitions.
 ;@include "code_wheel/code_wheel_palette_fades.inc"
+
 ;@if BRANCH == "chahi_amiga_1991"
+
+; Amiga CODE_WHEEL: port-specific body chunk after the shared `PAL_FADE_UP_9_TO_F` routine.
 ;@include "code_wheel/amiga__post_PAL_FADE_UP_9_TO_F.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS CODE_WHEEL: port-specific body chunk after the shared `PAL_FADE_UP_9_TO_F` routine.
 ;@include "code_wheel/dos__post_PAL_FADE_UP_9_TO_F.inc"
+
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -94,9 +126,15 @@ COPY_HERO_VARS_TO_29_2A_2B_2C:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
+
+; Amiga CODE_WHEEL: port-specific body chunk after the shared `COPY_HERO_VARS_TO_29_2A_2B_2C` routine.
 ;@include "code_wheel/amiga__post_COPY_HERO_VARS_TO_29_2A_2B_2C.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS CODE_WHEEL: port-specific body chunk after the shared `COPY_HERO_VARS_TO_29_2A_2B_2C` routine.
 ;@include "code_wheel/dos__post_COPY_HERO_VARS_TO_29_2A_2B_2C.inc"
+
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -105,9 +143,15 @@ CLEAR_VAR_22:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
+
+; Amiga CODE_WHEEL: port-specific body chunk after the shared `CLEAR_VAR_22` routine.
 ;@include "code_wheel/amiga__post_CLEAR_VAR_22.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS CODE_WHEEL: port-specific body chunk after the shared `CLEAR_VAR_22` routine.
 ;@include "code_wheel/dos__post_CLEAR_VAR_22.inc"
+
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -127,9 +171,15 @@ SUM_HASH_VARS_TO_VAR_37:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
+
+; Amiga CODE_WHEEL: port-specific body chunk after the shared `SUM_HASH_VARS_TO_VAR_37` routine.
 ;@include "code_wheel/amiga__post_SUM_HASH_VARS_TO_VAR_37.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS CODE_WHEEL: port-specific body chunk after the shared `SUM_HASH_VARS_TO_VAR_37` routine.
 ;@include "code_wheel/dos__post_SUM_HASH_VARS_TO_VAR_37.inc"
+
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -139,9 +189,15 @@ MARK_VAR67_AND_KILL:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
+
+; Amiga CODE_WHEEL: port-specific body chunk after the shared `MARK_VAR67_AND_KILL` routine.
 ;@include "code_wheel/amiga__post_MARK_VAR67_AND_KILL.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS CODE_WHEEL: port-specific body chunk after the shared `MARK_VAR67_AND_KILL` routine.
 ;@include "code_wheel/dos__post_MARK_VAR67_AND_KILL.inc"
+
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -161,18 +217,33 @@ COMPUTE_VAR07_TIMES_44_PLUS_20:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
+
+; Amiga CODE_WHEEL: port-specific body chunk after the shared `COMPUTE_VAR07_TIMES_44_PLUS_20` routine.
 ;@include "code_wheel/amiga__post_COMPUTE_VAR07_TIMES_44_PLUS_20.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS CODE_WHEEL: port-specific body chunk after the shared `COMPUTE_VAR07_TIMES_44_PLUS_20` routine.
 ;@include "code_wheel/dos__post_COMPUTE_VAR07_TIMES_44_PLUS_20.inc"
+
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+
+; Shared helper: clear video pages 1 and 2, then blit-chain x8 — used at scene transitions.
 ;@include "_helpers/CLEAR_PAGES_1_2_AND_BLIT.inc"
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
+
+; Amiga CODE_WHEEL: port-specific body chunk after the shared `CLEAR_PAGES_1_2_AND_BLIT` routine.
 ;@include "code_wheel/amiga__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS CODE_WHEEL: port-specific body chunk after the shared `CLEAR_PAGES_1_2_AND_BLIT` routine.
 ;@include "code_wheel/dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
+
 ;@endif
 

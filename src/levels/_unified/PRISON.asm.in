@@ -328,25 +328,58 @@ BUDDY_Y		EQU 0x08
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
 
+; Engine-managed special-purpose VM variables (HERO_POS_*, RANDOM_SEED, PAUSE_SLICES, etc.).
 ;@include "../_common_vars.inc"
+
+; Cross-stage helper EQUs (LABEL_<HEX> / ADDR_AT_* placeholders shared between levels).
 ;@include "_helpers/_helpers_equ_aliases.inc"
+
+; PRISON: auto-generated EQU aliases for stuck literal-address operands.
 ;@include "prison/prison_equ_aliases.inc"
 
 ;@if BRANCH == "chahi_amiga_1991"
+
+; Amiga PRISON: level-entry bytecode (level start through the first shared folded routine).
 ;@include "prison/amiga__entry.inc"
+
 ;@elif BRANCH == "cartridge_1992"
+
+; Cartridge PRISON: level-entry bytecode (level start through the first shared folded routine).
 ;@include "prison/cart__entry.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS PRISON: level-entry bytecode (level start through the first shared folded routine).
 ;@include "prison/dos__entry.inc"
+
 ;@endif
 
+; PRISON delay-then-preload resources (DELAY_4_QUANTUMS gating).
 ;@include "prison/prison_delay_preload_resources.inc"
+
+; PRISON inline single-instruction setters and small init helpers.
 ;@include "prison/prison_inline_setters_and_init.inc"
+
+; PRISON var-29 state machine (animation/state dispatch).
 ;@include "prison/prison_var29_state_machine.inc"
+
+; PRISON var-2F state machine (animation/state dispatch).
 ;@include "prison/prison_var2f_state_machine.inc"
+
+; PRISON SFX players + deduplicated helpers (PLAY_SFX_005C_CH01).
 ;@include "prison/prison_sfx_and_dedup_helpers.inc"
+
+; PRISON page-fill var inits (INIT_VARS_16_17 et al.).
 ;@include "prison/prison_pagefill_inits.inc"
+
+; PRISON deduplicated short-body routines + landing-kill chains.
 ;@include "prison/prison_dedups_and_landing_kill.inc"
+
+; PRISON late-phase var setup (INIT_VARS_02_06 et al.).
 ;@include "prison/prison_late_phase_var_setup.inc"
+
+; PRISON late-phase scroll-up + page management.
 ;@include "prison/prison_late_phase_scroll_and_pages.inc"
+
+; PRISON step-draws (STEP_DRAW_CIN555_LEFT4_RIGHT1) — buddy walking animations.
 ;@include "prison/prison_step_draws_and_breaks.inc"

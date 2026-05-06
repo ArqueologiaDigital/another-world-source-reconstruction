@@ -23,15 +23,27 @@
 ;   CLEAR_LAST_KEYCHAR  (2-arm: cart, dos)
 ;   INIT_VAR08_TO_150  (3-arm: amiga, cart, dos)
 
+; Engine-managed special-purpose VM variables (HERO_POS_*, RANDOM_SEED, PAUSE_SLICES, etc.).
 ;@include "../_common_vars.inc"
+
+; Cross-stage helper EQUs (LABEL_<HEX> / ADDR_AT_* placeholders shared between levels).
 ;@include "_helpers/_helpers_equ_aliases.inc"
 
 ;@if BRANCH == "chahi_amiga_1991"
+
+; Amiga PASSCODE: level-entry bytecode (level start through the first shared folded routine).
 ;@include "passcode/amiga__entry.inc"
+
 ;@elif BRANCH == "cartridge_1992"
+
+; Cartridge PASSCODE: level-entry bytecode (level start through the first shared folded routine).
 ;@include "passcode/cart__entry.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS PASSCODE: level-entry bytecode (level start through the first shared folded routine).
 ;@include "passcode/dos__entry.inc"
+
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -50,9 +62,15 @@ SUM_HASH_VARS_TO_VAR_37:
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
+
+; Amiga PASSCODE: port-specific body chunk after the shared `SUM_HASH_VARS_TO_VAR_37` routine.
 ;@include "passcode/amiga__post_SUM_HASH_VARS_TO_VAR_37.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS PASSCODE: port-specific body chunk after the shared `SUM_HASH_VARS_TO_VAR_37` routine.
 ;@include "passcode/dos__post_SUM_HASH_VARS_TO_VAR_37.inc"
+
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -62,9 +80,16 @@ COPY_VAR_27_28_TO_07_08:
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
+
+; Cartridge PASSCODE: port-specific body chunk after the shared `COPY_VAR_27_28_TO_07_08` routine.
 ;@include "passcode/cart__post_COPY_VAR_27_28_TO_07_08.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS PASSCODE: port-specific body chunk after the shared `COPY_VAR_27_28_TO_07_08` routine.
 ;@include "passcode/dos__post_COPY_VAR_27_28_TO_07_08.inc"
+
 ;@endif
 
+; PASSCODE var init (SET_VAR_E6_F_PAUSE_4).
 ;@include "passcode/passcode_var_init.inc"

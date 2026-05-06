@@ -43,27 +43,57 @@
 ;   DRAW_STARS_CIN_38_39_40_5_6  (2-arm: amiga, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
 
+; Engine-managed special-purpose VM variables (HERO_POS_*, RANDOM_SEED, PAUSE_SLICES, etc.).
 ;@include "../_common_vars.inc"
+
+; Cross-stage helper EQUs (LABEL_<HEX> / ADDR_AT_* placeholders shared between levels).
 ;@include "_helpers/_helpers_equ_aliases.inc"
 
 ;@if BRANCH == "chahi_amiga_1991"
+
+; Amiga ENDING: level-entry bytecode (level start through the first shared folded routine).
 ;@include "ending/amiga__entry.inc"
+
 ;@elif BRANCH == "cartridge_1992"
+
+; Cartridge ENDING: level-entry bytecode (level start through the first shared folded routine).
 ;@include "ending/cart__entry.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS ENDING: level-entry bytecode (level start through the first shared folded routine).
 ;@include "ending/dos__entry.inc"
+
 ;@endif
 
+; Shared helper: kill-channel landing pad — common cleanup point for many channels.
 ;@include "_helpers/KILL_CHANNEL_LANDING.inc"
+
 ;@if BRANCH == "chahi_amiga_1991"
+
+; Amiga ENDING: port-specific body chunk after the shared `KILL_CHANNEL_LANDING` routine.
 ;@include "ending/amiga__post_KILL_CHANNEL_LANDING.inc"
+
 ;@elif BRANCH == "cartridge_1992"
+
+; Cartridge ENDING: port-specific body chunk after the shared `KILL_CHANNEL_LANDING` routine.
 ;@include "ending/cart__post_KILL_CHANNEL_LANDING.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS ENDING: port-specific body chunk after the shared `KILL_CHANNEL_LANDING` routine.
 ;@include "ending/dos__post_KILL_CHANNEL_LANDING.inc"
+
 ;@endif
 
+; ENDING channel teardown — DELETE_ALL_CHANS_AND_KILL.
 ;@include "ending/ending_channel_cleanup.inc"
+
+; ENDING var setups (INIT_VARE_TO_12 et al.).
 ;@include "ending/ending_var_setups.inc"
+
+; ENDING palette-fade sequence (cross-fades between cinematic shots).
 ;@include "ending/ending_palette_fades.inc"
+
+; ENDING palette + var setup (SET_VAR_E6_5_PAL_B et al.).
 ;@include "ending/ending_pal_var_setup.inc"

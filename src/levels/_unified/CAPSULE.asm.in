@@ -204,18 +204,37 @@ BUDDY_Y		EQU 0x08
 ;   STEP_DRAW_CV352_LEFT4_RIGHT1  (3-arm: amiga, cart, dos)
 ;   DRAW_CV352_STEP_RIGHT3  (3-arm: amiga, cart, dos)
 
+; Engine-managed special-purpose VM variables (HERO_POS_*, RANDOM_SEED, PAUSE_SLICES, etc.).
 ;@include "../_common_vars.inc"
+
+; Cross-stage helper EQUs (LABEL_<HEX> / ADDR_AT_* placeholders shared between levels).
 ;@include "_helpers/_helpers_equ_aliases.inc"
 
 ;@if BRANCH == "chahi_amiga_1991"
+
+; Amiga CAPSULE: level-entry bytecode (level start through the first shared folded routine).
 ;@include "capsule/amiga__entry.inc"
+
 ;@elif BRANCH == "cartridge_1992"
+
+; Cartridge CAPSULE: level-entry bytecode (level start through the first shared folded routine).
 ;@include "capsule/cart__entry.inc"
+
 ;@elif BRANCH == "dos_1992"
+
+; DOS CAPSULE: level-entry bytecode (level start through the first shared folded routine).
 ;@include "capsule/dos__entry.inc"
+
 ;@endif
 
+; CAPSULE per-frame state-init cluster (var07/varBB/var73 increments + var29 reset).
 ;@include "capsule/capsule_init_vars_cluster.inc"
+
+; CAPSULE inline single-instruction setters (INLINE_SET_VAR29_TO_4, etc.).
 ;@include "capsule/capsule_inline_setters_and_init.inc"
+
+; CAPSULE init dispatcher (INIT_VARS_2F_29_12 + early state dispatch).
 ;@include "capsule/capsule_init_dispatch.inc"
+
+; CAPSULE resource-load helpers + early animation routines (LOAD_RES90 + page-copy).
 ;@include "capsule/capsule_load_helpers_and_anim.inc"
