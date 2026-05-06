@@ -236,5 +236,5 @@ BUDDY_Y		EQU 0x08
 ; CAPSULE init dispatcher (INIT_VARS_2F_29_12 + early state dispatch).
 ;@include "capsule/capsule_init_dispatch.inc"
 
-; CAPSULE resource-load helpers + early animation routines (LOAD_RES90 + page-copy).
+; CAPSULE resource-load helpers (LOAD_RES90 + page-copy) + var-22 setters / projections + INIT_BIRD_AI_VARS (the "ride the bird" scene's hero-position reset that overwrites HERO_X / HERO_Y to 0x91 / 0x8F and saves prior X to var 0x28; cart/dos only) + the SET_VAR04_* / INLINE_SET_VAR63_* shared-helper chain + WALK_LEFT/RIGHT_DRAW_CV multistep helpers.
 ;@include "capsule/capsule_load_helpers_and_anim.inc"
