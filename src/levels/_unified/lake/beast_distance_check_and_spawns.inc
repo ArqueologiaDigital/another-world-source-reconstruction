@@ -33,10 +33,7 @@ CHECK_IF_THE_BEAST_HAS_ALREADY_REACHED_LESTER:
 THE_BEAST_IS_CLOSE_ENOUGH:
 	jne [0x2B], 0x00, THE_BEAST_IS_STILL_AT_A_DISTANCE
 	setup channel=0x28, address=THE_BEAST_KILLS_LESTER
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 	unfreezeChannels first=0x00, last=0x27
@@ -56,15 +53,7 @@ WAIT_UNTIL_BEAST_CLOSE:
 	break
 	jmp WAIT_UNTIL_BEAST_CLOSE
 	killChannel
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-
-BEAST_AI_INIT_POS_HEINEMAN:
-	mov [0x0E], 0x0000
-	mov [0x0F], 0x00B6
-	mov [COUNTER], 0x0001
-	jmp BEAST_APPROACH_PHASE_1
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 BEAST_AI_INIT_POS_HEINEMAN:
 	mov [0x0E], 0x0000

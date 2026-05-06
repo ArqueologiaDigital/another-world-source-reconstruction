@@ -19,11 +19,7 @@ HERO_STAND_LEFT_LOOP:
 	jne [HERO_POS_MASK], 0x02, MAYBE_RESUME_WALK_LEFT_IF_GROUNDED
 ;@endif
 	sub [HERO_X], 0x0002
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-
-STAND_L_FALL_LEFT_PATH:
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 STAND_L_FALL_LEFT_PATH:
 ;@endif

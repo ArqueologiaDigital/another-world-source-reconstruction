@@ -46,11 +46,7 @@ LAKE_INTRO_SETUP:
 LAKE_INTRO_PRE_DELAY:
 	break
 	djnz [0x19], LAKE_INTRO_PRE_DELAY
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
-	break
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
 ;@endif
@@ -87,11 +83,7 @@ LAKE_INTRO_ANIM_F2_LOOP:
 	break
 	video offset=CINEMATIC_LAKE_INTRO_ANIM_2, x=[0x18], y=110
 	djnz [0x19], LAKE_INTRO_ANIM_F2_LOOP
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
-	break
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
 ;@endif
@@ -112,11 +104,7 @@ LAKE_INTRO_ANIM_F2_LOOP:
 LAKE_INTRO_PRE_TRANS_DELAY:
 	break
 	djnz [0x19], LAKE_INTRO_PRE_TRANS_DELAY
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
-	break
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
 ;@endif

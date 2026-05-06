@@ -102,10 +102,7 @@ HERO_WALK_RIGHT_LOOP:
 	killChannel
 
 HERO_RUN_RIGHT_ENTRY_WITH_PREP:
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	je [HERO_POS_MASK], 0x0A, HERO_RUN_LEFT_ENTRY_WITH_PREP
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	je [HERO_POS_MASK], 0x0A, HERO_RUN_LEFT_ENTRY_WITH_PREP
 ;@endif
 	add [HERO_X], 0x0005
@@ -324,13 +321,7 @@ HERO_RUN_LEFT_ENTRY_WITH_PREP:
 	setup channel=0x15, address=KILL_CHANNEL_ROUTINE
 	mov [0x63], 0x0064
 	break
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-
-HERO_RUN_LEFT_LOOP:
-	setup channel=0x15, address=KILL_CHANNEL_ROUTINE
-	je [HERO_POS_MASK], 0x09, HERO_RUN_RIGHT_LOOP
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 HERO_RUN_LEFT_LOOP:
 	setup channel=0x15, address=KILL_CHANNEL_ROUTINE

@@ -178,26 +178,13 @@ SLUG_ATTACK_FB_FILL_LOOP:
 SLUG_ATTACK_LEG_DRAW_LOOP:
 	break
 	video offset=CINEMATIC_SLUG_ATTACKING_LEG_8, x=[0x15], y=100, zoom=[0x16]
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	je [0xDB], 0x00, SLUG_ATTACK_LEG_LOOP_NOOP_BR
-
-SLUG_ATTACK_LEG_LOOP_NOOP_BR:
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	je [0xDB], 0x00, SLUG_ATTACK_LEG_LOOP_NOOP_BR
 
 SLUG_ATTACK_LEG_LOOP_NOOP_BR:
 ;@endif
 	djnz [0x17], SLUG_ATTACK_LEG_DRAW_LOOP
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
-	break
-	video offset=CINEMATIC_SLUG_ATTACKING_LEG_8, x=[0x15], y=100, zoom=[0x16]
-	je [0xDB], 0x00, SLUG_ATTACK_LEG_FINAL_NOOP_BR
-
-SLUG_ATTACK_LEG_FINAL_NOOP_BR:
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
 	video offset=CINEMATIC_SLUG_ATTACKING_LEG_8, x=[0x15], y=100, zoom=[0x16]

@@ -77,10 +77,7 @@ BEAST_ARRIVAL_DECEL:
 	jl [0x0E], 0x78, DRAW_BEAST_DRIFT_LEFT_PREROLL_FRAME
 	jg [0x0E], 0xF0, DRAW_BEAST_DRIFT_LEFT_PREROLL_FRAME
 	mov [0x6E], 0x0078
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x29, address=KILL_CHANNEL_ROUTINE
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x29, address=KILL_CHANNEL_ROUTINE
 ;@endif
 	video offset=CINEMATIC_BEAST_DRIFT_LEFT_3, x=[0x0e], y=[0x0f]
@@ -129,10 +126,7 @@ BEAST_DECEL_STEP_3_LOOP:
 	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f]
 	break
 	djnz [COUNTER], BEAST_DECEL_STEP_3_LOOP
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
 ;@endif
 	mov [COUNTER], 0x0007
@@ -142,10 +136,7 @@ BEAST_DECEL_STEP_2_LOOP:
 	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f]
 	break
 	djnz [COUNTER], BEAST_DECEL_STEP_2_LOOP
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
 ;@endif
 	mov [COUNTER], 0x0003
@@ -155,10 +146,7 @@ BEAST_DECEL_STEP_1_LOOP:
 	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f]
 	break
 	djnz [COUNTER], BEAST_DECEL_STEP_1_LOOP
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jl [0x0E], [HERO_X], BEAST_PASS_HERO_DECEL
 ;@endif
 	mov [COUNTER], 0x0005
@@ -167,11 +155,7 @@ HOLD_LAKE_139_FOR_N_FRAMES:
 	video offset=CINEMATIC_BEAST_DRIFT_LEFT_5, x=[0x0e], y=[0x0f]
 	break
 	djnz [COUNTER], HOLD_LAKE_139_FOR_N_FRAMES
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-
-BEAST_PASS_HERO_DECEL:
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 BEAST_PASS_HERO_DECEL:
 ;@endif
@@ -206,10 +190,7 @@ WAIT_BEAST_TRIGGER_THEN_INIT:
 	unfreezeChannels first=0x00, last=0x27
 	unfreezeChannels first=0x29, last=0x3B
 	unfreezeChannels first=0x3D, last=0x3F
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 	break

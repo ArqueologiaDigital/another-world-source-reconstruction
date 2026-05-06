@@ -138,10 +138,7 @@ BEAST_SURPRISE_PHASE7_HOLD:
 	break
 	video offset=CINEMATIC_BEAST_SURPRISE_BODY_6, x=160, y=100
 	video offset=CINEMATIC_BEAST_SURPRISE_EYES_AND_TEETH_4, x=161, y=99
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 	break

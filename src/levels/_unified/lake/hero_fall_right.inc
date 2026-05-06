@@ -45,10 +45,7 @@ FALL_R_F1_X_DELTA_DONE:
 	video offset=CINEMATIC_HERO_RESUME_RIGHT_2, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif
 	call DRAW_HELPER_AT_Y_PLUS_1
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jne [HERO_POS_LEFT_RIGHT], 0x01, FALL_R_F2_X_DELTA_DONE
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jne [HERO_POS_LEFT_RIGHT], 0x01, FALL_R_F2_X_DELTA_DONE
 ;@endif
 	je [HERO_POS_MASK], 0x00, STAND_L_LAND_AFTER_RESUME_R_F2

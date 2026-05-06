@@ -55,10 +55,7 @@ FALL_L_F1_X_DELTA_DONE:
 	video offset=CINEMATIC_HERO_FALL_LEFT_2, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif
 	mov [0x29], [HERO_X]
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, FALL_L_F2_X_DELTA_DONE
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, FALL_L_F2_X_DELTA_DONE
 ;@endif
 	je [HERO_POS_MASK], 0x00, HERO_TICK_BUNDLE_062_063
@@ -88,18 +85,7 @@ FALL_L_F2_X_DELTA_DONE:
 	add [HERO_Y], 0x0000
 ;@endif
 	sub [HERO_X], 0x0002
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-
-FALL_L_F3_X_DELTA_DONE:
-	break
-	call DRAW_CV_068_069_AND_CIN_002
-	sub [HERO_X], 0x0001
-	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, FALL_L_F3_INNER_DONE
-	sub [HERO_X], 0x0001
-
-FALL_L_F3_INNER_DONE:
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 FALL_L_F3_X_DELTA_DONE:
 	break
@@ -119,11 +105,7 @@ FALL_L_F3_INNER_DONE:
 	video offset=CINEMATIC_HERO_RESUME_LEFT_0, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif
 	sub [HERO_X], 0x0002
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-
-FALL_L_F4_X_DELTA_DONE:
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 FALL_L_F4_X_DELTA_DONE:
 ;@endif
@@ -183,59 +165,7 @@ HERO_FALL_L_F2_HOLD_LOOP:
 	sub [HERO_X], 0x0002
 
 MAYBE_RESUME_WALK_LEFT_IF_GROUNDED:
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	break
-	call DRAW_VIDEO_073_AND_CIN_002
-	je [HERO_POS_MASK], 0x00, HERO_RESUME_LEFT_F3_DONE
-	sub [HERO_X], 0x0002
-	break
-	call DRAW_VIDEO_074_AND_CINEMATIC_HERO_SHADOW_RET
-	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, RESUME_L_V074_DONE
-	je [HERO_POS_MASK], 0x00, HERO_TICK_VIDEO_073
-	sub [HERO_X], 0x0001
-
-RESUME_L_V074_DONE:
-	sub [HERO_X], 0x0001
-	break
-	call DRAW_VIDEO_075_AND_CINEMATIC_2_RET
-	call INVOKE_DRAW_HELPER_ON_BG_PAGE
-	mov [0x29], [HERO_X]
-	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, RESUME_L_V075_DONE
-	je [HERO_POS_MASK], 0x00, HERO_TICK_VIDEO_074
-	sub [HERO_X], 0x0001
-
-RESUME_L_V075_DONE:
-	sub [HERO_X], 0x0001
-	break
-	call DRAW_VIDEO_076_AND_CIN_002
-	mov [0x29], [HERO_X]
-	sub [HERO_X], 0x0001
-	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, RESUME_L_V076_DONE
-	sub [HERO_X], 0x0002
-
-RESUME_L_V076_DONE:
-	break
-	call DRAW_VIDEO_077_AND_CIN_002
-	sub [HERO_X], 0x0001
-	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, RESUME_L_V077_DONE
-	sub [HERO_X], 0x0001
-
-RESUME_L_V077_DONE:
-	break
-	play id=0x0051, freq=0x0B, vol=0x20, channel=0x01
-	call DRAW_VIDEO_078_AND_CIN_002
-	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, RESUME_L_V078_DONE
-	sub [HERO_X], 0x0002
-
-RESUME_L_V078_DONE:
-	break
-	call DRAW_CV_079_080_AND_CIN_002
-	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, RESUME_L_CV079080_DONE
-	sub [HERO_X], 0x0002
-
-RESUME_L_CV079080_DONE:
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	break
 	call DRAW_VIDEO_073_AND_CIN_002
 	je [HERO_POS_MASK], 0x00, HERO_RESUME_LEFT_F3_DONE

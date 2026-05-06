@@ -133,10 +133,7 @@ THE_LAB_CONSOLE_SUDDENLY_APPEARS_INSIDE_THE_ALIEN_POOL:
 	mov [0x06], 0x0028
 	mov [0x07], 0x0118
 	mov [0x09], 0x0050
-;@if BRANCH == "chahi_amiga_1991"
-	setup channel=0x07, address=POOL_WATER_WAVY_GLARE_ANIMATION
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 	setup channel=0x07, address=POOL_WATER_WAVY_GLARE_ANIMATION
 ;@endif
 	setup channel=0x0A, address=POOL_SURFACE_WAVES_ANIMATION

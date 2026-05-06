@@ -5,11 +5,7 @@ RENDER_FRAME_DISPATCH:
 	je [0x1C], 0x00, BLIT_FROM_PAGE_0_LOOP
 ;@endif
 	je [0x1C], 0x02, CLEAR_FRAMEBUFFER_TO_COLOR_4_LOOP
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jg [0x2A], 0x03, BLIT_FROM_PAGE_40_LOOP
-	jne [0xDB], 0x00, BLIT_FROM_PAGE_40_VIA_C0
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jg [0x2A], 0x03, BLIT_FROM_PAGE_40_LOOP
 	jne [0xDB], 0x00, BLIT_FROM_PAGE_40_VIA_C0
 ;@endif

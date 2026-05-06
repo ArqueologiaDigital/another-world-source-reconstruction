@@ -39,10 +39,7 @@ THE_BEAST_KILLS_LESTER:
 	copyVideoPage src=0x00, dst=0xFF
 ;@endif
 	selectVideoPage 0xFF
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	copyVideoPage src=0x00, dst=0xFF
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	copyVideoPage src=0x00, dst=0xFF
 ;@endif
 	video offset=CINEMATIC_BEAST_KILLING_LESTER_0, x=160, y=[0x0e], zoom=[0x0f]
@@ -122,13 +119,7 @@ POST_HERO_ACTION_RESET_VAR03:
 
 WAIT_HERO_RESPAWN_LOOP:
 	break
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	je [0xDB], 0x00, WAIT_HERO_JUMP_DOWN_INPUT
-	je [HERO_POS_JUMP_DOWN], 0xFFFF, A_VIDEO_ROUTINE_OF_SOME_SORT
-
-WAIT_HERO_JUMP_DOWN_INPUT:
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	je [0xDB], 0x00, WAIT_HERO_JUMP_DOWN_INPUT
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, A_VIDEO_ROUTINE_OF_SOME_SORT
 
@@ -141,10 +132,7 @@ A_VIDEO_ROUTINE_OF_SOME_SORT:
 	freezeChannels first=0x00, last=0x3F
 	deleteChannels first=0x00, last=0x3F
 	setup channel=0x00, address=LAKE_LEVEL_INIT
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 ;@endif
 	killChannel

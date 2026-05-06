@@ -140,10 +140,7 @@ INTRO_WAIT_KEY_RELEASE:
 	call SET_HERO_ACTION_TO_1_IF_GROUNDED_AND_DB_SET
 ;@endif
 	jne [HERO_ACTION], 0x00, INTRO_WAIT_KEY_RELEASE
-;@if BRANCH == "chahi_amiga_1991"
-	setPalette 0x1D
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 	setPalette 0x1D
 ;@endif
 
@@ -152,25 +149,14 @@ INTRO_WAIT_KEY_PRESS:
 	text id=0x013C, x=5, y=180, color=0x0D
 	text id=0x015E, x=26, y=180, color=0x0E
 	break
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	call SET_HERO_ACTION_TO_1_IF_GROUNDED_AND_DB_SET
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call SET_HERO_ACTION_TO_1_IF_GROUNDED_AND_DB_SET
 ;@endif
 	je [HERO_ACTION], 0x00, INTRO_WAIT_KEY_PRESS
 	mov [0x00], 0x000A
 	setup channel=0x00, address=ENTRY_POINT_OF_LAKE_LEVEL
 	killChannel
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-
-SET_HERO_ACTION_TO_1_IF_GROUNDED_AND_DB_SET:
-	je [0xDB], 0x00, RET_TARGET_1A88
-	jne [HERO_POS_JUMP_DOWN], 0xFFFF, RET_TARGET_1A88
-	mov [HERO_ACTION], 0x0001
-	ret
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 SET_HERO_ACTION_TO_1_IF_GROUNDED_AND_DB_SET:
 	je [0xDB], 0x00, RET_TARGET_1A88
@@ -206,16 +192,7 @@ SET_HERO_ACTION_TO_1_IF_GROUNDED_AND_DB_SET:
 	load id=0x3E80
 	killChannel
 
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-BLIT_FROM_PAGE_40_LOOP:
-	blitFramebuffer 0xFF
-	selectVideoPage 0xFF
-	copyVideoPage src=0x40, dst=0xFF
-	break
-	jmp BLIT_FROM_PAGE_40_LOOP
-
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 BLIT_FROM_PAGE_40_LOOP:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF

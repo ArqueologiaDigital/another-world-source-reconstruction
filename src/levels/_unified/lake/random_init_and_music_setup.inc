@@ -75,10 +75,7 @@ START_LAKE_BG_MUSIC_AND_DELETE_CH_0_2:
 	setup channel=0x01, address=INIT_HERO_AT_POOL_EXIT
 	setup channel=0x14, address=GETTING_OUT_OF_THE_POOL__ANIMATION_PART_4
 	setup channel=0x09, address=BEETLE_INIT_POS_THEN_WALK_LEFT
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x09, address=KILL_CHANNEL_ROUTINE
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x09, address=KILL_CHANNEL_ROUTINE
 ;@endif
 	setup channel=0x2E, address=BEETLE_KICK_DETECTOR

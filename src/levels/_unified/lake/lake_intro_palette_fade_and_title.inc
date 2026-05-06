@@ -42,10 +42,7 @@ WAIT_VAR_03_FRAMES_LOOP:
 POST_LAKE_INTRO_FADE_AND_TEXT:
 ;@endif
 	freezeChannels first=0x00, last=0x3B
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	setup channel=0x00, address=DISPLAY_TEXT_01FA_AND_FADE_TO_PAL_2
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x00, address=DISPLAY_TEXT_01FA_AND_FADE_TO_PAL_2
 ;@endif
 	deleteChannels first=0x00, last=0x3B

@@ -21,11 +21,7 @@ VINE_SCREEN_LEFT_EDGE:
 VINE_EXIT_LEFT_TO_FIRST:
 ;@endif
 	jg [HERO_X], 0xFFE7, VINE_SCREEN_YIELD_RESTART
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-
-ENTER_VINE_SCREEN_FROM_LEFT:
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 ENTER_VINE_SCREEN_FROM_LEFT:
 ;@endif
@@ -62,11 +58,7 @@ FIRST_SCR_R_LEFT_EDGE:
 ENTER_SECOND_SCREEN_FROM_LEFT:
 ;@endif
 	jg [HERO_X], 0xFFE7, FIRST_SCR_R_YIELD_RESTART
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-
-FIRST_SCR_R_RIGHT_TRANSITION:
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 FIRST_SCR_R_RIGHT_TRANSITION:
 ;@endif
@@ -81,20 +73,12 @@ FIRST_SCR_R_YIELD_RESTART:
 	killChannel
 
 CHECK_HERO_SECOND_SCR_R_EDGE:
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jl [HERO_X], 0x0146, SECOND_SCR_R_LEFT_EDGE
-	je [0x63], 0x02, SECOND_SCR_R_RIGHT_TRANSITION
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jl [HERO_X], 0x0146, SECOND_SCR_R_LEFT_EDGE
 	je [0x63], 0x02, SECOND_SCR_R_RIGHT_TRANSITION
 ;@endif
 	jl [HERO_X], 0x0159, SECOND_SCR_R_LEFT_EDGE
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-
-SECOND_SCR_R_RIGHT_TRANSITION:
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 SECOND_SCR_R_RIGHT_TRANSITION:
 ;@endif
@@ -108,20 +92,12 @@ JMP_TO_THIRD_SCREEN:
 	jmp THIRD_SCREEN_TO_THE_RIGHT
 
 SECOND_SCR_R_LEFT_EDGE:
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jg [HERO_X], 0xFFFA, SECOND_SCR_R_YIELD_RESTART
-	je [0x63], 0x01, ENTER_FIRST_SCREEN_TO_THE_RIGHT
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jg [HERO_X], 0xFFFA, SECOND_SCR_R_YIELD_RESTART
 	je [0x63], 0x01, ENTER_FIRST_SCREEN_TO_THE_RIGHT
 ;@endif
 	jg [HERO_X], 0xFFE7, SECOND_SCR_R_YIELD_RESTART
-;@if BRANCH in ("cartridge_1992", "gba_2004")
-
-ENTER_FIRST_SCREEN_TO_THE_RIGHT:
-;@endif
-;@if BRANCH == "dos_1992"
+;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 ENTER_FIRST_SCREEN_TO_THE_RIGHT:
 ;@endif
