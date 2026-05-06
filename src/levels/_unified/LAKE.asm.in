@@ -114,8 +114,11 @@ COUNTER		EQU 0x10
 ; Lester at-pool idle / breathing / falling / recover poses.
 ;@include "lake/lester_at_pool_animations.inc"
 
-; Decor frames F7..F18 + entity-drop sequence + Lester arm-raise / at-pool-hold animations (mixed; tracked for split as R7 in research/21-unified-chunk-audit).
-;@include "lake/decor_f7_through_f14.inc"
+; Animated decor element at fixed position (305, 155) — frames F7..F14 cycle as a background detail during the LAKE intro.
+;@include "lake/lake_decor_at_305_155.inc"
+
+; LAKE-intro narrative: Lester emerges from the pool. Entity-drop animation, F15..F18 transition, RIGHT_CROUCHING landing frames, hand-raise sequence, finally LESTER_AT_POOL_HOLD_LOOP idle.
+;@include "lake/lake_intro_lester_emerges_from_pool.inc"
 
 ; LAKE intro cinematic setup (pre-gameplay scripted sequence).
 ;@include "lake/lake_intro_setup.inc"
