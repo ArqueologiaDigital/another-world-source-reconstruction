@@ -168,11 +168,11 @@ COUNTER		EQU 0x10
 ; Beast-vs-Lester distance gating + per-screen spawn dispatch.
 ;@include "lake/beast_distance_check_and_spawns.inc"
 
-; Random-pick ambient growl / footstep cue for the beast.
+; Random-pick ambient growl / footstep cue for the beast (RANDOM_BEAST_AMBIENT_SOUND, 6-case branch on var 0xF8).
 ;@include "lake/beast_ambient_sound.inc"
 
-; Beast AI: mid- and right-screen spawn case dispatcher.
-;@include "lake/beast_ai_spawn_mid_right.inc"
+; Beast AI: mid-right-screen spawn entry (BEAST_AI_SPAWN_MID_RIGHT + hold-loop + after-hold approach).
+;@include "lake/beast_ai/spawn.inc"
 
 ; Beast drift-left animation + generic ADVANCE_X_FORWARD/BACKWARD_ONE_SCREEN screen-shift helpers (mixed; tracked for split as R6 in research/21-unified-chunk-audit).
 ;@include "lake/beast_drift_and_screen_shift.inc"
@@ -195,8 +195,8 @@ COUNTER		EQU 0x10
 ; Slug enemy phase 1: birth and death animations.
 ;@include "lake/slug_phase_1_birth_and_death.inc"
 
-; Beast AI: direction-pick + proximity-based decisions.
-;@include "lake/beast_ai_pick_dir_and_proximity.inc"
+; Beast AI: random-direction pick + proximity-flag set/clear helpers (BEAST_AI_BRANCH_ON_VAR_66_AND_2C + FLAG_PROXIMITY_TRUE_THEN_CHECK).
+;@include "lake/beast_ai/pick_dir_and_proximity.inc"
 
 ; Generic horizontal-proximity check + beast-AI range-bounds helpers + slug-side proximity dispatchers (mixed; tracked for split as R4 in research/21-unified-chunk-audit).
 ;@include "lake/proximity_helpers_and_dispatch.inc"
@@ -204,8 +204,8 @@ COUNTER		EQU 0x10
 ; Slug walk movement gated by proximity to Lester.
 ;@include "lake/slug_walk_proximity.inc"
 
-; Top-level beast AI dispatcher keyed off HERO_X + state var.
-;@include "lake/beast_ai_dispatch.inc"
+; Beast AI: top-level dispatcher keyed off HERO_X + var 0x0D (delegates into slug routines for the actual movement / animation).
+;@include "lake/beast_ai/dispatch.inc"
 
 ; Slug animation cycle + sprite-flip helpers.
 ;@include "lake/slug_anim_and_flip.inc"

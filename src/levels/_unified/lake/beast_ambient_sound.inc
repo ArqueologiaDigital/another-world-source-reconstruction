@@ -24,3 +24,11 @@ PLAY_BEAST_AMBIENT_F12:
 	play id=0x0050, freq=0x12, vol=0x18, channel=0x00
 	ret
 
+BEAST_AMBIENT_CASE_5:
+	jne [0xF8], 0x05, BEAST_AMBIENT_CASE_6
+	ret
+
+BEAST_AMBIENT_CASE_6:
+	jne [0xF8], 0x06, RET_TARGET_1A88
+	ret
+
