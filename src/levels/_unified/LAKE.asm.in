@@ -189,8 +189,8 @@ COUNTER		EQU 0x10
 ; Animation multiplex rings (slot-rotation scheduler shared by several anims).
 ;@include "lake/multiplex_anim_rings.inc"
 
-; Multiplex anim ring-5 save loop + beast-proximity check chain (mixed — two unrelated topics; tracked for split as R3 in research/21-unified-chunk-audit).
-;@include "lake/multiplex_ring5_and_beast_proximity.inc"
+; Beast AI: proximity check (CHECK_IF_BEAST_IS_NEAR_LESTER + IF_BEAST_NEAR_THEN_REACT_*) — gates beast/slug reactions on a horizontal-window check around HERO_X.
+;@include "lake/beast_ai/proximity.inc"
 
 ; Slug enemy phase 1: birth and death animations.
 ;@include "lake/slug_phase_1_birth_and_death.inc"

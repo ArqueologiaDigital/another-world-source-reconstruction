@@ -1,11 +1,3 @@
-MULTIPLEX_RING5_SAVE_LOOP:
-	mov [0x5B], [0x0C]
-	mov [0x5C], [0x0D]
-	mov [0x5D], [0x13]
-	break
-	jmp MULTIPLEX_RING5_SAVE_LOOP
-	killChannel
-
 JMP_TO_CHECK_BEAST_NEAR:
 	jmp CHECK_IF_BEAST_IS_NEAR_LESTER
 	mov [0x07], 0x0000
