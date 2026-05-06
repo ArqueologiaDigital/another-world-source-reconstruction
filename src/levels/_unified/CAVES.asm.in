@@ -324,7 +324,7 @@ HERO_Y		EQU 0x02
 ; CAVES scroll setup + scroll-blit helpers (SCROLL_BLIT_P83_TO_PFF).
 ;@include "caves/caves_scroll_setup_and_helpers.inc"
 
-; CAVES scroll init + SFX setup (vertical scroll + audio cues).
+; CAVES scroll init + SFX setup — INIT_VARS_2F_29_12 + PLAY_SFX_005C_CH00 + DEDUP_CAVES_5B_003 (kill-channel teardown). Mostly heavy `;@include "_helpers/*.inc"` of shared math/projection helpers (COMPUTE_VAR26 / INCREMENT_VAR21 / etc.) with arm-specific tails — the fold output of the scroll-init phase.
 ;@include "caves/caves_scroll_init_and_sfx.inc"
 
 ; CAVES deduplicated short-body routines (DEDUP_CAVES_6B_*) — auto-salvaged from match_arms rounds.
@@ -336,5 +336,5 @@ HERO_Y		EQU 0x02
 ; CAVES gameplay action helpers — INIT_VARS_E6_EA / LOAD_RES44 / COPY_PAGE0_TO_3_LOAD_RES45 (resource-load helpers); DELETE_GAME_AND_FX_CHANNELS (teardown); INIT_AI_VARS_AT_280_10 (AI-position init); DEDUP_CAVES_5B_035/036 (folded short-body helpers).
 ;@include "caves/caves_action_helpers.inc"
 
-; CAVES inline break-then-set sequences (SET_VAR18 + chained breaks).
+; CAVES animation step-draws — SET_VAR18_TO_0122 var setter, STEP_LEFT4_DRAW_CV140_LEFT4 (multistep walking helper), STEP_DRAW_CV336_THEN_CV340 / STEP_DRAW_CV329_THEN_CV335 (paired-frame draws with walking offsets), and 3 INLINE_BREAK_035 single-instruction break helpers. Filename understates — the "inline breaks" are only 3 of 7 routines.
 ;@include "caves/caves_inline_breaks.inc"
