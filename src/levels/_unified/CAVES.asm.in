@@ -333,7 +333,7 @@ HERO_Y		EQU 0x02
 ; CAVES var22 setters + projection helpers (state-machine bookkeeping).
 ;@include "caves/caves_var22_setters_and_projections.inc"
 
-; CAVES gameplay action helpers (INIT_VARS_E6_EA et al.).
+; CAVES gameplay action helpers — INIT_VARS_E6_EA / LOAD_RES44 / COPY_PAGE0_TO_3_LOAD_RES45 (resource-load helpers); DELETE_GAME_AND_FX_CHANNELS (teardown); INIT_AI_VARS_AT_280_10 (AI-position init); DEDUP_CAVES_5B_035/036 (folded short-body helpers).
 ;@include "caves/caves_action_helpers.inc"
 
 ; CAVES inline break-then-set sequences (SET_VAR18 + chained breaks).
