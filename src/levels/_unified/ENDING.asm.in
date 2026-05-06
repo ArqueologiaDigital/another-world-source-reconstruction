@@ -86,8 +86,14 @@
 
 ;@endif
 
-; ENDING channel teardown — DELETE_ALL_CHANS_AND_KILL.
+; ENDING channel teardown — DELETE_ALL_CHANS_AND_KILL + PRELOAD_RESOURCES_8_TO_1.
 ;@include "ending/ending_channel_cleanup.inc"
+
+; ENDING credits cinematic-draw loops — DRAW_CIN_97_TO_100, _101_102, _103_LOOP, _58_ANIM, _59_TO_64. The credits sequence is the alien-natives celebration + spaceship ascent + freeze-frame credits roll.
+;@include "ending/ending_credits_cinematics.inc"
+
+; ENDING tail: drift / delay helpers (DRIFT_VAR_4_PLUS_10, DRIFT_VAR_3_MINUS_1 variants, DELAY_VAR6_THEN_*) — utility loops that step state vars and gate channel transitions during the credits.
+;@include "ending/ending_drift_and_delay_helpers.inc"
 
 ; ENDING var setups (INIT_VARE_TO_12 et al.).
 ;@include "ending/ending_var_setups.inc"
