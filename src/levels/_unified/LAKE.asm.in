@@ -85,19 +85,19 @@ COUNTER		EQU 0x10
 ;@include "lake/droplet_fall_and_random_pos.inc"
 
 ; Scatter-dot particle effect: burst-right then drift.
-;@include "lake/scatter_dots_burst_right_drift.inc"
+;@include "lake/scatter_dots/burst_right_and_drift.inc"
 
 ; Combined particle-burst cycle + droplet-drip animation.
 ;@include "lake/particle_bursts_and_droplet_drip.inc"
 
 ; 3-dot scatter effect with screen-region classification.
-;@include "lake/scatter_3dots_classify_regions.inc"
+;@include "lake/scatter_dots/classify_regions.inc"
 
 ; 4-dot scatter init + drift loop variants.
-;@include "lake/scatter_dots_init_and_drift.inc"
+;@include "lake/scatter_dots/init_and_drift.inc"
 
 ; 8-dot scatter loops (left and right variants).
-;@include "lake/scatter_8dots_loops.inc"
+;@include "lake/scatter_dots/eight_dots_loops.inc"
 
 ; Beast laser-death animation — fired by the LAKE-intro BEAST_PRE_KILL_WAIT chain (the alien natives shoot the beast in the opening cinematic; Lester has no gun in LAKE).
 ;@include "lake/beast_killed_by_laser.inc"
