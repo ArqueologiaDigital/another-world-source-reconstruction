@@ -116,7 +116,7 @@
 ; 0x0A/0x0B for the helix tick + draw loops; `DRAW_DNA_ANIMATION_LOOP`
 ; is the per-frame redraw. Includes
 ; `DRAW_CIN_035_PAL_3_REPEAT_HEAD` (target of a `jmp` from
-; INTRO DNA-helix animation (intro logo / lab establishing shot).
+; INTRO DNA-helix animation (SETUP_INTRO_DNA_CHANNELS / DNA_VAR_05 hold + drift loops + DRAW_CINEMATICS_166_171) followed by the lab-cinematic tail (DRAW_CIN_453_454_SEQ + DRAW_CIN_035_PAL_3_REPEAT_HEAD + DRAW_CIN_048_15_FRAMES_LOOP) that hands off to the next phase via setup-channel calls.
 ;@include "intro/intro_dna_animation.inc"
 
 ; Per-channel initialiser routines (`CH_0A_INIT_VAR_02`,
@@ -198,7 +198,7 @@
 ; loops `SELECT_PAGE0_AND_DISPATCH_BLIT`, `SELECT_PAGE_FF_LOOP`,
 ; the underwater pool reveal). Counterpart to
 ; `intro_transition_to_lake_setup.inc` — the setup chunk wires the
-; INTRO lake-transition scene (CH_03_INIT_VAR_03_04).
+; INTRO lake-transition scene — the multi-phase cinematic that owns CH_02..CH_05 channel inits, the cinematic slide/rise/drift animations (SLIDE_CIN_448, RISE_CIN_447 / 130, DRAW_CIN_442..446 descending-Y phases, DRIFT_CIN_117 at five different positions), the city-seq channel setup, and the BLITTER_CYCLE that runs the page-flip during the transition. Largest INTRO chunk at 414 lines / 49 labels — kept whole because the scene flow is sequential.
 ;@include "intro/intro_lake_transition.inc"
 
 ; INTRO lake-phase visual FX (CIN_120 drift loop + particle drifts).
