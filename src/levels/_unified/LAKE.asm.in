@@ -96,16 +96,16 @@ COUNTER		EQU 0x10
 ; 8-dot scatter loops (left and right variants).
 ;@include "lake/scatter_8dots_loops.inc"
 
-; Beast-killed-by-laser death sequence (after Lester gets the gun).
+; Beast laser-death animation — fired by the LAKE-intro BEAST_PRE_KILL_WAIT chain (the alien natives shoot the beast in the opening cinematic; Lester has no gun in LAKE).
 ;@include "lake/beast_killed_by_laser.inc"
 
-; Scene-transition handler from intro into getting-out-of-pool + misc decor.
+; Scene-transition channel-setup head + beast-intro-cinematic kill timing + LAKE intro palette fade-in + ANOTHER WORLD title text + decor-at-fixed-positions loops (mixed — five unrelated topics; tracked for split as R5 in research/21-unified-chunk-audit).
 ;@include "lake/scene_transition_and_decor.inc"
 
 ; Lester at-pool idle / breathing / falling / recover poses.
 ;@include "lake/lester_at_pool_animations.inc"
 
-; Decoration animation set F7..F14 (blink / cycle effects on environment props).
+; Decor frames F7..F18 + entity-drop sequence + Lester arm-raise / at-pool-hold animations (mixed; tracked for split as R7 in research/21-unified-chunk-audit).
 ;@include "lake/decor_f7_through_f14.inc"
 
 ; LAKE intro cinematic setup (pre-gameplay scripted sequence).
@@ -174,7 +174,7 @@ COUNTER		EQU 0x10
 ; Beast AI: mid- and right-screen spawn case dispatcher.
 ;@include "lake/beast_ai_spawn_mid_right.inc"
 
-; Beast drift movement + cross-screen shift bookkeeping.
+; Beast drift-left animation + generic ADVANCE_X_FORWARD/BACKWARD_ONE_SCREEN screen-shift helpers (mixed; tracked for split as R6 in research/21-unified-chunk-audit).
 ;@include "lake/beast_drift_and_screen_shift.inc"
 
 ; Beast approach-and-decelerate animation tick.
@@ -189,7 +189,7 @@ COUNTER		EQU 0x10
 ; Animation multiplex rings (slot-rotation scheduler shared by several anims).
 ;@include "lake/multiplex_anim_rings.inc"
 
-; Multiplex ring 5 + beast-proximity gating.
+; Multiplex anim ring-5 save loop + beast-proximity check chain (mixed — two unrelated topics; tracked for split as R3 in research/21-unified-chunk-audit).
 ;@include "lake/multiplex_ring5_and_beast_proximity.inc"
 
 ; Slug enemy phase 1: birth and death animations.
@@ -198,7 +198,7 @@ COUNTER		EQU 0x10
 ; Beast AI: direction-pick + proximity-based decisions.
 ;@include "lake/beast_ai_pick_dir_and_proximity.inc"
 
-; Generic horizontal/vertical proximity helpers used by enemy AI.
+; Generic horizontal-proximity check + beast-AI range-bounds helpers + slug-side proximity dispatchers (mixed; tracked for split as R4 in research/21-unified-chunk-audit).
 ;@include "lake/proximity_helpers_and_dispatch.inc"
 
 ; Slug walk movement gated by proximity to Lester.
