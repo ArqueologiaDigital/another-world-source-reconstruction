@@ -164,6 +164,6 @@ BEAST_SURPRISE_PHASE7_HOLD:
 ;@if BRANCH == "gba_2004"
 	song id=0x0FA3, delay=0x0000, pos=0x00
 ;@endif
-	jmp BEAST_AI_SPAWN_MID_RIGHT
+	jmp BEAST_SPAWN_MID_RIGHT
 	killChannel
 

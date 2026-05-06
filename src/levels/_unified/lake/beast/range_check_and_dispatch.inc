@@ -11,36 +11,36 @@ EXIT_PATH_FROM_PROXIMITY_OUT_OF_RANGE:
 	je [0x06], 0x00, RET_TARGET_313D
 	jg [0x06], 0x02, RET_TARGET_313D
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
-	jg [HERO_X], [0x04], BEAST_AI_RANGE_CHECK_INIT_CART
+	jg [HERO_X], [0x04], BEAST_RANGE_CHECK_INIT_CART
 ;@endif
 	mov [0x12], [0x04]
 	mov [0x13], [0x04]
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	add [0x12], 0x0008
 	sub [0x13], 0x000C
-	jmp BEAST_AI_RANGE_CHECK_VAR_39
+	jmp BEAST_RANGE_CHECK_VAR_39
 ;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	sub [0x13], 0x0007
-	jl [HERO_X], [0x04], BEAST_AI_RANGE_CHECK_INIT_CART
+	jl [HERO_X], [0x04], BEAST_RANGE_CHECK_INIT_CART
 	mov [0x13], [0x04]
 	mov [0x12], [0x04]
 	add [0x12], 0x0007
 ;@endif
 
-BEAST_AI_RANGE_CHECK_INIT_CART:
+BEAST_RANGE_CHECK_INIT_CART:
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	mov [0x13], [0x04]
 	mov [0x12], [0x04]
 	sub [0x13], 0x0008
 	add [0x12], 0x000C
 
-BEAST_AI_RANGE_CHECK_VAR_39:
+BEAST_RANGE_CHECK_VAR_39:
 	mov [0x3A], [0x0C]
 	sub [0x3A], 0x0004
-	je [0x39], 0x01, BEAST_AI_RANGE_BOUNDS_CHK
+	je [0x39], 0x01, BEAST_RANGE_BOUNDS_CHK
 	add [0x3A], 0x0008
 
-BEAST_AI_RANGE_BOUNDS_CHK:
+BEAST_RANGE_BOUNDS_CHK:
 	jg [0x3A], [0x12], RET_TARGET_313D
 	jl [0x3A], [0x13], RET_TARGET_313D
 ;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")

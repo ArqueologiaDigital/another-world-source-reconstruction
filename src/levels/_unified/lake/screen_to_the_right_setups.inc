@@ -23,13 +23,13 @@ FIRST_SCREEN_R_BEAST_TRIGGER:
 
 FIRST_SCREEN_R_SETUP_CHANNELS:
 	setup channel=0x0B, address=MULTIPLEX_ANIM_RING1_SLOT_0
-	setup channel=0x0C, address=BEAST_AI_DISPATCH_BY_X_AND_VAR_0D
+	setup channel=0x0C, address=BEAST_DISPATCH_BY_X_AND_VAR_0D
 	setup channel=0x0D, address=MULTIPLEX_ANIM_RING1_SLOT_1
-	setup channel=0x0E, address=BEAST_AI_DISPATCH_BY_X_AND_VAR_0D
+	setup channel=0x0E, address=BEAST_DISPATCH_BY_X_AND_VAR_0D
 	setup channel=0x0F, address=MULTIPLEX_ANIM_RING1_SLOT_2
-	setup channel=0x10, address=BEAST_AI_DISPATCH_BY_X_AND_VAR_0D
+	setup channel=0x10, address=BEAST_DISPATCH_BY_X_AND_VAR_0D
 	setup channel=0x11, address=MULTIPLEX_ANIM_RING1_SLOT_3
-	setup channel=0x12, address=BEAST_AI_DISPATCH_BY_X_AND_VAR_0D
+	setup channel=0x12, address=BEAST_DISPATCH_BY_X_AND_VAR_0D
 	setup channel=0x13, address=MULTIPLEX_RING3_SAVE_LOOP
 	setup channel=0x35, address=SCATTER_3DOT_BURST_LEFT
 	setup channel=0x36, address=DRAW_8_SCATTER_DOTS_CYCLE
@@ -100,13 +100,13 @@ SECOND_SCREEN_R_BEAST_TRIGGER:
 
 SECOND_SCREEN_R_SETUP_CHANNELS:
 	setup channel=0x0B, address=MULTIPLEX_ANIM_RING2_SLOT_0
-	setup channel=0x0C, address=BEAST_AI_DISPATCH_BY_X_AND_VAR_0D
+	setup channel=0x0C, address=BEAST_DISPATCH_BY_X_AND_VAR_0D
 	setup channel=0x0D, address=MULTIPLEX_ANIM_RING2_SLOT_1
-	setup channel=0x0E, address=BEAST_AI_DISPATCH_BY_X_AND_VAR_0D
+	setup channel=0x0E, address=BEAST_DISPATCH_BY_X_AND_VAR_0D
 	setup channel=0x0F, address=MULTIPLEX_ANIM_RING2_SLOT_2
-	setup channel=0x10, address=BEAST_AI_DISPATCH_BY_X_AND_VAR_0D
+	setup channel=0x10, address=BEAST_DISPATCH_BY_X_AND_VAR_0D
 	setup channel=0x11, address=MULTIPLEX_RING4_SAVE_LOOP
-	setup channel=0x12, address=BEAST_AI_DISPATCH_BY_X_AND_VAR_0D
+	setup channel=0x12, address=BEAST_DISPATCH_BY_X_AND_VAR_0D
 	setup channel=0x13, address=MULTIPLEX_RING5_SAVE_LOOP
 	setup channel=0x36, address=SCATTER_3DOT_BURST_RIGHT
 	setup channel=0x37, address=DRAW_8_SCATTER_DOTS_CYCLE

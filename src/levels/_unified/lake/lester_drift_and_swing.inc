@@ -302,7 +302,7 @@ LESTER_GRABS_A_VINE_AND_SWINGS:
 	mov [HERO_Y], 0x00B6
 	mov [0x63], 0x0002
 	jne [0x2A], 0x04, KILL_IF_NOT_SCENE_4
-	setup channel=0x28, address=BEAST_AI_SPAWN_FAR_LEFT
+	setup channel=0x28, address=BEAST_SPAWN_FAR_LEFT
 	setup channel=0x29, address=WAIT_UNTIL_BEAST_CLOSE
 	mov [0x2A], 0x0005
 
