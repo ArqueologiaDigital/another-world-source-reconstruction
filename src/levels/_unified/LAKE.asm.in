@@ -187,10 +187,10 @@ COUNTER		EQU 0x10
 ;@include "lake/beast_ambient_sound.inc"
 
 ; Beast AI: mid-right-screen spawn entry (BEAST_AI_SPAWN_MID_RIGHT + hold-loop + after-hold approach).
-;@include "lake/beast_ai/spawn.inc"
+;@include "lake/beast/spawn.inc"
 
 ; Beast AI: drift-left animation (BEAST_APPROACH_FAST_LOOP + DRAW_BEAST_DRIFT_LEFT_*) — beast retreating across the screen on hit / from far-right spawn.
-;@include "lake/beast_ai/drift_left.inc"
+;@include "lake/beast/drift_left.inc"
 
 ; Generic per-screen X-shift helpers (ADVANCE_X_FORWARD/BACKWARD_ONE_SCREEN, SHIFT_X_RIGHT/LEFT_320) — used by hero, screen-edge transitions, and beast.
 ;@include "lake/screen_shift_helpers.inc"
@@ -208,22 +208,22 @@ COUNTER		EQU 0x10
 ;@include "lake/multiplex_anim_rings.inc"
 
 ; Beast AI: proximity check (CHECK_IF_BEAST_IS_NEAR_LESTER + IF_BEAST_NEAR_THEN_REACT_*) — gates beast/slug reactions on a horizontal-window check around HERO_X.
-;@include "lake/beast_ai/proximity.inc"
+;@include "lake/beast/proximity.inc"
 
 ; Slug enemy phase 1: birth and death animations.
 ;@include "lake/slug_phase_1_birth_and_death.inc"
 
 ; Beast AI: random-direction pick + proximity-flag set/clear helpers (BEAST_AI_BRANCH_ON_VAR_66_AND_2C + FLAG_PROXIMITY_TRUE_THEN_CHECK).
-;@include "lake/beast_ai/pick_dir_and_proximity.inc"
+;@include "lake/beast/pick_dir_and_proximity.inc"
 
 ; Beast AI: horizontal-range check + per-port range bounds + on-match dispatch into slug-side reactions (CHECK_HORIZONTAL_PROXIMITY falls through into BEAST_AI_RANGE_CHECK_* via `;@if BRANCH`, then DISPATCH_ON_PROXIMITY_TO_* fans out to slug animation entry points).
-;@include "lake/beast_ai/range_check_and_dispatch.inc"
+;@include "lake/beast/range_check_and_dispatch.inc"
 
 ; Slug walk movement gated by proximity to Lester.
 ;@include "lake/slug_walk_proximity.inc"
 
 ; Beast AI: top-level dispatcher keyed off HERO_X + var 0x0D (delegates into slug routines for the actual movement / animation).
-;@include "lake/beast_ai/dispatch.inc"
+;@include "lake/beast/dispatch.inc"
 
 ; Slug animation cycle + sprite-flip helpers.
 ;@include "lake/slug_anim_and_flip.inc"
