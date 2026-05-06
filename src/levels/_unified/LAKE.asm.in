@@ -99,8 +99,17 @@ COUNTER		EQU 0x10
 ; Beast laser-death animation — fired by the LAKE-intro BEAST_PRE_KILL_WAIT chain (the alien natives shoot the beast in the opening cinematic; Lester has no gun in LAKE).
 ;@include "lake/beast_killed_by_laser.inc"
 
-; Scene-transition channel-setup head + beast-intro-cinematic kill timing + LAKE intro palette fade-in + ANOTHER WORLD title text + decor-at-fixed-positions loops (mixed — five unrelated topics; tracked for split as R5 in research/21-unified-chunk-audit).
-;@include "lake/scene_transition_and_decor.inc"
+; Scene-transition channel-setup head — schedules the per-channel routines for the post-tentacle "getting out of pool" beat (rings, decor, Lester-falling).
+;@include "lake/scene_transition_to_getting_out_of_pool.inc"
+
+; LAKE-intro cinematic kill timing — drives the alien-natives-shoot-the-beast moment by counting down var 0x34, then setup-overwrites channel 0x29 with THE_BEAST_IS_KILLED_BY_A_LASER_SHOT.
+;@include "lake/beast_intro_cinematic_kill.inc"
+
+; LAKE-intro palette-fade-in (8-step setPalette chain) + WAIT_VAR_03 wait + DISPLAY_TEXT_01FA "ANOTHER WORLD / L'AUTRE MONDE" title-text fade.
+;@include "lake/lake_intro_palette_fade_and_title.inc"
+
+; Decor channels at fixed positions used during the LAKE intro: the 327×164 right-edge decor, its blink-pattern variant, and the 305×155 background scene-element draw.
+;@include "lake/lake_intro_decor_loops.inc"
 
 ; Lester at-pool idle / breathing / falling / recover poses.
 ;@include "lake/lester_at_pool_animations.inc"

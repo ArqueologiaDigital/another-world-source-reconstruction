@@ -1,0 +1,14 @@
+BEAST_PRE_KILL_WAIT:
+	break
+	sub [0x34], 0x0001
+	je [0x34], 0x01, BEAST_KILLED_POST_DELAY
+	jl [0x0E], 0xB4, BEAST_PRE_KILL_WAIT
+	setup channel=0x28, address=KILL_CHANNEL_ROUTINE
+	setup channel=0x29, address=THE_BEAST_IS_KILLED_BY_A_LASER_SHOT
+
+BEAST_KILLED_POST_DELAY:
+	break
+	djnz [0x34], BEAST_KILLED_POST_DELAY
+	jmp LAKE_INTRO_SETUP
+	killChannel
+
