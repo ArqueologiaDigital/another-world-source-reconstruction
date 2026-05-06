@@ -183,8 +183,11 @@ COUNTER		EQU 0x10
 ; Beast AI: mid-right-screen spawn entry (BEAST_AI_SPAWN_MID_RIGHT + hold-loop + after-hold approach).
 ;@include "lake/beast_ai/spawn.inc"
 
-; Beast drift-left animation + generic ADVANCE_X_FORWARD/BACKWARD_ONE_SCREEN screen-shift helpers (mixed; tracked for split as R6 in research/21-unified-chunk-audit).
-;@include "lake/beast_drift_and_screen_shift.inc"
+; Beast AI: drift-left animation (BEAST_APPROACH_FAST_LOOP + DRAW_BEAST_DRIFT_LEFT_*) — beast retreating across the screen on hit / from far-right spawn.
+;@include "lake/beast_ai/drift_left.inc"
+
+; Generic per-screen X-shift helpers (ADVANCE_X_FORWARD/BACKWARD_ONE_SCREEN, SHIFT_X_RIGHT/LEFT_320) — used by hero, screen-edge transitions, and beast.
+;@include "lake/screen_shift_helpers.inc"
 
 ; Beast approach-and-decelerate animation tick.
 ;@include "lake/beast_approach_decel.inc"
