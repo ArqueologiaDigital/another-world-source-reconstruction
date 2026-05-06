@@ -198,8 +198,8 @@ COUNTER		EQU 0x10
 ; Beast AI: random-direction pick + proximity-flag set/clear helpers (BEAST_AI_BRANCH_ON_VAR_66_AND_2C + FLAG_PROXIMITY_TRUE_THEN_CHECK).
 ;@include "lake/beast_ai/pick_dir_and_proximity.inc"
 
-; Generic horizontal-proximity check + beast-AI range-bounds helpers + slug-side proximity dispatchers (mixed; tracked for split as R4 in research/21-unified-chunk-audit).
-;@include "lake/proximity_helpers_and_dispatch.inc"
+; Beast AI: horizontal-range check + per-port range bounds + on-match dispatch into slug-side reactions (CHECK_HORIZONTAL_PROXIMITY falls through into BEAST_AI_RANGE_CHECK_* via `;@if BRANCH`, then DISPATCH_ON_PROXIMITY_TO_* fans out to slug animation entry points).
+;@include "lake/beast_ai/range_check_and_dispatch.inc"
 
 ; Slug walk movement gated by proximity to Lester.
 ;@include "lake/slug_walk_proximity.inc"
