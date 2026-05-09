@@ -11,13 +11,13 @@ PLAY_SFX_005C_CH01:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-;@include "../_helpers/FOLD_BODY_37B_9FD2CEA6.inc"
+;@include "../_helpers/RET_THEN_KILL_CHANNEL.inc"
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
-;@include "cart__post_FOLD_BODY_37B_9FD2CEA6.inc"
+;@include "cart__post_RET_THEN_KILL_CHANNEL.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "dos__post_FOLD_BODY_37B_9FD2CEA6.inc"
+;@include "dos__post_RET_THEN_KILL_CHANNEL.inc"
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
