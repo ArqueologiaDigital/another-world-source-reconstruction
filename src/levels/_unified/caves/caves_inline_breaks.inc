@@ -98,8 +98,7 @@ STEP_LEFT4_DRAW_CV140_LEFT4:
 ;@include "dos__post_INLINE_BREAK_041.inc"
 ;@endif
 
-INLINE_BREAK_035:
-	break
+;@include "../_helpers/INLINE_BREAK_035.inc"
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INLINE_BREAK_042.inc"
@@ -109,8 +108,7 @@ INLINE_BREAK_035:
 ;@include "dos__post_INLINE_BREAK_042.inc"
 ;@endif
 
-INLINE_BREAK_035:
-	break
+;@include "../_helpers/INLINE_BREAK_035.inc"
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INLINE_BREAK_043.inc"
@@ -134,8 +132,7 @@ STEP_DRAW_CV336_THEN_CV340:
 ;@include "dos__post_STEP_DRAW_CV336_THEN_CV340.inc"
 ;@endif
 
-INLINE_BREAK_035:
-	break
+;@include "../_helpers/INLINE_BREAK_035.inc"
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INLINE_BREAK_044.inc"

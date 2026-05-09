@@ -147,9 +147,7 @@ SET_VARS_29_2F:
 ;@endif
 
 ;@include "../_helpers/SET_VAR2F_TO_000F.inc"
-SET_VAR2F_TO_000F:
-	mov [0x2F], 0x000F
-	ret
+;@include "../_helpers/SET_VAR2F_TO_000F.inc"
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_DEDUP_PRISON_5B_023.inc"

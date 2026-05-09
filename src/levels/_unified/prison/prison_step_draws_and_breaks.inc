@@ -35,8 +35,7 @@ DRAW_CIN555_STEP_RIGHT3:
 ;@include "dos__post_INLINE_BREAK_035.inc"
 ;@endif
 
-INLINE_BREAK_035:
-	break
+;@include "../_helpers/INLINE_BREAK_035.inc"
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INLINE_BREAK_036.inc"
@@ -78,8 +77,7 @@ DRAW_CIN_212_TO_213_2F_AT_6B0D0A47:
 ;@include "dos__post_DRAW_CIN_212_TO_213_2F_AT_6B0D0A47.inc"
 ;@endif
 
-INLINE_BREAK_035:
-	break
+;@include "../_helpers/INLINE_BREAK_035.inc"
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INLINE_BREAK_037.inc"
@@ -89,8 +87,7 @@ INLINE_BREAK_035:
 ;@include "dos__post_INLINE_BREAK_037.inc"
 ;@endif
 
-INLINE_BREAK_035:
-	break
+;@include "../_helpers/INLINE_BREAK_035.inc"
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INLINE_BREAK_038.inc"
