@@ -85,13 +85,9 @@ DRAW_CIN_169:
 	video offset=CINEMATIC_169, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_168:
-	video offset=CINEMATIC_168, x=[BUDDY_X], y=[BUDDY_Y]
-	ret
+;@include "../_helpers/DRAW_CIN_168.inc"
 
-DRAW_CIN_167:
-	video offset=CINEMATIC_167, x=[BUDDY_X], y=[BUDDY_Y]
-	ret
+;@include "../_helpers/DRAW_CIN_167.inc"
 LABEL_6C11:
 	db 0x11
 

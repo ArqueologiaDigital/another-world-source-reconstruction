@@ -255,9 +255,7 @@ INCREMENT_VAR07_BY_4:
 ;@include "dos__post_STEP_VAR29_DOWN10_SET_VAR2F_11.inc"
 ;@endif
 
-SET_VAR21_TO_0001:
-	mov [0x21], 0x0001
-	ret
+;@include "../_helpers/SET_VAR21_TO_0001.inc"
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR21_TO_0001.inc"

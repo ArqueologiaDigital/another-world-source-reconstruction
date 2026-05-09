@@ -50,8 +50,7 @@ SETUP_CHANNELS_AFTER_LOAD:
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	killChannel
 
-KILL_CHANNEL_ROUTINE:
-	killChannel
+;@include "../_helpers/KILL_CHANNEL_ROUTINE.inc"
 
 BLIT_AND_DISPATCH_HERO_ACTION:
 	add [0xC7], 0x0001

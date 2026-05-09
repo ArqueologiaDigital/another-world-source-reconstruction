@@ -49,9 +49,7 @@ DRAW_CIN_166:
 	video offset=CINEMATIC_166, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_167:
-	video offset=CINEMATIC_167, x=[BUDDY_X], y=[BUDDY_Y]
-	ret
+;@include "../_helpers/DRAW_CIN_167.inc"
 
 DRAW_CIN_163:
 	video offset=CINEMATIC_163, x=[BUDDY_X], y=[BUDDY_Y]
@@ -89,9 +87,7 @@ DRAW_CIN_168_IF_VAR09_EQ_1:
 	je [0xF8], 0x01, DRAW_CIN_168
 	ret
 
-DRAW_CIN_168:
-	video offset=CINEMATIC_168, x=[BUDDY_X], y=[BUDDY_Y]
-	ret
+;@include "../_helpers/DRAW_CIN_168.inc"
 
 DISPATCH_VAR09_LOW_NIBBLE:
 	mov [0xF8], [0x09]

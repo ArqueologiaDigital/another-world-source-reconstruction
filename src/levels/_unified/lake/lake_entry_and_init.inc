@@ -76,8 +76,7 @@ INIT_AUDIO_AND_SCENE_AFTER_LOADS:
 	setup channel=0x03, address=A_CALM_ALIEN_POOL_BEFORE_LESTERS_ARRIVAL
 	killChannel
 
-KILL_CHANNEL_ROUTINE:
-	killChannel
+;@include "../_helpers/KILL_CHANNEL_ROUTINE.inc"
 
 VERIFY_INTEGRITY_OR_HALT:
 ;@if BRANCH == "gba_2004"
