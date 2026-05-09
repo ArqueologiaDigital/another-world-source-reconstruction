@@ -32,7 +32,7 @@ PARTICLE_BURST_CYCLE_LOOP:
 	break
 	jmp PARTICLE_BURST_CYCLE_LOOP
 	killChannel
-;@if BRANCH in ("cartridge_1992", "chahi_amiga_1991")
+;@if BRANCH in ("chahi_amiga_1991", "cartridge_1992")
 
 PARTICLE_BURST_3X_LOOP:
 ;@elif BRANCH in ("dos_1992", "gba_2004")
