@@ -4,8 +4,7 @@ LABEL_1464:
 	break
 	setPalette 0x0C
 
-KILL_CHANNEL_LANDING:
-	killChannel
+;@include "../_helpers/KILL_CHANNEL_LANDING.inc"
 
 KILL_CHAN_AT_1471:
 	killChannel
