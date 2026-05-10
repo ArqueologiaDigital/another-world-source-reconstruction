@@ -2220,13 +2220,13 @@ SCENE_TRANSITION_TO_GETTING_OUT_OF_POOL:
 	mov [0x33], 0x00A2
 	setPalette 0x06
 	setup channel=0x0B, address=MULTIPLEX_ANIM_RING3_SLOT_0
-	setup channel=0x0C, address=DRAW_LAKE_051_SEQ_DRIFT_LEFT_LOOP
+	setup channel=0x0C, address=DRAW_REED_DRIFT_LEFT_LOOP
 	setup channel=0x0D, address=DECOR_F7_BLINK_3X_LOOP
 	setup channel=0x0E, address=MULTIPLEX_ANIM_RING3_SLOT_1
-	setup channel=0x0F, address=DRAW_LAKE_051_SEQ_DRIFT_LEFT_LOOP
+	setup channel=0x0F, address=DRAW_REED_DRIFT_LEFT_LOOP
 	setup channel=0x10, address=DECOR_F7_BLINK_3X_LOOP
 	setup channel=0x11, address=MULTIPLEX_ANIM_RING3_SLOT_2
-	setup channel=0x14, address=DRAW_LAKE_051_SEQ_DRIFT_LEFT_LOOP
+	setup channel=0x14, address=DRAW_REED_DRIFT_LEFT_LOOP
 	setup channel=0x15, address=DECOR_F9_THEN_F10_LOOP
 	setup channel=0x16, address=LESTER_FALLING_PLAY_AND_ANIM
 	setup channel=0x29, address=KILL_CHANNEL_ROUTINE
@@ -2699,7 +2699,7 @@ MULTIPLEX_ANIM_RING3_SLOT_2:
 	jmp MULTIPLEX_ANIM_RING3_SLOT_2
 	killChannel
 
-DRAW_LAKE_051_SEQ_DRIFT_LEFT_LOOP:
+DRAW_REED_DRIFT_LEFT_LOOP:
 	sub [0x32], 0x0001
 	video offset=CINEMATIC_DECOR_AT_305_155_F14, x=[0x32], y=[0x33]
 	break
@@ -2733,7 +2733,7 @@ DRAW_LAKE_051_SEQ_DRIFT_LEFT_LOOP:
 	sub [0x32], 0x0002
 	video offset=CINEMATIC_LAKE_051_SEQ_F14, x=[0x32], y=[0x33]
 	break
-	jmp DRAW_LAKE_051_SEQ_DRIFT_LEFT_LOOP
+	jmp DRAW_REED_DRIFT_LEFT_LOOP
 	killChannel
 
 LESTER_FRAME_LOOP:
