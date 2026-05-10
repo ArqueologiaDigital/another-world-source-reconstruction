@@ -2322,10 +2322,10 @@ WAIT_VAR_03_THEN_BANKSWITCH:
 	bankSwitch 1;  Prison
 	killChannel
 
-LOOP_DRAW_DECOR_215_AT_327_164:
+DECOR_AT_327_164_SCENE_RIGHT_LOOP:
 	video offset=CINEMATIC_LAKE_SCENE_DECOR_RIGHT, x=327, y=164
 	break
-	jmp LOOP_DRAW_DECOR_215_AT_327_164
+	jmp DECOR_AT_327_164_SCENE_RIGHT_LOOP
 	killChannel
 
 DECOR_AT_327_164_BLINK_LOOP:
@@ -2681,7 +2681,7 @@ LAKE_INTRO_PRE_TRANS_DELAY:
 	copyVideoPage src=0x03, dst=0x00
 	freezeChannels first=0x14, last=0x16
 	setup channel=0x14, address=LESTER_AT_POOL_LOOP
-	setup channel=0x15, address=LOOP_DRAW_DECOR_215_AT_327_164
+	setup channel=0x15, address=DECOR_AT_327_164_SCENE_RIGHT_LOOP
 	deleteChannels first=0x16, last=0x16
 	selectVideoPage 0x00
 	video offset=CINEMATIC_LAKE_SCENE3_DECOR, x=275, y=162
