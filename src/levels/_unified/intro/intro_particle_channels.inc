@@ -319,8 +319,8 @@ BLINK_PAGE_FF_3X_LOOP:
 	setup channel=0x10, address=DRAW_INTRO_DECOR_329
 	setup channel=0x11, address=DRAW_INTRO_DECOR_318
 	setup channel=0x12, address=DRAW_INTRO_LIGHTNING_BOLT_STRIKE
-	setup channel=0x14, address=DRAW_INTRO_DECOR_305
-	setup channel=0x15, address=DRAW_INTRO_DECOR_301
+	setup channel=0x14, address=DRAW_INTRO_LIGHTNING_FLICKER_RIGHT
+	setup channel=0x15, address=DRAW_INTRO_LIGHTNING_FLICKER_CENTER
 	mov [0x01], 0x0064
 
 WAIT_100_THEN_CIN_274:
