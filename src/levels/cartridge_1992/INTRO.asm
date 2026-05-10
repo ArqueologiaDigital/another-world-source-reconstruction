@@ -806,7 +806,7 @@ WAIT_INTRO_SCENE_5:
 	killChannel
 
 SETUP_INTRO_DNA_CHANNELS:
-	setup channel=0x0A, address=DNA_VAR_05_HOLD_LOOP
+	setup channel=0x0A, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	setup channel=0x0B, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
@@ -864,10 +864,10 @@ DELETE_CHANNELS_0A_TO_1F:
 	deleteChannels first=0x0A, last=0x1F
 	killChannel
 
-DNA_VAR_05_HOLD_LOOP:
+DRAW_DNA_RUNG_ROTATION_LOOP:
 	mov [0x05], 0x002A
 	break
-	jmp DNA_VAR_05_HOLD_LOOP
+	jmp DRAW_DNA_RUNG_ROTATION_LOOP
 LABEL_02AF:
 	db 0x11
 

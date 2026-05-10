@@ -804,57 +804,57 @@ LABEL_01FE:
 
 DNA_ANIMATION:
 	setup channel=0x0A, address=LABEL_0295
-	setup channel=0x0B, address=DNA_VAR_05_HOLD_LOOP
+	setup channel=0x0B, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
 	setup channel=0x0C, address=LABEL_029E
-	setup channel=0x0D, address=DNA_VAR_05_HOLD_LOOP
+	setup channel=0x0D, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
 	setup channel=0x0E, address=LABEL_029E
-	setup channel=0x0F, address=DNA_VAR_05_HOLD_LOOP
+	setup channel=0x0F, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
 	setup channel=0x10, address=LABEL_029E
-	setup channel=0x11, address=DNA_VAR_05_HOLD_LOOP
+	setup channel=0x11, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
 	setup channel=0x12, address=LABEL_029E
-	setup channel=0x13, address=DNA_VAR_05_HOLD_LOOP
+	setup channel=0x13, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
 	setup channel=0x14, address=LABEL_029E
-	setup channel=0x15, address=DNA_VAR_05_HOLD_LOOP
+	setup channel=0x15, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
 	setup channel=0x16, address=LABEL_029E
-	setup channel=0x17, address=DNA_VAR_05_HOLD_LOOP
+	setup channel=0x17, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
 	setup channel=0x18, address=LABEL_029E
-	setup channel=0x19, address=DNA_VAR_05_HOLD_LOOP
+	setup channel=0x19, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
 	setup channel=0x1A, address=LABEL_029E
-	setup channel=0x1B, address=DNA_VAR_05_HOLD_LOOP
+	setup channel=0x1B, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
 	setup channel=0x1C, address=LABEL_029E
-	setup channel=0x1D, address=DNA_VAR_05_HOLD_LOOP
+	setup channel=0x1D, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
 	setup channel=0x1E, address=LABEL_029E
-	setup channel=0x1F, address=DNA_VAR_05_HOLD_LOOP
+	setup channel=0x1F, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	killChannel
 
 DELETE_CHANNELS_0A_TO_1F:
@@ -875,7 +875,7 @@ LABEL_029E:
 LABEL_02A6:
 	db 0x11
 
-DNA_VAR_05_HOLD_LOOP:
+DRAW_DNA_RUNG_ROTATION_LOOP:
 	break
 	video offset=CINEMATIC_DNA_0, x=[0x04], y=[0x05], zoom=[0x06]
 	break
@@ -910,7 +910,7 @@ DNA_VAR_05_HOLD_LOOP:
 	video offset=CINEMATIC_DNA_15, x=[0x04], y=[0x05], zoom=[0x06]
 	break
 	video offset=CINEMATIC_DNA_16, x=[0x04], y=[0x05], zoom=[0x06]
-	jmp DNA_VAR_05_HOLD_LOOP
+	jmp DRAW_DNA_RUNG_ROTATION_LOOP
 LABEL_0321:
 	db 0x11
 
