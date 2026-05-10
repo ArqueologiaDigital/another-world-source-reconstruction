@@ -61,7 +61,7 @@ SLUG_ANIMATION:
 ;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
-	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
+	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	video offset=CINEMATIC_SLUG_0, x=[0x0c], y=[0x0d]
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
@@ -69,7 +69,7 @@ SLUG_ANIMATION:
 ;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
-	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
+	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	video offset=CINEMATIC_SLUG_1, x=[0x0c], y=[0x0d]
 	break
 
@@ -79,7 +79,7 @@ SLUG_F1_PROXIMITY_CHK:
 ;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
-	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
+	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	video offset=CINEMATIC_SLUG_2, x=[0x0c], y=[0x0d]
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
@@ -87,7 +87,7 @@ SLUG_F1_PROXIMITY_CHK:
 ;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
-	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
+	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	video offset=CINEMATIC_SLUG_3, x=[0x0c], y=[0x0d]
 	break
 
@@ -97,7 +97,7 @@ SLUG_F3_PROXIMITY_CHK:
 ;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
-	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
+	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	video offset=CINEMATIC_SLUG_4, x=[0x0c], y=[0x0d]
 	break
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
@@ -105,7 +105,7 @@ SLUG_F3_PROXIMITY_CHK:
 ;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
-	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
+	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	video offset=CINEMATIC_SLUG_5, x=[0x0c], y=[0x0d]
 	break
 
@@ -115,7 +115,7 @@ SLUG_F5_PROXIMITY_CHK:
 ;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
-	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
+	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	sub [0x0C], 0x0001
 	video offset=CINEMATIC_SLUG_6, x=[0x0c], y=[0x0d]
 	break
@@ -124,7 +124,7 @@ SLUG_F5_PROXIMITY_CHK:
 ;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
-	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
+	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	sub [0x0C], 0x0001
 	video offset=CINEMATIC_SLUG_7, x=[0x0c], y=[0x0d]
 	break
@@ -133,7 +133,7 @@ SLUG_F5_PROXIMITY_CHK:
 ;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
-	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
+	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	sub [0x0C], 0x0001
 	video offset=CINEMATIC_SLUG_8, x=[0x0c], y=[0x0d]
 	break
@@ -142,7 +142,7 @@ SLUG_F5_PROXIMITY_CHK:
 ;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
-	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
+	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	sub [0x0C], 0x0003
 	video offset=CINEMATIC_SLUG_9, x=[0x0c], y=[0x0d]
 	break
@@ -151,7 +151,7 @@ SLUG_F5_PROXIMITY_CHK:
 ;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
-	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
+	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	sub [0x0C], 0x0002
 	video offset=CINEMATIC_SLUG_10, x=[0x0c], y=[0x0d]
 	break
@@ -160,7 +160,7 @@ SLUG_F5_PROXIMITY_CHK:
 ;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
-	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
+	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	sub [0x0C], 0x0001
 	video offset=CINEMATIC_SLUG_11, x=[0x0c], y=[0x0d]
 	break
@@ -169,7 +169,7 @@ SLUG_F5_PROXIMITY_CHK:
 ;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
-	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
+	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	sub [0x0C], 0x0001
 	video offset=CINEMATIC_SLUG_12, x=[0x0c], y=[0x0d]
 	break
@@ -178,7 +178,7 @@ SLUG_F5_PROXIMITY_CHK:
 ;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
 ;@endif
-	jne [0x07], 0x00, DISPATCH_ON_PROXIMITY_TO_SLUG_FLIP_OR_306C
+	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	sub [0x0C], 0x0001
 	video offset=CINEMATIC_SLUG_13, x=[0x0c], y=[0x0d]
 	break
