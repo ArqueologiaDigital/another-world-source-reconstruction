@@ -1,5 +1,5 @@
 ; LAKE intro narrative: Lester emerges from the pool. The
-; ENTITY_DROP_THEN_F15_LOOP plays the entity-drop animation 10
+; LESTER_DROP_LAND_AT_POOL_EDGE plays the entity-drop animation 10
 ; times at HERO_X / HERO_Y, then transitions through F15..F18
 ; followed by the RIGHT_CROUCHING_2/1/0 frames (Lester landing
 ; in a crouch), the LESTER_RAISES_A_HAND chain, and finally
@@ -39,14 +39,14 @@ CINEMATIC_LESTER_RAISE_HAND_2		EQU 0xE388
 CINEMATIC_LESTER_RAISE_HAND_3		EQU 0xE3B4
 ;@endif
 
-ENTITY_DROP_THEN_F15_LOOP:
+LESTER_DROP_LAND_AT_POOL_EDGE:
 	mov [PAUSE_SLICES], 0x0006
 	mov [0x1A], 0x000A
 
-ENTITY_DROP_LOOP_BODY:
+LESTER_DROP_LAND_AT_POOL_EDGE_BODY:
 	video offset=CINEMATIC_LAKE_ENTITY_DROP, x=[HERO_X], y=[HERO_Y]
 	break
-	djnz [0x1A], ENTITY_DROP_LOOP_BODY
+	djnz [0x1A], LESTER_DROP_LAND_AT_POOL_EDGE_BODY
 	video offset=CINEMATIC_DECOR_AT_305_155_F15, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_DECOR_AT_305_155_F16, x=[HERO_X], y=[HERO_Y]

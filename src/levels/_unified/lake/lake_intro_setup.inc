@@ -34,7 +34,7 @@ LAKE_INTRO_SETUP:
 	copyVideoPage src=0x00, dst=0x03
 	freezeChannels first=0x14, last=0x17
 	setup channel=0x17, address=DECOR_AT_305_155_F14_F9_BG
-	setup channel=0x14, address=ENTITY_DROP_THEN_F15_LOOP
+	setup channel=0x14, address=LESTER_DROP_LAND_AT_POOL_EDGE
 	setup channel=0x15, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x16, address=KILL_CHANNEL_ROUTINE
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
