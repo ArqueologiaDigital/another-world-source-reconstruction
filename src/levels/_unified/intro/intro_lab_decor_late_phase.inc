@@ -65,7 +65,7 @@ DELAY_20_BEFORE_PLAY_2C_CIN_309:
 	break
 	video offset=CINEMATIC_316, x=252, y=150
 	break
-	video offset=CINEMATIC_317, x=254, y=145
+	video offset=CINEMATIC_BUDDY_CRAWLING_STUCK_AT_RING, x=254, y=145
 	killChannel
 
 DRAW_INTRO_LIGHTNING_FLICKER_RIGHT:

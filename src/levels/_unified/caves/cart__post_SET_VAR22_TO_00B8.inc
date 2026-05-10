@@ -496,7 +496,7 @@ LABEL_CA59:
 	db 0x11
 
 HANG_DRAW_CIN_394:
-	video offset=CINEMATIC_394, x=160, y=100
+	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F1, x=160, y=100
 	break
 	jmp HANG_DRAW_CIN_394
 

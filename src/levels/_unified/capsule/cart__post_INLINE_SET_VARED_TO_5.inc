@@ -150,12 +150,12 @@ LABEL_1FB4:
 	killChannel
 	video offset=CINEMATIC_392, x=160, y=100
 	break
-	video offset=CINEMATIC_393, x=160, y=100
+	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=160, y=100
 	setup channel=0x38, address=LABEL_1FF3
 	killChannel
 
 LABEL_1FF3:
-	video offset=CINEMATIC_394, x=160, y=100
+	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F1, x=160, y=100
 	break
 	video offset=CINEMATIC_395, x=160, y=100
 	killChannel

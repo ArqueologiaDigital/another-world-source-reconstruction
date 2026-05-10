@@ -386,9 +386,9 @@ LABEL_20FC:
 DELAY_LOOP_VARE6_AT_2111:
 	break
 	djnz [0xE6], DELAY_LOOP_VARE6_AT_2111
-	video offset=CINEMATIC_317, x=15, y=178
+	video offset=CINEMATIC_BUDDY_CRAWLING_STUCK_AT_RING, x=15, y=178
 	break
-	video offset=CINEMATIC_317, x=30, y=185
+	video offset=CINEMATIC_BUDDY_CRAWLING_STUCK_AT_RING, x=30, y=185
 	break
 	play id=0x0060, freq=0x05, vol=0x40, channel=0x03
 	mov [0x6B], 0x0200

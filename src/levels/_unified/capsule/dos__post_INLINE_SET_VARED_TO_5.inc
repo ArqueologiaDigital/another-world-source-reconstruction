@@ -96,7 +96,7 @@ HANG_DRAW_CIN_379:
 	jmp HANG_DRAW_CIN_379
 
 LABEL_1E40:
-	video offset=CINEMATIC_394, x=160, y=100
+	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F1, x=160, y=100
 	video offset=CINEMATIC_379, x=160, y=100, zoom=[0x43]	;@enc=alt
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x03
 	setup channel=0x06, address=LABEL_1E7E
@@ -105,7 +105,7 @@ LABEL_1E40:
 	video offset=CINEMATIC_379, x=160, y=100
 	jmp HANG_DRAW_CIN_379
 	killChannel
-	video offset=CINEMATIC_394, x=190, y=100
+	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F1, x=190, y=100
 	video offset=CINEMATIC_379, x=160, y=100, zoom=[0x43]	;@enc=alt
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x03
 	break
@@ -161,7 +161,7 @@ LABEL_1EDF:
 	killChannel
 
 HANG_DRAW_CIN_393:
-	video offset=CINEMATIC_393, x=160, y=100
+	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=160, y=100
 	break
 	jmp HANG_DRAW_CIN_393
 LABEL_1EF1:

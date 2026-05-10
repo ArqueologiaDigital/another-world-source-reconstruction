@@ -209,7 +209,7 @@ DRAW_CIN_284_BLOCK_95B:
 	break
 	video offset=CINEMATIC_294, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_295, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_296, x=[HERO_X], y=[HERO_Y]
 	break
@@ -221,7 +221,7 @@ DRAW_CIN_284_BLOCK_95B:
 
 LABEL_1019:
 	break
-	video offset=CINEMATIC_295, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_1019
 LABEL_1022:
 	db 0x11
@@ -231,7 +231,7 @@ LABEL_1023:
 	break
 	video offset=CINEMATIC_299, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_300, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_299, x=[HERO_X], y=[HERO_Y]
 	jmp DRAW_CIN_137_138_BLOCK

@@ -291,11 +291,11 @@ LABEL_328B:
 	db 0x11
 
 LABEL_328C:
-	video offset=CINEMATIC_300, x=56, y=100
+	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=56, y=100
 	video offset=CINEMATIC_301, x=58, y=103
 	break
 	video offset=CINEMATIC_301, x=56, y=100
-	video offset=CINEMATIC_300, x=57, y=101
+	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=57, y=101
 	break
 	video offset=CINEMATIC_302, x=56, y=100
 	video offset=CINEMATIC_302, x=59, y=102
@@ -305,11 +305,11 @@ LABEL_32AA:
 	db 0x11
 
 LABEL_32AB:
-	video offset=CINEMATIC_300, x=56, y=110
+	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=56, y=110
 	video offset=CINEMATIC_301, x=58, y=115
 	break
 	video offset=CINEMATIC_301, x=56, y=110
-	video offset=CINEMATIC_300, x=57, y=113
+	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=57, y=113
 	break
 	video offset=CINEMATIC_302, x=56, y=110
 	video offset=CINEMATIC_302, x=59, y=114

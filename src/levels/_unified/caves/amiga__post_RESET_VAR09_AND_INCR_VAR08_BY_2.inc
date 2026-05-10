@@ -365,15 +365,15 @@ LABEL_3128:
 	break
 	video offset=CINEMATIC_392, x=[0xef], y=70
 	break
-	video offset=CINEMATIC_393, x=[0xef], y=80
+	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=[0xef], y=80
 	break
 	video offset=CINEMATIC_392, x=[0xef], y=120
 	video offset=CINEMATIC_284, x=[0xef], y=65
 	break
-	video offset=CINEMATIC_393, x=[0xef], y=140
+	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=[0xef], y=140
 	video offset=CINEMATIC_284, x=[0xef], y=60
 	break
-	video offset=CINEMATIC_393, x=[0xef], y=200
+	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=[0xef], y=200
 	break
 	mov [0xEF], 0x0001
 	call SETUP_HASH_AND_DERIVE_BUCKETS

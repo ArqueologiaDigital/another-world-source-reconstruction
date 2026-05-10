@@ -20,29 +20,29 @@ LABEL_0428:
 	db 0x11
 
 LABEL_0429:
-	video offset=CINEMATIC_295, x=111, y=133
+	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=111, y=133
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x00
 	break
-	video offset=CINEMATIC_295, x=111, y=30
+	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=111, y=30
 	break
 	video offset=CINEMATIC_319, x=111, y=65508
 	break
 	video offset=CINEMATIC_297, x=111, y=3
 	break
 	break
-	video offset=CINEMATIC_295, x=107, y=92
+	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=107, y=92
 	play id=0x0052, freq=0x20, vol=0x40, channel=0x00
 	break
-	video offset=CINEMATIC_295, x=107, y=34
+	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=107, y=34
 	break
 	video offset=CINEMATIC_297, x=107, y=7
-	video offset=CINEMATIC_295, x=109, y=157
+	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=109, y=157
 	break
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x00
-	video offset=CINEMATIC_295, x=109, y=77
+	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=109, y=77
 	video offset=CINEMATIC_297, x=107, y=7
 	break
-	video offset=CINEMATIC_295, x=109, y=32
+	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=109, y=32
 	break
 	video offset=CINEMATIC_319, x=109, y=65511
 	selectVideoPage 0x00

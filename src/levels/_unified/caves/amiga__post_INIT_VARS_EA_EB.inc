@@ -27,7 +27,7 @@ DRAW_CIN_294:
 	ret
 
 DRAW_CIN_295:
-	video offset=CINEMATIC_295, x=160, y=[0x21]
+	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=160, y=[0x21]
 	ret
 
 LABEL_324A:

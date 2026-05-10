@@ -22,7 +22,7 @@ LABEL_150E:
 	call DRAW_BUDDY_FIGURE_BASE
 	djnz [0x29], LABEL_150E
 	break
-	video offset=CINEMATIC_394, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F1, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_392, x=[BUDDY_X], y=[BUDDY_Y]
 	call DRAW_BUDDY_FIGURE_BASE
 	break
@@ -48,7 +48,7 @@ LABEL_1540:
 	break
 	video offset=CINEMATIC_401, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_393, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	video offset=CINEMATIC_402, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]

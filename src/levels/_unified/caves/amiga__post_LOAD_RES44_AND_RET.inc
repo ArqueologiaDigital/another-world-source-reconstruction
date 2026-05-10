@@ -31,7 +31,7 @@ LABEL_CDDF:
 
 DRAW_CIN_415_416_FRAGMENTS:
 	fill page=0x00, color=0x08
-	video offset=CINEMATIC_394, x=160, y=100
+	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F1, x=160, y=100
 	video offset=CINEMATIC_395, x=202, y=65
 	video offset=CINEMATIC_395, x=293, y=4
 	video offset=CINEMATIC_395, x=298, y=117

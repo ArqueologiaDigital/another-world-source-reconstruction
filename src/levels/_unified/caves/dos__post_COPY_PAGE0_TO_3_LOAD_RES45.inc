@@ -1,7 +1,7 @@
 LABEL_D268:
 	fill page=0x00, color=0x00
-	video offset=CINEMATIC_393, x=160, y=100
-	video offset=CINEMATIC_394, x=160, y=100
+	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=160, y=100
+	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F1, x=160, y=100
 	selectVideoPage 0x03
 	fill page=0x03, color=0x09
 	mov [SCROLL_Y], 0x0096
@@ -273,7 +273,7 @@ LABEL_D59B:
 
 LABEL_D59C:
 	fill page=0x00, color=0x00
-	video offset=CINEMATIC_295, x=160, y=100
+	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=160, y=100
 	video offset=CINEMATIC_296, x=165, y=111
 	video offset=CINEMATIC_296, x=220, y=110
 	video offset=CINEMATIC_296, x=257, y=111
@@ -293,10 +293,10 @@ LABEL_D5BF:
 	copyVideoPage src=0x83, dst=0x00
 	selectVideoPage 0x00
 	video offset=CINEMATIC_299, x=163, y=99
-	video offset=CINEMATIC_300, x=162, y=99
+	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=162, y=99
 	selectVideoPage 0x03
 	video offset=CINEMATIC_299, x=160, y=100
-	video offset=CINEMATIC_300, x=160, y=100
+	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=160, y=100
 	selectVideoPage 0xFF
 	ret
 
@@ -310,17 +310,17 @@ LABEL_D5E9:
 	mov [SCROLL_Y], 0x0002
 	copyVideoPage src=0x83, dst=0x00
 	selectVideoPage 0x00
-	video offset=CINEMATIC_300, x=161, y=61
-	video offset=CINEMATIC_300, x=161, y=62
+	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=161, y=61
+	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=161, y=62
 	selectVideoPage 0x03
-	video offset=CINEMATIC_300, x=161, y=60
-	video offset=CINEMATIC_300, x=160, y=62
+	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=161, y=60
+	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=160, y=62
 	selectVideoPage 0xFF
 	ret
 
 LABEL_D61A:
 	fill page=0x00, color=0x08
-	video offset=CINEMATIC_317, x=160, y=100
+	video offset=CINEMATIC_BUDDY_CRAWLING_STUCK_AT_RING, x=160, y=100
 	video offset=CINEMATIC_318, x=160, y=100
 	video offset=CINEMATIC_319, x=160, y=100
 	video offset=CINEMATIC_320, x=160, y=100

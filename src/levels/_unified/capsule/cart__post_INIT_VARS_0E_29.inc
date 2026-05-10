@@ -27,7 +27,7 @@ LABEL_0496:
 	break
 	video offset=CINEMATIC_320, x=111, y=65508
 	break
-	video offset=CINEMATIC_300, x=111, y=3
+	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=111, y=3
 	break
 	break
 	video offset=CINEMATIC_298, x=107, y=92
@@ -35,12 +35,12 @@ LABEL_0496:
 	break
 	video offset=CINEMATIC_298, x=107, y=34
 	break
-	video offset=CINEMATIC_300, x=107, y=7
+	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=107, y=7
 	video offset=CINEMATIC_298, x=109, y=157
 	break
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x00
 	video offset=CINEMATIC_298, x=109, y=77
-	video offset=CINEMATIC_300, x=107, y=7
+	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=107, y=7
 	break
 	video offset=CINEMATIC_298, x=109, y=32
 	break
