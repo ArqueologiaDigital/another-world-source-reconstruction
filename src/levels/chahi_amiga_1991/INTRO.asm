@@ -1866,7 +1866,7 @@ PHASE_PAGE3_DRAW_CIN_172_175:
 	break
 	selectVideoPage 0x03
 	fill page=0x03, color=0x02
-	call DRAW_CINEMATICS_172_TO_175
+	call DRAW_PARTICLE_LAB_BG_COMPOSITE
 	video offset=CINEMATIC_242, x=160, y=101
 	video offset=CINEMATIC_176, x=187, y=101
 	selectVideoPage 0xFF
@@ -3259,7 +3259,7 @@ LABEL_1AE8:
 	mov [0x01], 0x002E
 	mov [0x02], 0x00FF
 	fill page=0xFF, color=0x02
-	call DRAW_CINEMATICS_172_TO_175
+	call DRAW_PARTICLE_LAB_BG_COMPOSITE
 	setPalette 0x08
 	video offset=CINEMATIC_175, x=160, y=101
 	video offset=CINEMATIC_176, x=187, y=101
@@ -3385,7 +3385,7 @@ LABEL_1C12:
 LABEL_1C1A:
 	db 0x11
 
-DRAW_CINEMATICS_172_TO_175:
+DRAW_PARTICLE_LAB_BG_COMPOSITE:
 	video offset=CINEMATIC_166, x=156, y=94
 	video offset=CINEMATIC_167, x=160, y=100
 	video offset=CINEMATIC_168, x=161, y=99

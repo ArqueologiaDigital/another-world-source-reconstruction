@@ -157,7 +157,7 @@ PHASE_PAGE3_DRAW_CIN_172_175:
 	break
 	selectVideoPage 0x03
 	fill page=0x03, color=0x02
-	call DRAW_CINEMATICS_172_TO_175
+	call DRAW_PARTICLE_LAB_BG_COMPOSITE
 	video offset=CINEMATIC_248, x=160, y=101
 	video offset=CINEMATIC_182, x=187, y=101
 	selectVideoPage 0xFF
