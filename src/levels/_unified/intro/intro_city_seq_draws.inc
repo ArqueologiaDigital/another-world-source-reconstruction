@@ -184,7 +184,7 @@ DELAY_14_BEFORE_BLITTER_SETUP:
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 	selectVideoPage 0x03
-	video offset=CINEMATIC_191, x=162, y=100
+	video offset=CINEMATIC_HOLO_ACCELERATOR_LOOP_DIAGRAM, x=162, y=100
 	video offset=CINEMATIC_192, x=234, y=163
 	selectVideoPage 0xFF
 	copyVideoPage src=0x03, dst=0x00

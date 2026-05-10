@@ -136,7 +136,7 @@ DRAW_CITY_SEQ_419_420:
 	video offset=CINEMATIC_425, x=18, y=93
 	video offset=CINEMATIC_424, x=104, y=7
 	killChannel
-	video offset=CINEMATIC_191, x=162, y=100
+	video offset=CINEMATIC_HOLO_ACCELERATOR_LOOP_DIAGRAM, x=162, y=100
 	break
 	video offset=CINEMATIC_192, x=234, y=163
 	killChannel

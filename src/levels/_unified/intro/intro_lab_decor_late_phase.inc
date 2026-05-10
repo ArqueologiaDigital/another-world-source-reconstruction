@@ -158,11 +158,11 @@ PHASE_PAGE3_DRAW_CIN_172_175:
 	selectVideoPage 0x03
 	fill page=0x03, color=0x02
 	call DRAW_PARTICLE_LAB_BG_COMPOSITE
-	video offset=CINEMATIC_248, x=160, y=101
+	video offset=CINEMATIC_LESTER_SEATED_AT_HOLO_CONSOLE_F1, x=160, y=101
 	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F4, x=187, y=101
 	selectVideoPage 0xFF
 	fill page=0xFF, color=0x02
-	video offset=CINEMATIC_249, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_VIEW_NEAR, x=160, y=100
 	video offset=CINEMATIC_250, x=160, y=100
 	video offset=CINEMATIC_251, x=160, y=100
 	copyVideoPage src=0xFF, dst=0x00
