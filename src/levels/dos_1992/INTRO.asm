@@ -661,14 +661,14 @@ FRAME_RENDER_TICK_LOOP:
 	break
 	jmp SETUP_CHANNELS_AFTER_LOAD
 
-LABEL_00AF:
+INTRO_WAIT_HERO_ACTION_THEN_LAKE:
 	add [0xC7], 0x0001
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	jne [HERO_ACTION], 0x00, TRANSITION_INTRO_TO_LAKE
 	copyVideoPage src=0x00, dst=0xFF
 	break
-	jmp LABEL_00AF
+	jmp INTRO_WAIT_HERO_ACTION_THEN_LAKE
 
 WAIT_FOR_HERO_ACTION_LOOP:
 	blitFramebuffer 0xFF
@@ -808,52 +808,52 @@ DNA_ANIMATION:
 	break
 	break
 	break
-	setup channel=0x0C, address=LABEL_029E
+	setup channel=0x0C, address=BUMP_VAR05_PLUS_10_EACH_TICK_LOOP
 	setup channel=0x0D, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
-	setup channel=0x0E, address=LABEL_029E
+	setup channel=0x0E, address=BUMP_VAR05_PLUS_10_EACH_TICK_LOOP
 	setup channel=0x0F, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
-	setup channel=0x10, address=LABEL_029E
+	setup channel=0x10, address=BUMP_VAR05_PLUS_10_EACH_TICK_LOOP
 	setup channel=0x11, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
-	setup channel=0x12, address=LABEL_029E
+	setup channel=0x12, address=BUMP_VAR05_PLUS_10_EACH_TICK_LOOP
 	setup channel=0x13, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
-	setup channel=0x14, address=LABEL_029E
+	setup channel=0x14, address=BUMP_VAR05_PLUS_10_EACH_TICK_LOOP
 	setup channel=0x15, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
-	setup channel=0x16, address=LABEL_029E
+	setup channel=0x16, address=BUMP_VAR05_PLUS_10_EACH_TICK_LOOP
 	setup channel=0x17, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
-	setup channel=0x18, address=LABEL_029E
+	setup channel=0x18, address=BUMP_VAR05_PLUS_10_EACH_TICK_LOOP
 	setup channel=0x19, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
-	setup channel=0x1A, address=LABEL_029E
+	setup channel=0x1A, address=BUMP_VAR05_PLUS_10_EACH_TICK_LOOP
 	setup channel=0x1B, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
-	setup channel=0x1C, address=LABEL_029E
+	setup channel=0x1C, address=BUMP_VAR05_PLUS_10_EACH_TICK_LOOP
 	setup channel=0x1D, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
 	break
-	setup channel=0x1E, address=LABEL_029E
+	setup channel=0x1E, address=BUMP_VAR05_PLUS_10_EACH_TICK_LOOP
 	setup channel=0x1F, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	killChannel
 
@@ -868,10 +868,10 @@ LABEL_0295:
 LABEL_029D:
 	db 0x11
 
-LABEL_029E:
+BUMP_VAR05_PLUS_10_EACH_TICK_LOOP:
 	add [0x05], 0x000A
 	break
-	jmp LABEL_029E
+	jmp BUMP_VAR05_PLUS_10_EACH_TICK_LOOP
 LABEL_02A6:
 	db 0x11
 
@@ -936,7 +936,7 @@ DRAW_SCIENTIST_THEN_DIVERGE_INIT:
 LABEL_0350:
 	break
 	djnz [0x0F], LABEL_0350
-	setup channel=0x3C, address=LABEL_00AF
+	setup channel=0x3C, address=INTRO_WAIT_HERO_ACTION_THEN_LAKE
 	mov [0x0F], 0x000A
 
 LABEL_035D:
@@ -1270,7 +1270,7 @@ EXPERIMENT_LIGHTNING_WAIT_AND_TRIGGER:
 	break
 	fill page=0xFF, color=0x08
 	play id=0x000A, freq=0x0A, vol=0x3F, channel=0x01
-	setup channel=0x01, address=LABEL_06C6
+	setup channel=0x01, address=FILL_PAGE_FF_COLOR_2_FOREVER
 	break
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F0, x=160, y=100
 	break
@@ -1294,7 +1294,7 @@ EXPERIMENT_LIGHTNING_WAIT_AND_TRIGGER:
 	fill page=0xFF, color=0x08
 	break
 	fill page=0xFF, color=0x08
-	setup channel=0x01, address=LABEL_06C6
+	setup channel=0x01, address=FILL_PAGE_FF_COLOR_2_FOREVER
 	break
 	break
 	break
@@ -1306,10 +1306,10 @@ EXPERIMENT_LIGHTNING_WAIT_AND_TRIGGER:
 LABEL_06C5:
 	db 0x11
 
-LABEL_06C6:
+FILL_PAGE_FF_COLOR_2_FOREVER:
 	fill page=0xFF, color=0x02
 	break
-	jmp LABEL_06C6
+	jmp FILL_PAGE_FF_COLOR_2_FOREVER
 LABEL_06CD:
 	db 0x11
 
@@ -2387,9 +2387,9 @@ LABEL_11D5:
 	killChannel
 
 INTRO_FILL_AND_DRAW_CIN_429_430:
-	setup channel=0x01, address=LABEL_1846
-	setup channel=0x0A, address=LABEL_156E
-	setup channel=0x10, address=LABEL_1575
+	setup channel=0x01, address=DRAW_CIN_426_427_428_LEFT_RIGHT_CYCLE
+	setup channel=0x0A, address=HOLD_PAGE_00_LOOP
+	setup channel=0x10, address=HOLD_PAGE_FF_LOOP
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x01], 0x0001
 
@@ -2402,7 +2402,7 @@ LABEL_11FB:
 LABEL_1207:
 	break
 	djnz [0x01], LABEL_1207
-	setup channel=0x3C, address=LABEL_00AF
+	setup channel=0x3C, address=INTRO_WAIT_HERO_ACTION_THEN_LAKE
 	break
 	selectVideoPage 0x00
 	text id=0x0002, x=1, y=24, color=0x06 ; "Copyright  } 1990 Peanut Computer, Inc.\nAll rights reserved.\n\nCDOS Version 5.01"
@@ -2412,7 +2412,7 @@ LABEL_1207:
 LABEL_121F:
 	break
 	djnz [0x01], LABEL_121F
-	setup channel=0x3C, address=LABEL_00AF
+	setup channel=0x3C, address=INTRO_WAIT_HERO_ACTION_THEN_LAKE
 	break
 	mov [0x01], 0x0014
 	selectVideoPage 0x00
@@ -2615,7 +2615,7 @@ LABEL_142C:
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x01, address=LABEL_1846
+	setup channel=0x01, address=DRAW_CIN_426_427_428_LEFT_RIGHT_CYCLE
 	setPalette 0x09
 	mov [0x01], 0x000B
 
@@ -2725,17 +2725,17 @@ JUNK__154E:
 LABEL_156D:
 	db 0x11
 
-LABEL_156E:
+HOLD_PAGE_00_LOOP:
 	selectVideoPage 0x00
 	break
-	jmp LABEL_156E
+	jmp HOLD_PAGE_00_LOOP
 LABEL_1574:
 	db 0x11
 
-LABEL_1575:
+HOLD_PAGE_FF_LOOP:
 	selectVideoPage 0xFF
 	break
-	jmp LABEL_1575
+	jmp HOLD_PAGE_FF_LOOP
 LABEL_157B:
 	db 0x11
 
@@ -2998,7 +2998,7 @@ LABEL_17C7:
 LABEL_1845:
 	db 0x11
 
-LABEL_1846:
+DRAW_CIN_426_427_428_LEFT_RIGHT_CYCLE:
 	video offset=CINEMATIC_426, x=58, y=100
 	video offset=CINEMATIC_427, x=292, y=100
 	break
@@ -3008,7 +3008,7 @@ LABEL_1846:
 	video offset=CINEMATIC_428, x=58, y=100
 	video offset=CINEMATIC_426, x=292, y=100
 	break
-	jmp LABEL_1846
+	jmp DRAW_CIN_426_427_428_LEFT_RIGHT_CYCLE
 LABEL_1867:
 	db 0x11
 
@@ -3034,8 +3034,8 @@ LABEL_188C:
 	setup channel=0x05, address=CH_05_INIT_VAR_06_07
 	setup channel=0x06, address=CH_06_DRAW_CIN_457_PARTICLES
 	setup channel=0x07, address=CH_07_INIT_VAR_08_09
-	setup channel=0x0A, address=LABEL_156E
-	setup channel=0x10, address=LABEL_1575
+	setup channel=0x0A, address=HOLD_PAGE_00_LOOP
+	setup channel=0x10, address=HOLD_PAGE_FF_LOOP
 	setup channel=0x08, address=DRAW_SCIENTIST_THEN_DIVERGE_INIT
 	setup channel=0x09, address=LABEL_0370
 	mov [0x03], 0x0032
