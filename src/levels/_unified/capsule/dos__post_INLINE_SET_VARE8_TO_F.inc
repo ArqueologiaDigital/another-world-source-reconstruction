@@ -85,11 +85,11 @@ LABEL_24F5:
 	jne [0x10], 0x8E, LABEL_24C9
 	ret
 
-LABEL_2500:
+BUDDY_SMASHING_WINDOW_ANIMATION:
 	mov [0x68], 0x0090
 	mov [0x69], 0x0062
 	break
-	jl [HERO_X], 0x28, LABEL_2500
+	jl [HERO_X], 0x28, BUDDY_SMASHING_WINDOW_ANIMATION
 	or [0xB9], 0x0040
 	selectVideoPage 0x00
 	video offset=CINEMATIC_461, x=[0x68], y=[0x69]

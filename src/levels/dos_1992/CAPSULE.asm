@@ -4648,11 +4648,11 @@ LABEL_24F5:
 	jne [0x10], 0x8E, LABEL_24C9
 	ret
 
-LABEL_2500:
+BUDDY_SMASHING_WINDOW_ANIMATION:
 	mov [0x68], 0x0090
 	mov [0x69], 0x0062
 	break
-	jl [HERO_X], 0x28, LABEL_2500
+	jl [HERO_X], 0x28, BUDDY_SMASHING_WINDOW_ANIMATION
 	or [0xB9], 0x0040
 	selectVideoPage 0x00
 	video offset=CINEMATIC_461, x=[0x68], y=[0x69]
@@ -15992,7 +15992,7 @@ LABEL_9C16:
 	video offset=CINEMATIC_001, x=160, y=100
 	ret
 
-LABEL_9C22:
+DRAW_BUDDY_SURRENDERED_SCENE_BG:
 	fill page=0x00, color=0x0B
 	video offset=CINEMATIC_BUDDY_SURRENDERED_BY_GUARDS, x=160, y=100
 	video offset=CINEMATIC_340, x=65513, y=96
@@ -16149,7 +16149,7 @@ LABEL_9D37:
 	call LABEL_88B0
 	ret
 
-LABEL_9DC3:
+DRAW_FINAL_ESCAPE_LESTER_RUNNING_BG:
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_FINAL_ESCAPE_LESTER_RUNNING, x=160, y=100
 	video offset=CINEMATIC_433, x=160, y=100
@@ -16256,7 +16256,7 @@ LABEL_9EB9:
 	video offset=CINEMATIC_585, x=160, y=100
 	ret
 
-LABEL_9EC1:
+DRAW_TANK_REVEAL_BG:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_492, x=160, y=229, zoom=0x40
 	video offset=CINEMATIC_TANK_REVEAL_BG, x=160, y=100
@@ -16760,7 +16760,7 @@ LABEL_A41B:
 	mov [0x41], 0x0096
 	mov [0x40], 0x0099
 	setPalette 0x01
-	call LABEL_9C22
+	call DRAW_BUDDY_SURRENDERED_SCENE_BG
 	call DELETE_CHANS_0_8_AND_RET
 	play id=0x0066, freq=0x07, vol=0x08, channel=0x03
 	mov [0xA9], 0x0053
@@ -16869,7 +16869,7 @@ LABEL_A57D:
 	mov [0x41], 0x0028
 	mov [0x40], 0x0062
 	setPalette 0x01
-	call LABEL_9DC3
+	call DRAW_FINAL_ESCAPE_LESTER_RUNNING_BG
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x35, address=LABEL_1EF2
 	setup channel=0x2D, address=KILL_CHAN_AT_59A3
@@ -16896,7 +16896,7 @@ LABEL_A5D0:
 	setPalette 0x01
 	call LABEL_9E1F
 	call DELETE_CHANS_0_8_AND_RET
-	setup channel=0x07, address=LABEL_2500
+	setup channel=0x07, address=BUDDY_SMASHING_WINDOW_ANIMATION
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 	killChannel
 	mov [0x46], 0xF060
@@ -16957,7 +16957,7 @@ LABEL_A69A:
 	mov [0x41], 0x0064
 	mov [0x40], 0x00AC
 	setPalette 0x04
-	call LABEL_9EC1
+	call DRAW_TANK_REVEAL_BG
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x36, address=LABEL_035A
 	setup channel=0x37, address=LABEL_1F80
@@ -17001,7 +17001,7 @@ LABEL_A706:
 	mov [0x41], 0x0028
 	mov [0x40], 0x0062
 	setPalette 0x01
-	call LABEL_9DC3
+	call DRAW_FINAL_ESCAPE_LESTER_RUNNING_BG
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x35, address=LABEL_1EF2
 	setup channel=0x2D, address=KILL_CHAN_AT_59A3

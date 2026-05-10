@@ -142,7 +142,7 @@ LABEL_9D37:
 	call GUARDED_ALIEN_ANIM_CV_128
 	ret
 
-LABEL_9DC3:
+DRAW_FINAL_ESCAPE_LESTER_RUNNING_BG:
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_FINAL_ESCAPE_LESTER_RUNNING, x=160, y=100
 	video offset=CINEMATIC_433, x=160, y=100
@@ -249,7 +249,7 @@ LABEL_9EB9:
 	video offset=CINEMATIC_585, x=160, y=100
 	ret
 
-LABEL_9EC1:
+DRAW_TANK_REVEAL_BG:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_492, x=160, y=229, zoom=0x40
 	video offset=CINEMATIC_TANK_REVEAL_BG, x=160, y=100

@@ -26,7 +26,7 @@ LABEL_A41B:
 	mov [0x41], 0x0096
 	mov [0x40], 0x0099
 	setPalette 0x01
-	call LABEL_9C22
+	call DRAW_BUDDY_SURRENDERED_SCENE_BG
 	call DELETE_CHANS_0_8_AND_RET
 	play id=0x0066, freq=0x07, vol=0x08, channel=0x03
 	mov [0xA9], 0x0053
@@ -135,7 +135,7 @@ LABEL_A57D:
 	mov [0x41], 0x0028
 	mov [0x40], 0x0062
 	setPalette 0x01
-	call LABEL_9DC3
+	call DRAW_FINAL_ESCAPE_LESTER_RUNNING_BG
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x35, address=HANG_DRAW_CIN_456
 	setup channel=0x2D, address=KILL_CHANNEL_LANDING
@@ -162,7 +162,7 @@ LABEL_A5D0:
 	setPalette 0x01
 	call LABEL_9E1F
 	call DELETE_CHANS_0_8_AND_RET
-	setup channel=0x07, address=LABEL_2500
+	setup channel=0x07, address=BUDDY_SMASHING_WINDOW_ANIMATION
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 	killChannel
 	mov [0x46], 0xF060
@@ -223,7 +223,7 @@ LABEL_A69A:
 	mov [0x41], 0x0064
 	mov [0x40], 0x00AC
 	setPalette 0x04
-	call LABEL_9EC1
+	call DRAW_TANK_REVEAL_BG
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x36, address=LABEL_035A
 	setup channel=0x37, address=HANG_DRAW_CIN_494
@@ -267,7 +267,7 @@ LABEL_A706:
 	mov [0x41], 0x0028
 	mov [0x40], 0x0062
 	setPalette 0x01
-	call LABEL_9DC3
+	call DRAW_FINAL_ESCAPE_LESTER_RUNNING_BG
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x35, address=HANG_DRAW_CIN_456
 	setup channel=0x2D, address=KILL_CHANNEL_LANDING
