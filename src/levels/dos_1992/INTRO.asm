@@ -1489,7 +1489,7 @@ LABEL_085C:
 	setup channel=0x0F, address=DRAW_INTRO_DECOR_331
 	setup channel=0x10, address=DRAW_INTRO_DECOR_329
 	setup channel=0x11, address=DRAW_INTRO_DECOR_318
-	setup channel=0x12, address=INIT_VAR_0D_THEN_LOOP
+	setup channel=0x12, address=DRAW_INTRO_LIGHTNING_BOLT_STRIKE
 	setup channel=0x14, address=DRAW_INTRO_DECOR_305
 	setup channel=0x15, address=DRAW_INTRO_DECOR_301
 	mov [0x01], 0x0064
@@ -1550,7 +1550,7 @@ LABEL_08D9:
 LABEL_0996:
 	break
 	djnz [0x01], LABEL_0996
-	setup channel=0x12, address=INIT_VAR_0D_THEN_LOOP
+	setup channel=0x12, address=DRAW_INTRO_LIGHTNING_BOLT_STRIKE
 	setup channel=0x0E, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x11, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x0F, address=KILL_CHANNEL_ROUTINE
@@ -1804,7 +1804,7 @@ LABEL_0BB1:
 LABEL_0BCC:
 	db 0x11
 
-INIT_VAR_0D_THEN_LOOP:
+DRAW_INTRO_LIGHTNING_BOLT_STRIKE:
 	break
 	mov [0x0D], 0x0014
 
