@@ -5772,6 +5772,11 @@ LABEL_30B6:
 LABEL_30C3:
 	call LABEL_3041
 
+; Random-byte decomposer. After calling LABEL_30B6 (random
+; seed updater), extracts overlapping bit-fields from var38:
+; var3F = low 8 bits, var3E = low 7 bits, var3D = low 6 bits,
+; RANDOM_SEED = low 5 bits, var38 = low 4 bits. Used to
+; derive multiple correlated random values per call.
 DERIVE_VAR3D_3E_3F_FROM_VAR38_BIT_MASKS:
 	call LABEL_30B6
 	and [0x38], 0x00FF
@@ -8912,6 +8917,12 @@ LABEL_51D6:
 LABEL_51D7:
 	db 0x11
 
+; The CAPSULE big state-dispatcher. Sets var2F=0, gates on
+; var12 < 8, masks var12 with 0x1FFF and dispatches on the
+; result == 0x08/0x10/0x18/0x20/0x40 to per-state initializers
+; (INIT_VARS_2F_29_1 and friends). The equivalent of CAVES'
+; STATE_VAR12_BIG_DISPATCH and the per-tick state-transition
+; backbone for the entire capsule arena.
 CAPSULE_STATE_VAR12_BIG_DISPATCH:
 	mov [0x2F], 0x0000
 	jl [0x12], 0x08, LABEL_50EF
@@ -11084,6 +11095,10 @@ LABEL_687A:
 	jg [0x22], 0x0F, LABEL_6958
 	jmp LABEL_6981
 
+; `sub [0x22], 0x0001 / ret`. The canonical "decrement Y
+; then return" tail used by upward-projectile arc routines
+; that jmp here after each draw step. Structurally identical
+; to CAVES's LABEL_72BD.
 CAPSULE_DECREMENT_VAR22_AND_RET:
 	sub [0x22], 0x0001
 	ret
@@ -12564,6 +12579,9 @@ LABEL_78A9:
 	sub [BUDDY_X], 0x0001
 	ret
 
+; Bare `ret`. The canonical CAPSULE shared-ret used by every
+; bail/guard branch. Equivalent to TANK_NOOP_RET and
+; CAVES_NOOP_RET in their stages.
 CAPSULE_NOOP_RET:
 	ret
 
@@ -12951,6 +12969,10 @@ LABEL_7CAD:
 	call LABEL_7902
 	ret
 
+; The hero per-frame render+animation tick in CAPSULE. Calls
+; DRAW_HERO_SPRITE_BY_VAR09_0E, draws COMMON_VIDEO_164 at
+; (BUDDY_X, BUDDY_Y), and calls DRAW_CIN_030_031_032_VAR09.
+; The hero counterpart of CAPSULE_BUDDY_PER_FRAME_TICK.
 CAPSULE_HERO_PER_FRAME_TICK:
 	jne [HACK_VAR_67], [0x10], CAPSULE_NOOP_RET
 	je [0x0D], 0x00, LABEL_7CCB
@@ -14133,6 +14155,11 @@ LABEL_88AC:
 LABEL_88AF:
 	ret
 
+; The buddy/alien per-frame render+animation tick. Calls
+; DRAW_ALIEN_SPRITE_BY_VAR09_0E, draws COMMON_VIDEO_128 at
+; (BUDDY_X, BUDDY_Y) with zoom 0x40, and calls
+; DRAW_CIN_108_109_110_VAR09 (the alien-pose cinematic
+; family). Mirrors CAVES_BEAST_PER_FRAME_TICK in structure.
 CAPSULE_BUDDY_PER_FRAME_TICK:
 	jne [HACK_VAR_67], [0x10], CAPSULE_NOOP_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E

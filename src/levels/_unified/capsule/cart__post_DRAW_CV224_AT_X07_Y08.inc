@@ -78,6 +78,10 @@ LABEL_7CAD:
 	je [0x0D], 0x00, CAPSULE_HERO_PER_FRAME_TICK
 	call LABEL_78AC
 
+; The hero per-frame render+animation tick in CAPSULE. Calls
+; DRAW_HERO_SPRITE_BY_VAR09_0E, draws COMMON_VIDEO_164 at
+; (BUDDY_X, BUDDY_Y), and calls DRAW_CIN_030_031_032_VAR09.
+; The hero counterpart of CAPSULE_BUDDY_PER_FRAME_TICK.
 CAPSULE_HERO_PER_FRAME_TICK:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_235, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
