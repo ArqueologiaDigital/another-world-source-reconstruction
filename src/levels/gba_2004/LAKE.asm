@@ -3633,43 +3633,43 @@ LOOP_DRAW_VINE_FG:
 	killChannel
 
 SCHEDULE_LAKE_DECORATIONS_096_TO_099:
-	setup channel=0x04, address=LOOP_DRAW_LAKE_096_DECOR_AT_72_171
+	setup channel=0x04, address=DRAW_VINE_DECOR_0_LOOP
 	break
 	setup channel=0x04, address=DRAW_LAKE_UNUSED_175_HOLD_LOOP
 	break
-	setup channel=0x04, address=LOOP_DRAW_LAKE_098_DECOR_AT_70_172
+	setup channel=0x04, address=DRAW_VINE_DECOR_2_LOOP
 	break
 
 SCHED_LAKE_DECOR_099_BACK:
-	setup channel=0x04, address=LOOP_DRAW_LAKE_099_DECOR_AT_69_172
+	setup channel=0x04, address=DRAW_VINE_DECOR_3_LOOP
 	break
 	break
 	break
-	setup channel=0x04, address=LOOP_DRAW_LAKE_098_DECOR_AT_70_172
-	break
-	break
-	setup channel=0x04, address=DRAW_LAKE_UNUSED_175_HOLD_LOOP
-	break
-	break
-	setup channel=0x04, address=LOOP_DRAW_LAKE_096_DECOR_AT_72_171
-	break
+	setup channel=0x04, address=DRAW_VINE_DECOR_2_LOOP
 	break
 	break
 	setup channel=0x04, address=DRAW_LAKE_UNUSED_175_HOLD_LOOP
 	break
 	break
-	setup channel=0x04, address=LOOP_DRAW_LAKE_098_DECOR_AT_70_172
+	setup channel=0x04, address=DRAW_VINE_DECOR_0_LOOP
+	break
+	break
+	break
+	setup channel=0x04, address=DRAW_LAKE_UNUSED_175_HOLD_LOOP
+	break
+	break
+	setup channel=0x04, address=DRAW_VINE_DECOR_2_LOOP
 	break
 	break
 	jmp SCHED_LAKE_DECOR_099_BACK
 	killChannel
 
-LOOP_DRAW_LAKE_096_DECOR_AT_72_171:
+DRAW_VINE_DECOR_0_LOOP:
 	video offset=CINEMATIC_VINE_DECOR_0, x=160, y=100
 	mov [HERO_X], 0x0048
 	mov [HERO_Y], 0x00AB
 	break
-	jmp LOOP_DRAW_LAKE_096_DECOR_AT_72_171
+	jmp DRAW_VINE_DECOR_0_LOOP
 	killChannel
 
 DRAW_LAKE_UNUSED_175_HOLD_LOOP:
@@ -3680,20 +3680,20 @@ DRAW_LAKE_UNUSED_175_HOLD_LOOP:
 	jmp DRAW_LAKE_UNUSED_175_HOLD_LOOP
 	killChannel
 
-LOOP_DRAW_LAKE_098_DECOR_AT_70_172:
+DRAW_VINE_DECOR_2_LOOP:
 	video offset=CINEMATIC_VINE_DECOR_2, x=160, y=100
 	mov [HERO_X], 0x0046
 	mov [HERO_Y], 0x00AC
 	break
-	jmp LOOP_DRAW_LAKE_098_DECOR_AT_70_172
+	jmp DRAW_VINE_DECOR_2_LOOP
 	killChannel
 
-LOOP_DRAW_LAKE_099_DECOR_AT_69_172:
+DRAW_VINE_DECOR_3_LOOP:
 	video offset=CINEMATIC_VINE_DECOR_3, x=160, y=100
 	mov [HERO_X], 0x0045
 	mov [HERO_Y], 0x00AC
 	break
-	jmp LOOP_DRAW_LAKE_099_DECOR_AT_69_172
+	jmp DRAW_VINE_DECOR_3_LOOP
 	killChannel
 
 LESTER_DRIFT_RIGHT_SEQ:
