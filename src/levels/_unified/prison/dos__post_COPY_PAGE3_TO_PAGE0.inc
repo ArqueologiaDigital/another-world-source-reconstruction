@@ -281,7 +281,7 @@ LABEL_8551:
 	call TEARDOWN_CHANS_AND_KILL_LANDING
 	setPalette 0x02
 	selectVideoPage 0x00
-	call LABEL_4B2B
+	call DRAW_ENERGY_TRANSMISSION_LINE_FG
 	selectVideoPage 0xFF
 	setup channel=0x01, address=INIT_VARS_E7_E8
 	setup channel=0x02, address=INLINE_SET_VARE9_TO_8

@@ -297,7 +297,7 @@ LABEL_2268:
 	break
 	call LABEL_6541
 	break
-	call LABEL_6575
+	call DRAW_BUDDY_HACKING_THREE_PART
 	break
 	call LABEL_223A
 	video offset=CINEMATIC_196, x=[0x21], y=[0x22]
@@ -935,7 +935,7 @@ LABEL_28EB:
 	break
 	call LABEL_6541
 	break
-	call LABEL_6575
+	call DRAW_BUDDY_HACKING_THREE_PART
 	break
 	call LABEL_652F
 

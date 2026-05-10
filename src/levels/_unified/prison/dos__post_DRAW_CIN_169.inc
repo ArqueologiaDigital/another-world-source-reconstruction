@@ -592,7 +592,7 @@ LABEL_6549:
 	video type=0, offset=COMMON_VIDEO_164, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
-LABEL_6575:
+DRAW_BUDDY_HACKING_THREE_PART:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_CIN_390
 	video offset=CINEMATIC_692, x=[BUDDY_X], y=[BUDDY_Y]

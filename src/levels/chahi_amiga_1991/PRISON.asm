@@ -4338,7 +4338,7 @@ LABEL_2268:
 	break
 	call LABEL_6541
 	break
-	call LABEL_6575
+	call DRAW_BUDDY_HACKING_THREE_PART
 	break
 	call LABEL_223A
 	video offset=CINEMATIC_196, x=[0x21], y=[0x22]
@@ -4976,7 +4976,7 @@ LABEL_28EB:
 	break
 	call LABEL_6541
 	break
-	call LABEL_6575
+	call DRAW_BUDDY_HACKING_THREE_PART
 	break
 	call LABEL_652F
 
@@ -10771,7 +10771,7 @@ LABEL_6563:
 	call LABEL_51E7
 	ret
 
-LABEL_6575:
+DRAW_BUDDY_HACKING_THREE_PART:
 	jne [HACK_VAR_67], [0x10], LABEL_528D
 	call DRAW_SPRITE_164_167_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_244, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40

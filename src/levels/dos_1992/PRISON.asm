@@ -8427,7 +8427,7 @@ LABEL_4B0E:
 	video offset=CINEMATIC_437, x=160, y=100
 	ret
 
-LABEL_4B2B:
+DRAW_ENERGY_TRANSMISSION_LINE_FG:
 	call LABEL_8189
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
@@ -9623,7 +9623,7 @@ LABEL_572C:
 	ret
 
 JUNK__5746:
-	call LABEL_6575
+	call DRAW_BUDDY_HACKING_THREE_PART
 	break
 	jmp JUNK__5746
 LABEL_574D:
@@ -11008,7 +11008,7 @@ LABEL_6549:
 	video type=0, offset=COMMON_VIDEO_164, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
-LABEL_6575:
+DRAW_BUDDY_HACKING_THREE_PART:
 	jne [HACK_VAR_67], [0x10], LABEL_533A
 	call DRAW_CIN_390
 	video offset=CINEMATIC_692, x=[BUDDY_X], y=[BUDDY_Y]
@@ -14155,7 +14155,7 @@ LABEL_8551:
 	call TEARDOWN_CHANS_AND_KILL_LANDING
 	setPalette 0x02
 	selectVideoPage 0x00
-	call LABEL_4B2B
+	call DRAW_ENERGY_TRANSMISSION_LINE_FG
 	selectVideoPage 0xFF
 	setup channel=0x01, address=INIT_VARS_E7_E8
 	setup channel=0x02, address=INLINE_SET_VARE9_TO_8

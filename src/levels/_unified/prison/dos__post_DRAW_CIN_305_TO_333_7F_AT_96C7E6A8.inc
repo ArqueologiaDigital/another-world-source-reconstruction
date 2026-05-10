@@ -33,7 +33,7 @@ LABEL_4B0E:
 	video offset=CINEMATIC_437, x=160, y=100
 	ret
 
-LABEL_4B2B:
+DRAW_ENERGY_TRANSMISSION_LINE_FG:
 	call LABEL_8189
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
