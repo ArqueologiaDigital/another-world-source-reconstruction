@@ -6253,8 +6253,8 @@ THE_LAB_CONSOLE_SUDDENLY_APPEARS_INSIDE_THE_ALIEN_POOL:
 	video offset=CINEMATIC_CONSOLE_UNDERWATER_EXPLOSION_1, x=160, y=100
 	setup channel=0x0B, address=LAB_CONSOLE_SINKING_ANIMATION
 	setup channel=0x0E, address=UPDATE_POSITION_OF_BUBBLES
-	setup channel=0x0F, address=BUBBLES_A_ANIMATION
-	setup channel=0x10, address=BUBBLES_B_ANIMATION
+	setup channel=0x0F, address=BUBBLES_B_COLUMN_LOOP
+	setup channel=0x10, address=BUBBLES_A_PULSE_LOOP
 	setup channel=0x0C, address=SINKING_AT_CONSOLE
 	break
 	mov [0x04], 0x00CE
@@ -6548,7 +6548,7 @@ SWIMMING_UP_TORSO_ANIMATION:
 	jmp SWIMMING_UP_TORSO_ANIMATION
 	killChannel
 
-BUBBLES_A_ANIMATION:
+BUBBLES_B_COLUMN_LOOP:
 	video offset=CINEMATIC_BUBBLES_B_0, x=[0x13], y=[0x0d]
 	video offset=CINEMATIC_BUBBLES_B_1, x=[0x13], y=[0x0e]
 	video offset=CINEMATIC_BUBBLES_B_2, x=[0x13], y=[0x0f]
@@ -6561,10 +6561,10 @@ BUBBLES_A_ANIMATION:
 	video offset=CINEMATIC_BUBBLES_B_3, x=[0x13], y=[COUNTER]
 	video offset=CINEMATIC_BUBBLES_B_4, x=[0x13], y=[0x11]
 	break
-	jmp BUBBLES_A_ANIMATION
+	jmp BUBBLES_B_COLUMN_LOOP
 	killChannel
 
-BUBBLES_B_ANIMATION:
+BUBBLES_A_PULSE_LOOP:
 	video offset=CINEMATIC_BUBBLES_A_0, x=[0x13], y=[0x0c]
 	break
 	video offset=CINEMATIC_BUBBLES_A_1, x=[0x13], y=[0x0c]
@@ -6575,7 +6575,7 @@ BUBBLES_B_ANIMATION:
 	break
 	video offset=CINEMATIC_BUBBLES_A_0, x=[0x13], y=[0x0c]
 	break
-	jmp BUBBLES_B_ANIMATION
+	jmp BUBBLES_A_PULSE_LOOP
 	killChannel
 
 SWIMMING_UP_LEGS_ANIMATION:
