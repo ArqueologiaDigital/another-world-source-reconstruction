@@ -1430,14 +1430,14 @@ LABEL_033A:
 LABEL_0359:
 	db 0x11
 
-LABEL_035A:
+WAIT_HERO_X_REACHES_96_THEN_DELETE_CHANS:
 	break
-	jl [HERO_X], 0x96, LABEL_035A
+	jl [HERO_X], 0x96, WAIT_HERO_X_REACHES_96_THEN_DELETE_CHANS
 	deleteChannels first=0x14, last=0x16
 
-LABEL_0365:
+WAIT_VAR68_THEN_BANK_TO_TANK:
 	break
-	jl [0x68], 0xB3, LABEL_0365
+	jl [0x68], 0xB3, WAIT_VAR68_THEN_BANK_TO_TANK
 	break
 	break
 	break
@@ -1447,7 +1447,7 @@ LABEL_0365:
 	bankSwitch 5;  Tank in the Battle Arena
 	killChannel
 
-INIT_VARS_E6_07_08:
+BUDDY_PULL_INIT_POSITIONS:
 	mov [0xE6], 0x0003
 	mov [BUDDY_X], 0x007B
 	mov [BUDDY_Y], 0x00AC
@@ -1486,18 +1486,18 @@ BUDDY_PULLS_LESTER_F6_HOLD:
 	video offset=CINEMATIC_BUDDY_PULLS_LESTER_6, x=[BUDDY_X], y=[BUDDY_Y]
 	djnz [0x29], BUDDY_PULLS_LESTER_F6_HOLD
 	break
-	jmp INIT_VARS_0E_29
+	jmp POST_BUDDY_PULL_INIT
 LABEL_03F0:
 	db 0x11
 
-INIT_VARS_0E_29:
+POST_BUDDY_PULL_INIT:
 	mov [0x0E], 0x0000
 	mov [0x29], 0x0005
 
-LABEL_03F9:
+POST_BUDDY_PULL_5X_TICK_LOOP:
 	call LABEL_7CDA
 	break
-	djnz [0x29], LABEL_03F9
+	djnz [0x29], POST_BUDDY_PULL_5X_TICK_LOOP
 	mov [0x0E], 0x0003
 	call LABEL_7CBC
 	break
@@ -6067,7 +6067,7 @@ LABEL_344B:
 	mov [0x6D], 0x0000
 	mov [0x6E], 0x2710
 	setup channel=0x34, address=LABEL_1FBE
-	setup channel=0x23, address=INIT_VARS_E6_07_08
+	setup channel=0x23, address=BUDDY_PULL_INIT_POSITIONS
 	ret
 
 LABEL_346F:
@@ -16959,7 +16959,7 @@ LABEL_A69A:
 	setPalette 0x04
 	call DRAW_TANK_REVEAL_BG
 	call DELETE_CHANS_0_8_AND_RET
-	setup channel=0x36, address=LABEL_035A
+	setup channel=0x36, address=WAIT_HERO_X_REACHES_96_THEN_DELETE_CHANS
 	setup channel=0x37, address=LABEL_1F80
 	setup channel=0x01, address=LABEL_3FBA
 	mov [0x69], 0x00AC

@@ -225,7 +225,7 @@ LABEL_A69A:
 	setPalette 0x04
 	call DRAW_TANK_REVEAL_BG
 	call DELETE_CHANS_0_8_AND_RET
-	setup channel=0x36, address=LABEL_035A
+	setup channel=0x36, address=WAIT_HERO_X_REACHES_96_THEN_DELETE_CHANS
 	setup channel=0x37, address=HANG_DRAW_CIN_494
 	setup channel=0x01, address=LABEL_3FBA
 	mov [0x69], 0x00AC

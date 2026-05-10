@@ -311,7 +311,7 @@ LABEL_35DA:
 	mov [0x6D], 0x0000
 	mov [0x6E], 0x2710
 	setup channel=0x34, address=HANG_DRAW_CIN_336
-	setup channel=0x23, address=INIT_VARS_E6_07_08
+	setup channel=0x23, address=BUDDY_PULL_INIT_POSITIONS
 	ret
 
 LABEL_35FE:

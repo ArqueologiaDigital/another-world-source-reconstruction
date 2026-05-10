@@ -1405,7 +1405,7 @@ LABEL_0347:
 	and [0x11], 0xEFFF
 	mov [0x29], 0x0000
 	jmp LABEL_4D20
-LABEL_035A:
+WAIT_HERO_X_REACHES_96_THEN_DELETE_CHANS:
 	db 0x11
 
 INIT_VARS_29_0E:
@@ -1475,7 +1475,7 @@ LABEL_03D2:
 	bankSwitch 5;  TODO - Name this stage (bank number #5)
 	killChannel
 
-INIT_VARS_E6_07_08:
+BUDDY_PULL_INIT_POSITIONS:
 	mov [0xE6], 0x0003
 	mov [BUDDY_X], 0x007B
 	mov [BUDDY_Y], 0x00AC
@@ -1514,11 +1514,11 @@ LABEL_044F:
 	video offset=CINEMATIC_BUDDY_PULLS_LESTER_6, x=[BUDDY_X], y=[BUDDY_Y]
 	djnz [0x29], LABEL_044F
 	break
-	jmp INIT_VARS_0E_29
+	jmp POST_BUDDY_PULL_INIT
 LABEL_045D:
 	db 0x11
 
-INIT_VARS_0E_29:
+POST_BUDDY_PULL_INIT:
 	mov [0x0E], 0x0000
 	mov [0x29], 0x0005
 
@@ -6183,7 +6183,7 @@ LABEL_35DA:
 	mov [0x6D], 0x0000
 	mov [0x6E], 0x2710
 	setup channel=0x34, address=LABEL_20D2
-	setup channel=0x23, address=INIT_VARS_E6_07_08
+	setup channel=0x23, address=BUDDY_PULL_INIT_POSITIONS
 	ret
 
 LABEL_35FE:
