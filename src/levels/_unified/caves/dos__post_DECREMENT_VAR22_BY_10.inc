@@ -9,7 +9,7 @@ LABEL_7EB2:
 	ret
 
 LABEL_7EBC:
-	call LABEL_DA00
+	call CHECK_HERO_Y_LT_VAR41
 	mov [0x22], [HERO_X]
 	jl [HERO_X], [0x28], LABEL_7EF8
 	jg [HERO_X], [0x28], LABEL_7EDB
