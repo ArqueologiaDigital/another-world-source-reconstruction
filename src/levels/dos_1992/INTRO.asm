@@ -925,7 +925,7 @@ DRAW_CINEMATICS_166_TO_171:
 	video offset=CINEMATIC_166, x=160, y=100
 	killChannel
 
-INIT_VARS_10_11_AND_SELECT_PAGE0:
+DRAW_SCIENTIST_THEN_DIVERGE_INIT:
 	mov [0x10], 0x00E4
 	mov [0x11], 0x00E4
 	selectVideoPage 0x00
@@ -3036,7 +3036,7 @@ LABEL_188C:
 	setup channel=0x07, address=CH_07_INIT_VAR_08_09
 	setup channel=0x0A, address=LABEL_156E
 	setup channel=0x10, address=LABEL_1575
-	setup channel=0x08, address=INIT_VARS_10_11_AND_SELECT_PAGE0
+	setup channel=0x08, address=DRAW_SCIENTIST_THEN_DIVERGE_INIT
 	setup channel=0x09, address=LABEL_0370
 	mov [0x03], 0x0032
 
