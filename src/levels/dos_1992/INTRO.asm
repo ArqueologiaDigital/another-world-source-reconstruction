@@ -733,7 +733,7 @@ LABEL_0159:
 	setup channel=0x08, address=DELETE_CHANNELS_0A_TO_1F
 	break
 	text id=0x0191, x=3, y=168, color=0x0B ; "I see you have driven here in your\nFerrari."
-	setup channel=0x02, address=LABEL_1C05
+	setup channel=0x02, address=SETUP_LESTER_AT_HOLO_CONSOLE_SCENE
 	setup channel=0x3C, address=LABEL_0094
 	killChannel
 
@@ -1256,9 +1256,9 @@ LABEL_05EA:
 	video offset=CINEMATIC_005, x=90, y=101
 	mov [0x01], 0x015E
 
-LABEL_0646:
+EXPERIMENT_LIGHTNING_WAIT_AND_TRIGGER:
 	break
-	djnz [0x01], LABEL_0646
+	djnz [0x01], EXPERIMENT_LIGHTNING_WAIT_AND_TRIGGER
 	setup channel=0x3C, address=LABEL_00C4
 	deleteChannels first=0x0A, last=0x12
 	break
@@ -2118,7 +2118,7 @@ LABEL_0E4A:
 LABEL_0F36:
 	db 0x11
 
-LABEL_0F37:
+LESTER_OPENS_AND_DRINKS_SODA_ANIMATION:
 	fill page=0xFF, color=0x04
 	video offset=CINEMATIC_385, x=160, y=100
 	copyVideoPage src=0xFF, dst=0x00
@@ -2601,7 +2601,7 @@ LABEL_1406:
 	text id=0x004C, x=28, y=80, color=0x06 ; "  17"
 	setup channel=0x10, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x0A, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x02, address=LABEL_0F37
+	setup channel=0x02, address=LESTER_OPENS_AND_DRINKS_SODA_ANIMATION
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x3C, address=LABEL_0094
 	killChannel
@@ -3215,10 +3215,10 @@ LABEL_1A5E:
 	djnz [0x03], LABEL_1A5E
 	mov [0x03], 0x0010
 
-LABEL_1A6B:
+LIFT_ENTRY_WAIT_AND_TRANSITION:
 	break
 	add [0x01], 0x0001
-	djnz [0x03], LABEL_1A6B
+	djnz [0x03], LIFT_ENTRY_WAIT_AND_TRANSITION
 	copyVideoPage src=0xFE, dst=0x00
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x3C, address=LABEL_0094
@@ -3305,7 +3305,7 @@ LABEL_1A6B:
 	break
 	play id=0x0036, freq=0x16, vol=0x3F, channel=0x03
 	setup channel=0x01, address=CH_01_INIT_VAR_04_06
-	setup channel=0x03, address=LABEL_224C
+	setup channel=0x03, address=LESTER_WALKING_TOWARDS_CAMERA_ANIMATION
 	fill page=0x00, color=0x07
 	selectVideoPage 0x00
 	video offset=CINEMATIC_467, x=150, y=100
@@ -3376,7 +3376,7 @@ LABEL_1BEA:
 	setup channel=0x06, address=LABEL_1CC1
 	killChannel
 
-LABEL_1C05:
+SETUP_LESTER_AT_HOLO_CONSOLE_SCENE:
 	mov [PAUSE_SLICES], 0x0003
 	mov [0x01], 0x002E
 	mov [0x02], 0x00FF
@@ -3521,7 +3521,7 @@ DRAW_PARTICLE_LAB_BG_COMPOSITE:
 	video offset=CINEMATIC_180, x=160, y=100
 	ret
 
-LABEL_1D65:
+DRAW_LIFT_SCENE_BG_COMPOSITE:
 	setPalette 0x07
 	selectVideoPage 0x00
 	fill page=0x00, color=0x05
@@ -3729,10 +3729,10 @@ LABEL_1F73:
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
-LABEL_1F85:
+LESTER_HAND_PRESSING_KEYPAD_ANIMATION:
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F0, x=[0x01], y=[0x02]
 	break
-	jne [0x03], 0x00, LABEL_1F85
+	jne [0x03], 0x00, LESTER_HAND_PRESSING_KEYPAD_ANIMATION
 	mov [0x03], 0x00FF
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F1, x=[0x01], y=[0x02]
 	break
@@ -3745,7 +3745,7 @@ LABEL_1F85:
 	break
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F5, x=[0x01], y=[0x02]
 	break
-	jmp LABEL_1F85
+	jmp LESTER_HAND_PRESSING_KEYPAD_ANIMATION
 LABEL_1FB9:
 	db 0x11
 
@@ -3831,7 +3831,7 @@ LABEL_207C:
 	djnz [0x06], LABEL_207C
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x02, address=INTRO_FILL_PAGE0_DRAW_CIN_118
-	setup channel=0x03, address=LABEL_1F85
+	setup channel=0x03, address=LESTER_HAND_PRESSING_KEYPAD_ANIMATION
 	setup channel=0x3C, address=LABEL_0094
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	killChannel
@@ -3995,7 +3995,7 @@ LABEL_21D8:
 LABEL_224B:
 	db 0x11
 
-LABEL_224C:
+LESTER_WALKING_TOWARDS_CAMERA_ANIMATION:
 	video offset=CINEMATIC_468, x=160, y=111, zoom=[0x04]
 	break
 	video offset=CINEMATIC_LESTER_WALKING_TOWARDS_CAMERA_F0, x=160, y=111, zoom=[0x04]
@@ -4030,7 +4030,7 @@ LABEL_224C:
 	break
 	video offset=CINEMATIC_LESTER_WALKING_TOWARDS_CAMERA_F7, x=160, y=111, zoom=[0x04]
 	break
-	jmp LABEL_224C
+	jmp LESTER_WALKING_TOWARDS_CAMERA_ANIMATION
 LABEL_22CB:
 	db 0x11
 
@@ -4327,7 +4327,7 @@ LABEL_2617:
 LABEL_263C:
 	break
 	djnz [0x01], LABEL_263C
-	setup channel=0x01, address=LABEL_1D65
+	setup channel=0x01, address=DRAW_LIFT_SCENE_BG_COMPOSITE
 	setup channel=0x02, address=CH_02_INIT_VARS_01_02_03
 	setup channel=0x03, address=LABEL_1D92
 	setup channel=0x3C, address=LABEL_0094
