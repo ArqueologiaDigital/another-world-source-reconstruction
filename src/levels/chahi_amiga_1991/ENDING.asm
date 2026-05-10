@@ -164,6 +164,12 @@ LABEL_0000:
 	killChannel
 	copyVideoPage src=0x03, dst=0x00
 
+; All 5 callers are `setup channel=0xNN, address=LABEL_0024`,
+; which starts a channel whose immediate instruction is
+; `killChannel`. This is the standard "stop a channel" idiom:
+; install a tombstone entry point that kills the channel on
+; first tick. Multiple `setup` sites share this address as
+; the kill-target.
 ENDING_CHANNEL_TOMBSTONE_KILL:
 	killChannel
 

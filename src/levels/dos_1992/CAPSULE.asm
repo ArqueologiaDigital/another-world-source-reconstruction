@@ -1452,6 +1452,8 @@ BUDDY_PULL_INIT_POSITIONS:
 	mov [BUDDY_X], 0x007B
 	mov [BUDDY_Y], 0x00AC
 
+; djnz preamble drawing CIN_003 + CIN_004 before
+; transitioning into the BUDDY_PULLS_LESTER_0..N sequence.
 BUDDY_PULLS_LESTER_PREPARE_LOOP:
 	video offset=CINEMATIC_003, x=123, y=172
 	video offset=CINEMATIC_004, x=114, y=160
@@ -1481,6 +1483,8 @@ BUDDY_PULLS_LESTER_PREPARE_LOOP:
 	mov [0x32], 0x0000
 	mov [0x29], 0x0004
 
+; Tail-end djnz hold on BUDDY_PULLS_LESTER_6 before scene
+; transition.
 BUDDY_PULLS_LESTER_F6_HOLD:
 	break
 	video offset=CINEMATIC_BUDDY_PULLS_LESTER_6, x=[BUDDY_X], y=[BUDDY_Y]
@@ -4648,6 +4652,12 @@ LABEL_24F5:
 	jne [0x10], 0x8E, LABEL_24C9
 	ret
 
+; The full Buddy-smashing-window animation routine. Sets up
+; position (0x68, 0x69), waits for Lester to be off-screen
+; left (jl [HERO_X], 0x28), sets bit 0x40 in [0xB9] (some
+; narrative-progress flag), then plays the smash animation
+; via CINEMATIC_461 + BUDDY_SMASHING_WINDOW_F0..F15 with two
+; hit sound effects (id=0x0075 and 0x006B).
 BUDDY_SMASHING_WINDOW_ANIMATION:
 	mov [0x68], 0x0090
 	mov [0x69], 0x0062
@@ -15992,6 +16002,11 @@ LABEL_9C16:
 	video offset=CINEMATIC_001, x=160, y=100
 	ret
 
+; Fill page 0 with color 0x0B + draw CINEMATIC_BUDDY_-
+; SURRENDERED_BY_GUARDS at center + CINEMATIC_340 at offset
+; (-23, 96). The 2-element BG composite for the msdos-only
+; scene where Buddy is captured by guards and Lester rescues
+; him.
 DRAW_BUDDY_SURRENDERED_SCENE_BG:
 	fill page=0x00, color=0x0B
 	video offset=CINEMATIC_BUDDY_SURRENDERED_BY_GUARDS, x=160, y=100
@@ -16149,6 +16164,9 @@ LABEL_9D37:
 	call LABEL_88B0
 	ret
 
+; Fill page 0 with color 0x01 + draw CINEMATIC_FINAL_ESCAPE_-
+; LESTER_RUNNING + 3 supporting frames (433/434/435). The
+; 4-element BG composite for the final-escape running scene.
 DRAW_FINAL_ESCAPE_LESTER_RUNNING_BG:
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_FINAL_ESCAPE_LESTER_RUNNING, x=160, y=100
@@ -16256,6 +16274,9 @@ LABEL_9EB9:
 	video offset=CINEMATIC_585, x=160, y=100
 	ret
 
+; Fill page 0 with color 0x08 + draw CINEMATIC_492 at (160,
+; 229) + CINEMATIC_TANK_REVEAL_BG at center. The
+; 2-element composite for the first reveal of the tank.
 DRAW_TANK_REVEAL_BG:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_492, x=160, y=229, zoom=0x40

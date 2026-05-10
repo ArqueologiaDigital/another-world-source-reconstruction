@@ -5860,6 +5860,11 @@ LABEL_30B4:
 LABEL_30B5:
 	db 0x11
 
+; State-machine dispatcher on [0x12]: extracts the low bits
+; via `and 0x1FFF` and dispatches to a tier of
+; STATE_VAR12_*_DISPATCH_CASE_NN handlers (most already
+; semantically named in source-recon) and SET_VAR2F_TO_*
+; handlers. The hub for PRISON's main state machine.
 STATE_VAR12_DISPATCH:
 	mov [0x2F], 0x0000
 	jl [0x12], 0x08, LABEL_2F9C
@@ -8427,6 +8432,11 @@ LABEL_4B0E:
 	video offset=CINEMATIC_437, x=160, y=100
 	ret
 
+; Single-shot draw helper that copies page 0x03 onto page 0
+; (FG), then draws CINEMATIC_ENERGY_TRANSMISSION_LINE
+; (renamed in 2d4db26) at (160, 100). Used during the
+; sequence where Lester must shoot the energy line to power
+; down the upstairs security doors.
 DRAW_ENERGY_TRANSMISSION_LINE_FG:
 	call LABEL_8189
 	selectVideoPage 0x00
@@ -9216,6 +9226,13 @@ LABEL_532E:
 	sub [BUDDY_X], 0x0001
 	ret
 
+; A single `ret`. Used as the no-op early-exit target for the
+; scores of `jne [HACK_VAR_67], 0xNN, ...` and `jne [0x10],
+; 0xNN, ...` checks throughout PRISON's scene-dispatch
+; routines. When a routine's expected dispatcher state
+; doesn't match (Buddy isn't at the right narrative phase,
+; etc.), it bails out via this label instead of falling
+; through to draw something inappropriate.
 SCENE_DISPATCH_NOOP_RET:
 	ret
 
@@ -11008,6 +11025,12 @@ LABEL_6549:
 	video type=0, offset=COMMON_VIDEO_164, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
+; Three-element Buddy composite drawn conditionally on
+; HACK_VAR_67 == [0x10] (the dispatcher pose match):
+; DRAW_CIN_390 + CINEMATIC_692 + CINEMATIC_BUDDY_HACKING_-
+; SECURITY_DOOR. Distinguishes from a simpler two-part
+; variant at the line just below LABEL_6589 (no rename
+; here; that's in unreachable code after a ret).
 DRAW_BUDDY_HACKING_THREE_PART:
 	jne [HACK_VAR_67], [0x10], SCENE_DISPATCH_NOOP_RET
 	call DRAW_CIN_390
@@ -13711,6 +13734,10 @@ COPY_PAGE0_TO_FF_KILL_CHANNEL:
 	copyVideoPage src=0x00, dst=0xFF
 	killChannel
 
+; per-tick state-machine top
+; checking if hero is in
+; range of the gun on the
+; floor
 GUN_ZONE_TICK_LOOP:
 	jne [0x0A], 0x00, GUN_ZONE_TICK_LOOP_RESTART
 	mov [0xF8], [0x31]
@@ -13718,6 +13745,10 @@ GUN_ZONE_TICK_LOOP:
 	je [0xF8], 0x00, GUN_PICKUP_SCENE
 	video offset=CINEMATIC_186, x=258, y=181
 
+; per-tick state-machine top
+; checking if hero is in
+; range of the gun on the
+; floor
 GUN_PICKUP_SCENE:
 	jl [HERO_X], 0xF0, GUN_ZONE_TICK_LOOP_RESTART
 	jg [HERO_X], 0x0104, GUN_ZONE_TICK_LOOP_RESTART
@@ -13761,6 +13792,10 @@ GUN_PICKUP_SCENE:
 	mov [PAUSE_SLICES], 0x0004
 	mov [0xC8], 0x0005
 
+; per-tick state-machine top
+; checking if hero is in
+; range of the gun on the
+; floor
 GUN_FLICKER_HOLD_177:
 	video offset=CINEMATIC_THE_GUN, x=160, y=100
 	video offset=CINEMATIC_177, x=160, y=100
@@ -13768,6 +13803,10 @@ GUN_FLICKER_HOLD_177:
 	djnz [0xC8], GUN_FLICKER_HOLD_177
 	mov [0xC8], 0x0005
 
+; per-tick state-machine top
+; checking if hero is in
+; range of the gun on the
+; floor
 GUN_FLICKER_HOLD_176:
 	video offset=CINEMATIC_THE_GUN, x=160, y=100
 	video offset=CINEMATIC_176, x=160, y=100
@@ -13775,6 +13814,10 @@ GUN_FLICKER_HOLD_176:
 	djnz [0xC8], GUN_FLICKER_HOLD_176
 	mov [0xC8], 0x0005
 
+; per-tick state-machine top
+; checking if hero is in
+; range of the gun on the
+; floor
 GUN_FLICKER_FINAL_HOLD:
 	video offset=CINEMATIC_THE_GUN, x=160, y=100
 	video offset=CINEMATIC_177, x=160, y=100
@@ -13803,6 +13846,10 @@ GUN_FLICKER_FINAL_HOLD:
 	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F7, x=160, y=100
 	mov [0xC8], 0x0009
 
+; per-tick state-machine top
+; checking if hero is in
+; range of the gun on the
+; floor
 GUN_PICKUP_END_HOLD:
 	break
 	djnz [0xC8], GUN_PICKUP_END_HOLD
@@ -13814,6 +13861,10 @@ GUN_PICKUP_END_HOLD:
 	break
 	setPalette 0x02
 
+; per-tick state-machine top
+; checking if hero is in
+; range of the gun on the
+; floor
 GUN_ZONE_TICK_LOOP_RESTART:
 	break
 	jmp GUN_ZONE_TICK_LOOP

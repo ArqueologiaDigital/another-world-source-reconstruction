@@ -21100,6 +21100,11 @@ LABEL_D256:
 	jl [HERO_X], 0x35, DRAW_CAVES_FIRST_ROOM_BG
 	mov [0x42], 0x001D
 
+; composes BG_F0 + BG_F1
+; into the cave's first
+; room — fill page0,
+; draw both BG frames,
+; setPage3 backdrop
 DRAW_CAVES_FIRST_ROOM_BG:
 	break
 	jmp LABEL_D256
@@ -21759,6 +21764,9 @@ LABEL_D9F0:
 
 LABEL_D9FF:
 	ret
+; Sets [0x23]=1 if HERO_Y < [0x41], else [0x23]=0. The
+; hero-camera-relationship gate used by PAGE_COPY_IF_-
+; VAR67_DIFFERS and other CAVES routines.
 CHECK_HERO_Y_LT_VAR41:
 	db 0x11
 

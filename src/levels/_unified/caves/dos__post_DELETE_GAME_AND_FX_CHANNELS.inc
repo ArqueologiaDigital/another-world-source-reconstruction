@@ -3,6 +3,9 @@ LABEL_D9F8:
 	call SETUP_KILL_CHAN_3B_AT_LANDING
 	ret
 
+; Sets [0x23]=1 if HERO_Y < [0x41], else [0x23]=0. The
+; hero-camera-relationship gate used by PAGE_COPY_IF_-
+; VAR67_DIFFERS and other CAVES routines.
 CHECK_HERO_Y_LT_VAR41:
 	mov [0x23], 0x0001
 	jl [HERO_Y], [0x41], LABEL_DA0E

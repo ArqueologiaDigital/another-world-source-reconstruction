@@ -85,6 +85,12 @@ LABEL_24F5:
 	jne [0x10], 0x8E, LABEL_24C9
 	ret
 
+; The full Buddy-smashing-window animation routine. Sets up
+; position (0x68, 0x69), waits for Lester to be off-screen
+; left (jl [HERO_X], 0x28), sets bit 0x40 in [0xB9] (some
+; narrative-progress flag), then plays the smash animation
+; via CINEMATIC_461 + BUDDY_SMASHING_WINDOW_F0..F15 with two
+; hit sound effects (id=0x0075 and 0x006B).
 BUDDY_SMASHING_WINDOW_ANIMATION:
 	mov [0x68], 0x0090
 	mov [0x69], 0x0062

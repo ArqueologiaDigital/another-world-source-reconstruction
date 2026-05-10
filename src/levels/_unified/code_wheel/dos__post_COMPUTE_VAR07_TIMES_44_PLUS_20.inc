@@ -221,6 +221,14 @@ BLITTER_LOOP_WITH_VAR1B_2B:
 	break
 	jmp BLITTER_LOOP_WITH_VAR1B_2B
 
+; Three infinite frame-hold loops with `mov [0x1B], <const>`
+; / break / jmp self. The constants 0x2B vs 0x15 set
+; different music/sound IDs (var1B is the audio-track
+; slot). 10A3 is used both for initial wheel display and
+; for failure-reset; 10B2 is the ERROR-screen idle; 10C1
+; is the alternate ERROR-screen with a different track,
+; triggered when var31==1 AND var1B==0x2B already (i.e.
+; re-entering ERROR after a previous attempt).
 CODEWHEEL_ERROR_SCREEN_HOLD_FRAME:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
@@ -229,6 +237,14 @@ CODEWHEEL_ERROR_SCREEN_HOLD_FRAME:
 	break
 	jmp CODEWHEEL_ERROR_SCREEN_HOLD_FRAME
 
+; Three infinite frame-hold loops with `mov [0x1B], <const>`
+; / break / jmp self. The constants 0x2B vs 0x15 set
+; different music/sound IDs (var1B is the audio-track
+; slot). 10A3 is used both for initial wheel display and
+; for failure-reset; 10B2 is the ERROR-screen idle; 10C1
+; is the alternate ERROR-screen with a different track,
+; triggered when var31==1 AND var1B==0x2B already (i.e.
+; re-entering ERROR after a previous attempt).
 CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF

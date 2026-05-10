@@ -1,3 +1,7 @@
+; per-tick state-machine top
+; checking if hero is in
+; range of the gun on the
+; floor
 GUN_ZONE_TICK_LOOP:
 	jne [0x0A], 0x00, GUN_ZONE_TICK_LOOP_RESTART
 	mov [0xF8], [0x31]
@@ -5,6 +9,10 @@ GUN_ZONE_TICK_LOOP:
 	je [0xF8], 0x00, GUN_PICKUP_SCENE
 	video offset=CINEMATIC_186, x=258, y=181
 
+; per-tick state-machine top
+; checking if hero is in
+; range of the gun on the
+; floor
 GUN_PICKUP_SCENE:
 	jl [HERO_X], 0xF0, GUN_ZONE_TICK_LOOP_RESTART
 	jg [HERO_X], 0x0104, GUN_ZONE_TICK_LOOP_RESTART
@@ -48,6 +56,10 @@ GUN_PICKUP_SCENE:
 	mov [PAUSE_SLICES], 0x0004
 	mov [0xC8], 0x0005
 
+; per-tick state-machine top
+; checking if hero is in
+; range of the gun on the
+; floor
 GUN_FLICKER_HOLD_177:
 	video offset=CINEMATIC_THE_GUN, x=160, y=100
 	video offset=CINEMATIC_177, x=160, y=100
@@ -55,6 +67,10 @@ GUN_FLICKER_HOLD_177:
 	djnz [0xC8], GUN_FLICKER_HOLD_177
 	mov [0xC8], 0x0005
 
+; per-tick state-machine top
+; checking if hero is in
+; range of the gun on the
+; floor
 GUN_FLICKER_HOLD_176:
 	video offset=CINEMATIC_THE_GUN, x=160, y=100
 	video offset=CINEMATIC_176, x=160, y=100
@@ -62,6 +78,10 @@ GUN_FLICKER_HOLD_176:
 	djnz [0xC8], GUN_FLICKER_HOLD_176
 	mov [0xC8], 0x0005
 
+; per-tick state-machine top
+; checking if hero is in
+; range of the gun on the
+; floor
 GUN_FLICKER_FINAL_HOLD:
 	video offset=CINEMATIC_THE_GUN, x=160, y=100
 	video offset=CINEMATIC_177, x=160, y=100
@@ -101,6 +121,10 @@ DELAY_LOOP_VARC8:
 	break
 	setPalette 0x02
 
+; per-tick state-machine top
+; checking if hero is in
+; range of the gun on the
+; floor
 GUN_ZONE_TICK_LOOP_RESTART:
 	break
 	jmp GUN_ZONE_TICK_LOOP

@@ -76,6 +76,10 @@ CINEMATIC_056		EQU 0x0908
 
 	org 0x0000
 
+; Calls LABEL_1090 setup helper, sets PAUSE_SLICES=2, sets
+; up channel 0x3C as the redraw loop, fills both visible
+; pages black, clears LAST_KEYCHAR, sets palette 5. The
+; screen-startup routine.
 PASSCODE_SCREEN_INIT:
 	call LABEL_0CB5
 	mov [PAUSE_SLICES], 0x0002

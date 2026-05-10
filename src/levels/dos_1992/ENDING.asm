@@ -167,6 +167,12 @@ LABEL_0000:
 	killChannel
 	copyVideoPage src=0x03, dst=0x00
 
+; All 5 callers are `setup channel=0xNN, address=LABEL_0024`,
+; which starts a channel whose immediate instruction is
+; `killChannel`. This is the standard "stop a channel" idiom:
+; install a tombstone entry point that kills the channel on
+; first tick. Multiple `setup` sites share this address as
+; the kill-target.
 ENDING_CHANNEL_TOMBSTONE_KILL:
 	killChannel
 
@@ -1040,6 +1046,11 @@ LABEL_08B8:
 LABEL_091B:
 	db 0x11
 
+; Two-phase rightward slide of var07 (the X-coord for video
+; draws): set counter to 3, increment x by 2 each break;
+; then set counter to 5, increment x by 3 each break. Net:
+; 21 pixels right over 8 ticks with acceleration in the
+; second phase. The classic "hero-walks-off-stage" pacing.
 ENDING_X_SLIDE_RIGHT_ACCEL:
 	mov [0x0A], 0x0003
 	add [0x07], 0x0002
@@ -1148,6 +1159,10 @@ DRAW_STARS_CIN_38_39_40_5_6:
 	video offset=CINEMATIC_041, x=202, y=86, zoom=[0x30]	;@enc=alt
 	ret
 
+; `blitFramebuffer 0xFF / selectVideoPage 0xFF /
+;  copyVideoPage src=0x00, dst=0xFF / break / jmp self`.
+; An infinite-frame-hold loop that re-blits page 0 each tick.
+; Used after a cinematic completes to freeze the final image.
 ENDING_HOLD_PAGE_0_INFINITE:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
@@ -1161,6 +1176,8 @@ JUNK__0AD7:
 	break
 	jmp JUNK__0AD7
 
+; Same shape as above but clears 0xFF to black first, then
+; copies page 0x80. The "freeze-on-page-80" sibling.
 ENDING_HOLD_PAGE_80_BLACK_INFINITE:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF

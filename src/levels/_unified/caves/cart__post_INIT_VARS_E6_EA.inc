@@ -490,6 +490,11 @@ LABEL_D256:
 	jl [HERO_X], 0x35, DRAW_CAVES_FIRST_ROOM_BG
 	mov [0x42], 0x001D
 
+; composes BG_F0 + BG_F1
+; into the cave's first
+; room — fill page0,
+; draw both BG frames,
+; setPage3 backdrop
 DRAW_CAVES_FIRST_ROOM_BG:
 	break
 	jmp LABEL_D256

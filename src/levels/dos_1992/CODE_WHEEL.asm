@@ -1255,6 +1255,12 @@ LABEL_0C2A:
 	je [0x29], [0x21], CODEWHEEL_CHECK_DIGIT_0_VAR2A
 	jmp CODEWHEEL_FAILURE_RESET
 
+; The three-stage code validation chain. Each stage compares
+; one entered digit (var 0x2A, 0x2B, 0x2C) against four
+; acceptable values (vars 0x1E, 0x1F, 0x20, 0x21 — the
+; per-puzzle expected codes). All three must match to
+; reach SETUP_CODEWHEEL_CHANNELS (success); any failure
+; jumps straight to CODEWHEEL_FAILURE_RESET.
 CODEWHEEL_CHECK_DIGIT_0_VAR2A:
 	je [0x2A], [0x1E], CODEWHEEL_CHECK_DIGIT_1_VAR2B
 	je [0x2A], [0x1F], CODEWHEEL_CHECK_DIGIT_1_VAR2B
@@ -1262,6 +1268,12 @@ CODEWHEEL_CHECK_DIGIT_0_VAR2A:
 	je [0x2A], [0x21], CODEWHEEL_CHECK_DIGIT_1_VAR2B
 	jmp CODEWHEEL_FAILURE_RESET
 
+; The three-stage code validation chain. Each stage compares
+; one entered digit (var 0x2A, 0x2B, 0x2C) against four
+; acceptable values (vars 0x1E, 0x1F, 0x20, 0x21 — the
+; per-puzzle expected codes). All three must match to
+; reach SETUP_CODEWHEEL_CHANNELS (success); any failure
+; jumps straight to CODEWHEEL_FAILURE_RESET.
 CODEWHEEL_CHECK_DIGIT_1_VAR2B:
 	je [0x2B], [0x1E], CODEWHEEL_CHECK_DIGIT_2_VAR2C
 	je [0x2B], [0x1F], CODEWHEEL_CHECK_DIGIT_2_VAR2C
@@ -1269,6 +1281,12 @@ CODEWHEEL_CHECK_DIGIT_1_VAR2B:
 	je [0x2B], [0x21], CODEWHEEL_CHECK_DIGIT_2_VAR2C
 	jmp CODEWHEEL_FAILURE_RESET
 
+; The three-stage code validation chain. Each stage compares
+; one entered digit (var 0x2A, 0x2B, 0x2C) against four
+; acceptable values (vars 0x1E, 0x1F, 0x20, 0x21 — the
+; per-puzzle expected codes). All three must match to
+; reach SETUP_CODEWHEEL_CHANNELS (success); any failure
+; jumps straight to CODEWHEEL_FAILURE_RESET.
 CODEWHEEL_CHECK_DIGIT_2_VAR2C:
 	je [0x2C], [0x1E], SETUP_CODEWHEEL_CHANNELS
 	je [0x2C], [0x1F], SETUP_CODEWHEEL_CHANNELS
@@ -1347,6 +1365,11 @@ LABEL_0D46:
 LABEL_0D4E:
 	db 0x11
 
+; The "wrong-code" reset path. Deletes all channels, saves
+; var37 (the entered hash) into var02, re-initializes the
+; progress hash vars, then re-sets up the wheel-display
+; channel (running CODEWHEEL_DISPLAY_HOLD_FRAME) and kills
+; the current channel. Used everywhere a code check fails.
 CODEWHEEL_FAILURE_RESET:
 	deleteChannels first=0x00, last=0x3F
 	mov [0x02], [0x37]
@@ -1362,11 +1385,19 @@ LABEL_0D62:
 	mov [0xC9], 0x0001
 	killChannel
 
+; Tiny background tasks: `mov [0x31], <const> / break /
+; jmp self`. Continuously pin var31 to 0 or 1 each tick;
+; set up as separate channels to maintain a "pressed" or
+; "released" state visible to the main code-check loop.
 CODEWHEEL_PIN_VAR31_TO_1:
 	mov [0x31], 0x0001
 	break
 	jmp CODEWHEEL_PIN_VAR31_TO_1
 
+; Tiny background tasks: `mov [0x31], <const> / break /
+; jmp self`. Continuously pin var31 to 0 or 1 each tick;
+; set up as separate channels to maintain a "pressed" or
+; "released" state visible to the main code-check loop.
 CODEWHEEL_PIN_VAR31_TO_0:
 	mov [0x31], 0x0000
 	break
@@ -1681,6 +1712,14 @@ SHARED_RET:
 	killChannel
 	video offset=CINEMATIC_079, x=160, y=100
 
+; Three infinite frame-hold loops with `mov [0x1B], <const>`
+; / break / jmp self. The constants 0x2B vs 0x15 set
+; different music/sound IDs (var1B is the audio-track
+; slot). 10A3 is used both for initial wheel display and
+; for failure-reset; 10B2 is the ERROR-screen idle; 10C1
+; is the alternate ERROR-screen with a different track,
+; triggered when var31==1 AND var1B==0x2B already (i.e.
+; re-entering ERROR after a previous attempt).
 CODEWHEEL_DISPLAY_HOLD_FRAME:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
@@ -1689,6 +1728,14 @@ CODEWHEEL_DISPLAY_HOLD_FRAME:
 	break
 	jmp CODEWHEEL_DISPLAY_HOLD_FRAME
 
+; Three infinite frame-hold loops with `mov [0x1B], <const>`
+; / break / jmp self. The constants 0x2B vs 0x15 set
+; different music/sound IDs (var1B is the audio-track
+; slot). 10A3 is used both for initial wheel display and
+; for failure-reset; 10B2 is the ERROR-screen idle; 10C1
+; is the alternate ERROR-screen with a different track,
+; triggered when var31==1 AND var1B==0x2B already (i.e.
+; re-entering ERROR after a previous attempt).
 CODEWHEEL_ERROR_SCREEN_HOLD_FRAME:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
@@ -1697,6 +1744,14 @@ CODEWHEEL_ERROR_SCREEN_HOLD_FRAME:
 	break
 	jmp CODEWHEEL_ERROR_SCREEN_HOLD_FRAME
 
+; Three infinite frame-hold loops with `mov [0x1B], <const>`
+; / break / jmp self. The constants 0x2B vs 0x15 set
+; different music/sound IDs (var1B is the audio-track
+; slot). 10A3 is used both for initial wheel display and
+; for failure-reset; 10B2 is the ERROR-screen idle; 10C1
+; is the alternate ERROR-screen with a different track,
+; triggered when var31==1 AND var1B==0x2B already (i.e.
+; re-entering ERROR after a previous attempt).
 CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF

@@ -9,6 +9,11 @@ LABEL_0004:
 	killChannel
 	jmp CAPSULE_DOME_CLOSING_REENTRY
 
+; The main TANK stage init. Sets up ~10 channels (renderer,
+; cinematic players, projectile state machines, sound
+; ambient) — the canonical entry point that boots all the
+; independent sub-systems running concurrently in the tank
+; arena.
 TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x3C, address=BLITTER_LOOP_COPY_PAGE_03
 	setup channel=0x02, address=LABEL_1BDA
@@ -36,6 +41,11 @@ TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x00, address=INIT_VARS_A_B_PAL_1
 	killChannel
 
+; Sets up the tank-driving scene's channel layout: channel
+; 0x3C runs TANK_FRAME_RENDER_FROM_PAGE_3_LOOP, channel
+; 0x02 runs the per-tick movement, etc. Called after the
+; capsule-dome closes (CAPSULE_DOME_CLOSING_LATE_FRAMES
+; ends in jmp TANK_DRIVE_SCENE_INIT).
 TANK_DRIVE_SCENE_INIT:
 	setup channel=0x3C, address=BLITTER_LOOP_COPY_PAGE_03
 	setup channel=0x02, address=LABEL_1BDA

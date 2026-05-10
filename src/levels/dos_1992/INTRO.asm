@@ -648,6 +648,10 @@ SETUP_CHANNELS_AFTER_LOAD:
 	break
 	jmp SETUP_CHANNELS_AFTER_LOAD
 
+; The standard frame-render tick: blit framebuffer + select
+; page FF + copy page 0 to FF + break, repeating with a
+; counter [0xC7] increment. Used as the per-tick rendering
+; backbone for many INTRO scenes.
 FRAME_RENDER_TICK_LOOP:
 	add [0xC7], 0x0001
 	blitFramebuffer 0xFF
@@ -661,6 +665,11 @@ FRAME_RENDER_TICK_LOOP:
 	break
 	jmp SETUP_CHANNELS_AFTER_LOAD
 
+; The "press any action button to skip the intro" loop.
+; Increments varC7 (an idle-tick counter) each frame, blits
+; and re-displays page 0, and checks HERO_ACTION — if non-
+; zero, jumps to TRANSITION_INTRO_TO_LAKE (already named).
+; The classic intro-skip path.
 INTRO_WAIT_HERO_ACTION_THEN_LAKE:
 	add [0xC7], 0x0001
 	blitFramebuffer 0xFF
@@ -670,6 +679,10 @@ INTRO_WAIT_HERO_ACTION_THEN_LAKE:
 	break
 	jmp INTRO_WAIT_HERO_ACTION_THEN_LAKE
 
+; Per-tick blit + check HERO_ACTION; if non-zero (player
+; pressed a key/button), branch to TRANSITION_INTRO_TO_LAKE.
+; Otherwise break and loop. The "press any key to continue"
+; style wait.
 WAIT_FOR_HERO_ACTION_LOOP:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
@@ -868,6 +881,10 @@ LABEL_0295:
 LABEL_029D:
 	db 0x11
 
+; `add [0x05], 0x000A / break / jmp self`. Continuously
+; advances var05 by 10 per tick. Var05 is the Y-coord
+; typically used for vertical pan/scroll; this is the
+; "pan downward" helper.
 BUMP_VAR05_PLUS_10_EACH_TICK_LOOP:
 	add [0x05], 0x000A
 	break
@@ -1256,6 +1273,12 @@ LABEL_05EA:
 	video offset=CINEMATIC_005, x=90, y=101
 	mov [0x01], 0x015E
 
+; Per-tick wait (djnz [0x01]) until lightning trigger fires;
+; then plays sound id=0x000A, sets palette 0x17, multiple
+; flashing fills of page 0xFF with color 0x08 — the
+; lightning-strike preamble that sets up the experiment's
+; catastrophic palette flash before the actual zigzag bolts
+; animate.
 EXPERIMENT_LIGHTNING_WAIT_AND_TRIGGER:
 	break
 	djnz [0x01], EXPERIMENT_LIGHTNING_WAIT_AND_TRIGGER
@@ -1306,6 +1329,10 @@ EXPERIMENT_LIGHTNING_WAIT_AND_TRIGGER:
 LABEL_06C5:
 	db 0x11
 
+; `fill page=0xFF, color=0x02 / break / jmp self`. Holds
+; page 0xFF cleared to color 2 (the green/teal palette
+; slot) each tick. Used as a backdrop-fill channel during
+; INTRO scene transitions.
 FILL_PAGE_FF_COLOR_2_FOREVER:
 	fill page=0xFF, color=0x02
 	break
@@ -1562,6 +1589,10 @@ LABEL_09AF:
 	bankSwitch 2;  Arrival at the Lake & Beast Chase
 	killChannel
 
+; End-of-INTRO transition: fill all pages black, setPalette 0,
+; blit, `bankSwitch 2` (Arrival at the Lake & Beast Chase).
+; Reached when the player presses a key during the
+; WAIT_FOR_HERO_ACTION_LOOP.
 TRANSITION_INTRO_TO_LAKE:
 	fill page=0x00, color=0x00
 	fill page=0xFF, color=0x00
@@ -2118,6 +2149,10 @@ LABEL_0E4A:
 LABEL_0F36:
 	db 0x11
 
+; Plays the soda-opening (HANDS_OPENING_SODA_CAN_F0..F11)
+; followed by the drinking sequence (alternating HEAD/HAND
+; via interleaved frames 399..412). Includes CIN_385/389
+; composites for the scene's BG.
 LESTER_OPENS_AND_DRINKS_SODA_ANIMATION:
 	fill page=0xFF, color=0x04
 	video offset=CINEMATIC_385, x=160, y=100
@@ -2189,6 +2224,9 @@ LESTER_OPENS_AND_DRINKS_SODA_ANIMATION:
 CITY_OUTER_3X_LOOP:
 	mov [0x01], 0x0002
 
+; djnz loop drawing LESTER_DRINKING_HEAD_F6 +
+; LESTER_DRINKING_HAND_F6 — the final pose of the soda
+; drinking sequence held until the music marker fires.
 LESTER_DRINKING_LAST_FRAME_HOLD:
 	break
 	video offset=CINEMATIC_LESTER_DRINKING_HEAD_F6, x=154, y=123
@@ -2198,6 +2236,9 @@ LESTER_DRINKING_LAST_FRAME_HOLD:
 	mov [0x01], 0x0004
 	play id=0x0041, freq=0x14, vol=0x3F, channel=0x03
 
+; Alternate-pose hold drawing LESTER_HEAD_SIDEWAYS with
+; LESTER_DRINKING_HAND_F6 — Lester looking sideways while
+; his hand still holds the can.
 LESTER_HEAD_SIDEWAYS_WITH_HAND_HOLD:
 	break
 	video offset=CINEMATIC_LESTER_HEAD_SIDEWAYS, x=154, y=123
@@ -2509,6 +2550,9 @@ LABEL_1310:
 	selectVideoPage 0xFF
 	mov [0x01], 0x000E
 
+; Frame-draw routine for CINEMATIC_HOLO_ACCELERATOR_LOOP_DIAGRAM
+; (the schematic of the particle accelerator's loop shown on
+; the holographic console).
 DRAW_HOLO_ACCELERATOR_DIAGRAM_FRAME:
 	break
 	djnz [0x01], DRAW_HOLO_ACCELERATOR_DIAGRAM_FRAME
@@ -2725,6 +2769,10 @@ JUNK__154E:
 LABEL_156D:
 	db 0x11
 
+; Two tiny channels: `selectVideoPage <N> / break / jmp
+; self`. Background-channel helpers that pin the visible
+; page selection so other channels can blit into the
+; "other" page without flicker.
 HOLD_PAGE_00_LOOP:
 	selectVideoPage 0x00
 	break
@@ -2732,6 +2780,10 @@ HOLD_PAGE_00_LOOP:
 LABEL_1574:
 	db 0x11
 
+; Two tiny channels: `selectVideoPage <N> / break / jmp
+; self`. Background-channel helpers that pin the visible
+; page selection so other channels can blit into the
+; "other" page without flicker.
 HOLD_PAGE_FF_LOOP:
 	selectVideoPage 0xFF
 	break
@@ -2998,6 +3050,12 @@ LABEL_17C7:
 LABEL_1845:
 	db 0x11
 
+; A 3-frame mirrored animation: at each break, draws
+; CINEMATIC_426/427/428 at the symmetric pair x=58 and
+; x=292 (around the screen center 175). The three frames
+; cycle through the three cinematics in opposite phases,
+; so the left- and right-side objects shimmer in
+; counterpoint.
 DRAW_CIN_426_427_428_LEFT_RIGHT_CYCLE:
 	video offset=CINEMATIC_426, x=58, y=100
 	video offset=CINEMATIC_427, x=292, y=100
@@ -3215,6 +3273,10 @@ LABEL_1A5E:
 	djnz [0x03], LABEL_1A5E
 	mov [0x03], 0x0010
 
+; The waiting loop entered after Lester walks into the lift
+; area; advances [0x01] per tick, sets up next channel,
+; sets palette 0x0C, copies BG page across, fills page 0
+; with color 0x07.
 LIFT_ENTRY_WAIT_AND_TRANSITION:
 	break
 	add [0x01], 0x0001
@@ -3319,6 +3381,9 @@ LABEL_1B6B:
 	mov [0x02], 0x00E8
 	mov [0x05], 0x000A
 
+; Late-phase animation drawing F32 + F33 at diverging X
+; positions (X+=2, X-=2 per tick) — the doors pulling
+; apart from center to edges.
 LIFT_DOORS_OPENING_DIVERGE_LOOP:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_LIFT_DOORS_OPENING_F32, x=[0x01], y=100
@@ -3330,6 +3395,10 @@ LIFT_DOORS_OPENING_DIVERGE_LOOP:
 	djnz [0x05], LIFT_DOORS_OPENING_DIVERGE_LOOP
 	mov [0x05], 0x001A
 
+; djnz wait followed by play sound id=0x0036 and draw of
+; LIFT_DOORS_OPENING_F34 (the last frame of the doors-open
+; animation) — final transition before Lester enters the
+; lift.
 LIFT_DOORS_FINAL_FRAME_TRANSITION:
 	break
 	djnz [0x05], LIFT_DOORS_FINAL_FRAME_TRANSITION
@@ -3376,6 +3445,11 @@ LABEL_1BEA:
 	setup channel=0x06, address=LABEL_1CC1
 	killChannel
 
+; Multi-step scene init: pause slices, vars, fill page 0xFF
+; with palette index 2, call DRAW_PARTICLE_LAB_BG_COMPOSITE
+; (renamed in 27df12e), set palette 0x08, draw
+; CINEMATIC_LESTER_SEATED_AT_HOLO_CONSOLE_F0 + CIN_182,
+; copy + setup channels for the inner-scene channels.
 SETUP_LESTER_AT_HOLO_CONSOLE_SCENE:
 	mov [PAUSE_SLICES], 0x0003
 	mov [0x01], 0x002E
@@ -3409,6 +3483,9 @@ LABEL_1C42:
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
+; Holo-console scene channel: selectVideoPage 0x00 + setup
+; channel=0x3C for FRAME_RENDER_TICK_LOOP, then jmp self.
+; Keeps page 0 active while the scene plays.
 HOLO_SCENE_PAGE_0_KEEP_LOOP:
 	selectVideoPage 0x00
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
@@ -3417,6 +3494,9 @@ HOLO_SCENE_PAGE_0_KEEP_LOOP:
 LABEL_1C76:
 	db 0x11
 
+; Same pattern but for page FF. Both run on dedicated
+; channels (0x0A and 0x0E) set up by SETUP_LESTER_AT_HOLO_-
+; CONSOLE_SCENE.
 HOLO_SCENE_PAGE_FF_KEEP_LOOP:
 	selectVideoPage 0xFF
 	break
@@ -3467,6 +3547,11 @@ LABEL_1CC1:
 LABEL_1CD3:
 	db 0x11
 
+; Draws the 5-element console-display composite
+; (CINEMATIC_442/443/444/445/446) at specific positions
+; around the holo-console — the small UI elements that
+; appear on Lester's interactive panel. Followed by a
+; DESC_Y wait loop.
 DRAW_HOLO_CONSOLE_DISPLAY_PANEL:
 	video offset=CINEMATIC_442, x=221, y=123
 	video offset=CINEMATIC_443, x=219, y=125
@@ -3521,6 +3606,10 @@ DRAW_PARTICLE_LAB_BG_COMPOSITE:
 	video offset=CINEMATIC_180, x=160, y=100
 	ret
 
+; Sets palette 0x07, fills page 0 with color 0x05, draws
+; CINEMATIC_LIFT_SCENE_VIEW + 4 supporting frames
+; (530/531/532/533) + LIFT_SCENE_BG at specific
+; positions to compose the lift exterior scene.
 DRAW_LIFT_SCENE_BG_COMPOSITE:
 	setPalette 0x07
 	selectVideoPage 0x00
@@ -3729,6 +3818,8 @@ LABEL_1F73:
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
+; The hand-pressing-keypad sequence (renders F0 in a tight
+; djnz, then F1..F5 with PLAY_FX_BY_PHASE_VAR1E sound).
 LESTER_HAND_PRESSING_KEYPAD_ANIMATION:
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F0, x=[0x01], y=[0x02]
 	break
@@ -3958,6 +4049,9 @@ LABEL_21C9:
 LABEL_21D7:
 	db 0x11
 
+; Walking-away frame sequence drawing LESTER_WALKING_AWAY_F0..
+; F6 with CINEMATIC_129 spliced between F2 and F3 as an
+; additional figure-detail frame.
 LESTER_WALKING_AWAY_FROM_CAMERA_ANIMATION:
 	video offset=CINEMATIC_128, x=160, y=111, zoom=[0x04]
 	break
@@ -3995,6 +4089,8 @@ LESTER_WALKING_AWAY_FROM_CAMERA_ANIMATION:
 LABEL_224B:
 	db 0x11
 
+; The walking-towards-camera frame sequence (468 + walking-
+; towards F0..F7 with sound id=0x003C at frame 1).
 LESTER_WALKING_TOWARDS_CAMERA_ANIMATION:
 	video offset=CINEMATIC_468, x=160, y=111, zoom=[0x04]
 	break

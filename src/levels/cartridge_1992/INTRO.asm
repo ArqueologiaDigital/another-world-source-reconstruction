@@ -3925,6 +3925,9 @@ LABEL_21C7:
 	selectVideoPage 0xFF
 	mov [0x05], 0x0004
 
+; Walking-away frame sequence drawing LESTER_WALKING_AWAY_F0..
+; F6 with CINEMATIC_129 spliced between F2 and F3 as an
+; additional figure-detail frame.
 LESTER_WALKING_AWAY_FROM_CAMERA_ANIMATION:
 	break
 	djnz [0x05], LESTER_WALKING_AWAY_FROM_CAMERA_ANIMATION

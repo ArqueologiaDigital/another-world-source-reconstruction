@@ -78,6 +78,10 @@ CINEMATIC_058		EQU 0x0020
 
 	org 0x0000
 
+; Calls LABEL_1090 setup helper, sets PAUSE_SLICES=2, sets
+; up channel 0x3C as the redraw loop, fills both visible
+; pages black, clears LAST_KEYCHAR, sets palette 5. The
+; screen-startup routine.
 PASSCODE_SCREEN_INIT:
 	call LABEL_1090
 	mov [PAUSE_SLICES], 0x0002
@@ -450,6 +454,10 @@ LABEL_0406:
 	jl [0x21], 0x0F, LABEL_03E5
 	mov [0x21], 0x0000
 
+; Iterates the per-character hash: gates on [0x21] at
+; various breakpoints (07, 06, > 0x0D), calls SUM_HASH_VARS_-
+; TO_VAR_37 (the cross-port-stable hashing routine), masks
+; the result against 0x0F and dispatches.
 HASH_DERIVE_NEXT_PASSCODE_DIGIT_LOOP:
 	je [0x21], 0x07, PASSCODE_DIGIT_INDEX_INCREMENT
 	je [0x21], 0x06, PASSCODE_DIGIT_INDEX_INCREMENT
@@ -472,6 +480,8 @@ HASH_DERIVE_NEXT_PASSCODE_DIGIT_LOOP:
 	mov [0x1D], [0x23]
 	call RESTORE_VAR0A_FROM_VAR1D
 
+; `add [0x21], 1` + `jl [0x21], 0x10, LOOP_BACK` + ret.
+; Advance to the next digit index (up to 16 digits max).
 PASSCODE_DIGIT_INDEX_INCREMENT:
 	add [0x21], 0x0001
 	jl [0x21], 0x10, HASH_DERIVE_NEXT_PASSCODE_DIGIT_LOOP
@@ -684,6 +694,10 @@ SUM_HASH_VARS_TO_VAR_37:
 	add [0x37], [0x04]
 	ret
 
+; Each tick: hash current state, check LAST_KEYCHAR (key
+; pressed?) and HERO_ACTION (button pressed?), then handle
+; d-pad direction with cursor movement on a 8-column grid
+; (`jg [0x01], 0x07, ...`).
 PASSCODE_INPUT_TICK:
 	call SUM_HASH_VARS_TO_VAR_37
 	jne [LAST_KEYCHAR], 0x00, LABEL_0ADF
@@ -720,6 +734,11 @@ LABEL_0683:
 	jne [0x01], 0x0E, PASSCODE_CURSOR_DRAW_AT_GRID
 	add [0x01], [HERO_POS_LEFT_RIGHT]
 
+; Reads the cursor's grid position into [0x05], computes
+; pixel coords via DERIVE_VAR07_VAR08_FROM_VAR05, draws
+; CINEMATIC_055 (the cursor-block sprite) at that
+; position. Or transitions to ANIMATE_CURSOR_TRANSITION if
+; a different position was previously drawn.
 PASSCODE_CURSOR_DRAW_AT_GRID:
 	mov [0x05], [0x01]
 	mov [0x25], [0x07]
@@ -1023,6 +1042,10 @@ LABEL_0A9B:
 	djnz [0xE6], LABEL_0A9B
 	jmp PASSCODE_SCREEN_INIT
 
+; `setPalette 0x00` then jmp PASSCODE_SCREEN_INIT. The
+; "any-error/any-restart restart-the-screen" path used by
+; every input-validation gate that wants to abort and
+; re-show the prompt.
 PASSCODE_RESET_PALETTE_0_AND_RESTART:
 	setPalette 0x00
 	jmp PASSCODE_SCREEN_INIT

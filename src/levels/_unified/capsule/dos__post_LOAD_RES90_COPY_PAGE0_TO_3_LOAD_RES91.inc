@@ -142,6 +142,9 @@ LABEL_9D37:
 	call GUARDED_ALIEN_ANIM_CV_128
 	ret
 
+; Fill page 0 with color 0x01 + draw CINEMATIC_FINAL_ESCAPE_-
+; LESTER_RUNNING + 3 supporting frames (433/434/435). The
+; 4-element BG composite for the final-escape running scene.
 DRAW_FINAL_ESCAPE_LESTER_RUNNING_BG:
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_FINAL_ESCAPE_LESTER_RUNNING, x=160, y=100
@@ -249,6 +252,9 @@ LABEL_9EB9:
 	video offset=CINEMATIC_585, x=160, y=100
 	ret
 
+; Fill page 0 with color 0x08 + draw CINEMATIC_492 at (160,
+; 229) + CINEMATIC_TANK_REVEAL_BG at center. The
+; 2-element composite for the first reveal of the tank.
 DRAW_TANK_REVEAL_BG:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_492, x=160, y=229, zoom=0x40

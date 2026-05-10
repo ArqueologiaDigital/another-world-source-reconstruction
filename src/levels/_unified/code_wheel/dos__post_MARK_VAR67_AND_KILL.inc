@@ -20,6 +20,10 @@ LABEL_0D62:
 	mov [0xC9], 0x0001
 	killChannel
 
+; Tiny background tasks: `mov [0x31], <const> / break /
+; jmp self`. Continuously pin var31 to 0 or 1 each tick;
+; set up as separate channels to maintain a "pressed" or
+; "released" state visible to the main code-check loop.
 CODEWHEEL_PIN_VAR31_TO_1:
 	mov [0x31], 0x0001
 	break

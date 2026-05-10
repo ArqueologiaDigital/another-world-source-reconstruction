@@ -310,6 +310,11 @@ LABEL_0004:
 	killChannel
 	jmp CAPSULE_DOME_CLOSING_REENTRY
 
+; The main TANK stage init. Sets up ~10 channels (renderer,
+; cinematic players, projectile state machines, sound
+; ambient) — the canonical entry point that boots all the
+; independent sub-systems running concurrently in the tank
+; arena.
 TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x3C, address=TANK_FRAME_RENDER_FROM_PAGE_3_LOOP
 	setup channel=0x02, address=LABEL_1BDA
@@ -337,6 +342,11 @@ TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x00, address=INIT_VARS_A_B_PAL_1
 	killChannel
 
+; Sets up the tank-driving scene's channel layout: channel
+; 0x3C runs TANK_FRAME_RENDER_FROM_PAGE_3_LOOP, channel
+; 0x02 runs the per-tick movement, etc. Called after the
+; capsule-dome closes (CAPSULE_DOME_CLOSING_LATE_FRAMES
+; ends in jmp TANK_DRIVE_SCENE_INIT).
 TANK_DRIVE_SCENE_INIT:
 	setup channel=0x3C, address=TANK_FRAME_RENDER_FROM_PAGE_3_LOOP
 	setup channel=0x02, address=LABEL_1BDA
@@ -409,6 +419,10 @@ LABEL_0113:
 LABEL_0125:
 	db 0x11
 
+; Draws CINEMATIC_275 four times at descending Y positions
+; (101, 136, 124, 112) with break-pauses between — the
+; target reticle "scanning down" or "falling" effect on
+; the tank's HUD/viewfinder.
 DRAW_4_TARGET_RETICLES_FALLING:
 	video offset=CINEMATIC_275, x=152, y=101
 	break
@@ -516,6 +530,10 @@ DRAW_4_TARGET_RETICLES_FALLING:
 LABEL_022D:
 	db 0x11
 
+; Sequential setPalette through 0x0A → 0x0D → 0x0E → 0x0F
+; with one-tick breaks. Atmospheric palette flicker — likely
+; the muzzle-flash + recoil flash for the tank firing, or
+; the impact flash when shot.
 PALETTE_FLICKER_0A_TO_0F:
 	setPalette 0x0A
 	break
@@ -776,6 +794,10 @@ CAPSULE_DOME_CLOSING_LATE_FRAMES:
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F47, x=135, y=102
 	play id=0x0057, freq=0x18, vol=0x40, channel=0x00
 
+; Infinite-jmp redraw of CAPSULE_DOME_CLOSING_F45/F46/F47
+; (F47 drawn at two X positions) — the dome's locked-into-
+; tank visual held forever on its own channel as the
+; static foreground.
 CAPSULE_DOME_LOCKED_REDRAW_LOOP:
 	break
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F45, x=160, y=100
@@ -2260,6 +2282,12 @@ LABEL_1528:
 	video offset=CINEMATIC_161, x=[0x39], y=[0x3a]
 	ret
 
+; Top label (12 callers). Pattern: bail if var37 counter <=
+; 0 (no events left in pool) or var45 busy-flag set;
+; otherwise decrement var37, set busy flag, call
+; SUM_HASH_VARS_TO_VAR_64 for randomness, mask to 5 bits,
+; OR with var38 << 4 to derive a per-slot event index.
+; The "pop one random event from the event pool" routine.
 TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL:
 	jle [0x37], 0x00, TANK_NOOP_RET
 	jne [0x45], 0x00, TANK_NOOP_RET
@@ -2368,6 +2396,10 @@ LABEL_1644:
 LABEL_1676:
 	db 0x11
 
+; Decrement var3E counter (break + jle-self until 0); when
+; it hits 0, compute a random pitch (var65 hash bits 8-12
+; + 0x5A) and play sound 0x008C. The ambient random-noise
+; generator running in its own channel.
 TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C:
 	break
 	jle [0x3E], 0x00, TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C
@@ -2411,6 +2443,10 @@ LABEL_16DE:
 	break
 	jmp LABEL_16DE
 
+; Same shape but triggered by var46. Plays sound 0x008E
+; then draws CINEMATIC_061/062/063 at fixed (160,100). The
+; centered "explosion at center of screen" variant; likely
+; the player's own shot or a hit-flash effect.
 TANK_SHOT_ANIM_CENTERED_TRIGGER_VAR46:
 	break
 	je [0x46], 0x00, TANK_SHOT_ANIM_CENTERED_TRIGGER_VAR46
@@ -2429,6 +2465,11 @@ TANK_SHOT_ANIM_CENTERED_TRIGGER_VAR46:
 	break
 	killChannel
 
+; Wait on var56 (`break / je [0x56], 0x00, self`), then play
+; shot sound 0x008E, then trace an upward arc with
+; CINEMATIC_065 and CINEMATIC_066 at (195,79) → (202,75) →
+; (212,66) → (220,58). The arc-trajectory shot animation
+; triggered by var56.
 TANK_SHOT_ANIM_ARC_TRIGGER_VAR56:
 	break
 	je [0x56], 0x00, TANK_SHOT_ANIM_ARC_TRIGGER_VAR56
@@ -2776,6 +2817,11 @@ LABEL_1ACC:
 	video offset=CINEMATIC_208, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+; Single-`ret` shared early-exit. TANK's analogue of CAVES'
+; CAVES_NOOP_RET (ebce2be) and PRISON's SCENE_DISPATCH_NOOP_RET
+; (b66a1f2). Used by every `jle [0x37], 0x00, LABEL_X` and
+; `jne [0x45], 0x00, LABEL_X` gate-check that bails out
+; when the tank-AI / hash-state precondition fails.
 TANK_NOOP_RET:
 	ret
 
@@ -3241,6 +3287,9 @@ DRAW_BG_DOTS_CIN_007_008:
 	video offset=CINEMATIC_011, x=10, y=21
 	ret
 
+; Standard frame-render tick loop: blit + selectPage FF +
+; copy 0→FF + break, jmp self. Twin of INTRO's FRAME_RENDER_-
+; TICK_LOOP (c5a0f57); each level has its own framework loop.
 TANK_FRAME_RENDER_TICK_LOOP:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
@@ -3254,6 +3303,10 @@ JUNK__201A:
 	break
 	jmp JUNK__201A
 
+; Variant of the above: blit + selectPage FF + copy 3→FF
+; (instead of 0→FF), then sums hash-vars (call SUM_HASH_VARS_-
+; TO_VAR_64) to advance the rng before breaking. Used by
+; scenes that draw their composite into page 3 first.
 TANK_FRAME_RENDER_FROM_PAGE_3_LOOP:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF

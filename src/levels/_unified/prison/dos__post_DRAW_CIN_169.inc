@@ -592,6 +592,12 @@ LABEL_6549:
 	video type=0, offset=COMMON_VIDEO_164, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
+; Three-element Buddy composite drawn conditionally on
+; HACK_VAR_67 == [0x10] (the dispatcher pose match):
+; DRAW_CIN_390 + CINEMATIC_692 + CINEMATIC_BUDDY_HACKING_-
+; SECURITY_DOOR. Distinguishes from a simpler two-part
+; variant at the line just below LABEL_6589 (no rename
+; here; that's in unreachable code after a ret).
 DRAW_BUDDY_HACKING_THREE_PART:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_CIN_390

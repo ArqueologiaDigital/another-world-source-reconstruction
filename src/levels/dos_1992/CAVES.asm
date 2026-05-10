@@ -9431,6 +9431,11 @@ LABEL_5670:
 LABEL_5680:
 	db 0x11
 
+; The canonical beast-scene main-loop entry point. Same shape
+; as the hero loop but calling CAVES_BEAST_PER_FRAME_TICK.
+; External callers at 14093+ pattern-check [0x2F] != 2
+; before entering, matching var2F == 2 being the beast-
+; active-frame state.
 CAVES_BEAST_SCENE_MAIN_LOOP:
 	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call CAVES_BEAST_PER_FRAME_TICK
@@ -9464,6 +9469,17 @@ LABEL_56B2:
 LABEL_56C2:
 	db 0x11
 
+; The canonical hero-scene main-loop entry point. Shape:
+;   jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
+;   call CAVES_HERO_PER_FRAME_TICK
+;   break
+;   call STATE_VAR12_BIG_DISPATCH
+;   jmp self
+; A dispatcher-style "if state-pending, dispatch; else render
+; one frame, big-dispatch, loop." Several byte-identical
+; siblings exist at nearby addresses (56D4, etc) that are
+; separate dispatch-table entry points — left as LABEL_HHHH
+; for now since their distinct roles aren't yet clear.
 CAVES_HERO_SCENE_MAIN_LOOP:
 	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call CAVES_HERO_PER_FRAME_TICK
@@ -13651,6 +13667,11 @@ LABEL_8304:
 	sub [0x07], 0x0001
 	ret
 
+; Single-`ret` shared early-exit, paralleling PRISON's
+; SCENE_DISPATCH_NOOP_RET. Used by every state-gate check
+; (`jne [HACK_VAR_67], 0xNN, LABEL_8310` and similar) when
+; the dispatcher state doesn't match the routine's expected
+; narrative phase.
 CAVES_NOOP_RET:
 	ret
 
@@ -14036,6 +14057,11 @@ LABEL_86FC:
 	call LABEL_835D
 	ret
 
+; The beast per-frame render+animation tick. Identical shape
+; to the hero tick but with DRAW_BEAST_SPRITE_BY_VAR09_0E,
+; COMMON_VIDEO_164 (beast overlay), and the beast cinematic
+; family DRAW_CIN_054_055_056_VAR09. The beasts are the
+; bipedal alien guards that chase Lester through the caves.
 CAVES_BEAST_PER_FRAME_TICK:
 	jne [HACK_VAR_67], [0x10], CAVES_NOOP_RET
 	je [0x0D], 0x00, BEAST_FULL_ANIM_FRAME
@@ -15165,6 +15191,11 @@ LABEL_9257:
 LABEL_925A:
 	ret
 
+; The hero per-frame render+animation tick. Calls
+; DRAW_HERO_SPRITE_BY_VAR09_0E, draws COMMON_VIDEO_128 (the
+; hero animation overlay) at (var07, var08) with zoom 0x40,
+; and calls DRAW_CIN_028_029_030_VAR09 (the hero-pose
+; cinematic family at addresses 028/029/030).
 CAVES_HERO_PER_FRAME_TICK:
 	jne [HACK_VAR_67], [0x10], CAVES_NOOP_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -21181,6 +21212,11 @@ COPY_PAGE0_TO_3_LOAD_RES45:
 	load id=0x0045
 	ret
 
+; composes BG_F0 + BG_F1
+; into the cave's first
+; room — fill page0,
+; draw both BG frames,
+; setPage3 backdrop
 DRAW_CAVES_FIRST_ROOM_BG:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=160, y=100
@@ -21454,6 +21490,11 @@ LABEL_D577:
 LABEL_D59B:
 	db 0x11
 
+; composes BG_F0 + BG_F1
+; into the cave's first
+; room — fill page0,
+; draw both BG frames,
+; setPage3 backdrop
 DRAW_WATERFALL_LEFT_STAIRS_BG:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=160, y=100
@@ -21483,6 +21524,11 @@ LABEL_D5BF:
 	selectVideoPage 0xFF
 	ret
 
+; composes BG_F0 + BG_F1
+; into the cave's first
+; room — fill page0,
+; draw both BG frames,
+; setPage3 backdrop
 DRAW_WATERFALL_BG_FOUR_PASS:
 	fill page=0x00, color=0x00
 	fill page=0x03, color=0x00
@@ -21501,6 +21547,11 @@ DRAW_WATERFALL_BG_FOUR_PASS:
 	selectVideoPage 0xFF
 	ret
 
+; composes BG_F0 + BG_F1
+; into the cave's first
+; room — fill page0,
+; draw both BG frames,
+; setPage3 backdrop
 DRAW_BUDDY_CRAWLING_BG:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_BUDDY_CRAWLING_STUCK_AT_RING, x=160, y=100
@@ -21819,6 +21870,10 @@ LABEL_D9DA:
 	setup channel=0x3B, address=KILL_CHAN_AT_7830
 	ret
 
+; Deletes channels 0..8 + calls LABEL_D9DA (a sub-helper
+; that does additional cleanup). Used at scene transitions
+; to drop the hero/Buddy/sprite channels before re-setting
+; them up for the next room.
 DELETE_CHANS_0_8_AND_HELPER:
 	deleteChannels first=0x00, last=0x08
 	call LABEL_D9DA
@@ -21835,6 +21890,9 @@ LABEL_D9F8:
 	call LABEL_D9DA
 	ret
 
+; Sets [0x23]=1 if HERO_Y < [0x41], else [0x23]=0. The
+; hero-camera-relationship gate used by PAGE_COPY_IF_-
+; VAR67_DIFFERS and other CAVES routines.
 CHECK_HERO_Y_LT_VAR41:
 	mov [0x23], 0x0001
 	jl [HERO_Y], [0x41], LABEL_DA0E
@@ -21932,6 +21990,13 @@ LABEL_DA47:
 	je [HACK_VAR_67], 0xED, LABEL_AC2D
 	je [HACK_VAR_67], 0xEE, LABEL_ACAB
 
+; Selects page FF, calls CHECK_HERO_Y_LT_VAR41 (the
+; [0x23]-flag updater for hero-vs-camera-Y comparison),
+; then conditionally copies page 0 to FF only when [0x66]
+; doesn't equal HACK_VAR_67 (the per-frame scene-state
+; checkpoint). Records HACK_VAR_67 into [0x66] so the next
+; tick's diff-check is meaningful. The "render the scene
+; iff scene-state changed" optimization.
 PAGE_COPY_IF_VAR67_DIFFERS:
 	selectVideoPage 0xFF
 	call CHECK_HERO_Y_LT_VAR41

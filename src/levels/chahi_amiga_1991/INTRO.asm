@@ -1267,6 +1267,12 @@ LABEL_063E:
 LABEL_0645:
 	db 0x11
 
+; Per-tick wait (djnz [0x01]) until lightning trigger fires;
+; then plays sound id=0x000A, sets palette 0x17, multiple
+; flashing fills of page 0xFF with color 0x08 — the
+; lightning-strike preamble that sets up the experiment's
+; catastrophic palette flash before the actual zigzag bolts
+; animate.
 EXPERIMENT_LIGHTNING_WAIT_AND_TRIGGER:
 	selectVideoPage 0x00
 	mov [PAUSE_SLICES], 0x0002
@@ -3329,6 +3335,10 @@ LABEL_1B8A:
 	break
 	djnz [0x07], LABEL_1B8A
 	jmp CH_05_INIT_VAR_07_08
+; djnz wait followed by play sound id=0x0036 and draw of
+; LIFT_DOORS_OPENING_F34 (the last frame of the doors-open
+; animation) — final transition before Lester enters the
+; lift.
 LIFT_DOORS_FINAL_FRAME_TRANSITION:
 	db 0x11
 

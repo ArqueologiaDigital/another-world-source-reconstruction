@@ -3,6 +3,10 @@ LABEL_00F9:
 	setup channel=0x2C, address=PAL_FADE_DOWN_E_TO_8
 	mov [0x03], 0x0050
 
+; Per-tick blit + check HERO_ACTION; if non-zero (player
+; pressed a key/button), branch to TRANSITION_INTRO_TO_LAKE.
+; Otherwise break and loop. The "press any key to continue"
+; style wait.
 WAIT_FOR_HERO_ACTION_LOOP:
 	break
 	jne [HERO_ACTION], 0x00, BANK1_INTRO_TRANSITION

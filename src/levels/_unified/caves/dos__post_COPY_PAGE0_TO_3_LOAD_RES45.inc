@@ -1,3 +1,8 @@
+; composes BG_F0 + BG_F1
+; into the cave's first
+; room — fill page0,
+; draw both BG frames,
+; setPage3 backdrop
 DRAW_CAVES_FIRST_ROOM_BG:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=160, y=100
@@ -271,6 +276,11 @@ LABEL_D577:
 LABEL_D59B:
 	db 0x11
 
+; composes BG_F0 + BG_F1
+; into the cave's first
+; room — fill page0,
+; draw both BG frames,
+; setPage3 backdrop
 DRAW_WATERFALL_LEFT_STAIRS_BG:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=160, y=100
@@ -300,6 +310,11 @@ LABEL_D5BF:
 	selectVideoPage 0xFF
 	ret
 
+; composes BG_F0 + BG_F1
+; into the cave's first
+; room — fill page0,
+; draw both BG frames,
+; setPage3 backdrop
 DRAW_WATERFALL_BG_FOUR_PASS:
 	fill page=0x00, color=0x00
 	fill page=0x03, color=0x00
@@ -318,6 +333,11 @@ DRAW_WATERFALL_BG_FOUR_PASS:
 	selectVideoPage 0xFF
 	ret
 
+; composes BG_F0 + BG_F1
+; into the cave's first
+; room — fill page0,
+; draw both BG frames,
+; setPage3 backdrop
 DRAW_BUDDY_CRAWLING_BG:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_BUDDY_CRAWLING_STUCK_AT_RING, x=160, y=100

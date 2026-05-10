@@ -1278,6 +1278,12 @@ LABEL_0C8F:
 	video offset=CINEMATIC_036, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+; The three-stage code validation chain. Each stage compares
+; one entered digit (var 0x2A, 0x2B, 0x2C) against four
+; acceptable values (vars 0x1E, 0x1F, 0x20, 0x21 — the
+; per-puzzle expected codes). All three must match to
+; reach SETUP_CODEWHEEL_CHANNELS (success); any failure
+; jumps straight to CODEWHEEL_FAILURE_RESET.
 CODEWHEEL_CHECK_DIGIT_2_VAR2C:
 	jne [0x06], 0x0E, LABEL_0CA9
 	video offset=CINEMATIC_035, x=[0x07], y=[0x08], zoom=[0x04]

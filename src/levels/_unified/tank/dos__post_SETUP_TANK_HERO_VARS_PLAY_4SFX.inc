@@ -36,6 +36,10 @@ LABEL_0113:
 LABEL_0125:
 	db 0x11
 
+; Draws CINEMATIC_275 four times at descending Y positions
+; (101, 136, 124, 112) with break-pauses between — the
+; target reticle "scanning down" or "falling" effect on
+; the tank's HUD/viewfinder.
 DRAW_4_TARGET_RETICLES_FALLING:
 	video offset=CINEMATIC_275, x=152, y=101
 	break
@@ -143,6 +147,10 @@ DRAW_4_TARGET_RETICLES_FALLING:
 LABEL_022D:
 	db 0x11
 
+; Sequential setPalette through 0x0A → 0x0D → 0x0E → 0x0F
+; with one-tick breaks. Atmospheric palette flicker — likely
+; the muzzle-flash + recoil flash for the tank firing, or
+; the impact flash when shot.
 PALETTE_FLICKER_0A_TO_0F:
 	setPalette 0x0A
 	break
@@ -403,6 +411,10 @@ CAPSULE_DOME_CLOSING_LATE_FRAMES:
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F47, x=135, y=102
 	play id=0x0057, freq=0x18, vol=0x40, channel=0x00
 
+; Infinite-jmp redraw of CAPSULE_DOME_CLOSING_F45/F46/F47
+; (F47 drawn at two X positions) — the dome's locked-into-
+; tank visual held forever on its own channel as the
+; static foreground.
 CAPSULE_DOME_LOCKED_REDRAW_LOOP:
 	break
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F45, x=160, y=100

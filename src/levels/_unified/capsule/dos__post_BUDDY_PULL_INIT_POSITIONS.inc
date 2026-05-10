@@ -1,3 +1,5 @@
+; djnz preamble drawing CIN_003 + CIN_004 before
+; transitioning into the BUDDY_PULLS_LESTER_0..N sequence.
 BUDDY_PULLS_LESTER_PREPARE_LOOP:
 	video offset=CINEMATIC_003, x=123, y=172
 	video offset=CINEMATIC_004, x=114, y=160
@@ -27,6 +29,8 @@ BUDDY_PULLS_LESTER_PREPARE_LOOP:
 	mov [0x32], 0x0000
 	mov [0x29], 0x0004
 
+; Tail-end djnz hold on BUDDY_PULLS_LESTER_6 before scene
+; transition.
 BUDDY_PULLS_LESTER_F6_HOLD:
 	break
 	video offset=CINEMATIC_BUDDY_PULLS_LESTER_6, x=[BUDDY_X], y=[BUDDY_Y]

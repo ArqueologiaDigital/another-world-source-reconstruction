@@ -33,6 +33,11 @@ LABEL_4B0E:
 	video offset=CINEMATIC_437, x=160, y=100
 	ret
 
+; Single-shot draw helper that copies page 0x03 onto page 0
+; (FG), then draws CINEMATIC_ENERGY_TRANSMISSION_LINE
+; (renamed in 2d4db26) at (160, 100). Used during the
+; sequence where Lester must shoot the energy line to power
+; down the upstairs security doors.
 DRAW_ENERGY_TRANSMISSION_LINE_FG:
 	call LABEL_8189
 	selectVideoPage 0x00
