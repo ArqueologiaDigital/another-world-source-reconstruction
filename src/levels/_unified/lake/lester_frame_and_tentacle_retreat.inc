@@ -49,14 +49,14 @@ LESTER_FRAME_LOOP:
 	mov [0x14], 0x000A
 	mov [HERO_Y], 0x00B6
 
-LESTER_FRAME_LOOP_BODY:
+LESTER_FRAME_BUNDLE_HOLD:
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_LESTER_FRAME_BUNDLE
 ;@elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_LESTER_FRAME, x=[HERO_X], y=[HERO_Y]
 ;@endif
 	break
-	djnz [0x14], LESTER_FRAME_LOOP_BODY
+	djnz [0x14], LESTER_FRAME_BUNDLE_HOLD
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
 	song id=0x0BDD, delay=0x0000, pos=0x00
 ;@endif
