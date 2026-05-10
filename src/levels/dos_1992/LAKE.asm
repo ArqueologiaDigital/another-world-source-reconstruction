@@ -2320,10 +2320,10 @@ DECOR_AT_327_164_BLINK_LOOP:
 	video offset=CINEMATIC_DECOR_AT_327_164_F1, x=65374, y=155
 	killChannel
 
-LOOP_DRAW_LAKE_037_AT_305_155:
+DECOR_AT_305_155_F0_LOOP:
 	video offset=CINEMATIC_DECOR_AT_305_155_F0, x=305, y=155
 	break
-	jmp LOOP_DRAW_LAKE_037_AT_305_155
+	jmp DECOR_AT_305_155_F0_LOOP
 	killChannel
 
 LABEL_1128:
@@ -2336,7 +2336,7 @@ LESTER_AT_POOL_HOLD:
 	copyVideoPage src=0x00, dst=0x03
 	mov [PAUSE_SLICES], 0x0005
 	setup channel=0x15, address=DECOR_AT_327_164_BLINK_LOOP
-	setup channel=0x16, address=LOOP_DRAW_LAKE_037_AT_305_155
+	setup channel=0x16, address=DECOR_AT_305_155_F0_LOOP
 	video offset=CINEMATIC_LAKE_LESTER_AT_POOL, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0x00
 	video offset=CINEMATIC_LAKE_DECOR_AT_327_164, x=327, y=164
