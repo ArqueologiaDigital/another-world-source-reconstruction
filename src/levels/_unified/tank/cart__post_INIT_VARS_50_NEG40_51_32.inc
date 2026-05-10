@@ -222,7 +222,7 @@ LABEL_1731:
 	killChannel
 
 LABEL_177D:
-	video offset=CINEMATIC_261, x=239, y=123
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F35, x=239, y=123
 	play id=0x0052, freq=0x1E, vol=0x10, channel=0x01
 	break
 	video offset=CINEMATIC_055, x=240, y=123

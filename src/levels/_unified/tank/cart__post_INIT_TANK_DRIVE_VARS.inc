@@ -80,7 +80,7 @@ LABEL_12FE:
 	sub [0x52], 0x0002
 	video offset=CINEMATIC_104, x=[0x52], y=[0x53], zoom=[0x54]
 	break
-	video offset=CINEMATIC_262, x=[0x52], y=[0x53], zoom=[0x54]
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F36, x=[0x52], y=[0x53], zoom=[0x54]
 	break
 	video offset=CINEMATIC_107, x=[0x52], y=[0x53], zoom=[0x54]
 	break

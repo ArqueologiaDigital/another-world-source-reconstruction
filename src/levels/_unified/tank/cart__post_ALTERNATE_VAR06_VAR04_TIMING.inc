@@ -55,42 +55,42 @@ DRAW_CIN_224_MULTI_FRAME:
 	break
 	video offset=CINEMATIC_224, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_226, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F0, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_226, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F0, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_226, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F0, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_226, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F0, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_227, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F1, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_227, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F1, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_227, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F1, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_227, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F1, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_228, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F2, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_228, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F2, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_228, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F2, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_228, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F2, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_227, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F1, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_227, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F1, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_227, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F1, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_227, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F1, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_226, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F0, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_226, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F0, x=[0x0a], y=100
 	break
-	video offset=CINEMATIC_226, x=[0x0a], y=100
+	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F0, x=[0x0a], y=100
 	break
 	jmp DRAW_CIN_224_MULTI_FRAME
