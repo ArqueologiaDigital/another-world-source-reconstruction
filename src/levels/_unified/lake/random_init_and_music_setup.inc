@@ -81,7 +81,7 @@ START_LAKE_BG_MUSIC_AND_DELETE_CH_0_2:
 	setup channel=0x2E, address=BEETLE_KICK_DETECTOR
 	setup channel=0x2E, address=WAIT_FOR_BEETLE_OFFSCREEN_THEN_KILL
 	setup channel=0x2F, address=TICK_COUNTER_INCREMENT_LOOP
-	setup channel=0x30, address=WAIT_FOR_TIMER_AND_HACK_67_THEN_SETUP_31
+	setup channel=0x30, address=DROPLET_SOUND_START_GATE
 	setup channel=0x24, address=AMBIENT_LOOP_CH24
 	setup channel=0x25, address=AMBIENT_LOOP_CH25
 	jmp OUTSIDE_POOL_SCREEN
