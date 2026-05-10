@@ -2509,9 +2509,9 @@ LABEL_1310:
 	selectVideoPage 0xFF
 	mov [0x01], 0x000E
 
-LABEL_1328:
+DRAW_HOLO_ACCELERATOR_DIAGRAM_FRAME:
 	break
-	djnz [0x01], LABEL_1328
+	djnz [0x01], DRAW_HOLO_ACCELERATOR_DIAGRAM_FRAME
 	setup channel=0x3C, address=LABEL_0094
 	break
 	selectVideoPage 0x03
@@ -3808,7 +3808,7 @@ LABEL_2025:
 	selectVideoPage 0xFF
 	fill page=0xFF, color=0x09
 	break
-	setup channel=0x03, address=LABEL_21D8
+	setup channel=0x03, address=LESTER_WALKING_AWAY_FROM_CAMERA_ANIMATION
 	play id=0x0036, freq=0x14, vol=0x3F, channel=0x03
 	mov [0x04], 0x0153
 	mov [0x06], 0x0014
@@ -3859,7 +3859,7 @@ LABEL_20DB:
 	break
 	djnz [0x03], LABEL_20BD
 	video offset=CINEMATIC_128, x=160, y=111, zoom=[0x04]
-	setup channel=0x08, address=LABEL_21D8
+	setup channel=0x08, address=LESTER_WALKING_AWAY_FROM_CAMERA_ANIMATION
 	setup channel=0x09, address=LABEL_21C9
 	setup channel=0x05, address=CH_05_INIT_VARS_06_07_08
 	mov [0x03], 0x0007
@@ -3958,7 +3958,7 @@ LABEL_21C9:
 LABEL_21D7:
 	db 0x11
 
-LABEL_21D8:
+LESTER_WALKING_AWAY_FROM_CAMERA_ANIMATION:
 	video offset=CINEMATIC_128, x=160, y=111, zoom=[0x04]
 	break
 	video offset=CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F0, x=160, y=111, zoom=[0x04]
@@ -3991,7 +3991,7 @@ LABEL_21D8:
 	break
 	video offset=CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F6, x=160, y=111, zoom=[0x04]
 	break
-	jmp LABEL_21D8
+	jmp LESTER_WALKING_AWAY_FROM_CAMERA_ANIMATION
 LABEL_224B:
 	db 0x11
 
