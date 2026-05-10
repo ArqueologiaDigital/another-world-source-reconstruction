@@ -78,7 +78,7 @@ CINEMATIC_058		EQU 0x0020
 
 	org 0x0000
 
-LABEL_0000:
+PASSCODE_SCREEN_INIT:
 	call LABEL_1090
 	mov [PAUSE_SLICES], 0x0002
 	setup channel=0x3C, address=LABEL_107D
@@ -202,7 +202,7 @@ LABEL_012E:
 	mov [0x08], 0x0064
 	mov [0x05], [0x01]
 	call DERIVE_VAR07_VAR08_FROM_VAR05
-	jmp LABEL_0615
+	jmp PASSCODE_INPUT_TICK
 LABEL_0143:
 	db 0x11
 
@@ -450,17 +450,17 @@ LABEL_0406:
 	jl [0x21], 0x0F, LABEL_03E5
 	mov [0x21], 0x0000
 
-LABEL_0414:
-	je [0x21], 0x07, LABEL_0464
-	je [0x21], 0x06, LABEL_0464
-	jg [0x21], 0x0D, LABEL_0464
+HASH_DERIVE_NEXT_PASSCODE_DIGIT_LOOP:
+	je [0x21], 0x07, PASSCODE_DIGIT_INDEX_INCREMENT
+	je [0x21], 0x06, PASSCODE_DIGIT_INDEX_INCREMENT
+	jg [0x21], 0x0D, PASSCODE_DIGIT_INDEX_INCREMENT
 	call SUM_HASH_VARS_TO_VAR_37
 	mov [0x24], [0x37]
 	mov [0x22], [0x24]
 	and [0x22], 0x000F
-	je [0x22], 0x07, LABEL_0464
-	je [0x22], 0x06, LABEL_0464
-	jg [0x22], 0x0D, LABEL_0464
+	je [0x22], 0x07, PASSCODE_DIGIT_INDEX_INCREMENT
+	je [0x22], 0x06, PASSCODE_DIGIT_INDEX_INCREMENT
+	jg [0x22], 0x0D, PASSCODE_DIGIT_INDEX_INCREMENT
 	call SAVE_VAR0A_TO_VAR1D
 	mov [0x23], [0x1D]
 	mov [0x22], [0x21]
@@ -472,9 +472,9 @@ LABEL_0414:
 	mov [0x1D], [0x23]
 	call RESTORE_VAR0A_FROM_VAR1D
 
-LABEL_0464:
+PASSCODE_DIGIT_INDEX_INCREMENT:
 	add [0x21], 0x0001
-	jl [0x21], 0x10, LABEL_0414
+	jl [0x21], 0x10, HASH_DERIVE_NEXT_PASSCODE_DIGIT_LOOP
 	ret
 LABEL_046F:
 	db 0x11
@@ -684,7 +684,7 @@ SUM_HASH_VARS_TO_VAR_37:
 	add [0x37], [0x04]
 	ret
 
-LABEL_0615:
+PASSCODE_INPUT_TICK:
 	call SUM_HASH_VARS_TO_VAR_37
 	jne [LAST_KEYCHAR], 0x00, LABEL_0ADF
 	jne [HERO_ACTION], 0x00, LABEL_0ADF
@@ -702,13 +702,13 @@ LABEL_063A:
 LABEL_064B:
 	jmp LABEL_0673
 	jne [HERO_POS_LEFT_RIGHT], 0x01, LABEL_0660
-	je [0x01], 0x07, LABEL_068C
-	je [0x01], 0x0F, LABEL_068C
+	je [0x01], 0x07, PASSCODE_CURSOR_DRAW_AT_GRID
+	je [0x01], 0x0F, PASSCODE_CURSOR_DRAW_AT_GRID
 
 LABEL_0660:
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_0673
-	je [0x01], 0x00, LABEL_068C
-	je [0x01], 0x08, LABEL_068C
+	je [0x01], 0x00, PASSCODE_CURSOR_DRAW_AT_GRID
+	je [0x01], 0x08, PASSCODE_CURSOR_DRAW_AT_GRID
 
 LABEL_0673:
 	add [0x01], [HERO_POS_LEFT_RIGHT]
@@ -717,10 +717,10 @@ LABEL_0673:
 	add [0x01], [HERO_POS_LEFT_RIGHT]
 
 LABEL_0683:
-	jne [0x01], 0x0E, LABEL_068C
+	jne [0x01], 0x0E, PASSCODE_CURSOR_DRAW_AT_GRID
 	add [0x01], [HERO_POS_LEFT_RIGHT]
 
-LABEL_068C:
+PASSCODE_CURSOR_DRAW_AT_GRID:
 	mov [0x05], [0x01]
 	mov [0x25], [0x07]
 	mov [0x26], [0x08]
@@ -731,7 +731,7 @@ LABEL_068C:
 	jne [0x26], [0x28], ANIMATE_CURSOR_TRANSITION
 	video offset=CINEMATIC_055, x=[0x07], y=[0x08]
 	break
-	jmp LABEL_0615
+	jmp PASSCODE_INPUT_TICK
 LABEL_06B3:
 	db 0x11
 
@@ -768,7 +768,7 @@ LABEL_06F7:
 LABEL_0709:
 	jne [0x07], [0x27], JUNK__0733
 	jne [0x08], [0x28], JUNK__0733
-	jmp LABEL_0615
+	jmp PASSCODE_INPUT_TICK
 
 COPY_VAR_27_28_TO_07_08:
 	mov [0x07], [0x27]
@@ -779,7 +779,7 @@ LABEL_071E:
 	break
 	jne [HERO_POS_UP_DOWN], 0x00, LABEL_071E
 	jne [HERO_POS_MASK], 0x00, LABEL_071E
-	jmp LABEL_0615
+	jmp PASSCODE_INPUT_TICK
 
 JUNK__0733:
 	video offset=CINEMATIC_055, x=[0x07], y=[0x08]
@@ -795,7 +795,7 @@ LABEL_073D:
 	jne [0x21], 0x0D, LABEL_075F
 	mov [0x00], 0x000A
 	bankSwitch 2;  Arrival at the Lake & Beast Chase
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_075F:
 	jne [0x1E], 0x11, LABEL_0781
@@ -804,7 +804,7 @@ LABEL_075F:
 	jne [0x21], 0x0C, LABEL_0781
 	mov [0x00], 0x0014
 	bankSwitch 3;  Prison Escape
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_0781:
 	jne [0x1E], 0x0C, LABEL_07A3
@@ -813,7 +813,7 @@ LABEL_0781:
 	jne [0x21], 0x0D, LABEL_07A3
 	mov [0x00], 0x001E
 	bankSwitch 4;  Gas tunnels, Caves and Pool
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_07A3:
 	jne [0x1E], 0x0F, LABEL_07C5
@@ -822,7 +822,7 @@ LABEL_07A3:
 	jne [0x21], 0x0C, LABEL_07C5
 	mov [0x00], 0x0023
 	bankSwitch 4;  Gas tunnels, Caves and Pool
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_07C5:
 	jne [0x1E], 0x14, LABEL_07E7
@@ -831,7 +831,7 @@ LABEL_07C5:
 	jne [0x21], 0x14, LABEL_07E7
 	mov [0x00], 0x0025
 	bankSwitch 4;  Gas tunnels, Caves and Pool
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_07E7:
 	jne [0x1E], 0x21, LABEL_0809
@@ -840,7 +840,7 @@ LABEL_07E7:
 	jne [0x21], 0x13, LABEL_0809
 	mov [0x00], 0x0021
 	bankSwitch 4;  Gas tunnels, Caves and Pool
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_0809:
 	jne [0x1E], 0x15, LABEL_082B
@@ -849,7 +849,7 @@ LABEL_0809:
 	jne [0x21], 0x10, LABEL_082B
 	mov [0x00], 0x001F
 	bankSwitch 4;  Gas tunnels, Caves and Pool
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_082B:
 	jne [0x1E], 0x14, LABEL_084D
@@ -858,7 +858,7 @@ LABEL_082B:
 	jne [0x21], 0x0B, LABEL_084D
 	mov [0x00], 0x0027
 	bankSwitch 4;  Gas tunnels, Caves and Pool
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_084D:
 	jne [0x1E], 0x1D, LABEL_086F
@@ -867,7 +867,7 @@ LABEL_084D:
 	jne [0x21], 0x1D, LABEL_086F
 	mov [0x00], 0x0029
 	bankSwitch 4;  Gas tunnels, Caves and Pool
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_086F:
 	jne [0x1E], 0x0D, LABEL_0891
@@ -876,7 +876,7 @@ LABEL_086F:
 	jne [0x21], 0x21, LABEL_0891
 	mov [0x00], 0x002A
 	bankSwitch 4;  Gas tunnels, Caves and Pool
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_0891:
 	jne [0x1E], 0x1D, LABEL_08B3
@@ -885,7 +885,7 @@ LABEL_0891:
 	jne [0x21], 0x14, LABEL_08B3
 	mov [0x00], 0x002B
 	bankSwitch 4;  Gas tunnels, Caves and Pool
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_08B3:
 	jne [0x1E], 0x0B, LABEL_08D5
@@ -894,7 +894,7 @@ LABEL_08B3:
 	jne [0x21], 0x0D, LABEL_08D5
 	mov [0x00], 0x0031
 	bankSwitch 4;  Gas tunnels, Caves and Pool
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_08D5:
 	jne [0x1E], 0x0C, LABEL_08F7
@@ -903,7 +903,7 @@ LABEL_08D5:
 	jne [0x21], 0x15, LABEL_08F7
 	mov [0x00], 0x0032
 	bankSwitch 5;  Tank in the Battle Arena
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_08F7:
 	jne [0x1E], 0x15, LABEL_0919
@@ -912,7 +912,7 @@ LABEL_08F7:
 	jne [0x21], 0x14, LABEL_0919
 	mov [0x00], 0x003C
 	bankSwitch 6;  Capsule Lands at the Bath
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_0919:
 	jne [0x1E], 0x0B, LABEL_093B
@@ -921,7 +921,7 @@ LABEL_0919:
 	jne [0x21], 0x21, LABEL_093B
 	mov [0x00], 0x002C
 	bankSwitch 4;  Gas tunnels, Caves and Pool
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_093B:
 	jne [0x1E], 0x21, LABEL_095D
@@ -930,7 +930,7 @@ LABEL_093B:
 	jne [0x21], 0x1D, LABEL_095D
 	mov [0x00], 0x002D
 	bankSwitch 4;  Gas tunnels, Caves and Pool
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_095D:
 	jne [0x1E], 0x11, LABEL_097F
@@ -939,7 +939,7 @@ LABEL_095D:
 	jne [0x21], 0x0B, LABEL_097F
 	mov [0x00], 0x002E
 	bankSwitch 4;  Gas tunnels, Caves and Pool
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_097F:
 	jne [0x1E], 0x11, LABEL_09A1
@@ -948,7 +948,7 @@ LABEL_097F:
 	jne [0x21], 0x14, LABEL_09A1
 	mov [0x00], 0x002F
 	bankSwitch 4;  Gas tunnels, Caves and Pool
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_09A1:
 	jne [0x1E], 0x13, LABEL_09C3
@@ -957,7 +957,7 @@ LABEL_09A1:
 	jne [0x21], 0x0B, LABEL_09C3
 	mov [0x00], 0x0030
 	bankSwitch 4;  Gas tunnels, Caves and Pool
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_09C3:
 	jne [0x1E], 0x11, LABEL_09E5
@@ -966,7 +966,7 @@ LABEL_09C3:
 	jne [0x21], 0x15, LABEL_09E5
 	mov [0x00], 0x003E
 	bankSwitch 6;  Capsule Lands at the Bath
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_09E5:
 	jne [0x1E], 0x1D, LABEL_0A07
@@ -975,7 +975,7 @@ LABEL_09E5:
 	jne [0x21], 0x0B, LABEL_0A07
 	mov [0x00], 0x0040
 	bankSwitch 6;  Capsule Lands at the Bath
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_0A07:
 	jne [0x1E], 0x1D, LABEL_0A29
@@ -984,7 +984,7 @@ LABEL_0A07:
 	jne [0x21], 0x0F, LABEL_0A29
 	mov [0x00], 0x0042
 	bankSwitch 6;  Capsule Lands at the Bath
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_0A29:
 	jne [0x1E], 0x13, LABEL_0A4B
@@ -993,7 +993,7 @@ LABEL_0A29:
 	jne [0x21], 0x15, LABEL_0A4B
 	mov [0x00], 0x0044
 	bankSwitch 6;  Capsule Lands at the Bath
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_0A4B:
 	jne [0x1E], 0x14, LABEL_0A6D
@@ -1002,7 +1002,7 @@ LABEL_0A4B:
 	jne [0x21], 0x0D, LABEL_0A6D
 	mov [0x00], 0x0046
 	bankSwitch 7;  Game Ending Sequence
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 LABEL_0A6D:
 	jne [0x1E], 0xFFFF, SET_VAR_E6_F_PAUSE_4
@@ -1011,7 +1011,7 @@ LABEL_0A6D:
 	jne [0x21], 0xFFFF, SET_VAR_E6_F_PAUSE_4
 	mov [0x00], 0x0000
 	bankSwitch 1;  Intro Sequence
-	jmp LABEL_0AA9
+	jmp PASSCODE_RESET_PALETTE_0_AND_RESTART
 
 SET_VAR_E6_F_PAUSE_4:
 	mov [0xE6], 0x000F
@@ -1021,11 +1021,11 @@ LABEL_0A9B:
 	text id=0x013F, x=7, y=100, color=0x05 ; "   INVALID PASSWORD !"
 	break
 	djnz [0xE6], LABEL_0A9B
-	jmp LABEL_0000
+	jmp PASSCODE_SCREEN_INIT
 
-LABEL_0AA9:
+PASSCODE_RESET_PALETTE_0_AND_RESTART:
 	setPalette 0x00
-	jmp LABEL_0000
+	jmp PASSCODE_SCREEN_INIT
 LABEL_0AAF:
 	db 0x11
 
@@ -1102,7 +1102,7 @@ LABEL_0B53:
 	break
 	jne [LAST_KEYCHAR], 0x00, LABEL_0B53
 	jne [HERO_ACTION], 0x00, LABEL_0B53
-	jmp LABEL_0615
+	jmp PASSCODE_INPUT_TICK
 LABEL_0B6E:
 	db 0x11
 

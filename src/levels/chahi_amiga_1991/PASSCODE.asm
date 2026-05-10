@@ -76,7 +76,7 @@ CINEMATIC_056		EQU 0x0908
 
 	org 0x0000
 
-LABEL_0000:
+PASSCODE_SCREEN_INIT:
 	call LABEL_0CB5
 	mov [PAUSE_SLICES], 0x0002
 	setup channel=0x3C, address=LABEL_0CA2
@@ -711,11 +711,11 @@ LABEL_09B0:
 	text id=0x013F, x=7, y=100, color=0x05 ; "   INVALID PASSWORD !"
 	break
 	djnz [0xE6], LABEL_09B0
-	jmp LABEL_0000
+	jmp PASSCODE_SCREEN_INIT
 
 LABEL_09BE:
 	setPalette 0x03
-	jmp LABEL_0000
+	jmp PASSCODE_SCREEN_INIT
 LABEL_09C4:
 	db 0x11
 
