@@ -16955,7 +16955,7 @@ LABEL_A494:
 	mov [0x45], 0x0000
 	setPalette 0x0E
 	mov [0xBE], 0x0003
-	call LABEL_D268
+	call DRAW_CAVES_FIRST_ROOM_BG
 	call LABEL_D9E3
 	deleteChannels first=0x22, last=0x28
 	setup channel=0x37, address=SET_VARE6_TO_64_KILL_CHANNEL
@@ -17004,7 +17004,7 @@ LABEL_A533:
 	mov [0x44], 0x005E
 	mov [0x45], 0x0000
 	setPalette 0x06
-	call LABEL_D5E9
+	call DRAW_WATERFALL_BG_FOUR_PASS
 	call LABEL_D9E3
 	setup channel=0x3C, address=LABEL_3F7D
 	mov [0xF8], [0xB0]
@@ -17718,7 +17718,7 @@ LABEL_AE08:
 	mov [0x45], 0x0000
 	mov [0xBE], 0x0003
 	setPalette 0x18
-	call LABEL_D59C
+	call DRAW_WATERFALL_LEFT_STAIRS_BG
 	call LABEL_D9E3
 	setup channel=0x3E, address=KILL_CHAN_AT_7830
 	call LABEL_14BB
@@ -17778,7 +17778,7 @@ LABEL_AEC6:
 	mov [0x44], 0x0077
 	mov [0x45], 0x0000
 	setPalette 0x11
-	call LABEL_D61A
+	call DRAW_BUDDY_CRAWLING_BG
 	call LABEL_D9E3
 	jl [HERO_X], 0x0140, LABEL_AEFC
 	call LABEL_149E
@@ -21181,7 +21181,7 @@ COPY_PAGE0_TO_3_LOAD_RES45:
 	load id=0x0045
 	ret
 
-LABEL_D268:
+DRAW_CAVES_FIRST_ROOM_BG:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=160, y=100
 	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F1, x=160, y=100
@@ -21454,7 +21454,7 @@ LABEL_D577:
 LABEL_D59B:
 	db 0x11
 
-LABEL_D59C:
+DRAW_WATERFALL_LEFT_STAIRS_BG:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=160, y=100
 	video offset=CINEMATIC_296, x=165, y=111
@@ -21483,7 +21483,7 @@ LABEL_D5BF:
 	selectVideoPage 0xFF
 	ret
 
-LABEL_D5E9:
+DRAW_WATERFALL_BG_FOUR_PASS:
 	fill page=0x00, color=0x00
 	fill page=0x03, color=0x00
 	load id=0x0043
@@ -21501,7 +21501,7 @@ LABEL_D5E9:
 	selectVideoPage 0xFF
 	ret
 
-LABEL_D61A:
+DRAW_BUDDY_CRAWLING_BG:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_BUDDY_CRAWLING_STUCK_AT_RING, x=160, y=100
 	video offset=CINEMATIC_318, x=160, y=100

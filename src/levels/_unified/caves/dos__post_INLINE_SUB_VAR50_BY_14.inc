@@ -191,7 +191,7 @@ LABEL_A494:
 	mov [0x45], 0x0000
 	setPalette 0x0E
 	mov [0xBE], 0x0003
-	call LABEL_D268
+	call DRAW_CAVES_FIRST_ROOM_BG
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	deleteChannels first=0x22, last=0x28
 	setup channel=0x37, address=SET_VARE6_TO_64_KILL_CHANNEL
@@ -240,7 +240,7 @@ LABEL_A533:
 	mov [0x44], 0x005E
 	mov [0x45], 0x0000
 	setPalette 0x06
-	call LABEL_D5E9
+	call DRAW_WATERFALL_BG_FOUR_PASS
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	setup channel=0x3C, address=LABEL_3F7D
 	mov [0xF8], [0xB0]
@@ -954,7 +954,7 @@ LABEL_AE08:
 	mov [0x45], 0x0000
 	mov [0xBE], 0x0003
 	setPalette 0x18
-	call LABEL_D59C
+	call DRAW_WATERFALL_LEFT_STAIRS_BG
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	setup channel=0x3E, address=KILL_CHANNEL_LANDING
 	call LABEL_14BB
@@ -1014,7 +1014,7 @@ LABEL_AEC6:
 	mov [0x44], 0x0077
 	mov [0x45], 0x0000
 	setPalette 0x11
-	call LABEL_D61A
+	call DRAW_BUDDY_CRAWLING_BG
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	jl [HERO_X], 0x0140, LABEL_AEFC
 	call LABEL_149E

@@ -1,4 +1,4 @@
-LABEL_D268:
+DRAW_CAVES_FIRST_ROOM_BG:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=160, y=100
 	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F1, x=160, y=100
@@ -271,7 +271,7 @@ LABEL_D577:
 LABEL_D59B:
 	db 0x11
 
-LABEL_D59C:
+DRAW_WATERFALL_LEFT_STAIRS_BG:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=160, y=100
 	video offset=CINEMATIC_296, x=165, y=111
@@ -300,7 +300,7 @@ LABEL_D5BF:
 	selectVideoPage 0xFF
 	ret
 
-LABEL_D5E9:
+DRAW_WATERFALL_BG_FOUR_PASS:
 	fill page=0x00, color=0x00
 	fill page=0x03, color=0x00
 	load id=0x0043
@@ -318,7 +318,7 @@ LABEL_D5E9:
 	selectVideoPage 0xFF
 	ret
 
-LABEL_D61A:
+DRAW_BUDDY_CRAWLING_BG:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_BUDDY_CRAWLING_STUCK_AT_RING, x=160, y=100
 	video offset=CINEMATIC_318, x=160, y=100
