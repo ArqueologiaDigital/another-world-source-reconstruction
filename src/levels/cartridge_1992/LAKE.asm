@@ -5689,12 +5689,12 @@ SLUG_FLIP_WALKS:
 	break
 	video offset=CINEMATIC_SLUG_FLIP_WALKING_1, x=[0x0c], y=[0x0d]
 	play id=0x0035, freq=0x14, vol=0x3F, channel=0x00
-	je [0x1B], 0x01, SLUG_FLIP_CONT_FRAMES_2_5
-	je [0x2B], 0x01, SLUG_FLIP_CONT_FRAMES_2_5
+	je [0x1B], 0x01, SLUG_FLIP_WALKS_CONT
+	je [0x2B], 0x01, SLUG_FLIP_WALKS_CONT
 	mov [0x2B], 0x0001
 	setup channel=0x2D, address=TRIGGER_SCENE_RESUME
 
-SLUG_FLIP_CONT_FRAMES_2_5:
+SLUG_FLIP_WALKS_CONT:
 	break
 	video offset=CINEMATIC_SLUG_FLIP_WALKING_2, x=[0x0c], y=[0x0d]
 	break
