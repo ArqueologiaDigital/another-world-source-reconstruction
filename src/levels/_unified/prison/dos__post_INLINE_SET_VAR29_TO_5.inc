@@ -73,7 +73,7 @@ LABEL_1670:
 LABEL_1684:
 	db 0x11
 
-LABEL_1685:
+BUDDY_HACK_SECOND_INIT:
 	mov [BUDDY_X], 0x0104
 	mov [0x12], 0x0004
 	mov [0xF1], 0x0000
@@ -85,12 +85,12 @@ LABEL_1685:
 	selectVideoPage 0xFF
 	mov [0x29], 0x000A
 
-LABEL_16AC:
+BUDDY_HACK_SECOND_TYPING_LOOP:
 	break
 	video offset=CINEMATIC_391, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_392, x=[BUDDY_X], y=[BUDDY_Y]
 	call DRAW_BUDDY_FIGURE_BASE
-	djnz [0x29], LABEL_16AC
+	djnz [0x29], BUDDY_HACK_SECOND_TYPING_LOOP
 	break
 	video offset=CINEMATIC_394, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_392, x=[BUDDY_X], y=[BUDDY_Y]
