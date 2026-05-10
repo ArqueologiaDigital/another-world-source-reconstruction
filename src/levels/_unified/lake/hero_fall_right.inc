@@ -44,7 +44,7 @@ FALL_R_F1_X_DELTA_DONE:
 ;@elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RESUME_RIGHT_2, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif
-	call DRAW_HELPER_AT_Y_PLUS_1
+	call DRAW_DROPLET_VARIANT_ON_BG_Y_PLUS_1
 ;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jne [HERO_POS_LEFT_RIGHT], 0x01, FALL_R_F2_X_DELTA_DONE
 ;@endif
@@ -253,7 +253,7 @@ LEAP_R_F038_X_DELTA_DONE:
 ;@elif BRANCH == "chahi_amiga_1991"
 	add [HERO_X], 0x0003
 	break
-	call INVOKE_DRAW_HELPER_ON_BG_PAGE
+	call DRAW_DROPLET_VARIANT_ON_BG
 	video offset=CINEMATIC_HERO_STAND_R_BG_GHOST, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 	mov [0x29], [HERO_X]
 	add [HERO_Y], 0x0000
