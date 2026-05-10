@@ -155,7 +155,7 @@ COMMON_VIDEO_301		EQU 0x1C78
 
 LABEL_0000:
 	call LABEL_0B35
-	setup channel=0x3C, address=LABEL_0ACC
+	setup channel=0x3C, address=ENDING_HOLD_PAGE_0_INFINITE
 	mov [PAUSE_SLICES], 0x0004
 	break
 	song id=0x0000, delay=0x0000, pos=0x00
@@ -167,7 +167,7 @@ LABEL_0000:
 	killChannel
 	copyVideoPage src=0x03, dst=0x00
 
-LABEL_0024:
+ENDING_CHANNEL_TOMBSTONE_KILL:
 	killChannel
 
 LIKELY_A_COPY_PROTECTION_MECHANISM:
@@ -309,7 +309,7 @@ LABEL_0188:
 	break
 	add [0x04], 0x000A
 	djnz [0x06], LABEL_0188
-	setup channel=0x0B, address=LABEL_0024
+	setup channel=0x0B, address=ENDING_CHANNEL_TOMBSTONE_KILL
 	mov [0x06], 0x0030
 
 LABEL_0199:
@@ -412,7 +412,7 @@ LABEL_022B:
 	text id=0x025D, x=2, y=140, color=0x0C ; "        Jean-Francois Freitas\n             Eric Chahi"
 	selectVideoPage 0xFF
 	mov [SCROLL_Y], 0x00C8
-	setup channel=0x3C, address=LABEL_0ADF
+	setup channel=0x3C, address=ENDING_HOLD_PAGE_80_BLACK_INFINITE
 	mov [PAUSE_SLICES], 0x0002
 	mov [0x01], 0x000A
 
@@ -911,13 +911,13 @@ LABEL_07A9:
 	setup channel=0x11, address=LABEL_084A
 	setup channel=0x12, address=LABEL_0854
 	setup channel=0x13, address=LABEL_08B8
-	setup channel=0x0C, address=LABEL_091C
+	setup channel=0x0C, address=ENDING_X_SLIDE_RIGHT_ACCEL
 	mov [0x09], 0x0010
 
 LABEL_07CC:
 	break
 	djnz [0x09], LABEL_07CC
-	setup channel=0x0C, address=LABEL_0024
+	setup channel=0x0C, address=ENDING_CHANNEL_TOMBSTONE_KILL
 	deleteChannels first=0x11, last=0x13
 	break
 	video offset=CINEMATIC_026, x=[0x07], y=[0x08]
@@ -938,7 +938,7 @@ LABEL_0805:
 	break
 	video offset=CINEMATIC_032, x=[0x07], y=[0x08]
 	djnz [0x09], LABEL_0805
-	setup channel=0x1E, address=LABEL_0024
+	setup channel=0x1E, address=ENDING_CHANNEL_TOMBSTONE_KILL
 	break
 	video offset=CINEMATIC_033, x=[0x07], y=[0x08]
 	break
@@ -955,7 +955,7 @@ LABEL_0805:
 	fill page=0x00, color=0x01
 	call DRAW_STARS_CIN_38_39_40_5_6
 	selectVideoPage 0xFF
-	setup channel=0x05, address=LABEL_0024
+	setup channel=0x05, address=ENDING_CHANNEL_TOMBSTONE_KILL
 	setup channel=0x0A, address=SET_VAR_E6_5_PAL_B
 	killChannel
 
@@ -1040,18 +1040,18 @@ LABEL_08B8:
 LABEL_091B:
 	db 0x11
 
-LABEL_091C:
+ENDING_X_SLIDE_RIGHT_ACCEL:
 	mov [0x0A], 0x0003
 	add [0x07], 0x0002
 	break
-	djnz [0x0A], LABEL_091C
+	djnz [0x0A], ENDING_X_SLIDE_RIGHT_ACCEL
 	mov [0x0A], 0x0005
 
 LABEL_092D:
 	add [0x07], 0x0003
 	break
 	djnz [0x0A], LABEL_092D
-	jmp LABEL_091C
+	jmp ENDING_X_SLIDE_RIGHT_ACCEL
 	killChannel
 	video offset=CINEMATIC_108, x=160, y=100
 	video type=0, offset=COMMON_VIDEO_301, x=160, y=100, zoom=0x40
@@ -1148,12 +1148,12 @@ DRAW_STARS_CIN_38_39_40_5_6:
 	video offset=CINEMATIC_041, x=202, y=86, zoom=[0x30]	;@enc=alt
 	ret
 
-LABEL_0ACC:
+ENDING_HOLD_PAGE_0_INFINITE:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 	break
-	jmp LABEL_0ACC
+	jmp ENDING_HOLD_PAGE_0_INFINITE
 
 JUNK__0AD7:
 	blitFramebuffer 0xFF
@@ -1161,13 +1161,13 @@ JUNK__0AD7:
 	break
 	jmp JUNK__0AD7
 
-LABEL_0ADF:
+ENDING_HOLD_PAGE_80_BLACK_INFINITE:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	fill page=0xFF, color=0x00
 	copyVideoPage src=0x80, dst=0xFF
 	break
-	jmp LABEL_0ADF
+	jmp ENDING_HOLD_PAGE_80_BLACK_INFINITE
 
 LABEL_0AED:
 	blitFramebuffer 0xFF

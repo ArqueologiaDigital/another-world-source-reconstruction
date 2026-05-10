@@ -167,7 +167,7 @@ LABEL_0000:
 	killChannel
 	copyVideoPage src=0x03, dst=0x00
 
-LABEL_0024:
+ENDING_CHANNEL_TOMBSTONE_KILL:
 	killChannel
 
 LABEL_0025:
@@ -315,7 +315,7 @@ LABEL_0198:
 	break
 	add [0x04], 0x000A
 	djnz [0x06], LABEL_0198
-	setup channel=0x0B, address=LABEL_0024
+	setup channel=0x0B, address=ENDING_CHANNEL_TOMBSTONE_KILL
 	mov [0x06], 0x0030
 
 LABEL_01A9:
@@ -1008,7 +1008,7 @@ LABEL_07BD:
 LABEL_07E0:
 	break
 	djnz [0x09], LABEL_07E0
-	setup channel=0x0C, address=LABEL_0024
+	setup channel=0x0C, address=ENDING_CHANNEL_TOMBSTONE_KILL
 	deleteChannels first=0x11, last=0x13
 	break
 	video offset=CINEMATIC_026, x=[0x07], y=[0x08]
@@ -1029,7 +1029,7 @@ LABEL_0819:
 	break
 	video offset=CINEMATIC_032, x=[0x07], y=[0x08]
 	djnz [0x09], LABEL_0819
-	setup channel=0x1E, address=LABEL_0024
+	setup channel=0x1E, address=ENDING_CHANNEL_TOMBSTONE_KILL
 	break
 	video offset=CINEMATIC_033, x=[0x07], y=[0x08]
 	break
@@ -1046,7 +1046,7 @@ LABEL_0819:
 	fill page=0x00, color=0x01
 	call DRAW_STARS_CIN_38_39_40_5_6
 	selectVideoPage 0xFF
-	setup channel=0x05, address=LABEL_0024
+	setup channel=0x05, address=ENDING_CHANNEL_TOMBSTONE_KILL
 	setup channel=0x0A, address=SET_VAR_E6_5_PAL_B
 	killChannel
 
