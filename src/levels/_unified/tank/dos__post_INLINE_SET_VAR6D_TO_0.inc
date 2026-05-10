@@ -36,7 +36,7 @@ LABEL_001F:
 	setup channel=0x00, address=INIT_VARS_A_B_PAL_1
 	killChannel
 
-LABEL_007E:
+TANK_DRIVE_SCENE_INIT:
 	setup channel=0x3C, address=BLITTER_LOOP_COPY_PAGE_03
 	setup channel=0x02, address=LABEL_1BDA
 	setup channel=0x00, address=LABEL_1CDC

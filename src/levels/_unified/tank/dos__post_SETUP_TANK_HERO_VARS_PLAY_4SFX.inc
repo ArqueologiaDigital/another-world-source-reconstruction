@@ -36,7 +36,7 @@ LABEL_0113:
 LABEL_0125:
 	db 0x11
 
-LABEL_0126:
+DRAW_4_TARGET_RETICLES_FALLING:
 	video offset=CINEMATIC_275, x=152, y=101
 	break
 	video offset=CINEMATIC_275, x=143, y=136
@@ -139,11 +139,11 @@ LABEL_0126:
 	break
 	video offset=CINEMATIC_275, x=27, y=95
 	break
-	jmp LABEL_0126
+	jmp DRAW_4_TARGET_RETICLES_FALLING
 LABEL_022D:
 	db 0x11
 
-LABEL_022E:
+PALETTE_FLICKER_0A_TO_0F:
 	setPalette 0x0A
 	break
 	setPalette 0x0D
@@ -166,11 +166,11 @@ LABEL_022E:
 	break
 	setPalette 0x0A
 	break
-	jmp LABEL_022E
+	jmp PALETTE_FLICKER_0A_TO_0F
 
 CAPSULE_DOME_CLOSING_PHASE_1_ENTRY:
 	setup channel=0x3C, address=HANG_BLITTING_PAGE_FF
-	setup channel=0x0A, address=LABEL_0126
+	setup channel=0x0A, address=DRAW_4_TARGET_RETICLES_FALLING
 	selectVideoPage 0x00
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F0, x=160, y=100
@@ -190,8 +190,8 @@ CAPSULE_DOME_TOP_DROP_LOOP:
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F4, x=160, y=[0x02]
 	sub [0x02], 0x0005
 	djnz [0x03], CAPSULE_DOME_TOP_DROP_LOOP
-	setup channel=0x09, address=LABEL_022E
-	setup channel=0x0B, address=LABEL_0126
+	setup channel=0x09, address=PALETTE_FLICKER_0A_TO_0F
+	setup channel=0x0B, address=DRAW_4_TARGET_RETICLES_FALLING
 	break
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F5, x=160, y=[0x02]
 	setPalette 0x0B
@@ -302,7 +302,7 @@ CAPSULE_DOME_F18_ZOOM_DIVERGE_LOOP:
 	deleteChannels first=0x00, last=0x36
 	deleteChannels first=0x38, last=0x3B
 	deleteChannels first=0x3D, last=0x3F
-	jmp LABEL_007E
+	jmp TANK_DRIVE_SCENE_INIT
 LABEL_03FE:
 	db 0x11
 
