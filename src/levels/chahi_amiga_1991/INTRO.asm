@@ -1435,7 +1435,7 @@ LABEL_07D2:
 	break
 	setPalette 0x17
 	play id=0x0003, freq=0x14, vol=0x0A, channel=0x03
-	setup channel=0x04, address=SET_PALETTE_17_INIT_VAR_14
+	setup channel=0x04, address=INTRO_PALETTE_FLICKER_LOOP
 	setup channel=0x0B, address=PLAY_FX_2C_AND_DRAW_CIN_000
 	setup channel=0x0C, address=DRAW_INTRO_DECOR_340
 	setup channel=0x0D, address=DRAW_INTRO_DECOR_337
@@ -1838,7 +1838,7 @@ LABEL_0BD7:
 LABEL_0BE4:
 	db 0x11
 
-SET_PALETTE_17_INIT_VAR_14:
+INTRO_PALETTE_FLICKER_LOOP:
 	setPalette 0x17
 	mov [0x14], 0x001E
 
@@ -1858,7 +1858,7 @@ LABEL_0BEC:
 	break
 	setPalette 0x18
 	break
-	jmp SET_PALETTE_17_INIT_VAR_14
+	jmp INTRO_PALETTE_FLICKER_LOOP
 LABEL_0C0B:
 	db 0x11
 
