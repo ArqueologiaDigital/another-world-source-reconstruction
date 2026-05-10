@@ -50,7 +50,7 @@ VINE_SCREEN_BEAST_TRIGGER_CHK:
 VINE_SCREEN_SETUP_CHANNELS:
 	setup channel=0x02, address=SCATTER_8DOT_LOOP_LEFT
 	setup channel=0x03, address=SCATTER_8DOT_LOOP_RIGHT
-	setup channel=0x05, address=PLAYBACK_CINEMATIC_TENTACLE_RETREAT_F0_TO_513
+	setup channel=0x05, address=DRAW_TENTACLE_RETREAT_LOOP
 	setup channel=0x08, address=SNEAKY_TENTACLE_FROM_THE_POOL
 	setup channel=0x33, address=SCATTER_3DOTS_INIT_RIGHT
 	setup channel=0x34, address=KILL_CHANNEL_ROUTINE
