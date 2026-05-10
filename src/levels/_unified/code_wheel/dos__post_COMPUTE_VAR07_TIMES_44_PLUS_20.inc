@@ -221,18 +221,18 @@ BLITTER_LOOP_WITH_VAR1B_2B:
 	break
 	jmp BLITTER_LOOP_WITH_VAR1B_2B
 
-LABEL_10B2:
+CODEWHEEL_ERROR_SCREEN_HOLD_FRAME:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 	mov [0x1B], 0x002B
 	break
-	jmp LABEL_10B2
+	jmp CODEWHEEL_ERROR_SCREEN_HOLD_FRAME
 
-LABEL_10C1:
+CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 	mov [0x1B], 0x0015
 	break
-	jmp LABEL_10C1
+	jmp CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC

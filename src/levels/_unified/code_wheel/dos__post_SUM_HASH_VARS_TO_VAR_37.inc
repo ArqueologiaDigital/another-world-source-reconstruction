@@ -182,7 +182,7 @@ CHECK_VAR2C_RANGE_OR_RESUME:
 
 SETUP_CODEWHEEL_CHANNELS:
 	call SUM_HASH_VARS_TO_VAR_37
-	setup channel=0x0A, address=LABEL_0D70
+	setup channel=0x0A, address=CODEWHEEL_PIN_VAR31_TO_1
 	setup channel=0x1E, address=ZERO_VAR31_LOOP
 	je [0x31], 0x01, LABEL_0CD7
 	mov [0x31], 0x0001

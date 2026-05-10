@@ -59,11 +59,11 @@ LABEL_0C82:
 	ret
 
 LABEL_0C8F:
-	jne [0x06], 0x0D, LABEL_0C9C
+	jne [0x06], 0x0D, CODEWHEEL_CHECK_DIGIT_2_VAR2C
 	video offset=CINEMATIC_036, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
-LABEL_0C9C:
+CODEWHEEL_CHECK_DIGIT_2_VAR2C:
 	jne [0x06], 0x0E, LABEL_0CA9
 	video offset=CINEMATIC_035, x=[0x07], y=[0x08], zoom=[0x04]
 	ret

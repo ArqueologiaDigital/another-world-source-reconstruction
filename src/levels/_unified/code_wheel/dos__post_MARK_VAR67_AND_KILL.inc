@@ -20,10 +20,10 @@ LABEL_0D62:
 	mov [0xC9], 0x0001
 	killChannel
 
-LABEL_0D70:
+CODEWHEEL_PIN_VAR31_TO_1:
 	mov [0x31], 0x0001
 	break
-	jmp LABEL_0D70
+	jmp CODEWHEEL_PIN_VAR31_TO_1
 
 ZERO_VAR31_LOOP:
 	mov [0x31], 0x0000
