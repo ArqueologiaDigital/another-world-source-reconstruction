@@ -421,14 +421,14 @@ DRAW_CIN_137_138_BLOCK:
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_393_AT_VAR07_08:
+DRAW_BUDDY_FIGURE_BASE:
 	video offset=CINEMATIC_393, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_DRAW_CIN_393_AT_VAR07_08.inc"
+;@include "amiga__post_DRAW_BUDDY_FIGURE_BASE.inc"
 ;@elif BRANCH == "dos_1992"
-;@include "dos__post_DRAW_CIN_393_AT_VAR07_08.inc"
+;@include "dos__post_DRAW_BUDDY_FIGURE_BASE.inc"
 ;@endif
 

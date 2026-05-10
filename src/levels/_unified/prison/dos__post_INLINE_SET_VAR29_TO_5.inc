@@ -89,24 +89,24 @@ LABEL_16AC:
 	break
 	video offset=CINEMATIC_391, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_392, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	djnz [0x29], LABEL_16AC
 	break
 	video offset=CINEMATIC_394, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_392, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	break
 	video offset=CINEMATIC_395, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	break
 	video offset=CINEMATIC_397, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_398, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	break
 	video offset=CINEMATIC_397, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_399, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	break
 	jmp LABEL_1846
 LABEL_16FA:
@@ -115,7 +115,7 @@ LABEL_16FA:
 LABEL_16FB:
 	video offset=CINEMATIC_397, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_399, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	break
 	video offset=CINEMATIC_395, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_398, x=[BUDDY_X], y=[BUDDY_Y]
@@ -123,14 +123,14 @@ LABEL_16FB:
 	break
 	video offset=CINEMATIC_395, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_399, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	mov [0x29], 0x0005
 
 LABEL_172A:
 	break
 	video offset=CINEMATIC_397, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_399, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	djnz [0x29], LABEL_172A
 	break
 	jmp LABEL_1846
@@ -140,7 +140,7 @@ LABEL_1740:
 LABEL_1741:
 	video offset=CINEMATIC_397, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_399, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	break
 	video offset=CINEMATIC_397, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_398, x=[BUDDY_X], y=[BUDDY_Y]
@@ -148,14 +148,14 @@ LABEL_1741:
 	break
 	video offset=CINEMATIC_397, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_399, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	mov [0x29], 0x0005
 
 LABEL_1770:
 	break
 	video offset=CINEMATIC_395, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_399, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	djnz [0x29], LABEL_1770
 	break
 	jmp LABEL_1846
@@ -165,7 +165,7 @@ LABEL_1786:
 LABEL_1787:
 	video offset=CINEMATIC_400, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	break
 	video offset=CINEMATIC_401, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]
@@ -173,19 +173,19 @@ LABEL_1787:
 	break
 	video offset=CINEMATIC_402, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	mov [0x29], 0x0003
 
 LABEL_17B6:
 	break
 	video offset=CINEMATIC_403, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_392, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	djnz [0x29], LABEL_17B6
 	break
 	video offset=CINEMATIC_404, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	break
 	jmp LABEL_1811
 LABEL_17DA:
@@ -194,19 +194,19 @@ LABEL_17DA:
 LABEL_17DB:
 	video offset=CINEMATIC_401, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	mov [0x29], 0x0003
 
 LABEL_17EC:
 	break
 	video offset=CINEMATIC_404, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	djnz [0x29], LABEL_17EC
 	break
 	video offset=CINEMATIC_400, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]
-	call DRAW_CIN_393_AT_VAR07_08
+	call DRAW_BUDDY_FIGURE_BASE
 	break
 	jmp LABEL_1811
 LABEL_1810:
