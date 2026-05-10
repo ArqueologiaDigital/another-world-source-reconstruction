@@ -633,7 +633,7 @@ ENTRY_POINT_OF_INTRO_LEVEL:
 	setup channel=0x01, address=INTRO_SCENE_INIT_PARTICLES
 	setup channel=0x02, address=INTRO_PLAY_BG_AUDIO_LOOP
 	setup channel=0x03, address=LABEL_22CC
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
 KILL_CHANNEL_ROUTINE:
@@ -643,12 +643,12 @@ SETUP_CHANNELS_AFTER_LOAD:
 	add [0xC7], 0x0001
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
-	jne [HERO_ACTION], 0x00, LABEL_09B8
+	jne [HERO_ACTION], 0x00, TRANSITION_INTRO_TO_LAKE
 	copyVideoPage src=0x40, dst=0xFF
 	break
 	jmp SETUP_CHANNELS_AFTER_LOAD
 
-LABEL_0094:
+FRAME_RENDER_TICK_LOOP:
 	add [0xC7], 0x0001
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
@@ -665,23 +665,23 @@ LABEL_00AF:
 	add [0xC7], 0x0001
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
-	jne [HERO_ACTION], 0x00, LABEL_09B8
+	jne [HERO_ACTION], 0x00, TRANSITION_INTRO_TO_LAKE
 	copyVideoPage src=0x00, dst=0xFF
 	break
 	jmp LABEL_00AF
 
-LABEL_00C4:
+WAIT_FOR_HERO_ACTION_LOOP:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
-	jne [HERO_ACTION], 0x00, LABEL_09B8
+	jne [HERO_ACTION], 0x00, TRANSITION_INTRO_TO_LAKE
 	break
-	jmp LABEL_00C4
+	jmp WAIT_FOR_HERO_ACTION_LOOP
 
 JUNK__00D2:
 	add [0xC7], 0x0001
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
-	jne [HERO_ACTION], 0x00, LABEL_09B8
+	jne [HERO_ACTION], 0x00, TRANSITION_INTRO_TO_LAKE
 	fill page=0xFF, color=0x01
 	break
 	jmp JUNK__00D2
@@ -734,13 +734,13 @@ LABEL_0159:
 	break
 	text id=0x0191, x=3, y=168, color=0x0B ; "I see you have driven here in your\nFerrari."
 	setup channel=0x02, address=SETUP_LESTER_AT_HOLO_CONSOLE_SCENE
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
 LABEL_0178:
 	break
 	mov [0x02], 0x0001
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 
 LABEL_0181:
 	break
@@ -755,7 +755,7 @@ LABEL_0181:
 LABEL_019A:
 	break
 	djnz [0x02], LABEL_019A
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	selectVideoPage 0x00
 	video offset=CINEMATIC_144, x=82, y=82
@@ -767,7 +767,7 @@ LABEL_019A:
 LABEL_01B8:
 	break
 	djnz [0x02], LABEL_01B8
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	selectVideoPage 0x00
 	video offset=CINEMATIC_144, x=82, y=82
@@ -779,7 +779,7 @@ LABEL_01B8:
 LABEL_01D8:
 	break
 	djnz [0x02], LABEL_01D8
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	selectVideoPage 0x00
 	video offset=CINEMATIC_144, x=82, y=82
@@ -793,7 +793,7 @@ LABEL_01D8:
 LABEL_01FE:
 	break
 	djnz [0x02], LABEL_01FE
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	selectVideoPage 0x00
 	video offset=CINEMATIC_144, x=82, y=82
@@ -945,7 +945,7 @@ LABEL_035D:
 	sub [0x11], 0x0001
 	break
 	djnz [0x0F], LABEL_035D
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
 LABEL_0370:
@@ -1006,7 +1006,7 @@ LABEL_03EB:
 	setup channel=0x01, address=INTRO_FILL_AND_DRAW_CIN_103
 	setup channel=0x02, address=LABEL_24CE
 	setup channel=0x03, address=LABEL_2686
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
 CH_0A_INIT_VAR_02:
@@ -1235,7 +1235,7 @@ LABEL_05E9:
 LABEL_05EA:
 	setup channel=0x03, address=INTRO_TRANSITION_TO_LAKE_SETUP
 	setup channel=0x01, address=INTRO_SCENE_INIT_PARTICLES
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	song id=0x0000, delay=0x0000, pos=0x00
 	play id=0x000A, freq=0x02, vol=0x14, channel=0x00
@@ -1259,7 +1259,7 @@ LABEL_05EA:
 EXPERIMENT_LIGHTNING_WAIT_AND_TRIGGER:
 	break
 	djnz [0x01], EXPERIMENT_LIGHTNING_WAIT_AND_TRIGGER
-	setup channel=0x3C, address=LABEL_00C4
+	setup channel=0x3C, address=WAIT_FOR_HERO_ACTION_LOOP
 	deleteChannels first=0x0A, last=0x12
 	break
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x00
@@ -1299,7 +1299,7 @@ EXPERIMENT_LIGHTNING_WAIT_AND_TRIGGER:
 	break
 	break
 	break
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
 	jmp LABEL_06CE
@@ -1366,14 +1366,14 @@ LABEL_06CE:
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F27, x=183, y=100
 	break
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F28, x=183, y=100
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	jmp PHASE_PAGE3_TO_0_PAL_16
 LABEL_0763:
 	db 0x11
 
 LABEL_0764:
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	play id=0x000A, freq=0x07, vol=0x3F, channel=0x03
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x02
@@ -1477,7 +1477,7 @@ LABEL_085C:
 	selectVideoPage 0xFF
 	break
 	fill page=0xFF, color=0x00
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	setPalette 0x17
 	play id=0x0003, freq=0x14, vol=0x0A, channel=0x03
@@ -1562,7 +1562,7 @@ LABEL_09AF:
 	bankSwitch 2;  Arrival at the Lake & Beast Chase
 	killChannel
 
-LABEL_09B8:
+TRANSITION_INTRO_TO_LAKE:
 	fill page=0x00, color=0x00
 	fill page=0xFF, color=0x00
 	fill page=0x03, color=0x00
@@ -2111,7 +2111,7 @@ LABEL_0E4A:
 	break
 	video offset=CINEMATIC_247, x=160, y=100
 	break
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	play id=0x000E, freq=0x05, vol=0x3F, channel=0x03
 	play id=0x000E, freq=0x01, vol=0x3F, channel=0x02
 	jmp PHASE_PAGE3_DRAW_CIN_172_175
@@ -2159,7 +2159,7 @@ LESTER_OPENS_AND_DRINKS_SODA_ANIMATION:
 	video offset=CINEMATIC_LESTER_HANDS_OPENING_SODA_CAN_F11, x=212, y=132
 	break
 	video offset=CINEMATIC_LESTER_HANDS_OPENING_SODA_CAN_F11, x=212, y=135
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	setPalette 0x14
 	mov [PAUSE_SLICES], 0x0009
@@ -2208,7 +2208,7 @@ LESTER_HEAD_SIDEWAYS_WITH_HAND_HOLD:
 
 LABEL_1033:
 	setup channel=0x02, address=LABEL_142C
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
 INTRO_FILL_AND_DRAW_413_414:
@@ -2234,7 +2234,7 @@ LABEL_105A:
 LABEL_1076:
 	break
 	djnz [0x01], LABEL_1076
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	selectVideoPage 0x00
 	video offset=CINEMATIC_183, x=200, y=102
@@ -2246,9 +2246,9 @@ LABEL_1076:
 LABEL_1091:
 	break
 	djnz [0x01], LABEL_1091
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
-	setup channel=0x3C, address=LABEL_00C4
+	setup channel=0x3C, address=WAIT_FOR_HERO_ACTION_LOOP
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
@@ -2299,7 +2299,7 @@ LABEL_110A:
 LABEL_111B:
 	break
 	djnz [0x01], LABEL_111B
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	selectVideoPage 0x00
 	video offset=CINEMATIC_185, x=131, y=48
@@ -2325,7 +2325,7 @@ LABEL_111B:
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x01, address=LABEL_11D5
 	setup channel=0x02, address=INTRO_FILL_AND_DRAW_CIN_429_430
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
@@ -2438,7 +2438,7 @@ LABEL_124E:
 LABEL_125F:
 	break
 	djnz [0x01], LABEL_125F
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	copyVideoPage src=0x00, dst=0x03
 	selectVideoPage 0x00
@@ -2465,12 +2465,12 @@ LABEL_12A5:
 	break
 	text id=0x0021, x=27, y=100, color=0x06 ; "|"
 	djnz [0x01], LABEL_12A5
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	selectVideoPage 0x00
 	text id=0x0021, x=26, y=100, color=0x02 ; "|"
 	selectVideoPage 0xFF
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	selectVideoPage 0x00
 	text id=0x001C, x=26, y=100, color=0x06 ; "-"
@@ -2502,7 +2502,7 @@ LABEL_12FD:
 LABEL_1310:
 	break
 	djnz [0x01], LABEL_1310
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	selectVideoPage 0x00
 	text id=0x0194, x=36, y=170, color=0x06 ; "Y\n"
@@ -2512,14 +2512,14 @@ LABEL_1310:
 DRAW_HOLO_ACCELERATOR_DIAGRAM_FRAME:
 	break
 	djnz [0x01], DRAW_HOLO_ACCELERATOR_DIAGRAM_FRAME
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	selectVideoPage 0x03
 	video offset=CINEMATIC_HOLO_ACCELERATOR_LOOP_DIAGRAM, x=162, y=100
 	video offset=CINEMATIC_192, x=234, y=163
 	selectVideoPage 0xFF
 	copyVideoPage src=0x03, dst=0x00
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	selectVideoPage 0x00
 	text id=0x0022, x=8, y=2, color=0x06 ; "--- Theoretical study ---"
@@ -2567,7 +2567,7 @@ LABEL_13B1:
 	djnz [0x01], LABEL_13B1
 
 LABEL_13C2:
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0x00
 	text id=0x0023, x=0, y=80, color=0x06 ; " THE EXPERIMENT WILL BEGIN IN    SECONDS"
@@ -2603,7 +2603,7 @@ LABEL_1406:
 	setup channel=0x0A, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x02, address=LESTER_OPENS_AND_DRINKS_SODA_ANIMATION
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
 LABEL_142C:
@@ -2663,7 +2663,7 @@ LABEL_14AB:
 
 LABEL_14BC:
 	text id=0x002B, x=28, y=80, color=0x0F ; "  0"
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	copyVideoPage src=0x03, dst=0x00
 	mov [PAUSE_SLICES], 0x0004
 	setup channel=0x07, address=DRAW_CIN_382_TWICE_AT_DIFF_Y
@@ -2680,13 +2680,13 @@ LABEL_14E1:
 
 LABEL_14F2:
 	djnz [0x01], LABEL_14E1
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x02, address=LABEL_05EA
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	fill page=0xFF, color=0x00
 	fill page=0x00, color=0x00
 	killChannel
@@ -2897,7 +2897,7 @@ LABEL_1719:
 	break
 	video offset=CINEMATIC_382, x=185, y=127
 	djnz [0x02], LABEL_1719
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	selectVideoPage 0x00
 	video offset=CINEMATIC_383, x=237, y=156
 	selectVideoPage 0xFF
@@ -3050,7 +3050,7 @@ LABEL_18BE:
 LABEL_18CF:
 	break
 	djnz [0x03], LABEL_18CF
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	selectVideoPage 0x00
 	video offset=CINEMATIC_131, x=228, y=44
@@ -3062,7 +3062,7 @@ LABEL_18CF:
 LABEL_18ED:
 	break
 	djnz [0x03], LABEL_18ED
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	selectVideoPage 0x00
 	video offset=CINEMATIC_131, x=228, y=44
@@ -3083,7 +3083,7 @@ LABEL_190B:
 	setup channel=0x0A, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x10, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x02, address=LABEL_00F6
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
 CH_03_INIT_VAR_01_02_FFF6:
@@ -3186,7 +3186,7 @@ LABEL_1A12:
 	selectVideoPage 0xFF
 	fill page=0xFF, color=0x01
 	video offset=CINEMATIC_466, x=153, y=114
-	setup channel=0x3C, address=LABEL_00C4
+	setup channel=0x3C, address=WAIT_FOR_HERO_ACTION_LOOP
 	setPalette 0x0D
 	mov [0x01], 0xFC45
 	mov [0x03], 0x0073
@@ -3221,7 +3221,7 @@ LIFT_ENTRY_WAIT_AND_TRANSITION:
 	djnz [0x03], LIFT_ENTRY_WAIT_AND_TRANSITION
 	copyVideoPage src=0xFE, dst=0x00
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	setPalette 0x0C
 	copyVideoPage src=0xFE, dst=0x00
@@ -3301,7 +3301,7 @@ LIFT_ENTRY_WAIT_AND_TRANSITION:
 	break
 	video offset=CINEMATIC_LIFT_DOORS_OPENING_F31, x=160, y=100
 	break
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	play id=0x0036, freq=0x16, vol=0x3F, channel=0x03
 	setup channel=0x01, address=CH_01_INIT_VAR_04_06
@@ -3390,9 +3390,9 @@ SETUP_LESTER_AT_HOLO_CONSOLE_SCENE:
 	setup channel=0x03, address=CH_03_INIT_VAR_03_04
 	setup channel=0x04, address=CH_04_INIT_VAR_05
 	setup channel=0x05, address=CH_05_INIT_VAR_07_08
-	setup channel=0x0A, address=LABEL_1C6C
-	setup channel=0x0B, address=LABEL_1CD4
-	setup channel=0x0E, address=LABEL_1C77
+	setup channel=0x0A, address=HOLO_SCENE_PAGE_0_KEEP_LOOP
+	setup channel=0x0B, address=DRAW_HOLO_CONSOLE_DISPLAY_PANEL
+	setup channel=0x0E, address=HOLO_SCENE_PAGE_FF_KEEP_LOOP
 	mov [0x01], 0x0032
 
 LABEL_1C42:
@@ -3400,7 +3400,7 @@ LABEL_1C42:
 	djnz [0x01], LABEL_1C42
 	setup channel=0x01, address=INTRO_FILL_AND_DRAW_413_414
 	setup channel=0x02, address=LABEL_105A
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x0A, address=KILL_CHANNEL_ROUTINE
@@ -3409,18 +3409,18 @@ LABEL_1C42:
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
-LABEL_1C6C:
+HOLO_SCENE_PAGE_0_KEEP_LOOP:
 	selectVideoPage 0x00
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
-	jmp LABEL_1C6C
+	jmp HOLO_SCENE_PAGE_0_KEEP_LOOP
 LABEL_1C76:
 	db 0x11
 
-LABEL_1C77:
+HOLO_SCENE_PAGE_FF_KEEP_LOOP:
 	selectVideoPage 0xFF
 	break
-	jmp LABEL_1C77
+	jmp HOLO_SCENE_PAGE_FF_KEEP_LOOP
 LABEL_1C7D:
 	db 0x11
 
@@ -3467,7 +3467,7 @@ LABEL_1CC1:
 LABEL_1CD3:
 	db 0x11
 
-LABEL_1CD4:
+DRAW_HOLO_CONSOLE_DISPLAY_PANEL:
 	video offset=CINEMATIC_442, x=221, y=123
 	video offset=CINEMATIC_443, x=219, y=125
 	video offset=CINEMATIC_444, x=217, y=127
@@ -3505,7 +3505,7 @@ LABEL_1D26:
 LABEL_1D37:
 	break
 	djnz [0x09], LABEL_1D37
-	jmp LABEL_1CD4
+	jmp DRAW_HOLO_CONSOLE_DISPLAY_PANEL
 LABEL_1D3F:
 	db 0x11
 
@@ -3532,7 +3532,7 @@ DRAW_LIFT_SCENE_BG_COMPOSITE:
 	video offset=CINEMATIC_533, x=248, y=100
 	video offset=CINEMATIC_LIFT_SCENE_BG, x=288, y=158
 	copyVideoPage src=0x00, dst=0xFF
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	selectVideoPage 0xFF
 	killChannel
 
@@ -3570,7 +3570,7 @@ LABEL_1DD8:
 	mov [0x01], 0x0050
 	mov [0x02], 0x0004
 	mov [0x03], 0x001A
-	setup channel=0x3C, address=LABEL_00C4
+	setup channel=0x3C, address=WAIT_FOR_HERO_ACTION_LOOP
 
 BLITTER_CYCLE_VAR2_80X_LOOP:
 	jne [0x02], 0x01, COPY_VAR2_TO_VAR4_DEC
@@ -3587,7 +3587,7 @@ LABEL_1E02:
 	djnz [0x04], LABEL_1E02
 	add [0x03], 0x0002
 	djnz [0x01], BLITTER_CYCLE_VAR2_80X_LOOP
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	mov [PAUSE_SLICES], 0x0001
 	copyVideoPage src=0xFE, dst=0x00
@@ -3624,7 +3624,7 @@ LABEL_1E67:
 	djnz [0x01], LABEL_1E67
 	setup channel=0x02, address=LABEL_1A12
 	setup channel=0x03, address=LABEL_1BAF
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
 INTRO_FILL_PAGE0_DRAW_CIN_118:
@@ -3725,7 +3725,7 @@ LABEL_1F73:
 	break
 	djnz [0x04], LABEL_1F73
 	setup channel=0x02, address=INIT_VAR_04_PAL_E_VAR_01
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
@@ -3798,7 +3798,7 @@ LABEL_2025:
 	djnz [0x06], LABEL_2025
 	setup channel=0x02, address=KILL_CHANNEL_ROUTINE
 	fill page=0xFF, color=0x09
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	setPalette 0x0E
 	copyVideoPage src=0x03, dst=0x00
@@ -3832,7 +3832,7 @@ LABEL_207C:
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x02, address=INTRO_FILL_PAGE0_DRAW_CIN_118
 	setup channel=0x03, address=LESTER_HAND_PRESSING_KEYPAD_ANIMATION
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
@@ -3905,7 +3905,7 @@ LABEL_2156:
 	setup channel=0x09, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x01, address=FILL_FF_8_AND_DRAW_CIN_517_518
 	setup channel=0x02, address=LABEL_188C
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
 CH_05_INIT_VARS_06_07_08:
@@ -4163,7 +4163,7 @@ LABEL_23C6:
 	break
 	video offset=CINEMATIC_030, x=216, y=100
 	video offset=CINEMATIC_031, x=42, y=120
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	setPalette 0x05
 	mov [0x01], 0x0014
@@ -4269,14 +4269,14 @@ LABEL_24CE:
 	video offset=CINEMATIC_WALKING_FEET_ARRIVING_33, x=230, y=96
 	break
 	video offset=CINEMATIC_WALKING_FEET_ARRIVING_34, x=230, y=96
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	selectVideoPage 0x00
 	video offset=CINEMATIC_089, x=160, y=100
 	video offset=CINEMATIC_090, x=160, y=100
 	selectVideoPage 0xFF
 	video offset=CINEMATIC_WALKING_FEET_ENTERING_0, x=230, y=96
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	selectVideoPage 0x00
 	video offset=CINEMATIC_089, x=160, y=100
@@ -4314,7 +4314,7 @@ LABEL_2617:
 	break
 	djnz [0x01], LABEL_2617
 	break
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	mov [PAUSE_SLICES], 0x0002
 	video offset=CINEMATIC_090, x=160, y=100
@@ -4330,7 +4330,7 @@ LABEL_263C:
 	setup channel=0x01, address=DRAW_LIFT_SCENE_BG_COMPOSITE
 	setup channel=0x02, address=CH_02_INIT_VARS_01_02_03
 	setup channel=0x03, address=LABEL_1D92
-	setup channel=0x3C, address=LABEL_0094
+	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
 INTRO_FILL_AND_DRAW_CIN_103:
