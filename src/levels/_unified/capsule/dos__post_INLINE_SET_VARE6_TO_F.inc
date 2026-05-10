@@ -411,7 +411,7 @@ LABEL_3FDB:
 
 LABEL_4002:
 	add [HERO_X], 0x0003
-	video offset=CINEMATIC_175, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_THE_GUN, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0002
 	break
 	video offset=CINEMATIC_176, x=[HERO_X], y=[HERO_Y]
@@ -489,13 +489,13 @@ LABEL_40CC:
 	db 0x11
 
 LABEL_40CD:
-	video offset=CINEMATIC_178, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_179, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_180, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_179, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F1, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_40FF
 LABEL_40E7:
 	db 0x11

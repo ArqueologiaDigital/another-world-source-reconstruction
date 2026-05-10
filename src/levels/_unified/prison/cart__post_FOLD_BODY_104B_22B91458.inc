@@ -72,7 +72,7 @@ LABEL_4C25:
 	call LABEL_82D1
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	video offset=CINEMATIC_458, x=160, y=100
+	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=160, y=100
 	ret
 
 FILL_AND_DRAW_CIN_24_28:

@@ -80,7 +80,7 @@ LABEL_1685:
 	call LABEL_62AE
 	jne [HACK_VAR_67], 0x04, LABEL_1846
 	selectVideoPage 0x00
-	video offset=CINEMATIC_389, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_390, x=[BUDDY_X], y=[BUDDY_Y]
 	selectVideoPage 0xFF
 	mov [0x29], 0x000A

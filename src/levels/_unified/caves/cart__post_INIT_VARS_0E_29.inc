@@ -61,14 +61,14 @@ LABEL_15B4:
 	db 0x11
 
 LABEL_15B5:
-	video offset=CINEMATIC_179, x=[0x78], y=[0x79]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F1, x=[0x78], y=[0x79]
 	break
-	video offset=CINEMATIC_180, x=[0x78], y=[0x79]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F2, x=[0x78], y=[0x79]
 	mov [0xB7], 0x0001
 
 LABEL_15C4:
 	break
-	video offset=CINEMATIC_181, x=[0x78], y=[0x79]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F3, x=[0x78], y=[0x79]
 	jne [HERO_ACTION], 0x01, LABEL_15C4
 	and [0x04], 0x3FFF
 	setup channel=0x14, address=LABEL_1606
@@ -137,22 +137,22 @@ LABEL_1670:
 	and [0x09], 0xFBFF
 	break
 	play id=0x0075, freq=0x0F, vol=0x40, channel=0x03
-	video offset=CINEMATIC_182, x=[0x78], y=[0x79]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F4, x=[0x78], y=[0x79]
 	break
-	video offset=CINEMATIC_183, x=[0x78], y=[0x79]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F5, x=[0x78], y=[0x79]
 	mov [0x29], 0x0003
 
 LABEL_1696:
 	break
 	call LABEL_173C
-	video offset=CINEMATIC_184, x=[0x78], y=[0x79]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F6, x=[0x78], y=[0x79]
 	djnz [0x29], LABEL_1696
 	mov [0x29], 0x0005
 
 LABEL_16A7:
 	break
 	call LABEL_173C
-	video offset=CINEMATIC_185, x=[0x78], y=[0x79]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F7, x=[0x78], y=[0x79]
 	djnz [0x29], LABEL_16A7
 	play id=0x0088, freq=0x0A, vol=0x40, channel=0x03
 	mov [0x29], 0x0004
@@ -160,14 +160,14 @@ LABEL_16A7:
 LABEL_16BE:
 	break
 	call LABEL_173C
-	video offset=CINEMATIC_184, x=[0x78], y=[0x79]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F6, x=[0x78], y=[0x79]
 	djnz [0x29], LABEL_16BE
 	mov [0x29], 0x0003
 
 LABEL_16CF:
 	break
 	call LABEL_173C
-	video offset=CINEMATIC_185, x=[0x78], y=[0x79]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F7, x=[0x78], y=[0x79]
 	djnz [0x29], LABEL_16CF
 	mov [0x29], [0x78]
 
@@ -186,7 +186,7 @@ LABEL_16DF:
 	video type=0, offset=COMMON_VIDEO_287, x=[0x78], y=[0x79], zoom=0x40
 	sub [0x79], 0x0006
 	add [0x78], 0x0007
-	video offset=CINEMATIC_184, x=[0x78], y=[0x79]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F6, x=[0x78], y=[0x79]
 	mov [0x21], [0x07]
 	mov [0x27], [0x08]
 	sub [0x21], 0x0023

@@ -148,7 +148,7 @@ LABEL_1EA0:
 	break
 	video offset=CINEMATIC_388, x=160, y=100
 	killChannel
-	video offset=CINEMATIC_389, x=160, y=100
+	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=160, y=100
 	break
 	video offset=CINEMATIC_390, x=160, y=100
 	setup channel=0x38, address=LABEL_1EDF

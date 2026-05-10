@@ -37,5 +37,5 @@ LABEL_4B2B:
 	call LABEL_8189
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	video offset=CINEMATIC_458, x=160, y=100
+	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=160, y=100
 	ret

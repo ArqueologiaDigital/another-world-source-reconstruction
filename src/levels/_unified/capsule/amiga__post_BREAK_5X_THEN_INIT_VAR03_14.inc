@@ -249,7 +249,7 @@ LABEL_0636:
 	break
 	video offset=CINEMATIC_388, x=160, y=100
 	break
-	video offset=CINEMATIC_389, x=160, y=100
+	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=160, y=100
 	break
 	video offset=CINEMATIC_390, x=160, y=100
 	break

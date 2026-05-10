@@ -174,7 +174,7 @@ LABEL_024B:
 	selectVideoPage 0x00
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_174, x=160, y=100
-	video offset=CINEMATIC_175, x=160, y=100
+	video offset=CINEMATIC_THE_GUN, x=160, y=100
 	video offset=CINEMATIC_176, x=160, y=100
 	video offset=CINEMATIC_177, x=160, y=100
 	selectVideoPage 0xFF
@@ -187,24 +187,24 @@ LABEL_024B:
 LABEL_027A:
 	break
 	play id=0x0058, freq=0x07, vol=0x10, channel=0x00
-	video offset=CINEMATIC_178, x=160, y=[0x02]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F0, x=160, y=[0x02]
 	sub [0x02], 0x0005
 	djnz [0x03], LABEL_027A
 	setup channel=0x09, address=LABEL_021C
 	setup channel=0x0B, address=LABEL_0114
 	break
-	video offset=CINEMATIC_179, x=160, y=[0x02]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F1, x=160, y=[0x02]
 	setPalette 0x0B
 	mov [0x03], 0x000F
 
 LABEL_02A3:
 	break
-	video offset=CINEMATIC_179, x=160, y=[0x02]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F1, x=160, y=[0x02]
 	sub [0x02], 0x0005
 	djnz [0x03], LABEL_02A3
 	add [0x02], 0x0002
 	selectVideoPage 0x00
-	video offset=CINEMATIC_179, x=160, y=[0x02]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F1, x=160, y=[0x02]
 	selectVideoPage 0xFF
 	setPalette 0x0A
 	play id=0x0057, freq=0x02, vol=0x20, channel=0x00
@@ -229,26 +229,26 @@ LABEL_02E1:
 	deleteChannels first=0x09, last=0x0B
 	selectVideoPage 0x00
 	fill page=0x00, color=0x00
-	video offset=CINEMATIC_180, x=160, y=100
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F2, x=160, y=100
 	video offset=CINEMATIC_176, x=160, y=100
-	video offset=CINEMATIC_181, x=160, y=100
-	video offset=CINEMATIC_182, x=160, y=100
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F3, x=160, y=100
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F4, x=160, y=100
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
-	video offset=CINEMATIC_183, x=160, y=[0x02]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F5, x=160, y=[0x02]
 	setPalette 0x13
 	mov [0x03], 0x0032
 
 ANIM_CIN_183_LOOP_VAR03:
-	video offset=CINEMATIC_183, x=160, y=[0x02]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F5, x=160, y=[0x02]
 	break
 	djnz [0x03], ANIM_CIN_183_LOOP_VAR03
 	killChannel
 
 LABEL_0328:
-	video offset=CINEMATIC_184, x=160, y=100
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F6, x=160, y=100
 	break
-	video offset=CINEMATIC_185, x=160, y=100
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F7, x=160, y=100
 	break
 	video offset=CINEMATIC_186, x=160, y=100
 	break

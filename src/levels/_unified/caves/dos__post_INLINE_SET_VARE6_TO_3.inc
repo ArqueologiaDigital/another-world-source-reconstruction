@@ -112,14 +112,14 @@ LABEL_04F7:
 	db 0x11
 
 LABEL_04F8:
-	video offset=CINEMATIC_458, x=109, y=188
+	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=109, y=188
 	video offset=CINEMATIC_359, x=32, y=141
 	video offset=CINEMATIC_433, x=78, y=110
 	video offset=CINEMATIC_359, x=134, y=142
 	video offset=CINEMATIC_359, x=38, y=141
 	video offset=CINEMATIC_359, x=77, y=141
 	video offset=CINEMATIC_433, x=135, y=123
-	video offset=CINEMATIC_458, x=111, y=63
+	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=111, y=63
 	video offset=CINEMATIC_565, x=160, y=100
 	break
 	jmp LABEL_04F8

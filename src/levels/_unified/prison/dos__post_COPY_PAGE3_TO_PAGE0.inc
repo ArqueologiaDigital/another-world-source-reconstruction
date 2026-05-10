@@ -69,7 +69,7 @@ LABEL_82CA:
 	jne [0x6C], 0x04, LABEL_830E
 	video offset=CINEMATIC_379, x=160, y=100
 	jge [0x6B], 0x4000, LABEL_830E
-	video offset=CINEMATIC_389, x=260, y=182
+	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=260, y=182
 	video offset=CINEMATIC_390, x=260, y=182
 
 LABEL_830E:

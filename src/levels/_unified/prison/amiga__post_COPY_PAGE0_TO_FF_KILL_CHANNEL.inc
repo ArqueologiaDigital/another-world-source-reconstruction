@@ -21,7 +21,7 @@ LABEL_7FAA:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_173, x=160, y=100
 	video offset=CINEMATIC_174, x=160, y=100
-	video offset=CINEMATIC_175, x=160, y=100
+	video offset=CINEMATIC_THE_GUN, x=160, y=100
 	selectVideoPage 0xFF
 	mov [PAUSE_SLICES], 0x0001
 	break
@@ -47,45 +47,45 @@ LABEL_7FAA:
 	mov [0xC8], 0x0005
 
 LABEL_801E:
-	video offset=CINEMATIC_175, x=160, y=100
+	video offset=CINEMATIC_THE_GUN, x=160, y=100
 	video offset=CINEMATIC_177, x=160, y=100
 	break
 	djnz [0xC8], LABEL_801E
 	mov [0xC8], 0x0005
 
 LABEL_802F:
-	video offset=CINEMATIC_175, x=160, y=100
+	video offset=CINEMATIC_THE_GUN, x=160, y=100
 	video offset=CINEMATIC_176, x=160, y=100
 	break
 	djnz [0xC8], LABEL_802F
 	mov [0xC8], 0x0005
 
 LABEL_8040:
-	video offset=CINEMATIC_175, x=160, y=100
+	video offset=CINEMATIC_THE_GUN, x=160, y=100
 	video offset=CINEMATIC_177, x=160, y=100
 	break
 	djnz [0xC8], LABEL_8040
-	video offset=CINEMATIC_178, x=160, y=100
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F0, x=160, y=100
 	video offset=CINEMATIC_177, x=160, y=100
 	break
 	play id=0x0055, freq=0x14, vol=0x40, channel=0x00
-	video offset=CINEMATIC_179, x=160, y=100
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F1, x=160, y=100
 	video offset=CINEMATIC_176, x=160, y=100
 	break
-	video offset=CINEMATIC_180, x=160, y=100
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F2, x=160, y=100
 	video offset=CINEMATIC_176, x=160, y=100
 	break
-	video offset=CINEMATIC_181, x=160, y=100
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F3, x=160, y=100
 	video offset=CINEMATIC_176, x=160, y=100
 	break
-	video offset=CINEMATIC_182, x=160, y=100
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F4, x=160, y=100
 	break
 	setPalette 0x08
-	video offset=CINEMATIC_183, x=160, y=100
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F5, x=160, y=100
 	break
-	video offset=CINEMATIC_184, x=160, y=100
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F6, x=160, y=100
 	break
-	video offset=CINEMATIC_185, x=160, y=100
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F7, x=160, y=100
 	mov [0xC8], 0x000A
 
 DELAY_LOOP_VARC8:

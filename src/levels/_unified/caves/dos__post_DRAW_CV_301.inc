@@ -607,7 +607,7 @@ LABEL_9481:
 	video type=0, offset=COMMON_VIDEO_287, x=[0x78], y=[0x79], zoom=0x40
 	sub [0x79], 0x0005
 	add [0x78], 0x000A
-	video offset=CINEMATIC_184, x=[0x78], y=[0x79]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F6, x=[0x78], y=[0x79]
 	ret
 
 LABEL_94A2:

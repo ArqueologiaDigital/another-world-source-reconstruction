@@ -9,7 +9,7 @@ LABEL_CC5F:
 	ret
 
 DRAW_CIN_389:
-	video offset=CINEMATIC_389, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 LABEL_CC73:

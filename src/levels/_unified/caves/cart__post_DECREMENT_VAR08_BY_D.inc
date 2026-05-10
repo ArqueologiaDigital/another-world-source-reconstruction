@@ -437,7 +437,7 @@ LABEL_9A26:
 	ret
 
 DRAW_CIN_175:
-	video offset=CINEMATIC_175, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_THE_GUN, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_9A38:
@@ -460,7 +460,7 @@ LABEL_9A62:
 	ret
 
 DRAW_CIN_178:
-	video offset=CINEMATIC_178, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F0, x=[HERO_X], y=[HERO_Y]
 	ret
 
 LABEL_9A74:

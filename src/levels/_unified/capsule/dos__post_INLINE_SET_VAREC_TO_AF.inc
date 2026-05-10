@@ -35,18 +35,18 @@ DELAY_LOOP_VAREC_AT_179F:
 	killChannel
 
 LABEL_17B9:
-	video offset=CINEMATIC_181, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_182, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F4, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_183, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F5, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_184, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F6, x=[HERO_X], y=[HERO_Y]
 	break
 	jmp LABEL_147F
 
 LABEL_17D4:
-	video offset=CINEMATIC_185, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F7, x=[HERO_X], y=[HERO_Y]
 	break
 	je [HERO_ACTION], 0x01, LABEL_14EC
 	je [HERO_POS_LEFT_RIGHT], 0x01, LABEL_147F
@@ -76,7 +76,7 @@ ANIM_CIN_197_LOOP_VARE6_AT_180E:
 	video offset=CINEMATIC_200, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0002
-	video offset=CINEMATIC_185, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F7, x=[HERO_X], y=[HERO_Y]
 	break
 	jmp LABEL_17D4
 

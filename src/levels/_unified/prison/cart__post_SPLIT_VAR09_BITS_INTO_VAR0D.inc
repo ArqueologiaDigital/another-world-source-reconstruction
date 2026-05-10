@@ -83,7 +83,7 @@ DRAW_CIN_393_IF_VAR1_LE_EB:
 	ret
 
 DRAW_CIN_389:
-	video offset=CINEMATIC_389, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 LABEL_157B:
@@ -98,7 +98,7 @@ LABEL_1586:
 	break
 	call GUARDED_DRAW_CIN_342
 	selectVideoPage 0x00
-	video offset=CINEMATIC_389, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_390, x=[BUDDY_X], y=[BUDDY_Y]
 	selectVideoPage 0xFF
 	mov [0x29], 0x000F
