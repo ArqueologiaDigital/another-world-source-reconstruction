@@ -110,7 +110,7 @@ SECOND_SCREEN_R_SETUP_CHANNELS:
 	setup channel=0x13, address=MULTIPLEX_RING5_SAVE_LOOP
 	setup channel=0x36, address=SCATTER_3DOT_BURST_RIGHT
 	setup channel=0x37, address=DRAW_8_SCATTER_DOTS_CYCLE
-	setup channel=0x38, address=LOOP_DRAW_LAKE_018_AT_CENTER
+	setup channel=0x38, address=DRAW_LAKE_018_CENTER_BG_LOOP
 	call CLAMP_SCENE_INIT_X_VARS
 	jmp CHECK_HERO_SECOND_SCR_R_EDGE
 	killChannel

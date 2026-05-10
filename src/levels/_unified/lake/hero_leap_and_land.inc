@@ -212,7 +212,7 @@ HERO_LEAP_R_F5_TO_F9_ENTRY:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video offset=CINEMATIC_HERO_LAND_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@elif BRANCH == "gba_2004"
-	video offset=LOOP_DRAW_LAKE_018_AT_CENTER_AT_0C1E, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
+	video offset=DRAW_LAKE_018_CENTER_BG_LOOP_AT_0C1E, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_LAND_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif
@@ -221,7 +221,7 @@ HERO_LEAP_R_F5_TO_F9_ENTRY:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video offset=CINEMATIC_HERO_LAND_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@elif BRANCH == "gba_2004"
-	video offset=LOOP_DRAW_LAKE_018_AT_CENTER_AT_0C1E, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
+	video offset=DRAW_LAKE_018_CENTER_BG_LOOP_AT_0C1E, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_LAND_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif
@@ -232,7 +232,7 @@ HERO_LAND_RIGHT_HOLD_LOOP:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 	video offset=CINEMATIC_HERO_LAND_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@elif BRANCH == "gba_2004"
-	video offset=LOOP_DRAW_LAKE_018_AT_CENTER_AT_0C1E, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
+	video offset=DRAW_LAKE_018_CENTER_BG_LOOP_AT_0C1E, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_LAND_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 ;@endif

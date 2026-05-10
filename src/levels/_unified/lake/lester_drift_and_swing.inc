@@ -201,7 +201,7 @@ LESTER_GRABS_A_VINE_AND_SWINGS:
 	video offset=CINEMATIC_HANGING_ON_THE_VINE_1, x=[HERO_X], y=[HERO_Y]
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x07, address=LOOP_DRAW_LAKE_093_AT_CENTER
+	setup channel=0x07, address=DRAW_VINE_CENTER_BG_LOOP
 	break
 	video offset=CINEMATIC_SWINGING_AFTER_VINE_SNAPS_0, x=160, y=100
 	break
