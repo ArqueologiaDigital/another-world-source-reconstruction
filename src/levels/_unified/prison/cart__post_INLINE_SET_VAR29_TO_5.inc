@@ -92,7 +92,7 @@ LABEL_174A:
 	call DRAW_CIN_393_IF_VAR1_LE_EB
 	djnz [0x29], LABEL_174A
 	break
-	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_394, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_392, x=[BUDDY_X], y=[BUDDY_Y]
 	call DRAW_CIN_393_IF_VAR1_LE_EB
 	break

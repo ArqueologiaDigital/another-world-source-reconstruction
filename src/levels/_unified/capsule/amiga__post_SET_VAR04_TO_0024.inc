@@ -256,7 +256,7 @@ LABEL_8A24:
 	break
 	video offset=CINEMATIC_316, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_BUDDY_CRAWLING_STUCK_AT_RING, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_317, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_318, x=[HERO_X], y=[HERO_Y]
 	break

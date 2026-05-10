@@ -174,14 +174,14 @@ LABEL_9E0B:
 	video offset=CINEMATIC_485, x=160, y=100
 	ret
 	fill page=0x00, color=0x01
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=160, y=100
+	video offset=CINEMATIC_458, x=160, y=100
 	video offset=CINEMATIC_433, x=160, y=100
 	ret
 
 LABEL_9E1F:
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_457, x=160, y=100
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=160, y=100
+	video offset=CINEMATIC_458, x=160, y=100
 	video offset=CINEMATIC_434, x=160, y=100
 	video offset=CINEMATIC_459, x=160, y=100
 	video offset=CINEMATIC_460, x=160, y=100
@@ -190,7 +190,7 @@ LABEL_9E1F:
 LABEL_9E37:
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_457, x=160, y=100
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=160, y=100
+	video offset=CINEMATIC_458, x=160, y=100
 	video offset=CINEMATIC_434, x=160, y=100
 	video offset=CINEMATIC_459, x=160, y=100
 	video offset=CINEMATIC_460, x=160, y=100

@@ -249,7 +249,7 @@ LABEL_0636:
 	break
 	video offset=CINEMATIC_388, x=160, y=100
 	break
-	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=160, y=100
+	video offset=CINEMATIC_389, x=160, y=100
 	break
 	video offset=CINEMATIC_390, x=160, y=100
 	break
@@ -257,9 +257,9 @@ LABEL_0636:
 	break
 	video offset=CINEMATIC_392, x=160, y=100
 	break
-	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=160, y=100
+	video offset=CINEMATIC_393, x=160, y=100
 	selectVideoPage 0x00
-	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=160, y=100
+	video offset=CINEMATIC_393, x=160, y=100
 	selectVideoPage 0xFF
 	setup channel=0x04, address=LABEL_068B
 	killChannel
@@ -284,7 +284,7 @@ LABEL_06B6:
 	break
 	play id=0x0057, freq=0x14, vol=0x40, channel=0x00
 	play id=0x0057, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F1, x=162, y=100
+	video offset=CINEMATIC_394, x=162, y=100
 	break
 	video offset=CINEMATIC_395, x=162, y=100
 	break

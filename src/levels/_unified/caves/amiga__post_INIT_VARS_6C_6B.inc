@@ -392,7 +392,7 @@ LABEL_3BE9:
 	jmp LABEL_3C37
 
 LABEL_3C0E:
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_458, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_459, x=[HERO_X], y=[HERO_Y]
 	break

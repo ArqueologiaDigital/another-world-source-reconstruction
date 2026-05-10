@@ -50,7 +50,7 @@ DRAW_CIN_174:
 	ret
 
 DRAW_CIN_175:
-	video offset=CINEMATIC_THE_GUN, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_175, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_176:
@@ -62,7 +62,7 @@ DRAW_CIN_177:
 	ret
 
 DRAW_CIN_179:
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_179, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_173:
@@ -100,15 +100,15 @@ DRAW_CIN_180_181_182_VAR09:
 	ret
 
 DRAW_CIN_180:
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F2, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_180, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_181:
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F3, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_181, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_182:
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F4, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_182, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_183_184_VAR09_LOW:
@@ -119,11 +119,11 @@ DRAW_CIN_183_184_VAR09_LOW:
 	ret
 
 DRAW_CIN_183:
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F5, x=[0xf5], y=[BUDDY_Y]
+	video offset=CINEMATIC_183, x=[0xf5], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_184:
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F6, x=[0xf5], y=[BUDDY_Y]
+	video offset=CINEMATIC_184, x=[0xf5], y=[BUDDY_Y]
 	ret
 
 LABEL_6C5E:

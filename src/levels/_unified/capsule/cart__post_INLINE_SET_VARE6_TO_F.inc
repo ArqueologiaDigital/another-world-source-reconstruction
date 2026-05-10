@@ -418,7 +418,7 @@ LABEL_3FCE:
 	video offset=CINEMATIC_177, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
 	break
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_178, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_177, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_40CB
@@ -476,7 +476,7 @@ LABEL_4030:
 	break
 	video offset=CINEMATIC_174, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_THE_GUN, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_175, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_174, x=[HERO_X], y=[HERO_Y]
 	break
@@ -490,13 +490,13 @@ LABEL_4098:
 	db 0x11
 
 LABEL_4099:
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F1, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_179, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_180, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F3, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_181, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_180, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_40CB
 LABEL_40B3:
 	db 0x11

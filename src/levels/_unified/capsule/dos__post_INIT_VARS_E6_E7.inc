@@ -204,9 +204,9 @@ LABEL_0C7B:
 	mov [0xE6], 0x0081
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	add [0xE6], [RANDOM_SEED]
-	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=[0xe6], y=150
+	video offset=CINEMATIC_295, x=[0xe6], y=150
 	break
-	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=[0xe6], y=100
+	video offset=CINEMATIC_295, x=[0xe6], y=100
 	mov [0xF8], [0xE6]
 	add [0xF8], 0x0004
 	jl [HERO_X], [0xE6], LABEL_0CA6

@@ -79,7 +79,7 @@ LABEL_1568:
 
 DRAW_CIN_393_IF_VAR1_LE_EB:
 	jg [HERO_X], 0xEB, DRAW_CIN_389
-	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_393, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 DRAW_CIN_389:
@@ -110,7 +110,7 @@ LABEL_15A4:
 	call DRAW_CIN_393_IF_VAR1_LE_EB
 	djnz [0x29], LABEL_15A4
 	break
-	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_394, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_392, x=[BUDDY_X], y=[BUDDY_Y]
 	call DRAW_CIN_393_IF_VAR1_LE_EB
 	break
@@ -136,7 +136,7 @@ LABEL_15D6:
 	break
 	video offset=CINEMATIC_401, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_393, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	video offset=CINEMATIC_402, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]

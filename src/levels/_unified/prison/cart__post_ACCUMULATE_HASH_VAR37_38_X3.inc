@@ -274,7 +274,7 @@ LABEL_0B02:
 	db 0x11
 
 LABEL_0B03:
-	video offset=CINEMATIC_BUDDY_CRAWLING_STUCK_AT_RING, x=160, y=100
+	video offset=CINEMATIC_317, x=160, y=100
 	play id=0x0058, freq=0x14, vol=0x20, channel=0x02
 	setPalette 0x05
 	break

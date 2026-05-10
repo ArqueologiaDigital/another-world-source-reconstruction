@@ -82,7 +82,7 @@ LABEL_593D:
 	jmp LABEL_5950
 
 LABEL_594B:
-	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_295, x=[HERO_X], y=[HERO_Y]
 
 LABEL_5950:
 	break
@@ -98,7 +98,7 @@ LABEL_5968:
 	video offset=CINEMATIC_299, x=[HERO_X], y=[HERO_Y]
 	call DRAW_CIN_298_THEN_CIN_298
 	break
-	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_300, x=[HERO_X], y=[HERO_Y]
 	call DRAW_CIN_298_THEN_CIN_298
 	break
 	video offset=CINEMATIC_301, x=[HERO_X], y=[HERO_Y]

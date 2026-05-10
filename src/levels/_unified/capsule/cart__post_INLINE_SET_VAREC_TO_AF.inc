@@ -35,13 +35,13 @@ DELAY_LOOP_VAREC_AT_18AD:
 	killChannel
 
 LABEL_18C7:
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F4, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_182, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F5, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_183, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F6, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_184, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F7, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_185, x=[HERO_X], y=[HERO_Y]
 	break
 	jmp LABEL_158D
 

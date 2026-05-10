@@ -216,7 +216,7 @@ LABEL_0C7C:
 	break
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_THE_GUN, x=43, y=40
+	video offset=CINEMATIC_175, x=43, y=40
 	selectVideoPage 0xFF
 	break
 	break
@@ -494,7 +494,7 @@ LABEL_0F1E:
 	video offset=CINEMATIC_187, x=111, y=86
 	video offset=CINEMATIC_068, x=273, y=90
 	break
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F5, x=90, y=98
+	video offset=CINEMATIC_183, x=90, y=98
 	video offset=CINEMATIC_069, x=273, y=110
 	break
 	video offset=CINEMATIC_189, x=64, y=107
@@ -620,15 +620,15 @@ LABEL_10C7:
 	break
 	video offset=CINEMATIC_070, x=262, y=130
 	break
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F3, x=260, y=128
+	video offset=CINEMATIC_181, x=260, y=128
 	break
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F4, x=258, y=127
+	video offset=CINEMATIC_182, x=258, y=127
 	break
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F5, x=253, y=127
+	video offset=CINEMATIC_183, x=253, y=127
 	break
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F6, x=241, y=116
+	video offset=CINEMATIC_184, x=241, y=116
 	break
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F7, x=232, y=102
+	video offset=CINEMATIC_185, x=232, y=102
 	break
 	video offset=CINEMATIC_186, x=228, y=93
 	break
@@ -640,9 +640,9 @@ LABEL_10C7:
 	break
 	video offset=CINEMATIC_186, x=235, y=21
 	break
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F7, x=227, y=8
+	video offset=CINEMATIC_185, x=227, y=8
 	break
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F6, x=196, y=2
+	video offset=CINEMATIC_184, x=196, y=2
 	break
 	setup channel=0x26, address=LABEL_0F1E
 	killChannel

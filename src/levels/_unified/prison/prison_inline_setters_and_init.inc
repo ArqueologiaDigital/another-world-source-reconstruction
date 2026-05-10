@@ -328,7 +328,7 @@ DRAW_CIN_284_BLOCK_95B:
 	break
 	video offset=CINEMATIC_294, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_295, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_296, x=[HERO_X], y=[HERO_Y]
 	break
@@ -422,7 +422,7 @@ DRAW_CIN_137_138_BLOCK:
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_BUDDY_FIGURE_BASE:
-	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_393, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 

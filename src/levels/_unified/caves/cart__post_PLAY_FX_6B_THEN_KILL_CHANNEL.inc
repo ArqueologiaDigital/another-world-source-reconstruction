@@ -5,7 +5,7 @@ LABEL_CC3D:
 
 LABEL_CC4A:
 	je [0x24], 0x02, DRAW_CIN_388
-	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_389, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 DRAW_CIN_388:

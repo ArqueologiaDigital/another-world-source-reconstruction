@@ -3,7 +3,7 @@ LABEL_0CFC:
 	video offset=CINEMATIC_299, x=[HERO_X], y=[HERO_Y]
 	break
 	djnz [0x03], LABEL_0CFC
-	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_300, x=[HERO_X], y=[HERO_Y]
 	video offset=CINEMATIC_298, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_301, x=[HERO_X], y=[HERO_Y]
@@ -38,7 +38,7 @@ LABEL_0D62:
 	video offset=CINEMATIC_301, x=[HERO_X], y=[HERO_Y]
 	break
 	djnz [0x03], LABEL_0D62
-	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_300, x=[HERO_X], y=[HERO_Y]
 	video offset=CINEMATIC_298, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_301, x=[HERO_X], y=[HERO_Y]

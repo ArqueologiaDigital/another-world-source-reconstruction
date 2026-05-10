@@ -101,8 +101,8 @@ LABEL_D42D:
 	video offset=CINEMATIC_580, x=160, y=100
 	jne [0xAF], 0x58, SHARED_RET
 	video offset=CINEMATIC_581, x=160, y=100
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=199, y=200, zoom=0x40
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=250, y=189
+	video offset=CINEMATIC_458, x=199, y=200, zoom=0x40
+	video offset=CINEMATIC_458, x=250, y=189
 	ret
 
 LABEL_D44C:
@@ -219,8 +219,8 @@ LABEL_D56A:
 
 LABEL_D57E:
 	jne [0xB0], 0x03, SHARED_RET
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=70, y=97
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=260, y=97
+	video offset=CINEMATIC_458, x=70, y=97
+	video offset=CINEMATIC_458, x=260, y=97
 	ret
 
 LABEL_D58E:
@@ -230,7 +230,7 @@ LABEL_D58E:
 	video offset=CINEMATIC_638, x=239, y=137
 	video offset=CINEMATIC_638, x=243, y=180
 	jne [0xB0], 0x03, SHARED_RET
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=131, y=217, zoom=0x40
+	video offset=CINEMATIC_458, x=131, y=217, zoom=0x40
 	ret
 
 LABEL_D5AE:
@@ -254,8 +254,8 @@ LABEL_D5C6:
 	video offset=CINEMATIC_756, x=326, y=82
 	video offset=CINEMATIC_757, x=160, y=100
 	jne [0xB0], 0x03, SHARED_RET
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=65508, y=90
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=156, y=184
+	video offset=CINEMATIC_458, x=65508, y=90
+	video offset=CINEMATIC_458, x=156, y=184
 	ret
 
 LABEL_D602:
@@ -439,7 +439,7 @@ LABEL_D83B:
 	video offset=CINEMATIC_456, x=160, y=100
 	video offset=CINEMATIC_457, x=160, y=100
 	jne [0xB0], 0x03, SHARED_RET
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=160, y=230, zoom=0x40
+	video offset=CINEMATIC_458, x=160, y=230, zoom=0x40
 	ret
 
 LABEL_D856:
@@ -455,10 +455,10 @@ LABEL_D873:
 	mov [0xF8], [0xB0]
 	and [0xF8], 0x0001
 	je [0xF8], 0x00, SHARED_RET
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=65486, y=97
+	video offset=CINEMATIC_458, x=65486, y=97
 	jl [0xB0], 0x02, SHARED_RET
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=160, y=97
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=100, y=97
+	video offset=CINEMATIC_458, x=160, y=97
+	video offset=CINEMATIC_458, x=100, y=97
 	setPalette 0x10
 	ret
 
@@ -470,8 +470,8 @@ LABEL_D898:
 	video offset=CINEMATIC_607, x=65527, y=98
 	jne [0xB0], 0x03, SHARED_RET
 	call LABEL_0080
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=160, y=50
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=160, y=130
+	video offset=CINEMATIC_458, x=160, y=50
+	video offset=CINEMATIC_458, x=160, y=130
 	setPalette 0x10
 	ret
 

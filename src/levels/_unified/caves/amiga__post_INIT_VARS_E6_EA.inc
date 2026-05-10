@@ -365,10 +365,10 @@ LABEL_CCA7:
 
 LABEL_CCA8:
 	jg [HERO_Y], 0x65, LABEL_CCC2
-	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=112, y=69
+	video offset=CINEMATIC_389, x=112, y=69
 	video offset=CINEMATIC_277, x=37, y=31
 	video offset=CINEMATIC_277, x=149, y=11
-	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=59, y=15
+	video offset=CINEMATIC_389, x=59, y=15
 	video offset=CINEMATIC_277, x=76, y=76
 
 LABEL_CCC2:
@@ -384,8 +384,8 @@ LABEL_CCCE:
 
 LABEL_CCCF:
 	jg [HERO_Y], 0x78, LABEL_CCE1
-	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=226, y=87
-	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=150, y=27
+	video offset=CINEMATIC_389, x=226, y=87
+	video offset=CINEMATIC_389, x=150, y=27
 	video offset=CINEMATIC_425, x=226, y=136
 
 LABEL_CCE1:

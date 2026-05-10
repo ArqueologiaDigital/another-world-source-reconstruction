@@ -173,5 +173,5 @@ LABEL_098B:
 	break
 	video offset=CINEMATIC_457, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_458, x=[HERO_X], y=[HERO_Y]
 	killChannel

@@ -21,9 +21,9 @@ LABEL_06A7:
 	killChannel
 
 LABEL_06B3:
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=179, y=31
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=179, y=62
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=179, y=93
+	video offset=CINEMATIC_458, x=179, y=31
+	video offset=CINEMATIC_458, x=179, y=62
+	video offset=CINEMATIC_458, x=179, y=93
 	break
 	jmp LABEL_06B3
 LABEL_06C3:

@@ -115,7 +115,7 @@ LABEL_0C2A:
 	or [0x97], 0x4000
 	video offset=CINEMATIC_299, x=[0xe6], y=100
 	break
-	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=[0xe6], y=100
+	video offset=CINEMATIC_300, x=[0xe6], y=100
 	jmp LABEL_0BC7
 
 LABEL_0C48:
@@ -133,10 +133,10 @@ LABEL_0C48:
 
 LABEL_0C73:
 	break
-	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=[0xe6], y=100
+	video offset=CINEMATIC_300, x=[0xe6], y=100
 	video offset=CINEMATIC_583, x=[0xe6], y=100
 	break
-	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=[0xe6], y=100
+	video offset=CINEMATIC_300, x=[0xe6], y=100
 	break
 	break
 	jmp LABEL_0BC7
@@ -229,7 +229,7 @@ LABEL_0D77:
 	or [0x97], 0x4000
 	video offset=CINEMATIC_299, x=[0xe6], y=73
 	break
-	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=[0xe6], y=73
+	video offset=CINEMATIC_300, x=[0xe6], y=73
 	mov [0xE6], 0x0005
 	add [0xE6], [0x3A]
 

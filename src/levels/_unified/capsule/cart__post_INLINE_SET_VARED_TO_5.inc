@@ -141,7 +141,7 @@ LABEL_1FB4:
 	break
 	video offset=CINEMATIC_388, x=160, y=100
 	break
-	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=160, y=100
+	video offset=CINEMATIC_389, x=160, y=100
 	break
 	killChannel
 	video offset=CINEMATIC_390, x=160, y=100
@@ -150,12 +150,12 @@ LABEL_1FB4:
 	killChannel
 	video offset=CINEMATIC_392, x=160, y=100
 	break
-	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=160, y=100
+	video offset=CINEMATIC_393, x=160, y=100
 	setup channel=0x38, address=LABEL_1FF3
 	killChannel
 
 LABEL_1FF3:
-	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F1, x=160, y=100
+	video offset=CINEMATIC_394, x=160, y=100
 	break
 	video offset=CINEMATIC_395, x=160, y=100
 	killChannel
@@ -412,7 +412,7 @@ LABEL_223A:
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	add [0xEB], [0x3D]
 	setPalette 0x02
-	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=[0xea], y=[0xeb]
+	video offset=CINEMATIC_458, x=[0xea], y=[0xeb]
 	break
 	setPalette 0x01
 	video offset=CINEMATIC_459, x=[0xea], y=[0xeb]

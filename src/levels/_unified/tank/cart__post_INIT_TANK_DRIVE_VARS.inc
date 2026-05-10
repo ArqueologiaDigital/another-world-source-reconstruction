@@ -153,7 +153,7 @@ LABEL_13C9:
 	video offset=CINEMATIC_174, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
 	jne [0x45], 0x00, SHARED_RET
-	video offset=CINEMATIC_THE_GUN, x=[0x39], y=[0x3a]
+	video offset=CINEMATIC_175, x=[0x39], y=[0x3a]
 	ret
 
 LABEL_13E0:
@@ -164,31 +164,31 @@ LABEL_13E0:
 	ret
 
 LABEL_13F7:
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F0, x=[0x39], y=[0x3a]
+	video offset=CINEMATIC_178, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
 	jne [0x45], 0x00, SHARED_RET
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F1, x=[0x39], y=[0x3a]
+	video offset=CINEMATIC_179, x=[0x39], y=[0x3a]
 	ret
 
 LABEL_140E:
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F2, x=[0x39], y=[0x3a]
+	video offset=CINEMATIC_180, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
 	jne [0x45], 0x00, SHARED_RET
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F3, x=[0x39], y=[0x3a]
+	video offset=CINEMATIC_181, x=[0x39], y=[0x3a]
 	ret
 
 LABEL_1425:
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F4, x=[0x39], y=[0x3a]
+	video offset=CINEMATIC_182, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
 	jne [0x45], 0x00, SHARED_RET
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F5, x=[0x39], y=[0x3a]
+	video offset=CINEMATIC_183, x=[0x39], y=[0x3a]
 	ret
 
 LABEL_143C:
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F6, x=[0x39], y=[0x3a]
+	video offset=CINEMATIC_184, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
 	jne [0x45], 0x00, SHARED_RET
-	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F7, x=[0x39], y=[0x3a]
+	video offset=CINEMATIC_185, x=[0x39], y=[0x3a]
 	ret
 
 APPLY_HERO_DAMAGE_AND_HIT:
