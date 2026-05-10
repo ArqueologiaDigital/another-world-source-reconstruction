@@ -1437,9 +1437,9 @@ LABEL_07D2:
 	play id=0x0003, freq=0x14, vol=0x0A, channel=0x03
 	setup channel=0x04, address=INTRO_PALETTE_FLICKER_LOOP
 	setup channel=0x0B, address=PLAY_FX_2C_AND_DRAW_CIN_000
-	setup channel=0x0C, address=DRAW_INTRO_DECOR_340
+	setup channel=0x0C, address=DRAW_INTRO_LIGHTNING_FLICKER_LONG
 	setup channel=0x0D, address=DRAW_INTRO_DECOR_337
-	setup channel=0x0E, address=DRAW_INTRO_DECOR_333
+	setup channel=0x0E, address=DRAW_INTRO_LIGHTNING_FLICKER_SHORT
 	setup channel=0x0F, address=DRAW_INTRO_DECOR_331
 	setup channel=0x10, address=DRAW_INTRO_DECOR_329
 	setup channel=0x11, address=DRAW_INTRO_DECOR_318
@@ -1537,7 +1537,7 @@ LABEL_094D:
 LABEL_0955:
 	db 0x11
 
-DRAW_INTRO_DECOR_340:
+DRAW_INTRO_LIGHTNING_FLICKER_LONG:
 	video offset=CINEMATIC_339, x=160, y=100
 	break
 	video offset=CINEMATIC_340, x=160, y=100
@@ -1561,7 +1561,7 @@ DRAW_INTRO_DECOR_340:
 LABEL_098C:
 	break
 	djnz [0x04], LABEL_098C
-	jmp DRAW_INTRO_DECOR_340
+	jmp DRAW_INTRO_LIGHTNING_FLICKER_LONG
 LABEL_0994:
 	db 0x11
 
@@ -1581,7 +1581,7 @@ LABEL_09A8:
 LABEL_09B0:
 	db 0x11
 
-DRAW_INTRO_DECOR_333:
+DRAW_INTRO_LIGHTNING_FLICKER_SHORT:
 	break
 	video offset=CINEMATIC_332, x=160, y=100
 	break
@@ -1596,7 +1596,7 @@ DRAW_INTRO_DECOR_333:
 LABEL_09CF:
 	break
 	djnz [0x08], LABEL_09CF
-	jmp DRAW_INTRO_DECOR_333
+	jmp DRAW_INTRO_LIGHTNING_FLICKER_SHORT
 LABEL_09D7:
 	db 0x11
 

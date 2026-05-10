@@ -137,7 +137,7 @@
 ; Reset-on-action handler (`INTRO_RESET_PAGES_AND_PAL_0`) — wakes up
 ; when `[HERO_ACTION] != 0` from the blit dispatcher. Replays the
 ; lab startup scene (`PLAY_FX_2C_AND_DRAW_CIN_000`,
-; `DRAW_INTRO_DECOR_340`, `DRAW_INTRO_DECOR_337`) so the player can
+; `DRAW_INTRO_LIGHTNING_FLICKER_LONG`, `DRAW_INTRO_DECOR_337`) so the player can
 ; INTRO reset + lab decor (INTRO_RESET_PAGES_AND_PAL_0).
 ;@include "intro/intro_reset_and_lab_decor.inc"
 

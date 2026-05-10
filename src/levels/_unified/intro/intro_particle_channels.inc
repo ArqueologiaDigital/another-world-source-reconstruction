@@ -312,9 +312,9 @@ BLINK_PAGE_FF_3X_LOOP:
 	play id=0x0003, freq=0x14, vol=0x0A, channel=0x03
 	setup channel=0x04, address=INTRO_PALETTE_FLICKER_LOOP
 	setup channel=0x0B, address=PLAY_FX_2C_AND_DRAW_CIN_000
-	setup channel=0x0C, address=DRAW_INTRO_DECOR_340
+	setup channel=0x0C, address=DRAW_INTRO_LIGHTNING_FLICKER_LONG
 	setup channel=0x0D, address=DRAW_INTRO_DECOR_337
-	setup channel=0x0E, address=DRAW_INTRO_DECOR_333
+	setup channel=0x0E, address=DRAW_INTRO_LIGHTNING_FLICKER_SHORT
 	setup channel=0x0F, address=DRAW_INTRO_DECOR_331
 	setup channel=0x10, address=DRAW_INTRO_DECOR_329
 	setup channel=0x11, address=DRAW_INTRO_DECOR_318
