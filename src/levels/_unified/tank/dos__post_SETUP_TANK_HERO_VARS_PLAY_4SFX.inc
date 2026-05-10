@@ -168,7 +168,7 @@ LABEL_022E:
 	break
 	jmp LABEL_022E
 
-LABEL_025D:
+CAPSULE_DOME_CLOSING_PHASE_1_ENTRY:
 	setup channel=0x3C, address=HANG_BLITTING_PAGE_FF
 	setup channel=0x0A, address=LABEL_0126
 	selectVideoPage 0x00
@@ -184,12 +184,12 @@ LABEL_025D:
 	mov [0x02], 0x00FA
 	mov [0x03], 0x0014
 
-LABEL_028C:
+CAPSULE_DOME_TOP_DROP_LOOP:
 	break
 	play id=0x0058, freq=0x07, vol=0x10, channel=0x00
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F4, x=160, y=[0x02]
 	sub [0x02], 0x0005
-	djnz [0x03], LABEL_028C
+	djnz [0x03], CAPSULE_DOME_TOP_DROP_LOOP
 	setup channel=0x09, address=LABEL_022E
 	setup channel=0x0B, address=LABEL_0126
 	break
@@ -197,18 +197,18 @@ LABEL_028C:
 	setPalette 0x0B
 	mov [0x03], 0x000F
 
-LABEL_02B5:
+CAPSULE_DOME_TOP_LIFT_LOOP:
 	break
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F5, x=160, y=[0x02]
 	sub [0x02], 0x0005
-	djnz [0x03], LABEL_02B5
+	djnz [0x03], CAPSULE_DOME_TOP_LIFT_LOOP
 	add [0x02], 0x0002
 	selectVideoPage 0x00
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F5, x=160, y=[0x02]
 	selectVideoPage 0xFF
 	setPalette 0x0A
 	play id=0x0057, freq=0x02, vol=0x20, channel=0x00
-	setup channel=0x37, address=LABEL_0466
+	setup channel=0x37, address=CAPSULE_DOME_CLOSING_LATE_FRAMES
 	deleteChannels first=0x09, last=0x0B
 	mov [0x03], 0x0014
 
@@ -217,14 +217,14 @@ DELAY_LOOP_VAR03:
 	djnz [0x03], DELAY_LOOP_VAR03
 	setup channel=0x37, address=RESET_PAGES_AND_SETUP_CH_0A
 	break
-	jmp LABEL_02F3
+	jmp CAPSULE_DOME_CLOSING_PHASE_2_ENTRY
 LABEL_02F2:
 	db 0x11
 
-LABEL_02F3:
+CAPSULE_DOME_CLOSING_PHASE_2_ENTRY:
 	setup channel=0x3C, address=HANG_BLITTING_PAGE_FF
 	setup channel=0x3B, address=HANG_DRAW_CIN_274
-	setup channel=0x37, address=LABEL_033A
+	setup channel=0x37, address=CAPSULE_DOME_CLOSING_PHASE_3_FRAMES
 	play id=0x008B, freq=0x14, vol=0x40, channel=0x00
 	deleteChannels first=0x09, last=0x0B
 	selectVideoPage 0x00
@@ -245,7 +245,7 @@ ANIM_CIN_235_LOOP_VAR03:
 	djnz [0x03], ANIM_CIN_235_LOOP_VAR03
 	killChannel
 
-LABEL_033A:
+CAPSULE_DOME_CLOSING_PHASE_3_FRAMES:
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F10, x=160, y=100
 	break
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F11, x=160, y=100
@@ -265,39 +265,39 @@ LABEL_033A:
 	mov [0xE7], 0x00A0
 	mov [0xE8], 0x0003
 
-LABEL_0374:
+CAPSULE_DOME_F16_DIVERGE_LOOP:
 	break
 	sub [0xE6], 0x0002
 	add [0xE7], 0x0002
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F16, x=[0xe6], y=100
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F16, x=[0xe7], y=100
-	djnz [0xE8], LABEL_0374
+	djnz [0xE8], CAPSULE_DOME_F16_DIVERGE_LOOP
 	play id=0x008B, freq=0x1C, vol=0x40, channel=0x00
 	mov [0xE6], 0x00A0
 	mov [0xE7], 0x00A0
 	mov [0xE8], 0x0006
 
-LABEL_039D:
+CAPSULE_DOME_F17_DIVERGE_LOOP:
 	break
 	sub [0xE6], 0x0002
 	add [0xE7], 0x0002
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F17, x=[0xe6], y=100
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F17, x=[0xe7], y=100
-	djnz [0xE8], LABEL_039D
+	djnz [0xE8], CAPSULE_DOME_F17_DIVERGE_LOOP
 	play id=0x008B, freq=0x0A, vol=0x10, channel=0x00
 	mov [0xE6], 0x00A0
 	mov [0xE7], 0x00A0
 	mov [0xE9], 0x0040
 	mov [0xE8], 0x0018
 
-LABEL_03CA:
+CAPSULE_DOME_F18_ZOOM_DIVERGE_LOOP:
 	break
 	play id=0x008B, freq=0x22, vol=0x40, channel=0x01
 	sub [0xE6], 0x0001
 	add [0xE7], 0x0001
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F18, x=[0xe6], y=100, zoom=[0xe9]
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F18, x=[0xe7], y=100, zoom=[0xe9]
-	djnz [0xE8], LABEL_03CA
+	djnz [0xE8], CAPSULE_DOME_F18_ZOOM_DIVERGE_LOOP
 	play id=0x008B, freq=0x0A, vol=0x10, channel=0x01
 	deleteChannels first=0x00, last=0x36
 	deleteChannels first=0x38, last=0x3B
@@ -306,9 +306,9 @@ LABEL_03CA:
 LABEL_03FE:
 	db 0x11
 
-LABEL_03FF:
+CAPSULE_DOME_CLOSING_REENTRY:
 	call LABEL_1C8C
-	jmp LABEL_025D
+	jmp CAPSULE_DOME_CLOSING_PHASE_1_ENTRY
 	setup channel=0x3C, address=HANG_BLITTING_PAGE_FF
 	selectVideoPage 0x00
 	fill page=0x00, color=0x00
@@ -323,22 +323,22 @@ LABEL_03FF:
 	mov [0x02], 0x00FA
 	mov [0x03], 0x0023
 
-LABEL_0430:
+CAPSULE_BUDDY_DROP_LOOP:
 	break
 	video offset=CINEMATIC_BUDDY, x=160, y=[0x02]
 	sub [0x02], 0x0005
-	djnz [0x03], LABEL_0430
+	djnz [0x03], CAPSULE_BUDDY_DROP_LOOP
 	mov [0x03], 0x000F
 
-LABEL_0442:
+CAPSULE_BUDDY_LIFT_LOOP:
 	break
 	video offset=CINEMATIC_BUDDY, x=160, y=[0x02]
-	djnz [0x03], LABEL_0442
+	djnz [0x03], CAPSULE_BUDDY_LIFT_LOOP
 	add [0x02], 0x0002
 	selectVideoPage 0x00
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F5, x=160, y=[0x02]
 	selectVideoPage 0xFF
-	jmp LABEL_025D
+	jmp CAPSULE_DOME_CLOSING_PHASE_1_ENTRY
 LABEL_045C:
 	db 0x11
 
@@ -349,7 +349,7 @@ HANG_DRAW_CIN_274:
 LABEL_0465:
 	db 0x11
 
-LABEL_0466:
+CAPSULE_DOME_CLOSING_LATE_FRAMES:
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F19, x=160, y=100
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F20, x=160, y=100
 	break

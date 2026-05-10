@@ -570,11 +570,11 @@ LABEL_02BC:
 	setPalette 0x0B
 	mov [0x03], 0x000F
 
-LABEL_02E5:
+CAPSULE_DOME_PHASE_1_END_HOLD:
 	break
 	video offset=CINEMATIC_075, x=160, y=[0x02]
 	sub [0x02], 0x0005
-	djnz [0x03], LABEL_02E5
+	djnz [0x03], CAPSULE_DOME_PHASE_1_END_HOLD
 	add [0x02], 0x0002
 	selectVideoPage 0x00
 	video offset=CINEMATIC_075, x=160, y=[0x02]

@@ -2,12 +2,12 @@ LABEL_0004:
 	call CLEAR_PAGES_1_2_AND_BLIT
 	mov [PAUSE_SLICES], 0x0002
 	setup channel=0x3C, address=HANG_BLITTING_PAGE_FF
-	setup channel=0x14, address=LABEL_03FF
+	setup channel=0x14, address=CAPSULE_DOME_CLOSING_REENTRY
 	call LABEL_009D
 	killChannel
 	setup channel=0x09, address=LABEL_0E2F
 	killChannel
-	jmp LABEL_03FF
+	jmp CAPSULE_DOME_CLOSING_REENTRY
 
 LABEL_001F:
 	setup channel=0x3C, address=BLITTER_LOOP_COPY_PAGE_03
