@@ -156,26 +156,26 @@ LABEL_9E3F:
 	video offset=CINEMATIC_485, x=160, y=100
 	ret
 	fill page=0x00, color=0x01
-	video offset=CINEMATIC_462, x=160, y=100
+	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F0, x=160, y=100
 	video offset=CINEMATIC_437, x=160, y=100
 	ret
 
 LABEL_9E63:
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_461, x=160, y=100
-	video offset=CINEMATIC_462, x=160, y=100
+	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F0, x=160, y=100
 	video offset=CINEMATIC_438, x=160, y=100
-	video offset=CINEMATIC_463, x=160, y=100
-	video offset=CINEMATIC_464, x=160, y=100
+	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F1, x=160, y=100
+	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F2, x=160, y=100
 	ret
 
 LABEL_9E7B:
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_461, x=160, y=100
-	video offset=CINEMATIC_462, x=160, y=100
+	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F0, x=160, y=100
 	video offset=CINEMATIC_438, x=160, y=100
-	video offset=CINEMATIC_463, x=160, y=100
-	video offset=CINEMATIC_464, x=160, y=100
+	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F1, x=160, y=100
+	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F2, x=160, y=100
 	video offset=CINEMATIC_489, x=160, y=100
 	ret
 
@@ -196,7 +196,7 @@ LABEL_9E97:
 
 LABEL_9EC3:
 	fill page=0x00, color=0x0B
-	video offset=CINEMATIC_493, x=160, y=100
+	video offset=CINEMATIC_TANK_REVEAL_BG, x=160, y=100
 	ret
 
 LABEL_9ECB:

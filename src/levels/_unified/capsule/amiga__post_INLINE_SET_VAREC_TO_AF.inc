@@ -95,13 +95,13 @@ LABEL_0895:
 	break
 	video offset=CINEMATIC_461, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_462, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_462, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_462, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_462, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F0, x=[HERO_X], y=[HERO_Y]
 	killChannel
 
 LABEL_08D9:

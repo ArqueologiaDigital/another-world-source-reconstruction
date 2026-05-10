@@ -3,16 +3,16 @@ LABEL_7F0E:
 	video offset=CINEMATIC_429, x=160, y=100
 	video offset=CINEMATIC_430, x=160, y=100
 	video offset=CINEMATIC_431, x=160, y=100
-	video offset=CINEMATIC_432, x=160, y=100
+	video offset=CINEMATIC_FINAL_ESCAPE_LESTER_RUNNING, x=160, y=100
 	ret
 
 LABEL_7F22:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_429, x=160, y=100
-	video offset=CINEMATIC_463, x=160, y=100
-	video offset=CINEMATIC_464, x=160, y=100
-	video offset=CINEMATIC_465, x=160, y=100
-	video offset=CINEMATIC_466, x=160, y=100
+	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F1, x=160, y=100
+	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F2, x=160, y=100
+	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F3, x=160, y=100
+	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F4, x=160, y=100
 	ret
 
 LABEL_7F3A:

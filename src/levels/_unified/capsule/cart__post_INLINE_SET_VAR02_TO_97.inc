@@ -178,7 +178,7 @@ LABEL_A634:
 LABEL_A671:
 	setup channel=0x01, address=LABEL_3F38
 	selectVideoPage 0x00
-	video offset=CINEMATIC_465, x=144, y=98
+	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F3, x=144, y=98
 	selectVideoPage 0xFF
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 	killChannel

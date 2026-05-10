@@ -144,7 +144,7 @@ LABEL_9D37:
 
 LABEL_9DC3:
 	fill page=0x00, color=0x01
-	video offset=CINEMATIC_432, x=160, y=100
+	video offset=CINEMATIC_FINAL_ESCAPE_LESTER_RUNNING, x=160, y=100
 	video offset=CINEMATIC_433, x=160, y=100
 	video offset=CINEMATIC_434, x=160, y=100
 	video offset=CINEMATIC_435, x=160, y=100
@@ -252,7 +252,7 @@ LABEL_9EB9:
 LABEL_9EC1:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_492, x=160, y=229, zoom=0x40
-	video offset=CINEMATIC_493, x=160, y=100
+	video offset=CINEMATIC_TANK_REVEAL_BG, x=160, y=100
 	ret
 
 LABEL_9ECE:
