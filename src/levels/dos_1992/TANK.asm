@@ -310,18 +310,18 @@ LABEL_0004:
 	killChannel
 	jmp CAPSULE_DOME_CLOSING_REENTRY
 
-LABEL_001F:
+TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x3C, address=TANK_FRAME_RENDER_FROM_PAGE_3_LOOP
 	setup channel=0x02, address=LABEL_1BDA
 	setup channel=0x04, address=LABEL_15E3
 	setup channel=0x0A, address=LABEL_1924
-	setup channel=0x0B, address=LABEL_1677
+	setup channel=0x0B, address=TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C
 	setup channel=0x0E, address=LABEL_1644
 	setup channel=0x1C, address=INIT_VARS_52_17C_53_75_54_40_55_8
 	setup channel=0x1F, address=LABEL_10C7
 	setup channel=0x20, address=LABEL_105D
 	setup channel=0x21, address=LABEL_121F
-	setup channel=0x22, address=LABEL_1710
+	setup channel=0x22, address=TANK_SHOT_ANIM_ARC_TRIGGER_VAR56
 	setup channel=0x23, address=INIT_VAR1_NEG50_PLAY_8B_TWICE
 	setup channel=0x24, address=LABEL_17AB
 	setup channel=0x25, address=LABEL_1421
@@ -329,7 +329,7 @@ LABEL_001F:
 	setup channel=0x2A, address=INLINE_SET_VAR6B_TO_50
 	setup channel=0x2F, address=LABEL_0743
 	setup channel=0x30, address=LABEL_159D
-	setup channel=0x31, address=LABEL_16E7
+	setup channel=0x31, address=TANK_SHOT_ANIM_CENTERED_TRIGGER_VAR46
 	setup channel=0x35, address=INLINE_SET_VAR66_TO_32
 	setup channel=0x37, address=LABEL_1323
 	call INIT_TANK_DRIVE_VARS
@@ -378,7 +378,7 @@ LABEL_00E4:
 	add [0xF8], 0x0003
 	add [0x01], [0xF8]
 	djnz [0x2B], LABEL_00E4
-	jmp LABEL_001F
+	jmp TANK_STAGE_BOOT_SETUP_CHANNELS
 
 RESET_PAGES_AND_SETUP_CH_0A:
 	killChannel
@@ -1720,7 +1720,7 @@ LABEL_0E63:
 	video offset=CINEMATIC_021, x=160, y=100, zoom=[0x96]	;@enc=alt
 	break
 	video offset=CINEMATIC_021, x=160, y=100, zoom=[0xa0]	;@enc=alt
-	jmp LABEL_001F
+	jmp TANK_STAGE_BOOT_SETUP_CHANNELS
 LABEL_0F1D:
 	db 0x11
 
@@ -1818,8 +1818,8 @@ LABEL_0F1E:
 LABEL_105D:
 	break
 	je [0x57], 0x00, LABEL_105D
-	setup channel=0x31, address=LABEL_16E7
-	setup channel=0x22, address=LABEL_1710
+	setup channel=0x31, address=TANK_SHOT_ANIM_CENTERED_TRIGGER_VAR46
+	setup channel=0x22, address=TANK_SHOT_ANIM_ARC_TRIGGER_VAR56
 	mov [0x46], 0x0000
 	mov [0x56], 0x0000
 	break
@@ -2078,7 +2078,7 @@ LABEL_1323:
 
 LABEL_1336:
 	video offset=CINEMATIC_038, x=6, y=126
-	setup channel=0x01, address=LABEL_001F
+	setup channel=0x01, address=TANK_STAGE_BOOT_SETUP_CHANNELS
 	setup channel=0x3C, address=TANK_FRAME_RENDER_FROM_PAGE_3_LOOP
 	break
 	selectVideoPage 0x00
@@ -2173,47 +2173,47 @@ LABEL_1421:
 LABEL_143C:
 	break
 	call LABEL_14B5
-	call LABEL_153F
+	call TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL
 	break
 	add [0x38], 0x0001
 	call LABEL_14CC
-	call LABEL_153F
+	call TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL
 	break
 	add [0x38], 0x0001
 	call LABEL_14E3
-	call LABEL_153F
+	call TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL
 	break
 	add [0x38], 0x0001
 	call LABEL_14FA
-	call LABEL_153F
+	call TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL
 	break
 	add [0x38], 0x0001
 	call LABEL_1511
-	call LABEL_153F
+	call TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL
 	break
 	add [0x38], 0x0001
 	call LABEL_1528
-	call LABEL_153F
+	call TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL
 	break
 	sub [0x38], 0x0001
 	call LABEL_1511
-	call LABEL_153F
+	call TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL
 	break
 	sub [0x38], 0x0001
 	call LABEL_14FA
-	call LABEL_153F
+	call TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL
 	break
 	sub [0x38], 0x0001
 	call LABEL_14E3
-	call LABEL_153F
+	call TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL
 	break
 	sub [0x38], 0x0001
 	call LABEL_14CC
-	call LABEL_153F
+	call TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL
 	break
 	sub [0x38], 0x0001
 	call LABEL_14B5
-	call LABEL_153F
+	call TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL
 	jmp LABEL_143C
 LABEL_14B4:
 	db 0x11
@@ -2260,7 +2260,7 @@ LABEL_1528:
 	video offset=CINEMATIC_161, x=[0x39], y=[0x3a]
 	ret
 
-LABEL_153F:
+TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL:
 	jle [0x37], 0x00, TANK_NOOP_RET
 	jne [0x45], 0x00, TANK_NOOP_RET
 	sub [0x37], 0x0001
@@ -2368,9 +2368,9 @@ LABEL_1644:
 LABEL_1676:
 	db 0x11
 
-LABEL_1677:
+TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C:
 	break
-	jle [0x3E], 0x00, LABEL_1677
+	jle [0x3E], 0x00, TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C
 	sub [0x3E], 0x0001
 	call SUM_HASH_VARS_TO_VAR_64
 	mov [RANDOM_SEED], [0x65]
@@ -2397,7 +2397,7 @@ LABEL_16C4:
 
 LABEL_16CF:
 	selectVideoPage 0xFF
-	jmp LABEL_1677
+	jmp TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C
 LABEL_16D4:
 	db 0x11
 
@@ -2411,9 +2411,9 @@ LABEL_16DE:
 	break
 	jmp LABEL_16DE
 
-LABEL_16E7:
+TANK_SHOT_ANIM_CENTERED_TRIGGER_VAR46:
 	break
-	je [0x46], 0x00, LABEL_16E7
+	je [0x46], 0x00, TANK_SHOT_ANIM_CENTERED_TRIGGER_VAR46
 	play id=0x008E, freq=0x14, vol=0x40, channel=0x01
 	video offset=CINEMATIC_061, x=160, y=100
 	break
@@ -2429,9 +2429,9 @@ LABEL_16E7:
 	break
 	killChannel
 
-LABEL_1710:
+TANK_SHOT_ANIM_ARC_TRIGGER_VAR56:
 	break
-	je [0x56], 0x00, LABEL_1710
+	je [0x56], 0x00, TANK_SHOT_ANIM_ARC_TRIGGER_VAR56
 	play id=0x008E, freq=0x14, vol=0x40, channel=0x01
 	video offset=CINEMATIC_065, x=195, y=79
 	break

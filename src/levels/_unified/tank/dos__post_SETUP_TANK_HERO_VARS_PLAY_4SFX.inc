@@ -5,7 +5,7 @@ LABEL_00E4:
 	add [0xF8], 0x0003
 	add [0x01], [0xF8]
 	djnz [0x2B], LABEL_00E4
-	jmp LABEL_001F
+	jmp TANK_STAGE_BOOT_SETUP_CHANNELS
 
 RESET_PAGES_AND_SETUP_CH_0A:
 	killChannel

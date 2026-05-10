@@ -9,7 +9,7 @@ LABEL_0004:
 	killChannel
 	jmp CAPSULE_DOME_CLOSING_REENTRY
 
-LABEL_001F:
+TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x3C, address=BLITTER_LOOP_COPY_PAGE_03
 	setup channel=0x02, address=LABEL_1BDA
 	setup channel=0x04, address=LABEL_15E3

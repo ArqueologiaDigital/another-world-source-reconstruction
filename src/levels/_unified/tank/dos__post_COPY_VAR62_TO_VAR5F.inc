@@ -473,7 +473,7 @@ DELAY_LOOP_VAR11:
 	video offset=CINEMATIC_021, x=160, y=100, zoom=[0x96]	;@enc=alt
 	break
 	video offset=CINEMATIC_021, x=160, y=100, zoom=[0xa0]	;@enc=alt
-	jmp LABEL_001F
+	jmp TANK_STAGE_BOOT_SETUP_CHANNELS
 LABEL_0F1D:
 	db 0x11
 

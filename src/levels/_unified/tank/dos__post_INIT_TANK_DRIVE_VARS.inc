@@ -11,7 +11,7 @@ LABEL_1323:
 
 LABEL_1336:
 	video offset=CINEMATIC_038, x=6, y=126
-	setup channel=0x01, address=LABEL_001F
+	setup channel=0x01, address=TANK_STAGE_BOOT_SETUP_CHANNELS
 	setup channel=0x3C, address=BLITTER_LOOP_COPY_PAGE_03
 	break
 	selectVideoPage 0x00
