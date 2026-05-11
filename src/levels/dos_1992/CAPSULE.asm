@@ -12496,7 +12496,7 @@ DRAW_CIN_247:
 	video offset=CINEMATIC_247, x=[0xf5], y=[BUDDY_Y]
 	ret
 
-LABEL_776F:
+DRAW_CIN_111_112_VAR09_LOW_OFFSET:
 	mov [0xF8], [0x09]
 	and [0xF8], 0x000F
 	je [0xF8], 0x01, LABEL_7783
@@ -12550,16 +12550,16 @@ LABEL_77F4:
 
 LABEL_780F:
 	video type=0, offset=COMMON_VIDEO_326, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
-	jg [0x13], [0x30], LABEL_776F
+	jg [0x13], [0x30], DRAW_CIN_111_112_VAR09_LOW_OFFSET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
-	je [0xF8], 0x00, LABEL_776F
+	je [0xF8], 0x00, DRAW_CIN_111_112_VAR09_LOW_OFFSET
 	video type=0, offset=COMMON_VIDEO_327, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
-	jmp LABEL_776F
+	jmp DRAW_CIN_111_112_VAR09_LOW_OFFSET
 
 LABEL_782F:
 	video type=0, offset=COMMON_VIDEO_328, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
-	jmp LABEL_776F
+	jmp DRAW_CIN_111_112_VAR09_LOW_OFFSET
 
 LABEL_7837:
 	sub [BUDDY_X], 0x0001
