@@ -55,7 +55,7 @@ LABEL_A48F:
 	mov [0xF8], [0xBB]
 	and [0xF8], 0x0008
 	je [0xF8], 0x00, LABEL_A4B9
-	setup channel=0x23, address=LABEL_4170
+	setup channel=0x23, address=CAPSULE_BUDDY_HIT_REACTION_PLAY_5A_DRAW_CIN_217
 	setup channel=0x27, address=CAPSULE_HERO_SCENE_LOOP_TICK_BEFORE_DISPATCH
 	mov [0x78], 0x00C8
 	jmp VAR66_MOD_32_DRAW_DISPATCH
