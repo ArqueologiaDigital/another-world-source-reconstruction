@@ -8,5 +8,5 @@ LABEL_5D05:
 	video type=0, offset=COMMON_VIDEO_247, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_248, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, DRAW_CV249_AT_X07_Y08
-	call LABEL_5C2C
+	call PRISON_BUDDY_DRAW_CIN_170_THEN_169_IF_BAR31_3
 	jmp DEDUP_CAVES_5B_007__HELPER
