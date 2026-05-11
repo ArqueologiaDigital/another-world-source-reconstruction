@@ -319,12 +319,12 @@ TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x3C, address=TANK_FRAME_RENDER_FROM_PAGE_3_LOOP
 	setup channel=0x02, address=TANK_BG_ANIM_CIN221_222_BOOT_CHANNEL_02
 	setup channel=0x04, address=TANK_WAIT_DECREMENT_VAR4F_LOOP
-	setup channel=0x0A, address=LABEL_1924
+	setup channel=0x0A, address=TANK_INIT_PROJECTILE_POOL_CHANNELS_14_TO_25
 	setup channel=0x0B, address=TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C
 	setup channel=0x0E, address=TANK_SHOT_ANIM_CIN200_203_TRIGGER_VAR4E
 	setup channel=0x1C, address=INIT_VARS_52_17C_53_75_54_40_55_8
 	setup channel=0x1F, address=TANK_SHOT_ANIM_CIN_069_AT_205_118_TRIGGER_VAR57
-	setup channel=0x20, address=LABEL_105D
+	setup channel=0x20, address=TANK_WAIT_VAR57_THEN_SETUP_SHOT_CHANNELS_22_31
 	setup channel=0x21, address=TANK_WAIT_FOR_VAR47_SET_CLEAR_AND_INIT_VAR48_49
 	setup channel=0x22, address=TANK_SHOT_ANIM_ARC_TRIGGER_VAR56
 	setup channel=0x23, address=INIT_VAR1_NEG50_PLAY_8B_TWICE
@@ -336,7 +336,7 @@ TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x30, address=TANK_SHOT_ANIM_CIN082_085_TRIGGER_VAR45
 	setup channel=0x31, address=TANK_SHOT_ANIM_CENTERED_TRIGGER_VAR46
 	setup channel=0x35, address=INLINE_SET_VAR66_TO_32
-	setup channel=0x37, address=LABEL_1323
+	setup channel=0x37, address=TANK_BG_DRAW_CIN_038_AT_6_126_AFTER_3_BREAKS
 	call INIT_TANK_DRIVE_VARS
 	call LABEL_1CA7
 	setup channel=0x00, address=INIT_VARS_A_B_PAL_1
@@ -1201,7 +1201,7 @@ LABEL_094C:
 	je [0x5F], 0x06, COPY_VAR62_TO_VAR5F
 	je [0x5F], 0x07, TANK_APPLY_LEFT_RIGHT_INPUT_TO_TURRET
 	je [0x5F], 0x0A, TANK_APPLY_BOTH_AXES_INPUT_TO_TURRET
-	je [0x5F], 0x0D, LABEL_0A47
+	je [0x5F], 0x0D, TANK_SET_VAR5F_TO_0E_IF_VAR62_EQ_15
 	je [HACK_VAR_67], 0x06, TANK_NOOP_RET
 	je [0x5F], 0x12, TANK_APPLY_BOTH_AXES_INPUT_TO_TURRET
 	ret
@@ -1223,7 +1223,7 @@ LABEL_09C8:
 	je [0x5F], 0x0A, TANK_APPLY_LEFT_RIGHT_INPUT_TO_TURRET
 	je [0x5F], 0x11, COPY_VAR62_TO_VAR5F
 	je [0x5F], 0x12, TANK_APPLY_LEFT_RIGHT_INPUT_TO_TURRET
-	je [0x5F], 0x0D, LABEL_0A47
+	je [0x5F], 0x0D, TANK_SET_VAR5F_TO_0E_IF_VAR62_EQ_15
 	je [0x5F], 0x19, COPY_VAR62_TO_VAR5F
 	ret
 
@@ -1252,7 +1252,7 @@ SET_VAR5F_TO_0018:
 	mov [0x5F], 0x0018
 	ret
 
-LABEL_0A47:
+TANK_SET_VAR5F_TO_0E_IF_VAR62_EQ_15:
 	jne [0x62], 0x15, TANK_APPLY_BOTH_AXES_INPUT_TO_TURRET
 	mov [0x5F], 0x000E
 	ret
@@ -1477,7 +1477,7 @@ LABEL_0C19:
 LABEL_0C43:
 	db 0x11
 
-LABEL_0C44:
+TANK_APPLY_BOTH_AXES_SAVE_PREV_VAR5F_TO_62:
 	mov [0x62], [0x5F]
 	add [0x5F], [HERO_POS_LEFT_RIGHT]
 	mov [0xF8], [HERO_POS_UP_DOWN]
@@ -1496,11 +1496,11 @@ LABEL_0C44:
 
 LABEL_0C77:
 	break
-	jmp LABEL_0C44
+	jmp TANK_APPLY_BOTH_AXES_SAVE_PREV_VAR5F_TO_62
 LABEL_0C7B:
 	db 0x11
 
-LABEL_0C7C:
+TANK_DRAW_CIN_164_AT_43_40_PAGE_0_THEN_FF:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_164, x=43, y=40
 	selectVideoPage 0xFF
@@ -1511,7 +1511,7 @@ LABEL_0C7C:
 	selectVideoPage 0xFF
 	break
 	break
-	jmp LABEL_0C7C
+	jmp TANK_DRAW_CIN_164_AT_43_40_PAGE_0_THEN_FF
 LABEL_0C93:
 	db 0x11
 
@@ -1523,7 +1523,7 @@ LABEL_0C94:
 	je [0x75], 0x00, TANK_NOOP_RET
 	jg [HACK_VAR_67], 0x06, TANK_NOOP_RET
 	mov [HACK_VAR_67], 0x0006
-	setup channel=0x06, address=LABEL_0C7C
+	setup channel=0x06, address=TANK_DRAW_CIN_164_AT_43_40_PAGE_0_THEN_FF
 	ret
 
 LABEL_0CC1:
@@ -1682,10 +1682,10 @@ LABEL_0E1C:
 	mov [0x63], 0x0001
 	ret
 
-LABEL_0E27:
+TANK_DRAW_CIN_225_AT_160_100_FOREVER:
 	video offset=CINEMATIC_225, x=160, y=100
 	break
-	jmp LABEL_0E27
+	jmp TANK_DRAW_CIN_225_AT_160_100_FOREVER
 
 LABEL_0E2F:
 	call LABEL_1D17
@@ -1693,7 +1693,7 @@ LABEL_0E2F:
 	video offset=CINEMATIC_012, x=160, y=100
 	video offset=CINEMATIC_013, x=160, y=100
 	selectVideoPage 0xFF
-	setup channel=0x0A, address=LABEL_0E27
+	setup channel=0x0A, address=TANK_DRAW_CIN_225_AT_160_100_FOREVER
 	break
 	break
 	selectVideoPage 0x00
@@ -1859,9 +1859,9 @@ LABEL_0F1E:
 	freezeChannels first=0x02, last=0x02
 	killChannel
 
-LABEL_105D:
+TANK_WAIT_VAR57_THEN_SETUP_SHOT_CHANNELS_22_31:
 	break
-	je [0x57], 0x00, LABEL_105D
+	je [0x57], 0x00, TANK_WAIT_VAR57_THEN_SETUP_SHOT_CHANNELS_22_31
 	setup channel=0x31, address=TANK_SHOT_ANIM_CENTERED_TRIGGER_VAR46
 	setup channel=0x22, address=TANK_SHOT_ANIM_ARC_TRIGGER_VAR56
 	mov [0x46], 0x0000
@@ -2109,7 +2109,7 @@ INIT_TANK_DRIVE_VARS:
 	mov [0x76], 0x0000
 	ret
 
-LABEL_1323:
+TANK_BG_DRAW_CIN_038_AT_6_126_AFTER_3_BREAKS:
 	break
 	break
 	break
@@ -2677,7 +2677,7 @@ LABEL_18B2:
 	play id=0x0084, freq=0x14, vol=0x20, channel=0x02
 	play id=0x0084, freq=0x0F, vol=0x10, channel=0x03
 	setup channel=0x39, address=TANK_DRAW_CIN_029_AT_VAR0F_10_FOREVER
-	setup channel=0x01, address=LABEL_0C44
+	setup channel=0x01, address=TANK_APPLY_BOTH_AXES_SAVE_PREV_VAR5F_TO_62
 	setup channel=0x3B, address=TANK_DRAW_CIN_165_166_167_UNTIL_VAR5C_SET
 	selectVideoPage 0x03
 	call DRAW_CIN_093_TO_097_VAR
@@ -2697,9 +2697,9 @@ LABEL_18B2:
 	mov [0x57], 0x0001
 	killChannel
 
-LABEL_1924:
+TANK_INIT_PROJECTILE_POOL_CHANNELS_14_TO_25:
 	setup channel=0x14, address=TANK_RESTORE_VARS_04_TO_09_FROM_14_TO_19
-	setup channel=0x15, address=LABEL_1B75
+	setup channel=0x15, address=TANK_PACING_VAR04_06_RAMP_UP_VARIANT
 	setup channel=0x16, address=TANK_SAVE_VARS_04_TO_09_INTO_14_TO_19
 	setup channel=0x17, address=ALTERNATE_VAR06_VAR04_TIMING
 	setup channel=0x18, address=TANK_SAVE_VARS_04_TO_09_INTO_1A_TO_1F
@@ -2728,7 +2728,7 @@ LABEL_1924:
 LABEL_198C:
 	break
 	djnz [0x68], LABEL_198C
-	setup channel=0x37, address=LABEL_1323
+	setup channel=0x37, address=TANK_BG_DRAW_CIN_038_AT_6_126_AFTER_3_BREAKS
 	killChannel
 
 PROJECT_AND_DRAW_TWICE_Y_PLUS_9:
@@ -2949,7 +2949,7 @@ ALTERNATE_VAR06_VAR04_TIMING:
 	mov [0x04], 0x0000
 	killChannel
 
-LABEL_1B75:
+TANK_PACING_VAR04_06_RAMP_UP_VARIANT:
 	mov [0x06], 0x0002
 	mov [0x04], 0x0002
 	break

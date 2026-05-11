@@ -18,7 +18,7 @@ LABEL_18B2:
 	play id=0x0084, freq=0x14, vol=0x20, channel=0x02
 	play id=0x0084, freq=0x0F, vol=0x10, channel=0x03
 	setup channel=0x39, address=HANG_DRAW_CIN_029
-	setup channel=0x01, address=LABEL_0C44
+	setup channel=0x01, address=TANK_APPLY_BOTH_AXES_SAVE_PREV_VAR5F_TO_62
 	setup channel=0x3B, address=WAIT_LOOP_VAR_5C
 	selectVideoPage 0x03
 	call DRAW_CIN_093_TO_097_VAR
@@ -38,9 +38,9 @@ LABEL_18B2:
 	mov [0x57], 0x0001
 	killChannel
 
-LABEL_1924:
+TANK_INIT_PROJECTILE_POOL_CHANNELS_14_TO_25:
 	setup channel=0x14, address=TANK_RESTORE_VARS_04_TO_09_FROM_14_TO_19
-	setup channel=0x15, address=LABEL_1B75
+	setup channel=0x15, address=TANK_PACING_VAR04_06_RAMP_UP_VARIANT
 	setup channel=0x16, address=TANK_SAVE_VARS_04_TO_09_INTO_14_TO_19
 	setup channel=0x17, address=ALTERNATE_VAR06_VAR04_TIMING
 	setup channel=0x18, address=TANK_SAVE_VARS_04_TO_09_INTO_1A_TO_1F
@@ -69,7 +69,7 @@ LABEL_1924:
 DELAY_LOOP_VAR68:
 	break
 	djnz [0x68], DELAY_LOOP_VAR68
-	setup channel=0x37, address=LABEL_1323
+	setup channel=0x37, address=TANK_BG_DRAW_CIN_038_AT_6_126_AFTER_3_BREAKS
 	killChannel
 
 PROJECT_AND_DRAW_TWICE_Y_PLUS_9:

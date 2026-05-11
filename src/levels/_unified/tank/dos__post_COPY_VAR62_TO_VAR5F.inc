@@ -186,7 +186,7 @@ LABEL_0C19:
 LABEL_0C43:
 	db 0x11
 
-LABEL_0C44:
+TANK_APPLY_BOTH_AXES_SAVE_PREV_VAR5F_TO_62:
 	mov [0x62], [0x5F]
 	add [0x5F], [HERO_POS_LEFT_RIGHT]
 	mov [0xF8], [HERO_POS_UP_DOWN]
@@ -205,11 +205,11 @@ LABEL_0C44:
 
 LABEL_0C77:
 	break
-	jmp LABEL_0C44
+	jmp TANK_APPLY_BOTH_AXES_SAVE_PREV_VAR5F_TO_62
 LABEL_0C7B:
 	db 0x11
 
-LABEL_0C7C:
+TANK_DRAW_CIN_164_AT_43_40_PAGE_0_THEN_FF:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_164, x=43, y=40
 	selectVideoPage 0xFF
@@ -220,7 +220,7 @@ LABEL_0C7C:
 	selectVideoPage 0xFF
 	break
 	break
-	jmp LABEL_0C7C
+	jmp TANK_DRAW_CIN_164_AT_43_40_PAGE_0_THEN_FF
 LABEL_0C93:
 	db 0x11
 
@@ -232,7 +232,7 @@ LABEL_0C94:
 	je [0x75], 0x00, SHARED_RET
 	jg [HACK_VAR_67], 0x06, SHARED_RET
 	mov [HACK_VAR_67], 0x0006
-	setup channel=0x06, address=LABEL_0C7C
+	setup channel=0x06, address=TANK_DRAW_CIN_164_AT_43_40_PAGE_0_THEN_FF
 	ret
 
 LABEL_0CC1:
@@ -568,9 +568,9 @@ LABEL_0F1E:
 	freezeChannels first=0x02, last=0x02
 	killChannel
 
-LABEL_105D:
+TANK_WAIT_VAR57_THEN_SETUP_SHOT_CHANNELS_22_31:
 	break
-	je [0x57], 0x00, LABEL_105D
+	je [0x57], 0x00, TANK_WAIT_VAR57_THEN_SETUP_SHOT_CHANNELS_22_31
 	setup channel=0x31, address=WAIT_VAR46_PLAY_8E_DRAW_CIN_056
 	setup channel=0x22, address=WAIT_VAR56_PLAY_8E_DRAW_CIN_020
 	mov [0x46], 0x0000

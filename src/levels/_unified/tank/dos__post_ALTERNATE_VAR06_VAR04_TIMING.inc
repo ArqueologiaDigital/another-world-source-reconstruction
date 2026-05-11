@@ -1,4 +1,4 @@
-LABEL_1B75:
+TANK_PACING_VAR04_06_RAMP_UP_VARIANT:
 	mov [0x06], 0x0002
 	mov [0x04], 0x0002
 	break

@@ -1,4 +1,4 @@
-LABEL_1323:
+TANK_BG_DRAW_CIN_038_AT_6_126_AFTER_3_BREAKS:
 	break
 	break
 	break

@@ -18,12 +18,12 @@ TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x3C, address=BLITTER_LOOP_COPY_PAGE_03
 	setup channel=0x02, address=TANK_BG_ANIM_CIN221_222_BOOT_CHANNEL_02
 	setup channel=0x04, address=TANK_WAIT_DECREMENT_VAR4F_LOOP
-	setup channel=0x0A, address=LABEL_1924
+	setup channel=0x0A, address=TANK_INIT_PROJECTILE_POOL_CHANNELS_14_TO_25
 	setup channel=0x0B, address=WAIT_VAR3E_DEC_AND_RANDOMIZE
 	setup channel=0x0E, address=WAIT_VAR4E_PLAY_8C_DRAW_CIN_201
 	setup channel=0x1C, address=LABEL_136E
 	setup channel=0x1F, address=TANK_SHOT_ANIM_CIN_069_AT_205_118_TRIGGER_VAR57
-	setup channel=0x20, address=LABEL_105D
+	setup channel=0x20, address=TANK_WAIT_VAR57_THEN_SETUP_SHOT_CHANNELS_22_31
 	setup channel=0x21, address=TANK_WAIT_FOR_VAR47_SET_CLEAR_AND_INIT_VAR48_49
 	setup channel=0x22, address=WAIT_VAR56_PLAY_8E_DRAW_CIN_020
 	setup channel=0x23, address=INIT_VAR1_NEG50_PLAY_8B_TWICE
@@ -35,7 +35,7 @@ TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x30, address=WAIT_VAR45_PLAY_8C_DRAW_CIN_011
 	setup channel=0x31, address=WAIT_VAR46_PLAY_8E_DRAW_CIN_056
 	setup channel=0x35, address=INLINE_SET_VAR66_TO_32
-	setup channel=0x37, address=LABEL_1323
+	setup channel=0x37, address=TANK_BG_DRAW_CIN_038_AT_6_126_AFTER_3_BREAKS
 	call INIT_TANK_DRIVE_VARS
 	call LABEL_1CA7
 	setup channel=0x00, address=INIT_VARS_A_B_PAL_1
