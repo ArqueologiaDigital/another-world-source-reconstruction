@@ -606,9 +606,9 @@ LABEL_105D:
 	killChannel
 	break
 
-LABEL_10C7:
+TANK_SHOT_ANIM_CIN_069_AT_205_118_TRIGGER_VAR57:
 	break
-	je [0x57], 0x00, LABEL_10C7
+	je [0x57], 0x00, TANK_SHOT_ANIM_CIN_069_AT_205_118_TRIGGER_VAR57
 	play id=0x008E, freq=0x16, vol=0x40, channel=0x00
 	video offset=CINEMATIC_069, x=205, y=118
 	break

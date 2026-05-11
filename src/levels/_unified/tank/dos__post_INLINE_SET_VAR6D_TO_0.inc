@@ -22,13 +22,13 @@ TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x0B, address=WAIT_VAR3E_DEC_AND_RANDOMIZE
 	setup channel=0x0E, address=WAIT_VAR4E_PLAY_8C_DRAW_CIN_201
 	setup channel=0x1C, address=LABEL_136E
-	setup channel=0x1F, address=LABEL_10C7
+	setup channel=0x1F, address=TANK_SHOT_ANIM_CIN_069_AT_205_118_TRIGGER_VAR57
 	setup channel=0x20, address=LABEL_105D
-	setup channel=0x21, address=LABEL_121F
+	setup channel=0x21, address=TANK_WAIT_FOR_VAR47_SET_CLEAR_AND_INIT_VAR48_49
 	setup channel=0x22, address=WAIT_VAR56_PLAY_8E_DRAW_CIN_020
 	setup channel=0x23, address=INIT_VAR1_NEG50_PLAY_8B_TWICE
 	setup channel=0x24, address=TANK_WAIT_UNTIL_VAR41_POSITIVE_LOOP
-	setup channel=0x25, address=LABEL_1421
+	setup channel=0x25, address=TANK_DEC_VAR37_THEN_SET_VAR39_40_RESET_POSITION
 	setup channel=0x28, address=LABEL_0866
 	setup channel=0x2A, address=INLINE_SET_VAR6B_TO_50
 	setup channel=0x2F, address=LABEL_0743
