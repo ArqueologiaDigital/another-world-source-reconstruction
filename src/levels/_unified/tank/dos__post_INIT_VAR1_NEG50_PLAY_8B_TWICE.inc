@@ -39,12 +39,12 @@ LABEL_18B2:
 	killChannel
 
 LABEL_1924:
-	setup channel=0x14, address=LABEL_19A7
+	setup channel=0x14, address=TANK_RESTORE_VARS_04_TO_09_FROM_14_TO_19
 	setup channel=0x15, address=LABEL_1B75
-	setup channel=0x16, address=LABEL_19BE
+	setup channel=0x16, address=TANK_SAVE_VARS_04_TO_09_INTO_14_TO_19
 	setup channel=0x17, address=ALTERNATE_VAR06_VAR04_TIMING
 	setup channel=0x18, address=TANK_SAVE_VARS_04_TO_09_INTO_1A_TO_1F
-	setup channel=0x19, address=LABEL_1ADA
+	setup channel=0x19, address=TANK_PACING_VAR04_06_RAMP_UP
 	setup channel=0x1A, address=TANK_SAVE_VARS_04_TO_09_INTO_20_TO_25
 	mov [0x14], 0x0028
 	mov [0x15], 0x0071
@@ -80,7 +80,7 @@ PROJECT_AND_DRAW_TWICE_Y_PLUS_9:
 	call LABEL_1A30
 	ret
 
-LABEL_19A7:
+TANK_RESTORE_VARS_04_TO_09_FROM_14_TO_19:
 	mov [0x07], [0x14]
 	mov [0x08], [0x15]
 	mov [0x09], [0x16]
@@ -88,11 +88,11 @@ LABEL_19A7:
 	mov [0x05], [0x18]
 	mov [0x04], [0x19]
 	break
-	jmp LABEL_19A7
+	jmp TANK_RESTORE_VARS_04_TO_09_FROM_14_TO_19
 LABEL_19BD:
 	db 0x11
 
-LABEL_19BE:
+TANK_SAVE_VARS_04_TO_09_INTO_14_TO_19:
 	mov [0x14], [0x07]
 	mov [0x15], [0x08]
 	mov [0x16], [0x09]
@@ -107,7 +107,7 @@ LABEL_19BE:
 	mov [0x05], [0x1E]
 	mov [0x04], [0x1F]
 	break
-	jmp LABEL_19BE
+	jmp TANK_SAVE_VARS_04_TO_09_INTO_14_TO_19
 LABEL_19E9:
 	db 0x11
 
@@ -159,11 +159,11 @@ LABEL_1A3D:
 	ret
 
 LABEL_1A4A:
-	jne [0x06], 0x03, LABEL_1A57
+	jne [0x06], 0x03, TANK_DRAW_BY_VAR06_DISPATCH_CIN_217_FAMILY
 	video offset=CINEMATIC_218, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
-LABEL_1A57:
+TANK_DRAW_BY_VAR06_DISPATCH_CIN_217_FAMILY:
 	jne [0x06], 0x04, LABEL_1A64
 	video offset=CINEMATIC_217, x=[0x07], y=[0x08], zoom=[0x09]
 	ret

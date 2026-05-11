@@ -1,4 +1,4 @@
-LABEL_1CC1:
+TANK_SCENE_INIT_FILL_COLOR_0C_DRAW_BG:
 	jne [0x6D], 0x00, LABEL_1CE5
 	selectVideoPage 0x00
 	fill page=0x00, color=0x0C
@@ -10,7 +10,7 @@ LABEL_1CC1:
 	ret
 
 LABEL_1CDC:
-	call LABEL_1CC1
+	call TANK_SCENE_INIT_FILL_COLOR_0C_DRAW_BG
 	copyVideoPage src=0x03, dst=0xFF
 	jmp INIT_VARS_A_B_PAL_1
 

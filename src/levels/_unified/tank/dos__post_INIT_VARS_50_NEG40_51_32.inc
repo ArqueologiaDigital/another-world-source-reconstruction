@@ -199,9 +199,9 @@ LABEL_17B5:
 	video offset=CINEMATIC_079, x=160, y=100
 	selectVideoPage 0xFF
 
-LABEL_181D:
+TANK_DEC_VAR41_AND_DRAW_CIN_080_TWICE_AT_189_AND_176:
 	break
-	jle [0x41], 0x00, LABEL_181D
+	jle [0x41], 0x00, TANK_DEC_VAR41_AND_DRAW_CIN_080_TWICE_AT_189_AND_176
 	sub [0x41], 0x0001
 	selectVideoPage 0x00
 	video offset=CINEMATIC_080, x=189, y=100
@@ -221,7 +221,7 @@ LABEL_181D:
 	video offset=CINEMATIC_079, x=160, y=100
 	selectVideoPage 0xFF
 	break
-	jmp LABEL_181D
+	jmp TANK_DEC_VAR41_AND_DRAW_CIN_080_TWICE_AT_189_AND_176
 	killChannel
 
 LABEL_1869:

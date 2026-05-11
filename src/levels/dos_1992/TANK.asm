@@ -356,7 +356,7 @@ TANK_DRIVE_SCENE_INIT:
 	setup channel=0x23, address=SETUP_TANK_HERO_VARS_PLAY_4SFX
 	call INIT_TANK_DRIVE_VARS
 	killChannel
-	call LABEL_1CC1
+	call TANK_SCENE_INIT_FILL_COLOR_0C_DRAW_BG
 
 LABEL_009D:
 	load id=0x0052
@@ -2485,10 +2485,10 @@ TANK_DRAW_CIN_029_AT_VAR0F_10_FOREVER:
 	break
 	jmp TANK_DRAW_CIN_029_AT_VAR0F_10_FOREVER
 
-LABEL_16DE:
+TANK_DRAW_CIN_030_AT_VAR01_02_FOREVER:
 	video offset=CINEMATIC_030, x=[0x01], y=[0x02]
 	break
-	jmp LABEL_16DE
+	jmp TANK_DRAW_CIN_030_AT_VAR01_02_FOREVER
 
 ; Same shape but triggered by var46. Plays sound 0x008E
 ; then draws CINEMATIC_061/062/063 at fixed (160,100). The
@@ -2612,9 +2612,9 @@ LABEL_17B5:
 	video offset=CINEMATIC_079, x=160, y=100
 	selectVideoPage 0xFF
 
-LABEL_181D:
+TANK_DEC_VAR41_AND_DRAW_CIN_080_TWICE_AT_189_AND_176:
 	break
-	jle [0x41], 0x00, LABEL_181D
+	jle [0x41], 0x00, TANK_DEC_VAR41_AND_DRAW_CIN_080_TWICE_AT_189_AND_176
 	sub [0x41], 0x0001
 	selectVideoPage 0x00
 	video offset=CINEMATIC_080, x=189, y=100
@@ -2634,7 +2634,7 @@ LABEL_181D:
 	video offset=CINEMATIC_079, x=160, y=100
 	selectVideoPage 0xFF
 	break
-	jmp LABEL_181D
+	jmp TANK_DEC_VAR41_AND_DRAW_CIN_080_TWICE_AT_189_AND_176
 	killChannel
 
 LABEL_1869:
@@ -2686,7 +2686,7 @@ LABEL_18B2:
 	call DRAW_CIN_093_TO_097_VAR
 	call DRAW_CIN_113_114_AND_RET
 	selectVideoPage 0xFF
-	jmp LABEL_16DE
+	jmp TANK_DRAW_CIN_030_AT_VAR01_02_FOREVER
 	mov [0x3E], 0x0014
 	mov [0x41], 0x000A
 	mov [0x37], 0x0014
@@ -2698,12 +2698,12 @@ LABEL_18B2:
 	killChannel
 
 LABEL_1924:
-	setup channel=0x14, address=LABEL_19A7
+	setup channel=0x14, address=TANK_RESTORE_VARS_04_TO_09_FROM_14_TO_19
 	setup channel=0x15, address=LABEL_1B75
-	setup channel=0x16, address=LABEL_19BE
+	setup channel=0x16, address=TANK_SAVE_VARS_04_TO_09_INTO_14_TO_19
 	setup channel=0x17, address=ALTERNATE_VAR06_VAR04_TIMING
 	setup channel=0x18, address=TANK_SAVE_VARS_04_TO_09_INTO_1A_TO_1F
-	setup channel=0x19, address=LABEL_1ADA
+	setup channel=0x19, address=TANK_PACING_VAR04_06_RAMP_UP
 	setup channel=0x1A, address=TANK_SAVE_VARS_04_TO_09_INTO_20_TO_25
 	mov [0x14], 0x0028
 	mov [0x15], 0x0071
@@ -2739,7 +2739,7 @@ PROJECT_AND_DRAW_TWICE_Y_PLUS_9:
 	call DRAW_CIN_221_IF_VAR06_EQ_1
 	ret
 
-LABEL_19A7:
+TANK_RESTORE_VARS_04_TO_09_FROM_14_TO_19:
 	mov [0x07], [0x14]
 	mov [0x08], [0x15]
 	mov [0x09], [0x16]
@@ -2747,11 +2747,11 @@ LABEL_19A7:
 	mov [0x05], [0x18]
 	mov [0x04], [0x19]
 	break
-	jmp LABEL_19A7
+	jmp TANK_RESTORE_VARS_04_TO_09_FROM_14_TO_19
 LABEL_19BD:
 	db 0x11
 
-LABEL_19BE:
+TANK_SAVE_VARS_04_TO_09_INTO_14_TO_19:
 	mov [0x14], [0x07]
 	mov [0x15], [0x08]
 	mov [0x16], [0x09]
@@ -2766,7 +2766,7 @@ LABEL_19BE:
 	mov [0x05], [0x1E]
 	mov [0x04], [0x1F]
 	break
-	jmp LABEL_19BE
+	jmp TANK_SAVE_VARS_04_TO_09_INTO_14_TO_19
 LABEL_19E9:
 	db 0x11
 
@@ -2818,11 +2818,11 @@ LABEL_1A3D:
 	ret
 
 LABEL_1A4A:
-	jne [0x06], 0x03, LABEL_1A57
+	jne [0x06], 0x03, TANK_DRAW_BY_VAR06_DISPATCH_CIN_217_FAMILY
 	video offset=CINEMATIC_218, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
-LABEL_1A57:
+TANK_DRAW_BY_VAR06_DISPATCH_CIN_217_FAMILY:
 	jne [0x06], 0x04, LABEL_1A64
 	video offset=CINEMATIC_217, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
@@ -2880,7 +2880,7 @@ LABEL_1ACC:
 TANK_NOOP_RET:
 	ret
 
-LABEL_1ADA:
+TANK_PACING_VAR04_06_RAMP_UP:
 	mov [0x06], 0x0001
 	mov [0x04], 0x0001
 	break
@@ -2897,11 +2897,11 @@ LABEL_1ADA:
 	mov [0x04], 0x0004
 	break
 	break
-	jmp LABEL_1B06
+	jmp TANK_PACING_VAR04_06_RAMP_DOWN
 LABEL_1B05:
 	db 0x11
 
-LABEL_1B06:
+TANK_PACING_VAR04_06_RAMP_DOWN:
 	mov [0x06], 0x0002
 	mov [0x04], 0x0002
 	break
@@ -2918,7 +2918,7 @@ LABEL_1B06:
 	mov [0x04], 0x0002
 	break
 	break
-	jmp LABEL_1B06
+	jmp TANK_PACING_VAR04_06_RAMP_DOWN
 LABEL_1B31:
 	db 0x11
 
@@ -2987,7 +2987,7 @@ LABEL_1B75:
 	mov [0x06], 0x0002
 	sub [0x05], 0x0002
 	break
-	jmp LABEL_1ADA
+	jmp TANK_PACING_VAR04_06_RAMP_UP
 LABEL_1BD9:
 	db 0x11
 
@@ -3089,7 +3089,7 @@ DRAW_CIN_6_27_28_AND_RET:
 	video offset=CINEMATIC_028, x=160, y=100
 	ret
 
-LABEL_1CC1:
+TANK_SCENE_INIT_FILL_COLOR_0C_DRAW_BG:
 	jne [0x6D], 0x00, LABEL_1CE5
 	selectVideoPage 0x00
 	fill page=0x00, color=0x0C
@@ -3101,7 +3101,7 @@ LABEL_1CC1:
 	ret
 
 LABEL_1CDC:
-	call LABEL_1CC1
+	call TANK_SCENE_INIT_FILL_COLOR_0C_DRAW_BG
 	copyVideoPage src=0x03, dst=0xFF
 	jmp INIT_VARS_A_B_PAL_1
 

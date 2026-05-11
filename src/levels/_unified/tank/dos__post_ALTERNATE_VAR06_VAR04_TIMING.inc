@@ -36,7 +36,7 @@ LABEL_1B75:
 	mov [0x06], 0x0002
 	sub [0x05], 0x0002
 	break
-	jmp LABEL_1ADA
+	jmp TANK_PACING_VAR04_06_RAMP_UP
 LABEL_1BD9:
 	db 0x11
 

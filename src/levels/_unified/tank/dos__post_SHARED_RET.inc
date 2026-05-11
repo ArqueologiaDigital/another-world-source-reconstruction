@@ -1,4 +1,4 @@
-LABEL_1ADA:
+TANK_PACING_VAR04_06_RAMP_UP:
 	mov [0x06], 0x0001
 	mov [0x04], 0x0001
 	break
@@ -15,11 +15,11 @@ LABEL_1ADA:
 	mov [0x04], 0x0004
 	break
 	break
-	jmp LABEL_1B06
+	jmp TANK_PACING_VAR04_06_RAMP_DOWN
 LABEL_1B05:
 	db 0x11
 
-LABEL_1B06:
+TANK_PACING_VAR04_06_RAMP_DOWN:
 	mov [0x06], 0x0002
 	mov [0x04], 0x0002
 	break
@@ -36,6 +36,6 @@ LABEL_1B06:
 	mov [0x04], 0x0002
 	break
 	break
-	jmp LABEL_1B06
+	jmp TANK_PACING_VAR04_06_RAMP_DOWN
 LABEL_1B31:
 	db 0x11
