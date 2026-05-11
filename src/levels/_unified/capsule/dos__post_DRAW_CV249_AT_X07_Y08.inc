@@ -41,7 +41,7 @@ LABEL_836A:
 	video type=0, offset=COMMON_VIDEO_250, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_256, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_838D
-	call LABEL_8235
+	call CAPSULE_BUDDY_DRAW_CV310_AT_BUDDY_X_PLUS_1
 	jmp LABEL_8392
 
 LABEL_838D:
@@ -57,7 +57,7 @@ LABEL_8397:
 	video type=0, offset=COMMON_VIDEO_250, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_257, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_83B6
-	call LABEL_8235
+	call CAPSULE_BUDDY_DRAW_CV310_AT_BUDDY_X_PLUS_1
 	jmp LABEL_83BB
 
 LABEL_83B6:
