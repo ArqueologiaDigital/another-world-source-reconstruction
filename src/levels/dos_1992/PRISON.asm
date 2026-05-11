@@ -4809,7 +4809,7 @@ LABEL_25A7:
 	db 0x11
 
 ; Canonical buddy-scene loop. Calls a buddy-render tick
-; (PRISON_BUDDY_PER_FRAME_TICK_CIN236_240_AI_5310, a still-unnamed sibling of PRISON_BUDDY_PER_-
+; (LABEL_56D2, a still-unnamed sibling of PRISON_BUDDY_PER_-
 ; FRAME_TICK_CIN236_240 with a different AI helper —
 ; 26 callers, also "buddy tick" structure). Same shape as
 ; CAVES_BEAST_SCENE_MAIN_LOOP and CAPSULE_BUDDY_SCENE_MAIN_-
@@ -9618,6 +9618,7 @@ LABEL_56C3:
 	call LABEL_5363
 	ret
 
+; (the sibling of *_CIN236_240 with different AI helper)
 PRISON_BUDDY_PER_FRAME_TICK_CIN236_240_AI_5310:
 	jne [HACK_VAR_67], [0x10], SCENE_DISPATCH_NOOP_RET
 	je [0x0D], 0x00, LABEL_56E1
@@ -11067,7 +11068,7 @@ LABEL_6549:
 ; HACK_VAR_67 == [0x10] (the dispatcher pose match):
 ; DRAW_CIN_390 + CINEMATIC_692 + CINEMATIC_BUDDY_HACKING_-
 ; SECURITY_DOOR. Distinguishes from a simpler two-part
-; variant at the line just below PRISON_BUDDY_DRAW_CIN342_OR_HACK_DOOR_DISPATCH (no rename
+; variant at the line just below LABEL_6589 (no rename
 ; here; that's in unreachable code after a ret).
 DRAW_BUDDY_HACKING_THREE_PART:
 	jne [HACK_VAR_67], [0x10], SCENE_DISPATCH_NOOP_RET
