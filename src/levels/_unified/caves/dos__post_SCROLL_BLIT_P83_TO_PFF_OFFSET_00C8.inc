@@ -30,7 +30,7 @@ LABEL_4028:
 	copyVideoPage src=0x00, dst=0xFF
 	mov [PAUSE_SLICES], [0xF8]
 	break
-	jmp LABEL_3F4E
+	jmp CAVES_HOLD_PAGE_40_AND_HELPER_3F48_LOOP
 LABEL_4045:
 	db 0x11
 
@@ -45,7 +45,7 @@ LABEL_4046:
 	copyVideoPage src=0x00, dst=0xFF
 	mov [PAUSE_SLICES], [0xF8]
 	break
-	jmp LABEL_3F4E
+	jmp CAVES_HOLD_PAGE_40_AND_HELPER_3F48_LOOP
 
 LABEL_4063:
 	setPalette 0x1F
@@ -58,7 +58,7 @@ LABEL_4063:
 	copyVideoPage src=0x00, dst=0xFF
 	mov [PAUSE_SLICES], [0xF8]
 	break
-	jmp LABEL_3F4E
+	jmp CAVES_HOLD_PAGE_40_AND_HELPER_3F48_LOOP
 	killChannel
 	setPalette 0x1F
 	blitFramebuffer 0xFF
@@ -70,7 +70,7 @@ LABEL_4063:
 	copyVideoPage src=0x00, dst=0xFF
 	mov [PAUSE_SLICES], [0xF8]
 	break
-	jmp LABEL_3F4E
+	jmp CAVES_HOLD_PAGE_40_AND_HELPER_3F48_LOOP
 LABEL_409E:
 	db 0x11
 

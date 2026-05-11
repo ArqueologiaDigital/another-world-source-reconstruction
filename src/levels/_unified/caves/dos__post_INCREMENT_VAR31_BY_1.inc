@@ -1,13 +1,13 @@
 LABEL_3F4D:
 	db 0x11
 
-LABEL_3F4E:
+CAVES_HOLD_PAGE_40_AND_HELPER_3F48_LOOP:
 	call INCREMENT_VAR31
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x40, dst=0xFF
 	break
-	jmp LABEL_3F4E
+	jmp CAVES_HOLD_PAGE_40_AND_HELPER_3F48_LOOP
 
 LABEL_3F5C:
 	call INCREMENT_VAR31
@@ -20,7 +20,7 @@ LABEL_3F5C:
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 	break
-	jmp LABEL_3F4E
+	jmp CAVES_HOLD_PAGE_40_AND_HELPER_3F48_LOOP
 
 JUNK__3F75:
 	blitFramebuffer 0xFF
@@ -39,7 +39,7 @@ LABEL_3F7D:
 LABEL_3F8B:
 	copyVideoPage src=0xFF, dst=0x03
 	copyVideoPage src=0x83, dst=0xFF
-	jmp LABEL_3F4E
+	jmp CAVES_HOLD_PAGE_40_AND_HELPER_3F48_LOOP
 
 LABEL_3F94:
 	copyVideoPage src=0xFF, dst=0x00
@@ -48,7 +48,7 @@ LABEL_3F94:
 
 LABEL_3F9D:
 	copyVideoPage src=0x83, dst=0xFF
-	jmp LABEL_3F4E
+	jmp CAVES_HOLD_PAGE_40_AND_HELPER_3F48_LOOP
 
 LABEL_3FA3:
 	copyVideoPage src=0x83, dst=0xFF
@@ -66,7 +66,7 @@ LABEL_3FAD:
 	copyVideoPage src=0x00, dst=0xFF
 	mov [PAUSE_SLICES], [0xF8]
 	break
-	jmp LABEL_3F4E
+	jmp CAVES_HOLD_PAGE_40_AND_HELPER_3F48_LOOP
 
 LABEL_3FCA:
 	blitFramebuffer 0xFF
