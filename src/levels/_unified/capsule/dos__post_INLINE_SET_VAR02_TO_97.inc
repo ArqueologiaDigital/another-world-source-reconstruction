@@ -56,7 +56,7 @@ LABEL_A48F:
 	and [0xF8], 0x0008
 	je [0xF8], 0x00, LABEL_A4B9
 	setup channel=0x23, address=LABEL_4170
-	setup channel=0x27, address=LABEL_4AE8
+	setup channel=0x27, address=CAPSULE_HERO_SCENE_LOOP_TICK_BEFORE_DISPATCH
 	mov [0x78], 0x00C8
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 
@@ -67,13 +67,13 @@ LABEL_A4B9:
 LABEL_A4C0:
 	jge [0x73], 0x4000, LABEL_A4CE
 	call LABEL_33C8
-	setup channel=0x25, address=LABEL_4AE8
+	setup channel=0x25, address=CAPSULE_HERO_SCENE_LOOP_TICK_BEFORE_DISPATCH
 
 LABEL_A4CE:
 	jge [0x7B], 0x4000, LABEL_A4E0
 	call LABEL_33A7
 	mov [0x78], 0x0089
-	setup channel=0x27, address=LABEL_4AE8
+	setup channel=0x27, address=CAPSULE_HERO_SCENE_LOOP_TICK_BEFORE_DISPATCH
 
 LABEL_A4E0:
 	mov [HERO_X], 0x0008

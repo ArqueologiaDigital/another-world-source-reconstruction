@@ -1753,7 +1753,7 @@ LABEL_00CD:
 	call LABEL_0182
 	je [0x21], 0x01, LABEL_00DE
 	or [0xBB], 0x0008
-	setup channel=0x27, address=LABEL_4AE8
+	setup channel=0x27, address=CAPSULE_HERO_SCENE_LOOP_TICK_BEFORE_DISPATCH
 
 LABEL_00DE:
 	break

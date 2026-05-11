@@ -95,7 +95,7 @@ LABEL_31D5:
 	mov [0x7C], 0x4010
 	mov [0x7D], 0x0831
 	mov [0x7E], 0x2710
-	setup channel=0x27, address=LABEL_4AE8
+	setup channel=0x27, address=CAPSULE_HERO_SCENE_LOOP_TICK_BEFORE_DISPATCH
 	ret
 
 LABEL_31F6:
@@ -117,7 +117,7 @@ LABEL_3217:
 	mov [0x7C], 0x4010
 	mov [0x7D], 0x0831
 	mov [0x7E], 0x2710
-	setup channel=0x27, address=LABEL_4AE8
+	setup channel=0x27, address=CAPSULE_HERO_SCENE_LOOP_TICK_BEFORE_DISPATCH
 	ret
 
 LABEL_3238:
@@ -150,7 +150,7 @@ LABEL_327A:
 	mov [0x74], 0x0040
 	mov [0x75], 0x0821
 	mov [0x76], 0x2710
-	setup channel=0x25, address=LABEL_4AE8
+	setup channel=0x25, address=CAPSULE_HERO_SCENE_LOOP_TICK_BEFORE_DISPATCH
 	ret
 
 LABEL_329B:
@@ -339,7 +339,7 @@ LABEL_34B1:
 	mov [0x74], 0x0060
 	mov [0x75], 0x0863
 	mov [0x76], 0x03E8
-	setup channel=0x25, address=LABEL_4AE8
+	setup channel=0x25, address=CAPSULE_HERO_SCENE_LOOP_TICK_BEFORE_DISPATCH
 	ret
 
 LABEL_34D2:
