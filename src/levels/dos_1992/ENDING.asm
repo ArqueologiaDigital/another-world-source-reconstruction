@@ -972,6 +972,10 @@ DRAW_CIN_024_AT_VAR07_08_FOREVER:
 LABEL_0853:
 	db 0x11
 
+; The 08B8 sequence is palindromic — 193, 185, 181, 129,
+; 176, 173, 202, 202, 169, 169, 173, 176, 129, 181, 185,
+; ... — so the figure swings or rotates out and back, the
+; classic "hero raises arms / takes a bow" gesture pattern.
 ANIM_COMMON_VIDEO_192_195_196_197_AT_VAR07_08:
 	video type=0, offset=COMMON_VIDEO_192, x=[0x07], y=[0x08], zoom=0x40
 	break
@@ -1009,6 +1013,10 @@ ANIM_COMMON_VIDEO_192_195_196_197_AT_VAR07_08:
 LABEL_08B7:
 	db 0x11
 
+; The 08B8 sequence is palindromic — 193, 185, 181, 129,
+; 176, 173, 202, 202, 169, 169, 173, 176, 129, 181, 185,
+; ... — so the figure swings or rotates out and back, the
+; classic "hero raises arms / takes a bow" gesture pattern.
 ANIM_COMMON_VIDEO_193_185_181_PALINDROME_AT_VAR07_08:
 	video type=0, offset=COMMON_VIDEO_193, x=[0x07], y=[0x08], zoom=0x40
 	break
@@ -1228,6 +1236,10 @@ CREDITS_SCROLL_RENDER_PAGE_83_OVER_80:
 	break
 	jmp CREDITS_SCROLL_BLIT_FRAME_THEN_RENDER_80_OVER_83
 
+; `fill page=1 color=0; fill page=2 color=0; selectVideoPage
+;  1; blit page 1, page FF, page 2; ret`. Three-page clear-
+; and-blit sequence used to reset the framebuffer chain
+; between scene transitions.
 ENDING_CLEAR_AND_BLIT_PAGES_1_2_FF:
 	fill page=0x01, color=0x00
 	fill page=0x02, color=0x00
