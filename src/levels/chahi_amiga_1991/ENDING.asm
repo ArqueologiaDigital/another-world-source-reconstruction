@@ -197,7 +197,7 @@ PRELOAD_RESOURCES_8_TO_1:
 	load id=0x000C
 	ret
 
-LABEL_005A:
+ANIM_CIN_097_TO_100_AT_160_100:
 	video offset=CINEMATIC_097, x=160, y=100
 	break
 	video offset=CINEMATIC_098, x=160, y=100
@@ -210,7 +210,7 @@ LABEL_005A:
 	break
 	video offset=CINEMATIC_098, x=160, y=100
 	break
-	jmp LABEL_005A
+	jmp ANIM_CIN_097_TO_100_AT_160_100
 LABEL_007B:
 	db 0x11
 
@@ -261,19 +261,19 @@ LABEL_00AF:
 	deleteChannels first=0x0A, last=0x0E
 	copyVideoPage src=0x03, dst=0x00
 	setup channel=0x0A, address=LABEL_0149
-	setup channel=0x0B, address=LABEL_010A
+	setup channel=0x0B, address=DRAW_CIN_058_AT_160_100_VAR04_ZOOM_FOREVER
 	setup channel=0x0E, address=LABEL_03E6
-	setup channel=0x0F, address=LABEL_0115
+	setup channel=0x0F, address=ANIM_CIN_059_TO_062_AT_VAR01_02_VAR_ZOOM
 	killChannel
 
-LABEL_010A:
+DRAW_CIN_058_AT_160_100_VAR04_ZOOM_FOREVER:
 	video offset=CINEMATIC_058, x=160, y=100, zoom=[0x04]
 	break
-	jmp LABEL_010A
+	jmp DRAW_CIN_058_AT_160_100_VAR04_ZOOM_FOREVER
 LABEL_0114:
 	db 0x11
 
-LABEL_0115:
+ANIM_CIN_059_TO_062_AT_VAR01_02_VAR_ZOOM:
 	video offset=CINEMATIC_059, x=[0x01], y=[0x02], zoom=[0x03]
 	break
 	video offset=CINEMATIC_060, x=[0x01], y=[0x02], zoom=[0x03]
@@ -288,7 +288,7 @@ LABEL_0115:
 	break
 	video offset=CINEMATIC_065, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	jmp LABEL_0115
+	jmp ANIM_CIN_059_TO_062_AT_VAR01_02_VAR_ZOOM
 
 LABEL_0149:
 	mov [0x01], 0x00A0
@@ -320,7 +320,7 @@ LABEL_0199:
 	sub [0x03], 0x0001
 	djnz [0x06], LABEL_0199
 	setup channel=0x10, address=INIT_VARE_TO_12
-	setup channel=0x11, address=LABEL_0220
+	setup channel=0x11, address=DRAW_CIN_070_AT_VAR01_02_VAR0F_ZOOM_FOREVER
 	mov [0x0F], 0x0001
 	mov [0x06], 0x000C
 
@@ -378,10 +378,10 @@ LABEL_01FE:
 	add [0x0F], 0x0038
 	killChannel
 
-LABEL_0220:
+DRAW_CIN_070_AT_VAR01_02_VAR0F_ZOOM_FOREVER:
 	video offset=CINEMATIC_070, x=[0x01], y=[0x02], zoom=[0x0f]
 	break
-	jmp LABEL_0220
+	jmp DRAW_CIN_070_AT_VAR01_02_VAR0F_ZOOM_FOREVER
 LABEL_022A:
 	db 0x11
 
@@ -697,7 +697,7 @@ LABEL_053E:
 	djnz [0xE6], LABEL_053E
 	setup channel=0x0A, address=LABEL_03D9
 	setup channel=0x0B, address=DRAW_CIN_101_102_FADE_PAL_C
-	setup channel=0x0C, address=LABEL_005A
+	setup channel=0x0C, address=ANIM_CIN_097_TO_100_AT_160_100
 	setup channel=0x0D, address=LABEL_00AF
 	killChannel
 
