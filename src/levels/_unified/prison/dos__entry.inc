@@ -2208,7 +2208,7 @@ LABEL_0000:
 	mov [0x00], 0x0014
 	jmp LABEL_005F
 	setup channel=0x15, address=SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01
-	setup channel=0x16, address=LABEL_8A67
+	setup channel=0x16, address=PRISON_HERO_POS_JUMP_DOWN_DISPATCH_CHECK_VAR63
 	setup channel=0x0A, address=LABEL_0567
 	call LABEL_07D8
 	copyVideoPage src=0x03, dst=0x00

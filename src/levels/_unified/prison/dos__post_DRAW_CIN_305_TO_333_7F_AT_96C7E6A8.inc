@@ -1,6 +1,6 @@
 LABEL_4ACC:
 	mov [0x65], 0x0000
-	call LABEL_8189
+	call PRISON_SCENE_INIT_DRAW_CIN_085_086_TO_PAGE_3
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
 	video offset=CINEMATIC_428, x=160, y=100
@@ -13,7 +13,7 @@ LABEL_4ACC:
 	ret
 
 LABEL_4AF5:
-	call LABEL_8189
+	call PRISON_SCENE_INIT_DRAW_CIN_085_086_TO_PAGE_3
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
 	video offset=CINEMATIC_448, x=160, y=100
@@ -24,7 +24,7 @@ LABEL_4AF5:
 
 LABEL_4B0E:
 	mov [0x65], 0x0000
-	call LABEL_8189
+	call PRISON_SCENE_INIT_DRAW_CIN_085_086_TO_PAGE_3
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
 	video offset=CINEMATIC_434, x=160, y=100
@@ -39,7 +39,7 @@ LABEL_4B0E:
 ; sequence where Lester must shoot the energy line to power
 ; down the upstairs security doors.
 DRAW_ENERGY_TRANSMISSION_LINE_FG:
-	call LABEL_8189
+	call PRISON_SCENE_INIT_DRAW_CIN_085_086_TO_PAGE_3
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
 	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=160, y=100

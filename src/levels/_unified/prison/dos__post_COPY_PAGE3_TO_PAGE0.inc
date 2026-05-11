@@ -92,7 +92,7 @@ LABEL_8328:
 	mov [0x44], [0x22]
 	mov [0x45], 0x0014
 	call TEARDOWN_CHANS_AND_KILL_LANDING
-	call LABEL_8189
+	call PRISON_SCENE_INIT_DRAW_CIN_085_086_TO_PAGE_3
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
 	call LABEL_7BBC
@@ -119,7 +119,7 @@ LABEL_8373:
 	mov [0x44], [0x22]
 	mov [0x45], 0x0014
 	call TEARDOWN_CHANS_AND_KILL_LANDING
-	call LABEL_8189
+	call PRISON_SCENE_INIT_DRAW_CIN_085_086_TO_PAGE_3
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
 	call LABEL_7BBC
@@ -248,7 +248,7 @@ LABEL_84EF:
 	mov [0x44], [0x22]
 	mov [0x45], 0x0014
 	call TEARDOWN_CHANS_AND_KILL_LANDING
-	call LABEL_8189
+	call PRISON_SCENE_INIT_DRAW_CIN_085_086_TO_PAGE_3
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
 	call LABEL_7BBC
@@ -304,7 +304,7 @@ LABEL_8596:
 	mov [0x44], [0x22]
 	mov [0x45], 0x0014
 	call TEARDOWN_CHANS_AND_KILL_LANDING
-	call LABEL_8189
+	call PRISON_SCENE_INIT_DRAW_CIN_085_086_TO_PAGE_3
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
 	call LABEL_7BBC
