@@ -19,7 +19,7 @@ LABEL_9982:
 	video offset=CINEMATIC_089, x=[HERO_X], y=189
 	mov [HERO_Y], [0x52]
 	setup channel=0x1A, address=LABEL_9774
-	jmp LABEL_99FB
+	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
 
 LABEL_99C8:
 	mov [0xF8], [0x04]
@@ -45,7 +45,7 @@ DRAW_CIN_089:
 	video offset=CINEMATIC_089, x=[HERO_X], y=[HERO_Y]
 	ret
 
-LABEL_99FB:
+CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	mov [0x32], 0x0000

@@ -106,7 +106,7 @@ LABEL_31F6:
 	mov [0x74], 0x4010
 	mov [0x75], 0x0863
 	mov [0x76], 0x0064
-	setup channel=0x25, address=LABEL_4B2A
+	setup channel=0x25, address=CAPSULE_BUDDY_SCENE_LOOP_TICK_THEN_CHECK_STATE
 	ret
 
 LABEL_3217:
@@ -128,7 +128,7 @@ LABEL_3238:
 	mov [0x74], 0x4010
 	mov [0x75], 0x0863
 	mov [0x76], 0x0064
-	setup channel=0x25, address=LABEL_4B2A
+	setup channel=0x25, address=CAPSULE_BUDDY_SCENE_LOOP_TICK_THEN_CHECK_STATE
 	ret
 
 LABEL_3259:
@@ -139,7 +139,7 @@ LABEL_3259:
 	mov [0x7C], 0x0020
 	mov [0x7D], 0x0841
 	mov [0x7E], 0x2710
-	setup channel=0x27, address=LABEL_4B2A
+	setup channel=0x27, address=CAPSULE_BUDDY_SCENE_LOOP_TICK_THEN_CHECK_STATE
 	ret
 
 LABEL_327A:
@@ -283,7 +283,7 @@ LABEL_340A:
 	mov [0x6C], 0x0001
 	mov [0x6D], 0x0000
 	mov [0x6E], 0x2710
-	setup channel=0x23, address=LABEL_4B2A
+	setup channel=0x23, address=CAPSULE_BUDDY_SCENE_LOOP_TICK_THEN_CHECK_STATE
 	ret
 
 LABEL_342A:
@@ -361,7 +361,7 @@ LABEL_34F3:
 	mov [0x74], 0x0060
 	mov [0x75], 0x0833
 	mov [0x76], 0x03E8
-	setup channel=0x25, address=LABEL_4B2A
+	setup channel=0x25, address=CAPSULE_BUDDY_SCENE_LOOP_TICK_THEN_CHECK_STATE
 	ret
 
 LABEL_3514:

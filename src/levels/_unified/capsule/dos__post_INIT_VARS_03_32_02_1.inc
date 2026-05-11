@@ -11,6 +11,6 @@ LABEL_9949:
 	video offset=CINEMATIC_091, x=[HERO_X], y=180
 	mov [HERO_Y], [0x51]
 	setup channel=0x1A, address=LABEL_9765
-	jmp LABEL_99FB
+	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
 LABEL_9975:
 	db 0x11

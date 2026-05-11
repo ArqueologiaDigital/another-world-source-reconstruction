@@ -11,7 +11,7 @@ LABEL_9783:
 	mov [HERO_Y], [0x52]
 	call LABEL_99E2
 	setup channel=0x1A, address=LABEL_9774
-	jmp LABEL_99FB
+	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
 LABEL_97B7:
 	db 0x11
 
@@ -47,7 +47,7 @@ LABEL_97D6:
 	video offset=CINEMATIC_089, x=[HERO_X], y=189
 	mov [HERO_Y], [0x52]
 	setup channel=0x1A, address=LABEL_9774
-	jmp LABEL_99FB
+	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
 
 LABEL_9821:
 	mov [0x63], 0x0064
@@ -62,7 +62,7 @@ LABEL_9821:
 	mov [HERO_Y], [0x51]
 	call LABEL_99C8
 	setup channel=0x1A, address=LABEL_9765
-	jmp LABEL_99FB
+	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
 LABEL_9855:
 	db 0x11
 
@@ -96,7 +96,7 @@ LABEL_986E:
 LABEL_98AC:
 	mov [HERO_Y], [0x51]
 	setup channel=0x1A, address=LABEL_9765
-	jmp LABEL_99FB
+	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
 
 LABEL_98B6:
 	mov [0x63], 0x0064
@@ -121,7 +121,7 @@ LABEL_98B6:
 	video offset=CINEMATIC_089, x=[HERO_X], y=80
 	mov [HERO_Y], [0x52]
 	setup channel=0x1A, address=LABEL_9774
-	jmp LABEL_99FB
+	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
 
 LABEL_9905:
 	mov [0x63], 0x0064
@@ -139,4 +139,4 @@ LABEL_9905:
 	video offset=CINEMATIC_091, x=[HERO_X], y=180
 	mov [HERO_Y], [0x51]
 	setup channel=0x1A, address=LABEL_9765
-	jmp LABEL_99FB
+	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
