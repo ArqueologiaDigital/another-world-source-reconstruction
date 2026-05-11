@@ -2248,7 +2248,7 @@ LESTER_HEAD_SIDEWAYS_WITH_HAND_HOLD:
 	djnz [0x02], CITY_OUTER_3X_LOOP
 
 INTRO_SCENE_INIT_SETUP_CH02_CH3C_AND_KILL:
-	setup channel=0x02, address=LABEL_142C
+	setup channel=0x02, address=INTRO_REDRAW_EXPERIMENT_COUNTDOWN_TEXT
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
@@ -2674,7 +2674,7 @@ LABEL_1406:
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
-LABEL_142C:
+INTRO_REDRAW_EXPERIMENT_COUNTDOWN_TEXT:
 	copyVideoPage src=0x03, dst=0xFF
 	text id=0x0023, x=0, y=80, color=0x06 ; " THE EXPERIMENT WILL BEGIN IN    SECONDS"
 	copyVideoPage src=0xFF, dst=0x00
@@ -4060,17 +4060,17 @@ INTRO_DRAW_CIN_528_AT_96_131:
 	selectVideoPage 0xFF
 	mov [0x05], 0x0003
 
-LABEL_21AF:
+INTRO_DJNZ_VAR05_THEN_DRAW_CIN_130_AT_96_131:
 	break
-	djnz [0x05], LABEL_21AF
+	djnz [0x05], INTRO_DJNZ_VAR05_THEN_DRAW_CIN_130_AT_96_131
 	selectVideoPage 0x00
 	video offset=CINEMATIC_130, x=96, y=131
 	selectVideoPage 0xFF
 	mov [0x05], 0x0004
 
-LABEL_21C0:
+INTRO_DJNZ_VAR05_THEN_JMP_CIN_528:
 	break
-	djnz [0x05], LABEL_21C0
+	djnz [0x05], INTRO_DJNZ_VAR05_THEN_JMP_CIN_528
 	jmp INTRO_DRAW_CIN_528_AT_96_131
 LABEL_21C8:
 	db 0x11
@@ -4238,9 +4238,9 @@ INTRO_PLAY_BG_AUDIO_LOOP:
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x01], 0x0012
 
-LABEL_23C6:
+INTRO_DJNZ_PLAY_SOUND_09_STEREO_THEN_PAUSE_3:
 	break
-	djnz [0x01], LABEL_23C6
+	djnz [0x01], INTRO_DJNZ_PLAY_SOUND_09_STEREO_THEN_PAUSE_3
 	play id=0x0009, freq=0x14, vol=0x1E, channel=0x00
 	play id=0x0009, freq=0x14, vol=0x3F, channel=0x01
 	mov [PAUSE_SLICES], 0x0003
@@ -4306,11 +4306,11 @@ LABEL_23C6:
 	selectVideoPage 0xFF
 	mov [PAUSE_SLICES], 0x0002
 
-LABEL_24AD:
+INTRO_DRAW_CIN_031_033_PAIR_DJNZ_THEN_PAL_3:
 	video offset=CINEMATIC_031, x=42, y=120
 	video offset=CINEMATIC_033, x=160, y=100
 	break
-	djnz [0x01], LABEL_24AD
+	djnz [0x01], INTRO_DRAW_CIN_031_033_PAIR_DJNZ_THEN_PAL_3
 	setPalette 0x03
 	mov [0x01], 0x001E
 
