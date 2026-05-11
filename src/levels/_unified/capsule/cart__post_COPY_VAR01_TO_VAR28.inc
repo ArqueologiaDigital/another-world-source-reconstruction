@@ -156,7 +156,7 @@ DRAW_HERO_SPRITE_BY_VAR09_0E:
 	je [0xF8], 0x02, DRAW_CIN_024
 	je [0xF8], 0x03, DRAW_CIN_025
 	je [0xF8], 0x04, DRAW_CIN_026
-	je [0xF8], 0x05, DRAW_CIN_027
+	je [0xF8], 0x05, DRAW_ALIEN_POSE_0_5
 	je [0xF8], 0x06, DRAW_CIN_028
 	je [0xF8], 0x07, DRAW_CIN_029
 	ret
@@ -220,7 +220,7 @@ DRAW_CIN_026:
 	video offset=CINEMATIC_026, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_027:
+DRAW_ALIEN_POSE_0_5:
 	video offset=CINEMATIC_027, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 

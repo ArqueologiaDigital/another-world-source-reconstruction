@@ -3,19 +3,19 @@ DRAW_ALIEN_SPRITE_BY_VAR09_0E:
 	shr [0xF8], 0x0004
 	and [0xF8], 0x000F
 	jne [0x0E], 0x00, LABEL_84F4
-	je [0xF8], 0x00, DRAW_CIN_102
-	je [0xF8], 0x01, DRAW_CIN_103
-	je [0xF8], 0x02, DRAW_CIN_104
-	je [0xF8], 0x03, DRAW_CIN_105
-	je [0xF8], 0x04, DRAW_CIN_106
-	je [0xF8], 0x05, DRAW_CIN_027
-	je [0xF8], 0x06, DRAW_CIN_107
+	je [0xF8], 0x00, DRAW_ALIEN_POSE_0_1
+	je [0xF8], 0x01, DRAW_ALIEN_POSE_0_2
+	je [0xF8], 0x02, DRAW_ALIEN_POSE_0_3
+	je [0xF8], 0x03, DRAW_ALIEN_POSE_0_4
+	je [0xF8], 0x04, DRAW_ALIEN_POSE_0_6
+	je [0xF8], 0x05, DRAW_ALIEN_POSE_0_5
+	je [0xF8], 0x06, DRAW_ALIEN_POSE_0_7
 	je [0xF8], 0x07, DRAW_CIN_108
 	ret
 
 LABEL_84F4:
 	jne [0x0E], 0x01, LABEL_84FD
-	jmp DRAW_CIN_101
+	jmp DRAW_ALIEN_POSE_0_0
 
 LABEL_84FD:
 	jne [0x0E], 0x02, LABEL_8506
@@ -42,27 +42,27 @@ LABEL_8527:
 LABEL_8534:
 	ret
 
-DRAW_CIN_102:
+DRAW_ALIEN_POSE_0_1:
 	video offset=CINEMATIC_102, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_103:
+DRAW_ALIEN_POSE_0_2:
 	video offset=CINEMATIC_103, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_104:
+DRAW_ALIEN_POSE_0_3:
 	video offset=CINEMATIC_104, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_105:
+DRAW_ALIEN_POSE_0_4:
 	video offset=CINEMATIC_105, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_106:
+DRAW_ALIEN_POSE_0_6:
 	video offset=CINEMATIC_106, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_107:
+DRAW_ALIEN_POSE_0_7:
 	video offset=CINEMATIC_107, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
@@ -70,7 +70,7 @@ DRAW_CIN_108:
 	video offset=CINEMATIC_108, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_101:
+DRAW_ALIEN_POSE_0_0:
 	video offset=CINEMATIC_101, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 

@@ -8894,18 +8894,18 @@ LABEL_5DE1:
 LABEL_5DE7:
 	ret
 
-LABEL_5DE8:
+DRAW_ALIEN_SPRITE_BY_VAR09_0E:
 	mov [0xF8], [0x09]
 	shr [0xF8], 0x0004
 	and [0xF8], 0x000F
 	jne [0x0E], 0x00, LABEL_5E24
-	je [0xF8], 0x00, DRAW_CIN_195
-	je [0xF8], 0x01, DRAW_CIN_196
-	je [0xF8], 0x02, DRAW_CIN_197
-	je [0xF8], 0x03, DRAW_CIN_198
-	je [0xF8], 0x04, DRAW_CIN_199
-	je [0xF8], 0x05, DRAW_CIN_178
-	je [0xF8], 0x06, DRAW_CIN_200
+	je [0xF8], 0x00, DRAW_ALIEN_POSE_0_0
+	je [0xF8], 0x01, DRAW_ALIEN_POSE_0_1
+	je [0xF8], 0x02, DRAW_ALIEN_POSE_0_2
+	je [0xF8], 0x03, DRAW_ALIEN_POSE_0_3
+	je [0xF8], 0x04, DRAW_ALIEN_POSE_0_4
+	je [0xF8], 0x05, DRAW_ALIEN_POSE_0_5
+	je [0xF8], 0x06, DRAW_ALIEN_POSE_0_6
 	ret
 
 LABEL_5E24:
@@ -8947,31 +8947,31 @@ LABEL_5E82:
 LABEL_5E83:
 	db 0x11
 
-DRAW_CIN_195:
+DRAW_ALIEN_POSE_0_0:
 	video offset=CINEMATIC_195, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_196:
+DRAW_ALIEN_POSE_0_1:
 	video offset=CINEMATIC_196, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_197:
+DRAW_ALIEN_POSE_0_2:
 	video offset=CINEMATIC_197, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_198:
+DRAW_ALIEN_POSE_0_3:
 	video offset=CINEMATIC_198, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_199:
+DRAW_ALIEN_POSE_0_4:
 	video offset=CINEMATIC_199, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_178:
+DRAW_ALIEN_POSE_0_5:
 	video offset=CINEMATIC_178, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_200:
+DRAW_ALIEN_POSE_0_6:
 	video offset=CINEMATIC_200, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
@@ -9297,7 +9297,7 @@ LABEL_6213:
 	video type=0, offset=COMMON_VIDEO_160, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_6218:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_161, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_60B4
@@ -9315,7 +9315,7 @@ LABEL_6239:
 	sub [BUDDY_X], 0x0001
 
 LABEL_6246:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_164, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_60B4
@@ -9327,7 +9327,7 @@ LABEL_6255:
 	call LABEL_6020
 
 LABEL_6264:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_165, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_60D1
@@ -9339,7 +9339,7 @@ LABEL_6273:
 	call LABEL_6020
 
 LABEL_6282:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_166, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_60F2
@@ -9352,7 +9352,7 @@ LABEL_6297:
 	call LABEL_6020
 
 LABEL_62A6:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_169, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_610F
@@ -9368,7 +9368,7 @@ LABEL_62C7:
 	video type=0, offset=COMMON_VIDEO_172, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_62CC:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_173, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_6130
@@ -9384,7 +9384,7 @@ LABEL_62ED:
 	video type=0, offset=COMMON_VIDEO_176, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_62F2:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_177, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_6151
@@ -9400,7 +9400,7 @@ LABEL_6313:
 	video type=0, offset=COMMON_VIDEO_180, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_6318:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_181, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_6172
@@ -9416,7 +9416,7 @@ LABEL_6339:
 	video type=0, offset=COMMON_VIDEO_184, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_633E:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_185, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_6193
@@ -9432,7 +9432,7 @@ LABEL_635F:
 	video type=0, offset=COMMON_VIDEO_184, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_6364:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_188, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	add [BUDDY_X], 0x0001
@@ -9450,7 +9450,7 @@ LABEL_638D:
 	video type=0, offset=COMMON_VIDEO_176, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_6392:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_189, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_6151
@@ -9466,7 +9466,7 @@ LABEL_63B3:
 	video type=0, offset=COMMON_VIDEO_172, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_63B8:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_190, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_6130
@@ -9479,7 +9479,7 @@ LABEL_63CD:
 	call LABEL_5FD8
 
 LABEL_63DC:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_191, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_610F
@@ -9491,7 +9491,7 @@ LABEL_63EB:
 	call LABEL_5FF6
 
 LABEL_63FA:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_192, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_60F2
@@ -9503,7 +9503,7 @@ LABEL_6409:
 	call LABEL_6002
 
 LABEL_6418:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_193, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_60D1
@@ -9515,7 +9515,7 @@ LABEL_6427:
 	call LABEL_6020
 
 LABEL_6436:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_194, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_6097
@@ -9527,7 +9527,7 @@ LABEL_6445:
 	call LABEL_6020
 
 LABEL_6454:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_120, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_60D1
@@ -9539,7 +9539,7 @@ LABEL_6463:
 	call LABEL_6002
 
 LABEL_6472:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_120, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_60F2
@@ -9551,7 +9551,7 @@ LABEL_6481:
 	call LABEL_5FF6
 
 LABEL_6490:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_120, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_201_202_203_VAR09
 	call LABEL_610F
@@ -9709,7 +9709,7 @@ LABEL_664B:
 	video type=0, offset=COMMON_VIDEO_219, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_6650:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_220, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61F6
 	add [BUDDY_Y], 0x0001
@@ -9725,7 +9725,7 @@ LABEL_6672:
 	video type=0, offset=COMMON_VIDEO_222, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_6677:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_223, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61B4
 	ret
@@ -9741,7 +9741,7 @@ LABEL_6699:
 	video type=0, offset=COMMON_VIDEO_225, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_669E:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_226, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61BF
 	sub [BUDDY_Y], 0x0001
@@ -9758,7 +9758,7 @@ LABEL_66C4:
 	video type=0, offset=COMMON_VIDEO_228, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_66C9:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_229, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61CA
 	sub [BUDDY_Y], 0x0001
@@ -9774,7 +9774,7 @@ LABEL_66EB:
 	video type=0, offset=COMMON_VIDEO_231, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_66F0:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_232, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61D5
 	ret
@@ -9790,7 +9790,7 @@ LABEL_6712:
 	video type=0, offset=COMMON_VIDEO_228, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_6717:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_234, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61D5
 	add [BUDDY_Y], 0x0001
@@ -9806,7 +9806,7 @@ LABEL_6739:
 	video type=0, offset=COMMON_VIDEO_228, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_673E:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_235, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61CA
 	ret
@@ -9822,7 +9822,7 @@ LABEL_6760:
 	video type=0, offset=COMMON_VIDEO_225, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_6765:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_236, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61E0
 	sub [BUDDY_Y], 0x0001
@@ -9839,7 +9839,7 @@ LABEL_678B:
 	video type=0, offset=COMMON_VIDEO_225, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_6790:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_238, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61EB
 	sub [BUDDY_Y], 0x0001
@@ -9855,7 +9855,7 @@ LABEL_67B2:
 	video type=0, offset=COMMON_VIDEO_222, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_67B7:
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_240, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_X], 0x0001
 	call LABEL_61F6
@@ -10198,7 +10198,7 @@ LABEL_6B46:
 	je [0xF8], 0x02, DRAW_CIN_175
 	je [0xF8], 0x03, DRAW_CIN_176
 	je [0xF8], 0x04, DRAW_CIN_177
-	je [0xF8], 0x05, DRAW_CIN_178
+	je [0xF8], 0x05, DRAW_ALIEN_POSE_0_5
 	je [0xF8], 0x06, DRAW_CIN_179
 	ret
 
@@ -10860,7 +10860,7 @@ LABEL_7230:
 	sub [BUDDY_Y], 0x000D
 	call LABEL_68B5
 	add [BUDDY_Y], 0x000D
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_120, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_610F
 	ret
@@ -10871,7 +10871,7 @@ LABEL_724D:
 	sub [BUDDY_Y], 0x000E
 	call LABEL_68D3
 	add [BUDDY_Y], 0x000E
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_246, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_X], 0x0001
 	call LABEL_610F
@@ -10888,7 +10888,7 @@ LABEL_7293:
 	sub [BUDDY_Y], 0x000D
 	call LABEL_68D3
 	add [BUDDY_Y], 0x000D
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_120, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_610F
 	ret
@@ -10918,7 +10918,7 @@ LABEL_7302:
 
 LABEL_730E:
 	add [BUDDY_Y], 0x000D
-	call LABEL_5DE8
+	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	sub [BUDDY_Y], 0x000D
 	ret
 LABEL_731A:
