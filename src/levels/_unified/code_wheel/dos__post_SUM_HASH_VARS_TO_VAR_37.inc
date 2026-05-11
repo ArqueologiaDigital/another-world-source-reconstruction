@@ -102,35 +102,48 @@ DERIVE_FOUR_POS_25_26_27_28:
 LABEL_0BB8:
 	db 0x11
 
+; Entry point. Copies current cursor position (var25, var26)
+; into the draw vars (var07, var08), sets var24=8 (the
+; per-step pixel delta), and falls into the loop top.
 CODEWHEEL_CURSOR_SMOOTH_MOVE_INIT:
 	mov [0x07], [0x25]
 	mov [0x08], [0x26]
 	mov [0x24], 0x0008
 
+; One iteration of the interpolation. Dispatches to X-
+; direction handler (0BD5 if current > target X) or falls
+; through to Y handling.
 CODEWHEEL_CURSOR_SMOOTH_MOVE_LOOP_TOP:
 	jg [0x25], [0x27], CODEWHEEL_CURSOR_MOVE_X_DEC_STEP
 	add [0x07], [0x24]
 	jl [0x07], [0x27], CODEWHEEL_CURSOR_MOVE_X_DEC_STEP
 	mov [0x07], [0x27]
 
+; Decrement draw-X by var24 (8); clamp to target if step
+; overshoots.
 CODEWHEEL_CURSOR_MOVE_X_DEC_STEP:
 	jl [0x25], [0x27], CODEWHEEL_CURSOR_MOVE_Y_INC_STEP
 	sub [0x07], [0x24]
 	jg [0x07], [0x27], CODEWHEEL_CURSOR_MOVE_Y_INC_STEP
 	mov [0x07], [0x27]
 
+; Increment draw-Y by var24; clamp if overshoot.
 CODEWHEEL_CURSOR_MOVE_Y_INC_STEP:
 	jg [0x26], [0x28], CODEWHEEL_CURSOR_MOVE_Y_DEC_STEP
 	add [0x08], [0x24]
 	jl [0x08], [0x28], CODEWHEEL_CURSOR_MOVE_Y_DEC_STEP
 	mov [0x08], [0x28]
 
+; Decrement draw-Y by var24; clamp if overshoot.
 CODEWHEEL_CURSOR_MOVE_Y_DEC_STEP:
 	jl [0x26], [0x28], CODEWHEEL_CURSOR_MOVE_CHECK_ARRIVED
 	sub [0x08], [0x24]
 	jg [0x08], [0x28], CODEWHEEL_CURSOR_MOVE_CHECK_ARRIVED
 	mov [0x08], [0x28]
 
+; If current draw-pos == target, draw final cursor at the
+; target and commit via SAVE_HERO_INPUT_AND_HASH; otherwise
+; proceed to the intermediate-draw fall-through.
 CODEWHEEL_CURSOR_MOVE_CHECK_ARRIVED:
 	jne [0x07], [0x27], CODEWHEEL_CURSOR_MOVE_INTERMEDIATE_DRAW
 	jne [0x08], [0x28], CODEWHEEL_CURSOR_MOVE_INTERMEDIATE_DRAW
@@ -138,6 +151,8 @@ CODEWHEEL_CURSOR_MOVE_CHECK_ARRIVED:
 	break
 	jmp SAVE_HERO_INPUT_AND_HASH
 
+; Draw the cursor at the current intermediate position;
+; break; loop back to the move-loop top.
 CODEWHEEL_CURSOR_MOVE_INTERMEDIATE_DRAW:
 	video offset=CINEMATIC_077, x=[0x07], y=[0x08]
 	break

@@ -338,6 +338,10 @@ PAL_FADE_UP_9_TO_F:
 	setPalette 0x0E
 	killChannel
 
+; Big branch-table that copies var06 from var0A..var19
+; depending on var05 (0-0xF). The "look up the Nth entry"
+; pattern — likely indexing the per-puzzle expected digit
+; values that get compared against player input.
 CODEWHEEL_LOOKUP_VAR06_FROM_VAR_TABLE_BY_VAR05:
 	jne [0x05], 0x00, LABEL_0246
 	mov [0x06], [0x0A]
@@ -1198,35 +1202,48 @@ DERIVE_FOUR_POS_25_26_27_28:
 LABEL_0BB8:
 	db 0x11
 
+; Entry point. Copies current cursor position (var25, var26)
+; into the draw vars (var07, var08), sets var24=8 (the
+; per-step pixel delta), and falls into the loop top.
 CODEWHEEL_CURSOR_SMOOTH_MOVE_INIT:
 	mov [0x07], [0x25]
 	mov [0x08], [0x26]
 	mov [0x24], 0x0008
 
+; One iteration of the interpolation. Dispatches to X-
+; direction handler (0BD5 if current > target X) or falls
+; through to Y handling.
 CODEWHEEL_CURSOR_SMOOTH_MOVE_LOOP_TOP:
 	jg [0x25], [0x27], CODEWHEEL_CURSOR_MOVE_X_DEC_STEP
 	add [0x07], [0x24]
 	jl [0x07], [0x27], CODEWHEEL_CURSOR_MOVE_X_DEC_STEP
 	mov [0x07], [0x27]
 
+; Decrement draw-X by var24 (8); clamp to target if step
+; overshoots.
 CODEWHEEL_CURSOR_MOVE_X_DEC_STEP:
 	jl [0x25], [0x27], CODEWHEEL_CURSOR_MOVE_Y_INC_STEP
 	sub [0x07], [0x24]
 	jg [0x07], [0x27], CODEWHEEL_CURSOR_MOVE_Y_INC_STEP
 	mov [0x07], [0x27]
 
+; Increment draw-Y by var24; clamp if overshoot.
 CODEWHEEL_CURSOR_MOVE_Y_INC_STEP:
 	jg [0x26], [0x28], CODEWHEEL_CURSOR_MOVE_Y_DEC_STEP
 	add [0x08], [0x24]
 	jl [0x08], [0x28], CODEWHEEL_CURSOR_MOVE_Y_DEC_STEP
 	mov [0x08], [0x28]
 
+; Decrement draw-Y by var24; clamp if overshoot.
 CODEWHEEL_CURSOR_MOVE_Y_DEC_STEP:
 	jl [0x26], [0x28], CODEWHEEL_CURSOR_MOVE_CHECK_ARRIVED
 	sub [0x08], [0x24]
 	jg [0x08], [0x28], CODEWHEEL_CURSOR_MOVE_CHECK_ARRIVED
 	mov [0x08], [0x28]
 
+; If current draw-pos == target, draw final cursor at the
+; target and commit via SAVE_HERO_INPUT_AND_HASH; otherwise
+; proceed to the intermediate-draw fall-through.
 CODEWHEEL_CURSOR_MOVE_CHECK_ARRIVED:
 	jne [0x07], [0x27], CODEWHEEL_CURSOR_MOVE_INTERMEDIATE_DRAW
 	jne [0x08], [0x28], CODEWHEEL_CURSOR_MOVE_INTERMEDIATE_DRAW
@@ -1234,6 +1251,8 @@ CODEWHEEL_CURSOR_MOVE_CHECK_ARRIVED:
 	break
 	jmp SAVE_HERO_INPUT_AND_HASH
 
+; Draw the cursor at the current intermediate position;
+; break; loop back to the move-loop top.
 CODEWHEEL_CURSOR_MOVE_INTERMEDIATE_DRAW:
 	video offset=CINEMATIC_077, x=[0x07], y=[0x08]
 	break
@@ -1358,6 +1377,10 @@ MARK_VAR67_AND_KILL:
 	mov [HACK_VAR_67], 0x0001
 	killChannel
 
+; `mov [HACK_VAR_67], 0x0000 / break / jmp self`. A
+; background channel that continuously pins HACK_VAR_67
+; to 0, used as a scene-state marker while the codewheel
+; entry is active.
 CODEWHEEL_PIN_HACK_VAR67_TO_0:
 	mov [HACK_VAR_67], 0x0000
 	break
@@ -1428,6 +1451,11 @@ LABEL_0DBD:
 	add [0x22], 0x0001
 	add [0x02], 0x0001
 
+; Branch-table that writes var06 (the current entered digit)
+; into var1E, var1F, var20, or var21 depending on var02
+; (the digit position, 1-4). The "store the digit the
+; player just confirmed into the right slot of the four-
+; digit code buffer."
 CODEWHEEL_CAPTURE_DIGIT_INTO_SLOT:
 	jne [0x02], 0x01, LABEL_0DDC
 	mov [0x1E], [0x06]
@@ -1448,6 +1476,10 @@ LABEL_0DF7:
 	call LABEL_0E13
 	mov [0x02], [0x22]
 
+; Compute cursor draw-position from var01 via DERIVE_VAR07_-
+; VAR08_FROM_VAR05, draw CIN_077 (cursor), break, and loop
+; until HERO_ACTION is released; then jmp SAVE_HERO_INPUT_-
+; AND_HASH. The "key-debounce" wait between presses.
 CODEWHEEL_WAIT_ACTION_RELEASE_LOOP:
 	mov [0x05], [0x01]
 	call DERIVE_VAR07_VAR08_FROM_VAR05

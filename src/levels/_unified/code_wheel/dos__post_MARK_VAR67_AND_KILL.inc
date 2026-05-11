@@ -1,3 +1,7 @@
+; `mov [HACK_VAR_67], 0x0000 / break / jmp self`. A
+; background channel that continuously pins HACK_VAR_67
+; to 0, used as a scene-state marker while the codewheel
+; entry is active.
 CODEWHEEL_PIN_HACK_VAR67_TO_0:
 	mov [HACK_VAR_67], 0x0000
 	break
@@ -59,6 +63,11 @@ LABEL_0DBD:
 	add [0x22], 0x0001
 	add [0x02], 0x0001
 
+; Branch-table that writes var06 (the current entered digit)
+; into var1E, var1F, var20, or var21 depending on var02
+; (the digit position, 1-4). The "store the digit the
+; player just confirmed into the right slot of the four-
+; digit code buffer."
 CODEWHEEL_CAPTURE_DIGIT_INTO_SLOT:
 	jne [0x02], 0x01, LABEL_0DDC
 	mov [0x1E], [0x06]
@@ -79,6 +88,10 @@ LABEL_0DF7:
 	call LABEL_0E13
 	mov [0x02], [0x22]
 
+; Compute cursor draw-position from var01 via DERIVE_VAR07_-
+; VAR08_FROM_VAR05, draw CIN_077 (cursor), break, and loop
+; until HERO_ACTION is released; then jmp SAVE_HERO_INPUT_-
+; AND_HASH. The "key-debounce" wait between presses.
 CODEWHEEL_WAIT_ACTION_RELEASE_LOOP:
 	mov [0x05], [0x01]
 	call DERIVE_VAR07_VAR08_FROM_VAR05

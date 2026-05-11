@@ -1,3 +1,7 @@
+; Big branch-table that copies var06 from var0A..var19
+; depending on var05 (0-0xF). The "look up the Nth entry"
+; pattern — likely indexing the per-puzzle expected digit
+; values that get compared against player input.
 CODEWHEEL_LOOKUP_VAR06_FROM_VAR_TABLE_BY_VAR05:
 	jne [0x05], 0x00, LABEL_0246
 	mov [0x06], [0x0A]
