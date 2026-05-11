@@ -1186,6 +1186,10 @@ ENDING_HOLD_PAGE_80_BLACK_INFINITE:
 	break
 	jmp ENDING_HOLD_PAGE_80_BLACK_INFINITE
 
+; Emit current framebuffer; if SCROLL_Y has wrapped past
+; -200 (jg 0xFF38), jump direct to the 80-over-83 renderer;
+; otherwise advance SCROLL_Y by 200 and run the 83-over-80
+; renderer.
 CREDITS_SCROLL_BLIT_FRAME_THEN_RENDER_83_OVER_80:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
@@ -1193,6 +1197,9 @@ CREDITS_SCROLL_BLIT_FRAME_THEN_RENDER_83_OVER_80:
 	add [SCROLL_Y], 0x00C8
 	jmp CREDITS_SCROLL_RENDER_PAGE_83_OVER_80
 
+; Composite frame: copy page 80 at current SCROLL_Y, then
+; page 83 at SCROLL_Y+200; break; jump back to the
+; 83-over-80 blit step.
 CREDITS_SCROLL_RENDER_PAGE_80_OVER_83:
 	copyVideoPage src=0x80, dst=0xFF
 	add [SCROLL_Y], 0x00C8
@@ -1201,6 +1208,9 @@ CREDITS_SCROLL_RENDER_PAGE_80_OVER_83:
 	break
 	jmp CREDITS_SCROLL_BLIT_FRAME_THEN_RENDER_83_OVER_80
 
+; Mirror of 0AED, but the dispatch falls to the 80-over-83
+; renderer in the wrap case and to the alternate (83-over-80)
+; otherwise.
 CREDITS_SCROLL_BLIT_FRAME_THEN_RENDER_80_OVER_83:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
@@ -1208,6 +1218,8 @@ CREDITS_SCROLL_BLIT_FRAME_THEN_RENDER_80_OVER_83:
 	add [SCROLL_Y], 0x00C8
 	jmp CREDITS_SCROLL_RENDER_PAGE_80_OVER_83
 
+; Composite frame: page 83 at SCROLL_Y, page 80 at
+; SCROLL_Y+200; break; loop back to the 80-over-83 blit step.
 CREDITS_SCROLL_RENDER_PAGE_83_OVER_80:
 	copyVideoPage src=0x83, dst=0xFF
 	add [SCROLL_Y], 0x00C8
