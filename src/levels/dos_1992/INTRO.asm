@@ -2264,9 +2264,9 @@ INTRO_FILL_AND_DRAW_413_414:
 	killChannel
 
 LABEL_105A:
-	setup channel=0x06, address=LABEL_11AA
-	setup channel=0x07, address=LABEL_11BD
-	setup channel=0x03, address=LABEL_1197
+	setup channel=0x06, address=ANIM_CIN_439_440_441_AT_160_100
+	setup channel=0x07, address=ANIM_CIN_435_436_437_AT_160_100
+	setup channel=0x03, address=ANIM_CIN_432_433_434_AT_160_100
 	setup channel=0x01, address=LABEL_1183
 	mov [0x03], 0x00C3
 	mov [0x04], 0x0064
@@ -2384,29 +2384,29 @@ LABEL_118D:
 LABEL_1196:
 	db 0x11
 
-LABEL_1197:
+ANIM_CIN_432_433_434_AT_160_100:
 	video offset=CINEMATIC_432, x=160, y=100
 	break
 	video offset=CINEMATIC_433, x=160, y=100
 	break
 	video offset=CINEMATIC_434, x=160, y=100
 	break
-	jmp LABEL_1197
+	jmp ANIM_CIN_432_433_434_AT_160_100
 DRAW_CITY_SEQ_432_433:
 	db 0x11
 
-LABEL_11AA:
+ANIM_CIN_439_440_441_AT_160_100:
 	video offset=CINEMATIC_439, x=160, y=100
 	break
 	video offset=CINEMATIC_440, x=160, y=100
 	break
 	video offset=CINEMATIC_441, x=160, y=100
 	break
-	jmp LABEL_11AA
+	jmp ANIM_CIN_439_440_441_AT_160_100
 DRAW_CITY_SEQ_439_440:
 	db 0x11
 
-LABEL_11BD:
+ANIM_CIN_435_436_437_AT_160_100:
 	video offset=CINEMATIC_435, x=160, y=100
 	break
 	video offset=CINEMATIC_436, x=160, y=100
@@ -2415,7 +2415,7 @@ LABEL_11BD:
 	break
 	video offset=CINEMATIC_438, x=160, y=100
 	break
-	jmp LABEL_11BD
+	jmp ANIM_CIN_435_436_437_AT_160_100
 LABEL_11D4:
 	db 0x11
 
@@ -2600,17 +2600,17 @@ LABEL_138D:
 LABEL_139C:
 	break
 	text id=0x0035, x=2, y=140, color=0x06 ; "- RESULT:\nProbability of creating:\n ANTIMATTER: 91.V %\n NEUTRINO 27:  0.04 %\n NEUTRINO 424: 18 %\n"
-	jg [MUS_MARK], 0x20, LABEL_13C2
+	jg [MUS_MARK], 0x20, INTRO_EXPERIMENT_COUNTDOWN_TEXT_SETUP
 	djnz [0x01], LABEL_139C
 	mov [0x01], 0x000A
 
 LABEL_13B1:
 	break
 	text id=0x0036, x=2, y=80, color=0x06 ; "   Practical verification Y/N ?"
-	jg [MUS_MARK], 0x20, LABEL_13C2
+	jg [MUS_MARK], 0x20, INTRO_EXPERIMENT_COUNTDOWN_TEXT_SETUP
 	djnz [0x01], LABEL_13B1
 
-LABEL_13C2:
+INTRO_EXPERIMENT_COUNTDOWN_TEXT_SETUP:
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0x00
@@ -3408,7 +3408,7 @@ LIFT_DOORS_FINAL_FRAME_TRANSITION:
 	selectVideoPage 0xFF
 	killChannel
 
-LABEL_1BAF:
+DRAW_CIN_505_506_507_STACKED_VERT_AT_X153:
 	mov [0x02], [0x01]
 	video offset=CINEMATIC_505, x=153, y=[0x02]
 	add [0x02], 0x0186
@@ -3418,7 +3418,7 @@ LABEL_1BAF:
 	add [0x02], 0x0183
 	video offset=CINEMATIC_508, x=153, y=[0x02]
 	break
-	jmp LABEL_1BAF
+	jmp DRAW_CIN_505_506_507_STACKED_VERT_AT_X153
 	killChannel
 	break
 	killChannel
@@ -3442,7 +3442,7 @@ LABEL_1BEA:
 	selectVideoPage 0xFF
 	break
 	djnz [0x04], LABEL_1BEA
-	setup channel=0x06, address=LABEL_1CC1
+	setup channel=0x06, address=ANIM_CIN_450_451_452_AT_160_100
 	killChannel
 
 ; Multi-step scene init: pause slices, vars, fill page 0xFF
@@ -3536,14 +3536,14 @@ LABEL_1CAF:
 LABEL_1CC0:
 	db 0x11
 
-LABEL_1CC1:
+ANIM_CIN_450_451_452_AT_160_100:
 	video offset=CINEMATIC_450, x=160, y=100
 	break
 	video offset=CINEMATIC_451, x=160, y=100
 	break
 	video offset=CINEMATIC_452, x=160, y=100
 	break
-	jmp LABEL_1CC1
+	jmp ANIM_CIN_450_451_452_AT_160_100
 LABEL_1CD3:
 	db 0x11
 
@@ -3712,7 +3712,7 @@ LABEL_1E67:
 	break
 	djnz [0x01], LABEL_1E67
 	setup channel=0x02, address=LABEL_1A12
-	setup channel=0x03, address=LABEL_1BAF
+	setup channel=0x03, address=DRAW_CIN_505_506_507_STACKED_VERT_AT_X153
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
@@ -3951,7 +3951,7 @@ LABEL_20DB:
 	djnz [0x03], LABEL_20BD
 	video offset=CINEMATIC_128, x=160, y=111, zoom=[0x04]
 	setup channel=0x08, address=LESTER_WALKING_AWAY_FROM_CAMERA_ANIMATION
-	setup channel=0x09, address=LABEL_21C9
+	setup channel=0x09, address=DRAW_CIN_126_127_AT_X160_VAR_YS_FOREVER
 	setup channel=0x05, address=CH_05_INIT_VARS_06_07_08
 	mov [0x03], 0x0007
 
@@ -4041,11 +4041,11 @@ LABEL_21C0:
 LABEL_21C8:
 	db 0x11
 
-LABEL_21C9:
+DRAW_CIN_126_127_AT_X160_VAR_YS_FOREVER:
 	video offset=CINEMATIC_126, x=160, y=[0x01]
 	video offset=CINEMATIC_127, x=160, y=[0x02]
 	break
-	jmp LABEL_21C9
+	jmp DRAW_CIN_126_127_AT_X160_VAR_YS_FOREVER
 LABEL_21D7:
 	db 0x11
 
