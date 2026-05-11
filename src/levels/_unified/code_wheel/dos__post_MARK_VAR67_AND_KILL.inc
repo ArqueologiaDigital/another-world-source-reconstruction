@@ -108,16 +108,16 @@ LABEL_0E13:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_078, x=[0x07], y=[0x08]
 	mov [0x06], [0x1E]
-	call DRAW_CIN_073_IF_VAR06_EQ_1
+	call DRAW_CODEWHEEL_SYMBOL_BY_VAR06
 	add [0x07], 0x0028
 	mov [0x06], [0x1F]
-	call DRAW_CIN_073_IF_VAR06_EQ_1
+	call DRAW_CODEWHEEL_SYMBOL_BY_VAR06
 	add [0x07], 0x0028
 	mov [0x06], [0x20]
-	call DRAW_CIN_073_IF_VAR06_EQ_1
+	call DRAW_CODEWHEEL_SYMBOL_BY_VAR06
 	add [0x07], 0x0028
 	mov [0x06], [0x21]
-	call DRAW_CIN_073_IF_VAR06_EQ_1
+	call DRAW_CODEWHEEL_SYMBOL_BY_VAR06
 	selectVideoPage 0xFF
 	ret
 

@@ -1,4 +1,4 @@
-DRAW_CIN_073_IF_VAR06_EQ_1:
+DRAW_CODEWHEEL_SYMBOL_BY_VAR06:
 	jne [0x06], 0x01, LABEL_0C00
 	video offset=CINEMATIC_048, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
