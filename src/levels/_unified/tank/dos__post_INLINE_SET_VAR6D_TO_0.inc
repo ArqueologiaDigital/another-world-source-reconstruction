@@ -29,9 +29,9 @@ TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x23, address=INIT_VAR1_NEG50_PLAY_8B_TWICE
 	setup channel=0x24, address=TANK_WAIT_UNTIL_VAR41_POSITIVE_LOOP
 	setup channel=0x25, address=TANK_DEC_VAR37_THEN_SET_VAR39_40_RESET_POSITION
-	setup channel=0x28, address=LABEL_0866
+	setup channel=0x28, address=TANK_WAIT_VAR63_THEN_RESET_PAGES_AND_UNFREEZE
 	setup channel=0x2A, address=INLINE_SET_VAR6B_TO_50
-	setup channel=0x2F, address=LABEL_0743
+	setup channel=0x2F, address=TANK_DEC_VAR69_THEN_SETUP_CIN_119_CH37
 	setup channel=0x30, address=WAIT_VAR45_PLAY_8C_DRAW_CIN_011
 	setup channel=0x31, address=WAIT_VAR46_PLAY_8E_DRAW_CIN_056
 	setup channel=0x35, address=INLINE_SET_VAR66_TO_32

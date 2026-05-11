@@ -330,9 +330,9 @@ TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x23, address=INIT_VAR1_NEG50_PLAY_8B_TWICE
 	setup channel=0x24, address=TANK_WAIT_UNTIL_VAR41_POSITIVE_LOOP
 	setup channel=0x25, address=TANK_DEC_VAR37_THEN_SET_VAR39_40_RESET_POSITION
-	setup channel=0x28, address=LABEL_0866
+	setup channel=0x28, address=TANK_WAIT_VAR63_THEN_RESET_PAGES_AND_UNFREEZE
 	setup channel=0x2A, address=INLINE_SET_VAR6B_TO_50
-	setup channel=0x2F, address=LABEL_0743
+	setup channel=0x2F, address=TANK_DEC_VAR69_THEN_SETUP_CIN_119_CH37
 	setup channel=0x30, address=TANK_SHOT_ANIM_CIN082_085_TRIGGER_VAR45
 	setup channel=0x31, address=TANK_SHOT_ANIM_CENTERED_TRIGGER_VAR46
 	setup channel=0x35, address=INLINE_SET_VAR66_TO_32
@@ -394,7 +394,7 @@ RESET_PAGES_AND_SETUP_CH_0A:
 	killChannel
 	copyVideoPage src=0x03, dst=0x00
 	killChannel
-	setup channel=0x0A, address=LABEL_0113
+	setup channel=0x0A, address=TANK_DRAW_CIN_087_THREE_VARYING_POSITIONS
 
 LABEL_0102:
 	video offset=CINEMATIC_037, x=160, y=100
@@ -408,14 +408,14 @@ LABEL_010A:
 LABEL_0112:
 	db 0x11
 
-LABEL_0113:
+TANK_DRAW_CIN_087_THREE_VARYING_POSITIONS:
 	video offset=CINEMATIC_087, x=81, y=131
 	break
 	video offset=CINEMATIC_087, x=96, y=121
 	break
 	video offset=CINEMATIC_087, x=86, y=127
 	break
-	jmp LABEL_0113
+	jmp TANK_DRAW_CIN_087_THREE_VARYING_POSITIONS
 LABEL_0125:
 	db 0x11
 
@@ -808,7 +808,7 @@ CAPSULE_DOME_LOCKED_REDRAW_LOOP:
 LABEL_051F:
 	db 0x11
 
-LABEL_0520:
+TANK_ANIM_CIN_129_130_131_AT_VAR_POS_ZOOM:
 	video offset=CINEMATIC_129, x=[0x6f], y=[0x6c], zoom=[0x6a]
 	video offset=CINEMATIC_130, x=[0x6f], y=[0x6c], zoom=[0x6a]
 	break
@@ -827,16 +827,16 @@ LABEL_0520:
 	video offset=CINEMATIC_131, x=[0x6f], y=[0x6c], zoom=[0x6a]
 	video offset=CINEMATIC_130, x=[0x6f], y=[0x6c], zoom=[0x6a]
 	break
-	jmp LABEL_0520
+	jmp TANK_ANIM_CIN_129_130_131_AT_VAR_POS_ZOOM
 LABEL_0571:
 	db 0x11
 
 INLINE_SET_VAR6B_TO_50:
 	mov [0x6B], 0x0050
 
-LABEL_0576:
+TANK_DJNZ_VAR6B_THEN_INIT_VAR6A_6C_6F_POSITION:
 	break
-	djnz [0x6B], LABEL_0576
+	djnz [0x6B], TANK_DJNZ_VAR6B_THEN_INIT_VAR6A_6C_6F_POSITION
 	mov [0x6A], 0x0040
 	mov [0x6C], 0x008F
 	mov [0x6F], 0x00A0
@@ -844,7 +844,7 @@ LABEL_0576:
 	mov [0x6F], 0x0078
 
 LABEL_0591:
-	setup channel=0x34, address=LABEL_0520
+	setup channel=0x34, address=TANK_ANIM_CIN_129_130_131_AT_VAR_POS_ZOOM
 	mov [0x6B], 0x000A
 
 LABEL_0599:
@@ -880,7 +880,7 @@ LABEL_05E8:
 	setup channel=0x3C, address=TANK_SCREEN_FLASH_PALETTE_1F_TO_01
 	mov [0x6B], 0x0002
 	add [0x6E], 0x0001
-	jl [0x6E], 0x03, LABEL_0576
+	jl [0x6E], 0x03, TANK_DJNZ_VAR6B_THEN_INIT_VAR6A_6C_6F_POSITION
 	setup channel=0x34, address=RESET_PAGES_AND_SETUP_CH_0A
 	killChannel
 
@@ -944,10 +944,10 @@ LABEL_0675:
 	selectVideoPage 0xFF
 	killChannel
 
-LABEL_068A:
+TANK_DRAW_CIN_119_AT_160_100_FOREVER:
 	video offset=CINEMATIC_119, x=160, y=100
 	break
-	jmp LABEL_068A
+	jmp TANK_DRAW_CIN_119_AT_160_100_FOREVER
 
 LABEL_0692:
 	video offset=CINEMATIC_106, x=160, y=100
@@ -1001,11 +1001,11 @@ LABEL_0692:
 LABEL_0742:
 	db 0x11
 
-LABEL_0743:
+TANK_DEC_VAR69_THEN_SETUP_CIN_119_CH37:
 	break
 	sub [0x69], 0x0001
-	jg [0x69], 0x00, LABEL_0743
-	setup channel=0x37, address=LABEL_068A
+	jg [0x69], 0x00, TANK_DEC_VAR69_THEN_SETUP_CIN_119_CH37
+	setup channel=0x37, address=TANK_DRAW_CIN_119_AT_160_100_FOREVER
 	setup channel=0x35, address=LABEL_0692
 	killChannel
 
@@ -1085,7 +1085,7 @@ LABEL_0818:
 
 LABEL_0826:
 	break
-	call LABEL_0854
+	call TANK_AUTO_TRIGGER_HERO_ACTION_IF_VAR_DB_SET
 	jne [HERO_ACTION], 0x00, LABEL_0826
 	setPalette 0x1D
 
@@ -1094,20 +1094,20 @@ LABEL_0833:
 	text id=0x013C, x=5, y=180, color=0x0D ; "        ACCESS CODE:"
 	text id=0x016A, x=26, y=180, color=0x0E ; "CKJL"
 	break
-	call LABEL_0854
+	call TANK_AUTO_TRIGGER_HERO_ACTION_IF_VAR_DB_SET
 	je [HERO_ACTION], 0x00, LABEL_0833
 	setup channel=0x00, address=LABEL_0004
 	killChannel
 
-LABEL_0854:
+TANK_AUTO_TRIGGER_HERO_ACTION_IF_VAR_DB_SET:
 	je [0xDB], 0x00, TANK_NOOP_RET
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, TANK_NOOP_RET
 	mov [HERO_ACTION], 0x0001
 	ret
 
-LABEL_0866:
+TANK_WAIT_VAR63_THEN_RESET_PAGES_AND_UNFREEZE:
 	break
-	je [0x63], 0x00, LABEL_0866
+	je [0x63], 0x00, TANK_WAIT_VAR63_THEN_RESET_PAGES_AND_UNFREEZE
 	setup channel=0x35, address=RESET_PAGES_AND_SETUP_CH_0A
 	setup channel=0x01, address=RESET_PAGES_AND_SETUP_CH_0A
 	unfreezeChannels first=0x00, last=0x22
@@ -1188,9 +1188,9 @@ TANK_TURRET_ANGLE_STATE_DISPATCH:
 LABEL_094C:
 	je [0x5F], 0x1E, SET_VAR5F_TO_0016
 	jg [0x5F], 0x1E, COPY_VAR62_TO_VAR5F
-	je [0x5F], 0x20, LABEL_0A17
+	je [0x5F], 0x20, TANK_SET_VAR5F_TO_22_OR_1B_PER_VAR62
 	je [0x5F], 0x21, SET_VAR5F_TO_0018
-	je [0x5F], 0x23, LABEL_0A17
+	je [0x5F], 0x23, TANK_SET_VAR5F_TO_22_OR_1B_PER_VAR62
 	je [0x5F], 0x0F, TANK_APPLY_LEFT_RIGHT_INPUT_TO_TURRET
 	je [0x5F], 0x17, TANK_APPLY_LEFT_RIGHT_INPUT_TO_TURRET
 	je [0x5F], 0x00, COPY_VAR62_TO_VAR5F
@@ -1227,7 +1227,7 @@ LABEL_09C8:
 	je [0x5F], 0x19, COPY_VAR62_TO_VAR5F
 	ret
 
-LABEL_0A17:
+TANK_SET_VAR5F_TO_22_OR_1B_PER_VAR62:
 	je [0x62], 0x22, SET_VAR5F_TO_001B
 	mov [0x5F], 0x0022
 	ret

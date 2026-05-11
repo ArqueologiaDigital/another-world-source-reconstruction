@@ -104,10 +104,10 @@ LABEL_0692:
 LABEL_0742:
 	db 0x11
 
-LABEL_0743:
+TANK_DEC_VAR69_THEN_SETUP_CIN_119_CH37:
 	break
 	sub [0x69], 0x0001
-	jg [0x69], 0x00, LABEL_0743
+	jg [0x69], 0x00, TANK_DEC_VAR69_THEN_SETUP_CIN_119_CH37
 	setup channel=0x37, address=HANG_DRAW_CIN_119
 	setup channel=0x35, address=LABEL_0692
 	killChannel
@@ -188,7 +188,7 @@ LABEL_0818:
 
 LABEL_0826:
 	break
-	call LABEL_0854
+	call TANK_AUTO_TRIGGER_HERO_ACTION_IF_VAR_DB_SET
 	jne [HERO_ACTION], 0x00, LABEL_0826
 	setPalette 0x1D
 
@@ -197,20 +197,20 @@ LABEL_0833:
 	text id=0x013C, x=5, y=180, color=0x0D ; "        ACCESS CODE:"
 	text id=0x016A, x=26, y=180, color=0x0E ; "CKJL"
 	break
-	call LABEL_0854
+	call TANK_AUTO_TRIGGER_HERO_ACTION_IF_VAR_DB_SET
 	je [HERO_ACTION], 0x00, LABEL_0833
 	setup channel=0x00, address=LABEL_0004
 	killChannel
 
-LABEL_0854:
+TANK_AUTO_TRIGGER_HERO_ACTION_IF_VAR_DB_SET:
 	je [0xDB], 0x00, SHARED_RET
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, SHARED_RET
 	mov [HERO_ACTION], 0x0001
 	ret
 
-LABEL_0866:
+TANK_WAIT_VAR63_THEN_RESET_PAGES_AND_UNFREEZE:
 	break
-	je [0x63], 0x00, LABEL_0866
+	je [0x63], 0x00, TANK_WAIT_VAR63_THEN_RESET_PAGES_AND_UNFREEZE
 	setup channel=0x35, address=RESET_PAGES_AND_SETUP_CH_0A
 	setup channel=0x01, address=RESET_PAGES_AND_SETUP_CH_0A
 	unfreezeChannels first=0x00, last=0x22

@@ -11,7 +11,7 @@ RESET_PAGES_AND_SETUP_CH_0A:
 	killChannel
 	copyVideoPage src=0x03, dst=0x00
 	killChannel
-	setup channel=0x0A, address=LABEL_0113
+	setup channel=0x0A, address=TANK_DRAW_CIN_087_THREE_VARYING_POSITIONS
 
 HANG_DRAW_CIN_037:
 	video offset=CINEMATIC_037, x=160, y=100
@@ -25,14 +25,14 @@ HANG_DRAW_CIN_036:
 LABEL_0112:
 	db 0x11
 
-LABEL_0113:
+TANK_DRAW_CIN_087_THREE_VARYING_POSITIONS:
 	video offset=CINEMATIC_087, x=81, y=131
 	break
 	video offset=CINEMATIC_087, x=96, y=121
 	break
 	video offset=CINEMATIC_087, x=86, y=127
 	break
-	jmp LABEL_0113
+	jmp TANK_DRAW_CIN_087_THREE_VARYING_POSITIONS
 LABEL_0125:
 	db 0x11
 
@@ -425,7 +425,7 @@ CAPSULE_DOME_LOCKED_REDRAW_LOOP:
 LABEL_051F:
 	db 0x11
 
-LABEL_0520:
+TANK_ANIM_CIN_129_130_131_AT_VAR_POS_ZOOM:
 	video offset=CINEMATIC_129, x=[0x6f], y=[0x6c], zoom=[0x6a]
 	video offset=CINEMATIC_130, x=[0x6f], y=[0x6c], zoom=[0x6a]
 	break
@@ -444,6 +444,6 @@ LABEL_0520:
 	video offset=CINEMATIC_131, x=[0x6f], y=[0x6c], zoom=[0x6a]
 	video offset=CINEMATIC_130, x=[0x6f], y=[0x6c], zoom=[0x6a]
 	break
-	jmp LABEL_0520
+	jmp TANK_ANIM_CIN_129_130_131_AT_VAR_POS_ZOOM
 LABEL_0571:
 	db 0x11

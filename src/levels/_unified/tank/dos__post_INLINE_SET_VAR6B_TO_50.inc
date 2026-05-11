@@ -8,7 +8,7 @@ DELAY_LOOP_VAR6B:
 	mov [0x6F], 0x0078
 
 LABEL_0591:
-	setup channel=0x34, address=LABEL_0520
+	setup channel=0x34, address=TANK_ANIM_CIN_129_130_131_AT_VAR_POS_ZOOM
 	mov [0x6B], 0x000A
 
 LABEL_0599:
