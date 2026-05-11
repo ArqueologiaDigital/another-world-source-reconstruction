@@ -318,7 +318,7 @@ LABEL_0004:
 TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x3C, address=TANK_FRAME_RENDER_FROM_PAGE_3_LOOP
 	setup channel=0x02, address=TANK_BG_ANIM_CIN221_222_BOOT_CHANNEL_02
-	setup channel=0x04, address=LABEL_15E3
+	setup channel=0x04, address=TANK_WAIT_DECREMENT_VAR4F_LOOP
 	setup channel=0x0A, address=LABEL_1924
 	setup channel=0x0B, address=TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C
 	setup channel=0x0E, address=TANK_SHOT_ANIM_CIN200_203_TRIGGER_VAR4E
@@ -328,7 +328,7 @@ TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x21, address=LABEL_121F
 	setup channel=0x22, address=TANK_SHOT_ANIM_ARC_TRIGGER_VAR56
 	setup channel=0x23, address=INIT_VAR1_NEG50_PLAY_8B_TWICE
-	setup channel=0x24, address=LABEL_17AB
+	setup channel=0x24, address=TANK_WAIT_UNTIL_VAR41_POSITIVE_LOOP
 	setup channel=0x25, address=LABEL_1421
 	setup channel=0x28, address=LABEL_0866
 	setup channel=0x2A, address=INLINE_SET_VAR6B_TO_50
@@ -1447,13 +1447,13 @@ DRAW_CIN_SEQ_165_166_167:
 	video offset=CINEMATIC_167, x=160, y=100
 	ret
 
-LABEL_0C05:
+TANK_DRAW_CIN_165_166_167_UNTIL_VAR5C_SET:
 	jne [0x5C], 0xFFFF, LABEL_0C19
 	mov [0x5D], [0x60]
 	mov [0x5E], [0x61]
 	call DRAW_CIN_SEQ_165_166_167
 	break
-	jmp LABEL_0C05
+	jmp TANK_DRAW_CIN_165_166_167_UNTIL_VAR5C_SET
 
 LABEL_0C19:
 	mov [0x59], [0x5C]
@@ -1468,7 +1468,7 @@ LABEL_0C19:
 	call DRAW_CIN_SEQ_165_166_167
 	break
 	mov [0x5C], 0xFFFF
-	jmp LABEL_0C05
+	jmp TANK_DRAW_CIN_165_166_167_UNTIL_VAR5C_SET
 LABEL_0C43:
 	db 0x11
 
@@ -2223,11 +2223,11 @@ LABEL_143C:
 	call TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL
 	break
 	add [0x38], 0x0001
-	call LABEL_14FA
+	call TANK_DRAW_CIN_156_157_PAIR_IF_GUARDS_PASS
 	call TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL
 	break
 	add [0x38], 0x0001
-	call LABEL_1511
+	call TANK_DRAW_CIN_158_159_PAIR_IF_GUARDS_PASS
 	call TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL
 	break
 	add [0x38], 0x0001
@@ -2235,11 +2235,11 @@ LABEL_143C:
 	call TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL
 	break
 	sub [0x38], 0x0001
-	call LABEL_1511
+	call TANK_DRAW_CIN_158_159_PAIR_IF_GUARDS_PASS
 	call TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL
 	break
 	sub [0x38], 0x0001
-	call LABEL_14FA
+	call TANK_DRAW_CIN_156_157_PAIR_IF_GUARDS_PASS
 	call TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL
 	break
 	sub [0x38], 0x0001
@@ -2278,14 +2278,14 @@ LABEL_14E3:
 	video offset=CINEMATIC_155, x=[0x39], y=[0x3a]
 	ret
 
-LABEL_14FA:
+TANK_DRAW_CIN_156_157_PAIR_IF_GUARDS_PASS:
 	video offset=CINEMATIC_156, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, TANK_NOOP_RET
 	jne [0x45], 0x00, TANK_NOOP_RET
 	video offset=CINEMATIC_157, x=[0x39], y=[0x3a]
 	ret
 
-LABEL_1511:
+TANK_DRAW_CIN_158_159_PAIR_IF_GUARDS_PASS:
 	video offset=CINEMATIC_158, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, TANK_NOOP_RET
 	jne [0x45], 0x00, TANK_NOOP_RET
@@ -2362,9 +2362,9 @@ LABEL_15DB:
 LABEL_15E2:
 	db 0x11
 
-LABEL_15E3:
+TANK_WAIT_DECREMENT_VAR4F_LOOP:
 	break
-	je [0x4F], 0x00, LABEL_15E3
+	je [0x4F], 0x00, TANK_WAIT_DECREMENT_VAR4F_LOOP
 	sub [0x4F], 0x0001
 
 INIT_VARS_50_NEG40_51_32:
@@ -2457,10 +2457,10 @@ LABEL_16CF:
 LABEL_16D4:
 	db 0x11
 
-LABEL_16D5:
+TANK_DRAW_CIN_029_AT_VAR0F_10_FOREVER:
 	video offset=CINEMATIC_029, x=[0x0f], y=[0x10]
 	break
-	jmp LABEL_16D5
+	jmp TANK_DRAW_CIN_029_AT_VAR0F_10_FOREVER
 
 LABEL_16DE:
 	video offset=CINEMATIC_030, x=[0x01], y=[0x02]
@@ -2546,10 +2546,10 @@ TANK_SHOT_ANIM_ARC_TRIGGER_VAR56:
 	video offset=CINEMATIC_078, x=264, y=103
 	killChannel
 
-LABEL_17AB:
+TANK_WAIT_UNTIL_VAR41_POSITIVE_LOOP:
 	jg [0x41], 0x00, LABEL_17B5
 	break
-	jmp LABEL_17AB
+	jmp TANK_WAIT_UNTIL_VAR41_POSITIVE_LOOP
 
 LABEL_17B5:
 	video offset=CINEMATIC_079, x=135, y=100
@@ -2650,9 +2650,9 @@ LABEL_18B2:
 	play id=0x008B, freq=0x22, vol=0x00, channel=0x01
 	play id=0x0084, freq=0x14, vol=0x20, channel=0x02
 	play id=0x0084, freq=0x0F, vol=0x10, channel=0x03
-	setup channel=0x39, address=LABEL_16D5
+	setup channel=0x39, address=TANK_DRAW_CIN_029_AT_VAR0F_10_FOREVER
 	setup channel=0x01, address=LABEL_0C44
-	setup channel=0x3B, address=LABEL_0C05
+	setup channel=0x3B, address=TANK_DRAW_CIN_165_166_167_UNTIL_VAR5C_SET
 	selectVideoPage 0x03
 	call DRAW_CIN_093_TO_097_VAR
 	selectVideoPage 0x00
@@ -2676,9 +2676,9 @@ LABEL_1924:
 	setup channel=0x15, address=LABEL_1B75
 	setup channel=0x16, address=LABEL_19BE
 	setup channel=0x17, address=ALTERNATE_VAR06_VAR04_TIMING
-	setup channel=0x18, address=LABEL_19EA
+	setup channel=0x18, address=TANK_SAVE_VARS_04_TO_09_INTO_1A_TO_1F
 	setup channel=0x19, address=LABEL_1ADA
-	setup channel=0x1A, address=LABEL_1A16
+	setup channel=0x1A, address=TANK_SAVE_VARS_04_TO_09_INTO_20_TO_25
 	mov [0x14], 0x0028
 	mov [0x15], 0x0071
 	mov [0x16], 0x0040
@@ -2744,7 +2744,7 @@ LABEL_19BE:
 LABEL_19E9:
 	db 0x11
 
-LABEL_19EA:
+TANK_SAVE_VARS_04_TO_09_INTO_1A_TO_1F:
 	mov [0x1A], [0x07]
 	mov [0x1B], [0x08]
 	mov [0x1C], [0x09]
@@ -2759,11 +2759,11 @@ LABEL_19EA:
 	mov [0x05], [0x24]
 	mov [0x04], [0x25]
 	break
-	jmp LABEL_19EA
+	jmp TANK_SAVE_VARS_04_TO_09_INTO_1A_TO_1F
 LABEL_1A15:
 	db 0x11
 
-LABEL_1A16:
+TANK_SAVE_VARS_04_TO_09_INTO_20_TO_25:
 	mov [0x20], [0x07]
 	mov [0x21], [0x08]
 	mov [0x22], [0x09]
@@ -2772,7 +2772,7 @@ LABEL_1A16:
 	mov [0x25], [0x04]
 	call PROJECT_AND_DRAW_TWICE_Y_PLUS_9
 	break
-	jmp LABEL_1A16
+	jmp TANK_SAVE_VARS_04_TO_09_INTO_20_TO_25
 LABEL_1A2F:
 	db 0x11
 

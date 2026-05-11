@@ -43,9 +43,9 @@ LABEL_1924:
 	setup channel=0x15, address=LABEL_1B75
 	setup channel=0x16, address=LABEL_19BE
 	setup channel=0x17, address=ALTERNATE_VAR06_VAR04_TIMING
-	setup channel=0x18, address=LABEL_19EA
+	setup channel=0x18, address=TANK_SAVE_VARS_04_TO_09_INTO_1A_TO_1F
 	setup channel=0x19, address=LABEL_1ADA
-	setup channel=0x1A, address=LABEL_1A16
+	setup channel=0x1A, address=TANK_SAVE_VARS_04_TO_09_INTO_20_TO_25
 	mov [0x14], 0x0028
 	mov [0x15], 0x0071
 	mov [0x16], 0x0040
@@ -111,7 +111,7 @@ LABEL_19BE:
 LABEL_19E9:
 	db 0x11
 
-LABEL_19EA:
+TANK_SAVE_VARS_04_TO_09_INTO_1A_TO_1F:
 	mov [0x1A], [0x07]
 	mov [0x1B], [0x08]
 	mov [0x1C], [0x09]
@@ -126,11 +126,11 @@ LABEL_19EA:
 	mov [0x05], [0x24]
 	mov [0x04], [0x25]
 	break
-	jmp LABEL_19EA
+	jmp TANK_SAVE_VARS_04_TO_09_INTO_1A_TO_1F
 LABEL_1A15:
 	db 0x11
 
-LABEL_1A16:
+TANK_SAVE_VARS_04_TO_09_INTO_20_TO_25:
 	mov [0x20], [0x07]
 	mov [0x21], [0x08]
 	mov [0x22], [0x09]
@@ -139,7 +139,7 @@ LABEL_1A16:
 	mov [0x25], [0x04]
 	call PROJECT_AND_DRAW_TWICE_Y_PLUS_9
 	break
-	jmp LABEL_1A16
+	jmp TANK_SAVE_VARS_04_TO_09_INTO_20_TO_25
 LABEL_1A2F:
 	db 0x11
 

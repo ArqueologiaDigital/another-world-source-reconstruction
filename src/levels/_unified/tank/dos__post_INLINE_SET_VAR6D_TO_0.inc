@@ -17,7 +17,7 @@ LABEL_0004:
 TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x3C, address=BLITTER_LOOP_COPY_PAGE_03
 	setup channel=0x02, address=TANK_BG_ANIM_CIN221_222_BOOT_CHANNEL_02
-	setup channel=0x04, address=LABEL_15E3
+	setup channel=0x04, address=TANK_WAIT_DECREMENT_VAR4F_LOOP
 	setup channel=0x0A, address=LABEL_1924
 	setup channel=0x0B, address=WAIT_VAR3E_DEC_AND_RANDOMIZE
 	setup channel=0x0E, address=WAIT_VAR4E_PLAY_8C_DRAW_CIN_201
@@ -27,7 +27,7 @@ TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x21, address=LABEL_121F
 	setup channel=0x22, address=WAIT_VAR56_PLAY_8E_DRAW_CIN_020
 	setup channel=0x23, address=INIT_VAR1_NEG50_PLAY_8B_TWICE
-	setup channel=0x24, address=LABEL_17AB
+	setup channel=0x24, address=TANK_WAIT_UNTIL_VAR41_POSITIVE_LOOP
 	setup channel=0x25, address=LABEL_1421
 	setup channel=0x28, address=LABEL_0866
 	setup channel=0x2A, address=INLINE_SET_VAR6B_TO_50
