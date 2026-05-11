@@ -361,7 +361,7 @@ INLINE_DRAW_CV_243_012:
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
-DRAW_CV_301:
+DRAW_HERO_POSE_0_0:
 	video type=0, offset=COMMON_VIDEO_301, x=[0x07], y=[0x08], zoom=0x40
 	ret
 ;@endif

@@ -17,11 +17,11 @@ DRAW_BEAST_SPRITE_BY_VAR09_0E:
 
 LABEL_80EA:
 	jne [0x0E], 0x01, LABEL_80F3
-	jmp DRAW_CIN_047
+	jmp DRAW_BEAST_POSE_1
 
 LABEL_80F3:
 	jne [0x0E], 0x02, LABEL_80FC
-	jmp DRAW_CIN_046
+	jmp DRAW_BEAST_POSE_2
 
 LABEL_80FC:
 	jne [0x0E], 0x03, LABEL_810B
@@ -82,11 +82,11 @@ DRAW_BEAST_POSE_0_6:
 	video offset=CINEMATIC_053, x=[0x07], y=[0x08]
 	ret
 
-DRAW_CIN_047:
+DRAW_BEAST_POSE_1:
 	video offset=CINEMATIC_047, x=[0x07], y=[0x08]
 	ret
 
-DRAW_CIN_046:
+DRAW_BEAST_POSE_2:
 	video offset=CINEMATIC_046, x=[0x07], y=[0x08]
 	ret
 

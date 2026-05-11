@@ -13462,11 +13462,11 @@ DRAW_BEAST_SPRITE_BY_VAR09_0E:
 
 LABEL_80EA:
 	jne [0x0E], 0x01, LABEL_80F3
-	jmp DRAW_CIN_047
+	jmp DRAW_BEAST_POSE_1
 
 LABEL_80F3:
 	jne [0x0E], 0x02, LABEL_80FC
-	jmp DRAW_CIN_046
+	jmp DRAW_BEAST_POSE_2
 
 LABEL_80FC:
 	jne [0x0E], 0x03, LABEL_810B
@@ -13527,11 +13527,11 @@ DRAW_BEAST_POSE_0_6:
 	video offset=CINEMATIC_053, x=[0x07], y=[0x08]
 	ret
 
-DRAW_CIN_047:
+DRAW_BEAST_POSE_1:
 	video offset=CINEMATIC_047, x=[0x07], y=[0x08]
 	ret
 
-DRAW_CIN_046:
+DRAW_BEAST_POSE_2:
 	video offset=CINEMATIC_046, x=[0x07], y=[0x08]
 	ret
 
@@ -14763,26 +14763,26 @@ DRAW_HERO_SPRITE_BY_VAR09_0E:
 	shr [0xF8], 0x0004
 	and [0xF8], 0x000F
 	jne [0x0E], 0x00, LABEL_8E48
-	je [0xF8], 0x00, DRAW_CV_301
-	je [0xF8], 0x01, DRAW_CIN_022
-	je [0xF8], 0x02, DRAW_CIN_023
-	je [0xF8], 0x03, DRAW_CIN_024
-	je [0xF8], 0x04, DRAW_CIN_025
+	je [0xF8], 0x00, DRAW_HERO_POSE_0_0
+	je [0xF8], 0x01, DRAW_HERO_POSE_0_1
+	je [0xF8], 0x02, DRAW_HERO_POSE_0_2
+	je [0xF8], 0x03, DRAW_HERO_POSE_0_3
+	je [0xF8], 0x04, DRAW_HERO_POSE_0_4
 	je [0xF8], 0x05, DRAW_BEAST_POSE_0_5
-	je [0xF8], 0x06, DRAW_CIN_027
+	je [0xF8], 0x06, DRAW_HERO_POSE_0_6
 	ret
 
 LABEL_8E48:
 	jne [0x0E], 0x01, LABEL_8E51
-	jmp DRAW_CIN_021
+	jmp DRAW_HERO_POSE_1
 
 LABEL_8E51:
 	jne [0x0E], 0x02, LABEL_8E5A
-	jmp DRAW_CIN_020
+	jmp DRAW_HERO_POSE_2
 
 LABEL_8E5A:
 	jne [0x0E], 0x03, LABEL_8E63
-	jmp DRAW_CIN_019
+	jmp DRAW_HERO_POSE_3
 
 LABEL_8E63:
 	jne [0x0E], 0x04, LABEL_8E72
@@ -14791,7 +14791,7 @@ LABEL_8E63:
 
 LABEL_8E72:
 	jne [0x0E], 0x05, LABEL_8E7B
-	jmp DRAW_CIN_016
+	jmp DRAW_HERO_POSE_5
 
 LABEL_8E7B:
 	jne [0x0E], 0x07, LABEL_8E88
@@ -14801,39 +14801,39 @@ LABEL_8E7B:
 LABEL_8E88:
 	ret
 
-DRAW_CV_301:
+DRAW_HERO_POSE_0_0:
 	video type=0, offset=COMMON_VIDEO_301, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
-DRAW_CIN_022:
+DRAW_HERO_POSE_0_1:
 	video offset=CINEMATIC_022, x=[0x07], y=[0x08]
 	ret
 
-DRAW_CIN_023:
+DRAW_HERO_POSE_0_2:
 	video offset=CINEMATIC_023, x=[0x07], y=[0x08]
 	ret
 
-DRAW_CIN_024:
+DRAW_HERO_POSE_0_3:
 	video offset=CINEMATIC_024, x=[0x07], y=[0x08]
 	ret
 
-DRAW_CIN_025:
+DRAW_HERO_POSE_0_4:
 	video offset=CINEMATIC_025, x=[0x07], y=[0x08]
 	ret
 
-DRAW_CIN_027:
+DRAW_HERO_POSE_0_6:
 	video offset=CINEMATIC_027, x=[0x07], y=[0x08]
 	ret
 
-DRAW_CIN_021:
+DRAW_HERO_POSE_1:
 	video offset=CINEMATIC_021, x=[0x07], y=[0x08]
 	ret
 
-DRAW_CIN_020:
+DRAW_HERO_POSE_2:
 	video offset=CINEMATIC_020, x=[0x07], y=[0x08]
 	ret
 
-DRAW_CIN_019:
+DRAW_HERO_POSE_3:
 	video offset=CINEMATIC_019, x=[0x07], y=[0x08]
 	ret
 
@@ -14845,7 +14845,7 @@ DRAW_CIN_017:
 	video offset=CINEMATIC_017, x=[0x07], y=[0x08]
 	ret
 
-DRAW_CIN_016:
+DRAW_HERO_POSE_5:
 	video offset=CINEMATIC_016, x=[0x07], y=[0x08]
 	ret
 
