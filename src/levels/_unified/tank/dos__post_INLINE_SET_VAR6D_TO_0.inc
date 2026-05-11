@@ -37,7 +37,7 @@ TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x35, address=INLINE_SET_VAR66_TO_32
 	setup channel=0x37, address=TANK_BG_DRAW_CIN_038_AT_6_126_AFTER_3_BREAKS
 	call INIT_TANK_DRIVE_VARS
-	call LABEL_1CA7
+	call TANK_DRAW_CIN_6_27_28_ON_PAGE_0_AND_3
 	setup channel=0x00, address=INIT_VARS_A_B_PAL_1
 	killChannel
 

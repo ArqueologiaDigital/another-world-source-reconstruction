@@ -108,7 +108,7 @@ LABEL_1C78:
 	mov [HACK_VAR_67], 0x0002
 	ret
 
-LABEL_1C8C:
+TANK_SCENE_INIT_FILL_PAGE_3_COLOR_0C:
 	jge [HACK_VAR_67], 0x03, SHARED_RET
 	selectVideoPage 0x00
 	video offset=CINEMATIC_192, x=[0x0f], y=[0x10]

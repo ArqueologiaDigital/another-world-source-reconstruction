@@ -199,16 +199,16 @@ LABEL_1AA5:
 	ret
 
 LABEL_1AB2:
-	jne [0x06], 0x0B, LABEL_1ABF
+	jne [0x06], 0x0B, TANK_DRAW_CIN_209_IF_VAR06_EQ_0C
 	video offset=CINEMATIC_210, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
-LABEL_1ABF:
-	jne [0x06], 0x0C, LABEL_1ACC
+TANK_DRAW_CIN_209_IF_VAR06_EQ_0C:
+	jne [0x06], 0x0C, TANK_DRAW_CIN_208_IF_VAR06_EQ_0D
 	video offset=CINEMATIC_209, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
-LABEL_1ACC:
+TANK_DRAW_CIN_208_IF_VAR06_EQ_0D:
 	jne [0x06], 0x0D, SHARED_RET
 	video offset=CINEMATIC_208, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
