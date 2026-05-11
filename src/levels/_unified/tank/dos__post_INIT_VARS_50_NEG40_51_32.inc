@@ -156,6 +156,9 @@ WAIT_VAR56_PLAY_8E_DRAW_CIN_020:
 	video offset=CINEMATIC_078, x=264, y=103
 	killChannel
 
+; `if var41 > 0: break-out-and-proceed; else break; loop`.
+; A wait-loop that yields one frame per tick until var41
+; becomes positive (the "shot-pending" flag).
 TANK_WAIT_UNTIL_VAR41_POSITIVE_LOOP:
 	jg [0x41], 0x00, LABEL_17B5
 	break

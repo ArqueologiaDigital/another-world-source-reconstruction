@@ -23,6 +23,12 @@ LABEL_15DB:
 LABEL_15E2:
 	db 0x11
 
+; `break; if var4F == 0: loop; else sub var4F-=1`. A
+; counter-based delay — yields a frame and tries again
+; until var4F is non-zero, then decrements it. Different
+; semantics from 17AB: this one DECREMENTS the counter on
+; exit (consuming the trigger), 17AB just LEAVES the
+; trigger for the caller to consume.
 TANK_WAIT_DECREMENT_VAR4F_LOOP:
 	break
 	je [0x4F], 0x00, TANK_WAIT_DECREMENT_VAR4F_LOOP

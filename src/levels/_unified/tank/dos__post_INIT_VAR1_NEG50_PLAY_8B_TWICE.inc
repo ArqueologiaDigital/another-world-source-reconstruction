@@ -111,6 +111,8 @@ LABEL_19BE:
 LABEL_19E9:
 	db 0x11
 
+; Six-var save: var04..var09 → var1A..var1F. The first of
+; two adjacent state-save slots used by the projectile pool.
 TANK_SAVE_VARS_04_TO_09_INTO_1A_TO_1F:
 	mov [0x1A], [0x07]
 	mov [0x1B], [0x08]
@@ -130,6 +132,9 @@ TANK_SAVE_VARS_04_TO_09_INTO_1A_TO_1F:
 LABEL_1A15:
 	db 0x11
 
+; Second state-save slot: var04..var09 → var20..var25. The
+; pair (1A-1F, 20-25) typically corresponds to two parallel
+; projectile/enemy state tracks.
 TANK_SAVE_VARS_04_TO_09_INTO_20_TO_25:
 	mov [0x20], [0x07]
 	mov [0x21], [0x08]

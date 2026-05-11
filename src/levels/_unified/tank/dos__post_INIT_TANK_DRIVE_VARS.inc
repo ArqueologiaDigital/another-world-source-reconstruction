@@ -172,6 +172,11 @@ LABEL_14E3:
 	video offset=CINEMATIC_155, x=[0x39], y=[0x3a]
 	ret
 
+; Two-frame conditional draws: draw the first frame, check
+; guards (var37 > 0 = events-remaining, var45 == 0 = not-
+; busy); if either guard fails, bail to TANK_NOOP_RET;
+; else draw the second frame and ret. The "draw a flicker
+; only if we're in the right state" idiom.
 TANK_DRAW_CIN_156_157_PAIR_IF_GUARDS_PASS:
 	video offset=CINEMATIC_156, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
@@ -179,6 +184,11 @@ TANK_DRAW_CIN_156_157_PAIR_IF_GUARDS_PASS:
 	video offset=CINEMATIC_157, x=[0x39], y=[0x3a]
 	ret
 
+; Two-frame conditional draws: draw the first frame, check
+; guards (var37 > 0 = events-remaining, var45 == 0 = not-
+; busy); if either guard fails, bail to TANK_NOOP_RET;
+; else draw the second frame and ret. The "draw a flicker
+; only if we're in the right state" idiom.
 TANK_DRAW_CIN_158_159_PAIR_IF_GUARDS_PASS:
 	video offset=CINEMATIC_158, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET

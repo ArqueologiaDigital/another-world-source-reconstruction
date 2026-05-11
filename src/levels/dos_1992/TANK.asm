@@ -1447,6 +1447,11 @@ DRAW_CIN_SEQ_165_166_167:
 	video offset=CINEMATIC_167, x=160, y=100
 	ret
 
+; Continuous-render channel. While var5C == 0xFFFF (the
+; "no-target-yet" sentinel), copies var60→var5D, var61→
+; var5E, calls DRAW_CIN_SEQ_165_166_167 (the 3-frame
+; overlay), break, loop. Exits when var5C transitions to a
+; real value.
 TANK_DRAW_CIN_165_166_167_UNTIL_VAR5C_SET:
 	jne [0x5C], 0xFFFF, LABEL_0C19
 	mov [0x5D], [0x60]
@@ -2278,6 +2283,11 @@ LABEL_14E3:
 	video offset=CINEMATIC_155, x=[0x39], y=[0x3a]
 	ret
 
+; Two-frame conditional draws: draw the first frame, check
+; guards (var37 > 0 = events-remaining, var45 == 0 = not-
+; busy); if either guard fails, bail to TANK_NOOP_RET;
+; else draw the second frame and ret. The "draw a flicker
+; only if we're in the right state" idiom.
 TANK_DRAW_CIN_156_157_PAIR_IF_GUARDS_PASS:
 	video offset=CINEMATIC_156, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, TANK_NOOP_RET
@@ -2285,6 +2295,11 @@ TANK_DRAW_CIN_156_157_PAIR_IF_GUARDS_PASS:
 	video offset=CINEMATIC_157, x=[0x39], y=[0x3a]
 	ret
 
+; Two-frame conditional draws: draw the first frame, check
+; guards (var37 > 0 = events-remaining, var45 == 0 = not-
+; busy); if either guard fails, bail to TANK_NOOP_RET;
+; else draw the second frame and ret. The "draw a flicker
+; only if we're in the right state" idiom.
 TANK_DRAW_CIN_158_159_PAIR_IF_GUARDS_PASS:
 	video offset=CINEMATIC_158, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, TANK_NOOP_RET
@@ -2362,6 +2377,12 @@ LABEL_15DB:
 LABEL_15E2:
 	db 0x11
 
+; `break; if var4F == 0: loop; else sub var4F-=1`. A
+; counter-based delay — yields a frame and tries again
+; until var4F is non-zero, then decrements it. Different
+; semantics from 17AB: this one DECREMENTS the counter on
+; exit (consuming the trigger), 17AB just LEAVES the
+; trigger for the caller to consume.
 TANK_WAIT_DECREMENT_VAR4F_LOOP:
 	break
 	je [0x4F], 0x00, TANK_WAIT_DECREMENT_VAR4F_LOOP
@@ -2457,6 +2478,8 @@ LABEL_16CF:
 LABEL_16D4:
 	db 0x11
 
+; Infinite-hold channel for CINEMATIC_029 at runtime-
+; parameterized position (var0F, var10).
 TANK_DRAW_CIN_029_AT_VAR0F_10_FOREVER:
 	video offset=CINEMATIC_029, x=[0x0f], y=[0x10]
 	break
@@ -2546,6 +2569,9 @@ TANK_SHOT_ANIM_ARC_TRIGGER_VAR56:
 	video offset=CINEMATIC_078, x=264, y=103
 	killChannel
 
+; `if var41 > 0: break-out-and-proceed; else break; loop`.
+; A wait-loop that yields one frame per tick until var41
+; becomes positive (the "shot-pending" flag).
 TANK_WAIT_UNTIL_VAR41_POSITIVE_LOOP:
 	jg [0x41], 0x00, LABEL_17B5
 	break
@@ -2744,6 +2770,8 @@ LABEL_19BE:
 LABEL_19E9:
 	db 0x11
 
+; Six-var save: var04..var09 → var1A..var1F. The first of
+; two adjacent state-save slots used by the projectile pool.
 TANK_SAVE_VARS_04_TO_09_INTO_1A_TO_1F:
 	mov [0x1A], [0x07]
 	mov [0x1B], [0x08]
@@ -2763,6 +2791,9 @@ TANK_SAVE_VARS_04_TO_09_INTO_1A_TO_1F:
 LABEL_1A15:
 	db 0x11
 
+; Second state-save slot: var04..var09 → var20..var25. The
+; pair (1A-1F, 20-25) typically corresponds to two parallel
+; projectile/enemy state tracks.
 TANK_SAVE_VARS_04_TO_09_INTO_20_TO_25:
 	mov [0x20], [0x07]
 	mov [0x21], [0x08]
