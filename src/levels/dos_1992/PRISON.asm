@@ -4808,6 +4808,12 @@ LABEL_2597:
 LABEL_25A7:
 	db 0x11
 
+; Canonical buddy-scene loop. Calls a buddy-render tick
+; (LABEL_56D2, a still-unnamed sibling of PRISON_BUDDY_PER_-
+; FRAME_TICK_CIN236_240 with a different AI helper —
+; 26 callers, also "buddy tick" structure). Same shape as
+; CAVES_BEAST_SCENE_MAIN_LOOP and CAPSULE_BUDDY_SCENE_MAIN_-
+; LOOP.
 PRISON_BUDDY_SCENE_MAIN_LOOP:
 	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call LABEL_56D2
@@ -4841,6 +4847,9 @@ LABEL_25D9:
 LABEL_25E9:
 	db 0x11
 
+; Canonical hero-scene loop. Calls PRISON_HERO_PER_FRAME_-
+; TICK_CIN164_168. Mirrors CAVES_HERO_SCENE_MAIN_LOOP and
+; CAPSULE_HERO_SCENE_MAIN_LOOP.
 PRISON_HERO_SCENE_MAIN_LOOP:
 	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call PRISON_HERO_PER_FRAME_TICK_CIN164_168
@@ -11660,6 +11669,12 @@ LABEL_6BA7:
 	video offset=CINEMATIC_220, x=[HERO_X], y=[HERO_Y]
 	ret
 
+; Two-frame aim/gun-pose render tick. Calls LABEL_6B04
+; (an angle-update helper), then conditionally draws
+; COMMON_VIDEO_159 + COMMON_VIDEO_160 at HERO position
+; with zoom 0x40. Gated on var06 vs var30 (angle range)
+; and var31 bit 1. Mirrors CAVES's LABEL_9B3F and CAPSULE_-
+; AIM_RENDER_TICK_CV159_CV160.
 PRISON_AIM_RENDER_TICK_CV159_CV160:
 	call LABEL_6B04
 	jne [0x0A], 0x01, LABEL_6BDF
