@@ -9,11 +9,11 @@ DELAY_LOOP_VAR09:
 	video offset=CINEMATIC_023, x=[0x07], y=[0x08]
 	mov [0x09], 0x000A
 
-LABEL_07A9:
+ENDING_DRAW_CIN_024_025_DJNZ_VAR09_THEN_SETUP_CH11:
 	break
 	video offset=CINEMATIC_024, x=[0x07], y=[0x08]
 	video offset=CINEMATIC_025, x=[0x07], y=[0x08]
-	djnz [0x09], LABEL_07A9
+	djnz [0x09], ENDING_DRAW_CIN_024_025_DJNZ_VAR09_THEN_SETUP_CH11
 	setup channel=0x11, address=DRAW_CIN_024_LOOP
 	setup channel=0x12, address=DRAW_CV_192_195_196_SEQ
 	setup channel=0x13, address=DRAW_CV_193_185_181_SEQ

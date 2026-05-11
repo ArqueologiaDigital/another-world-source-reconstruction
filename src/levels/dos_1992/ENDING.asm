@@ -854,10 +854,10 @@ LABEL_06F0:
 	play id=0x0008, freq=0x0A, vol=0x16, channel=0x00
 
 LABEL_070E:
-	jne [0x03], 0x03, LABEL_071A
+	jne [0x03], 0x03, ENDING_ANIM_CIN_013_TO_016_AT_VAR01_02_X_SLIDE
 	play id=0x0008, freq=0x0A, vol=0x0B, channel=0x00
 
-LABEL_071A:
+ENDING_ANIM_CIN_013_TO_016_AT_VAR01_02_X_SLIDE:
 	video offset=CINEMATIC_013, x=[0x01], y=[0x02]
 	break
 	add [0x01], 0x0002
@@ -886,10 +886,10 @@ LABEL_071A:
 	video offset=CINEMATIC_019, x=[0x01], y=[0x02]
 	setup channel=0x14, address=INIT_VARS_07_08_09
 
-LABEL_0773:
+ENDING_DRAW_CIN_020_AT_VAR01_02_FOREVER:
 	break
 	video offset=CINEMATIC_020, x=[0x01], y=[0x02]
-	jmp LABEL_0773
+	jmp ENDING_DRAW_CIN_020_AT_VAR01_02_FOREVER
 LABEL_077C:
 	db 0x11
 
@@ -898,9 +898,9 @@ INIT_VARS_07_08_09:
 	mov [0x08], 0x0097
 	mov [0x09], 0x0003
 
-LABEL_0789:
+ENDING_DJNZ_VAR09_PLAY_SOUND_57_DRAW_CIN_021:
 	break
-	djnz [0x09], LABEL_0789
+	djnz [0x09], ENDING_DJNZ_VAR09_PLAY_SOUND_57_DRAW_CIN_021
 	play id=0x0057, freq=0x0F, vol=0x20, channel=0x03
 	video offset=CINEMATIC_021, x=[0x07], y=[0x08]
 	break
@@ -909,20 +909,20 @@ LABEL_0789:
 	video offset=CINEMATIC_023, x=[0x07], y=[0x08]
 	mov [0x09], 0x000A
 
-LABEL_07A9:
+ENDING_DRAW_CIN_024_025_DJNZ_VAR09_THEN_SETUP_CH11:
 	break
 	video offset=CINEMATIC_024, x=[0x07], y=[0x08]
 	video offset=CINEMATIC_025, x=[0x07], y=[0x08]
-	djnz [0x09], LABEL_07A9
+	djnz [0x09], ENDING_DRAW_CIN_024_025_DJNZ_VAR09_THEN_SETUP_CH11
 	setup channel=0x11, address=DRAW_CIN_024_AT_VAR07_08_FOREVER
 	setup channel=0x12, address=ANIM_COMMON_VIDEO_192_195_196_197_AT_VAR07_08
 	setup channel=0x13, address=ANIM_COMMON_VIDEO_193_185_181_PALINDROME_AT_VAR07_08
 	setup channel=0x0C, address=ENDING_X_SLIDE_RIGHT_ACCEL
 	mov [0x09], 0x0010
 
-LABEL_07CC:
+ENDING_DJNZ_VAR09_THEN_TOMBSTONE_CH0C_DELETE_11_13:
 	break
-	djnz [0x09], LABEL_07CC
+	djnz [0x09], ENDING_DJNZ_VAR09_THEN_TOMBSTONE_CH0C_DELETE_11_13
 	setup channel=0x0C, address=ENDING_CHANNEL_TOMBSTONE_KILL
 	deleteChannels first=0x11, last=0x13
 	break

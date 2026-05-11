@@ -90,10 +90,10 @@ LABEL_06F0:
 	play id=0x0008, freq=0x0A, vol=0x16, channel=0x00
 
 LABEL_070E:
-	jne [0x03], 0x03, LABEL_071A
+	jne [0x03], 0x03, ENDING_ANIM_CIN_013_TO_016_AT_VAR01_02_X_SLIDE
 	play id=0x0008, freq=0x0A, vol=0x0B, channel=0x00
 
-LABEL_071A:
+ENDING_ANIM_CIN_013_TO_016_AT_VAR01_02_X_SLIDE:
 	video offset=CINEMATIC_013, x=[0x01], y=[0x02]
 	break
 	add [0x01], 0x0002
@@ -122,9 +122,9 @@ LABEL_071A:
 	video offset=CINEMATIC_019, x=[0x01], y=[0x02]
 	setup channel=0x14, address=INIT_VARS_07_08_09
 
-LABEL_0773:
+ENDING_DRAW_CIN_020_AT_VAR01_02_FOREVER:
 	break
 	video offset=CINEMATIC_020, x=[0x01], y=[0x02]
-	jmp LABEL_0773
+	jmp ENDING_DRAW_CIN_020_AT_VAR01_02_FOREVER
 LABEL_077C:
 	db 0x11
