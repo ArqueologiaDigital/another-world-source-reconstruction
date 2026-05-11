@@ -511,10 +511,10 @@ LABEL_0376:
 	setup channel=0x14, address=PAL_FADE_18_TO_1D
 	mov [0x01], 0x00C8
 
-LABEL_0383:
+ENDING_SCROLL_Y_DEC_DJNZ_VAR01_SELECT_PAGE_0:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_0383
+	djnz [0x01], ENDING_SCROLL_Y_DEC_DJNZ_VAR01_SELECT_PAGE_0
 	selectVideoPage 0x00
 	text id=0x025C, x=2, y=2, color=0x0C ; "            Sound effects"
 	text id=0x025E, x=2, y=82, color=0x0C ; "string_025E"
@@ -533,17 +533,17 @@ LABEL_03A6:
 	selectVideoPage 0xFF
 	mov [0x01], 0x00C8
 
-LABEL_03C6:
+ENDING_SCROLL_Y_DEC_DJNZ_VAR01_FILL_PAGE_0:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_03C6
+	djnz [0x01], ENDING_SCROLL_Y_DEC_DJNZ_VAR01_FILL_PAGE_0
 	fill page=0x00, color=0x00
 	mov [0x01], 0x00C8
 
-LABEL_03D6:
+ENDING_SCROLL_Y_DEC_DJNZ_VAR01_FILL_PAGE_3:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_03D6
+	djnz [0x01], ENDING_SCROLL_Y_DEC_DJNZ_VAR01_FILL_PAGE_3
 	fill page=0x03, color=0x00
 	selectVideoPage 0x03
 	text id=0x0263, x=5, y=50, color=0x0C ; "              Thanks To"
@@ -552,22 +552,22 @@ LABEL_03D6:
 	sub [SCROLL_Y], 0x0032
 	mov [0x01], 0x0096
 
-LABEL_03FA:
+ENDING_SCROLL_Y_DEC_DJNZ_VAR01_RESET_TO_40:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_03FA
+	djnz [0x01], ENDING_SCROLL_Y_DEC_DJNZ_VAR01_RESET_TO_40
 	mov [0x01], 0x0028
 
-LABEL_0407:
+ENDING_DJNZ_VAR01_FILL_PAGE_0_RESET_TO_190:
 	break
-	djnz [0x01], LABEL_0407
+	djnz [0x01], ENDING_DJNZ_VAR01_FILL_PAGE_0_RESET_TO_190
 	fill page=0x00, color=0x00
 	mov [0x01], 0x00BE
 
-LABEL_0413:
+ENDING_SCROLL_Y_DEC_DJNZ_VAR01_THEN_SUB_10:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_0413
+	djnz [0x01], ENDING_SCROLL_Y_DEC_DJNZ_VAR01_THEN_SUB_10
 	sub [SCROLL_Y], 0x000A
 	selectVideoPage 0x03
 	fill page=0x03, color=0x00
@@ -575,10 +575,10 @@ LABEL_0413:
 	selectVideoPage 0xFF
 	mov [0x01], 0x0064
 
-LABEL_0431:
+ENDING_SCROLL_Y_DEC_DJNZ_VAR01_RESET_TO_150:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_0431
+	djnz [0x01], ENDING_SCROLL_Y_DEC_DJNZ_VAR01_RESET_TO_150
 	mov [0x01], 0x0096
 
 ENDING_DJNZ_VAR01_SONG_STOP_THEN_KILL_CHANNEL:
