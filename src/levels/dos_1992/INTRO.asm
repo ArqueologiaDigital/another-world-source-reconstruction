@@ -2384,6 +2384,12 @@ LABEL_118D:
 LABEL_1196:
 	db 0x11
 
+; Four three-frame animation channels at screen-center
+; (160, 100). Each cycles through three consecutive
+; CINEMATIC frames per pass. The CIN ranges are not
+; contiguous (432-434, 435-437, 439-441, 450-452) so each
+; runs a different mini-sequence — likely sub-animations
+; for the various INTRO scene transitions.
 ANIM_CIN_432_433_434_AT_160_100:
 	video offset=CINEMATIC_432, x=160, y=100
 	break
@@ -2395,6 +2401,12 @@ ANIM_CIN_432_433_434_AT_160_100:
 DRAW_CITY_SEQ_432_433:
 	db 0x11
 
+; Four three-frame animation channels at screen-center
+; (160, 100). Each cycles through three consecutive
+; CINEMATIC frames per pass. The CIN ranges are not
+; contiguous (432-434, 435-437, 439-441, 450-452) so each
+; runs a different mini-sequence — likely sub-animations
+; for the various INTRO scene transitions.
 ANIM_CIN_439_440_441_AT_160_100:
 	video offset=CINEMATIC_439, x=160, y=100
 	break
@@ -2406,6 +2418,12 @@ ANIM_CIN_439_440_441_AT_160_100:
 DRAW_CITY_SEQ_439_440:
 	db 0x11
 
+; Four three-frame animation channels at screen-center
+; (160, 100). Each cycles through three consecutive
+; CINEMATIC frames per pass. The CIN ranges are not
+; contiguous (432-434, 435-437, 439-441, 450-452) so each
+; runs a different mini-sequence — likely sub-animations
+; for the various INTRO scene transitions.
 ANIM_CIN_435_436_437_AT_160_100:
 	video offset=CINEMATIC_435, x=160, y=100
 	break
@@ -2610,6 +2628,12 @@ LABEL_13B1:
 	jg [MUS_MARK], 0x20, INTRO_EXPERIMENT_COUNTDOWN_TEXT_SETUP
 	djnz [0x01], LABEL_13B1
 
+; Sets up channel 0x3C to FRAME_RENDER_TICK_LOOP, copies
+; page 3 → page 0 (the prepared backbuffer), draws text
+; id=0x0023 = " THE EXPERIMENT WILL BEGIN IN    SECONDS"
+; at (0, 80) in color 0x06, switches to page 0xFF, and
+; starts the countdown pacing (PAUSE_SLICES=5). The iconic
+; "waiting for the particle accelerator to ramp up" prompt.
 INTRO_EXPERIMENT_COUNTDOWN_TEXT_SETUP:
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	copyVideoPage src=0x03, dst=0x00
@@ -3408,6 +3432,10 @@ LIFT_DOORS_FINAL_FRAME_TRANSITION:
 	selectVideoPage 0xFF
 	killChannel
 
+; Multi-frame vertical composite. var02 starts at var01,
+; then progressively offsets (+0x186, +0x124) per frame
+; while drawing CINEMATIC_505/506/507 at x=153 — a tall
+; stacked-element render.
 DRAW_CIN_505_506_507_STACKED_VERT_AT_X153:
 	mov [0x02], [0x01]
 	video offset=CINEMATIC_505, x=153, y=[0x02]
@@ -3536,6 +3564,12 @@ LABEL_1CAF:
 LABEL_1CC0:
 	db 0x11
 
+; Four three-frame animation channels at screen-center
+; (160, 100). Each cycles through three consecutive
+; CINEMATIC frames per pass. The CIN ranges are not
+; contiguous (432-434, 435-437, 439-441, 450-452) so each
+; runs a different mini-sequence — likely sub-animations
+; for the various INTRO scene transitions.
 ANIM_CIN_450_451_452_AT_160_100:
 	video offset=CINEMATIC_450, x=160, y=100
 	break
@@ -4041,6 +4075,9 @@ LABEL_21C0:
 LABEL_21C8:
 	db 0x11
 
+; Two-frame composite drawn at x=160 with variable Y from
+; var01 (top half) and var02 (bottom half). Both frames
+; re-rendered every break — a continuous animated overlay.
 DRAW_CIN_126_127_AT_X160_VAR_YS_FOREVER:
 	video offset=CINEMATIC_126, x=160, y=[0x01]
 	video offset=CINEMATIC_127, x=160, y=[0x02]

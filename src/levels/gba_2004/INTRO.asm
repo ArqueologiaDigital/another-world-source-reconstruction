@@ -2338,6 +2338,12 @@ LABEL_11A1:
 	video offset=CINEMATIC_190, x=[0x03], y=[0x04]
 	break
 	jmp LABEL_11A1
+; Four three-frame animation channels at screen-center
+; (160, 100). Each cycles through three consecutive
+; CINEMATIC frames per pass. The CIN ranges are not
+; contiguous (432-434, 435-437, 439-441, 450-452) so each
+; runs a different mini-sequence — likely sub-animations
+; for the various INTRO scene transitions.
 ANIM_CIN_439_440_441_AT_160_100:
 	db 0x11
 
