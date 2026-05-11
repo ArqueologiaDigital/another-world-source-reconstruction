@@ -632,7 +632,7 @@ ENTRY_POINT_OF_INTRO_LEVEL:
 	song id=0x0007, delay=0x3D54, pos=0x00
 	setup channel=0x01, address=INTRO_SCENE_INIT_PARTICLES
 	setup channel=0x02, address=INTRO_PLAY_BG_AUDIO_LOOP
-	setup channel=0x03, address=LABEL_22CC
+	setup channel=0x03, address=INTRO_DRAW_CIN_005_AT_90_101_FOREVER
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
@@ -816,7 +816,7 @@ LABEL_01FE:
 	killChannel
 
 DNA_ANIMATION:
-	setup channel=0x0A, address=LABEL_0295
+	setup channel=0x0A, address=INTRO_PIN_VAR05_TO_2A_FOREVER
 	setup channel=0x0B, address=DRAW_DNA_RUNG_ROTATION_LOOP
 	break
 	break
@@ -874,10 +874,10 @@ DELETE_CHANNELS_0A_TO_1F:
 	deleteChannels first=0x0A, last=0x1F
 	killChannel
 
-LABEL_0295:
+INTRO_PIN_VAR05_TO_2A_FOREVER:
 	mov [0x05], 0x002A
 	break
-	jmp LABEL_0295
+	jmp INTRO_PIN_VAR05_TO_2A_FOREVER
 LABEL_029D:
 	db 0x11
 
@@ -965,11 +965,11 @@ LABEL_035D:
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
-LABEL_0370:
+INTRO_DRAW_CIN_170_171_AT_VAR_X_Y44_PAIR:
 	video offset=CINEMATIC_170, x=[0x10], y=44
 	video offset=CINEMATIC_171, x=[0x11], y=44
 	break
-	jmp LABEL_0370
+	jmp INTRO_DRAW_CIN_170_171_AT_VAR_X_Y44_PAIR
 LABEL_037E:
 	db 0x11
 
@@ -1022,7 +1022,7 @@ LABEL_03EB:
 	djnz [0x01], LABEL_03EB
 	setup channel=0x01, address=INTRO_FILL_AND_DRAW_CIN_103
 	setup channel=0x02, address=LABEL_24CE
-	setup channel=0x03, address=LABEL_2686
+	setup channel=0x03, address=INTRO_DRAW_CIN_053_AT_14_80_FOREVER
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
@@ -2231,7 +2231,7 @@ LESTER_DRINKING_LAST_FRAME_HOLD:
 	break
 	video offset=CINEMATIC_LESTER_DRINKING_HEAD_F6, x=154, y=123
 	video offset=CINEMATIC_LESTER_DRINKING_HAND_F6, x=180, y=100
-	je [MUS_MARK], 0x2B, LABEL_1033
+	je [MUS_MARK], 0x2B, INTRO_SCENE_INIT_SETUP_CH02_CH3C_AND_KILL
 	djnz [0x01], LESTER_DRINKING_LAST_FRAME_HOLD
 	mov [0x01], 0x0004
 	play id=0x0041, freq=0x14, vol=0x3F, channel=0x03
@@ -2243,11 +2243,11 @@ LESTER_HEAD_SIDEWAYS_WITH_HAND_HOLD:
 	break
 	video offset=CINEMATIC_LESTER_HEAD_SIDEWAYS, x=154, y=123
 	video offset=CINEMATIC_LESTER_DRINKING_HAND_F6, x=181, y=100
-	je [MUS_MARK], 0x2B, LABEL_1033
+	je [MUS_MARK], 0x2B, INTRO_SCENE_INIT_SETUP_CH02_CH3C_AND_KILL
 	djnz [0x01], LESTER_HEAD_SIDEWAYS_WITH_HAND_HOLD
 	djnz [0x02], CITY_OUTER_3X_LOOP
 
-LABEL_1033:
+INTRO_SCENE_INIT_SETUP_CH02_CH3C_AND_KILL:
 	setup channel=0x02, address=LABEL_142C
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
@@ -2267,7 +2267,7 @@ LABEL_105A:
 	setup channel=0x06, address=ANIM_CIN_439_440_441_AT_160_100
 	setup channel=0x07, address=ANIM_CIN_435_436_437_AT_160_100
 	setup channel=0x03, address=ANIM_CIN_432_433_434_AT_160_100
-	setup channel=0x01, address=LABEL_1183
+	setup channel=0x01, address=INTRO_DRAW_CIN_190_AT_VAR03_04_FOREVER
 	mov [0x03], 0x00C3
 	mov [0x04], 0x0064
 	mov [0x01], 0x0006
@@ -2325,7 +2325,7 @@ LABEL_10E8:
 	djnz [0x01], LABEL_10E8
 	setup channel=0x3C, address=SETUP_CHANNELS_AFTER_LOAD
 	break
-	setup channel=0x01, address=LABEL_118D
+	setup channel=0x01, address=INTRO_DRAW_CIN_431_AT_VAR03_04_FOREVER
 	sub [0x03], 0x0001
 	sub [0x04], 0x0001
 	mov [0x01], 0x0005
@@ -2370,17 +2370,17 @@ LABEL_111B:
 	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
 	killChannel
 
-LABEL_1183:
+INTRO_DRAW_CIN_190_AT_VAR03_04_FOREVER:
 	video offset=CINEMATIC_190, x=[0x03], y=[0x04]
 	break
-	jmp LABEL_1183
+	jmp INTRO_DRAW_CIN_190_AT_VAR03_04_FOREVER
 LABEL_118C:
 	db 0x11
 
-LABEL_118D:
+INTRO_DRAW_CIN_431_AT_VAR03_04_FOREVER:
 	video offset=CINEMATIC_431, x=[0x03], y=[0x04]
 	break
-	jmp LABEL_118D
+	jmp INTRO_DRAW_CIN_431_AT_VAR03_04_FOREVER
 LABEL_1196:
 	db 0x11
 
@@ -3119,7 +3119,7 @@ LABEL_188C:
 	setup channel=0x0A, address=HOLD_PAGE_00_LOOP
 	setup channel=0x10, address=HOLD_PAGE_FF_LOOP
 	setup channel=0x08, address=DRAW_SCIENTIST_THEN_DIVERGE_INIT
-	setup channel=0x09, address=LABEL_0370
+	setup channel=0x09, address=INTRO_DRAW_CIN_170_171_AT_VAR_X_Y44_PAIR
 	mov [0x03], 0x0032
 
 LABEL_18BE:
@@ -3659,10 +3659,10 @@ DRAW_LIFT_SCENE_BG_COMPOSITE:
 	selectVideoPage 0xFF
 	killChannel
 
-LABEL_1D92:
+INTRO_DRAW_CIN_112_AT_143_94_FOREVER:
 	video offset=CINEMATIC_112, x=143, y=94
 	break
-	jmp LABEL_1D92
+	jmp INTRO_DRAW_CIN_112_AT_143_94_FOREVER
 LABEL_1D9A:
 	db 0x11
 
@@ -4167,10 +4167,10 @@ LESTER_WALKING_TOWARDS_CAMERA_ANIMATION:
 LABEL_22CB:
 	db 0x11
 
-LABEL_22CC:
+INTRO_DRAW_CIN_005_AT_90_101_FOREVER:
 	video offset=CINEMATIC_005, x=90, y=101
 	break
-	jmp LABEL_22CC
+	jmp INTRO_DRAW_CIN_005_AT_90_101_FOREVER
 LABEL_22D4:
 	db 0x11
 
@@ -4462,7 +4462,7 @@ LABEL_263C:
 	djnz [0x01], LABEL_263C
 	setup channel=0x01, address=DRAW_LIFT_SCENE_BG_COMPOSITE
 	setup channel=0x02, address=CH_02_INIT_VARS_01_02_03
-	setup channel=0x03, address=LABEL_1D92
+	setup channel=0x03, address=INTRO_DRAW_CIN_112_AT_143_94_FOREVER
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
@@ -4483,10 +4483,10 @@ INTRO_FILL_AND_DRAW_CIN_103:
 	selectVideoPage 0xFF
 	killChannel
 
-LABEL_2686:
+INTRO_DRAW_CIN_053_AT_14_80_FOREVER:
 	video offset=CINEMATIC_053, x=14, y=80
 	break
-	jmp LABEL_2686
+	jmp INTRO_DRAW_CIN_053_AT_14_80_FOREVER
 LABEL_268E:
 	db 0x11, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 	FILL(55658, 0xFF)
