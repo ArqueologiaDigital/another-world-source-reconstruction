@@ -98,7 +98,7 @@ LABEL_8328:
 	call LABEL_7BBC
 	selectVideoPage 0xFF
 	setup channel=0x00, address=LABEL_7FE0
-	setup channel=0x34, address=LABEL_7F9A
+	setup channel=0x34, address=PRISON_HERO_GATE_X_91_B8_CLOCK_4000_INPUT_CHECK
 	setup channel=0x35, address=LABEL_83FF
 	call LABEL_7970
 	jl [0x06], 0x64, TRAMP_836F
@@ -125,7 +125,7 @@ LABEL_8373:
 	call LABEL_7BBC
 	selectVideoPage 0xFF
 	setup channel=0x00, address=LABEL_7FE0
-	setup channel=0x34, address=LABEL_7F9A
+	setup channel=0x34, address=PRISON_HERO_GATE_X_91_B8_CLOCK_4000_INPUT_CHECK
 	call LABEL_7970
 	mov [0x70], 0x00D2
 	mov [0x71], 0x00B6
@@ -254,7 +254,7 @@ LABEL_84EF:
 	call LABEL_7BBC
 	selectVideoPage 0xFF
 	setup channel=0x00, address=LABEL_7FE0
-	setup channel=0x34, address=LABEL_7F9A
+	setup channel=0x34, address=PRISON_HERO_GATE_X_91_B8_CLOCK_4000_INPUT_CHECK
 	call LABEL_7970
 	jne [0xB9], 0x00, TRAMP_854E
 	mov [0x70], 0x00B4
@@ -311,7 +311,7 @@ LABEL_8596:
 	selectVideoPage 0xFF
 	setup channel=0x35, address=LABEL_01AF
 	setup channel=0x00, address=LABEL_7FE0
-	setup channel=0x34, address=LABEL_7F9A
+	setup channel=0x34, address=PRISON_HERO_GATE_X_91_B8_CLOCK_4000_INPUT_CHECK
 	call LABEL_7970
 	setPalette 0x1A
 	jmp VAR66_RANGE_DISPATCH_BY_VAR01

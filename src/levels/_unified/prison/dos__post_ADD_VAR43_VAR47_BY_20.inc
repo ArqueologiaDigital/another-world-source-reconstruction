@@ -23,6 +23,6 @@ LABEL_8047:
 	setup channel=0x01, address=COPY_PAGE0_TO_FF_KILL_CHANNEL
 	play id=0x0067, freq=0x14, vol=0x40, channel=0x01
 	break
-	jmp LABEL_7F9A
+	jmp PRISON_HERO_GATE_X_91_B8_CLOCK_4000_INPUT_CHECK
 LABEL_805F:
 	db 0x11
