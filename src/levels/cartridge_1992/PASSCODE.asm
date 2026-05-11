@@ -25,7 +25,7 @@ CINEMATIC_005		EQU 0x0020
 
 	org 0x0000
 
-; Calls PASSCODE_CLEAR_AND_BLIT_PAGES_1_2_FF setup helper, sets PAUSE_SLICES=2, sets
+; Calls LABEL_1090 setup helper, sets PAUSE_SLICES=2, sets
 ; up channel 0x3C as the redraw loop, fills both visible
 ; pages black, clears LAST_KEYCHAR, sets palette 5. The
 ; screen-startup routine.
