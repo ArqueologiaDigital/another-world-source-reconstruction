@@ -179,26 +179,26 @@ LABEL_1A71:
 	ret
 
 LABEL_1A7E:
-	jne [0x06], 0x07, LABEL_1A8B
+	jne [0x06], 0x07, TANK_DRAW_CIN_213_IF_VAR06_EQ_08
 	video offset=CINEMATIC_214, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
-LABEL_1A8B:
-	jne [0x06], 0x08, LABEL_1A98
+TANK_DRAW_CIN_213_IF_VAR06_EQ_08:
+	jne [0x06], 0x08, TANK_DRAW_CIN_212_IF_VAR06_EQ_09
 	video offset=CINEMATIC_213, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
-LABEL_1A98:
-	jne [0x06], 0x09, LABEL_1AA5
+TANK_DRAW_CIN_212_IF_VAR06_EQ_09:
+	jne [0x06], 0x09, TANK_DRAW_CIN_211_IF_VAR06_EQ_0A
 	video offset=CINEMATIC_212, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
-LABEL_1AA5:
-	jne [0x06], 0x0A, LABEL_1AB2
+TANK_DRAW_CIN_211_IF_VAR06_EQ_0A:
+	jne [0x06], 0x0A, TANK_DRAW_CIN_210_IF_VAR06_EQ_0B
 	video offset=CINEMATIC_211, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
-LABEL_1AB2:
+TANK_DRAW_CIN_210_IF_VAR06_EQ_0B:
 	jne [0x06], 0x0B, TANK_DRAW_CIN_209_IF_VAR06_EQ_0C
 	video offset=CINEMATIC_210, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
