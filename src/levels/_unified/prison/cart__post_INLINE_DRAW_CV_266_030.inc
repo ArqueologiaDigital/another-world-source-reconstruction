@@ -1,5 +1,5 @@
 LABEL_5BCB:
-	call DRAW_SPRITE_CIN_236_239_BY_VAR09
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_284, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_X], 0x0001
 	call LABEL_5586
@@ -171,7 +171,7 @@ LABEL_5DB0:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	play id=0x0055, freq=0x19, vol=0x0A, channel=0x01
 	sub [BUDDY_Y], 0x0001
-	call DRAW_SPRITE_CIN_164_167_BY_VAR09
+	call DRAW_PRISON_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_241, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_242, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, INLINE_DRAW_CV_243_012__HELPER

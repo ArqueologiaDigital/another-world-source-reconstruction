@@ -122,7 +122,7 @@ DRAW_CIN_232:
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_231:
+DRAW_PRISON_BUDDY_POSE_3:
 	video offset=CINEMATIC_231, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
@@ -143,7 +143,7 @@ DRAW_CIN_229:
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_228:
+DRAW_PRISON_BUDDY_POSE_5:
 	video offset=CINEMATIC_228, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif

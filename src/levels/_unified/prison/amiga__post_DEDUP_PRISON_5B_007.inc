@@ -1,6 +1,6 @@
 LABEL_5D0A:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	call DRAW_SPRITE_CIN_164_167_BY_VAR09
+	call DRAW_PRISON_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_206, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_213, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_5D29
@@ -16,7 +16,7 @@ LABEL_5D2E:
 LABEL_5D2F:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	add [BUDDY_Y], 0x0001
-	call DRAW_SPRITE_CIN_164_167_BY_VAR09
+	call DRAW_PRISON_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_203, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_214, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_5D52

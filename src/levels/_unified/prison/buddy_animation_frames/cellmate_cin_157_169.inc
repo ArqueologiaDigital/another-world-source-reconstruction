@@ -50,14 +50,14 @@ DRAW_PRISON_HERO_POSE_1:
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_162:
+DRAW_PRISON_HERO_POSE_2:
 	video offset=CINEMATIC_162, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_161:
+DRAW_PRISON_HERO_POSE_3:
 	video offset=CINEMATIC_161, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
@@ -78,7 +78,7 @@ DRAW_CIN_159:
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_158:
+DRAW_PRISON_HERO_POSE_5:
 	video offset=CINEMATIC_158, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
