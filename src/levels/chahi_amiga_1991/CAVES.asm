@@ -6080,11 +6080,11 @@ LABEL_345B:
 	ret
 
 LABEL_3467:
-	jne [0x6D], 0x01, LABEL_3473
+	jne [0x6D], 0x01, CAVES_WAIT_VAR06_LE_3DE_AND_VAR04_EQ_20
 	video offset=CINEMATIC_784, x=[0x07], y=[0x08]
 	ret
 
-LABEL_3473:
+CAVES_WAIT_VAR06_LE_3DE_AND_VAR04_EQ_20:
 	jne [0x6D], 0x02, LABEL_347F
 	video offset=CINEMATIC_783, x=[0x07], y=[0x08]
 	ret

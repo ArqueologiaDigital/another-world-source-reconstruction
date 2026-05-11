@@ -218,7 +218,7 @@ LABEL_31C3:
 	db 0x11
 
 HANG_DRAW_CIN_743_VAR09_GUARD:
-	jne [0x09], 0x00, LABEL_2A60
+	jne [0x09], 0x00, CAVES_DISPATCH_BY_VAR09_THEN_KILL_CHAN
 	video offset=CINEMATIC_743, x=[0x07], y=[0x08]
 	break
 	jmp HANG_DRAW_CIN_743_VAR09_GUARD
@@ -226,29 +226,29 @@ LABEL_31D3:
 	db 0x11
 
 LABEL_31D4:
-	jne [0x09], 0x02, LABEL_2A60
+	jne [0x09], 0x02, CAVES_DISPATCH_BY_VAR09_THEN_KILL_CHAN
 	video offset=CINEMATIC_743, x=[0x07], y=[0x08]
 	break
-	jne [0x09], 0x02, LABEL_2A60
+	jne [0x09], 0x02, CAVES_DISPATCH_BY_VAR09_THEN_KILL_CHAN
 	video offset=CINEMATIC_754, x=[0x07], y=[0x08]
 	break
-	jne [0x09], 0x02, LABEL_2A60
+	jne [0x09], 0x02, CAVES_DISPATCH_BY_VAR09_THEN_KILL_CHAN
 	video offset=CINEMATIC_749, x=[0x07], y=[0x08]
 	break
-	jne [0x09], 0x02, LABEL_2A60
+	jne [0x09], 0x02, CAVES_DISPATCH_BY_VAR09_THEN_KILL_CHAN
 	video offset=CINEMATIC_745, x=[0x07], y=[0x08]
 	break
-	jne [0x09], 0x02, LABEL_2A60
+	jne [0x09], 0x02, CAVES_DISPATCH_BY_VAR09_THEN_KILL_CHAN
 	play id=0x007C, freq=0x14, vol=0x40, channel=0x00
 	video offset=CINEMATIC_747, x=[0x07], y=[0x08]
 	break
-	jne [0x09], 0x02, LABEL_2A60
+	jne [0x09], 0x02, CAVES_DISPATCH_BY_VAR09_THEN_KILL_CHAN
 	video offset=CINEMATIC_745, x=[0x07], y=[0x08]
 	break
-	jne [0x09], 0x02, LABEL_2A60
+	jne [0x09], 0x02, CAVES_DISPATCH_BY_VAR09_THEN_KILL_CHAN
 	video offset=CINEMATIC_749, x=[0x07], y=[0x08]
 	break
-	jne [0x09], 0x02, LABEL_2A60
+	jne [0x09], 0x02, CAVES_DISPATCH_BY_VAR09_THEN_KILL_CHAN
 	video offset=CINEMATIC_754, x=[0x07], y=[0x08]
 	break
 	jmp LABEL_31D4

@@ -91,7 +91,7 @@ LABEL_A324:
 	setup channel=0x07, address=LABEL_110E
 	setup channel=0x08, address=LABEL_110E
 	deleteChannels first=0x06, last=0x08
-	setup channel=0x36, address=LABEL_3473
+	setup channel=0x36, address=CAVES_WAIT_VAR06_LE_3DE_AND_VAR04_EQ_20
 	jg [HERO_Y], 0xC8, LABEL_A3A9
 	jl [HERO_Y], 0x14, LABEL_A3A9
 	jmp CHECK_VAR66_VAR67_AND_BLIT
@@ -1153,7 +1153,7 @@ LABEL_B04A:
 	setup channel=0x02, address=INIT_VAR08_FROM_VARE9_VAR09_TO_4
 	setup channel=0x04, address=HANG_DRAW_CIN_271
 	setup channel=0x05, address=LABEL_081E
-	setup channel=0x36, address=LABEL_3473
+	setup channel=0x36, address=CAVES_WAIT_VAR06_LE_3DE_AND_VAR04_EQ_20
 	jmp CHECK_VAR66_VAR67_AND_BLIT
 LABEL_B0A4:
 	db 0x11
