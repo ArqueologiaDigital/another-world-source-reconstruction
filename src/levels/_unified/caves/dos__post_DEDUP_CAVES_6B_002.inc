@@ -118,7 +118,7 @@ DRAW_CIN_039:
 	video offset=CINEMATIC_039, x=[0x07], y=[0x08]
 	ret
 
-LABEL_81AA:
+DRAW_CIN_061_062_VAR09_LOW:
 	mov [0xF8], [0x09]
 	and [0xF8], 0x000F
 	je [0xF8], 0x01, DRAW_CIN_061
@@ -163,12 +163,12 @@ LABEL_820A:
 	video type=0, offset=COMMON_VIDEO_322, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_821D:
-	jg [0x13], [0x30], LABEL_81AA
+	jg [0x13], [0x30], DRAW_CIN_061_062_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
-	je [0xF8], 0x00, LABEL_81AA
+	je [0xF8], 0x00, DRAW_CIN_061_062_VAR09_LOW
 	video type=0, offset=COMMON_VIDEO_321, x=[0x07], y=[0x08], zoom=0x40
-	jmp LABEL_81AA
+	jmp DRAW_CIN_061_062_VAR09_LOW
 
 LABEL_8238:
 	video type=0, offset=COMMON_VIDEO_323, x=[0x07], y=[0x08], zoom=0x40
@@ -178,12 +178,12 @@ LABEL_8238:
 	video type=0, offset=COMMON_VIDEO_325, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_824F:
-	jg [0x13], [0x30], LABEL_81AA
+	jg [0x13], [0x30], DRAW_CIN_061_062_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
-	je [0xF8], 0x00, LABEL_81AA
+	je [0xF8], 0x00, DRAW_CIN_061_062_VAR09_LOW
 	video type=0, offset=COMMON_VIDEO_324, x=[0x07], y=[0x08], zoom=0x40
-	jmp LABEL_81AA
+	jmp DRAW_CIN_061_062_VAR09_LOW
 
 LABEL_826A:
 	video type=0, offset=COMMON_VIDEO_326, x=[0x07], y=[0x08], zoom=0x40

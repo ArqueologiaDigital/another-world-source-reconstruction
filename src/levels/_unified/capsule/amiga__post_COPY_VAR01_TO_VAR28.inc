@@ -263,7 +263,7 @@ DRAW_CIN_186:
 	video offset=CINEMATIC_186, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-LABEL_5EE4:
+DRAW_CIN_208_209_VAR09_LOW:
 	mov [0xF8], [0x09]
 	and [0xF8], 0x000F
 	je [0xF8], 0x01, DRAW_CIN_208
@@ -308,12 +308,12 @@ LABEL_5F44:
 	video type=0, offset=COMMON_VIDEO_319, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_5F57:
-	jg [0x13], [0x30], LABEL_5EE4
+	jg [0x13], [0x30], DRAW_CIN_208_209_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
-	je [0xF8], 0x00, LABEL_5EE4
+	je [0xF8], 0x00, DRAW_CIN_208_209_VAR09_LOW
 	video type=0, offset=COMMON_VIDEO_318, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
-	jmp LABEL_5EE4
+	jmp DRAW_CIN_208_209_VAR09_LOW
 
 LABEL_5F72:
 	video type=0, offset=COMMON_VIDEO_320, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
@@ -323,12 +323,12 @@ LABEL_5F72:
 	video type=0, offset=COMMON_VIDEO_322, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_5F89:
-	jg [0x13], [0x30], LABEL_5EE4
+	jg [0x13], [0x30], DRAW_CIN_208_209_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
-	je [0xF8], 0x00, LABEL_5EE4
+	je [0xF8], 0x00, DRAW_CIN_208_209_VAR09_LOW
 	video type=0, offset=COMMON_VIDEO_321, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
-	jmp LABEL_5EE4
+	jmp DRAW_CIN_208_209_VAR09_LOW
 
 LABEL_5FA4:
 	video type=0, offset=COMMON_VIDEO_323, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
