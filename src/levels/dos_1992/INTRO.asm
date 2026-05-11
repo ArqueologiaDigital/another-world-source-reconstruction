@@ -1021,7 +1021,7 @@ LABEL_03EB:
 	video offset=CINEMATIC_048, x=160, y=100
 	djnz [0x01], LABEL_03EB
 	setup channel=0x01, address=INTRO_FILL_AND_DRAW_CIN_103
-	setup channel=0x02, address=LABEL_24CE
+	setup channel=0x02, address=INTRO_PALETTE_4_PLAY_SOUND_0D_INIT
 	setup channel=0x03, address=INTRO_DRAW_CIN_053_AT_14_80_FOREVER
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
@@ -1200,7 +1200,7 @@ LABEL_056A:
 	djnz [0x08], LABEL_056A
 	killChannel
 
-LABEL_0574:
+INTRO_ANIM_CIN_353_354_355_AT_VAR07_09:
 	break
 	video offset=CINEMATIC_353, x=[0x07], y=[0x09]
 	break
@@ -1211,7 +1211,7 @@ LABEL_0574:
 	video offset=CINEMATIC_356, x=[0x07], y=[0x09]
 	break
 	video offset=CINEMATIC_357, x=[0x07], y=[0x09]
-	jmp LABEL_0574
+	jmp INTRO_ANIM_CIN_353_354_355_AT_VAR07_09
 LABEL_0595:
 	db 0x11
 
@@ -1265,7 +1265,7 @@ LABEL_05EA:
 	setup channel=0x0D, address=CH_0D_INIT_VAR_05
 	setup channel=0x0E, address=CH_0E_INIT_VAR_06
 	setup channel=0x0F, address=CH_0F_INIT_PARTICLE_POS
-	setup channel=0x10, address=LABEL_0574
+	setup channel=0x10, address=INTRO_ANIM_CIN_353_354_355_AT_VAR07_09
 	setup channel=0x11, address=CH_11_INIT_PARTICLE_POS_2
 	setup channel=0x12, address=CH_12_INIT_PARTICLE_POS_3
 	mov [PAUSE_SLICES], 0x0003
@@ -1416,7 +1416,7 @@ LABEL_0789:
 	fill page=0xFF, color=0x08
 	break
 	djnz [0x01], LABEL_0789
-	setup channel=0x04, address=LABEL_0C76
+	setup channel=0x04, address=INTRO_PALETTE_SEQ_18_TO_1A_FADE
 	video offset=CINEMATIC_274, x=160, y=100
 	play id=0x002C, freq=0x14, vol=0x3F, channel=0x03
 	break
@@ -1912,14 +1912,14 @@ LABEL_0C6D:
 LABEL_0C75:
 	db 0x11
 
-LABEL_0C76:
+INTRO_PALETTE_SEQ_18_TO_1A_FADE:
 	setPalette 0x18
 	break
 	break
 	break
 	setPalette 0x1A
 	break
-	jmp LABEL_0C76
+	jmp INTRO_PALETTE_SEQ_18_TO_1A_FADE
 LABEL_0C83:
 	db 0x11
 
@@ -4314,15 +4314,15 @@ LABEL_24AD:
 	setPalette 0x03
 	mov [0x01], 0x001E
 
-LABEL_24C1:
+INTRO_DRAW_CIN_034_DJNZ_VAR01_THEN_JMP_CIN035:
 	video offset=CINEMATIC_034, x=160, y=100
 	break
-	djnz [0x01], LABEL_24C1
+	djnz [0x01], INTRO_DRAW_CIN_034_DJNZ_VAR01_THEN_JMP_CIN035
 	jmp DRAW_CIN_035_PAL_3_REPEAT_HEAD
 LABEL_24CD:
 	db 0x11
 
-LABEL_24CE:
+INTRO_PALETTE_4_PLAY_SOUND_0D_INIT:
 	break
 	setPalette 0x04
 	play id=0x000D, freq=0x14, vol=0x19, channel=0x02
@@ -4443,9 +4443,9 @@ LABEL_24CE:
 	mov [PAUSE_SLICES], 0x0002
 	mov [0x01], 0x001C
 
-LABEL_2617:
+INTRO_DJNZ_VAR01_SETUP_FRAME_RENDER_TICK:
 	break
-	djnz [0x01], LABEL_2617
+	djnz [0x01], INTRO_DJNZ_VAR01_SETUP_FRAME_RENDER_TICK
 	break
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
@@ -4457,9 +4457,9 @@ LABEL_2617:
 	play id=0x000D, freq=0x0C, vol=0x3F, channel=0x03
 	mov [0x01], 0x0014
 
-LABEL_263C:
+INTRO_LIFT_SCENE_DJNZ_VAR01_SETUP_CHANNELS:
 	break
-	djnz [0x01], LABEL_263C
+	djnz [0x01], INTRO_LIFT_SCENE_DJNZ_VAR01_SETUP_CHANNELS
 	setup channel=0x01, address=DRAW_LIFT_SCENE_BG_COMPOSITE
 	setup channel=0x02, address=CH_02_INIT_VARS_01_02_03
 	setup channel=0x03, address=INTRO_DRAW_CIN_112_AT_143_94_FOREVER
