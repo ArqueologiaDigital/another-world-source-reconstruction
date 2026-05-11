@@ -12,10 +12,10 @@ ANIM_CIN_042_LOOP_VARE6:
 	video offset=CINEMATIC_046, x=160, y=100
 	mov [0xE6], 0x0007
 
-LABEL_0621:
+ENDING_DRAW_CIN_046_DJNZ_THEN_PLAY_SOUND_57:
 	break
 	video offset=CINEMATIC_046, x=160, y=100
-	djnz [0xE6], LABEL_0621
+	djnz [0xE6], ENDING_DRAW_CIN_046_DJNZ_THEN_PLAY_SOUND_57
 	play id=0x0057, freq=0x0F, vol=0x20, channel=0x03
 	break
 	video offset=CINEMATIC_047, x=160, y=100
@@ -27,10 +27,10 @@ LABEL_0621:
 	video offset=CINEMATIC_050, x=160, y=100
 	mov [0xE6], 0x000A
 
-LABEL_0648:
+ENDING_DRAW_CIN_051_DJNZ_THEN_SETUP_CH0A:
 	break
 	video offset=CINEMATIC_051, x=160, y=100
-	djnz [0xE6], LABEL_0648
+	djnz [0xE6], ENDING_DRAW_CIN_051_DJNZ_THEN_SETUP_CH0A
 	setup channel=0x0A, address=ZOOM_LOOP_CIN_105
 	setup channel=0x0B, address=DRAW_CIN_101_102_FADE_PAL_C
 	setup channel=0x0C, address=DRAW_CIN_97_TO_100
