@@ -49,7 +49,7 @@ TANK_STAGE_BOOT_SETUP_CHANNELS:
 TANK_DRIVE_SCENE_INIT:
 	setup channel=0x3C, address=BLITTER_LOOP_COPY_PAGE_03
 	setup channel=0x02, address=TANK_BG_ANIM_CIN221_222_BOOT_CHANNEL_02
-	setup channel=0x00, address=LABEL_1CDC
+	setup channel=0x00, address=TANK_SCENE_INIT_CALL_DRAW_BG_THEN_PAL_1
 	setup channel=0x20, address=HANG_DRAW_CIN_037
 	setup channel=0x28, address=HANG_DRAW_CIN_036
 	setup channel=0x23, address=SETUP_TANK_HERO_VARS_PLAY_4SFX

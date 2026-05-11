@@ -1,5 +1,5 @@
 TANK_SCENE_INIT_FILL_COLOR_0C_DRAW_BG:
-	jne [0x6D], 0x00, LABEL_1CE5
+	jne [0x6D], 0x00, TANK_SCROLL_Y_INIT_AND_PAGE_83_TO_00
 	selectVideoPage 0x00
 	fill page=0x00, color=0x0C
 	video offset=CINEMATIC_000, x=160, y=100
@@ -9,12 +9,12 @@ TANK_SCENE_INIT_FILL_COLOR_0C_DRAW_BG:
 	selectVideoPage 0xFF
 	ret
 
-LABEL_1CDC:
+TANK_SCENE_INIT_CALL_DRAW_BG_THEN_PAL_1:
 	call TANK_SCENE_INIT_FILL_COLOR_0C_DRAW_BG
 	copyVideoPage src=0x03, dst=0xFF
 	jmp INIT_VARS_A_B_PAL_1
 
-LABEL_1CE5:
+TANK_SCROLL_Y_INIT_AND_PAGE_83_TO_00:
 	mov [SCROLL_Y], 0xFF9C
 	copyVideoPage src=0x83, dst=0x00
 	copyVideoPage src=0x00, dst=0xFF

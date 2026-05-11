@@ -1,4 +1,4 @@
-LABEL_1D17:
+TANK_SCENE_INIT_FILL_COLOR_0C_AND_PAGE_3_COPY:
 	selectVideoPage 0x00
 	fill page=0x00, color=0x0C
 	video offset=CINEMATIC_000, x=160, y=100
@@ -24,7 +24,7 @@ DRAW_CIN_122_ON_PAGE_0:
 	selectVideoPage 0xFF
 	ret
 
-LABEL_1D4F:
+TANK_SCENE_DRAW_CIN_169_IF_VAR_67_LE_2:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_169, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
@@ -32,7 +32,7 @@ LABEL_1D4F:
 	mov [HACK_VAR_67], 0x0002
 	ret
 
-LABEL_1D63:
+TANK_SCENE_DRAW_CIN_168_IF_VAR_67_LT_3:
 	jge [HACK_VAR_67], 0x03, SHARED_RET
 	selectVideoPage 0x00
 	video offset=CINEMATIC_168, x=[0x0f], y=[0x10]
