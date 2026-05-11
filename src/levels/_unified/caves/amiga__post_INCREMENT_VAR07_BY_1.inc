@@ -95,7 +95,7 @@ DRAW_CIN_015:
 LABEL_8B79:
 	db 0x11
 
-DRAW_CIN_028_029_030_VAR09:
+DRAW_HERO_SUBFRAME_3_VAR09:
 	mov [0xF8], [0x09]
 	and [0xF8], 0x000F
 	je [0xF8], 0x01, DRAW_CIN_028
@@ -115,7 +115,7 @@ DRAW_CIN_030:
 	video offset=CINEMATIC_030, x=[0x07], y=[0x08]
 	ret
 
-DRAW_CIN_031_032_VAR09_LOW:
+DRAW_HERO_SUBFRAME_2_VAR09_LOW:
 	mov [0xF8], [0x09]
 	and [0xF8], 0x000F
 	je [0xF8], 0x01, DRAW_CIN_031
@@ -133,78 +133,78 @@ DRAW_CIN_032:
 LABEL_8BC6:
 	video type=0, offset=COMMON_VIDEO_158, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
-	jg [0xF6], 0x00, DRAW_CIN_031_032_VAR09_LOW
+	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=COMMON_VIDEO_159, x=[0x07], y=[0x08], zoom=0x40
-	jmp DRAW_CIN_031_032_VAR09_LOW
+	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_8BDC:
 	video type=0, offset=COMMON_VIDEO_125, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
-	jg [0xF6], 0x00, DRAW_CIN_031_032_VAR09_LOW
+	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=COMMON_VIDEO_126, x=[0x07], y=[0x08], zoom=0x40
-	jmp DRAW_CIN_031_032_VAR09_LOW
+	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_8BF2:
 	video type=0, offset=COMMON_VIDEO_129, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	add [0xF5], 0x0001
-	jg [0xF6], 0x00, DRAW_CIN_031_032_VAR09_LOW
+	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=COMMON_VIDEO_130, x=[0x07], y=[0x08], zoom=0x40
-	jmp DRAW_CIN_031_032_VAR09_LOW
+	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_8C0C:
 	video type=0, offset=COMMON_VIDEO_132, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
-	jg [0xF6], 0x00, DRAW_CIN_031_032_VAR09_LOW
+	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=COMMON_VIDEO_133, x=[0x07], y=[0x08], zoom=0x40
-	jmp DRAW_CIN_031_032_VAR09_LOW
+	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_8C22:
 	video type=0, offset=COMMON_VIDEO_010, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	sub [0xF5], 0x0001
-	jg [0xF6], 0x00, DRAW_CIN_031_032_VAR09_LOW
+	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=COMMON_VIDEO_011, x=[0x07], y=[0x08], zoom=0x40
-	jmp DRAW_CIN_031_032_VAR09_LOW
+	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_8C3C:
 	video type=0, offset=COMMON_VIDEO_137, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	sub [0xF5], 0x0001
-	jg [0xF6], 0x00, DRAW_CIN_031_032_VAR09_LOW
+	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=COMMON_VIDEO_138, x=[0x07], y=[0x08], zoom=0x40
-	jmp DRAW_CIN_031_032_VAR09_LOW
+	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_8C56:
 	video type=0, offset=COMMON_VIDEO_141, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	sub [0xF5], 0x0002
-	jg [0xF6], 0x00, DRAW_CIN_031_032_VAR09_LOW
+	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=COMMON_VIDEO_142, x=[0x07], y=[0x08], zoom=0x40
-	jmp DRAW_CIN_031_032_VAR09_LOW
+	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_8C70:
 	video type=0, offset=COMMON_VIDEO_145, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	sub [0xF5], 0x0002
-	jg [0xF6], 0x00, DRAW_CIN_031_032_VAR09_LOW
+	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=COMMON_VIDEO_146, x=[0x07], y=[0x08], zoom=0x40
-	jmp DRAW_CIN_031_032_VAR09_LOW
+	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_8C8A:
 	video type=0, offset=COMMON_VIDEO_149, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	sub [0xF5], 0x0002
-	jg [0xF6], 0x00, DRAW_CIN_031_032_VAR09_LOW
+	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=COMMON_VIDEO_150, x=[0x07], y=[0x08], zoom=0x40
-	jmp DRAW_CIN_031_032_VAR09_LOW
+	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_8CA4:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_123, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_124, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8CC6
 	call LABEL_8877
 	jmp LABEL_8CC9
@@ -222,7 +222,7 @@ LABEL_8CCA:
 	video type=0, offset=COMMON_VIDEO_123, x=[0x07], y=[0x08], zoom=0x40
 	add [0x07], 0x0001
 	video type=0, offset=COMMON_VIDEO_127, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8CF4
 	call LABEL_8877
 	jmp LABEL_8CF7
@@ -237,7 +237,7 @@ GUARDED_HERO_ANIM_CV_128:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_128, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8D15
 	call LABEL_8883
 	jmp LABEL_8D18
@@ -253,7 +253,7 @@ LABEL_8D19:
 	play id=0x0055, freq=0x0F, vol=0x14, channel=0x00
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_131, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8D3C
 	call LABEL_8883
 	jmp LABEL_8D3F
@@ -268,7 +268,7 @@ LABEL_8D40:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_134, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8D5D
 	call LABEL_8883
 	jmp LABEL_8D60
@@ -284,7 +284,7 @@ LABEL_8D61:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_135, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_136, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8D83
 	call LABEL_88A6
 	jmp LABEL_8D86
@@ -300,7 +300,7 @@ LABEL_8D87:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_139, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_140, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8DA9
 	call LABEL_88B2
 	jmp LABEL_8DAC
@@ -316,7 +316,7 @@ LABEL_8DAD:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_143, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_144, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8DCF
 	call LABEL_88D5
 	jmp LABEL_8DD2
@@ -332,7 +332,7 @@ LABEL_8DD3:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_147, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_148, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8DF5
 	call LABEL_88F8
 	jmp LABEL_8DF8
@@ -348,7 +348,7 @@ LABEL_8DF9:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_147, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_151, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8E1B
 	call LABEL_88F8
 	jmp LABEL_8E26
@@ -366,7 +366,7 @@ LABEL_8E27:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_139, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_152, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8E49
 	call LABEL_88D5
 	jmp LABEL_8E4C
@@ -383,7 +383,7 @@ LABEL_8E4D:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_135, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_153, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8E75
 	call LABEL_88D5
 	jmp LABEL_8E78
@@ -398,7 +398,7 @@ LABEL_8E79:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_154, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8E96
 	call LABEL_88D5
 	jmp LABEL_8E99
@@ -413,7 +413,7 @@ LABEL_8E9A:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_155, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8EB7
 	call LABEL_88B2
 	jmp LABEL_8EBA
@@ -428,7 +428,7 @@ LABEL_8EBB:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_156, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8ED8
 	call LABEL_88A6
 	jmp LABEL_8EDB
@@ -443,7 +443,7 @@ LABEL_8EDC:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_157, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8EF9
 	call LABEL_8883
 	jmp LABEL_8EFC
@@ -458,7 +458,7 @@ GUARDED_HERO_ANIM_CV_009:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_009, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8F1A
 	call LABEL_8883
 	jmp LABEL_8F1D
@@ -473,7 +473,7 @@ LABEL_8F1E:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_009, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8F3B
 	call LABEL_88A6
 	jmp LABEL_8F3E
@@ -488,7 +488,7 @@ LABEL_8F3F:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_009, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_028_029_030_VAR09
+	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_8F5C
 	call LABEL_88B2
 	jmp LABEL_8F5F

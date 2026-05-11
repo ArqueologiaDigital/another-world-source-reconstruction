@@ -1,7 +1,7 @@
 LABEL_862A:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_232, x=[0x07], y=[0x08], zoom=0x40
-	call DRAW_CIN_054_055_056_VAR09
+	call DRAW_BEAST_SUBFRAME_3_VAR09
 	add [0x07], 0x0001
 	call LABEL_8459
 	sub [0x07], 0x0001
