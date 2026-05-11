@@ -3,10 +3,10 @@
 ; pattern — likely indexing the per-puzzle expected digit
 ; values that get compared against player input.
 CODEWHEEL_LOOKUP_VAR06_FROM_VAR_TABLE_BY_VAR05:
-	jne [0x05], 0x00, LABEL_0246
+	jne [0x05], 0x00, CODEWHEEL_LOOKUP_VAR06_FROM_VAR0B_IF_VAR05_EQ_1
 	mov [0x06], [0x0A]
 
-LABEL_0246:
+CODEWHEEL_LOOKUP_VAR06_FROM_VAR0B_IF_VAR05_EQ_1:
 	jne [0x05], 0x01, LABEL_024F
 	mov [0x06], [0x0B]
 
