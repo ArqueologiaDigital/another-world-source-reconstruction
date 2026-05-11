@@ -22,6 +22,7 @@ LABEL_4DC3:
 	add [0x16], 0x0001
 	killChannel
 
+; mirrors CAVES/CAPSULE
 PRISON_DRAW_CIN_656_AND_682_OR_VARIANT_PER_VAR16:
 	video offset=CINEMATIC_656, x=[0x1a], y=[0x1b]
 	jg [0x16], 0x01, LABEL_4DED
