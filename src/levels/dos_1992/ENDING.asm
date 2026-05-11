@@ -161,7 +161,7 @@ LABEL_0000:
 	song id=0x0000, delay=0x0000, pos=0x00
 	call PRELOAD_RESOURCES_8_TO_1
 	call LIKELY_A_COPY_PROTECTION_MECHANISM
-	setup channel=0x1E, address=LABEL_0662
+	setup channel=0x1E, address=ENDING_DRAW_STARS_BG_PLAY_SOUND_08
 	killChannel
 	copyVideoPage src=0x00, dst=0x03
 	killChannel
@@ -801,7 +801,7 @@ LABEL_0648:
 	setup channel=0x0D, address=LABEL_00AF
 	killChannel
 
-LABEL_0662:
+ENDING_DRAW_STARS_BG_PLAY_SOUND_08:
 	call DRAW_STARS_PAGE0_CIN_000
 	call DRAW_STARS_PAGE3_CIN_004
 	setup channel=0x05, address=DRAW_CIN_071_AT_160_100_FOREVER
@@ -818,9 +818,9 @@ LABEL_0662:
 	mov [0x02], 0x0064
 	setPalette 0x0A
 
-LABEL_069B:
+ENDING_DJNZ_VAR03_SETUP_CH05_DRAW_CIN_011:
 	break
-	djnz [0x03], LABEL_069B
+	djnz [0x03], ENDING_DJNZ_VAR03_SETUP_CH05_DRAW_CIN_011
 	setup channel=0x05, address=DRAW_CIN_71_72_FADE
 	video offset=CINEMATIC_011, x=[0x01], y=[0x02]
 	play id=0x0008, freq=0x0A, vol=0x16, channel=0x00
@@ -834,26 +834,26 @@ LABEL_069B:
 	play id=0x000E, freq=0x03, vol=0x20, channel=0x03
 	mov [0x03], 0x0014
 
-LABEL_06D1:
+ENDING_DRAW_CIN_015_DJNZ_VAR03_THEN_PAUSE_10:
 	break
 	video offset=CINEMATIC_015, x=[0x01], y=[0x02]
-	djnz [0x03], LABEL_06D1
+	djnz [0x03], ENDING_DRAW_CIN_015_DJNZ_VAR03_THEN_PAUSE_10
 	mov [PAUSE_SLICES], 0x000A
 	mov [0x03], 0x0006
 	play id=0x000F, freq=0x03, vol=0x30, channel=0x03
 	break
 	play id=0x0008, freq=0x07, vol=0x11, channel=0x01
 
-LABEL_06F0:
+ENDING_DRAW_CIN_014_TWICE_THEN_CHECK_VAR03:
 	video offset=CINEMATIC_014, x=[0x01], y=[0x02]
 	break
 	video offset=CINEMATIC_014, x=[0x01], y=[0x02]
 	break
-	jne [0x03], 0x04, LABEL_070E
+	jne [0x03], 0x04, ENDING_PLAY_SOUND_08_IF_VAR03_NOT_3
 	song id=0x008A, delay=0x3A98, pos=0x00
 	play id=0x0008, freq=0x0A, vol=0x16, channel=0x00
 
-LABEL_070E:
+ENDING_PLAY_SOUND_08_IF_VAR03_NOT_3:
 	jne [0x03], 0x03, ENDING_ANIM_CIN_013_TO_016_AT_VAR01_02_X_SLIDE
 	play id=0x0008, freq=0x0A, vol=0x0B, channel=0x00
 
@@ -881,7 +881,7 @@ ENDING_ANIM_CIN_013_TO_016_AT_VAR01_02_X_SLIDE:
 	video offset=CINEMATIC_014, x=[0x01], y=[0x02]
 	break
 	add [PAUSE_SLICES], 0x0002
-	djnz [0x03], LABEL_06F0
+	djnz [0x03], ENDING_DRAW_CIN_014_TWICE_THEN_CHECK_VAR03
 	mov [PAUSE_SLICES], 0x0006
 	video offset=CINEMATIC_019, x=[0x01], y=[0x02]
 	setup channel=0x14, address=INIT_VARS_07_08_09

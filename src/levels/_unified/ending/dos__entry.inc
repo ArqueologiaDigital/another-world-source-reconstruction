@@ -284,7 +284,7 @@ LABEL_0000:
 	song id=0x0000, delay=0x0000, pos=0x00
 	call PRELOAD_RESOURCES_8_TO_1
 	call LIKELY_A_COPY_PROTECTION_MECHANISM
-	setup channel=0x1E, address=LABEL_0662
+	setup channel=0x1E, address=ENDING_DRAW_STARS_BG_PLAY_SOUND_08
 	killChannel
 	copyVideoPage src=0x00, dst=0x03
 	killChannel
