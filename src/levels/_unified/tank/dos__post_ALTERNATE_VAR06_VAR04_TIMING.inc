@@ -40,6 +40,11 @@ LABEL_1B75:
 LABEL_1BD9:
 	db 0x11
 
+; Looping background animation. Set up by
+; TANK_STAGE_BOOT_SETUP_CHANNELS as channel 0x02; runs
+; forever drawing CINEMATIC_221 (4x) then CINEMATIC_222
+; then more — the continuous tank-arena ambient effect
+; (probably steam vents or screen-edge framing).
 TANK_BG_ANIM_CIN221_222_BOOT_CHANNEL_02:
 	video offset=CINEMATIC_221, x=[0x0a], y=100
 	break

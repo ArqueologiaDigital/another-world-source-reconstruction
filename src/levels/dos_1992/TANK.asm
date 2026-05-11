@@ -1173,6 +1173,11 @@ LABEL_0926:
 	bankSwitch 6;  Capsule Lands at the Bath
 	killChannel
 
+; Per-tick turret-angle clamping dispatcher. Routes through
+; scene-state-specific clamping rules based on HACK_VAR_67
+; (== 0 / 2 / 5) and the current turret angle var5F. Each
+; state has its own valid angle range and edge-case
+; handlers (SET_VAR5F_TO_0016 etc.).
 TANK_TURRET_ANGLE_STATE_DISPATCH:
 	je [HACK_VAR_67], 0x00, LABEL_09B9
 	je [HACK_VAR_67], 0x02, LABEL_09C8
@@ -1256,6 +1261,9 @@ SET_VAR5F_TO_0016:
 	mov [0x5F], 0x0016
 	ret
 
+; Combined L/R + U/D input apply in one shot. Adds
+; HERO_POS_LEFT_RIGHT and (HERO_POS_UP_DOWN << 3) to var5F
+; in a single pass before dispatching.
 TANK_APPLY_BOTH_AXES_INPUT_TO_TURRET:
 	add [0x5F], [HERO_POS_LEFT_RIGHT]
 	mov [0xF8], [HERO_POS_UP_DOWN]
@@ -1267,6 +1275,11 @@ COPY_VAR62_TO_VAR5F:
 	mov [0x5F], [0x62]
 	ret
 
+; Pre-dispatch input processor for horizontal turret
+; movement. Checks for special angle latches (var62 ==
+; 0x16/0x0E force-snap to 0x14), otherwise applies
+; HERO_POS_LEFT_RIGHT to var5F as a delta, clears the
+; input, and falls into the state-dispatch.
 TANK_APPLY_LEFT_RIGHT_INPUT_TO_TURRET:
 	je [0x62], 0x16, SET_VAR5F_14_OR_COPY_VAR62
 	je [0x62], 0x0E, SET_VAR5F_14_OR_COPY_VAR62
@@ -1277,6 +1290,10 @@ TANK_APPLY_LEFT_RIGHT_INPUT_TO_TURRET:
 LABEL_0A87:
 	db 0x05
 
+; Vertical-input variant of the above. HERO_POS_UP_DOWN is
+; shifted left by 3 (multiplied by 8) before being
+; subtracted from var5F — vertical input has 8x sensitivity
+; compared to horizontal.
 TANK_APPLY_UP_DOWN_INPUT_TO_TURRET:
 	je [HERO_POS_UP_DOWN], 0x00, COPY_VAR62_TO_VAR5F
 	shl [HERO_POS_UP_DOWN], 0x0003
@@ -2317,6 +2334,9 @@ INCREMENT_VAR44_BY_37:
 	add [0x44], 0x0037
 	ret
 
+; Another shot-anim, gated by var45 instead. Plays sound
+; 0x008C and draws CINEMATIC_082-085 at (var42, var43) zoom
+; var44.
 TANK_SHOT_ANIM_CIN082_085_TRIGGER_VAR45:
 	break
 	je [0x45], 0x00, TANK_SHOT_ANIM_CIN082_085_TRIGGER_VAR45
@@ -2379,6 +2399,10 @@ LABEL_1606:
 	add [0x4D], 0x0037
 	ret
 
+; Wait-on-var4E variant of the shot-anim family. Plays
+; sound 0x008C, then draws CINEMATIC_200/201/202/203 at
+; (var4B, var4C) with zoom var4D — coords and zoom are
+; runtime-parameterized rather than hard-coded.
 TANK_SHOT_ANIM_CIN200_203_TRIGGER_VAR4E:
 	break
 	je [0x4E], 0x00, TANK_SHOT_ANIM_CIN200_203_TRIGGER_VAR4E
@@ -2936,6 +2960,11 @@ LABEL_1B75:
 LABEL_1BD9:
 	db 0x11
 
+; Looping background animation. Set up by
+; TANK_STAGE_BOOT_SETUP_CHANNELS as channel 0x02; runs
+; forever drawing CINEMATIC_221 (4x) then CINEMATIC_222
+; then more — the continuous tank-arena ambient effect
+; (probably steam vents or screen-edge framing).
 TANK_BG_ANIM_CIN221_222_BOOT_CHANNEL_02:
 	video offset=CINEMATIC_221, x=[0x0a], y=100
 	break
@@ -3317,6 +3346,12 @@ TANK_FRAME_RENDER_FROM_PAGE_3_LOOP:
 LABEL_2030:
 	db 0x11
 
+; Frame-emit + palette-swap flash effect: blit FF, select
+; FF, PAUSE=2, setPalette 0x1F, blit FE, setPalette 0x01,
+; blit FE, PAUSE=6, copyVideoPage 3→FF, break. The double-
+; blit with different palettes (0x1F then 0x01) produces a
+; visible flicker between two color schemes — used for hit
+; flashes or alert effects.
 TANK_SCREEN_FLASH_PALETTE_1F_TO_01:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
