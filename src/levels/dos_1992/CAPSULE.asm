@@ -5772,11 +5772,12 @@ LABEL_30B6:
 LABEL_30C3:
 	call LABEL_3041
 
-; Random-byte decomposer. After calling LABEL_30B6 (random
-; seed updater), extracts overlapping bit-fields from var38:
-; var3F = low 8 bits, var3E = low 7 bits, var3D = low 6 bits,
-; RANDOM_SEED = low 5 bits, var38 = low 4 bits. Used to
-; derive multiple correlated random values per call.
+; Random-byte decomposer — identical behavior to the
+; CAPSULE routine of the same name. After two helper calls
+; (LABEL_071A, LABEL_078F), extracts overlapping bit-fields
+; from var38: var3F = low 8 bits, var3E = low 7, var3D =
+; low 6, RANDOM_SEED = low 5, var38 = low 4. Used to derive
+; multiple correlated random values per call.
 DERIVE_VAR3D_3E_3F_FROM_VAR38_BIT_MASKS:
 	call LABEL_30B6
 	and [0x38], 0x00FF

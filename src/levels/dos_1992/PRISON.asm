@@ -1748,6 +1748,12 @@ LABEL_078F:
 	mov [0x38], [0x37]
 	ret
 
+; Random-byte decomposer — identical behavior to the
+; CAPSULE routine of the same name. After two helper calls
+; (LABEL_071A, LABEL_078F), extracts overlapping bit-fields
+; from var38: var3F = low 8 bits, var3E = low 7, var3D =
+; low 6, RANDOM_SEED = low 5, var38 = low 4. Used to derive
+; multiple correlated random values per call.
 DERIVE_VAR3D_3E_3F_FROM_VAR38_BIT_MASKS:
 	call LABEL_071A
 	call LABEL_078F
@@ -7697,6 +7703,11 @@ LABEL_42F9:
 	jg [0x22], 0x0F, LABEL_43CD
 	jmp LABEL_43F6
 
+; `sub [0x22], 0x0001 / ret`. Y-decrement tail used by
+; upward-projectile arc routines (CINEMATIC_524 at (var21,
+; var26)) that jmp here after each draw step. Identical
+; pattern to CAVES's LABEL_72BD and CAPSULE_DECREMENT_VAR22_-
+; AND_RET.
 PRISON_DECREMENT_VAR22_AND_RET:
 	sub [0x22], 0x0001
 	ret
@@ -7830,6 +7841,11 @@ LABEL_4465:
 LABEL_4466:
 	db 0x11
 
+; Reads HERO_X/HERO_Y into var21/var22, then masks var04
+; (clock/timer) by 0x3F to derive a wobble/offset that
+; gets subtracted from var22. The "compute projectile
+; origin offset relative to hero with clock-based wobble"
+; helper. Mirrors CAVES's LABEL_7479.
 PRISON_HERO_POS_TO_PROJECTILE_OFFSET_SETUP:
 	mov [0x21], [HERO_X]
 	mov [0x22], [HERO_Y]
@@ -9606,6 +9622,14 @@ LABEL_56E1:
 	call LABEL_538F
 	ret
 
+; The buddy per-frame render+animation tick in PRISON. Gates
+; on HACK_VAR_67 == [0x10] (scene-id check), conditionally
+; calls LABEL_52F2 (AI helper), then draws the buddy: calls
+; DRAW_SPRITE_CIN_236_239_BY_VAR09 for the buddy sprite
+; family, draws COMMON_VIDEO_164 (buddy overlay) at
+; (BUDDY_X, BUDDY_Y), and runs DRAW_CIN_240_IF_VAR09_EQ_1
+; for the conditional 240 frame. Mirrors
+; CAPSULE_BUDDY_PER_FRAME_TICK in structure.
 PRISON_BUDDY_PER_FRAME_TICK_CIN236_240:
 	jne [HACK_VAR_67], [0x10], SCENE_DISPATCH_NOOP_RET
 	je [0x0D], 0x00, LABEL_56FF
@@ -10755,6 +10779,12 @@ LABEL_6268:
 LABEL_626B:
 	ret
 
+; The hero per-frame render+animation tick in PRISON. Same
+; shape as the buddy tick but with the hero sprite family
+; (CIN_164-167), the hero overlay COMMON_VIDEO_128, and
+; DRAW_CIN_168_IF_VAR09_EQ_1 for the conditional 168 frame.
+; Diverges from the buddy tick in calling LABEL_5C2C or
+; LABEL_5F91 (depending on var0D) as the AI helper.
 PRISON_HERO_PER_FRAME_TICK_CIN164_168:
 	jne [HACK_VAR_67], [0x10], SCENE_DISPATCH_NOOP_RET
 	call DRAW_SPRITE_CIN_164_167_BY_VAR09
