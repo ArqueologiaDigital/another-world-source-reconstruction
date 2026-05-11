@@ -23,7 +23,7 @@ LABEL_0A2D:
 	video offset=CINEMATIC_608, x=[0xe6], y=[0xe7]
 	break
 	video offset=CINEMATIC_607, x=[0xe6], y=[0xe7]
-	call LABEL_30C3
+	call CAPSULE_DERIVE_VAR3D_3E_3F_FROM_VAR38_BIT_MASKS_VARIANT_3041
 	mov [0xE8], 0x0001
 	add [0xE8], [0x3A]
 
@@ -51,7 +51,7 @@ ANIM_CIN_606_LOOP_VARE9:
 	break
 	video offset=CINEMATIC_605, x=[0xe6], y=[0xe7]
 	break
-	call LABEL_30C3
+	call CAPSULE_DERIVE_VAR3D_3E_3F_FROM_VAR38_BIT_MASKS_VARIANT_3041
 	mov [0xE9], [0x39]
 	add [0xE9], 0x0002
 
@@ -76,7 +76,7 @@ LABEL_0AE1:
 
 LABEL_0B08:
 	break
-	call LABEL_30C3
+	call CAPSULE_DERIVE_VAR3D_3E_3F_FROM_VAR38_BIT_MASKS_VARIANT_3041
 	jg [HERO_X], 0xE0, LABEL_0B08
 	jg [HERO_X], 0x6E, LABEL_0B3E
 	jl [HERO_X], 0x0A, LABEL_0B08

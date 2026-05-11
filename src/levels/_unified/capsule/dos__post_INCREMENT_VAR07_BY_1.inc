@@ -770,7 +770,7 @@ LABEL_8C16:
 	video type=0, offset=COMMON_VIDEO_356, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
-LABEL_8C2A:
+CAPSULE_BUDDY_DRAW_CIN_244_OR_DISPATCH:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video offset=CINEMATIC_244, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
