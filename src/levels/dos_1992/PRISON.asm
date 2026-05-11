@@ -10797,7 +10797,7 @@ LABEL_626B:
 ; shape as the buddy tick but with the hero sprite family
 ; (CIN_164-167), the hero overlay COMMON_VIDEO_128, and
 ; DRAW_CIN_168_IF_VAR09_EQ_1 for the conditional 168 frame.
-; Diverges from the buddy tick in calling PRISON_BUDDY_DRAW_CIN_170_THEN_169_IF_BAR31_3 or
+; Diverges from the buddy tick in calling LABEL_5C2C or
 ; LABEL_5F91 (depending on var0D) as the AI helper.
 PRISON_HERO_PER_FRAME_TICK_CIN164_168:
 	jne [HACK_VAR_67], [0x10], SCENE_DISPATCH_NOOP_RET
