@@ -213,13 +213,13 @@ LABEL_829E:
 	video type=0, offset=COMMON_VIDEO_309, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
-LABEL_82BC:
+CAVES_BUDDY_DRAW_CV306_X_MINUS_1:
 	sub [0x07], 0x0001
-	call LABEL_82C8
+	call CAVES_BUDDY_DRAW_CV306_OVERLAY_BAR31_BIT2
 	add [0x07], 0x0001
 	ret
 
-LABEL_82C8:
+CAVES_BUDDY_DRAW_CV306_OVERLAY_BAR31_BIT2:
 	video type=0, offset=COMMON_VIDEO_306, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
