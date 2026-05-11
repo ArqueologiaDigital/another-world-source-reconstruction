@@ -502,6 +502,7 @@ LABEL_4AD9:
 	call LABEL_8A6A
 	break
 
+; per-tick projectile
 CAPSULE_HERO_SCENE_LOOP_TICK_BEFORE_DISPATCH:
 	call GUARDED_DRAW_CV_304_305
 	break

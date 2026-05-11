@@ -224,6 +224,7 @@ LABEL_5950:
 LABEL_5968:
 	ret
 
+; per-tick projectile
 CAPSULE_PROJECTILE_TICK_FROM_VAR5A_5B_5C:
 	add [0x0D], 0x0001
 	jne [0x0D], 0x01, LABEL_5989

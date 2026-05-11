@@ -784,12 +784,14 @@ LABEL_8C2A:
 	call JUNK__8C71
 	ret
 
+; per-tick projectile
 CAPSULE_DRAW_ALIEN_AT_BUDDY_Y_PLUS_14:
 	add [BUDDY_Y], 0x000E
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	sub [BUDDY_Y], 0x000E
 	ret
 
+; per-tick projectile
 CAPSULE_DRAW_HERO_AT_BUDDY_Y_PLUS_13:
 	add [BUDDY_Y], 0x000D
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
