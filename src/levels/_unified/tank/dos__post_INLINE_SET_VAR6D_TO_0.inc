@@ -16,7 +16,7 @@ LABEL_0004:
 ; arena.
 TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x3C, address=BLITTER_LOOP_COPY_PAGE_03
-	setup channel=0x02, address=LABEL_1BDA
+	setup channel=0x02, address=TANK_BG_ANIM_CIN221_222_BOOT_CHANNEL_02
 	setup channel=0x04, address=LABEL_15E3
 	setup channel=0x0A, address=LABEL_1924
 	setup channel=0x0B, address=WAIT_VAR3E_DEC_AND_RANDOMIZE
@@ -48,7 +48,7 @@ TANK_STAGE_BOOT_SETUP_CHANNELS:
 ; ends in jmp TANK_DRIVE_SCENE_INIT).
 TANK_DRIVE_SCENE_INIT:
 	setup channel=0x3C, address=BLITTER_LOOP_COPY_PAGE_03
-	setup channel=0x02, address=LABEL_1BDA
+	setup channel=0x02, address=TANK_BG_ANIM_CIN221_222_BOOT_CHANNEL_02
 	setup channel=0x00, address=LABEL_1CDC
 	setup channel=0x20, address=HANG_DRAW_CIN_037
 	setup channel=0x28, address=HANG_DRAW_CIN_036

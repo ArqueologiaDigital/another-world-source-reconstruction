@@ -40,7 +40,7 @@ LABEL_1B75:
 LABEL_1BD9:
 	db 0x11
 
-LABEL_1BDA:
+TANK_BG_ANIM_CIN221_222_BOOT_CHANNEL_02:
 	video offset=CINEMATIC_221, x=[0x0a], y=100
 	break
 	video offset=CINEMATIC_221, x=[0x0a], y=100
@@ -87,4 +87,4 @@ LABEL_1BDA:
 	break
 	video offset=CINEMATIC_222, x=[0x0a], y=100
 	break
-	jmp LABEL_1BDA
+	jmp TANK_BG_ANIM_CIN221_222_BOOT_CHANNEL_02
