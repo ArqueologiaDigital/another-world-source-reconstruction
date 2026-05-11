@@ -76,7 +76,7 @@ CINEMATIC_056		EQU 0x0908
 
 	org 0x0000
 
-; Calls LABEL_1090 setup helper, sets PAUSE_SLICES=2, sets
+; Calls PASSCODE_CLEAR_AND_BLIT_PAGES_1_2_FF setup helper, sets PAUSE_SLICES=2, sets
 ; up channel 0x3C as the redraw loop, fills both visible
 ; pages black, clears LAST_KEYCHAR, sets palette 5. The
 ; screen-startup routine.
@@ -528,15 +528,15 @@ LABEL_06FB:
 	db 0x11
 
 LABEL_06FC:
-	jne [0x1E], 0x0E, LABEL_071E
-	jne [0x1F], 0x0D, LABEL_071E
-	jne [0x20], 0x13, LABEL_071E
-	jne [0x21], 0x12, LABEL_071E
+	jne [0x1E], 0x0E, PASSCODE_CURSOR_WAIT_FOR_DIRECTIONAL_INPUT
+	jne [0x1F], 0x0D, PASSCODE_CURSOR_WAIT_FOR_DIRECTIONAL_INPUT
+	jne [0x20], 0x13, PASSCODE_CURSOR_WAIT_FOR_DIRECTIONAL_INPUT
+	jne [0x21], 0x12, PASSCODE_CURSOR_WAIT_FOR_DIRECTIONAL_INPUT
 	mov [0x00], 0x000A
 	bankSwitch 2;  Arrival at the Lake & Beast Chase
 	jmp LABEL_09BE
 
-LABEL_071E:
+PASSCODE_CURSOR_WAIT_FOR_DIRECTIONAL_INPUT:
 	jne [0x1E], 0x11, LABEL_0740
 	jne [0x1F], 0x12, LABEL_0740
 	jne [0x20], 0x0C, LABEL_0740
