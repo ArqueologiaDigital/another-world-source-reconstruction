@@ -143,7 +143,7 @@ LABEL_A57D:
 	setup channel=0x0F, address=KILL_CHANNEL_LANDING
 	setup channel=0x36, address=LABEL_2C05
 	setup channel=0x02, address=INLINE_SET_VARE6_TO_4
-	setup channel=0x01, address=LABEL_3F6C
+	setup channel=0x01, address=CAPSULE_RANDOM_OFFSET_VAR21_FOR_SCENE_4B
 	mov [0xEF], 0x0005
 	play id=0x0066, freq=0x07, vol=0x10, channel=0x03
 	jmp VAR66_MOD_32_DRAW_DISPATCH
@@ -176,7 +176,7 @@ LABEL_A5D0:
 	setPalette 0x01
 	call JUNK__9DD7
 	call DELETE_CHANS_0_8_AND_RET
-	setup channel=0x01, address=LABEL_3F6C
+	setup channel=0x01, address=CAPSULE_RANDOM_OFFSET_VAR21_FOR_SCENE_4B
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_A631:
 	db 0x11
@@ -193,7 +193,7 @@ LABEL_A632:
 	setPalette 0x01
 	call LABEL_9E0B
 	call DELETE_CHANS_0_8_AND_RET
-	setup channel=0x01, address=LABEL_3F6C
+	setup channel=0x01, address=CAPSULE_RANDOM_OFFSET_VAR21_FOR_SCENE_4B
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_A662:
@@ -210,7 +210,7 @@ LABEL_A662:
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x36, address=LABEL_3E0B
 	add [0x68], 0x0019
-	setup channel=0x01, address=LABEL_3F6C
+	setup channel=0x01, address=CAPSULE_RANDOM_OFFSET_VAR21_FOR_SCENE_4B
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_A69A:
@@ -241,7 +241,7 @@ LABEL_A69A:
 	setPalette 0x01
 	call LABEL_9DF3
 	call DELETE_CHANS_0_8_AND_RET
-	setup channel=0x01, address=LABEL_3F6C
+	setup channel=0x01, address=CAPSULE_RANDOM_OFFSET_VAR21_FOR_SCENE_4B
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_A706:
@@ -275,7 +275,7 @@ LABEL_A706:
 	setup channel=0x0F, address=KILL_CHANNEL_LANDING
 	setup channel=0x36, address=LABEL_2C05
 	setup channel=0x02, address=INLINE_SET_VARE6_TO_4
-	setup channel=0x01, address=LABEL_3F6C
+	setup channel=0x01, address=CAPSULE_RANDOM_OFFSET_VAR21_FOR_SCENE_4B
 	mov [0xEF], 0x0005
 	play id=0x0066, freq=0x07, vol=0x10, channel=0x03
 	jmp VAR66_MOD_32_DRAW_DISPATCH

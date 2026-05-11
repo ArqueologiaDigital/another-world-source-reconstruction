@@ -137,7 +137,7 @@ BUDDY_SMASHING_WINDOW_ANIMATION:
 	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F14, x=[0x68], y=[0x69]
 	break
 	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F15, x=[0x68], y=[0x69]
-	setup channel=0x01, address=LABEL_3F6C
+	setup channel=0x01, address=CAPSULE_RANDOM_OFFSET_VAR21_FOR_SCENE_4B
 	call LABEL_340A
 	killChannel
 
