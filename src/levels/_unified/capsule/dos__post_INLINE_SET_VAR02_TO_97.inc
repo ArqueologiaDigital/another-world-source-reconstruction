@@ -26,7 +26,7 @@ LABEL_A41B:
 	mov [0x41], 0x0096
 	mov [0x40], 0x0099
 	setPalette 0x01
-	call DRAW_BUDDY_SURRENDERED_SCENE_BG
+	call DRAW_BUDDY_DETAINED_SCENE_BG
 	call DELETE_CHANS_0_8_AND_RET
 	play id=0x0066, freq=0x07, vol=0x08, channel=0x03
 	mov [0xA9], 0x0053

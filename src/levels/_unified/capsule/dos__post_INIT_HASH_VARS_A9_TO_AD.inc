@@ -12,9 +12,9 @@ LABEL_9C16:
 ; (-23, 96). The 2-element BG composite for the msdos-only
 ; scene where Buddy is captured by guards and Lester rescues
 ; him.
-DRAW_BUDDY_SURRENDERED_SCENE_BG:
+DRAW_BUDDY_DETAINED_SCENE_BG:
 	fill page=0x00, color=0x0B
-	video offset=CINEMATIC_BUDDY_SURRENDERED_BY_GUARDS, x=160, y=100
+	video offset=CINEMATIC_BUDDY_DETAINED_BY_GUARDS, x=160, y=100
 	video offset=CINEMATIC_340, x=65513, y=96
 	ret
 	video offset=CINEMATIC_001, x=160, y=100
