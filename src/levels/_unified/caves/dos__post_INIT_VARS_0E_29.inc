@@ -6,20 +6,20 @@ LABEL_1585:
 	mov [0x29], 0x0005
 
 LABEL_1595:
-	call LABEL_8729
+	call CAVES_BEAST_PER_FRAME_TICK_VARIANT_82C8_83B8
 	break
 	djnz [0x29], LABEL_1595
 	play id=0x0070, freq=0x0D, vol=0x40, channel=0x03
 	mov [0x0E], 0x0003
 	call GUARDED_DRAW_CV_304_305
 	break
-	call LABEL_8729
+	call CAVES_BEAST_PER_FRAME_TICK_VARIANT_82C8_83B8
 	break
 	mov [0x0E], 0x0005
 	call LABEL_8747
 	break
 	mov [0x0E], 0x000A
-	call LABEL_8729
+	call CAVES_BEAST_PER_FRAME_TICK_VARIANT_82C8_83B8
 	jmp LABEL_15C2
 LABEL_15C1:
 	db 0x11
@@ -46,13 +46,13 @@ LABEL_15D4:
 	mov [0x0E], 0x0007
 	call GUARDED_DRAW_CV_304_305
 	break
-	call LABEL_8729
+	call CAVES_BEAST_PER_FRAME_TICK_VARIANT_82C8_83B8
 	break
 	mov [0x0E], 0x0007
 	call LABEL_8747
 	break
 	mov [0x0E], 0x0004
-	call LABEL_8729
+	call CAVES_BEAST_PER_FRAME_TICK_VARIANT_82C8_83B8
 	break
 	djnz [0x29], LABEL_15D4
 	setup channel=0x34, address=LABEL_1640
@@ -116,7 +116,7 @@ LABEL_169E:
 	and [0x09], 0xFBFF
 	break
 	or [0x11], 0x2000
-	call LABEL_8729
+	call CAVES_BEAST_PER_FRAME_TICK_VARIANT_82C8_83B8
 	break
 	mov [0x12], 0x2010
 	mov [0x2F], 0x0008
@@ -244,7 +244,7 @@ LABEL_17DE:
 	call GUARDED_DRAW_CV_304_305
 	break
 	mov [0x0E], 0x0004
-	call LABEL_8729
+	call CAVES_BEAST_PER_FRAME_TICK_VARIANT_82C8_83B8
 	break
 	mov [0x0E], 0x0000
 	call LABEL_8747
@@ -260,7 +260,7 @@ LABEL_17FA:
 
 LABEL_180A:
 	mov [0x0E], 0x0000
-	call LABEL_8729
+	call CAVES_BEAST_PER_FRAME_TICK_VARIANT_82C8_83B8
 	break
 	djnz [0x29], LABEL_180A
 	mov [0xF8], [0x07]

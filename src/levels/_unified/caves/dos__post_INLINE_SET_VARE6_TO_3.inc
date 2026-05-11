@@ -90,19 +90,19 @@ LABEL_04BC:
 	mov [0x29], 0x0005
 
 LABEL_04C4:
-	call LABEL_8729
+	call CAVES_BEAST_PER_FRAME_TICK_VARIANT_82C8_83B8
 	break
 	djnz [0x29], LABEL_04C4
 	mov [0x0E], 0x0003
 	call GUARDED_DRAW_CV_304_305
 	break
-	call LABEL_8729
+	call CAVES_BEAST_PER_FRAME_TICK_VARIANT_82C8_83B8
 	break
 	mov [0x0E], 0x0004
 	call LABEL_8747
 	break
 	mov [0x0E], 0x0000
-	call LABEL_8729
+	call CAVES_BEAST_PER_FRAME_TICK_VARIANT_82C8_83B8
 	break
 	setup channel=0x01, address=LABEL_042A
 	mov [0x2F], 0x0019
