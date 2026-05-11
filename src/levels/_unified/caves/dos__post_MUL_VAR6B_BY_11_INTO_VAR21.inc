@@ -1,3 +1,4 @@
+; mirrors CAPSULE
 CAVES_SET_PROJECTILE_POS_Y_150_FROM_VAR07:
 	mov [0x21], [0x07]
 	mov [0x22], 0x0096

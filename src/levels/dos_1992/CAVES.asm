@@ -5743,6 +5743,7 @@ LABEL_2FBB:
 	mov [0x09], 0x0001
 	ret
 
+; mirrors CAPSULE
 CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09:
 	jne [0x09], 0x00, DISPATCH_VAR09_OR_KILL_CHAN
 	video offset=CINEMATIC_718, x=[0x07], y=[0x08]
@@ -6442,6 +6443,7 @@ MUL_VAR6B_BY_11_INTO_VAR21:
 	add [0x21], [0x6B]
 	ret
 
+; mirrors CAPSULE
 CAVES_SET_PROJECTILE_POS_Y_150_FROM_VAR07:
 	mov [0x21], [0x07]
 	mov [0x22], 0x0096
@@ -8542,6 +8544,7 @@ LABEL_4CEC:
 LABEL_4D0B:
 	db 0x11
 
+; mirrors CAPSULE
 CAVES_HIT_REACTION_PLAY_5A_DRAW_CIN_082:
 	or [0x11], 0x4000
 	jne [0x10], [HACK_VAR_67], LABEL_4D72
@@ -13669,6 +13672,7 @@ LABEL_82C8:
 	video type=0, offset=COMMON_VIDEO_307, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
+; mirrors CAPSULE
 CAVES_BUDDY_DRAW_CV304_BAR_31_BIT_2:
 	video type=0, offset=COMMON_VIDEO_304, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], CAVES_NOOP_RET
