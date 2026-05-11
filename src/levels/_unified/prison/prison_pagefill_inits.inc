@@ -66,28 +66,28 @@ SET_PAL_07_FILL_TWO_PAGES_86243111:
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_236:
+DRAW_PRISON_BUDDY_POSE_0_0:
 	video offset=CINEMATIC_236, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_237:
+DRAW_PRISON_BUDDY_POSE_0_1:
 	video offset=CINEMATIC_237, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_238:
+DRAW_PRISON_BUDDY_POSE_0_2:
 	video offset=CINEMATIC_238, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
 
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_239:
+DRAW_PRISON_BUDDY_POSE_0_3:
 	video offset=CINEMATIC_239, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 ;@endif
