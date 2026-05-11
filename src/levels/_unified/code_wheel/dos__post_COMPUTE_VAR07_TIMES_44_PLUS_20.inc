@@ -199,11 +199,11 @@ LABEL_1076:
 	ret
 
 LABEL_1083:
-	jne [0x06], 0x27, LABEL_1090
+	jne [0x06], 0x27, CODEWHEEL_DRAW_CIN_032_IF_VAR06_EQ_28
 	video offset=CINEMATIC_033, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
-LABEL_1090:
+CODEWHEEL_DRAW_CIN_032_IF_VAR06_EQ_28:
 	jne [0x06], 0x28, SHARED_RET
 	video offset=CINEMATIC_032, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
