@@ -10027,7 +10027,7 @@ LABEL_6990:
 LABEL_699C:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
 	sub [BUDDY_Y], 0x0001
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_197, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_198, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_69BF
@@ -10043,7 +10043,7 @@ LABEL_69C4:
 
 LABEL_69C9:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_200, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_201, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_69E8
@@ -10059,7 +10059,7 @@ LABEL_69ED:
 LABEL_69EE:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
 	add [BUDDY_Y], 0x0001
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_203, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_204, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_6A11
@@ -10076,7 +10076,7 @@ LABEL_6A16:
 LABEL_6A1B:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
 	add [BUDDY_Y], 0x0001
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_206, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_207, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_6A3E
@@ -10092,7 +10092,7 @@ LABEL_6A43:
 
 LABEL_6A48:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_209, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_210, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_6A67
@@ -10108,7 +10108,7 @@ LABEL_6A6C:
 LABEL_6A6D:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
 	sub [BUDDY_Y], 0x0001
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_206, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_212, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_6A90
@@ -10124,7 +10124,7 @@ LABEL_6A95:
 
 LABEL_6A9A:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_206, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_213, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_6AB9
@@ -10140,7 +10140,7 @@ LABEL_6ABE:
 LABEL_6ABF:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
 	add [BUDDY_Y], 0x0001
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_203, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_214, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_6AE2
@@ -10157,7 +10157,7 @@ LABEL_6AE7:
 LABEL_6AEC:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
 	add [BUDDY_Y], 0x0001
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_203, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_216, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_6B0F
@@ -10173,7 +10173,7 @@ LABEL_6B14:
 
 LABEL_6B19:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_200, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_218, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	sub [BUDDY_X], 0x0001
@@ -10188,31 +10188,31 @@ INCREMENT_VAR07_BY_1:
 	add [BUDDY_X], 0x0001
 	ret
 
-LABEL_6B46:
+DRAW_HERO_SPRITE_BY_VAR09_0E:
 	mov [0xF8], [0x09]
 	shr [0xF8], 0x0004
 	and [0xF8], 0x000F
 	jne [0x0E], 0x00, LABEL_6B82
-	je [0xF8], 0x00, DRAW_CV_298
-	je [0xF8], 0x01, DRAW_CIN_174
-	je [0xF8], 0x02, DRAW_CIN_175
-	je [0xF8], 0x03, DRAW_CIN_176
-	je [0xF8], 0x04, DRAW_CIN_177
+	je [0xF8], 0x00, DRAW_HERO_POSE_0_0
+	je [0xF8], 0x01, DRAW_HERO_POSE_0_1
+	je [0xF8], 0x02, DRAW_HERO_POSE_0_2
+	je [0xF8], 0x03, DRAW_HERO_POSE_0_3
+	je [0xF8], 0x04, DRAW_HERO_POSE_0_4
 	je [0xF8], 0x05, DRAW_ALIEN_POSE_0_5
-	je [0xF8], 0x06, DRAW_CIN_179
+	je [0xF8], 0x06, DRAW_HERO_POSE_0_6
 	ret
 
 LABEL_6B82:
 	jne [0x0E], 0x01, LABEL_6B8B
-	jmp DRAW_CIN_173
+	jmp DRAW_HERO_POSE_1
 
 LABEL_6B8B:
 	jne [0x0E], 0x02, LABEL_6B94
-	jmp DRAW_CIN_172
+	jmp DRAW_HERO_POSE_2
 
 LABEL_6B94:
 	jne [0x0E], 0x03, LABEL_6B9D
-	jmp DRAW_CIN_171
+	jmp DRAW_HERO_POSE_3
 
 LABEL_6B9D:
 	jne [0x0E], 0x04, LABEL_6BAC
@@ -10221,7 +10221,7 @@ LABEL_6B9D:
 
 LABEL_6BAC:
 	jne [0x0E], 0x05, LABEL_6BB5
-	jmp DRAW_CIN_168
+	jmp DRAW_HERO_POSE_5
 
 LABEL_6BB5:
 	jne [0x0E], 0x07, LABEL_6BC2
@@ -10231,39 +10231,39 @@ LABEL_6BB5:
 LABEL_6BC2:
 	ret
 
-DRAW_CV_298:
+DRAW_HERO_POSE_0_0:
 	video type=0, offset=COMMON_VIDEO_298, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
-DRAW_CIN_174:
+DRAW_HERO_POSE_0_1:
 	video offset=CINEMATIC_174, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_175:
+DRAW_HERO_POSE_0_2:
 	video offset=CINEMATIC_175, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_176:
+DRAW_HERO_POSE_0_3:
 	video offset=CINEMATIC_176, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_177:
+DRAW_HERO_POSE_0_4:
 	video offset=CINEMATIC_177, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_179:
+DRAW_HERO_POSE_0_6:
 	video offset=CINEMATIC_179, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_173:
+DRAW_HERO_POSE_1:
 	video offset=CINEMATIC_173, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_172:
+DRAW_HERO_POSE_2:
 	video offset=CINEMATIC_172, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_171:
+DRAW_HERO_POSE_3:
 	video offset=CINEMATIC_171, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
@@ -10275,7 +10275,7 @@ DRAW_CIN_169:
 	video offset=CINEMATIC_169, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
-DRAW_CIN_168:
+DRAW_HERO_POSE_5:
 	video offset=CINEMATIC_168, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
@@ -10391,7 +10391,7 @@ LABEL_6D22:
 
 LABEL_6D3C:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_123, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_124, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
@@ -10407,7 +10407,7 @@ LABEL_6D61:
 
 LABEL_6D62:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	sub [BUDDY_X], 0x0001
 	video type=0, offset=COMMON_VIDEO_123, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_X], 0x0001
@@ -10425,7 +10425,7 @@ LABEL_6D8F:
 
 LABEL_6D90:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_128, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
 	je [0x0D], 0x00, LABEL_6DAD
@@ -10440,7 +10440,7 @@ LABEL_6DB0:
 
 LABEL_6DB1:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_131, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
 	play id=0x0055, freq=0x0F, vol=0x14, channel=0x00
@@ -10456,7 +10456,7 @@ LABEL_6DD7:
 
 LABEL_6DD8:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_134, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
 	je [0x0D], 0x00, LABEL_6DF5
@@ -10471,7 +10471,7 @@ LABEL_6DF8:
 
 LABEL_6DF9:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_135, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_136, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
@@ -10487,7 +10487,7 @@ LABEL_6E1E:
 
 LABEL_6E1F:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_139, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_140, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
@@ -10503,7 +10503,7 @@ LABEL_6E44:
 
 LABEL_6E45:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_143, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_144, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
@@ -10519,7 +10519,7 @@ LABEL_6E6A:
 
 LABEL_6E6B:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_147, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_148, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
@@ -10535,7 +10535,7 @@ LABEL_6E90:
 
 LABEL_6E91:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_147, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_151, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
@@ -10553,7 +10553,7 @@ LABEL_6EBE:
 
 LABEL_6EBF:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_139, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_152, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
@@ -10569,7 +10569,7 @@ LABEL_6EE4:
 
 LABEL_6EE5:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_135, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_153, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
@@ -10586,7 +10586,7 @@ LABEL_6F10:
 
 LABEL_6F11:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_154, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
 	je [0x0D], 0x00, LABEL_6F2E
@@ -10601,7 +10601,7 @@ LABEL_6F31:
 
 LABEL_6F32:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_155, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
 	je [0x0D], 0x00, LABEL_6F4F
@@ -10616,7 +10616,7 @@ LABEL_6F52:
 
 LABEL_6F53:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_156, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
 	je [0x0D], 0x00, LABEL_6F70
@@ -10631,7 +10631,7 @@ LABEL_6F73:
 
 LABEL_6F74:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_157, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
 	je [0x0D], 0x00, LABEL_6F91
@@ -10646,7 +10646,7 @@ LABEL_6F94:
 
 LABEL_6F95:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_009, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
 	je [0x0D], 0x00, LABEL_6FB2
@@ -10661,7 +10661,7 @@ LABEL_6FB5:
 
 LABEL_6FB6:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_009, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
 	je [0x0D], 0x00, LABEL_6FD3
@@ -10676,7 +10676,7 @@ LABEL_6FD6:
 
 LABEL_6FD7:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_009, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_180_181_182_VAR09
 	je [0x0D], 0x00, LABEL_6FF4
@@ -10912,7 +10912,7 @@ LABEL_72DF:
 
 LABEL_7302:
 	add [BUDDY_Y], 0x000E
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	sub [BUDDY_Y], 0x000E
 	ret
 
@@ -11048,7 +11048,7 @@ LABEL_7457:
 
 LABEL_7486:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_247, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	sub [BUDDY_Y], 0x000D
 	call LABEL_5F44
@@ -11058,7 +11058,7 @@ LABEL_7486:
 LABEL_74A0:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
 	sub [BUDDY_X], 0x0001
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_248, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	sub [BUDDY_Y], 0x000E
 	call LABEL_5F72
@@ -11073,7 +11073,7 @@ LABEL_74C2:
 
 LABEL_74DC:
 	jne [HACK_VAR_67], [0x10], LABEL_604A
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_247, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	sub [BUDDY_Y], 0x000D
 	call LABEL_5F72

@@ -73,7 +73,7 @@ LABEL_7457:
 
 LABEL_7486:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_247, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	sub [BUDDY_Y], 0x000D
 	call LABEL_5F44
@@ -83,7 +83,7 @@ LABEL_7486:
 LABEL_74A0:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	sub [BUDDY_X], 0x0001
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_248, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	sub [BUDDY_Y], 0x000E
 	call LABEL_5F72
@@ -98,7 +98,7 @@ LABEL_74C2:
 
 LABEL_74DC:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
-	call LABEL_6B46
+	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_247, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	sub [BUDDY_Y], 0x000D
 	call LABEL_5F72
