@@ -5460,12 +5460,19 @@ LABEL_2E18:
 LABEL_2E26:
 	db 0x11
 
+; `add [0x31], 0x0001 / ret`. Tiny helper to increment
+; var31 — used as a per-tick counter advance by the
+; hold-page-40 loop below.
 CAPSULE_INCREMENT_VAR31_AND_RET:
 	add [0x31], 0x0001
 	ret
 LABEL_2E2C:
 	db 0x11
 
+; Frame-hold channel: call the increment helper above,
+; blit FF, select FF, copy page 0x40 → FF, break, jmp
+; self. Continuously displays page 0x40 with a tick-counter
+; running.
 CAPSULE_HOLD_PAGE_40_INCR_VAR31_LOOP:
 	call CAPSULE_INCREMENT_VAR31_AND_RET
 	blitFramebuffer 0xFF
@@ -8239,6 +8246,9 @@ LABEL_4AE8:
 LABEL_4AF8:
 	db 0x11
 
+; Same shape but calling CAPSULE_HERO_PER_FRAME_TICK. The
+; hero counterpart of the BUDDY loop. Mirrors CAVES_HERO_-
+; SCENE_MAIN_LOOP.
 CAPSULE_HERO_SCENE_MAIN_LOOP:
 	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call CAPSULE_HERO_PER_FRAME_TICK
@@ -8272,6 +8282,13 @@ LABEL_4B2A:
 LABEL_4B3A:
 	db 0x11
 
+; The canonical buddy-scene main-loop entry point.
+; Mirrors CAVES_BEAST_SCENE_MAIN_LOOP:
+;   jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
+;   call CAPSULE_BUDDY_PER_FRAME_TICK
+;   break
+;   call CAPSULE_STATE_VAR12_BIG_DISPATCH
+;   jmp self
 CAPSULE_BUDDY_SCENE_MAIN_LOOP:
 	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 	call CAPSULE_BUDDY_PER_FRAME_TICK
@@ -11276,6 +11293,11 @@ LABEL_6A64:
 LABEL_6A65:
 	db 0x11
 
+; Same shape as the equivalents in CAVES/PRISON, plus an
+; extra `add [0xB8], 0x0007` step that bumps an unrelated
+; counter (probably an inactivity timer). Reads HERO_X/Y
+; into var21/var22, then derives a wobble offset from
+; var04 (clock) masked by 0x3F.
 CAPSULE_HERO_POS_TO_PROJECTILE_OFFSET_SETUP:
 	mov [0x21], [HERO_X]
 	add [0xB8], 0x0007
@@ -14999,6 +15021,11 @@ LABEL_91B3:
 	video type=0, offset=COMMON_VIDEO_037, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
+; Two-frame aim/gun-pose render tick. Calls LABEL_9110
+; (an angle-update helper), then conditionally draws
+; COMMON_VIDEO_159 + COMMON_VIDEO_160 at HERO position
+; with zoom 0x40 — gated on var06 vs var30 (angle range)
+; and var31 bit 1. Mirrors CAVES's LABEL_9B3F.
 CAPSULE_AIM_RENDER_TICK_CV159_CV160:
 	call LABEL_9110
 	jne [0x0A], 0x01, LABEL_91EB

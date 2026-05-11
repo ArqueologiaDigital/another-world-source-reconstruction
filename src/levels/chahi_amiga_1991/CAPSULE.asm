@@ -13678,6 +13678,11 @@ LABEL_9158:
 	add [HERO_X], 0x0002
 	mov [0x36], 0x0000
 
+; Two-frame aim/gun-pose render tick. Calls LABEL_9110
+; (an angle-update helper), then conditionally draws
+; COMMON_VIDEO_159 + COMMON_VIDEO_160 at HERO position
+; with zoom 0x40 — gated on var06 vs var30 (angle range)
+; and var31 bit 1. Mirrors CAVES's LABEL_9B3F.
 CAPSULE_AIM_RENDER_TICK_CV159_CV160:
 	break
 	je [HERO_POS_MASK], 0x09, LABEL_965B
