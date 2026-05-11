@@ -32,7 +32,7 @@ LABEL_2FBB:
 	mov [0x09], 0x0001
 	ret
 
-LABEL_2FCF:
+CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09:
 	jne [0x09], 0x00, DISPATCH_VAR09_OR_KILL_CHAN
 	video offset=CINEMATIC_718, x=[0x07], y=[0x08]
 	break
@@ -77,7 +77,7 @@ LABEL_302F:
 	jne [0x09], 0x00, DISPATCH_VAR09_OR_KILL_CHAN
 	video offset=CINEMATIC_717, x=[0x07], y=[0x08]
 	break
-	jmp LABEL_2FCF
+	jmp CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 LABEL_307A:
 	db 0x11
 
@@ -111,7 +111,7 @@ LABEL_30B2:
 	break
 	video offset=CINEMATIC_682, x=[0x07], y=[0x08]
 	break
-	jmp LABEL_2FCF
+	jmp CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 	killChannel
 	video offset=CINEMATIC_733, x=[0x07], y=[0x08]
 	break

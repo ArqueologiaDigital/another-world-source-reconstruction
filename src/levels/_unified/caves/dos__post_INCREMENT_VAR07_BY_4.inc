@@ -339,11 +339,11 @@ LABEL_4CEC:
 	break
 	video offset=CINEMATIC_092, x=[0x07], y=[0x08]
 	break
-	jmp LABEL_4D0C
+	jmp CAVES_HIT_REACTION_PLAY_5A_DRAW_CIN_082
 LABEL_4D0B:
 	db 0x11
 
-LABEL_4D0C:
+CAVES_HIT_REACTION_PLAY_5A_DRAW_CIN_082:
 	or [0x11], 0x4000
 	jne [0x10], [HACK_VAR_67], LABEL_4D72
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x00
@@ -385,26 +385,26 @@ LABEL_4D86:
 	db 0x11
 
 LABEL_4D87:
-	jne [0x10], [HACK_VAR_67], LABEL_4D0C
+	jne [0x10], [HACK_VAR_67], CAVES_HIT_REACTION_PLAY_5A_DRAW_CIN_082
 	video offset=CINEMATIC_091, x=[0x07], y=[0x08]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_4D0C
+	jne [0x10], [HACK_VAR_67], CAVES_HIT_REACTION_PLAY_5A_DRAW_CIN_082
 	video offset=CINEMATIC_092, x=[0x07], y=[0x08]
 	mov [0x29], 0x0014
 
 LABEL_4DA2:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_4D0C
+	jne [0x10], [HACK_VAR_67], CAVES_HIT_REACTION_PLAY_5A_DRAW_CIN_082
 	video offset=CINEMATIC_093, x=[0x07], y=[0x08]
 	jge [0x11], 0x4000, LABEL_4DB9
 	djnz [0x29], LABEL_4DA2
 
 LABEL_4DB9:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_4D0C
+	jne [0x10], [HACK_VAR_67], CAVES_HIT_REACTION_PLAY_5A_DRAW_CIN_082
 	video offset=CINEMATIC_092, x=[0x07], y=[0x08]
 	break
-	jmp LABEL_4D0C
+	jmp CAVES_HIT_REACTION_PLAY_5A_DRAW_CIN_082
 	killChannel
 	video offset=CINEMATIC_080, x=[0x07], y=[0x08]
 	break
@@ -412,7 +412,7 @@ LABEL_4DB9:
 	break
 	video offset=CINEMATIC_081, x=[0x07], y=[0x08]
 	break
-	jmp LABEL_4D0C
+	jmp CAVES_HIT_REACTION_PLAY_5A_DRAW_CIN_082
 LABEL_4DDF:
 	db 0x11
 
@@ -424,17 +424,17 @@ LABEL_4DE0:
 
 LABEL_4DEF:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_4D0C
+	jne [0x10], [HACK_VAR_67], CAVES_HIT_REACTION_PLAY_5A_DRAW_CIN_082
 	video offset=CINEMATIC_090, x=[0x07], y=[0x08]
 	jge [0x11], 0x4000, LABEL_4E06
 	djnz [0x29], LABEL_4DEF
 
 LABEL_4E06:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_4D0C
+	jne [0x10], [HACK_VAR_67], CAVES_HIT_REACTION_PLAY_5A_DRAW_CIN_082
 	video offset=CINEMATIC_081, x=[0x07], y=[0x08]
 	break
-	jmp LABEL_4D0C
+	jmp CAVES_HIT_REACTION_PLAY_5A_DRAW_CIN_082
 LABEL_4E16:
 	db 0x11
 

@@ -519,7 +519,7 @@ LABEL_A8A7:
 	mov [0x68], 0x005E
 	mov [0x69], 0x0000
 	setup channel=0x22, address=LABEL_2DCA
-	setup channel=0x23, address=LABEL_2FCF
+	setup channel=0x23, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 	mov [0x6A], 0x0064
 	mov [0x6B], 0xFFFB
 	setup channel=0x24, address=LABEL_2DD8
@@ -625,7 +625,7 @@ LABEL_A9EB:
 	add [0x68], 0x000E
 	mov [0x69], 0x002A
 	setup channel=0x22, address=LABEL_2DCA
-	setup channel=0x23, address=LABEL_2FCF
+	setup channel=0x23, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 
 LABEL_AA13:
 	setup channel=0x35, address=INLINE_SET_VAR7F_TO_6
@@ -667,17 +667,17 @@ LABEL_AA1B:
 	add [0x6E], 0x000E
 	mov [0x6F], 0x0032
 	setup channel=0x28, address=LABEL_2E03
-	setup channel=0x29, address=LABEL_2FCF
+	setup channel=0x29, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 	mov [0x70], [0x4A]
 	add [0x70], 0x000E
 	mov [0x71], 0x0025
 	setup channel=0x2A, address=LABEL_2E11
-	setup channel=0x2B, address=LABEL_2FCF
+	setup channel=0x2B, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 	mov [0x72], [0x4C]
 	add [0x72], 0x000E
 	mov [0x73], 0x003D
 	setup channel=0x2C, address=LABEL_2E1F
-	setup channel=0x2D, address=LABEL_2FCF
+	setup channel=0x2D, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 	deleteChannels first=0x2C, last=0x2D
 	jmp CHECK_VAR66_VAR67_AND_BLIT
 LABEL_AACC:
@@ -719,7 +719,7 @@ LABEL_AACD:
 	add [0x6E], 0x000E
 	mov [0x6F], 0x0038
 	setup channel=0x28, address=LABEL_2E03
-	setup channel=0x29, address=LABEL_2FCF
+	setup channel=0x29, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 
 LABEL_AB5C:
 	mov [0xF8], [0xBD]
@@ -731,7 +731,7 @@ LABEL_AB5C:
 	add [0x70], 0x000E
 	mov [0x71], 0x0030
 	setup channel=0x2A, address=LABEL_2E11
-	setup channel=0x2B, address=LABEL_2FCF
+	setup channel=0x2B, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 
 LABEL_AB84:
 	mov [0xF8], [0xBD]
@@ -743,7 +743,7 @@ LABEL_AB84:
 	add [0x72], 0x000E
 	mov [0x73], 0x0037
 	setup channel=0x2C, address=LABEL_2E1F
-	setup channel=0x2D, address=LABEL_2FCF
+	setup channel=0x2D, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 
 TRAMP_ABAC:
 	jmp CHECK_VAR66_VAR67_AND_BLIT
