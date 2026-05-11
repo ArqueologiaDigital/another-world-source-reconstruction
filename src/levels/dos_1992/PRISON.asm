@@ -1748,12 +1748,11 @@ LABEL_078F:
 	mov [0x38], [0x37]
 	ret
 
-; Random-byte decomposer — identical behavior to the
-; CAPSULE routine of the same name. After two helper calls
-; (LABEL_071A, LABEL_078F), extracts overlapping bit-fields
-; from var38: var3F = low 8 bits, var3E = low 7, var3D =
-; low 6, RANDOM_SEED = low 5, var38 = low 4. Used to derive
-; multiple correlated random values per call.
+; Random-byte decomposer — calls LABEL_42FD (random seed
+; updater), then extracts overlapping bit-fields from
+; var38: var3F = low 8 bits, var3E = low 7, var3D = low 6,
+; RANDOM_SEED = low 5, var38 = low 4. Identical behavior
+; to the same-named routine in CAPSULE and PRISON.
 DERIVE_VAR3D_3E_3F_FROM_VAR38_BIT_MASKS:
 	call LABEL_071A
 	call LABEL_078F

@@ -7654,6 +7654,11 @@ LABEL_4372:
 	mov [0x38], [0x37]
 	ret
 
+; Random-byte decomposer — calls LABEL_42FD (random seed
+; updater), then extracts overlapping bit-fields from
+; var38: var3F = low 8 bits, var3E = low 7, var3D = low 6,
+; RANDOM_SEED = low 5, var38 = low 4. Identical behavior
+; to the same-named routine in CAPSULE and PRISON.
 DERIVE_VAR3D_3E_3F_FROM_VAR38_BIT_MASKS:
 	call LABEL_42FD
 
@@ -12188,6 +12193,10 @@ LABEL_7291:
 	jg [0x22], 0x0F, LABEL_736F
 	jmp LABEL_7398
 
+; `sub [0x22], 0x0001 / ret`. Y-decrement tail used by
+; upward-projectile arc routines that jmp here after each
+; draw step. Mirrors PRISON_DECREMENT_VAR22_AND_RET and
+; CAPSULE_DECREMENT_VAR22_AND_RET.
 CAVES_DECREMENT_VAR22_AND_RET:
 	sub [0x22], 0x0001
 	ret
@@ -12364,6 +12373,13 @@ LABEL_7477:
 LABEL_7478:
 	db 0x11
 
+; Reads HERO_X/HERO_Y into var21/var22, then masks var04
+; (clock/timer) by 0x3F to derive a wobble/offset that
+; gets subtracted from var22 with branch-table dispatch
+; on the upper bits. The "compute projectile origin
+; offset relative to hero with clock-based wobble"
+; helper. Mirrors PRISON_HERO_POS_TO_PROJECTILE_OFFSET_-
+; SETUP.
 CAVES_HERO_POS_TO_PROJECTILE_OFFSET_SETUP:
 	mov [0x21], [HERO_X]
 	mov [0x22], [HERO_Y]
