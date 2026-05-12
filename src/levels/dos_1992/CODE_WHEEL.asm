@@ -107,7 +107,11 @@ ENTRY_POINT_OF_CODE_WHEEL:
 	fill page=0x00, color=0x07
 	setup channel=0x14, address=ENTRY_CALL_INIT_4A
 	killChannel
+
+; The previous `killChannel` already terminates the task.
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
+.endif
 
 INIT_PROGRESS_HASH_VARS:
 	add [0x63], 0x0001
@@ -142,7 +146,11 @@ INIT_GAME_STATE_VARS:
 	ret
 
 
+; INIT_GAME_STATE_VARS ends with `ret`; nothing references this
+; address. The next labeled routine is entered directly below.
+.if INCLUDE_UNREACHABLE_CODE == on
 	mov [HACK_VAR_54], 0x0080
+.endif
 
 GAME_INTRO_PHASE_DRAW_CIN_076:
 	jl [HACK_VAR_54], 0x80, CODEWHEEL_INIT_PALETTE_17_LOAD_RES_47
@@ -198,10 +206,10 @@ CODEWHEEL_INTRO_AFTER_TITLE:
 	setup channel=0x2C, address=PAL_FADE_DOWN_E_TO_8
 	mov [0x03], 0x0050
 
-LABEL_0103:
+WAIT_FOR_HERO_ACTION_LOOP:
 	break
 	jne [HERO_ACTION], 0x00, BANK1_INTRO_TRANSITION
-	djnz [0x03], LABEL_0103
+	djnz [0x03], WAIT_FOR_HERO_ACTION_LOOP
 	setup channel=0x2C, address=PAL_FADE_UP_9_TO_F
 	mov [0x03], 0x000A
 
@@ -506,8 +514,11 @@ CODEWHEEL_DRAW_SYMBOLS_LOOP:
 	jne [0x20], 0x00, CODEWHEEL_FAILURE_RESET
 	jne [0x21], 0x00, CODEWHEEL_FAILURE_RESET
 	jmp SAVE_HERO_INPUT_AND_HASH
-LABEL_0419:
-	db 0x11
+
+; Preceding `jmp` doesn't fall through.
+.if INCLUDE_UNREACHABLE_CODE == on
+	killChannel
+.endif
 
 CODEWHEEL_DRAW_ALPHANUM_GLYPH_BY_VAR05:
 	jne [0x05], 0x00, CW_ALPHANUM_CASE_1
@@ -1248,7 +1259,11 @@ DERIVE_FOUR_POS_25_26_27_28:
 	video offset=CINEMATIC_CODEWHEEL_CURSOR, x=[0x07], y=[0x08]
 	break
 	jmp SAVE_HERO_INPUT_AND_HASH
+
+; Preceding `jmp` doesn't fall through.
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
+.endif
 
 ; Entry point. Copies current cursor position (var25, var26)
 ; into the draw vars (var07, var08), sets var24=8 (the
@@ -1305,7 +1320,11 @@ CODEWHEEL_CURSOR_MOVE_INTERMEDIATE_DRAW:
 	video offset=CINEMATIC_CODEWHEEL_CURSOR, x=[0x07], y=[0x08]
 	break
 	jmp CODEWHEEL_CURSOR_SMOOTH_MOVE_LOOP_TOP
+
+; Preceding `jmp` doesn't fall through.
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
+.endif
 
 CODEWHEEL_CHECK_ENTERED_CODE:
 	setPalette 0x00
@@ -1369,7 +1388,11 @@ SETUP_CODEWHEEL_CHANNELS:
 	mov [0xBC], [0x37]
 	or [0xBC], 0x0010
 	jmp CODEWHEEL_ERROR_SCREEN_INIT
+
+; Preceding `jmp` doesn't fall through.
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
+.endif
 
 CODEWHEEL_FINALIZE_VAR31_SUCCESS_PATH:
 	jne [0x1B], 0x15, CODEWHEEL_FAILURE_RESET
@@ -1391,29 +1414,29 @@ CODEWHEEL_FINALIZE_VAR31_SUCCESS_PATH:
 	break
 	call INIT_PROGRESS_HASH_VARS
 	call SUM_HASH_VARS_TO_VAR_37
-	call LABEL_0D22
+	call CODEWHEEL_SUCCESS_SET_E4_OR_14
 	jmp GAME_INTRO_PHASE_DRAW_CIN_076
 	bankSwitch 1;  Intro Sequence
 	killChannel
 
-LABEL_0D22:
-	call CALL_LABEL_0D2E_AND_RET
+CODEWHEEL_SUCCESS_SET_E4_OR_14:
+	call CODEWHEEL_CLEAR_E4_BITS_3C_TRAMPOLINE
 	or [0xE4], 0x0014
 	ret
 
 
-CALL_LABEL_0D2E_AND_RET:
-	call LABEL_0D2E
+CODEWHEEL_CLEAR_E4_BITS_3C_TRAMPOLINE:
+	call CODEWHEEL_CLEAR_E4_BITS_3C
 	ret
 
 
-LABEL_0D2E:
-	call LABEL_0D36
+CODEWHEEL_CLEAR_E4_BITS_3C:
+	call CODEWHEEL_REHASH_PROGRESS_VARS
 	and [0xE4], 0xFFC3
 	ret
 
 
-LABEL_0D36:
+CODEWHEEL_REHASH_PROGRESS_VARS:
 	call WRAP_SUM_HASH_VARS_TO_VAR_37
 	call INIT_PROGRESS_HASH_VARS
 	ret
@@ -1436,7 +1459,11 @@ CODEWHEEL_PIN_HACK_VAR67_TO_0:
 	mov [HACK_VAR_67], 0x0000
 	break
 	jmp CODEWHEEL_PIN_HACK_VAR67_TO_0
+
+; Preceding `jmp` doesn't fall through.
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
+.endif
 
 ; The "wrong-code" reset path. Deletes all channels, saves
 ; var37 (the entered hash) into var02, re-initializes the
@@ -1537,7 +1564,11 @@ CODEWHEEL_WAIT_ACTION_RELEASE_LOOP:
 	break
 	jne [HERO_ACTION], 0x00, CODEWHEEL_WAIT_ACTION_RELEASE_LOOP
 	jmp SAVE_HERO_INPUT_AND_HASH
+
+; Preceding `jmp` doesn't fall through.
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
+.endif
 
 CODEWHEEL_DRAW_4_DIGIT_DISPLAY:
 	mov [0x07], 0x0064
@@ -1836,8 +1867,11 @@ SHARED_RET:
 	ret
 
 
+; Nothing references this address.
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
 	video offset=CINEMATIC_079, x=160, y=100
+.endif
 
 ; Three infinite frame-hold loops with `mov [0x1B], <const>`
 ; / break / jmp self. The constants 0x2B vs 0x15 set
@@ -1897,5 +1931,9 @@ CODEWHEEL_CLEAR_AND_BLIT_PAGES_1_2_FF:
 	ret
 
 
+; Two trailing killChannels at the end of the bank.
+; Nothing references this address.
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
 	killChannel
+.endif

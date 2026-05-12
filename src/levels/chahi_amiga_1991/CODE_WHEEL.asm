@@ -74,14 +74,18 @@ CINEMATIC_079		EQU 0x000C
 	org 0x0000
 
 ENTRY_POINT_OF_CODE_WHEEL:
-	call LABEL_0DC6
+	call CLEAR_PAGES_1_2_AND_BLIT
 	mov [PAUSE_SLICES], 0x0002
 	setup channel=0x3C, address=BLITTER_LOOP_WITH_VAR1B_2B
 	break
 	fill page=0x00, color=0x07
 	setup channel=0x14, address=ENTRY_CALL_INIT_4A
 	killChannel
+
+; The previous `killChannel` already terminates the task.
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
+.endif
 
 INIT_PROGRESS_HASH_VARS:
 	add [0x63], 0x0001
@@ -115,7 +119,11 @@ INIT_GAME_STATE_VARS:
 	ret
 
 
+; INIT_GAME_STATE_VARS ends with `ret`; nothing references this
+; address. The next labeled routine is entered directly below.
+.if INCLUDE_UNREACHABLE_CODE == on
 	mov [HACK_VAR_54], 0x0001
+.endif
 
 GAME_INTRO_PHASE_DRAW_CIN_076:
 	jl [HACK_VAR_54], 0x80, CODEWHEEL_INIT_PALETTE_17_LOAD_RES_47
@@ -458,8 +466,11 @@ CODEWHEEL_DRAW_SYMBOLS_LOOP:
 	jne [0x20], 0x00, RESUME_GAME_INIT_CHANNELS
 	jne [0x21], 0x00, RESUME_GAME_INIT_CHANNELS
 	jmp SAVE_HERO_INPUT_AND_HASH
-LABEL_03C5:
-	db 0x11
+
+; Preceding `jmp` doesn't fall through.
+.if INCLUDE_UNREACHABLE_CODE == on
+	killChannel
+.endif
 
 CODEWHEEL_DRAW_ALPHANUM_GLYPH_BY_VAR05:
 	jne [0x05], 0x00, CW_ALPHANUM_CASE_1
@@ -1041,7 +1052,11 @@ DERIVE_FOUR_POS_25_26_27_28:
 	video offset=CINEMATIC_CODEWHEEL_CURSOR, x=[0x07], y=[0x08]
 	break
 	jmp SAVE_HERO_INPUT_AND_HASH
+
+; Preceding `jmp` doesn't fall through.
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
+.endif
 
 CODEWHEEL_CURSOR_SMOOTH_MOVE_INIT:
 	mov [0x07], [0x25]
@@ -1081,7 +1096,11 @@ CODEWHEEL_CURSOR_MOVE_INTERMEDIATE_DRAW:
 	video offset=CINEMATIC_CODEWHEEL_CURSOR, x=[0x07], y=[0x08]
 	break
 	jmp CODEWHEEL_CURSOR_SMOOTH_MOVE_LOOP_TOP
+
+; Preceding `jmp` doesn't fall through.
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
+.endif
 
 CODEWHEEL_CHECK_ENTERED_CODE:
 	setPalette 0x00
@@ -1090,18 +1109,33 @@ CODEWHEEL_CHECK_ENTERED_CODE:
 	je [0x29], [0x20], SETUP_CODEWHEEL_CHANNELS
 	je [0x29], [0x21], SETUP_CODEWHEEL_CHANNELS
 	jmp SETUP_CODEWHEEL_CHANNELS
-LABEL_0A17:
-	db 0x0A, 0x80, 0x2A, 0x1E, 0x0A, 0x32, 0x0A, 0x80
-	db 0x2A, 0x1F, 0x0A, 0x32, 0x0A, 0x80, 0x2A, 0x20
-	db 0x0A, 0x32, 0x0A, 0x80, 0x2A, 0x21, 0x0A, 0x32
-	db 0x07, 0x0A, 0xD5, 0x0A, 0x80, 0x2B, 0x1E, 0x0A
-	db 0x4D, 0x0A, 0x80, 0x2B, 0x1F, 0x0A, 0x4D, 0x0A
-	db 0x80, 0x2B, 0x20, 0x0A, 0x4D, 0x0A, 0x80, 0x2B
-	db 0x21, 0x0A, 0x4D, 0x07, 0x0A, 0xD5, 0x0A, 0x80
-	db 0x2C, 0x1E, 0x0A, 0x68, 0x0A, 0x80, 0x2C, 0x1F
-	db 0x0A, 0x68, 0x0A, 0x80, 0x2C, 0x20, 0x0A, 0x68
-	db 0x0A, 0x80, 0x2C, 0x21, 0x0A, 0x68, 0x07, 0x0A
-	db 0xD5
+
+; Dead 3-digit-check chain — byte-for-byte the same as the live dos
+; CHECK_VAR2A_OR_DISPATCH_RANGE cascade. amiga's live
+; CODEWHEEL_CHECK_ENTERED_CODE above is the simpler 4-way `[0x29]`
+; match that doesn't call into it.
+.if INCLUDE_UNREACHABLE_CODE == on
+CHECK_VAR2A_OR_DISPATCH_RANGE:
+	je [0x2A], [0x1E], CHECK_VAR2B_OR_DISPATCH_RANGE
+	je [0x2A], [0x1F], CHECK_VAR2B_OR_DISPATCH_RANGE
+	je [0x2A], [0x20], CHECK_VAR2B_OR_DISPATCH_RANGE
+	je [0x2A], [0x21], CHECK_VAR2B_OR_DISPATCH_RANGE
+	jmp RESUME_GAME_INIT_CHANNELS
+
+CHECK_VAR2B_OR_DISPATCH_RANGE:
+	je [0x2B], [0x1E], CHECK_VAR2C_RANGE_OR_RESUME
+	je [0x2B], [0x1F], CHECK_VAR2C_RANGE_OR_RESUME
+	je [0x2B], [0x20], CHECK_VAR2C_RANGE_OR_RESUME
+	je [0x2B], [0x21], CHECK_VAR2C_RANGE_OR_RESUME
+	jmp RESUME_GAME_INIT_CHANNELS
+
+CHECK_VAR2C_RANGE_OR_RESUME:
+	je [0x2C], [0x1E], SETUP_CODEWHEEL_CHANNELS
+	je [0x2C], [0x1F], SETUP_CODEWHEEL_CHANNELS
+	je [0x2C], [0x20], SETUP_CODEWHEEL_CHANNELS
+	je [0x2C], [0x21], SETUP_CODEWHEEL_CHANNELS
+	jmp RESUME_GAME_INIT_CHANNELS
+.endif
 
 SETUP_CODEWHEEL_CHANNELS:
 	call SUM_HASH_VARS_TO_VAR_37
@@ -1112,7 +1146,11 @@ SETUP_CODEWHEEL_CHANNELS:
 	mov [0xBC], [0x37]
 	or [0xBC], 0x0010
 	jmp CODEWHEEL_ERROR_SCREEN_INIT
+
+; Preceding `jmp` doesn't fall through.
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
+.endif
 
 CODEWHEEL_FINALIZE_VAR31_SUCCESS_PATH:
 	jne [0x1B], 0x15, RESUME_GAME_INIT_CHANNELS
@@ -1132,8 +1170,12 @@ CODEWHEEL_FINALIZE_VAR31_SUCCESS_PATH:
 	mov [0xF2], 0x1770
 	break
 	jmp GAME_INTRO_PHASE_DRAW_CIN_076
-LABEL_0AC3:
-	db 0x19, 0x3E, 0x81, 0x11
+
+; Preceding `jmp` doesn't fall through.
+.if INCLUDE_UNREACHABLE_CODE == on
+	bankSwitch 1
+	killChannel
+.endif
 
 MARK_VAR67_AND_KILL:
 	mov [HACK_VAR_67], 0x0001
@@ -1143,7 +1185,11 @@ CODEWHEEL_PIN_HACK_VAR67_TO_0:
 	mov [HACK_VAR_67], 0x0000
 	break
 	jmp CODEWHEEL_PIN_HACK_VAR67_TO_0
+
+; Preceding `jmp` doesn't fall through.
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
+.endif
 
 RESUME_GAME_INIT_CHANNELS:
 	deleteChannels first=0x00, last=0x3F
@@ -1217,7 +1263,11 @@ CODEWHEEL_WAIT_ACTION_RELEASE_LOOP:
 	break
 	jne [HERO_ACTION], 0x00, CODEWHEEL_WAIT_ACTION_RELEASE_LOOP
 	jmp SAVE_HERO_INPUT_AND_HASH
+
+; Preceding `jmp` doesn't fall through.
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
+.endif
 
 CODEWHEEL_DRAW_4_DIGIT_DISPLAY:
 	mov [0x07], 0x0064
@@ -1462,8 +1512,11 @@ SHARED_RET:
 	ret
 
 
+; Nothing references this address.
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
 	video offset=CINEMATIC_079, x=160, y=100
+.endif
 
 BLITTER_LOOP_WITH_VAR1B_2B:
 	blitFramebuffer 0xFF
@@ -1489,7 +1542,7 @@ CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC:
 	break
 	jmp CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC
 
-LABEL_0DC6:
+CLEAR_PAGES_1_2_AND_BLIT:
 	fill page=0x01, color=0x00
 	fill page=0x02, color=0x00
 	selectVideoPage 0x01
@@ -1499,6 +1552,10 @@ LABEL_0DC6:
 	ret
 
 
+; Two trailing killChannels at the end of the bank. amiga has
+; an extra `db 0x00` byte; nothing references this address.
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
 	killChannel
 	db 0x00
+.endif
