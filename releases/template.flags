@@ -60,5 +60,15 @@ BEETLE_RENDERING_GATE_2=on
 # Only meaningful for Mac targets.
 MAC_SEGMENT_LAYOUT=v1.0.2
 
+# ----- unreachable-code handling -----
+#
+# When `on`, every block marked `; UNREACHABLE: ...` in source-recon
+# is emitted into the assembled bytecode (preserving byte-fidelity
+# against the canonical dumps). When `off`, those blocks are
+# stripped — useful for hypothetical optimized builds that need to
+# squeeze the bytecode into smaller cartridges. Default `on`
+# everywhere; verify-stages / verify-unified require `on`.
+INCLUDE_UNREACHABLE_CODE=on
+
 # ----- additional flags will be added as the asset-scan work
 # (archaeology issues #0054-#0058) surfaces them -----
