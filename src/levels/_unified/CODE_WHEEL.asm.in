@@ -1385,12 +1385,13 @@ CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC:
 ; Shared helper: clear video pages 1 and 2, then blit-chain x8 — used at scene transitions.
 ;@include "_helpers/CLEAR_PAGES_1_2_AND_BLIT.inc"
 
-; Two trailing killChannels. amiga has an extra `db 0x00` before
-; the bank-fill padding kicks in; dos doesn't.
-CODE_WHEEL_END_PADDING:
+; No caller reaches these bytes — the preceding `ret` doesn't fall
+; through and no label references this address.
+;@if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
 	killChannel
 ;@if BRANCH == "chahi_amiga_1991"
 	db 0x00
+;@endif
 ;@endif
 

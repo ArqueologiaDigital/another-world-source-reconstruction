@@ -1897,5 +1897,5 @@ CODEWHEEL_CLEAR_AND_BLIT_PAGES_1_2_FF:
 	ret
 
 
-CODE_WHEEL_END_PADDING:
-	db 0x11, 0x11, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	killChannel
+	killChannel
