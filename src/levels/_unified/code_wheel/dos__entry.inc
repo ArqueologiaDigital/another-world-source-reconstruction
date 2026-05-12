@@ -134,16 +134,3 @@ CINEMATIC_076		EQU 0x107C
 CINEMATIC_077		EQU 0x08C4
 CINEMATIC_078		EQU 0x0908
 CINEMATIC_079		EQU 0x000C
-
-
-	org 0x0000
-
-LABEL_0000:
-	call CLEAR_PAGES_1_2_AND_BLIT
-	mov [PAUSE_SLICES], 0x0002
-	setup channel=0x3C, address=BLITTER_LOOP_WITH_VAR1B_2B
-	break
-	fill page=0x00, color=0x07
-	setup channel=0x14, address=ENTRY_CALL_INIT_4A
-	killChannel
-	killChannel
