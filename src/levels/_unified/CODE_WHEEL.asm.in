@@ -752,19 +752,6 @@ CODEWHEEL_CHECK_ENTERED_CODE:
 	je [0x29], [0x20], SETUP_CODEWHEEL_CHANNELS
 	je [0x29], [0x21], SETUP_CODEWHEEL_CHANNELS
 	jmp SETUP_CODEWHEEL_CHANNELS
-
-; 81-byte dead-code chain (LABEL_0A17 in the original amiga disasm)
-; that mirrors the live dos CHECK_VAR2A_OR_DISPATCH_RANGE /
-; CHECK_VAR2B_OR_DISPATCH_RANGE / CHECK_VAR2C_RANGE_OR_RESUME
-; cascade exactly. amiga's live CODEWHEEL_CHECK_ENTERED_CODE above
-; is a simpler 4-way `[0x29]` match — nothing in amiga ever calls
-; into this block. Strong evidence that both ports share an upstream
-; codebase where the 3-digit codewheel was the default, and amiga's
-; build disabled it after compilation (the dead bytes were left in
-; the bytecode).
-;@if INCLUDE_UNREACHABLE_CODE == on
-;@include "code_wheel/3digit_check_chain.inc"
-;@endif
 ;@elif BRANCH == "dos_1992"
 	shr [0x38], 0x0004
 	jne [0x29], [0x38], RESUME_GAME_INIT_CHANNELS
@@ -777,7 +764,16 @@ CODEWHEEL_CHECK_ENTERED_CODE:
 	je [0x29], [0x20], CHECK_VAR2A_OR_DISPATCH_RANGE
 	je [0x29], [0x21], CHECK_VAR2A_OR_DISPATCH_RANGE
 	jmp RESUME_GAME_INIT_CHANNELS
+;@endif
 
+; 81-byte 3-digit-check chain. Live in dos (called from
+; CODEWHEEL_CHECK_ENTERED_CODE above). Also present in amiga's
+; bytecode as dead bytes (LABEL_0A17 in the original disasm) — amiga's
+; simpler 4-way `[0x29]` match doesn't call into it, but the original
+; compiler emitted the chain anyway. Strong evidence that both ports
+; share an upstream codebase where the 3-digit codewheel was the
+; default, and amiga's build disabled it after compilation.
+;@if BRANCH == "dos_1992" or INCLUDE_UNREACHABLE_CODE == on
 ;@include "code_wheel/3digit_check_chain.inc"
 ;@endif
 
