@@ -365,7 +365,9 @@ DRAW_CV139_AT_X01_Y02:
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
-.include "../_helpers/DRAW_CV_074.inc"
+DRAW_CV_074:
+	video type=0, offset=0x0020, x=[0x01], y=[0x02], zoom=0x40
+	ret
 .endif
 
 .if BRANCH == "cartridge_1992"
