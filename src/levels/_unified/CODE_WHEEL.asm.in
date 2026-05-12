@@ -114,32 +114,241 @@ COPY_HERO_VARS_TO_29_2A_2B_2C:
 	mov [0x17], [0x2C]
 	mov [0x21], 0x0000
 
-;@if BRANCH == "chahi_amiga_1991"
+CW_COPY_HERO_VARS_TO_29_2A_2B_2C_L0:
+	je [0x21], 0x07, INCREMENT_VAR21_MOD_15
+	je [0x21], 0x06, INCREMENT_VAR21_MOD_15
+	jg [0x21], 0x0D, INCREMENT_VAR21_MOD_15
+	mov [0x22], [0x21]
+	call SAVE_VAR0A_TO_VAR1D
+	call CW_COPY_HERO_VARS_TO_29_2A_2B_2C_L1
+	mov [0x22], [0x21]
+	call RESTORE_VAR0A_FROM_VAR1D
 
-; Amiga CODE_WHEEL: port-specific body chunk after the shared `COPY_HERO_VARS_TO_29_2A_2B_2C` routine.
-;@include "code_wheel/amiga__post_COPY_HERO_VARS_TO_29_2A_2B_2C.inc"
+INCREMENT_VAR21_MOD_15:
+	add [0x21], 0x0001
+	jl [0x21], 0x0F, CW_COPY_HERO_VARS_TO_29_2A_2B_2C_L0
+	mov [0x21], 0x0000
 
-;@elif BRANCH == "dos_1992"
+CW_COPY_HERO_VARS_TO_29_2A_2B_2C_L2:
+	je [0x21], 0x07, INCREMENT_VAR21_LOOP_TO_16
+	je [0x21], 0x06, INCREMENT_VAR21_LOOP_TO_16
+	jg [0x21], 0x0D, INCREMENT_VAR21_LOOP_TO_16
+	call SUM_HASH_VARS_TO_VAR_37
+	mov [0x24], [0x37]
+	mov [0x22], [0x24]
+	and [0x22], 0x000F
+	je [0x22], 0x07, INCREMENT_VAR21_LOOP_TO_16
+	je [0x22], 0x06, INCREMENT_VAR21_LOOP_TO_16
+	jg [0x22], 0x0D, INCREMENT_VAR21_LOOP_TO_16
+	call SAVE_VAR0A_TO_VAR1D
+	mov [0x23], [0x1D]
+	mov [0x22], [0x21]
+	call SAVE_VAR0A_TO_VAR1D
+	mov [0x22], [0x24]
+	and [0x22], 0x000F
+	call RESTORE_VAR0A_FROM_VAR1D
+	mov [0x22], [0x21]
+	mov [0x1D], [0x23]
+	call RESTORE_VAR0A_FROM_VAR1D
 
-; DOS CODE_WHEEL: port-specific body chunk after the shared `COPY_HERO_VARS_TO_29_2A_2B_2C` routine.
-;@include "code_wheel/dos__post_COPY_HERO_VARS_TO_29_2A_2B_2C.inc"
+INCREMENT_VAR21_LOOP_TO_16:
+	add [0x21], 0x0001
+	jl [0x21], 0x10, CW_COPY_HERO_VARS_TO_29_2A_2B_2C_L2
+	ret
+CW_COPY_HERO_VARS_TO_29_2A_2B_2C_L3:
+	db 0x11
 
-;@endif
+CW_COPY_HERO_VARS_TO_29_2A_2B_2C_L1:
+	jne [0x1D], 0x00, SHARED_RET
+	mov [0x30], [0x37]
+	and [0x30], 0x001D
+	add [0x30], 0x0001
 
 CLEAR_VAR_22:
 	mov [0x22], 0x0000
 
-;@if BRANCH == "chahi_amiga_1991"
+CW_CLEAR_VAR_22_L0:
+	call SAVE_VAR0A_TO_VAR1D
+	jne [0x1D], [0x30], CW_CLEAR_VAR_22_L1
+	add [0x30], 0x0001
+	jl [0x30], 0x1F, CLEAR_VAR_22
+	mov [0x30], 0x0001
+	jmp CLEAR_VAR_22
 
-; Amiga CODE_WHEEL: port-specific body chunk after the shared `CLEAR_VAR_22` routine.
-;@include "code_wheel/amiga__post_CLEAR_VAR_22.inc"
+CW_CLEAR_VAR_22_L1:
+	add [0x22], 0x0001
+	jl [0x22], 0x0F, CW_CLEAR_VAR_22_L0
+	mov [0x1D], [0x30]
+	ret
 
-;@elif BRANCH == "dos_1992"
+SAVE_VAR0A_TO_VAR1D:
+	jne [0x22], 0x00, CW_CLEAR_VAR_22_L2
+	mov [0x1D], [0x0A]
+	ret
 
-; DOS CODE_WHEEL: port-specific body chunk after the shared `CLEAR_VAR_22` routine.
-;@include "code_wheel/dos__post_CLEAR_VAR_22.inc"
+CW_CLEAR_VAR_22_L2:
+	jne [0x22], 0x01, CW_CLEAR_VAR_22_L3
+	mov [0x1D], [0x0B]
+	ret
 
-;@endif
+CW_CLEAR_VAR_22_L3:
+	jne [0x22], 0x02, CW_CLEAR_VAR_22_L4
+	mov [0x1D], [0x0C]
+	ret
+
+CW_CLEAR_VAR_22_L4:
+	jne [0x22], 0x03, CW_CLEAR_VAR_22_L5
+	mov [0x1D], [0x0D]
+	ret
+
+CW_CLEAR_VAR_22_L5:
+	jne [0x22], 0x04, CW_CLEAR_VAR_22_L6
+	mov [0x1D], [0x0E]
+	ret
+
+CW_CLEAR_VAR_22_L6:
+	jne [0x22], 0x05, CW_CLEAR_VAR_22_L7
+	mov [0x1D], [0x0F]
+	ret
+
+CW_CLEAR_VAR_22_L7:
+	jne [0x22], 0x06, CW_CLEAR_VAR_22_L8
+	mov [0x1D], [0x10]
+	ret
+
+CW_CLEAR_VAR_22_L8:
+	jne [0x22], 0x07, CW_CLEAR_VAR_22_L9
+	mov [0x1D], [0x11]
+	ret
+
+CW_CLEAR_VAR_22_L9:
+	jne [0x22], 0x08, CW_CLEAR_VAR_22_L10
+	mov [0x1D], [0x12]
+	ret
+
+CW_CLEAR_VAR_22_L10:
+	jne [0x22], 0x09, CW_CLEAR_VAR_22_L11
+	mov [0x1D], [0x13]
+	ret
+
+CW_CLEAR_VAR_22_L11:
+	jne [0x22], 0x0A, CW_CLEAR_VAR_22_L12
+	mov [0x1D], [0x14]
+	ret
+
+CW_CLEAR_VAR_22_L12:
+	jne [0x22], 0x0B, CW_CLEAR_VAR_22_L13
+	mov [0x1D], [0x15]
+	ret
+
+CW_CLEAR_VAR_22_L13:
+	jne [0x22], 0x0C, CW_CLEAR_VAR_22_L14
+	mov [0x1D], [0x16]
+	ret
+
+CW_CLEAR_VAR_22_L14:
+	jne [0x22], 0x0D, CW_CLEAR_VAR_22_L15
+	mov [0x1D], [0x17]
+	ret
+
+CW_CLEAR_VAR_22_L15:
+	jne [0x22], 0x0E, CW_CLEAR_VAR_22_L16
+	mov [0x1D], [0x18]
+	ret
+
+CW_CLEAR_VAR_22_L16:
+	jne [0x22], 0x0F, SHARED_RET
+	mov [0x1D], [0x19]
+	ret
+CW_CLEAR_VAR_22_L17:
+	db 0x11
+
+RESTORE_VAR0A_FROM_VAR1D:
+	jne [0x22], 0x00, CW_CLEAR_VAR_22_L18
+	mov [0x0A], [0x1D]
+	ret
+
+CW_CLEAR_VAR_22_L18:
+	jne [0x22], 0x01, CW_CLEAR_VAR_22_L19
+	mov [0x0B], [0x1D]
+	ret
+
+CW_CLEAR_VAR_22_L19:
+	jne [0x22], 0x02, CW_CLEAR_VAR_22_L20
+	mov [0x0C], [0x1D]
+	ret
+
+CW_CLEAR_VAR_22_L20:
+	jne [0x22], 0x03, CW_CLEAR_VAR_22_L21
+	mov [0x0D], [0x1D]
+	ret
+
+CW_CLEAR_VAR_22_L21:
+	jne [0x22], 0x04, CW_CLEAR_VAR_22_L22
+	mov [0x0E], [0x1D]
+	ret
+
+CW_CLEAR_VAR_22_L22:
+	jne [0x22], 0x05, CW_CLEAR_VAR_22_L23
+	mov [0x0F], [0x1D]
+	ret
+
+CW_CLEAR_VAR_22_L23:
+	jne [0x22], 0x06, CW_CLEAR_VAR_22_L24
+	mov [0x10], [0x1D]
+	ret
+
+CW_CLEAR_VAR_22_L24:
+	jne [0x22], 0x07, CW_CLEAR_VAR_22_L25
+	mov [0x11], [0x1D]
+	ret
+
+CW_CLEAR_VAR_22_L25:
+	jne [0x22], 0x08, CW_CLEAR_VAR_22_L26
+	mov [0x12], [0x1D]
+	ret
+
+CW_CLEAR_VAR_22_L26:
+	jne [0x22], 0x09, CW_CLEAR_VAR_22_L27
+	mov [0x13], [0x1D]
+	ret
+
+CW_CLEAR_VAR_22_L27:
+	jne [0x22], 0x0A, CW_CLEAR_VAR_22_L28
+	mov [0x14], [0x1D]
+	ret
+
+CW_CLEAR_VAR_22_L28:
+	jne [0x22], 0x0B, CW_CLEAR_VAR_22_L29
+	mov [0x15], [0x1D]
+	ret
+
+CW_CLEAR_VAR_22_L29:
+	jne [0x22], 0x0C, CW_CLEAR_VAR_22_L30
+	mov [0x16], [0x1D]
+	ret
+
+CW_CLEAR_VAR_22_L30:
+	jne [0x22], 0x0D, CW_CLEAR_VAR_22_L31
+	mov [0x17], [0x1D]
+	ret
+
+CW_CLEAR_VAR_22_L31:
+	jne [0x22], 0x0E, CW_CLEAR_VAR_22_L32
+	mov [0x18], [0x1D]
+	ret
+
+CW_CLEAR_VAR_22_L32:
+	jne [0x22], 0x0F, SHARED_RET
+	mov [0x19], [0x1D]
+	ret
+CW_CLEAR_VAR_22_L33:
+	db 0x11
+
+CW_CLEAR_VAR_22_L34:
+	call DERIVE_VAR07_VAR08_FROM_VAR05
+	call DRAW_CODEWHEEL_SYMBOL_BY_VAR06
+	ret
 
 SUM_HASH_VARS_TO_VAR_37:
 	add [0x37], [HERO_ACTION]
