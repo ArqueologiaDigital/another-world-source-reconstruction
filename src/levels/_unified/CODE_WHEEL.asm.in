@@ -854,13 +854,7 @@ CODEWHEEL_FINALIZE_VAR31_SUCCESS_PATH:
 	jmp GAME_INTRO_PHASE_DRAW_CIN_076
 ;@endif
 
-; Post-`jmp` trailing bytes (4 bytes, identical in both ports). The
-; preceding unconditional `jmp` doesn't fall through. The bytes
-; decode as `bankSwitch 1; killChannel` — `bankSwitch N` is sugar
-; for `load id=0x3E80|N` at the byte level (the AW VM treats resource
-; id 0x3E8N as a "switch to bank N" magic), so both mnemonics
-; produce the same `19 3E 81 11` sequence. Originally meant to
-; jump to the intro sequence bank, now unreachable in both ports.
+; Preceding `jmp` doesn't fall through.
 ;@if INCLUDE_UNREACHABLE_CODE == on
 	bankSwitch 1
 	killChannel
