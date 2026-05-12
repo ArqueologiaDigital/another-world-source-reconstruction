@@ -60,10 +60,9 @@ DRAW_STARS_PAGE0_CIN_000:
 
 .endif
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_DRAW_STARS_PAGE0_CIN_000.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DRAW_STARS_PAGE0_CIN_000.inc"
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
+ENDING_DRAW_STARS_PAGE0_CIN_000_L0:
+	db 0x11
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -103,10 +102,9 @@ DRAW_STARS_PAGE3_CIN_004:
 
 .endif
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_DRAW_STARS_PAGE3_CIN_004.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DRAW_STARS_PAGE3_CIN_004.inc"
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
+ENDING_DRAW_STARS_PAGE3_CIN_004_L0:
+	db 0x11
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -139,11 +137,8 @@ DRAW_STARS_CIN_38_39_40_5_6:
 .endif
 
 .include "../_helpers/CLEAR_PAGES_1_2_AND_BLIT.inc"
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+ENDING_CLEAR_PAGES_1_2_AND_BLIT_L0:
+	db 0x11, 0x11, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 .endif
 
