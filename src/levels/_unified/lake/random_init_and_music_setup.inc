@@ -44,13 +44,13 @@ INIT_LAKE_VARS:
 	mov [SCROLL_Y], 0x0002
 	mov [0x1C], 0x0001
 	mov [0x6E], 0x0000
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	je [0xE2], 0x00, RET_TARGET_1A88
 	mov [0x2C], 0x0001
 	mov [0x2D], 0x0001
 	mov [0x49], 0x00C8
 	mov [0x4A], 0x00B7
-;@endif
+.endif
 	ret
 
 
@@ -65,21 +65,21 @@ INIT_CODEWHEEL_PROTECTION_SCENE:
 
 START_LAKE_BG_MUSIC_AND_DELETE_CH_0_2:
 	call INIT_LAKE_VARS
-;@if BRANCH == "gba_2004"
+.if BRANCH == "gba_2004"
 	song id=0x0FA2, delay=0x0000, pos=0x03
-;@endif
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.endif
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	song id=0x0BB9, delay=0x0000, pos=0x00
-;@endif
+.endif
 	deleteChannels first=0x00, last=0x02
 	deleteChannels first=0x04, last=0x3B
 	deleteChannels first=0x3D, last=0x3E
 	setup channel=0x01, address=INIT_HERO_AT_POOL_EXIT
 	setup channel=0x14, address=GETTING_OUT_OF_THE_POOL__ANIMATION_PART_4
 	setup channel=0x09, address=BEETLE_INIT_POS_THEN_WALK_LEFT
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x09, address=KILL_CHANNEL_ROUTINE
-;@endif
+.endif
 	setup channel=0x2E, address=BEETLE_KICK_DETECTOR
 	setup channel=0x2E, address=WAIT_FOR_BEETLE_OFFSCREEN_THEN_KILL
 	setup channel=0x2F, address=TICK_COUNTER_INCREMENT_LOOP

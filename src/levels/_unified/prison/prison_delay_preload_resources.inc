@@ -1,18 +1,18 @@
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DELAY_4_QUANTUMS:
 	break
 	break
 	break
 	break
-;@endif
+.endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_DELAY_4_QUANTUMS.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_DELAY_4_QUANTUMS.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_DELAY_4_QUANTUMS.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_DELAY_4_QUANTUMS.inc"
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PRELOAD_PRISON_RESOURCES:
 	load id=0x0052
 	load id=0x0055
@@ -43,24 +43,24 @@ PRELOAD_PRISON_RESOURCES:
 	ret
 
 
-;@endif
+.endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_PRELOAD_PRISON_RESOURCES.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_PRELOAD_PRISON_RESOURCES.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_PRELOAD_PRISON_RESOURCES.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_PRELOAD_PRISON_RESOURCES.inc"
+.endif
 
-;@include "../_helpers/KILL_CHANNEL_LANDING.inc"
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_INLINE_KILL_039.inc"
-;@elif BRANCH == "cartridge_1992"
-;@include "cart__post_INLINE_KILL_039.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_INLINE_KILL_039.inc"
-;@endif
+.include "../_helpers/KILL_CHANNEL_LANDING.inc"
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_INLINE_KILL_039.inc"
+.elif BRANCH == "cartridge_1992"
+.include "cart__post_INLINE_KILL_039.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_INLINE_KILL_039.inc"
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 BANK4_AFTER_CIN_414:
 	mov [HERO_X], 0x0041
 	add [HERO_Y], 0x0016
@@ -73,24 +73,24 @@ BANK4_AFTER_CIN_414:
 	mov [0x00], 0x001E
 	bankSwitch 4;  Gas tunnels, Caves and Pool
 	killChannel
-;@endif
+.endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_BANK4_AFTER_CIN_414.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_BANK4_AFTER_CIN_414.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_BANK4_AFTER_CIN_414.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_BANK4_AFTER_CIN_414.inc"
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB:
 	sub [HERO_Y], 0x0009
 	video offset=CINEMATIC_422, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0001
 	mov [0x03], 0x000B
-;@endif
+.endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB.inc"
+.endif

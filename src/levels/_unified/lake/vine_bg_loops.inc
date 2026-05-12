@@ -1,18 +1,18 @@
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_SCENARIO_VINE_SCREEN_FOREGROUND		EQU 0xD788
-;@endif
-;@if BRANCH == "chahi_amiga_1991"
+.endif
+.if BRANCH == "chahi_amiga_1991"
 CINEMATIC_SCENARIO_VINE_SCREEN_FOREGROUND		EQU 0xEB98
-;@endif
+.endif
 
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_VINE_CENTER_BG		EQU 0x90C6
 CINEMATIC_VINE_SCREEN_BG_DECOR		EQU 0x411C
-;@endif
-;@if BRANCH == "chahi_amiga_1991"
+.endif
+.if BRANCH == "chahi_amiga_1991"
 CINEMATIC_VINE_CENTER_BG		EQU 0xA4D6
 CINEMATIC_VINE_SCREEN_BG_DECOR		EQU 0x54DC
-;@endif
+.endif
 
 LOOP_BLIT_AND_CLEAR_FF:
 	blitFramebuffer 0xFF

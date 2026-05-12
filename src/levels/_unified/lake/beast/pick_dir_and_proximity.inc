@@ -22,16 +22,16 @@ BEAST_AMBIENT_KILL_ON_TIMER_EXPIRED:
 	killChannel
 
 FLAG_PROXIMITY_TRUE_THEN_CHECK:
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	mov [0x39], 0x0001
-;@endif
+.endif
 	jmp CHECK_HORIZONTAL_PROXIMITY
 	ret
 
 
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 
 CLEAR_PROXIMITY_FLAG_THEN_CHECK:
 	mov [0x39], 0x0000
-;@endif
+.endif
 

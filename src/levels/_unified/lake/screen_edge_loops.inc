@@ -1,30 +1,30 @@
 CHECK_HERO_VINE_SCREEN_EDGE:
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jl [HERO_X], 0x0146, VINE_SCREEN_LEFT_EDGE
 	je [0x63], 0x02, VINE_EXIT_LEFT_TO_FIRST
 	jl [HERO_X], 0x0159, VINE_SCREEN_LEFT_EDGE
 
 VINE_EXIT_LEFT_TO_FIRST:
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	jl [HERO_X], 0x0159, VINE_EXIT_LEFT_TO_FIRST
-;@endif
+.endif
 	mov [HERO_X], 0x0000
 	call ADVANCE_X_BACKWARD_ONE_SCREEN
 	call DEL_CH_FOR_TRANSITION
 	jmp FIRST_SCREEN_TO_THE_RIGHT
 
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 VINE_SCREEN_LEFT_EDGE:
 	jg [HERO_X], 0xFFFA, VINE_SCREEN_YIELD_RESTART
 	je [0x63], 0x01, ENTER_VINE_SCREEN_FROM_LEFT
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 VINE_EXIT_LEFT_TO_FIRST:
-;@endif
+.endif
 	jg [HERO_X], 0xFFE7, VINE_SCREEN_YIELD_RESTART
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 ENTER_VINE_SCREEN_FROM_LEFT:
-;@endif
+.endif
 	mov [HERO_X], 0x0140
 	call ADVANCE_X_FORWARD_ONE_SCREEN
 	call DEL_CH_FOR_TRANSITION
@@ -36,32 +36,32 @@ VINE_SCREEN_YIELD_RESTART:
 	killChannel
 
 CHECK_HERO_FIRST_SCR_R_EDGE:
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jl [HERO_X], 0x0146, FIRST_SCR_R_LEFT_EDGE
 	je [0x63], 0x02, ENTER_SECOND_SCREEN_FROM_LEFT
 	jl [HERO_X], 0x0159, FIRST_SCR_R_LEFT_EDGE
 
 ENTER_SECOND_SCREEN_FROM_LEFT:
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	jl [HERO_X], 0x0159, ENTER_SECOND_SCREEN_FROM_LEFT
-;@endif
+.endif
 	mov [HERO_X], 0x0000
 	call ADVANCE_X_BACKWARD_ONE_SCREEN
 	call CLEANUP_BEFORE_S2_OR_OUTSIDE_POOL
 	jmp SECOND_SCREEN_TO_THE_RIGHT
 
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 FIRST_SCR_R_LEFT_EDGE:
 	jg [HERO_X], 0xFFFA, FIRST_SCR_R_YIELD_RESTART
 	je [0x63], 0x01, FIRST_SCR_R_RIGHT_TRANSITION
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 ENTER_SECOND_SCREEN_FROM_LEFT:
-;@endif
+.endif
 	jg [HERO_X], 0xFFE7, FIRST_SCR_R_YIELD_RESTART
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 FIRST_SCR_R_RIGHT_TRANSITION:
-;@endif
+.endif
 	mov [HERO_X], 0x0140
 	call ADVANCE_X_FORWARD_ONE_SCREEN
 	call CLEANUP_BEFORE_S2_OR_OUTSIDE_POOL
@@ -73,15 +73,15 @@ FIRST_SCR_R_YIELD_RESTART:
 	killChannel
 
 CHECK_HERO_SECOND_SCR_R_EDGE:
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jl [HERO_X], 0x0146, SECOND_SCR_R_LEFT_EDGE
 	je [0x63], 0x02, SECOND_SCR_R_RIGHT_TRANSITION
-;@endif
+.endif
 	jl [HERO_X], 0x0159, SECOND_SCR_R_LEFT_EDGE
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 SECOND_SCR_R_RIGHT_TRANSITION:
-;@endif
+.endif
 	mov [HERO_X], 0x0000
 	call ADVANCE_X_BACKWARD_ONE_SCREEN
 	jne [0x2A], 0x05, CLEANUP_AND_GOTO_THIRD_SCREEN
@@ -92,15 +92,15 @@ CLEANUP_AND_GOTO_THIRD_SCREEN:
 	jmp THIRD_SCREEN_TO_THE_RIGHT
 
 SECOND_SCR_R_LEFT_EDGE:
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jg [HERO_X], 0xFFFA, SECOND_SCR_R_YIELD_RESTART
 	je [0x63], 0x01, ENTER_FIRST_SCREEN_TO_THE_RIGHT
-;@endif
+.endif
 	jg [HERO_X], 0xFFE7, SECOND_SCR_R_YIELD_RESTART
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 ENTER_FIRST_SCREEN_TO_THE_RIGHT:
-;@endif
+.endif
 	mov [HERO_X], 0x0140
 	call ADVANCE_X_FORWARD_ONE_SCREEN
 	call CLEANUP_BEFORE_S1_OR_S3
@@ -112,32 +112,32 @@ SECOND_SCR_R_YIELD_RESTART:
 	killChannel
 
 CHECK_HERO_THIRD_SCR_R_EDGE:
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jg [HERO_X], 0xFFFA, THIRD_SCR_BEAST_DEFEAT_CHK
 	je [0x63], 0x01, ENTER_SECOND_SCREEN_FROM_RIGHT
 	jg [HERO_X], 0xFFE7, THIRD_SCR_BEAST_DEFEAT_CHK
 
 ENTER_SECOND_SCREEN_FROM_RIGHT:
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	jg [HERO_X], 0xFFE7, ENTER_SECOND_SCREEN_FROM_RIGHT
-;@endif
+.endif
 	mov [HERO_X], 0x0140
 	call ADVANCE_X_FORWARD_ONE_SCREEN
 	call DELETE_CH_01_06_RET
 	jmp SECOND_SCREEN_TO_THE_RIGHT
 
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 THIRD_SCR_BEAST_DEFEAT_CHK:
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 ENTER_SECOND_SCREEN_FROM_RIGHT:
-;@endif
+.endif
 	jne [0x2A], 0x05, THIRD_SCR_R_YIELD_RESTART
 	jl [HERO_X], 0x013D, THIRD_SCR_R_YIELD_RESTART
 	mov [0x2A], 0x0006
 	setup channel=0x0A, address=SCENE_TRANSITION_TO_GETTING_OUT_OF_POOL
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	setup channel=0x16, address=KILL_CHANNEL_ROUTINE
-;@endif
+.endif
 
 THIRD_SCR_R_YIELD_RESTART:
 	break

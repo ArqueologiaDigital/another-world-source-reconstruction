@@ -318,7 +318,7 @@ LABEL_6D4F:
 	je [0x0A], 0x00, DRAW_CV_113
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_113.inc"
+.include "../_helpers/DRAW_CV_113.inc"
 
 LABEL_6D5E:
 	je [0x0A], 0x00, DRAW_CV_114
@@ -342,7 +342,7 @@ LABEL_6D7C:
 	je [0x0A], 0x00, DRAW_CV_116
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_116.inc"
+.include "../_helpers/DRAW_CV_116.inc"
 
 LABEL_6D8B:
 	je [0x0A], 0x00, DRAW_CV_117
@@ -361,7 +361,7 @@ LABEL_6D9A:
 LABEL_6DA8:
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_118.inc"
+.include "../_helpers/DRAW_CV_118.inc"
 
 LABEL_6DB1:
 	jne [0x0A], 0x00, LABEL_6DBF
@@ -385,7 +385,7 @@ LABEL_6DCB:
 LABEL_6DD9:
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_099.inc"
+.include "../_helpers/DRAW_CV_099.inc"
 
 LABEL_6DE2:
 	jne [0x0A], 0x00, LABEL_6DF0
@@ -395,7 +395,7 @@ LABEL_6DE2:
 LABEL_6DF0:
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_101.inc"
+.include "../_helpers/DRAW_CV_101.inc"
 
 LABEL_6DF9:
 	jne [0x0A], 0x00, LABEL_6E07
@@ -405,7 +405,7 @@ LABEL_6DF9:
 LABEL_6E07:
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_103.inc"
+.include "../_helpers/DRAW_CV_103.inc"
 
 LABEL_6E10:
 	jne [0x0A], 0x00, LABEL_6E1E
@@ -415,7 +415,7 @@ LABEL_6E10:
 LABEL_6E1E:
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_105.inc"
+.include "../_helpers/DRAW_CV_105.inc"
 
 LABEL_6E27:
 	jne [0x0A], 0x00, LABEL_6E35
@@ -425,7 +425,7 @@ LABEL_6E27:
 LABEL_6E35:
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_107.inc"
+.include "../_helpers/DRAW_CV_107.inc"
 
 LABEL_6E3E:
 	je [0x0A], 0x00, DRAW_CV_109
@@ -450,7 +450,7 @@ LABEL_6E5C:
 	je [0x0A], 0x00, DRAW_CV_111
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_111.inc"
+.include "../_helpers/DRAW_CV_111.inc"
 
 LABEL_6E6E:
 	je [0x0A], 0x00, DRAW_CV_112
@@ -461,15 +461,15 @@ DRAW_CV_112:
 	ret
 
 
-;@include "../_helpers/DRAW_CV_273.inc"
+.include "../_helpers/DRAW_CV_273.inc"
 
-;@include "../_helpers/DRAW_CV_270.inc"
+.include "../_helpers/DRAW_CV_270.inc"
 
-;@include "../_helpers/DRAW_CV_252.inc"
+.include "../_helpers/DRAW_CV_252.inc"
 
-;@include "../_helpers/DRAW_CV_255.inc"
+.include "../_helpers/DRAW_CV_255.inc"
 
-;@include "../_helpers/DRAW_CV_265.inc"
+.include "../_helpers/DRAW_CV_265.inc"
 
 LABEL_6E9B:
 	video type=0, offset=COMMON_VIDEO_251, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -543,7 +543,7 @@ LABEL_6F40:
 	ret
 
 
-;@include "../_helpers/DRAW_CV_279.inc"
+.include "../_helpers/DRAW_CV_279.inc"
 
 LABEL_6F57:
 	je [0x0A], 0x00, LABEL_6F63
@@ -567,7 +567,7 @@ LABEL_6F74:
 LABEL_6F80:
 	video type=0, offset=COMMON_VIDEO_280, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
-;@include "../_helpers/DRAW_CV_281.inc"
+.include "../_helpers/DRAW_CV_281.inc"
 
 LABEL_6F8B:
 	je [0x0A], 0x00, LABEL_6F97
@@ -577,7 +577,7 @@ LABEL_6F8B:
 LABEL_6F97:
 	video type=0, offset=COMMON_VIDEO_293, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
-;@include "../_helpers/DRAW_CV_294.inc"
+.include "../_helpers/DRAW_CV_294.inc"
 
 LABEL_6FA2:
 	je [0x0A], 0x00, LABEL_6FAE
@@ -623,7 +623,7 @@ LABEL_6FE5:
 LABEL_6FF1:
 	video type=0, offset=COMMON_VIDEO_285, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
-;@include "../_helpers/DRAW_CV_286.inc"
+.include "../_helpers/DRAW_CV_286.inc"
 
 LABEL_6FFC:
 	je [0x0A], 0x00, LABEL_7008
@@ -633,7 +633,7 @@ LABEL_6FFC:
 LABEL_7008:
 	video type=0, offset=COMMON_VIDEO_287, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
-;@include "../_helpers/DRAW_CV_288.inc"
+.include "../_helpers/DRAW_CV_288.inc"
 
 LABEL_7013:
 	je [0x0A], 0x00, LABEL_701F
@@ -643,7 +643,7 @@ LABEL_7013:
 LABEL_701F:
 	video type=0, offset=COMMON_VIDEO_289, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
-;@include "../_helpers/DRAW_CV_290.inc"
+.include "../_helpers/DRAW_CV_290.inc"
 
 LABEL_702A:
 	je [0x0A], 0x00, LABEL_7036
@@ -653,7 +653,7 @@ LABEL_702A:
 LABEL_7036:
 	video type=0, offset=COMMON_VIDEO_291, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
-;@include "../_helpers/DRAW_CV_292.inc"
+.include "../_helpers/DRAW_CV_292.inc"
 
 LABEL_7041:
 	je [0x1F], 0x00, LABEL_7070

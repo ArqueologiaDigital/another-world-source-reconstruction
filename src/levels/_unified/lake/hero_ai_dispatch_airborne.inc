@@ -1,9 +1,9 @@
-;@if BRANCH == "chahi_amiga_1991"
+.if BRANCH == "chahi_amiga_1991"
 CINEMATIC_HERO_FALL_LEFT_2		EQU 0x0A64
-;@endif
+.endif
 
 HERO_AI_DISPATCH:
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_AI_DISPATCH_AIRBORNE
 	jne [0x63], 0x05, DISPATCH_HERO_RUN_RIGHT
 	setup channel=0x14, address=HERO_RUN_LEFT_LOOP
@@ -27,7 +27,7 @@ DISPATCH_HERO_WALK_RIGHT:
 	jmp HERO_AI_TICK_WAIT_LOOP
 
 HERO_AI_DISPATCH_AIRBORNE:
-;@endif
+.endif
 	jge [HERO_ACTION_POS_MASK], 0x80, AIRBORNE_TRY_LEAP_L
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, AIRBORNE_TRY_FALL_R
 	je [0x63], 0x01, AIRBORNE_TRY_FALL_R
@@ -106,9 +106,9 @@ HERO_AI_TICK_WAIT_LOOP:
 	killChannel
 	break
 	add [HERO_X], 0x0002
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_VIDEO_064_065_AND_CINEMATIC_HERO_SHADOW_RET
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_FALL_LEFT_2, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
-;@endif
+.endif
 

@@ -2,28 +2,28 @@ SET_VAR_E6_5_PAL_B:
 	mov [0xE6], 0x0005
 	setPalette 0x0B
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_SET_VAR_E6_5_PAL_B.inc"
-;@elif BRANCH == "cartridge_1992"
-;@include "cart__post_SET_VAR_E6_5_PAL_B.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_SET_VAR_E6_5_PAL_B.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_SET_VAR_E6_5_PAL_B.inc"
+.elif BRANCH == "cartridge_1992"
+.include "cart__post_SET_VAR_E6_5_PAL_B.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_SET_VAR_E6_5_PAL_B.inc"
+.endif
 
 INIT_VARS_07_08_09:
 	mov [0x07], 0x004C
 	mov [0x08], 0x0097
 	mov [0x09], 0x0003
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_INIT_VARS_07_08_09.inc"
-;@elif BRANCH == "cartridge_1992"
-;@include "cart__post_INIT_VARS_07_08_09.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_INIT_VARS_07_08_09.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_INIT_VARS_07_08_09.inc"
+.elif BRANCH == "cartridge_1992"
+.include "cart__post_INIT_VARS_07_08_09.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_INIT_VARS_07_08_09.inc"
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_STARS_PAGE0_CIN_000:
 	selectVideoPage 0x00
 	fill page=0x00, color=0x01
@@ -58,15 +58,15 @@ DRAW_STARS_PAGE0_CIN_000:
 	ret
 
 
-;@endif
+.endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_DRAW_STARS_PAGE0_CIN_000.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_DRAW_STARS_PAGE0_CIN_000.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_DRAW_STARS_PAGE0_CIN_000.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_DRAW_STARS_PAGE0_CIN_000.inc"
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_STARS_PAGE3_CIN_004:
 	selectVideoPage 0x03
 	fill page=0x03, color=0x01
@@ -101,15 +101,15 @@ DRAW_STARS_PAGE3_CIN_004:
 	ret
 
 
-;@endif
+.endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_DRAW_STARS_PAGE3_CIN_004.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_DRAW_STARS_PAGE3_CIN_004.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_DRAW_STARS_PAGE3_CIN_004.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_DRAW_STARS_PAGE3_CIN_004.inc"
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_STARS_CIN_38_39_40_5_6:
 	video offset=CINEMATIC_006, x=126, y=25
 	video offset=CINEMATIC_038, x=133, y=102, zoom=[0x20]	;@enc=alt
@@ -130,20 +130,20 @@ DRAW_STARS_CIN_38_39_40_5_6:
 	ret
 
 
-;@endif
+.endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_DRAW_STARS_CIN_38_39_40_5_6.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_DRAW_STARS_CIN_38_39_40_5_6.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_DRAW_STARS_CIN_38_39_40_5_6.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_DRAW_STARS_CIN_38_39_40_5_6.inc"
+.endif
 
-;@include "../_helpers/CLEAR_PAGES_1_2_AND_BLIT.inc"
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
-;@elif BRANCH == "cartridge_1992"
-;@include "cart__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
-;@endif
+.include "../_helpers/CLEAR_PAGES_1_2_AND_BLIT.inc"
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
+.elif BRANCH == "cartridge_1992"
+.include "cart__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
+.endif
 

@@ -26,11 +26,11 @@ PAL_FADE_18_TO_1D:
 	setPalette 0x17
 	killChannel
 
-;@if BRANCH == "cartridge_1992"
-;@include "cart__post_PAL_FADE_18_TO_1D.inc"
-;@endif
+.if BRANCH == "cartridge_1992"
+.include "cart__post_PAL_FADE_18_TO_1D.inc"
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_71_72_FADE:
 	video offset=CINEMATIC_071, x=160, y=100
 	break
@@ -45,15 +45,15 @@ DRAW_CIN_71_72_FADE:
 	video offset=CINEMATIC_073, x=160, y=100
 	break
 	video offset=CINEMATIC_073, x=160, y=100
-;@endif
+.endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_DRAW_CIN_71_72_FADE.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_DRAW_CIN_71_72_FADE.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_DRAW_CIN_71_72_FADE.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_DRAW_CIN_71_72_FADE.inc"
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_106_107_FX_57:
 	video offset=CINEMATIC_106, x=160, y=100
 	break
@@ -69,11 +69,11 @@ DRAW_CIN_106_107_FX_57:
 	video offset=CINEMATIC_107, x=160, y=100
 	break
 	video offset=CINEMATIC_106, x=160, y=100
-;@endif
+.endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_DRAW_CIN_106_107_FX_57.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_DRAW_CIN_106_107_FX_57.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_DRAW_CIN_106_107_FX_57.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_DRAW_CIN_106_107_FX_57.inc"
+.endif
 

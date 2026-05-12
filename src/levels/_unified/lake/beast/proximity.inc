@@ -12,9 +12,9 @@ BEAST_NEAR_RIGHT_OUT_OF_RANGE_RET:
 
 CHECK_IF_BEAST_IS_NEAR_LESTER:
 	mov [0x07], 0x0000
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	je [0xE2], 0x01, RET_TARGET_1A88
-;@endif
+.endif
 	mov [0x12], [HERO_X]
 	sub [0x12], [0x13]
 	jl [0x0C], [0x12], CHECK_IF_BEAST_IS_NEAR_LESTER__OUT_OF_RANGE_RET

@@ -1,4 +1,4 @@
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_BUBBLES_A_0		EQU 0x1C4A
 CINEMATIC_BUBBLES_A_1		EQU 0x1D06
 CINEMATIC_BUBBLES_A_2		EQU 0x1D56
@@ -38,8 +38,8 @@ CINEMATIC_TENTACLE_WAVING_0		EQU 0x6A14
 CINEMATIC_TENTACLE_WAVING_1		EQU 0x6A48
 CINEMATIC_TENTACLE_WAVING_2		EQU 0x6A74
 CINEMATIC_TENTACLE_WAVING_3		EQU 0x6AA0
-;@endif
-;@if BRANCH == "chahi_amiga_1991"
+.endif
+.if BRANCH == "chahi_amiga_1991"
 CINEMATIC_BUBBLES_A_0		EQU 0x300A
 CINEMATIC_BUBBLES_A_1		EQU 0x30C6
 CINEMATIC_BUBBLES_A_2		EQU 0x3116
@@ -79,7 +79,7 @@ CINEMATIC_TENTACLE_WAVING_0		EQU 0x7E24
 CINEMATIC_TENTACLE_WAVING_1		EQU 0x7E58
 CINEMATIC_TENTACLE_WAVING_2		EQU 0x7E84
 CINEMATIC_TENTACLE_WAVING_3		EQU 0x7EB0
-;@endif
+.endif
 
 A_CALM_ALIEN_POOL_BEFORE_LESTERS_ARRIVAL:
 	setup channel=0x3C, address=BLIT_FROM_PAGE_3_LOOP
@@ -114,9 +114,9 @@ THE_LAB_CONSOLE_SUDDENLY_APPEARS_INSIDE_THE_ALIEN_POOL:
 	fill page=0xFF, color=0x0C
 	video offset=CINEMATIC_CONSOLE_UNDERWATER_EXPLOSION_0, x=160, y=100
 	break
-;@if BRANCH == "gba_2004"
+.if BRANCH == "gba_2004"
 	song id=0x0FA1, delay=0x0000, pos=0x00
-;@endif
+.endif
 	setPalette 0x02
 	play id=0x003E, freq=0x01, vol=0x3F, channel=0x00
 	play id=0x003E, freq=0x05, vol=0x3F, channel=0x01
@@ -133,16 +133,16 @@ THE_LAB_CONSOLE_SUDDENLY_APPEARS_INSIDE_THE_ALIEN_POOL:
 	mov [0x06], 0x0028
 	mov [0x07], 0x0118
 	mov [0x09], 0x0050
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 	setup channel=0x07, address=POOL_WATER_WAVY_GLARE_ANIMATION
-;@endif
+.endif
 	setup channel=0x0A, address=POOL_SURFACE_WAVES_ANIMATION
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	je [0xDB], 0x01, POST_BEETLE_PRE_PALETTE_03
 	setup channel=0x07, address=POOL_WATER_WAVY_GLARE_ANIMATION
 
 POST_BEETLE_PRE_PALETTE_03:
-;@endif
+.endif
 	freezeChannels first=0x04, last=0x05
 	setPalette 0x03
 	play id=0x0032, freq=0x14, vol=0x3F, channel=0x03
@@ -205,10 +205,10 @@ TENTACLE_RISE_TO_HERO:
 	jg [0x16], [HERO_Y], TENTACLE_RISE_TO_HERO
 	setup channel=0x16, address=KILL_CHANNEL_ROUTINE
 	call ADVANCE_RING_Y_POSITIONS
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	je [0xDB], 0x00, TENTACLE_DRAG_HERO_DOWN
 	setup channel=0x07, address=POOL_WATER_WAVY_GLARE_ANIMATION
-;@endif
+.endif
 
 TENTACLE_DRAG_HERO_DOWN:
 	break

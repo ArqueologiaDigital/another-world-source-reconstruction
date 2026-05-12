@@ -3,24 +3,24 @@ INIT_VARS_48_49_4A:
 	mov [0x49], 0x0064
 	mov [0x4A], 0x0004
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_INIT_VARS_48_49_4A.inc"
-;@elif BRANCH == "cartridge_1992"
-;@include "cart__post_INIT_VARS_48_49_4A.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_INIT_VARS_48_49_4A.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_INIT_VARS_48_49_4A.inc"
+.elif BRANCH == "cartridge_1992"
+.include "cart__post_INIT_VARS_48_49_4A.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_INIT_VARS_48_49_4A.inc"
+.endif
 
 INLINE_SET_VAR66_TO_32:
 	mov [0x66], 0x0032
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_INLINE_SET_VAR66_TO_32.inc"
-;@elif BRANCH == "cartridge_1992"
-;@include "cart__post_INLINE_SET_VAR66_TO_32.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_INLINE_SET_VAR66_TO_32.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_INLINE_SET_VAR66_TO_32.inc"
+.elif BRANCH == "cartridge_1992"
+.include "cart__post_INLINE_SET_VAR66_TO_32.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_INLINE_SET_VAR66_TO_32.inc"
+.endif
 
 SUM_HASH_VARS_TO_VAR_64:
 	add [0x64], 0x0071
@@ -34,11 +34,11 @@ SUM_HASH_VARS_TO_VAR_64:
 	ret
 
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_SUM_HASH_VARS_TO_VAR_64.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_SUM_HASH_VARS_TO_VAR_64.inc"
+.endif
 
-;@if BRANCH in ("cartridge_1992", "dos_1992")
+.if BRANCH in ("cartridge_1992", "dos_1992")
 INIT_TANK_DRIVE_VARS:
 	mov [0x0F], 0x008C
 	mov [0x10], 0x0064
@@ -71,11 +71,11 @@ INIT_TANK_DRIVE_VARS:
 	ret
 
 
-;@endif
+.endif
 
-;@if BRANCH == "cartridge_1992"
-;@include "cart__post_INIT_TANK_DRIVE_VARS.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_INIT_TANK_DRIVE_VARS.inc"
-;@endif
+.if BRANCH == "cartridge_1992"
+.include "cart__post_INIT_TANK_DRIVE_VARS.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_INIT_TANK_DRIVE_VARS.inc"
+.endif
 

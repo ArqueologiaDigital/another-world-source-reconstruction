@@ -10,7 +10,7 @@
 ; so the suffix disambiguates. Suffix preserved verbatim during
 ; the split out of `ending_channel_cleanup.inc`.
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_97_TO_100:
 	video offset=CINEMATIC_097, x=160, y=100
 	break
@@ -25,13 +25,13 @@ DRAW_CIN_97_TO_100:
 	video offset=CINEMATIC_098, x=160, y=100
 	break
 	jmp DRAW_CIN_97_TO_100
-;@endif
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-;@include "post_DRAW_CIN_97_TO_100.inc"
-;@endif
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.include "post_DRAW_CIN_97_TO_100.inc"
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_101_102_FADE_PAL_C:
 	video offset=CINEMATIC_101, x=160, y=125
 	setPalette 0x0C
@@ -49,32 +49,32 @@ DRAW_CIN_101_102_FADE_PAL_C:
 	video offset=CINEMATIC_104, x=160, y=110
 	break
 	video offset=CINEMATIC_103, x=160, y=115
-;@endif
+.endif
 
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_103_LOOP__ENDING_CHANNEL_CLEANUP:
 	break
 	video offset=CINEMATIC_103, x=160, y=118
 	jmp DRAW_CIN_103_LOOP__ENDING_CHANNEL_CLEANUP
-;@endif
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-;@include "post_DRAW_CIN_103_LOOP.inc"
-;@endif
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.include "post_DRAW_CIN_103_LOOP.inc"
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_58_ANIM_LOOP:
 	video offset=CINEMATIC_058, x=160, y=100, zoom=[0x04]
 	break
 	jmp DRAW_CIN_58_ANIM_LOOP
-;@endif
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-;@include "post_DRAW_CIN_58_ANIM_LOOP.inc"
-;@endif
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.include "post_DRAW_CIN_58_ANIM_LOOP.inc"
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_59_TO_64_VAR_POS:
 	video offset=CINEMATIC_059, x=[0x01], y=[0x02], zoom=[0x03]
 	break
@@ -91,11 +91,11 @@ DRAW_CIN_59_TO_64_VAR_POS:
 	video offset=CINEMATIC_065, x=[0x01], y=[0x02], zoom=[0x03]
 	break
 	jmp DRAW_CIN_59_TO_64_VAR_POS
-;@endif
+.endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_DRAW_CIN_59_TO_64_VAR_POS.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_DRAW_CIN_59_TO_64_VAR_POS.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_DRAW_CIN_59_TO_64_VAR_POS.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_DRAW_CIN_59_TO_64_VAR_POS.inc"
+.endif
 

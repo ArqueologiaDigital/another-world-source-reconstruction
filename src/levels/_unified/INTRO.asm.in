@@ -75,10 +75,10 @@
 ; through the intro.
 ;
 ; Engine-managed special-purpose VM variables (HERO_POS_*, RANDOM_SEED, PAUSE_SLICES, etc.).
-;@include "../_common_vars.inc"
+.include "../_common_vars.inc"
 
 ; Cross-stage helper EQUs (LABEL_<HEX> / ADDR_AT_* placeholders shared between levels).
-;@include "_helpers/_helpers_equ_aliases.inc"
+.include "_helpers/_helpers_equ_aliases.inc"
 
 
 	org 0x0000
@@ -93,14 +93,14 @@
 ; and kills itself — control then forwards to INTRO_SCENE_INIT_PARTICLES
 ; in `intro_scene_final.inc` (i.e. JUMPS to the LAST chunk for the
 ; INTRO level entry point + top-level scene dispatcher.
-;@include "intro/intro_entry_and_dispatchers.inc"
+.include "intro/intro_entry_and_dispatchers.inc"
 
 ; Mid-intro text-display routine (`INTRO_PAUSE_3_AND_DRAW_CIN_138`):
 ; draws CINEMATIC_138..143 + texts 0x190/0x191, then schedules
 ; `SCENE_TRANSITION_NEXT_PHASE` on channel 0x06 and
 ; `INTRO_TRANSITION_TO_LAKE_SCENE` on channel 0x02. Used at the
 ; INTRO first-scene init: pause + CIN_138 draw.
-;@include "intro/intro_first_scene_init.inc"
+.include "intro/intro_first_scene_init.inc"
 
 ; The 5-step linear scene-progression chain
 ; (`SCENE_TRANSITION_NEXT_PHASE` + `WAIT_INTRO_SCENE_1..5`). Each
@@ -109,7 +109,7 @@
 ; cinematic (145/146/147/CARKEY), and schedules
 ; `DRAW_CINEMATICS_166_TO_171` on channel 0x09. Drives the "car
 ; INTRO inter-scene transitions (SCENE_TRANSITION_NEXT_PHASE).
-;@include "intro/intro_scene_transitions.inc"
+.include "intro/intro_scene_transitions.inc"
 
 ; The DNA-helix logo animation (Another World / Out of This World
 ; opening identity). `SETUP_INTRO_DNA_CHANNELS` wires channels
@@ -117,14 +117,14 @@
 ; is the per-frame redraw. Includes
 ; `DRAW_CIN_035_PAL_3_REPEAT_HEAD` (target of a `jmp` from
 ; INTRO DNA-helix animation (SETUP_INTRO_DNA_CHANNELS / DNA_VAR_05 hold + drift loops + DRAW_CINEMATICS_166_171) followed by the lab-cinematic tail (DRAW_CIN_453_454_SEQ + DRAW_CIN_035_PAL_3_REPEAT_HEAD + DRAW_CIN_048_15_FRAMES_LOOP) that hands off to the next phase via setup-channel calls.
-;@include "intro/intro_dna_animation.inc"
+.include "intro/intro_dna_animation.inc"
 
 ; Per-channel initialiser routines (`CH_0A_INIT_VAR_02`,
 ; `CH_0B_INIT_VAR_03`, ..., one per auxiliary channel). Each sets a
 ; counter variable to a starting value, then enters a wait-loop
 ; (`CH_0X_VAR_NN_WAIT_LOOP`). These are tick-driver coroutines for
 ; INTRO per-channel init helpers (CH_0A_INIT_VAR_02 et al.).
-;@include "intro/intro_channel_inits.inc"
+.include "intro/intro_channel_inits.inc"
 
 ; Particle-effects driver (`SETUP_INTRO_PARTICLE_CHANNELS`,
 ; `PARTICLE_PHASE_350_FRAME_TIMER`, page-flip helpers
@@ -132,17 +132,17 @@
 ; lightning/electricity particles during the lab accident — a
 ; multi-channel storm of palette-19 flickers culminating in
 ; INTRO particle-channel setup (SETUP_INTRO_PARTICLE_CHANNELS).
-;@include "intro/intro_particle_channels.inc"
+.include "intro/intro_particle_channels.inc"
 
 ; Reset-on-action handler (`INTRO_RESET_PAGES_AND_PAL_0`) — wakes up
 ; when `[HERO_ACTION] != 0` from the blit dispatcher. Replays the
 ; lab startup scene (`PLAY_FX_2C_AND_DRAW_CIN_000`,
 ; `DRAW_INTRO_LIGHTNING_FLICKER_LONG`, `DRAW_INTRO_DECOR_337`) so the player can
 ; INTRO reset + lab decor (INTRO_RESET_PAGES_AND_PAL_0).
-;@include "intro/intro_reset_and_lab_decor.inc"
+.include "intro/intro_reset_and_lab_decor.inc"
 
 ; INTRO late-phase lab decor (DRAW_INTRO_DECOR_318 et al.).
-;@include "intro/intro_lab_decor_late_phase.inc"
+.include "intro/intro_lab_decor_late_phase.inc"
 
 ; Transition-to-LAKE scene assembly
 ; (`INTRO_TRANSITION_TO_LAKE_SETUP`,
@@ -151,7 +151,7 @@
 ; vortex → underwater LAKE arrival pipeline. Note this is the
 ; "setup" half; the main animation happens in
 ; INTRO transition-to-LAKE setup (preloads LAKE bytecode + state).
-;@include "intro/intro_transition_to_lake_setup.inc"
+.include "intro/intro_transition_to_lake_setup.inc"
 
 ; Music-mark gates + the city-panning cinematic
 ; (`WAIT_MUS_MARK_2B_THEN_TEXT`, `SETUP_CITY_SEQ_CHANNELS`,
@@ -159,7 +159,7 @@
 ; are parameterised pan steps (delta-x, delta-y, repeat count); each
 ; runs a few frames then chains to the next pan delta. Music marks
 ; INTRO music-mark sync + city pan-shots (WAIT_MUS_MARK_2B et al.).
-;@include "intro/intro_music_marks_and_city_pans.inc"
+.include "intro/intro_music_marks_and_city_pans.inc"
 
 ; City-sequence draw routines: DRAW_CITY_SEQ_432_433,
 ; DRAW_CITY_SEQ_435_436, DRAW_CITY_SEQ_439_440,
@@ -169,14 +169,14 @@
 ; "draw routines" half of the city pan; corresponds to the
 ; per-frame video calls that the music_marks_and_city_pans
 ; INTRO city sequence: CIN_190 draw loop (alien-city establishing shots).
-;@include "intro/intro_city_seq_draws.inc"
+.include "intro/intro_city_seq_draws.inc"
 
 ; Page-flip + on-screen-text helpers (`SHOW_PAGE_0_LOOP_INTRO`,
 ; `SHOW_PAGE_FF_LOOP_INTRO`, `SHOW_TEXT_39_AT_5_170_10X`). Used to
 ; display title-card text strings during pauses; the page-show
 ; loops alternate between drawing-page and visible-page so text
 ; INTRO page-show + on-screen text (SHOW_PAGE_0_LOOP_INTRO et al.).
-;@include "intro/intro_page_show_and_text.inc"
+.include "intro/intro_page_show_and_text.inc"
 
 ; Song trigger + fade-in decor
 ; (`INTRO_PAUSE_3_PLAY_SONG_INIT`, `DELAY_50F_THEN_DRAW_CIN_454`,
@@ -184,14 +184,14 @@
 ; `CH_04_INIT_VAR_04_05`, `CH_05_INIT_VAR_06_07`). Starts the
 ; main intro song and schedules the parallel decor draw loops
 ; INTRO song init + decor (INTRO_PAUSE_3_PLAY_SONG_INIT).
-;@include "intro/intro_song_init_and_decor.inc"
+.include "intro/intro_song_init_and_decor.inc"
 
 ; Late-phase variable-drift loops
 ; (`DRIFT_VAR1_PLUS_5_FOR_115X`, `DRIFT_VAR1_PLUS_4_FOR_25X`, ...).
 ; Long sequence of scripted parameter drifts that animate position
 ; offsets (`[VAR_01]`) for the lab-finale composition. Each label
 ; INTRO late-phase page fill (INIT_PAGE0_PAUSE2_FILL1 et al.).
-;@include "intro/intro_late_pages_fill.inc"
+.include "intro/intro_late_pages_fill.inc"
 
 ; The actual LAKE-transition animation
 ; (`INTRO_TRANSITION_TO_LAKE_SCENE`, page-flip + palette-cycle
@@ -199,10 +199,10 @@
 ; the underwater pool reveal). Counterpart to
 ; `intro_transition_to_lake_setup.inc` — the setup chunk wires the
 ; INTRO lake-transition scene — the multi-phase cinematic that owns CH_02..CH_05 channel inits, the cinematic slide/rise/drift animations (SLIDE_CIN_448, RISE_CIN_447 / 130, DRAW_CIN_442..446 descending-Y phases, DRIFT_CIN_117 at five different positions), the city-seq channel setup, and the BLITTER_CYCLE that runs the page-flip during the transition. Largest INTRO chunk at 414 lines / 49 labels — kept whole because the scene flow is sequential.
-;@include "intro/intro_lake_transition.inc"
+.include "intro/intro_lake_transition.inc"
 
 ; INTRO lake-phase visual FX (CIN_120 drift loop + particle drifts).
-;@include "intro/intro_lake_phase_fx_drifts.inc"
+.include "intro/intro_lake_phase_fx_drifts.inc"
 
 ; Late-intro parallax-scrolling phase
 ; (`PARALLAX_CIN_126_127_LOOP`, `ZOOM_OUT_VAR4_M3_LOOP`,
@@ -210,7 +210,7 @@
 ; `CH_05_INIT_VARS_06_07_08`). Drives the depth-illusion scrolling
 ; for the "view from the lab window" phase before the lightning
 ; INTRO scene-late-phase init (INIT_VAR_04_PAL_E_VAR_01).
-;@include "intro/intro_scene_late_phase.inc"
+.include "intro/intro_scene_late_phase.inc"
 
 ; **First-to-execute scene** despite living last. The entry point
 ; in the first chunk schedules these onto channels 0x01/0x02/0x03:
@@ -225,7 +225,7 @@
 ; feet animation toward the lab door), `INTRO_FILL_AND_DRAW_CIN_103`
 ; (the city scene background), and the trailing-data label
 ; INTRO final scene: CIN_005 draw loop (transition into LAKE).
-;@include "intro/intro_scene_final.inc"
+.include "intro/intro_scene_final.inc"
 
 ; INTRO scene-final FX phase (palette + SFX loop).
-;@include "intro/intro_scene_final_fx_phase.inc"
+.include "intro/intro_scene_final_fx_phase.inc"

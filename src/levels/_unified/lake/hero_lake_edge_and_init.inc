@@ -1,13 +1,13 @@
 CHECK_HERO_LAKE_EDGE:
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jl [HERO_X], 0x0146, HERO_INIT_Y_AND_DISPATCH_BY_X
 	je [0x63], 0x02, ENTER_OUTSIDE_POOL_FROM_LEFT
-;@endif
+.endif
 	jl [HERO_X], 0x0159, HERO_INIT_Y_AND_DISPATCH_BY_X
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 ENTER_OUTSIDE_POOL_FROM_LEFT:
-;@endif
+.endif
 	mov [HERO_X], 0x0000
 	call ADVANCE_X_BACKWARD_ONE_SCREEN
 	call KILL_CH_01_04_38
@@ -16,14 +16,14 @@ ENTER_OUTSIDE_POOL_FROM_LEFT:
 HERO_INIT_Y_AND_DISPATCH_BY_X:
 	mov [HERO_Y], 0x00B6
 	jg [HERO_X], 0x6E, HERO_Y_FROM_X_RANGE_0
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	je [HERO_POS_UP_DOWN], 0xFFFF, MAYBE_LESTER_GRAB_VINE
-;@endif
+.endif
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, INIT_HERO_LAKE_DEFAULT
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 MAYBE_LESTER_GRAB_VINE:
-;@endif
+.endif
 	je [0x5E], 0x01, INIT_HERO_LAKE_DEFAULT
 	setup channel=0x06, address=LESTER_GRABS_A_VINE_AND_SWINGS
 	setup channel=0x29, address=KILL_CHANNEL_ROUTINE

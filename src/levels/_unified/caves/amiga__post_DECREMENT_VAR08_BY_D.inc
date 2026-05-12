@@ -809,7 +809,7 @@ LABEL_9AA9:
 	je [0x0A], 0x00, DRAW_CV_113
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_113.inc"
+.include "../_helpers/DRAW_CV_113.inc"
 
 LABEL_9AB8:
 	je [0x0A], 0x00, DRAW_CV_114
@@ -833,7 +833,7 @@ LABEL_9AD6:
 	je [0x0A], 0x00, DRAW_CV_116
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_116.inc"
+.include "../_helpers/DRAW_CV_116.inc"
 
 LABEL_9AE5:
 	je [0x0A], 0x00, LABEL_9AEE
@@ -853,7 +853,7 @@ LABEL_9AFA:
 LABEL_9B08:
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_118.inc"
+.include "../_helpers/DRAW_CV_118.inc"
 
 LABEL_9B11:
 	jne [0x0A], 0x00, LABEL_9B1F
@@ -877,7 +877,7 @@ LABEL_9B2B:
 LABEL_9B39:
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_099.inc"
+.include "../_helpers/DRAW_CV_099.inc"
 
 LABEL_9B42:
 	jne [0x0A], 0x00, LABEL_9B50
@@ -887,7 +887,7 @@ LABEL_9B42:
 LABEL_9B50:
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_101.inc"
+.include "../_helpers/DRAW_CV_101.inc"
 
 LABEL_9B59:
 	jne [0x0A], 0x00, LABEL_9B67
@@ -897,7 +897,7 @@ LABEL_9B59:
 LABEL_9B67:
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_103.inc"
+.include "../_helpers/DRAW_CV_103.inc"
 
 LABEL_9B70:
 	jne [0x0A], 0x00, LABEL_9B7E
@@ -907,7 +907,7 @@ LABEL_9B70:
 LABEL_9B7E:
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_105.inc"
+.include "../_helpers/DRAW_CV_105.inc"
 
 LABEL_9B87:
 	jne [0x0A], 0x00, LABEL_9B95
@@ -917,7 +917,7 @@ LABEL_9B87:
 LABEL_9B95:
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_107.inc"
+.include "../_helpers/DRAW_CV_107.inc"
 
 LABEL_9B9E:
 	je [0x0A], 0x00, LABEL_9BA7
@@ -943,7 +943,7 @@ LABEL_9BC2:
 	je [0x0A], 0x00, DRAW_CV_111
 	call GUARDED_DRAW_CV_126
 
-;@include "../_helpers/DRAW_CV_111.inc"
+.include "../_helpers/DRAW_CV_111.inc"
 
 LABEL_9BD4:
 	je [0x0A], 0x00, DRAW_CV_112
@@ -954,15 +954,15 @@ DRAW_CV_112:
 	ret
 
 
-;@include "../_helpers/DRAW_CV_273.inc"
+.include "../_helpers/DRAW_CV_273.inc"
 
-;@include "../_helpers/DRAW_CV_270.inc"
+.include "../_helpers/DRAW_CV_270.inc"
 
-;@include "../_helpers/DRAW_CV_252.inc"
+.include "../_helpers/DRAW_CV_252.inc"
 
-;@include "../_helpers/DRAW_CV_255.inc"
+.include "../_helpers/DRAW_CV_255.inc"
 
-;@include "../_helpers/DRAW_CV_265.inc"
+.include "../_helpers/DRAW_CV_265.inc"
 
 LABEL_9C01:
 	video type=0, offset=COMMON_VIDEO_251, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -1036,7 +1036,7 @@ LABEL_9CA6:
 	ret
 
 
-;@include "../_helpers/DRAW_CV_279.inc"
+.include "../_helpers/DRAW_CV_279.inc"
 
 LABEL_9CBD:
 	je [0x0A], 0x00, LABEL_9CC9
@@ -1060,7 +1060,7 @@ LABEL_9CDA:
 LABEL_9CE6:
 	video type=0, offset=COMMON_VIDEO_280, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
-;@include "../_helpers/DRAW_CV_281.inc"
+.include "../_helpers/DRAW_CV_281.inc"
 
 LABEL_9CF1:
 	je [0x0A], 0x00, LABEL_9CFD
@@ -1070,7 +1070,7 @@ LABEL_9CF1:
 LABEL_9CFD:
 	video type=0, offset=COMMON_VIDEO_293, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
-;@include "../_helpers/DRAW_CV_294.inc"
+.include "../_helpers/DRAW_CV_294.inc"
 
 LABEL_9D08:
 	je [0x0A], 0x00, LABEL_9D14
@@ -1116,7 +1116,7 @@ LABEL_9D4B:
 LABEL_9D57:
 	video type=0, offset=COMMON_VIDEO_285, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
-;@include "../_helpers/DRAW_CV_286.inc"
+.include "../_helpers/DRAW_CV_286.inc"
 
 LABEL_9D62:
 	je [0x0A], 0x00, LABEL_9D6E
@@ -1126,7 +1126,7 @@ LABEL_9D62:
 LABEL_9D6E:
 	video type=0, offset=COMMON_VIDEO_287, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
-;@include "../_helpers/DRAW_CV_288.inc"
+.include "../_helpers/DRAW_CV_288.inc"
 
 LABEL_9D79:
 	je [0x0A], 0x00, LABEL_9D85
@@ -1136,7 +1136,7 @@ LABEL_9D79:
 LABEL_9D85:
 	video type=0, offset=COMMON_VIDEO_289, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
-;@include "../_helpers/DRAW_CV_290.inc"
+.include "../_helpers/DRAW_CV_290.inc"
 
 LABEL_9D90:
 	je [0x0A], 0x00, LABEL_9D9C
@@ -1146,7 +1146,7 @@ LABEL_9D90:
 LABEL_9D9C:
 	video type=0, offset=COMMON_VIDEO_291, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
-;@include "../_helpers/DRAW_CV_292.inc"
+.include "../_helpers/DRAW_CV_292.inc"
 LABEL_9DA7:
 	db 0x0A, 0x00, 0x1F, 0x00, 0x9D, 0xD6, 0x0A, 0x04
 	db 0x1E, 0x00, 0x9D, 0xC5, 0x00, 0x20, 0xFF, 0xFF

@@ -32,17 +32,17 @@
 ;   CLEAR_PAGES_1_2_AND_BLIT  (2-arm: amiga, dos)
 
 ; Engine-managed special-purpose VM variables (HERO_POS_*, RANDOM_SEED, PAUSE_SLICES, etc.).
-;@include "../_common_vars.inc"
+.include "../_common_vars.inc"
 
 ; Cross-stage helper EQUs (LABEL_<HEX> / ADDR_AT_* placeholders shared between levels).
-;@include "_helpers/_helpers_equ_aliases.inc"
+.include "_helpers/_helpers_equ_aliases.inc"
 
 ; Level-entry bytecode (level start through the first shared folded routine).
-;@if BRANCH == "chahi_amiga_1991"
-;@include "code_wheel/amiga__entry.inc"
-;@else
-;@include "code_wheel/dos__entry.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "code_wheel/amiga__entry.inc"
+.else
+.include "code_wheel/dos__entry.inc"
+.endif
 
 	org 0x0000
 
@@ -57,9 +57,9 @@ LABEL_0000:
 
 ; The previous `killChannel` already terminates this task so this
 ; second one can't execute. No label references this address.
-;@if INCLUDE_UNREACHABLE_CODE == on
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
-;@endif
+.endif
 
 INIT_PROGRESS_HASH_VARS:
 	add [0x63], 0x0001
@@ -90,9 +90,9 @@ INIT_GAME_STATE_VARS:
 	mov [0xC5], 0x0236
 	mov [0xBE], 0x1ED1
 	mov [0x53], 0x004E
-;@if BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	mov [0x32], 0x0000
-;@endif
+.endif
 	ret
 
 
@@ -103,13 +103,13 @@ INIT_GAME_STATE_VARS:
 ; 4 bytes already decoded as a `mov` with imm 0x0080. Likely leftover
 ; from a prior HACK_VAR_54 init scheme replaced by the `jl 0x80`
 ; branching below.
-;@if INCLUDE_UNREACHABLE_CODE == on
-;@if BRANCH == "chahi_amiga_1991"
+.if INCLUDE_UNREACHABLE_CODE == on
+.if BRANCH == "chahi_amiga_1991"
 	mov [HACK_VAR_54], 0x0001
-;@else
+.else
 	mov [HACK_VAR_54], 0x0080
-;@endif
-;@endif
+.endif
+.endif
 
 GAME_INTRO_PHASE_DRAW_CIN_076:
 	jl [HACK_VAR_54], 0x80, CODEWHEEL_INIT_PALETTE_17_LOAD_RES_47
@@ -124,37 +124,37 @@ GAME_INTRO_PHASE_DRAW_CIN_076:
 
 CODEWHEEL_INTRO_DELAY_LOOP_1:
 	break
-;@if BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	jne [HERO_ACTION], 0x00, BANK1_INTRO_TRANSITION
-;@endif
+.endif
 	djnz [0x03], CODEWHEEL_INTRO_DELAY_LOOP_1
 	setup channel=0x2C, address=PAL_FADE_4_TO_18_AND_BACK
 	mov [0x03], 0x000A
 
 CODEWHEEL_INTRO_DELAY_LOOP_2:
 	break
-;@if BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	jne [HERO_ACTION], 0x00, BANK1_INTRO_TRANSITION
-;@endif
+.endif
 	djnz [0x03], CODEWHEEL_INTRO_DELAY_LOOP_2
 	jmp CODEWHEEL_INIT_PALETTE_17_LOAD_RES_47
 
 CODEWHEEL_INIT_PALETTE_17_LOAD_RES_47:
 	setPalette 0x17
 	fill page=0xFF, color=0x00
-;@if BRANCH == "chahi_amiga_1991"
+.if BRANCH == "chahi_amiga_1991"
 	fill page=0x00, color=0x00
-;@elif BRANCH == "dos_1992"
+.elif BRANCH == "dos_1992"
 	load id=0x0047
-;@endif
+.endif
 	setup channel=0x2C, address=PAL_FADE_DOWN_17_TO_11
 	mov [0x03], 0x0014
 
 CODEWHEEL_INTRO_DELAY_LOOP_3:
 	break
-;@if BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	jne [HERO_ACTION], 0x00, BANK1_INTRO_TRANSITION
-;@endif
+.endif
 	djnz [0x03], CODEWHEEL_INTRO_DELAY_LOOP_3
 	jmp CODEWHEEL_INIT_PHASE_2_FADE_E_TO_8
 
@@ -173,29 +173,29 @@ LOAD_RESOURCE_13:
 CODEWHEEL_INTRO_AFTER_TITLE:
 	selectVideoPage 0xFF
 	setup channel=0x2C, address=PAL_FADE_DOWN_E_TO_8
-;@if BRANCH == "chahi_amiga_1991"
+.if BRANCH == "chahi_amiga_1991"
 	mov [0x03], 0x0028
-;@elif BRANCH == "dos_1992"
+.elif BRANCH == "dos_1992"
 	mov [0x03], 0x0050
-;@endif
+.endif
 
 ; Per-tick blit + (dos only) check HERO_ACTION; if non-zero, branch to
 ; BANK1_INTRO_TRANSITION ("press any key to continue"). amiga forces
 ; the player to wait out the timer.
 WAIT_FOR_HERO_ACTION_LOOP:
 	break
-;@if BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	jne [HERO_ACTION], 0x00, BANK1_INTRO_TRANSITION
-;@endif
+.endif
 	djnz [0x03], WAIT_FOR_HERO_ACTION_LOOP
 	setup channel=0x2C, address=PAL_FADE_UP_9_TO_F
 	mov [0x03], 0x000A
 
 CODEWHEEL_CREDITS_FADE_1_WAIT:
 	break
-;@if BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	jne [HERO_ACTION], 0x00, BANK1_INTRO_TRANSITION
-;@endif
+.endif
 	djnz [0x03], CODEWHEEL_CREDITS_FADE_1_WAIT
 	fill page=0x00, color=0x00
 	selectVideoPage 0x00
@@ -208,9 +208,9 @@ CODEWHEEL_CREDITS_FADE_1_WAIT:
 
 CODEWHEEL_CREDITS_PAGE_1_WAIT:
 	break
-;@if BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	jne [HERO_ACTION], 0x00, BANK1_INTRO_TRANSITION
-;@endif
+.endif
 	djnz [0x03], CODEWHEEL_CREDITS_PAGE_1_WAIT
 	break
 	fill page=0x00, color=0x00
@@ -225,9 +225,9 @@ CODEWHEEL_CREDITS_PAGE_1_WAIT:
 
 CODEWHEEL_CREDITS_PAGE_2_WAIT:
 	break
-;@if BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	jne [HERO_ACTION], 0x00, BANK1_INTRO_TRANSITION
-;@endif
+.endif
 	djnz [0x03], CODEWHEEL_CREDITS_PAGE_2_WAIT
 	break
 	fill page=0x00, color=0x00
@@ -241,9 +241,9 @@ CODEWHEEL_CREDITS_PAGE_2_WAIT:
 
 CODEWHEEL_WAIT_LOOP_BREAK_ON_ACTION:
 	break
-;@if BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	jne [HERO_ACTION], 0x00, BANK1_INTRO_TRANSITION
-;@endif
+.endif
 	djnz [0x03], CODEWHEEL_WAIT_LOOP_BREAK_ON_ACTION
 
 BANK1_INTRO_TRANSITION:
@@ -254,14 +254,14 @@ BANK1_INTRO_TRANSITION:
 	killChannel
 
 ; Shared palette-fade helpers used during code-wheel screen transitions.
-;@include "code_wheel/code_wheel_palette_fades.inc"
+.include "code_wheel/code_wheel_palette_fades.inc"
 
 ; Port-specific body chunk after the shared `PAL_FADE_UP_9_TO_F` routine.
-;@if BRANCH == "chahi_amiga_1991"
-;@include "code_wheel/amiga__post_PAL_FADE_UP_9_TO_F.inc"
-;@else
-;@include "code_wheel/dos__post_PAL_FADE_UP_9_TO_F.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "code_wheel/amiga__post_PAL_FADE_UP_9_TO_F.inc"
+.else
+.include "code_wheel/dos__post_PAL_FADE_UP_9_TO_F.inc"
+.endif
 
 COPY_HERO_VARS_TO_29_2A_2B_2C:
 	mov [0x0A], [0x29]
@@ -598,7 +598,7 @@ CHECK_HASH_AND_CODE_DIGITS_ZERO:
 	ret
 
 
-;@if BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 ; dos-only digit-validation: each entered slot (var1E..21)
 ; must be nonzero for digit-position var02 <= 4. Any slot
 ; that's zero short-circuits to RESUME_GAME_INIT_CHANNELS
@@ -615,12 +615,12 @@ CODEWHEEL_VALIDATE_PARTIAL_INPUT:
 	ret
 
 
-;@endif
+.endif
 
 SAVE_HERO_INPUT_AND_HASH:
-;@if BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	mov [HERO_POS_JUMP_DOWN], [HERO_POS_UP_DOWN]
-;@endif
+.endif
 	call SUM_HASH_VARS_TO_VAR_37
 	call CHECK_HASH_AND_CODE_DIGITS_ZERO
 	call ALL_BANK_VARS_CHECK_PAIRWISE_EQ
@@ -677,9 +677,9 @@ DERIVE_FOUR_POS_25_26_27_28:
 ; Filler byte (`db 0x11` in original disasm, decoded as killChannel);
 ; preceding unconditional `jmp` never falls through and no label
 ; references this address.
-;@if INCLUDE_UNREACHABLE_CODE == on
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
-;@endif
+.endif
 
 ; Entry point. Copies current cursor position (var25, var26)
 ; into the draw vars (var07, var08), sets var24 to the
@@ -688,11 +688,11 @@ DERIVE_FOUR_POS_25_26_27_28:
 CODEWHEEL_CURSOR_SMOOTH_MOVE_INIT:
 	mov [0x07], [0x25]
 	mov [0x08], [0x26]
-;@if BRANCH == "chahi_amiga_1991"
+.if BRANCH == "chahi_amiga_1991"
 	mov [0x24], 0x0003
-;@elif BRANCH == "dos_1992"
+.elif BRANCH == "dos_1992"
 	mov [0x24], 0x0008
-;@endif
+.endif
 
 ; One iteration of the interpolation. Dispatches to X-
 ; direction handler if current > target X.
@@ -727,10 +727,10 @@ CODEWHEEL_CURSOR_MOVE_Y_DEC_STEP:
 CODEWHEEL_CURSOR_MOVE_CHECK_ARRIVED:
 	jne [0x07], [0x27], CODEWHEEL_CURSOR_MOVE_INTERMEDIATE_DRAW
 	jne [0x08], [0x28], CODEWHEEL_CURSOR_MOVE_INTERMEDIATE_DRAW
-;@if BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	video offset=CINEMATIC_CODEWHEEL_CURSOR, x=[0x07], y=[0x08]
 	break
-;@endif
+.endif
 	jmp SAVE_HERO_INPUT_AND_HASH
 
 CODEWHEEL_CURSOR_MOVE_INTERMEDIATE_DRAW:
@@ -740,19 +740,19 @@ CODEWHEEL_CURSOR_MOVE_INTERMEDIATE_DRAW:
 
 ; Filler byte (`db 0x11` in original disasm); the preceding
 ; unconditional `jmp` doesn't fall through.
-;@if INCLUDE_UNREACHABLE_CODE == on
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
-;@endif
+.endif
 
 CODEWHEEL_CHECK_ENTERED_CODE:
 	setPalette 0x00
-;@if BRANCH == "chahi_amiga_1991"
+.if BRANCH == "chahi_amiga_1991"
 	je [0x29], [0x1E], SETUP_CODEWHEEL_CHANNELS
 	je [0x29], [0x1F], SETUP_CODEWHEEL_CHANNELS
 	je [0x29], [0x20], SETUP_CODEWHEEL_CHANNELS
 	je [0x29], [0x21], SETUP_CODEWHEEL_CHANNELS
 	jmp SETUP_CODEWHEEL_CHANNELS
-;@elif BRANCH == "dos_1992"
+.elif BRANCH == "dos_1992"
 	shr [0x38], 0x0004
 	jne [0x29], [0x38], RESUME_GAME_INIT_CHANNELS
 	shr [0x43], 0x0003
@@ -764,7 +764,7 @@ CODEWHEEL_CHECK_ENTERED_CODE:
 	je [0x29], [0x20], CHECK_VAR2A_OR_DISPATCH_RANGE
 	je [0x29], [0x21], CHECK_VAR2A_OR_DISPATCH_RANGE
 	jmp RESUME_GAME_INIT_CHANNELS
-;@endif
+.endif
 
 ; 81-byte 3-digit-check chain. Live in dos (called from
 ; CODEWHEEL_CHECK_ENTERED_CODE above). Also present in amiga's
@@ -780,7 +780,7 @@ CODEWHEEL_CHECK_ENTERED_CODE:
 ; digit's check; the final var 0x2C check that matches lands on
 ; SETUP_CODEWHEEL_CHANNELS (success). Any digit that fails to match
 ; any slot jumps to RESUME_GAME_INIT_CHANNELS (failure).
-;@if BRANCH == "dos_1992" or INCLUDE_UNREACHABLE_CODE == on
+.if BRANCH == "dos_1992" or INCLUDE_UNREACHABLE_CODE == on
 CHECK_VAR2A_OR_DISPATCH_RANGE:
 	je [0x2A], [0x1E], CHECK_VAR2B_OR_DISPATCH_RANGE
 	je [0x2A], [0x1F], CHECK_VAR2B_OR_DISPATCH_RANGE
@@ -801,7 +801,7 @@ CHECK_VAR2C_RANGE_OR_RESUME:
 	je [0x2C], [0x20], SETUP_CODEWHEEL_CHANNELS
 	je [0x2C], [0x21], SETUP_CODEWHEEL_CHANNELS
 	jmp RESUME_GAME_INIT_CHANNELS
-;@endif
+.endif
 
 SETUP_CODEWHEEL_CHANNELS:
 	call SUM_HASH_VARS_TO_VAR_37
@@ -815,18 +815,18 @@ SETUP_CODEWHEEL_CHANNELS:
 
 ; Filler byte (`db 0x11` in original disasm); preceding unconditional
 ; `jmp` doesn't fall through.
-;@if INCLUDE_UNREACHABLE_CODE == on
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
-;@endif
+.endif
 
 CODEWHEEL_FINALIZE_VAR31_SUCCESS_PATH:
 	jne [0x1B], 0x15, RESUME_GAME_INIT_CHANNELS
 	and [0x32], 0x001F
-;@if BRANCH == "chahi_amiga_1991"
+.if BRANCH == "chahi_amiga_1991"
 	jl [0x32], 0x03, RESUME_GAME_INIT_CHANNELS
-;@elif BRANCH == "dos_1992"
+.elif BRANCH == "dos_1992"
 	jl [0x32], 0x06, RESUME_GAME_INIT_CHANNELS
-;@endif
+.endif
 	jl [0x64], 0x14, RESUME_GAME_INIT_CHANNELS
 	call SUM_HASH_VARS_TO_VAR_37
 	call INIT_PROGRESS_HASH_VARS
@@ -835,32 +835,32 @@ CODEWHEEL_FINALIZE_VAR31_SUCCESS_PATH:
 	call INIT_PROGRESS_HASH_VARS
 	setup channel=0x32, address=MARK_VAR67_AND_KILL
 	setup channel=0x3F, address=CODEWHEEL_PIN_HACK_VAR67_TO_0
-;@if BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	mov [0xE4], [0x68]
-;@endif
+.endif
 	break
 	break
 	call INIT_PROGRESS_HASH_VARS
-;@if BRANCH == "chahi_amiga_1991"
+.if BRANCH == "chahi_amiga_1991"
 	mov [0xF2], 0x1770
 	break
 	jmp GAME_INTRO_PHASE_DRAW_CIN_076
-;@else
+.else
 	mov [0xF2], 0x0FA0
 	break
 	call INIT_PROGRESS_HASH_VARS
 	call SUM_HASH_VARS_TO_VAR_37
 	call CODEWHEEL_SUCCESS_SET_E4_OR_14
 	jmp GAME_INTRO_PHASE_DRAW_CIN_076
-;@endif
+.endif
 
 ; Preceding `jmp` doesn't fall through.
-;@if INCLUDE_UNREACHABLE_CODE == on
+.if INCLUDE_UNREACHABLE_CODE == on
 	bankSwitch 1
 	killChannel
-;@endif
+.endif
 
-;@if BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 CODEWHEEL_SUCCESS_SET_E4_OR_14:
 	call CALL_LABEL_0D2E_AND_RET
 	or [0xE4], 0x0014
@@ -889,7 +889,7 @@ WRAP_SUM_HASH_VARS_TO_VAR_37:
 	ret
 
 
-;@endif
+.endif
 
 MARK_VAR67_AND_KILL:
 	mov [HACK_VAR_67], 0x0001
@@ -907,24 +907,24 @@ CODEWHEEL_PIN_HACK_VAR67_TO_0:
 ; Filler byte (`db 0x11` in original disasm, decoded as killChannel).
 ; The preceding `jmp` is an infinite self-loop so this byte can't
 ; execute.
-;@if INCLUDE_UNREACHABLE_CODE == on
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
-;@endif
+.endif
 
 RESUME_GAME_INIT_CHANNELS:
 	deleteChannels first=0x00, last=0x3F
-;@if BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	mov [0x02], [0x37]
 	call INIT_PROGRESS_HASH_VARS
-;@endif
+.endif
 	setup channel=0x0E, address=CODEWHEEL_INIT_PAGES_AND_PALETTE_1
 	setup channel=0x1E, address=BLITTER_LOOP_WITH_VAR1B_2B
 	killChannel
 
 CODEWHEEL_INIT_PAGES_AND_PALETTE_1:
-;@if BRANCH == "chahi_amiga_1991"
+.if BRANCH == "chahi_amiga_1991"
 	fill page=0x00, color=0x00
-;@endif
+.endif
 	copyVideoPage src=0x03, dst=0x00
 	fill page=0x03, color=0x00
 	setPalette 0x01
@@ -947,15 +947,15 @@ ZERO_VAR31_LOOP:
 
 CODEWHEEL_PROCESS_ENTERED_DIGIT:
 	mov [0x05], [0x01]
-;@if BRANCH == "chahi_amiga_1991"
+.if BRANCH == "chahi_amiga_1991"
 	call CODEWHEEL_LOOKUP_VAR06_FROM_VAR_TABLE_BY_VAR05
-;@elif BRANCH == "dos_1992"
+.elif BRANCH == "dos_1992"
 	selectVideoPage 0x00
 	video offset=CINEMATIC_074, x=160, y=100
 	selectVideoPage 0xFF
 	call CODEWHEEL_VALIDATE_PARTIAL_INPUT
 	call CODEWHEEL_LOOKUP_VAR06_FROM_VAR_TABLE_BY_VAR05
-;@endif
+.endif
 	mov [0x22], [0x02]
 	je [0x06], 0x63, CODEWHEEL_CHECK_ENTERED_CODE
 	jne [0x06], 0x62, CODEWHEEL_INPUT_NOT_DELETE_BRANCH
@@ -1013,9 +1013,9 @@ CODEWHEEL_WAIT_ACTION_RELEASE_LOOP:
 
 ; Filler byte (`db 0x11` in original disasm); preceding unconditional
 ; `jmp` doesn't fall through.
-;@if INCLUDE_UNREACHABLE_CODE == on
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
-;@endif
+.endif
 
 CODEWHEEL_DRAW_4_DIGIT_DISPLAY:
 	mov [0x07], 0x0064
@@ -1256,14 +1256,14 @@ CODEWHEEL_SYMBOL_DISPATCH_CASE_1D:
 ; Dispatcher case 0x1E and beyond — diverges per port. amiga's
 ; codewheel has 30 glyphs (cases up to 0x1E), msdos's has 40
 ; (continues through 0x28).
-;@if BRANCH == "chahi_amiga_1991"
+.if BRANCH == "chahi_amiga_1991"
 CODEWHEEL_SYMBOL_DISPATCH_CASE_1E:
 	jne [0x06], 0x1E, SHARED_RET
 	video offset=CINEMATIC_ALIEN_GLYPH_29, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
-;@elif BRANCH == "dos_1992"
+.elif BRANCH == "dos_1992"
 CODEWHEEL_SYMBOL_DISPATCH_CASE_1E:
 	jne [0x06], 0x1E, CODEWHEEL_SYMBOL_DISPATCH_CASE_1F
 	video offset=CINEMATIC_ALIEN_GLYPH_29, x=[0x07], y=[0x08], zoom=[0x04]
@@ -1330,7 +1330,7 @@ CODEWHEEL_SYMBOL_DISPATCH_CASE_28:
 	ret
 
 
-;@endif
+.endif
 
 ; Shared epilogue: SHARED_RET (the canonical bail-out point used
 ; throughout CODE_WHEEL), then three infinite blitter-loop routines
@@ -1345,10 +1345,10 @@ SHARED_RET:
 ; caller and the next labeled routine is the blitter loop below.
 ; Likely vestigial bytes from a previous arrangement where this drew
 ; CINEMATIC_079 full-screen.
-;@if INCLUDE_UNREACHABLE_CODE == on
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
 	video offset=CINEMATIC_079, x=160, y=100
-;@endif
+.endif
 
 BLITTER_LOOP_WITH_VAR1B_2B:
 	blitFramebuffer 0xFF
@@ -1383,15 +1383,15 @@ CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC:
 	jmp CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC
 
 ; Shared helper: clear video pages 1 and 2, then blit-chain x8 — used at scene transitions.
-;@include "_helpers/CLEAR_PAGES_1_2_AND_BLIT.inc"
+.include "_helpers/CLEAR_PAGES_1_2_AND_BLIT.inc"
 
 ; No caller reaches these bytes — the preceding `ret` doesn't fall
 ; through and no label references this address.
-;@if INCLUDE_UNREACHABLE_CODE == on
+.if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
 	killChannel
-;@if BRANCH == "chahi_amiga_1991"
+.if BRANCH == "chahi_amiga_1991"
 	db 0x00
-;@endif
-;@endif
+.endif
+.endif
 

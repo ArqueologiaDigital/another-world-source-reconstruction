@@ -165,7 +165,7 @@ lint-raw:
 .PHONY: lint
 lint: lint-raw
 
-# Phase 3b: source files with `;@if BRANCH == "..."` conditional directives.
+# Phase 3b: source files with `.if BRANCH == "..."` conditional directives.
 # `make preprocess SRC=path/to/foo.asm.in TARGET=cartridge_1992`
 # emits the per-branch .asm to build/<TARGET>/.
 .PHONY: preprocess

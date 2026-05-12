@@ -10,25 +10,25 @@ CHECK_HORIZONTAL_PROXIMITY:
 EXIT_PATH_FROM_PROXIMITY_OUT_OF_RANGE:
 	je [0x06], 0x00, BEAST_RANGE_CHECK_OUT_OF_RANGE_RET
 	jg [0x06], 0x02, BEAST_RANGE_CHECK_OUT_OF_RANGE_RET
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	jg [HERO_X], [0x04], BEAST_RANGE_CHECK_INIT_CART
-;@endif
+.endif
 	mov [0x12], [0x04]
 	mov [0x13], [0x04]
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	add [0x12], 0x0008
 	sub [0x13], 0x000C
 	jmp BEAST_RANGE_CHECK_VAR_39
-;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+.elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	sub [0x13], 0x0007
 	jl [HERO_X], [0x04], BEAST_RANGE_CHECK_INIT_CART
 	mov [0x13], [0x04]
 	mov [0x12], [0x04]
 	add [0x12], 0x0007
-;@endif
+.endif
 
 BEAST_RANGE_CHECK_INIT_CART:
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	mov [0x13], [0x04]
 	mov [0x12], [0x04]
 	sub [0x13], 0x0008
@@ -43,10 +43,10 @@ BEAST_RANGE_CHECK_VAR_39:
 BEAST_RANGE_BOUNDS_CHK:
 	jg [0x3A], [0x12], BEAST_RANGE_CHECK_OUT_OF_RANGE_RET
 	jl [0x3A], [0x13], BEAST_RANGE_CHECK_OUT_OF_RANGE_RET
-;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+.elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	jg [0x0C], [0x12], BEAST_RANGE_CHECK_OUT_OF_RANGE_RET
 	jl [0x0C], [0x13], BEAST_RANGE_CHECK_OUT_OF_RANGE_RET
-;@endif
+.endif
 	mov [0x07], 0x0002
 
 BEAST_RANGE_CHECK_OUT_OF_RANGE_RET:

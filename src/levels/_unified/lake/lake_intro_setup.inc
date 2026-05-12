@@ -1,11 +1,11 @@
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND		EQU 0xA8CC
-;@endif
-;@if BRANCH == "chahi_amiga_1991"
+.endif
+.if BRANCH == "chahi_amiga_1991"
 CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND		EQU 0xBCDC
-;@endif
+.endif
 
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_LAKE_INTRO_ANIM_0		EQU 0xCC98
 CINEMATIC_LAKE_INTRO_ANIM_1		EQU 0xCCB4
 CINEMATIC_LAKE_INTRO_ANIM_2		EQU 0xCD00
@@ -15,8 +15,8 @@ CINEMATIC_LAKE_INTRO_LESTER		EQU 0x017C
 CINEMATIC_LAKE_SCENE2_BG		EQU 0xCE6C
 CINEMATIC_LAKE_SCENE2_DECOR		EQU 0xCEB8
 CINEMATIC_LAKE_SCENE3_DECOR		EQU 0xD6C6
-;@endif
-;@if BRANCH == "chahi_amiga_1991"
+.endif
+.if BRANCH == "chahi_amiga_1991"
 CINEMATIC_LAKE_INTRO_ANIM_0		EQU 0xE0A8
 CINEMATIC_LAKE_INTRO_ANIM_1		EQU 0xE0C4
 CINEMATIC_LAKE_INTRO_ANIM_2		EQU 0xE110
@@ -26,7 +26,7 @@ CINEMATIC_LAKE_INTRO_LESTER		EQU 0x0188
 CINEMATIC_LAKE_SCENE2_BG		EQU 0xE27C
 CINEMATIC_LAKE_SCENE2_DECOR		EQU 0xE2C8
 CINEMATIC_LAKE_SCENE3_DECOR		EQU 0xEAD6
-;@endif
+.endif
 
 LAKE_INTRO_SETUP:
 	unfreezeChannels first=0x00, last=0x09
@@ -37,19 +37,19 @@ LAKE_INTRO_SETUP:
 	setup channel=0x14, address=LESTER_DROP_LAND_AT_POOL_EDGE
 	setup channel=0x15, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x16, address=KILL_CHANNEL_ROUTINE
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	mov [0x19], 0x003B
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	mov [0x19], 0x003C
-;@endif
+.endif
 
 LAKE_INTRO_PRE_DELAY:
 	break
 	djnz [0x19], LAKE_INTRO_PRE_DELAY
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
-;@endif
+.endif
 	unfreezeChannels first=0x0B, last=0x3B
 	mov [0x18], 0x006E
 	fill page=0x00, color=0x0B
@@ -73,20 +73,20 @@ LAKE_INTRO_ANIM_F1_LOOP:
 	break
 	video offset=CINEMATIC_LAKE_INTRO_ANIM_1, x=[0x18], y=110
 	djnz [0x19], LAKE_INTRO_ANIM_F1_LOOP
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	mov [0x19], 0x000F
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	mov [0x19], 0x0010
-;@endif
+.endif
 
 LAKE_INTRO_ANIM_F2_LOOP:
 	break
 	video offset=CINEMATIC_LAKE_INTRO_ANIM_2, x=[0x18], y=110
 	djnz [0x19], LAKE_INTRO_ANIM_F2_LOOP
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
-;@endif
+.endif
 	selectVideoPage 0x00
 	fill page=0x00, color=0x0B
 	video offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
@@ -95,19 +95,19 @@ LAKE_INTRO_ANIM_F2_LOOP:
 	video offset=CINEMATIC_LAKE_SCENE2_DECOR, x=200, y=100
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	mov [0x19], 0x001F
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	mov [0x19], 0x0020
-;@endif
+.endif
 
 LAKE_INTRO_PRE_TRANS_DELAY:
 	break
 	djnz [0x19], LAKE_INTRO_PRE_TRANS_DELAY
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	break
-;@endif
+.endif
 	copyVideoPage src=0x03, dst=0x00
 	freezeChannels first=0x14, last=0x16
 	setup channel=0x14, address=LESTER_AT_POOL_LOOP

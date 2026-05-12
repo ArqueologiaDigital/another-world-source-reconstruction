@@ -1,8 +1,8 @@
 VINE_SCREEN:
 	mov [HACK_VAR_67], 0x0001
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
-;@endif
+.endif
 	call CYCLE_VIDEO_PAGES_3WAY
 	setPalette 0x09
 	je [0x66], 0x01, VINE_SCREEN_AFTER_BG_INIT
@@ -29,9 +29,9 @@ VINE_SCREEN_AFTER_BEAST_AI:
 
 OUTSIDE_POOL_SCREEN:
 	mov [HACK_VAR_67], 0x0002
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
-;@endif
+.endif
 	call CYCLE_VIDEO_PAGES_3WAY
 	setPalette 0x07
 	je [0x66], 0x02, VINE_SCREEN_BEAST_TRIGGER_CHK

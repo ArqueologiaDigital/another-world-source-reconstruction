@@ -202,11 +202,11 @@ INTRO_PLAY_BG_AUDIO_LOOP:
 ; the GBA port may need longer to sync the sound effect's end with
 ; the next animation cue (or just a tuning fix specific to this
 ; one moment in the game).
-;@if BRANCH == "cartridge_1992"
+.if BRANCH == "cartridge_1992"
 	mov [0x01], 0x0012
-;@elif BRANCH == "gba_2004"
+.elif BRANCH == "gba_2004"
 	mov [0x01], 0x0024
-;@endif
+.endif
 
 DELAY_BEFORE_PLAY_FX_9_DUAL:
 	break

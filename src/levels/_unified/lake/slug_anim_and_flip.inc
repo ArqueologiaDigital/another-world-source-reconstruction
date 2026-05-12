@@ -1,4 +1,4 @@
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_BEAST_AI_1		EQU 0xA158
 CINEMATIC_BEAST_AI_2		EQU 0xA174
 CINEMATIC_BEAST_AI_3		EQU 0xA194
@@ -25,8 +25,8 @@ CINEMATIC_SLUG_FLIP_WALKING_2		EQU 0x4CDE
 CINEMATIC_SLUG_FLIP_WALKING_3		EQU 0x4CFE
 CINEMATIC_SLUG_FLIP_WALKING_4		EQU 0x4D1E
 CINEMATIC_SLUG_FLIP_WALKING_5		EQU 0x4D3E
-;@endif
-;@if BRANCH == "chahi_amiga_1991"
+.endif
+.if BRANCH == "chahi_amiga_1991"
 CINEMATIC_BEAST_AI_1		EQU 0xB568
 CINEMATIC_BEAST_AI_2		EQU 0xB584
 CINEMATIC_BEAST_AI_3		EQU 0xB5A4
@@ -53,131 +53,131 @@ CINEMATIC_SLUG_FLIP_WALKING_2		EQU 0x60EE
 CINEMATIC_SLUG_FLIP_WALKING_3		EQU 0x610E
 CINEMATIC_SLUG_FLIP_WALKING_4		EQU 0x612E
 CINEMATIC_SLUG_FLIP_WALKING_5		EQU 0x614E
-;@endif
+.endif
 
 SLUG_ANIMATION:
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
-;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+.elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
-;@endif
+.endif
 	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	video offset=CINEMATIC_SLUG_0, x=[0x0c], y=[0x0d]
 	break
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
-;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+.elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
-;@endif
+.endif
 	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	video offset=CINEMATIC_SLUG_1, x=[0x0c], y=[0x0d]
 	break
 
 SLUG_F1_PROXIMITY_CHK:
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
-;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+.elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
-;@endif
+.endif
 	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	video offset=CINEMATIC_SLUG_2, x=[0x0c], y=[0x0d]
 	break
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
-;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+.elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
-;@endif
+.endif
 	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	video offset=CINEMATIC_SLUG_3, x=[0x0c], y=[0x0d]
 	break
 
 SLUG_F3_PROXIMITY_CHK:
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
-;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+.elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
-;@endif
+.endif
 	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	video offset=CINEMATIC_SLUG_4, x=[0x0c], y=[0x0d]
 	break
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
-;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+.elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
-;@endif
+.endif
 	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	video offset=CINEMATIC_SLUG_5, x=[0x0c], y=[0x0d]
 	break
 
 SLUG_F5_PROXIMITY_CHK:
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
-;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+.elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
-;@endif
+.endif
 	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	sub [0x0C], 0x0001
 	video offset=CINEMATIC_SLUG_6, x=[0x0c], y=[0x0d]
 	break
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
-;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+.elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
-;@endif
+.endif
 	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	sub [0x0C], 0x0001
 	video offset=CINEMATIC_SLUG_7, x=[0x0c], y=[0x0d]
 	break
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
-;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+.elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
-;@endif
+.endif
 	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	sub [0x0C], 0x0001
 	video offset=CINEMATIC_SLUG_8, x=[0x0c], y=[0x0d]
 	break
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
-;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+.elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
-;@endif
+.endif
 	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	sub [0x0C], 0x0003
 	video offset=CINEMATIC_SLUG_9, x=[0x0c], y=[0x0d]
 	break
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
-;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+.elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
-;@endif
+.endif
 	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	sub [0x0C], 0x0002
 	video offset=CINEMATIC_SLUG_10, x=[0x0c], y=[0x0d]
 	break
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
-;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+.elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
-;@endif
+.endif
 	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	sub [0x0C], 0x0001
 	video offset=CINEMATIC_SLUG_11, x=[0x0c], y=[0x0d]
 	break
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
-;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+.elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
-;@endif
+.endif
 	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	sub [0x0C], 0x0001
 	video offset=CINEMATIC_SLUG_12, x=[0x0c], y=[0x0d]
 	break
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	call CLEAR_PROXIMITY_FLAG_THEN_CHECK
-;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+.elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	call CHECK_HORIZONTAL_PROXIMITY
-;@endif
+.endif
 	jne [0x07], 0x00, SLUG_FLIP_OR_PROXIMITY_DISPATCH
 	sub [0x0C], 0x0001
 	video offset=CINEMATIC_SLUG_13, x=[0x0c], y=[0x0d]

@@ -1,8 +1,8 @@
 FIRST_SCREEN_TO_THE_RIGHT:
 	mov [HACK_VAR_67], 0x0003
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
-;@endif
+.endif
 	call CYCLE_VIDEO_PAGES_3WAY
 	setPalette 0x05
 	je [0x66], 0x03, FIRST_SCREEN_R_BEAST_TRIGGER
@@ -83,9 +83,9 @@ RET_TARGET_1A88:
 
 SECOND_SCREEN_TO_THE_RIGHT:
 	mov [HACK_VAR_67], 0x0004
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
-;@endif
+.endif
 	call CYCLE_VIDEO_PAGES_3WAY
 	setPalette 0x05
 	je [0x66], 0x04, SECOND_SCREEN_R_BEAST_TRIGGER
@@ -120,9 +120,9 @@ SECOND_SCREEN_R_SETUP_CHANNELS:
 
 THIRD_SCREEN_TO_THE_RIGHT:
 	mov [HACK_VAR_67], 0x0005
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
-;@endif
+.endif
 	call CYCLE_VIDEO_PAGES_3WAY
 	setPalette 0x07
 	je [0x66], 0x05, THIRD_SCREEN_R_BEAST_TRIGGER

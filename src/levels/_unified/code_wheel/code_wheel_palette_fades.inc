@@ -1,4 +1,4 @@
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PAL_FADE_DOWN_17_TO_11:
 	setPalette 0x17
 	break
@@ -18,10 +18,10 @@ PAL_FADE_DOWN_17_TO_11:
 	break
 	setPalette 0x0F
 	killChannel
-;@endif
+.endif
 
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PAL_FADE_4_TO_18_AND_BACK:
 	setPalette 0x04
 	break
@@ -39,10 +39,10 @@ PAL_FADE_4_TO_18_AND_BACK:
 	break
 	setPalette 0x00
 	killChannel
-;@endif
+.endif
 
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PAL_FADE_DOWN_1A_TO_4:
 	setPalette 0x1A
 	break
@@ -58,10 +58,10 @@ PAL_FADE_DOWN_1A_TO_4:
 	break
 	setPalette 0x04
 	killChannel
-;@endif
+.endif
 
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PAL_FADE_DOWN_E_TO_8:
 	setPalette 0x0E
 	break
@@ -75,10 +75,10 @@ PAL_FADE_DOWN_E_TO_8:
 	break
 	setPalette 0x09
 	killChannel
-;@endif
+.endif
 
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PAL_FADE_UP_9_TO_F:
 	setPalette 0x09
 	break
@@ -92,5 +92,5 @@ PAL_FADE_UP_9_TO_F:
 	break
 	setPalette 0x0E
 	killChannel
-;@endif
+.endif
 

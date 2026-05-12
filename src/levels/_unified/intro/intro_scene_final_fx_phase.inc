@@ -165,6 +165,6 @@ DRAW_CINEMATIC_053_LOOP:
 	jmp DRAW_CINEMATIC_053_LOOP
 LABEL_26A6:
 	killChannel
-;@if BRANCH == "cartridge_1992"
-;@elif BRANCH == "gba_2004"
-;@endif
+.if BRANCH == "cartridge_1992"
+.elif BRANCH == "gba_2004"
+.endif

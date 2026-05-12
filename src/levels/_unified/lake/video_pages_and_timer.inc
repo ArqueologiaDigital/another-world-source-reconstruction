@@ -1,27 +1,27 @@
 RENDER_FRAME_DISPATCH:
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	je [0x1C], 0x00, BLIT_FROM_PAGE_40_LOOP
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	je [0x1C], 0x00, BLIT_FROM_PAGE_0_LOOP
-;@endif
+.endif
 	je [0x1C], 0x02, CLEAR_FRAMEBUFFER_TO_COLOR_4_LOOP
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jg [0x2A], 0x03, BLIT_FROM_PAGE_40_LOOP
 	jne [0xDB], 0x00, BLIT_FROM_PAGE_40_VIA_C0
-;@endif
+.endif
 	copyVideoPage src=0xFF, dst=0x03
 	copyVideoPage src=0x83, dst=0xFF
 	mov [0x65], 0x0000
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jmp BLIT_FROM_PAGE_40_LOOP
 
 BLIT_FROM_PAGE_40_VIA_C0:
 	copyVideoPage src=0xC0, dst=0x00
 	jmp BLIT_FROM_PAGE_40_LOOP
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	jmp BLIT_FROM_PAGE_0_LOOP
 	killChannel
-;@endif
+.endif
 
 INIT_VIDEO_BUFFERS:
 	fill page=0x01, color=0x00

@@ -14,133 +14,133 @@
 ; KILL_CHANNEL_LANDING tail. Sibling cellmate-frame ranges are
 ; tracked separately in the audit doc.
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_HERO_POSE_0_0:
 	video offset=CINEMATIC_164, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
-;@endif
+.endif
 
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_HERO_POSE_0_1:
 	video offset=CINEMATIC_165, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
-;@endif
+.endif
 
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_HERO_POSE_0_2:
 	video offset=CINEMATIC_166, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
-;@endif
+.endif
 
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_HERO_POSE_0_3:
 	video offset=CINEMATIC_167, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
-;@endif
+.endif
 
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_HERO_POSE_1:
 	video offset=CINEMATIC_163, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
-;@endif
+.endif
 
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_HERO_POSE_2:
 	video offset=CINEMATIC_162, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
-;@endif
+.endif
 
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_HERO_POSE_3:
 	video offset=CINEMATIC_161, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
-;@endif
+.endif
 
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_160:
 	video offset=CINEMATIC_160, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
-;@endif
+.endif
 
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_159:
 	video offset=CINEMATIC_159, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
-;@endif
+.endif
 
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_HERO_POSE_5:
 	video offset=CINEMATIC_158, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
-;@endif
+.endif
 
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_157:
 	video offset=CINEMATIC_157, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
-;@endif
+.endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "../amiga__post_DRAW_CIN_157.inc"
-;@elif BRANCH == "dos_1992"
-;@include "../dos__post_DRAW_CIN_157.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "../amiga__post_DRAW_CIN_157.inc"
+.elif BRANCH == "dos_1992"
+.include "../dos__post_DRAW_CIN_157.inc"
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_168:
 	video offset=CINEMATIC_168, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
-;@endif
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-;@include "../post_DRAW_CIN_168.inc"
-;@endif
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.include "../post_DRAW_CIN_168.inc"
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_169:
 	video offset=CINEMATIC_169, x=[0xf5], y=[BUDDY_Y]
 	ret
 
 
-;@endif
+.endif
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "../amiga__post_DRAW_CIN_169.inc"
-;@elif BRANCH == "dos_1992"
-;@include "../dos__post_DRAW_CIN_169.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "../amiga__post_DRAW_CIN_169.inc"
+.elif BRANCH == "dos_1992"
+.include "../dos__post_DRAW_CIN_169.inc"
+.endif
 

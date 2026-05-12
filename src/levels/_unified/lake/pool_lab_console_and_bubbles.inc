@@ -29,14 +29,14 @@ FLOATING_LAB_CONSOLE_PHASE_3:
 SINKING_AT_CONSOLE:
 	video offset=CINEMATIC_SITTING_AT_SINKING_CONSOLE, x=160, y=[0x0a]
 	break
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	je [HERO_POS_UP_DOWN], 0xFFFF, SWIMMING_UP
-;@endif
+.endif
 	je [HERO_ACTION_POS_MASK], 0x00, SINKING_AT_CONSOLE
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 SWIMMING_UP:
-;@endif
+.endif
 	video offset=CINEMATIC_SWIM_OUT_OF_CONSOLE_0, x=160, y=[0x0a]
 	break
 	video offset=CINEMATIC_SWIM_OUT_OF_CONSOLE_1, x=160, y=[0x0a]

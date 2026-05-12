@@ -1,9 +1,9 @@
 ENTRY_POINT_OF_LAKE_LEVEL:
 	call INIT_VIDEO_BUFFERS
-;@if BRANCH == "gba_2004"
+.if BRANCH == "gba_2004"
 	song id=0x0FA1, delay=0x0000, pos=0x03
-;@endif
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.endif
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	mov [0xE3], 0x0000
 	je [0xDB], 0x00, EXTRA_RESOURCE_LOADS_BLOCK_2
 	load id=0x07D2
@@ -14,19 +14,19 @@ EXTRA_RESOURCE_LOADS_BLOCK_2:
 	load id=0x0032
 	load id=0x0039
 	load id=0x003E
-;@endif
-;@if BRANCH == "dos_1992"
+.endif
+.if BRANCH == "dos_1992"
 	load id=0x0030
 	load id=0x0032
 	load id=0x0039
 	load id=0x003E
-;@endif
+.endif
 	load id=0x0010
 	load id=0x0008
 	load id=0x0051
-;@if BRANCH == "chahi_amiga_1991"
+.if BRANCH == "chahi_amiga_1991"
 	load id=0x0030
-;@endif
+.endif
 	load id=0x0031
 	load id=0x0032
 	load id=0x0035
@@ -57,55 +57,55 @@ INIT_AUDIO_AND_SCENE_AFTER_LOADS:
 	play id=0x0030, freq=0x00, vol=0x00, channel=0x01
 	play id=0x0030, freq=0x00, vol=0x00, channel=0x02
 	play id=0x0030, freq=0x00, vol=0x00, channel=0x03
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_40_LOOP
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
-;@endif
+.endif
 	mov [0x0C], 0x0000
 	mov [0x04], 0x0000
 	mov [HERO_ACTION_POS_MASK], 0x0000
 	mov [HERO_X], 0x0000
-;@if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
 	mov [PAUSE_SLICES], 0x0004
-;@elif BRANCH == "gba_2004"
+.elif BRANCH == "gba_2004"
 	mov [PAUSE_SLICES], 0x0007
-;@endif
+.endif
 	break
 	call VERIFY_INTEGRITY_OR_HALT
 	setup channel=0x03, address=A_CALM_ALIEN_POOL_BEFORE_LESTERS_ARRIVAL
 	killChannel
 
-;@include "../_helpers/KILL_CHANNEL_ROUTINE.inc"
+.include "../_helpers/KILL_CHANNEL_ROUTINE.inc"
 
 VERIFY_INTEGRITY_OR_HALT:
-;@if BRANCH == "gba_2004"
+.if BRANCH == "gba_2004"
 	ret
 
 
-;@endif
+.endif
 	and [0xBC], 0x0010
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	mov [0xF8], [0xE4]
 	and [0xF8], 0x003C
-;@if BRANCH == "cartridge_1992"
+.if BRANCH == "cartridge_1992"
 	ret
 
 
-;@endif
-;@elif BRANCH == "chahi_amiga_1991"
+.endif
+.elif BRANCH == "chahi_amiga_1991"
 	and [0xC6], 0x0080
-;@elif BRANCH == "dos_1992"
+.elif BRANCH == "dos_1992"
 	mov [0xF8], [0xE4]
 	and [0xF8], 0x003C
-;@endif
+.endif
 	je [0xBC], 0x00, SHUTDOWN_VM
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jne [0xF2], 0x0FA0, SHUTDOWN_VM
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	je [0xC6], 0x00, SHUTDOWN_VM
 	jne [0xF2], 0x1770, SHUTDOWN_VM
-;@endif
+.endif
 	jne [HACK_VAR_DC], 0x21, SHUTDOWN_VM
 	ret
 
@@ -120,47 +120,47 @@ LAKE_LEVEL_INIT:
 	fill page=0x03, color=0x00
 	fill page=0xFF, color=0x00
 	mov [PAUSE_SLICES], 0x0005
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	or [0xE3], 0x0001
-;@endif
+.endif
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	call VERIFY_INTEGRITY_OR_HALT
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	setPalette 0x1D
-;@endif
-;@if BRANCH == "gba_2004"
+.endif
+.if BRANCH == "gba_2004"
 	song id=0x0FA0, delay=0x0000, pos=0x00
-;@endif
+.endif
 
 INTRO_WAIT_KEY_RELEASE:
 	break
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	text id=0x013D, x=5, y=80, color=0x0C
 	text id=0x013C, x=5, y=180, color=0x0D
 	text id=0x015E, x=26, y=180, color=0x0E
 	call SET_HERO_ACTION_TO_1_IF_GROUNDED_AND_DB_SET
-;@endif
-;@if BRANCH == "dos_1992"
+.endif
+.if BRANCH == "dos_1992"
 	call SET_HERO_ACTION_TO_1_IF_GROUNDED_AND_DB_SET
-;@endif
+.endif
 	jne [HERO_ACTION], 0x00, INTRO_WAIT_KEY_RELEASE
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 	setPalette 0x1D
-;@endif
+.endif
 
 INTRO_WAIT_KEY_PRESS:
 	text id=0x013D, x=5, y=80, color=0x0C
 	text id=0x013C, x=5, y=180, color=0x0D
 	text id=0x015E, x=26, y=180, color=0x0E
 	break
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call SET_HERO_ACTION_TO_1_IF_GROUNDED_AND_DB_SET
-;@endif
+.endif
 	je [HERO_ACTION], 0x00, INTRO_WAIT_KEY_PRESS
 	mov [0x00], 0x000A
 	setup channel=0x00, address=ENTRY_POINT_OF_LAKE_LEVEL
 	killChannel
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 SET_HERO_ACTION_TO_1_IF_GROUNDED_AND_DB_SET:
 	je [0xDB], 0x00, RET_TARGET_1A88
@@ -169,7 +169,7 @@ SET_HERO_ACTION_TO_1_IF_GROUNDED_AND_DB_SET:
 	ret
 
 
-;@endif
+.endif
 	break
 	break
 	break
@@ -198,7 +198,7 @@ SET_HERO_ACTION_TO_1_IF_GROUNDED_AND_DB_SET:
 	load id=0x3E80
 	killChannel
 
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 BLIT_FROM_PAGE_40_LOOP:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
@@ -206,4 +206,4 @@ BLIT_FROM_PAGE_40_LOOP:
 	break
 	jmp BLIT_FROM_PAGE_40_LOOP
 
-;@endif
+.endif

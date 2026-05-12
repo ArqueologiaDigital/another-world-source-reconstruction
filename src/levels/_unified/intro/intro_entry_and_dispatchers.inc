@@ -42,15 +42,15 @@ LOAD_RESOURCES_AND_PLAY_MUSIC:
 
 SETUP_CHANNELS_AFTER_LOAD:
 	setup channel=0x01, address=INTRO_SCENE_INIT_PARTICLES
-;@if BRANCH == "gba_2004"
+.if BRANCH == "gba_2004"
 	song id=0x0FB9, delay=0x0000, pos=0x01
-;@endif
+.endif
 	setup channel=0x02, address=INTRO_PLAY_BG_AUDIO_LOOP
 	setup channel=0x03, address=DRAW_CINEMATIC_005_LOOP
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	killChannel
 
-;@include "../_helpers/KILL_CHANNEL_ROUTINE.inc"
+.include "../_helpers/KILL_CHANNEL_ROUTINE.inc"
 
 BLIT_AND_DISPATCH_HERO_ACTION:
 	add [0xC7], 0x0001

@@ -791,7 +791,7 @@ COMMON_VIDEO_118		EQU 0x058E
 COMMON_VIDEO_119		EQU 0x34C2
 COMMON_VIDEO_120		EQU 0x0624
 COMMON_VIDEO_121		EQU 0x34CE
-;@include "../_common_vars.inc"
+.include "../_common_vars.inc"
 
 
 	org 0x0000

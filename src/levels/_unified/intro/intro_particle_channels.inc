@@ -62,9 +62,9 @@ SETUP_INTRO_PARTICLE_CHANNELS:
 	setup channel=0x03, address=INTRO_TRANSITION_TO_LAKE_SETUP
 	setup channel=0x01, address=INTRO_SCENE_INIT_PARTICLES
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
-;@if BRANCH == "gba_2004"
+.if BRANCH == "gba_2004"
 	song id=0x0FBA, delay=0x0000, pos=0x01
-;@endif
+.endif
 	break
 	song id=0x0000, delay=0x0000, pos=0x00
 	play id=0x000A, freq=0x02, vol=0x14, channel=0x00

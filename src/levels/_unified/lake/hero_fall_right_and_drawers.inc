@@ -1,8 +1,8 @@
 CINEMATIC_HERO_STOP_RIGHT_2		EQU 0xF608
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_HERO_SHADOW		EQU 0xDFFC
 CINEMATIC_HERO_STOP_RIGHT_2		EQU 0xDFF2
-;@endif
+.endif
 
 COMMON_VIDEO_000		EQU 0x5DE4
 COMMON_VIDEO_001		EQU 0x3322
@@ -101,7 +101,7 @@ COMMON_VIDEO_121		EQU 0x34CE
 
 MAYBE_RESUME_WALK_RIGHT_IF_GROUNDED:
 	break
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	call DRAW_DROPLET_VARIANT_ON_BG
 	call DRAW_HERO_STOP_R_BUNDLE_042_043
 	mov [0x29], [HERO_X]
@@ -113,35 +113,35 @@ WAIT_RUN_LEFT_THEN_DECEL:
 	break
 	play id=0x0051, freq=0x0B, vol=0x20, channel=0x01
 	call DRAW_VIDEO_044_045_AND_CINEMATIC_11_RET
-;@if BRANCH == "cartridge_1992"
+.if BRANCH == "cartridge_1992"
 	jne [HERO_POS_LEFT_RIGHT], 0x01, HERO_TICK_BUNDLE_046_047
-;@elif BRANCH == "gba_2004"
+.elif BRANCH == "gba_2004"
 	jne [HERO_POS_LEFT_RIGHT], 0x01, HERO_TICK_BUNDLE_046_047
-;@endif
+.endif
 	add [HERO_X], 0x0002
 
-;@if BRANCH == "cartridge_1992"
+.if BRANCH == "cartridge_1992"
 HERO_TICK_BUNDLE_046_047:
-;@elif BRANCH == "gba_2004"
+.elif BRANCH == "gba_2004"
 HERO_TICK_BUNDLE_046_047:
-;@endif
+.endif
 	break
 	call DRAW_HERO_STOP_R_BUNDLE_046_047
-;@if BRANCH == "cartridge_1992"
+.if BRANCH == "cartridge_1992"
 	jne [HERO_POS_LEFT_RIGHT], 0x01, RESUME_R_AFTER_VINE_LAND
-;@elif BRANCH == "gba_2004"
+.elif BRANCH == "gba_2004"
 	jne [HERO_POS_LEFT_RIGHT], 0x01, RESUME_R_AFTER_VINE_LAND
-;@endif
+.endif
 	add [HERO_X], 0x0002
 
-;@if BRANCH == "cartridge_1992"
+.if BRANCH == "cartridge_1992"
 RESUME_R_AFTER_VINE_LAND:
-;@elif BRANCH == "gba_2004"
+.elif BRANCH == "gba_2004"
 RESUME_R_AFTER_VINE_LAND:
-;@endif
+.endif
 	break
-;@endif
-;@if BRANCH == "dos_1992"
+.endif
+.if BRANCH == "dos_1992"
 	call DRAW_DROPLET_VARIANT_ON_BG
 	call DRAW_HERO_STOP_R_BUNDLE_042_043
 	mov [0x29], [HERO_X]
@@ -164,39 +164,39 @@ HERO_TICK_BUNDLE_046_047:
 
 RESUME_R_AFTER_VINE_LAND:
 	break
-;@endif
+.endif
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_WALK_RIGHT_LOOP
 
 DRAW_LESTER_FRAME_THEN_FALL:
 	mov [0x29], [HERO_X]
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	call DRAW_LESTER_FRAME_BUNDLE
-;@if BRANCH == "cartridge_1992"
+.if BRANCH == "cartridge_1992"
 	jne [HERO_POS_MASK], 0x01, RESUME_R_AFTER_VINE_LAND
 	jne [HERO_POS_LEFT_RIGHT], 0x01, WAIT_TICK_THEN_HERO_FALL_RIGHT_LOOP
-;@elif BRANCH == "gba_2004"
+.elif BRANCH == "gba_2004"
 	jne [HERO_POS_MASK], 0x01, RESUME_R_AFTER_VINE_LAND
 	jne [HERO_POS_LEFT_RIGHT], 0x01, WAIT_TICK_THEN_HERO_FALL_RIGHT_LOOP
-;@endif
-;@elif BRANCH == "chahi_amiga_1991"
+.endif
+.elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_LESTER_FRAME, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 	jne [HERO_POS_MASK], 0x01, MAYBE_RESUME_WALK_RIGHT_IF_GROUNDED
-;@elif BRANCH == "dos_1992"
+.elif BRANCH == "dos_1992"
 	call DRAW_LESTER_FRAME_BUNDLE
 	jne [HERO_POS_MASK], 0x01, RESUME_R_AFTER_VINE_LAND
 	jne [HERO_POS_LEFT_RIGHT], 0x01, WAIT_TICK_THEN_HERO_FALL_RIGHT_LOOP
-;@endif
+.endif
 	add [HERO_X], 0x0002
 
 WAIT_TICK_THEN_HERO_FALL_RIGHT_LOOP:
-;@if BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 WAIT_TICK_THEN_HERO_FALL_RIGHT_LOOP:
-;@endif
+.endif
 	break
 	jmp HERO_FALL_RIGHT_LOOP
 	killChannel
 
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 DRAW_VIDEO_036_037_AND_HERO_STOP_RIGHT_FRAME_2_RET:
 	video type=0, offset=COMMON_VIDEO_036, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_037, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -596,15 +596,15 @@ DRAW_HERO_SHADOW_BUNDLE_105_106:
 
 
 POST_RUN_LEFT_DECEL_LOOP:
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 WAIT_RUN_LEFT_THEN_DECEL:
-;@endif
+.endif
 	break
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	je [0x63], 0x05, POST_RUN_LEFT_DECEL_LOOP
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	je [0x63], 0x05, WAIT_RUN_LEFT_THEN_DECEL
-;@endif
+.endif
 	sub [HERO_X], 0x0003
 	break
 	sub [HERO_X], 0x0002

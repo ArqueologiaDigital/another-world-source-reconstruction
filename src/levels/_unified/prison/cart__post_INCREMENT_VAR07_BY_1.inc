@@ -105,7 +105,7 @@ DRAW_CIN_168_IF_VAR09_EQ_1:
 	ret
 
 
-;@include "../_helpers/DRAW_CIN_168.inc"
+.include "../_helpers/DRAW_CIN_168.inc"
 
 DISPATCH_VAR09_LOW_NIBBLE:
 	mov [0xF8], [0x09]

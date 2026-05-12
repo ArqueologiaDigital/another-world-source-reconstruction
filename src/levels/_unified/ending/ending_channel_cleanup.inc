@@ -2,11 +2,11 @@ DELETE_ALL_CHANS_AND_KILL:
 	deleteChannels first=0x00, last=0x3F
 	killChannel
 
-;@if BRANCH == "cartridge_1992"
-;@include "cart__post_DELETE_ALL_CHANS_AND_KILL.inc"
-;@endif
+.if BRANCH == "cartridge_1992"
+.include "cart__post_DELETE_ALL_CHANS_AND_KILL.inc"
+.endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PRELOAD_RESOURCES_8_TO_1:
 	load id=0x0008
 	load id=0x008A
@@ -24,5 +24,5 @@ PRELOAD_RESOURCES_8_TO_1:
 	ret
 
 
-;@endif
+.endif
 

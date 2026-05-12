@@ -1,9 +1,9 @@
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_HERO_FALL_PRELUDE_FRAME		EQU 0x04B0
-;@endif
-;@if BRANCH == "chahi_amiga_1991"
+.endif
+.if BRANCH == "chahi_amiga_1991"
 CINEMATIC_HERO_FALL_PRELUDE_FRAME		EQU 0x0CA0
-;@endif
+.endif
 
 CINEMATIC_HERO_RESUME_LEFT_0		EQU 0x0ADC
 CINEMATIC_HERO_RESUME_LEFT_1		EQU 0x0B04
@@ -12,10 +12,10 @@ CINEMATIC_HERO_RESUME_LEFT_6		EQU 0x0408
 CINEMATIC_HERO_RESUME_LEFT_7		EQU 0x0488
 CINEMATIC_HERO_RESUME_LEFT_8		EQU 0x0504
 CINEMATIC_HERO_RESUME_LEFT_9		EQU 0x0574
-;@if BRANCH == "chahi_amiga_1991"
+.if BRANCH == "chahi_amiga_1991"
 CINEMATIC_HERO_FALL_LEFT_3		EQU 0x0A8C
 CINEMATIC_HERO_FALL_LEFT_4		EQU 0x0AB4
-;@endif
+.endif
 
 HERO_FALL_LEFT_PRELUDE:
 	sub [HERO_X], 0x0004
@@ -24,68 +24,68 @@ HERO_FALL_LEFT_PRELUDE:
 	break
 
 HERO_FALL_LEFT_LOOP:
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_CV_060_061_AND_CIN_002
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_LEFT_PROFILE, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
-;@endif
+.endif
 	call DRAW_DROPLET_VARIANT_ON_BG_Y_PLUS_1
 	je [HERO_POS_MASK], 0x00, HERO_LEFT_PROFILE_DONE_X_INC
 	sub [HERO_X], 0x0002
 	break
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_CV_062_063_AND_CIN_002
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, FALL_L_F1_X_DELTA_DONE
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_FALL_LEFT_1, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
-;@endif
+.endif
 	je [HERO_POS_MASK], 0x00, HERO_TICK_BUNDLE_060_061
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	sub [HERO_X], 0x0001
 
 FALL_L_F1_X_DELTA_DONE:
 	sub [HERO_X], 0x0001
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	sub [HERO_X], 0x0002
-;@endif
+.endif
 	break
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_VIDEO_064_065_AND_CINEMATIC_HERO_SHADOW_RET
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_FALL_LEFT_2, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
-;@endif
+.endif
 	mov [0x29], [HERO_X]
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, FALL_L_F2_X_DELTA_DONE
-;@endif
+.endif
 	je [HERO_POS_MASK], 0x00, HERO_TICK_BUNDLE_062_063
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	sub [HERO_X], 0x0001
 
 FALL_L_F2_X_DELTA_DONE:
 	sub [HERO_X], 0x0001
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	add [HERO_Y], 0x0000
 	sub [HERO_X], 0x0002
-;@endif
+.endif
 	break
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_CV_066_067_AND_CIN_002
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_FALL_LEFT_3, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
-;@endif
+.endif
 	mov [0x29], [HERO_X]
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	sub [HERO_X], 0x0001
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, FALL_L_F3_X_DELTA_DONE
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	sub [HERO_X], 0x0003
 	break
 	video offset=CINEMATIC_HERO_FALL_LEFT_4, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 	add [HERO_Y], 0x0000
-;@endif
+.endif
 	sub [HERO_X], 0x0002
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 FALL_L_F3_X_DELTA_DONE:
 	break
@@ -95,42 +95,42 @@ FALL_L_F3_X_DELTA_DONE:
 	sub [HERO_X], 0x0001
 
 FALL_L_F3_INNER_DONE:
-;@endif
+.endif
 	break
 	play id=0x0051, freq=0x14, vol=0x1D, channel=0x01
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_VIDEO_070_AND_CIN_002
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, FALL_L_F4_X_DELTA_DONE
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RESUME_LEFT_0, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
-;@endif
+.endif
 	sub [HERO_X], 0x0002
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 
 FALL_L_F4_X_DELTA_DONE:
-;@endif
+.endif
 	break
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_VIDEO_071_AND_CIN_002
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, HERO_FALL_L_F2_HOLD_LOOP
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RESUME_LEFT_1, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
-;@endif
+.endif
 	sub [HERO_X], 0x0002
 
 HERO_FALL_L_F2_HOLD_LOOP:
 	break
 	mov [0x29], [HERO_X]
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_WALK_LEFT_LOOP
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	call DRAW_CV_000_072_AND_CIN_002
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RESUME_LEFT_2, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
-;@endif
+.endif
 	jne [HERO_POS_MASK], 0x02, HERO_FALL_L_F2_HOLD_LOOP
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, MAYBE_RESUME_WALK_LEFT_IF_GROUNDED
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	sub [HERO_X], 0x0002
 	break
 	video offset=CINEMATIC_HERO_RESUME_LEFT_3, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
@@ -161,11 +161,11 @@ HERO_FALL_L_F2_HOLD_LOOP:
 	sub [HERO_X], 0x0002
 	break
 	video offset=CINEMATIC_HERO_RESUME_LEFT_9, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
-;@endif
+.endif
 	sub [HERO_X], 0x0002
 
 MAYBE_RESUME_WALK_LEFT_IF_GROUNDED:
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	break
 	call DRAW_VIDEO_073_AND_CIN_002
 	je [HERO_POS_MASK], 0x00, HERO_RESUME_LEFT_F3_DONE
@@ -216,7 +216,7 @@ RESUME_L_V078_DONE:
 	sub [HERO_X], 0x0002
 
 RESUME_L_CV079080_DONE:
-;@endif
+.endif
 	break
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, HERO_WALK_LEFT_LOOP
 

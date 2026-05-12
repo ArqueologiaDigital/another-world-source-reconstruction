@@ -104,7 +104,7 @@ DRAW_HERO_POSE_5:
 	ret
 
 
-;@include "../_helpers/DRAW_CIN_167.inc"
+.include "../_helpers/DRAW_CIN_167.inc"
 LABEL_6C11:
 	db 0x11
 

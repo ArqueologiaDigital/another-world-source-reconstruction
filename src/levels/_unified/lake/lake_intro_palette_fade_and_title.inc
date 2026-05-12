@@ -20,7 +20,7 @@ LAKE_PALETTE_FADE_IN:
 	play id=0x003D, freq=0x14, vol=0x00, channel=0x01
 	play id=0x003D, freq=0x14, vol=0x00, channel=0x02
 	play id=0x003D, freq=0x14, vol=0x00, channel=0x03
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	je [0xDB], 0x00, POST_LAKE_INTRO_FADE_AND_TEXT
 	jmp POST_LAKE_INTRO_FADE_AND_TEXT
 	mov [0x03], 0x0032
@@ -30,8 +30,8 @@ LAKE_END_TRANSITION_DELAY:
 	djnz [0x03], LAKE_END_TRANSITION_DELAY
 
 POST_LAKE_INTRO_FADE_AND_TEXT:
-;@endif
-;@if BRANCH == "dos_1992"
+.endif
+.if BRANCH == "dos_1992"
 	je [0xDB], 0x00, POST_LAKE_INTRO_FADE_AND_TEXT
 	mov [0x03], 0x0032
 
@@ -40,17 +40,17 @@ LAKE_END_TRANSITION_DELAY:
 	djnz [0x03], LAKE_END_TRANSITION_DELAY
 
 POST_LAKE_INTRO_FADE_AND_TEXT:
-;@endif
+.endif
 	freezeChannels first=0x00, last=0x3B
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x00, address=DISPLAY_TEXT_01FA_AND_FADE_TO_PAL_2
-;@endif
+.endif
 	deleteChannels first=0x00, last=0x3B
 	load id=0x3E83
 	killChannel
-;@if BRANCH == "chahi_amiga_1991"
+.if BRANCH == "chahi_amiga_1991"
 	setup channel=0x00, address=DISPLAY_TEXT_01FA_AND_FADE_TO_PAL_2
-;@endif
+.endif
 
 DISPLAY_TEXT_01FA_AND_FADE_TO_PAL_2:
 	fill page=0x00, color=0x00
@@ -60,11 +60,11 @@ DISPLAY_TEXT_01FA_AND_FADE_TO_PAL_2:
 	break
 	setPalette 0x02
 	mov [PAUSE_SLICES], 0x0005
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	mov [0x03], 0x0050
-;@elif BRANCH == "chahi_amiga_1991"
+.elif BRANCH == "chahi_amiga_1991"
 	mov [0x03], 0x001E
-;@endif
+.endif
 
 LAKE_END_TRANSITION_DELAY:
 	break

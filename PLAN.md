@@ -161,17 +161,17 @@ The build pipeline now supports conditional compilation via
 **comment-syntax directives**:
 
 ```asm
-;@if BRANCH == "cartridge_1992"
+.if BRANCH == "cartridge_1992"
     setup channel=0x09, address=LABEL_CARTRIDGE_SPECIFIC
-;@elif BRANCH == "dos_1992"
+.elif BRANCH == "dos_1992"
     setup channel=0x09, address=LABEL_DOS_SPECIFIC
-;@else
+.else
     setup channel=0x09, address=LABEL_DEFAULT
-;@endif
+.endif
 ```
 
 The preprocessor (`another-world-archaeology/tools/awvm_preprocess.py`)
-reads a `releases/<target>.flags` file, evaluates each `;@if`
+reads a `releases/<target>.flags` file, evaluates each `.if`
 condition, and emits a per-branch `.asm` ready for `awvm-asm`.
 
 `make preprocess SRC=foo.asm.in TARGET=cartridge_1992`
@@ -193,7 +193,7 @@ labour-intensive part: actually authoring unified
 be unified, the maintainer must:
 
 1. Find every byte-level divergence between the two source files.
-2. Decide which divergences belong in `;@if` blocks (genuine
+2. Decide which divergences belong in `.if` blocks (genuine
    per-branch differences) vs which can be unified by parameter-
    ising labels.
 3. Author the unified `.asm.in`.
@@ -211,7 +211,7 @@ similarity):
 
 Cross-branch unification across to **chahi_amiga_1991** (Amiga) is
 lower-priority — most stages share 60-65% structure with the
-Heineman lineage, which would require many `;@if` blocks.
+Heineman lineage, which would require many `.if` blocks.
 
 ## Phase 4 — Atari ST 1991 + other gated ports
 

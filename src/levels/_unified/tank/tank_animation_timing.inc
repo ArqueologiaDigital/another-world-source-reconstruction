@@ -25,11 +25,11 @@ ALTERNATE_VAR06_VAR04_TIMING:
 	mov [0x04], 0x0000
 	killChannel
 
-;@if BRANCH == "chahi_amiga_1991"
-;@include "amiga__post_ALTERNATE_VAR06_VAR04_TIMING.inc"
-;@elif BRANCH == "cartridge_1992"
-;@include "cart__post_ALTERNATE_VAR06_VAR04_TIMING.inc"
-;@elif BRANCH == "dos_1992"
-;@include "dos__post_ALTERNATE_VAR06_VAR04_TIMING.inc"
-;@endif
+.if BRANCH == "chahi_amiga_1991"
+.include "amiga__post_ALTERNATE_VAR06_VAR04_TIMING.inc"
+.elif BRANCH == "cartridge_1992"
+.include "cart__post_ALTERNATE_VAR06_VAR04_TIMING.inc"
+.elif BRANCH == "dos_1992"
+.include "dos__post_ALTERNATE_VAR06_VAR04_TIMING.inc"
+.endif
 

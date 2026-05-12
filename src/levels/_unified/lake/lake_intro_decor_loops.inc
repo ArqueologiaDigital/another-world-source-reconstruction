@@ -1,20 +1,20 @@
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_LAKE_SCENE_DECOR_RIGHT		EQU 0xD68E
-;@endif
-;@if BRANCH == "chahi_amiga_1991"
+.endif
+.if BRANCH == "chahi_amiga_1991"
 CINEMATIC_LAKE_SCENE_DECOR_RIGHT		EQU 0xEA9E
-;@endif
+.endif
 
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_DECOR_AT_305_155_F0		EQU 0xD6E4
 CINEMATIC_DECOR_AT_327_164_F0		EQU 0xD6F0
 CINEMATIC_DECOR_AT_327_164_F1		EQU 0xD6D2
-;@endif
-;@if BRANCH == "chahi_amiga_1991"
+.endif
+.if BRANCH == "chahi_amiga_1991"
 CINEMATIC_DECOR_AT_305_155_F0		EQU 0xEAF4
 CINEMATIC_DECOR_AT_327_164_F0		EQU 0xEB00
 CINEMATIC_DECOR_AT_327_164_F1		EQU 0xEAE2
-;@endif
+.endif
 
 DECOR_AT_327_164_SCENE_RIGHT_LOOP:
 	video offset=CINEMATIC_LAKE_SCENE_DECOR_RIGHT, x=327, y=164

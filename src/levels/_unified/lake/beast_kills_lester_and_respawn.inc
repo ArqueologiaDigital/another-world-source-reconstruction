@@ -1,4 +1,4 @@
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_BEAST_KILLING_LESTER_0		EQU 0x9392
 CINEMATIC_BEAST_KILLING_LESTER_1		EQU 0x948A
 CINEMATIC_BEAST_KILLING_LESTER_10		EQU 0xAC4C
@@ -10,8 +10,8 @@ CINEMATIC_BEAST_KILLING_LESTER_6		EQU 0x9944
 CINEMATIC_BEAST_KILLING_LESTER_7		EQU 0xAC06
 CINEMATIC_BEAST_KILLING_LESTER_8		EQU 0xAC0E
 CINEMATIC_BEAST_KILLING_LESTER_9		EQU 0xAC22
-;@endif
-;@if BRANCH == "chahi_amiga_1991"
+.endif
+.if BRANCH == "chahi_amiga_1991"
 CINEMATIC_BEAST_KILLING_LESTER_0		EQU 0xA7A2
 CINEMATIC_BEAST_KILLING_LESTER_1		EQU 0xA89A
 CINEMATIC_BEAST_KILLING_LESTER_10		EQU 0xC05C
@@ -23,7 +23,7 @@ CINEMATIC_BEAST_KILLING_LESTER_6		EQU 0xAD54
 CINEMATIC_BEAST_KILLING_LESTER_7		EQU 0xC016
 CINEMATIC_BEAST_KILLING_LESTER_8		EQU 0xC01E
 CINEMATIC_BEAST_KILLING_LESTER_9		EQU 0xC032
-;@endif
+.endif
 
 THE_BEAST_KILLS_LESTER:
 	mov [0x0E], 0x0082
@@ -35,13 +35,13 @@ THE_BEAST_KILLS_LESTER:
 	deleteChannels first=0x24, last=0x25
 	deleteChannels first=0x2F, last=0x30
 	video offset=CINEMATIC_BEAST_SURPRISE_SCENARIO_BACKGROUND, x=160, y=100
-;@if BRANCH == "chahi_amiga_1991"
+.if BRANCH == "chahi_amiga_1991"
 	copyVideoPage src=0x00, dst=0xFF
-;@endif
+.endif
 	selectVideoPage 0xFF
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	copyVideoPage src=0x00, dst=0xFF
-;@endif
+.endif
 	video offset=CINEMATIC_BEAST_KILLING_LESTER_0, x=160, y=[0x0e], zoom=[0x0f]
 	play id=0x0030, freq=0x0A, vol=0x20, channel=0x01
 	break
@@ -51,9 +51,9 @@ THE_BEAST_KILLS_LESTER:
 	break
 	add [0x0F], 0x0006
 	sub [0x0E], 0x000A
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	song id=0x0BDD, delay=0x0000, pos=0x00
-;@endif
+.endif
 	video offset=CINEMATIC_BEAST_KILLING_LESTER_2, x=160, y=[0x0e], zoom=[0x0f]
 	play id=0x0030, freq=0x14, vol=0x3F, channel=0x01
 	break
@@ -81,12 +81,12 @@ BEAST_KILLS_LESTER_F6_LOOP:
 	setPalette 0x0A
 	mov [PAUSE_SLICES], 0x0004
 	setup channel=0x3C, address=LOOP_BLIT_AND_CLEAR_FF
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	jne [0xDB], 0x01, BEAST_KILLS_LESTER_PHASE_2
 	setPalette 0x1B
 
 BEAST_KILLS_LESTER_PHASE_2:
-;@endif
+.endif
 	break
 	play id=0x004D, freq=0x0F, vol=0x3F, channel=0x01
 	video offset=CINEMATIC_BEAST_KILLING_LESTER_7, x=160, y=100
@@ -107,24 +107,24 @@ INIT_RESPAWN_TIMEOUT:
 
 WAIT_HERO_ACTION_TO_RESPAWN:
 	break
-;@if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	je [HERO_ACTION], 0x00, POST_HERO_ACTION_RESET_VAR03
 	djnz [0x03], WAIT_HERO_ACTION_TO_RESPAWN
 
 POST_HERO_ACTION_RESET_VAR03:
 	mov [0x03], 0x001E
-;@elif BRANCH in ("chahi_amiga_1991", "dos_1992")
+.elif BRANCH in ("chahi_amiga_1991", "dos_1992")
 	je [HERO_ACTION], 0x01, WAIT_HERO_ACTION_TO_RESPAWN
-;@endif
+.endif
 
 WAIT_HERO_RESPAWN_LOOP:
 	break
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	je [0xDB], 0x00, WAIT_HERO_JUMP_DOWN_INPUT
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, RESET_LAKE_FOR_RESPAWN
 
 WAIT_HERO_JUMP_DOWN_INPUT:
-;@endif
+.endif
 	je [HERO_ACTION], 0x01, RESET_LAKE_FOR_RESPAWN
 	djnz [0x03], WAIT_HERO_RESPAWN_LOOP
 
@@ -132,8 +132,8 @@ RESET_LAKE_FOR_RESPAWN:
 	freezeChannels first=0x00, last=0x3F
 	deleteChannels first=0x00, last=0x3F
 	setup channel=0x00, address=LAKE_LEVEL_INIT
-;@if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
-;@endif
+.endif
 	killChannel
 
