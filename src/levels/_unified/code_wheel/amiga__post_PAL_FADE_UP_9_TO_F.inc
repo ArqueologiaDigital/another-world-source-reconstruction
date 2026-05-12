@@ -64,7 +64,7 @@ LABEL_0290:
 	ret
 
 ENTRY_CALL_INIT_4A:
-	call LABEL_004A
+	call INIT_GAME_STATE_VARS
 
 LABEL_029D:
 	fill page=0x00, color=0x07

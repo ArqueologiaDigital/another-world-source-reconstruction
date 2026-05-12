@@ -1,4 +1,4 @@
-LABEL_00E3:
+CODEWHEEL_INTRO_AFTER_TITLE:
 	selectVideoPage 0xFF
 	setup channel=0x2C, address=PAL_FADE_DOWN_E_TO_8
 	mov [0x03], 0x0028
