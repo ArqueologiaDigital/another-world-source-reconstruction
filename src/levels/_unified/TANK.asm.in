@@ -27,6 +27,7 @@
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
+ENTRY_POINT_OF_TANK:
 INLINE_SET_VAR6D_TO_0:
 	mov [0x6D], 0x0000
 .endif

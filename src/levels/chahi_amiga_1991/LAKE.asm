@@ -773,7 +773,7 @@ CINEMATIC_PARTICLE_BURST_2_FRAME_4		EQU 0xF106
 
 	org 0x0000
 
-ENTRY_POINT_OF_LAKE_LEVEL:
+ENTRY_POINT_OF_LAKE:
 	call INIT_VIDEO_BUFFERS
 	load id=0x0010
 	load id=0x0008
@@ -858,7 +858,7 @@ INTRO_WAIT_KEY_PRESS:
 	break
 	je [HERO_ACTION], 0x00, INTRO_WAIT_KEY_PRESS
 	mov [0x00], 0x000A
-	setup channel=0x00, address=ENTRY_POINT_OF_LAKE_LEVEL
+	setup channel=0x00, address=ENTRY_POINT_OF_LAKE
 	killChannel
 	break
 	break

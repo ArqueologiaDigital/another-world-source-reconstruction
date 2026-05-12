@@ -1102,7 +1102,7 @@ COMMON_VIDEO_357		EQU 0x40BE
 
 	org 0x0000
 
-LABEL_0000:
+ENTRY_POINT_OF_CAPSULE:
 	call LABEL_3023
 	setup channel=0x3C, address=LABEL_2E43
 	mov [PAUSE_SLICES], 0x0006
@@ -3010,7 +3010,7 @@ LABEL_1403:
 	call LABEL_13C4
 	je [HERO_ACTION], 0x00, LABEL_1403
 	setup channel=0x3B, address=KILL_CHAN_AT_59A3
-	setup channel=0x00, address=LABEL_0000
+	setup channel=0x00, address=ENTRY_POINT_OF_CAPSULE
 	killChannel
 
 LABEL_1425:

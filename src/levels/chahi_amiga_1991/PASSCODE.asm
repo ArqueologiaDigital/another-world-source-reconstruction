@@ -80,7 +80,7 @@ CINEMATIC_056		EQU 0x0908
 ; up channel 0x3C as the redraw loop, fills both visible
 ; pages black, clears LAST_KEYCHAR, sets palette 5. The
 ; screen-startup routine.
-PASSCODE_SCREEN_INIT:
+ENTRY_POINT_OF_PASSCODE:
 	call LABEL_0CB5
 	mov [PAUSE_SLICES], 0x0002
 	setup channel=0x3C, address=LABEL_0CA2
@@ -722,11 +722,11 @@ LABEL_09B0:
 	text id=0x013F, x=7, y=100, color=0x05 ; "   INVALID PASSWORD !"
 	break
 	djnz [0xE6], LABEL_09B0
-	jmp PASSCODE_SCREEN_INIT
+	jmp ENTRY_POINT_OF_PASSCODE
 
 LABEL_09BE:
 	setPalette 0x03
-	jmp PASSCODE_SCREEN_INIT
+	jmp ENTRY_POINT_OF_PASSCODE
 LABEL_09C4:
 	db 0x11
 

@@ -1,4 +1,4 @@
-ENTRY_POINT_OF_LAKE_LEVEL:
+ENTRY_POINT_OF_LAKE:
 	call INIT_VIDEO_BUFFERS
 .if BRANCH == "gba_2004"
 	song id=0x0FA1, delay=0x0000, pos=0x03
@@ -158,7 +158,7 @@ INTRO_WAIT_KEY_PRESS:
 .endif
 	je [HERO_ACTION], 0x00, INTRO_WAIT_KEY_PRESS
 	mov [0x00], 0x000A
-	setup channel=0x00, address=ENTRY_POINT_OF_LAKE_LEVEL
+	setup channel=0x00, address=ENTRY_POINT_OF_LAKE
 	killChannel
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 

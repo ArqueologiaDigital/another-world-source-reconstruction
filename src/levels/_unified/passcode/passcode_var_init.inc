@@ -13,7 +13,7 @@ SET_VAR_E6_F_PAUSE_4:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 SET_PAL_0_AND_RESTART:
 	setPalette 0x00
-	jmp PASSCODE_ENTRY
+	jmp ENTRY_POINT_OF_PASSCODE
 .endif
 
 .if BRANCH == "cartridge_1992"

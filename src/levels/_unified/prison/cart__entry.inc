@@ -2185,7 +2185,7 @@ COMMON_VIDEO_294		EQU 0x5C9C
 
 	org 0x0000
 
-LABEL_0000:
+ENTRY_POINT_OF_PRISON:
 	call CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8
 	mov [0xE3], 0x0000
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
@@ -2352,7 +2352,7 @@ LABEL_0195:
 	call LABEL_014F
 	je [HERO_ACTION], 0x00, LABEL_0195
 	mov [0x00], 0x0015
-	setup channel=0x00, address=LABEL_0000
+	setup channel=0x00, address=ENTRY_POINT_OF_PRISON
 	killChannel
 
 LABEL_01BA:

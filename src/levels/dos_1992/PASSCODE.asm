@@ -82,7 +82,7 @@ CINEMATIC_058		EQU 0x0020
 ; up channel 0x3C as the redraw loop, fills both visible
 ; pages black, clears LAST_KEYCHAR, sets palette 5. The
 ; screen-startup routine.
-PASSCODE_SCREEN_INIT:
+ENTRY_POINT_OF_PASSCODE:
 	call PASSCODE_CLEAR_AND_BLIT_PAGES_1_2_FF
 	mov [PAUSE_SLICES], 0x0002
 	setup channel=0x3C, address=PASSCODE_REDRAW_PAGE_0_FOREVER
@@ -1089,15 +1089,15 @@ PASSCODE_DISPLAY_INVALID_PASSWORD_TEXT_DJNZ_THEN_RESTART:
 	text id=0x013F, x=7, y=100, color=0x05 ; "   INVALID PASSWORD !"
 	break
 	djnz [0xE6], PASSCODE_DISPLAY_INVALID_PASSWORD_TEXT_DJNZ_THEN_RESTART
-	jmp PASSCODE_SCREEN_INIT
+	jmp ENTRY_POINT_OF_PASSCODE
 
-; `setPalette 0x00` then jmp PASSCODE_SCREEN_INIT. The
+; `setPalette 0x00` then jmp ENTRY_POINT_OF_PASSCODE. The
 ; "any-error/any-restart restart-the-screen" path used by
 ; every input-validation gate that wants to abort and
 ; re-show the prompt.
 PASSCODE_RESET_PALETTE_0_AND_RESTART:
 	setPalette 0x00
-	jmp PASSCODE_SCREEN_INIT
+	jmp ENTRY_POINT_OF_PASSCODE
 LABEL_0AAF:
 	db 0x11
 

@@ -1293,7 +1293,7 @@ COMMON_VIDEO_357		EQU 0x40BE
 
 	org 0x0000
 
-LABEL_0000:
+ENTRY_POINT_OF_CAVES:
 	call LABEL_42DF
 	setup channel=0x3C, address=LABEL_3F5C
 	mov [PAUSE_SLICES], 0x0004
@@ -1478,7 +1478,7 @@ LABEL_01DF:
 	call LABEL_02E0
 	break
 	je [HERO_ACTION], 0x00, LABEL_01DF
-	setup channel=0x00, address=LABEL_0000
+	setup channel=0x00, address=ENTRY_POINT_OF_CAVES
 	killChannel
 
 LABEL_01FA:

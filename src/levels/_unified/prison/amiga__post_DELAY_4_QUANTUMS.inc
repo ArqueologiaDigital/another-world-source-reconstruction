@@ -32,5 +32,5 @@ LABEL_00DC:
 	break
 	je [HERO_ACTION], 0x00, LABEL_00DC
 	mov [0x00], 0x0015
-	setup channel=0x00, address=LABEL_0000
+	setup channel=0x00, address=ENTRY_POINT_OF_PRISON
 	killChannel

@@ -55,7 +55,7 @@ LABEL_01DF:
 	call LABEL_02E0
 	break
 	je [HERO_ACTION], 0x00, LABEL_01DF
-	setup channel=0x00, address=LABEL_0000
+	setup channel=0x00, address=ENTRY_POINT_OF_CAVES
 	killChannel
 
 LABEL_01FA:

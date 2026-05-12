@@ -37,7 +37,7 @@ LABEL_1403:
 	call LABEL_13C4
 	je [HERO_ACTION], 0x00, LABEL_1403
 	setup channel=0x3B, address=KILL_CHANNEL_LANDING
-	setup channel=0x00, address=LABEL_0000
+	setup channel=0x00, address=ENTRY_POINT_OF_CAPSULE
 	killChannel
 
 LABEL_1425:

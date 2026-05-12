@@ -51,7 +51,7 @@ LABEL_1511:
 	call LABEL_14B5
 	je [HERO_ACTION], 0x00, LABEL_1511
 	setup channel=0x3B, address=KILL_CHANNEL_LANDING
-	setup channel=0x00, address=LABEL_0000
+	setup channel=0x00, address=ENTRY_POINT_OF_CAPSULE
 	killChannel
 
 LABEL_1533:
