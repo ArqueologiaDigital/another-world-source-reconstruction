@@ -22,7 +22,7 @@ BUDDY_PULLS_LESTER_PREPARE_LOOP:
 	mov [HERO_Y], [0x40]
 	mov [0x63], 0x0002
 	setup channel=0x14, address=LABEL_9A35
-	setup channel=0x14, address=LABEL_BD20
+	setup channel=0x14, address=CAPSULE_INLINE_SET_VAR63_TO_1_L2
 	setup channel=0x16, address=LABEL_9A21
 	setup channel=0x16, address=LABEL_B666
 	setup channel=0x03, address=LABEL_0429

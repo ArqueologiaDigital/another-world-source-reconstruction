@@ -15,7 +15,7 @@ LABEL_14D2:
 	db 0x11
 
 LABEL_14D3:
-	call LABEL_1487
+	call PRISON_INLINE_COPY_VAR22_TO_VAR08_L1
 	mov [0x68], [BUDDY_X]
 	mov [0x69], [BUDDY_Y]
 	mov [0x6A], [0x10]
@@ -39,7 +39,7 @@ LABEL_150D:
 	db 0x11
 
 LABEL_150E:
-	call LABEL_1487
+	call PRISON_INLINE_COPY_VAR22_TO_VAR08_L1
 	mov [0x70], [BUDDY_X]
 	mov [0x71], [BUDDY_Y]
 	mov [0x72], [0x10]
@@ -63,7 +63,7 @@ LABEL_1548:
 	db 0x11
 
 LABEL_1549:
-	call LABEL_1487
+	call PRISON_INLINE_COPY_VAR22_TO_VAR08_L1
 	mov [0x78], [BUDDY_X]
 	mov [0x79], [BUDDY_Y]
 	mov [0x7A], [0x10]
@@ -167,7 +167,7 @@ LABEL_1626:
 	break
 	mov [0x29], 0x0082
 	mov [0x12], 0x0028
-	jmp LABEL_69DD
+	jmp PRISON_INLINE_SET_VAR29_TO_6_L9
 
 LABEL_166D:
 	mov [0x12], 0x1008

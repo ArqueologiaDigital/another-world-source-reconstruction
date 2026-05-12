@@ -81,7 +81,7 @@ LABEL_29A9:
 	call LABEL_29C9
 	add [HERO_Y], 0x0001
 	mov [0x03], 0x000A
-	setup channel=0x3F, address=LABEL_0211
+	setup channel=0x3F, address=CAVES_INLINE_SET_VAR01_TO_E_L1
 
 LABEL_29C1:
 	break
@@ -110,7 +110,7 @@ LABEL_29EA:
 	call LABEL_2A0A
 	add [HERO_Y], 0x0001
 	mov [0x03], 0x000A
-	setup channel=0x3F, address=LABEL_0211
+	setup channel=0x3F, address=CAVES_INLINE_SET_VAR01_TO_E_L1
 
 LABEL_2A02:
 	break

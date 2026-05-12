@@ -2,8 +2,8 @@ LABEL_2B8B:
 	mov [0x07], [0x7A]
 	mov [0x08], [0x7B]
 	mov [0x09], [0x7C]
-	call LABEL_2BD7
-	call LABEL_2CE0
+	call CAVES_INLINE_SET_VAR76_TO_0001_037_L1
+	call CAVES_INLINE_SET_VAR76_TO_0001_038_L1
 	mov [0x7A], [0x07]
 	mov [0x7B], [0x08]
 	mov [0x7C], [0x09]
@@ -31,13 +31,13 @@ LABEL_2BCB:
 	ret
 
 
-LABEL_2BD7:
+CAVES_INLINE_SET_VAR76_TO_0001_037_L1:
 	je [0x09], 0x00, SHARED_RET
 	jg [0x09], 0x07, LABEL_2C69
 	add [0x08], 0x0019
 	mov [0x21], [0x07]
 	mov [0x22], 0x00C8
-	call LABEL_7CE8
+	call CAVES_COPY_VAR40_TO_VAR22_L1
 	jge [0x08], [0x22], INIT_VAR09_TO_7_VAR08_FROM_VAR22
 	mov [0x21], [0x08]
 	add [0x21], 0x0019
@@ -62,6 +62,6 @@ LABEL_2C0C:
 	setup channel=0x14, address=LABEL_2BA8
 	mov [0x03], 0x000A
 	jge [0x04], 0x4000, SHARED_RET
-	setup channel=0x3F, address=LABEL_0184
+	setup channel=0x3F, address=CAVES_INLINE_SET_VAR01_TO_E_L1
 	play id=0x007A, freq=0x14, vol=0x40, channel=0x01
 	ret

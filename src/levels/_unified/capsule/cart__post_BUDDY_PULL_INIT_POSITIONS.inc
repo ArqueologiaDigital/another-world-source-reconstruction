@@ -20,7 +20,7 @@ LABEL_03F2:
 	mov [HERO_Y], [0x40]
 	mov [0x63], 0x0002
 	setup channel=0x14, address=LABEL_9A9E
-	setup channel=0x14, address=LABEL_BE04
+	setup channel=0x14, address=CAPSULE_INLINE_SET_VAR63_TO_1_L2
 	setup channel=0x16, address=LABEL_9A8A
 	setup channel=0x16, address=LABEL_B74A
 	setup channel=0x03, address=LABEL_0496

@@ -709,12 +709,12 @@ LABEL_260C:
 	mov [0xF8], [0x11]
 	and [0xF8], 0x1FFF
 	jl [0xF8], 0x1000, LABEL_2623
-	je [0x2F], 0x10, LABEL_68DA
+	je [0x2F], 0x10, PRISON_INLINE_SET_VAR29_TO_6_L9
 	jmp LABEL_67D7
 
 LABEL_2623:
 	je [0x2F], 0x10, LABEL_574E
-	jmp LABEL_5ADC
+	jmp PRISON_INLINE_SET_VAR29_TO_6_L10
 LABEL_262C:
 	db 0x11
 
@@ -722,7 +722,7 @@ LABEL_262D:
 	mov [0xF8], [0x11]
 	and [0xF8], 0x1FFF
 	jl [0xF8], 0x1000, LABEL_2644
-	je [0x2F], 0x01, LABEL_68DA
+	je [0x2F], 0x01, PRISON_INLINE_SET_VAR29_TO_6_L9
 	jmp LABEL_29B4
 
 LABEL_2644:
@@ -739,7 +739,7 @@ LABEL_264E:
 
 LABEL_265F:
 	jg [0x29], [BUDDY_X], LABEL_67D7
-	jmp LABEL_5ADC
+	jmp PRISON_INLINE_SET_VAR29_TO_6_L10
 	killChannel
 	mov [0xF8], [0x11]
 	jl [0xF8], 0x2000, LABEL_2681
@@ -765,7 +765,7 @@ LABEL_2697:
 	mov [0x21], [BUDDY_X]
 	mov [0x27], [BUDDY_Y]
 	mov [0x22], 0x4008
-	call LABEL_34BD
+	call PRISON_INLINE_SUB_VAR22_BY_23_L10
 	break
 	call LABEL_64B7
 	break
@@ -800,7 +800,7 @@ LABEL_26E4:
 	mov [0x21], [BUDDY_X]
 	mov [0x27], [BUDDY_Y]
 	mov [0x22], 0x0008
-	call LABEL_34BD
+	call PRISON_INLINE_SUB_VAR22_BY_23_L10
 	break
 	call LABEL_670D
 	break
@@ -855,7 +855,7 @@ LABEL_2773:
 	mov [0x27], [BUDDY_Y]
 	sub [0x21], 0x0028
 	sub [0x27], 0x0036
-	call LABEL_378D
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L4
 	break
 	call LABEL_6503
 	break
@@ -885,7 +885,7 @@ LABEL_27B5:
 	mov [0x27], [BUDDY_Y]
 	sub [0x21], 0x0028
 	sub [0x27], 0x0029
-	call LABEL_378D
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L4
 
 LABEL_27CC:
 	break
@@ -917,7 +917,7 @@ LABEL_27FA:
 	mov [0x27], [BUDDY_Y]
 	sub [0x21], 0x0019
 	sub [0x27], 0x001E
-	call LABEL_378D
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L4
 
 LABEL_2811:
 	break
@@ -997,7 +997,7 @@ LABEL_28C6:
 	mov [0x27], [BUDDY_Y]
 	add [0x21], 0x0028
 	sub [0x27], 0x0036
-	call LABEL_37A6
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L5
 	break
 	call LABEL_6756
 	break
@@ -1027,7 +1027,7 @@ LABEL_2908:
 	mov [0x27], [BUDDY_Y]
 	add [0x21], 0x0028
 	sub [0x27], 0x0029
-	call LABEL_37A6
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L5
 
 LABEL_291F:
 	break
@@ -1059,7 +1059,7 @@ LABEL_294D:
 	mov [0x27], [BUDDY_Y]
 	add [0x21], 0x0019
 	sub [0x27], 0x001E
-	call LABEL_37A6
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L5
 
 LABEL_2964:
 	break

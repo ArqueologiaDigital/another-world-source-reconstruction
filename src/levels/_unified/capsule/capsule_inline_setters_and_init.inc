@@ -199,12 +199,12 @@ SET_VARB1_TO_0000:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_SET_VARB1_TO_0000.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_SET_VARB1_TO_0000.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_SET_VARB1_TO_0000.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAPSULE_SET_VARB1_TO_0000_L0:
+	jne [0x1D], 0x2A, SHARED_RET
+	je [0xB2], 0x00, SET_VARB3_TO_0000
+	mov [0xB2], 0x0000
+	ret
 .endif
 
 SET_VARB3_TO_0000:
@@ -243,10 +243,19 @@ SET_VARB3_TO_0000:
 .include "../_helpers/CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8.inc"
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+CAPSULE_CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8_L0:
+	selectVideoPage 0x00
+	break
+	jmp CAPSULE_CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8_L0
+	killChannel
+
+CAPSULE_CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8_L1:
+	selectVideoPage 0xFF
+	break
+	jmp CAPSULE_CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8_L1
+CAPSULE_CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8_L2:
+	db 0x11
 .endif
 
 .include "../_helpers/COPY_HASH_VAR_37_TO_RANGE.inc"
@@ -329,10 +338,23 @@ INLINE_SET_VARE6_TO_F:
 .include "../_helpers/INLINE_COPY_VAR22_TO_VAR08.inc"
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_COPY_VAR22_TO_VAR08.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_COPY_VAR22_TO_VAR08.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+CAPSULE_INLINE_COPY_VAR22_TO_VAR08_L0:
+	mov [0x27], [0x11]
+	and [0x27], 0x0200
+	jne [0x27], 0x00, SHARED_RET
+	call CAPSULE_INLINE_COPY_VAR22_TO_VAR08_L1
+	mov [BUDDY_Y], [0x22]
+	ret
+
+
+CAPSULE_INLINE_COPY_VAR22_TO_VAR08_L2:
+	call CAPSULE_INLINE_COPY_VAR22_TO_VAR08_L3
+	shl [0x0E], 0x000C
+	shl [0x0D], 0x000B
+	add [0x09], [0x0E]
+	add [0x09], [0x0D]
+	ret
 .endif
 
 .include "../_helpers/SPLIT_VAR09_BITS_INTO_VAR0D.inc"
@@ -355,22 +377,32 @@ INLINE_SET_VARE6_TO_F:
 .endif
 
 .include "../_helpers/SET_VAR2F_TO_000F.inc"
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_SET_VAR2F_TO_000F.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_SET_VAR2F_TO_000F.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_SET_VAR2F_TO_000F.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAPSULE_SET_VAR2F_TO_000F_L0:
+	je [0x12], 0x58, SET_VAR2F_TO_001D
+	mov [0x2F], 0x000F
+	ret
 .endif
 
 .include "../_helpers/SET_VAR2F_TO_001D.inc"
 .include "../_helpers/SET_VAR2F_TO_000D.inc"
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_SET_VAR2F_TO_000D.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_SET_VAR2F_TO_000D.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_SET_VAR2F_TO_000D.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAPSULE_SET_VAR2F_TO_000D_L0:
+	call CAPSULE_SET_VAR2F_TO_000D_L1
+	jg [0x1D], 0x1D, CAPSULE_SET_VAR2F_TO_000D_L2
+	je [0x12], 0x58, SET_VAR2F_TO_000D
+	mov [0x21], [BUDDY_X]
+	call CAPSULE_INIT_VARS_2F_29_12_L1
+	mov [0x25], [0x26]
+	mov [0x21], [HERO_X]
+	call CAPSULE_INIT_VARS_2F_29_12_L1
+	mov [0x24], [0x26]
+	jle [0x24], [0x25], CAPSULE_SET_VAR2F_TO_000D_L2
+	mov [0x29], [0x22]
+	jl [BUDDY_X], [HERO_X], STEP_VAR29_DOWN10_SET_VAR2F_11
+	add [0x29], 0x000A
+	mov [0x2F], 0x0011
+	ret
 .endif
 
 .include "../_helpers/STEP_VAR29_DOWN10_SET_VAR2F_11.inc"
@@ -391,10 +423,12 @@ INIT_VARS_29_2F:
 
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_INIT_VARS_29_2F.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INIT_VARS_29_2F.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+CAPSULE_INIT_VARS_29_2F_L0:
+	mov [0x29], 0x0002
+	mov [0x2F], 0x0009
+	setup channel=0x01, address=CAPSULE_INIT_VARS_29_2F_L1
+	ret
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -416,19 +450,68 @@ INIT_VARS_2F_29:
 
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_INIT_VARS_2F_29.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INIT_VARS_2F_29.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+STATE_VAR12_BIG_DISPATCH_CASE_68:
+	mov [0x2F], 0x0021
+	jl [0x12], 0x2000, SHARED_RET
+	jg [BUDDY_X], 0x64, SHARED_RET
+	mov [0x2F], 0x0000
+	jg [HERO_X], 0x32, SHARED_RET
+	mov [0x2F], 0x0022
+	ret
+
+
+	jge [0x04], 0x4000, SHARED_RET
+	jg [0xAA], 0x00, CAPSULE_INIT_VARS_2F_29_L0
+	mov [0x2F], 0x000B
+	ret
+
+
+	jg [0xAD], 0x00, CAPSULE_INIT_VARS_2F_29_L0
+	mov [0x2F], 0x000B
+	ret
+
+
+CAPSULE_INIT_VARS_2F_29_L0:
+	jg [HERO_X], 0x7A, CAPSULE_INIT_VARS_2F_29_L1
+	jg [0x49], 0x03FF, CAPSULE_INIT_VARS_2F_29_L1
+	mov [0xF8], [0x49]
+	and [0xF8], 0x0380
+	je [0xF8], 0x00, CAPSULE_INIT_VARS_2F_29_L1
+	ret
+
+
+CAPSULE_INIT_VARS_2F_29_L1:
+	call CAPSULE_INIT_VARS_2F_29_L2
+	mov [0x29], 0x0000
+	mov [0x2F], 0x0009
+	jg [HERO_X], 0xA0, INIT_VARS_2F_29_12__HELPER
+	jl [0x1D], 0x14, SHARED_RET
+	jg [0x1D], 0x18, SHARED_RET
+	mov [0x2F], 0x000D
+	ret
 .endif
 
 .include "../_helpers/INIT_VARS_2F_29_12.inc"
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INIT_VARS_2F_29_12.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INIT_VARS_2F_29_12.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INIT_VARS_2F_29_12.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+STATE_VAR12_BIG_DISPATCH_CASE_08:
+	mov [0x2B], [0x12]
+	and [0x2B], 0x1FFF
+	shr [0x2B], 0x0003
+	jne [0x2B], 0x01, CAPSULE_INIT_VARS_2F_29_12_L0
+	or [0x12], 0x6000
+	mov [0x21], [BUDDY_X]
+	mov [0x22], [HERO_X]
+	call CAPSULE_INIT_VARS_2F_29_12_L1
+	jle [0x26], 0x46, INIT_VARS_2F_29_12
+	sub [0x26], 0x0046
+	mov [0x29], [BUDDY_X]
+	jg [BUDDY_X], [HERO_X], FOLD_BODY_189B_29E88AAE
+	add [0x29], [0x26]
+	mov [0x2F], 0x0018
+	mov [0x2F], 0x0001
+	mov [0x29], 0x0000
+	ret
 .endif
 
 .include "../_helpers/FOLD_BODY_189B_29E88AAE.inc"

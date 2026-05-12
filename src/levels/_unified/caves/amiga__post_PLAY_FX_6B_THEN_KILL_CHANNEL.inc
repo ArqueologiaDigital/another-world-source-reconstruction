@@ -33,7 +33,7 @@ LABEL_C7CD:
 
 LABEL_C7F6:
 	break
-	call LABEL_5BE7
+	call CAVES_INIT_VARS_71_6C_6D_L1
 	je [0x21], 0x00, LABEL_C7F6
 	break
 	break

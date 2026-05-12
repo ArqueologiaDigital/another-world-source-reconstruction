@@ -5,12 +5,12 @@ LABEL_5187:
 	video offset=CINEMATIC_354, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_519A:
-	jg [0x13], [0x30], LABEL_514F
+	jg [0x13], [0x30], PRISON_DRAW_CIN_226_L0
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
-	je [0xF8], 0x00, LABEL_514F
+	je [0xF8], 0x00, PRISON_DRAW_CIN_226_L0
 	video offset=CINEMATIC_353, x=[BUDDY_X], y=[BUDDY_Y]
-	jmp LABEL_514F
+	jmp PRISON_DRAW_CIN_226_L0
 
 LABEL_51B5:
 	video offset=CINEMATIC_355, x=[BUDDY_X], y=[BUDDY_Y]
@@ -20,25 +20,25 @@ LABEL_51B5:
 	video offset=CINEMATIC_357, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_51CC:
-	jg [0x13], [0x30], LABEL_514F
+	jg [0x13], [0x30], PRISON_DRAW_CIN_226_L0
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
-	je [0xF8], 0x00, LABEL_514F
+	je [0xF8], 0x00, PRISON_DRAW_CIN_226_L0
 	video offset=CINEMATIC_356, x=[BUDDY_X], y=[BUDDY_Y]
-	jmp LABEL_514F
+	jmp PRISON_DRAW_CIN_226_L0
 
 LABEL_51E7:
 	video offset=CINEMATIC_358, x=[BUDDY_X], y=[BUDDY_Y]
-	jg [0x13], [0x30], LABEL_5163
+	jg [0x13], [0x30], PRISON_DRAW_CIN_352_L0
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
-	je [0xF8], 0x00, LABEL_5163
+	je [0xF8], 0x00, PRISON_DRAW_CIN_352_L0
 	video offset=CINEMATIC_359, x=[BUDDY_X], y=[BUDDY_Y]
-	jmp LABEL_5163
+	jmp PRISON_DRAW_CIN_352_L0
 
 LABEL_5207:
 	video offset=CINEMATIC_360, x=[BUDDY_X], y=[BUDDY_Y]
-	jmp LABEL_5163
+	jmp PRISON_DRAW_CIN_352_L0
 
 LABEL_520F:
 	sub [BUDDY_X], 0x0001

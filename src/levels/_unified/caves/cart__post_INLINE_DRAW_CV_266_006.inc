@@ -1,4 +1,4 @@
-LABEL_89F4:
+CAVES_INLINE_DRAW_CV_269_026_L2:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_284, x=[0x07], y=[0x08], zoom=0x40
 	add [0x07], 0x0001
@@ -30,7 +30,7 @@ LABEL_8A2E:
 	jne [0x2F], 0x04, LABEL_5595
 
 LABEL_8A45:
-	call LABEL_88C0
+	call CAVES_INLINE_DRAW_CV_266_005_L2
 	sub [0x07], 0x0009
 	break
 	jg [0x07], [0x29], LABEL_8A5C
@@ -38,7 +38,7 @@ LABEL_8A45:
 	jne [0x2F], 0x04, LABEL_5595
 
 LABEL_8A5C:
-	call LABEL_88EB
+	call CAVES_INLINE_DRAW_CV_269_024_L1
 	sub [0x07], 0x0008
 	break
 	jg [0x07], [0x29], LABEL_8A73
@@ -46,7 +46,7 @@ LABEL_8A5C:
 	jne [0x2F], 0x04, LABEL_5595
 
 LABEL_8A73:
-	call LABEL_8916
+	call CAVES_INLINE_DRAW_CV_272_013_L1
 	sub [0x07], 0x000A
 	break
 	jg [0x07], [0x29], LABEL_8A8A
@@ -70,7 +70,7 @@ LABEL_8AA1:
 	jne [0x2F], 0x04, LABEL_5595
 
 LABEL_8AB8:
-	call LABEL_8987
+	call CAVES_INLINE_DRAW_CV_272_015_L1
 	sub [0x07], 0x0009
 	break
 	jg [0x07], [0x29], LABEL_8ACF
@@ -78,7 +78,7 @@ LABEL_8AB8:
 	jne [0x2F], 0x04, LABEL_5595
 
 LABEL_8ACF:
-	call LABEL_89B2
+	call CAVES_INLINE_DRAW_CV_269_025_L2
 	sub [0x07], 0x0008
 	break
 	jg [0x07], [0x29], LABEL_8AE6
@@ -86,7 +86,7 @@ LABEL_8ACF:
 	jne [0x2F], 0x04, LABEL_5595
 
 LABEL_8AE6:
-	call LABEL_89DD
+	call CAVES_INLINE_DRAW_CV_269_026_L1
 	sub [0x07], 0x000A
 	break
 	jmp LABEL_8A08
@@ -125,12 +125,12 @@ LABEL_8B2E:
 
 LABEL_8B4C:
 	add [0x07], 0x0001
-	call LABEL_8B58
+	call CAVES_DRAW_CV246_AT_X07_Y08_L2
 	sub [0x07], 0x0001
 	ret
 
 
-LABEL_8B58:
+CAVES_DRAW_CV246_AT_X07_Y08_L2:
 	video type=0, offset=COMMON_VIDEO_302, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -140,7 +140,7 @@ LABEL_8B58:
 	video type=0, offset=COMMON_VIDEO_303, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
-LABEL_8B7B:
+CAVES_INLINE_DRAW_CV_255_031_L2:
 	add [0x07], 0x0001
 	call LABEL_8B87
 	sub [0x07], 0x0001
@@ -157,7 +157,7 @@ LABEL_8B87:
 	video type=0, offset=COMMON_VIDEO_311, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
-LABEL_8BAA:
+CAVES_DRAW_CV_355_L9:
 	video type=0, offset=COMMON_VIDEO_312, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -169,7 +169,7 @@ LABEL_8BAA:
 
 LABEL_8BCD:
 	sub [0x07], 0x0001
-	call LABEL_8B7B
+	call CAVES_INLINE_DRAW_CV_255_031_L2
 	add [0x07], 0x0001
 	ret
 
@@ -181,5 +181,5 @@ LABEL_8BD9:
 	video type=0, offset=COMMON_VIDEO_241, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_242, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, INLINE_DRAW_CV_243_012__HELPER
-	call LABEL_8B7B
+	call CAVES_INLINE_DRAW_CV_255_031_L2
 	jmp DEDUP_CAVES_5B_020__HELPER

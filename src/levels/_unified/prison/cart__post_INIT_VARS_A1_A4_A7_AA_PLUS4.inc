@@ -5,7 +5,7 @@ TEARDOWN_CHANS_AND_KILL_LANDING:
 	ret
 
 
-LABEL_882F:
+PRISON_TRIVIAL_RET_L2:
 	mov [0x23], 0x0001
 	jl [HERO_Y], [0x41], LABEL_883D
 	mov [0x23], 0x0000
@@ -30,7 +30,7 @@ LABEL_884B:
 	setup channel=0x2F, address=LABEL_395D
 	setup channel=0x3B, address=KILL_CHANNEL_LANDING
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
-	call LABEL_882F
+	call PRISON_TRIVIAL_RET_L2
 	call INIT_RANGE_48_TO_4D_TO_MAX
 	call INIT_VARS_A1_A4_A7_AA_PLUS4
 	mov [0x27], [HACK_VAR_67]

@@ -1,4 +1,4 @@
-LABEL_80AD:
+CAVES_COPY_VAR01_TO_VAR28_L16:
 	ret
 
 
@@ -184,7 +184,7 @@ LABEL_81F4:
 	ret
 
 
-LABEL_820A:
+CAVES_DRAW_CV_355_L1:
 	video type=0, offset=COMMON_VIDEO_320, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0xF6], 0x00, LABEL_821D
@@ -198,7 +198,7 @@ LABEL_821D:
 	video type=0, offset=COMMON_VIDEO_321, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_CIN_061_062_VAR09_LOW
 
-LABEL_8238:
+CAVES_DRAW_CV_355_L3:
 	video type=0, offset=COMMON_VIDEO_323, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	sub [0xF5], 0x0001
@@ -213,7 +213,7 @@ LABEL_824F:
 	video type=0, offset=COMMON_VIDEO_324, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_CIN_061_062_VAR09_LOW
 
-LABEL_826A:
+CAVES_DRAW_CV_355_L5:
 	video type=0, offset=COMMON_VIDEO_326, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], DRAW_HERO_SUBFRAME_2_VAR09_LOW_OFFSET
 	mov [0xF8], [0x31]
@@ -226,14 +226,14 @@ LABEL_828A:
 	video type=0, offset=COMMON_VIDEO_328, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW_OFFSET
 
-LABEL_8292:
+CAVES_DRAW_CV224_AT_X07_Y08_L3:
 	sub [0x07], 0x0001
-	call LABEL_829E
+	call CAVES_INLINE_DRAW_CV_220_016_L3
 	add [0x07], 0x0001
 	ret
 
 
-LABEL_829E:
+CAVES_INLINE_DRAW_CV_220_016_L3:
 	video type=0, offset=COMMON_VIDEO_308, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
@@ -270,7 +270,7 @@ DRAW_CV_304_THEN_305:
 	ret
 
 
-LABEL_8304:
+CAVES_DRAW_CV204_AT_X07_Y08_L3:
 	add [0x07], 0x0001
 	call DRAW_CV_304_THEN_305
 	sub [0x07], 0x0001

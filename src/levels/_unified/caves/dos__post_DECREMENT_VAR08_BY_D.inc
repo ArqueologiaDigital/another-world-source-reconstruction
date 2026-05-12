@@ -1,7 +1,7 @@
 LABEL_9616:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video offset=CINEMATIC_060, x=[0x07], y=[0x08]
-	call LABEL_95F0
+	call CAVES_DRAW_CV_355_L7
 	ret
 
 
@@ -83,7 +83,7 @@ LABEL_96F8:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_291, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x000D
-	call LABEL_820A
+	call CAVES_DRAW_CV_355_L1
 	add [0x08], 0x000D
 	ret
 
@@ -94,7 +94,7 @@ LABEL_9712:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_292, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x000E
-	call LABEL_8238
+	call CAVES_DRAW_CV_355_L3
 	add [0x08], 0x000E
 	add [0x07], 0x0001
 	ret
@@ -104,7 +104,7 @@ LABEL_9712:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_291, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x000D
-	call LABEL_826A
+	call CAVES_DRAW_CV_355_L5
 	add [0x08], 0x000D
 	ret
 
@@ -114,7 +114,7 @@ LABEL_974E:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_291, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x000D
-	call LABEL_8238
+	call CAVES_DRAW_CV_355_L3
 	add [0x08], 0x000D
 	ret
 
@@ -126,14 +126,14 @@ LABEL_974E:
 
 
 JUNK__9777:
-	call LABEL_9598
+	call CAVES_DRAW_CV_355_L0
 	break
-	call LABEL_9598
+	call CAVES_DRAW_CV_355_L0
 	break
-	call LABEL_9598
+	call CAVES_DRAW_CV_355_L0
 	sub [0x07], 0x0001
 	break
-	call LABEL_95AA
+	call CAVES_DRAW_CV_355_L2
 	add [0x07], 0x0001
 	break
 	jmp JUNK__9777
@@ -163,7 +163,7 @@ LABEL_97B9:
 	jne [0x2F], 0x03, CAVES_HERO_SCENE_LOOP_STATE3_PATH
 
 LABEL_97D0:
-	call LABEL_8CB4
+	call CAVES_DRAW_CV246_AT_X07_Y08_L1
 	add [0x07], 0x0009
 	break
 	jl [0x07], [0x29], LABEL_97E7
@@ -187,7 +187,7 @@ LABEL_97FE:
 	jne [0x2F], 0x03, CAVES_HERO_SCENE_LOOP_STATE3_PATH
 
 LABEL_9815:
-	call LABEL_8D33
+	call CAVES_INLINE_DRAW_CV_255_031_L1
 	add [0x07], 0x0007
 	break
 	jl [0x07], [0x29], LABEL_982C
@@ -203,7 +203,7 @@ LABEL_982C:
 	jne [0x2F], 0x03, CAVES_HERO_SCENE_LOOP_STATE3_PATH
 
 LABEL_9843:
-	call LABEL_8D85
+	call CAVES_INLINE_DRAW_CV_252_023_L1
 	add [0x07], 0x0009
 	break
 	jl [0x07], [0x29], LABEL_985A
@@ -415,7 +415,7 @@ LABEL_9A60:
 	ret
 
 
-LABEL_9A61:
+CAVES_STEP_DRAW_CV336_THEN_CV340_L7:
 	video type=0, offset=COMMON_VIDEO_330, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_149
 	ret
@@ -442,7 +442,7 @@ DRAW_CIN_150:
 	ret
 
 
-LABEL_9A9D:
+CAVES_STEP_DRAW_CV336_THEN_CV340_L5:
 	video type=0, offset=COMMON_VIDEO_333, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_151
 	ret
@@ -796,7 +796,7 @@ DRAW_CIN_165:
 	ret
 
 
-LABEL_9DD6:
+CAVES_DRAW_CV_071_L1:
 	jne [0x05], 0x00, LABEL_9DE2
 	video type=0, offset=COMMON_VIDEO_000, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
@@ -824,6 +824,6 @@ LABEL_9E06:
 	ret
 
 
-LABEL_9E07:
+CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L32:
 	je [0x0A], 0x00, DRAW_CV_074
 	call GUARDED_DRAW_CV_126

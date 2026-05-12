@@ -1,4 +1,4 @@
-LABEL_3A68:
+PRISON_COPY_VAR22_TO_VAR07_L10:
 	or [0x04], 0x4000
 	play id=0x005D, freq=0x14, vol=0x40, channel=0x00
 	deleteChannels first=0x14, last=0x16
@@ -8,20 +8,20 @@ LABEL_3A68:
 	and [0xF8], 0x00FF
 	jl [0xF8], 0x20, LABEL_3A9E
 	sub [0xF8], 0x0020
-	setup channel=0x14, address=LABEL_0F9B
+	setup channel=0x14, address=PRISON_DRAW_CIN_284_BLOCK_95B_L2
 	jl [0xF8], 0x10, SHARED_RET
 	setup channel=0x14, address=DRAW_CIN_146_TO_147_4F_AT_8AA18039
 	ret
 
 
 LABEL_3A9E:
-	setup channel=0x14, address=LABEL_0ED0
+	setup channel=0x14, address=PRISON_DRAW_CIN_132_TO_133_2F_AT_BB9185F0_L0
 	jl [0xF8], 0x10, SHARED_RET
 	setup channel=0x14, address=DRAW_CIN_280_TO_281_2F_AT_75ED3E60
 	ret
 
 
-LABEL_3AAD:
+PRISON_COPY_VAR22_TO_VAR07_L11:
 	call LABEL_3B2C
 	mov [0xF8], [0x2B]
 	and [0xF8], 0x0800

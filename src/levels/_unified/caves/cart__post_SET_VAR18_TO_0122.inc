@@ -31,7 +31,7 @@ LABEL_E38D:
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x32], 0x0000
 	setup channel=0x16, address=SETUP_CHAN_14_BY_VAR63
-	setup channel=0x14, address=LABEL_EBC2
+	setup channel=0x14, address=CAVES_INLINE_SET_VAR63_TO_1_L2
 	setup channel=0x3E, address=LABEL_CBCD
 	mov [HERO_X], 0x00D9
 	jne [HACK_VAR_67], 0x6F, KILL_CHAN_AT_E3E8
@@ -169,8 +169,8 @@ LABEL_E550:
 
 LABEL_E55D:
 	jge [HERO_ACTION_POS_MASK], 0x80, LABEL_E5F0
-	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_E582
-	je [0x63], 0x01, LABEL_E582
+	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, CAVES_INLINE_SET_VAR63_TO_1_L0
+	je [0x63], 0x01, CAVES_INLINE_SET_VAR63_TO_1_L0
 	setup channel=0x14, address=LABEL_EA2E
 	je [0x63], 0x05, INLINE_SET_VAR63_TO_1
 	setup channel=0x14, address=STEP_DRAW_CV352_LEFT4_RIGHT1

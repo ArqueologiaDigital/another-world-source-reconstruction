@@ -61,7 +61,7 @@ LABEL_988A:
 	break
 	mov [HERO_Y], [0x51]
 	call LABEL_9A31
-	setup channel=0x1A, address=LABEL_97CE
+	setup channel=0x1A, address=CAPSULE_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65_L1
 	jmp LABEL_9A64
 LABEL_98BE:
 	db 0x11
@@ -95,7 +95,7 @@ LABEL_98D7:
 
 LABEL_9915:
 	mov [HERO_Y], [0x51]
-	setup channel=0x1A, address=LABEL_97CE
+	setup channel=0x1A, address=CAPSULE_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65_L1
 	jmp LABEL_9A64
 
 LABEL_991F:
@@ -138,5 +138,5 @@ LABEL_996E:
 	mov [HERO_X], 0x0029
 	video offset=CINEMATIC_092, x=[HERO_X], y=180
 	mov [HERO_Y], [0x51]
-	setup channel=0x1A, address=LABEL_97CE
+	setup channel=0x1A, address=CAPSULE_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65_L1
 	jmp LABEL_9A64

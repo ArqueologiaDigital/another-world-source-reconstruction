@@ -677,12 +677,12 @@ LABEL_25D8:
 	mov [0xF8], [0x11]
 	and [0xF8], 0x1FFF
 	jl [0xF8], 0x1000, LABEL_25EF
-	je [0x2F], 0x10, LABEL_682D
+	je [0x2F], 0x10, PRISON_INLINE_SET_VAR29_TO_6_L9
 	jmp LABEL_672A
 
 LABEL_25EF:
 	je [0x2F], 0x10, LABEL_56A1
-	jmp LABEL_5A2F
+	jmp PRISON_INLINE_SET_VAR29_TO_6_L10
 LABEL_25F8:
 	db 0x11
 
@@ -690,7 +690,7 @@ LABEL_25F9:
 	mov [0xF8], [0x11]
 	and [0xF8], 0x1FFF
 	jl [0xF8], 0x1000, LABEL_2610
-	je [0x2F], 0x01, LABEL_682D
+	je [0x2F], 0x01, PRISON_INLINE_SET_VAR29_TO_6_L9
 	jmp LABEL_2980
 
 LABEL_2610:
@@ -707,7 +707,7 @@ LABEL_261A:
 
 LABEL_262B:
 	jg [0x29], [BUDDY_X], LABEL_672A
-	jmp LABEL_5A2F
+	jmp PRISON_INLINE_SET_VAR29_TO_6_L10
 LABEL_2634:
 	db 0x11, 0x01, 0xF8, 0x11, 0x0A, 0x44, 0xF8, 0x20
 	db 0x00, 0x26, 0x4D, 0x03, 0xF8, 0xE0, 0x00, 0x0A
@@ -727,7 +727,7 @@ LABEL_2663:
 	mov [0x21], [BUDDY_X]
 	mov [0x27], [BUDDY_Y]
 	mov [0x22], 0x4008
-	call LABEL_345B
+	call PRISON_INLINE_SUB_VAR22_BY_23_L10
 	break
 	call LABEL_640A
 	break
@@ -791,7 +791,7 @@ LABEL_273F:
 	mov [0x27], [BUDDY_Y]
 	sub [0x21], 0x0028
 	sub [0x27], 0x0036
-	call LABEL_372B
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L4
 	break
 	call LABEL_6456
 	break
@@ -821,7 +821,7 @@ LABEL_2781:
 	mov [0x27], [BUDDY_Y]
 	sub [0x21], 0x0028
 	sub [0x27], 0x0029
-	call LABEL_372B
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L4
 
 LABEL_2798:
 	break
@@ -853,7 +853,7 @@ LABEL_27C6:
 	mov [0x27], [BUDDY_Y]
 	sub [0x21], 0x0019
 	sub [0x27], 0x001E
-	call LABEL_372B
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L4
 
 LABEL_27DD:
 	break
@@ -912,7 +912,7 @@ LABEL_2892:
 	mov [0x27], [BUDDY_Y]
 	add [0x21], 0x0028
 	sub [0x27], 0x0036
-	call LABEL_3744
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L5
 	break
 	call LABEL_66A9
 	break
@@ -942,7 +942,7 @@ LABEL_28D4:
 	mov [0x27], [BUDDY_Y]
 	add [0x21], 0x0028
 	sub [0x27], 0x0029
-	call LABEL_3744
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L5
 
 LABEL_28EB:
 	break
@@ -974,7 +974,7 @@ LABEL_2919:
 	mov [0x27], [BUDDY_Y]
 	add [0x21], 0x0019
 	sub [0x27], 0x001E
-	call LABEL_3744
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L5
 
 LABEL_2930:
 	break

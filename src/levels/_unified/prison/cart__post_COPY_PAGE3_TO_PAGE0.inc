@@ -50,7 +50,7 @@ LABEL_83C9:
 	mov [0xF8], [0x6B]
 	and [0xF8], 0x4800
 	jne [0xF8], 0x00, VAR66_RANGE_DISPATCH_BY_VAR01
-	setup channel=0x23, address=LABEL_18DE
+	setup channel=0x23, address=PRISON_INLINE_SET_VAR29_TO_6_L1
 	jmp VAR66_RANGE_DISPATCH_BY_VAR01
 
 LABEL_8412:
@@ -203,7 +203,7 @@ LABEL_8582:
 
 LABEL_85CE:
 	setup channel=0x03, address=INLINE_SET_VARE6_TO_50
-	setup channel=0x04, address=LABEL_0C10
+	setup channel=0x04, address=PRISON_INLINE_SET_VARE6_TO_50_L3
 	setup channel=0x05, address=INLINE_SET_VARE7_TO_5
 	je [0xB4], 0x00, LABEL_85E8
 	setup channel=0x05, address=KILL_CHANNEL_LANDING

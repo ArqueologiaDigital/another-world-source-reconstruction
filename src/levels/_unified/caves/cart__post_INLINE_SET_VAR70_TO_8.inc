@@ -1,7 +1,0 @@
-LABEL_0BF3:
-	sub [0x6B], 0x0002
-	break
-	djnz [0x70], LABEL_0BF3
-	mov [0x71], 0x0064
-	mov [0x6D], 0xFFFE
-	killChannel

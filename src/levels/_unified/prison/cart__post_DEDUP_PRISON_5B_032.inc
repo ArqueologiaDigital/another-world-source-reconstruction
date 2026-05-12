@@ -1,6 +1,0 @@
-LABEL_4788:
-	call LABEL_4811
-	jg [0x22], [0x21], COMPUTE_VARF8_AS_VAR22_MINUS_VAR09
-	mov [0xF8], [0x09]
-	sub [0xF8], [0x22]
-	jmp LABEL_47A0

@@ -205,7 +205,7 @@ LABEL_19B5:
 	setup channel=0x00, address=LABEL_12CF
 
 LABEL_19DD:
-	call LABEL_5BE7
+	call CAVES_INIT_VARS_71_6C_6D_L1
 	je [0x21], 0x00, LABEL_19F4
 	jge [HACK_VAR_67], 0x91, LABEL_19F4
 	mov [0x74], 0x0010

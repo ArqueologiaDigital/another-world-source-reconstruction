@@ -1,3 +1,0 @@
-LABEL_7066:
-	je [0x0A], 0x00, DRAW_CV_115
-	call DRAW_CV_298

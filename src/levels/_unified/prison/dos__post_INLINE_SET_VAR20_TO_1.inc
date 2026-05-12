@@ -3,7 +3,7 @@ LABEL_7110:
 	sub [0x20], 0x0001
 	jle [0x1E], 0x00, LABEL_7110
 
-LABEL_711D:
+PRISON_DRAW_CV_106_L1:
 	ret
 
 
@@ -21,7 +21,7 @@ LABEL_7134:
 	mov [0x04], 0x003C
 	mov [0x1E], [HERO_X]
 	mov [0x1F], 0x0006
-	call LABEL_70EE
+	call PRISON_DRAW_CV_106_L0
 	mov [0x1E], [HERO_X]
 	mov [HERO_X], [0x20]
 	jl [HERO_X], 0x30, LABEL_7159

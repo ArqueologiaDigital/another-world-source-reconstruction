@@ -211,10 +211,23 @@ INCREMENT_VAR07_BY_4:
 .include "../_helpers/INLINE_COPY_VAR22_TO_VAR08.inc"
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_COPY_VAR22_TO_VAR08.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_COPY_VAR22_TO_VAR08.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+CAVES_INLINE_COPY_VAR22_TO_VAR08_L0:
+	mov [0x27], [0x11]
+	and [0x27], 0x0200
+	jne [0x27], 0x00, SHARED_RET
+	call CAVES_COPY_VAR40_TO_VAR22_L0
+	mov [0x08], [0x22]
+	ret
+
+
+CAVES_INLINE_COPY_VAR22_TO_VAR08_L1:
+	call CAVES_INLINE_COPY_VAR22_TO_VAR08_L2
+	shl [0x0E], 0x000C
+	shl [0x0D], 0x000B
+	add [0x09], [0x0E]
+	add [0x09], [0x0D]
+	ret
 .endif
 
 .include "../_helpers/SPLIT_VAR09_BITS_INTO_VAR0D.inc"
@@ -238,23 +251,33 @@ INCREMENT_VAR07_BY_4:
 .endif
 
 .include "../_helpers/SET_VAR2F_TO_000F.inc"
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_SET_VAR2F_TO_000F.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_SET_VAR2F_TO_000F.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_SET_VAR2F_TO_000F.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_SET_VAR2F_TO_000F_L0:
+	je [0x12], 0x58, SET_VAR2F_TO_001D
+	mov [0x2F], 0x000F
+	ret
 .endif
 
 .include "../_helpers/SET_VAR2F_TO_001D.inc"
 
 .include "../_helpers/SET_VAR2F_TO_000D.inc"
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_SET_VAR2F_TO_000D.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_SET_VAR2F_TO_000D.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_SET_VAR2F_TO_000D.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_SET_VAR2F_TO_000D_L0:
+	call CAVES_SET_VAR2F_TO_000D_L1
+	jg [0x1D], 0x1D, CAVES_SET_VAR2F_TO_000D_L2
+	je [0x12], 0x58, SET_VAR2F_TO_000D
+	mov [0x21], [0x07]
+	call CAVES_COPY_VAR40_TO_VAR22_L8
+	mov [0x25], [0x26]
+	mov [0x21], [HERO_X]
+	call CAVES_COPY_VAR40_TO_VAR22_L8
+	mov [0x24], [0x26]
+	jle [0x24], [0x25], CAVES_SET_VAR2F_TO_000D_L2
+	mov [0x29], [0x22]
+	jl [0x07], [HERO_X], STEP_VAR29_DOWN10_SET_VAR2F_11
+	add [0x29], 0x000A
+	mov [0x2F], 0x0011
+	ret
 .endif
 
 .include "../_helpers/STEP_VAR29_DOWN10_SET_VAR2F_11.inc"
@@ -277,12 +300,25 @@ INCREMENT_VAR07_BY_4:
 .endif
 
 .include "../_helpers/INIT_VARS_2F_29_12.inc"
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INIT_VARS_2F_29_12_1.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INIT_VARS_2F_29_12_1.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INIT_VARS_2F_29_12_1.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+STATE_VAR12_BIG_DISPATCH_CASE_08:
+	mov [0x2B], [0x12]
+	and [0x2B], 0x1FFF
+	shr [0x2B], 0x0003
+	jne [0x2B], 0x01, CAVES_INIT_VARS_2F_29_12_L0
+	or [0x12], 0x6000
+	mov [0x21], [0x07]
+	mov [0x22], [HERO_X]
+	call CAVES_COPY_VAR40_TO_VAR22_L8
+	jle [0x26], 0x46, INIT_VARS_2F_29_12
+	sub [0x26], 0x0046
+	mov [0x29], [0x07]
+	jg [0x07], [HERO_X], FOLD_BODY_189B_29E88AAE
+	add [0x29], [0x26]
+	mov [0x2F], 0x0018
+	mov [0x2F], 0x0001
+	mov [0x29], 0x0000
+	ret
 .endif
 
 .include "../_helpers/FOLD_BODY_189B_29E88AAE.inc"

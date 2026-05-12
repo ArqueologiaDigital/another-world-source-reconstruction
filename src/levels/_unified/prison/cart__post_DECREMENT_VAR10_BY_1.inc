@@ -1,5 +1,5 @@
 LABEL_897B:
-	call LABEL_4958
+	call PRISON_TRIVIAL_RET_L0
 	call LABEL_0068
 	mov [0x32], 0x0000
 	call LABEL_8084

@@ -1,5 +1,5 @@
 LABEL_7CA9:
-	call LABEL_7C6A
+	call PRISON_DRAW_CIN_092_L15
 	call LABEL_7D6B
 	jl [0x18], 0x32, LABEL_7CB9
 	sub [0x18], 0x0032
@@ -63,45 +63,45 @@ LABEL_7D4F:
 	mov [0x68], 0x0064
 	jmp LABEL_7D17
 
-LABEL_7D56:
+PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L1:
 	je [0x6A], 0x05, LABEL_7D07
 	ret
 
 
-LABEL_7D5D:
+PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L4:
 	je [0x6A], 0x25, LABEL_7D07
 	ret
 
 
-LABEL_7D64:
+PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L6:
 	je [0x6A], 0x45, LABEL_7D07
 	ret
 
 
 LABEL_7D6B:
 	jne [0x14], 0x2320, LABEL_7D81
-	setup channel=0x01, address=LABEL_7DF0
+	setup channel=0x01, address=PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L3
 	je [0x63], 0xFFFF, LABEL_7D81
-	setup channel=0x01, address=LABEL_7DFC
+	setup channel=0x01, address=PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L5
 
 LABEL_7D81:
 	jne [0x14], 0x2580, LABEL_7D97
-	setup channel=0x01, address=LABEL_7DDD
+	setup channel=0x01, address=PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L0
 	je [0x63], 0xFFFF, LABEL_7D97
-	setup channel=0x01, address=LABEL_7DF0
+	setup channel=0x01, address=PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L3
 
 LABEL_7D97:
 	jne [0x14], 0x27D0, LABEL_7DAE
 	setup channel=0x01, address=DRAW_CIN_090_TO_104_3F_AT_8C208B32
 	je [0x63], 0xFFFF, LABEL_7DAE
-	setup channel=0x01, address=LABEL_7DE9
+	setup channel=0x01, address=PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L2
 	ret
 
 
 LABEL_7DAE:
 	jne [0x14], 0x27C0, SHARED_RET
 	je [0x63], 0xFFFF, SHARED_RET
-	setup channel=0x01, address=LABEL_7DE9
+	setup channel=0x01, address=PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L2
 	ret
 
 

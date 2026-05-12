@@ -774,7 +774,7 @@ LABEL_5610:
 	call LABEL_8F78
 	deleteChannels first=0x14, last=0x16
 	mov [0x03], 0x0032
-	setup channel=0x3F, address=LABEL_016F
+	setup channel=0x3F, address=CAVES_INLINE_SET_VAR01_TO_E_L1
 	mov [0x29], 0x0001
 
 LABEL_5627:

@@ -31,7 +31,7 @@ LABEL_9518:
 	db 0x11
 
 LABEL_9519:
-	je [HERO_POS_MASK], 0x09, LABEL_9638
+	je [HERO_POS_MASK], 0x09, PRISON_DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB_L3
 	mov [0x63], 0x0064
 	video type=0, offset=COMMON_VIDEO_048, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
@@ -120,7 +120,7 @@ LABEL_95B0:
 LABEL_9637:
 	db 0x11
 
-LABEL_9638:
+PRISON_DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB_L3:
 	je [HERO_POS_MASK], 0x0A, LABEL_9519
 	mov [0x63], 0x0064
 	video type=0, offset=COMMON_VIDEO_003, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -250,7 +250,7 @@ LABEL_97AC:
 	mov [0x27], [HERO_Y]
 	add [0x21], 0x001E
 	sub [0x27], 0x0027
-	call LABEL_3801
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L12
 	break
 	sub [HERO_X], 0x0001
 	video offset=CINEMATIC_565, x=[HERO_X], y=[HERO_Y]

@@ -190,10 +190,12 @@ DRAW_CIN_226:
 
 .endif
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_DRAW_CIN_226.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DRAW_CIN_226.inc"
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
+PRISON_DRAW_CIN_226_L0:
+	mov [0xF8], [0x09]
+	and [0xF8], 0x000F
+	je [0xF8], 0x01, DRAW_CIN_352
+	ret
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -204,10 +206,12 @@ DRAW_CIN_352:
 
 .endif
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_DRAW_CIN_352.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DRAW_CIN_352.inc"
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
+PRISON_DRAW_CIN_352_L0:
+	mov [0xF8], [0x09]
+	and [0xF8], 0x000F
+	je [0xF8], 0x01, DRAW_CIN_169_WITH_POS_STEP_AT_B673C5FF
+	ret
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -268,60 +272,160 @@ DRAW_CIN_241:
 .include "../_helpers/DRAW_CV204_AT_X07_Y08.inc"
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_DRAW_CV204_AT_X07_Y08.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DRAW_CV204_AT_X07_Y08.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_DRAW_CV204_AT_X07_Y08_L0:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_205, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call DRAW_CIN_240_IF_VAR09_EQ_1
+	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L1
+	ret
+
+
+PRISON_DRAW_CV204_AT_X07_Y08_L1:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	je [0x0D], 0x00, DRAW_CV204_AT_X07_PLUS1_Y08
+	call PRISON_DRAW_CV204_AT_X07_Y08_L2
+	jmp PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L0
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 .include "../_helpers/DRAW_CV204_AT_X07_PLUS1_Y08.inc"
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_DRAW_CV204_AT_X07_PLUS1_Y08.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DRAW_CV204_AT_X07_PLUS1_Y08.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L0:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_208, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call DRAW_CIN_240_IF_VAR09_EQ_1
+	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L1
+	ret
+
+
+PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L2:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	je [0x0D], 0x00, PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L3
+	call DRAW_CIN_242_THEN_243
+
+PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L3:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_209, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call DRAW_CIN_240_IF_VAR09_EQ_1
+	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L4
+	ret
+
+
+PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L5:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	play id=0x0055, freq=0x0F, vol=0x14, channel=0x01
+	je [0x0D], 0x00, PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L6
+	call DRAW_CIN_242_THEN_243
+
+PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L6:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_210, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call DRAW_CIN_240_IF_VAR09_EQ_1
+	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L7
+	ret
+
+
+PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L8:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	je [0x0D], 0x00, PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L9
+	call DRAW_CIN_242_THEN_243
+
+PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L9:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_213, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call DRAW_CIN_240_IF_VAR09_EQ_1
+	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L10
+	ret
+
+
+PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L11:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	je [0x0D], 0x00, INLINE_DRAW_CV_216_027__HELPER
+	call DRAW_CIN_338_THEN_339
+	jmp PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L12
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 .include "../_helpers/INLINE_DRAW_CV_216_027.inc"
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_DRAW_CV_216_027.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_DRAW_CV_216_027.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L12:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_217, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call DRAW_CIN_240_IF_VAR09_EQ_1
+	call PRISON_INLINE_DRAW_CV_216_027_L0
+	ret
+
+
+PRISON_INLINE_DRAW_CV_216_027_L1:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	je [0x0D], 0x00, INLINE_DRAW_CV_220_008__HELPER
+	call PRISON_DRAW_CV263_AT_X07_Y08_L3
+	jmp PRISON_INLINE_DRAW_CV_216_027_L2
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 .include "../_helpers/INLINE_DRAW_CV_220_008.inc"
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_DRAW_CV_220_008.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_DRAW_CV_220_008.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_INLINE_DRAW_CV_216_027_L2:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_221, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call DRAW_CIN_240_IF_VAR09_EQ_1
+	call PRISON_INLINE_DRAW_CV_220_008_L0
+	ret
+
+
+PRISON_INLINE_DRAW_CV_220_008_L1:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	je [0x0D], 0x00, DRAW_CV224_AT_X07_Y08
+	call PRISON_INLINE_DRAW_CV_220_008_L2
+	jmp PRISON_DRAW_CV224_AT_X07_Y08_L0
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 .include "../_helpers/DRAW_CV224_AT_X07_Y08.inc"
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_DRAW_CV224_AT_X07_Y08.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DRAW_CV224_AT_X07_Y08.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_DRAW_CV224_AT_X07_Y08_L0:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_225, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call DRAW_CIN_240_IF_VAR09_EQ_1
+	call PRISON_DRAW_CV224_AT_X07_Y08_L1
+	ret
+
+
+PRISON_DRAW_CV224_AT_X07_Y08_L2:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	je [0x0D], 0x00, INLINE_DRAW_CV_228_018__HELPER
+	call PRISON_DRAW_CV224_AT_X07_Y08_L3
+	jmp PRISON_DRAW_CV224_AT_X07_Y08_L4
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 .include "../_helpers/INLINE_DRAW_CV_228_018.inc"
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_DRAW_CV_228_020.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_DRAW_CV_228_020.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_DRAW_CV224_AT_X07_Y08_L4:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_229, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call DRAW_CIN_240_IF_VAR09_EQ_1
+	call PRISON_INLINE_DRAW_CV_228_020_L0
+	ret
+
+
+PRISON_INLINE_DRAW_CV_228_020_L1:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	je [0x0D], 0x00, INLINE_DRAW_CV_228_018
+	call PRISON_DRAW_CV224_AT_X07_Y08_L3
+	jmp PRISON_INLINE_DRAW_CV_228_020_L2
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -329,10 +433,22 @@ INLINE_DRAW_CV_228_018:
 	video type=0, offset=COMMON_VIDEO_228, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_DRAW_CV_228_021.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_DRAW_CV_228_021.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_INLINE_DRAW_CV_228_020_L2:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_232, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call DRAW_CIN_240_IF_VAR09_EQ_1
+	add [BUDDY_X], 0x0001
+	call PRISON_INLINE_DRAW_CV_228_020_L0
+	sub [BUDDY_X], 0x0001
+	ret
+
+
+PRISON_INLINE_DRAW_CV_228_021_L0:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	je [0x0D], 0x00, INLINE_DRAW_CV_220_008
+	call PRISON_INLINE_DRAW_CV_220_008_L2
+	jmp PRISON_INLINE_DRAW_CV_220_009_L0
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -340,10 +456,21 @@ INLINE_DRAW_CV_220_008:
 	video type=0, offset=COMMON_VIDEO_220, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_DRAW_CV_220_009.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_DRAW_CV_220_009.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_INLINE_DRAW_CV_220_009_L0:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_233, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call DRAW_CIN_240_IF_VAR09_EQ_1
+	call PRISON_INLINE_DRAW_CV_220_008_L0
+	ret
+
+
+PRISON_INLINE_DRAW_CV_220_009_L1:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	play id=0x0055, freq=0x14, vol=0x14, channel=0x01
+	je [0x0D], 0x00, INLINE_DRAW_CV_216_027
+	call PRISON_INLINE_DRAW_CV_220_008_L2
+	jmp PRISON_INLINE_DRAW_CV_220_009_L2
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -361,50 +488,101 @@ INLINE_DRAW_CV_216_027:
 .include "../_helpers/DRAW_CV263_AT_X07_Y08.inc"
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_DRAW_CV263_AT_X07_Y08.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DRAW_CV263_AT_X07_Y08.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_DRAW_CV263_AT_X07_Y08_L0:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_264, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call PRISON_DRAW_CV263_AT_X07_Y08_L1
+	add [BUDDY_Y], 0x0001
+	ret
+
+
+PRISON_DRAW_CV263_AT_X07_Y08_L2:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	je [0x0D], 0x00, INLINE_DRAW_CV_266_005__HELPER
+	call PRISON_DRAW_CV263_AT_X07_Y08_L3
+	jmp PRISON_DRAW_CV263_AT_X07_Y08_L4
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 .include "../_helpers/INLINE_DRAW_CV_266_005.inc"
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_DRAW_CV_266_029.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_DRAW_CV_266_029.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_DRAW_CV263_AT_X07_Y08_L4:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_267, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call PRISON_INLINE_DRAW_CV_266_029_L0
+	ret
+
+
+PRISON_INLINE_DRAW_CV_266_029_L1:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	add [BUDDY_Y], 0x0001
+	je [0x0D], 0x00, INLINE_DRAW_CV_269_024__HELPER
+	call DRAW_CIN_242_THEN_243
+	jmp PRISON_INLINE_DRAW_CV_266_029_L2
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 .include "../_helpers/INLINE_DRAW_CV_269_024.inc"
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_DRAW_CV_269_024.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_DRAW_CV_269_024.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_INLINE_DRAW_CV_266_029_L2:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_270, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call PRISON_INLINE_DRAW_CV_269_024_L0
+	sub [BUDDY_Y], 0x0001
+	ret
+
+
+PRISON_INLINE_DRAW_CV_269_024_L1:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	add [BUDDY_Y], 0x0001
+	je [0x0D], 0x00, INLINE_DRAW_CV_272_003__HELPER
+	call DRAW_CIN_242_THEN_243
+	jmp PRISON_INLINE_DRAW_CV_269_024_L2
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 .include "../_helpers/INLINE_DRAW_CV_272_003.inc"
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_DRAW_CV_272_003.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_DRAW_CV_272_003.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_INLINE_DRAW_CV_269_024_L2:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_273, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call PRISON_INLINE_DRAW_CV_272_003_L0
+	sub [BUDDY_Y], 0x0001
+	ret
+
+
+PRISON_INLINE_DRAW_CV_272_003_L1:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	je [0x0D], 0x00, DRAW_CV275_AT_X07_Y08
+	call DRAW_CIN_242_THEN_243
+	jmp PRISON_DRAW_CV275_AT_X07_Y08_L0
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 .include "../_helpers/DRAW_CV275_AT_X07_Y08.inc"
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_DRAW_CV275_AT_X07_Y08.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DRAW_CV275_AT_X07_Y08.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_DRAW_CV275_AT_X07_Y08_L0:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_276, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call PRISON_DRAW_CV275_AT_X07_Y08_L1
+	ret
+
+
+PRISON_DRAW_CV275_AT_X07_Y08_L2:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	sub [BUDDY_Y], 0x0001
+	je [0x0D], 0x00, INLINE_DRAW_CV_272_003_001
+	call PRISON_DRAW_CV263_AT_X07_Y08_L3
+	jmp PRISON_DRAW_CV275_AT_X07_Y08_L3
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -412,10 +590,20 @@ INLINE_DRAW_CV_272_003_001:
 	video type=0, offset=COMMON_VIDEO_272, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_DRAW_CV_272_004.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_DRAW_CV_272_004.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_DRAW_CV275_AT_X07_Y08_L3:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_278, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call PRISON_DRAW_CV275_AT_X07_Y08_L1
+	add [BUDDY_Y], 0x0001
+	ret
+
+
+PRISON_INLINE_DRAW_CV_272_004_L0:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	je [0x0D], 0x00, INLINE_DRAW_CV_272_003_002
+	call PRISON_DRAW_CV263_AT_X07_Y08_L3
+	jmp PRISON_INLINE_DRAW_CV_272_004_L1
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -423,10 +611,20 @@ INLINE_DRAW_CV_272_003_002:
 	video type=0, offset=COMMON_VIDEO_272, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_DRAW_CV_272_005.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_DRAW_CV_272_005.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_INLINE_DRAW_CV_272_004_L1:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_279, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call PRISON_INLINE_DRAW_CV_272_003_L0
+	ret
+
+
+PRISON_INLINE_DRAW_CV_272_005_L0:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	add [BUDDY_Y], 0x0001
+	je [0x0D], 0x00, INLINE_DRAW_CV_269_024_001
+	call PRISON_INLINE_DRAW_CV_220_008_L2
+	jmp PRISON_INLINE_DRAW_CV_269_025_L0
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -434,10 +632,21 @@ INLINE_DRAW_CV_269_024_001:
 	video type=0, offset=COMMON_VIDEO_269, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_DRAW_CV_269_025.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_DRAW_CV_269_025.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_INLINE_DRAW_CV_269_025_L0:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_280, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call PRISON_INLINE_DRAW_CV_269_025_L1
+	sub [BUDDY_Y], 0x0001
+	ret
+
+
+PRISON_INLINE_DRAW_CV_269_025_L2:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	add [BUDDY_Y], 0x0001
+	je [0x0D], 0x00, INLINE_DRAW_CV_269_024_002
+	call PRISON_DRAW_CV224_AT_X07_Y08_L3
+	jmp PRISON_INLINE_DRAW_CV_269_025_L3
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -445,10 +654,20 @@ INLINE_DRAW_CV_269_024_002:
 	video type=0, offset=COMMON_VIDEO_269, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_DRAW_CV_269_026.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_DRAW_CV_269_026.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_INLINE_DRAW_CV_269_025_L3:
+	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
+	video type=0, offset=COMMON_VIDEO_282, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	call PRISON_INLINE_DRAW_CV_269_026_L0
+	sub [BUDDY_Y], 0x0001
+	ret
+
+
+PRISON_INLINE_DRAW_CV_269_026_L1:
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	je [0x0D], 0x00, INLINE_DRAW_CV_266_005
+	call PRISON_INLINE_DRAW_CV_220_008_L2
+	jmp PRISON_INLINE_DRAW_CV_269_026_L2
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")

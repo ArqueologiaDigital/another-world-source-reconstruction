@@ -2,14 +2,14 @@ DELAY_LOOP_VARE6_AT_1C9A:
 	break
 	djnz [0xE6], DELAY_LOOP_VARE6_AT_1C9A
 	mov [0xE7], 0x00AA
-	setup channel=0x36, address=LABEL_1C4B
+	setup channel=0x36, address=CAVES_INLINE_SET_VAR01_TO_E_L2
 	mov [0xE6], 0x000A
 
 DELAY_LOOP_VARE6_AT_1CAB:
 	break
 	djnz [0xE6], DELAY_LOOP_VARE6_AT_1CAB
 	mov [0xE7], 0x0064
-	setup channel=0x36, address=LABEL_1C4B
+	setup channel=0x36, address=CAVES_INLINE_SET_VAR01_TO_E_L2
 	mov [0xE6], 0x0002
 	or [0xB1], 0x0020
 
@@ -17,7 +17,7 @@ DELAY_LOOP_VARE6_AT_1CC0:
 	break
 	djnz [0xE6], DELAY_LOOP_VARE6_AT_1CC0
 	mov [0xE8], 0x0082
-	setup channel=0x39, address=LABEL_1C6F
+	setup channel=0x39, address=CAVES_INLINE_SET_VAR01_TO_E_L3
 	mov [0xE6], 0x0003
 
 DELAY_LOOP_VARE6_AT_1CD1:
@@ -27,16 +27,16 @@ DELAY_LOOP_VARE6_AT_1CD1:
 	break
 	break
 	mov [0xE7], 0x0078
-	setup channel=0x36, address=LABEL_1C4B
+	setup channel=0x36, address=CAVES_INLINE_SET_VAR01_TO_E_L2
 	break
 	break
 	break
 	mov [0xE8], 0x008C
-	setup channel=0x36, address=LABEL_1C6F
+	setup channel=0x36, address=CAVES_INLINE_SET_VAR01_TO_E_L3
 	break
 	break
 	mov [0xE7], 0x0096
-	setup channel=0x39, address=LABEL_1C4B
+	setup channel=0x39, address=CAVES_INLINE_SET_VAR01_TO_E_L2
 	break
 	break
 	mov [0xE6], 0x0007
@@ -45,27 +45,27 @@ DELAY_LOOP_VARE6_AT_1CFF:
 	break
 	djnz [0xE6], DELAY_LOOP_VARE6_AT_1CFF
 	mov [0xE7], 0x0078
-	setup channel=0x36, address=LABEL_1C4B
+	setup channel=0x36, address=CAVES_INLINE_SET_VAR01_TO_E_L2
 	mov [0xE6], 0x000A
 
 DELAY_LOOP_VARE6_AT_1D10:
 	break
 	djnz [0xE6], DELAY_LOOP_VARE6_AT_1D10
 	mov [0xE8], 0x0064
-	setup channel=0x39, address=LABEL_1C6F
+	setup channel=0x39, address=CAVES_INLINE_SET_VAR01_TO_E_L3
 	break
 	break
 	mov [0xE7], 0x0078
-	setup channel=0x36, address=LABEL_1C4B
+	setup channel=0x36, address=CAVES_INLINE_SET_VAR01_TO_E_L2
 	break
 	break
 	break
 	mov [0xE8], 0x008C
-	setup channel=0x36, address=LABEL_1C6F
+	setup channel=0x36, address=CAVES_INLINE_SET_VAR01_TO_E_L3
 	break
 	break
 	mov [0xE7], 0x0064
-	setup channel=0x39, address=LABEL_1C4B
+	setup channel=0x39, address=CAVES_INLINE_SET_VAR01_TO_E_L2
 	break
 	break
 	break

@@ -256,7 +256,7 @@ LABEL_1011:
 	break
 	setPalette 0x07
 	mov [0x03], 0x000A
-	setup channel=0x3F, address=LABEL_0211
+	setup channel=0x3F, address=CAVES_INLINE_SET_VAR01_TO_E_L1
 	killChannel
 	video offset=CINEMATIC_677, x=160, y=100
 	break

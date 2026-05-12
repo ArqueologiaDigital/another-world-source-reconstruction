@@ -30,7 +30,7 @@ LABEL_D53C:
 	mov [HERO_Y], [0x44]
 
 LABEL_D554:
-	call LABEL_797C
+	call CAVES_COPY_VAR40_TO_VAR22_L3
 	jl [HERO_Y], [0x22], SHARED_RET
 	mov [HERO_Y], [0x22]
 	ret

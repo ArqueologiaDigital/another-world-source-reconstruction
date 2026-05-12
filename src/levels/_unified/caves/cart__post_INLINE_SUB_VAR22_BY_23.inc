@@ -1,4 +1,4 @@
-LABEL_606C:
+CAVES_INCREMENT_VAR21_BY_F_L1:
 	ret
 
 
@@ -232,7 +232,7 @@ ADVANCE_VAR0D_RESTORE_STATE:
 	mov [0x21], [0x5A]
 	mov [0x2B], [0x5B]
 	mov [0x29], [0x5C]
-	call LABEL_632A
+	call CAVES_FOLD_BODY_94B_9F1D7AF8_L1
 	mov [0x5A], [0x07]
 	mov [0x5B], [0x2B]
 	ret
@@ -243,7 +243,7 @@ LABEL_62CE:
 	mov [0x21], [0x5D]
 	mov [0x2B], [0x5E]
 	mov [0x29], [0x5F]
-	call LABEL_632A
+	call CAVES_FOLD_BODY_94B_9F1D7AF8_L1
 	mov [0x5D], [0x07]
 	mov [0x5E], [0x2B]
 	ret
@@ -254,7 +254,7 @@ LABEL_62E7:
 	mov [0x21], [0x60]
 	mov [0x2B], [0x61]
 	mov [0x29], [0x62]
-	call LABEL_632A
+	call CAVES_FOLD_BODY_94B_9F1D7AF8_L1
 	mov [0x60], [0x07]
 	mov [0x61], [0x2B]
 
@@ -263,9 +263,9 @@ LABEL_62FF:
 
 
 LABEL_6300:
-	call LABEL_638B
+	call CAVES_FOLD_BODY_94B_9F1D7AF8_L2
 	mov [0x1D], 0x0000
-	call LABEL_7E89
+	call CAVES_COPY_VAR01_TO_VAR28_L3
 	je [0x1D], 0x00, SET_VARS_07_08
 	jl [0x2B], 0x4000, INLINE_OR_VAR2B_WITH_4000
 	and [0x2B], 0x3FFF

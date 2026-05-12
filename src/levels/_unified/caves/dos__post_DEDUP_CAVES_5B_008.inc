@@ -4,5 +4,5 @@ LABEL_8D0E:
 	video type=0, offset=COMMON_VIDEO_253, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_254, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, INLINE_DRAW_CV_255_010__HELPER
-	call LABEL_8BE1
-	jmp LABEL_8D32
+	call CAVES_DRAW_CV246_AT_X07_Y08_L2
+	jmp CAVES_INLINE_DRAW_CV_255_031_L0

@@ -262,14 +262,14 @@ LABEL_3A24:
 	je [0x13], 0x00, LABEL_3A48
 	mov [0x13], 0x0000
 	sub [0x22], 0x0028
-	call LABEL_4788
+	call PRISON_DEDUP_PRISON_5B_032_L0
 	call LABEL_3797
 	jmp LABEL_3A77
 
 LABEL_3A48:
 	sub [0x22], [0x11]
 	sub [0x22], 0x003C
-	call LABEL_4788
+	call PRISON_DEDUP_PRISON_5B_032_L0
 	call LABEL_3797
 	add [0x22], 0x003C
 	jle [0x22], [0x21], LABEL_3A62
@@ -301,14 +301,14 @@ LABEL_3A85:
 	je [0x13], 0x00, LABEL_3AC2
 	mov [0x13], 0x0000
 	add [0x22], 0x0028
-	call LABEL_4788
+	call PRISON_DEDUP_PRISON_5B_032_L0
 	call LABEL_37AE
 	jmp LABEL_3AF1
 
 LABEL_3AC2:
 	add [0x22], [0x11]
 	add [0x22], 0x003C
-	call LABEL_4788
+	call PRISON_DEDUP_PRISON_5B_032_L0
 	call LABEL_37AE
 	sub [0x22], 0x003C
 	jge [0x22], [0x21], LABEL_3ADC

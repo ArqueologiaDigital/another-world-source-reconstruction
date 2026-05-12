@@ -14,7 +14,7 @@ LABEL_4580:
 	db 0x11
 
 LABEL_4581:
-	call LABEL_4538
+	call CAPSULE_INLINE_COPY_VAR22_TO_VAR08_L2
 	mov [0x68], [BUDDY_X]
 	mov [0x69], [BUDDY_Y]
 	mov [0x6A], [0x10]
@@ -38,7 +38,7 @@ LABEL_45BB:
 	db 0x11
 
 LABEL_45BC:
-	call LABEL_4538
+	call CAPSULE_INLINE_COPY_VAR22_TO_VAR08_L2
 	mov [0x70], [BUDDY_X]
 	mov [0x71], [BUDDY_Y]
 	mov [0x72], [0x10]
@@ -62,7 +62,7 @@ LABEL_45F6:
 	db 0x11
 
 LABEL_45F7:
-	call LABEL_4538
+	call CAPSULE_INLINE_COPY_VAR22_TO_VAR08_L2
 	mov [0x78], [BUDDY_X]
 	mov [0x79], [BUDDY_Y]
 	mov [0x7A], [0x10]

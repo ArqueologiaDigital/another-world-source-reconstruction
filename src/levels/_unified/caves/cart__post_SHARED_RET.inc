@@ -48,7 +48,7 @@ LABEL_82D4:
 	video type=0, offset=COMMON_VIDEO_240, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
-LABEL_82F1:
+CAVES_DRAW_CV204_AT_X07_Y08_L1:
 	jg [0x09], 0x03FF, SHARED_RET
 	video type=0, offset=COMMON_VIDEO_206, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
@@ -91,7 +91,7 @@ LABEL_836D:
 	video type=0, offset=COMMON_VIDEO_219, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
-LABEL_838E:
+CAVES_INLINE_DRAW_CV_220_016_L1:
 	jg [0x09], 0x03FF, SHARED_RET
 	video type=0, offset=COMMON_VIDEO_222, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
@@ -100,7 +100,7 @@ LABEL_838E:
 	video type=0, offset=COMMON_VIDEO_223, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
-LABEL_83AF:
+CAVES_DRAW_CV224_AT_X07_Y08_L1:
 	jg [0x09], 0x03FF, SHARED_RET
 	video type=0, offset=COMMON_VIDEO_226, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
@@ -109,7 +109,7 @@ LABEL_83AF:
 	video type=0, offset=COMMON_VIDEO_227, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
-LABEL_83D0:
+CAVES_INLINE_DRAW_CV_228_018_L0:
 	jg [0x09], 0x03FF, SHARED_RET
 	video type=0, offset=COMMON_VIDEO_230, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
@@ -118,17 +118,17 @@ LABEL_83D0:
 	video type=0, offset=COMMON_VIDEO_231, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
-LABEL_83F1:
+CAVES_INLINE_DRAW_CV_266_005_L1:
 	video type=0, offset=COMMON_VIDEO_268, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
-LABEL_83FC:
+CAVES_INLINE_DRAW_CV_269_024_L0:
 	video type=0, offset=COMMON_VIDEO_271, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
-LABEL_8407:
+CAVES_INLINE_DRAW_CV_272_013_L0:
 	video type=0, offset=COMMON_VIDEO_274, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
@@ -138,12 +138,12 @@ LABEL_8412:
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
-LABEL_841D:
+CAVES_INLINE_DRAW_CV_269_025_L1:
 	video type=0, offset=COMMON_VIDEO_281, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
-LABEL_8428:
+CAVES_INLINE_DRAW_CV_269_026_L0:
 	video type=0, offset=COMMON_VIDEO_283, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
@@ -156,5 +156,5 @@ LABEL_8433:
 LABEL_843E:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, DRAW_CV204_AT_X07_Y08
-	call LABEL_827B
-	jmp LABEL_8455
+	call CAVES_DRAW_CV204_AT_X07_Y08_L3
+	jmp CAVES_DRAW_CV204_AT_X07_Y08_L0

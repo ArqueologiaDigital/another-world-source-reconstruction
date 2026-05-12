@@ -1,5 +1,0 @@
-LABEL_2885:
-	jne [0x1D], 0x2A, SHARED_RET
-	je [0xB2], 0x00, SET_VARB3_TO_0000
-	mov [0xB2], 0x0000
-	ret

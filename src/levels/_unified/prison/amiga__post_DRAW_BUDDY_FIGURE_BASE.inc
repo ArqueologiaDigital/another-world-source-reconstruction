@@ -77,7 +77,7 @@ LABEL_1590:
 	break
 	mov [0x29], 0x0082
 	mov [0x12], 0x0028
-	jmp LABEL_682D
+	jmp PRISON_INLINE_SET_VAR29_TO_6_L9
 
 LABEL_15D7:
 	mov [0x12], 0x1008

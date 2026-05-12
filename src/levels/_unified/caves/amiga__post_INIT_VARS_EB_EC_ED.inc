@@ -64,7 +64,7 @@ LABEL_27F0:
 	video offset=CINEMATIC_273, x=[HERO_X], y=[HERO_Y]
 	add [HERO_Y], 0x0001
 	mov [0x03], 0x000A
-	setup channel=0x3F, address=LABEL_016F
+	setup channel=0x3F, address=CAVES_INLINE_SET_VAR01_TO_E_L1
 
 LABEL_2818:
 	break
@@ -82,7 +82,7 @@ LABEL_2822:
 	video offset=CINEMATIC_271, x=[HERO_X], y=[HERO_Y]
 	add [HERO_Y], 0x0001
 	mov [0x03], 0x000A
-	setup channel=0x3F, address=LABEL_016F
+	setup channel=0x3F, address=CAVES_INLINE_SET_VAR01_TO_E_L1
 
 LABEL_2843:
 	break

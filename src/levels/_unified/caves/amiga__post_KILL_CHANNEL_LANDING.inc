@@ -9,7 +9,7 @@ LABEL_0162:
 LABEL_016E:
 	db 0x11
 
-LABEL_016F:
+CAVES_INLINE_SET_VAR01_TO_E_L1:
 	break
 	break
 	break

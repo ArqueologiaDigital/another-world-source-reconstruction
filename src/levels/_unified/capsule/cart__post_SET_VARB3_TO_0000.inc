@@ -1,9 +1,9 @@
-LABEL_2A12:
+CAPSULE_INIT_VARS_29_2F_L1:
 	mov [0x9F], [0x8B]
 	mov [0x8E], [0x8C]
 	mov [0x8F], [0x8D]
 	break
-	jmp LABEL_2A12
+	jmp CAPSULE_INIT_VARS_29_2F_L1
 
 LABEL_2A1F:
 	break

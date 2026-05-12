@@ -1,8 +1,0 @@
-LABEL_2FBF:
-	je [0xB1], 0x01, INIT_VARS_2F_29_1
-	jg [BUDDY_X], 0x010E, LABEL_30C7
-	mov [0x2F], 0x0014
-	jge [BUDDY_X], 0xFA, SHARED_RET
-	mov [0x29], 0x00FA
-	mov [0x2F], 0x0003
-	ret

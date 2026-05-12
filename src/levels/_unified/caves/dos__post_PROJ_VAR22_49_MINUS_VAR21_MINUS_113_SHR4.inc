@@ -1,5 +1,0 @@
-LABEL_C035:
-	jl [0x21], 0x45, SET_VAR22_TO_007D
-	jg [0x21], 0x0106, SET_VAR22_TO_007D
-	mov [0x22], 0x0104
-	ret

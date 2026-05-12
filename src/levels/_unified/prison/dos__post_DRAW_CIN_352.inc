@@ -1,5 +1,0 @@
-LABEL_5210:
-	mov [0xF8], [0x09]
-	and [0xF8], 0x000F
-	je [0xF8], 0x01, DRAW_CIN_169_WITH_POS_STEP_AT_B673C5FF
-	ret

@@ -1,4 +1,4 @@
-LABEL_1BBC:
+PRISON_FILL_AND_DRAW_CIN_24_28_L2:
 	setup channel=0x23, address=LABEL_1FF0
 	mov [0x57], 0x0000
 

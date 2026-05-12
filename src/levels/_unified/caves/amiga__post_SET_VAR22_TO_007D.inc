@@ -1,5 +1,0 @@
-LABEL_BC01:
-	jl [0x21], 0x32, SET_VAR22_TO_0080
-	jg [0x21], 0x0106, SET_VAR22_TO_0080
-	mov [0x22], 0x007B
-	ret

@@ -107,24 +107,24 @@ LABEL_908A:
 	killChannel
 	break
 	add [HERO_X], 0x0002
-	call LABEL_6FA9
+	call PRISON_DRAW_CV_063_L0
 
 LABEL_90B2:
 	break
 	add [HERO_X], 0x0002
-	call LABEL_6F92
+	call PRISON_DRAW_CV_061_L0
 
 LABEL_90BA:
 	break
 	add [HERO_X], 0x0002
-	call LABEL_6F7B
+	call PRISON_DRAW_CV_080_L3
 
 LABEL_90C2:
 	add [HERO_X], 0x0001
 	jmp HERO_WALK_LEFT_LOOP
 	break
 	add [HERO_X], 0x0002
-	call LABEL_6F0E
+	call PRISON_DRAW_CV_074_L0
 
 LABEL_90D1:
 	break
@@ -134,7 +134,7 @@ LABEL_90D1:
 LABEL_90D9:
 	break
 	add [HERO_X], 0x0002
-	call LABEL_701E
+	call PRISON_DRAW_CV_072_L0
 
 LABEL_90E1:
 	add [HERO_X], 0x0001

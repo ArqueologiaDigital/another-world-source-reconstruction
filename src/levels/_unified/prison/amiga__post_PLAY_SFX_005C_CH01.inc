@@ -1,4 +1,4 @@
-LABEL_3A06:
+PRISON_COPY_VAR22_TO_VAR07_L10:
 	or [0x04], 0x4000
 	play id=0x005D, freq=0x14, vol=0x40, channel=0x00
 	deleteChannels first=0x14, last=0x16
@@ -8,20 +8,20 @@ LABEL_3A06:
 	and [0xF8], 0x00FF
 	jl [0xF8], 0x20, LABEL_3A3C
 	sub [0xF8], 0x0020
-	setup channel=0x14, address=LABEL_0FBB
+	setup channel=0x14, address=PRISON_DRAW_CIN_284_BLOCK_95B_L2
 	jl [0xF8], 0x10, SHARED_RET
 	setup channel=0x14, address=DRAW_CIN_146_TO_147_4F_AT_8AA18039
 	ret
 
 
 LABEL_3A3C:
-	setup channel=0x14, address=LABEL_0EF0
+	setup channel=0x14, address=PRISON_DRAW_CIN_132_TO_133_2F_AT_BB9185F0_L0
 	jl [0xF8], 0x10, SHARED_RET
 	setup channel=0x14, address=DRAW_CIN_280_TO_281_2F_AT_75ED3E60
 	ret
 
 
-LABEL_3A4B:
+PRISON_COPY_VAR22_TO_VAR07_L11:
 	call LABEL_3ACA
 	mov [0xF8], [0x2B]
 	and [0xF8], 0x0800
@@ -119,15 +119,15 @@ LABEL_3B07:
 	db 0x06, 0x54, 0x32, 0x72, 0x01, 0x02, 0x07, 0x3B
 	db 0x47, 0x11
 
-LABEL_3B51:
+PRISON_DRAW_CIN505_AT_X21_Y27_L38:
 	mov [0x21], [0x22]
 	mov [0x13], 0x0001
-	call LABEL_39AB
-	jne [0x13], 0xFFFF, LABEL_3B63
+	call PRISON_SET_VAR13_TO_FFFF_L1
+	jne [0x13], 0xFFFF, PRISON_DRAW_CIN505_AT_X21_Y27_L33
 	ret
 
 
-LABEL_3B63:
+PRISON_DRAW_CIN505_AT_X21_Y27_L33:
 	and [0x13], 0x7FFF
 	mov [0x0E], 0x0000
 	call LABEL_3BB3
@@ -141,21 +141,21 @@ LABEL_3B63:
 LABEL_3B81:
 	db 0x11
 
-LABEL_3B82:
+PRISON_DRAW_CIN505_AT_X21_Y27_L32:
 	mov [0x21], [0x22]
 	mov [0x13], 0x0001
-	call LABEL_39AB
-	jne [0x13], 0xFFFF, LABEL_3B95
+	call PRISON_SET_VAR13_TO_FFFF_L1
+	jne [0x13], 0xFFFF, PRISON_DRAW_CIN505_AT_X21_Y27_L27
 	ret
 
 
 LABEL_3B94:
 	db 0x11
 
-LABEL_3B95:
+PRISON_DRAW_CIN505_AT_X21_Y27_L27:
 	and [0x13], 0x7FFF
 	mov [0x0E], 0x0001
-	call LABEL_3D10
+	call PRISON_DRAW_CIN473_AT_X21_Y27_ZOOM_40_L11
 	add [0x13], 0x0001
 	or [0x13], 0x8000
 	je [0x0E], 0x00, SHARED_RET
@@ -164,8 +164,8 @@ LABEL_3B95:
 
 
 LABEL_3BB3:
-	jge [0x13], 0x64, LABEL_3BFF
-	jle [0x13], 0x03, LABEL_3BE1
+	jge [0x13], 0x64, PRISON_DRAW_CIN_483_L0
+	jle [0x13], 0x03, PRISON_DRAW_CIN_486_L0
 	jle [0x13], 0x05, LABEL_3BCF
 	video offset=CINEMATIC_488, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE

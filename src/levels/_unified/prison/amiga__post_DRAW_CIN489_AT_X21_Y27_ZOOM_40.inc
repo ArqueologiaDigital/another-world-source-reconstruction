@@ -1,4 +1,4 @@
-LABEL_3DF9:
+PRISON_DRAW_CIN_499_L3:
 	jne [0x13], 0x81, LABEL_3E0B
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x01
 	video offset=CINEMATIC_472, x=[0x21], y=[0x27]
@@ -48,23 +48,23 @@ LABEL_3E53:
 
 
 LABEL_3E5F:
-	jne [0x13], 0x89, LABEL_3E6B
+	jne [0x13], 0x89, PRISON_DRAW_CIN_499_L0
 	video offset=CINEMATIC_464, x=[0x21], y=[0x27]
 	ret
 
 
-LABEL_3E6B:
+PRISON_DRAW_CIN_499_L0:
 	ret
 
 
 LABEL_3E6C:
 	db 0x11
 
-LABEL_3E6D:
+PRISON_DRAW_CIN_499_L1:
 	mov [0x22], [0x21]
 	sub [0x22], 0x0064
 	mov [0x09], [0x22]
-	call LABEL_45ED
+	call PRISON_DEDUP_PRISON_5B_032_L0
 	call LABEL_3FBB
 	mov [0x2C], 0x0001
 	jne [0x1D], 0x00, LABEL_3EDD
@@ -72,22 +72,22 @@ LABEL_3E6D:
 	ret
 
 
-LABEL_3E8D:
+PRISON_DRAW_CIN_499_L2:
 	mov [0x22], [0x21]
 	sub [0x22], 0x0140
 	mov [0x09], [0x22]
-	call LABEL_45ED
+	call PRISON_DEDUP_PRISON_5B_032_L0
 	call LABEL_3FBB
 	mov [0x2C], 0x0001
 	jmp LABEL_3EDD
 LABEL_3EA4:
 	db 0x11
 
-LABEL_3EA5:
+PRISON_DRAW_CIN_483_L1:
 	mov [0x22], [0x21]
 	add [0x22], 0x0064
 	mov [0x09], [0x22]
-	call LABEL_45ED
+	call PRISON_DEDUP_PRISON_5B_032_L0
 	call LABEL_3FBB
 	mov [0x2C], 0x0000
 	jne [0x1D], 0x00, LABEL_3EDD
@@ -95,11 +95,11 @@ LABEL_3EA5:
 	ret
 
 
-LABEL_3EC5:
+PRISON_DRAW_CIN_483_L2:
 	mov [0x22], [0x21]
 	add [0x22], 0x0140
 	mov [0x09], [0x22]
-	call LABEL_45ED
+	call PRISON_DEDUP_PRISON_5B_032_L0
 	call LABEL_3FBB
 	mov [0x2C], 0x0000
 	jmp LABEL_3EDD
@@ -115,23 +115,23 @@ LABEL_3EDD:
 	jge [0x1D], 0x28, LABEL_3F00
 
 CALL_LABEL_401B_AND_RET:
-	call LABEL_401B
+	call PRISON_INLINE_ADD_VAR2C_BY_1_L5
 	ret
 
 
 LABEL_3F00:
-	call LABEL_3A4B
+	call PRISON_COPY_VAR22_TO_VAR07_L11
 	mov [0x13], 0xFFFE
-	je [0x2C], 0x01, LABEL_3E8D
-	jmp LABEL_3EC5
+	je [0x2C], 0x01, PRISON_DRAW_CIN_499_L2
+	jmp PRISON_DRAW_CIN_483_L2
 LABEL_3F10:
 	db 0x05
 
 LABEL_3F11:
-	call LABEL_401B
-	call LABEL_402A
+	call PRISON_INLINE_ADD_VAR2C_BY_1_L5
+	call PRISON_COPY_VAR40_TO_VAR27_L1
 	mov [0x11], 0xFFFF
-	call LABEL_4057
+	call PRISON_COPY_VARAD_TO_VAR11_L1
 	ret
 
 
@@ -150,7 +150,7 @@ LABEL_3F3A:
 
 LABEL_3F3B:
 	call LABEL_4084
-	call LABEL_401B
+	call PRISON_INLINE_ADD_VAR2C_BY_1_L5
 	mov [0x21], [0x10]
 	mov [0x13], 0x006E
 	mov [0xF8], [0x11]

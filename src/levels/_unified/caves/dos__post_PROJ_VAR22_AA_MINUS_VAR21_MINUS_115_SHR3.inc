@@ -1,6 +1,0 @@
-LABEL_BB64:
-	mov [0x22], 0x0096
-	mov [HERO_X], 0x00F8
-	jg [0x21], 0xD3, SHARED_RET
-	mov [HERO_X], 0x00B2
-	ret

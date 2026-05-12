@@ -59,7 +59,7 @@ LABEL_1217:
 	break
 	video offset=CINEMATIC_202, x=[HERO_X], y=[HERO_Y]
 	video offset=CINEMATIC_208, x=[HERO_X], y=[HERO_Y]
-	setup channel=0x3F, address=LABEL_0211
+	setup channel=0x3F, address=CAVES_INLINE_SET_VAR01_TO_E_L1
 	break
 	video offset=CINEMATIC_202, x=[HERO_X], y=[HERO_Y]
 	video offset=CINEMATIC_208, x=[HERO_X], y=[HERO_Y]

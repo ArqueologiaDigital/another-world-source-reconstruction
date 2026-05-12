@@ -61,30 +61,63 @@ DELETE_GAME_AND_FX_CHANNELS:
 .endif
 
 .include "../_helpers/COPY_HACK67_TO_VAR66.inc"
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_COPY_HACK67_TO_VAR66.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_COPY_HACK67_TO_VAR66.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_COPY_HACK67_TO_VAR66.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_COPY_HACK67_TO_VAR66_L0:
+	db 0x11
+
+CAVES_COPY_HACK67_TO_VAR66_L1:
+	jne [HACK_VAR_67], 0x28, CAVES_COPY_HACK67_TO_VAR66_L2
+	mov [HACK_VAR_67], 0x0067
+	mov [HERO_X], 0x000A
+	ret
+
+
+CAVES_COPY_HACK67_TO_VAR66_L2:
+	jne [HACK_VAR_67], 0x49, ADD_HACK67_BY_20
+	mov [HACK_VAR_67], 0x0069
+	mov [HERO_X], 0x0032
+	ret
 .endif
 
 .include "../_helpers/ADD_HACK67_BY_20.inc"
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_ADD_HACK67_BY_20.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_ADD_HACK67_BY_20.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_ADD_HACK67_BY_20.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_ADD_HACK67_BY_20_L0:
+	jne [HACK_VAR_67], 0x69, SUB_HACK67_BY_20
+	mov [HACK_VAR_67], 0x0049
+	mov [HERO_X], 0x00AA
+	ret
 .endif
 
 .include "../_helpers/SUB_HACK67_BY_20.inc"
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_SUB_HACK67_BY_20.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_SUB_HACK67_BY_20.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_SUB_HACK67_BY_20.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_SUB_HACK67_BY_20_L0:
+	jne [HACK_VAR_67], 0xAF, CAVES_SUB_HACK67_BY_20_L1
+	mov [HACK_VAR_67], 0x00CE
+	mov [HERO_Y], 0x0078
+	ret
+
+
+CAVES_SUB_HACK67_BY_20_L1:
+	jne [HACK_VAR_67], 0xC8, CAVES_SUB_HACK67_BY_20_L2
+	mov [HACK_VAR_67], 0x00A7
+	jg [HERO_Y], 0x50, SHARED_RET
+	call CAVES_SUB_HACK67_BY_20_L3
+	call SET_VAR04_TO_0024
+	setup channel=0x15, address=KILL_CHANNEL_LANDING
+	mov [0x63], 0x0064
+	mov [0x34], 0x0000
+	mov [HERO_Y], 0x0014
+	mov [HERO_X], 0x0140
+	call CAVES_SUB_HACK67_BY_20_L4
+	ret
+
+
+CAVES_SUB_HACK67_BY_20_L2:
+	jne [HACK_VAR_67], 0x68, DECR_HACK67_BY_1
+	jl [HERO_Y], 0x96, DECR_HACK67_BY_1
+	mov [HACK_VAR_67], 0x0087
+	mov [HERO_Y], 0x0028
+	ret
 .endif
 
 .include "../_helpers/DECR_HACK67_BY_1.inc"

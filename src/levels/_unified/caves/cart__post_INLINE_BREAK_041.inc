@@ -34,7 +34,7 @@ LABEL_EFE3:
 	sub [HERO_X], 0x000C
 	mov [0x34], 0xFFFE
 	sub [HERO_X], 0x000F
-	call LABEL_79C2
+	call CAVES_SUB_HACK67_BY_20_L4
 	break
 	add [HERO_X], 0x000F
 	video type=0, offset=COMMON_VIDEO_055, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -95,7 +95,7 @@ LABEL_F0AA:
 	video type=0, offset=COMMON_VIDEO_055, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x34], 0xFFFB
 	sub [HERO_X], 0x000F
-	call LABEL_79C2
+	call CAVES_SUB_HACK67_BY_20_L4
 	sub [HERO_X], 0x0002
 	break
 	add [HERO_X], 0x000F
@@ -147,7 +147,7 @@ LABEL_F157:
 	add [HERO_X], 0x000C
 	mov [0x34], 0x0002
 	add [HERO_X], 0x000F
-	call LABEL_79C2
+	call CAVES_SUB_HACK67_BY_20_L4
 	break
 	sub [HERO_X], 0x000F
 	video type=0, offset=COMMON_VIDEO_010, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -208,7 +208,7 @@ LABEL_F21E:
 	video type=0, offset=COMMON_VIDEO_010, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x34], 0x0005
 	add [HERO_X], 0x000F
-	call LABEL_79C2
+	call CAVES_SUB_HACK67_BY_20_L4
 	add [HERO_X], 0x0002
 	break
 	sub [HERO_X], 0x000F
@@ -249,7 +249,7 @@ LABEL_F2DF:
 	call SET_VAR04_TO_0030
 	je [0x0A], 0x00, LABEL_F2CB
 	mov [0x2A], 0x0020
-	call LABEL_7E33
+	call CAVES_STEP_DRAW_CV336_THEN_CV340_L4
 	add [HERO_X], 0x0004
 	call LABEL_9A26
 	add [HERO_X], 0x0001
@@ -279,10 +279,10 @@ LABEL_F328:
 	mov [0x27], [HERO_Y]
 	add [0x21], 0x001E
 	sub [0x27], 0x0027
-	call LABEL_6527
+	call CAVES_STEP_DRAW_CV336_THEN_CV340_L6
 	break
 	sub [HERO_X], 0x0001
 	call LABEL_9A26
 	sub [HERO_X], 0x0001
 	jne [HERO_ACTION_POS_MASK], 0x80, LABEL_F2FA
-	setup channel=0x17, address=LABEL_7462
+	setup channel=0x17, address=CAVES_STEP_DRAW_CV336_THEN_CV340_L9

@@ -3,12 +3,13 @@ SET_VAR2F_TO_001A:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_SET_VAR2F_TO_001A.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_SET_VAR2F_TO_001A.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_SET_VAR2F_TO_001A.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_SET_VAR2F_TO_001A_L0:
+	je [0xB0], 0x00, INIT_VARS_2F_29_3
+	jne [HACK_VAR_67], [0x10], INIT_VARS_2F_29_3
+	jg [HERO_X], 0x010E, INIT_VARS_2F_29_3
+	mov [0x2F], 0x0013
+	ret
 .endif
 
 INIT_VARS_2F_29_3:
@@ -17,12 +18,35 @@ INIT_VARS_2F_29_3:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INIT_VARS_2F_29_3.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INIT_VARS_2F_29_3.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INIT_VARS_2F_29_3.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_INIT_VARS_2F_29_3_L0:
+	je [0xB0], 0x02, PRISON_INIT_VARS_2F_29_3_L1
+	jne [HACK_VAR_67], 0x01, PRISON_INIT_VARS_2F_29_3_L2
+	jg [HERO_X], 0x010E, PRISON_INIT_VARS_2F_29_3_L2
+	mov [0x2F], 0x0018
+	mov [0x29], [BUDDY_X]
+	sub [0x29], 0x0010
+	jg [BUDDY_X], 0x00, SHARED_RET
+	mov [0x29], 0xFFE7
+	ret
+
+
+PRISON_INIT_VARS_2F_29_3_L2:
+	je [0xB0], 0x02, PRISON_INIT_VARS_2F_29_3_L1
+	mov [0x2F], 0x0019
+	mov [0x29], 0x0190
+	ret
+
+
+PRISON_INIT_VARS_2F_29_3_L1:
+	jg [HACK_VAR_67], 0x02, SHARED_RET
+	mov [0x29], 0xFF9C
+	mov [0x2F], 0x0019
+	ret
+
+
+PRISON_INIT_VARS_2F_29_3_L3:
+	jne [0xB0], 0x00, PRISON_INIT_VARS_2F_29_L0
 .endif
 
 INIT_VARS_2F_29:
@@ -31,12 +55,17 @@ INIT_VARS_2F_29:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INIT_VARS_2F_29.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INIT_VARS_2F_29.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INIT_VARS_2F_29.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_INIT_VARS_2F_29_L0:
+	mov [0xF8], [0x73]
+	and [0xF8], 0x0800
+	jne [0xF8], 0x00, INIT_VARS_2F_29
+	mov [0x2F], 0x0019
+	mov [0x29], 0xFF9C
+	or [0x74], 0x6000
+	mov [0xB0], 0x0002
+	setup channel=0x3A, address=PRISON_INIT_VARS_2F_29_L1
+	ret
 .endif
 
 INIT_VARS_2F_29_2:
@@ -45,12 +74,57 @@ INIT_VARS_2F_29_2:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INIT_VARS_2F_29_2.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INIT_VARS_2F_29_2.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INIT_VARS_2F_29_2.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+STATE_VAR12_BIG_DISPATCH_CASE_30:
+	je [0xB2], 0x00, SHARED_RET
+	jg [0xB2], 0x09, PRISON_INIT_VARS_2F_29_2_L0
+	jne [0xB2], 0x01, PRISON_INIT_VARS_2F_29_2_L1
+	mov [0xB2], 0x0002
+	mov [0x2F], 0x0012
+	ret
+
+
+PRISON_INIT_VARS_2F_29_2_L1:
+	jne [0xB2], 0x02, PRISON_INIT_VARS_2F_29_2_L2
+	mov [0x2F], 0x001C
+	mov [0xB2], 0x0003
+	ret
+
+
+PRISON_INIT_VARS_2F_29_2_L2:
+	jne [0xB2], 0x03, PRISON_INIT_VARS_2F_29_2_L3
+	jne [0x10], [HACK_VAR_67], SHARED_RET
+	mov [0xB2], 0x0004
+	mov [0x29], [BUDDY_X]
+	sub [0x29], 0x0014
+	mov [0x2F], 0x0019
+	je [0xB4], 0x00, SHARED_RET
+	mov [0xB2], 0x000B
+	ret
+
+
+PRISON_INIT_VARS_2F_29_2_L3:
+	jne [0xB2], 0x04, PRISON_INIT_VARS_2F_29_2_L4
+	mov [0xB2], 0x0005
+	mov [0x2F], 0x0005
+	ret
+
+
+PRISON_INIT_VARS_2F_29_2_L4:
+	jne [0xB2], 0x05, PRISON_INIT_VARS_2F_29_2_L5
+	jl [HERO_X], 0x0104, INIT_VARS_B2_2F_29
+	mov [0xB2], 0x0006
+	mov [0x2F], 0x000B
+	ret
+
+
+PRISON_INIT_VARS_2F_29_2_L5:
+	jne [0xB2], 0x06, INIT_VARS_B2_2F_29
+	mov [0xB2], 0x0007
+	mov [0x29], [BUDDY_X]
+	sub [0x29], 0x0014
+	mov [0x2F], 0x0019
+	ret
 .endif
 
 INIT_VARS_B2_2F_29:
@@ -60,12 +134,45 @@ INIT_VARS_B2_2F_29:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INIT_VARS_B2_2F_29.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INIT_VARS_B2_2F_29.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INIT_VARS_B2_2F_29.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_INIT_VARS_2F_29_2_L0:
+	jne [0xB2], 0x0A, PRISON_INIT_VARS_B2_2F_29_L0
+	mov [0x2F], 0x001D
+	mov [0xB2], 0x000B
+	ret
+
+
+PRISON_INIT_VARS_B2_2F_29_L0:
+	jne [0xB2], 0x0B, PRISON_INIT_VARS_B2_2F_29_L1
+	mov [0x2F], 0x0006
+	mov [0xB2], 0x000C
+	ret
+
+
+PRISON_INIT_VARS_B2_2F_29_L1:
+	jne [0xB2], 0x0C, PRISON_INIT_VARS_B2_2F_29_L2
+	mov [0x2F], 0x0019
+	mov [0xB2], 0x000D
+	mov [0x29], [BUDDY_X]
+	add [0x29], 0x0028
+	ret
+
+
+PRISON_INIT_VARS_B2_2F_29_L2:
+	jne [0xB2], 0x0D, PRISON_INIT_VARS_B2_2F_29_L3
+	mov [0x2F], 0x0006
+	mov [0xB2], 0x000E
+	ret
+
+
+PRISON_INIT_VARS_B2_2F_29_L3:
+	jne [0xB2], 0x0E, SHARED_RET
+	jne [HACK_VAR_67], [0x10], SHARED_RET
+	mov [0xF8], [0x49]
+	and [0xF8], 0x0380
+	je [0xF8], 0x00, SET_VAR2F_TO_0009
+	mov [0x2F], 0x000C
+	ret
 .endif
 
 SET_VAR2F_TO_0009:
@@ -93,12 +200,10 @@ INIT_VAR29_FROM_VAR50_PLUS_A_VAR2F_10:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INIT_VAR29_FROM_VAR50_PLUS_A_VAR2F_10.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INIT_VAR29_FROM_VAR50_PLUS_A_VAR2F_10.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INIT_VAR29_FROM_VAR50_PLUS_A_VAR2F_10.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_INIT_VAR29_FROM_VAR50_PLUS_A_VAR2F_10_L0:
+	jl [BUDDY_X], 0xA0, INIT_VARS_29_2F
+	jl [BUDDY_X], 0xAA, PRISON_INIT_VAR29_FROM_VAR50_PLUS_A_VAR2F_10_L1
 .endif
 
 INIT_VARS_29_2F:
@@ -107,12 +212,25 @@ INIT_VARS_29_2F:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INIT_VARS_29_2F.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INIT_VARS_29_2F.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INIT_VARS_29_2F.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_INIT_VAR29_FROM_VAR50_PLUS_A_VAR2F_10_L1:
+	mov [BUDDY_X], 0x00A2
+	mov [0x2F], 0x0013
+	mov [0xF8], [0x11]
+	and [0xF8], 0x1000
+	jne [0xF8], 0x00, SHARED_RET
+	jl [0x14], 0x1C, SHARED_RET
+	mov [0x2F], 0x0005
+	jge [0x11], 0x2000, SHARED_RET
+	mov [0x2F], 0x0016
+	ret
+
+
+STATE_VAR12_BIG_DISPATCH_CASE_18:
+	jg [BUDDY_X], 0x1E, INIT_VARS_07_2F
+	mov [0x29], 0x001F
+	mov [0x2F], 0x0001
+	ret
 .endif
 
 INIT_VARS_07_2F:
@@ -121,12 +239,15 @@ INIT_VARS_07_2F:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INIT_VARS_07_2F.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INIT_VARS_07_2F.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INIT_VARS_07_2F.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_INIT_VARS_07_2F_L0:
+	je [0xB1], 0x01, INIT_VARS_2F_29_1
+	jg [BUDDY_X], 0x010E, PRISON_INIT_VARS_07_2F_L1
+	mov [0x2F], 0x0014
+	jge [BUDDY_X], 0xFA, SHARED_RET
+	mov [0x29], 0x00FA
+	mov [0x2F], 0x0003
+	ret
 .endif
 
 INIT_VARS_2F_29_1:
@@ -161,12 +282,23 @@ SET_VARS_29_2F:
 .include "../_helpers/SET_VAR2F_TO_000F.inc"
 .include "../_helpers/SET_VAR2F_TO_000F.inc"
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_DEDUP_PRISON_5B_023.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_DEDUP_PRISON_5B_023.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DEDUP_PRISON_5B_023.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_DEDUP_PRISON_5B_023_L0:
+	call PRISON_DEDUP_PRISON_5B_023_L1
+	jg [0x1D], 0x1D, PRISON_DEDUP_PRISON_5B_023_L2
+	mov [0x21], [BUDDY_X]
+	call PRISON_DEDUP_PRISON_5B_023_L3
+	mov [0x25], [0x26]
+	mov [0x21], [HERO_X]
+	call PRISON_DEDUP_PRISON_5B_023_L3
+	mov [0x24], [0x26]
+	jg [0x25], 0x32, PRISON_DEDUP_PRISON_5B_023_L2
+	jle [0x24], [0x25], PRISON_DEDUP_PRISON_5B_023_L2
+	mov [0x29], [0x22]
+	jl [BUDDY_X], [HERO_X], STEP_VAR29_DOWN10_SET_VAR2F_11
+	add [0x29], 0x000A
+	mov [0x2F], 0x0011
+	ret
 .endif
 
 .include "../_helpers/STEP_VAR29_DOWN10_SET_VAR2F_11.inc"
@@ -188,21 +320,290 @@ SET_VARS_29_2F:
 .endif
 
 .include "../_helpers/INCREMENT_VAR21_BY_F.inc"
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INCREMENT_VAR21_BY_F.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INCREMENT_VAR21_BY_F.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INCREMENT_VAR21_BY_F.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_INCREMENT_VAR21_BY_F_L0:
+	mov [0x22], [HERO_X]
+	mov [0xF8], [0x04]
+	jge [0xF8], 0x4000, PRISON_INCREMENT_VAR21_BY_F_L1
+	jl [0xF8], 0x20, PRISON_INCREMENT_VAR21_BY_F_L2
+	sub [0xF8], 0x0020
+
+PRISON_INCREMENT_VAR21_BY_F_L2:
+	jl [0xF8], 0x10, INLINE_SUB_VAR22_BY_23
+	add [0x22], 0x0023
+	ret
 .endif
 
 .include "../_helpers/INLINE_SUB_VAR22_BY_23.inc"
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INLINE_SUB_VAR22_BY_23.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_SUB_VAR22_BY_23.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_SUB_VAR22_BY_23.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_INCREMENT_VAR21_BY_F_L1:
+	ret
+
+
+PRISON_INLINE_SUB_VAR22_BY_23_L0:
+	db 0x11
+
+PRISON_INLINE_SUB_VAR22_BY_23_L1:
+	call PRISON_INLINE_SUB_VAR22_BY_23_L2
+	sub [BUDDY_Y], 0x000A
+	video offset=CINEMATIC_361, x=[BUDDY_X], y=[BUDDY_Y]
+	break
+	call PRISON_INLINE_SUB_VAR22_BY_23_L2
+	sub [BUDDY_Y], 0x0006
+	video offset=CINEMATIC_362, x=[BUDDY_X], y=[BUDDY_Y]
+	break
+	call PRISON_INLINE_SUB_VAR22_BY_23_L2
+	video offset=CINEMATIC_363, x=[BUDDY_X], y=[BUDDY_Y]
+	break
+	call PRISON_INLINE_SUB_VAR22_BY_23_L2
+	sub [BUDDY_Y], 0x0001
+	video offset=CINEMATIC_364, x=[BUDDY_X], y=[BUDDY_Y]
+	break
+	call PRISON_INLINE_SUB_VAR22_BY_23_L2
+	sub [BUDDY_Y], 0x0002
+	video offset=CINEMATIC_363, x=[BUDDY_X], y=[BUDDY_Y]
+	mov [0x29], 0x0001
+
+PRISON_INLINE_SUB_VAR22_BY_23_L3:
+	call PRISON_INLINE_SUB_VAR22_BY_23_L4
+	break
+	call PRISON_INLINE_SUB_VAR22_BY_23_L2
+	video offset=CINEMATIC_362, x=[BUDDY_X], y=[BUDDY_Y]
+	break
+	call PRISON_INLINE_SUB_VAR22_BY_23_L2
+	video offset=CINEMATIC_363, x=[BUDDY_X], y=[BUDDY_Y]
+	break
+	call PRISON_INLINE_SUB_VAR22_BY_23_L2
+	video offset=CINEMATIC_364, x=[BUDDY_X], y=[BUDDY_Y]
+	break
+	call PRISON_INLINE_SUB_VAR22_BY_23_L2
+	video offset=CINEMATIC_361, x=[BUDDY_X], y=[BUDDY_Y]
+	djnz [0x29], PRISON_INLINE_SUB_VAR22_BY_23_L3
+	break
+	call ADVANCE_VAR0D_RESTORE_STATE
+	video offset=CINEMATIC_380, x=[BUDDY_X], y=[BUDDY_Y]
+	break
+	call ADVANCE_VAR0D_RESTORE_STATE
+	video offset=CINEMATIC_381, x=[BUDDY_X], y=[BUDDY_Y]
+	break
+	call ADVANCE_VAR0D_RESTORE_STATE
+	video offset=CINEMATIC_382, x=[BUDDY_X], y=[BUDDY_Y]
+	break
+	call ADVANCE_VAR0D_RESTORE_STATE
+	sub [BUDDY_Y], 0x0003
+	video offset=CINEMATIC_383, x=[BUDDY_X], y=[BUDDY_Y]
+	break
+	call ADVANCE_VAR0D_RESTORE_STATE
+	video offset=CINEMATIC_382, x=[BUDDY_X], y=[BUDDY_Y]
+	mov [0x29], 0x000A
+
+PRISON_INLINE_SUB_VAR22_BY_23_L5:
+	mov [0xF8], [0x2B]
+	and [0xF8], 0x00FF
+	jl [0xF8], 0x02, PRISON_INLINE_SUB_VAR22_BY_23_L6
+	mov [0xF8], [0x29]
+	and [0xF8], 0x0001
+	je [0xF8], 0x01, PRISON_INLINE_SUB_VAR22_BY_23_L6
+	sub [0x2B], 0x0001
+
+PRISON_INLINE_SUB_VAR22_BY_23_L6:
+	call PRISON_INLINE_SUB_VAR22_BY_23_L4
+	break
+	call ADVANCE_VAR0D_RESTORE_STATE
+	je [0x09], 0x01, PRISON_INLINE_SUB_VAR22_BY_23_L7
+	video offset=CINEMATIC_385, x=[BUDDY_X], y=[BUDDY_Y]
+	break
+	call ADVANCE_VAR0D_RESTORE_STATE
+	je [0x09], 0x01, PRISON_INLINE_SUB_VAR22_BY_23_L7
+	video offset=CINEMATIC_386, x=[BUDDY_X], y=[BUDDY_Y]
+	break
+	call ADVANCE_VAR0D_RESTORE_STATE
+	je [0x09], 0x01, PRISON_INLINE_SUB_VAR22_BY_23_L7
+	video offset=CINEMATIC_383, x=[BUDDY_X], y=[BUDDY_Y]
+	break
+	call ADVANCE_VAR0D_RESTORE_STATE
+	je [0x09], 0x01, PRISON_INLINE_SUB_VAR22_BY_23_L7
+	sub [BUDDY_Y], 0x0001
+	video offset=CINEMATIC_383, x=[BUDDY_X], y=[BUDDY_Y]
+	break
+	call ADVANCE_VAR0D_RESTORE_STATE
+	je [0x09], 0x01, PRISON_INLINE_SUB_VAR22_BY_23_L7
+	video offset=CINEMATIC_386, x=[BUDDY_X], y=[BUDDY_Y]
+	break
+	call ADVANCE_VAR0D_RESTORE_STATE
+	je [0x09], 0x01, PRISON_INLINE_SUB_VAR22_BY_23_L7
+	video offset=CINEMATIC_385, x=[BUDDY_X], y=[BUDDY_Y]
+	djnz [0x29], PRISON_INLINE_SUB_VAR22_BY_23_L5
+	break
+	call ADVANCE_VAR0D_RESTORE_STATE
+
+PRISON_INLINE_SUB_VAR22_BY_23_L7:
+	video offset=CINEMATIC_384, x=[BUDDY_X], y=[BUDDY_Y], zoom=[0x96]	;@enc=alt
+	mov [0x2B], 0x0FA0
+	call PRISON_INLINE_SUB_VAR22_BY_23_L4
+	break
+	jmp PRISON_INLINE_SUB_VAR22_BY_23_L8
+PRISON_INLINE_SUB_VAR22_BY_23_L9:
+	db 0x11
+
+PRISON_INLINE_SUB_VAR22_BY_23_L10:
+	jg [0x27], [0x44], PRISON_INLINE_SUB_VAR22_BY_23_L11
+	or [0x22], 0x1000
+
+PRISON_INLINE_SUB_VAR22_BY_23_L11:
+	jne [0x5B], 0x0FA0, PRISON_INLINE_SUB_VAR22_BY_23_L12
+	jne [0x5E], 0x0FA0, PRISON_INLINE_SUB_VAR22_BY_23_L12
+	jne [0x61], 0x0FA0, PRISON_INLINE_SUB_VAR22_BY_23_L12
+	setup channel=0x30, address=PRISON_INLINE_SUB_VAR22_BY_23_L13
+	setup channel=0x31, address=PRISON_INLINE_SUB_VAR22_BY_23_L8
+	setup channel=0x32, address=PRISON_INLINE_SUB_VAR22_BY_23_L8
+
+PRISON_INLINE_SUB_VAR22_BY_23_L12:
+	jne [0x5B], 0x0FA0, PRISON_INLINE_SUB_VAR22_BY_23_L14
+	mov [0x5A], [0x21]
+	mov [0x5B], [0x22]
+	mov [0x5C], [0x29]
+	setup channel=0x31, address=PRISON_INLINE_SUB_VAR22_BY_23_L1
+	ret
+
+
+PRISON_INLINE_SUB_VAR22_BY_23_L14:
+	jne [0x5E], 0x0FA0, PRISON_INLINE_SUB_VAR22_BY_23_L15
+	mov [0x5D], [0x21]
+	mov [0x5E], [0x22]
+	mov [0x5F], [0x29]
+	setup channel=0x32, address=PRISON_INLINE_SUB_VAR22_BY_23_L1
+	ret
+
+
+PRISON_INLINE_SUB_VAR22_BY_23_L15:
+	jne [0x61], 0x0FA0, PRISON_INLINE_SUB_VAR22_BY_23_L16
+	mov [0x60], [0x21]
+	mov [0x61], [0x22]
+	mov [0x62], [0x29]
+	setup channel=0x33, address=PRISON_INLINE_SUB_VAR22_BY_23_L1
+
+PRISON_INLINE_SUB_VAR22_BY_23_L16:
+	ret
+
+
+PRISON_INLINE_SUB_VAR22_BY_23_L13:
+	mov [0x0D], 0x0000
+	break
+	jmp PRISON_INLINE_SUB_VAR22_BY_23_L13
+PRISON_INLINE_SUB_VAR22_BY_23_L17:
+	db 0x11
+
+PRISON_INLINE_SUB_VAR22_BY_23_L8:
+	add [0x0D], 0x0001
+	break
+	jmp PRISON_INLINE_SUB_VAR22_BY_23_L8
+PRISON_INLINE_SUB_VAR22_BY_23_L18:
+	db 0x11
+
+PRISON_INLINE_SUB_VAR22_BY_23_L4:
+	jne [0x0D], 0x01, PRISON_INLINE_SUB_VAR22_BY_23_L19
+	mov [0x5C], [0x29]
+	mov [0x5B], [0x2B]
+	ret
+
+
+PRISON_INLINE_SUB_VAR22_BY_23_L19:
+	jne [0x0D], 0x02, PRISON_INLINE_SUB_VAR22_BY_23_L20
+	mov [0x5F], [0x29]
+	mov [0x5E], [0x2B]
+	ret
+
+
+PRISON_INLINE_SUB_VAR22_BY_23_L20:
+	jne [0x0D], 0x03, PRISON_INLINE_SUB_VAR22_BY_23_L21
+	mov [0x62], [0x29]
+	mov [0x61], [0x2B]
+
+PRISON_INLINE_SUB_VAR22_BY_23_L21:
+	ret
+
+
+PRISON_INLINE_SUB_VAR22_BY_23_L2:
+	add [0x0D], 0x0001
+	jne [0x0D], 0x01, PRISON_INLINE_SUB_VAR22_BY_23_L22
+	mov [0x21], [0x5A]
+	mov [0x2B], [0x5B]
+	mov [0x29], [0x5C]
+	call PRISON_INLINE_SUB_VAR22_BY_23_L23
+	mov [0x5A], [BUDDY_X]
+	mov [0x5B], [0x2B]
+	ret
+
+
+PRISON_INLINE_SUB_VAR22_BY_23_L22:
+	jne [0x0D], 0x02, PRISON_INLINE_SUB_VAR22_BY_23_L24
+	mov [0x21], [0x5D]
+	mov [0x2B], [0x5E]
+	mov [0x29], [0x5F]
+	call PRISON_INLINE_SUB_VAR22_BY_23_L23
+	mov [0x5D], [BUDDY_X]
+	mov [0x5E], [0x2B]
+	ret
+
+
+PRISON_INLINE_SUB_VAR22_BY_23_L24:
+	jne [0x0D], 0x03, PRISON_INLINE_SUB_VAR22_BY_23_L25
+	mov [0x21], [0x60]
+	mov [0x2B], [0x61]
+	mov [0x29], [0x62]
+	call PRISON_INLINE_SUB_VAR22_BY_23_L23
+	mov [0x60], [BUDDY_X]
+	mov [0x61], [0x2B]
+
+PRISON_INLINE_SUB_VAR22_BY_23_L25:
+	ret
+
+
+ADVANCE_VAR0D_RESTORE_STATE:
+	add [0x0D], 0x0001
+	jne [0x0D], 0x01, PRISON_INLINE_SUB_VAR22_BY_23_L26
+	mov [0x21], [0x5A]
+	mov [0x2B], [0x5B]
+	mov [0x29], [0x5C]
+	call PRISON_COPY_VAR22_TO_VAR07_L1
+	mov [0x5A], [BUDDY_X]
+	mov [0x5B], [0x2B]
+	ret
+
+
+PRISON_INLINE_SUB_VAR22_BY_23_L26:
+	jne [0x0D], 0x02, PRISON_INLINE_SUB_VAR22_BY_23_L27
+	mov [0x21], [0x5D]
+	mov [0x2B], [0x5E]
+	mov [0x29], [0x5F]
+	call PRISON_COPY_VAR22_TO_VAR07_L1
+	mov [0x5D], [BUDDY_X]
+	mov [0x5E], [0x2B]
+	ret
+
+
+PRISON_INLINE_SUB_VAR22_BY_23_L27:
+	jne [0x0D], 0x03, PRISON_INLINE_SUB_VAR22_BY_23_L28
+	mov [0x21], [0x60]
+	mov [0x2B], [0x61]
+	mov [0x29], [0x62]
+	call PRISON_COPY_VAR22_TO_VAR07_L1
+	mov [0x60], [BUDDY_X]
+	mov [0x61], [0x2B]
+
+PRISON_INLINE_SUB_VAR22_BY_23_L28:
+	ret
+
+
+PRISON_INLINE_SUB_VAR22_BY_23_L23:
+	call PRISON_COPY_VAR22_TO_VAR07_L2
+	mov [0x1D], 0x0000
+	call PRISON_COPY_VAR22_TO_VAR07_L3
+	je [0x1D], 0x00, COPY_VAR22_TO_VAR07
+	jl [0x2B], 0x4000, INLINE_OR_VAR2B_WITH_4000
+	and [0x2B], 0x3FFF
+	jmp COPY_VAR22_TO_VAR07
 .endif
 
 .include "../_helpers/INLINE_OR_VAR2B_WITH_4000.inc"
@@ -211,21 +612,65 @@ COPY_VAR22_TO_VAR07:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_COPY_VAR22_TO_VAR07.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_COPY_VAR22_TO_VAR07.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_COPY_VAR22_TO_VAR07.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_COPY_VAR22_TO_VAR07_L0:
+	db 0x11
+
+PRISON_COPY_VAR22_TO_VAR07_L1:
+	mov [0x09], 0x0000
+	call PRISON_COPY_VAR22_TO_VAR07_L2
+	mov [0x1D], 0x0000
+	call PRISON_COPY_VAR22_TO_VAR07_L3
+	je [0x1D], 0x00, PRISON_COPY_VAR22_TO_VAR07_L4
+	jl [0x2B], 0x4000, PRISON_COPY_VAR22_TO_VAR07_L5
+	and [0x2B], 0x3FFF
+	jmp PRISON_COPY_VAR22_TO_VAR07_L4
+
+PRISON_COPY_VAR22_TO_VAR07_L5:
+	or [0x2B], 0x4000
+	jmp PRISON_COPY_VAR22_TO_VAR07_L4
+
+PRISON_COPY_VAR22_TO_VAR07_L4:
+	mov [BUDDY_X], [0x22]
+	mov [0x22], [0x21]
+	add [0x21], 0x000C
+	sub [0x22], 0x000C
+	call PRISON_COPY_VAR22_TO_VAR07_L6
+	call PRISON_COPY_VAR22_TO_VAR07_L7
+	jl [0x1D], 0x1E, PRISON_COPY_VAR22_TO_VAR07_L8
+	mov [0x09], 0x0001
+	mov [BUDDY_X], [0x22]
+	jne [0x1D], 0x1E, PRISON_COPY_VAR22_TO_VAR07_L9
+	call PRISON_COPY_VAR22_TO_VAR07_L10
+
+PRISON_COPY_VAR22_TO_VAR07_L9:
+	jl [0x1D], 0x28, PRISON_COPY_VAR22_TO_VAR07_L8
+	call PRISON_COPY_VAR22_TO_VAR07_L11
+
+PRISON_COPY_VAR22_TO_VAR07_L8:
+	ret
+
+
+PRISON_COPY_VAR22_TO_VAR07_L12:
+	db 0x11
+
+PRISON_COPY_VAR22_TO_VAR07_L2:
+	mov [0x22], [0x21]
+	mov [0x2C], [0x2B]
+	mov [0xF8], [0x2B]
+	and [0x2C], 0x00FF
+	jl [0xF8], 0x4000, ADD_VAR2C_TO_VAR22
+	sub [0x22], [0x2C]
+	jmp PRISON_ADD_VAR2C_TO_VAR22_L0
 .endif
 
 .include "../_helpers/ADD_VAR2C_TO_VAR22.inc"
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_ADD_VAR2C_TO_VAR22.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_ADD_VAR2C_TO_VAR22.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_ADD_VAR2C_TO_VAR22.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_ADD_VAR2C_TO_VAR22_L0:
+	and [0xF8], 0x1000
+	mov [0x27], [0x44]
+	jne [0xF8], 0x00, COPY_VAR27_TO_VAR07
+	mov [0x27], [0x40]
 .endif
 
 .include "../_helpers/COPY_VAR27_TO_VAR07.inc"
@@ -242,18 +687,285 @@ DRAW_CIN505_AT_X21_Y27:
 	video offset=CINEMATIC_505, x=[0x21], y=[0x27]
 .endif
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_DRAW_CIN505_AT_X21_Y27.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DRAW_CIN505_AT_X21_Y27.inc"
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
+PRISON_DRAW_CIN505_AT_X21_Y27_L0:
+	ret
+
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L1:
+	or [0x27], 0x4000
+	jmp PRISON_DRAW_CIN505_AT_X21_Y27_L2
+PRISON_DRAW_CIN505_AT_X21_Y27_L3:
+	db 0x11
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L4:
+	or [0x27], 0x4000
+	jmp PRISON_DRAW_CIN505_AT_X21_Y27_L5
+PRISON_DRAW_CIN505_AT_X21_Y27_L6:
+	db 0x11
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L7:
+	jle [0x06], 0x00, SHARED_RET
+	sub [0x06], 0x0001
+	or [0x27], 0x4000
+	jmp PRISON_DRAW_CIN505_AT_X21_Y27_L2
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L5:
+	call COPY_HASH_AND_SPLIT_VAR38_3F_3E
+	sub [0x26], 0x0002
+	add [0x27], [0x39]
+	or [0x27], 0x0C00
+	mov [0x22], [0x21]
+	play id=0x0052, freq=0x1E, vol=0x40, channel=0x01
+	jne [0x8B], 0xFFFF, PRISON_DRAW_CIN505_AT_X21_Y27_L8
+	mov [0x8B], 0x0001
+	mov [0x96], [0x21]
+	mov [0x97], [0x27]
+	mov [0x9F], [0x22]
+	jmp PRISON_DRAW_CIN505_AT_X21_Y27_L9
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L8:
+	jne [0x8C], 0xFFFF, PRISON_DRAW_CIN505_AT_X21_Y27_L10
+	mov [0x8C], 0x0001
+	mov [0x98], [0x21]
+	mov [0x99], [0x27]
+	mov [0x8E], [0x22]
+	jmp PRISON_DRAW_CIN505_AT_X21_Y27_L9
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L10:
+	jne [0x8D], 0xFFFF, PRISON_DRAW_CIN505_AT_X21_Y27_L9
+	mov [0x8D], 0x0001
+	mov [0x9A], [0x21]
+	mov [0x9B], [0x27]
+	mov [0x8F], [0x22]
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L9:
+	ret
+
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L11:
+	db 0x11
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L12:
+	jle [0x06], 0x00, SHARED_RET
+	sub [0x06], 0x0001
+	jmp PRISON_DRAW_CIN505_AT_X21_Y27_L2
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L2:
+	call COPY_HASH_AND_SPLIT_VAR38_3F_3E
+	sub [0x27], 0x0002
+	add [0x27], [0x39]
+	or [0x27], 0x0C00
+	mov [0x22], [0x21]
+	play id=0x0052, freq=0x1C, vol=0x40, channel=0x00
+	jne [0x88], 0xFFFF, PRISON_DRAW_CIN505_AT_X21_Y27_L13
+	mov [0x88], 0x0001
+	mov [0x90], [0x21]
+	mov [0x91], [0x27]
+	mov [0x9C], [0x22]
+	jmp PRISON_DRAW_CIN505_AT_X21_Y27_L14
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L13:
+	jne [0x89], 0xFFFF, PRISON_DRAW_CIN505_AT_X21_Y27_L15
+	mov [0x89], 0x0001
+	mov [0x92], [0x21]
+	mov [0x93], [0x27]
+	mov [0x9D], [0x22]
+	jmp PRISON_DRAW_CIN505_AT_X21_Y27_L14
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L15:
+	jne [0x8A], 0xFFFF, PRISON_DRAW_CIN505_AT_X21_Y27_L14
+	mov [0x8A], 0x0001
+	mov [0x94], [0x21]
+	mov [0x95], [0x27]
+	mov [0x9E], [0x22]
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L14:
+	ret
+
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L16:
+	db 0x11
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L17:
+	mov [0x29], 0x0000
+	je [0x88], 0xFFFF, PRISON_DRAW_CIN505_AT_X21_Y27_L18
+	mov [0x09], [0x9C]
+	mov [0x13], [0x88]
+	mov [0x21], [0x90]
+	mov [0x27], [0x91]
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L19
+	mov [0x88], [0x13]
+	mov [0x90], [0x21]
+	mov [0x91], [0x27]
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L18:
+	je [0x89], 0xFFFF, PRISON_DRAW_CIN505_AT_X21_Y27_L20
+	mov [0x09], [0x9D]
+	mov [0x13], [0x89]
+	mov [0x21], [0x92]
+	mov [0x27], [0x93]
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L19
+	mov [0x89], [0x13]
+	mov [0x92], [0x21]
+	mov [0x93], [0x27]
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L20:
+	je [0x8A], 0xFFFF, PRISON_DRAW_CIN505_AT_X21_Y27_L21
+	mov [0x09], [0x9E]
+	mov [0x13], [0x8A]
+	mov [0x21], [0x94]
+	mov [0x27], [0x95]
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L19
+	mov [0x8A], [0x13]
+	mov [0x94], [0x21]
+	mov [0x95], [0x27]
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L21:
+	mov [0x29], 0x0001
+	je [0x8B], 0xFFFF, PRISON_DRAW_CIN505_AT_X21_Y27_L22
+	mov [0x09], [0x9F]
+	mov [0x13], [0x8B]
+	mov [0x21], [0x96]
+	mov [0x27], [0x97]
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L19
+	mov [0x8B], [0x13]
+	mov [0x96], [0x21]
+	mov [0x97], [0x27]
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L22:
+	je [0x8C], 0xFFFF, PRISON_DRAW_CIN505_AT_X21_Y27_L23
+	mov [0x09], [0x8E]
+	mov [0x13], [0x8C]
+	mov [0x21], [0x98]
+	mov [0x27], [0x99]
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L19
+	mov [0x8C], [0x13]
+	mov [0x98], [0x21]
+	mov [0x99], [0x27]
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L23:
+	je [0x8D], 0xFFFF, PRISON_DRAW_CIN505_AT_X21_Y27_L24
+	mov [0x09], [0x8F]
+	mov [0x13], [0x8D]
+	mov [0x21], [0x9A]
+	mov [0x27], [0x9B]
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L19
+	mov [0x8D], [0x13]
+	mov [0x9A], [0x21]
+	mov [0x9B], [0x27]
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L24:
+	break
+	jmp PRISON_DRAW_CIN505_AT_X21_Y27_L17
+PRISON_DRAW_CIN505_AT_X21_Y27_L25:
+	db 0x11
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L26:
+	and [0x27], 0x00FF
+	jl [0x13], 0x00, PRISON_DRAW_CIN505_AT_X21_Y27_L27
+	mov [0x22], [0x21]
+	je [0x13], 0x00, PRISON_DRAW_CIN505_AT_X21_Y27_L28
+	mov [0x13], 0x0000
+	sub [0x22], 0x0028
+	call PRISON_DEDUP_PRISON_5B_032_L0
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L29
+	jmp PRISON_DRAW_CIN505_AT_X21_Y27_L30
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L28:
+	sub [0x22], [0x11]
+	sub [0x22], 0x003C
+	call PRISON_DEDUP_PRISON_5B_032_L0
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L29
+	add [0x22], 0x003C
+	jle [0x22], [0x21], PRISON_DRAW_CIN505_AT_X21_Y27_L31
+	mov [0x21], [0x22]
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L31:
+	sub [0x22], 0x003C
+	sub [0x21], 0x003C
+	jl [0x21], 0xFFEC, SET_VAR13_TO_FFFF
+	je [0x21], [0x22], PRISON_DRAW_CIN505_AT_X21_Y27_L32
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L30:
+	jne [0x1D], 0x00, PRISON_DRAW_CIN505_AT_X21_Y27_L32
+	or [0x27], 0x4000
+	add [0x27], [0x12]
+	ret
+
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L19:
+	mov [0x12], [0x27]
+	and [0x12], 0x3C00
+	mov [0x11], [0x27]
+	and [0x11], 0x1C00
+	shr [0x11], 0x0006
+	jge [0x27], 0x4000, PRISON_DRAW_CIN505_AT_X21_Y27_L26
+	and [0x27], 0x00FF
+	jl [0x13], 0x00, PRISON_DRAW_CIN505_AT_X21_Y27_L33
+	mov [0x22], [0x21]
+	je [0x13], 0x00, PRISON_DRAW_CIN505_AT_X21_Y27_L34
+	mov [0x13], 0x0000
+	add [0x22], 0x0028
+	call PRISON_DEDUP_PRISON_5B_032_L0
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L35
+	jmp PRISON_DRAW_CIN505_AT_X21_Y27_L36
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L34:
+	add [0x22], [0x11]
+	add [0x22], 0x003C
+	call PRISON_DEDUP_PRISON_5B_032_L0
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L35
+	sub [0x22], 0x003C
+	jge [0x22], [0x21], PRISON_DRAW_CIN505_AT_X21_Y27_L37
+	mov [0x21], [0x22]
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L37:
+	add [0x22], 0x003C
+	add [0x21], 0x003C
+	jg [0x21], 0x0154, SET_VAR13_TO_FFFF
+	je [0x21], [0x22], PRISON_DRAW_CIN505_AT_X21_Y27_L38
+
+PRISON_DRAW_CIN505_AT_X21_Y27_L36:
+	jne [0x1D], 0x00, PRISON_DRAW_CIN505_AT_X21_Y27_L38
+	add [0x27], [0x12]
+	ret
 .endif
 
 .include "../_helpers/SET_VAR13_TO_FFFF.inc"
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_SET_VAR13_TO_FFFF.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_SET_VAR13_TO_FFFF.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_SET_VAR13_TO_FFFF.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_SET_VAR13_TO_FFFF_L0:
+	db 0x11
+
+PRISON_SET_VAR13_TO_FFFF_L1:
+	jl [0x1D], 0x14, PRISON_SET_VAR13_TO_FFFF_L2
+	jl [0x1D], 0x1E, PRISON_SET_VAR13_TO_FFFF_L3
+	je [0x1D], 0x1E, PRISON_COPY_VAR22_TO_VAR07_L10
+	jge [0x1D], 0x28, PRISON_COPY_VAR22_TO_VAR07_L11
+	ret
+
+
+PRISON_SET_VAR13_TO_FFFF_L4:
+	db 0x11
+
+PRISON_SET_VAR13_TO_FFFF_L2:
+	jge [0x1D], 0x0A, PRISON_SET_VAR13_TO_FFFF_L5
+	play id=0x005B, freq=0x14, vol=0x30, channel=0x00
+
+PRISON_SET_VAR13_TO_FFFF_L5:
+	jne [HACK_VAR_67], 0x44, SHARED_RET
+	jne [0x1D], 0x01, SHARED_RET
+	je [0xB4], 0x01, SHARED_RET
+	setup channel=0x02, address=PRISON_INIT_VARS_E7_E8_L2
+	ret
+
+
+PRISON_SET_VAR13_TO_FFFF_L3:
+	call PRISON_COPY_VAR40_TO_VAR27_L1
+	sub [0x11], 0x0004
+	call PRISON_COPY_VARAD_TO_VAR11_L1
+	je [0x29], 0x01, PLAY_SFX_005C_CH01
+	play id=0x005C, freq=0x19, vol=0x40, channel=0x00
+	ret
 .endif
 

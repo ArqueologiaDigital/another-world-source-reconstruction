@@ -32,10 +32,19 @@ INLINE_SET_VAR03_TO_7:
 .include "../_helpers/CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8.inc"
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+PRISON_CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8_L0:
+	selectVideoPage 0x00
+	break
+	jmp PRISON_CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8_L0
+	killChannel
+
+PRISON_CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8_L1:
+	selectVideoPage 0xFF
+	break
+	jmp PRISON_CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8_L1
+PRISON_CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8_L2:
+	db 0x11
 .endif
 
 .include "../_helpers/COPY_HASH_VAR_37_TO_RANGE.inc"
@@ -129,10 +138,41 @@ DRAW_CIN_311_TO_312_2F_AT_A6494EF7:
 
 .endif
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_DRAW_CIN_311_TO_312_2F_AT_A6494EF7.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DRAW_CIN_311_TO_312_2F_AT_A6494EF7.inc"
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
+PRISON_DRAW_CIN_311_TO_312_2F_AT_A6494EF7_L0:
+	break
+	call COPY_HASH_AND_SPLIT_VAR38_3F_3E
+	je [RANDOM_SEED], 0x00, PRISON_DRAW_CIN_311_TO_312_2F_AT_A6494EF7_L1
+	jmp PRISON_DRAW_CIN_311_TO_312_2F_AT_A6494EF7_L0
+
+PRISON_DRAW_CIN_311_TO_312_2F_AT_A6494EF7_L2:
+	mov [0xF8], 0x0000
+	call DRAW_CIN_315_PROGRESSIVE
+	mov [0xF8], 0x0000
+	call DRAW_CIN_316_TO_316_2F_AT_A17C45BF
+	break
+	break
+	mov [0xF8], 0x0001
+	call DRAW_CIN_315_PROGRESSIVE
+	mov [0xF8], 0x0001
+	call DRAW_CIN_316_TO_316_2F_AT_A17C45BF
+	break
+	break
+	mov [0xF8], 0x0002
+	call DRAW_CIN_315_PROGRESSIVE
+	mov [0xF8], 0x0002
+	call DRAW_CIN_316_TO_316_2F_AT_A17C45BF
+	break
+	break
+	mov [0xF8], 0x0001
+	call DRAW_CIN_315_PROGRESSIVE
+	mov [0xF8], 0x0001
+	call DRAW_CIN_316_TO_316_2F_AT_A17C45BF
+	break
+	break
+	jmp PRISON_DRAW_CIN_311_TO_312_2F_AT_A6494EF7_L2
+PRISON_DRAW_CIN_311_TO_312_2F_AT_A6494EF7_L3:
+	db 0x11
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -166,10 +206,17 @@ DRAW_CIN_316_TO_316_2F_AT_A17C45BF:
 
 .endif
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_DRAW_CIN_316_TO_316_2F_AT_A17C45BF.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DRAW_CIN_316_TO_316_2F_AT_A17C45BF.inc"
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
+PRISON_DRAW_CIN_316_TO_316_2F_AT_A17C45BF_L0:
+	db 0x11
+
+PRISON_DRAW_CIN_311_TO_312_2F_AT_A6494EF7_L1:
+	video offset=CINEMATIC_317, x=160, y=100
+	play id=0x0058, freq=0x14, vol=0x20, channel=0x02
+	setPalette 0x05
+	break
+	setPalette 0x02
+	jmp PRISON_DRAW_CIN_311_TO_312_2F_AT_A6494EF7_L0
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -180,10 +227,15 @@ DRAW_CIN_319_TO_319_4F_AT_9E666694:
 	video offset=CINEMATIC_319, x=302, y=141
 .endif
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_DRAW_CIN_319_TO_319_4F_AT_9E666694.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DRAW_CIN_319_TO_319_4F_AT_9E666694.inc"
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
+PRISON_DRAW_CIN_319_TO_319_4F_AT_9E666694_L0:
+	break
+	mov [0xF8], [0x31]
+	and [0xF8], 0x0007
+	jne [0xF8], 0x00, PRISON_DRAW_CIN_319_TO_319_4F_AT_9E666694_L0
+	jmp DRAW_CIN_319_TO_319_4F_AT_9E666694
+PRISON_DRAW_CIN_319_TO_319_4F_AT_9E666694_L1:
+	db 0x11
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -203,35 +255,100 @@ DRAW_CIN_318_TO_318_2F_AT_93A8CE70:
 INLINE_SET_VARE6_TO_50:
 	mov [0xE6], 0x0050
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INLINE_SET_VARE6_TO_50.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_SET_VARE6_TO_50.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_SET_VARE6_TO_50.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_INLINE_SET_VARE6_TO_50_L0:
+	selectVideoPage 0x00
+	video offset=CINEMATIC_457, x=84, y=[0xe6]
+	video offset=CINEMATIC_186, x=82, y=[0xe6]
+	selectVideoPage 0xFF
+	add [0xE6], 0x0002
+	break
+	break
+	jne [0xE6], 0x56, PRISON_INLINE_SET_VARE6_TO_50_L0
+	mov [0xE6], 0x0050
+
+PRISON_INLINE_SET_VARE6_TO_50_L1:
+	selectVideoPage 0x00
+	video offset=CINEMATIC_186, x=84, y=[0xe6]
+	video offset=CINEMATIC_457, x=82, y=[0xe6]
+	selectVideoPage 0xFF
+	add [0xE6], 0x0002
+	break
+	break
+	jne [0xE6], 0x56, PRISON_INLINE_SET_VARE6_TO_50_L1
+	jmp INLINE_SET_VARE6_TO_50
+PRISON_INLINE_SET_VARE6_TO_50_L2:
+	db 0x11
+
+PRISON_INLINE_SET_VARE6_TO_50_L3:
+	video offset=CINEMATIC_457, x=27, y=153
+	break
+	video offset=CINEMATIC_457, x=25, y=158
+	break
+	video offset=CINEMATIC_457, x=31, y=157
+	break
+	video offset=CINEMATIC_457, x=35, y=153
+	break
+	video offset=CINEMATIC_457, x=32, y=149
+	break
+	video offset=CINEMATIC_457, x=26, y=148
+	break
+	video offset=CINEMATIC_457, x=27, y=153
+	break
+	video offset=CINEMATIC_457, x=22, y=146
+	break
+	video offset=CINEMATIC_457, x=21, y=150
+	break
+	video offset=CINEMATIC_457, x=20, y=153
+	break
+	jmp PRISON_INLINE_SET_VARE6_TO_50_L3
+PRISON_INLINE_SET_VARE6_TO_50_L4:
+	db 0x11
 .endif
 
 INLINE_SET_VARE7_TO_5:
 	mov [0xE7], 0x0005
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INLINE_SET_VARE7_TO_5.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_SET_VARE7_TO_5.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_SET_VARE7_TO_5.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+DELAY_LOOP_VARE7:
+	break
+	djnz [0xE7], DELAY_LOOP_VARE7
+	mov [0xE7], 0x0002
+	mov [0xE8], 0x00C6
+
+PRISON_INLINE_SET_VARE7_TO_5_L0:
+	video offset=CINEMATIC_454, x=163, y=[0xe8]
+	sub [0xE8], 0x0002
+	break
+	djnz [0xE7], PRISON_INLINE_SET_VARE7_TO_5_L0
+	video offset=CINEMATIC_455, x=170, y=198
+	video offset=CINEMATIC_456, x=170, y=197
+	break
+	video offset=CINEMATIC_455, x=170, y=197
+	jmp INLINE_SET_VARE7_TO_5
+PRISON_INLINE_SET_VARE7_TO_5_L1:
+	db 0x11
 .endif
 
 INIT_VARS_E7_E8:
 	mov [0xE7], 0x0007
 	mov [0xE8], 0x0064
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INIT_VARS_E7_E8.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INIT_VARS_E7_E8.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INIT_VARS_E7_E8.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_INIT_VARS_E7_E8_L0:
+	video offset=CINEMATIC_459, x=160, y=[0xe8]
+	sub [0xE8], 0x0002
+	break
+	djnz [0xE7], PRISON_INIT_VARS_E7_E8_L0
+	jmp INIT_VARS_E7_E8
+PRISON_INIT_VARS_E7_E8_L1:
+	db 0x11
+
+PRISON_INIT_VARS_E7_E8_L2:
+	mov [0xB4], 0x0001
+	setup channel=0x01, address=KILL_CHANNEL_LANDING
+	setup channel=0x3C, address=PRISON_INIT_VARS_E7_E8_L3
+	killChannel
 .endif
 
 INLINE_SET_VARE9_TO_8:
@@ -299,10 +416,21 @@ DRAW_CIN_132_TO_133_2F_AT_BB9185F0:
 	killChannel
 .endif
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_DRAW_CIN_132_TO_133_2F_AT_BB9185F0.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DRAW_CIN_132_TO_133_2F_AT_BB9185F0.inc"
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
+PRISON_DRAW_CIN_132_TO_133_2F_AT_BB9185F0_L0:
+	add [HERO_X], 0x0003
+	video offset=CINEMATIC_134, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0002
+	break
+	video offset=CINEMATIC_135, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0001
+	break
+	video offset=CINEMATIC_136, x=[HERO_X], y=[HERO_Y]
+	break
+	video offset=CINEMATIC_135, x=[HERO_X], y=[HERO_Y]
+	jmp DRAW_CIN_137_138_BLOCK
+PRISON_DRAW_CIN_132_TO_133_2F_AT_BB9185F0_L1:
+	db 0x11
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -316,10 +444,21 @@ DRAW_CIN_280_TO_281_2F_AT_75ED3E60:
 	mov [0x03], 0x0003
 .endif
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_DRAW_CIN_280_TO_281_2F_AT_75ED3E60.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DRAW_CIN_280_TO_281_2F_AT_75ED3E60.inc"
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
+PRISON_DRAW_CIN_280_TO_281_2F_AT_75ED3E60_L0:
+	break
+	video offset=CINEMATIC_282, x=[HERO_X], y=[HERO_Y]
+	djnz [0x03], PRISON_DRAW_CIN_280_TO_281_2F_AT_75ED3E60_L0
+	setup channel=0x15, address=DRAW_CIN_284_BLOCK_95B
+	mov [0x03], 0x0003
+
+PRISON_DRAW_CIN_280_TO_281_2F_AT_75ED3E60_L1:
+	break
+	video offset=CINEMATIC_283, x=[HERO_X], y=[HERO_Y]
+	djnz [0x03], PRISON_DRAW_CIN_280_TO_281_2F_AT_75ED3E60_L1
+	jmp DRAW_CIN_137_138_BLOCK
+PRISON_DRAW_CIN_280_TO_281_2F_AT_75ED3E60_L2:
+	db 0x11
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -357,10 +496,25 @@ DRAW_CIN_284_BLOCK_95B:
 	video offset=CINEMATIC_296, x=[HERO_X], y=[HERO_Y]
 .endif
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_DRAW_CIN_284_BLOCK_95B.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DRAW_CIN_284_BLOCK_95B.inc"
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
+PRISON_DRAW_CIN_284_BLOCK_95B_L0:
+	break
+	video offset=CINEMATIC_295, x=[HERO_X], y=[HERO_Y]
+	jmp PRISON_DRAW_CIN_284_BLOCK_95B_L0
+PRISON_DRAW_CIN_284_BLOCK_95B_L1:
+	db 0x11
+
+PRISON_DRAW_CIN_284_BLOCK_95B_L2:
+	video offset=CINEMATIC_298, x=[HERO_X], y=[HERO_Y]
+	break
+	video offset=CINEMATIC_299, x=[HERO_X], y=[HERO_Y]
+	break
+	video offset=CINEMATIC_300, x=[HERO_X], y=[HERO_Y]
+	break
+	video offset=CINEMATIC_299, x=[HERO_X], y=[HERO_Y]
+	jmp DRAW_CIN_137_138_BLOCK
+PRISON_DRAW_CIN_284_BLOCK_95B_L3:
+	db 0x11
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -421,12 +575,18 @@ DRAW_CIN_137_138_BLOCK:
 .endif
 
 .include "../_helpers/INLINE_COPY_VAR22_TO_VAR08.inc"
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INLINE_COPY_VAR22_TO_VAR08.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_COPY_VAR22_TO_VAR08.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_COPY_VAR22_TO_VAR08.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_INLINE_COPY_VAR22_TO_VAR08_L0:
+	ret
+
+
+PRISON_INLINE_COPY_VAR22_TO_VAR08_L1:
+	call PRISON_INLINE_COPY_VAR22_TO_VAR08_L2
+	shl [0x0E], 0x000C
+	shl [0x0D], 0x000B
+	add [0x09], [0x0E]
+	add [0x09], [0x0D]
+	ret
 .endif
 
 .include "../_helpers/SPLIT_VAR09_BITS_INTO_VAR0D.inc"

@@ -239,7 +239,7 @@ LABEL_89D2:
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x32], 0x0000
 	setup channel=0x16, address=LABEL_8B45
-	setup channel=0x14, address=LABEL_9158
+	setup channel=0x14, address=CAPSULE_INLINE_SET_VAR63_TO_1_L2
 	setup channel=0x3E, address=LABEL_81EF
 	mov [HERO_X], 0x00D9
 	jne [HACK_VAR_67], 0x6F, KILL_CHAN_AT_8A23
@@ -350,8 +350,8 @@ LABEL_8B36:
 LABEL_8B45:
 	je [0x63], 0x64, LABEL_8C88
 	jge [HERO_ACTION_POS_MASK], 0x80, LABEL_8BDE
-	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_8B70
-	je [0x63], 0x01, LABEL_8B70
+	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, CAPSULE_INLINE_SET_VAR63_TO_1_L0
+	je [0x63], 0x01, CAPSULE_INLINE_SET_VAR63_TO_1_L0
 	setup channel=0x14, address=LABEL_9028
 	je [0x63], 0x05, INLINE_SET_VAR63_TO_1
 	setup channel=0x14, address=STEP_DRAW_CV352_LEFT4_RIGHT1

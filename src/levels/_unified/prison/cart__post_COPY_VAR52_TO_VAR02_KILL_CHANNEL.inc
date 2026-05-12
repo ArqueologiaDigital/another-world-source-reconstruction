@@ -7,7 +7,7 @@ LABEL_7FE9:
 	break
 	mov [HERO_Y], [0x52]
 	call LABEL_8049
-	setup channel=0x1A, address=LABEL_7FD7
+	setup channel=0x1A, address=PRISON_COPY_VAR51_TO_VAR02_KILL_CHANNEL_L0
 	jmp LABEL_8062
 LABEL_800B:
 	db 0x11
@@ -21,7 +21,7 @@ LABEL_800C:
 	break
 	mov [HERO_Y], [0x51]
 	call LABEL_802F
-	setup channel=0x1A, address=LABEL_7FC5
+	setup channel=0x1A, address=PRISON_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65_L1
 	jmp LABEL_8062
 LABEL_802E:
 	db 0x11

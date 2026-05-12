@@ -61,7 +61,7 @@ LABEL_9821:
 	break
 	mov [HERO_Y], [0x51]
 	call LABEL_99C8
-	setup channel=0x1A, address=LABEL_9765
+	setup channel=0x1A, address=CAPSULE_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65_L1
 	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
 LABEL_9855:
 	db 0x11
@@ -95,7 +95,7 @@ LABEL_986E:
 
 LABEL_98AC:
 	mov [HERO_Y], [0x51]
-	setup channel=0x1A, address=LABEL_9765
+	setup channel=0x1A, address=CAPSULE_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65_L1
 	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
 
 LABEL_98B6:
@@ -138,5 +138,5 @@ LABEL_9905:
 	mov [HERO_X], 0x0029
 	video offset=CINEMATIC_091, x=[HERO_X], y=180
 	mov [HERO_Y], [0x51]
-	setup channel=0x1A, address=LABEL_9765
+	setup channel=0x1A, address=CAPSULE_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65_L1
 	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4

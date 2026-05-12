@@ -28,45 +28,77 @@ INIT_VARS_EB_EC_ED:
 INLINE_SET_VAR76_TO_0001_037:
 	mov [0x76], 0x0001
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INLINE_SET_VAR76_TO_0001_037.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_SET_VAR76_TO_0001_037.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_SET_VAR76_TO_0001_037.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_INLINE_SET_VAR76_TO_0001_037_L0:
+	mov [0x07], [0x74]
+	mov [0x08], [0x75]
+	mov [0x09], [0x76]
+	call CAVES_INLINE_SET_VAR76_TO_0001_037_L1
+	call CAVES_INLINE_SET_VAR76_TO_0001_037_L2
+	mov [0x74], [0x07]
+	mov [0x75], [0x08]
+	mov [0x76], [0x09]
+	break
+	jmp CAVES_INLINE_SET_VAR76_TO_0001_037_L0
+CAVES_INLINE_SET_VAR76_TO_0001_037_L3:
+	db 0x11
 .endif
 
 INLINE_SET_VAR76_TO_0001_038:
 	mov [0x76], 0x0001
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INLINE_SET_VAR76_TO_0001_038.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_SET_VAR76_TO_0001_038.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_SET_VAR76_TO_0001_038.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_INLINE_SET_VAR76_TO_0001_038_L0:
+	mov [0x07], [0x74]
+	mov [0x08], [0x75]
+	mov [0x09], [0x76]
+	call CAVES_INLINE_SET_VAR76_TO_0001_037_L1
+	call CAVES_INLINE_SET_VAR76_TO_0001_038_L1
+	mov [0x74], [0x07]
+	mov [0x75], [0x08]
+	mov [0x76], [0x09]
+	break
+	jmp CAVES_INLINE_SET_VAR76_TO_0001_038_L0
+CAVES_INLINE_SET_VAR76_TO_0001_038_L2:
+	db 0x11
 .endif
 
 INLINE_SET_VAR79_TO_1:
 	mov [0x79], 0x0001
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INLINE_SET_VAR79_TO_1.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_SET_VAR79_TO_1.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_SET_VAR79_TO_1.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_INLINE_SET_VAR79_TO_1_L0:
+	mov [0x07], [0x77]
+	mov [0x08], [0x78]
+	mov [0x09], [0x79]
+	call CAVES_INLINE_SET_VAR76_TO_0001_037_L1
+	call CAVES_INLINE_SET_VAR76_TO_0001_038_L1
+	mov [0x77], [0x07]
+	mov [0x78], [0x08]
+	mov [0x79], [0x09]
+	break
+	jmp CAVES_INLINE_SET_VAR79_TO_1_L0
+CAVES_INLINE_SET_VAR79_TO_1_L1:
+	db 0x11
 .endif
 
 INLINE_SET_VAR7C_TO_0001_039:
 	mov [0x7C], 0x0001
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INLINE_SET_VAR7C_TO_0001_039.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_SET_VAR7C_TO_0001_039.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_SET_VAR7C_TO_0001_039.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_INLINE_SET_VAR7C_TO_0001_039_L0:
+	mov [0x07], [0x7A]
+	mov [0x08], [0x7B]
+	mov [0x09], [0x7C]
+	call CAVES_INLINE_SET_VAR76_TO_0001_037_L1
+	call CAVES_INLINE_SET_VAR7C_TO_0001_039_L1
+	mov [0x7A], [0x07]
+	mov [0x7B], [0x08]
+	mov [0x7C], [0x09]
+	break
+	jmp CAVES_INLINE_SET_VAR7C_TO_0001_039_L0
+CAVES_INLINE_SET_VAR7C_TO_0001_039_L2:
+	db 0x11
 .endif
 
 INLINE_SET_VAR7C_TO_0001_040:
@@ -95,45 +127,137 @@ INIT_VAR09_TO_7_VAR08_FROM_VAR22:
 INLINE_SET_VAR74_TO_6:
 	mov [0x74], 0x0006
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INLINE_SET_VAR74_TO_6.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_SET_VAR74_TO_6.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_SET_VAR74_TO_6.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_INLINE_SET_VAR74_TO_6_L0:
+	mov [0x07], [0x6E]
+	mov [0x08], [0x6F]
+	call RESET_VAR09_AND_DECR_VAR08_BY_4
+	mov [0x6F], [0x08]
+	break
+	djnz [0x74], CAVES_INLINE_SET_VAR74_TO_6_L0
+	mov [0x74], 0x0028
+
+CAVES_INLINE_SET_VAR74_TO_6_L1:
+	mov [0x07], [0x6E]
+	mov [0x08], [0x6F]
+	mov [0x09], 0x0000
+	break
+	djnz [0x74], CAVES_INLINE_SET_VAR74_TO_6_L1
+	mov [0x74], 0x000C
+
+CAVES_INLINE_SET_VAR74_TO_6_L2:
+	mov [0x07], [0x6E]
+	mov [0x08], [0x6F]
+	call RESET_VAR09_AND_INCR_VAR08_BY_2
+	mov [0x6F], [0x08]
+	break
+	djnz [0x74], CAVES_INLINE_SET_VAR74_TO_6_L2
+	mov [0x49], 0x13A6
+	jmp CAVES_INLINE_SET_VAR74_TO_6_L3
+CAVES_INLINE_SET_VAR74_TO_6_L4:
+	db 0x11
 .endif
 
 INLINE_SET_VAR75_TO_6:
 	mov [0x75], 0x0006
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INLINE_SET_VAR75_TO_6.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_SET_VAR75_TO_6.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_SET_VAR75_TO_6.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_INLINE_SET_VAR75_TO_6_L0:
+	mov [0x07], [0x70]
+	mov [0x08], [0x71]
+	call RESET_VAR09_AND_DECR_VAR08_BY_4
+	mov [0x71], [0x08]
+	break
+	djnz [0x75], CAVES_INLINE_SET_VAR75_TO_6_L0
+	mov [0x75], 0x0028
+
+CAVES_INLINE_SET_VAR75_TO_6_L1:
+	mov [0x07], [0x70]
+	mov [0x08], [0x71]
+	mov [0x09], 0x0000
+	break
+	djnz [0x75], CAVES_INLINE_SET_VAR75_TO_6_L1
+	mov [0x75], 0x000C
+
+CAVES_INLINE_SET_VAR75_TO_6_L2:
+	mov [0x07], [0x70]
+	mov [0x08], [0x71]
+	call RESET_VAR09_AND_INCR_VAR08_BY_2
+	mov [0x71], [0x08]
+	break
+	djnz [0x75], CAVES_INLINE_SET_VAR75_TO_6_L2
+	mov [0x4B], 0x13A6
+	jmp CAVES_INLINE_SET_VAR75_TO_6_L3
+CAVES_INLINE_SET_VAR75_TO_6_L4:
+	db 0x11
 .endif
 
 INLINE_SET_VAR76_TO_6:
 	mov [0x76], 0x0006
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INLINE_SET_VAR76_TO_6.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_SET_VAR76_TO_6.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_SET_VAR76_TO_6.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_INLINE_SET_VAR76_TO_6_L0:
+	mov [0x07], [0x72]
+	mov [0x08], [0x73]
+	call RESET_VAR09_AND_DECR_VAR08_BY_4
+	mov [0x73], [0x08]
+	break
+	djnz [0x76], CAVES_INLINE_SET_VAR76_TO_6_L0
+	mov [0x76], 0x0028
+
+CAVES_INLINE_SET_VAR76_TO_6_L1:
+	mov [0x07], [0x72]
+	mov [0x08], [0x73]
+	mov [0x09], 0x0000
+	break
+	djnz [0x76], CAVES_INLINE_SET_VAR76_TO_6_L1
+	mov [0x76], 0x000C
+
+CAVES_INLINE_SET_VAR76_TO_6_L2:
+	mov [0x07], [0x72]
+	mov [0x08], [0x73]
+	call RESET_VAR09_AND_INCR_VAR08_BY_2
+	mov [0x73], [0x08]
+	break
+	djnz [0x76], CAVES_INLINE_SET_VAR76_TO_6_L2
+	mov [0x4D], 0x13A6
+	jmp CAVES_INLINE_SET_VAR76_TO_6_L3
+CAVES_INLINE_SET_VAR76_TO_6_L4:
+	db 0x11
 .endif
 
 INLINE_SET_VAR73_TO_6:
 	mov [0x73], 0x0006
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INLINE_SET_VAR73_TO_6.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_SET_VAR73_TO_6.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_SET_VAR73_TO_6.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_INLINE_SET_VAR73_TO_6_L0:
+	mov [0x07], [0x68]
+	mov [0x08], [0x69]
+	call RESET_VAR09_AND_DECR_VAR08_BY_4
+	mov [0x69], [0x08]
+	break
+	djnz [0x73], CAVES_INLINE_SET_VAR73_TO_6_L0
+	mov [0x73], 0x0028
+
+CAVES_INLINE_SET_VAR73_TO_6_L1:
+	mov [0x07], [0x68]
+	mov [0x08], [0x69]
+	mov [0x09], 0x0000
+	break
+	djnz [0x73], CAVES_INLINE_SET_VAR73_TO_6_L1
+	mov [0x73], 0x000C
+
+CAVES_INLINE_SET_VAR73_TO_6_L2:
+	mov [0x07], [0x68]
+	mov [0x08], [0x69]
+	call RESET_VAR09_AND_INCR_VAR08_BY_2
+	mov [0x69], [0x08]
+	break
+	djnz [0x73], CAVES_INLINE_SET_VAR73_TO_6_L2
+	mov [0x49], 0x13A6
+	jmp CAVES_INLINE_SET_VAR73_TO_6_L3
+CAVES_INLINE_SET_VAR73_TO_6_L4:
+	db 0x11
 .endif
 
 RESET_VAR09_AND_DECR_VAR08_BY_4:
@@ -243,12 +367,22 @@ MUL_VAR6B_BY_11_INTO_VAR21:
 INLINE_SET_VARE6_TO_32:
 	mov [0xE6], 0x0032
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INLINE_SET_VARE6_TO_32.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_SET_VARE6_TO_32.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_SET_VARE6_TO_32.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_INLINE_SET_VARE6_TO_32_L0:
+	add [0xE7], 0x0008
+	mov [0x21], [0xE7]
+	call CAVES_INLINE_SET_VARE6_TO_32_L1
+	break
+	djnz [0xE6], CAVES_INLINE_SET_VARE6_TO_32_L0
+	mov [0xE6], 0x0032
+
+CAVES_INLINE_SET_VARE6_TO_32_L2:
+	sub [0xE7], 0x0008
+	mov [0x21], [0xE7]
+	call CAVES_INLINE_SET_VARE6_TO_32_L1
+	break
+	djnz [0xE6], CAVES_INLINE_SET_VARE6_TO_32_L2
+	jmp INLINE_SET_VARE6_TO_32
 .endif
 
 INLINE_SET_VARE8_TO_2F:

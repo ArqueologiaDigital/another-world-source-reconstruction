@@ -1,7 +1,7 @@
 LABEL_5FB9:
 	mov [0x21], [HERO_X]
 	mov [0x22], [0x07]
-	jmp LABEL_5FA5
+	jmp CAVES_COPY_VAR40_TO_VAR22_L8
 
 LABEL_5FC2:
 	mov [0x21], [0x07]
@@ -32,7 +32,7 @@ JUNK__5FEC:
 
 
 	mov [0x21], [0x07]
-	call LABEL_6046
+	call CAVES_INCREMENT_VAR21_BY_F_L0
 	mov [0x29], [HERO_X]
 	mov [HERO_X], [0x22]
 	mov [0x27], [0x08]
@@ -49,9 +49,9 @@ LABEL_600F:
 	ret
 
 
-LABEL_601C:
+CAVES_SET_VAR2F_TO_000D_L1:
 	call LABEL_6032
-	call LABEL_6046
+	call CAVES_INCREMENT_VAR21_BY_F_L0
 	mov [0x29], [HERO_X]
 	mov [HERO_X], [0x22]
 	mov [0x27], [0x08]

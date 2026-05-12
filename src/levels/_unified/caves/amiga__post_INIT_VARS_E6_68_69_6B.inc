@@ -322,12 +322,12 @@ LABEL_2551:
 
 LABEL_25C7:
 	je [0x03], 0x00, LABEL_25D4
-	jg [HERO_Y], [0x19], LABEL_25F7
+	jg [HERO_Y], [0x19], CAVES_SUB_HACK67_BY_20_L3
 	ret
 
 
 LABEL_25D4:
-	setup channel=0x14, address=LABEL_E54E
+	setup channel=0x14, address=CAVES_INLINE_SET_VAR63_TO_1_L2
 	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	setup channel=0x16, address=LABEL_DF3B
 	call SET_VAR04_TO_0020
@@ -335,12 +335,12 @@ LABEL_25D4:
 	mov [0x03], 0x0000
 	mov [0x34], 0x0005
 	mov [0x35], 0x0000
-	call LABEL_770D
+	call CAVES_SUB_HACK67_BY_20_L4
 	ret
 
 
-LABEL_25F7:
-	setup channel=0x14, address=LABEL_E54E
+CAVES_SUB_HACK67_BY_20_L3:
+	setup channel=0x14, address=CAVES_INLINE_SET_VAR63_TO_1_L2
 	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	setup channel=0x16, address=LABEL_DF3B
 	call SET_VAR04_TO_0020
@@ -348,7 +348,7 @@ LABEL_25F7:
 	mov [0x03], 0x0000
 	mov [0x34], 0x0000
 	mov [0x35], 0x0000
-	call LABEL_770D
+	call CAVES_SUB_HACK67_BY_20_L4
 	mov [HERO_X], [0x2E]
 	add [HERO_X], 0x0005
 	add [HERO_Y], 0x001E

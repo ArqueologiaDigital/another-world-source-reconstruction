@@ -1,5 +1,0 @@
-LABEL_DC67:
-	jne [HACK_VAR_67], 0x69, SUB_HACK67_BY_20
-	mov [HACK_VAR_67], 0x0049
-	mov [HERO_X], 0x00AA
-	ret

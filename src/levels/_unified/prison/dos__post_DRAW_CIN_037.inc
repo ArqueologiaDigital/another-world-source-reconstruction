@@ -50,7 +50,7 @@ LABEL_7685:
 	sub [0x04], 0x0006
 	add [0x04], 0x0010
 	sub [0x06], 0x0003
-	call LABEL_72D4
+	call PRISON_ACCUMULATE_VAR_03_04_BY_01_02_L0
 	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b]
 	call LABEL_7473
 	break
@@ -58,7 +58,7 @@ LABEL_7685:
 	setup channel=0x12, address=DRAW_CIN_576_578_BLOCK
 	add [0x04], 0x0016
 	sub [0x06], 0x0003
-	call LABEL_72D4
+	call PRISON_ACCUMULATE_VAR_03_04_BY_01_02_L0
 	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b]
 	call LABEL_7473
 	deleteChannels first=0x21, last=0x24
@@ -87,9 +87,9 @@ LABEL_7685:
 	break
 	video offset=CINEMATIC_084, x=[0x1a], y=[0x1b]
 	setup channel=0x14, address=DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB
-	setup channel=0x22, address=LABEL_141E
+	setup channel=0x22, address=PRISON_FILL_AND_DRAW_CIN_24_28_L1
 	setup channel=0x23, address=INLINE_SUB_VAR08_INIT_VAR29
-	setup channel=0x24, address=LABEL_1441
+	setup channel=0x24, address=PRISON_FILL_AND_DRAW_CIN_24_28_L3
 	setup channel=0x25, address=LABEL_25D9
 	setup channel=0x26, address=LABEL_147C
 	setup channel=0x27, address=KILL_CHANNEL_LANDING

@@ -55,10 +55,18 @@ DRAW_CIN_187_TO_222_2F_AT_8E66E193:
 	add [HERO_X], 0x0001
 .endif
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_DRAW_CIN_187_TO_222_2F_AT_8E66E193.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DRAW_CIN_187_TO_222_2F_AT_8E66E193.inc"
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
+PRISON_DRAW_CIN_187_TO_222_2F_AT_8E66E193_L0:
+	break
+	video offset=CINEMATIC_222, x=[HERO_X], y=[HERO_Y]
+	je [HERO_ACTION_POS_MASK], 0x84, PRISON_DRAW_CIN_187_TO_222_2F_AT_8E66E193_L0
+	add [HERO_X], 0x0002
+	break
+	video offset=CINEMATIC_223, x=[HERO_X], y=[HERO_Y]
+	add [HERO_X], 0x0002
+	je [HERO_POS_JUMP_DOWN], 0x01, PRISON_DRAW_CIN_187_TO_222_2F_AT_8E66E193_L1
+	mov [0x63], 0x0001
+	jmp HERO_WALK_LEFT_LOOP
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")

@@ -1,9 +1,0 @@
-LABEL_A0CE:
-	ret
-
-
-LABEL_A0CF:
-	jg [HERO_Y], [0x51], COPY_VAR51_TO_VAR02_KILL_CHANNEL
-	add [HERO_Y], 0x0001
-	break
-	jmp LABEL_A0CF

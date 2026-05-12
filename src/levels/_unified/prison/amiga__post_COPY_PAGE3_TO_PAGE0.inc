@@ -24,8 +24,8 @@ LABEL_815E:
 	setup channel=0x01, address=LABEL_0C4F
 	setup channel=0x02, address=LABEL_0CC3
 	setup channel=0x03, address=DRAW_CIN_318_TO_318_2F_AT_93A8CE70
-	setup channel=0x04, address=LABEL_0A04
-	setup channel=0x05, address=LABEL_0A11
+	setup channel=0x04, address=PRISON_DRAW_CIN_311_TO_312_2F_AT_A6494EF7_L0
+	setup channel=0x05, address=PRISON_DRAW_CIN_311_TO_312_2F_AT_A6494EF7_L2
 	setup channel=0x38, address=LABEL_0895
 	jmp VAR66_RANGE_DISPATCH_BY_VAR01
 LABEL_81A1:
@@ -50,7 +50,7 @@ LABEL_81A2:
 	mov [0xF8], [0x6B]
 	and [0xF8], 0x4800
 	jne [0xF8], 0x00, VAR66_RANGE_DISPATCH_BY_VAR01
-	setup channel=0x23, address=LABEL_184E
+	setup channel=0x23, address=PRISON_INLINE_SET_VAR29_TO_6_L1
 	jmp VAR66_RANGE_DISPATCH_BY_VAR01
 
 LABEL_81EB:
@@ -95,7 +95,7 @@ LABEL_8249:
 	call LABEL_80AA
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	call LABEL_7AF1
+	call PRISON_DRAW_CIN_092_L0
 	selectVideoPage 0xFF
 	setup channel=0x00, address=LABEL_7F0E
 	setup channel=0x34, address=LABEL_7EC8
@@ -122,7 +122,7 @@ LABEL_8294:
 	call LABEL_80AA
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	call LABEL_7AF1
+	call PRISON_DRAW_CIN_092_L0
 	selectVideoPage 0xFF
 	setup channel=0x00, address=LABEL_7F0E
 	setup channel=0x34, address=LABEL_7EC8
@@ -202,7 +202,7 @@ LABEL_8355:
 
 LABEL_83A1:
 	setup channel=0x03, address=INLINE_SET_VARE6_TO_50
-	setup channel=0x04, address=LABEL_0BA8
+	setup channel=0x04, address=PRISON_INLINE_SET_VARE6_TO_50_L3
 	setup channel=0x05, address=INLINE_SET_VARE7_TO_5
 	je [0xB4], 0x00, LABEL_83BB
 	setup channel=0x05, address=KILL_CHANNEL_LANDING
@@ -252,7 +252,7 @@ LABEL_8410:
 	call LABEL_80AA
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	call LABEL_7AF1
+	call PRISON_DRAW_CIN_092_L0
 	selectVideoPage 0xFF
 	setup channel=0x00, address=LABEL_7F0E
 	setup channel=0x34, address=LABEL_7EC8
@@ -297,7 +297,7 @@ LABEL_8491:
 	call LABEL_80AA
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	call LABEL_7AF1
+	call PRISON_DRAW_CIN_092_L0
 	selectVideoPage 0xFF
 	setup channel=0x35, address=LABEL_018D
 	setup channel=0x00, address=LABEL_7F0E

@@ -2239,7 +2239,7 @@ LABEL_005F:
 
 LABEL_0068:
 	setup channel=0x22, address=LABEL_4C18
-	setup channel=0x23, address=LABEL_4AC9
+	setup channel=0x23, address=PRISON_FILL_AND_DRAW_CIN_24_28_L0
 	setup channel=0x14, address=INIT_VARS_15_19_18_14_PLUS4
 	setup channel=0x15, address=LABEL_777F
 	setup channel=0x00, address=LABEL_1CB8

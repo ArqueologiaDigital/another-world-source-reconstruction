@@ -84,7 +84,7 @@ LABEL_1640:
 	and [0x04], 0x3FFF
 	setup channel=0x27, address=LABEL_169E
 	setup channel=0x16, address=SETUP_CHAN_14_BY_VAR63
-	setup channel=0x14, address=LABEL_EB39
+	setup channel=0x14, address=CAVES_INLINE_SET_VAR63_TO_1_L2
 	mov [HERO_X], [0x78]
 	sub [HERO_X], 0x001E
 	sub [HERO_Y], 0x0014
@@ -106,7 +106,7 @@ LABEL_1661:
 	mov [HERO_X], [0x78]
 	sub [HERO_X], 0x001E
 	sub [HERO_Y], 0x0014
-	jmp LABEL_EB39
+	jmp CAVES_INLINE_SET_VAR63_TO_1_L2
 LABEL_169D:
 	db 0x11
 
@@ -267,7 +267,7 @@ LABEL_180A:
 	mov [0xF8], [0x07]
 	sub [0xF8], [HERO_X]
 	jl [0xF8], 0x64, LABEL_1831
-	call LABEL_5F0A
+	call CAVES_INIT_VARS_71_6C_6D_L1
 	jne [0x12], 0x28, LABEL_1831
 	je [0x21], 0x00, LABEL_17DE
 
@@ -313,6 +313,6 @@ LABEL_1841:
 	video type=0, offset=COMMON_VIDEO_152, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x2A], 0x000F
 	call SET_VAR04_TO_0010
-	jmp LABEL_F457
+	jmp CAVES_STEP_DRAW_CV336_THEN_CV340_L8
 LABEL_18B3:
 	db 0x11

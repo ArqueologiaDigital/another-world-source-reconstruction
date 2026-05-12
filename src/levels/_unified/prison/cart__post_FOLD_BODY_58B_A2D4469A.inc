@@ -2,7 +2,7 @@ DISPATCH_VAR2F_STATE:
 	je [0x2F], 0x01, LABEL_26CF
 	je [0x2F], 0x02, LABEL_26CF
 	je [0x2F], 0x03, LABEL_68DA
-	je [0x2F], 0x04, LABEL_5BDF
+	je [0x2F], 0x04, PRISON_INLINE_SET_VAR29_TO_6_L10
 	je [0x2F], 0x06, LABEL_2A23
 	je [0x2F], 0x07, LABEL_27C8
 	je [0x2F], 0x08, LABEL_27C8
@@ -194,7 +194,7 @@ LABEL_2D0E:
 	jl [0x84], [0xF8], SHARED_RET
 	add [0xF8], 0x0008
 	jg [0x84], [0xF8], SHARED_RET
-	call LABEL_3B5C
+	call PRISON_COPY_VAR22_TO_VAR07_L10
 	setup channel=0x2B, address=LABEL_2D47
 	ret
 

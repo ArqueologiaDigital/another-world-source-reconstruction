@@ -219,7 +219,7 @@ LABEL_4F2C:
 LABEL_4F47:
 	db 0x11
 
-LABEL_4F48:
+CAVES_INLINE_COPY_VAR22_TO_VAR08_L2:
 	jl [0x07], 0x0150, LABEL_4F61
 	mov [0x2C], [0x10]
 	add [0x10], 0x0001
@@ -228,7 +228,7 @@ LABEL_4F48:
 	jmp LABEL_4F77
 
 LABEL_4F61:
-	jg [0x07], 0xFFF0, LABEL_4F97
+	jg [0x07], 0xFFF0, CAVES_INLINE_COPY_VAR22_TO_VAR08_L0
 	mov [0x2C], [0x10]
 	sub [0x10], 0x0001
 	add [0x29], 0x0154
@@ -236,14 +236,14 @@ LABEL_4F61:
 
 LABEL_4F77:
 	mov [0x27], [0x2C]
-	call LABEL_7D33
+	call CAVES_COPY_VAR40_TO_VAR22_L0
 	mov [0x08], [0x22]
 	ret
 
 
 	mov [0x2C], [0x21]
 	mov [0x27], [0x10]
-	call LABEL_7D33
+	call CAVES_COPY_VAR40_TO_VAR22_L0
 	jne [0x08], [0x2C], INLINE_COPY_VAR22_TO_VAR08
 	mov [0x08], [0x21]
 	ret

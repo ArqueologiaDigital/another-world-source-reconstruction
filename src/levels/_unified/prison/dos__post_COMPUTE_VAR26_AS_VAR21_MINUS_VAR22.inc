@@ -27,7 +27,7 @@ LABEL_3302:
 
 
 	mov [0x21], [BUDDY_X]
-	call LABEL_335C
+	call PRISON_INCREMENT_VAR21_BY_F_L0
 	mov [0x29], [HERO_X]
 	mov [HERO_X], [0x22]
 	mov [0x27], [BUDDY_Y]
@@ -43,9 +43,9 @@ LABEL_3302:
 	ret
 
 
-LABEL_3332:
+PRISON_DEDUP_PRISON_5B_023_L1:
 	call LABEL_3348
-	call LABEL_335C
+	call PRISON_INCREMENT_VAR21_BY_F_L0
 	mov [0x29], [HERO_X]
 	mov [HERO_X], [0x22]
 	mov [0x27], [BUDDY_Y]

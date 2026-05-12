@@ -202,7 +202,7 @@ LABEL_0401:
 	call PRISON_SCENE_INIT_DRAW_CIN_085_086_TO_PAGE_3
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	call LABEL_7BBC
+	call PRISON_DRAW_CIN_092_L0
 	selectVideoPage 0xFF
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
 	break

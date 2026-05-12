@@ -5,14 +5,14 @@ LABEL_5363:
 	video type=0, offset=COMMON_VIDEO_240, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
-LABEL_5379:
+PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L1:
 	video type=0, offset=COMMON_VIDEO_206, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, DRAW_CIN_241_IF_VAR09_EQ_1
 	video type=0, offset=COMMON_VIDEO_207, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
-LABEL_538F:
+PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L4:
 	video type=0, offset=COMMON_VIDEO_165, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0001
@@ -20,14 +20,14 @@ LABEL_538F:
 	video type=0, offset=COMMON_VIDEO_166, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
-LABEL_53A9:
+PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L7:
 	video type=0, offset=COMMON_VIDEO_211, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, DRAW_CIN_241_IF_VAR09_EQ_1
 	video type=0, offset=COMMON_VIDEO_212, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
-LABEL_53BF:
+PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L10:
 	video type=0, offset=COMMON_VIDEO_214, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0001
@@ -35,7 +35,7 @@ LABEL_53BF:
 	video type=0, offset=COMMON_VIDEO_215, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
-LABEL_53D9:
+PRISON_INLINE_DRAW_CV_216_027_L0:
 	video type=0, offset=COMMON_VIDEO_218, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0001
@@ -43,7 +43,7 @@ LABEL_53D9:
 	video type=0, offset=COMMON_VIDEO_219, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
-LABEL_53F3:
+PRISON_INLINE_DRAW_CV_220_008_L0:
 	video type=0, offset=COMMON_VIDEO_222, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0002
@@ -51,7 +51,7 @@ LABEL_53F3:
 	video type=0, offset=COMMON_VIDEO_223, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
-LABEL_540D:
+PRISON_DRAW_CV224_AT_X07_Y08_L1:
 	video type=0, offset=COMMON_VIDEO_226, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0002
@@ -59,7 +59,7 @@ LABEL_540D:
 	video type=0, offset=COMMON_VIDEO_227, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
-LABEL_5427:
+PRISON_INLINE_DRAW_CV_228_020_L0:
 	video type=0, offset=COMMON_VIDEO_230, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0002
@@ -67,37 +67,37 @@ LABEL_5427:
 	video type=0, offset=COMMON_VIDEO_231, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
-LABEL_5441:
+PRISON_INLINE_DRAW_CV_266_029_L0:
 	video type=0, offset=COMMON_VIDEO_268, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
-LABEL_544C:
+PRISON_INLINE_DRAW_CV_269_024_L0:
 	video type=0, offset=COMMON_VIDEO_271, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
-LABEL_5457:
+PRISON_INLINE_DRAW_CV_272_003_L0:
 	video type=0, offset=COMMON_VIDEO_274, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
-LABEL_5462:
+PRISON_DRAW_CV275_AT_X07_Y08_L1:
 	video type=0, offset=COMMON_VIDEO_277, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
-LABEL_546D:
+PRISON_INLINE_DRAW_CV_269_025_L1:
 	video type=0, offset=COMMON_VIDEO_281, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
-LABEL_5478:
+PRISON_INLINE_DRAW_CV_269_026_L0:
 	video type=0, offset=COMMON_VIDEO_283, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
-LABEL_5483:
+PRISON_DRAW_CV263_AT_X07_Y08_L1:
 	video type=0, offset=COMMON_VIDEO_265, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
@@ -105,5 +105,5 @@ LABEL_5483:
 LABEL_548E:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, DRAW_CV204_AT_X07_Y08
-	call LABEL_532E
-	jmp LABEL_54A5
+	call PRISON_DRAW_CV204_AT_X07_Y08_L2
+	jmp PRISON_DRAW_CV204_AT_X07_Y08_L0

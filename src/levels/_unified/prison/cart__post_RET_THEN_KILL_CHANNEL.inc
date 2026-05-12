@@ -28,7 +28,7 @@ LABEL_3CAC:
 LABEL_3CAD:
 	mov [0x21], [0x22]
 	mov [0x13], 0x0001
-	call LABEL_3B01
+	call PRISON_SET_VAR13_TO_FFFF_L1
 	jne [0x13], 0xFFFF, LABEL_3CBF
 	ret
 
@@ -50,7 +50,7 @@ LABEL_3CDD:
 LABEL_3CDE:
 	mov [0x21], [0x22]
 	mov [0x13], 0x0001
-	call LABEL_3B01
+	call PRISON_SET_VAR13_TO_FFFF_L1
 	jne [0x13], 0xFFFF, LABEL_3CF1
 	ret
 
@@ -407,7 +407,7 @@ LABEL_3FC9:
 	mov [0x22], [0x21]
 	sub [0x22], 0x0064
 	mov [0x09], [0x22]
-	call LABEL_4788
+	call PRISON_DEDUP_PRISON_5B_032_L0
 	call LABEL_4117
 	mov [0x2C], 0x0001
 	jne [0x1D], 0x00, LABEL_4039
@@ -419,7 +419,7 @@ LABEL_3FE9:
 	mov [0x22], [0x21]
 	sub [0x22], 0x0140
 	mov [0x09], [0x22]
-	call LABEL_4788
+	call PRISON_DEDUP_PRISON_5B_032_L0
 	call LABEL_4117
 	mov [0x2C], 0x0001
 	jmp LABEL_4039
@@ -430,7 +430,7 @@ LABEL_4001:
 	mov [0x22], [0x21]
 	add [0x22], 0x0064
 	mov [0x09], [0x22]
-	call LABEL_4788
+	call PRISON_DEDUP_PRISON_5B_032_L0
 	call LABEL_4117
 	mov [0x2C], 0x0000
 	jne [0x1D], 0x00, LABEL_4039
@@ -442,7 +442,7 @@ LABEL_4021:
 	mov [0x22], [0x21]
 	add [0x22], 0x0140
 	mov [0x09], [0x22]
-	call LABEL_4788
+	call PRISON_DEDUP_PRISON_5B_032_L0
 	call LABEL_4117
 	mov [0x2C], 0x0000
 	jmp LABEL_4039
@@ -458,12 +458,12 @@ LABEL_4039:
 	jge [0x1D], 0x28, LABEL_405C
 
 CALL_LABEL_4177_AND_RET:
-	call LABEL_4177
+	call PRISON_INLINE_ADD_VAR2C_BY_1_L5
 	ret
 
 
 LABEL_405C:
-	call LABEL_3BA7
+	call PRISON_COPY_VAR22_TO_VAR07_L11
 	mov [0x13], 0xFFFE
 	je [0x2C], 0x01, LABEL_3FE9
 	jmp LABEL_4021
@@ -471,10 +471,10 @@ LABEL_406C:
 	db 0x05
 
 LABEL_406D:
-	call LABEL_4177
-	call LABEL_4186
+	call PRISON_INLINE_ADD_VAR2C_BY_1_L5
+	call PRISON_COPY_VAR40_TO_VAR27_L1
 	mov [0x11], 0xFFFF
-	call LABEL_41B3
+	call PRISON_COPY_VARAD_TO_VAR11_L1
 	ret
 
 
@@ -493,7 +493,7 @@ LABEL_4096:
 
 LABEL_4097:
 	call LABEL_41E0
-	call LABEL_4177
+	call PRISON_INLINE_ADD_VAR2C_BY_1_L5
 	mov [0x21], [0x10]
 	mov [0x13], 0x006E
 	mov [0xF8], [0x11]

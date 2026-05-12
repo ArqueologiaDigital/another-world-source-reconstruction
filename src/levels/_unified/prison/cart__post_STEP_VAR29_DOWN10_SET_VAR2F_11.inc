@@ -1,4 +1,4 @@
-LABEL_32EF:
+PRISON_DEDUP_PRISON_5B_023_L2:
 	mov [0x2F], 0x000B
 	call LABEL_33E4
 	jne [0x1D], 0x00, LABEL_32FD
@@ -24,7 +24,7 @@ LABEL_3316:
 	or [0x12], 0x6000
 	mov [0x21], [BUDDY_X]
 	mov [0x22], [HERO_X]
-	call LABEL_33A6
+	call PRISON_DEDUP_PRISON_5B_023_L3
 	jle [0x26], 0x96, LABEL_334D
 	sub [0x26], 0x0096
 	mov [0x29], [BUDDY_X]
@@ -64,7 +64,7 @@ LABEL_3397:
 	ret
 
 
-LABEL_33A6:
+PRISON_DEDUP_PRISON_5B_023_L3:
 	jg [0x21], [0x22], COMPUTE_VAR26_AS_VAR21_MINUS_VAR22
 	mov [0x26], [0x22]
 	sub [0x26], [0x21]

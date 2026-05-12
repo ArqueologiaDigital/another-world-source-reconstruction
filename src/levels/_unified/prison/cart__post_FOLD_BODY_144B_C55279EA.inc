@@ -1018,12 +1018,12 @@ LABEL_26AE:
 	mov [0xF8], [0x11]
 	and [0xF8], 0x1FFF
 	jl [0xF8], 0x1000, LABEL_26C5
-	je [0x2F], 0x10, LABEL_69DD
+	je [0x2F], 0x10, PRISON_INLINE_SET_VAR29_TO_6_L9
 	jmp LABEL_68DA
 
 LABEL_26C5:
 	je [0x2F], 0x10, LABEL_5851
-	jmp LABEL_5BDF
+	jmp PRISON_INLINE_SET_VAR29_TO_6_L10
 LABEL_26CE:
 	db 0x11
 
@@ -1031,7 +1031,7 @@ LABEL_26CF:
 	mov [0xF8], [0x11]
 	and [0xF8], 0x1FFF
 	jl [0xF8], 0x1000, LABEL_26E6
-	je [0x2F], 0x01, LABEL_69DD
+	je [0x2F], 0x01, PRISON_INLINE_SET_VAR29_TO_6_L9
 	jmp LABEL_2A56
 
 LABEL_26E6:
@@ -1048,7 +1048,7 @@ LABEL_26F0:
 
 LABEL_2701:
 	jg [0x29], [BUDDY_X], LABEL_68DA
-	jmp LABEL_5BDF
+	jmp PRISON_INLINE_SET_VAR29_TO_6_L10
 	killChannel
 	mov [0xF8], [0x11]
 	jl [0xF8], 0x2000, LABEL_2723
@@ -1074,7 +1074,7 @@ LABEL_2739:
 	mov [0x21], [BUDDY_X]
 	mov [0x27], [BUDDY_Y]
 	mov [0x22], 0x4008
-	call LABEL_359F
+	call PRISON_INLINE_SUB_VAR22_BY_23_L10
 	break
 	call LABEL_65BA
 	break
@@ -1109,7 +1109,7 @@ LABEL_2786:
 	mov [0x21], [BUDDY_X]
 	mov [0x27], [BUDDY_Y]
 	mov [0x22], 0x0008
-	call LABEL_359F
+	call PRISON_INLINE_SUB_VAR22_BY_23_L10
 	break
 	call LABEL_6810
 	break

@@ -1,4 +1,0 @@
-LABEL_5B50:
-	je [0x12], 0x58, SET_VAR2F_TO_001D
-	mov [0x2F], 0x000F
-	ret

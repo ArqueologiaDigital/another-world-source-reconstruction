@@ -1,4 +1,4 @@
-LABEL_EB39:
+CAVES_INLINE_SET_VAR63_TO_1_L2:
 	call SET_VAR04_TO_0030
 	mov [0x2A], 0x000F
 	call LABEL_9C47
@@ -126,7 +126,7 @@ LABEL_EC97:
 
 LABEL_ECB1:
 	break
-	jmp LABEL_EB39
+	jmp CAVES_INLINE_SET_VAR63_TO_1_L2
 LABEL_ECB5:
 	db 0x11
 
@@ -160,7 +160,7 @@ LABEL_ECE3:
 	break
 
 LABEL_ECF7:
-	call LABEL_9E6F
+	call CAVES_DRAW_CV_080_L0
 	je [HERO_POS_MASK], 0x00, LABEL_ECDB
 	break
 	je [HERO_POS_MASK], 0x00, LABEL_ECF7
@@ -170,24 +170,24 @@ LABEL_ED07:
 	sub [HERO_X], 0x0004
 
 LABEL_ED0F:
-	call LABEL_A01B
+	call CAVES_DRAW_CV_298_L0
 	call SET_VAR04_TO_0020
 	mov [0x2A], 0x000F
 	sub [HERO_X], 0x0006
 	break
-	call LABEL_A038
+	call CAVES_DRAW_CV108_PLAY_60_F0F_V2A_C1_L0
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_F007
 	sub [HERO_X], 0x0008
 	add [HERO_Y], 0x0000
 	break
-	call LABEL_A04F
+	call CAVES_DRAW_CV_110_L0
 	sub [HERO_X], 0x0008
 	break
-	call LABEL_A066
+	call CAVES_DRAW_CV_112_L0
 	sub [HERO_X], 0x0008
 	add [HERO_Y], 0x0000
 	break
-	call LABEL_A07D
+	call CAVES_DRAW_CV_114_L0
 	add [HERO_Y], 0x0000
 	je [HERO_POS_MASK], 0x00, LABEL_ECDB
 	sub [HERO_X], 0x000A
@@ -195,22 +195,22 @@ LABEL_ED0F:
 
 LABEL_ED57:
 	mov [0x63], 0x0005
-	call LABEL_A08C
+	call CAVES_DRAW_CV_115_L0
 	sub [HERO_X], 0x0006
 	break
-	call LABEL_A0A9
+	call CAVES_DRAW_CV098_PLAY_60_F0A_V2A_C1_L0
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_F007
 	sub [HERO_X], 0x0008
 	add [HERO_Y], 0x0000
 	break
-	call LABEL_A0C0
+	call CAVES_DRAW_CV_100_L0
 	sub [HERO_X], 0x0008
 	break
-	call LABEL_A0D7
+	call CAVES_DRAW_CV_102_L0
 	sub [HERO_X], 0x0008
 	add [HERO_Y], 0x0000
 	break
-	call LABEL_A0EE
+	call CAVES_DRAW_CV_104_L0
 	add [HERO_Y], 0x0000
 	je [HERO_POS_MASK], 0x00, LABEL_ECDB
 	sub [HERO_X], 0x000A
@@ -241,7 +241,7 @@ LABEL_EDC5:
 LABEL_EDCC:
 	db 0x11
 
-LABEL_EDCD:
+CAVES_INLINE_SET_VAR63_TO_5_L3:
 	video offset=CINEMATIC_170, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0003
 	je [HERO_POS_MASK], 0x00, LABEL_EDC5
@@ -253,31 +253,31 @@ LABEL_EDDD:
 	break
 	je [HERO_POS_MASK], 0x00, LABEL_EDDD
 
-LABEL_EDED:
+CAVES_INLINE_SET_VAR63_TO_5_L2:
 	setup channel=0x15, address=LABEL_EDA0
 	add [HERO_X], 0x0004
 
 LABEL_EDF5:
-	call LABEL_9F5F
+	call CAVES_DRAW_CV_297_L0
 	call SET_VAR04_TO_0030
 	mov [0x2A], 0x000F
 	add [HERO_X], 0x0006
 	mov [0x36], 0xFFF4
 	break
-	call LABEL_9F76
+	call CAVES_DRAW_CV_297_L1
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_F17B
 	add [HERO_X], 0x0008
 	mov [0x36], 0xFFEF
 	break
-	call LABEL_9F87
+	call CAVES_DRAW_CV_297_L2
 	add [HERO_X], 0x0008
 	mov [0x36], 0xFFFE
 	break
-	call LABEL_9F98
+	call CAVES_DRAW_CV_297_L3
 	add [HERO_X], 0x0008
 	mov [0x36], 0x0005
 	break
-	call LABEL_9FA9
+	call CAVES_DRAW_CV_297_L4
 	je [HERO_POS_MASK], 0x00, LABEL_EDC5
 	add [HERO_X], 0x000A
 	mov [0x36], 0xFFF9
@@ -285,26 +285,26 @@ LABEL_EDF5:
 
 LABEL_EE45:
 	mov [0x63], 0x0006
-	call LABEL_9FBA
+	call CAVES_DRAW_CV_297_L5
 	add [HERO_X], 0x0006
 	mov [0x36], 0xFFF4
 	break
-	call LABEL_9FD1
+	call CAVES_DRAW_CV_297_L6
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_F17B
 	add [HERO_Y], 0x0000
 	add [HERO_X], 0x0008
 	mov [0x36], 0xFFEF
 	break
-	call LABEL_9FE2
+	call CAVES_DRAW_CV_297_L7
 	add [HERO_X], 0x0008
 	mov [0x36], 0xFFFE
 	break
-	call LABEL_9FF3
+	call CAVES_DRAW_CV_297_L8
 	add [HERO_Y], 0x0000
 	add [HERO_X], 0x0008
 	mov [0x36], 0x0005
 	break
-	call LABEL_A004
+	call CAVES_DRAW_CV_297_L9
 	add [HERO_Y], 0x0000
 	je [HERO_POS_MASK], 0x00, LABEL_EDC5
 	add [HERO_X], 0x000A
@@ -315,10 +315,10 @@ LABEL_EEA1:
 	db 0x11
 
 LABEL_EEA2:
-	call LABEL_9E6F
+	call CAVES_DRAW_CV_080_L0
 	break
 	je [HERO_ACTION_POS_MASK], 0x80, LABEL_EEA2
-	call LABEL_9E6F
+	call CAVES_DRAW_CV_080_L0
 	mov [0x63], 0x0001
 	jmp HERO_WALK_LEFT_LOOP
 
@@ -327,7 +327,7 @@ LABEL_EEB6:
 	je [0x0A], 0x00, LABEL_EEA2
 	mov [0x2A], 0x0020
 	sub [HERO_X], 0x0001
-	call LABEL_7EBC
+	call CAVES_STEP_DRAW_CV336_THEN_CV340_L4
 	sub [HERO_X], 0x0003
 	call LABEL_9D37
 	sub [HERO_X], 0x0001

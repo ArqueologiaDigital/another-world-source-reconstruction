@@ -1,5 +1,0 @@
-LABEL_5523:
-	mov [0x29], 0x0002
-	mov [0x2F], 0x0009
-	setup channel=0x01, address=LABEL_2A12
-	ret

@@ -1,8 +1,0 @@
-LABEL_0AC0:
-	break
-	mov [0xF8], [0x31]
-	and [0xF8], 0x0007
-	jne [0xF8], 0x00, LABEL_0AC0
-	jmp DRAW_CIN_319_TO_319_4F_AT_9E666694
-LABEL_0AD1:
-	db 0x11

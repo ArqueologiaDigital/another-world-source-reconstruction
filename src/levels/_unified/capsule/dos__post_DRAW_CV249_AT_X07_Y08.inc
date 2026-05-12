@@ -1,4 +1,4 @@
-LABEL_8313:
+CAPSULE_DRAW_CV246_AT_X07_Y08_L3:
 	sub [BUDDY_Y], 0x0001
 	ret
 
@@ -27,7 +27,7 @@ LABEL_8345:
 	video type=0, offset=COMMON_VIDEO_253, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_254, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_8364
-	call LABEL_8212
+	call CAPSULE_DRAW_CV246_AT_X07_Y08_L2
 	jmp LABEL_8369
 
 LABEL_8364:
@@ -79,5 +79,5 @@ LABEL_83BC:
 	video type=0, offset=COMMON_VIDEO_247, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_258, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, DRAW_CV259_AT_X07_Y08
-	call LABEL_8264
-	jmp LABEL_83EA
+	call CAPSULE_DRAW_CV261_AT_X07_Y08_L2
+	jmp CAPSULE_DRAW_CV259_AT_X07_Y08_L0

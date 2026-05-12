@@ -22,7 +22,7 @@ LABEL_03C7:
 	mov [HERO_X], 0x005C
 	mov [HERO_Y], 0x00AC
 	mov [0x63], 0x0002
-	setup channel=0x14, address=LABEL_E54E
+	setup channel=0x14, address=CAVES_INLINE_SET_VAR63_TO_1_L2
 	setup channel=0x16, address=LABEL_DF3B
 	setup channel=0x38, address=LABEL_0507
 	mov [0x32], 0x0000

@@ -1,7 +1,7 @@
 LABEL_5D81:
 	mov [0x21], [HERO_X]
 	mov [0x22], [0x07]
-	jmp LABEL_5D6D
+	jmp CAVES_COPY_VAR40_TO_VAR22_L8
 
 LABEL_5D8A:
 	mov [0x21], [0x07]
@@ -38,9 +38,9 @@ LABEL_5DD7:
 	ret
 
 
-LABEL_5DE4:
+CAVES_SET_VAR2F_TO_000D_L1:
 	call LABEL_5DFA
-	call LABEL_5E0E
+	call CAVES_INCREMENT_VAR21_BY_F_L0
 	mov [0x29], [HERO_X]
 	mov [HERO_X], [0x22]
 	mov [0x27], [0x08]

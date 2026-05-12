@@ -165,7 +165,7 @@ LABEL_6C89:
 	ret
 
 
-LABEL_6C9A:
+PRISON_DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB_L2:
 	call LABEL_6B76
 	video type=0, offset=COMMON_VIDEO_016, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
@@ -286,7 +286,7 @@ LABEL_6DAD:
 	ret
 
 
-LABEL_6DCB:
+PRISON_DRAW_CV_071_L1:
 	jne [0x05], 0x00, LABEL_6DD7
 	video type=0, offset=COMMON_VIDEO_000, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret

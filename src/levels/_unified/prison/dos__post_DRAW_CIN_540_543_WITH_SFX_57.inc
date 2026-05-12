@@ -121,7 +121,7 @@ LABEL_78B4:
 	jmp LABEL_77A4
 	killChannel
 	call LABEL_711F
-	call LABEL_72D4
+	call PRISON_ACCUMULATE_VAR_03_04_BY_01_02_L0
 	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b]
 	call LABEL_739F
 	ret

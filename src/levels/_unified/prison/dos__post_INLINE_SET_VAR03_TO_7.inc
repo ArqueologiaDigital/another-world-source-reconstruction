@@ -20,7 +20,7 @@ DELAY_LOOP_VAR03_AT_0601:
 
 LABEL_061C:
 	break
-	call LABEL_6C9A
+	call PRISON_DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB_L2
 	djnz [0x03], LABEL_061C
 	break
 	video offset=CINEMATIC_555, x=[HERO_X], y=[HERO_Y]
@@ -30,14 +30,14 @@ LABEL_061C:
 LABEL_0632:
 	break
 	sub [HERO_X], 0x0001
-	call LABEL_6E5E
+	call PRISON_DRAW_CV_080_L0
 	mov [0x05], 0x0003
 	djnz [0x03], LABEL_0632
 	mov [0x03], 0x000F
 
 LABEL_0646:
 	break
-	call LABEL_6E5E
+	call PRISON_DRAW_CV_080_L0
 	djnz [0x03], LABEL_0646
 	mov [0x05], 0x0000
 	mov [0x63], 0x0001

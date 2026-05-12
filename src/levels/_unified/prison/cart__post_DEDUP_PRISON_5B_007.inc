@@ -4,5 +4,5 @@ LABEL_5EBA:
 	video type=0, offset=COMMON_VIDEO_250, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_257, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, INLINE_DRAW_CV_252_018
-	call LABEL_5D52
-	jmp LABEL_5EDE
+	call PRISON_INLINE_DRAW_CV_255_010_L2
+	jmp PRISON_INLINE_DRAW_CV_252_019_L0

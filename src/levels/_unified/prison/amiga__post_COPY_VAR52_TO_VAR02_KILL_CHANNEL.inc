@@ -3,11 +3,11 @@ LABEL_7DEF:
 	mov [HERO_Y], [0x52]
 	sub [HERO_Y], 0x001E
 	play id=0x0057, freq=0x1C, vol=0x40, channel=0x00
-	call LABEL_7E4F
+	call PRISON_DRAW_CIN_552_L1
 	break
 	mov [HERO_Y], [0x52]
-	call LABEL_7E4F
-	setup channel=0x1A, address=LABEL_7DDD
+	call PRISON_DRAW_CIN_552_L1
+	setup channel=0x1A, address=PRISON_COPY_VAR51_TO_VAR02_KILL_CHANNEL_L0
 	jmp LABEL_7E68
 LABEL_7E11:
 	db 0x11

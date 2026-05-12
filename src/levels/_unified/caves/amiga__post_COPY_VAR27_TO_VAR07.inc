@@ -256,14 +256,14 @@ LABEL_640C:
 	je [0x13], 0x00, LABEL_6430
 	mov [0x13], 0x0000
 	sub [0x22], 0x0028
-	call LABEL_73A8
+	call CAVES_DEDUP_CAVES_5B_004_L0
 	call LABEL_6185
 	jmp LABEL_645F
 
 LABEL_6430:
 	sub [0x22], [0x11]
 	sub [0x22], 0x003C
-	call LABEL_73A8
+	call CAVES_DEDUP_CAVES_5B_004_L0
 	call LABEL_6185
 	add [0x22], 0x003C
 	jle [0x22], [0x21], LABEL_644A
@@ -295,14 +295,14 @@ LABEL_646D:
 	je [0x13], 0x00, LABEL_64AA
 	mov [0x13], 0x0000
 	add [0x22], 0x0028
-	call LABEL_73A8
+	call CAVES_DEDUP_CAVES_5B_004_L0
 	call LABEL_619C
 	jmp LABEL_64D9
 
 LABEL_64AA:
 	add [0x22], [0x11]
 	add [0x22], 0x003C
-	call LABEL_73A8
+	call CAVES_DEDUP_CAVES_5B_004_L0
 	call LABEL_619C
 	sub [0x22], 0x003C
 	jge [0x22], [0x21], LABEL_64C4

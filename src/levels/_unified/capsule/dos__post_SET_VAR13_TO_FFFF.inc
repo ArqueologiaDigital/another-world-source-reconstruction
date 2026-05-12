@@ -115,9 +115,9 @@ LABEL_5F23:
 
 
 LABEL_5F3C:
-	call LABEL_659F
+	call CAPSULE_COPY_VAR40_TO_VAR27_L1
 	sub [0x11], 0x0004
-	call LABEL_65EE
+	call CAPSULE_COPY_VARAD_TO_VAR11_L1
 	je [0x29], 0x01, PLAY_SFX_005C_CH00
 	play id=0x005C, freq=0x19, vol=0x40, channel=0x01
 	ret

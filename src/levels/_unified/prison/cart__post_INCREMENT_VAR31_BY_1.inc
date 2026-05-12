@@ -35,7 +35,7 @@ JUNK__0719:
 	break
 	jmp JUNK__0719
 
-LABEL_0727:
+PRISON_INIT_VARS_E7_E8_L3:
 	setPalette 0x1F
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF

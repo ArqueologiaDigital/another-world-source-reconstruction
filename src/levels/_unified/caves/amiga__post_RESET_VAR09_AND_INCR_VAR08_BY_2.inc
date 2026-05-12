@@ -82,7 +82,7 @@ LABEL_2E0C:
 LABEL_2E57:
 	db 0x11
 
-LABEL_2E58:
+CAVES_INIT_VARS_6D_71_70_L15:
 	video offset=CINEMATIC_663, x=[0x07], y=[0x08]
 	mov [0x6C], [0x07]
 	mov [0x6D], [0x08]

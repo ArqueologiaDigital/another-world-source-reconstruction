@@ -7,7 +7,7 @@ LABEL_A17C:
 	break
 	mov [HERO_Y], [0x52]
 	call LABEL_A1DC
-	setup channel=0x1A, address=LABEL_A16A
+	setup channel=0x1A, address=CAVES_COPY_VAR51_TO_VAR02_KILL_CHANNEL_L0
 	jmp LABEL_A1F5
 LABEL_A19E:
 	db 0x11
@@ -21,7 +21,7 @@ LABEL_A19F:
 	break
 	mov [HERO_Y], [0x51]
 	call LABEL_A1C2
-	setup channel=0x1A, address=LABEL_A158
+	setup channel=0x1A, address=CAVES_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65_L1
 	jmp LABEL_A1F5
 LABEL_A1C1:
 	db 0x11

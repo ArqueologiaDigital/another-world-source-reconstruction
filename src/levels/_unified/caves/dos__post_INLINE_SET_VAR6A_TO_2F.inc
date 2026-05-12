@@ -1,7 +1,7 @@
 LABEL_1BF0:
 	sub [0x6B], 0x0008
 	mov [0x21], [0x6B]
-	call LABEL_1C16
+	call CAVES_INLINE_SET_VAR68_TO_32_L1
 	break
 	djnz [0x6A], LABEL_1BF0
 	mov [0x6A], 0x002F
@@ -9,14 +9,14 @@ LABEL_1BF0:
 LABEL_1C03:
 	add [0x6B], 0x0008
 	mov [0x21], [0x6B]
-	call LABEL_1C16
+	call CAVES_INLINE_SET_VAR68_TO_32_L1
 	break
 	djnz [0x6A], LABEL_1C03
 	jmp INLINE_SET_VAR6A_TO_2F
 LABEL_1C15:
 	db 0x11
 
-LABEL_1C16:
+CAVES_INLINE_SET_VAR68_TO_32_L1:
 	video offset=CINEMATIC_013, x=[0x21], y=100
 	sub [0x21], 0x0064
 	video offset=CINEMATIC_013, x=[0x21], y=100

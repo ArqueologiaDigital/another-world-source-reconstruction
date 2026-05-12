@@ -286,7 +286,7 @@ LABEL_6EB0:
 	ret
 
 
-LABEL_6ECE:
+PRISON_DRAW_CV_071_L1:
 	jne [0x05], 0x00, LABEL_6EDA
 	video type=0, offset=COMMON_VIDEO_000, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret

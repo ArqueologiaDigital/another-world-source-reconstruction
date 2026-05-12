@@ -10,12 +10,44 @@ INLINE_SET_VAR29_TO_5:
 .endif
 
 .include "../_helpers/INLINE_SET_VAR29_TO_6.inc"
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INLINE_SET_VAR29_TO_6.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_SET_VAR29_TO_6.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_SET_VAR29_TO_6.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_INLINE_SET_VAR29_TO_6_L0:
+	break
+	je [HACK_VAR_67], 0x04, PRISON_INLINE_SET_VAR29_TO_6_L1
+	djnz [0x29], PRISON_INLINE_SET_VAR29_TO_6_L0
+	jmp PRISON_INLINE_SET_VAR29_TO_6_L1
+PRISON_INLINE_SET_VAR29_TO_6_L2:
+	db 0x11
+
+PRISON_INLINE_SET_VAR29_TO_6_L1:
+	call COPY_HASH_AND_SPLIT_VAR38_3F_3E
+	add [0xF1], 0x0001
+	jg [0xF1], 0x20, PRISON_INLINE_SET_VAR29_TO_6_L3
+	jne [HACK_VAR_67], 0x04, INLINE_SET_VAR29_TO_6
+	je [0x3A], 0x00, PRISON_INLINE_SET_VAR29_TO_6_L4
+	je [0x3A], 0x01, PRISON_INLINE_SET_VAR29_TO_6_L5
+	jl [0x3A], 0x05, PRISON_INLINE_SET_VAR29_TO_6_L6
+	jmp PRISON_INLINE_SET_VAR29_TO_6_L7
+
+PRISON_INLINE_SET_VAR29_TO_6_L3:
+	jne [HACK_VAR_67], 0x04, PRISON_INLINE_SET_VAR29_TO_6_L8
+	selectVideoPage 0x00
+	video offset=CINEMATIC_379, x=160, y=100
+	selectVideoPage 0xFF
+
+PRISON_INLINE_SET_VAR29_TO_6_L8:
+	mov [0x12], 0x0000
+	mov [0xB1], 0x0001
+	and [0x49], 0x7F9F
+	or [0x49], 0x0040
+	or [0x49], 0x0380
+	mov [0x29], 0x012C
+	setup channel=0x08, address=INLINE_SET_VARF1_TO_64
+	mov [0xF8], [0x49]
+	and [0xF8], 0x0380
+	je [0xF8], 0x0380, PRISON_INLINE_SET_VAR29_TO_6_L9
+	mov [0x29], 0x000A
+	jmp PRISON_INLINE_SET_VAR29_TO_6_L10
 .endif
 
 INLINE_SET_VARF1_TO_64:
@@ -58,12 +90,12 @@ DRAW_CIN_406_408_BLOCK:
 INLINE_SET_VAR29_TO_28:
 	mov [0x29], 0x0028
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INLINE_SET_VAR29_TO_28.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INLINE_SET_VAR29_TO_28.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INLINE_SET_VAR29_TO_28.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_INLINE_SET_VAR29_TO_28_L0:
+	call GUARDED_DRAW_CIN_242_243
+	break
+	djnz [0x29], PRISON_INLINE_SET_VAR29_TO_28_L0
+	killChannel
 .endif
 
 INLINE_SUB_VAR08_INIT_VAR29:
@@ -83,12 +115,17 @@ SET_VAR29_TO_000A:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_SET_VAR29_TO_000A.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_SET_VAR29_TO_000A.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_SET_VAR29_TO_000A.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+PRISON_SET_VAR29_TO_000A_L0:
+	jne [0x0E], 0x00, PRISON_SET_VAR29_TO_000A_L1
+	jl [0x39], 0x02, INIT_VARS_0E_29
+	mov [0x0E], 0x0001
+
+PRISON_SET_VAR29_TO_000A_L1:
+	jne [0x0E], 0x01, INIT_VARS_0E_29
+	mov [0x0E], 0x0000
+	mov [0x29], 0xFFFE
+	ret
 .endif
 
 INIT_VARS_0E_29:

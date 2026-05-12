@@ -84,7 +84,7 @@ LABEL_1480:
 	and [0x04], 0x3FFF
 	setup channel=0x27, address=LABEL_14DE
 	setup channel=0x16, address=LABEL_DF3B
-	setup channel=0x14, address=LABEL_E54E
+	setup channel=0x14, address=CAVES_INLINE_SET_VAR63_TO_1_L2
 	mov [HERO_X], [0x78]
 	sub [HERO_X], 0x001E
 	sub [HERO_Y], 0x0014
@@ -106,7 +106,7 @@ LABEL_14A1:
 	mov [HERO_X], [0x78]
 	sub [HERO_X], 0x001E
 	sub [HERO_Y], 0x0014
-	jmp LABEL_E54E
+	jmp CAVES_INLINE_SET_VAR63_TO_1_L2
 LABEL_14DD:
 	db 0x11
 
@@ -267,7 +267,7 @@ LABEL_164A:
 	mov [0xF8], [0x07]
 	sub [0xF8], [HERO_X]
 	jl [0xF8], 0x64, LABEL_1671
-	call LABEL_5BE7
+	call CAVES_INIT_VARS_71_6C_6D_L1
 	jne [0x12], 0x28, LABEL_1671
 	je [0x21], 0x00, LABEL_161E
 

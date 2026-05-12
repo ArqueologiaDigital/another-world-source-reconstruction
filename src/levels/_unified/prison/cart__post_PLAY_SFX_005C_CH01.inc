@@ -1,4 +1,4 @@
-LABEL_3B5C:
+PRISON_COPY_VAR22_TO_VAR07_L10:
 	or [0x04], 0x4000
 	song id=0x0BDD, delay=0x0000, pos=0x00
 	play id=0x005D, freq=0x14, vol=0x40, channel=0x00
@@ -22,7 +22,7 @@ LABEL_3B98:
 	ret
 
 
-LABEL_3BA7:
+PRISON_COPY_VAR22_TO_VAR07_L11:
 	call LABEL_3C26
 	mov [0xF8], [0x2B]
 	and [0xF8], 0x0800

@@ -250,7 +250,7 @@ LABEL_0454:
 	call LABEL_80AA
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	call LABEL_7AF1
+	call PRISON_DRAW_CIN_092_L0
 	selectVideoPage 0xFF
 	break
 	fill page=0xFF, color=0x00

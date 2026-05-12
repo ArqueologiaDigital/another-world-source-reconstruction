@@ -12,16 +12,16 @@ LABEL_7B54:
 LABEL_7B5E:
 	call LABEL_D520
 	mov [0x22], [HERO_X]
-	jl [HERO_X], [0x28], LABEL_7B9A
+	jl [HERO_X], [0x28], CAVES_COPY_VAR01_TO_VAR28_L0
 	jg [HERO_X], [0x28], LABEL_7B7D
 	mov [0x21], [0x04]
 	and [0x21], 0x0010
-	je [0x21], 0x00, LABEL_7B9A
+	je [0x21], 0x00, CAVES_COPY_VAR01_TO_VAR28_L0
 
 LABEL_7B7D:
 	mov [0x21], [0x28]
 	add [0x22], [0x2A]
-	call LABEL_7BC2
+	call CAVES_COPY_VAR01_TO_VAR28_L1
 	sub [0x22], [0x2A]
 	jge [0x22], [HERO_X], COPY_VAR01_TO_VAR28
 	mov [HERO_X], [0x22]

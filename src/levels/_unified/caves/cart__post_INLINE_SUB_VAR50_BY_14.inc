@@ -58,7 +58,7 @@ LABEL_A247:
 	setup channel=0x07, address=LABEL_C73B
 	setup channel=0x03, address=INIT_VARS_E6_E9_E8
 	setup channel=0x05, address=LABEL_139C
-	setup channel=0x14, address=LABEL_E8D9
+	setup channel=0x14, address=CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L1
 	setup channel=0x3C, address=LABEL_DDC7
 	jmp CHECK_VAR66_VAR67_AND_BLIT
 LABEL_A2A3:
@@ -539,7 +539,7 @@ LABEL_A857:
 LABEL_A85F:
 	mov [0x68], 0x005E
 	mov [0x69], 0x0000
-	setup channel=0x22, address=LABEL_2D9D
+	setup channel=0x22, address=CAVES_INLINE_SET_VAR73_TO_6_L3
 	setup channel=0x23, address=LABEL_2FA2
 	mov [0x6A], 0x0064
 	mov [0x6B], 0xFFFB
@@ -552,7 +552,7 @@ LABEL_A85F:
 	setup channel=0x1C, address=LABEL_08FA
 	setup channel=0x23, address=LABEL_307B
 	sub [0x6B], 0x0010
-	setup channel=0x24, address=LABEL_2DB9
+	setup channel=0x24, address=CAVES_INIT_VARS_6D_71_70_L16
 
 LABEL_A8A0:
 	setup channel=0x38, address=LABEL_24D8
@@ -645,7 +645,7 @@ LABEL_A9A3:
 	mov [0x68], [0x48]
 	add [0x68], 0x000E
 	mov [0x69], 0x002A
-	setup channel=0x22, address=LABEL_2D9D
+	setup channel=0x22, address=CAVES_INLINE_SET_VAR73_TO_6_L3
 	setup channel=0x23, address=LABEL_2FA2
 
 LABEL_A9CB:
@@ -687,17 +687,17 @@ LABEL_A9D3:
 	mov [0x6E], [0x48]
 	add [0x6E], 0x000E
 	mov [0x6F], 0x0032
-	setup channel=0x28, address=LABEL_2DD6
+	setup channel=0x28, address=CAVES_INLINE_SET_VAR74_TO_6_L3
 	setup channel=0x29, address=LABEL_2FA2
 	mov [0x70], [0x4A]
 	add [0x70], 0x000E
 	mov [0x71], 0x0025
-	setup channel=0x2A, address=LABEL_2DE4
+	setup channel=0x2A, address=CAVES_INLINE_SET_VAR75_TO_6_L3
 	setup channel=0x2B, address=LABEL_2FA2
 	mov [0x72], [0x4C]
 	add [0x72], 0x000E
 	mov [0x73], 0x003D
-	setup channel=0x2C, address=LABEL_2DF2
+	setup channel=0x2C, address=CAVES_INLINE_SET_VAR76_TO_6_L3
 	setup channel=0x2D, address=LABEL_2FA2
 	deleteChannels first=0x2C, last=0x2D
 	jmp CHECK_VAR66_VAR67_AND_BLIT
@@ -739,7 +739,7 @@ LABEL_AA85:
 	mov [0x6E], [0x48]
 	add [0x6E], 0x000E
 	mov [0x6F], 0x0038
-	setup channel=0x28, address=LABEL_2DD6
+	setup channel=0x28, address=CAVES_INLINE_SET_VAR74_TO_6_L3
 	setup channel=0x29, address=LABEL_2FA2
 
 LABEL_AB14:
@@ -751,7 +751,7 @@ LABEL_AB14:
 	mov [0x70], [0x4A]
 	add [0x70], 0x000E
 	mov [0x71], 0x0030
-	setup channel=0x2A, address=LABEL_2DE4
+	setup channel=0x2A, address=CAVES_INLINE_SET_VAR75_TO_6_L3
 	setup channel=0x2B, address=LABEL_2FA2
 
 LABEL_AB3C:
@@ -763,7 +763,7 @@ LABEL_AB3C:
 	mov [0x72], [0x4C]
 	add [0x72], 0x000E
 	mov [0x73], 0x0037
-	setup channel=0x2C, address=LABEL_2DF2
+	setup channel=0x2C, address=CAVES_INLINE_SET_VAR76_TO_6_L3
 	setup channel=0x2D, address=LABEL_2FA2
 
 TRAMP_AB64:
@@ -1368,7 +1368,7 @@ LABEL_B2A0:
 	je [0xB0], 0x03, TRAMP_B2BD
 	add [HERO_X], 0x000A
 	jl [HERO_Y], 0xC8, TRAMP_B2BD
-	setup channel=0x14, address=LABEL_7A43
+	setup channel=0x14, address=CAVES_COPY_VAR40_TO_VAR22_L10
 
 TRAMP_B2BD:
 	jmp CHECK_VAR66_VAR67_AND_BLIT

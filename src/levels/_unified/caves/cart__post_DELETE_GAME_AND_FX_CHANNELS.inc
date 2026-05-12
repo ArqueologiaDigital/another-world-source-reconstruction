@@ -31,7 +31,7 @@ LABEL_DAA2:
 	mov [HERO_Y], [0x44]
 
 LABEL_DAC0:
-	call LABEL_7C51
+	call CAVES_COPY_VAR40_TO_VAR22_L3
 	jl [HERO_Y], [0x22], SHARED_RET
 	mov [HERO_Y], [0x22]
 	ret

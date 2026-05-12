@@ -82,7 +82,7 @@ LABEL_3002:
 LABEL_304D:
 	db 0x11
 
-LABEL_304E:
+CAVES_INIT_VARS_6D_71_70_L15:
 	video offset=CINEMATIC_674, x=[0x07], y=[0x08]
 	mov [0x6C], [0x07]
 	mov [0x6D], [0x08]

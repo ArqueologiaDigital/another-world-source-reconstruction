@@ -103,7 +103,7 @@ DRAW_CIN_032:
 	ret
 
 
-LABEL_8F24:
+CAVES_DRAW_CV_355_L10:
 	video type=0, offset=COMMON_VIDEO_202, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -214,7 +214,7 @@ LABEL_9056:
 	video type=0, offset=COMMON_VIDEO_172, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_9073
-	call LABEL_8BE1
+	call CAVES_DRAW_CV246_AT_X07_Y08_L2
 	jmp LABEL_9076
 
 LABEL_9073:
@@ -231,7 +231,7 @@ LABEL_9077:
 	video type=0, offset=COMMON_VIDEO_175, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_909A
-	call LABEL_8BE1
+	call CAVES_DRAW_CV246_AT_X07_Y08_L2
 	jmp LABEL_909D
 
 LABEL_909A:
@@ -247,7 +247,7 @@ LABEL_909E:
 	video type=0, offset=COMMON_VIDEO_178, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_90BB
-	call LABEL_8BE1
+	call CAVES_DRAW_CV246_AT_X07_Y08_L2
 	jmp LABEL_90BE
 
 LABEL_90BB:
@@ -264,7 +264,7 @@ LABEL_90BF:
 	video type=0, offset=COMMON_VIDEO_180, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_90E1
-	call LABEL_8C04
+	call CAVES_INLINE_DRAW_CV_255_031_L2
 	jmp LABEL_90E4
 
 LABEL_90E1:
@@ -298,7 +298,7 @@ LABEL_910B:
 	video type=0, offset=COMMON_VIDEO_188, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_912D
-	call LABEL_8C33
+	call CAVES_DRAW_CV_355_L9
 	jmp LABEL_9130
 
 LABEL_912D:
@@ -351,7 +351,7 @@ LABEL_9185:
 	video type=0, offset=COMMON_VIDEO_196, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_91A7
-	call LABEL_8C33
+	call CAVES_DRAW_CV_355_L9
 	jmp LABEL_91AA
 
 LABEL_91A7:
@@ -369,7 +369,7 @@ LABEL_91AB:
 	video type=0, offset=COMMON_VIDEO_197, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_91D3
-	call LABEL_8C33
+	call CAVES_DRAW_CV_355_L9
 	jmp LABEL_91D6
 
 LABEL_91D3:
@@ -385,7 +385,7 @@ LABEL_91D7:
 	video type=0, offset=COMMON_VIDEO_198, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_91F4
-	call LABEL_8C33
+	call CAVES_DRAW_CV_355_L9
 	jmp LABEL_91F7
 
 LABEL_91F4:
@@ -417,7 +417,7 @@ LABEL_9219:
 	video type=0, offset=COMMON_VIDEO_200, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_9236
-	call LABEL_8C04
+	call CAVES_INLINE_DRAW_CV_255_031_L2
 	jmp LABEL_9239
 
 LABEL_9236:
@@ -433,11 +433,11 @@ LABEL_923A:
 	video type=0, offset=COMMON_VIDEO_201, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_9257
-	call LABEL_8BE1
+	call CAVES_DRAW_CV246_AT_X07_Y08_L2
 	jmp LABEL_925A
 
 LABEL_9257:
-	call LABEL_8F24
+	call CAVES_DRAW_CV_355_L10
 
 LABEL_925A:
 	ret
@@ -449,7 +449,7 @@ GUARDED_HERO_ANIM_CV_128:
 	video type=0, offset=COMMON_VIDEO_128, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_9278
-	call LABEL_8BE1
+	call CAVES_DRAW_CV246_AT_X07_Y08_L2
 	jmp LABEL_927B
 
 LABEL_9278:
@@ -465,7 +465,7 @@ LABEL_927C:
 	video type=0, offset=COMMON_VIDEO_128, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_9299
-	call LABEL_8C04
+	call CAVES_INLINE_DRAW_CV_255_031_L2
 	jmp LABEL_929C
 
 LABEL_9299:
@@ -523,7 +523,7 @@ LABEL_92F3:
 	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_286, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
-	call LABEL_837A
+	call CAVES_DRAW_CV204_AT_X07_Y08_L1
 	sub [0x08], 0x000D
 	sub [0x07], 0x0001
 	ret
@@ -562,7 +562,7 @@ LABEL_9371:
 	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_285, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
-	call LABEL_837A
+	call CAVES_DRAW_CV204_AT_X07_Y08_L1
 	sub [0x08], 0x000D
 	ret
 
@@ -583,7 +583,7 @@ LABEL_9394:
 	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_286, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
-	call LABEL_837A
+	call CAVES_DRAW_CV204_AT_X07_Y08_L1
 	sub [0x08], 0x000D
 	sub [0x07], 0x0001
 	ret
@@ -647,7 +647,7 @@ LABEL_9452:
 	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_286, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
-	call LABEL_837A
+	call CAVES_DRAW_CV204_AT_X07_Y08_L1
 	sub [0x08], 0x000D
 	sub [0x07], 0x0001
 	ret

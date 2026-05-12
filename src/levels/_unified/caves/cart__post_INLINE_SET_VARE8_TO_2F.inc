@@ -1,7 +1,7 @@
 LABEL_3703:
 	sub [0xE9], 0x0008
 	mov [0x21], [0xE9]
-	call LABEL_3729
+	call CAVES_INLINE_SET_VARE6_TO_32_L1
 	break
 	djnz [0xE8], LABEL_3703
 	mov [0xE8], 0x002F
@@ -9,14 +9,14 @@ LABEL_3703:
 LABEL_3716:
 	add [0xE9], 0x0008
 	mov [0x21], [0xE9]
-	call LABEL_3729
+	call CAVES_INLINE_SET_VARE6_TO_32_L1
 	break
 	djnz [0xE8], LABEL_3716
 	jmp INLINE_SET_VARE8_TO_2F
 LABEL_3728:
 	db 0x11
 
-LABEL_3729:
+CAVES_INLINE_SET_VARE6_TO_32_L1:
 	video offset=CINEMATIC_013, x=[0x21], y=100
 	sub [0x21], 0x0064
 	video offset=CINEMATIC_013, x=[0x21], y=100

@@ -659,7 +659,7 @@ LABEL_AC4D:
 	and [0x4B], 0xFF9F
 
 LABEL_ACAC:
-	call LABEL_9C42
+	call CAPSULE_INLINE_SUB_VAR50_BY_C_L3
 	setPalette 0x04
 	call LABEL_9D17
 	call LABEL_444D
@@ -676,7 +676,7 @@ LABEL_ACAC:
 	mov [0xEB], 0x005F
 	setup channel=0x36, address=LABEL_0565
 	setup channel=0x37, address=LABEL_2022
-	setup channel=0x01, address=LABEL_9C3B
+	setup channel=0x01, address=CAPSULE_INLINE_SUB_VAR50_BY_C_L2
 	mov [0xF8], [0xBB]
 	and [0xF8], 0x0001
 	jne [0xF8], 0x00, LABEL_AD30
@@ -713,7 +713,7 @@ LABEL_AD52:
 	jne [0xF8], 0x00, VAR66_MOD_32_DRAW_DISPATCH
 	call LABEL_3409
 	call INIT_HASH_VARS_A9_TO_AD
-	setup channel=0x34, address=LABEL_2A12
+	setup channel=0x34, address=CAPSULE_INIT_VARS_29_2F_L1
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_AD6C:
 	db 0x11
@@ -919,7 +919,7 @@ LABEL_AFEE:
 	and [0xF8], 0x0080
 	jne [0xF8], 0x00, LABEL_B032
 	call LABEL_2840
-	setup channel=0x01, address=LABEL_2A12
+	setup channel=0x01, address=CAPSULE_INIT_VARS_29_2F_L1
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 
 LABEL_B032:

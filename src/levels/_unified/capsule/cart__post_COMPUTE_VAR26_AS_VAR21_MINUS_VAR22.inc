@@ -27,7 +27,7 @@ JUNK__5678:
 
 
 	mov [0x21], [BUDDY_X]
-	call LABEL_56D2
+	call CAPSULE_INCREMENT_VAR21_BY_F_L0
 	mov [0x29], [HERO_X]
 	mov [HERO_X], [0x22]
 	mov [0x27], [BUDDY_Y]
@@ -36,7 +36,7 @@ JUNK__5678:
 	ret
 
 
-LABEL_569B:
+CAPSULE_INIT_VARS_2F_29_L2:
 	call LABEL_56BE
 	mov [0x22], [HERO_X]
 	mov [0x27], [BUDDY_Y]
@@ -44,9 +44,9 @@ LABEL_569B:
 	ret
 
 
-LABEL_56A8:
+CAPSULE_SET_VAR2F_TO_000D_L1:
 	call LABEL_56BE
-	call LABEL_56D2
+	call CAPSULE_INCREMENT_VAR21_BY_F_L0
 	mov [0x29], [HERO_X]
 	mov [HERO_X], [0x22]
 	mov [0x27], [BUDDY_Y]

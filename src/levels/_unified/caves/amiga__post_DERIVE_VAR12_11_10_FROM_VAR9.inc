@@ -235,7 +235,7 @@ LABEL_4D77:
 
 LABEL_4D8D:
 	mov [0x27], [0x2C]
-	call LABEL_7A5E
+	call CAVES_COPY_VAR40_TO_VAR22_L0
 	mov [0x08], [0x22]
 	ret
 
@@ -249,7 +249,7 @@ LABEL_4DAD:
 	mov [0x27], [0x11]
 	and [0x27], 0x0200
 	jne [0x27], 0x00, SHARED_RET
-	call LABEL_7A5E
+	call CAVES_COPY_VAR40_TO_VAR22_L0
 	mov [0x08], [0x22]
 	ret
 

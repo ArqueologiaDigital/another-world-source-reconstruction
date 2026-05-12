@@ -1,5 +1,5 @@
 LABEL_7BC0:
-	call LABEL_7B22
+	call PRISON_DRAW_CIN_092_L5
 	je [HERO_POS_JUMP_DOWN], 0x00, LABEL_7BCC
 	mov [0x63], [HERO_POS_JUMP_DOWN]
 
@@ -11,7 +11,7 @@ LABEL_7BDA:
 	mov [HERO_POS_JUMP_DOWN], 0x0000
 
 LABEL_7BDE:
-	call LABEL_7B9F
+	call PRISON_DRAW_CIN_092_L15
 	call LABEL_7CA0
 	jl [0x18], 0x32, LABEL_7BEE
 	sub [0x18], 0x0032
@@ -75,45 +75,45 @@ LABEL_7C84:
 	mov [0x68], 0x0064
 	jmp LABEL_7C4C
 
-LABEL_7C8B:
+PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L1:
 	je [0x6A], 0x05, LABEL_7C3C
 	ret
 
 
-LABEL_7C92:
+PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L4:
 	je [0x6A], 0x25, LABEL_7C3C
 	ret
 
 
-LABEL_7C99:
+PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L6:
 	je [0x6A], 0x45, LABEL_7C3C
 	ret
 
 
 LABEL_7CA0:
 	jne [0x14], 0x2320, LABEL_7CB6
-	setup channel=0x01, address=LABEL_7D25
+	setup channel=0x01, address=PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L3
 	je [0x63], 0xFFFF, LABEL_7CB6
-	setup channel=0x01, address=LABEL_7D31
+	setup channel=0x01, address=PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L5
 
 LABEL_7CB6:
 	jne [0x14], 0x2580, LABEL_7CCC
-	setup channel=0x01, address=LABEL_7D12
+	setup channel=0x01, address=PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L0
 	je [0x63], 0xFFFF, LABEL_7CCC
-	setup channel=0x01, address=LABEL_7D25
+	setup channel=0x01, address=PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L3
 
 LABEL_7CCC:
 	jne [0x14], 0x27D0, LABEL_7CE3
 	setup channel=0x01, address=DRAW_CIN_090_TO_104_3F_AT_8C208B32
 	je [0x63], 0xFFFF, LABEL_7CE3
-	setup channel=0x01, address=LABEL_7D1E
+	setup channel=0x01, address=PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L2
 	ret
 
 
 LABEL_7CE3:
 	jne [0x14], 0x27C0, SHARED_RET
 	je [0x63], 0xFFFF, SHARED_RET
-	setup channel=0x01, address=LABEL_7D1E
+	setup channel=0x01, address=PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L2
 	ret
 
 

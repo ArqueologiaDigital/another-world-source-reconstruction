@@ -172,11 +172,8 @@ DRAW_BG_DOTS_CIN_007_008:
 .endif
 
 .include "../_helpers/CLEAR_PAGES_1_2_AND_BLIT.inc"
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+TANK_CLEAR_PAGES_1_2_AND_BLIT_L0:
+	db 0x11, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 .endif
 

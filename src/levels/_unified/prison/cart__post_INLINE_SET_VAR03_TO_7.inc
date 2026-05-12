@@ -30,14 +30,14 @@ LABEL_06A4:
 LABEL_06BA:
 	break
 	sub [HERO_X], 0x0001
-	call LABEL_6F61
+	call PRISON_DRAW_CV_080_L0
 	mov [0x05], 0x0003
 	djnz [0x03], LABEL_06BA
 	mov [0x03], 0x000F
 
 LABEL_06CE:
 	break
-	call LABEL_6F61
+	call PRISON_DRAW_CV_080_L0
 	djnz [0x03], LABEL_06CE
 	mov [0x05], 0x0000
 	mov [0x63], 0x0001

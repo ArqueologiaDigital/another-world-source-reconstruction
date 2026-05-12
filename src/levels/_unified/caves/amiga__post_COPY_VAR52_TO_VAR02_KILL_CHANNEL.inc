@@ -7,7 +7,7 @@ LABEL_9E1E:
 	break
 	mov [HERO_Y], [0x52]
 	call LABEL_9E7E
-	setup channel=0x1A, address=LABEL_9E0C
+	setup channel=0x1A, address=CAVES_COPY_VAR51_TO_VAR02_KILL_CHANNEL_L0
 	jmp LABEL_9E97
 LABEL_9E40:
 	db 0x11

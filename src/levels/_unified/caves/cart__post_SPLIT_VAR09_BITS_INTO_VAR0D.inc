@@ -14,7 +14,7 @@ LABEL_4FF3:
 	db 0x11
 
 LABEL_4FF4:
-	call LABEL_4FAB
+	call CAVES_INLINE_COPY_VAR22_TO_VAR08_L1
 	mov [0x68], [0x07]
 	mov [0x69], [0x08]
 	mov [0x6A], [0x10]
@@ -38,7 +38,7 @@ LABEL_502E:
 	db 0x11
 
 LABEL_502F:
-	call LABEL_4FAB
+	call CAVES_INLINE_COPY_VAR22_TO_VAR08_L1
 	mov [0x70], [0x07]
 	mov [0x71], [0x08]
 	mov [0x72], [0x10]
@@ -62,7 +62,7 @@ LABEL_5069:
 	db 0x11
 
 LABEL_506A:
-	call LABEL_4FAB
+	call CAVES_INLINE_COPY_VAR22_TO_VAR08_L1
 	mov [0x78], [0x07]
 	mov [0x79], [0x08]
 	mov [0x7A], [0x10]
@@ -86,7 +86,7 @@ COMPUTE_OFFSET_VAR21_22:
 
 
 COMPUTE_OFFSET_PLUS21_MINUS22:
-	call LABEL_950F
+	call CAVES_DRAW_CV_355_L0
 	mov [0x21], [0x07]
 	mov [0x22], [0x08]
 	add [0x21], 0x0023
@@ -107,11 +107,11 @@ LABEL_50C9:
 	db 0x11
 
 LABEL_50CA:
-	call LABEL_9567
+	call CAVES_DRAW_CV_355_L7
 	break
-	call LABEL_9521
+	call CAVES_DRAW_CV_355_L2
 	break
-	call LABEL_9555
+	call CAVES_DRAW_CV_355_L6
 	break
 	jne [HACK_VAR_67], [0x10], LABEL_5123
 	call COMPUTE_OFFSET_PLUS21_MINUS22
@@ -506,7 +506,7 @@ LABEL_5544:
 	break
 
 LABEL_5553:
-	call LABEL_9567
+	call CAVES_DRAW_CV_355_L7
 	break
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
@@ -713,7 +713,7 @@ LABEL_5725:
 	break
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
-	call LABEL_9567
+	call CAVES_DRAW_CV_355_L7
 	jmp LABEL_5725
 LABEL_5735:
 	db 0x11
@@ -830,7 +830,7 @@ LABEL_5836:
 	call LABEL_924D
 	deleteChannels first=0x14, last=0x16
 	mov [0x03], 0x0032
-	setup channel=0x3F, address=LABEL_0211
+	setup channel=0x3F, address=CAVES_INLINE_SET_VAR01_TO_E_L1
 	mov [0x29], 0x0001
 
 LABEL_584D:
@@ -888,30 +888,30 @@ LABEL_58E1:
 	db 0x11
 
 LABEL_58E2:
-	call LABEL_950F
+	call CAVES_DRAW_CV_355_L0
 	mov [0x21], [0x07]
 	mov [0x27], [0x08]
 	add [0x21], 0x0028
 	sub [0x27], 0x0029
 	call LABEL_649C
 	break
-	call LABEL_9521
+	call CAVES_DRAW_CV_355_L2
 	break
-	call LABEL_9555
+	call CAVES_DRAW_CV_355_L6
 	break
-	call LABEL_950F
+	call CAVES_DRAW_CV_355_L0
 
 LABEL_5902:
 	break
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
-	call LABEL_9567
+	call CAVES_DRAW_CV_355_L7
 	jmp LABEL_5902
 LABEL_5912:
 	db 0x11
 
 LABEL_5913:
-	call LABEL_9543
+	call CAVES_DRAW_CV_355_L4
 	mov [0x21], [0x07]
 	mov [0x27], [0x08]
 	add [0x21], 0x0019
@@ -922,13 +922,13 @@ LABEL_5913:
 	break
 	call LABEL_95BE
 	break
-	call LABEL_9543
+	call CAVES_DRAW_CV_355_L4
 
 LABEL_5933:
 	break
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
-	call LABEL_9567
+	call CAVES_DRAW_CV_355_L7
 	jmp LABEL_5933
 LABEL_5943:
 	db 0x11

@@ -31,7 +31,7 @@ LABEL_DDB4:
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x32], 0x0000
 	setup channel=0x16, address=LABEL_DF3B
-	setup channel=0x14, address=LABEL_E54E
+	setup channel=0x14, address=CAVES_INLINE_SET_VAR63_TO_1_L2
 	setup channel=0x3E, address=LABEL_C742
 	mov [HERO_X], 0x00D9
 	jne [HACK_VAR_67], 0x6F, KILL_CHAN_AT_DE0F
@@ -146,8 +146,8 @@ LABEL_DF2C:
 LABEL_DF3B:
 	je [0x63], 0x64, LABEL_E07E
 	jge [HERO_ACTION_POS_MASK], 0x80, LABEL_DFD4
-	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_DF66
-	je [0x63], 0x01, LABEL_DF66
+	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, CAVES_INLINE_SET_VAR63_TO_1_L0
+	je [0x63], 0x01, CAVES_INLINE_SET_VAR63_TO_1_L0
 	setup channel=0x14, address=LABEL_E41E
 	je [0x63], 0x05, INLINE_SET_VAR63_TO_1
 	setup channel=0x14, address=STEP_DRAW_CV352_LEFT4_RIGHT1

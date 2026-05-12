@@ -3,12 +3,27 @@ SET_VAR22_TO_006B:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_SET_VAR22_TO_006B.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_SET_VAR22_TO_006B.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_SET_VAR22_TO_006B.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_SET_VAR22_TO_006B_L0:
+	jg [0x22], [0x41], SET_VAR22_TO_00C8
+	jg [0x21], 0x3A, CAVES_SET_VAR22_TO_006B_L1
+	shr [0x21], 0x0002
+	mov [0x22], 0x0054
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_006B_L1:
+	jg [0x21], 0x77, CAVES_SET_VAR22_TO_006B_L2
+	mov [0x22], 0x0061
+	ret
+
+
+CAVES_SET_VAR22_TO_006B_L2:
+	jg [0x21], 0xC8, SET_VAR22_TO_0061
+	mov [0x22], 0x00DC
+	mov [0x23], 0x0100
+	ret
 .endif
 
 SET_VAR22_TO_0061:
@@ -21,12 +36,84 @@ SET_VAR22_TO_00C8:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_SET_VAR22_TO_00C8.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_SET_VAR22_TO_00C8.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_SET_VAR22_TO_00C8.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_SET_VAR22_TO_00C8_L0:
+	db 0x11
+
+CAVES_SET_VAR22_TO_00C8_L1:
+	jg [0x21], 0x0B, CAVES_SET_VAR22_TO_00C8_L2
+	mov [0x22], 0x0077
+	ret
+
+
+CAVES_SET_VAR22_TO_00C8_L2:
+	jg [0x21], 0x4E, CAVES_SET_VAR22_TO_00C8_L3
+	sub [0x21], 0x000B
+	shr [0x21], 0x0005
+	mov [0x22], 0x0077
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00C8_L3:
+	jg [0x21], 0x5E, CAVES_SET_VAR22_TO_00C8_L4
+	sub [0x21], 0x004E
+	shr [0x21], 0x0002
+	mov [0x22], 0x0075
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00C8_L4:
+	jg [0x21], 0x68, CAVES_SET_VAR22_TO_00C8_L5
+	sub [0x21], 0x005E
+	shr [0x21], 0x0003
+	mov [0x22], 0x0071
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00C8_L5:
+	jg [0x21], 0x73, CAVES_SET_VAR22_TO_00C8_L6
+	sub [0x21], 0x0068
+	shr [0x21], 0x0001
+	mov [0x22], 0x0070
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00C8_L6:
+	jg [0x21], 0x95, CAVES_SET_VAR22_TO_00C8_L7
+	mov [0x22], 0x00FA
+	ret
+
+
+CAVES_SET_VAR22_TO_00C8_L7:
+	jg [0x21], 0xB1, CAVES_SET_VAR22_TO_00C8_L8
+	mov [0x22], 0x0072
+	ret
+
+
+CAVES_SET_VAR22_TO_00C8_L8:
+	jg [0x21], 0xBE, CAVES_SET_VAR22_TO_00C8_L9
+	sub [0x21], 0x00B1
+	mov [0x22], 0x0072
+	ret
+
+
+CAVES_SET_VAR22_TO_00C8_L9:
+	jg [0x21], 0xED, CAVES_SET_VAR22_TO_00C8_L10
+	sub [0x21], 0x00BE
+	shr [0x21], 0x0002
+	mov [0x22], 0x0071
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00C8_L10:
+	jg [0x21], 0xF2, PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4
+	mov [0x22], 0x0068
+	ret
 .endif
 
 PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4:
@@ -37,12 +124,129 @@ PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L0:
+	jg [0x22], 0x78, CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L1
+	jg [0x21], 0x00, CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L2
+	mov [0x22], 0x0061
+	ret
+
+
+CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L2:
+	jg [0x21], 0x1D, CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L3
+	shr [0x21], 0x0003
+	mov [0x22], 0x0061
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L3:
+	jg [0x21], 0x69, CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L4
+	sub [0x21], 0x001D
+	shr [0x21], 0x0005
+	mov [0x22], 0x005E
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L4:
+	jg [0x21], 0x75, CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L5
+	sub [0x21], 0x0069
+	shr [0x21], 0x0002
+	mov [0x22], 0x005C
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L5:
+	jg [0x21], 0x7E, CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L6
+	sub [0x21], 0x0075
+	shr [0x21], 0x0002
+	mov [0x22], 0x0059
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L6:
+	jg [0x21], 0x9D, CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L1
+	sub [0x21], 0x007E
+	shr [0x21], 0x0004
+	mov [0x22], 0x005B
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L1:
+	jg [0x21], 0x2D, CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L7
+	mov [0x22], 0x00B5
+	ret
+
+
+CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L7:
+	jg [0x21], 0x6D, CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L8
+	sub [0x21], 0x002D
+	shr [0x21], 0x0003
+	mov [0x22], 0x00B5
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L8:
+	jg [0x21], 0x75, CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L9
+	sub [0x21], 0x006D
+	shr [0x21], 0x0001
+	mov [0x22], 0x00AD
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L9:
+	jg [0x21], 0x99, CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L10
+	sub [0x21], 0x0075
+	shr [0x21], 0x0004
+	mov [0x22], 0x00B1
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L10:
+	jg [0x21], 0xE4, CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L11
+	sub [0x21], 0x0099
+	mov [0x22], 0x00AF
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L11:
+	jg [0x21], 0xEC, CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L12
+	sub [0x21], 0x00E4
+	mov [0x22], 0x0064
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L12:
+	jg [0x21], 0x0105, CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L13
+	mov [0x22], 0x005C
+	ret
+
+
+CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L13:
+	jg [0x21], 0x0114, CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L14
+	sub [0x21], 0x0105
+	shr [0x21], 0x0001
+	mov [0x22], 0x005C
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4_L14:
+	jg [0x21], 0x0127, DEDUP_CAVES_5B_027
+	sub [0x21], 0x0114
+	shr [0x21], 0x0001
+	mov [0x22], 0x0056
+	add [0x22], [0x21]
+	ret
 .endif
 
 DEDUP_CAVES_5B_027:
@@ -50,12 +254,78 @@ DEDUP_CAVES_5B_027:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_DEDUP_CAVES_5B_027.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_DEDUP_CAVES_5B_027.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DEDUP_CAVES_5B_027.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_DEDUP_CAVES_5B_027_L0:
+	jg [0x22], [0x41], CAVES_DEDUP_CAVES_5B_027_L1
+	jg [0x21], 0x42, CAVES_DEDUP_CAVES_5B_027_L2
+	sub [0x21], 0x0010
+	shr [0x21], 0x0003
+	mov [0x22], 0x0056
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_DEDUP_CAVES_5B_027_L2:
+	jg [0x21], 0x61, CAVES_DEDUP_CAVES_5B_027_L3
+	sub [0x21], 0x0043
+	shr [0x21], 0x0003
+	mov [0x22], 0x0058
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_DEDUP_CAVES_5B_027_L3:
+	jg [0x21], 0x70, CAVES_DEDUP_CAVES_5B_027_L4
+	mov [0x22], 0x0055
+	ret
+
+
+CAVES_DEDUP_CAVES_5B_027_L4:
+	jg [0x21], 0x8C, CAVES_DEDUP_CAVES_5B_027_L5
+	mov [0x22], [0xAF]
+	ret
+
+
+CAVES_DEDUP_CAVES_5B_027_L5:
+	jg [0x21], 0x92, CAVES_DEDUP_CAVES_5B_027_L6
+	sub [0x21], 0x008C
+	shr [0x21], 0x0003
+	mov [0x22], 0x004B
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_DEDUP_CAVES_5B_027_L6:
+	jg [0x21], 0xA2, CAVES_DEDUP_CAVES_5B_027_L7
+	sub [0x21], 0x0092
+	shr [0x21], 0x0002
+	mov [0x22], 0x004B
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_DEDUP_CAVES_5B_027_L7:
+	jg [0x21], 0xB3, CAVES_DEDUP_CAVES_5B_027_L8
+	mov [0x22], 0x0047
+	ret
+
+
+CAVES_DEDUP_CAVES_5B_027_L8:
+	jg [0x21], 0xDE, CAVES_DEDUP_CAVES_5B_027_L9
+	sub [0x21], 0x00B3
+	shr [0x21], 0x0001
+	mov [0x22], 0x0047
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_DEDUP_CAVES_5B_027_L9:
+	jg [0x21], 0xED, PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1
+	sub [0x21], 0x00DE
+	shr [0x21], 0x0002
+	mov [0x22], 0x0032
+	sub [0x22], [0x21]
+	ret
 .endif
 
 PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1:
@@ -66,12 +336,58 @@ PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_DEDUP_CAVES_5B_027_L1:
+	jg [0x21], 0x91, CAVES_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1_L0
+	mov [0x22], [0xAF]
+	ret
+
+
+CAVES_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1_L0:
+	jg [0x21], 0xB4, CAVES_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1_L1
+	sub [0x21], 0x0091
+	shr [0x21], 0x0003
+	mov [0x22], 0x00B0
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1_L1:
+	jg [0x21], 0xBE, CAVES_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1_L2
+	sub [0x21], 0x00B4
+	shr [0x21], 0x0001
+	mov [0x22], 0x00AC
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1_L2:
+	jg [0x21], 0xCE, CAVES_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1_L3
+	mov [0x22], 0x00B1
+	ret
+
+
+CAVES_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1_L3:
+	jg [0x21], 0xF8, CAVES_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1_L4
+	mov [0x22], 0x010E
+	ret
+
+
+CAVES_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1_L4:
+	jg [0x21], 0x0103, CAVES_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1_L5
+	sub [0x21], 0x00F7
+	mov [0x22], 0x00BF
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1_L5:
+	jg [0x21], 0x0113, SET_VAR22_TO_00AB
+	sub [0x21], 0x0103
+	shr [0x21], 0x0001
+	mov [0x22], 0x00B3
+	sub [0x22], [0x21]
+	ret
 .endif
 
 SET_VAR22_TO_00AB:
@@ -79,12 +395,105 @@ SET_VAR22_TO_00AB:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_SET_VAR22_TO_00AB.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_SET_VAR22_TO_00AB.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_SET_VAR22_TO_00AB.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_SET_VAR22_TO_00AB_L0:
+	mov [0x44], 0x005D
+	jg [0x49], 0x0100, CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L0
+	jl [0x21], 0xA4, CAVES_SET_VAR22_TO_00AB_L1
+	jg [0x21], 0x0104, CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L1
+	jg [0x22], 0x96, CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L1
+
+CAVES_SET_VAR22_TO_00AB_L1:
+	jg [0x21], 0x39, CAVES_SET_VAR22_TO_00AB_L2
+	add [0x21], 0x0000
+	shr [0x21], 0x0003
+	mov [0x22], 0x00BA
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AB_L2:
+	jg [0x21], 0x39, CAVES_SET_VAR22_TO_00AB_L3
+	mov [0x22], 0x00A6
+	ret
+
+
+CAVES_SET_VAR22_TO_00AB_L3:
+	jg [0x21], 0x63, CAVES_SET_VAR22_TO_00AB_L4
+	sub [0x21], 0x0039
+	shr [0x21], 0x0001
+	mov [0x22], 0x00A6
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AB_L4:
+	jg [0x21], 0x67, CAVES_SET_VAR22_TO_00AB_L5
+	sub [0x21], 0x0063
+	shl [0x21], 0x0001
+	mov [0x22], 0x0091
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AB_L5:
+	jg [0x21], 0x97, CAVES_SET_VAR22_TO_00AB_L6
+	sub [0x21], 0x0067
+	shr [0x21], 0x0001
+	mov [0x22], 0x0089
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AB_L6:
+	jg [0x21], 0xA9, CAVES_SET_VAR22_TO_00AB_L7
+	sub [0x21], 0x0097
+	mov [0x22], 0x0071
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AB_L7:
+	jg [0x21], 0xB7, CAVES_SET_VAR22_TO_00AB_L8
+	sub [0x21], 0x00A9
+	shr [0x21], 0x0001
+	mov [0x22], 0x005F
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AB_L8:
+	jg [0x21], 0xC5, CAVES_SET_VAR22_TO_00AB_L9
+	sub [0x21], 0x00B7
+	mov [0x22], 0x0058
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AB_L9:
+	jg [0x21], 0xD2, CAVES_SET_VAR22_TO_00AB_L10
+	sub [0x21], 0x00C5
+	shr [0x21], 0x0001
+	mov [0x22], 0x004A
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AB_L10:
+	jg [0x21], 0xEF, CAVES_SET_VAR22_TO_00AB_L11
+	sub [0x21], 0x00D2
+	mov [0x22], 0x0044
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AB_L11:
+	jg [0x21], 0xF0, PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3
+	sub [0x21], 0x00EF
+	shl [0x21], 0x0004
+	mov [0x22], 0x0027
+	sub [0x22], [0x21]
+	ret
 .endif
 
 PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3:
@@ -95,12 +504,106 @@ PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L0:
+	jl [0x21], 0x23, CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L1
+	jg [0x22], 0x96, CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L1
+	jg [0x21], 0x84, CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L2
+	sub [0x21], 0x0023
+	shr [0x21], 0x0005
+	mov [0x22], 0x005F
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L2:
+	jg [0x21], 0xEC, CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L3
+	sub [0x21], 0x0084
+	shr [0x21], 0x0003
+	mov [0x22], 0x005B
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L3:
+	jg [0x21], 0xF1, CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L4
+	sub [0x21], 0x00EC
+	shr [0x21], 0x0001
+	mov [0x22], 0x004E
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L4:
+	jg [0x21], 0x0103, CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L5
+	mov [0x22], 0x004D
+	ret
+
+
+CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L5:
+	jg [0x21], 0x0120, CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L1
+	sub [0x21], 0x0103
+	shr [0x21], 0x0001
+	mov [0x22], 0x004D
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L1:
+	jg [0x21], 0x3B, CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L6
+	sub [0x21], 0x0007
+	shr [0x21], 0x0003
+	mov [0x22], 0x00B9
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L6:
+	jg [0x21], 0x71, CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L7
+	sub [0x21], 0x003B
+	shr [0x21], 0x0004
+	mov [0x22], 0x00B3
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L7:
+	jg [0x21], 0xAA, CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L8
+	sub [0x21], 0x0071
+	shr [0x21], 0x0004
+	mov [0x22], 0x00B0
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L8:
+	jg [0x21], 0xBB, CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L9
+	sub [0x21], 0x00AA
+	shr [0x21], 0x0002
+	mov [0x22], 0x00B3
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L9:
+	jg [0x21], 0xDB, CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L10
+	mov [0x22], 0x00AF
+	ret
+
+
+CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L10:
+	jg [0x21], 0xF1, CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L11
+	sub [0x21], 0x00DB
+	shr [0x21], 0x0002
+	mov [0x22], 0x00AF
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3_L11:
+	jg [0x21], 0x0115, PROJ_VAR22_AA_MINUS_VAR21_MINUS_115_SHR3
+	mov [0x22], 0x00AA
+	ret
 .endif
 
 PROJ_VAR22_AA_MINUS_VAR21_MINUS_115_SHR3:
@@ -111,12 +614,13 @@ PROJ_VAR22_AA_MINUS_VAR21_MINUS_115_SHR3:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_PROJ_VAR22_AA_MINUS_VAR21_MINUS_115_SHR3.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_PROJ_VAR22_AA_MINUS_VAR21_MINUS_115_SHR3.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_PROJ_VAR22_AA_MINUS_VAR21_MINUS_115_SHR3.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_PROJ_VAR22_AA_MINUS_VAR21_MINUS_115_SHR3_L0:
+	mov [0x22], 0x0096
+	mov [HERO_X], 0x00F8
+	jg [0x21], 0xD3, SHARED_RET
+	mov [HERO_X], 0x00B2
+	ret
 .endif
 
 INIT_VARS_01_22:
@@ -125,12 +629,81 @@ INIT_VARS_01_22:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INIT_VARS_01_22.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_INIT_VARS_01_22.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_INIT_VARS_01_22.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_INIT_VARS_01_22_L0:
+	jg [0x21], 0x00, CAVES_INIT_VARS_01_22_L1
+	mov [0x22], 0x008F
+	ret
+
+
+CAVES_INIT_VARS_01_22_L1:
+	jg [0x22], 0x64, CAVES_INIT_VARS_01_22_L2
+	jl [0x21], 0xF6, CAVES_INIT_VARS_01_22_L2
+	sub [0x21], 0x00F6
+	shr [0x21], 0x0004
+	mov [0x22], 0x0030
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_INIT_VARS_01_22_L2:
+	jg [0x21], 0x34, CAVES_INIT_VARS_01_22_L3
+	add [0x21], 0x0001
+	shr [0x21], 0x0004
+	mov [0x22], 0x008F
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_INIT_VARS_01_22_L3:
+	jg [0x21], 0x47, CAVES_INIT_VARS_01_22_L4
+	sub [0x21], 0x0034
+	shr [0x21], 0x0002
+	mov [0x22], 0x008C
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_INIT_VARS_01_22_L4:
+	jg [0x21], 0x7A, CAVES_INIT_VARS_01_22_L5
+	sub [0x21], 0x0047
+	shr [0x21], 0x0004
+	mov [0x22], 0x0088
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_INIT_VARS_01_22_L5:
+	jg [0x21], 0xD7, CAVES_INIT_VARS_01_22_L6
+	sub [0x21], 0x007A
+	shr [0x21], 0x0004
+	mov [0x22], 0x00B7
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_INIT_VARS_01_22_L6:
+	jg [0x21], 0xDF, CAVES_INIT_VARS_01_22_L7
+	sub [0x21], 0x00D7
+	shr [0x21], 0x0002
+	mov [0x22], 0x00B2
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_INIT_VARS_01_22_L7:
+	jg [0x21], 0x0109, CAVES_INIT_VARS_01_22_L8
+	sub [0x21], 0x00DF
+	shr [0x21], 0x0003
+	mov [0x22], 0x00B4
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_INIT_VARS_01_22_L8:
+	jg [0x21], 0x0109, PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3
+	mov [0x22], 0x00B3
+	ret
 .endif
 
 PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3:
@@ -141,12 +714,63 @@ PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3_L0:
+	jg [0x22], 0x78, CAVES_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3_L0
+	jg [0x21], 0x00, CAVES_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3_L1
+	mov [0x22], 0x0031
+	ret
+
+
+CAVES_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3_L1:
+	jg [0x21], 0x5A, CAVES_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3_L2
+	sub [0x21], 0x0001
+	shr [0x21], 0x0003
+	mov [0x22], 0x0031
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3_L2:
+	jg [0x21], 0xB8, CAVES_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3_L3
+	sub [0x21], 0x005A
+	shr [0x21], 0x0003
+	mov [0x22], 0x003F
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3_L3:
+	jg [0x21], 0xCB, CAVES_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3_L4
+	mov [0x22], 0x004A
+	ret
+
+
+CAVES_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3_L4:
+	jg [0x21], 0xD1, CAVES_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3_L5
+	sub [0x21], 0x00CB
+	shr [0x21], 0x0001
+	mov [0x22], 0x004A
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3_L5:
+	jg [0x21], 0xF4, CAVES_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3_L6
+	sub [0x21], 0x00D1
+	shr [0x21], 0x0004
+	mov [0x22], 0x004D
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3_L6:
+	jg [0x21], 0x0106, PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3
+	sub [0x21], 0x00F4
+	shr [0x21], 0x0002
+	mov [0x22], 0x004F
+	add [0x22], [0x21]
+	ret
 .endif
 
 PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3:
@@ -157,12 +781,56 @@ PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3_L0:
+	jg [0x21], 0x00, CAVES_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3_L1
+	mov [0x22], 0x00BD
+	ret
+
+
+CAVES_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3_L1:
+	jg [0x21], 0x7F, CAVES_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3_L2
+	add [0x21], 0x0000
+	shr [0x21], 0x0003
+	mov [0x22], 0x00BD
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3_L2:
+	jg [0x21], 0xAE, CAVES_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3_L3
+	sub [0x21], 0x007F
+	shr [0x21], 0x0004
+	mov [0x22], 0x00AE
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3_L3:
+	jg [0x21], 0xC3, CAVES_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3_L4
+	sub [0x21], 0x00AE
+	shr [0x21], 0x0002
+	mov [0x22], 0x00AC
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3_L4:
+	jg [0x21], 0xFD, CAVES_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3_L5
+	sub [0x21], 0x00C3
+	shr [0x21], 0x0003
+	mov [0x22], 0x00A7
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3_L5:
+	jg [0x21], 0x0121, PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3
+	sub [0x21], 0x00FD
+	shr [0x21], 0x0004
+	mov [0x22], 0x00A0
+	sub [0x22], [0x21]
+	ret
 .endif
 
 PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3:
@@ -173,12 +841,159 @@ PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L0:
+	jg [0x22], 0x7F, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L1
+	jg [0x21], 0x00, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L2
+	mov [0x22], 0x0059
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L2:
+	jg [0x21], 0x2A, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L3
+	add [0x21], 0x0000
+	shr [0x21], 0x0002
+	mov [0x22], 0x0059
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L3:
+	jg [0x21], 0x40, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L4
+	mov [0x22], 0x0063
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L4:
+	jg [0x21], 0x50, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L5
+	sub [0x21], 0x0040
+	shr [0x21], 0x0002
+	mov [0x22], 0x0063
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L5:
+	jg [0x21], 0x69, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L6
+	mov [0x22], 0x0067
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L6:
+	jg [0x21], 0x69, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L7
+	mov [0x22], 0x0064
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L7:
+	jg [0x21], 0x7D, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L8
+	sub [0x21], 0x0069
+	shr [0x21], 0x0003
+	mov [0x22], 0x0064
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L8:
+	jg [0x21], 0x8F, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L9
+	sub [0x21], 0x007D
+	shr [0x21], 0x0002
+	mov [0x22], 0x0066
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L9:
+	jg [0x21], 0xA8, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L10
+	sub [0x21], 0x008F
+	shr [0x21], 0x0005
+	mov [0x22], 0x006A
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L10:
+	jg [0x21], 0xAD, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L11
+	sub [0x21], 0x00A8
+	shr [0x21], 0x0001
+	mov [0x22], 0x006A
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L11:
+	jg [0x21], 0x0109, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L1
+	sub [0x21], 0x00AD
+	shr [0x21], 0x0003
+	mov [0x22], 0x006C
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L1:
+	jg [0x21], 0x00, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L12
+	mov [0x22], 0x009A
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L12:
+	jg [0x21], 0x59, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L13
+	add [0x21], 0x0000
+	shr [0x21], 0x0003
+	mov [0x22], 0x009A
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L13:
+	jg [0x21], 0x6F, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L14
+	sub [0x21], 0x0059
+	shr [0x21], 0x0003
+	mov [0x22], 0x008F
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L14:
+	jg [0x21], 0x98, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L15
+	sub [0x21], 0x006F
+	shr [0x21], 0x0003
+	mov [0x22], 0x008D
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L15:
+	jg [0x21], 0xAF, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L16
+	mov [0x22], 0x0088
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L16:
+	jg [0x21], 0xC2, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L17
+	sub [0x21], 0x00AF
+	shr [0x21], 0x0002
+	mov [0x22], 0x0088
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L17:
+	jg [0x21], 0xEE, CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L18
+	sub [0x21], 0x00C2
+	shr [0x21], 0x0003
+	mov [0x22], 0x0084
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3_L18:
+	jg [0x21], 0x011B, PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4
+	sub [0x21], 0x00EE
+	shr [0x21], 0x0005
+	mov [0x22], 0x007F
+	sub [0x22], [0x21]
+	ret
 .endif
 
 PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4:
@@ -189,12 +1004,41 @@ PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4_L0:
+	db 0x11
+
+CAVES_PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4_L1:
+	jg [0x21], 0x38, CAVES_PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4_L2
+	mov [0x22], 0x007E
+	ret
+
+
+CAVES_PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4_L2:
+	jg [0x21], 0x4F, CAVES_PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4_L3
+	sub [0x21], 0x0038
+	shr [0x21], 0x0002
+	mov [0x22], 0x007E
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4_L3:
+	jg [0x21], 0xAE, CAVES_PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4_L4
+	sub [0x21], 0x004F
+	shr [0x21], 0x0005
+	mov [0x22], 0x0079
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4_L4:
+	jg [0x21], 0xFD, PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6
+	sub [0x21], 0x00AE
+	shr [0x21], 0x0005
+	mov [0x22], 0x0077
+	sub [0x22], [0x21]
+	ret
 .endif
 
 PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6:
@@ -205,12 +1049,67 @@ PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6_L0:
+	mov [0x22], 0x007F
+	jl [0x21], 0x00, SHARED_RET
+	jg [0x21], 0x31, CAVES_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6_L1
+	add [0x21], 0x0003
+	shr [0x21], 0x0004
+	mov [0x22], 0x007F
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6_L1:
+	jg [0x21], 0x54, CAVES_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6_L2
+	mov [0x22], 0x0104
+	ret
+
+
+CAVES_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6_L2:
+	jg [0x21], 0xD3, CAVES_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6_L3
+	sub [0x21], 0x0054
+	shr [0x21], 0x0005
+	mov [0x22], 0x0079
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6_L3:
+	jg [0x21], 0xD9, CAVES_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6_L4
+	sub [0x21], 0x00D3
+	shr [0x21], 0x0002
+	mov [0x22], 0x0076
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6_L4:
+	jg [0x21], 0xEC, CAVES_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6_L5
+	sub [0x21], 0x00D9
+	shr [0x21], 0x0004
+	mov [0x22], 0x0077
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6_L5:
+	jg [0x21], 0xFB, CAVES_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6_L6
+	sub [0x21], 0x00EC
+	shr [0x21], 0x0002
+	mov [0x22], 0x0076
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6_L6:
+	jg [0x21], 0x0108, PROJ_VAR22_76_MINUS_VAR21_MINUS_108_SHR5
+	sub [0x21], 0x00FB
+	shr [0x21], 0x0002
+	mov [0x22], 0x0073
+	add [0x22], [0x21]
+	ret
 .endif
 
 PROJ_VAR22_76_MINUS_VAR21_MINUS_108_SHR5:
@@ -240,10 +1139,12 @@ PROJ_VAR22_49_MINUS_VAR21_MINUS_113_SHR4:
 
 .endif
 
-.if BRANCH == "cartridge_1992"
-.include "cart__post_PROJ_VAR22_49_MINUS_VAR21_MINUS_113_SHR4.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_PROJ_VAR22_49_MINUS_VAR21_MINUS_113_SHR4.inc"
+.if BRANCH in ("cartridge_1992", "dos_1992")
+CAVES_PROJ_VAR22_49_MINUS_VAR21_MINUS_113_SHR4_L0:
+	jl [0x21], 0x45, SET_VAR22_TO_007D
+	jg [0x21], 0x0106, SET_VAR22_TO_007D
+	mov [0x22], 0x0104
+	ret
 .endif
 
 SET_VAR22_TO_007D:
@@ -251,12 +1152,12 @@ SET_VAR22_TO_007D:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_SET_VAR22_TO_007D.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_SET_VAR22_TO_007D.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_SET_VAR22_TO_007D.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_SET_VAR22_TO_007D_L0:
+	jl [0x21], 0x32, SET_VAR22_TO_0080
+	jg [0x21], 0x0106, SET_VAR22_TO_0080
+	mov [0x22], 0x007B
+	ret
 .endif
 
 SET_VAR22_TO_0080:
@@ -277,12 +1178,17 @@ SET_VAR22_TO_00AC:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_SET_VAR22_TO_00AC.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_SET_VAR22_TO_00AC.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_SET_VAR22_TO_00AC.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_SET_VAR22_TO_00AC_L0:
+	jg [0x21], 0x35, CAVES_SET_VAR22_TO_00AC_L1
+	mov [0x22], 0x0088
+	ret
+
+
+CAVES_SET_VAR22_TO_00AC_L1:
+	jg [0x21], 0xB4, SET_VAR22_TO_0087
+	mov [0x22], 0x0190
+	ret
 .endif
 
 SET_VAR22_TO_0087:
@@ -290,12 +1196,16 @@ SET_VAR22_TO_0087:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_SET_VAR22_TO_0087.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_SET_VAR22_TO_0087.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_SET_VAR22_TO_0087.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_SET_VAR22_TO_0087_L0:
+	jg [0x21], 0x56, CAVES_SET_VAR22_TO_0087_L1
+	mov [0x22], 0x0085
+	ret
+
+
+CAVES_SET_VAR22_TO_0087_L1:
+	jg [0x22], 0xA0, PROJ_VAR22_85_PLUS_VAR21_MINUS_56
+	jg [0x21], 0x83, SET_VAR22_TO_0085
 .endif
 
 PROJ_VAR22_85_PLUS_VAR21_MINUS_56:
@@ -339,12 +1249,19 @@ PROJ_VAR22_A8_MINUS_VAR21_MINUS_112_SHR4:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_PROJ_VAR22_A8_MINUS_VAR21_MINUS_112_SHR4.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_PROJ_VAR22_A8_MINUS_VAR21_MINUS_112_SHR4.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_PROJ_VAR22_A8_MINUS_VAR21_MINUS_112_SHR4.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_PROJ_VAR22_A8_MINUS_VAR21_MINUS_112_SHR4_L0:
+	jg [0x21], 0x43, CAVES_PROJ_VAR22_A8_MINUS_VAR21_MINUS_112_SHR4_L1
+	mov [0x22], 0x0077
+	ret
+
+
+CAVES_PROJ_VAR22_A8_MINUS_VAR21_MINUS_112_SHR4_L1:
+	jg [0x21], 0x7C, DEDUP_CAVES_5B_011
+	sub [0x21], 0x0043
+	mov [0x22], 0x0077
+	add [0x22], [0x21]
+	ret
 .endif
 
 DEDUP_CAVES_5B_011:
@@ -352,12 +1269,16 @@ DEDUP_CAVES_5B_011:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_DEDUP_CAVES_5B_011.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_DEDUP_CAVES_5B_011.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_DEDUP_CAVES_5B_011.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_DEDUP_CAVES_5B_011_L0:
+	jg [0x21], 0x69, CAVES_DEDUP_CAVES_5B_011_L1
+	mov [0x22], 0x00B0
+	ret
+
+
+CAVES_DEDUP_CAVES_5B_011_L1:
+	jg [0x22], 0xC8, PROJ_VAR22_B0_PLUS_VAR21_MINUS_69
+	jg [0x21], 0x8D, DEDUP_CAVES_5B_012
 .endif
 
 PROJ_VAR22_B0_PLUS_VAR21_MINUS_69:
@@ -412,12 +1333,140 @@ SET_VAR22_TO_00AE:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_SET_VAR22_TO_00AE.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_SET_VAR22_TO_00AE.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_SET_VAR22_TO_00AE.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_SET_VAR22_TO_00AE_L0:
+	jg [0x21], 0x00, CAVES_SET_VAR22_TO_00AE_L1
+	mov [0x22], 0x00B9
+	ret
+
+
+CAVES_SET_VAR22_TO_00AE_L1:
+	jg [0x21], 0x1F, CAVES_SET_VAR22_TO_00AE_L2
+	add [0x21], 0x0000
+	shr [0x21], 0x0002
+	mov [0x22], 0x00BC
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AE_L2:
+	jg [0x21], 0x3F, CAVES_SET_VAR22_TO_00AE_L3
+	sub [0x21], 0x001F
+	shr [0x21], 0x0004
+	mov [0x22], 0x00B5
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AE_L3:
+	jg [0x21], 0x4C, CAVES_SET_VAR22_TO_00AE_L4
+	sub [0x21], 0x003F
+	shr [0x21], 0x0001
+	mov [0x22], 0x00B3
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AE_L4:
+	jg [0x21], 0x59, CAVES_SET_VAR22_TO_00AE_L5
+	sub [0x21], 0x004C
+	shr [0x21], 0x0003
+	mov [0x22], 0x00AD
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AE_L5:
+	jg [0x21], 0x65, CAVES_SET_VAR22_TO_00AE_L6
+	sub [0x21], 0x0059
+	shr [0x21], 0x0002
+	mov [0x22], 0x00AE
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AE_L6:
+	jg [0x21], 0x8A, CAVES_SET_VAR22_TO_00AE_L7
+	mov [0x22], 0x00FA
+	ret
+
+
+CAVES_SET_VAR22_TO_00AE_L7:
+	jg [0x21], 0x9A, CAVES_SET_VAR22_TO_00AE_L8
+	sub [0x21], 0x008A
+	shr [0x21], 0x0002
+	mov [0x22], 0x00A7
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AE_L8:
+	jg [0x21], 0xA7, CAVES_SET_VAR22_TO_00AE_L9
+	sub [0x21], 0x009A
+	shr [0x21], 0x0003
+	mov [0x22], 0x00A3
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AE_L9:
+	jg [0x21], 0xB4, CAVES_SET_VAR22_TO_00AE_L10
+	sub [0x21], 0x00A7
+	shr [0x21], 0x0002
+	mov [0x22], 0x00A2
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AE_L10:
+	jg [0x21], 0xC1, CAVES_SET_VAR22_TO_00AE_L11
+	sub [0x21], 0x00B4
+	shr [0x21], 0x0003
+	mov [0x22], 0x00A5
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AE_L11:
+	jg [0x21], 0xC3, CAVES_SET_VAR22_TO_00AE_L12
+	sub [0x21], 0x00C1
+	shl [0x21], 0x0001
+	mov [0x22], 0x00A6
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AE_L12:
+	jg [0x21], 0xCE, CAVES_SET_VAR22_TO_00AE_L13
+	sub [0x21], 0x00C3
+	shr [0x21], 0x0001
+	mov [0x22], 0x00AA
+	sub [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AE_L13:
+	jg [0x21], 0xDC, CAVES_SET_VAR22_TO_00AE_L14
+	mov [0x22], 0x00A5
+	ret
+
+
+CAVES_SET_VAR22_TO_00AE_L14:
+	jg [0x21], 0xEB, CAVES_SET_VAR22_TO_00AE_L15
+	sub [0x21], 0x00DC
+	shr [0x21], 0x0002
+	mov [0x22], 0x00A5
+	add [0x22], [0x21]
+	ret
+
+
+CAVES_SET_VAR22_TO_00AE_L15:
+	jg [0x21], 0x0125, PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3
+	sub [0x21], 0x00EB
+	shr [0x21], 0x0005
+	mov [0x22], 0x00A8
+	sub [0x22], [0x21]
+	ret
 .endif
 
 PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3:
@@ -428,12 +1477,17 @@ PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3:
 	ret
 
 
-.if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3.inc"
-.elif BRANCH == "cartridge_1992"
-.include "cart__post_PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3.inc"
+.if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
+CAVES_PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3_L0:
+	jg [0x21], 0x2C, CAVES_PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3_L1
+	mov [0x22], 0x00C0
+	ret
+
+
+CAVES_PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3_L1:
+	jg [0x21], 0x78, SET_VAR22_TO_00B8
+	mov [0x22], 0x00BC
+	ret
 .endif
 
 .include "../_helpers/SET_VAR22_TO_00B8.inc"

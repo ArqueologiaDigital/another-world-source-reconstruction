@@ -114,7 +114,7 @@ LABEL_9365:
 LABEL_93F3:
 	db 0x11
 
-LABEL_93F4:
+PRISON_DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB_L3:
 	mov [0x63], 0x0064
 	video type=0, offset=COMMON_VIDEO_034, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
@@ -238,7 +238,7 @@ LABEL_9552:
 	mov [0x27], [HERO_Y]
 	add [0x21], 0x001E
 	sub [0x27], 0x0027
-	call LABEL_379F
+	call PRISON_DRAW_CIN505_AT_X21_Y27_L12
 	break
 	sub [HERO_X], 0x0001
 	video offset=CINEMATIC_565, x=[HERO_X], y=[HERO_Y]
