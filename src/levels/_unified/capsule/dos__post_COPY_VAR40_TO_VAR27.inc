@@ -6,15 +6,18 @@ LABEL_659F:
 	mov [0x11], [0xA1]
 	ret
 
+
 LABEL_65A9:
 	jne [0x1D], 0x15, LABEL_65B3
 	mov [0x11], [0xA4]
 	ret
 
+
 LABEL_65B3:
 	jne [0x1D], 0x16, LABEL_65BD
 	mov [0x11], [0xA7]
 	ret
+
 
 LABEL_65BD:
 	jne [0x1D], 0x17, COPY_VARAD_TO_VAR11

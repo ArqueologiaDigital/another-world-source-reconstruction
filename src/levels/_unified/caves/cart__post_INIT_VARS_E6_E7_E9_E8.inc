@@ -189,6 +189,7 @@ BOUNDS_CHECK_VARE7_VS_VAR02:
 	setPalette 0x1B
 	ret
 
+
 JUNK__13F1:
 	mov [0xE6], 0x0008
 	mov [0xE7], 0x0003
@@ -214,6 +215,7 @@ LABEL_1428:
 LABEL_1429:
 	ret
 
+
 LABEL_142A:
 	break
 	jl [HERO_X], 0xB4, LABEL_142A
@@ -230,6 +232,7 @@ LABEL_1439:
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
 	setup channel=0x28, address=LABEL_506A
 	ret
+
 
 LABEL_1456:
 	jl [HACK_VAR_67], 0x4A, LABEL_147B
@@ -267,6 +270,7 @@ LABEL_14B3:
 
 LABEL_14BC:
 	ret
+
 
 JUNK__14BD:
 	setPalette 0x15

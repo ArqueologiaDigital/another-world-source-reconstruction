@@ -4,6 +4,7 @@ LOAD_RES90_COPY_PAGE0_TO_3_LOAD_RES91:
 	load id=0x0091
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_LOAD_RES90_COPY_PAGE0_TO_3_LOAD_RES91.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -26,6 +27,8 @@ LOAD_RES90_COPY_PAGE0_TO_3_LOAD_RES91:
 SET_VAR22_TO_00B4:
 	mov [0x22], 0x00B4
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -38,6 +41,8 @@ SET_VAR22_TO_00B4:
 SET_VAR22_TO_0097:
 	mov [0x22], 0x0097
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -50,6 +55,8 @@ SET_VAR22_TO_0097:
 SET_VAR22_TO_00FA:
 	mov [0x22], 0x00FA
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -64,6 +71,8 @@ PROJ_VAR22_B0_PLUS_VAR21_MINUS_9A:
 	mov [0x22], 0x00B0
 	add [0x22], [0x21]
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -78,6 +87,8 @@ PROJ_VAR22_37_PLUS_VAR21_PLUS_A:
 	mov [0x22], 0x0037
 	add [0x22], [0x21]
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -90,6 +101,8 @@ PROJ_VAR22_37_PLUS_VAR21_PLUS_A:
 SET_VAR22_TO_003E:
 	mov [0x22], 0x003E
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -153,6 +166,8 @@ INLINE_SET_VAR02_TO_97:
 SET_VARHACK_VAR_67_TO_00AA:
 	mov [HACK_VAR_67], 0x00AA
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -192,6 +207,8 @@ INIT_BIRD_AI_VARS:
 	mov [0x63], 0x0001
 	mov [0x2A], 0x000F
 	ret
+
+
 ;@endif
 
 

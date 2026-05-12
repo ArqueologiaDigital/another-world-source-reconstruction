@@ -5,6 +5,7 @@ LABEL_5B79:
 	sub [BUDDY_Y], 0x0001
 	ret
 
+
 LABEL_5B89:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	add [BUDDY_Y], 0x0001

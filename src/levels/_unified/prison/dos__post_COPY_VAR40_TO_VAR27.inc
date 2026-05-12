@@ -6,15 +6,18 @@ LABEL_408C:
 	mov [0x11], [0xA1]
 	ret
 
+
 LABEL_4096:
 	jne [0x1D], 0x15, LABEL_40A0
 	mov [0x11], [0xA4]
 	ret
 
+
 LABEL_40A0:
 	jne [0x1D], 0x16, LABEL_40AA
 	mov [0x11], [0xA7]
 	ret
+
 
 LABEL_40AA:
 	jne [0x1D], 0x17, COPY_VARAD_TO_VAR11

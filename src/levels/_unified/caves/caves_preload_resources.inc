@@ -13,6 +13,8 @@ PRELOAD_RES_6A_77_6D_6E_74_76_78_7C:
 	load id=0x007B
 	load id=0x006C
 	ret
+
+
 ;@endif
 
 
@@ -38,6 +40,8 @@ PRELOAD_CAVES_RESOURCES:
 	load id=0x0071
 	load id=0x0072
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"

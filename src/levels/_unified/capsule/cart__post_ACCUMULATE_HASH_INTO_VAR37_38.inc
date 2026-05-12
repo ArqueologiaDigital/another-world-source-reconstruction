@@ -20,6 +20,7 @@ DERIVE_HASH_BUCKETS_FROM_VAR38:
 	and [0x38], 0x0001
 	ret
 
+
 LABEL_327C:
 	mov [0xB0], 0x0001
 	mov [0xB1], 0x0001
@@ -46,11 +47,13 @@ LABEL_327C:
 	je [0x00], 0x43, LABEL_32EC
 	ret
 
+
 LABEL_32E0:
 	mov [HACK_VAR_67], 0x004A
 	mov [0x00], 0x003C
 	call LABEL_00BF
 	ret
+
 
 LABEL_32EC:
 	call LABEL_3308
@@ -62,6 +65,7 @@ LABEL_32EC:
 	mov [0xB3], 0x0000
 	ret
 
+
 LABEL_3308:
 	mov [HACK_VAR_67], 0x008B
 	mov [HERO_X], 0x00A0
@@ -71,6 +75,8 @@ LABEL_3308:
 	call LABEL_00D3
 	song id=0x0BD2, delay=0x0000, pos=0x00
 	ret
+
+
 	or [0xB9], 0x0401
 	or [0xB9], 0x0080
 
@@ -84,13 +90,18 @@ LABEL_332E:
 	mov [0xB2], 0x0000
 	mov [0xB3], 0x0000
 	ret
+
+
 	mov [HACK_VAR_67], 0x0025
 	mov [0x06], 0x0000
 	ret
+
+
 	mov [HACK_VAR_67], 0x004B
 	mov [0xB0], 0x0003
 	mov [HERO_X], 0x0050
 	ret
+
 
 LABEL_3364:
 	mov [0x78], 0x0028
@@ -103,6 +114,7 @@ LABEL_3364:
 	setup channel=0x27, address=LABEL_4AC4
 	ret
 
+
 LABEL_3385:
 	mov [0x70], 0x012C
 	mov [0x71], 0x00B0
@@ -113,6 +125,7 @@ LABEL_3385:
 	mov [0x76], 0x0064
 	setup channel=0x25, address=LABEL_4B06
 	ret
+
 
 LABEL_33A6:
 	mov [0x78], 0x0000
@@ -125,6 +138,7 @@ LABEL_33A6:
 	setup channel=0x27, address=LABEL_4AC4
 	ret
 
+
 LABEL_33C7:
 	mov [0x70], 0x0064
 	mov [0x71], 0x00B0
@@ -135,6 +149,7 @@ LABEL_33C7:
 	mov [0x76], 0x0064
 	setup channel=0x25, address=LABEL_4B06
 	ret
+
 
 LABEL_33E8:
 	mov [0x78], 0x0046
@@ -147,6 +162,7 @@ LABEL_33E8:
 	setup channel=0x27, address=LABEL_4B06
 	ret
 
+
 LABEL_3409:
 	mov [0x70], 0x0122
 	mov [0x71], 0x0055
@@ -157,6 +173,7 @@ LABEL_3409:
 	mov [0x76], 0x2710
 	setup channel=0x25, address=LABEL_4AC4
 	ret
+
 
 LABEL_342A:
 	mov [0x78], 0x0064
@@ -170,6 +187,7 @@ LABEL_342A:
 	setup channel=0x27, address=LABEL_812B
 	ret
 
+
 LABEL_344E:
 	mov [0x70], 0x0032
 	mov [0x71], [0x40]
@@ -181,6 +199,7 @@ LABEL_344E:
 	mov [0x77], 0x0258
 	setup channel=0x25, address=LABEL_8EE1
 	ret
+
 
 LABEL_3472:
 	mov [0x70], 0xFFFB
@@ -194,12 +213,14 @@ LABEL_3472:
 	setup channel=0x25, address=LABEL_8EE1
 	ret
 
+
 LABEL_3496:
 	call LABEL_342A
 	mov [0x78], 0x014A
 	mov [0x7F], 0xFF38
 	mov [0x7D], 0x0811
 	ret
+
 
 LABEL_34A6:
 	mov [0x68], 0x0050
@@ -213,6 +234,7 @@ LABEL_34A6:
 	setup channel=0x23, address=LABEL_81F2
 	ret
 
+
 LABEL_34CA:
 	mov [0x70], 0x0064
 	mov [0x71], [0x40]
@@ -224,6 +246,7 @@ LABEL_34CA:
 	mov [0x77], 0xFF38
 	setup channel=0x25, address=LABEL_812B
 	ret
+
 
 LABEL_34EE:
 	mov [0x78], 0x00C8
@@ -237,6 +260,7 @@ LABEL_34EE:
 	setup channel=0x27, address=LABEL_812B
 	ret
 
+
 LABEL_3512:
 	mov [0x68], 0x0064
 	mov [0x69], [0x40]
@@ -249,6 +273,7 @@ LABEL_3512:
 	setup channel=0x23, address=LABEL_8EE1
 	ret
 
+
 LABEL_3536:
 	mov [0x78], 0x009D
 	mov [0x79], 0x0099
@@ -260,6 +285,7 @@ LABEL_3536:
 	setup channel=0x27, address=INIT_VARS_29_0E
 	ret
 
+
 LABEL_3557:
 	mov [0x70], 0x005B
 	mov [0x71], 0x0099
@@ -270,6 +296,8 @@ LABEL_3557:
 	mov [0x76], 0x2710
 	setup channel=0x25, address=LABEL_0195
 	ret
+
+
 	mov [0x68], 0x002E
 	mov [0x69], 0x0099
 	mov [0x6A], 0x006B
@@ -279,6 +307,7 @@ LABEL_3557:
 	mov [0x6E], 0x2710
 	setup channel=0x23, address=LABEL_01CB
 	ret
+
 
 LABEL_3599:
 	mov [0x68], 0x0089
@@ -291,6 +320,7 @@ LABEL_3599:
 	setup channel=0x23, address=LABEL_4B06
 	ret
 
+
 LABEL_35B9:
 	mov [0x68], 0x008C
 	mov [0x69], 0x009D
@@ -301,6 +331,7 @@ LABEL_35B9:
 	mov [0x6E], 0x2710
 	setup channel=0x23, address=LABEL_1201
 	ret
+
 
 LABEL_35DA:
 	mov [0x68], 0x007B
@@ -314,6 +345,7 @@ LABEL_35DA:
 	setup channel=0x23, address=BUDDY_PULL_INIT_POSITIONS
 	ret
 
+
 LABEL_35FE:
 	mov [0x70], 0x00AC
 	mov [0x71], 0x009D
@@ -324,6 +356,7 @@ LABEL_35FE:
 	mov [0x76], 0x0064
 	setup channel=0x25, address=INIT_VARS_07_08_29
 	ret
+
 
 LABEL_361F:
 	mov [0x78], 0x00C8
@@ -336,6 +369,7 @@ LABEL_361F:
 	setup channel=0x27, address=LABEL_4A84
 	ret
 
+
 LABEL_3640:
 	mov [0x70], 0x00D2
 	mov [0x71], 0x0095
@@ -346,6 +380,7 @@ LABEL_3640:
 	mov [0x76], 0x03E8
 	setup channel=0x25, address=LABEL_4AC4
 	ret
+
 
 LABEL_3661:
 	mov [0x78], 0x00A0
@@ -358,6 +393,7 @@ LABEL_3661:
 	setup channel=0x27, address=LABEL_4AA4
 	ret
 
+
 LABEL_3682:
 	mov [0x70], 0x008C
 	mov [0x71], 0x0063
@@ -368,6 +404,7 @@ LABEL_3682:
 	mov [0x76], 0x03E8
 	setup channel=0x25, address=LABEL_4B06
 	ret
+
 
 LABEL_36A3:
 	mov [HACK_VAR_67], 0x0001
@@ -397,6 +434,7 @@ LABEL_36A3:
 	mov [0x7D], 0x0800
 	ret
 
+
 LABEL_3708:
 	mov [BUDDY_X], [0x70]
 	mov [BUDDY_Y], [0x71]
@@ -408,6 +446,7 @@ LABEL_3708:
 	mov [0x29], [0x77]
 	call SPLIT_VAR09_BITS_INTO_VAR0D
 	ret
+
 
 LABEL_3724:
 	mov [BUDDY_X], [0x68]
@@ -421,6 +460,7 @@ LABEL_3724:
 	call SPLIT_VAR09_BITS_INTO_VAR0D
 	ret
 
+
 LABEL_3740:
 	mov [BUDDY_X], [0x78]
 	mov [BUDDY_Y], [0x79]
@@ -432,6 +472,7 @@ LABEL_3740:
 	mov [0x29], [0x7F]
 	call SPLIT_VAR09_BITS_INTO_VAR0D
 	ret
+
 
 LABEL_375C:
 	call GUARDED_ALIEN_ANIM_CV_128

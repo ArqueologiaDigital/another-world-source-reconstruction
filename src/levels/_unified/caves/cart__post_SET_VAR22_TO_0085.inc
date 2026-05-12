@@ -11,6 +11,7 @@ LABEL_C0BD:
 	setup channel=0x14, address=LABEL_1BEE
 	ret
 
+
 LABEL_C0EB:
 	jl [0x21], 0x94, SET_VAR22_TO_00C3
 	jg [0x21], 0xDC, LABEL_C0FD

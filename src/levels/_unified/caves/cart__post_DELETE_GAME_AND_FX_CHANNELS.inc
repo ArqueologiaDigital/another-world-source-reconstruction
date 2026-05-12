@@ -3,6 +3,7 @@ LABEL_DA7E:
 	call SETUP_KILL_CHAN_3B_AT_LANDING
 	ret
 
+
 LABEL_DA86:
 	mov [0x23], 0x0001
 	jl [HERO_Y], [0x41], LABEL_DA94
@@ -11,6 +12,7 @@ LABEL_DA86:
 LABEL_DA94:
 	ret
 
+
 LABEL_DA95:
 	mov [HERO_Y], [0x40]
 	je [0x23], 0x00, LABEL_DAA1
@@ -18,6 +20,7 @@ LABEL_DA95:
 
 LABEL_DAA1:
 	ret
+
 
 LABEL_DAA2:
 	je [HACK_VAR_67], 0xCC, LABEL_DAC0
@@ -32,6 +35,7 @@ LABEL_DAC0:
 	jl [HERO_Y], [0x22], SHARED_RET
 	mov [HERO_Y], [0x22]
 	ret
+
 
 LABEL_DACD:
 	setup channel=0x10, address=LABEL_4E77

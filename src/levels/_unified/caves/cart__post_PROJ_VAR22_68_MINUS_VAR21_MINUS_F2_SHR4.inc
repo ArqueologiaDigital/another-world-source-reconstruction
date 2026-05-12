@@ -4,12 +4,14 @@ LABEL_B6F6:
 	mov [0x22], 0x0061
 	ret
 
+
 LABEL_B707:
 	jg [0x21], 0x1D, LABEL_B719
 	shr [0x21], 0x0003
 	mov [0x22], 0x0061
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_B719:
 	jg [0x21], 0x69, LABEL_B72F
@@ -19,6 +21,7 @@ LABEL_B719:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_B72F:
 	jg [0x21], 0x75, LABEL_B745
 	sub [0x21], 0x0069
@@ -26,6 +29,7 @@ LABEL_B72F:
 	mov [0x22], 0x005C
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_B745:
 	jg [0x21], 0x7E, LABEL_B75B
@@ -35,6 +39,7 @@ LABEL_B745:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_B75B:
 	jg [0x21], 0x9D, LABEL_B771
 	sub [0x21], 0x007E
@@ -43,10 +48,12 @@ LABEL_B75B:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_B771:
 	jg [0x21], 0x2D, LABEL_B77C
 	mov [0x22], 0x00B5
 	ret
+
 
 LABEL_B77C:
 	jg [0x21], 0x6D, LABEL_B792
@@ -56,6 +63,7 @@ LABEL_B77C:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_B792:
 	jg [0x21], 0x75, LABEL_B7A8
 	sub [0x21], 0x006D
@@ -63,6 +71,7 @@ LABEL_B792:
 	mov [0x22], 0x00AD
 	add [0x22], [0x21]
 	ret
+
 
 LABEL_B7A8:
 	jg [0x21], 0x99, LABEL_B7BE
@@ -72,12 +81,14 @@ LABEL_B7A8:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_B7BE:
 	jg [0x21], 0xE4, LABEL_B7D0
 	sub [0x21], 0x0099
 	mov [0x22], 0x00AF
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_B7D0:
 	jg [0x21], 0xEC, LABEL_B7E2
@@ -86,10 +97,12 @@ LABEL_B7D0:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_B7E2:
 	jg [0x21], 0x0105, LABEL_B7EE
 	mov [0x22], 0x005C
 	ret
+
 
 LABEL_B7EE:
 	jg [0x21], 0x0114, LABEL_B805
@@ -98,6 +111,7 @@ LABEL_B7EE:
 	mov [0x22], 0x005C
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_B805:
 	jg [0x21], 0x0127, DEDUP_CAVES_5B_027

@@ -197,6 +197,8 @@ DRAW_STARS_PAGE0_CIN_000:
 	video offset=CINEMATIC_002, x=13, y=11, zoom=[0x20]	;@enc=alt
 	selectVideoPage 0xFF
 	ret
+
+
 LABEL_09F7:
 	db 0x11
 
@@ -232,6 +234,8 @@ DRAW_STARS_PAGE3_CIN_004:
 	video offset=CINEMATIC_006, x=13, y=11, zoom=[0x20]	;@enc=alt
 	selectVideoPage 0xFF
 	ret
+
+
 LABEL_0A8D:
 	db 0x11
 
@@ -253,6 +257,7 @@ DRAW_STARS_CIN_38_39_40_5_6:
 	video offset=CINEMATIC_041, x=300, y=28
 	video offset=CINEMATIC_041, x=202, y=86, zoom=[0x30]	;@enc=alt
 	ret
+
 
 BLITTER_LOOP_COPY_PAGE_00:
 	blitFramebuffer 0xFF

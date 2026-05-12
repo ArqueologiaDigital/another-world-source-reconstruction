@@ -80,6 +80,7 @@ PROJECT_AND_DRAW_TWICE_Y_PLUS_9:
 	call DRAW_CIN_221_IF_VAR06_EQ_1
 	ret
 
+
 LABEL_18BB:
 	mov [0x07], [0x14]
 	mov [0x08], [0x15]
@@ -148,60 +149,72 @@ DRAW_CIN_221_IF_VAR06_EQ_1:
 	video offset=CINEMATIC_221, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 LABEL_1951:
 	jne [0x06], 0x02, LABEL_195E
 	video offset=CINEMATIC_220, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 LABEL_195E:
 	jne [0x06], 0x03, LABEL_196B
 	video offset=CINEMATIC_219, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 LABEL_196B:
 	jne [0x06], 0x04, LABEL_1978
 	video offset=CINEMATIC_218, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 LABEL_1978:
 	jne [0x06], 0x05, LABEL_1985
 	video offset=CINEMATIC_217, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 LABEL_1985:
 	jne [0x06], 0x06, LABEL_1992
 	video offset=CINEMATIC_216, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 LABEL_1992:
 	jne [0x06], 0x07, LABEL_199F
 	video offset=CINEMATIC_215, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 LABEL_199F:
 	jne [0x06], 0x08, LABEL_19AC
 	video offset=CINEMATIC_214, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 LABEL_19AC:
 	jne [0x06], 0x09, LABEL_19B9
 	video offset=CINEMATIC_213, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 LABEL_19B9:
 	jne [0x06], 0x0A, LABEL_19C6
 	video offset=CINEMATIC_212, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 LABEL_19C6:
 	jne [0x06], 0x0B, LABEL_19D3
 	video offset=CINEMATIC_211, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 LABEL_19D3:
 	jne [0x06], 0x0C, LABEL_19E0
 	video offset=CINEMATIC_210, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 LABEL_19E0:
 	jne [0x06], 0x0D, SHARED_RET

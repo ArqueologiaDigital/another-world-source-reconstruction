@@ -59,6 +59,8 @@ INLINE_SET_VAR03_TO_14:
 DRAW_TEXT_0174_AT_26_180:
 	text id=0x0174, x=26, y=180, color=0x0D ; "string_0174"
 	ret
+
+
 	mov [HERO_X], 0x03E8
 ;@endif
 
@@ -196,6 +198,7 @@ SET_VARB1_TO_0000:
 	mov [0xB1], 0x0000
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VARB1_TO_0000.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -207,6 +210,7 @@ SET_VARB1_TO_0000:
 SET_VARB3_TO_0000:
 	mov [0xB3], 0x0000
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VARB3_TO_0000.inc"
@@ -383,6 +387,8 @@ INIT_VARS_29_2F:
 	mov [0x29], 0x0002
 	mov [0x2F], 0x0009
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -396,6 +402,8 @@ INIT_VARS_2F_29_1:
 	mov [0x2F], 0x0009
 	mov [0x29], 0x0003
 	ret
+
+
 ;@endif
 
 
@@ -404,6 +412,8 @@ INIT_VARS_2F_29:
 	mov [0x2F], 0x0007
 	mov [0x29], 0x0002
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"

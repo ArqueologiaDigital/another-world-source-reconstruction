@@ -5,6 +5,7 @@ LABEL_8C7D:
 	call LABEL_77AF
 	ret
 
+
 LABEL_8C8F:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	sub [BUDDY_X], 0x0001
@@ -16,6 +17,7 @@ LABEL_8C8F:
 	add [BUDDY_X], 0x0001
 	ret
 
+
 LABEL_8CB1:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call CAPSULE_DRAW_ALIEN_AT_BUDDY_Y_PLUS_14
@@ -23,12 +25,14 @@ LABEL_8CB1:
 	call LABEL_780F
 	ret
 
+
 LABEL_8CC3:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call CAPSULE_DRAW_ALIEN_AT_BUDDY_Y_PLUS_14
 	video type=0, offset=COMMON_VIDEO_288, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_77DD
 	ret
+
 
 LABEL_8CD5:
 	jne [HACK_VAR_67], [0x10], SHARED_RET

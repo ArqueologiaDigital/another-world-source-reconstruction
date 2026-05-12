@@ -5,10 +5,12 @@ LABEL_73D7:
 	add [0x1A], 0x0001
 	ret
 
+
 LABEL_73E8:
 	jne [0x06], 0x01, LABEL_73F3
 	add [0x1A], 0x0002
 	ret
+
 
 LABEL_73F3:
 	jne [0x06], 0x02, LABEL_7402
@@ -16,11 +18,13 @@ LABEL_73F3:
 	sub [0x1B], 0x0001
 	ret
 
+
 LABEL_7402:
 	jne [0x06], 0x03, LABEL_7411
 	add [0x1A], 0x0004
 	sub [0x1B], 0x0002
 	ret
+
 
 LABEL_7411:
 	jne [0x06], 0x04, LABEL_7420
@@ -28,11 +32,13 @@ LABEL_7411:
 	sub [0x1B], 0x0002
 	ret
 
+
 LABEL_7420:
 	jne [0x06], 0x05, LABEL_742F
 	add [0x1A], 0x0007
 	sub [0x1B], 0x0002
 	ret
+
 
 LABEL_742F:
 	jne [0x06], 0x06, LABEL_743E
@@ -40,36 +46,43 @@ LABEL_742F:
 	sub [0x1B], 0x0003
 	ret
 
+
 LABEL_743E:
 	jne [0x06], 0x07, LABEL_744D
 	add [0x1A], 0x0009
 	sub [0x1B], 0x0003
 	ret
 
+
 LABEL_744D:
 	jne [0x06], 0xFFFF, LABEL_7455
 	ret
+
 
 LABEL_7455:
 	jne [0x06], 0xFFFE, LABEL_7461
 	sub [0x1A], 0x0001
 	ret
 
+
 LABEL_7461:
 	jne [0x06], 0xFFFD, LABEL_746D
 	sub [0x1A], 0x0002
 	ret
+
 
 LABEL_746D:
 	jne [0x06], 0xFFFC, LABEL_7479
 	sub [0x1A], 0x0003
 	ret
 
+
 LABEL_7479:
 	jne [0x06], 0xFFFB, LABEL_7489
 	sub [0x1A], 0x0004
 	add [0x1B], 0x0001
 	ret
+
 
 LABEL_7489:
 	jne [0x06], 0xFFFA, STEP_VAR1A_DOWN5_VAR1B_UP2

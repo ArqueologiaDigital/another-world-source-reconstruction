@@ -9,12 +9,15 @@ LABEL_3F4C:
 	call LABEL_55AE
 	ret
 
+
 LABEL_3F69:
 	mov [0x21], [BUDDY_X]
 	mov [0x22], [HERO_X]
 	mov [0x27], [BUDDY_Y]
 	call LABEL_5595
 	ret
+
+
 LABEL_3F76:
 	db 0x04, 0x3F, 0xBC, 0x01, 0x22, 0x07, 0x01, 0x27
 	db 0x08, 0x04, 0x55, 0x95, 0x05, 0x01, 0x21, 0x07
@@ -29,6 +32,7 @@ LABEL_3F99:
 	call LABEL_5595
 	ret
 
+
 LABEL_3FA6:
 	call LABEL_3FBC
 	call LABEL_3FD0
@@ -38,6 +42,7 @@ LABEL_3FA6:
 	call LABEL_5595
 	mov [HERO_X], [0x29]
 	ret
+
 
 LABEL_3FBC:
 	mov [0x21], [BUDDY_X]

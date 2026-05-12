@@ -20,6 +20,7 @@ DERIVE_HASH_BUCKETS_FROM_VAR38:
 	and [0x38], 0x0001
 	ret
 
+
 LABEL_30FF:
 	mov [0xB0], 0x0001
 	mov [0xB1], 0x0001
@@ -46,10 +47,12 @@ LABEL_30FF:
 	je [0x00], 0x43, LABEL_316C
 	ret
 
+
 LABEL_3163:
 	mov [HACK_VAR_67], 0x004A
 	mov [0x00], 0x003C
 	ret
+
 
 LABEL_316C:
 	mov [HACK_VAR_67], 0x004D
@@ -60,6 +63,7 @@ LABEL_316C:
 	mov [0xB3], 0x0000
 	ret
 
+
 LABEL_3185:
 	mov [HACK_VAR_67], 0x008B
 	mov [HERO_X], 0x00A0
@@ -67,6 +71,8 @@ LABEL_3185:
 	or [0xB9], 0x0008
 	or [0xB4], 0x0001
 	ret
+
+
 	or [0xB9], 0x0401
 	or [0xB9], 0x0080
 
@@ -79,13 +85,18 @@ LABEL_31A2:
 	mov [0xB2], 0x0000
 	mov [0xB3], 0x0000
 	ret
+
+
 	mov [HACK_VAR_67], 0x0025
 	mov [0x06], 0x0000
 	ret
+
+
 	mov [HACK_VAR_67], 0x004B
 	mov [0xB0], 0x0003
 	mov [HERO_X], 0x0050
 	ret
+
 
 LABEL_31D5:
 	mov [0x78], 0x0028
@@ -98,6 +109,7 @@ LABEL_31D5:
 	setup channel=0x27, address=CAPSULE_HERO_SCENE_LOOP_TICK_BEFORE_DISPATCH
 	ret
 
+
 LABEL_31F6:
 	mov [0x70], 0x012C
 	mov [0x71], 0x00B0
@@ -108,6 +120,7 @@ LABEL_31F6:
 	mov [0x76], 0x0064
 	setup channel=0x25, address=CAPSULE_BUDDY_SCENE_LOOP_TICK_THEN_CHECK_STATE
 	ret
+
 
 LABEL_3217:
 	mov [0x78], 0x0000
@@ -120,6 +133,7 @@ LABEL_3217:
 	setup channel=0x27, address=CAPSULE_HERO_SCENE_LOOP_TICK_BEFORE_DISPATCH
 	ret
 
+
 LABEL_3238:
 	mov [0x70], 0x0064
 	mov [0x71], 0x00B0
@@ -130,6 +144,7 @@ LABEL_3238:
 	mov [0x76], 0x0064
 	setup channel=0x25, address=CAPSULE_BUDDY_SCENE_LOOP_TICK_THEN_CHECK_STATE
 	ret
+
 
 LABEL_3259:
 	mov [0x78], 0x0046
@@ -142,6 +157,7 @@ LABEL_3259:
 	setup channel=0x27, address=CAPSULE_BUDDY_SCENE_LOOP_TICK_THEN_CHECK_STATE
 	ret
 
+
 LABEL_327A:
 	mov [0x70], 0x0122
 	mov [0x71], 0x0055
@@ -152,6 +168,7 @@ LABEL_327A:
 	mov [0x76], 0x2710
 	setup channel=0x25, address=CAPSULE_HERO_SCENE_LOOP_TICK_BEFORE_DISPATCH
 	ret
+
 
 LABEL_329B:
 	mov [0x78], 0x0064
@@ -165,6 +182,7 @@ LABEL_329B:
 	setup channel=0x27, address=LABEL_80C2
 	ret
 
+
 LABEL_32BF:
 	mov [0x70], 0x0032
 	mov [0x71], [0x40]
@@ -176,6 +194,7 @@ LABEL_32BF:
 	mov [0x77], 0x0258
 	setup channel=0x25, address=LABEL_8E78
 	ret
+
 
 LABEL_32E3:
 	mov [0x70], 0xFFFB
@@ -189,12 +208,14 @@ LABEL_32E3:
 	setup channel=0x25, address=LABEL_8E78
 	ret
 
+
 LABEL_3307:
 	call LABEL_329B
 	mov [0x78], 0x014A
 	mov [0x7F], 0xFF38
 	mov [0x7D], 0x0811
 	ret
+
 
 LABEL_3317:
 	mov [0x68], 0x0050
@@ -208,6 +229,7 @@ LABEL_3317:
 	setup channel=0x23, address=LABEL_8189
 	ret
 
+
 LABEL_333B:
 	mov [0x70], 0x0064
 	mov [0x71], [0x40]
@@ -219,6 +241,7 @@ LABEL_333B:
 	mov [0x77], 0xFF38
 	setup channel=0x25, address=LABEL_80C2
 	ret
+
 
 LABEL_335F:
 	mov [0x78], 0x00C8
@@ -232,6 +255,7 @@ LABEL_335F:
 	setup channel=0x27, address=LABEL_80C2
 	ret
 
+
 LABEL_3383:
 	mov [0x68], 0x0064
 	mov [0x69], [0x40]
@@ -244,6 +268,7 @@ LABEL_3383:
 	setup channel=0x23, address=LABEL_8E78
 	ret
 
+
 LABEL_33A7:
 	mov [0x78], 0x009D
 	mov [0x79], 0x0099
@@ -255,6 +280,7 @@ LABEL_33A7:
 	setup channel=0x27, address=INIT_VARS_29_0E
 	ret
 
+
 LABEL_33C8:
 	mov [0x70], 0x005B
 	mov [0x71], 0x0099
@@ -265,6 +291,8 @@ LABEL_33C8:
 	mov [0x76], 0x2710
 	setup channel=0x25, address=LABEL_0128
 	ret
+
+
 	mov [0x68], 0x002E
 	mov [0x69], 0x0099
 	mov [0x6A], 0x006B
@@ -274,6 +302,7 @@ LABEL_33C8:
 	mov [0x6E], 0x2710
 	setup channel=0x23, address=LABEL_015E
 	ret
+
 
 LABEL_340A:
 	mov [0x68], 0x0089
@@ -286,6 +315,7 @@ LABEL_340A:
 	setup channel=0x23, address=CAPSULE_BUDDY_SCENE_LOOP_TICK_THEN_CHECK_STATE
 	ret
 
+
 LABEL_342A:
 	mov [0x68], 0x008C
 	mov [0x69], 0x009D
@@ -296,6 +326,7 @@ LABEL_342A:
 	mov [0x6E], 0x2710
 	setup channel=0x23, address=LABEL_1120
 	ret
+
 
 LABEL_344B:
 	mov [0x68], 0x007B
@@ -309,6 +340,7 @@ LABEL_344B:
 	setup channel=0x23, address=BUDDY_PULL_INIT_POSITIONS
 	ret
 
+
 LABEL_346F:
 	mov [0x70], 0x00AC
 	mov [0x71], 0x009D
@@ -319,6 +351,7 @@ LABEL_346F:
 	mov [0x76], 0x0064
 	setup channel=0x25, address=INIT_VARS_07_08_29
 	ret
+
 
 LABEL_3490:
 	mov [0x78], 0x00C8
@@ -331,6 +364,7 @@ LABEL_3490:
 	setup channel=0x27, address=LABEL_4AA8
 	ret
 
+
 LABEL_34B1:
 	mov [0x70], 0x00D2
 	mov [0x71], 0x0095
@@ -341,6 +375,7 @@ LABEL_34B1:
 	mov [0x76], 0x03E8
 	setup channel=0x25, address=CAPSULE_HERO_SCENE_LOOP_TICK_BEFORE_DISPATCH
 	ret
+
 
 LABEL_34D2:
 	mov [0x78], 0x00A0
@@ -353,6 +388,7 @@ LABEL_34D2:
 	setup channel=0x27, address=LABEL_4AC8
 	ret
 
+
 LABEL_34F3:
 	mov [0x70], 0x008C
 	mov [0x71], 0x0063
@@ -363,6 +399,7 @@ LABEL_34F3:
 	mov [0x76], 0x03E8
 	setup channel=0x25, address=CAPSULE_BUDDY_SCENE_LOOP_TICK_THEN_CHECK_STATE
 	ret
+
 
 LABEL_3514:
 	mov [HACK_VAR_67], 0x0001
@@ -391,6 +428,8 @@ LABEL_3514:
 	mov [0x7C], 0x2000
 	mov [0x7D], 0x0800
 	ret
+
+
 	mov [0xE6], 0x0190
 	mov [0xE7], 0x0078
 	setup channel=0x39, address=LABEL_3596
@@ -462,12 +501,14 @@ DRAW_CIN_714_THEN_CIN_717:
 	video offset=CINEMATIC_717, x=[0xe6], y=[0xe7]
 	ret
 
+
 LABEL_362D:
 	video offset=CINEMATIC_714, x=[0xe6], y=[0xe7]
 	add [0xE6], 0x0001
 	video offset=CINEMATIC_716, x=[0xe6], y=[0xe7]
 	sub [0xE6], 0x0001
 	ret
+
 
 LABEL_3640:
 	video offset=CINEMATIC_714, x=[0xe6], y=[0xe7]
@@ -476,12 +517,14 @@ LABEL_3640:
 	sub [0xE6], 0x0002
 	ret
 
+
 LABEL_3653:
 	video offset=CINEMATIC_714, x=[0xe6], y=[0xe7]
 	add [0xE6], 0x0003
 	video offset=CINEMATIC_715, x=[0xe6], y=[0xe7]
 	sub [0xE6], 0x0003
 	ret
+
 
 LABEL_3666:
 	video offset=CINEMATIC_714, x=[0xe6], y=[0xe7]
@@ -490,6 +533,7 @@ LABEL_3666:
 	sub [0xE6], 0x0004
 	ret
 
+
 LABEL_3679:
 	video offset=CINEMATIC_714, x=[0xe6], y=[0xe7]
 	add [0xE6], 0x0006
@@ -497,12 +541,14 @@ LABEL_3679:
 	sub [0xE6], 0x0006
 	ret
 
+
 LABEL_368C:
 	video offset=CINEMATIC_714, x=[0xe6], y=[0xe7]
 	add [0xE6], 0x0008
 	video offset=CINEMATIC_715, x=[0xe6], y=[0xe7]
 	sub [0xE6], 0x0008
 	ret
+
 
 LABEL_369F:
 	mov [BUDDY_X], [0x70]
@@ -516,6 +562,7 @@ LABEL_369F:
 	call SPLIT_VAR09_BITS_INTO_VAR0D
 	ret
 
+
 LABEL_36BB:
 	mov [BUDDY_X], [0x68]
 	mov [BUDDY_Y], [0x69]
@@ -528,6 +575,7 @@ LABEL_36BB:
 	call SPLIT_VAR09_BITS_INTO_VAR0D
 	ret
 
+
 LABEL_36D7:
 	mov [BUDDY_X], [0x78]
 	mov [BUDDY_Y], [0x79]
@@ -539,6 +587,7 @@ LABEL_36D7:
 	mov [0x29], [0x7F]
 	call SPLIT_VAR09_BITS_INTO_VAR0D
 	ret
+
 
 LABEL_36F3:
 	call GUARDED_ALIEN_ANIM_CV_128

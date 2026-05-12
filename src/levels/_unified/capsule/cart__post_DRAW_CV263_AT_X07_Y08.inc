@@ -5,6 +5,7 @@ LABEL_7FA4:
 	add [BUDDY_Y], 0x0001
 	ret
 
+
 LABEL_7FB4:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, LABEL_7FC6
@@ -19,6 +20,7 @@ LABEL_7FCB:
 	video type=0, offset=COMMON_VIDEO_267, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_7A88
 	ret
+
 
 LABEL_7FD7:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -37,6 +39,7 @@ LABEL_7FF2:
 	sub [BUDDY_Y], 0x0001
 	ret
 
+
 LABEL_8002:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	play id=0x0055, freq=0x14, vol=0x14, channel=0x00
@@ -54,6 +57,7 @@ LABEL_8023:
 	call LABEL_7A9E
 	sub [BUDDY_Y], 0x0001
 	ret
+
 
 LABEL_8033:
 	jne [HACK_VAR_67], [0x10], SHARED_RET

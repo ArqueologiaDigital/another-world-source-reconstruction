@@ -3,6 +3,7 @@ LABEL_C3A9:
 	mov [0x22], 0x00B9
 	ret
 
+
 LABEL_C3B4:
 	jg [0x21], 0x1F, LABEL_C3CA
 	add [0x21], 0x0000
@@ -10,6 +11,7 @@ LABEL_C3B4:
 	mov [0x22], 0x00BC
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_C3CA:
 	jg [0x21], 0x3F, LABEL_C3E0
@@ -19,6 +21,7 @@ LABEL_C3CA:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_C3E0:
 	jg [0x21], 0x4C, LABEL_C3F6
 	sub [0x21], 0x003F
@@ -26,6 +29,7 @@ LABEL_C3E0:
 	mov [0x22], 0x00B3
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_C3F6:
 	jg [0x21], 0x59, LABEL_C40C
@@ -35,6 +39,7 @@ LABEL_C3F6:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_C40C:
 	jg [0x21], 0x65, LABEL_C422
 	sub [0x21], 0x0059
@@ -43,10 +48,12 @@ LABEL_C40C:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_C422:
 	jg [0x21], 0x8A, LABEL_C42D
 	mov [0x22], 0x00FA
 	ret
+
 
 LABEL_C42D:
 	jg [0x21], 0x9A, LABEL_C443
@@ -56,6 +63,7 @@ LABEL_C42D:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_C443:
 	jg [0x21], 0xA7, LABEL_C459
 	sub [0x21], 0x009A
@@ -63,6 +71,7 @@ LABEL_C443:
 	mov [0x22], 0x00A3
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_C459:
 	jg [0x21], 0xB4, LABEL_C46F
@@ -72,6 +81,7 @@ LABEL_C459:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_C46F:
 	jg [0x21], 0xC1, LABEL_C485
 	sub [0x21], 0x00B4
@@ -79,6 +89,7 @@ LABEL_C46F:
 	mov [0x22], 0x00A5
 	add [0x22], [0x21]
 	ret
+
 
 LABEL_C485:
 	jg [0x21], 0xC3, LABEL_C49B
@@ -88,6 +99,7 @@ LABEL_C485:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_C49B:
 	jg [0x21], 0xCE, LABEL_C4B1
 	sub [0x21], 0x00C3
@@ -96,10 +108,12 @@ LABEL_C49B:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_C4B1:
 	jg [0x21], 0xDC, LABEL_C4BC
 	mov [0x22], 0x00A5
 	ret
+
 
 LABEL_C4BC:
 	jg [0x21], 0xEB, LABEL_C4D2
@@ -108,6 +122,7 @@ LABEL_C4BC:
 	mov [0x22], 0x00A5
 	add [0x22], [0x21]
 	ret
+
 
 LABEL_C4D2:
 	jg [0x21], 0x0125, PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3

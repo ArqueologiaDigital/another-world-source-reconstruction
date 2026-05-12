@@ -23,6 +23,8 @@ LABEL_70B3:
 	mov [0x34], 0x0000
 	sub [0x34], [0x0E]
 	ret
+
+
 LABEL_70C4:
 	db 0x11
 
@@ -50,6 +52,7 @@ LABEL_70E4:
 	add [0x34], 0x001A
 	ret
 
+
 LABEL_7112:
 	mov [0x63], 0x0064
 	call INIT_VAR2B_2C_FROM_VAR01_VAR29_10
@@ -62,6 +65,7 @@ LABEL_7112:
 	call SET_VAR04_TO_0034
 	setup channel=0x14, address=LABEL_71F0
 	ret
+
 
 LABEL_713A:
 	mov [0x2F], [0x35]

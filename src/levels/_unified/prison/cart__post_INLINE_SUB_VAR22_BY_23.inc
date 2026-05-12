@@ -1,5 +1,7 @@
 LABEL_3464:
 	ret
+
+
 LABEL_3465:
 	db 0x11
 
@@ -126,6 +128,7 @@ LABEL_35CA:
 	setup channel=0x31, address=LABEL_3466
 	ret
 
+
 LABEL_35DF:
 	jne [0x5E], 0x0FA0, LABEL_35F4
 	mov [0x5D], [0x21]
@@ -133,6 +136,7 @@ LABEL_35DF:
 	mov [0x5F], [0x29]
 	setup channel=0x32, address=LABEL_3466
 	ret
+
 
 LABEL_35F4:
 	jne [0x61], 0x0FA0, LABEL_3608
@@ -143,6 +147,7 @@ LABEL_35F4:
 
 LABEL_3608:
 	ret
+
 
 LABEL_3609:
 	mov [0x0D], 0x0000
@@ -164,11 +169,13 @@ LABEL_361B:
 	mov [0x5B], [0x2B]
 	ret
 
+
 LABEL_3628:
 	jne [0x0D], 0x02, LABEL_3635
 	mov [0x5F], [0x29]
 	mov [0x5E], [0x2B]
 	ret
+
 
 LABEL_3635:
 	jne [0x0D], 0x03, LABEL_3641
@@ -177,6 +184,7 @@ LABEL_3635:
 
 LABEL_3641:
 	ret
+
 
 LABEL_3642:
 	add [0x0D], 0x0001
@@ -189,6 +197,7 @@ LABEL_3642:
 	mov [0x5B], [0x2B]
 	ret
 
+
 LABEL_365F:
 	jne [0x0D], 0x02, LABEL_3678
 	mov [0x21], [0x5D]
@@ -198,6 +207,7 @@ LABEL_365F:
 	mov [0x5D], [BUDDY_X]
 	mov [0x5E], [0x2B]
 	ret
+
 
 LABEL_3678:
 	jne [0x0D], 0x03, LABEL_3690
@@ -211,6 +221,7 @@ LABEL_3678:
 LABEL_3690:
 	ret
 
+
 ADVANCE_VAR0D_RESTORE_STATE:
 	add [0x0D], 0x0001
 	jne [0x0D], 0x01, LABEL_36AE
@@ -222,6 +233,7 @@ ADVANCE_VAR0D_RESTORE_STATE:
 	mov [0x5B], [0x2B]
 	ret
 
+
 LABEL_36AE:
 	jne [0x0D], 0x02, LABEL_36C7
 	mov [0x21], [0x5D]
@@ -231,6 +243,7 @@ LABEL_36AE:
 	mov [0x5D], [BUDDY_X]
 	mov [0x5E], [0x2B]
 	ret
+
 
 LABEL_36C7:
 	jne [0x0D], 0x03, LABEL_36DF
@@ -243,6 +256,7 @@ LABEL_36C7:
 
 LABEL_36DF:
 	ret
+
 
 LABEL_36E0:
 	call LABEL_3765

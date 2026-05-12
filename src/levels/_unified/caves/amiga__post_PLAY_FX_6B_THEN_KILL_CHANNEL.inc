@@ -3,14 +3,17 @@ LABEL_C7AC:
 	video offset=CINEMATIC_370, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
+
 LABEL_C7B9:
 	je [0x24], 0x02, DRAW_CIN_368
 	video offset=CINEMATIC_369, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
+
 DRAW_CIN_368:
 	video offset=CINEMATIC_368, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
+
 
 LABEL_C7CD:
 	mov [0x21], [0xE7]
@@ -26,6 +29,7 @@ LABEL_C7CD:
 	mov [0x23], 0x0030
 	call LABEL_C7AC
 	ret
+
 
 LABEL_C7F6:
 	break
@@ -137,6 +141,7 @@ DRAW_BULLET_FROM_VAR_E7_E8_E9:
 	call DRAW_CIN_387_IF_VAR_E6_VALID
 	add [0xE6], 0x0002
 	ret
+
 
 INCR_VARE6_PLAY_FX55_2X_CH0_CH2:
 	add [0xE6], 0x0001

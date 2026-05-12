@@ -6,6 +6,7 @@ LABEL_9CAF:
 	video offset=CINEMATIC_531, x=160, y=100
 	ret
 
+
 LABEL_9CC3:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_528, x=160, y=100
@@ -14,6 +15,8 @@ LABEL_9CC3:
 	video offset=CINEMATIC_559, x=160, y=100
 	video offset=CINEMATIC_560, x=160, y=100
 	ret
+
+
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_528, x=160, y=100
 	video offset=CINEMATIC_557, x=160, y=100
@@ -21,6 +24,7 @@ LABEL_9CC3:
 	video offset=CINEMATIC_559, x=160, y=100
 	video offset=CINEMATIC_560, x=160, y=100
 	ret
+
 
 LABEL_9CF3:
 	fill page=0x00, color=0x0B
@@ -30,15 +34,18 @@ LABEL_9CF3:
 	video offset=CINEMATIC_574, x=160, y=100
 	ret
 
+
 LABEL_9D07:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_577, x=160, y=100
 	ret
 
+
 LABEL_9D0F:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_498, x=160, y=100
 	ret
+
 
 LABEL_9D17:
 	fill page=0x00, color=0x00
@@ -47,11 +54,13 @@ LABEL_9D17:
 	video offset=CINEMATIC_569, x=160, y=100
 	ret
 
+
 LABEL_9D27:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_561, x=155, y=95
 	video offset=CINEMATIC_562, x=160, y=100
 	ret
+
 
 LABEL_9D33:
 	fill page=0x00, color=0x0B
@@ -59,11 +68,13 @@ LABEL_9D33:
 	video offset=CINEMATIC_620, x=160, y=100
 	ret
 
+
 LABEL_9D3F:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_503, x=160, y=100
 	video offset=CINEMATIC_504, x=160, y=100
 	ret
+
 
 LABEL_9D4B:
 	fill page=0x00, color=0x00
@@ -72,17 +83,20 @@ LABEL_9D4B:
 	video offset=CINEMATIC_511, x=160, y=100
 	ret
 
+
 LABEL_9D5B:
 	fill page=0x00, color=0x0B
 	video offset=CINEMATIC_580, x=160, y=100
 	video offset=CINEMATIC_581, x=160, y=100
 	ret
 
+
 LABEL_9D67:
 	fill page=0x00, color=0x0B
 	video offset=CINEMATIC_571, x=160, y=187
 	video offset=CINEMATIC_584, x=160, y=100
 	ret
+
 
 LABEL_9D73:
 	fill page=0x00, color=0x0B
@@ -95,10 +109,12 @@ LABEL_9D73:
 	video offset=CINEMATIC_600, x=151, y=14
 	ret
 
+
 DRAW_CIN_600_THEN_CIN_346:
 	video offset=CINEMATIC_600, x=151, y=65496
 	video offset=CINEMATIC_346, x=6, y=99
 	ret
+
 
 LABEL_9D9F:
 	fill page=0x00, color=0x0B
@@ -139,6 +155,7 @@ LABEL_9D9F:
 	call GUARDED_ALIEN_ANIM_CV_128
 	ret
 
+
 LABEL_9E2B:
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_436, x=160, y=100
@@ -146,6 +163,7 @@ LABEL_9E2B:
 	video offset=CINEMATIC_438, x=160, y=100
 	video offset=CINEMATIC_439, x=160, y=100
 	ret
+
 
 LABEL_9E3F:
 	fill page=0x00, color=0x01
@@ -155,10 +173,13 @@ LABEL_9E3F:
 	video offset=CINEMATIC_484, x=160, y=100
 	video offset=CINEMATIC_485, x=160, y=100
 	ret
+
+
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F0, x=160, y=100
 	video offset=CINEMATIC_437, x=160, y=100
 	ret
+
 
 LABEL_9E63:
 	fill page=0x00, color=0x01
@@ -168,6 +189,7 @@ LABEL_9E63:
 	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F1, x=160, y=100
 	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F2, x=160, y=100
 	ret
+
 
 LABEL_9E7B:
 	fill page=0x00, color=0x01
@@ -179,6 +201,7 @@ LABEL_9E7B:
 	video offset=CINEMATIC_489, x=160, y=100
 	ret
 
+
 LABEL_9E97:
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_482, x=160, y=100
@@ -189,30 +212,37 @@ LABEL_9E97:
 	video offset=CINEMATIC_491, x=160, y=100
 	video offset=CINEMATIC_492, x=58, y=100
 	ret
+
+
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_701, x=160, y=100
 	video offset=CINEMATIC_702, x=160, y=100
 	ret
+
 
 LABEL_9EC3:
 	fill page=0x00, color=0x0B
 	video offset=CINEMATIC_TANK_REVEAL_BG, x=160, y=100
 	ret
 
+
 LABEL_9ECB:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_512, x=160, y=100
 	ret
+
 
 LABEL_9ED3:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_527, x=160, y=100
 	ret
 
+
 LABEL_9EDB:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_622, x=160, y=100
 	ret
+
 
 LABEL_9EE3:
 	fill page=0x00, color=0x00
@@ -220,15 +250,18 @@ LABEL_9EE3:
 	video offset=CINEMATIC_576, x=188, y=99
 	ret
 
+
 LABEL_9EEF:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_593, x=188, y=99
 	ret
 
+
 LABEL_9EF7:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_594, x=160, y=100
 	ret
+
 
 LABEL_9EFF:
 	fill page=0x00, color=0x08
@@ -236,10 +269,12 @@ LABEL_9EFF:
 	video offset=CINEMATIC_496, x=160, y=100
 	ret
 
+
 LABEL_9F0C:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_621, x=160, y=100
 	ret
+
 
 LABEL_9F14:
 	jg [0x22], 0xBE, SET_VAR22_TO_010E
@@ -250,6 +285,8 @@ LABEL_9F14:
 SET_VAR22_TO_010E:
 	mov [0x22], 0x010E
 	ret
+
+
 	jg [0x22], 0x96, SET_VAR22_TO_00B8
 	mov [0x22], 0x0062
 	jle [0x21], 0x60, SHARED_RET

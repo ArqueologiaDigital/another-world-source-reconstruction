@@ -30,6 +30,7 @@ LABEL_2BCB:
 	video offset=CINEMATIC_230, x=[HERO_X], y=[HERO_Y]
 	ret
 
+
 LABEL_2BD7:
 	je [0x09], 0x00, SHARED_RET
 	jg [0x09], 0x07, LABEL_2C69

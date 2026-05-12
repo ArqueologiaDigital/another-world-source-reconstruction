@@ -54,6 +54,7 @@ LABEL_7444:
 	add [0x21], 0x0042
 	ret
 
+
 LABEL_7469:
 	sub [0x21], 0x0021
 	jl [0xF8], 0x10, LABEL_7477
@@ -61,6 +62,8 @@ LABEL_7469:
 
 LABEL_7477:
 	ret
+
+
 LABEL_7478:
 	db 0x11
 
@@ -82,6 +85,7 @@ LABEL_748C:
 	add [0x21], 0x0041
 	ret
 
+
 LABEL_74B1:
 	sub [0x21], 0x0020
 	jl [0xF8], 0x10, LABEL_74BF
@@ -89,6 +93,8 @@ LABEL_74B1:
 
 LABEL_74BF:
 	ret
+
+
 LABEL_74C0:
 	db 0x11
 

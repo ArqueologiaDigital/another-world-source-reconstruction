@@ -133,6 +133,7 @@ LABEL_1ACA:
 	or [0xB2], 0x0020
 	ret
 
+
 LABEL_1AE1:
 	jl [HACK_VAR_67], 0x4A, LABEL_1B03
 	jg [HACK_VAR_67], 0x50, LABEL_1B03
@@ -140,10 +141,12 @@ LABEL_1AE1:
 	or [0xB2], 0x0001
 	ret
 
+
 LABEL_1AF8:
 	jne [0x1D], 0x29, SHARED_RET
 	mov [0xB3], 0x0000
 	ret
+
 
 LABEL_1B03:
 	jl [HACK_VAR_67], 0x6A, SHARED_RET
@@ -152,22 +155,26 @@ LABEL_1B03:
 	or [0xB2], 0x0002
 	ret
 
+
 LABEL_1B1A:
 	jne [0x1D], 0x2A, LABEL_1B36
 	je [0xB6], 0x00, LABEL_1B2B
 	mov [0xB6], 0x0000
 	ret
 
+
 LABEL_1B2B:
 	je [0xB4], 0x00, LABEL_1B36
 	mov [0xB4], 0x0000
 	ret
+
 
 LABEL_1B36:
 	jne [0x1D], 0x29, SHARED_RET
 	je [0xB5], 0x00, SHARED_RET
 	mov [0xB5], 0x0000
 	ret
+
 
 LABEL_1B47:
 	break

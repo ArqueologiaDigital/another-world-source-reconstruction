@@ -3190,30 +3190,36 @@ LABEL_0058:
 	load id=0x07D7
 	ret
 
+
 LABEL_0062:
 	je [0xDB], 0x00, SHARED_RET
 	load id=0x07D8
 	ret
+
 
 LABEL_006C:
 	je [0xDB], 0x00, SHARED_RET
 	load id=0x07D9
 	ret
 
+
 LABEL_0076:
 	je [0xDB], 0x00, SHARED_RET
 	load id=0x07DA
 	ret
+
 
 LABEL_0080:
 	je [0xDB], 0x00, SHARED_RET
 	load id=0x07DB
 	ret
 
+
 LABEL_008A:
 	je [0xDB], 0x00, SHARED_RET
 	bankSwitch 0;  Arrival at the Lake & Beast Chase	;@enc=legacy_e
 	ret
+
 
 LABEL_0094:
 	jne [HACK_VAR_67], 0x70, SHARED_RET
@@ -3227,10 +3233,13 @@ LABEL_00A7:
 	song id=0x0BBF, delay=0x0000, pos=0x00
 	ret
 
+
 LABEL_00C0:
 	jne [0x7A], [HACK_VAR_67], SHARED_RET
 	jl [0x7B], 0x4000, LABEL_00A7
 	ret
+
+
 	setup channel=0x05, address=LABEL_3778
 	copyVideoPage src=0x03, dst=0x00
 	killChannel
@@ -3251,6 +3260,8 @@ LABEL_00FB:
 	mov [0xF8], [0xC6]
 	and [0xF8], 0x0080
 	ret
+
+
 	je [0xBC], 0x00, LABEL_012E
 	je [0xF8], 0x00, LABEL_012E
 	mov [0xF8], [0xE4]
@@ -3259,6 +3270,7 @@ LABEL_00FB:
 	jne [0xF2], 0x0FA0, LABEL_012E
 	jne [HACK_VAR_DC], 0x21, LABEL_012E
 	ret
+
 
 LABEL_012E:
 	deleteChannels first=0x00, last=0x3F
@@ -3286,6 +3298,7 @@ LABEL_0148:
 	load id=0x006C
 	ret
 
+
 LABEL_0173:
 	jne [0xDB], 0x00, SHARED_RET
 	load id=0x006B
@@ -3309,6 +3322,7 @@ LABEL_0173:
 	load id=0x0072
 	ret
 
+
 LABEL_01B3:
 	play id=0x006A, freq=0x14, vol=0x00, channel=0x02
 	play id=0x006A, freq=0x14, vol=0x00, channel=0x03
@@ -3324,6 +3338,8 @@ LABEL_01B3:
 	load id=0x005D
 	load id=0x0060
 	ret
+
+
 	mov [HERO_X], 0x03E8
 
 LABEL_01EE:

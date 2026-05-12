@@ -7,6 +7,7 @@ LABEL_661B:
 	mov [0x11], [0x49]
 	ret
 
+
 LABEL_6628:
 	jne [0x1D], 0x0B, LABEL_663F
 	mov [0x10], [0x4A]
@@ -15,6 +16,7 @@ LABEL_6628:
 	mov [0xB2], 0x0001
 	ret
 
+
 LABEL_663F:
 	jne [0x1D], 0x0C, LABEL_664B
 	mov [0x10], [0x4C]
@@ -22,6 +24,8 @@ LABEL_663F:
 
 LABEL_664B:
 	ret
+
+
 LABEL_664C:
 	db 0x11
 
@@ -30,10 +34,12 @@ LABEL_664D:
 	mov [0x49], [0x11]
 	ret
 
+
 LABEL_6657:
 	jne [0x1D], 0x0B, LABEL_6661
 	mov [0x4B], [0x11]
 	ret
+
 
 LABEL_6661:
 	jne [0x1D], 0x0C, LABEL_666A
@@ -41,6 +47,8 @@ LABEL_6661:
 
 LABEL_666A:
 	ret
+
+
 LABEL_666B:
 	db 0x11
 
@@ -80,6 +88,7 @@ LABEL_66BB:
 
 LABEL_66C1:
 	ret
+
 
 LABEL_66C2:
 	call PROJECT_POS_VAR_B8_PLUS_7
@@ -167,6 +176,7 @@ LABEL_679C:
 LABEL_67A8:
 	ret
 
+
 LABEL_67A9:
 	sub [0xF8], 0x000A
 	jl [0x21], [0xF8], SHARED_RET
@@ -174,6 +184,7 @@ LABEL_67A9:
 	jg [0x21], [0xF8], SHARED_RET
 	mov [0xF8], 0x0FA0
 	ret
+
 
 LABEL_67C2:
 	jl [0xA1], 0x00, LABEL_67DA

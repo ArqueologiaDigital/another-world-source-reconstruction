@@ -17,6 +17,8 @@ LABEL_784D:
 	jge [0x22], 0x10, LABEL_784D
 	mov [0x2B], [0x2C]
 	ret
+
+
 LABEL_788F:
 	db 0x11
 

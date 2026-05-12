@@ -3,9 +3,11 @@ LABEL_BBDA:
 	mov [0x22], 0x0097
 	ret
 
+
 SET_VAR22_TO_0050:
 	mov [0x22], 0x0050
 	ret
+
 
 LABEL_BBEA:
 	jl [0x21], 0x45, SET_VAR22_TO_007D

@@ -77,11 +77,13 @@ LABEL_DE71:
 	mov [0x22], 0x03E8
 	ret
 
+
 LABEL_DE82:
 	jne [HACK_VAR_67], 0xED, SHARED_RET
 	jg [HERO_Y], 0x5A, SHARED_RET
 	mov [0x22], 0x03E8
 	ret
+
 
 LABEL_DE93:
 	je [0x63], 0x03, SHARED_RET
@@ -95,6 +97,7 @@ LABEL_DE93:
 	mov [0x22], 0x03E8
 	ret
 
+
 LABEL_DEC2:
 	mov [0xF8], [HERO_X]
 	sub [0xF8], [0x2A]
@@ -102,6 +105,7 @@ LABEL_DEC2:
 	je [0x63], 0x02, SHARED_RET
 	mov [0x22], 0x03E9
 	ret
+
 
 LABEL_DED9:
 	jne [HACK_VAR_67], 0xED, SHARED_RET
@@ -112,6 +116,7 @@ LABEL_DED9:
 	je [0x63], 0x01, SHARED_RET
 	mov [0x22], 0x03E8
 	ret
+
 
 LABEL_DEFC:
 	add [0x22], [0x21]
@@ -130,11 +135,13 @@ LABEL_DF17:
 	mov [0x22], 0x0000
 	ret
 
+
 LABEL_DF2C:
 	add [0x22], 0x0001
 	jl [0x22], 0x00, SHARED_RET
 	mov [0x22], 0x0000
 	ret
+
 
 LABEL_DF3B:
 	je [0x63], 0x64, LABEL_E07E

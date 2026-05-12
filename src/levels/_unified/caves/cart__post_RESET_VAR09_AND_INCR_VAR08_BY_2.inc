@@ -32,6 +32,7 @@ LABEL_2F8E:
 	mov [0x09], 0x0001
 	ret
 
+
 LABEL_2FA2:
 	jne [0x09], 0x00, DISPATCH_VAR09_OR_KILL_CHAN
 	video offset=CINEMATIC_709, x=[0x07], y=[0x08]

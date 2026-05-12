@@ -55,6 +55,7 @@ LABEL_6A31:
 	add [0x21], 0x0042
 	ret
 
+
 LABEL_6A56:
 	sub [0x21], 0x0021
 	jl [0xF8], 0x10, LABEL_6A64
@@ -62,6 +63,8 @@ LABEL_6A56:
 
 LABEL_6A64:
 	ret
+
+
 LABEL_6A65:
 	db 0x11
 
@@ -84,6 +87,7 @@ LABEL_6A7D:
 	add [0x21], 0x0041
 	ret
 
+
 LABEL_6AA2:
 	sub [0x21], 0x0020
 	jl [0xF8], 0x10, LABEL_6AB0
@@ -91,6 +95,8 @@ LABEL_6AA2:
 
 LABEL_6AB0:
 	ret
+
+
 LABEL_6AB1:
 	db 0x11
 

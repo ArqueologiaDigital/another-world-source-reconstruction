@@ -4,6 +4,7 @@ LABEL_7FE1:
 	call LABEL_7A40
 	ret
 
+
 LABEL_7FED:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	sub [BUDDY_Y], 0x0001
@@ -21,6 +22,7 @@ LABEL_8008:
 	add [BUDDY_Y], 0x0001
 	ret
 
+
 LABEL_8018:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, LABEL_802A
@@ -35,6 +37,7 @@ LABEL_802F:
 	video type=0, offset=COMMON_VIDEO_279, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_7A35
 	ret
+
 
 LABEL_803B:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -54,6 +57,7 @@ LABEL_805C:
 	sub [BUDDY_Y], 0x0001
 	ret
 
+
 LABEL_806C:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	add [BUDDY_Y], 0x0001
@@ -71,6 +75,7 @@ LABEL_8087:
 	sub [BUDDY_Y], 0x0001
 	ret
 
+
 LABEL_8097:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, LABEL_80A9
@@ -87,6 +92,7 @@ LABEL_80AE:
 	call LABEL_7A61
 	sub [BUDDY_X], 0x0001
 	ret
+
 
 LABEL_80C2:
 	call AND_VAR11_WITH_EFFF
@@ -183,6 +189,7 @@ LABEL_81AC:
 	video type=0, offset=COMMON_VIDEO_315, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
+
 LABEL_81CA:
 	video type=0, offset=COMMON_VIDEO_316, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
@@ -191,6 +198,7 @@ LABEL_81CA:
 	je [0xF8], 0x00, SHARED_RET
 	video type=0, offset=COMMON_VIDEO_317, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
+
 
 LABEL_81E8:
 	video type=0, offset=COMMON_VIDEO_318, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
@@ -201,11 +209,13 @@ LABEL_81E8:
 	video type=0, offset=COMMON_VIDEO_319, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
+
 LABEL_8206:
 	add [BUDDY_X], 0x0001
 	call LABEL_8212
 	sub [BUDDY_X], 0x0001
 	ret
+
 
 LABEL_8212:
 	video type=0, offset=COMMON_VIDEO_302, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
@@ -222,6 +232,7 @@ CAPSULE_BUDDY_DRAW_CV310_AT_BUDDY_X_PLUS_1:
 	call CAPSULE_BUDDY_DRAW_CV310_AT_BUDDY_GUARDED
 	sub [BUDDY_X], 0x0001
 	ret
+
 
 CAPSULE_BUDDY_DRAW_CV310_AT_BUDDY_GUARDED:
 	video type=0, offset=COMMON_VIDEO_310, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
@@ -249,6 +260,7 @@ LABEL_8287:
 	add [BUDDY_X], 0x0001
 	ret
 
+
 LABEL_8293:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	sub [BUDDY_Y], 0x0001
@@ -265,6 +277,7 @@ LABEL_82B6:
 LABEL_82BB:
 	add [BUDDY_Y], 0x0001
 	ret
+
 
 LABEL_82C0:
 	jne [HACK_VAR_67], [0x10], SHARED_RET

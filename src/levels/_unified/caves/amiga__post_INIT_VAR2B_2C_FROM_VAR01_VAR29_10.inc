@@ -17,6 +17,8 @@ LABEL_7598:
 	jge [0x22], 0x10, LABEL_7598
 	mov [0x2B], [0x2C]
 	ret
+
+
 LABEL_75DA:
 	db 0x11
 

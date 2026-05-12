@@ -44,6 +44,7 @@ LABEL_78BF:
 	setPalette 0x04
 	ret
 
+
 LABEL_78CF:
 	mov [0x19], 0x0081
 	setup channel=0x35, address=LABEL_0E0C
@@ -51,6 +52,7 @@ LABEL_78CF:
 	setup channel=0x37, address=LABEL_0E68
 	setPalette 0x04
 	ret
+
 
 LABEL_78E3:
 	jg [0x22], 0x16, LABEL_78F1
@@ -98,6 +100,8 @@ LABEL_7953:
 
 LABEL_795E:
 	ret
+
+
 LABEL_795F:
 	db 0x11
 
@@ -198,11 +202,14 @@ LABEL_7A63:
 	add [SCROLL_Y], 0x00C8
 	ret
 
+
 LABEL_7A78:
 	add [SCROLL_Y], 0x00C8
 	call LABEL_7A85
 	sub [SCROLL_Y], 0x00C8
 	ret
+
+
 LABEL_7A84:
 	db 0x11
 

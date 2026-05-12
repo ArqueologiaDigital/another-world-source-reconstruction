@@ -32,6 +32,7 @@ LABEL_3BB3:
 	jne [0x13], 0xFFFF, LABEL_3BC5
 	ret
 
+
 LABEL_3BC5:
 	and [0x13], 0x7FFF
 	mov [0x0E], 0x0000
@@ -41,6 +42,8 @@ LABEL_3BC5:
 	je [0x0E], 0x00, SHARED_RET
 	or [0x27], 0x4000
 	ret
+
+
 LABEL_3BE3:
 	db 0x11
 
@@ -50,6 +53,8 @@ LABEL_3BE4:
 	call LABEL_3A0D
 	jne [0x13], 0xFFFF, LABEL_3BF7
 	ret
+
+
 LABEL_3BF6:
 	db 0x11
 
@@ -63,6 +68,7 @@ LABEL_3BF7:
 	or [0x27], 0x4000
 	ret
 
+
 LABEL_3C15:
 	jge [0x13], 0x64, LABEL_3C61
 	jle [0x13], 0x03, LABEL_3C43
@@ -70,6 +76,7 @@ LABEL_3C15:
 	video offset=CINEMATIC_488, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
+
 
 LABEL_3C31:
 	jle [0x13], 0x04, DRAW_CIN_486

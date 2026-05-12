@@ -8,10 +8,12 @@ LABEL_BF43:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_BF63:
 	jg [0x21], 0x54, LABEL_BF6E
 	mov [0x22], 0x0104
 	ret
+
 
 LABEL_BF6E:
 	jg [0x21], 0xD3, LABEL_BF84
@@ -21,6 +23,7 @@ LABEL_BF6E:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_BF84:
 	jg [0x21], 0xD9, LABEL_BF9A
 	sub [0x21], 0x00D3
@@ -28,6 +31,7 @@ LABEL_BF84:
 	mov [0x22], 0x0076
 	add [0x22], [0x21]
 	ret
+
 
 LABEL_BF9A:
 	jg [0x21], 0xEC, LABEL_BFB0
@@ -37,6 +41,7 @@ LABEL_BF9A:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_BFB0:
 	jg [0x21], 0xFB, LABEL_BFC6
 	sub [0x21], 0x00EC
@@ -44,6 +49,7 @@ LABEL_BFB0:
 	mov [0x22], 0x0076
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_BFC6:
 	jg [0x21], 0x0108, PROJ_VAR22_76_MINUS_VAR21_MINUS_108_SHR5

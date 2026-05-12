@@ -4,6 +4,7 @@ LABEL_32EF:
 	jne [0x1D], 0x00, LABEL_32FD
 	ret
 
+
 LABEL_32FD:
 	mov [0x2F], 0x0008
 	call ACCUMULATE_HASH_INTO_VAR37_38
@@ -12,6 +13,7 @@ LABEL_32FD:
 	jl [0x38], 0x64, SHARED_RET
 	mov [0x2F], 0x0009
 	ret
+
 
 LABEL_3316:
 	mov [0x2B], [0x12]
@@ -30,12 +32,14 @@ LABEL_3316:
 	mov [0x2F], 0x0010
 	ret
 
+
 LABEL_334D:
 	mov [0x2F], 0x0007
 	mov [0x29], 0x000A
 	jne [0x28], [HERO_X], SHARED_RET
 	mov [0x2F], 0x0008
 	ret
+
 
 LABEL_3360:
 	mov [0x2F], 0x000B
@@ -52,11 +56,13 @@ LABEL_3360:
 	mov [0x2F], 0x0008
 	ret
 
+
 LABEL_3397:
 	mov [0x29], 0x0001
 	jne [0xE2], 0x01, SHARED_RET
 	mov [0x29], 0x0003
 	ret
+
 
 LABEL_33A6:
 	jg [0x21], [0x22], COMPUTE_VAR26_AS_VAR21_MINUS_VAR22

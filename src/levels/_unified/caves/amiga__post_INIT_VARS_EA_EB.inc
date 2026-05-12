@@ -22,13 +22,16 @@ LABEL_322F:
 	video offset=CINEMATIC_294, x=[0x21], y=98
 	ret
 
+
 DRAW_CIN_294:
 	video offset=CINEMATIC_294, x=[0x21], y=85
 	ret
 
+
 DRAW_CIN_295:
 	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=160, y=[0x21]
 	ret
+
 
 LABEL_324A:
 	break

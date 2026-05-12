@@ -3,14 +3,17 @@ LABEL_CC3D:
 	video offset=CINEMATIC_390, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
+
 LABEL_CC4A:
 	je [0x24], 0x02, DRAW_CIN_388
 	video offset=CINEMATIC_389, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
+
 DRAW_CIN_388:
 	video offset=CINEMATIC_388, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
+
 
 LABEL_CC5E:
 	mov [0x21], [0xE7]
@@ -26,6 +29,7 @@ LABEL_CC5E:
 	mov [0x23], 0x0030
 	call LABEL_CC3D
 	ret
+
 
 LABEL_CC87:
 	break
@@ -137,6 +141,7 @@ DRAW_BULLET_FROM_VAR_E7_E8_E9:
 	call DRAW_CIN_387_IF_VAR_E6_VALID
 	add [0xE6], 0x0002
 	ret
+
 
 LABEL_CD7E:
 	add [0xE6], 0x0001

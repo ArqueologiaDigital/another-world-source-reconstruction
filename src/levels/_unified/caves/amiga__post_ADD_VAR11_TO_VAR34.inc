@@ -23,6 +23,8 @@ LABEL_76FB:
 	mov [0x34], 0x0000
 	sub [0x34], [0x0E]
 	ret
+
+
 LABEL_770C:
 	db 0x11
 
@@ -50,6 +52,7 @@ LABEL_772C:
 	add [0x34], 0x001A
 	ret
 
+
 LABEL_775A:
 	mov [0x63], 0x0064
 	call INIT_VAR2B_2C_FROM_VAR01_VAR29_10
@@ -62,6 +65,7 @@ LABEL_775A:
 	call SET_VAR04_TO_0034
 	setup channel=0x14, address=LABEL_7847
 	ret
+
 
 LABEL_7782:
 	mov [0x2F], [0x35]
@@ -132,6 +136,7 @@ DRAW_CIN_212_THEN_CIN_212:
 	video offset=CINEMATIC_212, x=320, y=184
 	video offset=CINEMATIC_212, x=16, y=184
 	ret
+
 
 LABEL_783B:
 	video offset=CINEMATIC_212, x=160, y=19
@@ -264,6 +269,7 @@ LABEL_797C:
 	mov [0x23], 0x0000
 	call LABEL_798A
 	ret
+
 
 LABEL_798A:
 	je [HACK_VAR_67], 0x25, LABEL_B112

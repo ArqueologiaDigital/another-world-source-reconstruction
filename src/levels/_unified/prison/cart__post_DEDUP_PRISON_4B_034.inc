@@ -16,6 +16,7 @@ LABEL_7CB0:
 	video offset=CINEMATIC_103, x=160, y=129
 	ret
 
+
 LABEL_7CC5:
 	mov [0x21], 0x0064
 	jg [0x14], 0x22A0, DRAW_CIN_092
@@ -26,6 +27,7 @@ LABEL_7CC5:
 DRAW_CIN_092:
 	video offset=CINEMATIC_092, x=160, y=[0x21]
 	ret
+
 
 LABEL_7CE1:
 	je [HACK_VAR_67], 0x65, LABEL_7CFD
@@ -38,6 +40,7 @@ LABEL_7CF5:
 	video offset=CINEMATIC_105, x=160, y=129
 	ret
 
+
 LABEL_7CFD:
 	video offset=CINEMATIC_090, x=160, y=100
 	video offset=CINEMATIC_091, x=160, y=100
@@ -45,6 +48,8 @@ LABEL_7CFD:
 	video offset=CINEMATIC_104, x=200, y=100
 	video offset=CINEMATIC_105, x=160, y=129
 	ret
+
+
 LABEL_7D11:
 	db 0x11
 
@@ -91,6 +96,7 @@ LABEL_7D70:
 	je [0x11], 0x00, SHARED_RET
 	video offset=CINEMATIC_131, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
 
 LABEL_7D8F:
 	jne [0x63], 0xFFFF, SCROLL_UP_16_VAR14_VAR18_AND_SCROLL_Y

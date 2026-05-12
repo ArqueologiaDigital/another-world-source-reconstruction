@@ -1,5 +1,7 @@
 LABEL_6157:
 	ret
+
+
 LABEL_6158:
 	db 0x11
 
@@ -130,6 +132,7 @@ LABEL_62D5:
 	setup channel=0x31, address=LABEL_6159
 	ret
 
+
 LABEL_62EA:
 	jne [0x5E], 0x0FA0, LABEL_62FF
 	mov [0x5D], [0x21]
@@ -137,6 +140,7 @@ LABEL_62EA:
 	mov [0x5F], [0x29]
 	setup channel=0x32, address=LABEL_6159
 	ret
+
 
 LABEL_62FF:
 	jne [0x61], 0x0FA0, LABEL_6313
@@ -147,6 +151,7 @@ LABEL_62FF:
 
 LABEL_6313:
 	ret
+
 
 LABEL_6314:
 	mov [0x0D], 0x0000
@@ -168,11 +173,13 @@ LABEL_6326:
 	mov [0x5B], [0x2B]
 	ret
 
+
 LABEL_6333:
 	jne [0x0D], 0x02, LABEL_6340
 	mov [0x5F], [0x29]
 	mov [0x5E], [0x2B]
 	ret
+
 
 LABEL_6340:
 	jne [0x0D], 0x03, LABEL_634C
@@ -181,6 +188,7 @@ LABEL_6340:
 
 LABEL_634C:
 	ret
+
 
 LABEL_634D:
 	add [0x0D], 0x0001
@@ -193,6 +201,7 @@ LABEL_634D:
 	mov [0x5B], [0x2B]
 	ret
 
+
 LABEL_636A:
 	jne [0x0D], 0x02, LABEL_6383
 	mov [0x21], [0x5D]
@@ -202,6 +211,7 @@ LABEL_636A:
 	mov [0x5D], [0x07]
 	mov [0x5E], [0x2B]
 	ret
+
 
 LABEL_6383:
 	jne [0x0D], 0x03, LABEL_639B
@@ -215,6 +225,7 @@ LABEL_6383:
 LABEL_639B:
 	ret
 
+
 CAVES_PROJECTILE_TICK_FROM_VAR5A_5B_5C:
 	add [0x0D], 0x0001
 	jne [0x0D], 0x01, LABEL_63B9
@@ -226,6 +237,7 @@ CAVES_PROJECTILE_TICK_FROM_VAR5A_5B_5C:
 	mov [0x5B], [0x2B]
 	ret
 
+
 LABEL_63B9:
 	jne [0x0D], 0x02, LABEL_63D2
 	mov [0x21], [0x5D]
@@ -235,6 +247,7 @@ LABEL_63B9:
 	mov [0x5D], [0x07]
 	mov [0x5E], [0x2B]
 	ret
+
 
 LABEL_63D2:
 	jne [0x0D], 0x03, LABEL_63EA
@@ -247,6 +260,7 @@ LABEL_63D2:
 
 LABEL_63EA:
 	ret
+
 
 LABEL_63EB:
 	call LABEL_6476

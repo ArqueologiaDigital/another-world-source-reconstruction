@@ -13,6 +13,7 @@ LABEL_5CD1:
 LABEL_5CD6:
 	ret
 
+
 LABEL_5CD7:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	play id=0x0055, freq=0x1C, vol=0x0A, channel=0x01

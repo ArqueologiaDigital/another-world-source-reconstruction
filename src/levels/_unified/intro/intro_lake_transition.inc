@@ -204,6 +204,7 @@ DRAW_PARTICLE_LAB_BG_COMPOSITE:
 	video offset=CINEMATIC_180, x=160, y=100
 	ret
 
+
 INTRO_SET_PAL_7_FILL_PAGE0_5:
 	setPalette 0x07
 	selectVideoPage 0x00

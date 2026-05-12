@@ -52,30 +52,36 @@ LABEL_3B29:
 	video offset=CINEMATIC_708, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
+
 LABEL_3B35:
 	jne [0x10], [HACK_VAR_67], SHARED_RET
 	video offset=CINEMATIC_709, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
 
 LABEL_3B41:
 	jne [0x10], [HACK_VAR_67], SHARED_RET
 	video offset=CINEMATIC_710, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
+
 LABEL_3B4D:
 	jne [0x10], [HACK_VAR_67], SHARED_RET
 	video offset=CINEMATIC_711, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
 
 LABEL_3B59:
 	jne [0x10], [HACK_VAR_67], SHARED_RET
 	video offset=CINEMATIC_712, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
+
 LABEL_3B65:
 	jne [0x10], [HACK_VAR_67], SHARED_RET
 	video offset=CINEMATIC_713, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
 
 LABEL_3B71:
 	mov [0x21], 0x0000
@@ -89,12 +95,15 @@ LABEL_3B84:
 	mov [0x21], [0xB9]
 	ret
 
+
 LABEL_3B94:
 	mov [0x21], 0x0001
 	jne [0xAA], 0xFFFF, SHARED_RET
 	jne [0xAD], 0xFFFF, SHARED_RET
 	mov [0x21], 0x0000
 	ret
+
+
 	mov [0x21], 0x0001
 	jne [0xA1], 0xFFFF, SHARED_RET
 	jne [0xA4], 0xFFFF, SHARED_RET

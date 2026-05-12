@@ -26,6 +26,8 @@ SET_PAL_0_AND_RESTART:
 CLEAR_LAST_KEYCHAR:
 	mov [LAST_KEYCHAR], 0x0000
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"

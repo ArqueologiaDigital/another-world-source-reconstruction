@@ -18,6 +18,7 @@ LABEL_73EC:
 LABEL_73F9:
 	ret
 
+
 LABEL_73FA:
 	je [0x29], 0x01, LABEL_7407
 	jmp LABEL_749D
@@ -42,6 +43,8 @@ LABEL_741D:
 	mov [0x1C], 0x001E
 	call LABEL_7504
 	ret
+
+
 LABEL_742E:
 	db 0x11, 0x04, 0x74, 0x36, 0x07, 0x74, 0x9D, 0x11
 
@@ -85,6 +88,7 @@ LABEL_7489:
 LABEL_749C:
 	ret
 
+
 LABEL_749D:
 	jne [0x72], [HACK_VAR_67], LABEL_74B3
 	mov [0x24], [0x70]
@@ -103,6 +107,7 @@ LABEL_74B3:
 
 LABEL_74C9:
 	ret
+
 
 LABEL_74CA:
 	jl [0x26], 0x00, INLINE_COPY_VAR44_TO_VAR25

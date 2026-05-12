@@ -2,11 +2,13 @@ INCREMENT_VAR5F_BY_8:
 	add [0x5F], 0x0008
 	ret
 
+
 ;@include "post_INCREMENT_VAR5F_BY_8.inc"
 
 SET_VAR5F_TO_0018:
 	mov [0x5F], 0x0018
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR5F_TO_0018.inc"
@@ -20,6 +22,7 @@ SET_VAR5F_TO_0016:
 	mov [0x5F], 0x0016
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR5F_TO_0016.inc"
 ;@elif BRANCH in ("cartridge_1992", "dos_1992")
@@ -29,6 +32,7 @@ SET_VAR5F_TO_0016:
 COPY_VAR62_TO_VAR5F:
 	mov [0x5F], [0x62]
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_COPY_VAR62_TO_VAR5F.inc"

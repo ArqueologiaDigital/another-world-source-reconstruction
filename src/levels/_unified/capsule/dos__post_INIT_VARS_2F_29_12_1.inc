@@ -5,6 +5,7 @@ LABEL_5637:
 	mov [0x2F], 0x0009
 	ret
 
+
 LABEL_564A:
 	jg [0x21], [0x22], COMPUTE_VAR26_AS_VAR21_MINUS_VAR22
 	mov [0x26], [0x22]

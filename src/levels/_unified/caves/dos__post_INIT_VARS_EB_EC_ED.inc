@@ -95,6 +95,7 @@ LABEL_29FC:
 	video offset=CINEMATIC_294, x=[HERO_X], y=[HERO_Y]
 	ret
 
+
 LABEL_2A0D:
 	video offset=CINEMATIC_289, x=[HERO_X], y=[HERO_Y]
 	je [0xDB], 0x00, LABEL_2A1D
@@ -122,6 +123,7 @@ LABEL_2A3D:
 	je [0xDB], 0x00, SHARED_RET
 	video offset=CINEMATIC_291, x=[HERO_X], y=[HERO_Y]
 	ret
+
 
 LABEL_2A4E:
 	mov [0x07], [0x68]
@@ -178,6 +180,7 @@ LABEL_2A8F:
 	je [0xF8], 0x04, SHARED_RET
 	mov [0x09], 0x0001
 	ret
+
 
 LABEL_2AE4:
 	sub [0x21], 0x0014

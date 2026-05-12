@@ -9,6 +9,7 @@ LABEL_44C7:
 	song id=0x0BC6, delay=0x0000, pos=0x00
 	ret
 
+
 LABEL_44E9:
 	call SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1
 	mov [HERO_X], 0x0014
@@ -30,6 +31,7 @@ LABEL_44E9:
 	add [0xB1], [0xF8]
 	ret
 
+
 LABEL_452C:
 	call SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1
 	or [0xB1], 0x0004
@@ -45,6 +47,7 @@ LABEL_452C:
 	or [0xB2], 0x0001
 	ret
 
+
 LABEL_455C:
 	mov [0x78], 0x0118
 	mov [0x79], 0x00B0
@@ -55,6 +58,7 @@ LABEL_455C:
 	mov [0x7E], 0x2710
 	setup channel=0x27, address=LABEL_5573
 	ret
+
 
 LABEL_457D:
 	mov [0x68], 0x00FA
@@ -67,6 +71,7 @@ LABEL_457D:
 	setup channel=0x23, address=GAME_LOOP_HERO_CV128_VAR2F
 	ret
 
+
 LABEL_459E:
 	mov [0x70], 0x0014
 	mov [0x71], 0x00B0
@@ -77,6 +82,7 @@ LABEL_459E:
 	mov [0x76], 0x0064
 	setup channel=0x25, address=GAME_LOOP_HERO_CV128_VAR2F
 	ret
+
 
 LABEL_45BE:
 	mov [0x78], 0x0118
@@ -89,6 +95,7 @@ LABEL_45BE:
 	setup channel=0x27, address=GAME_LOOP_HERO_CV128_VAR2F
 	ret
 
+
 LABEL_45DE:
 	mov [0x78], 0x014A
 	mov [0x79], [0x40]
@@ -99,6 +106,7 @@ LABEL_45DE:
 	mov [0x7E], 0x0064
 	setup channel=0x27, address=GAME_LOOP_HERO_CV128_VAR2F
 	ret
+
 
 LABEL_45FD:
 	mov [0x70], 0x001F
@@ -111,6 +119,7 @@ LABEL_45FD:
 	setup channel=0x25, address=GAME_LOOP_HERO_CV128_VAR2F
 	ret
 
+
 LABEL_461D:
 	mov [0x78], 0x00FA
 	mov [0x79], 0x0087
@@ -122,6 +131,7 @@ LABEL_461D:
 	setup channel=0x27, address=GAME_LOOP_HERO_CV128_VAR2F
 	ret
 
+
 LABEL_463E:
 	mov [0x70], 0x0118
 	mov [0x71], 0x0084
@@ -132,6 +142,7 @@ LABEL_463E:
 	mov [0x76], 0x03E8
 	setup channel=0x25, address=GAME_LOOP_HERO_CV128_VAR2F
 	ret
+
 
 LABEL_465F:
 	mov [0x70], 0x0096
@@ -145,6 +156,7 @@ LABEL_465F:
 	setup channel=0x25, address=GAME_LOOP_HERO_CV128_VAR2F
 	ret
 
+
 LABEL_4683:
 	mov [0x78], 0x00C8
 	mov [0x79], 0x007C
@@ -156,6 +168,7 @@ LABEL_4683:
 	mov [0x7E], 0x2710
 	setup channel=0x27, address=GAME_LOOP_HERO_CV128_VAR2F
 	ret
+
 
 LABEL_46A7:
 	mov [0x70], 0x000A
@@ -170,6 +183,7 @@ LABEL_46A7:
 	setup channel=0x25, address=GAME_LOOP_HERO_CV128_VAR2F
 	ret
 
+
 LABEL_46CF:
 	mov [0x78], 0x001E
 	mov [0x79], 0x00B0
@@ -183,6 +197,7 @@ LABEL_46CF:
 	setup channel=0x27, address=GAME_LOOP_HERO_CV128_VAR2F
 	ret
 
+
 LABEL_46F7:
 	mov [0x68], 0x000A
 	mov [0x69], 0x0014
@@ -193,6 +208,8 @@ LABEL_46F7:
 	mov [0x6E], 0x2710
 	setup channel=0x23, address=INIT_VARS_29_07_08
 	ret
+
+
 	mov [0x68], 0x007B
 	mov [0x69], 0x00AC
 	mov [0x6A], [HACK_VAR_67]

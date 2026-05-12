@@ -49,6 +49,7 @@ LABEL_6910:
 	sub [0x21], 0x0002
 	ret
 
+
 LABEL_6938:
 	jne [0x27], 0x03, LABEL_694A
 	video offset=CINEMATIC_054, x=[0x21], y=[0x26]

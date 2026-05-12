@@ -242,6 +242,7 @@ LABEL_1064:
 	mov [0x21], 0x0001
 	ret
 
+
 LABEL_1087:
 	video offset=CINEMATIC_315, x=160, y=100
 	break

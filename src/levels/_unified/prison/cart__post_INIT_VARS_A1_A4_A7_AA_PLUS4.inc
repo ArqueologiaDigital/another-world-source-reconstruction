@@ -4,6 +4,7 @@ TEARDOWN_CHANS_AND_KILL_LANDING:
 	setup channel=0x3B, address=KILL_CHANNEL_LANDING
 	ret
 
+
 LABEL_882F:
 	mov [0x23], 0x0001
 	jl [HERO_Y], [0x41], LABEL_883D
@@ -12,6 +13,7 @@ LABEL_882F:
 LABEL_883D:
 	ret
 
+
 LABEL_883E:
 	mov [HERO_Y], [0x40]
 	je [0x23], 0x00, LABEL_884A
@@ -19,6 +21,7 @@ LABEL_883E:
 
 LABEL_884A:
 	ret
+
 
 LABEL_884B:
 	setup channel=0x10, address=LABEL_136A

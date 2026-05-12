@@ -2,6 +2,7 @@ DEDUP_CAVES_5B_007_001:
 	sub [BUDDY_Y], 0x0001
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_DEDUP_PRISON_5B_015.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -29,6 +30,7 @@ INLINE_DRAW_CV_255_010:
 DEDUP_CAVES_5B_020:
 	add [BUDDY_Y], 0x0001
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_DEDUP_PRISON_5B_007.inc"
@@ -58,6 +60,7 @@ DEDUP_CAVES_5B_007_002:
 	sub [BUDDY_Y], 0x0001
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_DEDUP_PRISON_5B_016.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -74,6 +77,7 @@ DEDUP_CAVES_5B_007_002:
 DEDUP_CAVES_5B_007_003:
 	sub [BUDDY_Y], 0x0001
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_DEDUP_PRISON_5B_017.inc"
@@ -165,6 +169,8 @@ KILL_CHANNEL_LANDING_002:
 DRAW_CV_078:
 	video type=0, offset=COMMON_VIDEO_078, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -237,6 +243,8 @@ DRAW_CV_078:
 DRAW_CV_070:
 	video type=0, offset=COMMON_VIDEO_070, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -320,6 +328,8 @@ DRAW_CV108_PLAY_60_F0F_V2A_C0:
 	video type=0, offset=COMMON_VIDEO_108, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x00
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -393,6 +403,8 @@ DRAW_CV098_PLAY_60_F0F_V2A_C0:
 	video type=0, offset=COMMON_VIDEO_098, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x00
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -455,6 +467,8 @@ DRAW_CV098_PLAY_60_F0F_V2A_C0:
 DRAW_CV_106:
 	video type=0, offset=COMMON_VIDEO_106, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"

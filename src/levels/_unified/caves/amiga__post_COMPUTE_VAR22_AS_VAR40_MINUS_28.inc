@@ -54,6 +54,7 @@ LABEL_712A:
 	add [0x21], 0x0042
 	ret
 
+
 LABEL_714F:
 	sub [0x21], 0x0021
 	jl [0xF8], 0x10, LABEL_715D
@@ -61,6 +62,8 @@ LABEL_714F:
 
 LABEL_715D:
 	ret
+
+
 LABEL_715E:
 	db 0x11
 
@@ -82,6 +85,7 @@ LABEL_7172:
 	add [0x21], 0x0041
 	ret
 
+
 LABEL_7197:
 	sub [0x21], 0x0020
 	jl [0xF8], 0x10, LABEL_71A5
@@ -89,6 +93,8 @@ LABEL_7197:
 
 LABEL_71A5:
 	ret
+
+
 LABEL_71A6:
 	db 0x11
 

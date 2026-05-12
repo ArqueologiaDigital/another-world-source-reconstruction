@@ -1737,20 +1737,24 @@ LABEL_0073:
 	load id=0x0079
 	ret
 
+
 LABEL_00BF:
 	je [0xDB], 0x00, SHARED_RET
 	load id=0x07DE
 	ret
+
 
 LABEL_00C9:
 	je [0xDB], 0x00, SHARED_RET
 	bankSwitch 0;  Arrival at the Lake & Beast Chase	;@enc=legacy_e
 	ret
 
+
 LABEL_00D3:
 	je [0xDB], 0x00, SHARED_RET
 	bankSwitch 1;  Prison	;@enc=legacy_e
 	ret
+
 
 LABEL_00DD:
 	jne [0x72], [HACK_VAR_67], LABEL_00EA
@@ -1770,6 +1774,7 @@ LABEL_00F7:
 	jge [0x04], 0x4000, SHARED_RET
 	song id=0x0BBF, delay=0x0000, pos=0x00
 	ret
+
 
 LABEL_0129:
 	break
@@ -1854,6 +1859,7 @@ SET_VAR21_TO_0001_AT_01EA:
 	mov [0x21], 0x0001
 	ret
 
+
 LABEL_01EF:
 	mov [0x21], 0x0000
 	jge [0x7B], 0x4000, SET_VAR21_TO_0001_AT_01EA
@@ -1862,6 +1868,7 @@ LABEL_01EF:
 	je [0xF8], 0x00, SHARED_RET
 	mov [0x21], 0x0001
 	ret
+
 
 LABEL_020C:
 	call LABEL_89DF

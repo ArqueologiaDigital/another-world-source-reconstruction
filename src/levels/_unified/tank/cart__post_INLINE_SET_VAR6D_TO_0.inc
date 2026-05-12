@@ -63,15 +63,18 @@ LABEL_00A4:
 	load id=0x005B
 	ret
 
+
 LABEL_00C9:
 	je [0xDB], 0x00, SHARED_RET
 	load id=0x07DC
 	ret
 
+
 LABEL_00D3:
 	je [0xDB], 0x00, SHARED_RET
 	load id=0x07DD
 	ret
+
 
 LABEL_00DD:
 	mov [0x01], 0x00AA

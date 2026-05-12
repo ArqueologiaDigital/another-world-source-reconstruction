@@ -6,15 +6,18 @@ LABEL_6FBA:
 	mov [0x11], [0xA1]
 	ret
 
+
 LABEL_6FC4:
 	jne [0x1D], 0x15, LABEL_6FCE
 	mov [0x11], [0xA4]
 	ret
 
+
 LABEL_6FCE:
 	jne [0x1D], 0x16, LABEL_6FD8
 	mov [0x11], [0xA7]
 	ret
+
 
 LABEL_6FD8:
 	jne [0x1D], 0x17, COPY_VARAD_TO_VAR11

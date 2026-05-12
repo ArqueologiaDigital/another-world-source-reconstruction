@@ -27,6 +27,7 @@ LABEL_2C72:
 	mov [0x09], 0x0001
 	ret
 
+
 HANG_DRAW_CIN_637:
 	video offset=CINEMATIC_637, x=[0x74], y=[0x75]
 	break
@@ -49,10 +50,12 @@ LABEL_2CA7:
 	video offset=CINEMATIC_637, x=[0x07], y=[0x08]
 	ret
 
+
 LABEL_2CB3:
 	jg [0x09], 0x07, LABEL_2CBF
 	video offset=CINEMATIC_636, x=[0x07], y=[0x08]
 	ret
+
 
 LABEL_2CBF:
 	jne [0x09], 0x08, LABEL_2CE9
@@ -63,6 +66,7 @@ LABEL_2CCE:
 	jg [0x09], 0x07, LABEL_2CDA
 	video offset=CINEMATIC_720, x=[0x07], y=[0x08]
 	ret
+
 
 LABEL_2CDA:
 	jne [0x09], 0x08, LABEL_2CE9
@@ -81,6 +85,7 @@ LABEL_2CE9:
 	sub [0x07], 0x000A
 	ret
 
+
 LABEL_2D16:
 	jne [0x09], 0x09, LABEL_2D43
 	sub [0x08], 0x000A
@@ -92,6 +97,7 @@ LABEL_2D16:
 	video offset=CINEMATIC_637, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
 	sub [0x07], 0x0011
 	ret
+
 
 LABEL_2D43:
 	jne [0x09], 0x0A, LABEL_2D70
@@ -105,6 +111,7 @@ LABEL_2D43:
 	sub [0x07], 0x0014
 	ret
 
+
 LABEL_2D70:
 	jl [0x09], 0x0B, SHARED_RET
 	video offset=CINEMATIC_636, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
@@ -116,6 +123,7 @@ LABEL_2D70:
 	video offset=CINEMATIC_637, x=[0x07], y=[0x08], zoom=[0x20]	;@enc=alt
 	sub [0x07], 0x0014
 	ret
+
 
 LABEL_2D9D:
 	mov [0x07], [0x68]

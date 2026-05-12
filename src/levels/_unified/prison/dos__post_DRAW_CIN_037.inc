@@ -5,12 +5,14 @@ LABEL_7636:
 LABEL_7640:
 	ret
 
+
 LABEL_7641:
 	jg [0x16], 0x00, LABEL_764B
 	mov [0x16], 0x0000
 
 LABEL_764B:
 	ret
+
 
 LABEL_764C:
 	jg [0x15], 0x01, LABEL_7656
@@ -22,6 +24,7 @@ LABEL_7656:
 
 LABEL_7660:
 	ret
+
 
 LABEL_7661:
 	jl [HERO_X], 0x1B, LABEL_767F
@@ -35,6 +38,7 @@ LABEL_7675:
 
 LABEL_767F:
 	ret
+
 
 LABEL_7680:
 	setup channel=0x14, address=LABEL_7685

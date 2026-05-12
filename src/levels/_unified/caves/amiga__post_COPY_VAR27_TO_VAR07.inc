@@ -10,6 +10,8 @@ LABEL_6185:
 	mov [0x21], [0x22]
 	mov [0x22], [0x26]
 	ret
+
+
 LABEL_619B:
 	db 0x11
 
@@ -75,6 +77,7 @@ LABEL_624F:
 LABEL_6254:
 	ret
 
+
 LABEL_6255:
 	or [0x27], 0x4000
 	jmp LABEL_62EA
@@ -126,6 +129,8 @@ LABEL_62C1:
 
 LABEL_62DB:
 	ret
+
+
 LABEL_62DC:
 	db 0x11
 
@@ -165,6 +170,8 @@ LABEL_632F:
 
 LABEL_6343:
 	ret
+
+
 LABEL_6344:
 	db 0x11
 
@@ -273,6 +280,7 @@ LABEL_645F:
 	or [0x27], 0x4000
 	add [0x27], [0x12]
 	ret
+
 
 LABEL_646D:
 	mov [0x12], [0x27]

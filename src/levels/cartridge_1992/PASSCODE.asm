@@ -109,6 +109,7 @@ LOAD_VAR19_TO_VAR06:
 	mov [0x06], [0x19]
 	ret
 
+
 SETUP_PASSCODE_SCREEN:
 	mov [0x09], 0x0010
 	fill page=0xFF, color=0x00
@@ -162,6 +163,8 @@ INIT_BITMASKS_BC_C6:
 	and [0xBC], 0x0010
 	and [0xC6], 0x0080
 	ret
+
+
 	jmp ENTRY_2ND_PASSCODE_INSTANCE
 	je [0xBC], 0x00, DRAW_PROGRESS_MARKERS
 	video offset=CINEMATIC_005, x=0, y=0
@@ -181,12 +184,14 @@ DRAW_CIN_058_AT_16_16_IF_VARDC_EQ_21:
 TRIVIAL_RET:
 	ret
 
+
 ENTRY_2ND_PASSCODE_INSTANCE:
 	je [0xBC], 0x00, KILL_ALL_CHANNELS_AND_KILL
 	je [0xC6], 0x00, KILL_ALL_CHANNELS_AND_KILL
 	jne [0xF2], 0x0FA0, KILL_ALL_CHANNELS_AND_KILL
 	jne [HACK_VAR_DC], 0x21, KILL_ALL_CHANNELS_AND_KILL
 	ret
+
 
 KILL_ALL_CHANNELS_AND_KILL:
 	deleteChannels first=0x00, last=0x3F
@@ -212,168 +217,206 @@ INIT_PASSCODE_LETTER_ALPHABET:
 	mov [0x18], 0xFFFF
 	mov [0x19], 0x0000
 	ret
+
+
 	mov [0x0A], [0x29]
 	mov [0x0C], [0x2A]
 	mov [0x14], [0x2B]
 	mov [0x17], [0x2C]
 	ret
+
+
 	jne [0x22], 0x00, LOAD_VAR0B_TO_HASH_VAR1D
 	mov [0x1D], [0x0A]
 	ret
+
 
 LOAD_VAR0B_TO_HASH_VAR1D:
 	jne [0x22], 0x01, LOAD_VAR0C_TO_HASH_VAR1D
 	mov [0x1D], [0x0B]
 	ret
 
+
 LOAD_VAR0C_TO_HASH_VAR1D:
 	jne [0x22], 0x02, LOAD_VAR0D_TO_HASH_VAR1D
 	mov [0x1D], [0x0C]
 	ret
+
 
 LOAD_VAR0D_TO_HASH_VAR1D:
 	jne [0x22], 0x03, LOAD_VAR0E_TO_HASH_VAR1D
 	mov [0x1D], [0x0D]
 	ret
 
+
 LOAD_VAR0E_TO_HASH_VAR1D:
 	jne [0x22], 0x04, LOAD_VAR0F_TO_HASH_VAR1D
 	mov [0x1D], [0x0E]
 	ret
+
 
 LOAD_VAR0F_TO_HASH_VAR1D:
 	jne [0x22], 0x05, LOAD_VAR10_TO_HASH_VAR1D
 	mov [0x1D], [0x0F]
 	ret
 
+
 LOAD_VAR10_TO_HASH_VAR1D:
 	jne [0x22], 0x06, LOAD_VAR11_TO_HASH_VAR1D
 	mov [0x1D], [0x10]
 	ret
+
 
 LOAD_VAR11_TO_HASH_VAR1D:
 	jne [0x22], 0x07, LOAD_VAR12_TO_HASH_VAR1D
 	mov [0x1D], [0x11]
 	ret
 
+
 LOAD_VAR12_TO_HASH_VAR1D:
 	jne [0x22], 0x08, LOAD_VAR13_TO_HASH_VAR1D
 	mov [0x1D], [0x12]
 	ret
+
 
 LOAD_VAR13_TO_HASH_VAR1D:
 	jne [0x22], 0x09, LOAD_VAR14_TO_HASH_VAR1D
 	mov [0x1D], [0x13]
 	ret
 
+
 LOAD_VAR14_TO_HASH_VAR1D:
 	jne [0x22], 0x0A, LOAD_VAR15_TO_HASH_VAR1D
 	mov [0x1D], [0x14]
 	ret
+
 
 LOAD_VAR15_TO_HASH_VAR1D:
 	jne [0x22], 0x0B, LOAD_VAR16_TO_HASH_VAR1D
 	mov [0x1D], [0x15]
 	ret
 
+
 LOAD_VAR16_TO_HASH_VAR1D:
 	jne [0x22], 0x0C, LOAD_VAR17_TO_HASH_VAR1D
 	mov [0x1D], [0x16]
 	ret
+
 
 LOAD_VAR17_TO_HASH_VAR1D:
 	jne [0x22], 0x0D, LOAD_VAR18_TO_HASH_VAR1D
 	mov [0x1D], [0x17]
 	ret
 
+
 LOAD_VAR18_TO_HASH_VAR1D:
 	jne [0x22], 0x0E, LOAD_VAR19_TO_HASH_VAR1D
 	mov [0x1D], [0x18]
 	ret
 
+
 LOAD_VAR19_TO_HASH_VAR1D:
 	jne [0x22], 0x0F, SHARED_RET
 	mov [0x1D], [0x19]
 	ret
+
+
 	killChannel
 	jne [0x22], 0x00, SAVE_HASH_VAR1D_TO_VAR0B
 	mov [0x0A], [0x1D]
 	ret
+
 
 SAVE_HASH_VAR1D_TO_VAR0B:
 	jne [0x22], 0x01, SAVE_HASH_VAR1D_TO_VAR0C
 	mov [0x0B], [0x1D]
 	ret
 
+
 SAVE_HASH_VAR1D_TO_VAR0C:
 	jne [0x22], 0x02, SAVE_HASH_VAR1D_TO_VAR0D
 	mov [0x0C], [0x1D]
 	ret
+
 
 SAVE_HASH_VAR1D_TO_VAR0D:
 	jne [0x22], 0x03, SAVE_HASH_VAR1D_TO_VAR0E
 	mov [0x0D], [0x1D]
 	ret
 
+
 SAVE_HASH_VAR1D_TO_VAR0E:
 	jne [0x22], 0x04, SAVE_HASH_VAR1D_TO_VAR0F
 	mov [0x0E], [0x1D]
 	ret
+
 
 SAVE_HASH_VAR1D_TO_VAR0F:
 	jne [0x22], 0x05, SAVE_HASH_VAR1D_TO_VAR10
 	mov [0x0F], [0x1D]
 	ret
 
+
 SAVE_HASH_VAR1D_TO_VAR10:
 	jne [0x22], 0x06, SAVE_HASH_VAR1D_TO_VAR11
 	mov [0x10], [0x1D]
 	ret
+
 
 SAVE_HASH_VAR1D_TO_VAR11:
 	jne [0x22], 0x07, SAVE_HASH_VAR1D_TO_VAR12
 	mov [0x11], [0x1D]
 	ret
 
+
 SAVE_HASH_VAR1D_TO_VAR12:
 	jne [0x22], 0x08, SAVE_HASH_VAR1D_TO_VAR13
 	mov [0x12], [0x1D]
 	ret
+
 
 SAVE_HASH_VAR1D_TO_VAR13:
 	jne [0x22], 0x09, SAVE_HASH_VAR1D_TO_VAR14
 	mov [0x13], [0x1D]
 	ret
 
+
 SAVE_HASH_VAR1D_TO_VAR14:
 	jne [0x22], 0x0A, SAVE_HASH_VAR1D_TO_VAR15
 	mov [0x14], [0x1D]
 	ret
+
 
 SAVE_HASH_VAR1D_TO_VAR15:
 	jne [0x22], 0x0B, SAVE_HASH_VAR1D_TO_VAR16
 	mov [0x15], [0x1D]
 	ret
 
+
 SAVE_HASH_VAR1D_TO_VAR16:
 	jne [0x22], 0x0C, SAVE_HASH_VAR1D_TO_VAR17
 	mov [0x16], [0x1D]
 	ret
+
 
 SAVE_HASH_VAR1D_TO_VAR17:
 	jne [0x22], 0x0D, SAVE_HASH_VAR1D_TO_VAR18
 	mov [0x17], [0x1D]
 	ret
 
+
 SAVE_HASH_VAR1D_TO_VAR18:
 	jne [0x22], 0x0E, SAVE_HASH_VAR1D_TO_VAR19
 	mov [0x18], [0x1D]
 	ret
 
+
 SAVE_HASH_VAR1D_TO_VAR19:
 	jne [0x22], 0x0F, SHARED_RET
 	mov [0x19], [0x1D]
 	ret
+
+
 LABEL_0333:
 	db 0x11
 
@@ -381,6 +424,7 @@ DERIVE_AND_DRAW_LETTER:
 	call DERIVE_VAR07_VAR08_FROM_VAR05
 	call DRAW_OR_BLINK_LETTER
 	ret
+
 
 LABEL_033B:
 	jne [LAST_KEYCHAR], 0x00, LABEL_07F1
@@ -727,10 +771,12 @@ INTERPRET_KEY_TO_LETTER:
 	mov [0x06], 0x0063
 	ret
 
+
 HANDLE_BACKSPACE_KEY:
 	jne [LAST_KEYCHAR], 0x08, MAP_KEY_A_TO_Z_TO_INDEX
 	mov [0x06], 0x0062
 	ret
+
 
 MAP_KEY_A_TO_Z_TO_INDEX:
 	jl [LAST_KEYCHAR], 0x41, CLEAR_LAST_KEYCHAR
@@ -739,9 +785,11 @@ MAP_KEY_A_TO_Z_TO_INDEX:
 	sub [0x06], 0x0037
 	ret
 
+
 CLEAR_LAST_KEYCHAR:
 	mov [LAST_KEYCHAR], 0x0000
 	ret
+
 
 LABEL_07F1:
 	mov [0x05], [0x01]
@@ -824,6 +872,7 @@ DRAW_CIN_003_AT_BC_54:
 	selectVideoPage 0xFF
 	ret
 
+
 DERIVE_VAR07_VAR08_FROM_VAR05:
 	mov [0x07], [0x05]
 	mov [0x08], [0x05]
@@ -845,6 +894,7 @@ SCALE_VAR07_TIMES_9_PLUS_4A:
 	add [0x07], 0x0004
 	ret
 
+
 DRAW_LETTER_DISPATCH_BY_X:
 	je [0x07], 0xC4, DRAW_LETTER_AT_X24
 	je [0x07], 0xCC, DRAW_LETTER_AT_X25
@@ -854,240 +904,288 @@ DRAW_LETTER_DISPATCH_BY_X:
 	text id=0x012E, x=23, y=80, color=0x04 ; "B"
 	ret
 
+
 DRAW_LETTER_C_AT_X23:
 	jne [0x06], 0x0C, DRAW_LETTER_D_AT_X23
 	text id=0x012F, x=23, y=80, color=0x04 ; "C"
 	ret
+
 
 DRAW_LETTER_D_AT_X23:
 	jne [0x06], 0x0D, DRAW_LETTER_F_AT_X23
 	text id=0x0130, x=23, y=80, color=0x04 ; "D"
 	ret
 
+
 DRAW_LETTER_F_AT_X23:
 	jne [0x06], 0x0F, DRAW_LETTER_G_AT_X23
 	text id=0x0131, x=23, y=80, color=0x04 ; "F"
 	ret
+
 
 DRAW_LETTER_G_AT_X23:
 	jne [0x06], 0x10, DRAW_LETTER_H_AT_X23
 	text id=0x0132, x=23, y=80, color=0x04 ; "G"
 	ret
 
+
 DRAW_LETTER_H_AT_X23:
 	jne [0x06], 0x11, DRAW_LETTER_J_AT_X23
 	text id=0x0133, x=23, y=80, color=0x04 ; "H"
 	ret
+
 
 DRAW_LETTER_J_AT_X23:
 	jne [0x06], 0x13, DRAW_LETTER_K_AT_X23
 	text id=0x0134, x=23, y=80, color=0x04 ; "J"
 	ret
 
+
 DRAW_LETTER_K_AT_X23:
 	jne [0x06], 0x14, DRAW_LETTER_L_AT_X23
 	text id=0x0135, x=23, y=80, color=0x04 ; "K"
 	ret
+
 
 DRAW_LETTER_L_AT_X23:
 	jne [0x06], 0x15, DRAW_LETTER_R_AT_X23
 	text id=0x0136, x=23, y=80, color=0x04 ; "L"
 	ret
 
+
 DRAW_LETTER_R_AT_X23:
 	jne [0x06], 0x1B, DRAW_LETTER_X_AT_X23
 	text id=0x0137, x=23, y=80, color=0x04 ; "R"
 	ret
+
 
 DRAW_LETTER_X_AT_X23:
 	jne [0x06], 0x21, DRAW_LETTER_T_AT_X23
 	text id=0x0138, x=23, y=80, color=0x04 ; "X"
 	ret
 
+
 DRAW_LETTER_T_AT_X23:
 	jne [0x06], 0x1D, SHARED_RET
 	text id=0x0139, x=23, y=80, color=0x04 ; "T"
 	ret
+
 
 DRAW_LETTER_AT_X24:
 	jne [0x06], 0x0B, DRAW_LETTER_C_AT_X24
 	text id=0x012E, x=24, y=80, color=0x04 ; "B"
 	ret
 
+
 DRAW_LETTER_C_AT_X24:
 	jne [0x06], 0x0C, DRAW_LETTER_D_AT_X24
 	text id=0x012F, x=24, y=80, color=0x04 ; "C"
 	ret
+
 
 DRAW_LETTER_D_AT_X24:
 	jne [0x06], 0x0D, DRAW_LETTER_F_AT_X24
 	text id=0x0130, x=24, y=80, color=0x04 ; "D"
 	ret
 
+
 DRAW_LETTER_F_AT_X24:
 	jne [0x06], 0x0F, DRAW_LETTER_G_AT_X24
 	text id=0x0131, x=24, y=80, color=0x04 ; "F"
 	ret
+
 
 DRAW_LETTER_G_AT_X24:
 	jne [0x06], 0x10, DRAW_LETTER_H_AT_X24
 	text id=0x0132, x=24, y=80, color=0x04 ; "G"
 	ret
 
+
 DRAW_LETTER_H_AT_X24:
 	jne [0x06], 0x11, DRAW_LETTER_J_AT_X24
 	text id=0x0133, x=24, y=80, color=0x04 ; "H"
 	ret
+
 
 DRAW_LETTER_J_AT_X24:
 	jne [0x06], 0x13, DRAW_LETTER_K_AT_X24
 	text id=0x0134, x=24, y=80, color=0x04 ; "J"
 	ret
 
+
 DRAW_LETTER_K_AT_X24:
 	jne [0x06], 0x14, DRAW_LETTER_L_AT_X24
 	text id=0x0135, x=24, y=80, color=0x04 ; "K"
 	ret
+
 
 DRAW_LETTER_L_AT_X24:
 	jne [0x06], 0x15, DRAW_LETTER_R_AT_X24
 	text id=0x0136, x=24, y=80, color=0x04 ; "L"
 	ret
 
+
 DRAW_LETTER_R_AT_X24:
 	jne [0x06], 0x1B, DRAW_LETTER_X_AT_X24
 	text id=0x0137, x=24, y=80, color=0x04 ; "R"
 	ret
+
 
 DRAW_LETTER_X_AT_X24:
 	jne [0x06], 0x21, DRAW_LETTER_T_AT_X24
 	text id=0x0138, x=24, y=80, color=0x04 ; "X"
 	ret
 
+
 DRAW_LETTER_T_AT_X24:
 	jne [0x06], 0x1D, SHARED_RET
 	text id=0x0139, x=24, y=80, color=0x04 ; "T"
 	ret
+
 
 DRAW_LETTER_AT_X25:
 	jne [0x06], 0x0B, DRAW_LETTER_C_AT_X25
 	text id=0x012E, x=25, y=80, color=0x04 ; "B"
 	ret
 
+
 DRAW_LETTER_C_AT_X25:
 	jne [0x06], 0x0C, DRAW_LETTER_D_AT_X25
 	text id=0x012F, x=25, y=80, color=0x04 ; "C"
 	ret
+
 
 DRAW_LETTER_D_AT_X25:
 	jne [0x06], 0x0D, DRAW_LETTER_F_AT_X25
 	text id=0x0130, x=25, y=80, color=0x04 ; "D"
 	ret
 
+
 DRAW_LETTER_F_AT_X25:
 	jne [0x06], 0x0F, DRAW_LETTER_G_AT_X25
 	text id=0x0131, x=25, y=80, color=0x04 ; "F"
 	ret
+
 
 DRAW_LETTER_G_AT_X25:
 	jne [0x06], 0x10, DRAW_LETTER_H_AT_X25
 	text id=0x0132, x=25, y=80, color=0x04 ; "G"
 	ret
 
+
 DRAW_LETTER_H_AT_X25:
 	jne [0x06], 0x11, DRAW_LETTER_J_AT_X25
 	text id=0x0133, x=25, y=80, color=0x04 ; "H"
 	ret
+
 
 DRAW_LETTER_J_AT_X25:
 	jne [0x06], 0x13, DRAW_LETTER_K_AT_X25
 	text id=0x0134, x=25, y=80, color=0x04 ; "J"
 	ret
 
+
 DRAW_LETTER_K_AT_X25:
 	jne [0x06], 0x14, DRAW_LETTER_L_AT_X25
 	text id=0x0135, x=25, y=80, color=0x04 ; "K"
 	ret
+
 
 DRAW_LETTER_L_AT_X25:
 	jne [0x06], 0x15, DRAW_LETTER_R_AT_X25
 	text id=0x0136, x=25, y=80, color=0x04 ; "L"
 	ret
 
+
 DRAW_LETTER_R_AT_X25:
 	jne [0x06], 0x1B, DRAW_LETTER_X_AT_X25
 	text id=0x0137, x=25, y=80, color=0x04 ; "R"
 	ret
+
 
 DRAW_LETTER_X_AT_X25:
 	jne [0x06], 0x21, DRAW_LETTER_T_AT_X25
 	text id=0x0138, x=25, y=80, color=0x04 ; "X"
 	ret
 
+
 DRAW_LETTER_T_AT_X25:
 	jne [0x06], 0x1D, SHARED_RET
 	text id=0x0139, x=25, y=80, color=0x04 ; "T"
 	ret
+
 
 DRAW_LETTER_AT_X26:
 	jne [0x06], 0x0B, DRAW_LETTER_C_AT_X26
 	text id=0x012E, x=26, y=80, color=0x04 ; "B"
 	ret
 
+
 DRAW_LETTER_C_AT_X26:
 	jne [0x06], 0x0C, DRAW_LETTER_D_AT_X26
 	text id=0x012F, x=26, y=80, color=0x04 ; "C"
 	ret
+
 
 DRAW_LETTER_D_AT_X26:
 	jne [0x06], 0x0D, DRAW_LETTER_F_AT_X26
 	text id=0x0130, x=26, y=80, color=0x04 ; "D"
 	ret
 
+
 DRAW_LETTER_F_AT_X26:
 	jne [0x06], 0x0F, DRAW_LETTER_G_AT_X26
 	text id=0x0131, x=26, y=80, color=0x04 ; "F"
 	ret
+
 
 DRAW_LETTER_G_AT_X26:
 	jne [0x06], 0x10, DRAW_LETTER_H_AT_X26
 	text id=0x0132, x=26, y=80, color=0x04 ; "G"
 	ret
 
+
 DRAW_LETTER_H_AT_X26:
 	jne [0x06], 0x11, DRAW_LETTER_J_AT_X26
 	text id=0x0133, x=26, y=80, color=0x04 ; "H"
 	ret
+
 
 DRAW_LETTER_J_AT_X26:
 	jne [0x06], 0x13, DRAW_LETTER_K_AT_X26
 	text id=0x0134, x=26, y=80, color=0x04 ; "J"
 	ret
 
+
 DRAW_LETTER_K_AT_X26:
 	jne [0x06], 0x14, DRAW_LETTER_L_AT_X26
 	text id=0x0135, x=26, y=80, color=0x04 ; "K"
 	ret
+
 
 DRAW_LETTER_L_AT_X26:
 	jne [0x06], 0x15, DRAW_LETTER_R_AT_X26
 	text id=0x0136, x=26, y=80, color=0x04 ; "L"
 	ret
 
+
 DRAW_LETTER_R_AT_X26:
 	jne [0x06], 0x1B, DRAW_LETTER_X_AT_X26
 	text id=0x0137, x=26, y=80, color=0x04 ; "R"
 	ret
+
 
 DRAW_LETTER_X_AT_X26:
 	jne [0x06], 0x21, DRAW_LETTER_T_AT_X26
 	text id=0x0138, x=26, y=80, color=0x04 ; "X"
 	ret
 
+
 DRAW_LETTER_T_AT_X26:
 	jne [0x06], 0x1D, SHARED_RET
 	text id=0x0139, x=26, y=80, color=0x04 ; "T"
 	ret
+
 
 DRAW_OR_BLINK_LETTER:
 	je [0x06], 0x62, DRAW_LETTER_VIA_CIN_DISPATCH
@@ -1099,13 +1197,17 @@ DRAW_LETTER_VIA_CIN_DISPATCH:
 	video offset=CINEMATIC_001, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_CIN_000_LETTER_BLANK:
 	jne [0x06], 0x63, SHARED_RET
 	video offset=CINEMATIC_000, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 SHARED_RET:
 	ret
+
+
 	killChannel
 	video offset=CINEMATIC_004, x=160, y=100
 
@@ -1130,6 +1232,8 @@ LABEL_0BD2:
 	blitFramebuffer 0xFF
 	blitFramebuffer 0x02
 	ret
+
+
 LABEL_0BE1:
 	db 0x11, 0x11, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 	FILL(62487, 0xFF)

@@ -8,6 +8,7 @@ LABEL_743F:
 	mov [0x28], [HERO_X]
 	ret
 
+
 LABEL_7449:
 	call LABEL_B28A
 	mov [0x22], [HERO_X]

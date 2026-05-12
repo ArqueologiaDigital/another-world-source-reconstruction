@@ -272,6 +272,7 @@ COMPUTE_OFFSET_VAR21_22:
 	sub [0x22], 0x0026
 	ret
 
+
 LABEL_223A:
 	call LABEL_652F
 	mov [0x21], [BUDDY_X]
@@ -279,6 +280,7 @@ LABEL_223A:
 	add [0x21], 0x0023
 	sub [0x22], 0x0026
 	ret
+
 
 LABEL_224C:
 	mov [0xF8], [0x11]
@@ -405,10 +407,12 @@ LABEL_2378:
 	add [0x33], 0x0003
 	ret
 
+
 LABEL_2391:
 	jl [0x70], 0x0140, SHARED_RET
 	mov [0x23], 0x0000
 	ret
+
 
 LABEL_239D:
 	je [BUDDY_Y], [0x52], LABEL_2437
@@ -435,45 +439,54 @@ LABEL_23CB:
 	video offset=CINEMATIC_202, x=[0x21], y=[0x22]
 	ret
 
+
 LABEL_23D7:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video offset=CINEMATIC_203, x=[0x21], y=[0x22]
 	ret
+
 
 LABEL_23E3:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video offset=CINEMATIC_204, x=[0x21], y=[0x22]
 	ret
 
+
 LABEL_23EF:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video offset=CINEMATIC_190, x=[0x21], y=[0x22]
 	ret
+
 
 LABEL_23FB:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video offset=CINEMATIC_191, x=[0x21], y=[0x22]
 	ret
 
+
 LABEL_2407:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video offset=CINEMATIC_192, x=[0x21], y=[0x22]
 	ret
+
 
 LABEL_2413:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video offset=CINEMATIC_193, x=[0x21], y=[0x22]
 	ret
 
+
 LABEL_241F:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video offset=CINEMATIC_194, x=[0x21], y=[0x22]
 	ret
 
+
 LABEL_242B:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video offset=CINEMATIC_195, x=[0x21], y=[0x22]
 	ret
+
 
 LABEL_2437:
 	mov [BUDDY_Y], [0x51]

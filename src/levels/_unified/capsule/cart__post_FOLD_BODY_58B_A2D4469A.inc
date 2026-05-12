@@ -51,6 +51,8 @@ LABEL_505E:
 
 LABEL_506D:
 	ret
+
+
 LABEL_506E:
 	db 0x11
 
@@ -61,12 +63,16 @@ LABEL_506F:
 	jne [0x2B], 0x01, LABEL_5081
 	ret
 
+
 LABEL_5081:
 	ret
+
 
 SET_VAR2F_TO_0000:
 	mov [0x2F], 0x0000
 	ret
+
+
 	and [0x12], 0x1FFF
 	jl [0x12], 0x08, LABEL_50CA
 	mov [0x2B], [0x12]
@@ -86,6 +92,7 @@ SET_VAR2F_TO_0000:
 
 LABEL_50CA:
 	ret
+
 
 LABEL_50CB:
 	je [0x12], 0x01, LABEL_25CC
@@ -159,6 +166,8 @@ LABEL_51A7:
 
 LABEL_51B2:
 	ret
+
+
 LABEL_51B3:
 	db 0x11
 
@@ -260,6 +269,8 @@ LABEL_530E:
 
 TRIVIAL_RET:
 	ret
+
+
 LABEL_5338:
 	db 0x11
 
@@ -269,8 +280,11 @@ LABEL_5339:
 	mov [0x29], [HERO_X]
 	sub [0x29], 0x000A
 	ret
+
+
 	mov [0x2F], 0x0005
 	ret
+
 
 LABEL_5350:
 	mov [0x2F], 0x0009

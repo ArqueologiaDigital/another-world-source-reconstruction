@@ -3,6 +3,7 @@ LABEL_C10F:
 	mov [0x22], 0x00BA
 	ret
 
+
 LABEL_C11A:
 	jg [0x21], 0x1C, LABEL_C130
 	add [0x21], 0x0000
@@ -10,6 +11,7 @@ LABEL_C11A:
 	mov [0x22], 0x00BA
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_C130:
 	jg [0x21], 0x3D, LABEL_C146
@@ -19,6 +21,7 @@ LABEL_C130:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_C146:
 	jg [0x21], 0x7E, LABEL_C15C
 	sub [0x21], 0x003D
@@ -26,6 +29,7 @@ LABEL_C146:
 	mov [0x22], 0x00B5
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_C15C:
 	jg [0x21], 0xB1, LABEL_C172
@@ -35,10 +39,12 @@ LABEL_C15C:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_C172:
 	jg [0x21], 0xC6, LABEL_C17D
 	mov [0x22], 0x00F9
 	ret
+
 
 LABEL_C17D:
 	jg [0x21], 0xF3, LABEL_C193
@@ -47,6 +53,7 @@ LABEL_C17D:
 	mov [0x22], 0x00A8
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_C193:
 	jg [0x21], 0x0112, PROJ_VAR22_A8_MINUS_VAR21_MINUS_112_SHR4

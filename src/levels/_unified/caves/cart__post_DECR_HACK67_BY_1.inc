@@ -7,6 +7,7 @@ LABEL_DCD3:
 	mov [HERO_Y], 0x008C
 	ret
 
+
 LABEL_DCE2:
 	jne [HACK_VAR_67], 0xCE, LABEL_DCF5
 	mov [HACK_VAR_67], 0x00AF
@@ -14,11 +15,13 @@ LABEL_DCE2:
 	mov [0x23], 0x0000
 	ret
 
+
 LABEL_DCF5:
 	jne [HACK_VAR_67], 0x6A, LABEL_DD04
 	mov [HACK_VAR_67], 0x006B
 	mov [HERO_Y], 0x0070
 	ret
+
 
 LABEL_DD04:
 	jne [HACK_VAR_67], 0x87, INCR_HACK67_BY_1

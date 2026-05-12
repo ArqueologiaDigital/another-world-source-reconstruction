@@ -5,11 +5,13 @@ LABEL_DAD0:
 	sub [HERO_X], [0x2A]
 	ret
 
+
 LABEL_DAE2:
 	jg [0x21], 0x4B, SHARED_RET
 	mov [HERO_X], 0x004B
 	add [HERO_X], [0x2A]
 	ret
+
 
 LABEL_DAF0:
 	jg [0x22], 0x42, LABEL_DAFA
@@ -39,6 +41,7 @@ LABEL_DB3D:
 	add [HERO_X], [0x2A]
 	ret
 
+
 LABEL_DB4B:
 	jl [0x22], 0x6E, LABEL_DB55
 	mov [0x22], 0x006E
@@ -49,6 +52,7 @@ LABEL_DB55:
 	sub [HERO_X], [0x2A]
 	mov [0x05], 0x0003
 	ret
+
 
 LABEL_DB67:
 	jg [0x21], 0x4B, LABEL_DB92

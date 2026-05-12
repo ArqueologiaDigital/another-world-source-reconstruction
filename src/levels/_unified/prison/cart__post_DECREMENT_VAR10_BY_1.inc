@@ -209,17 +209,22 @@ LABEL_8B59:
 LABEL_8B5A:
 	ret
 
+
 LABEL_8B5B:
 	ret
+
 
 JUNK__8B5C:
 	ret
 
+
 LABEL_8B5D:
 	ret
 
+
 LABEL_8B5E:
 	ret
+
 
 LABEL_8B5F:
 	blitFramebuffer 0xFF

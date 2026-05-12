@@ -207,6 +207,7 @@ LABEL_15D1:
 	setup channel=0x27, address=LABEL_15DD
 	ret
 
+
 LABEL_15DD:
 	mov [0x12], 0x4010
 	call STATE_VAR12_BIG_DISPATCH

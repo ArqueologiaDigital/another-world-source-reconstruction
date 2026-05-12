@@ -35,6 +35,8 @@ LABEL_646B:
 
 LABEL_6474:
 	ret
+
+
 LABEL_6475:
 	db 0x11
 

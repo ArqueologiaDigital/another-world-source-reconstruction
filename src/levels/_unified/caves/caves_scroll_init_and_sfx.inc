@@ -4,6 +4,7 @@ INIT_VARS_2F_29_12:
 	mov [0x12], 0x4010
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INIT_VARS_2F_29_12.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -80,6 +81,7 @@ INIT_VARS_2F_29_12:
 PLAY_SFX_005C_CH00:
 	play id=0x005C, freq=0x19, vol=0x40, channel=0x00
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_PLAY_SFX_005C_CH00.inc"

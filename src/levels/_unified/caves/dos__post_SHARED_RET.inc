@@ -6,17 +6,21 @@ DRAW_BEAST_SUBFRAME_3_VAR09:
 	je [0xF8], 0x03, DRAW_CIN_056
 	ret
 
+
 DRAW_CIN_054:
 	video offset=CINEMATIC_054, x=[0x07], y=[0x08]
 	ret
+
 
 DRAW_CIN_055:
 	video offset=CINEMATIC_055, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_CIN_056:
 	video offset=CINEMATIC_056, x=[0x07], y=[0x08]
 	ret
+
 
 DRAW_BEAST_SUBFRAME_2_VAR09_LOW:
 	mov [0xF8], [0x09]
@@ -25,13 +29,16 @@ DRAW_BEAST_SUBFRAME_2_VAR09_LOW:
 	je [0xF8], 0x02, DRAW_CIN_058
 	ret
 
+
 DRAW_CIN_057:
 	video offset=CINEMATIC_057, x=[0xf5], y=[0x08]
 	ret
 
+
 DRAW_CIN_058:
 	video offset=CINEMATIC_058, x=[0xf5], y=[0x08]
 	ret
+
 
 LABEL_835D:
 	jg [0x09], 0x03FF, SHARED_RET

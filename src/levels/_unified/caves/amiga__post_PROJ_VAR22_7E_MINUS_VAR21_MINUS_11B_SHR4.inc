@@ -6,6 +6,7 @@ LABEL_BAD3:
 	mov [0x22], 0x007E
 	ret
 
+
 LABEL_BADE:
 	jg [0x21], 0x4F, LABEL_BAF4
 	sub [0x21], 0x0038
@@ -14,6 +15,7 @@ LABEL_BADE:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_BAF4:
 	jg [0x21], 0xAE, LABEL_BB0A
 	sub [0x21], 0x004F
@@ -21,6 +23,7 @@ LABEL_BAF4:
 	mov [0x22], 0x0079
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_BB0A:
 	jg [0x21], 0xFD, PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6

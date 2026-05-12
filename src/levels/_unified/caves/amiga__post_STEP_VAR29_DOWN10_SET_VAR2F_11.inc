@@ -10,10 +10,12 @@ LABEL_5BB8:
 	mov [0x2F], 0x000B
 	ret
 
+
 LABEL_5BC3:
 	jg [0xAD], 0x00, LABEL_5BCE
 	mov [0x2F], 0x000B
 	ret
+
 
 LABEL_5BCE:
 	mov [0x2F], 0x0008
@@ -23,6 +25,7 @@ LABEL_5BCE:
 	jl [0x38], 0x64, SHARED_RET
 	mov [0x2F], 0x0009
 	ret
+
 
 LABEL_5BE7:
 	mov [0x21], 0x0000

@@ -14,11 +14,13 @@ LABEL_5F5D:
 	setup channel=0x14, address=LABEL_40B4
 	ret
 
+
 LABEL_5F99:
 	setup channel=0x14, address=LABEL_3FCE
 	jl [0xF8], 0x10, SHARED_RET
 	setup channel=0x14, address=LABEL_3FF5
 	ret
+
 
 LABEL_5FA8:
 	call LABEL_601C
@@ -52,21 +54,25 @@ LABEL_6004:
 	mov [0x13], 0xFFFF
 	ret
 
+
 LABEL_6010:
 	or [0x2B], 0x4000
 	call LABEL_603B
 	mov [0x13], 0xFFFF
 	ret
 
+
 LABEL_601C:
 	jne [0x1D], 0x28, LABEL_6026
 	mov [0x2B], [0x6B]
 	ret
 
+
 LABEL_6026:
 	jne [0x1D], 0x29, LABEL_6030
 	mov [0x2B], [0x73]
 	ret
+
 
 LABEL_6030:
 	jne [0x1D], 0x2A, LABEL_6039
@@ -74,6 +80,8 @@ LABEL_6030:
 
 LABEL_6039:
 	ret
+
+
 LABEL_603A:
 	db 0x11
 
@@ -82,10 +90,12 @@ LABEL_603B:
 	mov [0x6B], [0x2B]
 	ret
 
+
 LABEL_6045:
 	jne [0x1D], 0x29, LABEL_604F
 	mov [0x73], [0x2B]
 	ret
+
 
 LABEL_604F:
 	jne [0x1D], 0x2A, RET_THEN_KILL_CHANNEL

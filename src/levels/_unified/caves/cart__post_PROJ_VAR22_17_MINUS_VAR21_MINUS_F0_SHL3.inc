@@ -8,6 +8,7 @@ LABEL_BA5F:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_BA81:
 	jg [0x21], 0xEC, LABEL_BA97
 	sub [0x21], 0x0084
@@ -15,6 +16,7 @@ LABEL_BA81:
 	mov [0x22], 0x005B
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_BA97:
 	jg [0x21], 0xF1, LABEL_BAAD
@@ -24,10 +26,12 @@ LABEL_BA97:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_BAAD:
 	jg [0x21], 0x0103, LABEL_BAB9
 	mov [0x22], 0x004D
 	ret
+
 
 LABEL_BAB9:
 	jg [0x21], 0x0120, LABEL_BAD0
@@ -37,6 +41,7 @@ LABEL_BAB9:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_BAD0:
 	jg [0x21], 0x3B, LABEL_BAE6
 	sub [0x21], 0x0007
@@ -44,6 +49,7 @@ LABEL_BAD0:
 	mov [0x22], 0x00B9
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_BAE6:
 	jg [0x21], 0x71, LABEL_BAFC
@@ -53,6 +59,7 @@ LABEL_BAE6:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_BAFC:
 	jg [0x21], 0xAA, LABEL_BB12
 	sub [0x21], 0x0071
@@ -60,6 +67,7 @@ LABEL_BAFC:
 	mov [0x22], 0x00B0
 	add [0x22], [0x21]
 	ret
+
 
 LABEL_BB12:
 	jg [0x21], 0xBB, LABEL_BB28
@@ -69,10 +77,12 @@ LABEL_BB12:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_BB28:
 	jg [0x21], 0xDB, LABEL_BB33
 	mov [0x22], 0x00AF
 	ret
+
 
 LABEL_BB33:
 	jg [0x21], 0xF1, LABEL_BB49
@@ -81,6 +91,7 @@ LABEL_BB33:
 	mov [0x22], 0x00AF
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_BB49:
 	jg [0x21], 0x0115, PROJ_VAR22_AA_MINUS_VAR21_MINUS_115_SHR3

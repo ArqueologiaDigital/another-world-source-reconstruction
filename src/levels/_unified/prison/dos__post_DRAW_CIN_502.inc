@@ -3,6 +3,7 @@ LABEL_3DA0:
 	video offset=CINEMATIC_501, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_3DAC:
 	jle [0x13], 0x01, DRAW_CIN_499
 	video offset=CINEMATIC_500, x=[0x21], y=[0x27]

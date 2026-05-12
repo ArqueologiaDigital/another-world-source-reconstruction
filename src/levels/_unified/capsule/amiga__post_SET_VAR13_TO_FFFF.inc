@@ -8,6 +8,8 @@ LABEL_469F:
 	je [0x1D], 0x1E, LABEL_47F0
 	jge [0x1D], 0x28, LABEL_4835
 	ret
+
+
 LABEL_46BE:
 	db 0x11
 
@@ -19,6 +21,7 @@ LABEL_46BF:
 	and [0x49], 0xFFF8
 	ret
 
+
 LABEL_46D8:
 	jne [0x1D], 0x0B, LABEL_46EB
 	setup channel=0x2A, address=LABEL_1FD3
@@ -26,12 +29,14 @@ LABEL_46D8:
 	and [0x4B], 0xFFF8
 	ret
 
+
 LABEL_46EB:
 	jne [0x1D], 0x0C, SHARED_RET
 	setup channel=0x2C, address=LABEL_1FD3
 	or [0x4D], 0x4000
 	and [0x4D], 0xFFF8
 	ret
+
 
 LABEL_46FE:
 	jne [HACK_VAR_67], 0xCA, LABEL_4717
@@ -41,6 +46,7 @@ LABEL_46FE:
 	and [0x49], 0xFFF8
 	ret
 
+
 LABEL_4717:
 	jne [HACK_VAR_67], 0xCB, SHARED_RET
 	jne [0x1D], 0x0A, LABEL_4730
@@ -49,6 +55,7 @@ LABEL_4717:
 	and [0x49], 0xFFF8
 	ret
 
+
 LABEL_4730:
 	jne [0x1D], 0x0B, LABEL_4743
 	setup channel=0x2A, address=LABEL_1FD3
@@ -56,12 +63,14 @@ LABEL_4730:
 	and [0x4B], 0xFFF8
 	ret
 
+
 LABEL_4743:
 	jne [0x1D], 0x0C, SHARED_RET
 	setup channel=0x2C, address=LABEL_1FD3
 	or [0x4D], 0x4000
 	and [0x4D], 0xFFF8
 	ret
+
 
 LABEL_4756:
 	jne [HACK_VAR_67], 0x6B, LABEL_477B
@@ -75,6 +84,7 @@ LABEL_4756:
 	mov [0x47], 0x0FA0
 	ret
 
+
 LABEL_477B:
 	jne [HACK_VAR_67], 0xED, LABEL_4792
 	mov [0x47], 0x0FA0
@@ -82,6 +92,7 @@ LABEL_477B:
 	setup channel=0x02, address=KILL_CHANNEL_LANDING
 	setup channel=0x3C, address=LABEL_22A4
 	ret
+
 
 LABEL_4792:
 	jne [HACK_VAR_67], 0x50, SHARED_RET
@@ -100,6 +111,7 @@ LABEL_47B9:
 	setup channel=0x05, address=LABEL_8353
 	or [0xB2], 0x0002
 	ret
+
 
 LABEL_47D2:
 	call LABEL_4E31

@@ -23,6 +23,7 @@ TANK_SCENE_INIT_FILL_PAGE_3_COLOR_0C:
 	selectVideoPage 0xFF
 	ret
 
+
 TANK_DRAW_CIN_6_27_28_ON_PAGE_0_AND_3:
 	selectVideoPage 0x00
 	call DRAW_CIN_6_27_28_AND_RET

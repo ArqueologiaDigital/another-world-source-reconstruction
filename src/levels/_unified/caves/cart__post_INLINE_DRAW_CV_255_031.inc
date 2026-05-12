@@ -1,6 +1,7 @@
 LABEL_8CA9:
 	ret
 
+
 LABEL_8CAA:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	sub [0x08], 0x0001

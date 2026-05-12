@@ -12,6 +12,7 @@ LABEL_4ACC:
 	video offset=CINEMATIC_433, x=160, y=100
 	ret
 
+
 LABEL_4AF5:
 	call PRISON_SCENE_INIT_DRAW_CIN_085_086_TO_PAGE_3
 	selectVideoPage 0x00
@@ -21,6 +22,7 @@ LABEL_4AF5:
 	video offset=CINEMATIC_450, x=160, y=100
 	video offset=CINEMATIC_451, x=160, y=100
 	ret
+
 
 LABEL_4B0E:
 	mov [0x65], 0x0000
@@ -32,6 +34,7 @@ LABEL_4B0E:
 	video offset=CINEMATIC_436, x=160, y=100
 	video offset=CINEMATIC_437, x=160, y=100
 	ret
+
 
 ; Single-shot draw helper that copies page 0x03 onto page 0
 ; (FG), then draws CINEMATIC_ENERGY_TRANSMISSION_LINE

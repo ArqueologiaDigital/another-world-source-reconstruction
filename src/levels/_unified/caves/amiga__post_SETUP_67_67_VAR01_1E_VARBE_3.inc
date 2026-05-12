@@ -7,6 +7,7 @@ SETUP_67_AF_VARS_01_A_02_82_BE_3_BD_7:
 	mov [0xB0], 0x0002
 	ret
 
+
 LABEL_41A1:
 	mov [HACK_VAR_67], 0x0025
 	mov [0x06], 0x0000

@@ -23,6 +23,8 @@ LABEL_79B0:
 	mov [0x34], 0x0000
 	sub [0x34], [0x0E]
 	ret
+
+
 LABEL_79C1:
 	db 0x11
 
@@ -52,6 +54,7 @@ LABEL_79ED:
 	add [0x34], 0x001A
 	ret
 
+
 LABEL_7A1B:
 	mov [0x63], 0x0064
 	call INIT_VAR2B_2C_FROM_VAR01_VAR29_10
@@ -64,6 +67,7 @@ LABEL_7A1B:
 	call SET_VAR04_TO_0034
 	setup channel=0x14, address=LABEL_7B1C
 	ret
+
 
 LABEL_7A43:
 	mov [0x2F], [0x35]
@@ -138,9 +142,11 @@ LABEL_7AF8:
 	video offset=CINEMATIC_229, x=15, y=184
 	ret
 
+
 DRAW_CIN_229:
 	video offset=CINEMATIC_229, x=16, y=184
 	ret
+
 
 LABEL_7B10:
 	video offset=CINEMATIC_229, x=160, y=19
@@ -273,6 +279,7 @@ LABEL_7C51:
 	mov [0x23], 0x0000
 	call LABEL_7C5F
 	ret
+
 
 LABEL_7C5F:
 	je [HACK_VAR_67], 0x25, LABEL_B526

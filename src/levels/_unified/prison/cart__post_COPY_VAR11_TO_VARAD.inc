@@ -7,6 +7,7 @@ LABEL_41E0:
 	mov [0x11], [0x49]
 	ret
 
+
 LABEL_41ED:
 	jne [0x1D], 0x0B, LABEL_4204
 	mov [0x10], [0x4A]
@@ -15,6 +16,7 @@ LABEL_41ED:
 	mov [0xB2], 0x0001
 	ret
 
+
 LABEL_4204:
 	jne [0x1D], 0x0C, LABEL_4210
 	mov [0x10], [0x4C]
@@ -22,6 +24,8 @@ LABEL_4204:
 
 LABEL_4210:
 	ret
+
+
 LABEL_4211:
 	db 0x11
 
@@ -30,10 +34,12 @@ LABEL_4212:
 	mov [0x49], [0x11]
 	ret
 
+
 LABEL_421C:
 	jne [0x1D], 0x0B, LABEL_4226
 	mov [0x4B], [0x11]
 	ret
+
 
 LABEL_4226:
 	jne [0x1D], 0x0C, LABEL_422F
@@ -41,6 +47,8 @@ LABEL_4226:
 
 LABEL_422F:
 	ret
+
+
 LABEL_4230:
 	db 0x11
 
@@ -78,6 +86,7 @@ LABEL_4278:
 
 LABEL_427E:
 	ret
+
 
 LABEL_427F:
 	call PROJECT_POS_BY_VAR04_OR_807B
@@ -148,6 +157,7 @@ LABEL_4319:
 LABEL_4325:
 	ret
 
+
 LABEL_4326:
 	sub [0xF8], 0x000A
 	jl [0x21], [0xF8], SHARED_RET
@@ -155,6 +165,7 @@ LABEL_4326:
 	jg [0x21], [0xF8], SHARED_RET
 	mov [0xF8], 0x0FA0
 	ret
+
 
 LABEL_433F:
 	jl [0xA1], 0x00, LABEL_4357

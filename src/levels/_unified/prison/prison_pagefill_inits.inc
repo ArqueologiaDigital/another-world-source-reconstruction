@@ -69,6 +69,8 @@ SET_PAL_07_FILL_TWO_PAGES_86243111:
 DRAW_PRISON_BUDDY_POSE_0_0:
 	video offset=CINEMATIC_236, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -76,6 +78,8 @@ DRAW_PRISON_BUDDY_POSE_0_0:
 DRAW_PRISON_BUDDY_POSE_0_1:
 	video offset=CINEMATIC_237, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -83,6 +87,8 @@ DRAW_PRISON_BUDDY_POSE_0_1:
 DRAW_PRISON_BUDDY_POSE_0_2:
 	video offset=CINEMATIC_238, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -90,6 +96,8 @@ DRAW_PRISON_BUDDY_POSE_0_2:
 DRAW_PRISON_BUDDY_POSE_0_3:
 	video offset=CINEMATIC_239, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -97,6 +105,8 @@ DRAW_PRISON_BUDDY_POSE_0_3:
 DRAW_CIN_235:
 	video offset=CINEMATIC_235, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -104,6 +114,8 @@ DRAW_CIN_235:
 DRAW_CIN_234:
 	video offset=CINEMATIC_234, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -111,6 +123,8 @@ DRAW_CIN_234:
 DRAW_CIN_233:
 	video offset=CINEMATIC_233, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -118,6 +132,8 @@ DRAW_CIN_233:
 DRAW_CIN_232:
 	video offset=CINEMATIC_232, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -125,6 +141,8 @@ DRAW_CIN_232:
 DRAW_PRISON_BUDDY_POSE_3:
 	video offset=CINEMATIC_231, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -132,6 +150,8 @@ DRAW_PRISON_BUDDY_POSE_3:
 DRAW_CIN_230:
 	video offset=CINEMATIC_230, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -139,6 +159,8 @@ DRAW_CIN_230:
 DRAW_CIN_229:
 	video offset=CINEMATIC_229, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -146,6 +168,8 @@ DRAW_CIN_229:
 DRAW_PRISON_BUDDY_POSE_5:
 	video offset=CINEMATIC_228, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -153,6 +177,8 @@ DRAW_PRISON_BUDDY_POSE_5:
 DRAW_CIN_225:
 	video offset=CINEMATIC_225, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -160,6 +186,8 @@ DRAW_CIN_225:
 DRAW_CIN_226:
 	video offset=CINEMATIC_226, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -172,6 +200,8 @@ DRAW_CIN_226:
 DRAW_CIN_352:
 	video offset=CINEMATIC_352, x=[0xf5], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -188,6 +218,8 @@ DRAW_CIN_169_WITH_POS_STEP_AT_B673C5FF:
 	add [BUDDY_X], 0x0002
 	sub [BUDDY_Y], 0x000D
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -199,6 +231,7 @@ DRAW_CIN_169_WITH_POS_STEP_AT_B673C5FF:
 SHARED_RET:
 	ret
 
+
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 ;@include "amiga_dos__post_SHARED_RET.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -209,6 +242,8 @@ SHARED_RET:
 DRAW_CIN_240:
 	video offset=CINEMATIC_240, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -219,6 +254,8 @@ DRAW_CIN_240:
 DRAW_CIN_241:
 	video offset=CINEMATIC_241, x=[0xf5], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"

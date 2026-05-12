@@ -14,12 +14,15 @@ LABEL_5D8A:
 	call LABEL_741D
 	ret
 
+
 LABEL_5DA7:
 	mov [0x21], [0x07]
 	mov [0x22], [HERO_X]
 	mov [0x27], [0x08]
 	call LABEL_7404
 	ret
+
+
 LABEL_5DB4:
 	db 0x04, 0x5D, 0xFA, 0x01, 0x22, 0x07, 0x01, 0x27
 	db 0x08, 0x04, 0x74, 0x04, 0x05, 0x01, 0x21, 0x07
@@ -34,6 +37,7 @@ LABEL_5DD7:
 	call LABEL_7404
 	ret
 
+
 LABEL_5DE4:
 	call LABEL_5DFA
 	call LABEL_5E0E
@@ -43,6 +47,7 @@ LABEL_5DE4:
 	call LABEL_7404
 	mov [HERO_X], [0x29]
 	ret
+
 
 LABEL_5DFA:
 	mov [0x21], [0x07]

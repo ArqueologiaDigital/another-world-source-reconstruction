@@ -8,6 +8,7 @@ LABEL_5BEC:
 	mov [0x28], [HERO_X]
 	ret
 
+
 LABEL_5BF6:
 	call LABEL_8505
 	mov [0x22], [HERO_X]

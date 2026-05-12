@@ -12,6 +12,7 @@ LABEL_4A2B:
 	video offset=CINEMATIC_433, x=160, y=100
 	ret
 
+
 LABEL_4A54:
 	call LABEL_80AA
 	selectVideoPage 0x00
@@ -21,6 +22,7 @@ LABEL_4A54:
 	video offset=CINEMATIC_450, x=160, y=100
 	video offset=CINEMATIC_451, x=160, y=100
 	ret
+
 
 LABEL_4A6D:
 	mov [0x65], 0x0000
@@ -32,6 +34,7 @@ LABEL_4A6D:
 	video offset=CINEMATIC_436, x=160, y=100
 	video offset=CINEMATIC_437, x=160, y=100
 	ret
+
 
 LABEL_4A8A:
 	call LABEL_80AA

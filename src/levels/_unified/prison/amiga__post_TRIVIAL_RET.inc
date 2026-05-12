@@ -8,6 +8,7 @@ LABEL_47CD:
 	mov [0x28], [HERO_X]
 	ret
 
+
 HANDLE_HORIZ_VAR01_VS_VAR28:
 	call LABEL_85D9
 	mov [0x22], [HERO_X]

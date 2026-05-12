@@ -50,6 +50,7 @@ LABEL_7D17:
 	call GUARDED_HERO_ANIM_CV_128
 	ret
 
+
 LABEL_7D30:
 	je [0x11], 0x01, SHARED_RET
 	jne [HACK_VAR_67], 0x65, LABEL_7D4F
@@ -66,13 +67,16 @@ LABEL_7D56:
 	je [0x6A], 0x05, LABEL_7D07
 	ret
 
+
 LABEL_7D5D:
 	je [0x6A], 0x25, LABEL_7D07
 	ret
 
+
 LABEL_7D64:
 	je [0x6A], 0x45, LABEL_7D07
 	ret
+
 
 LABEL_7D6B:
 	jne [0x14], 0x2320, LABEL_7D81
@@ -93,10 +97,13 @@ LABEL_7D97:
 	setup channel=0x01, address=LABEL_7DE9
 	ret
 
+
 LABEL_7DAE:
 	jne [0x14], 0x27C0, SHARED_RET
 	je [0x63], 0xFFFF, SHARED_RET
 	setup channel=0x01, address=LABEL_7DE9
 	ret
+
+
 LABEL_7DC1:
 	db 0x11

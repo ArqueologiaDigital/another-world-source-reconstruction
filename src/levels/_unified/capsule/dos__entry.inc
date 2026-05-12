@@ -1743,6 +1743,7 @@ LABEL_0076:
 	load id=0x0079
 	ret
 
+
 LABEL_00BC:
 	break
 	jl [HERO_X], 0x0122, LABEL_00CD
@@ -1826,6 +1827,7 @@ SET_VAR21_TO_0001_AT_017D:
 	mov [0x21], 0x0001
 	ret
 
+
 LABEL_0182:
 	mov [0x21], 0x0000
 	jge [0x7B], 0x4000, SET_VAR21_TO_0001_AT_017D
@@ -1834,6 +1836,7 @@ LABEL_0182:
 	je [0xF8], 0x00, SHARED_RET
 	mov [0x21], 0x0001
 	ret
+
 
 LABEL_019F:
 	call LABEL_8976

@@ -2,6 +2,7 @@ SET_VAR22_TO_006B:
 	mov [0x22], 0x006B
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR22_TO_006B.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -19,6 +20,7 @@ SET_VAR22_TO_00C8:
 	mov [0x22], 0x00C8
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR22_TO_00C8.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -34,6 +36,7 @@ PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4:
 	sub [0x22], [0x21]
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -45,6 +48,7 @@ PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4:
 DEDUP_CAVES_5B_027:
 	mov [0x22], 0x006F
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_DEDUP_CAVES_5B_027.inc"
@@ -61,6 +65,7 @@ PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1:
 	sub [0x22], [0x21]
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -72,6 +77,7 @@ PROJ_VAR22_2F_MINUS_VAR21_MINUS_ED_SHR1:
 SET_VAR22_TO_00AB:
 	mov [0x22], 0x00AB
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR22_TO_00AB.inc"
@@ -88,6 +94,7 @@ PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3:
 	sub [0x22], [0x21]
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_PROJ_VAR22_17_MINUS_VAR21_MINUS_F0_SHL3.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -103,6 +110,7 @@ PROJ_VAR22_AA_MINUS_VAR21_MINUS_115_SHR3:
 	sub [0x22], [0x21]
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_PROJ_VAR22_AA_MINUS_VAR21_MINUS_115_SHR3.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -115,6 +123,7 @@ INIT_VARS_01_22:
 	mov [HERO_X], 0x0078
 	mov [0x22], 0x0064
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INIT_VARS_01_22.inc"
@@ -131,6 +140,7 @@ PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3:
 	sub [0x22], [0x21]
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_PROJ_VAR22_B3_MINUS_VAR21_MINUS_109_SHR3.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -145,6 +155,7 @@ PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3:
 	mov [0x22], 0x0053
 	add [0x22], [0x21]
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3.inc"
@@ -161,6 +172,7 @@ PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3:
 	sub [0x22], [0x21]
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_PROJ_VAR22_9E_MINUS_VAR21_MINUS_121_SHR3.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -175,6 +187,7 @@ PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4:
 	mov [0x22], 0x007E
 	sub [0x22], [0x21]
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_PROJ_VAR22_7E_MINUS_VAR21_MINUS_11B_SHR4.inc"
@@ -191,6 +204,7 @@ PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6:
 	sub [0x22], [0x21]
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -205,6 +219,7 @@ PROJ_VAR22_76_MINUS_VAR21_MINUS_108_SHR5:
 	mov [0x22], 0x0076
 	sub [0x22], [0x21]
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_PROJ_VAR22_76_MINUS_VAR21_MINUS_108_SHR5.inc"
@@ -221,6 +236,8 @@ PROJ_VAR22_49_MINUS_VAR21_MINUS_113_SHR4:
 	mov [0x22], 0x0049
 	sub [0x22], [0x21]
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -232,6 +249,7 @@ PROJ_VAR22_49_MINUS_VAR21_MINUS_113_SHR4:
 SET_VAR22_TO_007D:
 	mov [0x22], 0x007D
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR22_TO_007D.inc"
@@ -245,6 +263,7 @@ SET_VAR22_TO_0080:
 	mov [0x22], 0x0080
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR22_TO_0080.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -257,6 +276,7 @@ SET_VAR22_TO_00AC:
 	mov [0x22], 0x00AC
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR22_TO_00AC.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -268,6 +288,7 @@ SET_VAR22_TO_00AC:
 SET_VAR22_TO_0087:
 	mov [0x22], 0x0087
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR22_TO_0087.inc"
@@ -288,6 +309,7 @@ SET_VAR22_TO_0085:
 	mov [0x22], 0x0085
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR22_TO_0085.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -299,6 +321,7 @@ SET_VAR22_TO_0085:
 SET_VAR22_TO_00C3:
 	mov [0x22], 0x00C3
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR22_TO_00C3.inc"
@@ -315,6 +338,7 @@ PROJ_VAR22_A8_MINUS_VAR21_MINUS_112_SHR4:
 	sub [0x22], [0x21]
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_PROJ_VAR22_A8_MINUS_VAR21_MINUS_112_SHR4.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -326,6 +350,7 @@ PROJ_VAR22_A8_MINUS_VAR21_MINUS_112_SHR4:
 DEDUP_CAVES_5B_011:
 	mov [0x22], 0x00B0
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_DEDUP_CAVES_5B_011.inc"
@@ -346,6 +371,7 @@ DEDUP_CAVES_5B_012:
 	mov [0x22], 0x00B0
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_DEDUP_CAVES_5B_012.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -357,6 +383,7 @@ DEDUP_CAVES_5B_012:
 DEDUP_CAVES_5B_028:
 	mov [0x22], 0x006F
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_DEDUP_CAVES_5B_028.inc"
@@ -370,6 +397,8 @@ DEDUP_CAVES_5B_028:
 SET_VAR22_TO_0042:
 	mov [0x22], 0x0042
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -381,6 +410,7 @@ SET_VAR22_TO_0042:
 SET_VAR22_TO_00AE:
 	mov [0x22], 0x00AE
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR22_TO_00AE.inc"
@@ -396,6 +426,7 @@ PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3:
 	mov [0x22], 0x00A7
 	sub [0x22], [0x21]
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3.inc"

@@ -19,6 +19,7 @@ LABEL_44E9:
 	add [0xB1], [0xF8]
 	ret
 
+
 LABEL_452C:
 	call SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1
 	or [0xB1], 0x0004
@@ -34,6 +35,7 @@ LABEL_452C:
 	or [0xB2], 0x0001
 	ret
 
+
 LABEL_455C:
 	mov [0x78], 0x0118
 	mov [0x79], 0x00B0
@@ -44,6 +46,7 @@ LABEL_455C:
 	mov [0x7E], 0x2710
 	setup channel=0x27, address=LABEL_5670
 	ret
+
 
 LABEL_457D:
 	mov [0x68], 0x00FA
@@ -56,6 +59,7 @@ LABEL_457D:
 	setup channel=0x23, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
+
 LABEL_459E:
 	mov [0x70], 0x0014
 	mov [0x71], 0x00B0
@@ -66,6 +70,7 @@ LABEL_459E:
 	mov [0x76], 0x0064
 	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
+
 
 LABEL_45BE:
 	mov [0x78], 0x0118
@@ -78,6 +83,7 @@ LABEL_45BE:
 	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
+
 LABEL_45DE:
 	mov [0x78], 0x014A
 	mov [0x79], [0x40]
@@ -88,6 +94,7 @@ LABEL_45DE:
 	mov [0x7E], 0x0064
 	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
+
 
 LABEL_45FD:
 	mov [0x70], 0x001F
@@ -100,6 +107,7 @@ LABEL_45FD:
 	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
+
 LABEL_461D:
 	mov [0x78], 0x00FA
 	mov [0x79], 0x0087
@@ -111,6 +119,7 @@ LABEL_461D:
 	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
+
 LABEL_463E:
 	mov [0x70], 0x0118
 	mov [0x71], 0x0084
@@ -121,6 +130,7 @@ LABEL_463E:
 	mov [0x76], 0x03E8
 	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
+
 
 LABEL_465F:
 	mov [0x70], 0x0096
@@ -134,6 +144,7 @@ LABEL_465F:
 	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
+
 LABEL_4683:
 	mov [0x78], 0x00C8
 	mov [0x79], 0x007C
@@ -145,6 +156,7 @@ LABEL_4683:
 	mov [0x7E], 0x2710
 	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
+
 
 LABEL_46A7:
 	mov [0x70], 0x000A
@@ -159,6 +171,7 @@ LABEL_46A7:
 	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
+
 LABEL_46CF:
 	mov [0x78], 0x001E
 	mov [0x79], 0x00B0
@@ -172,6 +185,7 @@ LABEL_46CF:
 	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
+
 LABEL_46F7:
 	mov [0x68], 0x000A
 	mov [0x69], 0x0014
@@ -183,6 +197,7 @@ LABEL_46F7:
 	setup channel=0x23, address=INIT_VARS_29_07_08
 	ret
 
+
 LABEL_4718:
 	mov [0x68], 0x007B
 	mov [0x69], 0x00AC
@@ -193,6 +208,7 @@ LABEL_4718:
 	mov [0x6E], 0x2710
 	setup channel=0x23, address=LABEL_04BC
 	ret
+
 
 LABEL_4738:
 	mov [HACK_VAR_67], 0x0001
@@ -220,6 +236,8 @@ LABEL_4738:
 	mov [0x7C], 0x2000
 	mov [0x7D], 0x0800
 	ret
+
+
 	mov [0xE8], 0xFF9C
 	mov [0xE9], 0x0064
 
@@ -304,12 +322,14 @@ DRAW_CIN_899_THEN_CIN_902:
 	video offset=CINEMATIC_902, x=[0xe6], y=[0xe7]
 	ret
 
+
 LABEL_486A:
 	video offset=CINEMATIC_899, x=[0xe6], y=[0xe7]
 	add [0xE6], 0x0001
 	video offset=CINEMATIC_901, x=[0xe6], y=[0xe7]
 	sub [0xE6], 0x0001
 	ret
+
 
 LABEL_487D:
 	video offset=CINEMATIC_899, x=[0xe6], y=[0xe7]
@@ -318,12 +338,14 @@ LABEL_487D:
 	sub [0xE6], 0x0002
 	ret
 
+
 LABEL_4890:
 	video offset=CINEMATIC_899, x=[0xe6], y=[0xe7]
 	add [0xE6], 0x0003
 	video offset=CINEMATIC_900, x=[0xe6], y=[0xe7]
 	sub [0xE6], 0x0003
 	ret
+
 
 LABEL_48A3:
 	video offset=CINEMATIC_899, x=[0xe6], y=[0xe7]
@@ -332,12 +354,14 @@ LABEL_48A3:
 	sub [0xE6], 0x0004
 	ret
 
+
 LABEL_48B6:
 	video offset=CINEMATIC_899, x=[0xe6], y=[0xe7]
 	add [0xE6], 0x0006
 	video offset=CINEMATIC_900, x=[0xe6], y=[0xe7]
 	sub [0xE6], 0x0006
 	ret
+
 
 LABEL_48C9:
 	video offset=CINEMATIC_899, x=[0xe6], y=[0xe7]

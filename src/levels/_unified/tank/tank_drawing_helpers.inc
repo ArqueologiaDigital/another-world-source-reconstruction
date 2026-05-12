@@ -17,6 +17,8 @@ DRAW_CIN_6_27_28_AND_RET:
 	video offset=CINEMATIC_027, x=160, y=100
 	video offset=CINEMATIC_028, x=160, y=100
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -29,6 +31,8 @@ DRAW_CIN_6_27_28_AND_RET:
 DRAW_CIN_6_AND_RET:
 	video offset=CINEMATIC_006, x=160, y=100
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -92,6 +96,8 @@ DRAW_BG_DOTS_CIN_001_004:
 	video offset=CINEMATIC_005, x=0, y=21
 	video offset=CINEMATIC_005, x=10, y=21
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -155,6 +161,8 @@ DRAW_BG_DOTS_CIN_007_008:
 	video offset=CINEMATIC_011, x=0, y=21
 	video offset=CINEMATIC_011, x=10, y=21
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"

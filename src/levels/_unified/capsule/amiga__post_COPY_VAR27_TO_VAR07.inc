@@ -10,6 +10,8 @@ LABEL_432F:
 	mov [0x21], [0x22]
 	mov [0x22], [0x26]
 	ret
+
+
 LABEL_4345:
 	db 0x11
 
@@ -74,6 +76,8 @@ LABEL_43F9:
 
 LABEL_43FE:
 	ret
+
+
 LABEL_43FF:
 	db 0x15, 0x27, 0x40, 0x00, 0x07, 0x44, 0x94, 0x11
 
@@ -122,6 +126,8 @@ LABEL_446B:
 
 LABEL_4485:
 	ret
+
+
 LABEL_4486:
 	db 0x11
 
@@ -163,6 +169,8 @@ LABEL_44DF:
 
 LABEL_44F9:
 	ret
+
+
 LABEL_44FA:
 	db 0x11
 
@@ -271,6 +279,7 @@ LABEL_4615:
 	or [0x27], 0x4000
 	add [0x27], [0x12]
 	ret
+
 
 LABEL_4623:
 	mov [0x12], [0x27]

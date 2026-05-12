@@ -1596,6 +1596,7 @@ LABEL_0070:
 	load id=0x0070
 	ret
 
+
 LABEL_00B3:
 	break
 	jl [0x70], 0x012C, LABEL_00B3

@@ -13,6 +13,7 @@ LABEL_731A:
 	mov [0x22], 0x0099
 	ret
 
+
 LABEL_7345:
 	mov [0x21], [BUDDY_X]
 	mov [0x22], [BUDDY_Y]
@@ -24,6 +25,7 @@ LABEL_7359:
 	call LABEL_72CA
 	mov [BUDDY_Y], [0x22]
 	ret
+
 
 LABEL_7360:
 	mov [0xF8], [0x32]
@@ -58,6 +60,7 @@ LABEL_73BC:
 	setup channel=0x14, address=LABEL_70E2
 	ret
 
+
 LABEL_73CA:
 	mov [HERO_Y], [0x22]
 	mov [0xF8], [0x23]
@@ -76,6 +79,8 @@ LABEL_7401:
 	mov [0x35], 0x0006
 	setup channel=0x14, address=LABEL_728A
 	ret
+
+
 LABEL_740A:
 	db 0x11
 

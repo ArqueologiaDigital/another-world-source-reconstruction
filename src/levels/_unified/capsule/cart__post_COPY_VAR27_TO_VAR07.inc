@@ -10,6 +10,8 @@ LABEL_5A74:
 	mov [0x21], [0x22]
 	mov [0x22], [0x26]
 	ret
+
+
 LABEL_5A8A:
 	db 0x11
 
@@ -75,6 +77,7 @@ LABEL_5B3E:
 LABEL_5B43:
 	ret
 
+
 JUNK__5B44:
 	or [0x27], 0x4000
 	jmp LABEL_5BF0
@@ -137,6 +140,8 @@ LABEL_5BC7:
 
 LABEL_5BE1:
 	ret
+
+
 LABEL_5BE2:
 	db 0x11
 
@@ -179,6 +184,8 @@ LABEL_5C3F:
 
 LABEL_5C59:
 	ret
+
+
 LABEL_5C5A:
 	db 0x11
 
@@ -287,6 +294,7 @@ LABEL_5D75:
 	or [0x27], 0x4000
 	add [0x27], [0x12]
 	ret
+
 
 LABEL_5D83:
 	mov [0x12], [0x27]

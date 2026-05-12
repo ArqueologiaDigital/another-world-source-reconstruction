@@ -9,6 +9,7 @@ LABEL_7BD0:
 	video offset=CINEMATIC_105, x=160, y=129
 	ret
 
+
 LABEL_7BD8:
 	video offset=CINEMATIC_090, x=160, y=100
 	video offset=CINEMATIC_091, x=160, y=100
@@ -16,6 +17,8 @@ LABEL_7BD8:
 	video offset=CINEMATIC_104, x=200, y=100
 	video offset=CINEMATIC_105, x=160, y=129
 	ret
+
+
 LABEL_7BEC:
 	db 0x11
 
@@ -62,6 +65,7 @@ LABEL_7C4B:
 	je [0x11], 0x00, SHARED_RET
 	video offset=CINEMATIC_131, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
 
 LABEL_7C6A:
 	jne [0x63], 0xFFFF, SCROLL_UP_16_VAR14_VAR18_AND_SCROLL_Y

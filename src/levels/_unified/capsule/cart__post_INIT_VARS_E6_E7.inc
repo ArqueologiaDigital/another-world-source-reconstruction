@@ -144,6 +144,8 @@ LABEL_0C73:
 LABEL_0C89:
 	jl [0x04], 0x4000, LABEL_5F5D
 	ret
+
+
 	killChannel
 
 LABEL_0C92:

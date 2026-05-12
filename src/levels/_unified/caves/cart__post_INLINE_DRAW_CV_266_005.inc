@@ -4,6 +4,7 @@ LABEL_88B4:
 	call LABEL_83F1
 	ret
 
+
 LABEL_88C0:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	add [0x08], 0x0001

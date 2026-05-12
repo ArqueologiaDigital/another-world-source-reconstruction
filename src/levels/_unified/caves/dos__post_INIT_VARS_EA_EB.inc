@@ -22,13 +22,16 @@ LABEL_3458:
 	video offset=CINEMATIC_315, x=[0x21], y=98
 	ret
 
+
 DRAW_CIN_315:
 	video offset=CINEMATIC_315, x=[0x21], y=85
 	ret
 
+
 DRAW_CIN_316:
 	video offset=CINEMATIC_316, x=160, y=[0x21]
 	ret
+
 
 CAVES_WAIT_VAR06_LE_3DE_AND_VAR04_EQ_20:
 	break

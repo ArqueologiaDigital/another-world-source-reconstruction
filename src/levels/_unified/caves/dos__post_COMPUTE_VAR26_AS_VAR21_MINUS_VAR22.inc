@@ -14,6 +14,7 @@ LABEL_60AD:
 	call LABEL_7775
 	ret
 
+
 LABEL_60CA:
 	mov [0x21], [0x07]
 	mov [0x22], [HERO_X]
@@ -21,12 +22,15 @@ LABEL_60CA:
 	call LABEL_775C
 	ret
 
+
 JUNK__60D7:
 	call LABEL_611D
 	mov [0x22], [0x07]
 	mov [0x27], [0x08]
 	call LABEL_775C
 	ret
+
+
 	mov [0x21], [0x07]
 	call LABEL_6131
 	mov [0x29], [HERO_X]
@@ -36,12 +40,14 @@ JUNK__60D7:
 	mov [HERO_X], [0x29]
 	ret
 
+
 LABEL_60FA:
 	call LABEL_611D
 	mov [0x22], [HERO_X]
 	mov [0x27], [0x08]
 	call LABEL_775C
 	ret
+
 
 LABEL_6107:
 	call LABEL_611D
@@ -52,6 +58,7 @@ LABEL_6107:
 	call LABEL_775C
 	mov [HERO_X], [0x29]
 	ret
+
 
 LABEL_611D:
 	mov [0x21], [0x07]

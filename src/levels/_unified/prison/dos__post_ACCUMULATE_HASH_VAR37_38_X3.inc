@@ -18,6 +18,7 @@ COPY_HASH_AND_SPLIT_VAR38_3F_3E:
 	and [0x38], 0x0001
 	ret
 
+
 LABEL_07D8:
 	mov [HACK_VAR_67], 0x0001
 	mov [0x66], 0x0001
@@ -48,6 +49,8 @@ LABEL_07D8:
 	mov [0x7C], 0x2000
 	mov [0x7D], 0x0800
 	ret
+
+
 	call LABEL_07D8
 	setup channel=0x3C, address=LABEL_0665
 	mov [PAUSE_SLICES], 0x0004

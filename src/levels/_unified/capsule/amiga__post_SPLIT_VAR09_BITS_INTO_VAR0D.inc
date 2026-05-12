@@ -84,6 +84,7 @@ COMPUTE_OFFSET_VAR21_22:
 	sub [0x22], 0x0026
 	ret
 
+
 COMPUTE_OFFSET_PLUS21_MINUS22:
 	call LABEL_7326
 	mov [0x21], [BUDDY_X]
@@ -91,6 +92,7 @@ COMPUTE_OFFSET_PLUS21_MINUS22:
 	add [0x21], 0x0023
 	sub [0x22], 0x0026
 	ret
+
 
 LABEL_308F:
 	mov [0xF8], [0x11]

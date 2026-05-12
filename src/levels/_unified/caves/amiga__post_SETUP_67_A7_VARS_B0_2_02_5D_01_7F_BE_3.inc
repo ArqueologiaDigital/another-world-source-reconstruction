@@ -19,6 +19,7 @@ LABEL_41D8:
 	add [0xB1], [0xF8]
 	ret
 
+
 LABEL_421B:
 	call SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1
 	or [0xB1], 0x0004
@@ -34,6 +35,7 @@ LABEL_421B:
 	or [0xB2], 0x0001
 	ret
 
+
 LABEL_424B:
 	mov [0x78], 0x0118
 	mov [0x79], 0x00B0
@@ -44,6 +46,7 @@ LABEL_424B:
 	mov [0x7E], 0x2710
 	setup channel=0x27, address=LABEL_534D
 	ret
+
 
 LABEL_426C:
 	mov [0x68], 0x00FA
@@ -56,6 +59,7 @@ LABEL_426C:
 	setup channel=0x23, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
+
 LABEL_428D:
 	mov [0x70], 0x0014
 	mov [0x71], 0x00B0
@@ -66,6 +70,7 @@ LABEL_428D:
 	mov [0x76], 0x0064
 	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
+
 
 LABEL_42AD:
 	mov [0x78], 0x0118
@@ -78,6 +83,7 @@ LABEL_42AD:
 	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
+
 LABEL_42CD:
 	mov [0x78], 0x014A
 	mov [0x79], [0x40]
@@ -88,6 +94,7 @@ LABEL_42CD:
 	mov [0x7E], 0x0064
 	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
+
 
 LABEL_42EC:
 	mov [0x70], 0x001F
@@ -100,6 +107,7 @@ LABEL_42EC:
 	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
+
 LABEL_430C:
 	mov [0x78], 0x00FA
 	mov [0x79], 0x0087
@@ -111,6 +119,7 @@ LABEL_430C:
 	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
+
 LABEL_432D:
 	mov [0x70], 0x0118
 	mov [0x71], 0x0084
@@ -121,6 +130,7 @@ LABEL_432D:
 	mov [0x76], 0x03E8
 	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
+
 
 LABEL_434E:
 	mov [0x70], 0x0096
@@ -134,6 +144,7 @@ LABEL_434E:
 	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
+
 LABEL_4372:
 	mov [0x78], 0x00C8
 	mov [0x79], 0x007C
@@ -145,6 +156,7 @@ LABEL_4372:
 	mov [0x7E], 0x2710
 	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
+
 
 LABEL_4396:
 	mov [0x70], 0x000A
@@ -159,6 +171,7 @@ LABEL_4396:
 	setup channel=0x25, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
+
 LABEL_43BE:
 	mov [0x78], 0x001E
 	mov [0x79], 0x00B0
@@ -172,6 +185,7 @@ LABEL_43BE:
 	setup channel=0x27, address=GAME_LOOP_HERO_DISPATCH_LAST
 	ret
 
+
 LABEL_43E6:
 	mov [0x68], 0x000A
 	mov [0x69], 0x0014
@@ -182,6 +196,7 @@ LABEL_43E6:
 	mov [0x6E], 0x2710
 	setup channel=0x23, address=INIT_VARS_29_07_08
 	ret
+
 
 LABEL_4407:
 	mov [0x68], 0x007B

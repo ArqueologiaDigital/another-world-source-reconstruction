@@ -7,15 +7,18 @@ LABEL_C329:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_C347:
 	jg [0x21], 0xD1, LABEL_C352
 	mov [0x22], 0x003C
 	ret
 
+
 LABEL_C352:
 	jg [0x21], 0xD1, LABEL_C35D
 	mov [0x22], 0x0047
 	ret
+
 
 LABEL_C35D:
 	jg [0x21], 0xF8, LABEL_C36F
@@ -24,10 +27,12 @@ LABEL_C35D:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_C36F:
 	jg [0x21], 0x0140, SET_VAR22_TO_00AE
 	mov [0x22], 0x0064
 	ret
+
 
 LABEL_C37B:
 	jl [0x21], 0xCA, SET_VAR22_TO_00AE

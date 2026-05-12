@@ -10,6 +10,8 @@ LABEL_3797:
 	mov [0x21], [0x22]
 	mov [0x22], [0x26]
 	ret
+
+
 LABEL_37AD:
 	db 0x11
 
@@ -75,6 +77,7 @@ LABEL_3861:
 LABEL_3866:
 	ret
 
+
 LABEL_3867:
 	or [0x27], 0x4000
 	jmp LABEL_3902
@@ -132,6 +135,8 @@ LABEL_38DF:
 
 LABEL_38F3:
 	ret
+
+
 LABEL_38F4:
 	db 0x11
 
@@ -171,6 +176,8 @@ LABEL_3947:
 
 LABEL_395B:
 	ret
+
+
 LABEL_395C:
 	db 0x11
 
@@ -279,6 +286,7 @@ LABEL_3A77:
 	or [0x27], 0x4000
 	add [0x27], [0x12]
 	ret
+
 
 LABEL_3A85:
 	mov [0x12], [0x27]

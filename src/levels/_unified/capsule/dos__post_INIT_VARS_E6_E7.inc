@@ -140,6 +140,8 @@ LABEL_0BB4:
 LABEL_0BCA:
 	jl [0x04], 0x4000, LABEL_5F5A
 	ret
+
+
 	killChannel
 
 LABEL_0BD3:

@@ -53,6 +53,8 @@ DRAW_CIN_311_THEN_CIN_314:
 	video offset=CINEMATIC_311, x=[0xe6], y=[0xe7]
 	video offset=CINEMATIC_314, x=[0xe6], y=[0xe7]
 	ret
+
+
 ;@endif
 
 
@@ -63,6 +65,8 @@ DRAW_CIN_311_TO_313_2F_AT_6BB0E3FE:
 	video offset=CINEMATIC_313, x=[0xe6], y=[0xe7]
 	sub [0xE6], 0x0001
 	ret
+
+
 ;@endif
 
 
@@ -73,6 +77,8 @@ DRAW_CIN_311_TO_312_2F_AT_1550824C:
 	video offset=CINEMATIC_312, x=[0xe6], y=[0xe7]
 	sub [0xE6], 0x0002
 	ret
+
+
 ;@endif
 
 
@@ -83,6 +89,8 @@ DRAW_CIN_311_TO_312_2F_AT_26843400:
 	video offset=CINEMATIC_312, x=[0xe6], y=[0xe7]
 	sub [0xE6], 0x0003
 	ret
+
+
 ;@endif
 
 
@@ -93,6 +101,8 @@ DRAW_CIN_311_TO_312_2F_AT_2A88A18A:
 	video offset=CINEMATIC_312, x=[0xe6], y=[0xe7]
 	sub [0xE6], 0x0004
 	ret
+
+
 ;@endif
 
 
@@ -103,6 +113,8 @@ DRAW_CIN_311_TO_312_2F_AT_76F1E2F4:
 	video offset=CINEMATIC_312, x=[0xe6], y=[0xe7]
 	sub [0xE6], 0x0006
 	ret
+
+
 ;@endif
 
 
@@ -113,6 +125,8 @@ DRAW_CIN_311_TO_312_2F_AT_A6494EF7:
 	video offset=CINEMATIC_312, x=[0xe6], y=[0xe7]
 	sub [0xE6], 0x0008
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -135,6 +149,8 @@ DRAW_CIN_315_PROGRESSIVE:
 	add [0xF8], 0x0004
 	video offset=CINEMATIC_315, x=[0xf8], y=93
 	ret
+
+
 ;@endif
 
 
@@ -146,6 +162,8 @@ DRAW_CIN_316_TO_316_2F_AT_A17C45BF:
 	video offset=CINEMATIC_316, x=[0xf8], y=186
 	selectVideoPage 0xFF
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -424,6 +442,8 @@ DRAW_CIN_137_138_BLOCK:
 DRAW_BUDDY_FIGURE_BASE:
 	video offset=CINEMATIC_393, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"

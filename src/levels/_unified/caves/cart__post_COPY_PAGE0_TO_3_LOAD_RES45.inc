@@ -9,6 +9,7 @@ LABEL_D2ED:
 	selectVideoPage 0x00
 	ret
 
+
 LABEL_D307:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_395, x=160, y=100
@@ -17,11 +18,13 @@ LABEL_D307:
 	video offset=CINEMATIC_397, x=160, y=100
 	ret
 
+
 LABEL_D31A:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_408, x=160, y=100
 	video offset=CINEMATIC_409, x=160, y=100
 	ret
+
 
 DRAW_CIN_415_416_FRAGMENTS:
 	fill page=0x00, color=0x08
@@ -42,6 +45,7 @@ DRAW_CIN_415_416_FRAGMENTS:
 	copyVideoPage src=0x00, dst=0x03
 	video offset=CINEMATIC_417, x=169, y=94
 	ret
+
 
 LABEL_D378:
 	fill page=0x00, color=0x08
@@ -83,6 +87,7 @@ LABEL_D378:
 	video offset=CINEMATIC_432, x=230, y=172
 	ret
 
+
 LABEL_D415:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_434, x=160, y=100
@@ -90,10 +95,12 @@ LABEL_D415:
 	video offset=CINEMATIC_436, x=160, y=100
 	ret
 
+
 LABEL_D425:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_454, x=160, y=100
 	ret
+
 
 LABEL_D42D:
 	fill page=0x00, color=0x00
@@ -105,6 +112,7 @@ LABEL_D42D:
 	video offset=CINEMATIC_458, x=250, y=189
 	ret
 
+
 LABEL_D44C:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_591, x=160, y=100
@@ -112,12 +120,14 @@ LABEL_D44C:
 	video offset=CINEMATIC_593, x=160, y=100
 	ret
 
+
 LABEL_D45C:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_595, x=160, y=100
 	video offset=CINEMATIC_596, x=160, y=100
 	video offset=CINEMATIC_597, x=65510, y=198
 	ret
+
 
 LABEL_D46E:
 	fill page=0x00, color=0x00
@@ -128,6 +138,7 @@ LABEL_D46E:
 	video offset=CINEMATIC_600, x=160, y=100
 	video offset=CINEMATIC_601, x=160, y=100
 	ret
+
 
 LABEL_D487:
 	fill page=0x00, color=0x00
@@ -143,9 +154,11 @@ LABEL_D487:
 	video offset=CINEMATIC_640, x=160, y=100
 	ret
 
+
 DRAW_CIN_639:
 	video offset=CINEMATIC_639, x=160, y=100
 	ret
+
 
 LABEL_D4BD:
 	fill page=0x00, color=0x09
@@ -153,10 +166,12 @@ LABEL_D4BD:
 	video offset=CINEMATIC_646, x=155, y=100
 	ret
 
+
 LABEL_D4C9:
 	fill page=0x00, color=0x09
 	video offset=CINEMATIC_646, x=25, y=100
 	ret
+
 
 LABEL_D4D1:
 	fill page=0x00, color=0x00
@@ -165,6 +180,7 @@ LABEL_D4D1:
 	video offset=CINEMATIC_651, x=160, y=100
 	video offset=CINEMATIC_652, x=160, y=100
 	ret
+
 
 LABEL_D4E5:
 	fill page=0x00, color=0x00
@@ -176,12 +192,14 @@ LABEL_D4E5:
 	video offset=CINEMATIC_720, x=27, y=47, zoom=[0x20]	;@enc=alt
 	ret
 
+
 LABEL_D505:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_726, x=160, y=100
 	video offset=CINEMATIC_727, x=160, y=100
 	video offset=CINEMATIC_728, x=160, y=100
 	ret
+
 
 LABEL_D515:
 	fill page=0x00, color=0x00
@@ -190,6 +208,7 @@ LABEL_D515:
 	video offset=CINEMATIC_732, x=160, y=100
 	video offset=CINEMATIC_733, x=160, y=100
 	ret
+
 
 LABEL_D529:
 	fill page=0x00, color=0x00
@@ -209,6 +228,7 @@ LABEL_D529:
 	video offset=CINEMATIC_720, x=65526, y=66
 	ret
 
+
 LABEL_D56A:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_731, x=160, y=100
@@ -217,11 +237,13 @@ LABEL_D56A:
 	video offset=CINEMATIC_747, x=160, y=100
 	ret
 
+
 LABEL_D57E:
 	jne [0xB0], 0x03, SHARED_RET
 	video offset=CINEMATIC_458, x=70, y=97
 	video offset=CINEMATIC_458, x=260, y=97
 	ret
+
 
 LABEL_D58E:
 	fill page=0x00, color=0x00
@@ -233,6 +255,7 @@ LABEL_D58E:
 	video offset=CINEMATIC_458, x=131, y=217, zoom=0x40
 	ret
 
+
 LABEL_D5AE:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_731, x=160, y=100
@@ -241,6 +264,7 @@ LABEL_D5AE:
 	video offset=CINEMATIC_747, x=160, y=100
 	video offset=CINEMATIC_748, x=160, y=100
 	ret
+
 
 LABEL_D5C6:
 	fill page=0x00, color=0x00
@@ -258,6 +282,7 @@ LABEL_D5C6:
 	video offset=CINEMATIC_458, x=156, y=184
 	ret
 
+
 LABEL_D602:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_731, x=160, y=70
@@ -269,6 +294,8 @@ LABEL_D602:
 	video offset=CINEMATIC_763, x=217, y=71
 	video offset=CINEMATIC_764, x=160, y=100
 	ret
+
+
 LABEL_D626:
 	db 0x11
 
@@ -282,6 +309,8 @@ LABEL_D627:
 	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=33, y=112
 	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=70, y=110
 	ret
+
+
 LABEL_D649:
 	db 0x11
 
@@ -301,6 +330,7 @@ LABEL_D64A:
 	selectVideoPage 0xFF
 	ret
 
+
 LABEL_D674:
 	fill page=0x00, color=0x00
 	fill page=0x03, color=0x00
@@ -319,6 +349,7 @@ LABEL_D674:
 	selectVideoPage 0xFF
 	ret
 
+
 LABEL_D6A5:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_316, x=160, y=100
@@ -326,6 +357,7 @@ LABEL_D6A5:
 	video offset=CINEMATIC_318, x=160, y=100
 	video offset=CINEMATIC_319, x=160, y=100
 	ret
+
 
 LABEL_D6B9:
 	fill page=0x00, color=0x08
@@ -345,6 +377,7 @@ LABEL_D6B9:
 	video offset=CINEMATIC_358, x=161, y=96
 	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=59, y=96
 	ret
+
 
 LABEL_D6FA:
 	fill page=0x00, color=0x08
@@ -384,6 +417,7 @@ LABEL_D6FA:
 	video offset=CINEMATIC_358, x=6, y=57
 	ret
 
+
 LABEL_D78C:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_363, x=160, y=100
@@ -399,6 +433,7 @@ LABEL_D78C:
 	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=177, y=153
 	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=262, y=153
 	ret
+
 
 LABEL_D7C2:
 	fill page=0x00, color=0x02
@@ -420,6 +455,7 @@ LABEL_D7C2:
 	video offset=CINEMATIC_367, x=220, y=90
 	ret
 
+
 LABEL_D80E:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_368, x=160, y=100
@@ -433,6 +469,7 @@ LABEL_D80E:
 	video offset=CINEMATIC_356, x=300, y=130
 	ret
 
+
 LABEL_D83B:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_455, x=160, y=100
@@ -441,6 +478,7 @@ LABEL_D83B:
 	jne [0xB0], 0x03, SHARED_RET
 	video offset=CINEMATIC_458, x=160, y=230, zoom=0x40
 	ret
+
 
 LABEL_D856:
 	fill page=0x00, color=0x00
@@ -462,6 +500,7 @@ LABEL_D873:
 	setPalette 0x10
 	ret
 
+
 LABEL_D898:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_604, x=160, y=100
@@ -475,6 +514,7 @@ LABEL_D898:
 	setPalette 0x10
 	ret
 
+
 LABEL_D8C2:
 	fill page=0x00, color=0x03
 	video offset=CINEMATIC_559, x=160, y=100
@@ -482,10 +522,12 @@ LABEL_D8C2:
 	video offset=CINEMATIC_371, x=178, y=73
 	ret
 
+
 LABEL_D8D2:
 	fill page=0x00, color=0x03
 	video offset=CINEMATIC_563, x=160, y=100
 	ret
+
 
 LABEL_D8DA:
 	fill page=0x00, color=0x02
@@ -506,6 +548,8 @@ LABEL_D8DA:
 	jne [0xF8], 0x00, SHARED_RET
 	video offset=CINEMATIC_623, x=3, y=123
 	ret
+
+
 	video offset=CINEMATIC_623, x=332, y=123
 	killChannel
 
@@ -516,6 +560,7 @@ LABEL_D92C:
 	video offset=CINEMATIC_630, x=160, y=100
 	ret
 
+
 LABEL_D93C:
 	fill page=0x00, color=0x02
 	video offset=CINEMATIC_618, x=160, y=100
@@ -523,11 +568,13 @@ LABEL_D93C:
 	video offset=CINEMATIC_630, x=160, y=100
 	ret
 
+
 LABEL_D94C:
 	fill page=0x00, color=0x02
 	video offset=CINEMATIC_618, x=160, y=100
 	video offset=CINEMATIC_630, x=160, y=100
 	ret
+
 
 LABEL_D958:
 	fill page=0x00, color=0x02
@@ -538,22 +585,28 @@ LABEL_D958:
 	video offset=CINEMATIC_565, x=160, y=100
 	video offset=CINEMATIC_567, x=160, y=100
 	ret
+
+
 LABEL_D976:
 	db 0x11
 
 FILL_PAGE_00_COLOR_08:
 	fill page=0x00, color=0x08
 	ret
+
+
 	jne [0x27], 0x01, LABEL_D98A
 	mov [0x22], 0x005A
 	mov [0x21], 0x00B6
 	ret
+
 
 LABEL_D98A:
 	jg [0x27], 0x04, LABEL_D999
 	mov [0x22], 0x0050
 	mov [0x21], 0x00B6
 	ret
+
 
 LABEL_D999:
 	jne [0x27], 0x05, LABEL_D9AC
@@ -562,6 +615,7 @@ LABEL_D999:
 	mov [0x23], 0x0000
 	ret
 
+
 LABEL_D9AC:
 	jne [0x27], 0x25, LABEL_D9BF
 	mov [0x22], 0x0081
@@ -569,17 +623,20 @@ LABEL_D9AC:
 	mov [0x23], 0x0001
 	ret
 
+
 LABEL_D9BF:
 	jne [0x27], 0x24, LABEL_D9CE
 	mov [0x22], 0x005D
 	mov [0x21], 0x00B6
 	ret
 
+
 LABEL_D9CE:
 	jne [0x27], 0x23, LABEL_D9DD
 	mov [0x22], 0x005C
 	mov [0x21], 0x00B6
 	ret
+
 
 LABEL_D9DD:
 	jne [0x27], 0x45, LABEL_D9F0
@@ -588,14 +645,18 @@ LABEL_D9DD:
 	mov [0x23], 0x0000
 	ret
 
+
 LABEL_D9F0:
 	jne [0x27], 0x44, LABEL_D9FF
 	mov [0x22], 0x0046
 	mov [0x21], 0x008B
 	ret
 
+
 LABEL_D9FF:
 	ret
+
+
 ; Sets [0x23]=1 if HERO_Y < [0x41], else [0x23]=0. The
 ; hero-camera-relationship gate used by PAGE_COPY_IF_-
 ; VAR67_DIFFERS and other CAVES routines.

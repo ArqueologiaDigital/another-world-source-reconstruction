@@ -3,6 +3,7 @@ LABEL_BF79:
 	mov [0x22], 0x00B9
 	ret
 
+
 LABEL_BF84:
 	jg [0x21], 0x1F, LABEL_BF9A
 	add [0x21], 0x0000
@@ -10,6 +11,7 @@ LABEL_BF84:
 	mov [0x22], 0x00BC
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_BF9A:
 	jg [0x21], 0x3F, LABEL_BFB0
@@ -19,6 +21,7 @@ LABEL_BF9A:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_BFB0:
 	jg [0x21], 0x4C, LABEL_BFC6
 	sub [0x21], 0x003F
@@ -26,6 +29,7 @@ LABEL_BFB0:
 	mov [0x22], 0x00B3
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_BFC6:
 	jg [0x21], 0x59, LABEL_BFDC
@@ -35,6 +39,7 @@ LABEL_BFC6:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_BFDC:
 	jg [0x21], 0x65, LABEL_BFF2
 	sub [0x21], 0x0059
@@ -43,10 +48,12 @@ LABEL_BFDC:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_BFF2:
 	jg [0x21], 0x8A, LABEL_BFFD
 	mov [0x22], 0x00FA
 	ret
+
 
 LABEL_BFFD:
 	jg [0x21], 0x9A, LABEL_C013
@@ -56,6 +63,7 @@ LABEL_BFFD:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_C013:
 	jg [0x21], 0xA7, LABEL_C029
 	sub [0x21], 0x009A
@@ -63,6 +71,7 @@ LABEL_C013:
 	mov [0x22], 0x00A3
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_C029:
 	jg [0x21], 0xB4, LABEL_C03F
@@ -72,6 +81,7 @@ LABEL_C029:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_C03F:
 	jg [0x21], 0xC1, LABEL_C055
 	sub [0x21], 0x00B4
@@ -79,6 +89,7 @@ LABEL_C03F:
 	mov [0x22], 0x00A5
 	add [0x22], [0x21]
 	ret
+
 
 LABEL_C055:
 	jg [0x21], 0xC3, LABEL_C06B
@@ -88,6 +99,7 @@ LABEL_C055:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_C06B:
 	jg [0x21], 0xCE, LABEL_C081
 	sub [0x21], 0x00C3
@@ -96,10 +108,12 @@ LABEL_C06B:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_C081:
 	jg [0x21], 0xDC, LABEL_C08C
 	mov [0x22], 0x00A5
 	ret
+
 
 LABEL_C08C:
 	jg [0x21], 0xEB, LABEL_C0A2
@@ -108,6 +122,7 @@ LABEL_C08C:
 	mov [0x22], 0x00A5
 	add [0x22], [0x21]
 	ret
+
 
 LABEL_C0A2:
 	jg [0x21], 0x0125, PROJ_VAR22_A7_MINUS_VAR21_MINUS_125_SHR3

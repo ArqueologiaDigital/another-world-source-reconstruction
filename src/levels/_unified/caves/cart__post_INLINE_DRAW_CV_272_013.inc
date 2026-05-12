@@ -5,6 +5,7 @@ LABEL_8906:
 	sub [0x08], 0x0001
 	ret
 
+
 LABEL_8916:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, DRAW_CV275_AT_X07_Y08

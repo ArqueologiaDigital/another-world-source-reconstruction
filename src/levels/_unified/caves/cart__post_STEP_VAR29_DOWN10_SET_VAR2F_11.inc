@@ -5,15 +5,18 @@ LABEL_5DDF:
 	jne [0x1D], 0x00, LABEL_5E06
 	ret
 
+
 LABEL_5DF0:
 	jg [0xAA], 0x00, LABEL_5DFB
 	mov [0x2F], 0x000B
 	ret
 
+
 LABEL_5DFB:
 	jg [0xAD], 0x00, LABEL_5E06
 	mov [0x2F], 0x000B
 	ret
+
 
 LABEL_5E06:
 	mov [0x2F], 0x0008
@@ -23,6 +26,7 @@ LABEL_5E06:
 	jl [0x38], 0x64, SHARED_RET
 	mov [0x2F], 0x0009
 	ret
+
 
 LABEL_5E1F:
 	mov [0x21], 0x0000

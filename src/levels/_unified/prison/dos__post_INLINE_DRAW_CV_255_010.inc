@@ -1,6 +1,7 @@
 LABEL_5D83:
 	ret
 
+
 LABEL_5D84:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	play id=0x0055, freq=0x1C, vol=0x0A, channel=0x01

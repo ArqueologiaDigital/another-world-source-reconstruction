@@ -4,6 +4,7 @@ LABEL_BC48:
 	mov [0x22], 0x0031
 	ret
 
+
 LABEL_BC59:
 	jg [0x21], 0x5A, LABEL_BC6F
 	sub [0x21], 0x0001
@@ -11,6 +12,7 @@ LABEL_BC59:
 	mov [0x22], 0x0031
 	add [0x22], [0x21]
 	ret
+
 
 LABEL_BC6F:
 	jg [0x21], 0xB8, LABEL_BC85
@@ -20,10 +22,12 @@ LABEL_BC6F:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_BC85:
 	jg [0x21], 0xCB, LABEL_BC90
 	mov [0x22], 0x004A
 	ret
+
 
 LABEL_BC90:
 	jg [0x21], 0xD1, LABEL_BCA6
@@ -33,6 +37,7 @@ LABEL_BC90:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_BCA6:
 	jg [0x21], 0xF4, LABEL_BCBC
 	sub [0x21], 0x00D1
@@ -40,6 +45,7 @@ LABEL_BCA6:
 	mov [0x22], 0x004D
 	add [0x22], [0x21]
 	ret
+
 
 LABEL_BCBC:
 	jg [0x21], 0x0106, PROJ_VAR22_53_PLUS_VAR21_MINUS_106_SHR3

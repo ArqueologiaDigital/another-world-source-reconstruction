@@ -17,6 +17,8 @@ LABEL_5729:
 	jge [0x22], 0x10, LABEL_5729
 	mov [0x2B], [0x2C]
 	ret
+
+
 LABEL_576B:
 	db 0x11
 

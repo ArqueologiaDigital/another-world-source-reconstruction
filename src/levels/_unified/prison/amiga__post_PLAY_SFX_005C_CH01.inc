@@ -13,11 +13,13 @@ LABEL_3A06:
 	setup channel=0x14, address=DRAW_CIN_146_TO_147_4F_AT_8AA18039
 	ret
 
+
 LABEL_3A3C:
 	setup channel=0x14, address=LABEL_0EF0
 	jl [0xF8], 0x10, SHARED_RET
 	setup channel=0x14, address=DRAW_CIN_280_TO_281_2F_AT_75ED3E60
 	ret
+
 
 LABEL_3A4B:
 	call LABEL_3ACA
@@ -54,21 +56,25 @@ LABEL_3AB2:
 	mov [0x13], 0xFFFF
 	ret
 
+
 LABEL_3ABE:
 	or [0x2B], 0x4000
 	call LABEL_3AE9
 	mov [0x13], 0xFFFF
 	ret
 
+
 LABEL_3ACA:
 	jne [0x1D], 0x28, LABEL_3AD4
 	mov [0x2B], [0x6B]
 	ret
 
+
 LABEL_3AD4:
 	jne [0x1D], 0x29, LABEL_3ADE
 	mov [0x2B], [0x73]
 	ret
+
 
 LABEL_3ADE:
 	jne [0x1D], 0x2A, LABEL_3AE7
@@ -76,6 +82,8 @@ LABEL_3ADE:
 
 LABEL_3AE7:
 	ret
+
+
 LABEL_3AE8:
 	db 0x11
 
@@ -84,10 +92,12 @@ LABEL_3AE9:
 	mov [0x6B], [0x2B]
 	ret
 
+
 LABEL_3AF3:
 	jne [0x1D], 0x29, LABEL_3AFD
 	mov [0x73], [0x2B]
 	ret
+
 
 LABEL_3AFD:
 	jne [0x1D], 0x2A, LABEL_3B06
@@ -95,6 +105,8 @@ LABEL_3AFD:
 
 LABEL_3B06:
 	ret
+
+
 LABEL_3B07:
 	db 0x11, 0x54, 0x33, 0x30, 0x01, 0x02, 0x03, 0x01
 	db 0x00, 0x01, 0x06, 0x54, 0x32, 0xF2, 0x01, 0x02
@@ -114,6 +126,7 @@ LABEL_3B51:
 	jne [0x13], 0xFFFF, LABEL_3B63
 	ret
 
+
 LABEL_3B63:
 	and [0x13], 0x7FFF
 	mov [0x0E], 0x0000
@@ -123,6 +136,8 @@ LABEL_3B63:
 	je [0x0E], 0x00, SHARED_RET
 	or [0x27], 0x4000
 	ret
+
+
 LABEL_3B81:
 	db 0x11
 
@@ -132,6 +147,8 @@ LABEL_3B82:
 	call LABEL_39AB
 	jne [0x13], 0xFFFF, LABEL_3B95
 	ret
+
+
 LABEL_3B94:
 	db 0x11
 
@@ -145,6 +162,7 @@ LABEL_3B95:
 	or [0x27], 0x4000
 	ret
 
+
 LABEL_3BB3:
 	jge [0x13], 0x64, LABEL_3BFF
 	jle [0x13], 0x03, LABEL_3BE1
@@ -152,6 +170,7 @@ LABEL_3BB3:
 	video offset=CINEMATIC_488, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
+
 
 LABEL_3BCF:
 	jle [0x13], 0x04, DRAW_CIN_486

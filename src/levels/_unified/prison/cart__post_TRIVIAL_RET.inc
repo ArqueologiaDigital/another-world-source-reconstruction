@@ -8,6 +8,7 @@ LABEL_4968:
 	mov [0x28], [HERO_X]
 	ret
 
+
 HANDLE_HORIZ_VAR01_VS_VAR28:
 	call LABEL_882F
 	mov [0x22], [HERO_X]

@@ -14,6 +14,7 @@ LOAD_RES44_AND_RET:
 	load id=0x0044
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_LOAD_RES44_AND_RET.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -27,6 +28,8 @@ COPY_PAGE0_TO_3_LOAD_RES45:
 	copyVideoPage src=0x00, dst=0x03
 	load id=0x0045
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -47,6 +50,7 @@ DELETE_GAME_AND_FX_CHANNELS:
 	deleteChannels first=0x30, last=0x3B
 	deleteChannels first=0x00, last=0x08
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_DELETE_GAME_AND_FX_CHANNELS.inc"
@@ -141,6 +145,7 @@ DEDUP_CAVES_5B_035:
 	mov [0x05], 0x0001
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_DEDUP_CAVES_5B_035.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -152,6 +157,7 @@ DEDUP_CAVES_5B_035:
 DEDUP_CAVES_5B_036:
 	mov [0x05], 0x0001
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_DEDUP_CAVES_5B_036.inc"

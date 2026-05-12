@@ -3225,6 +3225,7 @@ LIKELY_A_COPY_PROTECTION_MECHANISM:
 	jne [HACK_VAR_DC], 0x21, LABEL_00B3
 	ret
 
+
 LABEL_00B3:
 	deleteChannels first=0x00, last=0x3F
 	setup channel=0x3C, address=KILL_CHANNEL_LANDING

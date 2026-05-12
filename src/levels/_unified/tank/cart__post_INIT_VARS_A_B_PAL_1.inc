@@ -23,6 +23,7 @@ LABEL_1BAF:
 	selectVideoPage 0xFF
 	ret
 
+
 LABEL_1BCA:
 	selectVideoPage 0x00
 	call LABEL_1BD7
@@ -31,12 +32,14 @@ LABEL_1BCA:
 	selectVideoPage 0xFF
 	ret
 
+
 LABEL_1BD7:
 	video offset=CINEMATIC_069, x=160, y=100
 	video offset=CINEMATIC_098, x=160, y=100
 	je [0xDB], 0x01, SHARED_RET
 	video offset=CINEMATIC_099, x=160, y=100
 	ret
+
 
 BLACKHOLE_FRAME_DRAW:
 	jne [0x6D], 0x00, LABEL_1C0E
@@ -48,6 +51,7 @@ BLACKHOLE_FRAME_DRAW:
 	call DRAW_CIN_069
 	selectVideoPage 0xFF
 	ret
+
 
 LABEL_1C05:
 	call BLACKHOLE_FRAME_DRAW
@@ -72,9 +76,12 @@ LABEL_1C0E:
 	selectVideoPage 0xFF
 	ret
 
+
 DRAW_CIN_069:
 	video offset=CINEMATIC_069, x=160, y=100
 	ret
+
+
 	selectVideoPage 0x00
 	fill page=0x00, color=0x0C
 	video offset=CINEMATIC_060, x=160, y=100
@@ -89,16 +96,19 @@ DRAW_CIN_069:
 	selectVideoPage 0xFF
 	ret
 
+
 DRAW_CIN_186_THEN_CIN_187:
 	video offset=CINEMATIC_186, x=[0x0f], y=[0x10]
 	video offset=CINEMATIC_187, x=[0x0f], y=[0x10]
 	ret
+
 
 LABEL_1C6E:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_196, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
 	ret
+
 
 LABEL_1C78:
 	selectVideoPage 0x00
@@ -108,6 +118,7 @@ LABEL_1C78:
 	mov [HACK_VAR_67], 0x0002
 	ret
 
+
 TANK_SCENE_INIT_FILL_PAGE_3_COLOR_0C:
 	jge [HACK_VAR_67], 0x03, SHARED_RET
 	selectVideoPage 0x00
@@ -116,6 +127,7 @@ TANK_SCENE_INIT_FILL_PAGE_3_COLOR_0C:
 	mov [HACK_VAR_67], 0x0003
 	ret
 
+
 DRAW_CIN_093_TO_097_VAR:
 	video offset=CINEMATIC_093, x=[0x01], y=[0x02], zoom=[0x03]
 	video offset=CINEMATIC_094, x=[0x01], y=[0x02], zoom=[0x03]
@@ -123,6 +135,7 @@ DRAW_CIN_093_TO_097_VAR:
 	video offset=CINEMATIC_096, x=[0x01], y=[0x02], zoom=[0x03]
 	video offset=CINEMATIC_097, x=[0x01], y=[0x02], zoom=[0x03]
 	ret
+
 
 DRAW_CIN_061_HORIZ_THEN_062:
 	video offset=CINEMATIC_061, x=114, y=22
@@ -146,6 +159,8 @@ DRAW_CIN_061_HORIZ_THEN_062:
 	video offset=CINEMATIC_063, x=28, y=38
 	video offset=CINEMATIC_063, x=96, y=20
 	ret
+
+
 	killChannel
 	video offset=CINEMATIC_061, x=114, y=22
 	video offset=CINEMATIC_061, x=86, y=21
@@ -230,12 +245,15 @@ DRAW_CIN_091_061_FIELD:
 	video offset=CINEMATIC_092, x=10, y=21
 	ret
 
+
 DRAW_CIN_SEQ_068_068_068:
 	video offset=CINEMATIC_068, x=156, y=17
 	video offset=CINEMATIC_068, x=141, y=28
 	video offset=CINEMATIC_068, x=110, y=23
 	video offset=CINEMATIC_068, x=188, y=15
 	ret
+
+
 LABEL_1E58:
 	db 0x11
 
@@ -293,6 +311,7 @@ DRAW_CIN_064_065_FIELD:
 	video offset=CINEMATIC_068, x=0, y=21
 	video offset=CINEMATIC_068, x=10, y=21
 	ret
+
 
 HANG_BLITTING_PAGE_FF:
 	blitFramebuffer 0xFF

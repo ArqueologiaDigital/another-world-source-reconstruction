@@ -55,6 +55,7 @@ LABEL_3C0B:
 	call LABEL_3C37
 	ret
 
+
 LABEL_3C21:
 	mov [0x21], 0xFFEC
 	mov [0x23], 0x0064
@@ -62,6 +63,7 @@ LABEL_3C21:
 	play id=0x0056, freq=0x0A, vol=0x3F, channel=0x02
 	call LABEL_3C73
 	ret
+
 
 LABEL_3C37:
 	jne [0x8B], 0xFFFF, LABEL_3C4B
@@ -71,6 +73,7 @@ LABEL_3C37:
 	mov [0x9F], [0x21]
 	ret
 
+
 LABEL_3C4B:
 	jne [0x8C], 0xFFFF, SHARED_RET
 	mov [0x8C], [0x23]
@@ -78,12 +81,15 @@ LABEL_3C4B:
 	mov [0x99], [0x27]
 	mov [0x8E], [0x21]
 	ret
+
+
 	jne [0x8D], 0xFFFF, SHARED_RET
 	mov [0x8D], [0x23]
 	mov [0x9A], [0x21]
 	mov [0x9B], [0x27]
 	mov [0x8F], [0x21]
 	ret
+
 
 LABEL_3C73:
 	jne [0x89], 0xFFFF, LABEL_3C87
@@ -93,6 +99,7 @@ LABEL_3C73:
 	mov [0x9D], [0x21]
 	ret
 
+
 LABEL_3C87:
 	jne [0x8A], 0xFFFF, SHARED_RET
 	mov [0x8A], [0x23]
@@ -100,6 +107,7 @@ LABEL_3C87:
 	mov [0x95], [0x27]
 	mov [0x9E], [0x21]
 	ret
+
 
 JUNK__3C9B:
 	break
@@ -137,6 +145,8 @@ LABEL_3CE2:
 	add [0x27], [0x3A]
 	or [0x27], 0x1800
 	ret
+
+
 LABEL_3CF8:
 	db 0x11
 
@@ -154,6 +164,8 @@ LABEL_3D00:
 	add [0x27], [0x3A]
 	or [0x27], 0x1800
 	ret
+
+
 LABEL_3D16:
 	db 0x11
 

@@ -7,6 +7,7 @@ LABEL_DBBE:
 	mov [HERO_X], 0x000A
 	ret
 
+
 LABEL_DBCD:
 	jne [HACK_VAR_67], 0x49, ADD_HACK67_BY_20
 	mov [HACK_VAR_67], 0x0069

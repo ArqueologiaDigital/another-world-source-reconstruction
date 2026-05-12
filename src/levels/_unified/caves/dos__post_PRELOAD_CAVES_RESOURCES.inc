@@ -12,6 +12,8 @@ LABEL_012C:
 	load id=0x005D
 	load id=0x0060
 	ret
+
+
 	mov [HERO_X], 0x03E8
 
 LABEL_0161:

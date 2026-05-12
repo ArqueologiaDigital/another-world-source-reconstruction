@@ -5,12 +5,14 @@ LABEL_7589:
 LABEL_7593:
 	ret
 
+
 LABEL_7594:
 	jg [0x16], 0x00, LABEL_759E
 	mov [0x16], 0x0000
 
 LABEL_759E:
 	ret
+
 
 LABEL_759F:
 	jg [0x15], 0x01, LABEL_75A9
@@ -22,6 +24,7 @@ LABEL_75A9:
 
 LABEL_75B3:
 	ret
+
 
 LABEL_75B4:
 	jl [HERO_X], 0x1B, LABEL_75D2
@@ -35,6 +38,7 @@ LABEL_75C8:
 
 LABEL_75D2:
 	ret
+
 
 LABEL_75D3:
 	setup channel=0x14, address=LABEL_75D8

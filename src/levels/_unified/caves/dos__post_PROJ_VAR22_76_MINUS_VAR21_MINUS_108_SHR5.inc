@@ -3,6 +3,7 @@ LABEL_BFED:
 	mov [0x22], 0x0097
 	ret
 
+
 LABEL_BFF8:
 	jg [0x21], 0xFC, LABEL_C00E
 	sub [0x21], 0x00D9
@@ -10,6 +11,7 @@ LABEL_BFF8:
 	mov [0x22], 0x0050
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_C00E:
 	jg [0x21], 0x0113, PROJ_VAR22_49_MINUS_VAR21_MINUS_113_SHR4

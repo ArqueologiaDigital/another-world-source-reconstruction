@@ -13,16 +13,19 @@ TANK_SCENE_INIT_FILL_COLOR_0C_AND_PAGE_3_COPY:
 	selectVideoPage 0xFF
 	ret
 
+
 DRAW_CIN_113_114_AND_RET:
 	video offset=CINEMATIC_162, x=[0x0f], y=[0x10]
 	video offset=CINEMATIC_163, x=[0x0f], y=[0x10]
 	ret
+
 
 DRAW_CIN_122_ON_PAGE_0:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_173, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
 	ret
+
 
 TANK_SCENE_DRAW_CIN_169_IF_VAR_67_LE_2:
 	selectVideoPage 0x00
@@ -32,6 +35,7 @@ TANK_SCENE_DRAW_CIN_169_IF_VAR_67_LE_2:
 	mov [HACK_VAR_67], 0x0002
 	ret
 
+
 TANK_SCENE_DRAW_CIN_168_IF_VAR_67_LT_3:
 	jge [HACK_VAR_67], 0x03, SHARED_RET
 	selectVideoPage 0x00
@@ -40,6 +44,7 @@ TANK_SCENE_DRAW_CIN_168_IF_VAR_67_LT_3:
 	mov [HACK_VAR_67], 0x0003
 	ret
 
+
 DRAW_CIN_093_TO_097_VAR:
 	video offset=CINEMATIC_031, x=[0x01], y=[0x02], zoom=[0x03]
 	video offset=CINEMATIC_032, x=[0x01], y=[0x02], zoom=[0x03]
@@ -47,6 +52,7 @@ DRAW_CIN_093_TO_097_VAR:
 	video offset=CINEMATIC_034, x=[0x01], y=[0x02], zoom=[0x03]
 	video offset=CINEMATIC_035, x=[0x01], y=[0x02], zoom=[0x03]
 	ret
+
 
 DRAW_CIN_061_HORIZ_THEN_062:
 	video offset=CINEMATIC_001, x=114, y=22
@@ -70,6 +76,8 @@ DRAW_CIN_061_HORIZ_THEN_062:
 	video offset=CINEMATIC_003, x=28, y=38
 	video offset=CINEMATIC_003, x=96, y=20
 	ret
+
+
 	killChannel
 	video offset=CINEMATIC_001, x=114, y=22
 	video offset=CINEMATIC_001, x=86, y=21

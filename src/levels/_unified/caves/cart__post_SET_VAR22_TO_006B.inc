@@ -6,10 +6,12 @@ LABEL_B600:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_B618:
 	jg [0x21], 0x77, LABEL_B623
 	mov [0x22], 0x0061
 	ret
+
 
 LABEL_B623:
 	jg [0x21], 0xC8, SET_VAR22_TO_0061

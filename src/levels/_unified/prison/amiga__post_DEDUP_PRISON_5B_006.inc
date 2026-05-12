@@ -13,6 +13,7 @@ LABEL_5C52:
 LABEL_5C57:
 	ret
 
+
 LABEL_5C58:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	add [BUDDY_Y], 0x0001

@@ -17,6 +17,8 @@ LABEL_6F50:
 	jge [0x22], 0x10, LABEL_6F50
 	mov [0x2B], [0x2C]
 	ret
+
+
 LABEL_6F92:
 	db 0x11
 

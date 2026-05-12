@@ -2,6 +2,7 @@ SET_VAR2F_TO_001A:
 	mov [0x2F], 0x001A
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR2F_TO_001A.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -14,6 +15,7 @@ INIT_VARS_2F_29_3:
 	mov [0x2F], 0x0003
 	mov [0x29], 0x01A4
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INIT_VARS_2F_29_3.inc"
@@ -28,6 +30,7 @@ INIT_VARS_2F_29:
 	mov [0x29], 0x0154
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INIT_VARS_2F_29.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -40,6 +43,7 @@ INIT_VARS_2F_29_2:
 	mov [0x2F], 0x0009
 	mov [0x29], 0x0002
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INIT_VARS_2F_29_2.inc"
@@ -54,6 +58,7 @@ INIT_VARS_B2_2F_29:
 	mov [0x2F], 0x0009
 	mov [0x29], 0x0001
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INIT_VARS_B2_2F_29.inc"
@@ -72,6 +77,7 @@ SET_VAR2F_TO_001B:
 	mov [0x2F], 0x001B
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR2F_TO_001B.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -86,6 +92,7 @@ INIT_VAR29_FROM_VAR50_PLUS_A_VAR2F_10:
 	mov [0x2F], 0x0010
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INIT_VAR29_FROM_VAR50_PLUS_A_VAR2F_10.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -98,6 +105,7 @@ INIT_VARS_29_2F:
 	mov [0x29], 0x00A1
 	mov [0x2F], 0x0018
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INIT_VARS_29_2F.inc"
@@ -112,6 +120,7 @@ INIT_VARS_07_2F:
 	mov [0x2F], 0x0015
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INIT_VARS_07_2F.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -124,6 +133,7 @@ INIT_VARS_2F_29_1:
 	mov [0x2F], 0x0003
 	mov [0x29], 0x0168
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INIT_VARS_2F_29_1.inc"
@@ -138,6 +148,8 @@ SET_VARS_29_2F:
 	mov [0x29], [HERO_X]
 	mov [0x2F], 0x0018
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -197,6 +209,7 @@ SET_VARS_29_2F:
 COPY_VAR22_TO_VAR07:
 	mov [BUDDY_X], [0x22]
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_COPY_VAR22_TO_VAR07.inc"

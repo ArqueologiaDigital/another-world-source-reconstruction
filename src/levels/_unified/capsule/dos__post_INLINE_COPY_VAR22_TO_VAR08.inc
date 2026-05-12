@@ -6,6 +6,7 @@ LABEL_4548:
 	mov [BUDDY_Y], [0x22]
 	ret
 
+
 LABEL_455C:
 	call LABEL_44EF
 	shl [0x0E], 0x000C

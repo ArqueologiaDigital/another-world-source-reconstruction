@@ -21,6 +21,7 @@ COMPUTE_RANDOM_BIT_MASKS:
 	and [0x38], 0x0001
 	ret
 
+
 INIT_LAKE_VARS:
 	mov [0x2A], 0x0000
 	mov [0x2B], 0x0000
@@ -51,6 +52,7 @@ INIT_LAKE_VARS:
 	mov [0x4A], 0x00B7
 ;@endif
 	ret
+
 
 INIT_CODEWHEEL_PROTECTION_SCENE:
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP

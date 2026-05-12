@@ -74,6 +74,7 @@ DRAW_CIN_056_AT_BC_54:
 	selectVideoPage 0xFF
 	ret
 
+
 DERIVE_VAR07_VAR08_FROM_VAR05:
 	mov [0x07], [0x05]
 	mov [0x08], [0x05]

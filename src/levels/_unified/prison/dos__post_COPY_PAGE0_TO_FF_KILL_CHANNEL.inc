@@ -156,6 +156,7 @@ PRISON_SCENE_INIT_DRAW_CIN_085_086_TO_PAGE_3:
 	selectVideoPage 0xFF
 	ret
 
+
 LABEL_81D4:
 	setup channel=0x3B, address=GUN_ZONE_TICK_LOOP
 	mov [0x42], 0x00BC

@@ -44,6 +44,8 @@ LABEL_2AD8:
 
 LABEL_2AE7:
 	ret
+
+
 LABEL_2AE8:
 	db 0x11
 
@@ -57,12 +59,14 @@ LABEL_2AE9:
 LABEL_2AFE:
 	ret
 
+
 LABEL_2AFF:
 	jne [0x10], 0x44, LABEL_2B09
 	or [0xB9], 0x0001
 
 LABEL_2B09:
 	ret
+
 
 LABEL_2B0A:
 	mov [0x2F], 0x0000
@@ -85,6 +89,7 @@ LABEL_2B0A:
 
 LABEL_2B51:
 	ret
+
 
 LABEL_2B52:
 	mov [0x84], 0xF254
@@ -192,6 +197,7 @@ LABEL_2C6C:
 	call LABEL_3A68
 	setup channel=0x2B, address=LABEL_2CA5
 	ret
+
 
 LABEL_2CA5:
 	add [0x85], 0x0001

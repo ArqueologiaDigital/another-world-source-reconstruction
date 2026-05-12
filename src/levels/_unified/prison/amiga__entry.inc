@@ -2253,6 +2253,7 @@ LIKELY_A_COPY_PROTECTION_MECHANISM:
 	jne [0xF2], 0x1770, LABEL_0095
 	ret
 
+
 LABEL_0095:
 	deleteChannels first=0x00, last=0x3F
 	setup channel=0x3C, address=KILL_CHANNEL_LANDING

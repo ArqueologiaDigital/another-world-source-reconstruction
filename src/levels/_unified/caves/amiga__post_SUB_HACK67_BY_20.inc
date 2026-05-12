@@ -4,6 +4,7 @@ LABEL_D709:
 	mov [HERO_Y], 0x0078
 	ret
 
+
 LABEL_D718:
 	jne [HACK_VAR_67], 0xC8, LABEL_D746
 	mov [HACK_VAR_67], 0x00A7
@@ -17,6 +18,7 @@ LABEL_D718:
 	mov [HERO_X], 0x0140
 	call LABEL_770D
 	ret
+
 
 LABEL_D746:
 	jne [HACK_VAR_67], 0x68, DECR_HACK67_BY_1

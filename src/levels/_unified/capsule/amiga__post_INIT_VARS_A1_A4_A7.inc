@@ -3,10 +3,13 @@ LABEL_84DF:
 	setup channel=0x3B, address=KILL_CHANNEL_LANDING
 	ret
 
+
 LABEL_84E8:
 	deleteChannels first=0x00, last=0x08
 	call LABEL_84DF
 	ret
+
+
 LABEL_84F0:
 	db 0x0C, 0x22, 0x2E, 0x02, 0x0C, 0x30, 0x3B, 0x02
 	db 0x0C, 0x00, 0x08, 0x02, 0x05, 0x0C, 0x22, 0x2E
@@ -20,6 +23,7 @@ LABEL_8505:
 LABEL_8513:
 	ret
 
+
 LABEL_8514:
 	mov [HERO_Y], [0x40]
 	je [0x23], 0x00, LABEL_8520
@@ -27,6 +31,7 @@ LABEL_8514:
 
 LABEL_8520:
 	ret
+
 
 LABEL_8521:
 	setup channel=0x10, address=LABEL_2E58

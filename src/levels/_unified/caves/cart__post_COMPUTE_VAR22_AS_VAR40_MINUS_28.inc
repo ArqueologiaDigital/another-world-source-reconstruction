@@ -58,6 +58,7 @@ LABEL_7383:
 	add [0x21], 0x0042
 	ret
 
+
 LABEL_73A8:
 	sub [0x21], 0x0021
 	jl [0xF8], 0x10, LABEL_73B6
@@ -65,6 +66,8 @@ LABEL_73A8:
 
 LABEL_73B6:
 	ret
+
+
 LABEL_73B7:
 	db 0x11
 
@@ -86,6 +89,7 @@ LABEL_73CB:
 	add [0x21], 0x0041
 	ret
 
+
 LABEL_73F0:
 	sub [0x21], 0x0020
 	jl [0xF8], 0x10, LABEL_73FE
@@ -93,6 +97,8 @@ LABEL_73F0:
 
 LABEL_73FE:
 	ret
+
+
 LABEL_73FF:
 	db 0x11
 

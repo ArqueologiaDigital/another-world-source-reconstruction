@@ -8,6 +8,7 @@ LABEL_7EB2:
 	mov [0x28], [HERO_X]
 	ret
 
+
 LABEL_7EBC:
 	call CHECK_HERO_Y_LT_VAR41
 	mov [0x22], [HERO_X]

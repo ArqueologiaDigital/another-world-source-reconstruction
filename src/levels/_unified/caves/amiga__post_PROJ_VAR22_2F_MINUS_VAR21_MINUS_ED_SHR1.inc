@@ -3,6 +3,7 @@ LABEL_B4C7:
 	mov [0x22], [0xAF]
 	ret
 
+
 LABEL_B4D1:
 	jg [0x21], 0xB4, LABEL_B4E7
 	sub [0x21], 0x0091
@@ -10,6 +11,7 @@ LABEL_B4D1:
 	mov [0x22], 0x00B0
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_B4E7:
 	jg [0x21], 0xBE, LABEL_B4FD
@@ -19,15 +21,18 @@ LABEL_B4E7:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_B4FD:
 	jg [0x21], 0xCE, LABEL_B508
 	mov [0x22], 0x00B1
 	ret
 
+
 LABEL_B508:
 	jg [0x21], 0xF8, LABEL_B513
 	mov [0x22], 0x010E
 	ret
+
 
 LABEL_B513:
 	jg [0x21], 0x0103, LABEL_B526
@@ -35,6 +40,7 @@ LABEL_B513:
 	mov [0x22], 0x00BF
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_B526:
 	jg [0x21], 0x0113, SET_VAR22_TO_00AB

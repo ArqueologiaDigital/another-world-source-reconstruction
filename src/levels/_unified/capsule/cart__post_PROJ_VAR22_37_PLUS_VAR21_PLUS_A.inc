@@ -16,10 +16,12 @@ LABEL_A218:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_A22E:
 	jg [0x21], 0xA7, SHARED_RET
 	mov [0x22], 0x012C
 	ret
+
 
 LABEL_A239:
 	jg [0x21], 0x73, LABEL_A24B
@@ -27,6 +29,7 @@ LABEL_A239:
 	mov [0x22], 0x00AB
 	add [0x22], [0x21]
 	ret
+
 
 LABEL_A24B:
 	jg [0x21], 0x7E, LABEL_A261
@@ -36,6 +39,7 @@ LABEL_A24B:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_A261:
 	jg [0x21], 0x9F, LABEL_A277
 	sub [0x21], 0x007E
@@ -43,6 +47,7 @@ LABEL_A261:
 	mov [0x22], 0x00BC
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_A277:
 	jg [0x21], 0xA7, SHARED_RET
@@ -52,12 +57,14 @@ LABEL_A277:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_A28D:
 	jg [0x21], 0x7F, LABEL_A29F
 	sub [0x21], 0x0067
 	mov [0x22], 0x00AB
 	add [0x22], [0x21]
 	ret
+
 
 LABEL_A29F:
 	jg [0x21], 0x9C, LABEL_A2B5
@@ -67,6 +74,7 @@ LABEL_A29F:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_A2B5:
 	jg [0x21], 0xA9, SHARED_RET
 	sub [0x21], 0x009C
@@ -74,6 +82,7 @@ LABEL_A2B5:
 	mov [0x22], 0x00C4
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_A2CB:
 	jg [0x21], 0x79, LABEL_A2E1
@@ -83,6 +92,7 @@ LABEL_A2CB:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_A2E1:
 	jg [0x21], 0x83, LABEL_A2F7
 	sub [0x21], 0x0079
@@ -91,10 +101,12 @@ LABEL_A2E1:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_A2F7:
 	jg [0x21], 0x9A, LABEL_A302
 	mov [0x22], 0x00B4
 	ret
+
 
 LABEL_A302:
 	jg [0x21], 0xA3, SHARED_RET
@@ -103,6 +115,8 @@ LABEL_A302:
 	mov [0x22], 0x00B4
 	sub [0x22], [0x21]
 	ret
+
+
 	jg [0x21], 0xA7, SHARED_RET
 	sub [0x21], 0x00A3
 	shl [0x21], 0x0001
@@ -110,10 +124,12 @@ LABEL_A302:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_A32E:
 	jg [0x21], 0xFFFC, LABEL_A33A
 	mov [0x22], 0x0018
 	ret
+
 
 LABEL_A33A:
 	jg [0x21], 0x26, LABEL_A34C
@@ -121,6 +137,7 @@ LABEL_A33A:
 	mov [0x22], 0x0017
 	add [0x22], [0x21]
 	ret
+
 
 LABEL_A34C:
 	jg [0x21], 0x2E, LABEL_A362
@@ -130,12 +147,14 @@ LABEL_A34C:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_A362:
 	jg [0x21], 0x62, LABEL_A374
 	sub [0x21], 0x002E
 	mov [0x22], 0x0051
 	add [0x22], [0x21]
 	ret
+
 
 LABEL_A374:
 	jg [0x21], 0x69, LABEL_A38A
@@ -145,6 +164,7 @@ LABEL_A374:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_A38A:
 	jg [0x21], 0x86, LABEL_A39C
 	sub [0x21], 0x0069
@@ -152,10 +172,12 @@ LABEL_A38A:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_A39C:
 	jg [0x21], 0xDA, LABEL_A3A7
 	mov [0x22], 0x00B0
 	ret
+
 
 LABEL_A3A7:
 	jg [0x21], 0xF5, LABEL_A3B9
@@ -164,6 +186,7 @@ LABEL_A3A7:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_A3B9:
 	jg [0x21], 0xFE, LABEL_A3CF
 	sub [0x21], 0x00F5
@@ -171,6 +194,7 @@ LABEL_A3B9:
 	mov [0x22], 0x0095
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_A3CF:
 	jg [0x21], 0x014A, SET_VAR22_TO_003E

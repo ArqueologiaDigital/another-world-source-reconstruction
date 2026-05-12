@@ -77,11 +77,13 @@ LABEL_E44A:
 	mov [0x22], 0x03E8
 	ret
 
+
 LABEL_E45B:
 	jne [HACK_VAR_67], 0xED, SHARED_RET
 	jg [HERO_Y], 0x5A, SHARED_RET
 	mov [0x22], 0x03E8
 	ret
+
 
 LABEL_E46C:
 	je [0x63], 0x03, SHARED_RET
@@ -95,6 +97,7 @@ LABEL_E46C:
 	mov [0x22], 0x03E8
 	ret
 
+
 LABEL_E49B:
 	mov [0xF8], [HERO_X]
 	sub [0xF8], [0x2A]
@@ -102,6 +105,7 @@ LABEL_E49B:
 	je [0x63], 0x02, SHARED_RET
 	mov [0x22], 0x03E9
 	ret
+
 
 LABEL_E4B2:
 	jne [HACK_VAR_67], 0xED, SHARED_RET
@@ -112,6 +116,7 @@ LABEL_E4B2:
 	je [0x63], 0x01, SHARED_RET
 	mov [0x22], 0x03E8
 	ret
+
 
 LABEL_E4D5:
 	add [0x22], [0x21]
@@ -130,11 +135,13 @@ LABEL_E4F0:
 	mov [0x22], 0x0000
 	ret
 
+
 LABEL_E505:
 	add [0x22], 0x0001
 	jl [0x22], 0x00, SHARED_RET
 	mov [0x22], 0x0000
 	ret
+
 
 SETUP_CHAN_14_BY_VAR63:
 	je [0x63], 0x64, LABEL_E69A

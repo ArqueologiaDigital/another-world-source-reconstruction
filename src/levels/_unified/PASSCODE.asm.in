@@ -51,6 +51,8 @@ SUM_HASH_VARS_TO_VAR_37:
 	add [0x37], [0x01]
 	add [0x37], [0x04]
 	ret
+
+
 ;@endif
 
 ; Port-specific body chunk after the shared `SUM_HASH_VARS_TO_VAR_37` routine.

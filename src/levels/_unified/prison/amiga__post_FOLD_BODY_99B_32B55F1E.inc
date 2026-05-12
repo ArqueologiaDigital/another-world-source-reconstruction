@@ -78,6 +78,8 @@ LABEL_305C:
 
 LABEL_3067:
 	ret
+
+
 LABEL_3068:
 	db 0x11
 
@@ -151,6 +153,8 @@ LABEL_315E:
 
 LABEL_3169:
 	ret
+
+
 LABEL_316A:
 	db 0x11
 

@@ -1,5 +1,7 @@
 LABEL_5708:
 	ret
+
+
 LABEL_5709:
 	db 0x11
 
@@ -119,6 +121,7 @@ LABEL_5864:
 	add [0xB9], 0x0100
 	ret
 
+
 LABEL_5877:
 	jg [0x27], [0x44], LABEL_5881
 	or [0x22], 0x1000
@@ -139,6 +142,7 @@ LABEL_58A2:
 	setup channel=0x31, address=LABEL_570A
 	ret
 
+
 LABEL_58B7:
 	jne [0x5E], 0x0FA0, LABEL_58CC
 	mov [0x5D], [0x21]
@@ -146,6 +150,7 @@ LABEL_58B7:
 	mov [0x5F], [0x29]
 	setup channel=0x32, address=LABEL_570A
 	ret
+
 
 LABEL_58CC:
 	jne [0x61], 0x0FA0, LABEL_58E0
@@ -156,6 +161,7 @@ LABEL_58CC:
 
 LABEL_58E0:
 	ret
+
 
 LABEL_58E1:
 	mov [0x0D], 0x0000
@@ -177,11 +183,13 @@ LABEL_58F3:
 	mov [0x5B], [0x2B]
 	ret
 
+
 LABEL_5900:
 	jne [0x0D], 0x02, LABEL_590D
 	mov [0x5F], [0x29]
 	mov [0x5E], [0x2B]
 	ret
+
 
 LABEL_590D:
 	jne [0x0D], 0x03, LABEL_5919
@@ -190,6 +198,7 @@ LABEL_590D:
 
 LABEL_5919:
 	ret
+
 
 CAPSULE_PROJECTILE_TICK_VAR5A_5B_5C_VARIANT_5937:
 	add [0x0D], 0x0001
@@ -202,6 +211,7 @@ CAPSULE_PROJECTILE_TICK_VAR5A_5B_5C_VARIANT_5937:
 	mov [0x5B], [0x2B]
 	ret
 
+
 LABEL_5937:
 	jne [0x0D], 0x02, LABEL_5950
 	mov [0x21], [0x5D]
@@ -211,6 +221,7 @@ LABEL_5937:
 	mov [0x5D], [BUDDY_X]
 	mov [0x5E], [0x2B]
 	ret
+
 
 LABEL_5950:
 	jne [0x0D], 0x03, LABEL_5968
@@ -223,6 +234,7 @@ LABEL_5950:
 
 LABEL_5968:
 	ret
+
 
 ; per-tick projectile
 CAPSULE_PROJECTILE_TICK_FROM_VAR5A_5B_5C:
@@ -237,6 +249,7 @@ CAPSULE_PROJECTILE_TICK_FROM_VAR5A_5B_5C:
 	call LABEL_7345
 	ret
 
+
 LABEL_5989:
 	jne [0x0D], 0x02, LABEL_59A5
 	mov [0x21], [0x5D]
@@ -247,6 +260,7 @@ LABEL_5989:
 	mov [0x5E], [0x2B]
 	call LABEL_7345
 	ret
+
 
 LABEL_59A5:
 	jne [0x0D], 0x03, LABEL_59C0
@@ -260,6 +274,7 @@ LABEL_59A5:
 
 LABEL_59C0:
 	ret
+
 
 LABEL_59C1:
 	call LABEL_5A52

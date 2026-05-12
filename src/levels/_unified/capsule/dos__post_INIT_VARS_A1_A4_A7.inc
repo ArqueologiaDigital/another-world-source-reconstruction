@@ -3,17 +3,24 @@ LABEL_B25D:
 	setup channel=0x3B, address=KILL_CHANNEL_LANDING
 	ret
 
+
 DELETE_CHANS_0_8_AND_RET:
 	deleteChannels first=0x00, last=0x08
 	call LABEL_B25D
 	ret
+
+
 	deleteChannels first=0x22, last=0x2E
 	deleteChannels first=0x30, last=0x3B
 	deleteChannels first=0x00, last=0x08
 	ret
+
+
 	deleteChannels first=0x22, last=0x2E
 	call LABEL_B25D
 	ret
+
+
 	deleteChannels first=0x30, last=0x3B
 	jmp LABEL_B25D
 
@@ -24,6 +31,7 @@ LABEL_B28A:
 
 LABEL_B298:
 	ret
+
 
 LABEL_B299:
 	je [HACK_VAR_67], 0x8A, SHARED_RET
@@ -38,6 +46,7 @@ LABEL_B299:
 
 LABEL_B2C9:
 	ret
+
 
 LABEL_B2CA:
 	setup channel=0x10, address=LABEL_441E

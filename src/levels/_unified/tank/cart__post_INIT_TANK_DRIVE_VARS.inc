@@ -156,12 +156,14 @@ LABEL_13C9:
 	video offset=CINEMATIC_175, x=[0x39], y=[0x3a]
 	ret
 
+
 LABEL_13E0:
 	video offset=CINEMATIC_176, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
 	jne [0x45], 0x00, SHARED_RET
 	video offset=CINEMATIC_177, x=[0x39], y=[0x3a]
 	ret
+
 
 LABEL_13F7:
 	video offset=CINEMATIC_178, x=[0x39], y=[0x3a]
@@ -170,12 +172,14 @@ LABEL_13F7:
 	video offset=CINEMATIC_179, x=[0x39], y=[0x3a]
 	ret
 
+
 LABEL_140E:
 	video offset=CINEMATIC_180, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
 	jne [0x45], 0x00, SHARED_RET
 	video offset=CINEMATIC_181, x=[0x39], y=[0x3a]
 	ret
+
 
 LABEL_1425:
 	video offset=CINEMATIC_182, x=[0x39], y=[0x3a]
@@ -184,12 +188,14 @@ LABEL_1425:
 	video offset=CINEMATIC_183, x=[0x39], y=[0x3a]
 	ret
 
+
 LABEL_143C:
 	video offset=CINEMATIC_184, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
 	jne [0x45], 0x00, SHARED_RET
 	video offset=CINEMATIC_185, x=[0x39], y=[0x3a]
 	ret
+
 
 APPLY_HERO_DAMAGE_AND_HIT:
 	jle [0x37], 0x00, SHARED_RET

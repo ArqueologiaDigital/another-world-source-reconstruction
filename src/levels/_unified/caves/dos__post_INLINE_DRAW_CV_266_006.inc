@@ -6,6 +6,7 @@ LABEL_8A7D:
 	sub [0x07], 0x0001
 	ret
 
+
 LABEL_8A91:
 	call AND_VAR11_WITH_EFFF
 	jmp LABEL_8AA0
@@ -101,6 +102,7 @@ LABEL_8B7B:
 	video type=0, offset=COMMON_VIDEO_315, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
+
 LABEL_8B99:
 	video type=0, offset=COMMON_VIDEO_316, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
@@ -109,6 +111,7 @@ LABEL_8B99:
 	je [0xF8], 0x00, SHARED_RET
 	video type=0, offset=COMMON_VIDEO_317, x=[0x07], y=[0x08], zoom=0x40
 	ret
+
 
 LABEL_8BB7:
 	video type=0, offset=COMMON_VIDEO_318, x=[0x07], y=[0x08], zoom=0x40
@@ -119,11 +122,13 @@ LABEL_8BB7:
 	video type=0, offset=COMMON_VIDEO_319, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
+
 LABEL_8BD5:
 	add [0x07], 0x0001
 	call LABEL_8BE1
 	sub [0x07], 0x0001
 	ret
+
 
 LABEL_8BE1:
 	video type=0, offset=COMMON_VIDEO_302, x=[0x07], y=[0x08], zoom=0x40
@@ -140,6 +145,7 @@ LABEL_8C04:
 	call LABEL_8C10
 	sub [0x07], 0x0001
 	ret
+
 
 LABEL_8C10:
 	video type=0, offset=COMMON_VIDEO_310, x=[0x07], y=[0x08], zoom=0x40
@@ -166,6 +172,7 @@ LABEL_8C56:
 	call LABEL_8C04
 	add [0x07], 0x0001
 	ret
+
 
 LABEL_8C62:
 	jne [HACK_VAR_67], [0x10], SHARED_RET

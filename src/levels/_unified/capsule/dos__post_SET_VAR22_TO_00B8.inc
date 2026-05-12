@@ -8,10 +8,12 @@ LABEL_9F00:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_9F20:
 	jg [0x21], 0x90, LABEL_9F2B
 	mov [0x22], 0x0025
 	ret
+
 
 LABEL_9F2B:
 	jg [0x21], 0xB2, LABEL_9F41
@@ -21,6 +23,7 @@ LABEL_9F2B:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_9F41:
 	jg [0x21], 0xBE, LABEL_9F57
 	sub [0x21], 0x00B2
@@ -28,6 +31,7 @@ LABEL_9F41:
 	mov [0x22], 0x001D
 	add [0x22], [0x21]
 	ret
+
 
 LABEL_9F57:
 	jg [0x21], 0xDC, LABEL_9F6D
@@ -37,12 +41,14 @@ LABEL_9F57:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_9F6D:
 	jg [0x21], 0xE3, LABEL_9F7F
 	sub [0x21], 0x00DC
 	mov [0x22], 0x0011
 	add [0x22], [0x21]
 	ret
+
 
 LABEL_9F7F:
 	jg [0x21], 0xFB, LABEL_9F95
@@ -52,6 +58,7 @@ LABEL_9F7F:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_9F95:
 	jg [0x21], 0x012D, SHARED_RET
 	sub [0x21], 0x00FB
@@ -59,6 +66,7 @@ LABEL_9F95:
 	mov [0x22], 0x001B
 	add [0x22], [0x21]
 	ret
+
 
 LABEL_9FAC:
 	mov [0x22], 0x007F
@@ -70,6 +78,7 @@ LABEL_9FAC:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_9FCE:
 	jg [0x21], 0x011B, LABEL_9FE5
 	sub [0x21], 0x00F5
@@ -78,12 +87,14 @@ LABEL_9FCE:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_9FE5:
 	jg [0x21], 0x012A, LABEL_9FF8
 	sub [0x21], 0x011B
 	mov [0x22], 0x00A2
 	add [0x22], [0x21]
 	ret
+
 
 LABEL_9FF8:
 	jg [0x21], 0x013B, SET_VAR22_TO_00B4

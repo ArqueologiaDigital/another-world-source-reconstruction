@@ -12,6 +12,7 @@ DRAW_HERO_SPRITE_BY_VAR09_0E:
 	je [0xF8], 0x06, DRAW_HERO_POSE_0_6
 	ret
 
+
 LABEL_8DBF:
 	jne [0x0E], 0x01, LABEL_8DC8
 	jmp DRAW_HERO_POSE_1
@@ -37,6 +38,7 @@ LABEL_8DF2:
 	jne [0x0E], 0x07, LABEL_8DFF
 	je [0xF8], 0x01, DRAW_CIN_015
 	ret
+
 
 LABEL_8DFF:
 	ret

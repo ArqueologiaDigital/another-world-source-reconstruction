@@ -208,6 +208,7 @@ LABEL_173C:
 	setup channel=0x27, address=LABEL_1748
 	ret
 
+
 LABEL_1748:
 	mov [0x12], 0x4010
 	call STATE_VAR12_BIG_DISPATCH

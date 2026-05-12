@@ -8,6 +8,8 @@ LABEL_64E9:
 	je [0x1D], 0x1E, LABEL_665B
 	jge [0x1D], 0x28, LABEL_66A4
 	ret
+
+
 LABEL_6508:
 	db 0x11
 
@@ -19,6 +21,7 @@ LABEL_6509:
 	and [0x49], 0xFFF8
 	ret
 
+
 LABEL_6522:
 	jne [0x1D], 0x0B, LABEL_6535
 	setup channel=0x2A, address=INLINE_SET_VAR75_TO_6
@@ -26,12 +29,14 @@ LABEL_6522:
 	and [0x4B], 0xFFF8
 	ret
 
+
 LABEL_6535:
 	jne [0x1D], 0x0C, SHARED_RET
 	setup channel=0x2C, address=INLINE_SET_VAR76_TO_6
 	or [0x4D], 0x4000
 	and [0x4D], 0xFFF8
 	ret
+
 
 LABEL_6548:
 	jne [HACK_VAR_67], 0xCA, LABEL_6561
@@ -41,6 +46,7 @@ LABEL_6548:
 	and [0x49], 0xFFF8
 	ret
 
+
 LABEL_6561:
 	jne [HACK_VAR_67], 0xCB, SHARED_RET
 	jne [0x1D], 0x0A, LABEL_657A
@@ -49,6 +55,7 @@ LABEL_6561:
 	and [0x49], 0xFFF8
 	ret
 
+
 LABEL_657A:
 	jne [0x1D], 0x0B, LABEL_658D
 	setup channel=0x2A, address=INLINE_SET_VAR75_TO_6
@@ -56,12 +63,14 @@ LABEL_657A:
 	and [0x4B], 0xFFF8
 	ret
 
+
 LABEL_658D:
 	jne [0x1D], 0x0C, SHARED_RET
 	setup channel=0x2C, address=INLINE_SET_VAR76_TO_6
 	or [0x4D], 0x4000
 	and [0x4D], 0xFFF8
 	ret
+
 
 LABEL_65A0:
 	jne [HACK_VAR_67], 0x6B, LABEL_65CB
@@ -75,6 +84,7 @@ LABEL_65A0:
 	selectVideoPage 0xFF
 	mov [0x47], 0x0FA0
 	ret
+
 
 LABEL_65CB:
 	jne [HACK_VAR_67], 0xED, LABEL_65FD
@@ -90,6 +100,7 @@ LABEL_65CB:
 	selectVideoPage 0xFF
 	play id=0x0057, freq=0x1C, vol=0x40, channel=0x00
 	ret
+
 
 LABEL_65FD:
 	jne [HACK_VAR_67], 0x50, SHARED_RET
@@ -108,6 +119,7 @@ LABEL_6624:
 	setup channel=0x05, address=LABEL_C90A
 	or [0xB2], 0x0002
 	ret
+
 
 LABEL_663D:
 	call LABEL_6CA0

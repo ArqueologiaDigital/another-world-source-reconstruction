@@ -6,6 +6,7 @@ LABEL_B63C:
 	mov [0x22], 0x0077
 	ret
 
+
 LABEL_B647:
 	jg [0x21], 0x4E, LABEL_B65D
 	sub [0x21], 0x000B
@@ -13,6 +14,7 @@ LABEL_B647:
 	mov [0x22], 0x0077
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_B65D:
 	jg [0x21], 0x5E, LABEL_B673
@@ -22,6 +24,7 @@ LABEL_B65D:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_B673:
 	jg [0x21], 0x68, LABEL_B689
 	sub [0x21], 0x005E
@@ -29,6 +32,7 @@ LABEL_B673:
 	mov [0x22], 0x0071
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_B689:
 	jg [0x21], 0x73, LABEL_B69F
@@ -38,21 +42,25 @@ LABEL_B689:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_B69F:
 	jg [0x21], 0x95, LABEL_B6AA
 	mov [0x22], 0x00FA
 	ret
+
 
 LABEL_B6AA:
 	jg [0x21], 0xB1, LABEL_B6B5
 	mov [0x22], 0x0072
 	ret
 
+
 LABEL_B6B5:
 	jg [0x21], 0xBE, LABEL_B6C4
 	sub [0x21], 0x00B1
 	mov [0x22], 0x0072
 	ret
+
 
 LABEL_B6C4:
 	jg [0x21], 0xED, LABEL_B6DA
@@ -61,6 +69,7 @@ LABEL_B6C4:
 	mov [0x22], 0x0071
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_B6DA:
 	jg [0x21], 0xF2, PROJ_VAR22_68_MINUS_VAR21_MINUS_F2_SHR4

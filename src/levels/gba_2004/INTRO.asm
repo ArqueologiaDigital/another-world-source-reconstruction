@@ -699,6 +699,7 @@ INIT_VIDEO_BUFFERS:
 	blitFramebuffer 0x02
 	ret
 
+
 LABEL_010E:
 	mov [PAUSE_SLICES], 0x0003
 	fill page=0xFF, color=0x02
@@ -3511,6 +3512,7 @@ DRAW_PARTICLE_LAB_BG_COMPOSITE:
 	video offset=CINEMATIC_180, x=160, y=100
 	ret
 
+
 LABEL_1D89:
 	setPalette 0x07
 	selectVideoPage 0x00
@@ -3765,6 +3767,7 @@ PLAY_FX_PHASE_5_FREQ_20:
 
 PLAY_FX_DISPATCH_RET:
 	ret
+
 
 CH_01_INIT_VAR_04_06:
 	mov [0x04], 0x0040

@@ -28,9 +28,12 @@ LABEL_99C8:
 	video offset=CINEMATIC_092, x=[HERO_X], y=[HERO_Y]
 	ret
 
+
 DRAW_CIN_091:
 	video offset=CINEMATIC_091, x=[HERO_X], y=[HERO_Y]
 	ret
+
+
 LABEL_99E1:
 	db 0x11
 
@@ -41,9 +44,11 @@ LABEL_99E2:
 	video offset=CINEMATIC_090, x=[HERO_X], y=[HERO_Y]
 	ret
 
+
 DRAW_CIN_089:
 	video offset=CINEMATIC_089, x=[HERO_X], y=[HERO_Y]
 	ret
+
 
 CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4:
 	mov [0xF8], [0x04]

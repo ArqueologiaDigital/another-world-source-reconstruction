@@ -6,6 +6,7 @@ LABEL_5AC8:
 	sub [BUDDY_X], 0x0001
 	ret
 
+
 LABEL_5ADC:
 	call AND_VAR11_WITH_EFFF
 	jmp LABEL_5AEB
@@ -101,6 +102,7 @@ LABEL_5BC6:
 	video offset=CINEMATIC_344, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
+
 LABEL_5BE4:
 	video offset=CINEMATIC_345, x=[BUDDY_X], y=[BUDDY_Y]
 	jg [0x13], [0x30], SHARED_RET
@@ -109,6 +111,7 @@ LABEL_5BE4:
 	je [0xF8], 0x00, SHARED_RET
 	video offset=CINEMATIC_346, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
 
 LABEL_5C02:
 	video offset=CINEMATIC_347, x=[BUDDY_X], y=[BUDDY_Y]
@@ -119,11 +122,13 @@ LABEL_5C02:
 	video offset=CINEMATIC_348, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
+
 LABEL_5C20:
 	add [BUDDY_X], 0x0001
 	call PRISON_BUDDY_DRAW_CIN_170_THEN_169_IF_BAR31_3
 	sub [BUDDY_X], 0x0001
 	ret
+
 
 PRISON_BUDDY_DRAW_CIN_170_THEN_169_IF_BAR31_3:
 	video offset=CINEMATIC_170, x=[BUDDY_X], y=[BUDDY_Y]
@@ -140,6 +145,7 @@ LABEL_5C4F:
 	call LABEL_5C5B
 	sub [BUDDY_X], 0x0001
 	ret
+
 
 LABEL_5C5B:
 	video offset=CINEMATIC_334, x=[BUDDY_X], y=[BUDDY_Y]
@@ -166,6 +172,7 @@ LABEL_5CA1:
 	call LABEL_5C4F
 	add [BUDDY_X], 0x0001
 	ret
+
 
 LABEL_5CAD:
 	jne [HACK_VAR_67], [0x10], SHARED_RET

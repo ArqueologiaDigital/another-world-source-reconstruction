@@ -8,4 +8,6 @@ LABEL_447F:
 	call LABEL_006C
 	song id=0x0BC6, delay=0x0000, pos=0x00
 	ret
+
+
 	mov [0xBD], 0x0007

@@ -10,6 +10,8 @@ LABEL_36B5:
 	mov [0x21], [0x22]
 	mov [0x22], [0x26]
 	ret
+
+
 LABEL_36CB:
 	db 0x11
 

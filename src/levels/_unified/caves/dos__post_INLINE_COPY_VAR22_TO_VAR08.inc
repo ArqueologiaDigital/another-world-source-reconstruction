@@ -6,6 +6,7 @@ LABEL_50D0:
 	mov [0x08], [0x22]
 	ret
 
+
 LABEL_50E4:
 	call LABEL_5081
 	shl [0x0E], 0x000C

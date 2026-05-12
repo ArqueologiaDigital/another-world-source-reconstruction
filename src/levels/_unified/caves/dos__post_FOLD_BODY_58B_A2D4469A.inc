@@ -45,6 +45,8 @@ LABEL_5B9E:
 
 LABEL_5BAD:
 	ret
+
+
 LABEL_5BAE:
 	db 0x11
 
@@ -55,12 +57,16 @@ LABEL_5BAF:
 	jne [0x2B], 0x01, LABEL_5BC1
 	ret
 
+
 LABEL_5BC1:
 	ret
+
 
 SET_VAR2F_TO_0000:
 	mov [0x2F], 0x0000
 	ret
+
+
 	and [0x12], 0x1FFF
 	jl [0x12], 0x08, LABEL_5C0A
 	mov [0x2B], [0x12]
@@ -80,6 +86,8 @@ SET_VAR2F_TO_0000:
 
 LABEL_5C0A:
 	ret
+
+
 LABEL_5C0B:
 	db 0x06
 
@@ -150,6 +158,8 @@ LABEL_5CCA:
 
 LABEL_5CD5:
 	ret
+
+
 LABEL_5CD6:
 	db 0x11
 
@@ -247,6 +257,8 @@ LABEL_5E19:
 
 TRIVIAL_RET:
 	ret
+
+
 LABEL_5E43:
 	db 0x11
 
@@ -256,8 +268,11 @@ LABEL_5E44:
 	mov [0x29], [HERO_X]
 	sub [0x29], 0x000A
 	ret
+
+
 	mov [0x2F], 0x0005
 	ret
+
 
 LABEL_5E5B:
 	mov [0x2F], 0x0009

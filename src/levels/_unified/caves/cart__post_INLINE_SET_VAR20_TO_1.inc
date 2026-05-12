@@ -5,6 +5,8 @@ LABEL_A09E:
 
 LABEL_A0AB:
 	ret
+
+
 	killChannel
 	jne [HACK_VAR_67], [0x65], COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65
 	copyVideoPage src=0x03, dst=0xFF

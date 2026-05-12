@@ -18,5 +18,7 @@ LABEL_7EFE:
 
 LABEL_7F02:
 	ret
+
+
 LABEL_7F03:
 	db 0x11

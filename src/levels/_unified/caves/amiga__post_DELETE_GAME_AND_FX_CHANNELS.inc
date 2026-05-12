@@ -3,6 +3,7 @@ LABEL_D518:
 	call SETUP_KILL_CHAN_3B_AT_LANDING
 	ret
 
+
 LABEL_D520:
 	mov [0x23], 0x0001
 	jl [HERO_Y], [0x41], LABEL_D52E
@@ -11,6 +12,7 @@ LABEL_D520:
 LABEL_D52E:
 	ret
 
+
 LABEL_D52F:
 	mov [HERO_Y], [0x40]
 	je [0x23], 0x00, LABEL_D53B
@@ -18,6 +20,7 @@ LABEL_D52F:
 
 LABEL_D53B:
 	ret
+
 
 LABEL_D53C:
 	je [HACK_VAR_67], 0xCC, LABEL_D554
@@ -31,6 +34,7 @@ LABEL_D554:
 	jl [HERO_Y], [0x22], SHARED_RET
 	mov [HERO_Y], [0x22]
 	ret
+
 
 LABEL_D561:
 	setup channel=0x10, address=LABEL_4C8D

@@ -10,6 +10,8 @@ DRAW_CIN_SEQ_085_085_086:
 	video offset=CINEMATIC_086, x=132, y=39
 	video offset=CINEMATIC_086, x=297, y=39
 	ret
+
+
 LABEL_4B8D:
 	db 0x11
 
@@ -22,6 +24,7 @@ LABEL_4B8E:
 	video offset=CINEMATIC_309, x=160, y=100
 	ret
 
+
 LABEL_4BA6:
 	fill page=0x00, color=0x03
 	video offset=CINEMATIC_305, x=160, y=100
@@ -32,6 +35,7 @@ LABEL_4BA6:
 	video offset=CINEMATIC_332, x=160, y=100
 	video offset=CINEMATIC_333, x=160, y=100
 	ret
+
 
 LABEL_4BC6:
 	mov [0x65], 0x0000
@@ -47,6 +51,7 @@ LABEL_4BC6:
 	video offset=CINEMATIC_433, x=160, y=100
 	ret
 
+
 LABEL_4BEF:
 	call LABEL_82D1
 	selectVideoPage 0x00
@@ -56,6 +61,7 @@ LABEL_4BEF:
 	video offset=CINEMATIC_450, x=160, y=100
 	video offset=CINEMATIC_451, x=160, y=100
 	ret
+
 
 LABEL_4C08:
 	mov [0x65], 0x0000
@@ -68,12 +74,14 @@ LABEL_4C08:
 	video offset=CINEMATIC_437, x=160, y=100
 	ret
 
+
 LABEL_4C25:
 	call LABEL_82D1
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
 	video offset=CINEMATIC_ENERGY_TRANSMISSION_LINE, x=160, y=100
 	ret
+
 
 FILL_AND_DRAW_CIN_24_28:
 	fill page=0x00, color=0x00
@@ -89,6 +97,7 @@ FILL_AND_DRAW_CIN_24_28:
 	video offset=CINEMATIC_033, x=160, y=100
 	video offset=CINEMATIC_034, x=160, y=100
 	ret
+
 
 LABEL_4C64:
 	song id=0x0BBD, delay=0x0000, pos=0x00

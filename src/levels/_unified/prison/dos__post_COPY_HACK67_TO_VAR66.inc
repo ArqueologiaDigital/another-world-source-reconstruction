@@ -18,6 +18,7 @@ LABEL_87A7:
 	mov [0x69], 0x0081
 	ret
 
+
 LABEL_87B2:
 	mov [BUDDY_X], [0x68]
 	mov [BUDDY_Y], [0x69]
@@ -42,12 +43,14 @@ LABEL_87B2:
 	mov [0x7A], [0x10]
 	ret
 
+
 LABEL_87F2:
 	jg [HERO_X], 0x0A, SHARED_RET
 	jg [BUDDY_X], 0x28, LABEL_8809
 	jne [0x10], [HACK_VAR_67], LABEL_8809
 	mov [BUDDY_X], 0x002A
 	ret
+
 
 LABEL_8809:
 	jl [BUDDY_X], 0x0140, SHARED_RET

@@ -3,75 +3,91 @@ LABEL_03B9:
 	text id=0x0160, x=26, y=180, color=0x0F ; "CLLD"
 	ret
 
+
 LABEL_03C6:
 	jne [0x00], 0x1F, LABEL_03D3
 	text id=0x0164, x=26, y=180, color=0x0F ; "LBKG"
 	ret
+
 
 LABEL_03D3:
 	jne [0x00], 0x21, LABEL_03E0
 	text id=0x0163, x=26, y=180, color=0x0F ; "XDDJ"
 	ret
 
+
 LABEL_03E0:
 	jne [0x00], 0x23, LABEL_03ED
 	text id=0x0161, x=26, y=180, color=0x0F ; "FXLC"
 	ret
+
 
 LABEL_03ED:
 	jne [0x00], 0x25, LABEL_03FA
 	text id=0x0162, x=26, y=180, color=0x0F ; "KRFK"
 	ret
 
+
 LABEL_03FA:
 	jne [0x00], 0x27, LABEL_0407
 	text id=0x0165, x=26, y=180, color=0x0F ; "KLFB"
 	ret
+
 
 LABEL_0407:
 	jne [0x00], 0x29, LABEL_0414
 	text id=0x0166, x=26, y=180, color=0x0F ; "TTCT"
 	ret
 
+
 LABEL_0414:
 	jne [0x00], 0x2A, LABEL_0421
 	text id=0x0167, x=26, y=180, color=0x0F ; "DDRX"
 	ret
+
 
 LABEL_0421:
 	jne [0x00], 0x2B, LABEL_042E
 	text id=0x0168, x=26, y=180, color=0x0F ; "TBHK"
 	ret
 
+
 LABEL_042E:
 	jne [0x00], 0x2C, LABEL_043B
 	text id=0x016C, x=26, y=180, color=0x0F ; "BFLX"
 	ret
+
 
 LABEL_043B:
 	jne [0x00], 0x2D, LABEL_0448
 	text id=0x016D, x=26, y=180, color=0x0F ; "XJRT"
 	ret
 
+
 LABEL_0448:
 	jne [0x00], 0x2E, LABEL_0455
 	text id=0x016E, x=26, y=180, color=0x0F ; "HRTB"
 	ret
+
 
 LABEL_0455:
 	jne [0x00], 0x2F, LABEL_0462
 	text id=0x016F, x=26, y=180, color=0x0F ; "HBHK"
 	ret
 
+
 LABEL_0462:
 	jne [0x00], 0x30, LABEL_046F
 	text id=0x0170, x=26, y=180, color=0x0F ; "JCGB"
 	ret
 
+
 LABEL_046F:
 	jne [0x00], 0x31, SHARED_RET
 	text id=0x0169, x=26, y=180, color=0x0F ; "BRTD"
 	ret
+
+
 LABEL_047C:
 	db 0x11
 
@@ -82,6 +98,7 @@ SETUP_VAR8B_6E_VAR97_B7_VAR96_0:
 	mov [0x97], 0x00B7
 	or [0x97], 0x4000
 	ret
+
 
 LABEL_0492:
 	break

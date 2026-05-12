@@ -5,6 +5,7 @@ LABEL_7B89:
 	call LABEL_79DD
 	ret
 
+
 LABEL_7B98:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, LABEL_7BAA
@@ -20,6 +21,7 @@ LABEL_7BAF:
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	call LABEL_79FE
 	ret
+
 
 LABEL_7BBE:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -39,6 +41,7 @@ LABEL_7BD5:
 	sub [BUDDY_X], 0x0001
 	ret
 
+
 LABEL_7BEC:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, LABEL_7BFE
@@ -54,6 +57,7 @@ LABEL_7C03:
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	call LABEL_79BC
 	ret
+
 
 LABEL_7C12:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -73,6 +77,7 @@ LABEL_7C2F:
 	play id=0x0055, freq=0x14, vol=0x14, channel=0x00
 	ret
 
+
 LABEL_7C44:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, LABEL_7C53
@@ -84,6 +89,7 @@ LABEL_7C53:
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	call LABEL_797A
 	ret
+
 
 LABEL_7C62:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -97,6 +103,7 @@ LABEL_7C71:
 	call LABEL_795D
 	ret
 
+
 LABEL_7C80:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, LABEL_7C8F
@@ -108,6 +115,7 @@ LABEL_7C8F:
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	call LABEL_793C
 	ret
+
 
 LABEL_7C9E:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -121,6 +129,7 @@ LABEL_7CAD:
 	call LABEL_7902
 	ret
 
+
 GUARDED_DRAW_CV_304_305:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, LABEL_7CCB
@@ -132,6 +141,7 @@ LABEL_7CCB:
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	call LABEL_793C
 	ret
+
 
 LABEL_7CDA:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -145,6 +155,7 @@ LABEL_7CE9:
 	call LABEL_795D
 	ret
 
+
 LABEL_7CF8:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, LABEL_7D07
@@ -156,6 +167,8 @@ LABEL_7D07:
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	call LABEL_797A
 	ret
+
+
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video offset=CINEMATIC_702, x=[BUDDY_X], y=[BUDDY_Y]
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -163,6 +176,7 @@ LABEL_7D07:
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	call LABEL_795D
 	ret
+
 
 LABEL_7D30:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -173,6 +187,7 @@ LABEL_7D30:
 	video offset=CINEMATIC_293, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
+
 LABEL_7D4C:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video type=0, offset=COMMON_VIDEO_216, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
@@ -182,11 +197,13 @@ LABEL_7D4C:
 	video offset=CINEMATIC_294, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
+
 LABEL_7D68:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video offset=CINEMATIC_309, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
 
 LABEL_7D77:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -194,17 +211,20 @@ LABEL_7D77:
 	video offset=CINEMATIC_310, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
+
 LABEL_7D86:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video offset=CINEMATIC_317, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
+
 LABEL_7D95:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video offset=CINEMATIC_318, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
 
 JUNK__7DA4:
 	call LABEL_8C16

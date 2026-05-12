@@ -39,6 +39,7 @@ DRAW_CIN_084_THEN_CIN_084:
 	video offset=CINEMATIC_084, x=16, y=184
 	ret
 
+
 JUNK__717B:
 	video offset=CINEMATIC_084, x=160, y=19
 	break
@@ -170,6 +171,7 @@ LABEL_72BC:
 	mov [0x23], 0x0000
 	call LABEL_72CA
 	ret
+
 
 LABEL_72CA:
 	je [HACK_VAR_67], 0x4D, SHARED_RET

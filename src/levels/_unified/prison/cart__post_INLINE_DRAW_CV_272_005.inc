@@ -4,6 +4,7 @@ LABEL_5B52:
 	call LABEL_555A
 	ret
 
+
 LABEL_5B5E:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	add [BUDDY_Y], 0x0001

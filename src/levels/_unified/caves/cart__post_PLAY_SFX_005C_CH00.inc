@@ -15,11 +15,13 @@ LABEL_689C:
 	setup channel=0x14, address=LABEL_4B41
 	ret
 
+
 LABEL_68DC:
 	setup channel=0x14, address=LABEL_4A5B
 	jl [0xF8], 0x10, SHARED_RET
 	setup channel=0x14, address=LABEL_4A82
 	ret
+
 
 LABEL_68EB:
 	call LABEL_695F
@@ -53,21 +55,25 @@ LABEL_6947:
 	mov [0x13], 0xFFFF
 	ret
 
+
 LABEL_6953:
 	or [0x2B], 0x4000
 	call LABEL_697E
 	mov [0x13], 0xFFFF
 	ret
 
+
 LABEL_695F:
 	jne [0x1D], 0x28, LABEL_6969
 	mov [0x2B], [0x6B]
 	ret
 
+
 LABEL_6969:
 	jne [0x1D], 0x29, LABEL_6973
 	mov [0x2B], [0x73]
 	ret
+
 
 LABEL_6973:
 	jne [0x1D], 0x2A, LABEL_697C
@@ -75,6 +81,8 @@ LABEL_6973:
 
 LABEL_697C:
 	ret
+
+
 LABEL_697D:
 	db 0x11
 
@@ -83,10 +91,12 @@ LABEL_697E:
 	mov [0x6B], [0x2B]
 	ret
 
+
 LABEL_6988:
 	jne [0x1D], 0x29, LABEL_6992
 	mov [0x73], [0x2B]
 	ret
+
 
 LABEL_6992:
 	jne [0x1D], 0x2A, LABEL_699B
@@ -94,6 +104,8 @@ LABEL_6992:
 
 LABEL_699B:
 	ret
+
+
 	killChannel
 	video offset=CINEMATIC_884, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
@@ -128,6 +140,7 @@ LABEL_69E6:
 	jne [0x13], 0xFFFF, LABEL_69F8
 	ret
 
+
 LABEL_69F8:
 	and [0x13], 0x7FFF
 	mov [0x0E], 0x0000
@@ -137,6 +150,8 @@ LABEL_69F8:
 	je [0x0E], 0x00, SHARED_RET
 	or [0x27], 0x4000
 	ret
+
+
 LABEL_6A16:
 	db 0x11
 
@@ -146,6 +161,8 @@ LABEL_6A17:
 	call LABEL_6733
 	jne [0x13], 0xFFFF, LABEL_6A2A
 	ret
+
+
 LABEL_6A29:
 	db 0x11
 
@@ -159,6 +176,7 @@ LABEL_6A2A:
 	or [0x27], 0x4000
 	ret
 
+
 LABEL_6A48:
 	jge [0x13], 0x64, LABEL_6A94
 	jle [0x13], 0x03, LABEL_6A76
@@ -167,28 +185,34 @@ LABEL_6A48:
 	mov [0x13], 0xFFFE
 	ret
 
+
 LABEL_6A64:
 	jle [0x13], 0x04, DRAW_CIN_792
 	video offset=CINEMATIC_793, x=[0x21], y=[0x27]
 	ret
 
+
 DRAW_CIN_792:
 	video offset=CINEMATIC_792, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6A76:
 	jle [0x13], 0x02, LABEL_6A82
 	video offset=CINEMATIC_791, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6A82:
 	jle [0x13], 0x01, DRAW_CIN_789
 	video offset=CINEMATIC_790, x=[0x21], y=[0x27]
 	ret
 
+
 DRAW_CIN_789:
 	video offset=CINEMATIC_789, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6A94:
 	jge [0x13], 0xC8, LABEL_6BA7
@@ -203,50 +227,60 @@ LABEL_6A94:
 	video offset=CINEMATIC_788, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6AC7:
 	jne [0x13], 0x6F, LABEL_6AD3
 	video offset=CINEMATIC_787, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6AD3:
 	jne [0x13], 0x70, LABEL_6ADF
 	video offset=CINEMATIC_786, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6ADF:
 	jne [0x13], 0x71, LABEL_6AEB
 	video offset=CINEMATIC_785, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6AEB:
 	jne [0x13], 0x72, LABEL_6AF7
 	video offset=CINEMATIC_784, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6AF7:
 	jne [0x13], 0x73, LABEL_6B03
 	video offset=CINEMATIC_783, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6B03:
 	jne [0x13], 0x74, LABEL_6B0F
 	video offset=CINEMATIC_782, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6B0F:
 	jne [0x13], 0x75, LABEL_6B1B
 	video offset=CINEMATIC_781, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6B1B:
 	jne [0x13], 0x76, LABEL_6B27
 	video offset=CINEMATIC_780, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6B27:
 	video offset=CINEMATIC_779, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
+
 
 LABEL_6B31:
 	jne [0x13], 0x81, LABEL_6B43
@@ -254,40 +288,48 @@ LABEL_6B31:
 	video offset=CINEMATIC_778, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6B43:
 	jne [0x13], 0x82, LABEL_6B4F
 	video offset=CINEMATIC_777, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6B4F:
 	jne [0x13], 0x83, LABEL_6B5B
 	video offset=CINEMATIC_776, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6B5B:
 	jne [0x13], 0x84, LABEL_6B67
 	video offset=CINEMATIC_775, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6B67:
 	jne [0x13], 0x85, LABEL_6B73
 	video offset=CINEMATIC_774, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6B73:
 	jne [0x13], 0x86, LABEL_6B7F
 	video offset=CINEMATIC_773, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6B7F:
 	jne [0x13], 0x87, LABEL_6B8B
 	video offset=CINEMATIC_772, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6B8B:
 	jne [0x13], 0x88, LABEL_6B97
 	video offset=CINEMATIC_771, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6B97:
 	jne [0x13], 0x89, LABEL_6BA7
@@ -295,8 +337,11 @@ LABEL_6B97:
 	mov [0x13], 0xFFFE
 	ret
 
+
 LABEL_6BA7:
 	ret
+
+
 LABEL_6BA8:
 	db 0x11
 
@@ -308,28 +353,34 @@ LABEL_6BA9:
 	mov [0x13], 0xFFFE
 	ret
 
+
 LABEL_6BC5:
 	jle [0x13], 0x04, DRAW_CIN_834
 	video offset=CINEMATIC_835, x=[0x21], y=[0x27]
 	ret
 
+
 DRAW_CIN_834:
 	video offset=CINEMATIC_834, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6BD7:
 	jle [0x13], 0x02, LABEL_6BE3
 	video offset=CINEMATIC_833, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6BE3:
 	jle [0x13], 0x01, DRAW_CIN_831
 	video offset=CINEMATIC_832, x=[0x21], y=[0x27]
 	ret
 
+
 DRAW_CIN_831:
 	video offset=CINEMATIC_831, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6BF5:
 	jge [0x13], 0xC8, LABEL_6D08
@@ -344,50 +395,60 @@ LABEL_6BF5:
 	video offset=CINEMATIC_788, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6C28:
 	jne [0x13], 0x6F, LABEL_6C34
 	video offset=CINEMATIC_830, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6C34:
 	jne [0x13], 0x70, LABEL_6C40
 	video offset=CINEMATIC_829, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6C40:
 	jne [0x13], 0x71, LABEL_6C4C
 	video offset=CINEMATIC_828, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6C4C:
 	jne [0x13], 0x72, LABEL_6C58
 	video offset=CINEMATIC_827, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6C58:
 	jne [0x13], 0x73, LABEL_6C64
 	video offset=CINEMATIC_826, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6C64:
 	jne [0x13], 0x74, LABEL_6C70
 	video offset=CINEMATIC_825, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6C70:
 	jne [0x13], 0x75, LABEL_6C7C
 	video offset=CINEMATIC_824, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6C7C:
 	jne [0x13], 0x76, LABEL_6C88
 	video offset=CINEMATIC_823, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6C88:
 	video offset=CINEMATIC_822, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
+
 
 LABEL_6C92:
 	jne [0x13], 0x81, LABEL_6CA4
@@ -395,40 +456,48 @@ LABEL_6C92:
 	video offset=CINEMATIC_778, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6CA4:
 	jne [0x13], 0x82, LABEL_6CB0
 	video offset=CINEMATIC_777, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6CB0:
 	jne [0x13], 0x83, LABEL_6CBC
 	video offset=CINEMATIC_776, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6CBC:
 	jne [0x13], 0x84, LABEL_6CC8
 	video offset=CINEMATIC_775, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6CC8:
 	jne [0x13], 0x85, LABEL_6CD4
 	video offset=CINEMATIC_774, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6CD4:
 	jne [0x13], 0x86, LABEL_6CE0
 	video offset=CINEMATIC_773, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6CE0:
 	jne [0x13], 0x87, LABEL_6CEC
 	video offset=CINEMATIC_772, x=[0x21], y=[0x27]
 	ret
 
+
 LABEL_6CEC:
 	jne [0x13], 0x88, LABEL_6CF8
 	video offset=CINEMATIC_771, x=[0x21], y=[0x27]
 	ret
+
 
 LABEL_6CF8:
 	jne [0x13], 0x89, LABEL_6D08
@@ -436,8 +505,11 @@ LABEL_6CF8:
 	mov [0x13], 0xFFFE
 	ret
 
+
 LABEL_6D08:
 	ret
+
+
 LABEL_6D09:
 	db 0x11
 
@@ -451,6 +523,7 @@ LABEL_6D0A:
 	jne [0x1D], 0x00, LABEL_6D7A
 	video offset=CINEMATIC_769, x=[0x22], y=[0x27]
 	ret
+
 
 LABEL_6D2A:
 	mov [0x22], [0x21]
@@ -473,6 +546,7 @@ LABEL_6D42:
 	jne [0x1D], 0x00, LABEL_6D7A
 	video offset=CINEMATIC_769, x=[0x22], y=[0x27]
 	ret
+
 
 LABEL_6D62:
 	mov [0x22], [0x21]
@@ -499,6 +573,7 @@ CALL_LABEL_6ED8_AND_RET:
 	call LABEL_6ED8
 	ret
 
+
 LABEL_6DA8:
 	call LABEL_68EB
 	mov [0x13], 0xFFFE
@@ -513,6 +588,8 @@ LABEL_6DB9:
 	mov [0x11], 0xFFFF
 	call LABEL_6F36
 	ret
+
+
 LABEL_6DC7:
 	db 0x11
 

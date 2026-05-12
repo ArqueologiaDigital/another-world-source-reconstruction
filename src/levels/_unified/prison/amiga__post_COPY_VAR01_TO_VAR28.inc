@@ -7,6 +7,8 @@ LABEL_4813:
 	mov [HERO_X], [0x22]
 	mov [0x28], [HERO_X]
 	ret
+
+
 LABEL_482C:
 	db 0x11
 
@@ -43,6 +45,7 @@ LABEL_4864:
 	call LABEL_495B
 	ret
 
+
 LABEL_488C:
 	je [0x23], 0x00, LABEL_48A2
 	jl [0x46], [0x22], LABEL_48AF
@@ -69,6 +72,7 @@ LABEL_48AF:
 	mov [0x1C], 0x000C
 	call LABEL_48D7
 	ret
+
 
 LABEL_48D7:
 	jge [0x25], 0x2000, LABEL_495A
@@ -109,6 +113,7 @@ LABEL_493A:
 
 LABEL_495A:
 	ret
+
 
 LABEL_495B:
 	jge [0x25], 0x2000, LABEL_49C8

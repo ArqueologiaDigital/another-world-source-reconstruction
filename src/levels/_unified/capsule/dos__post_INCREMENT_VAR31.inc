@@ -67,6 +67,7 @@ LABEL_2E9D:
 	setPalette 0x00
 	ret
 
+
 LABEL_2EAE:
 	jl [0xF8], 0x08, LABEL_2EBB
 	sub [0xB8], 0x0001
@@ -109,6 +110,7 @@ LABEL_2F08:
 	jl [0xB8], 0x09, SHARED_RET
 	mov [0xB8], 0x0009
 	ret
+
 
 LABEL_2F13:
 	break

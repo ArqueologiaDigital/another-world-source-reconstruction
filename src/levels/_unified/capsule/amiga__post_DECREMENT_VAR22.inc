@@ -49,6 +49,7 @@ LABEL_5195:
 	sub [0x21], 0x0002
 	ret
 
+
 LABEL_51BD:
 	jne [0x27], 0x03, LABEL_51CF
 	video offset=CINEMATIC_088, x=[0x21], y=[0x26]

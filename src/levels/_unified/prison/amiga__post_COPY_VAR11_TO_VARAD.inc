@@ -7,6 +7,7 @@ LABEL_4084:
 	mov [0x11], [0x49]
 	ret
 
+
 LABEL_4091:
 	jne [0x1D], 0x0B, LABEL_40A8
 	mov [0x10], [0x4A]
@@ -15,6 +16,7 @@ LABEL_4091:
 	mov [0xB2], 0x0001
 	ret
 
+
 LABEL_40A8:
 	jne [0x1D], 0x0C, LABEL_40B4
 	mov [0x10], [0x4C]
@@ -22,6 +24,8 @@ LABEL_40A8:
 
 LABEL_40B4:
 	ret
+
+
 LABEL_40B5:
 	db 0x11
 
@@ -30,10 +34,12 @@ LABEL_40B6:
 	mov [0x49], [0x11]
 	ret
 
+
 LABEL_40C0:
 	jne [0x1D], 0x0B, LABEL_40CA
 	mov [0x4B], [0x11]
 	ret
+
 
 LABEL_40CA:
 	jne [0x1D], 0x0C, LABEL_40D3
@@ -41,6 +47,8 @@ LABEL_40CA:
 
 LABEL_40D3:
 	ret
+
+
 LABEL_40D4:
 	db 0x11
 
@@ -78,6 +86,7 @@ LABEL_411C:
 
 LABEL_4122:
 	ret
+
 
 LABEL_4123:
 	call PROJECT_POS_VAR04_OR_7E81
@@ -150,6 +159,7 @@ LABEL_41BD:
 LABEL_41C9:
 	ret
 
+
 LABEL_41CA:
 	sub [0xF8], 0x000A
 	jl [0x21], [0xF8], SHARED_RET
@@ -157,6 +167,7 @@ LABEL_41CA:
 	jg [0x21], [0xF8], SHARED_RET
 	mov [0xF8], 0x0FA0
 	ret
+
 
 LABEL_41E3:
 	jl [0xA1], 0x00, LABEL_41FB

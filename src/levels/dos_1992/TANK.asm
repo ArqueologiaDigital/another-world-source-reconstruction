@@ -371,6 +371,7 @@ LABEL_009D:
 	load id=0x005B
 	ret
 
+
 SETUP_TANK_HERO_VARS_PLAY_4SFX:
 	mov [0x01], 0x00AA
 	mov [0x02], 0x0064
@@ -1105,6 +1106,7 @@ TANK_AUTO_TRIGGER_HERO_ACTION_IF_VAR_DB_SET:
 	mov [HERO_ACTION], 0x0001
 	ret
 
+
 TANK_WAIT_VAR63_THEN_RESET_PAGES_AND_UNFREEZE:
 	break
 	je [0x63], 0x00, TANK_WAIT_VAR63_THEN_RESET_PAGES_AND_UNFREEZE
@@ -1206,6 +1208,7 @@ LABEL_094C:
 	je [0x5F], 0x12, TANK_APPLY_BOTH_AXES_INPUT_TO_TURRET
 	ret
 
+
 LABEL_09B9:
 	je [0x5F], 0x0B, TANK_NOOP_RET
 	je [0x5F], 0x13, TANK_NOOP_RET
@@ -1227,39 +1230,49 @@ LABEL_09C8:
 	je [0x5F], 0x19, COPY_VAR62_TO_VAR5F
 	ret
 
+
 TANK_SET_VAR5F_TO_22_OR_1B_PER_VAR62:
 	je [0x62], 0x22, SET_VAR5F_TO_001B
 	mov [0x5F], 0x0022
 	ret
 
+
 SET_VAR5F_TO_001B:
 	mov [0x5F], 0x001B
 	ret
+
+
 	je [0x62], 0x02, INCREMENT_VAR5F_BY_8
 	mov [0x5F], 0x0002
 	ret
 
+
 INCREMENT_VAR5F_BY_8:
 	add [0x5F], 0x0008
 	ret
+
 
 SET_VAR5F_14_OR_COPY_VAR62:
 	jne [0x62], 0x16, COPY_VAR62_TO_VAR5F
 	mov [0x5F], 0x000E
 	ret
 
+
 SET_VAR5F_TO_0018:
 	mov [0x5F], 0x0018
 	ret
+
 
 TANK_SET_VAR5F_TO_0E_IF_VAR62_EQ_15:
 	jne [0x62], 0x15, TANK_APPLY_BOTH_AXES_INPUT_TO_TURRET
 	mov [0x5F], 0x000E
 	ret
 
+
 SET_VAR5F_TO_0016:
 	mov [0x5F], 0x0016
 	ret
+
 
 ; Combined L/R + U/D input apply in one shot. Adds
 ; HERO_POS_LEFT_RIGHT and (HERO_POS_UP_DOWN << 3) to var5F
@@ -1274,6 +1287,7 @@ TANK_APPLY_BOTH_AXES_INPUT_TO_TURRET:
 COPY_VAR62_TO_VAR5F:
 	mov [0x5F], [0x62]
 	ret
+
 
 ; Pre-dispatch input processor for horizontal turret
 ; movement. Checks for special angle latches (var62 ==
@@ -1309,11 +1323,13 @@ SET_VAR5A_5B_INIT_OR_CONTINUE:
 	mov [0x5B], 0x0019
 	ret
 
+
 LABEL_0AAC:
 	jne [0x59], 0x01, LABEL_0ABB
 	mov [0x5A], 0x0026
 	mov [0x5B], 0x001B
 	ret
+
 
 LABEL_0ABB:
 	jne [0x59], 0x02, LABEL_0ACA
@@ -1321,11 +1337,13 @@ LABEL_0ABB:
 	mov [0x5B], 0x001E
 	ret
 
+
 LABEL_0ACA:
 	jne [0x59], 0x0E, LABEL_0AD9
 	mov [0x5A], 0x004A
 	mov [0x5B], 0x002B
 	ret
+
 
 LABEL_0AD9:
 	jne [0x59], 0x08, LABEL_0AE8
@@ -1333,11 +1351,13 @@ LABEL_0AD9:
 	mov [0x5B], 0x001F
 	ret
 
+
 LABEL_0AE8:
 	jne [0x59], 0x09, LABEL_0AF7
 	mov [0x5A], 0x0026
 	mov [0x5B], 0x0021
 	ret
+
 
 LABEL_0AF7:
 	jne [0x59], 0x0B, LABEL_0B06
@@ -1345,11 +1365,13 @@ LABEL_0AF7:
 	mov [0x5B], 0x0027
 	ret
 
+
 LABEL_0B06:
 	jne [0x59], 0x0C, LABEL_0B15
 	mov [0x5A], 0x0035
 	mov [0x5B], 0x002A
 	ret
+
 
 LABEL_0B15:
 	jne [0x59], 0x10, LABEL_0B24
@@ -1357,11 +1379,13 @@ LABEL_0B15:
 	mov [0x5B], 0x0025
 	ret
 
+
 LABEL_0B24:
 	jne [0x59], 0x11, LABEL_0B33
 	mov [0x5A], 0x0026
 	mov [0x5B], 0x0027
 	ret
+
 
 LABEL_0B33:
 	jne [0x59], 0x12, LABEL_0B42
@@ -1369,11 +1393,13 @@ LABEL_0B33:
 	mov [0x5B], 0x002A
 	ret
 
+
 LABEL_0B42:
 	jne [0x59], 0x13, LABEL_0B51
 	mov [0x5A], 0x0031
 	mov [0x5B], 0x0030
 	ret
+
 
 LABEL_0B51:
 	jne [0x59], 0x14, LABEL_0B60
@@ -1381,11 +1407,13 @@ LABEL_0B51:
 	mov [0x5B], 0x0032
 	ret
 
+
 LABEL_0B60:
 	jne [0x59], 0x15, LABEL_0B6F
 	mov [0x5A], 0x0040
 	mov [0x5B], 0x0035
 	ret
+
 
 LABEL_0B6F:
 	jne [0x59], 0x16, LABEL_0B7E
@@ -1393,11 +1421,13 @@ LABEL_0B6F:
 	mov [0x5B], 0x0036
 	ret
 
+
 LABEL_0B7E:
 	jne [0x59], 0x18, LABEL_0B8D
 	mov [0x5A], 0x0022
 	mov [0x5B], 0x002C
 	ret
+
 
 LABEL_0B8D:
 	jne [0x59], 0x19, LABEL_0B9C
@@ -1405,11 +1435,13 @@ LABEL_0B8D:
 	mov [0x5B], 0x002D
 	ret
 
+
 LABEL_0B9C:
 	jne [0x59], 0x1A, LABEL_0BAB
 	mov [0x5A], 0x002A
 	mov [0x5B], 0x0033
 	ret
+
 
 LABEL_0BAB:
 	jne [0x59], 0x1B, LABEL_0BBA
@@ -1417,11 +1449,13 @@ LABEL_0BAB:
 	mov [0x5B], 0x0038
 	ret
 
+
 LABEL_0BBA:
 	jne [0x59], 0x1C, LABEL_0BC9
 	mov [0x5A], 0x0035
 	mov [0x5B], 0x003A
 	ret
+
 
 LABEL_0BC9:
 	jne [0x59], 0x1D, LABEL_0BD8
@@ -1429,11 +1463,13 @@ LABEL_0BC9:
 	mov [0x5B], 0x003B
 	ret
 
+
 LABEL_0BD8:
 	jne [0x59], 0x21, LABEL_0BE7
 	mov [0x5A], 0x0026
 	mov [0x5B], 0x0035
 	ret
+
 
 LABEL_0BE7:
 	jne [0x59], 0x22, TANK_NOOP_RET
@@ -1441,11 +1477,13 @@ LABEL_0BE7:
 	mov [0x5B], 0x003B
 	ret
 
+
 DRAW_CIN_SEQ_165_166_167:
 	video offset=CINEMATIC_165, x=[0x60], y=[0x61]
 	video offset=CINEMATIC_166, x=[0x5d], y=[0x5e]
 	video offset=CINEMATIC_167, x=160, y=100
 	ret
+
 
 ; Continuous-render channel. While var5C == 0xFFFF (the
 ; "no-target-yet" sentinel), copies var60→var5D, var61→
@@ -1526,25 +1564,30 @@ LABEL_0C94:
 	setup channel=0x06, address=TANK_DRAW_CIN_164_AT_43_40_PAGE_0_THEN_FF
 	ret
 
+
 LABEL_0CC1:
 	jne [0x59], 0x00, LABEL_0CCC
 	mov [0x63], 0x0001
 	ret
+
 
 LABEL_0CCC:
 	jne [0x59], 0x01, LABEL_0CD7
 	mov [0x57], 0x0001
 	ret
 
+
 LABEL_0CD7:
 	jne [0x59], 0x02, LABEL_0CE2
 	mov [0x47], 0x0001
 	ret
 
+
 LABEL_0CE2:
 	jne [0x59], 0x0E, LABEL_0CED
 	mov [0x57], 0x0001
 	ret
+
 
 LABEL_0CED:
 	jne [0x59], 0x08, LABEL_0D19
@@ -1557,11 +1600,13 @@ LABEL_0CED:
 	mov [0x71], 0x0000
 	ret
 
+
 LABEL_0D0E:
 	video offset=CINEMATIC_172, x=35, y=31
 	selectVideoPage 0xFF
 	mov [0x71], 0x0001
 	ret
+
 
 LABEL_0D19:
 	jne [0x59], 0x09, LABEL_0D3D
@@ -1572,21 +1617,25 @@ LABEL_0D19:
 	selectVideoPage 0xFF
 	ret
 
+
 LABEL_0D32:
 	video offset=CINEMATIC_170, x=39, y=33
 	mov [0x74], 0x0001
 	selectVideoPage 0xFF
 	ret
 
+
 LABEL_0D3D:
 	jne [0x59], 0x0B, LABEL_0D47
 	call DRAW_CIN_122_ON_PAGE_0
 	ret
 
+
 LABEL_0D47:
 	jne [0x59], 0x0C, LABEL_0D52
 	add [0x4F], 0x000A
 	ret
+
 
 LABEL_0D52:
 	jne [0x59], 0x10, LABEL_0D76
@@ -1597,11 +1646,13 @@ LABEL_0D52:
 	mov [0x72], 0x0000
 	ret
 
+
 LABEL_0D6B:
 	video offset=CINEMATIC_172, x=35, y=37
 	selectVideoPage 0xFF
 	mov [0x72], 0x0001
 	ret
+
 
 LABEL_0D76:
 	jne [0x59], 0x11, LABEL_0D9A
@@ -1612,35 +1663,43 @@ LABEL_0D76:
 	mov [0x75], 0x0000
 	ret
 
+
 LABEL_0D8F:
 	video offset=CINEMATIC_170, x=39, y=39
 	selectVideoPage 0xFF
 	mov [0x75], 0x0001
 	ret
 
+
 LABEL_0D9A:
 	jne [0x59], 0x13, LABEL_0DA4
 	call TANK_SCENE_DRAW_CIN_169_IF_VAR_67_LE_2
 	ret
+
 
 LABEL_0DA4:
 	jne [0x59], 0x14, LABEL_0DAF
 	add [0x37], 0x0001
 	ret
 
+
 LABEL_0DAF:
 	jne [0x59], 0x15, LABEL_0DBA
 	mov [0x3E], 0x000A
 	ret
+
 
 LABEL_0DBA:
 	jne [0x59], 0x16, LABEL_0DC5
 	mov [0x56], 0x0001
 	ret
 
+
 LABEL_0DC5:
 	jne [0x59], 0x18, LABEL_0DDF
 	ret
+
+
 	selectVideoPage 0x00
 	video offset=CINEMATIC_172, x=39, y=29
 	selectVideoPage 0xFF
@@ -1648,39 +1707,47 @@ LABEL_0DC5:
 	mov [HACK_VAR_67], 0x0005
 	ret
 
+
 LABEL_0DDF:
 	jne [0x59], 0x19, LABEL_0DEA
 	mov [0x47], 0x0001
 	ret
+
 
 LABEL_0DEA:
 	jne [0x59], 0x1A, LABEL_0DF4
 	call TANK_SCENE_DRAW_CIN_168_IF_VAR_67_LT_3
 	ret
 
+
 LABEL_0DF4:
 	jne [0x59], 0x1B, LABEL_0DFF
 	add [0x41], 0x000A
 	ret
+
 
 LABEL_0DFF:
 	jne [0x59], 0x1C, LABEL_0E0A
 	add [0x37], 0x000A
 	ret
 
+
 LABEL_0E0A:
 	jne [0x59], 0x1D, LABEL_0E15
 	mov [0x47], 0x0001
 	ret
 
+
 LABEL_0E15:
 	jne [0x59], 0x21, LABEL_0E1C
 	ret
+
 
 LABEL_0E1C:
 	jne [0x59], 0x12, TANK_NOOP_RET
 	mov [0x63], 0x0001
 	ret
+
 
 TANK_DRAW_CIN_225_AT_160_100_FOREVER:
 	video offset=CINEMATIC_225, x=160, y=100
@@ -2078,6 +2145,7 @@ SUM_HASH_VARS_TO_VAR_64:
 	and [0x65], 0x00FF
 	ret
 
+
 INIT_TANK_DRIVE_VARS:
 	mov [0x0F], 0x008C
 	mov [0x10], 0x0064
@@ -2108,6 +2176,7 @@ INIT_TANK_DRIVE_VARS:
 	mov [0x75], 0x0000
 	mov [0x76], 0x0000
 	ret
+
 
 TANK_BG_DRAW_CIN_038_AT_6_126_AFTER_3_BREAKS:
 	break
@@ -2269,6 +2338,7 @@ TANK_DRAW_CIN_150_151_PAIR_IF_GUARDS_PASS:
 	video offset=CINEMATIC_151, x=[0x39], y=[0x3a]
 	ret
 
+
 TANK_DRAW_CIN_152_153_PAIR_IF_GUARDS_PASS:
 	video offset=CINEMATIC_152, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, TANK_NOOP_RET
@@ -2276,12 +2346,14 @@ TANK_DRAW_CIN_152_153_PAIR_IF_GUARDS_PASS:
 	video offset=CINEMATIC_153, x=[0x39], y=[0x3a]
 	ret
 
+
 TANK_DRAW_CIN_154_155_PAIR_IF_GUARDS_PASS:
 	video offset=CINEMATIC_154, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, TANK_NOOP_RET
 	jne [0x45], 0x00, TANK_NOOP_RET
 	video offset=CINEMATIC_155, x=[0x39], y=[0x3a]
 	ret
+
 
 ; Two-frame conditional draws: draw the first frame, check
 ; guards (var37 > 0 = events-remaining, var45 == 0 = not-
@@ -2295,6 +2367,7 @@ TANK_DRAW_CIN_156_157_PAIR_IF_GUARDS_PASS:
 	video offset=CINEMATIC_157, x=[0x39], y=[0x3a]
 	ret
 
+
 ; Two-frame conditional draws: draw the first frame, check
 ; guards (var37 > 0 = events-remaining, var45 == 0 = not-
 ; busy); if either guard fails, bail to TANK_NOOP_RET;
@@ -2307,12 +2380,14 @@ TANK_DRAW_CIN_158_159_PAIR_IF_GUARDS_PASS:
 	video offset=CINEMATIC_159, x=[0x39], y=[0x3a]
 	ret
 
+
 LABEL_1528:
 	video offset=CINEMATIC_160, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, TANK_NOOP_RET
 	jne [0x45], 0x00, TANK_NOOP_RET
 	video offset=CINEMATIC_161, x=[0x39], y=[0x3a]
 	ret
+
 
 ; Top label (12 callers). Pattern: bail if var37 counter <=
 ; 0 (no events left in pool) or var45 busy-flag set;
@@ -2348,6 +2423,7 @@ TANK_SPAWN_RANDOM_EVENT_FROM_VAR37_POOL:
 INCREMENT_VAR44_BY_37:
 	add [0x44], 0x0037
 	ret
+
 
 ; Another shot-anim, gated by var45 instead. Plays sound
 ; 0x008C and draws CINEMATIC_082-085 at (var42, var43) zoom
@@ -2419,6 +2495,7 @@ LABEL_1606:
 	and [0x4D], 0x000F
 	add [0x4D], 0x0037
 	ret
+
 
 ; Wait-on-var4E variant of the shot-anim family. Plays
 ; sound 0x008C, then draws CINEMATIC_200/201/202/203 at
@@ -2739,6 +2816,7 @@ PROJECT_AND_DRAW_TWICE_Y_PLUS_9:
 	call DRAW_CIN_221_IF_VAR06_EQ_1
 	ret
 
+
 TANK_RESTORE_VARS_04_TO_09_FROM_14_TO_19:
 	mov [0x07], [0x14]
 	mov [0x08], [0x15]
@@ -2812,65 +2890,78 @@ DRAW_CIN_221_IF_VAR06_EQ_1:
 	video offset=CINEMATIC_220, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 LABEL_1A3D:
 	jne [0x06], 0x02, LABEL_1A4A
 	video offset=CINEMATIC_219, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 LABEL_1A4A:
 	jne [0x06], 0x03, TANK_DRAW_BY_VAR06_DISPATCH_CIN_217_FAMILY
 	video offset=CINEMATIC_218, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 TANK_DRAW_BY_VAR06_DISPATCH_CIN_217_FAMILY:
 	jne [0x06], 0x04, TANK_DRAW_CIN_216_IF_VAR06_EQ_05
 	video offset=CINEMATIC_217, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 TANK_DRAW_CIN_216_IF_VAR06_EQ_05:
 	jne [0x06], 0x05, TANK_DRAW_CIN_215_IF_VAR06_EQ_06
 	video offset=CINEMATIC_216, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 TANK_DRAW_CIN_215_IF_VAR06_EQ_06:
 	jne [0x06], 0x06, TANK_DRAW_CIN_214_IF_VAR06_EQ_07
 	video offset=CINEMATIC_215, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 TANK_DRAW_CIN_214_IF_VAR06_EQ_07:
 	jne [0x06], 0x07, TANK_DRAW_CIN_213_IF_VAR06_EQ_08
 	video offset=CINEMATIC_214, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 TANK_DRAW_CIN_213_IF_VAR06_EQ_08:
 	jne [0x06], 0x08, TANK_DRAW_CIN_212_IF_VAR06_EQ_09
 	video offset=CINEMATIC_213, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 TANK_DRAW_CIN_212_IF_VAR06_EQ_09:
 	jne [0x06], 0x09, TANK_DRAW_CIN_211_IF_VAR06_EQ_0A
 	video offset=CINEMATIC_212, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 TANK_DRAW_CIN_211_IF_VAR06_EQ_0A:
 	jne [0x06], 0x0A, TANK_DRAW_CIN_210_IF_VAR06_EQ_0B
 	video offset=CINEMATIC_211, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 TANK_DRAW_CIN_210_IF_VAR06_EQ_0B:
 	jne [0x06], 0x0B, TANK_DRAW_CIN_209_IF_VAR06_EQ_0C
 	video offset=CINEMATIC_210, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 TANK_DRAW_CIN_209_IF_VAR06_EQ_0C:
 	jne [0x06], 0x0C, TANK_DRAW_CIN_208_IF_VAR06_EQ_0D
 	video offset=CINEMATIC_209, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 TANK_DRAW_CIN_208_IF_VAR06_EQ_0D:
 	jne [0x06], 0x0D, TANK_NOOP_RET
 	video offset=CINEMATIC_208, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 ; Single-`ret` shared early-exit. TANK's analogue of CAVES'
 ; CAVES_NOOP_RET (ebce2be) and PRISON's SCENE_DISPATCH_NOOP_RET
@@ -2879,6 +2970,7 @@ TANK_DRAW_CIN_208_IF_VAR06_EQ_0D:
 ; when the tank-AI / hash-state precondition fails.
 TANK_NOOP_RET:
 	ret
+
 
 TANK_PACING_VAR04_06_RAMP_UP:
 	mov [0x06], 0x0001
@@ -3075,6 +3167,7 @@ TANK_SCENE_INIT_FILL_PAGE_3_COLOR_0C:
 	selectVideoPage 0xFF
 	ret
 
+
 TANK_DRAW_CIN_6_27_28_ON_PAGE_0_AND_3:
 	selectVideoPage 0x00
 	call DRAW_CIN_6_27_28_AND_RET
@@ -3083,11 +3176,13 @@ TANK_DRAW_CIN_6_27_28_ON_PAGE_0_AND_3:
 	selectVideoPage 0xFF
 	ret
 
+
 DRAW_CIN_6_27_28_AND_RET:
 	video offset=CINEMATIC_006, x=160, y=100
 	video offset=CINEMATIC_027, x=160, y=100
 	video offset=CINEMATIC_028, x=160, y=100
 	ret
+
 
 TANK_SCENE_INIT_FILL_COLOR_0C_DRAW_BG:
 	jne [0x6D], 0x00, TANK_SCROLL_Y_INIT_AND_PAGE_83_TO_00
@@ -3099,6 +3194,7 @@ TANK_SCENE_INIT_FILL_COLOR_0C_DRAW_BG:
 	call DRAW_CIN_6_AND_RET
 	selectVideoPage 0xFF
 	ret
+
 
 TANK_SCENE_INIT_CALL_DRAW_BG_THEN_PAL_1:
 	call TANK_SCENE_INIT_FILL_COLOR_0C_DRAW_BG
@@ -3123,9 +3219,11 @@ TANK_SCROLL_Y_INIT_AND_PAGE_83_TO_00:
 	selectVideoPage 0xFF
 	ret
 
+
 DRAW_CIN_6_AND_RET:
 	video offset=CINEMATIC_006, x=160, y=100
 	ret
+
 
 TANK_SCENE_INIT_FILL_COLOR_0C_AND_PAGE_3_COPY:
 	selectVideoPage 0x00
@@ -3142,16 +3240,19 @@ TANK_SCENE_INIT_FILL_COLOR_0C_AND_PAGE_3_COPY:
 	selectVideoPage 0xFF
 	ret
 
+
 DRAW_CIN_113_114_AND_RET:
 	video offset=CINEMATIC_162, x=[0x0f], y=[0x10]
 	video offset=CINEMATIC_163, x=[0x0f], y=[0x10]
 	ret
+
 
 DRAW_CIN_122_ON_PAGE_0:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_173, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
 	ret
+
 
 TANK_SCENE_DRAW_CIN_169_IF_VAR_67_LE_2:
 	selectVideoPage 0x00
@@ -3161,6 +3262,7 @@ TANK_SCENE_DRAW_CIN_169_IF_VAR_67_LE_2:
 	mov [HACK_VAR_67], 0x0002
 	ret
 
+
 TANK_SCENE_DRAW_CIN_168_IF_VAR_67_LT_3:
 	jge [HACK_VAR_67], 0x03, TANK_NOOP_RET
 	selectVideoPage 0x00
@@ -3169,6 +3271,7 @@ TANK_SCENE_DRAW_CIN_168_IF_VAR_67_LT_3:
 	mov [HACK_VAR_67], 0x0003
 	ret
 
+
 DRAW_CIN_093_TO_097_VAR:
 	video offset=CINEMATIC_031, x=[0x01], y=[0x02], zoom=[0x03]
 	video offset=CINEMATIC_032, x=[0x01], y=[0x02], zoom=[0x03]
@@ -3176,6 +3279,7 @@ DRAW_CIN_093_TO_097_VAR:
 	video offset=CINEMATIC_034, x=[0x01], y=[0x02], zoom=[0x03]
 	video offset=CINEMATIC_035, x=[0x01], y=[0x02], zoom=[0x03]
 	ret
+
 
 DRAW_CIN_061_HORIZ_THEN_062:
 	video offset=CINEMATIC_001, x=114, y=22
@@ -3199,6 +3303,8 @@ DRAW_CIN_061_HORIZ_THEN_062:
 	video offset=CINEMATIC_003, x=28, y=38
 	video offset=CINEMATIC_003, x=96, y=20
 	ret
+
+
 	killChannel
 	video offset=CINEMATIC_001, x=114, y=22
 	video offset=CINEMATIC_001, x=86, y=21
@@ -3283,12 +3389,15 @@ DRAW_BG_DOTS_CIN_001_004:
 	video offset=CINEMATIC_005, x=10, y=21
 	ret
 
+
 DRAW_CIN_SEQ_011_011_011:
 	video offset=CINEMATIC_011, x=156, y=17
 	video offset=CINEMATIC_011, x=141, y=28
 	video offset=CINEMATIC_011, x=110, y=23
 	video offset=CINEMATIC_011, x=188, y=15
 	ret
+
+
 LABEL_1F2F:
 	db 0x11
 
@@ -3346,6 +3455,7 @@ DRAW_BG_DOTS_CIN_007_008:
 	video offset=CINEMATIC_011, x=0, y=21
 	video offset=CINEMATIC_011, x=10, y=21
 	ret
+
 
 ; Standard frame-render tick loop: blit + selectPage FF +
 ; copy 0→FF + break, jmp self. Twin of INTRO's FRAME_RENDER_-
@@ -3406,6 +3516,8 @@ TANK_CLEAR_AND_BLIT_PAGES_1_2_FF:
 	blitFramebuffer 0xFF
 	blitFramebuffer 0x02
 	ret
+
+
 LABEL_205E:
 	db 0x11, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 	FILL(57242, 0xFF)

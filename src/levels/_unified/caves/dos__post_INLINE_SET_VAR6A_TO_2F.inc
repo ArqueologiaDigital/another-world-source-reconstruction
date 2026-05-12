@@ -23,6 +23,8 @@ LABEL_1C16:
 	add [0x21], 0x00AA
 	video offset=CINEMATIC_013, x=[0x21], y=100
 	ret
+
+
 LABEL_1C2E:
 	db 0x11
 

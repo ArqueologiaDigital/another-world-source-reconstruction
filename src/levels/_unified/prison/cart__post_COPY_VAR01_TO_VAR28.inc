@@ -7,6 +7,8 @@ LABEL_49AE:
 	mov [HERO_X], [0x22]
 	mov [0x28], [HERO_X]
 	ret
+
+
 LABEL_49C7:
 	db 0x11
 
@@ -43,6 +45,7 @@ LABEL_49FF:
 	call LABEL_4AF6
 	ret
 
+
 LABEL_4A27:
 	je [0x23], 0x00, LABEL_4A3D
 	jl [0x46], [0x22], LABEL_4A4A
@@ -69,6 +72,7 @@ LABEL_4A4A:
 	mov [0x1C], 0x000C
 	call LABEL_4A72
 	ret
+
 
 LABEL_4A72:
 	jge [0x25], 0x2000, LABEL_4AF5
@@ -109,6 +113,7 @@ LABEL_4AD5:
 
 LABEL_4AF5:
 	ret
+
 
 LABEL_4AF6:
 	jge [0x25], 0x2000, FOLD_BODY_104B_22B91458

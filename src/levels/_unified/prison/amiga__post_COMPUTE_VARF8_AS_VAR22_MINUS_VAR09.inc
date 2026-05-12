@@ -17,6 +17,7 @@ LABEL_462C:
 LABEL_4639:
 	ret
 
+
 LABEL_463A:
 	je [0x29], 0x01, LABEL_4647
 	jmp LABEL_46DD
@@ -41,6 +42,8 @@ LABEL_465D:
 	mov [0x1C], 0x001E
 	call LABEL_4744
 	ret
+
+
 LABEL_466E:
 	db 0x11, 0x04, 0x46, 0x76, 0x07, 0x46, 0xDD, 0x11
 
@@ -84,6 +87,7 @@ LABEL_46C9:
 LABEL_46DC:
 	ret
 
+
 LABEL_46DD:
 	jne [0x72], [HACK_VAR_67], LABEL_46F3
 	mov [0x24], [0x70]
@@ -102,6 +106,7 @@ LABEL_46F3:
 
 LABEL_4709:
 	ret
+
 
 LABEL_470A:
 	jl [0x26], 0x00, TOGGLE_SIGN_VAR26_INIT_VAR25_FROM_VAR44

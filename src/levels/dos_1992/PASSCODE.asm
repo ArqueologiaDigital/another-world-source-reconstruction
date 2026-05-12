@@ -163,6 +163,7 @@ LOAD_VAR19_TO_VAR06:
 	mov [0x06], [0x19]
 	ret
 
+
 SETUP_PASSCODE_SCREEN:
 	mov [0x09], 0x0010
 	fill page=0xFF, color=0x00
@@ -232,12 +233,14 @@ DRAW_CIN_058_AT_16_16_IF_VARDC_EQ_21:
 TRIVIAL_RET:
 	ret
 
+
 LIKELY_A_COPY_PROTECTION_MECHANISM:
 	je [0xBC], 0x00, PASSCODE_RESTART_OR_DRAW_CIN_016
 	je [0xC6], 0x00, PASSCODE_RESTART_OR_DRAW_CIN_016
 	jne [0xF2], 0x0FA0, PASSCODE_RESTART_OR_DRAW_CIN_016
 	jne [HACK_VAR_DC], 0x21, PASSCODE_RESTART_OR_DRAW_CIN_016
 	ret
+
 
 PASSCODE_RESTART_OR_DRAW_CIN_016:
 	deleteChannels first=0x00, last=0x3F
@@ -311,6 +314,7 @@ DRAW_CIN_000_AT_2D_2E_KEY10:
 	video offset=CINEMATIC_000, x=[0x2d], y=[0x2e]
 	ret
 
+
 INIT_PASSCODE_LETTER_ALPHABET:
 	mov [0x2C], 0x0000
 	mov [0x0A], 0x000B
@@ -330,6 +334,8 @@ INIT_PASSCODE_LETTER_ALPHABET:
 	mov [0x18], 0xFFFF
 	mov [0x19], 0x0000
 	ret
+
+
 	jne [0x05], 0x00, SETUP_VAR29_2A_2B_KEY01
 	mov [0x29], 0x0015
 	mov [0x2A], 0x0009
@@ -432,11 +438,15 @@ SETUP_VAR29_2A_2B_KEY10:
 	mov [0x2B], 0x0007
 	mov [0x2C], 0x001D
 	ret
+
+
 	mov [0x0A], [0x29]
 	mov [0x0C], [0x2A]
 	mov [0x14], [0x2B]
 	mov [0x17], [0x2C]
 	ret
+
+
 	mov [0x21], 0x0000
 
 PASSCODE_DIGIT_INDEX_CHECK_AND_HASH:
@@ -486,6 +496,8 @@ PASSCODE_DIGIT_INDEX_INCREMENT:
 	add [0x21], 0x0001
 	jl [0x21], 0x10, HASH_DERIVE_NEXT_PASSCODE_DIGIT_LOOP
 	ret
+
+
 LABEL_046F:
 	db 0x11
 
@@ -512,85 +524,103 @@ PASSCODE_HASH_LOOP_INCREMENT_OR_STORE_VAR1D:
 	mov [0x1D], [0x30]
 	ret
 
+
 SAVE_VAR0A_TO_VAR1D:
 	jne [0x22], 0x00, LOAD_VAR0B_TO_HASH_VAR1D
 	mov [0x1D], [0x0A]
 	ret
+
 
 LOAD_VAR0B_TO_HASH_VAR1D:
 	jne [0x22], 0x01, LOAD_VAR0C_TO_HASH_VAR1D
 	mov [0x1D], [0x0B]
 	ret
 
+
 LOAD_VAR0C_TO_HASH_VAR1D:
 	jne [0x22], 0x02, LOAD_VAR0D_TO_HASH_VAR1D
 	mov [0x1D], [0x0C]
 	ret
+
 
 LOAD_VAR0D_TO_HASH_VAR1D:
 	jne [0x22], 0x03, LOAD_VAR0E_TO_HASH_VAR1D
 	mov [0x1D], [0x0D]
 	ret
 
+
 LOAD_VAR0E_TO_HASH_VAR1D:
 	jne [0x22], 0x04, LOAD_VAR0F_TO_HASH_VAR1D
 	mov [0x1D], [0x0E]
 	ret
+
 
 LOAD_VAR0F_TO_HASH_VAR1D:
 	jne [0x22], 0x05, LOAD_VAR10_TO_HASH_VAR1D
 	mov [0x1D], [0x0F]
 	ret
 
+
 LOAD_VAR10_TO_HASH_VAR1D:
 	jne [0x22], 0x06, LOAD_VAR11_TO_HASH_VAR1D
 	mov [0x1D], [0x10]
 	ret
+
 
 LOAD_VAR11_TO_HASH_VAR1D:
 	jne [0x22], 0x07, LOAD_VAR12_TO_HASH_VAR1D
 	mov [0x1D], [0x11]
 	ret
 
+
 LOAD_VAR12_TO_HASH_VAR1D:
 	jne [0x22], 0x08, LOAD_VAR13_TO_HASH_VAR1D
 	mov [0x1D], [0x12]
 	ret
+
 
 LOAD_VAR13_TO_HASH_VAR1D:
 	jne [0x22], 0x09, LOAD_VAR14_TO_HASH_VAR1D
 	mov [0x1D], [0x13]
 	ret
 
+
 LOAD_VAR14_TO_HASH_VAR1D:
 	jne [0x22], 0x0A, LOAD_VAR15_TO_HASH_VAR1D
 	mov [0x1D], [0x14]
 	ret
+
 
 LOAD_VAR15_TO_HASH_VAR1D:
 	jne [0x22], 0x0B, LOAD_VAR16_TO_HASH_VAR1D
 	mov [0x1D], [0x15]
 	ret
 
+
 LOAD_VAR16_TO_HASH_VAR1D:
 	jne [0x22], 0x0C, LOAD_VAR17_TO_HASH_VAR1D
 	mov [0x1D], [0x16]
 	ret
+
 
 LOAD_VAR17_TO_HASH_VAR1D:
 	jne [0x22], 0x0D, LOAD_VAR18_TO_HASH_VAR1D
 	mov [0x1D], [0x17]
 	ret
 
+
 LOAD_VAR18_TO_HASH_VAR1D:
 	jne [0x22], 0x0E, LOAD_VAR19_TO_HASH_VAR1D
 	mov [0x1D], [0x18]
 	ret
 
+
 LOAD_VAR19_TO_HASH_VAR1D:
 	jne [0x22], 0x0F, SHARED_RET
 	mov [0x1D], [0x19]
 	ret
+
+
 LABEL_054D:
 	db 0x11
 
@@ -599,80 +629,97 @@ RESTORE_VAR0A_FROM_VAR1D:
 	mov [0x0A], [0x1D]
 	ret
 
+
 SAVE_HASH_VAR1D_TO_VAR0B:
 	jne [0x22], 0x01, SAVE_HASH_VAR1D_TO_VAR0C
 	mov [0x0B], [0x1D]
 	ret
+
 
 SAVE_HASH_VAR1D_TO_VAR0C:
 	jne [0x22], 0x02, SAVE_HASH_VAR1D_TO_VAR0D
 	mov [0x0C], [0x1D]
 	ret
 
+
 SAVE_HASH_VAR1D_TO_VAR0D:
 	jne [0x22], 0x03, SAVE_HASH_VAR1D_TO_VAR0E
 	mov [0x0D], [0x1D]
 	ret
+
 
 SAVE_HASH_VAR1D_TO_VAR0E:
 	jne [0x22], 0x04, SAVE_HASH_VAR1D_TO_VAR0F
 	mov [0x0E], [0x1D]
 	ret
 
+
 SAVE_HASH_VAR1D_TO_VAR0F:
 	jne [0x22], 0x05, SAVE_HASH_VAR1D_TO_VAR10
 	mov [0x0F], [0x1D]
 	ret
+
 
 SAVE_HASH_VAR1D_TO_VAR10:
 	jne [0x22], 0x06, SAVE_HASH_VAR1D_TO_VAR11
 	mov [0x10], [0x1D]
 	ret
 
+
 SAVE_HASH_VAR1D_TO_VAR11:
 	jne [0x22], 0x07, SAVE_HASH_VAR1D_TO_VAR12
 	mov [0x11], [0x1D]
 	ret
+
 
 SAVE_HASH_VAR1D_TO_VAR12:
 	jne [0x22], 0x08, SAVE_HASH_VAR1D_TO_VAR13
 	mov [0x12], [0x1D]
 	ret
 
+
 SAVE_HASH_VAR1D_TO_VAR13:
 	jne [0x22], 0x09, SAVE_HASH_VAR1D_TO_VAR14
 	mov [0x13], [0x1D]
 	ret
+
 
 SAVE_HASH_VAR1D_TO_VAR14:
 	jne [0x22], 0x0A, SAVE_HASH_VAR1D_TO_VAR15
 	mov [0x14], [0x1D]
 	ret
 
+
 SAVE_HASH_VAR1D_TO_VAR15:
 	jne [0x22], 0x0B, SAVE_HASH_VAR1D_TO_VAR16
 	mov [0x15], [0x1D]
 	ret
+
 
 SAVE_HASH_VAR1D_TO_VAR16:
 	jne [0x22], 0x0C, SAVE_HASH_VAR1D_TO_VAR17
 	mov [0x16], [0x1D]
 	ret
 
+
 SAVE_HASH_VAR1D_TO_VAR17:
 	jne [0x22], 0x0D, SAVE_HASH_VAR1D_TO_VAR18
 	mov [0x17], [0x1D]
 	ret
+
 
 SAVE_HASH_VAR1D_TO_VAR18:
 	jne [0x22], 0x0E, SAVE_HASH_VAR1D_TO_VAR19
 	mov [0x18], [0x1D]
 	ret
 
+
 SAVE_HASH_VAR1D_TO_VAR19:
 	jne [0x22], 0x0F, SHARED_RET
 	mov [0x19], [0x1D]
 	ret
+
+
 LABEL_05EE:
 	db 0x11
 
@@ -680,6 +727,7 @@ DERIVE_AND_DRAW_LETTER:
 	call DERIVE_VAR07_VAR08_FROM_VAR05
 	call BLINK_LETTER_DISPATCHER
 	ret
+
 
 SUM_HASH_VARS_TO_VAR_37:
 	add [0x37], [HERO_ACTION]
@@ -693,6 +741,7 @@ SUM_HASH_VARS_TO_VAR_37:
 	add [0x37], [0x01]
 	add [0x37], [0x04]
 	ret
+
 
 ; Each tick: hash current state, check LAST_KEYCHAR (key
 ; pressed?) and HERO_ACTION (button pressed?), then handle
@@ -1057,10 +1106,12 @@ INTERPRET_KEY_TO_LETTER:
 	mov [0x06], 0x0063
 	ret
 
+
 HANDLE_BACKSPACE_KEY:
 	jne [LAST_KEYCHAR], 0x08, MAP_KEY_A_TO_Z_TO_INDEX
 	mov [0x06], 0x0062
 	ret
+
 
 MAP_KEY_A_TO_Z_TO_INDEX:
 	jl [LAST_KEYCHAR], 0x41, CLEAR_LAST_KEYCHAR
@@ -1069,9 +1120,11 @@ MAP_KEY_A_TO_Z_TO_INDEX:
 	sub [0x06], 0x0037
 	ret
 
+
 CLEAR_LAST_KEYCHAR:
 	mov [LAST_KEYCHAR], 0x0000
 	ret
+
 
 PASSCODE_KEYCHAR_INTERPRET_DISPATCH:
 	mov [0x05], [0x01]
@@ -1149,6 +1202,7 @@ DRAW_CIN_056_AT_BC_54:
 	selectVideoPage 0xFF
 	ret
 
+
 DERIVE_VAR07_VAR08_FROM_VAR05:
 	mov [0x07], [0x05]
 	mov [0x08], [0x05]
@@ -1170,6 +1224,7 @@ SCALE_VAR07_TIMES_9_PLUS_4A:
 	add [0x07], 0x0004
 	ret
 
+
 DRAW_LETTER_2_DISPATCH_BY_X:
 	je [0x07], 0xC4, DRAW_LETTER_2_AT_X24
 	je [0x07], 0xCC, DRAW_LETTER_2_AT_X25
@@ -1179,240 +1234,288 @@ DRAW_LETTER_2_DISPATCH_BY_X:
 	text id=0x012E, x=23, y=80, color=0x04 ; "2"
 	ret
 
+
 DRAW_LETTER_3_AT_X23:
 	jne [0x06], 0x0C, DRAW_LETTER_4_AT_X23
 	text id=0x012F, x=23, y=80, color=0x04 ; "3"
 	ret
+
 
 DRAW_LETTER_4_AT_X23:
 	jne [0x06], 0x0D, DRAW_LETTER_5_AT_X23
 	text id=0x0130, x=23, y=80, color=0x04 ; "4"
 	ret
 
+
 DRAW_LETTER_5_AT_X23:
 	jne [0x06], 0x0F, DRAW_LETTER_6_AT_X23
 	text id=0x0131, x=23, y=80, color=0x04 ; "5"
 	ret
+
 
 DRAW_LETTER_6_AT_X23:
 	jne [0x06], 0x10, DRAW_LETTER_7_AT_X23
 	text id=0x0132, x=23, y=80, color=0x04 ; "6"
 	ret
 
+
 DRAW_LETTER_7_AT_X23:
 	jne [0x06], 0x11, DRAW_LETTER_8_AT_X23
 	text id=0x0133, x=23, y=80, color=0x04 ; "7"
 	ret
+
 
 DRAW_LETTER_8_AT_X23:
 	jne [0x06], 0x13, DRAW_LETTER_9_AT_X23
 	text id=0x0134, x=23, y=80, color=0x04 ; "8"
 	ret
 
+
 DRAW_LETTER_9_AT_X23:
 	jne [0x06], 0x14, DRAW_LETTER_A_AT_X23
 	text id=0x0135, x=23, y=80, color=0x04 ; "9"
 	ret
+
 
 DRAW_LETTER_A_AT_X23:
 	jne [0x06], 0x15, DRAW_LETTER_B_AT_X23
 	text id=0x0136, x=23, y=80, color=0x04 ; "A"
 	ret
 
+
 DRAW_LETTER_B_AT_X23:
 	jne [0x06], 0x1B, DRAW_LETTER_C_AT_X23
 	text id=0x0137, x=23, y=80, color=0x04 ; "B"
 	ret
+
 
 DRAW_LETTER_C_AT_X23:
 	jne [0x06], 0x21, DRAW_LETTER_D_AT_X23
 	text id=0x0138, x=23, y=80, color=0x04 ; "C"
 	ret
 
+
 DRAW_LETTER_D_AT_X23:
 	jne [0x06], 0x1D, SHARED_RET
 	text id=0x0139, x=23, y=80, color=0x04 ; "D"
 	ret
+
 
 DRAW_LETTER_2_AT_X24:
 	jne [0x06], 0x0B, DRAW_LETTER_3_AT_X24
 	text id=0x012E, x=24, y=80, color=0x04 ; "2"
 	ret
 
+
 DRAW_LETTER_3_AT_X24:
 	jne [0x06], 0x0C, DRAW_LETTER_4_AT_X24
 	text id=0x012F, x=24, y=80, color=0x04 ; "3"
 	ret
+
 
 DRAW_LETTER_4_AT_X24:
 	jne [0x06], 0x0D, DRAW_LETTER_5_AT_X24
 	text id=0x0130, x=24, y=80, color=0x04 ; "4"
 	ret
 
+
 DRAW_LETTER_5_AT_X24:
 	jne [0x06], 0x0F, DRAW_LETTER_6_AT_X24
 	text id=0x0131, x=24, y=80, color=0x04 ; "5"
 	ret
+
 
 DRAW_LETTER_6_AT_X24:
 	jne [0x06], 0x10, DRAW_LETTER_7_AT_X24
 	text id=0x0132, x=24, y=80, color=0x04 ; "6"
 	ret
 
+
 DRAW_LETTER_7_AT_X24:
 	jne [0x06], 0x11, DRAW_LETTER_8_AT_X24
 	text id=0x0133, x=24, y=80, color=0x04 ; "7"
 	ret
+
 
 DRAW_LETTER_8_AT_X24:
 	jne [0x06], 0x13, DRAW_LETTER_9_AT_X24
 	text id=0x0134, x=24, y=80, color=0x04 ; "8"
 	ret
 
+
 DRAW_LETTER_9_AT_X24:
 	jne [0x06], 0x14, DRAW_LETTER_A_AT_X24
 	text id=0x0135, x=24, y=80, color=0x04 ; "9"
 	ret
+
 
 DRAW_LETTER_A_AT_X24:
 	jne [0x06], 0x15, DRAW_LETTER_B_AT_X24
 	text id=0x0136, x=24, y=80, color=0x04 ; "A"
 	ret
 
+
 DRAW_LETTER_B_AT_X24:
 	jne [0x06], 0x1B, DRAW_LETTER_C_AT_X24
 	text id=0x0137, x=24, y=80, color=0x04 ; "B"
 	ret
+
 
 DRAW_LETTER_C_AT_X24:
 	jne [0x06], 0x21, DRAW_LETTER_D_AT_X24
 	text id=0x0138, x=24, y=80, color=0x04 ; "C"
 	ret
 
+
 DRAW_LETTER_D_AT_X24:
 	jne [0x06], 0x1D, SHARED_RET
 	text id=0x0139, x=24, y=80, color=0x04 ; "D"
 	ret
+
 
 DRAW_LETTER_2_AT_X25:
 	jne [0x06], 0x0B, DRAW_LETTER_3_AT_X25
 	text id=0x012E, x=25, y=80, color=0x04 ; "2"
 	ret
 
+
 DRAW_LETTER_3_AT_X25:
 	jne [0x06], 0x0C, DRAW_LETTER_4_AT_X25
 	text id=0x012F, x=25, y=80, color=0x04 ; "3"
 	ret
+
 
 DRAW_LETTER_4_AT_X25:
 	jne [0x06], 0x0D, DRAW_LETTER_5_AT_X25
 	text id=0x0130, x=25, y=80, color=0x04 ; "4"
 	ret
 
+
 DRAW_LETTER_5_AT_X25:
 	jne [0x06], 0x0F, DRAW_LETTER_6_AT_X25
 	text id=0x0131, x=25, y=80, color=0x04 ; "5"
 	ret
+
 
 DRAW_LETTER_6_AT_X25:
 	jne [0x06], 0x10, DRAW_LETTER_7_AT_X25
 	text id=0x0132, x=25, y=80, color=0x04 ; "6"
 	ret
 
+
 DRAW_LETTER_7_AT_X25:
 	jne [0x06], 0x11, DRAW_LETTER_8_AT_X25
 	text id=0x0133, x=25, y=80, color=0x04 ; "7"
 	ret
+
 
 DRAW_LETTER_8_AT_X25:
 	jne [0x06], 0x13, DRAW_LETTER_9_AT_X25
 	text id=0x0134, x=25, y=80, color=0x04 ; "8"
 	ret
 
+
 DRAW_LETTER_9_AT_X25:
 	jne [0x06], 0x14, DRAW_LETTER_A_AT_X25
 	text id=0x0135, x=25, y=80, color=0x04 ; "9"
 	ret
+
 
 DRAW_LETTER_A_AT_X25:
 	jne [0x06], 0x15, DRAW_LETTER_B_AT_X25
 	text id=0x0136, x=25, y=80, color=0x04 ; "A"
 	ret
 
+
 DRAW_LETTER_B_AT_X25:
 	jne [0x06], 0x1B, DRAW_LETTER_C_AT_X25
 	text id=0x0137, x=25, y=80, color=0x04 ; "B"
 	ret
+
 
 DRAW_LETTER_C_AT_X25:
 	jne [0x06], 0x21, DRAW_LETTER_D_AT_X25
 	text id=0x0138, x=25, y=80, color=0x04 ; "C"
 	ret
 
+
 DRAW_LETTER_D_AT_X25:
 	jne [0x06], 0x1D, SHARED_RET
 	text id=0x0139, x=25, y=80, color=0x04 ; "D"
 	ret
+
 
 DRAW_LETTER_2_AT_X26:
 	jne [0x06], 0x0B, DRAW_LETTER_3_AT_X26
 	text id=0x012E, x=26, y=80, color=0x04 ; "2"
 	ret
 
+
 DRAW_LETTER_3_AT_X26:
 	jne [0x06], 0x0C, DRAW_LETTER_4_AT_X26
 	text id=0x012F, x=26, y=80, color=0x04 ; "3"
 	ret
+
 
 DRAW_LETTER_4_AT_X26:
 	jne [0x06], 0x0D, DRAW_LETTER_5_AT_X26
 	text id=0x0130, x=26, y=80, color=0x04 ; "4"
 	ret
 
+
 DRAW_LETTER_5_AT_X26:
 	jne [0x06], 0x0F, DRAW_LETTER_6_AT_X26
 	text id=0x0131, x=26, y=80, color=0x04 ; "5"
 	ret
+
 
 DRAW_LETTER_6_AT_X26:
 	jne [0x06], 0x10, DRAW_LETTER_7_AT_X26
 	text id=0x0132, x=26, y=80, color=0x04 ; "6"
 	ret
 
+
 DRAW_LETTER_7_AT_X26:
 	jne [0x06], 0x11, DRAW_LETTER_8_AT_X26
 	text id=0x0133, x=26, y=80, color=0x04 ; "7"
 	ret
+
 
 DRAW_LETTER_8_AT_X26:
 	jne [0x06], 0x13, DRAW_LETTER_9_AT_X26
 	text id=0x0134, x=26, y=80, color=0x04 ; "8"
 	ret
 
+
 DRAW_LETTER_9_AT_X26:
 	jne [0x06], 0x14, DRAW_LETTER_A_AT_X26
 	text id=0x0135, x=26, y=80, color=0x04 ; "9"
 	ret
+
 
 DRAW_LETTER_A_AT_X26:
 	jne [0x06], 0x15, DRAW_LETTER_B_AT_X26
 	text id=0x0136, x=26, y=80, color=0x04 ; "A"
 	ret
 
+
 DRAW_LETTER_B_AT_X26:
 	jne [0x06], 0x1B, DRAW_LETTER_C_AT_X26
 	text id=0x0137, x=26, y=80, color=0x04 ; "B"
 	ret
+
 
 DRAW_LETTER_C_AT_X26:
 	jne [0x06], 0x21, DRAW_LETTER_D_AT_X26
 	text id=0x0138, x=26, y=80, color=0x04 ; "C"
 	ret
 
+
 DRAW_LETTER_D_AT_X26:
 	jne [0x06], 0x1D, SHARED_RET
 	text id=0x0139, x=26, y=80, color=0x04 ; "D"
 	ret
+
 
 BLINK_LETTER_DISPATCHER:
 	je [0x06], 0x62, DRAW_CIN_053_IF_VAR06_EQ_2
@@ -1422,198 +1525,239 @@ BLINK_LETTER_DISPATCHER:
 	video offset=CINEMATIC_054, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_CIN_053_IF_VAR06_EQ_2:
 	jne [0x06], 0x02, DRAW_GLYPH_KEY03_CIN_052
 	video offset=CINEMATIC_053, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_GLYPH_KEY03_CIN_052:
 	jne [0x06], 0x03, DRAW_GLYPH_KEY04_CIN_051
 	video offset=CINEMATIC_052, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_GLYPH_KEY04_CIN_051:
 	jne [0x06], 0x04, DRAW_GLYPH_KEY05_CIN_050
 	video offset=CINEMATIC_051, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_GLYPH_KEY05_CIN_050:
 	jne [0x06], 0x05, DRAW_GLYPH_KEY06_CIN_049
 	video offset=CINEMATIC_050, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_GLYPH_KEY06_CIN_049:
 	jne [0x06], 0x06, DRAW_GLYPH_KEY07_CIN_048
 	video offset=CINEMATIC_049, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_GLYPH_KEY07_CIN_048:
 	jne [0x06], 0x07, DRAW_GLYPH_KEY08_CIN_047
 	video offset=CINEMATIC_048, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_GLYPH_KEY08_CIN_047:
 	jne [0x06], 0x08, DRAW_GLYPH_KEY09_CIN_046
 	video offset=CINEMATIC_047, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_GLYPH_KEY09_CIN_046:
 	jne [0x06], 0x09, DRAW_LETTER_A_CIN_045
 	video offset=CINEMATIC_046, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_LETTER_A_CIN_045:
 	jne [0x06], 0x0A, DRAW_LETTER_B_CIN_044
 	video offset=CINEMATIC_045, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_LETTER_B_CIN_044:
 	jne [0x06], 0x0B, DRAW_LETTER_C_CIN_043
 	video offset=CINEMATIC_044, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_LETTER_C_CIN_043:
 	jne [0x06], 0x0C, DRAW_LETTER_D_CIN_042
 	video offset=CINEMATIC_043, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_LETTER_D_CIN_042:
 	jne [0x06], 0x0D, DRAW_LETTER_E_CIN_041
 	video offset=CINEMATIC_042, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_LETTER_E_CIN_041:
 	jne [0x06], 0x0E, DRAW_LETTER_F_CIN_040
 	video offset=CINEMATIC_041, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_LETTER_F_CIN_040:
 	jne [0x06], 0x0F, DRAW_LETTER_G_CIN_039
 	video offset=CINEMATIC_040, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_LETTER_G_CIN_039:
 	jne [0x06], 0x10, DRAW_LETTER_VIA_CIN_DISPATCH
 	video offset=CINEMATIC_039, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_LETTER_VIA_CIN_DISPATCH:
 	jne [0x06], 0x62, DRAW_CIN_000_LETTER_BLANK
 	video offset=CINEMATIC_038, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_CIN_000_LETTER_BLANK:
 	jne [0x06], 0x63, DRAW_GLYPH_KEY00_CIN_036
 	video offset=CINEMATIC_037, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_GLYPH_KEY00_CIN_036:
 	jne [0x06], 0x00, DRAW_LETTER_H_CIN_035
 	video offset=CINEMATIC_036, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_LETTER_H_CIN_035:
 	jne [0x06], 0x11, DRAW_LETTER_I_CIN_034
 	video offset=CINEMATIC_035, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_LETTER_I_CIN_034:
 	jne [0x06], 0x12, DRAW_LETTER_J_CIN_033
 	video offset=CINEMATIC_034, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_LETTER_J_CIN_033:
 	jne [0x06], 0x13, DRAW_LETTER_K_CIN_032
 	video offset=CINEMATIC_033, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_LETTER_K_CIN_032:
 	jne [0x06], 0x14, DRAW_LETTER_L_CIN_031
 	video offset=CINEMATIC_032, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_LETTER_L_CIN_031:
 	jne [0x06], 0x15, DRAW_LETTER_M_CIN_030
 	video offset=CINEMATIC_031, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_LETTER_M_CIN_030:
 	jne [0x06], 0x16, DRAW_LETTER_N_CIN_029
 	video offset=CINEMATIC_030, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_LETTER_N_CIN_029:
 	jne [0x06], 0x17, DRAW_LETTER_O_CIN_028
 	video offset=CINEMATIC_029, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_LETTER_O_CIN_028:
 	jne [0x06], 0x18, DRAW_LETTER_P_CIN_027
 	video offset=CINEMATIC_028, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_LETTER_P_CIN_027:
 	jne [0x06], 0x19, DRAW_LETTER_Q_CIN_026
 	video offset=CINEMATIC_027, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_LETTER_Q_CIN_026:
 	jne [0x06], 0x1A, DRAW_LETTER_R_CIN_025
 	video offset=CINEMATIC_026, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_LETTER_R_CIN_025:
 	jne [0x06], 0x1B, DRAW_LETTER_S_CIN_024
 	video offset=CINEMATIC_025, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_LETTER_S_CIN_024:
 	jne [0x06], 0x1C, DRAW_LETTER_T_CIN_023
 	video offset=CINEMATIC_024, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_LETTER_T_CIN_023:
 	jne [0x06], 0x1D, DRAW_LETTER_U_CIN_022
 	video offset=CINEMATIC_023, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_LETTER_U_CIN_022:
 	jne [0x06], 0x1E, DRAW_LETTER_V_CIN_021
 	video offset=CINEMATIC_022, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_LETTER_V_CIN_021:
 	jne [0x06], 0x1F, DRAW_LETTER_W_CIN_020
 	video offset=CINEMATIC_021, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_LETTER_W_CIN_020:
 	jne [0x06], 0x20, DRAW_LETTER_X_CIN_019
 	video offset=CINEMATIC_020, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_LETTER_X_CIN_019:
 	jne [0x06], 0x21, DRAW_LETTER_Y_CIN_018
 	video offset=CINEMATIC_019, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_LETTER_Y_CIN_018:
 	jne [0x06], 0x22, DRAW_LETTER_Z_CIN_017
 	video offset=CINEMATIC_018, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 DRAW_LETTER_Z_CIN_017:
 	jne [0x06], 0x23, DRAW_GLYPH_KEY24_CIN_017
 	video offset=CINEMATIC_017, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
+
 
 DRAW_GLYPH_KEY24_CIN_017:
 	jne [0x06], 0x24, SHARED_RET
 	video offset=CINEMATIC_017, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
+
 SHARED_RET:
 	ret
+
+
 	killChannel
 	video offset=CINEMATIC_057, x=160, y=100
 
@@ -1638,6 +1782,8 @@ PASSCODE_CLEAR_AND_BLIT_PAGES_1_2_FF:
 	blitFramebuffer 0xFF
 	blitFramebuffer 0x02
 	ret
+
+
 LABEL_109F:
 	db 0x11, 0x11, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 	FILL(61273, 0xFF)

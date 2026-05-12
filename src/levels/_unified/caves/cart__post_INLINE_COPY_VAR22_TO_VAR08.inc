@@ -6,6 +6,7 @@ LABEL_4F97:
 	mov [0x08], [0x22]
 	ret
 
+
 LABEL_4FAB:
 	call LABEL_4F48
 	shl [0x0E], 0x000C

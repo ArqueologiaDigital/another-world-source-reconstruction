@@ -9,6 +9,7 @@ LABEL_33BA:
 	call LABEL_47F8
 	ret
 
+
 LABEL_33D7:
 	mov [0x21], [BUDDY_X]
 	mov [0x22], [HERO_X]
@@ -16,12 +17,15 @@ LABEL_33D7:
 	call LABEL_47DF
 	ret
 
+
 LABEL_33E4:
 	call LABEL_342A
 	mov [0x22], [BUDDY_X]
 	mov [0x27], [BUDDY_Y]
 	call LABEL_47DF
 	ret
+
+
 	mov [0x21], [BUDDY_X]
 	call LABEL_343E
 	mov [0x29], [HERO_X]
@@ -30,11 +34,14 @@ LABEL_33E4:
 	call LABEL_47DF
 	mov [HERO_X], [0x29]
 	ret
+
+
 	call LABEL_342A
 	mov [0x22], [HERO_X]
 	mov [0x27], [BUDDY_Y]
 	call LABEL_47DF
 	ret
+
 
 LABEL_3414:
 	call LABEL_342A
@@ -45,6 +52,7 @@ LABEL_3414:
 	call LABEL_47DF
 	mov [HERO_X], [0x29]
 	ret
+
 
 LABEL_342A:
 	mov [0x21], [BUDDY_X]

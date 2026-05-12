@@ -8,6 +8,7 @@ LABEL_7E29:
 	mov [0x28], [HERO_X]
 	ret
 
+
 LABEL_7E33:
 	call LABEL_DA86
 	mov [0x22], [HERO_X]

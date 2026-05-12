@@ -54,6 +54,7 @@ LABEL_52BB:
 	add [0x21], 0x0042
 	ret
 
+
 LABEL_52E0:
 	sub [0x21], 0x0021
 	jl [0xF8], 0x10, LABEL_52EE
@@ -61,6 +62,8 @@ LABEL_52E0:
 
 LABEL_52EE:
 	ret
+
+
 LABEL_52EF:
 	db 0x11
 
@@ -82,6 +85,7 @@ LABEL_5303:
 	add [0x21], 0x0041
 	ret
 
+
 LABEL_5328:
 	sub [0x21], 0x0020
 	jl [0xF8], 0x10, LABEL_5336
@@ -89,6 +93,8 @@ LABEL_5328:
 
 LABEL_5336:
 	ret
+
+
 LABEL_5337:
 	db 0x11
 

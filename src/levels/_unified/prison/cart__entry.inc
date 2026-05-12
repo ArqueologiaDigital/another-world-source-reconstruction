@@ -2209,15 +2209,18 @@ LABEL_004A:
 	bankSwitch 3;  TODO - Name this stage (bank number #3)	;@enc=legacy_d
 	ret
 
+
 LABEL_0054:
 	je [0xDB], 0x00, SHARED_RET
 	bankSwitch 4;  TODO - Name this stage (bank number #4)	;@enc=legacy_d
 	ret
 
+
 LABEL_005E:
 	je [0xDB], 0x00, SHARED_RET
 	bankSwitch 5;  TODO - Name this stage (bank number #5)	;@enc=legacy_d
 	ret
+
 
 LABEL_0068:
 	jne [HACK_VAR_67], 0x04, SHARED_RET
@@ -2232,6 +2235,8 @@ LABEL_0088:
 	je [HACK_VAR_67], 0x01, SHARED_RET
 	song id=0x0BBF, delay=0x0000, pos=0x00
 	ret
+
+
 	setup channel=0x15, address=SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01
 	break
 	setup channel=0x14, address=LABEL_90F7
@@ -2270,9 +2275,12 @@ LABEL_00F7:
 	mov [0xF8], [0xBC]
 	and [0xF8], 0x0010
 	ret
+
+
 	je [0xF8], 0x00, LABEL_010D
 	jne [0xF2], 0x0FA0, LABEL_010D
 	ret
+
 
 LABEL_010D:
 	deleteChannels first=0x00, last=0x3F
@@ -2313,6 +2321,7 @@ LABEL_014F:
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, SHARED_RET
 	mov [HERO_ACTION], 0x0001
 	ret
+
 
 LABEL_0161:
 	fill page=0x00, color=0x00

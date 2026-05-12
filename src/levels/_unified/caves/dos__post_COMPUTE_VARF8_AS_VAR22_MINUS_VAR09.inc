@@ -18,6 +18,7 @@ LABEL_7744:
 LABEL_7751:
 	ret
 
+
 LABEL_7752:
 	je [0x29], 0x01, LABEL_775F
 	jmp LABEL_77F5
@@ -42,6 +43,8 @@ LABEL_7775:
 	mov [0x1C], 0x001E
 	call LABEL_785C
 	ret
+
+
 	killChannel
 	call LABEL_778E
 	jmp LABEL_77F5
@@ -88,6 +91,7 @@ LABEL_77E1:
 LABEL_77F4:
 	ret
 
+
 LABEL_77F5:
 	jne [0x72], [HACK_VAR_67], LABEL_780B
 	mov [0x24], [0x70]
@@ -106,6 +110,7 @@ LABEL_780B:
 
 LABEL_7821:
 	ret
+
 
 LABEL_7822:
 	jl [0x26], 0x00, INLINE_COPY_VAR44_TO_VAR25

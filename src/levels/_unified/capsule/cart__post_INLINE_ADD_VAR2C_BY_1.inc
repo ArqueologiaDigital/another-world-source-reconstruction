@@ -21,6 +21,8 @@ LABEL_6581:
 
 LABEL_6597:
 	ret
+
+
 LABEL_6598:
 	db 0x05
 

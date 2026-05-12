@@ -22,6 +22,7 @@ LABEL_1786:
 	selectVideoPage 0xFF
 	ret
 
+
 LABEL_179B:
 	selectVideoPage 0x00
 	call DRAW_CIN_6_27_28_AND_RET

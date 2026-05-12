@@ -2,49 +2,62 @@ DRAW_HERO_POSE_0_1:
 	video offset=CINEMATIC_022, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_HERO_POSE_0_2:
 	video offset=CINEMATIC_023, x=[0x07], y=[0x08]
 	ret
+
 
 DRAW_HERO_POSE_0_3:
 	video offset=CINEMATIC_024, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_HERO_POSE_0_4:
 	video offset=CINEMATIC_025, x=[0x07], y=[0x08]
 	ret
+
 
 DRAW_HERO_POSE_0_6:
 	video offset=CINEMATIC_027, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_HERO_POSE_1:
 	video offset=CINEMATIC_021, x=[0x07], y=[0x08]
 	ret
+
 
 DRAW_HERO_POSE_2:
 	video offset=CINEMATIC_020, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_HERO_POSE_3:
 	video offset=CINEMATIC_019, x=[0x07], y=[0x08]
 	ret
+
 
 DRAW_CIN_018:
 	video offset=CINEMATIC_018, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_CIN_017:
 	video offset=CINEMATIC_017, x=[0x07], y=[0x08]
 	ret
+
 
 DRAW_HERO_POSE_5:
 	video offset=CINEMATIC_016, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_CIN_015:
 	video offset=CINEMATIC_015, x=[0x07], y=[0x08]
 	ret
+
+
 LABEL_8E4E:
 	db 0x11
 
@@ -56,17 +69,21 @@ DRAW_HERO_SUBFRAME_3_VAR09:
 	je [0xF8], 0x03, DRAW_CIN_030
 	ret
 
+
 DRAW_CIN_028:
 	video offset=CINEMATIC_028, x=[0x07], y=[0x08]
 	ret
+
 
 DRAW_CIN_029:
 	video offset=CINEMATIC_029, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_CIN_030:
 	video offset=CINEMATIC_030, x=[0x07], y=[0x08]
 	ret
+
 
 DRAW_HERO_SUBFRAME_2_VAR09_LOW:
 	mov [0xF8], [0x09]
@@ -75,13 +92,16 @@ DRAW_HERO_SUBFRAME_2_VAR09_LOW:
 	je [0xF8], 0x02, DRAW_CIN_032
 	ret
 
+
 DRAW_CIN_031:
 	video offset=CINEMATIC_031, x=[0xf5], y=[0x08]
 	ret
 
+
 DRAW_CIN_032:
 	video offset=CINEMATIC_032, x=[0xf5], y=[0x08]
 	ret
+
 
 LABEL_8E9B:
 	video type=0, offset=COMMON_VIDEO_202, x=[0x07], y=[0x08], zoom=0x40
@@ -168,6 +188,7 @@ LABEL_8F9B:
 LABEL_8F9E:
 	ret
 
+
 LABEL_8F9F:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -186,6 +207,7 @@ LABEL_8FC9:
 LABEL_8FCC:
 	ret
 
+
 LABEL_8FCD:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -200,6 +222,7 @@ LABEL_8FEA:
 
 LABEL_8FED:
 	ret
+
 
 LABEL_8FEE:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -217,6 +240,7 @@ LABEL_9011:
 LABEL_9014:
 	ret
 
+
 LABEL_9015:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -231,6 +255,7 @@ LABEL_9032:
 
 LABEL_9035:
 	ret
+
 
 LABEL_9036:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -248,6 +273,7 @@ LABEL_9058:
 LABEL_905B:
 	ret
 
+
 LABEL_905C:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -263,6 +289,7 @@ LABEL_907E:
 
 LABEL_9081:
 	ret
+
 
 LABEL_9082:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -280,6 +307,7 @@ LABEL_90A4:
 LABEL_90A7:
 	ret
 
+
 LABEL_90A8:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -295,6 +323,7 @@ LABEL_90CA:
 
 LABEL_90CD:
 	ret
+
 
 LABEL_90CE:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -314,6 +343,7 @@ LABEL_90F0:
 LABEL_90FB:
 	ret
 
+
 LABEL_90FC:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -329,6 +359,7 @@ LABEL_911E:
 
 LABEL_9121:
 	ret
+
 
 LABEL_9122:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -347,6 +378,7 @@ LABEL_914A:
 LABEL_914D:
 	ret
 
+
 LABEL_914E:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -361,6 +393,7 @@ LABEL_916B:
 
 LABEL_916E:
 	ret
+
 
 LABEL_916F:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -377,6 +410,7 @@ LABEL_918C:
 LABEL_918F:
 	ret
 
+
 LABEL_9190:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -391,6 +425,7 @@ LABEL_91AD:
 
 LABEL_91B0:
 	ret
+
 
 LABEL_91B1:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -407,6 +442,7 @@ LABEL_91CE:
 LABEL_91D1:
 	ret
 
+
 GUARDED_HERO_ANIM_CV_128:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -421,6 +457,7 @@ LABEL_91EF:
 
 LABEL_91F2:
 	ret
+
 
 LABEL_91F3:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -437,6 +474,7 @@ LABEL_9210:
 LABEL_9213:
 	ret
 
+
 LABEL_9214:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -452,15 +490,18 @@ LABEL_9231:
 LABEL_9234:
 	ret
 
+
 LABEL_9235:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video offset=CINEMATIC_139, x=[0x07], y=[0x08]
 	ret
 
+
 LABEL_9241:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video offset=CINEMATIC_140, x=[0x07], y=[0x08]
 	ret
+
 
 LABEL_924D:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -471,6 +512,7 @@ LABEL_924D:
 	call LABEL_82D4
 	sub [0x08], 0x000D
 	ret
+
 
 LABEL_926A:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -486,6 +528,7 @@ LABEL_926A:
 	sub [0x07], 0x0001
 	ret
 
+
 LABEL_9297:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call LABEL_8B2E
@@ -496,6 +539,7 @@ LABEL_9297:
 	sub [0x08], 0x000D
 	ret
 
+
 LABEL_92B4:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call LABEL_8B10
@@ -505,6 +549,7 @@ LABEL_92B4:
 	call LABEL_82D4
 	sub [0x08], 0x000D
 	ret
+
 
 LABEL_92D1:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -521,11 +566,13 @@ LABEL_92E8:
 	sub [0x08], 0x000D
 	ret
 
+
 LABEL_92FC:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video offset=CINEMATIC_060, x=[0x07], y=[0x08]
 	call LABEL_92D1
 	ret
+
 
 LABEL_930B:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -541,6 +588,7 @@ LABEL_930B:
 	sub [0x07], 0x0001
 	ret
 
+
 LABEL_933A:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video type=0, offset=COMMON_VIDEO_287, x=[0x07], y=[0x08], zoom=0x40
@@ -550,6 +598,7 @@ LABEL_933A:
 	call LABEL_82D4
 	sub [0x08], 0x000D
 	ret
+
 
 LABEL_9359:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -565,6 +614,7 @@ LABEL_9359:
 	sub [0x08], 0x000D
 	ret
 
+
 LABEL_9388:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_BEAST_Y_PLUS_D
@@ -573,6 +623,7 @@ LABEL_9388:
 	call DRAW_BEAST_HEAD_CV165_166
 	sub [0x08], 0x000D
 	ret
+
 
 LABEL_93A2:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -585,6 +636,7 @@ LABEL_93A2:
 	call DRAW_BEAST_HEAD_CV165_166
 	sub [0x08], 0x000D
 	ret
+
 
 LABEL_93C9:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -600,6 +652,7 @@ LABEL_93C9:
 	sub [0x07], 0x0001
 	ret
 
+
 LABEL_93F8:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	sub [0x78], 0x000A
@@ -610,6 +663,7 @@ LABEL_93F8:
 	video offset=CINEMATIC_184, x=[0x78], y=[0x79]
 	ret
 
+
 LABEL_9419:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	sub [0x08], 0x000D
@@ -619,6 +673,7 @@ LABEL_9419:
 	video type=0, offset=COMMON_VIDEO_164, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_HEAD_CV214_215
 	ret
+
 
 LABEL_9436:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -632,6 +687,8 @@ LABEL_9436:
 	call DRAW_BEAST_HEAD_CV214_215
 	sub [0x07], 0x0002
 	ret
+
+
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	sub [0x08], 0x000D
 	call LABEL_8B2E
@@ -640,6 +697,7 @@ LABEL_9436:
 	video type=0, offset=COMMON_VIDEO_164, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_HEAD_CV214_215
 	ret
+
 
 LABEL_947C:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -650,10 +708,13 @@ LABEL_947C:
 	video type=0, offset=COMMON_VIDEO_164, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_HEAD_CV214_215
 	ret
+
+
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_164, x=[0x07], y=[0x08], zoom=0x40
 	ret
+
 
 JUNK__94A8:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -662,19 +723,25 @@ JUNK__94A8:
 	video type=0, offset=COMMON_VIDEO_356, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
+
 LABEL_94BC:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video offset=CINEMATIC_059, x=[0x07], y=[0x08]
 	ret
+
+
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_CV_355
 	video type=0, offset=COMMON_VIDEO_356, x=[0x07], y=[0x08], zoom=0x40
 	ret
+
+
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	video type=0, offset=COMMON_VIDEO_353, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_354, x=[0x07], y=[0x08], zoom=0x40
 	call JUNK__9503
 	ret
+
 
 DRAW_HERO_Y_PLUS_E:
 	add [0x08], 0x000E
@@ -682,11 +749,13 @@ DRAW_HERO_Y_PLUS_E:
 	sub [0x08], 0x000E
 	ret
 
+
 DRAW_BEAST_Y_PLUS_D:
 	add [0x08], 0x000D
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
 	sub [0x08], 0x000D
 	ret
+
 
 JUNK__9503:
 	video offset=CINEMATIC_882, x=[0x07], y=[0x08]

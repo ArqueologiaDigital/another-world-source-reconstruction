@@ -15,11 +15,14 @@ LABEL_DDBC:
 	add [HERO_X], [0x2A]
 	ret
 
+
 LABEL_DDCA:
 	jl [0x23], 0xFF, SHARED_RET
 	mov [HERO_X], 0x00FF
 	sub [HERO_X], [0x2A]
 	ret
+
+
 LABEL_DDD8:
 	db 0x11
 
@@ -50,9 +53,11 @@ LABEL_DE17:
 	call LABEL_3ABD
 	ret
 
+
 CALL_LABEL_3AD7_AND_RET_AT_DE27:
 	call LABEL_3AD7
 	ret
+
 
 LABEL_DE2B:
 	mov [0x05], 0x0001
@@ -62,6 +67,7 @@ LABEL_DE2B:
 	jg [0x22], 0x5C, SHARED_RET
 	mov [0x22], 0x005C
 	ret
+
 
 LABEL_DE4A:
 	mov [0x05], 0x0001
@@ -79,6 +85,7 @@ LABEL_DE68:
 	mov [0x22], 0x0055
 	ret
 
+
 LABEL_DE73:
 	mov [0x21], [HERO_X]
 	mov [0x23], [HERO_X]
@@ -91,6 +98,7 @@ LABEL_DE73:
 	mov [HERO_Y], [0x22]
 	ret
 
+
 LABEL_DE8F:
 	je [HACK_VAR_67], 0x6F, LABEL_DDA9
 	je [HACK_VAR_67], 0x8F, LABEL_DFE4
@@ -101,6 +109,7 @@ LABEL_DE8F:
 	je [HACK_VAR_67], 0xED, LABEL_DDD9
 	je [HACK_VAR_67], 0xCC, LABEL_E004
 	ret
+
 
 LABEL_DEC0:
 	mov [0x05], 0x0000
@@ -122,6 +131,7 @@ LABEL_DEEB:
 	mov [0x22], 0x007A
 	ret
 
+
 LABEL_DEF6:
 	jg [HERO_X], 0xC8, LABEL_DF00
 	mov [HERO_X], 0x00C8
@@ -134,6 +144,7 @@ LABEL_DF0A:
 	jg [0x22], 0x87, SHARED_RET
 	mov [0x22], 0x0087
 	ret
+
 
 LABEL_DF15:
 	jl [HERO_X], 0xAA, LABEL_DF5D
@@ -155,9 +166,11 @@ LABEL_DF3F:
 	call LABEL_3ABD
 	ret
 
+
 CALL_LABEL_3AD7_AND_RET_AT_DF59:
 	call LABEL_3AD7
 	ret
+
 
 LABEL_DF5D:
 	jl [HERO_X], 0x28, LABEL_DFAC
@@ -166,6 +179,7 @@ LABEL_DF5D:
 	jg [0x22], 0x6E, LABEL_DF7A
 	mov [0x05], 0x0001
 	ret
+
 
 LABEL_DF7A:
 	jg [HERO_X], 0x41, LABEL_DF84
@@ -183,9 +197,11 @@ LABEL_DF8E:
 	call LABEL_3ACA
 	ret
 
+
 CALL_LABEL_3AE4_AND_RET:
 	call LABEL_3AE4
 	ret
+
 
 LABEL_DFAC:
 	mov [0x05], 0x0001
@@ -197,6 +213,7 @@ LABEL_DFBA:
 	mov [0x22], 0x006E
 	sub [0x22], [0x19]
 	ret
+
 
 LABEL_DFC8:
 	jg [0x22], 0x42, LABEL_DFD2

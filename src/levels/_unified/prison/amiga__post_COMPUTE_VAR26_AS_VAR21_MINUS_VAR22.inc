@@ -9,6 +9,7 @@ LABEL_3276:
 	call LABEL_465D
 	ret
 
+
 LABEL_3293:
 	mov [0x21], [BUDDY_X]
 	mov [0x22], [HERO_X]
@@ -16,12 +17,15 @@ LABEL_3293:
 	call LABEL_4644
 	ret
 
+
 LABEL_32A0:
 	call LABEL_32E6
 	mov [0x22], [BUDDY_X]
 	mov [0x27], [BUDDY_Y]
 	call LABEL_4644
 	ret
+
+
 LABEL_32AD:
 	db 0x01, 0x21, 0x07, 0x04, 0x32, 0xFA, 0x01, 0x29
 	db 0x01, 0x01, 0x01, 0x22, 0x01, 0x27, 0x08, 0x04
@@ -38,6 +42,7 @@ LABEL_32D0:
 	call LABEL_4644
 	mov [HERO_X], [0x29]
 	ret
+
 
 LABEL_32E6:
 	mov [0x21], [BUDDY_X]

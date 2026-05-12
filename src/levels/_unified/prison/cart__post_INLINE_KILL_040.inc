@@ -12,6 +12,8 @@ LABEL_0E07:
 	add [0x27], [0x3A]
 	or [0x27], 0x1800
 	ret
+
+
 LABEL_0E1D:
 	db 0x11
 
@@ -35,6 +37,8 @@ LABEL_0E33:
 	add [0x27], [0x3A]
 	or [0x27], 0x1800
 	ret
+
+
 LABEL_0E49:
 	db 0x11
 

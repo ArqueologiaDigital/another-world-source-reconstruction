@@ -42,6 +42,7 @@ LABEL_71CF:
 	video offset=CINEMATIC_085, x=[HERO_X], y=[HERO_Y]
 	ret
 
+
 JUNK__71E4:
 	video offset=CINEMATIC_084, x=160, y=19
 	break
@@ -173,6 +174,7 @@ LABEL_7325:
 	mov [0x23], 0x0000
 	call LABEL_7333
 	ret
+
 
 LABEL_7333:
 	je [HACK_VAR_67], 0x4D, SHARED_RET

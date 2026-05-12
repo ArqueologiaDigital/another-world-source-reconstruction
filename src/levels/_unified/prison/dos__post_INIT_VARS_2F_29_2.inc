@@ -6,11 +6,13 @@ STATE_VAR12_BIG_DISPATCH_CASE_30:
 	mov [0x2F], 0x0012
 	ret
 
+
 LABEL_2DA7:
 	jne [0xB2], 0x02, LABEL_2DB6
 	mov [0x2F], 0x001C
 	mov [0xB2], 0x0003
 	ret
+
 
 LABEL_2DB6:
 	jne [0xB2], 0x03, LABEL_2DDC
@@ -23,11 +25,13 @@ LABEL_2DB6:
 	mov [0xB2], 0x000B
 	ret
 
+
 LABEL_2DDC:
 	jne [0xB2], 0x04, LABEL_2DEB
 	mov [0xB2], 0x0005
 	mov [0x2F], 0x0005
 	ret
+
 
 LABEL_2DEB:
 	jne [0xB2], 0x05, LABEL_2E01
@@ -35,6 +39,7 @@ LABEL_2DEB:
 	mov [0xB2], 0x0006
 	mov [0x2F], 0x000B
 	ret
+
 
 LABEL_2E01:
 	jne [0xB2], 0x06, INIT_VARS_B2_2F_29

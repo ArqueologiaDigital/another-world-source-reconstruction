@@ -132,6 +132,7 @@ LABEL_1906:
 	or [0xB2], 0x0020
 	ret
 
+
 LABEL_191D:
 	jl [HACK_VAR_67], 0x4A, LABEL_193F
 	jg [HACK_VAR_67], 0x50, LABEL_193F
@@ -139,10 +140,12 @@ LABEL_191D:
 	or [0xB2], 0x0001
 	ret
 
+
 LABEL_1934:
 	jne [0x1D], 0x29, SHARED_RET
 	mov [0xB3], 0x0000
 	ret
+
 
 LABEL_193F:
 	jl [HACK_VAR_67], 0x6A, SHARED_RET
@@ -151,22 +154,26 @@ LABEL_193F:
 	or [0xB2], 0x0002
 	ret
 
+
 LABEL_1956:
 	jne [0x1D], 0x2A, LABEL_1972
 	je [0xB6], 0x00, LABEL_1967
 	mov [0xB6], 0x0000
 	ret
 
+
 LABEL_1967:
 	je [0xB4], 0x00, LABEL_1972
 	mov [0xB4], 0x0000
 	ret
+
 
 LABEL_1972:
 	jne [0x1D], 0x29, SHARED_RET
 	je [0xB5], 0x00, SHARED_RET
 	mov [0xB5], 0x0000
 	ret
+
 
 LABEL_1983:
 	break

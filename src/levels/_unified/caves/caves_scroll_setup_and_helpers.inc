@@ -74,6 +74,8 @@ SETUP_67_45_VAR01_46_VARB1_NOSIGN:
 	mov [HERO_X], 0x0046
 	and [0xB1], 0x7FFF
 	ret
+
+
 ;@endif
 
 
@@ -82,6 +84,7 @@ SETUP_67_67_VAR01_1E_VARBE_3:
 	mov [HERO_X], 0x001E
 	mov [0xBE], 0x0003
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SETUP_67_67_VAR01_1E_VARBE_3.inc"
@@ -97,6 +100,8 @@ SETUP_67_25_VAR06_0_VARB1_NOSIGN:
 	mov [0x06], 0x0000
 	and [0xB1], 0x7FFF
 	ret
+
+
 ;@endif
 
 
@@ -107,6 +112,7 @@ SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1:
 	mov [0xAF], 0x0058
 	or [0xB1], 0x0010
 	ret
+
 
 ;@if BRANCH == "cartridge_1992"
 ;@include "cart__post_SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1.inc"
@@ -121,6 +127,8 @@ SETUP_67_A7_VARS_B0_2_02_5D_01_7F_BE_3:
 	mov [0xBE], 0x0003
 	or [0xB1], 0x00C0
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -156,6 +164,8 @@ INIT_HASH_VARS_67_66_65_68_69:
 	mov [0x7C], 0x2000
 	mov [0x7D], 0x0800
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -178,6 +188,7 @@ INIT_VARS_29_07_08:
 INCREMENT_VAR07_BY_4:
 	add [0x07], 0x0004
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INCREMENT_VAR07_BY_4.inc"

@@ -56,6 +56,8 @@ LABEL_2DB4:
 
 LABEL_2DC5:
 	ret
+
+
 LABEL_2DC6:
 	db 0x11
 
@@ -71,6 +73,7 @@ LABEL_2DC7:
 
 LABEL_2DEB:
 	ret
+
 
 LABEL_2DEC:
 	mov [0x26], [BUDDY_X]
@@ -89,12 +92,16 @@ LABEL_2E05:
 
 LABEL_2E12:
 	ret
+
+
 LABEL_2E13:
 	db 0x11
 
 LABEL_2E14:
 	jne [0x09], 0x01, LABEL_2E20
 	ret
+
+
 LABEL_2E1B:
 	db 0x54, 0x11, 0x3F, 0x26, 0x08
 
@@ -102,6 +109,7 @@ LABEL_2E20:
 	jne [0x09], 0x02, LABEL_2E2C
 	video offset=CINEMATIC_543, x=[0x26], y=[BUDDY_Y]
 	ret
+
 
 LABEL_2E2C:
 	jne [0x09], 0x03, LABEL_2E41
@@ -111,6 +119,7 @@ LABEL_2E2C:
 	video offset=CINEMATIC_542, x=[0x26], y=[BUDDY_Y]
 	ret
 
+
 LABEL_2E41:
 	jne [0x09], 0x04, LABEL_2E56
 	selectVideoPage 0x00
@@ -119,8 +128,11 @@ LABEL_2E41:
 	video offset=CINEMATIC_540, x=[0x26], y=[BUDDY_Y]
 	ret
 
+
 LABEL_2E56:
 	ret
+
+
 LABEL_2E57:
 	db 0x11
 
@@ -189,6 +201,8 @@ LABEL_2F58:
 	call LABEL_5AF6
 	mov [BUDDY_Y], [0x22]
 	ret
+
+
 LABEL_2F62:
 	db 0x01, 0x2C, 0x21, 0x01, 0x27, 0x10, 0x04, 0x5A
 	db 0xF6, 0x0A, 0x81, 0x08, 0x2C, 0x2F, 0x75, 0x01
@@ -201,6 +215,7 @@ LABEL_2F78:
 	call LABEL_5AF6
 	mov [BUDDY_Y], [0x22]
 	ret
+
 
 LABEL_2F8C:
 	call LABEL_2F29

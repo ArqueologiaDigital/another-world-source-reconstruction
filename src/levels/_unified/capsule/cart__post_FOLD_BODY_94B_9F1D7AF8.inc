@@ -36,6 +36,8 @@ LABEL_5A37:
 
 LABEL_5A40:
 	ret
+
+
 LABEL_5A41:
 	db 0x11
 

@@ -7,6 +7,7 @@ LABEL_D6D2:
 	mov [HERO_X], 0x000A
 	ret
 
+
 LABEL_D6E1:
 	jne [HACK_VAR_67], 0x49, ADD_HACK67_BY_20
 	mov [HACK_VAR_67], 0x0069

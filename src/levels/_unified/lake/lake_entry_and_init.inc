@@ -81,6 +81,8 @@ INIT_AUDIO_AND_SCENE_AFTER_LOADS:
 VERIFY_INTEGRITY_OR_HALT:
 ;@if BRANCH == "gba_2004"
 	ret
+
+
 ;@endif
 	and [0xBC], 0x0010
 ;@if BRANCH in ("cartridge_1992", "gba_2004")
@@ -88,6 +90,8 @@ VERIFY_INTEGRITY_OR_HALT:
 	and [0xF8], 0x003C
 ;@if BRANCH == "cartridge_1992"
 	ret
+
+
 ;@endif
 ;@elif BRANCH == "chahi_amiga_1991"
 	and [0xC6], 0x0080
@@ -104,6 +108,7 @@ VERIFY_INTEGRITY_OR_HALT:
 ;@endif
 	jne [HACK_VAR_DC], 0x21, SHUTDOWN_VM
 	ret
+
 
 SHUTDOWN_VM:
 	deleteChannels first=0x00, last=0x3F
@@ -162,6 +167,8 @@ SET_HERO_ACTION_TO_1_IF_GROUNDED_AND_DB_SET:
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, RET_TARGET_1A88
 	mov [HERO_ACTION], 0x0001
 	ret
+
+
 ;@endif
 	break
 	break

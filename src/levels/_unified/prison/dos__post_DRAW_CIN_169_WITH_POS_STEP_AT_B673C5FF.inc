@@ -46,6 +46,7 @@ LABEL_52BC:
 	add [BUDDY_X], 0x0001
 	ret
 
+
 LABEL_52C8:
 	video offset=CINEMATIC_340, x=[BUDDY_X], y=[BUDDY_Y]
 	jg [0x13], [0x30], SHARED_RET_AT_533A
@@ -55,11 +56,13 @@ LABEL_52C8:
 	video offset=CINEMATIC_341, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
+
 LABEL_52E6:
 	sub [BUDDY_X], 0x0001
 	call DRAW_CIN_338_THEN_339
 	add [BUDDY_X], 0x0001
 	ret
+
 
 DRAW_CIN_338_THEN_339:
 	video offset=CINEMATIC_338, x=[BUDDY_X], y=[BUDDY_Y]
@@ -70,6 +73,7 @@ DRAW_CIN_338_THEN_339:
 	video offset=CINEMATIC_339, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
+
 DRAW_CIN_242_THEN_243:
 	video offset=CINEMATIC_242, x=[BUDDY_X], y=[BUDDY_Y]
 	jg [0x13], [0x30], SHARED_RET_AT_533A
@@ -78,6 +82,7 @@ DRAW_CIN_242_THEN_243:
 	je [0xF8], 0x00, SHARED_RET_AT_533A
 	video offset=CINEMATIC_243, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
 
 LABEL_532E:
 	add [BUDDY_X], 0x0001

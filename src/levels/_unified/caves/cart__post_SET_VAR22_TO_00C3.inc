@@ -3,6 +3,7 @@ LABEL_C110:
 	mov [0x22], 0x00BA
 	ret
 
+
 LABEL_C11B:
 	jg [0x21], 0x1C, LABEL_C131
 	add [0x21], 0x0000
@@ -10,6 +11,7 @@ LABEL_C11B:
 	mov [0x22], 0x00BA
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_C131:
 	jg [0x21], 0x3D, LABEL_C147
@@ -19,6 +21,7 @@ LABEL_C131:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_C147:
 	jg [0x21], 0x7E, LABEL_C15D
 	sub [0x21], 0x003D
@@ -27,12 +30,14 @@ LABEL_C147:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_C15D:
 	jl [0x21], 0xA0, LABEL_C175
 	jg [0x21], 0x012C, LABEL_C175
 	jl [0x22], 0xBA, LABEL_C175
 	mov [0x22], 0x00F9
 	ret
+
 
 LABEL_C175:
 	jg [0x21], 0xB1, LABEL_C18B
@@ -42,10 +47,12 @@ LABEL_C175:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_C18B:
 	jg [0x21], 0xC6, LABEL_C196
 	mov [0x22], 0x00F9
 	ret
+
 
 LABEL_C196:
 	jg [0x21], 0xD2, LABEL_C1A6
@@ -59,6 +66,7 @@ LABEL_C1A6:
 	mov [0x22], 0x00A8
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_C1BC:
 	jg [0x21], 0x0112, PROJ_VAR22_A8_MINUS_VAR21_MINUS_112_SHR4

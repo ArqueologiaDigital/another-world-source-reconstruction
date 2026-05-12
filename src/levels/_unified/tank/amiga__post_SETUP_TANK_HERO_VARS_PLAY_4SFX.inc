@@ -478,6 +478,7 @@ LABEL_05E1:
 	je [0x5F], 0x19, LABEL_0691
 	ret
 
+
 LABEL_0642:
 	je [0x5F], 0x0B, SHARED_RET
 	je [0x5F], 0x13, SHARED_RET
@@ -488,9 +489,11 @@ LABEL_0651:
 	mov [0x5F], 0x0022
 	ret
 
+
 SET_VAR5F_TO_001B:
 	mov [0x5F], 0x001B
 	ret
+
 
 LABEL_0661:
 	je [0x62], 0x02, INCREMENT_VAR5F_BY_8

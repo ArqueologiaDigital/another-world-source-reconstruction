@@ -6,6 +6,7 @@ LABEL_7F0E:
 	video offset=CINEMATIC_FINAL_ESCAPE_LESTER_RUNNING, x=160, y=100
 	ret
 
+
 LABEL_7F22:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_429, x=160, y=100
@@ -15,6 +16,7 @@ LABEL_7F22:
 	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F4, x=160, y=100
 	ret
 
+
 LABEL_7F3A:
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_121, x=160, y=100
@@ -22,6 +24,7 @@ LABEL_7F3A:
 	video offset=CINEMATIC_123, x=160, y=100
 	video offset=CINEMATIC_124, x=160, y=100
 	ret
+
 
 LABEL_7F4E:
 	fill page=0x00, color=0x01
@@ -32,6 +35,7 @@ LABEL_7F4E:
 	video offset=CINEMATIC_425, x=160, y=100
 	ret
 
+
 LABEL_7F66:
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_146, x=160, y=100
@@ -40,6 +44,7 @@ LABEL_7F66:
 	video offset=CINEMATIC_148, x=160, y=100
 	video offset=CINEMATIC_149, x=160, y=100
 	ret
+
 
 LABEL_7F7E:
 	mov [0x46], 0xF060
@@ -191,6 +196,7 @@ LABEL_8133:
 	or [0xB0], 0x0001
 	ret
 
+
 LABEL_8152:
 	jne [HACK_VAR_67], 0xCC, SHARED_RET
 	jne [0x1D], 0x0B, LABEL_8179
@@ -202,6 +208,7 @@ LABEL_8152:
 	video offset=CINEMATIC_000, x=[0x70], y=93, zoom=[0x5a]	;@enc=alt
 	ret
 
+
 LABEL_8179:
 	jne [0x1D], 0x0A, LABEL_819A
 	deleteChannels first=0x28, last=0x29
@@ -212,6 +219,7 @@ LABEL_8179:
 	video offset=CINEMATIC_000, x=[0x6e], y=93, zoom=[0x5a]	;@enc=alt
 	ret
 
+
 LABEL_819A:
 	jne [0x1D], 0x0C, SHARED_RET
 	deleteChannels first=0x2C, last=0x2D
@@ -221,6 +229,8 @@ LABEL_819A:
 	mov [0x4D], 0x7FFF
 	video offset=CINEMATIC_000, x=[0x72], y=93, zoom=[0x5a]	;@enc=alt
 	ret
+
+
 LABEL_81BB:
 	db 0x11
 
@@ -237,10 +247,13 @@ LABEL_81BC:
 	add [0xB1], [0xF8]
 	ret
 
+
 LABEL_81E3:
 	jne [HACK_VAR_67], 0x45, SHARED_RET
 	mov [0xBA], 0x0000
 	ret
+
+
 LABEL_81EE:
 	db 0x11
 
@@ -258,14 +271,18 @@ LABEL_81F7:
 	video offset=CINEMATIC_323, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
+
 LABEL_8214:
 	je [0x24], 0x02, DRAW_CIN_321
 	video offset=CINEMATIC_322, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
+
 DRAW_CIN_321:
 	video offset=CINEMATIC_321, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
+
+
 LABEL_8228:
 	db 0x01, 0x21, 0xE7, 0x01, 0x22, 0xE8, 0x01, 0x23
 	db 0xE9, 0x04, 0x82, 0x07, 0x01, 0x21, 0xEC, 0x00
@@ -314,6 +331,8 @@ LABEL_830D:
 	call LABEL_83FA
 	add [0xE6], 0x0002
 	ret
+
+
 LABEL_8342:
 	db 0x03, 0xE6, 0x00, 0x01, 0x04, 0x83, 0x0D, 0x06
 	db 0x0A, 0x04, 0xE6, 0x0E, 0x83, 0x42, 0x07, 0x83
@@ -352,11 +371,13 @@ LABEL_83FA:
 	mov [0x21], 0x00B6
 	ret
 
+
 LABEL_8409:
 	jg [0x27], 0x04, LABEL_8418
 	mov [0x22], 0x0050
 	mov [0x21], 0x00B6
 	ret
+
 
 LABEL_8418:
 	jne [0x27], 0x05, LABEL_842B
@@ -365,6 +386,7 @@ LABEL_8418:
 	mov [0x23], 0x0000
 	ret
 
+
 LABEL_842B:
 	jne [0x27], 0x25, LABEL_843E
 	mov [0x22], 0x0081
@@ -372,17 +394,20 @@ LABEL_842B:
 	mov [0x23], 0x0001
 	ret
 
+
 LABEL_843E:
 	jne [0x27], 0x24, LABEL_844D
 	mov [0x22], 0x005D
 	mov [0x21], 0x00B6
 	ret
 
+
 LABEL_844D:
 	jne [0x27], 0x23, LABEL_845C
 	mov [0x22], 0x005C
 	mov [0x21], 0x00B6
 	ret
+
 
 LABEL_845C:
 	jne [0x27], 0x45, LABEL_846F
@@ -391,13 +416,17 @@ LABEL_845C:
 	mov [0x23], 0x0000
 	ret
 
+
 LABEL_846F:
 	jne [0x27], 0x44, LABEL_847E
 	mov [0x22], 0x0046
 	mov [0x21], 0x008B
 	ret
 
+
 LABEL_847E:
 	ret
+
+
 LABEL_847F:
 	db 0x11

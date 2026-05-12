@@ -21,6 +21,8 @@ LABEL_6F93:
 
 LABEL_6FA9:
 	ret
+
+
 LABEL_6FAA:
 	db 0x05
 

@@ -8,6 +8,8 @@ LABEL_5DFC:
 	je [0x1D], 0x1E, LABEL_5F5A
 	jge [0x1D], 0x28, LABEL_5F9F
 	ret
+
+
 LABEL_5E1B:
 	db 0x11
 
@@ -19,6 +21,7 @@ LABEL_5E1C:
 	and [0x49], 0xFFF8
 	ret
 
+
 LABEL_5E35:
 	jne [0x1D], 0x0B, LABEL_5E48
 	setup channel=0x2A, address=INCREMENT_VAR31
@@ -26,12 +29,14 @@ LABEL_5E35:
 	and [0x4B], 0xFFF8
 	ret
 
+
 LABEL_5E48:
 	jne [0x1D], 0x0C, SHARED_RET
 	setup channel=0x2C, address=INCREMENT_VAR31
 	or [0x4D], 0x4000
 	and [0x4D], 0xFFF8
 	ret
+
 
 LABEL_5E5B:
 	jne [HACK_VAR_67], 0xCA, LABEL_5E74
@@ -41,6 +46,7 @@ LABEL_5E5B:
 	and [0x49], 0xFFF8
 	ret
 
+
 LABEL_5E74:
 	jne [HACK_VAR_67], 0xCB, SHARED_RET
 	jne [0x1D], 0x0A, LABEL_5E8D
@@ -49,6 +55,7 @@ LABEL_5E74:
 	and [0x49], 0xFFF8
 	ret
 
+
 LABEL_5E8D:
 	jne [0x1D], 0x0B, LABEL_5EA0
 	setup channel=0x2A, address=INCREMENT_VAR31
@@ -56,12 +63,14 @@ LABEL_5E8D:
 	and [0x4B], 0xFFF8
 	ret
 
+
 LABEL_5EA0:
 	jne [0x1D], 0x0C, SHARED_RET
 	setup channel=0x2C, address=INCREMENT_VAR31
 	or [0x4D], 0x4000
 	and [0x4D], 0xFFF8
 	ret
+
 
 LABEL_5EB3:
 	jne [HACK_VAR_67], 0xC8, LABEL_5EE5
@@ -76,6 +85,7 @@ LABEL_5EB3:
 	setup channel=0x02, address=KILL_CHANNEL_LANDING
 	ret
 
+
 LABEL_5EE5:
 	jne [HACK_VAR_67], 0xED, LABEL_5EFC
 	mov [0x47], 0x0FA0
@@ -83,6 +93,7 @@ LABEL_5EE5:
 	setup channel=0x02, address=KILL_CHANNEL_LANDING
 	setup channel=0x3C, address=LABEL_2FCB
 	ret
+
 
 LABEL_5EFC:
 	jne [HACK_VAR_67], 0x50, SHARED_RET
@@ -101,6 +112,7 @@ LABEL_5F23:
 	setup channel=0x05, address=LABEL_B178
 	or [0xB2], 0x0002
 	ret
+
 
 LABEL_5F3C:
 	call LABEL_659F

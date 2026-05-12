@@ -52,6 +52,7 @@ DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E:
 	je [0xF8], 0x03, DRAW_PRISON_BUDDY_POSE_0_3
 	ret
 
+
 LABEL_5148:
 	jne [0x0E], 0x01, LABEL_5157
 	je [0xF8], 0x01, DRAW_CIN_234
@@ -80,13 +81,17 @@ LABEL_5187:
 	video offset=CINEMATIC_227, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
+
 LABEL_5193:
 	jne [0x0E], 0x07, LABEL_51A6
 	je [0xF8], 0x00, DRAW_CIN_225
 	je [0xF8], 0x01, DRAW_CIN_226
 	ret
 
+
 LABEL_51A6:
 	ret
+
+
 LABEL_51A7:
 	db 0x11

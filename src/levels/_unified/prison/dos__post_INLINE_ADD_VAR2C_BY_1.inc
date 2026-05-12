@@ -21,6 +21,8 @@ LABEL_4065:
 
 LABEL_407B:
 	ret
+
+
 LABEL_407C:
 	db 0x05
 

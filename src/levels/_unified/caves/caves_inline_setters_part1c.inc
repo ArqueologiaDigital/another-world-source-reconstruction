@@ -147,6 +147,7 @@ RESET_VAR09_AND_INCR_VAR08_BY_2:
 	add [0x08], 0x0002
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_RESET_VAR09_AND_INCR_VAR08_BY_2.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -229,6 +230,7 @@ MUL_VAR6B_BY_11_INTO_VAR21:
 	add [0x21], [0x6B]
 	add [0x21], [0x6B]
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_MUL_VAR6B_BY_11_INTO_VAR21.inc"

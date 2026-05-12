@@ -1043,6 +1043,7 @@ LABEL_B18F:
 	or [0xB0], 0x0001
 	ret
 
+
 LABEL_B1AE:
 	jne [HACK_VAR_67], 0xCC, SHARED_RET
 	jne [0x1D], 0x0B, LABEL_B1D5
@@ -1054,6 +1055,7 @@ LABEL_B1AE:
 	video offset=CINEMATIC_259, x=[0x70], y=93, zoom=[0x5a]	;@enc=alt
 	ret
 
+
 LABEL_B1D5:
 	jne [0x1D], 0x0A, LABEL_B1F6
 	deleteChannels first=0x28, last=0x29
@@ -1064,6 +1066,7 @@ LABEL_B1D5:
 	video offset=CINEMATIC_259, x=[0x6e], y=93, zoom=[0x5a]	;@enc=alt
 	ret
 
+
 LABEL_B1F6:
 	jne [0x1D], 0x0C, SHARED_RET
 	deleteChannels first=0x2C, last=0x2D
@@ -1073,6 +1076,8 @@ LABEL_B1F6:
 	mov [0x4D], 0x7FFF
 	video offset=CINEMATIC_259, x=[0x72], y=93, zoom=[0x5a]	;@enc=alt
 	ret
+
+
 LABEL_B217:
 	db 0x11
 
@@ -1089,6 +1094,7 @@ LABEL_B218:
 	add [0xB9], [0xF8]
 	ret
 
+
 LABEL_B23F:
 	jne [HACK_VAR_67], 0x8A, SHARED_RET
 	mov [0xF8], [0x49]
@@ -1097,6 +1103,8 @@ LABEL_B23F:
 	and [0xB9], 0xDFFF
 	add [0xB9], [0xF8]
 	ret
+
+
 LABEL_B258:
 	db 0x11
 
@@ -1106,11 +1114,13 @@ LABEL_B259:
 	mov [0x21], 0x00B6
 	ret
 
+
 LABEL_B268:
 	jg [0x27], 0x04, LABEL_B277
 	mov [0x22], 0x0050
 	mov [0x21], 0x00B6
 	ret
+
 
 LABEL_B277:
 	jne [0x27], 0x05, LABEL_B28A
@@ -1119,6 +1129,7 @@ LABEL_B277:
 	mov [0x23], 0x0000
 	ret
 
+
 LABEL_B28A:
 	jne [0x27], 0x25, LABEL_B29D
 	mov [0x22], 0x0081
@@ -1126,17 +1137,20 @@ LABEL_B28A:
 	mov [0x23], 0x0001
 	ret
 
+
 LABEL_B29D:
 	jne [0x27], 0x24, LABEL_B2AC
 	mov [0x22], 0x005D
 	mov [0x21], 0x00B6
 	ret
 
+
 LABEL_B2AC:
 	jne [0x27], 0x23, LABEL_B2BB
 	mov [0x22], 0x005C
 	mov [0x21], 0x00B6
 	ret
+
 
 LABEL_B2BB:
 	jne [0x27], 0x45, LABEL_B2CE
@@ -1145,13 +1159,17 @@ LABEL_B2BB:
 	mov [0x23], 0x0000
 	ret
 
+
 LABEL_B2CE:
 	jne [0x27], 0x44, LABEL_B2DD
 	mov [0x22], 0x0046
 	mov [0x21], 0x008B
 	ret
 
+
 LABEL_B2DD:
 	ret
+
+
 LABEL_B2DE:
 	db 0x11

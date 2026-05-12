@@ -6,12 +6,14 @@ LABEL_B40C:
 	mov [HACK_VAR_67], 0x0064
 	ret
 
+
 LABEL_B417:
 	jne [HACK_VAR_67], 0x8C, LABEL_B42A
 	mov [HACK_VAR_67], 0x00AB
 	mov [HERO_X], 0x0140
 	mov [HERO_Y], 0x003C
 	ret
+
 
 LABEL_B42A:
 	jne [HACK_VAR_67], 0x8A, LABEL_B443
@@ -21,15 +23,18 @@ LABEL_B42A:
 	mov [HERO_Y], 0x003C
 	ret
 
+
 LABEL_B443:
 	jne [HACK_VAR_67], 0x8E, LABEL_B44E
 	mov [HACK_VAR_67], 0x00CE
 	ret
 
+
 LABEL_B44E:
 	jne [HACK_VAR_67], 0x2A, LABEL_B459
 	mov [HACK_VAR_67], 0x006D
 	ret
+
 
 LABEL_B459:
 	jne [HACK_VAR_67], 0x8B, LABEL_B46C
@@ -38,11 +43,13 @@ LABEL_B459:
 	mov [HACK_VAR_67], 0x00C9
 	ret
 
+
 LABEL_B46C:
 	jne [HACK_VAR_67], 0xCB, LABEL_B47B
 	mov [HERO_X], 0x004B
 	mov [HACK_VAR_67], 0x00EB
 	ret
+
 
 LABEL_B47B:
 	jne [HACK_VAR_67], 0xAA, ADD_HACK67_BY_20

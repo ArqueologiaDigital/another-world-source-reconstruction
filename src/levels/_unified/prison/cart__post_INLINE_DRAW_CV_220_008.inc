@@ -5,6 +5,7 @@ LABEL_5682:
 	call LABEL_54F6
 	ret
 
+
 LABEL_5691:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, DRAW_CV224_AT_X07_Y08

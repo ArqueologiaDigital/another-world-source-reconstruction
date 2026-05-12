@@ -16,6 +16,7 @@ LABEL_14B5:
 	mov [HERO_ACTION], 0x0001
 	ret
 
+
 LABEL_14C7:
 	fill page=0x00, color=0x00
 	fill page=0x03, color=0x00
@@ -58,15 +59,18 @@ LABEL_1533:
 	text id=0x016B, x=26, y=180, color=0x0D ; "LFCK"
 	ret
 
+
 LABEL_1540:
 	jne [0x00], 0x3E, LABEL_154D
 	text id=0x0171, x=26, y=180, color=0x0D ; "string_0171"
 	ret
 
+
 LABEL_154D:
 	jne [0x00], 0x40, LABEL_155A
 	text id=0x0172, x=26, y=180, color=0x0D ; "TFBB"
 	ret
+
 
 LABEL_155A:
 	jne [0x00], 0x42, DRAW_TEXT_0174_AT_26_180

@@ -18,6 +18,7 @@ LABEL_6D4C:
 LABEL_6D59:
 	ret
 
+
 LABEL_6D5A:
 	je [0x29], 0x01, LABEL_6D67
 	jmp LABEL_6DFD
@@ -42,6 +43,8 @@ LABEL_6D7D:
 	mov [0x1C], 0x001E
 	call LABEL_6E64
 	ret
+
+
 	killChannel
 	call LABEL_6D96
 	jmp LABEL_6DFD
@@ -88,6 +91,7 @@ LABEL_6DE9:
 LABEL_6DFC:
 	ret
 
+
 LABEL_6DFD:
 	jne [0x72], [HACK_VAR_67], LABEL_6E13
 	mov [0x24], [0x70]
@@ -106,6 +110,7 @@ LABEL_6E13:
 
 LABEL_6E29:
 	ret
+
 
 LABEL_6E2A:
 	jl [0x26], 0x00, INLINE_COPY_VAR44_TO_VAR25

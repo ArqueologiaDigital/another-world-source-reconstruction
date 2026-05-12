@@ -4,6 +4,7 @@ LABEL_85D3:
 	mov [HERO_Y], 0x0078
 	ret
 
+
 LABEL_85E2:
 	jne [HACK_VAR_67], 0xC8, LABEL_8610
 	mov [HACK_VAR_67], 0x00A7
@@ -17,6 +18,7 @@ LABEL_85E2:
 	mov [HERO_X], 0x0140
 	call LABEL_589E
 	ret
+
 
 LABEL_8610:
 	jne [HACK_VAR_67], 0x68, DECR_HACK67_BY_1

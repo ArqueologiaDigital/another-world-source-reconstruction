@@ -5,6 +5,7 @@ LABEL_950F:
 	call LABEL_8181
 	ret
 
+
 LABEL_9521:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	sub [0x07], 0x0001
@@ -16,6 +17,7 @@ LABEL_9521:
 	add [0x07], 0x0001
 	ret
 
+
 LABEL_9543:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_Y_PLUS_E
@@ -23,12 +25,14 @@ LABEL_9543:
 	call LABEL_81E1
 	ret
 
+
 LABEL_9555:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_HERO_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_81AF
 	ret
+
 
 LABEL_9567:
 	jne [HACK_VAR_67], [0x10], SHARED_RET

@@ -7,6 +7,7 @@ LABEL_4EAD:
 	mov [0x11], [0x49]
 	ret
 
+
 LABEL_4EBA:
 	jne [0x1D], 0x0B, LABEL_4ED1
 	mov [0x10], [0x4A]
@@ -15,6 +16,7 @@ LABEL_4EBA:
 	mov [0xB2], 0x0001
 	ret
 
+
 LABEL_4ED1:
 	jne [0x1D], 0x0C, LABEL_4EDD
 	mov [0x10], [0x4C]
@@ -22,6 +24,8 @@ LABEL_4ED1:
 
 LABEL_4EDD:
 	ret
+
+
 LABEL_4EDE:
 	db 0x11
 
@@ -30,10 +34,12 @@ LABEL_4EDF:
 	mov [0x49], [0x11]
 	ret
 
+
 LABEL_4EE9:
 	jne [0x1D], 0x0B, LABEL_4EF3
 	mov [0x4B], [0x11]
 	ret
+
 
 LABEL_4EF3:
 	jne [0x1D], 0x0C, LABEL_4EFC
@@ -41,6 +47,8 @@ LABEL_4EF3:
 
 LABEL_4EFC:
 	ret
+
+
 LABEL_4EFD:
 	db 0x11
 
@@ -80,6 +88,7 @@ LABEL_4F4D:
 
 LABEL_4F53:
 	ret
+
 
 LABEL_4F54:
 	call LABEL_52F0
@@ -169,6 +178,7 @@ LABEL_502E:
 LABEL_503A:
 	ret
 
+
 LABEL_503B:
 	sub [0xF8], 0x000A
 	jl [0x21], [0xF8], SHARED_RET
@@ -176,6 +186,7 @@ LABEL_503B:
 	jg [0x21], [0xF8], SHARED_RET
 	mov [0xF8], 0x0FA0
 	ret
+
 
 LABEL_5054:
 	jl [0xA1], 0x00, LABEL_506C

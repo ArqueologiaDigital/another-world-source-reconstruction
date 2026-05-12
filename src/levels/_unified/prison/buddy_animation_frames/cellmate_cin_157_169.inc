@@ -18,6 +18,8 @@
 DRAW_PRISON_HERO_POSE_0_0:
 	video offset=CINEMATIC_164, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -25,6 +27,8 @@ DRAW_PRISON_HERO_POSE_0_0:
 DRAW_PRISON_HERO_POSE_0_1:
 	video offset=CINEMATIC_165, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -32,6 +36,8 @@ DRAW_PRISON_HERO_POSE_0_1:
 DRAW_PRISON_HERO_POSE_0_2:
 	video offset=CINEMATIC_166, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -39,6 +45,8 @@ DRAW_PRISON_HERO_POSE_0_2:
 DRAW_PRISON_HERO_POSE_0_3:
 	video offset=CINEMATIC_167, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -46,6 +54,8 @@ DRAW_PRISON_HERO_POSE_0_3:
 DRAW_PRISON_HERO_POSE_1:
 	video offset=CINEMATIC_163, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -53,6 +63,8 @@ DRAW_PRISON_HERO_POSE_1:
 DRAW_PRISON_HERO_POSE_2:
 	video offset=CINEMATIC_162, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -60,6 +72,8 @@ DRAW_PRISON_HERO_POSE_2:
 DRAW_PRISON_HERO_POSE_3:
 	video offset=CINEMATIC_161, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -67,6 +81,8 @@ DRAW_PRISON_HERO_POSE_3:
 DRAW_CIN_160:
 	video offset=CINEMATIC_160, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -74,6 +90,8 @@ DRAW_CIN_160:
 DRAW_CIN_159:
 	video offset=CINEMATIC_159, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -81,6 +99,8 @@ DRAW_CIN_159:
 DRAW_PRISON_HERO_POSE_5:
 	video offset=CINEMATIC_158, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 
@@ -88,6 +108,8 @@ DRAW_PRISON_HERO_POSE_5:
 DRAW_CIN_157:
 	video offset=CINEMATIC_157, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -100,6 +122,8 @@ DRAW_CIN_157:
 DRAW_CIN_168:
 	video offset=CINEMATIC_168, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -110,6 +134,8 @@ DRAW_CIN_168:
 DRAW_CIN_169:
 	video offset=CINEMATIC_169, x=[0xf5], y=[BUDDY_Y]
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"

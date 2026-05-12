@@ -82,50 +82,60 @@ DRAW_CIN_387_IF_VAR_E6_VALID:
 	video offset=CINEMATIC_388, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
+
 LABEL_CE95:
 	jne [0xE6], 0xFFFA, LABEL_CEA3
 	video offset=CINEMATIC_387, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
+
 
 LABEL_CEA3:
 	jne [0xE6], 0xFFFB, LABEL_CEB1
 	video offset=CINEMATIC_386, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
+
 LABEL_CEB1:
 	jne [0xE6], 0xFFFC, LABEL_CEBF
 	video offset=CINEMATIC_385, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
+
 
 LABEL_CEBF:
 	jne [0xE6], 0xFFFD, LABEL_CECD
 	video offset=CINEMATIC_384, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
+
 LABEL_CECD:
 	jne [0xE6], 0xFFFE, LABEL_CEDB
 	video offset=CINEMATIC_383, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
+
 
 LABEL_CEDB:
 	jne [0xE6], 0xFFFF, LABEL_CEE9
 	video offset=CINEMATIC_382, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
+
 LABEL_CEE9:
 	jne [0xE6], 0x00, LABEL_CEF6
 	video offset=CINEMATIC_381, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
+
 
 LABEL_CEF6:
 	jne [0xE6], 0x01, LABEL_CF03
 	video offset=CINEMATIC_380, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
+
 LABEL_CF03:
 	jne [0xE6], 0x02, LABEL_CF10
 	video offset=CINEMATIC_379, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
+
 
 LABEL_CF10:
 	jne [0xE6], 0x03, LABEL_CF23
@@ -133,11 +143,13 @@ LABEL_CF10:
 	video offset=CINEMATIC_375, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
+
 LABEL_CF23:
 	jne [0xE6], 0x04, LABEL_CF36
 	video offset=CINEMATIC_377, x=[0x21], y=[0x22], zoom=[0x23]
 	video offset=CINEMATIC_375, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
+
 
 LABEL_CF36:
 	jg [0xE6], 0x05, DRAW_CIN_374_THEN_CIN_375
@@ -145,10 +157,12 @@ LABEL_CF36:
 	video offset=CINEMATIC_375, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
+
 DRAW_CIN_374_THEN_CIN_375:
 	video offset=CINEMATIC_374, x=[0x21], y=[0x22], zoom=[0x23]
 	video offset=CINEMATIC_375, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
+
 
 LABEL_CF56:
 	video offset=CINEMATIC_424, x=169, y=94
@@ -169,6 +183,7 @@ DRAW_CIN_SEQ_423_423_423_AT_CF69:
 	video offset=CINEMATIC_423, x=158, y=27
 	ret
 
+
 DRAW_CIN_SEQ_423_423_423_AT_CF7E:
 	video offset=CINEMATIC_423, x=157, y=70
 	video offset=CINEMATIC_423, x=158, y=59
@@ -176,6 +191,7 @@ DRAW_CIN_SEQ_423_423_423_AT_CF7E:
 	video offset=CINEMATIC_423, x=158, y=40
 	video offset=CINEMATIC_423, x=158, y=27
 	ret
+
 
 DRAW_CIN_SEQ_423_423_423_AT_CF93:
 	video offset=CINEMATIC_423, x=156, y=70
@@ -185,6 +201,7 @@ DRAW_CIN_SEQ_423_423_423_AT_CF93:
 	video offset=CINEMATIC_423, x=158, y=27
 	ret
 
+
 DRAW_CIN_SEQ_423_423_423_AT_CFA8:
 	video offset=CINEMATIC_423, x=155, y=70
 	video offset=CINEMATIC_423, x=156, y=59
@@ -192,6 +209,7 @@ DRAW_CIN_SEQ_423_423_423_AT_CFA8:
 	video offset=CINEMATIC_423, x=157, y=40
 	video offset=CINEMATIC_423, x=157, y=27
 	ret
+
 
 DRAW_CIN_SEQ_423_423_423_AT_CFBD:
 	video offset=CINEMATIC_423, x=159, y=70
@@ -201,6 +219,7 @@ DRAW_CIN_SEQ_423_423_423_AT_CFBD:
 	video offset=CINEMATIC_423, x=158, y=27
 	ret
 
+
 DRAW_CIN_SEQ_423_423_423_AT_CFD2:
 	video offset=CINEMATIC_423, x=160, y=70
 	video offset=CINEMATIC_423, x=159, y=59
@@ -209,6 +228,7 @@ DRAW_CIN_SEQ_423_423_423_AT_CFD2:
 	video offset=CINEMATIC_423, x=158, y=27
 	ret
 
+
 DRAW_CIN_SEQ_423_423_423_AT_CFE7:
 	video offset=CINEMATIC_423, x=161, y=70
 	video offset=CINEMATIC_423, x=160, y=59
@@ -216,6 +236,8 @@ DRAW_CIN_SEQ_423_423_423_AT_CFE7:
 	video offset=CINEMATIC_423, x=159, y=40
 	video offset=CINEMATIC_423, x=159, y=27
 	ret
+
+
 LABEL_CFFC:
 	db 0x11
 
@@ -463,6 +485,7 @@ LABEL_D213:
 	video offset=CINEMATIC_221, x=160, y=100
 	ret
 
+
 LABEL_D22B:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_223, x=160, y=100
@@ -471,11 +494,14 @@ LABEL_D22B:
 	video offset=CINEMATIC_226, x=169, y=164
 	ret
 
+
 LABEL_D23F:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_276, x=160, y=100
 	video offset=CINEMATIC_277, x=160, y=70
 	video offset=CINEMATIC_278, x=160, y=100
 	ret
+
+
 LABEL_D24F:
 	db 0x11

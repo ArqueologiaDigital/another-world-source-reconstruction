@@ -9,17 +9,20 @@ LABEL_2D0B:
 	mov [0x29], 0xFFE7
 	ret
 
+
 LABEL_2D34:
 	je [0xB0], 0x02, LABEL_2D43
 	mov [0x2F], 0x0019
 	mov [0x29], 0x0190
 	ret
 
+
 LABEL_2D43:
 	jg [HACK_VAR_67], 0x02, SHARED_RET
 	mov [0x29], 0xFF9C
 	mov [0x2F], 0x0019
 	ret
+
 
 LABEL_2D52:
 	jne [0xB0], 0x00, LABEL_2D61

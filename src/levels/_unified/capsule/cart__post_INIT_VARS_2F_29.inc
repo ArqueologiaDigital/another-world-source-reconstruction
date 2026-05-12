@@ -6,13 +6,18 @@ STATE_VAR12_BIG_DISPATCH_CASE_68:
 	jg [HERO_X], 0x32, SHARED_RET
 	mov [0x2F], 0x0022
 	ret
+
+
 	jge [0x04], 0x4000, SHARED_RET
 	jg [0xAA], 0x00, LABEL_557F
 	mov [0x2F], 0x000B
 	ret
+
+
 	jg [0xAD], 0x00, LABEL_557F
 	mov [0x2F], 0x000B
 	ret
+
 
 LABEL_557F:
 	jg [HERO_X], 0x7A, LABEL_559A
@@ -21,6 +26,7 @@ LABEL_557F:
 	and [0xF8], 0x0380
 	je [0xF8], 0x00, LABEL_559A
 	ret
+
 
 LABEL_559A:
 	call LABEL_569B

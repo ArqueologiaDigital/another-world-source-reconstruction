@@ -18,6 +18,7 @@ COPY_HASH_AND_SPLIT_VAR38_3F_3E:
 	and [0x38], 0x0001
 	ret
 
+
 LABEL_0860:
 	mov [HACK_VAR_67], 0x0001
 	mov [0x66], 0x0001
@@ -48,6 +49,8 @@ LABEL_0860:
 	mov [0x7C], 0x2000
 	mov [0x7D], 0x0800
 	ret
+
+
 	call LABEL_0860
 	setup channel=0x3C, address=LABEL_06ED
 	mov [PAUSE_SLICES], 0x0004
@@ -172,12 +175,14 @@ DRAW_CIN_311_THEN_CIN_314:
 	video offset=CINEMATIC_314, x=[0xe6], y=[0xe7]
 	ret
 
+
 LABEL_09FA:
 	video offset=CINEMATIC_311, x=[0xe6], y=[0xe7]
 	add [0xE6], 0x0001
 	video offset=CINEMATIC_313, x=[0xe6], y=[0xe7]
 	sub [0xE6], 0x0001
 	ret
+
 
 LABEL_0A0D:
 	video offset=CINEMATIC_311, x=[0xe6], y=[0xe7]
@@ -186,12 +191,14 @@ LABEL_0A0D:
 	sub [0xE6], 0x0002
 	ret
 
+
 LABEL_0A20:
 	video offset=CINEMATIC_311, x=[0xe6], y=[0xe7]
 	add [0xE6], 0x0003
 	video offset=CINEMATIC_312, x=[0xe6], y=[0xe7]
 	sub [0xE6], 0x0003
 	ret
+
 
 LABEL_0A33:
 	video offset=CINEMATIC_311, x=[0xe6], y=[0xe7]
@@ -200,6 +207,7 @@ LABEL_0A33:
 	sub [0xE6], 0x0004
 	ret
 
+
 LABEL_0A46:
 	video offset=CINEMATIC_311, x=[0xe6], y=[0xe7]
 	add [0xE6], 0x0006
@@ -207,12 +215,14 @@ LABEL_0A46:
 	sub [0xE6], 0x0006
 	ret
 
+
 LABEL_0A59:
 	video offset=CINEMATIC_311, x=[0xe6], y=[0xe7]
 	add [0xE6], 0x0008
 	video offset=CINEMATIC_312, x=[0xe6], y=[0xe7]
 	sub [0xE6], 0x0008
 	ret
+
 
 LABEL_0A6C:
 	break
@@ -263,6 +273,7 @@ DRAW_CIN_315_PROGRESSIVE:
 	video offset=CINEMATIC_315, x=[0xf8], y=93
 	ret
 
+
 LABEL_0AED:
 	add [0xF8], 0x0038
 	video offset=CINEMATIC_316, x=[0xf8], y=186
@@ -270,6 +281,8 @@ LABEL_0AED:
 	video offset=CINEMATIC_316, x=[0xf8], y=186
 	selectVideoPage 0xFF
 	ret
+
+
 LABEL_0B02:
 	db 0x11
 

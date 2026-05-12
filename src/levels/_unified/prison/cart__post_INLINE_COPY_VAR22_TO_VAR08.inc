@@ -1,6 +1,7 @@
 LABEL_1486:
 	ret
 
+
 LABEL_1487:
 	call LABEL_143B
 	shl [0x0E], 0x000C

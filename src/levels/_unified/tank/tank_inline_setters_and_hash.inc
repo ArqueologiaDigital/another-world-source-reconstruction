@@ -33,6 +33,7 @@ SUM_HASH_VARS_TO_VAR_64:
 	and [0x65], 0x00FF
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SUM_HASH_VARS_TO_VAR_64.inc"
 ;@endif
@@ -68,6 +69,8 @@ INIT_TANK_DRIVE_VARS:
 	mov [0x75], 0x0000
 	mov [0x76], 0x0000
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"

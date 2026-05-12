@@ -8,6 +8,7 @@ LABEL_7A5E:
 	mov [HACK_VAR_67], [0x24]
 	ret
 
+
 LABEL_7A75:
 	mov [0xF8], [0x32]
 	and [0xF8], 0x0001
@@ -41,6 +42,7 @@ LABEL_7AD1:
 	setup channel=0x14, address=LABEL_7782
 	ret
 
+
 LABEL_7ADF:
 	mov [HERO_Y], [0x22]
 	mov [0xF8], [0x23]
@@ -59,6 +61,8 @@ LABEL_7B16:
 	mov [0x35], 0x0006
 	setup channel=0x14, address=LABEL_794A
 	ret
+
+
 LABEL_7B1F:
 	db 0x11
 

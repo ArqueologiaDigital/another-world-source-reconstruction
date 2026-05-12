@@ -21,6 +21,8 @@ LABEL_6EC0:
 
 LABEL_6ED6:
 	ret
+
+
 LABEL_6ED7:
 	db 0x05
 

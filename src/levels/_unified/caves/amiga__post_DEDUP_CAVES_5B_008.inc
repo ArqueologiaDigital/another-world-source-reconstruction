@@ -13,6 +13,7 @@ LABEL_89CF:
 LABEL_89D4:
 	ret
 
+
 LABEL_89D5:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	sub [0x08], 0x0001

@@ -59,6 +59,7 @@ LABEL_2601:
 	setup channel=0x38, address=LABEL_3D5C
 	ret
 
+
 LABEL_2614:
 	mov [0x2F], 0x0019
 	mov [0x29], 0x0320
@@ -66,12 +67,14 @@ LABEL_2614:
 	mov [0x2F], 0x001E
 	ret
 
+
 LABEL_2627:
 	mov [0x2F], 0x001F
 	jg [BUDDY_X], 0x78, SHARED_RET
 	mov [0x2F], 0x0019
 	mov [0x29], 0x0096
 	ret
+
 
 LABEL_263A:
 	mov [0x2F], 0x0020
@@ -81,6 +84,7 @@ LABEL_263A:
 	mov [0x29], 0x01C2
 	ret
 
+
 LABEL_2653:
 	mov [0x2F], 0x0012
 	jg [BUDDY_X], 0xA0, SHARED_RET
@@ -88,10 +92,12 @@ LABEL_2653:
 	mov [0x29], 0x00BA
 	ret
 
+
 LABEL_2666:
 	mov [0x2F], 0x0020
 	jne [0x10], 0x8E, LABEL_263A
 	ret
+
 
 LABEL_2671:
 	mov [0x68], 0x0090
@@ -243,9 +249,11 @@ LABEL_2823:
 	setup channel=0x28, address=LABEL_45F7
 	ret
 
+
 LABEL_2840:
 	je [HACK_VAR_67], 0xEC, LABEL_2847
 	ret
+
 
 LABEL_2847:
 	mov [0xF8], [0xB4]
@@ -264,6 +272,7 @@ LABEL_2857:
 
 LABEL_2873:
 	ret
+
 
 LABEL_2874:
 	mov [0x0E], 0x0000

@@ -8,11 +8,13 @@ LABEL_2EFC:
 	mov [0x2F], 0x0002
 	ret
 
+
 LABEL_2F1E:
 	jg [BUDDY_X], 0x8C, LABEL_2F2D
 	mov [0x29], 0x00AA
 	mov [0x2F], 0x0001
 	ret
+
 
 LABEL_2F2D:
 	mov [0xF8], [0x11]
@@ -20,6 +22,7 @@ LABEL_2F2D:
 	je [0xF8], 0x00, SHARED_RET
 	mov [0x2F], 0x0006
 	ret
+
 
 LABEL_2F3F:
 	mov [0xF8], [HERO_X]

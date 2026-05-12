@@ -5,6 +5,7 @@ LABEL_8658:
 	call LABEL_8417
 	ret
 
+
 LABEL_8667:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	play id=0x0055, freq=0x14, vol=0x14, channel=0x00

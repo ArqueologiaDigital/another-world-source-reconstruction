@@ -4,6 +4,7 @@ SCROLL_UP_16_VAR14_VAR18_AND_SCROLL_Y:
 	sub [SCROLL_Y], 0x0010
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SCROLL_UP_16_VAR14_VAR18_AND_SCROLL_Y.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -88,6 +89,8 @@ INLINE_SET_VAR16_TO_0:
 DRAW_CIN_552:
 	video offset=CINEMATIC_552, x=[HERO_X], y=[HERO_Y]
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -100,6 +103,8 @@ DRAW_CIN_552:
 DRAW_CIN_550:
 	video offset=CINEMATIC_550, x=[HERO_X], y=[HERO_Y]
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -173,6 +178,7 @@ INIT_VARS_A1_A4_A7_AA_PLUS4:
 	mov [0x61], 0x0FA0
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INIT_VARS_A1_A4_A7_AA_PLUS4.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -194,6 +200,7 @@ INIT_VARS_A1_A4_A7_AA_PLUS4:
 DECREMENT_VAR10_BY_1:
 	sub [0x10], 0x0001
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_DECREMENT_VAR10_BY_1.inc"

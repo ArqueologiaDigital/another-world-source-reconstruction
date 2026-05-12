@@ -13,9 +13,11 @@ LABEL_875B:
 	mov [HERO_Y], [0x22]
 	ret
 
+
 LABEL_8777:
 	je [HACK_VAR_67], 0x6F, LABEL_877E
 	ret
+
 
 LABEL_877E:
 	mov [0x05], 0x0000
@@ -36,6 +38,7 @@ LABEL_87A5:
 	mov [0x22], 0x007A
 	ret
 
+
 LABEL_87B0:
 	jg [HERO_X], 0xC8, LABEL_87BA
 	mov [HERO_X], 0x00C8
@@ -48,6 +51,7 @@ LABEL_87C4:
 	jg [0x22], 0x87, SHARED_RET
 	mov [0x22], 0x0087
 	ret
+
 
 LABEL_87CF:
 	je [0x63], 0x64, LABEL_8898
@@ -156,6 +160,7 @@ LABEL_88E4:
 	je [0x18], 0x05, LABEL_893C
 	ret
 
+
 LABEL_893C:
 	mov [0x1A], [HERO_X]
 	mov [0x1B], [HERO_Y]
@@ -185,6 +190,7 @@ SETUP_CHAN_0F_AT_RET:
 	setup channel=0x0F, address=LABEL_8988
 	ret
 
+
 LABEL_8988:
 	video offset=CINEMATIC_324, x=[0x1a], y=[0x1b]
 	break
@@ -200,6 +206,7 @@ LABEL_8988:
 SET_VAR18_TO_010E:
 	mov [0x18], 0x010E
 	ret
+
 
 LABEL_89AB:
 	deleteChannels first=0x15, last=0x16
@@ -274,11 +281,13 @@ LABEL_8A24:
 	mov [0x22], 0x03E8
 	ret
 
+
 LABEL_8A8C:
 	jne [HACK_VAR_67], 0xED, SHARED_RET
 	jg [HERO_Y], 0x5A, SHARED_RET
 	mov [0x22], 0x03E8
 	ret
+
 
 LABEL_8A9D:
 	je [0x63], 0x03, SHARED_RET
@@ -292,6 +301,7 @@ LABEL_8A9D:
 	mov [0x22], 0x03E8
 	ret
 
+
 LABEL_8ACC:
 	mov [0xF8], [HERO_X]
 	sub [0xF8], [0x2A]
@@ -299,6 +309,7 @@ LABEL_8ACC:
 	je [0x63], 0x02, SHARED_RET
 	mov [0x22], 0x03E9
 	ret
+
 
 LABEL_8AE3:
 	jne [HACK_VAR_67], 0xED, SHARED_RET
@@ -309,6 +320,7 @@ LABEL_8AE3:
 	je [0x63], 0x01, SHARED_RET
 	mov [0x22], 0x03E8
 	ret
+
 
 LABEL_8B06:
 	add [0x22], [0x21]
@@ -327,11 +339,13 @@ LABEL_8B21:
 	mov [0x22], 0x0000
 	ret
 
+
 LABEL_8B36:
 	add [0x22], 0x0001
 	jl [0x22], 0x00, SHARED_RET
 	mov [0x22], 0x0000
 	ret
+
 
 LABEL_8B45:
 	je [0x63], 0x64, LABEL_8C88

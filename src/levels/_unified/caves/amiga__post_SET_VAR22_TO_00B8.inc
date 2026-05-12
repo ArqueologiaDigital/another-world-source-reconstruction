@@ -15,6 +15,7 @@ LABEL_C0E5:
 	play id=0x0074, freq=0x0A, vol=0x40, channel=0x02
 	ret
 
+
 LABEL_C116:
 	jne [HACK_VAR_67], 0xA7, LABEL_C13A
 	copyVideoPage src=0x03, dst=0x00
@@ -27,6 +28,7 @@ LABEL_C116:
 	setup channel=0x3C, address=LABEL_3D49
 	ret
 
+
 LABEL_C13A:
 	jne [HACK_VAR_67], 0xAF, LABEL_C153
 	selectVideoPage 0x00
@@ -35,6 +37,7 @@ LABEL_C13A:
 	or [0xB0], 0x0002
 	play id=0x005A, freq=0x0A, vol=0x40, channel=0x00
 	ret
+
 
 LABEL_C153:
 	jne [HACK_VAR_67], 0x68, LABEL_C16C
@@ -45,6 +48,7 @@ LABEL_C153:
 	play id=0x005A, freq=0x0A, vol=0x40, channel=0x00
 	ret
 
+
 LABEL_C16C:
 	jne [HACK_VAR_67], 0x28, LABEL_C181
 	selectVideoPage 0x00
@@ -52,6 +56,7 @@ LABEL_C16C:
 	selectVideoPage 0xFF
 	play id=0x005A, freq=0x0A, vol=0x40, channel=0x00
 	ret
+
 
 LABEL_C181:
 	jne [HACK_VAR_67], 0xCA, LABEL_C1A6
@@ -64,6 +69,7 @@ LABEL_C181:
 	video offset=CINEMATIC_134, x=[0x68], y=73, zoom=[0x5a]	;@enc=alt
 	ret
 
+
 LABEL_C1A6:
 	jne [HACK_VAR_67], 0xCB, LABEL_C1CD
 	jne [0x1D], 0x0C, SHARED_RET
@@ -74,6 +80,7 @@ LABEL_C1A6:
 	mov [0x4D], 0x7FFF
 	video offset=CINEMATIC_134, x=[0x72], y=93, zoom=[0x5a]	;@enc=alt
 	ret
+
 
 LABEL_C1CD:
 	jne [HACK_VAR_67], 0xCC, SHARED_RET
@@ -87,6 +94,7 @@ LABEL_C1CD:
 	video offset=CINEMATIC_134, x=[0x70], y=93, zoom=[0x5a]	;@enc=alt
 	ret
 
+
 LABEL_C1F8:
 	jne [0x1D], 0x0A, LABEL_C21D
 	deleteChannels first=0x28, last=0x29
@@ -98,6 +106,7 @@ LABEL_C1F8:
 	video offset=CINEMATIC_134, x=[0x6e], y=93, zoom=[0x5a]	;@enc=alt
 	ret
 
+
 LABEL_C21D:
 	jne [0x1D], 0x0C, SHARED_RET
 	deleteChannels first=0x2C, last=0x2D
@@ -108,6 +117,8 @@ LABEL_C21D:
 	mov [0x4D], 0x7FFF
 	video offset=CINEMATIC_134, x=[0x72], y=93, zoom=[0x5a]	;@enc=alt
 	ret
+
+
 LABEL_C242:
 	db 0x11
 
@@ -123,6 +134,7 @@ LABEL_C243:
 	shr [0xF8], 0x0001
 	add [0xB1], [0xF8]
 	ret
+
 
 LABEL_C26A:
 	jne [HACK_VAR_67], 0x92, LABEL_C29F
@@ -141,6 +153,7 @@ LABEL_C26A:
 	add [0xB8], [0xF8]
 	ret
 
+
 LABEL_C29F:
 	jne [HACK_VAR_67], 0x93, LABEL_C2D4
 	and [0xB9], 0xFE00
@@ -158,6 +171,7 @@ LABEL_C29F:
 	add [0xB9], [0xF8]
 	ret
 
+
 LABEL_C2D4:
 	jne [HACK_VAR_67], 0x94, LABEL_C2FB
 	and [0xB9], 0x01FF
@@ -171,10 +185,13 @@ LABEL_C2D4:
 	add [0xB9], [0xF8]
 	ret
 
+
 LABEL_C2FB:
 	jne [HACK_VAR_67], 0x45, SHARED_RET
 	mov [0xBA], 0x0000
 	ret
+
+
 LABEL_C306:
 	db 0x11
 

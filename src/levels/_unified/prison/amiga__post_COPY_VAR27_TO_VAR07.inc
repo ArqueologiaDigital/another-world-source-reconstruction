@@ -10,6 +10,8 @@ LABEL_3653:
 	mov [0x21], [0x22]
 	mov [0x22], [0x26]
 	ret
+
+
 LABEL_3669:
 	db 0x11
 

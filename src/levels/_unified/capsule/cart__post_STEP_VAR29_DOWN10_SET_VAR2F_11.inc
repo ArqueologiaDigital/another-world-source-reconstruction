@@ -5,15 +5,18 @@ LABEL_53BF:
 	jne [0x1D], 0x00, LABEL_53E6
 	ret
 
+
 LABEL_53D0:
 	jg [0xAA], 0x00, LABEL_53DB
 	mov [0x2F], 0x000B
 	ret
 
+
 LABEL_53DB:
 	jg [0xAD], 0x00, LABEL_53E6
 	mov [0x2F], 0x000B
 	ret
+
 
 LABEL_53E6:
 	mov [0x2F], 0x0008
@@ -24,6 +27,7 @@ LABEL_53E6:
 	mov [0x2F], 0x0009
 	ret
 
+
 LABEL_53FF:
 	mov [0x21], 0x0000
 	jne [0x88], 0xFFFF, SET_VAR21_TO_0001_AT_5418
@@ -33,6 +37,8 @@ LABEL_53FF:
 SET_VAR21_TO_0001_AT_5418:
 	mov [0x21], 0x0001
 	ret
+
+
 	mov [0x2F], 0x0018
 	mov [0x29], 0x00FF
 	jg [BUDDY_X], [0x29], SHARED_RET
@@ -41,11 +47,15 @@ SET_VAR21_TO_0001_AT_5418:
 	mov [0x2F], 0x001A
 	mov [0x12], 0x0008
 	ret
+
+
 	mov [0x2F], 0x0018
 	mov [0x29], 0x00FA
 	jg [BUDDY_X], [0x29], SHARED_RET
 	mov [0x2F], 0x001B
 	ret
+
+
 	mov [0x2F], 0x0019
 	mov [0x29], 0x010E
 	jg [BUDDY_X], [0x29], SHARED_RET
@@ -53,11 +63,13 @@ SET_VAR21_TO_0001_AT_5418:
 	mov [0x12], 0x0048
 	ret
 
+
 STATE_VAR12_BIG_DISPATCH_CASE_48:
 	jg [HERO_X], 0xB4, STATE_VAR12_BIG_DISPATCH_CASE_50
 	mov [0x2F], 0x000D
 	mov [0x12], 0x0050
 	ret
+
 
 STATE_VAR12_BIG_DISPATCH_CASE_50:
 	mov [0x2F], 0x0009
@@ -66,16 +78,20 @@ STATE_VAR12_BIG_DISPATCH_CASE_50:
 	jg [HERO_X], 0x32, SHARED_RET
 	mov [0x12], 0x0048
 	ret
+
+
 	jne [0x10], 0x4D, LABEL_54A4
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	mov [0x29], 0x0168
 	mov [0x2F], 0x0019
 	ret
 
+
 LABEL_54A4:
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
 	mov [0x10], 0x0000
 	ret
+
 
 STATE_VAR12_BIG_DISPATCH_CASE_20:
 	mov [0x2F], 0x0000
@@ -92,6 +108,7 @@ LABEL_54C4:
 	mov [0x29], 0x0003
 	mov [0x2F], 0x0008
 	ret
+
 
 STATE_VAR12_BIG_DISPATCH_CASE_40:
 	mov [0x2F], 0x0000

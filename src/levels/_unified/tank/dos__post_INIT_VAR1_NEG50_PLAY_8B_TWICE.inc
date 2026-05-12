@@ -80,6 +80,7 @@ PROJECT_AND_DRAW_TWICE_Y_PLUS_9:
 	call LABEL_1A30
 	ret
 
+
 TANK_RESTORE_VARS_04_TO_09_FROM_14_TO_19:
 	mov [0x07], [0x14]
 	mov [0x08], [0x15]
@@ -153,60 +154,72 @@ LABEL_1A30:
 	video offset=CINEMATIC_220, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 LABEL_1A3D:
 	jne [0x06], 0x02, LABEL_1A4A
 	video offset=CINEMATIC_219, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 LABEL_1A4A:
 	jne [0x06], 0x03, TANK_DRAW_BY_VAR06_DISPATCH_CIN_217_FAMILY
 	video offset=CINEMATIC_218, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 TANK_DRAW_BY_VAR06_DISPATCH_CIN_217_FAMILY:
 	jne [0x06], 0x04, TANK_DRAW_CIN_216_IF_VAR06_EQ_05
 	video offset=CINEMATIC_217, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 TANK_DRAW_CIN_216_IF_VAR06_EQ_05:
 	jne [0x06], 0x05, TANK_DRAW_CIN_215_IF_VAR06_EQ_06
 	video offset=CINEMATIC_216, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 TANK_DRAW_CIN_215_IF_VAR06_EQ_06:
 	jne [0x06], 0x06, TANK_DRAW_CIN_214_IF_VAR06_EQ_07
 	video offset=CINEMATIC_215, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 TANK_DRAW_CIN_214_IF_VAR06_EQ_07:
 	jne [0x06], 0x07, TANK_DRAW_CIN_213_IF_VAR06_EQ_08
 	video offset=CINEMATIC_214, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 TANK_DRAW_CIN_213_IF_VAR06_EQ_08:
 	jne [0x06], 0x08, TANK_DRAW_CIN_212_IF_VAR06_EQ_09
 	video offset=CINEMATIC_213, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 TANK_DRAW_CIN_212_IF_VAR06_EQ_09:
 	jne [0x06], 0x09, TANK_DRAW_CIN_211_IF_VAR06_EQ_0A
 	video offset=CINEMATIC_212, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 TANK_DRAW_CIN_211_IF_VAR06_EQ_0A:
 	jne [0x06], 0x0A, TANK_DRAW_CIN_210_IF_VAR06_EQ_0B
 	video offset=CINEMATIC_211, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 TANK_DRAW_CIN_210_IF_VAR06_EQ_0B:
 	jne [0x06], 0x0B, TANK_DRAW_CIN_209_IF_VAR06_EQ_0C
 	video offset=CINEMATIC_210, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
+
 TANK_DRAW_CIN_209_IF_VAR06_EQ_0C:
 	jne [0x06], 0x0C, TANK_DRAW_CIN_208_IF_VAR06_EQ_0D
 	video offset=CINEMATIC_209, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
+
 
 TANK_DRAW_CIN_208_IF_VAR06_EQ_0D:
 	jne [0x06], 0x0D, SHARED_RET

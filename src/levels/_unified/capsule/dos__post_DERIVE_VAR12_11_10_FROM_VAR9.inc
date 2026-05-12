@@ -60,6 +60,8 @@ LABEL_437A:
 
 LABEL_438B:
 	ret
+
+
 LABEL_438C:
 	db 0x11
 
@@ -75,6 +77,7 @@ LABEL_438D:
 
 LABEL_43B1:
 	ret
+
 
 LABEL_43B2:
 	mov [0x26], [BUDDY_X]
@@ -93,18 +96,23 @@ LABEL_43CB:
 
 LABEL_43D8:
 	ret
+
+
 LABEL_43D9:
 	db 0x11
 
 LABEL_43DA:
 	jne [0x09], 0x01, LABEL_43E6
 	ret
+
+
 	video offset=CINEMATIC_686, x=[0x26], y=[BUDDY_Y]
 
 LABEL_43E6:
 	jne [0x09], 0x02, LABEL_43F2
 	video offset=CINEMATIC_688, x=[0x26], y=[BUDDY_Y]
 	ret
+
 
 LABEL_43F2:
 	jne [0x09], 0x03, LABEL_4407
@@ -114,6 +122,7 @@ LABEL_43F2:
 	video offset=CINEMATIC_687, x=[0x26], y=[BUDDY_Y]
 	ret
 
+
 LABEL_4407:
 	jne [0x09], 0x04, LABEL_441C
 	selectVideoPage 0x00
@@ -122,8 +131,11 @@ LABEL_4407:
 	video offset=CINEMATIC_497, x=[0x26], y=[BUDDY_Y]
 	ret
 
+
 LABEL_441C:
 	ret
+
+
 LABEL_441D:
 	db 0x11
 
@@ -176,10 +188,12 @@ LABEL_4491:
 	call LABEL_44A2
 	ret
 
+
 LABEL_44A2:
 	call LABEL_427B
 	call LABEL_44A9
 	ret
+
 
 LABEL_44A9:
 	video offset=CINEMATIC_496, x=[BUDDY_X], y=[BUDDY_Y]
@@ -200,6 +214,8 @@ LABEL_44D3:
 	jne [0x12], 0x01, SHARED_RET
 	video offset=CINEMATIC_497, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
+
 LABEL_44EE:
 	db 0x11
 
@@ -225,6 +241,8 @@ LABEL_4528:
 	call LABEL_731A
 	mov [BUDDY_Y], [0x22]
 	ret
+
+
 	mov [0x2C], [0x21]
 	mov [0x27], [0x10]
 	call LABEL_731A

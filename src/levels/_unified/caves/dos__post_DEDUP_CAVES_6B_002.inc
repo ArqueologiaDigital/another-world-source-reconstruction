@@ -1,6 +1,7 @@
 LABEL_80AD:
 	ret
 
+
 DRAW_BEAST_SPRITE_BY_VAR09_0E:
 	mov [0xF8], [0x09]
 	shr [0xF8], 0x0004
@@ -14,6 +15,7 @@ DRAW_BEAST_SPRITE_BY_VAR09_0E:
 	je [0xF8], 0x05, DRAW_BEAST_POSE_0_5
 	je [0xF8], 0x06, DRAW_BEAST_POSE_0_6
 	ret
+
 
 LABEL_80EA:
 	jne [0x0E], 0x01, LABEL_80F3
@@ -43,14 +45,18 @@ LABEL_8129:
 	video offset=CINEMATIC_040, x=[0x07], y=[0x08]
 	ret
 
+
 LABEL_8135:
 	jne [0x0E], 0x07, LABEL_8148
 	je [0xF8], 0x00, DRAW_CIN_038
 	je [0xF8], 0x01, DRAW_CIN_039
 	ret
 
+
 LABEL_8148:
 	ret
+
+
 LABEL_8149:
 	db 0x11
 
@@ -58,65 +64,81 @@ DRAW_BEAST_POSE_0_0:
 	video offset=CINEMATIC_048, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_BEAST_POSE_0_1:
 	video offset=CINEMATIC_049, x=[0x07], y=[0x08]
 	ret
+
 
 DRAW_BEAST_POSE_0_2:
 	video offset=CINEMATIC_050, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_BEAST_POSE_0_3:
 	video offset=CINEMATIC_051, x=[0x07], y=[0x08]
 	ret
+
 
 DRAW_BEAST_POSE_0_4:
 	video offset=CINEMATIC_052, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_BEAST_POSE_0_5:
 	video offset=CINEMATIC_026, x=[0x07], y=[0x08]
 	ret
+
 
 DRAW_BEAST_POSE_0_6:
 	video offset=CINEMATIC_053, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_BEAST_POSE_1:
 	video offset=CINEMATIC_047, x=[0x07], y=[0x08]
 	ret
+
 
 DRAW_BEAST_POSE_2:
 	video offset=CINEMATIC_046, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_CIN_045:
 	video offset=CINEMATIC_045, x=[0x07], y=[0x08]
 	ret
+
 
 DRAW_CIN_041:
 	video offset=CINEMATIC_041, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_CIN_044:
 	video offset=CINEMATIC_044, x=[0x07], y=[0x08]
 	ret
+
 
 DRAW_CIN_043:
 	video offset=CINEMATIC_043, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_CIN_042:
 	video offset=CINEMATIC_042, x=[0x07], y=[0x08]
 	ret
+
 
 DRAW_CIN_038:
 	video offset=CINEMATIC_038, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_CIN_039:
 	video offset=CINEMATIC_039, x=[0x07], y=[0x08]
 	ret
+
 
 DRAW_CIN_061_062_VAR09_LOW:
 	mov [0xF8], [0x09]
@@ -125,13 +147,16 @@ DRAW_CIN_061_062_VAR09_LOW:
 	je [0xF8], 0x02, DRAW_CIN_062
 	ret
 
+
 DRAW_CIN_061:
 	video offset=CINEMATIC_061, x=[0xf5], y=[0x08]
 	ret
 
+
 DRAW_CIN_062:
 	video offset=CINEMATIC_062, x=[0xf5], y=[0x08]
 	ret
+
 
 DRAW_HERO_SUBFRAME_2_VAR09_LOW_OFFSET:
 	mov [0xF8], [0x09]
@@ -139,6 +164,7 @@ DRAW_HERO_SUBFRAME_2_VAR09_LOW_OFFSET:
 	je [0xF8], 0x01, LABEL_81DE
 	je [0xF8], 0x02, LABEL_81F4
 	ret
+
 
 LABEL_81DE:
 	add [0x08], 0x000D
@@ -148,6 +174,7 @@ LABEL_81DE:
 	sub [0x08], 0x000D
 	ret
 
+
 LABEL_81F4:
 	add [0x08], 0x000D
 	sub [0x07], 0x0002
@@ -155,6 +182,7 @@ LABEL_81F4:
 	add [0x07], 0x0002
 	sub [0x08], 0x000D
 	ret
+
 
 LABEL_820A:
 	video type=0, offset=COMMON_VIDEO_320, x=[0x07], y=[0x08], zoom=0x40
@@ -204,6 +232,7 @@ LABEL_8292:
 	add [0x07], 0x0001
 	ret
 
+
 LABEL_829E:
 	video type=0, offset=COMMON_VIDEO_308, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
@@ -213,11 +242,13 @@ LABEL_829E:
 	video type=0, offset=COMMON_VIDEO_309, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
+
 CAVES_BUDDY_DRAW_CV306_X_MINUS_1:
 	sub [0x07], 0x0001
 	call CAVES_BUDDY_DRAW_CV306_OVERLAY_BAR31_BIT2
 	add [0x07], 0x0001
 	ret
+
 
 CAVES_BUDDY_DRAW_CV306_OVERLAY_BAR31_BIT2:
 	video type=0, offset=COMMON_VIDEO_306, x=[0x07], y=[0x08], zoom=0x40
@@ -228,6 +259,7 @@ CAVES_BUDDY_DRAW_CV306_OVERLAY_BAR31_BIT2:
 	video type=0, offset=COMMON_VIDEO_307, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
+
 DRAW_CV_304_THEN_305:
 	video type=0, offset=COMMON_VIDEO_304, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
@@ -236,6 +268,7 @@ DRAW_CV_304_THEN_305:
 	je [0xF8], 0x00, SHARED_RET
 	video type=0, offset=COMMON_VIDEO_305, x=[0x07], y=[0x08], zoom=0x40
 	ret
+
 
 LABEL_8304:
 	add [0x07], 0x0001

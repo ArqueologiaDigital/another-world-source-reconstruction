@@ -708,6 +708,7 @@ INIT_VIDEO_BUFFERS:
 	blitFramebuffer 0x02
 	ret
 
+
 LABEL_00F6:
 	mov [PAUSE_SLICES], 0x0003
 	fill page=0xFF, color=0x02
@@ -3640,6 +3641,7 @@ DRAW_PARTICLE_LAB_BG_COMPOSITE:
 	video offset=CINEMATIC_180, x=160, y=100
 	ret
 
+
 ; Sets palette 0x07, fills page 0 with color 0x05, draws
 ; CINEMATIC_LIFT_SCENE_VIEW + 4 supporting frames
 ; (530/531/532/533) + LIFT_SCENE_BG at specific
@@ -3900,6 +3902,7 @@ PLAY_FX_PHASE_5_FREQ_20:
 
 PLAY_FX_DISPATCH_RET:
 	ret
+
 
 CH_01_INIT_VAR_04_06:
 	mov [0x04], 0x0040

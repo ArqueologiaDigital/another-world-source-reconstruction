@@ -3,6 +3,7 @@ LABEL_BC2E:
 	mov [0x22], 0x0088
 	ret
 
+
 LABEL_BC39:
 	jg [0x21], 0xB4, SET_VAR22_TO_0087
 	mov [0x22], 0x0190

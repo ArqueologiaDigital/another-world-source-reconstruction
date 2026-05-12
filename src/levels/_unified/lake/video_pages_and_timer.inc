@@ -33,6 +33,8 @@ INIT_VIDEO_BUFFERS:
 	blitFramebuffer 0xFF
 	blitFramebuffer 0x02
 	ret
+
+
 	killChannel
 
 SHOW_PAGE_0_LOOP:

@@ -10,32 +10,39 @@ PLAY_RANDOM_AMBIENT_SOUND:
 	jne [0xF8], 0x00, AMBIENT_RND_CASE_1
 	ret
 
+
 AMBIENT_RND_CASE_1:
 	jne [0xF8], 0x01, PLAY_AMBIENT_F16
 	ret
+
 
 PLAY_AMBIENT_F16:
 	jne [0xF8], 0x02, AMBIENT_RND_CASE_3
 	play id=0x0050, freq=0x16, vol=0x20, channel=0x02
 	ret
 
+
 AMBIENT_RND_CASE_3:
 	jne [0xF8], 0x03, PLAY_AMBIENT_F05
 	ret
+
 
 PLAY_AMBIENT_F05:
 	jne [0xF8], 0x04, AMBIENT_RND_CASE_5
 	play id=0x0050, freq=0x05, vol=0x20, channel=0x02
 	ret
 
+
 AMBIENT_RND_CASE_5:
 	jne [0xF8], 0x05, PLAY_AMBIENT_F19
 	ret
+
 
 PLAY_AMBIENT_F19:
 	jne [0xF8], 0x06, RET_TARGET_1A88
 	play id=0x0050, freq=0x19, vol=0x10, channel=0x02
 	ret
+
 
 AMBIENT_LOOP_CH24:
 	play id=0x0010, freq=0x01, vol=0x3F, channel=0x03

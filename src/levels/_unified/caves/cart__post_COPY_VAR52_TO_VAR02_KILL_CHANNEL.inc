@@ -33,9 +33,12 @@ LABEL_A139:
 	video offset=CINEMATIC_869, x=[HERO_X], y=[HERO_Y]
 	ret
 
+
 DRAW_CIN_868:
 	video offset=CINEMATIC_868, x=[HERO_X], y=[HERO_Y]
 	ret
+
+
 LABEL_A152:
 	db 0x11
 
@@ -46,9 +49,11 @@ LABEL_A153:
 	video offset=CINEMATIC_867, x=[HERO_X], y=[HERO_Y]
 	ret
 
+
 DRAW_CIN_866:
 	video offset=CINEMATIC_866, x=[HERO_X], y=[HERO_Y]
 	ret
+
 
 LABEL_A16C:
 	mov [0xF8], [0x04]

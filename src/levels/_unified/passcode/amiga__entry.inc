@@ -190,6 +190,7 @@ LOAD_VAR19_TO_VAR06:
 	mov [0x06], [0x19]
 	ret
 
+
 SETUP_PASSCODE_SCREEN:
 	mov [0x09], 0x0010
 	fill page=0xFF, color=0x00
@@ -248,6 +249,7 @@ PASSCODE_RESTART_GUARDS:
 	jne [0xF2], 0x1770, PASSCODE_RESTART_OR_DRAW_CIN_016
 	jne [HACK_VAR_DC], 0x21, PASSCODE_RESTART_OR_DRAW_CIN_016
 	ret
+
 
 PASSCODE_RESTART_OR_DRAW_CIN_016:
 	deleteChannels first=0x00, last=0x3F
@@ -321,6 +323,7 @@ DRAW_CIN_000_AT_2D_2E_KEY10:
 	video offset=CINEMATIC_000, x=[0x2d], y=[0x2e]
 	ret
 
+
 INIT_PASSCODE_VAR_TABLE:
 	mov [0x2C], 0x0000
 	mov [0x0A], 0x000A
@@ -340,6 +343,8 @@ INIT_PASSCODE_VAR_TABLE:
 	mov [0x18], 0xFFFF
 	mov [0x19], 0x0000
 	ret
+
+
 LABEL_0283:
 	db 0x0A, 0x01, 0x05, 0x00, 0x02, 0x95, 0x00, 0x29
 	db 0x00, 0x15, 0x00, 0x2A, 0x00, 0x09, 0x00, 0x2B

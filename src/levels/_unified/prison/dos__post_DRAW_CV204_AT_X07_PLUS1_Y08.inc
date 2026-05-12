@@ -5,6 +5,7 @@ LABEL_54D3:
 	call LABEL_5379
 	ret
 
+
 LABEL_54E2:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, LABEL_54F1
@@ -16,6 +17,7 @@ LABEL_54F1:
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_538F
 	ret
+
 
 LABEL_5500:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -30,6 +32,7 @@ LABEL_5515:
 	call LABEL_53A9
 	ret
 
+
 LABEL_5524:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, LABEL_5533
@@ -41,6 +44,7 @@ LABEL_5533:
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_53BF
 	ret
+
 
 LABEL_5542:
 	jne [HACK_VAR_67], [0x10], SHARED_RET

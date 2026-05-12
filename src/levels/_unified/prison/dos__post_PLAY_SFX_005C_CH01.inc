@@ -13,11 +13,13 @@ LABEL_3A68:
 	setup channel=0x14, address=DRAW_CIN_146_TO_147_4F_AT_8AA18039
 	ret
 
+
 LABEL_3A9E:
 	setup channel=0x14, address=LABEL_0ED0
 	jl [0xF8], 0x10, SHARED_RET
 	setup channel=0x14, address=DRAW_CIN_280_TO_281_2F_AT_75ED3E60
 	ret
+
 
 LABEL_3AAD:
 	call LABEL_3B2C
@@ -54,21 +56,25 @@ LABEL_3B14:
 	mov [0x13], 0xFFFF
 	ret
 
+
 LABEL_3B20:
 	or [0x2B], 0x4000
 	call LABEL_3B4B
 	mov [0x13], 0xFFFF
 	ret
 
+
 LABEL_3B2C:
 	jne [0x1D], 0x28, LABEL_3B36
 	mov [0x2B], [0x6B]
 	ret
 
+
 LABEL_3B36:
 	jne [0x1D], 0x29, LABEL_3B40
 	mov [0x2B], [0x73]
 	ret
+
 
 LABEL_3B40:
 	jne [0x1D], 0x2A, LABEL_3B49
@@ -76,6 +82,8 @@ LABEL_3B40:
 
 LABEL_3B49:
 	ret
+
+
 LABEL_3B4A:
 	db 0x11
 
@@ -84,10 +92,12 @@ LABEL_3B4B:
 	mov [0x6B], [0x2B]
 	ret
 
+
 LABEL_3B55:
 	jne [0x1D], 0x29, LABEL_3B5F
 	mov [0x73], [0x2B]
 	ret
+
 
 LABEL_3B5F:
 	jne [0x1D], 0x2A, RET_THEN_KILL_CHANNEL

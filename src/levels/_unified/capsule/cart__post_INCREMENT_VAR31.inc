@@ -67,6 +67,7 @@ LABEL_301A:
 	setPalette 0x00
 	ret
 
+
 LABEL_302B:
 	jl [0xF8], 0x08, LABEL_3038
 	sub [0xB8], 0x0001
@@ -109,6 +110,7 @@ LABEL_3085:
 	jl [0xB8], 0x09, SHARED_RET
 	mov [0xB8], 0x0009
 	ret
+
 
 LABEL_3090:
 	break

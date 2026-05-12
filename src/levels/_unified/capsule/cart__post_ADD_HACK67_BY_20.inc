@@ -3,6 +3,7 @@ LABEL_B570:
 	mov [HACK_VAR_67], 0x008E
 	ret
 
+
 LABEL_B57B:
 	jne [HACK_VAR_67], 0xC8, SUB_HACK67_BY_20
 	mov [HACK_VAR_67], 0x00AA

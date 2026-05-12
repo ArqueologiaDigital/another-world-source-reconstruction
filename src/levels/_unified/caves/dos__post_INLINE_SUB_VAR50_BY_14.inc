@@ -1,5 +1,7 @@
 LABEL_A266:
 	ret
+
+
 	killChannel
 	mov [0x42], 0xF060
 	mov [0x43], 0x0105
@@ -971,6 +973,7 @@ LABEL_AE47:
 	play id=0x006A, freq=0x14, vol=0x10, channel=0x02
 	ret
 
+
 LABEL_AE5B:
 	mov [0x42], 0x001E
 	mov [0x43], 0x012C
@@ -1538,11 +1541,13 @@ LABEL_B525:
 	mov [0x22], 0x0015
 	ret
 
+
 LABEL_B53D:
 	jg [0x22], 0x5A, LABEL_B564
 	jg [0x21], 0x1C, LABEL_B54E
 	mov [0x22], 0x0036
 	ret
+
 
 LABEL_B54E:
 	jg [0x21], 0xA0, LABEL_B564
@@ -1552,6 +1557,7 @@ LABEL_B54E:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_B564:
 	jl [0x21], 0x35, LABEL_B58C
 	jg [0x22], 0x89, LABEL_B57B
@@ -1559,11 +1565,13 @@ LABEL_B564:
 	mov [0x22], 0x006B
 	ret
 
+
 LABEL_B57B:
 	jg [0x22], 0xB4, LABEL_B58C
 	jl [0x21], 0x8C, LABEL_B58C
 	mov [0x22], 0x0093
 	ret
+
 
 LABEL_B58C:
 	mov [0x22], 0x00BD
@@ -1572,10 +1580,12 @@ LABEL_B58C:
 	mov [0x22], 0x0104
 	ret
 
+
 LABEL_B5A1:
 	jg [0x21], 0xC0, LABEL_B5AC
 	mov [0x22], 0x0089
 	ret
+
 
 LABEL_B5AC:
 	jg [0x21], 0xDF, LABEL_B5C2
@@ -1585,6 +1595,7 @@ LABEL_B5AC:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_B5C2:
 	jl [0x22], [0x41], LABEL_B5D4
 	sub [0x21], 0x00DF
@@ -1592,11 +1603,13 @@ LABEL_B5C2:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_B5D4:
 	jg [0x21], 0xFE, LABEL_B5E3
 	mov [0x22], 0x0096
 	mov [0x23], 0x0100
 	ret
+
 
 LABEL_B5E3:
 	jg [0x21], 0x0127, SET_VAR22_TO_006B

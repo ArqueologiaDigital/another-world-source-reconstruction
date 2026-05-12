@@ -21,6 +21,8 @@ LABEL_6C79:
 
 LABEL_6C8F:
 	ret
+
+
 LABEL_6C90:
 	db 0x05
 

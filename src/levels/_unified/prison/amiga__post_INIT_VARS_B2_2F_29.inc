@@ -4,11 +4,13 @@ LABEL_2DE6:
 	mov [0xB2], 0x000B
 	ret
 
+
 LABEL_2DF5:
 	jne [0xB2], 0x0B, LABEL_2E04
 	mov [0x2F], 0x0006
 	mov [0xB2], 0x000C
 	ret
+
 
 LABEL_2E04:
 	jne [0xB2], 0x0C, LABEL_2E1A
@@ -18,11 +20,13 @@ LABEL_2E04:
 	add [0x29], 0x0028
 	ret
 
+
 LABEL_2E1A:
 	jne [0xB2], 0x0D, LABEL_2E29
 	mov [0x2F], 0x0006
 	mov [0xB2], 0x000E
 	ret
+
 
 LABEL_2E29:
 	jne [0xB2], 0x0E, SHARED_RET

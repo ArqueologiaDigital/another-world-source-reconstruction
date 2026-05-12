@@ -4,6 +4,7 @@ LABEL_804A:
 	call LABEL_7AA9
 	ret
 
+
 LABEL_8056:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	sub [BUDDY_Y], 0x0001
@@ -21,6 +22,7 @@ LABEL_8071:
 	add [BUDDY_Y], 0x0001
 	ret
 
+
 LABEL_8081:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, LABEL_8093
@@ -35,6 +37,7 @@ LABEL_8098:
 	video type=0, offset=COMMON_VIDEO_279, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_7A9E
 	ret
+
 
 LABEL_80A4:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -54,6 +57,7 @@ LABEL_80C5:
 	sub [BUDDY_Y], 0x0001
 	ret
 
+
 LABEL_80D5:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	add [BUDDY_Y], 0x0001
@@ -71,6 +75,7 @@ LABEL_80F0:
 	sub [BUDDY_Y], 0x0001
 	ret
 
+
 LABEL_8100:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, LABEL_8112
@@ -87,6 +92,7 @@ LABEL_8117:
 	call LABEL_7ACA
 	sub [BUDDY_X], 0x0001
 	ret
+
 
 LABEL_812B:
 	call AND_VAR11_WITH_EFFF
@@ -183,6 +189,7 @@ LABEL_8215:
 	video type=0, offset=COMMON_VIDEO_315, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
+
 LABEL_8233:
 	video type=0, offset=COMMON_VIDEO_316, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
@@ -191,6 +198,7 @@ LABEL_8233:
 	je [0xF8], 0x00, SHARED_RET
 	video type=0, offset=COMMON_VIDEO_317, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
+
 
 LABEL_8251:
 	video type=0, offset=COMMON_VIDEO_318, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
@@ -201,11 +209,13 @@ LABEL_8251:
 	video type=0, offset=COMMON_VIDEO_319, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
+
 LABEL_826F:
 	add [BUDDY_X], 0x0001
 	call LABEL_827B
 	sub [BUDDY_X], 0x0001
 	ret
+
 
 LABEL_827B:
 	video type=0, offset=COMMON_VIDEO_302, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
@@ -222,6 +232,7 @@ LABEL_829E:
 	call LABEL_82AA
 	sub [BUDDY_X], 0x0001
 	ret
+
 
 LABEL_82AA:
 	video type=0, offset=COMMON_VIDEO_310, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
@@ -249,6 +260,7 @@ LABEL_82F0:
 	add [BUDDY_X], 0x0001
 	ret
 
+
 LABEL_82FC:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	sub [BUDDY_Y], 0x0001
@@ -265,6 +277,7 @@ LABEL_831F:
 LABEL_8324:
 	add [BUDDY_Y], 0x0001
 	ret
+
 
 LABEL_8329:
 	jne [HACK_VAR_67], [0x10], SHARED_RET

@@ -2238,6 +2238,7 @@ LABEL_0080:
 	jne [0xF2], 0x0FA0, LABEL_0095
 	ret
 
+
 LABEL_0095:
 	deleteChannels first=0x00, last=0x3F
 	setup channel=0x3C, address=KILL_CHANNEL_LANDING

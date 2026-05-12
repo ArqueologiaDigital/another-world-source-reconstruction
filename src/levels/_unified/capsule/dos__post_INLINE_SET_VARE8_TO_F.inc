@@ -51,6 +51,7 @@ LABEL_2490:
 	setup channel=0x38, address=LABEL_3D94
 	ret
 
+
 LABEL_24A3:
 	mov [0x2F], 0x0019
 	mov [0x29], 0x0320
@@ -58,12 +59,14 @@ LABEL_24A3:
 	mov [0x2F], 0x001E
 	ret
 
+
 LABEL_24B6:
 	mov [0x2F], 0x001F
 	jg [BUDDY_X], 0x78, SHARED_RET
 	mov [0x2F], 0x0019
 	mov [0x29], 0x0096
 	ret
+
 
 LABEL_24C9:
 	mov [0x2F], 0x0020
@@ -73,6 +76,7 @@ LABEL_24C9:
 	mov [0x29], 0x01C2
 	ret
 
+
 LABEL_24E2:
 	mov [0x2F], 0x0012
 	jg [BUDDY_X], 0xA0, SHARED_RET
@@ -80,10 +84,12 @@ LABEL_24E2:
 	mov [0x29], 0x00BA
 	ret
 
+
 LABEL_24F5:
 	mov [0x2F], 0x0020
 	jne [0x10], 0x8E, LABEL_24C9
 	ret
+
 
 ; The full Buddy-smashing-window animation routine. Sets up
 ; position (0x68, 0x69), waits for Lester to be off-screen
@@ -240,9 +246,11 @@ LABEL_26AC:
 	setup channel=0x28, address=LABEL_461B
 	ret
 
+
 LABEL_26C9:
 	je [HACK_VAR_67], 0xEC, LABEL_26D0
 	ret
+
 
 LABEL_26D0:
 	mov [0xF8], [0xB4]
@@ -261,6 +269,7 @@ LABEL_26E0:
 
 LABEL_26FC:
 	ret
+
 
 LABEL_26FD:
 	mov [0x0E], 0x0000

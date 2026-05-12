@@ -6,4 +6,6 @@ CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8:
 	blitFramebuffer 0xFF
 	blitFramebuffer 0x02
 	ret
+
+
 	killChannel

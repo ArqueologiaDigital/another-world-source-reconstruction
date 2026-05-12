@@ -16,6 +16,7 @@ LABEL_7B8B:
 	video offset=CINEMATIC_103, x=160, y=129
 	ret
 
+
 LABEL_7BA0:
 	mov [0x21], 0x0064
 	jg [0x14], 0x22A0, DRAW_CIN_092

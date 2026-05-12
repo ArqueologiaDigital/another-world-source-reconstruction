@@ -23,24 +23,29 @@ LABEL_3593:
 	video offset=CINEMATIC_809, x=[0x07], y=[0x08]
 	ret
 
+
 LABEL_35A5:
 	jne [0x6D], 0x01, LABEL_35B1
 	video offset=CINEMATIC_808, x=[0x07], y=[0x08]
 	ret
+
 
 LABEL_35B1:
 	jne [0x6D], 0x02, LABEL_35BD
 	video offset=CINEMATIC_807, x=[0x07], y=[0x08]
 	ret
 
+
 LABEL_35BD:
 	jne [0x6D], 0x03, DRAW_CIN_805
 	video offset=CINEMATIC_806, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_CIN_805:
 	video offset=CINEMATIC_805, x=[0x07], y=[0x08]
 	ret
+
 
 GUARDED_DRAW_CIN_589_801:
 	jne [HACK_VAR_67], [0x09], SHARED_RET
@@ -53,6 +58,7 @@ GUARDED_DRAW_CIN_589_801:
 	sub [0x07], 0x000B
 	ret
 
+
 LABEL_35EF:
 	jne [HACK_VAR_67], [0x09], SHARED_RET
 	selectVideoPage 0x03
@@ -61,29 +67,35 @@ LABEL_35EF:
 	selectVideoPage 0xFF
 	ret
 
+
 LABEL_3604:
 	jne [0x6D], 0x00, LABEL_3610
 	video offset=CINEMATIC_803, x=[0x07], y=[0x08]
 	ret
+
 
 LABEL_3610:
 	jne [0x6D], 0x01, LABEL_361C
 	video offset=CINEMATIC_802, x=[0x07], y=[0x08]
 	ret
 
+
 LABEL_361C:
 	jne [0x6D], 0x02, LABEL_3628
 	video offset=CINEMATIC_804, x=[0x07], y=[0x08]
 	ret
+
 
 LABEL_3628:
 	jne [0x6D], 0x03, DRAW_CIN_802
 	video offset=CINEMATIC_803, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_CIN_802:
 	video offset=CINEMATIC_802, x=[0x07], y=[0x08]
 	ret
+
 
 LABEL_363A:
 	jg [HACK_VAR_67], [0x09], LABEL_3659
@@ -106,24 +118,29 @@ LABEL_3668:
 	video offset=CINEMATIC_800, x=[0x07], y=[0x08]
 	ret
 
+
 LABEL_3674:
 	jne [0x6D], 0x01, LABEL_3680
 	video offset=CINEMATIC_799, x=[0x07], y=[0x08]
 	ret
+
 
 LABEL_3680:
 	jne [0x6D], 0x02, LABEL_368C
 	video offset=CINEMATIC_798, x=[0x07], y=[0x08]
 	ret
 
+
 LABEL_368C:
 	jne [0x6D], 0x03, DRAW_CIN_796
 	video offset=CINEMATIC_797, x=[0x07], y=[0x08]
 	ret
 
+
 DRAW_CIN_796:
 	video offset=CINEMATIC_796, x=[0x07], y=[0x08]
 	ret
+
 
 LABEL_369E:
 	break

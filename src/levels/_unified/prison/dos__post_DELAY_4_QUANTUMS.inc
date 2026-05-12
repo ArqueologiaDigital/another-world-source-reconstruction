@@ -22,6 +22,7 @@ LABEL_00CB:
 	mov [HERO_ACTION], 0x0001
 	ret
 
+
 LABEL_00DD:
 	fill page=0x00, color=0x00
 	fill page=0x03, color=0x00

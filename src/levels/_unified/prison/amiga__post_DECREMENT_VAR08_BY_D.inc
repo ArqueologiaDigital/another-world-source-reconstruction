@@ -4,6 +4,7 @@ LABEL_65AD:
 	call LABEL_6587
 	ret
 
+
 LABEL_65BC:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	sub [BUDDY_X], 0x0001
@@ -15,12 +16,15 @@ LABEL_65BC:
 	add [BUDDY_X], 0x0001
 	ret
 
+
 LABEL_65DE:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_SPRITE_164_167_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_244, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_5207
 	ret
+
+
 LABEL_65F0:
 	db 0x0A, 0x81, 0x67, 0x10, 0x52, 0x8D, 0x03, 0x08
 	db 0x00, 0x0D, 0x03, 0x07, 0xFF, 0xFC, 0x57, 0x12
@@ -52,6 +56,7 @@ LABEL_668F:
 	add [BUDDY_Y], 0x000D
 	ret
 
+
 LABEL_66A9:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	sub [BUDDY_X], 0x0001
@@ -62,6 +67,8 @@ LABEL_66A9:
 	add [BUDDY_Y], 0x000E
 	add [BUDDY_X], 0x0001
 	ret
+
+
 LABEL_66CB:
 	db 0x0A, 0x81, 0x67, 0x10, 0x52, 0x8D, 0x04, 0x5D
 	db 0xB6, 0x57, 0x21, 0xA3, 0x07, 0x08, 0x03, 0x08
@@ -77,11 +84,14 @@ LABEL_66E5:
 	add [BUDDY_Y], 0x000D
 	ret
 
+
 GUARDED_HERO_ANIM_CV_291:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	call DRAW_PRISON_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_247, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
+
+
 LABEL_670E:
 	db 0x04, 0x65, 0x2F, 0x06, 0x04, 0x65, 0x2F, 0x06
 	db 0x04, 0x65, 0x2F, 0x03, 0x07, 0xFF, 0xFF, 0x06

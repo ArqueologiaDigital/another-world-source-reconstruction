@@ -177,6 +177,7 @@ LABEL_0025:
 	jne [0xF2], 0x1770, DELETE_ALL_CHANS_AND_KILL
 	ret
 
+
 DELETE_ALL_CHANS_AND_KILL:
 	deleteChannels first=0x00, last=0x3F
 	killChannel
@@ -196,6 +197,7 @@ PRELOAD_RESOURCES_8_TO_1:
 	load id=0x005F
 	load id=0x000C
 	ret
+
 
 ANIM_CIN_097_TO_100_AT_160_100:
 	video offset=CINEMATIC_097, x=160, y=100
@@ -995,6 +997,8 @@ DRAW_STARS_PAGE0_CIN_000:
 	video offset=CINEMATIC_002, x=13, y=11, zoom=[0x20]	;@enc=alt
 	selectVideoPage 0xFF
 	ret
+
+
 LABEL_08D9:
 	db 0x11
 
@@ -1030,6 +1034,8 @@ DRAW_STARS_PAGE3_CIN_004:
 	video offset=CINEMATIC_006, x=13, y=11, zoom=[0x20]	;@enc=alt
 	selectVideoPage 0xFF
 	ret
+
+
 LABEL_096F:
 	db 0x11
 
@@ -1051,6 +1057,7 @@ DRAW_STARS_CIN_38_39_40_5_6:
 	video offset=CINEMATIC_041, x=300, y=28
 	video offset=CINEMATIC_041, x=202, y=86, zoom=[0x30]	;@enc=alt
 	ret
+
 
 LABEL_09C2:
 	blitFramebuffer 0xFF
@@ -1077,6 +1084,8 @@ LABEL_09E3:
 	blitFramebuffer 0xFF
 	blitFramebuffer 0x02
 	ret
+
+
 LABEL_09F2:
 	db 0x11, 0x11, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 	FILL(62982, 0xFF)

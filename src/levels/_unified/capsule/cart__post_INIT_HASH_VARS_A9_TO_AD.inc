@@ -7,9 +7,12 @@ LABEL_9C87:
 	video offset=CINEMATIC_001, x=160, y=100
 	ret
 
+
 LABEL_9C93:
 	fill page=0x00, color=0x0B
 	video offset=CINEMATIC_340, x=160, y=100
 	video offset=CINEMATIC_341, x=65513, y=96
 	ret
+
+
 	video offset=CINEMATIC_001, x=160, y=100

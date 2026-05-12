@@ -6,6 +6,7 @@ LABEL_BEE6:
 	mov [0x22], 0x007E
 	ret
 
+
 LABEL_BEF1:
 	jg [0x21], 0x4F, LABEL_BF07
 	sub [0x21], 0x0038
@@ -14,6 +15,7 @@ LABEL_BEF1:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_BF07:
 	jg [0x21], 0xAE, LABEL_BF1D
 	sub [0x21], 0x004F
@@ -21,6 +23,7 @@ LABEL_BF07:
 	mov [0x22], 0x0079
 	sub [0x22], [0x21]
 	ret
+
 
 LABEL_BF1D:
 	jg [0x21], 0xFD, PROJ_VAR22_75_MINUS_VAR21_MINUS_FD_SHR6

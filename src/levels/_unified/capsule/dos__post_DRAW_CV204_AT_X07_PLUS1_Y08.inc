@@ -5,6 +5,7 @@ LABEL_7AB1:
 	call LABEL_791F
 	ret
 
+
 LABEL_7AC0:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, LABEL_7ACF
@@ -16,6 +17,7 @@ LABEL_7ACF:
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	call LABEL_793C
 	ret
+
 
 LABEL_7ADE:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -31,6 +33,7 @@ LABEL_7AF3:
 	play id=0x0055, freq=0x0F, vol=0x14, channel=0x00
 	ret
 
+
 LABEL_7B08:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, LABEL_7B17
@@ -42,6 +45,7 @@ LABEL_7B17:
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	call LABEL_797A
 	ret
+
 
 LABEL_7B26:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -59,6 +63,7 @@ LABEL_7B3D:
 	call LABEL_799B
 	ret
 
+
 LABEL_7B4C:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, LABEL_7B5E
@@ -74,6 +79,7 @@ LABEL_7B63:
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	call LABEL_79BC
 	ret
+
 
 LABEL_7B72:
 	jne [HACK_VAR_67], [0x10], SHARED_RET

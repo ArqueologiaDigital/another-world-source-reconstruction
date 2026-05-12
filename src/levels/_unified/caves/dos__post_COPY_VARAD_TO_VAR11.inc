@@ -6,15 +6,18 @@ LABEL_7009:
 	mov [0xA1], [0x11]
 	ret
 
+
 LABEL_7013:
 	jne [0x1D], 0x15, LABEL_701D
 	mov [0xA4], [0x11]
 	ret
 
+
 LABEL_701D:
 	jne [0x1D], 0x16, LABEL_7027
 	mov [0xA7], [0x11]
 	ret
+
 
 LABEL_7027:
 	jne [0x1D], 0x17, COPY_VAR11_TO_VARAD

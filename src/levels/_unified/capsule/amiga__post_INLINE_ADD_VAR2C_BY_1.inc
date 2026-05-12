@@ -21,6 +21,8 @@ LABEL_4E0A:
 
 LABEL_4E20:
 	ret
+
+
 LABEL_4E21:
 	db 0x05
 

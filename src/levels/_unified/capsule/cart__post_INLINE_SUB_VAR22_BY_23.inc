@@ -1,5 +1,7 @@
 LABEL_56F8:
 	ret
+
+
 LABEL_56F9:
 	db 0x11
 
@@ -119,6 +121,7 @@ LABEL_5854:
 	add [0xB9], 0x0100
 	ret
 
+
 LABEL_5867:
 	jg [0x27], [0x44], LABEL_5871
 	or [0x22], 0x1000
@@ -139,6 +142,7 @@ LABEL_5892:
 	setup channel=0x31, address=LABEL_56FA
 	ret
 
+
 LABEL_58A7:
 	jne [0x5E], 0x0FA0, LABEL_58BC
 	mov [0x5D], [0x21]
@@ -146,6 +150,7 @@ LABEL_58A7:
 	mov [0x5F], [0x29]
 	setup channel=0x32, address=LABEL_56FA
 	ret
+
 
 LABEL_58BC:
 	jne [0x61], 0x0FA0, LABEL_58D0
@@ -156,6 +161,7 @@ LABEL_58BC:
 
 LABEL_58D0:
 	ret
+
 
 LABEL_58D1:
 	mov [0x0D], 0x0000
@@ -177,11 +183,13 @@ LABEL_58E3:
 	mov [0x5B], [0x2B]
 	ret
 
+
 LABEL_58F0:
 	jne [0x0D], 0x02, LABEL_58FD
 	mov [0x5F], [0x29]
 	mov [0x5E], [0x2B]
 	ret
+
 
 LABEL_58FD:
 	jne [0x0D], 0x03, LABEL_5909
@@ -190,6 +198,7 @@ LABEL_58FD:
 
 LABEL_5909:
 	ret
+
 
 LABEL_590A:
 	add [0x0D], 0x0001
@@ -202,6 +211,7 @@ LABEL_590A:
 	mov [0x5B], [0x2B]
 	ret
 
+
 LABEL_5927:
 	jne [0x0D], 0x02, LABEL_5940
 	mov [0x21], [0x5D]
@@ -211,6 +221,7 @@ LABEL_5927:
 	mov [0x5D], [BUDDY_X]
 	mov [0x5E], [0x2B]
 	ret
+
 
 LABEL_5940:
 	jne [0x0D], 0x03, LABEL_5958
@@ -224,6 +235,7 @@ LABEL_5940:
 LABEL_5958:
 	ret
 
+
 LABEL_5959:
 	add [0x0D], 0x0001
 	jne [0x0D], 0x01, LABEL_5979
@@ -236,6 +248,7 @@ LABEL_5959:
 	call LABEL_73AE
 	ret
 
+
 LABEL_5979:
 	jne [0x0D], 0x02, LABEL_5995
 	mov [0x21], [0x5D]
@@ -246,6 +259,7 @@ LABEL_5979:
 	mov [0x5E], [0x2B]
 	call LABEL_73AE
 	ret
+
 
 LABEL_5995:
 	jne [0x0D], 0x03, LABEL_59B0
@@ -259,6 +273,7 @@ LABEL_5995:
 
 LABEL_59B0:
 	ret
+
 
 LABEL_59B1:
 	call LABEL_5A42

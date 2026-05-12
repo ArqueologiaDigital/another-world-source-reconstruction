@@ -23,6 +23,8 @@ LABEL_588C:
 	mov [0x34], 0x0000
 	sub [0x34], [0x0E]
 	ret
+
+
 LABEL_589D:
 	db 0x11
 
@@ -50,6 +52,7 @@ LABEL_58BD:
 	add [0x34], 0x001A
 	ret
 
+
 LABEL_58EB:
 	mov [0x63], 0x0064
 	call INIT_VAR2B_2C_FROM_VAR01_VAR29_10
@@ -62,6 +65,7 @@ LABEL_58EB:
 	call SET_VAR04_TO_0034
 	setup channel=0x14, address=LABEL_59BA
 	ret
+
 
 LABEL_5913:
 	mov [0x2F], [0x35]
@@ -126,6 +130,8 @@ DRAW_CIN_298_THEN_CIN_298:
 	video offset=CINEMATIC_298, x=320, y=184
 	video offset=CINEMATIC_298, x=16, y=184
 	ret
+
+
 LABEL_59AE:
 	db 0xC0, 0xE4, 0xA0, 0x13, 0x06, 0x0A, 0x04, 0x02
 	db 0x64, 0x59, 0xAE, 0x11
@@ -250,6 +256,7 @@ LABEL_5AD4:
 	mov [0x23], 0x0000
 	call LABEL_5AE2
 	ret
+
 
 LABEL_5AE2:
 	je [HACK_VAR_67], 0x25, LABEL_8133

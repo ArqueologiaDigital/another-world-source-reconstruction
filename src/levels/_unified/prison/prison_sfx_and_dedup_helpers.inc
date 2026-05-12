@@ -2,6 +2,7 @@ PLAY_SFX_005C_CH01:
 	play id=0x005C, freq=0x19, vol=0x40, channel=0x01
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_PLAY_SFX_005C_CH01.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -24,6 +25,8 @@ PLAY_SFX_005C_CH01:
 DRAW_CIN_486:
 	video offset=CINEMATIC_486, x=[0x21], y=[0x27]
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -36,6 +39,8 @@ DRAW_CIN_486:
 DRAW_CIN_483:
 	video offset=CINEMATIC_483, x=[0x21], y=[0x27]
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -49,6 +54,8 @@ DRAW_CIN473_AT_X21_Y27_ZOOM_40:
 	video offset=CINEMATIC_473, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -61,6 +68,8 @@ DRAW_CIN473_AT_X21_Y27_ZOOM_40:
 DRAW_CIN_502:
 	video offset=CINEMATIC_502, x=[0x21], y=[0x27]
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -73,6 +82,8 @@ DRAW_CIN_502:
 DRAW_CIN_499:
 	video offset=CINEMATIC_499, x=[0x21], y=[0x27]
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -86,6 +97,8 @@ DRAW_CIN489_AT_X21_Y27_ZOOM_40:
 	video offset=CINEMATIC_489, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -220,6 +233,8 @@ DEDUP_CAVES_6B_001:
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
 FOLD_BODY_104B_22B91458:
 	ret
+
+
 	mov [0xF8], 0x0000
 	mov [0x21], 0x0010
 ;@endif
@@ -237,6 +252,8 @@ DRAW_CIN_SEQ_085_085_086:
 	video offset=CINEMATIC_086, x=132, y=39
 	video offset=CINEMATIC_086, x=297, y=39
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -254,6 +271,8 @@ DRAW_CIN_305_TO_309_5F_AT_AACB4DF5:
 	video offset=CINEMATIC_308, x=160, y=100
 	video offset=CINEMATIC_309, x=160, y=100
 	ret
+
+
 ;@endif
 
 
@@ -268,6 +287,8 @@ DRAW_CIN_305_TO_333_7F_AT_96C7E6A8:
 	video offset=CINEMATIC_332, x=160, y=100
 	video offset=CINEMATIC_333, x=160, y=100
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
@@ -291,6 +312,8 @@ FILL_AND_DRAW_CIN_24_28:
 	video offset=CINEMATIC_033, x=160, y=100
 	video offset=CINEMATIC_034, x=160, y=100
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"

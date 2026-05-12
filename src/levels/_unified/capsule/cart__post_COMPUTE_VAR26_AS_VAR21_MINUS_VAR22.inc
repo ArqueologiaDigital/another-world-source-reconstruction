@@ -9,6 +9,7 @@ LABEL_564E:
 	call LABEL_6DD5
 	ret
 
+
 LABEL_566B:
 	mov [0x21], [BUDDY_X]
 	mov [0x22], [HERO_X]
@@ -16,12 +17,15 @@ LABEL_566B:
 	call LABEL_6DBC
 	ret
 
+
 JUNK__5678:
 	call LABEL_56BE
 	mov [0x22], [BUDDY_X]
 	mov [0x27], [BUDDY_Y]
 	call LABEL_6DBC
 	ret
+
+
 	mov [0x21], [BUDDY_X]
 	call LABEL_56D2
 	mov [0x29], [HERO_X]
@@ -31,12 +35,14 @@ JUNK__5678:
 	mov [HERO_X], [0x29]
 	ret
 
+
 LABEL_569B:
 	call LABEL_56BE
 	mov [0x22], [HERO_X]
 	mov [0x27], [BUDDY_Y]
 	call LABEL_6DBC
 	ret
+
 
 LABEL_56A8:
 	call LABEL_56BE
@@ -47,6 +53,7 @@ LABEL_56A8:
 	call LABEL_6DBC
 	mov [HERO_X], [0x29]
 	ret
+
 
 LABEL_56BE:
 	mov [0x21], [BUDDY_X]

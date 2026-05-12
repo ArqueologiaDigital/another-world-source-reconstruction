@@ -7,6 +7,7 @@ LABEL_862A:
 	sub [0x07], 0x0001
 	ret
 
+
 LABEL_8641:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, INLINE_DRAW_CV_220_008

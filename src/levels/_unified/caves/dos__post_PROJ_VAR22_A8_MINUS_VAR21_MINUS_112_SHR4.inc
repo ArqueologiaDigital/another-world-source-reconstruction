@@ -3,6 +3,7 @@ LABEL_C1AF:
 	mov [0x22], 0x0077
 	ret
 
+
 LABEL_C1BA:
 	jg [0x21], 0x7C, DEDUP_CAVES_5B_011
 	sub [0x21], 0x0043

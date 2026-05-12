@@ -23,6 +23,7 @@ COPY_VARF8_TO_VAR00:
 	mov [0x00], [0xF8]
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_COPY_VARF8_TO_VAR00.inc"
 ;@elif BRANCH == "cartridge_1992"

@@ -2,6 +2,7 @@ SET_VAR18_TO_0122:
 	mov [0x18], 0x0122
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR18_TO_0122.inc"
 ;@elif BRANCH == "cartridge_1992"

@@ -8,6 +8,8 @@ LABEL_222C:
 	add [0xE7], 0x0004
 	djnz [0xE9], INIT_VARS_E8_E6
 	ret
+
+
 LABEL_224C:
 	db 0x11
 

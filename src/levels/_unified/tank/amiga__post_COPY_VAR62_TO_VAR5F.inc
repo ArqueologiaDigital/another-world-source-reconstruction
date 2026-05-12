@@ -4,11 +4,13 @@ SET_VAR5A_5B_INIT_OR_CONTINUE:
 	mov [0x5B], 0x0019
 	ret
 
+
 LABEL_06B4:
 	jne [0x59], 0x01, LABEL_06C3
 	mov [0x5A], 0x0026
 	mov [0x5B], 0x001B
 	ret
+
 
 LABEL_06C3:
 	jne [0x59], 0x02, LABEL_06D2
@@ -16,11 +18,13 @@ LABEL_06C3:
 	mov [0x5B], 0x001E
 	ret
 
+
 LABEL_06D2:
 	jne [0x59], 0x0E, LABEL_06E1
 	mov [0x5A], 0x004A
 	mov [0x5B], 0x002B
 	ret
+
 
 LABEL_06E1:
 	jne [0x59], 0x08, LABEL_06F0
@@ -28,11 +32,13 @@ LABEL_06E1:
 	mov [0x5B], 0x001F
 	ret
 
+
 LABEL_06F0:
 	jne [0x59], 0x09, LABEL_06FF
 	mov [0x5A], 0x0026
 	mov [0x5B], 0x0021
 	ret
+
 
 LABEL_06FF:
 	jne [0x59], 0x0B, LABEL_070E
@@ -40,11 +46,13 @@ LABEL_06FF:
 	mov [0x5B], 0x0027
 	ret
 
+
 LABEL_070E:
 	jne [0x59], 0x0C, LABEL_071D
 	mov [0x5A], 0x0035
 	mov [0x5B], 0x002A
 	ret
+
 
 LABEL_071D:
 	jne [0x59], 0x10, LABEL_072C
@@ -52,11 +60,13 @@ LABEL_071D:
 	mov [0x5B], 0x0025
 	ret
 
+
 LABEL_072C:
 	jne [0x59], 0x11, LABEL_073B
 	mov [0x5A], 0x0026
 	mov [0x5B], 0x0027
 	ret
+
 
 LABEL_073B:
 	jne [0x59], 0x13, LABEL_074A
@@ -64,11 +74,13 @@ LABEL_073B:
 	mov [0x5B], 0x0030
 	ret
 
+
 LABEL_074A:
 	jne [0x59], 0x14, LABEL_0759
 	mov [0x5A], 0x0035
 	mov [0x5B], 0x0032
 	ret
+
 
 LABEL_0759:
 	jne [0x59], 0x15, LABEL_0768
@@ -76,11 +88,13 @@ LABEL_0759:
 	mov [0x5B], 0x0035
 	ret
 
+
 LABEL_0768:
 	jne [0x59], 0x16, LABEL_0777
 	mov [0x5A], 0x004A
 	mov [0x5B], 0x0036
 	ret
+
 
 LABEL_0777:
 	jne [0x59], 0x18, LABEL_0786
@@ -88,11 +102,13 @@ LABEL_0777:
 	mov [0x5B], 0x002C
 	ret
 
+
 LABEL_0786:
 	jne [0x59], 0x19, LABEL_0795
 	mov [0x5A], 0x0026
 	mov [0x5B], 0x002D
 	ret
+
 
 LABEL_0795:
 	jne [0x59], 0x1A, LABEL_07A4
@@ -100,11 +116,13 @@ LABEL_0795:
 	mov [0x5B], 0x0033
 	ret
 
+
 LABEL_07A4:
 	jne [0x59], 0x1B, LABEL_07B3
 	mov [0x5A], 0x0031
 	mov [0x5B], 0x0038
 	ret
+
 
 LABEL_07B3:
 	jne [0x59], 0x1C, LABEL_07C2
@@ -112,11 +130,13 @@ LABEL_07B3:
 	mov [0x5B], 0x003A
 	ret
 
+
 LABEL_07C2:
 	jne [0x59], 0x1D, LABEL_07D1
 	mov [0x5A], 0x0040
 	mov [0x5B], 0x003B
 	ret
+
 
 LABEL_07D1:
 	jne [0x59], 0x21, LABEL_07E0
@@ -124,17 +144,20 @@ LABEL_07D1:
 	mov [0x5B], 0x0035
 	ret
 
+
 LABEL_07E0:
 	jne [0x59], 0x22, SHARED_RET
 	mov [0x5A], 0x002B
 	mov [0x5B], 0x003B
 	ret
 
+
 DRAW_CIN_SEQ_117_118_119:
 	video offset=CINEMATIC_117, x=[0x60], y=[0x61]
 	video offset=CINEMATIC_118, x=[0x5d], y=[0x5e]
 	video offset=CINEMATIC_119, x=160, y=100
 	ret
+
 
 WAIT_LOOP_VAR_5C:
 	jne [0x5C], 0xFFFF, LABEL_0812
@@ -188,105 +211,127 @@ LABEL_0872:
 	mov [0x63], 0x0001
 	ret
 
+
 LABEL_087D:
 	jne [0x59], 0x01, LABEL_0888
 	mov [0x57], 0x0001
 	ret
+
 
 LABEL_0888:
 	jne [0x59], 0x02, LABEL_0893
 	mov [0x47], 0x0001
 	ret
 
+
 LABEL_0893:
 	jne [0x59], 0x0E, LABEL_089E
 	add [0x3E], 0x0005
 	ret
 
+
 LABEL_089E:
 	jne [0x59], 0x08, LABEL_08A5
 	ret
 
+
 LABEL_08A5:
 	jne [0x59], 0x09, LABEL_08AC
 	ret
+
 
 LABEL_08AC:
 	jne [0x59], 0x0B, LABEL_08B6
 	call DRAW_CIN_122_ON_PAGE_0
 	ret
 
+
 LABEL_08B6:
 	jne [0x59], 0x0C, LABEL_08C1
 	add [0x4F], 0x000A
 	ret
 
+
 LABEL_08C1:
 	jne [0x59], 0x10, LABEL_08C8
 	ret
+
 
 LABEL_08C8:
 	jne [0x59], 0x11, LABEL_08D3
 	mov [0x46], 0x0001
 	ret
 
+
 LABEL_08D3:
 	jne [0x59], 0x13, LABEL_08DD
 	call LABEL_1807
 	ret
+
 
 LABEL_08DD:
 	jne [0x59], 0x14, LABEL_08E8
 	add [0x37], 0x0001
 	ret
 
+
 LABEL_08E8:
 	jne [0x59], 0x15, LABEL_08F3
 	mov [0x3E], 0x000A
 	ret
+
 
 LABEL_08F3:
 	jne [0x59], 0x16, LABEL_08FE
 	mov [0x56], 0x0001
 	ret
 
+
 LABEL_08FE:
 	jne [0x59], 0x18, LABEL_0908
 	call LABEL_181B
 	ret
+
 
 LABEL_0908:
 	jne [0x59], 0x19, LABEL_0913
 	mov [0x47], 0x0001
 	ret
 
+
 LABEL_0913:
 	jne [0x59], 0x1A, LABEL_091A
 	ret
+
 
 LABEL_091A:
 	jne [0x59], 0x1B, LABEL_0925
 	add [0x41], 0x000A
 	ret
 
+
 LABEL_0925:
 	jne [0x59], 0x1C, LABEL_0930
 	add [0x37], 0x000A
 	ret
+
 
 LABEL_0930:
 	jne [0x59], 0x1D, LABEL_093B
 	mov [0x47], 0x0001
 	ret
 
+
 LABEL_093B:
 	jne [0x59], 0x21, LABEL_0942
 	ret
+
 
 LABEL_0942:
 	jne [0x59], 0x22, SHARED_RET
 	mov [0x46], 0x0001
 	ret
+
 
 HANG_DRAW_CIN_173:
 	video offset=CINEMATIC_173, x=160, y=100

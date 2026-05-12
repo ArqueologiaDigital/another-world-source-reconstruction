@@ -1,6 +1,7 @@
 LABEL_5DDB:
 	ret
 
+
 LABEL_5DDC:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	add [BUDDY_Y], 0x0001

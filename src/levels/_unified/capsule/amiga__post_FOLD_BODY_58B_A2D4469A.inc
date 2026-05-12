@@ -45,6 +45,8 @@ LABEL_3A3B:
 
 LABEL_3A4A:
 	ret
+
+
 LABEL_3A4B:
 	db 0x11
 
@@ -55,12 +57,16 @@ LABEL_3A4C:
 	jne [0x2B], 0x01, LABEL_3A5E
 	ret
 
+
 LABEL_3A5E:
 	ret
+
 
 SET_VAR2F_TO_0000:
 	mov [0x2F], 0x0000
 	ret
+
+
 LABEL_3A64:
 	db 0x14, 0x12, 0x1F, 0xFF, 0x0A, 0x04, 0x12, 0x08
 	db 0x3A, 0xA7, 0x01, 0x2B, 0x12, 0x17, 0x2B, 0x00
@@ -140,6 +146,8 @@ LABEL_3B6C:
 
 LABEL_3B77:
 	ret
+
+
 LABEL_3B78:
 	db 0x11
 
@@ -236,6 +244,8 @@ LABEL_3CC1:
 
 LABEL_3CEA:
 	ret
+
+
 LABEL_3CEB:
 	db 0x11
 
@@ -245,6 +255,8 @@ LABEL_3CEC:
 	mov [0x29], [HERO_X]
 	sub [0x29], 0x000A
 	ret
+
+
 LABEL_3CFE:
 	db 0x00, 0x2F, 0x00, 0x05, 0x05
 

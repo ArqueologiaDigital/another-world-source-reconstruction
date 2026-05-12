@@ -4,6 +4,7 @@ LABEL_DBF5:
 	mov [HERO_Y], 0x0078
 	ret
 
+
 LABEL_DC04:
 	jne [HACK_VAR_67], 0xC8, LABEL_DC32
 	mov [HACK_VAR_67], 0x00A7
@@ -17,6 +18,7 @@ LABEL_DC04:
 	mov [HERO_X], 0x0140
 	call LABEL_7A65
 	ret
+
 
 LABEL_DC32:
 	jne [HACK_VAR_67], 0x68, DECR_HACK67_BY_1

@@ -1,6 +1,7 @@
 LABEL_13FC:
 	ret
 
+
 LABEL_13FD:
 	call LABEL_13B1
 	shl [0x0E], 0x000C

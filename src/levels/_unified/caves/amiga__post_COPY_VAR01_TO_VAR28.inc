@@ -7,6 +7,8 @@ LABEL_7B9A:
 	mov [HERO_X], [0x22]
 	mov [0x28], [HERO_X]
 	ret
+
+
 LABEL_7BB3:
 	db 0x11
 
@@ -43,6 +45,7 @@ LABEL_7BEB:
 	call LABEL_7CE2
 	ret
 
+
 LABEL_7C13:
 	je [0x23], 0x00, LABEL_7C29
 	jl [0x46], [0x22], LABEL_7C36
@@ -69,6 +72,7 @@ LABEL_7C36:
 	mov [0x1C], 0x000C
 	call LABEL_7C5E
 	ret
+
 
 LABEL_7C5E:
 	jge [0x25], 0x2000, LABEL_7CE1
@@ -109,6 +113,7 @@ LABEL_7CC1:
 
 LABEL_7CE1:
 	ret
+
 
 LABEL_7CE2:
 	jge [0x25], 0x2000, LABEL_7D4F

@@ -4,6 +4,7 @@ INIT_VARS_2F_29_12:
 	mov [0x12], 0x4010
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_INIT_VARS_2F_29_12_1.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -79,6 +80,7 @@ INIT_VARS_2F_29_12:
 PLAY_SFX_005C_CH00:
 	play id=0x005C, freq=0x19, vol=0x40, channel=0x00
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_PLAY_SFX_005C_CH00.inc"
@@ -407,6 +409,8 @@ DRAW_CV078_PLAY_60_F0B_V22_C1:
 	video type=0, offset=COMMON_VIDEO_078, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0B, vol=0x22, channel=0x01
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -480,6 +484,8 @@ DRAW_CV070_PLAY_60_F14_V20_C1:
 	video type=0, offset=COMMON_VIDEO_070, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x14, vol=0x20, channel=0x01
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -563,6 +569,8 @@ DRAW_CV108_PLAY_60_F0F_V2A_C1:
 	video type=0, offset=COMMON_VIDEO_108, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x01
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -636,6 +644,8 @@ DRAW_CV098_PLAY_60_F0A_V2A_C1:
 	video type=0, offset=COMMON_VIDEO_098, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0A, vol=0x2A, channel=0x01
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"
@@ -806,6 +816,8 @@ INIT_HASH_VARS_A9_TO_AD:
 	or [0xAB], 0x8000
 	or [0xAE], 0x8000
 	ret
+
+
 ;@endif
 
 ;@if BRANCH == "cartridge_1992"

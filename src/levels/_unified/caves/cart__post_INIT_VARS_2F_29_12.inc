@@ -5,6 +5,7 @@ LABEL_5F92:
 	mov [0x2F], 0x0009
 	ret
 
+
 LABEL_5FA5:
 	jg [0x21], [0x22], COMPUTE_VAR26_AS_VAR21_MINUS_VAR22
 	mov [0x26], [0x22]

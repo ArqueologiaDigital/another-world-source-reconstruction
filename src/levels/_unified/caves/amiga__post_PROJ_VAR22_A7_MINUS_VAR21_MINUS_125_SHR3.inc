@@ -3,6 +3,7 @@ LABEL_C0C9:
 	mov [0x22], 0x00C0
 	ret
 
+
 LABEL_C0D4:
 	jg [0x21], 0x78, SET_VAR22_TO_00B8
 	mov [0x22], 0x00BC

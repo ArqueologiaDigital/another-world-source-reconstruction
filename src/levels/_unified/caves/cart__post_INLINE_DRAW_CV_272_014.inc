@@ -5,6 +5,7 @@ LABEL_8954:
 	add [0x08], 0x0001
 	ret
 
+
 LABEL_8964:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, INLINE_DRAW_CV_272_003_002

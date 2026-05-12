@@ -82,6 +82,7 @@ SET_VAR29_TO_000A:
 	mov [0x29], 0x000A
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_SET_VAR29_TO_000A.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -100,6 +101,7 @@ DECREMENT_VAR29_BY_1:
 	sub [0x29], 0x0001
 	ret
 
+
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_DECREMENT_VAR29_BY_1.inc"
 ;@elif BRANCH == "cartridge_1992"
@@ -113,6 +115,7 @@ BIT_EXTRACT_FROM_VAR24_TO_VAR25:
 	and [0x25], 0x00FF
 	shr [0x24], 0x0008
 	ret
+
 
 ;@if BRANCH == "chahi_amiga_1991"
 ;@include "amiga__post_FOLD_BODY_144B_C55279EA.inc"

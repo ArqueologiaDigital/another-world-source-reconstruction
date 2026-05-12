@@ -5,6 +5,7 @@ LABEL_89A2:
 	sub [0x08], 0x0001
 	ret
 
+
 LABEL_89B2:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	add [0x08], 0x0001

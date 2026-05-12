@@ -217,6 +217,7 @@ LABEL_0848:
 	mov [HERO_ACTION], 0x0001
 	ret
 
+
 LABEL_085A:
 	break
 	je [0x63], 0x00, LABEL_085A

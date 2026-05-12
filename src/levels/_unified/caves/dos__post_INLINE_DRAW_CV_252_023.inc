@@ -1,6 +1,7 @@
 LABEL_8D84:
 	ret
 
+
 LABEL_8D85:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	add [0x08], 0x0001

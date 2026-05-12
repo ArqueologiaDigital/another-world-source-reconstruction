@@ -45,6 +45,8 @@ LABEL_587B:
 
 LABEL_588A:
 	ret
+
+
 LABEL_588B:
 	db 0x11
 
@@ -55,12 +57,16 @@ LABEL_588C:
 	jne [0x2B], 0x01, LABEL_589E
 	ret
 
+
 LABEL_589E:
 	ret
+
 
 SET_VAR2F_TO_0000:
 	mov [0x2F], 0x0000
 	ret
+
+
 LABEL_58A4:
 	db 0x14, 0x12, 0x1F, 0xFF, 0x0A, 0x04, 0x12, 0x08
 	db 0x58, 0xE7, 0x01, 0x2B, 0x12, 0x17, 0x2B, 0x00
@@ -139,6 +145,8 @@ LABEL_59A7:
 
 LABEL_59B2:
 	ret
+
+
 LABEL_59B3:
 	db 0x11
 
@@ -236,6 +244,8 @@ LABEL_5AF6:
 
 TRIVIAL_RET_AMIGA:
 	ret
+
+
 LABEL_5B20:
 	db 0x11
 
@@ -245,6 +255,8 @@ LABEL_5B21:
 	mov [0x29], [HERO_X]
 	sub [0x29], 0x000A
 	ret
+
+
 LABEL_5B33:
 	db 0x00, 0x2F, 0x00, 0x05, 0x05
 

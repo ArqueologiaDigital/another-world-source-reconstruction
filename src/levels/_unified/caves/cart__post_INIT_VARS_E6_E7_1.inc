@@ -22,11 +22,13 @@ LABEL_115D:
 	selectVideoPage 0xFF
 	ret
 
+
 LABEL_1167:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_209, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	ret
+
 
 LABEL_1171:
 	selectVideoPage 0x00
@@ -34,17 +36,20 @@ LABEL_1171:
 	selectVideoPage 0xFF
 	ret
 
+
 LABEL_117B:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_211, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	ret
 
+
 LABEL_1185:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_212, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	ret
+
 
 LABEL_118F:
 	selectVideoPage 0x00

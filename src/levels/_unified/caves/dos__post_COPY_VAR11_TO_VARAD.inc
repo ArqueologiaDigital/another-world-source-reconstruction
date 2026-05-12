@@ -7,6 +7,7 @@ LABEL_7036:
 	mov [0x11], [0x49]
 	ret
 
+
 LABEL_7043:
 	jne [0x1D], 0x0B, LABEL_705A
 	mov [0x10], [0x4A]
@@ -15,6 +16,7 @@ LABEL_7043:
 	mov [0xB2], 0x0001
 	ret
 
+
 LABEL_705A:
 	jne [0x1D], 0x0C, LABEL_7066
 	mov [0x10], [0x4C]
@@ -22,6 +24,8 @@ LABEL_705A:
 
 LABEL_7066:
 	ret
+
+
 LABEL_7067:
 	db 0x11
 
@@ -30,10 +34,12 @@ LABEL_7068:
 	mov [0x49], [0x11]
 	ret
 
+
 LABEL_7072:
 	jne [0x1D], 0x0B, LABEL_707C
 	mov [0x4B], [0x11]
 	ret
+
 
 LABEL_707C:
 	jne [0x1D], 0x0C, LABEL_7085
@@ -41,6 +47,8 @@ LABEL_707C:
 
 LABEL_7085:
 	ret
+
+
 LABEL_7086:
 	db 0x11
 
@@ -80,6 +88,7 @@ LABEL_70D6:
 
 LABEL_70DC:
 	ret
+
 
 LABEL_70DD:
 	call PROJECT_POS_VAR04_OR_A212
@@ -167,6 +176,7 @@ LABEL_71B7:
 LABEL_71C3:
 	ret
 
+
 LABEL_71C4:
 	sub [0xF8], 0x000A
 	jl [0x21], [0xF8], SHARED_RET
@@ -174,6 +184,7 @@ LABEL_71C4:
 	jg [0x21], [0xF8], SHARED_RET
 	mov [0xF8], 0x0FA0
 	ret
+
 
 LABEL_71DD:
 	jl [0xA1], 0x00, LABEL_71F5

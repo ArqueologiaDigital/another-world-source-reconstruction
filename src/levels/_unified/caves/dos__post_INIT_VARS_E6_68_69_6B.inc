@@ -324,6 +324,7 @@ LABEL_278B:
 	jg [HERO_Y], [0x19], LABEL_27BB
 	ret
 
+
 LABEL_2798:
 	setup channel=0x14, address=LABEL_EB39
 	setup channel=0x15, address=KILL_CHANNEL_LANDING
@@ -335,6 +336,7 @@ LABEL_2798:
 	mov [0x35], 0x0000
 	call LABEL_7A65
 	ret
+
 
 LABEL_27BB:
 	setup channel=0x14, address=LABEL_EB39
@@ -350,6 +352,8 @@ LABEL_27BB:
 	add [HERO_X], 0x0005
 	add [HERO_Y], 0x001E
 	ret
+
+
 	mov [0xEA], 0x000A
 
 ANIM_CIN_650_LOOP_VAREA:

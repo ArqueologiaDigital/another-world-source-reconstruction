@@ -6,15 +6,18 @@ LABEL_4E31:
 	mov [0x11], [0xA1]
 	ret
 
+
 LABEL_4E3B:
 	jne [0x1D], 0x15, LABEL_4E45
 	mov [0x11], [0xA4]
 	ret
 
+
 LABEL_4E45:
 	jne [0x1D], 0x16, LABEL_4E4F
 	mov [0x11], [0xA7]
 	ret
+
 
 LABEL_4E4F:
 	jne [0x1D], 0x17, COPY_VARAD_TO_VAR11

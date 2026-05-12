@@ -128,6 +128,7 @@ LABEL_80AA:
 	selectVideoPage 0xFF
 	ret
 
+
 LABEL_80F5:
 	setup channel=0x3B, address=LABEL_7F92
 	mov [0x42], 0x00BC

@@ -4,6 +4,8 @@ LABEL_E151:
 	mov [HERO_X], 0x004B
 	add [HERO_X], [0x2A]
 	ret
+
+
 LABEL_E163:
 	db 0x11
 
@@ -122,6 +124,7 @@ LABEL_E293:
 	je [0x18], 0x05, COMPUTE_OFFSET_1A_1B_BY_VAR63
 	ret
 
+
 COMPUTE_OFFSET_1A_1B_BY_VAR63:
 	mov [0x1A], [HERO_X]
 	mov [0x1B], [HERO_Y]
@@ -150,6 +153,7 @@ LABEL_E324:
 SETUP_CHAN_0F_AT_RET:
 	setup channel=0x0F, address=LABEL_E337
 	ret
+
 
 LABEL_E337:
 	video offset=CINEMATIC_526, x=[0x1a], y=[0x1b]

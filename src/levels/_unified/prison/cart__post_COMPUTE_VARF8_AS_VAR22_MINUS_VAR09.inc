@@ -17,6 +17,7 @@ LABEL_47C7:
 LABEL_47D4:
 	ret
 
+
 LABEL_47D5:
 	je [0x29], 0x01, LABEL_47E2
 	jmp LABEL_4878
@@ -41,6 +42,8 @@ LABEL_47F8:
 	mov [0x1C], 0x001E
 	call LABEL_48DF
 	ret
+
+
 	killChannel
 	call LABEL_4811
 	jmp LABEL_4878
@@ -87,6 +90,7 @@ LABEL_4864:
 LABEL_4877:
 	ret
 
+
 LABEL_4878:
 	jne [0x72], [HACK_VAR_67], LABEL_488E
 	mov [0x24], [0x70]
@@ -105,6 +109,7 @@ LABEL_488E:
 
 LABEL_48A4:
 	ret
+
 
 LABEL_48A5:
 	jl [0x26], 0x00, TOGGLE_SIGN_VAR26_INIT_VAR25_FROM_VAR44

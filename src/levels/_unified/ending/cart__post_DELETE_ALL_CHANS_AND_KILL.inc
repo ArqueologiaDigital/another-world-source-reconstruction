@@ -15,10 +15,12 @@ PRELOAD_RESOURCES_8_TO_1:
 	load id=0x000C
 	ret
 
+
 LABEL_0060:
 	load id=0x07DF
 	song id=0x0BDC, delay=0x0000, pos=0x00
 	ret
+
 
 DRAW_CIN_97_TO_100:
 	video offset=CINEMATIC_097, x=160, y=100

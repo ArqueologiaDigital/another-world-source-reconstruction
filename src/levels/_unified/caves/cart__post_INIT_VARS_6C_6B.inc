@@ -91,11 +91,13 @@ LABEL_3AA7:
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
+
 LABEL_3AB4:
 	setup channel=0x15, address=LABEL_3B93
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
+
 
 LABEL_3AC1:
 	setup channel=0x15, address=LABEL_3C6B
@@ -103,11 +105,13 @@ LABEL_3AC1:
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
+
 LABEL_3ACE:
 	setup channel=0x15, address=LABEL_3D42
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
+
 
 LABEL_3ADB:
 	setup channel=0x15, address=LABEL_3BCD
@@ -115,11 +119,13 @@ LABEL_3ADB:
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
+
 LABEL_3AE8:
 	setup channel=0x15, address=LABEL_3D11
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
+
 
 LABEL_3AF5:
 	setup channel=0x15, address=LABEL_3A76
@@ -127,11 +133,13 @@ LABEL_3AF5:
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
+
 LABEL_3B02:
 	setup channel=0x15, address=LABEL_3B62
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
+
 
 LABEL_3B0F:
 	setup channel=0x15, address=LABEL_3BFE
@@ -139,11 +147,13 @@ LABEL_3B0F:
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
+
 LABEL_3B1C:
 	setup channel=0x15, address=LABEL_3CA4
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
+
 
 LABEL_3B29:
 	mov [0x63], 0x0068

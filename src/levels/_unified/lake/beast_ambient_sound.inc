@@ -5,30 +5,35 @@ RANDOM_BEAST_AMBIENT_SOUND:
 	play id=0x0050, freq=0x14, vol=0x20, channel=0x00
 	ret
 
+
 BEAST_AMBIENT_CASE_1:
 	jne [0xF8], 0x01, PLAY_BEAST_AMBIENT_F16
 	ret
+
 
 PLAY_BEAST_AMBIENT_F16:
 	jne [0xF8], 0x02, PLAY_BEAST_AMBIENT_F0F
 	play id=0x0030, freq=0x16, vol=0x18, channel=0x00
 	ret
 
+
 PLAY_BEAST_AMBIENT_F0F:
 	jne [0xF8], 0x03, PLAY_BEAST_AMBIENT_F12
 	play id=0x0050, freq=0x0F, vol=0x30, channel=0x00
 	ret
+
 
 PLAY_BEAST_AMBIENT_F12:
 	jne [0xF8], 0x04, BEAST_AMBIENT_CASE_5
 	play id=0x0050, freq=0x12, vol=0x18, channel=0x00
 	ret
 
+
 BEAST_AMBIENT_CASE_5:
 	jne [0xF8], 0x05, BEAST_AMBIENT_CASE_6
 	ret
 
+
 BEAST_AMBIENT_CASE_6:
 	jne [0xF8], 0x06, RET_TARGET_1A88
 	ret
-

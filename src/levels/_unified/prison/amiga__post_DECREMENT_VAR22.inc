@@ -49,6 +49,7 @@ LABEL_431A:
 	sub [0x21], 0x0002
 	ret
 
+
 LABEL_4342:
 	jne [0x27], 0x03, LABEL_4354
 	video offset=CINEMATIC_530, x=[0x21], y=[0x26]
@@ -118,6 +119,7 @@ LABEL_43D0:
 	add [0x21], 0x0042
 	ret
 
+
 LABEL_43F5:
 	sub [0x21], 0x0021
 	jl [0xF8], 0x10, LABEL_4403
@@ -125,6 +127,8 @@ LABEL_43F5:
 
 LABEL_4403:
 	ret
+
+
 LABEL_4404:
 	db 0x11
 
@@ -146,6 +150,7 @@ LABEL_4418:
 	add [0x21], 0x0041
 	ret
 
+
 LABEL_443D:
 	sub [0x21], 0x0020
 	jl [0xF8], 0x10, LABEL_444B
@@ -153,6 +158,8 @@ LABEL_443D:
 
 LABEL_444B:
 	ret
+
+
 LABEL_444C:
 	db 0x11
 

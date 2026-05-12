@@ -4,9 +4,11 @@ DRAW_CIN_240_IF_VAR09_EQ_1:
 	je [0xF8], 0x01, DRAW_CIN_240
 	ret
 
+
 DRAW_CIN_240:
 	video offset=CINEMATIC_240, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
+
 
 DRAW_CIN_241_IF_VAR09_EQ_1:
 	mov [0xF8], [0x09]
@@ -14,9 +16,11 @@ DRAW_CIN_241_IF_VAR09_EQ_1:
 	je [0xF8], 0x01, DRAW_CIN_241
 	ret
 
+
 DRAW_CIN_241:
 	video offset=CINEMATIC_241, x=[0xf5], y=[BUDDY_Y]
 	ret
+
 
 LABEL_5466:
 	video type=0, offset=COMMON_VIDEO_239, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40

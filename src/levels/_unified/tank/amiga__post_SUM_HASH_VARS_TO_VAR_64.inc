@@ -20,6 +20,7 @@ LABEL_0DD4:
 	mov [HACK_VAR_67], 0x0000
 	ret
 
+
 LABEL_0E21:
 	break
 	break
@@ -164,12 +165,14 @@ LABEL_0FB3:
 	video offset=CINEMATIC_102, x=[0x39], y=[0x3a]
 	ret
 
+
 LABEL_0FCA:
 	video offset=CINEMATIC_103, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
 	jne [0x45], 0x00, SHARED_RET
 	video offset=CINEMATIC_104, x=[0x39], y=[0x3a]
 	ret
+
 
 LABEL_0FE1:
 	video offset=CINEMATIC_105, x=[0x39], y=[0x3a]
@@ -178,12 +181,14 @@ LABEL_0FE1:
 	video offset=CINEMATIC_106, x=[0x39], y=[0x3a]
 	ret
 
+
 LABEL_0FF8:
 	video offset=CINEMATIC_107, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
 	jne [0x45], 0x00, SHARED_RET
 	video offset=CINEMATIC_108, x=[0x39], y=[0x3a]
 	ret
+
 
 LABEL_100F:
 	video offset=CINEMATIC_109, x=[0x39], y=[0x3a]
@@ -192,12 +197,14 @@ LABEL_100F:
 	video offset=CINEMATIC_110, x=[0x39], y=[0x3a]
 	ret
 
+
 LABEL_1026:
 	video offset=CINEMATIC_111, x=[0x39], y=[0x3a]
 	jle [0x37], 0x00, SHARED_RET
 	jne [0x45], 0x00, SHARED_RET
 	video offset=CINEMATIC_112, x=[0x39], y=[0x3a]
 	ret
+
 
 APPLY_HERO_DAMAGE_AND_HIT:
 	jle [0x37], 0x00, SHARED_RET

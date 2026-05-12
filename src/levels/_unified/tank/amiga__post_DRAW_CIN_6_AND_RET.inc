@@ -13,16 +13,19 @@ LABEL_17CF:
 	selectVideoPage 0xFF
 	ret
 
+
 DRAW_CIN_113_114_AND_RET:
 	video offset=CINEMATIC_113, x=[0x0f], y=[0x10]
 	video offset=CINEMATIC_114, x=[0x0f], y=[0x10]
 	ret
+
 
 DRAW_CIN_122_ON_PAGE_0:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_122, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
 	ret
+
 
 LABEL_1807:
 	selectVideoPage 0x00
@@ -32,12 +35,14 @@ LABEL_1807:
 	mov [HACK_VAR_67], 0x0002
 	ret
 
+
 LABEL_181B:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_120, x=[0x0f], y=[0x10]
 	mov [HACK_VAR_67], 0x0003
 	selectVideoPage 0xFF
 	ret
+
 
 DRAW_CIN_093_TO_097_VAR:
 	video offset=CINEMATIC_029, x=[0x01], y=[0x02], zoom=[0x03]
@@ -46,6 +51,7 @@ DRAW_CIN_093_TO_097_VAR:
 	video offset=CINEMATIC_032, x=[0x01], y=[0x02], zoom=[0x03]
 	video offset=CINEMATIC_033, x=[0x01], y=[0x02], zoom=[0x03]
 	ret
+
 
 DRAW_CIN_SEQ_001_001_003:
 	video offset=CINEMATIC_001, x=114, y=22
@@ -69,6 +75,8 @@ DRAW_CIN_SEQ_001_001_003:
 	video offset=CINEMATIC_003, x=28, y=38
 	video offset=CINEMATIC_003, x=96, y=20
 	ret
+
+
 LABEL_1899:
 	db 0x11, 0x87, 0xBA, 0x72, 0x16, 0x87, 0xBA, 0x56
 	db 0x15, 0x87, 0xBA, 0x35, 0x15, 0x06, 0x87, 0xBA

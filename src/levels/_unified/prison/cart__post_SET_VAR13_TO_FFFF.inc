@@ -7,6 +7,8 @@ LABEL_3B01:
 	je [0x1D], 0x1E, LABEL_3B5C
 	jge [0x1D], 0x28, LABEL_3BA7
 	ret
+
+
 LABEL_3B1A:
 	db 0x11
 
@@ -20,6 +22,7 @@ LABEL_3B27:
 	je [0xB4], 0x01, SHARED_RET
 	setup channel=0x02, address=LABEL_0C90
 	ret
+
 
 LABEL_3B3E:
 	call LABEL_4186

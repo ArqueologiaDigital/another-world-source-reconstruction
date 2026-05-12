@@ -178,6 +178,8 @@ ENDING_CHANNEL_TOMBSTONE_KILL:
 
 LABEL_0025:
 	ret
+
+
 	jne [0xF2], 0x0FA0, DELETE_ALL_CHANS_AND_KILL
 
 DELETE_ALL_CHANS_AND_KILL:
@@ -201,10 +203,12 @@ PRELOAD_RESOURCES_8_TO_1:
 	load id=0x000C
 	ret
 
+
 LABEL_0060:
 	load id=0x07DF
 	song id=0x0BDC, delay=0x0000, pos=0x00
 	ret
+
 
 LABEL_006A:
 	video offset=CINEMATIC_097, x=160, y=100
@@ -1188,6 +1192,8 @@ DRAW_STARS_PAGE0_CIN_000:
 	video offset=CINEMATIC_002, x=13, y=11, zoom=[0x20]	;@enc=alt
 	selectVideoPage 0xFF
 	ret
+
+
 LABEL_09F7:
 	db 0x11
 
@@ -1223,6 +1229,8 @@ DRAW_STARS_PAGE3_CIN_004:
 	video offset=CINEMATIC_006, x=13, y=11, zoom=[0x20]	;@enc=alt
 	selectVideoPage 0xFF
 	ret
+
+
 LABEL_0A8D:
 	db 0x11
 
@@ -1244,6 +1252,7 @@ DRAW_STARS_CIN_38_39_40_5_6:
 	video offset=CINEMATIC_041, x=300, y=28
 	video offset=CINEMATIC_041, x=202, y=86, zoom=[0x30]	;@enc=alt
 	ret
+
 
 LABEL_0AE0:
 	blitFramebuffer 0xFF
@@ -1304,6 +1313,8 @@ LABEL_0B49:
 	blitFramebuffer 0xFF
 	blitFramebuffer 0x02
 	ret
+
+
 LABEL_0B58:
 	db 0x11, 0x11, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 	FILL(62624, 0xFF)

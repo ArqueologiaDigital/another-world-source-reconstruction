@@ -10,10 +10,12 @@ LABEL_3D83:
 	mov [0x2F], 0x000B
 	ret
 
+
 LABEL_3D8E:
 	jg [0xAD], 0x00, LABEL_3D99
 	mov [0x2F], 0x000B
 	ret
+
 
 LABEL_3D99:
 	mov [0x2F], 0x0008
@@ -23,6 +25,7 @@ LABEL_3D99:
 	jl [0x38], 0x64, SHARED_RET
 	mov [0x2F], 0x0009
 	ret
+
 
 LABEL_3DB2:
 	mov [0x21], 0x0000
@@ -48,11 +51,13 @@ STATE_VAR12_BIG_DISPATCH_CASE_20:
 	mov [0x12], 0x0048
 	ret
 
+
 STATE_VAR12_BIG_DISPATCH_CASE_48:
 	jg [HERO_X], 0xB4, STATE_VAR12_BIG_DISPATCH_CASE_50
 	mov [0x2F], 0x000D
 	mov [0x12], 0x0050
 	ret
+
 
 STATE_VAR12_BIG_DISPATCH_CASE_50:
 	mov [0x2F], 0x0009
@@ -62,6 +67,7 @@ STATE_VAR12_BIG_DISPATCH_CASE_50:
 	mov [0x12], 0x0048
 	ret
 
+
 STATE_VAR12_BIG_DISPATCH_CASE_40:
 	jne [0x10], 0x4D, LABEL_3E57
 	jne [HACK_VAR_67], [0x10], SHARED_RET
@@ -69,16 +75,20 @@ STATE_VAR12_BIG_DISPATCH_CASE_40:
 	mov [0x2F], 0x0019
 	ret
 
+
 LABEL_3E57:
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
 	mov [0x10], 0x0000
 	ret
+
 
 STATE_VAR12_BIG_DISPATCH_CASE_18:
 	jge [0x04], 0x4000, SHARED_RET
 	jg [0xAA], 0x00, LABEL_3E7D
 	mov [0x2F], 0x000B
 	ret
+
+
 LABEL_3E72:
 	db 0x0A, 0x02, 0xAD, 0x00, 0x3E, 0x7D, 0x00, 0x2F
 	db 0x00, 0x0B, 0x05
@@ -90,6 +100,7 @@ LABEL_3E7D:
 	and [0xF8], 0x0380
 	je [0xF8], 0x00, LABEL_3E98
 	ret
+
 
 LABEL_3E98:
 	call LABEL_3F99

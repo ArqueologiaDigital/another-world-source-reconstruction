@@ -4,6 +4,8 @@ LABEL_DB92:
 	mov [HERO_X], 0x004B
 	add [HERO_X], [0x2A]
 	ret
+
+
 LABEL_DBA4:
 	db 0x11
 
@@ -114,6 +116,7 @@ LABEL_DCBA:
 	je [0x18], 0x05, COMPUTE_OFFSET_1A_1B_BY_VAR63
 	ret
 
+
 COMPUTE_OFFSET_1A_1B_BY_VAR63:
 	mov [0x1A], [HERO_X]
 	mov [0x1B], [HERO_Y]
@@ -142,6 +145,7 @@ LABEL_DD4B:
 SETUP_CHAN_0F_AT_RET:
 	setup channel=0x0F, address=LABEL_DD5E
 	ret
+
 
 LABEL_DD5E:
 	video offset=CINEMATIC_504, x=[0x1a], y=[0x1b]

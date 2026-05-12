@@ -3,6 +3,7 @@ LABEL_C2CE:
 	mov [0x22], 0x0070
 	ret
 
+
 LABEL_C2D9:
 	jg [0x21], 0x1F, LABEL_C2EF
 	sub [0x21], 0x001A
@@ -11,6 +12,7 @@ LABEL_C2D9:
 	add [0x22], [0x21]
 	ret
 
+
 LABEL_C2EF:
 	jg [0x21], 0x50, SET_VAR22_TO_00B2
 	sub [0x21], 0x001F
@@ -18,9 +20,12 @@ LABEL_C2EF:
 	add [0x22], [0x21]
 	ret
 
+
 SET_VAR22_TO_00B2:
 	mov [0x22], 0x00B2
 	ret
+
+
 	je [0xB7], 0x01, SET_VAR22_TO_00AE
 	jg [0x22], 0x78, SET_VAR22_TO_00AE
 	jg [0x21], 0xAE, SET_VAR22_TO_0042

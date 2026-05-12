@@ -8,6 +8,8 @@ LABEL_680C:
 	je [0x1D], 0x1E, LABEL_6975
 	jge [0x1D], 0x28, LABEL_69BE
 	ret
+
+
 LABEL_682B:
 	db 0x11
 
@@ -19,6 +21,7 @@ LABEL_682C:
 	and [0x49], 0xFFF8
 	ret
 
+
 LABEL_6845:
 	jne [0x1D], 0x0B, LABEL_6858
 	setup channel=0x2A, address=INLINE_SET_VAR75_TO_6
@@ -26,12 +29,14 @@ LABEL_6845:
 	and [0x4B], 0xFFF8
 	ret
 
+
 LABEL_6858:
 	jne [0x1D], 0x0C, SHARED_RET
 	setup channel=0x2C, address=INLINE_SET_VAR76_TO_6
 	or [0x4D], 0x4000
 	and [0x4D], 0xFFF8
 	ret
+
 
 LABEL_686B:
 	jne [HACK_VAR_67], 0xCA, LABEL_6884
@@ -41,6 +46,7 @@ LABEL_686B:
 	and [0x49], 0xFFF8
 	ret
 
+
 LABEL_6884:
 	jne [HACK_VAR_67], 0xCB, SHARED_RET
 	jne [0x1D], 0x0A, LABEL_689D
@@ -49,6 +55,7 @@ LABEL_6884:
 	and [0x49], 0xFFF8
 	ret
 
+
 LABEL_689D:
 	jne [0x1D], 0x0B, LABEL_68B0
 	setup channel=0x2A, address=INLINE_SET_VAR75_TO_6
@@ -56,12 +63,14 @@ LABEL_689D:
 	and [0x4B], 0xFFF8
 	ret
 
+
 LABEL_68B0:
 	jne [0x1D], 0x0C, SHARED_RET
 	setup channel=0x2C, address=INLINE_SET_VAR76_TO_6
 	or [0x4D], 0x4000
 	and [0x4D], 0xFFF8
 	ret
+
 
 LABEL_68C3:
 	jne [HACK_VAR_67], 0x6B, LABEL_68EE
@@ -76,6 +85,7 @@ LABEL_68C3:
 	mov [0x47], 0x0FA0
 	ret
 
+
 LABEL_68EE:
 	jne [HACK_VAR_67], 0xEE, LABEL_6917
 	mov [0xF8], [0xB1]
@@ -87,6 +97,7 @@ LABEL_68EE:
 	setup channel=0x3C, address=LABEL_4063
 	play id=0x0057, freq=0x1C, vol=0x40, channel=0x00
 	ret
+
 
 LABEL_6917:
 	jne [HACK_VAR_67], 0x50, SHARED_RET
@@ -105,6 +116,7 @@ LABEL_693E:
 	setup channel=0x05, address=LABEL_CDB0
 	or [0xB2], 0x0002
 	ret
+
 
 LABEL_6957:
 	call LABEL_6FBA

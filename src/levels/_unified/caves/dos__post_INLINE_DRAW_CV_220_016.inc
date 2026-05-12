@@ -5,6 +5,7 @@ LABEL_85B8:
 	call LABEL_8417
 	ret
 
+
 LABEL_85C7:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	je [0x0D], 0x00, DRAW_CV224_AT_X07_Y08

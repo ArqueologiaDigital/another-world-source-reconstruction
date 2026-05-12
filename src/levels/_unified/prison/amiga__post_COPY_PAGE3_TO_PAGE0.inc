@@ -155,6 +155,7 @@ LABEL_8301:
 	setup channel=0x27, address=LABEL_25A5
 	ret
 
+
 LABEL_8320:
 	break
 	jne [0xB2], 0x00, LABEL_8320
@@ -313,11 +314,13 @@ LABEL_84D5:
 	mov [0x21], 0x00B6
 	ret
 
+
 LABEL_84E4:
 	jg [0x27], 0x04, LABEL_84F3
 	mov [0x22], 0x0050
 	mov [0x21], 0x00B6
 	ret
+
 
 LABEL_84F3:
 	jne [0x27], 0x05, LABEL_8506
@@ -326,6 +329,7 @@ LABEL_84F3:
 	mov [0x23], 0x0000
 	ret
 
+
 LABEL_8506:
 	jne [0x27], 0x25, LABEL_8519
 	mov [0x22], 0x0081
@@ -333,17 +337,20 @@ LABEL_8506:
 	mov [0x23], 0x0001
 	ret
 
+
 LABEL_8519:
 	jne [0x27], 0x24, LABEL_8528
 	mov [0x22], 0x005D
 	mov [0x21], 0x00B6
 	ret
 
+
 LABEL_8528:
 	jne [0x27], 0x23, LABEL_8537
 	mov [0x22], 0x005C
 	mov [0x21], 0x00B6
 	ret
+
 
 LABEL_8537:
 	jne [0x27], 0x45, LABEL_854A
@@ -352,11 +359,13 @@ LABEL_8537:
 	mov [0x23], 0x0000
 	ret
 
+
 LABEL_854A:
 	jne [0x27], 0x44, LABEL_8559
 	mov [0x22], 0x0046
 	mov [0x21], 0x008B
 	ret
+
 
 LABEL_8559:
 	jne [0x27], 0x65, LABEL_856C
@@ -365,7 +374,10 @@ LABEL_8559:
 	mov [0x23], 0x0000
 	ret
 
+
 LABEL_856C:
 	ret
+
+
 LABEL_856D:
 	db 0x11

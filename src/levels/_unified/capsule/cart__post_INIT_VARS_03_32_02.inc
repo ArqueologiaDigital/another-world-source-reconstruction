@@ -28,9 +28,12 @@ LABEL_9A31:
 	video offset=CINEMATIC_093, x=[HERO_X], y=[HERO_Y]
 	ret
 
+
 DRAW_CIN_092:
 	video offset=CINEMATIC_092, x=[HERO_X], y=[HERO_Y]
 	ret
+
+
 LABEL_9A4A:
 	db 0x11
 
@@ -41,9 +44,11 @@ LABEL_9A4B:
 	video offset=CINEMATIC_091, x=[HERO_X], y=[HERO_Y]
 	ret
 
+
 DRAW_CIN_090:
 	video offset=CINEMATIC_090, x=[HERO_X], y=[HERO_Y]
 	ret
+
 
 LABEL_9A64:
 	mov [0xF8], [0x04]

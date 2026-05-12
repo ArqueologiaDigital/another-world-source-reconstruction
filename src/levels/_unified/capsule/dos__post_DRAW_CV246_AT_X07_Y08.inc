@@ -1,6 +1,7 @@
 LABEL_82E4:
 	ret
 
+
 LABEL_82E5:
 	jne [HACK_VAR_67], [0x10], SHARED_RET
 	play id=0x0055, freq=0x0F, vol=0x14, channel=0x00

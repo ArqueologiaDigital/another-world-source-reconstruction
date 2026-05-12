@@ -7,6 +7,8 @@ LABEL_A058:
 	jne [0x22], 0x00, LABEL_A080
 	mov [0x22], 0x00AC
 	ret
+
+
 	jg [0x35], 0x1E, SET_VAR22_TO_0097
 
 LABEL_A080:
@@ -17,6 +19,7 @@ LABEL_A080:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_A096:
 	jg [0x21], 0x68, SET_VAR22_TO_0097
 	sub [0x21], 0x0045
@@ -25,15 +28,18 @@ LABEL_A096:
 	sub [0x22], [0x21]
 	ret
 
+
 LABEL_A0AC:
 	jg [0x22], 0x5A, SET_VAR22_TO_0062_AT_A0BD
 	jg [0x21], 0x19, SET_VAR22_TO_0062_AT_A0BD
 	mov [0x22], 0x0050
 	ret
 
+
 SET_VAR22_TO_0062_AT_A0BD:
 	mov [0x22], 0x0062
 	ret
+
 
 LABEL_A0C2:
 	mov [0x22], 0x0062
@@ -42,11 +48,13 @@ LABEL_A0C2:
 	mov [0x22], 0x00FA
 	ret
 
+
 LABEL_A0D8:
 	mov [0x22], 0x00B5
 	jle [0x21], 0x0F, SHARED_RET
 	mov [0x22], 0x0118
 	ret
+
 
 LABEL_A0E7:
 	mov [0x22], [0xB9]

@@ -14,6 +14,7 @@ LABEL_5FC2:
 	call LABEL_76D2
 	ret
 
+
 LABEL_5FDF:
 	mov [0x21], [0x07]
 	mov [0x22], [HERO_X]
@@ -21,12 +22,15 @@ LABEL_5FDF:
 	call LABEL_76B9
 	ret
 
+
 JUNK__5FEC:
 	call LABEL_6032
 	mov [0x22], [0x07]
 	mov [0x27], [0x08]
 	call LABEL_76B9
 	ret
+
+
 	mov [0x21], [0x07]
 	call LABEL_6046
 	mov [0x29], [HERO_X]
@@ -36,12 +40,14 @@ JUNK__5FEC:
 	mov [HERO_X], [0x29]
 	ret
 
+
 LABEL_600F:
 	call LABEL_6032
 	mov [0x22], [HERO_X]
 	mov [0x27], [0x08]
 	call LABEL_76B9
 	ret
+
 
 LABEL_601C:
 	call LABEL_6032
@@ -52,6 +58,7 @@ LABEL_601C:
 	call LABEL_76B9
 	mov [HERO_X], [0x29]
 	ret
+
 
 LABEL_6032:
 	mov [0x21], [0x07]

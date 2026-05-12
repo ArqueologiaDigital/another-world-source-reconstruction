@@ -325,6 +325,7 @@ LABEL_25C7:
 	jg [HERO_Y], [0x19], LABEL_25F7
 	ret
 
+
 LABEL_25D4:
 	setup channel=0x14, address=LABEL_E54E
 	setup channel=0x15, address=KILL_CHANNEL_LANDING
@@ -336,6 +337,7 @@ LABEL_25D4:
 	mov [0x35], 0x0000
 	call LABEL_770D
 	ret
+
 
 LABEL_25F7:
 	setup channel=0x14, address=LABEL_E54E
@@ -351,6 +353,8 @@ LABEL_25F7:
 	add [HERO_X], 0x0005
 	add [HERO_Y], 0x001E
 	ret
+
+
 LABEL_2624:
 	db 0x00, 0xEA, 0x00, 0x0A, 0xC9, 0xD3, 0xA0, 0x64
 	db 0x06, 0x09, 0xEA, 0x26, 0x28, 0xC9, 0xB1, 0xA0

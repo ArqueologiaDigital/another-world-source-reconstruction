@@ -14,11 +14,13 @@ LABEL_3B5C:
 	setup channel=0x14, address=LABEL_103E
 	ret
 
+
 LABEL_3B98:
 	setup channel=0x14, address=LABEL_0F58
 	jl [0xF8], 0x10, SHARED_RET
 	setup channel=0x14, address=LABEL_0F7F
 	ret
+
 
 LABEL_3BA7:
 	call LABEL_3C26
@@ -55,21 +57,25 @@ LABEL_3C0E:
 	mov [0x13], 0xFFFF
 	ret
 
+
 LABEL_3C1A:
 	or [0x2B], 0x4000
 	call LABEL_3C45
 	mov [0x13], 0xFFFF
 	ret
 
+
 LABEL_3C26:
 	jne [0x1D], 0x28, LABEL_3C30
 	mov [0x2B], [0x6B]
 	ret
 
+
 LABEL_3C30:
 	jne [0x1D], 0x29, LABEL_3C3A
 	mov [0x2B], [0x73]
 	ret
+
 
 LABEL_3C3A:
 	jne [0x1D], 0x2A, LABEL_3C43
@@ -77,6 +83,8 @@ LABEL_3C3A:
 
 LABEL_3C43:
 	ret
+
+
 LABEL_3C44:
 	db 0x11
 
@@ -85,10 +93,12 @@ LABEL_3C45:
 	mov [0x6B], [0x2B]
 	ret
 
+
 LABEL_3C4F:
 	jne [0x1D], 0x29, LABEL_3C59
 	mov [0x73], [0x2B]
 	ret
+
 
 LABEL_3C59:
 	jne [0x1D], 0x2A, RET_THEN_KILL_CHANNEL

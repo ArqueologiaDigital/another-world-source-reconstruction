@@ -8,11 +8,13 @@ LABEL_2FE8:
 	mov [0x2F], 0x0002
 	ret
 
+
 LABEL_300A:
 	jg [BUDDY_X], 0x8C, LABEL_3019
 	mov [0x29], 0x00AA
 	mov [0x2F], 0x0001
 	ret
+
 
 LABEL_3019:
 	mov [0xF8], [0x11]
@@ -20,6 +22,7 @@ LABEL_3019:
 	je [0xF8], 0x00, SHARED_RET
 	mov [0x2F], 0x0006
 	ret
+
 
 LABEL_302B:
 	mov [0xF8], [HERO_X]
@@ -36,9 +39,11 @@ LABEL_3042:
 	mov [0x29], 0x00AA
 	ret
 
+
 SET_VAR2F_TO_0000:
 	mov [0x2F], 0x0000
 	ret
+
 
 LABEL_305F:
 	je [0x10], 0x01, LABEL_2D8C
@@ -132,6 +137,8 @@ LABEL_3181:
 
 LABEL_318C:
 	ret
+
+
 LABEL_318D:
 	db 0x11
 
@@ -205,6 +212,8 @@ LABEL_3283:
 
 LABEL_328E:
 	ret
+
+
 LABEL_328F:
 	db 0x11
 

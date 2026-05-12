@@ -11,6 +11,7 @@ LABEL_6E6F:
 	video type=0, offset=COMMON_VIDEO_002, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
+
 LABEL_6E78:
 	jne [0x0A], 0x00, LABEL_6E86
 	video type=0, offset=COMMON_VIDEO_060, x=[HERO_X], y=[HERO_Y], zoom=0x40

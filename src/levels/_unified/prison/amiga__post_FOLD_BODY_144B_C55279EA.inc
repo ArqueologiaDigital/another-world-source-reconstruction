@@ -13,6 +13,7 @@ LABEL_1C96:
 	deleteChannels first=0x01, last=0x04
 	ret
 
+
 LABEL_1CB8:
 	setPalette 0x02
 	selectVideoPage 0x00
@@ -39,6 +40,8 @@ LABEL_1CC9:
 	shl [0x82], 0x0008
 	or [0x82], 0x0082
 	ret
+
+
 LABEL_1D08:
 	db 0x11
 

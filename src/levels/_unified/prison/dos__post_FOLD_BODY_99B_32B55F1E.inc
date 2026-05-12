@@ -82,6 +82,8 @@ LABEL_30A9:
 
 LABEL_30B4:
 	ret
+
+
 LABEL_30B5:
 	db 0x11
 
@@ -155,6 +157,8 @@ LABEL_31AB:
 
 LABEL_31B6:
 	ret
+
+
 LABEL_31B7:
 	db 0x11
 

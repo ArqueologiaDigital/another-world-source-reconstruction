@@ -18,6 +18,7 @@ LABEL_557D:
 LABEL_558A:
 	ret
 
+
 LABEL_558B:
 	je [0x29], 0x01, LABEL_5598
 	jmp LABEL_562E
@@ -42,6 +43,8 @@ LABEL_55AE:
 	mov [0x1C], 0x001E
 	call LABEL_5695
 	ret
+
+
 LABEL_55BF:
 	db 0x11, 0x04, 0x55, 0xC7, 0x07, 0x56, 0x2E, 0x11
 
@@ -85,6 +88,7 @@ LABEL_561A:
 LABEL_562D:
 	ret
 
+
 LABEL_562E:
 	jne [0x72], [HACK_VAR_67], LABEL_5644
 	mov [0x24], [0x70]
@@ -103,6 +107,7 @@ LABEL_5644:
 
 LABEL_565A:
 	ret
+
 
 LABEL_565B:
 	jl [0x26], 0x00, INLINE_COPY_VAR44_TO_VAR25

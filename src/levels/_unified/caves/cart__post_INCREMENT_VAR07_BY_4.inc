@@ -9,26 +9,31 @@ LABEL_484F:
 	and [0x21], 0x01FF
 	ret
 
+
 LABEL_485D:
 	jne [0x22], 0x94, SHARED_RET
 	mov [0x21], [0xB9]
 	and [0x21], 0xFE00
 	ret
 
+
 LABEL_486B:
 	jne [0x22], 0x92, LABEL_4876
 	mov [0xB8], 0x0000
 	ret
+
 
 LABEL_4876:
 	jne [0x22], 0x93, LABEL_4881
 	and [0xB9], 0xFE00
 	ret
 
+
 LABEL_4881:
 	jne [0x22], 0x94, SHARED_RET
 	and [0xB9], 0x01FF
 	ret
+
 
 LABEL_488C:
 	mov [0x21], 0x0001
@@ -36,12 +41,15 @@ LABEL_488C:
 	jne [0xAD], 0xFFFF, SHARED_RET
 	mov [0x21], 0x0000
 	ret
+
+
 	mov [0x21], 0x0001
 	jne [0xA1], 0xFFFF, SHARED_RET
 	jne [0xA4], 0xFFFF, SHARED_RET
 	jne [0xA7], 0xFFFF, SHARED_RET
 	mov [0x21], 0x0000
 	ret
+
 
 LABEL_48C1:
 	break
@@ -89,6 +97,7 @@ LABEL_4934:
 	call LABEL_494E
 	ret
 
+
 LABEL_494E:
 	jne [0x8B], 0xFFFF, LABEL_4964
 	mov [0x8B], [0x23]
@@ -112,6 +121,7 @@ LABEL_497A:
 	mov [0x9B], [0x27]
 	mov [0x8F], [0x21]
 	ret
+
 
 JUNK__498E:
 	break
@@ -149,6 +159,8 @@ LABEL_49D5:
 	add [0x27], [0x3A]
 	or [0x27], 0x1800
 	ret
+
+
 LABEL_49EB:
 	db 0x11
 
@@ -156,6 +168,8 @@ LABEL_49EC:
 	call LABEL_49FE
 	jmp LABEL_64C0
 	ret
+
+
 	call LABEL_49FE
 	add [0x21], 0x00DC
 	jmp LABEL_64C0
@@ -170,6 +184,8 @@ LABEL_49FE:
 	add [0x27], [0x3A]
 	or [0x27], 0x1800
 	ret
+
+
 LABEL_4A14:
 	db 0x11
 
