@@ -48,10 +48,105 @@ CLEAR_LAST_KEYCHAR:
 
 .endif
 
+.if BRANCH in ("cartridge_1992", "dos_1992")
+KEY_PRESSED_DISPATCH:
+	mov [0x05], [0x01]
+	je [LAST_KEYCHAR], 0x00, DISPATCH_AND_CALL_INDEX_VAR06
+	call INTERPRET_KEY_TO_LETTER
+	je [LAST_KEYCHAR], 0x00, DRAW_PASSCODE_FRAME_AND_WAIT_KEY
+	jmp PROCESS_PASSCODE_SUBMIT
+
+DISPATCH_AND_CALL_INDEX_VAR06:
+	call INDEX_VAR06_BY_VAR05
+
+PROCESS_PASSCODE_SUBMIT:
+	mov [0x22], [0x02]
+	je [0x06], 0x63, VALIDATE_PASSCODE_LDKD
+	jne [0x06], 0x62, CHECK_ALL_4_LETTERS_ENTERED
+	mov [0x06], 0xFFFF
+	sub [0x22], 0x0001
+	jg [0x22], 0x00, STORE_LETTER_IN_PASSCODE_BUFFER
+	mov [0x22], 0x0000
+	jmp STORE_LETTER_IN_PASSCODE_BUFFER
+
+CHECK_ALL_4_LETTERS_ENTERED:
+	je [0x02], 0x04, DRAW_PASSCODE_FRAME_AND_WAIT_KEY
+	add [0x22], 0x0001
+	add [0x02], 0x0001
+
+STORE_LETTER_IN_PASSCODE_BUFFER:
+	jne [0x02], 0x01, STORE_LETTER_IN_SLOT_BY_VAR02
+	mov [0x1E], [0x06]
+
+STORE_LETTER_IN_SLOT_BY_VAR02:
+	jne [0x02], 0x02, SAVE_PASSCODE_LETTER_3
+	mov [0x1F], [0x06]
+
+SAVE_PASSCODE_LETTER_3:
+	jne [0x02], 0x03, SAVE_PASSCODE_LETTER_4
+	mov [0x20], [0x06]
+
+SAVE_PASSCODE_LETTER_4:
+	jne [0x02], 0x04, SETUP_VAR02_FROM_VAR22
+	mov [0x21], [0x06]
+
+SETUP_VAR02_FROM_VAR22:
+	call DRAW_PASSCODE_LETTER_FRAME
+	mov [0x02], [0x22]
+
+DRAW_PASSCODE_FRAME_AND_WAIT_KEY:
+	mov [0x05], [0x01]
+	call DERIVE_VAR07_VAR08_FROM_VAR05
+	video offset=CINEMATIC_PASSCODE_CURSOR, x=[0x07], y=[0x08]
+	break
+	jne [LAST_KEYCHAR], 0x00, DRAW_PASSCODE_FRAME_AND_WAIT_KEY
 .if BRANCH == "cartridge_1992"
-.include "cart__post_CLEAR_LAST_KEYCHAR.inc"
-.elif BRANCH == "dos_1992"
-.include "dos__post_CLEAR_LAST_KEYCHAR.inc"
+; cart-only "if you press jump-down, set HERO_ACTION = 1" behavior —
+; lets the player back out of the passcode screen with the jump key.
+; dos+amiga don't have this; pressing any HERO_ACTION key proceeds.
+	je [0xDB], 0x00, RESUME_PASSCODE_INPUT
+	jne [HERO_POS_JUMP_DOWN], 0xFFFF, RESUME_PASSCODE_INPUT
+	mov [HERO_ACTION], 0x0001
+
+RESUME_PASSCODE_INPUT:
+.endif
+	jne [HERO_ACTION], 0x00, DRAW_PASSCODE_FRAME_AND_WAIT_KEY
+	jmp HANDLE_PASSCODE_INPUT_OR_DISPATCH
+
+; Unreachable `db 0x11` filler — preceding `jmp` doesn't fall through.
+.if INCLUDE_UNREACHABLE_CODE == on
+	killChannel
+.endif
+
+DRAW_PASSCODE_LETTER_FRAME:
+	mov [0x07], 0x00BC
+	mov [0x08], 0x0054
+	selectVideoPage 0x00
+	video offset=CINEMATIC_PASSCODE_LETTER_FRAME, x=160, y=100
+	text id=0x013C, x=2, y=80, color=0x06 ; "        ACCESS CODE:"
+	mov [0x06], [0x1E]
+	call BLINK_LETTER_DISPATCHER
+	add [0x07], 0x0008
+	mov [0x06], [0x1F]
+	call BLINK_LETTER_DISPATCHER
+	add [0x07], 0x0008
+	mov [0x06], [0x20]
+	call BLINK_LETTER_DISPATCHER
+	add [0x07], 0x0008
+	mov [0x06], [0x21]
+	call BLINK_LETTER_DISPATCHER
+	selectVideoPage 0xFF
+	ret
+
+
+DERIVE_VAR07_VAR08_FROM_VAR05:
+	mov [0x07], [0x05]
+	mov [0x08], [0x05]
+	and [0x07], 0x0007
+	and [0x08], 0x0008
+	jne [0x08], 0x00, INIT_VAR08_TO_150
+	mov [0x08], 0x0086
+	jmp SCALE_VAR07_TIMES_9_PLUS_4A
 .endif
 
 INIT_VAR08_TO_150:
