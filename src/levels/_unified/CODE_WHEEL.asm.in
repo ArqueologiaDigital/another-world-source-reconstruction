@@ -55,9 +55,8 @@ LABEL_0000:
 	setup channel=0x14, address=ENTRY_CALL_INIT_4A
 	killChannel
 
-; UNREACHABLE: filler byte (1-byte `killChannel`); the previous
-; `killChannel` already terminates this task so this second one
-; can't execute. No label references this address.
+; The previous `killChannel` already terminates this task so this
+; second one can't execute. No label references this address.
 ;@if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
 ;@endif
@@ -97,13 +96,13 @@ INIT_GAME_STATE_VARS:
 	ret
 
 
-; UNREACHABLE: 4-byte vestigial `mov [HACK_VAR_54], <imm>`.
-; INIT_GAME_STATE_VARS ends with `ret` and nothing references this address;
-; the next labeled routine GAME_INTRO_PHASE_DRAW_CIN_076 below is entered
-; directly. Original disasm: amiga `LABEL_0077: db 0x00, 0x54, 0x00, 0x01`
-; (the LABEL_0077 was unreferenced); dos has the same 4 bytes already
-; decoded as a `mov` with imm 0x0080. Likely leftover from a prior
-; HACK_VAR_54 init scheme replaced by the `jl 0x80` branching below.
+; INIT_GAME_STATE_VARS ends with `ret` and nothing references this
+; address; the next labeled routine GAME_INTRO_PHASE_DRAW_CIN_076 below
+; is entered directly. Original disasm: amiga `LABEL_0077: db 0x00,
+; 0x54, 0x00, 0x01` (LABEL_0077 was unreferenced); dos has the same
+; 4 bytes already decoded as a `mov` with imm 0x0080. Likely leftover
+; from a prior HACK_VAR_54 init scheme replaced by the `jl 0x80`
+; branching below.
 ;@if INCLUDE_UNREACHABLE_CODE == on
 ;@if BRANCH == "chahi_amiga_1991"
 	mov [HACK_VAR_54], 0x0001
@@ -675,9 +674,9 @@ DERIVE_FOUR_POS_25_26_27_28:
 	break
 	jmp SAVE_HERO_INPUT_AND_HASH
 
-; UNREACHABLE: filler byte (`db 0x11` in original disasm, decoded as
-; killChannel); preceding unconditional `jmp` never falls through and
-; no label references this address.
+; Filler byte (`db 0x11` in original disasm, decoded as killChannel);
+; preceding unconditional `jmp` never falls through and no label
+; references this address.
 ;@if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
 ;@endif
@@ -739,7 +738,7 @@ CODEWHEEL_CURSOR_MOVE_INTERMEDIATE_DRAW:
 	break
 	jmp CODEWHEEL_CURSOR_SMOOTH_MOVE_LOOP_TOP
 
-; UNREACHABLE: filler byte (`db 0x11` in original disasm); the preceding
+; Filler byte (`db 0x11` in original disasm); the preceding
 ; unconditional `jmp` doesn't fall through.
 ;@if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
@@ -754,11 +753,11 @@ CODEWHEEL_CHECK_ENTERED_CODE:
 	je [0x29], [0x21], SETUP_CODEWHEEL_CHANNELS
 	jmp SETUP_CODEWHEEL_CHANNELS
 
-; UNREACHABLE: amiga-only dead bytecode-shaped data
-; (LABEL_0A17 in the original disasm). 81 bytes of
-; code-shaped bytes that aren't reachable from any
-; caller — preserved so the assembled bytecode length
-; matches the canonical dump.
+; Amiga-only dead bytecode-shaped data (LABEL_0A17 in
+; the original disasm). 81 bytes of code-shaped bytes
+; that aren't reachable from any caller — preserved so
+; the assembled bytecode length matches the canonical
+; dump.
 ;@if INCLUDE_UNREACHABLE_CODE == on
 	db 0x0A, 0x80, 0x2A, 0x1E, 0x0A, 0x32, 0x0A, 0x80
 	db 0x2A, 0x1F, 0x0A, 0x32, 0x0A, 0x80, 0x2A, 0x20
@@ -817,8 +816,8 @@ SETUP_CODEWHEEL_CHANNELS:
 	or [0xBC], 0x0010
 	jmp CODEWHEEL_ERROR_SCREEN_INIT
 
-; UNREACHABLE: filler byte (`db 0x11` in original disasm); preceding
-; unconditional `jmp` doesn't fall through.
+; Filler byte (`db 0x11` in original disasm); preceding unconditional
+; `jmp` doesn't fall through.
 ;@if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
 ;@endif
@@ -858,10 +857,10 @@ CODEWHEEL_FINALIZE_VAR31_SUCCESS_PATH:
 	jmp GAME_INTRO_PHASE_DRAW_CIN_076
 ;@endif
 
-; UNREACHABLE: post-`jmp` trailing bytes; amiga has 4 dead bytes
-; (`db 0x19, 0x3E, 0x81, 0x11`, code-shaped but not reachable),
-; dos has 2 dead bytes (`bankSwitch 1; killChannel`, also unreachable
-; because the preceding unconditional `jmp` doesn't fall through).
+; Post-`jmp` trailing bytes; the preceding unconditional `jmp` doesn't
+; fall through. amiga has 4 dead bytes (`db 0x19, 0x3E, 0x81, 0x11`,
+; code-shaped but not reachable); dos has 2 dead bytes (`bankSwitch
+; 1; killChannel`).
 ;@if INCLUDE_UNREACHABLE_CODE == on
 ;@if BRANCH == "chahi_amiga_1991"
 	db 0x19, 0x3E, 0x81, 0x11
@@ -915,9 +914,9 @@ CODEWHEEL_PIN_HACK_VAR67_TO_0:
 	break
 	jmp CODEWHEEL_PIN_HACK_VAR67_TO_0
 
-; UNREACHABLE: filler byte (`db 0x11` in original disasm, decoded as
-; killChannel). Preceding `jmp` is an infinite self-loop so this byte
-; can't execute.
+; Filler byte (`db 0x11` in original disasm, decoded as killChannel).
+; The preceding `jmp` is an infinite self-loop so this byte can't
+; execute.
 ;@if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
 ;@endif
@@ -1022,8 +1021,8 @@ CODEWHEEL_WAIT_ACTION_RELEASE_LOOP:
 	jne [HERO_ACTION], 0x00, CODEWHEEL_WAIT_ACTION_RELEASE_LOOP
 	jmp SAVE_HERO_INPUT_AND_HASH
 
-; UNREACHABLE: filler byte (`db 0x11` in original disasm); preceding
-; unconditional `jmp` doesn't fall through.
+; Filler byte (`db 0x11` in original disasm); preceding unconditional
+; `jmp` doesn't fall through.
 ;@if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
 ;@endif
@@ -1351,11 +1350,11 @@ SHARED_RET:
 	ret
 
 
-; UNREACHABLE: 5-byte trailing `killChannel + video` sequence after
-; SHARED_RET. Nothing references this address; SHARED_RET's `ret`
-; returns to the caller and the next labeled routine is the blitter
-; loop below. Likely vestigial bytes from a previous arrangement
-; where this drew CINEMATIC_079 full-screen.
+; 5-byte trailing `killChannel + video` sequence after SHARED_RET.
+; Nothing references this address; SHARED_RET's `ret` returns to the
+; caller and the next labeled routine is the blitter loop below.
+; Likely vestigial bytes from a previous arrangement where this drew
+; CINEMATIC_079 full-screen.
 ;@if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
 	video offset=CINEMATIC_079, x=160, y=100
