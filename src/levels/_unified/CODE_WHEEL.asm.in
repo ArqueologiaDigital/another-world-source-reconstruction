@@ -954,15 +954,15 @@ CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC:
 ; Shared helper: clear video pages 1 and 2, then blit-chain x8 — used at scene transitions.
 ;@include "_helpers/CLEAR_PAGES_1_2_AND_BLIT.inc"
 
+; End-of-stage padding bytes: two killChannel opcodes (db 0x11) plus
+; the unused tail of the bytecode bank filled with 0xFF. The middle
+; byte and FILL count differ per port (different total bytecode size).
+CODE_WHEEL_END_PADDING:
 ;@if BRANCH == "chahi_amiga_1991"
-
-; Amiga CODE_WHEEL: port-specific body chunk after the shared `CLEAR_PAGES_1_2_AND_BLIT` routine.
-;@include "code_wheel/amiga__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
-
+	db 0x11, 0x11, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	FILL(61987, 0xFF)
 ;@elif BRANCH == "dos_1992"
-
-; DOS CODE_WHEEL: port-specific body chunk after the shared `CLEAR_PAGES_1_2_AND_BLIT` routine.
-;@include "code_wheel/dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc"
-
+	db 0x11, 0x11, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	FILL(61209, 0xFF)
 ;@endif
 
