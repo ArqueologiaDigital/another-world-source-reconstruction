@@ -42,11 +42,6 @@
 ; Amiga CODE_WHEEL: level-entry bytecode (level start through the first shared folded routine).
 ;@include "code_wheel/amiga__entry.inc"
 
-;@elif BRANCH == "cartridge_1992"
-
-; Cartridge CODE_WHEEL: level-entry bytecode (level start through the first shared folded routine).
-;@include "code_wheel/cart__entry.inc"
-
 ;@elif BRANCH == "dos_1992"
 
 ; DOS CODE_WHEEL: level-entry bytecode (level start through the first shared folded routine).
@@ -54,7 +49,6 @@
 
 ;@endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 INIT_PROGRESS_HASH_VARS:
 	add [0x63], 0x0001
 	add [0x5A], 0x000D
@@ -70,7 +64,6 @@ INIT_PROGRESS_HASH_VARS:
 	and [0x96], 0x1BD6
 	shl [0x4E], 0x0001
 	ret
-;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
 
@@ -84,10 +77,8 @@ INIT_PROGRESS_HASH_VARS:
 
 ;@endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 LOAD_RESOURCE_13:
 	load id=0x0013
-;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
 
@@ -116,14 +107,12 @@ LOAD_RESOURCE_13:
 
 ;@endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 COPY_HERO_VARS_TO_29_2A_2B_2C:
 	mov [0x0A], [0x29]
 	mov [0x0C], [0x2A]
 	mov [0x14], [0x2B]
 	mov [0x17], [0x2C]
 	mov [0x21], 0x0000
-;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
 
@@ -137,10 +126,8 @@ COPY_HERO_VARS_TO_29_2A_2B_2C:
 
 ;@endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 CLEAR_VAR_22:
 	mov [0x22], 0x0000
-;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
 
@@ -154,7 +141,6 @@ CLEAR_VAR_22:
 
 ;@endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 SUM_HASH_VARS_TO_VAR_37:
 	add [0x37], [HERO_ACTION]
 	add [0x37], [HERO_POS_JUMP_DOWN]
@@ -168,7 +154,6 @@ SUM_HASH_VARS_TO_VAR_37:
 	add [0x37], [0x04]
 	add [0x37], [RANDOM_SEED]
 	ret
-;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
 
@@ -182,11 +167,9 @@ SUM_HASH_VARS_TO_VAR_37:
 
 ;@endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 MARK_VAR67_AND_KILL:
 	mov [HACK_VAR_67], 0x0001
 	killChannel
-;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
 
@@ -200,13 +183,9 @@ MARK_VAR67_AND_KILL:
 
 ;@endif
 
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 INIT_VAR08_TO_178:
 	mov [0x08], 0x00B2
-;@endif
 
-
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 COMPUTE_VAR07_TIMES_44_PLUS_20:
 	shl [0x07], 0x0003
 	mov [0xF8], [0x07]
@@ -214,9 +193,6 @@ COMPUTE_VAR07_TIMES_44_PLUS_20:
 	add [0x07], [0xF8]
 	add [0x07], 0x0014
 	ret
-;@endif
-
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 
 ; --- Shared CODEWHEEL_SYMBOL_BY_VAR06 dispatcher prefix ---
 ;
@@ -382,8 +358,6 @@ CODEWHEEL_SYMBOL_DISPATCH_CASE_1D:
 	video offset=CINEMATIC_ALIEN_GLYPH_28, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
-;@endif
-
 ; Dispatcher case 0x1E and beyond — diverges per port. amiga's
 ; codewheel has 30 glyphs (cases up to 0x1E), msdos's has 40
 ; (continues through 0x28).
@@ -492,13 +466,8 @@ CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC:
 	break
 	jmp CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC
 
-
-;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
-
 ; Shared helper: clear video pages 1 and 2, then blit-chain x8 — used at scene transitions.
 ;@include "_helpers/CLEAR_PAGES_1_2_AND_BLIT.inc"
-
-;@endif
 
 ;@if BRANCH == "chahi_amiga_1991"
 
