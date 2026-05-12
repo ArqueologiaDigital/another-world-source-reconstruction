@@ -773,8 +773,34 @@ CODEWHEEL_CHECK_ENTERED_CODE:
 ; compiler emitted the chain anyway. Strong evidence that both ports
 ; share an upstream codebase where the 3-digit codewheel was the
 ; default, and amiga's build disabled it after compilation.
+;
+; Reads the entered code digits (var 0x2A, 0x2B, 0x2C) and compares
+; each against the per-puzzle expected values (var 0x1E, 0x1F, 0x20,
+; 0x21). Any digit that matches any expected slot chains to the next
+; digit's check; the final var 0x2C check that matches lands on
+; SETUP_CODEWHEEL_CHANNELS (success). Any digit that fails to match
+; any slot jumps to RESUME_GAME_INIT_CHANNELS (failure).
 ;@if BRANCH == "dos_1992" or INCLUDE_UNREACHABLE_CODE == on
-;@include "code_wheel/3digit_check_chain.inc"
+CHECK_VAR2A_OR_DISPATCH_RANGE:
+	je [0x2A], [0x1E], CHECK_VAR2B_OR_DISPATCH_RANGE
+	je [0x2A], [0x1F], CHECK_VAR2B_OR_DISPATCH_RANGE
+	je [0x2A], [0x20], CHECK_VAR2B_OR_DISPATCH_RANGE
+	je [0x2A], [0x21], CHECK_VAR2B_OR_DISPATCH_RANGE
+	jmp RESUME_GAME_INIT_CHANNELS
+
+CHECK_VAR2B_OR_DISPATCH_RANGE:
+	je [0x2B], [0x1E], CHECK_VAR2C_RANGE_OR_RESUME
+	je [0x2B], [0x1F], CHECK_VAR2C_RANGE_OR_RESUME
+	je [0x2B], [0x20], CHECK_VAR2C_RANGE_OR_RESUME
+	je [0x2B], [0x21], CHECK_VAR2C_RANGE_OR_RESUME
+	jmp RESUME_GAME_INIT_CHANNELS
+
+CHECK_VAR2C_RANGE_OR_RESUME:
+	je [0x2C], [0x1E], SETUP_CODEWHEEL_CHANNELS
+	je [0x2C], [0x1F], SETUP_CODEWHEEL_CHANNELS
+	je [0x2C], [0x20], SETUP_CODEWHEEL_CHANNELS
+	je [0x2C], [0x21], SETUP_CODEWHEEL_CHANNELS
+	jmp RESUME_GAME_INIT_CHANNELS
 ;@endif
 
 SETUP_CODEWHEEL_CHANNELS:
