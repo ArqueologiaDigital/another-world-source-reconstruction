@@ -45,21 +45,13 @@
 ; Cross-stage helper EQUs (LABEL_<HEX> / ADDR_AT_* placeholders shared between levels).
 ;@include "_helpers/_helpers_equ_aliases.inc"
 
+; Level-entry bytecode (level start through the first shared folded routine).
 ;@if BRANCH == "chahi_amiga_1991"
-
-; Amiga TANK: level-entry bytecode (level start through the first shared folded routine).
 ;@include "tank/amiga__entry.inc"
-
 ;@elif BRANCH == "cartridge_1992"
-
-; Cartridge TANK: level-entry bytecode (level start through the first shared folded routine).
 ;@include "tank/cart__entry.inc"
-
-;@elif BRANCH == "dos_1992"
-
-; DOS TANK: level-entry bytecode (level start through the first shared folded routine).
+;@else
 ;@include "tank/dos__entry.inc"
-
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -67,16 +59,11 @@ INLINE_SET_VAR6D_TO_0:
 	mov [0x6D], 0x0000
 ;@endif
 
+; Port-specific body chunk after the shared `INLINE_SET_VAR6D_TO_0` routine.
 ;@if BRANCH == "cartridge_1992"
-
-; Cartridge TANK: port-specific body chunk after the shared `INLINE_SET_VAR6D_TO_0` routine.
 ;@include "tank/cart__post_INLINE_SET_VAR6D_TO_0.inc"
-
 ;@elif BRANCH == "dos_1992"
-
-; DOS TANK: port-specific body chunk after the shared `INLINE_SET_VAR6D_TO_0` routine.
 ;@include "tank/dos__post_INLINE_SET_VAR6D_TO_0.inc"
-
 ;@endif
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -91,16 +78,11 @@ SETUP_TANK_HERO_VARS_PLAY_4SFX:
 	play id=0x008B, freq=0x14, vol=0x40, channel=0x00
 ;@endif
 
+; Port-specific body chunk after the shared `SETUP_TANK_HERO_VARS_PLAY_4SFX` routine.
 ;@if BRANCH == "chahi_amiga_1991"
-
-; Amiga TANK: port-specific body chunk after the shared `SETUP_TANK_HERO_VARS_PLAY_4SFX` routine.
 ;@include "tank/amiga__post_SETUP_TANK_HERO_VARS_PLAY_4SFX.inc"
-
 ;@elif BRANCH == "dos_1992"
-
-; DOS TANK: port-specific body chunk after the shared `SETUP_TANK_HERO_VARS_PLAY_4SFX` routine.
 ;@include "tank/dos__post_SETUP_TANK_HERO_VARS_PLAY_4SFX.inc"
-
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -108,16 +90,11 @@ INLINE_SET_VAR6B_TO_50:
 	mov [0x6B], 0x0050
 ;@endif
 
+; Port-specific body chunk after the shared `INLINE_SET_VAR6B_TO_50` routine.
 ;@if BRANCH == "cartridge_1992"
-
-; Cartridge TANK: port-specific body chunk after the shared `INLINE_SET_VAR6B_TO_50` routine.
 ;@include "tank/cart__post_INLINE_SET_VAR6B_TO_50.inc"
-
 ;@elif BRANCH == "dos_1992"
-
-; DOS TANK: port-specific body chunk after the shared `INLINE_SET_VAR6B_TO_50` routine.
 ;@include "tank/dos__post_INLINE_SET_VAR6B_TO_50.inc"
-
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -129,16 +106,11 @@ INCR_VAR_6C_BY_10_3X:
 	add [0x6C], 0x000A
 ;@endif
 
+; Port-specific body chunk after the shared `INCR_VAR_6C_BY_10_3X` routine.
 ;@if BRANCH == "cartridge_1992"
-
-; Cartridge TANK: port-specific body chunk after the shared `INCR_VAR_6C_BY_10_3X` routine.
 ;@include "tank/cart__post_INCR_VAR_6C_BY_10_3X.inc"
-
 ;@elif BRANCH == "dos_1992"
-
-; DOS TANK: port-specific body chunk after the shared `INCR_VAR_6C_BY_10_3X` routine.
 ;@include "tank/dos__post_INCR_VAR_6C_BY_10_3X.inc"
-
 ;@endif
 
 ;@if BRANCH in ("cartridge_1992", "dos_1992")
@@ -148,16 +120,11 @@ BANKSWITCH_6_FOR_CODE_ENTRY:
 	killChannel
 ;@endif
 
+; Port-specific body chunk after the shared `BANKSWITCH_6_FOR_CODE_ENTRY` routine.
 ;@if BRANCH == "cartridge_1992"
-
-; Cartridge TANK: port-specific body chunk after the shared `BANKSWITCH_6_FOR_CODE_ENTRY` routine.
 ;@include "tank/cart__post_BANKSWITCH_6_FOR_CODE_ENTRY.inc"
-
 ;@elif BRANCH == "dos_1992"
-
-; DOS TANK: port-specific body chunk after the shared `BANKSWITCH_6_FOR_CODE_ENTRY` routine.
 ;@include "tank/dos__post_BANKSWITCH_6_FOR_CODE_ENTRY.inc"
-
 ;@endif
 
 ; TANK var-5F manipulation (INCREMENT_VAR5F_BY_8 et al.).

@@ -295,21 +295,13 @@ HERO_Y		EQU 0x02
 ; Cross-stage helper EQUs (LABEL_<HEX> / ADDR_AT_* placeholders shared between levels).
 ;@include "_helpers/_helpers_equ_aliases.inc"
 
+; Level-entry bytecode (level start through the first shared folded routine).
 ;@if BRANCH == "chahi_amiga_1991"
-
-; Amiga CAVES: level-entry bytecode (level start through the first shared folded routine).
 ;@include "caves/amiga__entry.inc"
-
 ;@elif BRANCH == "cartridge_1992"
-
-; Cartridge CAVES: level-entry bytecode (level start through the first shared folded routine).
 ;@include "caves/cart__entry.inc"
-
-;@elif BRANCH == "dos_1992"
-
-; DOS CAVES: level-entry bytecode (level start through the first shared folded routine).
+;@else
 ;@include "caves/dos__entry.inc"
-
 ;@endif
 
 ; CAVES resource preload (PRELOAD_RES_6A_77_6D_6E_74_76_78_7C — 8 resources).

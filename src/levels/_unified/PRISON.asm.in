@@ -337,21 +337,13 @@ BUDDY_Y		EQU 0x08
 ; PRISON: auto-generated EQU aliases for stuck literal-address operands.
 ;@include "prison/prison_equ_aliases.inc"
 
+; Level-entry bytecode (level start through the first shared folded routine).
 ;@if BRANCH == "chahi_amiga_1991"
-
-; Amiga PRISON: level-entry bytecode (level start through the first shared folded routine).
 ;@include "prison/amiga__entry.inc"
-
 ;@elif BRANCH == "cartridge_1992"
-
-; Cartridge PRISON: level-entry bytecode (level start through the first shared folded routine).
 ;@include "prison/cart__entry.inc"
-
-;@elif BRANCH == "dos_1992"
-
-; DOS PRISON: level-entry bytecode (level start through the first shared folded routine).
+;@else
 ;@include "prison/dos__entry.inc"
-
 ;@endif
 
 ; PRISON delay-then-preload resources (DELAY_4_QUANTUMS gating).
