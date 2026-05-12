@@ -166,7 +166,5 @@ DRAW_CINEMATIC_053_LOOP:
 LABEL_26A6:
 	killChannel
 ;@if BRANCH == "cartridge_1992"
-	FILL(55641, 0xFF)
 ;@elif BRANCH == "gba_2004"
-	FILL(55629, 0xFF)
 ;@endif

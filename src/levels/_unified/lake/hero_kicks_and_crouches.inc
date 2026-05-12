@@ -189,10 +189,8 @@ HERO_CROUCH_RIGHT_HOLD:
 	jmp RESUME_R_AFTER_VINE_LAND
 	killChannel
 	killChannel
-	FILL(44547, 0xFF)
 ;@elif BRANCH == "gba_2004"
 	jmp RESUME_R_AFTER_VINE_LAND
-	FILL(44507, 0xFF)
 ;@elif BRANCH == "chahi_amiga_1991"
 	jmp MAYBE_RESUME_WALK_RIGHT_IF_GROUNDED
 	killChannel
@@ -304,10 +302,8 @@ HOLD_CIN_724_WAIT_KEY:
 	sub [HERO_Y], 0x0001
 	jmp HOLD_POOL_LESTER_F0_WAIT
 	killChannel
-	FILL(46078, 0xFF)
 ;@elif BRANCH == "dos_1992"
 	jmp RESUME_R_AFTER_VINE_LAND
 	killChannel
 	killChannel
-	FILL(44726, 0xFF)
 ;@endif

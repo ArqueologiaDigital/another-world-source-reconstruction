@@ -8239,4 +8239,3 @@ LABEL_51CB:
 	jmp LABEL_4693	;@raw=0x07,0x46,0x93
 	killChannel	;@raw=0x11
 	killChannel	;@raw=0x11
-	FILL(44547, 0xFF)

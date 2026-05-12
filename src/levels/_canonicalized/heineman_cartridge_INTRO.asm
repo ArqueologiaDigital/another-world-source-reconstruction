@@ -4356,4 +4356,3 @@ LABEL_269E:
 	jmp LABEL_269E	;@raw=0x07,0x26,0x9E
 LABEL_26A6:
 	killChannel	;@raw=0x11
-	FILL(55641, 0xFF)
