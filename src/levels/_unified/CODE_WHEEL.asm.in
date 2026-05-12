@@ -1340,11 +1340,7 @@ SHARED_RET:
 	ret
 
 
-; 5-byte trailing `killChannel + video` sequence after SHARED_RET.
-; Nothing references this address; SHARED_RET's `ret` returns to the
-; caller and the next labeled routine is the blitter loop below.
-; Likely vestigial bytes from a previous arrangement where this drew
-; CINEMATIC_079 full-screen.
+; Nothing references this address.
 .if INCLUDE_UNREACHABLE_CODE == on
 	killChannel
 	video offset=CINEMATIC_079, x=160, y=100
