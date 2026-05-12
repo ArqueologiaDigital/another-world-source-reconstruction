@@ -753,23 +753,36 @@ CODEWHEEL_CHECK_ENTERED_CODE:
 	je [0x29], [0x21], SETUP_CODEWHEEL_CHANNELS
 	jmp SETUP_CODEWHEEL_CHANNELS
 
-; Amiga-only dead bytecode-shaped data (LABEL_0A17 in
-; the original disasm). 81 bytes of code-shaped bytes
-; that aren't reachable from any caller — preserved so
-; the assembled bytecode length matches the canonical
-; dump.
+; 81-byte dead-code chain (LABEL_0A17 in the original amiga disasm)
+; that mirrors the live dos CHECK_VAR2A_OR_DISPATCH_RANGE /
+; CHECK_VAR2B_OR_DISPATCH_RANGE / CHECK_VAR2C_RANGE_OR_RESUME
+; cascade exactly. amiga's live CODEWHEEL_CHECK_ENTERED_CODE above
+; is a simpler 4-way `[0x29]` match — nothing in amiga ever calls
+; into this block. Strong evidence that both ports share an upstream
+; codebase where the 3-digit codewheel was the default, and amiga's
+; build disabled it after compilation (the dead bytes were left in
+; the bytecode).
 ;@if INCLUDE_UNREACHABLE_CODE == on
-	db 0x0A, 0x80, 0x2A, 0x1E, 0x0A, 0x32, 0x0A, 0x80
-	db 0x2A, 0x1F, 0x0A, 0x32, 0x0A, 0x80, 0x2A, 0x20
-	db 0x0A, 0x32, 0x0A, 0x80, 0x2A, 0x21, 0x0A, 0x32
-	db 0x07, 0x0A, 0xD5, 0x0A, 0x80, 0x2B, 0x1E, 0x0A
-	db 0x4D, 0x0A, 0x80, 0x2B, 0x1F, 0x0A, 0x4D, 0x0A
-	db 0x80, 0x2B, 0x20, 0x0A, 0x4D, 0x0A, 0x80, 0x2B
-	db 0x21, 0x0A, 0x4D, 0x07, 0x0A, 0xD5, 0x0A, 0x80
-	db 0x2C, 0x1E, 0x0A, 0x68, 0x0A, 0x80, 0x2C, 0x1F
-	db 0x0A, 0x68, 0x0A, 0x80, 0x2C, 0x20, 0x0A, 0x68
-	db 0x0A, 0x80, 0x2C, 0x21, 0x0A, 0x68, 0x07, 0x0A
-	db 0xD5
+CHECK_VAR2A_OR_DISPATCH_RANGE:
+	je [0x2A], [0x1E], CHECK_VAR2B_OR_DISPATCH_RANGE
+	je [0x2A], [0x1F], CHECK_VAR2B_OR_DISPATCH_RANGE
+	je [0x2A], [0x20], CHECK_VAR2B_OR_DISPATCH_RANGE
+	je [0x2A], [0x21], CHECK_VAR2B_OR_DISPATCH_RANGE
+	jmp RESUME_GAME_INIT_CHANNELS
+
+CHECK_VAR2B_OR_DISPATCH_RANGE:
+	je [0x2B], [0x1E], CHECK_VAR2C_RANGE_OR_RESUME
+	je [0x2B], [0x1F], CHECK_VAR2C_RANGE_OR_RESUME
+	je [0x2B], [0x20], CHECK_VAR2C_RANGE_OR_RESUME
+	je [0x2B], [0x21], CHECK_VAR2C_RANGE_OR_RESUME
+	jmp RESUME_GAME_INIT_CHANNELS
+
+CHECK_VAR2C_RANGE_OR_RESUME:
+	je [0x2C], [0x1E], SETUP_CODEWHEEL_CHANNELS
+	je [0x2C], [0x1F], SETUP_CODEWHEEL_CHANNELS
+	je [0x2C], [0x20], SETUP_CODEWHEEL_CHANNELS
+	je [0x2C], [0x21], SETUP_CODEWHEEL_CHANNELS
+	jmp RESUME_GAME_INIT_CHANNELS
 ;@endif
 ;@elif BRANCH == "dos_1992"
 	shr [0x38], 0x0004
@@ -858,12 +871,14 @@ CODEWHEEL_FINALIZE_VAR31_SUCCESS_PATH:
 ;@endif
 
 ; Post-`jmp` trailing bytes; the preceding unconditional `jmp` doesn't
-; fall through. amiga has 4 dead bytes (`db 0x19, 0x3E, 0x81, 0x11`,
-; code-shaped but not reachable); dos has 2 dead bytes (`bankSwitch
-; 1; killChannel`).
+; fall through. amiga has 4 dead bytes that decode to a `load` of a
+; nonsense resource id (0x3E81 — far above any real resource) followed
+; by `killChannel`; dos has 2 dead bytes (`bankSwitch 1; killChannel`).
+; Both ports' bytes are emitter artefacts, not reachable code.
 ;@if INCLUDE_UNREACHABLE_CODE == on
 ;@if BRANCH == "chahi_amiga_1991"
-	db 0x19, 0x3E, 0x81, 0x11
+	load id=0x3E81
+	killChannel
 ;@else
 	bankSwitch 1;  Intro Sequence
 	killChannel
