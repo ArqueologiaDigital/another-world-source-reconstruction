@@ -73,11 +73,11 @@ LABEL_029D:
 	text id=0x0144, x=4, y=100, color=0x0F ; "              ERROR"
 	add [0x64], 0x000A
 	selectVideoPage 0x00
-	setup channel=0x3C, address=LABEL_0DA8
+	setup channel=0x3C, address=CODEWHEEL_ERROR_SCREEN_HOLD_FRAME
 	setup channel=0x1E, address=LABEL_0AFB
 	jne [0x31], 0x01, LABEL_02C9
 	jne [0x1B], 0x2B, LABEL_02C9
-	setup channel=0x3C, address=LABEL_0DB7
+	setup channel=0x3C, address=CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC
 
 LABEL_02C9:
 	setPalette 0x03

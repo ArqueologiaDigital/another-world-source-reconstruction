@@ -68,6 +68,7 @@ CINEMATIC_049		EQU 0x1058
 CINEMATIC_050		EQU 0x107C
 CINEMATIC_051		EQU 0x08C4
 CINEMATIC_052		EQU 0x0908
+CINEMATIC_079		EQU 0x000C
 
 
 	org 0x0000
@@ -75,7 +76,7 @@ CINEMATIC_052		EQU 0x0908
 LABEL_0000:
 	call LABEL_0DC6
 	mov [PAUSE_SLICES], 0x0002
-	setup channel=0x3C, address=LABEL_0D99
+	setup channel=0x3C, address=BLITTER_LOOP_WITH_VAR1B_2B
 	break
 	fill page=0x00, color=0x07
 	setup channel=0x14, address=ENTRY_CALL_INIT_4A
@@ -376,11 +377,11 @@ LABEL_029D:
 	text id=0x0144, x=4, y=100, color=0x0F ; "              ERROR"
 	add [0x64], 0x000A
 	selectVideoPage 0x00
-	setup channel=0x3C, address=LABEL_0DA8
+	setup channel=0x3C, address=CODEWHEEL_ERROR_SCREEN_HOLD_FRAME
 	setup channel=0x1E, address=LABEL_0AFB
 	jne [0x31], 0x01, LABEL_02C9
 	jne [0x1B], 0x2B, LABEL_02C9
-	setup channel=0x3C, address=LABEL_0DB7
+	setup channel=0x3C, address=CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC
 
 LABEL_02C9:
 	setPalette 0x03
@@ -1102,7 +1103,7 @@ LABEL_0AD4:
 RESUME_GAME_INIT_CHANNELS:
 	deleteChannels first=0x00, last=0x3F
 	setup channel=0x0E, address=LABEL_0AE2
-	setup channel=0x1E, address=LABEL_0D99
+	setup channel=0x1E, address=BLITTER_LOOP_WITH_VAR1B_2B
 	killChannel
 
 LABEL_0AE2:
@@ -1381,32 +1382,32 @@ CODEWHEEL_SYMBOL_DISPATCH_CASE_1E:
 
 SHARED_RET:
 	ret
-LABEL_0D94:
-	db 0x11, 0x80, 0x06, 0xA0, 0x64
+	killChannel
+	video offset=CINEMATIC_079, x=160, y=100
 
-LABEL_0D99:
+BLITTER_LOOP_WITH_VAR1B_2B:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 	mov [0x1B], 0x002B
 	break
-	jmp LABEL_0D99
+	jmp BLITTER_LOOP_WITH_VAR1B_2B
 
-LABEL_0DA8:
+CODEWHEEL_ERROR_SCREEN_HOLD_FRAME:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 	mov [0x1B], 0x002B
 	break
-	jmp LABEL_0DA8
+	jmp CODEWHEEL_ERROR_SCREEN_HOLD_FRAME
 
-LABEL_0DB7:
+CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 	mov [0x1B], 0x0015
 	break
-	jmp LABEL_0DB7
+	jmp CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC
 
 LABEL_0DC6:
 	fill page=0x01, color=0x00

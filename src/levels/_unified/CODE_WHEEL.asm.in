@@ -384,17 +384,114 @@ CODEWHEEL_SYMBOL_DISPATCH_CASE_1D:
 
 ;@endif
 
+; Dispatcher case 0x1E and beyond — diverges per port. amiga's
+; codewheel has 30 glyphs (cases up to 0x1E), msdos's has 40
+; (continues through 0x28).
 ;@if BRANCH == "chahi_amiga_1991"
-
-; Amiga CODE_WHEEL: port-specific body chunk after the shared `COMPUTE_VAR07_TIMES_44_PLUS_20` routine.
-;@include "code_wheel/amiga__post_COMPUTE_VAR07_TIMES_44_PLUS_20.inc"
-
+CODEWHEEL_SYMBOL_DISPATCH_CASE_1E:
+	jne [0x06], 0x1E, SHARED_RET
+	video offset=CINEMATIC_ALIEN_GLYPH_29, x=[0x07], y=[0x08], zoom=[0x04]
+	ret
 ;@elif BRANCH == "dos_1992"
+CODEWHEEL_SYMBOL_DISPATCH_CASE_1E:
+	jne [0x06], 0x1E, CODEWHEEL_SYMBOL_DISPATCH_CASE_1F
+	video offset=CINEMATIC_ALIEN_GLYPH_29, x=[0x07], y=[0x08], zoom=[0x04]
+	ret
 
-; DOS CODE_WHEEL: port-specific body chunk after the shared `COMPUTE_VAR07_TIMES_44_PLUS_20` routine.
-;@include "code_wheel/dos__post_COMPUTE_VAR07_TIMES_44_PLUS_20.inc"
+CODEWHEEL_SYMBOL_DISPATCH_CASE_1F:
+	jne [0x06], 0x1F, CODEWHEEL_SYMBOL_DISPATCH_CASE_20
+	video offset=CINEMATIC_ALIEN_GLYPH_30, x=[0x07], y=[0x08], zoom=[0x04]
+	ret
 
+CODEWHEEL_SYMBOL_DISPATCH_CASE_20:
+	jne [0x06], 0x20, CODEWHEEL_SYMBOL_DISPATCH_CASE_21
+	video offset=CINEMATIC_ALIEN_GLYPH_31, x=[0x07], y=[0x08], zoom=[0x04]
+	ret
+
+CODEWHEEL_SYMBOL_DISPATCH_CASE_21:
+	jne [0x06], 0x21, CODEWHEEL_SYMBOL_DISPATCH_CASE_22
+	video offset=CINEMATIC_ALIEN_GLYPH_32, x=[0x07], y=[0x08], zoom=[0x04]
+	ret
+
+CODEWHEEL_SYMBOL_DISPATCH_CASE_22:
+	jne [0x06], 0x22, CODEWHEEL_SYMBOL_DISPATCH_CASE_23
+	video offset=CINEMATIC_ALIEN_GLYPH_33, x=[0x07], y=[0x08], zoom=[0x04]
+	ret
+
+CODEWHEEL_SYMBOL_DISPATCH_CASE_23:
+	jne [0x06], 0x23, CODEWHEEL_SYMBOL_DISPATCH_CASE_24
+	video offset=CINEMATIC_ALIEN_GLYPH_34, x=[0x07], y=[0x08], zoom=[0x04]
+	ret
+
+CODEWHEEL_SYMBOL_DISPATCH_CASE_24:
+	jne [0x06], 0x24, CODEWHEEL_SYMBOL_DISPATCH_CASE_25
+	video offset=CINEMATIC_ALIEN_GLYPH_35, x=[0x07], y=[0x08], zoom=[0x04]
+	ret
+
+CODEWHEEL_SYMBOL_DISPATCH_CASE_25:
+	jne [0x06], 0x25, CODEWHEEL_SYMBOL_DISPATCH_CASE_26
+	video offset=CINEMATIC_ALIEN_GLYPH_36, x=[0x07], y=[0x08], zoom=[0x04]
+	ret
+
+CODEWHEEL_SYMBOL_DISPATCH_CASE_26:
+	jne [0x06], 0x26, CODEWHEEL_SYMBOL_DISPATCH_CASE_27
+	video offset=CINEMATIC_ALIEN_GLYPH_37, x=[0x07], y=[0x08], zoom=[0x04]
+	ret
+
+CODEWHEEL_SYMBOL_DISPATCH_CASE_27:
+	jne [0x06], 0x27, CODEWHEEL_SYMBOL_DISPATCH_CASE_28
+	video offset=CINEMATIC_ALIEN_GLYPH_28_DUP_1, x=[0x07], y=[0x08], zoom=[0x04]
+	ret
+
+CODEWHEEL_SYMBOL_DISPATCH_CASE_28:
+	jne [0x06], 0x28, SHARED_RET
+	video offset=CINEMATIC_ALIEN_GLYPH_38, x=[0x07], y=[0x08], zoom=[0x04]
+	ret
 ;@endif
+
+; Shared epilogue: SHARED_RET (the canonical bail-out point used
+; throughout CODE_WHEEL), then a 5-byte killChannel+video sequence
+; that draws CINEMATIC_079 full-screen, then three infinite
+; blitter-loop routines used as channel coroutines for the
+; codewheel input screen, the failure-reset hold frame and the
+; alternate-music error screen.
+SHARED_RET:
+	ret
+	killChannel
+	video offset=CINEMATIC_079, x=160, y=100
+
+BLITTER_LOOP_WITH_VAR1B_2B:
+	blitFramebuffer 0xFF
+	selectVideoPage 0xFF
+	copyVideoPage src=0x00, dst=0xFF
+	mov [0x1B], 0x002B
+	break
+	jmp BLITTER_LOOP_WITH_VAR1B_2B
+
+; Three infinite frame-hold loops with `mov [0x1B], <const>`
+; / break / jmp self. The constants 0x2B vs 0x15 set
+; different music/sound IDs (var1B is the audio-track
+; slot). 10A3 is used both for initial wheel display and
+; for failure-reset; 10B2 is the ERROR-screen idle; 10C1
+; is the alternate ERROR-screen with a different track,
+; triggered when var31==1 AND var1B==0x2B already (i.e.
+; re-entering ERROR after a previous attempt).
+CODEWHEEL_ERROR_SCREEN_HOLD_FRAME:
+	blitFramebuffer 0xFF
+	selectVideoPage 0xFF
+	copyVideoPage src=0x00, dst=0xFF
+	mov [0x1B], 0x002B
+	break
+	jmp CODEWHEEL_ERROR_SCREEN_HOLD_FRAME
+
+CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC:
+	blitFramebuffer 0xFF
+	selectVideoPage 0xFF
+	copyVideoPage src=0x00, dst=0xFF
+	mov [0x1B], 0x0015
+	break
+	jmp CODEWHEEL_ERROR_SCREEN_HOLD_FRAME_ALT_MUSIC
+
 
 ;@if BRANCH in ("chahi_amiga_1991", "dos_1992")
 

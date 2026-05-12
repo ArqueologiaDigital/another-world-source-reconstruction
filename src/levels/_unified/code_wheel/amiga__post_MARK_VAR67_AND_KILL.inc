@@ -8,7 +8,7 @@ LABEL_0AD4:
 RESUME_GAME_INIT_CHANNELS:
 	deleteChannels first=0x00, last=0x3F
 	setup channel=0x0E, address=LABEL_0AE2
-	setup channel=0x1E, address=LABEL_0D99
+	setup channel=0x1E, address=BLITTER_LOOP_WITH_VAR1B_2B
 	killChannel
 
 LABEL_0AE2:
