@@ -1,10 +1,6 @@
-; Auto-generated EQU aliases for stuck literal-address operands.
-; Each name maps a target bytecode address to a stable symbolic
-; identifier so source readers see `je SOMETHING_AT_ADDR` instead
-; of `je 0xADDR`. The hint prefix is taken from any label that
-; resolves to the address (collision-suffering names are accepted
-; here — the EQU bypasses the label collision via parse-time
-; constant resolution).
+; EQU aliases for stuck literal-address operands in CAPSULE
+; (mid-routine entry points, jump-table arms etc. that the
+; disassembler couldn't resolve to a routine label).
 
 ADDR_AT_0020	EQU 0x0020
 ADDR_AT_00B4	EQU 0x00B4
@@ -41,7 +37,6 @@ ADDR_AT_3558	EQU 0x3558
 HANG_DRAW_CIN_271_AT_356E	EQU 0x356E
 ADDR_AT_3630	EQU 0x3630
 LABEL_3638	EQU 0x3638
-LABEL_3640	EQU 0x3640
 ADDR_AT_3648	EQU 0x3648
 DRAW_CIN_811_AT_3650	EQU 0x3650
 ADDR_AT_3658	EQU 0x3658

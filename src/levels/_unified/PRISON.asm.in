@@ -28,8 +28,6 @@ BUDDY_Y		EQU 0x08
 ; Engine-managed special-purpose VM variables (HERO_POS_*, RANDOM_SEED, PAUSE_SLICES, etc.).
 .include "../_common_vars.inc"
 
-; Cross-stage helper EQUs (LABEL_<HEX> / ADDR_AT_* placeholders shared between levels).
-.include "_helpers/_helpers_equ_aliases.inc"
 
 ; PRISON: auto-generated EQU aliases for stuck literal-address operands.
 .include "prison/prison_equ_aliases.inc"

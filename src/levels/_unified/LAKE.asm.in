@@ -45,9 +45,6 @@ COUNTER		EQU 0x10
 ; Engine-managed special-purpose VM variables (HERO_POS_*, RANDOM_SEED, PAUSE_SLICES, etc.).
 .include "../_common_vars.inc"
 
-; Cross-stage helper EQUs (LABEL_0128 / ADDR_AT_* placeholders shared between levels).
-.include "_helpers/_helpers_equ_aliases.inc"
-
 ; Auto-generated EQU aliases for stuck literal-address operands (LABEL_<HEX>, ADDR_AT_*).
 .include "lake/lake_equ_aliases.inc"
 
