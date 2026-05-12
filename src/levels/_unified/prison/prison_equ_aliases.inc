@@ -1,25 +1,13 @@
-; Auto-generated EQU aliases for stuck literal-address operands.
-; Each name maps a target bytecode address to a stable symbolic
-; identifier so source readers see `je SOMETHING_AT_ADDR` instead
-; of `je 0xADDR`. The hint prefix is taken from any label that
-; resolves to the address (collision-suffering names are accepted
-; here — the EQU bypasses the label collision via parse-time
-; constant resolution).
+; EQU aliases for stuck literal-address operands in PRISON.
+; Each block is guarded by .if BRANCH in (...) so only the branches
+; that actually reference the alias see the EQU declaration.
 
-SET_VAR2F_TO_000F_AT_317E	EQU 0x317E
-SET_VAR2F_TO_000F_AT_31CB	EQU 0x31CB
-SET_VAR2F_TO_000F_AT_32A3	EQU 0x32A3
-SHARED_RET_AT_47BC	EQU 0x47BC
-SHARED_RET_AT_485D	EQU 0x485D
-SHARED_RET_AT_4957	EQU 0x4957
-SHARED_RET_AT_528D	EQU 0x528D
-SHARED_RET_AT_533A	EQU 0x533A
-SHARED_RET_AT_543D	EQU 0x543D
-GUARDED_DRAW_CIN_338_339_AT_55E9	EQU 0x55E9
-GUARDED_DRAW_CIN_338_339_AT_5799	EQU 0x5799
+.if BRANCH in ("cartridge_1992", "chahi_amiga_1991", "dos_1992")
+LABEL_224C	EQU 0x224C
+LABEL_34FE	EQU 0x34FE
+.endif
 
-; EQU aliases originally in _helpers/_helpers_equ_aliases.inc
-; (mid-routine entry points / jump-table arms).
+.if BRANCH in ("cartridge_1992", "dos_1992")
 ADDR_AT_0020	EQU 0x0020
 ADDR_AT_00B4	EQU 0x00B4
 LABEL_0128	EQU 0x0128
@@ -42,12 +30,10 @@ ADDR_AT_1556	EQU 0x1556
 LABEL_157C	EQU 0x157C
 ADDR_AT_21A8	EQU 0x21A8
 ADDR_AT_21D6	EQU 0x21D6
-LABEL_224C	EQU 0x224C
 ADDR_AT_2276	EQU 0x2276
 STATE_VAR12_BIG_DISPATCH_CASE_30_AT_2D4E	EQU 0x2D4E
 ADDR_AT_2D6E	EQU 0x2D6E
 ADDR_AT_320A	EQU 0x320A
-LABEL_34FE	EQU 0x34FE
 ADDR_AT_352C	EQU 0x352C
 ADDR_AT_3542	EQU 0x3542
 ADDR_AT_3558	EQU 0x3558
@@ -62,3 +48,24 @@ ADDR_AT_3660	EQU 0x3660
 ADDR_AT_366C	EQU 0x366C
 LABEL_3674	EQU 0x3674
 ADDR_AT_367C	EQU 0x367C
+.endif
+
+.if BRANCH == "cartridge_1992"
+SET_VAR2F_TO_000F_AT_32A3	EQU 0x32A3
+SHARED_RET_AT_4957	EQU 0x4957
+SHARED_RET_AT_543D	EQU 0x543D
+GUARDED_DRAW_CIN_338_339_AT_5799	EQU 0x5799
+.endif
+
+.if BRANCH == "chahi_amiga_1991"
+SET_VAR2F_TO_000F_AT_317E	EQU 0x317E
+SHARED_RET_AT_47BC	EQU 0x47BC
+SHARED_RET_AT_528D	EQU 0x528D
+GUARDED_DRAW_CIN_338_339_AT_55E9	EQU 0x55E9
+.endif
+
+.if BRANCH == "dos_1992"
+SET_VAR2F_TO_000F_AT_31CB	EQU 0x31CB
+SHARED_RET_AT_485D	EQU 0x485D
+SHARED_RET_AT_533A	EQU 0x533A
+.endif

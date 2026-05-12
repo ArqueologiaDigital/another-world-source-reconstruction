@@ -1,10 +1,21 @@
-; EQU aliases for stuck literal-address operands in CAPSULE
-; (mid-routine entry points, jump-table arms etc. that the
-; disassembler couldn't resolve to a routine label).
+; EQU aliases for stuck literal-address operands in CAPSULE.
+; Each block is guarded by .if BRANCH in (...) so only the branches
+; that actually reference the alias see the EQU declaration.
 
+; All branches.
+ADDR_AT_09F6	EQU 0x09F6
+
+.if BRANCH in ("cartridge_1992", "chahi_amiga_1991", "dos_1992")
+HANG_DRAW_CIN_003_AT_125A	EQU 0x125A
+.endif
+
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+LABEL_0128	EQU 0x0128
+.endif
+
+.if BRANCH in ("cartridge_1992", "dos_1992")
 ADDR_AT_0020	EQU 0x0020
 ADDR_AT_00B4	EQU 0x00B4
-LABEL_0128	EQU 0x0128
 ADDR_AT_01B0	EQU 0x01B0
 ADDR_AT_02AC	EQU 0x02AC
 LABEL_037C	EQU 0x037C
@@ -15,8 +26,6 @@ LABEL_07E8	EQU 0x07E8
 DELAY_LOOP_VARED_AT_0844	EQU 0x0844
 DELAY_LOOP_VARE6_AT_0874	EQU 0x0874
 ADDR_AT_08A0	EQU 0x08A0
-ADDR_AT_09F6	EQU 0x09F6
-HANG_DRAW_CIN_003_AT_125A	EQU 0x125A
 ADDR_AT_1304	EQU 0x1304
 ADDR_AT_13B2	EQU 0x13B2
 ADDR_AT_1474	EQU 0x1474
@@ -45,3 +54,4 @@ ADDR_AT_366C	EQU 0x366C
 LABEL_3674	EQU 0x3674
 ADDR_AT_367C	EQU 0x367C
 ADDR_AT_3FB8	EQU 0x3FB8
+.endif
