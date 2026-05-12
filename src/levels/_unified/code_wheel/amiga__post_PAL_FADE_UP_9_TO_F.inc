@@ -66,7 +66,7 @@ LABEL_0290:
 ENTRY_CALL_INIT_4A:
 	call INIT_GAME_STATE_VARS
 
-LABEL_029D:
+CODEWHEEL_ERROR_SCREEN_INIT:
 	fill page=0x00, color=0x07
 	fill page=0x03, color=0x00
 	selectVideoPage 0x03
