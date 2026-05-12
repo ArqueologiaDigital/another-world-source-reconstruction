@@ -112,10 +112,15 @@ DRAW_CIN_157:
 
 .endif
 
-.if BRANCH == "chahi_amiga_1991"
-.include "../amiga__post_DRAW_CIN_157.inc"
-.elif BRANCH == "dos_1992"
-.include "../dos__post_DRAW_CIN_157.inc"
+.if BRANCH in ("chahi_amiga_1991", "dos_1992")
+PRISON_DRAW_CIN_157_L0:
+	db 0x11
+
+DRAW_CIN_168_IF_VAR09_EQ_1:
+	mov [0xF8], [0x09]
+	and [0xF8], 0x000F
+	je [0xF8], 0x01, DRAW_CIN_168
+	ret
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
