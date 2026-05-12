@@ -34,7 +34,7 @@ LABEL_08C6:
 	je [0x2B], 0x00, RESUME_GAME_INIT_CHANNELS
 	ret
 
-LABEL_08E2:
+SAVE_HERO_INPUT_AND_HASH:
 	call SUM_HASH_VARS_TO_VAR_37
 	call LABEL_08C6
 	call LABEL_0883
@@ -43,7 +43,7 @@ LABEL_08E2:
 	mov [0xBF], [0x37]
 	add [0xC1], [HERO_ACTION_POS_MASK]
 	or [0x50], 0x0001
-	jne [HERO_ACTION], 0x00, LABEL_0B03
+	jne [HERO_ACTION], 0x00, CODEWHEEL_PROCESS_ENTERED_DIGIT
 	mov [0x23], [0x01]
 	jne [HERO_POS_JUMP_DOWN], 0x01, LABEL_0917
 	jg [0x01], 0x07, HANDLE_RIGHT_KEY_EDGE_CHECK
@@ -84,9 +84,9 @@ DERIVE_FOUR_POS_25_26_27_28:
 	mov [0x28], [0x08]
 	jne [0x25], [0x27], LABEL_098E
 	jne [0x26], [0x28], LABEL_098E
-	video offset=CINEMATIC_051, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CODEWHEEL_CURSOR, x=[0x07], y=[0x08]
 	break
-	jmp LABEL_08E2
+	jmp SAVE_HERO_INPUT_AND_HASH
 LABEL_098D:
 	db 0x11
 
@@ -122,16 +122,16 @@ LABEL_09CE:
 LABEL_09E0:
 	jne [0x07], [0x27], LABEL_09EF
 	jne [0x08], [0x28], LABEL_09EF
-	jmp LABEL_08E2
+	jmp SAVE_HERO_INPUT_AND_HASH
 
 LABEL_09EF:
-	video offset=CINEMATIC_051, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CODEWHEEL_CURSOR, x=[0x07], y=[0x08]
 	break
 	jmp LABEL_0998
 LABEL_09F8:
 	db 0x11
 
-LABEL_09F9:
+CODEWHEEL_CHECK_ENTERED_CODE:
 	setPalette 0x00
 	je [0x29], [0x1E], SETUP_CODEWHEEL_CHANNELS
 	je [0x29], [0x1F], SETUP_CODEWHEEL_CHANNELS
@@ -153,8 +153,8 @@ LABEL_0A17:
 
 SETUP_CODEWHEEL_CHANNELS:
 	call SUM_HASH_VARS_TO_VAR_37
-	setup channel=0x0A, address=LABEL_0AF3
-	setup channel=0x1E, address=LABEL_0AFB
+	setup channel=0x0A, address=CODEWHEEL_PIN_VAR31_TO_1
+	setup channel=0x1E, address=ZERO_VAR31_LOOP
 	je [0x31], 0x01, LABEL_0A88
 	mov [0x31], 0x0001
 	mov [0xBC], [0x37]
@@ -174,7 +174,7 @@ LABEL_0A88:
 	or [0xC6], 0x0080
 	call INIT_PROGRESS_HASH_VARS
 	setup channel=0x32, address=MARK_VAR67_AND_KILL
-	setup channel=0x3F, address=LABEL_0ACC
+	setup channel=0x3F, address=CODEWHEEL_PIN_HACK_VAR67_TO_0
 	break
 	break
 	call INIT_PROGRESS_HASH_VARS
