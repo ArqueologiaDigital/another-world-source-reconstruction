@@ -202,10 +202,10 @@ LABEL_0103:
 	setup channel=0x2C, address=PAL_FADE_UP_9_TO_F
 	mov [0x03], 0x000A
 
-LABEL_0116:
+CODEWHEEL_CREDITS_FADE_1_WAIT:
 	break
 	jne [HERO_ACTION], 0x00, BANK1_INTRO_TRANSITION
-	djnz [0x03], LABEL_0116
+	djnz [0x03], CODEWHEEL_CREDITS_FADE_1_WAIT
 	fill page=0x00, color=0x00
 	selectVideoPage 0x00
 	text id=0x0181, x=18, y=80, color=0x02 ; " BY"
@@ -215,10 +215,10 @@ LABEL_0116:
 	setPalette 0x1B
 	mov [0x03], 0x003C
 
-LABEL_013C:
+CODEWHEEL_CREDITS_PAGE_1_WAIT:
 	break
 	jne [HERO_ACTION], 0x00, BANK1_INTRO_TRANSITION
-	djnz [0x03], LABEL_013C
+	djnz [0x03], CODEWHEEL_CREDITS_PAGE_1_WAIT
 	break
 	fill page=0x00, color=0x00
 	selectVideoPage 0x00
@@ -230,10 +230,10 @@ LABEL_013C:
 	and [HACK_VAR_54], 0x0001
 	je [HACK_VAR_54], 0x00, CODEWHEEL_WAIT_LOOP_BREAK_ON_ACTION
 
-LABEL_016F:
+CODEWHEEL_CREDITS_PAGE_2_WAIT:
 	break
 	jne [HERO_ACTION], 0x00, BANK1_INTRO_TRANSITION
-	djnz [0x03], LABEL_016F
+	djnz [0x03], CODEWHEEL_CREDITS_PAGE_2_WAIT
 	break
 	fill page=0x00, color=0x00
 	selectVideoPage 0x00
