@@ -125,15 +125,15 @@ TANK_PROJECTILE_ARC_AND_EXPLOSION:
 	break
 	video offset=CINEMATIC_070, x=269, y=80
 	break
-	video offset=CINEMATIC_070, x=272, y=77, zoom=[0x3c]	;@enc=alt
+	video offset=CINEMATIC_070, x=272, y=77, zoom=0x3c
 	break
-	video offset=CINEMATIC_070, x=275, y=74, zoom=[0x32]	;@enc=alt
+	video offset=CINEMATIC_070, x=275, y=74, zoom=0x32
 	break
-	video offset=CINEMATIC_070, x=278, y=71, zoom=[0x2d]	;@enc=alt
+	video offset=CINEMATIC_070, x=278, y=71, zoom=0x2d
 	break
-	video offset=CINEMATIC_070, x=278, y=68, zoom=[0x22]	;@enc=alt
+	video offset=CINEMATIC_070, x=278, y=68, zoom=0x22
 	break
-	video offset=CINEMATIC_070, x=280, y=65, zoom=[0x1f]	;@enc=alt
+	video offset=CINEMATIC_070, x=280, y=65, zoom=0x1f
 	break
 	selectVideoPage 0x00
 	play id=0x008C, freq=0x14, vol=0x40, channel=0x01

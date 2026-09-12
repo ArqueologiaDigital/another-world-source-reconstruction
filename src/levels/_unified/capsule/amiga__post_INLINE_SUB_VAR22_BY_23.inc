@@ -100,7 +100,7 @@ LABEL_40B6:
 	call LABEL_4223
 
 LABEL_411F:
-	video offset=CINEMATIC_000, x=[BUDDY_X], y=[BUDDY_Y], zoom=[0x96]	;@enc=alt
+	video offset=CINEMATIC_000, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x96
 	mov [0x2B], 0x0FA0
 	call LABEL_41AD
 	break

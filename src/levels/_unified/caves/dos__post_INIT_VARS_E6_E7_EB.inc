@@ -15,13 +15,13 @@ LABEL_40C7:
 
 LABEL_40F8:
 	break
-	video offset=CINEMATIC_646, x=230, y=[0xe6], zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_646, x=230, y=[0xe6], zoom=0x20
 	video offset=CINEMATIC_645, x=170, y=[0xe7]
 	add [0xE6], 0x0008
 	add [0xE7], 0x0006
 	djnz [0xEB], LABEL_40F8
 	selectVideoPage 0x00
-	video offset=CINEMATIC_646, x=230, y=[0xe6], zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_646, x=230, y=[0xe6], zoom=0x20
 	video offset=CINEMATIC_645, x=170, y=[0xe7]
 	selectVideoPage 0xFF
 	mov [0xE6], 0x002A
@@ -30,13 +30,13 @@ LABEL_40F8:
 
 LABEL_412B:
 	break
-	video offset=CINEMATIC_729, x=100, y=[0xe6], zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_729, x=100, y=[0xe6], zoom=0x20
 	add [0xE6], 0x0006
 	add [0xE7], 0x0008
 	djnz [0xEB], LABEL_412B
 	selectVideoPage 0x00
-	video offset=CINEMATIC_729, x=100, y=[0xe6], zoom=[0x20]	;@enc=alt
-	video offset=CINEMATIC_646, x=147, y=101, zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_729, x=100, y=[0xe6], zoom=0x20
+	video offset=CINEMATIC_646, x=147, y=101, zoom=0x20
 	video offset=CINEMATIC_729, x=206, y=107
 	video offset=CINEMATIC_646, x=153, y=114
 	video offset=CINEMATIC_646, x=194, y=86

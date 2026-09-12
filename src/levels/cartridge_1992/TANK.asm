@@ -1718,15 +1718,15 @@ TANK_SALVO_IMPACT_FIREBALL_AND_NEW_BACKDROP:
 	break
 	video offset=CINEMATIC_004, x=42, y=122
 	video offset=CINEMATIC_001, x=259, y=129
-	video offset=CINEMATIC_006, x=172, y=70, zoom=[0x64]	;@enc=alt
+	video offset=CINEMATIC_006, x=172, y=70, zoom=0x64
 	break
 	video offset=CINEMATIC_004, x=21, y=134
 	video offset=CINEMATIC_001, x=278, y=141
-	video offset=CINEMATIC_006, x=172, y=143, zoom=[0x8e]	;@enc=alt
+	video offset=CINEMATIC_006, x=172, y=143, zoom=0x8e
 	break
 	video offset=CINEMATIC_000, x=4, y=149
 	video offset=CINEMATIC_003, x=287, y=148
-	video offset=CINEMATIC_006, x=172, y=250, zoom=[0xdc]	;@enc=alt
+	video offset=CINEMATIC_006, x=172, y=250, zoom=0xdc
 	selectVideoPage 0x03
 	play id=0x008C, freq=0x1E, vol=0x40, channel=0x01
 	play id=0x008C, freq=0x0A, vol=0x40, channel=0x00
@@ -2431,15 +2431,15 @@ TANK_PROJECTILE_ARC_AND_EXPLOSION:
 	break
 	video offset=CINEMATIC_022, x=269, y=80
 	break
-	video offset=CINEMATIC_022, x=272, y=77, zoom=[0x3c]	;@enc=alt
+	video offset=CINEMATIC_022, x=272, y=77, zoom=0x3c
 	break
-	video offset=CINEMATIC_022, x=275, y=74, zoom=[0x32]	;@enc=alt
+	video offset=CINEMATIC_022, x=275, y=74, zoom=0x32
 	break
-	video offset=CINEMATIC_022, x=278, y=71, zoom=[0x2d]	;@enc=alt
+	video offset=CINEMATIC_022, x=278, y=71, zoom=0x2d
 	break
-	video offset=CINEMATIC_022, x=278, y=68, zoom=[0x22]	;@enc=alt
+	video offset=CINEMATIC_022, x=278, y=68, zoom=0x22
 	break
-	video offset=CINEMATIC_022, x=280, y=65, zoom=[0x1f]	;@enc=alt
+	video offset=CINEMATIC_022, x=280, y=65, zoom=0x1f
 	break
 	selectVideoPage 0x00
 	play id=0x008C, freq=0x14, vol=0x40, channel=0x01

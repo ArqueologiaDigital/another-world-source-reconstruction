@@ -102,7 +102,7 @@ LABEL_5F00:
 	call LABEL_6079
 
 LABEL_5F69:
-	video offset=CINEMATIC_134, x=[0x07], y=[0x08], zoom=[0x96]	;@enc=alt
+	video offset=CINEMATIC_134, x=[0x07], y=[0x08], zoom=0x96
 	play id=0x005B, freq=0x14, vol=0x40, channel=0x02
 	play id=0x005B, freq=0x07, vol=0x40, channel=0x00
 	mov [0x2B], 0x0FA0

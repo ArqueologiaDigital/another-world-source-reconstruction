@@ -67,10 +67,10 @@ WAIT_INTRO_SCENE_3:
 	selectVideoPage 0x00
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_BG, x=82, y=82
-	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_SCAN_F2, x=80, y=80, zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_SCAN_F2, x=80, y=80, zoom=0x20
 .else
 	video offset=CINEMATIC_144, x=82, y=82
-	video offset=CINEMATIC_147, x=80, y=80, zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_147, x=80, y=80, zoom=0x20
 .endif
 	selectVideoPage 0xFF
 	setup channel=0x09, address=DRAW_CINEMATICS_166_TO_171

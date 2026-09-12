@@ -84,10 +84,10 @@ LABEL_1DEB:
 	killChannel
 
 LABEL_1E24:
-	video offset=CINEMATIC_379, x=160, y=100, zoom=[0x50]	;@enc=alt
+	video offset=CINEMATIC_379, x=160, y=100, zoom=0x50
 	play id=0x0075, freq=0x0C, vol=0x10, channel=0x03
 	break
-	video offset=CINEMATIC_379, x=160, y=100, zoom=[0x46]	;@enc=alt
+	video offset=CINEMATIC_379, x=160, y=100, zoom=0x46
 	break
 
 HANG_DRAW_CIN_379:
@@ -97,7 +97,7 @@ HANG_DRAW_CIN_379:
 
 LABEL_1E40:
 	video offset=CINEMATIC_394, x=160, y=100
-	video offset=CINEMATIC_379, x=160, y=100, zoom=[0x43]	;@enc=alt
+	video offset=CINEMATIC_379, x=160, y=100, zoom=0x43
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x03
 	setup channel=0x06, address=LABEL_1E7E
 	break
@@ -106,7 +106,7 @@ LABEL_1E40:
 	jmp HANG_DRAW_CIN_379
 	killChannel
 	video offset=CINEMATIC_394, x=190, y=100
-	video offset=CINEMATIC_379, x=160, y=100, zoom=[0x43]	;@enc=alt
+	video offset=CINEMATIC_379, x=160, y=100, zoom=0x43
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x03
 	break
 	video offset=CINEMATIC_395, x=210, y=100

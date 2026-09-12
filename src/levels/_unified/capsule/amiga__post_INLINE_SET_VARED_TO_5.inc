@@ -84,10 +84,10 @@ LABEL_0E3D:
 	killChannel
 
 LABEL_0E76:
-	video offset=CINEMATIC_033, x=160, y=100, zoom=[0x50]	;@enc=alt
+	video offset=CINEMATIC_033, x=160, y=100, zoom=0x50
 	play id=0x0075, freq=0x0C, vol=0x10, channel=0x03
 	break
-	video offset=CINEMATIC_033, x=160, y=100, zoom=[0x46]	;@enc=alt
+	video offset=CINEMATIC_033, x=160, y=100, zoom=0x46
 	break
 
 HANG_DRAW_CIN_033:
@@ -97,7 +97,7 @@ HANG_DRAW_CIN_033:
 
 LABEL_0E92:
 	video offset=CINEMATIC_048, x=160, y=100
-	video offset=CINEMATIC_033, x=160, y=100, zoom=[0x43]	;@enc=alt
+	video offset=CINEMATIC_033, x=160, y=100, zoom=0x43
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x03
 	setup channel=0x06, address=LABEL_0EB3
 	break

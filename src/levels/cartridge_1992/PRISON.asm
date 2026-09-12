@@ -6433,7 +6433,7 @@ PRISON_INLINE_SUB_VAR22_BY_23_L6:
 	call LABEL_3691
 
 PRISON_INLINE_SUB_VAR22_BY_23_L7:
-	video offset=CINEMATIC_384, x=[BUDDY_X], y=[BUDDY_Y], zoom=[0x96]	;@enc=alt
+	video offset=CINEMATIC_384, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x96
 	mov [0x2B], 0x0FA0
 	call PRISON_INLINE_SUB_VAR22_BY_23_L4
 	break

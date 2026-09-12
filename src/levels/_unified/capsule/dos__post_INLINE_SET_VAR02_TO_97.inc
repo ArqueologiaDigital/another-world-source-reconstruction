@@ -1015,7 +1015,7 @@ LABEL_B0CD:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x4B], 0x7FFF
-	video offset=CINEMATIC_258, x=[0x70], y=93, zoom=[0x5a]	;@enc=alt
+	video offset=CINEMATIC_258, x=[0x70], y=93, zoom=0x5a
 	ret
 
 
@@ -1026,7 +1026,7 @@ LABEL_B0F4:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x49], 0x7FFF
-	video offset=CINEMATIC_258, x=[0x6e], y=93, zoom=[0x5a]	;@enc=alt
+	video offset=CINEMATIC_258, x=[0x6e], y=93, zoom=0x5a
 	ret
 
 
@@ -1037,7 +1037,7 @@ LABEL_B115:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x4D], 0x7FFF
-	video offset=CINEMATIC_258, x=[0x72], y=93, zoom=[0x5a]	;@enc=alt
+	video offset=CINEMATIC_258, x=[0x72], y=93, zoom=0x5a
 	ret
 
 

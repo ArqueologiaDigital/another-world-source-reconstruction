@@ -247,15 +247,15 @@ LABEL_3E0A:
 LABEL_3E0B:
 	break
 	jl [HERO_X], 0x91, LABEL_3E0B
-	video offset=CINEMATIC_482, x=[HERO_X], y=[HERO_Y], zoom=[0xc8]	;@enc=alt
+	video offset=CINEMATIC_482, x=[HERO_X], y=[HERO_Y], zoom=0xc8
 	play id=0x0052, freq=0x0A, vol=0x40, channel=0x02
 	break
 	video offset=CINEMATIC_482, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_482, x=[HERO_X], y=[HERO_Y], zoom=[0x10]	;@enc=alt
+	video offset=CINEMATIC_482, x=[HERO_X], y=[HERO_Y], zoom=0x10
 	setup channel=0x04, address=LABEL_3E3D
 	break
-	video offset=CINEMATIC_483, x=[HERO_X], y=[HERO_Y], zoom=[0x50]	;@enc=alt
+	video offset=CINEMATIC_483, x=[HERO_X], y=[HERO_Y], zoom=0x50
 	play id=0x005A, freq=0x0C, vol=0x40, channel=0x02
 	killChannel
 

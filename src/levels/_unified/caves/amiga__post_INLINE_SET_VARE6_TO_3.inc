@@ -72,9 +72,9 @@ LABEL_0439:
 	play id=0x005A, freq=0x05, vol=0x40, channel=0x03
 
 LABEL_046D:
-	video offset=CINEMATIC_555, x=110, y=[0xe8], zoom=[0x30]	;@enc=alt
-	video offset=CINEMATIC_555, x=114, y=[0xe9], zoom=[0x28]	;@enc=alt
-	video offset=CINEMATIC_555, x=106, y=[0xea], zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_555, x=110, y=[0xe8], zoom=0x30
+	video offset=CINEMATIC_555, x=114, y=[0xe9], zoom=0x28
+	video offset=CINEMATIC_555, x=106, y=[0xea], zoom=0x20
 	add [0xE8], 0x0028
 	add [0xE9], 0x0014
 	add [0xEA], 0x001C

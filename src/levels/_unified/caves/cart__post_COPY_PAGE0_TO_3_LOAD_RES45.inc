@@ -32,16 +32,16 @@ DRAW_CIN_415_416_FRAGMENTS:
 	video offset=CINEMATIC_416, x=202, y=65
 	video offset=CINEMATIC_416, x=293, y=4
 	video offset=CINEMATIC_416, x=298, y=117
-	video offset=CINEMATIC_416, x=125, y=59, zoom=[0x2e]	;@enc=alt
-	video offset=CINEMATIC_416, x=212, y=101, zoom=[0x2e]	;@enc=alt
-	video offset=CINEMATIC_416, x=121, y=91, zoom=[0x20]	;@enc=alt
-	video offset=CINEMATIC_416, x=201, y=132, zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_416, x=125, y=59, zoom=0x2e
+	video offset=CINEMATIC_416, x=212, y=101, zoom=0x2e
+	video offset=CINEMATIC_416, x=121, y=91, zoom=0x20
+	video offset=CINEMATIC_416, x=201, y=132, zoom=0x20
 	video offset=CINEMATIC_416, x=86, y=82
 	video offset=CINEMATIC_416, x=257, y=78
 	video offset=CINEMATIC_416, x=249, y=151
 	video offset=CINEMATIC_416, x=159, y=16
-	video offset=CINEMATIC_416, x=250, y=155, zoom=[0x20]	;@enc=alt
-	video offset=CINEMATIC_416, x=89, y=86, zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_416, x=250, y=155, zoom=0x20
+	video offset=CINEMATIC_416, x=89, y=86, zoom=0x20
 	copyVideoPage src=0x00, dst=0x03
 	video offset=CINEMATIC_417, x=169, y=94
 	ret
@@ -51,9 +51,9 @@ LABEL_D378:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_356, x=134, y=103
 	video offset=CINEMATIC_416, x=6, y=90
-	video offset=CINEMATIC_416, x=315, y=147, zoom=[0x26]	;@enc=alt
+	video offset=CINEMATIC_416, x=315, y=147, zoom=0x26
 	video offset=CINEMATIC_427, x=14, y=166
-	video offset=CINEMATIC_416, x=44, y=133, zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_416, x=44, y=133, zoom=0x20
 	video offset=CINEMATIC_357, x=19, y=73
 	video offset=CINEMATIC_357, x=16, y=76
 	video offset=CINEMATIC_357, x=136, y=165
@@ -144,8 +144,8 @@ LABEL_D487:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_634, x=160, y=100
 	video offset=CINEMATIC_635, x=160, y=100
-	video offset=CINEMATIC_636, x=256, y=167, zoom=[0x20]	;@enc=alt
-	video offset=CINEMATIC_637, x=244, y=170, zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_636, x=256, y=167, zoom=0x20
+	video offset=CINEMATIC_637, x=244, y=170, zoom=0x20
 	video offset=CINEMATIC_638, x=135, y=202, zoom=0x40
 	copyVideoPage src=0x00, dst=0x03
 	mov [0xF8], [0xB1]
@@ -188,8 +188,8 @@ LABEL_D4E5:
 	video offset=CINEMATIC_718, x=160, y=100
 	video offset=CINEMATIC_719, x=160, y=100
 	video offset=CINEMATIC_636, x=130, y=57
-	video offset=CINEMATIC_637, x=39, y=51, zoom=[0x20]	;@enc=alt
-	video offset=CINEMATIC_720, x=27, y=47, zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_637, x=39, y=51, zoom=0x20
+	video offset=CINEMATIC_720, x=27, y=47, zoom=0x20
 	ret
 
 
@@ -224,7 +224,7 @@ LABEL_D529:
 	video offset=CINEMATIC_636, x=68, y=115
 	video offset=CINEMATIC_637, x=9, y=80
 	video offset=CINEMATIC_637, x=6, y=99
-	video offset=CINEMATIC_636, x=15, y=120, zoom=[0x2a]	;@enc=alt
+	video offset=CINEMATIC_636, x=15, y=120, zoom=0x2a
 	video offset=CINEMATIC_720, x=65526, y=66
 	ret
 
@@ -440,10 +440,10 @@ LABEL_D7C2:
 	video offset=CINEMATIC_364, x=160, y=100
 	video offset=CINEMATIC_365, x=160, y=100
 	video offset=CINEMATIC_366, x=95, y=150
-	video offset=CINEMATIC_366, x=191, y=40, zoom=[0x3b]	;@enc=alt
-	video offset=CINEMATIC_366, x=191, y=40, zoom=[0x2f]	;@enc=alt
-	video offset=CINEMATIC_366, x=192, y=42, zoom=[0x20]	;@enc=alt
-	video offset=CINEMATIC_366, x=232, y=41, zoom=[0x29]	;@enc=alt
+	video offset=CINEMATIC_366, x=191, y=40, zoom=0x3b
+	video offset=CINEMATIC_366, x=191, y=40, zoom=0x2f
+	video offset=CINEMATIC_366, x=192, y=42, zoom=0x20
+	video offset=CINEMATIC_366, x=232, y=41, zoom=0x29
 	video offset=CINEMATIC_367, x=196, y=90
 	video offset=CINEMATIC_367, x=197, y=96
 	video offset=CINEMATIC_367, x=196, y=99
@@ -461,8 +461,8 @@ LABEL_D80E:
 	video offset=CINEMATIC_368, x=160, y=100
 	video offset=CINEMATIC_369, x=160, y=100
 	video offset=CINEMATIC_370, x=160, y=100
-	video offset=CINEMATIC_371, x=[0xec], y=130, zoom=[0x20]	;@enc=alt
-	video offset=CINEMATIC_371, x=[0xed], y=150, zoom=[0x30]	;@enc=alt
+	video offset=CINEMATIC_371, x=[0xec], y=130, zoom=0x20
+	video offset=CINEMATIC_371, x=[0xed], y=150, zoom=0x30
 	video offset=CINEMATIC_372, x=154, y=159
 	video offset=CINEMATIC_372, x=145, y=173
 	video offset=CINEMATIC_372, x=56, y=108

@@ -527,9 +527,9 @@ DELAY_18_THEN_PAL_15_CIN_267:
 	play id=0x000E, freq=0x14, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_267, x=160, y=100, zoom=[0x50]	;@enc=alt
+	video offset=CINEMATIC_267, x=160, y=100, zoom=0x50
 .else
-	video offset=CINEMATIC_273, x=160, y=100, zoom=[0x50]	;@enc=alt
+	video offset=CINEMATIC_273, x=160, y=100, zoom=0x50
 .endif
 	play id=0x000A, freq=0x0A, vol=0x3F, channel=0x03
 	break

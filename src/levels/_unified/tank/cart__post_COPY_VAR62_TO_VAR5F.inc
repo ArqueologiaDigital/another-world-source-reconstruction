@@ -474,15 +474,15 @@ LABEL_0E32:
 	break
 	video offset=CINEMATIC_004, x=42, y=122
 	video offset=CINEMATIC_001, x=259, y=129
-	video offset=CINEMATIC_006, x=172, y=70, zoom=[0x64]	;@enc=alt
+	video offset=CINEMATIC_006, x=172, y=70, zoom=0x64
 	break
 	video offset=CINEMATIC_004, x=21, y=134
 	video offset=CINEMATIC_001, x=278, y=141
-	video offset=CINEMATIC_006, x=172, y=143, zoom=[0x8e]	;@enc=alt
+	video offset=CINEMATIC_006, x=172, y=143, zoom=0x8e
 	break
 	video offset=CINEMATIC_000, x=4, y=149
 	video offset=CINEMATIC_003, x=287, y=148
-	video offset=CINEMATIC_006, x=172, y=250, zoom=[0xdc]	;@enc=alt
+	video offset=CINEMATIC_006, x=172, y=250, zoom=0xdc
 	selectVideoPage 0x03
 	play id=0x008C, freq=0x1E, vol=0x40, channel=0x01
 	play id=0x008C, freq=0x0A, vol=0x40, channel=0x00

@@ -1802,36 +1802,36 @@ TANK_ARRIVAL_CUTSCENE_BURST_AND_ZOOM_IN:
 	video offset=CINEMATIC_021, x=160, y=100
 	video offset=CINEMATIC_022, x=160, y=100
 	break
-	video offset=CINEMATIC_021, x=160, y=100, zoom=[0x46]	;@enc=alt
-	video offset=CINEMATIC_023, x=160, y=100, zoom=[0x46]	;@enc=alt
+	video offset=CINEMATIC_021, x=160, y=100, zoom=0x46
+	video offset=CINEMATIC_023, x=160, y=100, zoom=0x46
 	break
-	video offset=CINEMATIC_024, x=160, y=100, zoom=[0x50]	;@enc=alt
-	video offset=CINEMATIC_021, x=160, y=100, zoom=[0x50]	;@enc=alt
+	video offset=CINEMATIC_024, x=160, y=100, zoom=0x50
+	video offset=CINEMATIC_021, x=160, y=100, zoom=0x50
 	break
-	video offset=CINEMATIC_025, x=160, y=100, zoom=[0x50]	;@enc=alt
-	video offset=CINEMATIC_021, x=160, y=100, zoom=[0x5a]	;@enc=alt
+	video offset=CINEMATIC_025, x=160, y=100, zoom=0x50
+	video offset=CINEMATIC_021, x=160, y=100, zoom=0x5a
 	setup channel=0x37, address=TANK_ARENA_CREATURE_CHARGE_AND_SCENE_REARM
 	break
-	video offset=CINEMATIC_026, x=160, y=100, zoom=[0x50]	;@enc=alt
-	video offset=CINEMATIC_021, x=160, y=100, zoom=[0x64]	;@enc=alt
+	video offset=CINEMATIC_026, x=160, y=100, zoom=0x50
+	video offset=CINEMATIC_021, x=160, y=100, zoom=0x64
 	break
-	video offset=CINEMATIC_026, x=160, y=100, zoom=[0x50]	;@enc=alt
-	video offset=CINEMATIC_021, x=160, y=100, zoom=[0x6e]	;@enc=alt
+	video offset=CINEMATIC_026, x=160, y=100, zoom=0x50
+	video offset=CINEMATIC_021, x=160, y=100, zoom=0x6e
 	break
-	video offset=CINEMATIC_026, x=160, y=100, zoom=[0x50]	;@enc=alt
-	video offset=CINEMATIC_021, x=160, y=100, zoom=[0x78]	;@enc=alt
+	video offset=CINEMATIC_026, x=160, y=100, zoom=0x50
+	video offset=CINEMATIC_021, x=160, y=100, zoom=0x78
 	killChannel
-	video offset=CINEMATIC_026, x=160, y=100, zoom=[0x50]	;@enc=alt
-	video offset=CINEMATIC_021, x=160, y=100, zoom=[0x82]	;@enc=alt
+	video offset=CINEMATIC_026, x=160, y=100, zoom=0x50
+	video offset=CINEMATIC_021, x=160, y=100, zoom=0x82
 	break
-	video offset=CINEMATIC_026, x=160, y=100, zoom=[0x50]	;@enc=alt
-	video offset=CINEMATIC_021, x=160, y=100, zoom=[0x87]	;@enc=alt
+	video offset=CINEMATIC_026, x=160, y=100, zoom=0x50
+	video offset=CINEMATIC_021, x=160, y=100, zoom=0x87
 	break
-	video offset=CINEMATIC_021, x=160, y=100, zoom=[0x8e]	;@enc=alt
+	video offset=CINEMATIC_021, x=160, y=100, zoom=0x8e
 	break
-	video offset=CINEMATIC_021, x=160, y=100, zoom=[0x96]	;@enc=alt
+	video offset=CINEMATIC_021, x=160, y=100, zoom=0x96
 	break
-	video offset=CINEMATIC_021, x=160, y=100, zoom=[0xa0]	;@enc=alt
+	video offset=CINEMATIC_021, x=160, y=100, zoom=0xa0
 	jmp TANK_STAGE_BOOT_SETUP_CHANNELS
 LABEL_0F1D:
 	db 0x11
@@ -1862,15 +1862,15 @@ TANK_SALVO_IMPACT_FIREBALL_AND_NEW_BACKDROP:
 	break
 	video offset=CINEMATIC_189, x=42, y=122
 	video offset=CINEMATIC_068, x=259, y=129
-	video offset=CINEMATIC_190, x=172, y=70, zoom=[0x64]	;@enc=alt
+	video offset=CINEMATIC_190, x=172, y=70, zoom=0x64
 	break
 	video offset=CINEMATIC_189, x=21, y=134
 	video offset=CINEMATIC_068, x=278, y=141
-	video offset=CINEMATIC_190, x=172, y=143, zoom=[0x8e]	;@enc=alt
+	video offset=CINEMATIC_190, x=172, y=143, zoom=0x8e
 	break
 	video offset=CINEMATIC_187, x=4, y=149
 	video offset=CINEMATIC_188, x=287, y=148
-	video offset=CINEMATIC_190, x=172, y=250, zoom=[0xdc]	;@enc=alt
+	video offset=CINEMATIC_190, x=172, y=250, zoom=0xdc
 	selectVideoPage 0x03
 	play id=0x008C, freq=0x1E, vol=0x40, channel=0x01
 	play id=0x008C, freq=0x0A, vol=0x40, channel=0x00
@@ -2615,15 +2615,15 @@ TANK_PROJECTILE_ARC_AND_EXPLOSION:
 	break
 	video offset=CINEMATIC_070, x=269, y=80
 	break
-	video offset=CINEMATIC_070, x=272, y=77, zoom=[0x3c]	;@enc=alt
+	video offset=CINEMATIC_070, x=272, y=77, zoom=0x3c
 	break
-	video offset=CINEMATIC_070, x=275, y=74, zoom=[0x32]	;@enc=alt
+	video offset=CINEMATIC_070, x=275, y=74, zoom=0x32
 	break
-	video offset=CINEMATIC_070, x=278, y=71, zoom=[0x2d]	;@enc=alt
+	video offset=CINEMATIC_070, x=278, y=71, zoom=0x2d
 	break
-	video offset=CINEMATIC_070, x=278, y=68, zoom=[0x22]	;@enc=alt
+	video offset=CINEMATIC_070, x=278, y=68, zoom=0x22
 	break
-	video offset=CINEMATIC_070, x=280, y=65, zoom=[0x1f]	;@enc=alt
+	video offset=CINEMATIC_070, x=280, y=65, zoom=0x1f
 	break
 	selectVideoPage 0x00
 	play id=0x008C, freq=0x14, vol=0x40, channel=0x01

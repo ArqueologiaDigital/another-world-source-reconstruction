@@ -3615,13 +3615,13 @@ LABEL_1A72:
 	mov [0xE6], 0x00A0
 	mov [0xE7], 0x0078
 	mov [0xE8], 0x00FA
-	video offset=CINEMATIC_045, x=[0xe6], y=[0xe7], zoom=[0x91]	;@enc=alt
+	video offset=CINEMATIC_045, x=[0xe6], y=[0xe7], zoom=0x91
 	break
-	video offset=CINEMATIC_045, x=[0xe6], y=[0xe7], zoom=[0x54]	;@enc=alt
+	video offset=CINEMATIC_045, x=[0xe6], y=[0xe7], zoom=0x54
 	break
-	video offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xfa]	;@enc=alt
+	video offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=0xfa
 	break
-	video offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xc8]	;@enc=alt
+	video offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=0xc8
 	break
 	mov [0xE8], 0x00C8
 	mov [0xE9], 0x0003
@@ -3739,13 +3739,13 @@ PLAY_3SFX_PAL_3_PAUSE_4:
 	mov [0xE6], 0x0083
 	mov [0xE7], 0x0078
 	mov [0xE8], 0x00FA
-	video offset=CINEMATIC_045, x=[0xe6], y=[0xe7], zoom=[0x91]	;@enc=alt
+	video offset=CINEMATIC_045, x=[0xe6], y=[0xe7], zoom=0x91
 	break
-	video offset=CINEMATIC_045, x=[0xe6], y=[0xe7], zoom=[0x54]	;@enc=alt
+	video offset=CINEMATIC_045, x=[0xe6], y=[0xe7], zoom=0x54
 	break
-	video offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xfa]	;@enc=alt
+	video offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=0xfa
 	break
-	video offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=[0xc8]	;@enc=alt
+	video offset=CINEMATIC_046, x=[0xe6], y=[0xe7], zoom=0xc8
 	break
 	mov [0xE8], 0x00C8
 	mov [0xE9], 0x0003
@@ -3953,10 +3953,10 @@ LABEL_1DEB:
 	killChannel
 
 LABEL_1E24:
-	video offset=CINEMATIC_379, x=160, y=100, zoom=[0x50]	;@enc=alt
+	video offset=CINEMATIC_379, x=160, y=100, zoom=0x50
 	play id=0x0075, freq=0x0C, vol=0x10, channel=0x03
 	break
-	video offset=CINEMATIC_379, x=160, y=100, zoom=[0x46]	;@enc=alt
+	video offset=CINEMATIC_379, x=160, y=100, zoom=0x46
 	break
 
 HANG_DRAW_CIN_379:
@@ -3966,7 +3966,7 @@ HANG_DRAW_CIN_379:
 
 LABEL_1E40:
 	video offset=CINEMATIC_394, x=160, y=100
-	video offset=CINEMATIC_379, x=160, y=100, zoom=[0x43]	;@enc=alt
+	video offset=CINEMATIC_379, x=160, y=100, zoom=0x43
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x03
 	setup channel=0x06, address=LABEL_1E7E
 	break
@@ -3975,7 +3975,7 @@ LABEL_1E40:
 	jmp HANG_DRAW_CIN_379
 	killChannel
 	video offset=CINEMATIC_394, x=190, y=100
-	video offset=CINEMATIC_379, x=160, y=100, zoom=[0x43]	;@enc=alt
+	video offset=CINEMATIC_379, x=160, y=100, zoom=0x43
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x03
 	break
 	video offset=CINEMATIC_395, x=210, y=100
@@ -7137,15 +7137,15 @@ LABEL_3E0A:
 LABEL_3E0B:
 	break
 	jl [HERO_X], 0x91, LABEL_3E0B
-	video offset=CINEMATIC_482, x=[HERO_X], y=[HERO_Y], zoom=[0xc8]	;@enc=alt
+	video offset=CINEMATIC_482, x=[HERO_X], y=[HERO_Y], zoom=0xc8
 	play id=0x0052, freq=0x0A, vol=0x40, channel=0x02
 	break
 	video offset=CINEMATIC_482, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_482, x=[HERO_X], y=[HERO_Y], zoom=[0x10]	;@enc=alt
+	video offset=CINEMATIC_482, x=[HERO_X], y=[HERO_Y], zoom=0x10
 	setup channel=0x04, address=LABEL_3E3D
 	break
-	video offset=CINEMATIC_483, x=[HERO_X], y=[HERO_Y], zoom=[0x50]	;@enc=alt
+	video offset=CINEMATIC_483, x=[HERO_X], y=[HERO_Y], zoom=0x50
 	play id=0x005A, freq=0x0C, vol=0x40, channel=0x02
 	killChannel
 
@@ -9693,7 +9693,7 @@ LABEL_57CE:
 	call CAPSULE_PROJECTILE_TICK_FROM_VAR5A_5B_5C
 
 LABEL_5837:
-	video offset=CINEMATIC_258, x=[BUDDY_X], y=[BUDDY_Y], zoom=[0x96]	;@enc=alt
+	video offset=CINEMATIC_258, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x96
 	play id=0x005B, freq=0x02, vol=0x40, channel=0x03
 	play id=0x005B, freq=0x14, vol=0x40, channel=0x02
 	play id=0x005B, freq=0x02, vol=0x40, channel=0x01
@@ -18632,7 +18632,7 @@ LABEL_B0CD:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x4B], 0x7FFF
-	video offset=CINEMATIC_258, x=[0x70], y=93, zoom=[0x5a]	;@enc=alt
+	video offset=CINEMATIC_258, x=[0x70], y=93, zoom=0x5a
 	ret
 
 
@@ -18643,7 +18643,7 @@ LABEL_B0F4:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x49], 0x7FFF
-	video offset=CINEMATIC_258, x=[0x6e], y=93, zoom=[0x5a]	;@enc=alt
+	video offset=CINEMATIC_258, x=[0x6e], y=93, zoom=0x5a
 	ret
 
 
@@ -18654,7 +18654,7 @@ LABEL_B115:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x4D], 0x7FFF
-	video offset=CINEMATIC_258, x=[0x72], y=93, zoom=[0x5a]	;@enc=alt
+	video offset=CINEMATIC_258, x=[0x72], y=93, zoom=0x5a
 	ret
 
 

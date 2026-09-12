@@ -360,12 +360,12 @@ DELAY_BEFORE_PLAY_FX_9_DUAL:
 	mov [PAUSE_SLICES], 0x0003
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_CAR_DRIVING_AWAY_FROM_CAMERA_F0, x=158, y=100
-	video offset=CINEMATIC_CAR_TAIL_LIGHT_PAIR, x=43, y=132, zoom=[0x7c]	;@enc=alt
-	video offset=CINEMATIC_CAR_TAIL_LIGHT_PAIR, x=392, y=136, zoom=[0x7c]	;@enc=alt
+	video offset=CINEMATIC_CAR_TAIL_LIGHT_PAIR, x=43, y=132, zoom=0x7c
+	video offset=CINEMATIC_CAR_TAIL_LIGHT_PAIR, x=392, y=136, zoom=0x7c
 .else
 	video offset=CINEMATIC_006, x=158, y=100
-	video offset=CINEMATIC_007, x=43, y=132, zoom=[0x7c]	;@enc=alt
-	video offset=CINEMATIC_007, x=392, y=136, zoom=[0x7c]	;@enc=alt
+	video offset=CINEMATIC_007, x=43, y=132, zoom=0x7c
+	video offset=CINEMATIC_007, x=392, y=136, zoom=0x7c
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
@@ -381,45 +381,45 @@ DELAY_BEFORE_PLAY_FX_9_DUAL:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_CAR_SHADOW_F0, x=133, y=100
 	video offset=CINEMATIC_CAR_DRIVING_AWAY_FROM_CAMERA_F2, x=189, y=99
-	video offset=CINEMATIC_CAR_TAIL_LIGHT_PAIR, x=210, y=117, zoom=[0x20]	;@enc=alt
-	video offset=CINEMATIC_CAR_TAIL_LIGHT_PAIR, x=339, y=118, zoom=[0x22]	;@enc=alt
+	video offset=CINEMATIC_CAR_TAIL_LIGHT_PAIR, x=210, y=117, zoom=0x20
+	video offset=CINEMATIC_CAR_TAIL_LIGHT_PAIR, x=339, y=118, zoom=0x22
 .else
 	video offset=CINEMATIC_009, x=133, y=100
 	video offset=CINEMATIC_010, x=189, y=99
-	video offset=CINEMATIC_007, x=210, y=117, zoom=[0x20]	;@enc=alt
-	video offset=CINEMATIC_007, x=339, y=118, zoom=[0x22]	;@enc=alt
+	video offset=CINEMATIC_007, x=210, y=117, zoom=0x20
+	video offset=CINEMATIC_007, x=339, y=118, zoom=0x22
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_CAR_SHADOW_F1, x=153, y=102
 	video offset=CINEMATIC_CAR_DRIVING_AWAY_FROM_CAMERA_F3, x=188, y=100
-	video offset=CINEMATIC_CAR_TAIL_LIGHT_PAIR, x=261, y=120, zoom=[0x1b]	;@enc=alt
-	video offset=CINEMATIC_CAR_TAIL_LIGHT_PAIR, x=337, y=122, zoom=[0x1b]	;@enc=alt
+	video offset=CINEMATIC_CAR_TAIL_LIGHT_PAIR, x=261, y=120, zoom=0x1b
+	video offset=CINEMATIC_CAR_TAIL_LIGHT_PAIR, x=337, y=122, zoom=0x1b
 .else
 	video offset=CINEMATIC_011, x=153, y=102
 	video offset=CINEMATIC_012, x=188, y=100
-	video offset=CINEMATIC_007, x=261, y=120, zoom=[0x1b]	;@enc=alt
-	video offset=CINEMATIC_007, x=337, y=122, zoom=[0x1b]	;@enc=alt
+	video offset=CINEMATIC_007, x=261, y=120, zoom=0x1b
+	video offset=CINEMATIC_007, x=337, y=122, zoom=0x1b
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_CAR_SHADOW_F2, x=128, y=107
 	video offset=CINEMATIC_CAR_DRIVING_AWAY_FROM_CAMERA_F4, x=188, y=100
-	video offset=CINEMATIC_CAR_TAIL_LIGHT_PAIR, x=305, y=119, zoom=[0x17]	;@enc=alt
+	video offset=CINEMATIC_CAR_TAIL_LIGHT_PAIR, x=305, y=119, zoom=0x17
 .else
 	video offset=CINEMATIC_013, x=128, y=107
 	video offset=CINEMATIC_014, x=188, y=100
-	video offset=CINEMATIC_007, x=305, y=119, zoom=[0x17]	;@enc=alt
+	video offset=CINEMATIC_007, x=305, y=119, zoom=0x17
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_CAR_DRIVING_AWAY_FROM_CAMERA_F5, x=188, y=101
 	video offset=CINEMATIC_CAR_SHADOW_F3, x=85, y=110
-	video offset=CINEMATIC_CAR_TAIL_LIGHT_PAIR, x=327, y=120, zoom=[0x13]	;@enc=alt
+	video offset=CINEMATIC_CAR_TAIL_LIGHT_PAIR, x=327, y=120, zoom=0x13
 .else
 	video offset=CINEMATIC_015, x=188, y=101
 	video offset=CINEMATIC_016, x=85, y=110
-	video offset=CINEMATIC_007, x=327, y=120, zoom=[0x13]	;@enc=alt
+	video offset=CINEMATIC_007, x=327, y=120, zoom=0x13
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"

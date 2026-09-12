@@ -12,13 +12,13 @@ LABEL_0AC4:
 	mov [0xE6], 0x00A0
 	mov [0xE7], 0x0078
 	mov [0xE8], 0x00FA
-	video offset=CINEMATIC_288, x=[0xe6], y=[0xe7], zoom=[0x91]	;@enc=alt
+	video offset=CINEMATIC_288, x=[0xe6], y=[0xe7], zoom=0x91
 	break
-	video offset=CINEMATIC_288, x=[0xe6], y=[0xe7], zoom=[0x54]	;@enc=alt
+	video offset=CINEMATIC_288, x=[0xe6], y=[0xe7], zoom=0x54
 	break
-	video offset=CINEMATIC_289, x=[0xe6], y=[0xe7], zoom=[0xfa]	;@enc=alt
+	video offset=CINEMATIC_289, x=[0xe6], y=[0xe7], zoom=0xfa
 	break
-	video offset=CINEMATIC_289, x=[0xe6], y=[0xe7], zoom=[0xc8]	;@enc=alt
+	video offset=CINEMATIC_289, x=[0xe6], y=[0xe7], zoom=0xc8
 	break
 	mov [0xE8], 0x00C8
 	mov [0xE9], 0x0003

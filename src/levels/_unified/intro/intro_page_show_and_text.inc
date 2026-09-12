@@ -374,10 +374,10 @@ DRAW_CIN_382_PUFFS_3X:
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH, x=237, y=156
-	video offset=CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH, x=287, y=150, zoom=[0x14]	;@enc=alt
+	video offset=CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH, x=287, y=150, zoom=0x14
 .else
 	video offset=CINEMATIC_384, x=237, y=156
-	video offset=CINEMATIC_384, x=287, y=150, zoom=[0x14]	;@enc=alt
+	video offset=CINEMATIC_384, x=287, y=150, zoom=0x14
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
@@ -387,15 +387,15 @@ DRAW_CIN_382_PUFFS_3X:
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH, x=287, y=150, zoom=[0x78]	;@enc=alt
+	video offset=CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH, x=287, y=150, zoom=0x78
 .else
-	video offset=CINEMATIC_384, x=287, y=150, zoom=[0x78]	;@enc=alt
+	video offset=CINEMATIC_384, x=287, y=150, zoom=0x78
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH, x=287, y=150, zoom=[0xbe]	;@enc=alt
+	video offset=CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH, x=287, y=150, zoom=0xbe
 .else
-	video offset=CINEMATIC_384, x=287, y=150, zoom=[0xbe]	;@enc=alt
+	video offset=CINEMATIC_384, x=287, y=150, zoom=0xbe
 .endif
 	killChannel
 

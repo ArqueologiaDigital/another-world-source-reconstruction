@@ -261,15 +261,15 @@ LABEL_2877:
 LABEL_28BD:
 	break
 	jl [HERO_X], 0x91, LABEL_28BD
-	video offset=CINEMATIC_426, x=[HERO_X], y=[HERO_Y], zoom=[0xc8]	;@enc=alt
+	video offset=CINEMATIC_426, x=[HERO_X], y=[HERO_Y], zoom=0xc8
 	play id=0x0052, freq=0x0A, vol=0x40, channel=0x02
 	break
 	video offset=CINEMATIC_426, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_426, x=[HERO_X], y=[HERO_Y], zoom=[0x10]	;@enc=alt
+	video offset=CINEMATIC_426, x=[HERO_X], y=[HERO_Y], zoom=0x10
 	setup channel=0x04, address=LABEL_28EF
 	break
-	video offset=CINEMATIC_427, x=[HERO_X], y=[HERO_Y], zoom=[0x50]	;@enc=alt
+	video offset=CINEMATIC_427, x=[HERO_X], y=[HERO_Y], zoom=0x50
 	play id=0x005A, freq=0x0C, vol=0x40, channel=0x02
 	killChannel
 

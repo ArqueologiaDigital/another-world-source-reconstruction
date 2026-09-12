@@ -102,7 +102,7 @@ LABEL_6223:
 	call CAVES_PROJECTILE_TICK_FROM_VAR5A_5B_5C
 
 LABEL_628C:
-	video offset=CINEMATIC_134, x=[0x07], y=[0x08], zoom=[0x96]	;@enc=alt
+	video offset=CINEMATIC_134, x=[0x07], y=[0x08], zoom=0x96
 	play id=0x005B, freq=0x14, vol=0x40, channel=0x02
 	play id=0x005B, freq=0x07, vol=0x40, channel=0x00
 	mov [0x2B], 0x0FA0

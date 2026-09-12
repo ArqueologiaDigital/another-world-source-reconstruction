@@ -101,7 +101,7 @@ LABEL_57BE:
 	call LABEL_5959
 
 LABEL_5827:
-	video offset=CINEMATIC_259, x=[BUDDY_X], y=[BUDDY_Y], zoom=[0x96]	;@enc=alt
+	video offset=CINEMATIC_259, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x96
 	play id=0x005B, freq=0x02, vol=0x40, channel=0x03
 	play id=0x005B, freq=0x14, vol=0x40, channel=0x02
 	play id=0x005B, freq=0x02, vol=0x40, channel=0x01
