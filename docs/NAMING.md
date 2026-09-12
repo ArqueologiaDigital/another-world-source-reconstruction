@@ -285,11 +285,24 @@ Readiness by kind:
   listening. `MUS_INTRO_THEME` 0x07, `MUS_END_CREDITS` 0x8A, and
   `MUS_LAKE_CUT_AMBIENT` 0x89 — a 26.5 s track loaded in LAKE behind a `jmp` and
   never played.
-- **Screens: ids solid, names blocked.** All 12 type-2 resources unpack to exactly
-  32,000 bytes, which is one 320×200 4bpp page, and each is loaded at exactly one
-  site in one stage. They are full-screen bitmaps, not the "POLY_ANIM" the
-  extractor calls them. Naming needs a bitmap renderer, which does not exist in
-  either repo — the cheapest high-value unblock in this document.
+- **Screens: unblocked as of 2026-09-12.** All 12 type-2 resources unpack to exactly
+  32,000 bytes, one 320×200 4bpp page, each loaded at exactly one site in one stage.
+  They are full-screen bitmaps, not the "POLY_ANIM" the extractor calls them.
+  `another-world-archaeology/tools/render_screen.py` renders them: Amiga-style
+  planar, four 8,000-byte bitplanes, palette decoded the same way the polygon
+  renderer does it.
+
+  Use `--contact`, which renders the screen under all 32 palettes in one sheet.
+  Which palette a screen displays under is a runtime fact — the bytecode usually
+  loads the bitmap under a black palette and fades up, so the palette live at the
+  `load` site is often all-black and renders nothing. The contact sheet makes the
+  choice a look rather than a guess. Sheets for all twelve are committed under
+  `docs/assets/screens/`.
+
+  One is already identifiable beyond doubt: **`0x12` is the Interplay logo**, the US
+  publisher's title card, loaded in CODE_WHEEL. It uses 15 palette indices, index 0
+  being 88 % background, so the lettering carries a gradient — which is why it looks
+  speckled under a palette that was not designed for it.
 - **Sounds: not ready.** 4 of 103 identified. `SND_UNUSED_<hex>` is the right
   holding form, mirroring the cinematic convention.
 
