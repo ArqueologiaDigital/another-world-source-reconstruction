@@ -1,5 +1,19 @@
-# Amiga 1991 (Chahi). archive.org dump (md5 of Disk1.adf:
-# abe1b4687448ba9754d3fb3e78929636).
+# Amiga 1991 (Chahi). Reference fixture is the *retro-presskit* dump
+# (AnotherWorld_Disk{A,B}_nologo_noprotec.adf, package md5
+# 5dca377e0e1506d5cf83317b1495f3e8), NOT the archive.org dump this comment
+# used to name.
+#
+# Established by A/B regeneration on 2026-09-12 (#0112): rebuilding the
+# reference tree from the archive.org dump changes resource 0x15 and makes
+# amiga CODE_WHEEL mismatch (28/29), while the press-kit reproduces 29/29 and
+# matches the bytecode.rom md5 recorded in AWVM_Tools' amiga.toml
+# (dbeeae497600f5ba5d51fdbf4e71ad1f). The registry, this source tree and
+# tools/regen_disasm.py all agree on the press-kit; only this comment did not.
+#
+# CODEWHEEL_CHECK below is therefore describing the press-kit build. Note that
+# chahi_amiga_1991/CODE_WHEEL.asm has no `.if CODEWHEEL_CHECK` arm yet, so the
+# flag does not gate anything for that stage; adding the archive.org dump as a
+# second verify target needs that arm first.
 
 BYTECODE_BRANCH=chahi_amiga_1991
 CODEWHEEL_CHECK=on
