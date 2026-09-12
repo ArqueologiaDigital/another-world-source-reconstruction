@@ -79,7 +79,18 @@ conditionals; reserve it for a deliberate suppression point, matching the
 
 The lint fails on each of these.
 
-- `LABEL_<hex>`, `JUNK__<hex>` — the emitter's placeholders.
+- `LABEL_<hex>`, `JUNK__<hex>` — the emitter's placeholders. **One carve-out:
+  a labelled byte that can never execute takes `LABEL_<hex>` and nothing else.**
+  `tools/find_dead_tail_bytes.py` reports 3,066 of them across four ports — tail
+  padding the original compiler emitted after a `ret` or a `jmp` to self, which
+  nothing references (#0126). They are not routines, so no role name can be true
+  of them, and a semantic name on one is the defect #0126 is about. Between an
+  invented role, a `_L<n>` emission counter and the address, the address is the
+  only form that states something true, and `tools/resync_address_labels.py`
+  keeps it honest. The lint counts these separately from placeholders on real
+  routines. Settled 2026-09-12, on the first three to come up: CODE_WHEEL's
+  `CW_COPY_HERO_VARS_TO_29_2A_2B_2C_L3`, `CW_CLEAR_VAR_22_L17` and `_L33`, each
+  a single `db 0x11` after a `ret`.
 - `RET_TARGET_<hex>`, `ADDR_AT_<hex>`, `KILL_CHAN_AT_<hex>`, or any name ending in
   a raw address. A name that contains the address tells the reader nothing the
   label line did not. Two such names were removed from LAKE in 2026-09:
