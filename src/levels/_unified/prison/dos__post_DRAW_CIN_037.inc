@@ -50,7 +50,7 @@ LABEL_7685:
 	sub [0x04], 0x0006
 	add [0x04], 0x0010
 	sub [0x06], 0x0003
-	call PRISON_ACCUMULATE_VAR_03_04_BY_01_02_L0
+	call PRISON_CAGE_SWING_TILT_OFFSET_DISPATCH
 	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b]
 	call LABEL_7473
 	break
@@ -58,7 +58,7 @@ LABEL_7685:
 	setup channel=0x12, address=DRAW_CIN_576_578_BLOCK
 	add [0x04], 0x0016
 	sub [0x06], 0x0003
-	call PRISON_ACCUMULATE_VAR_03_04_BY_01_02_L0
+	call PRISON_CAGE_SWING_TILT_OFFSET_DISPATCH
 	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b]
 	call LABEL_7473
 	deleteChannels first=0x21, last=0x24

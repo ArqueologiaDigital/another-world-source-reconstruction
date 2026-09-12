@@ -50,7 +50,7 @@ LABEL_8281:
 	mov [0xF8], [0x6B]
 	and [0xF8], 0x4800
 	jne [0xF8], 0x00, VAR66_RANGE_DISPATCH_BY_VAR01
-	setup channel=0x23, address=PRISON_INLINE_SET_VAR29_TO_6_L1
+	setup channel=0x23, address=PRISON_BUDDY_HACK_SECOND_BURST_DISPATCH
 	jmp VAR66_RANGE_DISPATCH_BY_VAR01
 
 LABEL_82CA:
@@ -95,7 +95,7 @@ LABEL_8328:
 	call PRISON_SCENE_INIT_DRAW_CIN_085_086_TO_PAGE_3
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	call PRISON_DRAW_CIN_092_L0
+	call PRISON_LIFT_LANDING_BACKGROUND_DRAW
 	selectVideoPage 0xFF
 	setup channel=0x00, address=LABEL_7FE0
 	setup channel=0x34, address=PRISON_HERO_GATE_X_91_B8_CLOCK_4000_INPUT_CHECK
@@ -122,7 +122,7 @@ LABEL_8373:
 	call PRISON_SCENE_INIT_DRAW_CIN_085_086_TO_PAGE_3
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	call PRISON_DRAW_CIN_092_L0
+	call PRISON_LIFT_LANDING_BACKGROUND_DRAW
 	selectVideoPage 0xFF
 	setup channel=0x00, address=LABEL_7FE0
 	setup channel=0x34, address=PRISON_HERO_GATE_X_91_B8_CLOCK_4000_INPUT_CHECK
@@ -252,7 +252,7 @@ LABEL_84EF:
 	call PRISON_SCENE_INIT_DRAW_CIN_085_086_TO_PAGE_3
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	call PRISON_DRAW_CIN_092_L0
+	call PRISON_LIFT_LANDING_BACKGROUND_DRAW
 	selectVideoPage 0xFF
 	setup channel=0x00, address=LABEL_7FE0
 	setup channel=0x34, address=PRISON_HERO_GATE_X_91_B8_CLOCK_4000_INPUT_CHECK
@@ -308,7 +308,7 @@ LABEL_8596:
 	call PRISON_SCENE_INIT_DRAW_CIN_085_086_TO_PAGE_3
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	call PRISON_DRAW_CIN_092_L0
+	call PRISON_LIFT_LANDING_BACKGROUND_DRAW
 	selectVideoPage 0xFF
 	setup channel=0x35, address=LABEL_01AF
 	setup channel=0x00, address=LABEL_7FE0

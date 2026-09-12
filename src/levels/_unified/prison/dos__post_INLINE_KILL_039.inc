@@ -202,7 +202,7 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_13_LOOP:
 	call PRISON_SCENE_INIT_DRAW_CIN_085_086_TO_PAGE_3
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	call PRISON_DRAW_CIN_092_L0
+	call PRISON_LIFT_LANDING_BACKGROUND_DRAW
 	selectVideoPage 0xFF
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
 	break

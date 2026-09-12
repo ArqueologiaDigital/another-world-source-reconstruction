@@ -188,7 +188,7 @@ LABEL_2C2E:
 	jl [0x84], [0xF8], SHARED_RET
 	add [0xF8], 0x0008
 	jg [0x84], [0xF8], SHARED_RET
-	call PRISON_COPY_VAR22_TO_VAR07_L10
+	call PRISON_HERO_KILLED
 	setup channel=0x2B, address=LABEL_2C67
 	ret
 

@@ -65,7 +65,7 @@ LABEL_9A28:
 	mov [0x27], [HERO_Y]
 	add [0x21], 0x001E
 	sub [0x27], 0x0016
-	call PRISON_DRAW_CIN505_AT_X21_Y27_L12
+	call PRISON_HERO_FIRE_SHOT_RIGHT
 	break
 	sub [HERO_X], 0x0002
 	video offset=CINEMATIC_209, x=[HERO_X], y=[HERO_Y]

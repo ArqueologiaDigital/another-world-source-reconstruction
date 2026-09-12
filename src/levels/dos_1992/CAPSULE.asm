@@ -1118,7 +1118,7 @@ ENTRY_POINT_OF_CAPSULE:
 	jle [0x00], 0x3C, LABEL_0041
 	mov [PAUSE_SLICES], 0x0004
 	setup channel=0x14, address=LABEL_BB8C
-	setup channel=0x15, address=KILL_CHAN_AT_59A3
+	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	setup channel=0x16, address=LABEL_B666
 
 LABEL_0041:
@@ -1278,7 +1278,7 @@ LABEL_01A6:
 	call LABEL_0165
 	jne [0x21], 0x00, LABEL_02C1
 	setup channel=0x23, address=LABEL_01D3
-	setup channel=0x25, address=KILL_CHAN_AT_59A3
+	setup channel=0x25, address=KILL_CHANNEL_LANDING
 	killChannel
 
 LABEL_01D3:
@@ -1572,7 +1572,7 @@ LABEL_0498:
 	play id=0x0075, freq=0x0C, vol=0x18, channel=0x02
 	play id=0x0075, freq=0x07, vol=0x18, channel=0x03
 	play id=0x005E, freq=0x0A, vol=0x20, channel=0x01
-	setup channel=0x34, address=KILL_CHAN_AT_59A3
+	setup channel=0x34, address=KILL_CHANNEL_LANDING
 	killChannel
 
 LABEL_04D8:
@@ -2775,7 +2775,7 @@ LABEL_1171:
 	break
 	video offset=CINEMATIC_121, x=0, y=105
 	break
-	setup channel=0x25, address=KILL_CHAN_AT_59A3
+	setup channel=0x25, address=KILL_CHANNEL_LANDING
 	video offset=CINEMATIC_121, x=25, y=112
 	break
 	mov [BUDDY_X], 0x0041
@@ -3009,7 +3009,7 @@ LABEL_1403:
 	break
 	call LABEL_13C4
 	je [HERO_ACTION], 0x00, LABEL_1403
-	setup channel=0x3B, address=KILL_CHAN_AT_59A3
+	setup channel=0x3B, address=KILL_CHANNEL_LANDING
 	setup channel=0x00, address=ENTRY_POINT_OF_CAPSULE
 	killChannel
 
@@ -3050,7 +3050,7 @@ LABEL_1464:
 	break
 	setPalette 0x0C
 
-KILL_CHAN_AT_59A3:
+KILL_CHANNEL_LANDING:
 	killChannel
 
 CAPSULE_KILLCHAN_OR_SET_ACTION_MASK_BIT_2:
@@ -3226,7 +3226,7 @@ LABEL_1639:
 
 LABEL_1652:
 	jge [0x04], 0x4000, LABEL_1660
-	setup channel=0x07, address=KILL_CHAN_AT_59A3
+	setup channel=0x07, address=KILL_CHANNEL_LANDING
 	jmp LABEL_1664
 
 LABEL_1660:
@@ -3355,7 +3355,7 @@ DELAY_LOOP_VAREC_AT_179F:
 	mov [0xEA], [HERO_X]
 	setup channel=0x05, address=LABEL_171F
 	break
-	setup channel=0x03, address=KILL_CHAN_AT_59A3
+	setup channel=0x03, address=KILL_CHANNEL_LANDING
 	break
 	mov [0x04], 0x0010
 	call LABEL_5F5A
@@ -3687,9 +3687,9 @@ LABEL_1B80:
 	fill page=0x00, color=0x00
 	call LABEL_3514
 	mov [HACK_VAR_67], 0x0091
-	setup channel=0x14, address=KILL_CHAN_AT_59A3
-	setup channel=0x15, address=KILL_CHAN_AT_59A3
-	setup channel=0x16, address=KILL_CHAN_AT_59A3
+	setup channel=0x14, address=KILL_CHANNEL_LANDING
+	setup channel=0x15, address=KILL_CHANNEL_LANDING
+	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	call LABEL_26AC
 	call LABEL_B2CA
 	setup channel=0x3F, address=LABEL_B53C
@@ -3832,7 +3832,7 @@ DELAY_LOOP_VARED_AT_1CFA:
 	break
 	djnz [0xED], DELAY_LOOP_VARED_AT_1CFA
 	setup channel=0x38, address=LABEL_23C9
-	setup channel=0x39, address=KILL_CHAN_AT_59A3
+	setup channel=0x39, address=KILL_CHANNEL_LANDING
 	mov [0xED], 0x0001
 
 DELAY_LOOP_VARED_AT_1D0B:
@@ -4470,7 +4470,7 @@ LABEL_233C:
 	break
 	sub [0xE6], 0x0004
 	jg [0xE6], 0xFFEC, LABEL_233C
-	setup channel=0x2C, address=KILL_CHAN_AT_59A3
+	setup channel=0x2C, address=KILL_CHANNEL_LANDING
 	killChannel
 
 LABEL_234D:
@@ -4794,7 +4794,7 @@ LABEL_2645:
 	call INIT_BIRD_AI_VARS
 	mov [PAUSE_SLICES], 0x0004
 	setup channel=0x14, address=LABEL_C29D
-	setup channel=0x15, address=KILL_CHAN_AT_59A3
+	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	setup channel=0x16, address=LABEL_B666
 	killChannel
 
@@ -4818,11 +4818,11 @@ LABEL_269D:
 
 LABEL_26AC:
 	setup channel=0x22, address=LABEL_4585
-	setup channel=0x23, address=KILL_CHAN_AT_59A3
+	setup channel=0x23, address=KILL_CHANNEL_LANDING
 	setup channel=0x24, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
-	setup channel=0x25, address=KILL_CHAN_AT_59A3
+	setup channel=0x25, address=KILL_CHANNEL_LANDING
 	setup channel=0x26, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
-	setup channel=0x27, address=KILL_CHAN_AT_59A3
+	setup channel=0x27, address=KILL_CHANNEL_LANDING
 	setup channel=0x28, address=LABEL_461B
 	ret
 
@@ -4990,9 +4990,9 @@ LABEL_2829:
 	killChannel
 
 LABEL_2863:
-	jl [HACK_VAR_67], 0x4A, CAPSULE_SET_VARB1_TO_0000_L0
-	jg [HACK_VAR_67], 0x4C, CAPSULE_SET_VARB1_TO_0000_L0
-	jne [0x1D], 0x29, CAPSULE_SET_VARB1_TO_0000_L0
+	jl [HACK_VAR_67], 0x4A, CAPSULE_ACTOR_FROM_LEFT_RESPAWN_TOKEN_SPEND
+	jg [HACK_VAR_67], 0x4C, CAPSULE_ACTOR_FROM_LEFT_RESPAWN_TOKEN_SPEND
+	jne [0x1D], 0x29, CAPSULE_ACTOR_FROM_LEFT_RESPAWN_TOKEN_SPEND
 	je [0xB0], 0x00, SET_VARB1_TO_0000
 	mov [0xB0], 0x0000
 	ret
@@ -5003,7 +5003,7 @@ SET_VARB1_TO_0000:
 	ret
 
 
-CAPSULE_SET_VARB1_TO_0000_L0:
+CAPSULE_ACTOR_FROM_LEFT_RESPAWN_TOKEN_SPEND:
 	jne [0x1D], 0x2A, CAPSULE_NOOP_RET
 	je [0xB2], 0x00, SET_VARB3_TO_0000
 	mov [0xB2], 0x0000
@@ -5245,7 +5245,7 @@ DELAY_LOOP_VARE6_AT_2B1F:
 	djnz [0xE6], DELAY_LOOP_VARE6_AT_2B1F
 	setup channel=0x38, address=LABEL_2D42
 	break
-	setup channel=0x39, address=KILL_CHAN_AT_59A3
+	setup channel=0x39, address=KILL_CHANNEL_LANDING
 	break
 	break
 	break
@@ -5853,11 +5853,11 @@ LABEL_30FF:
 	mov [0xBB], 0x0000
 	call INIT_VARS_A1_A4_A7
 	setup channel=0x22, address=LABEL_4585
-	setup channel=0x23, address=KILL_CHAN_AT_59A3
+	setup channel=0x23, address=KILL_CHANNEL_LANDING
 	setup channel=0x24, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
-	setup channel=0x25, address=KILL_CHAN_AT_59A3
+	setup channel=0x25, address=KILL_CHANNEL_LANDING
 	setup channel=0x26, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
-	setup channel=0x27, address=KILL_CHAN_AT_59A3
+	setup channel=0x27, address=KILL_CHANNEL_LANDING
 	setup channel=0x28, address=LABEL_461B
 	jle [0x00], 0x3C, LABEL_3163
 	je [0x00], 0x40, LABEL_31A2
@@ -6256,7 +6256,7 @@ LABEL_3585:
 	break
 	sub [0xE6], 0x0008
 	jl [0xE6], 0x0190, LABEL_3585
-	setup channel=0x39, address=KILL_CHAN_AT_59A3
+	setup channel=0x39, address=KILL_CHANNEL_LANDING
 	killChannel
 
 LABEL_3596:
@@ -6529,7 +6529,7 @@ LABEL_381E:
 	break
 	or [0xB9], 0x0010
 	jne [HACK_VAR_67], [0x6A], LABEL_3837
-	setup channel=0x04, address=KILL_CHAN_AT_59A3
+	setup channel=0x04, address=KILL_CHANNEL_LANDING
 	video offset=CINEMATIC_279, x=193, y=110
 	play id=0x0060, freq=0x14, vol=0x40, channel=0x02
 
@@ -6642,7 +6642,7 @@ LABEL_393D:
 	video offset=CINEMATIC_286, x=235, y=82
 	break
 	video offset=CINEMATIC_079, x=253, y=112
-	setup channel=0x04, address=KILL_CHAN_AT_59A3
+	setup channel=0x04, address=KILL_CHANNEL_LANDING
 	break
 	play id=0x0060, freq=0x14, vol=0x40, channel=0x02
 	video offset=CINEMATIC_278, x=283, y=98
@@ -6707,8 +6707,8 @@ LABEL_39EC:
 	and [0xF8], 0x0020
 	je [0xF8], 0x00, LABEL_3A88
 	or [0xB9], 0x0008
-	setup channel=0x04, address=KILL_CHAN_AT_59A3
-	setup channel=0x14, address=KILL_CHAN_AT_59A3
+	setup channel=0x04, address=KILL_CHANNEL_LANDING
+	setup channel=0x14, address=KILL_CHANNEL_LANDING
 	break
 	mov [PAUSE_SLICES], 0x0006
 	video offset=CINEMATIC_510, x=188, y=126
@@ -6754,7 +6754,7 @@ LABEL_3A87:
 	db 0x11
 
 LABEL_3A88:
-	setup channel=0x04, address=KILL_CHAN_AT_59A3
+	setup channel=0x04, address=KILL_CHANNEL_LANDING
 	break
 	video offset=CINEMATIC_510, x=188, y=126
 	break
@@ -7190,7 +7190,7 @@ LABEL_3E62:
 	break
 	killChannel
 	deleteChannels first=0x00, last=0x3B
-	setup channel=0x3F, address=KILL_CHAN_AT_59A3
+	setup channel=0x3F, address=KILL_CHANNEL_LANDING
 	setup channel=0x04, address=LABEL_1A72
 	killChannel
 
@@ -7232,7 +7232,7 @@ ANIM_CIN_037_LOOP_VAR29_AT_3F0D:
 	djnz [0x29], ANIM_CIN_037_LOOP_VAR29_AT_3F0D
 	video offset=CINEMATIC_037, x=[BUDDY_X], y=[BUDDY_Y]
 	deleteChannels first=0x00, last=0x3B
-	setup channel=0x3F, address=KILL_CHAN_AT_59A3
+	setup channel=0x3F, address=KILL_CHANNEL_LANDING
 	setup channel=0x04, address=LABEL_1A72
 	killChannel
 	video offset=CINEMATIC_039, x=[HERO_X], y=100
@@ -7256,7 +7256,7 @@ DELAY_LOOP_VAR03:
 	djnz [0x03], DELAY_LOOP_VAR03
 	break
 	deleteChannels first=0x00, last=0x3B
-	setup channel=0x3F, address=KILL_CHAN_AT_59A3
+	setup channel=0x3F, address=KILL_CHANNEL_LANDING
 	setup channel=0x04, address=LABEL_1A72
 	killChannel
 
@@ -9346,7 +9346,7 @@ STATE_VAR12_BIG_DISPATCH_CASE_50:
 
 
 LABEL_54C8:
-	setup channel=0x23, address=KILL_CHAN_AT_59A3
+	setup channel=0x23, address=KILL_CHANNEL_LANDING
 	mov [0x10], 0x0000
 	ret
 
@@ -9578,10 +9578,10 @@ CAPSULE_INCREMENT_VAR21_BY_F_L0:
 	mov [0x22], [HERO_X]
 	mov [0xF8], [0x04]
 	jge [0xF8], 0x4000, CAPSULE_INCREMENT_VAR21_BY_F_L1
-	jl [0xF8], 0x20, CAPSULE_INCREMENT_VAR21_BY_F_L2
+	jl [0xF8], 0x20, CAPSULE_HERO_FRONT_X_APPLY_FACING
 	sub [0xF8], 0x0020
 
-CAPSULE_INCREMENT_VAR21_BY_F_L2:
+CAPSULE_HERO_FRONT_X_APPLY_FACING:
 	jl [0xF8], 0x10, INLINE_SUB_VAR22_BY_23
 	add [0x22], 0x0023
 	ret
@@ -10367,7 +10367,7 @@ LABEL_5EB3:
 	play id=0x005B, freq=0x02, vol=0x40, channel=0x01
 	or [0xB9], 0x0001
 	setup channel=0x3C, address=LABEL_2FE9
-	setup channel=0x02, address=KILL_CHAN_AT_59A3
+	setup channel=0x02, address=KILL_CHANNEL_LANDING
 	ret
 
 
@@ -10375,7 +10375,7 @@ LABEL_5EE5:
 	jne [HACK_VAR_67], 0xED, LABEL_5EFC
 	mov [0x47], 0x0FA0
 	or [0xB1], 0x0004
-	setup channel=0x02, address=KILL_CHAN_AT_59A3
+	setup channel=0x02, address=KILL_CHANNEL_LANDING
 	setup channel=0x3C, address=CAPSULE_PALETTE_FLASH_INTO_PAGE_0_PRESENT
 	ret
 
@@ -10393,16 +10393,16 @@ LABEL_5EFC:
 LABEL_5F23:
 	jne [0xE6], 0x00, CAPSULE_NOOP_RET
 	jne [0xE6], 0x00, CAPSULE_NOOP_RET
-	setup channel=0x07, address=KILL_CHAN_AT_59A3
+	setup channel=0x07, address=KILL_CHANNEL_LANDING
 	setup channel=0x05, address=LABEL_B178
 	or [0xB2], 0x0002
 	ret
 
 
 LABEL_5F3C:
-	call CAPSULE_COPY_VAR40_TO_VAR27_L1
+	call CAPSULE_SHIELD_SLOT_ENERGY_LOAD_CASE_14
 	sub [0x11], 0x0004
-	call CAPSULE_COPY_VARAD_TO_VAR11_L1
+	call CAPSULE_SHIELD_SLOT_ENERGY_STORE_CASE_14
 	je [0x29], 0x01, PLAY_SFX_005C_CH00
 	play id=0x005C, freq=0x19, vol=0x40, channel=0x01
 	ret
@@ -10999,9 +10999,9 @@ LABEL_646C:
 
 LABEL_646D:
 	call CAPSULE_COPY_VAR40_TO_VAR27_L5
-	call CAPSULE_COPY_VAR40_TO_VAR27_L1
+	call CAPSULE_SHIELD_SLOT_ENERGY_LOAD_CASE_14
 	mov [0x11], 0xFFFF
-	call CAPSULE_COPY_VARAD_TO_VAR11_L1
+	call CAPSULE_SHIELD_SLOT_ENERGY_STORE_CASE_14
 	ret
 
 
@@ -11131,25 +11131,25 @@ COPY_VAR40_TO_VAR27:
 CAPSULE_COPY_VAR40_TO_VAR27_L0:
 	db 0x11
 
-CAPSULE_COPY_VAR40_TO_VAR27_L1:
-	jne [0x1D], 0x14, CAPSULE_COPY_VAR40_TO_VAR27_L2
+CAPSULE_SHIELD_SLOT_ENERGY_LOAD_CASE_14:
+	jne [0x1D], 0x14, CAPSULE_SHIELD_SLOT_ENERGY_LOAD_CASE_15
 	mov [0x11], [0xA1]
 	ret
 
 
-CAPSULE_COPY_VAR40_TO_VAR27_L2:
-	jne [0x1D], 0x15, CAPSULE_COPY_VAR40_TO_VAR27_L3
+CAPSULE_SHIELD_SLOT_ENERGY_LOAD_CASE_15:
+	jne [0x1D], 0x15, CAPSULE_SHIELD_SLOT_ENERGY_LOAD_CASE_16
 	mov [0x11], [0xA4]
 	ret
 
 
-CAPSULE_COPY_VAR40_TO_VAR27_L3:
-	jne [0x1D], 0x16, CAPSULE_COPY_VAR40_TO_VAR27_L4
+CAPSULE_SHIELD_SLOT_ENERGY_LOAD_CASE_16:
+	jne [0x1D], 0x16, CAPSULE_SHIELD_SLOT_ENERGY_LOAD_CASE_17
 	mov [0x11], [0xA7]
 	ret
 
 
-CAPSULE_COPY_VAR40_TO_VAR27_L4:
+CAPSULE_SHIELD_SLOT_ENERGY_LOAD_CASE_17:
 	jne [0x1D], 0x17, COPY_VARAD_TO_VAR11
 	mov [0x11], [0xAA]
 	jne [HACK_VAR_67], 0x46, CAPSULE_NOOP_RET
@@ -11171,25 +11171,25 @@ COPY_VARAD_TO_VAR11:
 CAPSULE_COPY_VARAD_TO_VAR11_L0:
 	db 0x11
 
-CAPSULE_COPY_VARAD_TO_VAR11_L1:
-	jne [0x1D], 0x14, CAPSULE_COPY_VARAD_TO_VAR11_L2
+CAPSULE_SHIELD_SLOT_ENERGY_STORE_CASE_14:
+	jne [0x1D], 0x14, CAPSULE_SHIELD_SLOT_ENERGY_STORE_CASE_15
 	mov [0xA1], [0x11]
 	ret
 
 
-CAPSULE_COPY_VARAD_TO_VAR11_L2:
-	jne [0x1D], 0x15, CAPSULE_COPY_VARAD_TO_VAR11_L3
+CAPSULE_SHIELD_SLOT_ENERGY_STORE_CASE_15:
+	jne [0x1D], 0x15, CAPSULE_SHIELD_SLOT_ENERGY_STORE_CASE_16
 	mov [0xA4], [0x11]
 	ret
 
 
-CAPSULE_COPY_VARAD_TO_VAR11_L3:
-	jne [0x1D], 0x16, CAPSULE_COPY_VARAD_TO_VAR11_L4
+CAPSULE_SHIELD_SLOT_ENERGY_STORE_CASE_16:
+	jne [0x1D], 0x16, CAPSULE_SHIELD_SLOT_ENERGY_STORE_CASE_17
 	mov [0xA7], [0x11]
 	ret
 
 
-CAPSULE_COPY_VARAD_TO_VAR11_L4:
+CAPSULE_SHIELD_SLOT_ENERGY_STORE_CASE_17:
 	jne [0x1D], 0x17, COPY_VAR11_TO_VARAD
 	mov [0xAA], [0x11]
 	ret
@@ -12207,7 +12207,7 @@ LABEL_706D:
 LABEL_708C:
 	call CAPSULE_INIT_VAR2B_2C_FROM_VAR01_VAR29_10_L1
 	sub [0x22], [HERO_Y]
-	call CAPSULE_DECREMENT_VARF8_BY_10_L0
+	call CAPSULE_HERO_LEDGE_DROP_TOLERANCE
 	jl [0x22], 0x10, CAPSULE_NOOP_RET
 	setup channel=0x14, address=LABEL_7187
 	mov [0x35], 0x0000
@@ -12548,7 +12548,7 @@ DECREMENT_VARF8_BY_10:
 	ret
 
 
-CAPSULE_DECREMENT_VARF8_BY_10_L0:
+CAPSULE_HERO_LEDGE_DROP_TOLERANCE:
 	je [HACK_VAR_67], 0x88, DECREMENT_VAR22_BY_10
 	je [HACK_VAR_67], 0x89, DECREMENT_VAR22_BY_10
 	ret
@@ -16363,7 +16363,7 @@ HERO_FLOOR_STEP_UP_ENTRY:
 LABEL_97D6:
 	video offset=CINEMATIC_089, x=[HERO_X], y=240
 	mov [HERO_Y], 0x012C
-	setup channel=0x17, address=KILL_CHAN_AT_59A3
+	setup channel=0x17, address=KILL_CHANNEL_LANDING
 	break
 	mov [0x0F], 0x0000
 	mov [0x32], 0x0001
@@ -16412,7 +16412,7 @@ LABEL_9856:
 LABEL_986E:
 	mov [0x32], 0x0001
 	video offset=CINEMATIC_091, x=[HERO_X], y=60
-	setup channel=0x17, address=KILL_CHAN_AT_59A3
+	setup channel=0x17, address=KILL_CHANNEL_LANDING
 	break
 	mov [0x0F], 0x0000
 	mov [0x32], 0x0001
@@ -16440,7 +16440,7 @@ LABEL_98B6:
 	video offset=CINEMATIC_089, x=[HERO_X], y=240
 	mov [HERO_Y], 0x012C
 	break
-	setup channel=0x17, address=KILL_CHAN_AT_59A3
+	setup channel=0x17, address=KILL_CHANNEL_LANDING
 	mov [0x32], 0x0001
 	break
 	mov [0x0F], 0x0000
@@ -17604,8 +17604,8 @@ LABEL_A3A3:
 	setPalette 0x01
 	call LABEL_9C16
 	call DELETE_CHANS_0_8_AND_RET
-	setup channel=0x1B, address=KILL_CHAN_AT_59A3
-	setup channel=0x19, address=KILL_CHAN_AT_59A3
+	setup channel=0x1B, address=KILL_CHANNEL_LANDING
+	setup channel=0x19, address=KILL_CHANNEL_LANDING
 	setup channel=0x37, address=LABEL_1F89
 	play id=0x0066, freq=0x07, vol=0x10, channel=0x03
 	jl [HERO_Y], 0x64, INLINE_SET_VAR02_TO_97
@@ -17704,10 +17704,10 @@ LABEL_A4F5:
 
 LABEL_A500:
 	setup channel=0x18, address=LABEL_5C58
-	setup channel=0x18, address=KILL_CHAN_AT_59A3
+	setup channel=0x18, address=KILL_CHANNEL_LANDING
 	setup channel=0x19, address=LABEL_200D
 	setup channel=0x1B, address=LABEL_67C2
-	setup channel=0x2F, address=KILL_CHAN_AT_59A3
+	setup channel=0x2F, address=KILL_CHANNEL_LANDING
 	setup channel=0x35, address=LABEL_2096
 	mov [HERO_X], 0x0046
 	mov [HERO_Y], 0x0095
@@ -17755,9 +17755,9 @@ LABEL_A57D:
 	call DRAW_FINAL_ESCAPE_LESTER_RUNNING_BG
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x35, address=HANG_DRAW_CIN_456
-	setup channel=0x2D, address=KILL_CHAN_AT_59A3
-	setup channel=0x1D, address=KILL_CHAN_AT_59A3
-	setup channel=0x0F, address=KILL_CHAN_AT_59A3
+	setup channel=0x2D, address=KILL_CHANNEL_LANDING
+	setup channel=0x1D, address=KILL_CHANNEL_LANDING
+	setup channel=0x0F, address=KILL_CHANNEL_LANDING
 	setup channel=0x36, address=LABEL_2C05
 	setup channel=0x02, address=INLINE_SET_VARE6_TO_4
 	setup channel=0x01, address=CAPSULE_RANDOM_OFFSET_VAR21_FOR_SCENE_4B
@@ -17887,9 +17887,9 @@ LABEL_A706:
 	call DRAW_FINAL_ESCAPE_LESTER_RUNNING_BG
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x35, address=HANG_DRAW_CIN_456
-	setup channel=0x2D, address=KILL_CHAN_AT_59A3
-	setup channel=0x1D, address=KILL_CHAN_AT_59A3
-	setup channel=0x0F, address=KILL_CHAN_AT_59A3
+	setup channel=0x2D, address=KILL_CHANNEL_LANDING
+	setup channel=0x1D, address=KILL_CHANNEL_LANDING
+	setup channel=0x0F, address=KILL_CHANNEL_LANDING
 	setup channel=0x36, address=LABEL_2C05
 	setup channel=0x02, address=INLINE_SET_VARE6_TO_4
 	setup channel=0x01, address=CAPSULE_RANDOM_OFFSET_VAR21_FOR_SCENE_4B
@@ -17912,8 +17912,8 @@ LABEL_A789:
 	setPalette 0x01
 	call LABEL_9E37
 	call DELETE_CHANS_0_8_AND_RET
-	setup channel=0x19, address=KILL_CHAN_AT_59A3
-	setup channel=0x1B, address=KILL_CHAN_AT_59A3
+	setup channel=0x19, address=KILL_CHANNEL_LANDING
+	setup channel=0x1B, address=KILL_CHANNEL_LANDING
 	setup channel=0x37, address=LABEL_1FC7
 	jg [HERO_Y], 0x96, LABEL_A7D3
 	jl [HERO_Y], 0x82, LABEL_A7D3
@@ -17924,7 +17924,7 @@ LABEL_A7D3:
 	and [0xF8], 0x0008
 	je [0xF8], 0x00, VAR66_MOD_32_DRAW_DISPATCH
 	jge [0x7B], 0x4000, VAR66_MOD_32_DRAW_DISPATCH
-	setup channel=0x23, address=KILL_CHAN_AT_59A3
+	setup channel=0x23, address=KILL_CHANNEL_LANDING
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_A7EE:
 	db 0x11
@@ -18199,7 +18199,7 @@ LABEL_AB16:
 	mov [0xF8], [0xB9]
 	and [0xF8], 0x0001
 	je [0xF8], 0x00, VAR66_MOD_32_DRAW_DISPATCH
-	setup channel=0x02, address=KILL_CHAN_AT_59A3
+	setup channel=0x02, address=KILL_CHANNEL_LANDING
 	setup channel=0x3C, address=CAPSULE_FRAME_PRESENT_FROM_PAGE_0_LOOP
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 	killChannel
@@ -18274,9 +18274,9 @@ LABEL_AC44:
 	call LABEL_9CAF
 	call LABEL_4471
 	call DELETE_CHANS_0_8_AND_RET
-	setup channel=0x23, address=KILL_CHAN_AT_59A3
-	setup channel=0x25, address=KILL_CHAN_AT_59A3
-	setup channel=0x27, address=KILL_CHAN_AT_59A3
+	setup channel=0x23, address=KILL_CHANNEL_LANDING
+	setup channel=0x25, address=KILL_CHANNEL_LANDING
+	setup channel=0x27, address=KILL_CHANNEL_LANDING
 	setup channel=0x04, address=LABEL_0FAA
 	jl [HERO_X], 0x00, LABEL_ACED
 	setup channel=0x37, address=LABEL_1F0E
@@ -18294,9 +18294,9 @@ LABEL_AC44:
 	call LABEL_369F
 	mov [BUDDY_X], 0x0064
 	call LABEL_8C16
-	setup channel=0x23, address=KILL_CHAN_AT_59A3
-	setup channel=0x25, address=KILL_CHAN_AT_59A3
-	setup channel=0x27, address=KILL_CHAN_AT_59A3
+	setup channel=0x23, address=KILL_CHANNEL_LANDING
+	setup channel=0x25, address=KILL_CHANNEL_LANDING
+	setup channel=0x27, address=KILL_CHANNEL_LANDING
 	mov [0x4A], 0x03E8
 	jmp LABEL_ACD2
 
@@ -18309,7 +18309,7 @@ LABEL_ACB0:
 	call LABEL_36D7
 	mov [BUDDY_X], 0x000F
 	call CAPSULE_BUDDY_PER_FRAME_TICK
-	setup channel=0x27, address=KILL_CHAN_AT_59A3
+	setup channel=0x27, address=KILL_CHANNEL_LANDING
 
 LABEL_ACD2:
 	mov [0xF8], [0xB4]
@@ -18331,7 +18331,7 @@ LABEL_ACED:
 	call LABEL_327A
 	call LABEL_369F
 	call CAPSULE_HERO_PER_FRAME_TICK
-	setup channel=0x25, address=KILL_CHAN_AT_59A3
+	setup channel=0x25, address=KILL_CHANNEL_LANDING
 
 LABEL_AD0F:
 	mov [0xF8], [0xBB]
@@ -18396,9 +18396,9 @@ LABEL_ADB5:
 	setPalette 0x01
 	call LABEL_9CD7
 	call DELETE_CHANS_0_8_AND_RET
-	setup channel=0x1B, address=KILL_CHAN_AT_59A3
-	setup channel=0x25, address=KILL_CHAN_AT_59A3
-	setup channel=0x27, address=KILL_CHAN_AT_59A3
+	setup channel=0x1B, address=KILL_CHANNEL_LANDING
+	setup channel=0x25, address=KILL_CHANNEL_LANDING
+	setup channel=0x27, address=KILL_CHANNEL_LANDING
 	setup channel=0x01, address=LABEL_07A6
 	setup channel=0x34, address=LABEL_1F1D
 	mov [0xF8], [0xB9]
@@ -18791,7 +18791,7 @@ INIT_VARS_A1_A4_A7:
 
 LABEL_B25D:
 	deleteChannels first=0x34, last=0x37
-	setup channel=0x3B, address=KILL_CHAN_AT_59A3
+	setup channel=0x3B, address=KILL_CHANNEL_LANDING
 	ret
 
 
@@ -18843,9 +18843,9 @@ LABEL_B2CA:
 	setup channel=0x10, address=LABEL_441E
 	setup channel=0x18, address=LABEL_67C2
 	setup channel=0x2F, address=LABEL_5C58
-	setup channel=0x2E, address=KILL_CHAN_AT_59A3
+	setup channel=0x2E, address=KILL_CHANNEL_LANDING
 	setup channel=0x2E, address=LABEL_28F7
-	setup channel=0x3B, address=KILL_CHAN_AT_59A3
+	setup channel=0x3B, address=KILL_CHANNEL_LANDING
 	setup channel=0x3C, address=LABEL_2E43
 	deleteChannels first=0x30, last=0x33
 	mov [0x32], 0x0000
@@ -19234,8 +19234,8 @@ LABEL_B6A2:
 
 LABEL_B6AF:
 	jge [HERO_ACTION_POS_MASK], 0x80, LABEL_B742
-	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, CAPSULE_INLINE_SET_VAR63_TO_1_L0
-	je [0x63], 0x01, CAPSULE_INLINE_SET_VAR63_TO_1_L0
+	jne [HERO_POS_LEFT_RIGHT], 0xFFFF, CAPSULE_HERO_INPUT_WALK_RIGHT_DISPATCH
+	je [0x63], 0x01, CAPSULE_HERO_INPUT_WALK_RIGHT_DISPATCH
 	setup channel=0x14, address=LABEL_BB8C
 	je [0x63], 0x05, INLINE_SET_VAR63_TO_1
 	setup channel=0x14, address=HERO_WALK_LEFT_ENTRY
@@ -19243,9 +19243,9 @@ LABEL_B6AF:
 INLINE_SET_VAR63_TO_1:
 	mov [0x63], 0x0001
 
-CAPSULE_INLINE_SET_VAR63_TO_1_L0:
-	jne [HERO_POS_LEFT_RIGHT], 0x01, CAPSULE_INLINE_SET_VAR63_TO_1_L1
-	je [0x63], 0x02, CAPSULE_INLINE_SET_VAR63_TO_1_L1
+CAPSULE_HERO_INPUT_WALK_RIGHT_DISPATCH:
+	jne [HERO_POS_LEFT_RIGHT], 0x01, CAPSULE_HERO_INPUT_UP_DOWN_FACING_RIGHT
+	je [0x63], 0x02, CAPSULE_HERO_INPUT_UP_DOWN_FACING_RIGHT
 	setup channel=0x14, address=CAPSULE_INLINE_SET_VAR63_TO_1_L2
 	je [0x63], 0x06, INLINE_SET_VAR63_TO_2
 	setup channel=0x14, address=HERO_WALK_RIGHT_ENTRY
@@ -19253,7 +19253,7 @@ CAPSULE_INLINE_SET_VAR63_TO_1_L0:
 INLINE_SET_VAR63_TO_2:
 	mov [0x63], 0x0002
 
-CAPSULE_INLINE_SET_VAR63_TO_1_L1:
+CAPSULE_HERO_INPUT_UP_DOWN_FACING_RIGHT:
 	je [0x63], 0x05, LABEL_B720
 	je [0x63], 0x01, LABEL_B720
 	jne [HERO_ACTION_POS_MASK], 0x04, LABEL_B70F
@@ -20258,14 +20258,14 @@ LABEL_C1D6:
 	sub [HERO_X], 0x0005
 	sub [HERO_X], 0x0007
 	call SET_VAR04_TO_0024
-	setup channel=0x15, address=KILL_CHAN_AT_59A3
+	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	mov [0x63], 0x0064
 	break
 
 LABEL_C1F0:
 	je [HERO_POS_MASK], 0x09, LABEL_C364
 	call SET_VAR04_TO_0024
-	setup channel=0x15, address=KILL_CHAN_AT_59A3
+	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	video type=0, offset=COMMON_VIDEO_053, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x000D
 	sub [HERO_Y], 0x0002
@@ -20371,14 +20371,14 @@ LABEL_C34A:
 	add [HERO_X], 0x0005
 	add [HERO_X], 0x0007
 	call SET_VAR04_TO_0034
-	setup channel=0x15, address=KILL_CHAN_AT_59A3
+	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	mov [0x63], 0x0064
 	break
 
 LABEL_C364:
 	je [HERO_POS_MASK], 0x0A, LABEL_C1F0
 	call SET_VAR04_TO_0034
-	setup channel=0x15, address=KILL_CHAN_AT_59A3
+	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	video type=0, offset=COMMON_VIDEO_008, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x000D
 	sub [HERO_Y], 0x0002

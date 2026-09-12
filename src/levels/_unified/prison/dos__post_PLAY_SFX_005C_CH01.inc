@@ -1,4 +1,4 @@
-PRISON_COPY_VAR22_TO_VAR07_L10:
+PRISON_HERO_KILLED:
 	or [0x04], 0x4000
 	play id=0x005D, freq=0x14, vol=0x40, channel=0x00
 	deleteChannels first=0x14, last=0x16
@@ -21,7 +21,7 @@ LABEL_3A9E:
 	ret
 
 
-PRISON_COPY_VAR22_TO_VAR07_L11:
+PRISON_SHOT_HIT_TARGET:
 	call LABEL_3B2C
 	mov [0xF8], [0x2B]
 	and [0xF8], 0x0800

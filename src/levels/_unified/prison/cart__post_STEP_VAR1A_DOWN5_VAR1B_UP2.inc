@@ -362,7 +362,7 @@ LABEL_7788:
 	add [0x04], 0x0010
 	sub [0x06], 0x0003
 	song id=0x0BBE, delay=0x0000, pos=0x00
-	call PRISON_ACCUMULATE_VAR_03_04_BY_01_02_L0
+	call PRISON_CAGE_SWING_TILT_OFFSET_DISPATCH
 	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b]
 	call LABEL_7576
 	break
@@ -370,7 +370,7 @@ LABEL_7788:
 	setup channel=0x12, address=DRAW_CIN_576_578_BLOCK
 	add [0x04], 0x0016
 	sub [0x06], 0x0003
-	call PRISON_ACCUMULATE_VAR_03_04_BY_01_02_L0
+	call PRISON_CAGE_SWING_TILT_OFFSET_DISPATCH
 	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b]
 	call LABEL_7576
 	deleteChannels first=0x21, last=0x24
@@ -558,7 +558,7 @@ LABEL_79BD:
 	jmp PRISON_CAGE_SWING_RIGHT_PRELUDE
 	killChannel
 	call LABEL_7222
-	call PRISON_ACCUMULATE_VAR_03_04_BY_01_02_L0
+	call PRISON_CAGE_SWING_TILT_OFFSET_DISPATCH
 	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b]
 	call LABEL_74A2
 	ret
