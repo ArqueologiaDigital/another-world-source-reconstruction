@@ -57,6 +57,7 @@ stages.
 |---|---|---|
 | `_LOOP` | 131 | repeats until a condition or `djnz` |
 | `_CASE_<n>` | 123 | one arm of a dispatch — see the radix rule below |
+| `_UPTO_<n>` `_FROM_<n>` `_BELOW_<n>` `_ABOVE_<n>` | 0 | one arm of a range ladder: the band it handles, from its own guard — see below |
 | `_HOLD` | 8 | spins on the same frame for a counted delay |
 | `_DELAY` | 13 | counted wait with no drawing |
 | `_DONE` | 16 | the join point after a conditional sequence |
@@ -122,6 +123,35 @@ ambiguous between them:
 operand.** The ordinal form is retired. And `_CASE_<n>` is only legitimate when
 the dispatcher has a name and the case order has been **traced**, not assumed —
 see #0104.
+
+### Range ladders: the arm's own guard names its band
+
+A fold chain whose arms test thresholds rather than values is a piecewise
+function written as code, and `_CASE_<n>` is wrong for it: the immediate is a
+bound, not the value matched. The arm **handles the complement of its guard**,
+and the suffix says which side:
+
+| first line of the arm | the arm runs when | suffix |
+|---|---|---|
+| `jne [v], N, next` | `v == N` | `_CASE_N` |
+| `jg [v], N, next` | `v <= N` | `_UPTO_N` |
+| `jl [v], N, next` | `v >= N` | `_FROM_N` |
+| `jge [v], N, next` | `v < N` | `_BELOW_N` |
+| `jle [v], N, next` | `v > N` | `_ABOVE_N` |
+| `je [v], N, next` | `v != N` | none of these — name the arm by its role |
+
+`N` is the immediate in hex at the operand's width, the same radix rule as
+`_CASE_`. Decided 2026-09-12 (#0132) after measuring the 26 chains this affects:
+12 of them mix equality and relational guards from arm to arm, so no single
+chain-level suffix can be right, and the arm has to be named from what it
+itself tests. `tools/apply_routine_renames.py` rejects a band or case tail
+that disagrees with the arm's first line, and `tools/fold_chain_cases.py
+--names` writes these tails given a name per chain.
+
+Two shapes the fold tool also leaves as `_L<n>` are not ladders at all and take
+no tail: a chain of **one** arm is the routine's body past its first
+conditional, and a **mixed** chain is a routine cut at every conditional. Name
+those as routines.
 
 ### Prefer one spelling
 
