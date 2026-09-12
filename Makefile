@@ -161,9 +161,22 @@ verify-stages:
 lint-raw:
 	@cd $(ARCHAEOLOGY) && python3 tools/audit_raw_annotations.py --strict
 
+# Naming standard (docs/NAMING.md + archaeology tools/lint_naming.py). Reports
+# hard violations and the advisory backlog metrics; see that tool's docstring for
+# why the strict-semantic share is not yet a gate. Non-blocking on purpose: most
+# stages are unfinished by design, so `lint` stays usable while `lint-naming-strict`
+# is what a finished stage must pass.
+.PHONY: lint-naming
+lint-naming:
+	@cd $(ARCHAEOLOGY) && python3 tools/lint_naming.py
+
+.PHONY: lint-naming-strict
+lint-naming-strict:
+	@cd $(ARCHAEOLOGY) && python3 tools/lint_naming.py --strict --stage $(STAGE)
+
 # Aggregate lint target. Add new lint rules here.
 .PHONY: lint
-lint: lint-raw
+lint: lint-raw lint-naming
 
 # Phase 3b: source files with `.if BRANCH == "..."` conditional directives.
 # `make preprocess SRC=path/to/foo.asm.in TARGET=cartridge_1992`
