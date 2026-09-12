@@ -86,7 +86,11 @@ INTRO_RESET_PAGES_AND_PAL_0:
 	fill page=0x03, color=0x00
 	setPalette 0x00, _trailing=0x00
 	blitFramebuffer 0xFF
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	load id=0x3E82
+.elif BRANCH == "dos_1992"
+	bankSwitch 2;  Arrival at the Lake & Beast Chase
+.endif
 
 PLAY_FX_2C_AND_DRAW_CIN_000:
 	break
@@ -107,7 +111,11 @@ WAIT_90_BEFORE_PLAY_FX_2C:
 	djnz [0x02], WAIT_90_BEFORE_PLAY_FX_2C
 	jmp PLAY_FX_2C_AND_DRAW_CIN_000
 LABEL_0A06:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_INTRO_LIGHTNING_FLICKER_LONG:
 	video offset=CINEMATIC_340, x=160, y=100
@@ -135,7 +143,11 @@ DELAY_36_BEFORE_DECOR_340:
 	djnz [0x04], DELAY_36_BEFORE_DECOR_340
 	jmp DRAW_INTRO_LIGHTNING_FLICKER_LONG
 LABEL_0A45:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_INTRO_DECOR_337:
 	break
@@ -151,7 +163,11 @@ DELAY_60_BEFORE_DECOR_337:
 	djnz [0x06], DELAY_60_BEFORE_DECOR_337
 	jmp DRAW_INTRO_DECOR_337
 LABEL_0A61:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_INTRO_LIGHTNING_FLICKER_SHORT:
 	break
@@ -170,7 +186,11 @@ DELAY_50_BEFORE_DECOR_333:
 	djnz [0x08], DELAY_50_BEFORE_DECOR_333
 	jmp DRAW_INTRO_LIGHTNING_FLICKER_SHORT
 LABEL_0A88:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_INTRO_DECOR_331:
 	break
@@ -214,7 +234,11 @@ DELAY_30_BEFORE_DECOR_331:
 	djnz [0x0A], DELAY_30_BEFORE_DECOR_331
 	jmp DRAW_INTRO_DECOR_331
 LABEL_0AEA:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_INTRO_DECOR_329:
 	break
@@ -277,5 +301,9 @@ DELAY_10_BEFORE_DECOR_329:
 	djnz [0x0C], DELAY_10_BEFORE_DECOR_329
 	jmp DRAW_INTRO_DECOR_329
 LABEL_0B7F:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 

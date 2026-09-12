@@ -98,14 +98,22 @@ SELECT_PAGE0_AND_DISPATCH_BLIT:
 	break
 	jmp SELECT_PAGE0_AND_DISPATCH_BLIT
 LABEL_1C8E:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 SELECT_PAGE_FF_LOOP:
 	selectVideoPage 0xFF
 	break
 	jmp SELECT_PAGE_FF_LOOP
 LABEL_1C95:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 CH_04_INIT_VAR_05:
 	mov [0x05], 0x0009
@@ -124,7 +132,11 @@ RISE_CIN_447_BY_2_FOR_7X:
 	djnz [0x05], RISE_CIN_447_BY_2_FOR_7X
 	jmp CH_04_INIT_VAR_05
 LABEL_1CBE:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 CH_05_INIT_VAR_07_08:
 	mov [0x07], 0x0014
@@ -137,7 +149,11 @@ RISE_CIN_130_BY_1_FOR_20X:
 	djnz [0x07], RISE_CIN_130_BY_1_FOR_20X
 	jmp CH_05_INIT_VAR_07_08
 LABEL_1CD8:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_CIN_450_451_SEQ:
 	video offset=CINEMATIC_450, x=160, y=100
@@ -148,7 +164,11 @@ DRAW_CIN_450_451_SEQ:
 	break
 	jmp DRAW_CIN_450_451_SEQ
 LABEL_1CEB:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_HOLO_CONSOLE_DISPLAY_PANEL:
 	video offset=CINEMATIC_442, x=221, y=123
@@ -190,7 +210,11 @@ DELAY_10F_BEFORE_RESTART_443:
 	djnz [0x09], DELAY_10F_BEFORE_RESTART_443
 	jmp DRAW_HOLO_CONSOLE_DISPLAY_PANEL
 LABEL_1D57:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_PARTICLE_LAB_BG_COMPOSITE:
 	video offset=CINEMATIC_172, x=156, y=94
@@ -225,7 +249,11 @@ DRAW_CIN_112_AT_143_94_LOOP:
 	break
 	jmp DRAW_CIN_112_AT_143_94_LOOP
 LABEL_1DB2:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 CH_02_INIT_VARS_01_02_03:
 	mov [0x01], 0x0008

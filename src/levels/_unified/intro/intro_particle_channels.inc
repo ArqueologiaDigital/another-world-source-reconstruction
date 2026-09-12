@@ -133,14 +133,22 @@ PARTICLE_PHASE_350_FRAME_TIMER:
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
 	jmp SETUP_PAL19_AND_PAGE_FLIP
 LABEL_06D7:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 FILL_FF_PAGE_LOOP:
 	fill page=0xFF, color=0x02
 	break
 	jmp FILL_FF_PAGE_LOOP
 LABEL_06DF:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 SETUP_PAL19_AND_PAGE_FLIP:
 	selectVideoPage 0x00
@@ -199,7 +207,11 @@ SETUP_PAL19_AND_PAGE_FLIP:
 	break
 	jmp PHASE_PAGE3_TO_0_PAL_16
 LABEL_0775:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 TRANSITION_TO_BLITTER_LOOP:
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
@@ -388,6 +400,10 @@ WAIT_30_THEN_SETUP_CH12:
 WAIT_20_THEN_LOAD_3E82:
 	break
 	djnz [0x01], WAIT_20_THEN_LOAD_3E82
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	load id=0x3E82
+.elif BRANCH == "dos_1992"
+	bankSwitch 2;  Arrival at the Lake & Beast Chase
+.endif
 	killChannel
 

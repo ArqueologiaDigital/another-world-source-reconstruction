@@ -39,7 +39,11 @@ DELAY_5_BEFORE_CIN_325:
 	video offset=CINEMATIC_328, x=134, y=169
 	jmp DRAW_INTRO_DECOR_318
 LABEL_0BDE:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_INTRO_LIGHTNING_BOLT_STRIKE:
 	break
@@ -91,7 +95,11 @@ DELAY_22_BEFORE_DECOR_305:
 	djnz [0x0F], DELAY_22_BEFORE_DECOR_305
 	jmp DRAW_INTRO_LIGHTNING_FLICKER_RIGHT
 LABEL_0C51:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_INTRO_LIGHTNING_FLICKER_CENTER:
 	break
@@ -116,7 +124,11 @@ DELAY_25_BEFORE_DECOR_301:
 	djnz [0x10], DELAY_25_BEFORE_DECOR_301
 	jmp DRAW_INTRO_LIGHTNING_FLICKER_CENTER
 LABEL_0C87:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 SET_PALETTE_18:
 	setPalette 0x18
@@ -127,7 +139,11 @@ SET_PALETTE_18:
 	break
 	jmp SET_PALETTE_18
 LABEL_0C95:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 INTRO_PALETTE_FLICKER_LOOP:
 	setPalette 0x17
@@ -151,7 +167,11 @@ DELAY_30_THEN_SET_PAL_18:
 	break
 	jmp INTRO_PALETTE_FLICKER_LOOP
 LABEL_0CBC:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 PHASE_PAGE3_DRAW_CIN_172_175:
 	break
@@ -240,5 +260,9 @@ DELAY_18_THEN_PAL_15_CIN_267:
 	break
 	jmp TRANSITION_TO_BLITTER_LOOP
 LABEL_0DD6:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 

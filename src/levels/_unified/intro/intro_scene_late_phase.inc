@@ -107,7 +107,11 @@ DRAW_CIN_130_AT_VAR67_INNER:
 	djnz [0x08], DRAW_CIN_130_NESTED_OUTER
 	jmp CH_05_INIT_VARS_06_07_08
 LABEL_21B9:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 INTRO_DRAW_CIN_528_AT_96_131:
 	break
@@ -129,7 +133,11 @@ LESTER_WALKING_AWAY_FROM_CAMERA_ANIMATION:
 	djnz [0x05], LESTER_WALKING_AWAY_FROM_CAMERA_ANIMATION
 	jmp INTRO_DRAW_CIN_528_AT_96_131
 LABEL_21E0:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_CIN_126_127_AT_VAR01_02:
 	video offset=CINEMATIC_126, x=160, y=[0x01]
@@ -137,7 +145,11 @@ DRAW_CIN_126_127_AT_VAR01_02:
 	break
 	jmp DRAW_CIN_126_127_AT_VAR01_02
 LABEL_21EF:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_CIN_128_521_ZOOM_VAR04:
 	video offset=CINEMATIC_128, x=160, y=111, zoom=[0x04]
@@ -174,7 +186,11 @@ DRAW_CIN_128_521_ZOOM_VAR04:
 	break
 	jmp DRAW_CIN_128_521_ZOOM_VAR04
 LABEL_2263:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 LESTER_WALKING_TOWARDS_CAMERA_ANIMATION:
 	video offset=CINEMATIC_468, x=160, y=111, zoom=[0x04]
@@ -213,5 +229,9 @@ LESTER_WALKING_TOWARDS_CAMERA_ANIMATION:
 	break
 	jmp LESTER_WALKING_TOWARDS_CAMERA_ANIMATION
 LABEL_22E3:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 

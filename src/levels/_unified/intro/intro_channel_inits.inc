@@ -54,7 +54,11 @@ CH_0A_VAR_02_WAIT_LOOP:
 	video offset=CINEMATIC_052, x=160, y=100
 	jmp CH_0A_INIT_VAR_02
 LABEL_0448:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 CH_0B_INIT_VAR_03:
 	break
@@ -84,7 +88,11 @@ CH_0B_VAR_03_WAIT_LOOP:
 	play id=0x0008, freq=0x0C, vol=0x3F, channel=0x03
 	jmp CH_0B_INIT_VAR_03
 LABEL_048E:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 CH_0C_INIT_VAR_04:
 	break
@@ -111,7 +119,11 @@ CH_0C_VAR_04_WAIT_LOOP:
 	play id=0x0008, freq=0x01, vol=0x3F, channel=0x02
 	jmp CH_0C_INIT_VAR_04
 LABEL_04C9:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 CH_0D_INIT_VAR_05:
 	break
@@ -153,7 +165,11 @@ CH_0D_VAR_05_WAIT_70:
 	djnz [0x05], CH_0D_VAR_05_WAIT_70
 	jmp CH_0D_INIT_VAR_05
 LABEL_0526:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 CH_0E_INIT_VAR_06:
 	break
@@ -221,7 +237,11 @@ CH_10_DRAW_CIN_353_PARTICLE:
 	video offset=CINEMATIC_357, x=[0x07], y=[0x09]
 	jmp CH_10_DRAW_CIN_353_PARTICLE
 LABEL_05A7:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 CH_11_INIT_PARTICLE_POS_2:
 	break
@@ -238,7 +258,11 @@ CH_11_DRAW_PARTICLES_LOOP:
 	djnz [0x0B], CH_11_DRAW_PARTICLES_LOOP
 	jmp CH_11_INIT_PARTICLE_POS_2
 LABEL_05D1:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 CH_12_INIT_PARTICLE_POS_3:
 	break
@@ -255,5 +279,9 @@ CH_12_DRAW_PARTICLES_LOOP:
 	djnz [0x0D], CH_12_DRAW_PARTICLES_LOOP
 	jmp CH_12_INIT_PARTICLE_POS_3
 LABEL_05FB:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 

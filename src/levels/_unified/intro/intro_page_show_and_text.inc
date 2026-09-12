@@ -21,14 +21,22 @@ SHOW_PAGE_0_LOOP_INTRO:
 	break
 	jmp SHOW_PAGE_0_LOOP_INTRO
 LABEL_158C:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 SHOW_PAGE_FF_LOOP_INTRO:
 	selectVideoPage 0xFF
 	break
 	jmp SHOW_PAGE_FF_LOOP_INTRO
 LABEL_1593:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 INIT_VAR_03_AND_LOOP:
 	mov [0x03], 0x000A
@@ -44,7 +52,11 @@ INTRO_TEXT_39_REST_8X:
 	djnz [0x03], INTRO_TEXT_39_REST_8X
 	jmp INIT_VAR_03_AND_LOOP
 LABEL_15AF:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DISPLAY_TEXT_21:
 	break
@@ -287,7 +299,11 @@ DRAW_CIN_382_PUFFS_1X:
 	djnz [0x02], DRAW_CIN_382_PUFFS_1X
 	jmp CIN_382_PUFFS_PHASE_INIT
 LABEL_185D:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_CIN_426_427_TWICE:
 	video offset=CINEMATIC_426, x=58, y=100
@@ -301,7 +317,11 @@ DRAW_CIN_426_427_TWICE:
 	break
 	jmp DRAW_CIN_426_427_TWICE
 LABEL_187F:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 FILL_FF_8_AND_DRAW_CIN_517_518:
 	fill page=0xFF, color=0x08

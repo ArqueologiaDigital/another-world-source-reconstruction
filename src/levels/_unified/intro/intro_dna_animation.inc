@@ -104,14 +104,22 @@ DRAW_DNA_RUNG_ROTATION_LOOP:
 	break
 	jmp DRAW_DNA_RUNG_ROTATION_LOOP
 LABEL_02AF:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DNA_VAR_05_DRIFT_LOOP:
 	add [0x05], 0x000A
 	break
 	jmp DNA_VAR_05_DRIFT_LOOP
 LABEL_02B8:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_DNA_ANIMATION_LOOP:
 	break
@@ -150,7 +158,11 @@ DRAW_DNA_ANIMATION_LOOP:
 	video offset=CINEMATIC_DNA_16, x=[0x04], y=[0x05], zoom=[0x06]
 	jmp DRAW_DNA_ANIMATION_LOOP
 LABEL_0333:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_CINEMATICS_166_TO_171:
 	video offset=CINEMATIC_166, x=160, y=100
@@ -192,7 +204,11 @@ DRAW_CIN_170_171_AT_VAR10_VAR11:
 	break
 	jmp DRAW_CIN_170_171_AT_VAR10_VAR11
 LABEL_0390:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_CIN_453_454_SEQ:
 	video offset=CINEMATIC_453, x=160, y=100

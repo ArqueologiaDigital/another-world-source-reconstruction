@@ -215,12 +215,22 @@ DRAW_CIN_505_LOOP_VAR_02:
 	video offset=CINEMATIC_508, x=153, y=[0x02]
 	break
 	jmp DRAW_CIN_505_LOOP_VAR_02
+.if BRANCH in ("cartridge_1992", "gba_2004")
 LABEL_1BEE:
+.endif
 	killChannel
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	db 0x06, 0x11
+.elif BRANCH == "dos_1992"
+	break
+	killChannel
+.endif
 DRAW_CIN_182_AT_187_101_LOOP:
 	break
 	video offset=CINEMATIC_182, x=187, y=101
 	jmp DRAW_CIN_182_AT_187_101_LOOP
+.if BRANCH == "dos_1992"
+LABEL_1BE1:
+.endif
 	db 0x11
 

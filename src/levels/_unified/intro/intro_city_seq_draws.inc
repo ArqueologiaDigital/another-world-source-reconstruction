@@ -3,14 +3,22 @@ DRAW_CIN_190_LOOP:
 	break
 	jmp DRAW_CIN_190_LOOP
 LABEL_119E:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_CIN_431_LOOP:
 	video offset=CINEMATIC_431, x=[0x03], y=[0x04]
 	break
 	jmp DRAW_CIN_431_LOOP
 LABEL_11A8:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_CITY_SEQ_432_433:
 	video offset=CINEMATIC_432, x=160, y=100
@@ -21,7 +29,11 @@ DRAW_CITY_SEQ_432_433:
 	break
 	jmp DRAW_CITY_SEQ_432_433
 LABEL_11BB:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_CITY_SEQ_439_440:
 	video offset=CINEMATIC_439, x=160, y=100
@@ -32,7 +44,11 @@ DRAW_CITY_SEQ_439_440:
 	break
 	jmp DRAW_CITY_SEQ_439_440
 LABEL_11CE:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 DRAW_CITY_SEQ_435_436:
 	video offset=CINEMATIC_435, x=160, y=100
@@ -45,7 +61,11 @@ DRAW_CITY_SEQ_435_436:
 	break
 	jmp DRAW_CITY_SEQ_435_436
 LABEL_11E6:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 INTRO_FILL_AND_DRAW_CIN_429_430:
 	fill page=0xFF, color=0x02
@@ -344,10 +364,14 @@ SHOW_TEXT_2B_FINAL_PHASE:
 SONG_REPEAT_OR_NEXT_PHASE_LOOP:
 	break
 	jne [MUS_MARK], 0x31, SONG_LOOP_END_THEN_BLIT_SETUP
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	jne [0xDB], 0x00, SONG_RESTART_RESET_MARK
+.endif
 	song id=0x0000, delay=0x0000, pos=0x00
 
+.if BRANCH in ("cartridge_1992", "gba_2004")
 SONG_RESTART_RESET_MARK:
+.endif
 	mov [MUS_MARK], 0x0000
 
 SONG_LOOP_END_THEN_BLIT_SETUP:
@@ -369,7 +393,9 @@ BLINK_TEXTS_44_45_AT_2_20:
 	text id=0x0045, x=2, y=20, color=0x05
 	break
 	jmp BLINK_TEXTS_44_45_AT_2_20
+.if BRANCH in ("cartridge_1992", "gba_2004")
 LABEL_153F:
+.endif
 	killChannel
 BLINK_TEXTS_3E_3F_AT_10_120:
 	text id=0x003E, x=10, y=120, color=0x04
@@ -393,5 +419,8 @@ BLINK_TEXTS_3F_41_AT_11_132:
 	text id=0x0043, x=11, y=132, color=0x04
 	break
 	jmp BLINK_TEXTS_3F_41_AT_11_132
+.if BRANCH == "dos_1992"
+LABEL_156D:
+.endif
 	db 0x11
 

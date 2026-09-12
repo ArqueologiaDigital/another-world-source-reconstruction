@@ -126,7 +126,11 @@ DRAW_CINEMATIC_005_LOOP:
 	break
 	jmp DRAW_CINEMATIC_005_LOOP
 LABEL_22EC:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 INTRO_SCENE_INIT_PARTICLES:
 	selectVideoPage 0x00
@@ -202,7 +206,7 @@ INTRO_PLAY_BG_AUDIO_LOOP:
 ; the GBA port may need longer to sync the sound effect's end with
 ; the next animation cue (or just a tuning fix specific to this
 ; one moment in the game).
-.if BRANCH == "cartridge_1992"
+.if BRANCH in ("cartridge_1992", "dos_1992")
 	mov [0x01], 0x0012
 .elif BRANCH == "gba_2004"
 	mov [0x01], 0x0024
@@ -290,5 +294,9 @@ DRAW_CIN_034_30X_BEFORE_REPEAT:
 	djnz [0x01], DRAW_CIN_034_30X_BEFORE_REPEAT
 	jmp DRAW_CIN_035_PAL_3_REPEAT_HEAD
 LABEL_24E5:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 

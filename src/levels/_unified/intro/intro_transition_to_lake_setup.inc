@@ -168,7 +168,11 @@ DELAY_7_THEN_PAL_15_CIN_231:
 	play id=0x000E, freq=0x01, vol=0x3F, channel=0x02
 	jmp PHASE_PAGE3_DRAW_CIN_172_175
 LABEL_0F48:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 LESTER_OPENS_AND_DRINKS_SODA_ANIMATION:
 	fill page=0xFF, color=0x04

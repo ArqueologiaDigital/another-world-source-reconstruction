@@ -127,7 +127,11 @@ DRAW_CIN_137_AT_280_283_TWICE:
 	djnz [0x09], DRAW_CIN_137_DOUBLE_OUTER
 	jmp CH_07_INIT_VAR_08_09
 LABEL_19C5:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11
+.endif
 
 CH_06_DRAW_CIN_457_PARTICLES:
 	break

@@ -4,12 +4,14 @@ ENTRY_POINT_OF_INTRO:
 	setup channel=0x3C, address=BLIT_AND_DISPATCH_HERO_ACTION
 	mov [MUS_MARK], 0x0000
 	break
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	je [0xDB], 0x00, LOAD_RESOURCES_AND_PLAY_MUSIC
 	load id=0x07D1
 	song id=0x0BDE, delay=0x0000, pos=0x00
 	jmp SETUP_CHANNELS_AFTER_LOAD
 
 LOAD_RESOURCES_AND_PLAY_MUSIC:
+.endif
 	song id=0x0000, delay=0x0000, pos=0x00
 	load id=0x0036
 	load id=0x0008
@@ -40,7 +42,9 @@ LOAD_RESOURCES_AND_PLAY_MUSIC:
 	load id=0x0040
 	song id=0x0007, delay=0x3D54, pos=0x00
 
+.if BRANCH in ("cartridge_1992", "gba_2004")
 SETUP_CHANNELS_AFTER_LOAD:
+.endif
 	setup channel=0x01, address=INTRO_SCENE_INIT_PARTICLES
 .if BRANCH == "gba_2004"
 	song id=0x0FB9, delay=0x0000, pos=0x01

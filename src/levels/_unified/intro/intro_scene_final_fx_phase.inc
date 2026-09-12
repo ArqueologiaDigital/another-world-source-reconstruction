@@ -164,7 +164,11 @@ DRAW_CINEMATIC_053_LOOP:
 	break
 	jmp DRAW_CINEMATIC_053_LOOP
 LABEL_26A6:
+.if BRANCH in ("cartridge_1992", "gba_2004")
 	killChannel
+.elif BRANCH == "dos_1992"
+	db 0x11, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+.endif
 .if BRANCH == "cartridge_1992"
 .elif BRANCH == "gba_2004"
 .endif
