@@ -94,13 +94,13 @@ LABEL_02B5:
 	play id=0x0066, freq=0x16, vol=0x14, channel=0x02
 	mov [0xE6], 0x0007
 
-LABEL_02DE:
+PRISON_CUTSCENE_ZOOM_IN_PHASE_04_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	video offset=CINEMATIC_254, x=160, y=100, zoom=[0xe7]
 	video offset=CINEMATIC_255, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0001
-	djnz [0xE6], LABEL_02DE
+	djnz [0xE6], PRISON_CUTSCENE_ZOOM_IN_PHASE_04_LOOP
 	mov [0xE6], 0x0007
 
 LABEL_02FB:
@@ -115,78 +115,78 @@ LABEL_02FB:
 	play id=0x0069, freq=0x14, vol=0x20, channel=0x01
 	mov [0xE6], 0x0007
 
-LABEL_032A:
+PRISON_CUTSCENE_ZOOM_IN_PHASE_06_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	video offset=CINEMATIC_258, x=160, y=100, zoom=[0xe7]
 	video offset=CINEMATIC_259, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0001
-	djnz [0xE6], LABEL_032A
+	djnz [0xE6], PRISON_CUTSCENE_ZOOM_IN_PHASE_06_LOOP
 	mov [0xE6], 0x0007
 
-LABEL_0347:
+PRISON_CUTSCENE_ZOOM_IN_PHASE_07_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	video offset=CINEMATIC_260, x=160, y=100, zoom=[0xe7]
 	video offset=CINEMATIC_261, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0002
-	djnz [0xE6], LABEL_0347
+	djnz [0xE6], PRISON_CUTSCENE_ZOOM_IN_PHASE_07_LOOP
 	mov [0xE6], 0x0007
 
-LABEL_0364:
+PRISON_CUTSCENE_ZOOM_IN_PHASE_08_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	video offset=CINEMATIC_262, x=160, y=100, zoom=[0xe7]
 	video offset=CINEMATIC_263, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0002
-	djnz [0xE6], LABEL_0364
+	djnz [0xE6], PRISON_CUTSCENE_ZOOM_IN_PHASE_08_LOOP
 	mov [0xE6], 0x0007
 
-LABEL_0381:
+PRISON_CUTSCENE_ZOOM_IN_PHASE_09_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	video offset=CINEMATIC_264, x=160, y=100, zoom=[0xe7]
 	video offset=CINEMATIC_265, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0002
-	djnz [0xE6], LABEL_0381
+	djnz [0xE6], PRISON_CUTSCENE_ZOOM_IN_PHASE_09_LOOP
 	play id=0x0066, freq=0x0A, vol=0x0F, channel=0x02
 	mov [0xE6], 0x0007
 
-LABEL_03A4:
+PRISON_CUTSCENE_ZOOM_IN_PHASE_10_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	video offset=CINEMATIC_266, x=160, y=100, zoom=[0xe7]
 	video offset=CINEMATIC_267, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0003
-	djnz [0xE6], LABEL_03A4
+	djnz [0xE6], PRISON_CUTSCENE_ZOOM_IN_PHASE_10_LOOP
 	mov [0xE6], 0x0007
 
-LABEL_03C1:
+PRISON_CUTSCENE_ZOOM_IN_PHASE_11_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	video offset=CINEMATIC_268, x=160, y=100, zoom=[0xe7]
 	video offset=CINEMATIC_269, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0003
-	djnz [0xE6], LABEL_03C1
+	djnz [0xE6], PRISON_CUTSCENE_ZOOM_IN_PHASE_11_LOOP
 	play id=0x0066, freq=0x09, vol=0x0A, channel=0x02
 	mov [0xE6], 0x0007
 
-LABEL_03E4:
+PRISON_CUTSCENE_ZOOM_IN_PHASE_12_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	video offset=CINEMATIC_270, x=160, y=100, zoom=[0xe7]
 	video offset=CINEMATIC_271, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0003
-	djnz [0xE6], LABEL_03E4
+	djnz [0xE6], PRISON_CUTSCENE_ZOOM_IN_PHASE_12_LOOP
 	mov [0xE6], 0x0007
 
-LABEL_0401:
+PRISON_CUTSCENE_ZOOM_IN_PHASE_13_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	video offset=CINEMATIC_272, x=160, y=100, zoom=[0xe7]
 	video offset=CINEMATIC_273, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0002
-	djnz [0xE6], LABEL_0401
+	djnz [0xE6], PRISON_CUTSCENE_ZOOM_IN_PHASE_13_LOOP
 	mov [PAUSE_SLICES], 0x0004
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
 	break

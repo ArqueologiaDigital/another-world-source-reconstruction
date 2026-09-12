@@ -2194,7 +2194,7 @@ ENTRY_POINT_OF_PRISON:
 	mov [0x32], 0x0000
 	mov [0xB6], 0x0000
 	mov [0x0A], 0x0000
-	call LABEL_01BA
+	call PRELOAD_PRISON_RESOURCES
 	play id=0x0055, freq=0x14, vol=0x00, channel=0x01
 	play id=0x0055, freq=0x14, vol=0x00, channel=0x02
 	play id=0x0055, freq=0x14, vol=0x00, channel=0x03
@@ -2271,7 +2271,7 @@ LABEL_00DC:
 	call LABEL_1D63
 	killChannel
 
-LABEL_00F7:
+LIKELY_A_COPY_PROTECTION_MECHANISM:
 	mov [0xF8], [0xBC]
 	and [0xF8], 0x0010
 	ret
@@ -2287,7 +2287,7 @@ LABEL_010D:
 	setup channel=0x3C, address=KILL_CHANNEL_LANDING
 	killChannel
 
-LABEL_0116:
+DELAY_4_QUANTUMS:
 	break
 	break
 	break
@@ -2306,10 +2306,10 @@ LABEL_012C:
 LABEL_0130:
 	break
 	call LABEL_014F
-	jne [HERO_ACTION], 0x00, LABEL_013E
+	jne [HERO_ACTION], 0x00, PRISON_ACCESS_CODE_SCREEN_START
 	djnz [0x03], LABEL_0130
 
-LABEL_013E:
+PRISON_ACCESS_CODE_SCREEN_START:
 	deleteChannels first=0x00, last=0x3F
 	freezeChannels first=0x00, last=0x3F
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
@@ -2355,7 +2355,7 @@ LABEL_0195:
 	setup channel=0x00, address=ENTRY_POINT_OF_PRISON
 	killChannel
 
-LABEL_01BA:
+PRELOAD_PRISON_RESOURCES:
 	jne [0xDB], 0x00, SHARED_RET
 	load id=0x0052
 	load id=0x0055

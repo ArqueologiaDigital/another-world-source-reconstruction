@@ -3,7 +3,7 @@ PRISON_COPY_VAR22_TO_VAR07_L10:
 	song id=0x0BDD, delay=0x0000, pos=0x00
 	play id=0x005D, freq=0x14, vol=0x40, channel=0x00
 	deleteChannels first=0x14, last=0x16
-	setup channel=0x3F, address=LABEL_0116
+	setup channel=0x3F, address=DELAY_4_QUANTUMS
 	mov [0x13], 0xFFFF
 	mov [0xF8], [0x04]
 	and [0xF8], 0x00FF
@@ -26,13 +26,13 @@ PRISON_COPY_VAR22_TO_VAR07_L11:
 	call LABEL_3C26
 	mov [0xF8], [0x2B]
 	and [0xF8], 0x0800
-	jne [0xF8], 0x00, LABEL_3C1A
+	jne [0xF8], 0x00, PRISON_SHOT_HIT_TARGET_NO_REACTION_RET
 	play id=0x005D, freq=0x14, vol=0x40, channel=0x01
 	mov [0xF8], [0x2B]
 	and [0xF8], 0x1000
 	jne [0x1D], 0x28, LABEL_3BE6
 	setup channel=0x23, address=LABEL_113D
-	je [0xF8], 0x00, LABEL_3C0E
+	je [0xF8], 0x00, PRISON_SHOT_HIT_TARGET_COMMIT_RET
 	setup channel=0x23, address=LABEL_1199
 	jne [0x6C], 0x04, LABEL_3BE6
 	selectVideoPage 0x00
@@ -42,23 +42,23 @@ PRISON_COPY_VAR22_TO_VAR07_L11:
 LABEL_3BE6:
 	jne [0x1D], 0x29, LABEL_3BFA
 	setup channel=0x25, address=LABEL_113D
-	je [0xF8], 0x00, LABEL_3C0E
+	je [0xF8], 0x00, PRISON_SHOT_HIT_TARGET_COMMIT_RET
 	setup channel=0x25, address=LABEL_1199
 
 LABEL_3BFA:
-	jne [0x1D], 0x2A, LABEL_3C0E
+	jne [0x1D], 0x2A, PRISON_SHOT_HIT_TARGET_COMMIT_RET
 	setup channel=0x27, address=LABEL_113D
-	je [0xF8], 0x00, LABEL_3C0E
+	je [0xF8], 0x00, PRISON_SHOT_HIT_TARGET_COMMIT_RET
 	setup channel=0x27, address=LABEL_1199
 
-LABEL_3C0E:
+PRISON_SHOT_HIT_TARGET_COMMIT_RET:
 	or [0x2B], 0x0800
 	call LABEL_3C45
 	mov [0x13], 0xFFFF
 	ret
 
 
-LABEL_3C1A:
+PRISON_SHOT_HIT_TARGET_NO_REACTION_RET:
 	or [0x2B], 0x4000
 	call LABEL_3C45
 	mov [0x13], 0xFFFF

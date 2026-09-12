@@ -7,10 +7,10 @@ LABEL_00A2:
 LABEL_00B0:
 	break
 	call LABEL_00CB
-	jne [HERO_ACTION], 0x00, LABEL_00BE
+	jne [HERO_ACTION], 0x00, PRISON_ACCESS_CODE_SCREEN_START
 	djnz [0x03], LABEL_00B0
 
-LABEL_00BE:
+PRISON_ACCESS_CODE_SCREEN_START:
 	deleteChannels first=0x00, last=0x3F
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
 	setup channel=0x00, address=LABEL_00DD

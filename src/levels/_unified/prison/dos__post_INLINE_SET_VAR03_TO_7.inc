@@ -41,6 +41,6 @@ LABEL_0646:
 	djnz [0x03], LABEL_0646
 	mov [0x05], 0x0000
 	mov [0x63], 0x0001
-	setup channel=0x14, address=LABEL_90C6
+	setup channel=0x14, address=PRISON_HERO_STAND_LEFT_TICK
 	setup channel=0x16, address=PRISON_HERO_POS_JUMP_DOWN_DISPATCH_CHECK_VAR63
 	killChannel

@@ -30,7 +30,7 @@ LABEL_8D4F:
 LABEL_8D53:
 	db 0x11
 
-LABEL_8D54:
+PRISON_HERO_WALK_RIGHT_PHASE_08:
 	video type=0, offset=COMMON_VIDEO_152, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	video type=0, offset=COMMON_VIDEO_151, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -58,4 +58,4 @@ LABEL_8D93:
 	video type=0, offset=COMMON_VIDEO_147, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0003
 	break
-	jmp LABEL_8DBC
+	jmp PRISON_HERO_CRAWL_RIGHT_STOP

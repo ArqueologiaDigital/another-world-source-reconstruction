@@ -12,7 +12,7 @@ LABEL_8160:
 LABEL_8161:
 	freezeChannels first=0x00, last=0x3F
 	setup channel=0x3C, address=LABEL_06ED
-	setup channel=0x14, address=LABEL_922C
+	setup channel=0x14, address=PRISON_HERO_STAND_LEFT_TICK
 	jne [0x11], 0x01, LABEL_8176
 	mov [0x6A], [HACK_VAR_67]
 
@@ -23,6 +23,6 @@ LABEL_8176:
 	setup channel=0x01, address=COPY_PAGE0_TO_FF_KILL_CHANNEL
 	play id=0x0067, freq=0x14, vol=0x40, channel=0x01
 	break
-	jmp LABEL_80C9
+	jmp PRISON_HERO_GATE_X_91_B8_CLOCK_4000_INPUT_CHECK
 LABEL_818E:
 	db 0x11

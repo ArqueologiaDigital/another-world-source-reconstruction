@@ -13,14 +13,14 @@ LABEL_1BD3:
 	call LABEL_1B38
 	jg [0x15], 0x14, LABEL_1C0A
 	jg [BUDDY_X], 0xC8, LABEL_1BD3
-	setup channel=0x23, address=LABEL_1FC4
+	setup channel=0x23, address=PRISON_BUDDY_PATROL_TURN_TO_FACE_RIGHT_ENTRY
 
 LABEL_1BE7:
 	break
 	call LABEL_1B38
 	jg [0x15], 0x14, LABEL_1BFF
 	jl [BUDDY_X], 0x010E, LABEL_1BE7
-	setup channel=0x23, address=LABEL_1F98
+	setup channel=0x23, address=PRISON_BUDDY_PATROL_TURN_TO_FACE_LEFT_ENTRY
 	jmp LABEL_1BD3
 
 LABEL_1BFF:

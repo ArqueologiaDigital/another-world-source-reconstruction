@@ -1,16 +1,16 @@
-LABEL_8193:
-	jne [0x0A], 0x00, LABEL_82CC
+GUN_ZONE_TICK_LOOP:
+	jne [0x0A], 0x00, GUN_ZONE_TICK_LOOP_RESTART
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
-	je [0xF8], 0x00, LABEL_81B6
+	je [0xF8], 0x00, GUN_PICKUP_SCENE
 	video offset=CINEMATIC_186, x=258, y=181
-	jl [HERO_X], 0xFA, LABEL_81B6
+	jl [HERO_X], 0xFA, GUN_PICKUP_SCENE
 	video offset=CINEMATIC_186, x=257, y=181
 
-LABEL_81B6:
-	jl [HERO_X], 0xF0, LABEL_82CC
-	jg [HERO_X], 0x0104, LABEL_82CC
-	jge [0x04], 0x20, LABEL_82CC
+GUN_PICKUP_SCENE:
+	jl [HERO_X], 0xF0, GUN_ZONE_TICK_LOOP_RESTART
+	jg [HERO_X], 0x0104, GUN_ZONE_TICK_LOOP_RESTART
+	jge [0x04], 0x20, GUN_ZONE_TICK_LOOP_RESTART
 	break
 	jge [0x04], 0x4000, KILL_CHANNEL_LANDING
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
@@ -52,11 +52,11 @@ LABEL_81B6:
 	mov [PAUSE_SLICES], 0x0004
 	mov [0xC8], 0x0005
 
-LABEL_8240:
+GUN_FLICKER_HOLD_177:
 	video offset=CINEMATIC_THE_GUN, x=160, y=100
 	video offset=CINEMATIC_177, x=160, y=100
 	break
-	djnz [0xC8], LABEL_8240
+	djnz [0xC8], GUN_FLICKER_HOLD_177
 	mov [0xC8], 0x0005
 
 LABEL_8251:
@@ -66,11 +66,11 @@ LABEL_8251:
 	djnz [0xC8], LABEL_8251
 	mov [0xC8], 0x0005
 
-LABEL_8262:
+GUN_FLICKER_FINAL_HOLD:
 	video offset=CINEMATIC_THE_GUN, x=160, y=100
 	video offset=CINEMATIC_177, x=160, y=100
 	break
-	djnz [0xC8], LABEL_8262
+	djnz [0xC8], GUN_FLICKER_FINAL_HOLD
 	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F0, x=160, y=100
 	video offset=CINEMATIC_177, x=160, y=100
 	break
@@ -105,9 +105,9 @@ GUN_PICKUP_END_HOLD:
 	break
 	setPalette 0x02
 
-LABEL_82CC:
+GUN_ZONE_TICK_LOOP_RESTART:
 	break
-	jmp LABEL_8193
+	jmp GUN_ZONE_TICK_LOOP
 LABEL_82D0:
 	db 0x11
 
@@ -138,7 +138,7 @@ LABEL_82D1:
 
 
 LABEL_831C:
-	setup channel=0x3B, address=LABEL_8193
+	setup channel=0x3B, address=GUN_ZONE_TICK_LOOP
 	mov [0x42], 0x00BC
 	mov [0x43], 0x0FA0
 	mov [0x46], 0x0064

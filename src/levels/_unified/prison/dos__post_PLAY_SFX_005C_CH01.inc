@@ -25,13 +25,13 @@ PRISON_COPY_VAR22_TO_VAR07_L11:
 	call LABEL_3B2C
 	mov [0xF8], [0x2B]
 	and [0xF8], 0x0800
-	jne [0xF8], 0x00, LABEL_3B20
+	jne [0xF8], 0x00, PRISON_SHOT_HIT_TARGET_NO_REACTION_RET
 	play id=0x005D, freq=0x14, vol=0x40, channel=0x01
 	mov [0xF8], [0x2B]
 	and [0xF8], 0x1000
 	jne [0x1D], 0x28, LABEL_3AEC
 	setup channel=0x23, address=LABEL_10B5
-	je [0xF8], 0x00, LABEL_3B14
+	je [0xF8], 0x00, PRISON_SHOT_HIT_TARGET_COMMIT_RET
 	setup channel=0x23, address=LABEL_1111
 	jne [0x6C], 0x04, LABEL_3AEC
 	selectVideoPage 0x00
@@ -41,23 +41,23 @@ PRISON_COPY_VAR22_TO_VAR07_L11:
 LABEL_3AEC:
 	jne [0x1D], 0x29, LABEL_3B00
 	setup channel=0x25, address=LABEL_10B5
-	je [0xF8], 0x00, LABEL_3B14
+	je [0xF8], 0x00, PRISON_SHOT_HIT_TARGET_COMMIT_RET
 	setup channel=0x25, address=LABEL_1111
 
 LABEL_3B00:
-	jne [0x1D], 0x2A, LABEL_3B14
+	jne [0x1D], 0x2A, PRISON_SHOT_HIT_TARGET_COMMIT_RET
 	setup channel=0x27, address=LABEL_10B5
-	je [0xF8], 0x00, LABEL_3B14
+	je [0xF8], 0x00, PRISON_SHOT_HIT_TARGET_COMMIT_RET
 	setup channel=0x27, address=LABEL_1111
 
-LABEL_3B14:
+PRISON_SHOT_HIT_TARGET_COMMIT_RET:
 	or [0x2B], 0x0800
 	call LABEL_3B4B
 	mov [0x13], 0xFFFF
 	ret
 
 
-LABEL_3B20:
+PRISON_SHOT_HIT_TARGET_NO_REACTION_RET:
 	or [0x2B], 0x4000
 	call LABEL_3B4B
 	mov [0x13], 0xFFFF

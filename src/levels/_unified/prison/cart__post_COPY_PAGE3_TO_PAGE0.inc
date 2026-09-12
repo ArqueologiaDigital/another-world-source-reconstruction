@@ -99,7 +99,7 @@ LABEL_8470:
 	call LABEL_7CE1
 	selectVideoPage 0xFF
 	setup channel=0x00, address=LABEL_810F
-	setup channel=0x34, address=LABEL_80C9
+	setup channel=0x34, address=PRISON_HERO_GATE_X_91_B8_CLOCK_4000_INPUT_CHECK
 	setup channel=0x35, address=LABEL_854D
 	call LABEL_7A8D
 	jl [0x06], 0x64, TRAMP_84BD
@@ -126,7 +126,7 @@ LABEL_84C1:
 	call LABEL_7CE1
 	selectVideoPage 0xFF
 	setup channel=0x00, address=LABEL_810F
-	setup channel=0x34, address=LABEL_80C9
+	setup channel=0x34, address=PRISON_HERO_GATE_X_91_B8_CLOCK_4000_INPUT_CHECK
 	call LABEL_7A8D
 	mov [0x70], 0x00D2
 	mov [0x71], 0x00B6
@@ -257,7 +257,7 @@ LABEL_863D:
 	call LABEL_7CE1
 	selectVideoPage 0xFF
 	setup channel=0x00, address=LABEL_810F
-	setup channel=0x34, address=LABEL_80C9
+	setup channel=0x34, address=PRISON_HERO_GATE_X_91_B8_CLOCK_4000_INPUT_CHECK
 	call LABEL_7A8D
 	jne [0xB9], 0x00, TRAMP_869F
 	mov [0x70], 0x00B4
@@ -284,7 +284,7 @@ LABEL_86A2:
 	call TEARDOWN_CHANS_AND_KILL_LANDING
 	setPalette 0x02
 	selectVideoPage 0x00
-	call LABEL_4C25
+	call DRAW_ENERGY_TRANSMISSION_LINE_FG
 	selectVideoPage 0xFF
 	setup channel=0x01, address=INIT_VARS_E7_E8
 	setup channel=0x02, address=INLINE_SET_VARE9_TO_8
@@ -314,7 +314,7 @@ LABEL_86E7:
 	selectVideoPage 0xFF
 	setup channel=0x35, address=LABEL_021D
 	setup channel=0x00, address=LABEL_810F
-	setup channel=0x34, address=LABEL_80C9
+	setup channel=0x34, address=PRISON_HERO_GATE_X_91_B8_CLOCK_4000_INPUT_CHECK
 	call LABEL_7A8D
 	setPalette 0x1A
 	jmp VAR66_RANGE_DISPATCH_BY_VAR01

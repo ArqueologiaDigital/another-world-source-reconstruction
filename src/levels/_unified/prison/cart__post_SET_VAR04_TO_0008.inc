@@ -17,7 +17,7 @@ LABEL_8BE3:
 
 LABEL_8BF4:
 	jne [0x63], 0x01, LABEL_8C01
-	setup channel=0x14, address=LABEL_967F
+	setup channel=0x14, address=PRISON_HERO_WALK_JUMP_LEFT
 	jmp LABEL_8D4F
 
 LABEL_8C01:

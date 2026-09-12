@@ -26,7 +26,7 @@ LABEL_95BF:
 	video offset=CINEMATIC_562, x=[HERO_X], y=[HERO_Y]
 	mov [0x63], 0x0002
 	sub [HERO_X], 0x0002
-	jmp HERO_WALK_LOOP
+	jmp HERO_WALK_RIGHT_LOOP
 LABEL_95E0:
 	db 0x11
 
@@ -76,6 +76,6 @@ LABEL_9651:
 	video offset=CINEMATIC_562, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0001
 	mov [0x63], 0x0002
-	jmp HERO_WALK_LOOP
+	jmp HERO_WALK_RIGHT_LOOP
 LABEL_9672:
 	db 0x11

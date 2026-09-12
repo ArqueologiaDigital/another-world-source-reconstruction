@@ -75,7 +75,7 @@ LABEL_4C08:
 	ret
 
 
-LABEL_4C25:
+DRAW_ENERGY_TRANSMISSION_LINE_FG:
 	call LABEL_82D1
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00

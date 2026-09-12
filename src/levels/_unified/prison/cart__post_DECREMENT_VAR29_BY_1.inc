@@ -13,7 +13,7 @@ LABEL_1C75:
 	call LABEL_1BDA
 	jg [0x15], 0x14, LABEL_1CAC
 	jg [BUDDY_X], 0xC8, LABEL_1C75
-	setup channel=0x23, address=LABEL_2066
+	setup channel=0x23, address=PRISON_BUDDY_PATROL_TURN_TO_FACE_RIGHT_ENTRY
 
 LABEL_1C89:
 	break

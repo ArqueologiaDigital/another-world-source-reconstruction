@@ -41,6 +41,6 @@ LABEL_06CE:
 	djnz [0x03], LABEL_06CE
 	mov [0x05], 0x0000
 	mov [0x63], 0x0001
-	setup channel=0x14, address=LABEL_922C
+	setup channel=0x14, address=PRISON_HERO_STAND_LEFT_TICK
 	setup channel=0x16, address=LABEL_8BC5
 	killChannel

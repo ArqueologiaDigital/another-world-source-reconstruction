@@ -12,7 +12,7 @@ LABEL_8031:
 LABEL_8032:
 	freezeChannels first=0x00, last=0x3F
 	setup channel=0x3C, address=LABEL_0665
-	setup channel=0x14, address=LABEL_90C6
+	setup channel=0x14, address=PRISON_HERO_STAND_LEFT_TICK
 	jne [0x11], 0x01, LABEL_8047
 	mov [0x6A], [HACK_VAR_67]
 

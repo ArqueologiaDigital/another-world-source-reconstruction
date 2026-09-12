@@ -28,7 +28,7 @@ PRISON_HERO_CROUCH_RIGHT_ARMED_HOLD_TICK:
 	video offset=CINEMATIC_211, x=[HERO_X], y=[HERO_Y]
 	mov [0x63], 0x0002
 	mov [0x0A], 0x0003
-	jmp HERO_WALK_LOOP
+	jmp HERO_WALK_RIGHT_LOOP
 LABEL_9864:
 	db 0x11
 
@@ -51,7 +51,7 @@ LABEL_987B:
 	video offset=CINEMATIC_211, x=[HERO_X], y=[HERO_Y]
 	mov [0x63], 0x0002
 	sub [HERO_X], 0x0002
-	jmp HERO_WALK_LOOP
+	jmp HERO_WALK_RIGHT_LOOP
 LABEL_98A8:
 	db 0x11, 0x54, 0x01, 0xC0, 0x01, 0x02, 0x11, 0x54
 	db 0x02, 0xB4, 0x01, 0x02, 0x11, 0x00, 0xFF, 0xFF

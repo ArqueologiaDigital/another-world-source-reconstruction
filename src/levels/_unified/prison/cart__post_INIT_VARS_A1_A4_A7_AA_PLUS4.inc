@@ -25,8 +25,8 @@ LABEL_884A:
 
 LABEL_884B:
 	setup channel=0x10, address=LABEL_136A
-	call LABEL_00F7
-	setup channel=0x18, address=LABEL_433F
+	call LIKELY_A_COPY_PROTECTION_MECHANISM
+	setup channel=0x18, address=PRISON_SHIELD_TICK_SLOT_0_ENTRY
 	setup channel=0x2F, address=LABEL_395D
 	setup channel=0x3B, address=KILL_CHANNEL_LANDING
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
