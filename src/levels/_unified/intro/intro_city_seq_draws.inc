@@ -3,10 +3,14 @@ DRAW_CIN_190_LOOP:
 	break
 	jmp DRAW_CIN_190_LOOP
 LABEL_119E:
-.if BRANCH in ("cartridge_1992", "gba_2004")
-	killChannel
-.elif BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	db 0x11
+.else
+.if BRANCH == "chahi_amiga_1991"
+	db 0x11
+.else
+	killChannel
+.endif
 .endif
 
 DRAW_CIN_431_LOOP:
@@ -14,10 +18,14 @@ DRAW_CIN_431_LOOP:
 	break
 	jmp DRAW_CIN_431_LOOP
 LABEL_11A8:
-.if BRANCH in ("cartridge_1992", "gba_2004")
-	killChannel
-.elif BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	db 0x11
+.else
+.if BRANCH == "chahi_amiga_1991"
+	db 0x11
+.else
+	killChannel
+.endif
 .endif
 
 DRAW_CITY_SEQ_432_433:
@@ -29,10 +37,14 @@ DRAW_CITY_SEQ_432_433:
 	break
 	jmp DRAW_CITY_SEQ_432_433
 LABEL_11BB:
-.if BRANCH in ("cartridge_1992", "gba_2004")
-	killChannel
-.elif BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	db 0x11
+.else
+.if BRANCH == "chahi_amiga_1991"
+	db 0x11
+.else
+	killChannel
+.endif
 .endif
 
 DRAW_CITY_SEQ_439_440:
@@ -44,10 +56,14 @@ DRAW_CITY_SEQ_439_440:
 	break
 	jmp DRAW_CITY_SEQ_439_440
 LABEL_11CE:
-.if BRANCH in ("cartridge_1992", "gba_2004")
-	killChannel
-.elif BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	db 0x11
+.else
+.if BRANCH == "chahi_amiga_1991"
+	db 0x11
+.else
+	killChannel
+.endif
 .endif
 
 DRAW_CITY_SEQ_435_436:
@@ -61,10 +77,14 @@ DRAW_CITY_SEQ_435_436:
 	break
 	jmp DRAW_CITY_SEQ_435_436
 LABEL_11E6:
-.if BRANCH in ("cartridge_1992", "gba_2004")
-	killChannel
-.elif BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	db 0x11
+.else
+.if BRANCH == "chahi_amiga_1991"
+	db 0x11
+.else
+	killChannel
+.endif
 .endif
 
 INTRO_FILL_AND_DRAW_CIN_429_430:
@@ -86,23 +106,35 @@ WAIT_1_BEFORE_COPY_PAGE_03:
 	break
 	djnz [0x01], WAIT_1_BEFORE_COPY_PAGE_03
 	copyVideoPage src=0x00, dst=0x03
+.if BRANCH == "chahi_amiga_1991"
+	mov [0x01], 0x000F
+.else
 	mov [0x01], 0x000E
+.endif
 
 DELAY_14_BEFORE_BLIT_DISPATCH:
 	break
 	djnz [0x01], DELAY_14_BEFORE_BLIT_DISPATCH
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_DISPATCH_VAR3
 	break
+.endif
 	selectVideoPage 0x00
 	text id=0x0002, x=1, y=24, color=0x06
 	selectVideoPage 0xFF
+.if BRANCH == "chahi_amiga_1991"
+	mov [0x01], 0x000A
+.else
 	mov [0x01], 0x0009
+.endif
 
 DELAY_9_BEFORE_BLIT_DISPATCH:
 	break
 	djnz [0x01], DELAY_9_BEFORE_BLIT_DISPATCH
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_DISPATCH_VAR3
 	break
+.endif
 	mov [0x01], 0x0014
 	selectVideoPage 0x00
 	text id=0x0007, x=1, y=150, color=0x06
@@ -114,21 +146,33 @@ SHOW_TEXT_21_AT_3_150_20X:
 	djnz [0x01], SHOW_TEXT_21_AT_3_150_20X
 	setup channel=0x0C, address=DISPLAY_TEXT_0A_0B_PLAY_FX
 	setup channel=0x05, address=DISPLAY_TEXT_21
+.if BRANCH == "chahi_amiga_1991"
+	mov [0x01], 0x0032
+.else
 	mov [0x01], 0x0031
+.endif
 
 DELAY_49_BEFORE_COPY_PAGE_3_0:
 	break
 	djnz [0x01], DELAY_49_BEFORE_COPY_PAGE_3_0
+.if BRANCH != "chahi_amiga_1991"
 	break
+.endif
 	copyVideoPage src=0x03, dst=0x00
 	setup channel=0x0B, address=DRAW_CITY_SEQ_419_420
+.if BRANCH == "chahi_amiga_1991"
+	mov [0x01], 0x0014
+.else
 	mov [0x01], 0x0013
+.endif
 
 DELAY_19_BEFORE_BLITTER_SETUP:
 	break
 	djnz [0x01], DELAY_19_BEFORE_BLITTER_SETUP
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
+.endif
 	copyVideoPage src=0x00, dst=0x03
 	selectVideoPage 0x00
 	text id=0x001A, x=20, y=60, color=0x06
@@ -148,18 +192,26 @@ SHOW_TEXT_21_AT_27_68_15X:
 	djnz [0x01], SHOW_TEXT_21_AT_27_68_15X
 	break
 	text id=0x0021, x=29, y=84, color=0x06
+.if BRANCH == "chahi_amiga_1991"
+	mov [0x01], 0x000A
+.else
 	mov [0x01], 0x0009
+.endif
 
 SHOW_TEXT_21_AT_27_100_9X:
 	break
 	text id=0x0021, x=27, y=100, color=0x06
 	djnz [0x01], SHOW_TEXT_21_AT_27_100_9X
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
+.endif
 	selectVideoPage 0x00
 	text id=0x0021, x=26, y=100, color=0x02
 	selectVideoPage 0xFF
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	break
 	selectVideoPage 0x00
 	text id=0x001C, x=26, y=100, color=0x06
@@ -186,29 +238,43 @@ SHOW_TEXT_21_AT_25_156_18X:
 	text id=0x0021, x=25, y=156, color=0x06
 	djnz [0x01], SHOW_TEXT_21_AT_25_156_18X
 	setup channel=0x07, address=INIT_VAR_03_AND_LOOP
+.if BRANCH == "chahi_amiga_1991"
+	mov [0x01], 0x0025
+.else
 	mov [0x01], 0x0024
+.endif
 
 DELAY_36_BEFORE_BLITTER_SETUP:
 	break
 	djnz [0x01], DELAY_36_BEFORE_BLITTER_SETUP
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
+.endif
 	selectVideoPage 0x00
 	text id=0x0194, x=36, y=170, color=0x06
 	selectVideoPage 0xFF
+.if BRANCH == "chahi_amiga_1991"
+	mov [0x01], 0x000F
+.else
 	mov [0x01], 0x000E
+.endif
 
 DELAY_14_BEFORE_BLITTER_SETUP:
 	break
 	djnz [0x01], DELAY_14_BEFORE_BLITTER_SETUP
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
+.endif
 	selectVideoPage 0x03
 	video offset=CINEMATIC_HOLO_ACCELERATOR_LOOP_DIAGRAM, x=162, y=100
 	video offset=CINEMATIC_192, x=234, y=163
 	selectVideoPage 0xFF
 	copyVideoPage src=0x03, dst=0x00
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	break
 	selectVideoPage 0x00
 	text id=0x0022, x=8, y=2, color=0x06
@@ -256,7 +322,9 @@ SHOW_TEXT_36_UNTIL_MUS_20:
 	djnz [0x01], SHOW_TEXT_36_UNTIL_MUS_20
 
 WAIT_MUS_MARK_20_THEN_TEXT_23:
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0x00
 	text id=0x0023, x=0, y=80, color=0x06
@@ -292,7 +360,9 @@ SHOW_TEXT_26_AT_28_80_10X:
 	setup channel=0x0A, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x02, address=LESTER_OPENS_AND_DRINKS_SODA_ANIMATION
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	killChannel
 
 COPY_BG_PAGE_AND_DISPLAY_TEXT_23:
@@ -352,37 +422,51 @@ SHOW_TEXT_2A_UNTIL_MUS_30:
 
 SHOW_TEXT_2B_FINAL_PHASE:
 	text id=0x002B, x=28, y=80, color=0x0F
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	copyVideoPage src=0x03, dst=0x00
 	mov [PAUSE_SLICES], 0x0004
 	setup channel=0x07, address=DRAW_CIN_382_TWICE_AT_DIFF_Y
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
+.if BRANCH == "chahi_amiga_1991"
+	mov [0x01], 0x0028
+.else
 	mov [0x01], 0x0027
+.endif
 
 SONG_REPEAT_OR_NEXT_PHASE_LOOP:
 	break
 	jne [MUS_MARK], 0x31, SONG_LOOP_END_THEN_BLIT_SETUP
-.if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH != "dos_1992"
+.if BRANCH != "chahi_amiga_1991"
 	jne [0xDB], 0x00, SONG_RESTART_RESET_MARK
+.endif
 .endif
 	song id=0x0000, delay=0x0000, pos=0x00
 
-.if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH != "dos_1992"
+.if BRANCH != "chahi_amiga_1991"
 SONG_RESTART_RESET_MARK:
+.endif
 .endif
 	mov [MUS_MARK], 0x0000
 
 SONG_LOOP_END_THEN_BLIT_SETUP:
 	djnz [0x01], SONG_REPEAT_OR_NEXT_PHASE_LOOP
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
+.endif
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x02, address=SETUP_INTRO_PARTICLE_CHANNELS
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	fill page=0xFF, color=0x00
 	fill page=0x00, color=0x00
 	killChannel
@@ -393,7 +477,7 @@ BLINK_TEXTS_44_45_AT_2_20:
 	text id=0x0045, x=2, y=20, color=0x05
 	break
 	jmp BLINK_TEXTS_44_45_AT_2_20
-.if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH != "dos_1992"
 LABEL_153F:
 .endif
 	killChannel

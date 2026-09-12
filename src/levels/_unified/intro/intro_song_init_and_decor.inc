@@ -1,19 +1,83 @@
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_131		EQU 0xB17E
+.else
 CINEMATIC_131		EQU 0xF578
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_132		EQU 0xCF88
+.else
 CINEMATIC_132		EQU 0xF4E0
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_133		EQU 0xCF98
+.else
 CINEMATIC_133		EQU 0xF53C
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_134		EQU 0xCF34
+.else
 CINEMATIC_134		EQU 0x4B3C
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_135		EQU 0xCF1C
+.else
 CINEMATIC_135		EQU 0xAED0
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_136		EQU 0xCF04
+.else
 CINEMATIC_136		EQU 0xAEDC
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_137		EQU 0xCF5C
+.else
 CINEMATIC_137		EQU 0xB0F0
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_457		EQU 0x4C62
+.else
 CINEMATIC_457		EQU 0x4B54
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_458		EQU 0x4BFA
+.else
 CINEMATIC_458		EQU 0x4BD4
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_459		EQU 0x4C2E
+.else
 CINEMATIC_459		EQU 0x4B6C
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_460		EQU 0x4C96
+.else
 CINEMATIC_460		EQU 0x4BA0
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_461		EQU 0x4CCA
+.else
 CINEMATIC_461		EQU 0x4C08
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_462		EQU 0x4CFE
+.else
 CINEMATIC_462		EQU 0x4C3C
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_463		EQU 0x4D32
+.else
 CINEMATIC_463		EQU 0x4C70
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_464		EQU 0x4D66
+.else
 CINEMATIC_464		EQU 0x4CA4
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_465		EQU 0x418C
+.else
 CINEMATIC_465		EQU 0x4CD8
+.endif
 
 INTRO_PAUSE_3_PLAY_SONG_INIT:
 	mov [PAUSE_SLICES], 0x0003
@@ -34,25 +98,37 @@ DELAY_50F_THEN_DRAW_CIN_454:
 	djnz [0x03], DELAY_50F_THEN_DRAW_CIN_454
 	setup channel=0x09, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x11, address=DRAW_CIN_453_454_SEQ
+.if BRANCH == "chahi_amiga_1991"
+	mov [0x03], 0x000A
+.else
 	mov [0x03], 0x0009
+.endif
 
 DELAY_9F_THEN_DRAW_CIN_132:
 	break
 	djnz [0x03], DELAY_9F_THEN_DRAW_CIN_132
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
+.endif
 	selectVideoPage 0x00
 	video offset=CINEMATIC_131, x=228, y=44
 	video offset=CINEMATIC_132, x=160, y=100
 	selectVideoPage 0xFF
 	setup channel=0x11, address=DRAW_CIN_453_454_SEQ
+.if BRANCH == "chahi_amiga_1991"
+	mov [0x03], 0x000A
+.else
 	mov [0x03], 0x0009
+.endif
 
 DELAY_9F_THEN_DRAW_CIN_133:
 	break
 	djnz [0x03], DELAY_9F_THEN_DRAW_CIN_133
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
+.endif
 	selectVideoPage 0x00
 	video offset=CINEMATIC_131, x=228, y=44
 	video offset=CINEMATIC_133, x=160, y=100
@@ -72,7 +148,9 @@ DELAY_10F_BEFORE_KILL_CHANNELS:
 	setup channel=0x0A, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x10, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x02, address=INTRO_PAUSE_3_AND_DRAW_CIN_138
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	killChannel
 
 CH_03_INIT_VAR_01_02_FFF6:
@@ -127,10 +205,14 @@ DRAW_CIN_137_AT_280_283_TWICE:
 	djnz [0x09], DRAW_CIN_137_DOUBLE_OUTER
 	jmp CH_07_INIT_VAR_08_09
 LABEL_19C5:
-.if BRANCH in ("cartridge_1992", "gba_2004")
-	killChannel
-.elif BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	db 0x11
+.else
+.if BRANCH == "chahi_amiga_1991"
+	db 0x11
+.else
+	killChannel
+.endif
 .endif
 
 CH_06_DRAW_CIN_457_PARTICLES:

@@ -4,13 +4,15 @@ ENTRY_POINT_OF_INTRO:
 	setup channel=0x3C, address=BLIT_AND_DISPATCH_HERO_ACTION
 	mov [MUS_MARK], 0x0000
 	break
-.if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH != "dos_1992"
+.if BRANCH != "chahi_amiga_1991"
 	je [0xDB], 0x00, LOAD_RESOURCES_AND_PLAY_MUSIC
 	load id=0x07D1
 	song id=0x0BDE, delay=0x0000, pos=0x00
 	jmp SETUP_CHANNELS_AFTER_LOAD
 
 LOAD_RESOURCES_AND_PLAY_MUSIC:
+.endif
 .endif
 	song id=0x0000, delay=0x0000, pos=0x00
 	load id=0x0036
@@ -42,8 +44,10 @@ LOAD_RESOURCES_AND_PLAY_MUSIC:
 	load id=0x0040
 	song id=0x0007, delay=0x3D54, pos=0x00
 
-.if BRANCH in ("cartridge_1992", "gba_2004")
+.if BRANCH != "dos_1992"
+.if BRANCH != "chahi_amiga_1991"
 SETUP_CHANNELS_AFTER_LOAD:
+.endif
 .endif
 	setup channel=0x01, address=INTRO_SCENE_INIT_PARTICLES
 .if BRANCH == "gba_2004"
@@ -51,7 +55,9 @@ SETUP_CHANNELS_AFTER_LOAD:
 .endif
 	setup channel=0x02, address=INTRO_PLAY_BG_AUDIO_LOOP
 	setup channel=0x03, address=DRAW_CINEMATIC_005_LOOP
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	killChannel
 
 .include "../_helpers/KILL_CHANNEL_ROUTINE.inc"
@@ -60,8 +66,18 @@ BLIT_AND_DISPATCH_HERO_ACTION:
 	add [0xC7], 0x0001
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
+.if BRANCH == "chahi_amiga_1991"
+	copyVideoPage src=0x00, dst=0xFF
+	break
+	jmp BLIT_AND_DISPATCH_HERO_ACTION
+
+LABEL_008A:
+	blitFramebuffer 0xFF
+	selectVideoPage 0xFF
+.else
 	jne [HERO_ACTION], 0x00, INTRO_RESET_PAGES_AND_PAL_0
 	copyVideoPage src=0x40, dst=0xFF
+.endif
 	break
 	jmp BLIT_AND_DISPATCH_HERO_ACTION
 
@@ -69,6 +85,7 @@ BLIT_AND_COPY_PAGE_FF_LOOP:
 	add [0xC7], 0x0001
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
+.if BRANCH != "chahi_amiga_1991"
 	copyVideoPage src=0x00, dst=0xFF
 	break
 	add [0xC7], 0x0001
@@ -98,6 +115,7 @@ BLIT_DISPATCH_VAR3_LOOP:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	jne [HERO_ACTION], 0x00, INTRO_RESET_PAGES_AND_PAL_0
+.endif
 	fill page=0xFF, color=0x01
 	break
 	jmp BLIT_DISPATCH_VAR3_LOOP

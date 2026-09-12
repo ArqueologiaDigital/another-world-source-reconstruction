@@ -16,10 +16,14 @@ LESTER_HAND_PRESSING_KEYPAD_ANIMATION:
 	break
 	jmp LESTER_HAND_PRESSING_KEYPAD_ANIMATION
 LABEL_1FD1:
-.if BRANCH in ("cartridge_1992", "gba_2004")
-	killChannel
-.elif BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	db 0x11
+.else
+.if BRANCH == "chahi_amiga_1991"
+	db 0x11
+.else
+	killChannel
+.endif
 .endif
 
 PLAY_FX_BY_PHASE_VAR1E:
@@ -72,7 +76,9 @@ DRIFT_VAR4_PLUS_9_FOR_20X:
 	djnz [0x06], DRIFT_VAR4_PLUS_9_FOR_20X
 	setup channel=0x02, address=KILL_CHANNEL_ROUTINE
 	fill page=0xFF, color=0x09
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	break
 	setPalette 0x0E
 	copyVideoPage src=0x03, dst=0x00
@@ -106,7 +112,9 @@ DRIFT_VAR4_MINUS_3_FOR_5X:
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x02, address=INTRO_FILL_PAGE0_DRAW_CIN_118
 	setup channel=0x03, address=LESTER_HAND_PRESSING_KEYPAD_ANIMATION
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	killChannel
 

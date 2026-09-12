@@ -1,44 +1,208 @@
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_035		EQU 0xBE46
+.else
 CINEMATIC_035		EQU 0xBC3C
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_036		EQU 0xBE68
+.else
 CINEMATIC_036		EQU 0xBC7C
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_037		EQU 0xBEBA
+.else
 CINEMATIC_037		EQU 0xBCD0
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_038		EQU 0xBF0C
+.else
 CINEMATIC_038		EQU 0xBD24
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_039		EQU 0xC03A
+.else
 CINEMATIC_039		EQU 0xBD68
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_040		EQU 0xC0DC
+.else
 CINEMATIC_040		EQU 0xBDB8
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_041		EQU 0xC11A
+.else
 CINEMATIC_041		EQU 0xBDDA
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_042		EQU 0xC1E4
+.else
 CINEMATIC_042		EQU 0xBE2C
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_043		EQU 0xC2C4
+.else
 CINEMATIC_043		EQU 0xBE7E
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_044		EQU 0xABEC
+.else
 CINEMATIC_044		EQU 0xBFAC
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_045		EQU 0xAC20
+.else
 CINEMATIC_045		EQU 0xC04E
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_046		EQU 0xAC54
+.else
 CINEMATIC_046		EQU 0xC08C
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_047		EQU 0xAC88
+.else
 CINEMATIC_047		EQU 0xC156
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_048		EQU 0x1742
+.else
 CINEMATIC_048		EQU 0xC236
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_166		EQU 0x3A70
+.else
 CINEMATIC_166		EQU 0xF5D8
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_167		EQU 0x33A0
+.else
 CINEMATIC_167		EQU 0xF63E
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_168		EQU 0x3BF8
+.else
 CINEMATIC_168		EQU 0xF688
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_169		EQU 0x3658
+.else
 CINEMATIC_169		EQU 0xF2F6
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_170		EQU 0x3AC4
+.else
 CINEMATIC_170		EQU 0xF3B0
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_171		EQU 0x3830
+.else
 CINEMATIC_171		EQU 0xF3BC
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_453		EQU 0xF4B8
+.else
 CINEMATIC_453		EQU 0xF3E0
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_454		EQU 0xF500
+.else
 CINEMATIC_454		EQU 0xF42A
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_455		EQU 0xF530
+.else
 CINEMATIC_455		EQU 0xF472
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_456		EQU 0x4BE2
+.else
 CINEMATIC_456		EQU 0xF4A2
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_DNA_0		EQU 0xF866
+.else
 CINEMATIC_DNA_0		EQU 0xF7D8
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_DNA_1		EQU 0xF878
+.else
 CINEMATIC_DNA_1		EQU 0xF7EA
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_DNA_10		EQU 0xF922
+.else
 CINEMATIC_DNA_10		EQU 0xF894
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_DNA_11		EQU 0xF936
+.else
 CINEMATIC_DNA_11		EQU 0xF8A8
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_DNA_12		EQU 0xF94A
+.else
 CINEMATIC_DNA_12		EQU 0xF8BC
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_DNA_13		EQU 0xF95E
+.else
 CINEMATIC_DNA_13		EQU 0xF8D0
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_DNA_14		EQU 0xF970
+.else
 CINEMATIC_DNA_14		EQU 0xF8E2
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_DNA_15		EQU 0xF982
+.else
 CINEMATIC_DNA_15		EQU 0xF8F4
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_DNA_16		EQU 0xF994
+.else
 CINEMATIC_DNA_16		EQU 0xF906
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_DNA_2		EQU 0xF88A
+.else
 CINEMATIC_DNA_2		EQU 0xF7FC
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_DNA_3		EQU 0xF89E
+.else
 CINEMATIC_DNA_3		EQU 0xF810
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_DNA_4		EQU 0xF8B0
+.else
 CINEMATIC_DNA_4		EQU 0xF822
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_DNA_5		EQU 0xF8C2
+.else
 CINEMATIC_DNA_5		EQU 0xF834
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_DNA_6		EQU 0xF8D6
+.else
 CINEMATIC_DNA_6		EQU 0xF848
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_DNA_7		EQU 0xF8EA
+.else
 CINEMATIC_DNA_7		EQU 0xF85C
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_DNA_8		EQU 0xF8FE
+.else
 CINEMATIC_DNA_8		EQU 0xF870
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_DNA_9		EQU 0xF90E
+.else
 CINEMATIC_DNA_9		EQU 0xF880
+.endif
 
 SETUP_INTRO_DNA_CHANNELS:
 	setup channel=0x0A, address=DRAW_DNA_RUNG_ROTATION_LOOP
@@ -104,10 +268,14 @@ DRAW_DNA_RUNG_ROTATION_LOOP:
 	break
 	jmp DRAW_DNA_RUNG_ROTATION_LOOP
 LABEL_02AF:
-.if BRANCH in ("cartridge_1992", "gba_2004")
-	killChannel
-.elif BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	db 0x11
+.else
+.if BRANCH == "chahi_amiga_1991"
+	db 0x11
+.else
+	killChannel
+.endif
 .endif
 
 DNA_VAR_05_DRIFT_LOOP:
@@ -115,10 +283,14 @@ DNA_VAR_05_DRIFT_LOOP:
 	break
 	jmp DNA_VAR_05_DRIFT_LOOP
 LABEL_02B8:
-.if BRANCH in ("cartridge_1992", "gba_2004")
-	killChannel
-.elif BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	db 0x11
+.else
+.if BRANCH == "chahi_amiga_1991"
+	db 0x11
+.else
+	killChannel
+.endif
 .endif
 
 DRAW_DNA_ANIMATION_LOOP:
@@ -158,10 +330,14 @@ DRAW_DNA_ANIMATION_LOOP:
 	video offset=CINEMATIC_DNA_16, x=[0x04], y=[0x05], zoom=[0x06]
 	jmp DRAW_DNA_ANIMATION_LOOP
 LABEL_0333:
-.if BRANCH in ("cartridge_1992", "gba_2004")
-	killChannel
-.elif BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	db 0x11
+.else
+.if BRANCH == "chahi_amiga_1991"
+	db 0x11
+.else
+	killChannel
+.endif
 .endif
 
 DRAW_CINEMATICS_166_TO_171:
@@ -186,7 +362,9 @@ DRAW_SCIENTIST_THEN_DIVERGE_INIT:
 WAIT_VAR_0F_30_TICKS:
 	break
 	djnz [0x0F], WAIT_VAR_0F_30_TICKS
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_DISPATCH_VAR3
+.endif
 	mov [0x0F], 0x000A
 
 DRIFT_VAR_10_INC_BY_1_LOOP:
@@ -195,7 +373,9 @@ DRIFT_VAR_10_INC_BY_1_LOOP:
 	sub [0x11], 0x0001
 	break
 	djnz [0x0F], DRIFT_VAR_10_INC_BY_1_LOOP
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	killChannel
 
 DRAW_CIN_170_171_AT_VAR10_VAR11:
@@ -204,10 +384,14 @@ DRAW_CIN_170_171_AT_VAR10_VAR11:
 	break
 	jmp DRAW_CIN_170_171_AT_VAR10_VAR11
 LABEL_0390:
-.if BRANCH in ("cartridge_1992", "gba_2004")
-	killChannel
-.elif BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	db 0x11
+.else
+.if BRANCH == "chahi_amiga_1991"
+	db 0x11
+.else
+	killChannel
+.endif
 .endif
 
 DRAW_CIN_453_454_SEQ:
@@ -260,6 +444,8 @@ DRAW_CIN_048_15_FRAMES_LOOP:
 	setup channel=0x01, address=INTRO_FILL_AND_DRAW_CIN_103
 	setup channel=0x02, address=INTRO_PLAY_FX_AND_PALETTE_4_LOOP
 	setup channel=0x03, address=DRAW_CINEMATIC_053_LOOP
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	killChannel
 

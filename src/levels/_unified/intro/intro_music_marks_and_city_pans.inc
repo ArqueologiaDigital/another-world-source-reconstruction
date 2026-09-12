@@ -1,36 +1,142 @@
 CINEMATIC_HOLO_ACCELERATOR_LOOP_DIAGRAM		EQU 0xE51C
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_192		EQU 0x9680
+.else
 CINEMATIC_192		EQU 0xE6F0
+.endif
 
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_183		EQU 0xF2E2
+.else
 CINEMATIC_183		EQU 0xF1BE
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_184		EQU 0xF220
+.else
 CINEMATIC_184		EQU 0xF1EE
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_185		EQU 0xE5AA
+.else
 CINEMATIC_185		EQU 0xF26A
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_186		EQU 0xE77E
+.else
 CINEMATIC_186		EQU 0xF212
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_187		EQU 0x97BA
+.else
 CINEMATIC_187		EQU 0xF228
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_188		EQU 0x9856
+.else
 CINEMATIC_188		EQU 0xF23E
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_189		EQU 0x98EA
+.else
 CINEMATIC_189		EQU 0xF254
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_190		EQU 0x9982
+.else
 CINEMATIC_190		EQU 0xF192
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_413		EQU 0xC4A8
+.else
 CINEMATIC_413		EQU 0x4EE2
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_414		EQU 0x4F24
+.else
 CINEMATIC_414		EQU 0xC41A
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_415		EQU 0xC436
+.else
 CINEMATIC_415		EQU 0x4E96
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_416		EQU 0x4D8A
+.else
 CINEMATIC_416		EQU 0xC3A8
+.endif
 CINEMATIC_LESTER_BACK_AT_HOLO_CONSOLE		EQU 0x4CFC
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_429		EQU 0xE98A
+.else
 CINEMATIC_429		EQU 0xE356
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_430		EQU 0xFBB6
+.else
 CINEMATIC_430		EQU 0xE8FC
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_431		EQU 0xE2A2
+.else
 CINEMATIC_431		EQU 0xFB28
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_432		EQU 0xE306
+.else
 CINEMATIC_432		EQU 0xE214
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_433		EQU 0xE36E
+.else
 CINEMATIC_433		EQU 0xE278
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_434		EQU 0xDFD4
+.else
 CINEMATIC_434		EQU 0xE2E0
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_435		EQU 0xE08C
+.else
 CINEMATIC_435		EQU 0xDF46
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_436		EQU 0xE13E
+.else
 CINEMATIC_436		EQU 0xDFFE
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_437		EQU 0xE1F0
+.else
 CINEMATIC_437		EQU 0xE0B0
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_438		EQU 0xDE40
+.else
 CINEMATIC_438		EQU 0xE162
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_439		EQU 0xDEDC
+.else
 CINEMATIC_439		EQU 0xDDB2
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_440		EQU 0xDF4C
+.else
 CINEMATIC_440		EQU 0xDE4E
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_441		EQU 0x077C
+.else
 CINEMATIC_441		EQU 0xDEBE
+.endif
 
 WAIT_MUS_MARK_2B_THEN_TEXT:
 	setup channel=0x02, address=COPY_BG_PAGE_AND_DISPLAY_TEXT_23
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	killChannel
 
 INTRO_FILL_AND_DRAW_413_414:
@@ -51,25 +157,37 @@ SETUP_CITY_SEQ_CHANNELS:
 	setup channel=0x01, address=DRAW_CIN_190_LOOP
 	mov [0x03], 0x00C3
 	mov [0x04], 0x0064
+.if BRANCH == "chahi_amiga_1991"
+	mov [0x01], 0x0007
+.else
 	mov [0x01], 0x0006
+.endif
 
 DELAY_6_BEFORE_BLITTER_SETUP:
 	break
 	djnz [0x01], DELAY_6_BEFORE_BLITTER_SETUP
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
+.endif
 	selectVideoPage 0x00
 	video offset=CINEMATIC_183, x=200, y=102
 	video offset=CINEMATIC_184, x=125, y=99
 	selectVideoPage 0xFF
 	break
+.if BRANCH == "chahi_amiga_1991"
+	mov [0x01], 0x0008
+.else
 	mov [0x01], 0x0007
+.endif
 
 DELAY_7_BEFORE_BLITTER_SETUP:
 	break
 	djnz [0x01], DELAY_7_BEFORE_BLITTER_SETUP
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
+.endif
 	setup channel=0x3C, address=BLIT_DISPATCH_HERO_ACTION_ALT
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
@@ -116,13 +234,19 @@ CITY_PAN_X_M1_Y_M1_5X:
 	sub [0x03], 0x0001
 	sub [0x04], 0x0001
 	djnz [0x01], CITY_PAN_X_M1_Y_M1_5X
+.if BRANCH == "chahi_amiga_1991"
+	mov [0x01], 0x000A
+.else
 	mov [0x01], 0x0009
+.endif
 
 DELAY_9_BEFORE_BLITTER_SETUP:
 	break
 	djnz [0x01], DELAY_9_BEFORE_BLITTER_SETUP
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
+.endif
 	selectVideoPage 0x00
 	video offset=CINEMATIC_185, x=131, y=48
 	selectVideoPage 0xFF
@@ -147,7 +271,9 @@ DELAY_9_BEFORE_BLITTER_SETUP:
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x01, address=INTRO_FILL_AND_DRAW_CIN_429_430
 	setup channel=0x02, address=SETUP_INTRO_CITY_CHANNELS
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
 	killChannel
 

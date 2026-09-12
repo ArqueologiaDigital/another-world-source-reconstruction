@@ -1,7 +1,23 @@
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_138		EQU 0xF754
+.else
 CINEMATIC_138		EQU 0xCEFA
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_139		EQU 0xF9A6
+.else
 CINEMATIC_139		EQU 0xCF0A
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_140		EQU 0xF9F6
+.else
 CINEMATIC_140		EQU 0xCEA6
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_141		EQU 0xF612
+.else
 CINEMATIC_141		EQU 0xCE8E
+.endif
 CINEMATIC_142		EQU 0xCE76
 CINEMATIC_143		EQU 0xCECE
 
@@ -27,23 +43,33 @@ WAIT_VAR_01_50_TICKS:
 	break
 	djnz [0x01], WAIT_VAR_01_50_TICKS
 	mov [0x01], 0x0023
+.if BRANCH != "chahi_amiga_1991"
 	mov [PAUSE_SLICES], 0x0005
+.endif
 
 DISPLAY_TEXT_190_LOOP:
 	break
 	text id=0x0190, x=3, y=168, color=0x0B
 	djnz [0x01], DISPLAY_TEXT_190_LOOP
+.if BRANCH == "chahi_amiga_1991"
+	mov [0x01], 0x0032
+.else
 	mov [0x01], 0x0031
 	mov [PAUSE_SLICES], 0x0005
+.endif
 
 DISPLAY_TEXT_191_LOOP:
 	break
 	text id=0x0191, x=3, y=168, color=0x0B
 	djnz [0x01], DISPLAY_TEXT_191_LOOP
 	setup channel=0x08, address=DELETE_CHANNELS_0A_TO_1F
+.if BRANCH != "chahi_amiga_1991"
 	break
 	text id=0x0191, x=3, y=168, color=0x0B
+.endif
 	setup channel=0x02, address=INTRO_TRANSITION_TO_LAKE_SCENE
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	killChannel
 

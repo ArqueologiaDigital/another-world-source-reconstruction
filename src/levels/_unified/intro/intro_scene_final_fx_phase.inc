@@ -1,6 +1,8 @@
 INTRO_PLAY_FX_AND_PALETTE_4_LOOP:
 	break
+.if BRANCH != "chahi_amiga_1991"
 	setPalette 0x04
+.endif
 	play id=0x000D, freq=0x14, vol=0x19, channel=0x02
 	mov [PAUSE_SLICES], 0x0003
 	mov [0x01], 0x0032
@@ -78,14 +80,18 @@ INTRO_PLAY_FX_AND_PALETTE_4_LOOP:
 	video offset=CINEMATIC_WALKING_FEET_ARRIVING_33, x=230, y=96
 	break
 	video offset=CINEMATIC_WALKING_FEET_ARRIVING_34, x=230, y=96
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	break
 	selectVideoPage 0x00
 	video offset=CINEMATIC_089, x=160, y=100
 	video offset=CINEMATIC_090, x=160, y=100
 	selectVideoPage 0xFF
 	video offset=CINEMATIC_WALKING_FEET_ENTERING_0, x=230, y=96
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	break
 	selectVideoPage 0x00
 	video offset=CINEMATIC_089, x=160, y=100
@@ -117,14 +123,20 @@ INTRO_PLAY_FX_AND_PALETTE_4_LOOP:
 	video offset=CINEMATIC_WALKING_FEET_ENTERING_10, x=71, y=115
 	break
 	mov [PAUSE_SLICES], 0x0002
+.if BRANCH == "chahi_amiga_1991"
+	mov [0x01], 0x001E
+.else
 	mov [0x01], 0x001C
+.endif
 
 DELAY_28F_BEFORE_BLITTER_SETUP:
 	break
 	djnz [0x01], DELAY_28F_BEFORE_BLITTER_SETUP
+.if BRANCH != "chahi_amiga_1991"
 	break
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
+.endif
 	mov [PAUSE_SLICES], 0x0002
 	video offset=CINEMATIC_090, x=160, y=100
 	selectVideoPage 0x00
@@ -139,12 +151,17 @@ DELAY_20F_BEFORE_PAL_7_INIT:
 	setup channel=0x01, address=INTRO_SET_PAL_7_FILL_PAGE0_5
 	setup channel=0x02, address=CH_02_INIT_VARS_01_02_03
 	setup channel=0x03, address=DRAW_CIN_112_AT_143_94_LOOP
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	killChannel
 
 INTRO_FILL_AND_DRAW_CIN_103:
 	fill page=0x00, color=0x02
 	selectVideoPage 0x00
+.if BRANCH == "chahi_amiga_1991"
+	setPalette 0x04
+.endif
 	video offset=CINEMATIC_103, x=192, y=100
 	video offset=CINEMATIC_053, x=14, y=80
 	video offset=CINEMATIC_104, x=189, y=68
@@ -156,7 +173,9 @@ INTRO_FILL_AND_DRAW_CIN_103:
 	video offset=CINEMATIC_110, x=61, y=69
 	video offset=CINEMATIC_111, x=160, y=100
 	video offset=CINEMATIC_102, x=160, y=100
+.if BRANCH != "chahi_amiga_1991"
 	selectVideoPage 0xFF
+.endif
 	killChannel
 
 DRAW_CINEMATIC_053_LOOP:
@@ -164,10 +183,14 @@ DRAW_CINEMATIC_053_LOOP:
 	break
 	jmp DRAW_CINEMATIC_053_LOOP
 LABEL_26A6:
-.if BRANCH in ("cartridge_1992", "gba_2004")
-	killChannel
-.elif BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	db 0x11, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+.else
+.if BRANCH == "chahi_amiga_1991"
+	db 0x11, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+.else
+	killChannel
+.endif
 .endif
 .if BRANCH == "cartridge_1992"
 .elif BRANCH == "gba_2004"

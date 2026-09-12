@@ -1,30 +1,102 @@
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_382		EQU 0xE7FE
+.else
 CINEMATIC_382		EQU 0xE75C
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_383		EQU 0xE92E
+.else
 CINEMATIC_383		EQU 0xE770
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_384		EQU 0xEA92
+.else
 CINEMATIC_384		EQU 0xE8A0
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_419		EQU 0xE950
+.else
 CINEMATIC_419		EQU 0xE8E6
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_420		EQU 0xE692
+.else
 CINEMATIC_420		EQU 0xE8C2
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_421		EQU 0xE6FA
+.else
 CINEMATIC_421		EQU 0xE604
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_422		EQU 0xE752
+.else
 CINEMATIC_422		EQU 0xE66C
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_423		EQU 0xE7AE
+.else
 CINEMATIC_423		EQU 0xE6C4
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_424		EQU 0xE772
+.else
 CINEMATIC_424		EQU 0xE720
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_425		EQU 0xE448
+.else
 CINEMATIC_425		EQU 0xE6E4
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_426		EQU 0xE4D6
+.else
 CINEMATIC_426		EQU 0xE3BA
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_427		EQU 0xE546
+.else
 CINEMATIC_427		EQU 0xE448
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_428		EQU 0xE3E4
+.else
 CINEMATIC_428		EQU 0xE4B8
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_517		EQU 0x4306
+.else
 CINEMATIC_517		EQU 0xAF34
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_518		EQU 0x431E
+.else
 CINEMATIC_518		EQU 0xB000
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_LESTER_IN_BIOMETRIC_SCANNER		EQU 0x4982
+.else
 CINEMATIC_LESTER_IN_BIOMETRIC_SCANNER		EQU 0x48F4
+.endif
+.if BRANCH == "chahi_amiga_1991"
+CINEMATIC_LAB_AUTH_CRT_SHOWING_BIOMETRICS		EQU 0x4ABA
+.else
 CINEMATIC_LAB_AUTH_CRT_SHOWING_BIOMETRICS		EQU 0x4A2C
+.endif
 
 SHOW_PAGE_0_LOOP_INTRO:
 	selectVideoPage 0x00
 	break
 	jmp SHOW_PAGE_0_LOOP_INTRO
 LABEL_158C:
-.if BRANCH in ("cartridge_1992", "gba_2004")
-	killChannel
-.elif BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	db 0x11
+.else
+.if BRANCH == "chahi_amiga_1991"
+	db 0x11
+.else
+	killChannel
+.endif
 .endif
 
 SHOW_PAGE_FF_LOOP_INTRO:
@@ -32,10 +104,14 @@ SHOW_PAGE_FF_LOOP_INTRO:
 	break
 	jmp SHOW_PAGE_FF_LOOP_INTRO
 LABEL_1593:
-.if BRANCH in ("cartridge_1992", "gba_2004")
-	killChannel
-.elif BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	db 0x11
+.else
+.if BRANCH == "chahi_amiga_1991"
+	db 0x11
+.else
+	killChannel
+.endif
 .endif
 
 INIT_VAR_03_AND_LOOP:
@@ -52,10 +128,14 @@ INTRO_TEXT_39_REST_8X:
 	djnz [0x03], INTRO_TEXT_39_REST_8X
 	jmp INIT_VAR_03_AND_LOOP
 LABEL_15AF:
-.if BRANCH in ("cartridge_1992", "gba_2004")
-	killChannel
-.elif BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	db 0x11
+.else
+.if BRANCH == "chahi_amiga_1991"
+	db 0x11
+.else
+	killChannel
+.endif
 .endif
 
 DISPLAY_TEXT_21:
@@ -200,7 +280,9 @@ DRAW_CIN_382_PUFFS_3X:
 	break
 	video offset=CINEMATIC_382, x=185, y=127
 	djnz [0x02], DRAW_CIN_382_PUFFS_3X
+.if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	selectVideoPage 0x00
 	video offset=CINEMATIC_383, x=237, y=156
 	selectVideoPage 0xFF
@@ -299,10 +381,14 @@ DRAW_CIN_382_PUFFS_1X:
 	djnz [0x02], DRAW_CIN_382_PUFFS_1X
 	jmp CIN_382_PUFFS_PHASE_INIT
 LABEL_185D:
-.if BRANCH in ("cartridge_1992", "gba_2004")
-	killChannel
-.elif BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	db 0x11
+.else
+.if BRANCH == "chahi_amiga_1991"
+	db 0x11
+.else
+	killChannel
+.endif
 .endif
 
 DRAW_CIN_426_427_TWICE:
@@ -317,10 +403,14 @@ DRAW_CIN_426_427_TWICE:
 	break
 	jmp DRAW_CIN_426_427_TWICE
 LABEL_187F:
-.if BRANCH in ("cartridge_1992", "gba_2004")
-	killChannel
-.elif BRANCH == "dos_1992"
+.if BRANCH == "dos_1992"
 	db 0x11
+.else
+.if BRANCH == "chahi_amiga_1991"
+	db 0x11
+.else
+	killChannel
+.endif
 .endif
 
 FILL_FF_8_AND_DRAW_CIN_517_518:
@@ -329,10 +419,12 @@ FILL_FF_8_AND_DRAW_CIN_517_518:
 	video offset=CINEMATIC_518, x=160, y=100
 	video offset=CINEMATIC_LESTER_IN_BIOMETRIC_SCANNER, x=110, y=101
 	video offset=CINEMATIC_LAB_AUTH_CRT_SHOWING_BIOMETRICS, x=228, y=85
+.if BRANCH != "chahi_amiga_1991"
 	je [0xDB], 0x00, IF_DB_ZERO_SWAP_PAGE_PAL_11
 	video offset=CINEMATIC_352, x=128, y=30
 
 IF_DB_ZERO_SWAP_PAGE_PAL_11:
+.endif
 	copyVideoPage src=0xFF, dst=0x00
 	setPalette 0x11
 	killChannel
