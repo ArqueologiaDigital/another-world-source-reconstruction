@@ -228,7 +228,9 @@ ever be E4: there is no VM runtime in any repo (#0089).
 Verify any channel claim with
 `operand_inventory.py --layer channel-roles`, which reports setups, how many stages
 use the channel, and the dominant role of the routines on it. Invariant and
-nameable now, at E2:
+nameable now, at E2 — four are named as of 2026-09-12 and the rest deliberately are
+not, with a test asserting that stage-scoped channels such as 0x01 (196 setups over
+20 files, no single role) stay literals:
 
 | channel | role | evidence |
 |---|---|---|
@@ -267,6 +269,15 @@ cartridge ports use a contiguous `0x0BB9`–`0x0BE0` block and GBA adds
 `0x0FA0`–`0x0FA3`. These are above the 146-entry memlist, so they are host-side
 audio requests, not resource ids. Nothing in either repo decodes the numbering —
 do not invent `MUS_3001`.
+
+**A prefix collision to fix.** `MUS_MARK` is a *VM variable* alias (0xF4, the
+music-position marker) and predates this standard, while `MUS_<what>` is the prefix
+for *music resource ids*. A listing now defines both `MUS_MARK EQU 0xF4` and
+`MUS_INTRO_THEME EQU 0x0007` — different namespaces, and no assembler conflict since
+they occupy different operand positions, but a reader cannot tell which is which.
+Rename the variable to `MUSIC_POS_MARK` when the variable layer is next touched; the
+resource prefix is the one worth keeping, since there are three music ids and only
+one such variable.
 
 Readiness by kind:
 
