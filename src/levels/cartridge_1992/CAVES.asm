@@ -1387,7 +1387,7 @@ LABEL_00FB:
 	and [0xF8], 0x003C
 	jne [0xF8], 0x14, LABEL_012E
 	jne [0xF2], 0x0FA0, LABEL_012E
-	jne [HACK_VAR_DC], 0x21, LABEL_012E
+	jne [COPY_PROTECT_TOKEN], 0x21, LABEL_012E
 	ret
 
 
@@ -1398,7 +1398,7 @@ LABEL_012E:
 	mov [0xBC], 0x00FF
 	mov [0xC6], 0x00FF
 	mov [0xF2], 0x1770
-	mov [HACK_VAR_DC], 0x0021
+	mov [COPY_PROTECT_TOKEN], 0x0021
 	killChannel
 
 LABEL_0148:
