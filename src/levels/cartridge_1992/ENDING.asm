@@ -159,7 +159,7 @@ ENTRY_POINT_OF_ENDING:
 	mov [PAUSE_SLICES], 0x0004
 	break
 	song id=0x0000, delay=0x0000, pos=0x00
-	call PRELOAD_RESOURCES_8_TO_1
+	call ENDING_RESOURCE_PRELOAD
 	call LIKELY_A_COPY_PROTECTION_MECHANISM
 	setup channel=0x1E, address=ENDING_DRAW_STARS_BG_PLAY_SOUND_08
 	killChannel
@@ -186,7 +186,7 @@ DELETE_ALL_CHANS_AND_KILL:
 	deleteChannels first=0x00, last=0x3F
 	killChannel
 
-PRELOAD_RESOURCES_8_TO_1:
+ENDING_RESOURCE_PRELOAD:
 	jne [0xDB], 0x00, LABEL_0060
 	load id=0x0008
 	load id=0x008A
@@ -227,7 +227,7 @@ LABEL_006A:
 LABEL_008B:
 	db 0x11
 
-DRAW_CIN_101_102_FADE_PAL_C:
+ENDING_BUDDY_HOLDS_LESTER_CLOSEUP_RISE:
 	video offset=CINEMATIC_101, x=160, y=125
 	setPalette 0x0C
 	break
@@ -273,7 +273,7 @@ LABEL_00BF:
 	video offset=CINEMATIC_053, x=[0x01], y=[0x02], zoom=[0x03]
 	deleteChannels first=0x0A, last=0x0E
 	copyVideoPage src=0x03, dst=0x00
-	setup channel=0x0A, address=LABEL_0159
+	setup channel=0x0A, address=ENDING_PTERANODON_FLY_AWAY_SHOT_ENTRY
 	setup channel=0x0B, address=LABEL_011A
 	setup channel=0x0E, address=LABEL_0504
 	setup channel=0x0F, address=LABEL_0125
@@ -303,7 +303,7 @@ LABEL_0125:
 	break
 	jmp LABEL_0125
 
-LABEL_0159:
+ENDING_PTERANODON_FLY_AWAY_SHOT_ENTRY:
 	mov [0x01], 0x00A0
 	mov [0x02], 0x0064
 	mov [0x03], 0x0040
@@ -317,8 +317,8 @@ LABEL_0159:
 	break
 	add [0x04], 0x0008
 	video offset=CINEMATIC_069, x=[0x01], y=[0x02], zoom=[0x03]
-	setup channel=0x0C, address=LABEL_0512
-	setup channel=0x0D, address=LABEL_058D
+	setup channel=0x0C, address=PTERANODON_WING_LEFT_FLAP_LOOP
+	setup channel=0x0D, address=PTERANODON_WING_RIGHT_FLAP_LOOP
 	mov [0x06], 0x000A
 
 LABEL_0198:
@@ -328,20 +328,20 @@ LABEL_0198:
 	setup channel=0x0B, address=ENDING_CHANNEL_TOMBSTONE_KILL
 	mov [0x06], 0x0030
 
-LABEL_01A9:
+ENDING_PTERANODON_RECEDE_PHASE_1:
 	break
 	sub [0x03], 0x0001
-	djnz [0x06], LABEL_01A9
+	djnz [0x06], ENDING_PTERANODON_RECEDE_PHASE_1
 	setup channel=0x10, address=INIT_VARE_TO_12
-	setup channel=0x11, address=LABEL_0230
+	setup channel=0x11, address=ENDING_THE_END_CAPTION_DRAW_LOOP
 	mov [0x0F], 0x0001
 	mov [0x06], 0x000C
 
-LABEL_01C2:
+ENDING_PTERANODON_RECEDE_PHASE_2:
 	break
 	break
 	sub [0x03], 0x0001
-	djnz [0x06], LABEL_01C2
+	djnz [0x06], ENDING_PTERANODON_RECEDE_PHASE_2
 	mov [0x06], 0x0019
 
 DELAY_VAR6_THEN_VAR3_MINUS_1__ENDING_CHANNEL_CLEANUP:
@@ -359,16 +359,16 @@ DELAY_VAR6_THEN_KILL_CHAN__ENDING_CHANNEL_CLEANUP:
 INIT_VARE_TO_12:
 	mov [0x0E], 0x000C
 
-LABEL_01EB:
+ENDING_THE_END_ZOOM_IN_PHASE_1:
 	break
 	add [0x0F], 0x0001
-	djnz [0x0E], LABEL_01EB
+	djnz [0x0E], ENDING_THE_END_ZOOM_IN_PHASE_1
 	mov [0x0E], 0x0009
 
-LABEL_01F8:
+ENDING_THE_END_ZOOM_IN_PHASE_2:
 	break
 	add [0x0F], 0x0004
-	djnz [0x0E], LABEL_01F8
+	djnz [0x0E], ENDING_THE_END_ZOOM_IN_PHASE_2
 	mov [0x0E], 0x0032
 
 DELAY_VARE_THEN_INIT_VARE_5__ENDING_VAR_SETUPS:
@@ -380,7 +380,7 @@ LABEL_020E:
 	break
 	add [0x0F], 0x0008
 	djnz [0x0E], LABEL_020E
-	setup channel=0x36, address=LABEL_023B
+	setup channel=0x36, address=ENDING_CREDITS_ROLL_ENTRY
 	break
 	add [0x0F], 0x000C
 	break
@@ -391,14 +391,14 @@ LABEL_020E:
 	add [0x0F], 0x0038
 	killChannel
 
-LABEL_0230:
+ENDING_THE_END_CAPTION_DRAW_LOOP:
 	video offset=CINEMATIC_070, x=[0x01], y=[0x02], zoom=[0x0f]
 	break
-	jmp LABEL_0230
+	jmp ENDING_THE_END_CAPTION_DRAW_LOOP
 LABEL_023A:
 	db 0x11
 
-LABEL_023B:
+ENDING_CREDITS_ROLL_ENTRY:
 	setPalette 0x10
 	break
 	setPalette 0x11
@@ -447,21 +447,21 @@ Exec. Producer. Stephen Clarke-Willson"
 	mov [PAUSE_SLICES], 0x0002
 	mov [0x01], 0x000A
 
-LABEL_02A3:
+ENDING_CREDITS_ROLL_START_DELAY:
 	break
-	djnz [0x01], LABEL_02A3
+	djnz [0x01], ENDING_CREDITS_ROLL_START_DELAY
 	setup channel=0x14, address=PAL_FADE_18_TO_1D
 	mov [0x01], 0x00AF
 
-LABEL_02B0:
+ENDING_CREDITS_CREW_PAGE_SCROLL_IN_LOOP:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_02B0
+	djnz [0x01], ENDING_CREDITS_CREW_PAGE_SCROLL_IN_LOOP
 	mov [0x01], 0x00C8
 
-LABEL_02BD:
+ENDING_CREDITS_STAFF_HOLD:
 	break
-	djnz [0x01], LABEL_02BD
+	djnz [0x01], ENDING_CREDITS_STAFF_HOLD
 	mov [0x01], 0x00B4
 
 LABEL_02C6:
@@ -497,15 +497,15 @@ Bill Heineman      Jason Ferris
 	mov [SCROLL_Y], 0x00C8
 	mov [0x01], 0x0096
 
-LABEL_02EA:
+ENDING_CREDITS_THANKS_SCROLL_IN_LOOP:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_02EA
+	djnz [0x01], ENDING_CREDITS_THANKS_SCROLL_IN_LOOP
 	mov [0x01], 0x00C8
 
-LABEL_02F7:
+ENDING_CREDITS_THANKS_HOLD:
 	break
-	djnz [0x01], LABEL_02F7
+	djnz [0x01], ENDING_CREDITS_THANKS_HOLD
 	mov [0x01], 0x00C8
 
 LABEL_0300:
@@ -519,15 +519,15 @@ LABEL_0300:
 	mov [SCROLL_Y], 0x00C8
 	mov [0x01], 0x0064
 
-LABEL_031E:
+ENDING_CREDITS_SIGNOFF_SCROLL_IN_LOOP:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_031E
+	djnz [0x01], ENDING_CREDITS_SIGNOFF_SCROLL_IN_LOOP
 	mov [0x01], 0x00AA
 
-LABEL_032B:
+ENDING_CREDITS_SIGNOFF_HOLD_THEN_MUSIC_STOP:
 	break
-	djnz [0x01], LABEL_032B
+	djnz [0x01], ENDING_CREDITS_SIGNOFF_HOLD_THEN_MUSIC_STOP
 	GameOver
 	killChannel
 	killChannel
@@ -711,7 +711,7 @@ PAL_FADE_18_TO_1D:
 	setPalette 0x17
 	killChannel
 
-DRAW_CIN_71_72_FADE:
+PTERANODON_HEAD_RAISE_ANIM:
 	video offset=CINEMATIC_071, x=160, y=100
 	break
 	video offset=CINEMATIC_071, x=160, y=100
@@ -726,17 +726,17 @@ DRAW_CIN_71_72_FADE:
 	break
 	video offset=CINEMATIC_073, x=160, y=100
 
-LABEL_04B5:
+PTERANODON_HEAD_RAISED_HOLD_LOOP:
 	break
 	video offset=CINEMATIC_074, x=160, y=100
-	jmp LABEL_04B5
+	jmp PTERANODON_HEAD_RAISED_HOLD_LOOP
 LABEL_04BD:
 	db 0x06
 
-LABEL_04BE:
+PTERANODON_HEAD_LOWERED_HOLD_LOOP:
 	video offset=CINEMATIC_071, x=160, y=100
 	break
-	jmp LABEL_04BE
+	jmp PTERANODON_HEAD_LOWERED_HOLD_LOOP
 
 DRAW_CIN_106_107_FX_57:
 	video offset=CINEMATIC_106, x=160, y=100
@@ -754,10 +754,10 @@ DRAW_CIN_106_107_FX_57:
 	break
 	video offset=CINEMATIC_106, x=160, y=100
 
-LABEL_04EE:
+PTERANODON_HEAD_POST_CRY_HOLD_LOOP:
 	break
 	video offset=CINEMATIC_074, x=160, y=100
-	jmp LABEL_04EE
+	jmp PTERANODON_HEAD_POST_CRY_HOLD_LOOP
 LABEL_04F6:
 	db 0x11
 
@@ -775,7 +775,7 @@ LABEL_0504:
 	break
 	jmp LABEL_0504
 
-LABEL_0512:
+PTERANODON_WING_LEFT_FLAP_LOOP:
 	video offset=CINEMATIC_086, x=[0x01], y=[0x02], zoom=[0x03]
 	break
 	video offset=CINEMATIC_087, x=[0x01], y=[0x02], zoom=[0x03]
@@ -810,11 +810,11 @@ LABEL_0512:
 	break
 	video offset=CINEMATIC_096, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	jmp LABEL_0512
+	jmp PTERANODON_WING_LEFT_FLAP_LOOP
 LABEL_058C:
 	db 0x11
 
-LABEL_058D:
+PTERANODON_WING_RIGHT_FLAP_LOOP:
 	video offset=CINEMATIC_075, x=[0x01], y=[0x02], zoom=[0x03]
 	break
 	video offset=CINEMATIC_076, x=[0x01], y=[0x02], zoom=[0x03]
@@ -849,7 +849,7 @@ LABEL_058D:
 	break
 	video offset=CINEMATIC_085, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	jmp LABEL_058D
+	jmp PTERANODON_WING_RIGHT_FLAP_LOOP
 LABEL_0607:
 	db 0x11
 
@@ -891,15 +891,15 @@ LABEL_065C:
 	video offset=CINEMATIC_051, x=160, y=100
 	djnz [0xE6], LABEL_065C
 	setup channel=0x0A, address=LABEL_04F7
-	setup channel=0x0B, address=DRAW_CIN_101_102_FADE_PAL_C
+	setup channel=0x0B, address=ENDING_BUDDY_HOLDS_LESTER_CLOSEUP_RISE
 	setup channel=0x0C, address=LABEL_006A
 	setup channel=0x0D, address=LABEL_00BF
 	killChannel
 
 ENDING_DRAW_STARS_BG_PLAY_SOUND_08:
-	call DRAW_STARS_PAGE0_CIN_000
-	call DRAW_STARS_PAGE3_CIN_004
-	setup channel=0x05, address=LABEL_04BE
+	call ENDING_CLOUD_SKY_BACKDROP_PAGE_0
+	call ENDING_CLOUD_SKY_BACKDROP_PAGE_3
+	setup channel=0x05, address=PTERANODON_HEAD_LOWERED_HOLD_LOOP
 	selectVideoPage 0x00
 	play id=0x0008, freq=0x05, vol=0x20, channel=0x00
 	play id=0x0008, freq=0x07, vol=0x30, channel=0x01
@@ -913,10 +913,10 @@ ENDING_DRAW_STARS_BG_PLAY_SOUND_08:
 	mov [0x02], 0x0064
 	setPalette 0x0A
 
-LABEL_06AF:
+LESTER_PRONE_ARRIVAL_DELAY:
 	break
-	djnz [0x03], LABEL_06AF
-	setup channel=0x05, address=DRAW_CIN_71_72_FADE
+	djnz [0x03], LESTER_PRONE_ARRIVAL_DELAY
+	setup channel=0x05, address=PTERANODON_HEAD_RAISE_ANIM
 	video offset=CINEMATIC_011, x=[0x01], y=[0x02]
 	play id=0x0008, freq=0x0A, vol=0x16, channel=0x00
 	play id=0x0057, freq=0x14, vol=0x20, channel=0x02
@@ -929,10 +929,10 @@ LABEL_06AF:
 	play id=0x000E, freq=0x03, vol=0x20, channel=0x03
 	mov [0x03], 0x0014
 
-LABEL_06E5:
+LESTER_PRONE_TERRACE_HOLD:
 	break
 	video offset=CINEMATIC_015, x=[0x01], y=[0x02]
-	djnz [0x03], LABEL_06E5
+	djnz [0x03], LESTER_PRONE_TERRACE_HOLD
 	mov [PAUSE_SLICES], 0x000A
 	mov [0x03], 0x0006
 	play id=0x000F, freq=0x03, vol=0x30, channel=0x03
@@ -979,7 +979,7 @@ LABEL_072E:
 	djnz [0x03], LABEL_0704
 	mov [PAUSE_SLICES], 0x0006
 	video offset=CINEMATIC_019, x=[0x01], y=[0x02]
-	setup channel=0x14, address=INIT_VARS_07_08_09
+	setup channel=0x14, address=ALIEN_ARRIVAL_POSITION_INIT
 
 LABEL_0787:
 	break
@@ -988,7 +988,7 @@ LABEL_0787:
 LABEL_0790:
 	db 0x11
 
-INIT_VARS_07_08_09:
+ALIEN_ARRIVAL_POSITION_INIT:
 	mov [0x07], 0x004C
 	mov [0x08], 0x0097
 	mov [0x09], 0x0003
@@ -1009,15 +1009,15 @@ LABEL_07BD:
 	video offset=CINEMATIC_024, x=[0x07], y=[0x08]
 	video offset=CINEMATIC_025, x=[0x07], y=[0x08]
 	djnz [0x09], LABEL_07BD
-	setup channel=0x11, address=LABEL_085E
+	setup channel=0x11, address=ALIEN_WALK_HEAD_LOOP
 	setup channel=0x12, address=DRAW_COMMON_VIDS_148_151_152_153
 	setup channel=0x13, address=DRAW_COMMON_VIDS_149_141_137_10
 	setup channel=0x0C, address=ENDING_X_SLIDE_RIGHT_ACCEL
 	mov [0x09], 0x0010
 
-LABEL_07E0:
+ALIEN_WALK_DELAY_THEN_KNEEL:
 	break
-	djnz [0x09], LABEL_07E0
+	djnz [0x09], ALIEN_WALK_DELAY_THEN_KNEEL
 	setup channel=0x0C, address=ENDING_CHANNEL_TOMBSTONE_KILL
 	deleteChannels first=0x11, last=0x13
 	break
@@ -1060,10 +1060,10 @@ LABEL_0819:
 	setup channel=0x0A, address=SET_VAR_E6_5_PAL_B
 	killChannel
 
-LABEL_085E:
+ALIEN_WALK_HEAD_LOOP:
 	video offset=CINEMATIC_024, x=[0x07], y=[0x08]
 	break
-	jmp LABEL_085E
+	jmp ALIEN_WALK_HEAD_LOOP
 LABEL_0867:
 	db 0x11
 
@@ -1160,7 +1160,7 @@ ENDING_X_SLIDE_RIGHT_PLUS3_DJNZ_THEN_ACCEL:
 	video type=0, offset=COMMON_VIDEO_202, x=160, y=100, zoom=0x40
 	killChannel
 
-DRAW_STARS_PAGE0_CIN_000:
+ENDING_CLOUD_SKY_BACKDROP_PAGE_0:
 	selectVideoPage 0x00
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_000, x=253, y=34, zoom=0x0a
@@ -1197,7 +1197,7 @@ DRAW_STARS_PAGE0_CIN_000:
 LABEL_09F7:
 	db 0x11
 
-DRAW_STARS_PAGE3_CIN_004:
+ENDING_CLOUD_SKY_BACKDROP_PAGE_3:
 	selectVideoPage 0x03
 	fill page=0x03, color=0x01
 	video offset=CINEMATIC_004, x=253, y=34, zoom=0x0a
