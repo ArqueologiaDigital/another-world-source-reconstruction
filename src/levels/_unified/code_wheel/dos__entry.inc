@@ -12,8 +12,8 @@
 ;   CLEAR_VAR_22  (2-arm: amiga, dos)
 ;   SUM_HASH_VARS_TO_VAR_37  (2-arm: amiga, dos)
 ;   MARK_VAR67_AND_KILL  (2-arm: amiga, dos)
-;   INIT_VAR08_TO_178  (2-arm: amiga, dos)
-;   COMPUTE_VAR07_TIMES_44_PLUS_20  (2-arm: amiga, dos)
+;   CODEWHEEL_GRID_CELL_Y_SECOND_ROW  (2-arm: amiga, dos)
+;   CODEWHEEL_GRID_CELL_X_FROM_COLUMN  (2-arm: amiga, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (2-arm: amiga, dos)
 
 ; Unified source for CODE_WHEEL with 14 folded shared bodies.
@@ -30,8 +30,8 @@
 ;   CLEAR_VAR_22  (2-arm: amiga, dos)
 ;   SUM_HASH_VARS_TO_VAR_37  (2-arm: amiga, dos)
 ;   MARK_VAR67_AND_KILL  (2-arm: amiga, dos)
-;   INIT_VAR08_TO_178  (2-arm: amiga, dos)
-;   COMPUTE_VAR07_TIMES_44_PLUS_20  (2-arm: amiga, dos)
+;   CODEWHEEL_GRID_CELL_Y_SECOND_ROW  (2-arm: amiga, dos)
+;   CODEWHEEL_GRID_CELL_X_FROM_COLUMN  (2-arm: amiga, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (2-arm: amiga, dos)
 
 ; Unified source for CODE_WHEEL with two folded shared bodies.

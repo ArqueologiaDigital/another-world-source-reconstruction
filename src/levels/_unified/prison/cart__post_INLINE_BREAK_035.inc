@@ -96,7 +96,7 @@ LABEL_9716:
 	video type=0, offset=COMMON_VIDEO_096, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x000C
 	add [HERO_Y], 0x0001
-	call PRISON_TRIVIAL_RET_L2
+	call PRISON_HERO_UPPER_FLOOR_FLAG_UPDATE
 	call LABEL_883E
 	break
 	video type=0, offset=COMMON_VIDEO_055, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -188,7 +188,7 @@ LABEL_983B:
 	video type=0, offset=COMMON_VIDEO_085, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x000C
 	add [HERO_Y], 0x0001
-	call PRISON_TRIVIAL_RET_L2
+	call PRISON_HERO_UPPER_FLOOR_FLAG_UPDATE
 	call LABEL_883E
 	break
 	video type=0, offset=COMMON_VIDEO_010, x=[HERO_X], y=[HERO_Y], zoom=0x40
