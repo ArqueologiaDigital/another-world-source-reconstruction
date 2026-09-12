@@ -957,10 +957,10 @@ DRAW_CIN_035_PAL_3_REPEAT_HEAD:
 	video offset=CINEMATIC_042, x=160, y=100
 	mov [0x01], 0x000F
 
-LABEL_03FD:
+DRAW_CIN_048_15_FRAMES_LOOP:
 	break
 	video offset=CINEMATIC_043, x=160, y=100
-	djnz [0x01], LABEL_03FD
+	djnz [0x01], DRAW_CIN_048_15_FRAMES_LOOP
 	setup channel=0x01, address=INTRO_FILL_AND_DRAW_CIN_103
 	setup channel=0x02, address=INTRO_PLAY_FX_AND_PALETTE_4_LOOP
 	setup channel=0x03, address=DRAW_CINEMATIC_053_LOOP
@@ -970,9 +970,9 @@ CH_0A_INIT_VAR_02:
 	break
 	mov [0x02], 0x0032
 
-LABEL_041C:
+CH_0A_VAR_02_WAIT_LOOP:
 	break
-	djnz [0x02], LABEL_041C
+	djnz [0x02], CH_0A_VAR_02_WAIT_LOOP
 	play id=0x000E, freq=0x0A, vol=0x3F, channel=0x00
 	video offset=CINEMATIC_044, x=160, y=100
 	break
@@ -992,9 +992,9 @@ CH_0B_INIT_VAR_03:
 	break
 	mov [0x03], 0x0046
 
-LABEL_044E:
+CH_0B_VAR_03_WAIT_LOOP:
 	break
-	djnz [0x03], LABEL_044E
+	djnz [0x03], CH_0B_VAR_03_WAIT_LOOP
 	play id=0x000F, freq=0x0A, vol=0x3F, channel=0x00
 	video offset=CINEMATIC_373, x=160, y=100
 	break
@@ -1022,9 +1022,9 @@ CH_0C_INIT_VAR_04:
 	break
 	mov [0x04], 0x0050
 
-LABEL_0494:
+CH_0C_VAR_04_WAIT_LOOP:
 	break
-	djnz [0x04], LABEL_0494
+	djnz [0x04], CH_0C_VAR_04_WAIT_LOOP
 	video offset=CINEMATIC_367, x=160, y=100
 	break
 	video offset=CINEMATIC_368, x=160, y=100
@@ -1049,9 +1049,9 @@ CH_0D_INIT_VAR_05:
 	break
 	mov [0x05], 0x0014
 
-LABEL_04CF:
+CH_0D_VAR_05_WAIT_20:
 	break
-	djnz [0x05], LABEL_04CF
+	djnz [0x05], CH_0D_VAR_05_WAIT_20
 	play id=0x000E, freq=0x02, vol=0x3F, channel=0x00
 	video offset=CINEMATIC_357, x=160, y=100
 	break
@@ -1066,9 +1066,9 @@ LABEL_04CF:
 	break
 	mov [0x05], 0x006E
 
-LABEL_04FD:
+CH_0D_VAR_05_WAIT_110:
 	break
-	djnz [0x05], LABEL_04FD
+	djnz [0x05], CH_0D_VAR_05_WAIT_110
 	video offset=CINEMATIC_362, x=160, y=100
 	break
 	video offset=CINEMATIC_363, x=160, y=100
@@ -1080,9 +1080,9 @@ LABEL_04FD:
 	video offset=CINEMATIC_366, x=160, y=100
 	mov [0x05], 0x0046
 
-LABEL_051E:
+CH_0D_VAR_05_WAIT_70:
 	break
-	djnz [0x05], LABEL_051E
+	djnz [0x05], CH_0D_VAR_05_WAIT_70
 	jmp CH_0D_INIT_VAR_05
 LABEL_0526:
 	db 0x11
@@ -1091,9 +1091,9 @@ CH_0E_INIT_VAR_06:
 	break
 	mov [0x06], 0x003C
 
-LABEL_052C:
+CH_0E_VAR_06_WAIT_60:
 	break
-	djnz [0x06], LABEL_052C
+	djnz [0x06], CH_0E_VAR_06_WAIT_60
 	setPalette 0x02
 	break
 	break
@@ -1102,9 +1102,9 @@ LABEL_052C:
 	break
 	mov [0x06], 0x0064
 
-LABEL_053F:
+CH_0E_VAR_06_WAIT_100:
 	break
-	djnz [0x06], LABEL_053F
+	djnz [0x06], CH_0E_VAR_06_WAIT_100
 	setPalette 0x02
 	break
 	break
@@ -1126,18 +1126,18 @@ CH_0F_INIT_PARTICLE_POS:
 	mov [0x07], 0x0000
 	mov [0x08], 0x0046
 
-LABEL_0567:
+DRIFT_VAR07_BY_7_FOR_70:
 	break
 	add [0x07], 0x0007
-	djnz [0x08], LABEL_0567
+	djnz [0x08], DRIFT_VAR07_BY_7_FOR_70
 	mov [0x09], 0x0082
 	mov [0x07], 0x0000
 	mov [0x08], 0x0032
 
-LABEL_057C:
+DRIFT_VAR07_BY_7_FOR_50:
 	break
 	add [0x07], 0x0007
-	djnz [0x08], LABEL_057C
+	djnz [0x08], DRIFT_VAR07_BY_7_FOR_50
 	killChannel
 
 CH_10_DRAW_CIN_353_PARTICLE:
@@ -1160,14 +1160,14 @@ CH_11_INIT_PARTICLE_POS_2:
 	mov [0x0A], 0xFFCE
 	mov [0x0B], 0x0032
 
-LABEL_05B1:
+CH_11_DRAW_PARTICLES_LOOP:
 	video offset=CINEMATIC_351, x=[0x0a], y=50
 	video offset=CINEMATIC_349, x=[0x0a], y=20
 	video offset=CINEMATIC_350, x=[0x0a], y=110
 	video offset=CINEMATIC_349, x=[0x0a], y=180
 	add [0x0A], 0x000A
 	break
-	djnz [0x0B], LABEL_05B1
+	djnz [0x0B], CH_11_DRAW_PARTICLES_LOOP
 	jmp CH_11_INIT_PARTICLE_POS_2
 LABEL_05D1:
 	db 0x11
@@ -1177,14 +1177,14 @@ CH_12_INIT_PARTICLE_POS_3:
 	mov [0x0C], 0xFFB0
 	mov [0x0D], 0x003C
 
-LABEL_05DB:
+CH_12_DRAW_PARTICLES_LOOP:
 	video offset=CINEMATIC_348, x=[0x0c], y=140
 	video offset=CINEMATIC_349, x=[0x0c], y=100
 	video offset=CINEMATIC_349, x=[0x0c], y=80
 	video offset=CINEMATIC_350, x=[0x0c], y=10
 	add [0x0C], 0x0009
 	break
-	djnz [0x0D], LABEL_05DB
+	djnz [0x0D], CH_12_DRAW_PARTICLES_LOOP
 	jmp CH_12_INIT_PARTICLE_POS_3
 LABEL_05FB:
 	db 0x11
@@ -1346,11 +1346,11 @@ LABEL_06ED:
 	setPalette 0x18
 	mov [0x01], 0x0001
 
-LABEL_079B:
+FILL_PAGE_FF_COLOR_8_ONCE:
 	break
 	fill page=0xFF, color=0x08
 	break
-	djnz [0x01], LABEL_079B
+	djnz [0x01], FILL_PAGE_FF_COLOR_8_ONCE
 	setup channel=0x04, address=SET_PALETTE_18
 	video offset=CINEMATIC_268, x=160, y=100
 	play id=0x002C, freq=0x14, vol=0x3F, channel=0x03
@@ -1415,12 +1415,12 @@ LABEL_079B:
 	mov [PAUSE_SLICES], 0x0002
 	mov [0x01], 0x0003
 
-LABEL_086E:
+BLINK_PAGE_FF_3X_LOOP:
 	fill page=0xFF, color=0x08
 	break
 	fill page=0xFF, color=0x00
 	break
-	djnz [0x01], LABEL_086E
+	djnz [0x01], BLINK_PAGE_FF_3X_LOOP
 	fill page=0xFF, color=0x08
 	selectVideoPage 0x00
 	video offset=CINEMATIC_292, x=160, y=100
@@ -1455,9 +1455,9 @@ LABEL_086E:
 	setup channel=0x15, address=DRAW_INTRO_LIGHTNING_FLICKER_CENTER
 	mov [0x01], 0x0064
 
-LABEL_08EB:
+WAIT_100_THEN_CIN_274:
 	break
-	djnz [0x01], LABEL_08EB
+	djnz [0x01], WAIT_100_THEN_CIN_274
 	play id=0x0003, freq=0x14, vol=0x12, channel=0x03
 	video offset=CINEMATIC_268, x=160, y=100
 	break
@@ -1508,18 +1508,18 @@ LABEL_08EB:
 	setPalette 0x17
 	mov [0x01], 0x001E
 
-LABEL_09A8:
+WAIT_30_THEN_SETUP_CH12:
 	break
-	djnz [0x01], LABEL_09A8
+	djnz [0x01], WAIT_30_THEN_SETUP_CH12
 	setup channel=0x12, address=DRAW_INTRO_LIGHTNING_BOLT_STRIKE
 	setup channel=0x0E, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x11, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x0F, address=KILL_CHANNEL_ROUTINE
 	mov [0x01], 0x0014
 
-LABEL_09C1:
+WAIT_20_THEN_LOAD_3E82:
 	break
-	djnz [0x01], LABEL_09C1
+	djnz [0x01], WAIT_20_THEN_LOAD_3E82
 	bankSwitch 2;  Arrival at the Lake & Beast Chase
 	killChannel
 
@@ -1537,9 +1537,9 @@ PLAY_FX_2C_AND_DRAW_CIN_000:
 	video offset=CINEMATIC_299, x=160, y=100
 	mov [0x02], 0x005A
 
-LABEL_09FE:
+WAIT_90_BEFORE_PLAY_FX_2C:
 	break
-	djnz [0x02], LABEL_09FE
+	djnz [0x02], WAIT_90_BEFORE_PLAY_FX_2C
 	jmp PLAY_FX_2C_AND_DRAW_CIN_000
 LABEL_0A06:
 	db 0x11
@@ -1565,9 +1565,9 @@ DRAW_INTRO_LIGHTNING_FLICKER_LONG:
 	video offset=CINEMATIC_347, x=160, y=100
 	mov [0x04], 0x0024
 
-LABEL_0A3D:
+DELAY_36_BEFORE_DECOR_340:
 	break
-	djnz [0x04], LABEL_0A3D
+	djnz [0x04], DELAY_36_BEFORE_DECOR_340
 	jmp DRAW_INTRO_LIGHTNING_FLICKER_LONG
 LABEL_0A45:
 	db 0x11
@@ -1581,9 +1581,9 @@ DRAW_INTRO_DECOR_337:
 	video offset=CINEMATIC_338, x=160, y=100
 	mov [0x06], 0x003C
 
-LABEL_0A59:
+DELAY_60_BEFORE_DECOR_337:
 	break
-	djnz [0x06], LABEL_0A59
+	djnz [0x06], DELAY_60_BEFORE_DECOR_337
 	jmp DRAW_INTRO_DECOR_337
 LABEL_0A61:
 	db 0x11
@@ -1600,9 +1600,9 @@ DRAW_INTRO_LIGHTNING_FLICKER_SHORT:
 	video offset=CINEMATIC_335, x=160, y=100
 	mov [0x08], 0x0032
 
-LABEL_0A80:
+DELAY_50_BEFORE_DECOR_333:
 	break
-	djnz [0x08], LABEL_0A80
+	djnz [0x08], DELAY_50_BEFORE_DECOR_333
 	jmp DRAW_INTRO_LIGHTNING_FLICKER_SHORT
 LABEL_0A88:
 	db 0x11
@@ -1644,9 +1644,9 @@ DRAW_INTRO_DECOR_331:
 	video offset=CINEMATIC_330, x=133, y=162
 	mov [0x0A], 0x001E
 
-LABEL_0AE2:
+DELAY_30_BEFORE_DECOR_331:
 	break
-	djnz [0x0A], LABEL_0AE2
+	djnz [0x0A], DELAY_30_BEFORE_DECOR_331
 	jmp DRAW_INTRO_DECOR_331
 LABEL_0AEA:
 	db 0x11
@@ -1707,9 +1707,9 @@ DRAW_INTRO_DECOR_329:
 	video offset=CINEMATIC_324, x=145, y=171
 	mov [0x0C], 0x000A
 
-LABEL_0B77:
+DELAY_10_BEFORE_DECOR_329:
 	break
-	djnz [0x0C], LABEL_0B77
+	djnz [0x0C], DELAY_10_BEFORE_DECOR_329
 	jmp DRAW_INTRO_DECOR_329
 LABEL_0B7F:
 	db 0x11
@@ -1731,9 +1731,9 @@ DRAW_INTRO_DECOR_318:
 	video offset=CINEMATIC_317, x=176, y=157
 	mov [0x0E], 0x0007
 
-LABEL_0BA7:
+DELAY_7_BEFORE_CIN_322:
 	break
-	djnz [0x0E], LABEL_0BA7
+	djnz [0x0E], DELAY_7_BEFORE_CIN_322
 	video offset=CINEMATIC_321, x=149, y=158
 	break
 	video offset=CINEMATIC_322, x=150, y=159
@@ -1743,9 +1743,9 @@ LABEL_0BA7:
 	video offset=CINEMATIC_322, x=151, y=160
 	mov [0x0E], 0x0005
 
-LABEL_0BC3:
+DELAY_5_BEFORE_CIN_325:
 	break
-	djnz [0x0E], LABEL_0BC3
+	djnz [0x0E], DELAY_5_BEFORE_CIN_325
 	video offset=CINEMATIC_324, x=134, y=166
 	break
 	video offset=CINEMATIC_325, x=134, y=170
@@ -1761,9 +1761,9 @@ DRAW_INTRO_LIGHTNING_BOLT_STRIKE:
 	break
 	mov [0x0D], 0x0014
 
-LABEL_0BE4:
+DELAY_20_BEFORE_PLAY_2C_CIN_309:
 	break
-	djnz [0x0D], LABEL_0BE4
+	djnz [0x0D], DELAY_20_BEFORE_PLAY_2C_CIN_309
 	play id=0x002C, freq=0x08, vol=0x20, channel=0x01
 	video offset=CINEMATIC_308, x=198, y=136
 	break
@@ -1802,9 +1802,9 @@ DRAW_INTRO_LIGHTNING_FLICKER_RIGHT:
 	video offset=CINEMATIC_304, x=229, y=40
 	mov [0x0F], 0x0016
 
-LABEL_0C49:
+DELAY_22_BEFORE_DECOR_305:
 	break
-	djnz [0x0F], LABEL_0C49
+	djnz [0x0F], DELAY_22_BEFORE_DECOR_305
 	jmp DRAW_INTRO_LIGHTNING_FLICKER_RIGHT
 LABEL_0C51:
 	db 0x11
@@ -1827,9 +1827,9 @@ DRAW_INTRO_LIGHTNING_FLICKER_CENTER:
 	video offset=CINEMATIC_300, x=194, y=29
 	mov [0x10], 0x0019
 
-LABEL_0C7F:
+DELAY_25_BEFORE_DECOR_301:
 	break
-	djnz [0x10], LABEL_0C7F
+	djnz [0x10], DELAY_25_BEFORE_DECOR_301
 	jmp DRAW_INTRO_LIGHTNING_FLICKER_CENTER
 LABEL_0C87:
 	db 0x11
@@ -1849,9 +1849,9 @@ INTRO_PALETTE_FLICKER_LOOP:
 	setPalette 0x17
 	mov [0x14], 0x001E
 
-LABEL_0C9D:
+DELAY_30_THEN_SET_PAL_18:
 	break
-	djnz [0x14], LABEL_0C9D
+	djnz [0x14], DELAY_30_THEN_SET_PAL_18
 	setPalette 0x18
 	break
 	setPalette 0x1A
@@ -1926,9 +1926,9 @@ PHASE_PAGE3_DRAW_CIN_172_175:
 	play id=0x000E, freq=0x02, vol=0x3F, channel=0x03
 	mov [0x01], 0x0012
 
-LABEL_0D71:
+DELAY_18_THEN_PAL_15_CIN_267:
 	break
-	djnz [0x01], LABEL_0D71
+	djnz [0x01], DELAY_18_THEN_PAL_15_CIN_267
 	setPalette 0x15
 	video offset=CINEMATIC_261, x=160, y=100
 	play id=0x000E, freq=0x14, vol=0x3F, channel=0x03
@@ -1973,9 +1973,9 @@ PHASE_PAGE3_TO_0_PAL_16:
 	mov [0x01], 0x000A
 	song id=0x0000, delay=0x2EE0, pos=0x0F
 
-LABEL_0DF6:
+DELAY_9_BEFORE_CIN_222:
 	break
-	djnz [0x01], LABEL_0DF6
+	djnz [0x01], DELAY_9_BEFORE_CIN_222
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F23_AMIGA_EXTRA, x=160, y=100
 	play id=0x002C, freq=0x1E, vol=0x3F, channel=0x03
 	break
@@ -2004,9 +2004,9 @@ LABEL_0DF6:
 	break
 	mov [0x01], 0x0007
 
-LABEL_0E5C:
+DELAY_7_THEN_PAL_15_CIN_231:
 	break
-	djnz [0x01], LABEL_0E5C
+	djnz [0x01], DELAY_7_THEN_PAL_15_CIN_231
 	setPalette 0x15
 	video offset=CINEMATIC_225, x=160, y=100
 	play id=0x000A, freq=0x1E, vol=0x3F, channel=0x03
@@ -2181,9 +2181,9 @@ SETUP_CITY_SEQ_CHANNELS:
 	mov [0x04], 0x0064
 	mov [0x01], 0x0007
 
-LABEL_1088:
+DELAY_6_BEFORE_BLITTER_SETUP:
 	break
-	djnz [0x01], LABEL_1088
+	djnz [0x01], DELAY_6_BEFORE_BLITTER_SETUP
 	selectVideoPage 0x00
 	video offset=CINEMATIC_PARTICLE_LAB_HOLO_CONSOLE, x=200, y=102
 	video offset=CINEMATIC_178, x=125, y=99
@@ -2191,9 +2191,9 @@ LABEL_1088:
 	break
 	mov [0x01], 0x0008
 
-LABEL_10A3:
+DELAY_7_BEFORE_BLITTER_SETUP:
 	break
-	djnz [0x01], LABEL_10A3
+	djnz [0x01], DELAY_7_BEFORE_BLITTER_SETUP
 	setup channel=0x3C, address=LABEL_008A
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
@@ -2202,32 +2202,32 @@ LABEL_10A3:
 	mov [PAUSE_SLICES], 0x0001
 	mov [0x01], 0x0006
 
-LABEL_10C7:
+CITY_PAN_X_M2_Y_P1_6X:
 	break
 	sub [0x03], 0x0002
 	add [0x04], 0x0001
-	djnz [0x01], LABEL_10C7
+	djnz [0x01], CITY_PAN_X_M2_Y_P1_6X
 	mov [0x01], 0x0004
 
-LABEL_10D8:
+CITY_PAN_X_M3_Y_0_4X:
 	break
 	sub [0x03], 0x0003
 	add [0x04], 0x0000
-	djnz [0x01], LABEL_10D8
+	djnz [0x01], CITY_PAN_X_M3_Y_0_4X
 	mov [0x01], 0x000A
 
-LABEL_10E9:
+CITY_PAN_X_M3_Y_M1_10X:
 	break
 	sub [0x03], 0x0003
 	sub [0x04], 0x0001
-	djnz [0x01], LABEL_10E9
+	djnz [0x01], CITY_PAN_X_M3_Y_M1_10X
 	mov [0x01], 0x0004
 
-LABEL_10FA:
+CITY_PAN_X_M2_Y_M1_4X:
 	break
 	sub [0x03], 0x0002
 	sub [0x04], 0x0001
-	djnz [0x01], LABEL_10FA
+	djnz [0x01], CITY_PAN_X_M2_Y_M1_4X
 	setup channel=0x3C, address=BLIT_AND_DISPATCH_HERO_ACTION
 	break
 	setup channel=0x01, address=DRAW_CIN_431_LOOP
@@ -2235,16 +2235,16 @@ LABEL_10FA:
 	sub [0x04], 0x0001
 	mov [0x01], 0x0005
 
-LABEL_111C:
+CITY_PAN_X_M1_Y_M1_5X:
 	break
 	sub [0x03], 0x0001
 	sub [0x04], 0x0001
-	djnz [0x01], LABEL_111C
+	djnz [0x01], CITY_PAN_X_M1_Y_M1_5X
 	mov [0x01], 0x000A
 
-LABEL_112D:
+DELAY_9_BEFORE_BLITTER_SETUP:
 	break
-	djnz [0x01], LABEL_112D
+	djnz [0x01], DELAY_9_BEFORE_BLITTER_SETUP
 	selectVideoPage 0x00
 	video offset=CINEMATIC_179, x=131, y=48
 	selectVideoPage 0xFF
@@ -2336,46 +2336,46 @@ SETUP_INTRO_CITY_CHANNELS:
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x01], 0x0001
 
-LABEL_120D:
+WAIT_1_BEFORE_COPY_PAGE_03:
 	break
-	djnz [0x01], LABEL_120D
+	djnz [0x01], WAIT_1_BEFORE_COPY_PAGE_03
 	copyVideoPage src=0x00, dst=0x03
 	mov [0x01], 0x000F
 
-LABEL_1219:
+DELAY_14_BEFORE_BLIT_DISPATCH:
 	break
-	djnz [0x01], LABEL_1219
+	djnz [0x01], DELAY_14_BEFORE_BLIT_DISPATCH
 	selectVideoPage 0x00
 	text id=0x0002, x=1, y=24, color=0x06 ; "Copyright  } 1990 Peanut Computer, Inc.\nAll rights reserved.\n\nCDOS Version 5.01"
 	selectVideoPage 0xFF
 	mov [0x01], 0x000A
 
-LABEL_1231:
+DELAY_9_BEFORE_BLIT_DISPATCH:
 	break
-	djnz [0x01], LABEL_1231
+	djnz [0x01], DELAY_9_BEFORE_BLIT_DISPATCH
 	mov [0x01], 0x0014
 	selectVideoPage 0x00
 	text id=0x0007, x=1, y=150, color=0x06 ; "@"
 	selectVideoPage 0xFF
 
-LABEL_1249:
+SHOW_TEXT_21_AT_3_150_20X:
 	break
 	text id=0x0021, x=3, y=150, color=0x06 ; "|"
-	djnz [0x01], LABEL_1249
+	djnz [0x01], SHOW_TEXT_21_AT_3_150_20X
 	setup channel=0x0C, address=DISPLAY_TEXT_0A_0B_PLAY_FX
 	setup channel=0x05, address=DISPLAY_TEXT_21
 	mov [0x01], 0x0032
 
-LABEL_1260:
+DELAY_49_BEFORE_COPY_PAGE_3_0:
 	break
-	djnz [0x01], LABEL_1260
+	djnz [0x01], DELAY_49_BEFORE_COPY_PAGE_3_0
 	copyVideoPage src=0x03, dst=0x00
 	setup channel=0x0B, address=DRAW_CITY_SEQ_419_420
 	mov [0x01], 0x0014
 
-LABEL_1271:
+DELAY_19_BEFORE_BLITTER_SETUP:
 	break
-	djnz [0x01], LABEL_1271
+	djnz [0x01], DELAY_19_BEFORE_BLITTER_SETUP
 	copyVideoPage src=0x00, dst=0x03
 	selectVideoPage 0x00
 	text id=0x001A, x=20, y=60, color=0x06 ; "E: 23%\ng: .005\n\nRK: 77.2L\n\nopt: g+\n\n Shield:\n1: OFF\n2: ON\n3: ON\n\nP~: 1\n"
@@ -2383,24 +2383,24 @@ LABEL_1271:
 	selectVideoPage 0xFF
 	mov [0x01], 0x000A
 
-LABEL_1292:
+SHOW_TEXT_21_AT_26_60_10X:
 	break
 	text id=0x0021, x=26, y=60, color=0x06 ; "|"
-	djnz [0x01], LABEL_1292
+	djnz [0x01], SHOW_TEXT_21_AT_26_60_10X
 	mov [0x01], 0x000F
 
-LABEL_12A1:
+SHOW_TEXT_21_AT_27_68_15X:
 	break
 	text id=0x0021, x=27, y=68, color=0x06 ; "|"
-	djnz [0x01], LABEL_12A1
+	djnz [0x01], SHOW_TEXT_21_AT_27_68_15X
 	break
 	text id=0x0021, x=29, y=84, color=0x06 ; "|"
 	mov [0x01], 0x000A
 
-LABEL_12B7:
+SHOW_TEXT_21_AT_27_100_9X:
 	break
 	text id=0x0021, x=27, y=100, color=0x06 ; "|"
-	djnz [0x01], LABEL_12B7
+	djnz [0x01], SHOW_TEXT_21_AT_27_100_9X
 	selectVideoPage 0x00
 	text id=0x0021, x=26, y=100, color=0x02 ; "|"
 	selectVideoPage 0xFF
@@ -2411,30 +2411,30 @@ LABEL_12B7:
 	text id=0x0021, x=26, y=100, color=0x06 ; "|"
 	mov [0x01], 0x000A
 
-LABEL_12EA:
+SHOW_TEXT_21_AT_27_100_10X:
 	break
 	text id=0x0021, x=27, y=100, color=0x06 ; "|"
-	djnz [0x01], LABEL_12EA
+	djnz [0x01], SHOW_TEXT_21_AT_27_100_10X
 	mov [0x01], 0x0012
 
-LABEL_12F9:
+SHOW_TEXT_21_AT_26_124_18X:
 	break
 	text id=0x0021, x=26, y=124, color=0x06 ; "|"
-	djnz [0x01], LABEL_12F9
+	djnz [0x01], SHOW_TEXT_21_AT_26_124_18X
 	break
 	text id=0x0021, x=25, y=132, color=0x06 ; "|"
 	mov [0x01], 0x0012
 
-LABEL_130F:
+SHOW_TEXT_21_AT_25_156_18X:
 	break
 	text id=0x0021, x=25, y=156, color=0x06 ; "|"
-	djnz [0x01], LABEL_130F
+	djnz [0x01], SHOW_TEXT_21_AT_25_156_18X
 	setup channel=0x07, address=INIT_VAR_03_AND_LOOP
 	mov [0x01], 0x0025
 
-LABEL_1322:
+DELAY_36_BEFORE_BLITTER_SETUP:
 	break
-	djnz [0x01], LABEL_1322
+	djnz [0x01], DELAY_36_BEFORE_BLITTER_SETUP
 	selectVideoPage 0x00
 	text id=0x0194, x=36, y=170, color=0x06 ; "Y\n"
 	selectVideoPage 0xFF
@@ -2455,44 +2455,44 @@ DRAW_HOLO_ACCELERATOR_DIAGRAM_FRAME:
 	setup channel=0x07, address=DRAW_CIN_382_TWICE_AT_DIFF_Y
 	mov [0x01], 0x0005
 
-LABEL_136A:
+SHOW_TEXT_31_AT_2_150_5X:
 	break
 	text id=0x0031, x=2, y=150, color=0x06 ; "- Phase 0:\nINJECTION of particles\ninto synchrotron"
-	djnz [0x01], LABEL_136A
+	djnz [0x01], SHOW_TEXT_31_AT_2_150_5X
 	mov [0x01], 0x0040
 
-LABEL_1379:
+SHOW_TEXT_32_AT_2_156_64X:
 	break
 	text id=0x0032, x=2, y=156, color=0x06 ; "- Phase 1:\nParticle ACCELERATION."
-	djnz [0x01], LABEL_1379
+	djnz [0x01], SHOW_TEXT_32_AT_2_156_64X
 	mov [PAUSE_SLICES], 0x0005
 	mov [0x01], 0x0013
 
-LABEL_138C:
+SHOW_TEXT_33_AT_2_150_19X:
 	break
 	text id=0x0033, x=2, y=150, color=0x06 ; "- Phase 2:\nEJECTION of particles\non the shield."
-	djnz [0x01], LABEL_138C
+	djnz [0x01], SHOW_TEXT_33_AT_2_150_19X
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x01], 0x0013
 
-LABEL_139F:
+SHOW_TEXT_34_AT_8_152_19X:
 	break
 	text id=0x0034, x=8, y=152, color=0x06 ; "A  N  A  L  Y  S  I  S"
-	djnz [0x01], LABEL_139F
+	djnz [0x01], SHOW_TEXT_34_AT_8_152_19X
 	mov [0x01], 0x0019
 
-LABEL_13AE:
+SHOW_TEXT_35_AT_2_140_25X:
 	break
 	text id=0x0035, x=2, y=140, color=0x06 ; "- RESULT:\nProbability of creating:\n ANTIMATTER: 91.V %\n NEUTRINO 27:  0.04 %\n NEUTRINO 424: 18 %\n"
 	jg [MUS_MARK], 0x20, LABEL_12E2
-	djnz [0x01], LABEL_13AE
+	djnz [0x01], SHOW_TEXT_35_AT_2_140_25X
 	mov [0x01], 0x000A
 
-LABEL_13C3:
+SHOW_TEXT_36_UNTIL_MUS_20:
 	break
 	text id=0x0036, x=2, y=80, color=0x06 ; "   Practical verification Y/N ?"
 	jg [MUS_MARK], 0x20, LABEL_12E2
-	djnz [0x01], LABEL_13C3
+	djnz [0x01], SHOW_TEXT_36_UNTIL_MUS_20
 
 LABEL_12E2:
 	copyVideoPage src=0x03, dst=0x00
@@ -2503,28 +2503,28 @@ LABEL_12E2:
 	mov [0x01], 0x000A
 	break
 
-LABEL_13EE:
+SHOW_TEXT_24_UNTIL_MUS_22:
 	je [MUS_MARK], 0x22, SHOW_TEXT_25_PHASE_INIT
 	text id=0x0024, x=28, y=80, color=0x06 ; "  20"
 	break
-	djnz [0x01], LABEL_13EE
+	djnz [0x01], SHOW_TEXT_24_UNTIL_MUS_22
 
 SHOW_TEXT_25_PHASE_INIT:
 	mov [0x01], 0x000A
 
-LABEL_1403:
-	je [MUS_MARK], 0x23, LABEL_1414
+SHOW_TEXT_25_UNTIL_MUS_23:
+	je [MUS_MARK], 0x23, SHOW_TEXT_26_PHASE_INIT
 	text id=0x0025, x=28, y=80, color=0x06 ; "  19"
 	break
-	djnz [0x01], LABEL_1403
+	djnz [0x01], SHOW_TEXT_25_UNTIL_MUS_23
 
-LABEL_1414:
+SHOW_TEXT_26_PHASE_INIT:
 	mov [0x01], 0x000A
 
-LABEL_1418:
+SHOW_TEXT_26_AT_28_80_10X:
 	text id=0x0026, x=28, y=80, color=0x06 ; "  18"
 	break
-	djnz [0x01], LABEL_1418
+	djnz [0x01], SHOW_TEXT_26_AT_28_80_10X
 	text id=0x004C, x=28, y=80, color=0x06 ; "  17"
 	setup channel=0x10, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x0A, address=KILL_CHANNEL_ROUTINE
@@ -2545,47 +2545,47 @@ COPY_BG_PAGE_AND_DISPLAY_TEXT_23:
 	setPalette 0x09
 	mov [0x01], 0x000B
 
-LABEL_1469:
+SHOW_TEXT_4B_UNTIL_MUS_2C:
 	je [MUS_MARK], 0x2C, SHOW_TEXT_27_PHASE_INIT
 	text id=0x004B, x=28, y=80, color=0x06 ; "  5"
 	break
-	djnz [0x01], LABEL_1469
+	djnz [0x01], SHOW_TEXT_4B_UNTIL_MUS_2C
 
 SHOW_TEXT_27_PHASE_INIT:
 	mov [0x01], 0x000B
 
-LABEL_147E:
-	je [MUS_MARK], 0x2D, LABEL_148F
+SHOW_TEXT_27_UNTIL_MUS_2D:
+	je [MUS_MARK], 0x2D, SHOW_TEXT_28_PHASE_INIT
 	text id=0x0027, x=28, y=80, color=0x06 ; "  4"
 	break
-	djnz [0x01], LABEL_147E
+	djnz [0x01], SHOW_TEXT_27_UNTIL_MUS_2D
 
-LABEL_148F:
+SHOW_TEXT_28_PHASE_INIT:
 	mov [0x01], 0x000B
 
-LABEL_1493:
-	je [MUS_MARK], 0x2E, LABEL_14A4
+SHOW_TEXT_28_UNTIL_MUS_2E:
+	je [MUS_MARK], 0x2E, SHOW_TEXT_29_PHASE_INIT
 	text id=0x0028, x=28, y=80, color=0x06 ; "  3"
 	break
-	djnz [0x01], LABEL_1493
+	djnz [0x01], SHOW_TEXT_28_UNTIL_MUS_2E
 
-LABEL_14A4:
+SHOW_TEXT_29_PHASE_INIT:
 	mov [0x01], 0x000B
 
-LABEL_14A8:
-	je [MUS_MARK], 0x2F, LABEL_14B9
+SHOW_TEXT_29_UNTIL_MUS_2F:
+	je [MUS_MARK], 0x2F, SHOW_TEXT_2A_PHASE_INIT
 	text id=0x0029, x=28, y=80, color=0x0D ; "  2"
 	break
-	djnz [0x01], LABEL_14A8
+	djnz [0x01], SHOW_TEXT_29_UNTIL_MUS_2F
 
-LABEL_14B9:
+SHOW_TEXT_2A_PHASE_INIT:
 	mov [0x01], 0x000B
 
-LABEL_14BD:
+SHOW_TEXT_2A_UNTIL_MUS_30:
 	je [MUS_MARK], 0x30, WAIT_MUS_MARK_20_THEN_TEXT_23
 	text id=0x002A, x=28, y=80, color=0x0D ; "  1"
 	break
-	djnz [0x01], LABEL_14BD
+	djnz [0x01], SHOW_TEXT_2A_UNTIL_MUS_30
 
 WAIT_MUS_MARK_20_THEN_TEXT_23:
 	text id=0x002B, x=28, y=80, color=0x0F ; "  0"
@@ -2597,14 +2597,14 @@ WAIT_MUS_MARK_20_THEN_TEXT_23:
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
 	mov [0x01], 0x0028
 
-LABEL_14F3:
+SONG_REPEAT_OR_NEXT_PHASE_LOOP:
 	break
-	jne [MUS_MARK], 0x31, LABEL_150A
+	jne [MUS_MARK], 0x31, SONG_LOOP_END_THEN_BLIT_SETUP
 	song id=0x0000, delay=0x0000, pos=0x00
 	mov [MUS_MARK], 0x0000
 
-LABEL_150A:
-	djnz [0x01], LABEL_14F3
+SONG_LOOP_END_THEN_BLIT_SETUP:
+	djnz [0x01], SONG_REPEAT_OR_NEXT_PHASE_LOOP
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x02, address=SETUP_INTRO_PARTICLE_CHANNELS
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
@@ -2613,12 +2613,12 @@ LABEL_150A:
 	fill page=0x00, color=0x00
 	killChannel
 
-LABEL_152E:
+BLINK_TEXTS_44_45_AT_2_20:
 	text id=0x0044, x=2, y=20, color=0x05 ; "+"
 	break
 	text id=0x0045, x=2, y=20, color=0x05 ; "*"
 	break
-	jmp LABEL_152E
+	jmp BLINK_TEXTS_44_45_AT_2_20
 LABEL_153F:
 	db 0x11, 0x12, 0x00, 0x3E, 0x0A, 0x78, 0x04, 0x06
 	db 0x12, 0x00, 0x3F, 0x0A, 0x78, 0x04, 0x06, 0x12
@@ -2647,15 +2647,15 @@ LABEL_1593:
 INIT_VAR_03_AND_LOOP:
 	mov [0x03], 0x000A
 
-LABEL_1598:
+SHOW_TEXT_39_AT_5_170_10X:
 	break
 	text id=0x0039, x=5, y=170, color=0x06 ; "       RUN EXPERIMENT ?"
-	djnz [0x03], LABEL_1598
+	djnz [0x03], SHOW_TEXT_39_AT_5_170_10X
 	mov [0x03], 0x0008
 
-LABEL_15A7:
+INTRO_TEXT_39_REST_8X:
 	break
-	djnz [0x03], LABEL_15A7
+	djnz [0x03], INTRO_TEXT_39_REST_8X
 	jmp INIT_VAR_03_AND_LOOP
 LABEL_15AF:
 	db 0x11
@@ -2690,10 +2690,10 @@ DISPLAY_TEXT_21:
 	break
 	mov [0x02], 0x000A
 
-LABEL_1610:
+SHOW_TEXT_21_AT_17_150_10X:
 	text id=0x0021, x=17, y=150, color=0x06 ; "|"
 	break
-	djnz [0x02], LABEL_1610
+	djnz [0x02], SHOW_TEXT_21_AT_17_150_10X
 	selectVideoPage 0x00
 	text id=0x0021, x=3, y=158, color=0x06 ; "|"
 	selectVideoPage 0xFF
@@ -2758,7 +2758,7 @@ DRAW_CITY_SEQ_419_420:
 CIN_382_PUFFS_PHASE_INIT:
 	mov [0x02], 0x0002
 
-LABEL_16E8:
+DRAW_CIN_382_PUFFS_2X:
 	break
 	video offset=CINEMATIC_381, x=165, y=74
 	break
@@ -2783,10 +2783,10 @@ LABEL_16E8:
 	video offset=CINEMATIC_381, x=189, y=130
 	break
 	video offset=CINEMATIC_381, x=170, y=104
-	djnz [0x02], LABEL_16E8
+	djnz [0x02], DRAW_CIN_382_PUFFS_2X
 	mov [0x02], 0x0003
 
-LABEL_1731:
+DRAW_CIN_382_PUFFS_3X:
 	break
 	video offset=CINEMATIC_381, x=165, y=74
 	break
@@ -2801,7 +2801,7 @@ LABEL_1731:
 	video offset=CINEMATIC_381, x=236, y=145
 	break
 	video offset=CINEMATIC_381, x=185, y=127
-	djnz [0x02], LABEL_1731
+	djnz [0x02], DRAW_CIN_382_PUFFS_3X
 	selectVideoPage 0x00
 	video offset=CINEMATIC_382, x=237, y=156
 	selectVideoPage 0xFF
@@ -2828,7 +2828,7 @@ INIT_VAR_02_AND_BREAK_LOOP:
 	break
 	mov [0x02], 0x0012
 
-LABEL_17A0:
+BLINK_TEXTS_14_15_AT_10_150_18X:
 	text id=0x0014, x=10, y=150, color=0x05 ; "Shield 9A.5f Ok"
 	break
 	text id=0x0015, x=10, y=150, color=0x05 ; "Flux % 5.0177 Ok"
@@ -2839,7 +2839,7 @@ LABEL_17A0:
 	break
 	text id=0x0018, x=10, y=150, color=0x05 ; "Race-Track ok"
 	break
-	djnz [0x02], LABEL_17A0
+	djnz [0x02], BLINK_TEXTS_14_15_AT_10_150_18X
 	killChannel
 
 DRAW_CIN_382_TWICE_AT_DIFF_Y:
@@ -2852,7 +2852,7 @@ DRAW_CIN_382_TWICE_AT_DIFF_Y:
 	video offset=CINEMATIC_381, x=164, y=99
 	mov [0x02], 0x0001
 
-LABEL_17DF:
+DRAW_CIN_382_PUFFS_1X:
 	break
 	video offset=CINEMATIC_381, x=165, y=74
 	break
@@ -2897,7 +2897,7 @@ LABEL_17DF:
 	video offset=CINEMATIC_381, x=173, y=112
 	break
 	video offset=CINEMATIC_381, x=167, y=94
-	djnz [0x02], LABEL_17DF
+	djnz [0x02], DRAW_CIN_382_PUFFS_1X
 	jmp CIN_382_PUFFS_PHASE_INIT
 LABEL_185D:
 	db 0x11
@@ -2940,16 +2940,16 @@ INTRO_PAUSE_3_PLAY_SONG_INIT:
 	setup channel=0x09, address=DRAW_CIN_170_171_AT_VAR10_VAR11
 	mov [0x03], 0x0032
 
-LABEL_18D6:
+DELAY_50F_THEN_DRAW_CIN_454:
 	break
-	djnz [0x03], LABEL_18D6
+	djnz [0x03], DELAY_50F_THEN_DRAW_CIN_454
 	setup channel=0x09, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x11, address=DRAW_CIN_453_454_SEQ
 	mov [0x03], 0x000A
 
-LABEL_18E7:
+DELAY_9F_THEN_DRAW_CIN_132:
 	break
-	djnz [0x03], LABEL_18E7
+	djnz [0x03], DELAY_9F_THEN_DRAW_CIN_132
 	selectVideoPage 0x00
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F5_AMIGA_EXTRA, x=228, y=44
 	video offset=CINEMATIC_126, x=160, y=100
@@ -2957,9 +2957,9 @@ LABEL_18E7:
 	setup channel=0x11, address=DRAW_CIN_453_454_SEQ
 	mov [0x03], 0x000A
 
-LABEL_1905:
+DELAY_9F_THEN_DRAW_CIN_133:
 	break
-	djnz [0x03], LABEL_1905
+	djnz [0x03], DELAY_9F_THEN_DRAW_CIN_133
 	selectVideoPage 0x00
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F5_AMIGA_EXTRA, x=228, y=44
 	video offset=CINEMATIC_127, x=160, y=100
@@ -2967,9 +2967,9 @@ LABEL_1905:
 	setup channel=0x11, address=DRAW_CIN_453_454_SEQ
 	mov [0x03], 0x000A
 
-LABEL_1923:
+DELAY_10F_BEFORE_KILL_CHANNELS:
 	break
-	djnz [0x03], LABEL_1923
+	djnz [0x03], DELAY_10F_BEFORE_KILL_CHANNELS
 	setup channel=0x11, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
@@ -2985,33 +2985,33 @@ CH_03_INIT_VAR_01_02_FFF6:
 	mov [0x01], 0xFFF6
 	mov [0x02], 0x0017
 
-LABEL_1959:
+DROP_CIN_134_DOWN_BY_10_23X:
 	video offset=CINEMATIC_128, x=110, y=[0x01]
 	add [0x01], 0x000A
 	break
-	djnz [0x02], LABEL_1959
+	djnz [0x02], DROP_CIN_134_DOWN_BY_10_23X
 	killChannel
 
 CH_04_INIT_VAR_04_05:
 	mov [0x04], 0x0032
 	mov [0x05], 0x0050
 
-LABEL_1970:
+DRIFT_CIN_135_RIGHT_BY_2_80X:
 	video offset=CINEMATIC_129, x=[0x04], y=100
 	add [0x04], 0x0002
 	break
-	djnz [0x05], LABEL_1970
+	djnz [0x05], DRIFT_CIN_135_RIGHT_BY_2_80X
 	killChannel
 
 CH_05_INIT_VAR_06_07:
 	mov [0x06], 0x00DC
 	mov [0x07], 0x0017
 
-LABEL_1987:
+RISE_CIN_136_BY_10_FOR_23X:
 	break
 	video offset=CINEMATIC_130, x=110, y=[0x06]
 	sub [0x06], 0x000A
-	djnz [0x07], LABEL_1987
+	djnz [0x07], RISE_CIN_136_BY_10_FOR_23X
 	killChannel
 
 CH_07_INIT_VAR_08_09:
@@ -3023,11 +3023,11 @@ CH_07_INIT_VAR_08_09:
 DRAW_CIN_137_DOUBLE_OUTER:
 	mov [0x0A], 0x0002
 
-LABEL_19A7:
+DRAW_CIN_137_AT_280_283_TWICE:
 	break
 	video offset=CINEMATIC_131, x=280, y=[0x08]
 	video offset=CINEMATIC_131, x=283, y=[0x0b]
-	djnz [0x0A], LABEL_19A7
+	djnz [0x0A], DRAW_CIN_137_AT_280_283_TWICE
 	add [0x08], 0x0003
 	sub [0x0B], 0x0003
 	djnz [0x09], DRAW_CIN_137_DOUBLE_OUTER
@@ -3084,28 +3084,28 @@ INIT_PAGE0_PAUSE2_FILL1:
 	mov [0x01], 0xFC45
 	mov [0x03], 0x0073
 
-LABEL_1A4F:
+DRIFT_VAR1_PLUS_5_FOR_115X:
 	break
 	add [0x01], 0x0005
-	djnz [0x03], LABEL_1A4F
+	djnz [0x03], DRIFT_VAR1_PLUS_5_FOR_115X
 	mov [0x03], 0x0019
 
-LABEL_1A5C:
+DRIFT_VAR1_PLUS_4_FOR_25X:
 	break
 	add [0x01], 0x0004
-	djnz [0x03], LABEL_1A5C
+	djnz [0x03], DRIFT_VAR1_PLUS_4_FOR_25X
 	mov [0x03], 0x0064
 
-LABEL_1A69:
+DRIFT_VAR1_PLUS_3_FOR_100X:
 	break
 	add [0x01], 0x0003
-	djnz [0x03], LABEL_1A69
+	djnz [0x03], DRIFT_VAR1_PLUS_3_FOR_100X
 	mov [0x03], 0x001E
 
-LABEL_1A76:
+DRIFT_VAR1_PLUS_2_FOR_30X:
 	break
 	add [0x01], 0x0002
-	djnz [0x03], LABEL_1A76
+	djnz [0x03], DRIFT_VAR1_PLUS_2_FOR_30X
 	mov [0x03], 0x0010
 
 LIFT_ENTRY_WAIT_AND_TRANSITION:
@@ -3204,9 +3204,9 @@ LIFT_ENTRY_WAIT_AND_TRANSITION:
 	selectVideoPage 0xFF
 	mov [0x05], 0x0019
 
-LABEL_1B83:
+DELAY_25F_BEFORE_VAR1_4E:
 	break
-	djnz [0x05], LABEL_1B83
+	djnz [0x05], DELAY_25F_BEFORE_VAR1_4E
 	mov [0x01], 0x004E
 	mov [0x02], 0x00E8
 	mov [0x05], 0x000A
@@ -3250,14 +3250,14 @@ CH_03_INIT_VAR_03_04:
 	mov [0x03], 0x0064
 	mov [0x04], 0x0013
 
-LABEL_1C02:
+SLIDE_CIN_448_BY_VAR3_19X:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_447, x=160, y=[0x03]
 	video offset=CINEMATIC_448, x=160, y=101
 	sub [0x03], 0x0001
 	selectVideoPage 0xFF
 	break
-	djnz [0x04], LABEL_1C02
+	djnz [0x04], SLIDE_CIN_448_BY_VAR3_19X
 	setup channel=0x06, address=DRAW_CIN_450_451_SEQ
 	killChannel
 
@@ -3280,9 +3280,9 @@ INTRO_TRANSITION_TO_LAKE_SCENE:
 	setup channel=0x0E, address=SELECT_PAGE_FF_LOOP
 	mov [0x01], 0x0032
 
-LABEL_1C5A:
+DELAY_50F_THEN_SETUP_CITY_SEQ:
 	break
-	djnz [0x01], LABEL_1C5A
+	djnz [0x01], DELAY_50F_THEN_SETUP_CITY_SEQ
 	setup channel=0x01, address=INTRO_FILL_AND_DRAW_413_414
 	setup channel=0x02, address=SETUP_CITY_SEQ_CHANNELS
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
@@ -3310,18 +3310,18 @@ LABEL_1C95:
 CH_04_INIT_VAR_05:
 	mov [0x05], 0x0009
 
-LABEL_1C9A:
+DELAY_9F_THEN_PLAY_FX_34:
 	break
-	djnz [0x05], LABEL_1C9A
+	djnz [0x05], DELAY_9F_THEN_PLAY_FX_34
 	play id=0x0034, freq=0x14, vol=0x3F, channel=0x02
 	mov [0x05], 0x0007
 	mov [0x06], 0x007B
 
-LABEL_1CAD:
+RISE_CIN_447_BY_2_FOR_7X:
 	video offset=CINEMATIC_446, x=204, y=[0x06]
 	sub [0x06], 0x0002
 	break
-	djnz [0x05], LABEL_1CAD
+	djnz [0x05], RISE_CIN_447_BY_2_FOR_7X
 	jmp CH_04_INIT_VAR_05
 LABEL_1CBE:
 	db 0x11
@@ -3330,11 +3330,11 @@ CH_05_INIT_VAR_07_08:
 	mov [0x07], 0x0014
 	mov [0x08], 0x007B
 
-LABEL_1CC7:
+RISE_CIN_130_BY_1_FOR_20X:
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F4, x=204, y=[0x08]
 	sub [0x08], 0x0001
 	break
-	djnz [0x07], LABEL_1CC7
+	djnz [0x07], RISE_CIN_130_BY_1_FOR_20X
 	jmp CH_05_INIT_VAR_07_08
 ; djnz wait followed by play sound id=0x0036 and draw of
 ; LIFT_DOORS_OPENING_F34 (the last frame of the doors-open
@@ -3362,9 +3362,9 @@ DRAW_HOLO_CONSOLE_DISPLAY_PANEL:
 	video offset=CINEMATIC_445, x=134, y=107
 	mov [0x09], 0x000A
 
-LABEL_1D04:
+DELAY_10F_BEFORE_CIN_444_443:
 	break
-	djnz [0x09], LABEL_1D04
+	djnz [0x09], DELAY_10F_BEFORE_CIN_444_443
 	video offset=CINEMATIC_443, x=221, y=123
 	video offset=CINEMATIC_442, x=217, y=127
 	video offset=CINEMATIC_441, x=219, y=125
@@ -3372,9 +3372,9 @@ LABEL_1D04:
 	video offset=CINEMATIC_444, x=134, y=107
 	mov [0x09], 0x000A
 
-LABEL_1D21:
+DELAY_10F_BEFORE_CIN_442_443:
 	break
-	djnz [0x09], LABEL_1D21
+	djnz [0x09], DELAY_10F_BEFORE_CIN_442_443
 	video offset=CINEMATIC_441, x=217, y=127
 	video offset=CINEMATIC_442, x=221, y=123
 	video offset=CINEMATIC_443, x=219, y=125
@@ -3382,16 +3382,16 @@ LABEL_1D21:
 	video offset=CINEMATIC_445, x=135, y=109
 	mov [0x09], 0x000A
 
-LABEL_1D3E:
+DELAY_10F_BEFORE_CIN_446_445:
 	break
-	djnz [0x09], LABEL_1D3E
+	djnz [0x09], DELAY_10F_BEFORE_CIN_446_445
 	video offset=CINEMATIC_445, x=131, y=109
 	video offset=CINEMATIC_444, x=135, y=109
 	mov [0x09], 0x000A
 
-LABEL_1D4F:
+DELAY_10F_BEFORE_RESTART_443:
 	break
-	djnz [0x09], LABEL_1D4F
+	djnz [0x09], DELAY_10F_BEFORE_RESTART_443
 	jmp DRAW_HOLO_CONSOLE_DISPLAY_PANEL
 LABEL_1D57:
 	db 0x11
@@ -3436,13 +3436,13 @@ CH_02_INIT_VARS_01_02_03:
 	mov [0x03], 0x0090
 	mov [PAUSE_SLICES], 0x0002
 
-LABEL_1DC3:
+DRIFT_CIN_113_X_PLUS_Y_MINUS_8X:
 	break
 	add [0x02], 0x0001
 	sub [0x03], 0x0001
 	video offset=CINEMATIC_108, x=[0x02], y=94
 	video offset=CINEMATIC_109, x=[0x03], y=94
-	djnz [0x01], LABEL_1DC3
+	djnz [0x01], DRIFT_CIN_113_X_PLUS_Y_MINUS_8X
 	mov [PAUSE_SLICES], 0x0001
 	video offset=CINEMATIC_107, x=143, y=94
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
@@ -3450,9 +3450,9 @@ LABEL_1DC3:
 	mov [0x01], 0x0032
 	setPalette 0x0A
 
-LABEL_1DF0:
+DELAY_25F_AFTER_SET_PAL_A:
 	break
-	djnz [0x01], LABEL_1DF0
+	djnz [0x01], DELAY_25F_AFTER_SET_PAL_A
 	mov [PAUSE_SLICES], 0x0001
 	mov [0x01], 0x0050
 	mov [0x02], 0x0004
@@ -3467,11 +3467,11 @@ COPY_VAR2_TO_VAR4_DEC:
 	mov [0x04], [0x02]
 	sub [0x02], 0x0001
 
-LABEL_1E1A:
+DRAW_CIN_115_116_VAR4_LOOP:
 	break
 	video offset=CINEMATIC_110, x=121, y=[0x03]
 	video offset=CINEMATIC_111, x=121, y=187
-	djnz [0x04], LABEL_1E1A
+	djnz [0x04], DRAW_CIN_115_116_VAR4_LOOP
 	add [0x03], 0x0002
 	djnz [0x01], BLITTER_CYCLE_VAR2_80X_LOOP
 	setup channel=0x3C, address=BLIT_AND_DISPATCH_HERO_ACTION
@@ -3480,34 +3480,34 @@ LABEL_1E1A:
 	setPalette 0x10
 	mov [0x01], 0x001E
 
-LABEL_1E43:
+DRIFT_CIN_117_AT_193_NEG9_30X:
 	video offset=CINEMATIC_112, x=193, y=65527
 	break
-	djnz [0x01], LABEL_1E43
+	djnz [0x01], DRIFT_CIN_117_AT_193_NEG9_30X
 	mov [0x01], 0x001E
 
-LABEL_1E52:
+DRIFT_CIN_117_AT_196_NEG6_30X:
 	video offset=CINEMATIC_112, x=196, y=65530
 	break
-	djnz [0x01], LABEL_1E52
+	djnz [0x01], DRIFT_CIN_117_AT_196_NEG6_30X
 	mov [0x01], 0x001E
 
-LABEL_1E61:
+DRIFT_CIN_117_AT_189_NEG7_30X:
 	video offset=CINEMATIC_112, x=189, y=65529
 	break
-	djnz [0x01], LABEL_1E61
+	djnz [0x01], DRIFT_CIN_117_AT_189_NEG7_30X
 	mov [0x01], 0x001E
 
-LABEL_1E70:
+DRIFT_CIN_117_AT_193_NEG5_30X:
 	video offset=CINEMATIC_112, x=193, y=65531
 	break
-	djnz [0x01], LABEL_1E70
+	djnz [0x01], DRIFT_CIN_117_AT_193_NEG5_30X
 	mov [0x01], 0x001E
 
-LABEL_1E7F:
+DRIFT_CIN_117_AT_196_NEG2_30X:
 	video offset=CINEMATIC_112, x=196, y=65534
 	break
-	djnz [0x01], LABEL_1E7F
+	djnz [0x01], DRIFT_CIN_117_AT_196_NEG2_30X
 	setup channel=0x02, address=INIT_PAGE0_PAUSE2_FILL1
 	setup channel=0x03, address=DRAW_CIN_505_LOOP_VAR_02
 	killChannel
@@ -3527,9 +3527,9 @@ INTRO_FILL_PAGE0_DRAW_CIN_118:
 	mov [0x04], 0x0005
 	mov [PAUSE_SLICES], 0x0004
 
-LABEL_1EC4:
+DELAY_VAR4_BEFORE_VAR1_PLUS_E:
 	break
-	djnz [0x04], LABEL_1EC4
+	djnz [0x04], DELAY_VAR4_BEFORE_VAR1_PLUS_E
 	add [0x01], 0x000E
 	break
 	add [0x01], 0x000E
@@ -3538,9 +3538,9 @@ LABEL_1EC4:
 	mov [0x1E], 0x0001
 	mov [0x04], 0x0004
 
-LABEL_1EDF:
+DELAY_4F_BEFORE_VAR_SHIFT_9:
 	break
-	djnz [0x04], LABEL_1EDF
+	djnz [0x04], DELAY_4F_BEFORE_VAR_SHIFT_9
 	sub [0x01], 0x0009
 	add [0x02], 0x0009
 	break
@@ -3554,23 +3554,23 @@ LABEL_1EDF:
 	mov [0x1E], 0x0002
 	mov [0x04], 0x0004
 
-LABEL_1F0B:
+DELAY_4F_BEFORE_PHASE_2_INIT:
 	break
-	djnz [0x04], LABEL_1F0B
+	djnz [0x04], DELAY_4F_BEFORE_PHASE_2_INIT
 	mov [0x04], 0x0004
 	mov [0x1E], 0x0002
 	mov [0x03], 0x0000
 
-LABEL_1F1C:
+DELAY_4F_BEFORE_DRIFT_15_M15:
 	break
-	djnz [0x04], LABEL_1F1C
+	djnz [0x04], DELAY_4F_BEFORE_DRIFT_15_M15
 	mov [0x04], 0x0003
 
-LABEL_1F25:
+DRIFT_VAR1_PLUS_F_VAR2_M_F_3X:
 	add [0x01], 0x000F
 	sub [0x02], 0x000F
 	break
-	djnz [0x04], LABEL_1F25
+	djnz [0x04], DRIFT_VAR1_PLUS_F_VAR2_M_F_3X
 	add [0x01], 0x000B
 	sub [0x02], 0x0009
 	break
@@ -3578,37 +3578,37 @@ LABEL_1F25:
 	mov [0x1E], 0x0003
 	mov [0x04], 0x0004
 
-LABEL_1F47:
+DELAY_4F_BEFORE_DRIFT_VAR2_18:
 	break
-	djnz [0x04], LABEL_1F47
+	djnz [0x04], DELAY_4F_BEFORE_DRIFT_VAR2_18
 	mov [0x04], 0x0003
 
-LABEL_1F50:
+DRIFT_VAR2_PLUS_18_3X:
 	add [0x02], 0x0012
 	break
-	djnz [0x04], LABEL_1F50
+	djnz [0x04], DRIFT_VAR2_PLUS_18_3X
 	mov [0x03], 0x0000
 	mov [0x1E], 0x0004
 	mov [0x04], 0x0003
 
-LABEL_1F65:
+DELAY_3F_BEFORE_VAR2_PLUS_1:
 	break
-	djnz [0x04], LABEL_1F65
+	djnz [0x04], DELAY_3F_BEFORE_VAR2_PLUS_1
 	mov [0x04], 0x0002
 	add [0x02], 0x0001
 
-LABEL_1F72:
+DRIFT_VAR1_MINUS_E_2X:
 	sub [0x01], 0x000E
 	add [0x02], 0x0000
 	break
-	djnz [0x04], LABEL_1F72
+	djnz [0x04], DRIFT_VAR1_MINUS_E_2X
 	mov [0x1E], 0x0005
 	mov [0x03], 0x0000
 	mov [0x04], 0x0006
 
-LABEL_1F8B:
+DELAY_6F_BEFORE_PAL_E_INIT:
 	break
-	djnz [0x04], LABEL_1F8B
+	djnz [0x04], DELAY_6F_BEFORE_PAL_E_INIT
 	setup channel=0x02, address=INIT_VAR_04_PAL_E_VAR_01
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	killChannel
@@ -3665,22 +3665,22 @@ CH_01_INIT_VAR_04_06:
 	mov [0x04], 0x0040
 	mov [0x06], 0x000F
 
-LABEL_2023:
+DRIFT_VAR4_PLUS_3_FOR_15X:
 	add [0x04], 0x0003
 	break
-	djnz [0x06], LABEL_2023
+	djnz [0x06], DRIFT_VAR4_PLUS_3_FOR_15X
 	mov [0x06], 0x000A
 
-LABEL_2030:
+DRIFT_VAR4_PLUS_5_FOR_10X:
 	add [0x04], 0x0005
 	break
-	djnz [0x06], LABEL_2030
+	djnz [0x06], DRIFT_VAR4_PLUS_5_FOR_10X
 	mov [0x06], 0x0014
 
-LABEL_203D:
+DRIFT_VAR4_PLUS_9_FOR_20X:
 	add [0x04], 0x0009
 	break
-	djnz [0x06], LABEL_203D
+	djnz [0x06], DRIFT_VAR4_PLUS_9_FOR_20X
 	setup channel=0x02, address=KILL_CHANNEL_ROUTINE
 	fill page=0xFF, color=0x09
 	break
@@ -3697,22 +3697,22 @@ LABEL_203D:
 	mov [0x04], 0x0153
 	mov [0x06], 0x0014
 
-LABEL_207A:
+DRIFT_VAR4_MINUS_9_FOR_20X:
 	sub [0x04], 0x0009
 	break
-	djnz [0x06], LABEL_207A
+	djnz [0x06], DRIFT_VAR4_MINUS_9_FOR_20X
 	mov [0x06], 0x000A
 
-LABEL_2087:
+DRIFT_VAR4_MINUS_5_FOR_10X:
 	sub [0x04], 0x0005
 	break
-	djnz [0x06], LABEL_2087
+	djnz [0x06], DRIFT_VAR4_MINUS_5_FOR_10X
 	mov [0x06], 0x0005
 
-LABEL_2094:
+DRIFT_VAR4_MINUS_3_FOR_5X:
 	sub [0x04], 0x0003
 	break
-	djnz [0x06], LABEL_2094
+	djnz [0x06], DRIFT_VAR4_MINUS_3_FOR_5X
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x02, address=INTRO_FILL_PAGE0_DRAW_CIN_118
 	setup channel=0x03, address=LESTER_HAND_PRESSING_KEYPAD_ANIMATION
@@ -3730,7 +3730,7 @@ INIT_VAR_04_PAL_E_VAR_01:
 	copyVideoPage src=0x00, dst=0xFF
 	play id=0x000C, freq=0x0F, vol=0x3F, channel=0x02
 
-LABEL_20D5:
+PARALLAX_CIN_126_127_LOOP:
 	sub [0x01], 0x0014
 	add [0x02], 0x0014
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F1, x=160, y=[0x01]
@@ -3738,18 +3738,18 @@ LABEL_20D5:
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F3_AMIGA_EXTRA, x=160, y=111, zoom=[0x04]
 	je [MUS_MARK], 0x10, MUS_10_FORCE_KILL_CHANNELS
 	break
-	djnz [0x03], LABEL_20D5
+	djnz [0x03], PARALLAX_CIN_126_127_LOOP
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F3_AMIGA_EXTRA, x=160, y=111, zoom=[0x04]
 	setup channel=0x08, address=DRAW_CIN_128_521_ZOOM_VAR04
 	setup channel=0x09, address=DRAW_CIN_126_127_AT_VAR01_02
 	setup channel=0x05, address=CH_05_INIT_VARS_06_07_08
 	mov [0x03], 0x0007
 
-LABEL_210E:
+ZOOM_OUT_VAR4_M3_LOOP:
 	sub [0x04], 0x0003
 	je [MUS_MARK], 0x10, MUS_10_FORCE_KILL_CHANNELS
 	break
-	djnz [0x03], LABEL_210E
+	djnz [0x03], ZOOM_OUT_VAR4_M3_LOOP
 	play id=0x000C, freq=0x0A, vol=0x32, channel=0x02
 	mov [0x03], 0x0003
 
@@ -3766,12 +3766,12 @@ INTRO_ZOOM_ITERATION_GOTO_KILL_ON_MUS_10:
 	break
 	mov [0x03], 0x0005
 
-LABEL_214F:
+DRIFT_CIN_129_PARALLAX_5X:
 	add [0x01], 0x0014
 	sub [0x02], 0x0014
 	video offset=CINEMATIC_518, x=160, y=111, zoom=[0x04]
 	break
-	djnz [0x03], LABEL_214F
+	djnz [0x03], DRIFT_CIN_129_PARALLAX_5X
 	play id=0x0036, freq=0x0F, vol=0x3F, channel=0x02
 
 MUS_10_FORCE_KILL_CHANNELS:
@@ -3791,11 +3791,11 @@ CH_05_INIT_VARS_06_07_08:
 DRAW_CIN_130_NESTED_OUTER:
 	mov [0x09], 0x0003
 
-LABEL_219B:
+DRAW_CIN_130_AT_VAR67_INNER:
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F4, x=[0x06], y=16
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F4, x=[0x07], y=18
 	break
-	djnz [0x09], LABEL_219B
+	djnz [0x09], DRAW_CIN_130_AT_VAR67_INNER
 	add [0x06], 0x0002
 	sub [0x07], 0x0002
 	djnz [0x08], DRAW_CIN_130_NESTED_OUTER
@@ -3810,9 +3810,9 @@ INTRO_DRAW_CIN_528_AT_96_131:
 	selectVideoPage 0xFF
 	mov [0x05], 0x0003
 
-LABEL_21C7:
+DELAY_3F_BEFORE_CIN_130_DRAW:
 	break
-	djnz [0x05], LABEL_21C7
+	djnz [0x05], DELAY_3F_BEFORE_CIN_130_DRAW
 	selectVideoPage 0x00
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F4, x=96, y=131
 	selectVideoPage 0xFF
@@ -4047,18 +4047,18 @@ INTRO_DJNZ_PLAY_SOUND_09_STEREO_THEN_PAUSE_3:
 	selectVideoPage 0xFF
 	mov [PAUSE_SLICES], 0x0002
 
-LABEL_24C5:
+DRAW_CIN_31_33_LOOP:
 	video offset=CINEMATIC_026, x=42, y=120
 	video offset=CINEMATIC_028, x=160, y=100
 	break
-	djnz [0x01], LABEL_24C5
+	djnz [0x01], DRAW_CIN_31_33_LOOP
 	setPalette 0x03
 	mov [0x01], 0x001E
 
-LABEL_24D9:
+DRAW_CIN_034_30X_BEFORE_REPEAT:
 	video offset=CINEMATIC_029, x=160, y=100
 	break
-	djnz [0x01], LABEL_24D9
+	djnz [0x01], DRAW_CIN_034_30X_BEFORE_REPEAT
 	jmp DRAW_CIN_035_PAL_3_REPEAT_HEAD
 LABEL_24E5:
 	db 0x11
@@ -4181,9 +4181,9 @@ INTRO_PLAY_FX_AND_PALETTE_4_LOOP:
 	mov [PAUSE_SLICES], 0x0002
 	mov [0x01], 0x001E
 
-LABEL_262F:
+DELAY_28F_BEFORE_BLITTER_SETUP:
 	break
-	djnz [0x01], LABEL_262F
+	djnz [0x01], DELAY_28F_BEFORE_BLITTER_SETUP
 	mov [PAUSE_SLICES], 0x0002
 	video offset=CINEMATIC_085, x=160, y=100
 	selectVideoPage 0x00
@@ -4192,9 +4192,9 @@ LABEL_262F:
 	play id=0x000D, freq=0x0C, vol=0x3F, channel=0x03
 	mov [0x01], 0x0014
 
-LABEL_2654:
+DELAY_20F_BEFORE_PAL_7_INIT:
 	break
-	djnz [0x01], LABEL_2654
+	djnz [0x01], DELAY_20F_BEFORE_PAL_7_INIT
 	setup channel=0x01, address=INTRO_SET_PAL_7_FILL_PAGE0_5
 	setup channel=0x02, address=CH_02_INIT_VARS_01_02_03
 	setup channel=0x03, address=DRAW_CIN_112_AT_143_94_LOOP

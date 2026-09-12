@@ -170,7 +170,7 @@ DELAY_7_THEN_PAL_15_CIN_231:
 LABEL_0F48:
 	killChannel
 
-INTRO_FILL_AND_DRAW_CIN_385:
+LESTER_OPENS_AND_DRINKS_SODA_ANIMATION:
 	fill page=0xFF, color=0x04
 	video offset=CINEMATIC_385, x=160, y=100
 	copyVideoPage src=0xFF, dst=0x00

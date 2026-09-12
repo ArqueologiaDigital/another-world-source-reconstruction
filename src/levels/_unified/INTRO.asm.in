@@ -143,7 +143,7 @@
 
 ; Transition-to-LAKE scene assembly
 ; (`INTRO_TRANSITION_TO_LAKE_SETUP`,
-; `PHASE_PAGE3_TO_0_PAL_16`, `INTRO_FILL_AND_DRAW_CIN_385`,
+; `PHASE_PAGE3_TO_0_PAL_16`, `LESTER_OPENS_AND_DRINKS_SODA_ANIMATION`,
 ; `CITY_DRAW_411_412_LOOP`). Sets up the city panorama → particle
 ; vortex → underwater LAKE arrival pipeline. Note this is the
 ; "setup" half; the main animation happens in

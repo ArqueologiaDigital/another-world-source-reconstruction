@@ -170,7 +170,7 @@ DRIFT_VAR1_PLUS_1_FOR_16X:
 	break
 	play id=0x0036, freq=0x16, vol=0x3F, channel=0x03
 	setup channel=0x01, address=CH_01_INIT_VAR_04_06
-	setup channel=0x03, address=DRAW_CIN_468_509_ZOOM_VAR04
+	setup channel=0x03, address=LESTER_WALKING_TOWARDS_CAMERA_ANIMATION
 	fill page=0x00, color=0x07
 	selectVideoPage 0x00
 	video offset=CINEMATIC_467, x=150, y=100
@@ -184,7 +184,7 @@ DELAY_25F_BEFORE_VAR1_4E:
 	mov [0x02], 0x00E8
 	mov [0x05], 0x000A
 
-DRIFT_CIN_502_503_BY_2_10X:
+LIFT_DOORS_OPENING_DIVERGE_LOOP:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_LIFT_DOORS_OPENING_F32, x=[0x01], y=100
 	video offset=CINEMATIC_LIFT_DOORS_OPENING_F33, x=[0x02], y=100
@@ -192,7 +192,7 @@ DRIFT_CIN_502_503_BY_2_10X:
 	sub [0x02], 0x0002
 	selectVideoPage 0xFF
 	break
-	djnz [0x05], DRIFT_CIN_502_503_BY_2_10X
+	djnz [0x05], LIFT_DOORS_OPENING_DIVERGE_LOOP
 	mov [0x05], 0x001A
 
 DELAY_26F_THEN_PLAY_FX_36:

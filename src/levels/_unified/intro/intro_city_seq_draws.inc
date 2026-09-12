@@ -270,7 +270,7 @@ SHOW_TEXT_26_AT_28_80_10X:
 	text id=0x004C, x=28, y=80, color=0x06
 	setup channel=0x10, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x0A, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x02, address=INTRO_FILL_AND_DRAW_CIN_385
+	setup channel=0x02, address=LESTER_OPENS_AND_DRINKS_SODA_ANIMATION
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	killChannel
