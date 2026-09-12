@@ -39,7 +39,7 @@ AMBIENT_RND_CASE_5:
 
 
 PLAY_AMBIENT_F19:
-	jne [0xF8], 0x06, RET_TARGET_1A88
+	jne [0xF8], 0x06, SHARED_GUARD_RET
 	play id=0x0050, freq=0x19, vol=0x10, channel=0x02
 	ret
 

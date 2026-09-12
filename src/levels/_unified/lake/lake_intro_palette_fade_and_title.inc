@@ -25,9 +25,9 @@ LAKE_PALETTE_FADE_IN:
 	jmp POST_LAKE_INTRO_FADE_AND_TEXT
 	mov [0x03], 0x0032
 
-LAKE_END_TRANSITION_DELAY:
+LAKE_INTRO_FADE_DELAY:
 	break
-	djnz [0x03], LAKE_END_TRANSITION_DELAY
+	djnz [0x03], LAKE_INTRO_FADE_DELAY
 
 POST_LAKE_INTRO_FADE_AND_TEXT:
 .endif
@@ -35,9 +35,15 @@ POST_LAKE_INTRO_FADE_AND_TEXT:
 	je [0xDB], 0x00, POST_LAKE_INTRO_FADE_AND_TEXT
 	mov [0x03], 0x0032
 
-LAKE_END_TRANSITION_DELAY:
+; Same role as the cartridge/gba arm above, and the two arms are mutually
+; exclusive, so sharing the name is not a duplicate in any single branch. It was
+; previously called LAKE_END_TRANSITION_DELAY, which is the name of a DIFFERENT
+; delay loop further down — the one after the title text. Both definitions landed
+; in every dos build and only the assembler's positional resolution made the two
+; `djnz` instructions pair with the right one (#0120).
+LAKE_INTRO_FADE_DELAY:
 	break
-	djnz [0x03], LAKE_END_TRANSITION_DELAY
+	djnz [0x03], LAKE_INTRO_FADE_DELAY
 
 POST_LAKE_INTRO_FADE_AND_TEXT:
 .endif

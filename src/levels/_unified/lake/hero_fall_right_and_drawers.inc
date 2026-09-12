@@ -188,10 +188,10 @@ DRAW_LESTER_FRAME_THEN_FALL:
 .endif
 	add [HERO_X], 0x0002
 
+; One definition, unguarded. dos_1992 used to get a second, identical label on
+; the very same address inside a `.if BRANCH == "dos_1992"` arm — two label-only
+; lines in a row, which the assembler resolves by keeping one (#0118).
 WAIT_TICK_THEN_HERO_FALL_RIGHT_LOOP:
-.if BRANCH == "dos_1992"
-WAIT_TICK_THEN_HERO_FALL_RIGHT_LOOP:
-.endif
 	break
 	jmp HERO_FALL_RIGHT_LOOP
 	killChannel
