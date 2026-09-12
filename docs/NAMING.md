@@ -199,6 +199,33 @@ labels in the finished stages still do (`BLITTER_LOOP_WITH_VAR1B_2B`,
 `SUM_HASH_VARS_TO_VAR_37`), which is backlog rather than a violation — the lint
 reports it as advisory for exactly this reason.
 
+### Which ids are ready, and the ones that never will be
+
+`tools/variable_roles.py` reads the role straight out of the opcodes: a variable
+consumed as `video … x=[v]` is a screen X, one counted down by `djnz` is a
+counter, one compared against a constant is a flag. Measured 2026-09-12:
+
+| stage (msdos) | raw ids | role stated outright | used in several roles |
+|---|---:|---:|---:|
+| LAKE | 151 | 82 | 17 |
+| INTRO | 30 | 13 | 14 |
+
+**LAKE is the stage this document calls finished** — 99.5 % of its *labels* are
+semantic — and 151 of its variables are still raw ids, 82 of them nameable
+today. The variable layer is untouched everywhere, not merely behind.
+
+The last column is the part that changes the convention. `<ROLE>_<QUALIFIER>`
+assumes a variable *has* a role. INTRO's low ids are scratch registers reused per
+scene: `0x01` is a countdown 66 times, a screen X 7 times and a screen Y 3 times,
+in different routines. No single name can be right for it, and inventing one
+(`COUNTER_OR_X_01`) would be a worse lie than the raw id, which at least claims
+nothing.
+
+So: name a variable only where one role accounts for its uses. Where several do,
+leave the raw id and let the routine name carry the meaning. Nearly half of
+INTRO's variables are in that state against a ninth of LAKE's — the difference
+between a cinematic stage and a gameplay one, not a defect in either.
+
 ### The four `HACK_VAR_` placeholders
 
 `HACK_VAR_<hex>` is `LABEL_<hex>` for variables and must go. Evidence gathered
