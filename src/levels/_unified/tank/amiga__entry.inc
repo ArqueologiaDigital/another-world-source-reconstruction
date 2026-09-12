@@ -6,24 +6,24 @@
 ;   INLINE_SET_VAR6B_TO_50  (2-arm: cart, dos)
 ;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
-;   INCREMENT_VAR5F_BY_8  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_TOP_ROW_CLAMP_CASE_02  (3-arm: amiga, cart, dos)
 ;   SET_VAR5F_TO_0018  (3-arm: amiga, cart, dos)
-;   SET_VAR5F_TO_0016  (3-arm: amiga, cart, dos)
-;   COPY_VAR62_TO_VAR5F  (3-arm: amiga, cart, dos)
-;   INIT_VARS_48_49_4A  (3-arm: amiga, cart, dos)
-;   INLINE_SET_VAR66_TO_32  (3-arm: amiga, cart, dos)
-;   SUM_HASH_VARS_TO_VAR_64  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_RIGHT_COLUMN_BOTTOM_CLAMP  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_RESTORE_PREV_CELL  (3-arm: amiga, cart, dos)
+;   TANK_MISSILE_FAR_PASS_INIT  (3-arm: amiga, cart, dos)
+;   TANK_ARENA_AMBIENT_LASER_FIRE_INIT  (3-arm: amiga, cart, dos)
+;   TANK_RANDOM_HASH_ADVANCE  (3-arm: amiga, cart, dos)
 ;   INIT_TANK_DRIVE_VARS  (2-arm: cart, dos)
-;   INCREMENT_VAR44_BY_37  (3-arm: amiga, cart, dos)
-;   INIT_VARS_50_NEG40_51_32  (3-arm: amiga, cart, dos)
+;   TANK_CANNON_IMPACT_ZOOM_BASE_DONE  (3-arm: amiga, cart, dos)
+;   TANK_GROUND_DEBRIS_SWEEP_INIT  (3-arm: amiga, cart, dos)
 ;   INIT_VAR1_NEG50_PLAY_8B_TWICE  (2-arm: cart, dos)
 ;   SHARED_RET  (3-arm: amiga, cart, dos)
-;   ALTERNATE_VAR06_VAR04_TIMING  (3-arm: amiga, cart, dos)
-;   INIT_VARS_A_B_PAL_1  (3-arm: amiga, cart, dos)
+;   TANK_FIREFIGHT_SOLDIER_SHOT_AND_FALLS  (3-arm: amiga, cart, dos)
+;   TANK_BACKDROP_SWAY_CYCLE_INIT  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_6_27_28_AND_RET  (2-arm: amiga, dos)
 ;   DRAW_CIN_6_AND_RET  (2-arm: amiga, dos)
-;   DRAW_BG_DOTS_CIN_001_004  (2-arm: amiga, dos)
-;   DRAW_BG_DOTS_CIN_007_008  (2-arm: amiga, dos)
+;   TANK_HORIZON_DECOR_FULL_WIDTH_PAGE_0  (2-arm: amiga, dos)
+;   TANK_HORIZON_DECOR_FULL_WIDTH_PAGE_3  (2-arm: amiga, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
 
 ; Unified source for TANK with 23 folded shared bodies.
@@ -34,23 +34,23 @@
 ;   INLINE_SET_VAR6B_TO_50  (2-arm: cart, dos)
 ;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
-;   INCREMENT_VAR5F_BY_8  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_TOP_ROW_CLAMP_CASE_02  (3-arm: amiga, cart, dos)
 ;   SET_VAR5F_TO_0018  (3-arm: amiga, cart, dos)
-;   SET_VAR5F_TO_0016  (3-arm: amiga, cart, dos)
-;   COPY_VAR62_TO_VAR5F  (3-arm: amiga, cart, dos)
-;   INIT_VARS_48_49_4A  (3-arm: amiga, cart, dos)
-;   INLINE_SET_VAR66_TO_32  (3-arm: amiga, cart, dos)
-;   SUM_HASH_VARS_TO_VAR_64  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_RIGHT_COLUMN_BOTTOM_CLAMP  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_RESTORE_PREV_CELL  (3-arm: amiga, cart, dos)
+;   TANK_MISSILE_FAR_PASS_INIT  (3-arm: amiga, cart, dos)
+;   TANK_ARENA_AMBIENT_LASER_FIRE_INIT  (3-arm: amiga, cart, dos)
+;   TANK_RANDOM_HASH_ADVANCE  (3-arm: amiga, cart, dos)
 ;   INIT_TANK_DRIVE_VARS  (2-arm: cart, dos)
-;   INCREMENT_VAR44_BY_37  (3-arm: amiga, cart, dos)
-;   INIT_VARS_50_NEG40_51_32  (3-arm: amiga, cart, dos)
+;   TANK_CANNON_IMPACT_ZOOM_BASE_DONE  (3-arm: amiga, cart, dos)
+;   TANK_GROUND_DEBRIS_SWEEP_INIT  (3-arm: amiga, cart, dos)
 ;   INIT_VAR1_NEG50_PLAY_8B_TWICE  (2-arm: cart, dos)
 ;   SHARED_RET  (3-arm: amiga, cart, dos)
-;   ALTERNATE_VAR06_VAR04_TIMING  (3-arm: amiga, cart, dos)
-;   INIT_VARS_A_B_PAL_1  (3-arm: amiga, cart, dos)
+;   TANK_FIREFIGHT_SOLDIER_SHOT_AND_FALLS  (3-arm: amiga, cart, dos)
+;   TANK_BACKDROP_SWAY_CYCLE_INIT  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_6_27_28_AND_RET  (2-arm: amiga, dos)
 ;   DRAW_CIN_6_AND_RET  (2-arm: amiga, dos)
-;   DRAW_BG_DOTS_CIN_001_004  (2-arm: amiga, dos)
+;   TANK_HORIZON_DECOR_FULL_WIDTH_PAGE_0  (2-arm: amiga, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
 
 ; Unified source for TANK with 19 folded shared bodies.
@@ -60,20 +60,20 @@
 ;   INLINE_SET_VAR6B_TO_50  (2-arm: cart, dos)
 ;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
-;   INCREMENT_VAR5F_BY_8  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_TOP_ROW_CLAMP_CASE_02  (3-arm: amiga, cart, dos)
 ;   SET_VAR5F_TO_0018  (3-arm: amiga, cart, dos)
-;   SET_VAR5F_TO_0016  (3-arm: amiga, cart, dos)
-;   COPY_VAR62_TO_VAR5F  (3-arm: amiga, cart, dos)
-;   INIT_VARS_48_49_4A  (3-arm: amiga, cart, dos)
-;   INLINE_SET_VAR66_TO_32  (3-arm: amiga, cart, dos)
-;   SUM_HASH_VARS_TO_VAR_64  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_RIGHT_COLUMN_BOTTOM_CLAMP  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_RESTORE_PREV_CELL  (3-arm: amiga, cart, dos)
+;   TANK_MISSILE_FAR_PASS_INIT  (3-arm: amiga, cart, dos)
+;   TANK_ARENA_AMBIENT_LASER_FIRE_INIT  (3-arm: amiga, cart, dos)
+;   TANK_RANDOM_HASH_ADVANCE  (3-arm: amiga, cart, dos)
 ;   INIT_TANK_DRIVE_VARS  (2-arm: cart, dos)
-;   INCREMENT_VAR44_BY_37  (3-arm: amiga, cart, dos)
-;   INIT_VARS_50_NEG40_51_32  (3-arm: amiga, cart, dos)
+;   TANK_CANNON_IMPACT_ZOOM_BASE_DONE  (3-arm: amiga, cart, dos)
+;   TANK_GROUND_DEBRIS_SWEEP_INIT  (3-arm: amiga, cart, dos)
 ;   INIT_VAR1_NEG50_PLAY_8B_TWICE  (2-arm: cart, dos)
 ;   SHARED_RET  (3-arm: amiga, cart, dos)
-;   ALTERNATE_VAR06_VAR04_TIMING  (3-arm: amiga, cart, dos)
-;   INIT_VARS_A_B_PAL_1  (3-arm: amiga, cart, dos)
+;   TANK_FIREFIGHT_SOLDIER_SHOT_AND_FALLS  (3-arm: amiga, cart, dos)
+;   TANK_BACKDROP_SWAY_CYCLE_INIT  (3-arm: amiga, cart, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
 
 ; Unified source for TANK with 19 folded shared bodies.
@@ -83,20 +83,20 @@
 ;   INLINE_SET_VAR6B_TO_50  (2-arm: cart, dos)
 ;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
-;   INCREMENT_VAR5F_BY_8  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_TOP_ROW_CLAMP_CASE_02  (3-arm: amiga, cart, dos)
 ;   SET_VAR5F_TO_0018  (3-arm: amiga, cart, dos)
-;   SET_VAR5F_TO_0016  (3-arm: amiga, cart, dos)
-;   COPY_VAR62_TO_VAR5F  (3-arm: amiga, cart, dos)
-;   INIT_VARS_48_49_4A  (3-arm: amiga, cart, dos)
-;   INLINE_SET_VAR66_TO_32  (3-arm: amiga, cart, dos)
-;   SUM_HASH_VARS_TO_VAR_64  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_RIGHT_COLUMN_BOTTOM_CLAMP  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_RESTORE_PREV_CELL  (3-arm: amiga, cart, dos)
+;   TANK_MISSILE_FAR_PASS_INIT  (3-arm: amiga, cart, dos)
+;   TANK_ARENA_AMBIENT_LASER_FIRE_INIT  (3-arm: amiga, cart, dos)
+;   TANK_RANDOM_HASH_ADVANCE  (3-arm: amiga, cart, dos)
 ;   INIT_TANK_DRIVE_VARS  (2-arm: cart, dos)
-;   INCREMENT_VAR44_BY_37  (3-arm: amiga, cart, dos)
-;   INIT_VARS_50_NEG40_51_32  (3-arm: amiga, cart, dos)
+;   TANK_CANNON_IMPACT_ZOOM_BASE_DONE  (3-arm: amiga, cart, dos)
+;   TANK_GROUND_DEBRIS_SWEEP_INIT  (3-arm: amiga, cart, dos)
 ;   INIT_VAR1_NEG50_PLAY_8B_TWICE  (2-arm: cart, dos)
 ;   SHARED_RET  (3-arm: amiga, cart, dos)
-;   ALTERNATE_VAR06_VAR04_TIMING  (3-arm: amiga, cart, dos)
-;   INIT_VARS_A_B_PAL_1  (3-arm: amiga, cart, dos)
+;   TANK_FIREFIGHT_SOLDIER_SHOT_AND_FALLS  (3-arm: amiga, cart, dos)
+;   TANK_BACKDROP_SWAY_CYCLE_INIT  (3-arm: amiga, cart, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
 
 ; Unified source for TANK with 14 folded shared bodies.
@@ -105,16 +105,16 @@
 ;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
 ;   SET_VAR5F_TO_0018  (3-arm: amiga, cart, dos)
-;   SET_VAR5F_TO_0016  (3-arm: amiga, cart, dos)
-;   COPY_VAR62_TO_VAR5F  (3-arm: amiga, cart, dos)
-;   INIT_VARS_48_49_4A  (3-arm: amiga, cart, dos)
-;   SUM_HASH_VARS_TO_VAR_64  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_RIGHT_COLUMN_BOTTOM_CLAMP  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_RESTORE_PREV_CELL  (3-arm: amiga, cart, dos)
+;   TANK_MISSILE_FAR_PASS_INIT  (3-arm: amiga, cart, dos)
+;   TANK_RANDOM_HASH_ADVANCE  (3-arm: amiga, cart, dos)
 ;   INIT_TANK_DRIVE_VARS  (2-arm: cart, dos)
-;   INIT_VARS_50_NEG40_51_32  (3-arm: amiga, cart, dos)
+;   TANK_GROUND_DEBRIS_SWEEP_INIT  (3-arm: amiga, cart, dos)
 ;   INIT_VAR1_NEG50_PLAY_8B_TWICE  (2-arm: cart, dos)
 ;   SHARED_RET  (3-arm: amiga, cart, dos)
-;   ALTERNATE_VAR06_VAR04_TIMING  (3-arm: amiga, cart, dos)
-;   INIT_VARS_A_B_PAL_1  (3-arm: amiga, cart, dos)
+;   TANK_FIREFIGHT_SOLDIER_SHOT_AND_FALLS  (3-arm: amiga, cart, dos)
+;   TANK_BACKDROP_SWAY_CYCLE_INIT  (3-arm: amiga, cart, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
 
 wrote src/levels/_unified/tank/amiga__entry.inc (674 lines)
@@ -162,17 +162,17 @@ wrote src/levels/_unified/tank/dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc (7158 line
 ;   SETUP_TANK_HERO_VARS_PLAY_4SFX  (2-arm: amiga, dos)
 ;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
-;   INIT_VARS_48_49_4A  (3-arm: amiga, cart, dos)
-;   SUM_HASH_VARS_TO_VAR_64  (3-arm: amiga, cart, dos)
+;   TANK_MISSILE_FAR_PASS_INIT  (3-arm: amiga, cart, dos)
+;   TANK_RANDOM_HASH_ADVANCE  (3-arm: amiga, cart, dos)
 ;   INIT_TANK_DRIVE_VARS  (2-arm: cart, dos)
-;   INIT_VARS_50_NEG40_51_32  (3-arm: amiga, cart, dos)
+;   TANK_GROUND_DEBRIS_SWEEP_INIT  (3-arm: amiga, cart, dos)
 ;   INIT_VAR1_NEG50_PLAY_8B_TWICE  (2-arm: cart, dos)
-;   ALTERNATE_VAR06_VAR04_TIMING  (3-arm: amiga, cart, dos)
-;   INIT_VARS_A_B_PAL_1  (3-arm: amiga, cart, dos)
+;   TANK_FIREFIGHT_SOLDIER_SHOT_AND_FALLS  (3-arm: amiga, cart, dos)
+;   TANK_BACKDROP_SWAY_CYCLE_INIT  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_6_27_28_AND_RET  (2-arm: amiga, dos)
 ;   DRAW_CIN_6_AND_RET  (2-arm: amiga, dos)
-;   DRAW_BG_DOTS_CIN_001_004  (2-arm: amiga, dos)
-;   DRAW_BG_DOTS_CIN_007_008  (2-arm: amiga, dos)
+;   TANK_HORIZON_DECOR_FULL_WIDTH_PAGE_0  (2-arm: amiga, dos)
+;   TANK_HORIZON_DECOR_FULL_WIDTH_PAGE_3  (2-arm: amiga, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
 
 ; Unified source for TANK with 15 folded shared bodies.
@@ -181,17 +181,17 @@ wrote src/levels/_unified/tank/dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc (7158 line
 ;   SETUP_TANK_HERO_VARS_PLAY_4SFX  (2-arm: amiga, dos)
 ;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
-;   INIT_VARS_48_49_4A  (3-arm: amiga, cart, dos)
-;   SUM_HASH_VARS_TO_VAR_64  (3-arm: amiga, cart, dos)
+;   TANK_MISSILE_FAR_PASS_INIT  (3-arm: amiga, cart, dos)
+;   TANK_RANDOM_HASH_ADVANCE  (3-arm: amiga, cart, dos)
 ;   INIT_TANK_DRIVE_VARS  (2-arm: cart, dos)
-;   INIT_VARS_50_NEG40_51_32  (3-arm: amiga, cart, dos)
+;   TANK_GROUND_DEBRIS_SWEEP_INIT  (3-arm: amiga, cart, dos)
 ;   INIT_VAR1_NEG50_PLAY_8B_TWICE  (2-arm: cart, dos)
-;   ALTERNATE_VAR06_VAR04_TIMING  (3-arm: amiga, cart, dos)
-;   INIT_VARS_A_B_PAL_1  (3-arm: amiga, cart, dos)
+;   TANK_FIREFIGHT_SOLDIER_SHOT_AND_FALLS  (3-arm: amiga, cart, dos)
+;   TANK_BACKDROP_SWAY_CYCLE_INIT  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_6_27_28_AND_RET  (2-arm: amiga, dos)
 ;   DRAW_CIN_6_AND_RET  (2-arm: amiga, dos)
-;   DRAW_BG_DOTS_CIN_001_004  (2-arm: amiga, dos)
-;   DRAW_BG_DOTS_CIN_007_008  (2-arm: amiga, dos)
+;   TANK_HORIZON_DECOR_FULL_WIDTH_PAGE_0  (2-arm: amiga, dos)
+;   TANK_HORIZON_DECOR_FULL_WIDTH_PAGE_3  (2-arm: amiga, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
 
 ; Generated by AnotherWorld_VMTools
@@ -427,50 +427,50 @@ ENTRY_POINT_OF_TANK:
 	call CLEAR_PAGES_1_2_AND_BLIT
 	mov [PAUSE_SLICES], 0x0002
 	setup channel=0x3C, address=HANG_BLITTING_PAGE_FF
-	setup channel=0x14, address=LABEL_03ED
-	call LABEL_0091
+	setup channel=0x14, address=CAPSULE_DOME_CLOSING_REENTRY
+	call LOAD_TANK_STAGE_SOUND_SAMPLES
 	killChannel
-	setup channel=0x09, address=LABEL_0955
+	setup channel=0x09, address=TANK_ARRIVAL_CUTSCENE_ENTRY
 	killChannel
-	jmp LABEL_03ED
+	jmp CAPSULE_DOME_CLOSING_REENTRY
 
-LABEL_001B:
+TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x3C, address=BLITTER_LOOP_COPY_PAGE_03
-	setup channel=0x02, address=LABEL_16D4
-	setup channel=0x04, address=LABEL_10E1
-	setup channel=0x0A, address=LABEL_141E
-	setup channel=0x0B, address=WAIT_VAR3E_DEC_AND_RANDOMIZE
-	setup channel=0x0E, address=WAIT_VAR4E_PLAY_8C_DRAW_CIN_201
-	setup channel=0x1C, address=INIT_VARS_52_17C_53_75_54_40_55_8
-	setup channel=0x1F, address=LABEL_0BE9
-	setup channel=0x20, address=LABEL_0B7F
-	setup channel=0x21, address=LABEL_0D41
-	setup channel=0x22, address=WAIT_VAR56_PLAY_8E_DRAW_CIN_020
-	setup channel=0x23, address=LABEL_137C
-	setup channel=0x24, address=LABEL_12A9
-	setup channel=0x25, address=LABEL_0F1F
-	setup channel=0x28, address=LABEL_050E
-	setup channel=0x30, address=WAIT_VAR45_PLAY_8C_DRAW_CIN_011
+	setup channel=0x02, address=TANK_BACKDROP_SWAY_ANIM_LOOP
+	setup channel=0x04, address=TANK_GROUND_DEBRIS_WAIT_LOOP
+	setup channel=0x0A, address=TANK_INIT_PROJECTILE_POOL_CHANNELS_14_TO_25
+	setup channel=0x0B, address=TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C
+	setup channel=0x0E, address=TANK_GROUND_DEBRIS_BURST_LOOP
+	setup channel=0x1C, address=TANK_ARENA_CREATURE_RUN_INIT
+	setup channel=0x1F, address=TANK_SALVO_TRAIL_CLIMB_THEN_STRIKE
+	setup channel=0x20, address=TANK_SALVO_TRAIL_CLIMB_AND_SPAWN_BURSTS
+	setup channel=0x21, address=TANK_MISSILE_LAUNCH_TRIGGER_INIT
+	setup channel=0x22, address=TANK_PROJECTILE_ARC_AND_EXPLOSION
+	setup channel=0x23, address=INIT_VAR1_NEG50_PLAY_8B_TWICE
+	setup channel=0x24, address=TANK_BEAM_GUN_WAIT_LOOP
+	setup channel=0x25, address=TANK_ARENA_GUN_ACTIVATION_WAIT_INIT
+	setup channel=0x28, address=TANK_STAGE_EXIT_CAPSULE_LAUNCH_TO_BATHS
+	setup channel=0x30, address=TANK_CANNON_IMPACT_PLUME_LOOP
 	setup channel=0x31, address=WAIT_VAR46_PLAY_8E_DRAW_CIN_056
-	setup channel=0x35, address=INLINE_SET_VAR66_TO_32
-	setup channel=0x37, address=LABEL_0E21
-	call LABEL_0DD4
-	call LABEL_179B
-	setup channel=0x00, address=INIT_VARS_A_B_PAL_1
+	setup channel=0x35, address=TANK_ARENA_AMBIENT_LASER_FIRE_INIT
+	setup channel=0x37, address=TANK_ARENA_CREATURE_CHARGE_PAST
+	call INIT_TANK_DRIVE_VARS
+	call TANK_DRAW_CIN_6_27_28_ON_PAGE_0_AND_3
+	setup channel=0x00, address=TANK_BACKDROP_SWAY_CYCLE_INIT
 	killChannel
 
-LABEL_0072:
+TANK_DRIVE_SCENE_INIT:
 	setup channel=0x3C, address=BLITTER_LOOP_COPY_PAGE_03
-	setup channel=0x02, address=LABEL_16D4
-	setup channel=0x00, address=INIT_VARS_A_B_PAL_1
-	setup channel=0x20, address=HANG_DRAW_CIN_035
-	setup channel=0x28, address=HANG_DRAW_CIN_034
+	setup channel=0x02, address=TANK_BACKDROP_SWAY_ANIM_LOOP
+	setup channel=0x00, address=TANK_BACKDROP_SWAY_CYCLE_INIT
+	setup channel=0x20, address=TANK_ARENA_ENTRY_WALL_REDRAW_LOOP
+	setup channel=0x28, address=TANK_ARENA_ENTRY_WALL_OCCLUDER_REDRAW_LOOP
 	setup channel=0x23, address=SETUP_TANK_HERO_VARS_PLAY_4SFX
-	call LABEL_0DD4
+	call INIT_TANK_DRIVE_VARS
 	call LABEL_17B5
 	killChannel
 
-LABEL_0091:
+LOAD_TANK_STAGE_SOUND_SAMPLES:
 	load id=0x0052
 	load id=0x0084
 	load id=0x008B

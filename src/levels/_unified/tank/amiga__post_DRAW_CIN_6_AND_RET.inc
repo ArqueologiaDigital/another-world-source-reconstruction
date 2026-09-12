@@ -1,14 +1,14 @@
-LABEL_17CF:
+TANK_BACKDROP_BUILD_BOTH_PAGES:
 	selectVideoPage 0x00
 	fill page=0x00, color=0x0C
 	video offset=CINEMATIC_000, x=160, y=100
 	copyVideoPage src=0x00, dst=0x03
-	call DRAW_CIN_SEQ_001_001_003
-	call DRAW_BG_DOTS_CIN_001_004
+	call TANK_HORIZON_DECOR_LEFT_THIRD
+	call TANK_HORIZON_DECOR_FULL_WIDTH_PAGE_0
 	call DRAW_CIN_6_AND_RET
 	selectVideoPage 0x03
-	call DRAW_CIN_SEQ_001_001_003
-	call DRAW_BG_DOTS_CIN_007_008
+	call TANK_HORIZON_DECOR_LEFT_THIRD
+	call TANK_HORIZON_DECOR_FULL_WIDTH_PAGE_3
 	call DRAW_CIN_6_AND_RET
 	selectVideoPage 0xFF
 	ret
@@ -20,14 +20,14 @@ DRAW_CIN_113_114_AND_RET:
 	ret
 
 
-DRAW_CIN_122_ON_PAGE_0:
+TANK_TURRET_HIT_STAMP_ON_BACKDROP:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_122, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
 	ret
 
 
-LABEL_1807:
+TANK_TURRET_HIT_STAMP_ADVANCE_SCREEN_STATE:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_121, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
@@ -36,7 +36,7 @@ LABEL_1807:
 	ret
 
 
-LABEL_181B:
+TANK_SCENE_INIT_FILL_PAGE_3_COLOR_0C:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_120, x=[0x0f], y=[0x10]
 	mov [HACK_VAR_67], 0x0003
@@ -44,7 +44,7 @@ LABEL_181B:
 	ret
 
 
-DRAW_CIN_093_TO_097_VAR:
+DRAW_TANK_FLYBY_CRAFT:
 	video offset=CINEMATIC_029, x=[0x01], y=[0x02], zoom=[0x03]
 	video offset=CINEMATIC_030, x=[0x01], y=[0x02], zoom=[0x03]
 	video offset=CINEMATIC_031, x=[0x01], y=[0x02], zoom=[0x03]
@@ -53,7 +53,7 @@ DRAW_CIN_093_TO_097_VAR:
 	ret
 
 
-DRAW_CIN_SEQ_001_001_003:
+TANK_HORIZON_DECOR_LEFT_THIRD:
 	video offset=CINEMATIC_001, x=114, y=22
 	video offset=CINEMATIC_001, x=86, y=21
 	video offset=CINEMATIC_001, x=53, y=21

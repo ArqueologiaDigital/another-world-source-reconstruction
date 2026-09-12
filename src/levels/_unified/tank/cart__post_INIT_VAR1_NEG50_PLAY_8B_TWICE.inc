@@ -9,7 +9,7 @@ LABEL_17C6:
 	break
 	play id=0x008B, freq=0x22, vol=0x40, channel=0x01
 	play id=0x008C, freq=0x0A, vol=0x40, channel=0x00
-	call DRAW_CIN_093_TO_097_VAR
+	call DRAW_TANK_FLYBY_CRAFT
 	mov [0xF8], [0x2B]
 	and [0xF8], 0x000D
 	add [0x01], [0xF8]
@@ -19,12 +19,12 @@ LABEL_17C6:
 	play id=0x0084, freq=0x0F, vol=0x10, channel=0x03
 	setup channel=0x39, address=HANG_DRAW_CIN_089
 	setup channel=0x01, address=LABEL_0C43
-	setup channel=0x3B, address=WAIT_LOOP_VAR_5C
+	setup channel=0x3B, address=TANK_CONSOLE_HAND_HOVER_LOOP
 	selectVideoPage 0x03
-	call DRAW_CIN_093_TO_097_VAR
+	call DRAW_TANK_FLYBY_CRAFT
 	selectVideoPage 0x00
 	call DRAW_CIN_186_THEN_CIN_187
-	call DRAW_CIN_093_TO_097_VAR
+	call DRAW_TANK_FLYBY_CRAFT
 	call DRAW_CIN_186_THEN_CIN_187
 	selectVideoPage 0xFF
 	jmp HANG_DRAW_CIN_090
@@ -42,7 +42,7 @@ LABEL_1838:
 	setup channel=0x14, address=LABEL_18BB
 	setup channel=0x15, address=LABEL_1A89
 	setup channel=0x16, address=LABEL_18D2
-	setup channel=0x17, address=ALTERNATE_VAR06_VAR04_TIMING
+	setup channel=0x17, address=TANK_FIREFIGHT_SOLDIER_SHOT_AND_FALLS
 	setup channel=0x18, address=LABEL_18FE
 	setup channel=0x19, address=ANIMATE_VAR06_VAR04_REVERSE
 	setup channel=0x1A, address=LABEL_192A
@@ -66,9 +66,9 @@ LABEL_1838:
 	mov [0x25], 0x0001
 	mov [0x68], 0x0032
 
-DELAY_LOOP_VAR68:
+TANK_GUARD_CAST_INIT_DELAY:
 	break
-	djnz [0x68], DELAY_LOOP_VAR68
+	djnz [0x68], TANK_GUARD_CAST_INIT_DELAY
 	setup channel=0x37, address=LABEL_1237
 	killChannel
 

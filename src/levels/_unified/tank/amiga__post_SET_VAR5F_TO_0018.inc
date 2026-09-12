@@ -1,4 +1,4 @@
 LABEL_0681:
-	jne [0x62], 0x15, LABEL_0691
+	jne [0x62], 0x15, TANK_APPLY_BOTH_AXES_INPUT_TO_TURRET
 	mov [0x5F], 0x000E
 	ret

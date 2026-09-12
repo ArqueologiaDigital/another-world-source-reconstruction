@@ -1,6 +1,6 @@
 LABEL_00E4:
 	break
-	call DRAW_CIN_093_TO_097_VAR
+	call DRAW_TANK_FLYBY_CRAFT
 	mov [0xF8], [0x2B]
 	add [0xF8], 0x0003
 	add [0x01], [0xF8]
@@ -220,9 +220,9 @@ CAPSULE_DOME_TOP_LIFT_LOOP:
 	deleteChannels first=0x09, last=0x0B
 	mov [0x03], 0x0014
 
-DELAY_LOOP_VAR03:
+CAPSULE_DOME_PHASE_1_TO_2_DELAY:
 	break
-	djnz [0x03], DELAY_LOOP_VAR03
+	djnz [0x03], CAPSULE_DOME_PHASE_1_TO_2_DELAY
 	setup channel=0x37, address=RESET_PAGES_AND_SETUP_CH_0A
 	break
 	jmp CAPSULE_DOME_CLOSING_PHASE_2_ENTRY

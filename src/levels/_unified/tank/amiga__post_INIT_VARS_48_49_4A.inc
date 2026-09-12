@@ -1,4 +1,4 @@
-LABEL_0C7E:
+TANK_MISSILE_FAR_PASS_LOOP:
 	video offset=CINEMATIC_126, x=[0x48], y=[0x49]
 	add [0x48], 0x0014
 	add [0x49], 0x0002
@@ -21,7 +21,7 @@ LABEL_0C7E:
 	add [0x48], 0x0014
 	add [0x49], 0x0001
 	break
-	djnz [0x4A], LABEL_0C7E
+	djnz [0x4A], TANK_MISSILE_FAR_PASS_LOOP
 	video offset=CINEMATIC_127, x=160, y=100
 	break
 	video offset=CINEMATIC_128, x=160, y=100

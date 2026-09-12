@@ -16,26 +16,26 @@ LABEL_0026:
 	setup channel=0x02, address=DRAW_CIN_224_MULTI_FRAME
 	setup channel=0x04, address=LABEL_14F7
 	setup channel=0x0A, address=LABEL_1838
-	setup channel=0x0B, address=WAIT_VAR3E_DEC_AND_RANDOMIZE
-	setup channel=0x0E, address=WAIT_VAR4E_PLAY_8C_DRAW_CIN_201
+	setup channel=0x0B, address=TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C
+	setup channel=0x0E, address=TANK_GROUND_DEBRIS_BURST_LOOP
 	setup channel=0x1C, address=LABEL_1282
 	setup channel=0x1F, address=LABEL_0FDB
 	setup channel=0x20, address=LABEL_0F71
 	setup channel=0x21, address=LABEL_1133
-	setup channel=0x22, address=WAIT_VAR56_PLAY_8E_DRAW_CIN_020
+	setup channel=0x22, address=TANK_PROJECTILE_ARC_AND_EXPLOSION
 	setup channel=0x23, address=INIT_VAR1_NEG50_PLAY_8B_TWICE
 	setup channel=0x24, address=LABEL_16BF
 	setup channel=0x25, address=LABEL_1335
 	setup channel=0x28, address=LABEL_085A
 	setup channel=0x2A, address=INLINE_SET_VAR6B_TO_50
 	setup channel=0x2F, address=LABEL_071B
-	setup channel=0x30, address=WAIT_VAR45_PLAY_8C_DRAW_CIN_011
+	setup channel=0x30, address=TANK_CANNON_IMPACT_PLUME_LOOP
 	setup channel=0x31, address=WAIT_VAR46_PLAY_8E_DRAW_CIN_056
-	setup channel=0x35, address=INLINE_SET_VAR66_TO_32
+	setup channel=0x35, address=TANK_ARENA_AMBIENT_LASER_FIRE_INIT
 	setup channel=0x37, address=LABEL_1237
 	call INIT_TANK_DRIVE_VARS
 	call LABEL_1BCA
-	setup channel=0x00, address=INIT_VARS_A_B_PAL_1
+	setup channel=0x00, address=TANK_BACKDROP_SWAY_CYCLE_INIT
 	killChannel
 
 LABEL_0085:
@@ -43,7 +43,7 @@ LABEL_0085:
 	setup channel=0x02, address=DRAW_CIN_224_MULTI_FRAME
 	setup channel=0x00, address=LABEL_1C05
 	setup channel=0x20, address=HANG_DRAW_CIN_223
-	setup channel=0x28, address=HANG_DRAW_CIN_222
+	setup channel=0x28, address=CAPSULE_DOME_CLOSING_F48_REDRAW_LOOP
 	setup channel=0x23, address=LABEL_00DD
 	call INIT_TANK_DRIVE_VARS
 	killChannel
@@ -90,7 +90,7 @@ LABEL_00DD:
 
 LABEL_010E:
 	break
-	call DRAW_CIN_093_TO_097_VAR
+	call DRAW_TANK_FLYBY_CRAFT
 	mov [0xF8], [0x2B]
 	add [0xF8], 0x0003
 	add [0x01], [0xF8]
@@ -108,10 +108,10 @@ HANG_DRAW_CIN_223:
 	break
 	jmp HANG_DRAW_CIN_223
 
-HANG_DRAW_CIN_222:
+CAPSULE_DOME_CLOSING_F48_REDRAW_LOOP:
 	video offset=CINEMATIC_222, x=160, y=100
 	break
-	jmp HANG_DRAW_CIN_222
+	jmp CAPSULE_DOME_CLOSING_F48_REDRAW_LOOP
 LABEL_013C:
 	db 0x11
 
@@ -303,9 +303,9 @@ CAPSULE_DOME_PHASE_1_END_HOLD:
 	deleteChannels first=0x09, last=0x0B
 	mov [0x03], 0x0014
 
-DELAY_LOOP_VAR03:
+CAPSULE_DOME_PHASE_1_TO_2_DELAY:
 	break
-	djnz [0x03], DELAY_LOOP_VAR03
+	djnz [0x03], CAPSULE_DOME_PHASE_1_TO_2_DELAY
 	setup channel=0x37, address=RESET_PAGES_AND_SETUP_CH_0A
 	break
 	jmp LABEL_0323

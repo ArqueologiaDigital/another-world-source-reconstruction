@@ -1,4 +1,4 @@
-INIT_VARS_48_49_4A:
+TANK_MISSILE_FAR_PASS_INIT:
 	mov [0x48], 0xFFEC
 	mov [0x49], 0x0064
 	mov [0x4A], 0x0004
@@ -11,7 +11,7 @@ INIT_VARS_48_49_4A:
 .include "dos__post_INIT_VARS_48_49_4A.inc"
 .endif
 
-INLINE_SET_VAR66_TO_32:
+TANK_ARENA_AMBIENT_LASER_FIRE_INIT:
 	mov [0x66], 0x0032
 
 .if BRANCH == "chahi_amiga_1991"
@@ -22,7 +22,7 @@ INLINE_SET_VAR66_TO_32:
 .include "dos__post_INLINE_SET_VAR66_TO_32.inc"
 .endif
 
-SUM_HASH_VARS_TO_VAR_64:
+TANK_RANDOM_HASH_ADVANCE:
 	add [0x64], 0x0071
 	add [0x64], [0x32]
 	add [0x64], [0x01]

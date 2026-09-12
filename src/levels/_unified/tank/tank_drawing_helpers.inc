@@ -1,4 +1,4 @@
-INIT_VARS_A_B_PAL_1:
+TANK_BACKDROP_SWAY_CYCLE_INIT:
 	mov [0x0A], 0x0082
 	mov [0x0B], 0x0032
 	setPalette 0x01
@@ -42,7 +42,7 @@ DRAW_CIN_6_AND_RET:
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_BG_DOTS_CIN_001_004:
+TANK_HORIZON_DECOR_FULL_WIDTH_PAGE_0:
 	video offset=CINEMATIC_004, x=299, y=37
 	video offset=CINEMATIC_004, x=289, y=23
 	video offset=CINEMATIC_001, x=205, y=21
@@ -107,7 +107,7 @@ DRAW_BG_DOTS_CIN_001_004:
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_BG_DOTS_CIN_007_008:
+TANK_HORIZON_DECOR_FULL_WIDTH_PAGE_3:
 	video offset=CINEMATIC_007, x=299, y=37
 	video offset=CINEMATIC_007, x=289, y=23
 	video offset=CINEMATIC_008, x=205, y=21

@@ -1,4 +1,4 @@
-INCREMENT_VAR5F_BY_8:
+TANK_PANEL_CURSOR_TOP_ROW_CLAMP_CASE_02:
 	add [0x5F], 0x0008
 	ret
 
@@ -18,7 +18,7 @@ SET_VAR5F_TO_0018:
 .include "dos__post_SET_VAR5F_TO_0018.inc"
 .endif
 
-SET_VAR5F_TO_0016:
+TANK_PANEL_CURSOR_RIGHT_COLUMN_BOTTOM_CLAMP:
 	mov [0x5F], 0x0016
 	ret
 
@@ -29,7 +29,7 @@ SET_VAR5F_TO_0016:
 .include "cart_dos__post_SET_VAR5F_TO_0016.inc"
 .endif
 
-COPY_VAR62_TO_VAR5F:
+TANK_PANEL_CURSOR_RESTORE_PREV_CELL:
 	mov [0x5F], [0x62]
 	ret
 

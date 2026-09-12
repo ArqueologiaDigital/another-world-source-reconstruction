@@ -4,11 +4,11 @@ TANK_SCENE_INIT_FILL_COLOR_0C_AND_PAGE_3_COPY:
 	video offset=CINEMATIC_000, x=160, y=100
 	copyVideoPage src=0x00, dst=0x03
 	call DRAW_CIN_061_HORIZ_THEN_062
-	call DRAW_BG_DOTS_CIN_001_004
+	call TANK_HORIZON_DECOR_FULL_WIDTH_PAGE_0
 	call DRAW_CIN_6_AND_RET
 	selectVideoPage 0x03
 	call DRAW_CIN_061_HORIZ_THEN_062
-	call DRAW_BG_DOTS_CIN_007_008
+	call TANK_HORIZON_DECOR_FULL_WIDTH_PAGE_3
 	call DRAW_CIN_6_AND_RET
 	selectVideoPage 0xFF
 	ret
@@ -20,7 +20,7 @@ DRAW_CIN_113_114_AND_RET:
 	ret
 
 
-DRAW_CIN_122_ON_PAGE_0:
+TANK_TURRET_HIT_STAMP_ON_BACKDROP:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_173, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
@@ -45,7 +45,7 @@ TANK_SCENE_DRAW_CIN_168_IF_VAR_67_LT_3:
 	ret
 
 
-DRAW_CIN_093_TO_097_VAR:
+DRAW_TANK_FLYBY_CRAFT:
 	video offset=CINEMATIC_031, x=[0x01], y=[0x02], zoom=[0x03]
 	video offset=CINEMATIC_032, x=[0x01], y=[0x02], zoom=[0x03]
 	video offset=CINEMATIC_033, x=[0x01], y=[0x02], zoom=[0x03]

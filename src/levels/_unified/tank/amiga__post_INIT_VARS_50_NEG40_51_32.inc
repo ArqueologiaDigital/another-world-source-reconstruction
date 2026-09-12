@@ -1,35 +1,35 @@
-LABEL_10F4:
+TANK_GROUND_DEBRIS_SWEEP_LOOP:
 	break
-	call LABEL_1104
+	call TANK_GROUND_DEBRIS_SPAWN
 	add [0x50], 0x000A
-	djnz [0x51], LABEL_10F4
-	jmp INIT_VARS_50_NEG40_51_32
+	djnz [0x51], TANK_GROUND_DEBRIS_SWEEP_LOOP
+	jmp TANK_GROUND_DEBRIS_SWEEP_INIT
 LABEL_1103:
 	db 0x11
 
-LABEL_1104:
+TANK_GROUND_DEBRIS_SPAWN:
 	jle [0x4F], 0x00, SHARED_RET
 	jne [0x4E], 0x00, SHARED_RET
 	sub [0x4F], 0x0001
 	mov [0x4E], 0x0001
-	call SUM_HASH_VARS_TO_VAR_64
+	call TANK_RANDOM_HASH_ADVANCE
 	mov [0x4B], [0x64]
 	and [0x4B], 0x001F
 	add [0x4B], [0x50]
-	call SUM_HASH_VARS_TO_VAR_64
+	call TANK_RANDOM_HASH_ADVANCE
 	mov [0x4C], [0x64]
 	and [0x4C], 0x0007
 	add [0x4C], 0x0089
-	call SUM_HASH_VARS_TO_VAR_64
+	call TANK_RANDOM_HASH_ADVANCE
 	mov [0x4D], [0x64]
 	and [0x4D], 0x000F
 	add [0x4D], 0x0037
 	ret
 
 
-WAIT_VAR4E_PLAY_8C_DRAW_CIN_201:
+TANK_GROUND_DEBRIS_BURST_LOOP:
 	break
-	je [0x4E], 0x00, WAIT_VAR4E_PLAY_8C_DRAW_CIN_201
+	je [0x4E], 0x00, TANK_GROUND_DEBRIS_BURST_LOOP
 	play id=0x008C, freq=0x1E, vol=0x14, channel=0x01
 	video offset=CINEMATIC_148, x=[0x4b], y=[0x4c], zoom=[0x4d]
 	break
@@ -40,15 +40,15 @@ WAIT_VAR4E_PLAY_8C_DRAW_CIN_201:
 	video offset=CINEMATIC_151, x=[0x4b], y=[0x4c], zoom=[0x4d]
 	selectVideoPage 0xFF
 	mov [0x4E], 0x0000
-	jmp WAIT_VAR4E_PLAY_8C_DRAW_CIN_201
+	jmp TANK_GROUND_DEBRIS_BURST_LOOP
 LABEL_1174:
 	db 0x11
 
-WAIT_VAR3E_DEC_AND_RANDOMIZE:
+TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C:
 	break
-	jle [0x3E], 0x00, WAIT_VAR3E_DEC_AND_RANDOMIZE
+	jle [0x3E], 0x00, TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C
 	sub [0x3E], 0x0001
-	call SUM_HASH_VARS_TO_VAR_64
+	call TANK_RANDOM_HASH_ADVANCE
 	mov [RANDOM_SEED], [0x65]
 	mov [0x3D], [0x64]
 	shr [0x3D], 0x0008
@@ -57,35 +57,35 @@ WAIT_VAR3E_DEC_AND_RANDOMIZE:
 	play id=0x008C, freq=0x19, vol=0x0D, channel=0x00
 	video offset=CINEMATIC_152, x=[0x3c], y=[0x3d]
 	selectVideoPage 0x03
-	call SUM_HASH_VARS_TO_VAR_64
+	call TANK_RANDOM_HASH_ADVANCE
 	mov [0xF8], [0x64]
 	and [0xF8], 0x0003
-	jne [0xF8], 0x00, LABEL_11B7
+	jne [0xF8], 0x00, TANK_AMBIENT_IMPACT_SCAR_CASE_01
 	video offset=CINEMATIC_155, x=[0x3c], y=[0x3d]
 
-LABEL_11B7:
-	jne [0xF8], 0x01, LABEL_11C2
+TANK_AMBIENT_IMPACT_SCAR_CASE_01:
+	jne [0xF8], 0x01, TANK_AMBIENT_IMPACT_SCAR_CASE_02
 	video offset=CINEMATIC_154, x=[0x3c], y=[0x3d]
 
-LABEL_11C2:
-	jl [0xF8], 0x02, LABEL_11CD
+TANK_AMBIENT_IMPACT_SCAR_CASE_02:
+	jl [0xF8], 0x02, TANK_AMBIENT_IMPACT_SCAR_DONE
 	video offset=CINEMATIC_153, x=[0x3c], y=[0x3d]
 
-LABEL_11CD:
+TANK_AMBIENT_IMPACT_SCAR_DONE:
 	selectVideoPage 0xFF
-	jmp WAIT_VAR3E_DEC_AND_RANDOMIZE
+	jmp TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C
 LABEL_11D2:
 	db 0x11
 
-HANG_DRAW_CIN_123:
+TANK_HULL_BODY_REPEAT:
 	video offset=CINEMATIC_123, x=[0x0f], y=[0x10]
 	break
-	jmp HANG_DRAW_CIN_123
+	jmp TANK_HULL_BODY_REPEAT
 
-HANG_DRAW_CIN_115:
+TANK_HULL_FRONT_REPEAT:
 	video offset=CINEMATIC_115, x=[0x01], y=[0x02]
 	break
-	jmp HANG_DRAW_CIN_115
+	jmp TANK_HULL_FRONT_REPEAT
 
 WAIT_VAR46_PLAY_8E_DRAW_CIN_056:
 	break
@@ -105,9 +105,9 @@ WAIT_VAR46_PLAY_8E_DRAW_CIN_056:
 	break
 	killChannel
 
-WAIT_VAR56_PLAY_8E_DRAW_CIN_020:
+TANK_PROJECTILE_ARC_AND_EXPLOSION:
 	break
-	je [0x56], 0x00, WAIT_VAR56_PLAY_8E_DRAW_CIN_020
+	je [0x56], 0x00, TANK_PROJECTILE_ARC_AND_EXPLOSION
 	play id=0x008E, freq=0x14, vol=0x40, channel=0x01
 	video offset=CINEMATIC_063, x=195, y=79
 	break
@@ -157,12 +157,12 @@ WAIT_VAR56_PLAY_8E_DRAW_CIN_020:
 	video offset=CINEMATIC_076, x=264, y=103
 	killChannel
 
-LABEL_12A9:
-	jg [0x41], 0x00, LABEL_12B3
+TANK_BEAM_GUN_WAIT_LOOP:
+	jg [0x41], 0x00, TANK_BEAM_GUN_BARREL_EXTEND_INIT
 	break
-	jmp LABEL_12A9
+	jmp TANK_BEAM_GUN_WAIT_LOOP
 
-LABEL_12B3:
+TANK_BEAM_GUN_BARREL_EXTEND_INIT:
 	video offset=CINEMATIC_077, x=135, y=100
 	video offset=CINEMATIC_078, x=160, y=100
 	video offset=CINEMATIC_078, x=145, y=100
@@ -197,9 +197,9 @@ LABEL_12B3:
 	video offset=CINEMATIC_077, x=160, y=100
 	selectVideoPage 0xFF
 
-LABEL_131B:
+TANK_BEAM_WEAPON_VOLLEY_LOOP:
 	break
-	jle [0x41], 0x00, LABEL_131B
+	jle [0x41], 0x00, TANK_BEAM_WEAPON_VOLLEY_LOOP
 	sub [0x41], 0x0001
 	selectVideoPage 0x00
 	video offset=CINEMATIC_078, x=189, y=100
@@ -219,13 +219,13 @@ LABEL_131B:
 	video offset=CINEMATIC_077, x=160, y=100
 	selectVideoPage 0xFF
 	break
-	jmp LABEL_131B
+	jmp TANK_BEAM_WEAPON_VOLLEY_LOOP
 LABEL_1366:
 	db 0x11, 0x93, 0xCE, 0xEF, 0x7B, 0x18, 0x00, 0x52
 	db 0x1E, 0x10, 0x01, 0x06, 0x93, 0xD8, 0xF0, 0x7B
 	db 0x06, 0x06, 0x07, 0x13, 0x67, 0x11
 
-LABEL_137C:
+INIT_VAR1_NEG50_PLAY_8B_TWICE:
 	mov [0x01], 0xFFCE
 	mov [0x02], 0x0064
 	mov [0x03], 0x0040
@@ -233,36 +233,36 @@ LABEL_137C:
 	play id=0x008B, freq=0x22, vol=0x40, channel=0x01
 	play id=0x008B, freq=0x14, vol=0x40, channel=0x00
 
-LABEL_1398:
+TANK_ARRIVAL_DRIVE_IN_PRELUDE:
 	mov [0xF8], [0x2B]
 	and [0xF8], 0x000D
 	add [0x01], [0xF8]
 	sub [0x2B], 0x0001
-	jg [0x2B], 0x20, LABEL_1398
+	jg [0x2B], 0x20, TANK_ARRIVAL_DRIVE_IN_PRELUDE
 
-LABEL_13AC:
+TANK_ARRIVAL_DRIVE_IN_LOOP:
 	break
 	play id=0x008B, freq=0x22, vol=0x40, channel=0x01
 	play id=0x008C, freq=0x0A, vol=0x40, channel=0x00
-	call DRAW_CIN_093_TO_097_VAR
+	call DRAW_TANK_FLYBY_CRAFT
 	mov [0xF8], [0x2B]
 	and [0xF8], 0x000D
 	add [0x01], [0xF8]
-	djnz [0x2B], LABEL_13AC
+	djnz [0x2B], TANK_ARRIVAL_DRIVE_IN_LOOP
 	play id=0x008B, freq=0x22, vol=0x00, channel=0x01
 	play id=0x0084, freq=0x14, vol=0x20, channel=0x02
 	play id=0x0084, freq=0x0F, vol=0x10, channel=0x03
-	setup channel=0x39, address=HANG_DRAW_CIN_123
-	setup channel=0x01, address=LABEL_083D
-	setup channel=0x3B, address=WAIT_LOOP_VAR_5C
+	setup channel=0x39, address=TANK_HULL_BODY_REPEAT
+	setup channel=0x01, address=TANK_CONSOLE_CURSOR_INPUT_LOOP
+	setup channel=0x3B, address=TANK_CONSOLE_HAND_HOVER_LOOP
 	selectVideoPage 0x03
-	call DRAW_CIN_093_TO_097_VAR
+	call DRAW_TANK_FLYBY_CRAFT
 	selectVideoPage 0x00
 	call DRAW_CIN_113_114_AND_RET
-	call DRAW_CIN_093_TO_097_VAR
+	call DRAW_TANK_FLYBY_CRAFT
 	call DRAW_CIN_113_114_AND_RET
 	selectVideoPage 0xFF
-	jmp HANG_DRAW_CIN_115
+	jmp TANK_HULL_FRONT_REPEAT
 LABEL_13FD:
 	db 0x00, 0x3E, 0x00, 0x14, 0x00, 0x41, 0x00, 0x0A
 	db 0x00, 0x37, 0x00, 0x14, 0x00, 0x46, 0x00, 0x01
@@ -270,14 +270,14 @@ LABEL_13FD:
 	db 0x00, 0x56, 0x00, 0x01, 0x00, 0x57, 0x00, 0x01
 	db 0x11
 
-LABEL_141E:
-	setup channel=0x14, address=LABEL_14A1
-	setup channel=0x15, address=LABEL_166F
-	setup channel=0x16, address=LABEL_14B8
-	setup channel=0x17, address=ALTERNATE_VAR06_VAR04_TIMING
-	setup channel=0x18, address=LABEL_14E4
-	setup channel=0x19, address=LABEL_15D4
-	setup channel=0x1A, address=LABEL_1510
+TANK_INIT_PROJECTILE_POOL_CHANNELS_14_TO_25:
+	setup channel=0x14, address=TANK_FIRST_GUARD_PAIR_STATE_LOAD_LOOP
+	setup channel=0x15, address=TANK_FIREFIGHT_PAIR_FIRE_AND_STEP_PRELUDE
+	setup channel=0x16, address=TANK_FIRST_GUARD_PAIR_DRAW_THEN_SECOND_LOAD_LOOP
+	setup channel=0x17, address=TANK_FIREFIGHT_SOLDIER_SHOT_AND_FALLS
+	setup channel=0x18, address=TANK_SECOND_GUARD_PAIR_DRAW_THEN_THIRD_LOAD_LOOP
+	setup channel=0x19, address=TANK_FIREFIGHT_PAIR_POSE_PRELUDE
+	setup channel=0x1A, address=TANK_THIRD_GUARD_PAIR_DRAW_LOOP
 	mov [0x14], 0x0028
 	mov [0x15], 0x0071
 	mov [0x16], 0x0040
@@ -298,22 +298,22 @@ LABEL_141E:
 	mov [0x25], 0x0001
 	mov [0x68], 0x0032
 
-DELAY_LOOP_VAR68:
+TANK_GUARD_CAST_INIT_DELAY:
 	break
-	djnz [0x68], DELAY_LOOP_VAR68
-	setup channel=0x37, address=LABEL_0E21
+	djnz [0x68], TANK_GUARD_CAST_INIT_DELAY
+	setup channel=0x37, address=TANK_ARENA_CREATURE_CHARGE_PAST
 	killChannel
 
 PROJECT_AND_DRAW_TWICE_Y_PLUS_9:
-	call LABEL_152A
+	call TANK_GUARD_FRAME_DISPATCH_CASE_01
 	mov [0x07], [0x05]
 	mov [0x06], [0x04]
 	add [0x06], 0x0009
-	call LABEL_152A
+	call TANK_GUARD_FRAME_DISPATCH_CASE_01
 	ret
 
 
-LABEL_14A1:
+TANK_FIRST_GUARD_PAIR_STATE_LOAD_LOOP:
 	mov [0x07], [0x14]
 	mov [0x08], [0x15]
 	mov [0x09], [0x16]
@@ -321,11 +321,11 @@ LABEL_14A1:
 	mov [0x05], [0x18]
 	mov [0x04], [0x19]
 	break
-	jmp LABEL_14A1
+	jmp TANK_FIRST_GUARD_PAIR_STATE_LOAD_LOOP
 LABEL_14B7:
 	db 0x11
 
-LABEL_14B8:
+TANK_FIRST_GUARD_PAIR_DRAW_THEN_SECOND_LOAD_LOOP:
 	mov [0x14], [0x07]
 	mov [0x15], [0x08]
 	mov [0x16], [0x09]
@@ -340,11 +340,11 @@ LABEL_14B8:
 	mov [0x05], [0x1E]
 	mov [0x04], [0x1F]
 	break
-	jmp LABEL_14B8
+	jmp TANK_FIRST_GUARD_PAIR_DRAW_THEN_SECOND_LOAD_LOOP
 TANK_DRAW_CIN_154_155_PAIR_IF_GUARDS_PASS:
 	db 0x11
 
-LABEL_14E4:
+TANK_SECOND_GUARD_PAIR_DRAW_THEN_THIRD_LOAD_LOOP:
 	mov [0x1A], [0x07]
 	mov [0x1B], [0x08]
 	mov [0x1C], [0x09]
@@ -359,11 +359,11 @@ LABEL_14E4:
 	mov [0x05], [0x24]
 	mov [0x04], [0x25]
 	break
-	jmp LABEL_14E4
+	jmp TANK_SECOND_GUARD_PAIR_DRAW_THEN_THIRD_LOAD_LOOP
 LABEL_150F:
 	db 0x11
 
-LABEL_1510:
+TANK_THIRD_GUARD_PAIR_DRAW_LOOP:
 	mov [0x20], [0x07]
 	mov [0x21], [0x08]
 	mov [0x22], [0x09]
@@ -372,83 +372,83 @@ LABEL_1510:
 	mov [0x25], [0x04]
 	call PROJECT_AND_DRAW_TWICE_Y_PLUS_9
 	break
-	jmp LABEL_1510
+	jmp TANK_THIRD_GUARD_PAIR_DRAW_LOOP
 LABEL_1529:
 	db 0x11
 
-LABEL_152A:
-	jne [0x06], 0x01, LABEL_1537
+TANK_GUARD_FRAME_DISPATCH_CASE_01:
+	jne [0x06], 0x01, TANK_GUARD_FRAME_DISPATCH_CASE_02
 	video offset=CINEMATIC_168, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 
-LABEL_1537:
-	jne [0x06], 0x02, LABEL_1544
+TANK_GUARD_FRAME_DISPATCH_CASE_02:
+	jne [0x06], 0x02, TANK_GUARD_FRAME_DISPATCH_CASE_03
 	video offset=CINEMATIC_167, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 
-LABEL_1544:
-	jne [0x06], 0x03, LABEL_1551
+TANK_GUARD_FRAME_DISPATCH_CASE_03:
+	jne [0x06], 0x03, TANK_GUARD_FRAME_DISPATCH_CASE_04
 	video offset=CINEMATIC_166, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 
-LABEL_1551:
-	jne [0x06], 0x04, LABEL_155E
+TANK_GUARD_FRAME_DISPATCH_CASE_04:
+	jne [0x06], 0x04, TANK_GUARD_FRAME_DISPATCH_CASE_05
 	video offset=CINEMATIC_165, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 
-LABEL_155E:
-	jne [0x06], 0x05, LABEL_156B
+TANK_GUARD_FRAME_DISPATCH_CASE_05:
+	jne [0x06], 0x05, TANK_GUARD_FRAME_DISPATCH_CASE_06
 	video offset=CINEMATIC_164, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 
-LABEL_156B:
-	jne [0x06], 0x06, LABEL_1578
+TANK_GUARD_FRAME_DISPATCH_CASE_06:
+	jne [0x06], 0x06, TANK_GUARD_FRAME_DISPATCH_CASE_07
 	video offset=CINEMATIC_163, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 
-LABEL_1578:
-	jne [0x06], 0x07, LABEL_1585
+TANK_GUARD_FRAME_DISPATCH_CASE_07:
+	jne [0x06], 0x07, TANK_GUARD_FRAME_DISPATCH_CASE_08
 	video offset=CINEMATIC_162, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 
-LABEL_1585:
-	jne [0x06], 0x08, LABEL_1592
+TANK_GUARD_FRAME_DISPATCH_CASE_08:
+	jne [0x06], 0x08, TANK_GUARD_FRAME_DISPATCH_CASE_09
 	video offset=CINEMATIC_161, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 
-LABEL_1592:
-	jne [0x06], 0x09, LABEL_159F
+TANK_GUARD_FRAME_DISPATCH_CASE_09:
+	jne [0x06], 0x09, TANK_GUARD_FRAME_DISPATCH_CASE_0A
 	video offset=CINEMATIC_160, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 
-LABEL_159F:
-	jne [0x06], 0x0A, LABEL_15AC
+TANK_GUARD_FRAME_DISPATCH_CASE_0A:
+	jne [0x06], 0x0A, TANK_GUARD_FRAME_DISPATCH_CASE_0B
 	video offset=CINEMATIC_159, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 
-LABEL_15AC:
-	jne [0x06], 0x0B, LABEL_15B9
+TANK_GUARD_FRAME_DISPATCH_CASE_0B:
+	jne [0x06], 0x0B, TANK_FIREFIGHT_SOLDIER_POSE_CASE_0C
 	video offset=CINEMATIC_158, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 
-LABEL_15B9:
-	jne [0x06], 0x0C, LABEL_15C6
+TANK_FIREFIGHT_SOLDIER_POSE_CASE_0C:
+	jne [0x06], 0x0C, TANK_FIREFIGHT_SOLDIER_POSE_CASE_0D
 	video offset=CINEMATIC_157, x=[0x07], y=[0x08], zoom=[0x09]
 	ret
 
 
-LABEL_15C6:
+TANK_FIREFIGHT_SOLDIER_POSE_CASE_0D:
 	jne [0x06], 0x0D, SHARED_RET
 	video offset=CINEMATIC_156, x=[0x07], y=[0x08], zoom=[0x09]
 	ret

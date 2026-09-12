@@ -19,26 +19,26 @@ TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x02, address=TANK_BG_ANIM_CIN221_222_BOOT_CHANNEL_02
 	setup channel=0x04, address=TANK_WAIT_DECREMENT_VAR4F_LOOP
 	setup channel=0x0A, address=TANK_INIT_PROJECTILE_POOL_CHANNELS_14_TO_25
-	setup channel=0x0B, address=WAIT_VAR3E_DEC_AND_RANDOMIZE
-	setup channel=0x0E, address=WAIT_VAR4E_PLAY_8C_DRAW_CIN_201
+	setup channel=0x0B, address=TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C
+	setup channel=0x0E, address=TANK_GROUND_DEBRIS_BURST_LOOP
 	setup channel=0x1C, address=LABEL_136E
 	setup channel=0x1F, address=TANK_SHOT_ANIM_CIN_069_AT_205_118_TRIGGER_VAR57
 	setup channel=0x20, address=TANK_WAIT_VAR57_THEN_SETUP_SHOT_CHANNELS_22_31
 	setup channel=0x21, address=TANK_WAIT_FOR_VAR47_SET_CLEAR_AND_INIT_VAR48_49
-	setup channel=0x22, address=WAIT_VAR56_PLAY_8E_DRAW_CIN_020
+	setup channel=0x22, address=TANK_PROJECTILE_ARC_AND_EXPLOSION
 	setup channel=0x23, address=INIT_VAR1_NEG50_PLAY_8B_TWICE
 	setup channel=0x24, address=TANK_WAIT_UNTIL_VAR41_POSITIVE_LOOP
 	setup channel=0x25, address=TANK_DEC_VAR37_THEN_SET_VAR39_40_RESET_POSITION
 	setup channel=0x28, address=TANK_WAIT_VAR63_THEN_RESET_PAGES_AND_UNFREEZE
 	setup channel=0x2A, address=INLINE_SET_VAR6B_TO_50
 	setup channel=0x2F, address=TANK_DEC_VAR69_THEN_SETUP_CIN_119_CH37
-	setup channel=0x30, address=WAIT_VAR45_PLAY_8C_DRAW_CIN_011
+	setup channel=0x30, address=TANK_CANNON_IMPACT_PLUME_LOOP
 	setup channel=0x31, address=WAIT_VAR46_PLAY_8E_DRAW_CIN_056
-	setup channel=0x35, address=INLINE_SET_VAR66_TO_32
+	setup channel=0x35, address=TANK_ARENA_AMBIENT_LASER_FIRE_INIT
 	setup channel=0x37, address=TANK_BG_DRAW_CIN_038_AT_6_126_AFTER_3_BREAKS
 	call INIT_TANK_DRIVE_VARS
 	call TANK_DRAW_CIN_6_27_28_ON_PAGE_0_AND_3
-	setup channel=0x00, address=INIT_VARS_A_B_PAL_1
+	setup channel=0x00, address=TANK_BACKDROP_SWAY_CYCLE_INIT
 	killChannel
 
 ; Sets up the tank-driving scene's channel layout: channel

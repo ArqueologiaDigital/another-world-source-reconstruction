@@ -11,7 +11,7 @@ BLITTER_LOOP_COPY_PAGE_03:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x03, dst=0xFF
-	call SUM_HASH_VARS_TO_VAR_64
+	call TANK_RANDOM_HASH_ADVANCE
 	break
 	jmp BLITTER_LOOP_COPY_PAGE_03
 LABEL_1AD1:

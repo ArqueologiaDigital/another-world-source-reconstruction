@@ -8,7 +8,7 @@ LABEL_1BA2:
 	sub [0x0A], 0x0001
 	break
 	djnz [0x0B], LABEL_1BA2
-	jmp INIT_VARS_A_B_PAL_1
+	jmp TANK_BACKDROP_SWAY_CYCLE_INIT
 LABEL_1BAE:
 	db 0x11
 
@@ -56,7 +56,7 @@ BLACKHOLE_FRAME_DRAW:
 LABEL_1C05:
 	call BLACKHOLE_FRAME_DRAW
 	copyVideoPage src=0x03, dst=0xFF
-	jmp INIT_VARS_A_B_PAL_1
+	jmp TANK_BACKDROP_SWAY_CYCLE_INIT
 
 LABEL_1C0E:
 	mov [SCROLL_Y], 0xFF9C
@@ -128,7 +128,7 @@ TANK_SCENE_INIT_FILL_PAGE_3_COLOR_0C:
 	ret
 
 
-DRAW_CIN_093_TO_097_VAR:
+DRAW_TANK_FLYBY_CRAFT:
 	video offset=CINEMATIC_093, x=[0x01], y=[0x02], zoom=[0x03]
 	video offset=CINEMATIC_094, x=[0x01], y=[0x02], zoom=[0x03]
 	video offset=CINEMATIC_095, x=[0x01], y=[0x02], zoom=[0x03]
@@ -330,7 +330,7 @@ BLITTER_LOOP_COPY_PAGE_03:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x03, dst=0xFF
-	call SUM_HASH_VARS_TO_VAR_64
+	call TANK_RANDOM_HASH_ADVANCE
 	break
 	jmp BLITTER_LOOP_COPY_PAGE_03
 LABEL_1F59:

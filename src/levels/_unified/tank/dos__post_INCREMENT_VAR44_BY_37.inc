@@ -1,6 +1,6 @@
-WAIT_VAR45_PLAY_8C_DRAW_CIN_011:
+TANK_CANNON_IMPACT_PLUME_LOOP:
 	break
-	je [0x45], 0x00, WAIT_VAR45_PLAY_8C_DRAW_CIN_011
+	je [0x45], 0x00, TANK_CANNON_IMPACT_PLUME_LOOP
 	play id=0x008C, freq=0x0F, vol=0x40, channel=0x00
 	video offset=CINEMATIC_082, x=[0x42], y=[0x43], zoom=[0x44]
 	break
@@ -9,17 +9,17 @@ WAIT_VAR45_PLAY_8C_DRAW_CIN_011:
 	video offset=CINEMATIC_084, x=[0x42], y=[0x43], zoom=[0x44]
 	break
 	video offset=CINEMATIC_085, x=[0x42], y=[0x43], zoom=[0x44]
-	je [0x57], 0x00, DRAW_CIN_84_ON_PAGE_3
+	je [0x57], 0x00, TANK_CANNON_IMPACT_SCORCH_TO_BACKGROUND
 	jl [0x43], 0x69, LABEL_15DB
 
-DRAW_CIN_84_ON_PAGE_3:
+TANK_CANNON_IMPACT_SCORCH_TO_BACKGROUND:
 	selectVideoPage 0x03
 	video offset=CINEMATIC_086, x=[0x42], y=[0x43], zoom=[0x44]
 	selectVideoPage 0xFF
 
 LABEL_15DB:
 	mov [0x45], 0x0000
-	jmp WAIT_VAR45_PLAY_8C_DRAW_CIN_011
+	jmp TANK_CANNON_IMPACT_PLUME_LOOP
 LABEL_15E2:
 	db 0x11
 

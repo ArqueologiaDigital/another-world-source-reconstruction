@@ -97,17 +97,17 @@ BANKSWITCH_6_FOR_CODE_ENTRY:
 .include "tank/dos__post_BANKSWITCH_6_FOR_CODE_ENTRY.inc"
 .endif
 
-; TANK var-5F manipulation (INCREMENT_VAR5F_BY_8 et al.).
+; TANK var-5F manipulation (TANK_PANEL_CURSOR_TOP_ROW_CLAMP_CASE_02 et al.).
 .include "tank/tank_var5f_manipulation.inc"
 
 ; TANK inline setters + hash bookkeeping.
 .include "tank/tank_inline_setters_and_hash.inc"
 
-; TANK drive vars (INCREMENT_VAR44_BY_37 et al.).
+; TANK drive vars (TANK_CANNON_IMPACT_ZOOM_BASE_DONE et al.).
 .include "tank/tank_drive_vars.inc"
 
-; TANK animation timing (ALTERNATE_VAR06_VAR04_TIMING).
+; TANK animation timing (TANK_FIREFIGHT_SOLDIER_SHOT_AND_FALLS).
 .include "tank/tank_animation_timing.inc"
 
-; TANK drawing helpers (INIT_VARS_A_B_PAL_1).
+; TANK drawing helpers (TANK_BACKDROP_SWAY_CYCLE_INIT).
 .include "tank/tank_drawing_helpers.inc"
