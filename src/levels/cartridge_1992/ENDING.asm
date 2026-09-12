@@ -154,14 +154,14 @@ COMMON_VIDEO_301		EQU 0x1C78
 	org 0x0000
 
 ENTRY_POINT_OF_ENDING:
-	call LABEL_0B49
-	setup channel=0x3C, address=LABEL_0AE0
+	call ENDING_CLEAR_AND_BLIT_PAGES_1_2_FF
+	setup channel=0x3C, address=ENDING_HOLD_PAGE_0_INFINITE
 	mov [PAUSE_SLICES], 0x0004
 	break
 	song id=0x0000, delay=0x0000, pos=0x00
 	call PRELOAD_RESOURCES_8_TO_1
-	call LABEL_0025
-	setup channel=0x1E, address=LABEL_0676
+	call LIKELY_A_COPY_PROTECTION_MECHANISM
+	setup channel=0x1E, address=ENDING_DRAW_STARS_BG_PLAY_SOUND_08
 	killChannel
 	copyVideoPage src=0x00, dst=0x03
 	killChannel
@@ -176,7 +176,7 @@ ENTRY_POINT_OF_ENDING:
 ENDING_CHANNEL_TOMBSTONE_KILL:
 	killChannel
 
-LABEL_0025:
+LIKELY_A_COPY_PROTECTION_MECHANISM:
 	ret
 
 
@@ -344,15 +344,15 @@ LABEL_01C2:
 	djnz [0x06], LABEL_01C2
 	mov [0x06], 0x0019
 
-LABEL_01D0:
+DELAY_VAR6_THEN_VAR3_MINUS_1__ENDING_CHANNEL_CLEANUP:
 	break
-	djnz [0x06], LABEL_01D0
+	djnz [0x06], DELAY_VAR6_THEN_VAR3_MINUS_1__ENDING_CHANNEL_CLEANUP
 	sub [0x03], 0x0001
 	mov [0x06], 0x0019
 
-LABEL_01DD:
+DELAY_VAR6_THEN_KILL_CHAN__ENDING_CHANNEL_CLEANUP:
 	break
-	djnz [0x06], LABEL_01DD
+	djnz [0x06], DELAY_VAR6_THEN_KILL_CHAN__ENDING_CHANNEL_CLEANUP
 	sub [0x03], 0x0001
 	killChannel
 
@@ -371,9 +371,9 @@ LABEL_01F8:
 	djnz [0x0E], LABEL_01F8
 	mov [0x0E], 0x0032
 
-LABEL_0205:
+DELAY_VARE_THEN_INIT_VARE_5__ENDING_VAR_SETUPS:
 	break
-	djnz [0x0E], LABEL_0205
+	djnz [0x0E], DELAY_VARE_THEN_INIT_VARE_5__ENDING_VAR_SETUPS
 	mov [0x0E], 0x0005
 
 LABEL_020E:
@@ -443,7 +443,7 @@ Exec. Producer. Stephen Clarke-Willson"
 	text id=0x025D, x=2, y=140, color=0x0C ; "string_025D"
 	selectVideoPage 0xFF
 	mov [SCROLL_Y], 0x00C8
-	setup channel=0x3C, address=LABEL_0AF3
+	setup channel=0x3C, address=ENDING_HOLD_PAGE_80_BLACK_INFINITE
 	mov [PAUSE_SLICES], 0x0002
 	mov [0x01], 0x000A
 
@@ -569,7 +569,7 @@ Exec. Producer. Stephen Clarke-Willson"
 "
 	selectVideoPage 0xFF
 	mov [SCROLL_Y], 0x0000
-	setup channel=0x3C, address=LABEL_0B01
+	setup channel=0x3C, address=CREDITS_SCROLL_BLIT_FRAME_THEN_RENDER_83_OVER_80
 	mov [PAUSE_SLICES], 0x0002
 	mov [0x01], 0x000A
 
@@ -896,7 +896,7 @@ LABEL_065C:
 	setup channel=0x0D, address=LABEL_00BF
 	killChannel
 
-LABEL_0676:
+ENDING_DRAW_STARS_BG_PLAY_SOUND_08:
 	call DRAW_STARS_PAGE0_CIN_000
 	call DRAW_STARS_PAGE3_CIN_004
 	setup channel=0x05, address=LABEL_04BE
@@ -1010,9 +1010,9 @@ LABEL_07BD:
 	video offset=CINEMATIC_025, x=[0x07], y=[0x08]
 	djnz [0x09], LABEL_07BD
 	setup channel=0x11, address=LABEL_085E
-	setup channel=0x12, address=LABEL_0868
-	setup channel=0x13, address=LABEL_08CC
-	setup channel=0x0C, address=LABEL_0930
+	setup channel=0x12, address=DRAW_COMMON_VIDS_148_151_152_153
+	setup channel=0x13, address=DRAW_COMMON_VIDS_149_141_137_10
+	setup channel=0x0C, address=ENDING_X_SLIDE_RIGHT_ACCEL
 	mov [0x09], 0x0010
 
 LABEL_07E0:
@@ -1067,7 +1067,7 @@ LABEL_085E:
 LABEL_0867:
 	db 0x11
 
-LABEL_0868:
+DRAW_COMMON_VIDS_148_151_152_153:
 	video type=0, offset=COMMON_VIDEO_192, x=[0x07], y=[0x08], zoom=0x40
 	break
 	video type=0, offset=COMMON_VIDEO_195, x=[0x07], y=[0x08], zoom=0x40
@@ -1100,11 +1100,11 @@ LABEL_0868:
 	break
 	video type=0, offset=COMMON_VIDEO_188, x=[0x07], y=[0x08], zoom=0x40
 	break
-	jmp LABEL_0868
+	jmp DRAW_COMMON_VIDS_148_151_152_153
 LABEL_08CB:
 	db 0x11
 
-LABEL_08CC:
+DRAW_COMMON_VIDS_149_141_137_10:
 	video type=0, offset=COMMON_VIDEO_193, x=[0x07], y=[0x08], zoom=0x40
 	break
 	video type=0, offset=COMMON_VIDEO_185, x=[0x07], y=[0x08], zoom=0x40
@@ -1137,22 +1137,22 @@ LABEL_08CC:
 	break
 	video type=0, offset=COMMON_VIDEO_189, x=[0x07], y=[0x08], zoom=0x40
 	break
-	jmp LABEL_08CC
+	jmp DRAW_COMMON_VIDS_149_141_137_10
 LABEL_092F:
 	db 0x11
 
-LABEL_0930:
+ENDING_X_SLIDE_RIGHT_ACCEL:
 	mov [0x0A], 0x0003
 	add [0x07], 0x0002
 	break
-	djnz [0x0A], LABEL_0930
+	djnz [0x0A], ENDING_X_SLIDE_RIGHT_ACCEL
 	mov [0x0A], 0x0005
 
-LABEL_0941:
+ENDING_X_SLIDE_RIGHT_PLUS3_DJNZ_THEN_ACCEL:
 	add [0x07], 0x0003
 	break
-	djnz [0x0A], LABEL_0941
-	jmp LABEL_0930
+	djnz [0x0A], ENDING_X_SLIDE_RIGHT_PLUS3_DJNZ_THEN_ACCEL
+	jmp ENDING_X_SLIDE_RIGHT_ACCEL
 	killChannel
 	video offset=CINEMATIC_108, x=160, y=100
 	video type=0, offset=COMMON_VIDEO_301, x=160, y=100, zoom=0x40
@@ -1254,12 +1254,12 @@ DRAW_STARS_CIN_38_39_40_5_6:
 	ret
 
 
-LABEL_0AE0:
+ENDING_HOLD_PAGE_0_INFINITE:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 	break
-	jmp LABEL_0AE0
+	jmp ENDING_HOLD_PAGE_0_INFINITE
 
 JUNK__0AEB:
 	blitFramebuffer 0xFF
@@ -1267,45 +1267,45 @@ JUNK__0AEB:
 	break
 	jmp JUNK__0AEB
 
-LABEL_0AF3:
+ENDING_HOLD_PAGE_80_BLACK_INFINITE:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	fill page=0xFF, color=0x00
 	copyVideoPage src=0x80, dst=0xFF
 	break
-	jmp LABEL_0AF3
+	jmp ENDING_HOLD_PAGE_80_BLACK_INFINITE
 
-LABEL_0B01:
+CREDITS_SCROLL_BLIT_FRAME_THEN_RENDER_83_OVER_80:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
-	jg [SCROLL_Y], 0xFF38, LABEL_0B13
+	jg [SCROLL_Y], 0xFF38, CREDITS_SCROLL_RENDER_PAGE_80_OVER_83
 	add [SCROLL_Y], 0x00C8
-	jmp LABEL_0B37
+	jmp CREDITS_SCROLL_RENDER_PAGE_83_OVER_80
 
-LABEL_0B13:
+CREDITS_SCROLL_RENDER_PAGE_80_OVER_83:
 	copyVideoPage src=0x80, dst=0xFF
 	add [SCROLL_Y], 0x00C8
 	copyVideoPage src=0x83, dst=0xFF
 	sub [SCROLL_Y], 0x00C8
 	break
-	jmp LABEL_0B01
+	jmp CREDITS_SCROLL_BLIT_FRAME_THEN_RENDER_83_OVER_80
 
-LABEL_0B25:
+CREDITS_SCROLL_BLIT_FRAME_THEN_RENDER_80_OVER_83:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
-	jg [SCROLL_Y], 0xFF38, LABEL_0B37
+	jg [SCROLL_Y], 0xFF38, CREDITS_SCROLL_RENDER_PAGE_83_OVER_80
 	add [SCROLL_Y], 0x00C8
-	jmp LABEL_0B13
+	jmp CREDITS_SCROLL_RENDER_PAGE_80_OVER_83
 
-LABEL_0B37:
+CREDITS_SCROLL_RENDER_PAGE_83_OVER_80:
 	copyVideoPage src=0x83, dst=0xFF
 	add [SCROLL_Y], 0x00C8
 	copyVideoPage src=0x80, dst=0xFF
 	sub [SCROLL_Y], 0x00C8
 	break
-	jmp LABEL_0B25
+	jmp CREDITS_SCROLL_BLIT_FRAME_THEN_RENDER_80_OVER_83
 
-LABEL_0B49:
+ENDING_CLEAR_AND_BLIT_PAGES_1_2_FF:
 	fill page=0x01, color=0x00
 	fill page=0x02, color=0x00
 	selectVideoPage 0x01

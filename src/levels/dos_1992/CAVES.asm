@@ -19085,7 +19085,7 @@ LABEL_B4E4:
 	mov [0x44], 0x0087
 	mov [0x45], 0x0000
 	setPalette 0x09
-	call LABEL_D8E9
+	call FILL_PAGE_00_COLOR_08
 	call DELETE_GAME_AND_FX_CHANNELS
 	deleteChannels first=0x14, last=0x16
 	setup channel=0x06, address=LABEL_0520
@@ -22871,7 +22871,7 @@ LABEL_D8CA:
 LABEL_D8E8:
 	db 0x11
 
-LABEL_D8E9:
+FILL_PAGE_00_COLOR_08:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_563, x=160, y=100
 	video offset=CINEMATIC_564, x=160, y=100
