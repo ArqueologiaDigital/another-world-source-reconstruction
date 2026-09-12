@@ -86,8 +86,8 @@ INTRO_PLAY_FX_AND_PALETTE_4_LOOP:
 	break
 	selectVideoPage 0x00
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_084, x=160, y=100
-	video offset=CINEMATIC_085, x=160, y=100
+	video offset=CINEMATIC_ENTRANCE_DOORWAY_OPEN, x=160, y=100
+	video offset=CINEMATIC_ENTRANCE_DOOR_PART_OPEN, x=160, y=100
 .else
 	video offset=CINEMATIC_089, x=160, y=100
 	video offset=CINEMATIC_090, x=160, y=100
@@ -100,7 +100,7 @@ INTRO_PLAY_FX_AND_PALETTE_4_LOOP:
 	break
 	selectVideoPage 0x00
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_084, x=160, y=100
+	video offset=CINEMATIC_ENTRANCE_DOORWAY_OPEN, x=160, y=100
 .else
 	video offset=CINEMATIC_089, x=160, y=100
 .endif
@@ -148,13 +148,13 @@ DELAY_28F_BEFORE_BLITTER_SETUP:
 .endif
 	mov [PAUSE_SLICES], 0x0002
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_085, x=160, y=100
+	video offset=CINEMATIC_ENTRANCE_DOOR_PART_OPEN, x=160, y=100
 .else
 	video offset=CINEMATIC_090, x=160, y=100
 .endif
 	selectVideoPage 0x00
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_097, x=160, y=100
+	video offset=CINEMATIC_ENTRANCE_DOOR_CLOSED, x=160, y=100
 .else
 	video offset=CINEMATIC_102, x=160, y=100
 .endif
@@ -183,17 +183,17 @@ INTRO_FILL_AND_DRAW_CIN_103:
 ; never be true.
 .if BRANCH == "chahi_amiga_1991"
 	setPalette 0x04
-	video offset=CINEMATIC_098, x=192, y=100
-	video offset=CINEMATIC_048, x=14, y=80
-	video offset=CINEMATIC_099, x=189, y=68
-	video offset=CINEMATIC_100, x=64, y=70
-	video offset=CINEMATIC_101, x=244, y=56
-	video offset=CINEMATIC_102, x=246, y=56
-	video offset=CINEMATIC_103, x=247, y=50
+	video offset=CINEMATIC_ENTRANCE_WALL_PANEL, x=192, y=100
+	video offset=CINEMATIC_CARPARK_NEAR_PILLAR, x=14, y=80
+	video offset=CINEMATIC_CARPARK_WALL_FACE, x=189, y=68
+	video offset=CINEMATIC_CARPARK_WALL_DOORWAY_RECESS, x=64, y=70
+	video offset=CINEMATIC_CARPARK_PILLAR_OUTER_SHADE, x=244, y=56
+	video offset=CINEMATIC_CARPARK_PILLAR_MID_SHADE, x=246, y=56
+	video offset=CINEMATIC_CARPARK_PILLAR_LIT_FACE, x=247, y=50
 	video offset=CINEMATIC_104, x=117, y=86
 	video offset=CINEMATIC_105, x=61, y=69
-	video offset=CINEMATIC_106, x=160, y=100
-	video offset=CINEMATIC_097, x=160, y=100
+	video offset=CINEMATIC_ENTRANCE_WALL_AND_FLOOR_DEBRIS, x=160, y=100
+	video offset=CINEMATIC_ENTRANCE_DOOR_CLOSED, x=160, y=100
 .else
 	video offset=CINEMATIC_103, x=192, y=100
 	video offset=CINEMATIC_053, x=14, y=80
@@ -214,7 +214,7 @@ INTRO_FILL_AND_DRAW_CIN_103:
 
 DRAW_CINEMATIC_053_LOOP:
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_048, x=14, y=80
+	video offset=CINEMATIC_CARPARK_NEAR_PILLAR, x=14, y=80
 .else
 	video offset=CINEMATIC_053, x=14, y=80
 .endif

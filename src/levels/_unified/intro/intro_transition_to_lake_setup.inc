@@ -1,33 +1,33 @@
 .if BRANCH == "chahi_amiga_1991"
-CINEMATIC_222		EQU 0x87A8
-CINEMATIC_223		EQU 0x8824
-CINEMATIC_224		EQU 0x8860
-CINEMATIC_225		EQU 0x75C0
-CINEMATIC_226		EQU 0x760C
-CINEMATIC_227		EQU 0x76FC
-CINEMATIC_228		EQU 0x77E4
-CINEMATIC_229		EQU 0x78F4
-CINEMATIC_230		EQU 0x7AC0
-CINEMATIC_231		EQU 0x7C78
-CINEMATIC_232		EQU 0x7DB8
-CINEMATIC_233		EQU 0x7EDC
-CINEMATIC_234		EQU 0x7FE4
-CINEMATIC_235		EQU 0x80AC
-CINEMATIC_236		EQU 0x8174
-CINEMATIC_237		EQU 0x8218
-CINEMATIC_238		EQU 0x827C
-CINEMATIC_239		EQU 0x82D4
-CINEMATIC_240		EQU 0x8324
-CINEMATIC_241		EQU 0x8364
-CINEMATIC_242		EQU 0xFB26
+CINEMATIC_LESTER_TUMBLING_DOWN_TUNNEL_FAR_F6		EQU 0x87A8
+CINEMATIC_LESTER_TUMBLING_DOWN_TUNNEL_FAR_F7		EQU 0x8824
+CINEMATIC_LESTER_TUMBLING_DOWN_TUNNEL_FAR_F8		EQU 0x8860
+CINEMATIC_TELEPORT_SHATTER_F0		EQU 0x75C0
+CINEMATIC_TELEPORT_SHATTER_F1		EQU 0x760C
+CINEMATIC_TELEPORT_SHATTER_F2		EQU 0x76FC
+CINEMATIC_TELEPORT_SHATTER_F3		EQU 0x77E4
+CINEMATIC_TELEPORT_SHATTER_F4		EQU 0x78F4
+CINEMATIC_TELEPORT_SHATTER_F5		EQU 0x7AC0
+CINEMATIC_TELEPORT_SHATTER_F6		EQU 0x7C78
+CINEMATIC_TELEPORT_SHATTER_F7		EQU 0x7DB8
+CINEMATIC_TELEPORT_SHATTER_F8		EQU 0x7EDC
+CINEMATIC_TELEPORT_SHATTER_F9		EQU 0x7FE4
+CINEMATIC_TELEPORT_SHATTER_F10		EQU 0x80AC
+CINEMATIC_TELEPORT_SHATTER_F11		EQU 0x8174
+CINEMATIC_TELEPORT_SHATTER_F12		EQU 0x8218
+CINEMATIC_TELEPORT_SHATTER_F13		EQU 0x827C
+CINEMATIC_TELEPORT_SHATTER_F14		EQU 0x82D4
+CINEMATIC_TELEPORT_SHATTER_F15		EQU 0x8324
+CINEMATIC_TELEPORT_SHATTER_F16		EQU 0x8364
+CINEMATIC_LESTER_SEATED_AT_HOLO_CONSOLE_F1_AMIGA_EXTRA		EQU 0xFB26
 CINEMATIC_243		EQU 0x3052
-CINEMATIC_244		EQU 0xEA1C
-CINEMATIC_245		EQU 0xEA30
+CINEMATIC_ACCELERATOR_TUNNEL_FLOOR_DETAIL		EQU 0xEA1C
+CINEMATIC_ACCELERATOR_TUNNEL_WALL_DETAIL		EQU 0xEA30
 CINEMATIC_246		EQU 0x887C
 CINEMATIC_247		EQU 0x8890
 CINEMATIC_ACCELERATOR_TUNNEL_VIEW_FAR		EQU 0xCBBC
-CINEMATIC_380		EQU 0xCBCC
-CINEMATIC_381		EQU 0xE7EA
+CINEMATIC_ACCELERATOR_TUNNEL_DEBRIS		EQU 0xCBCC
+CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT		EQU 0xE7EA
 CINEMATIC_385		EQU 0x59BA
 .else
 CINEMATIC_222		EQU 0x831A
@@ -75,7 +75,7 @@ CINEMATIC_LESTER_HANDS_OPENING_SODA_CAN_F4		EQU 0x595C
 .if BRANCH == "chahi_amiga_1991"
 CINEMATIC_LESTER_HANDS_OPENING_SODA_CAN_F5		EQU 0x59F6
 CINEMATIC_LESTER_HANDS_OPENING_SODA_CAN_F6		EQU 0x5A02
-CINEMATIC_393		EQU 0x5A1A
+CINEMATIC_LESTER_HANDS_OPENING_SODA_CAN_F8		EQU 0x5A1A
 CINEMATIC_394		EQU 0x5A26
 .else
 CINEMATIC_LESTER_HANDS_OPENING_SODA_CAN_F5		EQU 0x5968
@@ -132,7 +132,7 @@ INTRO_TRANSITION_TO_LAKE_SETUP:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_378, x=160, y=100
 	video offset=CINEMATIC_ACCELERATOR_TUNNEL_VIEW_FAR, x=160, y=100
-	video offset=CINEMATIC_380, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_DEBRIS, x=160, y=100
 .else
 	video offset=CINEMATIC_ACCELERATOR_TUNNEL_VIEW_FAR, x=160, y=100
 	video offset=CINEMATIC_380, x=160, y=100
@@ -199,21 +199,21 @@ DELAY_9_BEFORE_CIN_222:
 	play id=0x000A, freq=0x0F, vol=0x1E, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_222, x=160, y=100
+	video offset=CINEMATIC_LESTER_TUMBLING_DOWN_TUNNEL_FAR_F6, x=160, y=100
 .else
 	video offset=CINEMATIC_228, x=160, y=100
 .endif
 	play id=0x002C, freq=0x0A, vol=0x1C, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_223, x=160, y=100
+	video offset=CINEMATIC_LESTER_TUMBLING_DOWN_TUNNEL_FAR_F7, x=160, y=100
 .else
 	video offset=CINEMATIC_229, x=160, y=100
 .endif
 	play id=0x000A, freq=0x1E, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_224, x=160, y=100
+	video offset=CINEMATIC_LESTER_TUMBLING_DOWN_TUNNEL_FAR_F8, x=160, y=100
 .else
 	video offset=CINEMATIC_230, x=160, y=100
 .endif
@@ -226,14 +226,14 @@ DELAY_7_THEN_PAL_15_CIN_231:
 	djnz [0x01], DELAY_7_THEN_PAL_15_CIN_231
 	setPalette 0x15
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_225, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_F0, x=160, y=100
 .else
 	video offset=CINEMATIC_231, x=160, y=100
 .endif
 	play id=0x000A, freq=0x1E, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_226, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_F1, x=160, y=100
 .else
 	video offset=CINEMATIC_232, x=160, y=100
 .endif
@@ -244,35 +244,35 @@ DELAY_7_THEN_PAL_15_CIN_231:
 	play id=0x000A, freq=0x0A, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_227, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_F2, x=160, y=100
 .else
 	video offset=CINEMATIC_233, x=160, y=100
 .endif
 	play id=0x000A, freq=0x1E, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_228, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_F3, x=160, y=100
 .else
 	video offset=CINEMATIC_234, x=160, y=100
 .endif
 	play id=0x000A, freq=0x1E, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_229, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_F4, x=160, y=100
 .else
 	video offset=CINEMATIC_235, x=160, y=100
 .endif
 	play id=0x000A, freq=0x05, vol=0x3F, channel=0x02
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_230, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_F5, x=160, y=100
 .else
 	video offset=CINEMATIC_236, x=160, y=100
 .endif
 	play id=0x000F, freq=0x14, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_231, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_F6, x=160, y=100
 .else
 	video offset=CINEMATIC_237, x=160, y=100
 .endif
@@ -280,35 +280,35 @@ DELAY_7_THEN_PAL_15_CIN_231:
 	play id=0x000A, freq=0x1E, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_232, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_F7, x=160, y=100
 .else
 	video offset=CINEMATIC_238, x=160, y=100
 .endif
 	play id=0x002C, freq=0x02, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_233, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_F8, x=160, y=100
 .else
 	video offset=CINEMATIC_239, x=160, y=100
 .endif
 	play id=0x002C, freq=0x02, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_234, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_F9, x=160, y=100
 .else
 	video offset=CINEMATIC_240, x=160, y=100
 .endif
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_235, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_F10, x=160, y=100
 .else
 	video offset=CINEMATIC_241, x=160, y=100
 .endif
 	play id=0x000A, freq=0x02, vol=0x32, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_236, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_F11, x=160, y=100
 .else
 	video offset=CINEMATIC_242, x=160, y=100
 .endif
@@ -316,35 +316,35 @@ DELAY_7_THEN_PAL_15_CIN_231:
 	play id=0x002C, freq=0x02, vol=0x3F, channel=0x02
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_237, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_F12, x=160, y=100
 .else
 	video offset=CINEMATIC_243, x=160, y=100
 .endif
 	play id=0x000A, freq=0x02, vol=0x28, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_238, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_F13, x=160, y=100
 .else
 	video offset=CINEMATIC_244, x=160, y=100
 .endif
 	play id=0x002C, freq=0x02, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_239, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_F14, x=160, y=100
 .else
 	video offset=CINEMATIC_245, x=160, y=100
 .endif
 	play id=0x000A, freq=0x14, vol=0x32, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_240, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_F15, x=160, y=100
 .else
 	video offset=CINEMATIC_246, x=160, y=100
 .endif
 	play id=0x002C, freq=0x02, vol=0x32, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_241, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_F16, x=160, y=100
 .else
 	video offset=CINEMATIC_247, x=160, y=100
 .endif
@@ -369,7 +369,7 @@ LABEL_0F48:
 LESTER_OPENS_AND_DRINKS_SODA_ANIMATION:
 	fill page=0xFF, color=0x04
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_384, x=160, y=100
+	video offset=CINEMATIC_SODA_SCENE_BG, x=160, y=100
 .else
 	video offset=CINEMATIC_385, x=160, y=100
 .endif
@@ -409,7 +409,7 @@ LESTER_OPENS_AND_DRINKS_SODA_ANIMATION:
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_393, x=160, y=100
+	video offset=CINEMATIC_LESTER_HANDS_OPENING_SODA_CAN_F8, x=160, y=100
 .else
 	video offset=CINEMATIC_394, x=160, y=100
 .endif

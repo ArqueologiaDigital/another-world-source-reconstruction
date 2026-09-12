@@ -1,7 +1,7 @@
 .if BRANCH == "chahi_amiga_1991"
 CINEMATIC_468		EQU 0xFBD2
 CINEMATIC_466		EQU 0x187E
-CINEMATIC_467		EQU 0xCCBA
+CINEMATIC_LIFT_SHAFT_FRAME_AND_CALL_PANEL		EQU 0xCCBA
 CINEMATIC_469		EQU 0xFBF2
 .else
 CINEMATIC_468		EQU 0x187E
@@ -152,7 +152,7 @@ DRIFT_VAR1_PLUS_1_FOR_16X:
 	fill page=0x00, color=0x07
 	selectVideoPage 0x00
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_465, x=150, y=100
+	video offset=CINEMATIC_LIFT_DOORWAY_WALL, x=150, y=100
 	video offset=CINEMATIC_466, x=160, y=111
 .else
 	video offset=CINEMATIC_467, x=150, y=100
@@ -161,7 +161,7 @@ DRIFT_VAR1_PLUS_1_FOR_16X:
 	fill page=0x03, color=0x02
 	selectVideoPage 0x03
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_467, x=160, y=100
+	video offset=CINEMATIC_LIFT_SHAFT_FRAME_AND_CALL_PANEL, x=160, y=100
 .else
 	video offset=CINEMATIC_469, x=160, y=100
 .endif
@@ -251,7 +251,7 @@ DRIFT_VAR1_PLUS_1_FOR_16X:
 	fill page=0x00, color=0x07
 	selectVideoPage 0x00
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_465, x=150, y=100
+	video offset=CINEMATIC_LIFT_DOORWAY_WALL, x=150, y=100
 .else
 	video offset=CINEMATIC_467, x=150, y=100
 .endif
@@ -326,7 +326,7 @@ DRAW_CIN_182_AT_187_101_LOOP:
 	break
 ; The 1991 Amiga release draws a different polygon in this loop:
 ; CINEMATIC_PARTICLE_LAB_BG_F3 (0x3F6C) where the 1992 ports draw
-; CINEMATIC_182 (amiga 0xF2CC). Same x/y, different subject, so this
+; CINEMATIC_HOLO_CONSOLE_WIREFRAME_CUBE_CORNER_TOP_RIGHT (amiga 0xF2CC). Same x/y, different subject, so this
 ; is a content difference and not an offset-table difference.
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_PARTICLE_LAB_BG_F3, x=187, y=101

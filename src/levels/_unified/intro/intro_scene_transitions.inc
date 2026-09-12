@@ -20,8 +20,8 @@ WAIT_INTRO_SCENE_1:
 	djnz [0x02], WAIT_INTRO_SCENE_1
 	selectVideoPage 0x00
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_138, x=80, y=80
-	video offset=CINEMATIC_139, x=160, y=100
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_BG, x=80, y=80
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_SCAN_F0, x=160, y=100
 .else
 	video offset=CINEMATIC_144, x=80, y=80
 	video offset=CINEMATIC_145, x=160, y=100
@@ -43,8 +43,8 @@ WAIT_INTRO_SCENE_2:
 .endif
 	selectVideoPage 0x00
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_138, x=82, y=82
-	video offset=CINEMATIC_140, x=160, y=100
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_BG, x=82, y=82
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_SCAN_F1, x=160, y=100
 .else
 	video offset=CINEMATIC_144, x=82, y=82
 	video offset=CINEMATIC_146, x=160, y=100
@@ -66,8 +66,8 @@ WAIT_INTRO_SCENE_3:
 .endif
 	selectVideoPage 0x00
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_138, x=82, y=82
-	video offset=CINEMATIC_141, x=80, y=80, zoom=[0x20]	;@enc=alt
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_BG, x=82, y=82
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_SCAN_F2, x=80, y=80, zoom=[0x20]	;@enc=alt
 .else
 	video offset=CINEMATIC_144, x=82, y=82
 	video offset=CINEMATIC_147, x=80, y=80, zoom=[0x20]	;@enc=alt
@@ -89,8 +89,8 @@ WAIT_INTRO_SCENE_4:
 .endif
 	selectVideoPage 0x00
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_138, x=82, y=82
-	video offset=CINEMATIC_141, x=80, y=80
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_BG, x=82, y=82
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_SCAN_F2, x=80, y=80
 .else
 	video offset=CINEMATIC_144, x=82, y=82
 	video offset=CINEMATIC_147, x=80, y=80
@@ -112,7 +112,7 @@ WAIT_INTRO_SCENE_5:
 	break
 	selectVideoPage 0x00
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_138, x=82, y=82
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_BG, x=82, y=82
 .else
 	video offset=CINEMATIC_144, x=82, y=82
 .endif

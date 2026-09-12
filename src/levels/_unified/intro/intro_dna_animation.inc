@@ -1,27 +1,27 @@
 .if BRANCH == "chahi_amiga_1991"
-CINEMATIC_035		EQU 0xBE46
-CINEMATIC_036		EQU 0xBE68
-CINEMATIC_037		EQU 0xBEBA
-CINEMATIC_038		EQU 0xBF0C
-CINEMATIC_039		EQU 0xC03A
-CINEMATIC_040		EQU 0xC0DC
-CINEMATIC_041		EQU 0xC11A
-CINEMATIC_042		EQU 0xC1E4
-CINEMATIC_043		EQU 0xC2C4
-CINEMATIC_044		EQU 0xABEC
-CINEMATIC_045		EQU 0xAC20
-CINEMATIC_046		EQU 0xAC54
-CINEMATIC_047		EQU 0xAC88
-CINEMATIC_048		EQU 0x1742
+CINEMATIC_LESTER_EXITING_CAR_F7		EQU 0xBE46
+CINEMATIC_LESTER_EXITING_CAR_F8		EQU 0xBE68
+CINEMATIC_LESTER_EXITING_CAR_F9		EQU 0xBEBA
+CINEMATIC_LESTER_EXITING_CAR_F10		EQU 0xBF0C
+CINEMATIC_LESTER_EXITING_CAR_F11		EQU 0xC03A
+CINEMATIC_LESTER_EXITING_CAR_F12		EQU 0xC0DC
+CINEMATIC_LESTER_EXITING_CAR_F13		EQU 0xC11A
+CINEMATIC_LESTER_EXITING_CAR_F14		EQU 0xC1E4
+CINEMATIC_LESTER_EXITING_CAR_F15		EQU 0xC2C4
+CINEMATIC_STORM_LIGHTNING_FLASH_F0		EQU 0xABEC
+CINEMATIC_STORM_LIGHTNING_FLASH_F1		EQU 0xAC20
+CINEMATIC_STORM_LIGHTNING_FLASH_F2		EQU 0xAC54
+CINEMATIC_STORM_LIGHTNING_FLASH_F3		EQU 0xAC88
+CINEMATIC_CARPARK_NEAR_PILLAR		EQU 0x1742
 CINEMATIC_166		EQU 0x3A70
 CINEMATIC_167		EQU 0x33A0
 CINEMATIC_168		EQU 0x3BF8
 CINEMATIC_169		EQU 0x3658
 CINEMATIC_170		EQU 0x3AC4
 CINEMATIC_171		EQU 0x3830
-CINEMATIC_453		EQU 0xF4B8
-CINEMATIC_454		EQU 0xF500
-CINEMATIC_455		EQU 0xF530
+CINEMATIC_LAB_AUTH_CRT_INTERFERENCE_F1		EQU 0xF4B8
+CINEMATIC_LAB_AUTH_CRT_INTERFERENCE_F2		EQU 0xF500
+CINEMATIC_LAB_AUTH_CRT_INTERFERENCE_F3		EQU 0xF530
 CINEMATIC_456		EQU 0x4BE2
 CINEMATIC_DNA_0		EQU 0xF866
 CINEMATIC_DNA_1		EQU 0xF878
@@ -222,26 +222,26 @@ LABEL_0333:
 
 DRAW_CINEMATICS_166_TO_171:
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_160, x=160, y=100
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_INTERFERENCE_F0, x=160, y=100
 .else
 	video offset=CINEMATIC_166, x=160, y=100
 .endif
 	play id=0x002C, freq=0x0F, vol=0x3F, channel=0x02
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_161, x=160, y=100
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_INTERFERENCE_F1, x=160, y=100
 .else
 	video offset=CINEMATIC_167, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_162, x=160, y=100
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_INTERFERENCE_F2, x=160, y=100
 .else
 	video offset=CINEMATIC_168, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_160, x=160, y=100
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_INTERFERENCE_F0, x=160, y=100
 .else
 	video offset=CINEMATIC_166, x=160, y=100
 .endif
@@ -252,7 +252,7 @@ DRAW_SCIENTIST_THEN_DIVERGE_INIT:
 	mov [0x11], 0x00E4
 	selectVideoPage 0x00
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_163, x=157, y=100
+	video offset=CINEMATIC_LAB_AUTH_CRT_LESTER_FULL_BODY, x=157, y=100
 .else
 	video offset=CINEMATIC_169, x=157, y=100
 .endif
@@ -280,8 +280,8 @@ DRIFT_VAR_10_INC_BY_1_LOOP:
 
 DRAW_CIN_170_171_AT_VAR10_VAR11:
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_164, x=[0x10], y=44
-	video offset=CINEMATIC_165, x=[0x11], y=44
+	video offset=CINEMATIC_LAB_AUTH_CRT_SCAN_BRACKET_RIGHT, x=[0x10], y=44
+	video offset=CINEMATIC_LAB_AUTH_CRT_SCAN_BRACKET_LEFT, x=[0x11], y=44
 .else
 	video offset=CINEMATIC_170, x=[0x10], y=44
 	video offset=CINEMATIC_171, x=[0x11], y=44
@@ -301,25 +301,25 @@ LABEL_0390:
 
 DRAW_CIN_453_454_SEQ:
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_452, x=160, y=100
+	video offset=CINEMATIC_LAB_AUTH_CRT_INTERFERENCE_F0, x=160, y=100
 .else
 	video offset=CINEMATIC_453, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_453, x=160, y=100
+	video offset=CINEMATIC_LAB_AUTH_CRT_INTERFERENCE_F1, x=160, y=100
 .else
 	video offset=CINEMATIC_454, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_454, x=160, y=100
+	video offset=CINEMATIC_LAB_AUTH_CRT_INTERFERENCE_F2, x=160, y=100
 .else
 	video offset=CINEMATIC_455, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_455, x=160, y=100
+	video offset=CINEMATIC_LAB_AUTH_CRT_INTERFERENCE_F3, x=160, y=100
 .else
 	video offset=CINEMATIC_456, x=160, y=100
 .endif
@@ -329,68 +329,68 @@ DRAW_CIN_035_PAL_3_REPEAT_HEAD:
 	setPalette 0x03
 	mov [PAUSE_SLICES], 0x0003
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_030, x=160, y=100
+	video offset=CINEMATIC_LESTER_EXITING_CAR_F2, x=160, y=100
 .else
 	video offset=CINEMATIC_035, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_031, x=160, y=100
+	video offset=CINEMATIC_LESTER_EXITING_CAR_F3, x=160, y=100
 .else
 	video offset=CINEMATIC_036, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_032, x=160, y=100
+	video offset=CINEMATIC_LESTER_EXITING_CAR_F4, x=160, y=100
 .else
 	video offset=CINEMATIC_037, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_033, x=160, y=100
+	video offset=CINEMATIC_LESTER_EXITING_CAR_F5, x=160, y=100
 .else
 	video offset=CINEMATIC_038, x=160, y=100
 .endif
 	play id=0x003C, freq=0x16, vol=0x0F, channel=0x00
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_034, x=160, y=100
+	video offset=CINEMATIC_LESTER_EXITING_CAR_F6, x=160, y=100
 .else
 	video offset=CINEMATIC_039, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_035, x=160, y=100
+	video offset=CINEMATIC_LESTER_EXITING_CAR_F7, x=160, y=100
 .else
 	video offset=CINEMATIC_040, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_036, x=160, y=100
+	video offset=CINEMATIC_LESTER_EXITING_CAR_F8, x=160, y=100
 .else
 	video offset=CINEMATIC_041, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_037, x=160, y=100
+	video offset=CINEMATIC_LESTER_EXITING_CAR_F9, x=160, y=100
 .else
 	video offset=CINEMATIC_042, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_038, x=160, y=100
+	video offset=CINEMATIC_LESTER_EXITING_CAR_F10, x=160, y=100
 .else
 	video offset=CINEMATIC_043, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_039, x=160, y=100
+	video offset=CINEMATIC_LESTER_EXITING_CAR_F11, x=160, y=100
 .else
 	video offset=CINEMATIC_044, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_040, x=160, y=100
+	video offset=CINEMATIC_LESTER_EXITING_CAR_F12, x=160, y=100
 .else
 	video offset=CINEMATIC_045, x=160, y=100
 .endif
@@ -398,13 +398,13 @@ DRAW_CIN_035_PAL_3_REPEAT_HEAD:
 	mov [PAUSE_SLICES], 0x0004
 	setPalette 0x1B
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_041, x=160, y=100
+	video offset=CINEMATIC_LESTER_EXITING_CAR_F13, x=160, y=100
 .else
 	video offset=CINEMATIC_046, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_042, x=160, y=100
+	video offset=CINEMATIC_LESTER_EXITING_CAR_F14, x=160, y=100
 .else
 	video offset=CINEMATIC_047, x=160, y=100
 .endif
@@ -413,7 +413,7 @@ DRAW_CIN_035_PAL_3_REPEAT_HEAD:
 DRAW_CIN_048_15_FRAMES_LOOP:
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_043, x=160, y=100
+	video offset=CINEMATIC_LESTER_EXITING_CAR_F15, x=160, y=100
 .else
 	video offset=CINEMATIC_048, x=160, y=100
 .endif
