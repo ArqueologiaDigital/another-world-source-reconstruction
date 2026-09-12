@@ -33,8 +33,8 @@
 ; the same numerical index doesn't refer to "unused content" there.
 ; --------------------------------------------------------------------
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-CINEMATIC_LAKE_UNUSED_175		EQU 0x8A8E
-CINEMATIC_LAKE_UNUSED_189		EQU 0x5DDA
+CINEMATIC_VINE_DECOR_1		EQU 0x8A8E
+CINEMATIC_BEAST_APPROACH_FAST_4		EQU 0x5DDA
 .endif
 
 HERO_X		EQU 0x01
