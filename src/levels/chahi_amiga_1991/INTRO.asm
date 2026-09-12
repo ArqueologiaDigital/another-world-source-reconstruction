@@ -645,11 +645,11 @@ BLIT_AND_DISPATCH_HERO_ACTION:
 	break
 	jmp BLIT_AND_DISPATCH_HERO_ACTION
 
-LABEL_008A:
+BLIT_PAGE_FF_FOREVER:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	break
-	jmp LABEL_008A
+	jmp BLIT_PAGE_FF_FOREVER
 
 BLIT_AND_COPY_PAGE_FF_LOOP:
 	add [0xC7], 0x0001
@@ -1212,10 +1212,10 @@ SETUP_INTRO_PARTICLE_CHANNELS:
 	video offset=CINEMATIC_CITY_FOREGROUND_GIRDER_MID_ARM, x=90, y=101
 	mov [0x01], 0x015E
 
-LABEL_05C2:
+DELAY_350_THEN_SCENE_TEARDOWN:
 	break
-	djnz [0x01], LABEL_05C2
-	setup channel=0x3C, address=LABEL_008A
+	djnz [0x01], DELAY_350_THEN_SCENE_TEARDOWN
+	setup channel=0x3C, address=BLIT_PAGE_FF_FOREVER
 	setup channel=0x01, address=FILL_FF_PAGE_LOOP
 	deleteChannels first=0x0A, last=0x12
 	break
@@ -1339,9 +1339,9 @@ TRANSITION_TO_BLITTER_LOOP:
 	setPalette 0x17
 	mov [0x01], 0x0001
 
-LABEL_06ED:
+DELAY_1_THEN_PLAY_FX_0A_PAL_18:
 	break
-	djnz [0x01], LABEL_06ED
+	djnz [0x01], DELAY_1_THEN_PLAY_FX_0A_PAL_18
 	play id=0x000A, freq=0x0F, vol=0x3F, channel=0x01
 	setPalette 0x18
 	mov [0x01], 0x0001
@@ -2194,7 +2194,7 @@ DELAY_6_BEFORE_BLITTER_SETUP:
 DELAY_7_BEFORE_BLITTER_SETUP:
 	break
 	djnz [0x01], DELAY_7_BEFORE_BLITTER_SETUP
-	setup channel=0x3C, address=LABEL_008A
+	setup channel=0x3C, address=BLIT_PAGE_FF_FOREVER
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
@@ -2484,17 +2484,17 @@ SHOW_TEXT_34_AT_8_152_19X:
 SHOW_TEXT_35_AT_2_140_25X:
 	break
 	text id=0x0035, x=2, y=140, color=0x06 ; "- RESULT:\nProbability of creating:\n ANTIMATTER: 91.V %\n NEUTRINO 27:  0.04 %\n NEUTRINO 424: 18 %\n"
-	jg [MUS_MARK], 0x20, LABEL_12E2
+	jg [MUS_MARK], 0x20, INTRO_SHOW_EXPERIMENT_COUNTDOWN_TEXT
 	djnz [0x01], SHOW_TEXT_35_AT_2_140_25X
 	mov [0x01], 0x000A
 
 SHOW_TEXT_36_UNTIL_MUS_20:
 	break
 	text id=0x0036, x=2, y=80, color=0x06 ; "   Practical verification Y/N ?"
-	jg [MUS_MARK], 0x20, LABEL_12E2
+	jg [MUS_MARK], 0x20, INTRO_SHOW_EXPERIMENT_COUNTDOWN_TEXT
 	djnz [0x01], SHOW_TEXT_36_UNTIL_MUS_20
 
-LABEL_12E2:
+INTRO_SHOW_EXPERIMENT_COUNTDOWN_TEXT:
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0x00
 	text id=0x0023, x=0, y=80, color=0x06 ; " THE EXPERIMENT WILL BEGIN IN    SECONDS"
@@ -3222,9 +3222,9 @@ LIFT_DOORS_OPENING_DIVERGE_LOOP:
 	djnz [0x05], LIFT_DOORS_OPENING_DIVERGE_LOOP
 	mov [0x05], 0x001A
 
-LABEL_1A7E:
+LIFT_DOORS_FINAL_FRAME_TRANSITION:
 	break
-	djnz [0x05], LABEL_1A7E
+	djnz [0x05], LIFT_DOORS_FINAL_FRAME_TRANSITION
 	play id=0x0036, freq=0x0F, vol=0x30, channel=0x03
 	selectVideoPage 0x00
 	video offset=CINEMATIC_LIFT_DOORS_OPENING_F34, x=165, y=100
@@ -3340,7 +3340,7 @@ RISE_CIN_130_BY_1_FOR_20X:
 ; LIFT_DOORS_OPENING_F34 (the last frame of the doors-open
 ; animation) — final transition before Lester enters the
 ; lift.
-LIFT_DOORS_FINAL_FRAME_TRANSITION:
+LABEL_1B9B:
 	db 0x11
 
 DRAW_CIN_450_451_SEQ:
@@ -3457,7 +3457,7 @@ DELAY_25F_AFTER_SET_PAL_A:
 	mov [0x01], 0x0050
 	mov [0x02], 0x0004
 	mov [0x03], 0x001A
-	setup channel=0x3C, address=LABEL_008A
+	setup channel=0x3C, address=BLIT_PAGE_FF_FOREVER
 
 BLITTER_CYCLE_VAR2_80X_LOOP:
 	jne [0x02], 0x01, COPY_VAR2_TO_VAR4_DEC
