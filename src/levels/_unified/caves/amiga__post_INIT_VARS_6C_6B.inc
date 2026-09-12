@@ -4,7 +4,7 @@ LABEL_37AB:
 	mov [0x07], 0x00A8
 	add [0x07], [0x21]
 	mov [0x08], 0x00AA
-	call LABEL_342D
+	call CAVES_SCENE9_HERO_X_SYNC_OR_NOOP
 	call GUARDED_DRAW_CIN_579_786
 	add [0x08], 0x000A
 	call GUARDED_DRAW_CIN_579_786
@@ -18,10 +18,10 @@ LABEL_37D0:
 	break
 	video offset=CINEMATIC_796, x=[HERO_X], y=[HERO_Y]
 	break
-	jne [HACK_VAR_67], 0x6E, LABEL_37EC
+	jne [HACK_VAR_67], 0x6E, HERO_DIRECTION_LEFT_IDLE_LOOP
 	play id=0x006C, freq=0x14, vol=0x20, channel=0x00
 
-LABEL_37EC:
+HERO_DIRECTION_LEFT_IDLE_LOOP:
 	video offset=CINEMATIC_797, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_798, x=[HERO_X], y=[HERO_Y]
@@ -137,14 +137,14 @@ LABEL_38EF:
 
 
 LABEL_38FC:
-	setup channel=0x15, address=LABEL_39EB
+	setup channel=0x15, address=HERO_DIRECTION_LEFT_TO_RIGHT_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
 LABEL_3909:
-	setup channel=0x15, address=LABEL_3A91
+	setup channel=0x15, address=HERO_DIRECTION_RIGHT_TO_LEFT_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
@@ -220,7 +220,7 @@ LABEL_39BA:
 	break
 	jmp LABEL_3C96
 
-LABEL_39EB:
+HERO_DIRECTION_LEFT_TO_RIGHT_TURN:
 	mov [0x63], 0x0064
 	video offset=CINEMATIC_533, x=[HERO_X], y=[HERO_Y]
 	mov [0x19], 0x0000
@@ -272,7 +272,7 @@ LABEL_3A58:
 	break
 	jmp LABEL_3B68
 
-LABEL_3A91:
+HERO_DIRECTION_RIGHT_TO_LEFT_TURN:
 	mov [0x63], 0x0064
 	video offset=CINEMATIC_525, x=[HERO_X], y=[HERO_Y]
 	mov [0x19], 0x0000
@@ -397,7 +397,7 @@ LABEL_3BE9:
 	video offset=CINEMATIC_465, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_466, x=[HERO_X], y=[HERO_Y]
-	call LABEL_DE71
+	call CAVES_NO_FLOOR_ABOVE_WATERLINE_CASE_6F
 	je [0x22], 0x03E8, LABEL_3BE9
 	jmp LABEL_3C37
 
@@ -421,7 +421,7 @@ LABEL_3C37:
 	video offset=CINEMATIC_465, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_466, x=[HERO_X], y=[HERO_Y]
-	call LABEL_DE71
+	call CAVES_NO_FLOOR_ABOVE_WATERLINE_CASE_6F
 	je [0x22], 0x03E8, LABEL_3BE9
 	break
 	video offset=CINEMATIC_467, x=[HERO_X], y=[HERO_Y]
@@ -460,10 +460,10 @@ LABEL_3C96:
 	break
 	video offset=CINEMATIC_510, x=[HERO_X], y=[HERO_Y]
 	break
-	jne [HACK_VAR_67], 0x6E, LABEL_3CB2
+	jne [HACK_VAR_67], 0x6E, HERO_DIRECTION_RIGHT_IDLE_LOOP
 	play id=0x006C, freq=0x14, vol=0x20, channel=0x01
 
-LABEL_3CB2:
+HERO_DIRECTION_RIGHT_IDLE_LOOP:
 	video offset=CINEMATIC_511, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_512, x=[HERO_X], y=[HERO_Y]

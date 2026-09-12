@@ -36,7 +36,7 @@ LABEL_4A6D:
 	ret
 
 
-LABEL_4A8A:
+DRAW_ENERGY_TRANSMISSION_LINE_FG:
 	call LABEL_80AA
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00

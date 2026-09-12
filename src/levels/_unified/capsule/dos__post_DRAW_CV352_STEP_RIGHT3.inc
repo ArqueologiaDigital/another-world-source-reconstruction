@@ -61,7 +61,7 @@ LABEL_BDC0:
 	add [HERO_X], 0x0002
 	mov [0x36], 0xFFFD
 	break
-	call LABEL_9351
+	call HERO_RUN_RIGHT_DECELERATION_LOOP
 	je [HERO_POS_MASK], 0x00, LABEL_BD0A
 	add [HERO_X], 0x0002
 	mov [0x36], 0xFFFB

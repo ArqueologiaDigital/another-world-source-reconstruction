@@ -336,7 +336,7 @@ LABEL_CC0F:
 	add [0x41], 0x0014
 	jg [SCROLL_Y], 0xFF38, LABEL_CC0F
 	copyVideoPage src=0x03, dst=0x00
-	setup channel=0x3C, address=LABEL_3D25
+	setup channel=0x3C, address=FRAME_PRESENT_RESTORE_PAGE_0_LOOP
 	setup channel=0x37, address=HANG_DRAW_CIN_269
 	mov [SCROLL_Y], 0xFF38
 	mov [0x44], 0x005D
@@ -397,10 +397,10 @@ LABEL_CCC2:
 	break
 	jmp LABEL_CCA8
 
-HANG_DRAW_CIN_300:
+CAVES_WATERFALL_BACKDROP_HOLD_LOOP:
 	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=160, y=100
 	break
-	jmp HANG_DRAW_CIN_300
+	jmp CAVES_WATERFALL_BACKDROP_HOLD_LOOP
 LABEL_CCCE:
 	db 0x11
 
@@ -451,10 +451,10 @@ LABEL_CD24:
 LABEL_CD25:
 	video offset=CINEMATIC_276, x=46, y=139
 	mov [0x42], 0xF060
-	jl [HERO_X], 0x35, LABEL_CD37
+	jl [HERO_X], 0x35, DRAW_CAVES_FIRST_ROOM_BG
 	mov [0x42], 0x001D
 
-LABEL_CD37:
+DRAW_CAVES_FIRST_ROOM_BG:
 	break
 	jmp LABEL_CD25
 LABEL_CD3B:
@@ -475,7 +475,7 @@ LABEL_CD3C:
 LABEL_CD66:
 	db 0x11
 
-LABEL_CD67:
+DRAW_GANTRY_PLATFORMS_BG:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_200, x=160, y=100
 	video offset=CINEMATIC_201, x=160, y=100

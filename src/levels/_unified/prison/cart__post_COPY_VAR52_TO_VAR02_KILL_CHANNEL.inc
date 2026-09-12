@@ -7,7 +7,7 @@ LABEL_7FE9:
 	break
 	mov [HERO_Y], [0x52]
 	call LABEL_8049
-	setup channel=0x1A, address=PRISON_COPY_VAR51_TO_VAR02_KILL_CHANNEL_L0
+	setup channel=0x1A, address=PRISON_TELEPORT_LOWER_PAD_SETTLE_LOOP
 	jmp LABEL_8062
 LABEL_800B:
 	db 0x11
@@ -17,16 +17,16 @@ LABEL_800C:
 	mov [HERO_Y], [0x51]
 	add [HERO_Y], 0x001E
 	play id=0x0057, freq=0x1C, vol=0x40, channel=0x00
-	call LABEL_802F
+	call GUN_FLICKER_HOLD_176
 	break
 	mov [HERO_Y], [0x51]
-	call LABEL_802F
+	call GUN_FLICKER_HOLD_176
 	setup channel=0x1A, address=PRISON_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65_L1
 	jmp LABEL_8062
 LABEL_802E:
 	db 0x11
 
-LABEL_802F:
+GUN_FLICKER_HOLD_176:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_552

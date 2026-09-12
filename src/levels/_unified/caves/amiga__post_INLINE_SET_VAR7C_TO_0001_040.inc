@@ -24,13 +24,13 @@ CAVES_INLINE_SET_VAR76_TO_0001_037_L1:
 	add [0x08], 0x0019
 	mov [0x21], [0x07]
 	mov [0x22], 0x00C8
-	call CAVES_COPY_VAR40_TO_VAR22_L1
+	call CAVES_GROUND_MAP_DISPATCH
 	jge [0x08], [0x22], INIT_VAR09_TO_7_VAR08_FROM_VAR22
 	mov [0x21], [0x08]
 	add [0x21], 0x0019
 	jl [0x21], [0x22], LABEL_29E9
 	mov [SCROLL_Y], 0x0001
-	setup channel=0x3C, address=LABEL_3D49
+	setup channel=0x3C, address=COMMIT_WORK_PAGE_TO_PAGE_3_AND_REFETCH
 
 LABEL_29E9:
 	mov [0xF8], [0x07]

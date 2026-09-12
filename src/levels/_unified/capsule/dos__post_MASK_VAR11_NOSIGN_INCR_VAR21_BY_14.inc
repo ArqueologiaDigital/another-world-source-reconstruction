@@ -22,7 +22,7 @@ LABEL_6522:
 LABEL_652B:
 	db 0x05
 
-LABEL_652C:
+CAPSULE_BUDDY_WALK_LEFT_PHASE_4:
 	mov [0x2B], [0x21]
 	add [0xB8], 0x0100
 	mov [0x2C], [0x22]

@@ -1,42 +1,42 @@
 LABEL_3D24:
 	db 0x11
 
-LABEL_3D25:
+FRAME_PRESENT_RESTORE_PAGE_0_LOOP:
 	call INCREMENT_VAR31
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 	break
-	jmp LABEL_3D25
+	jmp FRAME_PRESENT_RESTORE_PAGE_0_LOOP
 LABEL_3D33:
 	db 0x10, 0xFF, 0x0D, 0xFF, 0x06, 0x07, 0x3D, 0x33
 
-LABEL_3D3B:
+FRAME_PRESENT_RESTORE_PAGE_3_LOOP:
 	call INCREMENT_VAR31
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	copyVideoPage src=0x03, dst=0xFF
 	break
-	jmp LABEL_3D3B
+	jmp FRAME_PRESENT_RESTORE_PAGE_3_LOOP
 
-LABEL_3D49:
+COMMIT_WORK_PAGE_TO_PAGE_3_AND_REFETCH:
 	copyVideoPage src=0xFF, dst=0x03
 	copyVideoPage src=0x83, dst=0xFF
-	jmp LABEL_3D25
+	jmp FRAME_PRESENT_RESTORE_PAGE_0_LOOP
 
-LABEL_3D52:
+COMMIT_WORK_PAGE_TO_PAGE_0_AND_REFETCH:
 	copyVideoPage src=0xFF, dst=0x00
 	copyVideoPage src=0x80, dst=0xFF
 	jmp LABEL_D82A
 
 LABEL_3D5B:
 	copyVideoPage src=0x83, dst=0xFF
-	jmp LABEL_3D25
+	jmp FRAME_PRESENT_RESTORE_PAGE_0_LOOP
 
 LABEL_3D61:
 	copyVideoPage src=0x83, dst=0xFF
 	mov [SCROLL_Y], 0x0005
-	jmp LABEL_3D49
+	jmp COMMIT_WORK_PAGE_TO_PAGE_3_AND_REFETCH
 
 LABEL_3D6B:
 	setPalette 0x1F
@@ -49,7 +49,7 @@ LABEL_3D6B:
 	copyVideoPage src=0x00, dst=0xFF
 	mov [PAUSE_SLICES], [0xF8]
 	break
-	jmp LABEL_3D25
+	jmp FRAME_PRESENT_RESTORE_PAGE_0_LOOP
 
 LABEL_3D88:
 	blitFramebuffer 0xFF

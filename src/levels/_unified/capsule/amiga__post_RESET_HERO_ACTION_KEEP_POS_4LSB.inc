@@ -5,13 +5,13 @@ LABEL_7EC5:
 	jne [HERO_Y], [0x52], LABEL_7EEA
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_7EFE
 	mov [0x32], 0x0001
-	setup channel=0x14, address=LABEL_7E4F
+	setup channel=0x14, address=HERO_FLOOR_STEP_UP_ENTRY
 
 LABEL_7EEA:
 	jne [HERO_Y], [0x51], LABEL_7EFE
 	jne [HERO_POS_JUMP_DOWN], 0x01, LABEL_7EFE
 	mov [0x32], 0x0001
-	setup channel=0x14, address=LABEL_7E32
+	setup channel=0x14, address=HERO_FLOOR_STEP_DOWN_ENTRY
 
 LABEL_7EFE:
 	sub [0x50], 0x0014

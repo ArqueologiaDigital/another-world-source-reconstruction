@@ -19,7 +19,7 @@ LABEL_3595:
 	mov [0x07], 0xFFEC
 	add [0x07], [0x21]
 	call LABEL_34B5
-	call LABEL_342D
+	call CAVES_SCENE9_HERO_X_SYNC_OR_NOOP
 	call LABEL_33E2
 	break
 	add [0x6C], 0x0001
@@ -34,14 +34,14 @@ LABEL_35C3:
 	mov [0x07], 0x00A0
 	add [0x07], [0x21]
 	call LABEL_34B5
-	call LABEL_342D
+	call CAVES_SCENE9_HERO_X_SYNC_OR_NOOP
 	call GUARDED_DRAW_CIN_579_786
 	mov [0x09], 0x008A
 	call MUL_VAR6B_BY_11_INTO_VAR21
 	mov [0x07], 0xFF4C
 	add [0x07], [0x21]
 	call LABEL_34B5
-	call LABEL_342D
+	call CAVES_SCENE9_HERO_X_SYNC_OR_NOOP
 	call LABEL_33E2
 	break
 	add [0x6C], 0x0001
@@ -54,7 +54,7 @@ LABEL_3608:
 	mov [0x09], 0x0089
 	mov [0x07], 0x009D
 	mov [0x08], 0x00B0
-	call LABEL_342D
+	call CAVES_SCENE9_HERO_X_SYNC_OR_NOOP
 	break
 	add [0x6C], 0x0001
 	djnz [0x6B], LABEL_3608
@@ -66,7 +66,7 @@ LABEL_3624:
 	mov [0x08], 0x00B0
 	add [0x07], [0x6B]
 	add [0x07], [0x6B]
-	call LABEL_342D
+	call CAVES_SCENE9_HERO_X_SYNC_OR_NOOP
 	mov [0x07], 0x0073
 	mov [0x08], 0x00C8
 	mov [0x21], [0x6B]
@@ -99,7 +99,7 @@ LABEL_3688:
 	mov [0x08], 0x00AA
 	call LABEL_34B5
 	add [0x08], 0x0005
-	call LABEL_342D
+	call CAVES_SCENE9_HERO_X_SYNC_OR_NOOP
 	call GUARDED_DRAW_CIN_579_786
 	mov [0x09], 0x0088
 	mov [0x07], 0x00BC
@@ -119,7 +119,7 @@ LABEL_3688:
 	mov [0x08], 0x00B4
 
 LABEL_36E3:
-	call LABEL_342D
+	call CAVES_SCENE9_HERO_X_SYNC_OR_NOOP
 	call GUARDED_DRAW_CIN_579_786
 	call MUL_VAR6B_BY_11_INTO_VAR21
 	mov [0x07], 0x0154
@@ -142,7 +142,7 @@ LABEL_3711:
 	mov [0x08], 0x00AA
 	call LABEL_34B5
 	add [0x08], 0x0005
-	call LABEL_342D
+	call CAVES_SCENE9_HERO_X_SYNC_OR_NOOP
 	call GUARDED_DRAW_CIN_579_786
 	mov [0x09], 0x0088
 	call MUL_VAR6B_BY_11_INTO_VAR21
@@ -151,7 +151,7 @@ LABEL_3711:
 	mov [0x08], 0x00A8
 	call LABEL_34B5
 	add [0x08], 0x0008
-	call LABEL_342D
+	call CAVES_SCENE9_HERO_X_SYNC_OR_NOOP
 	call GUARDED_DRAW_CIN_579_786
 	add [0x07], 0x008C
 	mov [0x08], 0x00A8
@@ -175,7 +175,7 @@ LABEL_376E:
 	mov [0x08], 0x00B4
 
 LABEL_3792:
-	call LABEL_342D
+	call CAVES_SCENE9_HERO_X_SYNC_OR_NOOP
 	call GUARDED_DRAW_CIN_579_786
 	jle [HERO_X], 0x8C, INIT_VARS_6C_6B
 	break

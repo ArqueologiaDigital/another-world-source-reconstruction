@@ -82,7 +82,7 @@ LABEL_0247:
 	db 0x11
 
 STATE_VAR12_BIG_DISPATCH_CASE_38:
-	call LABEL_6F95
+	call CAPSULE_BUDDY_PER_FRAME_TICK
 	break
 	video offset=CINEMATIC_334, x=[BUDDY_X], y=[BUDDY_Y]
 	video type=0, offset=COMMON_VIDEO_125, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40

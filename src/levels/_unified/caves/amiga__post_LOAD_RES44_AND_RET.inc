@@ -103,7 +103,7 @@ LABEL_CEDA:
 	ret
 
 
-LABEL_CEEA:
+CAVES_SCREEN_6E_BACKDROP_DRAW:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_432, x=160, y=100
 	ret
@@ -261,7 +261,7 @@ LABEL_D048:
 	ret
 
 
-LABEL_D068:
+DRAW_STALACTITE_CAVERN_BG:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_719, x=160, y=100
 	video offset=CINEMATIC_718, x=160, y=100
@@ -288,7 +288,7 @@ LABEL_D080:
 	ret
 
 
-LABEL_D0BC:
+DRAW_WATERFALL_LEFT_STAIRS_BG:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_274, x=160, y=100
 	video offset=CINEMATIC_275, x=165, y=111
@@ -320,7 +320,7 @@ LABEL_D0DF:
 	ret
 
 
-LABEL_D109:
+DRAW_WATERFALL_BG_FOUR_PASS:
 	fill page=0x00, color=0x00
 	fill page=0x03, color=0x00
 	load id=0x0043
@@ -339,7 +339,7 @@ LABEL_D109:
 	ret
 
 
-LABEL_D13A:
+DRAW_BUDDY_CRAWLING_BG:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_296, x=160, y=100
 	video offset=CINEMATIC_297, x=160, y=100
@@ -511,7 +511,7 @@ LABEL_D354:
 	ret
 
 
-LABEL_D364:
+CAVES_SCREEN_71_BACKDROP_DRAW:
 	fill page=0x00, color=0x03
 	video offset=CINEMATIC_540, x=160, y=100
 	ret
@@ -578,7 +578,7 @@ LABEL_D3EA:
 LABEL_D408:
 	db 0x11
 
-LABEL_D409:
+FILL_PAGE_00_COLOR_08:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_542, x=160, y=100
 	video offset=CINEMATIC_543, x=160, y=100

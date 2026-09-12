@@ -159,7 +159,7 @@ LABEL_144F:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_082, x=141, y=127
 	selectVideoPage 0xFF
-	call LABEL_870F
+	call INIT_BIRD_AI_VARS
 	mov [PAUSE_SLICES], 0x0004
 	setup channel=0x14, address=LABEL_965B
 	setup channel=0x15, address=KILL_CHANNEL_LANDING
@@ -216,9 +216,9 @@ LABEL_14A6:
 LABEL_15C6:
 	setup channel=0x22, address=LABEL_2FB5
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
-	setup channel=0x24, address=LABEL_2FD5
+	setup channel=0x24, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
-	setup channel=0x26, address=LABEL_3010
+	setup channel=0x26, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
 	setup channel=0x28, address=LABEL_304B
 	ret
@@ -248,26 +248,26 @@ LABEL_1639:
 
 LABEL_163A:
 	mov [0x0E], 0x0000
-	call LABEL_6445
+	call CAPSULE_BUDDY_IDLE_LEFT_DRAW_0
 	break
 	mov [0x0E], 0x0004
-	call LABEL_6463
+	call CAPSULE_BUDDY_IDLE_LEFT_DRAW_1
 	break
 	mov [0x0E], 0x0000
-	call LABEL_6481
+	call CAPSULE_BUDDY_IDLE_LEFT_DRAW_2
 	break
 	mov [0x29], 0x0002
 
 LABEL_1656:
 	mov [0x0E], 0x0003
-	call LABEL_6481
+	call CAPSULE_BUDDY_IDLE_LEFT_DRAW_2
 	break
 	djnz [0x29], LABEL_1656
 	mov [0x29], 0x0002
 
 LABEL_1666:
 	mov [0x0E], 0x0000
-	call LABEL_6463
+	call CAPSULE_BUDDY_IDLE_LEFT_DRAW_1
 	break
 	djnz [0x29], LABEL_1666
 	mov [0xF8], [BUDDY_X]

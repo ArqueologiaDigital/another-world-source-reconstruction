@@ -31,4 +31,4 @@ LABEL_8C0E:
 	je [0x63], 0x01, PRISON_INLINE_SET_VAR63_TO_1_L0
 	setup channel=0x14, address=LABEL_90F7
 	je [0x63], 0x05, INLINE_SET_VAR63_TO_1
-	setup channel=0x14, address=STEP_DRAW_CIN555_LEFT4_RIGHT1
+	setup channel=0x14, address=PRISON_HERO_WALK_LEFT_TURN_PRELUDE

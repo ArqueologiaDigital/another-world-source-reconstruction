@@ -25,4 +25,4 @@ LABEL_96EF:
 	video offset=CINEMATIC_188, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
 	jne [HERO_ACTION_POS_MASK], 0x84, LABEL_9752
-	setup channel=0x17, address=LABEL_444D
+	setup channel=0x17, address=PRISON_HERO_GUN_CHARGE_ENTRY

@@ -90,7 +90,7 @@ LABEL_477B:
 	mov [0x47], 0x0FA0
 	or [0xB1], 0x0004
 	setup channel=0x02, address=KILL_CHANNEL_LANDING
-	setup channel=0x3C, address=LABEL_22A4
+	setup channel=0x3C, address=CAPSULE_PALETTE_FLASH_INTO_PAGE_0_PRESENT
 	ret
 
 

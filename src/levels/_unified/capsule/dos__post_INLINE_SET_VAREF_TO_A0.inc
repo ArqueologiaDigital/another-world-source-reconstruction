@@ -62,7 +62,7 @@ LABEL_2274:
 	video offset=CINEMATIC_403, x=[0xeb], y=[0xec]
 	killChannel
 
-LABEL_22A4:
+CAPSULE_PALETTE_FLASH_INTO_PAGE_0_PRESENT:
 	video offset=CINEMATIC_397, x=2, y=103
 	break
 	video offset=CINEMATIC_398, x=2, y=103

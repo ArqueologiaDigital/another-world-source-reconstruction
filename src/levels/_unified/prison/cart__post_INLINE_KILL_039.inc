@@ -117,13 +117,13 @@ LABEL_0372:
 	play id=0x0069, freq=0x14, vol=0x20, channel=0x01
 	mov [0xE6], 0x0007
 
-LABEL_03A1:
+PRISON_CUTSCENE_ZOOM_IN_PHASE_09_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	video offset=CINEMATIC_258, x=160, y=100, zoom=[0xe7]
 	video offset=CINEMATIC_259, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0001
-	djnz [0xE6], LABEL_03A1
+	djnz [0xE6], PRISON_CUTSCENE_ZOOM_IN_PHASE_09_LOOP
 	mov [0xE6], 0x0007
 
 LABEL_03BE:

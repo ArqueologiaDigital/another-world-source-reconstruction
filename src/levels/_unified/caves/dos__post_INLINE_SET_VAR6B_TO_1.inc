@@ -28,7 +28,7 @@ LABEL_37BE:
 	mov [0x6B], 0x0016
 	play id=0x006C, freq=0x14, vol=0x20, channel=0x02
 
-LABEL_37EC:
+HERO_DIRECTION_LEFT_IDLE_LOOP:
 	mov [0x09], 0x0089
 	call MUL_VAR6B_BY_11_INTO_VAR21
 	mov [0x07], 0x00A0
@@ -45,7 +45,7 @@ LABEL_37EC:
 	call LABEL_360B
 	break
 	add [0x6C], 0x0001
-	djnz [0x6B], LABEL_37EC
+	djnz [0x6B], HERO_DIRECTION_LEFT_IDLE_LOOP
 	mov [0x6C], 0x0078
 	mov [0x6B], 0x0014
 	play id=0x006C, freq=0x0F, vol=0x20, channel=0x02

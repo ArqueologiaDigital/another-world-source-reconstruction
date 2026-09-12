@@ -17,7 +17,7 @@ LABEL_7F22:
 	ret
 
 
-LABEL_7F3A:
+DRAW_FINAL_ESCAPE_LESTER_RUNNING_BG:
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_121, x=160, y=100
 	video offset=CINEMATIC_122, x=160, y=100
@@ -57,7 +57,7 @@ LABEL_7F7E:
 	mov [0x40], 0x008F
 	setPalette 0x01
 	call LOAD_RES90_COPY_PAGE0_TO_3_LOAD_RES91
-	call LABEL_84E8
+	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x01, address=INLINE_SET_VARED_TO_6
 	setup channel=0x03, address=INLINE_SET_VARE8_TO_F
 	setup channel=0x04, address=LABEL_12E0
@@ -83,8 +83,8 @@ LABEL_7FD7:
 	mov [0x41], 0x0028
 	mov [0x40], 0x0062
 	setPalette 0x01
-	call LABEL_7F3A
-	call LABEL_84E8
+	call DRAW_FINAL_ESCAPE_LESTER_RUNNING_BG
+	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x35, address=HANG_DRAW_CIN_145
 	setup channel=0x2D, address=KILL_CHANNEL_LANDING
 	setup channel=0x1D, address=KILL_CHANNEL_LANDING
@@ -109,7 +109,7 @@ LABEL_802A:
 	mov [0x40], 0x0062
 	setPalette 0x01
 	call LABEL_7F66
-	call LABEL_84E8
+	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x07, address=LABEL_130E
 	jmp VAR66_MOD_32_DRAW_DISPATCH
 LABEL_805A:
@@ -126,7 +126,7 @@ LABEL_805B:
 	mov [0x40], 0x0062
 	setPalette 0x01
 	call LABEL_7F4E
-	call LABEL_84E8
+	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x36, address=LABEL_28BD
 	add [0x68], 0x0019
 	setup channel=0x01, address=LABEL_2A16
@@ -152,7 +152,7 @@ LABEL_80A6:
 	mov [0x40], 0x009D
 	setPalette 0x0B
 	call LABEL_7F0E
-	call LABEL_84E8
+	call DELETE_CHANS_0_8_AND_RET
 	mov [0x32], 0x0001
 	deleteChannels first=0x14, last=0x16
 	call LABEL_24B8
@@ -175,8 +175,8 @@ LABEL_80F2:
 	mov [0x40], 0x009D
 	setPalette 0x0C
 	call LABEL_7F22
-	call LABEL_84E8
-	setup channel=0x16, address=LABEL_0826
+	call DELETE_CHANS_0_8_AND_RET
+	setup channel=0x16, address=HERO_CRAWL_LEFT_LOOP
 	mov [HERO_X], 0x00A0
 	mov [HERO_Y], 0x009D
 	mov [0x2A], 0x000F
@@ -189,7 +189,7 @@ LABEL_8133:
 	jne [HACK_VAR_67], 0x8A, LABEL_8152
 	deleteChannels first=0x01, last=0x02
 	setup channel=0x08, address=INCREMENT_VAR31
-	setup channel=0x3C, address=LABEL_2268
+	setup channel=0x3C, address=CAPSULE_PALETTE_FLASH_INTO_PAGE_3_PRESENT
 	selectVideoPage 0x03
 	video offset=CINEMATIC_001, x=160, y=100
 	selectVideoPage 0xFF

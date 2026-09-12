@@ -1,6 +1,6 @@
-DELAY_LOOP_VAREC:
+CAPSULE_LASER_SALVO_PHASE_1:
 	break
-	djnz [0xEC], DELAY_LOOP_VAREC
+	djnz [0xEC], CAPSULE_LASER_SALVO_PHASE_1
 	mov [0xEA], [HERO_X]
 	sub [0xEA], 0x0064
 	setup channel=0x05, address=LABEL_182D

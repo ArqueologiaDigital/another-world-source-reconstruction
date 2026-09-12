@@ -1,14 +1,14 @@
-LABEL_7F92:
-	jne [0x0A], 0x00, LABEL_80A5
+GUN_ZONE_TICK_LOOP:
+	jne [0x0A], 0x00, GUN_ZONE_TICK_LOOP_RESTART
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
-	je [0xF8], 0x00, LABEL_7FAA
+	je [0xF8], 0x00, GUN_PICKUP_SCENE
 	video offset=CINEMATIC_186, x=258, y=181
 
-LABEL_7FAA:
-	jl [HERO_X], 0xF0, LABEL_80A5
-	jg [HERO_X], 0x0104, LABEL_80A5
-	jge [0x04], 0x20, LABEL_80A5
+GUN_PICKUP_SCENE:
+	jl [HERO_X], 0xF0, GUN_ZONE_TICK_LOOP_RESTART
+	jg [HERO_X], 0x0104, GUN_ZONE_TICK_LOOP_RESTART
+	jge [0x04], 0x20, GUN_ZONE_TICK_LOOP_RESTART
 	break
 	break
 	mov [0x0A], 0x0001
@@ -46,25 +46,25 @@ LABEL_7FAA:
 	mov [PAUSE_SLICES], 0x0004
 	mov [0xC8], 0x0005
 
-LABEL_801E:
+GUN_FLICKER_HOLD_177:
 	video offset=CINEMATIC_THE_GUN, x=160, y=100
 	video offset=CINEMATIC_177, x=160, y=100
 	break
-	djnz [0xC8], LABEL_801E
+	djnz [0xC8], GUN_FLICKER_HOLD_177
 	mov [0xC8], 0x0005
 
-LABEL_802F:
+GUN_FLICKER_HOLD_176:
 	video offset=CINEMATIC_THE_GUN, x=160, y=100
 	video offset=CINEMATIC_176, x=160, y=100
 	break
-	djnz [0xC8], LABEL_802F
+	djnz [0xC8], GUN_FLICKER_HOLD_176
 	mov [0xC8], 0x0005
 
-LABEL_8040:
+GUN_FLICKER_FINAL_HOLD:
 	video offset=CINEMATIC_THE_GUN, x=160, y=100
 	video offset=CINEMATIC_177, x=160, y=100
 	break
-	djnz [0xC8], LABEL_8040
+	djnz [0xC8], GUN_FLICKER_FINAL_HOLD
 	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F0, x=160, y=100
 	video offset=CINEMATIC_177, x=160, y=100
 	break
@@ -88,18 +88,18 @@ LABEL_8040:
 	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F7, x=160, y=100
 	mov [0xC8], 0x000A
 
-DELAY_LOOP_VARC8:
+GUN_PICKUP_END_HOLD:
 	break
-	djnz [0xC8], DELAY_LOOP_VARC8
+	djnz [0xC8], GUN_PICKUP_END_HOLD
 	freezeChannels first=0x00, last=0x3A
 	copyVideoPage src=0x03, dst=0x00
 	add [0x68], 0x0014
 	break
 	setPalette 0x02
 
-LABEL_80A5:
+GUN_ZONE_TICK_LOOP_RESTART:
 	break
-	jmp LABEL_7F92
+	jmp GUN_ZONE_TICK_LOOP
 LABEL_80A9:
 	db 0x11
 
@@ -130,7 +130,7 @@ LABEL_80AA:
 
 
 LABEL_80F5:
-	setup channel=0x3B, address=LABEL_7F92
+	setup channel=0x3B, address=GUN_ZONE_TICK_LOOP
 	mov [0x42], 0x00BC
 	mov [0x43], 0x0FA0
 	mov [0x46], 0x0064

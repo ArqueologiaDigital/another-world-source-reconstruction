@@ -6,10 +6,10 @@ LABEL_9EBD:
 	jne [HERO_Y], [0x52], LABEL_9EE9
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, INLINE_SUB_VAR50_BY_14
 	mov [0x32], 0x0001
-	setup channel=0x14, address=LABEL_9E41
+	setup channel=0x14, address=CAVES_TELEPORT_UP_ENTRY
 
 LABEL_9EE9:
 	jne [HERO_Y], [0x51], INLINE_SUB_VAR50_BY_14
 	jne [HERO_POS_JUMP_DOWN], 0x01, INLINE_SUB_VAR50_BY_14
 	mov [0x32], 0x0001
-	setup channel=0x14, address=LABEL_9E1E
+	setup channel=0x14, address=CAVES_TELEPORT_DOWN_ENTRY

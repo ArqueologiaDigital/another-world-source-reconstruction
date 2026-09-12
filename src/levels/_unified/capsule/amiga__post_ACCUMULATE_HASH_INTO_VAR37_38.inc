@@ -30,9 +30,9 @@ LABEL_23D8:
 	call INIT_VARS_A1_A4_A7
 	setup channel=0x22, address=LABEL_2FB5
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
-	setup channel=0x24, address=LABEL_2FD5
+	setup channel=0x24, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
-	setup channel=0x26, address=LABEL_3010
+	setup channel=0x26, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
 	setup channel=0x28, address=LABEL_304B
 	ret
@@ -53,7 +53,7 @@ LABEL_2434:
 	mov [0x7C], 0x4010
 	mov [0x7D], 0x0831
 	mov [0x7E], 0x2710
-	setup channel=0x27, address=LABEL_3518
+	setup channel=0x27, address=CAPSULE_HERO_SCENE_LOOP_TICK_BEFORE_DISPATCH
 	ret
 
 
@@ -65,7 +65,7 @@ LABEL_2455:
 	mov [0x74], 0x4010
 	mov [0x75], 0x0863
 	mov [0x76], 0x0064
-	setup channel=0x25, address=LABEL_355A
+	setup channel=0x25, address=CAPSULE_BUDDY_SCENE_LOOP_TICK_THEN_CHECK_STATE
 	ret
 
 
@@ -77,7 +77,7 @@ LABEL_2476:
 	mov [0x6C], 0x0001
 	mov [0x6D], 0x0000
 	mov [0x6E], 0x2710
-	setup channel=0x23, address=LABEL_355A
+	setup channel=0x23, address=CAPSULE_BUDDY_SCENE_LOOP_TICK_THEN_CHECK_STATE
 	ret
 
 
@@ -243,7 +243,7 @@ LABEL_2856:
 	add [0x27], [RANDOM_SEED]
 	or [0x27], 0x1800
 	or [0x27], 0x2000
-	call LABEL_4420
+	call CAPSULE_PROJECTILE_RANDOM_OFFSET_UPDATE
 	break
 	break
 	jmp LABEL_2856
@@ -400,7 +400,7 @@ LABEL_2A3D:
 	add [0x27], [RANDOM_SEED]
 	or [0x27], 0x0000
 	or [0x27], 0x2000
-	call LABEL_4420
+	call CAPSULE_PROJECTILE_RANDOM_OFFSET_UPDATE
 	mov [0xF0], [0x3B]
 	add [0xF0], 0x0001
 

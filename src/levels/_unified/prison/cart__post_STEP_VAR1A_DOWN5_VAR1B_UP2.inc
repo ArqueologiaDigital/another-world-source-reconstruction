@@ -388,7 +388,7 @@ LABEL_7788:
 	video offset=CINEMATIC_082, x=[0x03], y=[0x04]
 	selectVideoPage 0xFF
 	call LABEL_1D30
-	setup channel=0x11, address=LABEL_1FA0
+	setup channel=0x11, address=PRISON_BUDDY_PATROL_TURN_TO_FACE_LEFT_ENTRY
 	setup channel=0x34, address=HANG_DRAW_CIN_549
 	setup channel=0x35, address=DRAW_CIN_540_543_WITH_SFX_57
 	setup channel=0x15, address=SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01
@@ -403,7 +403,7 @@ LABEL_7788:
 	setup channel=0x23, address=INLINE_SUB_VAR08_INIT_VAR29
 	setup channel=0x24, address=LABEL_14D3
 	setup channel=0x25, address=LABEL_267B
-	setup channel=0x26, address=LABEL_150E
+	setup channel=0x26, address=BUDDY_HACK_FIRST_TYPING_LOOP
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
 	setup channel=0x28, address=LABEL_1549
 	setup channel=0x3A, address=KILL_CHANNEL_LANDING

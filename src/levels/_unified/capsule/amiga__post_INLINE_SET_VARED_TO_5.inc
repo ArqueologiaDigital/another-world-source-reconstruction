@@ -115,7 +115,7 @@ LABEL_0EB3:
 	video offset=CINEMATIC_037, x=188, y=100, zoom=[0xe8]
 	add [0xE8], 0x000A
 	selectVideoPage 0xFF
-	jl [0xE8], 0xA0, KILL_CHAN_AT_03F2
+	jl [0xE8], 0xA0, CAPSULE_KILLCHAN_OR_SET_ACTION_MASK_BIT_2
 	mov [0xE8], 0x0022
 	killChannel
 

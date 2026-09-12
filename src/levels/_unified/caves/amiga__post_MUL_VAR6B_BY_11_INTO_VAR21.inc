@@ -1,7 +1,7 @@
 LABEL_34B5:
 	mov [0x21], [0x07]
 	mov [0x22], 0x0096
-	call CAVES_COPY_VAR40_TO_VAR22_L1
+	call CAVES_GROUND_MAP_DISPATCH
 	jg [0x22], 0xC8, SHARED_RET
 	mov [0x08], [0x22]
 	ret

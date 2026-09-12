@@ -113,15 +113,15 @@ LABEL_4131:
 	or [0x22], 0x1000
 
 LABEL_413B:
-	jne [0x5B], 0x0FA0, LABEL_415C
-	jne [0x5E], 0x0FA0, LABEL_415C
-	jne [0x61], 0x0FA0, LABEL_415C
+	jne [0x5B], 0x0FA0, CAPSULE_SHOT_SPAWN_TRY_SLOT0
+	jne [0x5E], 0x0FA0, CAPSULE_SHOT_SPAWN_TRY_SLOT0
+	jne [0x61], 0x0FA0, CAPSULE_SHOT_SPAWN_TRY_SLOT0
 	setup channel=0x30, address=LABEL_419B
 	setup channel=0x31, address=LABEL_41A4
 	setup channel=0x32, address=LABEL_41A4
 
-LABEL_415C:
-	jne [0x5B], 0x0FA0, LABEL_4171
+CAPSULE_SHOT_SPAWN_TRY_SLOT0:
+	jne [0x5B], 0x0FA0, CAPSULE_SHOT_SPAWN_TRY_SLOT1
 	mov [0x5A], [0x21]
 	mov [0x5B], [0x22]
 	mov [0x5C], [0x29]
@@ -129,7 +129,7 @@ LABEL_415C:
 	ret
 
 
-LABEL_4171:
+CAPSULE_SHOT_SPAWN_TRY_SLOT1:
 	jne [0x5E], 0x0FA0, LABEL_4186
 	mov [0x5D], [0x21]
 	mov [0x5E], [0x22]

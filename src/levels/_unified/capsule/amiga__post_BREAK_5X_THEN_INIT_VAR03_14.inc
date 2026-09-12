@@ -16,7 +16,7 @@ LABEL_0349:
 	fill page=0x00, color=0x00
 	fill page=0x03, color=0x00
 	fill page=0xFF, color=0x00
-	setup channel=0x3C, address=LABEL_21C5
+	setup channel=0x3C, address=CAPSULE_FRAME_PRESENT_FROM_PAGE_0_LOOP
 	play id=0x005E, freq=0x00, vol=0x00, channel=0x00
 	play id=0x005E, freq=0x00, vol=0x00, channel=0x01
 	play id=0x005E, freq=0x00, vol=0x00, channel=0x02
@@ -63,7 +63,7 @@ LABEL_03E1:
 
 .include "../_helpers/KILL_CHANNEL_LANDING.inc"
 
-KILL_CHAN_AT_03F2:
+CAPSULE_KILLCHAN_OR_SET_ACTION_MASK_BIT_2:
 	killChannel
 
 LABEL_03F3:
@@ -95,12 +95,12 @@ LABEL_03FF:
 	db 0x64, 0x0A, 0x02, 0xEF, 0x10, 0x60, 0x4A, 0xEE
 	db 0x97, 0xA0, 0x64, 0x05
 
-LABEL_04AB:
+HERO_CRAWL_RIGHT_LOOP:
 	video offset=CINEMATIC_370, x=[HERO_X], y=[HERO_Y]
 	break
 	je [HERO_ACTION], 0x01, LABEL_0518
-	je [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_0826
-	je [HERO_POS_LEFT_RIGHT], 0x00, LABEL_04AB
+	je [HERO_POS_LEFT_RIGHT], 0xFFFF, HERO_CRAWL_LEFT_LOOP
+	je [HERO_POS_LEFT_RIGHT], 0x00, HERO_CRAWL_RIGHT_LOOP
 	add [HERO_X], 0x0002
 	video offset=CINEMATIC_385, x=[HERO_X], y=[HERO_Y]
 	break
@@ -127,7 +127,7 @@ ANIM_CIN_382_LOOP_VARE6_AT_04E6:
 	break
 	video offset=CINEMATIC_370, x=[HERO_X], y=[HERO_Y]
 	break
-	jmp LABEL_04AB
+	jmp HERO_CRAWL_RIGHT_LOOP
 LABEL_0517:
 	db 0x11
 
@@ -165,7 +165,7 @@ LABEL_0518:
 	video offset=CINEMATIC_367, x=[HERO_X], y=[HERO_Y]
 	setup channel=0x01, address=LABEL_05C5
 	break
-	jmp LABEL_0826
+	jmp HERO_CRAWL_LEFT_LOOP
 
 LABEL_058A:
 	mov [HERO_X], 0x010C
@@ -186,11 +186,11 @@ LABEL_058A:
 	video offset=CINEMATIC_367, x=[HERO_X], y=[HERO_Y]
 	setup channel=0x01, address=LABEL_0636
 	break
-	jmp LABEL_0826
+	jmp HERO_CRAWL_LEFT_LOOP
 
 LABEL_05C5:
 	setPalette 0x0E
-	setup channel=0x3C, address=LABEL_22A4
+	setup channel=0x3C, address=CAPSULE_PALETTE_FLASH_INTO_PAGE_0_PRESENT
 	play id=0x005D, freq=0x14, vol=0x40, channel=0x02
 	play id=0x005D, freq=0x0A, vol=0x40, channel=0x01
 	play id=0x0057, freq=0x0A, vol=0x40, channel=0x03

@@ -42,9 +42,9 @@ LABEL_D561:
 	setup channel=0x1A, address=KILL_CHANNEL_LANDING
 	setup channel=0x18, address=LABEL_6EC3
 	setup channel=0x2E, address=LABEL_19A2
-	setup channel=0x2F, address=LABEL_6345
+	setup channel=0x2F, address=CAVES_LASER_SHOT_SLOTS_UPDATE_LOOP
 	setup channel=0x3B, address=KILL_CHANNEL_LANDING
-	setup channel=0x3C, address=LABEL_3D25
+	setup channel=0x3C, address=FRAME_PRESENT_RESTORE_PAGE_0_LOOP
 	call LABEL_01E1
 	deleteChannels first=0x30, last=0x33
 	mov [0x32], 0x0000

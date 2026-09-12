@@ -94,7 +94,7 @@ LABEL_04AB:
 	break
 	djnz [0x29], LABEL_04AB
 	mov [0x0E], 0x0003
-	call GUARDED_DRAW_CV_304_305
+	call CAVES_BEAST_PER_FRAME_TICK
 	break
 	call LABEL_83CB
 	break

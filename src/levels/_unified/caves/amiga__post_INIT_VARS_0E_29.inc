@@ -1,5 +1,5 @@
 LABEL_13C5:
-	call GUARDED_DRAW_CV_304_305
+	call CAVES_BEAST_PER_FRAME_TICK
 	break
 	djnz [0x29], LABEL_13C5
 	mov [0x0E], 0x0000
@@ -11,7 +11,7 @@ LABEL_13D5:
 	djnz [0x29], LABEL_13D5
 	play id=0x0070, freq=0x0D, vol=0x40, channel=0x03
 	mov [0x0E], 0x0003
-	call GUARDED_DRAW_CV_304_305
+	call CAVES_BEAST_PER_FRAME_TICK
 	break
 	call LABEL_83CB
 	break
@@ -44,7 +44,7 @@ LABEL_1414:
 	call LABEL_83E9
 	break
 	mov [0x0E], 0x0007
-	call GUARDED_DRAW_CV_304_305
+	call CAVES_BEAST_PER_FRAME_TICK
 	break
 	call LABEL_83CB
 	break
@@ -111,7 +111,7 @@ LABEL_14DD:
 	db 0x11
 
 LABEL_14DE:
-	call GUARDED_DRAW_CV_304_305
+	call CAVES_BEAST_PER_FRAME_TICK
 	deleteChannels first=0x34, last=0x35
 	and [0x09], 0xFBFF
 	break
@@ -126,11 +126,11 @@ LABEL_14FD:
 
 LABEL_14FE:
 	mov [0x29], 0x0002
-	call GUARDED_DRAW_CV_304_305
+	call CAVES_BEAST_PER_FRAME_TICK
 
 LABEL_1505:
 	break
-	call GUARDED_DRAW_CV_304_305
+	call CAVES_BEAST_PER_FRAME_TICK
 	djnz [0x29], LABEL_1505
 	deleteChannels first=0x34, last=0x35
 	and [0x09], 0xFBFF
@@ -242,7 +242,7 @@ LABEL_161D:
 
 LABEL_161E:
 	mov [0x0E], 0x0000
-	call GUARDED_DRAW_CV_304_305
+	call CAVES_BEAST_PER_FRAME_TICK
 	break
 	mov [0x0E], 0x0004
 	call LABEL_83CB
@@ -313,6 +313,6 @@ LABEL_1681:
 	video type=0, offset=COMMON_VIDEO_033, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x2A], 0x000F
 	call SET_VAR04_TO_0010
-	jmp LABEL_EDDA
+	jmp HERO_CROUCH_ARMED_RIGHT_LOOP
 LABEL_16F3:
 	db 0x11

@@ -30,12 +30,12 @@ LABEL_6655:
 	db 0x11
 
 LABEL_6656:
-	jne [0x1D], 0x0A, LABEL_6660
+	jne [0x1D], 0x0A, CAPSULE_BUDDY_RUN_LEFT_DRAW_1
 	mov [0x49], [0x11]
 	ret
 
 
-LABEL_6660:
+CAPSULE_BUDDY_RUN_LEFT_DRAW_1:
 	jne [0x1D], 0x0B, LABEL_666A
 	mov [0x4B], [0x11]
 	ret

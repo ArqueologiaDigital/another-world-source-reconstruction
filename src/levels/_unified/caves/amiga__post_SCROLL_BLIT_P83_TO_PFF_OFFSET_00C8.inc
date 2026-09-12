@@ -15,7 +15,7 @@ LABEL_3DC8:
 	copyVideoPage src=0x03, dst=0xFF
 	mov [PAUSE_SLICES], [0xF8]
 	break
-	jmp LABEL_3D3B
+	jmp FRAME_PRESENT_RESTORE_PAGE_3_LOOP
 LABEL_3DE5:
 	db 0x11
 
@@ -30,7 +30,7 @@ LABEL_3DE6:
 	copyVideoPage src=0x00, dst=0xFF
 	mov [PAUSE_SLICES], [0xF8]
 	break
-	jmp LABEL_3D25
+	jmp FRAME_PRESENT_RESTORE_PAGE_0_LOOP
 LABEL_3E03:
 	db 0x11
 
@@ -45,7 +45,7 @@ LABEL_3E04:
 	copyVideoPage src=0x00, dst=0xFF
 	mov [PAUSE_SLICES], [0xF8]
 	break
-	jmp LABEL_3D25
+	jmp FRAME_PRESENT_RESTORE_PAGE_0_LOOP
 
 LABEL_3E21:
 	setPalette 0x1F
@@ -58,7 +58,7 @@ LABEL_3E21:
 	copyVideoPage src=0x00, dst=0xFF
 	mov [PAUSE_SLICES], [0xF8]
 	break
-	jmp LABEL_3D25
+	jmp FRAME_PRESENT_RESTORE_PAGE_0_LOOP
 LABEL_3E3E:
 	db 0x11, 0x0B, 0x1F, 0xFF, 0x10, 0xFF, 0x0D, 0xFF
 	db 0x01, 0xF8, 0xFF, 0x00, 0xFF, 0x00, 0x01, 0x0B
@@ -69,11 +69,11 @@ LABEL_3E5D:
 	break
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	mov [SCROLL_Y], 0xFFFE
-	setup channel=0x3C, address=LABEL_3D49
+	setup channel=0x3C, address=COMMIT_WORK_PAGE_TO_PAGE_3_AND_REFETCH
 	break
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	mov [SCROLL_Y], 0x0001
-	setup channel=0x3C, address=LABEL_3D49
+	setup channel=0x3C, address=COMMIT_WORK_PAGE_TO_PAGE_3_AND_REFETCH
 	jmp LABEL_3E5D
 LABEL_3E78:
 	db 0x11

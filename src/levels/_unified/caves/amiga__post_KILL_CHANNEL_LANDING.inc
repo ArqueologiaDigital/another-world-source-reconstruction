@@ -37,7 +37,7 @@ LABEL_018F:
 	play id=0x0052, freq=0x14, vol=0x00, channel=0x01
 	play id=0x0052, freq=0x14, vol=0x00, channel=0x00
 	call LIKELY_A_COPY_PROTECTION_MECHANISM
-	setup channel=0x3C, address=LABEL_3D25
+	setup channel=0x3C, address=FRAME_PRESENT_RESTORE_PAGE_0_LOOP
 	mov [PAUSE_SLICES], 0x0005
 	break
 	setPalette 0x1D
@@ -49,7 +49,7 @@ LABEL_01BF:
 LABEL_01C6:
 	text id=0x013D, x=5, y=80, color=0x0E ; "PRESS BUTTON OR RETURN TO CONTINUE"
 	text id=0x013C, x=5, y=180, color=0x0D ; "        ACCESS CODE:"
-	call LABEL_02C7
+	call CAVES_ACCESS_CODE_TEXT_CASE_1E
 	break
 	je [HERO_ACTION], 0x00, LABEL_01C6
 	setup channel=0x00, address=ENTRY_POINT_OF_CAVES

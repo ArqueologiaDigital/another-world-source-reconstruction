@@ -15,7 +15,7 @@ DELAY_LOOP_VARE6_AT_3FAF:
 	selectVideoPage 0xFF
 	killChannel
 
-LABEL_3FDA:
+CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8:
 	fill page=0x01, color=0x00
 	fill page=0x02, color=0x00
 	selectVideoPage 0x01

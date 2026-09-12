@@ -5,9 +5,9 @@ LABEL_7E8A:
 	jg [HERO_X], [0x50], INLINE_SUB_VAR50_BY_14
 	jne [HERO_Y], [0x52], LABEL_7EB2
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, INLINE_SUB_VAR50_BY_14
-	setup channel=0x14, address=LABEL_7E12
+	setup channel=0x14, address=PRISON_TELEPORT_UP_ENTRY
 
 LABEL_7EB2:
 	jne [HERO_Y], [0x51], INLINE_SUB_VAR50_BY_14
 	jne [HERO_POS_JUMP_DOWN], 0x01, INLINE_SUB_VAR50_BY_14
-	setup channel=0x14, address=LABEL_7DEF
+	setup channel=0x14, address=PRISON_TELEPORT_DOWN_ENTRY

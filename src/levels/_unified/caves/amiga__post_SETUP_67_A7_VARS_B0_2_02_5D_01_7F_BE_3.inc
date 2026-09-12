@@ -44,7 +44,7 @@ LABEL_424B:
 	mov [0x7C], 0x0018
 	mov [0x7D], 0x0831
 	mov [0x7E], 0x2710
-	setup channel=0x27, address=LABEL_534D
+	setup channel=0x27, address=CAVES_BEAST_SCENE_LOOP_DISPATCH_LAST
 	ret
 
 

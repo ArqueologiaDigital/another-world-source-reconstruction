@@ -120,7 +120,7 @@ LABEL_0D97:
 	mov [0xF8], [0x68]
 	sub [0xF8], [0x78]
 	jg [0xF8], 0x28, LABEL_0D97
-	setup channel=0x27, address=LABEL_16B4
+	setup channel=0x27, address=BUDDY_HACK_SECOND_TYPING_LOOP
 	break
 	break
 	break
@@ -148,7 +148,7 @@ PRISON_INIT_VARS_2F_29_L1:
 	mov [0xAF], [0x3A]
 	add [0xAF], 0x0001
 
-DELAY_LOOP_VARAF:
+PRISON_OFFSCREEN_SHOT_FROM_RIGHT_DELAY_LOOP:
 	break
-	djnz [0xAF], DELAY_LOOP_VARAF
+	djnz [0xAF], PRISON_OFFSCREEN_SHOT_FROM_RIGHT_DELAY_LOOP
 	jmp PRISON_INIT_VARS_2F_29_L1

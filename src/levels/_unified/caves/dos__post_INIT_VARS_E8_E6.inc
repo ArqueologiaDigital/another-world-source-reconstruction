@@ -107,10 +107,10 @@ LABEL_2355:
 	mov [0x69], 0x00BA
 	mov [0xE6], 0x0001
 
-LABEL_237F:
+HERO_DIRECTION_STATE_FROM_INPUT:
 	break
 	video offset=CINEMATIC_344, x=[0x68], y=[0x69]
-	djnz [0xE6], LABEL_237F
+	djnz [0xE6], HERO_DIRECTION_STATE_FROM_INPUT
 	break
 	video offset=CINEMATIC_345, x=[0x68], y=[0x69]
 	break

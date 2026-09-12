@@ -102,7 +102,7 @@ LABEL_234D:
 	jl [HERO_X], 0xC2, LABEL_237A
 	jg [HERO_X], 0xD0, LABEL_2370
 	mov [0x46], 0xF060
-	setup channel=0x14, address=LABEL_237F
+	setup channel=0x14, address=HERO_DIRECTION_STATE_FROM_INPUT
 	setup channel=0x15, address=LABEL_23FC
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	killChannel
@@ -117,7 +117,7 @@ LABEL_237A:
 LABEL_237E:
 	db 0x11
 
-LABEL_237F:
+HERO_DIRECTION_STATE_FROM_INPUT:
 	mov [0x63], 0x0000
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_238E
 	mov [0x63], 0x0003
@@ -136,7 +136,7 @@ LABEL_23A3:
 
 LABEL_23AD:
 	break
-	jmp LABEL_237F
+	jmp HERO_DIRECTION_STATE_FROM_INPUT
 LABEL_23B1:
 	db 0x11
 

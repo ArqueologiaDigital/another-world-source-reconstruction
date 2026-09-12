@@ -28,7 +28,7 @@ DELAY_LOOP_VARED_AT_1D0B:
 	deleteChannels first=0x34, last=0x3B
 	setup channel=0x34, address=LABEL_22C7
 	setup channel=0x35, address=LABEL_2238
-	setup channel=0x36, address=LABEL_22A4
+	setup channel=0x36, address=CAPSULE_PALETTE_FLASH_INTO_PAGE_0_PRESENT
 	setup channel=0x37, address=LABEL_2274
 	deleteChannels first=0x03, last=0x04
 	setup channel=0x2D, address=HANG_DRAW_CIN_393

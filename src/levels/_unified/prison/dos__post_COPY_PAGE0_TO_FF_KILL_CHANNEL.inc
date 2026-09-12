@@ -110,9 +110,9 @@ GUN_FLICKER_FINAL_HOLD:
 	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F7, x=160, y=100
 	mov [0xC8], 0x0009
 
-DELAY_LOOP_VARC8:
+GUN_PICKUP_END_HOLD:
 	break
-	djnz [0xC8], DELAY_LOOP_VARC8
+	djnz [0xC8], GUN_PICKUP_END_HOLD
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
 	break
 	freezeChannels first=0x00, last=0x3A

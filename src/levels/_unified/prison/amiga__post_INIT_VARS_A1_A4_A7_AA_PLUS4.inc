@@ -26,7 +26,7 @@ LABEL_85F4:
 LABEL_85F5:
 	setup channel=0x10, address=LABEL_12E0
 	call LIKELY_A_COPY_PROTECTION_MECHANISM
-	setup channel=0x18, address=LABEL_41E3
+	setup channel=0x18, address=PRISON_SHIELD_TICK_SLOT_0_ENTRY
 	setup channel=0x2F, address=PRISON_DRAW_CIN505_AT_X21_Y27_L17
 	setup channel=0x3B, address=KILL_CHANNEL_LANDING
 	call PRISON_TRIVIAL_RET_L2

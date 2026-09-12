@@ -25,7 +25,7 @@ LABEL_C116:
 	or [0xB1], 0x0008
 	mov [SCROLL_Y], 0xFFFE
 	play id=0x005A, freq=0x0A, vol=0x40, channel=0x00
-	setup channel=0x3C, address=LABEL_3D49
+	setup channel=0x3C, address=COMMIT_WORK_PAGE_TO_PAGE_3_AND_REFETCH
 	ret
 
 
@@ -198,7 +198,7 @@ LABEL_C306:
 LABEL_C307:
 	selectVideoPage 0x03
 	fill page=0x03, color=0x00
-	call LABEL_CD67
+	call DRAW_GANTRY_PLATFORMS_BG
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0xFF
 
@@ -230,7 +230,7 @@ LABEL_C335:
 	play id=0x005A, freq=0x0F, vol=0x40, channel=0x03
 	break
 	mov [SCROLL_Y], 0x0004
-	setup channel=0x3C, address=LABEL_3D49
+	setup channel=0x3C, address=COMMIT_WORK_PAGE_TO_PAGE_3_AND_REFETCH
 
 LABEL_C360:
 	video offset=CINEMATIC_630, x=160, y=100

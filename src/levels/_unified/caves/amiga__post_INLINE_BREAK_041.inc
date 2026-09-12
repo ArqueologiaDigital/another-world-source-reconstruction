@@ -7,7 +7,7 @@ LABEL_E8EB:
 	db 0x0A, 0x01, 0x0A, 0x00, 0xE8, 0xAA, 0x00, 0x63
 	db 0x00, 0x01, 0x07, 0xE4, 0xDF, 0x11
 
-LABEL_E901:
+HERO_JUMP_LEFT_FROM_STAND:
 	mov [0x63], 0x0064
 	video type=0, offset=COMMON_VIDEO_087, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
@@ -59,7 +59,7 @@ LABEL_E901:
 LABEL_E9A7:
 	db 0x11
 
-LABEL_E9A8:
+HERO_JUMP_LEFT_RUN_PRELUDE:
 	sub [HERO_X], 0x0005
 	sub [HERO_X], 0x0007
 	call SET_VAR04_TO_0024
@@ -67,7 +67,7 @@ LABEL_E9A8:
 	mov [0x63], 0x0064
 	break
 
-LABEL_E9BC:
+HERO_JUMP_LEFT_FROM_RUN:
 	call SET_VAR04_TO_0024
 	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	video type=0, offset=COMMON_VIDEO_092, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -117,7 +117,7 @@ LABEL_E9BC:
 LABEL_EA62:
 	db 0x11
 
-LABEL_EA63:
+HERO_JUMP_RIGHT_FROM_STAND:
 	mov [0x63], 0x0064
 	video type=0, offset=COMMON_VIDEO_034, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
@@ -169,7 +169,7 @@ LABEL_EA63:
 LABEL_EB09:
 	db 0x11
 
-LABEL_EB0A:
+HERO_JUMP_RIGHT_RUN_PRELUDE:
 	add [HERO_X], 0x0005
 	add [HERO_X], 0x0007
 	call SET_VAR04_TO_0034
@@ -177,7 +177,7 @@ LABEL_EB0A:
 	mov [0x63], 0x0064
 	break
 
-LABEL_EB1E:
+HERO_JUMP_RIGHT_FROM_RUN:
 	call SET_VAR04_TO_0034
 	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	video type=0, offset=COMMON_VIDEO_039, x=[HERO_X], y=[HERO_Y], zoom=0x40

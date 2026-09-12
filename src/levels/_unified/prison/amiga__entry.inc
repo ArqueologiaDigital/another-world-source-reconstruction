@@ -79,10 +79,10 @@
 ;   RET_THEN_KILL_CHANNEL  (2-arm: cart, dos)
 ;   DRAW_CIN_486  (2-arm: amiga, dos)
 ;   DRAW_CIN_483  (2-arm: amiga, dos)
-;   DRAW_CIN473_AT_X21_Y27_ZOOM_40  (2-arm: amiga, dos)
+;   PRISON_SHOT_BLAST_FINAL_FRAME_RIGHT  (2-arm: amiga, dos)
 ;   DRAW_CIN_502  (2-arm: amiga, dos)
 ;   DRAW_CIN_499  (2-arm: amiga, dos)
-;   DRAW_CIN489_AT_X21_Y27_ZOOM_40  (2-arm: amiga, dos)
+;   PRISON_SHOT_BLAST_FINAL_FRAME_LEFT  (2-arm: amiga, dos)
 ;   MASK_VAR11_NOSIGN_INCR_VAR21_BY_14  (3-arm: amiga, cart, dos)
 ;   INLINE_ADD_VAR2C_BY_1  (3-arm: amiga, cart, dos)
 ;   COPY_VAR40_TO_VAR27  (3-arm: amiga, cart, dos)
@@ -253,8 +253,8 @@
 ;   INLINE_SET_VAR63_TO_6  (3-arm: amiga, cart, dos)
 ;   WALK_RIGHT_DRAW_CV142_MULTISTEP  (2-arm: cart, dos)
 ;   WALK_LEFT_DRAW_CV140_MULTISTEP  (2-arm: cart, dos)
-;   STEP_DRAW_CIN555_LEFT4_RIGHT1  (3-arm: amiga, cart, dos)
-;   DRAW_CIN555_STEP_RIGHT3  (3-arm: amiga, cart, dos)
+;   PRISON_HERO_WALK_LEFT_TURN_PRELUDE  (3-arm: amiga, cart, dos)
+;   PRISON_HERO_WALK_RIGHT_TURN_PRELUDE  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_187_TO_222_2F_AT_8E66E193  (2-arm: amiga, dos)
 ;   DRAW_CIN_212_TO_213_2F_AT_6B0D0A47  (2-arm: amiga, dos)
 
@@ -339,10 +339,10 @@
 ;   RET_THEN_KILL_CHANNEL  (2-arm: cart, dos)
 ;   DRAW_CIN_486  (2-arm: amiga, dos)
 ;   DRAW_CIN_483  (2-arm: amiga, dos)
-;   DRAW_CIN473_AT_X21_Y27_ZOOM_40  (2-arm: amiga, dos)
+;   PRISON_SHOT_BLAST_FINAL_FRAME_RIGHT  (2-arm: amiga, dos)
 ;   DRAW_CIN_502  (2-arm: amiga, dos)
 ;   DRAW_CIN_499  (2-arm: amiga, dos)
-;   DRAW_CIN489_AT_X21_Y27_ZOOM_40  (2-arm: amiga, dos)
+;   PRISON_SHOT_BLAST_FINAL_FRAME_LEFT  (2-arm: amiga, dos)
 ;   MASK_VAR11_NOSIGN_INCR_VAR21_BY_14  (3-arm: amiga, cart, dos)
 ;   INLINE_ADD_VAR2C_BY_1  (3-arm: amiga, cart, dos)
 ;   COPY_VAR40_TO_VAR27  (3-arm: amiga, cart, dos)
@@ -513,8 +513,8 @@
 ;   INLINE_SET_VAR63_TO_6  (3-arm: amiga, cart, dos)
 ;   WALK_RIGHT_DRAW_CV142_MULTISTEP  (2-arm: cart, dos)
 ;   WALK_LEFT_DRAW_CV140_MULTISTEP  (2-arm: cart, dos)
-;   STEP_DRAW_CIN555_LEFT4_RIGHT1  (3-arm: amiga, cart, dos)
-;   DRAW_CIN555_STEP_RIGHT3  (3-arm: amiga, cart, dos)
+;   PRISON_HERO_WALK_LEFT_TURN_PRELUDE  (3-arm: amiga, cart, dos)
+;   PRISON_HERO_WALK_RIGHT_TURN_PRELUDE  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_187_TO_222_2F_AT_8E66E193  (2-arm: amiga, dos)
 ;   DRAW_CIN_212_TO_213_2F_AT_6B0D0A47  (2-arm: amiga, dos)
 
@@ -593,10 +593,10 @@
 ;   PLAY_SFX_005C_CH01  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_486  (2-arm: amiga, dos)
 ;   DRAW_CIN_483  (2-arm: amiga, dos)
-;   DRAW_CIN473_AT_X21_Y27_ZOOM_40  (2-arm: amiga, dos)
+;   PRISON_SHOT_BLAST_FINAL_FRAME_RIGHT  (2-arm: amiga, dos)
 ;   DRAW_CIN_502  (2-arm: amiga, dos)
 ;   DRAW_CIN_499  (2-arm: amiga, dos)
-;   DRAW_CIN489_AT_X21_Y27_ZOOM_40  (2-arm: amiga, dos)
+;   PRISON_SHOT_BLAST_FINAL_FRAME_LEFT  (2-arm: amiga, dos)
 ;   MASK_VAR11_NOSIGN_INCR_VAR21_BY_14  (3-arm: amiga, cart, dos)
 ;   INLINE_ADD_VAR2C_BY_1  (3-arm: amiga, cart, dos)
 ;   COPY_VAR40_TO_VAR27  (3-arm: amiga, cart, dos)
@@ -755,8 +755,8 @@
 ;   INLINE_SET_VAR63_TO_6  (3-arm: amiga, cart, dos)
 ;   WALK_RIGHT_DRAW_CV142_MULTISTEP  (2-arm: cart, dos)
 ;   WALK_LEFT_DRAW_CV140_MULTISTEP  (2-arm: cart, dos)
-;   STEP_DRAW_CIN555_LEFT4_RIGHT1  (3-arm: amiga, cart, dos)
-;   DRAW_CIN555_STEP_RIGHT3  (3-arm: amiga, cart, dos)
+;   PRISON_HERO_WALK_LEFT_TURN_PRELUDE  (3-arm: amiga, cart, dos)
+;   PRISON_HERO_WALK_RIGHT_TURN_PRELUDE  (3-arm: amiga, cart, dos)
 ;   DRAW_CIN_187_TO_222_2F_AT_8E66E193  (2-arm: amiga, dos)
 ;   DRAW_CIN_212_TO_213_2F_AT_6B0D0A47  (2-arm: amiga, dos)
 
@@ -966,8 +966,8 @@
 ;   INLINE_SET_VAR63_TO_6  (3-arm: amiga, cart, dos)
 ;   WALK_RIGHT_DRAW_CV142_MULTISTEP  (2-arm: cart, dos)
 ;   WALK_LEFT_DRAW_CV140_MULTISTEP  (2-arm: cart, dos)
-;   STEP_DRAW_CIN555_LEFT4_RIGHT1  (3-arm: amiga, cart, dos)
-;   DRAW_CIN555_STEP_RIGHT3  (3-arm: amiga, cart, dos)
+;   PRISON_HERO_WALK_LEFT_TURN_PRELUDE  (3-arm: amiga, cart, dos)
+;   PRISON_HERO_WALK_RIGHT_TURN_PRELUDE  (3-arm: amiga, cart, dos)
 
 ; Unified source for PRISON with 205 folded shared bodies.
 ;
@@ -1175,8 +1175,8 @@
 ;   INLINE_SET_VAR63_TO_6  (3-arm: amiga, cart, dos)
 ;   WALK_RIGHT_DRAW_CV142_MULTISTEP  (2-arm: cart, dos)
 ;   WALK_LEFT_DRAW_CV140_MULTISTEP  (2-arm: cart, dos)
-;   STEP_DRAW_CIN555_LEFT4_RIGHT1  (3-arm: amiga, cart, dos)
-;   DRAW_CIN555_STEP_RIGHT3  (3-arm: amiga, cart, dos)
+;   PRISON_HERO_WALK_LEFT_TURN_PRELUDE  (3-arm: amiga, cart, dos)
+;   PRISON_HERO_WALK_RIGHT_TURN_PRELUDE  (3-arm: amiga, cart, dos)
 
 ; Unified source for PRISON with 5 folded shared bodies.
 ;
@@ -2211,7 +2211,7 @@ COMMON_VIDEO_297		EQU 0x1474
 	org 0x0000
 
 ENTRY_POINT_OF_PRISON:
-	call LABEL_0720
+	call CLEAR_PAGES_1_2_AND_BLIT_CHAIN_X8
 	setup channel=0x3C, address=LABEL_069F
 	mov [PAUSE_SLICES], 0x0004
 	mov [0xF6], 0x0001

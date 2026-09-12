@@ -51,7 +51,7 @@ LABEL_1CBF:
 LABEL_1CDE:
 	jne [0x57], 0x02, LABEL_1CEC
 	mov [0x57], 0x0000
-	setup channel=0x11, address=LABEL_1FA0
+	setup channel=0x11, address=PRISON_BUDDY_PATROL_TURN_TO_FACE_LEFT_ENTRY
 
 LABEL_1CEC:
 	jl [0x15], 0x28, LABEL_1CBF

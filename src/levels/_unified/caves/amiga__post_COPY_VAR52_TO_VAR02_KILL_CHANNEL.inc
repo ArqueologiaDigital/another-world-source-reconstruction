@@ -1,32 +1,32 @@
-LABEL_9E1E:
+CAVES_TELEPORT_DOWN_ENTRY:
 	mov [0x63], 0x0064
 	mov [HERO_Y], [0x52]
 	sub [HERO_Y], 0x001E
-	call LABEL_9E7E
+	call CAVES_TELEPORT_DOWN_BEAM_DRAW
 	play id=0x0057, freq=0x1C, vol=0x40, channel=0x00
 	break
 	mov [HERO_Y], [0x52]
-	call LABEL_9E7E
-	setup channel=0x1A, address=CAVES_COPY_VAR51_TO_VAR02_KILL_CHANNEL_L0
+	call CAVES_TELEPORT_DOWN_BEAM_DRAW
+	setup channel=0x1A, address=CAVES_TELEPORT_DOWN_SETTLE_LOOP
 	jmp LABEL_9E97
 LABEL_9E40:
 	db 0x11
 
-LABEL_9E41:
+CAVES_TELEPORT_UP_ENTRY:
 	mov [0x63], 0x0064
 	mov [HERO_Y], [0x51]
 	add [HERO_Y], 0x001E
-	call LABEL_9E64
+	call CAVES_TELEPORT_UP_BEAM_DRAW
 	play id=0x0057, freq=0x1C, vol=0x40, channel=0x00
 	break
 	mov [HERO_Y], [0x51]
-	call LABEL_9E64
-	setup channel=0x1A, address=LABEL_9DFA
+	call CAVES_TELEPORT_UP_BEAM_DRAW
+	setup channel=0x1A, address=CAVES_TELEPORT_UP_SETTLE_LOOP
 	jmp LABEL_9E97
 LABEL_9E63:
 	db 0x11
 
-LABEL_9E64:
+CAVES_TELEPORT_UP_BEAM_DRAW:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_855
@@ -42,7 +42,7 @@ DRAW_CIN_855:
 LABEL_9E7D:
 	db 0x11
 
-LABEL_9E7E:
+CAVES_TELEPORT_DOWN_BEAM_DRAW:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_853

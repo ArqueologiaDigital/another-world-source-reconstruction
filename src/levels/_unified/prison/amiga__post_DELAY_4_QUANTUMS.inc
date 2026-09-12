@@ -5,10 +5,10 @@ LABEL_00A2:
 
 LABEL_00AD:
 	break
-	jne [HERO_ACTION], 0x00, LABEL_00B8
+	jne [HERO_ACTION], 0x00, PRISON_ACCESS_CODE_SCREEN_START
 	djnz [0x03], LABEL_00AD
 
-LABEL_00B8:
+PRISON_ACCESS_CODE_SCREEN_START:
 	deleteChannels first=0x00, last=0x3F
 	setup channel=0x00, address=LABEL_00C1
 	killChannel

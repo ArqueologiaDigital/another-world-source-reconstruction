@@ -68,5 +68,5 @@ BUDDY_Y		EQU 0x08
 ; PRISON late-phase scroll-up + page management.
 .include "prison/prison_late_phase_scroll_and_pages.inc"
 
-; PRISON step-draws (STEP_DRAW_CIN555_LEFT4_RIGHT1) — buddy walking animations.
+; PRISON step-draws (PRISON_HERO_WALK_LEFT_TURN_PRELUDE) — buddy walking animations.
 .include "prison/prison_step_draws_and_breaks.inc"

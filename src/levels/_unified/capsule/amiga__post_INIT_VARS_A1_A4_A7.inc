@@ -4,7 +4,7 @@ LABEL_84DF:
 	ret
 
 
-LABEL_84E8:
+DELETE_CHANS_0_8_AND_RET:
 	deleteChannels first=0x00, last=0x08
 	call LABEL_84DF
 	ret
@@ -40,7 +40,7 @@ LABEL_8521:
 	setup channel=0x2E, address=KILL_CHANNEL_LANDING
 	setup channel=0x2E, address=LABEL_17D8
 	setup channel=0x3B, address=KILL_CHANNEL_LANDING
-	setup channel=0x3C, address=LABEL_21C5
+	setup channel=0x3C, address=CAPSULE_FRAME_PRESENT_FROM_PAGE_0_LOOP
 	deleteChannels first=0x30, last=0x33
 	mov [0x32], 0x0000
 	call INIT_RANGE_48_TO_4D_TO_MAX
