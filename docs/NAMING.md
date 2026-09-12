@@ -225,7 +225,10 @@ become nameable only once its labels are. Four of nine stages are still dominate
 by placeholder routine names, so their channels must wait. No channel name can
 ever be E4: there is no VM runtime in any repo (#0089).
 
-Invariant and nameable now, at E2:
+Verify any channel claim with
+`operand_inventory.py --layer channel-roles`, which reports setups, how many stages
+use the channel, and the dominant role of the routines on it. Invariant and
+nameable now, at E2:
 
 | channel | role | evidence |
 |---|---|---|
@@ -234,7 +237,7 @@ Invariant and nameable now, at E2:
 | `0x15` | hero run and deceleration | `deleteChannels 0x14,0x16` is the most common range operation at 94 sites — the triple is one unit |
 | `0x16` | hero physics and AI tick | as above |
 | `0x00` | stage entry | `ENTRY_POINT_OF_<STAGE>` |
-| `0x3D`–`0x3F` | system reserved | `freezeChannels 0x3D,0x3F` is the most common freeze range (13); `0x3D` is the only id in `0x00`–`0x3F` that is never a `setup` target anywhere |
+| `0x3D`–`0x3F` | treated as a unit by the engine | `freezeChannels 0x3D,0x3F` is the most common freeze range (13), and `0x3D` is the only id in `0x00`–`0x3F` that is never a `setup` target anywhere. Call the *range* reserved, not each slot: `0x3F` carries 75 setups over 6 stages and its dominant classified role is `init`, so it is in use |
 
 LAKE's full per-channel table is nameable today because LAKE is fully named; it is
 recorded in `another-world-archaeology/docs/content/research/17-vm-channel-map.md`.
