@@ -87,7 +87,12 @@ The lint fails on each of these.
 - Bare `_L<n>` fold-local suffixes. 39 remain in CODE_WHEEL, worst being
   `CW_CLEAR_VAR_22_L0` through `_L34` — 35 labels on one stem. These are emission
   counters.
-- `FOLD_BODY`, `DEDUP`, `__HELPER` — consolidation artefacts (#0093).
+- `FOLD_BODY`, `DEDUP`, `__HELPER` — consolidation artefacts (#0093). **Do not fix
+  `__HELPER` by stripping the suffix.** Tried 2026-09-12: 12 of the 13 such labels
+  collide with an existing label of the same stem, so stripping creates a duplicate
+  and the byte gate falls from 29/29 to 23/29. The suffix is what distinguishes the
+  shared helper from a same-named label elsewhere. Give the helper a real name
+  instead, which removes the collision as a side effect.
 - Any identifier containing the substring `EQU`. The assembler used to treat such
   a line as an EQU definition and silently drop it, so `..._SEQUENCE:` changed the
   assembled bytes with no error (#0073, fixed 2026-09-12). The lint keeps the rule
