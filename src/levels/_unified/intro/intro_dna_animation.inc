@@ -341,21 +341,41 @@ LABEL_0333:
 .endif
 
 DRAW_CINEMATICS_166_TO_171:
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_160, x=160, y=100
+.else
 	video offset=CINEMATIC_166, x=160, y=100
+.endif
 	play id=0x002C, freq=0x0F, vol=0x3F, channel=0x02
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_161, x=160, y=100
+.else
 	video offset=CINEMATIC_167, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_162, x=160, y=100
+.else
 	video offset=CINEMATIC_168, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_160, x=160, y=100
+.else
 	video offset=CINEMATIC_166, x=160, y=100
+.endif
 	killChannel
 
 DRAW_SCIENTIST_THEN_DIVERGE_INIT:
 	mov [0x10], 0x00E4
 	mov [0x11], 0x00E4
 	selectVideoPage 0x00
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_163, x=157, y=100
+.else
 	video offset=CINEMATIC_169, x=157, y=100
+.endif
 	selectVideoPage 0xFF
 	mov [0x0F], 0x001E
 
@@ -379,8 +399,13 @@ DRIFT_VAR_10_INC_BY_1_LOOP:
 	killChannel
 
 DRAW_CIN_170_171_AT_VAR10_VAR11:
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_164, x=[0x10], y=44
+	video offset=CINEMATIC_165, x=[0x11], y=44
+.else
 	video offset=CINEMATIC_170, x=[0x10], y=44
 	video offset=CINEMATIC_171, x=[0x11], y=44
+.endif
 	break
 	jmp DRAW_CIN_170_171_AT_VAR10_VAR11
 LABEL_0390:
@@ -395,51 +420,123 @@ LABEL_0390:
 .endif
 
 DRAW_CIN_453_454_SEQ:
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_452, x=160, y=100
+.else
 	video offset=CINEMATIC_453, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_453, x=160, y=100
+.else
 	video offset=CINEMATIC_454, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_454, x=160, y=100
+.else
 	video offset=CINEMATIC_455, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_455, x=160, y=100
+.else
 	video offset=CINEMATIC_456, x=160, y=100
+.endif
 	killChannel
 
 DRAW_CIN_035_PAL_3_REPEAT_HEAD:
 	setPalette 0x03
 	mov [PAUSE_SLICES], 0x0003
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_030, x=160, y=100
+.else
 	video offset=CINEMATIC_035, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_031, x=160, y=100
+.else
 	video offset=CINEMATIC_036, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_032, x=160, y=100
+.else
 	video offset=CINEMATIC_037, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_033, x=160, y=100
+.else
 	video offset=CINEMATIC_038, x=160, y=100
+.endif
 	play id=0x003C, freq=0x16, vol=0x0F, channel=0x00
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_034, x=160, y=100
+.else
 	video offset=CINEMATIC_039, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_035, x=160, y=100
+.else
 	video offset=CINEMATIC_040, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_036, x=160, y=100
+.else
 	video offset=CINEMATIC_041, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_037, x=160, y=100
+.else
 	video offset=CINEMATIC_042, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_038, x=160, y=100
+.else
 	video offset=CINEMATIC_043, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_039, x=160, y=100
+.else
 	video offset=CINEMATIC_044, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_040, x=160, y=100
+.else
 	video offset=CINEMATIC_045, x=160, y=100
+.endif
 	break
 	mov [PAUSE_SLICES], 0x0004
 	setPalette 0x1B
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_041, x=160, y=100
+.else
 	video offset=CINEMATIC_046, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_042, x=160, y=100
+.else
 	video offset=CINEMATIC_047, x=160, y=100
+.endif
 	mov [0x01], 0x000F
 
 DRAW_CIN_048_15_FRAMES_LOOP:
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_043, x=160, y=100
+.else
 	video offset=CINEMATIC_048, x=160, y=100
+.endif
 	djnz [0x01], DRAW_CIN_048_15_FRAMES_LOOP
 	setup channel=0x01, address=INTRO_FILL_AND_DRAW_CIN_103
 	setup channel=0x02, address=INTRO_PLAY_FX_AND_PALETTE_4_LOOP

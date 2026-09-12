@@ -1,16 +1,32 @@
 LESTER_HAND_PRESSING_KEYPAD_ANIMATION:
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_115, x=[0x01], y=[0x02]
+.else
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F0, x=[0x01], y=[0x02]
+.endif
 	break
 	jne [0x03], 0x00, LESTER_HAND_PRESSING_KEYPAD_ANIMATION
 	mov [0x03], 0x00FF
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_116, x=[0x01], y=[0x02]
+.else
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F1, x=[0x01], y=[0x02]
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_117, x=[0x01], y=[0x02]
+.else
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F2, x=[0x01], y=[0x02]
+.endif
 	break
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F3, x=[0x01], y=[0x02]
 	call PLAY_FX_BY_PHASE_VAR1E
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_119, x=[0x01], y=[0x02]
+.else
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F4, x=[0x01], y=[0x02]
+.endif
 	break
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F5, x=[0x01], y=[0x02]
 	break
@@ -83,8 +99,13 @@ DRIFT_VAR4_PLUS_9_FOR_20X:
 	setPalette 0x0E
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0x00
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F1, x=160, y=100
+	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F2, x=160, y=100
+.else
 	video offset=CINEMATIC_126, x=160, y=100
 	video offset=CINEMATIC_127, x=160, y=100
+.endif
 	selectVideoPage 0xFF
 	fill page=0xFF, color=0x09
 	break

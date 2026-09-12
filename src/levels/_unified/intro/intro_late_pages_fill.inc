@@ -219,7 +219,11 @@ INIT_PAGE0_PAUSE2_FILL1:
 .if BRANCH != "chahi_amiga_1991"
 	video offset=CINEMATIC_466, x=153, y=114
 .endif
+.if BRANCH == "chahi_amiga_1991"
+	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.else
 	setup channel=0x3C, address=BLIT_DISPATCH_HERO_ACTION_ALT
+.endif
 	setPalette 0x0D
 	mov [0x01], 0xFC45
 	mov [0x03], 0x0073
@@ -254,25 +258,46 @@ DRIFT_VAR1_PLUS_1_FOR_16X:
 	djnz [0x03], DRIFT_VAR1_PLUS_1_FOR_16X
 	copyVideoPage src=0xFE, dst=0x00
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
+.if BRANCH == "chahi_amiga_1991"
+	setup channel=0x3C, address=BLIT_AND_DISPATCH_HERO_ACTION
+.else
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 	break
 	setPalette 0x0C
 	copyVideoPage src=0xFE, dst=0x00
 	copyVideoPage src=0xFE, dst=0xFF
 	fill page=0x00, color=0x07
 	selectVideoPage 0x00
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_465, x=150, y=100
+	video offset=CINEMATIC_466, x=160, y=111
+.else
 	video offset=CINEMATIC_467, x=150, y=100
 	video offset=CINEMATIC_468, x=160, y=111
+.endif
 	fill page=0x03, color=0x02
 	selectVideoPage 0x03
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_467, x=160, y=100
+.else
 	video offset=CINEMATIC_469, x=160, y=100
+.endif
 	selectVideoPage 0xFF
 	break
 	mov [PAUSE_SLICES], 0x0004
 	setPalette 0x06
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_468, x=160, y=100
+.else
 	video offset=CINEMATIC_LIFT_DOORS_OPENING_F0, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_469, x=160, y=100
+.else
 	video offset=CINEMATIC_LIFT_DOORS_OPENING_F1, x=160, y=100
+.endif
 	break
 	video offset=CINEMATIC_LIFT_DOORS_OPENING_F2, x=160, y=100
 	break
@@ -343,7 +368,11 @@ DRIFT_VAR1_PLUS_1_FOR_16X:
 	setup channel=0x03, address=LESTER_WALKING_TOWARDS_CAMERA_ANIMATION
 	fill page=0x00, color=0x07
 	selectVideoPage 0x00
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_465, x=150, y=100
+.else
 	video offset=CINEMATIC_467, x=150, y=100
+.endif
 	selectVideoPage 0xFF
 	mov [0x05], 0x0019
 
@@ -376,13 +405,29 @@ DELAY_26F_THEN_PLAY_FX_36:
 
 DRAW_CIN_505_LOOP_VAR_02:
 	mov [0x02], [0x01]
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_LIFT_DOORS_OPENING_F33_AMIGA_EXTRA, x=153, y=[0x02]
+.else
 	video offset=CINEMATIC_505, x=153, y=[0x02]
+.endif
 	add [0x02], 0x0186
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_LIFT_DOORS_OPENING_F34_AMIGA_EXTRA, x=153, y=[0x02]
+.else
 	video offset=CINEMATIC_506, x=153, y=[0x02]
+.endif
 	add [0x02], 0x0124
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_505, x=153, y=[0x02]
+.else
 	video offset=CINEMATIC_507, x=153, y=[0x02]
+.endif
 	add [0x02], 0x0183
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_506, x=153, y=[0x02]
+.else
 	video offset=CINEMATIC_508, x=153, y=[0x02]
+.endif
 	break
 	jmp DRAW_CIN_505_LOOP_VAR_02
 .if BRANCH != "dos_1992"
@@ -397,7 +442,15 @@ LABEL_1BEE:
 .endif
 DRAW_CIN_182_AT_187_101_LOOP:
 	break
+; The 1991 Amiga release draws a different polygon in this loop:
+; CINEMATIC_PARTICLE_LAB_BG_F3 (0x3F6C) where the 1992 ports draw
+; CINEMATIC_182 (amiga 0xF2CC). Same x/y, different subject, so this
+; is a content difference and not an offset-table difference.
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_PARTICLE_LAB_BG_F3, x=187, y=101
+.else
 	video offset=CINEMATIC_182, x=187, y=101
+.endif
 	jmp DRAW_CIN_182_AT_187_101_LOOP
 .if BRANCH == "dos_1992"
 LABEL_1BE1:

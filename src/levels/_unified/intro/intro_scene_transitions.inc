@@ -19,8 +19,13 @@ WAIT_INTRO_SCENE_1:
 	break
 	djnz [0x02], WAIT_INTRO_SCENE_1
 	selectVideoPage 0x00
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_138, x=80, y=80
+	video offset=CINEMATIC_139, x=160, y=100
+.else
 	video offset=CINEMATIC_144, x=80, y=80
 	video offset=CINEMATIC_145, x=160, y=100
+.endif
 	selectVideoPage 0xFF
 	setup channel=0x09, address=DRAW_CINEMATICS_166_TO_171
 .if BRANCH == "chahi_amiga_1991"
@@ -37,8 +42,13 @@ WAIT_INTRO_SCENE_2:
 	break
 .endif
 	selectVideoPage 0x00
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_138, x=82, y=82
+	video offset=CINEMATIC_140, x=160, y=100
+.else
 	video offset=CINEMATIC_144, x=82, y=82
 	video offset=CINEMATIC_146, x=160, y=100
+.endif
 	selectVideoPage 0xFF
 	setup channel=0x09, address=DRAW_CINEMATICS_166_TO_171
 .if BRANCH == "chahi_amiga_1991"
@@ -55,8 +65,13 @@ WAIT_INTRO_SCENE_3:
 	break
 .endif
 	selectVideoPage 0x00
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_138, x=82, y=82
+	video offset=CINEMATIC_141, x=80, y=80, zoom=[0x20]	;@enc=alt
+.else
 	video offset=CINEMATIC_144, x=82, y=82
 	video offset=CINEMATIC_147, x=80, y=80, zoom=[0x20]	;@enc=alt
+.endif
 	selectVideoPage 0xFF
 	setup channel=0x09, address=DRAW_CINEMATICS_166_TO_171
 .if BRANCH == "chahi_amiga_1991"
@@ -73,8 +88,13 @@ WAIT_INTRO_SCENE_4:
 	break
 .endif
 	selectVideoPage 0x00
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_138, x=82, y=82
+	video offset=CINEMATIC_141, x=80, y=80
+.else
 	video offset=CINEMATIC_144, x=82, y=82
 	video offset=CINEMATIC_147, x=80, y=80
+.endif
 	selectVideoPage 0xFF
 	setup channel=0x09, address=DRAW_CINEMATICS_166_TO_171
 	setup channel=0x08, address=SETUP_INTRO_DNA_CHANNELS
@@ -91,7 +111,11 @@ WAIT_INTRO_SCENE_5:
 .endif
 	break
 	selectVideoPage 0x00
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_138, x=82, y=82
+.else
 	video offset=CINEMATIC_144, x=82, y=82
+.endif
 	video offset=CINEMATIC_CARKEY, x=160, y=100
 	selectVideoPage 0xFF
 	setup channel=0x09, address=DRAW_CINEMATICS_166_TO_171

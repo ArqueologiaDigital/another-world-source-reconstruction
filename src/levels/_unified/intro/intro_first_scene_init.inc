@@ -24,12 +24,21 @@ CINEMATIC_143		EQU 0xCECE
 INTRO_PAUSE_3_AND_DRAW_CIN_138:
 	mov [PAUSE_SLICES], 0x0003
 	fill page=0xFF, color=0x02
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_132, x=322, y=145
+	video offset=CINEMATIC_133, x=322, y=59
+	video offset=CINEMATIC_134, x=17, y=100
+	video offset=CINEMATIC_135, x=322, y=100
+	video offset=CINEMATIC_136, x=65534, y=99
+	video offset=CINEMATIC_137, x=160, y=108
+.else
 	video offset=CINEMATIC_138, x=322, y=145
 	video offset=CINEMATIC_139, x=322, y=59
 	video offset=CINEMATIC_140, x=17, y=100
 	video offset=CINEMATIC_141, x=322, y=100
 	video offset=CINEMATIC_142, x=65534, y=99
 	video offset=CINEMATIC_143, x=160, y=108
+.endif
 	text id=0x0192, x=22, y=16, color=0x05
 	copyVideoPage src=0xFF, dst=0x00
 	copyVideoPage src=0xFF, dst=0x03

@@ -141,11 +141,19 @@ WAIT_MUS_MARK_2B_THEN_TEXT:
 
 INTRO_FILL_AND_DRAW_413_414:
 	fill page=0xFF, color=0x02
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_LESTER_DRINKING_HAND_F6_AMIGA_EXTRA, x=145, y=117
+	video offset=CINEMATIC_413, x=160, y=100
+	video offset=CINEMATIC_414, x=145, y=108
+	video offset=CINEMATIC_415, x=145, y=108
+	video offset=CINEMATIC_416, x=95, y=100
+.else
 	video offset=CINEMATIC_413, x=145, y=117
 	video offset=CINEMATIC_414, x=160, y=100
 	video offset=CINEMATIC_415, x=145, y=108
 	video offset=CINEMATIC_416, x=145, y=108
 	video offset=CINEMATIC_LESTER_BACK_AT_HOLO_CONSOLE, x=95, y=100
+.endif
 	copyVideoPage src=0xFF, dst=0x00
 	setPalette 0x12
 	killChannel
@@ -171,8 +179,13 @@ DELAY_6_BEFORE_BLITTER_SETUP:
 	break
 .endif
 	selectVideoPage 0x00
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_PARTICLE_LAB_HOLO_CONSOLE, x=200, y=102
+	video offset=CINEMATIC_178, x=125, y=99
+.else
 	video offset=CINEMATIC_183, x=200, y=102
 	video offset=CINEMATIC_184, x=125, y=99
+.endif
 	selectVideoPage 0xFF
 	break
 .if BRANCH == "chahi_amiga_1991"
@@ -188,7 +201,11 @@ DELAY_7_BEFORE_BLITTER_SETUP:
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
 .endif
+.if BRANCH == "chahi_amiga_1991"
+	setup channel=0x3C, address=LABEL_008A
+.else
 	setup channel=0x3C, address=BLIT_DISPATCH_HERO_ACTION_ALT
+.endif
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
@@ -248,24 +265,49 @@ DELAY_9_BEFORE_BLITTER_SETUP:
 	break
 .endif
 	selectVideoPage 0x00
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_179, x=131, y=48
+.else
 	video offset=CINEMATIC_185, x=131, y=48
+.endif
 	selectVideoPage 0xFF
 	play id=0x0005, freq=0x1E, vol=0x3F, channel=0x02
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_180, x=117, y=39
+	video offset=CINEMATIC_LESTER_SEATED_AT_HOLO_CONSOLE_F0_AMIGA_EXTRA, x=137, y=64
+	video offset=CINEMATIC_182, x=143, y=40
+	video offset=CINEMATIC_183, x=129, y=56
+.else
 	video offset=CINEMATIC_186, x=117, y=39
 	video offset=CINEMATIC_187, x=137, y=64
 	video offset=CINEMATIC_188, x=143, y=40
 	video offset=CINEMATIC_189, x=129, y=56
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_183, x=121, y=64
+	video offset=CINEMATIC_182, x=153, y=33
+	video offset=CINEMATIC_LESTER_SEATED_AT_HOLO_CONSOLE_F0_AMIGA_EXTRA, x=143, y=73
+	video offset=CINEMATIC_180, x=107, y=31
+.else
 	video offset=CINEMATIC_189, x=121, y=64
 	video offset=CINEMATIC_188, x=153, y=33
 	video offset=CINEMATIC_187, x=143, y=73
 	video offset=CINEMATIC_186, x=107, y=31
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_180, x=96, y=20
+	video offset=CINEMATIC_LESTER_SEATED_AT_HOLO_CONSOLE_F0_AMIGA_EXTRA, x=149, y=83
+	video offset=CINEMATIC_182, x=168, y=21
+	video offset=CINEMATIC_183, x=114, y=71
+.else
 	video offset=CINEMATIC_186, x=96, y=20
 	video offset=CINEMATIC_187, x=149, y=83
 	video offset=CINEMATIC_188, x=168, y=21
 	video offset=CINEMATIC_189, x=114, y=71
+.endif
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE

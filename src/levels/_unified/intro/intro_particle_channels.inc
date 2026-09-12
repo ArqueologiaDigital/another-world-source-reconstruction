@@ -295,14 +295,23 @@ SETUP_INTRO_PARTICLE_CHANNELS:
 	setup channel=0x11, address=CH_11_INIT_PARTICLE_POS_2
 	setup channel=0x12, address=CH_12_INIT_PARTICLE_POS_3
 	mov [PAUSE_SLICES], 0x0003
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_027, x=215, y=100
+	video offset=CINEMATIC_000, x=90, y=101
+.else
 	video offset=CINEMATIC_032, x=215, y=100
 	video offset=CINEMATIC_005, x=90, y=101
+.endif
 	mov [0x01], 0x015E
 
 PARTICLE_PHASE_350_FRAME_TIMER:
 	break
 	djnz [0x01], PARTICLE_PHASE_350_FRAME_TIMER
+.if BRANCH == "chahi_amiga_1991"
+	setup channel=0x3C, address=LABEL_008A
+.else
 	setup channel=0x3C, address=BLIT_DISPATCH_HERO_ACTION_ALT
+.endif
 .if BRANCH == "chahi_amiga_1991"
 	setup channel=0x01, address=FILL_FF_PAGE_LOOP
 .endif
@@ -320,19 +329,39 @@ PARTICLE_PHASE_350_FRAME_TIMER:
 	setup channel=0x01, address=FILL_FF_PAGE_LOOP
 .endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_187, x=160, y=100
+.else
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F0, x=160, y=100
+.endif
 	break
 	mov [PAUSE_SLICES], 0x0003
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_188, x=160, y=100
+.else
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F1, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_189, x=160, y=100
+.else
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F2, x=160, y=100
+.endif
 	break
 	play id=0x000A, freq=0x05, vol=0x3F, channel=0x02
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_190, x=160, y=100
+.else
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F3, x=160, y=100
+.endif
 	break
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F4, x=160, y=100
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_192, x=160, y=100
+.else
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F5, x=160, y=100
+.endif
 	break
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F6, x=160, y=100
 	play id=0x000A, freq=0x19, vol=0x3F, channel=0x03
@@ -351,7 +380,11 @@ PARTICLE_PHASE_350_FRAME_TIMER:
 	break
 	break
 	break
+.if BRANCH == "chahi_amiga_1991"
+	setup channel=0x3C, address=BLIT_AND_DISPATCH_HERO_ACTION
+.else
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
+.endif
 .if BRANCH != "chahi_amiga_1991"
 	break
 .endif
@@ -484,62 +517,158 @@ FILL_PAGE_FF_COLOR_8_ONCE:
 	break
 	djnz [0x01], FILL_PAGE_FF_COLOR_8_ONCE
 	setup channel=0x04, address=SET_PALETTE_18
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_268, x=160, y=100
+.else
 	video offset=CINEMATIC_274, x=160, y=100
+.endif
 	play id=0x002C, freq=0x14, vol=0x3F, channel=0x03
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_269, x=160, y=100
+.else
 	video offset=CINEMATIC_275, x=160, y=100
+.endif
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x03
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_270, x=160, y=100
+.else
 	video offset=CINEMATIC_276, x=160, y=100
+.endif
 	play id=0x002C, freq=0x14, vol=0x3F, channel=0x03
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_271, x=160, y=100
+.else
 	video offset=CINEMATIC_277, x=160, y=100
+.endif
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x03
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_272, x=160, y=100
+.else
 	video offset=CINEMATIC_278, x=160, y=100
+.endif
 	play id=0x000E, freq=0x14, vol=0x3F, channel=0x02
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_273, x=160, y=100
+.else
 	video offset=CINEMATIC_279, x=160, y=100
+.endif
 	play id=0x000A, freq=0x05, vol=0x3F, channel=0x00
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_274, x=160, y=100
+.else
 	video offset=CINEMATIC_280, x=160, y=100
+.endif
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x01
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_275, x=160, y=100
+.else
 	video offset=CINEMATIC_281, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_276, x=160, y=100
+.else
 	video offset=CINEMATIC_282, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_277, x=160, y=100
+.else
 	video offset=CINEMATIC_283, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_278, x=160, y=100
+.else
 	video offset=CINEMATIC_284, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_279, x=160, y=100
+.else
 	video offset=CINEMATIC_285, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_280, x=160, y=100
+.else
 	video offset=CINEMATIC_286, x=160, y=100
+.endif
 	play id=0x000A, freq=0x0C, vol=0x3F, channel=0x03
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_281, x=160, y=100
+.else
 	video offset=CINEMATIC_287, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_282, x=160, y=100
+.else
 	video offset=CINEMATIC_288, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_283, x=160, y=100
+.else
 	video offset=CINEMATIC_289, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_284, x=160, y=100
+.else
 	video offset=CINEMATIC_290, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_285, x=160, y=100
+.else
 	video offset=CINEMATIC_291, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_286, x=160, y=100
+.else
 	video offset=CINEMATIC_292, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_287, x=160, y=100
+.else
 	video offset=CINEMATIC_293, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_288, x=160, y=100
+.else
 	video offset=CINEMATIC_294, x=160, y=100
+.endif
 	play id=0x000A, freq=0x02, vol=0x3F, channel=0x01
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_289, x=160, y=100
+.else
 	video offset=CINEMATIC_295, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_290, x=160, y=100
+.else
 	video offset=CINEMATIC_296, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_291, x=160, y=100
+.else
 	video offset=CINEMATIC_297, x=160, y=100
+.endif
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x00
 	play id=0x000A, freq=0x01, vol=0x3F, channel=0x02
 	break
@@ -555,18 +684,30 @@ BLINK_PAGE_FF_3X_LOOP:
 	djnz [0x01], BLINK_PAGE_FF_3X_LOOP
 	fill page=0xFF, color=0x08
 	selectVideoPage 0x00
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_292, x=160, y=100
+.else
 	video offset=CINEMATIC_298, x=160, y=100
+.endif
 	selectVideoPage 0xFF
 	break
 	fill page=0xFF, color=0x00
 	selectVideoPage 0x00
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_293, x=160, y=100
+.else
 	video offset=CINEMATIC_299, x=160, y=100
+.endif
 	play id=0x000E, freq=0x02, vol=0x3F, channel=0x03
 	selectVideoPage 0xFF
 	break
 	fill page=0xFF, color=0x08
 	selectVideoPage 0x00
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_294, x=160, y=100
+.else
 	video offset=CINEMATIC_300, x=160, y=100
+.endif
 	play id=0x000F, freq=0x02, vol=0x3F, channel=0x03
 	selectVideoPage 0xFF
 	break
@@ -594,41 +735,81 @@ WAIT_100_THEN_CIN_274:
 	break
 	djnz [0x01], WAIT_100_THEN_CIN_274
 	play id=0x0003, freq=0x14, vol=0x12, channel=0x03
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_268, x=160, y=100
+.else
 	video offset=CINEMATIC_274, x=160, y=100
+.endif
 	break
 	play id=0x0003, freq=0x14, vol=0x10, channel=0x03
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_269, x=160, y=100
+.else
 	video offset=CINEMATIC_275, x=160, y=100
+.endif
 	break
 	play id=0x0003, freq=0x14, vol=0x0E, channel=0x03
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_270, x=160, y=100
+.else
 	video offset=CINEMATIC_276, x=160, y=100
+.endif
 	play id=0x000E, freq=0x02, vol=0x32, channel=0x03
 	break
 	play id=0x0003, freq=0x14, vol=0x0C, channel=0x03
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_271, x=160, y=100
+.else
 	video offset=CINEMATIC_277, x=160, y=100
+.endif
 	play id=0x000E, freq=0x05, vol=0x32, channel=0x02
 	break
 	play id=0x0003, freq=0x14, vol=0x0A, channel=0x03
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_272, x=160, y=100
+.else
 	video offset=CINEMATIC_278, x=160, y=100
+.endif
 	play id=0x000E, freq=0x01, vol=0x3F, channel=0x00
 	break
 	play id=0x0003, freq=0x14, vol=0x08, channel=0x03
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_273, x=160, y=100
+.else
 	video offset=CINEMATIC_279, x=160, y=100
+.endif
 	break
 	play id=0x0003, freq=0x14, vol=0x06, channel=0x03
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_274, x=160, y=100
+.else
 	video offset=CINEMATIC_280, x=160, y=100
+.endif
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	play id=0x000E, freq=0x06, vol=0x3F, channel=0x01
 	break
 	play id=0x0003, freq=0x14, vol=0x04, channel=0x03
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_275, x=160, y=100
+.else
 	video offset=CINEMATIC_281, x=160, y=100
+.endif
 	break
 	setPalette 0x18
 	play id=0x0003, freq=0x14, vol=0x02, channel=0x03
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_276, x=160, y=100
+.else
 	video offset=CINEMATIC_282, x=160, y=100
+.endif
 	break
 	setPalette 0x1A
 	play id=0x000E, freq=0x00, vol=0x3F, channel=0x03
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_276, x=160, y=100
+.else
 	video offset=CINEMATIC_282, x=160, y=100
+.endif
 	break
 	setup channel=0x14, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x15, address=KILL_CHANNEL_ROUTINE

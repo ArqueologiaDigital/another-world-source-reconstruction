@@ -79,7 +79,11 @@ LABEL_008A:
 	copyVideoPage src=0x40, dst=0xFF
 .endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	jmp LABEL_008A
+.else
 	jmp BLIT_AND_DISPATCH_HERO_ACTION
+.endif
 
 BLIT_AND_COPY_PAGE_FF_LOOP:
 	add [0xC7], 0x0001
@@ -118,7 +122,11 @@ BLIT_DISPATCH_VAR3_LOOP:
 .endif
 	fill page=0xFF, color=0x01
 	break
+.if BRANCH == "chahi_amiga_1991"
+	jmp BLIT_AND_COPY_PAGE_FF_LOOP
+.else
 	jmp BLIT_DISPATCH_VAR3_LOOP
+.endif
 
 INIT_VIDEO_BUFFERS__INTRO_ENTRY_AND_DISPATCHERS:
 	fill page=0x01, color=0x00

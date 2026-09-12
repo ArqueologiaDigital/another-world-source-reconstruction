@@ -67,17 +67,28 @@ INIT_VAR_04_PAL_E_VAR_01:
 PARALLAX_CIN_126_127_LOOP:
 	sub [0x01], 0x0014
 	add [0x02], 0x0014
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F1, x=160, y=[0x01]
+	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F2, x=160, y=[0x02]
+	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F3_AMIGA_EXTRA, x=160, y=111, zoom=[0x04]
+	je [MUS_MARK], 0x10, MUS_10_FORCE_KILL_CHANNELS
+.else
 	video offset=CINEMATIC_126, x=160, y=[0x01]
 	video offset=CINEMATIC_127, x=160, y=[0x02]
 	video offset=CINEMATIC_128, x=160, y=111, zoom=[0x04]
 	je [MUS_MARK], 0x10, PARALLAX_LOOP_BREAK_AND_DJNZ
+.endif
 
 .if BRANCH != "chahi_amiga_1991"
 PARALLAX_LOOP_BREAK_AND_DJNZ:
 .endif
 	break
 	djnz [0x03], PARALLAX_CIN_126_127_LOOP
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F3_AMIGA_EXTRA, x=160, y=111, zoom=[0x04]
+.else
 	video offset=CINEMATIC_128, x=160, y=111, zoom=[0x04]
+.endif
 	setup channel=0x08, address=DRAW_CIN_128_521_ZOOM_VAR04
 	setup channel=0x09, address=DRAW_CIN_126_127_AT_VAR01_02
 	setup channel=0x05, address=CH_05_INIT_VARS_06_07_08
@@ -85,7 +96,11 @@ PARALLAX_LOOP_BREAK_AND_DJNZ:
 
 ZOOM_OUT_VAR4_M3_LOOP:
 	sub [0x04], 0x0003
+.if BRANCH == "chahi_amiga_1991"
+	je [MUS_MARK], 0x10, MUS_10_FORCE_KILL_CHANNELS
+.else
 	je [MUS_MARK], 0x10, ZOOM_OUT_BREAK_AND_DJNZ
+.endif
 
 .if BRANCH != "chahi_amiga_1991"
 ZOOM_OUT_BREAK_AND_DJNZ:
@@ -99,7 +114,11 @@ PARALLAX_REVERSE_3X:
 	add [0x01], 0x0014
 	sub [0x02], 0x0014
 	add [0x04], 0x0000
+.if BRANCH == "chahi_amiga_1991"
+	je [MUS_MARK], 0x10, MUS_10_FORCE_KILL_CHANNELS
+.else
 	je [MUS_MARK], 0x10, PARALLAX_REV_BREAK_AND_DJNZ
+.endif
 
 .if BRANCH != "chahi_amiga_1991"
 PARALLAX_REV_BREAK_AND_DJNZ:
@@ -115,7 +134,11 @@ PARALLAX_REV_BREAK_AND_DJNZ:
 DRIFT_CIN_129_PARALLAX_5X:
 	add [0x01], 0x0014
 	sub [0x02], 0x0014
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_518, x=160, y=111, zoom=[0x04]
+.else
 	video offset=CINEMATIC_129, x=160, y=111, zoom=[0x04]
+.endif
 .if BRANCH != "chahi_amiga_1991"
 	je [MUS_MARK], 0x10, MUS_10_FORCE_KILL_CHANNELS
 .endif
@@ -144,8 +167,13 @@ DRAW_CIN_130_NESTED_OUTER:
 	mov [0x09], 0x0003
 
 DRAW_CIN_130_AT_VAR67_INNER:
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F4, x=[0x06], y=16
+	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F4, x=[0x07], y=18
+.else
 	video offset=CINEMATIC_130, x=[0x06], y=16
 	video offset=CINEMATIC_130, x=[0x07], y=18
+.endif
 	break
 	djnz [0x09], DRAW_CIN_130_AT_VAR67_INNER
 	add [0x06], 0x0002
@@ -174,7 +202,11 @@ DELAY_3F_BEFORE_CIN_130_DRAW:
 	break
 	djnz [0x05], DELAY_3F_BEFORE_CIN_130_DRAW
 	selectVideoPage 0x00
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F4, x=96, y=131
+.else
 	video offset=CINEMATIC_130, x=96, y=131
+.endif
 	selectVideoPage 0xFF
 	mov [0x05], 0x0004
 
@@ -194,8 +226,13 @@ LABEL_21E0:
 .endif
 
 DRAW_CIN_126_127_AT_VAR01_02:
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F1, x=160, y=[0x01]
+	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F2, x=160, y=[0x02]
+.else
 	video offset=CINEMATIC_126, x=160, y=[0x01]
 	video offset=CINEMATIC_127, x=160, y=[0x02]
+.endif
 	break
 	jmp DRAW_CIN_126_127_AT_VAR01_02
 LABEL_21EF:
@@ -210,15 +247,27 @@ LABEL_21EF:
 .endif
 
 DRAW_CIN_128_521_ZOOM_VAR04:
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F3_AMIGA_EXTRA, x=160, y=111, zoom=[0x04]
+.else
 	video offset=CINEMATIC_128, x=160, y=111, zoom=[0x04]
+.endif
 	break
 	video offset=CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F0, x=160, y=111, zoom=[0x04]
 	break
 	video offset=CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F1, x=160, y=111, zoom=[0x04]
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_517, x=160, y=111, zoom=[0x04]
+.else
 	video offset=CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F2, x=160, y=111, zoom=[0x04]
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_518, x=160, y=111, zoom=[0x04]
+.else
 	video offset=CINEMATIC_129, x=160, y=111, zoom=[0x04]
+.endif
 	break
 	video offset=CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F3, x=160, y=111, zoom=[0x04]
 	break
@@ -230,15 +279,27 @@ DRAW_CIN_128_521_ZOOM_VAR04:
 	break
 	video offset=CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F3, x=160, y=111, zoom=[0x04]
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_518, x=160, y=111, zoom=[0x04]
+.else
 	video offset=CINEMATIC_129, x=160, y=111, zoom=[0x04]
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_517, x=160, y=111, zoom=[0x04]
+.else
 	video offset=CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F2, x=160, y=111, zoom=[0x04]
+.endif
 	break
 	video offset=CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F1, x=160, y=111, zoom=[0x04]
 	break
 	video offset=CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F0, x=160, y=111, zoom=[0x04]
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F3_AMIGA_EXTRA, x=160, y=111, zoom=[0x04]
+.else
 	video offset=CINEMATIC_128, x=160, y=111, zoom=[0x04]
+.endif
 	break
 	video offset=CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F6, x=160, y=111, zoom=[0x04]
 	break
@@ -255,12 +316,24 @@ LABEL_2263:
 .endif
 
 LESTER_WALKING_TOWARDS_CAMERA_ANIMATION:
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_466, x=160, y=111, zoom=[0x04]
+.else
 	video offset=CINEMATIC_468, x=160, y=111, zoom=[0x04]
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_507, x=160, y=111, zoom=[0x04]
+.else
 	video offset=CINEMATIC_LESTER_WALKING_TOWARDS_CAMERA_F0, x=160, y=111, zoom=[0x04]
+.endif
 	break
 	play id=0x003C, freq=0x0A, vol=0x0F, channel=0x02
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_508, x=160, y=111, zoom=[0x04]
+.else
 	video offset=CINEMATIC_LESTER_WALKING_TOWARDS_CAMERA_F1, x=160, y=111, zoom=[0x04]
+.endif
 	break
 	video offset=CINEMATIC_LESTER_WALKING_TOWARDS_CAMERA_F2, x=160, y=111, zoom=[0x04]
 	break
@@ -281,11 +354,23 @@ LESTER_WALKING_TOWARDS_CAMERA_ANIMATION:
 	break
 	video offset=CINEMATIC_LESTER_WALKING_TOWARDS_CAMERA_F2, x=160, y=111, zoom=[0x04]
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_508, x=160, y=111, zoom=[0x04]
+.else
 	video offset=CINEMATIC_LESTER_WALKING_TOWARDS_CAMERA_F1, x=160, y=111, zoom=[0x04]
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_507, x=160, y=111, zoom=[0x04]
+.else
 	video offset=CINEMATIC_LESTER_WALKING_TOWARDS_CAMERA_F0, x=160, y=111, zoom=[0x04]
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_466, x=160, y=111, zoom=[0x04]
+.else
 	video offset=CINEMATIC_468, x=160, y=111, zoom=[0x04]
+.endif
 	break
 	video offset=CINEMATIC_LESTER_WALKING_TOWARDS_CAMERA_F7, x=160, y=111, zoom=[0x04]
 	break

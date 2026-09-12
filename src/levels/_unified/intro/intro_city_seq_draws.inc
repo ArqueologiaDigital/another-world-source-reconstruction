@@ -1,5 +1,9 @@
 DRAW_CIN_190_LOOP:
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_184, x=[0x03], y=[0x04]
+.else
 	video offset=CINEMATIC_190, x=[0x03], y=[0x04]
+.endif
 	break
 	jmp DRAW_CIN_190_LOOP
 LABEL_119E:
@@ -14,7 +18,11 @@ LABEL_119E:
 .endif
 
 DRAW_CIN_431_LOOP:
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_430, x=[0x03], y=[0x04]
+.else
 	video offset=CINEMATIC_431, x=[0x03], y=[0x04]
+.endif
 	break
 	jmp DRAW_CIN_431_LOOP
 LABEL_11A8:
@@ -29,11 +37,23 @@ LABEL_11A8:
 .endif
 
 DRAW_CITY_SEQ_432_433:
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_431, x=160, y=100
+.else
 	video offset=CINEMATIC_432, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_432, x=160, y=100
+.else
 	video offset=CINEMATIC_433, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_433, x=160, y=100
+.else
 	video offset=CINEMATIC_434, x=160, y=100
+.endif
 	break
 	jmp DRAW_CITY_SEQ_432_433
 LABEL_11BB:
@@ -48,11 +68,23 @@ LABEL_11BB:
 .endif
 
 DRAW_CITY_SEQ_439_440:
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_438, x=160, y=100
+.else
 	video offset=CINEMATIC_439, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_439, x=160, y=100
+.else
 	video offset=CINEMATIC_440, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_440, x=160, y=100
+.else
 	video offset=CINEMATIC_441, x=160, y=100
+.endif
 	break
 	jmp DRAW_CITY_SEQ_439_440
 LABEL_11CE:
@@ -67,13 +99,29 @@ LABEL_11CE:
 .endif
 
 DRAW_CITY_SEQ_435_436:
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_434, x=160, y=100
+.else
 	video offset=CINEMATIC_435, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_435, x=160, y=100
+.else
 	video offset=CINEMATIC_436, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_436, x=160, y=100
+.else
 	video offset=CINEMATIC_437, x=160, y=100
+.endif
 	break
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_437, x=160, y=100
+.else
 	video offset=CINEMATIC_438, x=160, y=100
+.endif
 	break
 	jmp DRAW_CITY_SEQ_435_436
 LABEL_11E6:
@@ -89,8 +137,13 @@ LABEL_11E6:
 
 INTRO_FILL_AND_DRAW_CIN_429_430:
 	fill page=0xFF, color=0x02
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_428, x=160, y=100
+	video offset=CINEMATIC_429, x=160, y=100
+.else
 	video offset=CINEMATIC_429, x=160, y=100
 	video offset=CINEMATIC_430, x=160, y=100
+.endif
 	setPalette 0x09
 	copyVideoPage src=0xFF, dst=0x00
 	killChannel
@@ -268,8 +321,13 @@ DELAY_14_BEFORE_BLITTER_SETUP:
 	break
 .endif
 	selectVideoPage 0x03
+.if BRANCH == "chahi_amiga_1991"
+	video offset=CINEMATIC_185, x=162, y=100
+	video offset=CINEMATIC_186, x=234, y=163
+.else
 	video offset=CINEMATIC_HOLO_ACCELERATOR_LOOP_DIAGRAM, x=162, y=100
 	video offset=CINEMATIC_192, x=234, y=163
+.endif
 	selectVideoPage 0xFF
 	copyVideoPage src=0x03, dst=0x00
 .if BRANCH != "chahi_amiga_1991"
