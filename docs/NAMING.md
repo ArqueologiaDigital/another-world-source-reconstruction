@@ -162,6 +162,42 @@ misfiled.
 - Never embed screen coordinates. `CINEMATIC_DECOR_AT_305_155_F0` both leaks a
   magic number and breaks frame-index parsing —
   `CINEMATIC_LAKE_DECOR_AT_327_164` parses as family `…AT_327`, frame 164.
+### When the ports draw different art at the same slot
+
+A polygon constant is one symbol shared by the branches with a per-port value,
+used at one bytecode position. The ports do not always draw the same thing there,
+and then **the name belongs to the branch whose art it describes, not to the
+symbol**.
+
+Measured on INTRO, 2026-09-12, with `tools/check_constant_pairings.py`:
+
+| constants | pairs | same picture in both ports |
+|---|---:|---:|
+| already carrying a semantic name | 172 | 159 (92 %) |
+| still `CINEMATIC_<index>` | 366 | 8 (2 %) |
+
+`CINEMATIC_<index>` was never a cross-port claim. It means "the Nth polygon this
+port's bytecode references", numbered per port. Where it diverges it is not by
+much: 320 of the 327 divergences that could be traced are within 8 indices, the
+two releases drawing neighbouring frames of the same run, because the 1991
+release has frames the 1992 ports dropped and one extra frame early shifts
+everything after it. **The family is shared; the frame is not.**
+
+So:
+
+- Name a constant on every branch only when the art agrees. Check, do not assume.
+- Otherwise scope the name to its branch with
+  `tools/apply_branch_scoped_names.py`. This costs nothing structurally: every
+  draw site referencing a divergent constant is already inside a `.if BRANCH`
+  block, because the divergent art is what made that line diverge.
+- Never carry a name earned on one port's render onto another port's symbol. It
+  would be right 2 % of the time.
+
+And before commissioning a naming pass over a stage, run the pairing check
+first. Ten passes over INTRO produced sound evidence that could not be used as
+written, because nobody had asked whether the names they were naming meant one
+thing or four.
+
 - Cross-port name sharing needs ≥95 % full-polygon similarity
   (`tree_audit.py --min-similarity 95`). That threshold is the 2026-05-11 default
   and is **not settled**: #0107's own bands put 158 pairs between 75 % and 99.5 %,
