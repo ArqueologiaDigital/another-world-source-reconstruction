@@ -103,13 +103,13 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_04_LOOP:
 	djnz [0xE6], PRISON_CUTSCENE_ZOOM_IN_PHASE_04_LOOP
 	mov [0xE6], 0x0007
 
-LABEL_02FB:
+PRISON_CUTSCENE_ZOOM_IN_PHASE_04_DONE:
 	break
 	add [SCROLL_Y], 0x0002
 	video offset=CINEMATIC_256, x=160, y=100, zoom=[0xe7]
 	video offset=CINEMATIC_257, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0001
-	djnz [0xE6], LABEL_02FB
+	djnz [0xE6], PRISON_CUTSCENE_ZOOM_IN_PHASE_04_DONE
 	play id=0x0066, freq=0x0A, vol=0x14, channel=0x02
 	play id=0x0069, freq=0x14, vol=0x20, channel=0x03
 	play id=0x0069, freq=0x14, vol=0x20, channel=0x01

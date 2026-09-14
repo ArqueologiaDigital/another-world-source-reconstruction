@@ -4,7 +4,7 @@ LABEL_3DC3:
 LABEL_3DC7:
 	db 0x11
 
-LABEL_3DC8:
+CAVES_BARRIER_BREACH_PALETTE_FLASH_FRAME:
 	setPalette 0x1F
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
@@ -19,7 +19,7 @@ LABEL_3DC8:
 LABEL_3DE5:
 	db 0x11
 
-LABEL_3DE6:
+CAVES_HERO_FALL_DEATH_PALETTE_FLASH_FRAME:
 	setPalette 0x1E
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
@@ -34,7 +34,7 @@ LABEL_3DE6:
 LABEL_3E03:
 	db 0x11
 
-LABEL_3E04:
+CAVES_ROCK_CRUSH_PALETTE_FLASH_FRAME:
 	setPalette 0x1F
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
@@ -47,7 +47,7 @@ LABEL_3E04:
 	break
 	jmp FRAME_PRESENT_RESTORE_PAGE_0_LOOP
 
-LABEL_3E21:
+CAVES_SCREEN_ED_EVENT_PALETTE_FLASH_FRAME:
 	setPalette 0x1F
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF

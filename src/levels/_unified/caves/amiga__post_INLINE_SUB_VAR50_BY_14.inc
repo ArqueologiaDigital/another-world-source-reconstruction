@@ -113,7 +113,7 @@ LABEL_A07F:
 	mov [0x44], 0x0058
 	mov [0x45], 0x0000
 	setPalette 0x02
-	call LABEL_CD93
+	call CAVES_SCREEN_46_BACKDROP_DRAW
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	jmp CHECK_VAR66_VAR67_AND_BLIT
 LABEL_A0AB:
@@ -157,7 +157,7 @@ LABEL_A11B:
 	mov [0xF8], [0xB2]
 	and [0xF8], 0x0020
 	jne [0xF8], 0x00, TRAMP_A12B
-	call LABEL_432D
+	call CAVES_ACTOR_SLOT_1_SPAWN_ON_SCREEN_47
 
 TRAMP_A12B:
 	jmp CHECK_VAR66_VAR67_AND_BLIT
@@ -314,7 +314,7 @@ LABEL_A2C3:
 
 LABEL_A2FE:
 	setPalette 0x11
-	call LABEL_CEDA
+	call CAVES_SCREEN_6D_BACKDROP_DRAW
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	setup channel=0x38, address=LABEL_1881
 	setup channel=0x36, address=LABEL_4847
@@ -382,7 +382,7 @@ LABEL_A3AB:
 	mov [0x41], 0x0078
 	mov [0x44], 0x0061
 	mov [0x45], 0x0000
-	call LABEL_CF11
+	call CAVES_SCREEN_88_BACKDROP_DRAW
 	call LABEL_D518
 	deleteChannels first=0x00, last=0x06
 	setup channel=0x3B, address=LABEL_C3F4
@@ -502,11 +502,11 @@ LABEL_A53A:
 LABEL_A542:
 	mov [0x68], 0x005E
 	mov [0x69], 0x0000
-	setup channel=0x22, address=CAVES_INLINE_SET_VAR73_TO_6_L3
+	setup channel=0x22, address=CAVES_TRAP_COLUMN_WATCH_SLOT_0_LOOP
 	setup channel=0x23, address=LABEL_2DAC
 	mov [0x6A], 0x0064
 	mov [0x6B], 0xFFFB
-	setup channel=0x24, address=LABEL_2BB5
+	setup channel=0x24, address=CAVES_TRAP_COLUMN_WATCH_SLOT_1_LOOP
 	setup channel=0x25, address=LABEL_2E0C
 	jne [0xF8], 0xC0, LABEL_A583
 	mov [0x6C], [0x68]
@@ -554,7 +554,7 @@ LABEL_A5E8:
 	setup channel=0x1C, address=LABEL_0953
 	setup channel=0x1B, address=INIT_VARS_6C_6D_71_70
 	jg [HERO_Y], 0x6E, LABEL_A5FA
-	setup channel=0x1B, address=INIT_VARS_71_6C_6D
+	setup channel=0x1B, address=CAVES_AMBIENT_DRIFT_PERCH_WAIT_INIT
 
 LABEL_A5FA:
 	mov [0x74], 0x0082
@@ -589,7 +589,7 @@ LABEL_A643:
 	mov [0x41], 0x006E
 	mov [0x44], 0x0046
 	mov [0x45], 0x0000
-	call LABEL_CFBF
+	call CAVES_SCREEN_CA_BACKDROP_DRAW
 	call DELETE_GAME_AND_FX_CHANNELS
 	setup channel=0x3B, address=LABEL_C4D5
 	deleteChannels first=0x22, last=0x2B
@@ -608,7 +608,7 @@ LABEL_A686:
 	mov [0x68], [0x48]
 	add [0x68], 0x000E
 	mov [0x69], 0x002A
-	setup channel=0x22, address=CAVES_INLINE_SET_VAR73_TO_6_L3
+	setup channel=0x22, address=CAVES_TRAP_COLUMN_WATCH_SLOT_0_LOOP
 	setup channel=0x23, address=LABEL_2DAC
 
 LABEL_A6AE:
@@ -641,26 +641,26 @@ LABEL_A6B6:
 	setup channel=0x23, address=LABEL_2F9B
 	mov [0x6A], 0x00C8
 	mov [0x6B], 0x0077
-	setup channel=0x24, address=LABEL_2872
+	setup channel=0x24, address=CAVES_TRAP_SPOT_WATCH_SLOT_1_LOOP
 	setup channel=0x25, address=LABEL_2F9B
 	mov [0x6C], 0x00FA
 	mov [0x6D], 0x0077
-	setup channel=0x26, address=LABEL_2880
+	setup channel=0x26, address=CAVES_TRAP_SPOT_WATCH_SLOT_2_LOOP
 	setup channel=0x27, address=LABEL_2F9B
 	mov [0x6E], [0x48]
 	add [0x6E], 0x000E
 	mov [0x6F], 0x0032
-	setup channel=0x28, address=CAVES_INLINE_SET_VAR74_TO_6_L3
+	setup channel=0x28, address=CAVES_TRAP_COLUMN_WATCH_SLOT_3_LOOP
 	setup channel=0x29, address=LABEL_2DAC
 	mov [0x70], [0x4A]
 	add [0x70], 0x000E
 	mov [0x71], 0x0025
-	setup channel=0x2A, address=CAVES_INLINE_SET_VAR75_TO_6_L3
+	setup channel=0x2A, address=CAVES_TRAP_COLUMN_WATCH_SLOT_4_LOOP
 	setup channel=0x2B, address=LABEL_2DAC
 	mov [0x72], [0x4C]
 	add [0x72], 0x000E
 	mov [0x73], 0x003D
-	setup channel=0x2C, address=CAVES_INLINE_SET_VAR76_TO_6_L3
+	setup channel=0x2C, address=CAVES_TRAP_COLUMN_WATCH_SLOT_5_LOOP
 	setup channel=0x2D, address=LABEL_2DAC
 	deleteChannels first=0x2C, last=0x2D
 	jmp CHECK_VAR66_VAR67_AND_BLIT
@@ -686,11 +686,11 @@ LABEL_A768:
 	setup channel=0x23, address=LABEL_2F9B
 	mov [0x6A], 0x00A0
 	mov [0x6B], 0x0077
-	setup channel=0x24, address=LABEL_2872
+	setup channel=0x24, address=CAVES_TRAP_SPOT_WATCH_SLOT_1_LOOP
 	setup channel=0x25, address=LABEL_2F9B
 	mov [0x6C], 0x00B9
 	mov [0x6D], 0x0077
-	setup channel=0x26, address=LABEL_2880
+	setup channel=0x26, address=CAVES_TRAP_SPOT_WATCH_SLOT_2_LOOP
 	setup channel=0x27, address=LABEL_2F9B
 	je [0xB0], 0x03, TRAMP_A847
 	mov [HERO_Y], 0x0082
@@ -702,7 +702,7 @@ LABEL_A768:
 	mov [0x6E], [0x48]
 	add [0x6E], 0x000E
 	mov [0x6F], 0x0038
-	setup channel=0x28, address=CAVES_INLINE_SET_VAR74_TO_6_L3
+	setup channel=0x28, address=CAVES_TRAP_COLUMN_WATCH_SLOT_3_LOOP
 	setup channel=0x29, address=LABEL_2DAC
 
 LABEL_A7F7:
@@ -714,7 +714,7 @@ LABEL_A7F7:
 	mov [0x70], [0x4A]
 	add [0x70], 0x000E
 	mov [0x71], 0x0030
-	setup channel=0x2A, address=CAVES_INLINE_SET_VAR75_TO_6_L3
+	setup channel=0x2A, address=CAVES_TRAP_COLUMN_WATCH_SLOT_4_LOOP
 	setup channel=0x2B, address=LABEL_2DAC
 
 LABEL_A81F:
@@ -726,7 +726,7 @@ LABEL_A81F:
 	mov [0x72], [0x4C]
 	add [0x72], 0x000E
 	mov [0x73], 0x0037
-	setup channel=0x2C, address=CAVES_INLINE_SET_VAR76_TO_6_L3
+	setup channel=0x2C, address=CAVES_TRAP_COLUMN_WATCH_SLOT_5_LOOP
 	setup channel=0x2D, address=LABEL_2DAC
 
 TRAMP_A847:
@@ -1023,7 +1023,7 @@ LABEL_AB9C:
 	and [0xF8], 0x0080
 	jne [0xF8], 0x00, LABEL_ABBD
 	or [0xB2], 0x0080
-	call LABEL_426C
+	call CAVES_ACTOR_SLOT_0_SPAWN_ON_SCREEN_4D
 
 LABEL_ABBD:
 	setup channel=0x3B, address=LABEL_CC79
@@ -1193,7 +1193,7 @@ LABEL_ADAB:
 	mov [0x44], 0x008A
 	mov [0x45], 0x0000
 	setPalette 0x0B
-	call LABEL_D354
+	call CAVES_SCREEN_70_BACKDROP_DRAW
 	mov [0xA9], 0x00EA
 	mov [0xAA], 0x03E8
 	mov [0xAB], [HACK_VAR_67]
@@ -1347,13 +1347,13 @@ LABEL_AF3E:
 	and [0xF8], 0x0380
 	add [0x4D], [0xF8]
 	setPalette 0x15
-	call LABEL_D3BE
+	call CAVES_SCREEN_92_BACKDROP_DRAW
 	call LABEL_4CE0
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	mov [0xF8], [0xB1]
 	and [0xF8], 0x0001
 	je [0xF8], 0x00, LABEL_AFBC
-	call LABEL_43E6
+	call CAVES_ACTOR_SLOT_0_SPAWN_ON_SCREEN_92
 
 LABEL_AFBC:
 	setup channel=0x39, address=LABEL_46F3
@@ -1390,7 +1390,7 @@ LABEL_AFC8:
 	and [0xF8], 0x0380
 	add [0x4D], [0xF8]
 	setPalette 0x15
-	call LABEL_D3CE
+	call CAVES_SCREEN_93_BACKDROP_DRAW
 	call LABEL_4CE0
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	jmp CHECK_VAR66_VAR67_AND_BLIT

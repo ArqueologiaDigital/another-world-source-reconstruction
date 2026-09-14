@@ -155,7 +155,7 @@ LABEL_80A6:
 	call DELETE_CHANS_0_8_AND_RET
 	mov [0x32], 0x0001
 	deleteChannels first=0x14, last=0x16
-	call LABEL_24B8
+	call CAPSULE_ACTOR_SLOT_29_SPAWN_ON_ROOM_INIT
 	setup channel=0x37, address=LABEL_0895
 	mov [PAUSE_SLICES], 0x0006
 	play id=0x0066, freq=0x05, vol=0x0F, channel=0x03

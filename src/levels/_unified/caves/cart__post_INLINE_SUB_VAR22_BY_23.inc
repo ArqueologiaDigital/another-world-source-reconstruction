@@ -120,7 +120,7 @@ LABEL_61C9:
 	jne [0x5B], 0x0FA0, LABEL_61EA
 	jne [0x5E], 0x0FA0, LABEL_61EA
 	jne [0x61], 0x0FA0, LABEL_61EA
-	setup channel=0x30, address=LABEL_6229
+	setup channel=0x30, address=CAVES_LASER_BOLT_SPAN_FROM_06
 	setup channel=0x31, address=LABEL_6232
 	setup channel=0x32, address=LABEL_6232
 
@@ -153,10 +153,10 @@ LABEL_6228:
 	ret
 
 
-LABEL_6229:
+CAVES_LASER_BOLT_SPAN_FROM_06:
 	mov [0x0D], 0x0000
 	break
-	jmp LABEL_6229
+	jmp CAVES_LASER_BOLT_SPAN_FROM_06
 LABEL_6231:
 	db 0x11
 

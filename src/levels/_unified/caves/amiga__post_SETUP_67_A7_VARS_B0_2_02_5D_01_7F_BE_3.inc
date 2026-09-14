@@ -36,7 +36,7 @@ LABEL_421B:
 	ret
 
 
-LABEL_424B:
+CAVES_ACTOR_SLOT_2_SPAWN_ON_SCREEN_4E:
 	mov [0x78], 0x0118
 	mov [0x79], 0x00B0
 	mov [0x7A], 0x004E
@@ -48,7 +48,7 @@ LABEL_424B:
 	ret
 
 
-LABEL_426C:
+CAVES_ACTOR_SLOT_0_SPAWN_ON_SCREEN_4D:
 	mov [0x68], 0x00FA
 	mov [0x69], 0x00B0
 	mov [0x6A], 0x004D
@@ -108,7 +108,7 @@ LABEL_42EC:
 	ret
 
 
-LABEL_430C:
+CAVES_ACTOR_SLOT_2_SPAWN_ON_SCREEN_70:
 	mov [0x78], 0x00FA
 	mov [0x79], 0x0087
 	mov [0x7A], 0x0070
@@ -120,7 +120,7 @@ LABEL_430C:
 	ret
 
 
-LABEL_432D:
+CAVES_ACTOR_SLOT_1_SPAWN_ON_SCREEN_47:
 	mov [0x70], 0x0118
 	mov [0x71], 0x0084
 	mov [0x72], 0x0047
@@ -186,7 +186,7 @@ LABEL_43BE:
 	ret
 
 
-LABEL_43E6:
+CAVES_ACTOR_SLOT_0_SPAWN_ON_SCREEN_92:
 	mov [0x68], 0x000A
 	mov [0x69], 0x0014
 	mov [0x6A], 0x0092
@@ -194,7 +194,7 @@ LABEL_43E6:
 	mov [0x6C], 0x0000
 	mov [0x6D], 0x0811
 	mov [0x6E], 0x2710
-	setup channel=0x23, address=INIT_VARS_29_07_08
+	setup channel=0x23, address=CAVES_CREATURE_WALK_RIGHT_INIT
 	ret
 
 

@@ -173,7 +173,7 @@ LABEL_6D9D:
 	ret
 
 
-LABEL_6DB1:
+PRISON_HERO_STAND_LEFT_DRAW:
 	video type=0, offset=COMMON_VIDEO_018, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_019, x=[HERO_X], y=[HERO_Y], zoom=0x40

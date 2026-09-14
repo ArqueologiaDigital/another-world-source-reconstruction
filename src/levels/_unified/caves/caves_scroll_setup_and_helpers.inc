@@ -172,7 +172,7 @@ INIT_HASH_VARS_67_66_65_68_69:
 .include "amiga__post_INIT_HASH_VARS_67_66_65_68_69.inc"
 .endif
 
-INIT_VARS_29_07_08:
+CAVES_CREATURE_WALK_RIGHT_INIT:
 	mov [0x29], 0x0028
 	mov [0x07], 0x00C8
 	mov [0x08], 0x000A

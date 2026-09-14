@@ -130,21 +130,21 @@ LABEL_6C27:
 	ret
 
 
-LABEL_6C45:
+PRISON_HERO_WALK_RIGHT_POSE_04:
 	video type=0, offset=COMMON_VIDEO_038, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video offset=CINEMATIC_221, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
-LABEL_6C56:
+PRISON_HERO_WALK_RIGHT_POSE_05:
 	video type=0, offset=COMMON_VIDEO_040, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_041, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6C67:
+PRISON_HERO_WALK_RIGHT_POSE_06:
 	video type=0, offset=COMMON_VIDEO_042, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_043, x=[HERO_X], y=[HERO_Y], zoom=0x40

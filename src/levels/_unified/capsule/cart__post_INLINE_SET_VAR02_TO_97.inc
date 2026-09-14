@@ -96,7 +96,7 @@ LABEL_A564:
 	setup channel=0x18, address=LABEL_5C5B
 	setup channel=0x18, address=KILL_CHANNEL_LANDING
 	setup channel=0x19, address=LABEL_2121
-	setup channel=0x1B, address=LABEL_67CB
+	setup channel=0x1B, address=CAPSULE_ACTOR_FACE_LEFT_THEN_RUN
 	setup channel=0x2F, address=KILL_CHANNEL_LANDING
 	setup channel=0x35, address=LABEL_21AA
 	mov [HERO_X], 0x0046
@@ -683,7 +683,7 @@ LABEL_ACAC:
 	call LABEL_34A6
 	call LABEL_34CA
 	call LABEL_34EE
-	call LABEL_3724
+	call CAPSULE_ACTOR_IDLE_AFTER_HIGH_SHOT_LEFT_LOOP
 	call GUARDED_ALIEN_ANIM_CV_128
 	call LABEL_3708
 	call GUARDED_DRAW_CV_304_305

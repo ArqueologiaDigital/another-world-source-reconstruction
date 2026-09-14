@@ -95,7 +95,7 @@ LABEL_CE3D:
 	ret
 
 
-LABEL_CEDA:
+CAVES_SCREEN_6D_BACKDROP_DRAW:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_413, x=160, y=100
 	video offset=CINEMATIC_414, x=160, y=100
@@ -120,7 +120,7 @@ LABEL_CEF2:
 	ret
 
 
-LABEL_CF11:
+CAVES_SCREEN_88_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_581, x=160, y=100
 	video offset=CINEMATIC_582, x=160, y=100
@@ -198,7 +198,7 @@ LABEL_CF9F:
 	ret
 
 
-LABEL_CFBF:
+CAVES_SCREEN_CA_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_714, x=160, y=100
 	video offset=CINEMATIC_715, x=160, y=100
@@ -503,7 +503,7 @@ LABEL_D32D:
 	ret
 
 
-LABEL_D354:
+CAVES_SCREEN_70_BACKDROP_DRAW:
 	fill page=0x00, color=0x03
 	video offset=CINEMATIC_537, x=160, y=100
 	video offset=CINEMATIC_335, x=180, y=70
@@ -541,7 +541,7 @@ LABEL_D36C:
 LABEL_D3B8:
 	db 0x78, 0x7A, 0x94, 0x4C, 0x7B, 0x11
 
-LABEL_D3BE:
+CAVES_SCREEN_92_BACKDROP_DRAW:
 	fill page=0x00, color=0x02
 	video offset=CINEMATIC_606, x=160, y=100
 	video offset=CINEMATIC_617, x=160, y=100
@@ -549,7 +549,7 @@ LABEL_D3BE:
 	ret
 
 
-LABEL_D3CE:
+CAVES_SCREEN_93_BACKDROP_DRAW:
 	fill page=0x00, color=0x02
 	video offset=CINEMATIC_606, x=160, y=100
 	video offset=CINEMATIC_619, x=160, y=100

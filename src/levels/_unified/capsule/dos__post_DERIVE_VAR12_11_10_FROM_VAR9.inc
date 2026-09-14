@@ -102,20 +102,20 @@ LABEL_43D9:
 	db 0x11
 
 LABEL_43DA:
-	jne [0x09], 0x01, LABEL_43E6
+	jne [0x09], 0x01, CAPSULE_SHOT_BEAM_SPAN_DRAW_FROM_02
 	ret
 
 
 	video offset=CINEMATIC_686, x=[0x26], y=[BUDDY_Y]
 
-LABEL_43E6:
+CAPSULE_SHOT_BEAM_SPAN_DRAW_FROM_02:
 	jne [0x09], 0x02, LABEL_43F2
 	video offset=CINEMATIC_688, x=[0x26], y=[BUDDY_Y]
 	ret
 
 
 LABEL_43F2:
-	jne [0x09], 0x03, LABEL_4407
+	jne [0x09], 0x03, CAPSULE_ACTOR_SHOT_SPAWN_FACING_LEFT
 	selectVideoPage 0x00
 	video offset=CINEMATIC_686, x=[0x26], y=[BUDDY_Y]
 	selectVideoPage 0xFF
@@ -123,7 +123,7 @@ LABEL_43F2:
 	ret
 
 
-LABEL_4407:
+CAPSULE_ACTOR_SHOT_SPAWN_FACING_LEFT:
 	jne [0x09], 0x04, LABEL_441C
 	selectVideoPage 0x00
 	video offset=CINEMATIC_497, x=[0x26], y=[BUDDY_Y]

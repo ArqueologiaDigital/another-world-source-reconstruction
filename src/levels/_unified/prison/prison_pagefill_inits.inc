@@ -11,7 +11,7 @@ INIT_VARS_16_17:
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN657_AT_X1A_Y1B:
+PRISON_WAKE_CLOSEUP_PUPIL_WIDEST:
 	video offset=CINEMATIC_657, x=[0x1a], y=[0x1b]
 .endif
 

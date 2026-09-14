@@ -4,7 +4,7 @@ DELAY_LOOP_VAR70:
 	mov [0x71], 0xFFFF
 	mov [0x70], 0x0004
 
-LABEL_0D56:
+CAVES_AMBIENT_DRIFT_PATH_HERO_LOW_PHASE_1:
 	break
 	add [0x6E], 0x0580
 	mov [0xF8], [0x6E]
@@ -16,10 +16,10 @@ LABEL_0D56:
 	shr [0xF8], 0x0008
 	add [0x6D], [0xF8]
 	and [0x6F], 0x00FF
-	djnz [0x70], LABEL_0D56
+	djnz [0x70], CAVES_AMBIENT_DRIFT_PATH_HERO_LOW_PHASE_1
 	mov [0x70], 0x0006
 
-LABEL_0D83:
+CAVES_AMBIENT_DRIFT_PATH_HERO_LOW_PHASE_2:
 	break
 	add [0x6E], 0x0BAA
 	mov [0xF8], [0x6E]
@@ -31,10 +31,10 @@ LABEL_0D83:
 	shr [0xF8], 0x0008
 	add [0x6D], [0xF8]
 	and [0x6F], 0x00FF
-	djnz [0x70], LABEL_0D83
+	djnz [0x70], CAVES_AMBIENT_DRIFT_PATH_HERO_LOW_PHASE_2
 	mov [0x70], 0x0005
 
-LABEL_0DB0:
+CAVES_AMBIENT_DRIFT_PATH_HERO_LOW_PHASE_3:
 	break
 	add [0x6E], 0x0CCC
 	mov [0xF8], [0x6E]
@@ -46,7 +46,7 @@ LABEL_0DB0:
 	shr [0xF8], 0x0008
 	sub [0x6D], [0xF8]
 	and [0x6F], 0x00FF
-	djnz [0x70], LABEL_0DB0
+	djnz [0x70], CAVES_AMBIENT_DRIFT_PATH_HERO_LOW_PHASE_3
 	mov [0x70], 0x0002
 
 LABEL_0DDD:
@@ -65,7 +65,7 @@ LABEL_0DDD:
 	mov [0x71], 0x0001
 	mov [0x70], 0x0002
 
-LABEL_0E0E:
+CAVES_AMBIENT_DRIFT_PATH_HERO_LOW_PHASE_5:
 	break
 	add [0x6E], 0x0280
 	mov [0xF8], [0x6E]
@@ -77,10 +77,10 @@ LABEL_0E0E:
 	shr [0xF8], 0x0008
 	sub [0x6D], [0xF8]
 	and [0x6F], 0x00FF
-	djnz [0x70], LABEL_0E0E
+	djnz [0x70], CAVES_AMBIENT_DRIFT_PATH_HERO_LOW_PHASE_5
 	mov [0x70], 0x0003
 
-LABEL_0E3B:
+CAVES_AMBIENT_DRIFT_PATH_HERO_LOW_PHASE_6:
 	break
 	add [0x6E], 0x0A00
 	mov [0xF8], [0x6E]
@@ -92,10 +92,10 @@ LABEL_0E3B:
 	shr [0xF8], 0x0008
 	sub [0x6D], [0xF8]
 	and [0x6F], 0x00FF
-	djnz [0x70], LABEL_0E3B
+	djnz [0x70], CAVES_AMBIENT_DRIFT_PATH_HERO_LOW_PHASE_6
 	mov [0x70], 0x0010
 
-LABEL_0E68:
+CAVES_AMBIENT_DRIFT_PATH_HERO_LOW_PHASE_7:
 	break
 	add [0x6E], 0x0CE0
 	mov [0xF8], [0x6E]
@@ -107,10 +107,10 @@ LABEL_0E68:
 	shr [0xF8], 0x0008
 	add [0x6D], [0xF8]
 	and [0x6F], 0x00FF
-	djnz [0x70], LABEL_0E68
+	djnz [0x70], CAVES_AMBIENT_DRIFT_PATH_HERO_LOW_PHASE_7
 	mov [0x70], 0x0006
 
-LABEL_0E95:
+CAVES_AMBIENT_DRIFT_PATH_HERO_LOW_PHASE_8:
 	break
 	add [0x6E], 0x082A
 	mov [0xF8], [0x6E]
@@ -122,7 +122,7 @@ LABEL_0E95:
 	shr [0xF8], 0x0008
 	sub [0x6D], [0xF8]
 	and [0x6F], 0x00FF
-	djnz [0x70], LABEL_0E95
+	djnz [0x70], CAVES_AMBIENT_DRIFT_PATH_HERO_LOW_PHASE_8
 	mov [0x70], 0x0006
 
 LABEL_0EC2:
@@ -141,7 +141,7 @@ LABEL_0EC2:
 	mov [0x71], 0xFFFF
 	mov [0x70], 0x0006
 
-LABEL_0EF3:
+CAVES_AMBIENT_DRIFT_PATH_HERO_LOW_PHASE_10:
 	break
 	add [0x6E], 0x0180
 	mov [0xF8], [0x6E]
@@ -153,7 +153,7 @@ LABEL_0EF3:
 	shr [0xF8], 0x0008
 	sub [0x6D], [0xF8]
 	and [0x6F], 0x00FF
-	djnz [0x70], LABEL_0EF3
+	djnz [0x70], CAVES_AMBIENT_DRIFT_PATH_HERO_LOW_PHASE_10
 	mov [0x70], 0x0008
 
 LABEL_0F20:

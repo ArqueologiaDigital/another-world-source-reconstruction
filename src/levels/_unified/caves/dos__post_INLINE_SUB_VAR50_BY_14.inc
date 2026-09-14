@@ -520,7 +520,7 @@ LABEL_A89F:
 LABEL_A8A7:
 	mov [0x68], 0x005E
 	mov [0x69], 0x0000
-	setup channel=0x22, address=CAVES_INLINE_SET_VAR73_TO_6_L3
+	setup channel=0x22, address=CAVES_TRAP_COLUMN_WATCH_SLOT_0_LOOP
 	setup channel=0x23, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 	mov [0x6A], 0x0064
 	mov [0x6B], 0xFFFB
@@ -572,7 +572,7 @@ LABEL_A94D:
 	setup channel=0x1C, address=LABEL_0974
 	setup channel=0x1B, address=INIT_VARS_6C_6D_71_70
 	jg [HERO_Y], 0x6E, LABEL_A95F
-	setup channel=0x1B, address=INIT_VARS_71_6C_6D
+	setup channel=0x1B, address=CAVES_AMBIENT_DRIFT_PERCH_WAIT_INIT
 
 LABEL_A95F:
 	mov [0x74], 0x0082
@@ -626,7 +626,7 @@ LABEL_A9EB:
 	mov [0x68], [0x48]
 	add [0x68], 0x000E
 	mov [0x69], 0x002A
-	setup channel=0x22, address=CAVES_INLINE_SET_VAR73_TO_6_L3
+	setup channel=0x22, address=CAVES_TRAP_COLUMN_WATCH_SLOT_0_LOOP
 	setup channel=0x23, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 
 LABEL_AA13:
@@ -668,17 +668,17 @@ LABEL_AA1B:
 	mov [0x6E], [0x48]
 	add [0x6E], 0x000E
 	mov [0x6F], 0x0032
-	setup channel=0x28, address=CAVES_INLINE_SET_VAR74_TO_6_L3
+	setup channel=0x28, address=CAVES_TRAP_COLUMN_WATCH_SLOT_3_LOOP
 	setup channel=0x29, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 	mov [0x70], [0x4A]
 	add [0x70], 0x000E
 	mov [0x71], 0x0025
-	setup channel=0x2A, address=CAVES_INLINE_SET_VAR75_TO_6_L3
+	setup channel=0x2A, address=CAVES_TRAP_COLUMN_WATCH_SLOT_4_LOOP
 	setup channel=0x2B, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 	mov [0x72], [0x4C]
 	add [0x72], 0x000E
 	mov [0x73], 0x003D
-	setup channel=0x2C, address=CAVES_INLINE_SET_VAR76_TO_6_L3
+	setup channel=0x2C, address=CAVES_TRAP_COLUMN_WATCH_SLOT_5_LOOP
 	setup channel=0x2D, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 	deleteChannels first=0x2C, last=0x2D
 	jmp CHECK_VAR66_VAR67_AND_BLIT
@@ -720,7 +720,7 @@ LABEL_AACD:
 	mov [0x6E], [0x48]
 	add [0x6E], 0x000E
 	mov [0x6F], 0x0038
-	setup channel=0x28, address=CAVES_INLINE_SET_VAR74_TO_6_L3
+	setup channel=0x28, address=CAVES_TRAP_COLUMN_WATCH_SLOT_3_LOOP
 	setup channel=0x29, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 
 LABEL_AB5C:
@@ -732,7 +732,7 @@ LABEL_AB5C:
 	mov [0x70], [0x4A]
 	add [0x70], 0x000E
 	mov [0x71], 0x0030
-	setup channel=0x2A, address=CAVES_INLINE_SET_VAR75_TO_6_L3
+	setup channel=0x2A, address=CAVES_TRAP_COLUMN_WATCH_SLOT_4_LOOP
 	setup channel=0x2B, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 
 LABEL_AB84:
@@ -744,7 +744,7 @@ LABEL_AB84:
 	mov [0x72], [0x4C]
 	add [0x72], 0x000E
 	mov [0x73], 0x0037
-	setup channel=0x2C, address=CAVES_INLINE_SET_VAR76_TO_6_L3
+	setup channel=0x2C, address=CAVES_TRAP_COLUMN_WATCH_SLOT_5_LOOP
 	setup channel=0x2D, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
 
 TRAMP_ABAC:

@@ -52,7 +52,7 @@ LABEL_4135:
 LABEL_4136:
 	db 0x11
 
-LABEL_4137:
+PRISON_SHIELD_SPAWN_TRY_SLOT_0:
 	mov [0x22], 0x0096
 	mov [0x26], [0x10]
 	play id=0x0058, freq=0x14, vol=0x40, channel=0x01

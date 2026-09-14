@@ -116,12 +116,12 @@ LABEL_CEBE:
 
 
 LABEL_CECC:
-	jne [0xE6], 0xFFFB, LABEL_CEDA
+	jne [0xE6], 0xFFFB, CAVES_SCREEN_6D_BACKDROP_DRAW
 	video offset=CINEMATIC_385, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
-LABEL_CEDA:
+CAVES_SCREEN_6D_BACKDROP_DRAW:
 	jne [0xE6], 0xFFFC, LABEL_CEE8
 	video offset=CINEMATIC_384, x=[0x21], y=[0x22], zoom=[0x23]
 	ret

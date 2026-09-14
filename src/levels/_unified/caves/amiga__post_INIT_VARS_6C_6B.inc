@@ -80,70 +80,70 @@ LABEL_3863:
 	break
 	jmp LABEL_37D0
 
-LABEL_3894:
+START_HERO_DIRECTION_LEFT_TO_DOWN_TURN:
 	setup channel=0x15, address=LABEL_3916
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
-LABEL_38A1:
+START_HERO_DIRECTION_LEFT_TO_UP_TURN:
 	setup channel=0x15, address=LABEL_3980
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
-LABEL_38AE:
+START_HERO_DIRECTION_RIGHT_TO_DOWN_TURN:
 	setup channel=0x15, address=LABEL_3A58
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
-LABEL_38BB:
+START_HERO_DIRECTION_RIGHT_TO_UP_TURN:
 	setup channel=0x15, address=LABEL_3B2F
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
-LABEL_38C8:
+START_HERO_DIRECTION_DOWN_TO_RIGHT_TURN:
 	setup channel=0x15, address=LABEL_39BA
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
-LABEL_38D5:
+START_HERO_DIRECTION_UP_TO_RIGHT_TURN:
 	setup channel=0x15, address=LABEL_3AFE
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
-LABEL_38E2:
+START_HERO_DIRECTION_DOWN_TO_LEFT_TURN:
 	setup channel=0x15, address=LABEL_3863
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
-LABEL_38EF:
+START_HERO_DIRECTION_UP_TO_LEFT_TURN:
 	setup channel=0x15, address=LABEL_394F
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
-LABEL_38FC:
+START_HERO_DIRECTION_LEFT_TO_RIGHT_TURN:
 	setup channel=0x15, address=HERO_DIRECTION_LEFT_TO_RIGHT_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
-LABEL_3909:
+START_HERO_DIRECTION_RIGHT_TO_LEFT_TURN:
 	setup channel=0x15, address=HERO_DIRECTION_RIGHT_TO_LEFT_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING

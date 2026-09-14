@@ -206,7 +206,7 @@ LABEL_46F7:
 	mov [0x6C], 0x0000
 	mov [0x6D], 0x0811
 	mov [0x6E], 0x2710
-	setup channel=0x23, address=INIT_VARS_29_07_08
+	setup channel=0x23, address=CAVES_CREATURE_WALK_RIGHT_INIT
 	ret
 
 

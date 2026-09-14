@@ -443,7 +443,7 @@ LABEL_3585:
 
 LABEL_3596:
 	add [0xE7], 0x0003
-	call LABEL_3653
+	call CAPSULE_ACTOR_IDLE_AFTER_SHOOT_LEFT_LOOP
 	break
 	add [0xE7], 0x0001
 	call LABEL_3666
@@ -468,7 +468,7 @@ LABEL_3596:
 	call LABEL_3666
 	break
 	add [0xE7], 0x0003
-	call LABEL_3653
+	call CAPSULE_ACTOR_IDLE_AFTER_SHOOT_LEFT_LOOP
 	break
 	add [0xE7], 0x0001
 	call LABEL_3640
@@ -518,7 +518,7 @@ LABEL_3640:
 	ret
 
 
-LABEL_3653:
+CAPSULE_ACTOR_IDLE_AFTER_SHOOT_LEFT_LOOP:
 	video offset=CINEMATIC_714, x=[0xe6], y=[0xe7]
 	add [0xE6], 0x0003
 	video offset=CINEMATIC_715, x=[0xe6], y=[0xe7]

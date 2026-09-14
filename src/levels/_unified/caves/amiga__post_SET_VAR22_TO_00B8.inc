@@ -5,7 +5,7 @@ CAVES_BARRIER_BREACH_EVENT_CASE_8A:
 	jne [HACK_VAR_67], 0x8A, LABEL_C116
 	deleteChannels first=0x01, last=0x02
 	setup channel=0x08, address=INLINE_SET_VAR6B_TO_1
-	setup channel=0x3C, address=LABEL_3DC8
+	setup channel=0x3C, address=CAVES_BARRIER_BREACH_PALETTE_FLASH_FRAME
 	selectVideoPage 0x03
 	video offset=CINEMATIC_780, x=160, y=100
 	selectVideoPage 0xFF

@@ -92,7 +92,7 @@ LABEL_130E:
 	break
 	video offset=CINEMATIC_166, x=[0x68], y=[0x69]
 	setup channel=0x01, address=LABEL_2A16
-	call LABEL_2476
+	call CAPSULE_ACTOR_SLOT_28_SPAWN_AFTER_WINDOW_SMASH
 	killChannel
 
 LABEL_13B1:

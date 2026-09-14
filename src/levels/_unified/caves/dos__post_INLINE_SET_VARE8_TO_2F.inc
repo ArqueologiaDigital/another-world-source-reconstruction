@@ -29,7 +29,7 @@ LABEL_375D:
 	db 0x11
 
 LABEL_375E:
-	setup channel=0x06, address=INIT_VARS_EB_EC_ED
+	setup channel=0x06, address=CAVES_TWIN_COLUMN_RISE_INIT
 	selectVideoPage 0x03
 	video offset=CINEMATIC_824, x=160, y=100
 	selectVideoPage 0xFF

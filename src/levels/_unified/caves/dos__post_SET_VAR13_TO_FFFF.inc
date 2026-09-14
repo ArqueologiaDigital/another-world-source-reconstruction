@@ -57,14 +57,14 @@ LABEL_6884:
 
 
 LABEL_689D:
-	jne [0x1D], 0x0B, LABEL_68B0
+	jne [0x1D], 0x0B, CAVES_LASER_IMPACT_ANIM_RIGHT_CASE_73
 	setup channel=0x2A, address=INLINE_SET_VAR75_TO_6
 	or [0x4B], 0x4000
 	and [0x4B], 0xFFF8
 	ret
 
 
-LABEL_68B0:
+CAVES_LASER_IMPACT_ANIM_RIGHT_CASE_73:
 	jne [0x1D], 0x0C, SHARED_RET
 	setup channel=0x2C, address=INLINE_SET_VAR76_TO_6
 	or [0x4D], 0x4000

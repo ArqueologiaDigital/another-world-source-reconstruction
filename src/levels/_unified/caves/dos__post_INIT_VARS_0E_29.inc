@@ -148,11 +148,11 @@ LABEL_16EB:
 	djnz [0x29], LABEL_16EB
 	mov [0x29], 0x0005
 
-LABEL_16FC:
+CAVES_DROPPED_GUN_SKID_LEFT_PHASE_1:
 	break
 	call LABEL_1791
 	video offset=CINEMATIC_185, x=[0x78], y=[0x79]
-	djnz [0x29], LABEL_16FC
+	djnz [0x29], CAVES_DROPPED_GUN_SKID_LEFT_PHASE_1
 	play id=0x0088, freq=0x0A, vol=0x40, channel=0x03
 	mov [0x29], 0x0004
 

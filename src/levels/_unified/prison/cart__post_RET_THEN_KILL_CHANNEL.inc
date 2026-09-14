@@ -246,12 +246,12 @@ LABEL_3E6C:
 
 
 LABEL_3E88:
-	jle [0x13], 0x04, DRAW_CIN_502
+	jle [0x13], 0x04, PRISON_SHOT_HIT_BURST_LEFT_FRAME_4
 	video offset=CINEMATIC_503, x=[0x21], y=[0x27]
 	ret
 
 
-DRAW_CIN_502:
+PRISON_SHOT_HIT_BURST_LEFT_FRAME_4:
 	video offset=CINEMATIC_502, x=[0x21], y=[0x27]
 	ret
 
@@ -263,12 +263,12 @@ LABEL_3E9A:
 
 
 LABEL_3EA6:
-	jle [0x13], 0x01, DRAW_CIN_499
+	jle [0x13], 0x01, PRISON_SHOT_HIT_BURST_LEFT_FRAME_1
 	video offset=CINEMATIC_500, x=[0x21], y=[0x27]
 	ret
 
 
-DRAW_CIN_499:
+PRISON_SHOT_HIT_BURST_LEFT_FRAME_1:
 	video offset=CINEMATIC_499, x=[0x21], y=[0x27]
 	ret
 

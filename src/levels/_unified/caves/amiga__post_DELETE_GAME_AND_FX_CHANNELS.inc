@@ -40,7 +40,7 @@ LABEL_D561:
 	setup channel=0x10, address=LABEL_4C8D
 	call LIKELY_A_COPY_PROTECTION_MECHANISM
 	setup channel=0x1A, address=KILL_CHANNEL_LANDING
-	setup channel=0x18, address=LABEL_6EC3
+	setup channel=0x18, address=CAVES_SHIELD_SLOT_0_TICK
 	setup channel=0x2E, address=LABEL_19A2
 	setup channel=0x2F, address=CAVES_LASER_SHOT_SLOTS_UPDATE_LOOP
 	setup channel=0x3B, address=KILL_CHANNEL_LANDING

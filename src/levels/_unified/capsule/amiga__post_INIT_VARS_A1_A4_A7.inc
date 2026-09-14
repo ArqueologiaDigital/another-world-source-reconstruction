@@ -35,7 +35,7 @@ LABEL_8520:
 
 LABEL_8521:
 	setup channel=0x10, address=LABEL_2E58
-	setup channel=0x18, address=LABEL_5054
+	setup channel=0x18, address=CAPSULE_SHIELD_SLOT_14_TICK
 	setup channel=0x2F, address=LABEL_44FB
 	setup channel=0x2E, address=KILL_CHANNEL_LANDING
 	setup channel=0x2E, address=LABEL_17D8

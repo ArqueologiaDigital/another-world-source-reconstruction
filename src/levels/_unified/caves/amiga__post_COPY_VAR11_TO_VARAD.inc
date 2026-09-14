@@ -30,12 +30,12 @@ LABEL_6D4D:
 	db 0x11
 
 CAVES_BARRIER_STATE_STORE_CASE_0A:
-	jne [0x1D], 0x0A, LABEL_6D58
+	jne [0x1D], 0x0A, CAVES_BARRIER_STATE_STORE_CASE_0B
 	mov [0x49], [0x11]
 	ret
 
 
-LABEL_6D58:
+CAVES_BARRIER_STATE_STORE_CASE_0B:
 	jne [0x1D], 0x0B, LABEL_6D62
 	mov [0x4B], [0x11]
 	ret
@@ -188,8 +188,8 @@ LABEL_6EAA:
 	ret
 
 
-LABEL_6EC3:
-	jl [0xA1], 0x00, LABEL_6EDB
+CAVES_SHIELD_SLOT_0_TICK:
+	jl [0xA1], 0x00, CAVES_SHIELD_SLOT_1_TICK
 	mov [0x21], [0xA0]
 	mov [0x22], [0xA1]
 	mov [0x27], [0xA2]
@@ -197,8 +197,8 @@ LABEL_6EC3:
 	mov [0xA0], [0x21]
 	mov [0xA1], [0x22]
 
-LABEL_6EDB:
-	jl [0xA4], 0x00, LABEL_6EF3
+CAVES_SHIELD_SLOT_1_TICK:
+	jl [0xA4], 0x00, CAVES_SHIELD_SLOT_2_TICK
 	mov [0x21], [0xA3]
 	mov [0x22], [0xA4]
 	mov [0x27], [0xA5]
@@ -206,8 +206,8 @@ LABEL_6EDB:
 	mov [0xA3], [0x21]
 	mov [0xA4], [0x22]
 
-LABEL_6EF3:
-	jl [0xA7], 0x00, LABEL_6F0B
+CAVES_SHIELD_SLOT_2_TICK:
+	jl [0xA7], 0x00, CAVES_SHIELD_SLOT_3_TICK
 	mov [0x21], [0xA6]
 	mov [0x22], [0xA7]
 	mov [0x27], [0xA8]
@@ -215,8 +215,8 @@ LABEL_6EF3:
 	mov [0xA6], [0x21]
 	mov [0xA7], [0x22]
 
-LABEL_6F0B:
-	jl [0xAA], 0x00, LABEL_6F23
+CAVES_SHIELD_SLOT_3_TICK:
+	jl [0xAA], 0x00, CAVES_SHIELD_SLOT_4_TICK
 	mov [0x21], [0xA9]
 	mov [0x22], [0xAA]
 	mov [0x27], [0xAB]
@@ -224,7 +224,7 @@ LABEL_6F0B:
 	mov [0xA9], [0x21]
 	mov [0xAA], [0x22]
 
-LABEL_6F23:
+CAVES_SHIELD_SLOT_4_TICK:
 	jl [0xAD], 0x00, LABEL_6F3B
 	mov [0x21], [0xAC]
 	mov [0x22], [0xAD]
@@ -235,7 +235,7 @@ LABEL_6F23:
 
 LABEL_6F3B:
 	break
-	jmp LABEL_6EC3
+	jmp CAVES_SHIELD_SLOT_0_TICK
 LABEL_6F3F:
 	db 0x11
 

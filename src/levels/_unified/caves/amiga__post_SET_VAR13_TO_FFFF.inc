@@ -94,7 +94,7 @@ LABEL_65CB:
 	mov [0x47], [0x43]
 	or [0xB1], 0x0004
 	setup channel=0x02, address=KILL_CHANNEL_LANDING
-	setup channel=0x3C, address=LABEL_3E21
+	setup channel=0x3C, address=CAVES_SCREEN_ED_EVENT_PALETTE_FLASH_FRAME
 	selectVideoPage 0x00
 	video offset=CINEMATIC_839, x=287, y=50
 	selectVideoPage 0xFF

@@ -137,28 +137,28 @@ LABEL_6B98:
 	ret
 
 
-LABEL_6BA9:
+PRISON_HERO_WALK_RIGHT_POSE_11:
 	video type=0, offset=COMMON_VIDEO_076, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_077, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6BBA:
+PRISON_HERO_WALK_RIGHT_POSE_12:
 	video type=0, offset=COMMON_VIDEO_078, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_079, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6BCB:
+PRISON_HERO_WALK_RIGHT_POSE_13:
 	video type=0, offset=COMMON_VIDEO_080, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_081, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6BDC:
+PRISON_HERO_WALK_RIGHT_POSE_14:
 	video type=0, offset=COMMON_VIDEO_082, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_083, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -173,49 +173,49 @@ PRISON_DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB_L2:
 	ret
 
 
-LABEL_6C01:
+PRISON_HERO_WALK_RIGHT_POSE_00:
 	video type=0, offset=COMMON_VIDEO_056, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_057, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6C12:
+PRISON_HERO_WALK_RIGHT_POSE_01:
 	video type=0, offset=COMMON_VIDEO_058, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_059, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6C23:
+PRISON_HERO_WALK_RIGHT_POSE_02:
 	video type=0, offset=COMMON_VIDEO_060, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_061, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6C34:
+PRISON_HERO_WALK_RIGHT_POSE_03:
 	video type=0, offset=COMMON_VIDEO_062, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_063, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6C45:
+PRISON_HERO_WALK_RIGHT_POSE_04:
 	video type=0, offset=COMMON_VIDEO_064, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_065, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6C56:
+PRISON_HERO_WALK_RIGHT_POSE_05:
 	video type=0, offset=COMMON_VIDEO_066, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_067, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6C67:
+PRISON_HERO_WALK_RIGHT_POSE_06:
 	video type=0, offset=COMMON_VIDEO_068, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_069, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -230,7 +230,7 @@ LABEL_6C78:
 	ret
 
 
-LABEL_6C8C:
+PRISON_HERO_WALK_RIGHT_POSE_08:
 	video type=0, offset=COMMON_VIDEO_072, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_073, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -353,7 +353,7 @@ DRAW_CV_117:
 	ret
 
 
-LABEL_6D9A:
+PRISON_HERO_WALK_LEFT_DRAW_PHASE_14:
 	jne [0x0A], 0x00, LABEL_6DA8
 	video type=0, offset=COMMON_VIDEO_119, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_118
@@ -363,7 +363,7 @@ LABEL_6DA8:
 
 .include "../_helpers/DRAW_CV_118.inc"
 
-LABEL_6DB1:
+PRISON_HERO_STAND_LEFT_DRAW:
 	jne [0x0A], 0x00, LABEL_6DBF
 	video type=0, offset=COMMON_VIDEO_008, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp LABEL_6DC2
@@ -377,7 +377,7 @@ LABEL_6DC2:
 	ret
 
 
-LABEL_6DCB:
+PRISON_HERO_WALK_LEFT_DRAW_PHASE_00:
 	jne [0x0A], 0x00, LABEL_6DD9
 	video type=0, offset=COMMON_VIDEO_100, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_099
@@ -387,7 +387,7 @@ LABEL_6DD9:
 
 .include "../_helpers/DRAW_CV_099.inc"
 
-LABEL_6DE2:
+PRISON_HERO_WALK_LEFT_DRAW_PHASE_01:
 	jne [0x0A], 0x00, LABEL_6DF0
 	video type=0, offset=COMMON_VIDEO_102, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_101
@@ -397,7 +397,7 @@ LABEL_6DF0:
 
 .include "../_helpers/DRAW_CV_101.inc"
 
-LABEL_6DF9:
+PRISON_HERO_WALK_LEFT_DRAW_PHASE_02:
 	jne [0x0A], 0x00, LABEL_6E07
 	video type=0, offset=COMMON_VIDEO_104, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_103
@@ -407,7 +407,7 @@ LABEL_6E07:
 
 .include "../_helpers/DRAW_CV_103.inc"
 
-LABEL_6E10:
+PRISON_HERO_WALK_LEFT_DRAW_PHASE_03:
 	jne [0x0A], 0x00, LABEL_6E1E
 	video type=0, offset=COMMON_VIDEO_106, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_105
@@ -417,7 +417,7 @@ LABEL_6E1E:
 
 .include "../_helpers/DRAW_CV_105.inc"
 
-LABEL_6E27:
+PRISON_HERO_WALK_LEFT_DRAW_PHASE_04:
 	jne [0x0A], 0x00, LABEL_6E35
 	video type=0, offset=COMMON_VIDEO_108, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_107
@@ -479,28 +479,28 @@ LABEL_6E9B:
 	ret
 
 
-LABEL_6EB2:
+PRISON_HERO_RUN_RIGHT_POSE_01:
 	video type=0, offset=COMMON_VIDEO_254, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_255
 	video type=0, offset=COMMON_VIDEO_256, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6EC3:
+PRISON_HERO_RUN_RIGHT_POSE_02:
 	video type=0, offset=COMMON_VIDEO_269, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_270
 	video type=0, offset=COMMON_VIDEO_271, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6ED4:
+PRISON_HERO_RUN_RIGHT_POSE_03:
 	video type=0, offset=COMMON_VIDEO_272, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_273
 	video type=0, offset=COMMON_VIDEO_274, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6EE5:
+PRISON_HERO_RUN_RIGHT_POSE_04:
 	video type=0, offset=COMMON_VIDEO_275, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_273
 	video type=0, offset=COMMON_VIDEO_276, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -515,28 +515,28 @@ LABEL_6EF6:
 	ret
 
 
-LABEL_6F0D:
+PRISON_HERO_RUN_RIGHT_POSE_06:
 	video type=0, offset=COMMON_VIDEO_260, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_252
 	video type=0, offset=COMMON_VIDEO_261, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6F1E:
+PRISON_HERO_RUN_RIGHT_POSE_07:
 	video type=0, offset=COMMON_VIDEO_262, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_255
 	video type=0, offset=COMMON_VIDEO_263, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6F2F:
+PRISON_HERO_RUN_RIGHT_POSE_08:
 	video type=0, offset=COMMON_VIDEO_264, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_265
 	video type=0, offset=COMMON_VIDEO_266, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6F40:
+PRISON_HERO_RUN_RIGHT_POSE_09:
 	video type=0, offset=COMMON_VIDEO_267, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_265
 	video type=0, offset=COMMON_VIDEO_268, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -545,7 +545,7 @@ LABEL_6F40:
 
 .include "../_helpers/DRAW_CV_279.inc"
 
-LABEL_6F57:
+PRISON_HERO_RUN_LEFT_DRAW_PHASE_00:
 	je [0x0A], 0x00, LABEL_6F63
 	call DRAW_CV_279
 	jmp LABEL_6F68
@@ -559,7 +559,7 @@ LABEL_6F68:
 	ret
 
 
-LABEL_6F74:
+PRISON_HERO_RUN_LEFT_DRAW_PHASE_01:
 	je [0x0A], 0x00, LABEL_6F80
 	call DRAW_CV_279
 	jmp DRAW_CV_281
@@ -569,7 +569,7 @@ LABEL_6F80:
 
 .include "../_helpers/DRAW_CV_281.inc"
 
-LABEL_6F8B:
+PRISON_HERO_RUN_LEFT_DRAW_PHASE_02:
 	je [0x0A], 0x00, LABEL_6F97
 	call DRAW_CV_279
 	jmp DRAW_CV_294
@@ -579,7 +579,7 @@ LABEL_6F97:
 
 .include "../_helpers/DRAW_CV_294.inc"
 
-LABEL_6FA2:
+PRISON_HERO_RUN_LEFT_DRAW_PHASE_03:
 	je [0x0A], 0x00, LABEL_6FAE
 	call DRAW_CV_279
 	jmp DRAW_CV_296
@@ -601,7 +601,7 @@ DRAW_CV_297:
 	ret
 
 
-LABEL_6FC8:
+PRISON_HERO_RUN_LEFT_DRAW_PHASE_05:
 	je [0x0A], 0x00, LABEL_6FD4
 	call DRAW_CV_279
 	jmp LABEL_6FD9
@@ -615,7 +615,7 @@ LABEL_6FD9:
 	ret
 
 
-LABEL_6FE5:
+PRISON_HERO_RUN_LEFT_DRAW_PHASE_06:
 	je [0x0A], 0x00, LABEL_6FF1
 	call DRAW_CV_279
 	jmp DRAW_CV_286
@@ -625,7 +625,7 @@ LABEL_6FF1:
 
 .include "../_helpers/DRAW_CV_286.inc"
 
-LABEL_6FFC:
+PRISON_HERO_RUN_LEFT_DRAW_PHASE_07:
 	je [0x0A], 0x00, LABEL_7008
 	call DRAW_CV_279
 	jmp DRAW_CV_288
@@ -635,7 +635,7 @@ LABEL_7008:
 
 .include "../_helpers/DRAW_CV_288.inc"
 
-LABEL_7013:
+PRISON_HERO_RUN_LEFT_DRAW_PHASE_08:
 	je [0x0A], 0x00, LABEL_701F
 	call DRAW_CV_279
 	jmp DRAW_CV_290
@@ -645,7 +645,7 @@ LABEL_701F:
 
 .include "../_helpers/DRAW_CV_290.inc"
 
-LABEL_702A:
+PRISON_HERO_RUN_LEFT_DRAW_PHASE_09:
 	je [0x0A], 0x00, LABEL_7036
 	call DRAW_CV_279
 	jmp DRAW_CV_292

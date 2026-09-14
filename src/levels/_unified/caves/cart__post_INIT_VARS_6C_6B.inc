@@ -169,7 +169,7 @@ LABEL_3B29:
 	mov [0x2A], 0x0005
 	mov [0x19], 0x001E
 	mov [0x63], 0x0004
-	setup channel=0x16, address=LABEL_3E21
+	setup channel=0x16, address=CAVES_SCREEN_ED_EVENT_PALETTE_FLASH_FRAME
 	break
 	jmp LABEL_3D7B
 
@@ -273,7 +273,7 @@ LABEL_3C6B:
 	mov [0x2A], 0x0005
 	mov [0x19], 0x001E
 	mov [0x63], 0x0004
-	setup channel=0x16, address=LABEL_3E21
+	setup channel=0x16, address=CAVES_SCREEN_ED_EVENT_PALETTE_FLASH_FRAME
 	break
 	jmp LABEL_3D7B
 
@@ -406,7 +406,7 @@ LABEL_3DFC:
 	je [0x22], 0x03E8, LABEL_3DFC
 	jmp LABEL_3E4A
 
-LABEL_3E21:
+CAVES_SCREEN_ED_EVENT_PALETTE_FLASH_FRAME:
 	video offset=CINEMATIC_480, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_481, x=[HERO_X], y=[HERO_Y]
@@ -433,7 +433,7 @@ LABEL_3E4A:
 	break
 	video offset=CINEMATIC_490, x=[HERO_X], y=[HERO_Y]
 	break
-	jmp LABEL_3E21
+	jmp CAVES_SCREEN_ED_EVENT_PALETTE_FLASH_FRAME
 LABEL_3E70:
 	db 0x11
 

@@ -50,7 +50,7 @@ LABEL_B3AA:
 
 LABEL_B3AB:
 	setup channel=0x10, address=LABEL_43FA
-	setup channel=0x18, address=LABEL_67CB
+	setup channel=0x18, address=CAPSULE_ACTOR_FACE_LEFT_THEN_RUN
 	setup channel=0x2F, address=LABEL_5C5B
 	setup channel=0x2E, address=KILL_CHANNEL_LANDING
 	setup channel=0x2E, address=LABEL_2A6E
