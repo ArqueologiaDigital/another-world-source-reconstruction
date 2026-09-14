@@ -2399,7 +2399,7 @@ ANIM_CIN_432_433_434_AT_160_100:
 	video offset=CINEMATIC_434, x=160, y=100
 	break
 	jmp ANIM_CIN_432_433_434_AT_160_100
-DRAW_CITY_SEQ_432_433:
+LABEL_11A9:
 	db 0x11
 
 ; Four three-frame animation channels at screen-center
@@ -2416,7 +2416,7 @@ ANIM_CIN_439_440_441_AT_160_100:
 	video offset=CINEMATIC_441, x=160, y=100
 	break
 	jmp ANIM_CIN_439_440_441_AT_160_100
-DRAW_CITY_SEQ_439_440:
+LABEL_11BC:
 	db 0x11
 
 ; Four three-frame animation channels at screen-center
