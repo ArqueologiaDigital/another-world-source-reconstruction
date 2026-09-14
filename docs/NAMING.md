@@ -186,6 +186,24 @@ segment tail of the distribution. Do not use the form for a loop or a helper.
 
 ## 2. Polygon EQUs: `CINEMATIC_` and the shared bank
 
+### Borrowing a scene name from another port: check per constant
+
+A polygon index is per-port, so a name earned on one branch can only be carried
+to another if the two draw the **same art**. It is tempting to establish that
+once for a whole bank — "the two ports' polygon data is the same block at a
+fixed offset" — and on 2026-09-14 a naming pass did, writing "+0x8E" into the
+evidence for a run of MS-DOS INTRO names.
+
+Measured against the polygon trees themselves, INTRO is two populations: 399 of
+570 constants match at +0x8E and 167 match at the **same** offset. LAKE is
++0x1410 for 79 % and +0x13C0 for 16 %; CAVES splits three ways; CAPSULE's banks
+do not correspond at all. Only PRISON, ENDING and PASSCODE are wholly identical.
+
+So: `another-world-archaeology/tools/crossport_polygon_map.py --stage <S> --equ
+<NAME>` per constant, and quote the delta it reports. A fixed-shift rule stated
+in an evidence cell will be believed by the next namer and applied to a constant
+from the other population, pairing a real name with the wrong picture.
+
 ```
 CINEMATIC_<ENTITY>[_<ACTION|STATE>][_<DIRECTION>]_<frame index, decimal, 0-based>
 ```
