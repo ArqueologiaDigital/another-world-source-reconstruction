@@ -84,7 +84,53 @@ The real grid is 8 × 2 and is computed elsewhere:
 `[0x08] = ([0x05] & 8) ? 0x96 : 0x86` for the row — y 134 or 150. The 17
 constants live at y 116..130, above both rows.
 
-## What would settle it
+## Progress 2026-09-19: the category is settled, the text is not
+
+Three things changed, and one of them closes the experiment this file used to
+recommend.
+
+**1. They are alphanumeric strings, not runes.** This file said "chunky 5-30 px
+pixel runes" and "the wide ones read as two or three rune-like shapes side by
+side". Rendered trimmed and enlarged to ~200 px tall they are plainly **letters
+and digits in a chunky pixel font** -- the first glyph of `0x0F64`, `0x0F74` and
+`0x0F84` is the same capital N, followed by a 1, followed by a character that
+differs between them. That matches what the arm names have said all along:
+`PASSCODE_ALPHANUM_CODE_CASE_<n>`. The seventeen constants are printed code
+strings.
+
+**2. The box is a 6x2 grid of 5x7 character cells.** Per-constant extents,
+finer than the grouped table above:
+
+| offset | size | box |
+|---|---|---|
+| 0x0F64..0x0FA4 | 28-30 x 14 | x 126..156, y 116..130 (both rows) |
+| 0x0FB4..0x0FF4 | 18-20 x 7 | x 136..156, y 116..122 (top row) |
+| 0x1004..0x1040 | 12-14 x 7 | x 135..148, y 116..122 (top row) |
+| 0x104C | **5 x 7** | x 126..130, y 122..130 (bottom row, left edge) |
+
+The whole box is 31 x 15 -- two 7 px rows with a 1 px gap -- and the smallest
+constant is exactly one 5 x 7 cell. 5 x 7 is a character cell, so the set is
+strings of 1, 2-3, 3-4 and 6 characters laid out in one six-by-two grid.
+
+**3. The composited render this file recommended CANNOT work.** It was run.
+`awvm-render-polygons` **normalises every polygon to the anchor and discards
+its authored offset** -- `0x0F64`'s content, authored at x 126..154, comes out
+at x 156..179 in the SVG, centred on (160,100) like every other. So passing all
+seventeen to `render_scene_composite.py` at a common anchor stacks them into a
+single 23 x 7 blob rather than laying them out. The output is below; it is not
+a picture of anything.
+
+Placing them by their authored boxes needs a compositor that reads the polygon
+records' own coordinates, which `polygon_extent.py` reports and the SVG
+renderer throws away. That is the tool gap, and it is the real blocker now.
+
+**What is still missing** is only the text: which characters each string
+spells. That needs a glyph-by-glyph comparison against the stage's own font at
+1:1 pixel scale with both rows visible, not a guess from a magnified thumbnail.
+Nothing is named here, for the same reason as before -- a plausible-but-wrong
+name is the failure mode this stage keeps producing.
+
+## What would settle it (superseded -- see above)
 
 A composited render of the whole screen: draw all seventeen at (114, 62) in
 bytecode order onto the two `text` lines, under the palette the stage sets, and
