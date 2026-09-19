@@ -156,7 +156,7 @@ CV_1C78		EQU 0x1C78
 	org 0x0000
 
 ENTRY_POINT_OF_ENDING:
-	call ENDING_CLEAR_AND_BLIT_PAGES_1_2_FF
+	call CLEAR_PAGES_1_2_AND_BLIT
 	setup channel=0x3C, address=ENDING_HOLD_PAGE_0_INFINITE
 	mov [PAUSE_SLICES], 0x0004
 	break
@@ -1249,7 +1249,7 @@ CREDITS_SCROLL_RENDER_PAGE_83_OVER_80:
 ;  1; blit page 1, page FF, page 2; ret`. Three-page clear-
 ; and-blit sequence used to reset the framebuffer chain
 ; between scene transitions.
-ENDING_CLEAR_AND_BLIT_PAGES_1_2_FF:
+CLEAR_PAGES_1_2_AND_BLIT:
 	fill page=0x01, color=0x00
 	fill page=0x02, color=0x00
 	selectVideoPage 0x01

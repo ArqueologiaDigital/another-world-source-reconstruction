@@ -32,7 +32,7 @@ CINEMATIC_005		EQU 0x0020
 ; pages black, clears LAST_KEYCHAR, sets palette 5. The
 ; screen-startup routine.
 ENTRY_POINT_OF_PASSCODE:
-	call PASSCODE_CLEAR_AND_BLIT_PAGES_1_2_FF
+	call CLEAR_PAGES_1_2_AND_BLIT
 	mov [PAUSE_SLICES], 0x0002
 	setup channel=0x3C, address=PASSCODE_REDRAW_PAGE_0_FOREVER
 	fill page=0x00, color=0x00
@@ -1226,7 +1226,7 @@ JUNK__0BCA:
 	break
 	jmp JUNK__0BCA
 
-PASSCODE_CLEAR_AND_BLIT_PAGES_1_2_FF:
+CLEAR_PAGES_1_2_AND_BLIT:
 	fill page=0x01, color=0x00
 	fill page=0x02, color=0x00
 	selectVideoPage 0x01
