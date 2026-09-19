@@ -5,7 +5,7 @@ LABEL_A3EF:
 	or [0xBB], 0x0002
 	deleteChannels first=0x14, last=0x16
 	call LABEL_26AC
-	call LABEL_344B
+	call CAPSULE_ACTOR_SLOT_29_SPAWN_ON_ROOM_INIT
 	call LABEL_33C8
 	call LABEL_33A7
 	jmp CAPSULE_REPAINT_BACKDROP_IF_SCREEN_CHANGED
@@ -89,7 +89,7 @@ LABEL_A500:
 	setup channel=0x18, address=LABEL_5C58
 	setup channel=0x18, address=KILL_CHANNEL_LANDING
 	setup channel=0x19, address=LABEL_200D
-	setup channel=0x1B, address=LABEL_67C2
+	setup channel=0x1B, address=CAPSULE_SHIELD_SLOT_14_TICK
 	setup channel=0x2F, address=KILL_CHANNEL_LANDING
 	setup channel=0x35, address=LABEL_2096
 	mov [HERO_X], 0x0046
@@ -500,7 +500,7 @@ LABEL_AA22:
 	setPalette 0x0C
 	call LABEL_9C52
 	call DELETE_CHANS_0_8_AND_RET
-	setup channel=0x16, address=LABEL_17D4
+	setup channel=0x16, address=HERO_CRAWL_LEFT_LOOP
 	mov [HERO_X], 0x00A0
 	mov [HERO_Y], 0x009D
 	mov [0x2A], 0x000F
@@ -671,7 +671,7 @@ LABEL_AC44:
 	call LABEL_333B
 	call LABEL_335F
 	call LABEL_36BB
-	call GUARDED_ALIEN_ANIM_CV_128
+	call CAPSULE_BUDDY_PER_FRAME_TICK
 	call LABEL_369F
 	call GUARDED_DRAW_CV_304_305
 	call LABEL_369F
@@ -691,7 +691,7 @@ LABEL_ACB0:
 	call LABEL_335F
 	call LABEL_36D7
 	mov [BUDDY_X], 0x000F
-	call GUARDED_ALIEN_ANIM_CV_128
+	call CAPSULE_BUDDY_PER_FRAME_TICK
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
 
 LABEL_ACD2:
@@ -999,7 +999,7 @@ LABEL_B0AE:
 	jne [SCREEN_NUM], 0x8A, LABEL_B0CD
 	deleteChannels first=0x01, last=0x02
 	setup channel=0x08, address=INCREMENT_VAR31
-	setup channel=0x3C, address=LABEL_2F8F
+	setup channel=0x3C, address=CAPSULE_PALETTE_FLASH_INTO_PAGE_3_PRESENT
 	selectVideoPage 0x03
 	video offset=CINEMATIC_644, x=160, y=100
 	selectVideoPage 0xFF

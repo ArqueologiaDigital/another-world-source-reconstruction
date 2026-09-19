@@ -94,7 +94,7 @@ LABEL_68EE:
 	mov [0x47], [0x43]
 	or [0xB1], 0x0004
 	setup channel=0x02, address=KILL_CHANNEL_LANDING
-	setup channel=0x3C, address=LABEL_4063
+	setup channel=0x3C, address=CAVES_SCREEN_ED_EVENT_PALETTE_FLASH_FRAME
 	play id=0x0057, freq=0x1C, vol=0x40, channel=0x00
 	ret
 

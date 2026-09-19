@@ -30,12 +30,12 @@ LABEL_7067:
 	db 0x11
 
 CAVES_BARRIER_STATE_STORE_CASE_0A:
-	jne [0x1D], 0x0A, LABEL_7072
+	jne [0x1D], 0x0A, CAVES_BARRIER_STATE_STORE_CASE_0B
 	mov [0x49], [0x11]
 	ret
 
 
-LABEL_7072:
+CAVES_BARRIER_STATE_STORE_CASE_0B:
 	jne [0x1D], 0x0B, LABEL_707C
 	mov [0x4B], [0x11]
 	ret
@@ -91,7 +91,7 @@ LABEL_70DC:
 
 
 LABEL_70DD:
-	call PROJECT_POS_VAR04_OR_A212
+	call CAVES_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
 	mov [0x22], 0x0096
 	mov [0x26], [SCREEN_NUM]
 	jg [HERO_Y], [0x41], LABEL_70F1
@@ -186,8 +186,8 @@ LABEL_71C4:
 	ret
 
 
-LABEL_71DD:
-	jl [0xA1], 0x00, LABEL_71F5
+CAVES_SHIELD_SLOT_0_TICK:
+	jl [0xA1], 0x00, CAVES_SHIELD_SLOT_1_TICK
 	mov [0x21], [0xA0]
 	mov [0x22], [0xA1]
 	mov [0x27], [0xA2]
@@ -195,8 +195,8 @@ LABEL_71DD:
 	mov [0xA0], [0x21]
 	mov [0xA1], [0x22]
 
-LABEL_71F5:
-	jl [0xA4], 0x00, LABEL_720D
+CAVES_SHIELD_SLOT_1_TICK:
+	jl [0xA4], 0x00, CAVES_SHIELD_SLOT_2_TICK
 	mov [0x21], [0xA3]
 	mov [0x22], [0xA4]
 	mov [0x27], [0xA5]
@@ -204,8 +204,8 @@ LABEL_71F5:
 	mov [0xA3], [0x21]
 	mov [0xA4], [0x22]
 
-LABEL_720D:
-	jl [0xA7], 0x00, LABEL_7225
+CAVES_SHIELD_SLOT_2_TICK:
+	jl [0xA7], 0x00, CAVES_SHIELD_SLOT_3_TICK
 	mov [0x21], [0xA6]
 	mov [0x22], [0xA7]
 	mov [0x27], [0xA8]
@@ -213,8 +213,8 @@ LABEL_720D:
 	mov [0xA6], [0x21]
 	mov [0xA7], [0x22]
 
-LABEL_7225:
-	jl [0xAA], 0x00, LABEL_723D
+CAVES_SHIELD_SLOT_3_TICK:
+	jl [0xAA], 0x00, CAVES_SHIELD_SLOT_4_TICK
 	mov [0x21], [0xA9]
 	mov [0x22], [0xAA]
 	mov [0x27], [0xAB]
@@ -222,7 +222,7 @@ LABEL_7225:
 	mov [0xA9], [0x21]
 	mov [0xAA], [0x22]
 
-LABEL_723D:
+CAVES_SHIELD_SLOT_4_TICK:
 	jl [0xAD], 0x00, LABEL_7255
 	mov [0x21], [0xAC]
 	mov [0x22], [0xAD]
@@ -233,7 +233,7 @@ LABEL_723D:
 
 LABEL_7255:
 	break
-	jmp LABEL_71DD
+	jmp CAVES_SHIELD_SLOT_0_TICK
 LABEL_7259:
 	db 0x11
 

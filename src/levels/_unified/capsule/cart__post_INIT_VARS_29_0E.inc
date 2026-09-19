@@ -22,7 +22,7 @@ LABEL_0383:
 	mov [0x0E], 0x0005
 
 LABEL_0397:
-	call GUARDED_ALIEN_ANIM_CV_128
+	call CAPSULE_BUDDY_PER_FRAME_TICK
 	break
 	djnz [0x29], LABEL_0397
 	mov [0x29], 0x0014
@@ -36,7 +36,7 @@ LABEL_03A7:
 	call LABEL_893A
 	break
 	mov [0x0E], 0x0004
-	call GUARDED_ALIEN_ANIM_CV_128
+	call CAPSULE_BUDDY_PER_FRAME_TICK
 	break
 	call LABEL_8C93
 	break

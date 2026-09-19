@@ -239,9 +239,9 @@ LABEL_269D:
 LABEL_26AC:
 	setup channel=0x22, address=LABEL_4585
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
-	setup channel=0x24, address=LABEL_45A5
+	setup channel=0x24, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
-	setup channel=0x26, address=LABEL_45E0
+	setup channel=0x26, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
 	setup channel=0x28, address=LABEL_461B
 	ret
@@ -276,23 +276,23 @@ LABEL_26FD:
 	call GUARDED_DRAW_CV_304_305
 	break
 	mov [0x0E], 0x0004
-	call LABEL_7CDA
+	call CAPSULE_BUDDY_IDLE_LEFT_DRAW_1
 	break
 	mov [0x0E], 0x0000
-	call LABEL_7CF8
+	call CAPSULE_BUDDY_IDLE_LEFT_DRAW_2
 	break
 	mov [0x29], 0x0002
 
 LABEL_2719:
 	mov [0x0E], 0x0003
-	call LABEL_7CF8
+	call CAPSULE_BUDDY_IDLE_LEFT_DRAW_2
 	break
 	djnz [0x29], LABEL_2719
 	mov [0x29], 0x0002
 
 LABEL_2729:
 	mov [0x0E], 0x0000
-	call LABEL_7CDA
+	call CAPSULE_BUDDY_IDLE_LEFT_DRAW_1
 	break
 	djnz [0x29], LABEL_2729
 	mov [0xF8], [BUDDY_X]
@@ -375,8 +375,8 @@ HANG_DRAW_CIN_718:
 	killChannel
 
 LABEL_2804:
-	je [0xB6], 0x00, KILL_CHAN_AT_1471
-	jne [SCREEN_NUM], [0xB6], KILL_CHAN_AT_1471
+	je [0xB6], 0x00, CAPSULE_KILLCHAN_OR_SET_ACTION_MASK_BIT_2
+	jne [SCREEN_NUM], [0xB6], CAPSULE_KILLCHAN_OR_SET_ACTION_MASK_BIT_2
 	jl [HERO_X], 0x0148, LABEL_2824
 	mov [HERO_X], 0x0148
 	deleteChannels first=0x14, last=0x16
@@ -394,13 +394,13 @@ LABEL_2829:
 	jg [HERO_X], 0xF0, LABEL_2829
 	mov [0xF8], [0xB2]
 	and [0xF8], 0x0100
-	jne [0xF8], 0x00, KILL_CHAN_AT_1471
+	jne [0xF8], 0x00, CAPSULE_KILLCHAN_OR_SET_ACTION_MASK_BIT_2
 	or [0xB2], 0x0100
 	mov [0xAA], 0xFFFF
 	mov [0xAD], 0xFFFF
 	call LABEL_3514
-	setup channel=0x34, address=LABEL_69E6
-	setup channel=0x33, address=LABEL_69B2
+	setup channel=0x34, address=CAPSULE_SHIELD_DEPLOY_AT_RIGHT_EDGE
+	setup channel=0x33, address=CAPSULE_SHIELD_DEPLOY_AT_LEFT_EDGE
 	break
 	break
 	break

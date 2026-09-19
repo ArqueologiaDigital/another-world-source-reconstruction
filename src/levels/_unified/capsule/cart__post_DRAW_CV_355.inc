@@ -34,7 +34,7 @@ LABEL_8D2C:
 	ret
 
 
-LABEL_8D3E:
+BUDDY_RIGHT_FIRE_AIM_PHASE_1:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call LABEL_8CC2
 	video type=0, offset=COMMON_VIDEO_288, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40

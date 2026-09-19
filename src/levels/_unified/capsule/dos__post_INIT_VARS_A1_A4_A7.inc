@@ -50,7 +50,7 @@ LABEL_B2C9:
 
 LABEL_B2CA:
 	setup channel=0x10, address=LABEL_441E
-	setup channel=0x18, address=LABEL_67C2
+	setup channel=0x18, address=CAPSULE_SHIELD_SLOT_14_TICK
 	setup channel=0x2F, address=LABEL_5C58
 	setup channel=0x2E, address=KILL_CHANNEL_LANDING
 	setup channel=0x2E, address=LABEL_28F7

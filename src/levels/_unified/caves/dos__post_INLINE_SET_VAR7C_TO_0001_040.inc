@@ -1,4 +1,4 @@
-LABEL_2B8B:
+CAVES_FALLING_ROCK_SLOT_2_MEDIUM_LOOP:
 	mov [0x07], [0x7A]
 	mov [0x08], [0x7B]
 	mov [0x09], [0x7C]
@@ -8,7 +8,7 @@ LABEL_2B8B:
 	mov [0x7B], [0x08]
 	mov [0x7C], [0x09]
 	break
-	jmp LABEL_2B8B
+	jmp CAVES_FALLING_ROCK_SLOT_2_MEDIUM_LOOP
 LABEL_2BA7:
 	db 0x11
 
@@ -43,7 +43,7 @@ CAVES_FALLING_ROCK_PHYSICS_TICK:
 	add [0x21], 0x0019
 	jl [0x21], [0x22], LABEL_2C0C
 	mov [SCROLL_Y], 0x0001
-	setup channel=0x3C, address=LABEL_3F8B
+	setup channel=0x3C, address=COMMIT_WORK_PAGE_TO_PAGE_3_AND_REFETCH
 
 LABEL_2C0C:
 	mov [0xF8], [0x07]
@@ -57,7 +57,7 @@ LABEL_2C0C:
 	add [0xF8], 0x0024
 	jg [HERO_X], [0xF8], SHARED_RET
 	jl [HERO_Y], 0x7C, SHARED_RET
-	setup channel=0x3C, address=LABEL_4046
+	setup channel=0x3C, address=CAVES_ROCK_CRUSH_PALETTE_FLASH_FRAME
 	deleteChannels first=0x14, last=0x16
 	setup channel=0x14, address=LABEL_2BA8
 	mov [0x03], 0x000A

@@ -127,15 +127,15 @@ LABEL_5877:
 	or [0x22], 0x1000
 
 LABEL_5881:
-	jne [0x5B], 0x0FA0, LABEL_58A2
-	jne [0x5E], 0x0FA0, LABEL_58A2
-	jne [0x61], 0x0FA0, LABEL_58A2
+	jne [0x5B], 0x0FA0, CAPSULE_SHOT_SPAWN_TRY_SLOT0
+	jne [0x5E], 0x0FA0, CAPSULE_SHOT_SPAWN_TRY_SLOT0
+	jne [0x61], 0x0FA0, CAPSULE_SHOT_SPAWN_TRY_SLOT0
 	setup channel=0x30, address=LABEL_58E1
 	setup channel=0x31, address=LABEL_58EA
 	setup channel=0x32, address=LABEL_58EA
 
-LABEL_58A2:
-	jne [0x5B], 0x0FA0, LABEL_58B7
+CAPSULE_SHOT_SPAWN_TRY_SLOT0:
+	jne [0x5B], 0x0FA0, CAPSULE_SHOT_SPAWN_TRY_SLOT1
 	mov [0x5A], [0x21]
 	mov [0x5B], [0x22]
 	mov [0x5C], [0x29]
@@ -143,7 +143,7 @@ LABEL_58A2:
 	ret
 
 
-LABEL_58B7:
+CAPSULE_SHOT_SPAWN_TRY_SLOT1:
 	jne [0x5E], 0x0FA0, LABEL_58CC
 	mov [0x5D], [0x21]
 	mov [0x5E], [0x22]

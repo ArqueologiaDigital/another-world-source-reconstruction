@@ -10,7 +10,7 @@ LABEL_9B9A:
 	je [0x32], 0x01, LABEL_9BB4
 	jne [HERO_POS_UP_DOWN], 0x01, LABEL_9BB4
 	mov [0x32], 0x0001
-	setup channel=0x14, address=LABEL_9783
+	setup channel=0x14, address=HERO_FLOOR_STEP_DOWN_ENTRY
 
 LABEL_9BB4:
 	sub [0x50], 0x0014

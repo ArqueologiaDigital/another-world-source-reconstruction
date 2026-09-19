@@ -158,7 +158,7 @@ LABEL_6C78:
 	ret
 
 
-LABEL_6C89:
+PRISON_HERO_WALK_RIGHT_POSE_14:
 	video type=0, offset=COMMON_VIDEO_046, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_047, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -173,28 +173,28 @@ PRISON_DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB_L2:
 	ret
 
 
-LABEL_6CAE:
+PRISON_HERO_WALK_RIGHT_POSE_00:
 	video type=0, offset=COMMON_VIDEO_018, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_019, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6CBF:
+PRISON_HERO_WALK_RIGHT_POSE_01:
 	video type=0, offset=COMMON_VIDEO_020, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_021, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6CD0:
+PRISON_HERO_WALK_RIGHT_POSE_02:
 	video type=0, offset=COMMON_VIDEO_022, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_023, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_6CE1:
+PRISON_HERO_WALK_RIGHT_POSE_03:
 	video type=0, offset=COMMON_VIDEO_024, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_025, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -230,7 +230,7 @@ LABEL_6D25:
 	ret
 
 
-LABEL_6D39:
+PRISON_HERO_WALK_RIGHT_POSE_08:
 	video type=0, offset=COMMON_VIDEO_034, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video type=0, offset=COMMON_VIDEO_035, x=[HERO_X], y=[HERO_Y], zoom=0x40

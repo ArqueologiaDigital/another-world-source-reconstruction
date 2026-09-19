@@ -85,35 +85,35 @@ LABEL_3A8C:
 	break
 	jmp LABEL_39F9
 
-LABEL_3ABD:
+START_HERO_DIRECTION_LEFT_TO_DOWN_TURN:
 	setup channel=0x15, address=LABEL_3B3F
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
-LABEL_3ACA:
+START_HERO_DIRECTION_LEFT_TO_UP_TURN:
 	setup channel=0x15, address=LABEL_3BA9
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
-LABEL_3AD7:
+START_HERO_DIRECTION_RIGHT_TO_DOWN_TURN:
 	setup channel=0x15, address=LABEL_3C81
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
-LABEL_3AE4:
+START_HERO_DIRECTION_RIGHT_TO_UP_TURN:
 	setup channel=0x15, address=LABEL_3D58
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
-LABEL_3AF1:
+START_HERO_DIRECTION_DOWN_TO_RIGHT_TURN:
 	setup channel=0x15, address=LABEL_3BE3
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
@@ -127,29 +127,29 @@ LABEL_3AFE:
 	ret
 
 
-LABEL_3B0B:
+START_HERO_DIRECTION_DOWN_TO_LEFT_TURN:
 	setup channel=0x15, address=LABEL_3A8C
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
-LABEL_3B18:
+START_HERO_DIRECTION_UP_TO_LEFT_TURN:
 	setup channel=0x15, address=LABEL_3B78
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
-LABEL_3B25:
-	setup channel=0x15, address=LABEL_3C14
+START_HERO_DIRECTION_LEFT_TO_RIGHT_TURN:
+	setup channel=0x15, address=HERO_DIRECTION_LEFT_TO_RIGHT_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
-LABEL_3B32:
-	setup channel=0x15, address=LABEL_3CBA
+START_HERO_DIRECTION_RIGHT_TO_LEFT_TURN:
+	setup channel=0x15, address=HERO_DIRECTION_RIGHT_TO_LEFT_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
@@ -225,7 +225,7 @@ LABEL_3BE3:
 	break
 	jmp LABEL_3EBF
 
-LABEL_3C14:
+HERO_DIRECTION_LEFT_TO_RIGHT_TURN:
 	mov [0x63], 0x0064
 	video offset=CINEMATIC_554, x=[HERO_X], y=[HERO_Y]
 	mov [0x19], 0x0000
@@ -277,7 +277,7 @@ LABEL_3C81:
 	break
 	jmp LABEL_3D91
 
-LABEL_3CBA:
+HERO_DIRECTION_RIGHT_TO_LEFT_TURN:
 	mov [0x63], 0x0064
 	video offset=CINEMATIC_546, x=[HERO_X], y=[HERO_Y]
 	mov [0x19], 0x0000
@@ -402,7 +402,7 @@ LABEL_3E12:
 	video offset=CINEMATIC_486, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_487, x=[HERO_X], y=[HERO_Y]
-	call LABEL_E3C1
+	call CAVES_NO_FLOOR_ABOVE_WATERLINE_CASE_6F
 	je [0x22], 0x03E8, LABEL_3E12
 	jmp LABEL_3E60
 
@@ -426,7 +426,7 @@ LABEL_3E60:
 	video offset=CINEMATIC_486, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_487, x=[HERO_X], y=[HERO_Y]
-	call LABEL_E3C1
+	call CAVES_NO_FLOOR_ABOVE_WATERLINE_CASE_6F
 	je [0x22], 0x03E8, LABEL_3E12
 	break
 	video offset=CINEMATIC_488, x=[HERO_X], y=[HERO_Y]
@@ -465,10 +465,10 @@ LABEL_3EBF:
 	break
 	video offset=CINEMATIC_531, x=[HERO_X], y=[HERO_Y]
 	break
-	jne [SCREEN_NUM], 0x6E, LABEL_3EDB
+	jne [SCREEN_NUM], 0x6E, HERO_DIRECTION_RIGHT_IDLE_LOOP
 	play id=0x006C, freq=0x14, vol=0x20, channel=0x01
 
-LABEL_3EDB:
+HERO_DIRECTION_RIGHT_IDLE_LOOP:
 	video offset=CINEMATIC_532, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_533, x=[HERO_X], y=[HERO_Y]

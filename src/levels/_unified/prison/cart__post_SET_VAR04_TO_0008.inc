@@ -22,7 +22,7 @@ LABEL_8BF4:
 
 LABEL_8C01:
 	jne [0x63], 0x02, LABEL_8C0E
-	setup channel=0x14, address=LABEL_97A4
+	setup channel=0x14, address=PRISON_HERO_ENTER_STAND_RIGHT_TICK
 	jmp LABEL_8D4F
 
 LABEL_8C0E:

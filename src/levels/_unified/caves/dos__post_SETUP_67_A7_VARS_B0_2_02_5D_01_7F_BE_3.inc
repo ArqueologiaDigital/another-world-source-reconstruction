@@ -36,7 +36,7 @@ LABEL_452C:
 	ret
 
 
-LABEL_455C:
+CAVES_ACTOR_SLOT_2_SPAWN_ON_SCREEN_4E:
 	mov [0x78], 0x0118
 	mov [0x79], 0x00B0
 	mov [0x7A], 0x004E
@@ -44,11 +44,11 @@ LABEL_455C:
 	mov [0x7C], 0x0018
 	mov [0x7D], 0x0831
 	mov [0x7E], 0x2710
-	setup channel=0x27, address=LABEL_5670
+	setup channel=0x27, address=CAVES_BEAST_SCENE_LOOP_DISPATCH_LAST
 	ret
 
 
-LABEL_457D:
+CAVES_ACTOR_SLOT_0_SPAWN_ON_SCREEN_4D:
 	mov [0x68], 0x00FA
 	mov [0x69], 0x00B0
 	mov [0x6A], 0x004D
@@ -108,7 +108,7 @@ LABEL_45FD:
 	ret
 
 
-LABEL_461D:
+CAVES_ACTOR_SLOT_2_SPAWN_ON_SCREEN_70:
 	mov [0x78], 0x00FA
 	mov [0x79], 0x0087
 	mov [0x7A], 0x0070
@@ -120,7 +120,7 @@ LABEL_461D:
 	ret
 
 
-LABEL_463E:
+CAVES_ACTOR_SLOT_1_SPAWN_ON_SCREEN_47:
 	mov [0x70], 0x0118
 	mov [0x71], 0x0084
 	mov [0x72], 0x0047
@@ -186,7 +186,7 @@ LABEL_46CF:
 	ret
 
 
-LABEL_46F7:
+CAVES_ACTOR_SLOT_0_SPAWN_ON_SCREEN_92:
 	mov [0x68], 0x000A
 	mov [0x69], 0x0014
 	mov [0x6A], 0x0092

@@ -1,32 +1,32 @@
-LABEL_A17C:
+CAVES_TELEPORT_DOWN_ENTRY:
 	mov [0x63], 0x0064
 	mov [HERO_Y], [0x52]
 	sub [HERO_Y], 0x001E
-	call LABEL_A1DC
+	call CAVES_TELEPORT_DOWN_BEAM_DRAW
 	play id=0x0057, freq=0x1C, vol=0x40, channel=0x00
 	break
 	mov [HERO_Y], [0x52]
-	call LABEL_A1DC
+	call CAVES_TELEPORT_DOWN_BEAM_DRAW
 	setup channel=0x1A, address=CAVES_TELEPORT_DOWN_SETTLE_LOOP
 	jmp LABEL_A1F5
 LABEL_A19E:
 	db 0x11
 
-LABEL_A19F:
+CAVES_TELEPORT_UP_ENTRY:
 	mov [0x63], 0x0064
 	mov [HERO_Y], [0x51]
 	add [HERO_Y], 0x001E
-	call LABEL_A1C2
+	call CAVES_TELEPORT_UP_BEAM_DRAW
 	play id=0x0057, freq=0x1C, vol=0x40, channel=0x00
 	break
 	mov [HERO_Y], [0x51]
-	call LABEL_A1C2
+	call CAVES_TELEPORT_UP_BEAM_DRAW
 	setup channel=0x1A, address=CAVES_SHELVE_BACKDROP_TO_PAGE3_L1
 	jmp LABEL_A1F5
 LABEL_A1C1:
 	db 0x11
 
-LABEL_A1C2:
+CAVES_TELEPORT_UP_BEAM_DRAW:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_878
@@ -42,7 +42,7 @@ DRAW_CIN_878:
 LABEL_A1DB:
 	db 0x11
 
-LABEL_A1DC:
+CAVES_TELEPORT_DOWN_BEAM_DRAW:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_876

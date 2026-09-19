@@ -63,7 +63,7 @@ LABEL_29A3:
 	play id=0x007A, freq=0x14, vol=0x40, channel=0x01
 	play id=0x0078, freq=0x14, vol=0x40, channel=0x00
 	je [SCREEN_NUM], 0x28, LABEL_29C5
-	setup channel=0x3C, address=LABEL_4028
+	setup channel=0x3C, address=CAVES_HERO_FALL_DEATH_PALETTE_FLASH_FRAME
 
 LABEL_29C5:
 	break
@@ -141,21 +141,21 @@ CAVES_DISPATCH_BY_VAR09_THEN_KILL_CHAN:
 	je [0x09], 0x00, HANG_DRAW_CIN_743_VAR09_GUARD
 	killChannel
 
-LABEL_2A73:
+CAVES_TRAP_SPOT_WATCH_SLOT_1_LOOP:
 	mov [0x07], [0x6A]
 	mov [0x08], [0x6B]
 	call LABEL_2A8F
 	break
-	jmp LABEL_2A73
+	jmp CAVES_TRAP_SPOT_WATCH_SLOT_1_LOOP
 LABEL_2A80:
 	db 0x11
 
-LABEL_2A81:
+CAVES_TRAP_SPOT_WATCH_SLOT_2_LOOP:
 	mov [0x07], [0x6C]
 	mov [0x08], [0x6D]
 	call LABEL_2A8F
 	break
-	jmp LABEL_2A81
+	jmp CAVES_TRAP_SPOT_WATCH_SLOT_2_LOOP
 LABEL_2A8E:
 	db 0x11
 

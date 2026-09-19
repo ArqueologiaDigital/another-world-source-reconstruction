@@ -100,7 +100,7 @@
 ;   DRAW_CV_075  (2-arm: cart, dos)
 ;   DRAW_CV_076  (2-arm: cart, dos)
 ;   DRAW_CV_077  (2-arm: cart, dos)
-;   DRAW_CV078_PLAY_60_F0B_V22_C1  (2-arm: cart, dos)
+;   CAPSULE_HERO_WALK_LEFT_FOOTSTEP_PHASE_2  (2-arm: cart, dos)
 ;   DRAW_CV_080  (2-arm: cart, dos)
 ;   DRAW_CV_061  (2-arm: cart, dos)
 ;   DRAW_CV_063  (2-arm: cart, dos)
@@ -118,7 +118,7 @@
 ;   DRAW_CV_297  (2-arm: cart, dos)
 ;   DRAW_CV_298  (2-arm: cart, dos)
 ;   DRAW_CV107_AT_X01_Y02  (2-arm: cart, dos)
-;   DRAW_CV108_PLAY_60_F0F_V2A_C1  (2-arm: cart, dos)
+;   CAPSULE_HERO_RUN_LEFT_FOOTSTEP_PHASE_1  (2-arm: cart, dos)
 ;   DRAW_CV109_AT_X01_Y02  (2-arm: cart, dos)
 ;   DRAW_CV_110  (2-arm: cart, dos)
 ;   DRAW_CV111_AT_X01_Y02  (2-arm: cart, dos)
@@ -127,7 +127,7 @@
 ;   DRAW_CV_114  (2-arm: cart, dos)
 ;   DRAW_CV_115  (2-arm: cart, dos)
 ;   DRAW_CV097_AT_X01_Y02  (2-arm: cart, dos)
-;   DRAW_CV098_PLAY_60_F0A_V2A_C1  (2-arm: cart, dos)
+;   CAPSULE_HERO_RUN_LEFT_FOOTSTEP_PHASE_2  (2-arm: cart, dos)
 ;   DRAW_CV099_AT_X01_Y02  (2-arm: cart, dos)
 ;   DRAW_CV_100  (2-arm: cart, dos)
 ;   DRAW_CV101_AT_X01_Y02  (2-arm: cart, dos)
@@ -283,7 +283,7 @@
 ;   DRAW_CV_075  (2-arm: cart, dos)
 ;   DRAW_CV_076  (2-arm: cart, dos)
 ;   DRAW_CV_077  (2-arm: cart, dos)
-;   DRAW_CV078_PLAY_60_F0B_V22_C1  (2-arm: cart, dos)
+;   CAPSULE_HERO_WALK_LEFT_FOOTSTEP_PHASE_2  (2-arm: cart, dos)
 ;   DRAW_CV_080  (2-arm: cart, dos)
 ;   DRAW_CV_061  (2-arm: cart, dos)
 ;   DRAW_CV_063  (2-arm: cart, dos)
@@ -301,7 +301,7 @@
 ;   DRAW_CV_297  (2-arm: cart, dos)
 ;   DRAW_CV_298  (2-arm: cart, dos)
 ;   DRAW_CV107_AT_X01_Y02  (2-arm: cart, dos)
-;   DRAW_CV108_PLAY_60_F0F_V2A_C1  (2-arm: cart, dos)
+;   CAPSULE_HERO_RUN_LEFT_FOOTSTEP_PHASE_1  (2-arm: cart, dos)
 ;   DRAW_CV109_AT_X01_Y02  (2-arm: cart, dos)
 ;   DRAW_CV_110  (2-arm: cart, dos)
 ;   DRAW_CV111_AT_X01_Y02  (2-arm: cart, dos)
@@ -310,7 +310,7 @@
 ;   DRAW_CV_114  (2-arm: cart, dos)
 ;   DRAW_CV_115  (2-arm: cart, dos)
 ;   DRAW_CV097_AT_X01_Y02  (2-arm: cart, dos)
-;   DRAW_CV098_PLAY_60_F0A_V2A_C1  (2-arm: cart, dos)
+;   CAPSULE_HERO_RUN_LEFT_FOOTSTEP_PHASE_2  (2-arm: cart, dos)
 ;   DRAW_CV099_AT_X01_Y02  (2-arm: cart, dos)
 ;   DRAW_CV_100  (2-arm: cart, dos)
 ;   DRAW_CV101_AT_X01_Y02  (2-arm: cart, dos)
@@ -466,7 +466,7 @@
 ;   DRAW_CV_075  (2-arm: cart, dos)
 ;   DRAW_CV_076  (2-arm: cart, dos)
 ;   DRAW_CV_077  (2-arm: cart, dos)
-;   DRAW_CV078_PLAY_60_F0B_V22_C1  (2-arm: cart, dos)
+;   CAPSULE_HERO_WALK_LEFT_FOOTSTEP_PHASE_2  (2-arm: cart, dos)
 ;   DRAW_CV_080  (2-arm: cart, dos)
 ;   DRAW_CV_061  (2-arm: cart, dos)
 ;   DRAW_CV_063  (2-arm: cart, dos)
@@ -484,7 +484,7 @@
 ;   DRAW_CV_297  (2-arm: cart, dos)
 ;   DRAW_CV_298  (2-arm: cart, dos)
 ;   DRAW_CV107_AT_X01_Y02  (2-arm: cart, dos)
-;   DRAW_CV108_PLAY_60_F0F_V2A_C1  (2-arm: cart, dos)
+;   CAPSULE_HERO_RUN_LEFT_FOOTSTEP_PHASE_1  (2-arm: cart, dos)
 ;   DRAW_CV109_AT_X01_Y02  (2-arm: cart, dos)
 ;   DRAW_CV_110  (2-arm: cart, dos)
 ;   DRAW_CV111_AT_X01_Y02  (2-arm: cart, dos)
@@ -493,7 +493,7 @@
 ;   DRAW_CV_114  (2-arm: cart, dos)
 ;   DRAW_CV_115  (2-arm: cart, dos)
 ;   DRAW_CV097_AT_X01_Y02  (2-arm: cart, dos)
-;   DRAW_CV098_PLAY_60_F0A_V2A_C1  (2-arm: cart, dos)
+;   CAPSULE_HERO_RUN_LEFT_FOOTSTEP_PHASE_2  (2-arm: cart, dos)
 ;   DRAW_CV099_AT_X01_Y02  (2-arm: cart, dos)
 ;   DRAW_CV_100  (2-arm: cart, dos)
 ;   DRAW_CV101_AT_X01_Y02  (2-arm: cart, dos)
@@ -1686,7 +1686,7 @@ ENTRY_POINT_OF_CAPSULE:
 	mov [0xF6], 0x0001
 	mov [0x32], 0x0000
 	break
-	jne [0xF2], 0x0FA0, KILL_CHAN_AT_1471
+	jne [0xF2], 0x0FA0, CAPSULE_KILLCHAN_OR_SET_ACTION_MASK_BIT_2
 	call LABEL_0076
 	call LABEL_3514
 	call INIT_BIRD_AI_VARS
@@ -1869,5 +1869,5 @@ LABEL_01D3:
 LABEL_01E8:
 	call LABEL_0165
 	je [0x21], 0x00, INCR_VAR07_OR_VARBB_VAR73_INIT_VAR29
-	call GUARDED_ALIEN_ANIM_CV_128
+	call CAPSULE_BUDDY_PER_FRAME_TICK
 	jmp LABEL_02C1

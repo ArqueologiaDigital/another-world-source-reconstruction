@@ -1,6 +1,6 @@
 LABEL_3703:
 	call LABEL_36BB
-	call GUARDED_ALIEN_ANIM_CV_128
+	call CAPSULE_BUDDY_PER_FRAME_TICK
 	break
 	jg [HERO_X], 0xAA, LABEL_3703
 	djnz [0x6F], LABEL_3703
@@ -80,9 +80,9 @@ LABEL_37C9:
 LABEL_37D5:
 	break
 	call LABEL_36BB
-	call GUARDED_ALIEN_ANIM_CV_128
+	call CAPSULE_BUDDY_PER_FRAME_TICK
 	djnz [0x6F], LABEL_37D5
-	setup channel=0x23, address=LABEL_80C2
+	setup channel=0x23, address=CAPSULE_ACTOR_FACE_LEFT_THEN_RUN
 	mov [0x6C], 0x0004
 	mov [0x6F], 0x000A
 	killChannel

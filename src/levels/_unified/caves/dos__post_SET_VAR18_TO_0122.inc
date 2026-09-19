@@ -71,14 +71,14 @@ LABEL_E360:
 	mov [HERO_X], 0x003C
 	killChannel
 
-LABEL_E3C1:
-	jne [SCREEN_NUM], 0x6F, LABEL_E3D2
+CAVES_NO_FLOOR_ABOVE_WATERLINE_CASE_6F:
+	jne [SCREEN_NUM], 0x6F, CAVES_NO_FLOOR_ABOVE_WATERLINE_CASE_ED
 	jg [HERO_Y], 0x8C, SHARED_RET
 	mov [0x22], 0x03E8
 	ret
 
 
-LABEL_E3D2:
+CAVES_NO_FLOOR_ABOVE_WATERLINE_CASE_ED:
 	jne [SCREEN_NUM], 0xED, SHARED_RET
 	jg [HERO_Y], 0x5A, SHARED_RET
 	mov [0x22], 0x03E8
@@ -147,24 +147,24 @@ SETUP_CHAN_14_BY_VAR63:
 	je [0x63], 0x64, LABEL_E611
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_E4D4
 	jne [0x63], 0x05, LABEL_E4A9
-	setup channel=0x14, address=LABEL_F021
+	setup channel=0x14, address=HERO_JUMP_LEFT_FROM_RUN
 	mov [0x63], 0x0064
 	jmp LABEL_E611
 
 LABEL_E4A9:
 	jne [0x63], 0x06, LABEL_E4BA
-	setup channel=0x14, address=LABEL_F195
+	setup channel=0x14, address=HERO_JUMP_RIGHT_FROM_RUN
 	mov [0x63], 0x0064
 	jmp LABEL_E611
 
 LABEL_E4BA:
 	jne [0x63], 0x01, LABEL_E4C7
-	setup channel=0x14, address=LABEL_EF5A
+	setup channel=0x14, address=HERO_JUMP_LEFT_FROM_STAND
 	jmp LABEL_E611
 
 LABEL_E4C7:
 	jne [0x63], 0x02, LABEL_E4D4
-	setup channel=0x14, address=LABEL_F0CE
+	setup channel=0x14, address=HERO_JUMP_RIGHT_FROM_STAND
 	jmp LABEL_E611
 
 LABEL_E4D4:

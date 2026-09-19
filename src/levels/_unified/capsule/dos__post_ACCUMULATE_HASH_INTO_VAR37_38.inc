@@ -36,9 +36,9 @@ LABEL_30FF:
 	call INIT_VARS_A1_A4_A7
 	setup channel=0x22, address=LABEL_4585
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
-	setup channel=0x24, address=LABEL_45A5
+	setup channel=0x24, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
-	setup channel=0x26, address=LABEL_45E0
+	setup channel=0x26, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
 	setup channel=0x28, address=LABEL_461B
 	jle [0x00], 0x3C, LABEL_3163
@@ -98,7 +98,7 @@ LABEL_31A2:
 	ret
 
 
-LABEL_31D5:
+CAPSULE_ACTOR_SLOT_2A_RESPAWN:
 	mov [0x78], 0x0028
 	mov [0x79], 0x00B0
 	mov [0x7A], 0x004C
@@ -110,7 +110,7 @@ LABEL_31D5:
 	ret
 
 
-LABEL_31F6:
+CAPSULE_ACTOR_SLOT_29_RESPAWN:
 	mov [0x70], 0x012C
 	mov [0x71], 0x00B0
 	mov [0x72], 0x004C
@@ -179,7 +179,7 @@ LABEL_329B:
 	mov [0x7D], 0x0831
 	mov [0x7E], 0x2710
 	mov [0x7F], 0xFF38
-	setup channel=0x27, address=LABEL_80C2
+	setup channel=0x27, address=CAPSULE_ACTOR_FACE_LEFT_THEN_RUN
 	ret
 
 
@@ -192,7 +192,7 @@ LABEL_32BF:
 	mov [0x75], 0x0863
 	mov [0x76], 0x2710
 	mov [0x77], 0x0258
-	setup channel=0x25, address=LABEL_8E78
+	setup channel=0x25, address=CAPSULE_ACTOR_FACE_RIGHT_THEN_RUN
 	ret
 
 
@@ -205,7 +205,7 @@ LABEL_32E3:
 	mov [0x75], 0x0833
 	mov [0x76], 0x2710
 	mov [0x77], 0x0014
-	setup channel=0x25, address=LABEL_8E78
+	setup channel=0x25, address=CAPSULE_ACTOR_FACE_RIGHT_THEN_RUN
 	ret
 
 
@@ -226,7 +226,7 @@ LABEL_3317:
 	mov [0x6D], 0x0031
 	mov [0x6E], 0x2710
 	mov [0x6F], 0xFF38
-	setup channel=0x23, address=LABEL_8189
+	setup channel=0x23, address=CAPSULE_BUDDY_RUN_LEFT_PHASE_8
 	ret
 
 
@@ -239,7 +239,7 @@ LABEL_333B:
 	mov [0x75], 0x0071
 	mov [0x76], 0x2710
 	mov [0x77], 0xFF38
-	setup channel=0x25, address=LABEL_80C2
+	setup channel=0x25, address=CAPSULE_ACTOR_FACE_LEFT_THEN_RUN
 	ret
 
 
@@ -252,7 +252,7 @@ LABEL_335F:
 	mov [0x7D], 0x0039
 	mov [0x7E], 0x2710
 	mov [0x7F], 0x000F
-	setup channel=0x27, address=LABEL_80C2
+	setup channel=0x27, address=CAPSULE_ACTOR_FACE_LEFT_THEN_RUN
 	ret
 
 
@@ -265,7 +265,7 @@ LABEL_3383:
 	mov [0x6D], 0x0801
 	mov [0x6E], 0x2710
 	mov [0x6F], 0x009B
-	setup channel=0x23, address=LABEL_8E78
+	setup channel=0x23, address=CAPSULE_ACTOR_FACE_RIGHT_THEN_RUN
 	ret
 
 
@@ -316,7 +316,7 @@ LABEL_340A:
 	ret
 
 
-LABEL_342A:
+CAPSULE_ACTOR_SLOT_28_SPAWN_FOR_DROP_IN_ENTRANCE:
 	mov [0x68], 0x008C
 	mov [0x69], 0x009D
 	mov [0x6A], 0x0091
@@ -328,7 +328,7 @@ LABEL_342A:
 	ret
 
 
-LABEL_344B:
+CAPSULE_ACTOR_SLOT_29_SPAWN_ON_ROOM_INIT:
 	mov [0x68], 0x007B
 	mov [0x69], 0x00AC
 	mov [0x6A], [SCREEN_NUM]
@@ -361,7 +361,7 @@ LABEL_3490:
 	mov [0x7C], 0x4018
 	mov [0x7D], 0x0831
 	mov [0x7E], 0x2710
-	setup channel=0x27, address=LABEL_4AA8
+	setup channel=0x27, address=CAPSULE_ACTOR_TICK_FACING_LEFT_LOOP
 	ret
 
 
@@ -385,7 +385,7 @@ LABEL_34D2:
 	mov [0x7C], 0x4018
 	mov [0x7D], 0x0831
 	mov [0x7E], 0x2710
-	setup channel=0x27, address=LABEL_4AC8
+	setup channel=0x27, address=CAPSULE_ACTOR_TICK_FACING_RIGHT_LOOP
 	ret
 
 
@@ -590,6 +590,6 @@ LABEL_36D7:
 
 
 LABEL_36F3:
-	call GUARDED_ALIEN_ANIM_CV_128
+	call CAPSULE_BUDDY_PER_FRAME_TICK
 	setup channel=0x0F, address=INIT_VAR6F_TO_A_PAUSE_3
 	killChannel

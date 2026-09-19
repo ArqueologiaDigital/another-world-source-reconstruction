@@ -5,7 +5,7 @@ CAVES_BARRIER_BREACH_EVENT_CASE_8A:
 	jne [SCREEN_NUM], 0x8A, LABEL_C565
 	deleteChannels first=0x01, last=0x02
 	setup channel=0x08, address=INLINE_SET_VAR6B_TO_1
-	setup channel=0x3C, address=LABEL_400A
+	setup channel=0x3C, address=CAVES_BARRIER_BREACH_PALETTE_FLASH_FRAME
 	selectVideoPage 0x03
 	video offset=CINEMATIC_804, x=160, y=100
 	selectVideoPage 0xFF
@@ -25,7 +25,7 @@ LABEL_C565:
 	or [0xB1], 0x0008
 	mov [SCROLL_Y], 0xFFFE
 	play id=0x005A, freq=0x0A, vol=0x40, channel=0x00
-	setup channel=0x3C, address=LABEL_3F8B
+	setup channel=0x3C, address=COMMIT_WORK_PAGE_TO_PAGE_3_AND_REFETCH
 	ret
 
 
@@ -199,7 +199,7 @@ LABEL_C759:
 LABEL_C75A:
 	selectVideoPage 0x03
 	fill page=0x03, color=0x00
-	call LABEL_D213
+	call DRAW_GANTRY_PLATFORMS_BG
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0xFF
 
@@ -231,7 +231,7 @@ LABEL_C788:
 	play id=0x005A, freq=0x0F, vol=0x40, channel=0x03
 	break
 	mov [SCROLL_Y], 0x0004
-	setup channel=0x3C, address=LABEL_3F8B
+	setup channel=0x3C, address=COMMIT_WORK_PAGE_TO_PAGE_3_AND_REFETCH
 
 LABEL_C7B3:
 	video offset=CINEMATIC_652, x=160, y=100

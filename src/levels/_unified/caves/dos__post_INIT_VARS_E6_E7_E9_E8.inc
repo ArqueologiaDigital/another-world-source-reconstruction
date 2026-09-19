@@ -89,22 +89,22 @@ LABEL_1332:
 	mov [0xE9], 0xFFFF
 	play id=0x0057, freq=0x19, vol=0x20, channel=0x02
 	video offset=CINEMATIC_191, x=[0xe6], y=[0xe7]
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call CAVES_CHECK_HERO_Y_E7_WITHIN_20PX_BAND
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
 	video offset=CINEMATIC_209, x=[0xe6], y=[0xe7]
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call CAVES_CHECK_HERO_Y_E7_WITHIN_20PX_BAND
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
 	video offset=CINEMATIC_210, x=[0xe6], y=[0xe7]
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call CAVES_CHECK_HERO_Y_E7_WITHIN_20PX_BAND
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
 	video offset=CINEMATIC_211, x=[0xe6], y=[0xe7]
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call CAVES_CHECK_HERO_Y_E7_WITHIN_20PX_BAND
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
@@ -120,17 +120,17 @@ LABEL_1386:
 	selectVideoPage 0x00
 	play id=0x0057, freq=0x19, vol=0x20, channel=0x03
 	video offset=CINEMATIC_214, x=[0xe6], y=[0xe7]
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call CAVES_CHECK_HERO_Y_E7_WITHIN_20PX_BAND
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
 	video offset=CINEMATIC_215, x=[0xe6], y=[0xe7]
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call CAVES_CHECK_HERO_Y_E7_WITHIN_20PX_BAND
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
 	video offset=CINEMATIC_216, x=[0xe6], y=[0xe7]
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call CAVES_CHECK_HERO_Y_E7_WITHIN_20PX_BAND
 	selectVideoPage 0xFF
 	break
 
@@ -139,22 +139,22 @@ LABEL_13B3:
 	play id=0x0057, freq=0x19, vol=0x0A, channel=0x02
 	call LABEL_11C8
 	call LABEL_11FA
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call CAVES_CHECK_HERO_Y_E7_WITHIN_20PX_BAND
 	break
 	call LABEL_11D2
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call CAVES_CHECK_HERO_Y_E7_WITHIN_20PX_BAND
 	break
 	call LABEL_11C8
 	call LABEL_11DC
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call CAVES_CHECK_HERO_Y_E7_WITHIN_20PX_BAND
 	break
 	call LABEL_11D2
 	call LABEL_11E6
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call CAVES_CHECK_HERO_Y_E7_WITHIN_20PX_BAND
 	break
 	call LABEL_11DC
 	call LABEL_11F0
-	call BOUNDS_CHECK_VARE7_VS_VAR02
+	call CAVES_CHECK_HERO_Y_E7_WITHIN_20PX_BAND
 	break
 	jg [0xE9], 0x00, LABEL_13B3
 	mov [0xE9], 0xFFFF
@@ -170,7 +170,7 @@ LABEL_1401:
 	jg [0xE9], 0x00, LABEL_1386
 	jmp LABEL_1401
 
-BOUNDS_CHECK_VARE7_VS_VAR02:
+CAVES_CHECK_HERO_Y_E7_WITHIN_20PX_BAND:
 	mov [0xF8], [HERO_Y]
 	sub [0xF8], 0x000A
 	jl [0xE7], [0xF8], SHARED_RET
@@ -239,7 +239,7 @@ LABEL_14BB:
 	mov [0xF8], [0xB2]
 	and [0xF8], 0x0001
 	je [0xF8], 0x01, LABEL_14D7
-	call LABEL_455C
+	call CAVES_ACTOR_SLOT_2_SPAWN_ON_SCREEN_4E
 
 LABEL_14D7:
 	je [0xB3], 0x00, LABEL_14E0
@@ -252,7 +252,7 @@ LABEL_14E0:
 	and [0xF8], 0x0002
 	jne [0xF8], 0x00, LABEL_1505
 	jne [SCREEN_NUM], 0x70, LABEL_1505
-	call LABEL_461D
+	call CAVES_ACTOR_SLOT_2_SPAWN_ON_SCREEN_70
 	jmp LABEL_150E
 
 LABEL_1505:

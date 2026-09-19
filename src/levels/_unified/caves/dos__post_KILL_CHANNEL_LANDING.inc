@@ -52,7 +52,7 @@ LABEL_01D8:
 LABEL_01DF:
 	text id=0x013D, x=5, y=80, color=0x0E ; "PRESS BUTTON OR RETURN TO CONTINUE"
 	text id=0x013C, x=5, y=180, color=0x0D ; "        ACCESS CODE:"
-	call LABEL_02E0
+	call CAVES_ACCESS_CODE_TEXT_CASE_1E
 	break
 	je [HERO_ACTION], 0x00, LABEL_01DF
 	setup channel=0x00, address=ENTRY_POINT_OF_CAVES

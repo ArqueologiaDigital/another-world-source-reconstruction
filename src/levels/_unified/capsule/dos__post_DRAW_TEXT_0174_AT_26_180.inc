@@ -6,7 +6,7 @@ LABEL_1464:
 
 .include "../_helpers/KILL_CHANNEL_LANDING.inc"
 
-KILL_CHAN_AT_1471:
+CAPSULE_KILLCHAN_OR_SET_ACTION_MASK_BIT_2:
 	killChannel
 
 LABEL_1472:
@@ -17,12 +17,12 @@ LABEL_1472:
 LABEL_147E:
 	db 0x11
 
-LABEL_147F:
+HERO_CRAWL_RIGHT_LOOP:
 	video offset=CINEMATIC_185, x=[HERO_X], y=[HERO_Y]
 	break
 	je [HERO_ACTION], 0x01, LABEL_14EC
-	je [HERO_POS_LEFT_RIGHT], 0xFFFF, LABEL_17D4
-	je [HERO_POS_LEFT_RIGHT], 0x00, LABEL_147F
+	je [HERO_POS_LEFT_RIGHT], 0xFFFF, HERO_CRAWL_LEFT_LOOP
+	je [HERO_POS_LEFT_RIGHT], 0x00, HERO_CRAWL_RIGHT_LOOP
 	add [HERO_X], 0x0002
 	video offset=CINEMATIC_200, x=[HERO_X], y=[HERO_Y]
 	break
@@ -49,7 +49,7 @@ ANIM_CIN_197_LOOP_VARE6_AT_14BA:
 	break
 	video offset=CINEMATIC_185, x=[HERO_X], y=[HERO_Y]
 	break
-	jmp LABEL_147F
+	jmp HERO_CRAWL_RIGHT_LOOP
 LABEL_14EB:
 	db 0x11
 
@@ -87,7 +87,7 @@ LABEL_14EC:
 	video offset=CINEMATIC_182, x=[HERO_X], y=[HERO_Y]
 	setup channel=0x01, address=LABEL_1599
 	break
-	jmp LABEL_17D4
+	jmp HERO_CRAWL_LEFT_LOOP
 
 LABEL_155E:
 	mov [HERO_X], 0x010C
@@ -108,7 +108,7 @@ LABEL_155E:
 	video offset=CINEMATIC_182, x=[HERO_X], y=[HERO_Y]
 	setup channel=0x01, address=LABEL_15E4
 	break
-	jmp LABEL_17D4
+	jmp HERO_CRAWL_LEFT_LOOP
 
 LABEL_1599:
 	setPalette 0x0E

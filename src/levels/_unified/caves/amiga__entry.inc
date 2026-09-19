@@ -262,9 +262,9 @@
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
-;   STEP_DRAW_CV336_THEN_CV340  (2-arm: cart, dos)
+;   HERO_CROUCH_DOWN_LEFT_STEP  (2-arm: cart, dos)
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
-;   STEP_DRAW_CV329_THEN_CV335  (2-arm: cart, dos)
+;   HERO_CROUCH_DOWN_RIGHT_STEP  (2-arm: cart, dos)
 
 ; Unified source for CAVES with 264 folded shared bodies.
 ;
@@ -530,9 +530,9 @@
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
-;   STEP_DRAW_CV336_THEN_CV340  (2-arm: cart, dos)
+;   HERO_CROUCH_DOWN_LEFT_STEP  (2-arm: cart, dos)
 ;   INLINE_BREAK_035  (3-arm: amiga, cart, dos)
-;   STEP_DRAW_CV329_THEN_CV335  (2-arm: cart, dos)
+;   HERO_CROUCH_DOWN_RIGHT_STEP  (2-arm: cart, dos)
 
 ; Unified source for CAVES with 218 folded shared bodies.
 ;
@@ -753,8 +753,8 @@
 ;   STEP_LEFT4_DRAW_CV140_LEFT4  (2-arm: cart, dos)
 ;   STEP_DRAW_CV352_LEFT4_RIGHT1  (3-arm: amiga, cart, dos)
 ;   DRAW_CV352_STEP_RIGHT3  (3-arm: amiga, cart, dos)
-;   STEP_DRAW_CV336_THEN_CV340  (2-arm: cart, dos)
-;   STEP_DRAW_CV329_THEN_CV335  (2-arm: cart, dos)
+;   HERO_CROUCH_DOWN_LEFT_STEP  (2-arm: cart, dos)
+;   HERO_CROUCH_DOWN_RIGHT_STEP  (2-arm: cart, dos)
 
 ; Unified source for CAVES with 218 folded shared bodies.
 ;
@@ -975,8 +975,8 @@
 ;   STEP_LEFT4_DRAW_CV140_LEFT4  (2-arm: cart, dos)
 ;   STEP_DRAW_CV352_LEFT4_RIGHT1  (3-arm: amiga, cart, dos)
 ;   DRAW_CV352_STEP_RIGHT3  (3-arm: amiga, cart, dos)
-;   STEP_DRAW_CV336_THEN_CV340  (2-arm: cart, dos)
-;   STEP_DRAW_CV329_THEN_CV335  (2-arm: cart, dos)
+;   HERO_CROUCH_DOWN_LEFT_STEP  (2-arm: cart, dos)
+;   HERO_CROUCH_DOWN_RIGHT_STEP  (2-arm: cart, dos)
 
 ; Unified source for CAVES with 218 folded shared bodies.
 ;
@@ -1197,8 +1197,8 @@
 ;   STEP_LEFT4_DRAW_CV140_LEFT4  (2-arm: cart, dos)
 ;   STEP_DRAW_CV352_LEFT4_RIGHT1  (3-arm: amiga, cart, dos)
 ;   DRAW_CV352_STEP_RIGHT3  (3-arm: amiga, cart, dos)
-;   STEP_DRAW_CV336_THEN_CV340  (2-arm: cart, dos)
-;   STEP_DRAW_CV329_THEN_CV335  (2-arm: cart, dos)
+;   HERO_CROUCH_DOWN_LEFT_STEP  (2-arm: cart, dos)
+;   HERO_CROUCH_DOWN_RIGHT_STEP  (2-arm: cart, dos)
 
 ; Unified source for CAVES with 218 folded shared bodies.
 ;
@@ -1419,8 +1419,8 @@
 ;   STEP_LEFT4_DRAW_CV140_LEFT4  (2-arm: cart, dos)
 ;   STEP_DRAW_CV352_LEFT4_RIGHT1  (3-arm: amiga, cart, dos)
 ;   DRAW_CV352_STEP_RIGHT3  (3-arm: amiga, cart, dos)
-;   STEP_DRAW_CV336_THEN_CV340  (2-arm: cart, dos)
-;   STEP_DRAW_CV329_THEN_CV335  (2-arm: cart, dos)
+;   HERO_CROUCH_DOWN_LEFT_STEP  (2-arm: cart, dos)
+;   HERO_CROUCH_DOWN_RIGHT_STEP  (2-arm: cart, dos)
 
 ; Unified source for CAVES with 213 folded shared bodies.
 ;
@@ -1636,8 +1636,8 @@
 ;   STEP_LEFT4_DRAW_CV140_LEFT4  (2-arm: cart, dos)
 ;   STEP_DRAW_CV352_LEFT4_RIGHT1  (3-arm: amiga, cart, dos)
 ;   DRAW_CV352_STEP_RIGHT3  (3-arm: amiga, cart, dos)
-;   STEP_DRAW_CV336_THEN_CV340  (2-arm: cart, dos)
-;   STEP_DRAW_CV329_THEN_CV335  (2-arm: cart, dos)
+;   HERO_CROUCH_DOWN_LEFT_STEP  (2-arm: cart, dos)
+;   HERO_CROUCH_DOWN_RIGHT_STEP  (2-arm: cart, dos)
 
 ; Unified source for CAVES with 213 folded shared bodies.
 ;
@@ -1853,8 +1853,8 @@
 ;   STEP_LEFT4_DRAW_CV140_LEFT4  (2-arm: cart, dos)
 ;   STEP_DRAW_CV352_LEFT4_RIGHT1  (3-arm: amiga, cart, dos)
 ;   DRAW_CV352_STEP_RIGHT3  (3-arm: amiga, cart, dos)
-;   STEP_DRAW_CV336_THEN_CV340  (2-arm: cart, dos)
-;   STEP_DRAW_CV329_THEN_CV335  (2-arm: cart, dos)
+;   HERO_CROUCH_DOWN_LEFT_STEP  (2-arm: cart, dos)
+;   HERO_CROUCH_DOWN_RIGHT_STEP  (2-arm: cart, dos)
 
 ; Unified source for CAVES with 33 folded shared bodies.
 ;

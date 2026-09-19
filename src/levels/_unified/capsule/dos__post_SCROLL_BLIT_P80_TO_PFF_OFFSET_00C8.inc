@@ -4,7 +4,7 @@ LABEL_2F8A:
 LABEL_2F8E:
 	db 0x11
 
-LABEL_2F8F:
+CAPSULE_PALETTE_FLASH_INTO_PAGE_3_PRESENT:
 	setPalette 0x06
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF

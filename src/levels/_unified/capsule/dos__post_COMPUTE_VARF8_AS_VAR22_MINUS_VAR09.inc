@@ -54,13 +54,13 @@ LABEL_6D95:
 LABEL_6D96:
 	mov [0x1D], 0x0000
 	call LABEL_74AB
-	jl [0xA1], 0x00, LABEL_6DB0
+	jl [0xA1], 0x00, CAPSULE_BUDDY_WALK_RIGHT_DRAW_2_RET
 	mov [0x24], [0xA0]
 	mov [0x26], [0xA2]
 	mov [0x1C], 0x0014
 	call LABEL_6E2A
 
-LABEL_6DB0:
+CAPSULE_BUDDY_WALK_RIGHT_DRAW_2_RET:
 	jl [0xA4], 0x00, LABEL_6DC3
 	mov [0x24], [0xA3]
 	mov [0x26], [0xA5]

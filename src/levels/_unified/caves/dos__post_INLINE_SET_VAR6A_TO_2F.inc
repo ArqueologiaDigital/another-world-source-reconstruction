@@ -63,7 +63,7 @@ LABEL_1C67:
 	fill page=0x03, color=0x00
 	fill page=0xFF, color=0x00
 	setPalette 0x13
-	setup channel=0x3C, address=LABEL_3F7D
+	setup channel=0x3C, address=FRAME_PRESENT_RESTORE_PAGE_3_LOOP
 	break
 	setup channel=0x01, address=INLINE_SET_VAR68_TO_32
 	setup channel=0x02, address=INLINE_SET_VAR6A_TO_2F

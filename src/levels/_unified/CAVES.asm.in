@@ -61,5 +61,5 @@ CACHED_SCREEN_NUM	EQU 0x66
 ; CAVES gameplay action helpers — INIT_VARS_E6_EA / LOAD_RES44 / COPY_PAGE0_TO_3_LOAD_RES45 (resource-load helpers); DELETE_GAME_AND_FX_CHANNELS (teardown); INIT_AI_VARS_AT_280_10 (AI-position init); DEDUP_CAVES_5B_035/036 (folded short-body helpers).
 .include "caves/caves_action_helpers.inc"
 
-; CAVES animation step-draws — SET_VAR18_TO_0122 var setter, STEP_LEFT4_DRAW_CV140_LEFT4 (multistep walking helper), STEP_DRAW_CV336_THEN_CV340 / STEP_DRAW_CV329_THEN_CV335 (paired-frame draws with walking offsets), and 3 INLINE_BREAK_035 single-instruction break helpers. Filename understates — the "inline breaks" are only 3 of 7 routines.
+; CAVES animation step-draws — SET_VAR18_TO_0122 var setter, STEP_LEFT4_DRAW_CV140_LEFT4 (multistep walking helper), HERO_CROUCH_DOWN_LEFT_STEP / HERO_CROUCH_DOWN_RIGHT_STEP (paired-frame draws with walking offsets), and 3 INLINE_BREAK_035 single-instruction break helpers. Filename understates — the "inline breaks" are only 3 of 7 routines.
 .include "caves/caves_inline_breaks.inc"

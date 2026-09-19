@@ -9,10 +9,10 @@ LABEL_A21B:
 
 LABEL_A246:
 	mov [0x32], 0x0001
-	setup channel=0x14, address=LABEL_A19F
+	setup channel=0x14, address=CAVES_TELEPORT_UP_ENTRY
 
 LABEL_A24E:
 	jne [HERO_Y], [0x51], INLINE_SUB_VAR50_BY_14
 	jne [HERO_POS_JUMP_DOWN], 0x01, INLINE_SUB_VAR50_BY_14
 	mov [0x32], 0x0001
-	setup channel=0x14, address=LABEL_A17C
+	setup channel=0x14, address=CAVES_TELEPORT_DOWN_ENTRY

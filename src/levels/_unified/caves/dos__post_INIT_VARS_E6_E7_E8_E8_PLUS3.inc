@@ -181,7 +181,7 @@ LABEL_08A6:
 	setup channel=0x14, address=LABEL_07E9
 	killChannel
 
-LABEL_090A:
+CAVES_AMBIENT_DRIFT_LEFT_ANIM_LOOP:
 	video offset=CINEMATIC_241, x=[0x6c], y=[0x6d]
 	break
 	jne [0x71], 0xFFFF, LABEL_0974
@@ -198,11 +198,11 @@ LABEL_091D:
 	break
 	video offset=CINEMATIC_245, x=[0x6c], y=[0x6d]
 	break
-	jmp LABEL_090A
+	jmp CAVES_AMBIENT_DRIFT_LEFT_ANIM_LOOP
 LABEL_093F:
 	db 0x11
 
-LABEL_0940:
+CAVES_AMBIENT_DRIFT_RIGHT_ANIM_LOOP:
 	video offset=CINEMATIC_249, x=[0x6c], y=[0x6d]
 	break
 	jne [0x71], 0x01, LABEL_0974
@@ -219,7 +219,7 @@ LABEL_0952:
 	jne [0x71], 0x01, LABEL_0974
 	video offset=CINEMATIC_248, x=[0x6c], y=[0x6d]
 	break
-	jmp LABEL_0940
+	jmp CAVES_AMBIENT_DRIFT_RIGHT_ANIM_LOOP
 LABEL_0973:
 	db 0x11
 

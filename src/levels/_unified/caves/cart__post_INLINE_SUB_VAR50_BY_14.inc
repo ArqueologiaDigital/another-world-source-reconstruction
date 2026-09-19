@@ -58,7 +58,7 @@ LABEL_A247:
 	setup channel=0x07, address=LABEL_C73B
 	setup channel=0x03, address=INIT_VARS_E6_E9_E8
 	setup channel=0x05, address=LABEL_139C
-	setup channel=0x14, address=CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L1
+	setup channel=0x14, address=HERO_PRONE_IDLE_LEFT_LOOP
 	setup channel=0x3C, address=LABEL_DDC7
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_A2A3:
@@ -180,7 +180,7 @@ LABEL_A40B:
 	mov [0xF8], [0xB2]
 	and [0xF8], 0x0020
 	jne [0xF8], 0x00, TRAMP_A41B
-	call LABEL_463E
+	call CAVES_ACTOR_SLOT_1_SPAWN_ON_SCREEN_47
 
 TRAMP_A41B:
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
@@ -1112,7 +1112,7 @@ LABEL_AF74:
 	and [0xF8], 0x0080
 	jne [0xF8], 0x00, LABEL_AF95
 	or [0xB2], 0x0080
-	call LABEL_457D
+	call CAVES_ACTOR_SLOT_0_SPAWN_ON_SCREEN_4D
 
 LABEL_AF95:
 	setup channel=0x3B, address=LABEL_D15E
@@ -1459,7 +1459,7 @@ LABEL_B352:
 	mov [0xF8], [0xB1]
 	and [0xF8], 0x0001
 	je [0xF8], 0x00, LABEL_B3D0
-	call LABEL_46F7
+	call CAVES_ACTOR_SLOT_0_SPAWN_ON_SCREEN_92
 
 LABEL_B3D0:
 	setup channel=0x39, address=LABEL_48C1

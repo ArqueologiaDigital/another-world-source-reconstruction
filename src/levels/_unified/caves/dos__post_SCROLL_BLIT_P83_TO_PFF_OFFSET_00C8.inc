@@ -4,7 +4,7 @@ LABEL_4005:
 LABEL_4009:
 	db 0x11
 
-LABEL_400A:
+CAVES_BARRIER_BREACH_PALETTE_FLASH_FRAME:
 	setPalette 0x1F
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
@@ -15,11 +15,11 @@ LABEL_400A:
 	copyVideoPage src=0x03, dst=0xFF
 	mov [PAUSE_SLICES], [0xF8]
 	break
-	jmp LABEL_3F7D
+	jmp FRAME_PRESENT_RESTORE_PAGE_3_LOOP
 LABEL_4027:
 	db 0x11
 
-LABEL_4028:
+CAVES_HERO_FALL_DEATH_PALETTE_FLASH_FRAME:
 	setPalette 0x1E
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
@@ -30,11 +30,11 @@ LABEL_4028:
 	copyVideoPage src=0x00, dst=0xFF
 	mov [PAUSE_SLICES], [0xF8]
 	break
-	jmp CAVES_HOLD_PAGE_40_AND_HELPER_3F48_LOOP
+	jmp FRAME_PRESENT_RESTORE_PAGE_0_LOOP
 LABEL_4045:
 	db 0x11
 
-LABEL_4046:
+CAVES_ROCK_CRUSH_PALETTE_FLASH_FRAME:
 	setPalette 0x1F
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
@@ -45,9 +45,9 @@ LABEL_4046:
 	copyVideoPage src=0x00, dst=0xFF
 	mov [PAUSE_SLICES], [0xF8]
 	break
-	jmp CAVES_HOLD_PAGE_40_AND_HELPER_3F48_LOOP
+	jmp FRAME_PRESENT_RESTORE_PAGE_0_LOOP
 
-LABEL_4063:
+CAVES_SCREEN_ED_EVENT_PALETTE_FLASH_FRAME:
 	setPalette 0x1F
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
@@ -58,7 +58,7 @@ LABEL_4063:
 	copyVideoPage src=0x00, dst=0xFF
 	mov [PAUSE_SLICES], [0xF8]
 	break
-	jmp CAVES_HOLD_PAGE_40_AND_HELPER_3F48_LOOP
+	jmp FRAME_PRESENT_RESTORE_PAGE_0_LOOP
 	killChannel
 	setPalette 0x1F
 	blitFramebuffer 0xFF
@@ -70,7 +70,7 @@ LABEL_4063:
 	copyVideoPage src=0x00, dst=0xFF
 	mov [PAUSE_SLICES], [0xF8]
 	break
-	jmp CAVES_HOLD_PAGE_40_AND_HELPER_3F48_LOOP
+	jmp FRAME_PRESENT_RESTORE_PAGE_0_LOOP
 LABEL_409E:
 	db 0x11
 
@@ -78,10 +78,10 @@ LABEL_409F:
 	break
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	mov [SCROLL_Y], 0xFFFE
-	setup channel=0x3C, address=LABEL_3F8B
+	setup channel=0x3C, address=COMMIT_WORK_PAGE_TO_PAGE_3_AND_REFETCH
 	break
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	mov [SCROLL_Y], 0x0001
-	setup channel=0x3C, address=LABEL_3F8B
+	setup channel=0x3C, address=COMMIT_WORK_PAGE_TO_PAGE_3_AND_REFETCH
 	jmp LABEL_409F
 	killChannel
