@@ -79,15 +79,20 @@ RE_DRAW = re.compile(r"video\s+(?:type=\d+,\s*)?offset=([A-Za-z_][A-Za-z0-9_]*)"
 def art_is_named(sym: str) -> bool:
     """A polygon operand counts as identified only if it carries a real name.
 
-    `CINEMATIC_<index>` is the disassembler's per-port encounter counter and
-    `COMMON_VIDEO_<n>` is the shared bank, which NAMING.md §2 bars from being
-    hand-named until it is re-keyed by offset. Both are placeholders here even
-    though they are not `LABEL_<hex>`.
+    `CINEMATIC_<index>` is the disassembler's per-port encounter counter,
+    `COMMON_VIDEO_<n>` was the shared bank's old spelling, and `CV_<OFFSET4>`
+    is what T7's re-key replaced it with on 2026-09-19 -- port-invariant, and
+    still a key rather than a name. All three are placeholders here even
+    though none is `LABEL_<hex>`. The `CV_` case is spelled out rather than
+    left to `classify`, so that a future change there cannot silently turn
+    3,000 keys into "named".
     """
     if re.fullmatch(r"CINEMATIC_\d+", sym):
         return False
     if re.fullmatch(r"COMMON_VIDEO_\d+", sym):
         return False
+    if re.fullmatch(r"CV_[0-9A-F]{4}", sym):
+        return False        # T7's interim offset key: a key, not a name
     return classify(sym) == "semantic"
 
 

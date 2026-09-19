@@ -68,7 +68,11 @@ BIG3 = ["PRISON", "CAVES", "CAPSULE"]
 RE_LABEL = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*):")
 RE_DRAW = re.compile(r"video\s+(?:type=\d+,\s*)?offset=([A-Za-z_][A-Za-z0-9_]*)")
 RE_ACTOR = re.compile(r"x=\[0x07\]\s*,\s*y=\[0x08\]")
-RE_CV = re.compile(r"^COMMON_VIDEO_\d+$")
+# After T7 re-keyed the shared bank (2026-09-19) the placeholder form is
+# `CV_<OFFSET4>`, not `COMMON_VIDEO_<n>`. Matching only the old spelling made
+# this probe report T7 as blocking ZERO routines the moment the re-key landed --
+# the same silent under-count the lint had until NUMERIC_CV was widened.
+RE_CV = re.compile(r"^(COMMON_VIDEO_\d+|CV_[0-9A-F]{4})$")
 
 
 def abstract(body: list[str]) -> str:
