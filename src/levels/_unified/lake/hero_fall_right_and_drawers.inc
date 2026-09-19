@@ -401,37 +401,37 @@ DRAW_HERO_STOP_R_BUNDLE_094_095:
 	ret
 
 
-DRAW_HERO_RESUME_LEFT_F4:
+DRAW_HERO_WALK_LEFT_F9:
 	video type=0, offset=COMMON_VIDEO_074, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
-DRAW_HERO_RESUME_LEFT_F5:
+DRAW_HERO_WALK_LEFT_F10:
 	video type=0, offset=COMMON_VIDEO_075, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
-DRAW_HERO_RESUME_LEFT_F6:
+DRAW_HERO_WALK_LEFT_F11:
 	video type=0, offset=COMMON_VIDEO_076, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
-DRAW_HERO_RESUME_LEFT_F7:
+DRAW_HERO_WALK_LEFT_F12:
 	video type=0, offset=COMMON_VIDEO_077, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
-DRAW_HERO_RESUME_LEFT_F8:
+DRAW_HERO_WALK_LEFT_F13:
 	video type=0, offset=COMMON_VIDEO_078, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
-DRAW_HERO_RESUME_LEFT_F9:
+DRAW_HERO_WALK_LEFT_F14:
 	video type=0, offset=COMMON_VIDEO_079, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_080, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
@@ -446,61 +446,61 @@ DRAW_HERO_STANDING_LEFT_IDLE:
 	ret
 
 
-DRAW_HERO_LEFT_PROFILE:
+DRAW_HERO_WALK_LEFT_F0:
 	video type=0, offset=COMMON_VIDEO_060, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_061, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
-DRAW_CV_062_063_AND_CIN_002:
+DRAW_HERO_WALK_LEFT_F1:
 	video type=0, offset=COMMON_VIDEO_062, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_063, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
-DRAW_VIDEO_064_065_AND_CINEMATIC_HERO_SHADOW_RET:
+DRAW_HERO_WALK_LEFT_F2:
 	video type=0, offset=COMMON_VIDEO_064, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_065, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
-DRAW_CV_066_067_AND_CIN_002:
+DRAW_HERO_WALK_LEFT_F3:
 	video type=0, offset=COMMON_VIDEO_066, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_067, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
-DRAW_CV_068_069_AND_CIN_002:
+DRAW_HERO_WALK_LEFT_F4:
 	video type=0, offset=COMMON_VIDEO_068, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_069, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
-DRAW_VIDEO_070_AND_CIN_002:
+DRAW_HERO_WALK_LEFT_F5:
 	video type=0, offset=COMMON_VIDEO_070, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
-DRAW_HERO_RESUME_LEFT_F1:
+DRAW_HERO_WALK_LEFT_F6:
 	video type=0, offset=COMMON_VIDEO_071, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
-DRAW_HERO_RESUME_LEFT_F2:
+DRAW_HERO_WALK_LEFT_F7:
 	video type=0, offset=COMMON_VIDEO_000, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_072, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
-DRAW_HERO_RESUME_LEFT_F3:
+DRAW_HERO_WALK_LEFT_F8:
 	video type=0, offset=COMMON_VIDEO_073, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
 	ret

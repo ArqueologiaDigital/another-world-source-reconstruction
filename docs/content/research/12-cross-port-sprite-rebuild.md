@@ -129,6 +129,18 @@ mapped routines.
 
 ### Confirmed cut: HERO_RESUME_LEFT 10-frame animation cycle
 
+> **Correction, 2026-09-19 — the family name in this section is wrong, the
+> finding is not.** `CINEMATIC_HERO_RESUME_LEFT_*` and
+> `CINEMATIC_HERO_FALL_LEFT_*` were re-based to one gap-free
+> `CINEMATIC_HERO_WALK_LEFT_0..14` after
+> `notes/hero-walk-cycle-probes/lake_hero_left_locomotion.py` showed the loop
+> that draws them never writes `HERO_Y` — 15 frames at −2.13 px/frame with two
+> footsteps, which is a walk, not a fall and not a "resume". The offsets,
+> parse results and the amiga-bespoke-vs-DOS-composite conclusion below all
+> stand; read `HERO_RESUME_LEFT_F<n>` as `HERO_WALK_LEFT_<n+5>` and
+> `RESUME_LEFT_F4..F9` (0x0310..0x0574) as `WALK_LEFT_9..14`.
+
+
 Following the address-clustering hint up to its named-EQU
 attribution: `tools/find_parent_polygons.py` walks the polygon
 hierarchy in reverse (child → parent group) and shows that the

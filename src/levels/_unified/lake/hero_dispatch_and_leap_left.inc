@@ -21,7 +21,7 @@ DISPATCH_TO_HERO_ACTION_LEFT:
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	jmp HERO_LEFT_ACTION_JOIN_WALK_OR_STAND
 .elif BRANCH == "chahi_amiga_1991"
-	jmp MAYBE_RESUME_WALK_LEFT_IF_GROUNDED
+	jmp MAYBE_START_RUN_LEFT_IF_GROUNDED
 .endif
 	killChannel
 
