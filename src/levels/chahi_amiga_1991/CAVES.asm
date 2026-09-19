@@ -4800,7 +4800,7 @@ LABEL_26A5:
 
 LABEL_26E9:
 	break
-	jmp LABEL_3B68
+	jmp HERO_DIRECTION_DOWN_IDLE_LOOP
 LABEL_26ED:
 	db 0x11
 
@@ -6536,7 +6536,7 @@ LABEL_3858:
 	db 0x11, 0x54, 0x49, 0xE2, 0x01, 0x02, 0x06, 0x07
 	db 0x38, 0x59, 0x11
 
-LABEL_3863:
+HERO_DIRECTION_DOWN_TO_LEFT_TURN:
 	mov [0x63], 0x0064
 	video offset=CINEMATIC_471, x=[HERO_X], y=[HERO_Y]
 	mov [0x19], 0x0000
@@ -6553,56 +6553,56 @@ LABEL_3863:
 	jmp LABEL_37D0
 
 START_HERO_DIRECTION_LEFT_TO_DOWN_TURN:
-	setup channel=0x15, address=LABEL_3916
+	setup channel=0x15, address=HERO_DIRECTION_LEFT_TO_DOWN_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
 START_HERO_DIRECTION_LEFT_TO_UP_TURN:
-	setup channel=0x15, address=LABEL_3980
+	setup channel=0x15, address=HERO_DIRECTION_LEFT_TO_UP_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
 START_HERO_DIRECTION_RIGHT_TO_DOWN_TURN:
-	setup channel=0x15, address=LABEL_3A58
+	setup channel=0x15, address=HERO_DIRECTION_RIGHT_TO_DOWN_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
 START_HERO_DIRECTION_RIGHT_TO_UP_TURN:
-	setup channel=0x15, address=LABEL_3B2F
+	setup channel=0x15, address=HERO_DIRECTION_RIGHT_TO_UP_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
 START_HERO_DIRECTION_DOWN_TO_RIGHT_TURN:
-	setup channel=0x15, address=LABEL_39BA
+	setup channel=0x15, address=HERO_DIRECTION_DOWN_TO_RIGHT_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
 START_HERO_DIRECTION_UP_TO_RIGHT_TURN:
-	setup channel=0x15, address=LABEL_3AFE
+	setup channel=0x15, address=HERO_DIRECTION_UP_TO_RIGHT_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
 START_HERO_DIRECTION_DOWN_TO_LEFT_TURN:
-	setup channel=0x15, address=LABEL_3863
+	setup channel=0x15, address=HERO_DIRECTION_DOWN_TO_LEFT_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
 START_HERO_DIRECTION_UP_TO_LEFT_TURN:
-	setup channel=0x15, address=LABEL_394F
+	setup channel=0x15, address=HERO_DIRECTION_UP_TO_LEFT_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
@@ -6622,7 +6622,7 @@ START_HERO_DIRECTION_RIGHT_TO_LEFT_TURN:
 	ret
 
 
-LABEL_3916:
+HERO_DIRECTION_LEFT_TO_DOWN_TURN:
 	mov [0x63], 0x0064
 	video offset=CINEMATIC_469, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0014
@@ -6638,9 +6638,9 @@ LABEL_3916:
 	mov [0x63], 0x0004
 	setup channel=0x16, address=LABEL_3C0E
 	break
-	jmp LABEL_3B68
+	jmp HERO_DIRECTION_DOWN_IDLE_LOOP
 
-LABEL_394F:
+HERO_DIRECTION_UP_TO_LEFT_TURN:
 	mov [0x63], 0x0064
 	video offset=CINEMATIC_493, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x000A
@@ -6656,7 +6656,7 @@ LABEL_394F:
 	break
 	jmp LABEL_37D0
 
-LABEL_3980:
+HERO_DIRECTION_LEFT_TO_UP_TURN:
 	mov [0x63], 0x0064
 	video offset=CINEMATIC_491, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0014
@@ -6672,11 +6672,11 @@ LABEL_3980:
 	mov [0x63], 0x0003
 	setup channel=0x16, address=LABEL_3BA3
 	break
-	jmp LABEL_3C5E
+	jmp HERO_DIRECTION_UP_IDLE_LOOP
 LABEL_39B9:
 	db 0x11
 
-LABEL_39BA:
+HERO_DIRECTION_DOWN_TO_RIGHT_TURN:
 	mov [0x63], 0x0064
 	video offset=CINEMATIC_453, x=[HERO_X], y=[HERO_Y]
 	mov [0x19], 0x0000
@@ -6726,7 +6726,7 @@ HERO_DIRECTION_LEFT_TO_RIGHT_TURN:
 	break
 	jmp LABEL_3C96
 
-LABEL_3A58:
+HERO_DIRECTION_RIGHT_TO_DOWN_TURN:
 	mov [0x63], 0x0064
 	video offset=CINEMATIC_451, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0019
@@ -6742,7 +6742,7 @@ LABEL_3A58:
 	mov [0x63], 0x0004
 	setup channel=0x16, address=LABEL_3C0E
 	break
-	jmp LABEL_3B68
+	jmp HERO_DIRECTION_DOWN_IDLE_LOOP
 
 HERO_DIRECTION_RIGHT_TO_LEFT_TURN:
 	mov [0x63], 0x0064
@@ -6778,7 +6778,7 @@ HERO_DIRECTION_RIGHT_TO_LEFT_TURN:
 	break
 	jmp LABEL_37D0
 
-LABEL_3AFE:
+HERO_DIRECTION_UP_TO_RIGHT_TURN:
 	mov [0x63], 0x0064
 	video offset=CINEMATIC_474, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x000A
@@ -6794,7 +6794,7 @@ LABEL_3AFE:
 	break
 	jmp LABEL_3C96
 
-LABEL_3B2F:
+HERO_DIRECTION_RIGHT_TO_UP_TURN:
 	mov [0x63], 0x0064
 	video offset=CINEMATIC_472, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0014
@@ -6810,9 +6810,9 @@ LABEL_3B2F:
 	mov [0x63], 0x0003
 	setup channel=0x16, address=LABEL_3BA3
 	break
-	jmp LABEL_3C5E
+	jmp HERO_DIRECTION_UP_IDLE_LOOP
 
-LABEL_3B68:
+HERO_DIRECTION_DOWN_IDLE_LOOP:
 	mov [0x63], 0x0004
 	mov [0x19], 0x001E
 	video offset=CINEMATIC_450, x=[HERO_X], y=[HERO_Y]
@@ -6831,7 +6831,7 @@ LABEL_3B68:
 	break
 	video offset=CINEMATIC_454, x=[HERO_X], y=[HERO_Y]
 	break
-	jmp LABEL_3B68
+	jmp HERO_DIRECTION_DOWN_IDLE_LOOP
 
 LABEL_3BA3:
 	video offset=CINEMATIC_480, x=[HERO_X], y=[HERO_Y]
@@ -6904,7 +6904,7 @@ LABEL_3C37:
 LABEL_3C5D:
 	db 0x11
 
-LABEL_3C5E:
+HERO_DIRECTION_UP_IDLE_LOOP:
 	mov [0x63], 0x0003
 	video offset=CINEMATIC_475, x=[HERO_X], y=[HERO_Y]
 	break
@@ -6922,7 +6922,7 @@ LABEL_3C5E:
 	break
 	video offset=CINEMATIC_476, x=[HERO_X], y=[HERO_Y]
 	break
-	jmp LABEL_3C5E
+	jmp HERO_DIRECTION_UP_IDLE_LOOP
 LABEL_3C95:
 	db 0x11
 
