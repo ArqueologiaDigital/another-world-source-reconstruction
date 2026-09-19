@@ -7,6 +7,13 @@ that went with them.
 | script | question it answers | run it |
 |---|---|---|
 | `lake_hero_left_locomotion.py` | Is the loop formerly called `HERO_FALL_LEFT_LOOP` a fall, and is the one formerly called `HERO_WALK_LEFT_LOOP` a walk? Exits non-zero if the fall reading turns out to hold after all, so it is also a regression test on the rename. | `python3 notes/hero-walk-cycle-probes/lake_hero_left_locomotion.py` |
+| `apply_walk_left_rebase.py` | The re-base itself, kept because it produced the count quoted in the commit: **401** references over **13** LAKE files, and it prints its own file scope. It refuses to run on an already-re-based tree. | `python3 notes/hero-walk-cycle-probes/apply_walk_left_rebase.py` |
+
+The scope line in that script is the point of keeping it. The first cut was not
+restricted to LAKE and renamed `HERO_WALK_LEFT_LOOP` in PRISON, CAVES and
+CAPSULE too — three independent routines this measurement says nothing about,
+611 references instead of 401. It now prints how many files it will touch and
+asserts that no affected label is defined in a cross-stage `_helpers/` chunk.
 
 ## What it found
 

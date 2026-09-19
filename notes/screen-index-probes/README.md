@@ -6,6 +6,13 @@ per-stage `CACHED_SCREEN_NUM` declarations.
 | script | question it answers | run it |
 |---|---|---|
 | `var67_screen_grid.py` | Is VM variable `0x67` a screen index into a 32-column row-major grid, and is `0x66` its per-stage cache? Five independent checks; the script exits non-zero if any fails, so it is also a regression test on the `SCREEN_NUM` rename. | `python3 notes/screen-index-probes/var67_screen_grid.py` |
+| `apply_screen_num_rename.py` | The migration itself, kept because it produced the reference counts quoted in the rename commit: **6,242** `HACK_VAR_67`, **312** raw `[0x66]` (305 net — the companion script below reverts 7 of them in TANK), and 32 labels that had spelled the placeholder into their own names. Prints the per-name tally. | `python3 notes/screen-index-probes/apply_screen_num_rename.py` |
+| `apply_cached_screen_num_scoping.py` | The second half: revert TANK's `[0x66]` to the raw id (**7** sites over the branch files and unified chunks), declare `CACHED_SCREEN_NUM` in the **16** stage files that need it, and rename the **27** unified chunk files whose names embedded the retired labels. | `python3 notes/screen-index-probes/apply_cached_screen_num_scoping.py` |
+
+Both appliers refuse to run on an already-migrated tree. That guard is not
+decoration: the first one rewrites *every* `[0x66]` it finds, which is how
+TANK's `djnz` counter got aliased in the first place, and a second run would
+do it again.
 
 ## The signal being read
 
