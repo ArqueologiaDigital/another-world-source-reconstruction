@@ -89,6 +89,49 @@ mesmo dia, custou a este projeto três nomes aplicados sobre a arte errada.
 Uma medida de "o que está destravado" que aceitasse o índice como identidade
 teria devolvido três mil e estaria errada em três mil.
 
+## A alavanca, medida em vez de suposta
+
+Se a camada de polígonos é o gargalo, vale saber quanto cada polígono destrava.
+A sonda irmã (`art_with_named_drawers.py`) faz a busca inversa: quais
+constantes sem nome são desenhadas **só** por rotinas que já têm nome — ou
+seja, quais podem ser renderizadas com uma legenda já na mão. São 321 na Amiga
+nas três fases.
+
+O maior grupo coerente é a jaula suspensa de PRISON, 22 constantes sob um
+dispatch inteiramente nomeado. Ler cada braço do dispatch transformou 22 em
+**42**: cada valor de inclinação possui um *trio* de constantes consecutivas,
+`3k`/`3k+1`/`3k+2`, e as três são sempre as mesmas três camadas — o herói com
+um braço lançado (a "bombeada" que faz a jaula balançar), as barras da jaula
+naquela inclinação, e o herói parado. Catorze linhas, nenhuma exceção. As 42
+foram renderizadas e olhadas.
+
+Resultado:
+
+| | antes | depois |
+|---|---:|---:|
+| `CINEMATIC_NNN` sem nome em PRISON (Amiga) | 677 | 635 |
+| rotinas de PRISON destravadas (dois portes) | 0 | 18 |
+
+**42 nomes de polígono destravaram 18 rotinas.** É a razão de alavanca que a
+medida do início previa, agora medida.
+
+E duas correções pelo caminho, as duas típicas. A primeira: o mapa
+inclinação→constante que eu supus pela ordem dos offsets estava **errado**, e o
+código desmentiu em dois braços — a inclinação 0x02 desenha `CINEMATIC_074`, e
+não a 0x06 que os offsets sugeriam. O mapa final é extraído de todos os braços,
+não inferido. A segunda: `..._TILT_FFFA` foi **recusado pela ferramenta**, e com
+razão — a norma proíbe nome terminado em endereço hexadecimal cru, e o
+classificador não tem como distinguir um imediato com sinal de um endereço. O
+sinal passou a ser escrito por extenso (`_MINUS_6`), e os doze nomes positivos
+que já tinham entrado como `_TILT_01` foram reescritos `_TILT_PLUS_1` para que
+ninguém precise adivinhar se `01` é sinal ou índice.
+
+Fica registrada uma colisão de regras que não tem culpado: a mesma seção da
+norma proíbe terminar um nome em hexadecimal **e** exige o imediato em
+hexadecimal na cauda `_CASE_` de uma rotina. Então, para a mesma inclinação, a
+rotina se chama `..._TILT_CASE_FFFE` e o polígono `..._TILT_MINUS_2`. As duas
+ferramentas discordam entre si e as duas estão certas.
+
 ---
 
 Conferível: `notes/caller-derived-naming/named_art_only.py`, que imprime a
