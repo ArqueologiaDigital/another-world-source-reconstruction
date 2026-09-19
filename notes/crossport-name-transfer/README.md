@@ -1,4 +1,4 @@
-# 66 names msdos/INTRO has earned and cannot take
+# 66 names msdos/INTRO has earned, and the tool that can give them
 
 amiga/INTRO is **80.7%** named and msdos/INTRO **33.9%**. The names exist; the
 question is which of msdos's 377 numeric constants they belong to. This
@@ -18,28 +18,46 @@ are shared and render differently -- `0xF192` (amiga
 24). Those three are excluded, and they are the reason the render check is not
 ceremony.
 
-## The blocker
+## The blocker — diagnosed properly the second time
 
-**All 66 are referenced from shared chunks** under `src/levels/_unified/intro/`
--- `intro_scene_final.inc`, `intro_particle_channels.inc`,
-`intro_lab_decor_late_phase.inc`, `intro_lake_transition.inc`,
-`intro_late_pages_fill.inc`, `intro_reset_and_lab_decor.inc` and
-`intro_scene_final_fx_phase.inc`. A branch-scoped rename on msdos leaves those
-lines resolving to a name only amiga defines, and an undefined symbol
-assembles silently (#0073): applying them dropped `verify-unified` from 29/29
-to **26/29** and the change was backed out.
+**First diagnosis, and it was wrong.** This file originally said the 66 were
+blocked because they are referenced from seven shared chunks, and that the
+remedy was per-site branch arms or the emitter fix T7 waits on. Two things
+were wrong with that. Of the 194 reference sites, **192 are already inside a
+`.if`**, so arming was never a 194-line job. And arming is not the remedy at
+all.
 
-`--agreeing` is **not** the way out either, and this is the trap worth naming.
-It renames on every branch, which is correct when both ports' constants are
-the same art under the same index. Here they are not: a shared chunk says
-`CINEMATIC_005`, which on amiga is one picture and on msdos is a different
-one -- exactly the "two pictures under one label" structure
-`notes/t7-cv-offset-rekey/` documents for the shared video bank. Renaming
-everywhere would put msdos's earned name on amiga's unrelated constant.
+**What actually breaks.** Bisected to a single constant: renaming
+`CINEMATIC_053` to `CINEMATIC_CARPARK_NEAR_PILLAR` on dos, cartridge and gba
+alone drops `verify-unified` from 29/29 to 26/29, with amiga still OK. The
+reason is a **duplicate EQU**:
 
-So these 66 need either per-site branch arms (`apply_branch_scoped_names.py
---arm`), which de-unifies the seven chunks, or the emitter-level fix that T7
-also waits on. The decision is the same one, and it is not a naming decision.
+```
+_unified/intro/intro_dna_animation.inc:15   CINEMATIC_CARPARK_NEAR_PILLAR EQU 0x1742
+_unified/intro/intro_scene_final.inc:60     CINEMATIC_053                 EQU 0x1742
+```
+
+Both define offset 0x1742. The first is the name amiga already uses; the
+second is the numeric alias in the `.else` arm the non-amiga branches read.
+Renaming the second to match the first gives those branches the same name
+twice, and amiga is unaffected because it never sees the `.else` arm — which
+is exactly the failure signature: **amiga OK, the other three mismatched**.
+
+**63 of the 66 are in this state**: the unified tree *already holds* the
+semantic name for that offset, in the amiga arm.
+
+So this is not a naming problem and the rename tool is the wrong instrument.
+The numeric EQU is a second name for an offset the tree has already named, and
+the operation needed is to **collapse the two arms** onto the canonical name --
+which is precisely what
+`another-world-archaeology/tools/canonicalize_cinematic_refs.py` is for: "when
+the unified source has a `.if/elif` block whose arms differ only in the
+CINEMATIC name ... picking one as canonical and renaming the other(s)
+collapses the block."
+
+That is a structural edit to the unified tree, it wants the whole stage done
+in one pass rather than 66 constants at a time, and it is the right next step
+here. `apply_branch_scoped_names.py` cannot do it and should not be made to.
 
 ## The mapping, so the work is not lost
 
