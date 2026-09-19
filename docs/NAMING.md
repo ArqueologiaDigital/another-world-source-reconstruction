@@ -291,6 +291,20 @@ amiga/snes_eu. **snes_eu and gba_usa have no extracted resource `0x11`**, so
 for them only the assembly evidence exists, and the GBA release packages its
 art differently.
 
+**And the interim rename is not a rename.** Also measured 2026-09-19, in
+`notes/t7-cv-offset-rekey/`: **346 of 353** canonical `COMMON_VIDEO_NNN` names
+resolve to a *different offset* on amiga than on MS-DOS, and since the bank is
+one file, the bytes at those offsets differ in every one of the 346 cases. So
+the name is not a per-port alias for one picture — it is two pictures under one
+label, which is a stronger reason not to hand-name them than "the numbering is
+arbitrary". It also means offset-keying makes the name port-specific, while the
+unified tree references these names **3,205** times from code outside any
+`.if`. A straight rename would leave every one of those resolving to a name
+only one branch defines, and an undefined symbol assembles silently (#0073). T7
+must therefore change the emitter and regenerate, not rewrite the names in
+place; `rekey_common_video_by_offset.py` performs the rewrite and is kept
+unrun for exactly that reason.
+
 ## 3. VM variables
 
 Convention: `<ROLE>_<QUALIFIER>`, and it already works — the 15 engine aliases in
