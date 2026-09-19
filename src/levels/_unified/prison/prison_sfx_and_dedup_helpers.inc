@@ -591,13 +591,13 @@ DRAW_CIN_305_TO_333_7F_AT_96C7E6A8:
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 FILL_AND_DRAW_CIN_24_28:
 	fill page=0x00, color=0x00
-	video offset=CINEMATIC_024, x=160, y=100
-	video offset=CINEMATIC_025, x=160, y=100
-	video offset=CINEMATIC_026, x=160, y=100
-	video offset=CINEMATIC_027, x=160, y=100
-	video offset=CINEMATIC_028, x=160, y=100
+	video offset=CINEMATIC_PRISON_WALL_RUBBLE_0, x=160, y=100
+	video offset=CINEMATIC_PRISON_WALL_RUBBLE_1, x=160, y=100
+	video offset=CINEMATIC_PRISON_WALL_RUBBLE_2, x=160, y=100
+	video offset=CINEMATIC_PRISON_WALL_RUBBLE_3, x=160, y=100
+	video offset=CINEMATIC_PRISON_WALL_RUBBLE_4, x=160, y=100
 	video offset=CINEMATIC_029, x=160, y=400
-	video offset=CINEMATIC_030, x=160, y=100
+	video offset=CINEMATIC_PRISON_WALL_PILLAR, x=160, y=100
 	video offset=CINEMATIC_PRISON_GRATING_STRIP, x=160, y=100
 	video offset=CINEMATIC_032, x=160, y=100
 	video offset=CINEMATIC_033, x=160, y=100
