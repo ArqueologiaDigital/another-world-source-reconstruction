@@ -2,8 +2,8 @@ LABEL_5D32:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	add [BUDDY_Y], 0x0001
 	call DRAW_PRISON_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_250, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
-	video type=0, offset=COMMON_VIDEO_251, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2548, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_20B8, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, INLINE_DRAW_CV_252_018__HELPER
 	call LABEL_5C20
 	jmp DEDUP_CAVES_5B_007_001

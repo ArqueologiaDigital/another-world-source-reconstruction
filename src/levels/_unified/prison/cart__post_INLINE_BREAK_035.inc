@@ -33,38 +33,38 @@ LABEL_967E:
 PRISON_HERO_WALK_JUMP_LEFT:
 	je [HERO_POS_MASK], 0x09, PRISON_HERO_ENTER_STAND_RIGHT_TICK
 	mov [0x63], 0x0064
-	video type=0, offset=COMMON_VIDEO_048, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_52C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_049, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_52E0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_050, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5300, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_051, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5320, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0005
 	break
-	video type=0, offset=COMMON_VIDEO_052, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5340, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0007
 	break
-	video type=0, offset=COMMON_VIDEO_053, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5360, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x000D
 	break
-	video type=0, offset=COMMON_VIDEO_054, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5380, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x000C
 	break
-	video type=0, offset=COMMON_VIDEO_055, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_53C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0002
 	break
-	video type=0, offset=COMMON_VIDEO_056, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_53E0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0007
 	break
-	video type=0, offset=COMMON_VIDEO_057, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5400, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0004
 	break
 	play id=0x0060, freq=0x14, vol=0x40, channel=0x00
-	video type=0, offset=COMMON_VIDEO_058, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5420, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0007
 	break
-	video type=0, offset=COMMON_VIDEO_059, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5444, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	mov [0x63], 0x0001
 	jmp PRISON_HERO_STAND_LEFT_TICK
@@ -81,41 +81,41 @@ PRISON_HERO_RUN_JUMP_LEFT:
 
 LABEL_9716:
 	je [HERO_POS_MASK], 0x09, LABEL_983B
-	video type=0, offset=COMMON_VIDEO_053, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5360, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	sub [HERO_X], 0x000D
 	sub [HERO_Y], 0x0002
 	break
-	video type=0, offset=COMMON_VIDEO_054, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5380, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x000C
 	break
-	video type=0, offset=COMMON_VIDEO_096, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_53A0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x000C
 	add [HERO_Y], 0x0001
 	break
-	video type=0, offset=COMMON_VIDEO_096, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_53A0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x000C
 	add [HERO_Y], 0x0001
 	call PRISON_HERO_UPPER_FLOOR_FLAG_UPDATE
 	call LABEL_883E
 	break
-	video type=0, offset=COMMON_VIDEO_055, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_53C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0002
 	break
-	video type=0, offset=COMMON_VIDEO_056, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_53E0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0007
 	break
 	sub [HERO_X], 0x0005
 	je [HERO_ACTION], 0x01, PRISON_HERO_RUN_LEFT_STRIDE_LOOP
 	add [HERO_X], 0x0005
-	video type=0, offset=COMMON_VIDEO_057, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5400, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0004
 	break
 	play id=0x0060, freq=0x14, vol=0x40, channel=0x00
-	video type=0, offset=COMMON_VIDEO_058, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5420, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0007
 	break
-	video type=0, offset=COMMON_VIDEO_059, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5444, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	mov [0x63], 0x0001
 	jmp PRISON_HERO_STAND_LEFT_TICK
@@ -125,38 +125,38 @@ LABEL_97A3:
 PRISON_HERO_ENTER_STAND_RIGHT_TICK:
 	je [HERO_POS_MASK], 0x0A, PRISON_HERO_WALK_JUMP_LEFT
 	mov [0x63], 0x0064
-	video type=0, offset=COMMON_VIDEO_003, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4D98, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_004, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4DE4, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_005, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4E30, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_006, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4E7C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0005
 	break
-	video type=0, offset=COMMON_VIDEO_007, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4EC8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0007
 	break
-	video type=0, offset=COMMON_VIDEO_008, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4F14, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x000D
 	break
-	video type=0, offset=COMMON_VIDEO_009, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4F68, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x000C
 	break
-	video type=0, offset=COMMON_VIDEO_010, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_500C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0002
 	break
-	video type=0, offset=COMMON_VIDEO_011, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5058, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0007
 	break
-	video type=0, offset=COMMON_VIDEO_012, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_50A8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0004
 	break
 	play id=0x0060, freq=0x14, vol=0x40, channel=0x00
-	video type=0, offset=COMMON_VIDEO_013, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_50F8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0007
 	break
-	video type=0, offset=COMMON_VIDEO_014, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_514C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	mov [0x63], 0x0002
 	jmp PRISON_HERO_STAND_RIGHT_TICK
@@ -174,40 +174,40 @@ PRISON_HERO_RUN_JUMP_RIGHT:
 LABEL_983B:
 	je [HERO_POS_MASK], 0x0A, LABEL_9716
 	setup channel=0x15, address=KILL_CHANNEL_LANDING
-	video type=0, offset=COMMON_VIDEO_008, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4F14, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x000D
 	sub [HERO_Y], 0x0002
 	break
-	video type=0, offset=COMMON_VIDEO_009, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4F68, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x000C
 	break
-	video type=0, offset=COMMON_VIDEO_085, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4FBC, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x000C
 	add [HERO_Y], 0x0001
 	break
-	video type=0, offset=COMMON_VIDEO_085, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4FBC, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x000C
 	add [HERO_Y], 0x0001
 	call PRISON_HERO_UPPER_FLOOR_FLAG_UPDATE
 	call LABEL_883E
 	break
-	video type=0, offset=COMMON_VIDEO_010, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_500C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0002
 	break
-	video type=0, offset=COMMON_VIDEO_011, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5058, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0007
 	break
 	add [HERO_X], 0x0005
 	je [HERO_ACTION], 0x01, PRISON_HERO_RUN_RIGHT_STRIDE_LOOP
 	sub [HERO_X], 0x0005
-	video type=0, offset=COMMON_VIDEO_012, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_50A8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0004
 	break
 	play id=0x0060, freq=0x14, vol=0x40, channel=0x00
-	video type=0, offset=COMMON_VIDEO_013, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_50F8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0007
 	break
-	video type=0, offset=COMMON_VIDEO_014, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_514C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	mov [0x63], 0x0002
 	jmp PRISON_HERO_STAND_RIGHT_TICK

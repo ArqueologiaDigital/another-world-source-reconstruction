@@ -34,6 +34,16 @@ An EQU's value is unchanged; only the identifier moves. `make test` must stay
 at 29/29 and 29/29, and that is the check that this did not silently break
 anything.
 
+Both trees
+----------
+Per-branch `.asm` files are rewritten against their own EQU table. Unified
+chunks are rewritten against a map built by **include-graph reachability**:
+`cv_refs_by_reaching_branch.py` walks `_unified/<STAGE>.asm.in` once per
+branch, honouring `.if BRANCH`, and records which branches actually reach each
+chunk. Every (chunk, token) pair in the tree resolves to exactly one offset
+across every reaching (branch, stage) -- checked, 0 exceptions of 2,963 -- so
+the rewrite is unambiguous.
+
 What it does NOT do
 -------------------
 This is half of T7. The other half is the **emitter**: until the disassembler
@@ -85,6 +95,47 @@ def files_for(stages: list[str]) -> list[Path]:
         if p.stem.split(".")[0] in stages:
             out.append(p)
     return out
+
+
+def unified_maps(stages: list[str]) -> dict[Path, dict[str, str]]:
+    """chunk file -> {COMMON_VIDEO_name: CV_xxxx}, from reachability."""
+    import importlib.util
+    here = Path(__file__).resolve().parent
+    spec = importlib.util.spec_from_file_location(
+        "cv_reach", here / "cv_refs_by_reaching_branch.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+
+    seen_off: dict[tuple, set[int]] = collections.defaultdict(set)
+    for stage in stages:
+        top = mod.UNI / f"{stage}.asm.in"
+        if not top.is_file():
+            continue
+        for br in mod.BRANCHES:
+            hits: list = []
+            mod.walk(top, br, set(), hits)
+            if not hits:
+                continue
+            offs = mod.offsets(br, stage)
+            for f, tok in hits:
+                o = offs.get(tok)
+                if o is not None:
+                    seen_off[(f, tok)].add(o)
+
+    out: dict[Path, dict[str, str]] = collections.defaultdict(dict)
+    ambiguous = []
+    for (f, tok), offs in seen_off.items():
+        if len(offs) != 1:
+            ambiguous.append((f, tok, sorted(offs)))
+            continue
+        out[f][tok] = f"CV_{next(iter(offs)):04X}"
+    # EQU definitions carry their own offset and need no reachability
+    for f in sorted(mod.UNI.rglob("*.inc")) + sorted(mod.UNI.rglob("*.asm.in")):
+        for line in f.read_text(errors="replace").splitlines():
+            m = RE_CV_EQU.match(line)
+            if m:
+                out[f][m.group(1)] = f"CV_{int(m.group(3), 16):04X}"
+    return out, ambiguous
 
 
 def plan_file(path: Path):
@@ -154,6 +205,18 @@ def main() -> int:
         problems += [f"{p.relative_to(SRC)}: {x}" for x in probs]
         tot_defs += len(mapping)
         tot_refs += refs
+
+    umaps, ambiguous = unified_maps(stages)
+    for f, tok, offs in ambiguous:
+        problems.append(f"{f.relative_to(SRC)}: {tok} resolves to "
+                        + ", ".join(f"0x{o:04X}" for o in offs)
+                        + " depending on which branch reaches it")
+    for f, mapping in umaps.items():
+        if f in plans:
+            plans[f].update(mapping)
+        else:
+            plans[f] = mapping
+            tot_refs += len(RE_CV_TOKEN.findall(f.read_text(errors="replace")))
 
     print(f"{len(plans)} file(s), {tot_defs} COMMON_VIDEO definition(s), "
           f"{tot_refs} token(s) to rewrite")

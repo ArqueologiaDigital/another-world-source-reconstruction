@@ -1,6 +1,6 @@
 CAVES_INLINE_DRAW_CV_272_013_L2:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_276, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2FD6, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_8412
 	ret
 

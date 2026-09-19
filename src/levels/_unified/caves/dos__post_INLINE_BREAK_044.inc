@@ -9,7 +9,7 @@ LABEL_F443:
 	mov [0x2A], 0x0020
 	call CAVES_STEP_DRAW_CV336_THEN_CV340_L4
 	sub [HERO_X], 0x0002
-	video type=0, offset=COMMON_VIDEO_329, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_1600, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	call CAVES_STEP_DRAW_CV336_THEN_CV340_L7
 
@@ -21,7 +21,7 @@ HERO_CROUCH_ARMED_RIGHT_LOOP:
 	je [HERO_POS_MASK], 0x04, HERO_CROUCH_ARMED_RIGHT_LOOP
 	break
 	add [HERO_X], 0x0002
-	video type=0, offset=COMMON_VIDEO_334, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_1664, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x63], 0x0002
 	mov [0x0A], 0x0003
 	jmp HERO_WALK_RIGHT_LOOP

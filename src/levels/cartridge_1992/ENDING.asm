@@ -122,33 +122,33 @@ CINEMATIC_105		EQU 0x3848
 CINEMATIC_106		EQU 0x3BA4
 CINEMATIC_107		EQU 0x3BFA
 CINEMATIC_108		EQU 0x000C
-COMMON_VIDEO_129		EQU 0x1B14
-COMMON_VIDEO_168		EQU 0x181C
-COMMON_VIDEO_169		EQU 0x1A84
-COMMON_VIDEO_171		EQU 0x1866
-COMMON_VIDEO_172		EQU 0x18B0
-COMMON_VIDEO_173		EQU 0x1AB4
-COMMON_VIDEO_175		EQU 0x18FA
-COMMON_VIDEO_176		EQU 0x1AE4
-COMMON_VIDEO_178		EQU 0x1944
-COMMON_VIDEO_180		EQU 0x198E
-COMMON_VIDEO_181		EQU 0x1B44
-COMMON_VIDEO_184		EQU 0x19C4
-COMMON_VIDEO_185		EQU 0x1B74
-COMMON_VIDEO_188		EQU 0x1A0E
-COMMON_VIDEO_189		EQU 0x1BA4
-COMMON_VIDEO_192		EQU 0x1D78
-COMMON_VIDEO_193		EQU 0x1BD4
-COMMON_VIDEO_195		EQU 0x1D9A
-COMMON_VIDEO_196		EQU 0x1DBC
-COMMON_VIDEO_197		EQU 0x1DDE
-COMMON_VIDEO_198		EQU 0x1E00
-COMMON_VIDEO_199		EQU 0x1E22
-COMMON_VIDEO_200		EQU 0x1E44
-COMMON_VIDEO_201		EQU 0x1E66
-COMMON_VIDEO_202		EQU 0x1A54
-COMMON_VIDEO_291		EQU 0x4346
-COMMON_VIDEO_301		EQU 0x1C78
+CV_1B14		EQU 0x1B14
+CV_181C		EQU 0x181C
+CV_1A84		EQU 0x1A84
+CV_1866		EQU 0x1866
+CV_18B0		EQU 0x18B0
+CV_1AB4		EQU 0x1AB4
+CV_18FA		EQU 0x18FA
+CV_1AE4		EQU 0x1AE4
+CV_1944		EQU 0x1944
+CV_198E		EQU 0x198E
+CV_1B44		EQU 0x1B44
+CV_19C4		EQU 0x19C4
+CV_1B74		EQU 0x1B74
+CV_1A0E		EQU 0x1A0E
+CV_1BA4		EQU 0x1BA4
+CV_1D78		EQU 0x1D78
+CV_1BD4		EQU 0x1BD4
+CV_1D9A		EQU 0x1D9A
+CV_1DBC		EQU 0x1DBC
+CV_1DDE		EQU 0x1DDE
+CV_1E00		EQU 0x1E00
+CV_1E22		EQU 0x1E22
+CV_1E44		EQU 0x1E44
+CV_1E66		EQU 0x1E66
+CV_1A54		EQU 0x1A54
+CV_4346		EQU 0x4346
+CV_1C78		EQU 0x1C78
 
 
 	org 0x0000
@@ -1068,74 +1068,74 @@ LABEL_0867:
 	db 0x11
 
 DRAW_COMMON_VIDS_148_151_152_153:
-	video type=0, offset=COMMON_VIDEO_192, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1D78, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_195, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1D9A, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_196, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1DBC, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_197, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1DDE, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_198, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1E00, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_199, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1E22, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_200, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1E44, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_201, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1E66, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_168, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_181C, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_171, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1866, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_172, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_18B0, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_175, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_18FA, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_178, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1944, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_180, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_198E, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_184, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_19C4, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_188, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1A0E, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp DRAW_COMMON_VIDS_148_151_152_153
 LABEL_08CB:
 	db 0x11
 
 DRAW_COMMON_VIDS_149_141_137_10:
-	video type=0, offset=COMMON_VIDEO_193, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1BD4, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_185, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1B74, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_181, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1B44, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_129, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1B14, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_176, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1AE4, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_173, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1AB4, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_202, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1A54, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_202, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1A54, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_169, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1A84, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_169, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1A84, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_173, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1AB4, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_176, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1AE4, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_129, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1B14, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_181, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1B44, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_185, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1B74, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_189, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1BA4, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp DRAW_COMMON_VIDS_149_141_137_10
 LABEL_092F:
@@ -1155,9 +1155,9 @@ ENDING_X_SLIDE_RIGHT_PLUS3_DJNZ_THEN_ACCEL:
 	jmp ENDING_X_SLIDE_RIGHT_ACCEL
 	killChannel
 	video offset=CINEMATIC_108, x=160, y=100
-	video type=0, offset=COMMON_VIDEO_301, x=160, y=100, zoom=0x40
-	video type=0, offset=COMMON_VIDEO_291, x=160, y=100, zoom=0x40
-	video type=0, offset=COMMON_VIDEO_202, x=160, y=100, zoom=0x40
+	video type=0, offset=CV_1C78, x=160, y=100, zoom=0x40
+	video type=0, offset=CV_4346, x=160, y=100, zoom=0x40
+	video type=0, offset=CV_1A54, x=160, y=100, zoom=0x40
 	killChannel
 
 ENDING_CLOUD_SKY_BACKDROP_PAGE_0:

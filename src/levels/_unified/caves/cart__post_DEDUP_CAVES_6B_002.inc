@@ -185,45 +185,45 @@ LABEL_816B:
 
 
 CAVES_DRAW_CV_355_L1:
-	video type=0, offset=COMMON_VIDEO_320, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3EEC, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0xF6], 0x00, LABEL_8194
-	video type=0, offset=COMMON_VIDEO_322, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_6004, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_8194:
 	jg [0x13], [0x30], LABEL_8121
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, LABEL_8121
-	video type=0, offset=COMMON_VIDEO_321, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5CBC, x=[0x07], y=[0x08], zoom=0x40
 	jmp LABEL_8121
 
 CAVES_DRAW_CV_355_L3:
-	video type=0, offset=COMMON_VIDEO_323, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3F4A, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	sub [0xF5], 0x0001
 	jg [0xF6], 0x00, LABEL_81C6
-	video type=0, offset=COMMON_VIDEO_325, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_6010, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_81C6:
 	jg [0x13], [0x30], LABEL_8121
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, LABEL_8121
-	video type=0, offset=COMMON_VIDEO_324, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5CC4, x=[0x07], y=[0x08], zoom=0x40
 	jmp LABEL_8121
 
 CAVES_DRAW_CV_355_L5:
-	video type=0, offset=COMMON_VIDEO_326, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_4058, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], LABEL_8141
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, LABEL_8141
-	video type=0, offset=COMMON_VIDEO_327, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5CCC, x=[0x07], y=[0x08], zoom=0x40
 	jmp LABEL_8141
 
 LABEL_8201:
-	video type=0, offset=COMMON_VIDEO_328, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_4416, x=[0x07], y=[0x08], zoom=0x40
 	jmp LABEL_8141
 
 CAVES_DRAW_CV224_AT_X07_Y08_L3:
@@ -234,12 +234,12 @@ CAVES_DRAW_CV224_AT_X07_Y08_L3:
 
 
 CAVES_INLINE_DRAW_CV_220_016_L3:
-	video type=0, offset=COMMON_VIDEO_308, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3C3A, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_309, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5C5C, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 
@@ -251,22 +251,22 @@ LABEL_8233:
 
 
 LABEL_823F:
-	video type=0, offset=COMMON_VIDEO_306, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3C66, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_307, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5C64, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 
 DRAW_CV_304_THEN_305:
-	video type=0, offset=COMMON_VIDEO_304, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3C92, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_305, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5C6C, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 

@@ -656,7 +656,7 @@ CINEMATIC_RAIN_DROPLET_0		EQU 0xFC3C
 CINEMATIC_RAIN_DROPLET_1		EQU 0xFC44
 CINEMATIC_RAIN_DROPLET_2		EQU 0xFC98
 CINEMATIC_DROPLET_RANDOM_X		EQU 0xFC5C
-COMMON_VIDEO_074		EQU 0x0020
+CV_0020		EQU 0x0020
 CINEMATIC_RAIN_DROPLET_3		EQU 0xFCB0
 CINEMATIC_DROPLET_LARGE		EQU 0xFC88
 CINEMATIC_BEETLE_WALKING_LEFT_0		EQU 0x616A
@@ -1053,14 +1053,14 @@ DRAW_4_DROPLETS_LOOP:
 	break
 	add [0x72], 0x0014
 	add [0x73], 0x0010
-	video offset=COMMON_VIDEO_074, x=[0x74], y=[0x72]
+	video offset=CV_0020, x=[0x74], y=[0x72]
 	sub [0x72], 0x0014
-	video offset=COMMON_VIDEO_074, x=[0x75], y=[0x72]
+	video offset=CV_0020, x=[0x75], y=[0x72]
 	sub [0x72], 0x0028
-	video offset=COMMON_VIDEO_074, x=[0x76], y=[0x72]
-	video offset=COMMON_VIDEO_074, x=[0x77], y=[0x73]
+	video offset=CV_0020, x=[0x76], y=[0x72]
+	video offset=CV_0020, x=[0x77], y=[0x73]
 	sub [0x73], 0x003C
-	video offset=COMMON_VIDEO_074, x=[0x78], y=[0x73]
+	video offset=CV_0020, x=[0x78], y=[0x73]
 	add [0x72], 0x003C
 	add [0x73], 0x003C
 	je [0x71], 0x01, RESET_DROPLET_72_X_IF_OFFSCREEN

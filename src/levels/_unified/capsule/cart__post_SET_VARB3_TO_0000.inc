@@ -277,13 +277,13 @@ LABEL_2CB8:
 	killChannel
 	video offset=CINEMATIC_444, x=65506, y=114
 	break
-	video type=0, offset=COMMON_VIDEO_246, x=160, y=100, zoom=0x40
-	video type=0, offset=COMMON_VIDEO_249, x=180, y=100, zoom=0x40
-	video type=0, offset=COMMON_VIDEO_252, x=200, y=100, zoom=0x40
-	video type=0, offset=COMMON_VIDEO_255, x=220, y=100, zoom=0x40
-	video type=0, offset=COMMON_VIDEO_259, x=240, y=100, zoom=0x40
-	video type=0, offset=COMMON_VIDEO_261, x=260, y=100, zoom=0x40
-	video type=0, offset=COMMON_VIDEO_243, x=280, y=100, zoom=0x40
+	video type=0, offset=CV_21A8, x=160, y=100, zoom=0x40
+	video type=0, offset=CV_21D6, x=180, y=100, zoom=0x40
+	video type=0, offset=CV_2200, x=200, y=100, zoom=0x40
+	video type=0, offset=CV_2212, x=220, y=100, zoom=0x40
+	video type=0, offset=CV_224C, x=240, y=100, zoom=0x40
+	video type=0, offset=CV_2276, x=260, y=100, zoom=0x40
+	video type=0, offset=CV_6108, x=280, y=100, zoom=0x40
 	break
 	video offset=CINEMATIC_444, x=121, y=118
 	break

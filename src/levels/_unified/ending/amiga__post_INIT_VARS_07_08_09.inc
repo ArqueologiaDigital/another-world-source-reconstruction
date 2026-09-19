@@ -73,74 +73,74 @@ LABEL_0749:
 	db 0x11
 
 DRAW_COMMON_VIDS_148_151_152_153:
-	video type=0, offset=COMMON_VIDEO_148, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1D78, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_151, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1D9A, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_152, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1DBC, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_153, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1DDE, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_154, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1E00, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_155, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1E22, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_156, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1E44, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_157, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1E66, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_124, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_181C, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_127, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1866, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_128, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_18B0, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_131, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_18FA, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_134, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1944, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_136, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_198E, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_140, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_19C4, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_144, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1A0E, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp DRAW_COMMON_VIDS_148_151_152_153
 LABEL_07AD:
 	db 0x11
 
 DRAW_COMMON_VIDS_149_141_137_10:
-	video type=0, offset=COMMON_VIDEO_149, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1BD4, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_141, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1B74, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_137, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1B44, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_010, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1B14, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_132, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1AE4, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_129, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1AB4, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_158, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1A54, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_158, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1A54, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_125, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1A84, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_125, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1A84, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_129, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1AB4, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_132, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1AE4, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_010, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1B14, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_137, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1B44, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_141, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1B74, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_145, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1BA4, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp DRAW_COMMON_VIDS_149_141_137_10
 LABEL_0811:

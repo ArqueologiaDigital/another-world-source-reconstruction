@@ -55,7 +55,7 @@ LABEL_393D:
 
 LABEL_39B1:
 	break
-	video type=0, offset=COMMON_VIDEO_335, x=297, y=98, zoom=0x40
+	video type=0, offset=CV_61B0, x=297, y=98, zoom=0x40
 	djnz [0x03], LABEL_39B1
 	break
 	setup channel=0x16, address=LABEL_B666

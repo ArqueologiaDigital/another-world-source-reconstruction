@@ -299,11 +299,21 @@ the name is not a per-port alias for one picture — it is two pictures under on
 label, which is a stronger reason not to hand-name them than "the numbering is
 arbitrary". It also means offset-keying makes the name port-specific, while the
 unified tree references these names **3,205** times from code outside any
-`.if`. A straight rename would leave every one of those resolving to a name
-only one branch defines, and an undefined symbol assembles silently (#0073). T7
-must therefore change the emitter and regenerate, not rewrite the names in
-place; `rekey_common_video_by_offset.py` performs the rewrite and is kept
-unrun for exactly that reason.
+`.if`. That "3,205" was measured wrongly -- it counted references
+outside a `.if` *directive*, when the question is which branches reach a file
+through the include graph. Walking it per branch: 3,230 references are
+single-branch, 463 are multi-branch and agree on the offset, and **0** are
+multi-branch and disagree. The re-key was therefore safe and **has been
+applied** (225 files, 3,581 definitions, 14,891 tokens, `make test` unchanged
+at 29/29 and 29/29).
+
+**The bank is now keyed by offset.** `CV_<OFFSET4>` is a key, not a name --
+the lint counts it as an unnamed shared-polygon EQU and `classify` calls it
+`addr_suffixed` -- but it is *port-invariant*, so identifying the art at a
+bank offset once names it in every file and on both priority ports. That is
+what the 900 + 247 blocked routines were waiting for. Hand-naming the bank is
+still forbidden until an identification is actually made from a render.
+The emitter half of T7 remains open.
 
 ## 3. VM variables
 

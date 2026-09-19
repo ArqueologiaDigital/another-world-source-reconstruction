@@ -1,6 +1,6 @@
 LABEL_8509:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_217, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_27FC, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_836D
 	ret

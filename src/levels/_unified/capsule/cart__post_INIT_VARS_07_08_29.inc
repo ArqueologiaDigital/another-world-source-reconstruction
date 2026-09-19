@@ -41,23 +41,23 @@ STATE_VAR12_BIG_DISPATCH_CASE_28:
 	call CAPSULE_BUDDY_PER_FRAME_TICK
 	break
 	video offset=CINEMATIC_114, x=[BUDDY_X], y=[BUDDY_Y]
-	video type=0, offset=COMMON_VIDEO_169, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_1A84, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xE8], 0x0001
 	break
 	video offset=CINEMATIC_115, x=[BUDDY_X], y=[BUDDY_Y]
-	video type=0, offset=COMMON_VIDEO_173, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_1AB4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
 	add [BUDDY_X], 0x0002
 	video offset=CINEMATIC_116, x=[BUDDY_X], y=[BUDDY_Y]
-	video type=0, offset=COMMON_VIDEO_129, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_1B14, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x01
 	play id=0x0079, freq=0x19, vol=0x40, channel=0x00
 	break
 	video offset=CINEMATIC_117, x=[BUDDY_X], y=[BUDDY_Y]
-	video type=0, offset=COMMON_VIDEO_181, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_1B44, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
 	video offset=CINEMATIC_118, x=[BUDDY_X], y=[BUDDY_Y]
-	video type=0, offset=COMMON_VIDEO_189, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_1BA4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0x12], 0x0030
 	mov [0x29], 0x000A
 

@@ -26,7 +26,7 @@ DEDUP_CAVES_6B_001:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_DRAW_CV204_AT_X07_Y08_L0:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_205, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_257A, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call CAVES_DRAW_CV204_AT_X07_Y08_L1
 	ret
@@ -66,7 +66,7 @@ CAVES_DRAW_CV204_AT_X07_Y08_L2:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_INLINE_DRAW_CV_220_016_L0:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_221, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_287E, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call CAVES_INLINE_DRAW_CV_220_016_L1
 	ret
@@ -86,7 +86,7 @@ CAVES_INLINE_DRAW_CV_220_016_L2:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_DRAW_CV224_AT_X07_Y08_L0:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_225, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_28F8, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call CAVES_DRAW_CV224_AT_X07_Y08_L1
 	ret
@@ -106,7 +106,7 @@ CAVES_DRAW_CV224_AT_X07_Y08_L2:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_DRAW_CV224_AT_X07_Y08_L4:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_229, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_296E, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call CAVES_INLINE_DRAW_CV_228_018_L0
 	ret
@@ -121,13 +121,13 @@ CAVES_INLINE_DRAW_CV_228_018_L1:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_228_018:
-	video type=0, offset=COMMON_VIDEO_228, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2D56, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_INLINE_DRAW_CV_228_018_L2:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_232, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2990, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	add [0x07], 0x0001
 	call CAVES_INLINE_DRAW_CV_228_018_L0
@@ -144,13 +144,13 @@ CAVES_INLINE_DRAW_CV_228_019_L0:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_220_008:
-	video type=0, offset=COMMON_VIDEO_220, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2D5E, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_INLINE_DRAW_CV_220_017_L0:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_233, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_29B2, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call CAVES_INLINE_DRAW_CV_220_016_L1
 	ret
@@ -166,7 +166,7 @@ CAVES_INLINE_DRAW_CV_220_017_L1:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_216_027:
-	video type=0, offset=COMMON_VIDEO_216, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2D66, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 .if BRANCH == "cartridge_1992"
@@ -192,7 +192,7 @@ INLINE_DRAW_CV_216_027:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_INLINE_DRAW_CV_266_005_L0:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_267, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2E0A, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_INLINE_DRAW_CV_266_005_L1
 	ret
 
@@ -212,7 +212,7 @@ CAVES_ACTOR_RUN_LEFT_PHASE_3_FRAME:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_ACTOR_RUN_LEFT_PHASE_3_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_270, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2E9E, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_INLINE_DRAW_CV_269_024_L0
 	sub [0x08], 0x0001
 	ret
@@ -233,7 +233,7 @@ CAVES_ACTOR_RUN_LEFT_PHASE_4_FRAME:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_ACTOR_RUN_LEFT_PHASE_4_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_273, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2F3A, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_INLINE_DRAW_CV_272_013_L0
 	sub [0x08], 0x0001
 	ret
@@ -258,7 +258,7 @@ CAVES_INLINE_DRAW_CV_272_013_L1:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_272_003_001:
-	video type=0, offset=COMMON_VIDEO_272, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_31EC, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 .if BRANCH == "cartridge_1992"
@@ -269,13 +269,13 @@ INLINE_DRAW_CV_272_003_001:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_272_003_002:
-	video type=0, offset=COMMON_VIDEO_272, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_31EC, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_INLINE_DRAW_CV_272_015_L0:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_279, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3066, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_INLINE_DRAW_CV_272_013_L0
 	ret
 
@@ -290,13 +290,13 @@ CAVES_ACTOR_RUN_LEFT_PHASE_8_FRAME:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_269_024_001:
-	video type=0, offset=COMMON_VIDEO_269, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_31F6, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_ACTOR_RUN_LEFT_PHASE_8_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_280, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3082, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_INLINE_DRAW_CV_269_025_L1
 	sub [0x08], 0x0001
 	ret
@@ -312,13 +312,13 @@ CAVES_ACTOR_RUN_LEFT_PHASE_9_FRAME:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_269_024_002:
-	video type=0, offset=COMMON_VIDEO_269, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_31F6, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_ACTOR_RUN_LEFT_PHASE_9_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_282, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_309E, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_INLINE_DRAW_CV_269_026_L0
 	sub [0x08], 0x0001
 	ret
@@ -333,7 +333,7 @@ CAVES_INLINE_DRAW_CV_269_026_L1:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_266_005:
-	video type=0, offset=COMMON_VIDEO_266, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3200, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 .if BRANCH == "cartridge_1992"
@@ -369,8 +369,8 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_3_FRAME:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	add [0x08], 0x0001
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_247, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=COMMON_VIDEO_248, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2552, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2058, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, DRAW_CV249_AT_X07_Y08
 	call CAVES_DRAW_CV246_AT_X07_Y08_L2
 	jmp DEDUP_CAVES_5B_007__HELPER
@@ -421,8 +421,8 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_6_FRAME:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	sub [0x08], 0x0001
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_250, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=COMMON_VIDEO_256, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2548, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2310, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, INLINE_DRAW_CV_255_010
 	call CAVES_INLINE_DRAW_CV_255_031_L2
 	jmp DEDUP_CAVES_5B_020
@@ -430,7 +430,7 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_6_FRAME:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_255_010:
-	video type=0, offset=COMMON_VIDEO_255, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2212, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 
@@ -449,7 +449,7 @@ DEDUP_CAVES_5B_020:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_252_018:
-	video type=0, offset=COMMON_VIDEO_252, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2200, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -461,8 +461,8 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_8_FRAME:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	add [0x08], 0x0001
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_247, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=COMMON_VIDEO_258, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2552, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2348, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, DRAW_CV259_AT_X07_Y08
 	call CAVES_DRAW_CV_355_L9
 	jmp DEDUP_CAVES_5B_007_002
@@ -506,7 +506,7 @@ DEDUP_CAVES_5B_007_003:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_243_012:
-	video type=0, offset=COMMON_VIDEO_243, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_6108, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 
@@ -521,7 +521,7 @@ INLINE_DRAW_CV_243_012:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_HERO_POSE_0_0:
-	video type=0, offset=COMMON_VIDEO_301, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1C78, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 
@@ -541,7 +541,7 @@ DRAW_HERO_POSE_0_0:
 CAVES_DRAW_CV_355_L0:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_DRAW_CV_355_L1
 	ret
 
@@ -550,7 +550,7 @@ CAVES_DRAW_CV_355_L2:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	sub [0x07], 0x0001
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=COMMON_VIDEO_289, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_4324, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x0001
 	call CAVES_DRAW_CV_355_L3
 	add [0x08], 0x0001
@@ -561,7 +561,7 @@ CAVES_DRAW_CV_355_L2:
 CAVES_DRAW_CV_355_L4:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_DRAW_CV_355_L5
 	ret
 
@@ -569,7 +569,7 @@ CAVES_DRAW_CV_355_L4:
 CAVES_DRAW_CV_355_L6:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_DRAW_CV_355_L3
 	ret
 
@@ -577,7 +577,7 @@ CAVES_DRAW_CV_355_L6:
 CAVES_DRAW_CV_355_L7:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=COMMON_VIDEO_288, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	je [0x0D], 0x00, CAVES_DRAW_CV_355_L8
 	call CAVES_DRAW_CV_355_L9
@@ -640,7 +640,7 @@ CAVES_DRAW_CV_077_L0:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV078_PLAY_60_F0B_V22_C1:
-	video type=0, offset=COMMON_VIDEO_078, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_0234, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0B, vol=0x22, channel=0x01
 	ret
 
@@ -650,7 +650,7 @@ DRAW_CV078_PLAY_60_F0B_V22_C1:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_15:
 	jne [0x0A], 0x00, CAVES_DRAW_CV078_PLAY_60_F0B_V22_C1_L1
-	video type=0, offset=COMMON_VIDEO_079, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_331A, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_080
 
 CAVES_DRAW_CV078_PLAY_60_F0B_V22_C1_L1:
@@ -664,7 +664,7 @@ CAVES_DRAW_CV078_PLAY_60_F0B_V22_C1_L1:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_DRAW_CV_080_L0:
 	jne [0x0A], 0x00, CAVES_DRAW_CV_080_L1
-	video type=0, offset=COMMON_VIDEO_001, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_3322, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp CAVES_DRAW_CV_080_L2
 
 CAVES_DRAW_CV_080_L1:
@@ -672,13 +672,13 @@ CAVES_DRAW_CV_080_L1:
 
 CAVES_DRAW_CV_080_L2:
 	call CAVES_HERO_WATER_DEPTH_SPRITE_LEFT_CASE_00
-	video type=0, offset=COMMON_VIDEO_002, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_0358, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_1:
 	jne [0x0A], 0x00, CAVES_DRAW_CV_080_L4
-	video type=0, offset=COMMON_VIDEO_060, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_332A, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_061
 
 CAVES_DRAW_CV_080_L4:
@@ -692,7 +692,7 @@ CAVES_DRAW_CV_080_L4:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_2:
 	jne [0x0A], 0x00, CAVES_DRAW_CV_061_L1
-	video type=0, offset=COMMON_VIDEO_062, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_3332, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_063
 
 CAVES_DRAW_CV_061_L1:
@@ -706,7 +706,7 @@ CAVES_DRAW_CV_061_L1:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_3:
 	jne [0x0A], 0x00, CAVES_DRAW_CV_063_L1
-	video type=0, offset=COMMON_VIDEO_064, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_333A, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_065
 
 CAVES_DRAW_CV_063_L1:
@@ -720,7 +720,7 @@ CAVES_DRAW_CV_063_L1:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_4:
 	jne [0x0A], 0x00, CAVES_DRAW_CV_065_L1
-	video type=0, offset=COMMON_VIDEO_066, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_3342, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_067
 
 CAVES_DRAW_CV_065_L1:
@@ -734,7 +734,7 @@ CAVES_DRAW_CV_065_L1:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_5:
 	jne [0x0A], 0x00, CAVES_DRAW_CV_067_L1
-	video type=0, offset=COMMON_VIDEO_068, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_334A, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_069
 
 CAVES_DRAW_CV_067_L1:
@@ -753,7 +753,7 @@ CAVES_DRAW_CV_069_L0:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV070_PLAY_60_F14_V20_C1:
-	video type=0, offset=COMMON_VIDEO_070, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_0814, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x14, vol=0x20, channel=0x01
 	ret
 
@@ -818,74 +818,74 @@ CAVES_DRAW_CV_072_L0:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_DRAW_CV_297_L0:
-	video type=0, offset=COMMON_VIDEO_081, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_03E4, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x01
 	jne [0x0A], 0x00, DRAW_CV_295
-	video type=0, offset=COMMON_VIDEO_082, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34AA, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAVES_DRAW_CV_297_L1:
-	video type=0, offset=COMMON_VIDEO_083, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_0472, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_296
-	video type=0, offset=COMMON_VIDEO_084, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34B2, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAVES_DRAW_CV_297_L2:
-	video type=0, offset=COMMON_VIDEO_116, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_04F4, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_299
-	video type=0, offset=COMMON_VIDEO_117, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34BA, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAVES_DRAW_CV_297_L3:
-	video type=0, offset=COMMON_VIDEO_118, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_058E, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_300
-	video type=0, offset=COMMON_VIDEO_119, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34C2, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAVES_DRAW_CV_297_L4:
-	video type=0, offset=COMMON_VIDEO_120, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_0624, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_300
-	video type=0, offset=COMMON_VIDEO_121, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34CE, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAVES_DRAW_CV_297_L5:
-	video type=0, offset=COMMON_VIDEO_086, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_06A2, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0A, vol=0x2A, channel=0x01
 	jne [0x0A], 0x00, DRAW_CV_295
-	video type=0, offset=COMMON_VIDEO_087, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34D6, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAVES_DRAW_CV_297_L6:
-	video type=0, offset=COMMON_VIDEO_088, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_06C8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_295
-	video type=0, offset=COMMON_VIDEO_089, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34DE, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAVES_DRAW_CV_297_L7:
-	video type=0, offset=COMMON_VIDEO_090, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_06EE, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_296
-	video type=0, offset=COMMON_VIDEO_091, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34E6, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAVES_DRAW_CV_297_L8:
-	video type=0, offset=COMMON_VIDEO_092, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_0714, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_297
-	video type=0, offset=COMMON_VIDEO_093, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34EE, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAVES_DRAW_CV_297_L9:
-	video type=0, offset=COMMON_VIDEO_094, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_073E, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_297
-	video type=0, offset=COMMON_VIDEO_095, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34F6, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 .endif
 
@@ -907,7 +907,7 @@ CAVES_HERO_RUN_LEFT_DRAW_PHASE_1:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV108_PLAY_60_F0F_V2A_C1:
-	video type=0, offset=COMMON_VIDEO_108, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_11B8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x01
 	ret
 
@@ -986,7 +986,7 @@ CAVES_HERO_RUN_LEFT_DRAW_PHASE_6:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV098_PLAY_60_F0A_V2A_C1:
-	video type=0, offset=COMMON_VIDEO_098, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_150A, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0A, vol=0x2A, channel=0x01
 	ret
 
@@ -1054,7 +1054,7 @@ CAVES_HERO_RUN_LEFT_DRAW_PHASE_10:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV_106:
-	video type=0, offset=COMMON_VIDEO_106, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_15A2, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 

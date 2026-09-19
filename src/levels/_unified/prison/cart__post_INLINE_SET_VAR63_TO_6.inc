@@ -31,21 +31,21 @@ LABEL_8D53:
 	db 0x11
 
 PRISON_HERO_WALK_RIGHT_PHASE_08:
-	video type=0, offset=COMMON_VIDEO_152, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_448C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_151, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4528, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0006
 	break
-	video type=0, offset=COMMON_VIDEO_150, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_45C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
 	call SET_VAR04_TO_0008
 	break
-	video type=0, offset=COMMON_VIDEO_161, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4650, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_149, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_46D4, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0003
 	break
-	video type=0, offset=COMMON_VIDEO_162, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4C40, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0005
 	break
 	mov [0x2A], 0x000F
@@ -55,7 +55,7 @@ PRISON_HERO_CRAWL_LEFT_PHASE_05:
 
 LABEL_8D93:
 	break
-	video type=0, offset=COMMON_VIDEO_147, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_48D8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0003
 	break
 	jmp PRISON_HERO_CRAWL_RIGHT_STOP

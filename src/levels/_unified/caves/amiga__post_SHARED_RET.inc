@@ -42,114 +42,114 @@ DRAW_CIN_058:
 
 LABEL_7FFF:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_195, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2A7E, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=COMMON_VIDEO_196, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5FBC, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_801C:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_162, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2AC6, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=COMMON_VIDEO_163, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5FC4, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_8039:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_121, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2B0E, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	sub [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=COMMON_VIDEO_122, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5FCC, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_805A:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_167, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2B56, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=COMMON_VIDEO_168, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5FD4, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_8077:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_170, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2B9E, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	add [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=COMMON_VIDEO_171, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5FDC, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_8098:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_174, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2BE6, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	add [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=COMMON_VIDEO_175, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5FE4, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_80B9:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_178, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2C2E, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	add [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=COMMON_VIDEO_179, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5FEC, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_80DA:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_182, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2C76, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	add [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=COMMON_VIDEO_183, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5FF4, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_80FB:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_186, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2CBE, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	add [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=COMMON_VIDEO_187, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5FFC, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_811C:
-	video type=0, offset=COMMON_VIDEO_224, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3116, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_8127:
-	video type=0, offset=COMMON_VIDEO_227, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3124, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_8132:
-	video type=0, offset=COMMON_VIDEO_230, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_316E, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_813D:
-	video type=0, offset=COMMON_VIDEO_233, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3180, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_8148:
-	video type=0, offset=COMMON_VIDEO_237, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_31A8, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_8153:
-	video type=0, offset=COMMON_VIDEO_239, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_31CA, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_815E:
-	video type=0, offset=COMMON_VIDEO_221, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_61A2, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
@@ -160,11 +160,11 @@ LABEL_8169:
 	jmp LABEL_8180
 
 LABEL_817B:
-	video type=0, offset=COMMON_VIDEO_160, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2D6E, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_8180:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_161, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_257A, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_801C
 	ret
@@ -178,12 +178,12 @@ LABEL_818F:
 
 LABEL_81A1:
 	add [0x07], 0x0001
-	video type=0, offset=COMMON_VIDEO_160, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2D6E, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x07], 0x0001
 
 BEAST_FULL_ANIM_FRAME:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_164, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2610, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_801C
 	ret
@@ -196,7 +196,7 @@ CAVES_ACTOR_WALK_LEFT_DRAW_PHASE_3:
 
 LABEL_81CC:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_165, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2672, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_8039
 	ret
@@ -210,7 +210,7 @@ LABEL_81DB:
 
 LABEL_81F0:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_166, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_270C, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_805A
 	ret
@@ -223,7 +223,7 @@ CAVES_ACTOR_WALK_LEFT_DRAW_PHASE_5:
 
 LABEL_820E:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_169, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2786, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_8077
 	ret
@@ -236,11 +236,11 @@ LABEL_821D:
 	jmp LABEL_8234
 
 LABEL_822F:
-	video type=0, offset=COMMON_VIDEO_172, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2D66, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_8234:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_173, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_27FC, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_8098
 	ret
@@ -253,11 +253,11 @@ LABEL_8243:
 	jmp LABEL_825A
 
 LABEL_8255:
-	video type=0, offset=COMMON_VIDEO_176, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2D5E, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_825A:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_177, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_287E, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_80B9
 	ret
@@ -270,11 +270,11 @@ LABEL_8269:
 	jmp LABEL_8280
 
 LABEL_827B:
-	video type=0, offset=COMMON_VIDEO_180, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2D4E, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_8280:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_181, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_28F8, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_80DA
 	ret
@@ -287,11 +287,11 @@ LABEL_828F:
 	jmp LABEL_82A6
 
 LABEL_82A1:
-	video type=0, offset=COMMON_VIDEO_184, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2D56, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_82A6:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_185, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_296E, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_80FB
 	ret
@@ -304,11 +304,11 @@ LABEL_82B5:
 	jmp LABEL_82CC
 
 LABEL_82C7:
-	video type=0, offset=COMMON_VIDEO_184, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2D56, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_82CC:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_188, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2990, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	add [0x07], 0x0001
 	call LABEL_80FB
@@ -323,11 +323,11 @@ LABEL_82E3:
 	jmp LABEL_82FA
 
 LABEL_82F5:
-	video type=0, offset=COMMON_VIDEO_176, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2D5E, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_82FA:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_189, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_29B2, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_80B9
 	ret
@@ -341,11 +341,11 @@ LABEL_8309:
 	jmp LABEL_8326
 
 LABEL_8321:
-	video type=0, offset=COMMON_VIDEO_172, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2D66, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_8326:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_190, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_29D4, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_8098
 	ret
@@ -358,7 +358,7 @@ CAVES_ACTOR_WALK_LEFT_DRAW_PHASE_13:
 
 LABEL_8344:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_191, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_29F6, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_8077
 	ret
@@ -371,7 +371,7 @@ CAVES_ACTOR_WALK_LEFT_DRAW_PHASE_14:
 
 LABEL_8362:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_192, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2A18, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_805A
 	ret
@@ -384,7 +384,7 @@ CAVES_ACTOR_WALK_LEFT_DRAW_PHASE_15:
 
 LABEL_8380:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_193, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2A3A, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_8039
 	ret
@@ -397,7 +397,7 @@ CAVES_ACTOR_WALK_LEFT_DRAW_PHASE_16:
 
 LABEL_839E:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_194, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2A5C, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_7FFF
 	ret
@@ -410,7 +410,7 @@ CAVES_BEAST_PER_FRAME_TICK:
 
 LABEL_83BC:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_120, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_8039
 	ret
@@ -423,7 +423,7 @@ LABEL_83CB:
 
 LABEL_83DA:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_120, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_805A
 	ret
@@ -436,7 +436,7 @@ LABEL_83E9:
 
 LABEL_83F8:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_120, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_8077
 	ret
@@ -592,11 +592,11 @@ CAVES_ACTOR_RUN_LEFT_PHASE_1_FRAME:
 	jmp CAVES_ACTOR_RUN_LEFT_PHASE_1_DONE
 
 LABEL_85B3:
-	video type=0, offset=COMMON_VIDEO_219, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_320A, x=[0x07], y=[0x08], zoom=0x40
 
 CAVES_ACTOR_RUN_LEFT_PHASE_1_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_220, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2D76, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_815E
 	add [0x08], 0x0001
 	ret
@@ -609,11 +609,11 @@ LABEL_85C8:
 	jmp LABEL_85DF
 
 LABEL_85DA:
-	video type=0, offset=COMMON_VIDEO_222, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3200, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_85DF:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_223, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2E0A, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_811C
 	ret
 
@@ -626,11 +626,11 @@ CAVES_ACTOR_RUN_LEFT_PHASE_3_FRAME:
 	jmp CAVES_ACTOR_RUN_LEFT_PHASE_3_DONE
 
 LABEL_8601:
-	video type=0, offset=COMMON_VIDEO_225, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_31F6, x=[0x07], y=[0x08], zoom=0x40
 
 CAVES_ACTOR_RUN_LEFT_PHASE_3_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_226, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2E9E, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_8127
 	sub [0x08], 0x0001
 	ret
@@ -644,11 +644,11 @@ CAVES_ACTOR_RUN_LEFT_PHASE_4_FRAME:
 	jmp CAVES_ACTOR_RUN_LEFT_PHASE_4_DONE
 
 LABEL_862C:
-	video type=0, offset=COMMON_VIDEO_228, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_31EC, x=[0x07], y=[0x08], zoom=0x40
 
 CAVES_ACTOR_RUN_LEFT_PHASE_4_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_229, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2F3A, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_8132
 	sub [0x08], 0x0001
 	ret
@@ -661,11 +661,11 @@ LABEL_8641:
 	jmp LABEL_8658
 
 LABEL_8653:
-	video type=0, offset=COMMON_VIDEO_231, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3212, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_8658:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_232, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2FD6, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_813D
 	ret
 
@@ -678,11 +678,11 @@ CAVES_ACTOR_RUN_LEFT_PHASE_6_FRAME:
 	jmp CAVES_ACTOR_RUN_LEFT_PHASE_6_DONE
 
 LABEL_867A:
-	video type=0, offset=COMMON_VIDEO_228, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_31EC, x=[0x07], y=[0x08], zoom=0x40
 
 CAVES_ACTOR_RUN_LEFT_PHASE_6_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_234, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_304A, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_813D
 	add [0x08], 0x0001
 	ret
@@ -695,11 +695,11 @@ LABEL_868F:
 	jmp LABEL_86A6
 
 LABEL_86A1:
-	video type=0, offset=COMMON_VIDEO_228, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_31EC, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_86A6:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_235, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3066, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_8132
 	ret
 
@@ -712,11 +712,11 @@ CAVES_ACTOR_RUN_LEFT_PHASE_8_FRAME:
 	jmp CAVES_ACTOR_RUN_LEFT_PHASE_8_DONE
 
 LABEL_86C8:
-	video type=0, offset=COMMON_VIDEO_225, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_31F6, x=[0x07], y=[0x08], zoom=0x40
 
 CAVES_ACTOR_RUN_LEFT_PHASE_8_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_236, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3082, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_8148
 	sub [0x08], 0x0001
 	ret
@@ -730,11 +730,11 @@ CAVES_ACTOR_RUN_LEFT_PHASE_9_FRAME:
 	jmp CAVES_ACTOR_RUN_LEFT_PHASE_9_DONE
 
 LABEL_86F3:
-	video type=0, offset=COMMON_VIDEO_225, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_31F6, x=[0x07], y=[0x08], zoom=0x40
 
 CAVES_ACTOR_RUN_LEFT_PHASE_9_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_238, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_309E, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_8153
 	sub [0x08], 0x0001
 	ret
@@ -747,11 +747,11 @@ LABEL_8708:
 	jmp LABEL_871F
 
 LABEL_871A:
-	video type=0, offset=COMMON_VIDEO_222, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3200, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_871F:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_240, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_30BA, x=[0x07], y=[0x08], zoom=0x40
 	add [0x07], 0x0001
 	call LABEL_815E
 	sub [0x07], 0x0001
@@ -846,32 +846,32 @@ LABEL_881C:
 	db 0x11
 
 LABEL_881D:
-	video type=0, offset=COMMON_VIDEO_311, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_41A8, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0002
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_312, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5C74, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 
 LABEL_883B:
-	video type=0, offset=COMMON_VIDEO_313, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_41E0, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0002
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_314, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5C7C, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 
 LABEL_8859:
-	video type=0, offset=COMMON_VIDEO_315, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_4218, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=COMMON_VIDEO_316, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5C84, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 
@@ -883,13 +883,13 @@ LABEL_8877:
 
 
 LABEL_8883:
-	video type=0, offset=COMMON_VIDEO_299, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3B44, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=COMMON_VIDEO_300, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5CA4, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_88A6:
@@ -900,23 +900,23 @@ LABEL_88A6:
 
 
 LABEL_88B2:
-	video type=0, offset=COMMON_VIDEO_307, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3B96, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=COMMON_VIDEO_308, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5CAC, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_88D5:
-	video type=0, offset=COMMON_VIDEO_309, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_3BE8, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=COMMON_VIDEO_310, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_5CB4, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_88F8:
@@ -930,11 +930,11 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_1_FRAME:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	sub [0x08], 0x0001
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_197, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=COMMON_VIDEO_198, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_2566, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_1F70, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, LABEL_8927
 	call LABEL_88A6
 	jmp DEDUP_CAVES_5B_020__HELPER
 
 LABEL_8927:
-	video type=0, offset=COMMON_VIDEO_199, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_6108, x=[0x07], y=[0x08], zoom=0x40

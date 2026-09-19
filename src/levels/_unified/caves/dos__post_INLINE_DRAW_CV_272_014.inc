@@ -1,6 +1,6 @@
 CAVES_ACTOR_RUN_LEFT_PHASE_6_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_278, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_304A, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_849B
 	add [0x08], 0x0001
 	ret

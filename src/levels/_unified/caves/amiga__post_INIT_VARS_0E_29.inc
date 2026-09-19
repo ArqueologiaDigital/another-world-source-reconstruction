@@ -182,7 +182,7 @@ LABEL_1574:
 	jne [SCREEN_NUM], [0x10], LABEL_15DD
 	sub [0x78], 0x0007
 	add [0x79], 0x0006
-	video type=0, offset=COMMON_VIDEO_243, x=[0x78], y=[0x79], zoom=0x40
+	video type=0, offset=CV_4314, x=[0x78], y=[0x79], zoom=0x40
 	sub [0x79], 0x0006
 	add [0x78], 0x0007
 	video offset=CINEMATIC_184, x=[0x78], y=[0x79]
@@ -280,37 +280,37 @@ LABEL_1680:
 	db 0x11
 
 LABEL_1681:
-	video type=0, offset=COMMON_VIDEO_014, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_57C4, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_015, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5878, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0006
 	break
 	setup channel=0x02, address=KILL_CHANNEL_LANDING
-	video type=0, offset=COMMON_VIDEO_016, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5944, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
 	call SET_VAR04_TO_0008
 	break
-	video type=0, offset=COMMON_VIDEO_017, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5A08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_018, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5AAC, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0003
 	break
-	video type=0, offset=COMMON_VIDEO_019, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5B4C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0005
 	break
 	mov [0x0A], 0x0001
-	video type=0, offset=COMMON_VIDEO_021, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_485C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0003
 	break
-	video type=0, offset=COMMON_VIDEO_030, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_46D4, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
 	break
-	video type=0, offset=COMMON_VIDEO_031, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_45C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0006
 	break
-	video type=0, offset=COMMON_VIDEO_032, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4528, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=COMMON_VIDEO_033, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_448C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x2A], 0x000F
 	call SET_VAR04_TO_0010
 	jmp HERO_CROUCH_ARMED_RIGHT_LOOP

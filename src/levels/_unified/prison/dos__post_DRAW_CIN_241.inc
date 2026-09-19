@@ -1,104 +1,104 @@
 LABEL_5363:
-	video type=0, offset=COMMON_VIDEO_239, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2A7E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, DRAW_CIN_241_IF_VAR09_EQ_1
-	video type=0, offset=COMMON_VIDEO_240, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_5FBC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
 PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L1:
-	video type=0, offset=COMMON_VIDEO_206, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2AC6, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, DRAW_CIN_241_IF_VAR09_EQ_1
-	video type=0, offset=COMMON_VIDEO_207, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_5FC4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
 PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L4:
-	video type=0, offset=COMMON_VIDEO_165, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2B0E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_CIN_241_IF_VAR09_EQ_1
-	video type=0, offset=COMMON_VIDEO_166, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_5FCC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
 PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L7:
-	video type=0, offset=COMMON_VIDEO_211, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2B56, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, DRAW_CIN_241_IF_VAR09_EQ_1
-	video type=0, offset=COMMON_VIDEO_212, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_5FD4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
 PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L10:
-	video type=0, offset=COMMON_VIDEO_214, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2B9E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_CIN_241_IF_VAR09_EQ_1
-	video type=0, offset=COMMON_VIDEO_215, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_5FDC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
 PRISON_INLINE_DRAW_CV_216_027_L0:
-	video type=0, offset=COMMON_VIDEO_218, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2BE6, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_CIN_241_IF_VAR09_EQ_1
-	video type=0, offset=COMMON_VIDEO_219, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_5FE4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
 PRISON_INLINE_DRAW_CV_220_008_L0:
-	video type=0, offset=COMMON_VIDEO_222, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2C2E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_CIN_241_IF_VAR09_EQ_1
-	video type=0, offset=COMMON_VIDEO_223, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_5FEC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
 PRISON_DRAW_CV224_AT_X07_Y08_L1:
-	video type=0, offset=COMMON_VIDEO_226, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2C76, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_CIN_241_IF_VAR09_EQ_1
-	video type=0, offset=COMMON_VIDEO_227, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_5FF4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
 PRISON_INLINE_DRAW_CV_228_020_L0:
-	video type=0, offset=COMMON_VIDEO_230, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2CBE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_CIN_241_IF_VAR09_EQ_1
-	video type=0, offset=COMMON_VIDEO_231, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_5FFC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
 PRISON_INLINE_DRAW_CV_266_029_L0:
-	video type=0, offset=COMMON_VIDEO_268, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_3116, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
 PRISON_INLINE_DRAW_CV_269_024_L0:
-	video type=0, offset=COMMON_VIDEO_271, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_3124, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
 PRISON_INLINE_DRAW_CV_272_003_L0:
-	video type=0, offset=COMMON_VIDEO_274, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_316E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
 PRISON_DRAW_CV275_AT_X07_Y08_L1:
-	video type=0, offset=COMMON_VIDEO_277, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_3180, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
 PRISON_INLINE_DRAW_CV_269_025_L1:
-	video type=0, offset=COMMON_VIDEO_281, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_31A8, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
 PRISON_INLINE_DRAW_CV_269_026_L0:
-	video type=0, offset=COMMON_VIDEO_283, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_31CA, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 
 PRISON_DRAW_CV263_AT_X07_Y08_L1:
-	video type=0, offset=COMMON_VIDEO_265, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_61A2, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jmp DRAW_CIN_241_IF_VAR09_EQ_1
 

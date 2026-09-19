@@ -2,28 +2,28 @@ HERO_WALK_RIGHT_LOOP:
 	mov [0x63], 0x0064
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	je [HERO_POS_MASK], 0x0A, HERO_RUN_LEFT_BURST_LOOP
-	video type=0, offset=COMMON_VIDEO_003, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4D98, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_WALK_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_WALK_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 .endif
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_004, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4DE4, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_WALK_RIGHT_1, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_WALK_RIGHT_1, x=[HERO_X], y=[HERO_Y]
 .endif
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_005, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4E30, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_WALK_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_WALK_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 .endif
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_006, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4E7C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_WALK_RIGHT_3, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_WALK_RIGHT_3, x=[HERO_X], y=[HERO_Y]
@@ -31,7 +31,7 @@ HERO_WALK_RIGHT_LOOP:
 	add [HERO_X], 0x0005
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_007, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4EC8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_RUN_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RUN_RIGHT_0, x=[HERO_X], y=[HERO_Y]
@@ -40,7 +40,7 @@ HERO_WALK_RIGHT_LOOP:
 	mov [0x1B], 0x0001
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_008, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4F14, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
 	video offset=CINEMATIC_HERO_WALK_RIGHT_1, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
@@ -52,11 +52,11 @@ HERO_WALK_RIGHT_LOOP:
 	add [HERO_X], 0x000C
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_009, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4F68, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_RUN_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x000C
 	break
-	video type=0, offset=COMMON_VIDEO_010, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_500C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[HERO_X], y=[HERO_Y]
@@ -65,7 +65,7 @@ HERO_WALK_RIGHT_LOOP:
 	break
 	mov [0x1B], 0x0000
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_011, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5058, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_WALK_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RUN_RIGHT_5, x=[HERO_X], y=[HERO_Y]
@@ -73,7 +73,7 @@ HERO_WALK_RIGHT_LOOP:
 	add [HERO_X], 0x0007
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_012, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_50A8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_STOP_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_STOP_RIGHT_0, x=[HERO_X], y=[HERO_Y]
@@ -81,7 +81,7 @@ HERO_WALK_RIGHT_LOOP:
 	add [HERO_X], 0x0004
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_013, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_50F8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0005
 	video offset=CINEMATIC_HERO_WALK_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x000C
@@ -91,7 +91,7 @@ HERO_WALK_RIGHT_LOOP:
 .endif
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_014, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_514C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
@@ -115,7 +115,7 @@ HERO_RUN_RIGHT_ENTRY_WITH_PREP:
 HERO_RUN_RIGHT_LOOP:
 	setup channel=0x15, address=KILL_CHANNEL_ROUTINE
 	je [HERO_POS_MASK], 0x0A, HERO_RUN_LEFT_LOOP
-	video type=0, offset=COMMON_VIDEO_008, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4F14, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
 	video offset=CINEMATIC_HERO_WALK_RIGHT_1, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x000C
@@ -127,7 +127,7 @@ HERO_RUN_RIGHT_LOOP:
 	mov [0x1B], 0x0001
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_009, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4F68, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_RUN_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RUN_RIGHT_2, x=[HERO_X], y=[HERO_Y]
@@ -135,7 +135,7 @@ HERO_RUN_RIGHT_LOOP:
 	add [HERO_X], 0x000C
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_085, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4FBC, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
 	video offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x000B
@@ -146,7 +146,7 @@ HERO_RUN_RIGHT_LOOP:
 	add [HERO_Y], 0x0001
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_085, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4FBC, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
 	video offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x000B
@@ -157,7 +157,7 @@ HERO_RUN_RIGHT_LOOP:
 	add [HERO_Y], 0x0001
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_010, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_500C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[HERO_X], y=[HERO_Y]
@@ -165,7 +165,7 @@ HERO_RUN_RIGHT_LOOP:
 	add [HERO_X], 0x0002
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_011, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5058, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_WALK_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RUN_RIGHT_5, x=[HERO_X], y=[HERO_Y]
@@ -177,7 +177,7 @@ HERO_RUN_RIGHT_LOOP:
 	je [HERO_ACTION], 0x01, HERO_LEAP_R_F5_TO_F9_ENTRY
 	sub [HERO_X], 0x0005
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_012, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_50A8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_STOP_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_STOP_RIGHT_0, x=[HERO_X], y=[HERO_Y]
@@ -185,7 +185,7 @@ HERO_RUN_RIGHT_LOOP:
 	add [HERO_X], 0x0004
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_013, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_50F8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0005
 	video offset=CINEMATIC_HERO_WALK_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x000C
@@ -195,7 +195,7 @@ HERO_RUN_RIGHT_LOOP:
 .endif
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_014, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_514C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
@@ -209,28 +209,28 @@ HERO_RUN_LEFT_BURST_LOOP:
 	mov [0x63], 0x0064
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	je [HERO_POS_MASK], 0x09, HERO_WALK_RIGHT_LOOP
-	video type=0, offset=COMMON_VIDEO_048, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_52C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_0, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_0, x=[HERO_X], y=[HERO_Y]
 .endif
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_049, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_52E0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_1, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_1, x=[HERO_X], y=[HERO_Y]
 .endif
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_050, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5300, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_2, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_2, x=[HERO_X], y=[HERO_Y]
 .endif
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_051, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5320, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_3, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_3, x=[HERO_X], y=[HERO_Y]
@@ -238,7 +238,7 @@ HERO_RUN_LEFT_BURST_LOOP:
 	sub [HERO_X], 0x0005
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_052, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5340, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_RUN_LEFT_0, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RUN_LEFT_0, x=[HERO_X], y=[HERO_Y]
@@ -247,7 +247,7 @@ HERO_RUN_LEFT_BURST_LOOP:
 	mov [0x1B], 0x0001
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_053, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5360, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
 	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_1, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
@@ -259,11 +259,11 @@ HERO_RUN_LEFT_BURST_LOOP:
 	sub [HERO_X], 0x000C
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_054, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5380, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_RUN_LEFT_2, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x000C
 	break
-	video type=0, offset=COMMON_VIDEO_055, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_53C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_RUN_LEFT_4, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RUN_LEFT_4, x=[HERO_X], y=[HERO_Y]
@@ -272,7 +272,7 @@ HERO_RUN_LEFT_BURST_LOOP:
 	break
 	mov [0x1B], 0x0000
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_056, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_53E0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_0, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RUN_LEFT_5, x=[HERO_X], y=[HERO_Y]
@@ -280,7 +280,7 @@ HERO_RUN_LEFT_BURST_LOOP:
 	sub [HERO_X], 0x0007
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_057, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5400, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_STOP_LEFT_0, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_STOP_LEFT_0, x=[HERO_X], y=[HERO_Y]
@@ -288,7 +288,7 @@ HERO_RUN_LEFT_BURST_LOOP:
 	sub [HERO_X], 0x0004
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_058, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5420, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0006
 	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_2, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x000D
@@ -298,7 +298,7 @@ HERO_RUN_LEFT_BURST_LOOP:
 .endif
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_059, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5444, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
@@ -329,7 +329,7 @@ HERO_RUN_LEFT_LOOP:
 .endif
 	mov [0x1B], 0x0001
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_053, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5360, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
 	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_1, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x000C
@@ -340,7 +340,7 @@ HERO_RUN_LEFT_LOOP:
 	sub [HERO_Y], 0x0002
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_054, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5380, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_RUN_LEFT_2, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RUN_LEFT_2, x=[HERO_X], y=[HERO_Y]
@@ -348,7 +348,7 @@ HERO_RUN_LEFT_LOOP:
 	sub [HERO_X], 0x000C
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_096, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_53A0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
 	video offset=CINEMATIC_HERO_RUN_LEFT_4, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x000B
@@ -359,7 +359,7 @@ HERO_RUN_LEFT_LOOP:
 	add [HERO_Y], 0x0001
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_096, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_53A0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
 	video offset=CINEMATIC_HERO_RUN_LEFT_4, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x000B
@@ -370,7 +370,7 @@ HERO_RUN_LEFT_LOOP:
 	add [HERO_Y], 0x0001
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_055, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_53C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_RUN_LEFT_4, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RUN_LEFT_4, x=[HERO_X], y=[HERO_Y]
@@ -378,7 +378,7 @@ HERO_RUN_LEFT_LOOP:
 	sub [HERO_X], 0x0002
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_056, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_53E0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_0, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_RUN_LEFT_5, x=[HERO_X], y=[HERO_Y]
@@ -390,7 +390,7 @@ HERO_RUN_LEFT_LOOP:
 	je [HERO_ACTION], 0x01, HERO_LEAP_LEFT_F5_LOOP
 	add [HERO_X], 0x0005
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_057, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5400, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_STOP_LEFT_0, x=[HERO_X], y=[HERO_Y]
 .elif BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HERO_STOP_LEFT_0, x=[HERO_X], y=[HERO_Y]
@@ -398,7 +398,7 @@ HERO_RUN_LEFT_LOOP:
 	sub [HERO_X], 0x0004
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_058, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5420, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0006
 	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_2, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x000D
@@ -408,7 +408,7 @@ HERO_RUN_LEFT_LOOP:
 .endif
 	break
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-	video type=0, offset=COMMON_VIDEO_059, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_5444, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001

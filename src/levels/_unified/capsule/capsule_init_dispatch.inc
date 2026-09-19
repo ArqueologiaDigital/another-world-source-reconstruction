@@ -358,7 +358,7 @@ CAPSULE_INIT_VAR2B_2C_FROM_VAR01_VAR29_10_L14:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV139_AT_X01_Y02:
-	video type=0, offset=COMMON_VIDEO_139, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_4754, x=[HERO_X], y=[HERO_Y], zoom=0x40
 .endif
 
 .if BRANCH == "cartridge_1992"
@@ -409,7 +409,7 @@ CAPSULE_HERO_LEDGE_DROP_TOLERANCE:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_DRAW_CV204_AT_X07_Y08_L0:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_205, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_257A, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call BUDDY_RIGHT_SUBFRAME_3_DISPATCH
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L1
 	ret
@@ -429,7 +429,7 @@ CAPSULE_DRAW_CV204_AT_X07_Y08_L1:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_BUDDY_WALK_LEFT_DRAW_1_DONE:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_208, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2610, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call BUDDY_RIGHT_SUBFRAME_3_DISPATCH
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L1
 	ret
@@ -442,7 +442,7 @@ CAPSULE_BUDDY_WALK_LEFT_DRAW_2:
 
 CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L3:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_209, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2672, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call BUDDY_RIGHT_SUBFRAME_3_DISPATCH
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L4
 	ret
@@ -456,7 +456,7 @@ CAPSULE_BUDDY_WALK_LEFT_DRAW_3:
 
 CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L6:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_210, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_270C, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call BUDDY_RIGHT_SUBFRAME_3_DISPATCH
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L7
 	play id=0x0055, freq=0x0F, vol=0x14, channel=0x00
@@ -470,7 +470,7 @@ CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L8:
 
 CAPSULE_BUDDY_WALK_LEFT_DRAW_4_DONE:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_213, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2786, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call BUDDY_RIGHT_SUBFRAME_3_DISPATCH
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L10
 	ret
@@ -483,11 +483,11 @@ CAPSULE_BUDDY_WALK_LEFT_DRAW_5:
 	jmp CAPSULE_BUDDY_WALK_LEFT_DRAW_5_DONE
 
 CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L12:
-	video type=0, offset=COMMON_VIDEO_216, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2D66, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 CAPSULE_BUDDY_WALK_LEFT_DRAW_5_DONE:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_217, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_27FC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call BUDDY_RIGHT_SUBFRAME_3_DISPATCH
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L15
 	ret
@@ -500,11 +500,11 @@ CAPSULE_BUDDY_WALK_LEFT_DRAW_6:
 	jmp CAPSULE_BUDDY_WALK_LEFT_DRAW_6_DONE
 
 CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L17:
-	video type=0, offset=COMMON_VIDEO_220, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2D5E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 CAPSULE_BUDDY_WALK_LEFT_DRAW_6_DONE:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_221, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_287E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call BUDDY_RIGHT_SUBFRAME_3_DISPATCH
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L20
 	ret
@@ -534,7 +534,7 @@ CAPSULE_BUDDY_WALK_LEFT_DRAW_7:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_ACTOR_RUN_LEFT_DRAW_0_DONE:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_264, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2D76, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call CAPSULE_DRAW_CV263_AT_X07_Y08_L1
 	add [BUDDY_Y], 0x0001
 	ret
@@ -547,11 +547,11 @@ CAPSULE_DRAW_CV263_AT_X07_Y08_L2:
 	jmp CAPSULE_DRAW_CV263_AT_X07_Y08_L4
 
 CAPSULE_DRAW_CV263_AT_X07_Y08_L3:
-	video type=0, offset=COMMON_VIDEO_266, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_3200, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 CAPSULE_DRAW_CV263_AT_X07_Y08_L4:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_267, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2E0A, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call CAPSULE_DRAW_CV263_AT_X07_Y08_L5
 	ret
 
@@ -564,11 +564,11 @@ CAPSULE_DRAW_CV263_AT_X07_Y08_L6:
 	jmp CAPSULE_ACTOR_RUN_LEFT_DRAW_2_DONE
 
 CAPSULE_DRAW_CV263_AT_X07_Y08_L7:
-	video type=0, offset=COMMON_VIDEO_269, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_31F6, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 CAPSULE_ACTOR_RUN_LEFT_DRAW_2_DONE:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_270, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2E9E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call CAPSULE_DRAW_CV263_AT_X07_Y08_L9
 	sub [BUDDY_Y], 0x0001
 	ret
@@ -583,11 +583,11 @@ CAPSULE_ACTOR_RUN_LEFT_DRAW_3:
 	jmp CAPSULE_ACTOR_RUN_LEFT_DRAW_3_DONE
 
 CAPSULE_DRAW_CV263_AT_X07_Y08_L11:
-	video type=0, offset=COMMON_VIDEO_272, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_31EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 CAPSULE_ACTOR_RUN_LEFT_DRAW_3_DONE:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_273, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2F3A, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call CAPSULE_DRAW_CV263_AT_X07_Y08_L13
 	sub [BUDDY_Y], 0x0001
 	ret
@@ -624,8 +624,8 @@ CAPSULE_ACTOR_RUN_RIGHT_DRAW_2:
 	play id=0x0055, freq=0x0F, vol=0x14, channel=0x00
 	add [BUDDY_Y], 0x0001
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_247, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
-	video type=0, offset=COMMON_VIDEO_248, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2552, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2058, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, DRAW_CV249_AT_X07_Y08
 	call CAPSULE_DRAW_CV246_AT_X07_Y08_L2
 	jmp CAPSULE_DRAW_CV246_AT_X07_Y08_L3
@@ -655,8 +655,8 @@ CAPSULE_ACTOR_RUN_RIGHT_DRAW_8:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	add [BUDDY_Y], 0x0001
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_247, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
-	video type=0, offset=COMMON_VIDEO_260, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2552, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2364, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, DRAW_CV261_AT_X07_Y08
 	call CAPSULE_DRAW_CV259_AT_X07_Y08_L2
 	jmp CAPSULE_DRAW_CV259_AT_X07_Y08_L3
@@ -675,15 +675,15 @@ CAPSULE_DRAW_CV259_AT_X07_Y08_L3:
 CAPSULE_DRAW_CV261_AT_X07_Y08_L0:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=COMMON_VIDEO_244, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
-	video type=0, offset=COMMON_VIDEO_262, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_255C, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2380, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	sub [BUDDY_X], 0x0001
 	je [0x0D], 0x00, CAPSULE_DRAW_CV261_AT_X07_Y08_L1
 	call CAPSULE_DRAW_CV261_AT_X07_Y08_L2
 	jmp INCREMENT_VAR07_BY_1
 
 CAPSULE_DRAW_CV261_AT_X07_Y08_L1:
-	video type=0, offset=COMMON_VIDEO_243, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_6108, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 .endif
 
 .include "../_helpers/INCREMENT_VAR07_BY_1.inc"
@@ -758,7 +758,7 @@ CAPSULE_HERO_WALK_LEFT_DRAW_13:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_HERO_WALK_LEFT_FOOTSTEP_PHASE_2:
-	video type=0, offset=COMMON_VIDEO_078, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_0234, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0B, vol=0x22, channel=0x01
 	ret
 
@@ -768,7 +768,7 @@ CAPSULE_HERO_WALK_LEFT_FOOTSTEP_PHASE_2:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_HERO_WALK_LEFT_DRAW_14:
 	jne [0x0A], 0x00, CAPSULE_HERO_WALK_LEFT_DRAW_14_GUN_RAISED
-	video type=0, offset=COMMON_VIDEO_079, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_331A, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_080
 
 CAPSULE_HERO_WALK_LEFT_DRAW_14_GUN_RAISED:
@@ -782,7 +782,7 @@ CAPSULE_HERO_WALK_LEFT_DRAW_14_GUN_RAISED:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_DRAW_CV_080_L0:
 	jne [0x0A], 0x00, CAPSULE_DRAW_CV_080_L1
-	video type=0, offset=COMMON_VIDEO_001, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_3322, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp CAPSULE_DRAW_CV_080_L2
 
 CAPSULE_DRAW_CV_080_L1:
@@ -790,13 +790,13 @@ CAPSULE_DRAW_CV_080_L1:
 
 CAPSULE_DRAW_CV_080_L2:
 	call CAPSULE_DRAW_CV_071_L1
-	video type=0, offset=COMMON_VIDEO_002, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_0358, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_WALK_LEFT_DRAW_0:
 	jne [0x0A], 0x00, CAPSULE_HERO_WALK_LEFT_DRAW_0_GUN_RAISED
-	video type=0, offset=COMMON_VIDEO_060, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_332A, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_061
 
 CAPSULE_HERO_WALK_LEFT_DRAW_0_GUN_RAISED:
@@ -810,7 +810,7 @@ CAPSULE_HERO_WALK_LEFT_DRAW_0_GUN_RAISED:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_HERO_WALK_LEFT_DRAW_1:
 	jne [0x0A], 0x00, CAPSULE_HERO_WALK_LEFT_DRAW_1_GUN_RAISED
-	video type=0, offset=COMMON_VIDEO_062, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_3332, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_063
 
 CAPSULE_HERO_WALK_LEFT_DRAW_1_GUN_RAISED:
@@ -824,7 +824,7 @@ CAPSULE_HERO_WALK_LEFT_DRAW_1_GUN_RAISED:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_HERO_WALK_LEFT_DRAW_2:
 	jne [0x0A], 0x00, CAPSULE_HERO_WALK_LEFT_DRAW_2_GUN_RAISED
-	video type=0, offset=COMMON_VIDEO_064, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_333A, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_065
 
 CAPSULE_HERO_WALK_LEFT_DRAW_2_GUN_RAISED:
@@ -838,7 +838,7 @@ CAPSULE_HERO_WALK_LEFT_DRAW_2_GUN_RAISED:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_HERO_WALK_LEFT_DRAW_3:
 	jne [0x0A], 0x00, CAPSULE_HERO_WALK_LEFT_DRAW_3_GUN_RAISED
-	video type=0, offset=COMMON_VIDEO_066, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_3342, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_067
 
 CAPSULE_HERO_WALK_LEFT_DRAW_3_GUN_RAISED:
@@ -852,7 +852,7 @@ CAPSULE_HERO_WALK_LEFT_DRAW_3_GUN_RAISED:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_HERO_WALK_LEFT_DRAW_4:
 	jne [0x0A], 0x00, CAPSULE_HERO_WALK_LEFT_DRAW_4_GUN_RAISED
-	video type=0, offset=COMMON_VIDEO_068, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_334A, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_069
 
 CAPSULE_HERO_WALK_LEFT_DRAW_4_GUN_RAISED:
@@ -871,7 +871,7 @@ CAPSULE_HERO_WALK_LEFT_DRAW_5:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV070_PLAY_60_F14_V20_C1:
-	video type=0, offset=COMMON_VIDEO_070, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_0814, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x14, vol=0x20, channel=0x01
 	ret
 
@@ -936,74 +936,74 @@ CAPSULE_HERO_WALK_LEFT_DRAW_8:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_HERO_RUN_RIGHT_FOOTSTEP_PHASE_1:
-	video type=0, offset=COMMON_VIDEO_081, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_03E4, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x01
 	jne [0x0A], 0x00, DRAW_CV_295
-	video type=0, offset=COMMON_VIDEO_082, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34AA, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_RUN_RIGHT_DRAW_1:
-	video type=0, offset=COMMON_VIDEO_083, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_0472, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_296
-	video type=0, offset=COMMON_VIDEO_084, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34B2, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_RUN_RIGHT_DRAW_2:
-	video type=0, offset=COMMON_VIDEO_116, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_04F4, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_299
-	video type=0, offset=COMMON_VIDEO_117, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34BA, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_RUN_RIGHT_DRAW_3:
-	video type=0, offset=COMMON_VIDEO_118, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_058E, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_300
-	video type=0, offset=COMMON_VIDEO_119, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34C2, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_RUN_RIGHT_DRAW_4:
-	video type=0, offset=COMMON_VIDEO_120, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_0624, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_300
-	video type=0, offset=COMMON_VIDEO_121, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34CE, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_RUN_RIGHT_FOOTSTEP_PHASE_2:
-	video type=0, offset=COMMON_VIDEO_086, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_06A2, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0A, vol=0x2A, channel=0x01
 	jne [0x0A], 0x00, DRAW_CV_295
-	video type=0, offset=COMMON_VIDEO_087, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34D6, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_RUN_RIGHT_DRAW_6:
-	video type=0, offset=COMMON_VIDEO_088, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_06C8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_295
-	video type=0, offset=COMMON_VIDEO_089, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34DE, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_DRAW_CV_297_L7:
-	video type=0, offset=COMMON_VIDEO_090, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_06EE, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_296
-	video type=0, offset=COMMON_VIDEO_091, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34E6, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_RUN_RIGHT_DRAW_8:
-	video type=0, offset=COMMON_VIDEO_092, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_0714, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_297
-	video type=0, offset=COMMON_VIDEO_093, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34EE, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_RUN_RIGHT_DRAW_9:
-	video type=0, offset=COMMON_VIDEO_094, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_073E, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_297
-	video type=0, offset=COMMON_VIDEO_095, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_34F6, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 .endif
 
@@ -1025,7 +1025,7 @@ CAPSULE_HERO_RUN_LEFT_DRAW_0:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_HERO_RUN_LEFT_FOOTSTEP_PHASE_1:
-	video type=0, offset=COMMON_VIDEO_108, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_11B8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x01
 	ret
 
@@ -1104,7 +1104,7 @@ CAPSULE_HERO_RUN_LEFT_DRAW_5:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_HERO_RUN_LEFT_FOOTSTEP_PHASE_2:
-	video type=0, offset=COMMON_VIDEO_098, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_150A, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0A, vol=0x2A, channel=0x01
 	ret
 
@@ -1172,7 +1172,7 @@ CAPSULE_HERO_RUN_LEFT_DRAW_9:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV_106:
-	video type=0, offset=COMMON_VIDEO_106, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_15A2, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
