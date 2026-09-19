@@ -167,9 +167,9 @@ LABEL_1939:
 	video offset=CINEMATIC_547, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [0x15], 0x000C
-	video offset=CINEMATIC_516, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_517, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_1, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_548, x=[HERO_X], y=[HERO_Y]
 	break

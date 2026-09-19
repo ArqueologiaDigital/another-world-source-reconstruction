@@ -43,7 +43,7 @@ LABEL_9D07:
 
 LABEL_9D0F:
 	fill page=0x00, color=0x00
-	video offset=CINEMATIC_498, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_8, x=160, y=100
 	ret
 
 
@@ -71,8 +71,8 @@ LABEL_9D33:
 
 LABEL_9D3F:
 	fill page=0x00, color=0x00
-	video offset=CINEMATIC_503, x=160, y=100
-	video offset=CINEMATIC_504, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_3, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_2, x=160, y=100
 	ret
 
 
@@ -167,11 +167,11 @@ LABEL_9E2B:
 
 LABEL_9E3F:
 	fill page=0x00, color=0x01
-	video offset=CINEMATIC_482, x=160, y=100
-	video offset=CINEMATIC_483, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_7, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_6, x=160, y=100
 	video offset=CINEMATIC_438, x=160, y=100
 	video offset=CINEMATIC_484, x=160, y=100
-	video offset=CINEMATIC_485, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_4, x=160, y=100
 	ret
 
 
@@ -198,14 +198,14 @@ LABEL_9E7B:
 	video offset=CINEMATIC_438, x=160, y=100
 	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F1, x=160, y=100
 	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F2, x=160, y=100
-	video offset=CINEMATIC_489, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_0, x=160, y=100
 	ret
 
 
 LABEL_9E97:
 	fill page=0x00, color=0x01
-	video offset=CINEMATIC_482, x=160, y=100
-	video offset=CINEMATIC_483, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_7, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_6, x=160, y=100
 	video offset=CINEMATIC_438, x=160, y=100
 	video offset=CINEMATIC_484, x=160, y=100
 	video offset=CINEMATIC_490, x=160, y=100

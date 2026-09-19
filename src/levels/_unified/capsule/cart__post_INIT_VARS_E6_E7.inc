@@ -2,7 +2,7 @@ LABEL_0AE3:
 	video offset=CINEMATIC_597, x=[0xe6], y=[0xe7]
 	break
 	jl [HERO_X], 0xB4, LABEL_0AE3
-	video offset=CINEMATIC_616, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAPSULE_SUPERBLAST_BEAM_TILE_2, x=[0xe6], y=[0xe7]
 	break
 	video offset=CINEMATIC_617, x=[0xe6], y=[0xe7]
 	break
@@ -22,7 +22,7 @@ LABEL_0AE3:
 	break
 	video offset=CINEMATIC_617, x=[0xe6], y=[0xe7]
 	break
-	video offset=CINEMATIC_616, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAPSULE_SUPERBLAST_BEAM_TILE_2, x=[0xe6], y=[0xe7]
 	call LABEL_3240
 	mov [0xE8], 0x0001
 	add [0xE8], [0x3A]
@@ -37,19 +37,19 @@ LABEL_0B4D:
 	video offset=CINEMATIC_598, x=[0xe6], y=[0xe7]
 	break
 	jl [HERO_X], 0xB4, LABEL_0B4D
-	video offset=CINEMATIC_614, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAPSULE_SUPERBLAST_BEAM_TILE_0, x=[0xe6], y=[0xe7]
 	break
 	video offset=CINEMATIC_599, x=[0xe6], y=[0xe7]
 	break
 	mov [0xE9], 0x000A
 
 ANIM_CIN_615_LOOP_VARE9:
-	video offset=CINEMATIC_615, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAPSULE_SUPERBLAST_BEAM_TILE_1, x=[0xe6], y=[0xe7]
 	break
 	djnz [0xE9], ANIM_CIN_615_LOOP_VARE9
 	video offset=CINEMATIC_599, x=[0xe6], y=[0xe7]
 	break
-	video offset=CINEMATIC_614, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAPSULE_SUPERBLAST_BEAM_TILE_0, x=[0xe6], y=[0xe7]
 	break
 	call LABEL_3240
 	mov [0xE9], [0x39]

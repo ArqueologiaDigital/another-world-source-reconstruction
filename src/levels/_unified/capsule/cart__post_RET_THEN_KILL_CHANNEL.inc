@@ -114,7 +114,7 @@ LABEL_6151:
 	jne [0x13], 0x6E, LABEL_6184
 	play id=0x0056, freq=0x14, vol=0x40, channel=0x01
 	selectVideoPage 0x00
-	video offset=CINEMATIC_499, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_7, x=[0x21], y=[0x27]
 	selectVideoPage 0xFF
 	video offset=CINEMATIC_646, x=[0x21], y=[0x27]
 	ret
@@ -282,7 +282,7 @@ LABEL_62B2:
 	jne [0x13], 0x6E, LABEL_62E5
 	play id=0x0056, freq=0x14, vol=0x40, channel=0x01
 	selectVideoPage 0x00
-	video offset=CINEMATIC_499, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_7, x=[0x21], y=[0x27]
 	selectVideoPage 0xFF
 	video offset=CINEMATIC_646, x=[0x21], y=[0x27]
 	ret

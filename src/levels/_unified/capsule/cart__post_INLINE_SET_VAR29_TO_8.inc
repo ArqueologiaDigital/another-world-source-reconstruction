@@ -75,7 +75,7 @@ HANG_DRAW_CIN_288:
 	jmp HANG_DRAW_CIN_288
 
 HANG_DRAW_CIN_521:
-	video offset=CINEMATIC_521, x=188, y=126
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_3, x=188, y=126
 	break
 	jmp HANG_DRAW_CIN_521
 LABEL_3A54:
@@ -98,16 +98,16 @@ LABEL_3A55:
 	video offset=CINEMATIC_513, x=188, y=126
 	video offset=CINEMATIC_081, x=203, y=144
 	break
-	video offset=CINEMATIC_514, x=188, y=126
-	video offset=CINEMATIC_519, x=111, y=149
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_0, x=188, y=126
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_2, x=111, y=149
 	break
-	video offset=CINEMATIC_515, x=188, y=126
-	video offset=CINEMATIC_520, x=64, y=144
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_0, x=188, y=126
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_3, x=64, y=144
 	break
-	video offset=CINEMATIC_515, x=188, y=126
-	video offset=CINEMATIC_519, x=67, y=153
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_0, x=188, y=126
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_2, x=67, y=153
 	break
-	video offset=CINEMATIC_516, x=188, y=126
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_1, x=188, y=126
 	video offset=CINEMATIC_076, x=99, y=168
 	or [0xB9], 0x0008
 	setup channel=0x14, address=INIT_VARS_03_01_02
@@ -115,23 +115,23 @@ LABEL_3A55:
 	break
 
 LABEL_3AC5:
-	video offset=CINEMATIC_517, x=188, y=126
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_1, x=188, y=126
 	break
-	video offset=CINEMATIC_518, x=188, y=126
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_2, x=188, y=126
 	break
-	video offset=CINEMATIC_518, x=188, y=126
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_2, x=188, y=126
 	break
-	video offset=CINEMATIC_517, x=188, y=126
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_1, x=188, y=126
 	break
-	video offset=CINEMATIC_516, x=188, y=126
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_1, x=188, y=126
 	break
-	video offset=CINEMATIC_516, x=188, y=126
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_1, x=188, y=126
 	break
-	video offset=CINEMATIC_517, x=188, y=126
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_1, x=188, y=126
 	break
 
 HANG_DRAW_CIN_518:
-	video offset=CINEMATIC_518, x=187, y=126
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_2, x=187, y=126
 	break
 	jmp HANG_DRAW_CIN_518
 LABEL_3AF0:
@@ -142,10 +142,10 @@ LABEL_3AF1:
 	break
 	video offset=CINEMATIC_513, x=188, y=126
 	break
-	video offset=CINEMATIC_514, x=188, y=126
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_0, x=188, y=126
 	break
-	video offset=CINEMATIC_515, x=188, y=126
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_0, x=188, y=126
 	break
-	video offset=CINEMATIC_516, x=188, y=126
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_1, x=188, y=126
 	break
 	jmp LABEL_3AC5

@@ -118,7 +118,7 @@ LABEL_053B:
 	jg [HERO_X], 0x012C, LABEL_053B
 	play id=0x0057, freq=0x14, vol=0x40, channel=0x02
 	mov [0xE6], 0x0001
-	video offset=CINEMATIC_519, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_2, x=160, y=100
 	mov [0xF8], [0xB9]
 	and [0xF8], 0x0800
 	jne [0xF8], 0x00, LABEL_0569
@@ -129,22 +129,22 @@ LABEL_053B:
 LABEL_0569:
 	break
 	play id=0x0067, freq=0x14, vol=0x40, channel=0x02
-	video offset=CINEMATIC_519, x=160, y=100
-	video offset=CINEMATIC_519, x=120, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_2, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_2, x=120, y=100
 	break
 
 LABEL_0579:
-	video offset=CINEMATIC_519, x=160, y=100
-	video offset=CINEMATIC_519, x=120, y=100
-	video offset=CINEMATIC_520, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_2, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_2, x=120, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_3, x=160, y=100
 	break
 	jg [HERO_X], 0x96, LABEL_0579
 	jl [0x68], 0x011D, LABEL_0579
 	mov [0xE6], 0x0000
-	video offset=CINEMATIC_519, x=160, y=100
-	video offset=CINEMATIC_519, x=120, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_2, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_2, x=120, y=100
 	break
-	video offset=CINEMATIC_519, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_2, x=160, y=100
 	jmp LABEL_053B
 
 LABEL_05A7:

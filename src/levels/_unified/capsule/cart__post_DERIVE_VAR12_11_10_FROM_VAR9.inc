@@ -128,9 +128,9 @@ LABEL_43CE:
 LABEL_43E3:
 	jne [0x09], 0x04, LABEL_43F8
 	selectVideoPage 0x00
-	video offset=CINEMATIC_500, x=[0x26], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_6, x=[0x26], y=[BUDDY_Y]
 	selectVideoPage 0xFF
-	video offset=CINEMATIC_500, x=[0x26], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_6, x=[0x26], y=[BUDDY_Y]
 	ret
 
 
@@ -198,23 +198,23 @@ LABEL_447E:
 
 
 LABEL_4485:
-	video offset=CINEMATIC_499, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_7, x=[BUDDY_X], y=[BUDDY_Y]
 	jne [0x10], 0x01, LABEL_4495
-	video offset=CINEMATIC_500, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_6, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_4495:
 	add [BUDDY_X], 0x000A
 	jl [0x0E], 0x02, SHARED_RET
-	video offset=CINEMATIC_499, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_7, x=[BUDDY_X], y=[BUDDY_Y]
 	jne [0x11], 0x01, LABEL_44AF
-	video offset=CINEMATIC_500, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_6, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_44AF:
 	add [BUDDY_X], 0x000A
 	jl [0x0E], 0x03, SHARED_RET
-	video offset=CINEMATIC_499, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_7, x=[BUDDY_X], y=[BUDDY_Y]
 	jne [0x12], 0x01, SHARED_RET
-	video offset=CINEMATIC_500, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_6, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 

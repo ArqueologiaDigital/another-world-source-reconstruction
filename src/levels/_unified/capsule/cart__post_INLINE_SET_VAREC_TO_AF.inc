@@ -167,9 +167,9 @@ LABEL_1A47:
 	video offset=CINEMATIC_553, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [0x15], 0x000C
-	video offset=CINEMATIC_519, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_520, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_3, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_554, x=[HERO_X], y=[HERO_Y]
 	break

@@ -67,12 +67,12 @@ LABEL_5B18:
 
 LABEL_5B2B:
 	jl [0x26], 0x02, LABEL_5B3E
-	video offset=CINEMATIC_670, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_4, x=[0x21], y=[0x27]
 	video offset=CINEMATIC_671, x=[0x22], y=[0x27]
 	jmp LABEL_5B43
 
 LABEL_5B3E:
-	video offset=CINEMATIC_669, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_4, x=[0x21], y=[0x27]
 
 LABEL_5B43:
 	ret

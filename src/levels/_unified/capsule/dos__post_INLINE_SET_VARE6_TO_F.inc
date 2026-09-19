@@ -247,15 +247,15 @@ LABEL_3E0A:
 LABEL_3E0B:
 	break
 	jl [HERO_X], 0x91, LABEL_3E0B
-	video offset=CINEMATIC_482, x=[HERO_X], y=[HERO_Y], zoom=0xc8
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_7, x=[HERO_X], y=[HERO_Y], zoom=0xc8
 	play id=0x0052, freq=0x0A, vol=0x40, channel=0x02
 	break
-	video offset=CINEMATIC_482, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_7, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_482, x=[HERO_X], y=[HERO_Y], zoom=0x10
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_7, x=[HERO_X], y=[HERO_Y], zoom=0x10
 	setup channel=0x04, address=LABEL_3E3D
 	break
-	video offset=CINEMATIC_483, x=[HERO_X], y=[HERO_Y], zoom=0x50
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_6, x=[HERO_X], y=[HERO_Y], zoom=0x50
 	play id=0x005A, freq=0x0C, vol=0x40, channel=0x02
 	killChannel
 
@@ -265,7 +265,7 @@ LABEL_3E3D:
 	selectVideoPage 0xFF
 	break
 	or [0x04], 0x0010
-	video offset=CINEMATIC_483, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_6, x=[HERO_X], y=[HERO_Y]
 	deleteChannels first=0x14, last=0x16
 	setup channel=0x16, address=LABEL_3E62
 	break

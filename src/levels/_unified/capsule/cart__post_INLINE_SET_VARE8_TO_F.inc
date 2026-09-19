@@ -144,7 +144,7 @@ LABEL_2671:
 	break
 	video offset=CINEMATIC_480, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_481, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_8, x=[0x68], y=[0x69]
 	setup channel=0x01, address=LABEL_3F38
 	call LABEL_3599
 	killChannel
