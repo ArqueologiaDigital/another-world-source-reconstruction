@@ -80,29 +80,29 @@ LABEL_3D0F:
 
 LABEL_3D2B:
 	jle [0x13], 0x04, PRISON_SHOT_HIT_BURST_RIGHT_FRAME_4
-	video offset=CINEMATIC_487, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_HIT_BURST_RIGHT_4, x=[0x21], y=[0x27]
 	ret
 
 
 PRISON_SHOT_HIT_BURST_RIGHT_FRAME_4:
-	video offset=CINEMATIC_486, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_HIT_BURST_RIGHT_3, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3D3D:
 	jle [0x13], 0x02, LABEL_3D49
-	video offset=CINEMATIC_485, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_HIT_BURST_RIGHT_2, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3D49:
 	jle [0x13], 0x01, PRISON_SHOT_HIT_BURST_RIGHT_FRAME_1
-	video offset=CINEMATIC_484, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_HIT_BURST_RIGHT_1, x=[0x21], y=[0x27]
 	ret
 
 
 PRISON_SHOT_HIT_BURST_RIGHT_FRAME_1:
-	video offset=CINEMATIC_483, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_HIT_BURST_RIGHT_0, x=[0x21], y=[0x27]
 	ret
 
 
@@ -247,29 +247,29 @@ LABEL_3E6C:
 
 LABEL_3E88:
 	jle [0x13], 0x04, PRISON_SHOT_HIT_BURST_LEFT_FRAME_4
-	video offset=CINEMATIC_503, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_HIT_BURST_LEFT_4, x=[0x21], y=[0x27]
 	ret
 
 
 PRISON_SHOT_HIT_BURST_LEFT_FRAME_4:
-	video offset=CINEMATIC_502, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_HIT_BURST_LEFT_3, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3E9A:
 	jle [0x13], 0x02, LABEL_3EA6
-	video offset=CINEMATIC_501, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_HIT_BURST_LEFT_2, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3EA6:
 	jle [0x13], 0x01, PRISON_SHOT_HIT_BURST_LEFT_FRAME_1
-	video offset=CINEMATIC_500, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_HIT_BURST_LEFT_1, x=[0x21], y=[0x27]
 	ret
 
 
 PRISON_SHOT_HIT_BURST_LEFT_FRAME_1:
-	video offset=CINEMATIC_499, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_HIT_BURST_LEFT_0, x=[0x21], y=[0x27]
 	ret
 
 

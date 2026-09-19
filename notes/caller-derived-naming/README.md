@@ -4,6 +4,21 @@
 |---|---|---|
 | `sole_named_caller.py` | How many trivial routines (whole body one `ret`, `killChannel` or `break`) can now be named from the one site that reaches them, because that site has itself been named? Also emits the proposal table. | `python3 notes/caller-derived-naming/sole_named_caller.py` · `… --port amiga --stage CAVES --proposals` |
 | `named_art_only.py` | One layer up: how many unnamed routines with a body draw **only** polygons that already carry a name, so the art has settled their subject at E3 and the routine inherits it? | `python3 notes/caller-derived-naming/named_art_only.py` · `… --port amiga --stage CAVES --list` |
+| `art_with_named_drawers.py` | The inverse: which still-numeric `CINEMATIC_<n>` constants are drawn **only** by routines that already have a name, so the render can be opened with a caption in hand? Groups them by the stem the drawing routines share, because a shared stem is a run to render together. | `python3 notes/caller-derived-naming/art_with_named_drawers.py` · `… --port amiga --stage PRISON --list` |
+
+### The two are not the same lever, and the PRISON pass showed it
+
+`art_with_named_drawers.py` orders constants by **how cheap they are to
+identify**. That is not the same as how much they unblock. The 42 cage
+constants unblocked 18 routines, because six of their drawers were still
+`DRAW_CIN0NN_AT_X03_Y04` helpers. The 10 shot-hit-burst constants, named right
+after from the same work order, unblocked **zero** — every routine that draws
+them was already named, which is precisely why they appeared on the list.
+
+Both are worth doing; they just pay in different currencies. Naming a
+constant whose drawers are all named improves the asset layer and the
+readability of code that is already named. Naming one whose drawers are *not*
+all named is what moves `named_art_only.py`.
 
 ## The measurement that says where the work actually is
 
