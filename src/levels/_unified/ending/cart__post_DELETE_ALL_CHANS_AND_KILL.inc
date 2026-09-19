@@ -68,21 +68,21 @@ LABEL_00BF:
 	mov [0x01], 0x00A0
 	mov [0x02], 0x0064
 	mov [0x03], 0x0040
-	video offset=CINEMATIC_052, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_ENDING_CLOSEUP_CUT_F0, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video offset=CINEMATIC_053, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_ENDING_CLOSEUP_CUT_F1, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video offset=CINEMATIC_054, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_ENDING_CLOSEUP_CUT_F2, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video offset=CINEMATIC_055, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_ENDING_CLOSEUP_CUT_F3, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video offset=CINEMATIC_056, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_ENDING_CLOSEUP_CUT_F4, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video offset=CINEMATIC_054, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_ENDING_CLOSEUP_CUT_F2, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video offset=CINEMATIC_057, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_ENDING_CLOSEUP_CUT_F5, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video offset=CINEMATIC_053, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_ENDING_CLOSEUP_CUT_F1, x=[0x01], y=[0x02], zoom=[0x03]
 	deleteChannels first=0x0A, last=0x0E
 	copyVideoPage src=0x03, dst=0x00
 	setup channel=0x0A, address=LABEL_0159
@@ -122,13 +122,13 @@ LABEL_0159:
 	mov [0x04], 0x0040
 	setPalette 0x0B
 	add [0x04], 0x0002
-	video offset=CINEMATIC_067, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_ENDING_PTERANODON_FLY_AWAY_F0, x=[0x01], y=[0x02], zoom=[0x03]
 	break
 	add [0x04], 0x0005
-	video offset=CINEMATIC_068, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_ENDING_PTERANODON_FLY_AWAY_F1, x=[0x01], y=[0x02], zoom=[0x03]
 	break
 	add [0x04], 0x0008
-	video offset=CINEMATIC_069, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_ENDING_PTERANODON_FLY_AWAY_F2, x=[0x01], y=[0x02], zoom=[0x03]
 	setup channel=0x0C, address=DRAW_CIN_086_087_SEQ
 	setup channel=0x0D, address=DRAW_CIN_075_076_SEQ
 	mov [0x06], 0x000A

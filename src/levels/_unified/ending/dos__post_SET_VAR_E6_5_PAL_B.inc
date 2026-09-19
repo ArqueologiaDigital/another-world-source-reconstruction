@@ -1,35 +1,35 @@
 ENDING_SKY_SWEEP_FROM_RIGHT_PHASE_1:
-	video offset=CINEMATIC_042, x=160, y=100
+	video offset=CINEMATIC_ENDING_SKY_SWEEP_SILHOUETTE_F0, x=160, y=100
 	break
 	djnz [0xE6], ENDING_SKY_SWEEP_FROM_RIGHT_PHASE_1
 	play id=0x0057, freq=0x0F, vol=0x20, channel=0x03
-	video offset=CINEMATIC_043, x=160, y=100
+	video offset=CINEMATIC_ENDING_SKY_SWEEP_SILHOUETTE_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_044, x=160, y=100
+	video offset=CINEMATIC_ENDING_SKY_SWEEP_SILHOUETTE_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_045, x=160, y=100
+	video offset=CINEMATIC_ENDING_SKY_SWEEP_SILHOUETTE_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_046, x=160, y=100
+	video offset=CINEMATIC_ENDING_SKY_SWEEP_SILHOUETTE_F4, x=160, y=100
 	mov [0xE6], 0x0007
 
 ENDING_SKY_SWEEP_FROM_LEFT_PHASE_2:
 	break
-	video offset=CINEMATIC_046, x=160, y=100
+	video offset=CINEMATIC_ENDING_SKY_SWEEP_SILHOUETTE_F4, x=160, y=100
 	djnz [0xE6], ENDING_SKY_SWEEP_FROM_LEFT_PHASE_2
 	play id=0x0057, freq=0x0F, vol=0x20, channel=0x03
 	break
-	video offset=CINEMATIC_047, x=160, y=100
+	video offset=CINEMATIC_ENDING_SKY_SWEEP_SILHOUETTE_F5, x=160, y=100
 	break
-	video offset=CINEMATIC_048, x=160, y=100
+	video offset=CINEMATIC_ENDING_SKY_SWEEP_SILHOUETTE_F6, x=160, y=100
 	break
-	video offset=CINEMATIC_049, x=160, y=100
+	video offset=CINEMATIC_ENDING_SKY_SWEEP_SILHOUETTE_F7, x=160, y=100
 	break
-	video offset=CINEMATIC_050, x=160, y=100
+	video offset=CINEMATIC_ENDING_SKY_SWEEP_SILHOUETTE_F8, x=160, y=100
 	mov [0xE6], 0x000A
 
 ENDING_SWEEP_HOLD_THEN_CUT_TO_CLOSEUP:
 	break
-	video offset=CINEMATIC_051, x=160, y=100
+	video offset=CINEMATIC_ENDING_SKY_SWEEP_SILHOUETTE_F9, x=160, y=100
 	djnz [0xE6], ENDING_SWEEP_HOLD_THEN_CUT_TO_CLOSEUP
 	setup channel=0x0A, address=ENDING_CLOSEUP_SHOT_ZOOM_RAMP_DRIVER_LOOP
 	setup channel=0x0B, address=ENDING_BUDDY_HOLDS_LESTER_CLOSEUP_RISE
@@ -64,15 +64,15 @@ LESTER_PRONE_ARRIVAL_DELAY:
 	break
 	video offset=CINEMATIC_012, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_013, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_PRONE_F0, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_014, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_PRONE_F1, x=[0x01], y=[0x02]
 	play id=0x000E, freq=0x03, vol=0x20, channel=0x03
 	mov [0x03], 0x0014
 
 LESTER_PRONE_TERRACE_HOLD:
 	break
-	video offset=CINEMATIC_015, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_PRONE_F2, x=[0x01], y=[0x02]
 	djnz [0x03], LESTER_PRONE_TERRACE_HOLD
 	mov [PAUSE_SLICES], 0x000A
 	mov [0x03], 0x0006
@@ -81,9 +81,9 @@ LESTER_PRONE_TERRACE_HOLD:
 	play id=0x0008, freq=0x07, vol=0x11, channel=0x01
 
 LESTER_PRONE_CYCLE_HOLD_THEN_MUSIC_CUE:
-	video offset=CINEMATIC_014, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_PRONE_F1, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_014, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_PRONE_F1, x=[0x01], y=[0x02]
 	break
 	jne [0x03], 0x04, LESTER_PRONE_AMBIENT_CUE_CASE_03
 	song id=0x008A, delay=0x3A98, pos=0x00
@@ -94,27 +94,27 @@ LESTER_PRONE_AMBIENT_CUE_CASE_03:
 	play id=0x0008, freq=0x0A, vol=0x0B, channel=0x00
 
 LESTER_PRONE_DRAG_CYCLE_LOOP:
-	video offset=CINEMATIC_013, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_PRONE_F0, x=[0x01], y=[0x02]
 	break
 	add [0x01], 0x0002
-	video offset=CINEMATIC_016, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_PRONE_F3, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_016, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_PRONE_F3, x=[0x01], y=[0x02]
 	break
 	add [0x01], 0x0001
-	video offset=CINEMATIC_017, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_PRONE_F4, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_017, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_PRONE_F4, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_018, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_PRONE_F5, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_018, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_PRONE_F5, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_018, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_PRONE_F5, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_015, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_PRONE_F2, x=[0x01], y=[0x02]
 	break
-	video offset=CINEMATIC_014, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_PRONE_F1, x=[0x01], y=[0x02]
 	break
 	add [PAUSE_SLICES], 0x0002
 	djnz [0x03], LESTER_PRONE_CYCLE_HOLD_THEN_MUSIC_CUE
