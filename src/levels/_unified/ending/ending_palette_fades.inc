@@ -32,19 +32,19 @@ PAL_ENDING_CREDITS_FADE_18_TO_1D:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PTERANODON_HEAD_RAISE_ANIM:
-	video offset=CINEMATIC_071, x=160, y=100
+	video offset=CINEMATIC_PTERANODON_HEAD_RAISE_F0, x=160, y=100
 	break
-	video offset=CINEMATIC_071, x=160, y=100
+	video offset=CINEMATIC_PTERANODON_HEAD_RAISE_F0, x=160, y=100
 	break
-	video offset=CINEMATIC_071, x=160, y=100
+	video offset=CINEMATIC_PTERANODON_HEAD_RAISE_F0, x=160, y=100
 	break
-	video offset=CINEMATIC_072, x=160, y=100
+	video offset=CINEMATIC_PTERANODON_HEAD_RAISE_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_072, x=160, y=100
+	video offset=CINEMATIC_PTERANODON_HEAD_RAISE_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_073, x=160, y=100
+	video offset=CINEMATIC_PTERANODON_HEAD_RAISE_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_073, x=160, y=100
+	video offset=CINEMATIC_PTERANODON_HEAD_RAISE_F2, x=160, y=100
 .endif
 
 .if BRANCH == "chahi_amiga_1991"
@@ -55,20 +55,20 @@ PTERANODON_HEAD_RAISE_ANIM:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PTERANODON_HEAD_BEAK_OPEN_ANIM:
-	video offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_PTERANODON_BEAK_OPEN_F0, x=160, y=100
 	break
-	video offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_PTERANODON_BEAK_OPEN_F0, x=160, y=100
 	break
 	play id=0x0057, freq=0x22, vol=0x20, channel=0x03
-	video offset=CINEMATIC_107, x=160, y=100
+	video offset=CINEMATIC_PTERANODON_BEAK_OPEN_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_107, x=160, y=100
+	video offset=CINEMATIC_PTERANODON_BEAK_OPEN_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_107, x=160, y=100
+	video offset=CINEMATIC_PTERANODON_BEAK_OPEN_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_107, x=160, y=100
+	video offset=CINEMATIC_PTERANODON_BEAK_OPEN_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_PTERANODON_BEAK_OPEN_F0, x=160, y=100
 .endif
 
 .if BRANCH == "chahi_amiga_1991"

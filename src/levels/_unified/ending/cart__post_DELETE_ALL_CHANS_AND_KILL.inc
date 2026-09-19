@@ -23,43 +23,43 @@ LABEL_0060:
 
 
 ENDING_CLOSEUP_SIDE_SILHOUETTE_RISE_FALL_LOOP:
-	video offset=CINEMATIC_097, x=160, y=100
+	video offset=CINEMATIC_ENDING_CLOSEUP_SILHOUETTE_F0, x=160, y=100
 	break
-	video offset=CINEMATIC_098, x=160, y=100
+	video offset=CINEMATIC_ENDING_CLOSEUP_SILHOUETTE_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_099, x=160, y=100
+	video offset=CINEMATIC_ENDING_CLOSEUP_SILHOUETTE_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_100, x=160, y=100
+	video offset=CINEMATIC_ENDING_CLOSEUP_SILHOUETTE_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_099, x=160, y=100
+	video offset=CINEMATIC_ENDING_CLOSEUP_SILHOUETTE_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_098, x=160, y=100
+	video offset=CINEMATIC_ENDING_CLOSEUP_SILHOUETTE_F1, x=160, y=100
 	break
 	jmp ENDING_CLOSEUP_SIDE_SILHOUETTE_RISE_FALL_LOOP
 LABEL_008B:
 	db 0x11
 
 ENDING_BUDDY_HOLDS_LESTER_CLOSEUP_RISE:
-	video offset=CINEMATIC_101, x=160, y=125
+	video offset=CINEMATIC_ENDING_BUDDY_HOLDS_LESTER_F0, x=160, y=125
 	setPalette 0x0C
 	break
-	video offset=CINEMATIC_101, x=160, y=118
+	video offset=CINEMATIC_ENDING_BUDDY_HOLDS_LESTER_F0, x=160, y=118
 	break
-	video offset=CINEMATIC_102, x=160, y=112
+	video offset=CINEMATIC_ENDING_BUDDY_HOLDS_LESTER_F1, x=160, y=112
 	break
-	video offset=CINEMATIC_103, x=160, y=107
+	video offset=CINEMATIC_ENDING_BUDDY_HOLDS_LESTER_F2, x=160, y=107
 	break
-	video offset=CINEMATIC_104, x=160, y=105
+	video offset=CINEMATIC_ENDING_BUDDY_HOLDS_LESTER_F3, x=160, y=105
 	break
-	video offset=CINEMATIC_104, x=160, y=109
+	video offset=CINEMATIC_ENDING_BUDDY_HOLDS_LESTER_F3, x=160, y=109
 	break
-	video offset=CINEMATIC_104, x=160, y=110
+	video offset=CINEMATIC_ENDING_BUDDY_HOLDS_LESTER_F3, x=160, y=110
 	break
-	video offset=CINEMATIC_103, x=160, y=115
+	video offset=CINEMATIC_ENDING_BUDDY_HOLDS_LESTER_F2, x=160, y=115
 
 DRAW_CIN_103_LOOP:
 	break
-	video offset=CINEMATIC_103, x=160, y=118
+	video offset=CINEMATIC_ENDING_BUDDY_HOLDS_LESTER_F2, x=160, y=118
 	jmp DRAW_CIN_103_LOOP
 LABEL_00BE:
 	db 0x11
@@ -92,26 +92,26 @@ LABEL_00BF:
 	killChannel
 
 ENDING_LEDGE_SWELL_DRAW_LOOP:
-	video offset=CINEMATIC_058, x=160, y=100, zoom=[0x04]
+	video offset=CINEMATIC_ENDING_LEDGE_SWELL, x=160, y=100, zoom=[0x04]
 	break
 	jmp ENDING_LEDGE_SWELL_DRAW_LOOP
 LABEL_0124:
 	db 0x11
 
 PTERANODON_LEG_DANGLE_LOOP:
-	video offset=CINEMATIC_059, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_PTERANODON_LEG_DANGLE_F0, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video offset=CINEMATIC_060, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_PTERANODON_LEG_DANGLE_F1, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video offset=CINEMATIC_061, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_PTERANODON_LEG_DANGLE_F2, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video offset=CINEMATIC_062, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_PTERANODON_LEG_DANGLE_F3, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video offset=CINEMATIC_063, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_PTERANODON_LEG_DANGLE_F4, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video offset=CINEMATIC_064, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_PTERANODON_LEG_DANGLE_F5, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	video offset=CINEMATIC_065, x=[0x01], y=[0x02], zoom=[0x03]
+	video offset=CINEMATIC_PTERANODON_LEG_DANGLE_F6, x=[0x01], y=[0x02], zoom=[0x03]
 	break
 	jmp PTERANODON_LEG_DANGLE_LOOP
 

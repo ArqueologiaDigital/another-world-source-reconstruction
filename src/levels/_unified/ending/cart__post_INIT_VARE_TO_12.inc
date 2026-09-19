@@ -31,7 +31,7 @@ DRIFT_VAR_F_PLUS_8_LOOP:
 	killChannel
 
 ENDING_THE_END_CAPTION_DRAW_LOOP:
-	video offset=CINEMATIC_070, x=[0x01], y=[0x02], zoom=[0x0f]
+	video offset=CINEMATIC_ENDING_THE_END_CAPTION, x=[0x01], y=[0x02], zoom=[0x0f]
 	break
 	jmp ENDING_THE_END_CAPTION_DRAW_LOOP
 LABEL_023A:
