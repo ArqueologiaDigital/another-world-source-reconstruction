@@ -591,7 +591,7 @@ LABEL_C70E:
 	deleteChannels first=0x14, last=0x16
 	mov [0x1A], 0x0086
 	setup channel=0x15, address=LABEL_2643
-	setup channel=0x38, address=LABEL_26EE
+	setup channel=0x38, address=CAVES_HERO_LANDING_SPLASH
 	killChannel
 
 LABEL_C726:
@@ -613,5 +613,5 @@ LABEL_C742:
 	deleteChannels first=0x14, last=0x16
 	mov [0x1A], 0x0056
 	setup channel=0x15, address=LABEL_2643
-	setup channel=0x38, address=LABEL_26EE
+	setup channel=0x38, address=CAVES_HERO_LANDING_SPLASH
 	killChannel

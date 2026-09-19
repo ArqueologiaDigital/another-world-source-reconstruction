@@ -428,7 +428,7 @@ LABEL_28AD:
 LABEL_28B1:
 	db 0x11
 
-LABEL_28B2:
+CAVES_HERO_LANDING_SPLASH:
 	video offset=CINEMATIC_459, x=[HERO_X], y=[0x1a]
 	break
 	video offset=CINEMATIC_460, x=[HERO_X], y=[0x1a]

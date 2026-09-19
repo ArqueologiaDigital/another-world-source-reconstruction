@@ -620,7 +620,7 @@ LABEL_CBA1:
 	deleteChannels first=0x14, last=0x16
 	mov [0x1A], 0x0086
 	setup channel=0x15, address=LABEL_2807
-	setup channel=0x38, address=LABEL_28B2
+	setup channel=0x38, address=CAVES_HERO_LANDING_SPLASH
 	killChannel
 
 LABEL_CBC6:
@@ -643,5 +643,5 @@ LABEL_CBE2:
 	deleteChannels first=0x14, last=0x16
 	mov [0x1A], 0x0056
 	setup channel=0x15, address=LABEL_2807
-	setup channel=0x38, address=LABEL_28B2
+	setup channel=0x38, address=CAVES_HERO_LANDING_SPLASH
 	killChannel
