@@ -202,7 +202,7 @@ DRAW_CITY_SEQ_419_420:
 .endif
 	killChannel
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_185, x=162, y=100
+	video offset=CINEMATIC_HOLO_ACCELERATOR_LOOP_DIAGRAM, x=162, y=100
 .else
 	video offset=CINEMATIC_HOLO_ACCELERATOR_LOOP_DIAGRAM, x=162, y=100
 .endif

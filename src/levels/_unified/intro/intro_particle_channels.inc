@@ -6,16 +6,26 @@ CINEMATIC_005		EQU 0x0CB8
 CINEMATIC_032		EQU 0x05B8
 .endif
 
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_EXPERIMENT_LIGHTNING_F0		EQU 0x972C
+.endif
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_EXPERIMENT_LIGHTNING_F1		EQU 0x97C8
+.endif
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_EXPERIMENT_LIGHTNING_F2		EQU 0x985C
+.endif
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_EXPERIMENT_LIGHTNING_F3		EQU 0x98F4
+.endif
 .if BRANCH == "chahi_amiga_1991"
 CINEMATIC_EXPERIMENT_LIGHTNING_F4		EQU 0x95F0
 .else
 CINEMATIC_EXPERIMENT_LIGHTNING_F4		EQU 0x9562
 .endif
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_EXPERIMENT_LIGHTNING_F5		EQU 0x95F2
+.endif
 .if BRANCH == "chahi_amiga_1991"
 CINEMATIC_EXPERIMENT_LIGHTNING_F6		EQU 0x971C
 CINEMATIC_EXPERIMENT_LIGHTNING_F7		EQU 0x9A1E
@@ -180,27 +190,27 @@ PARTICLE_PHASE_350_FRAME_TIMER:
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_187, x=160, y=100
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F0, x=160, y=100
 .else
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F0, x=160, y=100
 .endif
 	break
 	mov [PAUSE_SLICES], 0x0003
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_188, x=160, y=100
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F1, x=160, y=100
 .else
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F1, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_189, x=160, y=100
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F2, x=160, y=100
 .else
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F2, x=160, y=100
 .endif
 	break
 	play id=0x000A, freq=0x05, vol=0x3F, channel=0x02
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_190, x=160, y=100
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F3, x=160, y=100
 .else
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F3, x=160, y=100
 .endif
@@ -208,7 +218,7 @@ PARTICLE_PHASE_350_FRAME_TIMER:
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F4, x=160, y=100
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_192, x=160, y=100
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F5, x=160, y=100
 .else
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_F5, x=160, y=100
 .endif
