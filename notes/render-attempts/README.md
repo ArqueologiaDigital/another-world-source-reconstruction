@@ -50,6 +50,22 @@ CAVES 301..309 sat in the unresolved table as "horizontal blue and grey
 bands" because a nine-pixel speck blown up to 210px tall looks like a band.
 The extents said 0x1 and 1x11, and the animation read immediately.
 
+## Anchored scenes examined, 2026-09-20
+
+Inverting the measurement below -- asking which scenes have a named routine
+AND unnamed art in the same setup block -- gives eleven candidates. One
+resolved (`PRISON_HERO_DEATH_FLASH`, from `PRISON_HERO_KILLED`). Two more
+were examined and are recorded here rather than left for someone to redo:
+
+| run | measured | why it stops |
+|---|---|---|
+| amiga/CAVES 191..193 (`LABEL_11F9`) | 3x8/1, 5x16/2, 7x16/2, growing, at `[0xE6],[0xE7]`; colours {16} and {10,16} | colour 16 is the page-copy special, not a palette entry, so these are masked shapes rather than drawn ones. The scene anchor is `HERO_PRONE_IDLE_LEFT_LOOP`, which says the hero is prone and nothing about a small growing mask. |
+| msdos/PRISON 637..655 (`LABEL_4FCC`) | four SINGLE-leaf shapes at four fixed positions -- 54x65 at (172,110), 101x76 at (182,40), 45x110 at (88,146), 56x109 at (289,147) -- each drawn three times in a **different colour**; plus 24x49 twice and one 114x178 with 19 leaves at (160,100) | the structure is unmistakable, a colour cycle over four screen regions, but a single-leaf silhouette at a fixed spot has no features to identify. The scene's only named peers are `PRISON_DOUBLE_BLIT_PAGE_0_THEN_HELPER` and `SET_PAL_07_FILL_TWO_PAGES_...`, both mechanism names, so the anchor says nothing about the place. |
+
+The second is the clearest statement of the limit: everything structural is
+measurable -- how many shapes, where, how many colours, in what order -- and
+none of it says what the shapes ARE.
+
 ## Why the rest stall, measured
 
 Both runs that resolved had a **named routine in their own setup block**:
