@@ -122,49 +122,49 @@ LABEL_3D5B:
 
 LABEL_3D8E:
 	jne [0x13], 0x6F, LABEL_3D9A
-	video offset=CINEMATIC_481, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_RIGHT_0, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3D9A:
 	jne [0x13], 0x70, LABEL_3DA6
-	video offset=CINEMATIC_480, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_RIGHT_1, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3DA6:
 	jne [0x13], 0x71, LABEL_3DB2
-	video offset=CINEMATIC_479, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_RIGHT_2, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3DB2:
 	jne [0x13], 0x72, LABEL_3DBE
-	video offset=CINEMATIC_478, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_RIGHT_3, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3DBE:
 	jne [0x13], 0x73, LABEL_3DCA
-	video offset=CINEMATIC_477, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_RIGHT_4, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3DCA:
 	jne [0x13], 0x74, LABEL_3DD6
-	video offset=CINEMATIC_476, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_RIGHT_5, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3DD6:
 	jne [0x13], 0x75, LABEL_3DE2
-	video offset=CINEMATIC_475, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_RIGHT_6, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3DE2:
 	jne [0x13], 0x76, PRISON_SHOT_BLAST_FINAL_FRAME_RIGHT
-	video offset=CINEMATIC_474, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_RIGHT_7, x=[0x21], y=[0x27]
 	ret
 
 
@@ -177,55 +177,55 @@ PRISON_SHOT_BLAST_FINAL_FRAME_RIGHT:
 PRISON_SHOT_IMPACT_RIGHT_CASE_81:
 	jne [0x13], 0x81, LABEL_3E0A
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_472, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_0, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3E0A:
 	jne [0x13], 0x82, LABEL_3E16
-	video offset=CINEMATIC_471, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_1, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3E16:
 	jne [0x13], 0x83, LABEL_3E22
-	video offset=CINEMATIC_470, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_2, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3E22:
 	jne [0x13], 0x84, LABEL_3E2E
-	video offset=CINEMATIC_469, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_3, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3E2E:
 	jne [0x13], 0x85, LABEL_3E3A
-	video offset=CINEMATIC_468, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_4, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3E3A:
 	jne [0x13], 0x86, LABEL_3E46
-	video offset=CINEMATIC_467, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_5, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3E46:
 	jne [0x13], 0x87, LABEL_3E52
-	video offset=CINEMATIC_466, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_6, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3E52:
 	jne [0x13], 0x88, LABEL_3E5E
-	video offset=CINEMATIC_465, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_7, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3E5E:
 	jne [0x13], 0x89, LABEL_3E6A
-	video offset=CINEMATIC_464, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_8, x=[0x21], y=[0x27]
 	ret
 
 
@@ -289,49 +289,49 @@ LABEL_3EB8:
 
 LABEL_3EEB:
 	jne [0x13], 0x6F, LABEL_3EF7
-	video offset=CINEMATIC_497, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_LEFT_0, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3EF7:
 	jne [0x13], 0x70, LABEL_3F03
-	video offset=CINEMATIC_496, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_LEFT_1, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3F03:
 	jne [0x13], 0x71, LABEL_3F0F
-	video offset=CINEMATIC_495, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_LEFT_2, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3F0F:
 	jne [0x13], 0x72, LABEL_3F1B
-	video offset=CINEMATIC_494, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_LEFT_3, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3F1B:
 	jne [0x13], 0x73, LABEL_3F27
-	video offset=CINEMATIC_493, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_LEFT_4, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3F27:
 	jne [0x13], 0x74, LABEL_3F33
-	video offset=CINEMATIC_492, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_LEFT_5, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3F33:
 	jne [0x13], 0x75, LABEL_3F3F
-	video offset=CINEMATIC_491, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_LEFT_6, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3F3F:
 	jne [0x13], 0x76, PRISON_SHOT_BLAST_FINAL_FRAME_LEFT
-	video offset=CINEMATIC_490, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_LEFT_7, x=[0x21], y=[0x27]
 	ret
 
 
@@ -344,55 +344,55 @@ PRISON_SHOT_BLAST_FINAL_FRAME_LEFT:
 PRISON_SHOT_IMPACT_LEFT_CASE_81:
 	jne [0x13], 0x81, LABEL_3F67
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_472, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_0, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3F67:
 	jne [0x13], 0x82, LABEL_3F73
-	video offset=CINEMATIC_471, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_1, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3F73:
 	jne [0x13], 0x83, LABEL_3F7F
-	video offset=CINEMATIC_470, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_2, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3F7F:
 	jne [0x13], 0x84, LABEL_3F8B
-	video offset=CINEMATIC_469, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_3, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3F8B:
 	jne [0x13], 0x85, LABEL_3F97
-	video offset=CINEMATIC_468, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_4, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3F97:
 	jne [0x13], 0x86, LABEL_3FA3
-	video offset=CINEMATIC_467, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_5, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3FA3:
 	jne [0x13], 0x87, LABEL_3FAF
-	video offset=CINEMATIC_466, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_6, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3FAF:
 	jne [0x13], 0x88, LABEL_3FBB
-	video offset=CINEMATIC_465, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_7, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_3FBB:
 	jne [0x13], 0x89, LABEL_3FC7
-	video offset=CINEMATIC_464, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_IMPACT_8, x=[0x21], y=[0x27]
 	ret
 
 

@@ -64,27 +64,27 @@ LABEL_7A9D:
 
 LABEL_7AB1:
 	jg [0x22], 0x16, LABEL_7ABF
-	video offset=CINEMATIC_101, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_PRISON_LIFT_SHAFT_STRIP_4, x=[0x21], y=[0x22]
 	jmp LABEL_7B2C
 
 LABEL_7ABF:
 	jg [0x22], 0x2C, LABEL_7ACD
-	video offset=CINEMATIC_100, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_PRISON_LIFT_SHAFT_STRIP_3, x=[0x21], y=[0x22]
 	jmp LABEL_7B2C
 
 LABEL_7ACD:
 	jg [0x22], 0x42, LABEL_7ADB
-	video offset=CINEMATIC_099, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_PRISON_LIFT_SHAFT_STRIP_2, x=[0x21], y=[0x22]
 	jmp LABEL_7B2C
 
 LABEL_7ADB:
 	jg [0x22], 0x58, LABEL_7AE9
-	video offset=CINEMATIC_098, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_PRISON_LIFT_SHAFT_STRIP_1, x=[0x21], y=[0x22]
 	jmp LABEL_7B2C
 
 LABEL_7AE9:
 	jg [0x22], 0x6E, LABEL_7AF7
-	video offset=CINEMATIC_097, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_PRISON_LIFT_SHAFT_STRIP_0, x=[0x21], y=[0x22]
 	jmp LABEL_7B2C
 
 LABEL_7AF7:
