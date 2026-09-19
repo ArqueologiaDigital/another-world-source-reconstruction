@@ -101,7 +101,12 @@ RE_V = re.compile(r"video\s+(?:type=\d+,\s*)?offset=([A-Za-z_]\w*)\s*,"
 # otherwise have proposed.
 MECHANISM = ("FILL_PAGE", "RANDOM_DELAY", "PLAY_SOUND", "ENTRY_POINT",
              "SET_VAR", "COPY_", "JUMP_TO", "KILL_CHANNEL", "SETUP_CHAN",
-             "_AT_RET", "FOLD_BODY", "DEDUP")
+             "_AT_RET", "FOLD_BODY", "DEDUP", "BLINK_PAGE")
+# A routine whose own name carries a raw constant index -- DRAW_CITY_SEQ_435_436,
+# DRAW_CINEMATICS_166_TO_171, DRAW_INTRO_DECOR_337 -- is itself a placeholder
+# under NAMING.md §1, whatever else it says. Deriving constant names from it
+# would copy the placeholder onto the art.
+RE_RAWINDEX = re.compile(r"_\d{3,}(_|$)")
 
 
 # A namer strips the words that describe the routine's plumbing rather than
@@ -237,7 +242,8 @@ def main() -> int:
                         continue
                     if any(RE_ACTOR.search(line) for line in body):
                         continue
-                    if any(t in lab for t in MECHANISM):
+                    if any(t in lab for t in MECHANISM) or \
+                            RE_RAWINDEX.search(lab):
                         mech += 1
                         continue
                     base = derived_base(lab)
