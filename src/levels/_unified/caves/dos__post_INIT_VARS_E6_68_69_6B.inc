@@ -391,7 +391,7 @@ LABEL_282E:
 	break
 	add [HERO_Y], 0x000D
 	video offset=CINEMATIC_169, x=[HERO_X], y=[HERO_Y]
-	jmp LABEL_2869
+	jmp CAVES_HERO_FALL_LANDING_AND_SCENE_RESET
 
 LABEL_2850:
 	video offset=CINEMATIC_167, x=[HERO_X], y=[HERO_Y]
@@ -402,7 +402,7 @@ LABEL_2850:
 	add [HERO_Y], 0x000D
 	video offset=CINEMATIC_167, x=[HERO_X], y=[HERO_Y]
 
-LABEL_2869:
+CAVES_HERO_FALL_LANDING_AND_SCENE_RESET:
 	break
 	sub [HERO_Y], 0x0018
 	video offset=CINEMATIC_471, x=[HERO_X], y=[HERO_Y]

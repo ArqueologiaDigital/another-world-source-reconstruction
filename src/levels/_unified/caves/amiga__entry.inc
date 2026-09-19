@@ -3181,7 +3181,7 @@ ENTRY_POINT_OF_CAVES:
 	call INIT_AI_VARS_AT_280_10
 	call LABEL_40B6
 	call LABEL_12FB
-	setup channel=0x14, address=LABEL_37D0
+	setup channel=0x14, address=HERO_DIRECTION_LEFT_IDLE_ENTRY
 	setup channel=0x15, address=LABEL_3813
 	setup channel=0x14, address=LABEL_E41E
 	setup channel=0x15, address=KILL_CHANNEL_LANDING

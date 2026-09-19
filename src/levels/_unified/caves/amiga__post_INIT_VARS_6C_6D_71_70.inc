@@ -281,10 +281,10 @@ LABEL_105B:
 	break
 	video offset=CINEMATIC_678, x=160, y=100, zoom=0xfa
 
-LABEL_10E2:
+CAVES_BURST_CHUNKS_FINAL_HOLD_LOOP:
 	break
 	video offset=CINEMATIC_676, x=120, y=100, zoom=0xff
-	jmp LABEL_10E2
+	jmp CAVES_BURST_CHUNKS_FINAL_HOLD_LOOP
 LABEL_10EC:
 	db 0x11
 
