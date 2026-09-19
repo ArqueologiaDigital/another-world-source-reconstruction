@@ -104,6 +104,30 @@ MECHANISM = ("FILL_PAGE", "RANDOM_DELAY", "PLAY_SOUND", "ENTRY_POINT",
              "_AT_RET", "FOLD_BODY", "DEDUP")
 
 
+# A namer strips the words that describe the routine's plumbing rather than
+# its subject, so the derived constant base is not the routine name verbatim.
+# The cross-port check below has to use the SAME base a namer would, or it
+# compares the wrong string and passes a collision: amiga defines
+# CINEMATIC_LESTER_EXITING_CAR_F13, and against the unstripped
+# CINEMATIC_LESTER_EXITING_CAR_ANIMATION it looks free.
+DROP_PREFIX = ("DRAW_",)
+DROP_SUFFIX = ("_AFTER_HOLD", "_ANIM_LOOP", "_ANIMATION", "_DRAW_LOOP",
+               "_SCROLL_LOOP", "_RUN", "_LOOP")
+
+
+def derived_base(routine: str) -> str:
+    """The `CINEMATIC_<...>` stem a namer would give this routine's frames."""
+    r = routine
+    for pre in DROP_PREFIX:
+        if r.startswith(pre):
+            r = r[len(pre):]
+    for suf in DROP_SUFFIX:
+        if r.endswith(suf):
+            r = r[:-len(suf)] + ("_SCROLL" if suf == "_SCROLL_LOOP" else "")
+            break
+    return "CINEMATIC_" + r
+
+
 def parse(path: Path) -> dict[str, list[str]]:
     bodies: dict[str, list[str]] = {}
     cur = None
@@ -173,6 +197,23 @@ def main() -> int:
         fixed: list = []
         moving: list = []
         mech = 0
+        taken = 0
+        # Every CINEMATIC_* name each port already defines, per stage. A
+        # derived name that the OTHER port already uses for other art turns
+        # a naming pass into a #0107 disagreement -- which is what happened
+        # on 2026-09-19: naming msdos/INTRO's LESTER_EXITING_CAR_F0..F12
+        # from its drawer moved the cross-port audit from 10 disagreements
+        # to 23, because amiga already carries those names for other
+        # frames. The per-port collision check cannot see it, by design:
+        # a branch-scoped rename is judged against that branch's files.
+        defined: dict = {}
+        for prt in PORTS:
+            for stg in STAGES:
+                f = ROOT / "src" / "levels" / PORTS[prt] / f"{stg}.asm"
+                if f.is_file():
+                    defined[(prt, stg)] = set(
+                        re.findall(r"^(CINEMATIC_\w+)\s+EQU", 
+                                   f.read_text(errors="replace"), re.M))
         for port in args.port or sorted(PORTS):
             for stage in STAGES:
                 path = ROOT / "src" / "levels" / PORTS[port] / f"{stage}.asm"
@@ -199,6 +240,12 @@ def main() -> int:
                     if any(t in lab for t in MECHANISM):
                         mech += 1
                         continue
+                    base = derived_base(lab)
+                    other = "msdos" if port == "amiga" else "amiga"
+                    if any(n.startswith(base) for n
+                           in defined.get((other, stage), ())):
+                        taken += 1
+                        continue
                     anchors = {(x, y) for _, x, y in vs}
                     row = (port, stage, lab, uniq, sorted(anchors)[0])
                     (fixed if len(anchors) == 1 else moving).append(row)
@@ -209,7 +256,8 @@ def main() -> int:
         print(f"moving anchor -> props along a path:      "
               f"{len(moving)} routines, {nm} constants")
         print(f"({mech} routine(s) dropped: the name denotes a mechanism, "
-              f"not a subject)\n")
+              f"not a subject;\n {taken} dropped: the other port already "
+              f"defines that name for other art)\n")
         for port, stage, lab, uniq, anc in sorted(fixed,
                                                   key=lambda r: -len(r[3])):
             print(f"  {port}/{stage:<9} {lab:<48} {len(uniq):>3} frames "

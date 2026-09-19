@@ -39,23 +39,23 @@ CINEMATIC_227		EQU 0x8686
 CINEMATIC_228		EQU 0x871A
 CINEMATIC_229		EQU 0x8796
 CINEMATIC_230		EQU 0x87D2
-CINEMATIC_231		EQU 0x7532
-CINEMATIC_232		EQU 0x757E
-CINEMATIC_233		EQU 0x766E
-CINEMATIC_234		EQU 0x7756
-CINEMATIC_235		EQU 0x7866
-CINEMATIC_236		EQU 0x7A32
-CINEMATIC_237		EQU 0x7BEA
-CINEMATIC_238		EQU 0x7D2A
-CINEMATIC_239		EQU 0x7E4E
-CINEMATIC_240		EQU 0x7F56
-CINEMATIC_241		EQU 0x801E
-CINEMATIC_242		EQU 0x80E6
-CINEMATIC_243		EQU 0x818A
-CINEMATIC_244		EQU 0x81EE
-CINEMATIC_245		EQU 0x8246
-CINEMATIC_246		EQU 0x8296
-CINEMATIC_247		EQU 0x82D6
+CINEMATIC_TELEPORT_SHATTER_FLASH_F0		EQU 0x7532
+CINEMATIC_TELEPORT_SHATTER_FLASH_F1		EQU 0x757E
+CINEMATIC_TELEPORT_SHATTER_FLASH_F2		EQU 0x766E
+CINEMATIC_TELEPORT_SHATTER_FLASH_F3		EQU 0x7756
+CINEMATIC_TELEPORT_SHATTER_FLASH_F4		EQU 0x7866
+CINEMATIC_TELEPORT_SHATTER_FLASH_F5		EQU 0x7A32
+CINEMATIC_TELEPORT_SHATTER_FLASH_F6		EQU 0x7BEA
+CINEMATIC_TELEPORT_SHATTER_FLASH_F7		EQU 0x7D2A
+CINEMATIC_TELEPORT_SHATTER_FLASH_F8		EQU 0x7E4E
+CINEMATIC_TELEPORT_SHATTER_FLASH_F9		EQU 0x7F56
+CINEMATIC_TELEPORT_SHATTER_FLASH_F10		EQU 0x801E
+CINEMATIC_TELEPORT_SHATTER_FLASH_F11		EQU 0x80E6
+CINEMATIC_TELEPORT_SHATTER_FLASH_F12		EQU 0x818A
+CINEMATIC_TELEPORT_SHATTER_FLASH_F13		EQU 0x81EE
+CINEMATIC_TELEPORT_SHATTER_FLASH_F14		EQU 0x8246
+CINEMATIC_TELEPORT_SHATTER_FLASH_F15		EQU 0x8296
+CINEMATIC_TELEPORT_SHATTER_FLASH_F16		EQU 0x82D6
 CINEMATIC_ACCELERATOR_TUNNEL_VIEW_FAR		EQU 0x2BF2
 CINEMATIC_380		EQU 0xCB2E
 CINEMATIC_381		EQU 0xCB3E
@@ -228,14 +228,14 @@ TELEPORT_SHATTER_FLASH_RUN:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_TELEPORT_SHATTER_F0, x=160, y=100
 .else
-	video offset=CINEMATIC_231, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_FLASH_F0, x=160, y=100
 .endif
 	play id=0x000A, freq=0x1E, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_TELEPORT_SHATTER_F1, x=160, y=100
 .else
-	video offset=CINEMATIC_232, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_FLASH_F1, x=160, y=100
 .endif
 	play id=0x000A, freq=0x1E, vol=0x3F, channel=0x03
 	break
@@ -246,35 +246,35 @@ TELEPORT_SHATTER_FLASH_RUN:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_TELEPORT_SHATTER_F2, x=160, y=100
 .else
-	video offset=CINEMATIC_233, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_FLASH_F2, x=160, y=100
 .endif
 	play id=0x000A, freq=0x1E, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_TELEPORT_SHATTER_F3, x=160, y=100
 .else
-	video offset=CINEMATIC_234, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_FLASH_F3, x=160, y=100
 .endif
 	play id=0x000A, freq=0x1E, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_TELEPORT_SHATTER_F4, x=160, y=100
 .else
-	video offset=CINEMATIC_235, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_FLASH_F4, x=160, y=100
 .endif
 	play id=0x000A, freq=0x05, vol=0x3F, channel=0x02
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_TELEPORT_SHATTER_F5, x=160, y=100
 .else
-	video offset=CINEMATIC_236, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_FLASH_F5, x=160, y=100
 .endif
 	play id=0x000F, freq=0x14, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_TELEPORT_SHATTER_F6, x=160, y=100
 .else
-	video offset=CINEMATIC_237, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_FLASH_F6, x=160, y=100
 .endif
 	play id=0x000A, freq=0x14, vol=0x32, channel=0x02
 	play id=0x000A, freq=0x1E, vol=0x3F, channel=0x03
@@ -282,35 +282,35 @@ TELEPORT_SHATTER_FLASH_RUN:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_TELEPORT_SHATTER_F7, x=160, y=100
 .else
-	video offset=CINEMATIC_238, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_FLASH_F7, x=160, y=100
 .endif
 	play id=0x002C, freq=0x02, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_TELEPORT_SHATTER_F8, x=160, y=100
 .else
-	video offset=CINEMATIC_239, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_FLASH_F8, x=160, y=100
 .endif
 	play id=0x002C, freq=0x02, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_TELEPORT_SHATTER_F9, x=160, y=100
 .else
-	video offset=CINEMATIC_240, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_FLASH_F9, x=160, y=100
 .endif
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_TELEPORT_SHATTER_F10, x=160, y=100
 .else
-	video offset=CINEMATIC_241, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_FLASH_F10, x=160, y=100
 .endif
 	play id=0x000A, freq=0x02, vol=0x32, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_TELEPORT_SHATTER_F11, x=160, y=100
 .else
-	video offset=CINEMATIC_242, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_FLASH_F11, x=160, y=100
 .endif
 	play id=0x002C, freq=0x0A, vol=0x3F, channel=0x03
 	play id=0x002C, freq=0x02, vol=0x3F, channel=0x02
@@ -318,35 +318,35 @@ TELEPORT_SHATTER_FLASH_RUN:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_TELEPORT_SHATTER_F12, x=160, y=100
 .else
-	video offset=CINEMATIC_243, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_FLASH_F12, x=160, y=100
 .endif
 	play id=0x000A, freq=0x02, vol=0x28, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_TELEPORT_SHATTER_F13, x=160, y=100
 .else
-	video offset=CINEMATIC_244, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_FLASH_F13, x=160, y=100
 .endif
 	play id=0x002C, freq=0x02, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_TELEPORT_SHATTER_F14, x=160, y=100
 .else
-	video offset=CINEMATIC_245, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_FLASH_F14, x=160, y=100
 .endif
 	play id=0x000A, freq=0x14, vol=0x32, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_TELEPORT_SHATTER_F15, x=160, y=100
 .else
-	video offset=CINEMATIC_246, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_FLASH_F15, x=160, y=100
 .endif
 	play id=0x002C, freq=0x02, vol=0x32, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_TELEPORT_SHATTER_F16, x=160, y=100
 .else
-	video offset=CINEMATIC_247, x=160, y=100
+	video offset=CINEMATIC_TELEPORT_SHATTER_FLASH_F16, x=160, y=100
 .endif
 	break
 .if BRANCH != "chahi_amiga_1991"

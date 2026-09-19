@@ -177,44 +177,44 @@ DRAW_INTRO_LIGHTNING_FLICKER_RIGHT:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_RIGHT_F0, x=229, y=40
 .else
-	video offset=CINEMATIC_305, x=229, y=40
+	video offset=CINEMATIC_INTRO_LIGHTNING_FLICKER_RIGHT_F0, x=229, y=40
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_RIGHT_F1, x=229, y=40
 .else
-	video offset=CINEMATIC_306, x=229, y=40
+	video offset=CINEMATIC_INTRO_LIGHTNING_FLICKER_RIGHT_F1, x=229, y=40
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_RIGHT_F2, x=229, y=40
 .else
-	video offset=CINEMATIC_307, x=229, y=40
+	video offset=CINEMATIC_INTRO_LIGHTNING_FLICKER_RIGHT_F2, x=229, y=40
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_RIGHT_F3, x=229, y=40
 .else
-	video offset=CINEMATIC_308, x=229, y=40
+	video offset=CINEMATIC_INTRO_LIGHTNING_FLICKER_RIGHT_F3, x=229, y=40
 .endif
 	break
 	play id=0x002C, freq=0x19, vol=0x0A, channel=0x01
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_RIGHT_F2, x=229, y=40
 .else
-	video offset=CINEMATIC_307, x=229, y=40
+	video offset=CINEMATIC_INTRO_LIGHTNING_FLICKER_RIGHT_F2, x=229, y=40
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_RIGHT_F1, x=229, y=40
 .else
-	video offset=CINEMATIC_306, x=229, y=40
+	video offset=CINEMATIC_INTRO_LIGHTNING_FLICKER_RIGHT_F1, x=229, y=40
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_RIGHT_F0, x=229, y=40
 .else
-	video offset=CINEMATIC_305, x=229, y=40
+	video offset=CINEMATIC_INTRO_LIGHTNING_FLICKER_RIGHT_F0, x=229, y=40
 .endif
 	mov [0x0F], 0x0016
 
