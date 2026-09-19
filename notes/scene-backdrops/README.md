@@ -39,10 +39,23 @@ as gold-on-black masonry at its own 0x06.
   The scene is entered on `je [SCREEN_NUM], 0x4A`, and "baths" was already
   the project's word for the place: `TANK_ARENA_EXIT_CAPSULES_RISE_TO_BATHS`
   predates this.
-- `CAVES_LOAD_WATERFALL_BACKDROP` for `LABEL_D0DF`. 0x43 is a curtain of
-  falling streaks between masonry, and CAVES already carries
-  `CINEMATIC_CAVES_WATERFALL_BG` and `CINEMATIC_CAVES_WATERFALL_DRIP_F0..F8`
-  named on their own evidence.
+- **Nothing, for 0x43 — and the attempt is instructive.** I named
+  `LABEL_D0DF` `CAVES_LOAD_WATERFALL_BACKDROP` on the strength of the image
+  (a curtain of falling streaks between masonry) and reverted it: msdos
+  already called the byte-identical routine
+  `CAVES_BUDDY_CRAWLING_SCENE_SETUP`, so the rename invented a second name
+  for one routine. It is back to msdos's.
+
+  The disagreement is older than my mistake. That same scene contains a
+  routine both ports already call
+  `CAVES_WATERFALL_SPRAY_DRIFT_LEFT_LOOP` — so the tree holds two earned
+  names for one place, one saying a crawl and one saying a waterfall, and
+  #0120 says neither a tool nor I should pick. The polygon families named
+  there take only their measured form: `CAVES_FALLING_STREAK`,
+  `CAVES_SPRAY_LINE`, `CAVES_DROPLET`.
+
+  `notes/crossport-routine-names/same_body_two_names.py` exists because of
+  this, and finds 13 more routines carrying two semantic names.
 
 ## What is deliberately not named yet
 
