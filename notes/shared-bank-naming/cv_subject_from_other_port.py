@@ -85,8 +85,8 @@ corrects only the subject: `CINEMATIC_HERO_<pose>_<n>` ->
 `docs/content/research/2026-09-19-caves-hero-direction-machine/`
 `proposals_LAKE_shadow_family_NOT_APPLIED.md`.
 
-**It is blocked on the unified tree, not on evidence.** Three attempts, each
-reverted, and each failure maps the obstacle:
+**Applied 2026-09-19, after four attempts.** The first three were reverted
+and each failure mapped the obstacle:
 
   * branch-scoped to dos_1992: 12 undefined references, because LAKE keeps
     these draw lines in SHARED chunks rather than per-branch arms;
@@ -98,11 +98,24 @@ reverted, and each failure maps the obstacle:
     **amiga** that breaks, because LAKE shares the EQU definitions too and
     rewriting them for the 1992 ports removes the one amiga reads.
 
-So this needs LAKE's unified chunks restructured first, draw lines and EQU
-definitions both. That is a tree job, not a naming job, and doing it under a
-rename is how this work broke verify-unified four times earlier.
-`notes/unified-symbol-check/undefined_symbols.py` caught all three attempts
-before the byte gate did, which is what it is for.
+The cause, once mapped rather than guessed at: LAKE's shared chunk uses the
+unconditional block as a DEFAULT that the per-branch blocks override
+selectively, and **which port the default belongs to varies by name** --
+0xF26C for `WALK_RIGHT_0` is amiga's, 0xE006 for `WINDUP_0` is msdos's. A
+branch-scoped rename kept hitting the unconditional definition, which is the
+one amiga reads.
+
+The fix was to make every branch's definition explicit first, which is
+byte-neutral because EQU lines emit no bytes: nine names whose default was
+amiga's value were wrapped in `.if BRANCH == "chahi_amiga_1991"`, and
+`STOP_RIGHT_2`, defined in another chunk behind a degenerate
+`.if dos_1992 / .else` with the same value in both arms, was given an
+amiga-only block of its own. The rename then applied across the three 1992
+ports with `--arm` and the tree stayed at 29/29 and 29/29.
+
+`notes/unified-symbol-check/undefined_symbols.py` caught every failed attempt
+before the byte gate did -- 12 references, then 8, then 10, then 1 -- which
+is what it is for, and the count falling was how the diagnosis was steered.
 
 Usage
 -----

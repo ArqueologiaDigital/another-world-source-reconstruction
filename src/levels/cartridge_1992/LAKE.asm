@@ -30,27 +30,27 @@ HERO_Y		EQU 0x02
 COUNTER		EQU 0x10
 CINEMATIC_CONSOLE_UNDERWATER_EXPLOSION_1		EQU 0x1DBA
 CINEMATIC_HERO_SHADOW		EQU 0xDFFC
-CINEMATIC_HERO_WALK_RIGHT_0		EQU 0xE056
-CINEMATIC_HERO_WALK_RIGHT_1		EQU 0xE060
-CINEMATIC_HERO_WALK_RIGHT_2		EQU 0xE06A
-CINEMATIC_HERO_WALK_RIGHT_3		EQU 0xE074
-CINEMATIC_HERO_RUN_RIGHT_0		EQU 0xE07E
-CINEMATIC_HERO_RUN_RIGHT_2		EQU 0xE088
-CINEMATIC_HERO_RUN_RIGHT_4		EQU 0xE092
-CINEMATIC_HERO_STOP_RIGHT_0		EQU 0xE09C
-CINEMATIC_HERO_STOP_RIGHT_2		EQU 0xDFF2
+CINEMATIC_HERO_SHADOW_WALK_RIGHT_0		EQU 0xE056
+CINEMATIC_HERO_SHADOW_WALK_RIGHT_1		EQU 0xE060
+CINEMATIC_HERO_SHADOW_WALK_RIGHT_2		EQU 0xE06A
+CINEMATIC_HERO_SHADOW_WALK_RIGHT_3		EQU 0xE074
+CINEMATIC_HERO_SHADOW_RUN_RIGHT_0		EQU 0xE07E
+CINEMATIC_HERO_SHADOW_RUN_RIGHT_2		EQU 0xE088
+CINEMATIC_HERO_SHADOW_RUN_RIGHT_4		EQU 0xE092
+CINEMATIC_HERO_SHADOW_STOP_RIGHT_0		EQU 0xE09C
+CINEMATIC_HERO_SHADOW_STOP_RIGHT_2		EQU 0xDFF2
 CINEMATIC_DROPLET_VARIANT_3		EQU 0xDC7E
 CINEMATIC_DROPLET_VARIANT_2		EQU 0xDC6E
 CINEMATIC_DROPLET_VARIANT_1		EQU 0xDC5E
 CINEMATIC_DROPLET_VARIANT_0		EQU 0xDC4E
-CINEMATIC_HERO_RUN_LEFT_WINDUP_0		EQU 0xE006
-CINEMATIC_HERO_RUN_LEFT_WINDUP_1		EQU 0xE010
-CINEMATIC_HERO_RUN_LEFT_WINDUP_2		EQU 0xE01A
-CINEMATIC_HERO_RUN_LEFT_WINDUP_3		EQU 0xE024
-CINEMATIC_HERO_RUN_LEFT_0		EQU 0xE02E
-CINEMATIC_HERO_RUN_LEFT_2		EQU 0xE038
-CINEMATIC_HERO_RUN_LEFT_4		EQU 0xE042
-CINEMATIC_HERO_STOP_LEFT_0		EQU 0xE04C
+CINEMATIC_HERO_SHADOW_RUN_LEFT_WINDUP_0		EQU 0xE006
+CINEMATIC_HERO_SHADOW_RUN_LEFT_WINDUP_1		EQU 0xE010
+CINEMATIC_HERO_SHADOW_RUN_LEFT_WINDUP_2		EQU 0xE01A
+CINEMATIC_HERO_SHADOW_RUN_LEFT_WINDUP_3		EQU 0xE024
+CINEMATIC_HERO_SHADOW_RUN_LEFT_0		EQU 0xE02E
+CINEMATIC_HERO_SHADOW_RUN_LEFT_2		EQU 0xE038
+CINEMATIC_HERO_SHADOW_RUN_LEFT_4		EQU 0xE042
+CINEMATIC_HERO_SHADOW_STOP_LEFT_0		EQU 0xE04C
 CINEMATIC_JUMPING_TOWARDS_VINE_0		EQU 0x8202
 CINEMATIC_JUMPING_TOWARDS_VINE_1		EQU 0x82A6
 CINEMATIC_JUMPING_TOWARDS_VINE_2		EQU 0x8342
@@ -7283,42 +7283,42 @@ WAIT_TICK_THEN_HERO_FALL_RIGHT_LOOP:
 DRAW_VIDEO_036_037_AND_HERO_STOP_RIGHT_FRAME_2_RET:
 	video type=0, offset=CV_0CBA, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_3352, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_HERO_STOP_R_BUNDLE_038_039:
 	video type=0, offset=CV_0D48, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_335C, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_HERO_STOP_R_BUNDLE_040_041:
 	video type=0, offset=CV_0DB6, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_3366, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_HERO_STOP_R_BUNDLE_042_043:
 	video type=0, offset=CV_0E38, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_3370, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_HERO_STOP_R_BUNDLE_044_045:
 	video type=0, offset=CV_0EB6, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_337A, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_HERO_STOP_R_BUNDLE_046_047:
 	video type=0, offset=CV_0F28, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_3384, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
@@ -7326,56 +7326,56 @@ DRAW_LESTER_FRAME_BUNDLE:
 	video type=0, offset=CV_5DDC, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_0F90, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_338E, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_HERO_STOP_R_BUNDLE_018_019:
 	video type=0, offset=CV_0FF8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_3398, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_HERO_STOP_R_BUNDLE_020_021:
 	video type=0, offset=CV_1060, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_33A2, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_HERO_STOP_R_BUNDLE_022_023:
 	video type=0, offset=CV_108C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_33AC, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_HERO_STOP_R_BUNDLE_024_025:
 	video type=0, offset=CV_10B8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_33B6, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_HERO_STOP_R_BUNDLE_026_027:
 	video type=0, offset=CV_10E4, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_33C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_HERO_STOP_R_BUNDLE_028_029:
 	video type=0, offset=CV_1110, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_33CA, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_HERO_STOP_R_BUNDLE_030_031:
 	video type=0, offset=CV_1136, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_33D4, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
@@ -7383,14 +7383,14 @@ DRAW_HERO_STOP_R_BUNDLE_015_032_033:
 	video type=0, offset=CV_5DDC, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_115C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_33DE, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_HERO_STOP_R_BUNDLE_034_035:
 	video type=0, offset=CV_117E, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_33E8, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
@@ -7398,7 +7398,7 @@ DRAW_HERO_STOP_R_BUNDLE_081_082:
 	video type=0, offset=CV_03E4, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_34AA, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_Y], 0x0003
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_Y], 0x0003
 	ret
 
@@ -7407,7 +7407,7 @@ DRAW_HERO_STOP_R_BUNDLE_083_084:
 	video type=0, offset=CV_0472, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_34B2, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_Y], 0x0004
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_Y], 0x0004
 	ret
 
@@ -7416,7 +7416,7 @@ DRAW_HERO_STOP_R_BUNDLE_116_117:
 	video type=0, offset=CV_04F4, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_34BA, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_Y], 0x0002
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_Y], 0x0002
 	ret
 
@@ -7425,7 +7425,7 @@ DRAW_HERO_STOP_R_BUNDLE_118_119:
 	video type=0, offset=CV_058E, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_34C2, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_Y], 0x0001
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_Y], 0x0001
 	ret
 
@@ -7434,7 +7434,7 @@ DRAW_HERO_STOP_R_BUNDLE_120_121:
 	video type=0, offset=CV_0624, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_34CE, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_Y], 0x0001
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_Y], 0x0001
 	ret
 
@@ -7443,7 +7443,7 @@ DRAW_HERO_STOP_R_BUNDLE_086_087:
 	video type=0, offset=CV_06A2, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_34D6, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_Y], 0x0003
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_Y], 0x0003
 	ret
 
@@ -7452,7 +7452,7 @@ DRAW_HERO_STOP_R_BUNDLE_088_089:
 	video type=0, offset=CV_06C8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_34DE, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_Y], 0x0004
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_Y], 0x0004
 	ret
 
@@ -7461,7 +7461,7 @@ DRAW_HERO_STOP_R_BUNDLE_090_091:
 	video type=0, offset=CV_06EE, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_34E6, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_Y], 0x0002
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_Y], 0x0002
 	ret
 
@@ -7470,7 +7470,7 @@ DRAW_HERO_STOP_R_BUNDLE_092_093:
 	video type=0, offset=CV_0714, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_34EE, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_Y], 0x0001
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_Y], 0x0001
 	ret
 
@@ -7479,7 +7479,7 @@ DRAW_HERO_STOP_R_BUNDLE_094_095:
 	video type=0, offset=CV_073E, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_34F6, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_Y], 0x0001
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_Y], 0x0001
 	ret
 
@@ -7875,52 +7875,52 @@ HERO_WALK_RIGHT_LOOP:
 	mov [0x63], 0x0064
 	je [HERO_POS_MASK], 0x0A, HERO_RUN_LEFT_BURST_LOOP
 	video type=0, offset=CV_4D98, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_WALK_RIGHT_0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_WALK_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 	break
 	video type=0, offset=CV_4DE4, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_WALK_RIGHT_1, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_WALK_RIGHT_1, x=[HERO_X], y=[HERO_Y]
 	break
 	video type=0, offset=CV_4E30, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_WALK_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_WALK_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	break
 	video type=0, offset=CV_4E7C, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_WALK_RIGHT_3, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_WALK_RIGHT_3, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0005
 	break
 	video type=0, offset=CV_4EC8, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_RUN_RIGHT_0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0007
 	mov [0x1B], 0x0001
 	break
 	video type=0, offset=CV_4F14, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
-	video offset=CINEMATIC_HERO_WALK_RIGHT_1, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_WALK_RIGHT_1, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x000C
 	break
 	video type=0, offset=CV_4F68, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_RUN_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x000C
 	break
 	video type=0, offset=CV_500C, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_RIGHT_4, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0002
 	break
 	mov [0x1B], 0x0000
 	video type=0, offset=CV_5058, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_WALK_RIGHT_0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_WALK_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0007
 	break
 	video type=0, offset=CV_50A8, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0004
 	break
 	video type=0, offset=CV_50F8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0005
-	video offset=CINEMATIC_HERO_WALK_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_WALK_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x000C
 	break
 	video type=0, offset=CV_514C, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	break
 	mov [0x63], 0x0002
 	jmp DRAW_LESTER_FRAME_THEN_FALL
@@ -7939,33 +7939,33 @@ HERO_RUN_RIGHT_LOOP:
 	je [HERO_POS_MASK], 0x0A, HERO_RUN_LEFT_LOOP
 	video type=0, offset=CV_4F14, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
-	video offset=CINEMATIC_HERO_WALK_RIGHT_1, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_WALK_RIGHT_1, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x000C
 	sub [HERO_Y], 0x0002
 	mov [0x1B], 0x0001
 	break
 	video type=0, offset=CV_4F68, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_RUN_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x000C
 	break
 	video type=0, offset=CV_4FBC, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
-	video offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_RIGHT_4, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x000B
 	add [HERO_Y], 0x0001
 	break
 	video type=0, offset=CV_4FBC, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
-	video offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_RIGHT_4, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x000B
 	add [HERO_Y], 0x0001
 	break
 	video type=0, offset=CV_500C, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_RUN_RIGHT_4, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_RIGHT_4, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0002
 	break
 	video type=0, offset=CV_5058, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_WALK_RIGHT_0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_WALK_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0007
 	mov [0x1B], 0x0000
 	break
@@ -7973,16 +7973,16 @@ HERO_RUN_RIGHT_LOOP:
 	je [HERO_ACTION], 0x01, HERO_LEAP_R_F5_TO_F9_ENTRY
 	sub [HERO_X], 0x0005
 	video type=0, offset=CV_50A8, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0004
 	break
 	video type=0, offset=CV_50F8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0005
-	video offset=CINEMATIC_HERO_WALK_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_WALK_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x000C
 	break
 	video type=0, offset=CV_514C, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	break
 	mov [0x63], 0x0002
 	jmp DRAW_LESTER_FRAME_THEN_FALL
@@ -7992,48 +7992,48 @@ HERO_RUN_LEFT_BURST_LOOP:
 	mov [0x63], 0x0064
 	je [HERO_POS_MASK], 0x09, HERO_WALK_RIGHT_LOOP
 	video type=0, offset=CV_52C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_LEFT_WINDUP_0, x=[HERO_X], y=[HERO_Y]
 	break
 	video type=0, offset=CV_52E0, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_1, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_LEFT_WINDUP_1, x=[HERO_X], y=[HERO_Y]
 	break
 	video type=0, offset=CV_5300, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_LEFT_WINDUP_2, x=[HERO_X], y=[HERO_Y]
 	break
 	video type=0, offset=CV_5320, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_3, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_LEFT_WINDUP_3, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0005
 	break
 	video type=0, offset=CV_5340, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_RUN_LEFT_0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_LEFT_0, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0007
 	mov [0x1B], 0x0001
 	break
 	video type=0, offset=CV_5360, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_1, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_LEFT_WINDUP_1, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x000C
 	break
 	video type=0, offset=CV_5380, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_RUN_LEFT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_LEFT_2, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x000C
 	break
 	video type=0, offset=CV_53C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_RUN_LEFT_4, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_LEFT_4, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0002
 	break
 	mov [0x1B], 0x0000
 	video type=0, offset=CV_53E0, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_LEFT_WINDUP_0, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0007
 	break
 	video type=0, offset=CV_5400, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_LEFT_0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_LEFT_0, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0004
 	break
 	video type=0, offset=CV_5420, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0006
-	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_LEFT_WINDUP_2, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x000D
 	break
 	video type=0, offset=CV_5444, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -8059,32 +8059,32 @@ HERO_RUN_LEFT_LOOP:
 	mov [0x1B], 0x0001
 	video type=0, offset=CV_5360, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_1, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_LEFT_WINDUP_1, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x000C
 	sub [HERO_Y], 0x0002
 	break
 	video type=0, offset=CV_5380, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_RUN_LEFT_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_LEFT_2, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x000C
 	break
 	video type=0, offset=CV_53A0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_HERO_RUN_LEFT_4, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_LEFT_4, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x000B
 	add [HERO_Y], 0x0001
 	break
 	video type=0, offset=CV_53A0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_HERO_RUN_LEFT_4, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_LEFT_4, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x000B
 	add [HERO_Y], 0x0001
 	break
 	video type=0, offset=CV_53C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_RUN_LEFT_4, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_LEFT_4, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0002
 	break
 	video type=0, offset=CV_53E0, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_LEFT_WINDUP_0, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0007
 	mov [0x1B], 0x0000
 	break
@@ -8092,12 +8092,12 @@ HERO_RUN_LEFT_LOOP:
 	je [HERO_ACTION], 0x01, HERO_LEAP_LEFT_F5_LOOP
 	add [HERO_X], 0x0005
 	video type=0, offset=CV_5400, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	video offset=CINEMATIC_HERO_STOP_LEFT_0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_STOP_LEFT_0, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0004
 	break
 	video type=0, offset=CV_5420, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0006
-	video offset=CINEMATIC_HERO_RUN_LEFT_WINDUP_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_SHADOW_RUN_LEFT_WINDUP_2, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x000D
 	break
 	video type=0, offset=CV_5444, x=[HERO_X], y=[HERO_Y], zoom=0x40
