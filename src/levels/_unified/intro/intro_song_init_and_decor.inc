@@ -112,7 +112,7 @@ DELAY_10F_BEFORE_KILL_CHANNELS:
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x0A, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x10, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x02, address=INTRO_IDENT_SCREEN_INIT
+	setup channel=0x02, address=LAB_AUTH_IDENTIFICATION_SCREEN_INIT
 .if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 .endif

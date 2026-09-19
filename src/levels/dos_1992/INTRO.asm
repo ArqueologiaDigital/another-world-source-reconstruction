@@ -3752,7 +3752,7 @@ LIFT_SCENE_EXIT_HOLD_AND_HANDOFF:
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 
-SETUP_LAB_AUTH_KEYPAD_SCENE:
+LAB_AUTH_KEYPAD_SCENE_INIT:
 	fill page=0x00, color=0x06
 	selectVideoPage 0x00
 	video offset=CINEMATIC_LAB_AUTH_KEYPAD, x=130, y=58
@@ -3958,7 +3958,7 @@ DRIFT_VAR4_MINUS_3_FOR_5X:
 	break
 	djnz [0x06], DRIFT_VAR4_MINUS_3_FOR_5X
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x02, address=SETUP_LAB_AUTH_KEYPAD_SCENE
+	setup channel=0x02, address=LAB_AUTH_KEYPAD_SCENE_INIT
 	setup channel=0x03, address=LESTER_HAND_PRESSING_KEYPAD_ANIMATION
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE

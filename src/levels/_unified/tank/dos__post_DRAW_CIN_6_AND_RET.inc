@@ -1,4 +1,4 @@
-TANK_SCENE_INIT_FILL_COLOR_0C_AND_PAGE_3_COPY:
+TANK_BACKDROP_BUILD_BOTH_PAGES:
 	selectVideoPage 0x00
 	fill page=0x00, color=0x0C
 	video offset=CINEMATIC_000, x=160, y=100

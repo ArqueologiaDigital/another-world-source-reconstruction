@@ -570,7 +570,7 @@ LIFT_SCENE_EXIT_HOLD_AND_HANDOFF:
 .endif
 	killChannel
 
-LAB_KEYPAD_SCENE_INIT:
+LAB_AUTH_KEYPAD_SCENE_INIT:
 	fill page=0x00, color=0x06
 	selectVideoPage 0x00
 .if BRANCH == "chahi_amiga_1991"

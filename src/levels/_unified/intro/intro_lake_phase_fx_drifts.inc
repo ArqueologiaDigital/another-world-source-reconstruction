@@ -131,7 +131,7 @@ DRIFT_VAR4_MINUS_3_FOR_5X:
 	break
 	djnz [0x06], DRIFT_VAR4_MINUS_3_FOR_5X
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x02, address=LAB_KEYPAD_SCENE_INIT
+	setup channel=0x02, address=LAB_AUTH_KEYPAD_SCENE_INIT
 	setup channel=0x03, address=LESTER_HAND_PRESSING_KEYPAD_ANIMATION
 .if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP

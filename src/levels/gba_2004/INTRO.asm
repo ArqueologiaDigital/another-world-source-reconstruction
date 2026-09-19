@@ -700,7 +700,7 @@ INIT_VIDEO_BUFFERS:
 	ret
 
 
-INTRO_IDENT_SCREEN_INIT:
+LAB_AUTH_IDENTIFICATION_SCREEN_INIT:
 	mov [PAUSE_SLICES], 0x0003
 	fill page=0xFF, color=0x02
 	video offset=CINEMATIC_138, x=322, y=145
@@ -3080,7 +3080,7 @@ DELAY_10F_BEFORE_KILL_CHANNELS:
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x0A, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x10, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x02, address=INTRO_IDENT_SCREEN_INIT
+	setup channel=0x02, address=LAB_AUTH_IDENTIFICATION_SCREEN_INIT
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	killChannel
 
@@ -3619,7 +3619,7 @@ LIFT_SCENE_EXIT_HOLD_AND_HANDOFF:
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	killChannel
 
-LAB_KEYPAD_SCENE_INIT:
+LAB_AUTH_KEYPAD_SCENE_INIT:
 	fill page=0x00, color=0x06
 	selectVideoPage 0x00
 	video offset=CINEMATIC_LAB_AUTH_KEYPAD, x=130, y=58
@@ -3823,7 +3823,7 @@ DRIFT_VAR4_MINUS_3_FOR_5X:
 	break
 	djnz [0x06], DRIFT_VAR4_MINUS_3_FOR_5X
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x02, address=LAB_KEYPAD_SCENE_INIT
+	setup channel=0x02, address=LAB_AUTH_KEYPAD_SCENE_INIT
 	setup channel=0x03, address=LESTER_HAND_PRESSING_KEYPAD_ANIMATION
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
