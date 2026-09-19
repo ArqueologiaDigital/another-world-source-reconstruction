@@ -74,3 +74,48 @@ CAVES ports. A rename must be scoped to `<branch>/CAVES.asm` plus
 references any of these twenty labels — checked before applying, and worth
 re-checking, because four unified-tree breakages earlier in this work came from
 exactly that assumption going unverified.
+
+## Reproducing the pictures
+
+The renders behind "the four states draw one figure" are regenerable, so they
+are not committed; this is the recipe.
+
+    R=~/compartilhado/AnotherWorld_VMTools/target/release/awvm-render-polygons
+    $R --port amiga --stage 4 --romset tmp/output/amiga/romset \
+       --bank cinematic --out /tmp/caves --palette 4
+
+That writes one SVG per polygon, named by offset. Resolve a constant to its
+offset through the stage's EQU table (or `tools/polygon_extent.py --equ`), then
+enlarge with nearest-neighbour — these are 66 to 117 px wide and any smooth
+resize invents detail:
+
+    convert -background '#999' /tmp/caves/amiga_stage4_group_0x5F4C.svg \
+        -trim +repage -filter point -resize x520 /tmp/down_state.png
+
+`0x5F4C` is amiga `CINEMATIC_CAVES_HERO_IDLE_DOWN_0` and `0x963E` is
+`..._IDLE_UP_0`. Side by side they are a figure with red hair, a black top,
+blue trousers and blue shoes — and the UP one is that figure the other way up.
+
+To place the second layer against the body instead of centred on it, use
+`notes/passcode-glyph-probes/compose_at_authored_coords.py`: the renderer
+normalises every polygon to the draw anchor and throws the authored offset
+away, and for these the offset is the whole point. Passing a body frame plus
+all eleven frames of its channel-0x16 loop draws the swept arc over the figure.
+
+**The renderer does not flip y.** Worth stating because a reading of these
+frames depends on it: `awvm/src/polygons.rs` emits
+`<svg … viewBox="0 0 320 200">` and writes point coordinates straight through,
+with no transform, so SVG's downward y matches the framebuffer's. Its
+`<rect … fill="#888888"/>` is the background, which is why `#888888` is
+filtered out of any colour census taken from an SVG. The census in this
+directory avoids the question entirely by reading the ROM.
+
+## Left open
+
+The second layer's subject. What would settle it is not another render of the
+layer alone -- that has been done -- but evidence about where it attaches. Two
+things noticed and not pursued: in the UP and DOWN states the layer's authored
+box sits *above* the body's, and this stage already draws the hero's gun arm as
+a separate polygon elsewhere (`CAVES_HERO_RUN_LEFT_NO_GUN_ARM_PHASE_1` against
+`DRAW_CV_279`), so a separately-threaded limb layer has precedent here. Neither
+is proof, which is why the four routines are still `LABEL_<hex>`.
