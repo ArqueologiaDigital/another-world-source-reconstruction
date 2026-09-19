@@ -810,6 +810,16 @@ COMMON_VIDEO_118		EQU 0x058E
 COMMON_VIDEO_119		EQU 0x34C2
 COMMON_VIDEO_120		EQU 0x0624
 COMMON_VIDEO_121		EQU 0x34CE
+CINEMATIC_HERO_LAND_LEFT		EQU 0x08FC
+CINEMATIC_HERO_LAND_RIGHT		EQU 0x0C1E
+CINEMATIC_PARTICLE_BURST_2_FRAME_0		EQU 0xDC8A
+CINEMATIC_PARTICLE_BURST_2_FRAME_1		EQU 0xDC9A
+CINEMATIC_PARTICLE_BURST_2_FRAME_2		EQU 0xDCB2
+CINEMATIC_PARTICLE_BURST_2_FRAME_3		EQU 0xDCC6
+CINEMATIC_PARTICLE_BURST_2_FRAME_4		EQU 0xDCF6
+CINEMATIC_REED_PLANT_5		EQU 0xB808
+CINEMATIC_REED_PLANT_6		EQU 0xB8A0
+CINEMATIC_REED_PLANT_7		EQU 0xB8EE
 
 
 	org 0x0000
@@ -1403,21 +1413,21 @@ DROPLET_VARIANT_CASE_3:
 
 
 PARTICLE_BURST_CYCLE_LOOP_2:
-	video offset=0xDC8A, x=[0x9a], y=[0x9b]
+	video offset=CINEMATIC_PARTICLE_BURST_2_FRAME_0, x=[0x9a], y=[0x9b]
 	break
-	video offset=0xDC9A, x=[0x9a], y=[0x9b]
+	video offset=CINEMATIC_PARTICLE_BURST_2_FRAME_1, x=[0x9a], y=[0x9b]
 	break
-	video offset=0xDCB2, x=[0x9a], y=[0x9b]
+	video offset=CINEMATIC_PARTICLE_BURST_2_FRAME_2, x=[0x9a], y=[0x9b]
 	break
-	video offset=0xDC9A, x=[0x9a], y=[0x9b]
+	video offset=CINEMATIC_PARTICLE_BURST_2_FRAME_1, x=[0x9a], y=[0x9b]
 	break
-	video offset=0xDC8A, x=[0x9a], y=[0x9b]
+	video offset=CINEMATIC_PARTICLE_BURST_2_FRAME_0, x=[0x9a], y=[0x9b]
 	break
-	video offset=0xDCC6, x=[0x9a], y=[0x9b]
+	video offset=CINEMATIC_PARTICLE_BURST_2_FRAME_3, x=[0x9a], y=[0x9b]
 	break
-	video offset=0xDCF6, x=[0x9a], y=[0x9b]
+	video offset=CINEMATIC_PARTICLE_BURST_2_FRAME_4, x=[0x9a], y=[0x9b]
 	break
-	video offset=0xDCC6, x=[0x9a], y=[0x9b]
+	video offset=CINEMATIC_PARTICLE_BURST_2_FRAME_3, x=[0x9a], y=[0x9b]
 	break
 	jmp PARTICLE_BURST_CYCLE_LOOP_2
 	killChannel
@@ -2901,25 +2911,25 @@ REED_PLANT_F1_RETURN:
 	jmp REED_PLANT_ANIMATION
 	killChannel
 REED_PLANT_CENTER_PALINDROME_LOOP:
-	video offset=0xB808, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 	break
-	video offset=0xB808, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 	break
-	video offset=0xB8A0, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 	break
-	video offset=0xB8A0, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 	break
-	video offset=0xB8EE, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 	break
-	video offset=0xB8EE, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 	break
-	video offset=0xB8EE, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_7, x=160, y=100
 	break
-	video offset=0xB8A0, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 	break
-	video offset=0xB8A0, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_6, x=160, y=100
 	break
-	video offset=0xB808, x=160, y=100
+	video offset=CINEMATIC_REED_PLANT_5, x=160, y=100
 	break
 	jmp REED_PLANT_CENTER_PALINDROME_LOOP
 	killChannel
@@ -3115,7 +3125,7 @@ SNEAKY_TENTACLE_GOING_DOWN:
 	killChannel
 
 CYCLE_VIDEO_PAGES_3WAY:
-	jne [SCREEN_NUM], [0x65], FIRST_SCREEN_R_BEAST_TRIGGER
+	jne [SCREEN_NUM], [0x65], CYCLE_VIDEO_PAGES_2WAY
 	copyVideoPage src=0x03, dst=0xFF
 	copyVideoPage src=0x00, dst=0x03
 	copyVideoPage src=0xFF, dst=0x00
@@ -3124,7 +3134,7 @@ CYCLE_VIDEO_PAGES_3WAY:
 	mov [CACHED_SCREEN_NUM], [SCREEN_NUM]
 	jmp CYCLE_VIDEO_PAGES_RET
 
-FIRST_SCREEN_R_BEAST_TRIGGER:
+CYCLE_VIDEO_PAGES_2WAY:
 	copyVideoPage src=0x00, dst=0x03
 	mov [0x65], [CACHED_SCREEN_NUM]
 
@@ -3197,7 +3207,7 @@ FIRST_SCREEN_TO_THE_RIGHT:
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 	call CYCLE_VIDEO_PAGES_3WAY
 	setPalette 0x05
-	je [CACHED_SCREEN_NUM], 0x03, LABEL_1AA3
+	je [CACHED_SCREEN_NUM], 0x03, FIRST_SCREEN_R_BEAST_TRIGGER
 	mov [CACHED_SCREEN_NUM], 0x0003
 	fill page=0x00, color=0x0E
 	selectVideoPage 0x00
@@ -3205,7 +3215,7 @@ FIRST_SCREEN_TO_THE_RIGHT:
 	selectVideoPage 0xFF
 	copyVideoPage src=0x00, dst=0xFF
 
-LABEL_1AA3:
+FIRST_SCREEN_R_BEAST_TRIGGER:
 	jne [0x2A], 0x01, FIRST_SCREEN_R_SETUP_CHANNELS
 	mov [0x2A], 0x0002
 	call COMPUTE_RANDOM_BIT_MASKS
@@ -3343,7 +3353,7 @@ ENTER_OUTSIDE_POOL_FROM_LEFT:
 
 HERO_INIT_Y_AND_DISPATCH_BY_X:
 	mov [HERO_Y], 0x00B6
-	jg [HERO_X], 0x6E, FIRST_SCR_R_YIELD_RESTART
+	jg [HERO_X], 0x6E, HERO_Y_FROM_X_RANGE_0
 	je [HERO_POS_UP_DOWN], 0xFFFF, MAYBE_LESTER_GRAB_VINE
 	jne [HERO_POS_JUMP_DOWN], 0xFFFF, INIT_HERO_LAKE_DEFAULT
 
@@ -3359,7 +3369,7 @@ INIT_HERO_LAKE_DEFAULT:
 	mov [0x63], 0x0001
 	setup channel=0x14, address=HERO_STAND_LEFT_LOOP
 
-FIRST_SCR_R_YIELD_RESTART:
+HERO_Y_FROM_X_RANGE_0:
 	jg [HERO_X], 0x74, HERO_Y_FROM_X_RANGE_1
 	mov [HERO_Y], 0x0094
 	jmp YIELD_THEN_RECHECK_LAKE_EDGE
@@ -5202,11 +5212,11 @@ CHECK_IF_BEAST_IS_NEAR_LESTER__OUT_OF_RANGE_RET:
 	ret
 
 
-IF_BEAST_NEAR_THEN_REACT_ELSE_KILL_THREAD:
+SLUG_DISPATCH_PHASE1_F6_DEATH:
 	je [0x07], 0x01, SLUG_R_PHASE1_F6_THEN_DEATH
 	killChannel
 
-IF_BEAST_NEAR_THEN_REACT_ELSE_KILL_THREAD_2:
+SLUG_DISPATCH_F4_DELAY:
 	je [0x07], 0x01, SLUG_R_F4_RAND_DELAY_INIT
 	killChannel
 
@@ -5225,7 +5235,7 @@ SLUG_L_BIRTH_LOOP:
 	video offset=CINEMATIC_SLUG_L_4, x=[0x0c], y=[0x0d]
 	break
 	call JMP_TO_CHECK_BEAST_NEAR
-	jne [0x07], 0x00, IF_BEAST_NEAR_THEN_REACT_ELSE_KILL_THREAD
+	jne [0x07], 0x00, SLUG_DISPATCH_PHASE1_F6_DEATH
 	video offset=CINEMATIC_SLUG_L_5, x=[0x0c], y=[0x0d]
 	break
 	add [0x0C], 0x0001
@@ -5271,7 +5281,7 @@ SLUG_PHASE_1_RIGHT_INIT:
 	video offset=CINEMATIC_SLUG_R_4, x=[0x0c], y=[0x0d]
 	break
 	call CHECK_IF_BEAST_IS_NEAR_LESTER
-	jne [0x07], 0x00, IF_BEAST_NEAR_THEN_REACT_ELSE_KILL_THREAD_2
+	jne [0x07], 0x00, SLUG_DISPATCH_F4_DELAY
 	video offset=CINEMATIC_SLUG_AFTER_0, x=[0x0c], y=[0x0d]
 	break
 	sub [0x0C], 0x0001
@@ -7828,14 +7838,14 @@ HERO_LEAP_R_F5_TO_F9_ENTRY:
 	jmp HERO_LEAP_R_F0_LOOP
 	killChannel
 	sub [HERO_X], 0x0004
-	video offset=0x0C1E, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LAND_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 	break
 	add [HERO_X], 0x0001
-	video offset=0x0C1E, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LAND_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 	add [HERO_X], 0x0001
 HERO_LAND_RIGHT_HOLD_LOOP:
 	break
-	video offset=0x0C1E, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LAND_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 	je [HERO_ACTION_POS_MASK], 0x88, HERO_LAND_RIGHT_HOLD_LOOP
 	break
 	add [HERO_X], 0x0002
@@ -8083,14 +8093,14 @@ HERO_RUN_LEFT_LOOP:
 	jmp HERO_STAND_LEFT_LOOP
 	killChannel
 	add [HERO_X], 0x0004
-	video offset=0x08FC, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LAND_LEFT, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 	break
 	sub [HERO_X], 0x0001
-	video offset=0x08FC, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LAND_LEFT, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 	sub [HERO_X], 0x0001
 HERO_LAND_LEFT_HOLD_LOOP:
 	break
-	video offset=0x08FC, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
+	video offset=CINEMATIC_HERO_LAND_LEFT, x=[HERO_X], y=[HERO_Y], zoom=[0x03]
 	je [HERO_ACTION_POS_MASK], 0x88, HERO_LAND_LEFT_HOLD_LOOP
 	break
 	sub [HERO_X], 0x0002
