@@ -64,6 +64,42 @@ composite existed — 186x24, 63 thin vertical bars — and the composite confir
 it afterwards as the strip along the scene's bottom edge. That is the pattern
 to copy: identify from the individual render, *confirm* against the composite.
 
+## The second way to get a black frame: nothing was drawn
+
+CAPSULE's `BUDDY_SMASHING_WINDOW_ANIMATION` composited to a black image too,
+and the palette was **not** the problem — palette 1 was right, read from the
+`setup` site three instructions above. The tool had composited **zero** draws,
+because all seventeen use `[0x68],[0x69]`.
+
+So there are two distinct ways to get a plausible black frame, and the image
+cannot tell them apart. **Read the count in the tool's first line before
+looking at the picture**:
+
+```
+FILL_AND_DRAW_CIN_24_28: 11 draw(s) composited -> ...   <- palette question
+BUDDY_SMASHING_WINDOW_ANIMATION: 0 draw(s) composited   <- nothing was drawn
+```
+
+## When the anchor is in a variable, look for where the routine seeds it
+
+That CAPSULE routine sets its own anchor in its first two instructions —
+`mov [0x68], 0x0090` / `mov [0x69], 0x0062` — and never changes it, so every
+draw is at (144, 98). A fixed anchor means the constants are **frames of one
+animation**, not props spread over a scene, which is the opposite of what
+their extents (3x7 up to 165x194) suggest from a cropped thumbnail sheet.
+
+That distinction changes the whole naming approach, and it is cheap to check:
+
+```bash
+awk '/^<ROUTINE>:/{f=1} f{print} f&&/^[A-Za-z_]/&&!/^<ROUTINE>/{exit}' \
+    src/levels/<branch>/<STAGE>.asm | grep -E 'mov \[0x..\]|video offset='
+```
+
+For frames at one anchor, skip the composite: render each constant alone, at
+the live palette, **on a full uncropped frame** so its position within the
+shot is visible. That is what resolved those seventeen into three interleaved
+layers — a standing figure, shard bursts, and single specks.
+
 ## Draws with variable coordinates are skipped
 
 The tool only places `video offset=X, x=<int>, y=<int>`. A scene drawn at
