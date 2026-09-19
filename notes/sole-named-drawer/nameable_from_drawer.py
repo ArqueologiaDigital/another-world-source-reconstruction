@@ -84,13 +84,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT.parent / "another-world-archaeology" / "tools"))
 from naming_census import classify                      # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parents[0].parent))
+from actor_slot import actor_slot_matcher  # noqa: E402
 
 PORTS = {"amiga": "chahi_amiga_1991", "msdos": "dos_1992"}
 STAGES = ["CODE_WHEEL", "INTRO", "LAKE", "PRISON", "CAVES", "TANK",
           "CAPSULE", "ENDING", "PASSCODE"]
 RE_LABEL = re.compile(r"^([A-Za-z_]\w*):")
 RE_DRAW = re.compile(r"video\s+(?:type=\d+,\s*)?offset=([A-Za-z_]\w*)")
-RE_ACTOR = re.compile(r"x=\[0x07\]\s*,\s*y=\[0x08\]")
+# Matched through notes/actor_slot.py, which resolves aliases: PRISON,
+# CAPSULE and ENDING spell the slot `[BUDDY_X],[BUDDY_Y]` and the
+# literal test saw none of it.
 RE_NUM = re.compile(r"^CINEMATIC_\d+$")
 RE_V = re.compile(r"video\s+(?:type=\d+,\s*)?offset=([A-Za-z_]\w*)\s*,"
                   r"\s*x=(\S+?)\s*,\s*y=(\S+?)(?:\s*,|\s*$)")
@@ -169,6 +173,7 @@ def main() -> int:
             if not path.is_file():
                 continue
             bodies = parse(path)
+            at_slot = actor_slot_matcher(path.read_text())
             drawn: dict[str, set[str]] = collections.defaultdict(set)
             for lab, body in bodies.items():
                 for line in body:
@@ -189,7 +194,7 @@ def main() -> int:
                 const = nums[0]
                 if drawn[const] != {lab}:
                     continue
-                if any(RE_ACTOR.search(line) for line in body):
+                if any(at_slot(line) for line in body):
                     skipped["draws at the actor slot (#0138)"] += 1
                     continue
                 new = "CINEMATIC_" + lab[: -len("_DRAW")]
@@ -225,6 +230,7 @@ def main() -> int:
                 if not path.is_file():
                     continue
                 bodies = parse(path)
+                at_slot = actor_slot_matcher(path.read_text())
                 seen: dict[str, set[str]] = collections.defaultdict(set)
                 for lab, body in bodies.items():
                     for line in body:
@@ -240,7 +246,7 @@ def main() -> int:
                         continue
                     if any(seen[c] != {lab} for c in uniq):
                         continue
-                    if any(RE_ACTOR.search(line) for line in body):
+                    if any(at_slot(line) for line in body):
                         continue
                     if any(t in lab for t in MECHANISM) or \
                             RE_RAWINDEX.search(lab):

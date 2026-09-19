@@ -61,13 +61,18 @@ sys.path.insert(0, str(ARCH / "tools"))
 from _paths import AW_SRC                      # noqa: E402
 from find_dead_tail_bytes import analyse        # noqa: E402
 from naming_census import classify              # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parents[0].parent))
+from actor_slot import actor_slot_matcher  # noqa: E402
 
 PORTS = {"amiga": "chahi_amiga_1991", "msdos": "dos_1992"}
 BIG3 = ["PRISON", "CAVES", "CAPSULE"]
 
 RE_LABEL = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*):")
 RE_DRAW = re.compile(r"video\s+(?:type=\d+,\s*)?offset=([A-Za-z_][A-Za-z0-9_]*)")
-RE_ACTOR = re.compile(r"x=\[0x07\]\s*,\s*y=\[0x08\]")
+# The actor slot is matched through notes/actor_slot.py, which resolves
+# aliases. PRISON, CAPSULE and ENDING write `x=[BUDDY_X], y=[BUDDY_Y]`
+# with BUDDY_X EQU 0x07, and the literal test reported ZERO #0138 draws
+# for all three -- 1,844 of them across the two priority ports.
 # After T7 re-keyed the shared bank (2026-09-19) the placeholder form is
 # `CV_<OFFSET4>`, not `COMMON_VIDEO_<n>`. Matching only the old spelling made
 # this probe report T7 as blocking ZERO routines the moment the re-key landed --
@@ -101,7 +106,9 @@ def main() -> int:
             path = AW_SRC / "src" / "levels" / PORTS[port] / f"{stage}.asm"
             if not path.is_file():
                 continue
-            lines = path.read_text().splitlines()
+            text = path.read_text()
+            at_slot = actor_slot_matcher(text)
+            lines = text.splitlines()
             dead = {n for n, *_ in analyse(path)}
             bodies: dict[str, list[str]] = {}
             cur = None
@@ -122,7 +129,7 @@ def main() -> int:
                 n["unnamed"] += 1
                 art = [s for l in body for s in RE_DRAW.findall(l)]
                 cv_only = bool(art) and all(RE_CV.match(a) for a in art)
-                actor = any(RE_ACTOR.search(l) for l in body)
+                actor = any(at_slot(l) for l in body)
                 if cv_only and actor:
                     n["both"] += 1
                 elif cv_only:
