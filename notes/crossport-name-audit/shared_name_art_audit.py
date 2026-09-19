@@ -83,9 +83,101 @@ RE_EQU = re.compile(r"^(CINEMATIC_\w+)\s+EQU\s+(0x[0-9A-Fa-f]+)", re.M)
 RE_NUM = re.compile(r"^CINEMATIC_\d+$")
 
 
+def emit_permutation(stage: str, tabs: dict, art: dict, rev: dict,
+                     out: Path) -> None:
+    """The correction as ONE rename table, promotions and demotions together.
+
+    A correction is a permutation and cannot be applied a row at a time: the
+    symbol that wrongly holds a name has to give it up in the same batch that
+    puts the name on the right constant. Emitting halves of it would be
+    rejected by the rename validator, correctly.
+
+    Demotion targets are the index the msdos EQU table position gives.
+    `apply_branch_scoped_names.py --demote` recomputes them independently and
+    refuses any that disagree, so this file proposing a wrong index cannot
+    turn into a wrong index on disk.
+    """
+    order = list(tabs["msdos"])
+    idx = {n: i for i, n in enumerate(order)}
+    shared = [n for n in tabs["amiga"]
+              if not RE_NUM.match(n) and n in tabs["msdos"]]
+    diff = {n for n in shared
+            if art["amiga"][n] and art["msdos"][n]
+            and art["amiga"][n] != art["msdos"][n]}
+    owner: dict = collections.defaultdict(list)
+    for n in shared:
+        if art["amiga"][n]:
+            owner[art["amiga"][n]].append(n)
+    rows: dict[str, str] = {}
+    for n in order:
+        a = art["msdos"][n]
+        cands = [x for x in owner.get(a, []) if x in diff] if a else []
+        if len(cands) == 1 and cands[0] != n:
+            rows[n] = cands[0]
+        elif n in diff:
+            rows[n] = f"CINEMATIC_{idx[n]}"
+    clash = [t for t, c in collections.Counter(rows.values()).items() if c > 1]
+    if clash:
+        print(f"{stage}: NOT emitted -- {len(clash)} target collision(s); "
+              f"the permutation is not consistent", file=sys.stderr)
+        return
+    left = sorted(diff - set(rows.values()))
+    if left:
+        # A shuffle within the stage is closed: every disagreeing name finds
+        # the constant holding its art. When names find NO home the cause is
+        # something else and a blanket demotion would be wrong.
+        #
+        # LAKE, 2026-09-19: 16 of 17 found no home, and the reason is not a
+        # copy at all -- msdos draws the hero from the SHARED bank and keeps a
+        # 2x5 per-frame companion locally, so the name landed on the
+        # companion. The art is not missing, it is in video2.rom. See
+        # notes/shared-bank-naming/cv_subject_from_other_port.py, which pairs
+        # those names to CV_ symbols and verifies each by extent.
+        #
+        # Emitting a demotion-only table here would have demoted seventeen
+        # names on a diagnosis this tool cannot make, so it refuses and says
+        # what to look at.
+        print(f"{stage}: NOT emitted -- {len(left)} of {len(diff)} "
+              f"disagreeing name(s) find no constant holding their art, so "
+              f"this is not a\n  shuffle within the stage. Check whether the "
+              f"art moved to the shared bank before\n  demoting anything: "
+              f"{left[:4]}{' ...' if len(left) > 4 else ''}",
+              file=sys.stderr)
+        return
+    base = (f"Cross-port name audit: {len(diff)} shared semantic name(s) in "
+            f"{stage} disagreed about their art between the priority ports, "
+            f"the signature of a name copied by EQU-table index rather than "
+            f"earned on this port's render (#0107). Identity is extent and "
+            f"leaf count measured in each port's own ROM slab, never an "
+            f"index. The set resolves to one consistent permutation of "
+            f"{len(rows)} constants with no target collision.")
+    with out.open("w") as f:
+        f.write("| constant | proposed name | confidence | evidence |\n")
+        f.write("| --- | --- | --- | --- |\n")
+        for src, dst in sorted(rows.items(),
+                               key=lambda kv: (bool(RE_NUM.match(kv[1])),
+                                               kv[1])):
+            if RE_NUM.match(dst):
+                ev = (f"{base} Demotion: this symbol's art is not what its "
+                      f"name claims and no other name matches it, so it "
+                      f"returns to the index its EQU table position gives. A "
+                      f"false name is worse than a number.")
+            else:
+                ev = (f"{base} This constant's art equals amiga's `{dst}` in "
+                      f"extent and leaf count, so the name belongs here.")
+            f.write(f"| {src} | {dst} | high | {ev} |\n")
+    print(f"{stage}: wrote {out} -- {len(rows)} row(s), "
+          f"{sum(1 for v in rows.values() if RE_NUM.match(v))} "
+          f"demotion(s); every disagreeing name found a home")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--stage", action="append")
+    ap.add_argument("--proposals", type=Path,
+                    help="write the msdos correction as a rename table: the "
+                         "whole permutation, promotions and demotions "
+                         "together, which is the only way it can be applied")
     ap.add_argument("--suggest", action="store_true",
                     help="for each disagreement, the other port's constant "
                          "whose art matches")
@@ -129,6 +221,10 @@ def main() -> int:
             for n, a in art[p].items():
                 if a:
                     rev[p][a].append(n)
+
+        if args.proposals:
+            emit_permutation(stage, tabs, art, rev, args.proposals)
+            continue
 
         for name in tabs["amiga"]:
             if RE_NUM.match(name) or name not in tabs["msdos"]:
