@@ -120,9 +120,18 @@ seventeen to `render_scene_composite.py` at a common anchor stacks them into a
 single 23 x 7 blob rather than laying them out. The output is below; it is not
 a picture of anything.
 
-Placing them by their authored boxes needs a compositor that reads the polygon
-records' own coordinates, which `polygon_extent.py` reports and the SVG
-renderer throws away. That is the tool gap, and it is the real blocker now.
+Placing them by their authored boxes needed a compositor that reads the
+polygon records' own coordinates. `compose_at_authored_coords.py` beside this
+file is that tool -- it trims each rendered SVG to its ink and pastes it at the
+box `polygon_extent.py` reports.
+
+**4. Run with the right tool, the answer is that there is no assembled
+picture.** All seventeen land in the SAME 6x2 character box: the overlay fills
+six cells on the top row and one at the left of the bottom row, which is
+exactly the union of the per-constant extents in the table above. They are
+**alternatives selected by `[0x05]`, not pieces of one image**, so no composite
+could ever have assembled them. The experiment this file recommended was not
+merely unsupported by the tooling -- its premise was wrong.
 
 **What is still missing** is only the text: which characters each string
 spells. That needs a glyph-by-glyph comparison against the stage's own font at
