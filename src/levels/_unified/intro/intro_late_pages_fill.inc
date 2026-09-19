@@ -329,7 +329,7 @@ DRAW_CIN_182_AT_187_101_LOOP:
 ; CINEMATIC_HOLO_CONSOLE_WIREFRAME_CUBE_CORNER_TOP_RIGHT (amiga 0xF2CC). Same x/y, different subject, so this
 ; is a content difference and not an offset-table difference.
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_PARTICLE_LAB_BG_F3, x=187, y=101
+	video offset=CINEMATIC_176, x=187, y=101
 .else
 	video offset=CINEMATIC_182, x=187, y=101
 .endif

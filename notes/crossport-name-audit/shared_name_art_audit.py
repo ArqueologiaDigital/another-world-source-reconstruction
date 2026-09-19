@@ -275,7 +275,7 @@ def check_sides(stages: dict) -> int:
 
 
 def emit_permutation(stage: str, tabs: dict, art: dict, rev: dict,
-                     out: Path) -> None:
+                     out: Path, fix: str = "msdos") -> None:
     """The correction as ONE rename table, promotions and demotions together.
 
     A correction is a permutation and cannot be applied a row at a time: the
@@ -288,20 +288,47 @@ def emit_permutation(stage: str, tabs: dict, art: dict, rev: dict,
     refuses any that disagree, so this file proposing a wrong index cannot
     turn into a wrong index on disk.
     """
-    order = list(tabs["msdos"])
+    ref = "amiga" if fix == "msdos" else "msdos"
+    order = list(tabs[fix])
     idx = {n: i for i, n in enumerate(order)}
-    shared = [n for n in tabs["amiga"]
-              if not RE_NUM.match(n) and n in tabs["msdos"]]
+    shared = [n for n in tabs[ref]
+              if not RE_NUM.match(n) and n in tabs[fix]]
     diff = {n for n in shared
-            if art["amiga"][n] and art["msdos"][n]
-            and art["amiga"][n][0] != art["msdos"][n][0]}
+            if art[ref][n] and art[fix][n]
+            and art[ref][n][0] != art[fix][n][0]}
+    if fix != "msdos":
+        # No stage-level guard protects this direction, so it is strict:
+        # only families the draw-order test says the REFERENCE port got
+        # right, and the port being fixed got wrong. A name with no indexed
+        # family has no direction evidence and is left alone.
+        keep = set()
+        for n in diff:
+            m = RE_FAM.match(n)
+            if not m:
+                continue
+            base, sep = m.group(1), m.group(2)
+            nr, cr = concordance(stage, base, sep, ref)
+            nf, cf = concordance(stage, base, sep, fix)
+            if min(nr, nf) >= 3 and cr > 0.6 and cf < 0.6:
+                keep.add(n)
+        dropped = len(diff) - len(keep)
+        diff = keep
+        if not diff:
+            print(f"{stage}: nothing to emit for --fix {fix} -- no family "
+                  f"has draw-order evidence that {ref} is the one that got "
+                  f"it right", file=sys.stderr)
+            return
+        if dropped:
+            print(f"{stage}: --fix {fix} covers {len(diff)} of "
+                  f"{len(diff) + dropped} disagreement(s); the rest have no "
+                  f"direction evidence", file=sys.stderr)
     owner: dict = collections.defaultdict(list)
     for n in shared:
-        if art["amiga"][n]:
-            owner[art["amiga"][n][0]].append(n)
+        if art[ref][n]:
+            owner[art[ref][n][0]].append(n)
     rows: dict[str, str] = {}
     for n in order:
-        a = art["msdos"][n]
+        a = art[fix][n]
         cands = ([x for x in owner.get(a[0], []) if x in diff]
                  if a else [])
         if len(cands) == 1 and cands[0] != n:
@@ -313,7 +340,8 @@ def emit_permutation(stage: str, tabs: dict, art: dict, rev: dict,
         print(f"{stage}: NOT emitted -- {len(clash)} target collision(s); "
               f"the permutation is not consistent", file=sys.stderr)
         return
-    worse = better_ordered_elsewhere(diff, tabs, art, stage)
+    worse = (better_ordered_elsewhere(diff, tabs, art, stage)
+             if fix == "msdos" else [])
     if worse:
         print(f"{stage}: NOT emitted -- this would rewrite msdos to match "
               f"amiga, and amiga is not\n  evidently the port that got it "
@@ -364,7 +392,7 @@ def emit_permutation(stage: str, tabs: dict, art: dict, rev: dict,
                       f"false name is worse than a number.")
             else:
                 ev = (f"{base} This constant's polygon tree is identical to "
-                      f"amiga's `{dst}` -- same md5 over every vertex, not "
+                      f"{ref}'s `{dst}` -- same md5 over every vertex, not "
                       f"merely the same extent -- so the name belongs here.")
             f.write(f"| {src} | {dst} | high | {ev} |\n")
     print(f"{stage}: wrote {out} -- {len(rows)} row(s), "
@@ -379,6 +407,12 @@ def main() -> int:
                     help="write the msdos correction as a rename table: the "
                          "whole permutation, promotions and demotions "
                          "together, which is the only way it can be applied")
+    ap.add_argument("--fix", choices=sorted(PORTS), default="msdos",
+                    help="which port's names to rewrite. The default, msdos, "
+                         "treats amiga as authoritative and is refused for a "
+                         "stage where that is not evident. `--fix amiga` is "
+                         "the other direction and is strict: it emits only "
+                         "families the draw-order test says msdos got right.")
     ap.add_argument("--sides", action="store_true",
                     help="independent per-port check: does a family named "
                          "LEFT/RIGHT actually sit left/right of its anchor?")
@@ -448,7 +482,8 @@ def main() -> int:
                     rev[p][a[0]].append(n)
 
         if args.proposals:
-            emit_permutation(stage, tabs, art, rev, args.proposals)
+            emit_permutation(stage, tabs, art, rev, args.proposals,
+                             args.fix)
             continue
 
         for name in tabs["amiga"]:
