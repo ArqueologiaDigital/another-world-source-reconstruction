@@ -965,7 +965,7 @@ LABEL_AAE9:
 	setup channel=0x21, address=LABEL_20FC
 
 LABEL_AB02:
-	setup channel=0x04, address=LABEL_203D
+	setup channel=0x04, address=CAVES_WATERFALL_DRIP_LOOP
 	setup channel=0x01, address=LABEL_2026
 	setup channel=0x3B, address=CAVES_WATERFALL_BACKDROP_HOLD_LOOP
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED

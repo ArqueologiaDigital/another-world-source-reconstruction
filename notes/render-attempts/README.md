@@ -27,6 +27,7 @@ not targets.
 | run | what it turned out to be |
 |---|---|
 | amiga/CAVES 438..447, `LABEL_26EE` | **Named.** A blue burst, 15x14 growing to 88x93 and dispersing to 74x67, drawn at the hero's x and at the exact y the concurrent landing routine sets. `CINEMATIC_CAVES_LANDING_SPLASH_F0..F9`, and the routine `CAVES_HERO_LANDING_SPLASH`. |
+| amiga/CAVES 301..309, `LABEL_203D` | **Named.** Not the bands the magnified thumbnail showed -- specks: 0x1, 1x1, 2x1, 1x2, then 1x4, 0x7, 1x11 elongating downward, then 6x3 and 12x2 flattening, the shape descending y 62..64 to 76..78 in its own frame. Installed on channel 0x04 in the same block as `CAVES_WATERFALL_BACKDROP_HOLD_LOOP`, at fixed y=0xA6 with x alternating between two spots 16px apart. `CINEMATIC_CAVES_WATERFALL_DRIP_F0..F8`, routine `CAVES_WATERFALL_DRIP_LOOP`. |
 | msdos/TANK 106..111, `LABEL_0692` | **Routine named.** A white core expanding inside a tan rim under sound 0x5B on all four channels; installed after a delay and falling into `TANK_ARENA_ATTACK_FINAL_HIT_UNLESS_ESCAPED`. `TANK_ARENA_ATTACK_BLAST_SEQUENCE`. Its constants are NOT named: the set mixes the growing flash with 112, 114, 115 and 118 reused as layers, which is not one indexed family. |
 
 ## Rendered and NOT resolved
@@ -40,13 +41,18 @@ hope.
 | amiga/CAVES 514..524, 857..867 (`LABEL_3CD9`, `LABEL_3813`) | one flesh-coloured limb, 16x2 to 7x6, sweeping out and back; the two runs are the same animation mirrored, ten of ten steps opposite | which limb, and whether it is a limb at all. See `../hero-direction-machine/layer_colour_census.py` |
 | amiga/CAVES 480..490 (`LABEL_3BA3`) | a symmetric pair of the same flesh-coloured marks, overhead sweep | same |
 | amiga/CAVES 213..222 (`LABEL_0885`) | grey field with black cracks spreading, plus bright blue-white blobs at 213, 215, 218, 219 | **Not** the laser impacts, tested and excluded: the run measures 99x74 to 186x128 with 5 to 15 leaves and the whole `CINEMATIC_CAVES_LASER_IMPACT_*` family measures 54x68 down to 23x7, sharing no md5 with it. So it is a large cracked surface with flashes, drawn at `[0xED],[0xEE]` which its installer sets to x=160, under sounds 0x59 and 0x6F. What breaks, and what the flashes are, is still open. |
-| amiga/CAVES 301..309 (`LABEL_203D`) | horizontal blue and grey bands, wide then narrowing then broken | drawn at y=0xA6 fixed with x from `[0x3D]`; a band is not a subject |
+
 | amiga/PRISON 540..548 (`DRAW_CIN_540_543_WITH_SFX_57`) | dark purple curved bars, then a large purple fill, then bars again, under sound 0x57 | drawn at `[0x1A],[0x1B]`, which the installer sets to the same point as CINEMATIC_081/082/083 — so it is a layer over that scene element, and the shape alone settles nothing |
 | amiga/INTRO 112, 184, 430; amiga/TANK 100 | 1x6, 29x14, 16x9 and 6x12 specks; two are teal diagonal streaks | these gate the last ~18 unnamed routines in INTRO and TANK, and at that size a render is a handful of magnified pixels |
 
+A second lesson from the same run: **read the extents before the montage.**
+CAVES 301..309 sat in the unresolved table as "horizontal blue and grey
+bands" because a nine-pixel speck blown up to 210px tall looks like a band.
+The extents said 0x1 and 1x11, and the animation read immediately.
+
 ## The standing lesson
 
-Six of the seven runs above rendered *legibly* and still could not be named.
+Most of the runs above rendered *legibly* and still could not be named.
 Legibility is not identification: `CAVES_LANDING_SPLASH` was nameable because
 the **code** placed it — same x as the hero, same y as the landing, running
 concurrently with a routine already named from its own evidence — not because
