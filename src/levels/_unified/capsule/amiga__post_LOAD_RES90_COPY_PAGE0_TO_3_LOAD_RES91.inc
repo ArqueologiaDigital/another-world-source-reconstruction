@@ -46,7 +46,7 @@ LABEL_7F66:
 	ret
 
 
-LABEL_7F7E:
+CAPSULE_BATHS_SCENE_INIT:
 	mov [0x46], 0xF060
 	mov [0x47], 0x0FA0
 	mov [0x42], 0x006E
@@ -56,7 +56,7 @@ LABEL_7F7E:
 	mov [0x41], 0x0082
 	mov [0x40], 0x008F
 	setPalette 0x01
-	call LOAD_RES90_COPY_PAGE0_TO_3_LOAD_RES91
+	call LOAD_BATHS_BACKDROP_PAGES
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x01, address=INLINE_SET_VARED_TO_6
 	setup channel=0x03, address=INLINE_SET_VARE8_TO_F

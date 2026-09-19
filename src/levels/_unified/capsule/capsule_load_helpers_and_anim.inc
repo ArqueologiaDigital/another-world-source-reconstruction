@@ -1,4 +1,4 @@
-LOAD_RES90_COPY_PAGE0_TO_3_LOAD_RES91:
+LOAD_BATHS_BACKDROP_PAGES:
 	load id=0x0090
 	copyVideoPage src=0x00, dst=0x03
 	load id=0x0091
