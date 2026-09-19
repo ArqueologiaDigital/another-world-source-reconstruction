@@ -52,10 +52,30 @@ It also explains a row in `notes/crossport-name-audit/`. msdos/LAKE's
 17x39 with six. That looked like more by-index copying, but it is not quite:
 msdos draws the hero from `CV_5340` and keeps a 2x5 companion locally, and the
 name landed on the companion. Sixteen names in that stage are in the same
-position, on a contiguous run of 2x5 marks spaced 0x0A apart. The name is
-still false where it sits -- a 2x5 mark is not a running figure -- but the
-correction is a demotion plus a row in the table above, not a shuffle within
-the stage.
+position, on a contiguous run of 2x5 marks spaced 0x0A apart.
+
+What the companion IS can be read off the run itself, and it is why this was
+not "fixed" by demoting. `CINEMATIC_HERO_SHADOW` sits at 0xDFFC **inside that
+same run**, correctly named, drawn 28 times in msdos/LAKE and never once in
+amiga/LAKE, always in the same shape of site: `DRAW_HERO_WALK_LEFT_F9` draws
+`CV_0020` and then `CINEMATIC_HERO_SHADOW` at one x and y. The run is the
+hero's per-frame shadow, and seventeen of its eighteen records carry a
+hero-frame name they did not earn.
+
+Still not renamed here, for two reasons worth stating rather than working
+around:
+
+  * msdos/LAKE has 669 `CINEMATIC_*` EQUs and **no numeric ones** -- it was
+    the naming pilot and is fully named -- so "demote to the index" has no
+    spelling in that stage. I generated exactly that batch and the family-gap
+    rule rejected it, which was the tool being right.
+  * the run is 18 group records with only 6 distinct headers, and amiga's own
+    `CINEMATIC_HERO_RUN_LEFT_0` measures 17x39 with 6 leaves against its
+    neighbours' ~80x66 with 10, so amiga's side may not be uniform either.
+
+That wants a shadow-family pass over msdos/LAKE with renders, which is a
+different job from this audit. The audit's emitter refuses LAKE already; the
+refusal now has a diagnosis behind it rather than just a symptom.
 
 Usage
 -----
