@@ -56,6 +56,21 @@ Usage
 
 `--pool` prints the wider 799 instead, grouped by drawer, for picking further
 batches by hand. Those need a render; the default list does not.
+
+A second, weaker rule: `--animations`
+-------------------------------------
+A named routine whose WHOLE draw set is still numeric and is drawn nowhere
+else is an animation whose frames can take the routine's name indexed by draw
+order. 63 routines and 322 constants qualify on the two priority ports -- but
+"frames" has to be earned, so the anchor decides it: **one anchor for every
+draw means frames of one thing; several anchors mean props along a path**,
+and a prop needs identifying on its own. That split is 44 routines / 205
+constants fixed against 19 / 117 moving.
+
+It still needs the mechanism filter above, which is why this mode reports
+rather than proposes. `FILL_PAGE_00_COLOR_08` and
+`TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C` both pass every structural test and
+neither name describes its art.
 """
 
 from __future__ import annotations
@@ -77,6 +92,16 @@ RE_LABEL = re.compile(r"^([A-Za-z_]\w*):")
 RE_DRAW = re.compile(r"video\s+(?:type=\d+,\s*)?offset=([A-Za-z_]\w*)")
 RE_ACTOR = re.compile(r"x=\[0x07\]\s*,\s*y=\[0x08\]")
 RE_NUM = re.compile(r"^CINEMATIC_\d+$")
+RE_V = re.compile(r"video\s+(?:type=\d+,\s*)?offset=([A-Za-z_]\w*)\s*,"
+                  r"\s*x=(\S+?)\s*,\s*y=(\S+?)(?:\s*,|\s*$)")
+# A routine's name has to denote a SUBJECT for its art to inherit it. These
+# denote a mechanism, a timer or a side effect, and the art they happen to
+# draw is not "a page fill" or "a random delay". Found by reading the
+# fixed-anchor list, not guessed: every one of these is a real row it would
+# otherwise have proposed.
+MECHANISM = ("FILL_PAGE", "RANDOM_DELAY", "PLAY_SOUND", "ENTRY_POINT",
+             "SET_VAR", "COPY_", "JUMP_TO", "KILL_CHANNEL", "SETUP_CHAN",
+             "_AT_RET", "FOLD_BODY", "DEDUP")
 
 
 def parse(path: Path) -> dict[str, list[str]]:
@@ -98,6 +123,10 @@ def parse(path: Path) -> dict[str, list[str]]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--pool", action="store_true")
+    ap.add_argument("--animations", action="store_true",
+                    help="the second, weaker rule: a named routine whose "
+                         "WHOLE draw set is unnamed and exclusive to it, "
+                         "split by whether the anchor is fixed")
     ap.add_argument("--proposals", type=Path)
     ap.add_argument("--port", action="append", choices=sorted(PORTS))
     args = ap.parse_args()
@@ -139,6 +168,53 @@ def main() -> int:
                     skipped["derived name already taken"] += 1
                     continue
                 rows.append((port, stage, const, new))
+
+    if args.animations:
+        fixed: list = []
+        moving: list = []
+        mech = 0
+        for port in args.port or sorted(PORTS):
+            for stage in STAGES:
+                path = ROOT / "src" / "levels" / PORTS[port] / f"{stage}.asm"
+                if not path.is_file():
+                    continue
+                bodies = parse(path)
+                seen: dict[str, set[str]] = collections.defaultdict(set)
+                for lab, body in bodies.items():
+                    for line in body:
+                        for m in RE_V.finditer(line):
+                            seen[m.group(1)].add(lab)
+                for lab, body in bodies.items():
+                    if classify(lab) != "semantic":
+                        continue
+                    vs = [(m.group(1), m.group(2), m.group(3))
+                          for line in body for m in RE_V.finditer(line)]
+                    uniq = list(dict.fromkeys(c for c, _, _ in vs))
+                    if len(uniq) < 2 or not all(RE_NUM.match(c) for c in uniq):
+                        continue
+                    if any(seen[c] != {lab} for c in uniq):
+                        continue
+                    if any(RE_ACTOR.search(line) for line in body):
+                        continue
+                    if any(t in lab for t in MECHANISM):
+                        mech += 1
+                        continue
+                    anchors = {(x, y) for _, x, y in vs}
+                    row = (port, stage, lab, uniq, sorted(anchors)[0])
+                    (fixed if len(anchors) == 1 else moving).append(row)
+        nf = sum(len(r[3]) for r in fixed)
+        nm = sum(len(r[3]) for r in moving)
+        print(f"fixed anchor  -> frames of ONE animation: "
+              f"{len(fixed)} routines, {nf} constants")
+        print(f"moving anchor -> props along a path:      "
+              f"{len(moving)} routines, {nm} constants")
+        print(f"({mech} routine(s) dropped: the name denotes a mechanism, "
+              f"not a subject)\n")
+        for port, stage, lab, uniq, anc in sorted(fixed,
+                                                  key=lambda r: -len(r[3])):
+            print(f"  {port}/{stage:<9} {lab:<48} {len(uniq):>3} frames "
+                  f"at {anc[0]},{anc[1]}")
+        return 0
 
     if args.pool:
         by: dict[str, list[str]] = collections.defaultdict(list)
