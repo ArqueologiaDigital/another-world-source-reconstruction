@@ -6,7 +6,37 @@
 | `named_art_only.py` | One layer up: how many unnamed routines with a body draw **only** polygons that already carry a name, so the art has settled their subject at E3 and the routine inherits it? | `python3 notes/caller-derived-naming/named_art_only.py` · `… --port amiga --stage CAVES --list` |
 | `art_with_named_drawers.py` | The inverse: which still-numeric `CINEMATIC_<n>` constants are drawn **only** by routines that already have a name, so the render can be opened with a caption in hand? Groups them by the stem the drawing routines share, because a shared stem is a run to render together. | `python3 notes/caller-derived-naming/art_with_named_drawers.py` · `… --port amiga --stage PRISON --list` |
 
-### The two are not the same lever, and the PRISON pass showed it
+| `what_blocks_the_rest.py` | Of the unnamed routines that are left, how many are blocked by plan item T7 (they draw only from the un-re-keyed `COMMON_VIDEO` bank) or by #0138 (they draw at the shared `[0x07],[0x08]` actor record), rather than merely being hard? | `python3 notes/caller-derived-naming/what_blocks_the_rest.py --families` |
+
+### T7 and #0138 gate 15%, not the bulk — and that corrects a guess
+
+Working CAVES' largest families by hand kept hitting those two walls, which
+made it look as though the remaining bulk was blocked on them. Measured, it is
+not:
+
+```
+port/stage          unnamed  CV-only (T7)  actor slot   both  neither
+amiga/PRISON           1166           166           0      0     1000
+amiga/CAVES            1738            86          91    123     1438
+amiga/CAPSULE          1103           192           0      0      911
+msdos/PRISON           1275           171           0      0     1104
+msdos/CAVES            1883            89          96    124     1574
+msdos/CAPSULE          1714           196           0      0     1518
+TOTAL                  8879           900         187    247     7545
+```
+
+**1,334 of 8,879, 15%.** The other 7,545 are not blocked on anything external;
+they are simply hard, and need the per-family reading the 2026-09-12 and
+2026-09-14 passes did. Worth knowing before anyone waits on T7 to unblock the
+project — it would unblock a ninth of it.
+
+Two details the split makes visible. The actor-record block is **CAVES-only**:
+PRISON and CAPSULE have zero routines drawing at `[0x07],[0x08]`, so #0138 is a
+one-stage problem despite being phrased generally. And the `COMMON_VIDEO`-only
+block is heaviest in CAPSULE (192 and 196), which is also the stage whose banks
+do not correspond across ports at all.
+
+### The two art probes are not the same lever, and the PRISON pass showed it
 
 `art_with_named_drawers.py` orders constants by **how cheap they are to
 identify**. That is not the same as how much they unblock. The 42 cage
