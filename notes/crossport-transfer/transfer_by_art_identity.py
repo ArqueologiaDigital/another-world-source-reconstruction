@@ -33,10 +33,35 @@ family must not open a hole the source does not have.
 
 Result on 2026-09-19
 --------------------
-279 constants qualify: 263 msdos (INTRO 204, CAVES 40, CAPSULE 14, TANK 5)
+278 constants qualify: 262 msdos (INTRO 203, CAVES 40, CAPSULE 14, TANK 5)
 and 16 amiga (INTRO 12, CAVES 2, CAPSULE 2). The asymmetry is itself a fact
 worth recording -- amiga is where most of the naming was done, so it is
 mostly amiga's names that have somewhere to go.
+
+**71 applied, 203 blocked.** Everything outside msdos/INTRO went in: amiga
+CAVES 2, amiga CAPSULE 2, msdos TANK 5, amiga INTRO 12, msdos CAPSULE 8 of
+14 (the rename validator held the other 6 on its own family-gap rule), msdos
+CAVES 40.
+
+msdos/INTRO's 203 are refused by the tree, not by the evidence. Applying
+them leaves 42 undefined references and takes verify-unified to 26/29, and
+extending the rename to cartridge_1992 and gba_2004 -- the fix that worked
+for LAKE's three-port arms -- does not change either number. The references
+that break are names like `CINEMATIC_CARPARK_NEAR_PILLAR` and
+`CINEMATIC_IDENT_SCREEN_GRATICULE`, read from shared chunks by the 1992
+ports while defined in amiga-only blocks; INTRO's chunks will have to be
+restructured before this batch can land, the same conclusion LAKE reached
+before its shadow rename went in at the fourth attempt.
+
+Applying also needs a step this probe does not do. Where the unified tree
+defines a transferred name UNCONDITIONALLY, that definition belongs to the
+SOURCE port: the destination's new definition is overridden by it and the
+destination's bytes move, with every symbol still defined, so
+undefined_symbols.py stays clean and only the byte gate notices. Scope it to
+the source port's branches -- byte-neutral, EQU lines emit nothing. Thirteen
+such definitions across INTRO and CAPSULE. And scope only the names actually
+applied: scoping one that was rejected breaks the port that still relies on
+it, which cost a revert here.
 
 Usage
 -----
