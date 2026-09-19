@@ -919,7 +919,7 @@ LABEL_AA4F:
 	mov [0x44], 0x0084
 	mov [0x45], 0x0000
 	setPalette 0x06
-	call LABEL_D0DF
+	call CAVES_LOAD_WATERFALL_BACKDROP
 	setup channel=0x21, address=KILL_CHANNEL_LANDING
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	setup channel=0x3C, address=FRAME_PRESENT_RESTORE_PAGE_3_LOOP

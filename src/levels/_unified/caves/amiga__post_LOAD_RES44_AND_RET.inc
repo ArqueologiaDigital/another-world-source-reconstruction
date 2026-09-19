@@ -303,7 +303,7 @@ DRAW_WATERFALL_LEFT_STAIRS_BG:
 LABEL_D0DE:
 	db 0x11
 
-LABEL_D0DF:
+CAVES_LOAD_WATERFALL_BACKDROP:
 	fill page=0x00, color=0x00
 	fill page=0x03, color=0x00
 	load id=0x0043

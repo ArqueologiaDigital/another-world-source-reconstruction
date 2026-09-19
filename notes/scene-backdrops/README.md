@@ -1,0 +1,55 @@
+# The twelve background bitmaps, and which routine loads each
+
+A scene's identity is often **not in the polygon bank**. `notes/render-
+attempts/` measured that eight of the ten largest unnamed polygon runs left
+in the big three have no semantically-named routine anywhere in their setup
+block — and chasing one showed why: amiga/CAPSULE's baths scene installs
+eleven channels whose art is 13x24 to 71x68, all small animated elements,
+because the backdrop is a 320x200 bitmap resource that no polygon probe can
+see.
+
+`render_backdrop.py` decodes them. Twelve resources in the whole game are
+32,000 bytes (320*200 at 4bpp), and all twelve are legible.
+
+## What they are
+
+| res | image | loaded by | palette |
+|---|---|---|---|
+| 0x12 | the Interplay logo | — | — |
+| 0x13 | the "Out of This World" title, the US name | — | — |
+| 0x43 | a tall panel of falling vertical streaks framed left and right by stone blockwork | amiga/CAVES `LABEL_D0DF` | 0x06 |
+| 0x44 | a colonnade of arches over a walkway, open sky behind | amiga/CAVES `LOAD_RES44_AND_RET` | — |
+| 0x45 | pillars and a parapet walkway, stone arches below, sky, a small lit figure top-left | amiga/CAVES `LABEL_CDA8` | 0x08 |
+| 0x46 | a cavern of tall dripping columns over a pool | amiga/CAVES `LABEL_CDA8` | 0x08 |
+| 0x47 | "Delphine Software", (C) 1991 | — | — |
+| 0x48 | a cave interior, rock forms and a large round mass | amiga/PRISON `LABEL_018D` | 0x19 |
+| 0x49 | an open landscape: pale spires, curved black forms, a disc low in the sky | amiga/PRISON `LABEL_018D` | 0x19 |
+| 0x53 | the "Another World par Eric Chahi" title, the European name | — | — |
+| 0x90 | a dark interior of vertical structures with a dithered band | amiga/CAPSULE `LOAD_BATHS_BACKDROP_PAGES` | 0x01 |
+| 0x91 | **the baths** — a vaulted hall, columns, draped arches, a blue pool | amiga/CAPSULE `LOAD_BATHS_BACKDROP_PAGES` | 0x01 |
+
+The palette column matters: it is the one the calling scene's `setPalette`
+gives, and rendering with another produces a perfectly legible picture in
+the wrong colours. 0x43 read as "blue with orange streaks" at palette 1 and
+as gold-on-black masonry at its own 0x06.
+
+## What has been named from this
+
+- `CAPSULE_BATHS_SCENE_INIT` and `LOAD_BATHS_BACKDROP_PAGES`, both ports.
+  The scene is entered on `je [SCREEN_NUM], 0x4A`, and "baths" was already
+  the project's word for the place: `TANK_ARENA_EXIT_CAPSULES_RISE_TO_BATHS`
+  predates this.
+- `CAVES_LOAD_WATERFALL_BACKDROP` for `LABEL_D0DF`. 0x43 is a curtain of
+  falling streaks between masonry, and CAVES already carries
+  `CINEMATIC_CAVES_WATERFALL_BG` and `CINEMATIC_CAVES_WATERFALL_DRIP_F0..F8`
+  named on their own evidence.
+
+## What is deliberately not named yet
+
+`LABEL_CDA8` loads two images, a cavern and a walkway, so one name will not
+cover it honestly. `LABEL_018D` loads a cave interior and an open landscape;
+the landscape is recognisable as the game's exterior vista but PRISON is an
+odd place for it and the pairing wants understanding first.
+
+Neither is blocked on the renderer. They are blocked on saying something
+about the picture that a reader could check.
