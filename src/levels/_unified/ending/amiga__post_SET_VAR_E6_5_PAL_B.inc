@@ -1,7 +1,7 @@
-ANIM_CIN_042_LOOP_VARE6:
+ENDING_SKY_SWEEP_FROM_RIGHT_PHASE_1:
 	video offset=CINEMATIC_042, x=160, y=100
 	break
-	djnz [0xE6], ANIM_CIN_042_LOOP_VARE6
+	djnz [0xE6], ENDING_SKY_SWEEP_FROM_RIGHT_PHASE_1
 	play id=0x0057, freq=0x0F, vol=0x20, channel=0x03
 	video offset=CINEMATIC_043, x=160, y=100
 	break
@@ -12,10 +12,10 @@ ANIM_CIN_042_LOOP_VARE6:
 	video offset=CINEMATIC_046, x=160, y=100
 	mov [0xE6], 0x0007
 
-LABEL_0517:
+ENDING_SKY_SWEEP_FROM_LEFT_PHASE_2:
 	break
 	video offset=CINEMATIC_046, x=160, y=100
-	djnz [0xE6], LABEL_0517
+	djnz [0xE6], ENDING_SKY_SWEEP_FROM_LEFT_PHASE_2
 	play id=0x0057, freq=0x0F, vol=0x20, channel=0x03
 	break
 	video offset=CINEMATIC_047, x=160, y=100
@@ -27,20 +27,20 @@ LABEL_0517:
 	video offset=CINEMATIC_050, x=160, y=100
 	mov [0xE6], 0x000A
 
-LABEL_053E:
+ENDING_SWEEP_HOLD_THEN_CUT_TO_CLOSEUP:
 	break
 	video offset=CINEMATIC_051, x=160, y=100
-	djnz [0xE6], LABEL_053E
-	setup channel=0x0A, address=ZOOM_LOOP_CIN_105
-	setup channel=0x0B, address=DRAW_CIN_101_102_FADE_PAL_C
-	setup channel=0x0C, address=DRAW_CIN_97_TO_100
-	setup channel=0x0D, address=LABEL_00AF
+	djnz [0xE6], ENDING_SWEEP_HOLD_THEN_CUT_TO_CLOSEUP
+	setup channel=0x0A, address=ENDING_CLOSEUP_SHOT_ZOOM_RAMP_DRIVER_LOOP
+	setup channel=0x0B, address=ENDING_BUDDY_HOLDS_LESTER_CLOSEUP_RISE
+	setup channel=0x0C, address=ENDING_CLOSEUP_SIDE_SILHOUETTE_RISE_FALL_LOOP
+	setup channel=0x0D, address=ENDING_CLOSEUP_SHOT_CUT_TO_FLY_AWAY_ENTRY
 	killChannel
 
-LABEL_0558:
-	call DRAW_STARS_PAGE0_CIN_000
-	call DRAW_STARS_PAGE3_CIN_004
-	setup channel=0x05, address=HANG_DRAWING_CIN_071
+ENDING_DRAW_STARS_BG_PLAY_SOUND_08:
+	call ENDING_CLOUD_SKY_BACKDROP_PAGE_0
+	call ENDING_CLOUD_SKY_BACKDROP_PAGE_3
+	setup channel=0x05, address=PTERANODON_HEAD_LOWERED_HOLD_LOOP
 	selectVideoPage 0x00
 	play id=0x0008, freq=0x05, vol=0x20, channel=0x00
 	play id=0x0008, freq=0x07, vol=0x30, channel=0x01
@@ -54,10 +54,10 @@ LABEL_0558:
 	mov [0x02], 0x0064
 	setPalette 0x0A
 
-DELAY_LOOP_VAR03:
+LESTER_PRONE_ARRIVAL_DELAY:
 	break
-	djnz [0x03], DELAY_LOOP_VAR03
-	setup channel=0x05, address=DRAW_CIN_71_72_FADE
+	djnz [0x03], LESTER_PRONE_ARRIVAL_DELAY
+	setup channel=0x05, address=PTERANODON_HEAD_RAISE_ANIM
 	video offset=CINEMATIC_011, x=[0x01], y=[0x02]
 	play id=0x0008, freq=0x0A, vol=0x16, channel=0x00
 	play id=0x0057, freq=0x14, vol=0x20, channel=0x02
@@ -70,30 +70,30 @@ DELAY_LOOP_VAR03:
 	play id=0x000E, freq=0x03, vol=0x20, channel=0x03
 	mov [0x03], 0x0014
 
-LABEL_05C7:
+LESTER_PRONE_TERRACE_HOLD:
 	break
 	video offset=CINEMATIC_015, x=[0x01], y=[0x02]
-	djnz [0x03], LABEL_05C7
+	djnz [0x03], LESTER_PRONE_TERRACE_HOLD
 	mov [PAUSE_SLICES], 0x000A
 	mov [0x03], 0x0006
 	play id=0x000F, freq=0x03, vol=0x30, channel=0x03
 	break
 	play id=0x0008, freq=0x07, vol=0x11, channel=0x01
 
-LABEL_05E6:
+LESTER_PRONE_DRAW_THEN_CREDITS_MUSIC_CUE:
 	video offset=CINEMATIC_014, x=[0x01], y=[0x02]
 	break
 	video offset=CINEMATIC_014, x=[0x01], y=[0x02]
 	break
-	jne [0x03], 0x04, LABEL_0604
+	jne [0x03], 0x04, LESTER_PRONE_CYCLE_AMBIENT_FADE_DOWN_CASE_03
 	song id=0x008A, delay=0x3A98, pos=0x00
 	play id=0x0008, freq=0x0A, vol=0x16, channel=0x00
 
-LABEL_0604:
-	jne [0x03], 0x03, LABEL_0610
+LESTER_PRONE_CYCLE_AMBIENT_FADE_DOWN_CASE_03:
+	jne [0x03], 0x03, LESTER_PRONE_CYCLE_SLOWDOWN_LOOP
 	play id=0x0008, freq=0x0A, vol=0x0B, channel=0x00
 
-LABEL_0610:
+LESTER_PRONE_CYCLE_SLOWDOWN_LOOP:
 	video offset=CINEMATIC_013, x=[0x01], y=[0x02]
 	break
 	add [0x01], 0x0002
@@ -117,14 +117,14 @@ LABEL_0610:
 	video offset=CINEMATIC_014, x=[0x01], y=[0x02]
 	break
 	add [PAUSE_SLICES], 0x0002
-	djnz [0x03], LABEL_05E6
+	djnz [0x03], LESTER_PRONE_DRAW_THEN_CREDITS_MUSIC_CUE
 	mov [PAUSE_SLICES], 0x0006
 	video offset=CINEMATIC_019, x=[0x01], y=[0x02]
-	setup channel=0x14, address=INIT_VARS_07_08_09
+	setup channel=0x14, address=ALIEN_ARRIVAL_POSITION_INIT
 
-LABEL_0669:
+LESTER_PRONE_BODY_LOOP:
 	break
 	video offset=CINEMATIC_020, x=[0x01], y=[0x02]
-	jmp LABEL_0669
+	jmp LESTER_PRONE_BODY_LOOP
 LABEL_0672:
 	db 0x11

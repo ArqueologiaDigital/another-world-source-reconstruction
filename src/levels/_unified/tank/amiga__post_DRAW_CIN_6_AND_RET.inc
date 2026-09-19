@@ -14,7 +14,7 @@ TANK_BACKDROP_BUILD_BOTH_PAGES:
 	ret
 
 
-DRAW_CIN_113_114_AND_RET:
+TANK_HULL_BODY_AND_DETAIL_STAMP:
 	video offset=CINEMATIC_113, x=[0x0f], y=[0x10]
 	video offset=CINEMATIC_114, x=[0x0f], y=[0x10]
 	ret

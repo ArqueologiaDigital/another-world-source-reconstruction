@@ -7,7 +7,7 @@ DELETE_ALL_CHANS_AND_KILL:
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-PRELOAD_RESOURCES_8_TO_1:
+ENDING_RESOURCE_PRELOAD:
 	load id=0x0008
 	load id=0x008A
 	load id=0x0081

@@ -2,7 +2,7 @@ LABEL_05EA:
 	setup channel=0x34, address=RESET_PAGES_AND_SETUP_CH_0A
 	mov [0x6B], 0x0019
 	killChannel
-	jmp INLINE_SET_VAR6B_TO_50
+	jmp TANK_ARENA_COUNTDOWN_ENTRY
 
 LABEL_05F6:
 	video offset=CINEMATIC_144, x=160, y=100
@@ -208,7 +208,7 @@ LABEL_0827:
 	break
 	call LABEL_0848
 	je [HERO_ACTION], 0x00, LABEL_0827
-	setup channel=0x00, address=LABEL_0004
+	setup channel=0x00, address=TANK_STAGE_BOOT_ENTRY
 	killChannel
 
 LABEL_0848:

@@ -1,6 +1,6 @@
-DELAY_LOOP_VAR09:
+ALIEN_ARRIVAL_DELAY_THEN_DISSOLVE_IN:
 	break
-	djnz [0x09], DELAY_LOOP_VAR09
+	djnz [0x09], ALIEN_ARRIVAL_DELAY_THEN_DISSOLVE_IN
 	play id=0x0057, freq=0x0F, vol=0x20, channel=0x03
 	video offset=CINEMATIC_021, x=[0x07], y=[0x08]
 	break
@@ -9,20 +9,20 @@ DELAY_LOOP_VAR09:
 	video offset=CINEMATIC_023, x=[0x07], y=[0x08]
 	mov [0x09], 0x000A
 
-LABEL_069F:
+ALIEN_STAND_HOLD_THEN_WALK_START:
 	break
 	video offset=CINEMATIC_024, x=[0x07], y=[0x08]
 	video offset=CINEMATIC_025, x=[0x07], y=[0x08]
-	djnz [0x09], LABEL_069F
-	setup channel=0x11, address=DRAW_CIN_024_LOOP
+	djnz [0x09], ALIEN_STAND_HOLD_THEN_WALK_START
+	setup channel=0x11, address=ALIEN_WALK_HEAD_LOOP
 	setup channel=0x12, address=DRAW_COMMON_VIDS_148_151_152_153
 	setup channel=0x13, address=DRAW_COMMON_VIDS_149_141_137_10
-	setup channel=0x0C, address=DRIFT_VAR07_PLUS_2_3X
+	setup channel=0x0C, address=ENDING_X_SLIDE_RIGHT_ACCEL
 	mov [0x09], 0x0010
 
-DELAY_LOOP_VAR09_AT_06C2:
+ALIEN_WALK_DELAY_THEN_KNEEL:
 	break
-	djnz [0x09], DELAY_LOOP_VAR09_AT_06C2
+	djnz [0x09], ALIEN_WALK_DELAY_THEN_KNEEL
 	setup channel=0x0C, address=KILL_CHANNEL_LANDING
 	deleteChannels first=0x11, last=0x13
 	break
@@ -37,13 +37,13 @@ DELAY_LOOP_VAR09_AT_06C2:
 	video offset=CINEMATIC_030, x=[0x07], y=[0x08]
 	break
 	video offset=CINEMATIC_031, x=[0x07], y=[0x08]
-	setup channel=0x05, address=DRAW_CIN_106_107_FX_57
+	setup channel=0x05, address=PTERANODON_HEAD_BEAK_OPEN_ANIM
 	mov [0x09], 0x000A
 
-LABEL_06FB:
+ALIEN_LIFT_HOLD_THEN_CUT_TO_SKY:
 	break
 	video offset=CINEMATIC_032, x=[0x07], y=[0x08]
-	djnz [0x09], LABEL_06FB
+	djnz [0x09], ALIEN_LIFT_HOLD_THEN_CUT_TO_SKY
 	setup channel=0x1E, address=KILL_CHANNEL_LANDING
 	break
 	video offset=CINEMATIC_033, x=[0x07], y=[0x08]
@@ -62,13 +62,13 @@ LABEL_06FB:
 	call DRAW_STARS_CIN_38_39_40_5_6
 	selectVideoPage 0xFF
 	setup channel=0x05, address=KILL_CHANNEL_LANDING
-	setup channel=0x0A, address=SET_VAR_E6_5_PAL_B
+	setup channel=0x0A, address=ENDING_SKY_SHOT_ENTRY
 	killChannel
 
-DRAW_CIN_024_LOOP:
+ALIEN_WALK_HEAD_LOOP:
 	video offset=CINEMATIC_024, x=[0x07], y=[0x08]
 	break
-	jmp DRAW_CIN_024_LOOP
+	jmp ALIEN_WALK_HEAD_LOOP
 LABEL_0749:
 	db 0x11
 
@@ -146,18 +146,18 @@ DRAW_COMMON_VIDS_149_141_137_10:
 LABEL_0811:
 	db 0x11
 
-DRIFT_VAR07_PLUS_2_3X:
+ENDING_X_SLIDE_RIGHT_ACCEL:
 	mov [0x0A], 0x0003
 	add [0x07], 0x0002
 	break
-	djnz [0x0A], DRIFT_VAR07_PLUS_2_3X
+	djnz [0x0A], ENDING_X_SLIDE_RIGHT_ACCEL
 	mov [0x0A], 0x0005
 
-LABEL_0823:
+ENDING_X_SLIDE_RIGHT_PLUS3_DJNZ_THEN_ACCEL:
 	add [0x07], 0x0003
 	break
-	djnz [0x0A], LABEL_0823
-	jmp DRIFT_VAR07_PLUS_2_3X
+	djnz [0x0A], ENDING_X_SLIDE_RIGHT_PLUS3_DJNZ_THEN_ACCEL
+	jmp ENDING_X_SLIDE_RIGHT_ACCEL
 LABEL_082F:
 	db 0x11, 0x80, 0x06, 0xA0, 0x64, 0x6B, 0x0E, 0x3C
 	db 0xA0, 0x64, 0x6B, 0x21, 0xA3, 0xA0, 0x64, 0x6B

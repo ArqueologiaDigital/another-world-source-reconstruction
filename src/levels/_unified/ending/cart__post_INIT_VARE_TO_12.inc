@@ -30,10 +30,10 @@ DRIFT_VAR_F_PLUS_8_LOOP:
 	add [0x0F], 0x0038
 	killChannel
 
-DRAW_CIN_70_ANIM_LOOP:
+ENDING_THE_END_CAPTION_DRAW_LOOP:
 	video offset=CINEMATIC_070, x=[0x01], y=[0x02], zoom=[0x0f]
 	break
-	jmp DRAW_CIN_70_ANIM_LOOP
+	jmp ENDING_THE_END_CAPTION_DRAW_LOOP
 LABEL_023A:
 	db 0x11
 
@@ -86,10 +86,10 @@ Exec. Producer. Stephen Clarke-Willson"
 	mov [PAUSE_SLICES], 0x0002
 	mov [0x01], 0x000A
 
-DELAY_LOOP_VAR01:
+ENDING_CREDITS_ROLL_START_DELAY:
 	break
-	djnz [0x01], DELAY_LOOP_VAR01
-	setup channel=0x14, address=PAL_FADE_18_TO_1D
+	djnz [0x01], ENDING_CREDITS_ROLL_START_DELAY
+	setup channel=0x14, address=PAL_ENDING_CREDITS_FADE_18_TO_1D
 	mov [0x01], 0x00AF
 
 LABEL_02B0:
@@ -215,13 +215,13 @@ Exec. Producer. Stephen Clarke-Willson"
 DELAY_LOOP_VAR01_AT_038A:
 	break
 	djnz [0x01], DELAY_LOOP_VAR01_AT_038A
-	setup channel=0x14, address=PAL_FADE_18_TO_1D
+	setup channel=0x14, address=PAL_ENDING_CREDITS_FADE_18_TO_1D
 	mov [0x01], 0x00C8
 
-LABEL_0397:
+PTERANODON_HEAD_RAISED_HOLD_LOOP:
 	break
 	sub [SCROLL_Y], 0x0001
-	djnz [0x01], LABEL_0397
+	djnz [0x01], PTERANODON_HEAD_RAISED_HOLD_LOOP
 	selectVideoPage 0x00
 	text id=0x025C, x=2, y=2, color=0x0C ; "string_025C"
 	text id=0x025E, x=2, y=82, color=0x0C ; "string_025E"

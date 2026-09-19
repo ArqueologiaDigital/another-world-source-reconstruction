@@ -23,7 +23,7 @@ LAST_KEYCHAR		EQU 0xDA
 ; either `mov [0xDC], 0x0021` or `jne [0xDC], 0x21, <halt>` — SHUTDOWN_VM,
 ; KILL_ALL_CHANNELS_AND_KILL or a restart. It is one of five constants checked by
 ; LIKELY_A_COPY_PROTECTION_MECHANISM, and one label already spelled it out:
-; DRAW_CIN_058_AT_16_16_IF_VARDC_EQ_21. Renamed from HACK_VAR_DC 2026-09-12.
+; PASSCODE_DRAW_COPY_PROTECT_TOKEN_MARKER. Renamed from HACK_VAR_DC 2026-09-12.
 COPY_PROTECT_TOKEN		EQU 0xDC
 HERO_POS_UP_DOWN	EQU 0xE5
 MUS_MARK		EQU 0xF4

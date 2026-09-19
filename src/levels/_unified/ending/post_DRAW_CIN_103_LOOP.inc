@@ -1,7 +1,7 @@
 LABEL_00AE:
 	db 0x11
 
-LABEL_00AF:
+ENDING_CLOSEUP_SHOT_CUT_TO_FLY_AWAY_ENTRY:
 	mov [0x01], 0x00A0
 	mov [0x02], 0x0064
 	mov [0x03], 0x0040
@@ -22,8 +22,8 @@ LABEL_00AF:
 	video offset=CINEMATIC_053, x=[0x01], y=[0x02], zoom=[0x03]
 	deleteChannels first=0x0A, last=0x0E
 	copyVideoPage src=0x03, dst=0x00
-	setup channel=0x0A, address=LABEL_0149
-	setup channel=0x0B, address=DRAW_CIN_58_ANIM_LOOP
-	setup channel=0x0E, address=HANG_DRAWING_CIN_066_VAR03
-	setup channel=0x0F, address=DRAW_CIN_59_TO_64_VAR_POS
+	setup channel=0x0A, address=ENDING_PTERANODON_FLY_AWAY_SHOT_ENTRY
+	setup channel=0x0B, address=ENDING_LEDGE_SWELL_DRAW_LOOP
+	setup channel=0x0E, address=ENDING_PTERANODON_RIDER_HOLD_LOOP
+	setup channel=0x0F, address=PTERANODON_LEG_DANGLE_LOOP
 	killChannel

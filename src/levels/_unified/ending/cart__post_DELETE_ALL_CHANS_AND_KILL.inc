@@ -1,4 +1,4 @@
-PRELOAD_RESOURCES_8_TO_1:
+ENDING_RESOURCE_PRELOAD:
 	jne [0xDB], 0x00, LABEL_0060
 	load id=0x0008
 	load id=0x008A
@@ -22,7 +22,7 @@ LABEL_0060:
 	ret
 
 
-DRAW_CIN_97_TO_100:
+ENDING_CLOSEUP_SIDE_SILHOUETTE_RISE_FALL_LOOP:
 	video offset=CINEMATIC_097, x=160, y=100
 	break
 	video offset=CINEMATIC_098, x=160, y=100
@@ -35,11 +35,11 @@ DRAW_CIN_97_TO_100:
 	break
 	video offset=CINEMATIC_098, x=160, y=100
 	break
-	jmp DRAW_CIN_97_TO_100
+	jmp ENDING_CLOSEUP_SIDE_SILHOUETTE_RISE_FALL_LOOP
 LABEL_008B:
 	db 0x11
 
-DRAW_CIN_101_102_FADE_PAL_C:
+ENDING_BUDDY_HOLDS_LESTER_CLOSEUP_RISE:
 	video offset=CINEMATIC_101, x=160, y=125
 	setPalette 0x0C
 	break
@@ -86,19 +86,19 @@ LABEL_00BF:
 	deleteChannels first=0x0A, last=0x0E
 	copyVideoPage src=0x03, dst=0x00
 	setup channel=0x0A, address=LABEL_0159
-	setup channel=0x0B, address=DRAW_CIN_58_ANIM_LOOP
-	setup channel=0x0E, address=HANG_DRAWING_CIN_066_VAR03
-	setup channel=0x0F, address=DRAW_CIN_59_TO_64_VAR_POS
+	setup channel=0x0B, address=ENDING_LEDGE_SWELL_DRAW_LOOP
+	setup channel=0x0E, address=ENDING_PTERANODON_RIDER_HOLD_LOOP
+	setup channel=0x0F, address=PTERANODON_LEG_DANGLE_LOOP
 	killChannel
 
-DRAW_CIN_58_ANIM_LOOP:
+ENDING_LEDGE_SWELL_DRAW_LOOP:
 	video offset=CINEMATIC_058, x=160, y=100, zoom=[0x04]
 	break
-	jmp DRAW_CIN_58_ANIM_LOOP
+	jmp ENDING_LEDGE_SWELL_DRAW_LOOP
 LABEL_0124:
 	db 0x11
 
-DRAW_CIN_59_TO_64_VAR_POS:
+PTERANODON_LEG_DANGLE_LOOP:
 	video offset=CINEMATIC_059, x=[0x01], y=[0x02], zoom=[0x03]
 	break
 	video offset=CINEMATIC_060, x=[0x01], y=[0x02], zoom=[0x03]
@@ -113,7 +113,7 @@ DRAW_CIN_59_TO_64_VAR_POS:
 	break
 	video offset=CINEMATIC_065, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	jmp DRAW_CIN_59_TO_64_VAR_POS
+	jmp PTERANODON_LEG_DANGLE_LOOP
 
 LABEL_0159:
 	mov [0x01], 0x00A0
@@ -145,7 +145,7 @@ DRIFT_VAR_3_MINUS_1_LOOP:
 	sub [0x03], 0x0001
 	djnz [0x06], DRIFT_VAR_3_MINUS_1_LOOP
 	setup channel=0x10, address=INIT_VARE_TO_12
-	setup channel=0x11, address=DRAW_CIN_70_ANIM_LOOP
+	setup channel=0x11, address=ENDING_THE_END_CAPTION_DRAW_LOOP
 	mov [0x0F], 0x0001
 	mov [0x06], 0x000C
 

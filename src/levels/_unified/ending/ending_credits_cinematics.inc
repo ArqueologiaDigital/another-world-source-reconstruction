@@ -11,7 +11,7 @@
 ; the split out of `ending_channel_cleanup.inc`.
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_97_TO_100:
+ENDING_CLOSEUP_SIDE_SILHOUETTE_RISE_FALL_LOOP:
 	video offset=CINEMATIC_097, x=160, y=100
 	break
 	video offset=CINEMATIC_098, x=160, y=100
@@ -24,7 +24,7 @@ DRAW_CIN_97_TO_100:
 	break
 	video offset=CINEMATIC_098, x=160, y=100
 	break
-	jmp DRAW_CIN_97_TO_100
+	jmp ENDING_CLOSEUP_SIDE_SILHOUETTE_RISE_FALL_LOOP
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -32,7 +32,7 @@ DRAW_CIN_97_TO_100:
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_101_102_FADE_PAL_C:
+ENDING_BUDDY_HOLDS_LESTER_CLOSEUP_RISE:
 	video offset=CINEMATIC_101, x=160, y=125
 	setPalette 0x0C
 	break
@@ -53,10 +53,10 @@ DRAW_CIN_101_102_FADE_PAL_C:
 
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_103_LOOP__ENDING_CHANNEL_CLEANUP:
+ENDING_BUDDY_HOLDS_LESTER_CLOSEUP_LOOP:
 	break
 	video offset=CINEMATIC_103, x=160, y=118
-	jmp DRAW_CIN_103_LOOP__ENDING_CHANNEL_CLEANUP
+	jmp ENDING_BUDDY_HOLDS_LESTER_CLOSEUP_LOOP
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -64,10 +64,10 @@ DRAW_CIN_103_LOOP__ENDING_CHANNEL_CLEANUP:
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_58_ANIM_LOOP:
+ENDING_LEDGE_SWELL_DRAW_LOOP:
 	video offset=CINEMATIC_058, x=160, y=100, zoom=[0x04]
 	break
-	jmp DRAW_CIN_58_ANIM_LOOP
+	jmp ENDING_LEDGE_SWELL_DRAW_LOOP
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
@@ -75,7 +75,7 @@ DRAW_CIN_58_ANIM_LOOP:
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_59_TO_64_VAR_POS:
+PTERANODON_LEG_DANGLE_LOOP:
 	video offset=CINEMATIC_059, x=[0x01], y=[0x02], zoom=[0x03]
 	break
 	video offset=CINEMATIC_060, x=[0x01], y=[0x02], zoom=[0x03]
@@ -90,7 +90,7 @@ DRAW_CIN_59_TO_64_VAR_POS:
 	break
 	video offset=CINEMATIC_065, x=[0x01], y=[0x02], zoom=[0x03]
 	break
-	jmp DRAW_CIN_59_TO_64_VAR_POS
+	jmp PTERANODON_LEG_DANGLE_LOOP
 .endif
 
 .if BRANCH == "chahi_amiga_1991"

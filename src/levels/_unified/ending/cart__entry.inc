@@ -3,12 +3,12 @@
 ; Folded routines (in byte-address order):
 ;   KILL_CHANNEL_LANDING  (3-arm: amiga, cart, dos)
 ;   DELETE_ALL_CHANS_AND_KILL  (3-arm: amiga, cart, dos)
-;   PRELOAD_RESOURCES_8_TO_1  (2-arm: amiga, dos)
-;   DRAW_CIN_97_TO_100  (2-arm: amiga, dos)
-;   DRAW_CIN_101_102_FADE_PAL_C  (2-arm: amiga, dos)
+;   ENDING_RESOURCE_PRELOAD  (2-arm: amiga, dos)
+;   ENDING_CLOSEUP_SIDE_SILHOUETTE_RISE_FALL_LOOP  (2-arm: amiga, dos)
+;   ENDING_BUDDY_HOLDS_LESTER_CLOSEUP_RISE  (2-arm: amiga, dos)
 ;   DRAW_CIN_103_LOOP  (2-arm: amiga, dos)
-;   DRAW_CIN_58_ANIM_LOOP  (2-arm: amiga, dos)
-;   DRAW_CIN_59_TO_64_VAR_POS  (2-arm: amiga, dos)
+;   ENDING_LEDGE_SWELL_DRAW_LOOP  (2-arm: amiga, dos)
+;   PTERANODON_LEG_DANGLE_LOOP  (2-arm: amiga, dos)
 ;   DRIFT_VAR_4_PLUS_10_LOOP  (2-arm: amiga, dos)
 ;   DRIFT_VAR_3_MINUS_1_LOOP  (2-arm: amiga, dos)
 ;   DRIFT_VAR_3_MINUS_1_TWO_BRKS  (2-arm: amiga, dos)
@@ -19,14 +19,14 @@
 ;   DRIFT_VAR_F_PLUS_4_LOOP  (2-arm: amiga, dos)
 ;   DELAY_VARE_THEN_INIT_VARE_5  (2-arm: amiga, dos)
 ;   DRIFT_VAR_F_PLUS_8_LOOP  (2-arm: amiga, dos)
-;   DRAW_CIN_70_ANIM_LOOP  (2-arm: amiga, dos)
-;   PAL_FADE_18_TO_1D  (3-arm: amiga, cart, dos)
-;   DRAW_CIN_71_72_FADE  (2-arm: amiga, dos)
-;   DRAW_CIN_106_107_FX_57  (2-arm: amiga, dos)
-;   SET_VAR_E6_5_PAL_B  (3-arm: amiga, cart, dos)
-;   INIT_VARS_07_08_09  (3-arm: amiga, cart, dos)
-;   DRAW_STARS_PAGE0_CIN_000  (2-arm: amiga, dos)
-;   DRAW_STARS_PAGE3_CIN_004  (2-arm: amiga, dos)
+;   ENDING_THE_END_CAPTION_DRAW_LOOP  (2-arm: amiga, dos)
+;   PAL_ENDING_CREDITS_FADE_18_TO_1D  (3-arm: amiga, cart, dos)
+;   PTERANODON_HEAD_RAISE_ANIM  (2-arm: amiga, dos)
+;   PTERANODON_HEAD_BEAK_OPEN_ANIM  (2-arm: amiga, dos)
+;   ENDING_SKY_SHOT_ENTRY  (3-arm: amiga, cart, dos)
+;   ALIEN_ARRIVAL_POSITION_INIT  (3-arm: amiga, cart, dos)
+;   ENDING_CLOUD_SKY_BACKDROP_PAGE_0  (2-arm: amiga, dos)
+;   ENDING_CLOUD_SKY_BACKDROP_PAGE_3  (2-arm: amiga, dos)
 ;   DRAW_STARS_CIN_38_39_40_5_6  (2-arm: amiga, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
 
@@ -36,9 +36,9 @@
 ;   KILL_CHANNEL_LANDING  (3-arm: amiga, cart, dos)
 ;   DELETE_ALL_CHANS_AND_KILL  (3-arm: amiga, cart, dos)
 ;   INIT_VARE_TO_12  (3-arm: amiga, cart, dos)
-;   PAL_FADE_18_TO_1D  (3-arm: amiga, cart, dos)
-;   SET_VAR_E6_5_PAL_B  (3-arm: amiga, cart, dos)
-;   INIT_VARS_07_08_09  (3-arm: amiga, cart, dos)
+;   PAL_ENDING_CREDITS_FADE_18_TO_1D  (3-arm: amiga, cart, dos)
+;   ENDING_SKY_SHOT_ENTRY  (3-arm: amiga, cart, dos)
+;   ALIEN_ARRIVAL_POSITION_INIT  (3-arm: amiga, cart, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
 
 wrote src/levels/_unified/ending/amiga__entry.inc (530 lines)
@@ -90,11 +90,11 @@ wrote src/levels/_unified/ending/dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc (7833 li
 ; Unified source for ENDING with 20 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   PRELOAD_RESOURCES_8_TO_1  (2-arm: amiga, dos)
-;   DRAW_CIN_97_TO_100  (2-arm: amiga, dos)
-;   DRAW_CIN_101_102_FADE_PAL_C  (2-arm: amiga, dos)
-;   DRAW_CIN_58_ANIM_LOOP  (2-arm: amiga, dos)
-;   DRAW_CIN_59_TO_64_VAR_POS  (2-arm: amiga, dos)
+;   ENDING_RESOURCE_PRELOAD  (2-arm: amiga, dos)
+;   ENDING_CLOSEUP_SIDE_SILHOUETTE_RISE_FALL_LOOP  (2-arm: amiga, dos)
+;   ENDING_BUDDY_HOLDS_LESTER_CLOSEUP_RISE  (2-arm: amiga, dos)
+;   ENDING_LEDGE_SWELL_DRAW_LOOP  (2-arm: amiga, dos)
+;   PTERANODON_LEG_DANGLE_LOOP  (2-arm: amiga, dos)
 ;   DRIFT_VAR_4_PLUS_10_LOOP  (2-arm: amiga, dos)
 ;   DRIFT_VAR_3_MINUS_1_LOOP  (2-arm: amiga, dos)
 ;   DRIFT_VAR_3_MINUS_1_TWO_BRKS  (2-arm: amiga, dos)
@@ -102,23 +102,23 @@ wrote src/levels/_unified/ending/dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc (7833 li
 ;   DRIFT_VAR_F_PLUS_1_LOOP  (2-arm: amiga, dos)
 ;   DRIFT_VAR_F_PLUS_4_LOOP  (2-arm: amiga, dos)
 ;   DRIFT_VAR_F_PLUS_8_LOOP  (2-arm: amiga, dos)
-;   PAL_FADE_18_TO_1D  (3-arm: amiga, cart, dos)
-;   DRAW_CIN_71_72_FADE  (2-arm: amiga, dos)
-;   DRAW_CIN_106_107_FX_57  (2-arm: amiga, dos)
-;   INIT_VARS_07_08_09  (3-arm: amiga, cart, dos)
-;   DRAW_STARS_PAGE0_CIN_000  (2-arm: amiga, dos)
-;   DRAW_STARS_PAGE3_CIN_004  (2-arm: amiga, dos)
+;   PAL_ENDING_CREDITS_FADE_18_TO_1D  (3-arm: amiga, cart, dos)
+;   PTERANODON_HEAD_RAISE_ANIM  (2-arm: amiga, dos)
+;   PTERANODON_HEAD_BEAK_OPEN_ANIM  (2-arm: amiga, dos)
+;   ALIEN_ARRIVAL_POSITION_INIT  (3-arm: amiga, cart, dos)
+;   ENDING_CLOUD_SKY_BACKDROP_PAGE_0  (2-arm: amiga, dos)
+;   ENDING_CLOUD_SKY_BACKDROP_PAGE_3  (2-arm: amiga, dos)
 ;   DRAW_STARS_CIN_38_39_40_5_6  (2-arm: amiga, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
 
 ; Unified source for ENDING with 20 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   PRELOAD_RESOURCES_8_TO_1  (2-arm: amiga, dos)
-;   DRAW_CIN_97_TO_100  (2-arm: amiga, dos)
-;   DRAW_CIN_101_102_FADE_PAL_C  (2-arm: amiga, dos)
-;   DRAW_CIN_58_ANIM_LOOP  (2-arm: amiga, dos)
-;   DRAW_CIN_59_TO_64_VAR_POS  (2-arm: amiga, dos)
+;   ENDING_RESOURCE_PRELOAD  (2-arm: amiga, dos)
+;   ENDING_CLOSEUP_SIDE_SILHOUETTE_RISE_FALL_LOOP  (2-arm: amiga, dos)
+;   ENDING_BUDDY_HOLDS_LESTER_CLOSEUP_RISE  (2-arm: amiga, dos)
+;   ENDING_LEDGE_SWELL_DRAW_LOOP  (2-arm: amiga, dos)
+;   PTERANODON_LEG_DANGLE_LOOP  (2-arm: amiga, dos)
 ;   DRIFT_VAR_4_PLUS_10_LOOP  (2-arm: amiga, dos)
 ;   DRIFT_VAR_3_MINUS_1_LOOP  (2-arm: amiga, dos)
 ;   DRIFT_VAR_3_MINUS_1_TWO_BRKS  (2-arm: amiga, dos)
@@ -126,12 +126,12 @@ wrote src/levels/_unified/ending/dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc (7833 li
 ;   DRIFT_VAR_F_PLUS_1_LOOP  (2-arm: amiga, dos)
 ;   DRIFT_VAR_F_PLUS_4_LOOP  (2-arm: amiga, dos)
 ;   DRIFT_VAR_F_PLUS_8_LOOP  (2-arm: amiga, dos)
-;   PAL_FADE_18_TO_1D  (3-arm: amiga, cart, dos)
-;   DRAW_CIN_71_72_FADE  (2-arm: amiga, dos)
-;   DRAW_CIN_106_107_FX_57  (2-arm: amiga, dos)
-;   INIT_VARS_07_08_09  (3-arm: amiga, cart, dos)
-;   DRAW_STARS_PAGE0_CIN_000  (2-arm: amiga, dos)
-;   DRAW_STARS_PAGE3_CIN_004  (2-arm: amiga, dos)
+;   PAL_ENDING_CREDITS_FADE_18_TO_1D  (3-arm: amiga, cart, dos)
+;   PTERANODON_HEAD_RAISE_ANIM  (2-arm: amiga, dos)
+;   PTERANODON_HEAD_BEAK_OPEN_ANIM  (2-arm: amiga, dos)
+;   ALIEN_ARRIVAL_POSITION_INIT  (3-arm: amiga, cart, dos)
+;   ENDING_CLOUD_SKY_BACKDROP_PAGE_0  (2-arm: amiga, dos)
+;   ENDING_CLOUD_SKY_BACKDROP_PAGE_3  (2-arm: amiga, dos)
 ;   DRAW_STARS_CIN_38_39_40_5_6  (2-arm: amiga, dos)
 ;   CLEAR_PAGES_1_2_AND_BLIT  (3-arm: amiga, cart, dos)
 
@@ -282,8 +282,8 @@ ENTRY_POINT_OF_ENDING:
 	mov [PAUSE_SLICES], 0x0004
 	break
 	song id=0x0000, delay=0x0000, pos=0x00
-	call PRELOAD_RESOURCES_8_TO_1
-	call LABEL_0025
+	call ENDING_RESOURCE_PRELOAD
+	call LIKELY_A_COPY_PROTECTION_MECHANISM
 	setup channel=0x1E, address=LABEL_0676
 	killChannel
 	copyVideoPage src=0x00, dst=0x03

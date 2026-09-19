@@ -1,5 +1,5 @@
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-PAL_FADE_DOWN_17_TO_11:
+PAL_CODEWHEEL_PRE_TITLE_RAMP:
 	setPalette 0x17
 	break
 	setPalette 0x16
@@ -22,7 +22,7 @@ PAL_FADE_DOWN_17_TO_11:
 
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-PAL_FADE_4_TO_18_AND_BACK:
+PAL_CODEWHEEL_PUBLISHER_LOGO_FADE_OUT:
 	setPalette 0x04
 	break
 	setPalette 0x05
@@ -43,7 +43,7 @@ PAL_FADE_4_TO_18_AND_BACK:
 
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-PAL_FADE_DOWN_1A_TO_4:
+PAL_CODEWHEEL_PUBLISHER_LOGO_FADE_IN:
 	setPalette 0x1A
 	break
 	setPalette 0x19
@@ -62,7 +62,7 @@ PAL_FADE_DOWN_1A_TO_4:
 
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-PAL_FADE_DOWN_E_TO_8:
+PAL_CODEWHEEL_TITLE_SCREEN_FADE_IN:
 	setPalette 0x0E
 	break
 	setPalette 0x0D
@@ -79,7 +79,7 @@ PAL_FADE_DOWN_E_TO_8:
 
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-PAL_FADE_UP_9_TO_F:
+PAL_CODEWHEEL_TITLE_SCREEN_FADE_OUT:
 	setPalette 0x09
 	break
 	setPalette 0x0A

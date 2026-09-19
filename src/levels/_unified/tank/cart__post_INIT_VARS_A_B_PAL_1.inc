@@ -17,7 +17,7 @@ LABEL_1BAF:
 	selectVideoPage 0x03
 	fill page=0x03, color=0x0C
 	video offset=CINEMATIC_060, x=160, y=100
-	call DRAW_CIN_061_HORIZ_THEN_062
+	call TANK_HORIZON_DECOR_LEFT_THIRD
 	call DRAW_CIN_064_065_FIELD
 	call DRAW_CIN_069
 	selectVideoPage 0xFF
@@ -46,7 +46,7 @@ BLACKHOLE_FRAME_DRAW:
 	selectVideoPage 0x00
 	fill page=0x00, color=0x0C
 	video offset=CINEMATIC_060, x=160, y=100
-	call DRAW_CIN_061_HORIZ_THEN_062
+	call TANK_HORIZON_DECOR_LEFT_THIRD
 	call DRAW_CIN_091_061_FIELD
 	call DRAW_CIN_069
 	selectVideoPage 0xFF
@@ -86,11 +86,11 @@ DRAW_CIN_069:
 	fill page=0x00, color=0x0C
 	video offset=CINEMATIC_060, x=160, y=100
 	copyVideoPage src=0x00, dst=0x03
-	call DRAW_CIN_061_HORIZ_THEN_062
+	call TANK_HORIZON_DECOR_LEFT_THIRD
 	call DRAW_CIN_091_061_FIELD
 	call DRAW_CIN_069
 	selectVideoPage 0x03
-	call DRAW_CIN_061_HORIZ_THEN_062
+	call TANK_HORIZON_DECOR_LEFT_THIRD
 	call DRAW_CIN_064_065_FIELD
 	call DRAW_CIN_069
 	selectVideoPage 0xFF
@@ -137,7 +137,7 @@ DRAW_TANK_FLYBY_CRAFT:
 	ret
 
 
-DRAW_CIN_061_HORIZ_THEN_062:
+TANK_HORIZON_DECOR_LEFT_THIRD:
 	video offset=CINEMATIC_061, x=114, y=22
 	video offset=CINEMATIC_061, x=86, y=21
 	video offset=CINEMATIC_061, x=53, y=21

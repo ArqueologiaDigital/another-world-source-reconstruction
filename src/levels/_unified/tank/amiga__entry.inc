@@ -1,13 +1,13 @@
 ; Unified source for TANK with 24 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   INLINE_SET_VAR6D_TO_0  (2-arm: cart, dos)
+;   TANK_COLD_ENTRY_CLEAR_CONTINUE_FLAG  (2-arm: cart, dos)
 ;   SETUP_TANK_HERO_VARS_PLAY_4SFX  (2-arm: amiga, dos)
-;   INLINE_SET_VAR6B_TO_50  (2-arm: cart, dos)
-;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
+;   TANK_ARENA_COUNTDOWN_ENTRY  (2-arm: cart, dos)
+;   TANK_ARENA_COUNTDOWN_DROP_ANIM_THEN_CANCEL  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
 ;   TANK_PANEL_CURSOR_TOP_ROW_CLAMP_CASE_02  (3-arm: amiga, cart, dos)
-;   SET_VAR5F_TO_0018  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_SNAP_TO_ROW_ABOVE_LEFT_COLUMN  (3-arm: amiga, cart, dos)
 ;   TANK_PANEL_CURSOR_RIGHT_COLUMN_BOTTOM_CLAMP  (3-arm: amiga, cart, dos)
 ;   TANK_PANEL_CURSOR_RESTORE_PREV_CELL  (3-arm: amiga, cart, dos)
 ;   TANK_MISSILE_FAR_PASS_INIT  (3-arm: amiga, cart, dos)
@@ -29,13 +29,13 @@
 ; Unified source for TANK with 23 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   INLINE_SET_VAR6D_TO_0  (2-arm: cart, dos)
+;   TANK_COLD_ENTRY_CLEAR_CONTINUE_FLAG  (2-arm: cart, dos)
 ;   SETUP_TANK_HERO_VARS_PLAY_4SFX  (2-arm: amiga, dos)
-;   INLINE_SET_VAR6B_TO_50  (2-arm: cart, dos)
-;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
+;   TANK_ARENA_COUNTDOWN_ENTRY  (2-arm: cart, dos)
+;   TANK_ARENA_COUNTDOWN_DROP_ANIM_THEN_CANCEL  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
 ;   TANK_PANEL_CURSOR_TOP_ROW_CLAMP_CASE_02  (3-arm: amiga, cart, dos)
-;   SET_VAR5F_TO_0018  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_SNAP_TO_ROW_ABOVE_LEFT_COLUMN  (3-arm: amiga, cart, dos)
 ;   TANK_PANEL_CURSOR_RIGHT_COLUMN_BOTTOM_CLAMP  (3-arm: amiga, cart, dos)
 ;   TANK_PANEL_CURSOR_RESTORE_PREV_CELL  (3-arm: amiga, cart, dos)
 ;   TANK_MISSILE_FAR_PASS_INIT  (3-arm: amiga, cart, dos)
@@ -56,12 +56,12 @@
 ; Unified source for TANK with 19 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   INLINE_SET_VAR6D_TO_0  (2-arm: cart, dos)
-;   INLINE_SET_VAR6B_TO_50  (2-arm: cart, dos)
-;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
+;   TANK_COLD_ENTRY_CLEAR_CONTINUE_FLAG  (2-arm: cart, dos)
+;   TANK_ARENA_COUNTDOWN_ENTRY  (2-arm: cart, dos)
+;   TANK_ARENA_COUNTDOWN_DROP_ANIM_THEN_CANCEL  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
 ;   TANK_PANEL_CURSOR_TOP_ROW_CLAMP_CASE_02  (3-arm: amiga, cart, dos)
-;   SET_VAR5F_TO_0018  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_SNAP_TO_ROW_ABOVE_LEFT_COLUMN  (3-arm: amiga, cart, dos)
 ;   TANK_PANEL_CURSOR_RIGHT_COLUMN_BOTTOM_CLAMP  (3-arm: amiga, cart, dos)
 ;   TANK_PANEL_CURSOR_RESTORE_PREV_CELL  (3-arm: amiga, cart, dos)
 ;   TANK_MISSILE_FAR_PASS_INIT  (3-arm: amiga, cart, dos)
@@ -79,12 +79,12 @@
 ; Unified source for TANK with 19 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   INLINE_SET_VAR6D_TO_0  (2-arm: cart, dos)
-;   INLINE_SET_VAR6B_TO_50  (2-arm: cart, dos)
-;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
+;   TANK_COLD_ENTRY_CLEAR_CONTINUE_FLAG  (2-arm: cart, dos)
+;   TANK_ARENA_COUNTDOWN_ENTRY  (2-arm: cart, dos)
+;   TANK_ARENA_COUNTDOWN_DROP_ANIM_THEN_CANCEL  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
 ;   TANK_PANEL_CURSOR_TOP_ROW_CLAMP_CASE_02  (3-arm: amiga, cart, dos)
-;   SET_VAR5F_TO_0018  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_SNAP_TO_ROW_ABOVE_LEFT_COLUMN  (3-arm: amiga, cart, dos)
 ;   TANK_PANEL_CURSOR_RIGHT_COLUMN_BOTTOM_CLAMP  (3-arm: amiga, cart, dos)
 ;   TANK_PANEL_CURSOR_RESTORE_PREV_CELL  (3-arm: amiga, cart, dos)
 ;   TANK_MISSILE_FAR_PASS_INIT  (3-arm: amiga, cart, dos)
@@ -102,9 +102,9 @@
 ; Unified source for TANK with 14 folded shared bodies.
 ;
 ; Folded routines (in byte-address order):
-;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
+;   TANK_ARENA_COUNTDOWN_DROP_ANIM_THEN_CANCEL  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
-;   SET_VAR5F_TO_0018  (3-arm: amiga, cart, dos)
+;   TANK_PANEL_CURSOR_SNAP_TO_ROW_ABOVE_LEFT_COLUMN  (3-arm: amiga, cart, dos)
 ;   TANK_PANEL_CURSOR_RIGHT_COLUMN_BOTTOM_CLAMP  (3-arm: amiga, cart, dos)
 ;   TANK_PANEL_CURSOR_RESTORE_PREV_CELL  (3-arm: amiga, cart, dos)
 ;   TANK_MISSILE_FAR_PASS_INIT  (3-arm: amiga, cart, dos)
@@ -160,7 +160,7 @@ wrote src/levels/_unified/tank/dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc (7158 line
 ;
 ; Folded routines (in byte-address order):
 ;   SETUP_TANK_HERO_VARS_PLAY_4SFX  (2-arm: amiga, dos)
-;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
+;   TANK_ARENA_COUNTDOWN_DROP_ANIM_THEN_CANCEL  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
 ;   TANK_MISSILE_FAR_PASS_INIT  (3-arm: amiga, cart, dos)
 ;   TANK_RANDOM_HASH_ADVANCE  (3-arm: amiga, cart, dos)
@@ -179,7 +179,7 @@ wrote src/levels/_unified/tank/dos__post_CLEAR_PAGES_1_2_AND_BLIT.inc (7158 line
 ;
 ; Folded routines (in byte-address order):
 ;   SETUP_TANK_HERO_VARS_PLAY_4SFX  (2-arm: amiga, dos)
-;   INCR_VAR_6C_BY_10_3X  (2-arm: cart, dos)
+;   TANK_ARENA_COUNTDOWN_DROP_ANIM_THEN_CANCEL  (2-arm: cart, dos)
 ;   BANKSWITCH_6_FOR_CODE_ENTRY  (2-arm: cart, dos)
 ;   TANK_MISSILE_FAR_PASS_INIT  (3-arm: amiga, cart, dos)
 ;   TANK_RANDOM_HASH_ADVANCE  (3-arm: amiga, cart, dos)
@@ -451,7 +451,7 @@ TANK_STAGE_BOOT_SETUP_CHANNELS:
 	setup channel=0x25, address=TANK_ARENA_GUN_ACTIVATION_WAIT_INIT
 	setup channel=0x28, address=TANK_STAGE_EXIT_CAPSULE_LAUNCH_TO_BATHS
 	setup channel=0x30, address=TANK_CANNON_IMPACT_PLUME_LOOP
-	setup channel=0x31, address=WAIT_VAR46_PLAY_8E_DRAW_CIN_056
+	setup channel=0x31, address=TANK_SHOT_LAUNCH_STREAK_ON_FIRE_TRIGGER
 	setup channel=0x35, address=TANK_ARENA_AMBIENT_LASER_FIRE_INIT
 	setup channel=0x37, address=TANK_ARENA_CREATURE_CHARGE_PAST
 	call INIT_TANK_DRIVE_VARS

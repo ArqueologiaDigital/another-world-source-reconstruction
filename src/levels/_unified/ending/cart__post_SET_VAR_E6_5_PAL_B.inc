@@ -1,7 +1,7 @@
-ANIM_CIN_042_LOOP_VARE6:
+ENDING_SKY_SWEEP_FROM_RIGHT_PHASE_1:
 	video offset=CINEMATIC_042, x=160, y=100
 	break
-	djnz [0xE6], ANIM_CIN_042_LOOP_VARE6
+	djnz [0xE6], ENDING_SKY_SWEEP_FROM_RIGHT_PHASE_1
 	play id=0x0057, freq=0x0F, vol=0x20, channel=0x03
 	video offset=CINEMATIC_043, x=160, y=100
 	break
@@ -31,16 +31,16 @@ LABEL_065C:
 	break
 	video offset=CINEMATIC_051, x=160, y=100
 	djnz [0xE6], LABEL_065C
-	setup channel=0x0A, address=ZOOM_LOOP_CIN_105
-	setup channel=0x0B, address=DRAW_CIN_101_102_FADE_PAL_C
-	setup channel=0x0C, address=DRAW_CIN_97_TO_100
+	setup channel=0x0A, address=ENDING_CLOSEUP_SHOT_ZOOM_RAMP_DRIVER_LOOP
+	setup channel=0x0B, address=ENDING_BUDDY_HOLDS_LESTER_CLOSEUP_RISE
+	setup channel=0x0C, address=ENDING_CLOSEUP_SIDE_SILHOUETTE_RISE_FALL_LOOP
 	setup channel=0x0D, address=LABEL_00BF
 	killChannel
 
 LABEL_0676:
-	call DRAW_STARS_PAGE0_CIN_000
-	call DRAW_STARS_PAGE3_CIN_004
-	setup channel=0x05, address=HANG_DRAWING_CIN_071
+	call ENDING_CLOUD_SKY_BACKDROP_PAGE_0
+	call ENDING_CLOUD_SKY_BACKDROP_PAGE_3
+	setup channel=0x05, address=PTERANODON_HEAD_LOWERED_HOLD_LOOP
 	selectVideoPage 0x00
 	play id=0x0008, freq=0x05, vol=0x20, channel=0x00
 	play id=0x0008, freq=0x07, vol=0x30, channel=0x01
@@ -54,10 +54,10 @@ LABEL_0676:
 	mov [0x02], 0x0064
 	setPalette 0x0A
 
-DELAY_LOOP_VAR03:
+LESTER_PRONE_ARRIVAL_DELAY:
 	break
-	djnz [0x03], DELAY_LOOP_VAR03
-	setup channel=0x05, address=DRAW_CIN_71_72_FADE
+	djnz [0x03], LESTER_PRONE_ARRIVAL_DELAY
+	setup channel=0x05, address=PTERANODON_HEAD_RAISE_ANIM
 	video offset=CINEMATIC_011, x=[0x01], y=[0x02]
 	play id=0x0008, freq=0x0A, vol=0x16, channel=0x00
 	play id=0x0057, freq=0x14, vol=0x20, channel=0x02
@@ -120,7 +120,7 @@ LABEL_072E:
 	djnz [0x03], LABEL_0704
 	mov [PAUSE_SLICES], 0x0006
 	video offset=CINEMATIC_019, x=[0x01], y=[0x02]
-	setup channel=0x14, address=INIT_VARS_07_08_09
+	setup channel=0x14, address=ALIEN_ARRIVAL_POSITION_INIT
 
 LABEL_0787:
 	break

@@ -35,10 +35,10 @@
 .include "ending/dos__post_KILL_CHANNEL_LANDING.inc"
 .endif
 
-; ENDING channel teardown — DELETE_ALL_CHANS_AND_KILL + PRELOAD_RESOURCES_8_TO_1.
+; ENDING channel teardown — DELETE_ALL_CHANS_AND_KILL + ENDING_RESOURCE_PRELOAD.
 .include "ending/ending_channel_cleanup.inc"
 
-; ENDING credits cinematic-draw loops — DRAW_CIN_97_TO_100, _101_102, _103_LOOP, _58_ANIM, _59_TO_64. The credits sequence is the alien-natives celebration + spaceship ascent + freeze-frame credits roll.
+; ENDING credits cinematic-draw loops — ENDING_CLOSEUP_SIDE_SILHOUETTE_RISE_FALL_LOOP, _101_102, _103_LOOP, _58_ANIM, _59_TO_64. The credits sequence is the alien-natives celebration + spaceship ascent + freeze-frame credits roll.
 .include "ending/ending_credits_cinematics.inc"
 
 ; ENDING tail: drift / delay helpers (DRIFT_VAR_4_PLUS_10, DRIFT_VAR_3_MINUS_1 variants, DELAY_VAR6_THEN_*) — utility loops that step state vars and gate channel transitions during the credits.
@@ -50,5 +50,5 @@
 ; ENDING palette-fade sequence (cross-fades between cinematic shots).
 .include "ending/ending_palette_fades.inc"
 
-; ENDING palette + var setup (SET_VAR_E6_5_PAL_B et al.).
+; ENDING palette + var setup (ENDING_SKY_SHOT_ENTRY et al.).
 .include "ending/ending_pal_var_setup.inc"

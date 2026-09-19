@@ -1,4 +1,4 @@
-DRAW_CIN_SEQ_011_011_011:
+DRAW_TANK_HORIZON_DECOR_CLUSTER:
 	video offset=CINEMATIC_011, x=156, y=17
 	video offset=CINEMATIC_011, x=141, y=28
 	video offset=CINEMATIC_011, x=110, y=23

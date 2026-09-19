@@ -1,4 +1,4 @@
-LABEL_0149:
+ENDING_PTERANODON_FLY_AWAY_SHOT_ENTRY:
 	mov [0x01], 0x00A0
 	mov [0x02], 0x0064
 	mov [0x03], 0x0040
@@ -12,6 +12,6 @@ LABEL_0149:
 	break
 	add [0x04], 0x0008
 	video offset=CINEMATIC_069, x=[0x01], y=[0x02], zoom=[0x03]
-	setup channel=0x0C, address=DRAW_CIN_86_87_88_89
-	setup channel=0x0D, address=LABEL_046F
+	setup channel=0x0C, address=PTERANODON_WING_LEFT_FLAP_LOOP
+	setup channel=0x0D, address=PTERANODON_WING_RIGHT_FLAP_LOOP
 	mov [0x06], 0x000A

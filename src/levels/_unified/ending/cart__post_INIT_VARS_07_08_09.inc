@@ -1,6 +1,6 @@
-DELAY_LOOP_VAR09:
+ALIEN_ARRIVAL_DELAY_THEN_DISSOLVE_IN:
 	break
-	djnz [0x09], DELAY_LOOP_VAR09
+	djnz [0x09], ALIEN_ARRIVAL_DELAY_THEN_DISSOLVE_IN
 	play id=0x0057, freq=0x0F, vol=0x20, channel=0x03
 	video offset=CINEMATIC_021, x=[0x07], y=[0x08]
 	break
@@ -14,10 +14,10 @@ LABEL_07BD:
 	video offset=CINEMATIC_024, x=[0x07], y=[0x08]
 	video offset=CINEMATIC_025, x=[0x07], y=[0x08]
 	djnz [0x09], LABEL_07BD
-	setup channel=0x11, address=DRAW_CIN_024_LOOP
-	setup channel=0x12, address=DRAW_CV_192_195_196_SEQ
-	setup channel=0x13, address=DRAW_CV_193_185_181_SEQ
-	setup channel=0x0C, address=DRIFT_VAR07_PLUS_2_3X
+	setup channel=0x11, address=ALIEN_WALK_HEAD_LOOP
+	setup channel=0x12, address=DRAW_COMMON_VIDS_148_151_152_153
+	setup channel=0x13, address=DRAW_COMMON_VIDS_149_141_137_10
+	setup channel=0x0C, address=ENDING_X_SLIDE_RIGHT_ACCEL
 	mov [0x09], 0x0010
 
 DELAY_LOOP_VAR09_AT_07E0:
@@ -37,7 +37,7 @@ DELAY_LOOP_VAR09_AT_07E0:
 	video offset=CINEMATIC_030, x=[0x07], y=[0x08]
 	break
 	video offset=CINEMATIC_031, x=[0x07], y=[0x08]
-	setup channel=0x05, address=DRAW_CIN_106_107_FX_57
+	setup channel=0x05, address=PTERANODON_HEAD_BEAK_OPEN_ANIM
 	mov [0x09], 0x000A
 
 LABEL_0819:
@@ -62,17 +62,17 @@ LABEL_0819:
 	call DRAW_STARS_CIN_38_39_40_5_6
 	selectVideoPage 0xFF
 	setup channel=0x05, address=KILL_CHANNEL_LANDING
-	setup channel=0x0A, address=SET_VAR_E6_5_PAL_B
+	setup channel=0x0A, address=ENDING_SKY_SHOT_ENTRY
 	killChannel
 
-DRAW_CIN_024_LOOP:
+ALIEN_WALK_HEAD_LOOP:
 	video offset=CINEMATIC_024, x=[0x07], y=[0x08]
 	break
-	jmp DRAW_CIN_024_LOOP
+	jmp ALIEN_WALK_HEAD_LOOP
 LABEL_0867:
 	db 0x11
 
-DRAW_CV_192_195_196_SEQ:
+DRAW_COMMON_VIDS_148_151_152_153:
 	video type=0, offset=COMMON_VIDEO_192, x=[0x07], y=[0x08], zoom=0x40
 	break
 	video type=0, offset=COMMON_VIDEO_195, x=[0x07], y=[0x08], zoom=0x40
@@ -105,11 +105,11 @@ DRAW_CV_192_195_196_SEQ:
 	break
 	video type=0, offset=COMMON_VIDEO_188, x=[0x07], y=[0x08], zoom=0x40
 	break
-	jmp DRAW_CV_192_195_196_SEQ
+	jmp DRAW_COMMON_VIDS_148_151_152_153
 LABEL_08CB:
 	db 0x11
 
-DRAW_CV_193_185_181_SEQ:
+DRAW_COMMON_VIDS_149_141_137_10:
 	video type=0, offset=COMMON_VIDEO_193, x=[0x07], y=[0x08], zoom=0x40
 	break
 	video type=0, offset=COMMON_VIDEO_185, x=[0x07], y=[0x08], zoom=0x40
@@ -142,22 +142,22 @@ DRAW_CV_193_185_181_SEQ:
 	break
 	video type=0, offset=COMMON_VIDEO_189, x=[0x07], y=[0x08], zoom=0x40
 	break
-	jmp DRAW_CV_193_185_181_SEQ
+	jmp DRAW_COMMON_VIDS_149_141_137_10
 LABEL_092F:
 	db 0x11
 
-DRIFT_VAR07_PLUS_2_3X:
+ENDING_X_SLIDE_RIGHT_ACCEL:
 	mov [0x0A], 0x0003
 	add [0x07], 0x0002
 	break
-	djnz [0x0A], DRIFT_VAR07_PLUS_2_3X
+	djnz [0x0A], ENDING_X_SLIDE_RIGHT_ACCEL
 	mov [0x0A], 0x0005
 
 LABEL_0941:
 	add [0x07], 0x0003
 	break
 	djnz [0x0A], LABEL_0941
-	jmp DRIFT_VAR07_PLUS_2_3X
+	jmp ENDING_X_SLIDE_RIGHT_ACCEL
 	killChannel
 	video offset=CINEMATIC_108, x=160, y=100
 	video type=0, offset=COMMON_VIDEO_301, x=160, y=100, zoom=0x40
@@ -165,7 +165,7 @@ LABEL_0941:
 	video type=0, offset=COMMON_VIDEO_202, x=160, y=100, zoom=0x40
 	killChannel
 
-DRAW_STARS_PAGE0_CIN_000:
+ENDING_CLOUD_SKY_BACKDROP_PAGE_0:
 	selectVideoPage 0x00
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_000, x=253, y=34, zoom=0x0a
@@ -202,7 +202,7 @@ DRAW_STARS_PAGE0_CIN_000:
 LABEL_09F7:
 	db 0x11
 
-DRAW_STARS_PAGE3_CIN_004:
+ENDING_CLOUD_SKY_BACKDROP_PAGE_3:
 	selectVideoPage 0x03
 	fill page=0x03, color=0x01
 	video offset=CINEMATIC_004, x=253, y=34, zoom=0x0a

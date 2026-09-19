@@ -9,7 +9,7 @@
 ;
 ;
 ; Smallest unified file (only 6 folded bodies). The hashing logic
-; (SUM_HASH_VARS_TO_VAR_37) is one of the most analyzed routines
+; (PASSCODE_ACCUMULATE_VALIDATION_HASH) is one of the most analyzed routines
 ; in the genealogy work — it's structurally identical across all
 ; three branches.
 ;
@@ -474,7 +474,7 @@ HASH_DERIVE_NEXT_PASSCODE_DIGIT_LOOP:
 	je [0x21], 0x07, PASSCODE_DIGIT_INDEX_INCREMENT
 	je [0x21], 0x06, PASSCODE_DIGIT_INDEX_INCREMENT
 	jg [0x21], 0x0D, PASSCODE_DIGIT_INDEX_INCREMENT
-	call SUM_HASH_VARS_TO_VAR_37
+	call PASSCODE_ACCUMULATE_VALIDATION_HASH
 	mov [0x24], [0x37]
 	mov [0x22], [0x24]
 	and [0x22], 0x000F
@@ -731,7 +731,7 @@ DERIVE_AND_DRAW_LETTER:
 	ret
 
 
-SUM_HASH_VARS_TO_VAR_37:
+PASSCODE_ACCUMULATE_VALIDATION_HASH:
 	add [0x37], [HERO_ACTION]
 	add [0x37], [HERO_POS_JUMP_DOWN]
 	add [0x37], [HACK_VAR_F7]
@@ -750,7 +750,7 @@ SUM_HASH_VARS_TO_VAR_37:
 ; d-pad direction with cursor movement on a 8-column grid
 ; (`jg [0x01], 0x07, ...`).
 PASSCODE_INPUT_TICK:
-	call SUM_HASH_VARS_TO_VAR_37
+	call PASSCODE_ACCUMULATE_VALIDATION_HASH
 	jne [LAST_KEYCHAR], 0x00, PASSCODE_KEYCHAR_INTERPRET_DISPATCH
 	jne [HERO_ACTION], 0x00, PASSCODE_KEYCHAR_INTERPRET_DISPATCH
 	mov [0x23], [0x01]

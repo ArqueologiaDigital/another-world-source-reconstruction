@@ -9,7 +9,7 @@
 ;   chahi_amiga_1991, dos_1992, cartridge_1992 (genesis_eu).
 ;
 ; Smallest unified file (only 6 folded bodies). The hashing logic
-; (SUM_HASH_VARS_TO_VAR_37) is one of the most analyzed routines
+; (PASSCODE_ACCUMULATE_VALIDATION_HASH) is one of the most analyzed routines
 ; in the genealogy work — it's structurally identical across all
 ; three branches.
 ;
@@ -26,7 +26,7 @@
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-SUM_HASH_VARS_TO_VAR_37:
+PASSCODE_ACCUMULATE_VALIDATION_HASH:
 	add [0x37], [HERO_ACTION]
 	add [0x37], [HERO_POS_JUMP_DOWN]
 	add [0x37], [HACK_VAR_F7]
@@ -42,7 +42,7 @@ SUM_HASH_VARS_TO_VAR_37:
 
 .endif
 
-; Port-specific body chunk after the shared `SUM_HASH_VARS_TO_VAR_37` routine.
+; Port-specific body chunk after the shared `PASSCODE_ACCUMULATE_VALIDATION_HASH` routine.
 .if BRANCH == "chahi_amiga_1991"
 .include "passcode/amiga__post_SUM_HASH_VARS_TO_VAR_37.inc"
 .elif BRANCH == "dos_1992"
@@ -50,7 +50,7 @@ SUM_HASH_VARS_TO_VAR_37:
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
-COPY_VAR_27_28_TO_07_08:
+PASSCODE_CURSOR_SNAP_TO_TARGET_CELL:
 	mov [0x07], [0x27]
 	mov [0x08], [0x28]
 .endif
@@ -76,10 +76,10 @@ JUNK__0467:
 	break
 	jmp JUNK__03F5
 .else
-JUNK__0733:
+PASSCODE_CURSOR_SLIDE_FRAME_TICK:
 	video offset=CINEMATIC_PASSCODE_CURSOR, x=[0x07], y=[0x08]
 	break
-	jmp JUNK__06C1
+	jmp CURSOR_ANIM_X_RIGHT_STEP_LOOP
 .endif
 
 ; Trailing `db 0x11` filler — unreachable (preceding `jmp` doesn't
@@ -314,14 +314,14 @@ VALIDATE_PASSCODE_KRTD:
 	jmp SET_PAL_0_AND_RESTART
 
 CHECK_PASSCODE_OR_GOTO_PRISON:
-	jne [0x1E], 0xFFFF, SET_VAR_E6_F_PAUSE_4
-	jne [0x1F], 0xFFFF, SET_VAR_E6_F_PAUSE_4
-	jne [0x20], 0xFFFF, SET_VAR_E6_F_PAUSE_4
-	jne [0x21], 0xFFFF, SET_VAR_E6_F_PAUSE_4
+	jne [0x1E], 0xFFFF, PASSCODE_INVALID_MESSAGE_PRELUDE
+	jne [0x1F], 0xFFFF, PASSCODE_INVALID_MESSAGE_PRELUDE
+	jne [0x20], 0xFFFF, PASSCODE_INVALID_MESSAGE_PRELUDE
+	jne [0x21], 0xFFFF, PASSCODE_INVALID_MESSAGE_PRELUDE
 	mov [0x00], 0x0000
 	bankSwitch 1;  Intro Sequence
 	jmp SET_PAL_0_AND_RESTART
 .endif
 
-; PASSCODE var init (SET_VAR_E6_F_PAUSE_4).
+; PASSCODE var init (PASSCODE_INVALID_MESSAGE_PRELUDE).
 .include "passcode/passcode_var_init.inc"

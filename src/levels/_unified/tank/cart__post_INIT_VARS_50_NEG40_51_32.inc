@@ -68,7 +68,7 @@ LABEL_15CD:
 	video offset=CINEMATIC_207, x=[0x3c], y=[0x3d]
 
 LABEL_15D8:
-	jl [0xF8], 0x02, TANK_WAIT_DECREMENT_VAR4F_LOOP
+	jl [0xF8], 0x02, TANK_GROUND_DEBRIS_WAIT_LOOP
 	video offset=CINEMATIC_206, x=[0x3c], y=[0x3d]
 
 ; `break; if var4F == 0: loop; else sub var4F-=1`. A
@@ -77,7 +77,7 @@ LABEL_15D8:
 ; semantics from 17AB: this one DECREMENTS the counter on
 ; exit (consuming the trigger), 17AB just LEAVES the
 ; trigger for the caller to consume.
-TANK_WAIT_DECREMENT_VAR4F_LOOP:
+TANK_GROUND_DEBRIS_WAIT_LOOP:
 	selectVideoPage 0xFF
 	jmp TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C
 LABEL_15E8:
@@ -93,9 +93,9 @@ HANG_DRAW_CIN_090:
 	break
 	jmp HANG_DRAW_CIN_090
 
-WAIT_VAR46_PLAY_8E_DRAW_CIN_056:
+TANK_SHOT_LAUNCH_STREAK_ON_FIRE_TRIGGER:
 	break
-	je [0x46], 0x00, WAIT_VAR46_PLAY_8E_DRAW_CIN_056
+	je [0x46], 0x00, TANK_SHOT_LAUNCH_STREAK_ON_FIRE_TRIGGER
 	play id=0x008E, freq=0x14, vol=0x40, channel=0x01
 	video offset=CINEMATIC_056, x=160, y=100
 	break

@@ -1,4 +1,4 @@
-SET_VAR_E6_5_PAL_B:
+ENDING_SKY_SHOT_ENTRY:
 	mov [0xE6], 0x0005
 	setPalette 0x0B
 
@@ -10,7 +10,7 @@ SET_VAR_E6_5_PAL_B:
 .include "dos__post_SET_VAR_E6_5_PAL_B.inc"
 .endif
 
-INIT_VARS_07_08_09:
+ALIEN_ARRIVAL_POSITION_INIT:
 	mov [0x07], 0x004C
 	mov [0x08], 0x0097
 	mov [0x09], 0x0003
@@ -24,7 +24,7 @@ INIT_VARS_07_08_09:
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_STARS_PAGE0_CIN_000:
+ENDING_CLOUD_SKY_BACKDROP_PAGE_0:
 	selectVideoPage 0x00
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_000, x=253, y=34, zoom=0x0a
@@ -66,7 +66,7 @@ ENDING_DRAW_STARS_PAGE0_CIN_000_L0:
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_STARS_PAGE3_CIN_004:
+ENDING_CLOUD_SKY_BACKDROP_PAGE_3:
 	selectVideoPage 0x03
 	fill page=0x03, color=0x01
 	video offset=CINEMATIC_004, x=253, y=34, zoom=0x0a

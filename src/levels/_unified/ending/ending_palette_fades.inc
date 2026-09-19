@@ -1,4 +1,4 @@
-PAL_FADE_18_TO_1D:
+PAL_ENDING_CREDITS_FADE_18_TO_1D:
 	setPalette 0x18
 	break
 	setPalette 0x19
@@ -31,7 +31,7 @@ PAL_FADE_18_TO_1D:
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_71_72_FADE:
+PTERANODON_HEAD_RAISE_ANIM:
 	video offset=CINEMATIC_071, x=160, y=100
 	break
 	video offset=CINEMATIC_071, x=160, y=100
@@ -54,7 +54,7 @@ DRAW_CIN_71_72_FADE:
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_106_107_FX_57:
+PTERANODON_HEAD_BEAK_OPEN_ANIM:
 	video offset=CINEMATIC_106, x=160, y=100
 	break
 	video offset=CINEMATIC_106, x=160, y=100

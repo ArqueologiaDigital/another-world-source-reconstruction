@@ -1,4 +1,4 @@
-LABEL_0004:
+TANK_STAGE_BOOT_ENTRY:
 	call CLEAR_PAGES_1_2_AND_BLIT
 	mov [0xE3], 0x0000
 	mov [PAUSE_SLICES], 0x0002
@@ -27,10 +27,10 @@ LABEL_0026:
 	setup channel=0x24, address=LABEL_16BF
 	setup channel=0x25, address=LABEL_1335
 	setup channel=0x28, address=LABEL_085A
-	setup channel=0x2A, address=INLINE_SET_VAR6B_TO_50
+	setup channel=0x2A, address=TANK_ARENA_COUNTDOWN_ENTRY
 	setup channel=0x2F, address=LABEL_071B
 	setup channel=0x30, address=TANK_CANNON_IMPACT_PLUME_LOOP
-	setup channel=0x31, address=WAIT_VAR46_PLAY_8E_DRAW_CIN_056
+	setup channel=0x31, address=TANK_SHOT_LAUNCH_STREAK_ON_FIRE_TRIGGER
 	setup channel=0x35, address=TANK_ARENA_AMBIENT_LASER_FIRE_INIT
 	setup channel=0x37, address=LABEL_1237
 	call INIT_TANK_DRIVE_VARS
