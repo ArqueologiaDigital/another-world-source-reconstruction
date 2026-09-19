@@ -37,31 +37,31 @@ CINEMATIC_465		EQU 0x4CD8
 INTRO_PAUSE_3_PLAY_SONG_INIT:
 	mov [PAUSE_SLICES], 0x0003
 	song id=0x0000, delay=0x3E1C, pos=0x00
-	setup channel=0x03, address=CH_03_INIT_VAR_01_02_FFF6
-	setup channel=0x04, address=CH_04_INIT_VAR_04_05
-	setup channel=0x05, address=CH_05_INIT_VAR_06_07
-	setup channel=0x06, address=CH_06_DRAW_CIN_457_PARTICLES
-	setup channel=0x07, address=CH_07_INIT_VAR_08_09
+	setup channel=0x03, address=BIOMETRIC_SCAN_LINE_SWEEP_DOWN_INIT
+	setup channel=0x04, address=BIOMETRIC_SCAN_LINE_SWEEP_ACROSS_INIT
+	setup channel=0x05, address=BIOMETRIC_SCAN_BEAM_SWEEP_UP_INIT
+	setup channel=0x06, address=BIOMETRIC_SCANNER_RING_ORBIT_PASS
+	setup channel=0x07, address=LAB_AUTH_DOT_PAIR_CROSSING_ENTRY
 	setup channel=0x0A, address=SHOW_PAGE_0_LOOP_INTRO
 	setup channel=0x10, address=SHOW_PAGE_FF_LOOP_INTRO
 	setup channel=0x08, address=DRAW_SCIENTIST_THEN_DIVERGE_INIT
-	setup channel=0x09, address=DRAW_CIN_170_171_AT_VAR10_VAR11
+	setup channel=0x09, address=LAB_AUTH_CRT_SCAN_BRACKET_DRAW_LOOP
 	mov [0x03], 0x0032
 
-DELAY_50F_THEN_DRAW_CIN_454:
+LAB_AUTH_CRT_SCAN_HOLD_THEN_INTERFERENCE:
 	break
-	djnz [0x03], DELAY_50F_THEN_DRAW_CIN_454
+	djnz [0x03], LAB_AUTH_CRT_SCAN_HOLD_THEN_INTERFERENCE
 	setup channel=0x09, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x11, address=DRAW_CIN_453_454_SEQ
+	setup channel=0x11, address=LAB_AUTH_CRT_INTERFERENCE_BURST
 .if BRANCH == "chahi_amiga_1991"
 	mov [0x03], 0x000A
 .else
 	mov [0x03], 0x0009
 .endif
 
-DELAY_9F_THEN_DRAW_CIN_132:
+LAB_AUTH_CRT_OVERLAY_STAMP_PHASE_1:
 	break
-	djnz [0x03], DELAY_9F_THEN_DRAW_CIN_132
+	djnz [0x03], LAB_AUTH_CRT_OVERLAY_STAMP_PHASE_1
 .if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
@@ -75,16 +75,16 @@ DELAY_9F_THEN_DRAW_CIN_132:
 	video offset=CINEMATIC_132, x=160, y=100
 .endif
 	selectVideoPage 0xFF
-	setup channel=0x11, address=DRAW_CIN_453_454_SEQ
+	setup channel=0x11, address=LAB_AUTH_CRT_INTERFERENCE_BURST
 .if BRANCH == "chahi_amiga_1991"
 	mov [0x03], 0x000A
 .else
 	mov [0x03], 0x0009
 .endif
 
-DELAY_9F_THEN_DRAW_CIN_133:
+LAB_AUTH_CRT_OVERLAY_STAMP_PHASE_2:
 	break
-	djnz [0x03], DELAY_9F_THEN_DRAW_CIN_133
+	djnz [0x03], LAB_AUTH_CRT_OVERLAY_STAMP_PHASE_2
 .if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 	break
@@ -98,7 +98,7 @@ DELAY_9F_THEN_DRAW_CIN_133:
 	video offset=CINEMATIC_133, x=160, y=100
 .endif
 	selectVideoPage 0xFF
-	setup channel=0x11, address=DRAW_CIN_453_454_SEQ
+	setup channel=0x11, address=LAB_AUTH_CRT_INTERFERENCE_BURST
 	mov [0x03], 0x000A
 
 DELAY_10F_BEFORE_KILL_CHANNELS:
@@ -112,17 +112,17 @@ DELAY_10F_BEFORE_KILL_CHANNELS:
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x0A, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x10, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x02, address=INTRO_PAUSE_3_AND_DRAW_CIN_138
+	setup channel=0x02, address=INTRO_IDENT_SCREEN_INIT
 .if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 .endif
 	killChannel
 
-CH_03_INIT_VAR_01_02_FFF6:
+BIOMETRIC_SCAN_LINE_SWEEP_DOWN_INIT:
 	mov [0x01], 0xFFF6
 	mov [0x02], 0x0017
 
-DROP_CIN_134_DOWN_BY_10_23X:
+BIOMETRIC_SCAN_LINE_SWEEP_DOWN_LOOP:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_BIOMETRIC_SCANNER_BEAM_LINE, x=110, y=[0x01]
 .else
@@ -130,14 +130,14 @@ DROP_CIN_134_DOWN_BY_10_23X:
 .endif
 	add [0x01], 0x000A
 	break
-	djnz [0x02], DROP_CIN_134_DOWN_BY_10_23X
+	djnz [0x02], BIOMETRIC_SCAN_LINE_SWEEP_DOWN_LOOP
 	killChannel
 
-CH_04_INIT_VAR_04_05:
+BIOMETRIC_SCAN_LINE_SWEEP_ACROSS_INIT:
 	mov [0x04], 0x0032
 	mov [0x05], 0x0050
 
-DRIFT_CIN_135_RIGHT_BY_2_80X:
+BIOMETRIC_SCAN_LINE_SWEEP_ACROSS_LOOP:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_129, x=[0x04], y=100
 .else
@@ -145,14 +145,14 @@ DRIFT_CIN_135_RIGHT_BY_2_80X:
 .endif
 	add [0x04], 0x0002
 	break
-	djnz [0x05], DRIFT_CIN_135_RIGHT_BY_2_80X
+	djnz [0x05], BIOMETRIC_SCAN_LINE_SWEEP_ACROSS_LOOP
 	killChannel
 
-CH_05_INIT_VAR_06_07:
+BIOMETRIC_SCAN_BEAM_SWEEP_UP_INIT:
 	mov [0x06], 0x00DC
 	mov [0x07], 0x0017
 
-RISE_CIN_136_BY_10_FOR_23X:
+BIOMETRIC_SCAN_BEAM_SWEEP_UP_LOOP:
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_BIOMETRIC_SCAN_BEAM_RISING, x=110, y=[0x06]
@@ -160,19 +160,19 @@ RISE_CIN_136_BY_10_FOR_23X:
 	video offset=CINEMATIC_136, x=110, y=[0x06]
 .endif
 	sub [0x06], 0x000A
-	djnz [0x07], RISE_CIN_136_BY_10_FOR_23X
+	djnz [0x07], BIOMETRIC_SCAN_BEAM_SWEEP_UP_LOOP
 	killChannel
 
-CH_07_INIT_VAR_08_09:
+LAB_AUTH_DOT_PAIR_CROSSING_ENTRY:
 	break
 	mov [0x08], 0x007F
 	mov [0x09], 0x0006
 	mov [0x0B], 0x008E
 
-DRAW_CIN_137_DOUBLE_OUTER:
+LAB_AUTH_DOT_PAIR_STEP_INIT:
 	mov [0x0A], 0x0002
 
-DRAW_CIN_137_AT_280_283_TWICE:
+LAB_AUTH_DOT_PAIR_STEP_HOLD_LOOP:
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_131, x=280, y=[0x08]
@@ -181,11 +181,11 @@ DRAW_CIN_137_AT_280_283_TWICE:
 	video offset=CINEMATIC_137, x=280, y=[0x08]
 	video offset=CINEMATIC_137, x=283, y=[0x0b]
 .endif
-	djnz [0x0A], DRAW_CIN_137_AT_280_283_TWICE
+	djnz [0x0A], LAB_AUTH_DOT_PAIR_STEP_HOLD_LOOP
 	add [0x08], 0x0003
 	sub [0x0B], 0x0003
-	djnz [0x09], DRAW_CIN_137_DOUBLE_OUTER
-	jmp CH_07_INIT_VAR_08_09
+	djnz [0x09], LAB_AUTH_DOT_PAIR_STEP_INIT
+	jmp LAB_AUTH_DOT_PAIR_CROSSING_ENTRY
 LABEL_19C5:
 .if BRANCH == "dos_1992"
 	db 0x11
@@ -197,7 +197,7 @@ LABEL_19C5:
 .endif
 .endif
 
-CH_06_DRAW_CIN_457_PARTICLES:
+BIOMETRIC_SCANNER_RING_ORBIT_PASS:
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_456, x=318, y=139

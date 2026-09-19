@@ -90,52 +90,52 @@ SETUP_INTRO_DNA_CHANNELS:
 	break
 	break
 	break
-	setup channel=0x0C, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x0C, address=DNA_HELIX_ADVANCE_DRAW_Y_LOOP
 	setup channel=0x0D, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x0E, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x0E, address=DNA_HELIX_ADVANCE_DRAW_Y_LOOP
 	setup channel=0x0F, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x10, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x10, address=DNA_HELIX_ADVANCE_DRAW_Y_LOOP
 	setup channel=0x11, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x12, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x12, address=DNA_HELIX_ADVANCE_DRAW_Y_LOOP
 	setup channel=0x13, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x14, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x14, address=DNA_HELIX_ADVANCE_DRAW_Y_LOOP
 	setup channel=0x15, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x16, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x16, address=DNA_HELIX_ADVANCE_DRAW_Y_LOOP
 	setup channel=0x17, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x18, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x18, address=DNA_HELIX_ADVANCE_DRAW_Y_LOOP
 	setup channel=0x19, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x1A, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x1A, address=DNA_HELIX_ADVANCE_DRAW_Y_LOOP
 	setup channel=0x1B, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x1C, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x1C, address=DNA_HELIX_ADVANCE_DRAW_Y_LOOP
 	setup channel=0x1D, address=DRAW_DNA_ANIMATION_LOOP
 	break
 	break
 	break
-	setup channel=0x1E, address=DNA_VAR_05_DRIFT_LOOP
+	setup channel=0x1E, address=DNA_HELIX_ADVANCE_DRAW_Y_LOOP
 	setup channel=0x1F, address=DRAW_DNA_ANIMATION_LOOP
 	killChannel
 
@@ -158,10 +158,10 @@ LABEL_02AF:
 .endif
 .endif
 
-DNA_VAR_05_DRIFT_LOOP:
+DNA_HELIX_ADVANCE_DRAW_Y_LOOP:
 	add [0x05], 0x000A
 	break
-	jmp DNA_VAR_05_DRIFT_LOOP
+	jmp DNA_HELIX_ADVANCE_DRAW_Y_LOOP
 LABEL_02B8:
 .if BRANCH == "dos_1992"
 	db 0x11
@@ -259,26 +259,26 @@ DRAW_SCIENTIST_THEN_DIVERGE_INIT:
 	selectVideoPage 0xFF
 	mov [0x0F], 0x001E
 
-WAIT_VAR_0F_30_TICKS:
+LAB_AUTH_CRT_SCAN_BRACKET_OPEN_DELAY:
 	break
-	djnz [0x0F], WAIT_VAR_0F_30_TICKS
+	djnz [0x0F], LAB_AUTH_CRT_SCAN_BRACKET_OPEN_DELAY
 .if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_DISPATCH_VAR3
 .endif
 	mov [0x0F], 0x000A
 
-DRIFT_VAR_10_INC_BY_1_LOOP:
+LAB_AUTH_CRT_SCAN_BRACKET_SPREAD_LOOP:
 	add [0x10], 0x0001
 	break
 	sub [0x11], 0x0001
 	break
-	djnz [0x0F], DRIFT_VAR_10_INC_BY_1_LOOP
+	djnz [0x0F], LAB_AUTH_CRT_SCAN_BRACKET_SPREAD_LOOP
 .if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 .endif
 	killChannel
 
-DRAW_CIN_170_171_AT_VAR10_VAR11:
+LAB_AUTH_CRT_SCAN_BRACKET_DRAW_LOOP:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_LAB_AUTH_CRT_SCAN_BRACKET_RIGHT, x=[0x10], y=44
 	video offset=CINEMATIC_LAB_AUTH_CRT_SCAN_BRACKET_LEFT, x=[0x11], y=44
@@ -287,7 +287,7 @@ DRAW_CIN_170_171_AT_VAR10_VAR11:
 	video offset=CINEMATIC_171, x=[0x11], y=44
 .endif
 	break
-	jmp DRAW_CIN_170_171_AT_VAR10_VAR11
+	jmp LAB_AUTH_CRT_SCAN_BRACKET_DRAW_LOOP
 LABEL_0390:
 .if BRANCH == "dos_1992"
 	db 0x11
@@ -299,7 +299,7 @@ LABEL_0390:
 .endif
 .endif
 
-DRAW_CIN_453_454_SEQ:
+LAB_AUTH_CRT_INTERFERENCE_BURST:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_LAB_AUTH_CRT_INTERFERENCE_F0, x=160, y=100
 .else
@@ -325,7 +325,7 @@ DRAW_CIN_453_454_SEQ:
 .endif
 	killChannel
 
-DRAW_CIN_035_PAL_3_REPEAT_HEAD:
+LESTER_EXITING_CAR_ANIMATION:
 	setPalette 0x03
 	mov [PAUSE_SLICES], 0x0003
 .if BRANCH == "chahi_amiga_1991"
@@ -410,15 +410,15 @@ DRAW_CIN_035_PAL_3_REPEAT_HEAD:
 .endif
 	mov [0x01], 0x000F
 
-DRAW_CIN_048_15_FRAMES_LOOP:
+LESTER_EXITING_CAR_LAST_FRAME_HOLD:
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_LESTER_EXITING_CAR_F15, x=160, y=100
 .else
 	video offset=CINEMATIC_048, x=160, y=100
 .endif
-	djnz [0x01], DRAW_CIN_048_15_FRAMES_LOOP
-	setup channel=0x01, address=INTRO_FILL_AND_DRAW_CIN_103
+	djnz [0x01], LESTER_EXITING_CAR_LAST_FRAME_HOLD
+	setup channel=0x01, address=DRAW_CARPARK_ENTRANCE_COMPOSITE
 	setup channel=0x02, address=INTRO_PLAY_FX_AND_PALETTE_4_LOOP
 	setup channel=0x03, address=DRAW_CINEMATIC_053_LOOP
 .if BRANCH != "chahi_amiga_1991"

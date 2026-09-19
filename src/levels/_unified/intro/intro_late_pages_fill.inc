@@ -246,7 +246,7 @@ DRIFT_VAR1_PLUS_1_FOR_16X:
 .endif
 	break
 	play id=0x0036, freq=0x16, vol=0x3F, channel=0x03
-	setup channel=0x01, address=CH_01_INIT_VAR_04_06
+	setup channel=0x01, address=LESTER_APPROACH_ZOOM_RAMP_INIT
 	setup channel=0x03, address=LESTER_WALKING_TOWARDS_CAMERA_ANIMATION
 	fill page=0x00, color=0x07
 	selectVideoPage 0x00
@@ -285,7 +285,7 @@ DELAY_26F_THEN_PLAY_FX_36:
 	selectVideoPage 0xFF
 	killChannel
 
-DRAW_CIN_505_LOOP_VAR_02:
+LIFT_SHAFT_SCROLL_LOOP:
 	mov [0x02], [0x01]
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_LIFT_DOORS_OPENING_F33_AMIGA_EXTRA, x=153, y=[0x02]
@@ -311,7 +311,7 @@ DRAW_CIN_505_LOOP_VAR_02:
 	video offset=CINEMATIC_508, x=153, y=[0x02]
 .endif
 	break
-	jmp DRAW_CIN_505_LOOP_VAR_02
+	jmp LIFT_SHAFT_SCROLL_LOOP
 .if BRANCH != "dos_1992"
 LABEL_1BEE:
 .endif

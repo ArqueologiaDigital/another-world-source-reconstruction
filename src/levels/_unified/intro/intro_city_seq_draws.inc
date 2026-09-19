@@ -135,7 +135,7 @@ LABEL_11E6:
 .endif
 .endif
 
-INTRO_FILL_AND_DRAW_CIN_429_430:
+DRAW_HOLO_SCREEN_BG_COMPOSITE:
 	fill page=0xFF, color=0x02
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_SCREEN_BG, x=160, y=100
@@ -149,7 +149,7 @@ INTRO_FILL_AND_DRAW_CIN_429_430:
 	killChannel
 
 SETUP_INTRO_CITY_CHANNELS:
-	setup channel=0x01, address=DRAW_CIN_426_427_TWICE
+	setup channel=0x01, address=HOLO_SCREEN_DATA_COLUMN_PAIR_CYCLE_LOOP
 	setup channel=0x0A, address=SHOW_PAGE_0_LOOP_INTRO
 	setup channel=0x10, address=SHOW_PAGE_FF_LOOP_INTRO
 	mov [PAUSE_SLICES], 0x0004
@@ -290,7 +290,7 @@ SHOW_TEXT_21_AT_25_156_18X:
 	break
 	text id=0x0021, x=25, y=156, color=0x06
 	djnz [0x01], SHOW_TEXT_21_AT_25_156_18X
-	setup channel=0x07, address=INIT_VAR_03_AND_LOOP
+	setup channel=0x07, address=RUN_EXPERIMENT_PROMPT_BLINK_CYCLE_INIT
 .if BRANCH == "chahi_amiga_1991"
 	mov [0x01], 0x0025
 .else
@@ -337,7 +337,7 @@ DELAY_14_BEFORE_BLITTER_SETUP:
 	selectVideoPage 0x00
 	text id=0x0022, x=8, y=2, color=0x06
 	selectVideoPage 0xFF
-	setup channel=0x07, address=DRAW_CIN_382_TWICE_AT_DIFF_Y
+	setup channel=0x07, address=HOLO_ACCELERATOR_PARTICLE_INJECTION_ENTRY
 	mov [0x01], 0x0005
 
 SHOW_TEXT_31_AT_2_150_5X:
@@ -428,11 +428,11 @@ COPY_BG_PAGE_AND_DISPLAY_TEXT_23:
 	text id=0x0023, x=0, y=80, color=0x06
 	copyVideoPage src=0xFF, dst=0x00
 	mov [PAUSE_SLICES], 0x0005
-	setup channel=0x03, address=INIT_VAR_02_AND_BREAK_LOOP
+	setup channel=0x03, address=EXPERIMENT_STATUS_READOUT_ENTRY
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x01, address=DRAW_CIN_426_427_TWICE
+	setup channel=0x01, address=HOLO_SCREEN_DATA_COLUMN_PAIR_CYCLE_LOOP
 	setPalette 0x09
 	mov [0x01], 0x000B
 
@@ -485,7 +485,7 @@ SHOW_TEXT_2B_FINAL_PHASE:
 .endif
 	copyVideoPage src=0x03, dst=0x00
 	mov [PAUSE_SLICES], 0x0004
-	setup channel=0x07, address=DRAW_CIN_382_TWICE_AT_DIFF_Y
+	setup channel=0x07, address=HOLO_ACCELERATOR_PARTICLE_INJECTION_ENTRY
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x05, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE

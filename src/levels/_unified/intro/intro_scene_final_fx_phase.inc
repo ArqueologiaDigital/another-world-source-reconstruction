@@ -166,14 +166,14 @@ DELAY_20F_BEFORE_PAL_7_INIT:
 	break
 	djnz [0x01], DELAY_20F_BEFORE_PAL_7_INIT
 	setup channel=0x01, address=INTRO_SET_PAL_7_FILL_PAGE0_5
-	setup channel=0x02, address=CH_02_INIT_VARS_01_02_03
-	setup channel=0x03, address=DRAW_CIN_112_AT_143_94_LOOP
+	setup channel=0x02, address=LIFT_DOORS_CLOSING_INIT
+	setup channel=0x03, address=LIFT_SCENE_FIXED_OVERLAY_REDRAW_LOOP
 .if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP
 .endif
 	killChannel
 
-INTRO_FILL_AND_DRAW_CIN_103:
+DRAW_CARPARK_ENTRANCE_COMPOSITE:
 	fill page=0x00, color=0x02
 	selectVideoPage 0x00
 ; The amiga arm carries its own full list, so the three draws the 1992

@@ -129,7 +129,7 @@ DELAY_7_BEFORE_BLITTER_SETUP:
 	break
 .endif
 .if BRANCH == "chahi_amiga_1991"
-	setup channel=0x3C, address=LABEL_008A
+	setup channel=0x3C, address=BLIT_PAGE_FF_FOREVER
 .else
 	setup channel=0x3C, address=BLIT_DISPATCH_HERO_ACTION_ALT
 .endif
@@ -238,7 +238,7 @@ DELAY_9_BEFORE_BLITTER_SETUP:
 	setup channel=0x06, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x07, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x01, address=INTRO_FILL_AND_DRAW_CIN_429_430
+	setup channel=0x01, address=DRAW_HOLO_SCREEN_BG_COMPOSITE
 	setup channel=0x02, address=SETUP_INTRO_CITY_CHANNELS
 .if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP

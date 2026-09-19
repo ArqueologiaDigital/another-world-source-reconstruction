@@ -1148,7 +1148,7 @@ STORM_BOLT_CYCLE_RESTART_HOLD:
 LABEL_0514:
 	db 0x11
 
-CH_0E_INIT_VAR_06:
+STORM_PALETTE_FLASH_INTERVAL_INIT:
 	break
 	mov [0x06], 0x003C
 
@@ -1264,7 +1264,7 @@ SETUP_INTRO_PARTICLE_CHANNELS:
 	setup channel=0x0B, address=STORM_LIGHTNING_STREAK_LEFT_CYCLE_INIT
 	setup channel=0x0C, address=STORM_LIGHTNING_STREAK_RIGHT_CYCLE_INIT
 	setup channel=0x0D, address=STORM_BOLT_CYCLE_INIT
-	setup channel=0x0E, address=CH_0E_INIT_VAR_06
+	setup channel=0x0E, address=STORM_PALETTE_FLASH_INTERVAL_INIT
 	setup channel=0x0F, address=CH_0F_INIT_PARTICLE_POS
 	setup channel=0x10, address=STORM_PARTICLE_TUMBLE_ANIM_LOOP
 	setup channel=0x11, address=CH_11_INIT_PARTICLE_POS_2
@@ -1522,9 +1522,9 @@ BLINK_PAGE_FF_3X_LOOP:
 	setup channel=0x15, address=DRAW_INTRO_LIGHTNING_FLICKER_CENTER
 	mov [0x01], 0x0064
 
-WAIT_100_THEN_CIN_274:
+INTRO_EFFECT_CHANNELS_FADE_AND_TEARDOWN:
 	break
-	djnz [0x01], WAIT_100_THEN_CIN_274
+	djnz [0x01], INTRO_EFFECT_CHANNELS_FADE_AND_TEARDOWN
 	play id=0x0003, freq=0x14, vol=0x12, channel=0x03
 	video offset=CINEMATIC_274, x=160, y=100
 	break
@@ -2005,9 +2005,9 @@ ACCELERATOR_TUNNEL_PULSE_SHRINKS_TO_POINT:
 	play id=0x000E, freq=0x02, vol=0x3F, channel=0x03
 	mov [0x01], 0x0012
 
-DELAY_18_THEN_PAL_15_CIN_267:
+ACCELERATOR_TUNNEL_RECEDE:
 	break
-	djnz [0x01], DELAY_18_THEN_PAL_15_CIN_267
+	djnz [0x01], ACCELERATOR_TUNNEL_RECEDE
 	setPalette 0x15
 	video offset=CINEMATIC_267, x=160, y=100
 	play id=0x000E, freq=0x14, vol=0x3F, channel=0x03
@@ -2052,9 +2052,9 @@ PHASE_PAGE3_TO_0_PAL_16:
 	setPalette 0x16
 	mov [0x01], 0x0009
 
-DELAY_9_BEFORE_CIN_222:
+EXPERIMENT_LIGHTNING_FADE_THEN_TUNNEL_TUMBLE:
 	break
-	djnz [0x01], DELAY_9_BEFORE_CIN_222
+	djnz [0x01], EXPERIMENT_LIGHTNING_FADE_THEN_TUNNEL_TUMBLE
 	video offset=CINEMATIC_222, x=160, y=100
 	play id=0x002C, freq=0x1E, vol=0x3F, channel=0x03
 	break
@@ -2083,9 +2083,9 @@ DELAY_9_BEFORE_CIN_222:
 	break
 	mov [0x01], 0x0007
 
-DELAY_7_THEN_PAL_15_CIN_231:
+TELEPORT_SHATTER_FLASH_RUN:
 	break
-	djnz [0x01], DELAY_7_THEN_PAL_15_CIN_231
+	djnz [0x01], TELEPORT_SHATTER_FLASH_RUN
 	setPalette 0x15
 	video offset=CINEMATIC_231, x=160, y=100
 	play id=0x000A, freq=0x1E, vol=0x3F, channel=0x03
@@ -2265,9 +2265,9 @@ INTRO_FILL_AND_DRAW_413_414:
 	killChannel
 
 SETUP_CITY_SEQ_CHANNELS:
-	setup channel=0x06, address=ANIM_CIN_439_440_441_AT_160_100
+	setup channel=0x06, address=DRAW_CITY_SEQ_439_440
 	setup channel=0x07, address=DRAW_CITY_SEQ_435_436
-	setup channel=0x03, address=ANIM_CIN_432_433_434_AT_160_100
+	setup channel=0x03, address=DRAW_CITY_SEQ_432_433
 	setup channel=0x01, address=DRAW_CIN_190_LOOP
 	mov [0x03], 0x00C3
 	mov [0x04], 0x0064
@@ -2391,14 +2391,14 @@ LABEL_1196:
 ; contiguous (432-434, 435-437, 439-441, 450-452) so each
 ; runs a different mini-sequence — likely sub-animations
 ; for the various INTRO scene transitions.
-ANIM_CIN_432_433_434_AT_160_100:
+DRAW_CITY_SEQ_432_433:
 	video offset=CINEMATIC_432, x=160, y=100
 	break
 	video offset=CINEMATIC_433, x=160, y=100
 	break
 	video offset=CINEMATIC_434, x=160, y=100
 	break
-	jmp ANIM_CIN_432_433_434_AT_160_100
+	jmp DRAW_CITY_SEQ_432_433
 LABEL_11A9:
 	db 0x11
 
@@ -2408,14 +2408,14 @@ LABEL_11A9:
 ; contiguous (432-434, 435-437, 439-441, 450-452) so each
 ; runs a different mini-sequence — likely sub-animations
 ; for the various INTRO scene transitions.
-ANIM_CIN_439_440_441_AT_160_100:
+DRAW_CITY_SEQ_439_440:
 	video offset=CINEMATIC_439, x=160, y=100
 	break
 	video offset=CINEMATIC_440, x=160, y=100
 	break
 	video offset=CINEMATIC_441, x=160, y=100
 	break
-	jmp ANIM_CIN_439_440_441_AT_160_100
+	jmp DRAW_CITY_SEQ_439_440
 LABEL_11BC:
 	db 0x11
 
@@ -2768,7 +2768,7 @@ BLINK_TEXTS_44_45_AT_2_20:
 	jmp BLINK_TEXTS_44_45_AT_2_20
 	killChannel
 
-LABEL_1528:
+BLINK_TEXTS_3E_3F_AT_10_120:
 	text id=0x003E, x=10, y=120, color=0x04 ; ".20x14dd"
 	break
 	text id=0x003F, x=10, y=120, color=0x04 ; "gj5r5r"
@@ -2779,9 +2779,9 @@ LABEL_1528:
 	break
 	text id=0x0040, x=10, y=120, color=0x04 ; "tilgor 25%"
 	break
-	jmp LABEL_1528
+	jmp BLINK_TEXTS_3E_3F_AT_10_120
 
-JUNK__154E:
+BLINK_TEXTS_3F_41_AT_11_132:
 	text id=0x003F, x=11, y=132, color=0x04 ; "gj5r5r"
 	break
 	text id=0x0041, x=11, y=132, color=0x04 ; "12% 33% checked"
@@ -2790,7 +2790,7 @@ JUNK__154E:
 	break
 	text id=0x0043, x=11, y=132, color=0x04 ; "d=10.00001"
 	break
-	jmp JUNK__154E
+	jmp BLINK_TEXTS_3F_41_AT_11_132
 LABEL_156D:
 	db 0x11
 
@@ -2927,10 +2927,10 @@ DRAW_CITY_SEQ_419_420:
 	video offset=CINEMATIC_192, x=234, y=163
 	killChannel
 
-CIN_382_PUFFS_PHASE_INIT:
+HOLO_ACCELERATOR_ORBIT_SPEEDUP_INIT:
 	mov [0x02], 0x0002
 
-DRAW_CIN_382_PUFFS_2X:
+HOLO_ACCELERATOR_ORBIT_FASTER_LOOP:
 	break
 	video offset=CINEMATIC_382, x=165, y=74
 	break
@@ -2955,10 +2955,10 @@ DRAW_CIN_382_PUFFS_2X:
 	video offset=CINEMATIC_382, x=189, y=130
 	break
 	video offset=CINEMATIC_382, x=170, y=104
-	djnz [0x02], DRAW_CIN_382_PUFFS_2X
+	djnz [0x02], HOLO_ACCELERATOR_ORBIT_FASTER_LOOP
 	mov [0x02], 0x0003
 
-DRAW_CIN_382_PUFFS_3X:
+HOLO_ACCELERATOR_ORBIT_FASTEST_THEN_SHIELD_IMPACT:
 	break
 	video offset=CINEMATIC_382, x=165, y=74
 	break
@@ -2973,7 +2973,7 @@ DRAW_CIN_382_PUFFS_3X:
 	video offset=CINEMATIC_382, x=236, y=145
 	break
 	video offset=CINEMATIC_382, x=185, y=127
-	djnz [0x02], DRAW_CIN_382_PUFFS_3X
+	djnz [0x02], HOLO_ACCELERATOR_ORBIT_FASTEST_THEN_SHIELD_IMPACT
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	selectVideoPage 0x00
 	video offset=CINEMATIC_383, x=237, y=156
@@ -3025,7 +3025,7 @@ HOLO_ACCELERATOR_PARTICLE_INJECT_INTO_RING:
 	video offset=CINEMATIC_382, x=164, y=99
 	mov [0x02], 0x0001
 
-DRAW_CIN_382_PUFFS_1X:
+HOLO_ACCELERATOR_ORBIT_SLOW_LOOP:
 	break
 	video offset=CINEMATIC_382, x=165, y=74
 	break
@@ -3070,8 +3070,8 @@ DRAW_CIN_382_PUFFS_1X:
 	video offset=CINEMATIC_382, x=173, y=112
 	break
 	video offset=CINEMATIC_382, x=167, y=94
-	djnz [0x02], DRAW_CIN_382_PUFFS_1X
-	jmp CIN_382_PUFFS_PHASE_INIT
+	djnz [0x02], HOLO_ACCELERATOR_ORBIT_SLOW_LOOP
+	jmp HOLO_ACCELERATOR_ORBIT_SPEEDUP_INIT
 LABEL_1845:
 	db 0x11
 
@@ -3130,9 +3130,9 @@ BIOMETRIC_SCAN_READOUT_PHASE_1_DELAY:
 	setup channel=0x11, address=LAB_AUTH_CRT_INTERFERENCE_BURST
 	mov [0x03], 0x0009
 
-DELAY_9F_THEN_DRAW_CIN_132:
+LAB_AUTH_CRT_OVERLAY_STAMP_PHASE_1:
 	break
-	djnz [0x03], DELAY_9F_THEN_DRAW_CIN_132
+	djnz [0x03], LAB_AUTH_CRT_OVERLAY_STAMP_PHASE_1
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	selectVideoPage 0x00
@@ -3142,9 +3142,9 @@ DELAY_9F_THEN_DRAW_CIN_132:
 	setup channel=0x11, address=LAB_AUTH_CRT_INTERFERENCE_BURST
 	mov [0x03], 0x0009
 
-DELAY_9F_THEN_DRAW_CIN_133:
+LAB_AUTH_CRT_OVERLAY_STAMP_PHASE_2:
 	break
-	djnz [0x03], DELAY_9F_THEN_DRAW_CIN_133
+	djnz [0x03], LAB_AUTH_CRT_OVERLAY_STAMP_PHASE_2
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	break
 	selectVideoPage 0x00
@@ -3463,14 +3463,14 @@ HOLO_CONSOLE_PANEL_RISE_INIT:
 	mov [0x03], 0x0064
 	mov [0x04], 0x0013
 
-SLIDE_CIN_448_BY_VAR3_19X:
+HOLO_CONSOLE_BAR_RISE_STAMP_LOOP:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_448, x=160, y=[0x03]
 	video offset=CINEMATIC_449, x=160, y=101
 	sub [0x03], 0x0001
 	selectVideoPage 0xFF
 	break
-	djnz [0x04], SLIDE_CIN_448_BY_VAR3_19X
+	djnz [0x04], HOLO_CONSOLE_BAR_RISE_STAMP_LOOP
 	setup channel=0x06, address=PARTICLE_LAB_PANEL_LIGHTS_CYCLE_LOOP
 	killChannel
 
@@ -3661,26 +3661,26 @@ DRAW_LIFT_SCENE_BG_COMPOSITE:
 	selectVideoPage 0xFF
 	killChannel
 
-DRAW_CIN_112_AT_143_94_LOOP:
+LIFT_SCENE_FIXED_OVERLAY_REDRAW_LOOP:
 	video offset=CINEMATIC_112, x=143, y=94
 	break
-	jmp DRAW_CIN_112_AT_143_94_LOOP
+	jmp LIFT_SCENE_FIXED_OVERLAY_REDRAW_LOOP
 LABEL_1D9A:
 	db 0x11
 
-CH_02_INIT_VARS_01_02_03:
+LIFT_DOORS_CLOSING_INIT:
 	mov [0x01], 0x0008
 	mov [0x02], 0x008F
 	mov [0x03], 0x0090
 	mov [PAUSE_SLICES], 0x0002
 
-DRIFT_CIN_113_X_PLUS_Y_MINUS_8X:
+LIFT_DOORS_CLOSING_LOOP:
 	break
 	add [0x02], 0x0001
 	sub [0x03], 0x0001
 	video offset=CINEMATIC_113, x=[0x02], y=94
 	video offset=CINEMATIC_114, x=[0x03], y=94
-	djnz [0x01], DRIFT_CIN_113_X_PLUS_Y_MINUS_8X
+	djnz [0x01], LIFT_DOORS_CLOSING_LOOP
 	mov [PAUSE_SLICES], 0x0002
 	video offset=CINEMATIC_112, x=143, y=94
 	setup channel=0x03, address=KILL_CHANNEL_ROUTINE
@@ -4017,13 +4017,13 @@ PARALLAX_REV_BREAK_AND_DJNZ:
 	break
 	mov [0x03], 0x0005
 
-DRIFT_CIN_129_PARALLAX_5X:
+LAB_DOOR_LEAVES_SHUT_LOOP:
 	add [0x01], 0x0014
 	sub [0x02], 0x0014
 	video offset=CINEMATIC_129, x=160, y=111, zoom=[0x04]
 	je [MUS_MARK], 0x10, MUS_10_FORCE_KILL_CHANNELS
 	break
-	djnz [0x03], DRIFT_CIN_129_PARALLAX_5X
+	djnz [0x03], LAB_DOOR_LEAVES_SHUT_LOOP
 	play id=0x0036, freq=0x0F, vol=0x3F, channel=0x02
 
 MUS_10_FORCE_KILL_CHANNELS:
@@ -4464,8 +4464,8 @@ DELAY_20F_BEFORE_PAL_7_INIT:
 	break
 	djnz [0x01], DELAY_20F_BEFORE_PAL_7_INIT
 	setup channel=0x01, address=DRAW_LIFT_SCENE_BG_COMPOSITE
-	setup channel=0x02, address=CH_02_INIT_VARS_01_02_03
-	setup channel=0x03, address=DRAW_CIN_112_AT_143_94_LOOP
+	setup channel=0x02, address=LIFT_DOORS_CLOSING_INIT
+	setup channel=0x03, address=LIFT_SCENE_FIXED_OVERLAY_REDRAW_LOOP
 	setup channel=0x3C, address=FRAME_RENDER_TICK_LOOP
 	killChannel
 

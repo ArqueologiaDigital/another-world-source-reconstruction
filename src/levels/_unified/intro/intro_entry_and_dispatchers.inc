@@ -71,7 +71,7 @@ BLIT_AND_DISPATCH_HERO_ACTION:
 	break
 	jmp BLIT_AND_DISPATCH_HERO_ACTION
 
-LABEL_008A:
+BLIT_PAGE_FF_FOREVER:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 .else
@@ -80,7 +80,7 @@ LABEL_008A:
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	jmp LABEL_008A
+	jmp BLIT_PAGE_FF_FOREVER
 .else
 	jmp BLIT_AND_DISPATCH_HERO_ACTION
 .endif

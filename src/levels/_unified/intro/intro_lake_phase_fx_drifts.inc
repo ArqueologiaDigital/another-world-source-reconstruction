@@ -8,22 +8,22 @@ LESTER_HAND_PRESSING_KEYPAD_ANIMATION:
 	jne [0x03], 0x00, LESTER_HAND_PRESSING_KEYPAD_ANIMATION
 	mov [0x03], 0x00FF
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_116, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F1, x=[0x01], y=[0x02]
 .else
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F1, x=[0x01], y=[0x02]
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_117, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F2, x=[0x01], y=[0x02]
 .else
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F2, x=[0x01], y=[0x02]
 .endif
 	break
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F3, x=[0x01], y=[0x02]
-	call PLAY_FX_BY_PHASE_VAR1E
+	call KEYPAD_KEYPRESS_TONE_CASE_00
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_119, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F4, x=[0x01], y=[0x02]
 .else
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F4, x=[0x01], y=[0x02]
 .endif
@@ -42,7 +42,7 @@ LABEL_1FD1:
 .endif
 .endif
 
-PLAY_FX_BY_PHASE_VAR1E:
+KEYPAD_KEYPRESS_TONE_CASE_00:
 	jne [0x1E], 0x00, PLAY_FX_PHASE_1_FREQ_22
 	play id=0x000B, freq=0x14, vol=0x3F, channel=0x02
 
@@ -70,7 +70,7 @@ PLAY_FX_DISPATCH_RET:
 	ret
 
 
-CH_01_INIT_VAR_04_06:
+LESTER_APPROACH_ZOOM_RAMP_INIT:
 	mov [0x04], 0x0040
 	mov [0x06], 0x000F
 
@@ -100,8 +100,8 @@ DRIFT_VAR4_PLUS_9_FOR_20X:
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0x00
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F1, x=160, y=100
-	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F2, x=160, y=100
+	video offset=CINEMATIC_121, x=160, y=100
+	video offset=CINEMATIC_122, x=160, y=100
 .else
 	video offset=CINEMATIC_126, x=160, y=100
 	video offset=CINEMATIC_127, x=160, y=100
@@ -109,7 +109,7 @@ DRIFT_VAR4_PLUS_9_FOR_20X:
 	selectVideoPage 0xFF
 	fill page=0xFF, color=0x09
 	break
-	setup channel=0x03, address=DRAW_CIN_128_521_ZOOM_VAR04
+	setup channel=0x03, address=LESTER_WALKING_AWAY_FROM_CAMERA_FRAME_CYCLE
 	play id=0x0036, freq=0x14, vol=0x3F, channel=0x03
 	mov [0x04], 0x0153
 	mov [0x06], 0x0014
@@ -131,7 +131,7 @@ DRIFT_VAR4_MINUS_3_FOR_5X:
 	break
 	djnz [0x06], DRIFT_VAR4_MINUS_3_FOR_5X
 	setup channel=0x01, address=KILL_CHANNEL_ROUTINE
-	setup channel=0x02, address=INTRO_FILL_PAGE0_DRAW_CIN_118
+	setup channel=0x02, address=LAB_KEYPAD_SCENE_INIT
 	setup channel=0x03, address=LESTER_HAND_PRESSING_KEYPAD_ANIMATION
 .if BRANCH != "chahi_amiga_1991"
 	setup channel=0x3C, address=BLIT_AND_COPY_PAGE_FF_LOOP

@@ -135,13 +135,13 @@ SETUP_INTRO_PARTICLE_CHANNELS:
 	play id=0x0008, freq=0x05, vol=0x3F, channel=0x03
 	play id=0x0008, freq=0x00, vol=0x3F, channel=0x02
 	setPalette 0x19
-	setup channel=0x0A, address=CH_0A_INIT_VAR_02
-	setup channel=0x0B, address=CH_0B_INIT_VAR_03
-	setup channel=0x0C, address=CH_0C_INIT_VAR_04
-	setup channel=0x0D, address=CH_0D_INIT_VAR_05
-	setup channel=0x0E, address=CH_0E_INIT_VAR_06
+	setup channel=0x0A, address=STORM_LIGHTNING_FLASH_INTERVAL_INIT
+	setup channel=0x0B, address=STORM_LIGHTNING_STREAK_LEFT_INTERVAL_INIT
+	setup channel=0x0C, address=STORM_LIGHTNING_STREAK_RIGHT_INTERVAL_INIT
+	setup channel=0x0D, address=STORM_LIGHTNING_BOLT_INTERVAL_INIT
+	setup channel=0x0E, address=STORM_PALETTE_FLASH_INTERVAL_INIT
 	setup channel=0x0F, address=CH_0F_INIT_PARTICLE_POS
-	setup channel=0x10, address=CH_10_DRAW_CIN_353_PARTICLE
+	setup channel=0x10, address=STORM_AMBIENT_DRIFT_DRAW_LOOP
 	setup channel=0x11, address=CH_11_INIT_PARTICLE_POS_2
 	setup channel=0x12, address=CH_12_INIT_PARTICLE_POS_3
 	mov [PAUSE_SLICES], 0x0003
@@ -158,7 +158,7 @@ PARTICLE_PHASE_350_FRAME_TIMER:
 	break
 	djnz [0x01], PARTICLE_PHASE_350_FRAME_TIMER
 .if BRANCH == "chahi_amiga_1991"
-	setup channel=0x3C, address=LABEL_008A
+	setup channel=0x3C, address=BLIT_PAGE_FF_FOREVER
 .else
 	setup channel=0x3C, address=BLIT_DISPATCH_HERO_ACTION_ALT
 .endif
@@ -349,11 +349,11 @@ TRANSITION_TO_BLITTER_LOOP:
 	setPalette 0x17
 	mov [0x01], 0x0001
 
-LABEL_06ED:
+DELAY_1_THEN_PLAY_FX_0A_PAL_18:
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	djnz [0x01], LABEL_06ED
+	djnz [0x01], DELAY_1_THEN_PLAY_FX_0A_PAL_18
 .else
 	setPalette 0x17
 .endif
@@ -569,7 +569,7 @@ BLINK_PAGE_FF_3X_LOOP:
 	setPalette 0x17
 	play id=0x0003, freq=0x14, vol=0x0A, channel=0x03
 	setup channel=0x04, address=INTRO_PALETTE_FLICKER_LOOP
-	setup channel=0x0B, address=PLAY_FX_2C_AND_DRAW_CIN_000
+	setup channel=0x0B, address=EXPERIMENT_DISCHARGE_STREAK_BURST
 	setup channel=0x0C, address=DRAW_INTRO_LIGHTNING_FLICKER_LONG
 	setup channel=0x0D, address=DRAW_INTRO_DECOR_337
 	setup channel=0x0E, address=DRAW_INTRO_LIGHTNING_FLICKER_SHORT
@@ -581,9 +581,9 @@ BLINK_PAGE_FF_3X_LOOP:
 	setup channel=0x15, address=DRAW_INTRO_LIGHTNING_FLICKER_CENTER
 	mov [0x01], 0x0064
 
-WAIT_100_THEN_CIN_274:
+INTRO_EFFECT_CHANNELS_FADE_AND_TEARDOWN:
 	break
-	djnz [0x01], WAIT_100_THEN_CIN_274
+	djnz [0x01], INTRO_EFFECT_CHANNELS_FADE_AND_TEARDOWN
 	play id=0x0003, freq=0x14, vol=0x12, channel=0x03
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_268, x=160, y=100
@@ -683,9 +683,9 @@ WAIT_30_THEN_SETUP_CH12:
 	setup channel=0x0F, address=KILL_CHANNEL_ROUTINE
 	mov [0x01], 0x0014
 
-WAIT_20_THEN_LOAD_3E82:
+INTRO_FINAL_HOLD_THEN_ENTER_LAKE:
 	break
-	djnz [0x01], WAIT_20_THEN_LOAD_3E82
+	djnz [0x01], INTRO_FINAL_HOLD_THEN_ENTER_LAKE
 .if BRANCH == "dos_1992"
 	bankSwitch 2;  Arrival at the Lake & Beast Chase
 .else

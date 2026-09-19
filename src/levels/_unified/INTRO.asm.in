@@ -92,7 +92,7 @@
 ; INTRO level entry point + top-level scene dispatcher.
 .include "intro/intro_entry_and_dispatchers.inc"
 
-; Mid-intro text-display routine (`INTRO_PAUSE_3_AND_DRAW_CIN_138`):
+; Mid-intro text-display routine (`INTRO_IDENT_SCREEN_INIT`):
 ; draws CINEMATIC_LAB_AUTH_ID_SCREEN_BG..143 + texts 0x190/0x191, then schedules
 ; `SCENE_TRANSITION_NEXT_PHASE` on channel 0x06 and
 ; `INTRO_TRANSITION_TO_LAKE_SCENE` on channel 0x02. Used at the
@@ -112,15 +112,15 @@
 ; opening identity). `SETUP_INTRO_DNA_CHANNELS` wires channels
 ; 0x0A/0x0B for the helix tick + draw loops; `DRAW_DNA_ANIMATION_LOOP`
 ; is the per-frame redraw. Includes
-; `DRAW_CIN_035_PAL_3_REPEAT_HEAD` (target of a `jmp` from
-; INTRO DNA-helix animation (SETUP_INTRO_DNA_CHANNELS / DNA_VAR_05 hold + drift loops + DRAW_CINEMATICS_166_171) followed by the lab-cinematic tail (DRAW_CIN_453_454_SEQ + DRAW_CIN_035_PAL_3_REPEAT_HEAD + DRAW_CIN_048_15_FRAMES_LOOP) that hands off to the next phase via setup-channel calls.
+; `LESTER_EXITING_CAR_ANIMATION` (target of a `jmp` from
+; INTRO DNA-helix animation (SETUP_INTRO_DNA_CHANNELS / DNA_VAR_05 hold + drift loops + DRAW_CINEMATICS_166_171) followed by the lab-cinematic tail (LAB_AUTH_CRT_INTERFERENCE_BURST + LESTER_EXITING_CAR_ANIMATION + LESTER_EXITING_CAR_LAST_FRAME_HOLD) that hands off to the next phase via setup-channel calls.
 .include "intro/intro_dna_animation.inc"
 
-; Per-channel initialiser routines (`CH_0A_INIT_VAR_02`,
-; `CH_0B_INIT_VAR_03`, ..., one per auxiliary channel). Each sets a
+; Per-channel initialiser routines (`STORM_LIGHTNING_FLASH_INTERVAL_INIT`,
+; `STORM_LIGHTNING_STREAK_LEFT_INTERVAL_INIT`, ..., one per auxiliary channel). Each sets a
 ; counter variable to a starting value, then enters a wait-loop
 ; (`CH_0X_VAR_NN_WAIT_LOOP`). These are tick-driver coroutines for
-; INTRO per-channel init helpers (CH_0A_INIT_VAR_02 et al.).
+; INTRO per-channel init helpers (STORM_LIGHTNING_FLASH_INTERVAL_INIT et al.).
 .include "intro/intro_channel_inits.inc"
 
 ; Particle-effects driver (`SETUP_INTRO_PARTICLE_CHANNELS`,
@@ -133,7 +133,7 @@
 
 ; Reset-on-action handler (`INTRO_RESET_PAGES_AND_PAL_0`) — wakes up
 ; when `[HERO_ACTION] != 0` from the blit dispatcher. Replays the
-; lab startup scene (`PLAY_FX_2C_AND_DRAW_CIN_000`,
+; lab startup scene (`EXPERIMENT_DISCHARGE_STREAK_BURST`,
 ; `DRAW_INTRO_LIGHTNING_FLICKER_LONG`, `DRAW_INTRO_DECOR_337`) so the player can
 ; INTRO reset + lab decor (INTRO_RESET_PAGES_AND_PAL_0).
 .include "intro/intro_reset_and_lab_decor.inc"
@@ -160,7 +160,7 @@
 
 ; City-sequence draw routines: DRAW_CITY_SEQ_432_433,
 ; DRAW_CITY_SEQ_435_436, DRAW_CITY_SEQ_439_440,
-; INTRO_FILL_AND_DRAW_CIN_429_430, SETUP_INTRO_CITY_CHANNELS,
+; DRAW_HOLO_SCREEN_BG_COMPOSITE, SETUP_INTRO_CITY_CHANNELS,
 ; the WAIT_*_BEFORE_COPY_PAGE_03 / DELAY_*_BEFORE_BLIT_DISPATCH
 ; cluster, plus DRAW_CIN_190_LOOP / DRAW_CIN_431_LOOP. The
 ; "draw routines" half of the city pan; corresponds to the
@@ -176,9 +176,9 @@
 .include "intro/intro_page_show_and_text.inc"
 
 ; Song trigger + fade-in decor
-; (`INTRO_PAUSE_3_PLAY_SONG_INIT`, `DELAY_50F_THEN_DRAW_CIN_454`,
-; per-channel scene-decor inits `CH_03_INIT_VAR_01_02_FFF6`,
-; `CH_04_INIT_VAR_04_05`, `CH_05_INIT_VAR_06_07`). Starts the
+; (`INTRO_PAUSE_3_PLAY_SONG_INIT`, `LAB_AUTH_CRT_SCAN_HOLD_THEN_INTERFERENCE`,
+; per-channel scene-decor inits `BIOMETRIC_SCAN_LINE_SWEEP_DOWN_INIT`,
+; `BIOMETRIC_SCAN_LINE_SWEEP_ACROSS_INIT`, `BIOMETRIC_SCAN_BEAM_SWEEP_UP_INIT`). Starts the
 ; main intro song and schedules the parallel decor draw loops
 ; INTRO song init + decor (INTRO_PAUSE_3_PLAY_SONG_INIT).
 .include "intro/intro_song_init_and_decor.inc"
@@ -202,11 +202,11 @@
 .include "intro/intro_lake_phase_fx_drifts.inc"
 
 ; Late-intro parallax-scrolling phase
-; (`PARALLAX_CIN_126_127_LOOP`, `ZOOM_OUT_VAR4_M3_LOOP`,
+; (`LAB_DOOR_LEAVES_PARTING_LOOP`, `ZOOM_OUT_VAR4_M3_LOOP`,
 ; `PARALLAX_REVERSE_3X`, `MUS_10_FORCE_KILL_CHANNELS`,
-; `CH_05_INIT_VARS_06_07_08`). Drives the depth-illusion scrolling
+; `INTRO_DOT_PAIR_CROSSING_SWEEP_CYCLE_INIT`). Drives the depth-illusion scrolling
 ; for the "view from the lab window" phase before the lightning
-; INTRO scene-late-phase init (INIT_VAR_04_PAL_E_VAR_01).
+; INTRO scene-late-phase init (LAB_DOOR_OPENING_INIT).
 .include "intro/intro_scene_late_phase.inc"
 
 ; **First-to-execute scene** despite living last. The entry point
@@ -216,10 +216,10 @@
 ;   ch 0x02 → `INTRO_PLAY_BG_AUDIO_LOOP` (long sequential routine:
 ;             plays bg audio, draws the particle-accelerator
 ;             startup CIN_006..CIN_031, then jumps into
-;             `DRAW_CIN_035_PAL_3_REPEAT_HEAD` in the DNA chunk).
+;             `LESTER_EXITING_CAR_ANIMATION` in the DNA chunk).
 ;   ch 0x03 → `DRAW_CINEMATIC_005_LOOP` (looping avatar/idle draw).
 ; Also contains `INTRO_PLAY_FX_AND_PALETTE_4_LOOP` (Lester's walking-
-; feet animation toward the lab door), `INTRO_FILL_AND_DRAW_CIN_103`
+; feet animation toward the lab door), `DRAW_CARPARK_ENTRANCE_COMPOSITE`
 ; (the city scene background), and the trailing-data label
 ; INTRO final scene: CIN_005 draw loop (transition into LAKE).
 .include "intro/intro_scene_final.inc"
