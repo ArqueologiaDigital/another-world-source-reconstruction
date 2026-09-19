@@ -60,6 +60,14 @@ Reading a batch failure as a batch verdict cost this pass a commit that said
 203 were blocked when 14 were. `undefined_symbols.py` names the symbols, so
 the failing rows can always be subtracted rather than the batch abandoned.
 
+**The lever is spent.** Re-running after the 186 landed offers 23 more --
+naming one port can unlock a transfer the other way -- but all 23 fail: 17
+msdos/INTRO are the tree-blocked names again or rejected by the rename
+validator's family-gap rule, and 6 msdos/CAPSULE are rejected by the same
+rule. What remains needs either INTRO's chunks restructured or a family
+completed first, and neither is a transfer. Re-run this after any of that
+lands, because each name given somewhere can open a transfer elsewhere.
+
 Applying also needs a step this probe does not do. Where the unified tree
 defines a transferred name UNCONDITIONALLY, that definition belongs to the
 SOURCE port: the destination's new definition is overridden by it and the
