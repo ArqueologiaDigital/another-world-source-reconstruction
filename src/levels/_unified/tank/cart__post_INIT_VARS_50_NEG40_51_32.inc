@@ -125,9 +125,9 @@ TANK_PROJECTILE_ARC_AND_EXPLOSION:
 	break
 	video offset=CINEMATIC_019, x=235, y=55
 	break
-	video offset=CINEMATIC_001, x=247, y=61
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_1, x=247, y=61
 	break
-	video offset=CINEMATIC_002, x=258, y=73
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=258, y=73
 	break
 	video offset=CINEMATIC_022, x=269, y=80
 	break

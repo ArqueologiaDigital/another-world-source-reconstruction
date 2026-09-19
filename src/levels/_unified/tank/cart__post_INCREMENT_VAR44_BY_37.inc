@@ -2,7 +2,7 @@ TANK_CANNON_IMPACT_PLUME_LOOP:
 	break
 	je [0x45], 0x00, TANK_CANNON_IMPACT_PLUME_LOOP
 	play id=0x008C, freq=0x0F, vol=0x40, channel=0x00
-	video offset=CINEMATIC_011, x=[0x42], y=[0x43], zoom=[0x44]
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_PAGE3_4, x=[0x42], y=[0x43], zoom=[0x44]
 	break
 	video offset=CINEMATIC_110, x=[0x42], y=[0x43], zoom=[0x44]
 	break

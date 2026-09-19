@@ -451,45 +451,45 @@ TANK_DRAW_CIN_225_AT_160_100_FOREVER:
 LABEL_0E32:
 	break
 	video offset=CINEMATIC_000, x=152, y=5
-	video offset=CINEMATIC_001, x=242, y=65535
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_1, x=242, y=65535
 	break
-	video offset=CINEMATIC_002, x=257, y=23
-	video offset=CINEMATIC_003, x=147, y=33
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=257, y=23
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=147, y=33
 	break
 	video offset=CINEMATIC_000, x=144, y=53
-	video offset=CINEMATIC_001, x=269, y=41
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_1, x=269, y=41
 	break
-	video offset=CINEMATIC_004, x=127, y=72
-	video offset=CINEMATIC_003, x=269, y=67
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_0, x=127, y=72
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=269, y=67
 	break
 	video offset=CINEMATIC_000, x=111, y=86
-	video offset=CINEMATIC_001, x=273, y=90
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_1, x=273, y=90
 	break
-	video offset=CINEMATIC_005, x=90, y=98
-	video offset=CINEMATIC_002, x=273, y=110
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_4, x=90, y=98
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=273, y=110
 	break
-	video offset=CINEMATIC_004, x=64, y=107
-	video offset=CINEMATIC_002, x=268, y=118
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_0, x=64, y=107
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=268, y=118
 	video offset=CINEMATIC_006, x=178, y=3
 	break
-	video offset=CINEMATIC_004, x=42, y=122
-	video offset=CINEMATIC_001, x=259, y=129
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_0, x=42, y=122
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_1, x=259, y=129
 	video offset=CINEMATIC_006, x=172, y=70, zoom=0x64
 	break
-	video offset=CINEMATIC_004, x=21, y=134
-	video offset=CINEMATIC_001, x=278, y=141
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_0, x=21, y=134
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_1, x=278, y=141
 	video offset=CINEMATIC_006, x=172, y=143, zoom=0x8e
 	break
 	video offset=CINEMATIC_000, x=4, y=149
-	video offset=CINEMATIC_003, x=287, y=148
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=287, y=148
 	video offset=CINEMATIC_006, x=172, y=250, zoom=0xdc
 	selectVideoPage 0x03
 	play id=0x008C, freq=0x1E, vol=0x40, channel=0x01
 	play id=0x008C, freq=0x0A, vol=0x40, channel=0x00
 	mov [0x70], 0x0001
-	video offset=CINEMATIC_007, x=160, y=100
-	video offset=CINEMATIC_008, x=160, y=100
-	video offset=CINEMATIC_009, x=160, y=100
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_PAGE3_0, x=160, y=100
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_PAGE3_1, x=160, y=100
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_PAGE3_2, x=160, y=100
 	selectVideoPage 0xFF
 	setup channel=0x3C, address=PALETTE_FLASH_1F_TO_01
 	unfreezeChannels first=0x27, last=0x38
@@ -500,18 +500,18 @@ LABEL_0E32:
 	break
 	mov [PAUSE_SLICES], 0x0005
 	setPalette 0x06
-	video offset=CINEMATIC_010, x=160, y=100
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_PAGE3_3, x=160, y=100
 	break
 	setPalette 0x05
 	play id=0x008C, freq=0x05, vol=0x40, channel=0x00
-	video offset=CINEMATIC_011, x=198, y=49
-	video offset=CINEMATIC_011, x=87, y=66
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_PAGE3_4, x=198, y=49
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_PAGE3_4, x=87, y=66
 	video offset=CINEMATIC_012, x=160, y=100
 	break
 	setPalette 0x04
 	video offset=CINEMATIC_013, x=315, y=58
 	video offset=CINEMATIC_013, x=86, y=57
-	video offset=CINEMATIC_011, x=198, y=91
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_PAGE3_4, x=198, y=91
 	video offset=CINEMATIC_014, x=160, y=100
 	break
 	setPalette 0x03
@@ -553,9 +553,9 @@ LABEL_0F71:
 	play id=0x008E, freq=0x0F, vol=0x40, channel=0x01
 	video offset=CINEMATIC_019, x=199, y=128
 	break
-	video offset=CINEMATIC_002, x=203, y=129
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=203, y=129
 	break
-	video offset=CINEMATIC_002, x=208, y=137
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=208, y=137
 	break
 	video offset=CINEMATIC_019, x=219, y=142
 	break
@@ -581,13 +581,13 @@ LABEL_0FDB:
 	break
 	je [0x57], 0x00, LABEL_0FDB
 	play id=0x008E, freq=0x16, vol=0x40, channel=0x00
-	video offset=CINEMATIC_002, x=205, y=118
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=205, y=118
 	break
-	video offset=CINEMATIC_002, x=222, y=121
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=222, y=121
 	break
-	video offset=CINEMATIC_001, x=241, y=126
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_1, x=241, y=126
 	break
-	video offset=CINEMATIC_002, x=253, y=129
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=253, y=129
 	break
 	video offset=CINEMATIC_022, x=262, y=130
 	break
@@ -595,7 +595,7 @@ LABEL_0FDB:
 	break
 	video offset=CINEMATIC_024, x=258, y=127
 	break
-	video offset=CINEMATIC_005, x=253, y=127
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_4, x=253, y=127
 	break
 	video offset=CINEMATIC_025, x=241, y=116
 	break

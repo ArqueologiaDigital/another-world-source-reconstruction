@@ -55,54 +55,54 @@ DRAW_TANK_FLYBY_CRAFT:
 
 
 TANK_HORIZON_DECOR_LEFT_THIRD:
-	video offset=CINEMATIC_001, x=114, y=22
-	video offset=CINEMATIC_001, x=86, y=21
-	video offset=CINEMATIC_001, x=53, y=21
-	video offset=CINEMATIC_001, x=21, y=21
-	video offset=CINEMATIC_001, x=1, y=21
-	video offset=CINEMATIC_002, x=68, y=21
-	video offset=CINEMATIC_002, x=100, y=21
-	video offset=CINEMATIC_002, x=47, y=22
-	video offset=CINEMATIC_002, x=23, y=20
-	video offset=CINEMATIC_002, x=0, y=20
-	video offset=CINEMATIC_003, x=87, y=23
-	video offset=CINEMATIC_003, x=62, y=20
-	video offset=CINEMATIC_003, x=49, y=21
-	video offset=CINEMATIC_003, x=24, y=21
-	video offset=CINEMATIC_003, x=2, y=23
-	video offset=CINEMATIC_003, x=115, y=14
-	video offset=CINEMATIC_003, x=75, y=31
-	video offset=CINEMATIC_003, x=42, y=31
-	video offset=CINEMATIC_003, x=28, y=38
-	video offset=CINEMATIC_003, x=96, y=20
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_1, x=114, y=22
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_1, x=86, y=21
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_1, x=53, y=21
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_1, x=21, y=21
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_1, x=1, y=21
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=68, y=21
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=100, y=21
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=47, y=22
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=23, y=20
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=0, y=20
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=87, y=23
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=62, y=20
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=49, y=21
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=24, y=21
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=2, y=23
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=115, y=14
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=75, y=31
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=42, y=31
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=28, y=38
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=96, y=20
 	ret
 
 
 	killChannel
-	video offset=CINEMATIC_001, x=114, y=22
-	video offset=CINEMATIC_001, x=86, y=21
-	video offset=CINEMATIC_001, x=53, y=21
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_1, x=114, y=22
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_1, x=86, y=21
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_1, x=53, y=21
 	break
-	video offset=CINEMATIC_001, x=21, y=21
-	video offset=CINEMATIC_001, x=1, y=21
-	video offset=CINEMATIC_002, x=68, y=21
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_1, x=21, y=21
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_1, x=1, y=21
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=68, y=21
 	break
-	video offset=CINEMATIC_002, x=100, y=21
-	video offset=CINEMATIC_002, x=47, y=22
-	video offset=CINEMATIC_002, x=23, y=20
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=100, y=21
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=47, y=22
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=23, y=20
 	break
-	video offset=CINEMATIC_002, x=0, y=20
-	video offset=CINEMATIC_003, x=87, y=23
-	video offset=CINEMATIC_003, x=62, y=20
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_2, x=0, y=20
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=87, y=23
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=62, y=20
 	break
-	video offset=CINEMATIC_003, x=49, y=21
-	video offset=CINEMATIC_003, x=24, y=21
-	video offset=CINEMATIC_003, x=2, y=23
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=49, y=21
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=24, y=21
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=2, y=23
 	break
-	video offset=CINEMATIC_003, x=115, y=14
-	video offset=CINEMATIC_003, x=75, y=31
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=115, y=14
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=75, y=31
 	break
-	video offset=CINEMATIC_003, x=42, y=31
-	video offset=CINEMATIC_003, x=28, y=38
-	video offset=CINEMATIC_003, x=96, y=20
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=42, y=31
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=28, y=38
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_3, x=96, y=20
 	killChannel

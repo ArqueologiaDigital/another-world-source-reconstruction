@@ -1,8 +1,8 @@
 DRAW_TANK_HORIZON_DECOR_CLUSTER:
-	video offset=CINEMATIC_011, x=156, y=17
-	video offset=CINEMATIC_011, x=141, y=28
-	video offset=CINEMATIC_011, x=110, y=23
-	video offset=CINEMATIC_011, x=188, y=15
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_PAGE3_4, x=156, y=17
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_PAGE3_4, x=141, y=28
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_PAGE3_4, x=110, y=23
+	video offset=CINEMATIC_TANK_HORIZON_DECOR_PAGE3_4, x=188, y=15
 	ret
 
 
