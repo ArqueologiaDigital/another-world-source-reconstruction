@@ -37,18 +37,18 @@ LABEL_021D:
 	play id=0x0066, freq=0x08, vol=0x30, channel=0x03
 	call LABEL_005E
 	song id=0x0BC2, delay=0x0000, pos=0x00
-	video offset=CINEMATIC_245, x=160, y=100
-	video offset=CINEMATIC_246, x=160, y=100
-	video offset=CINEMATIC_247, x=160, y=100
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_9, x=160, y=100
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_9, x=160, y=100
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_8, x=160, y=100
 	mov [SCROLL_Y], 0x0000
 	mov [PAUSE_SLICES], 0x0002
 	mov [0xE6], 0x0014
 
 LABEL_02A0:
 	break
-	video offset=CINEMATIC_245, x=160, y=100
-	video offset=CINEMATIC_246, x=160, y=100
-	video offset=CINEMATIC_247, x=160, y=100
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_9, x=160, y=100
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_9, x=160, y=100
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_8, x=160, y=100
 	djnz [0xE6], LABEL_02A0
 	play id=0x0066, freq=0x05, vol=0x20, channel=0x02
 	mov [PAUSE_SLICES], 0x0004
@@ -58,9 +58,9 @@ LABEL_02A0:
 LABEL_02C3:
 	break
 	add [SCROLL_Y], 0x0002
-	video offset=CINEMATIC_245, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_248, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_249, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_9, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_8, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_7, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0001
 	djnz [0xE6], LABEL_02C3
 	mov [0xE6], 0x0007
@@ -68,9 +68,9 @@ LABEL_02C3:
 LABEL_02E6:
 	break
 	add [SCROLL_Y], 0x0002
-	video offset=CINEMATIC_245, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_248, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_249, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_9, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_8, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_7, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0001
 	djnz [0xE6], LABEL_02E6
 	mov [0xE6], 0x0007
@@ -78,9 +78,9 @@ LABEL_02E6:
 LABEL_0309:
 	break
 	add [SCROLL_Y], 0x0002
-	video offset=CINEMATIC_245, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_250, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_251, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_9, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_7, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_6, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0001
 	djnz [0xE6], LABEL_0309
 	mov [0xE6], 0x0007
@@ -88,9 +88,9 @@ LABEL_0309:
 LABEL_032C:
 	break
 	add [SCROLL_Y], 0x0002
-	video offset=CINEMATIC_245, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_252, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_253, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_9, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_6, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_5, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0001
 	djnz [0xE6], LABEL_032C
 	play id=0x0066, freq=0x16, vol=0x14, channel=0x02
@@ -99,8 +99,8 @@ LABEL_032C:
 PRISON_CUTSCENE_ZOOM_IN_PHASE_04_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
-	video offset=CINEMATIC_254, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_255, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_5, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_4, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0001
 	djnz [0xE6], PRISON_CUTSCENE_ZOOM_IN_PHASE_04_LOOP
 	mov [0xE6], 0x0007
@@ -108,8 +108,8 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_04_LOOP:
 PRISON_CUTSCENE_ZOOM_IN_PHASE_05_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
-	video offset=CINEMATIC_256, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_257, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_4, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_3, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0001
 	djnz [0xE6], PRISON_CUTSCENE_ZOOM_IN_PHASE_05_LOOP
 	play id=0x0066, freq=0x0A, vol=0x14, channel=0x02
@@ -120,8 +120,8 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_05_LOOP:
 PRISON_CUTSCENE_ZOOM_IN_PHASE_09_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
-	video offset=CINEMATIC_258, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_259, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_3, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_2, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0001
 	djnz [0xE6], PRISON_CUTSCENE_ZOOM_IN_PHASE_09_LOOP
 	mov [0xE6], 0x0007
@@ -129,8 +129,8 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_09_LOOP:
 PRISON_CUTSCENE_ZOOM_IN_PHASE_07_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
-	video offset=CINEMATIC_260, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_261, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_2, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_1, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0002
 	djnz [0xE6], PRISON_CUTSCENE_ZOOM_IN_PHASE_07_LOOP
 	mov [0xE6], 0x0007
@@ -138,8 +138,8 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_07_LOOP:
 PRISON_CUTSCENE_ZOOM_IN_PHASE_08_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
-	video offset=CINEMATIC_262, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_263, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_1, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_0, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0002
 	djnz [0xE6], PRISON_CUTSCENE_ZOOM_IN_PHASE_08_LOOP
 	mov [0xE6], 0x0007
@@ -147,7 +147,7 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_08_LOOP:
 LABEL_03F8:
 	break
 	add [SCROLL_Y], 0x0002
-	video offset=CINEMATIC_264, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_0, x=160, y=100, zoom=[0xe7]
 	video offset=CINEMATIC_265, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0002
 	djnz [0xE6], LABEL_03F8

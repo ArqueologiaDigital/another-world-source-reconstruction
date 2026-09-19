@@ -116,8 +116,8 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_04_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	je [0xDB], 0x01, PRISON_CUTSCENE_ZOOM_IN_PHASE_04_DONE
-	video offset=CINEMATIC_263, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_264, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_0, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_0, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0001
 
 PRISON_CUTSCENE_ZOOM_IN_PHASE_04_DONE:
@@ -128,8 +128,8 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_05_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	je [0xDB], 0x01, LABEL_031E
-	video offset=CINEMATIC_261, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_262, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_1, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_1, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0001
 
 LABEL_031E:
@@ -143,8 +143,8 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_06_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	je [0xDB], 0x01, PRISON_CUTSCENE_ZOOM_IN_PHASE_06_DONE
-	video offset=CINEMATIC_259, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_260, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_2, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_2, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0001
 
 PRISON_CUTSCENE_ZOOM_IN_PHASE_06_DONE:
@@ -155,8 +155,8 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_07_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	je [0xDB], 0x01, PRISON_CUTSCENE_ZOOM_IN_PHASE_07_DONE
-	video offset=CINEMATIC_257, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_258, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_3, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_3, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0002
 
 PRISON_CUTSCENE_ZOOM_IN_PHASE_07_DONE:
@@ -167,8 +167,8 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_08_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	je [0xDB], 0x01, PRISON_CUTSCENE_ZOOM_IN_PHASE_08_DONE
-	video offset=CINEMATIC_255, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_256, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_4, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_4, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0002
 
 PRISON_CUTSCENE_ZOOM_IN_PHASE_08_DONE:
@@ -179,8 +179,8 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_09_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	je [0xDB], 0x01, LABEL_03BC
-	video offset=CINEMATIC_253, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_254, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_5, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_5, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0002
 
 LABEL_03BC:
@@ -192,8 +192,8 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_10_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	je [0xDB], 0x01, PRISON_CUTSCENE_ZOOM_IN_PHASE_10_DONE
-	video offset=CINEMATIC_251, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_252, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_6, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_6, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0003
 
 PRISON_CUTSCENE_ZOOM_IN_PHASE_10_DONE:
@@ -204,8 +204,8 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_11_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	je [0xDB], 0x01, LABEL_0408
-	video offset=CINEMATIC_249, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_250, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_7, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_7, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0003
 
 LABEL_0408:
@@ -217,8 +217,8 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_12_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	je [0xDB], 0x01, PRISON_CUTSCENE_ZOOM_IN_PHASE_12_DONE
-	video offset=CINEMATIC_247, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_248, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_8, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_8, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0003
 
 PRISON_CUTSCENE_ZOOM_IN_PHASE_12_DONE:
@@ -229,8 +229,8 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_13_LOOP:
 	break
 	add [SCROLL_Y], 0x0002
 	je [0xDB], 0x01, LABEL_0454
-	video offset=CINEMATIC_245, x=160, y=100, zoom=[0xe7]
-	video offset=CINEMATIC_246, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_9, x=160, y=100, zoom=[0xe7]
+	video offset=CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_RIGHT_9, x=160, y=100, zoom=[0xe7]
 	add [0xE7], 0x0002
 
 LABEL_0454:
