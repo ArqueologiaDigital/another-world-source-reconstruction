@@ -83,10 +83,10 @@ LABEL_126C:
 	video offset=CINEMATIC_012, x=[0xe9], y=[0xea]
 	break
 
-HANG_DRAW_CIN_011:
+BUDDY_PULLS_LESTER_F6_LOOP:
 	video offset=CINEMATIC_BUDDY_PULLS_LESTER_6, x=[0xe9], y=[0xea]
 	break
-	jmp HANG_DRAW_CIN_011
+	jmp BUDDY_PULLS_LESTER_F6_LOOP
 
 LABEL_127B:
 	video offset=CINEMATIC_BUDDY_PULLS_LESTER_4, x=[0xe9], y=[0xea]

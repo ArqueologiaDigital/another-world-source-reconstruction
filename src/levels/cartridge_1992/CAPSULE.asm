@@ -4654,10 +4654,10 @@ LABEL_2547:
 	video offset=CINEMATIC_359, x=[0xe9], y=[0xea]
 	break
 
-LABEL_254D:
+BUDDY_PULLS_LESTER_F6_LOOP:
 	video offset=CINEMATIC_358, x=[0xe9], y=[0xea]
 	break
-	jmp LABEL_254D
+	jmp BUDDY_PULLS_LESTER_F6_LOOP
 
 LABEL_2556:
 	video offset=CINEMATIC_356, x=[0xe9], y=[0xea]

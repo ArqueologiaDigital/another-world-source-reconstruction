@@ -3,6 +3,39 @@
 | script | question it answers | run it |
 |---|---|---|
 | `sole_named_caller.py` | How many trivial routines (whole body one `ret`, `killChannel` or `break`) can now be named from the one site that reaches them, because that site has itself been named? Also emits the proposal table. | `python3 notes/caller-derived-naming/sole_named_caller.py` · `… --port amiga --stage CAVES --proposals` |
+| `named_art_only.py` | One layer up: how many unnamed routines with a body draw **only** polygons that already carry a name, so the art has settled their subject at E3 and the routine inherits it? | `python3 notes/caller-derived-naming/named_art_only.py` · `… --port amiga --stage CAVES --list` |
+
+## The measurement that says where the work actually is
+
+`named_art_only.py` over the big three, both priority ports, 2026-09-19:
+
+```
+port/stage            unnamed w/ art  all art named   mixed  no art named
+amiga/PRISON                     488              0       1           487
+amiga/CAVES                      673              1       3           669
+amiga/CAPSULE                    448              7       5           436
+msdos/PRISON                     521              0       2           519
+msdos/CAVES                      722              0       1           721
+msdos/CAPSULE                    663              0       0           663
+TOTAL                           3515              8      12           3495
+```
+
+**3,495 of 3,515.** Almost every routine left in the big three that draws
+anything draws only polygons nobody has identified. The routine layer there is
+not independently workable — it is gated by the polygon layer, and a plan that
+treats the ~3,800 remaining routine names as the unit of work is measuring the
+wrong thing. The unit is the ~2,100 unnamed `CINEMATIC_NNN` constants those
+three stages hold on amiga (677 + 903 + 521), each of which needs a render.
+
+Of the eight the probe reported ready, **two** survived reading and were
+applied; six are recorded with their blockers in
+`archaeology/docs/content/research/2026-09-19-.../`. Two of those six are the
+probe working as designed rather than failing: `LABEL_4CC4` and `LABEL_4DDE`
+draw `CINEMATIC_BUDDY_SMASHING_WINDOW_F8`/`_F7`, but their bodies tile a beam
+(`CAPSULE_SHOT_BEAM_TILE_MEDIUM` is the sibling, and the step is 0x70 per
+tile). **A named polygon settles a routine's subject only when the routine uses
+it as that subject** — the probe finds candidates, not verdicts.
+
 
 ## Why this exists
 

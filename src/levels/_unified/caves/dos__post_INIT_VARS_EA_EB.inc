@@ -28,7 +28,7 @@ DRAW_CIN_315:
 	ret
 
 
-DRAW_CIN_316:
+DRAW_CAVES_WATERFALL_LEFT_STAIRS_BG:
 	video offset=CINEMATIC_316, x=160, y=[0x21]
 	ret
 
