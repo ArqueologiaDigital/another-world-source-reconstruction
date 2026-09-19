@@ -50,13 +50,13 @@ LABEL_2FA2:
 	video offset=CINEMATIC_713, x=[0x07], y=[0x08]
 	break
 	jne [0x09], 0x00, DISPATCH_VAR09_OR_KILL_CHAN
-	video offset=CINEMATIC_714, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_SCREEN_CA_BACKDROP_0, x=[0x07], y=[0x08]
 	break
 	jne [0x09], 0x00, DISPATCH_VAR09_OR_KILL_CHAN
-	video offset=CINEMATIC_715, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_SCREEN_CA_BACKDROP_1, x=[0x07], y=[0x08]
 	break
 	jne [0x09], 0x00, DISPATCH_VAR09_OR_KILL_CHAN
-	video offset=CINEMATIC_716, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_SCREEN_CA_BACKDROP_2, x=[0x07], y=[0x08]
 	break
 
 LABEL_3002:
@@ -381,17 +381,17 @@ LABEL_3335:
 	break
 	video offset=CINEMATIC_412, x=[0xef], y=75
 	break
-	video offset=CINEMATIC_413, x=[0xef], y=70
+	video offset=CINEMATIC_CAVES_SCREEN_6D_BACKDROP_0, x=[0xef], y=70
 	break
-	video offset=CINEMATIC_414, x=[0xef], y=80
+	video offset=CINEMATIC_CAVES_SCREEN_6D_BACKDROP_1, x=[0xef], y=80
 	break
-	video offset=CINEMATIC_413, x=[0xef], y=120
+	video offset=CINEMATIC_CAVES_SCREEN_6D_BACKDROP_0, x=[0xef], y=120
 	video offset=CINEMATIC_304, x=[0xef], y=65
 	break
-	video offset=CINEMATIC_414, x=[0xef], y=140
+	video offset=CINEMATIC_CAVES_SCREEN_6D_BACKDROP_1, x=[0xef], y=140
 	video offset=CINEMATIC_304, x=[0xef], y=60
 	break
-	video offset=CINEMATIC_414, x=[0xef], y=200
+	video offset=CINEMATIC_CAVES_SCREEN_6D_BACKDROP_1, x=[0xef], y=200
 	break
 	mov [0xEF], 0x0001
 	call SETUP_HASH_AND_DERIVE_BUCKETS

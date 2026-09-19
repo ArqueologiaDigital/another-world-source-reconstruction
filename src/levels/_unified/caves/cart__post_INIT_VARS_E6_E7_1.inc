@@ -3,13 +3,13 @@ LABEL_1128:
 	mov [0x21], 0xFFF6
 	mov [0x23], 0x0007
 	sub [0x23], [0xE7]
-	video offset=CINEMATIC_759, x=[0x23], y=120
+	video offset=CINEMATIC_CAVES_LASER_BLAST_3, x=[0x23], y=120
 	add [0x23], 0x0028
-	video offset=CINEMATIC_759, x=[0x23], y=120
+	video offset=CINEMATIC_CAVES_LASER_BLAST_3, x=[0x23], y=120
 	add [0x21], [0xE7]
 
 LABEL_1148:
-	video offset=CINEMATIC_760, x=[0xe6], y=[0x21]
+	video offset=CINEMATIC_CAVES_LASER_BLAST_2, x=[0xe6], y=[0x21]
 	add [0x21], 0x0028
 	djnz [0x22], LABEL_1148
 	break

@@ -2,7 +2,7 @@ LABEL_0675:
 	break
 	sub [0xE7], 0x0008
 	sub [0xE8], 0x0008
-	video offset=CINEMATIC_583, x=159, y=[0xe7]
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_2, x=159, y=[0xe7]
 	jge [0x04], 0x4000, LABEL_068F
 	video offset=CINEMATIC_584, x=179, y=[0xe8]
 

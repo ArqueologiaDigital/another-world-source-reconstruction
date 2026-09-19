@@ -92,11 +92,11 @@ LABEL_081E:
 	break
 	video offset=CINEMATIC_257, x=160, y=100
 	break
-	video offset=CINEMATIC_258, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_46_BACKDROP_0, x=160, y=100
 	break
-	video offset=CINEMATIC_259, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_46_BACKDROP_1, x=160, y=100
 	break
-	video offset=CINEMATIC_260, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_46_BACKDROP_2, x=160, y=100
 	break
 	video offset=CINEMATIC_261, x=160, y=100
 	break
@@ -108,11 +108,11 @@ LABEL_081E:
 	break
 	video offset=CINEMATIC_261, x=160, y=100
 	break
-	video offset=CINEMATIC_260, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_46_BACKDROP_2, x=160, y=100
 	break
-	video offset=CINEMATIC_259, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_46_BACKDROP_1, x=160, y=100
 	break
-	video offset=CINEMATIC_258, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_46_BACKDROP_0, x=160, y=100
 	break
 	video offset=CINEMATIC_257, x=160, y=100
 	break

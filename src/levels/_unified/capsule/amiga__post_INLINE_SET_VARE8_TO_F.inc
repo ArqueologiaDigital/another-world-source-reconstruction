@@ -55,42 +55,42 @@ LABEL_130E:
 	video offset=CINEMATIC_150, x=[0x68], y=[0x69]
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_151, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_SHARDS_0, x=[0x68], y=[0x69]
 	play id=0x0075, freq=0x0F, vol=0x40, channel=0x00
 	play id=0x006B, freq=0x1C, vol=0x40, channel=0x02
 	break
-	video offset=CINEMATIC_152, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_SHARDS_1, x=[0x68], y=[0x69]
 	break
 	play id=0x006B, freq=0x14, vol=0x40, channel=0x02
-	video offset=CINEMATIC_153, x=[0x68], y=[0x69]
-	video offset=CINEMATIC_154, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_FIGURE_0, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_SHARDS_2, x=[0x68], y=[0x69]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_155, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_SPECK_0, x=[0x68], y=[0x69]
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_156, x=[0x68], y=[0x69]
-	video offset=CINEMATIC_157, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_FIGURE_1, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_SHARDS_3, x=[0x68], y=[0x69]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_158, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_SPECK_1, x=[0x68], y=[0x69]
 	selectVideoPage 0xFF
 	play id=0x006B, freq=0x14, vol=0x20, channel=0x02
 	break
-	video offset=CINEMATIC_159, x=[0x68], y=[0x69]
-	video offset=CINEMATIC_160, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_FIGURE_2, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_SHARDS_4, x=[0x68], y=[0x69]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_161, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_SPECK_2, x=[0x68], y=[0x69]
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_162, x=[0x68], y=[0x69]
-	video offset=CINEMATIC_163, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_FIGURE_3, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_SHARDS_5, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_162, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_FIGURE_3, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_164, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_FIGURE_4, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_165, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_FIGURE_5, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_166, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_FIGURE_6, x=[0x68], y=[0x69]
 	setup channel=0x01, address=LABEL_2A16
 	call CAPSULE_ACTOR_SLOT_28_SPAWN_AFTER_WINDOW_SMASH
 	killChannel

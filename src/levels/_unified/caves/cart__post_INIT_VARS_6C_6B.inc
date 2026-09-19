@@ -16,23 +16,23 @@ LABEL_39E3:
 	mov [0x63], 0x0001
 	video offset=CINEMATIC_810, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_811, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_LEFT_4, x=[HERO_X], y=[HERO_Y]
 	break
 	jne [SCREEN_NUM], 0x6E, LABEL_39FF
 	play id=0x006C, freq=0x14, vol=0x20, channel=0x00
 
 LABEL_39FF:
-	video offset=CINEMATIC_812, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_LEFT_3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_813, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_LEFT_2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_814, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_LEFT_1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_813, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_LEFT_2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_812, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_LEFT_3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_811, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_LEFT_4, x=[HERO_X], y=[HERO_Y]
 	break
 	jmp LABEL_39E3
 
@@ -182,7 +182,7 @@ LABEL_3B62:
 	video offset=CINEMATIC_514, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x000F
 	break
-	video offset=CINEMATIC_513, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0019
 	mov [0x63], 0x0001
 	setup channel=0x16, address=LABEL_3A26
@@ -191,7 +191,7 @@ LABEL_3B62:
 
 LABEL_3B93:
 	mov [0x63], 0x0067
-	video offset=CINEMATIC_513, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0014
 	mov [0x19], 0x000A
 	break
@@ -385,9 +385,9 @@ LABEL_3DB6:
 	break
 	video offset=CINEMATIC_510, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_511, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_512, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_RIGHT_1, x=[HERO_X], y=[HERO_Y]
 	break
 	jmp LABEL_3DB6
 LABEL_3DFB:
@@ -461,15 +461,15 @@ LABEL_3EA8:
 
 LABEL_3EA9:
 	mov [0x63], 0x0002
-	video offset=CINEMATIC_531, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_TURN_6, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_532, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_TURN_7, x=[HERO_X], y=[HERO_Y]
 	break
 	jne [SCREEN_NUM], 0x6E, LABEL_3EC5
 	play id=0x006C, freq=0x14, vol=0x20, channel=0x01
 
 LABEL_3EC5:
-	video offset=CINEMATIC_533, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_TURN_8, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_534, x=[HERO_X], y=[HERO_Y]
 	break
@@ -477,9 +477,9 @@ LABEL_3EC5:
 	break
 	video offset=CINEMATIC_534, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_533, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_TURN_8, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_532, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_TURN_7, x=[HERO_X], y=[HERO_Y]
 	break
 	jmp LABEL_3EA9
 

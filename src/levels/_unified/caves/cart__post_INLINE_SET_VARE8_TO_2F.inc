@@ -31,7 +31,7 @@ LABEL_3741:
 LABEL_3742:
 	setup channel=0x06, address=CAVES_TWIN_COLUMN_RISE_INIT
 	selectVideoPage 0x03
-	video offset=CINEMATIC_815, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_LEFT_0, x=160, y=100
 	selectVideoPage 0xFF
 	video offset=CINEMATIC_816, x=160, y=100
 	break

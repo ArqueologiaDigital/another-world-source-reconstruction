@@ -20,13 +20,13 @@ LABEL_3592:
 LABEL_3593:
 	jne [SCREEN_NUM], [0x09], SHARED_RET
 	jne [0x6D], 0x00, LABEL_35A5
-	video offset=CINEMATIC_809, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_LEFT_6, x=[0x07], y=[0x08]
 	ret
 
 
 LABEL_35A5:
 	jne [0x6D], 0x01, LABEL_35B1
-	video offset=CINEMATIC_808, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_LEFT_7, x=[0x07], y=[0x08]
 	ret
 
 
@@ -121,19 +121,19 @@ LABEL_3668:
 
 LABEL_3674:
 	jne [0x6D], 0x01, LABEL_3680
-	video offset=CINEMATIC_799, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_LEFT_2, x=[0x07], y=[0x08]
 	ret
 
 
 LABEL_3680:
 	jne [0x6D], 0x02, LABEL_368C
-	video offset=CINEMATIC_798, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_LEFT_1, x=[0x07], y=[0x08]
 	ret
 
 
 LABEL_368C:
 	jne [0x6D], 0x03, DRAW_CIN_796
-	video offset=CINEMATIC_797, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_LEFT_0, x=[0x07], y=[0x08]
 	ret
 
 

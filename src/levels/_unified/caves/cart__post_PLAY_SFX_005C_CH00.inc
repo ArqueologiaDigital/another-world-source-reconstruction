@@ -181,7 +181,7 @@ CAVES_LASER_IMPACT_ANIM_DISPATCH_RIGHT:
 	jge [0x13], 0x64, LABEL_6A94
 	jle [0x13], 0x03, LABEL_6A76
 	jle [0x13], 0x05, LABEL_6A64
-	video offset=CINEMATIC_794, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_2, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
 
@@ -193,7 +193,7 @@ LABEL_6A64:
 
 
 DRAW_CIN_792:
-	video offset=CINEMATIC_792, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_4, x=[0x21], y=[0x27]
 	ret
 
 
@@ -327,13 +327,13 @@ LABEL_6B7F:
 
 LABEL_6B8B:
 	jne [0x13], 0x88, LABEL_6B97
-	video offset=CINEMATIC_771, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_0, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6B97:
 	jne [0x13], 0x89, LABEL_6BA7
-	video offset=CINEMATIC_770, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_1, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
 
@@ -361,7 +361,7 @@ LABEL_6BC5:
 
 
 DRAW_CIN_834:
-	video offset=CINEMATIC_834, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_LEFT_5, x=[0x21], y=[0x27]
 	ret
 
 
@@ -398,49 +398,49 @@ LABEL_6BF5:
 
 LABEL_6C28:
 	jne [0x13], 0x6F, LABEL_6C34
-	video offset=CINEMATIC_830, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_LEFT_3, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6C34:
 	jne [0x13], 0x70, LABEL_6C40
-	video offset=CINEMATIC_829, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_RIGHT_3, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6C40:
 	jne [0x13], 0x71, LABEL_6C4C
-	video offset=CINEMATIC_828, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_LEFT_2, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6C4C:
 	jne [0x13], 0x72, LABEL_6C58
-	video offset=CINEMATIC_827, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_RIGHT_2, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6C58:
 	jne [0x13], 0x73, LABEL_6C64
-	video offset=CINEMATIC_826, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_LEFT_1, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6C64:
 	jne [0x13], 0x74, LABEL_6C70
-	video offset=CINEMATIC_825, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_RIGHT_1, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6C70:
 	jne [0x13], 0x75, LABEL_6C7C
-	video offset=CINEMATIC_824, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_LEFT_0, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6C7C:
 	jne [0x13], 0x76, LABEL_6C88
-	video offset=CINEMATIC_823, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_RIGHT_0, x=[0x21], y=[0x27]
 	ret
 
 
@@ -495,13 +495,13 @@ LABEL_6CE0:
 
 LABEL_6CEC:
 	jne [0x13], 0x88, LABEL_6CF8
-	video offset=CINEMATIC_771, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_0, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6CF8:
 	jne [0x13], 0x89, LABEL_6D08
-	video offset=CINEMATIC_770, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_1, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
 
@@ -560,7 +560,7 @@ LABEL_6D79:
 	db 0x11
 
 LABEL_6D7A:
-	video offset=CINEMATIC_768, x=[0x22], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_3, x=[0x22], y=[0x27]
 	mov [0x13], 0x0080
 	mov [0x21], [0x22]
 	jl [0x1D], 0x0A, CALL_LABEL_6ED8_AND_RET

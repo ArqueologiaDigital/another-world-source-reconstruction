@@ -3,7 +3,7 @@ LABEL_115E:
 	mov [0x21], 0x005A
 	mov [0x23], 0x0127
 	sub [0x23], [0xE7]
-	video offset=CINEMATIC_768, x=[0x23], y=100
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_3, x=[0x23], y=100
 	add [0x21], [0xE7]
 
 LABEL_1175:

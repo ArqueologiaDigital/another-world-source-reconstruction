@@ -31,21 +31,21 @@ LABEL_375D:
 LABEL_375E:
 	setup channel=0x06, address=CAVES_TWIN_COLUMN_RISE_INIT
 	selectVideoPage 0x03
-	video offset=CINEMATIC_824, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_LEFT_0, x=160, y=100
 	selectVideoPage 0xFF
-	video offset=CINEMATIC_825, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_RIGHT_1, x=160, y=100
 	break
-	video offset=CINEMATIC_826, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_LEFT_1, x=160, y=100
 	break
-	video offset=CINEMATIC_827, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_RIGHT_2, x=160, y=100
 	break
-	video offset=CINEMATIC_828, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_LEFT_2, x=160, y=100
 	break
-	video offset=CINEMATIC_829, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_RIGHT_3, x=160, y=100
 	break
-	video offset=CINEMATIC_828, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_LEFT_2, x=160, y=100
 	selectVideoPage 0x03
-	video offset=CINEMATIC_830, x=169, y=136
-	video offset=CINEMATIC_830, x=169, y=160
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_LEFT_3, x=169, y=136
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_LEFT_3, x=169, y=160
 	selectVideoPage 0xFF
 	killChannel

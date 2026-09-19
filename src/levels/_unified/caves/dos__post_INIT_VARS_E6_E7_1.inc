@@ -3,9 +3,9 @@ LABEL_1193:
 	mov [0x21], 0xFFF6
 	mov [0x23], 0x0007
 	sub [0x23], [0xE7]
-	video offset=CINEMATIC_768, x=[0x23], y=120
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_3, x=[0x23], y=120
 	add [0x23], 0x0028
-	video offset=CINEMATIC_768, x=[0x23], y=120
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_3, x=[0x23], y=120
 	add [0x21], [0xE7]
 
 LABEL_11B3:

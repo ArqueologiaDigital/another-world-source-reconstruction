@@ -60,7 +60,7 @@ LABEL_E3E9:
 	break
 	video offset=CINEMATIC_524, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_525, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_TURN_0, x=[HERO_X], y=[HERO_Y]
 	mov [0x05], 0x0000
 	mov [0x63], 0x0001
 	mov [PAUSE_SLICES], 0x0004

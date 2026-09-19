@@ -375,7 +375,7 @@ LABEL_C908:
 LABEL_C914:
 	video offset=CINEMATIC_402, x=22, y=124
 	video offset=CINEMATIC_401, x=29, y=85
-	video offset=CINEMATIC_758, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BLAST_4, x=160, y=100
 
 LABEL_C920:
 	jl [HERO_X], 0x32, LABEL_C952

@@ -28,7 +28,7 @@ LABEL_D31A:
 
 DRAW_CIN_415_416_FRAGMENTS:
 	fill page=0x00, color=0x08
-	video offset=CINEMATIC_415, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_6D_BACKDROP_2, x=160, y=100
 	video offset=CINEMATIC_416, x=202, y=65
 	video offset=CINEMATIC_416, x=293, y=4
 	video offset=CINEMATIC_416, x=298, y=117
@@ -107,7 +107,7 @@ LABEL_D42D:
 	video offset=CINEMATIC_579, x=160, y=100
 	video offset=CINEMATIC_580, x=160, y=100
 	jne [0xAF], 0x58, SHARED_RET
-	video offset=CINEMATIC_581, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_0, x=160, y=100
 	video offset=CINEMATIC_458, x=199, y=200, zoom=0x40
 	video offset=CINEMATIC_458, x=250, y=189
 	ret
@@ -272,11 +272,11 @@ LABEL_D5C6:
 	video offset=CINEMATIC_751, x=160, y=100
 	video offset=CINEMATIC_752, x=160, y=100
 	video offset=CINEMATIC_753, x=160, y=100
-	video offset=CINEMATIC_754, x=296, y=23
-	video offset=CINEMATIC_755, x=298, y=66
-	video offset=CINEMATIC_756, x=260, y=88
-	video offset=CINEMATIC_756, x=326, y=82
-	video offset=CINEMATIC_757, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BLAST_8, x=296, y=23
+	video offset=CINEMATIC_CAVES_LASER_BLAST_7, x=298, y=66
+	video offset=CINEMATIC_CAVES_LASER_BLAST_6, x=260, y=88
+	video offset=CINEMATIC_CAVES_LASER_BLAST_6, x=326, y=82
+	video offset=CINEMATIC_CAVES_LASER_BLAST_5, x=160, y=100
 	jne [0xB0], 0x03, SHARED_RET
 	video offset=CINEMATIC_458, x=65508, y=90
 	video offset=CINEMATIC_458, x=156, y=184
@@ -289,10 +289,10 @@ LABEL_D602:
 	video offset=CINEMATIC_730, x=160, y=70
 	video offset=CINEMATIC_746, x=160, y=80
 	video offset=CINEMATIC_747, x=160, y=80
-	video offset=CINEMATIC_761, x=91, y=44
-	video offset=CINEMATIC_762, x=86, y=70
+	video offset=CINEMATIC_CAVES_LASER_BLAST_1, x=91, y=44
+	video offset=CINEMATIC_CAVES_LASER_BLAST_0, x=86, y=70
 	video offset=CINEMATIC_763, x=217, y=71
-	video offset=CINEMATIC_764, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_7, x=160, y=100
 	ret
 
 
@@ -322,11 +322,11 @@ LABEL_D64A:
 	mov [SCROLL_Y], 0x0002
 	copyVideoPage src=0x83, dst=0x00
 	selectVideoPage 0x00
-	video offset=CINEMATIC_298, x=163, y=99
-	video offset=CINEMATIC_299, x=162, y=99
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_2, x=163, y=99
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_3, x=162, y=99
 	selectVideoPage 0x03
-	video offset=CINEMATIC_298, x=160, y=100
-	video offset=CINEMATIC_299, x=160, y=100
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_2, x=160, y=100
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_3, x=160, y=100
 	selectVideoPage 0xFF
 	ret
 
@@ -341,11 +341,11 @@ LABEL_D674:
 	mov [SCROLL_Y], 0x0002
 	copyVideoPage src=0x83, dst=0x00
 	selectVideoPage 0x00
-	video offset=CINEMATIC_299, x=161, y=61
-	video offset=CINEMATIC_299, x=161, y=62
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_3, x=161, y=61
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_3, x=161, y=62
 	selectVideoPage 0x03
-	video offset=CINEMATIC_299, x=161, y=60
-	video offset=CINEMATIC_299, x=160, y=62
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_3, x=161, y=60
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_3, x=160, y=62
 	selectVideoPage 0xFF
 	ret
 

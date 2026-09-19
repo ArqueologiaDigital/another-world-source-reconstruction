@@ -204,12 +204,12 @@ CAVES_LASER_IMPACT_ANIM_RIGHT_ABOVE_02:
 
 CAVES_LASER_IMPACT_ANIM_RIGHT_ABOVE_01:
 	jle [0x13], 0x01, DRAW_CIN_798
-	video offset=CINEMATIC_799, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_LEFT_2, x=[0x21], y=[0x27]
 	ret
 
 
 DRAW_CIN_798:
-	video offset=CINEMATIC_798, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_LEFT_1, x=[0x21], y=[0x27]
 	ret
 
 
@@ -223,7 +223,7 @@ LABEL_6B67:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_227, x=[0x21], y=[0x27]
 	selectVideoPage 0xFF
-	video offset=CINEMATIC_797, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_LEFT_0, x=[0x21], y=[0x27]
 	ret
 
 
@@ -241,7 +241,7 @@ CAVES_LASER_IMPACT_ANIM_RIGHT_CASE_70:
 
 CAVES_LASER_IMPACT_ANIM_RIGHT_CASE_71:
 	jne [0x13], 0x71, CAVES_LASER_IMPACT_ANIM_RIGHT_CASE_72
-	video offset=CINEMATIC_794, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_2, x=[0x21], y=[0x27]
 	ret
 
 
@@ -253,7 +253,7 @@ CAVES_LASER_IMPACT_ANIM_RIGHT_CASE_72:
 
 LABEL_6BCA:
 	jne [0x13], 0x73, CAVES_LASER_IMPACT_ANIM_RIGHT_CASE_74
-	video offset=CINEMATIC_792, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_4, x=[0x21], y=[0x27]
 	ret
 
 
@@ -391,7 +391,7 @@ LABEL_6CC8:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_227, x=[0x21], y=[0x27]
 	selectVideoPage 0xFF
-	video offset=CINEMATIC_797, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_LEFT_0, x=[0x21], y=[0x27]
 	ret
 
 
@@ -427,7 +427,7 @@ CAVES_LASER_IMPACT_ANIM_LEFT_CASE_73:
 
 CAVES_LASER_IMPACT_ANIM_LEFT_CASE_74:
 	jne [0x13], 0x74, CAVES_LASER_IMPACT_ANIM_LEFT_CASE_75
-	video offset=CINEMATIC_834, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_LEFT_5, x=[0x21], y=[0x27]
 	ret
 
 

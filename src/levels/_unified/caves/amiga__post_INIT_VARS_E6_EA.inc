@@ -477,11 +477,11 @@ LABEL_CD66:
 
 DRAW_GANTRY_PLATFORMS_BG:
 	fill page=0x00, color=0x00
-	video offset=CINEMATIC_200, x=160, y=100
-	video offset=CINEMATIC_201, x=160, y=100
-	video offset=CINEMATIC_202, x=160, y=100
-	video offset=CINEMATIC_203, x=160, y=100
-	video offset=CINEMATIC_204, x=160, y=100
+	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_0, x=160, y=100
+	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_1, x=160, y=100
+	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_2, x=160, y=100
+	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_3, x=160, y=100
+	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_4, x=160, y=100
 	ret
 
 
@@ -496,9 +496,9 @@ LABEL_CD7F:
 
 CAVES_SCREEN_46_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
-	video offset=CINEMATIC_258, x=160, y=100
-	video offset=CINEMATIC_259, x=160, y=70
-	video offset=CINEMATIC_260, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_46_BACKDROP_0, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_46_BACKDROP_1, x=160, y=70
+	video offset=CINEMATIC_CAVES_SCREEN_46_BACKDROP_2, x=160, y=100
 	ret
 
 

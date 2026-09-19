@@ -97,9 +97,9 @@ LABEL_CE3D:
 
 CAVES_SCREEN_6D_BACKDROP_DRAW:
 	fill page=0x00, color=0x08
-	video offset=CINEMATIC_413, x=160, y=100
-	video offset=CINEMATIC_414, x=160, y=100
-	video offset=CINEMATIC_415, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_6D_BACKDROP_0, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_6D_BACKDROP_1, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_6D_BACKDROP_2, x=160, y=100
 	ret
 
 
@@ -122,9 +122,9 @@ LABEL_CEF2:
 
 CAVES_SCREEN_88_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
-	video offset=CINEMATIC_581, x=160, y=100
-	video offset=CINEMATIC_582, x=160, y=100
-	video offset=CINEMATIC_583, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_0, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_1, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_2, x=160, y=100
 	ret
 
 
@@ -200,9 +200,9 @@ LABEL_CF9F:
 
 CAVES_SCREEN_CA_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
-	video offset=CINEMATIC_714, x=160, y=100
-	video offset=CINEMATIC_715, x=160, y=100
-	video offset=CINEMATIC_716, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_CA_BACKDROP_0, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_CA_BACKDROP_1, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_CA_BACKDROP_2, x=160, y=100
 	ret
 
 
@@ -341,10 +341,10 @@ DRAW_WATERFALL_BG_FOUR_PASS:
 
 DRAW_BUDDY_CRAWLING_BG:
 	fill page=0x00, color=0x08
-	video offset=CINEMATIC_296, x=160, y=100
-	video offset=CINEMATIC_297, x=160, y=100
-	video offset=CINEMATIC_298, x=160, y=100
-	video offset=CINEMATIC_299, x=160, y=100
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=160, y=100
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_1, x=160, y=100
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_2, x=160, y=100
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_3, x=160, y=100
 	ret
 
 

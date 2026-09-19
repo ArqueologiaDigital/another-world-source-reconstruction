@@ -189,58 +189,58 @@ LABEL_05B0:
 DELAY_LOOP_VARE6_AT_05C7:
 	break
 	djnz [0xE6], DELAY_LOOP_VARE6_AT_05C7
-	video offset=CINEMATIC_581, x=159, y=50
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_0, x=159, y=50
 	break
-	video offset=CINEMATIC_582, x=159, y=55
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_1, x=159, y=55
 	break
 	video offset=CINEMATIC_567, x=159, y=65
 	break
-	video offset=CINEMATIC_582, x=159, y=85
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_1, x=159, y=85
 	break
-	video offset=CINEMATIC_581, x=159, y=92
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_0, x=159, y=92
 	break
-	video offset=CINEMATIC_582, x=159, y=92
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_1, x=159, y=92
 	break
 	video offset=CINEMATIC_567, x=159, y=92
 
 LABEL_05EE:
 	break
-	video offset=CINEMATIC_583, x=159, y=92
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_2, x=159, y=92
 	jl [HERO_X], 0xAA, LABEL_05EE
 	deleteChannels first=0x14, last=0x16
 	setup channel=0x36, address=LABEL_06A7
 	break
-	video offset=CINEMATIC_583, x=159, y=92
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_2, x=159, y=92
 	jge [0x04], 0x4000, LABEL_0611
 	video offset=CINEMATIC_589, x=180, y=176
 
 LABEL_0611:
 	break
-	video offset=CINEMATIC_583, x=159, y=92
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_2, x=159, y=92
 	jge [0x04], 0x4000, LABEL_0621
 	video offset=CINEMATIC_588, x=180, y=176
 
 LABEL_0621:
 	break
-	video offset=CINEMATIC_583, x=159, y=92
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_2, x=159, y=92
 	jge [0x04], 0x4000, LABEL_0631
 	video offset=CINEMATIC_587, x=180, y=176
 
 LABEL_0631:
 	break
-	video offset=CINEMATIC_583, x=159, y=92
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_2, x=159, y=92
 	jge [0x04], 0x4000, LABEL_0641
 	video offset=CINEMATIC_586, x=179, y=176
 
 LABEL_0641:
 	break
-	video offset=CINEMATIC_583, x=159, y=90
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_2, x=159, y=90
 	jge [0x04], 0x4000, LABEL_0651
 	video offset=CINEMATIC_585, x=178, y=175
 
 LABEL_0651:
 	break
-	video offset=CINEMATIC_583, x=159, y=80
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_2, x=159, y=80
 	jge [0x04], 0x4000, INIT_VARS_E6_E7_E8
 	video offset=CINEMATIC_584, x=179, y=170
 	mov [HERO_Y], 0x0064

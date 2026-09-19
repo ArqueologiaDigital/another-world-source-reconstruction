@@ -354,7 +354,7 @@ LABEL_C87B:
 
 LABEL_C8D5:
 	jg [HERO_X], 0x64, LABEL_C8DF
-	video offset=CINEMATIC_758, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BLAST_4, x=160, y=100
 
 LABEL_C8DF:
 	break
@@ -518,19 +518,19 @@ HANG_DRAW_CIN_394:
 	jmp HANG_DRAW_CIN_394
 
 LABEL_CA62:
-	video offset=CINEMATIC_582, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_1, x=160, y=100
 	break
 	jne [0x6C], 0x03E8, LABEL_CA62
 	jg [HERO_X], 0x8C, LABEL_CB29
 	deleteChannels first=0x14, last=0x16
-	video offset=CINEMATIC_582, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_1, x=160, y=100
 	break
 	play id=0x006A, freq=0x0A, vol=0x40, channel=0x00
 	play id=0x006A, freq=0x0A, vol=0x40, channel=0x01
 	play id=0x0074, freq=0x0A, vol=0x40, channel=0x02
 	play id=0x0074, freq=0x0A, vol=0x40, channel=0x03
 	video offset=CINEMATIC_160, x=125, y=153
-	video offset=CINEMATIC_583, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_2, x=160, y=100
 	break
 	video offset=CINEMATIC_584, x=160, y=100
 	video offset=CINEMATIC_169, x=126, y=115
@@ -552,13 +552,13 @@ LABEL_CA62:
 	play id=0x0074, freq=0x0A, vol=0x40, channel=0x01
 	play id=0x0074, freq=0x0C, vol=0x40, channel=0x02
 	play id=0x0074, freq=0x0E, vol=0x40, channel=0x03
-	video offset=CINEMATIC_581, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_0, x=160, y=100
 	video offset=CINEMATIC_160, x=124, y=88
 	break
-	video offset=CINEMATIC_581, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_0, x=160, y=100
 	video offset=CINEMATIC_166, x=124, y=88
 	selectVideoPage 0x00
-	video offset=CINEMATIC_581, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_0, x=160, y=100
 	selectVideoPage 0xFF
 	break
 	video offset=CINEMATIC_166, x=124, y=88
@@ -574,9 +574,9 @@ LABEL_CA62:
 	killChannel
 
 LABEL_CB29:
-	video offset=CINEMATIC_582, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_1, x=160, y=100
 	break
-	video offset=CINEMATIC_583, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_2, x=160, y=100
 	break
 	video offset=CINEMATIC_584, x=160, y=100
 	break
@@ -589,9 +589,9 @@ LABEL_CB29:
 	break
 	video offset=CINEMATIC_588, x=160, y=100
 	break
-	video offset=CINEMATIC_581, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_0, x=160, y=100
 	selectVideoPage 0x00
-	video offset=CINEMATIC_581, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_0, x=160, y=100
 	selectVideoPage 0xFF
 	jmp LABEL_1C15
 LABEL_CB5F:

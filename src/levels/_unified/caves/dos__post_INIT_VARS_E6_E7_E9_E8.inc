@@ -37,36 +37,36 @@ LABEL_1282:
 	break
 	video offset=CINEMATIC_199, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_200, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_201, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_202, x=[HERO_X], y=[HERO_Y]
-	video offset=CINEMATIC_203, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_202, x=[HERO_X], y=[HERO_Y]
-	video offset=CINEMATIC_204, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_4, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_202, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_2, x=[HERO_X], y=[HERO_Y]
 	video offset=CINEMATIC_205, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_202, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_2, x=[HERO_X], y=[HERO_Y]
 	video offset=CINEMATIC_206, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_202, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_2, x=[HERO_X], y=[HERO_Y]
 	video offset=CINEMATIC_207, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_202, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_2, x=[HERO_X], y=[HERO_Y]
 	video offset=CINEMATIC_208, x=[HERO_X], y=[HERO_Y]
 	setup channel=0x3F, address=CAVES_INLINE_SET_VAR01_TO_E_L1
 	break
-	video offset=CINEMATIC_202, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_2, x=[HERO_X], y=[HERO_Y]
 	video offset=CINEMATIC_208, x=[HERO_X], y=[HERO_Y]
 	mov [0x03], 0x000A
 
 LABEL_1300:
 	break
-	video offset=CINEMATIC_202, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_2, x=[HERO_X], y=[HERO_Y]
 	video offset=CINEMATIC_207, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_1300
 

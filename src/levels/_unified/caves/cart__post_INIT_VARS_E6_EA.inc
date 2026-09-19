@@ -383,7 +383,7 @@ LABEL_D13C:
 
 LABEL_D13D:
 	video offset=CINEMATIC_321, x=114, y=140
-	video offset=CINEMATIC_296, x=91, y=146
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=91, y=146
 	video offset=CINEMATIC_321, x=242, y=145
 	jl [HERO_X], 0x52, LABEL_D159
 	jg [HERO_Y], 0xA8, LABEL_D159
@@ -397,11 +397,11 @@ LABEL_D15D:
 
 LABEL_D15E:
 	video offset=CINEMATIC_321, x=181, y=144
-	video offset=CINEMATIC_296, x=121, y=203, zoom=0x40
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=121, y=203, zoom=0x40
 	video offset=CINEMATIC_321, x=262, y=145
 	video offset=CINEMATIC_321, x=85, y=145
 	jl [HERO_Y], 0xD2, LABEL_D17B
-	video offset=CINEMATIC_297, x=203, y=208, zoom=0x40
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_1, x=203, y=208, zoom=0x40
 
 LABEL_D17B:
 	break
@@ -410,10 +410,10 @@ LABEL_D17F:
 	db 0x11
 
 LABEL_D180:
-	video offset=CINEMATIC_296, x=99, y=160
-	video offset=CINEMATIC_297, x=193, y=168
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=99, y=160
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_1, x=193, y=168
 	jl [HERO_Y], 0x8F, LABEL_D192
-	video offset=CINEMATIC_297, x=197, y=163
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_1, x=197, y=163
 
 LABEL_D192:
 	break
@@ -424,10 +424,10 @@ LABEL_D196:
 LABEL_D197:
 	jg [HERO_Y], 0x65, LABEL_D1B1
 	video offset=CINEMATIC_410, x=112, y=69
-	video offset=CINEMATIC_297, x=37, y=31
-	video offset=CINEMATIC_297, x=149, y=11
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_1, x=37, y=31
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_1, x=149, y=11
 	video offset=CINEMATIC_410, x=59, y=15
-	video offset=CINEMATIC_297, x=76, y=76
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_1, x=76, y=76
 
 LABEL_D1B1:
 	break
@@ -507,7 +507,7 @@ LABEL_D255:
 	db 0x11
 
 LABEL_D256:
-	video offset=CINEMATIC_296, x=46, y=139
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=46, y=139
 	mov [0x42], 0xF060
 	jl [HERO_X], 0x35, DRAW_CAVES_FIRST_ROOM_BG
 	mov [0x42], 0x001D

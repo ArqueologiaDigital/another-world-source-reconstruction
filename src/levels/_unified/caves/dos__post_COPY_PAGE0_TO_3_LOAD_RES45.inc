@@ -33,7 +33,7 @@ LABEL_D295:
 
 DRAW_CIN_415_416_FRAGMENTS:
 	fill page=0x00, color=0x08
-	video offset=CINEMATIC_415, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_6D_BACKDROP_2, x=160, y=100
 	video offset=CINEMATIC_416, x=202, y=65
 	video offset=CINEMATIC_416, x=293, y=4
 	video offset=CINEMATIC_416, x=298, y=117
@@ -80,15 +80,15 @@ LABEL_D2F3:
 	video offset=CINEMATIC_431, x=136, y=165
 	video offset=CINEMATIC_431, x=233, y=165
 	video offset=CINEMATIC_431, x=293, y=165
-	video offset=CINEMATIC_296, x=91, y=153
-	video offset=CINEMATIC_296, x=28, y=153
-	video offset=CINEMATIC_296, x=59, y=153
-	video offset=CINEMATIC_296, x=124, y=153
-	video offset=CINEMATIC_296, x=320, y=153
-	video offset=CINEMATIC_296, x=269, y=153
-	video offset=CINEMATIC_296, x=132, y=153
-	video offset=CINEMATIC_296, x=203, y=153
-	video offset=CINEMATIC_296, x=170, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=91, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=28, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=59, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=124, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=320, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=269, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=132, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=203, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=170, y=153
 	video offset=CINEMATIC_432, x=230, y=172
 	ret
 
@@ -218,8 +218,8 @@ LABEL_D49E:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_740, x=160, y=100
 	video offset=CINEMATIC_739, x=160, y=100
-	video offset=CINEMATIC_755, x=160, y=100
-	video offset=CINEMATIC_756, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BLAST_7, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BLAST_6, x=160, y=100
 	jne [0xB0], 0x03, SHARED_RET
 	setPalette 0x10
 	video offset=CINEMATIC_646, x=49, y=115
@@ -237,8 +237,8 @@ LABEL_D4DF:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_740, x=160, y=100
 	video offset=CINEMATIC_739, x=160, y=100
-	video offset=CINEMATIC_755, x=160, y=100
-	video offset=CINEMATIC_756, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BLAST_7, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BLAST_6, x=160, y=100
 	ret
 
 
@@ -264,23 +264,23 @@ DRAW_STALACTITE_CAVERN_BG:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_740, x=160, y=100
 	video offset=CINEMATIC_739, x=160, y=100
-	video offset=CINEMATIC_755, x=160, y=100
-	video offset=CINEMATIC_756, x=160, y=100
-	video offset=CINEMATIC_757, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BLAST_7, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BLAST_6, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BLAST_5, x=160, y=100
 	ret
 
 
 LABEL_D53B:
 	fill page=0x00, color=0x00
-	video offset=CINEMATIC_759, x=160, y=100
-	video offset=CINEMATIC_760, x=160, y=100
-	video offset=CINEMATIC_761, x=160, y=100
-	video offset=CINEMATIC_762, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BLAST_3, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BLAST_2, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BLAST_1, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_BLAST_0, x=160, y=100
 	video offset=CINEMATIC_763, x=296, y=23
-	video offset=CINEMATIC_764, x=298, y=66
-	video offset=CINEMATIC_765, x=260, y=88
-	video offset=CINEMATIC_765, x=326, y=82
-	video offset=CINEMATIC_766, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_7, x=298, y=66
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_6, x=260, y=88
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_6, x=326, y=82
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_5, x=160, y=100
 	jne [0xB0], 0x03, SHARED_RET
 	video offset=CINEMATIC_457, x=65508, y=90
 	video offset=CINEMATIC_457, x=156, y=184
@@ -291,10 +291,10 @@ LABEL_D577:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_740, x=160, y=70
 	video offset=CINEMATIC_739, x=160, y=70
-	video offset=CINEMATIC_755, x=160, y=80
-	video offset=CINEMATIC_756, x=160, y=80
-	video offset=CINEMATIC_770, x=91, y=44
-	video offset=CINEMATIC_771, x=86, y=70
+	video offset=CINEMATIC_CAVES_LASER_BLAST_7, x=160, y=80
+	video offset=CINEMATIC_CAVES_LASER_BLAST_6, x=160, y=80
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_1, x=91, y=44
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_0, x=86, y=70
 	video offset=CINEMATIC_772, x=217, y=71
 	video offset=CINEMATIC_773, x=160, y=100
 	ret
@@ -311,12 +311,12 @@ LABEL_D59B:
 DRAW_WATERFALL_LEFT_STAIRS_BG:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=160, y=100
-	video offset=CINEMATIC_296, x=165, y=111
-	video offset=CINEMATIC_296, x=220, y=110
-	video offset=CINEMATIC_296, x=257, y=111
-	video offset=CINEMATIC_296, x=301, y=111
-	video offset=CINEMATIC_296, x=33, y=112
-	video offset=CINEMATIC_296, x=70, y=110
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=165, y=111
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=220, y=110
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=257, y=111
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=301, y=111
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=33, y=112
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=70, y=110
 	ret
 
 
@@ -331,10 +331,10 @@ LABEL_D5BF:
 	mov [SCROLL_Y], 0x0002
 	copyVideoPage src=0x83, dst=0x00
 	selectVideoPage 0x00
-	video offset=CINEMATIC_299, x=163, y=99
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_3, x=163, y=99
 	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=162, y=99
 	selectVideoPage 0x03
-	video offset=CINEMATIC_299, x=160, y=100
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_3, x=160, y=100
 	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=160, y=100
 	selectVideoPage 0xFF
 	ret
@@ -394,7 +394,7 @@ LABEL_D62E:
 	video offset=CINEMATIC_357, x=218, y=152
 	video offset=CINEMATIC_357, x=93, y=77
 	video offset=CINEMATIC_358, x=161, y=96
-	video offset=CINEMATIC_296, x=59, y=96
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=59, y=96
 	ret
 
 
@@ -402,9 +402,9 @@ LABEL_D66F:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_361, x=160, y=100
 	video offset=CINEMATIC_362, x=160, y=100
-	video offset=CINEMATIC_296, x=214, y=153
-	video offset=CINEMATIC_296, x=248, y=153
-	video offset=CINEMATIC_296, x=310, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=214, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=248, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=310, y=153
 	video offset=CINEMATIC_356, x=24, y=62
 	video offset=CINEMATIC_356, x=32, y=71
 	video offset=CINEMATIC_356, x=24, y=69
@@ -440,17 +440,17 @@ LABEL_D66F:
 LABEL_D701:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_364, x=160, y=100
-	video offset=CINEMATIC_296, x=47, y=153
-	video offset=CINEMATIC_296, x=68, y=153
-	video offset=CINEMATIC_296, x=104, y=153
-	video offset=CINEMATIC_296, x=141, y=152
-	video offset=CINEMATIC_296, x=11, y=153
-	video offset=CINEMATIC_296, x=157, y=155
-	video offset=CINEMATIC_296, x=188, y=154
-	video offset=CINEMATIC_296, x=219, y=154
-	video offset=CINEMATIC_296, x=302, y=153
-	video offset=CINEMATIC_296, x=177, y=153
-	video offset=CINEMATIC_296, x=262, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=47, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=68, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=104, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=141, y=152
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=11, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=157, y=155
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=188, y=154
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=219, y=154
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=302, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=177, y=153
+	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=262, y=153
 	ret
 
 

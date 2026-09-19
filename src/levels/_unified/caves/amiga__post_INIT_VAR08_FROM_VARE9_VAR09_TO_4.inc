@@ -20,7 +20,7 @@ LABEL_3385:
 LABEL_3386:
 	jne [SCREEN_NUM], [0x09], SHARED_RET
 	jne [0x6D], 0x00, LABEL_3398
-	video offset=CINEMATIC_794, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_2, x=[0x07], y=[0x08]
 	ret
 
 
@@ -32,7 +32,7 @@ LABEL_3398:
 
 LABEL_33A4:
 	jne [0x6D], 0x02, LABEL_33B0
-	video offset=CINEMATIC_792, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_RIGHT_4, x=[0x07], y=[0x08]
 	ret
 
 
