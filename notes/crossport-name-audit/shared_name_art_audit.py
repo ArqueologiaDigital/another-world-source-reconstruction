@@ -274,6 +274,80 @@ def check_sides(stages: dict) -> int:
     return 0
 
 
+# Only the words that say what a routine DOES, never what it depicts. An
+# earlier version also dropped SCENE and BG, which left
+# CINEMATIC_LIFT_SCENE_BG with the single token LIFT -- below the two-token
+# bar -- so the guard missed that DRAW_LIFT_SCENE_BG_COMPOSITE draws it, and
+# passed a row that would have moved the name to a constant drawn by
+# INTRO_SCENE_INIT_PARTICLES.
+STOP = {"DRAW", "PAINT", "COMPOSE", "COMPOSITE", "ANIMATION", "LOOP",
+        "SETUP", "INIT", "THEN", "AT", "TO", "OF", "AND", "F"}
+
+
+def drawers(stage: str, port: str) -> dict:
+    """constant -> the set of routines in that port's stage that draw it."""
+    f = ROOT / "src" / "levels" / PORTS[port] / f"{stage}.asm"
+    out: dict[str, set[str]] = collections.defaultdict(set)
+    cur = None
+    for line in f.read_text(errors="replace").splitlines():
+        m = re.match(r"^([A-Za-z_]\w*):", line)
+        if m:
+            cur = m.group(1)
+            continue
+        d = re.search(r"offset=(CINEMATIC_\w+)", line.split(";", 1)[0])
+        if d and cur:
+            out[d.group(1)].add(cur)
+    return out
+
+
+def corroborated(name: str, routines: set) -> bool:
+    """Does any routine drawing this constant have a name that agrees?
+
+    Token overlap, ignoring the words that appear in half the tree. Two
+    shared distinctive tokens is the bar -- CINEMATIC_LIFT_SCENE_BG against
+    DRAW_LIFT_SCENE_BG_COMPOSITE shares LIFT and SCENE and clears it, while
+    the same constant against INTRO_SCENE_INIT_PARTICLES shares only SCENE
+    and does not.
+    """
+    want = {t for t in name.replace("CINEMATIC_", "").split("_")
+            if t not in STOP and not t.isdigit()}
+    for r in routines:
+        have = {t for t in r.split("_") if t not in STOP}
+        if len(want & have) >= 2:
+            return True
+    return False
+
+
+def regressions(stage: str, rows: dict, fix: str) -> list[str]:
+    """Rows that would move a name OFF a constant whose drawer agrees with it.
+
+    The audit's whole case is that a name sits on the wrong art. When the
+    routine drawing the current holder is named for that very thing, that
+    case is not made -- whatever the art says, somebody already tied the two
+    together, and the art match may be the coincidence.
+
+    INTRO, 2026-09-19: three of seven proposed moves were this.
+    CINEMATIC_LIFT_SCENE_BG sits on a constant drawn by
+    DRAW_LIFT_SCENE_BG_COMPOSITE and would have moved to one drawn by
+    INTRO_SCENE_INIT_PARTICLES; CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F2
+    sits on one drawn by LESTER_WALKING_AWAY_FROM_CAMERA_ANIMATION and would
+    have moved to PAINT_BIOMETRIC_SCANNER_SCENE. Applying those would have
+    been a regression in the port being "corrected".
+    """
+    dr = drawers(stage, fix)
+    bad = []
+    for src, dst in rows.items():
+        if RE_NUM.match(dst):
+            continue
+        if corroborated(dst, dr.get(dst, set())) and \
+                not corroborated(dst, dr.get(src, set())):
+            bad.append(f"{dst}: {fix} already draws it from "
+                       f"{sorted(dr.get(dst, set()))[0]}, and the proposed "
+                       f"target {src} is drawn from "
+                       f"{sorted(dr.get(src, set()) or {'nothing'})[0]}")
+    return bad
+
+
 def emit_permutation(stage: str, tabs: dict, art: dict, rev: dict,
                      out: Path, fix: str = "msdos") -> None:
     """The correction as ONE rename table, promotions and demotions together.
@@ -335,6 +409,14 @@ def emit_permutation(stage: str, tabs: dict, art: dict, rev: dict,
             rows[n] = cands[0]
         elif n in diff:
             rows[n] = f"CINEMATIC_{idx[n]}"
+    regs = regressions(stage, rows, fix)
+    if regs:
+        print(f"{stage}: NOT emitted -- {len(regs)} row(s) would move a name "
+              f"OFF a constant whose\n  drawer already agrees with it:",
+              file=sys.stderr)
+        for r in regs:
+            print(f"    {r}", file=sys.stderr)
+        return
     clash = [t for t, c in collections.Counter(rows.values()).items() if c > 1]
     if clash:
         print(f"{stage}: NOT emitted -- {len(clash)} target collision(s); "
@@ -499,6 +581,19 @@ def main() -> int:
             else:
                 tot["  art DIFFERS"] += 1
                 holder = [x for x in rev["msdos"].get(a[0], []) if x != name]
+                # Three kinds, and only one of them is a defect worth acting
+                # on. Reporting a bare total mixes them and overstates the
+                # work.
+                if a[1] == m[1]:
+                    tot["      same extent and leaf count, different "
+                        "vertices -- one object drawn twice, NOT a "
+                        "misapplied name"] += 1
+                elif holder:
+                    tot["      a shuffle: the other port holds this art "
+                        "under another name"] += 1
+                else:
+                    tot["      the art is absent from the other port "
+                        "(often it moved to the shared bank)"] += 1
                 rows.append((stage, name, a[1], m[1], holder))
 
     for k, v in tot.items():
