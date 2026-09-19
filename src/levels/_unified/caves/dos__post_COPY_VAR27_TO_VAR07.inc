@@ -18,7 +18,7 @@ LABEL_64BE:
 LABEL_64BF:
 	mov [0x26], [0x22]
 	sub [0x26], [0x21]
-	jl [0x26], 0x7E, LABEL_64EC
+	jl [0x26], 0x7E, CAVES_LASER_BOLT_SPAN_FROM_64
 	jge [0x12], 0x2000, LABEL_64DF
 	video offset=CINEMATIC_861, x=[0x21], y=[0x27]
 	video offset=CINEMATIC_862, x=[0x22], y=[0x27]
@@ -29,7 +29,7 @@ LABEL_64DF:
 	video offset=CINEMATIC_860, x=[0x22], y=[0x27]
 	jmp LABEL_6577
 
-LABEL_64EC:
+CAVES_LASER_BOLT_SPAN_FROM_64:
 	jl [0x26], 0x64, CAVES_LASER_BOLT_SPAN_FROM_3E
 	jge [0x12], 0x2000, LABEL_6506
 	video offset=CINEMATIC_855, x=[0x21], y=[0x27]
