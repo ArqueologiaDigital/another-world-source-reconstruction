@@ -65,7 +65,8 @@ on a bad measurement.
 
 **T7's premise survives.** No routine paired on a body of three lines or more
 draws the shared bank at a different offset on two ports, across 132
-independent strong agreements.
+independent strong agreements. For amiga and msdos it is now more than
+survival — see the byte-level check below, which settles it.
 
 The single disagreement in the whole tree is the two-line pair amiga
 `DRAW_HERO_POSE_0_0` (offset 0x1C78) against `DRAW_CV_298` (0x3FB8) in
@@ -73,12 +74,51 @@ CAPSULE, and it appears identically against **both** msdos and snes_eu — those
 two agree with each other, which is what a genuinely different routine on
 amiga looks like, not a bank difference.
 
-## What this does not establish
+## What the assembly test does not establish — and the one that does
 
 **Coverage is 24.1%.** The agreeing pairs touch 85 distinct offsets of the 352
-amiga defines; the other three quarters of the bank are untested, not proven
-equal. This is a failure to refute over the part of the bank the game's shared
-routines actually use — good enough to proceed with T7, not a proof that the
-banks are byte-identical. Anyone doing the `CV_<OFFSET4>` migration should
-compare the ROM bytes directly, which this probe does not do: it reads only
-the assembly.
+amiga defines; the other three quarters are untested, not proven equal. That
+is a failure to refute, not a proof, and it is why the second probe exists.
+
+## `shared_bank_bytes_identical.py` — the same question, answered exactly
+
+`docs/NAMING.md` §5 already identifies the bank as a single file:
+
+> Also: resource `0x11`, typed "UNKNOWN", is the shared video2 bank … the
+> highest `COMMON_VIDEO` EQU value (`0x61B0` = 25,008) fits inside its 25,108
+> bytes with 100 to spare, which no other resource does.
+
+So the premise is a statement about one file per port, and is answerable
+exactly.
+
+```bash
+python3 notes/shared-bank-probes/shared_bank_bytes_identical.py
+```
+
+```
+  amiga        25108 bytes  ee98e9d5cca18a4fd0c3d0dac884e38a...  matches baseline
+  msdos        25108 bytes  ee98e9d5cca18a4fd0c3d0dac884e38a...  matches baseline
+  gba_usa                    (no resource-0x11.bin; not covered)
+```
+
+Baseline, recorded so a fresh extraction can be checked against it:
+
+```
+25108 bytes
+sha256 ee98e9d5cca18a4fd0c3d0dac884e38a11533cd8fd88825cd503eeb0658494b0
+```
+
+**T7's premise is proven for the two priority ports at 100% coverage**, not
+merely unrefuted over a quarter of the bank. The 25,108 also matches the size
+NAMING.md §5 arrived at independently.
+
+The resource dumps live under `another-world-archaeology/tmp/output/<port>/`,
+which is volatile and not in git, so the hash is committed here and the recipe
+to regenerate the input is `python3 tools/aw_unpacker.py` from the archaeology
+repo. The probe exits 2 rather than 0 when fewer than two ports have the
+resource, because with nothing to compare, reporting success would be a lie.
+
+**Still not covered:** snes_eu and gba_usa have no extracted resource 0x11 —
+and the GBA release packages its art differently, shipping a `cinematic.rom`
+the others do not. For snes_eu the only evidence remains the 61 assembly-level
+agreements above.
