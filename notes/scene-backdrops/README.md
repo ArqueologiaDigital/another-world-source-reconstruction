@@ -53,3 +53,32 @@ odd place for it and the pairing wants understanding first.
 
 Neither is blocked on the renderer. They are blocked on saying something
 about the picture that a reader could check.
+
+## Compositing polygons over a backdrop: works, but not statically
+
+The obvious next step is to draw a scene's animated elements onto its
+backdrop and look at the tableau. Half of it works: the backdrop decodes
+and the elements paste.
+
+Placing them does **not** work from a static read, and the failure is
+worth recording so it is not re-attempted the same way. Screen position
+ought to be the draw's `x`,`y` plus the polygon's anchor-relative extent,
+and for the baths scene that puts two of three elements off a 320-wide
+screen — `CINEMATIC_016` at x=283 and `CINEMATIC_014` at x=322 — including
+one whose draw coordinates are **literal** (239,102), so the variables are
+not the whole story. Only `CINEMATIC_024`, drawn at a literal (66,91),
+lands somewhere plausible, at the pool's edge.
+
+Two candidate causes, neither settled: the scene sets `[0x46]`, `[0x47]`,
+`[0x42]`, `[0x43]` before loading, which look like scroll or clip bounds
+and would shift the page; and a group's authored child offsets can be large
+(CAVES has polygons whose ink sits 90 units from the anchor), so "draw x
+plus extent" may not be the composition the VM performs for every shape.
+
+Resolving it wants the VM rather than more reading: `AnotherWorld_VMTools`
+carries `awvm` and an `exectrace` directory, and a trace that logs each
+draw's final screen coordinates would settle both causes at once and make
+scene tableaux a routine tool. That is a piece of work, not a look.
+
+Until then the backdrops are still worth what the table above is worth:
+they identify the **scene**, which is what the polygon runs were missing.
