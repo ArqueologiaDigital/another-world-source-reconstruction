@@ -700,20 +700,20 @@ CINEMATIC_CAVES_FIGURE_DISINTEGRATION_F11		EQU 0x9236
 CINEMATIC_CAVES_FIGURE_DISINTEGRATION_F12		EQU 0x928A
 CINEMATIC_CAVES_FIGURE_DISINTEGRATION_F13		EQU 0x92E6
 CINEMATIC_CAVES_FIGURE_DISINTEGRATION_F14		EQU 0x932E
-CINEMATIC_676		EQU 0xD274
-CINEMATIC_677		EQU 0xD5B0
-CINEMATIC_678		EQU 0xD1FC
-CINEMATIC_679		EQU 0xD298
-CINEMATIC_680		EQU 0xD250
-CINEMATIC_681		EQU 0xD30C
-CINEMATIC_682		EQU 0xD25C
-CINEMATIC_683		EQU 0xD390
-CINEMATIC_684		EQU 0xD268
-CINEMATIC_685		EQU 0xD418
-CINEMATIC_686		EQU 0xD280
-CINEMATIC_687		EQU 0xD49C
-CINEMATIC_688		EQU 0xD28C
-CINEMATIC_689		EQU 0xD510
+CINEMATIC_CAVES_BURST_CHUNKS_F0		EQU 0xD274
+CINEMATIC_CAVES_BURST_STREAKS_F0		EQU 0xD5B0
+CINEMATIC_CAVES_BURST_CHUNKS_F1		EQU 0xD1FC
+CINEMATIC_CAVES_BURST_STREAKS_F1		EQU 0xD298
+CINEMATIC_CAVES_BURST_CHUNKS_F2		EQU 0xD250
+CINEMATIC_CAVES_BURST_STREAKS_F2		EQU 0xD30C
+CINEMATIC_CAVES_BURST_CHUNKS_F3		EQU 0xD25C
+CINEMATIC_CAVES_BURST_STREAKS_F3		EQU 0xD390
+CINEMATIC_CAVES_BURST_CHUNKS_F4		EQU 0xD268
+CINEMATIC_CAVES_BURST_STREAKS_F4		EQU 0xD418
+CINEMATIC_CAVES_BURST_CHUNKS_F5		EQU 0xD280
+CINEMATIC_CAVES_BURST_STREAKS_F5		EQU 0xD49C
+CINEMATIC_CAVES_BURST_CHUNKS_F6		EQU 0xD28C
+CINEMATIC_CAVES_BURST_STREAKS_F6		EQU 0xD510
 CINEMATIC_690		EQU 0x88A0
 CINEMATIC_691		EQU 0x8726
 CINEMATIC_692		EQU 0x8736
@@ -2689,56 +2689,56 @@ LABEL_0F5F:
 	setPalette 0x07
 	fill page=0x00, color=0x00
 	fill page=0xFF, color=0x00
-	video offset=CINEMATIC_676, x=160, y=100
-	video offset=CINEMATIC_677, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F0, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F0, x=160, y=100
 	break
 	play id=0x007B, freq=0x05, vol=0x10, channel=0x00
-	video offset=CINEMATIC_676, x=160, y=100, zoom=0x20
-	video offset=CINEMATIC_677, x=160, y=100, zoom=0x20
-	video offset=CINEMATIC_678, x=160, y=100
-	video offset=CINEMATIC_679, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F0, x=160, y=100, zoom=0x20
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F0, x=160, y=100, zoom=0x20
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F1, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F1, x=160, y=100
 	play id=0x007C, freq=0x22, vol=0x18, channel=0x01
 	break
-	video offset=CINEMATIC_680, x=160, y=100, zoom=0x20
-	video offset=CINEMATIC_681, x=160, y=100, zoom=0x20
-	video offset=CINEMATIC_680, x=160, y=100
-	video offset=CINEMATIC_681, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F2, x=160, y=100, zoom=0x20
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F2, x=160, y=100, zoom=0x20
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F2, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F2, x=160, y=100
 	break
 	play id=0x007C, freq=0x1C, vol=0x20, channel=0x03
-	video offset=CINEMATIC_676, x=160, y=100, zoom=0x22
-	video offset=CINEMATIC_677, x=160, y=100, zoom=0x22
-	video offset=CINEMATIC_682, x=160, y=100
-	video offset=CINEMATIC_683, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F0, x=160, y=100, zoom=0x22
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F0, x=160, y=100, zoom=0x22
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F3, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_678, x=160, y=100, zoom=0x22
-	video offset=CINEMATIC_679, x=160, y=100, zoom=0x22
-	video offset=CINEMATIC_684, x=160, y=100
-	video offset=CINEMATIC_685, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F1, x=160, y=100, zoom=0x22
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F1, x=160, y=100, zoom=0x22
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F4, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F4, x=160, y=100
 	break
-	video offset=CINEMATIC_680, x=160, y=100, zoom=0x24
-	video offset=CINEMATIC_681, x=160, y=100, zoom=0x24
-	video offset=CINEMATIC_686, x=160, y=100
-	video offset=CINEMATIC_687, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F2, x=160, y=100, zoom=0x24
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F2, x=160, y=100, zoom=0x24
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F5, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F5, x=160, y=100
 	break
 	play id=0x007C, freq=0x22, vol=0x18, channel=0x01
-	video offset=CINEMATIC_682, x=160, y=100, zoom=0x24
-	video offset=CINEMATIC_683, x=160, y=100, zoom=0x24
-	video offset=CINEMATIC_688, x=160, y=100
-	video offset=CINEMATIC_689, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F3, x=160, y=100, zoom=0x24
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F3, x=160, y=100, zoom=0x24
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F6, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F6, x=160, y=100
 	break
-	video offset=CINEMATIC_684, x=160, y=100, zoom=0x28
-	video offset=CINEMATIC_685, x=160, y=100, zoom=0x28
-	video offset=CINEMATIC_686, x=160, y=100, zoom=0x64
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F4, x=160, y=100, zoom=0x28
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F4, x=160, y=100, zoom=0x28
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F5, x=160, y=100, zoom=0x64
 	break
 	play id=0x007B, freq=0x05, vol=0x10, channel=0x00
 	play id=0x007C, freq=0x22, vol=0x18, channel=0x01
-	video offset=CINEMATIC_686, x=160, y=100, zoom=0x2d
-	video offset=CINEMATIC_687, x=160, y=100, zoom=0x2d
-	video offset=CINEMATIC_682, x=160, y=100, zoom=0xb4
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F5, x=160, y=100, zoom=0x2d
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F5, x=160, y=100, zoom=0x2d
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F3, x=160, y=100, zoom=0xb4
 	break
-	video offset=CINEMATIC_684, x=160, y=100, zoom=0x32
-	video offset=CINEMATIC_685, x=160, y=100, zoom=0x32
-	video offset=CINEMATIC_680, x=160, y=100, zoom=0xc8
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F4, x=160, y=100, zoom=0x32
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F4, x=160, y=100, zoom=0x32
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F2, x=160, y=100, zoom=0xc8
 	jmp LABEL_105B
 LABEL_104E:
 	db 0x06, 0x6A, 0x68, 0xFE, 0xA0, 0x64, 0x36, 0x6A
@@ -2748,8 +2748,8 @@ LABEL_105B:
 	break
 	play id=0x007C, freq=0x22, vol=0x40, channel=0x01
 	play id=0x0077, freq=0x22, vol=0x20, channel=0x00
-	video offset=CINEMATIC_676, x=120, y=100, zoom=0xff
-	video offset=CINEMATIC_677, x=120, y=100, zoom=0xff
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F0, x=120, y=100, zoom=0xff
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F0, x=120, y=100, zoom=0xff
 	setup channel=0x3C, address=LABEL_3D6B
 	break
 	fill page=0x03, color=0x00
@@ -2759,37 +2759,37 @@ LABEL_105B:
 	mov [0x03], 0x000A
 	setup channel=0x3F, address=CAVES_INLINE_SET_VAR01_TO_E_L1
 	killChannel
-	video offset=CINEMATIC_676, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F0, x=160, y=100
 	break
-	video offset=CINEMATIC_678, x=160, y=100
-	video offset=CINEMATIC_679, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F1, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_680, x=160, y=100
-	video offset=CINEMATIC_681, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F2, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_682, x=160, y=100
-	video offset=CINEMATIC_683, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F3, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_684, x=160, y=100
-	video offset=CINEMATIC_685, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F4, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F4, x=160, y=100
 	break
-	video offset=CINEMATIC_686, x=160, y=100
-	video offset=CINEMATIC_687, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F5, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F5, x=160, y=100
 	break
-	video offset=CINEMATIC_688, x=160, y=100
-	video offset=CINEMATIC_689, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F6, x=160, y=100
+	video offset=CINEMATIC_CAVES_BURST_STREAKS_F6, x=160, y=100
 	break
-	video offset=CINEMATIC_686, x=160, y=100, zoom=0x50
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F5, x=160, y=100, zoom=0x50
 	break
-	video offset=CINEMATIC_684, x=160, y=100, zoom=0x78
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F4, x=160, y=100, zoom=0x78
 	break
-	video offset=CINEMATIC_682, x=160, y=100, zoom=0xdc
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F3, x=160, y=100, zoom=0xdc
 	break
-	video offset=CINEMATIC_678, x=160, y=100, zoom=0xfa
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F1, x=160, y=100, zoom=0xfa
 
 LABEL_10E2:
 	break
-	video offset=CINEMATIC_676, x=120, y=100, zoom=0xff
+	video offset=CINEMATIC_CAVES_BURST_CHUNKS_F0, x=120, y=100, zoom=0xff
 	jmp LABEL_10E2
 LABEL_10EC:
 	db 0x11
