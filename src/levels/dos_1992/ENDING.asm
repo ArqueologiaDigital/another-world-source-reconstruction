@@ -1187,11 +1187,11 @@ ENDING_HOLD_PAGE_0_INFINITE:
 	break
 	jmp ENDING_HOLD_PAGE_0_INFINITE
 
-JUNK__0AD7:
+LABEL_0AD7:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	break
-	jmp JUNK__0AD7
+	jmp LABEL_0AD7
 
 ; Same shape as above but clears 0xFF to black first, then
 ; copies page 0x80. The "freeze-on-page-80" sibling.

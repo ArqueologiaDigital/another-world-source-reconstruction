@@ -5,11 +5,11 @@ BLITTER_LOOP_COPY_PAGE_00:
 	break
 	jmp BLITTER_LOOP_COPY_PAGE_00
 
-JUNK__0AD7:
+LABEL_0AD7:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	break
-	jmp JUNK__0AD7
+	jmp LABEL_0AD7
 
 BLITTER_LOOP_COPY_PAGE_80:
 	blitFramebuffer 0xFF

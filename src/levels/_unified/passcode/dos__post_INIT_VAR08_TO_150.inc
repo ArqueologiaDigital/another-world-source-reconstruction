@@ -551,11 +551,11 @@ BLITTER_LOOP_COPY_PAGE_00:
 	break
 	jmp BLITTER_LOOP_COPY_PAGE_00
 
-JUNK__1088:
+LABEL_1088:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	break
-	jmp JUNK__1088
+	jmp LABEL_1088
 ; (cart has no chunk here — cart_pre above already spans through to CLEAR_PAGES_1_2_AND_BLIT)
 
 CLEAR_PAGES_1_2_AND_BLIT:

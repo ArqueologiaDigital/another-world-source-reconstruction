@@ -5,11 +5,11 @@ HANG_BLITTING_PAGE_FF:
 	break
 	jmp HANG_BLITTING_PAGE_FF
 
-JUNK__201A:
+LABEL_201A:
 	blitFramebuffer 0xFF
 	selectVideoPage 0xFF
 	break
-	jmp JUNK__201A
+	jmp LABEL_201A
 
 BLITTER_LOOP_COPY_PAGE_03:
 	blitFramebuffer 0xFF
