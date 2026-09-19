@@ -66,19 +66,35 @@ Worse, the emitter rewrites msdos to match amiga, which assumes amiga is the
 port that got it right. Nothing justified that, and it is false at least
 twice:
 
-- **PRISON.** `PRISON_CUTSCENE_ZOOM_IN_LEFT/RIGHT` measure 48→62→66→68→70→
-  72→73→74→79 wide in msdos and 70→68→66→62→56→52→50 in amiga. The name says
-  zoom **in**. msdos grows, amiga shrinks, and amiga's RIGHT family is not
-  even monotonic. Applying the permutation would have destroyed a correctly
-  ordered family and copied amiga's error into it.
+- **PRISON — and I had this backwards at first.** I read the widths, saw
+  msdos growing and amiga shrinking, and concluded amiga was the misordered
+  port. It is not. Both ports draw the animation shrinking; what differs is
+  the numbering, and the convention is that the k-th frame is the k-th
+  **drawn**. Measured as index-against-draw-order, amiga scores +1.00 and
+  msdos −1.00. The size heuristic blocked a correct permutation, which is
+  the expensive direction to be wrong in, and it is gone.
+
+  msdos also had the two halves **swapped**, settled without any cross-port
+  comparison by reading where the polygons sit: amiga `LEFT` at x −44..26 and
+  `RIGHT` at x 102..172; msdos `LEFT` at x 100..172 and `RIGHT` at x −44..28.
+  Both defects were corrected in one 29-row permutation.
 - **INTRO.** `PARTICLE_LAB_BG_F0/F1/F3` measure 190x26, 342x182 and 30x28 in
   amiga — a 30x28 five-leaf polygon is not a lab background — against
   149x114, 190x116 and 149x203 in msdos.
 
-`better_ordered_elsewhere()` now refuses both automatically, on monotonicity
-and on width spread. With it in place the emitter refuses **every** stage
-that still disagrees, which is the honest state: CAVES was the one stage
-where amiga was demonstrably right.
+`better_ordered_elsewhere()` now decides this on index-against-draw-order,
+per family, because the answer differs per family even inside one stage. It
+clears PRISON and refuses INTRO.
+
+`--sides` is the other check that came out of PRISON, and it needs no
+cross-port comparison at all: a family named `LEFT` should sit at lower
+authored x than its `RIGHT` counterpart. It only judges families whose sides
+are genuinely separated — more than 16px and more than half their own width —
+because where they overlap, LEFT/RIGHT is a **facing** and not a position,
+and the x says nothing. Without that restriction it flagged 14 families, the
+same ones with the same numbers in both ports, which is what a broken test
+looks like rather than two ports sharing one mistake. Restricted, it reports
+the tree clean and would still have caught PRISON.
 
 A row is actionable when these line up:
 

@@ -110,72 +110,168 @@ RE_NUM = re.compile(r"^CINEMATIC_\d+$")
 RE_FAM = re.compile(r"^(.*?)_(F?)(\d+)$")
 
 
-def better_ordered_elsewhere(diff: set, tabs: dict, art: dict) -> list[str]:
-    """Families where the port we would REWRITE looks better ordered.
+def concordance(stage: str, base: str, sep: str, port: str) -> tuple:
+    """How well a family's index order agrees with its DRAW order, in one port.
 
-    The emitter moves msdos's names to match amiga's art, which silently
-    assumes amiga is the port that got it right. PRISON proves that
-    assumption is not free. Its `PRISON_CUTSCENE_ZOOM_IN_LEFT/RIGHT`
-    families disagree across the ports, and measuring the frames settles
-    which port is wrong without a render:
+    Returns (n_members, concordance in -1..+1). +1 means the k-th member is
+    drawn k-th; -1 means the indices run backwards against the draw order.
+    """
+    f = ROOT / "src" / "levels" / PORTS[port] / f"{stage}.asm"
+    seq = [m.group(1) for m in
+           re.finditer(r"offset=(CINEMATIC_\w+)", f.read_text(errors="replace"))]
+    first: dict[int, int] = {}
+    for pos, name in enumerate(seq):
+        m = RE_FAM.match(name)
+        if m and m.group(1) == base and m.group(2) == sep:
+            first.setdefault(int(m.group(3)), pos)
+    pairs = sorted(first.items())
+    con = dis = 0
+    for i in range(len(pairs)):
+        for j in range(i + 1, len(pairs)):
+            (ia, pa), (ib, pb) = pairs[i], pairs[j]
+            if pa == pb:
+                continue
+            if (ia - ib) * (pa - pb) > 0:
+                con += 1
+            else:
+                dis += 1
+    tot = con + dis
+    return len(pairs), ((con - dis) / tot if tot else 0.0)
 
-        msdos LEFT   48x142 62x235 66x233 68x235 70x236 72x234 73x234 ...
-        amiga LEFT   70x236 68x235 66x233 62x235 56x235 52x235 50x239 ...
 
-    The name says ZOOM_IN. msdos grows monotonically, which is what zooming
-    in looks like; amiga shrinks, and its RIGHT family is not even monotonic.
-    **amiga is the misordered port here**, so "correcting" msdos to match it
-    would have destroyed a correctly ordered family and propagated the error.
+def better_ordered_elsewhere(diff: set, tabs: dict, art: dict,
+                             stage: str) -> list[str]:
+    """Families where the port we would REWRITE is the better-ordered one.
 
-    So: for every indexed family touched by a disagreement, compare the width
-    sequences. If msdos's is monotonic and amiga's is not, the emission is
-    refused for that stage and the family is named. This is a guard, not a
-    verdict -- it does not claim msdos is right, only that amiga is not
-    evidently right, which is all the emitter needs to stop.
+    The emitter moves msdos's names onto the constants holding amiga's art,
+    which assumes amiga is the port that got it right. That assumption is not
+    free and has to be tested per family, because the answer differs per
+    family even inside one stage.
+
+    The test is **index order against draw order**, which is the project's
+    own convention: the k-th frame of a family is the k-th one drawn. It is
+    read straight off the assembly and needs no render.
+
+    An earlier version of this guard tested something else -- whether the
+    family's widths grow monotonically with the index -- on the reasoning
+    that a name saying ZOOM_IN ought to grow. That was wrong, and wrong in
+    the expensive direction: it blocked a correct permutation. PRISON's
+    ZOOM_IN families draw 70 68 66 62 56 52 50 wide in amiga, shrinking, and
+    msdos draws the same animation shrinking too -- msdos simply numbers its
+    frames backwards against its own draw order. Measured:
+
+        PRISON ZOOM_IN_LEFT/RIGHT   amiga +1.00   msdos -1.00
+        INTRO  PARTICLE_LAB_BG_F    amiga -0.33   msdos +1.00
+
+    So amiga is authoritative in PRISON and msdos is authoritative in INTRO,
+    and only INTRO should be refused. Size said the opposite for PRISON
+    because both ports shrink; what differs is the numbering, not the
+    picture.
     """
     fams: dict[tuple[str, str], set[int]] = collections.defaultdict(set)
     for n in diff:
         m = RE_FAM.match(n)
         if m:
             fams[(m.group(1), m.group(2))].add(int(m.group(3)))
-    # a family member absent from one port cannot be compared, but the rest
-    # of the family still can, so only the missing index is dropped
-    for key in list(fams):
-        base, sep = key
-        fams[key] = {i for i in fams[key]
-                     if all(art[p].get(f"{base}_{sep}{i}") for p in PORTS)}
     bad = []
-    for (base, sep), idxs in fams.items():
-        fam = base + ("_" + sep if sep else "")
-        if len(idxs) < 3:
+    for (base, sep) in fams:
+        na, ca = concordance(stage, base, sep, "amiga")
+        nm, cm = concordance(stage, base, sep, "msdos")
+        if na < 3 or nm < 3:
             continue
-        seqs = {}
-        for port in PORTS:
-            w = []
-            for i in sorted(idxs):
-                a = art[port].get(f"{base}_{sep}{i}")
-                w.append(a[1][0] if a else None)
-            seqs[port] = w
-        if any(x is None for v in seqs.values() for x in v):
-            continue
-        def mono(v):
-            return (all(x < y for x, y in zip(v, v[1:]))
-                    or all(x > y for x, y in zip(v, v[1:])))
-        if mono(seqs["msdos"]) and not mono(seqs["amiga"]):
-            bad.append(f"{fam} (monotonic in msdos, not in amiga)")
-            continue
-        # Second signal, which monotonicity misses. Frames of one thing are
-        # about the same size. INTRO's PARTICLE_LAB_BG measures 190x26,
-        # 342x182 and 30x28 in amiga -- a 30x28 five-leaf polygon is not a
-        # lab background -- against 149x114, 190x116 and 149x203 in msdos.
-        # Neither sequence is monotonic, because these are backdrop frames
-        # and not a zoom, so the first check passes them both.
-        def spread(v):
-            return max(v) / min(v) if min(v) > 0 else float("inf")
-        if spread(seqs["amiga"]) > 3 * spread(seqs["msdos"]):
-            bad.append(f"{fam} (widths vary {spread(seqs['amiga']):.1f}x in "
-                       f"amiga against {spread(seqs['msdos']):.1f}x in msdos)")
+        if cm > 0.6 and ca < 0.6:
+            fam = base + ("_" + sep if sep else "")
+            bad.append(f"{fam}: index follows draw order in msdos "
+                       f"({cm:+.2f}) but not in amiga ({ca:+.2f})")
     return bad
+
+
+def check_sides(stages: dict) -> int:
+    """Does a family named LEFT or RIGHT sit where its name says?
+
+    This needs no cross-port comparison and makes no assumption about which
+    port is authoritative -- it reads the polygon's own authored x, which is
+    relative to the draw anchor, and asks whether a `_LEFT_` family sits at
+    negative x and a `_RIGHT_` family at positive x.
+
+    It is the check that settled PRISON. Both ports draw both families from
+    the same `PRISON_CUTSCENE_ZOOM_IN_PHASE_<n>_LOOP` routines, so the
+    routine names said nothing about which half was which, and the two ports
+    disagreed. The authored coordinates settled it outright:
+
+        amiga  LEFT x -44..26    RIGHT x 102..172     labels correct
+        msdos  LEFT x 100..172   RIGHT x -44..28      labels swapped
+
+    msdos had its sides swapped and its indices reversed, and amiga was right
+    on both counts.
+    """
+    roms = {}
+    for port in PORTS:
+        f = REPO_ROOT / "tmp" / "output" / port / "romset" / "cinematic.rom"
+        if not f.is_file():
+            print("run `make extract` first", file=sys.stderr)
+            return 2
+        roms[port] = f.read_bytes()
+    bad = 0
+    for si, stage in stages.items():
+        for port, br in PORTS.items():
+            f = ROOT / "src" / "levels" / br / f"{stage}.asm"
+            if not f.is_file():
+                continue
+            slab = roms[port][si * SLAB:(si + 1) * SLAB]
+            sides: dict[tuple[str, str], list[float]] = \
+                collections.defaultdict(list)
+            for m in RE_EQU.finditer(f.read_text(errors="replace")):
+                name = m.group(1)
+                for side in ("LEFT", "RIGHT"):
+                    if f"_{side}" not in name:
+                        continue
+                    a = extent(parse_polygon_tree(slab, int(m.group(2), 16)))
+                    if a[4] == 0:
+                        continue
+                    fam = name.replace(f"_{side}", "_<side>")
+                    fam = RE_FAM.sub(r"\1_\2n", fam)
+                    sides[(fam, side)].append((a[0], a[2]))
+                    break
+            fams = {k[0] for k in sides}
+            for fam in sorted(fams):
+                l = sides.get((fam, "LEFT"), [])
+                r = sides.get((fam, "RIGHT"), [])
+                if not l or not r:
+                    continue
+                # Only judge families whose two sides occupy DISJOINT x
+                # ranges. Where they overlap, LEFT/RIGHT is a facing and not
+                # a position -- HERO_RUN_LEFT is the same figure mirrored at
+                # the same anchor -- and the authored x says nothing about
+                # the label. The first version of this check ignored that
+                # and flagged 14 families, the same ones with the same
+                # numbers in BOTH ports, which is the signature of a broken
+                # test rather than of two ports making one error.
+                lmin, lmax = min(x for x, _ in l), max(y for _, y in l)
+                rmin, rmax = min(x for x, _ in r), max(y for _, y in r)
+                gap = max(rmin - lmax, lmin - rmax)
+                width = (lmax - lmin + rmax - rmin) / 2
+                # Disjoint is not enough: PRISON's two zoom halves sit 76px
+                # apart with a mean width of 70, while PRISON_SHOT_HIT_BURST's
+                # "sides" merely touch (64..93 against 34..64) and msdos/LAKE's
+                # HERO_STOP differ by 3px. Those near-touching pairs are one
+                # object mirrored, and they flagged identically in BOTH ports
+                # -- a broken test, not two ports sharing a mistake. Require
+                # the sides to be separated by a real distance.
+                if gap < 16 or gap < width / 2:
+                    continue
+                if lmin > rmin:
+                    bad += 1
+                    print(f"  {port}/{stage:<9} {fam:<52} LEFT occupies "
+                          f"x {lmin:.0f}..{lmax:.0f} and RIGHT "
+                          f"x {rmin:.0f}..{rmax:.0f} -- swapped")
+    if bad:
+        print(f"\n{bad} family/families are named LEFT/RIGHT the wrong way "
+              f"round, measured from\nthe polygons' own authored x. No "
+              f"cross-port assumption is involved.")
+        return 1
+    print("Every LEFT/RIGHT family sits on the side its name claims.")
+    return 0
 
 
 def emit_permutation(stage: str, tabs: dict, art: dict, rev: dict,
@@ -217,7 +313,7 @@ def emit_permutation(stage: str, tabs: dict, art: dict, rev: dict,
         print(f"{stage}: NOT emitted -- {len(clash)} target collision(s); "
               f"the permutation is not consistent", file=sys.stderr)
         return
-    worse = better_ordered_elsewhere(diff, tabs, art)
+    worse = better_ordered_elsewhere(diff, tabs, art, stage)
     if worse:
         print(f"{stage}: NOT emitted -- this would rewrite msdos to match "
               f"amiga, and amiga is not\n  evidently the port that got it "
@@ -283,11 +379,17 @@ def main() -> int:
                     help="write the msdos correction as a rename table: the "
                          "whole permutation, promotions and demotions "
                          "together, which is the only way it can be applied")
+    ap.add_argument("--sides", action="store_true",
+                    help="independent per-port check: does a family named "
+                         "LEFT/RIGHT actually sit left/right of its anchor?")
     ap.add_argument("--suggest", action="store_true",
                     help="for each disagreement, the other port's constant "
                          "whose art matches")
     args = ap.parse_args()
     want = set(args.stage) if args.stage else None
+    if args.sides:
+        return check_sides({k: v for k, v in STAGES.items()
+                            if not want or v in want})
 
     roms = {}
     for p in PORTS:
