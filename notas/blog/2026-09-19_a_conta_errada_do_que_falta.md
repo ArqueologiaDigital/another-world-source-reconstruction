@@ -115,6 +115,24 @@ Resultado:
 **42 nomes de polígono destravaram 18 rotinas.** É a razão de alavanca que a
 medida do início previa, agora medida.
 
+Seguindo a mesma ordem de serviço até o fim da lista de PRISON — o impacto de
+tiro, os dois clarões, os segmentos de feixe, as tiras do poço do elevador, o
+zoom da cutscene em dez fases, a pupila, os ladrilhos do feixe pesado —
+**PRISON fecha o dia com 677 → 560 constantes sem nome na Amiga**, 117
+identificadas, nenhuma nomeada pelo índice.
+
+Duas coisas que só apareceram por fazer o lote inteiro. A primeira: o sprite de
+impacto de tiro **não tem direção** — as famílias `..._IMPACT_LEFT_CASE_*` e
+`..._IMPACT_RIGHT_CASE_*` desenham as *mesmas nove constantes*, o que só se vê
+construindo o mapa constante→rotina em vez de ler os nomes das rotinas. Chamar
+aquilo de `_LEFT_` teria sido falso. A segunda: existem **dois** conjuntos de
+ladrilho de feixe, um de 1 px de altura (2/6/14/30) e um de 5 px (15/47/111),
+o que retroativamente explica as duas rotinas de CAPSULE que eu tinha recusado
+de manhã por desenharem um polígono chamado `BUDDY_SMASHING_WINDOW` enquanto
+ladrilhavam um feixe: ladrilhar feixe é um idioma de primeira classe neste
+jogo, com arte própria — quem está em dúvida é o nome daquela constante, não a
+rotina.
+
 E duas correções pelo caminho, as duas típicas. A primeira: o mapa
 inclinação→constante que eu supus pela ordem dos offsets estava **errado**, e o
 código desmentiu em dois braços — a inclinação 0x02 desenha `CINEMATIC_074`, e
