@@ -28,6 +28,14 @@ them at once.
 1,482 shared semantic names compared: **1,400 agree, 82 do not** — CAVES 26,
 PRISON 19, LAKE 17, INTRO 10, CAPSULE 9, PASSCODE 1.
 
+**Corrected since:** CAVES' 26 were applied the same day. Then the identity
+key moved from extent-plus-leaf-count to the md5 of the whole parsed tree,
+which is stricter: three names the old key called equal are not, so the
+remainder is **59**, not 56 — PRISON 20, LAKE 17, CAPSULE 11, INTRO 10,
+PASSCODE 1. The stricter key also broke the three "collisions" that had
+refused INTRO, PRISON and CAPSULE; each was two constants sharing an extent,
+and under md5 exactly one of each pair matches.
+
 They are shuffles rather than noise, which is the signature of a by-index
 copy. `--suggest` searches the other port for a constant whose art matches
 exactly and names it, so the output is a correction list and not just a
@@ -49,15 +57,36 @@ name for a polygon at a different offset. The refusal was the finding.
 
 ## How to act on a row
 
-**Disagreement is not proof.** The releases really do differ — the 1991
-release has frames the 1992 ports dropped, so a family can legitimately hold
-neighbouring frames at one index. A row is actionable when three things line
-up:
+**Disagreement is not proof, and neither is direction.** Two separate traps.
+
+The releases really do differ — the 1991 release has frames the 1992 ports
+dropped, so a family can legitimately hold neighbouring frames at one index.
+
+Worse, the emitter rewrites msdos to match amiga, which assumes amiga is the
+port that got it right. Nothing justified that, and it is false at least
+twice:
+
+- **PRISON.** `PRISON_CUTSCENE_ZOOM_IN_LEFT/RIGHT` measure 48→62→66→68→70→
+  72→73→74→79 wide in msdos and 70→68→66→62→56→52→50 in amiga. The name says
+  zoom **in**. msdos grows, amiga shrinks, and amiga's RIGHT family is not
+  even monotonic. Applying the permutation would have destroyed a correctly
+  ordered family and copied amiga's error into it.
+- **INTRO.** `PARTICLE_LAB_BG_F0/F1/F3` measure 190x26, 342x182 and 30x28 in
+  amiga — a 30x28 five-leaf polygon is not a lab background — against
+  149x114, 190x116 and 149x203 in msdos.
+
+`better_ordered_elsewhere()` now refuses both automatically, on monotonicity
+and on width spread. With it in place the emitter refuses **every** stage
+that still disagrees, which is the honest state: CAVES was the one stage
+where amiga was demonstrably right.
+
+A row is actionable when these line up:
 
 1. `--suggest` finds the same art in the other port under another name;
 2. the routine that draws that other constant has a name that agrees with the
    proposed one (`notes/sole-named-drawer/` is the fast way to check);
-3. the correction is expressed as **one batch**, because it is a permutation —
+3. the port being rewritten is the one that is actually wrong — see above;
+4. the correction is expressed as **one batch**, because it is a permutation —
    the misapplied holder has to be demoted in the same run that moves the name
    onto the right constant. `apply_branch_scoped_names.py --demote` does both,
    and checks the demoted index against the constant's own EQU table position.
