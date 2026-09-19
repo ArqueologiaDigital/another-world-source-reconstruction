@@ -2838,13 +2838,13 @@ LABEL_14A6:
 	db 0x15, 0x74, 0x40, 0x00, 0x0B, 0x09, 0xFF, 0x11
 
 LABEL_15C6:
-	setup channel=0x22, address=LABEL_2FB5
+	setup channel=0x22, address=CAPSULE_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
 	setup channel=0x24, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
 	setup channel=0x26, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
-	setup channel=0x28, address=LABEL_304B
+	setup channel=0x28, address=CAPSULE_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP
 	ret
 
 
@@ -3750,13 +3750,13 @@ LABEL_23D8:
 	mov [0xB3], 0x0001
 	mov [0xB7], 0x0000
 	call INIT_VARS_A1_A4_A7
-	setup channel=0x22, address=LABEL_2FB5
+	setup channel=0x22, address=CAPSULE_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
 	setup channel=0x24, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
 	setup channel=0x26, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
-	setup channel=0x28, address=LABEL_304B
+	setup channel=0x28, address=CAPSULE_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP
 	ret
 
 
@@ -4623,7 +4623,7 @@ SPLIT_VAR09_BITS_INTO_VAR0D:
 	ret
 
 
-LABEL_2FB5:
+CAPSULE_ACTOR_CONTEXT_LOAD_SLOT0_LOOP:
 	mov [BUDDY_X], [0x68]
 	mov [BUDDY_Y], [0x69]
 	mov [0x10], [0x6A]
@@ -4634,7 +4634,7 @@ LABEL_2FB5:
 	mov [0x29], [0x6F]
 	call SPLIT_VAR09_BITS_INTO_VAR0D
 	break
-	jmp LABEL_2FB5
+	jmp CAPSULE_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 LABEL_2FD4:
 	db 0x11
 
@@ -4686,7 +4686,7 @@ CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP:
 LABEL_304A:
 	db 0x11
 
-LABEL_304B:
+CAPSULE_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP:
 	call LABEL_2F8C
 	mov [0x78], [BUDDY_X]
 	mov [0x79], [BUDDY_Y]
@@ -4697,7 +4697,7 @@ LABEL_304B:
 	mov [0x7E], [0x13]
 	mov [0x7F], [0x29]
 	break
-	jmp LABEL_304B
+	jmp CAPSULE_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP
 LABEL_306A:
 	db 0x11
 

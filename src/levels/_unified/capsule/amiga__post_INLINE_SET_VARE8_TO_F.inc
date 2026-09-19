@@ -214,13 +214,13 @@ LABEL_14A6:
 	db 0x15, 0x74, 0x40, 0x00, 0x0B, 0x09, 0xFF, 0x11
 
 LABEL_15C6:
-	setup channel=0x22, address=LABEL_2FB5
+	setup channel=0x22, address=CAPSULE_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
 	setup channel=0x24, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
 	setup channel=0x26, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
-	setup channel=0x28, address=LABEL_304B
+	setup channel=0x28, address=CAPSULE_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP
 	ret
 
 

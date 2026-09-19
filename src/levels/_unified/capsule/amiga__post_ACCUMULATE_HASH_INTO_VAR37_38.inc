@@ -28,13 +28,13 @@ LABEL_23D8:
 	mov [0xB3], 0x0001
 	mov [0xB7], 0x0000
 	call INIT_VARS_A1_A4_A7
-	setup channel=0x22, address=LABEL_2FB5
+	setup channel=0x22, address=CAPSULE_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
 	setup channel=0x24, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
 	setup channel=0x26, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
-	setup channel=0x28, address=LABEL_304B
+	setup channel=0x28, address=CAPSULE_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP
 	ret
 
 

@@ -237,13 +237,13 @@ LABEL_269D:
 	killChannel
 
 LABEL_26AC:
-	setup channel=0x22, address=LABEL_4585
+	setup channel=0x22, address=CAPSULE_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
 	setup channel=0x24, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
 	setup channel=0x26, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
-	setup channel=0x28, address=LABEL_461B
+	setup channel=0x28, address=CAPSULE_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP
 	ret
 
 

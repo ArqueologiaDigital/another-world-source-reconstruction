@@ -3131,7 +3131,7 @@ LABEL_1499:
 	ret
 
 
-LABEL_14B0:
+PRISON_ACTOR_CONTEXT_LOAD_SLOT0_LOOP:
 	call PRISON_ACTOR_SLOT0_FLOOR_Y_CASE_25
 	mov [BUDDY_X], [0x68]
 	mov [BUDDY_Y], [0x69]
@@ -3143,11 +3143,11 @@ LABEL_14B0:
 	mov [0x29], [0x6F]
 	call LABEL_1499
 	break
-	jmp LABEL_14B0
+	jmp PRISON_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 LABEL_14D2:
 	db 0x11
 
-LABEL_14D3:
+PRISON_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP:
 	call PRISON_ACTOR_SLOT_WRITEBACK_PREP
 	mov [0x68], [BUDDY_X]
 	mov [0x69], [BUDDY_Y]
@@ -3167,11 +3167,11 @@ LABEL_14D3:
 	mov [0x29], [0x77]
 	call LABEL_1499
 	break
-	jmp LABEL_14D3
+	jmp PRISON_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 LABEL_150D:
 	db 0x11
 
-LABEL_150E:
+PRISON_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP:
 	call PRISON_ACTOR_SLOT_WRITEBACK_PREP
 	mov [0x70], [BUDDY_X]
 	mov [0x71], [BUDDY_Y]
@@ -3191,11 +3191,11 @@ LABEL_150E:
 	mov [0x29], [0x7F]
 	call LABEL_1499
 	break
-	jmp LABEL_150E
+	jmp PRISON_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 LABEL_1548:
 	db 0x11
 
-LABEL_1549:
+PRISON_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP:
 	call PRISON_ACTOR_SLOT_WRITEBACK_PREP
 	mov [0x78], [BUDDY_X]
 	mov [0x79], [BUDDY_Y]
@@ -3206,7 +3206,7 @@ LABEL_1549:
 	mov [0x7E], [0x13]
 	mov [0x7F], [0x29]
 	break
-	jmp LABEL_1549
+	jmp PRISON_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP
 LABEL_1568:
 	db 0x11
 
@@ -8929,9 +8929,9 @@ LABEL_4C64:
 	video offset=CINEMATIC_616, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	video offset=CINEMATIC_616, x=[BUDDY_X], y=[BUDDY_Y]
-	setup channel=0x21, address=LABEL_14B0
+	setup channel=0x21, address=PRISON_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 	setup channel=0x22, address=LABEL_1C5E
-	setup channel=0x24, address=LABEL_14D3
+	setup channel=0x24, address=PRISON_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	mov [SCREEN_NUM], 0x0001
 	mov [0x68], 0x0118
 	mov [0x69], 0x00B6
@@ -13512,13 +13512,13 @@ LABEL_7788:
 	break
 	video offset=CINEMATIC_084, x=[0x1a], y=[0x1b]
 	setup channel=0x14, address=DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB
-	setup channel=0x22, address=LABEL_14B0
+	setup channel=0x22, address=PRISON_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 	setup channel=0x23, address=INLINE_SUB_VAR08_INIT_VAR29
-	setup channel=0x24, address=LABEL_14D3
+	setup channel=0x24, address=PRISON_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	setup channel=0x25, address=LABEL_267B
-	setup channel=0x26, address=LABEL_150E
+	setup channel=0x26, address=PRISON_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
-	setup channel=0x28, address=LABEL_1549
+	setup channel=0x28, address=PRISON_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP
 	setup channel=0x3A, address=KILL_CHANNEL_LANDING
 	setup channel=0x3F, address=LABEL_897B
 	call LABEL_0860

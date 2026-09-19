@@ -4920,13 +4920,13 @@ LABEL_2814:
 	killChannel
 
 LABEL_2823:
-	setup channel=0x22, address=LABEL_4561
+	setup channel=0x22, address=CAPSULE_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
 	setup channel=0x24, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
 	setup channel=0x26, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
-	setup channel=0x28, address=LABEL_45F7
+	setup channel=0x28, address=CAPSULE_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP
 	ret
 
 
@@ -5945,13 +5945,13 @@ LABEL_327C:
 	mov [0xBA], 0x0000
 	mov [0xBB], 0x0000
 	call INIT_VARS_A1_A4_A7
-	setup channel=0x22, address=LABEL_4561
+	setup channel=0x22, address=CAPSULE_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
 	setup channel=0x24, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
 	setup channel=0x26, address=CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
-	setup channel=0x28, address=LABEL_45F7
+	setup channel=0x28, address=CAPSULE_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP
 	jle [0x00], 0x3C, LABEL_32E0
 	je [0x00], 0x40, LABEL_332E
 	je [0x00], 0x42, LABEL_3308
@@ -7775,7 +7775,7 @@ LABEL_454A:
 	ret
 
 
-LABEL_4561:
+CAPSULE_ACTOR_CONTEXT_LOAD_SLOT0_LOOP:
 	mov [BUDDY_X], [0x68]
 	mov [BUDDY_Y], [0x69]
 	mov [0x10], [0x6A]
@@ -7786,7 +7786,7 @@ LABEL_4561:
 	mov [0x29], [0x6F]
 	call LABEL_454A
 	break
-	jmp LABEL_4561
+	jmp CAPSULE_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 LABEL_4580:
 	db 0x11
 
@@ -7838,7 +7838,7 @@ CAPSULE_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP:
 LABEL_45F6:
 	db 0x11
 
-LABEL_45F7:
+CAPSULE_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP:
 	call CAPSULE_INLINE_COPY_VAR22_TO_VAR08_L2
 	mov [0x78], [BUDDY_X]
 	mov [0x79], [BUDDY_Y]
@@ -7849,7 +7849,7 @@ LABEL_45F7:
 	mov [0x7E], [0x13]
 	mov [0x7F], [0x29]
 	break
-	jmp LABEL_45F7
+	jmp CAPSULE_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP
 LABEL_4616:
 	db 0x11
 

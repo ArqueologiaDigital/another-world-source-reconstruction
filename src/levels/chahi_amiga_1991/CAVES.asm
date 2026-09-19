@@ -2981,13 +2981,13 @@ LABEL_12CF:
 	killChannel
 
 LABEL_12DE:
-	setup channel=0x22, address=LABEL_4DEA
+	setup channel=0x22, address=CAVES_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
-	setup channel=0x24, address=LABEL_4E0A
+	setup channel=0x24, address=CAVES_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
-	setup channel=0x26, address=LABEL_4E45
+	setup channel=0x26, address=CAVES_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
-	setup channel=0x28, address=LABEL_4E80
+	setup channel=0x28, address=CAVES_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP
 	ret
 
 
@@ -7367,13 +7367,13 @@ LABEL_40B6:
 	mov [0xBB], 0x0000
 	mov [0xBD], 0x0000
 	call INIT_VARS_A1_A4_A7
-	setup channel=0x22, address=LABEL_4DEA
+	setup channel=0x22, address=CAVES_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
-	setup channel=0x24, address=LABEL_4E0A
+	setup channel=0x24, address=CAVES_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
-	setup channel=0x26, address=LABEL_4E45
+	setup channel=0x26, address=CAVES_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
-	setup channel=0x28, address=LABEL_4E80
+	setup channel=0x28, address=CAVES_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP
 	mov [0x6B], 0x4000
 	mov [0x73], 0x4000
 	mov [0x7B], 0x4000
@@ -8521,7 +8521,7 @@ SPLIT_VAR09_BITS_INTO_VAR0D:
 	ret
 
 
-LABEL_4DEA:
+CAVES_ACTOR_CONTEXT_LOAD_SLOT0_LOOP:
 	mov [0x07], [0x68]
 	mov [0x08], [0x69]
 	mov [0x10], [0x6A]
@@ -8532,11 +8532,11 @@ LABEL_4DEA:
 	mov [0x29], [0x6F]
 	call SPLIT_VAR09_BITS_INTO_VAR0D
 	break
-	jmp LABEL_4DEA
+	jmp CAVES_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 LABEL_4E09:
 	db 0x11
 
-LABEL_4E0A:
+CAVES_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP:
 	call LABEL_4DC1
 	mov [0x68], [0x07]
 	mov [0x69], [0x08]
@@ -8556,11 +8556,11 @@ LABEL_4E0A:
 	mov [0x29], [0x77]
 	call SPLIT_VAR09_BITS_INTO_VAR0D
 	break
-	jmp LABEL_4E0A
+	jmp CAVES_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 LABEL_4E44:
 	db 0x11
 
-LABEL_4E45:
+CAVES_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP:
 	call LABEL_4DC1
 	mov [0x70], [0x07]
 	mov [0x71], [0x08]
@@ -8580,11 +8580,11 @@ LABEL_4E45:
 	mov [0x29], [0x7F]
 	call SPLIT_VAR09_BITS_INTO_VAR0D
 	break
-	jmp LABEL_4E45
+	jmp CAVES_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 LABEL_4E7F:
 	db 0x11
 
-LABEL_4E80:
+CAVES_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP:
 	call LABEL_4DC1
 	mov [0x78], [0x07]
 	mov [0x79], [0x08]
@@ -8595,7 +8595,7 @@ LABEL_4E80:
 	mov [0x7E], [0x13]
 	mov [0x7F], [0x29]
 	break
-	jmp LABEL_4E80
+	jmp CAVES_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP
 LABEL_4E9F:
 	db 0x11
 

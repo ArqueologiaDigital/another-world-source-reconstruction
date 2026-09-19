@@ -87,13 +87,13 @@ LABEL_7685:
 	break
 	video offset=CINEMATIC_084, x=[0x1a], y=[0x1b]
 	setup channel=0x14, address=DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB
-	setup channel=0x22, address=PRISON_FILL_AND_DRAW_CIN_24_28_L1
+	setup channel=0x22, address=PRISON_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 	setup channel=0x23, address=INLINE_SUB_VAR08_INIT_VAR29
-	setup channel=0x24, address=PRISON_FILL_AND_DRAW_CIN_24_28_L3
+	setup channel=0x24, address=PRISON_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	setup channel=0x25, address=LABEL_25D9
-	setup channel=0x26, address=LABEL_147C
+	setup channel=0x26, address=PRISON_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
-	setup channel=0x28, address=LABEL_14B7
+	setup channel=0x28, address=PRISON_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP
 	setup channel=0x3A, address=KILL_CHANNEL_LANDING
 	setup channel=0x3F, address=LABEL_8824
 	call LABEL_07D8

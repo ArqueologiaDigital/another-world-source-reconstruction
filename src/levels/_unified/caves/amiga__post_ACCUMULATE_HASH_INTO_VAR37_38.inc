@@ -40,13 +40,13 @@ LABEL_40B6:
 	mov [0xBB], 0x0000
 	mov [0xBD], 0x0000
 	call INIT_VARS_A1_A4_A7
-	setup channel=0x22, address=LABEL_4DEA
+	setup channel=0x22, address=CAVES_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
-	setup channel=0x24, address=LABEL_4E0A
+	setup channel=0x24, address=CAVES_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
-	setup channel=0x26, address=LABEL_4E45
+	setup channel=0x26, address=CAVES_ACTOR_CONTEXT_ROTATE_INTO_SLOT2_LOOP
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
-	setup channel=0x28, address=LABEL_4E80
+	setup channel=0x28, address=CAVES_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP
 	mov [0x6B], 0x4000
 	mov [0x73], 0x4000
 	mov [0x7B], 0x4000

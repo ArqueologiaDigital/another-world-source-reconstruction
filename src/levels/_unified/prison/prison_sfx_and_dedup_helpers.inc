@@ -682,9 +682,9 @@ PRISON_FILL_AND_DRAW_CIN_24_28_L0:
 	video offset=CINEMATIC_616, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	video offset=CINEMATIC_616, x=[BUDDY_X], y=[BUDDY_Y]
-	setup channel=0x21, address=PRISON_FILL_AND_DRAW_CIN_24_28_L1
+	setup channel=0x21, address=PRISON_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 	setup channel=0x22, address=PRISON_FILL_AND_DRAW_CIN_24_28_L2
-	setup channel=0x24, address=PRISON_FILL_AND_DRAW_CIN_24_28_L3
+	setup channel=0x24, address=PRISON_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP
 	mov [SCREEN_NUM], 0x0001
 	mov [0x68], 0x0118
 	mov [0x69], 0x00B6
