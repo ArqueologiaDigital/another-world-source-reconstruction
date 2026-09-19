@@ -65,7 +65,7 @@ LABEL_0B96:
 
 LABEL_0B97:
 	break
-	jne [HACK_VAR_67], 0xCA, LABEL_0B97
+	jne [SCREEN_NUM], 0xCA, LABEL_0B97
 	jg [HERO_X], 0x6E, LABEL_0BC1
 	mov [0xF8], [0xB9]
 	and [0xF8], 0x0004
@@ -172,7 +172,7 @@ LABEL_0CCD:
 
 LABEL_0CD1:
 	mov [0xE7], 0x0028
-	jne [HACK_VAR_67], 0xC8, LABEL_0CDF
+	jne [SCREEN_NUM], 0xC8, LABEL_0CDF
 	mov [0xE7], 0x0154
 
 LABEL_0CDF:
@@ -181,7 +181,7 @@ LABEL_0CDF:
 	sub [0xE7], 0x0028
 	video offset=CINEMATIC_578, x=[0xe7], y=158
 	video offset=CINEMATIC_579, x=60, y=158
-	jne [HACK_VAR_67], 0xC8, LABEL_0CFF
+	jne [SCREEN_NUM], 0xC8, LABEL_0CFF
 	video offset=CINEMATIC_579, x=280, y=158
 
 LABEL_0CFF:
@@ -210,11 +210,11 @@ LABEL_0D3A:
 	mov [0xE6], 0x0081
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	add [0xE6], [RANDOM_SEED]
-	jne [HACK_VAR_67], 0x8E, KILL_CHAN_AT_157F
+	jne [SCREEN_NUM], 0x8E, KILL_CHAN_AT_157F
 	play id=0x0052, freq=0x1E, vol=0x40, channel=0x00
 	video offset=CINEMATIC_298, x=[0xe6], y=150
 	break
-	jne [HACK_VAR_67], 0x8E, KILL_CHAN_AT_157F
+	jne [SCREEN_NUM], 0x8E, KILL_CHAN_AT_157F
 	video offset=CINEMATIC_298, x=[0xe6], y=100
 	mov [0xF8], [0xE6]
 	add [0xF8], 0x0004
@@ -242,7 +242,7 @@ DELAY_LOOP_VARE6_AT_0D9F:
 
 LABEL_0DA7:
 	break
-	jne [HACK_VAR_67], 0x8E, LABEL_0DA7
+	jne [SCREEN_NUM], 0x8E, LABEL_0DA7
 	jl [HERO_X], 0xBB, LABEL_0DA7
 	jg [HERO_X], 0xD4, LABEL_0DA7
 	je [HERO_POS_UP_DOWN], 0xFFFF, LABEL_0DC8

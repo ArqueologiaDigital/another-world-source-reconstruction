@@ -180,7 +180,7 @@ LABEL_16DF:
 	call LABEL_173C
 	break
 	call LABEL_173C
-	jne [HACK_VAR_67], [0x10], LABEL_1748
+	jne [SCREEN_NUM], [0x10], LABEL_1748
 	sub [0x78], 0x0007
 	add [0x79], 0x0006
 	video type=0, offset=COMMON_VIDEO_287, x=[0x78], y=[0x79], zoom=0x40

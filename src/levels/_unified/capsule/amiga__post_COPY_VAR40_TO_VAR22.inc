@@ -2,10 +2,10 @@ LABEL_5AF6:
 	mov [0x21], [BUDDY_X]
 	mov [0x22], [BUDDY_Y]
 	mov [0x23], 0x0000
-	mov [0x24], [HACK_VAR_67]
-	mov [HACK_VAR_67], [0x10]
+	mov [0x24], [SCREEN_NUM]
+	mov [SCREEN_NUM], [0x10]
 	call CAPSULE_FLOOR_LEVEL_SELECT_BY_HEIGHT
-	mov [HACK_VAR_67], [0x24]
+	mov [SCREEN_NUM], [0x24]
 	ret
 
 
@@ -38,7 +38,7 @@ LABEL_5B33:
 
 LABEL_5B69:
 	call LABEL_58EB
-	jne [HACK_VAR_67], 0x25, SHARED_RET
+	jne [SCREEN_NUM], 0x25, SHARED_RET
 	setup channel=0x14, address=LABEL_5913
 	ret
 
@@ -67,6 +67,6 @@ LABEL_5BB7:
 	db 0x11
 
 LABEL_5BB8:
-	je [HACK_VAR_67], 0x88, DECREMENT_VARF8_BY_10
-	je [HACK_VAR_67], 0x89, DECREMENT_VARF8_BY_10
+	je [SCREEN_NUM], 0x88, DECREMENT_VARF8_BY_10
+	je [SCREEN_NUM], 0x89, DECREMENT_VARF8_BY_10
 	ret

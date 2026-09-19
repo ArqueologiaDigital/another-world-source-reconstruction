@@ -72,7 +72,7 @@ SET_VAR2F_TO_0000:
 	mov [0x2B], [0x12]
 	shr [0x2B], 0x0003
 	jne [0xB0], 0x00, LABEL_5B0D
-	jl [HACK_VAR_67], 0x03, LABEL_5B0D
+	jl [SCREEN_NUM], 0x03, LABEL_5B0D
 	mov [0x10], 0x0001
 	call SETUP_HASH_AND_DERIVE_BUCKETS
 	mov [0x07], [0x3F]
@@ -93,7 +93,7 @@ LABEL_5B0E:
 
 LABEL_5B0F:
 	je [0x12], 0x01, SHARED_RET
-	jne [0x10], [HACK_VAR_67], LABEL_5B7E
+	jne [0x10], [SCREEN_NUM], LABEL_5B7E
 	mov [0xF8], [0x10]
 	and [0xF8], 0x001F
 	je [0x08], [HERO_Y], LABEL_5B28
@@ -127,11 +127,11 @@ LABEL_5B6D:
 
 LABEL_5B7E:
 	mov [0xF8], [0x10]
-	mov [0x2B], [HACK_VAR_67]
+	mov [0x2B], [SCREEN_NUM]
 	and [0xF8], 0x00E0
 	and [0x2B], 0x00E0
 	jne [0xF8], [0x2B], LABEL_5BD8
-	jg [HACK_VAR_67], [0x10], LABEL_5BB1
+	jg [SCREEN_NUM], [0x10], LABEL_5BB1
 	jne [0x10], 0x24, LABEL_5BA6
 	mov [0x07], 0x00A0
 	mov [0x08], 0x00B6
@@ -169,7 +169,7 @@ STATE_VAR12_BIG_DISPATCH:
 	mov [0xF8], [0x12]
 	and [0xF8], 0x1FFF
 	je [0xF8], 0x40, STATE_VAR12_BIG_DISPATCH_CASE_40
-	jne [0x10], [HACK_VAR_67], LABEL_5C87
+	jne [0x10], [SCREEN_NUM], LABEL_5C87
 	je [0xF8], 0x08, STATE_VAR12_BIG_DISPATCH_CASE_08
 	je [0xF8], 0x18, STATE_VAR12_BIG_DISPATCH_CASE_18
 	je [0xF8], 0x20, STATE_VAR12_BIG_DISPATCH_CASE_20
@@ -208,11 +208,11 @@ LABEL_5C50:
 
 LABEL_5C87:
 	mov [0xF8], [0x10]
-	mov [0x2B], [HACK_VAR_67]
+	mov [0x2B], [SCREEN_NUM]
 	and [0xF8], 0x00E0
 	and [0x2B], 0x00E0
 	jne [0xF8], [0x2B], TRIVIAL_RET
-	mov [0xF8], [HACK_VAR_67]
+	mov [0xF8], [SCREEN_NUM]
 	and [0xF8], 0x001F
 	je [0xF8], 0x05, TRIVIAL_RET
 	jl [0x12], 0x4000, TRIVIAL_RET
@@ -221,35 +221,35 @@ LABEL_5C87:
 	jge [0xF8], 0x2000, LABEL_5CD4
 	mov [0xF8], [0x10]
 	add [0xF8], 0x0001
-	je [0xF8], [HACK_VAR_67], LABEL_5CD4
+	je [0xF8], [SCREEN_NUM], LABEL_5CD4
 	sub [0xF8], 0x0002
-	jne [0xF8], [HACK_VAR_67], TRIVIAL_RET
+	jne [0xF8], [SCREEN_NUM], TRIVIAL_RET
 
 LABEL_5CD4:
 	mov [0x2B], [0x12]
 	and [0x2B], 0x1FF0
 	mov [0xF8], [0x10]
 	add [0xF8], 0x0001
-	je [0xF8], [HACK_VAR_67], LABEL_5CEC
+	je [0xF8], [SCREEN_NUM], LABEL_5CEC
 	sub [0xF8], 0x0002
 
 LABEL_5CEC:
 	mov [0x29], [0x07]
-	jg [HACK_VAR_67], [0x10], LABEL_5D22
+	jg [SCREEN_NUM], [0x10], LABEL_5D22
 	mov [0x2F], 0x0004
 	sub [0x29], 0x0010
-	jne [0xF8], [HACK_VAR_67], TRIVIAL_RET
+	jne [0xF8], [SCREEN_NUM], TRIVIAL_RET
 	jne [0x2B], 0x10, TRIVIAL_RET
 	jl [0x29], 0x0F, TRIVIAL_RET
 	jg [0x29], 0x1E, TRIVIAL_RET
-	je [HACK_VAR_67], 0x6B, TRIVIAL_RET
+	je [SCREEN_NUM], 0x6B, TRIVIAL_RET
 	setup channel=0x34, address=LABEL_732D
 	jmp TRIVIAL_RET
 
 LABEL_5D22:
 	mov [0x2F], 0x0003
 	add [0x29], 0x0010
-	jne [0xF8], [HACK_VAR_67], TRIVIAL_RET
+	jne [0xF8], [SCREEN_NUM], TRIVIAL_RET
 	jne [0x2B], 0x10, TRIVIAL_RET
 	jg [0x29], 0x0131, TRIVIAL_RET
 	jl [0x29], 0x0122, TRIVIAL_RET
@@ -279,7 +279,7 @@ LABEL_5D64:
 	mov [0x2F], 0x0009
 	mov [0x29], 0x0000
 	jg [0x26], 0x14, SHARED_RET
-	jne [HACK_VAR_67], 0x6D, SET_VAR2F_TO_000A
+	jne [SCREEN_NUM], 0x6D, SET_VAR2F_TO_000A
 	jl [HERO_Y], 0x96, SHARED_RET
 
 SET_VAR2F_TO_000A:

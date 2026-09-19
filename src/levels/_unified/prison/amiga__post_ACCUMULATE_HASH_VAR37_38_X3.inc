@@ -20,8 +20,8 @@ COPY_HASH_AND_SPLIT_VAR38_3F_3E:
 
 
 LABEL_07FC:
-	mov [HACK_VAR_67], 0x0001
-	mov [0x66], 0x0001
+	mov [SCREEN_NUM], 0x0001
+	mov [CACHED_SCREEN_NUM], 0x0001
 	mov [0x65], 0x0001
 	mov [0x68], 0x00C8
 	mov [0x69], 0x00B6

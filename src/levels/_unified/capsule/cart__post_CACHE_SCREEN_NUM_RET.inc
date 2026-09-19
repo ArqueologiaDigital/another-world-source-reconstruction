@@ -1,0 +1,58 @@
+LABEL_B4EC:
+	db 0x11
+
+LABEL_B4ED:
+	jne [SCREEN_NUM], 0x4D, LABEL_B4F8
+	mov [SCREEN_NUM], 0x0064
+	ret
+
+
+LABEL_B4F8:
+	jne [SCREEN_NUM], 0x8C, LABEL_B50B
+	mov [SCREEN_NUM], 0x00AB
+	mov [HERO_X], 0x0140
+	mov [HERO_Y], 0x003C
+	ret
+
+
+LABEL_B50B:
+	jne [SCREEN_NUM], 0x8A, LABEL_B524
+	jl [HERO_X], 0x46, SCREEN_STEP_DOWN_ONE_ROW
+	mov [SCREEN_NUM], 0x008B
+	mov [HERO_X], 0x0000
+	mov [HERO_Y], 0x003C
+	ret
+
+
+LABEL_B524:
+	jne [SCREEN_NUM], 0x8E, LABEL_B52F
+	mov [SCREEN_NUM], 0x00CE
+	ret
+
+
+LABEL_B52F:
+	jne [SCREEN_NUM], 0x2A, LABEL_B53A
+	mov [SCREEN_NUM], 0x006D
+	ret
+
+
+LABEL_B53A:
+	jne [SCREEN_NUM], 0x8B, LABEL_B54D
+	mov [HERO_X], 0x00A0
+	mov [HERO_Y], 0x0032
+	mov [SCREEN_NUM], 0x00C9
+	ret
+
+
+LABEL_B54D:
+	jne [SCREEN_NUM], 0xCB, LABEL_B55C
+	mov [HERO_X], 0x004B
+	mov [SCREEN_NUM], 0x00EB
+	ret
+
+
+LABEL_B55C:
+	jne [SCREEN_NUM], 0xAA, SCREEN_STEP_DOWN_ONE_ROW
+	mov [SCREEN_NUM], 0x00C8
+	mov [HERO_X], 0x00C8
+	ret

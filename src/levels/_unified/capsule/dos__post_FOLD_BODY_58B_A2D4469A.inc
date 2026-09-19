@@ -78,7 +78,7 @@ SET_VAR2F_TO_0000:
 	mov [0x2B], [0x12]
 	shr [0x2B], 0x0003
 	jne [0xB0], 0x00, LABEL_50EE
-	jl [HACK_VAR_67], 0x03, LABEL_50EE
+	jl [SCREEN_NUM], 0x03, LABEL_50EE
 	mov [0x10], 0x0001
 	call CAPSULE_DERIVE_VAR3D_3E_3F_FROM_VAR38_BIT_MASKS_VARIANT_3041
 	mov [BUDDY_X], [0x3F]
@@ -101,7 +101,7 @@ LABEL_50EF:
 	je [0x12], 0x04, LABEL_24B6
 	je [0x12], 0x05, LABEL_24F5
 	je [0x12], 0x06, LABEL_2490
-	jne [0x10], [HACK_VAR_67], LABEL_517C
+	jne [0x10], [SCREEN_NUM], LABEL_517C
 	mov [0xF8], [0x10]
 	and [0xF8], 0x001F
 	je [BUDDY_Y], [HERO_Y], LABEL_5126
@@ -135,11 +135,11 @@ LABEL_516B:
 
 LABEL_517C:
 	mov [0xF8], [0x10]
-	mov [0x2B], [HACK_VAR_67]
+	mov [0x2B], [SCREEN_NUM]
 	and [0xF8], 0x00E0
 	and [0x2B], 0x00E0
 	jne [0xF8], [0x2B], LABEL_51D6
-	jg [HACK_VAR_67], [0x10], LABEL_51AF
+	jg [SCREEN_NUM], [0x10], LABEL_51AF
 	jne [0x10], 0x24, LABEL_51A4
 	mov [BUDDY_X], 0x00A0
 	mov [BUDDY_Y], 0x00B6
@@ -176,7 +176,7 @@ STATE_VAR12_BIG_DISPATCH:
 	jl [0x12], 0x08, LABEL_50EF
 	mov [0xF8], [0x12]
 	and [0xF8], 0x1FFF
-	jne [0x10], [HACK_VAR_67], LABEL_529D
+	jne [0x10], [SCREEN_NUM], LABEL_529D
 	je [0xF8], 0x08, STATE_VAR12_BIG_DISPATCH_CASE_08
 	je [0xF8], 0x10, STATE_VAR12_BIG_DISPATCH_CASE_10
 	je [0xF8], 0x18, INIT_VARS_2F_29_1
@@ -220,11 +220,11 @@ LABEL_5266:
 
 LABEL_529D:
 	mov [0xF8], [0x10]
-	mov [0x2B], [HACK_VAR_67]
+	mov [0x2B], [SCREEN_NUM]
 	and [0xF8], 0x00E0
 	and [0x2B], 0x00E0
 	jne [0xF8], [0x2B], TRIVIAL_RET
-	mov [0xF8], [HACK_VAR_67]
+	mov [0xF8], [SCREEN_NUM]
 	and [0xF8], 0x001F
 	je [0xF8], 0x05, TRIVIAL_RET
 	jl [0x12], 0x4000, TRIVIAL_RET
@@ -233,24 +233,24 @@ LABEL_529D:
 	jge [0xF8], 0x2000, LABEL_52EA
 	mov [0xF8], [0x10]
 	add [0xF8], 0x0001
-	je [0xF8], [HACK_VAR_67], LABEL_52EA
+	je [0xF8], [SCREEN_NUM], LABEL_52EA
 	sub [0xF8], 0x0002
-	jne [0xF8], [HACK_VAR_67], TRIVIAL_RET
+	jne [0xF8], [SCREEN_NUM], TRIVIAL_RET
 
 LABEL_52EA:
 	mov [0x2B], [0x12]
 	and [0x2B], 0x1FF0
 	mov [0xF8], [0x10]
 	add [0xF8], 0x0001
-	je [0xF8], [HACK_VAR_67], LABEL_5302
+	je [0xF8], [SCREEN_NUM], LABEL_5302
 	sub [0xF8], 0x0002
 
 LABEL_5302:
 	mov [0x29], [BUDDY_X]
-	jg [HACK_VAR_67], [0x10], LABEL_5332
+	jg [SCREEN_NUM], [0x10], LABEL_5332
 	mov [0x2F], 0x0004
 	sub [0x29], 0x0010
-	jne [0xF8], [HACK_VAR_67], TRIVIAL_RET
+	jne [0xF8], [SCREEN_NUM], TRIVIAL_RET
 	jne [0x2B], 0x10, TRIVIAL_RET
 	jl [0x29], 0x0F, TRIVIAL_RET
 	jg [0x29], 0x1E, TRIVIAL_RET
@@ -260,7 +260,7 @@ LABEL_5302:
 LABEL_5332:
 	mov [0x2F], 0x0003
 	add [0x29], 0x0010
-	jne [0xF8], [HACK_VAR_67], TRIVIAL_RET
+	jne [0xF8], [SCREEN_NUM], TRIVIAL_RET
 	jne [0x2B], 0x10, TRIVIAL_RET
 	jg [0x29], 0x0131, TRIVIAL_RET
 	jl [0x29], 0x0122, TRIVIAL_RET

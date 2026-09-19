@@ -83,7 +83,7 @@ LABEL_0BD2:
 	djnz [0xEA], LABEL_0BD2
 	fill page=0x00, color=0x00
 	call LABEL_24D9
-	mov [HACK_VAR_67], 0x0091
+	mov [SCREEN_NUM], 0x0091
 	setup channel=0x14, address=KILL_CHANNEL_LANDING
 	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	setup channel=0x16, address=KILL_CHANNEL_LANDING

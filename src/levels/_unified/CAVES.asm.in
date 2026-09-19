@@ -1,5 +1,6 @@
 HERO_X		EQU 0x01
 HERO_Y		EQU 0x02
+CACHED_SCREEN_NUM	EQU 0x66
 ; STAGE CAVES: ventilation shafts + cave system + floor-mauler maze.
 ;
 ; Gameplay role: after dropping into the vents in PRISON, Lester:

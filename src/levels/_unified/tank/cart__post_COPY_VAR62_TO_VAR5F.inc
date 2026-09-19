@@ -249,13 +249,13 @@ LABEL_0C92:
 	db 0x11
 
 LABEL_0C93:
-	je [HACK_VAR_67], 0x06, SHARED_RET
+	je [SCREEN_NUM], 0x06, SHARED_RET
 	je [0x71], 0x00, SHARED_RET
 	je [0x72], 0x00, SHARED_RET
 	je [0x74], 0x00, SHARED_RET
 	je [0x75], 0x00, SHARED_RET
-	jg [HACK_VAR_67], 0x06, SHARED_RET
-	mov [HACK_VAR_67], 0x0006
+	jg [SCREEN_NUM], 0x06, SHARED_RET
+	mov [SCREEN_NUM], 0x0006
 	setup channel=0x06, address=LABEL_0C7B
 	ret
 
@@ -402,8 +402,8 @@ LABEL_0DD0:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_195, x=39, y=29
 	selectVideoPage 0xFF
-	jg [HACK_VAR_67], 0x05, SHARED_RET
-	mov [HACK_VAR_67], 0x0005
+	jg [SCREEN_NUM], 0x05, SHARED_RET
+	mov [SCREEN_NUM], 0x0005
 	ret
 
 

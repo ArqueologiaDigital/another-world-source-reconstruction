@@ -12,7 +12,7 @@ LABEL_6D29:
 	jne [0x1D], 0x0B, LABEL_6D40
 	mov [0x10], [0x4A]
 	mov [0x11], [0x4B]
-	jne [HACK_VAR_67], 0x24, SHARED_RET
+	jne [SCREEN_NUM], 0x24, SHARED_RET
 	mov [0xB2], 0x0001
 	ret
 
@@ -93,7 +93,7 @@ LABEL_6DC2:
 LABEL_6DC3:
 	call CAVES_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
 	mov [0x22], 0x0096
-	mov [0x26], [HACK_VAR_67]
+	mov [0x26], [SCREEN_NUM]
 	jg [HERO_Y], [0x41], LABEL_6DD7
 	or [0x26], 0x8000
 
@@ -127,13 +127,13 @@ LABEL_6E01:
 LABEL_6E0D:
 	mov [0xF8], [0xA2]
 	and [0xF8], 0x00FF
-	jne [0xF8], [HACK_VAR_67], LABEL_6DDD
+	jne [0xF8], [SCREEN_NUM], LABEL_6DDD
 	mov [0xF8], [0xA5]
 	and [0xF8], 0x00FF
-	jne [0xF8], [HACK_VAR_67], LABEL_6DEF
+	jne [0xF8], [SCREEN_NUM], LABEL_6DEF
 	mov [0xF8], [0xA8]
 	and [0xF8], 0x00FF
-	jne [0xF8], [HACK_VAR_67], LABEL_6E01
+	jne [0xF8], [SCREEN_NUM], LABEL_6E01
 	jle [0xA1], 0x00, LABEL_6E4D
 	mov [0xF8], [0xA0]
 	call LABEL_6EAA
@@ -246,7 +246,7 @@ LABEL_6F40:
 	mov [0x26], [0x44]
 
 LABEL_6F50:
-	jne [0x27], [HACK_VAR_67], DECREMENT_VAR22
+	jne [0x27], [SCREEN_NUM], DECREMENT_VAR22
 	jne [0x22], 0x00, LABEL_6F64
 	video offset=CINEMATIC_036, x=[0x21], y=[0x26]
 	jmp DECREMENT_VAR22

@@ -20,8 +20,8 @@ COPY_HASH_AND_SPLIT_VAR38_3F_3E:
 
 
 LABEL_0860:
-	mov [HACK_VAR_67], 0x0001
-	mov [0x66], 0x0001
+	mov [SCREEN_NUM], 0x0001
+	mov [CACHED_SCREEN_NUM], 0x0001
 	mov [0x65], 0x0001
 	mov [0x68], 0x00C8
 	mov [0x69], 0x00B6
@@ -55,7 +55,7 @@ LABEL_0860:
 	setup channel=0x3C, address=LABEL_06ED
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x65], 0x0000
-	mov [0x66], 0x0000
+	mov [CACHED_SCREEN_NUM], 0x0000
 	setup channel=0x3F, address=LABEL_08E9
 	killChannel
 

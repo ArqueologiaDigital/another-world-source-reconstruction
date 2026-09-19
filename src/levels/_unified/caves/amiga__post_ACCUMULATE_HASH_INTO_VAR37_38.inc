@@ -71,6 +71,6 @@ LABEL_4171:
 	db 0x05
 
 LABEL_4172:
-	mov [HACK_VAR_67], 0x0045
+	mov [SCREEN_NUM], 0x0045
 	mov [HERO_X], 0x0046
 	ret

@@ -18,7 +18,7 @@ LABEL_343B:
 
 LABEL_343C:
 	mov [0xEE], [0x21]
-	je [HACK_VAR_67], 0x6A, DRAW_CIN_314
+	je [SCREEN_NUM], 0x6A, DRAW_CIN_314
 	video offset=CINEMATIC_314, x=[0x21], y=98
 	ret
 
@@ -37,7 +37,7 @@ LABEL_3457:
 	break
 	jg [0x06], 0x03DE, LABEL_3457
 	jne [0x04], 0x20, LABEL_3457
-	je [HACK_VAR_67], 0x4F, LABEL_3474
+	je [SCREEN_NUM], 0x4F, LABEL_3474
 	jg [HERO_X], 0x67, LABEL_3457
 	jmp LABEL_3480
 
@@ -54,7 +54,7 @@ LABEL_3480:
 	setup channel=0x19, address=LABEL_082C
 	mov [0xED], 0x00A0
 	mov [0xEE], 0x0064
-	jne [HACK_VAR_67], 0x4F, LABEL_3457
+	jne [SCREEN_NUM], 0x4F, LABEL_3457
 	mov [0xED], 0x00A7
 	mov [0xEE], 0x000A
 	mov [HERO_X], 0x0070
@@ -65,6 +65,6 @@ LABEL_34B4:
 LABEL_34B5:
 	mov [0xE6], 0x0026
 	mov [0xE7], 0x005A
-	jne [HACK_VAR_67], 0x4F, COPY_VARE6E7_TO_VARE8_E9_EA_EB
+	jne [SCREEN_NUM], 0x4F, COPY_VARE6E7_TO_VARE8_E9_EA_EB
 	mov [0xE6], 0x002D
 	mov [0xE7], 0x0002

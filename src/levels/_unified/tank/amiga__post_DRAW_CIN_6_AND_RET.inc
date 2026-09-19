@@ -31,15 +31,15 @@ TANK_TURRET_HIT_STAMP_ADVANCE_SCREEN_STATE:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_121, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
-	jg [HACK_VAR_67], 0x02, SHARED_RET
-	mov [HACK_VAR_67], 0x0002
+	jg [SCREEN_NUM], 0x02, SHARED_RET
+	mov [SCREEN_NUM], 0x0002
 	ret
 
 
 TANK_SCENE_INIT_FILL_PAGE_3_COLOR_0C:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_120, x=[0x0f], y=[0x10]
-	mov [HACK_VAR_67], 0x0003
+	mov [SCREEN_NUM], 0x0003
 	selectVideoPage 0xFF
 	ret
 

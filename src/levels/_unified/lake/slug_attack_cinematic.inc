@@ -89,7 +89,7 @@ SLUG_ATTACK_INTRO:
 	unfreezeChannels first=0x3D, last=0x3F
 	mov [0x2B], 0x0001
 	copyVideoPage src=0x00, dst=0x03
-	mov [0x65], [0x66]
+	mov [0x65], [CACHED_SCREEN_NUM]
 	setup channel=0x3C, address=CLEAR_FRAMEBUFFER_TO_COLOR_4_LOOP
 	break
 .if BRANCH in ("cartridge_1992", "gba_2004")

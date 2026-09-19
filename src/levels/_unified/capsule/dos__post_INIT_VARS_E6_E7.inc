@@ -65,7 +65,7 @@ LABEL_0AE0:
 
 LABEL_0AE1:
 	break
-	jne [HACK_VAR_67], 0xCA, LABEL_0AE1
+	jne [SCREEN_NUM], 0xCA, LABEL_0AE1
 	jg [HERO_X], 0x6E, LABEL_0B08
 	mov [0xF8], [0xB9]
 	and [0xF8], 0x0004
@@ -168,7 +168,7 @@ LABEL_0C0E:
 
 LABEL_0C12:
 	mov [0xE7], 0x0028
-	jne [HACK_VAR_67], 0xC8, LABEL_0C20
+	jne [SCREEN_NUM], 0xC8, LABEL_0C20
 	mov [0xE7], 0x0154
 
 LABEL_0C20:
@@ -177,7 +177,7 @@ LABEL_0C20:
 	sub [0xE7], 0x0028
 	video offset=CINEMATIC_569, x=[0xe7], y=158
 	video offset=CINEMATIC_570, x=60, y=158
-	jne [HACK_VAR_67], 0xC8, LABEL_0C40
+	jne [SCREEN_NUM], 0xC8, LABEL_0C40
 	video offset=CINEMATIC_570, x=280, y=158
 
 LABEL_0C40:

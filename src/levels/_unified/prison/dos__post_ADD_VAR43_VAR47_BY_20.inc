@@ -1,6 +1,6 @@
 LABEL_801F:
 	break
-	je [HACK_VAR_67], 0x65, JUMP_TO_LABEL_7FE0
+	je [SCREEN_NUM], 0x65, JUMP_TO_LABEL_7FE0
 	mov [0x43], 0x00C1
 	mov [0x47], 0x00C1
 
@@ -14,7 +14,7 @@ LABEL_8032:
 	setup channel=0x3C, address=LABEL_0665
 	setup channel=0x14, address=PRISON_HERO_STAND_LEFT_TICK
 	jne [0x11], 0x01, LABEL_8047
-	mov [0x6A], [HACK_VAR_67]
+	mov [0x6A], [SCREEN_NUM]
 
 LABEL_8047:
 	mov [0x63], 0x0001

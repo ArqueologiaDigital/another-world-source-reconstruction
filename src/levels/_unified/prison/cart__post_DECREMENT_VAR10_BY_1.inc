@@ -8,7 +8,7 @@ LABEL_897B:
 	jl [HERO_X], 0x0150, LABEL_89B4
 
 LABEL_899C:
-	add [HACK_VAR_67], 0x0001
+	add [SCREEN_NUM], 0x0001
 	call LABEL_884B
 	call LABEL_883E
 	mov [0x28], 0x0008
@@ -22,7 +22,7 @@ LABEL_89B4:
 	jg [HERO_X], 0xFFF0, LABEL_89E0
 
 LABEL_89C8:
-	sub [HACK_VAR_67], 0x0001
+	sub [SCREEN_NUM], 0x0001
 	call LABEL_884B
 	call LABEL_883E
 	mov [0x28], 0x0140
@@ -42,11 +42,11 @@ LABEL_89ED:
 	killChannel
 
 LABEL_89F2:
-	mov [HACK_VAR_67], 0x0001
+	mov [SCREEN_NUM], 0x0001
 	call JUNK__7FA3
 	setPalette 0x09
-	je [0x66], 0x01, JUMP_TO_LABEL_8AAB
-	mov [0x66], 0x0001
+	je [CACHED_SCREEN_NUM], 0x01, JUMP_TO_LABEL_8AAB
+	mov [CACHED_SCREEN_NUM], 0x0001
 	fill page=0x00, color=0x02
 	selectVideoPage 0x00
 	call SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01
@@ -59,11 +59,11 @@ LABEL_8A16:
 	db 0x11
 
 LABEL_8A17:
-	mov [HACK_VAR_67], 0x0002
+	mov [SCREEN_NUM], 0x0002
 	call JUNK__7FA3
 	setPalette 0x07
-	je [0x66], 0x02, JUMP_TO_LABEL_8AC4
-	mov [0x66], 0x0002
+	je [CACHED_SCREEN_NUM], 0x02, JUMP_TO_LABEL_8AC4
+	mov [CACHED_SCREEN_NUM], 0x0002
 	fill page=0x00, color=0x0E
 	selectVideoPage 0x00
 	call SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01
@@ -75,11 +75,11 @@ JUMP_TO_LABEL_8AC4:
 	killChannel
 
 LABEL_8A3C:
-	mov [HACK_VAR_67], 0x0003
+	mov [SCREEN_NUM], 0x0003
 	call JUNK__7FA3
 	setPalette 0x05
-	je [0x66], 0x03, JUMP_TO_LABEL_8AD6
-	mov [0x66], 0x0003
+	je [CACHED_SCREEN_NUM], 0x03, JUMP_TO_LABEL_8AD6
+	mov [CACHED_SCREEN_NUM], 0x0003
 	fill page=0x00, color=0x0E
 	selectVideoPage 0x00
 	call SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01
@@ -92,11 +92,11 @@ LABEL_8A60:
 	db 0x11
 
 LABEL_8A61:
-	mov [HACK_VAR_67], 0x0004
+	mov [SCREEN_NUM], 0x0004
 	call JUNK__7FA3
 	setPalette 0x05
-	je [0x66], 0x04, JUMP_TO_LABEL_8B03
-	mov [0x66], 0x0004
+	je [CACHED_SCREEN_NUM], 0x04, JUMP_TO_LABEL_8B03
+	mov [CACHED_SCREEN_NUM], 0x0004
 	fill page=0x00, color=0x0E
 	selectVideoPage 0x00
 	call SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01
@@ -109,11 +109,11 @@ LABEL_8A85:
 	db 0x11
 
 LABEL_8A86:
-	mov [HACK_VAR_67], 0x0005
+	mov [SCREEN_NUM], 0x0005
 	call JUNK__7FA3
 	setPalette 0x07
-	je [0x66], 0x05, JUMP_TO_LABEL_8B30
-	mov [0x66], 0x0005
+	je [CACHED_SCREEN_NUM], 0x05, JUMP_TO_LABEL_8B30
+	mov [CACHED_SCREEN_NUM], 0x0005
 	fill page=0x00, color=0x0E
 	selectVideoPage 0x00
 	call SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01

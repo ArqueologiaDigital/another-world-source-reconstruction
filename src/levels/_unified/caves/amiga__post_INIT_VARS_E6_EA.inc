@@ -325,7 +325,7 @@ LABEL_CC07:
 
 LABEL_CC0F:
 	break
-	mov [HACK_VAR_67], 0x0028
+	mov [SCREEN_NUM], 0x0028
 	setup channel=0x36, address=LABEL_27B9
 	mov [0x35], 0x0010
 	sub [SCROLL_Y], [0x35]

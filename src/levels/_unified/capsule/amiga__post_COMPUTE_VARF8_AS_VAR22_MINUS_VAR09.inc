@@ -29,7 +29,7 @@ LABEL_5595:
 	call LABEL_55C7
 
 LABEL_5598:
-	jne [0x6A], [HACK_VAR_67], LABEL_55AE
+	jne [0x6A], [SCREEN_NUM], LABEL_55AE
 	mov [0x24], [0x68]
 	mov [0x25], [0x69]
 	mov [0x26], [0x6B]
@@ -90,7 +90,7 @@ LABEL_562D:
 
 
 LABEL_562E:
-	jne [0x72], [HACK_VAR_67], LABEL_5644
+	jne [0x72], [SCREEN_NUM], LABEL_5644
 	mov [0x24], [0x70]
 	mov [0x25], [0x71]
 	mov [0x26], [0x73]
@@ -98,7 +98,7 @@ LABEL_562E:
 	call LABEL_56C4
 
 LABEL_5644:
-	jne [0x7A], [HACK_VAR_67], LABEL_565A
+	jne [0x7A], [SCREEN_NUM], LABEL_565A
 	mov [0x24], [0x78]
 	mov [0x25], [0x79]
 	mov [0x26], [0x7B]

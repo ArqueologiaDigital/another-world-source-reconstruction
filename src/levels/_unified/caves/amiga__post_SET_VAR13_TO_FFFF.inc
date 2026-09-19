@@ -14,7 +14,7 @@ LABEL_6508:
 	db 0x11
 
 LABEL_6509:
-	jne [HACK_VAR_67], 0xCC, LABEL_6548
+	jne [SCREEN_NUM], 0xCC, LABEL_6548
 	jne [0x1D], 0x0A, LABEL_6522
 	setup channel=0x28, address=INLINE_SET_VAR74_TO_6
 	or [0x49], 0x4000
@@ -39,7 +39,7 @@ LABEL_6535:
 
 
 LABEL_6548:
-	jne [HACK_VAR_67], 0xCA, LABEL_6561
+	jne [SCREEN_NUM], 0xCA, LABEL_6561
 	jne [0x1D], 0x0A, SHARED_RET
 	setup channel=0x22, address=INLINE_SET_VAR73_TO_6
 	or [0x49], 0x4000
@@ -48,7 +48,7 @@ LABEL_6548:
 
 
 LABEL_6561:
-	jne [HACK_VAR_67], 0xCB, SHARED_RET
+	jne [SCREEN_NUM], 0xCB, SHARED_RET
 	jne [0x1D], 0x0A, LABEL_657A
 	setup channel=0x28, address=INLINE_SET_VAR74_TO_6
 	or [0x49], 0x4000
@@ -73,7 +73,7 @@ LABEL_658D:
 
 
 LABEL_65A0:
-	jne [HACK_VAR_67], 0x6B, LABEL_65CB
+	jne [SCREEN_NUM], 0x6B, LABEL_65CB
 	play id=0x005B, freq=0x14, vol=0x30, channel=0x01
 	jne [0x1D], 0x04, SHARED_RET
 	or [0xB1], 0x0001
@@ -87,7 +87,7 @@ LABEL_65A0:
 
 
 LABEL_65CB:
-	jne [HACK_VAR_67], 0xED, LABEL_65FD
+	jne [SCREEN_NUM], 0xED, LABEL_65FD
 	mov [0xF8], [0xB1]
 	and [0xF8], 0x0004
 	jne [0xF8], 0x00, SHARED_RET
@@ -103,7 +103,7 @@ LABEL_65CB:
 
 
 LABEL_65FD:
-	jne [HACK_VAR_67], 0x50, SHARED_RET
+	jne [SCREEN_NUM], 0x50, SHARED_RET
 	jne [0x1D], 0x04, SHARED_RET
 	jl [0x21], 0x64, SHARED_RET
 	mov [0xF8], [0xB1]

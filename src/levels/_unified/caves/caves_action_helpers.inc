@@ -60,82 +60,82 @@ DELETE_GAME_AND_FX_CHANNELS:
 .include "dos__post_DELETE_GAME_AND_FX_CHANNELS.inc"
 .endif
 
-.include "../_helpers/COPY_HACK67_TO_VAR66.inc"
+.include "../_helpers/CACHE_SCREEN_NUM_RET.inc"
 .if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
-CAVES_COPY_HACK67_TO_VAR66_L0:
+CAVES_CACHE_SCREEN_NUM_RET_L0:
 	db 0x11
 
 CAVES_SCREEN_EXIT_DOWN_LINK_CASE_28:
-	jne [HACK_VAR_67], 0x28, CAVES_SCREEN_EXIT_DOWN_LINK_CASE_49
-	mov [HACK_VAR_67], 0x0067
+	jne [SCREEN_NUM], 0x28, CAVES_SCREEN_EXIT_DOWN_LINK_CASE_49
+	mov [SCREEN_NUM], 0x0067
 	mov [HERO_X], 0x000A
 	ret
 
 
 CAVES_SCREEN_EXIT_DOWN_LINK_CASE_49:
-	jne [HACK_VAR_67], 0x49, ADD_HACK67_BY_20
-	mov [HACK_VAR_67], 0x0069
+	jne [SCREEN_NUM], 0x49, SCREEN_STEP_DOWN_ONE_ROW
+	mov [SCREEN_NUM], 0x0069
 	mov [HERO_X], 0x0032
 	ret
 .endif
 
-.include "../_helpers/ADD_HACK67_BY_20.inc"
+.include "../_helpers/SCREEN_STEP_DOWN_ONE_ROW.inc"
 .if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
 CAVES_SCREEN_EXIT_UP_LINK_CASE_69:
-	jne [HACK_VAR_67], 0x69, SUB_HACK67_BY_20
-	mov [HACK_VAR_67], 0x0049
+	jne [SCREEN_NUM], 0x69, SCREEN_STEP_UP_ONE_ROW
+	mov [SCREEN_NUM], 0x0049
 	mov [HERO_X], 0x00AA
 	ret
 .endif
 
-.include "../_helpers/SUB_HACK67_BY_20.inc"
+.include "../_helpers/SCREEN_STEP_UP_ONE_ROW.inc"
 .if BRANCH in ("chahi_amiga_1991", "cartridge_1992", "dos_1992")
 CAVES_SCREEN_EXIT_LEFT_LINK_CASE_AF:
-	jne [HACK_VAR_67], 0xAF, CAVES_SCREEN_EXIT_LEFT_LINK_CASE_C8
-	mov [HACK_VAR_67], 0x00CE
+	jne [SCREEN_NUM], 0xAF, CAVES_SCREEN_EXIT_LEFT_LINK_CASE_C8
+	mov [SCREEN_NUM], 0x00CE
 	mov [HERO_Y], 0x0078
 	ret
 
 
 CAVES_SCREEN_EXIT_LEFT_LINK_CASE_C8:
-	jne [HACK_VAR_67], 0xC8, CAVES_SCREEN_EXIT_LEFT_LINK_CASE_68
-	mov [HACK_VAR_67], 0x00A7
+	jne [SCREEN_NUM], 0xC8, CAVES_SCREEN_EXIT_LEFT_LINK_CASE_68
+	mov [SCREEN_NUM], 0x00A7
 	jg [HERO_Y], 0x50, SHARED_RET
-	call CAVES_SUB_HACK67_BY_20_L3
+	call CAVES_SCREEN_STEP_UP_ONE_ROW_L3
 	call SET_VAR04_TO_0024
 	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	mov [0x63], 0x0064
 	mov [0x34], 0x0000
 	mov [HERO_Y], 0x0014
 	mov [HERO_X], 0x0140
-	call CAVES_SUB_HACK67_BY_20_L4
+	call CAVES_SCREEN_STEP_UP_ONE_ROW_L4
 	ret
 
 
 CAVES_SCREEN_EXIT_LEFT_LINK_CASE_68:
-	jne [HACK_VAR_67], 0x68, DECR_HACK67_BY_1
-	jl [HERO_Y], 0x96, DECR_HACK67_BY_1
-	mov [HACK_VAR_67], 0x0087
+	jne [SCREEN_NUM], 0x68, SCREEN_STEP_LEFT_ONE_COLUMN
+	jl [HERO_Y], 0x96, SCREEN_STEP_LEFT_ONE_COLUMN
+	mov [SCREEN_NUM], 0x0087
 	mov [HERO_Y], 0x0028
 	ret
 .endif
 
-.include "../_helpers/DECR_HACK67_BY_1.inc"
+.include "../_helpers/SCREEN_STEP_LEFT_ONE_COLUMN.inc"
 .if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_DECR_HACK67_BY_1.inc"
+.include "amiga__post_SCREEN_STEP_LEFT_ONE_COLUMN.inc"
 .elif BRANCH == "cartridge_1992"
-.include "cart__post_DECR_HACK67_BY_1.inc"
+.include "cart__post_SCREEN_STEP_LEFT_ONE_COLUMN.inc"
 .elif BRANCH == "dos_1992"
-.include "dos__post_DECR_HACK67_BY_1.inc"
+.include "dos__post_SCREEN_STEP_LEFT_ONE_COLUMN.inc"
 .endif
 
-.include "../_helpers/INCR_HACK67_BY_1.inc"
+.include "../_helpers/SCREEN_STEP_RIGHT_ONE_COLUMN.inc"
 .if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INCR_HACK67_BY_1.inc"
+.include "amiga__post_SCREEN_STEP_RIGHT_ONE_COLUMN.inc"
 .elif BRANCH == "cartridge_1992"
-.include "cart__post_INCR_HACK67_BY_1.inc"
+.include "cart__post_SCREEN_STEP_RIGHT_ONE_COLUMN.inc"
 .elif BRANCH == "dos_1992"
-.include "dos__post_INCR_HACK67_BY_1.inc"
+.include "dos__post_SCREEN_STEP_RIGHT_ONE_COLUMN.inc"
 .endif
 
 INIT_AI_VARS_AT_280_10:

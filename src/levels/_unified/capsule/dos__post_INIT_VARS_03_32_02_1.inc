@@ -10,7 +10,7 @@ LABEL_9949:
 	break
 	video offset=CINEMATIC_091, x=[HERO_X], y=180
 	mov [HERO_Y], [0x51]
-	setup channel=0x1A, address=CAPSULE_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65_L1
+	setup channel=0x1A, address=CAPSULE_SHELVE_BACKDROP_TO_PAGE3_L1
 	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
 LABEL_9975:
 	db 0x11

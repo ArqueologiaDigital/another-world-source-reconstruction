@@ -357,28 +357,28 @@ LABEL_22F4:
 	jl [0x70], 0xC8, LABEL_22F4
 
 LABEL_2305:
-	jne [HACK_VAR_67], 0x04, LABEL_2319
+	jne [SCREEN_NUM], 0x04, LABEL_2319
 	call LABEL_2378
 	je [0x23], 0x00, LABEL_235C
 	video offset=CINEMATIC_202, x=[0x21], y=[BUDDY_Y]
 
 LABEL_2319:
 	break
-	jne [HACK_VAR_67], 0x04, LABEL_232E
+	jne [SCREEN_NUM], 0x04, LABEL_232E
 	call LABEL_2378
 	je [0x23], 0x00, LABEL_235C
 	video offset=CINEMATIC_203, x=[0x21], y=[BUDDY_Y]
 
 LABEL_232E:
 	break
-	jne [HACK_VAR_67], 0x04, LABEL_2343
+	jne [SCREEN_NUM], 0x04, LABEL_2343
 	call LABEL_2378
 	je [0x23], 0x00, LABEL_235C
 	video offset=CINEMATIC_204, x=[0x21], y=[BUDDY_Y]
 
 LABEL_2343:
 	break
-	jne [HACK_VAR_67], 0x04, LABEL_2358
+	jne [SCREEN_NUM], 0x04, LABEL_2358
 	call LABEL_2378
 	je [0x23], 0x00, LABEL_235C
 	video offset=CINEMATIC_203, x=[0x21], y=[BUDDY_Y]
@@ -435,55 +435,55 @@ PRISON_BUDDY_FLOOR_DESCEND:
 	jmp LABEL_23A6
 
 LABEL_23CB:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_202, x=[0x21], y=[0x22]
 	ret
 
 
 PRISON_ACTOR_CHARGE_GLOW_FRAME_01:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_203, x=[0x21], y=[0x22]
 	ret
 
 
 LABEL_23E3:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_204, x=[0x21], y=[0x22]
 	ret
 
 
 PRISON_ACTOR_CHARGE_GLOW_FRAME_03:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_190, x=[0x21], y=[0x22]
 	ret
 
 
 PRISON_ACTOR_CHARGE_GLOW_FRAME_04:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_191, x=[0x21], y=[0x22]
 	ret
 
 
 PRISON_ACTOR_CHARGE_GLOW_FRAME_05:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_192, x=[0x21], y=[0x22]
 	ret
 
 
 PRISON_ACTOR_CHARGE_GLOW_FRAME_06:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_193, x=[0x21], y=[0x22]
 	ret
 
 
 PRISON_ACTOR_CHARGE_GLOW_FRAME_07:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_194, x=[0x21], y=[0x22]
 	ret
 
 
 PRISON_ACTOR_CHARGE_GLOW_FRAME_08:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_195, x=[0x21], y=[0x22]
 	ret
 
@@ -550,7 +550,7 @@ LABEL_24A6:
 	call PRISON_ACTOR_CHARGE_GLOW_FRAME_08
 	break
 	djnz [0x29], LABEL_24A6
-	jne [HACK_VAR_67], [0x10], LABEL_2523
+	jne [SCREEN_NUM], [0x10], LABEL_2523
 	call PRISON_BUDDY_EFFECT_ANCHOR_LEFT
 	mov [0x96], [0x21]
 	mov [0x97], [0x22]
@@ -816,7 +816,7 @@ LABEL_2770:
 	jmp LABEL_2770
 
 LABEL_2781:
-	jne [HACK_VAR_67], [0x10], LABEL_2798
+	jne [SCREEN_NUM], [0x10], LABEL_2798
 	mov [0x21], [BUDDY_X]
 	mov [0x27], [BUDDY_Y]
 	sub [0x21], 0x0028
@@ -848,7 +848,7 @@ LABEL_27B5:
 	jmp LABEL_27B5
 
 LABEL_27C6:
-	jne [HACK_VAR_67], [0x10], LABEL_27DD
+	jne [SCREEN_NUM], [0x10], LABEL_27DD
 	mov [0x21], [BUDDY_X]
 	mov [0x27], [BUDDY_Y]
 	sub [0x21], 0x0019
@@ -937,7 +937,7 @@ LABEL_28C3:
 	jmp LABEL_28C3
 
 LABEL_28D4:
-	jne [HACK_VAR_67], [0x10], LABEL_28EB
+	jne [SCREEN_NUM], [0x10], LABEL_28EB
 	mov [0x21], [BUDDY_X]
 	mov [0x27], [BUDDY_Y]
 	add [0x21], 0x0028
@@ -969,7 +969,7 @@ LABEL_2908:
 	jmp LABEL_2908
 
 LABEL_2919:
-	jne [HACK_VAR_67], [0x10], LABEL_2930
+	jne [SCREEN_NUM], [0x10], LABEL_2930
 	mov [0x21], [BUDDY_X]
 	mov [0x27], [BUDDY_Y]
 	add [0x21], 0x0019

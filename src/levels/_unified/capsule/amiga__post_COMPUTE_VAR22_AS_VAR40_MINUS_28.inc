@@ -13,7 +13,7 @@ CAPSULE_SHIELD_DEPLOY_AT_LEFT_EDGE:
 	video offset=CINEMATIC_096, x=17, y=[0x40]
 	mov [0x21], 0x0011
 	mov [BUDDY_Y], [0x40]
-	mov [0x10], [HACK_VAR_67]
+	mov [0x10], [SCREEN_NUM]
 	call LABEL_4EFE
 	killChannel
 
@@ -32,7 +32,7 @@ CAPSULE_SHIELD_DEPLOY_AT_RIGHT_EDGE:
 	video offset=CINEMATIC_096, x=299, y=[0x40]
 	mov [0x21], 0x0122
 	mov [BUDDY_Y], [0x40]
-	mov [0x10], [HACK_VAR_67]
+	mov [0x10], [SCREEN_NUM]
 	call LABEL_4EFE
 	killChannel
 
@@ -182,7 +182,7 @@ LABEL_543D:
 	play id=0x0058, freq=0x14, vol=0x40, channel=0x01
 	call CAPSULE_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
 	video offset=CINEMATIC_096, x=[0x21], y=[HERO_Y]
-	jge [HACK_VAR_67], 0xC8, LABEL_5462
+	jge [SCREEN_NUM], 0xC8, LABEL_5462
 	sub [0x06], 0x000A
 	call LABEL_4F54
 	mov [0x0F], 0x0000

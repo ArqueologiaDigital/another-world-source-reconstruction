@@ -1,5 +1,5 @@
 LABEL_447F:
-	mov [HACK_VAR_67], 0x00AF
+	mov [SCREEN_NUM], 0x00AF
 	mov [0x63], 0x0001
 	mov [HERO_X], 0x000A
 	mov [HERO_Y], 0x0082

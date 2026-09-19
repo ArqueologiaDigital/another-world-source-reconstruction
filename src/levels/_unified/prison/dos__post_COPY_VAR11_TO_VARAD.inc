@@ -12,7 +12,7 @@ LABEL_40F3:
 	jne [0x1D], 0x0B, LABEL_410A
 	mov [0x10], [0x4A]
 	mov [0x11], [0x4B]
-	jne [HACK_VAR_67], 0x24, SHARED_RET
+	jne [SCREEN_NUM], 0x24, SHARED_RET
 	mov [0xB2], 0x0001
 	ret
 
@@ -91,7 +91,7 @@ LABEL_4184:
 LABEL_4185:
 	call PRISON_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
 	mov [0x22], 0x0096
-	mov [0x26], [HACK_VAR_67]
+	mov [0x26], [SCREEN_NUM]
 	jg [HERO_Y], [0x41], LABEL_4199
 	or [0x26], 0x8000
 
@@ -225,7 +225,7 @@ LABEL_42C2:
 	mov [0x26], [0x44]
 
 LABEL_42D2:
-	jne [0x27], [HACK_VAR_67], DECREMENT_VAR22
+	jne [0x27], [SCREEN_NUM], DECREMENT_VAR22
 	jne [0x22], 0x00, LABEL_42E6
 	video offset=CINEMATIC_201, x=[0x21], y=[0x26]
 	jmp DECREMENT_VAR22

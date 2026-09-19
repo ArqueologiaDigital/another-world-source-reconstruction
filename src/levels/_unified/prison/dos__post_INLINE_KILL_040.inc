@@ -44,8 +44,8 @@ LABEL_0DC1:
 
 LABEL_0DC2:
 	break
-	je [0x72], [HACK_VAR_67], LABEL_0DC2
-	mov [0xF8], [HACK_VAR_67]
+	je [0x72], [SCREEN_NUM], LABEL_0DC2
+	mov [0xF8], [SCREEN_NUM]
 	sub [0xF8], 0x0001
 	je [0x72], [0xF8], LABEL_0DD9
 	jmp LABEL_0DC2

@@ -1,3 +1,0 @@
-SUB_HACK67_BY_20:
-	sub [HACK_VAR_67], 0x0020
-	ret

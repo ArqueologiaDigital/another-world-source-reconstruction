@@ -351,7 +351,7 @@ LABEL_D0D6:
 
 LABEL_D0DE:
 	break
-	mov [HACK_VAR_67], 0x0028
+	mov [SCREEN_NUM], 0x0028
 	setup channel=0x36, address=LABEL_2955
 	mov [0x35], 0x0010
 	sub [SCROLL_Y], [0x35]

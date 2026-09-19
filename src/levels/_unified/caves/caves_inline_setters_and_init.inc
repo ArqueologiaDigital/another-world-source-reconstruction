@@ -305,7 +305,7 @@ CAVES_INIT_VARS_6D_71_70_L14:
 	and [0x6F], 0x00FF
 	djnz [0x70], CAVES_INIT_VARS_6D_71_70_L14
 	or [0xB1], 0x00C0
-	jne [HACK_VAR_67], 0xC8, INLINE_SET_VAR70_TO_8
+	jne [SCREEN_NUM], 0xC8, INLINE_SET_VAR70_TO_8
 	setup channel=0x23, address=CAVES_INIT_VARS_6D_71_70_L15
 	setup channel=0x24, address=CAVES_INIT_VARS_6D_71_70_L16
 .endif

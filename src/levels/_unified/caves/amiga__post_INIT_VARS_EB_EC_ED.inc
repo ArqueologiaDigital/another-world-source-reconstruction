@@ -50,12 +50,12 @@ LABEL_27CE:
 	mov [0x32], 0x0001
 	play id=0x007A, freq=0x14, vol=0x40, channel=0x01
 	play id=0x0078, freq=0x14, vol=0x40, channel=0x00
-	je [HACK_VAR_67], 0x28, LABEL_27F0
+	je [SCREEN_NUM], 0x28, LABEL_27F0
 	setup channel=0x3C, address=CAVES_HERO_FALL_DEATH_PALETTE_FLASH_FRAME
 
 LABEL_27F0:
 	break
-	je [HACK_VAR_67], 0x28, LABEL_2822
+	je [SCREEN_NUM], 0x28, LABEL_2822
 	video offset=CINEMATIC_272, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_273, x=[HERO_X], y=[HERO_Y]

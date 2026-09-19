@@ -12,7 +12,7 @@ LABEL_6F70:
 	jne [0x1D], 0x0B, LABEL_6F87
 	mov [0x10], [0x4A]
 	mov [0x11], [0x4B]
-	jne [HACK_VAR_67], 0x24, SHARED_RET
+	jne [SCREEN_NUM], 0x24, SHARED_RET
 	mov [0xB2], 0x0001
 	ret
 
@@ -93,7 +93,7 @@ LABEL_7009:
 LABEL_700A:
 	call PROJECT_POS_VAR04_OR_CALL_A189
 	mov [0x22], 0x0096
-	mov [0x26], [HACK_VAR_67]
+	mov [0x26], [SCREEN_NUM]
 	jg [HERO_Y], [0x41], LABEL_701E
 	or [0x26], 0x8000
 
@@ -127,13 +127,13 @@ LABEL_7048:
 LABEL_7054:
 	mov [0xF8], [0xA2]
 	and [0xF8], 0x00FF
-	jne [0xF8], [HACK_VAR_67], LABEL_7024
+	jne [0xF8], [SCREEN_NUM], LABEL_7024
 	mov [0xF8], [0xA5]
 	and [0xF8], 0x00FF
-	jne [0xF8], [HACK_VAR_67], LABEL_7036
+	jne [0xF8], [SCREEN_NUM], LABEL_7036
 	mov [0xF8], [0xA8]
 	and [0xF8], 0x00FF
-	jne [0xF8], [HACK_VAR_67], LABEL_7048
+	jne [0xF8], [SCREEN_NUM], LABEL_7048
 	jle [0xA1], 0x00, LABEL_7094
 	mov [0xF8], [0xA0]
 	call LABEL_70F1
@@ -244,7 +244,7 @@ LABEL_7187:
 	mov [0x26], [0x44]
 
 LABEL_7197:
-	jne [0x27], [HACK_VAR_67], DECREMENT_VAR22
+	jne [0x27], [SCREEN_NUM], DECREMENT_VAR22
 	jne [0x22], 0x00, LABEL_71AB
 	video offset=CINEMATIC_036, x=[0x21], y=[0x26]
 	jmp DECREMENT_VAR22

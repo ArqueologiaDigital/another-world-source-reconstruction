@@ -21,7 +21,7 @@ LABEL_A19F:
 	break
 	mov [HERO_Y], [0x51]
 	call LABEL_A1C2
-	setup channel=0x1A, address=CAVES_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65_L1
+	setup channel=0x1A, address=CAVES_SHELVE_BACKDROP_TO_PAGE3_L1
 	jmp LABEL_A1F5
 LABEL_A1C1:
 	db 0x11

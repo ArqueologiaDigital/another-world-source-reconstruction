@@ -1,3 +1,0 @@
-DECR_HACK67_BY_1:
-	sub [HACK_VAR_67], 0x0001
-	ret

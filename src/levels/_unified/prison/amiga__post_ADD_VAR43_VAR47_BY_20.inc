@@ -1,6 +1,6 @@
 LABEL_7F4D:
 	break
-	je [HACK_VAR_67], 0x65, JUMP_TO_LABEL_7F0E
+	je [SCREEN_NUM], 0x65, JUMP_TO_LABEL_7F0E
 	mov [0x43], 0x00C1
 	mov [0x47], 0x00C1
 
@@ -14,7 +14,7 @@ LABEL_7F60:
 	setup channel=0x3C, address=LABEL_069F
 	setup channel=0x14, address=PRISON_HERO_STAND_LEFT_TICK
 	jne [0x11], 0x01, LABEL_7F75
-	mov [0x6A], [HACK_VAR_67]
+	mov [0x6A], [SCREEN_NUM]
 
 LABEL_7F75:
 	mov [0x63], 0x0001

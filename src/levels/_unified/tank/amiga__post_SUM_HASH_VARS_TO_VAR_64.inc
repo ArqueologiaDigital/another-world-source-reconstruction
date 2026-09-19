@@ -17,7 +17,7 @@ INIT_TANK_DRIVE_VARS:
 	mov [0x62], 0x000B
 	mov [0x5F], 0x000B
 	mov [0x63], 0x0000
-	mov [HACK_VAR_67], 0x0000
+	mov [SCREEN_NUM], 0x0000
 	ret
 
 

@@ -13,7 +13,7 @@ LABEL_73C9:
 	video offset=CINEMATIC_037, x=17, y=[0x40]
 	mov [0x21], 0x0011
 	mov [0x08], [0x40]
-	mov [0x10], [HACK_VAR_67]
+	mov [0x10], [SCREEN_NUM]
 	call LABEL_7087
 	killChannel
 
@@ -32,7 +32,7 @@ LABEL_73FD:
 	video offset=CINEMATIC_037, x=299, y=[0x40]
 	mov [0x21], 0x012B
 	mov [0x08], [0x40]
-	mov [0x10], [HACK_VAR_67]
+	mov [0x10], [SCREEN_NUM]
 	call LABEL_7087
 	killChannel
 
@@ -187,7 +187,7 @@ LABEL_75E9:
 	call PROJECT_POS_VAR04_OR_A212
 	video offset=CINEMATIC_037, x=[0x21], y=[HERO_Y]
 	play id=0x0058, freq=0x14, vol=0x40, channel=0x01
-	jge [HACK_VAR_67], 0xC8, LABEL_760E
+	jge [SCREEN_NUM], 0xC8, LABEL_760E
 	sub [0x06], 0x000A
 	call LABEL_70DD
 	mov [0x0F], 0x0000

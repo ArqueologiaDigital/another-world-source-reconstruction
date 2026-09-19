@@ -136,7 +136,7 @@
 ;   DRAW_CV_104  (2-arm: cart, dos)
 ;   DRAW_CV105_AT_X01_Y02  (2-arm: cart, dos)
 ;   INLINE_SET_VAR20_TO_1  (2-arm: cart, dos)
-;   COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65  (2-arm: cart, dos)
+;   SHELVE_BACKDROP_TO_PAGE3  (2-arm: cart, dos)
 ;   COPY_VAR51_TO_VAR02_KILL_CHANNEL  (3-arm: amiga, cart, dos)
 ;   COPY_VAR52_TO_VAR02_KILL_CHANNEL  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_03_32_02_1  (2-arm: cart, dos)
@@ -158,12 +158,12 @@
 ;   INIT_VARS_AA_AD_5B_5E_PLUS1  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_A1_A4_A7  (3-arm: amiga, cart, dos)
 ;   COPY_PAGE0_TO_PAGE_FF  (3-arm: amiga, cart, dos)
-;   COPY_HACK67_TO_VAR66  (3-arm: amiga, cart, dos)
-;   ADD_HACK67_BY_20  (2-arm: cart, dos)
-;   SUB_HACK67_BY_20  (3-arm: amiga, cart, dos)
-;   SET_VARHACK_VAR_67_TO_00AA  (2-arm: cart, dos)
-;   DECR_HACK67_BY_1  (3-arm: amiga, cart, dos)
-;   INCR_HACK67_BY_1  (3-arm: amiga, cart, dos)
+;   CACHE_SCREEN_NUM_RET  (3-arm: amiga, cart, dos)
+;   SCREEN_STEP_DOWN_ONE_ROW  (2-arm: cart, dos)
+;   SCREEN_STEP_UP_ONE_ROW  (3-arm: amiga, cart, dos)
+;   SET_SCREEN_NUM_TO_00AA  (2-arm: cart, dos)
+;   SCREEN_STEP_LEFT_ONE_COLUMN  (3-arm: amiga, cart, dos)
+;   SCREEN_STEP_RIGHT_ONE_COLUMN  (3-arm: amiga, cart, dos)
 ;   INIT_BIRD_AI_VARS  (2-arm: cart, dos)
 ;   SET_VAR04_TO_0020  (3-arm: amiga, cart, dos)
 ;   SET_VAR04_TO_0030  (3-arm: amiga, cart, dos)
@@ -319,7 +319,7 @@
 ;   DRAW_CV_104  (2-arm: cart, dos)
 ;   DRAW_CV105_AT_X01_Y02  (2-arm: cart, dos)
 ;   INLINE_SET_VAR20_TO_1  (2-arm: cart, dos)
-;   COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65  (2-arm: cart, dos)
+;   SHELVE_BACKDROP_TO_PAGE3  (2-arm: cart, dos)
 ;   COPY_VAR51_TO_VAR02_KILL_CHANNEL  (3-arm: amiga, cart, dos)
 ;   COPY_VAR52_TO_VAR02_KILL_CHANNEL  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_03_32_02_1  (2-arm: cart, dos)
@@ -341,12 +341,12 @@
 ;   INIT_VARS_AA_AD_5B_5E_PLUS1  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_A1_A4_A7  (3-arm: amiga, cart, dos)
 ;   COPY_PAGE0_TO_PAGE_FF  (3-arm: amiga, cart, dos)
-;   COPY_HACK67_TO_VAR66  (3-arm: amiga, cart, dos)
-;   ADD_HACK67_BY_20  (2-arm: cart, dos)
-;   SUB_HACK67_BY_20  (3-arm: amiga, cart, dos)
-;   SET_VARHACK_VAR_67_TO_00AA  (2-arm: cart, dos)
-;   DECR_HACK67_BY_1  (3-arm: amiga, cart, dos)
-;   INCR_HACK67_BY_1  (3-arm: amiga, cart, dos)
+;   CACHE_SCREEN_NUM_RET  (3-arm: amiga, cart, dos)
+;   SCREEN_STEP_DOWN_ONE_ROW  (2-arm: cart, dos)
+;   SCREEN_STEP_UP_ONE_ROW  (3-arm: amiga, cart, dos)
+;   SET_SCREEN_NUM_TO_00AA  (2-arm: cart, dos)
+;   SCREEN_STEP_LEFT_ONE_COLUMN  (3-arm: amiga, cart, dos)
+;   SCREEN_STEP_RIGHT_ONE_COLUMN  (3-arm: amiga, cart, dos)
 ;   INIT_BIRD_AI_VARS  (2-arm: cart, dos)
 ;   SET_VAR04_TO_0020  (3-arm: amiga, cart, dos)
 ;   SET_VAR04_TO_0030  (3-arm: amiga, cart, dos)
@@ -502,7 +502,7 @@
 ;   DRAW_CV_104  (2-arm: cart, dos)
 ;   DRAW_CV105_AT_X01_Y02  (2-arm: cart, dos)
 ;   INLINE_SET_VAR20_TO_1  (2-arm: cart, dos)
-;   COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65  (2-arm: cart, dos)
+;   SHELVE_BACKDROP_TO_PAGE3  (2-arm: cart, dos)
 ;   COPY_VAR51_TO_VAR02_KILL_CHANNEL  (3-arm: amiga, cart, dos)
 ;   COPY_VAR52_TO_VAR02_KILL_CHANNEL  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_03_32_02_1  (2-arm: cart, dos)
@@ -524,12 +524,12 @@
 ;   INIT_VARS_AA_AD_5B_5E_PLUS1  (3-arm: amiga, cart, dos)
 ;   INIT_VARS_A1_A4_A7  (3-arm: amiga, cart, dos)
 ;   COPY_PAGE0_TO_PAGE_FF  (3-arm: amiga, cart, dos)
-;   COPY_HACK67_TO_VAR66  (3-arm: amiga, cart, dos)
-;   ADD_HACK67_BY_20  (2-arm: cart, dos)
-;   SUB_HACK67_BY_20  (3-arm: amiga, cart, dos)
-;   SET_VARHACK_VAR_67_TO_00AA  (2-arm: cart, dos)
-;   DECR_HACK67_BY_1  (3-arm: amiga, cart, dos)
-;   INCR_HACK67_BY_1  (3-arm: amiga, cart, dos)
+;   CACHE_SCREEN_NUM_RET  (3-arm: amiga, cart, dos)
+;   SCREEN_STEP_DOWN_ONE_ROW  (2-arm: cart, dos)
+;   SCREEN_STEP_UP_ONE_ROW  (3-arm: amiga, cart, dos)
+;   SET_SCREEN_NUM_TO_00AA  (2-arm: cart, dos)
+;   SCREEN_STEP_LEFT_ONE_COLUMN  (3-arm: amiga, cart, dos)
+;   SCREEN_STEP_RIGHT_ONE_COLUMN  (3-arm: amiga, cart, dos)
 ;   INIT_BIRD_AI_VARS  (2-arm: cart, dos)
 ;   SET_VAR04_TO_0020  (3-arm: amiga, cart, dos)
 ;   SET_VAR04_TO_0030  (3-arm: amiga, cart, dos)
@@ -1757,20 +1757,20 @@ LABEL_00D3:
 
 
 LABEL_00DD:
-	jne [0x72], [HACK_VAR_67], LABEL_00EA
+	jne [0x72], [SCREEN_NUM], LABEL_00EA
 	jl [0x73], 0x4000, LABEL_00F7
 
 LABEL_00EA:
-	jne [0x7A], [HACK_VAR_67], SHARED_RET
+	jne [0x7A], [SCREEN_NUM], SHARED_RET
 	jge [0x7B], 0x4000, SHARED_RET
 
 LABEL_00F7:
-	je [HACK_VAR_67], 0x91, SHARED_RET
-	je [HACK_VAR_67], 0x92, SHARED_RET
-	je [HACK_VAR_67], 0x6A, SHARED_RET
-	je [HACK_VAR_67], 0x6B, SHARED_RET
-	je [HACK_VAR_67], 0x8A, SHARED_RET
-	je [HACK_VAR_67], 0xAA, SHARED_RET
+	je [SCREEN_NUM], 0x91, SHARED_RET
+	je [SCREEN_NUM], 0x92, SHARED_RET
+	je [SCREEN_NUM], 0x6A, SHARED_RET
+	je [SCREEN_NUM], 0x6B, SHARED_RET
+	je [SCREEN_NUM], 0x8A, SHARED_RET
+	je [SCREEN_NUM], 0xAA, SHARED_RET
 	jge [0x04], 0x4000, SHARED_RET
 	song id=0x0BBF, delay=0x0000, pos=0x00
 	ret

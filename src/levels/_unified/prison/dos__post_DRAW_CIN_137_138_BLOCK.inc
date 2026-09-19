@@ -14,26 +14,26 @@ LABEL_103D:
 	db 0x11
 
 LABEL_103E:
-	jne [0x10], [HACK_VAR_67], LABEL_10A0
+	jne [0x10], [SCREEN_NUM], LABEL_10A0
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x01
 	video offset=CINEMATIC_367, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_10A0
+	jne [0x10], [SCREEN_NUM], LABEL_10A0
 	video offset=CINEMATIC_368, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_10A0
+	jne [0x10], [SCREEN_NUM], LABEL_10A0
 	video offset=CINEMATIC_369, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_10A0
+	jne [0x10], [SCREEN_NUM], LABEL_10A0
 	video offset=CINEMATIC_370, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_10A0
+	jne [0x10], [SCREEN_NUM], LABEL_10A0
 	video offset=CINEMATIC_371, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_10A0
+	jne [0x10], [SCREEN_NUM], LABEL_10A0
 	video offset=CINEMATIC_372, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_10A0
+	jne [0x10], [SCREEN_NUM], LABEL_10A0
 	video offset=CINEMATIC_373, x=[BUDDY_X], y=[BUDDY_Y]
 	selectVideoPage 0x00
 	video offset=CINEMATIC_374, x=[BUDDY_X], y=[BUDDY_Y]
@@ -55,23 +55,23 @@ LABEL_10B4:
 
 LABEL_10B5:
 	call LABEL_2AFF
-	jne [0x10], [HACK_VAR_67], LABEL_103E
+	jne [0x10], [SCREEN_NUM], LABEL_103E
 	video offset=CINEMATIC_376, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_103E
+	jne [0x10], [SCREEN_NUM], LABEL_103E
 	video offset=CINEMATIC_377, x=[BUDDY_X], y=[BUDDY_Y]
 	mov [0x29], 0x0014
 
 LABEL_10D3:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_103E
+	jne [0x10], [SCREEN_NUM], LABEL_103E
 	video offset=CINEMATIC_378, x=[BUDDY_X], y=[BUDDY_Y]
 	jge [0x11], 0x4000, LABEL_10EA
 	djnz [0x29], LABEL_10D3
 
 LABEL_10EA:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_10F6
+	jne [0x10], [SCREEN_NUM], LABEL_10F6
 	video offset=CINEMATIC_377, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_10F6:
@@ -97,14 +97,14 @@ LABEL_1111:
 
 LABEL_1123:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_103E
+	jne [0x10], [SCREEN_NUM], LABEL_103E
 	video offset=CINEMATIC_375, x=[BUDDY_X], y=[BUDDY_Y]
 	jge [0x11], 0x4000, LABEL_113A
 	djnz [0x29], LABEL_1123
 
 LABEL_113A:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_1146
+	jne [0x10], [SCREEN_NUM], LABEL_1146
 	video offset=CINEMATIC_366, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_1146:

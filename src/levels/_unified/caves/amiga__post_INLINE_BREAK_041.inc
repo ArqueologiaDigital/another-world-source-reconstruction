@@ -29,7 +29,7 @@ HERO_JUMP_LEFT_FROM_STAND:
 	sub [HERO_X], 0x000C
 	mov [0x34], 0xFFFE
 	sub [HERO_X], 0x000F
-	call CAVES_SUB_HACK67_BY_20_L4
+	call CAVES_SCREEN_STEP_UP_ONE_ROW_L4
 	break
 	add [HERO_X], 0x000F
 	video type=0, offset=COMMON_VIDEO_094, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -88,7 +88,7 @@ HERO_JUMP_LEFT_FROM_RUN:
 	video type=0, offset=COMMON_VIDEO_094, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x34], 0xFFFB
 	sub [HERO_X], 0x000F
-	call CAVES_SUB_HACK67_BY_20_L4
+	call CAVES_SCREEN_STEP_UP_ONE_ROW_L4
 	sub [HERO_X], 0x0002
 	break
 	add [HERO_X], 0x000F
@@ -139,7 +139,7 @@ HERO_JUMP_RIGHT_FROM_STAND:
 	add [HERO_X], 0x000C
 	mov [0x34], 0x0002
 	add [HERO_X], 0x000F
-	call CAVES_SUB_HACK67_BY_20_L4
+	call CAVES_SCREEN_STEP_UP_ONE_ROW_L4
 	break
 	sub [HERO_X], 0x000F
 	video type=0, offset=COMMON_VIDEO_041, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -198,7 +198,7 @@ HERO_JUMP_RIGHT_FROM_RUN:
 	video type=0, offset=COMMON_VIDEO_041, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x34], 0x0005
 	add [HERO_X], 0x000F
-	call CAVES_SUB_HACK67_BY_20_L4
+	call CAVES_SCREEN_STEP_UP_ONE_ROW_L4
 	add [HERO_X], 0x0002
 	break
 	sub [HERO_X], 0x000F

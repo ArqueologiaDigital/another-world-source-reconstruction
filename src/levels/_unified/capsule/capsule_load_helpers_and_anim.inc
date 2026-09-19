@@ -369,87 +369,87 @@ INLINE_SET_VAR02_TO_97:
 .endif
 
 .include "../_helpers/COPY_PAGE0_TO_PAGE_FF.inc"
-.include "../_helpers/COPY_HACK67_TO_VAR66.inc"
+.include "../_helpers/CACHE_SCREEN_NUM_RET.inc"
 .if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_COPY_HACK67_TO_VAR66.inc"
+.include "amiga__post_CACHE_SCREEN_NUM_RET.inc"
 .elif BRANCH == "cartridge_1992"
-.include "cart__post_COPY_HACK67_TO_VAR66.inc"
+.include "cart__post_CACHE_SCREEN_NUM_RET.inc"
 .elif BRANCH == "dos_1992"
-.include "dos__post_COPY_HACK67_TO_VAR66.inc"
+.include "dos__post_CACHE_SCREEN_NUM_RET.inc"
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
-.include "../_helpers/ADD_HACK67_BY_20.inc"
+.include "../_helpers/SCREEN_STEP_DOWN_ONE_ROW.inc"
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
-CAPSULE_ADD_HACK67_BY_20_L0:
-	jne [HACK_VAR_67], 0xCE, CAPSULE_ADD_HACK67_BY_20_L1
-	mov [HACK_VAR_67], 0x008E
+CAPSULE_SCREEN_STEP_DOWN_ONE_ROW_L0:
+	jne [SCREEN_NUM], 0xCE, CAPSULE_SCREEN_STEP_DOWN_ONE_ROW_L1
+	mov [SCREEN_NUM], 0x008E
 	ret
 
 
-CAPSULE_ADD_HACK67_BY_20_L1:
-	jne [HACK_VAR_67], 0xC8, SUB_HACK67_BY_20
-	mov [HACK_VAR_67], 0x00AA
+CAPSULE_SCREEN_STEP_DOWN_ONE_ROW_L1:
+	jne [SCREEN_NUM], 0xC8, SCREEN_STEP_UP_ONE_ROW
+	mov [SCREEN_NUM], 0x00AA
 	mov [HERO_X], 0x00BE
 	ret
 .endif
 
-.include "../_helpers/SUB_HACK67_BY_20.inc"
+.include "../_helpers/SCREEN_STEP_UP_ONE_ROW.inc"
 .if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_SUB_HACK67_BY_20.inc"
+.include "amiga__post_SCREEN_STEP_UP_ONE_ROW.inc"
 .elif BRANCH == "cartridge_1992"
-.include "cart__post_SUB_HACK67_BY_20.inc"
+.include "cart__post_SCREEN_STEP_UP_ONE_ROW.inc"
 .elif BRANCH == "dos_1992"
-.include "dos__post_SUB_HACK67_BY_20.inc"
+.include "dos__post_SCREEN_STEP_UP_ONE_ROW.inc"
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
-SET_VARHACK_VAR_67_TO_00AA:
-	mov [HACK_VAR_67], 0x00AA
+SET_SCREEN_NUM_TO_00AA:
+	mov [SCREEN_NUM], 0x00AA
 	ret
 
 
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
-CAPSULE_SET_VARHACK_VAR_67_TO_00AA_L0:
-	jne [HACK_VAR_67], 0x8D, CAPSULE_SET_VARHACK_VAR_67_TO_00AA_L1
-	mov [HACK_VAR_67], 0x008C
+CAPSULE_SET_SCREEN_NUM_TO_00AA_L0:
+	jne [SCREEN_NUM], 0x8D, CAPSULE_SET_SCREEN_NUM_TO_00AA_L1
+	mov [SCREEN_NUM], 0x008C
 	ret
 
 
-CAPSULE_SET_VARHACK_VAR_67_TO_00AA_L1:
-	jne [HACK_VAR_67], 0x68, CAPSULE_SET_VARHACK_VAR_67_TO_00AA_L2
-	jl [HERO_Y], 0x96, DECR_HACK67_BY_1
-	mov [HACK_VAR_67], 0x0087
+CAPSULE_SET_SCREEN_NUM_TO_00AA_L1:
+	jne [SCREEN_NUM], 0x68, CAPSULE_SET_SCREEN_NUM_TO_00AA_L2
+	jl [HERO_Y], 0x96, SCREEN_STEP_LEFT_ONE_COLUMN
+	mov [SCREEN_NUM], 0x0087
 	mov [HERO_Y], 0x0028
 	ret
 
 
-CAPSULE_SET_VARHACK_VAR_67_TO_00AA_L2:
-	jne [HACK_VAR_67], 0x0438, DECR_HACK67_BY_1
-	mov [HACK_VAR_67], 0x0029
+CAPSULE_SET_SCREEN_NUM_TO_00AA_L2:
+	jne [SCREEN_NUM], 0x0438, SCREEN_STEP_LEFT_ONE_COLUMN
+	mov [SCREEN_NUM], 0x0029
 	ret
 .endif
 
-.include "../_helpers/DECR_HACK67_BY_1.inc"
+.include "../_helpers/SCREEN_STEP_LEFT_ONE_COLUMN.inc"
 .if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_DECR_HACK67_BY_1.inc"
+.include "amiga__post_SCREEN_STEP_LEFT_ONE_COLUMN.inc"
 .elif BRANCH == "cartridge_1992"
-.include "cart__post_DECR_HACK67_BY_1.inc"
+.include "cart__post_SCREEN_STEP_LEFT_ONE_COLUMN.inc"
 .elif BRANCH == "dos_1992"
-.include "dos__post_DECR_HACK67_BY_1.inc"
+.include "dos__post_SCREEN_STEP_LEFT_ONE_COLUMN.inc"
 .endif
 
-.include "../_helpers/INCR_HACK67_BY_1.inc"
+.include "../_helpers/SCREEN_STEP_RIGHT_ONE_COLUMN.inc"
 .if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_INCR_HACK67_BY_1.inc"
+.include "amiga__post_SCREEN_STEP_RIGHT_ONE_COLUMN.inc"
 .elif BRANCH == "cartridge_1992"
-.include "cart__post_INCR_HACK67_BY_1.inc"
+.include "cart__post_SCREEN_STEP_RIGHT_ONE_COLUMN.inc"
 .elif BRANCH == "dos_1992"
-.include "dos__post_INCR_HACK67_BY_1.inc"
+.include "dos__post_SCREEN_STEP_RIGHT_ONE_COLUMN.inc"
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -529,7 +529,7 @@ CAPSULE_HERO_INPUT_AIM_RIGHT:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_WALK_RIGHT_DRAW_CV142_MULTISTEP_L0:
-	je [HACK_VAR_67], 0x25, CAPSULE_WALK_RIGHT_DRAW_CV142_MULTISTEP_L1
+	je [SCREEN_NUM], 0x25, CAPSULE_WALK_RIGHT_DRAW_CV142_MULTISTEP_L1
 	video type=0, offset=COMMON_VIDEO_140, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0003
 	break
@@ -669,7 +669,7 @@ CAPSULE_WALK_LEFT_DRAW_CV140_MULTISTEP_L19:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_WALK_LEFT_DRAW_CV140_MULTISTEP_L0:
-	je [HACK_VAR_67], 0x25, CAPSULE_WALK_LEFT_DRAW_CV140_MULTISTEP_L1
+	je [SCREEN_NUM], 0x25, CAPSULE_WALK_LEFT_DRAW_CV140_MULTISTEP_L1
 	video type=0, offset=COMMON_VIDEO_141, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0003
 	break

@@ -1,14 +1,14 @@
 LABEL_E366:
 	deleteChannels first=0x15, last=0x16
 	break
-	jne [HACK_VAR_67], 0x6F, LABEL_E37F
+	jne [SCREEN_NUM], 0x6F, LABEL_E37F
 	call LABEL_1439
 	call LABEL_1456
 	mov [HERO_X], 0x00E6
 	mov [HERO_Y], 0x007D
 
 LABEL_E37F:
-	jne [HACK_VAR_67], 0xED, LABEL_E38D
+	jne [SCREEN_NUM], 0xED, LABEL_E38D
 	mov [HERO_X], 0x00BE
 	mov [HERO_Y], 0x0050
 
@@ -34,7 +34,7 @@ LABEL_E38D:
 	setup channel=0x14, address=CAVES_INLINE_SET_VAR63_TO_1_L2
 	setup channel=0x3E, address=LABEL_CBCD
 	mov [HERO_X], 0x00D9
-	jne [HACK_VAR_67], 0x6F, KILL_CHAN_AT_E3E8
+	jne [SCREEN_NUM], 0x6F, KILL_CHAN_AT_E3E8
 	setup channel=0x3E, address=LABEL_CB8C
 	mov [HERO_X], 0x010E
 
@@ -72,14 +72,14 @@ LABEL_E3E9:
 	killChannel
 
 LABEL_E44A:
-	jne [HACK_VAR_67], 0x6F, LABEL_E45B
+	jne [SCREEN_NUM], 0x6F, LABEL_E45B
 	jg [HERO_Y], 0x8C, SHARED_RET
 	mov [0x22], 0x03E8
 	ret
 
 
 LABEL_E45B:
-	jne [HACK_VAR_67], 0xED, SHARED_RET
+	jne [SCREEN_NUM], 0xED, SHARED_RET
 	jg [HERO_Y], 0x5A, SHARED_RET
 	mov [0x22], 0x03E8
 	ret
@@ -88,7 +88,7 @@ LABEL_E45B:
 LABEL_E46C:
 	je [0x63], 0x03, SHARED_RET
 	je [0x63], 0x64, SHARED_RET
-	jne [HACK_VAR_67], 0x6F, LABEL_E4B2
+	jne [SCREEN_NUM], 0x6F, LABEL_E4B2
 	jg [HERO_Y], 0x85, SHARED_RET
 	mov [0xF8], [HERO_X]
 	add [0xF8], [0x2A]
@@ -108,7 +108,7 @@ LABEL_E49B:
 
 
 LABEL_E4B2:
-	jne [HACK_VAR_67], 0xED, SHARED_RET
+	jne [SCREEN_NUM], 0xED, SHARED_RET
 	jg [HERO_Y], 0x55, SHARED_RET
 	mov [0xF8], [HERO_X]
 	add [0xF8], [0x2A]

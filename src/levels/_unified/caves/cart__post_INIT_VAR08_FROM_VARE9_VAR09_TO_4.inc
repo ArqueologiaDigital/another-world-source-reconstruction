@@ -18,7 +18,7 @@ LABEL_3592:
 	db 0x11
 
 LABEL_3593:
-	jne [HACK_VAR_67], [0x09], SHARED_RET
+	jne [SCREEN_NUM], [0x09], SHARED_RET
 	jne [0x6D], 0x00, LABEL_35A5
 	video offset=CINEMATIC_809, x=[0x07], y=[0x08]
 	ret
@@ -48,7 +48,7 @@ DRAW_CIN_805:
 
 
 GUARDED_DRAW_CIN_589_801:
-	jne [HACK_VAR_67], [0x09], SHARED_RET
+	jne [SCREEN_NUM], [0x09], SHARED_RET
 	selectVideoPage 0x00
 	video offset=CINEMATIC_589, x=[0x07], y=[0x08]
 	video offset=CINEMATIC_801, x=[0x07], y=[0x08]
@@ -60,7 +60,7 @@ GUARDED_DRAW_CIN_589_801:
 
 
 LABEL_35EF:
-	jne [HACK_VAR_67], [0x09], SHARED_RET
+	jne [SCREEN_NUM], [0x09], SHARED_RET
 	selectVideoPage 0x03
 	video offset=CINEMATIC_589, x=[0x07], y=[0x08]
 	video offset=CINEMATIC_801, x=[0x07], y=[0x08]
@@ -98,8 +98,8 @@ DRAW_CIN_802:
 
 
 LABEL_363A:
-	jg [HACK_VAR_67], [0x09], LABEL_3659
-	jne [HACK_VAR_67], [0x09], SHARED_RET
+	jg [SCREEN_NUM], [0x09], LABEL_3659
+	jne [SCREEN_NUM], [0x09], SHARED_RET
 	jl [0x04], 0x4000, LABEL_3653
 	mov [HERO_X], [0x07]
 	jmp LABEL_3668

@@ -7,19 +7,19 @@ LABEL_122D:
 	mov [0x13], 0x0000
 	je [0x0D], 0x00, LABEL_1282
 	jg [0x0D], 0x02, LABEL_1273
-	jne [0x6A], [HACK_VAR_67], LABEL_1255
+	jne [0x6A], [SCREEN_NUM], LABEL_1255
 	mov [0x24], [0x68]
 	mov [0x25], [0x69]
 	call LABEL_12CF
 
 LABEL_1255:
-	jne [0x72], [HACK_VAR_67], LABEL_1264
+	jne [0x72], [SCREEN_NUM], LABEL_1264
 	mov [0x24], [0x70]
 	mov [0x25], [0x71]
 	call LABEL_12CF
 
 LABEL_1264:
-	jne [0x7A], [HACK_VAR_67], LABEL_1273
+	jne [0x7A], [SCREEN_NUM], LABEL_1273
 	mov [0x24], [0x78]
 	mov [0x25], [0x79]
 	call LABEL_12CF

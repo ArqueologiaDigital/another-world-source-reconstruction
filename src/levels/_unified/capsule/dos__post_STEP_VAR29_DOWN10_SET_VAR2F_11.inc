@@ -81,7 +81,7 @@ STATE_VAR12_BIG_DISPATCH_CASE_50:
 
 
 	jne [0x10], 0x4D, LABEL_54C8
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	mov [0x29], 0x0168
 	mov [0x2F], 0x0019
 	ret

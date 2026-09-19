@@ -1,5 +1,5 @@
 LABEL_8D60:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_250, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_257, x=[0x07], y=[0x08], zoom=0x40

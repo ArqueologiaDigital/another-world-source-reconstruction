@@ -13,7 +13,7 @@ LABEL_69B2:
 	video offset=CINEMATIC_062, x=17, y=[0x40]
 	mov [0x21], 0x0011
 	mov [BUDDY_Y], [0x40]
-	mov [0x10], [HACK_VAR_67]
+	mov [0x10], [SCREEN_NUM]
 	call LABEL_666C
 	killChannel
 
@@ -32,7 +32,7 @@ LABEL_69E6:
 	video offset=CINEMATIC_062, x=299, y=[0x40]
 	mov [0x21], 0x0122
 	mov [BUDDY_Y], [0x40]
-	mov [0x10], [HACK_VAR_67]
+	mov [0x10], [SCREEN_NUM]
 	call LABEL_666C
 	killChannel
 
@@ -192,7 +192,7 @@ LABEL_6BEF:
 	play id=0x0058, freq=0x14, vol=0x40, channel=0x01
 	call PROJECT_POS_VAR_B8_PLUS_7
 	video offset=CINEMATIC_062, x=[0x21], y=[HERO_Y]
-	jge [HACK_VAR_67], 0x03E8, LABEL_6C15
+	jge [SCREEN_NUM], 0x03E8, LABEL_6C15
 	sub [0x06], 0x000A
 	call LABEL_66C2
 	mov [0x0F], 0x0000

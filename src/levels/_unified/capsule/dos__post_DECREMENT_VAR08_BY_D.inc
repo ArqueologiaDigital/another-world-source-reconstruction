@@ -1,12 +1,12 @@
 LABEL_8CFB:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_245, x=[BUDDY_X], y=[BUDDY_Y]
 	call LABEL_8CD5
 	ret
 
 
 LABEL_8D0A:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	sub [BUDDY_X], 0x0001
 	call CAPSULE_DRAW_ALIEN_AT_BUDDY_Y_PLUS_14
 	video type=0, offset=COMMON_VIDEO_289, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
@@ -18,7 +18,7 @@ LABEL_8D0A:
 
 
 LABEL_8D2C:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call CAPSULE_DRAW_ALIEN_AT_BUDDY_Y_PLUS_14
 	video type=0, offset=COMMON_VIDEO_288, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_782F
@@ -26,7 +26,7 @@ LABEL_8D2C:
 
 
 LABEL_8D3E:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	add [BUDDY_Y], 0x000D
 	sub [BUDDY_X], 0x0004
 	video type=0, offset=COMMON_VIDEO_253, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
@@ -41,7 +41,7 @@ LABEL_8D3E:
 
 
 LABEL_8D6D:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call CAPSULE_DRAW_ALIEN_AT_BUDDY_Y_PLUS_14
 	video type=0, offset=COMMON_VIDEO_288, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
@@ -51,7 +51,7 @@ LABEL_8D6D:
 
 
 LABEL_8D87:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	add [BUDDY_Y], 0x000D
 	video offset=CINEMATIC_262, x=[BUDDY_X], y=[BUDDY_Y]
 	sub [BUDDY_Y], 0x000D
@@ -64,7 +64,7 @@ LABEL_8D87:
 
 
 LABEL_8DAE:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	sub [BUDDY_X], 0x0001
 	add [BUDDY_Y], 0x000D
 	video offset=CINEMATIC_261, x=[BUDDY_X], y=[BUDDY_Y]
@@ -79,7 +79,7 @@ LABEL_8DAE:
 
 
 LABEL_8DDD:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_291, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	sub [BUDDY_Y], 0x000D
@@ -89,7 +89,7 @@ LABEL_8DDD:
 
 
 LABEL_8DF7:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	sub [BUDDY_X], 0x0001
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_292, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
@@ -100,7 +100,7 @@ LABEL_8DF7:
 	ret
 
 
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_291, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	sub [BUDDY_Y], 0x000D
@@ -110,7 +110,7 @@ LABEL_8DF7:
 
 
 LABEL_8E33:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_291, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	sub [BUDDY_Y], 0x000D
@@ -119,7 +119,7 @@ LABEL_8E33:
 	ret
 
 
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_291, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret

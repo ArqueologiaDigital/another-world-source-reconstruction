@@ -28,7 +28,7 @@ LABEL_3BCA:
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	mov [0x27], 0x003C
 	add [0x27], [0x3A]
-	je [HACK_VAR_67], 0xEB, LABEL_3BF5
+	je [SCREEN_NUM], 0xEB, LABEL_3BF5
 	mov [0x27], 0x0052
 	add [0x27], [0x3B]
 
@@ -114,8 +114,8 @@ JUNK__3C9B:
 	mov [0xAF], 0x0000
 	je [0xB0], 0x00, KILL_CHAN_AT_3CDA
 	je [0xB0], 0x01, JUNK__3C9B
-	je [0x72], [HACK_VAR_67], JUNK__3C9B
-	jne [0x6A], [HACK_VAR_67], JUNK__3C9B
+	je [0x72], [SCREEN_NUM], JUNK__3C9B
+	jne [0x6A], [SCREEN_NUM], JUNK__3C9B
 	jl [0x70], 0x00, JUNK__3C9B
 	jg [0x68], 0x010E, JUNK__3C9B
 	call LABEL_3CDB
@@ -200,7 +200,7 @@ LABEL_3D5C:
 	mov [0xEF], 0x0006
 
 LABEL_3D60:
-	jne [HACK_VAR_67], 0x6A, LABEL_3D86
+	jne [SCREEN_NUM], 0x6A, LABEL_3D86
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	mov [0x21], 0x015E
 	add [0x21], [RANDOM_SEED]
@@ -221,14 +221,14 @@ LABEL_3D8D:
 	break
 	jge [0x73], 0x4000, LABEL_3DA9
 	jl [0x74], 0x4000, LABEL_3DA9
-	mov [0xF8], [HACK_VAR_67]
+	mov [0xF8], [SCREEN_NUM]
 	sub [0xF8], 0x0001
 	je [0x72], [0xF8], LABEL_3DC7
 
 LABEL_3DA9:
 	jge [0x7B], 0x4000, LABEL_3D8D
 	jl [0x7C], 0x4000, LABEL_3D8D
-	mov [0xF8], [HACK_VAR_67]
+	mov [0xF8], [SCREEN_NUM]
 	sub [0xF8], 0x0001
 	je [0x7A], [0xF8], LABEL_3DC7
 	jmp LABEL_3D8D
@@ -375,7 +375,7 @@ LABEL_3F38:
 	call DERIVE_HASH_BUCKETS_FROM_VAR38
 	mov [0x21], 0xFED4
 	add [0x21], [RANDOM_SEED]
-	jne [HACK_VAR_67], 0x4B, LABEL_3F4E
+	jne [SCREEN_NUM], 0x4B, LABEL_3F4E
 	jg [HERO_X], 0x3C, LABEL_3F5F
 
 LABEL_3F4E:
@@ -567,26 +567,26 @@ LABEL_413B:
 
 LABEL_413C:
 	or [0x11], 0x4000
-	jne [0x10], [HACK_VAR_67], LABEL_41A2
+	jne [0x10], [SCREEN_NUM], LABEL_41A2
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x00
 	video offset=CINEMATIC_217, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_41A2
+	jne [0x10], [SCREEN_NUM], LABEL_41A2
 	video offset=CINEMATIC_218, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_41A2
+	jne [0x10], [SCREEN_NUM], LABEL_41A2
 	video offset=CINEMATIC_219, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_41A2
+	jne [0x10], [SCREEN_NUM], LABEL_41A2
 	video offset=CINEMATIC_220, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_41A2
+	jne [0x10], [SCREEN_NUM], LABEL_41A2
 	video offset=CINEMATIC_221, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_41A2
+	jne [0x10], [SCREEN_NUM], LABEL_41A2
 	video offset=CINEMATIC_222, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_41A2
+	jne [0x10], [SCREEN_NUM], LABEL_41A2
 	video offset=CINEMATIC_223, x=[BUDDY_X], y=[BUDDY_Y]
 	selectVideoPage 0x00
 	video offset=CINEMATIC_224, x=[BUDDY_X], y=[BUDDY_Y]
@@ -607,23 +607,23 @@ LABEL_41B6:
 	db 0x11
 
 LABEL_41B7:
-	jne [0x10], [HACK_VAR_67], LABEL_413C
+	jne [0x10], [SCREEN_NUM], LABEL_413C
 	video offset=CINEMATIC_227, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_413C
+	jne [0x10], [SCREEN_NUM], LABEL_413C
 	video offset=CINEMATIC_228, x=[BUDDY_X], y=[BUDDY_Y]
 	mov [0x29], 0x0014
 
 LABEL_41D2:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_413C
+	jne [0x10], [SCREEN_NUM], LABEL_413C
 	video offset=CINEMATIC_229, x=[BUDDY_X], y=[BUDDY_Y]
 	jge [0x11], 0x4000, LABEL_41E9
 	djnz [0x29], LABEL_41D2
 
 LABEL_41E9:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_413C
+	jne [0x10], [SCREEN_NUM], LABEL_413C
 	video offset=CINEMATIC_228, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jmp LABEL_413C
@@ -641,7 +641,7 @@ LABEL_420F:
 LABEL_4210:
 	video offset=CINEMATIC_216, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_4221
+	jne [0x10], [SCREEN_NUM], LABEL_4221
 	video offset=CINEMATIC_226, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_4221:
@@ -649,14 +649,14 @@ LABEL_4221:
 
 LABEL_4225:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_413C
+	jne [0x10], [SCREEN_NUM], LABEL_413C
 	video offset=CINEMATIC_225, x=[BUDDY_X], y=[BUDDY_Y]
 	jge [0x11], 0x4000, LABEL_423C
 	djnz [0x29], LABEL_4225
 
 LABEL_423C:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_413C
+	jne [0x10], [SCREEN_NUM], LABEL_413C
 	video offset=CINEMATIC_226, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jmp LABEL_413C

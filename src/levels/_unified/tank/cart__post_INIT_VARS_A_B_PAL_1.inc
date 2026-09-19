@@ -114,17 +114,17 @@ LABEL_1C78:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_193, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
-	jg [HACK_VAR_67], 0x02, SHARED_RET
-	mov [HACK_VAR_67], 0x0002
+	jg [SCREEN_NUM], 0x02, SHARED_RET
+	mov [SCREEN_NUM], 0x0002
 	ret
 
 
 TANK_SCENE_INIT_FILL_PAGE_3_COLOR_0C:
-	jge [HACK_VAR_67], 0x03, SHARED_RET
+	jge [SCREEN_NUM], 0x03, SHARED_RET
 	selectVideoPage 0x00
 	video offset=CINEMATIC_192, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
-	mov [HACK_VAR_67], 0x0003
+	mov [SCREEN_NUM], 0x0003
 	ret
 
 

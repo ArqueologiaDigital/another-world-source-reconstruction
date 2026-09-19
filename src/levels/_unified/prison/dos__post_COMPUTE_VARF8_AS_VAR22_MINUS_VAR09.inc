@@ -28,7 +28,7 @@ LABEL_46E5:
 	call PRISON_SHOT_SCAN_WALLS_AND_SHIELDS
 
 PRISON_BODY_HIT_TEST_BUDDY_AND_HERO:
-	jne [0x6A], [HACK_VAR_67], LABEL_46FE
+	jne [0x6A], [SCREEN_NUM], LABEL_46FE
 	mov [0x24], [0x68]
 	mov [0x25], [0x69]
 	mov [0x26], [0x6B]
@@ -92,7 +92,7 @@ LABEL_477D:
 
 
 PRISON_BODY_HIT_TEST_GUARDS:
-	jne [0x72], [HACK_VAR_67], LABEL_4794
+	jne [0x72], [SCREEN_NUM], LABEL_4794
 	mov [0x24], [0x70]
 	mov [0x25], [0x71]
 	mov [0x26], [0x73]
@@ -100,7 +100,7 @@ PRISON_BODY_HIT_TEST_GUARDS:
 	call LABEL_4810
 
 LABEL_4794:
-	jne [0x7A], [HACK_VAR_67], LABEL_47AA
+	jne [0x7A], [SCREEN_NUM], LABEL_47AA
 	mov [0x24], [0x78]
 	mov [0x25], [0x79]
 	mov [0x26], [0x7B]

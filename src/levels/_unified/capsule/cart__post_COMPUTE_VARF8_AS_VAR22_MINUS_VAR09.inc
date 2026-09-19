@@ -29,7 +29,7 @@ LABEL_6DBC:
 	call LABEL_6DEE
 
 LABEL_6DBF:
-	jne [0x6A], [HACK_VAR_67], LABEL_6DD5
+	jne [0x6A], [SCREEN_NUM], LABEL_6DD5
 	mov [0x24], [0x68]
 	mov [0x25], [0x69]
 	mov [0x26], [0x6B]
@@ -93,7 +93,7 @@ LABEL_6E54:
 
 
 LABEL_6E55:
-	jne [0x72], [HACK_VAR_67], CAPSULE_BUDDY_WALK_RIGHT_DRAW_8
+	jne [0x72], [SCREEN_NUM], CAPSULE_BUDDY_WALK_RIGHT_DRAW_8
 	mov [0x24], [0x70]
 	mov [0x25], [0x71]
 	mov [0x26], [0x73]
@@ -101,7 +101,7 @@ LABEL_6E55:
 	call LABEL_6EEB
 
 CAPSULE_BUDDY_WALK_RIGHT_DRAW_8:
-	jne [0x7A], [HACK_VAR_67], LABEL_6E81
+	jne [0x7A], [SCREEN_NUM], LABEL_6E81
 	mov [0x24], [0x78]
 	mov [0x25], [0x79]
 	mov [0x26], [0x7B]

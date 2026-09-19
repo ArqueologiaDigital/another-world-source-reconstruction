@@ -224,7 +224,7 @@ LABEL_8C8A:
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_1:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_123, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_124, x=[0x07], y=[0x08], zoom=0x40
@@ -241,7 +241,7 @@ LABEL_8CC9:
 
 
 LABEL_8CCA:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	sub [0x07], 0x0001
 	video type=0, offset=COMMON_VIDEO_123, x=[0x07], y=[0x08], zoom=0x40
@@ -260,7 +260,7 @@ LABEL_8CF7:
 
 
 CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_3:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_128, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
@@ -276,7 +276,7 @@ LABEL_8D18:
 
 
 LABEL_8D19:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	play id=0x0055, freq=0x0F, vol=0x14, channel=0x00
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_131, x=[0x07], y=[0x08], zoom=0x40
@@ -293,7 +293,7 @@ LABEL_8D3F:
 
 
 CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_5:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_134, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
@@ -309,7 +309,7 @@ LABEL_8D60:
 
 
 CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_6:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_135, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_136, x=[0x07], y=[0x08], zoom=0x40
@@ -326,7 +326,7 @@ LABEL_8D86:
 
 
 CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_7:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_139, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_140, x=[0x07], y=[0x08], zoom=0x40
@@ -343,7 +343,7 @@ LABEL_8DAC:
 
 
 CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_8:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_143, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_144, x=[0x07], y=[0x08], zoom=0x40
@@ -360,7 +360,7 @@ LABEL_8DD2:
 
 
 CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_9:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_147, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_148, x=[0x07], y=[0x08], zoom=0x40
@@ -377,7 +377,7 @@ LABEL_8DF8:
 
 
 CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_10:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_147, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_151, x=[0x07], y=[0x08], zoom=0x40
@@ -396,7 +396,7 @@ LABEL_8E26:
 
 
 CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_11:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_139, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_152, x=[0x07], y=[0x08], zoom=0x40
@@ -413,7 +413,7 @@ LABEL_8E4C:
 
 
 LABEL_8E4D:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	play id=0x0055, freq=0x14, vol=0x14, channel=0x00
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_135, x=[0x07], y=[0x08], zoom=0x40
@@ -431,7 +431,7 @@ LABEL_8E78:
 
 
 CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_13:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_154, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
@@ -447,7 +447,7 @@ LABEL_8E99:
 
 
 CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_14:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_155, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
@@ -463,7 +463,7 @@ LABEL_8EBA:
 
 
 CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_15:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_156, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
@@ -479,7 +479,7 @@ LABEL_8EDB:
 
 
 CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_16:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_157, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
@@ -495,7 +495,7 @@ LABEL_8EFC:
 
 
 CAVES_HERO_PER_FRAME_TICK:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_009, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
@@ -511,7 +511,7 @@ LABEL_8F1D:
 
 
 CAVES_ACTOR_TURN_TO_FACE_RIGHT_DRAW_PHASE_3:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_009, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
@@ -527,7 +527,7 @@ LABEL_8F3E:
 
 
 CAVES_ACTOR_TURN_TO_FACE_LEFT_DRAW_PHASE_1:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_009, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
@@ -543,19 +543,19 @@ LABEL_8F5F:
 
 
 LABEL_8F60:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_139, x=[0x07], y=[0x08]
 	ret
 
 
 LABEL_8F6C:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_140, x=[0x07], y=[0x08]
 	ret
 
 
 LABEL_8F78:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call LABEL_881D
 	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_241, x=[0x07], y=[0x08], zoom=0x40
@@ -566,7 +566,7 @@ LABEL_8F78:
 
 
 LABEL_8F95:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	add [0x07], 0x0001
 	sub [0x08], 0x0001
 	call LABEL_883B
@@ -581,7 +581,7 @@ LABEL_8F95:
 
 
 LABEL_8FC2:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call LABEL_8859
 	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_241, x=[0x07], y=[0x08], zoom=0x40
@@ -592,7 +592,7 @@ LABEL_8FC2:
 
 
 LABEL_8FDF:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call LABEL_883B
 	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_241, x=[0x07], y=[0x08], zoom=0x40
@@ -603,7 +603,7 @@ LABEL_8FDF:
 
 
 LABEL_8FFC:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	je [0x0D], 0x00, LABEL_9013
 	add [0x08], 0x000D
 	call LABEL_7F88
@@ -619,14 +619,14 @@ LABEL_9013:
 
 
 LABEL_9027:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_060, x=[0x07], y=[0x08]
 	call LABEL_8FFC
 	ret
 
 
 LABEL_9036:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	add [0x07], 0x0001
 	sub [0x08], 0x0001
 	video type=0, offset=COMMON_VIDEO_243, x=[0x07], y=[0x08], zoom=0x40
@@ -641,7 +641,7 @@ LABEL_9036:
 
 
 LABEL_9065:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video type=0, offset=COMMON_VIDEO_243, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_241, x=[0x07], y=[0x08], zoom=0x40
@@ -652,7 +652,7 @@ LABEL_9065:
 
 
 LABEL_9084:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	add [0x08], 0x000D
 	add [0x07], 0x0004
 	video type=0, offset=COMMON_VIDEO_231, x=[0x07], y=[0x08], zoom=0x40
@@ -667,7 +667,7 @@ LABEL_9084:
 
 
 LABEL_90B3:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_BEAST_Y_PLUS_D
 	video type=0, offset=COMMON_VIDEO_241, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
@@ -677,7 +677,7 @@ LABEL_90B3:
 
 
 LABEL_90CD:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	add [0x08], 0x000D
 	video offset=CINEMATIC_075, x=[0x07], y=[0x08]
 	sub [0x08], 0x000D
@@ -690,7 +690,7 @@ LABEL_90CD:
 
 
 LABEL_90F4:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	add [0x07], 0x0001
 	add [0x08], 0x000D
 	video offset=CINEMATIC_074, x=[0x07], y=[0x08]
@@ -705,7 +705,7 @@ LABEL_90F4:
 
 
 LABEL_9123:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	sub [0x78], 0x000A
 	add [0x79], 0x0005
 	video type=0, offset=COMMON_VIDEO_243, x=[0x78], y=[0x79], zoom=0x40
@@ -716,7 +716,7 @@ LABEL_9123:
 
 
 LABEL_9144:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	sub [0x08], 0x000D
 	call LABEL_881D
 	add [0x08], 0x000D
@@ -727,7 +727,7 @@ LABEL_9144:
 
 
 LABEL_9161:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	add [0x07], 0x0001
 	sub [0x08], 0x000E
 	call LABEL_883B
@@ -747,7 +747,7 @@ LABEL_918A:
 	db 0x08, 0x04, 0x80, 0x77, 0x05
 
 LABEL_91A7:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	sub [0x08], 0x000D
 	call LABEL_883B
 	add [0x08], 0x000D
@@ -765,7 +765,7 @@ LABEL_91C4:
 	db 0x07, 0x08, 0x05
 
 LABEL_91E7:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_059, x=[0x07], y=[0x08]
 	ret
 
@@ -796,7 +796,7 @@ LABEL_922E:
 	db 0xDC, 0x07, 0x08, 0x05
 
 LABEL_923A:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_244, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_7EAC
@@ -804,7 +804,7 @@ LABEL_923A:
 
 
 LABEL_924C:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	sub [0x07], 0x0001
 	call DRAW_HERO_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_245, x=[0x07], y=[0x08], zoom=0x40
@@ -816,7 +816,7 @@ LABEL_924C:
 
 
 LABEL_926E:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_244, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_7F0C
@@ -824,7 +824,7 @@ LABEL_926E:
 
 
 LABEL_9280:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_244, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_7EDA
@@ -832,7 +832,7 @@ LABEL_9280:
 
 
 LABEL_9292:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_Y_PLUS_E
 	video type=0, offset=COMMON_VIDEO_244, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D

@@ -1,3 +1,0 @@
-INCR_HACK67_BY_1:
-	add [HACK_VAR_67], 0x0001
-	ret

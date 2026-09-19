@@ -14,7 +14,7 @@ LABEL_5E1B:
 	db 0x11
 
 LABEL_5E1C:
-	jne [HACK_VAR_67], 0xCC, LABEL_5E5B
+	jne [SCREEN_NUM], 0xCC, LABEL_5E5B
 	jne [0x1D], 0x0A, LABEL_5E35
 	setup channel=0x28, address=INCREMENT_VAR31
 	or [0x49], 0x4000
@@ -39,7 +39,7 @@ LABEL_5E48:
 
 
 LABEL_5E5B:
-	jne [HACK_VAR_67], 0xCA, LABEL_5E74
+	jne [SCREEN_NUM], 0xCA, LABEL_5E74
 	jne [0x1D], 0x0A, SHARED_RET
 	setup channel=0x22, address=INCREMENT_VAR31
 	or [0x49], 0x4000
@@ -48,7 +48,7 @@ LABEL_5E5B:
 
 
 LABEL_5E74:
-	jne [HACK_VAR_67], 0xCB, SHARED_RET
+	jne [SCREEN_NUM], 0xCB, SHARED_RET
 	jne [0x1D], 0x0A, LABEL_5E8D
 	setup channel=0x28, address=INCREMENT_VAR31
 	or [0x49], 0x4000
@@ -73,7 +73,7 @@ LABEL_5EA0:
 
 
 LABEL_5EB3:
-	jne [HACK_VAR_67], 0xC8, LABEL_5EE5
+	jne [SCREEN_NUM], 0xC8, LABEL_5EE5
 	jne [0x1D], 0x02, SHARED_RET
 	mov [0xF8], [0xB9]
 	and [0xF8], 0x0001
@@ -87,7 +87,7 @@ LABEL_5EB3:
 
 
 LABEL_5EE5:
-	jne [HACK_VAR_67], 0xED, LABEL_5EFC
+	jne [SCREEN_NUM], 0xED, LABEL_5EFC
 	mov [0x47], 0x0FA0
 	or [0xB1], 0x0004
 	setup channel=0x02, address=KILL_CHANNEL_LANDING
@@ -96,7 +96,7 @@ LABEL_5EE5:
 
 
 LABEL_5EFC:
-	jne [HACK_VAR_67], 0x50, SHARED_RET
+	jne [SCREEN_NUM], 0x50, SHARED_RET
 	jne [0x1D], 0x04, SHARED_RET
 	jl [0x21], 0x64, SHARED_RET
 	mov [0xF8], [0xB1]

@@ -177,7 +177,7 @@ LABEL_4C64:
 	setup channel=0x21, address=LABEL_14B0
 	setup channel=0x22, address=LABEL_1C5E
 	setup channel=0x24, address=LABEL_14D3
-	mov [HACK_VAR_67], 0x0001
+	mov [SCREEN_NUM], 0x0001
 	mov [0x68], 0x0118
 	mov [0x69], 0x00B6
 	mov [0x6A], 0x0001

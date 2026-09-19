@@ -81,7 +81,7 @@ LABEL_3A64:
 LABEL_3AA8:
 	je [0x12], 0x01, LABEL_12F1
 	je [0x12], 0x02, LABEL_2973
-	jne [0x10], [HACK_VAR_67], LABEL_3B1D
+	jne [0x10], [SCREEN_NUM], LABEL_3B1D
 	mov [0xF8], [0x10]
 	and [0xF8], 0x001F
 	je [BUDDY_Y], [HERO_Y], LABEL_3AC7
@@ -115,11 +115,11 @@ LABEL_3B0C:
 
 LABEL_3B1D:
 	mov [0xF8], [0x10]
-	mov [0x2B], [HACK_VAR_67]
+	mov [0x2B], [SCREEN_NUM]
 	and [0xF8], 0x00E0
 	and [0x2B], 0x00E0
 	jne [0xF8], [0x2B], LABEL_3B77
-	jg [HACK_VAR_67], [0x10], LABEL_3B50
+	jg [SCREEN_NUM], [0x10], LABEL_3B50
 	jne [0x10], 0x24, LABEL_3B45
 	mov [BUDDY_X], 0x00A0
 	mov [BUDDY_Y], 0x00B6
@@ -157,7 +157,7 @@ STATE_VAR12_BIG_DISPATCH:
 	mov [0xF8], [0x12]
 	and [0xF8], 0x1FFF
 	je [0xF8], 0x40, STATE_VAR12_BIG_DISPATCH_CASE_40
-	jne [0x10], [HACK_VAR_67], LABEL_3C2C
+	jne [0x10], [SCREEN_NUM], LABEL_3C2C
 	je [0xF8], 0x08, STATE_VAR12_BIG_DISPATCH_CASE_08
 	je [0xF8], 0x18, STATE_VAR12_BIG_DISPATCH_CASE_18
 	je [0xF8], 0x20, STATE_VAR12_BIG_DISPATCH_CASE_20
@@ -195,11 +195,11 @@ LABEL_3BF5:
 
 LABEL_3C2C:
 	mov [0xF8], [0x10]
-	mov [0x2B], [HACK_VAR_67]
+	mov [0x2B], [SCREEN_NUM]
 	and [0xF8], 0x00E0
 	and [0x2B], 0x00E0
 	jne [0xF8], [0x2B], TRIVIAL_RET
-	mov [0xF8], [HACK_VAR_67]
+	mov [0xF8], [SCREEN_NUM]
 	and [0xF8], 0x001F
 	je [0xF8], 0x05, TRIVIAL_RET
 	jl [0x12], 0x4000, TRIVIAL_RET
@@ -208,24 +208,24 @@ LABEL_3C2C:
 	jge [0xF8], 0x2000, LABEL_3C79
 	mov [0xF8], [0x10]
 	add [0xF8], 0x0001
-	je [0xF8], [HACK_VAR_67], LABEL_3C79
+	je [0xF8], [SCREEN_NUM], LABEL_3C79
 	sub [0xF8], 0x0002
-	jne [0xF8], [HACK_VAR_67], TRIVIAL_RET
+	jne [0xF8], [SCREEN_NUM], TRIVIAL_RET
 
 LABEL_3C79:
 	mov [0x2B], [0x12]
 	and [0x2B], 0x1FF0
 	mov [0xF8], [0x10]
 	add [0xF8], 0x0001
-	je [0xF8], [HACK_VAR_67], LABEL_3C91
+	je [0xF8], [SCREEN_NUM], LABEL_3C91
 	sub [0xF8], 0x0002
 
 LABEL_3C91:
 	mov [0x29], [BUDDY_X]
-	jg [HACK_VAR_67], [0x10], LABEL_3CC1
+	jg [SCREEN_NUM], [0x10], LABEL_3CC1
 	mov [0x2F], 0x0004
 	sub [0x29], 0x0010
-	jne [0xF8], [HACK_VAR_67], TRIVIAL_RET
+	jne [0xF8], [SCREEN_NUM], TRIVIAL_RET
 	jne [0x2B], 0x10, TRIVIAL_RET
 	jl [0x29], 0x0F, TRIVIAL_RET
 	jg [0x29], 0x1E, TRIVIAL_RET
@@ -235,7 +235,7 @@ LABEL_3C91:
 LABEL_3CC1:
 	mov [0x2F], 0x0003
 	add [0x29], 0x0010
-	jne [0xF8], [HACK_VAR_67], TRIVIAL_RET
+	jne [0xF8], [SCREEN_NUM], TRIVIAL_RET
 	jne [0x2B], 0x10, TRIVIAL_RET
 	jg [0x29], 0x0131, TRIVIAL_RET
 	jl [0x29], 0x0122, TRIVIAL_RET

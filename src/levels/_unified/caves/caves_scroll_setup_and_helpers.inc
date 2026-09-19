@@ -70,7 +70,7 @@ SET_VARE6_TO_64_KILL_CHANNEL:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 SETUP_67_45_VAR01_46_VARB1_NOSIGN:
-	mov [HACK_VAR_67], 0x0045
+	mov [SCREEN_NUM], 0x0045
 	mov [HERO_X], 0x0046
 	and [0xB1], 0x7FFF
 	ret
@@ -80,7 +80,7 @@ SETUP_67_45_VAR01_46_VARB1_NOSIGN:
 
 
 SETUP_67_67_VAR01_1E_VARBE_3:
-	mov [HACK_VAR_67], 0x0067
+	mov [SCREEN_NUM], 0x0067
 	mov [HERO_X], 0x001E
 	mov [0xBE], 0x0003
 	ret
@@ -96,7 +96,7 @@ SETUP_67_67_VAR01_1E_VARBE_3:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 SETUP_67_25_VAR06_0_VARB1_NOSIGN:
-	mov [HACK_VAR_67], 0x0025
+	mov [SCREEN_NUM], 0x0025
 	mov [0x06], 0x0000
 	and [0xB1], 0x7FFF
 	ret
@@ -106,7 +106,7 @@ SETUP_67_25_VAR06_0_VARB1_NOSIGN:
 
 
 SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1:
-	mov [HACK_VAR_67], 0x004B
+	mov [SCREEN_NUM], 0x004B
 	mov [0xB0], 0x0003
 	mov [HERO_X], 0x0050
 	mov [0xAF], 0x0058
@@ -120,7 +120,7 @@ SETUP_67_4B_VARS_B0_3_01_50_AF_58_B1:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 SETUP_67_A7_VARS_B0_2_02_5D_01_7F_BE_3:
-	mov [HACK_VAR_67], 0x00A7
+	mov [SCREEN_NUM], 0x00A7
 	mov [0xB0], 0x0002
 	mov [HERO_Y], 0x005D
 	mov [HERO_X], 0x007F
@@ -139,8 +139,8 @@ SETUP_67_A7_VARS_B0_2_02_5D_01_7F_BE_3:
 
 .if BRANCH in ("chahi_amiga_1991", "cartridge_1992")
 INIT_HASH_VARS_67_66_65_68_69:
-	mov [HACK_VAR_67], 0x0001
-	mov [0x66], 0x0001
+	mov [SCREEN_NUM], 0x0001
+	mov [CACHED_SCREEN_NUM], 0x0001
 	mov [0x65], 0x0001
 	mov [0x68], 0x00C8
 	mov [0x69], 0x00B6

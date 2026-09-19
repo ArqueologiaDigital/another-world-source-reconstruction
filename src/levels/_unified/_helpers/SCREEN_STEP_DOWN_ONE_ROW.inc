@@ -1,0 +1,3 @@
+SCREEN_STEP_DOWN_ONE_ROW:
+	add [SCREEN_NUM], 0x0020
+	ret

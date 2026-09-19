@@ -1,6 +1,6 @@
 LABEL_17D8:
-	jl [HACK_VAR_67], 0x4D, LABEL_17E4
-	jg [HACK_VAR_67], 0x4C, LABEL_17E4
+	jl [SCREEN_NUM], 0x4D, LABEL_17E4
+	jg [SCREEN_NUM], 0x4C, LABEL_17E4
 
 LABEL_17E4:
 	jl [0x73], 0x4000, LABEL_17FD
@@ -443,7 +443,7 @@ LABEL_1E93:
 	and [0xF8], 0x0010
 	setup channel=0x01, address=LABEL_1FFB
 	mov [HERO_Y], 0x0056
-	jne [HACK_VAR_67], 0x6F, LABEL_1EBA
+	jne [SCREEN_NUM], 0x6F, LABEL_1EBA
 	setup channel=0x01, address=LABEL_1FD3
 	mov [HERO_Y], 0x0086
 	jg [HERO_X], 0x50, LABEL_1EBA
@@ -486,7 +486,7 @@ LABEL_1EF5:
 	mov [0x35], 0x0000
 	mov [0x05], 0x0003
 	mov [HERO_Y], 0x0054
-	jne [HACK_VAR_67], 0x6F, LABEL_1F39
+	jne [SCREEN_NUM], 0x6F, LABEL_1F39
 	mov [HERO_Y], 0x0084
 
 LABEL_1F39:

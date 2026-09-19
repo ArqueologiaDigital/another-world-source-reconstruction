@@ -29,7 +29,7 @@ LABEL_775C:
 	call CAVES_DEDUP_CAVES_5B_004_L1
 
 CAVES_FOLD_BODY_94B_9F1D7AF8_L6:
-	jne [0x6A], [HACK_VAR_67], LABEL_7775
+	jne [0x6A], [SCREEN_NUM], LABEL_7775
 	mov [0x24], [0x68]
 	mov [0x25], [0x69]
 	mov [0x26], [0x6B]
@@ -93,7 +93,7 @@ LABEL_77F4:
 
 
 CAVES_FOLD_BODY_94B_9F1D7AF8_L5:
-	jne [0x72], [HACK_VAR_67], LABEL_780B
+	jne [0x72], [SCREEN_NUM], LABEL_780B
 	mov [0x24], [0x70]
 	mov [0x25], [0x71]
 	mov [0x26], [0x73]
@@ -101,7 +101,7 @@ CAVES_FOLD_BODY_94B_9F1D7AF8_L5:
 	call LABEL_788B
 
 LABEL_780B:
-	jne [0x7A], [HACK_VAR_67], LABEL_7821
+	jne [0x7A], [SCREEN_NUM], LABEL_7821
 	mov [0x24], [0x78]
 	mov [0x25], [0x79]
 	mov [0x26], [0x7B]

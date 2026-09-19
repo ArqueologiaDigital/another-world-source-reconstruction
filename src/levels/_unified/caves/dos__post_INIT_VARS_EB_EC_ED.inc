@@ -62,12 +62,12 @@ LABEL_29A3:
 	mov [0x32], 0x0001
 	play id=0x007A, freq=0x14, vol=0x40, channel=0x01
 	play id=0x0078, freq=0x14, vol=0x40, channel=0x00
-	je [HACK_VAR_67], 0x28, LABEL_29C5
+	je [SCREEN_NUM], 0x28, LABEL_29C5
 	setup channel=0x3C, address=LABEL_4028
 
 LABEL_29C5:
 	break
-	je [HACK_VAR_67], 0x28, LABEL_2A0D
+	je [SCREEN_NUM], 0x28, LABEL_2A0D
 	video offset=CINEMATIC_292, x=[HERO_X], y=[HERO_Y]
 	je [0xDB], 0x00, LABEL_29DC
 	video offset=CINEMATIC_294, x=[HERO_X], y=[HERO_Y]

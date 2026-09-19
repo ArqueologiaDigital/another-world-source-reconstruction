@@ -658,7 +658,7 @@ LABEL_D9FF:
 
 
 ; Sets [0x23]=1 if HERO_Y < [0x41], else [0x23]=0. The
-; hero-camera-relationship gate used by PAGE_COPY_IF_-
-; VAR67_DIFFERS and other CAVES routines.
+; hero-camera-relationship gate used by
+; CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED and other CAVES routines.
 CHECK_HERO_Y_LT_VAR41:
 	db 0x11

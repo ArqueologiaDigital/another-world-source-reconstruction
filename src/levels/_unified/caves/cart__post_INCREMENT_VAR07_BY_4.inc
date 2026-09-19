@@ -57,7 +57,7 @@ LABEL_48C1:
 	jl [0xF0], 0x32, LABEL_48C1
 	mov [0xF8], [0xF1]
 	add [0xF8], 0x0001
-	je [0xF8], [HACK_VAR_67], LABEL_48C1
+	je [0xF8], [SCREEN_NUM], LABEL_48C1
 	add [0xF1], 0x0001
 	mov [0x22], [0xF1]
 	call LABEL_486B
@@ -70,7 +70,7 @@ LABEL_48F4:
 	jge [0x04], 0x4000, KILL_CHAN_AT_01FB
 	mov [0xF8], [0xF1]
 	add [0xF8], 0x0001
-	jg [HACK_VAR_67], [0xF8], LABEL_4924
+	jg [SCREEN_NUM], [0xF8], LABEL_4924
 	jl [HERO_Y], 0x64, LABEL_4930
 	mov [0x22], 0x0092
 	call LABEL_4842
@@ -128,8 +128,8 @@ JUNK__498E:
 	mov [0xAF], 0x0000
 	je [0xB0], 0x00, KILL_CHAN_AT_49CD
 	je [0xB0], 0x01, JUNK__498E
-	je [0x72], [HACK_VAR_67], JUNK__498E
-	jne [0x6A], [HACK_VAR_67], JUNK__498E
+	je [0x72], [SCREEN_NUM], JUNK__498E
+	jne [0x6A], [SCREEN_NUM], JUNK__498E
 	jl [0x70], 0x00, JUNK__498E
 	jg [0x68], 0x010E, JUNK__498E
 	call LABEL_49CE
@@ -193,14 +193,14 @@ LABEL_4A15:
 	break
 	jge [0x73], 0x4000, LABEL_4A31
 	jl [0x74], 0x4000, LABEL_4A31
-	mov [0xF8], [HACK_VAR_67]
+	mov [0xF8], [SCREEN_NUM]
 	sub [0xF8], 0x0001
 	je [0x72], [0xF8], LABEL_4A4F
 
 LABEL_4A31:
 	jge [0x7B], 0x4000, LABEL_4A15
 	jl [0x7C], 0x4000, LABEL_4A15
-	mov [0xF8], [HACK_VAR_67]
+	mov [0xF8], [SCREEN_NUM]
 	sub [0xF8], 0x0001
 	je [0x7A], [0xF8], LABEL_4A4F
 	jmp LABEL_4A15
@@ -361,26 +361,26 @@ LABEL_4BC8:
 
 LABEL_4BC9:
 	or [0x11], 0x4000
-	jne [0x10], [HACK_VAR_67], LABEL_4C2F
+	jne [0x10], [SCREEN_NUM], LABEL_4C2F
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x00
 	video offset=CINEMATIC_082, x=[0x07], y=[0x08]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_4C2F
+	jne [0x10], [SCREEN_NUM], LABEL_4C2F
 	video offset=CINEMATIC_083, x=[0x07], y=[0x08]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_4C2F
+	jne [0x10], [SCREEN_NUM], LABEL_4C2F
 	video offset=CINEMATIC_084, x=[0x07], y=[0x08]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_4C2F
+	jne [0x10], [SCREEN_NUM], LABEL_4C2F
 	video offset=CINEMATIC_085, x=[0x07], y=[0x08]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_4C2F
+	jne [0x10], [SCREEN_NUM], LABEL_4C2F
 	video offset=CINEMATIC_086, x=[0x07], y=[0x08]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_4C2F
+	jne [0x10], [SCREEN_NUM], LABEL_4C2F
 	video offset=CINEMATIC_087, x=[0x07], y=[0x08]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_4C2F
+	jne [0x10], [SCREEN_NUM], LABEL_4C2F
 	video offset=CINEMATIC_088, x=[0x07], y=[0x08]
 	selectVideoPage 0x00
 	video offset=CINEMATIC_089, x=[0x07], y=[0x08]
@@ -401,23 +401,23 @@ LABEL_4C43:
 	db 0x11
 
 LABEL_4C44:
-	jne [0x10], [HACK_VAR_67], LABEL_4BC9
+	jne [0x10], [SCREEN_NUM], LABEL_4BC9
 	video offset=CINEMATIC_091, x=[0x07], y=[0x08]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_4BC9
+	jne [0x10], [SCREEN_NUM], LABEL_4BC9
 	video offset=CINEMATIC_092, x=[0x07], y=[0x08]
 	mov [0x29], 0x0014
 
 LABEL_4C5F:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_4BC9
+	jne [0x10], [SCREEN_NUM], LABEL_4BC9
 	video offset=CINEMATIC_093, x=[0x07], y=[0x08]
 	jge [0x11], 0x4000, LABEL_4C76
 	djnz [0x29], LABEL_4C5F
 
 LABEL_4C76:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_4BC9
+	jne [0x10], [SCREEN_NUM], LABEL_4BC9
 	video offset=CINEMATIC_092, x=[0x07], y=[0x08]
 	break
 	jmp LABEL_4BC9
@@ -440,14 +440,14 @@ LABEL_4C9D:
 
 LABEL_4CAC:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_4BC9
+	jne [0x10], [SCREEN_NUM], LABEL_4BC9
 	video offset=CINEMATIC_090, x=[0x07], y=[0x08]
 	jge [0x11], 0x4000, LABEL_4CC3
 	djnz [0x29], LABEL_4CAC
 
 LABEL_4CC3:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_4BC9
+	jne [0x10], [SCREEN_NUM], LABEL_4BC9
 	video offset=CINEMATIC_081, x=[0x07], y=[0x08]
 	break
 	jmp LABEL_4BC9

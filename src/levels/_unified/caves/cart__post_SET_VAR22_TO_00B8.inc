@@ -2,7 +2,7 @@ LABEL_C514:
 	db 0x11
 
 CAVES_BARRIER_BREACH_EVENT_CASE_8A:
-	jne [HACK_VAR_67], 0x8A, LABEL_C546
+	jne [SCREEN_NUM], 0x8A, LABEL_C546
 	deleteChannels first=0x01, last=0x02
 	setup channel=0x08, address=LABEL_3778
 	setup channel=0x3C, address=LABEL_3FF4
@@ -17,7 +17,7 @@ CAVES_BARRIER_BREACH_EVENT_CASE_8A:
 
 
 LABEL_C546:
-	jne [HACK_VAR_67], 0xA7, LABEL_C56A
+	jne [SCREEN_NUM], 0xA7, LABEL_C56A
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0x00
 	video offset=CINEMATIC_639, x=160, y=100
@@ -30,7 +30,7 @@ LABEL_C546:
 
 
 LABEL_C56A:
-	jne [HACK_VAR_67], 0xAF, LABEL_C583
+	jne [SCREEN_NUM], 0xAF, LABEL_C583
 	selectVideoPage 0x00
 	video offset=CINEMATIC_609, x=160, y=100
 	selectVideoPage 0xFF
@@ -40,7 +40,7 @@ LABEL_C56A:
 
 
 LABEL_C583:
-	jne [HACK_VAR_67], 0x68, LABEL_C59C
+	jne [SCREEN_NUM], 0x68, LABEL_C59C
 	or [0xB1], 0x0010
 	selectVideoPage 0x00
 	video offset=CINEMATIC_407, x=160, y=100
@@ -50,7 +50,7 @@ LABEL_C583:
 
 
 LABEL_C59C:
-	jne [HACK_VAR_67], 0x28, LABEL_C5B5
+	jne [SCREEN_NUM], 0x28, LABEL_C5B5
 	selectVideoPage 0x00
 	video offset=CINEMATIC_286, x=160, y=100
 	selectVideoPage 0xFF
@@ -60,7 +60,7 @@ LABEL_C59C:
 
 
 LABEL_C5B5:
-	jne [HACK_VAR_67], 0xCA, LABEL_C5DA
+	jne [SCREEN_NUM], 0xCA, LABEL_C5DA
 	deleteChannels first=0x22, last=0x23
 	or [0xBD], 0x0020
 	mov [0x13], 0x0070
@@ -72,7 +72,7 @@ LABEL_C5B5:
 
 
 LABEL_C5DA:
-	jne [HACK_VAR_67], 0xCB, LABEL_C601
+	jne [SCREEN_NUM], 0xCB, LABEL_C601
 	jne [0x1D], 0x0C, SHARED_RET
 	deleteChannels first=0x2C, last=0x2D
 	mov [0x13], 0x0070
@@ -84,7 +84,7 @@ LABEL_C5DA:
 
 
 LABEL_C601:
-	jne [HACK_VAR_67], 0xCC, SHARED_RET
+	jne [SCREEN_NUM], 0xCC, SHARED_RET
 	jne [0x1D], 0x0B, LABEL_C62C
 	deleteChannels first=0x2A, last=0x2B
 	or [0xBD], 0x0002
@@ -124,7 +124,7 @@ LABEL_C676:
 	db 0x11
 
 CAVES_BARRIER_STATE_PERSIST_CASE_4E:
-	jne [HACK_VAR_67], 0x4E, LABEL_C69E
+	jne [SCREEN_NUM], 0x4E, LABEL_C69E
 	mov [0xF8], [0x49]
 	and [0xF8], 0x0380
 	shl [0xF8], 0x0002
@@ -138,7 +138,7 @@ CAVES_BARRIER_STATE_PERSIST_CASE_4E:
 
 
 LABEL_C69E:
-	jne [HACK_VAR_67], 0x92, LABEL_C6D3
+	jne [SCREEN_NUM], 0x92, LABEL_C6D3
 	mov [0xB8], 0x0000
 	mov [0xF8], [0x49]
 	and [0xF8], 0x0380
@@ -156,7 +156,7 @@ LABEL_C69E:
 
 
 LABEL_C6D3:
-	jne [HACK_VAR_67], 0x93, LABEL_C708
+	jne [SCREEN_NUM], 0x93, LABEL_C708
 	and [0xB9], 0xFE00
 	mov [0xF8], [0x49]
 	and [0xF8], 0x0380
@@ -174,7 +174,7 @@ LABEL_C6D3:
 
 
 LABEL_C708:
-	jne [HACK_VAR_67], 0x94, LABEL_C72F
+	jne [SCREEN_NUM], 0x94, LABEL_C72F
 	and [0xB9], 0x01FF
 	mov [0xF8], [0x49]
 	and [0xF8], 0x0380
@@ -188,7 +188,7 @@ LABEL_C708:
 
 
 LABEL_C72F:
-	jne [HACK_VAR_67], 0x45, SHARED_RET
+	jne [SCREEN_NUM], 0x45, SHARED_RET
 	mov [0xBA], 0x0000
 	ret
 

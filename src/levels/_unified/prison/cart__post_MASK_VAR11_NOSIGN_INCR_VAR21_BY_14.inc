@@ -16,7 +16,7 @@ LABEL_4106:
 	db 0x05
 
 LABEL_4107:
-	jne [HACK_VAR_67], 0x24, SHARED_RET
+	jne [SCREEN_NUM], 0x24, SHARED_RET
 	jne [0x1D], 0x0A, SHARED_RET
 	mov [0xB3], [0x49]
 	ret

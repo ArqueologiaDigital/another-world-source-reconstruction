@@ -48,37 +48,37 @@ LABEL_3ADC:
 	killChannel
 
 LABEL_3B29:
-	jne [0x10], [HACK_VAR_67], SHARED_RET
+	jne [0x10], [SCREEN_NUM], SHARED_RET
 	video offset=CINEMATIC_708, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 LABEL_3B35:
-	jne [0x10], [HACK_VAR_67], SHARED_RET
+	jne [0x10], [SCREEN_NUM], SHARED_RET
 	video offset=CINEMATIC_709, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 LABEL_3B41:
-	jne [0x10], [HACK_VAR_67], SHARED_RET
+	jne [0x10], [SCREEN_NUM], SHARED_RET
 	video offset=CINEMATIC_710, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 LABEL_3B4D:
-	jne [0x10], [HACK_VAR_67], SHARED_RET
+	jne [0x10], [SCREEN_NUM], SHARED_RET
 	video offset=CINEMATIC_711, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 LABEL_3B59:
-	jne [0x10], [HACK_VAR_67], SHARED_RET
+	jne [0x10], [SCREEN_NUM], SHARED_RET
 	video offset=CINEMATIC_712, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 LABEL_3B65:
-	jne [0x10], [HACK_VAR_67], SHARED_RET
+	jne [0x10], [SCREEN_NUM], SHARED_RET
 	video offset=CINEMATIC_713, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 

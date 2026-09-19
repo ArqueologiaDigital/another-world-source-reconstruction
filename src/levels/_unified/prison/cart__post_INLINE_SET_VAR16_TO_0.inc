@@ -3,11 +3,11 @@ LABEL_7FA2:
 
 
 JUNK__7FA3:
-	jne [HACK_VAR_67], [0x65], COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65
+	jne [SCREEN_NUM], [0x65], SHELVE_BACKDROP_TO_PAGE3
 	copyVideoPage src=0x03, dst=0xFF
 	copyVideoPage src=0x00, dst=0x03
 	copyVideoPage src=0xFF, dst=0x00
-	mov [HACK_VAR_67], [0x65]
-	mov [0x65], [0x66]
-	mov [0x66], [HACK_VAR_67]
-	jmp PRISON_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65_L0
+	mov [SCREEN_NUM], [0x65]
+	mov [0x65], [CACHED_SCREEN_NUM]
+	mov [CACHED_SCREEN_NUM], [SCREEN_NUM]
+	jmp PRISON_SHELVE_BACKDROP_TO_PAGE3_L0

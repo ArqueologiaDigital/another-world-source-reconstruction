@@ -312,7 +312,7 @@ LABEL_05EF:
 	call LABEL_66DF
 	call LABEL_66DF
 	call LABEL_66DF
-	mov [0x10], [HACK_VAR_67]
+	mov [0x10], [SCREEN_NUM]
 	mov [0x0D], 0x0001
 	mov [0x0E], 0x0000
 	break

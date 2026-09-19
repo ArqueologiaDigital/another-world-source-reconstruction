@@ -2,7 +2,7 @@ LABEL_C0E4:
 	db 0x11
 
 CAVES_BARRIER_BREACH_EVENT_CASE_8A:
-	jne [HACK_VAR_67], 0x8A, LABEL_C116
+	jne [SCREEN_NUM], 0x8A, LABEL_C116
 	deleteChannels first=0x01, last=0x02
 	setup channel=0x08, address=INLINE_SET_VAR6B_TO_1
 	setup channel=0x3C, address=CAVES_BARRIER_BREACH_PALETTE_FLASH_FRAME
@@ -17,7 +17,7 @@ CAVES_BARRIER_BREACH_EVENT_CASE_8A:
 
 
 LABEL_C116:
-	jne [HACK_VAR_67], 0xA7, LABEL_C13A
+	jne [SCREEN_NUM], 0xA7, LABEL_C13A
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0x00
 	video offset=CINEMATIC_626, x=160, y=100
@@ -30,7 +30,7 @@ LABEL_C116:
 
 
 LABEL_C13A:
-	jne [HACK_VAR_67], 0xAF, LABEL_C153
+	jne [SCREEN_NUM], 0xAF, LABEL_C153
 	selectVideoPage 0x00
 	video offset=CINEMATIC_598, x=160, y=100
 	selectVideoPage 0xFF
@@ -40,7 +40,7 @@ LABEL_C13A:
 
 
 LABEL_C153:
-	jne [HACK_VAR_67], 0x68, LABEL_C16C
+	jne [SCREEN_NUM], 0x68, LABEL_C16C
 	or [0xB1], 0x0010
 	selectVideoPage 0x00
 	video offset=CINEMATIC_386, x=160, y=100
@@ -50,7 +50,7 @@ LABEL_C153:
 
 
 LABEL_C16C:
-	jne [HACK_VAR_67], 0x28, LABEL_C181
+	jne [SCREEN_NUM], 0x28, LABEL_C181
 	selectVideoPage 0x00
 	video offset=CINEMATIC_779, x=160, y=100
 	selectVideoPage 0xFF
@@ -59,7 +59,7 @@ LABEL_C16C:
 
 
 LABEL_C181:
-	jne [HACK_VAR_67], 0xCA, LABEL_C1A6
+	jne [SCREEN_NUM], 0xCA, LABEL_C1A6
 	deleteChannels first=0x22, last=0x23
 	or [0xBD], 0x0020
 	mov [0x13], 0x0070
@@ -71,7 +71,7 @@ LABEL_C181:
 
 
 LABEL_C1A6:
-	jne [HACK_VAR_67], 0xCB, LABEL_C1CD
+	jne [SCREEN_NUM], 0xCB, LABEL_C1CD
 	jne [0x1D], 0x0C, SHARED_RET
 	deleteChannels first=0x2C, last=0x2D
 	mov [0x13], 0x0070
@@ -83,7 +83,7 @@ LABEL_C1A6:
 
 
 LABEL_C1CD:
-	jne [HACK_VAR_67], 0xCC, SHARED_RET
+	jne [SCREEN_NUM], 0xCC, SHARED_RET
 	jne [0x1D], 0x0B, LABEL_C1F8
 	deleteChannels first=0x2A, last=0x2B
 	or [0xBD], 0x0002
@@ -123,7 +123,7 @@ LABEL_C242:
 	db 0x11
 
 CAVES_BARRIER_STATE_PERSIST_CASE_4E:
-	jne [HACK_VAR_67], 0x4E, LABEL_C26A
+	jne [SCREEN_NUM], 0x4E, LABEL_C26A
 	mov [0xF8], [0x49]
 	and [0xF8], 0x0380
 	shl [0xF8], 0x0002
@@ -137,7 +137,7 @@ CAVES_BARRIER_STATE_PERSIST_CASE_4E:
 
 
 LABEL_C26A:
-	jne [HACK_VAR_67], 0x92, LABEL_C29F
+	jne [SCREEN_NUM], 0x92, LABEL_C29F
 	mov [0xB8], 0x0000
 	mov [0xF8], [0x49]
 	and [0xF8], 0x0380
@@ -155,7 +155,7 @@ LABEL_C26A:
 
 
 LABEL_C29F:
-	jne [HACK_VAR_67], 0x93, LABEL_C2D4
+	jne [SCREEN_NUM], 0x93, LABEL_C2D4
 	and [0xB9], 0xFE00
 	mov [0xF8], [0x49]
 	and [0xF8], 0x0380
@@ -173,7 +173,7 @@ LABEL_C29F:
 
 
 LABEL_C2D4:
-	jne [HACK_VAR_67], 0x94, LABEL_C2FB
+	jne [SCREEN_NUM], 0x94, LABEL_C2FB
 	and [0xB9], 0x01FF
 	mov [0xF8], [0x49]
 	and [0xF8], 0x0380
@@ -187,7 +187,7 @@ LABEL_C2D4:
 
 
 LABEL_C2FB:
-	jne [HACK_VAR_67], 0x45, SHARED_RET
+	jne [SCREEN_NUM], 0x45, SHARED_RET
 	mov [0xBA], 0x0000
 	ret
 

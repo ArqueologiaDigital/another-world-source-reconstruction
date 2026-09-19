@@ -14,7 +14,7 @@ LABEL_46BE:
 	db 0x11
 
 LABEL_46BF:
-	jne [HACK_VAR_67], 0xCC, LABEL_46FE
+	jne [SCREEN_NUM], 0xCC, LABEL_46FE
 	jne [0x1D], 0x0A, LABEL_46D8
 	setup channel=0x28, address=LABEL_1FD3
 	or [0x49], 0x4000
@@ -39,7 +39,7 @@ LABEL_46EB:
 
 
 LABEL_46FE:
-	jne [HACK_VAR_67], 0xCA, LABEL_4717
+	jne [SCREEN_NUM], 0xCA, LABEL_4717
 	jne [0x1D], 0x0A, SHARED_RET
 	setup channel=0x22, address=LABEL_1FD3
 	or [0x49], 0x4000
@@ -48,7 +48,7 @@ LABEL_46FE:
 
 
 LABEL_4717:
-	jne [HACK_VAR_67], 0xCB, SHARED_RET
+	jne [SCREEN_NUM], 0xCB, SHARED_RET
 	jne [0x1D], 0x0A, LABEL_4730
 	setup channel=0x28, address=LABEL_1FD3
 	or [0x49], 0x4000
@@ -73,7 +73,7 @@ LABEL_4743:
 
 
 LABEL_4756:
-	jne [HACK_VAR_67], 0x6B, LABEL_477B
+	jne [SCREEN_NUM], 0x6B, LABEL_477B
 	jne [0x1D], 0x04, SHARED_RET
 	or [0xB1], 0x0001
 	setup channel=0x35, address=LABEL_83FA
@@ -86,7 +86,7 @@ LABEL_4756:
 
 
 LABEL_477B:
-	jne [HACK_VAR_67], 0xED, LABEL_4792
+	jne [SCREEN_NUM], 0xED, LABEL_4792
 	mov [0x47], 0x0FA0
 	or [0xB1], 0x0004
 	setup channel=0x02, address=KILL_CHANNEL_LANDING
@@ -95,7 +95,7 @@ LABEL_477B:
 
 
 LABEL_4792:
-	jne [HACK_VAR_67], 0x50, SHARED_RET
+	jne [SCREEN_NUM], 0x50, SHARED_RET
 	jne [0x1D], 0x04, SHARED_RET
 	jl [0x21], 0x64, SHARED_RET
 	mov [0xF8], [0xB1]

@@ -13,7 +13,7 @@ LABEL_70AF:
 	video offset=CINEMATIC_037, x=17, y=[0x40]
 	mov [0x21], 0x0011
 	mov [0x08], [0x40]
-	mov [0x10], [HACK_VAR_67]
+	mov [0x10], [SCREEN_NUM]
 	call LABEL_6D6D
 	killChannel
 
@@ -32,7 +32,7 @@ LABEL_70E3:
 	video offset=CINEMATIC_037, x=299, y=[0x40]
 	mov [0x21], 0x012B
 	mov [0x08], [0x40]
-	mov [0x10], [HACK_VAR_67]
+	mov [0x10], [SCREEN_NUM]
 	call LABEL_6D6D
 	killChannel
 
@@ -182,7 +182,7 @@ LABEL_72AC:
 	call CAVES_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
 	video offset=CINEMATIC_037, x=[0x21], y=[HERO_Y]
 	play id=0x0058, freq=0x14, vol=0x40, channel=0x01
-	jge [HACK_VAR_67], 0xC8, LABEL_72D1
+	jge [SCREEN_NUM], 0xC8, LABEL_72D1
 	sub [0x06], 0x000A
 	call LABEL_6DC3
 	mov [0x0F], 0x0000

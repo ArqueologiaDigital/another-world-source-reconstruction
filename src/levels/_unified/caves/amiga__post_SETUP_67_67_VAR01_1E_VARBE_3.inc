@@ -1,5 +1,5 @@
 SETUP_67_AF_VARS_01_A_02_82_BE_3_BD_7:
-	mov [HACK_VAR_67], 0x00AF
+	mov [SCREEN_NUM], 0x00AF
 	mov [HERO_X], 0x000A
 	mov [HERO_Y], 0x0082
 	mov [0xBE], 0x0003
@@ -9,6 +9,6 @@ SETUP_67_AF_VARS_01_A_02_82_BE_3_BD_7:
 
 
 LABEL_41A1:
-	mov [HACK_VAR_67], 0x0025
+	mov [SCREEN_NUM], 0x0025
 	mov [0x06], 0x0000
 	ret

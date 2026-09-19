@@ -1,0 +1,3 @@
+SHELVE_BACKDROP_TO_PAGE3:
+	copyVideoPage src=0x00, dst=0x03
+	mov [0x65], [CACHED_SCREEN_NUM]

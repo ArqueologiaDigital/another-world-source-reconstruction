@@ -118,11 +118,11 @@ INLINE_SET_VAR16_TO_0:
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
-.include "../_helpers/COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65.inc"
+.include "../_helpers/SHELVE_BACKDROP_TO_PAGE3.inc"
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
-PRISON_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65_L0:
+PRISON_SHELVE_BACKDROP_TO_PAGE3_L0:
 	ret
 
 
@@ -260,13 +260,13 @@ INIT_VARS_A1_A4_A7_AA_PLUS4:
 .endif
 
 .include "../_helpers/COPY_PAGE0_TO_PAGE_FF.inc"
-.include "../_helpers/COPY_HACK67_TO_VAR66.inc"
+.include "../_helpers/CACHE_SCREEN_NUM_RET.inc"
 .if BRANCH == "chahi_amiga_1991"
-.include "amiga__post_COPY_HACK67_TO_VAR66.inc"
+.include "amiga__post_CACHE_SCREEN_NUM_RET.inc"
 .elif BRANCH == "cartridge_1992"
-.include "cart__post_COPY_HACK67_TO_VAR66.inc"
+.include "cart__post_CACHE_SCREEN_NUM_RET.inc"
 .elif BRANCH == "dos_1992"
-.include "dos__post_COPY_HACK67_TO_VAR66.inc"
+.include "dos__post_CACHE_SCREEN_NUM_RET.inc"
 .endif
 
 DECREMENT_VAR10_BY_1:

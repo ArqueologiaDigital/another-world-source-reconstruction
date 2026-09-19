@@ -1,12 +1,12 @@
 FIRST_SCREEN_TO_THE_RIGHT:
-	mov [HACK_VAR_67], 0x0003
+	mov [SCREEN_NUM], 0x0003
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 .endif
 	call CYCLE_VIDEO_PAGES_3WAY
 	setPalette 0x05
-	je [0x66], 0x03, FIRST_SCREEN_R_BEAST_TRIGGER
-	mov [0x66], 0x0003
+	je [CACHED_SCREEN_NUM], 0x03, FIRST_SCREEN_R_BEAST_TRIGGER
+	mov [CACHED_SCREEN_NUM], 0x0003
 	fill page=0x00, color=0x0E
 	selectVideoPage 0x00
 	call DRAW_SCENARIO_OF_FIRST_SCREEN_TO_THE_RIGHT
@@ -82,14 +82,14 @@ SHARED_GUARD_RET:
 
 
 SECOND_SCREEN_TO_THE_RIGHT:
-	mov [HACK_VAR_67], 0x0004
+	mov [SCREEN_NUM], 0x0004
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 .endif
 	call CYCLE_VIDEO_PAGES_3WAY
 	setPalette 0x05
-	je [0x66], 0x04, SECOND_SCREEN_R_BEAST_TRIGGER
-	mov [0x66], 0x0004
+	je [CACHED_SCREEN_NUM], 0x04, SECOND_SCREEN_R_BEAST_TRIGGER
+	mov [CACHED_SCREEN_NUM], 0x0004
 	fill page=0x00, color=0x0E
 	selectVideoPage 0x00
 	call DRAW_SCENARIO_OF_SECOND_SCREEN_TO_THE_RIGHT
@@ -119,14 +119,14 @@ SECOND_SCREEN_R_SETUP_CHANNELS:
 	killChannel
 
 THIRD_SCREEN_TO_THE_RIGHT:
-	mov [HACK_VAR_67], 0x0005
+	mov [SCREEN_NUM], 0x0005
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 	setup channel=0x3C, address=BLIT_FROM_PAGE_0_LOOP
 .endif
 	call CYCLE_VIDEO_PAGES_3WAY
 	setPalette 0x07
-	je [0x66], 0x05, THIRD_SCREEN_R_BEAST_TRIGGER
-	mov [0x66], 0x0005
+	je [CACHED_SCREEN_NUM], 0x05, THIRD_SCREEN_R_BEAST_TRIGGER
+	mov [CACHED_SCREEN_NUM], 0x0005
 	fill page=0x00, color=0x0E
 	selectVideoPage 0x00
 	call DRAW_SCENARIO_OF_THIRD_SCREEN_TO_THE_RIGHT

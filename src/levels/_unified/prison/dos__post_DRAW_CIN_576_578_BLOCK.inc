@@ -302,31 +302,31 @@ LABEL_2260:
 	call LABEL_6622
 	break
 	call PRISON_BUDDY_EFFECT_ANCHOR_RIGHT
-	jne [0x10], [HACK_VAR_67], LABEL_227A
+	jne [0x10], [SCREEN_NUM], LABEL_227A
 	video offset=CINEMATIC_196, x=[0x21], y=[0x22]
 
 LABEL_227A:
 	break
 	call PRISON_BUDDY_EFFECT_ANCHOR_RIGHT
-	jne [0x10], [HACK_VAR_67], LABEL_2289
+	jne [0x10], [SCREEN_NUM], LABEL_2289
 	video offset=CINEMATIC_197, x=[0x21], y=[0x22]
 
 LABEL_2289:
 	break
 	call PRISON_BUDDY_EFFECT_ANCHOR_RIGHT
-	jne [0x10], [HACK_VAR_67], LABEL_2298
+	jne [0x10], [SCREEN_NUM], LABEL_2298
 	video offset=CINEMATIC_198, x=[0x21], y=[0x22]
 
 LABEL_2298:
 	break
 	call PRISON_BUDDY_EFFECT_ANCHOR_RIGHT
-	jne [0x10], [HACK_VAR_67], LABEL_22A7
+	jne [0x10], [SCREEN_NUM], LABEL_22A7
 	video offset=CINEMATIC_210, x=[0x21], y=[0x22]
 
 LABEL_22A7:
 	break
 	call PRISON_BUDDY_EFFECT_ANCHOR_RIGHT
-	jne [0x10], [HACK_VAR_67], LABEL_22B9
+	jne [0x10], [SCREEN_NUM], LABEL_22B9
 	video offset=CINEMATIC_200, x=[0x21], y=[BUDDY_Y]
 	call PRISON_SHIELD_SPAWN_TRY_SLOT_0
 
@@ -345,32 +345,32 @@ LABEL_22BE:
 	break
 	call PRISON_BUDDY_EFFECT_ANCHOR_LEFT
 	play id=0x005B, freq=0x14, vol=0x40, channel=0x01
-	jne [0x10], [HACK_VAR_67], LABEL_22DE
+	jne [0x10], [SCREEN_NUM], LABEL_22DE
 	video offset=CINEMATIC_196, x=[0x21], y=[0x22]
 
 LABEL_22DE:
 	break
 	call PRISON_BUDDY_EFFECT_ANCHOR_LEFT
-	jne [0x10], [HACK_VAR_67], LABEL_22ED
+	jne [0x10], [SCREEN_NUM], LABEL_22ED
 	video offset=CINEMATIC_197, x=[0x21], y=[0x22]
 
 LABEL_22ED:
 	break
 	call PRISON_BUDDY_EFFECT_ANCHOR_LEFT
-	jne [0x10], [HACK_VAR_67], LABEL_2302
+	jne [0x10], [SCREEN_NUM], LABEL_2302
 	video offset=CINEMATIC_198, x=[0x21], y=[0x22]
 	play id=0x0059, freq=0x14, vol=0x40, channel=0x01
 
 LABEL_2302:
 	break
 	call PRISON_BUDDY_EFFECT_ANCHOR_LEFT
-	jne [0x10], [HACK_VAR_67], LABEL_2311
+	jne [0x10], [SCREEN_NUM], LABEL_2311
 	video offset=CINEMATIC_199, x=[0x21], y=[0x22]
 
 LABEL_2311:
 	break
 	call PRISON_BUDDY_EFFECT_ANCHOR_LEFT
-	jne [0x10], [HACK_VAR_67], LABEL_2323
+	jne [0x10], [SCREEN_NUM], LABEL_2323
 	video offset=CINEMATIC_200, x=[0x21], y=[BUDDY_Y]
 	call PRISON_SHIELD_SPAWN_TRY_SLOT_0
 
@@ -387,28 +387,28 @@ LABEL_2328:
 	jl [0x70], 0xC8, LABEL_2328
 
 LABEL_2339:
-	jne [HACK_VAR_67], 0x04, LABEL_234D
+	jne [SCREEN_NUM], 0x04, LABEL_234D
 	call LABEL_23AC
 	je [0x23], 0x00, LABEL_2390
 	video offset=CINEMATIC_202, x=[0x21], y=[BUDDY_Y]
 
 LABEL_234D:
 	break
-	jne [HACK_VAR_67], 0x04, LABEL_2362
+	jne [SCREEN_NUM], 0x04, LABEL_2362
 	call LABEL_23AC
 	je [0x23], 0x00, LABEL_2390
 	video offset=CINEMATIC_203, x=[0x21], y=[BUDDY_Y]
 
 LABEL_2362:
 	break
-	jne [HACK_VAR_67], 0x04, LABEL_2377
+	jne [SCREEN_NUM], 0x04, LABEL_2377
 	call LABEL_23AC
 	je [0x23], 0x00, LABEL_2390
 	video offset=CINEMATIC_204, x=[0x21], y=[BUDDY_Y]
 
 LABEL_2377:
 	break
-	jne [HACK_VAR_67], 0x04, LABEL_238C
+	jne [SCREEN_NUM], 0x04, LABEL_238C
 	call LABEL_23AC
 	je [0x23], 0x00, LABEL_2390
 	video offset=CINEMATIC_203, x=[0x21], y=[BUDDY_Y]
@@ -465,55 +465,55 @@ PRISON_BUDDY_FLOOR_DESCEND:
 	jmp LABEL_23DA
 
 LABEL_23FF:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_202, x=[0x21], y=[0x22]
 	ret
 
 
 LABEL_240B:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_203, x=[0x21], y=[0x22]
 	ret
 
 
 LABEL_2417:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_204, x=[0x21], y=[0x22]
 	ret
 
 
 LABEL_2423:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_190, x=[0x21], y=[0x22]
 	ret
 
 
 LABEL_242F:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_191, x=[0x21], y=[0x22]
 	ret
 
 
 LABEL_243B:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_192, x=[0x21], y=[0x22]
 	ret
 
 
 LABEL_2447:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_193, x=[0x21], y=[0x22]
 	ret
 
 
 LABEL_2453:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_194, x=[0x21], y=[0x22]
 	ret
 
 
 LABEL_245F:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_195, x=[0x21], y=[0x22]
 	ret
 
@@ -580,7 +580,7 @@ LABEL_24DA:
 	call LABEL_245F
 	break
 	djnz [0x29], LABEL_24DA
-	jne [HACK_VAR_67], [0x10], LABEL_2557
+	jne [SCREEN_NUM], [0x10], LABEL_2557
 	call PRISON_BUDDY_EFFECT_ANCHOR_LEFT
 	mov [0x96], [0x21]
 	mov [0x97], [0x22]
@@ -880,7 +880,7 @@ LABEL_27A4:
 	jmp LABEL_27A4
 
 LABEL_27B5:
-	jne [HACK_VAR_67], [0x10], LABEL_27CC
+	jne [SCREEN_NUM], [0x10], LABEL_27CC
 	mov [0x21], [BUDDY_X]
 	mov [0x27], [BUDDY_Y]
 	sub [0x21], 0x0028
@@ -912,7 +912,7 @@ LABEL_27E9:
 	jmp LABEL_27E9
 
 LABEL_27FA:
-	jne [HACK_VAR_67], [0x10], LABEL_2811
+	jne [SCREEN_NUM], [0x10], LABEL_2811
 	mov [0x21], [BUDDY_X]
 	mov [0x27], [BUDDY_Y]
 	sub [0x21], 0x0019
@@ -1022,7 +1022,7 @@ LABEL_28F7:
 	jmp LABEL_28F7
 
 LABEL_2908:
-	jne [HACK_VAR_67], [0x10], LABEL_291F
+	jne [SCREEN_NUM], [0x10], LABEL_291F
 	mov [0x21], [BUDDY_X]
 	mov [0x27], [BUDDY_Y]
 	add [0x21], 0x0028
@@ -1054,7 +1054,7 @@ LABEL_293C:
 	jmp LABEL_293C
 
 LABEL_294D:
-	jne [HACK_VAR_67], [0x10], LABEL_2964
+	jne [SCREEN_NUM], [0x10], LABEL_2964
 	mov [0x21], [BUDDY_X]
 	mov [0x27], [BUDDY_Y]
 	add [0x21], 0x0019

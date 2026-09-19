@@ -322,7 +322,7 @@ LABEL_2551:
 
 LABEL_25C7:
 	je [0x03], 0x00, LABEL_25D4
-	jg [HERO_Y], [0x19], CAVES_SUB_HACK67_BY_20_L3
+	jg [HERO_Y], [0x19], CAVES_SCREEN_STEP_UP_ONE_ROW_L3
 	ret
 
 
@@ -335,11 +335,11 @@ LABEL_25D4:
 	mov [0x03], 0x0000
 	mov [0x34], 0x0005
 	mov [0x35], 0x0000
-	call CAVES_SUB_HACK67_BY_20_L4
+	call CAVES_SCREEN_STEP_UP_ONE_ROW_L4
 	ret
 
 
-CAVES_SUB_HACK67_BY_20_L3:
+CAVES_SCREEN_STEP_UP_ONE_ROW_L3:
 	setup channel=0x14, address=CAVES_INLINE_SET_VAR63_TO_1_L2
 	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	setup channel=0x16, address=LABEL_DF3B
@@ -348,7 +348,7 @@ CAVES_SUB_HACK67_BY_20_L3:
 	mov [0x03], 0x0000
 	mov [0x34], 0x0000
 	mov [0x35], 0x0000
-	call CAVES_SUB_HACK67_BY_20_L4
+	call CAVES_SCREEN_STEP_UP_ONE_ROW_L4
 	mov [HERO_X], [0x2E]
 	add [HERO_X], 0x0005
 	add [HERO_Y], 0x001E
@@ -366,7 +366,7 @@ LABEL_2643:
 	and [0xF8], 0x0010
 	setup channel=0x01, address=LABEL_2F51
 	mov [HERO_Y], 0x0056
-	jne [HACK_VAR_67], 0x6F, LABEL_266A
+	jne [SCREEN_NUM], 0x6F, LABEL_266A
 	setup channel=0x01, address=LABEL_2F29
 	mov [HERO_Y], 0x0086
 	jg [HERO_X], 0x50, LABEL_266A
@@ -409,7 +409,7 @@ LABEL_26A5:
 	mov [0x35], 0x0000
 	mov [0x05], 0x0003
 	mov [HERO_Y], 0x0054
-	jne [HACK_VAR_67], 0x6F, LABEL_26E9
+	jne [SCREEN_NUM], 0x6F, LABEL_26E9
 	mov [HERO_Y], 0x0084
 
 LABEL_26E9:

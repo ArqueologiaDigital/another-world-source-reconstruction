@@ -69,7 +69,7 @@ LABEL_7F7E:
 	setup channel=0x37, address=HANG_DRAW_CIN_004
 	setup channel=0x38, address=HANG_DRAW_CIN_003_AT_11F4
 	setup channel=0x39, address=INLINE_SET_VAREF_TO_A0
-	jmp VAR66_MOD_32_DRAW_DISPATCH
+	jmp CAPSULE_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_7FD6:
 	db 0x11
 
@@ -94,7 +94,7 @@ LABEL_7FD7:
 	setup channel=0x01, address=LABEL_2A16
 	mov [0xEF], 0x0005
 	play id=0x0066, freq=0x07, vol=0x10, channel=0x03
-	jmp VAR66_MOD_32_DRAW_DISPATCH
+	jmp CAPSULE_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_8029:
 	db 0x11
 
@@ -111,7 +111,7 @@ LABEL_802A:
 	call LABEL_7F66
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x07, address=LABEL_130E
-	jmp VAR66_MOD_32_DRAW_DISPATCH
+	jmp CAPSULE_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_805A:
 	db 0x11
 
@@ -130,7 +130,7 @@ LABEL_805B:
 	setup channel=0x36, address=LABEL_28BD
 	add [0x68], 0x0019
 	setup channel=0x01, address=LABEL_2A16
-	jmp VAR66_MOD_32_DRAW_DISPATCH
+	jmp CAPSULE_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_8093:
 	db 0x11
 
@@ -139,7 +139,7 @@ LABEL_8094:
 	deleteChannels first=0x3D, last=0x3F
 	copyVideoPage src=0x03, dst=0x00
 	setup channel=0x04, address=LABEL_0AC4
-	jmp VAR66_MOD_32_DRAW_DISPATCH
+	jmp CAPSULE_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 
 LABEL_80A6:
 	mov [0x46], 0xF060
@@ -160,7 +160,7 @@ LABEL_80A6:
 	mov [PAUSE_SLICES], 0x0006
 	play id=0x0066, freq=0x05, vol=0x0F, channel=0x03
 	play id=0x0066, freq=0x07, vol=0x0A, channel=0x02
-	jmp VAR66_MOD_32_DRAW_DISPATCH
+	jmp CAPSULE_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_80F1:
 	db 0x11
 
@@ -181,12 +181,12 @@ LABEL_80F2:
 	mov [HERO_Y], 0x009D
 	mov [0x2A], 0x000F
 	setup channel=0x14, address=SET_VAR01_TO_6E_KILL_CHANNEL
-	jmp VAR66_MOD_32_DRAW_DISPATCH
+	jmp CAPSULE_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_8132:
 	db 0x11
 
 LABEL_8133:
-	jne [HACK_VAR_67], 0x8A, LABEL_8152
+	jne [SCREEN_NUM], 0x8A, LABEL_8152
 	deleteChannels first=0x01, last=0x02
 	setup channel=0x08, address=INCREMENT_VAR31
 	setup channel=0x3C, address=CAPSULE_PALETTE_FLASH_INTO_PAGE_3_PRESENT
@@ -198,7 +198,7 @@ LABEL_8133:
 
 
 LABEL_8152:
-	jne [HACK_VAR_67], 0xCC, SHARED_RET
+	jne [SCREEN_NUM], 0xCC, SHARED_RET
 	jne [0x1D], 0x0B, LABEL_8179
 	deleteChannels first=0x2A, last=0x2B
 	mov [0x13], 0x0070
@@ -235,7 +235,7 @@ LABEL_81BB:
 	db 0x11
 
 LABEL_81BC:
-	jne [HACK_VAR_67], 0x4E, LABEL_81E3
+	jne [SCREEN_NUM], 0x4E, LABEL_81E3
 	mov [0xF8], [0x49]
 	and [0xF8], 0x0380
 	shl [0xF8], 0x0002
@@ -249,7 +249,7 @@ LABEL_81BC:
 
 
 LABEL_81E3:
-	jne [HACK_VAR_67], 0x45, SHARED_RET
+	jne [SCREEN_NUM], 0x45, SHARED_RET
 	mov [0xBA], 0x0000
 	ret
 

@@ -34,36 +34,36 @@ LABEL_48E8:
 	killChannel
 
 LABEL_4938:
-	jne [0x10], [HACK_VAR_67], INCREMENT_VAR07_BY_4
+	jne [0x10], [SCREEN_NUM], INCREMENT_VAR07_BY_4
 	video offset=CINEMATIC_344, x=[0x07], y=[0x08]
 	ret
 
 
 LABEL_4944:
-	jne [0x10], [HACK_VAR_67], INCREMENT_VAR07_BY_4
+	jne [0x10], [SCREEN_NUM], INCREMENT_VAR07_BY_4
 	video offset=CINEMATIC_346, x=[0x07], y=[0x08]
 	ret
 
 
 LABEL_4950:
-	jne [0x10], [HACK_VAR_67], INCREMENT_VAR07_BY_4
+	jne [0x10], [SCREEN_NUM], INCREMENT_VAR07_BY_4
 	video offset=CINEMATIC_347, x=[0x07], y=[0x08]
 	ret
 
 
 LABEL_495C:
-	jne [0x10], [HACK_VAR_67], SHARED_RET
+	jne [0x10], [SCREEN_NUM], SHARED_RET
 	video offset=CINEMATIC_348, x=[0x07], y=[0x08]
 	ret
 
 
 LABEL_4968:
-	jne [0x10], [HACK_VAR_67], SHARED_RET
+	jne [0x10], [SCREEN_NUM], SHARED_RET
 	video offset=CINEMATIC_349, x=[0x07], y=[0x08]
 	ret
 
 
 LABEL_4974:
-	jne [0x10], [HACK_VAR_67], SHARED_RET
+	jne [0x10], [SCREEN_NUM], SHARED_RET
 	video offset=CINEMATIC_350, x=[0x07], y=[0x08]
 	ret

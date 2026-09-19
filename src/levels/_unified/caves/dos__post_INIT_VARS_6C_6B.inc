@@ -18,7 +18,7 @@ LABEL_39F9:
 	break
 	video offset=CINEMATIC_820, x=[HERO_X], y=[HERO_Y]
 	break
-	jne [HACK_VAR_67], 0x6E, LABEL_3A15
+	jne [SCREEN_NUM], 0x6E, LABEL_3A15
 	play id=0x006C, freq=0x14, vol=0x20, channel=0x00
 
 LABEL_3A15:
@@ -465,7 +465,7 @@ LABEL_3EBF:
 	break
 	video offset=CINEMATIC_531, x=[HERO_X], y=[HERO_Y]
 	break
-	jne [HACK_VAR_67], 0x6E, LABEL_3EDB
+	jne [SCREEN_NUM], 0x6E, LABEL_3EDB
 	play id=0x006C, freq=0x14, vol=0x20, channel=0x01
 
 LABEL_3EDB:

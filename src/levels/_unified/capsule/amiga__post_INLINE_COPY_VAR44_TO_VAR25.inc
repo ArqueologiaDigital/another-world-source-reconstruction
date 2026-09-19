@@ -1,6 +1,6 @@
 LABEL_566A:
 	and [0x26], 0x00FF
-	jne [HACK_VAR_67], [0x26], TRIVIAL_RET_2
+	jne [SCREEN_NUM], [0x26], TRIVIAL_RET_2
 	jg [0x27], [0x25], TRIVIAL_RET_2
 	sub [0x25], 0x0046
 	jmp LABEL_56F1

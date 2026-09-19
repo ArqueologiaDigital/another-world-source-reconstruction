@@ -14,13 +14,13 @@ LABEL_72F6:
 	video offset=CINEMATIC_037, x=17, y=[0x40]
 	mov [0x21], 0x0011
 	mov [0x08], [0x40]
-	mov [0x10], [HACK_VAR_67]
+	mov [0x10], [SCREEN_NUM]
 	call LABEL_6FB4
 	killChannel
 
 LABEL_732D:
-	je [HACK_VAR_67], 0x4B, KILL_CHAN_AT_01FB
-	je [HACK_VAR_67], 0x6A, KILL_CHAN_AT_01FB
+	je [SCREEN_NUM], 0x4B, KILL_CHAN_AT_01FB
+	je [SCREEN_NUM], 0x6A, KILL_CHAN_AT_01FB
 	call LABEL_00A7
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
 	video offset=CINEMATIC_033, x=315, y=[0x22]
@@ -36,7 +36,7 @@ LABEL_732D:
 	video offset=CINEMATIC_037, x=299, y=[0x40]
 	mov [0x21], 0x012B
 	mov [0x08], [0x40]
-	mov [0x10], [HACK_VAR_67]
+	mov [0x10], [SCREEN_NUM]
 	call LABEL_6FB4
 	killChannel
 
@@ -191,12 +191,12 @@ LABEL_7528:
 	call PROJECT_POS_VAR04_OR_CALL_A189
 	video offset=CINEMATIC_037, x=[0x21], y=[HERO_Y]
 	play id=0x0058, freq=0x14, vol=0x40, channel=0x01
-	je [HACK_VAR_67], 0xA7, LABEL_756B
-	jge [HACK_VAR_67], 0xC8, LABEL_756B
-	je [HACK_VAR_67], 0x67, LABEL_756B
-	je [HACK_VAR_67], 0x68, LABEL_756B
-	jg [HACK_VAR_67], 0x8A, LABEL_755B
-	jge [HACK_VAR_67], 0x87, LABEL_756B
+	je [SCREEN_NUM], 0xA7, LABEL_756B
+	jge [SCREEN_NUM], 0xC8, LABEL_756B
+	je [SCREEN_NUM], 0x67, LABEL_756B
+	je [SCREEN_NUM], 0x68, LABEL_756B
+	jg [SCREEN_NUM], 0x8A, LABEL_755B
+	jge [SCREEN_NUM], 0x87, LABEL_756B
 
 LABEL_755B:
 	sub [0x06], 0x000A

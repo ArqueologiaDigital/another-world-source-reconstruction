@@ -1,6 +1,6 @@
 LABEL_7831:
 	and [0x26], 0x00FF
-	jne [HACK_VAR_67], [0x26], TRIVIAL_RET_3
+	jne [SCREEN_NUM], [0x26], TRIVIAL_RET_3
 	jg [0x27], [0x25], TRIVIAL_RET_3
 	sub [0x25], 0x0046
 	jmp LABEL_78B8

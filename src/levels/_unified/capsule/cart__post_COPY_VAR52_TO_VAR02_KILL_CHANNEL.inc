@@ -1,9 +1,9 @@
 LABEL_97EC:
 	mov [0x63], 0x0064
 	play id=0x0057, freq=0x1C, vol=0x40, channel=0x00
-	je [HACK_VAR_67], 0x8E, LABEL_9821
-	je [HACK_VAR_67], 0x8A, LABEL_991F
-	je [HACK_VAR_67], 0xAA, LABEL_9821
+	je [SCREEN_NUM], 0x8E, LABEL_9821
+	je [SCREEN_NUM], 0x8A, LABEL_991F
+	je [SCREEN_NUM], 0xAA, LABEL_9821
 	mov [HERO_Y], [0x52]
 	sub [HERO_Y], 0x001E
 	call LABEL_9A4B
@@ -19,7 +19,7 @@ LABEL_9821:
 	mov [0x63], 0x0064
 	sub [HERO_Y], 0x0050
 	mov [0x32], 0x0001
-	jne [HACK_VAR_67], 0xAA, LABEL_983F
+	jne [SCREEN_NUM], 0xAA, LABEL_983F
 	video offset=CINEMATIC_090, x=[HERO_X], y=160
 	break
 	video offset=CINEMATIC_090, x=[HERO_X], y=200
@@ -36,7 +36,7 @@ LABEL_983F:
 	mov [0x32], 0x0001
 	mov [HERO_Y], [0x52]
 	break
-	je [HACK_VAR_67], 0xCE, INIT_VARS_03_32_02
+	je [SCREEN_NUM], 0xCE, INIT_VARS_03_32_02
 	mov [0x32], 0x0001
 	video offset=CINEMATIC_090, x=[HERO_X], y=77
 	mov [HERO_Y], [0x52]
@@ -52,16 +52,16 @@ LABEL_983F:
 LABEL_988A:
 	mov [0x63], 0x0064
 	play id=0x0057, freq=0x1C, vol=0x40, channel=0x00
-	je [HACK_VAR_67], 0xEE, LABEL_98BF
-	je [HACK_VAR_67], 0xAA, LABEL_996E
-	je [HACK_VAR_67], 0xC8, LABEL_98BF
+	je [SCREEN_NUM], 0xEE, LABEL_98BF
+	je [SCREEN_NUM], 0xAA, LABEL_996E
+	je [SCREEN_NUM], 0xC8, LABEL_98BF
 	mov [HERO_Y], [0x51]
 	add [HERO_Y], 0x001E
 	call LABEL_9A31
 	break
 	mov [HERO_Y], [0x51]
 	call LABEL_9A31
-	setup channel=0x1A, address=CAPSULE_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65_L1
+	setup channel=0x1A, address=CAPSULE_SHELVE_BACKDROP_TO_PAGE3_L1
 	jmp LABEL_9A64
 LABEL_98BE:
 	db 0x11
@@ -69,7 +69,7 @@ LABEL_98BE:
 LABEL_98BF:
 	mov [0x63], 0x0064
 	sub [HERO_Y], 0x0064
-	je [HACK_VAR_67], 0xAA, LABEL_98D7
+	je [SCREEN_NUM], 0xAA, LABEL_98D7
 	mov [0x32], 0x0001
 	video offset=CINEMATIC_092, x=[HERO_X], y=115
 	break
@@ -85,9 +85,9 @@ LABEL_98D7:
 	break
 	mov [HERO_Y], [0x51]
 	break
-	je [HACK_VAR_67], 0xCE, INIT_VARS_03_32_02_1
+	je [SCREEN_NUM], 0xCE, INIT_VARS_03_32_02_1
 	video offset=CINEMATIC_092, x=[HERO_X], y=180
-	jne [HACK_VAR_67], 0xAA, LABEL_9915
+	jne [SCREEN_NUM], 0xAA, LABEL_9915
 	break
 	video offset=CINEMATIC_092, x=[HERO_X], y=130
 	break
@@ -95,7 +95,7 @@ LABEL_98D7:
 
 LABEL_9915:
 	mov [HERO_Y], [0x51]
-	setup channel=0x1A, address=CAPSULE_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65_L1
+	setup channel=0x1A, address=CAPSULE_SHELVE_BACKDROP_TO_PAGE3_L1
 	jmp LABEL_9A64
 
 LABEL_991F:
@@ -138,5 +138,5 @@ LABEL_996E:
 	mov [HERO_X], 0x0029
 	video offset=CINEMATIC_092, x=[HERO_X], y=180
 	mov [HERO_Y], [0x51]
-	setup channel=0x1A, address=CAPSULE_COPY_PAGE0_TO_3_AND_VAR66_TO_VAR65_L1
+	setup channel=0x1A, address=CAPSULE_SHELVE_BACKDROP_TO_PAGE3_L1
 	jmp LABEL_9A64

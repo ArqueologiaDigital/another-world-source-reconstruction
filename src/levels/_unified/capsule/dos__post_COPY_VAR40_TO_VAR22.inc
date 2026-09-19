@@ -2,12 +2,12 @@ CAPSULE_INLINE_COPY_VAR22_TO_VAR08_L1:
 	mov [0x21], [BUDDY_X]
 	mov [0x22], [BUDDY_Y]
 	mov [0x23], 0x0000
-	mov [0x24], [HACK_VAR_67]
+	mov [0x24], [SCREEN_NUM]
 	mov [0x25], [0x35]
-	mov [HACK_VAR_67], [0x10]
+	mov [SCREEN_NUM], [0x10]
 	mov [0x35], 0x0000
 	call CAPSULE_FLOOR_LEVEL_SELECT_BY_HEIGHT
-	mov [HACK_VAR_67], [0x24]
+	mov [SCREEN_NUM], [0x24]
 	mov [0x35], [0x25]
 	jne [0x10], 0x6B, SHARED_RET
 	mov [0x22], 0x0099
@@ -56,7 +56,7 @@ LABEL_7386:
 
 LABEL_73BC:
 	call LABEL_70BA
-	jne [HACK_VAR_67], 0x25, SHARED_RET
+	jne [SCREEN_NUM], 0x25, SHARED_RET
 	setup channel=0x14, address=LABEL_70E2
 	ret
 
@@ -85,6 +85,6 @@ LABEL_740A:
 	db 0x11
 
 LABEL_740B:
-	je [HACK_VAR_67], 0x88, DECREMENT_VARF8_BY_10
-	je [HACK_VAR_67], 0x89, DECREMENT_VARF8_BY_10
+	je [SCREEN_NUM], 0x88, DECREMENT_VARF8_BY_10
+	je [SCREEN_NUM], 0x89, DECREMENT_VARF8_BY_10
 	ret

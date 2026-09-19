@@ -44,7 +44,7 @@ LABEL_3231:
 	jne [0x0F], 0x00, SHARED_RET
 	mov [0x29], 0x0000
 	mov [0x2F], 0x0009
-	jg [HACK_VAR_67], 0x05, SHARED_RET
+	jg [SCREEN_NUM], 0x05, SHARED_RET
 	call ACCUMULATE_HASH_INTO_VAR37_38
 	and [0x38], 0x007F
 	mov [0x29], [0x38]

@@ -29,7 +29,7 @@ LABEL_6D64:
 	call LABEL_6D96
 
 LABEL_6D67:
-	jne [0x6A], [HACK_VAR_67], LABEL_6D7D
+	jne [0x6A], [SCREEN_NUM], LABEL_6D7D
 	mov [0x24], [0x68]
 	mov [0x25], [0x69]
 	mov [0x26], [0x6B]
@@ -93,7 +93,7 @@ LABEL_6DFC:
 
 
 LABEL_6DFD:
-	jne [0x72], [HACK_VAR_67], LABEL_6E13
+	jne [0x72], [SCREEN_NUM], LABEL_6E13
 	mov [0x24], [0x70]
 	mov [0x25], [0x71]
 	mov [0x26], [0x73]
@@ -101,7 +101,7 @@ LABEL_6DFD:
 	call LABEL_6E93
 
 LABEL_6E13:
-	jne [0x7A], [HACK_VAR_67], LABEL_6E29
+	jne [0x7A], [SCREEN_NUM], LABEL_6E29
 	mov [0x24], [0x78]
 	mov [0x25], [0x79]
 	mov [0x26], [0x7B]

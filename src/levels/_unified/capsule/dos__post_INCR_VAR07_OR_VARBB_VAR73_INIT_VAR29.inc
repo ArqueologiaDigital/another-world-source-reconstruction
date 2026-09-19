@@ -1,5 +1,5 @@
 LABEL_0207:
-	jne [0x10], [HACK_VAR_67], LABEL_0222
+	jne [0x10], [SCREEN_NUM], LABEL_0222
 	video offset=CINEMATIC_124, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_344, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_125, x=[BUDDY_X], y=[BUDDY_Y]
@@ -7,14 +7,14 @@ LABEL_0207:
 
 LABEL_0222:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_0238
+	jne [0x10], [SCREEN_NUM], LABEL_0238
 	video offset=CINEMATIC_126, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_344, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_125, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_0238:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_0254
+	jne [0x10], [SCREEN_NUM], LABEL_0254
 	video offset=CINEMATIC_127, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_344, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_128, x=[BUDDY_X], y=[BUDDY_Y]
@@ -22,14 +22,14 @@ LABEL_0238:
 
 LABEL_0254:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_026A
+	jne [0x10], [SCREEN_NUM], LABEL_026A
 	video offset=CINEMATIC_129, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_344, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_128, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_026A:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_0280
+	jne [0x10], [SCREEN_NUM], LABEL_0280
 	video offset=CINEMATIC_126, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_344, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_125, x=[BUDDY_X], y=[BUDDY_Y]
@@ -40,7 +40,7 @@ LABEL_0280:
 	djnz [0x29], LABEL_0207
 
 LABEL_028C:
-	jne [0x10], [HACK_VAR_67], LABEL_02C1
+	jne [0x10], [SCREEN_NUM], LABEL_02C1
 	video offset=CINEMATIC_124, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_344, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_125, x=[BUDDY_X], y=[BUDDY_Y]

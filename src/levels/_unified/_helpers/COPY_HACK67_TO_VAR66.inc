@@ -1,3 +1,0 @@
-COPY_HACK67_TO_VAR66:
-	mov [0x66], [HACK_VAR_67]
-	ret

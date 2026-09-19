@@ -184,7 +184,7 @@ LABEL_0EF1:
 LABEL_0F01:
 	call LABEL_8976
 	break
-	jne [HACK_VAR_67], [0x10], LABEL_0F11
+	jne [SCREEN_NUM], [0x10], LABEL_0F11
 	jl [HERO_X], 0x32, LABEL_0F75
 
 LABEL_0F11:
@@ -213,7 +213,7 @@ LABEL_0F51:
 	break
 	call LABEL_8967
 	break
-	jne [HACK_VAR_67], [0x10], LABEL_0F6D
+	jne [SCREEN_NUM], [0x10], LABEL_0F6D
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 
@@ -258,7 +258,7 @@ LABEL_0FBE:
 	call GUARDED_DRAW_CV_304_305
 	break
 	jne [0x10], 0x8E, LABEL_1074
-	jne [0x10], [HACK_VAR_67], LABEL_0FBE
+	jne [0x10], [SCREEN_NUM], LABEL_0FBE
 	jg [HERO_X], 0x64, LABEL_0FEC
 	mov [0x29], 0x0003
 
@@ -280,43 +280,43 @@ LABEL_0FEC:
 	mov [0x29], 0x0007
 
 LABEL_0FFA:
-	jne [0x10], [HACK_VAR_67], LABEL_1005
+	jne [0x10], [SCREEN_NUM], LABEL_1005
 	video offset=CINEMATIC_308, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_1005:
 	break
 	djnz [0x29], LABEL_0FFA
-	jne [0x10], [HACK_VAR_67], LABEL_1015
+	jne [0x10], [SCREEN_NUM], LABEL_1015
 	video offset=CINEMATIC_308, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_1015:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_1021
+	jne [0x10], [SCREEN_NUM], LABEL_1021
 	video offset=CINEMATIC_307, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_1021:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_102D
+	jne [0x10], [SCREEN_NUM], LABEL_102D
 	video offset=CINEMATIC_307, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_102D:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_1039
+	jne [0x10], [SCREEN_NUM], LABEL_1039
 	video offset=CINEMATIC_306, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_1039:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_1045
+	jne [0x10], [SCREEN_NUM], LABEL_1045
 	video offset=CINEMATIC_305, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_1045:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_1051
+	jne [0x10], [SCREEN_NUM], LABEL_1051
 	video offset=CINEMATIC_263, x=[BUDDY_X], y=94
 
 LABEL_1051:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_1064
+	jne [0x10], [SCREEN_NUM], LABEL_1064
 	video offset=CINEMATIC_263, x=[BUDDY_X], y=48
 	break
 	video offset=CINEMATIC_263, x=[BUDDY_X], y=65521
@@ -332,8 +332,8 @@ LABEL_1073:
 LABEL_1074:
 	call GUARDED_DRAW_CV_304_305
 	break
-	je [HACK_VAR_67], 0x8E, LABEL_1074
-	jg [0x10], [HACK_VAR_67], LABEL_1074
+	je [SCREEN_NUM], 0x8E, LABEL_1074
+	jg [0x10], [SCREEN_NUM], LABEL_1074
 	mov [0x29], 0x0003
 
 LABEL_1088:

@@ -321,20 +321,51 @@ leave the raw id and let the routine name carry the meaning. Nearly half of
 INTRO's variables are in that state against a ninth of LAKE's — the difference
 between a cinematic stage and a gameplay one, not a defect in either.
 
-### The four `HACK_VAR_` placeholders
+### The `HACK_VAR_` placeholders
 
 `HACK_VAR_<hex>` is `LABEL_<hex>` for variables and must go. Evidence gathered
-2026-09-12:
+2026-09-12, revised as each one lands:
 
 | var | evidence | ready? |
 |---|---|---|
-| `0x67` | 6,281 references, the most-referenced named variable. Guards hundreds of routines with `jne [0x67], [COUNTER], …_NOOP_RET`. Helpers already named `COPY_HACK67_TO_VAR66`, `ADD_HACK67_BY_20`, `SUB_HACK67_BY_20` — ±0x20 is screen-grid navigation. Proposed `SCREEN_NUM`, making `0x66` `CACHED_SCREEN_NUM`. | **yes, E2** |
+| `0x67` | **Done 2026-09-19 — `SCREEN_NUM`, 6,242 references.** It is a screen index into a **32-column row-major grid**, not merely a screen number, and the stride is what the name has to survive: the only arithmetic ever applied to it is ±1 and ±0x20; those four steps are exactly the generic fall-through tails of the four `*_SCREEN_EXIT_<DIR>_LINK_CASE_*` chains (DOWN +0x20, UP −0x20, RIGHT +1, LEFT −1); the immediates assigned to it fall in eight bands 0x1F–0x23 apart; and CAPSULE and PRISON extract the column outright with `and [0xF8], 0x001F`. Five checks, four ports, in `notes/screen-index-probes/var67_screen_grid.py`, which exits non-zero if any stops holding. | **done** |
 | `0xDC` | One of five constants in the copy-protection gate (`LIKELY_A_COPY_PROTECTION_MECHANISM`, registered at offset 0x0080 of every stage): `jne [0xDC], 0x21, …`. The bytecode also sets it to 0x21 itself. Proposed `COPY_PROTECT_MAGIC` — and the same find names four never-named siblings: `0xBC`, `0xC6`, `0xE4`, `0xF2`. | **yes, E2** |
 | `0x54` | 155 references. A sign/high-bit discriminator selecting which title bitmap loads (`jge [0x54], 0x80, LOAD_RESOURCE_13`), but it is also ANDed with 1, set to 0x40 and to −5, and swapped with var 0x13. May be stage-variant. | no — check its LAKE/TANK/CAPSULE sites first |
 | `0xF7` | 8 references, all `add [0x37], [0xF7]` — a term in the codewheel/passcode validation hash. Below the plan's own ≥20-reference threshold. | no |
 
 `0xF8` is an unclaimed easy win: a heavily used scratch register, already implied
 by `COPY_VAR00_TO_VARF8`. `SCRATCH` at E2.
+
+### `CACHED_SCREEN_NUM` is stage-scoped, and that is the scoping rule working
+
+`0x66` holds the screen whose backdrop is currently painted in page 0:
+`je [0x66], [SCREEN_NUM], <cache>` guards a `copyVideoPage src=0x00, dst=0xFF`,
+so the backdrop is repainted exactly when the screen changed, and `0x66` is then
+updated to match. That holds in LAKE, PRISON, CAVES and CAPSULE on every port.
+
+**It does not hold in TANK**, which reuses `0x66` as a plain countdown —
+`mov [0x66], 0x0032` then `djnz [0x66], TANK_ARENA_AMBIENT_LASER_FIRE_LOOP`,
+three sites per port. So the alias is declared in the four stages where it is
+true and TANK keeps the raw id, per the scoping rule at the top of this section.
+A single global `CACHED_SCREEN_NUM EQU 0x66` was written first and caught by the
+per-stage audit before it was committed; the audit command is in
+`notes/screen-index-probes/README.md`.
+
+`0x65` is the next rung of the same mechanism — LAKE's `CYCLE_VIDEO_PAGES_3WAY`
+shelves page 0 to page 3 and rotates `0x67 → 0x66 → 0x65`, so walking back two
+screens restores a backdrop instead of redrawing it. It stays a raw id anyway:
+it is also `mov [RANDOM_SEED], [0x65]`, `and [0x65], 0x00FF` and
+`mov [0x65], [0x64]`, which is more than one role.
+
+### An undefined symbol assembles, it does not fail
+
+While the four per-stage `CACHED_SCREEN_NUM EQU` lines were being added, the
+unified tree was briefly left referencing the alias without declaring it.
+`awvm-asm` did not error: it produced bytes, and `verify-unified` fell from
+29/29 to 15/29. This is the same shape as #0073 — a symbol problem that is
+silent at the assembler and visible only at the byte gate. **Never take "it
+assembled" as evidence that a symbol resolved.** Run `make test` after any
+rename that touches an EQU.
 
 ## 4. Channels
 

@@ -14,7 +14,7 @@ LABEL_682B:
 	db 0x11
 
 LABEL_682C:
-	jne [HACK_VAR_67], 0xCC, LABEL_686B
+	jne [SCREEN_NUM], 0xCC, LABEL_686B
 	jne [0x1D], 0x0A, LABEL_6845
 	setup channel=0x28, address=INLINE_SET_VAR74_TO_6
 	or [0x49], 0x4000
@@ -39,7 +39,7 @@ LABEL_6858:
 
 
 LABEL_686B:
-	jne [HACK_VAR_67], 0xCA, LABEL_6884
+	jne [SCREEN_NUM], 0xCA, LABEL_6884
 	jne [0x1D], 0x0A, SHARED_RET
 	setup channel=0x22, address=INLINE_SET_VAR73_TO_6
 	or [0x49], 0x4000
@@ -48,7 +48,7 @@ LABEL_686B:
 
 
 LABEL_6884:
-	jne [HACK_VAR_67], 0xCB, SHARED_RET
+	jne [SCREEN_NUM], 0xCB, SHARED_RET
 	jne [0x1D], 0x0A, LABEL_689D
 	setup channel=0x28, address=INLINE_SET_VAR74_TO_6
 	or [0x49], 0x4000
@@ -73,7 +73,7 @@ CAVES_LASER_IMPACT_ANIM_RIGHT_CASE_73:
 
 
 LABEL_68C3:
-	jne [HACK_VAR_67], 0x6B, LABEL_68EE
+	jne [SCREEN_NUM], 0x6B, LABEL_68EE
 	play id=0x005B, freq=0x14, vol=0x30, channel=0x01
 	jne [0x1D], 0x04, SHARED_RET
 	or [0xB1], 0x0001
@@ -87,7 +87,7 @@ LABEL_68C3:
 
 
 LABEL_68EE:
-	jne [HACK_VAR_67], 0xEE, LABEL_6917
+	jne [SCREEN_NUM], 0xEE, LABEL_6917
 	mov [0xF8], [0xB1]
 	and [0xF8], 0x0004
 	jne [0xF8], 0x00, SHARED_RET
@@ -100,7 +100,7 @@ LABEL_68EE:
 
 
 LABEL_6917:
-	jne [HACK_VAR_67], 0x50, SHARED_RET
+	jne [SCREEN_NUM], 0x50, SHARED_RET
 	jne [0x1D], 0x04, SHARED_RET
 	jl [0x21], 0x64, SHARED_RET
 	mov [0xF8], [0xB1]

@@ -812,8 +812,8 @@ CODEWHEEL_FINALIZE_VAR31_SUCCESS_PATH:
 	mov [0xC6], [0x37]
 	or [0xC6], 0x0080
 	call INIT_PROGRESS_HASH_VARS
-	setup channel=0x32, address=MARK_VAR67_AND_KILL
-	setup channel=0x3F, address=CODEWHEEL_PIN_HACK_VAR67_TO_0
+	setup channel=0x32, address=CODEWHEEL_SET_SCREEN_NUM_1_AND_KILL
+	setup channel=0x3F, address=CODEWHEEL_HOLD_SCREEN_NUM_AT_0_LOOP
 .if BRANCH == "dos_1992"
 	mov [0xE4], [0x68]
 .endif
@@ -870,18 +870,18 @@ WRAP_SUM_HASH_VARS_TO_VAR_37:
 
 .endif
 
-MARK_VAR67_AND_KILL:
-	mov [HACK_VAR_67], 0x0001
+CODEWHEEL_SET_SCREEN_NUM_1_AND_KILL:
+	mov [SCREEN_NUM], 0x0001
 	killChannel
 
-; `mov [HACK_VAR_67], 0x0000 / break / jmp self`. A
-; background channel that continuously pins HACK_VAR_67
+; `mov [SCREEN_NUM], 0x0000 / break / jmp self`. A
+; background channel that continuously pins SCREEN_NUM
 ; to 0, used as a scene-state marker while the codewheel
 ; entry is active.
-CODEWHEEL_PIN_HACK_VAR67_TO_0:
-	mov [HACK_VAR_67], 0x0000
+CODEWHEEL_HOLD_SCREEN_NUM_AT_0_LOOP:
+	mov [SCREEN_NUM], 0x0000
 	break
-	jmp CODEWHEEL_PIN_HACK_VAR67_TO_0
+	jmp CODEWHEEL_HOLD_SCREEN_NUM_AT_0_LOOP
 
 ; Filler byte (`db 0x11` in original disasm, decoded as killChannel).
 ; The preceding `jmp` is an infinite self-loop so this byte can't

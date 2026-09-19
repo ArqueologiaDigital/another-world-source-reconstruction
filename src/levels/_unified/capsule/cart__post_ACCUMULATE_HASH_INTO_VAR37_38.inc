@@ -49,7 +49,7 @@ LABEL_327C:
 
 
 LABEL_32E0:
-	mov [HACK_VAR_67], 0x004A
+	mov [SCREEN_NUM], 0x004A
 	mov [0x00], 0x003C
 	call LABEL_00BF
 	ret
@@ -57,7 +57,7 @@ LABEL_32E0:
 
 LABEL_32EC:
 	call LABEL_3308
-	mov [HACK_VAR_67], 0x008E
+	mov [SCREEN_NUM], 0x008E
 	mov [HERO_X], 0x000A
 	mov [0xB0], 0x0000
 	mov [0xB1], 0x0000
@@ -67,7 +67,7 @@ LABEL_32EC:
 
 
 LABEL_3308:
-	mov [HACK_VAR_67], 0x008B
+	mov [SCREEN_NUM], 0x008B
 	mov [HERO_X], 0x00A0
 	mov [HERO_Y], 0x00AA
 	or [0xB9], 0x0008
@@ -81,7 +81,7 @@ LABEL_3308:
 	or [0xB9], 0x0080
 
 LABEL_332E:
-	mov [HACK_VAR_67], 0x006A
+	mov [SCREEN_NUM], 0x006A
 	call LABEL_00D3
 	mov [HERO_X], 0x0064
 	mov [HERO_Y], 0x00AC
@@ -92,12 +92,12 @@ LABEL_332E:
 	ret
 
 
-	mov [HACK_VAR_67], 0x0025
+	mov [SCREEN_NUM], 0x0025
 	mov [0x06], 0x0000
 	ret
 
 
-	mov [HACK_VAR_67], 0x004B
+	mov [SCREEN_NUM], 0x004B
 	mov [0xB0], 0x0003
 	mov [HERO_X], 0x0050
 	ret
@@ -312,7 +312,7 @@ LABEL_3557:
 LABEL_3599:
 	mov [0x68], 0x0089
 	mov [0x69], 0x0062
-	mov [0x6A], [HACK_VAR_67]
+	mov [0x6A], [SCREEN_NUM]
 	mov [0x6B], 0x3000
 	mov [0x6C], 0x0001
 	mov [0x6D], 0x0000
@@ -336,7 +336,7 @@ LABEL_35B9:
 LABEL_35DA:
 	mov [0x68], 0x007B
 	mov [0x69], 0x00AC
-	mov [0x6A], [HACK_VAR_67]
+	mov [0x6A], [SCREEN_NUM]
 	mov [0x6B], 0x3000
 	mov [0x6C], 0x0006
 	mov [0x6D], 0x0000
@@ -407,8 +407,8 @@ LABEL_3682:
 
 
 LABEL_36A3:
-	mov [HACK_VAR_67], 0x0001
-	mov [0x66], 0x0001
+	mov [SCREEN_NUM], 0x0001
+	mov [CACHED_SCREEN_NUM], 0x0001
 	mov [0x65], 0x0001
 	mov [0x68], 0x00C8
 	mov [0x69], 0x00B6

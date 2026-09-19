@@ -12,7 +12,7 @@ LABEL_41ED:
 	jne [0x1D], 0x0B, LABEL_4204
 	mov [0x10], [0x4A]
 	mov [0x11], [0x4B]
-	jne [HACK_VAR_67], 0x24, SHARED_RET
+	jne [SCREEN_NUM], 0x24, SHARED_RET
 	mov [0xB2], 0x0001
 	ret
 
@@ -91,7 +91,7 @@ LABEL_427E:
 LABEL_427F:
 	call PROJECT_POS_BY_VAR04_OR_807B
 	mov [0x22], 0x0096
-	mov [0x26], [HACK_VAR_67]
+	mov [0x26], [SCREEN_NUM]
 	jg [HERO_Y], [0x41], LABEL_4293
 	or [0x26], 0x8000
 
@@ -225,7 +225,7 @@ LABEL_43BC:
 	mov [0x26], [0x44]
 
 LABEL_43CC:
-	jne [0x27], [HACK_VAR_67], DECREMENT_VAR22
+	jne [0x27], [SCREEN_NUM], DECREMENT_VAR22
 	jne [0x22], 0x00, LABEL_43E0
 	video offset=CINEMATIC_201, x=[0x21], y=[0x26]
 	jmp DECREMENT_VAR22

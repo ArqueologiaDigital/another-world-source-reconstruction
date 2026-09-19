@@ -1,5 +1,5 @@
 LABEL_8A02:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_206, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=COMMON_VIDEO_213, x=[0x07], y=[0x08], zoom=0x40
@@ -15,7 +15,7 @@ LABEL_8A26:
 
 
 CAVES_ACTOR_RUN_RIGHT_PHASE_8_FRAME:
-	jne [HACK_VAR_67], [0x10], SHARED_RET
+	jne [SCREEN_NUM], [0x10], SHARED_RET
 	add [0x08], 0x0001
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=COMMON_VIDEO_203, x=[0x07], y=[0x08], zoom=0x40

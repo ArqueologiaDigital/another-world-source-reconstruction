@@ -18,7 +18,7 @@ LABEL_3385:
 	db 0x11
 
 LABEL_3386:
-	jne [HACK_VAR_67], [0x09], SHARED_RET
+	jne [SCREEN_NUM], [0x09], SHARED_RET
 	jne [0x6D], 0x00, LABEL_3398
 	video offset=CINEMATIC_794, x=[0x07], y=[0x08]
 	ret
@@ -48,7 +48,7 @@ DRAW_CIN_790:
 
 
 GUARDED_DRAW_CIN_579_786:
-	jne [HACK_VAR_67], [0x09], SHARED_RET
+	jne [SCREEN_NUM], [0x09], SHARED_RET
 	selectVideoPage 0x00
 	video offset=CINEMATIC_579, x=[0x07], y=[0x08]
 	video offset=CINEMATIC_786, x=[0x07], y=[0x08]
@@ -60,7 +60,7 @@ GUARDED_DRAW_CIN_579_786:
 
 
 LABEL_33E2:
-	jne [HACK_VAR_67], [0x09], SHARED_RET
+	jne [SCREEN_NUM], [0x09], SHARED_RET
 	selectVideoPage 0x03
 	video offset=CINEMATIC_579, x=[0x07], y=[0x08]
 	video offset=CINEMATIC_786, x=[0x07], y=[0x08]
@@ -98,8 +98,8 @@ DRAW_CIN_787:
 
 
 CAVES_SCENE9_HERO_X_SYNC_OR_NOOP:
-	jg [HACK_VAR_67], [0x09], CAVES_DELETE_CHANS_14_16_THEN_INIT_CH14
-	jne [HACK_VAR_67], [0x09], SHARED_RET
+	jg [SCREEN_NUM], [0x09], CAVES_DELETE_CHANS_14_16_THEN_INIT_CH14
+	jne [SCREEN_NUM], [0x09], SHARED_RET
 	jl [0x04], 0x4000, LABEL_3446
 	mov [HERO_X], [0x07]
 	jmp LABEL_345B

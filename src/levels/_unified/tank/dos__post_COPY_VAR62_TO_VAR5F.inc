@@ -249,13 +249,13 @@ LABEL_0C93:
 	db 0x11
 
 LABEL_0C94:
-	je [HACK_VAR_67], 0x06, SHARED_RET
+	je [SCREEN_NUM], 0x06, SHARED_RET
 	je [0x71], 0x00, SHARED_RET
 	je [0x72], 0x00, SHARED_RET
 	je [0x74], 0x00, SHARED_RET
 	je [0x75], 0x00, SHARED_RET
-	jg [HACK_VAR_67], 0x06, SHARED_RET
-	mov [HACK_VAR_67], 0x0006
+	jg [SCREEN_NUM], 0x06, SHARED_RET
+	mov [SCREEN_NUM], 0x0006
 	setup channel=0x06, address=TANK_DRAW_CIN_164_AT_43_40_PAGE_0_THEN_FF
 	ret
 
@@ -398,8 +398,8 @@ LABEL_0DC5:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_172, x=39, y=29
 	selectVideoPage 0xFF
-	jg [HACK_VAR_67], 0x05, SHARED_RET
-	mov [HACK_VAR_67], 0x0005
+	jg [SCREEN_NUM], 0x05, SHARED_RET
+	mov [SCREEN_NUM], 0x0005
 	ret
 
 

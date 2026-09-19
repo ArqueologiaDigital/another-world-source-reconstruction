@@ -179,7 +179,7 @@ LABEL_1574:
 	call LABEL_15D1
 	break
 	call LABEL_15D1
-	jne [HACK_VAR_67], [0x10], LABEL_15DD
+	jne [SCREEN_NUM], [0x10], LABEL_15DD
 	sub [0x78], 0x0007
 	add [0x79], 0x0006
 	video type=0, offset=COMMON_VIDEO_243, x=[0x78], y=[0x79], zoom=0x40

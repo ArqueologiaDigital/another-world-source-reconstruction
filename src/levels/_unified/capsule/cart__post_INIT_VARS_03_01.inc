@@ -184,7 +184,7 @@ LABEL_0FCE:
 LABEL_0FDE:
 	call LABEL_89DF
 	break
-	jne [HACK_VAR_67], [0x10], LABEL_0FEE
+	jne [SCREEN_NUM], [0x10], LABEL_0FEE
 	jl [HERO_X], 0x32, LABEL_1052
 
 LABEL_0FEE:
@@ -213,7 +213,7 @@ LABEL_102E:
 	break
 	call LABEL_89D0
 	break
-	jne [HACK_VAR_67], [0x10], LABEL_104A
+	jne [SCREEN_NUM], [0x10], LABEL_104A
 	call STATE_VAR12_BIG_DISPATCH
 	jne [0x2F], 0x00, DISPATCH_VAR2F_STATE
 
@@ -258,7 +258,7 @@ LABEL_109B:
 	call GUARDED_DRAW_CV_304_305
 	break
 	jne [0x10], 0x8E, LABEL_1155
-	jne [0x10], [HACK_VAR_67], LABEL_109B
+	jne [0x10], [SCREEN_NUM], LABEL_109B
 	jg [HERO_X], 0x64, LABEL_10C9
 	mov [0x29], 0x0003
 
@@ -280,37 +280,37 @@ LABEL_10C9:
 	mov [0x29], 0x0007
 
 LABEL_10D7:
-	jne [0x10], [HACK_VAR_67], LABEL_10E2
+	jne [0x10], [SCREEN_NUM], LABEL_10E2
 	video offset=CINEMATIC_309, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_10E2:
 	break
 	djnz [0x29], LABEL_10D7
-	jne [0x10], [HACK_VAR_67], LABEL_10F2
+	jne [0x10], [SCREEN_NUM], LABEL_10F2
 	video offset=CINEMATIC_309, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_10F2:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_109B
+	jne [0x10], [SCREEN_NUM], LABEL_109B
 	video offset=CINEMATIC_296, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_109B
+	jne [0x10], [SCREEN_NUM], LABEL_109B
 	video offset=CINEMATIC_296, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_109B
+	jne [0x10], [SCREEN_NUM], LABEL_109B
 	video offset=CINEMATIC_297, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_1122
+	jne [0x10], [SCREEN_NUM], LABEL_1122
 	video offset=CINEMATIC_308, x=[BUDDY_X], y=[BUDDY_Y]
 
 LABEL_1122:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_112E
+	jne [0x10], [SCREEN_NUM], LABEL_112E
 	video offset=CINEMATIC_264, x=[BUDDY_X], y=94
 
 LABEL_112E:
 	break
-	jne [0x10], [HACK_VAR_67], LABEL_1141
+	jne [0x10], [SCREEN_NUM], LABEL_1141
 	video offset=CINEMATIC_264, x=[BUDDY_X], y=48
 	break
 	video offset=CINEMATIC_264, x=[BUDDY_X], y=65521
@@ -327,8 +327,8 @@ LABEL_1154:
 LABEL_1155:
 	call GUARDED_DRAW_CV_304_305
 	break
-	je [HACK_VAR_67], 0x8E, LABEL_1155
-	jg [0x10], [HACK_VAR_67], LABEL_1155
+	je [SCREEN_NUM], 0x8E, LABEL_1155
+	jg [0x10], [SCREEN_NUM], LABEL_1155
 	mov [0x29], 0x0003
 
 LABEL_1169:

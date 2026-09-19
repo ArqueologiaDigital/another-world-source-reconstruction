@@ -133,7 +133,7 @@ LABEL_9D9F:
 	video offset=CINEMATIC_600, x=107, y=14
 	video offset=CINEMATIC_600, x=212, y=15
 	call LABEL_3708
-	mov [0x10], [HACK_VAR_67]
+	mov [0x10], [SCREEN_NUM]
 	mov [BUDDY_Y], [0x40]
 	mov [BUDDY_X], 0x0064
 	mov [0x09], 0x0001
