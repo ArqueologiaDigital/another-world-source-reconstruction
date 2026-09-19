@@ -237,7 +237,7 @@ LABEL_A1CE:
 	setup channel=0x04, address=LABEL_3102
 	setup channel=0x05, address=LABEL_307F
 	setup channel=0x06, address=LABEL_3128
-	setup channel=0x07, address=LABEL_309E
+	setup channel=0x07, address=CAVES_WATERFALL_STREAK_LOOP
 
 TRAMP_A22A:
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
@@ -930,10 +930,10 @@ LABEL_AA4F:
 	setup channel=0x01, address=INIT_VARS_E6_E7
 	setup channel=0x02, address=INLINE_SET_VARE8_TO_8
 	setup channel=0x03, address=INIT_VARS_EA_EB
-	setup channel=0x04, address=LABEL_3184
-	setup channel=0x05, address=LABEL_30BD
+	setup channel=0x04, address=CAVES_WATERFALL_DROPLET_LOOP
+	setup channel=0x05, address=CAVES_WATERFALL_SPRAY_LINE_LOOP
 	setup channel=0x06, address=LABEL_30DC
-	setup channel=0x07, address=LABEL_309E
+	setup channel=0x07, address=CAVES_WATERFALL_STREAK_LOOP
 
 TRAMP_AAAF:
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
