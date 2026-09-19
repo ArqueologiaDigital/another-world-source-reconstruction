@@ -410,7 +410,7 @@ CAVES_BEAST_PER_FRAME_TICK:
 
 LABEL_83BC:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_8039
 	ret
@@ -423,7 +423,7 @@ LABEL_83CB:
 
 LABEL_83DA:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_805A
 	ret
@@ -436,7 +436,7 @@ LABEL_83E9:
 
 LABEL_83F8:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call LABEL_8077
 	ret

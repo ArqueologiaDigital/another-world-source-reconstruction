@@ -20,7 +20,7 @@ LABEL_9625:
 LABEL_9647:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_828A
 	ret
 
@@ -33,7 +33,7 @@ LABEL_9659:
 	add [0x07], 0x0004
 	sub [0x08], 0x000D
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_8F50
 	sub [0x08], 0x000D
@@ -43,7 +43,7 @@ LABEL_9659:
 LABEL_9688:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_8F50
 	sub [0x08], 0x000D
@@ -56,7 +56,7 @@ LABEL_96A2:
 	video offset=CINEMATIC_138, x=[0x07], y=[0x08]
 	sub [0x08], 0x000D
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_8F50
 	sub [0x08], 0x000D

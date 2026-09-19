@@ -505,7 +505,7 @@ LABEL_8918:
 CAPSULE_BUDDY_PER_FRAME_TICK:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40CA, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STANCE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_109_110_111_VAR09
 	je [0x0D], 0x00, LABEL_8936
 	call CAPSULE_DRAW_CV246_AT_X07_Y08_L2
@@ -521,7 +521,7 @@ LABEL_8939:
 LABEL_893A:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40CA, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STANCE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_109_110_111_VAR09
 	je [0x0D], 0x00, LABEL_8957
 	call LABEL_829E
@@ -537,7 +537,7 @@ LABEL_895A:
 LABEL_895B:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40CA, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STANCE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_109_110_111_VAR09
 	je [0x0D], 0x00, LABEL_8978
 	call LABEL_82AA
@@ -630,7 +630,7 @@ LABEL_8A24:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call LABEL_8215
 	call LABEL_8CCE
-	video type=0, offset=CV_4132, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_796B
 	sub [BUDDY_Y], 0x000D
@@ -656,7 +656,7 @@ LABEL_8A6E:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call LABEL_8251
 	call LABEL_8CCE
-	video type=0, offset=CV_4132, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_796B
 	sub [BUDDY_Y], 0x000D
@@ -667,7 +667,7 @@ LABEL_8A8B:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call LABEL_8233
 	call LABEL_8CCE
-	video type=0, offset=CV_4132, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_796B
 	sub [BUDDY_Y], 0x000D
@@ -683,7 +683,7 @@ LABEL_8AA8:
 
 LABEL_8ABF:
 	call LABEL_8CCE
-	video type=0, offset=CV_4132, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L1
 	sub [BUDDY_Y], 0x000D
@@ -716,7 +716,7 @@ LABEL_8B11:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video type=0, offset=CV_4314, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_8CCE
-	video type=0, offset=CV_4132, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_796B
 	sub [BUDDY_Y], 0x000D
@@ -731,7 +731,7 @@ LABEL_8B30:
 	sub [BUDDY_X], 0x0004
 	sub [BUDDY_Y], 0x000D
 	call LABEL_8CCE
-	video type=0, offset=CV_4132, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L4
 	sub [BUDDY_Y], 0x000D
@@ -741,7 +741,7 @@ LABEL_8B30:
 LABEL_8B5F:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call LABEL_8CCE
-	video type=0, offset=CV_4132, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L4
 	sub [BUDDY_Y], 0x000D
@@ -754,7 +754,7 @@ LABEL_8B79:
 	video offset=CINEMATIC_250, x=[BUDDY_X], y=[BUDDY_Y]
 	sub [BUDDY_Y], 0x000D
 	call LABEL_8CCE
-	video type=0, offset=CV_4132, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L4
 	sub [BUDDY_Y], 0x000D
@@ -792,7 +792,7 @@ LABEL_8BF0:
 	call LABEL_8215
 	add [BUDDY_Y], 0x000D
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L10
 	ret
 
@@ -816,7 +816,7 @@ LABEL_8C0D:
 	call LABEL_8251
 	add [BUDDY_Y], 0x000D
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L10
 	ret
 
@@ -827,14 +827,14 @@ LABEL_8C53:
 	call LABEL_8233
 	add [BUDDY_Y], 0x000D
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L10
 	ret
 
 
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
 
@@ -842,7 +842,7 @@ LABEL_8C7F:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_CV_355
 	video type=0, offset=CV_40BE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
-	video type=0, offset=CV_3FD4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_FRONT_STANCE_NARROW, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
 
@@ -854,13 +854,13 @@ LABEL_8C93:
 
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_CV_355
-	video type=0, offset=CV_3FD4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_FRONT_STANCE_NARROW, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
 
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video type=0, offset=CV_3FA8, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
-	video type=0, offset=CV_3F8C, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_FRONT_STANCE_WIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call JUNK__8CDA
 	ret
 

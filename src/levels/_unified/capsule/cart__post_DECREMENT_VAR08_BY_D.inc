@@ -20,7 +20,7 @@ LABEL_8D73:
 LABEL_8D95:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call LABEL_8CC2
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_7898
 	ret
 
@@ -33,7 +33,7 @@ LABEL_8DA7:
 	add [BUDDY_X], 0x0004
 	sub [BUDDY_Y], 0x000D
 	call LABEL_8CC2
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_8602
 	sub [BUDDY_Y], 0x000D
@@ -43,7 +43,7 @@ LABEL_8DA7:
 LABEL_8DD6:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call LABEL_8CC2
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_8602
 	sub [BUDDY_Y], 0x000D
@@ -56,7 +56,7 @@ LABEL_8DF0:
 	video offset=CINEMATIC_263, x=[BUDDY_X], y=[BUDDY_Y]
 	sub [BUDDY_Y], 0x000D
 	call LABEL_8CC2
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_8602
 	sub [BUDDY_Y], 0x000D

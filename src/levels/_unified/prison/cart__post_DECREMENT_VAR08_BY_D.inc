@@ -20,7 +20,7 @@ LABEL_676C:
 LABEL_678E:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_SPRITE_164_167_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_53B7
 	ret
 
@@ -33,7 +33,7 @@ JUNK__67A0:
 	add [BUDDY_X], 0x0004
 	sub [BUDDY_Y], 0x000D
 	call DRAW_SPRITE_164_167_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_6064
 	sub [BUDDY_Y], 0x000D
@@ -43,7 +43,7 @@ JUNK__67A0:
 LABEL_67CF:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_SPRITE_164_167_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_6064
 	sub [BUDDY_Y], 0x000D
@@ -56,7 +56,7 @@ LABEL_67E9:
 	video offset=CINEMATIC_701, x=[BUDDY_X], y=[BUDDY_Y]
 	sub [BUDDY_Y], 0x000D
 	call DRAW_SPRITE_164_167_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_6064
 	sub [BUDDY_Y], 0x000D

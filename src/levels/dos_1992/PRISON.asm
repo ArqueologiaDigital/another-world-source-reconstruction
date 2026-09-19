@@ -863,7 +863,7 @@ CV_35F8		EQU 0x35F8
 CV_35D0		EQU 0x35D0
 CV_35B4		EQU 0x35B4
 CV_5E44		EQU 0x5E44
-CV_40CA		EQU 0x40CA
+CV_FIGURE_PROFILE_STANCE		EQU 0x40CA
 CV_1B14		EQU 0x1B14
 CV_5F94		EQU 0x5F94
 CV_39A2		EQU 0x39A2
@@ -899,7 +899,7 @@ CV_5BF8		EQU 0x5BF8
 CV_4650		EQU 0x4650
 CV_4C40		EQU 0x4C40
 CV_47DC		EQU 0x47DC
-CV_40EC		EQU 0x40EC
+CV_FIGURE_PROFILE_STRIDE		EQU 0x40EC
 CV_2B0E		EQU 0x2B0E
 CV_5FCC		EQU 0x5FCC
 CV_247C		EQU 0x247C
@@ -1020,10 +1020,10 @@ CV_31A8		EQU 0x31A8
 CV_309E		EQU 0x309E
 CV_31CA		EQU 0x31CA
 CV_30BA		EQU 0x30BA
-CV_4132		EQU 0x4132
+CV_FIGURE_CROUCH_FACING_RIGHT		EQU 0x4132
 CV_42BA		EQU 0x42BA
 CV_4314		EQU 0x4314
-CV_3E4E		EQU 0x3E4E
+CV_FIGURE_CROUCH_FACING_LEFT		EQU 0x3E4E
 CV_4324		EQU 0x4324
 CV_426C		EQU 0x426C
 CV_4346		EQU 0x4346
@@ -10000,7 +10000,7 @@ PRISON_BUDDY_PER_FRAME_TICK_CIN236_240_AI_5310:
 
 LABEL_56E1:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L4
 	ret
@@ -10010,7 +10010,7 @@ LABEL_56E1:
 ; on SCREEN_NUM == [0x10] (scene-id check), conditionally
 ; calls DRAW_CIN_338_THEN_339 (AI helper), then draws the buddy: calls
 ; DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E for the buddy sprite
-; family, draws CV_40EC (buddy overlay) at
+; family, draws CV_FIGURE_PROFILE_STRIDE (buddy overlay) at
 ; (BUDDY_X, BUDDY_Y), and runs DRAW_CIN_240_IF_VAR09_EQ_1
 ; for the conditional 240 frame. Mirrors
 ; CAPSULE_BUDDY_PER_FRAME_TICK in structure.
@@ -10021,7 +10021,7 @@ PRISON_BUDDY_PER_FRAME_TICK_CIN236_240:
 
 LABEL_56FF:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L7
 	ret
@@ -10034,7 +10034,7 @@ LABEL_570E:
 
 LABEL_571D:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L10
 	ret
@@ -10044,7 +10044,7 @@ LABEL_572C:
 	jne [SCREEN_NUM], [0x10], SCENE_DISPATCH_NOOP_RET
 	video offset=CINEMATIC_629, x=[BUDDY_X], y=[BUDDY_Y]
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L7
 	ret
@@ -11229,14 +11229,14 @@ PRISON_ACTOR_WALK_RIGHT_DRAW_PHASE_15_RET:
 
 ; The hero per-frame render+animation tick in PRISON. Same
 ; shape as the buddy tick but with the hero sprite family
-; (CIN_164-167), the hero overlay CV_40CA, and
+; (CIN_164-167), the hero overlay CV_FIGURE_PROFILE_STANCE, and
 ; DRAW_CIN_168_IF_VAR09_EQ_1 for the conditional 168 frame.
 ; Diverges from the buddy tick in calling LABEL_5C2C or
 ; LABEL_5F91 (depending on var0D) as the AI helper.
 PRISON_HERO_PER_FRAME_TICK_CIN164_168:
 	jne [SCREEN_NUM], [0x10], SCENE_DISPATCH_NOOP_RET
 	call DRAW_PRISON_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40CA, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STANCE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_168_IF_VAR09_EQ_1
 	je [0x0D], 0x00, LABEL_6289
 	call PRISON_BUDDY_DRAW_CIN_170_THEN_169_IF_BAR31_3
@@ -11253,7 +11253,7 @@ LABEL_628C:
 PRISON_HERO_PER_FRAME_TICK_CIN164_168_VARIANT:
 	jne [SCREEN_NUM], [0x10], SCENE_DISPATCH_NOOP_RET
 	call DRAW_PRISON_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40CA, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STANCE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_168_IF_VAR09_EQ_1
 	je [0x0D], 0x00, LABEL_62AA
 	call PRISON_INLINE_DRAW_CV_255_010_L2
@@ -11269,7 +11269,7 @@ LABEL_62AD:
 LABEL_62AE:
 	jne [SCREEN_NUM], [0x10], SCENE_DISPATCH_NOOP_RET
 	call DRAW_PRISON_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40CA, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STANCE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_168_IF_VAR09_EQ_1
 	je [0x0D], 0x00, LABEL_62CB
 	call LABEL_5C5B
@@ -11334,7 +11334,7 @@ LABEL_633B:
 	jne [SCREEN_NUM], [0x10], SCENE_DISPATCH_NOOP_RET
 	call LABEL_5BC6
 	call DRAW_SPRITE_236_239_Y_PLUS_D
-	video type=0, offset=CV_4132, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_5363
 	sub [BUDDY_Y], 0x000D
@@ -11360,7 +11360,7 @@ LABEL_6385:
 	jne [SCREEN_NUM], [0x10], SCENE_DISPATCH_NOOP_RET
 	call LABEL_5C02
 	call DRAW_SPRITE_236_239_Y_PLUS_D
-	video type=0, offset=CV_4132, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_5363
 	sub [BUDDY_Y], 0x000D
@@ -11371,7 +11371,7 @@ LABEL_63A2:
 	jne [SCREEN_NUM], [0x10], SCENE_DISPATCH_NOOP_RET
 	call LABEL_5BE4
 	call DRAW_SPRITE_236_239_Y_PLUS_D
-	video type=0, offset=CV_4132, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_5363
 	sub [BUDDY_Y], 0x000D
@@ -11387,7 +11387,7 @@ LABEL_63BF:
 
 LABEL_63D6:
 	call DRAW_SPRITE_236_239_Y_PLUS_D
-	video type=0, offset=CV_4132, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L1
 	sub [BUDDY_Y], 0x000D
@@ -11420,7 +11420,7 @@ LABEL_6428:
 	jne [SCREEN_NUM], [0x10], SCENE_DISPATCH_NOOP_RET
 	video type=0, offset=CV_4314, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_SPRITE_236_239_Y_PLUS_D
-	video type=0, offset=CV_4132, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_5363
 	sub [BUDDY_Y], 0x000D
@@ -11435,7 +11435,7 @@ LABEL_6447:
 	sub [BUDDY_X], 0x0004
 	sub [BUDDY_Y], 0x000D
 	call DRAW_SPRITE_236_239_Y_PLUS_D
-	video type=0, offset=CV_4132, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L4
 	sub [BUDDY_Y], 0x000D
@@ -11445,7 +11445,7 @@ LABEL_6447:
 LABEL_6476:
 	jne [SCREEN_NUM], [0x10], SCENE_DISPATCH_NOOP_RET
 	call DRAW_SPRITE_236_239_Y_PLUS_D
-	video type=0, offset=CV_4132, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L4
 	sub [BUDDY_Y], 0x000D
@@ -11458,7 +11458,7 @@ LABEL_6490:
 	video offset=CINEMATIC_388, x=[BUDDY_X], y=[BUDDY_Y]
 	sub [BUDDY_Y], 0x000D
 	call DRAW_SPRITE_236_239_Y_PLUS_D
-	video type=0, offset=CV_4132, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L4
 	sub [BUDDY_Y], 0x000D
@@ -11486,7 +11486,7 @@ LABEL_64E6:
 	call LABEL_5BC6
 	add [BUDDY_Y], 0x000D
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L10
 	ret
 
@@ -11510,7 +11510,7 @@ LABEL_6503:
 	call LABEL_5C02
 	add [BUDDY_Y], 0x000D
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L10
 	ret
 
@@ -11521,14 +11521,14 @@ PRISON_GUARD_FIRE_POSE_PHASE_2:
 	call LABEL_5BE4
 	add [BUDDY_Y], 0x000D
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L10
 	ret
 
 
 	jne [SCREEN_NUM], [0x10], SCENE_DISPATCH_NOOP_RET
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
 
@@ -11592,7 +11592,7 @@ DRAW_CIN_390:
 PRISON_BUDDY_DRAW_CIN164_167_PLUS_CV288_VAR_BUDDY:
 	jne [SCREEN_NUM], [0x10], SCENE_DISPATCH_NOOP_RET
 	call DRAW_SPRITE_164_167_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_5234
 	ret
 
@@ -11612,7 +11612,7 @@ LABEL_65EE:
 LABEL_6610:
 	jne [SCREEN_NUM], [0x10], SCENE_DISPATCH_NOOP_RET
 	call DRAW_SPRITE_164_167_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_5294
 	ret
 
@@ -11620,7 +11620,7 @@ LABEL_6610:
 LABEL_6622:
 	jne [SCREEN_NUM], [0x10], SCENE_DISPATCH_NOOP_RET
 	call DRAW_SPRITE_164_167_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_5262
 	ret
 
@@ -11628,7 +11628,7 @@ LABEL_6622:
 LABEL_6634:
 	jne [SCREEN_NUM], [0x10], SCENE_DISPATCH_NOOP_RET
 	call DRAW_SPRITE_164_167_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	je [0x0D], 0x00, LABEL_6652
 	call PRISON_INLINE_DRAW_CV_252_019_L2
@@ -11664,7 +11664,7 @@ LABEL_6669:
 LABEL_668B:
 	jne [SCREEN_NUM], [0x10], SCENE_DISPATCH_NOOP_RET
 	call DRAW_SPRITE_164_167_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_52B4
 	ret
 
@@ -11677,7 +11677,7 @@ JUNK__669D:
 	add [BUDDY_X], 0x0004
 	sub [BUDDY_Y], 0x000D
 	call DRAW_SPRITE_164_167_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_5F61
 	sub [BUDDY_Y], 0x000D
@@ -11687,7 +11687,7 @@ JUNK__669D:
 LABEL_66CC:
 	jne [SCREEN_NUM], [0x10], SCENE_DISPATCH_NOOP_RET
 	call DRAW_SPRITE_164_167_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_5F61
 	sub [BUDDY_Y], 0x000D
@@ -11700,7 +11700,7 @@ LABEL_66E6:
 	video offset=CINEMATIC_701, x=[BUDDY_X], y=[BUDDY_Y]
 	sub [BUDDY_Y], 0x000D
 	call DRAW_SPRITE_164_167_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_5F61
 	sub [BUDDY_Y], 0x000D

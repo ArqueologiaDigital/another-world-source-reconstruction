@@ -1,7 +1,7 @@
 LABEL_8CE6:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call LABEL_8CC2
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_7818
 	ret
 
@@ -21,7 +21,7 @@ LABEL_8CF8:
 LABEL_8D1A:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call LABEL_8CC2
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_7878
 	ret
 
@@ -29,7 +29,7 @@ LABEL_8D1A:
 LABEL_8D2C:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call LABEL_8CC2
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_7846
 	ret
 
@@ -37,7 +37,7 @@ LABEL_8D2C:
 BUDDY_RIGHT_FIRE_AIM_PHASE_1:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call LABEL_8CC2
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	je [0x0D], 0x00, LABEL_8D5C
 	call CAPSULE_DRAW_CV261_AT_X07_Y08_L2

@@ -84,7 +84,7 @@ LABEL_7CAD:
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L22
 
 ; The hero per-frame render+animation tick in CAPSULE. Calls
-; DRAW_HERO_SPRITE_BY_VAR09_0E, draws CV_40EC at
+; DRAW_HERO_SPRITE_BY_VAR09_0E, draws CV_FIGURE_PROFILE_STRIDE at
 ; (BUDDY_X, BUDDY_Y), and calls BUDDY_RIGHT_SUBFRAME_3_DISPATCH.
 ; The hero counterpart of CAPSULE_BUDDY_PER_FRAME_TICK.
 CAPSULE_HERO_PER_FRAME_TICK:
@@ -141,7 +141,7 @@ GUARDED_DRAW_CV_304_305:
 
 LABEL_7D34:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call BUDDY_RIGHT_SUBFRAME_3_DISPATCH
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L4
 	ret
@@ -154,7 +154,7 @@ LABEL_7D43:
 
 LABEL_7D52:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call BUDDY_RIGHT_SUBFRAME_3_DISPATCH
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L7
 	ret
@@ -167,7 +167,7 @@ LABEL_7D61:
 
 LABEL_7D70:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call BUDDY_RIGHT_SUBFRAME_3_DISPATCH
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L10
 	ret
@@ -176,7 +176,7 @@ LABEL_7D70:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_705, x=[BUDDY_X], y=[BUDDY_Y]
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call BUDDY_RIGHT_SUBFRAME_3_DISPATCH
 	call CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L7
 	ret
@@ -186,7 +186,7 @@ CAPSULE_HERO_RUN_LEFT_DRAW_8_GUN_LOWERED:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video type=0, offset=CV_2D66, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call BUDDY_RIGHT_SUBFRAME_3_DISPATCH
 	video offset=CINEMATIC_294, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
@@ -196,7 +196,7 @@ LABEL_7DB5:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video type=0, offset=CV_2D66, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call BUDDY_RIGHT_SUBFRAME_3_DISPATCH
 	video offset=CINEMATIC_295, x=[BUDDY_X], y=[BUDDY_Y]
 	ret

@@ -541,7 +541,7 @@ DRAW_HERO_POSE_0_0:
 CAVES_DRAW_CV_355_L0:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_DRAW_CV_355_L1
 	ret
 
@@ -561,7 +561,7 @@ CAVES_DRAW_CV_355_L2:
 CAVES_DRAW_CV_355_L4:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_DRAW_CV_355_L5
 	ret
 
@@ -569,7 +569,7 @@ CAVES_DRAW_CV_355_L4:
 CAVES_DRAW_CV_355_L6:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_DRAW_CV_355_L3
 	ret
 
@@ -577,7 +577,7 @@ CAVES_DRAW_CV_355_L6:
 CAVES_DRAW_CV_355_L7:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	je [0x0D], 0x00, CAVES_DRAW_CV_355_L8
 	call CAVES_DRAW_CV_355_L9

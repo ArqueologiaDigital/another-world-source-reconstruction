@@ -65,7 +65,7 @@ GUARDED_BEAST_OR_CV_304_305:
 
 BEAST_FULL_ANIM_FRAME:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call DRAW_BEAST_HEAD_CV165_166
 	ret
@@ -78,7 +78,7 @@ LABEL_86A0:
 
 BEAST_ANIM_HEAD_CV211:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call DRAW_BEAST_HEAD_CV211_212
 	ret
@@ -91,7 +91,7 @@ LABEL_86BE:
 
 BEAST_ANIM_HEAD_CV214:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call DRAW_BEAST_HEAD_CV214_215
 	ret
@@ -100,7 +100,7 @@ BEAST_ANIM_HEAD_CV214:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_883, x=[0x07], y=[0x08]
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call DRAW_BEAST_HEAD_CV211_212
 	ret

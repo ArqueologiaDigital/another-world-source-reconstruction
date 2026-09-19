@@ -20,7 +20,7 @@ LABEL_73B3:
 LABEL_73D5:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call CAPSULE_DRAW_ALIEN_AT_BUDDY_Y_PLUS_14
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_5FC4
 	ret
 
@@ -33,7 +33,7 @@ BUDDY_RIGHT_FIRE_AIM_PHASE_1:
 	add [BUDDY_X], 0x0004
 	sub [BUDDY_Y], 0x000D
 	call CAPSULE_DRAW_ALIEN_AT_BUDDY_Y_PLUS_14
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_6C8A
 	sub [BUDDY_Y], 0x000D
@@ -43,7 +43,7 @@ BUDDY_RIGHT_FIRE_AIM_PHASE_1:
 LABEL_7416:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call CAPSULE_DRAW_ALIEN_AT_BUDDY_Y_PLUS_14
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_6C8A
 	sub [BUDDY_Y], 0x000D
@@ -56,7 +56,7 @@ BUDDY_RIGHT_FIRE_RECOVER_PHASE_4:
 	video offset=CINEMATIC_273, x=[BUDDY_X], y=[BUDDY_Y]
 	sub [BUDDY_Y], 0x000D
 	call CAPSULE_DRAW_ALIEN_AT_BUDDY_Y_PLUS_14
-	video type=0, offset=CV_3E4E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_Y], 0x000D
 	call LABEL_6C8A
 	sub [BUDDY_Y], 0x000D

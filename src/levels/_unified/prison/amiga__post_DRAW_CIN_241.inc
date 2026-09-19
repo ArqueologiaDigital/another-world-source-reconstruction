@@ -359,7 +359,7 @@ GUARDED_DRAW_CIN_242_243:
 
 LABEL_5634:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_52E2
 	ret
@@ -372,7 +372,7 @@ GUARDED_DRAW_CIN_338_339:
 
 LABEL_5652:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_52FC
 	ret
@@ -385,7 +385,7 @@ LABEL_5661:
 
 LABEL_5670:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_5312
 	ret
@@ -395,7 +395,7 @@ LABEL_567F:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_629, x=[BUDDY_X], y=[BUDDY_Y]
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call LABEL_52FC
 	ret

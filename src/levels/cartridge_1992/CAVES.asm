@@ -1046,7 +1046,7 @@ CV_35F8		EQU 0x35F8
 CV_35D0		EQU 0x35D0
 CV_35B4		EQU 0x35B4
 CV_5E44		EQU 0x5E44
-CV_40CA		EQU 0x40CA
+CV_FIGURE_PROFILE_STANCE		EQU 0x40CA
 CV_1B14		EQU 0x1B14
 CV_5F94		EQU 0x5F94
 CV_39A2		EQU 0x39A2
@@ -1082,7 +1082,7 @@ CV_5BF8		EQU 0x5BF8
 CV_4650		EQU 0x4650
 CV_4C40		EQU 0x4C40
 CV_47DC		EQU 0x47DC
-CV_40EC		EQU 0x40EC
+CV_FIGURE_PROFILE_STRIDE		EQU 0x40EC
 CV_2B0E		EQU 0x2B0E
 CV_5FCC		EQU 0x5FCC
 CV_247C		EQU 0x247C
@@ -1203,10 +1203,10 @@ CV_31A8		EQU 0x31A8
 CV_309E		EQU 0x309E
 CV_31CA		EQU 0x31CA
 CV_30BA		EQU 0x30BA
-CV_4132		EQU 0x4132
+CV_FIGURE_CROUCH_FACING_RIGHT		EQU 0x4132
 CV_42BA		EQU 0x42BA
 CV_4314		EQU 0x4314
-CV_3E4E		EQU 0x3E4E
+CV_FIGURE_CROUCH_FACING_LEFT		EQU 0x3E4E
 CV_4324		EQU 0x4324
 CV_426C		EQU 0x426C
 CV_4346		EQU 0x4346
@@ -1272,9 +1272,9 @@ CV_3858		EQU 0x3858
 CV_15DC		EQU 0x15DC
 CV_09F6		EQU 0x09F6
 CV_3FA8		EQU 0x3FA8
-CV_3F8C		EQU 0x3F8C
+CV_FIGURE_FRONT_STANCE_WIDE		EQU 0x3F8C
 CV_3FB8		EQU 0x3FB8
-CV_3FD4		EQU 0x3FD4
+CV_FIGURE_FRONT_STANCE_NARROW		EQU 0x3FD4
 CV_40BE		EQU 0x40BE
 
 
@@ -14444,7 +14444,7 @@ CAVES_BEAST_PER_FRAME_TICK:
 
 BEAST_FULL_ANIM_FRAME:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_CIN_054_055_056_VAR09
 	call LABEL_830E
 	ret
@@ -14457,7 +14457,7 @@ LABEL_86A0:
 
 LABEL_86AF:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_CIN_054_055_056_VAR09
 	call LABEL_832F
 	ret
@@ -14470,7 +14470,7 @@ LABEL_86BE:
 
 LABEL_86CD:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_CIN_054_055_056_VAR09
 	call LABEL_834C
 	ret
@@ -14479,7 +14479,7 @@ LABEL_86CD:
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	video offset=CINEMATIC_883, x=[0x07], y=[0x08]
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_CIN_054_055_056_VAR09
 	call LABEL_832F
 	ret
@@ -15640,7 +15640,7 @@ CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_16_RET:
 CAVES_HERO_PER_FRAME_TICK:
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40CA, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STANCE, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_91EF
 	call CAVES_DRAW_CV246_AT_X07_Y08_L2
@@ -15656,7 +15656,7 @@ CAVES_HERO_PER_FRAME_TICK_RET:
 CAVES_ACTOR_TURN_TO_FACE_RIGHT_DRAW_PHASE_3:
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40CA, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STANCE, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_9210
 	call CAVES_INLINE_DRAW_CV_255_031_L2
@@ -15672,7 +15672,7 @@ CAVES_ACTOR_TURN_TO_FACE_RIGHT_DRAW_PHASE_3_RET:
 CAVES_ACTOR_TURN_TO_FACE_LEFT_DRAW_PHASE_1:
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40CA, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STANCE, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_CIN_028_029_030_VAR09
 	je [0x0D], 0x00, LABEL_9231
 	call LABEL_8B87
@@ -15701,7 +15701,7 @@ LABEL_924D:
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	call LABEL_8AF2
 	call DRAW_BEAST_Y_PLUS_D
-	video type=0, offset=CV_4132, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_82D4
 	sub [0x08], 0x000D
@@ -15727,7 +15727,7 @@ LABEL_9297:
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	call LABEL_8B2E
 	call DRAW_BEAST_Y_PLUS_D
-	video type=0, offset=CV_4132, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_82D4
 	sub [0x08], 0x000D
@@ -15738,7 +15738,7 @@ LABEL_92B4:
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	call LABEL_8B10
 	call DRAW_BEAST_Y_PLUS_D
-	video type=0, offset=CV_4132, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_82D4
 	sub [0x08], 0x000D
@@ -15754,7 +15754,7 @@ LABEL_92D1:
 
 LABEL_92E8:
 	call DRAW_BEAST_Y_PLUS_D
-	video type=0, offset=CV_4132, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call CAVES_DRAW_CV204_AT_X07_Y08_L1
 	sub [0x08], 0x000D
@@ -15787,7 +15787,7 @@ LABEL_933A:
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	video type=0, offset=CV_4314, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_Y_PLUS_D
-	video type=0, offset=CV_4132, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_82D4
 	sub [0x08], 0x000D
@@ -15802,7 +15802,7 @@ LABEL_9359:
 	sub [0x07], 0x0004
 	sub [0x08], 0x000D
 	call DRAW_BEAST_Y_PLUS_D
-	video type=0, offset=CV_4132, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_830E
 	sub [0x08], 0x000D
@@ -15812,7 +15812,7 @@ LABEL_9359:
 LABEL_9388:
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	call DRAW_BEAST_Y_PLUS_D
-	video type=0, offset=CV_4132, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_830E
 	sub [0x08], 0x000D
@@ -15825,7 +15825,7 @@ LABEL_93A2:
 	video offset=CINEMATIC_075, x=[0x07], y=[0x08]
 	sub [0x08], 0x000D
 	call DRAW_BEAST_Y_PLUS_D
-	video type=0, offset=CV_4132, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_RIGHT, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_830E
 	sub [0x08], 0x000D
@@ -15864,7 +15864,7 @@ LABEL_9419:
 	call LABEL_8AF2
 	add [0x08], 0x000D
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_834C
 	ret
 
@@ -15888,7 +15888,7 @@ LABEL_9436:
 	call LABEL_8B2E
 	add [0x08], 0x000D
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_834C
 	ret
 
@@ -15899,14 +15899,14 @@ LABEL_947C:
 	call LABEL_8B10
 	add [0x08], 0x000D
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_834C
 	ret
 
 
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_40EC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 
@@ -15914,7 +15914,7 @@ JUNK__94A8:
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	call DRAW_CV_298
 	video type=0, offset=CV_40BE, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=CV_3FD4, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_FRONT_STANCE_NARROW, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 
@@ -15926,13 +15926,13 @@ LABEL_94BC:
 
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	call DRAW_CV_298
-	video type=0, offset=CV_3FD4, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_FRONT_STANCE_NARROW, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	video type=0, offset=CV_3FA8, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=CV_3F8C, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_FRONT_STANCE_WIDE, x=[0x07], y=[0x08], zoom=0x40
 	call JUNK__9503
 	ret
 
@@ -15964,7 +15964,7 @@ DRAW_CV_298:
 CAVES_DRAW_CV_355_L0:
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_DRAW_CV_355_L1
 	ret
 
@@ -15984,7 +15984,7 @@ CAVES_DRAW_CV_355_L2:
 CAVES_DRAW_CV_355_L4:
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_DRAW_CV_355_L5
 	ret
 
@@ -15992,7 +15992,7 @@ CAVES_DRAW_CV_355_L4:
 CAVES_DRAW_CV_355_L6:
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_DRAW_CV_355_L3
 	ret
 
@@ -16000,7 +16000,7 @@ CAVES_DRAW_CV_355_L6:
 CAVES_DRAW_CV_355_L7:
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	je [0x0D], 0x00, CAVES_DRAW_CV_355_L8
 	call CAVES_DRAW_CV_355_L9
@@ -16036,7 +16036,7 @@ LABEL_959C:
 LABEL_95BE:
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_8201
 	ret
 
@@ -16049,7 +16049,7 @@ LABEL_95D0:
 	add [0x07], 0x0004
 	sub [0x08], 0x000D
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_8EC7
 	sub [0x08], 0x000D
@@ -16059,7 +16059,7 @@ LABEL_95D0:
 LABEL_95FF:
 	jne [SCREEN_NUM], [0x10], CAVES_NOOP_RET
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_8EC7
 	sub [0x08], 0x000D
@@ -16072,7 +16072,7 @@ LABEL_9619:
 	video offset=CINEMATIC_138, x=[0x07], y=[0x08]
 	sub [0x08], 0x000D
 	call DRAW_HERO_Y_PLUS_E
-	video type=0, offset=CV_3E4E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_CROUCH_FACING_LEFT, x=[0x07], y=[0x08], zoom=0x40
 	add [0x08], 0x000D
 	call LABEL_8EC7
 	sub [0x08], 0x000D
