@@ -129,10 +129,83 @@ RE_EQU = re.compile(r"^(CINEMATIC_\w+)\s+EQU\s+(0x[0-9A-Fa-f]+)", re.M)
 RE_NUM = re.compile(r"^CINEMATIC_\d+$")
 
 
+def duplicates(roms: dict, want) -> int:
+    """Identical art under two different semantic names -- one per port.
+
+    The gap this closes cost 68 constants on 2026-09-20. Naming msdos/INTRO
+    from its drawing routines produced `INTRO_LIGHTNING_FLICKER_LONG` for art
+    amiga already called `EXPERIMENT_DISCHARGE_BOLT`, `TELEPORT_SHATTER_FLASH`
+    for `TELEPORT_SHATTER`, and nine more families besides.
+
+    Neither existing probe could see it. The cross-port audit compares what a
+    SHARED NAME draws, and these names are not shared. The transfer above
+    skips a destination that already carries a name, which after the naming
+    pass it did. So "one picture, two names" fell exactly between them.
+
+    A conflict is reported only where each port has exactly ONE semantic name
+    for that md5, because two names within a single port is a different
+    problem (#0118) and not this one.
+    """
+    tot = collections.Counter()
+    rows: list[tuple] = []
+    for si, stage in STAGES.items():
+        if want and stage not in want:
+            continue
+        tab = {}
+        for port, br in PORTS.items():
+            f = ROOT / "src" / "levels" / br / f"{stage}.asm"
+            if not f.is_file():
+                tab = {}
+                break
+            tab[port] = {m.group(1): int(m.group(2), 16)
+                         for m in RE_EQU.finditer(f.read_text(errors="replace"))}
+        if len(tab) < 2:
+            continue
+        by = {}
+        for port in PORTS:
+            slab = roms[port][si * SLAB:(si + 1) * SLAB]
+            by[port] = collections.defaultdict(list)
+            for n, o in tab[port].items():
+                t = parse_polygon_tree(slab, o)
+                if t:
+                    by[port][canonical_md5(t)].append(n)
+        for h, an in by["amiga"].items():
+            mn = by["msdos"].get(h)
+            if not mn:
+                continue
+            a = [x for x in an if not RE_NUM.match(x)]
+            m = [x for x in mn if not RE_NUM.match(x)]
+            if len(a) != 1 or len(m) != 1:
+                continue
+            if a[0] == m[0]:
+                tot["identical art, one name (good)"] += 1
+            else:
+                tot["identical art, TWO names"] += 1
+                rows.append((stage, a[0], m[0]))
+    for k, v in tot.items():
+        print(f"{v:6d}  {k}")
+    if rows:
+        fam = collections.Counter(
+            (s, re.sub(r"_F?\d+$", "", a), re.sub(r"_F?\d+$", "", m))
+            for s, a, m in rows)
+        print("\ngrouped by family:")
+        for (s, a, m), n in fam.most_common():
+            print(f"  {s:<9} {n:3d}x  amiga {a:<40} msdos {m}")
+        print("\nOne picture must not carry two names. Adopt whichever was "
+              "earned first and\nrename the other with "
+              "apply_branch_scoped_names.py.")
+        return 1
+    print("\nEvery picture named in both ports carries one name.")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--proposals", type=Path,
                     help="stem; one table per (port, stage) is written")
+    ap.add_argument("--duplicates", action="store_true",
+                    help="the mirror check: identical art carrying TWO "
+                         "different semantic names, one per port")
     ap.add_argument("--stage", action="append")
     args = ap.parse_args()
     want = set(args.stage) if args.stage else None
@@ -144,6 +217,9 @@ def main() -> int:
             print("run `make extract` first", file=sys.stderr)
             return 2
         roms[p] = f.read_bytes()
+
+    if args.duplicates:
+        return duplicates(roms, want)
 
     skipped = collections.Counter()
     out: dict[tuple[str, str], list[tuple[str, str, str]]] = \
