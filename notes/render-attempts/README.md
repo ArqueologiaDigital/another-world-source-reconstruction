@@ -50,6 +50,40 @@ CAVES 301..309 sat in the unresolved table as "horizontal blue and grey
 bands" because a nine-pixel speck blown up to 210px tall looks like a band.
 The extents said 0x1 and 1x11, and the animation read immediately.
 
+## Why the rest stall, measured
+
+Both runs that resolved had a **named routine in their own setup block**:
+`CAVES_LANDING_SPLASH` was installed beside `CAVES_HERO_FALL_LANDING_AND_
+SCENE_RESET`, and `CAVES_WATERFALL_DRIP` beside
+`CAVES_WATERFALL_BACKDROP_HOLD_LOOP`. In both cases the neighbour said what
+the scene was and the art only had to agree.
+
+Counted over the ten largest exclusive unnamed runs left in the big three,
+actor-slot runs excluded:
+
+    10  runs
+     2  have any semantically-named routine in the same setup block
+
+and the two are runs already understood for other reasons. **Eight have no
+named peer at all** — `LABEL_070A` and `LABEL_0636` have zero peers,
+`LABEL_116D` has ten peers and not one of them named.
+
+That is the shape of the remaining polygon work, and it is not a rendering
+problem. These runs sit in scenes where nothing is named, so there is
+nothing for the art to agree with. Rendering them produces a legible
+picture and no name, which is what the table above records eight times
+over. The lever that would move them is naming the **scenes** — the setup
+blocks and the routines they install — after which the art has an anchor.
+
+Measured extents for four of them, so the next pass need not:
+
+| run | shape |
+|---|---|
+| amiga/CAPSULE 16..23 (`LABEL_116D`) | 8 frames, 56..76 x 68, 8 to 12 leaves, one colour set {0,5,6,9,12}, fixed y 64..132 — one figure-sized object, width shrinking then jumping back |
+| amiga/CAPSULE 358..365 (`LABEL_070A`) | 8 frames, 16..29 x 18..21, 2 leaves, {6,9}, fixed low y — a symmetric width cycle 29,27,22,18,16,18,22,27 |
+| amiga/CAPSULE 386..393 (`LABEL_0636`) | NOT one family: 386 is 86x9 {0,10}, 387 is 45x22 {0,13}, and 388..393 are 28..52 x 159 with 3 leaves {1,3,9}, widening |
+| amiga/PRISON 119..126 (`LABEL_0E68`) | 8 frames, 4x2 to 18x3, 1 or 2 leaves, colours 8 and 16 |
+
 ## The standing lesson
 
 Most of the runs above rendered *legibly* and still could not be named.
