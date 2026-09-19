@@ -40,19 +40,19 @@ DRAW_CITY_SEQ_432_433:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_CITY_WINDOW_LIGHTS_LEFT_F0, x=160, y=100
 .else
-	video offset=CINEMATIC_432, x=160, y=100
+	video offset=CINEMATIC_CITY_WINDOW_LIGHTS_LEFT_F0, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_PARTICLE_LAB_DATA_COLUMN_LEFT_F1, x=160, y=100
 .else
-	video offset=CINEMATIC_433, x=160, y=100
+	video offset=CINEMATIC_PARTICLE_LAB_DATA_COLUMN_LEFT_F1, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_PARTICLE_LAB_DATA_COLUMN_LEFT_F2, x=160, y=100
 .else
-	video offset=CINEMATIC_434, x=160, y=100
+	video offset=CINEMATIC_PARTICLE_LAB_DATA_COLUMN_LEFT_F2, x=160, y=100
 .endif
 	break
 	jmp DRAW_CITY_SEQ_432_433
@@ -71,19 +71,19 @@ DRAW_CITY_SEQ_439_440:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_CITY_WINDOW_LIGHTS_RIGHT_F0, x=160, y=100
 .else
-	video offset=CINEMATIC_439, x=160, y=100
+	video offset=CINEMATIC_CITY_WINDOW_LIGHTS_RIGHT_F0, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_CITY_WINDOW_LIGHTS_RIGHT_F1, x=160, y=100
 .else
-	video offset=CINEMATIC_440, x=160, y=100
+	video offset=CINEMATIC_CITY_WINDOW_LIGHTS_RIGHT_F1, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_CITY_WINDOW_LIGHTS_RIGHT_F2, x=160, y=100
 .else
-	video offset=CINEMATIC_441, x=160, y=100
+	video offset=CINEMATIC_CITY_WINDOW_LIGHTS_RIGHT_F2, x=160, y=100
 .endif
 	break
 	jmp DRAW_CITY_SEQ_439_440
@@ -102,25 +102,25 @@ DRAW_CITY_SEQ_435_436:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_CITY_WINDOW_LIGHTS_RIGHT_F3, x=160, y=100
 .else
-	video offset=CINEMATIC_435, x=160, y=100
+	video offset=CINEMATIC_CITY_WINDOW_LIGHTS_RIGHT_F3, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_CITY_WINDOW_LIGHTS_RIGHT_F4, x=160, y=100
 .else
-	video offset=CINEMATIC_436, x=160, y=100
+	video offset=CINEMATIC_CITY_WINDOW_LIGHTS_RIGHT_F4, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_CITY_WINDOW_LIGHTS_RIGHT_F5, x=160, y=100
 .else
-	video offset=CINEMATIC_437, x=160, y=100
+	video offset=CINEMATIC_CITY_WINDOW_LIGHTS_RIGHT_F5, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_CITY_WINDOW_LIGHTS_RIGHT_F6, x=160, y=100
 .else
-	video offset=CINEMATIC_438, x=160, y=100
+	video offset=CINEMATIC_CITY_WINDOW_LIGHTS_RIGHT_F6, x=160, y=100
 .endif
 	break
 	jmp DRAW_CITY_SEQ_435_436
@@ -326,7 +326,7 @@ DELAY_14_BEFORE_BLITTER_SETUP:
 	video offset=CINEMATIC_HOLO_ACCELERATOR_LOOP_DIAGRAM_LABEL, x=234, y=163
 .else
 	video offset=CINEMATIC_HOLO_ACCELERATOR_LOOP_DIAGRAM, x=162, y=100
-	video offset=CINEMATIC_192, x=234, y=163
+	video offset=CINEMATIC_HOLO_ACCELERATOR_LOOP_DIAGRAM_LABEL, x=234, y=163
 .endif
 	selectVideoPage 0xFF
 	copyVideoPage src=0x03, dst=0x00

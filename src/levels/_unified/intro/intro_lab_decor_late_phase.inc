@@ -9,31 +9,31 @@ DRAW_INTRO_DECOR_318:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_SPARK_LONG_F1, x=176, y=157
 .else
-	video offset=CINEMATIC_319, x=176, y=157
+	video offset=CINEMATIC_EXPERIMENT_SPARK_LONG_F1, x=176, y=157
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_SPARK_LONG_F2, x=175, y=159
 .else
-	video offset=CINEMATIC_320, x=175, y=159
+	video offset=CINEMATIC_EXPERIMENT_SPARK_LONG_F2, x=175, y=159
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_SPARK_LONG_F3, x=175, y=156
 .else
-	video offset=CINEMATIC_321, x=175, y=156
+	video offset=CINEMATIC_EXPERIMENT_SPARK_LONG_F3, x=175, y=156
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_SPARK_LONG_F2, x=176, y=159
 .else
-	video offset=CINEMATIC_320, x=176, y=159
+	video offset=CINEMATIC_EXPERIMENT_SPARK_LONG_F2, x=176, y=159
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_SPARK_LONG_F1, x=175, y=157
 .else
-	video offset=CINEMATIC_319, x=175, y=157
+	video offset=CINEMATIC_EXPERIMENT_SPARK_LONG_F1, x=175, y=157
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
@@ -49,25 +49,25 @@ EXPERIMENT_SPARK_CYCLE_CURVED_BURST:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_SPARK_CURVED_F0, x=149, y=158
 .else
-	video offset=CINEMATIC_322, x=149, y=158
+	video offset=CINEMATIC_EXPERIMENT_SPARK_CURVED_F0, x=149, y=158
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_SPARK_CURVED_F1, x=150, y=159
 .else
-	video offset=CINEMATIC_323, x=150, y=159
+	video offset=CINEMATIC_EXPERIMENT_SPARK_CURVED_F1, x=150, y=159
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_SPARK_CURVED_F2, x=150, y=160
 .else
-	video offset=CINEMATIC_324, x=150, y=160
+	video offset=CINEMATIC_EXPERIMENT_SPARK_CURVED_F2, x=150, y=160
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_SPARK_CURVED_F1, x=151, y=160
 .else
-	video offset=CINEMATIC_323, x=151, y=160
+	video offset=CINEMATIC_EXPERIMENT_SPARK_CURVED_F1, x=151, y=160
 .endif
 	mov [0x0E], 0x0005
 
@@ -120,55 +120,55 @@ EXPERIMENT_LIGHTNING_STRIKE_BURST:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F0, x=198, y=136
 .else
-	video offset=CINEMATIC_309, x=198, y=136
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F0, x=198, y=136
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F1, x=198, y=136
 .else
-	video offset=CINEMATIC_310, x=198, y=136
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F1, x=198, y=136
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F2, x=198, y=135
 .else
-	video offset=CINEMATIC_311, x=198, y=135
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F2, x=198, y=135
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F3, x=199, y=138
 .else
-	video offset=CINEMATIC_312, x=199, y=138
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F3, x=199, y=138
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F4, x=197, y=139
 .else
-	video offset=CINEMATIC_313, x=197, y=139
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F4, x=197, y=139
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F5, x=205, y=144
 .else
-	video offset=CINEMATIC_314, x=205, y=144
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F5, x=205, y=144
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F6, x=249, y=149
 .else
-	video offset=CINEMATIC_315, x=249, y=149
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F6, x=249, y=149
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F7, x=252, y=150
 .else
-	video offset=CINEMATIC_316, x=252, y=150
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F7, x=252, y=150
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F8, x=254, y=145
 .else
-	video offset=CINEMATIC_317, x=254, y=145
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_STRIKE_F8, x=254, y=145
 .endif
 	killChannel
 
@@ -238,44 +238,44 @@ DRAW_INTRO_LIGHTNING_FLICKER_CENTER:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_CENTER_F0, x=194, y=29
 .else
-	video offset=CINEMATIC_301, x=194, y=29
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_CENTER_F0, x=194, y=29
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_CENTER_F1, x=196, y=29
 .else
-	video offset=CINEMATIC_302, x=196, y=29
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_CENTER_F1, x=196, y=29
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_CENTER_F2, x=197, y=29
 .else
-	video offset=CINEMATIC_303, x=197, y=29
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_CENTER_F2, x=197, y=29
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_CENTER_F3, x=197, y=29
 .else
-	video offset=CINEMATIC_304, x=197, y=29
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_CENTER_F3, x=197, y=29
 .endif
 	play id=0x000E, freq=0x1B, vol=0x0F, channel=0x00
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_CENTER_F2, x=197, y=29
 .else
-	video offset=CINEMATIC_303, x=197, y=29
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_CENTER_F2, x=197, y=29
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_CENTER_F1, x=196, y=29
 .else
-	video offset=CINEMATIC_302, x=196, y=29
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_CENTER_F1, x=196, y=29
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_CENTER_F0, x=194, y=29
 .else
-	video offset=CINEMATIC_301, x=194, y=29
+	video offset=CINEMATIC_EXPERIMENT_LIGHTNING_FLICKER_CENTER_F0, x=194, y=29
 .endif
 	mov [0x10], 0x0019
 
@@ -365,8 +365,8 @@ INTRO_COMPOSE_PAGE3_THEN_RECEDE_DOWN_ACCELERATOR_TUNNEL:
 	video offset=CINEMATIC_ACCELERATOR_TUNNEL_WALL_DETAIL, x=160, y=100
 .else
 	video offset=CINEMATIC_ACCELERATOR_TUNNEL_VIEW_NEAR, x=160, y=100
-	video offset=CINEMATIC_250, x=160, y=100
-	video offset=CINEMATIC_251, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_FLOOR_DETAIL, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_WALL_DETAIL, x=160, y=100
 .endif
 	copyVideoPage src=0xFF, dst=0x00
 	setPalette 0x16

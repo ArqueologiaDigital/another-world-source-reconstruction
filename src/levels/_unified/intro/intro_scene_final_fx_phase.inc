@@ -156,7 +156,7 @@ DELAY_28F_BEFORE_BLITTER_SETUP:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_ENTRANCE_DOOR_CLOSED, x=160, y=100
 .else
-	video offset=CINEMATIC_102, x=160, y=100
+	video offset=CINEMATIC_ENTRANCE_DOOR_CLOSED, x=160, y=100
 .endif
 	selectVideoPage 0xFF
 	play id=0x000D, freq=0x0C, vol=0x3F, channel=0x03
@@ -195,17 +195,17 @@ DRAW_CARPARK_ENTRANCE_COMPOSITE:
 	video offset=CINEMATIC_ENTRANCE_WALL_AND_FLOOR_DEBRIS, x=160, y=100
 	video offset=CINEMATIC_ENTRANCE_DOOR_CLOSED, x=160, y=100
 .else
-	video offset=CINEMATIC_103, x=192, y=100
+	video offset=CINEMATIC_ENTRANCE_WALL_PANEL, x=192, y=100
 	video offset=CINEMATIC_053, x=14, y=80
-	video offset=CINEMATIC_104, x=189, y=68
-	video offset=CINEMATIC_105, x=64, y=70
-	video offset=CINEMATIC_106, x=244, y=56
-	video offset=CINEMATIC_107, x=246, y=56
-	video offset=CINEMATIC_108, x=247, y=50
+	video offset=CINEMATIC_CARPARK_WALL_FACE, x=189, y=68
+	video offset=CINEMATIC_CARPARK_WALL_DOORWAY_RECESS, x=64, y=70
+	video offset=CINEMATIC_CARPARK_PILLAR_OUTER_SHADE, x=244, y=56
+	video offset=CINEMATIC_CARPARK_PILLAR_MID_SHADE, x=246, y=56
+	video offset=CINEMATIC_CARPARK_PILLAR_LIT_FACE, x=247, y=50
 	video offset=CINEMATIC_109, x=117, y=86
 	video offset=CINEMATIC_110, x=61, y=69
-	video offset=CINEMATIC_111, x=160, y=100
-	video offset=CINEMATIC_102, x=160, y=100
+	video offset=CINEMATIC_ENTRANCE_WALL_AND_FLOOR_DEBRIS, x=160, y=100
+	video offset=CINEMATIC_ENTRANCE_DOOR_CLOSED, x=160, y=100
 .endif
 .if BRANCH != "chahi_amiga_1991"
 	selectVideoPage 0xFF

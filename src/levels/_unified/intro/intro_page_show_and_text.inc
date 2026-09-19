@@ -17,21 +17,21 @@ CINEMATIC_518		EQU 0x431E
 CINEMATIC_LESTER_IN_BIOMETRIC_SCANNER		EQU 0x4982
 CINEMATIC_LAB_AUTH_CRT_SHOWING_BIOMETRICS		EQU 0x4ABA
 .else
-CINEMATIC_382		EQU 0xE75C
-CINEMATIC_383		EQU 0xE770
-CINEMATIC_384		EQU 0xE8A0
-CINEMATIC_419		EQU 0xE8E6
-CINEMATIC_420		EQU 0xE8C2
-CINEMATIC_421		EQU 0xE604
-CINEMATIC_422		EQU 0xE66C
-CINEMATIC_423		EQU 0xE6C4
-CINEMATIC_424		EQU 0xE720
-CINEMATIC_425		EQU 0xE6E4
-CINEMATIC_426		EQU 0xE3BA
-CINEMATIC_427		EQU 0xE448
-CINEMATIC_428		EQU 0xE4B8
+CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT		EQU 0xE75C
+CINEMATIC_HOLO_ACCELERATOR_SHIELD_TARGET		EQU 0xE770
+CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH		EQU 0xE8A0
+CINEMATIC_LESTER_HEAD_SIDEWAYS_AMIGA_EXTRA		EQU 0xE8E6
+CINEMATIC_HOLO_SCREEN_PANEL_FRAME_F1		EQU 0xE8C2
+CINEMATIC_HOLO_SCREEN_PANEL_FRAME_F2		EQU 0xE604
+CINEMATIC_HOLO_SCREEN_PANEL_ROW_LABEL		EQU 0xE66C
+CINEMATIC_HOLO_SCREEN_PANEL_ROW_TAG_UPPER		EQU 0xE6C4
+CINEMATIC_HOLO_SCREEN_PANEL_ROW_MARKER		EQU 0xE720
+CINEMATIC_HOLO_SCREEN_PANEL_ROW_TAG_LOWER		EQU 0xE6E4
+CINEMATIC_HOLO_SCREEN_DATA_COLUMN_F0		EQU 0xE3BA
+CINEMATIC_HOLO_SCREEN_DATA_COLUMN_F1		EQU 0xE448
+CINEMATIC_HOLO_SCREEN_DATA_COLUMN_F2		EQU 0xE4B8
 CINEMATIC_517		EQU 0xAF34
-CINEMATIC_518		EQU 0xB000
+CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F3_AMIGA_EXTRA		EQU 0xB000
 CINEMATIC_LESTER_IN_BIOMETRIC_SCANNER		EQU 0x48F4
 CINEMATIC_LAB_AUTH_CRT_SHOWING_BIOMETRICS		EQU 0x4A2C
 .endif
@@ -170,13 +170,13 @@ DRAW_CITY_SEQ_419_420:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_LESTER_HEAD_SIDEWAYS_AMIGA_EXTRA, x=160, y=100
 .else
-	video offset=CINEMATIC_419, x=160, y=100
+	video offset=CINEMATIC_LESTER_HEAD_SIDEWAYS_AMIGA_EXTRA, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_SCREEN_PANEL_FRAME_F1, x=160, y=100
 .else
-	video offset=CINEMATIC_420, x=160, y=100
+	video offset=CINEMATIC_HOLO_SCREEN_PANEL_FRAME_F1, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
@@ -185,10 +185,10 @@ DRAW_CITY_SEQ_419_420:
 	video offset=CINEMATIC_HOLO_SCREEN_PANEL_ROW_TAG_UPPER, x=21, y=8
 	video offset=CINEMATIC_HOLO_SCREEN_PANEL_ROW_MARKER, x=104, y=92
 .else
-	video offset=CINEMATIC_421, x=160, y=100
-	video offset=CINEMATIC_422, x=19, y=8
-	video offset=CINEMATIC_423, x=21, y=8
-	video offset=CINEMATIC_424, x=104, y=92
+	video offset=CINEMATIC_HOLO_SCREEN_PANEL_FRAME_F2, x=160, y=100
+	video offset=CINEMATIC_HOLO_SCREEN_PANEL_ROW_LABEL, x=19, y=8
+	video offset=CINEMATIC_HOLO_SCREEN_PANEL_ROW_TAG_UPPER, x=21, y=8
+	video offset=CINEMATIC_HOLO_SCREEN_PANEL_ROW_MARKER, x=104, y=92
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
@@ -196,9 +196,9 @@ DRAW_CITY_SEQ_419_420:
 	video offset=CINEMATIC_HOLO_SCREEN_PANEL_ROW_TAG_LOWER, x=18, y=93
 	video offset=CINEMATIC_HOLO_SCREEN_PANEL_ROW_MARKER, x=104, y=7
 .else
-	video offset=CINEMATIC_422, x=19, y=93
-	video offset=CINEMATIC_425, x=18, y=93
-	video offset=CINEMATIC_424, x=104, y=7
+	video offset=CINEMATIC_HOLO_SCREEN_PANEL_ROW_LABEL, x=19, y=93
+	video offset=CINEMATIC_HOLO_SCREEN_PANEL_ROW_TAG_LOWER, x=18, y=93
+	video offset=CINEMATIC_HOLO_SCREEN_PANEL_ROW_MARKER, x=104, y=7
 .endif
 	killChannel
 .if BRANCH == "chahi_amiga_1991"
@@ -210,7 +210,7 @@ DRAW_CITY_SEQ_419_420:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_LOOP_DIAGRAM_LABEL, x=234, y=163
 .else
-	video offset=CINEMATIC_192, x=234, y=163
+	video offset=CINEMATIC_HOLO_ACCELERATOR_LOOP_DIAGRAM_LABEL, x=234, y=163
 .endif
 	killChannel
 
@@ -222,73 +222,73 @@ HOLO_ACCELERATOR_ORBIT_FASTER_LOOP:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=165, y=74
 .else
-	video offset=CINEMATIC_382, x=165, y=74
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=165, y=74
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=178, y=43
 .else
-	video offset=CINEMATIC_382, x=178, y=43
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=178, y=43
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=202, y=22
 .else
-	video offset=CINEMATIC_382, x=202, y=22
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=202, y=22
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=235, y=16
 .else
-	video offset=CINEMATIC_382, x=235, y=16
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=235, y=16
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=267, y=27
 .else
-	video offset=CINEMATIC_382, x=267, y=27
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=267, y=27
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=289, y=52
 .else
-	video offset=CINEMATIC_382, x=289, y=52
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=289, y=52
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=296, y=83
 .else
-	video offset=CINEMATIC_382, x=296, y=83
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=296, y=83
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=287, y=113
 .else
-	video offset=CINEMATIC_382, x=287, y=113
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=287, y=113
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=264, y=136
 .else
-	video offset=CINEMATIC_382, x=264, y=136
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=264, y=136
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=225, y=145
 .else
-	video offset=CINEMATIC_382, x=225, y=145
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=225, y=145
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=189, y=130
 .else
-	video offset=CINEMATIC_382, x=189, y=130
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=189, y=130
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=170, y=104
 .else
-	video offset=CINEMATIC_382, x=170, y=104
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=170, y=104
 .endif
 	djnz [0x02], HOLO_ACCELERATOR_ORBIT_FASTER_LOOP
 	mov [0x02], 0x0003
@@ -298,43 +298,43 @@ HOLO_ACCELERATOR_ORBIT_FASTEST_THEN_SHIELD_IMPACT:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=165, y=74
 .else
-	video offset=CINEMATIC_382, x=165, y=74
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=165, y=74
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=193, y=28
 .else
-	video offset=CINEMATIC_382, x=193, y=28
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=193, y=28
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=255, y=20
 .else
-	video offset=CINEMATIC_382, x=255, y=20
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=255, y=20
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=293, y=61
 .else
-	video offset=CINEMATIC_382, x=293, y=61
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=293, y=61
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=287, y=114
 .else
-	video offset=CINEMATIC_382, x=287, y=114
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=287, y=114
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=236, y=145
 .else
-	video offset=CINEMATIC_382, x=236, y=145
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=236, y=145
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=185, y=127
 .else
-	video offset=CINEMATIC_382, x=185, y=127
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=185, y=127
 .endif
 	djnz [0x02], HOLO_ACCELERATOR_ORBIT_FASTEST_THEN_SHIELD_IMPACT
 .if BRANCH != "chahi_amiga_1991"
@@ -344,58 +344,58 @@ HOLO_ACCELERATOR_ORBIT_FASTEST_THEN_SHIELD_IMPACT:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_SHIELD_TARGET, x=237, y=156
 .else
-	video offset=CINEMATIC_383, x=237, y=156
+	video offset=CINEMATIC_HOLO_ACCELERATOR_SHIELD_TARGET, x=237, y=156
 .endif
 	selectVideoPage 0xFF
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=165, y=74
 .else
-	video offset=CINEMATIC_382, x=165, y=74
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=165, y=74
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=233, y=15
 .else
-	video offset=CINEMATIC_382, x=233, y=15
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=233, y=15
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=296, y=84
 .else
-	video offset=CINEMATIC_382, x=296, y=84
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=296, y=84
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=249, y=148
 .else
-	video offset=CINEMATIC_382, x=249, y=148
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=249, y=148
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH, x=237, y=156
 	video offset=CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH, x=287, y=150, zoom=0x14
 .else
-	video offset=CINEMATIC_384, x=237, y=156
-	video offset=CINEMATIC_384, x=287, y=150, zoom=0x14
+	video offset=CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH, x=237, y=156
+	video offset=CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH, x=287, y=150, zoom=0x14
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH, x=287, y=150
 .else
-	video offset=CINEMATIC_384, x=287, y=150
+	video offset=CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH, x=287, y=150
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH, x=287, y=150, zoom=0x78
 .else
-	video offset=CINEMATIC_384, x=287, y=150, zoom=0x78
+	video offset=CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH, x=287, y=150, zoom=0x78
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH, x=287, y=150, zoom=0xbe
 .else
-	video offset=CINEMATIC_384, x=287, y=150, zoom=0xbe
+	video offset=CINEMATIC_HOLO_ACCELERATOR_IMPACT_FLASH, x=287, y=150, zoom=0xbe
 .endif
 	killChannel
 
@@ -421,25 +421,25 @@ HOLO_ACCELERATOR_PARTICLE_INJECTION_ENTRY:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=164, y=123
 .else
-	video offset=CINEMATIC_382, x=164, y=123
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=164, y=123
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=164, y=118
 .else
-	video offset=CINEMATIC_382, x=164, y=118
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=164, y=118
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=164, y=110
 .else
-	video offset=CINEMATIC_382, x=164, y=110
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=164, y=110
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=164, y=99
 .else
-	video offset=CINEMATIC_382, x=164, y=99
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=164, y=99
 .endif
 	mov [0x02], 0x0001
 
@@ -448,133 +448,133 @@ HOLO_ACCELERATOR_ORBIT_SLOW_LOOP:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=165, y=74
 .else
-	video offset=CINEMATIC_382, x=165, y=74
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=165, y=74
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=170, y=55
 .else
-	video offset=CINEMATIC_382, x=170, y=55
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=170, y=55
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=180, y=41
 .else
-	video offset=CINEMATIC_382, x=180, y=41
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=180, y=41
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=191, y=29
 .else
-	video offset=CINEMATIC_382, x=191, y=29
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=191, y=29
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=206, y=20
 .else
-	video offset=CINEMATIC_382, x=206, y=20
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=206, y=20
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=224, y=15
 .else
-	video offset=CINEMATIC_382, x=224, y=15
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=224, y=15
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=246, y=16
 .else
-	video offset=CINEMATIC_382, x=246, y=16
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=246, y=16
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=263, y=24
 .else
-	video offset=CINEMATIC_382, x=263, y=24
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=263, y=24
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=278, y=36
 .else
-	video offset=CINEMATIC_382, x=278, y=36
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=278, y=36
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=288, y=49
 .else
-	video offset=CINEMATIC_382, x=288, y=49
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=288, y=49
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=294, y=66
 .else
-	video offset=CINEMATIC_382, x=294, y=66
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=294, y=66
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=297, y=82
 .else
-	video offset=CINEMATIC_382, x=297, y=82
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=297, y=82
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=293, y=101
 .else
-	video offset=CINEMATIC_382, x=293, y=101
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=293, y=101
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=284, y=117
 .else
-	video offset=CINEMATIC_382, x=284, y=117
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=284, y=117
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=271, y=131
 .else
-	video offset=CINEMATIC_382, x=271, y=131
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=271, y=131
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=256, y=141
 .else
-	video offset=CINEMATIC_382, x=256, y=141
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=256, y=141
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=237, y=145
 .else
-	video offset=CINEMATIC_382, x=237, y=145
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=237, y=145
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=217, y=144
 .else
-	video offset=CINEMATIC_382, x=217, y=144
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=217, y=144
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=200, y=138
 .else
-	video offset=CINEMATIC_382, x=200, y=138
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=200, y=138
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=184, y=127
 .else
-	video offset=CINEMATIC_382, x=184, y=127
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=184, y=127
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=173, y=112
 .else
-	video offset=CINEMATIC_382, x=173, y=112
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=173, y=112
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=167, y=94
 .else
-	video offset=CINEMATIC_382, x=167, y=94
+	video offset=CINEMATIC_HOLO_ACCELERATOR_PARTICLE_DOT, x=167, y=94
 .endif
 	djnz [0x02], HOLO_ACCELERATOR_ORBIT_SLOW_LOOP
 	jmp HOLO_ACCELERATOR_ORBIT_SPEEDUP_INIT
@@ -594,24 +594,24 @@ HOLO_SCREEN_DATA_COLUMN_PAIR_CYCLE_LOOP:
 	video offset=CINEMATIC_HOLO_SCREEN_DATA_COLUMN_F0, x=58, y=100
 	video offset=CINEMATIC_HOLO_SCREEN_DATA_COLUMN_F1, x=292, y=100
 .else
-	video offset=CINEMATIC_426, x=58, y=100
-	video offset=CINEMATIC_427, x=292, y=100
+	video offset=CINEMATIC_HOLO_SCREEN_DATA_COLUMN_F0, x=58, y=100
+	video offset=CINEMATIC_HOLO_SCREEN_DATA_COLUMN_F1, x=292, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_SCREEN_DATA_COLUMN_F1, x=58, y=100
 	video offset=CINEMATIC_HOLO_SCREEN_DATA_COLUMN_F2, x=292, y=100
 .else
-	video offset=CINEMATIC_427, x=58, y=100
-	video offset=CINEMATIC_428, x=292, y=100
+	video offset=CINEMATIC_HOLO_SCREEN_DATA_COLUMN_F1, x=58, y=100
+	video offset=CINEMATIC_HOLO_SCREEN_DATA_COLUMN_F2, x=292, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_HOLO_SCREEN_DATA_COLUMN_F2, x=58, y=100
 	video offset=CINEMATIC_HOLO_SCREEN_DATA_COLUMN_F0, x=292, y=100
 .else
-	video offset=CINEMATIC_428, x=58, y=100
-	video offset=CINEMATIC_426, x=292, y=100
+	video offset=CINEMATIC_HOLO_SCREEN_DATA_COLUMN_F2, x=58, y=100
+	video offset=CINEMATIC_HOLO_SCREEN_DATA_COLUMN_F0, x=292, y=100
 .endif
 	break
 	jmp HOLO_SCREEN_DATA_COLUMN_PAIR_CYCLE_LOOP
@@ -633,7 +633,7 @@ DRAW_BIOMETRIC_SCANNER_BG_COMPOSITE:
 	video offset=CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F3_AMIGA_EXTRA, x=160, y=100
 .else
 	video offset=CINEMATIC_517, x=160, y=100
-	video offset=CINEMATIC_518, x=160, y=100
+	video offset=CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F3_AMIGA_EXTRA, x=160, y=100
 .endif
 	video offset=CINEMATIC_LESTER_IN_BIOMETRIC_SCANNER, x=110, y=101
 	video offset=CINEMATIC_LAB_AUTH_CRT_SHOWING_BIOMETRICS, x=228, y=85

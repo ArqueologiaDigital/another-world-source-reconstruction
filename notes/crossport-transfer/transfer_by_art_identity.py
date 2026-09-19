@@ -43,15 +43,22 @@ CAVES 2, amiga CAPSULE 2, msdos TANK 5, amiga INTRO 12, msdos CAPSULE 8 of
 14 (the rename validator held the other 6 on its own family-gap rule), msdos
 CAVES 40.
 
-msdos/INTRO's 203 are refused by the tree, not by the evidence. Applying
-them leaves 42 undefined references and takes verify-unified to 26/29, and
-extending the rename to cartridge_1992 and gba_2004 -- the fix that worked
-for LAKE's three-port arms -- does not change either number. The references
-that break are names like `CINEMATIC_CARPARK_NEAR_PILLAR` and
-`CINEMATIC_IDENT_SCREEN_GRATICULE`, read from shared chunks by the 1992
-ports while defined in amiga-only blocks; INTRO's chunks will have to be
-restructured before this batch can land, the same conclusion LAKE reached
-before its shadow rename went in at the fourth attempt.
+msdos/INTRO's 203 looked blocked by the tree: applying the batch left 42
+undefined references at 26/29, and extending to cartridge_1992 and gba_2004
+-- the fix that worked for LAKE's three-port arms -- changed neither number.
+That read was wrong, and the way it was wrong is the lesson: **the batch was
+not blocked, fourteen of its rows were.**
+
+Applying, collecting the undefined names, reverting and dropping just those,
+twice, converges in two iterations: 12 names then 2 more, and the remaining
+**186 apply at 29/29 and 29/29**. The fourteen are names like
+`CINEMATIC_CARPARK_NEAR_PILLAR` and `CINEMATIC_IDENT_SCREEN_GRATICULE`, read
+from shared chunks by the 1992 ports while defined only in amiga blocks.
+They still want INTRO's chunks restructured; the other 186 never did.
+
+Reading a batch failure as a batch verdict cost this pass a commit that said
+203 were blocked when 14 were. `undefined_symbols.py` names the symbols, so
+the failing rows can always be subtracted rather than the batch abandoned.
 
 Applying also needs a step this probe does not do. Where the unified tree
 defines a transferred name UNCONDITIONALLY, that definition belongs to the
