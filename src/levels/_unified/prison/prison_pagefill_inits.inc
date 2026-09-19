@@ -12,7 +12,7 @@ INIT_VARS_16_17:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PRISON_WAKE_CLOSEUP_PUPIL_WIDEST:
-	video offset=CINEMATIC_657, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_WAKE_CLOSEUP_PUPIL_2, x=[0x1a], y=[0x1b]
 .endif
 
 .if BRANCH == "chahi_amiga_1991"

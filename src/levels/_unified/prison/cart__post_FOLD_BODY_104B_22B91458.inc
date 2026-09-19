@@ -92,7 +92,7 @@ FILL_AND_DRAW_CIN_24_28:
 	video offset=CINEMATIC_028, x=160, y=100
 	video offset=CINEMATIC_029, x=160, y=400
 	video offset=CINEMATIC_030, x=160, y=100
-	video offset=CINEMATIC_031, x=160, y=100
+	video offset=CINEMATIC_PRISON_GRATING_STRIP, x=160, y=100
 	video offset=CINEMATIC_032, x=160, y=100
 	video offset=CINEMATIC_033, x=160, y=100
 	video offset=CINEMATIC_034, x=160, y=100

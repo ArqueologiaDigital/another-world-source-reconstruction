@@ -30,7 +30,7 @@ LABEL_4EDA:
 
 LABEL_4EED:
 	jg [0x16], 0x02, LABEL_4EFB
-	video offset=CINEMATIC_681, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_WAKE_CLOSEUP_PUPIL_0, x=[0x1a], y=[0x1b]
 	jmp LABEL_4F38
 
 LABEL_4EFB:
@@ -50,11 +50,11 @@ LABEL_4F17:
 
 LABEL_4F25:
 	jg [0x16], 0x06, LABEL_4F33
-	video offset=CINEMATIC_677, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_WAKE_CLOSEUP_PUPIL_1, x=[0x1a], y=[0x1b]
 	jmp LABEL_4F38
 
 LABEL_4F33:
-	video offset=CINEMATIC_657, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_WAKE_CLOSEUP_PUPIL_2, x=[0x1a], y=[0x1b]
 
 LABEL_4F38:
 	video offset=CINEMATIC_658, x=[0x1a], y=[0x1b]
