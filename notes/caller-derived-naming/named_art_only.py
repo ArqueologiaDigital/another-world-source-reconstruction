@@ -107,7 +107,7 @@ def main() -> int:
 
     grand = collections.Counter()
     if not args.list:
-        print(f"{'port/stage':<20}{'unnamed w/ art':>16}{'all art named':>15}"
+        print(f"{'port/stage':<20}{'unnamed w/ art':>16}{'all art named':>15}{'unique':>9}"
               f"{'mixed':>8}{'no art named':>14}")
     for port in ports:
         for stage in stages:
@@ -144,6 +144,16 @@ def main() -> int:
                 else:
                     n["none named"] += 1
             grand.update(n)
+            # Of the unblocked, how many does the art identify UNIQUELY?
+            # Several routines commonly draw the same identified art and
+            # differ only in a call to a still-unnamed target; naming those
+            # from their art would put one name on several labels (#0118).
+            by_art = collections.Counter(tuple(dict.fromkeys(a))
+                                         for _l, a in ready)
+            uniq = [l for l, a in ready
+                    if by_art[tuple(dict.fromkeys(a))] == 1]
+            n["unique"] = len(uniq)
+            grand["unique"] += len(uniq)
             if args.list:
                 print(f"\n# {port}/{stage} — {len(ready)} routine(s) whose every "
                       f"drawn polygon is already identified\n")
@@ -153,15 +163,24 @@ def main() -> int:
                     print(f"  {label}\n      {len(art)} draw(s): {shown}")
             elif n["with art"]:
                 print(f"{port + '/' + stage:<20}{n['with art']:>16}"
-                      f"{n['all named']:>15}{n['mixed']:>8}{n['none named']:>14}")
+                      f"{n['all named']:>15}{n['unique']:>9}{n['mixed']:>8}"
+                      f"{n['none named']:>14}")
 
     if not args.list:
         print(f"\n{'TOTAL':<20}{grand['with art']:>16}{grand['all named']:>15}"
-              f"{grand['mixed']:>8}{grand['none named']:>14}")
+              f"{grand['unique']:>9}{grand['mixed']:>8}{grand['none named']:>14}")
         print("\n`all art named` is the population the polygon layer has already "
               "unblocked.\nThe other two wait on it — which is the honest shape "
               "of the remaining work:\nthe big three's routine layer is gated by "
               "their polygon layer, not the reverse.")
+        print("\n`unique` is the part that can be named TODAY. The difference "
+              "matters: on\n2026-09-19 the unblocked count reached 112 and only "
+              "12 of those had a draw-set\nno other unblocked routine shares. "
+              "The other 100 draw the same identified art\nas a sibling and "
+              "differ only in a call to a still-unnamed target, so naming them\n"
+              "from their art would give one name to several labels (#0118). "
+              "Quoting the\nunblocked count as the work available overstates it "
+              "roughly tenfold.")
     return 0
 
 
