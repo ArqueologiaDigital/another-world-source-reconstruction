@@ -150,6 +150,37 @@ hexadecimal na cauda `_CASE_` de uma rotina. Então, para a mesma inclinação, 
 rotina se chama `..._TILT_CASE_FFFE` e o polígono `..._TILT_MINUS_2`. As duas
 ferramentas discordam entre si e as duas estão certas.
 
+## O que aparece quando se faz o lote inteiro das três fases
+
+Levar a mesma ordem de serviço até CAVES e CAPSULE fechou o dia em **2.061 →
+1.849** constantes sem nome nas três fases grandes da Amiga. E, como em PRISON,
+o que pagou não foram só os nomes: foi o que só se vê olhando o conjunto.
+
+**As direções mentem com frequência.** Em três famílias de duas fases
+diferentes, as rotinas `..._LEFT_*` e `..._RIGHT_*` desenham **as mesmas
+constantes** — o impacto de tiro de PRISON, o clarão de laser de CAVES, e a
+virada do herói, cuja animação é um único percurso de nove quadros tocado para
+frente ou para trás. Botar `_LEFT_` no nome teria sido falso nas três, e isso
+só aparece construindo o mapa constante→rotina em vez de ler o nome da rotina.
+
+**E há idiomas de engine.** O mesmo conjunto de ladrilhos de feixe — barras de
+1 px com 2, 6, 14 e 30 px de comprimento, ancoradas em x=64, uma versão para
+cada lado — aparece em PRISON, em CAVES e em CAPSULE, mais uma variante pesada
+de 5 px em PRISON. Quatro comprimentos que são potências de dois menos dois:
+um feixe de qualquer tamanho se monta com eles em decomposição binária. Isso
+não é detalhe de uma fase, é como o motor desenha feixes — e é o que finalmente
+resolve a dúvida que abriu o dia, com duas rotinas de CAPSULE que ladrilhavam
+um feixe usando um polígono chamado `BUDDY_SMASHING_WINDOW`: as rotinas estão
+certas, quem está errado é o nome daquela constante.
+
+**Escopo por porte não é formalidade.** PRISON pôde receber os nomes em todos
+os portes (delta +0x000, bancos idênticos). CAVES não: os deltas são
++0x1A0..+0x1AC e as rotinas dos dois portes desenham *símbolos diferentes* na
+mesma posição do bytecode. CAPSULE é pior — a ferramenta não encontra
+correspondência nenhuma. Nessas duas, os nomes foram aplicados só ao braço da
+Amiga. Um `apply` global teria repetido, em 95 constantes, o mesmo erro que
+custou três nomes de manhã.
+
 ---
 
 Conferível: `notes/caller-derived-naming/named_art_only.py`, que imprime a
