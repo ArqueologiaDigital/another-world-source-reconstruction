@@ -8,7 +8,7 @@ PRISON_HERO_KILLED:
 	and [0xF8], 0x00FF
 	jl [0xF8], 0x20, LABEL_3A9E
 	sub [0xF8], 0x0020
-	setup channel=0x14, address=PRISON_DRAW_CIN_284_BLOCK_95B_L2
+	setup channel=0x14, address=PRISON_HERO_DEATH_FLASH
 	jl [0xF8], 0x10, SHARED_RET
 	setup channel=0x14, address=DRAW_CIN_146_TO_147_4F_AT_8AA18039
 	ret
