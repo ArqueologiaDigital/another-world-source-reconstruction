@@ -1,7 +1,15 @@
-CINEMATIC_144		EQU 0xF6C6
-CINEMATIC_145		EQU 0xF918
-CINEMATIC_146		EQU 0xF968
-CINEMATIC_147		EQU 0xF584
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+CINEMATIC_LAB_AUTH_ID_SCREEN_BG		EQU 0xF6C6
+.endif
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+CINEMATIC_LAB_AUTH_ID_SCREEN_SCAN_F0		EQU 0xF918
+.endif
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+CINEMATIC_LAB_AUTH_ID_SCREEN_SCAN_F1		EQU 0xF968
+.endif
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+CINEMATIC_LAB_AUTH_ID_SCREEN_SCAN_F2		EQU 0xF584
+.endif
 .if BRANCH == "chahi_amiga_1991"
 CINEMATIC_CARKEY		EQU 0xF760
 .else
@@ -23,8 +31,8 @@ WAIT_INTRO_SCENE_1:
 	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_BG, x=80, y=80
 	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_SCAN_F0, x=160, y=100
 .else
-	video offset=CINEMATIC_144, x=80, y=80
-	video offset=CINEMATIC_145, x=160, y=100
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_BG, x=80, y=80
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_SCAN_F0, x=160, y=100
 .endif
 	selectVideoPage 0xFF
 	setup channel=0x09, address=DRAW_CINEMATICS_166_TO_171
@@ -46,8 +54,8 @@ WAIT_INTRO_SCENE_2:
 	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_BG, x=82, y=82
 	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_SCAN_F1, x=160, y=100
 .else
-	video offset=CINEMATIC_144, x=82, y=82
-	video offset=CINEMATIC_146, x=160, y=100
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_BG, x=82, y=82
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_SCAN_F1, x=160, y=100
 .endif
 	selectVideoPage 0xFF
 	setup channel=0x09, address=DRAW_CINEMATICS_166_TO_171
@@ -69,8 +77,8 @@ WAIT_INTRO_SCENE_3:
 	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_BG, x=82, y=82
 	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_SCAN_F2, x=80, y=80, zoom=0x20
 .else
-	video offset=CINEMATIC_144, x=82, y=82
-	video offset=CINEMATIC_147, x=80, y=80, zoom=0x20
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_BG, x=82, y=82
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_SCAN_F2, x=80, y=80, zoom=0x20
 .endif
 	selectVideoPage 0xFF
 	setup channel=0x09, address=DRAW_CINEMATICS_166_TO_171
@@ -92,8 +100,8 @@ WAIT_INTRO_SCENE_4:
 	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_BG, x=82, y=82
 	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_SCAN_F2, x=80, y=80
 .else
-	video offset=CINEMATIC_144, x=82, y=82
-	video offset=CINEMATIC_147, x=80, y=80
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_BG, x=82, y=82
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_SCAN_F2, x=80, y=80
 .endif
 	selectVideoPage 0xFF
 	setup channel=0x09, address=DRAW_CINEMATICS_166_TO_171
@@ -114,7 +122,7 @@ WAIT_INTRO_SCENE_5:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_BG, x=82, y=82
 .else
-	video offset=CINEMATIC_144, x=82, y=82
+	video offset=CINEMATIC_LAB_AUTH_ID_SCREEN_BG, x=82, y=82
 .endif
 	video offset=CINEMATIC_CARKEY, x=160, y=100
 	selectVideoPage 0xFF

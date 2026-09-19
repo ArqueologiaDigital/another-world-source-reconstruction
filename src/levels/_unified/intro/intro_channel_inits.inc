@@ -4,10 +4,18 @@ CINEMATIC_352		EQU 0xAEC4
 CINEMATIC_352		EQU 0x0630
 .endif
 
-CINEMATIC_049		EQU 0xAB5E
-CINEMATIC_050		EQU 0xAB92
-CINEMATIC_051		EQU 0xABC6
-CINEMATIC_052		EQU 0xABFA
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+CINEMATIC_STORM_LIGHTNING_FLASH_F0		EQU 0xAB5E
+.endif
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+CINEMATIC_STORM_LIGHTNING_FLASH_F1		EQU 0xAB92
+.endif
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+CINEMATIC_STORM_LIGHTNING_FLASH_F2		EQU 0xABC6
+.endif
+.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
+CINEMATIC_STORM_LIGHTNING_FLASH_F3		EQU 0xABFA
+.endif
 .if BRANCH == "chahi_amiga_1991"
 CINEMATIC_349		EQU 0x063C
 CINEMATIC_350		EQU 0x0654
@@ -81,32 +89,32 @@ STORM_LIGHTNING_FLASH_STRIKE_LOOP:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_STORM_LIGHTNING_FLASH_F0, x=160, y=100
 .else
-	video offset=CINEMATIC_049, x=160, y=100
+	video offset=CINEMATIC_STORM_LIGHTNING_FLASH_F0, x=160, y=100
 .endif
 	break
 	play id=0x0008, freq=0x0A, vol=0x3F, channel=0x01
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_STORM_LIGHTNING_FLASH_F1, x=160, y=100
 .else
-	video offset=CINEMATIC_050, x=160, y=100
+	video offset=CINEMATIC_STORM_LIGHTNING_FLASH_F1, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_STORM_LIGHTNING_FLASH_F0, x=160, y=100
 .else
-	video offset=CINEMATIC_049, x=160, y=100
+	video offset=CINEMATIC_STORM_LIGHTNING_FLASH_F0, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_STORM_LIGHTNING_FLASH_F2, x=160, y=100
 .else
-	video offset=CINEMATIC_051, x=160, y=100
+	video offset=CINEMATIC_STORM_LIGHTNING_FLASH_F2, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_STORM_LIGHTNING_FLASH_F3, x=160, y=100
 .else
-	video offset=CINEMATIC_052, x=160, y=100
+	video offset=CINEMATIC_STORM_LIGHTNING_FLASH_F3, x=160, y=100
 .endif
 	jmp STORM_LIGHTNING_FLASH_INTERVAL_INIT
 LABEL_0448:

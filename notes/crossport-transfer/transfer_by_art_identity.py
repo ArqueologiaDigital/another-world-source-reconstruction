@@ -54,7 +54,25 @@ twice, converges in two iterations: 12 names then 2 more, and the remaining
 **186 apply at 29/29 and 29/29**. The fourteen are names like
 `CINEMATIC_CARPARK_NEAR_PILLAR` and `CINEMATIC_IDENT_SCREEN_GRATICULE`, read
 from shared chunks by the 1992 ports while defined only in amiga blocks.
-They still want INTRO's chunks restructured; the other 186 never did.
+The other 186 never did -- and the fourteen turned out to want fourteen
+lines, not a restructuring. The cause is one step further back than the
+failure: the SOURCE constants those names land on (CINEMATIC_142, _143, _049
+and eleven more) are defined **unconditionally** in `intro_first_scene_init
+.inc` and friends, at the 1992 ports' values. A branch-scoped rename will
+not touch a shared definition, so it renamed the reference in the `.else`
+arm and left the definition alone -- reference renamed, definition not,
+symbol undefined.
+
+Scoping those fourteen source definitions to
+`.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")` **first** -- a
+prerequisite, not a repair, and byte-neutral because EQU lines emit nothing
+-- lets all fourteen apply at 29/29 and 29/29.
+
+So the rule for this whole class: before transferring a name onto a
+constant, check that the constant's own definition is visible to the
+destination port ALONE. If it is shared, scope it first. Post-hoc scoping
+(the `scope_fix` step above) handles the destination side; this handles the
+source side, and it has to happen before the rename rather than after.
 
 Reading a batch failure as a batch verdict cost this pass a commit that said
 203 were blocked when 14 were. `undefined_symbols.py` names the symbols, so
