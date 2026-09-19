@@ -1,6 +1,6 @@
 LESTER_HAND_PRESSING_KEYPAD_ANIMATION:
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_115, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F0, x=[0x01], y=[0x02]
 .else
 	video offset=CINEMATIC_LESTER_HAND_PRESSING_KEYPAD_F0, x=[0x01], y=[0x02]
 .endif
