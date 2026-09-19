@@ -73,9 +73,36 @@ around:
     `CINEMATIC_HERO_RUN_LEFT_0` measures 17x39 with 6 leaves against its
     neighbours' ~80x66 with 10, so amiga's side may not be uniform either.
 
-That wants a shadow-family pass over msdos/LAKE with renders, which is a
-different job from this audit. The audit's emitter refuses LAKE already; the
-refusal now has a diagnosis behind it rather than just a symptom.
+The evidence is now stronger than "wants a render". Measured 2026-09-19:
+**all 17 names, across all 66 of their draw sites, are immediately preceded
+by a `CV_<hex>` draw at the same x and y -- 66 of 66, no exceptions** -- and
+all 17 offsets fall inside 0xDFF2..0xE09C, the run holding the already-named
+`CINEMATIC_HERO_SHADOW` at 0xDFFC. The frame association is sound even
+though the subject was not, because amiga draws its own frame of that name
+at the corresponding point. So the fitting rename keeps pose and index and
+corrects only the subject: `CINEMATIC_HERO_<pose>_<n>` ->
+`CINEMATIC_HERO_SHADOW_<pose>_<n>`. That table is committed un-applied as
+`docs/content/research/2026-09-19-caves-hero-direction-machine/`
+`proposals_LAKE_shadow_family_NOT_APPLIED.md`.
+
+**It is blocked on the unified tree, not on evidence.** Three attempts, each
+reverted, and each failure maps the obstacle:
+
+  * branch-scoped to dos_1992: 12 undefined references, because LAKE keeps
+    these draw lines in SHARED chunks rather than per-branch arms;
+  * with `--arm`, which splits such a line: down to 8. The arms that remain
+    are `.if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")` -- one
+    line serving THREE ports -- so renaming for one strands the other two on
+    a name only it defines;
+  * applied to all three 1992 ports: one stage still failing, and now it is
+    **amiga** that breaks, because LAKE shares the EQU definitions too and
+    rewriting them for the 1992 ports removes the one amiga reads.
+
+So this needs LAKE's unified chunks restructured first, draw lines and EQU
+definitions both. That is a tree job, not a naming job, and doing it under a
+rename is how this work broke verify-unified four times earlier.
+`notes/unified-symbol-check/undefined_symbols.py` caught all three attempts
+before the byte gate did, which is what it is for.
 
 Usage
 -----
