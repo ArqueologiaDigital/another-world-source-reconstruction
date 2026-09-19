@@ -278,6 +278,19 @@ the existing names must move to an interim port-invariant `CV_<OFFSET4>` — the
 bank is byte-identical between Amiga and MS-DOS, so one name per offset is
 correct. Until that lands, do not hand-name `COMMON_VIDEO_NNN`.
 
+**That last claim was checked on 2026-09-19 and holds.** It had been carried as
+an assertion, and T7 gates 1,147 routines on it, so it is now backed by two
+artefacts in `notes/shared-bank-probes/`. `shared_bank_bytes_identical.py` is
+the exact answer: resource `0x11` is 25,108 bytes on both ports and hashes to
+`ee98e9d5cca18a4fd0c3d0dac884e38a11533cd8fd88825cd503eeb0658494b0` on each, so
+the bank is literally one file and one name per offset is right at 100 %
+coverage. `cv_offset_is_port_invariant.py` is the independent assembly-level
+check — routines paired across ports by identical body draw the bank at the
+same offsets: 71 agreements and 0 disagreements amiga/msdos, 61 and 0
+amiga/snes_eu. **snes_eu and gba_usa have no extracted resource `0x11`**, so
+for them only the assembly evidence exists, and the GBA release packages its
+art differently.
+
 ## 3. VM variables
 
 Convention: `<ROLE>_<QUALIFIER>`, and it already works — the 15 engine aliases in
