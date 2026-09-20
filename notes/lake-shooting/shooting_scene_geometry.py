@@ -9,6 +9,11 @@ F2_DRIFT_LOOP)". That description is wrong, and this probe is what showed it.
 
 Three measurements settle the scene, and none of them is a look at a picture:
 
+  (The prose below names these pictures as they were spelled when this probe
+  found them. Those names are gone -- this probe is why. The tables in the
+  code carry the names the same pictures have now, and README.md maps old to
+  new; the story keeps the old spelling so it still reads as a discovery.)
+
   1. **Which slot each picture is drawn at.** F1..F4 are drawn at
      `x=[HERO_X], y=[HERO_Y]`, the same pair as the four established
      `CINEMATIC_LAKE_LESTER_*` frames they follow -- so they are the hero, not
@@ -73,38 +78,38 @@ LAKE = 2
 # The anchors are the literals in LAKE.asm's `video` operands; 65501 and 65374
 # are the unsigned spellings of -35 and -162.
 SCENE = [
-    ("CINEMATIC_LAKE_DECOR_AT_327_164",   (327, 164)),
-    ("CINEMATIC_LAKE_SCENE_DECOR_RIGHT",  (327, 164)),
-    ("CINEMATIC_DECOR_AT_327_164_F0",     (245, 155)),
-    ("CINEMATIC_DECOR_AT_327_164_F1",     (105, 155)),
-    ("CINEMATIC_DECOR_AT_327_164_F1",     (-35, 155)),
-    ("CINEMATIC_DECOR_AT_327_164_F1",     (-162, 155)),
-    ("CINEMATIC_DECOR_AT_305_155_F0",     (305, 155)),
+    ("CINEMATIC_LAKE_SHOOTER_AIM_LEFT_F0",   (327, 164)),
+    ("CINEMATIC_LAKE_SHOOTER_AIM_LEFT_F1",  (327, 164)),
+    ("CINEMATIC_LAKE_SHOT_BEAM_HEAD",     (245, 155)),
+    ("CINEMATIC_LAKE_SHOT_BEAM_SPAN",     (105, 155)),
+    ("CINEMATIC_LAKE_SHOT_BEAM_SPAN",     (-35, 155)),
+    ("CINEMATIC_LAKE_SHOT_BEAM_SPAN",     (-162, 155)),
+    ("CINEMATIC_LAKE_SHOT_MUZZLE_BEAM",     (305, 155)),
     ("CINEMATIC_LAKE_LESTER_AT_POOL",     None),
     ("CINEMATIC_LAKE_LESTER_FALLING",     None),
-    ("CINEMATIC_LAKE_LESTER_RECOVER",     None),
-    ("CINEMATIC_LAKE_LESTER_RISE",        None),
-    ("CINEMATIC_DECOR_AT_305_155_F1",     None),
-    ("CINEMATIC_DECOR_AT_305_155_F2",     None),
-    ("CINEMATIC_DECOR_AT_305_155_F3",     None),
-    ("CINEMATIC_DECOR_AT_305_155_F4",     None),
+    ("CINEMATIC_LAKE_SHOT_BEAM_IMPACT",     None),
+    ("CINEMATIC_LAKE_LESTER_KNOCKED_BACK_F0",        None),
+    ("CINEMATIC_LAKE_LESTER_KNOCKED_BACK_F1",     None),
+    ("CINEMATIC_LAKE_LESTER_KNOCKED_BACK_F2",     None),
+    ("CINEMATIC_LAKE_LESTER_KNOCKED_BACK_F3",     None),
+    ("CINEMATIC_LAKE_LESTER_KNOCKED_BACK_F4",     None),
     ("CINEMATIC_LAKE_REED",               None),
 ]
 
 # The step applied to the hero anchor immediately BEFORE each draw, read from
 # LAKE.asm. Listed here so the deceleration is checkable without re-reading
 # the source; `--verify` re-derives it and complains if the source disagrees.
-HERO_STEPS = [("CINEMATIC_LAKE_LESTER_RECOVER", -3, -2),
-              ("CINEMATIC_LAKE_LESTER_RISE", -12, +3),
-              ("CINEMATIC_LAKE_LESTER_RISE", -12, +3),
-              ("CINEMATIC_DECOR_AT_305_155_F1", -10, +5),
-              ("CINEMATIC_DECOR_AT_305_155_F1", -10, +5),
-              ("CINEMATIC_DECOR_AT_305_155_F2", -3, 0),
-              ("CINEMATIC_DECOR_AT_305_155_F2", -3, 0),
-              ("CINEMATIC_DECOR_AT_305_155_F2", -3, 0),
-              ("CINEMATIC_DECOR_AT_305_155_F2", -3, 0),
-              ("CINEMATIC_DECOR_AT_305_155_F3", -2, 0),
-              ("CINEMATIC_DECOR_AT_305_155_F4", -1, 0)]
+HERO_STEPS = [("CINEMATIC_LAKE_SHOT_BEAM_IMPACT", -3, -2),
+              ("CINEMATIC_LAKE_LESTER_KNOCKED_BACK_F0", -12, +3),
+              ("CINEMATIC_LAKE_LESTER_KNOCKED_BACK_F0", -12, +3),
+              ("CINEMATIC_LAKE_LESTER_KNOCKED_BACK_F1", -10, +5),
+              ("CINEMATIC_LAKE_LESTER_KNOCKED_BACK_F1", -10, +5),
+              ("CINEMATIC_LAKE_LESTER_KNOCKED_BACK_F2", -3, 0),
+              ("CINEMATIC_LAKE_LESTER_KNOCKED_BACK_F2", -3, 0),
+              ("CINEMATIC_LAKE_LESTER_KNOCKED_BACK_F2", -3, 0),
+              ("CINEMATIC_LAKE_LESTER_KNOCKED_BACK_F2", -3, 0),
+              ("CINEMATIC_LAKE_LESTER_KNOCKED_BACK_F3", -2, 0),
+              ("CINEMATIC_LAKE_LESTER_KNOCKED_BACK_F4", -1, 0)]
 
 RE_EQU = re.compile(r"^(\w+)\s+EQU\s+(0x[0-9A-Fa-f]+)", re.M)
 RE_DRAW = re.compile(r"video\s+(?:type=\d+,\s*)?offset=(\w+),\s*x=([^,]+),\s*y=(\S+)")
@@ -129,13 +134,14 @@ def main() -> int:
         print(f"(no cross-port check: {exc})")
         o_tab = o_bank = None
 
-    print(f"{'picture':<34}{'anchor':>12}  {'rel bbox x0,y0..x1,y1':<30}"
+    print(f"{"picture":<38}{'anchor':>12}  {'rel bbox x0,y0..x1,y1':<30}"
           f"{'lv':>3}  {'screen span':<26}{'=' + other:>8}")
-    same = tot = 0
+    same = tot = missing = 0
     for name, anchor in SCENE:
         off = table.get(name)
         if off is None:
-            print(f"{name:<34}  NOT DEFINED in {args.port}")
+            print(f"{name:<38}  NOT DEFINED in {args.port}")
+            missing += 1
             continue
         tree = parse_polygon_tree(bank, off)
         x0, y0, x1, y1, leaves = extent(tree)
@@ -152,20 +158,34 @@ def main() -> int:
                   == canonical_md5(parse_polygon_tree(o_bank, o_tab[name])))
             same += ok
             mark = "yes" if ok else "**NO**"
-        print(f"{name:<34}{a:>12}  "
+        print(f"{name:<38}{a:>12}  "
               f"{f'{x0:>6.1f},{y0:>6.1f}..{x1:>6.1f},{y1:>6.1f}':<30}"
               f"{leaves:>3}  {span:<26}{mark:>8}")
 
     print(f"\ncross-port identity: {same} of {tot} byte-identical "
           f"({args.port} vs {other}) by canonical_md5")
+    if missing:
+        # This probe is the evidence for the very renames it survived, so a
+        # name here going stale silently would leave the README quoting a
+        # figure that no longer reproduces. It did, once: after the renames
+        # landed, 13 of 16 rows read NOT DEFINED and "16 of 16 byte-identical"
+        # came back as "3 of 3". Fail instead of under-reporting.
+        print(f"\n{missing} name(s) above are not defined any more -- the "
+              f"tables in this file have gone stale against src/levels, and "
+              f"every count printed here is an undercount.")
+        return 1
 
     steps, x = [], 0
     print("\nhero anchor, frame by frame (step applied before the draw):")
     for name, dx, dy in HERO_STEPS:
         x += dx
         steps.append(abs(dx))
-        print(f"    {name:<34} dx {dx:>4}  dy {dy:>3}   cumulative dx {x:>5}")
+        print(f"    {name:<38} dx {dx:>4}  dy {dy:>3}   cumulative dx {x:>5}")
     mono = all(a >= b for a, b in zip(steps[1:], steps[2:]))
+    stale = [n for n, _, _ in HERO_STEPS if n not in table]
+    if stale:
+        print(f"\nHERO_STEPS names no longer defined: {sorted(set(stale))}")
+        return 1
     print(f"\nleftward travel {x} px; |dx| after the first frame is "
           f"{'monotonically non-increasing' if mono else 'NOT monotonic'} "
           f"-- a body thrown left and slowing to a stop.")
