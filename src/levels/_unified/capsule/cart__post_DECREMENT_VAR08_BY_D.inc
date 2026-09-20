@@ -473,44 +473,44 @@ LABEL_921C:
 GUARDED_DRAW_CV_159:
 	call LABEL_9179
 	jne [0x0A], 0x01, LABEL_9254
-	video type=0, offset=CV_347C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0002
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5BF8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_01_CHARGE_BLINK, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_9254:
 	jne [0x0A], 0x02, LABEL_9278
-	video type=0, offset=CV_33F2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C0C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_02_CHARGE_BLINK, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_9278:
 	jne [0x0A], 0x03, LABEL_929C
-	video type=0, offset=CV_3420, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C14, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_03_CHARGE_BLINK, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_929C:
-	video type=0, offset=CV_344E, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C1C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_04_CHARGE_BLINK, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -646,29 +646,29 @@ LABEL_93E9:
 GUARDED_DRAW_CV_126:
 	call LABEL_9179
 	jne [0x0A], 0x01, LABEL_9416
-	video type=0, offset=CV_35B4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_LEFT_CASE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_9416:
 	jne [0x0A], 0x02, LABEL_9422
-	video type=0, offset=CV_35D0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_LEFT_CASE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_9422:
 	jne [0x0A], 0x03, LABEL_942E
-	video type=0, offset=CV_35F8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_LEFT_CASE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_942E:
-	video type=0, offset=CV_3614, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_LEFT_CASE_04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C8C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_LEFT_CASE_04_CHARGE_BLINK, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 

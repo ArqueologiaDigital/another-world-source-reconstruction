@@ -857,11 +857,11 @@ HERO_RUN_RIGHT_BODY_F03		EQU 0x058E
 HERO_RUN_RIGHT_ARM_F03		EQU 0x34C2
 HERO_RUN_RIGHT_BODY_F04		EQU 0x0624
 HERO_RUN_RIGHT_ARM_F04		EQU 0x34CE
-CV_3614		EQU 0x3614
-CV_5C8C		EQU 0x5C8C
-CV_35F8		EQU 0x35F8
-CV_35D0		EQU 0x35D0
-CV_35B4		EQU 0x35B4
+HERO_GUN_ARM_LEFT_CASE_04		EQU 0x3614
+HERO_GUN_ARM_LEFT_CASE_04_CHARGE_BLINK		EQU 0x5C8C
+HERO_GUN_ARM_LEFT_CASE_03		EQU 0x35F8
+HERO_GUN_ARM_LEFT_CASE_02		EQU 0x35D0
+HERO_GUN_ARM_LEFT_CASE_01		EQU 0x35B4
 CV_5E44		EQU 0x5E44
 CV_FIGURE_PROFILE_STANCE		EQU 0x40CA
 CV_1B14		EQU 0x1B14
@@ -888,14 +888,14 @@ CV_46D4		EQU 0x46D4
 CV_45C0		EQU 0x45C0
 CV_4528		EQU 0x4528
 CV_448C		EQU 0x448C
-CV_344E		EQU 0x344E
-CV_5C1C		EQU 0x5C1C
-CV_3420		EQU 0x3420
-CV_5C14		EQU 0x5C14
-CV_33F2		EQU 0x33F2
-CV_5C0C		EQU 0x5C0C
-CV_347C		EQU 0x347C
-CV_5BF8		EQU 0x5BF8
+HERO_GUN_ARM_RIGHT_CASE_04		EQU 0x344E
+HERO_GUN_ARM_RIGHT_CASE_04_CHARGE_BLINK		EQU 0x5C1C
+HERO_GUN_ARM_RIGHT_CASE_03		EQU 0x3420
+HERO_GUN_ARM_RIGHT_CASE_03_CHARGE_BLINK		EQU 0x5C14
+HERO_GUN_ARM_RIGHT_CASE_02		EQU 0x33F2
+HERO_GUN_ARM_RIGHT_CASE_02_CHARGE_BLINK		EQU 0x5C0C
+HERO_GUN_ARM_RIGHT_CASE_01		EQU 0x347C
+HERO_GUN_ARM_RIGHT_CASE_01_CHARGE_BLINK		EQU 0x5BF8
 CV_4650		EQU 0x4650
 CV_4C40		EQU 0x4C40
 CV_47DC		EQU 0x47DC
@@ -12178,51 +12178,51 @@ LABEL_6BA7:
 
 ; Two-frame aim/gun-pose render tick. Calls LABEL_6B04
 ; (an angle-update helper), then conditionally draws
-; CV_347C + CV_5BF8 at HERO position
+; HERO_GUN_ARM_RIGHT_CASE_01 + HERO_GUN_ARM_RIGHT_CASE_01_CHARGE_BLINK at HERO position
 ; with zoom 0x40. Gated on var06 vs var30 (angle range)
 ; and var31 bit 1. Mirrors CAVES's LABEL_9B3F and CAPSULE_-
 ; AIM_RENDER_TICK_CV159_CV160.
 PRISON_AIM_RENDER_TICK_CV159_CV160:
 	call LABEL_6B04
 	jne [0x0A], 0x01, LABEL_6BDF
-	video type=0, offset=CV_347C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SCENE_DISPATCH_NOOP_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0002
 	je [0xF8], 0x00, SCENE_DISPATCH_NOOP_RET
-	video type=0, offset=CV_5BF8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_01_CHARGE_BLINK, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_6BDF:
 	jne [0x0A], 0x02, LABEL_6C03
-	video type=0, offset=CV_33F2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SCENE_DISPATCH_NOOP_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SCENE_DISPATCH_NOOP_RET
-	video type=0, offset=CV_5C0C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_02_CHARGE_BLINK, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_6C03:
 	jne [0x0A], 0x03, LABEL_6C27
-	video type=0, offset=CV_3420, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SCENE_DISPATCH_NOOP_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SCENE_DISPATCH_NOOP_RET
-	video type=0, offset=CV_5C14, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_03_CHARGE_BLINK, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_6C27:
-	video type=0, offset=CV_344E, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SCENE_DISPATCH_NOOP_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SCENE_DISPATCH_NOOP_RET
-	video type=0, offset=CV_5C1C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_04_CHARGE_BLINK, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -12356,29 +12356,29 @@ LABEL_6D68:
 GUARDED_DRAW_CV_126:
 	call LABEL_6B04
 	jne [0x0A], 0x01, LABEL_6D95
-	video type=0, offset=CV_35B4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_LEFT_CASE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_6D95:
 	jne [0x0A], 0x02, LABEL_6DA1
-	video type=0, offset=CV_35D0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_LEFT_CASE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_6DA1:
 	jne [0x0A], 0x03, LABEL_6DAD
-	video type=0, offset=CV_35F8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_LEFT_CASE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_6DAD:
-	video type=0, offset=CV_3614, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_LEFT_CASE_04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SCENE_DISPATCH_NOOP_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SCENE_DISPATCH_NOOP_RET
-	video type=0, offset=CV_5C8C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_GUN_ARM_LEFT_CASE_04_CHARGE_BLINK, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
