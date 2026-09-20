@@ -101,3 +101,56 @@ Baseline: resource `0x11` is 25,108 bytes on both ports and sha256
 Both exit 1 on a result that would invalidate one-name-per-offset: the census if
 any offset's two ports disagree, the position probe if any offset is drawn at
 both the hero and the actor slot. Neither should pass silently.
+
+## 3. The actor half: the probe reaches it, the names do not — yet
+
+`hero_pose_consensus.py --subject actor` runs the same consensus over the 148
+offsets drawn at the shared actor record. #0138 bars saying **which
+character** they are, not what pose they are in; the existing
+`CV_FIGURE_CROUCH_FACING_LEFT` names are that distinction already applied.
+
+The evidence that no character may be claimed is in the tree, not assumed. One
+eight-frame run is called `CAPSULE_BUDDY_WALK_RIGHT_DRAW_0`,
+`CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_1` **and** `CAVES_HERO_WALK_RIGHT_PHASE_2`
+— buddy, actor and hero, for one picture. The stages disagree about the
+character and agree about the motion, the direction and the frame. So the name
+would be `CV_FIGURE_WALK_RIGHT_BODY_F00`, claiming only what they agree on.
+
+**Nothing was applied.** 22 offsets reach consensus and every family has holes:
+
+    RUN_RIGHT_BODY   0,2,3,5,7,8          WALK_LEFT_BODY  2,3,4,9,11,12,13,14,15
+    RUN_LEFT_BODY    4,6,9                WALK_RIGHT_BODY (no parseable index)
+
+NAMING.md §2 forbids a gap in a family's index run, and here the gaps are
+parse failures rather than missing art: the unclaimed frames are named
+`_PHASE_<n>` with no ordinal this probe accepts. Admitting a bare `_PHASE_<n>`
+was tried and **reverted** — it made the tables worse, dropping walk-right
+entirely and growing an index 16 in a 0..15 run, because that spelling carries
+yet another base convention and the pairwise calibration has too few shared
+offsets to pin it. That is the measurement the actor half is waiting on.
+
+### Three defects this attempt found in the probe
+
+**The index base differs by stage under one spelling.**
+`PRISON_HERO_WALK_LEFT_DRAW_PHASE_00` is 0-based;
+`CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_1` is 1-based. The base is now calibrated
+pairwise against a reference stage over the offsets both name, and a
+non-constant difference is left as the real disagreement it is.
+
+**The reference stage must start at 0, not merely be well attested.** CAPSULE,
+CAVES and PRISON each claim 16 frames of the actor walk, so choosing by claim
+count was a coin toss — and landing on CAVES shifted the other two *up* to
+1-based while PRISON, whose calibration fails on two genuine outliers, stayed
+at 0. A family all three stages agree about was reported as a 0-vs-1 conflict.
+
+**The probe was not reproducible.** It iterated an offset *set*; Python
+randomises string set order per process, so the tie-break for the reference
+varied and three consecutive runs of one command returned 22, 21 and 22
+proposals. Every iteration is now over a sorted sequence. A naming probe that
+is not reproducible cannot be evidence for anything, and this one had been
+quoted in the same session.
+
+The 52 hero names applied earlier do not depend on any of this: that map was
+built from the co-draw pairing (15/15 and 10/10) and the complete index runs,
+not from `--proposals`, and `bank_name_offset_consistent.py --map
+hero_sprite_sheet.map` still reports all 52 correct.

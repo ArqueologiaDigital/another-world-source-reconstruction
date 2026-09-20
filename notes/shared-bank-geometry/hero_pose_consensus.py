@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Name shared-bank hero art from what independent stages already agree it is.
+"""Name shared-bank art from what independent stages already agree it is.
 
 Question answered
 -----------------
@@ -45,7 +45,37 @@ The rules, and why each is there
    footfalls, not frames; taking its 2 as a frame ordinal would collide with
    the real frame 2.
 
-5. **Role comes from measured geometry, not from the routine.** A routine draws
+4b. **The base of an index is measured per source, not assumed from its
+   spelling.** `PRISON_HERO_WALK_LEFT_DRAW_PHASE_00` is 0-based and
+   `CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_1` is 1-based -- the same
+   `_DRAW_PHASE_` suffix, different bases, in the same tree. Hardcoding the
+   rule by suffix (which an earlier version did for `_STRIDE_PHASE_` alone)
+   makes every 1-based source disagree with every 0-based one by exactly one,
+   and the probe then rejects families that are in perfect agreement. It also
+   produced a family reporting index 3 twice and indices running to 16.
+
+   The base is found by **calibrating each stage against a reference stage**: over the offsets both name, take the set of
+   differences. A single constant difference means one is offset from the
+   other by that much, and it is applied. More than one value is a real
+   disagreement and is left alone so the unanimity rule rejects it.
+
+   **Every iteration here is over a sorted sequence, and that is load-bearing.**
+   An earlier version walked the offset set directly. Python randomises string
+   set order per process, so the order stages entered the calibration varied
+   between runs, the tie-break for the reference stage varied with it, and the
+   probe returned 22, 21 and 22 proposals on three consecutive runs of the
+   same command. A naming probe that is not reproducible cannot be evidence
+   for anything.
+
+   Calibrating pairwise rather than per stage matters. A first version asked
+   whether one stage's indices were contiguous and started at 1 -- but CAVES
+   claims only the odd frames of the actor walk, `{1, 3, 5, 7}`, because the
+   even ones are named `_PHASE_n` with no parseable ordinal. Not contiguous,
+   so the test never fired and every CAVES claim disagreed with CAPSULE and
+   PRISON by exactly one, rejecting a family all three stages agree about.
+
+5. **Role comes from measured geometry, not from the routine, and it belongs
+   in the name.** A routine draws
    a body polygon *and* a limb polygon and its name describes the whole pose,
    so transferring that name to both would put one name on two pictures
    (#0118). The split is made from the ROM: within the offsets a routine draws,
@@ -103,9 +133,27 @@ The rules, and why each is there
    asserting STAND about walk frames. A name that dispatches anywhere is a
    dispatcher.
 
+The actor slot: `--subject actor`
+---------------------------------
+The other 148 offsets are drawn at the shared actor record. #0138 bars saying
+**which character** they are, not what pose they are in -- the existing
+`CV_FIGURE_CROUCH_FACING_LEFT` names are that distinction already applied. So
+the same consensus runs there, with one difference: the *subject* words in the
+drawer names are discarded and the name asserts none.
+
+That is not a precaution, it is what the evidence says. One eight-frame run is
+called `CAPSULE_BUDDY_WALK_RIGHT_DRAW_0`, `CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_1`
+and `CAVES_HERO_WALK_RIGHT_PHASE_2` by three different stages -- buddy, actor
+and hero, for one picture. The stages disagree about the character and agree
+about the motion, the direction and the frame number, which is exactly the
+shape #0138 describes. Names go on what they agree about:
+`CV_FIGURE_WALK_RIGHT_F00`, carrying the bank's `CV_FIGURE_` prefix that marks
+"a figure whose character is not claimed".
+
 Usage
 -----
     python3 notes/shared-bank-geometry/hero_pose_consensus.py
+    python3 notes/shared-bank-geometry/hero_pose_consensus.py --subject actor
     python3 notes/shared-bank-geometry/hero_pose_consensus.py --families
     python3 notes/shared-bank-geometry/hero_pose_consensus.py --rejected
     python3 notes/shared-bank-geometry/hero_pose_consensus.py --proposals
@@ -144,11 +192,22 @@ EXCLUDE = re.compile(r"_BUNDLE_|_SHADOW_|_2NDSCR_")
 # Rule 4: a footfall counter, not a frame ordinal.
 RE_FOOTSTEP = re.compile(r"_FOOTSTEP_PHASE_\d+$")
 # Frame-ordinal spellings actually present in the tree.
+# A bare `_PHASE_<n>` looks like a frame ordinal -- CAPSULE_BUDDY_WALK_RIGHT_
+# PHASE_1 does sit between the offsets numbered 0 and 2 -- and admitting it
+# was tried and reverted. It made the actor tables worse, not better: the
+# walk-right family disappeared entirely and walk-left grew an index 16 in a
+# 0..15 run, because `_PHASE_<n>` is used with a third base convention again
+# and the pairwise calibration has too few shared offsets to pin it. Left out
+# until that is measured rather than guessed.
 RE_INDEX = re.compile(r"_(?:DRAW|F|POSE|DRAW_PHASE|STRIDE_PHASE)_?(\d+)$")
-RE_MOTION = re.compile(r"_HERO_(WALK|RUN|CRAWL|JUMP|STAND|PRONE|CROUCH)_"
+RE_MOTION = re.compile(r"_(?:HERO|BUDDY|ACTOR|ALIEN|BEAST)_"
+                       r"(WALK|RUN|CRAWL|JUMP|STAND|PRONE|CROUCH|SHOOT|FALL)_"
                        r"(LEFT|RIGHT)_")
 # Rule 8; see the module docstring for how this number was chosen.
 MAX_PICTURES_PER_SOURCE = 2
+# Set by --subject before collect() runs. A list so it is mutable at module
+# scope without a global statement in every function that reads it.
+SUBJECT = ["hero"]
 
 
 def bank() -> bytes:
@@ -184,7 +243,8 @@ def collect():
                 else:
                     pos[cv].add(f"{bx},{by}")
             drawn_by[(port, stage)] = routine_draws(text)
-    hero_art = {c for c, p in pos.items() if p == {"HERO_X,HERO_Y"}}
+    slot = {"HERO_X,HERO_Y"} if SUBJECT[0] == "hero" else {"ACTOR"}
+    hero_art = {c for c, p in pos.items() if p == slot}
     widest: dict[str, int] = collections.Counter()
     for rds in drawn_by.values():
         for routine, art in rds.items():
@@ -202,8 +262,8 @@ def collect():
             for cv in seen:
                 if RE_KEY.match(cv):
                     by_stage[cv][stage].add(routine)
-    hero = {c for c in pos
-            if pos[c] == {"HERO_X,HERO_Y"} and RE_KEY.match(c)}
+    want = {"HERO_X,HERO_Y"} if SUBJECT[0] == "hero" else {"ACTOR"}
+    hero = {c for c in pos if pos[c] == want and RE_KEY.match(c)}
     return offs, hero, by_stage
 
 
@@ -222,9 +282,6 @@ def parse_claim(name: str):
         mi = RE_INDEX.search(name)
         if mi:
             idx = int(mi.group(1))
-            # CAVES spells the walk cycle 1-based; every other stage is 0-based.
-            if "_STRIDE_PHASE_" in name:
-                idx -= 1
     return motion, direction, idx
 
 
@@ -233,20 +290,65 @@ def main() -> int:
     ap.add_argument("--families", action="store_true")
     ap.add_argument("--rejected", action="store_true")
     ap.add_argument("--proposals", action="store_true")
+    ap.add_argument("--subject", default="hero", choices=["hero", "actor"])
     args = ap.parse_args()
+    SUBJECT[0] = args.subject
 
     offs, hero, by_stage = collect()
     b = bank()
 
+    # Rule 4b: calibrate each stage's index base against the stage with the
+    # most claims in the same (motion, direction).
+    raw: dict[tuple, dict] = collections.defaultdict(dict)
+    for cv in sorted(hero, key=lambda c: offs[c]):
+        for stage, routines in by_stage[cv].items():
+            for r in sorted(routines):
+                c = parse_claim(r)
+                if c and c[2] is not None:
+                    raw[(stage, c[0], c[1])][cv] = c[2]
+    fams: dict[tuple, list] = collections.defaultdict(list)
+    for (stage, m, d) in sorted(raw):
+        fams[(m, d)].append(stage)
+    shift: dict[tuple, int] = {}
+    for (m, d), stages in fams.items():
+        # The reference must be a 0-based stage, not merely a well-attested
+        # one. CAPSULE, CAVES and PRISON each claim 16 frames of the actor
+        # walk, so picking by claim count is a coin toss -- and landing on
+        # CAVES (1-based) shifted the other two UP to 1-based while PRISON,
+        # whose calibration fails on two genuine outliers, stayed at 0. The
+        # family then looked like a disagreement between 0 and 1 when all
+        # three agree. A family starts at frame 0, so anchor on the stage
+        # with the lowest minimum index, breaking ties by claim count.
+        ref = min(stages, key=lambda s: (min(raw[(s, m, d)].values()),
+                                         -len(raw[(s, m, d)])))
+        shift[(ref, m, d)] = 0
+        for s in sorted(stages):
+            if s == ref:
+                continue
+            both = set(raw[(s, m, d)]) & set(raw[(ref, m, d)])
+            diffs = {raw[(s, m, d)][cv] - raw[(ref, m, d)][cv] for cv in both}
+            shift[(s, m, d)] = diffs.pop() if len(diffs) == 1 else 0
+
+    def claims_for(cv):
+        out: dict[str, set] = {}
+        for stage, routines in sorted(by_stage[cv].items()):
+            got = set()
+            for r in sorted(routines):
+                c = parse_claim(r)
+                if not c:
+                    continue
+                m, d, i = c
+                if i is not None:
+                    i -= shift.get((stage, m, d), 0)
+                got.add((m, d, i))
+            if got:
+                out[stage] = got
+        return out
+
     agreed: dict[str, tuple] = {}
     rejected: dict[str, str] = {}
     for cv in sorted(hero, key=lambda c: offs[c]):
-        claims: dict[str, set] = {}
-        for stage, routines in by_stage[cv].items():
-            got = {parse_claim(r) for r in routines}
-            got.discard(None)
-            if got:
-                claims[stage] = got
+        claims = claims_for(cv)
         if len(claims) < 2:
             rejected[cv] = (f"only {len(claims)} independent source"
                             f"{'' if len(claims) == 1 else 's'}")
@@ -269,7 +371,7 @@ def main() -> int:
     # Rule 5: role from measured geometry, per routine.
     area: dict[str, float] = {}
     leaves: dict[str, int] = {}
-    for cv in hero:
+    for cv in sorted(hero):
         t = parse_polygon_tree(b, offs[cv])
         if t is None:
             continue
@@ -277,7 +379,7 @@ def main() -> int:
         area[cv] = (x1 - x0) * (y1 - y0)
         leaves[cv] = lv
     role: dict[str, str] = {}
-    for cv in agreed:
+    for cv in sorted(agreed):
         a, lv = area.get(cv, 0), leaves.get(cv, 0)
         role[cv] = "BODY" if (lv >= 4 and a >= 400) else "LIMB"
 
@@ -326,10 +428,19 @@ def main() -> int:
 
     if args.proposals:
         print("\nproposals (offset -> name), role from measured geometry:")
-        for cv, (m, d, i, _n) in sorted(agreed.items(), key=lambda kv: offs[kv[0]]):
+        for cv, (m, d, i, _n) in sorted(agreed.items(),
+                                        key=lambda kv: offs[kv[0]]):
             if i is None:
                 continue
-            print(f"  {cv}  HERO_{m}_{d}_{role[cv]}_F{i:02d}")
+            if args.subject == "actor":
+                # No character is claimed: see the docstring and #0138. The
+                # role word is not optional -- without it the body and the
+                # limb of one frame derive the same name, which is how
+                # CV_2FD6 (41x56, five leaves) and CV_3212 (14x24, one leaf)
+                # both came out as CV_FIGURE_RUN_LEFT_F04.
+                print(f"{cv} CV_FIGURE_{m}_{d}_{role[cv]}_F{i:02d}")
+            else:
+                print(f"{cv} HERO_{m}_{d}_{role[cv]}_F{i:02d}")
     return 0
 
 
