@@ -35,7 +35,25 @@ word. That is the problem
 `../caller-derived-naming/name_routines_from_art.spelling` already solves for
 the gun arms, by pinning a derived name onto an earned sibling's spelling.
 
-The probe does not yet tell the two piles apart. Doing so means asking, per
-gap, whether some routine draws the art at that slot under another name —
-answerable from `../routine-extent/` — and that is the next step, not a
-guess to make now.
+Asking that question per gap splits the 73:
+
+    17  the gap slot IS drawn by a named routine
+    16  members draw more than one constant each, so the slot cannot be
+        located from the art
+     5  the slot has art and no named drawer — genuine backlog
+     2  no art between the neighbours; the family may simply skip
+    33  no neighbour on one side
+
+**And the 17 are still two things.** `CAPSULE_SHOT_STATE_FRAME_RIGHT_ABOVE`
+is missing 3, and the art there is drawn by
+`CAPSULE_SHOT_IMPACT_SPARK_RIGHT_PHASE_4` — which is *not* `ABOVE_03`
+renamed. It is a **second series interleaved with the first**, the same shape
+as the hero's body-and-arm pairing, two layers of one animation in
+alternating offsets. Merging those would be wrong where merging
+`CAPSULE_HERO_WALK_RIGHT_DRAW`'s missing frame 5 into
+`..._FOOTSTEP_PHASE_1` would be right.
+
+Separating a renamed member from a parallel layer needs what separated body
+from arm in `../shared-bank-geometry/`: the measured geometry of the two, and
+whether one routine draws both. A measurement, not a judgement — and not one
+made yet.

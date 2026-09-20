@@ -45,10 +45,29 @@ word, which is the same problem
 `notes/caller-derived-naming/name_routines_from_art.spelling` solves for the
 gun arms by pinning a derived name onto an earned sibling's spelling.
 
-So this number is a worklist with two piles in it, and the probe does not yet
-tell them apart. Separating them needs, per gap, the question "does some
-routine draw the art at that slot under another name" — which is answerable
-from `notes/routine-extent/` and is the obvious next step.
+So this number is a worklist with more than one pile in it. Asking, per gap,
+"does a named routine draw the art at that slot" splits the 73 as:
+
+    17  the gap slot IS drawn by a named routine
+    16  family members draw more than one constant each, so the slot cannot
+        be located from the art at all
+     5  the slot has art and no named drawer -- genuine backlog
+     2  no art between the neighbours; the family may simply skip
+    33  no neighbour on one side, so no slot to look at
+
+**The 17 are still two things, and this probe cannot tell them apart.**
+`CAPSULE_SHOT_STATE_FRAME_RIGHT_ABOVE` is missing 3, and the art at that slot
+is drawn by `CAPSULE_SHOT_IMPACT_SPARK_RIGHT_PHASE_4`. That is *not*
+`ABOVE_03` under another spelling -- it is a **second series interleaved with
+the first**, the same shape as the hero's body-and-arm pairing, where two
+layers of one animation sit in alternating offsets. Merging them would be
+wrong in a way that `CAPSULE_HERO_WALK_RIGHT_DRAW` missing frame 5 while
+`CAPSULE_HERO_WALK_RIGHT_FOOTSTEP_PHASE_1` exists would not.
+
+Telling a renamed member from a parallel layer needs what separated body from
+arm in `../shared-bank-geometry/`: the measured geometry of the two, and
+whether one routine draws both. That is the next step, and it is a
+measurement rather than a judgement.
 
 Usage
 -----
@@ -78,6 +97,11 @@ MIN_DENSITY = 0.6
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--list", action="store_true")
+    ap.add_argument("--slots", action="store_true",
+                    help="for each gap, whether a named routine draws the "
+                         "art at that slot (see the docstring: a hit is "
+                         "either a renamed member or a parallel layer, and "
+                         "this does not distinguish them)")
     args = ap.parse_args()
 
     n = collections.Counter()
