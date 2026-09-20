@@ -192,13 +192,17 @@ EXCLUDE = re.compile(r"_BUNDLE_|_SHADOW_|_2NDSCR_")
 # Rule 4: a footfall counter, not a frame ordinal.
 RE_FOOTSTEP = re.compile(r"_FOOTSTEP_PHASE_\d+$")
 # Frame-ordinal spellings actually present in the tree.
-# A bare `_PHASE_<n>` looks like a frame ordinal -- CAPSULE_BUDDY_WALK_RIGHT_
-# PHASE_1 does sit between the offsets numbered 0 and 2 -- and admitting it
-# was tried and reverted. It made the actor tables worse, not better: the
-# walk-right family disappeared entirely and walk-left grew an index 16 in a
-# 0..15 run, because `_PHASE_<n>` is used with a third base convention again
-# and the pairwise calibration has too few shared offsets to pin it. Left out
-# until that is measured rather than guessed.
+# A bare `_PHASE_<n>` is left out, and the reason is measured rather than
+# assumed. `phase_base_calibration.py` places each such name between
+# neighbours whose frame is already known and reads its base off the gap:
+# CAPSULE 0, PRISON 0, CAVES 1 -- unanimous per stage, and the same split
+# those stages show in their `_DRAW_PHASE_` names. So the base is not the
+# obstacle. Admitting the spelling anyway still yields RUN_RIGHT_BODY as
+# 0,1,2,3,4,5,6,7,8,8 -- two offsets claiming frame 8 -- and WALK_LEFT_BODY
+# with an index 16 inside a 0..15 run. Something about these names is not a
+# re-based frame ordinal, and until that is explained they stay out and the
+# actor families keep their holes.
+# `_FOOTSTEP_PHASE_<n>` is a footfall counter, excluded earlier by RE_FOOTSTEP.
 RE_INDEX = re.compile(r"_(?:DRAW|F|POSE|DRAW_PHASE|STRIDE_PHASE)_?(\d+)$")
 RE_MOTION = re.compile(r"_(?:HERO|BUDDY|ACTOR|ALIEN|BEAST)_"
                        r"(WALK|RUN|CRAWL|JUMP|STAND|PRONE|CROUCH|SHOOT|FALL)_"

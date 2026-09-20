@@ -123,11 +123,32 @@ would be `CV_FIGURE_WALK_RIGHT_BODY_F00`, claiming only what they agree on.
 
 NAMING.md §2 forbids a gap in a family's index run, and here the gaps are
 parse failures rather than missing art: the unclaimed frames are named
-`_PHASE_<n>` with no ordinal this probe accepts. Admitting a bare `_PHASE_<n>`
-was tried and **reverted** — it made the tables worse, dropping walk-right
-entirely and growing an index 16 in a 0..15 run, because that spelling carries
-yet another base convention and the pairwise calibration has too few shared
-offsets to pin it. That is the measurement the actor half is waiting on.
+`_PHASE_<n>` with no ordinal this probe accepts.
+
+**Correction.** An earlier version of this paragraph said that spelling
+"carries yet another base convention". That was a guess and it was wrong.
+`phase_base_calibration.py` measures it, by placing each bare-`_PHASE_` offset
+between neighbours whose frame is already known and reading the base off the
+gap — only unambiguous single gaps, so nothing has to be assumed about how
+many frames fill a hole:
+
+    CAPSULE counts from 0 · PRISON counts from 0 · CAVES counts from 1
+
+Unanimous per stage, and the same split those stages already show in their
+`_DRAW_PHASE_` names. The base follows the **stage**, not the spelling.
+
+So the base is not the obstacle, and the spelling still stays out. Admitting
+it with the base calibrated gives `RUN_RIGHT_BODY` as `0,1,2,3,4,5,6,7,8,8` —
+two offsets claiming frame 8 — and `WALK_LEFT_BODY` with an index 16 inside a
+0..15 run. Something about these names is not a re-based frame ordinal. That
+is the open question the actor half now waits on, and it is a narrower one
+than before.
+
+The calibration probe also has to parse with **its own** regex rather than
+borrowing `hero_pose_consensus.parse_claim`. Borrowing it makes the
+measurement circular the instant anyone admits `_PHASE_` there — the names
+being calibrated join the trusted input — and the first run after that
+experiment duly reported CAVES using bases 0 *and* 1.
 
 ### Three defects this attempt found in the probe
 
