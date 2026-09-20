@@ -501,13 +501,13 @@ LABEL_40CC:
 	db 0x11
 
 LABEL_40CD:
-	video offset=CINEMATIC_178, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_179, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_180, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_179, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_F1, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_40FF
 LABEL_40E7:
 	db 0x11

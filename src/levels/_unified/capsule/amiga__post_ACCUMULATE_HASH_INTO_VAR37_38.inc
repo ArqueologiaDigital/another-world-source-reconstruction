@@ -490,13 +490,13 @@ LABEL_2B2E:
 	db 0x11
 
 LABEL_2B2F:
-	video offset=CINEMATIC_263, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_264, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_265, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_264, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_F1, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_2B61
 LABEL_2B49:
 	db 0x11

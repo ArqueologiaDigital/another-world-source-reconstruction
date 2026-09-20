@@ -262,13 +262,13 @@ LABEL_4957:
 	db 0x11
 
 LABEL_4958:
-	video offset=CINEMATIC_127, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_128, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_129, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_128, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_F1, x=[HERO_X], y=[HERO_Y]
 	jmp DRAW_CIN_98_99_BLOCK
 LABEL_4972:
 	db 0x11

@@ -79,3 +79,29 @@ family split above.
 
 Verified after: `make test` 29/29 and 29/29, `undefined_symbols.py` clean,
 `--duplicates` back to one name per picture over 1,898 pictures.
+
+### The all-branch guard is avoidable when every branch has the name
+
+`CINEMATIC_PRISON_HERO_DEATH_F0..F2` was held because
+`prison_inline_setters_and_init.inc` — read by every branch — references it,
+and the per-branch `EQU` rename would leave that reference dangling for the
+branches that moved.
+
+But all three branches *define* it (`chahi_amiga_1991`, `dos_1992` and
+`cartridge_1992` PRISON.asm each have it), so renaming it **in every branch
+and in the shared chunk at once** is consistent: 38 tokens across 8 files,
+and nothing dangles. The guard protects against a *partial* rename, not
+against this one.
+
+So the rule is sharper than "held": a name referenced from an all-branch
+chunk is safe to change when every branch defines it and the rename covers
+them all together. The CAVES and CAPSULE siblings are then named per port as
+usual, because those constants are per-port numbers (`263..265` on amiga,
+`178..180` on msdos) even though the art is one picture.
+
+Applied: `CINEMATIC_HERO_DEATH_F0..F2`, now one name across PRISON, CAVES
+and CAPSULE in both priority ports, replacing the `PRISON_`-prefixed name
+earned earlier the same day. The hero dies in every stage.
+
+Remaining held by that guard: 2 groups per port, where not every branch
+defines the name.
