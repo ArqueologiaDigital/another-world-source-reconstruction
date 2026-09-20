@@ -108,7 +108,19 @@ committed**, per the working rules on large corpora. The recipe is:
         --bank cinematic --out <dir>
 
 The 69 markdown proposal tables that carried per-name evidence have been
-rescued into `notes/naming-proposals/`. What remains in scratch is grep
-output, one-off `.txt` fragments and intermediate `.map` files whose
-conclusions are already in committed notes. Deleting the scratchpad loses
-nothing that is not either committed or reproducible by the command above.
+rescued into `notes/naming-proposals/`, with `coverage.py` beside them to
+reproduce the 69 / 489 / 396 counts its README quotes.
+
+### The three scratch scripts, adjudicated
+
+The scratch-artefact hook flagged three `.py` files. None produced a number
+that is published anywhere without a committed producer; each is superseded:
+
+| script | verdict | why |
+|---|---|---|
+| `scope_fix.py` | **disposable** | Byte-identical body to the committed `notes/unified-scoping/scope_fix.py` — diffed, the only difference is that the committed one carries the 50-line docstring recording the bug it had (it scoped every proposed row, when the applier applies only some). The scratch copy is its undocumented predecessor. |
+| `remeasure.py` | **disposable** | A per-index debugging view of `extent_old` vs `extent`. Superseded by `notes/polygon-extent-correction/what_the_correction_moves.py`, which answers the same question over the whole tree, has `--names` for the per-name view, and is the producer of the figure now quoted in that note. |
+| `_audit.py` | **disposable** | Written by a workflow subagent during the final preservation sweep; hardcodes thirteen scratch paths to count live names. Superseded before it was flagged by `notes/naming-proposals/coverage.py`, which does the same over all 69 tables and is committed. |
+
+Deleting the scratchpad loses nothing that is not either committed or
+reproducible by the command above.
