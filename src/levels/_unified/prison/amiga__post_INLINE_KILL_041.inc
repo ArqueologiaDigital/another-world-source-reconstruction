@@ -355,7 +355,7 @@ DRAW_CV_117:
 
 PRISON_HERO_WALK_LEFT_DRAW_PHASE_14:
 	jne [0x0A], 0x00, LABEL_6DA8
-	video type=0, offset=CV_331A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F14, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_118
 
 LABEL_6DA8:
@@ -379,7 +379,7 @@ DRAW_HERO_STAND_LEFT:
 
 PRISON_HERO_WALK_LEFT_DRAW_PHASE_00:
 	jne [0x0A], 0x00, LABEL_6DD9
-	video type=0, offset=CV_332A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_099
 
 LABEL_6DD9:
@@ -389,7 +389,7 @@ LABEL_6DD9:
 
 PRISON_HERO_WALK_LEFT_DRAW_PHASE_01:
 	jne [0x0A], 0x00, LABEL_6DF0
-	video type=0, offset=CV_3332, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_101
 
 LABEL_6DF0:
@@ -399,7 +399,7 @@ LABEL_6DF0:
 
 PRISON_HERO_WALK_LEFT_DRAW_PHASE_02:
 	jne [0x0A], 0x00, LABEL_6E07
-	video type=0, offset=CV_333A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_103
 
 LABEL_6E07:
@@ -409,7 +409,7 @@ LABEL_6E07:
 
 PRISON_HERO_WALK_LEFT_DRAW_PHASE_03:
 	jne [0x0A], 0x00, LABEL_6E1E
-	video type=0, offset=CV_3342, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_105
 
 LABEL_6E1E:
@@ -419,7 +419,7 @@ LABEL_6E1E:
 
 PRISON_HERO_WALK_LEFT_DRAW_PHASE_04:
 	jne [0x0A], 0x00, LABEL_6E35
-	video type=0, offset=CV_334A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_107
 
 LABEL_6E35:

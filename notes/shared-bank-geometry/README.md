@@ -249,3 +249,38 @@ a two-step cycle.
 Applied: `HERO_WALK_LEFT_BODY_F00..F14` less `F09`, plus
 `HERO_STAND_NEUTRAL_BODY`. 15 names, `make test` 29/29 and 29/29,
 `--duplicates` still one name per picture.
+
+## 5. Walk-left arm: six frames, and why the other nine do not exist
+
+Walk-**right** has a dedicated arm for all fifteen frames. Walk-left has six,
+and that is not an omission. Reading each named frame of the cycle in CAPSULE,
+on both ports, and asking whether it draws its own arm or calls the guarded
+shared one:
+
+    DRAW_0  CV_332A      dedicated        DRAW_8   guarded + CV_356E, CV_352C
+    DRAW_1  CV_3332      dedicated        DRAW_9   guarded + CV_0020
+    DRAW_2  CV_333A      dedicated        DRAW_10  guarded
+    DRAW_3  CV_3342      dedicated        DRAW_11  guarded
+    DRAW_4  CV_334A      dedicated        DRAW_12  guarded
+    DRAW_14 CV_331A      dedicated        DRAW_13  guarded
+
+Frames 5, 6 and 10 to 13 draw **no arm of their own**: they `call` the
+`[0x0A]` weapon-state switch (`GUARDED_DRAW_CV_126`, now
+`HERO_GUN_ARM_POSE_LEFT_CASE_01`), which supplies the arm. Identical on both
+ports, frame for frame.
+
+So `HERO_WALK_LEFT_ARM` is a six-member family — F00..F04 and F14 — and the
+missing nine are frames that use the shared arm instead. Same kind of
+explained absence as `HERO_RUN_LEFT_ARM`'s F04, which draws no arm at all,
+and `HERO_WALK_LEFT_BODY`'s F09, which is the shared neutral frame.
+
+Three absences, three different reasons, each read off the code rather than
+assumed:
+
+| family | absent | why |
+|---|---|---|
+| `HERO_WALK_LEFT_BODY` | F09 | a direction-neutral frame both cycles share |
+| `HERO_WALK_LEFT_ARM` | F05..F13 | those frames call the weapon-state arm |
+| `HERO_RUN_LEFT_ARM` | F04 | that frame draws no arm when unarmed |
+
+`make test` 29/29 and 29/29 after each.

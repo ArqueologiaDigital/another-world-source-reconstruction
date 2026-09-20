@@ -650,7 +650,7 @@ DRAW_CV078_PLAY_60_F0B_V22_C1:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_15:
 	jne [0x0A], 0x00, CAVES_DRAW_CV078_PLAY_60_F0B_V22_C1_L1
-	video type=0, offset=CV_331A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F14, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_080
 
 CAVES_DRAW_CV078_PLAY_60_F0B_V22_C1_L1:
@@ -678,7 +678,7 @@ CAVES_DRAW_CV_080_L2:
 
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_1:
 	jne [0x0A], 0x00, CAVES_DRAW_CV_080_L4
-	video type=0, offset=CV_332A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_061
 
 CAVES_DRAW_CV_080_L4:
@@ -692,7 +692,7 @@ CAVES_DRAW_CV_080_L4:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_2:
 	jne [0x0A], 0x00, CAVES_DRAW_CV_061_L1
-	video type=0, offset=CV_3332, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_063
 
 CAVES_DRAW_CV_061_L1:
@@ -706,7 +706,7 @@ CAVES_DRAW_CV_061_L1:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_3:
 	jne [0x0A], 0x00, CAVES_DRAW_CV_063_L1
-	video type=0, offset=CV_333A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_065
 
 CAVES_DRAW_CV_063_L1:
@@ -720,7 +720,7 @@ CAVES_DRAW_CV_063_L1:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_4:
 	jne [0x0A], 0x00, CAVES_DRAW_CV_065_L1
-	video type=0, offset=CV_3342, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_067
 
 CAVES_DRAW_CV_065_L1:
@@ -734,7 +734,7 @@ CAVES_DRAW_CV_065_L1:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_5:
 	jne [0x0A], 0x00, CAVES_DRAW_CV_067_L1
-	video type=0, offset=CV_334A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_069
 
 CAVES_DRAW_CV_067_L1:

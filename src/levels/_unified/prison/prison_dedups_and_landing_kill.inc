@@ -199,7 +199,7 @@ DRAW_CV_078:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_HERO_WALK_LEFT_DRAW_PHASE_14:
 	jne [0x0A], 0x00, PRISON_DRAW_CV_078_L1
-	video type=0, offset=CV_331A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F14, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_080
 
 PRISON_DRAW_CV_078_L1:
@@ -227,7 +227,7 @@ DRAW_HERO_STAND_LEFT:
 
 PRISON_HERO_WALK_LEFT_DRAW_PHASE_00:
 	jne [0x0A], 0x00, PRISON_DRAW_CV_080_L4
-	video type=0, offset=CV_332A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_061
 
 PRISON_DRAW_CV_080_L4:
@@ -241,7 +241,7 @@ PRISON_DRAW_CV_080_L4:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_HERO_WALK_LEFT_DRAW_PHASE_01:
 	jne [0x0A], 0x00, PRISON_DRAW_CV_061_L1
-	video type=0, offset=CV_3332, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_063
 
 PRISON_DRAW_CV_061_L1:
@@ -255,7 +255,7 @@ PRISON_DRAW_CV_061_L1:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_HERO_WALK_LEFT_DRAW_PHASE_02:
 	jne [0x0A], 0x00, PRISON_DRAW_CV_063_L1
-	video type=0, offset=CV_333A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_065
 
 PRISON_DRAW_CV_063_L1:
@@ -269,7 +269,7 @@ PRISON_DRAW_CV_063_L1:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_HERO_WALK_LEFT_DRAW_PHASE_03:
 	jne [0x0A], 0x00, PRISON_DRAW_CV_065_L1
-	video type=0, offset=CV_3342, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_067
 
 PRISON_DRAW_CV_065_L1:
@@ -283,7 +283,7 @@ PRISON_DRAW_CV_065_L1:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_HERO_WALK_LEFT_DRAW_PHASE_04:
 	jne [0x0A], 0x00, PRISON_DRAW_CV_067_L1
-	video type=0, offset=CV_334A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_069
 
 PRISON_DRAW_CV_067_L1:

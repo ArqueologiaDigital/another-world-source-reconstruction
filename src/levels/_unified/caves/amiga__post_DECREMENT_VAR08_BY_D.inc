@@ -847,7 +847,7 @@ LABEL_9AEE:
 
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_15:
 	jne [0x0A], 0x00, LABEL_9B08
-	video type=0, offset=CV_331A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F14, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_118
 
 LABEL_9B08:
@@ -871,7 +871,7 @@ LABEL_9B22:
 
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_1:
 	jne [0x0A], 0x00, LABEL_9B39
-	video type=0, offset=CV_332A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_099
 
 LABEL_9B39:
@@ -881,7 +881,7 @@ LABEL_9B39:
 
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_2:
 	jne [0x0A], 0x00, LABEL_9B50
-	video type=0, offset=CV_3332, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_101
 
 LABEL_9B50:
@@ -891,7 +891,7 @@ LABEL_9B50:
 
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_3:
 	jne [0x0A], 0x00, LABEL_9B67
-	video type=0, offset=CV_333A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_103
 
 LABEL_9B67:
@@ -901,7 +901,7 @@ LABEL_9B67:
 
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_4:
 	jne [0x0A], 0x00, LABEL_9B7E
-	video type=0, offset=CV_3342, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_105
 
 LABEL_9B7E:
@@ -911,7 +911,7 @@ LABEL_9B7E:
 
 CAVES_HERO_WALK_LEFT_STRIDE_PHASE_5:
 	jne [0x0A], 0x00, LABEL_9B95
-	video type=0, offset=CV_334A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_ARM_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp DRAW_CV_107
 
 LABEL_9B95:
