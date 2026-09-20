@@ -585,10 +585,10 @@ CV_1B14		EQU 0x1B14
 CV_5F94		EQU 0x5F94
 CV_39A2		EQU 0x39A2
 CV_5C94		EQU 0x5C94
-CV_57C4		EQU 0x57C4
-CV_5878		EQU 0x5878
-CV_5944		EQU 0x5944
-CV_5AAC		EQU 0x5AAC
+HERO_PRONE_TRANSITION_LEFT_F00		EQU 0x57C4
+HERO_PRONE_TRANSITION_LEFT_F01		EQU 0x5878
+HERO_PRONE_TRANSITION_LEFT_F02		EQU 0x5944
+HERO_PRONE_TRANSITION_LEFT_F04		EQU 0x5AAC
 CV_4754		EQU 0x4754
 CV_485C		EQU 0x485C
 CV_4BC4		EQU 0x4BC4
@@ -599,10 +599,10 @@ CV_4A04		EQU 0x4A04
 CV_49B0		EQU 0x49B0
 CV_48D8		EQU 0x48D8
 CV_4954		EQU 0x4954
-CV_46D4		EQU 0x46D4
-CV_45C0		EQU 0x45C0
-CV_4528		EQU 0x4528
-CV_448C		EQU 0x448C
+HERO_PRONE_TRANSITION_RIGHT_F04		EQU 0x46D4
+HERO_PRONE_TRANSITION_RIGHT_F02		EQU 0x45C0
+HERO_PRONE_TRANSITION_RIGHT_F01		EQU 0x4528
+HERO_PRONE_TRANSITION_RIGHT_F00		EQU 0x448C
 CV_4D98		EQU 0x4D98
 CV_4DE4		EQU 0x4DE4
 CV_4E30		EQU 0x4E30
@@ -13890,15 +13890,15 @@ HERO_WALK_RIGHT_STOP_TO_GUN_READY:
 	video type=0, offset=CV_485C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0003
 	break
-	video type=0, offset=CV_46D4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
 	break
-	video type=0, offset=CV_45C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0006
 	break
-	video type=0, offset=CV_4528, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_448C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x2A], 0x000F
 	call SET_VAR04_TO_0010
 	jmp HERO_GUN_AIM_HOLD_RIGHT_LOOP
@@ -14021,15 +14021,15 @@ HERO_WALK_LEFT_STOP_TO_GUN_READY:
 	video type=0, offset=CV_4BC4, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0003
 	break
-	video type=0, offset=CV_5AAC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
 	break
-	video type=0, offset=CV_5944, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0006
 	break
-	video type=0, offset=CV_5878, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_57C4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x2A], 0x000F
 	call SET_VAR04_TO_0000
 	jmp HERO_GUN_AIM_HOLD_LEFT_LOOP

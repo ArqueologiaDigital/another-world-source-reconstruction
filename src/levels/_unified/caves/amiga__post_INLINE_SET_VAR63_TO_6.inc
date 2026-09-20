@@ -58,15 +58,15 @@ HERO_PRONE_RISE_RIGHT:
 	video type=0, offset=CV_485C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0003
 	break
-	video type=0, offset=CV_46D4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
 	break
-	video type=0, offset=CV_45C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0006
 	break
-	video type=0, offset=CV_4528, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_448C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x2A], 0x000F
 	call SET_VAR04_TO_0010
 	jmp HERO_CROUCH_ARMED_RIGHT_LOOP
@@ -189,15 +189,15 @@ HERO_PRONE_RISE_LEFT:
 	video type=0, offset=CV_4BC4, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0003
 	break
-	video type=0, offset=CV_5AAC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
 	break
-	video type=0, offset=CV_5944, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0006
 	break
-	video type=0, offset=CV_5878, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_57C4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x2A], 0x000F
 	call SET_VAR04_TO_0000
 	jmp HERO_CROUCH_ARMED_LEFT_LOOP

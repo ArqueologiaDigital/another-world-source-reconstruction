@@ -31,21 +31,21 @@ LABEL_8A8F:
 	db 0x11
 
 PRISON_HERO_CRAWL_RIGHT_START:
-	video type=0, offset=CV_448C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_4528, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0006
 	break
-	video type=0, offset=CV_45C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
 	call SET_VAR04_TO_0008
 	break
-	video type=0, offset=CV_4650, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_46D4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0003
 	break
-	video type=0, offset=CV_4C40, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0005
 	break
 	mov [0x2A], 0x000F
@@ -75,15 +75,15 @@ PRISON_HERO_CRAWL_RIGHT_STOP:
 	video type=0, offset=CV_485C, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0003
 	break
-	video type=0, offset=CV_46D4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
 	break
-	video type=0, offset=CV_45C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0006
 	break
-	video type=0, offset=CV_4528, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_448C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x2A], 0x000F
 	call SET_VAR04_TO_0010
 	jmp LABEL_982D
@@ -178,21 +178,21 @@ LABEL_8C33:
 	db 0x11
 
 PRISON_HERO_CRAWL_LEFT_START:
-	video type=0, offset=CV_57C4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_5878, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0006
 	break
-	video type=0, offset=CV_5944, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
 	call SET_VAR04_TO_0008
 	break
-	video type=0, offset=CV_5A08, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_5AAC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0003
 	break
-	video type=0, offset=CV_5B4C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0005
 	break
 	mov [0x2A], 0x000F
@@ -222,15 +222,15 @@ PRISON_HERO_CRAWL_LEFT_STOP:
 	video type=0, offset=CV_4BC4, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0003
 	break
-	video type=0, offset=CV_5AAC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
 	break
-	video type=0, offset=CV_5944, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0006
 	break
-	video type=0, offset=CV_5878, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_57C4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x2A], 0x000F
 	call SET_VAR04_TO_0000
 	jmp LABEL_9752
