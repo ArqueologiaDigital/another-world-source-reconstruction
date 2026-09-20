@@ -25,7 +25,7 @@ HERO_FLOOR_STEP_UP_DRAW_BY_FACING:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_091
-	video offset=CINEMATIC_092, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_UP_BEAM, x=[HERO_X], y=[HERO_Y]
 	ret
 
 

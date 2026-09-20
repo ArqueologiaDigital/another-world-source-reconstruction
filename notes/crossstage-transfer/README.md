@@ -39,3 +39,43 @@ still one name per picture.
 
 That the same 9 come out of both ports independently, at the same constant
 numbers, is itself a check: these are stage-shared pictures in both releases.
+
+## `deprefix_shared_art.py`: a stage prefix the art falsifies
+
+The largest held category above — 36 on amiga, 34 on msdos — was "the name
+carries another stage's prefix". Held is right for a *transfer*, but the
+situation is not a transfer problem, it is a **wrong name**. NAMING.md scopes
+a name to a stage when it means something there and not elsewhere; if the
+identical picture is drawn in CAVES, PRISON and CAPSULE then `CAVES_` is
+false about it. So the prefix comes off and every stage that draws the
+picture uses the one name — which also names the siblings that had none.
+
+**This corrects earned names, including three from earlier the same day.**
+`CINEMATIC_PRISON_HERO_DEATH_F0..F2`, named from the scene that kills the
+hero, is byte-identical art in CAVES and CAPSULE. The hero dies in every
+stage: the frames were right and the prefix was not. (That group is
+currently held by the all-branch-chunk guard, so the correction is recorded
+and not yet applied.)
+
+Applied: **26 groups, 76 constants** — `CINEMATIC_TELEPORT_UP_BEAM`,
+`CINEMATIC_TELEPORT_DOWN_BEAM`, `CINEMATIC_CHARGED_BLAST_SWEEP_NEAR`,
+`CINEMATIC_SHIELD_DECAY_PHASE_*` and others, each now one name across the
+stages that share the picture.
+
+### Two guards learned by breaking things
+
+**Whole family or none.** The script works per *picture*, and a picture is
+one member of a family. `CINEMATIC_CAVES_HERO_IDLE_DOWN_0`'s art appears in
+CAPSULE while `_1` to `_4`'s does not, so de-prefixing that one member left
+`CINEMATIC_HERO_IDLE_DOWN_0` beside `CINEMATIC_CAVES_HERO_IDLE_DOWN_1..4` —
+two families with a hole each, and the two ports disagreeing about one
+picture. `--duplicates` caught it; reverted, and a member whose
+stage-prefixed siblings are not all in the group is now held.
+
+**Both ports or neither.** Two groups de-prefixed on amiga while msdos's
+equivalents were held by other guards, so one picture ended up with two names
+across ports. One was fixed by de-prefixing msdos too; the other was the
+family split above.
+
+Verified after: `make test` 29/29 and 29/29, `undefined_symbols.py` clean,
+`--duplicates` back to one name per picture over 1,898 pictures.

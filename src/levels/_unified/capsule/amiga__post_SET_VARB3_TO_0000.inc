@@ -472,10 +472,10 @@ LABEL_1EDC:
 LABEL_1EF5:
 	break
 	sub [HERO_Y], 0x0018
-	video offset=CINEMATIC_307, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_IDLE_DOWN_0, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_Y], 0x0002
-	video offset=CINEMATIC_307, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_IDLE_DOWN_0, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0005
 	call LABEL_875B
 	setup channel=0x14, address=LABEL_87CF
@@ -557,7 +557,7 @@ LABEL_2015:
 	db 0x62, 0x05, 0x58, 0x32, 0x8C, 0x21, 0x55, 0x05
 
 DRAW_CIN_332:
-	video offset=CINEMATIC_332, x=160, y=[0x21]
+	video offset=CINEMATIC_WATERFALL_LEFT_STAIRS_BG, x=160, y=[0x21]
 	ret
 
 

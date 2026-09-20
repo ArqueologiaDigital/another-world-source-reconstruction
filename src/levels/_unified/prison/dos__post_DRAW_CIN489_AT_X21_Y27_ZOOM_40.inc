@@ -68,7 +68,7 @@ PRISON_SUPERBLAST_ADVANCE_LEFT_CASE_64:
 	call LABEL_401D
 	mov [0x2C], 0x0001
 	jne [0x1D], 0x00, LABEL_3F3F
-	video offset=CINEMATIC_463, x=[0x22], y=[0x27]
+	video offset=CINEMATIC_CHARGED_BLAST_SWEEP_NEAR, x=[0x22], y=[0x27]
 	ret
 
 
@@ -91,7 +91,7 @@ PRISON_SUPERBLAST_ADVANCE_RIGHT_CASE_64:
 	call LABEL_401D
 	mov [0x2C], 0x0000
 	jne [0x1D], 0x00, LABEL_3F3F
-	video offset=CINEMATIC_463, x=[0x22], y=[0x27]
+	video offset=CINEMATIC_CHARGED_BLAST_SWEEP_NEAR, x=[0x22], y=[0x27]
 	ret
 
 

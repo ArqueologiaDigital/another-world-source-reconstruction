@@ -194,21 +194,21 @@ LABEL_545D:
 LABEL_5462:
 	break
 	call CAPSULE_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
-	video offset=CINEMATIC_086, x=[0x21], y=[HERO_Y]
+	video offset=CINEMATIC_SHIELD_DECAY_PHASE_3, x=[0x21], y=[HERO_Y]
 	sub [0x21], 0x0005
-	video offset=CINEMATIC_087, x=[0x21], y=[HERO_Y]
+	video offset=CINEMATIC_SHIELD_DECAY_PHASE_1_DEFAULT, x=[0x21], y=[HERO_Y]
 	add [0x21], 0x000A
-	video offset=CINEMATIC_088, x=[0x21], y=[HERO_Y]
+	video offset=CINEMATIC_SHIELD_DECAY_PHASE_2, x=[0x21], y=[HERO_Y]
 	break
 	call CAPSULE_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
 	sub [0x21], 0x0007
-	video offset=CINEMATIC_089, x=[0x21], y=[HERO_Y]
+	video offset=CINEMATIC_SHIELD_DECAY_PHASE_2_CASE_01, x=[0x21], y=[HERO_Y]
 	sub [0x21], 0x000A
 	video offset=CINEMATIC_090, x=[0x21], y=[HERO_Y]
 	add [0x21], 0x0018
-	video offset=CINEMATIC_087, x=[0x21], y=[HERO_Y]
+	video offset=CINEMATIC_SHIELD_DECAY_PHASE_1_DEFAULT, x=[0x21], y=[HERO_Y]
 	add [0x21], 0x000A
-	video offset=CINEMATIC_091, x=[0x21], y=[HERO_Y]
+	video offset=CINEMATIC_SHIELD_DECAY_PHASE_1, x=[0x21], y=[HERO_Y]
 	jmp LABEL_545D
 LABEL_54A8:
 	db 0x11
