@@ -7,10 +7,10 @@
 ; kills the channel.
 
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
-CINEMATIC_DECOR_AT_305_155_F14		EQU 0xC226
+CINEMATIC_LAKE_REED		EQU 0xC226
 .endif
 .if BRANCH == "chahi_amiga_1991"
-CINEMATIC_DECOR_AT_305_155_F14		EQU 0xD636
+CINEMATIC_LAKE_REED		EQU 0xD636
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
@@ -125,10 +125,10 @@ DECOR_F12_REPEAT_LOOP:
 DECOR_AT_305_155_F14_F9_BG:
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0x00
-	video offset=CINEMATIC_DECOR_AT_305_155_F14, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_LAKE_REED, x=[0x32], y=[0x33]
 	video offset=CINEMATIC_DECOR_AT_305_155_F9, x=[0x32], y=[0x33]
 	selectVideoPage 0xFF
-	video offset=CINEMATIC_DECOR_AT_305_155_F14, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_LAKE_REED, x=[0x32], y=[0x33]
 	video offset=CINEMATIC_DECOR_AT_305_155_F9, x=[0x32], y=[0x33]
 	break
 	setPalette 0x06

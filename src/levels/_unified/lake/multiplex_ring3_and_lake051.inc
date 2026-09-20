@@ -58,7 +58,7 @@ MULTIPLEX_ANIM_RING3_SLOT_2:
 
 DRAW_REED_DRIFT_LEFT_LOOP:
 	sub [0x32], 0x0001
-	video offset=CINEMATIC_DECOR_AT_305_155_F14, x=[0x32], y=[0x33]
+	video offset=CINEMATIC_LAKE_REED, x=[0x32], y=[0x33]
 	break
 	sub [0x32], 0x0001
 	video offset=CINEMATIC_LAKE_051_SEQ_F0, x=[0x32], y=[0x33]
