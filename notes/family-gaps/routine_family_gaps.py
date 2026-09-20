@@ -55,19 +55,20 @@ So this number is a worklist with more than one pile in it. Asking, per gap,
      2  no art between the neighbours; the family may simply skip
     33  no neighbour on one side, so no slot to look at
 
-**The 17 are still two things, and this probe cannot tell them apart.**
-`CAPSULE_SHOT_STATE_FRAME_RIGHT_ABOVE` is missing 3, and the art at that slot
-is drawn by `CAPSULE_SHOT_IMPACT_SPARK_RIGHT_PHASE_4`. That is *not*
-`ABOVE_03` under another spelling -- it is a **second series interleaved with
-the first**, the same shape as the hero's body-and-arm pairing, where two
-layers of one animation sit in alternating offsets. Merging them would be
-wrong in a way that `CAPSULE_HERO_WALK_RIGHT_DRAW` missing frame 5 while
-`CAPSULE_HERO_WALK_RIGHT_FOOTSTEP_PHASE_1` exists would not.
+**The 17 are not parallel layers.** That was the first reading and the
+measurement refutes it. The test that separated body from arm is co-draw plus
+a size split, and applied here all 17 are the same size class and are *never*
+drawn together by any routine -- 17x12/7 beside 17x17/6, co-draw count zero.
+A body and an arm are co-drawn and differ by an order of magnitude.
 
-Telling a renamed member from a parallel layer needs what separated body from
-arm in `../shared-bank-geometry/`: the measured geometry of the two, and
-whether one routine draws both. That is the next step, and it is a
-measurement rather than a judgement.
+What they are instead is not one thing either.
+`CAPSULE_SHOT_STATE_FRAME_RIGHT_ABOVE_{01,02,04}` and
+`CAPSULE_SHOT_IMPACT_SPARK_RIGHT_PHASE_{1,4}` are one animation under two
+naming conventions, neither complete; unifying them overrides an earned name.
+`CAVES_BUDDY_IDLE_HOLD_PHASE`'s gap at 10 is occupied by `..._PHASE_6`, a
+member of the same family -- so that family's index order is not its offset
+order, which is what the slot test assumes, and there the gap is an artefact
+of the test.
 
 Usage
 -----

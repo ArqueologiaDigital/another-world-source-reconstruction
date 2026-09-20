@@ -44,16 +44,35 @@ Asking that question per gap splits the 73:
      2  no art between the neighbours; the family may simply skip
     33  no neighbour on one side
 
-**And the 17 are still two things.** `CAPSULE_SHOT_STATE_FRAME_RIGHT_ABOVE`
-is missing 3, and the art there is drawn by
-`CAPSULE_SHOT_IMPACT_SPARK_RIGHT_PHASE_4` — which is *not* `ABOVE_03`
-renamed. It is a **second series interleaved with the first**, the same shape
-as the hero's body-and-arm pairing, two layers of one animation in
-alternating offsets. Merging those would be wrong where merging
-`CAPSULE_HERO_WALK_RIGHT_DRAW`'s missing frame 5 into
-`..._FOOTSTEP_PHASE_1` would be right.
+### The parallel-layer reading was wrong
 
-Separating a renamed member from a parallel layer needs what separated body
-from arm in `../shared-bank-geometry/`: the measured geometry of the two, and
-whether one routine draws both. A measurement, not a judgement — and not one
-made yet.
+I first read the 17 as a second series interleaved with the first — two
+layers of one animation, the shape of the hero's body-and-arm pairing — and
+said so. **The measurement refutes it.** The test that separated body from
+arm is co-draw plus a size split; applied here:
+
+    family                                gap  neighbour  gap art   co-drawn
+    CAPSULE_SHOT_STATE_FRAME_RIGHT_ABOVE    3  17x12/7    17x17/6      0
+    PRISON_SHOT_HIT_BURST_LEFT_ABOVE        3  17x12/7    17x17/6      0
+    CAVES_BUDDY_IDLE_HOLD_PHASE            10  54x30/17   54x30/17     0
+
+**17 of 17**: same size class, and *never* drawn together by any routine. A
+body and an arm are drawn together and differ in size by an order of
+magnitude. These do neither. They are not layers.
+
+### What they actually are — two different things again
+
+`CAPSULE_SHOT_STATE_FRAME_RIGHT_ABOVE_{01,02,04}` and
+`CAPSULE_SHOT_IMPACT_SPARK_RIGHT_PHASE_{1,4}` are **one animation under two
+naming conventions, neither complete** — five routines for one burst, split
+across two spellings with independent index runs. Unifying them means
+overriding a name someone earned, which is a heavier step than adding one.
+
+`CAVES_BUDDY_IDLE_HOLD_PHASE` is different again: the routine occupying the
+gap at 10 is `..._PHASE_6`, a member of *the same family*. So that family's
+index order is not its offset order — which is the assumption the slot test
+rests on. For that one the gap is an artefact of the test, not a fact about
+the tree.
+
+So the 17 remain unmerged, now for stated reasons rather than a guess, and
+the slot test is known to assume something one family violates.
