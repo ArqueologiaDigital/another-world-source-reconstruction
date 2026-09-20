@@ -30,7 +30,7 @@ LABEL_A139:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_868
-	video offset=CINEMATIC_869, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_TELEPORT_UP_BEAM, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
@@ -46,7 +46,7 @@ LABEL_A153:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_866
-	video offset=CINEMATIC_867, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_TELEPORT_DOWN_BEAM, x=[HERO_X], y=[HERO_Y]
 	ret
 
 

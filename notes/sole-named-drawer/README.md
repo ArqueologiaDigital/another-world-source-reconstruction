@@ -144,3 +144,28 @@ Applied: 43 constants across snes_eu CAPSULE, ENDING, INTRO, PRISON, TANK and
 gba_usa INTRO. Held: the 18 cartridge CAVES names, pending a checker that
 covers `genesis_europe` — which is the real fix, since right now only the
 byte gate can see that target and it cannot say *which* symbol moved.
+
+### The `genesis_europe` mismatch was a name collision, not a checker gap
+
+Diagnosed rather than left as "a target no checker sees". `cart__entry.inc`
+ended up with **two** `EQU`s of one name:
+
+    cart__entry.inc:2242  CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG  EQU 0x6B86
+    cart__entry.inc:2262  CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG  EQU 0x73A8
+
+The second is `CINEMATIC_315`, renamed by this pass onto a name cartridge
+already used at a different offset. Two definitions, the later one wins, and
+the bytes move — which is why `genesis_europe/CAVES` mismatched while
+`undefined_symbols.py` stayed clean: nothing was *undefined*, one thing was
+defined twice.
+
+**The taken-check never looked at `EQU`s.** It tested `new in bodies or new
+in drawn` — labels and drawn symbols — so a name that exists as an `EQU` but
+is not drawn in that file looked free. It now also collects every `EQU` name
+in the canonical file *and* in the unified arms that carry that branch's
+copy, which is where the collision actually was.
+
+With that fixed the cartridge CAVES batch applies cleanly: **29/29 and
+29/29**, no duplicate `EQU` in the cart arms, `--duplicates` still one name
+per picture. The `genesis_europe` checker gap is real and still worth closing
+— it is why only the byte gate caught this — but it was not the cause.

@@ -151,6 +151,9 @@ MECHANISM = ("FILL_PAGE", "RANDOM_DELAY", "PLAY_SOUND", "ENTRY_POINT",
 # under NAMING.md §1, whatever else it says. Deriving constant names from it
 # would copy the placeholder onto the art.
 RE_RAWINDEX = re.compile(r"_\d{3,}(_|$)")
+RE_EQU_NAME = re.compile(r"^([A-Za-z_]\w*)\s+EQU\s", re.M)
+UNIFIED_PREFIX = {"chahi_amiga_1991": "amiga", "dos_1992": "dos",
+                  "cartridge_1992": "cart", "gba_2004": "gba"}
 # A name ending in a raw hex token is the forbidden form of NAMING.md §1, and
 # it arrives here by inheritance: PRISON_LIFT_SHAFT_STRIP_TILT_UPTO_9A and
 # CAVES_BARRIER_BREACH_EVENT_CASE_8A are routine names that carry a literal
@@ -220,7 +223,27 @@ def main() -> int:
             if not path.is_file():
                 continue
             bodies = parse(path)
-            at_slot = actor_slot_matcher(path.read_text())
+            text = path.read_text()
+            at_slot = actor_slot_matcher(text)
+            # Every EQU name already defined for this stage, in the canonical
+            # file AND in the unified arms that carry this branch's copy. The
+            # taken-check used to look only at labels and drawn symbols, so a
+            # name that exists as an EQU but is not drawn in this file looked
+            # free -- and CINEMATIC_315 was proposed as
+            # CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG in cartridge/CAVES,
+            # where that name already sat on 0x6B86. Applying it put two EQUs
+            # of one name in cart__entry.inc, which moved bytes for
+            # genesis_europe and took verify-unified to 28/29.
+            equ_names = set(RE_EQU_NAME.findall(text))
+            arms = ROOT / "src" / "levels" / "_unified" / stage.lower()
+            if arms.is_dir():
+                pre = UNIFIED_PREFIX[PORTS[port]]
+                for f in arms.rglob("*.inc"):
+                    head = f.name.split("__", 1)[0] if "__" in f.name else ""
+                    if head and pre not in head.split("_"):
+                        continue
+                    equ_names |= set(
+                        RE_EQU_NAME.findall(f.read_text(errors="replace")))
             drawn: dict[str, set[str]] = collections.defaultdict(set)
             for lab, body in bodies.items():
                 for line in body:
@@ -255,7 +278,7 @@ def main() -> int:
                 # CINEMATIC_CINEMATIC_PRISON_SHOT_BEAM_SINGLE_DOT.
                 new = ("CINEMATIC_" + lab[:-len("_DRAW")]
                        if lab.endswith("_DRAW") else derived_base(lab))
-                if new in bodies or new in drawn:
+                if new in bodies or new in drawn or new in equ_names:
                     skipped["derived name already taken"] += 1
                     continue
                 rows.append((port, stage, const, new))

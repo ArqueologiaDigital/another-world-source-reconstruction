@@ -236,43 +236,43 @@ LABEL_6AC7:
 
 LABEL_6AD3:
 	jne [0x13], 0x70, LABEL_6ADF
-	video offset=CINEMATIC_786, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_ANIM_RIGHT_CASE_70, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6ADF:
 	jne [0x13], 0x71, LABEL_6AEB
-	video offset=CINEMATIC_785, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_ANIM_RIGHT_CASE_71, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6AEB:
 	jne [0x13], 0x72, LABEL_6AF7
-	video offset=CINEMATIC_784, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_ANIM_RIGHT_CASE_72, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6AF7:
 	jne [0x13], 0x73, LABEL_6B03
-	video offset=CINEMATIC_783, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_ANIM_RIGHT_CASE_73, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6B03:
 	jne [0x13], 0x74, LABEL_6B0F
-	video offset=CINEMATIC_782, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_ANIM_RIGHT_CASE_74, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6B0F:
 	jne [0x13], 0x75, LABEL_6B1B
-	video offset=CINEMATIC_781, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_ANIM_RIGHT_CASE_75, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6B1B:
 	jne [0x13], 0x76, LABEL_6B27
-	video offset=CINEMATIC_780, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_ANIM_RIGHT_CASE_76, x=[0x21], y=[0x27]
 	ret
 
 

@@ -98,7 +98,7 @@ LABEL_D415:
 
 LABEL_D425:
 	fill page=0x00, color=0x08
-	video offset=CINEMATIC_454, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_6E_BACKDROP, x=160, y=100
 	ret
 
 
@@ -525,7 +525,7 @@ LABEL_D8C2:
 
 LABEL_D8D2:
 	fill page=0x00, color=0x03
-	video offset=CINEMATIC_563, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_71_BACKDROP, x=160, y=100
 	ret
 
 
