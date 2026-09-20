@@ -239,3 +239,20 @@ Routine-layer share, before → after: amiga/CAVES 27.0 → 28.0 %, amiga/PRISON
 → 32.7 %, amiga/CAPSULE → 27.0 %. Routines drawing only identified art fall
 from 3,441 to 3,333, and the unique-and-nameable pool from 140 to 32 — the
 pass consumed what it could reach.
+
+### Second pass, same day: 35 more, after the actor sheet
+
+Naming 40 actor-slot offsets unblocked another round. `name_routines_from_art.py`
+proposed 64; 29 were dropped by the all-branch-chunk rule and **35 applied**.
+The new material is a complete `DRAW_FIGURE_WALK_LEFT_F00..F15` run, plus
+copies of `DRAW_HERO_RUN_RIGHT_F*` and `DRAW_HERO_STAND_LEFT` landing in the
+ports and stages the first pass could not reach.
+
+The `DRAW_FIGURE_` stem comes from the derivation dropping the bank word:
+`CV_FIGURE_WALK_LEFT_BODY_F00` gives `FIGURE_WALK_LEFT` plus the shared index.
+Like the art it is named for, it claims a figure and no character.
+
+Routine-layer share after both passes: amiga/PRISON 32.8 %, amiga/CAVES
+28.6 % (from 26.3 % at the start of the day), amiga/CAPSULE 27.2 %. Routines
+drawing only identified art 3,441 → 3,298; those drawing nothing but
+placeholders 3,138 → 3,052.
