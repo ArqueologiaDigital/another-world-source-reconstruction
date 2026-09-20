@@ -40,7 +40,18 @@ the result applicable without a render:
      `CINEMATIC_<index>`;
   3. no other routine in the stage draws it;
   4. it is not drawn at `x=[0x07], y=[0x08]` (#0138 -- no actor claim);
-  5. the derived name, the routine's minus `_DRAW`, is not already taken.
+  5. the derived name is not already taken in that file;
+  6. **no other port has already derived a different name for the same
+     art.** Rule 5 compares name strings, which cannot see this: the two
+     ports' routines for one picture are often worded differently, so each
+     port derives its own name and the picture ends up with two. That is
+     exactly what happened on the first run of the widened rule --
+     `CINEMATIC_BIOMETRIC_SCAN_LINE_SWEEP_ACROSS` on amiga against
+     `CINEMATIC_BIOMETRIC_SCAN_RIGHTWARD_LINE` on msdos, and
+     `CINEMATIC_LESTER_PRONE_BODY` against `CINEMATIC_LESTER_PRONE_STILL_HOLD`,
+     both caught afterwards by `crossport-transfer --duplicates`. Rule 6
+     compares the **art**, by `canonical_md5` over the parsed tree, and holds
+     both rows so a human names the intersection.
 
 The constant then takes the routine's name. One routine, one draw, one user:
 there is no index to invent and no second subject to confuse.
@@ -325,11 +336,49 @@ def main() -> int:
             print(f"  {len(by[k]):3d}  {k}")
         return 0
 
-    print(f"{len(rows)} constant(s) nameable from a sole `_DRAW` routine:\n")
+    print(f"{len(rows)} constant(s) nameable from a sole named drawer:\n")
     for port, stage, const, new in rows:
         print(f"  {port}/{stage:<10} {const:<18} -> {new}")
     for why, n in skipped.items():
         print(f"\n  ({n} skipped: {why})")
+    # Rule 6: two ports deriving different names for one picture.
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1]
+                               / "polygon-extent-correction"))
+        from polygon_tree import canonical_md5, parse_polygon_tree
+        from extent_matches_renderer import slab
+        RE_EQU2 = re.compile(r"^(\w+)\s+EQU\s+(0x[0-9A-Fa-f]+)", re.M)
+        SID = {"CODE_WHEEL": 0, "INTRO": 1, "LAKE": 2, "PRISON": 3,
+               "CAVES": 4, "TANK": 5, "CAPSULE": 6, "ENDING": 7,
+               "PASSCODE": 8}
+        art: dict[tuple, str] = {}
+        for port, stage, const, new in rows:
+            text2 = (ROOT / "src" / "levels" / PORTS[port]
+                     / f"{stage}.asm").read_text(errors="replace")
+            off = dict(RE_EQU2.findall(text2)).get(const)
+            if not off:
+                continue
+            tree = parse_polygon_tree(slab("cinematic", port, SID[stage]),
+                                      int(off, 16))
+            if tree is not None:
+                art[(port, stage, const)] = canonical_md5(tree)
+        bym: dict[tuple, set] = collections.defaultdict(set)
+        for (port, stage, const), m in art.items():
+            bym[(stage, m)].add(
+                next(n for p2, s2, c2, n in rows
+                     if (p2, s2, c2) == (port, stage, const)))
+        clash = {k for k, v in bym.items() if len(v) > 1}
+        if clash:
+            drop = {(p2, s2, c2) for (p2, s2, c2), m in art.items()
+                    if (s2, m) in clash}
+            rows = [r for r in rows if (r[0], r[1], r[2]) not in drop]
+            print(f"\n  ({len(drop)} held by rule 6: the two ports derive "
+                  f"different names for the same art)")
+            for stage, m in sorted(clash):
+                print(f"     {stage}: {' vs '.join(sorted(bym[(stage, m)]))}")
+    except Exception as exc:                     # ROM not extracted
+        print(f"\n  (rule 6 not checked: {exc})")
+
     if args.proposals:
         ev = ("Sole-named-drawer. The routine's name is semantic and denotes "
               "a subject -- not a mechanism, a selector, a raw index or a hex "
