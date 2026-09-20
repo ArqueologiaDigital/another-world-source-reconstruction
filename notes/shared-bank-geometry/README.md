@@ -137,12 +137,42 @@ many frames fill a hole:
 Unanimous per stage, and the same split those stages already show in their
 `_DRAW_PHASE_` names. The base follows the **stage**, not the spelling.
 
-So the base is not the obstacle, and the spelling still stays out. Admitting
-it with the base calibrated gives `RUN_RIGHT_BODY` as `0,1,2,3,4,5,6,7,8,8` —
-two offsets claiming frame 8 — and `WALK_LEFT_BODY` with an index 16 inside a
-0..15 run. Something about these names is not a re-based frame ordinal. That
-is the open question the actor half now waits on, and it is a narrower one
-than before.
+So the base is not the obstacle, and the spelling still stays out — but the
+reason is now identified rather than mysterious, and it is not a regex
+problem.
+
+### What actually blocks the actor half
+
+Admitting bare `_PHASE_` with the base calibrated gives `RUN_RIGHT_BODY` as
+`0,1,2,3,4,5,6,7,8,8` and `WALK_LEFT_BODY` an index 16 inside a 0..15 run.
+Chasing those produced two findings and one dead end, and the dead end is the
+important one.
+
+**Finding 1: one offset is often several frames.** Counting (offset, stage)
+pairs where a single stage's routines claim that offset as more than one
+frame: **35 of 203, 17 %.** `CV_2D56` is `BUDDY_WALK_LEFT_DRAW_8` *and*
+`DRAW_9` in CAPSULE. These are shared sub-pieces — one small polygon reused
+across several frames of the run. They are not errors and they are not
+nameable with a frame index at all.
+
+**Finding 2: a terminal word hides the ordinal.** `BUDDY_WALK_LEFT_DRAW_3_DONE`
+and `ACTOR_RUN_RIGHT_PHASE_1_FRAME` are frames 3 and 1, but requiring the
+digits at end-of-string drops them. In the actor walk-left family that
+dropped *every* CAPSULE and PRISON claim, leaving CAVES — the only 1-based
+stage — as the sole source, so it became its own calibration reference and
+was never corrected. That is where the index 16 came from.
+
+**The dead end: fixing finding 2 alone makes things worse.** Admitting the
+terminal words feeds the finding-1 offsets into the calibration, where a
+last-write-wins map over multi-frame claims corrupts the pairwise difference
+and the whole walk-left family is rejected. The two findings have to be
+handled together: multi-frame offsets must be excluded from calibration *and*
+from indexed naming before the extra parses can help.
+
+That is a change to what the probe models, not a regex tweak, and it is the
+next concrete step. The tree is left at the last verified state — bare
+`_PHASE_` excluded, 22 proposals, stable across runs — rather than at the
+best-looking intermediate.
 
 The calibration probe also has to parse with **its own** regex rather than
 borrowing `hero_pose_consensus.parse_claim`. Borrowing it makes the
