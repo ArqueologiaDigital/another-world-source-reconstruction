@@ -6,10 +6,10 @@ CINEMATIC_HERO_SHADOW		EQU 0xDFFC
 CINEMATIC_HERO_SHADOW_STOP_RIGHT_2		EQU 0xDFF2
 .endif
 
-CV_5DE4		EQU 0x5DE4
+HERO_WATER_DEPTH_LEFT_CASE_00		EQU 0x5DE4
 HERO_STAND_LEFT_ARM		EQU 0x3322
 HERO_STAND_LEFT_BODY		EQU 0x0358
-CV_5DDC		EQU 0x5DDC
+HERO_WATER_DEPTH_RIGHT_CASE_00		EQU 0x5DDC
 CV_0F90		EQU 0x0F90
 CV_338E		EQU 0x338E
 HERO_WALK_RIGHT_BODY_F00		EQU 0x0FF8
@@ -242,7 +242,7 @@ DRAW_HERO_STOP_R_BUNDLE_046_047:
 
 
 DRAW_LESTER_FRAME_BUNDLE:
-	video type=0, offset=CV_5DDC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_0F90, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_338E, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
@@ -299,7 +299,7 @@ DRAW_HERO_STOP_R_BUNDLE_030_031:
 
 
 DRAW_HERO_STOP_R_BUNDLE_015_032_033:
-	video type=0, offset=CV_5DDC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=HERO_WALK_RIGHT_ARM_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW_STOP_RIGHT_2, x=[HERO_X], y=[HERO_Y]
@@ -441,7 +441,7 @@ DRAW_HERO_WALK_LEFT_F14:
 
 
 DRAW_HERO_STANDING_LEFT_IDLE:
-	video type=0, offset=CV_5DE4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=HERO_STAND_LEFT_ARM, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=HERO_STAND_LEFT_BODY, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
@@ -496,7 +496,7 @@ DRAW_HERO_WALK_LEFT_F6:
 
 
 DRAW_HERO_WALK_LEFT_F7:
-	video type=0, offset=CV_5DE4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video type=0, offset=CV_0874, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	video offset=CINEMATIC_HERO_SHADOW, x=[HERO_X], y=[HERO_Y]
 	ret

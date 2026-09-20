@@ -84,7 +84,16 @@ Exit status
 Usage
 -----
     python3 notes/gun-arm-dispatch/arm_case_table.py
-    python3 notes/gun-arm-dispatch/arm_case_table.py --var 0x0A
+    python3 notes/gun-arm-dispatch/arm_case_table.py --var 0x0A --proposals
+    python3 notes/gun-arm-dispatch/arm_case_table.py --var 0x05 \
+        --base HERO_WATER_DEPTH --proposals
+
+`[0x0A]` is the weapon state and `[0x05]` the waterline depth; a sweep of
+every variable tested this way found no third switch selecting shared-bank
+art. `--base` exists because the stem is the one thing the dispatch cannot
+tell you -- the case numbers, the direction and the membership all come out of
+the code, and only what the family *is* has to be supplied from the earned
+routine names that sit on it.
 """
 
 from __future__ import annotations
@@ -202,6 +211,11 @@ def main() -> int:
     ap.add_argument("--var", default="0x0A")
     ap.add_argument("--proposals", action="store_true",
                     help="emit an OLD NEW map for apply_bank_names.py --map")
+    ap.add_argument("--base", default="HERO_GUN_ARM",
+                    help="name stem for --proposals; the direction and "
+                         "_CASE_<n> are appended")
+    ap.add_argument("--secondary-suffix", default="_CHARGE_BLINK",
+                    help="suffix for the conditional second draw of a case")
     args = ap.parse_args()
 
     # (primary of case 2) identifies which switch a run belongs to, because
@@ -294,11 +308,11 @@ def main() -> int:
                 continue
             for case in sorted(tables[key]):
                 prim, sec = next(iter(tables[key][case]))
-                base = f"HERO_GUN_ARM_{d}_CASE_{case:02d}"
+                base = f"{args.base}_{d}_CASE_{case:02d}"
                 if prim.startswith("CV_"):
                     print(f"{prim} {base}")
                 if sec and sec.startswith("CV_"):
-                    print(f"{sec} {base}_CHARGE_BLINK")
+                    print(f"{sec} {base}{args.secondary_suffix}")
     return 0
 
 

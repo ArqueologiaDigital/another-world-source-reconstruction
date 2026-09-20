@@ -437,25 +437,25 @@ LABEL_91CD:
 
 LABEL_91EB:
 	jne [0x05], 0x00, LABEL_91F7
-	video type=0, offset=CV_5DDC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_91F7:
 	jne [0x05], 0x01, LABEL_9203
-	video type=0, offset=CV_5CD4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_9203:
 	jne [0x05], 0x02, LABEL_920F
-	video type=0, offset=CV_5D2C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_920F:
 	jne [0x05], 0x03, LABEL_921B
-	video type=0, offset=CV_5D84, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -674,25 +674,25 @@ LABEL_942E:
 
 CAPSULE_DRAW_CV_071_L1:
 	jne [0x05], 0x00, LABEL_9458
-	video type=0, offset=CV_5DE4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_9458:
 	jne [0x05], 0x01, LABEL_9464
-	video type=0, offset=CV_5DEC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_9464:
 	jne [0x05], 0x02, LABEL_9470
-	video type=0, offset=CV_5E44, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_9470:
 	jne [0x05], 0x03, LABEL_947C
-	video type=0, offset=CV_5E9C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 

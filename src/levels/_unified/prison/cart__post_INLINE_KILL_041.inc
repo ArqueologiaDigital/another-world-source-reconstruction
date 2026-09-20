@@ -288,7 +288,7 @@ LABEL_6EB0:
 
 PRISON_DRAW_CV_071_L1:
 	jne [0x05], 0x00, LABEL_6EDA
-	video type=0, offset=CV_5DE4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -300,7 +300,7 @@ LABEL_6EDA:
 
 LABEL_6EE6:
 	jne [0x05], 0x02, LABEL_6EF2
-	video type=0, offset=CV_5E44, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 

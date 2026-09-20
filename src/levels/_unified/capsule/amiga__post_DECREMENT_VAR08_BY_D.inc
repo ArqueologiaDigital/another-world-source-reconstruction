@@ -418,25 +418,25 @@ LABEL_780D:
 
 LABEL_782B:
 	jne [0x05], 0x00, LABEL_7837
-	video type=0, offset=CV_5DDC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_7837:
 	jne [0x05], 0x01, LABEL_7843
-	video type=0, offset=CV_5CD4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_7843:
 	jne [0x05], 0x02, LABEL_784F
-	video type=0, offset=CV_5D2C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_784F:
 	jne [0x05], 0x03, LABEL_785B
-	video type=0, offset=CV_5D84, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -655,25 +655,25 @@ LABEL_7A6E:
 
 LABEL_7A8C:
 	jne [0x05], 0x00, LABEL_7A98
-	video type=0, offset=CV_5DE4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_7A98:
 	jne [0x05], 0x01, LABEL_7AA4
-	video type=0, offset=CV_5DEC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_7AA4:
 	jne [0x05], 0x02, LABEL_7AB0
-	video type=0, offset=CV_5E44, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_7AB0:
 	jne [0x05], 0x03, LABEL_7ABC
-	video type=0, offset=CV_5E9C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 

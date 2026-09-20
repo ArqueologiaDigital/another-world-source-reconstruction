@@ -1,6 +1,7 @@
-# The hero's weapon-state arms, read off the switch that selects them
+# Hero art read off the switch that selects it
 
-13 shared-bank names, derived from control flow rather than from a render.
+21 shared-bank names, derived from control flow rather than from a render:
+13 weapon-state arms on `[0x0A]`, and 8 waterline sprites on `[0x05]`.
 
 ## Why these resisted everything else
 
@@ -104,3 +105,43 @@ reported the left switch's direction as undetermined — while the evidence, an
 earned label reading `LEFT` in plain text, sat two lines away on case 2. It
 now scans every case. A detector that reads only the first row of a table will
 miss anything the table records later.
+
+
+## The second switch: `[0x05]`, the waterline
+
+A sweep of every variable tested the same way found exactly one more selecting
+shared-bank art: `[0x05]`, two chains of four, in CAVES and CAPSULE on both
+ports.
+
+    $ python3 notes/gun-arm-dispatch/arm_case_table.py --var 0x05
+      switch starting at CV_5DDC        switch starting at CV_5DE4
+        case 0: CV_5DDC                   case 0: CV_5DE4
+        case 1: CV_5CD4                   case 1: CV_5DEC
+        case 2: CV_5D2C                   case 2: CV_5E44
+        case 3: CV_5D84                   case 3: CV_5E9C
+
+**This one is the control for the whole method.** All eight offsets already
+had earned routine names —
+`CAVES_HERO_WATER_DEPTH_SPRITE_RIGHT_CASE_01`, `..._LEFT_CASE_02` and so on —
+assigning a direction and a case number by reasoning that had nothing to do
+with this dispatch. The probe recovers the case numbers from the `jne`
+operands and the directions from the entry sites, and agrees with all eight,
+case for case and side for side. Nothing was tuned to make that happen; the
+`[0x05]` run was the first thing tried after `[0x0A]`.
+
+The names applied drop the stage prefix the routines carry
+(`HERO_WATER_DEPTH_LEFT_CASE_00`, not `CAVES_...`), because the art is shared:
+the same switch appears in CAPSULE, and a shared-bank name that claims a stage
+would be false at half its references.
+
+`--base` exists because the stem is the one thing the dispatch cannot supply.
+The case numbers, the direction and the membership all come out of the code;
+what the family *is* comes from the earned routine names sitting on it.
+
+## Running total
+
+    map                     names   remaining offset keys
+    gun_arm_cases.map          13   287
+    water_depth_cases.map       8   279
+
+`make test` 29/29 and 29/29 after each.

@@ -493,25 +493,25 @@ DRAW_CIN_178:
 
 CAVES_HERO_WATER_DEPTH_SPRITE_RIGHT_CASE_00:
 	jne [0x05], 0x00, CAVES_HERO_WATER_DEPTH_SPRITE_RIGHT_CASE_01
-	video type=0, offset=CV_5DDC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAVES_HERO_WATER_DEPTH_SPRITE_RIGHT_CASE_01:
 	jne [0x05], 0x01, CAVES_HERO_WATER_DEPTH_SPRITE_RIGHT_CASE_02
-	video type=0, offset=CV_5CD4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAVES_HERO_WATER_DEPTH_SPRITE_RIGHT_CASE_02:
 	jne [0x05], 0x02, CAVES_HERO_WATER_DEPTH_SPRITE_RIGHT_CASE_03
-	video type=0, offset=CV_5D2C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAVES_HERO_WATER_DEPTH_SPRITE_RIGHT_CASE_03:
 	jne [0x05], 0x03, CAVES_HERO_WATER_DEPTH_SPRITE_RIGHT_CASE_03_RET
-	video type=0, offset=CV_5D84, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -798,25 +798,25 @@ DRAW_CIN_165:
 
 CAVES_HERO_WATER_DEPTH_SPRITE_LEFT_CASE_00:
 	jne [0x05], 0x00, CAVES_HERO_WATER_DEPTH_SPRITE_LEFT_CASE_01
-	video type=0, offset=CV_5DE4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAVES_HERO_WATER_DEPTH_SPRITE_LEFT_CASE_01:
 	jne [0x05], 0x01, CAVES_HERO_WATER_DEPTH_SPRITE_LEFT_CASE_02
-	video type=0, offset=CV_5DEC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAVES_HERO_WATER_DEPTH_SPRITE_LEFT_CASE_02:
 	jne [0x05], 0x02, CAVES_TELEPORT_UP_SETTLE_LOOP
-	video type=0, offset=CV_5E44, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAVES_TELEPORT_UP_SETTLE_LOOP:
 	jne [0x05], 0x03, CAVES_HERO_WATER_DEPTH_SPRITE_LEFT_CASE_03_RET
-	video type=0, offset=CV_5E9C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
