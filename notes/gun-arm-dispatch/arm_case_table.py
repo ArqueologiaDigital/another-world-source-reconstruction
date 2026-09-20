@@ -112,10 +112,14 @@ STAGES = ["CODE_WHEEL", "INTRO", "LAKE", "PRISON", "CAVES",
 RE_LABEL = re.compile(r"^([A-Za-z_]\w*):")
 RE_CASE = re.compile(r"^\s*jne\s+\[(\w+)\],\s*(0x[0-9A-Fa-f]+),\s*(\w+)")
 RE_DRAW = re.compile(r"^\s*video\s+type=0,\s*offset=(\w+),\s*x=\[(\w+)\]")
+# Which draw slot a switch has to use to count. Default: the hero's own
+# position. The actor slot (#0138) is opt-in via --at, because a name derived
+# there may describe the pose but never the character.
+SLOTS = {"hero": {"HERO_X"}, "actor": {"0x07", "BUDDY_X"}}
 RE_RET = re.compile(r"^\s*(ret|break|jmp)\b")
 
 
-def scan(text: str, var: str):
+def scan(text: str, var: str, slot: set | None = None):
     """Chains of cases, linked by each `jne`'s else-target.
 
     A switch here is a chain: `jne [var], n, L` falls through to case n's
@@ -138,7 +142,7 @@ def scan(text: str, var: str):
         if not m or m.group(1) != var:
             return None
         d = RE_DRAW.match(lines[i + 1]) if i + 1 < len(lines) else None
-        if not d or d.group(2) != "HERO_X":
+        if not d or d.group(2) not in (slot or SLOTS["hero"]):
             return None
         secondary = None
         for j in range(i + 2, min(i + 12, len(lines))):
@@ -159,7 +163,7 @@ def scan(text: str, var: str):
         while k < len(lines) and not lines[k].strip():
             k += 1
         d = RE_DRAW.match(lines[k]) if k < len(lines) else None
-        if not d or d.group(2) != "HERO_X":
+        if not d or d.group(2) not in (slot or SLOTS["hero"]):
             return None
         secondary = None
         for m2 in range(k + 1, min(k + 12, len(lines))):
@@ -209,6 +213,10 @@ def scan(text: str, var: str):
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--var", default="0x0A")
+    ap.add_argument("--at", default="hero", choices=sorted(SLOTS),
+                    help="which draw slot the switch must use; 'actor' is the "
+                         "#0138 shared record, where a pose may be named but "
+                         "never a character")
     ap.add_argument("--proposals", action="store_true",
                     help="emit an OLD NEW map for apply_bank_names.py --map")
     ap.add_argument("--base", default="HERO_GUN_ARM",
@@ -227,7 +235,8 @@ def main() -> int:
             p = SRC / "src" / "levels" / br / f"{stage}.asm"
             if not p.is_file():
                 continue
-            for run in scan(p.read_text(errors="replace"), args.var):
+            for run in scan(p.read_text(errors="replace"), args.var,
+                            SLOTS[args.at]):
                 key = run[0][1]
                 seen_in[key].add(f"{port}/{stage}")
                 for case, prim, sec in run:

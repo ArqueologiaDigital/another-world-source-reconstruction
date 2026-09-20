@@ -145,3 +145,23 @@ what the family *is* comes from the earned routine names sitting on it.
     water_depth_cases.map       8   279
 
 `make test` 29/29 and 29/29 after each.
+
+## The lever does not extend to the actor slot
+
+`docs/NAMING.md` and issue #0138 bar asserting **which character** art belongs
+to, not what pose it is in — the six `CV_FIGURE_CROUCH_FACING_LEFT`-style names
+from an earlier pass are exactly that distinction applied. So the 148
+shared-bank offsets drawn at the actor record are nameable in principle, by
+pose, and the obvious question was whether a case switch selects them the way
+`[0x0A]` and `[0x05]` select the hero's.
+
+It does not. `--at actor` widens the scanner to the `[0x07]`/`[BUDDY_X]` slot —
+the first version required `x=[HERO_X]` and so excluded all 148 by
+construction — and swept every variable that appears in a `jne [v], n` test.
+**No switch draws actor-slot art.** Whatever selects an actor's pose is not a
+compare chain; it is reached some other way, most likely through the actor
+record itself.
+
+So the dispatch method is exhausted at 21 names across two variables, and the
+148 stay where they were: nameable by pose, but only from a render, one at a
+time.
