@@ -63,10 +63,31 @@ Nothing here proves correctness. Afterwards, in this order:
 `make test` is the only thing that proves no byte moved, and it is the check
 that catches a breakage confined to the canonical files.
 
+`--iterate` replaces the conservative `_helpers` rule with the real check.
+Three heuristics for "is this label safe to rename across the unified tree"
+have now been wrong, each in a way only the byte gate or
+`undefined_symbols.py` caught:
+
+  1. rename references in `_unified/<stage>/` and not the `_helpers` chunk
+     that defines them -- 114 undefined, verify-unified 20/29;
+  2. also rewrite the helper when every *proposer* agrees -- worse, 150,
+     because a build that proposed nothing still reads that helper;
+  3. allow it when every build that *reads the helper* has the same proposal
+     -- 24 undefined, because a label also lives in branch chunks that do not
+     read the helper.
+
+So `--iterate` stops predicting. It applies the whole table, runs
+`undefined_symbols.py`, maps each undefined symbol back to the label that
+produced it, drops those labels, reverts and applies again -- until the check
+is clean. The oracle is the thing that was catching the mistakes anyway.
+
+It reverts with `git checkout -- src/`, so it refuses to run on a dirty tree.
+
 Usage
 -----
     python3 notes/caller-derived-naming/apply_routine_names.py --dry
     python3 notes/caller-derived-naming/apply_routine_names.py
+    python3 notes/caller-derived-naming/apply_routine_names.py --iterate
 """
 
 from __future__ import annotations
@@ -99,9 +120,86 @@ def readers(name: str) -> set[str] | None:
     return None
 
 
+def _apply_table(table: dict) -> None:
+    """Rewrite every file that mentions a renamed label, everywhere."""
+    roots = [SRC / "src"]
+    files = [f for r in roots for f in r.rglob("*")
+             if f.is_file() and f.suffix in (".asm", ".inc", ".in")]
+    by_lab: dict[str, set] = collections.defaultdict(set)
+    where: dict[str, set] = collections.defaultdict(set)
+    for (port, stage, lab), name in table.items():
+        by_lab[lab].add(name)
+        where[lab].add((port, stage))
+    # A global rewrite is only sound when the label exists in exactly the
+    # places that proposed for it. Otherwise a label msdos proposed for gets
+    # renamed in amiga too, where it may be a different routine drawing
+    # different art -- the build stays clean and the NAME is wrong, which
+    # undefined_symbols.py cannot see. This is the precondition the oracle
+    # does not supply.
+    exists: dict[str, set] = collections.defaultdict(set)
+    lab_re = {lab: re.compile(rf"^{re.escape(lab)}:", re.M) for lab in by_lab}
+    for port, br in PORTS.items():
+        for stage in {s for _p, s, _l in table}:
+            f = SRC / "src" / "levels" / br / f"{stage}.asm"
+            if not f.is_file():
+                continue
+            txt = f.read_text(errors="replace")
+            for lab, rx in lab_re.items():
+                if rx.search(txt):
+                    exists[lab].add((port, stage))
+    flat = {lab: next(iter(n)) for lab, n in by_lab.items()
+            if len(n) == 1 and exists[lab] == where[lab]}
+    if not flat:
+        return
+    pat = re.compile(r"\b(" + "|".join(re.escape(k) for k in flat) + r")\b")
+    for f in files:
+        t2 = f.read_text(errors="replace")
+        new = pat.sub(lambda m: flat[m.group(1)], t2)
+        if new != t2:
+            f.write_text(new)
+
+
+def iterate(table: dict) -> int:
+    """Apply, ask the oracle, drop the guilty labels, revert, repeat."""
+    import subprocess
+    if subprocess.run(["git", "status", "--porcelain", "src"],
+                      cwd=SRC, capture_output=True, text=True).stdout.strip():
+        print("refusing: src/ is dirty; commit or revert first")
+        return 1
+    banned: set[str] = set()
+    for round_ in range(1, 9):
+        live = {k: v for k, v in table.items() if k[2] not in banned}
+        if not live:
+            print("nothing left to apply")
+            return 1
+        _apply_table(live)
+        out = subprocess.run(
+            [sys.executable, str(SRC / "notes" / "unified-symbol-check"
+                                 / "undefined_symbols.py")],
+            cwd=SRC, capture_output=True, text=True).stdout
+        bad = set(re.findall(r"^\s{4}(\S+)\s+first referenced", out, re.M))
+        if not bad:
+            print(f"round {round_}: {len(live)} rename(s) applied, "
+                  f"undefined_symbols clean "
+                  f"({len(banned)} label(s) dropped over {round_ - 1} "
+                  f"earlier round(s))")
+            return 0
+        guilty = {lab for (_p, _s, lab), name in live.items() if name in bad}
+        print(f"round {round_}: {len(bad)} undefined -> dropping "
+              f"{len(guilty)} label(s)")
+        banned |= guilty
+        subprocess.run(["git", "checkout", "--", "src"], cwd=SRC, check=True)
+    print("did not converge in 8 rounds")
+    subprocess.run(["git", "checkout", "--", "src"], cwd=SRC, check=True)
+    return 1
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry", action="store_true")
+    ap.add_argument("--iterate", action="store_true",
+                    help="apply, ask undefined_symbols.py, drop the labels "
+                         "responsible, revert and retry until clean")
     args = ap.parse_args()
 
     out = subprocess.run(
@@ -135,6 +233,9 @@ def main() -> int:
     # declines the whole class. Trying the weaker test first took
     # verify-unified from 20/29 to 20/29 with 150 undefined references
     # instead of 114 -- worse, not better.
+    if args.iterate:
+        return iterate(table)
+
     shared_helper = {lab for lab in by_label
                      if any(re.search(rf"\b{re.escape(lab)}\b", t2)
                             for t2 in helper_text.values())}

@@ -338,3 +338,41 @@ which means resolving definitions per build through the same graph, not just
 membership. Reverted; the conservative rule stands and the 69 names it
 applied are unaffected. Recorded here so the next attempt starts from the
 counterexample rather than from the idea.
+
+#### `--iterate`: stop predicting, ask the checker
+
+Three heuristics for "is this label safe to rename across the unified tree"
+have now been wrong, each caught only by the byte gate or
+`undefined_symbols.py`:
+
+1. rename references in `_unified/<stage>/` and not the `_helpers` chunk that
+   defines them — **114 undefined, 20/29**;
+2. also rewrite the helper when every *proposer* agrees — **worse, 150**,
+   because a build that proposed nothing still reads that helper;
+3. allow it when every build that *reads the helper* has the same proposal —
+   **24 undefined**, because a label also lives in branch chunks that do not
+   read the helper.
+
+`--iterate` stops predicting. It applies the whole table, runs
+`undefined_symbols.py`, maps each undefined symbol back to the label that
+produced it, drops those labels, reverts with `git checkout -- src` and tries
+again, until the check is clean. The oracle is the thing that was catching
+the mistakes anyway.
+
+It also enforces the one precondition the oracle cannot supply: a label is
+only rewritten globally when it **exists in exactly the places that proposed
+for it**. Otherwise a label msdos proposed for is renamed in amiga too, where
+it may be a different routine drawing different art — the build stays clean
+and the *name* is wrong, which `undefined_symbols.py` cannot see.
+
+**Result on the 81 the conservative rule had dropped: zero survive.**
+
+    round 1: 17 undefined -> dropping 25 label(s)
+    round 2:  4 undefined -> dropping  8 label(s)
+    nothing left to apply
+
+So the conservative rule was not over-cautious for this batch, and that is
+now established by the real checker rather than argued from a heuristic. The
+81 are genuinely entangled: every one of them shares a label with a build
+that has no proposal for it. Freeing them needs proposals for the cartridge
+and GBA builds of the same stages, not a better rule.
