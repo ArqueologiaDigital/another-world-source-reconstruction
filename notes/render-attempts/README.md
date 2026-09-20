@@ -138,6 +138,12 @@ laser-impact family, and the laser family measures the same under both rules
 Everything else in this file was re-measured and did not move: the waterfall
 drips, CAVES 191..193, amiga/PRISON 540..548, amiga/CAPSULE 386..393,
 amiga/PRISON 119..126, msdos/TANK 106..111, the two CAVES limb runs, and the
-INTRO and TANK specks. Reproduce with
+INTRO and TANK specks. Reproduce the splash row, old rule against new, with
 
-    python3 notes/polygon-extent-correction/what_the_correction_moves.py --worst
+    python3 notes/polygon-extent-correction/what_the_correction_moves.py \
+        --port amiga --stage CAVES --names CINEMATIC_CAVES_LANDING_SPLASH_F
+
+and swap `--names` for any other family. `--worst` alone does **not** show
+these: it lists the 25 largest changes in the tree and none of these three are
+that large. This recipe said `--worst` when first written, before `--names`
+existed, and would have sent a reader looking for rows that are not there.

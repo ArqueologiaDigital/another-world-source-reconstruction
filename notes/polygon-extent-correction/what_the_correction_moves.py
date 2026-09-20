@@ -45,10 +45,19 @@ Signals read
 the `EQU` tables in `src/levels/<branch>/<STAGE>.asm`, so only art the tree
 actually names is measured -- the same population whose sizes get quoted.
 
+`--names` re-measures specific constants, old rule against new, which is how a
+claim already written down gets checked. `--worst` alone does not do that job:
+it lists the 25 largest changes, and a corrected figure is usually not among
+them. The recipe printed in `../render-attempts/README.md` said `--worst`
+until this option existed, which would have sent the next reader looking for
+rows that are not there.
+
 Usage
 -----
     python3 notes/polygon-extent-correction/what_the_correction_moves.py
     python3 notes/polygon-extent-correction/what_the_correction_moves.py --worst
+    python3 notes/polygon-extent-correction/what_the_correction_moves.py \
+        --port amiga --stage CAVES --names CINEMATIC_CAVES_LANDING_SPLASH_F
 """
 
 from __future__ import annotations
@@ -78,7 +87,43 @@ RE_EQU = re.compile(r"^(\w+)\s+EQU\s+(0x[0-9A-Fa-f]+)", re.M)
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--worst", action="store_true")
+    ap.add_argument("--names",
+                    help="re-measure constants whose name starts with this")
+    ap.add_argument("--port", choices=sorted(PORTS))
+    ap.add_argument("--stage", choices=sorted(STAGES.values()))
     args = ap.parse_args()
+
+    if args.names:
+        sid = {v: k for k, v in STAGES.items()}
+        for port, br in PORTS.items():
+            if args.port and port != args.port:
+                continue
+            for n, stage in STAGES.items():
+                if args.stage and stage != args.stage:
+                    continue
+                f = SRC / "src" / "levels" / br / f"{stage}.asm"
+                if not f.is_file():
+                    continue
+                text = f.read_text(errors="replace")
+                cine = slab("cinematic", port, n)
+                shared = slab("video2", port, n)
+                hits = [(k, int(v, 16)) for k, v in RE_EQU.findall(text)
+                        if k.startswith(args.names)]
+                for name, off in sorted(hits, key=lambda kv: kv[1]):
+                    b = shared if name.startswith("CV_") else cine
+                    tree = parse_polygon_tree(b, off)
+                    if tree is None:
+                        print(f"  {port}/{stage} {name}: no polygon")
+                        continue
+                    a = extent_old(tree)
+                    c = extent(tree)
+                    moved = (abs((a[2] - a[0]) - (c[2] - c[0])) > 0.01
+                             or abs((a[3] - a[1]) - (c[3] - c[1])) > 0.01)
+                    print(f"  {port}/{stage:<9} {name:<46} "
+                          f"old {a[2] - a[0]:>4.0f}x{a[3] - a[1]:<4.0f} "
+                          f"new {c[2] - c[0]:>4.0f}x{c[3] - c[1]:<4.0f} "
+                          f"/{c[4]}{'   CHANGED' if moved else ''}")
+        return 0
 
     print(f"{'port/stage':<18}{'measured':>9}{'changed':>9}{'median':>8}"
           f"{'worst':>7}{'inversions':>12}")
