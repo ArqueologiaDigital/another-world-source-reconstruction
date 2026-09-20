@@ -80,7 +80,7 @@ LABEL_6AF9:
 
 
 LABEL_6AFA:
-	video type=0, offset=CV_0CBA, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_BODY_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video offset=CINEMATIC_220, x=[HERO_X], y=[HERO_Y]
 	ret
@@ -131,37 +131,37 @@ LABEL_6B7A:
 
 
 LABEL_6B98:
-	video type=0, offset=CV_0D48, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_BODY_F10, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
 	video offset=CINEMATIC_221, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 PRISON_HERO_WALK_RIGHT_POSE_11:
-	video type=0, offset=CV_0DB6, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_BODY_F11, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=CV_3366, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_ARM_F11, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_WALK_RIGHT_POSE_12:
-	video type=0, offset=CV_0E38, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_BODY_F12, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=CV_3370, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_ARM_F12, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_WALK_RIGHT_POSE_13:
-	video type=0, offset=CV_0EB6, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_BODY_F13, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=CV_337A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_ARM_F13, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_WALK_RIGHT_POSE_14:
-	video type=0, offset=CV_0F28, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_BODY_F14, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=CV_3384, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_ARM_F14, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -174,66 +174,66 @@ PRISON_DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB_L2:
 
 
 PRISON_HERO_WALK_RIGHT_POSE_00:
-	video type=0, offset=CV_0FF8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_BODY_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=CV_3398, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_ARM_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_WALK_RIGHT_POSE_01:
-	video type=0, offset=CV_1060, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_BODY_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=CV_33A2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_ARM_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_WALK_RIGHT_POSE_02:
-	video type=0, offset=CV_108C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_BODY_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=CV_33AC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_ARM_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_WALK_RIGHT_POSE_03:
-	video type=0, offset=CV_10B8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_BODY_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=CV_33B6, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_ARM_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_WALK_RIGHT_POSE_04:
-	video type=0, offset=CV_10E4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_BODY_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=CV_33C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_ARM_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_WALK_RIGHT_POSE_05:
-	video type=0, offset=CV_1110, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_BODY_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=CV_33CA, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_ARM_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_WALK_RIGHT_POSE_06:
-	video type=0, offset=CV_1136, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_BODY_F06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=CV_33D4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_ARM_F06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_6C78:
 	call LABEL_6AC9
-	video type=0, offset=CV_115C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_BODY_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=CV_33DE, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_ARM_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_WALK_RIGHT_POSE_08:
-	video type=0, offset=CV_117E, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_BODY_F08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video type=0, offset=CV_33E8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_RIGHT_ARM_F08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -365,7 +365,7 @@ LABEL_6DA8:
 
 PRISON_HERO_STAND_LEFT_DRAW:
 	jne [0x0A], 0x00, LABEL_6DBF
-	video type=0, offset=CV_3322, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_LEFT_ARM, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp LABEL_6DC2
 
 LABEL_6DBF:
@@ -373,7 +373,7 @@ LABEL_6DBF:
 
 LABEL_6DC2:
 	call LABEL_6D1E
-	video type=0, offset=CV_0358, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_LEFT_BODY, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -472,74 +472,74 @@ DRAW_CV_112:
 .include "../_helpers/DRAW_CV_265.inc"
 
 LABEL_6E9B:
-	video type=0, offset=CV_03E4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x00
 	jne [0x0A], 0x00, DRAW_CV_252
-	video type=0, offset=CV_34AA, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_RUN_RIGHT_POSE_01:
-	video type=0, offset=CV_0472, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_255
-	video type=0, offset=CV_34B2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_RUN_RIGHT_POSE_02:
-	video type=0, offset=CV_04F4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_270
-	video type=0, offset=CV_34BA, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_RUN_RIGHT_POSE_03:
-	video type=0, offset=CV_058E, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_273
-	video type=0, offset=CV_34C2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_RUN_RIGHT_POSE_04:
-	video type=0, offset=CV_0624, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_273
-	video type=0, offset=CV_34CE, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_6EF6:
-	video type=0, offset=CV_06A2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x00
 	jne [0x0A], 0x00, DRAW_CV_252
-	video type=0, offset=CV_34D6, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_RUN_RIGHT_POSE_06:
-	video type=0, offset=CV_06C8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_252
-	video type=0, offset=CV_34DE, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_RUN_RIGHT_POSE_07:
-	video type=0, offset=CV_06EE, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_255
-	video type=0, offset=CV_34E6, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_RUN_RIGHT_POSE_08:
-	video type=0, offset=CV_0714, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_265
-	video type=0, offset=CV_34EE, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 PRISON_HERO_RUN_RIGHT_POSE_09:
-	video type=0, offset=CV_073E, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_265
-	video type=0, offset=CV_34F6, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 

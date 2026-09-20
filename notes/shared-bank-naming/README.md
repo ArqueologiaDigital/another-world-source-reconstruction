@@ -106,3 +106,119 @@ identification.
 The distribution is the useful part, and the label percentage hides it: LAKE
 and CODE_WHEEL are effectively finished, INTRO is 80.7 % on amiga and 33.9 %
 on msdos, and TANK-amiga and ENDING have not been started at all.
+
+---
+
+# The hero's sprite sheet, 2026-09-20: 52 names
+
+The six names above were earned one render at a time. This pass found the
+structure they sit in, which made 52 more earnable at once, and the method is
+different enough to be worth stating separately.
+
+## Why one-at-a-time had to stop
+
+`../shared-bank-geometry/bank_shape_census.py` measured all 352 offsets before
+looking at any picture. 250 of them "need a render", and for the articulated
+figures a render does not settle it: it shows a figure, and *which* figure was
+the question. The sole-named-drawer lever that works on the cinematic banks
+yields **1 candidate out of 352** here, because 349 of the 352 are drawn from
+more than one stage, so no scene can name them.
+
+## What the call site settles
+
+`../shared-bank-geometry/bank_draw_position.py`: **191 offsets are drawn at
+`[HERO_X],[HERO_Y]` and nowhere else**, in any stage or port. 148 are drawn
+only at the actor slot, 13 are mixed, and none are drawn at both — so the
+subject split is clean. `HERO_X` lives in `src/levels/_common_vars.inc`, whose
+scoping rule (NAMING.md §3) is "a name belongs here only if it means the same
+thing in every stage and every port", which is exactly the invariant a
+shared-bank name needs.
+
+**The bank is the hero's sprite sheet plus a generic actor's.** That is why no
+stage owns it.
+
+## What the render settles
+
+Rendered as a filmstrip in offset order
+(`../shared-bank-geometry/bank_filmstrip.py`), the 191 are unmistakable: a
+58-frame run of human figures in profile, walking and running, and a parallel
+series of small bent limbs. The limb series is an **arm** — some frames forked
+at the end around a gun, and the independently-earned
+`HERO_GUN_ARM_POSE_CASE_02` draws one of exactly those forked variants, which
+is the cross-check that the geometry split found the right thing.
+
+## What the other stages settle
+
+`../shared-bank-geometry/hero_pose_consensus.py`. The same offset is drawn by
+routines in CAPSULE, CAVES and PRISON whose names were earned separately:
+
+    CV_331A   CAPSULE_HERO_WALK_LEFT_DRAW_14
+              CAVES_HERO_WALK_LEFT_STRIDE_PHASE_15     (CAVES is 1-based)
+              PRISON_HERO_WALK_LEFT_DRAW_PHASE_14
+              DRAW_HERO_WALK_LEFT_F14
+
+Four derivations that never consulted each other. The probe requires at least
+two *independent stages* — two names for one routine, or two ports of one
+stage, count once — and unanimity rather than a majority (#0120: a tool must
+not pick a winner between two semantic names). It excludes `_BUNDLE_`,
+`_SHADOW_` and `_2NDSCR_` names, which carry raw index runs and describe a
+draw mechanism, and it reads `_FOOTSTEP_PHASE_n` for motion and direction but
+never as a frame ordinal.
+
+59 offsets clear that bar. Three checks then corroborate the result rather
+than assume it:
+
+- **Offset order.** In every family the consensus indices are cyclically
+  monotone in offset order — walk-right body and walk-right arm give the
+  *identical* sequence 9,10,…,14,0,…,6,8. A sprite sheet stores frames
+  consecutively, and this was not used to derive anything.
+- **Body/arm co-draw.** 15 of 15 walk-right and 10 of 10 run-right frames have
+  their body and their arm drawn together by the same routine, 5 to 7 routines
+  per frame. The pairing is in the code, not inferred from size.
+- **Footfalls land where footfalls should.** The `_FOOTSTEP_PHASE_1/2` names,
+  deliberately barred from supplying an index, fall at frames 0 and 5 of the
+  ten-frame run cycle and 5 and 13 of the fifteen-frame walk cycle.
+
+## The 52
+
+`hero_sprite_sheet.map`, applied with `apply_bank_names.py --map`:
+
+| family | frames | names |
+|---|---|---|
+| `HERO_WALK_RIGHT_BODY_F00..F14` | 15 | 15 |
+| `HERO_WALK_RIGHT_ARM_F00..F14` | 15 | 15 |
+| `HERO_RUN_RIGHT_BODY_F00..F09` | 10 | 10 |
+| `HERO_RUN_RIGHT_ARM_F00..F09` | 10 | 10 |
+| `HERO_STAND_LEFT_BODY`, `_ARM` | — | 2 |
+
+No gaps in any index run (NAMING.md §2). Two frames were completed from a
+weaker grade of evidence and are flagged here rather than buried: walk-right
+frame 7 (`CV_115C` body, `CV_33DE` arm) has no two-stage consensus, and is
+placed by sitting between the offsets consensus-labelled 6 and 8 *and* by
+being co-drawn as a body/arm pair by the same routine as every other frame.
+Run-right frames 0 and 5 come from `_FOOTSTEP_PHASE_1/2` names, which attest
+motion and direction but not the ordinal; the ordinal is their offset
+position.
+
+Verified: `bank_name_offset_consistent.py --map hero_sprite_sheet.map` — all
+52 denote exactly one offset in every file; 300 keys remain, none resolving to
+anything but its own offset. `make test` 29/29 and 29/29, `--sides` clean,
+`--duplicates` clean at 1,842.
+
+**158 routines that previously drew only shared-bank placeholders now draw only
+named pictures.** 1,407 still draw nothing but placeholders.
+
+## A name this pass found to be over-specific
+
+`CINEMATIC_HERO_SHADOW_STOP_RIGHT_2` (dos/LAKE, `EQU 0xDFF2`) was tried as an
+independent check on the motion claims, since the shadow is drawn next to the
+body and arm in each frame block. It cannot serve: that one polygon is drawn
+beside **29 different frames**, spanning walk-right, run-right and left-facing
+art. A shadow shared by 29 poses cannot assert "stop, facing right, frame 2".
+
+This does not contradict the names applied here — a shadow that says nothing
+says nothing either way — and the sibling `DRAW_HERO_STOP_R_BUNDLE_*` routine
+names are *compatible*, since a stop animation decelerating through walk frames
+really does draw them. But the shadow EQU itself asserts a specificity its art
+does not have, which is the #0107 failure mode, and it is recorded here for
+whoever revisits the LAKE shadow family.

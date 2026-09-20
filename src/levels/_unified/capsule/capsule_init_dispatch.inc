@@ -782,7 +782,7 @@ CAPSULE_HERO_WALK_LEFT_DRAW_14_GUN_RAISED:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_DRAW_CV_080_L0:
 	jne [0x0A], 0x00, CAPSULE_DRAW_CV_080_L1
-	video type=0, offset=CV_3322, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_LEFT_ARM, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jmp CAPSULE_DRAW_CV_080_L2
 
 CAPSULE_DRAW_CV_080_L1:
@@ -790,7 +790,7 @@ CAPSULE_DRAW_CV_080_L1:
 
 CAPSULE_DRAW_CV_080_L2:
 	call CAPSULE_DRAW_CV_071_L1
-	video type=0, offset=CV_0358, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_LEFT_BODY, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -936,74 +936,74 @@ CAPSULE_HERO_WALK_LEFT_DRAW_8:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_HERO_RUN_RIGHT_FOOTSTEP_PHASE_1:
-	video type=0, offset=CV_03E4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x01
 	jne [0x0A], 0x00, DRAW_CV_295
-	video type=0, offset=CV_34AA, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_RUN_RIGHT_DRAW_1:
-	video type=0, offset=CV_0472, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_296
-	video type=0, offset=CV_34B2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_RUN_RIGHT_DRAW_2:
-	video type=0, offset=CV_04F4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_299
-	video type=0, offset=CV_34BA, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_RUN_RIGHT_DRAW_3:
-	video type=0, offset=CV_058E, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_300
-	video type=0, offset=CV_34C2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_RUN_RIGHT_DRAW_4:
-	video type=0, offset=CV_0624, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_300
-	video type=0, offset=CV_34CE, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_RUN_RIGHT_FOOTSTEP_PHASE_2:
-	video type=0, offset=CV_06A2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0A, vol=0x2A, channel=0x01
 	jne [0x0A], 0x00, DRAW_CV_295
-	video type=0, offset=CV_34D6, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_RUN_RIGHT_DRAW_6:
-	video type=0, offset=CV_06C8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_295
-	video type=0, offset=CV_34DE, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_DRAW_CV_297_L7:
-	video type=0, offset=CV_06EE, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_296
-	video type=0, offset=CV_34E6, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_RUN_RIGHT_DRAW_8:
-	video type=0, offset=CV_0714, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_297
-	video type=0, offset=CV_34EE, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_RUN_RIGHT_DRAW_9:
-	video type=0, offset=CV_073E, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_BODY_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, DRAW_CV_297
-	video type=0, offset=CV_34F6, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_ARM_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 .endif
 

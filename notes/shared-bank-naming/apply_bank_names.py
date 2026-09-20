@@ -46,6 +46,13 @@ Usage
 -----
     python3 notes/shared-bank-naming/apply_bank_names.py
     python3 notes/shared-bank-naming/apply_bank_names.py --apply
+    python3 notes/shared-bank-naming/apply_bank_names.py --map <file> --apply
+
+`--map` reads `OLD NEW` pairs, one per line, `#` for comments, instead of the
+`NAMES` table below. A batch large enough to be generated rather than typed
+belongs in a committed map file next to the probe that derived it, so the
+derivation and the application are separable and both reviewable;
+`hero_sprite_sheet.map` is the first.
 """
 from __future__ import annotations
 
@@ -72,14 +79,34 @@ RE_EQU = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*)\s+EQU\s+(0x[0-9A-Fa-f]+)")
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--map", type=Path,
+                    help="read OLD NEW pairs from a file instead of NAMES")
     args = ap.parse_args()
+
+    names = dict(NAMES)
+    if args.map:
+        names = {}
+        for line in args.map.read_text().splitlines():
+            line = line.split("#", 1)[0].strip()
+            if not line:
+                continue
+            parts = line.split()
+            if len(parts) != 2:
+                raise SystemExit(f"bad map line: {line!r}")
+            if parts[0] in names:
+                raise SystemExit(f"duplicate source in map: {parts[0]}")
+            names[parts[0]] = parts[1]
+        dups = [v for v in names.values()
+                if list(names.values()).count(v) > 1]
+        if dups:
+            raise SystemExit(f"duplicate target(s) in map: {sorted(set(dups))}")
 
     files = sorted(list(SRC.rglob("*.asm")) + list(SRC.rglob("*.asm.in"))
                    + list(SRC.rglob("*.inc")))
 
     # precondition 1: every key resolves to its own offset, everywhere
     # precondition 2: no target name is already taken
-    seen_off: dict[str, set[str]] = {k: set() for k in NAMES}
+    seen_off: dict[str, set[str]] = {k: set() for k in names}
     taken: set[str] = set()
     for f in files:
         for line in f.read_text(errors="replace").splitlines():
@@ -98,7 +125,7 @@ def main() -> int:
         elif offs != {want}:
             problems.append(f"{key}: resolves to {sorted(offs)}, expected "
                             f"{want}")
-    for new in NAMES.values():
+    for new in names.values():
         if new in taken:
             problems.append(f"{new}: already defined")
     if problems:
@@ -107,18 +134,18 @@ def main() -> int:
             print(f"  {p}")
         return 1
 
-    pat = re.compile(r"\b(" + "|".join(sorted(NAMES)) + r")\b")
+    pat = re.compile(r"\b(" + "|".join(sorted(names)) + r")\b")
     total, touched = 0, 0
     for f in files:
         text = f.read_text(errors="replace")
-        new, n = pat.subn(lambda m: NAMES[m.group(1)], text)
+        new, n = pat.subn(lambda m: names[m.group(1)], text)
         if n:
             total += n
             touched += 1
             if args.apply:
                 f.write_text(new)
-    print(f"{len(NAMES)} name(s), {total} token(s) across {touched} file(s)")
-    for k, v in sorted(NAMES.items()):
+    print(f"{len(names)} name(s), {total} token(s) across {touched} file(s)")
+    for k, v in sorted(names.items()):
         print(f"  {k} -> {v}")
     if not args.apply:
         print("dry run -- re-run with --apply")

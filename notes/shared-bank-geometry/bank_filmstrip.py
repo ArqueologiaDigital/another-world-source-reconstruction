@@ -132,6 +132,11 @@ def main() -> int:
     ap.add_argument("--subject", default="hero", choices=["hero", "actor"])
     ap.add_argument("--from", dest="lo")
     ap.add_argument("--to", dest="hi")
+    ap.add_argument("--symbols",
+                    help="comma-separated CV_xxxx list, laid out in the order "
+                         "given rather than by offset -- use this to view an "
+                         "animation in its claimed frame order, which is the "
+                         "test of whether the claim is continuous")
     ap.add_argument("--out", type=Path)
     ap.add_argument("--tile", default="10x")
     ap.add_argument("--cell", type=int, default=150)
@@ -150,15 +155,26 @@ def main() -> int:
             print(f"      {' '.join(ex)}")
         return 0
 
-    if not (args.lo and args.hi and args.out):
-        print("need --from, --to and --out (or --runs)", file=sys.stderr)
-        return 2
-    lo, hi = int(args.lo, 16), int(args.hi, 16)
-    sel = sorted((n for n, o in offs.items() if lo <= o <= hi),
-                 key=lambda n: offs[n])
-    if not sel:
-        print(f"no bank offsets in [{args.lo}, {args.hi}]", file=sys.stderr)
-        return 2
+    if args.symbols:
+        if not args.out:
+            print("need --out", file=sys.stderr)
+            return 2
+        sel = [s.strip() for s in args.symbols.split(",") if s.strip()]
+        unknown = [s for s in sel if s not in offs]
+        if unknown:
+            print(f"unknown symbol(s): {', '.join(unknown)}", file=sys.stderr)
+            return 2
+    else:
+        if not (args.lo and args.hi and args.out):
+            print("need --from and --to (or --symbols), and --out",
+                  file=sys.stderr)
+            return 2
+        lo, hi = int(args.lo, 16), int(args.hi, 16)
+        sel = sorted((n for n, o in offs.items() if lo <= o <= hi),
+                     key=lambda n: offs[n])
+        if not sel:
+            print(f"no bank offsets in [{args.lo}, {args.hi}]", file=sys.stderr)
+            return 2
 
     with tempfile.TemporaryDirectory() as td:
         cells = []
