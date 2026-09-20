@@ -1,0 +1,6 @@
+| constant | proposed name | confidence | evidence |
+| --- | --- | --- | --- |
+| CINEMATIC_795 | CINEMATIC_CAVES_HERO_IDLE_LEFT_0 | high | Renumber: the idle loop is a palindrome over five frames (entry draws two, the inner loop three and walks back), so the family runs 0..4 in draw order. The existing three names covered only the inner loop and began two frames late. Frame 0 of five. |
+| CINEMATIC_796 | CINEMATIC_CAVES_HERO_IDLE_LEFT_1 | high | Renumber: the idle loop is a palindrome over five frames (entry draws two, the inner loop three and walks back), so the family runs 0..4 in draw order. The existing three names covered only the inner loop and began two frames late. Frame 1 of five. |
+| CINEMATIC_509 | CINEMATIC_CAVES_HERO_IDLE_RIGHT_0 | high | Renumber: the idle loop is a palindrome over five frames (entry draws two, the inner loop three and walks back), so the family runs 0..4 in draw order. The existing three names covered only the inner loop and began two frames late. Frame 0 of five. |
+| CINEMATIC_510 | CINEMATIC_CAVES_HERO_IDLE_RIGHT_1 | high | Renumber: the idle loop is a palindrome over five frames (entry draws two, the inner loop three and walks back), so the family runs 0..4 in draw order. The existing three names covered only the inner loop and began two frames late. Frame 1 of five. |
