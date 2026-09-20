@@ -16,9 +16,25 @@ guards, marked `SKIP`, superseded by a later table, or reverted.
 
 ## What they are, and what they are not
 
-Each row's evidence column says why that name was proposed: a measured
-extent, a drawer routine, a cross-port `canonical_md5` match, a control-flow
-position. That is the reviewable part.
+Each row has an evidence column. **How much it is worth varies, and a
+verification pass measured by how much** -- see `coverage.py --quality`:
+
+  * 14 of the 69 repeat **one evidence string on every row**. The rationale
+    is real ("the stage prefix is falsified by the art…") but it is
+    per-batch, not per-name: it tells you why the batch was proposed, not
+    why *this* constant got *that* name.
+  * 5 groups, 12 files, are **byte-identical to each other** --
+    `death_amiga.md == death_msdos.md == death_other.md`,
+    `g_INTRO.md == h_INTRO.md == xp_INTRO.md`, and three more. The filename
+    claims a port or a stage the bytes do not carry, so do not read
+    `hd_msdos_CAVES.md` as an msdos record; it is the same file as the amiga
+    one.
+
+An earlier version of this README said "each row's evidence column says why
+that name was proposed". For 14 of 69 that is an overstatement, and it was
+caught by an adversarial audit of the scratch directory rather than by
+reading them. The rest do carry per-row evidence -- a measured extent, a
+drawer routine, a cross-port `canonical_md5` match, a control-flow position.
 
 They are **working input, not a record of what was applied.** A table says
 what was proposed at one moment; `git log` says what landed. Where the two
@@ -51,9 +67,13 @@ header bytes verbatim.
 ## Checking this README's own numbers
 
     python3 notes/naming-proposals/coverage.py
+    python3 notes/naming-proposals/coverage.py --quality
 
-prints the three counts quoted above and reproduces them; `--per-table` shows
-which tables landed nothing, `--missing` lists the names that never made it.
+The first prints the three counts quoted above and reproduces them;
+`--per-table` shows which tables landed nothing and `--missing` lists the
+names that never made it. `--quality` prints the duplicate groups and the
+per-batch-evidence tables, so the caveats above are measured rather than
+remembered.
 
 ## Naming of the files
 

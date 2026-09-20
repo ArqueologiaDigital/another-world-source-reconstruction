@@ -81,6 +81,9 @@ def main() -> int:
     ap.add_argument("--missing", action="store_true",
                     help="list proposed names that are NOT in the tree")
     ap.add_argument("--per-table", action="store_true")
+    ap.add_argument("--quality", action="store_true",
+                    help="what these tables are NOT: duplicates and "
+                         "per-batch evidence")
     args = ap.parse_args()
 
     if not TABLES.is_dir():
@@ -110,6 +113,36 @@ def main() -> int:
             hit = sum(1 for n in ns if n in live)
             flag = "   <- none live" if hit == 0 else ""
             print(f"  {name:<34}{hit:>4}/{len(ns):<4}{flag}")
+
+    if args.quality:
+        import hashlib
+        import collections
+        by_hash = collections.defaultdict(list)
+        for f in sorted(TABLES.glob("*.md")):
+            by_hash[hashlib.md5(f.read_bytes()).hexdigest()].append(f.name)
+        dups = {h: ns for h, ns in by_hash.items() if len(ns) > 1}
+        print(f"\n{len(dups)} group(s) of byte-identical tables "
+              f"({sum(len(n) for n in dups.values())} files). The filenames "
+              f"claim a port or stage the bytes do not carry:")
+        for _h, ns in sorted(dups.items(), key=lambda kv: kv[1]):
+            print(f"  {' == '.join(ns)}")
+
+        flat = []
+        for f in sorted(TABLES.glob("*.md")):
+            ev = []
+            for line in f.read_text(errors="replace").splitlines():
+                if not line.lstrip().startswith("|") or "---" in line:
+                    continue
+                c = [x.strip() for x in line.strip().strip("|").split("|")]
+                if len(c) >= 4 and c[3] and c[3].lower() != "evidence":
+                    ev.append(c[3])
+            if len(ev) >= 3 and len(set(ev)) == 1:
+                flat.append((f.name, len(ev), ev[0]))
+        print(f"\n{len(flat)} table(s) repeat ONE evidence string on every "
+              f"row -- the rationale is per-batch, not per-name:")
+        for name, n, e in flat:
+            print(f"  {name:<32}{n:>3} rows  \"{e[:72]}...\"")
+        return 0
 
     if args.missing:
         print("\nproposed but not in the tree:")
