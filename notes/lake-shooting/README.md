@@ -117,19 +117,74 @@ kills him or hands him to the next stage is not in these bytes, and
 CAVES and CAPSULE — are **not** this art: a cross-stage `canonical_md5` sweep
 over every named picture in all nine stages matched none of these sixteen.
 
-## Still unnamed, and now for a stated reason
+## The rest of the group: F07..F13, and why two renders had missed them
 
-F07..F13 keep the coordinate name, and the reason is no longer "we could not
-tell". They are drawn at
+F07..F13 are drawn at
 
     video offset=CINEMATIC_DECOR_AT_305_155_F7, x=[0x32], y=[0x33]
 
-a different slot from both the hero pair and every literal anchor in this
-scene. So they are a separate subject that merely shared a group name, which
-is consistent with the render: 0x1 specks (F07, F08) and a 22x48/5 angular
-shape beside a vertical line (F09..F13), magnified twice and still not
-identifiable. The coordinate in their name is doubly wrong — they are not
-drawn at 305,155 either.
+a different slot from both the hero pair and every literal anchor in the
+shooting scene, so they were never part of it. Tracing that slot is what
+identified them. `[0x32],[0x33]` is not a position: it is a *shared* one that
+
+    MULTIPLEX_ANIM_RING3_SLOT_0:
+        mov [0x4C], [0x32] / mov [0x4D], [0x33] / mov [0x4E], [0x14]
+        mov [0x32], [0x46] / mov [0x33], [0x47] / mov [0x14], [0x48]
+        break / jmp MULTIPLEX_ANIM_RING3_SLOT_0
+
+rotates between three records every frame. Three of those run on channels
+0x0B, 0x0E, 0x11, interleaved by channel number with three reed loops (0x0C,
+0x0F, 0x14), two speck loops (0x0D, 0x10) and one sway loop (0x15): a
+cooperative multiplexer that lets one set of draw loops serve three reeds at
+three positions, each walked left a pixel per draw by
+`DRAW_REED_DRIFT_LEFT_LOOP`. So F07..F13 share the *reed's* anchor.
+
+That is also why two passes had failed on them. Rendered one offset per SVG,
+F09..F13 are "a small angular shape beside a vertical line". Drawn at the
+anchor they share with `CINEMATIC_LAKE_REED`, by `composite_at_anchor.py`,
+they are a stalk with two fronds standing over the reed's trunk — and
+`REED_SWAY_CYCLE` plays them 9,10,11,10,9,12,13,12 and repeats, a ping-pong
+about F09.
+
+**The lean does not order them.** Measuring top-point x minus bottom-point x
+per frame gives 18.5, 18.5, 19.5, 20.0, 23.5 with F10 and F13 exactly tied —
+the shape has two stalks and the metric cannot separate them. So the index
+comes from the play cycle, not from geometry: F0 is the frame the cycle
+returns to twice, F1/F2 are the first excursion and F3/F4 the second. Offset
+order agrees with that reading, which is the check, not the source.
+
+**F07 and F08 are the same picture.** Both are 10-byte records:
+
+    F8 @0xDC0A: 02 80 80 00 ec 35 72 56 04 80
+    F7 @0xDC14: 02 80 80 00 ec 35 72 56 04 6e
+
+A group header, pivot 0x80,0x80, one child at (0xEC35 & 0x7FFF)*2 = 0xD86A
+with a colour override. The colour byte is `04` in both; the byte after it is
+the one `readAndDrawPolygonHierarchy` fetches and throws away. Identical
+`canonical_md5`, identical bbox — a 0x1 hairline at (-14,-42.5), inside the
+reed's box near its top. So `DECOR_F7_BLINK_3X_LOOP` alternated two constants
+that draw the same thing: the blink it was named for does not exist.
+
+### Applied: 7 more constants, 13 more routines
+
+    CINEMATIC_LAKE_REED_TIP_SPECK_F0, _F1   (was ..._AT_305_155_F7, _F8)
+    CINEMATIC_LAKE_REED_SWAY_F0..F4         (was ..._AT_305_155_F9..F13)
+
+    REED_TIP_SPECK_LOOP, _F0_HOLD, _F1_HOLD
+    REED_SWAY_CYCLE, REED_SWAY_F0..F4_HOLD,
+    REED_SWAY_F0_RETURN_HOLD, _F1_RETURN_HOLD, _F3_RETURN_HOLD
+    REED_SWAY_F0_TO_BACKGROUND              (was DECOR_AT_305_155_F14_F9_BG)
+
+`_unified/lake/lake_decor_at_305_155.inc` is renamed to
+`lake_reed_sway_and_tip_speck.inc`, and its header comment — which asserted
+"fixed screen position (305, 155)" — is rewritten to describe the
+multiplexer.
+
+**Coordinate-embedding `CINEMATIC_*` names in the tree: 0.** The class the
+rule was written for is gone. 34 identifiers of other kinds still carry
+coordinates (`SHOW_TEXT_*_AT_x_y`, `DRAW_CIN_*_AT_x_y`, and in LAKE the single
+`LOOP_DRAW_LAKE_097_DECOR_AT_71_171`); most are text-placement labels where
+the coordinate is the argument, which is a different question.
 
 ## Running it
 

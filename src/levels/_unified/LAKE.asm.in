@@ -116,7 +116,7 @@ CACHED_SCREEN_NUM	EQU 0x66
 .include "lake/lester_at_pool_animations.inc"
 
 ; Animated decor element at fixed position (305, 155) — frames F7..F14 cycle as a background detail during the LAKE intro.
-.include "lake/lake_decor_at_305_155.inc"
+.include "lake/lake_reed_sway_and_tip_speck.inc"
 
 ; LAKE-intro narrative: Lester emerges from the pool. Entity-drop animation, F15..F18 transition, RIGHT_CROUCHING landing frames, hand-raise sequence, finally LESTER_AT_POOL_HOLD_LOOP idle.
 .include "lake/lake_intro_lester_emerges_from_pool.inc"

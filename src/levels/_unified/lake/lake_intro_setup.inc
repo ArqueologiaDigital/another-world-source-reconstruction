@@ -33,7 +33,7 @@ LAKE_INTRO_SETUP:
 	unfreezeChannels first=0x0B, last=0x3B
 	copyVideoPage src=0x00, dst=0x03
 	freezeChannels first=0x14, last=0x17
-	setup channel=0x17, address=DECOR_AT_305_155_F14_F9_BG
+	setup channel=0x17, address=REED_SWAY_F0_TO_BACKGROUND
 	setup channel=0x14, address=LESTER_DROP_LAND_AT_POOL_EDGE
 	setup channel=0x15, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x16, address=KILL_CHANNEL_ROUTINE
