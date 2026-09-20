@@ -42,8 +42,18 @@ here that matters should be re-derived from those, not cited from here.
 Note that figures in the older tables predate the group-pivot correction in
 `../polygon-extent-correction/`: extents quoted for group polygons before
 2026-09-19 were computed with the size bytes halved, which is wrong for a
-group. 2,468 of 10,144 named polygons were affected. The identity matches
-(`canonical_md5`) are unaffected, since that serialises header bytes verbatim.
+group. About a quarter of named polygons were affected -- 2,468 of 10,144 when
+the correction landed, 2,195 of 9,397 when re-run a day later, the population
+having shifted under a day of naming. See that note for why the totals differ.
+The identity matches (`canonical_md5`) are unaffected, since that serialises
+header bytes verbatim.
+
+## Checking this README's own numbers
+
+    python3 notes/naming-proposals/coverage.py
+
+prints the three counts quoted above and reproduces them; `--per-table` shows
+which tables landed nothing, `--missing` lists the names that never made it.
 
 ## Naming of the files
 

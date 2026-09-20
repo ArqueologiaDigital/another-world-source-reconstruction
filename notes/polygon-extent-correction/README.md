@@ -54,7 +54,21 @@ of the bug it was written to characterise.
 
 ## `what_the_correction_moves.py` -- what it costs
 
-    2468 of 10144 named polygons change extent
+    2468 of 10144 named polygons change extent        (2026-09-19, when the
+                                                       correction landed)
+    2195 of  9397 named polygons change extent        (2026-09-20, re-run)
+
+**Re-run it before quoting either.** The proportion is stable at ~24%, but the
+population is not: the denominator is "EQU names in `src/levels` starting
+`CINEMATIC_`, `DRAW_CIN_` or `CV_`", and a day of naming, de-prefixing and
+shared-bank re-keying moved it by 747. Which of those passes accounts for the
+drop has **not** been established -- it was noticed during a staleness sweep,
+not investigated, and it is recorded here as an open question rather than
+given a cause it has not earned.
+
+Neither figure is wrong; they measure different populations a day apart. What
+would be wrong is repeating the first one as though it still reproduces, which
+is what this file did until now.
 
 Nested art moves by a median of ~60 units and up to 208. Pairwise size-order
 inversions do occur, so a size *comparison* could in principle have flipped,
