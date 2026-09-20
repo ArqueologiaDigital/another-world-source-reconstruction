@@ -31,16 +31,23 @@ both, which is the form the one-name-per-offset premise is actually used in.
 
     $ python3 notes/shared-bank-geometry/bank_shape_census.py --classes
     class            count  multi-stage  median leaves   what a name could assert
-    large              143          142             10   needs a render
-    small-cluster       94           94              3   needs a render
+    small-cluster      162          161              6   needs a render
+    large               78           78              5   needs a render
     single-shape        62           62              1   shape alone, if recognisable
     particle            40           40              1   shape alone: spark/speck
-    figure              13           11             13   NOT settled by shape
+    figure              10            8             13   NOT settled by shape
 
-For 250 of 352 the honest verdict is "needs a render", and for the 13 articulated
+For 250 of 352 the honest verdict is "needs a render", and for the 10 articulated
 figures it is worse: a render shows a figure and the question was *which* figure.
 **That is where shape stops.** The classes are there so effort goes to the rows
 where a name is earnable, not so they can be named from the table.
+
+> **Corrected 2026-09-20.** This table first read 143 large / 94 small-cluster /
+> 13 figure. Those counts came from the group-pivot bug that measuring *this*
+> bank exposed an hour later: nested art was reported larger than it is, which
+> pushed rows up the size classes. See `../polygon-extent-correction/`. The
+> 250-needs-a-render total and every conclusion below are unchanged -- the
+> classes shifted, the verdict per row did not.
 
 ## 2. `bank_draw_position.py` — what the call site settles
 
