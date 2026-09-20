@@ -184,12 +184,12 @@ PRISON_DRAW_CV_076_L0:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_DRAW_CV_077_L0:
-	je [0x0A], 0x00, DRAW_CV_078
+	je [0x0A], 0x00, DRAW_HERO_WALK_LEFT_F13
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
-DRAW_CV_078:
+DRAW_HERO_WALK_LEFT_F13:
 	video type=0, offset=HERO_WALK_LEFT_BODY_F13, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
@@ -296,12 +296,12 @@ PRISON_DRAW_CV_067_L1:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_DRAW_CV_069_L0:
-	je [0x0A], 0x00, DRAW_CV_070
+	je [0x0A], 0x00, DRAW_HERO_WALK_LEFT_F05
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
-DRAW_CV_070:
+DRAW_HERO_WALK_LEFT_F05:
 	video type=0, offset=HERO_WALK_LEFT_BODY_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 

@@ -634,12 +634,12 @@ CAVES_DRAW_CV_076_L0:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_DRAW_CV_077_L0:
-	je [0x0A], 0x00, DRAW_CV078_PLAY_60_F0B_V22_C1
+	je [0x0A], 0x00, DRAW_HERO_WALK_LEFT_F13
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
-DRAW_CV078_PLAY_60_F0B_V22_C1:
+DRAW_HERO_WALK_LEFT_F13:
 	video type=0, offset=HERO_WALK_LEFT_BODY_F13, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0B, vol=0x22, channel=0x01
 	ret
@@ -747,12 +747,12 @@ CAVES_DRAW_CV_067_L1:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_DRAW_CV_069_L0:
-	je [0x0A], 0x00, DRAW_CV070_PLAY_60_F14_V20_C1
+	je [0x0A], 0x00, DRAW_HERO_WALK_LEFT_F05
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
-DRAW_CV070_PLAY_60_F14_V20_C1:
+DRAW_HERO_WALK_LEFT_F05:
 	video type=0, offset=HERO_WALK_LEFT_BODY_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x14, vol=0x20, channel=0x01
 	ret

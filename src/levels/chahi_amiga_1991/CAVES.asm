@@ -16249,10 +16249,10 @@ DRAW_CV_116:
 
 
 LABEL_9AE5:
-	je [0x0A], 0x00, LABEL_9AEE
+	je [0x0A], 0x00, DRAW_HERO_WALK_LEFT_F13
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
-LABEL_9AEE:
+DRAW_HERO_WALK_LEFT_F13:
 	video type=0, offset=HERO_WALK_LEFT_BODY_F13, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0B, vol=0x22, channel=0x01
 	ret
@@ -16351,10 +16351,10 @@ DRAW_CV_107:
 
 
 LABEL_9B9E:
-	je [0x0A], 0x00, LABEL_9BA7
+	je [0x0A], 0x00, DRAW_HERO_WALK_LEFT_F05
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
-LABEL_9BA7:
+DRAW_HERO_WALK_LEFT_F05:
 	video type=0, offset=HERO_WALK_LEFT_BODY_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x14, vol=0x20, channel=0x01
 	ret

@@ -16,6 +16,15 @@ Where a rename may land
     The convention there is a `__`-separated prefix: `amiga__entry.inc`,
     `dos__post_...`, `cart__...`, `amiga_dos__post_SHARED_RET.inc`. A chunk
     with no prefix is read by every branch.
+  - **`_unified/_helpers/*.inc`**, which is shared across **stages** as well
+    as branches: `DRAW_CV_099.inc` defines one routine that PRISON, CAVES and
+    CAPSULE all include. A per-stage proposal cannot rename it unilaterally,
+    and the applier did not walk that directory at all -- so a pass renamed
+    the *reference* in `prison/amiga__post_INLINE_KILL_041.inc` while the
+    *definition* stayed put, giving 114 undefined references and
+    verify-unified **20/29**. A label any `_helpers` chunk mentions is now
+    dropped from the pass unless every stage and branch referencing it
+    proposes the same name.
   - **`_unified/<STAGE>.asm.in`, the stage template**, which is also read by
     every branch. Leaving it out is not a cosmetic omission: `JUNK__0467` is
     *defined* only there while `cart__entry.inc` references it, so a pass
@@ -107,6 +116,35 @@ def main() -> int:
         print("no proposals")
         return 1
     print(f"{len(table)} proposal(s)")
+
+    # A label any cross-stage helper names can only be renamed if every
+    # stage and branch that references it agrees; the helpers directory is
+    # shared by PRISON, CAVES and CAPSULE at once.
+    helpers = sorted((SRC / "src" / "levels" / "_unified"
+                      / "_helpers").glob("*.inc"))
+    helper_text = {f: f.read_text(errors="replace") for f in helpers}
+    by_label: dict[str, set] = collections.defaultdict(set)
+    for (port, stage, lab), name in table.items():
+        by_label[lab].add(name)
+    # Every helper-referenced label is dropped, even when the proposers
+    # agree. Agreement among PROPOSERS is not the test: `DRAW_CV_069.inc` is
+    # included by amiga and msdos alike, so renaming it because msdos
+    # proposed a name breaks amiga, which did not. Requiring "every branch
+    # and stage whose build includes this helper has the same proposal" is
+    # the correct test and is not cheaply computable from here, so the pass
+    # declines the whole class. Trying the weaker test first took
+    # verify-unified from 20/29 to 20/29 with 150 undefined references
+    # instead of 114 -- worse, not better.
+    shared_helper = {lab for lab in by_label
+                     if any(re.search(rf"\b{re.escape(lab)}\b", t2)
+                            for t2 in helper_text.values())}
+    dropped_h = [k for k in table if k[2] in shared_helper]
+    for k in dropped_h:
+        del table[k]
+    if dropped_h:
+        print(f"  {len(dropped_h)} proposal(s) dropped: the label lives in "
+              f"a cross-stage _helpers chunk,\n     which is included by "
+              f"stages and branches this pass has no proposal for")
 
     # A label any all-branch chunk names cannot be renamed by this pass.
     universal: set[tuple[str, str]] = set()

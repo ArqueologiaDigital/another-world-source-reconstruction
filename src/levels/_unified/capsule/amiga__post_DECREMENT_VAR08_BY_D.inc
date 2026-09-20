@@ -796,10 +796,10 @@ CAPSULE_HERO_WALK_LEFT_DRAW_4_GUN_RAISED:
 .include "../_helpers/DRAW_CV_107.inc"
 
 CAPSULE_HERO_WALK_LEFT_DRAW_5:
-	je [0x0A], 0x00, LABEL_7BBB
+	je [0x0A], 0x00, DRAW_HERO_WALK_LEFT_F05
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
-LABEL_7BBB:
+DRAW_HERO_WALK_LEFT_F05:
 	video type=0, offset=HERO_WALK_LEFT_BODY_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x14, vol=0x20, channel=0x01
 	ret

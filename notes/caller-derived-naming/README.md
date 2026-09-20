@@ -279,3 +279,29 @@ no longer "always drop": such a file is rewritten when **every branch that
 has the label proposes the same new name**, and the label is dropped from the
 pass entirely otherwise. With that, 0 of 127 are dropped: 444 canonical, 144
 chunk and 28 all-branch tokens.
+
+### `_unified/_helpers/` is shared across stages, not just branches
+
+The third structural surface this applier had to learn, after the branch
+prefixes and the `.asm.in` template. `_unified/_helpers/DRAW_CV_099.inc`
+defines **one** routine that PRISON, CAVES *and* CAPSULE all include. The
+applier never walked that directory, so a pass renamed the *reference* in
+`prison/amiga__post_INLINE_KILL_041.inc` and left the *definition* alone:
+**114 undefined references, verify-unified 20/29.**
+
+The obvious fix made it worse. Rewriting a helper when every *proposer*
+agrees on the name still breaks the stages and branches that proposed
+nothing — `DRAW_CV_069.inc` is included by amiga and msdos alike, so renaming
+it because msdos proposed a name leaves amiga referring to a symbol that no
+longer exists. That attempt went from 114 undefined to **150**.
+
+The correct test is "every branch and stage whose build includes this helper
+has the same proposal", which is not cheaply computable from here. So the
+pass declines the whole class: **any label a `_helpers` chunk mentions is
+dropped.** 81 of 150 proposals go that way, and 69 apply — 138 canonical, 24
+chunk and 5 all-branch tokens, `make test` back to 29/29 and 29/29.
+
+Losing 81 to a conservative rule is the right trade while the cheap test is
+wrong in the unsafe direction. Making them nameable means teaching the pass
+which stages include which helper, from the include graph the unified build
+already walks.
