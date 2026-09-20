@@ -95,6 +95,8 @@ EVIDENCE = (
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--proposals", type=Path)
+    ap.add_argument("--held", action="store_true",
+                    help="name every held candidate, not just count it")
     args = ap.parse_args()
 
     disputed = set()
@@ -104,6 +106,13 @@ def main() -> int:
                     if l.split("#")[0].strip()}
 
     why = collections.Counter()
+    # Every hold also records WHICH candidate was held. Counting alone made a
+    # real finding invisible: an audit went looking for
+    # `CINEMATIC_555 -> CINEMATIC_HERO_FALL_PRELUDE_FRAME` in a scratch file
+    # because this probe computed it from HEAD and then dropped the name on
+    # the floor, leaving only "1 held: referenced from an all-branch chunk".
+    # A reason with no subject cannot be acted on or checked.
+    held: list[tuple[str, str, str, str, str]] = []
     out: list[tuple] = []
     for port, br in PORTS.items():
         named: dict[str, set] = {}
@@ -116,6 +125,7 @@ def main() -> int:
             try:
                 bank = slab("cinematic", port, sid)
             except BaseException:
+                held.append((f"{port}: no extracted ROM", port, stage, k, ""))
                 why[f"{port}: no extracted ROM"] += 1
                 continue
             for k, v in RE_EQU.findall(f.read_text(errors="replace")):
@@ -135,17 +145,21 @@ def main() -> int:
             cand = {n for s2, n in named.get(m, ()) if s2 != stage}
             if len(cand) != 1:
                 if cand:
+                    held.append((f"{port}: art matches two or more names", port, stage, k, "/".join(sorted(cand))))
                     why[f"{port}: art matches two or more names"] += 1
                 continue
             name = next(iter(cand))
             body = name[len("CINEMATIC_"):]
             if any(body.startswith(s + "_") and s != stage for s in SID):
+                held.append((f"{port}: name carries another stage's prefix", port, stage, k, name))
                 why[f"{port}: name carries another stage's prefix"] += 1
                 continue
             if name in taken[stage]:
+                held.append((f"{port}: name already used in the target stage", port, stage, k, name))
                 why[f"{port}: name already used in the target stage"] += 1
                 continue
             if name in disputed:
+                held.append((f"{port}: name is on disputed.txt", port, stage, k, name))
                 why[f"{port}: name is on disputed.txt"] += 1
                 continue
             arms = SRC / "src" / "levels" / "_unified" / stage.lower()
@@ -154,11 +168,15 @@ def main() -> int:
                    and re.search(rf"\b{re.escape(k)}\b",
                                  f.read_text(errors="replace"))
                    for f in shared):
+                held.append((f"{port}: referenced from an all-branch chunk", port, stage, k, name))
                 why[f"{port}: referenced from an all-branch chunk"] += 1
                 continue
             prop[(stage, name)].append(k)
         for (stage, name), ks in prop.items():
             if len(ks) > 1:
+                for kk in ks:
+                    held.append((f"{port}: several constants would take one "
+                                 f"name (#0118)", port, stage, kk, name))
                 why[f"{port}: several constants would take one name "
                     f"(#0118)"] += len(ks)
                 continue
@@ -167,6 +185,11 @@ def main() -> int:
     print(f"{len(out)} constant(s) nameable by cross-stage art identity\n")
     for k, v in sorted(why.items()):
         print(f"  {v:4d}  held: {k}")
+    if args.held:
+        print("\nheld candidates, named (--held):")
+        for reason, port, stage, k, name in sorted(held):
+            print(f"  {port}/{stage:<10}{k:<18} -> {name or '(no candidate)':<44}"
+                  f"  {reason.split(': ', 1)[1]}")
     print()
     for port, stage, k, name in sorted(out):
         print(f"  {port}/{stage:<10}{k:<18} -> {name}")
