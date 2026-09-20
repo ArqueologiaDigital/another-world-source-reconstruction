@@ -416,25 +416,25 @@ LABEL_780D:
 	ret
 
 
-LABEL_782B:
-	jne [0x05], 0x00, LABEL_7837
+DRAW_HERO_WATER_DEPTH_RIGHT_CASE_00:
+	jne [0x05], 0x00, DRAW_HERO_WATER_DEPTH_RIGHT_CASE_01
 	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_7837:
-	jne [0x05], 0x01, LABEL_7843
+DRAW_HERO_WATER_DEPTH_RIGHT_CASE_01:
+	jne [0x05], 0x01, DRAW_HERO_WATER_DEPTH_RIGHT_CASE_02
 	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_7843:
-	jne [0x05], 0x02, LABEL_784F
+DRAW_HERO_WATER_DEPTH_RIGHT_CASE_02:
+	jne [0x05], 0x02, DRAW_HERO_WATER_DEPTH_RIGHT_CASE_03
 	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_784F:
+DRAW_HERO_WATER_DEPTH_RIGHT_CASE_03:
 	jne [0x05], 0x03, LABEL_785B
 	video type=0, offset=HERO_WATER_DEPTH_RIGHT_CASE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
@@ -446,14 +446,14 @@ LABEL_785B:
 
 CAPSULE_HERO_WALK_RIGHT_DRAW_9:
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	jne [0x0A], 0x00, LABEL_786D
+	jne [0x0A], 0x00, HERO_GUN_ARM_POSE_CASE_01
 	video type=0, offset=HERO_WALK_RIGHT_ARM_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_786D:
+HERO_GUN_ARM_POSE_CASE_01:
 	call LABEL_77B9
-	jne [0x0A], 0x01, LABEL_7894
+	jne [0x0A], 0x01, HERO_GUN_ARM_POSE_CASE_02
 	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
@@ -463,8 +463,8 @@ LABEL_786D:
 	ret
 
 
-LABEL_7894:
-	jne [0x0A], 0x02, LABEL_78B8
+HERO_GUN_ARM_POSE_CASE_02:
+	jne [0x0A], 0x02, HERO_GUN_ARM_POSE_CASE_03
 	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
@@ -474,8 +474,8 @@ LABEL_7894:
 	ret
 
 
-LABEL_78B8:
-	jne [0x0A], 0x03, LABEL_78DC
+HERO_GUN_ARM_POSE_CASE_03:
+	jne [0x0A], 0x03, HERO_GUN_ARM_POSE_CASE_04
 	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
@@ -485,7 +485,7 @@ LABEL_78B8:
 	ret
 
 
-LABEL_78DC:
+HERO_GUN_ARM_POSE_CASE_04:
 	video type=0, offset=HERO_GUN_ARM_RIGHT_CASE_04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
@@ -497,21 +497,21 @@ LABEL_78DC:
 
 CAPSULE_HERO_WALK_RIGHT_DRAW_10:
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F10, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	jne [0x0A], 0x00, LABEL_786D
+	jne [0x0A], 0x00, HERO_GUN_ARM_POSE_CASE_01
 	video type=0, offset=HERO_WALK_RIGHT_ARM_F10, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_WALK_RIGHT_DRAW_11:
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F11, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	jne [0x0A], 0x00, LABEL_786D
+	jne [0x0A], 0x00, HERO_GUN_ARM_POSE_CASE_01
 	video type=0, offset=HERO_WALK_RIGHT_ARM_F11, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_WALK_RIGHT_DRAW_12:
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F12, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	jne [0x0A], 0x00, LABEL_786D
+	jne [0x0A], 0x00, HERO_GUN_ARM_POSE_CASE_01
 	video type=0, offset=HERO_WALK_RIGHT_ARM_F12, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
@@ -519,57 +519,57 @@ CAPSULE_HERO_WALK_RIGHT_DRAW_12:
 CAPSULE_HERO_WALK_RIGHT_FOOTSTEP_PHASE_2:
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F13, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0B, vol=0x22, channel=0x01
-	jne [0x0A], 0x00, LABEL_786D
+	jne [0x0A], 0x00, HERO_GUN_ARM_POSE_CASE_01
 	video type=0, offset=HERO_WALK_RIGHT_ARM_F13, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_WALK_RIGHT_DRAW_14:
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F14, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	jne [0x0A], 0x00, LABEL_786D
+	jne [0x0A], 0x00, HERO_GUN_ARM_POSE_CASE_01
 	video type=0, offset=HERO_WALK_RIGHT_ARM_F14, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 LABEL_7955:
-	call LABEL_782B
+	call DRAW_HERO_WATER_DEPTH_RIGHT_CASE_00
 	video type=0, offset=CV_0F90, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	jne [0x0A], 0x00, LABEL_786D
+	jne [0x0A], 0x00, HERO_GUN_ARM_POSE_CASE_01
 	video type=0, offset=CV_338E, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_WALK_RIGHT_DRAW_0:
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	jne [0x0A], 0x00, LABEL_786D
+	jne [0x0A], 0x00, HERO_GUN_ARM_POSE_CASE_01
 	video type=0, offset=HERO_WALK_RIGHT_ARM_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_WALK_RIGHT_DRAW_1:
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	jne [0x0A], 0x00, LABEL_786D
+	jne [0x0A], 0x00, HERO_GUN_ARM_POSE_CASE_01
 	video type=0, offset=HERO_WALK_RIGHT_ARM_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_WALK_RIGHT_DRAW_2:
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	jne [0x0A], 0x00, LABEL_786D
+	jne [0x0A], 0x00, HERO_GUN_ARM_POSE_CASE_01
 	video type=0, offset=HERO_WALK_RIGHT_ARM_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_WALK_RIGHT_DRAW_3:
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	jne [0x0A], 0x00, LABEL_786D
+	jne [0x0A], 0x00, HERO_GUN_ARM_POSE_CASE_01
 	video type=0, offset=HERO_WALK_RIGHT_ARM_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_WALK_RIGHT_DRAW_4:
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	jne [0x0A], 0x00, LABEL_786D
+	jne [0x0A], 0x00, HERO_GUN_ARM_POSE_CASE_01
 	video type=0, offset=HERO_WALK_RIGHT_ARM_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
@@ -577,29 +577,29 @@ CAPSULE_HERO_WALK_RIGHT_DRAW_4:
 CAPSULE_HERO_WALK_RIGHT_FOOTSTEP_PHASE_1:
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x14, vol=0x20, channel=0x01
-	jne [0x0A], 0x00, LABEL_786D
+	jne [0x0A], 0x00, HERO_GUN_ARM_POSE_CASE_01
 	video type=0, offset=HERO_WALK_RIGHT_ARM_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_WALK_RIGHT_DRAW_6:
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F06, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	jne [0x0A], 0x00, LABEL_786D
+	jne [0x0A], 0x00, HERO_GUN_ARM_POSE_CASE_01
 	video type=0, offset=HERO_WALK_RIGHT_ARM_F06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_79E6:
-	call LABEL_782B
+DRAW_HERO_WALK_RIGHT_F07:
+	call DRAW_HERO_WATER_DEPTH_RIGHT_CASE_00
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	jne [0x0A], 0x00, LABEL_786D
+	jne [0x0A], 0x00, HERO_GUN_ARM_POSE_CASE_01
 	video type=0, offset=HERO_WALK_RIGHT_ARM_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 CAPSULE_HERO_WALK_RIGHT_DRAW_8:
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F08, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	jne [0x0A], 0x00, LABEL_786D
+	jne [0x0A], 0x00, HERO_GUN_ARM_POSE_CASE_01
 	video type=0, offset=HERO_WALK_RIGHT_ARM_F08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
@@ -624,26 +624,26 @@ LABEL_7A29:
 	ret
 
 
-LABEL_7A47:
+HERO_GUN_ARM_POSE_LEFT_CASE_01:
 	call LABEL_77B9
-	jne [0x0A], 0x01, LABEL_7A56
+	jne [0x0A], 0x01, HERO_GUN_ARM_POSE_LEFT_CASE_02
 	video type=0, offset=HERO_GUN_ARM_LEFT_CASE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_7A56:
-	jne [0x0A], 0x02, LABEL_7A62
+HERO_GUN_ARM_POSE_LEFT_CASE_02:
+	jne [0x0A], 0x02, HERO_GUN_ARM_POSE_LEFT_CASE_03
 	video type=0, offset=HERO_GUN_ARM_LEFT_CASE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_7A62:
-	jne [0x0A], 0x03, LABEL_7A6E
+HERO_GUN_ARM_POSE_LEFT_CASE_03:
+	jne [0x0A], 0x03, HERO_GUN_ARM_POSE_LEFT_CASE_04
 	video type=0, offset=HERO_GUN_ARM_LEFT_CASE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_7A6E:
+HERO_GUN_ARM_POSE_LEFT_CASE_04:
 	video type=0, offset=HERO_GUN_ARM_LEFT_CASE_04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
@@ -653,25 +653,25 @@ LABEL_7A6E:
 	ret
 
 
-LABEL_7A8C:
-	jne [0x05], 0x00, LABEL_7A98
+DRAW_HERO_WATER_DEPTH_LEFT_CASE_00:
+	jne [0x05], 0x00, DRAW_HERO_WATER_DEPTH_LEFT_CASE_01
 	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_7A98:
-	jne [0x05], 0x01, LABEL_7AA4
+DRAW_HERO_WATER_DEPTH_LEFT_CASE_01:
+	jne [0x05], 0x01, DRAW_HERO_WATER_DEPTH_LEFT_CASE_02
 	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_7AA4:
-	jne [0x05], 0x02, LABEL_7AB0
+DRAW_HERO_WATER_DEPTH_LEFT_CASE_02:
+	jne [0x05], 0x02, DRAW_HERO_WATER_DEPTH_LEFT_CASE_03
 	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
-LABEL_7AB0:
+DRAW_HERO_WATER_DEPTH_LEFT_CASE_03:
 	jne [0x05], 0x03, LABEL_7ABC
 	video type=0, offset=HERO_WATER_DEPTH_LEFT_CASE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
@@ -683,13 +683,13 @@ LABEL_7ABC:
 
 CAPSULE_HERO_WALK_LEFT_DRAW_9:
 	je [0x0A], 0x00, DRAW_CV_113
-	call LABEL_7A47
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 .include "../_helpers/DRAW_CV_113.inc"
 
 CAPSULE_HERO_WALK_LEFT_DRAW_10:
 	je [0x0A], 0x00, DRAW_CV_114
-	call LABEL_7A47
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_114:
 	video type=0, offset=CV_00B4, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -698,7 +698,7 @@ DRAW_CV_114:
 
 CAPSULE_HERO_WALK_LEFT_DRAW_11:
 	je [0x0A], 0x00, DRAW_CV_115
-	call LABEL_7A47
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_115:
 	video type=0, offset=CV_0128, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -707,13 +707,13 @@ DRAW_CV_115:
 
 CAPSULE_HERO_WALK_LEFT_DRAW_12:
 	je [0x0A], 0x00, DRAW_CV_116
-	call LABEL_7A47
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 .include "../_helpers/DRAW_CV_116.inc"
 
 CAPSULE_HERO_WALK_LEFT_DRAW_13:
 	je [0x0A], 0x00, CAPSULE_HERO_WALK_LEFT_FOOTSTEP_PHASE_2
-	call LABEL_7A47
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 CAPSULE_HERO_WALK_LEFT_FOOTSTEP_PHASE_2:
 	video type=0, offset=CV_0234, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -727,7 +727,7 @@ CAPSULE_HERO_WALK_LEFT_DRAW_14:
 	jmp DRAW_CV_118
 
 CAPSULE_HERO_WALK_LEFT_DRAW_14_GUN_RAISED:
-	call LABEL_7A47
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 .include "../_helpers/DRAW_CV_118.inc"
 
@@ -737,10 +737,10 @@ LABEL_7B25:
 	jmp LABEL_7B36
 
 LABEL_7B33:
-	call LABEL_7A47
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 LABEL_7B36:
-	call LABEL_7A8C
+	call DRAW_HERO_WATER_DEPTH_LEFT_CASE_00
 	video type=0, offset=HERO_STAND_LEFT_BODY, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
@@ -751,7 +751,7 @@ CAPSULE_HERO_WALK_LEFT_DRAW_0:
 	jmp DRAW_CV_099
 
 CAPSULE_HERO_WALK_LEFT_DRAW_0_GUN_RAISED:
-	call LABEL_7A47
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 .include "../_helpers/DRAW_CV_099.inc"
 
@@ -761,7 +761,7 @@ CAPSULE_HERO_WALK_LEFT_DRAW_1:
 	jmp DRAW_CV_101
 
 CAPSULE_HERO_WALK_LEFT_DRAW_1_GUN_RAISED:
-	call LABEL_7A47
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 .include "../_helpers/DRAW_CV_101.inc"
 
@@ -771,7 +771,7 @@ CAPSULE_HERO_WALK_LEFT_DRAW_2:
 	jmp DRAW_CV_103
 
 CAPSULE_HERO_WALK_LEFT_DRAW_2_GUN_RAISED:
-	call LABEL_7A47
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 .include "../_helpers/DRAW_CV_103.inc"
 
@@ -781,7 +781,7 @@ CAPSULE_HERO_WALK_LEFT_DRAW_3:
 	jmp DRAW_CV_105
 
 CAPSULE_HERO_WALK_LEFT_DRAW_3_GUN_RAISED:
-	call LABEL_7A47
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 .include "../_helpers/DRAW_CV_105.inc"
 
@@ -791,13 +791,13 @@ CAPSULE_HERO_WALK_LEFT_DRAW_4:
 	jmp DRAW_CV_107
 
 CAPSULE_HERO_WALK_LEFT_DRAW_4_GUN_RAISED:
-	call LABEL_7A47
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 .include "../_helpers/DRAW_CV_107.inc"
 
 CAPSULE_HERO_WALK_LEFT_DRAW_5:
 	je [0x0A], 0x00, LABEL_7BBB
-	call LABEL_7A47
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 LABEL_7BBB:
 	video type=0, offset=CV_0814, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -807,7 +807,7 @@ LABEL_7BBB:
 
 CAPSULE_HERO_WALK_LEFT_DRAW_6:
 	je [0x0A], 0x00, DRAW_CV_110
-	call LABEL_7A47
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_110:
 	video type=0, offset=CV_0844, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -815,15 +815,15 @@ DRAW_CV_110:
 
 
 LABEL_7BD6:
-	call LABEL_7A8C
+	call DRAW_HERO_WATER_DEPTH_LEFT_CASE_00
 	je [0x0A], 0x00, DRAW_CV_111
-	call LABEL_7A47
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 .include "../_helpers/DRAW_CV_111.inc"
 
 CAPSULE_HERO_WALK_LEFT_DRAW_8:
 	je [0x0A], 0x00, DRAW_CV_112
-	call LABEL_7A47
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_112:
 	video type=0, offset=CV_08A0, x=[HERO_X], y=[HERO_Y], zoom=0x40

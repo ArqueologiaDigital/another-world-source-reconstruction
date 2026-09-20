@@ -1,0 +1,17 @@
+# derived-name -> spelling already used by an earned sibling in the same family
+#
+# NAMING.md §2: no family may have a gap in its index run. When some members
+# of a family are already named and this pass derives a different spelling for
+# the rest, the result is two families with a hole each rather than one whole
+# one. These lines pin the derived name onto the existing spelling.
+#
+# Each entry must name the earned sibling that justifies it.
+
+DRAW_HERO_GUN_ARM_RIGHT_CASE_01  HERO_GUN_ARM_POSE_CASE_01
+# sibling: HERO_GUN_ARM_POSE_CASE_02 and _CASE_03, earned in CAVES on cases 2
+# and 3 of the same [0x0A] switch. The right-facing family carries no
+# direction word; keeping that gives a complete run 01..04.
+DRAW_HERO_GUN_ARM_RIGHT_CASE_04  HERO_GUN_ARM_POSE_CASE_04
+DRAW_HERO_GUN_ARM_LEFT_CASE_01   HERO_GUN_ARM_POSE_LEFT_CASE_01
+# sibling: HERO_GUN_ARM_POSE_LEFT_CASE_02 and _CASE_03, same switch, left arm.
+DRAW_HERO_GUN_ARM_LEFT_CASE_04   HERO_GUN_ARM_POSE_LEFT_CASE_04

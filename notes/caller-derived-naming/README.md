@@ -166,3 +166,76 @@ LABEL_8CC9:                     <- CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_1_RET
 * **Nothing is claimed about what the caller does.** The name asserts only
   "this is where `<caller>` returns / ends its thread", which the single
   reaching edge proves.
+
+---
+
+## 2026-09-20: the polygon layer paid out — 108 routine names
+
+`named_art_only.py`'s whole point was that the routine layer is gated by the
+polygon layer. On 2026-09-19 it measured 112 routines drawing only identified
+art and just **12** with a draw-set no sibling shared. Naming 73 shared-bank
+offsets that day took the unique count to **140**, and this pass turns them
+into names.
+
+`name_routines_from_art.py` proposes, `apply_routine_names.py` writes.
+
+### Choosing the name
+
+**Reuse before invent.** If a routine in any other file draws exactly the same
+set and already has a semantic name, take it — the same block exists in
+several ports and stages and should read the same everywhere. 19 of 108 came
+out that way.
+
+**Never carry a stage prefix into another stage.** The first run proposed
+`CAVES_HERO_WATER_DEPTH_SPRITE_RIGHT_CASE_00` for a block in CAPSULE and the
+LEFT variant for one in PRISON. The art is shared between stages; the routine
+is not.
+
+**Put the shared index back.** Deriving from the art means the longest common
+prefix with the layer word (`BODY`, `ARM`) and per-name index dropped — and
+then the index restored when every drawn name carries the same one. Without
+that step the four gun-arm blocks all derive `DRAW_HERO_GUN_ARM_RIGHT`: one
+name, four labels, which is the collision the probe exists to prevent.
+
+**Match an earned sibling's spelling.** `name_routines_from_art.spelling`
+pins `DRAW_HERO_GUN_ARM_RIGHT_CASE_01` onto `HERO_GUN_ARM_POSE_CASE_01`,
+because cases 02 and 03 were already earned under that spelling in CAVES.
+Without it the result is two families with a hole each rather than one
+complete run 01..04, which NAMING.md §2 forbids. Each line names the sibling
+that justifies it.
+
+**Honour recorded skips.** `name_routines_from_art.skip` holds what an earlier
+pass looked at and rejected, with the reason. Without it this pass silently
+re-proposes CAPSULE's `LABEL_4CC4`, whose art is itself disputed — the routine
+tiles a beam while the polygon claims to be the alien breaking a window. A
+routine cannot inherit a subject from art whose subject is in doubt.
+
+### Applying it is not a token replace
+
+A label is per branch. `LABEL_6C78` exists in amiga/PRISON and msdos/PRISON
+and is different code at the same address. The applier writes to the canonical
+`.asm` and to `_unified/<stage>/` chunks whose `__`-prefix says which branches
+read them, and only when every reading branch agrees on the new name.
+
+**A label any all-branch chunk references is dropped from the pass entirely** —
+20 of the 128 were. Skipping just that chunk is worse than useless: amiga and
+msdos would rename their canonical copies while the shared chunk still names
+the old spelling, a dangling reference the pass created itself.
+`capsule_init_dispatch.inc` naming `GUARDED_DRAW_CV_126` is the case that
+forced the rule.
+
+### Result
+
+    128 proposals, 20 dropped as all-branch, 108 applied
+    360 canonical tokens + 165 unified-chunk tokens rewritten
+    make test 29/29 and 29/29, undefined_symbols clean
+
+Complete families, no index gaps: `DRAW_HERO_WALK_RIGHT_F00..F14`,
+`DRAW_HERO_RUN_RIGHT_F00..F09`,
+`DRAW_HERO_WATER_DEPTH_{LEFT,RIGHT}_CASE_00..03`,
+`HERO_GUN_ARM_POSE_{,LEFT_}CASE_01..04`.
+
+Routine-layer share, before → after: amiga/CAVES 27.0 → 28.0 %, amiga/PRISON
+→ 32.7 %, amiga/CAPSULE → 27.0 %. Routines drawing only identified art fall
+from 3,441 to 3,333, and the unique-and-nameable pool from 140 to 32 — the
+pass consumed what it could reach.

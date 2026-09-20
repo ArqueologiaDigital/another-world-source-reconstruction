@@ -1,0 +1,13 @@
+# Routines this pass must not name, with the reason. One per line:
+#     <port> <stage> <label>   # why
+#
+# A recorded skip is evidence too: it says someone looked and stopped. Without
+# this file the pass silently re-proposes what a previous pass rejected.
+
+amiga CAPSULE LABEL_4CC4   # draws CINEMATIC_BUDDY_SMASHING_WINDOW_F8, whose own
+                           # name is in doubt: notes/render-attempts/README.md
+                           # records that the routine tiles a beam while the
+                           # polygon claims to be the alien breaking the window.
+                           # A routine cannot inherit a subject from art whose
+                           # subject is disputed.
+msdos CAPSULE LABEL_4E71   # the msdos counterpart of the same block

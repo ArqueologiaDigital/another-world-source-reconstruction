@@ -997,8 +997,8 @@ LABEL_AE5B:
 	setup channel=0x01, address=INIT_VARS_E6_E7
 	setup channel=0x02, address=INLINE_SET_VARE8_TO_8
 	setup channel=0x03, address=INIT_VARS_EA_EB
-	setup channel=0x04, address=LABEL_33AD
-	setup channel=0x05, address=LABEL_32E6
+	setup channel=0x04, address=CAVES_DROPLET_LOOP
+	setup channel=0x05, address=CAVES_SPRAY_LINE_LOOP
 	setup channel=0x06, address=LABEL_3305
 	setup channel=0x07, address=LABEL_32C7
 
@@ -1032,7 +1032,7 @@ LABEL_AEFC:
 	setup channel=0x21, address=LABEL_22C0
 
 LABEL_AF15:
-	setup channel=0x04, address=LABEL_2201
+	setup channel=0x04, address=CAVES_WATERFALL_DRIP_LOOP
 	setup channel=0x01, address=LABEL_21EA
 	setup channel=0x3B, address=CAVES_WATERFALL_BACKDROP_HOLD_LOOP
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED

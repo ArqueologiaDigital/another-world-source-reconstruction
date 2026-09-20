@@ -638,15 +638,15 @@ LABEL_A6B6:
 	mov [0x68], 0x0064
 	mov [0x69], 0x0077
 	setup channel=0x22, address=LABEL_284D
-	setup channel=0x23, address=LABEL_2F9B
+	setup channel=0x23, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6A], 0x00C8
 	mov [0x6B], 0x0077
 	setup channel=0x24, address=CAVES_TRAP_SPOT_WATCH_SLOT_1_LOOP
-	setup channel=0x25, address=LABEL_2F9B
+	setup channel=0x25, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6C], 0x00FA
 	mov [0x6D], 0x0077
 	setup channel=0x26, address=CAVES_TRAP_SPOT_WATCH_SLOT_2_LOOP
-	setup channel=0x27, address=LABEL_2F9B
+	setup channel=0x27, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6E], [0x48]
 	add [0x6E], 0x000E
 	mov [0x6F], 0x0032
@@ -683,15 +683,15 @@ LABEL_A768:
 	mov [0x68], 0x0078
 	mov [0x69], 0x0077
 	setup channel=0x22, address=LABEL_284D
-	setup channel=0x23, address=LABEL_2F9B
+	setup channel=0x23, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6A], 0x00A0
 	mov [0x6B], 0x0077
 	setup channel=0x24, address=CAVES_TRAP_SPOT_WATCH_SLOT_1_LOOP
-	setup channel=0x25, address=LABEL_2F9B
+	setup channel=0x25, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6C], 0x00B9
 	mov [0x6D], 0x0077
 	setup channel=0x26, address=CAVES_TRAP_SPOT_WATCH_SLOT_2_LOOP
-	setup channel=0x27, address=LABEL_2F9B
+	setup channel=0x27, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	je [0xB0], 0x03, TRAMP_A847
 	mov [HERO_Y], 0x0082
 	mov [0xF8], [0xBD]
@@ -769,7 +769,7 @@ LABEL_A884:
 	mov [0x68], 0x0078
 	mov [0x69], 0x0077
 	setup channel=0x22, address=LABEL_284D
-	setup channel=0x23, address=LABEL_2F9B
+	setup channel=0x23, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	setup channel=0x3B, address=LABEL_C497
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_A8C7:
