@@ -159,6 +159,36 @@ def _apply_table(table: dict) -> None:
             f.write_text(new)
 
 
+def visible_to(labels: set) -> dict:
+    """label -> {(branch, stage)} whose build actually sees it.
+
+    `undefined_symbols.walk` evaluates `.if BRANCH` while following
+    `.include`, so its `defs` and `refs` are what that build really
+    assembles -- not what the files happen to contain. That distinction is
+    the whole point here: `_unified/prison/amiga__entry.inc` contains
+    `DRAW_CV097_AT_X01_Y02` while amiga/PRISON's build does not emit it,
+    because the text sits in an arm amiga skips. File membership says amiga
+    sees it; the walk says it does not.
+    """
+    sys.path.insert(0, str(SRC / "notes" / "unified-symbol-check"))
+    from undefined_symbols import walk as _walk           # noqa: E402
+    out: dict[str, set] = collections.defaultdict(set)
+    stages = [f.stem.replace(".asm", "") for f in
+              (SRC / "src" / "levels" / "_unified").glob("*.asm.in")]
+    for port, br in PORTS.items():
+        for stage in stages:
+            tmpl = SRC / "src" / "levels" / "_unified" / f"{stage}.asm.in"
+            if not tmpl.is_file():
+                continue
+            defs: set = set()
+            refs: dict = {}
+            _walk(tmpl, br, set(), defs, refs)
+            seen = (defs | set(refs)) & labels
+            for lab in seen:
+                out[lab].add((port, stage))
+    return out
+
+
 def iterate(table: dict) -> int:
     """Apply, ask the oracle, drop the guilty labels, revert, repeat."""
     import subprocess
@@ -166,6 +196,26 @@ def iterate(table: dict) -> int:
                       cwd=SRC, capture_output=True, text=True).stdout.strip():
         print("refusing: src/ is dirty; commit or revert first")
         return 1
+    # Precondition, computed once: a label may be renamed only if EVERY
+    # build that sees it proposes the same name. Three earlier rules failed
+    # because they asked about files rather than builds --
+    # DRAW_CV097_AT_X01_Y02 lives in one shared helper and is seen by amiga,
+    # dos and cart across PRISON, CAVES and CAPSULE, while only msdos/PRISON
+    # proposed for it.
+    labels = {lab for _p, _s, lab in table}
+    vis = visible_to(labels)
+    have: dict[str, set] = collections.defaultdict(set)
+    names: dict[str, set] = collections.defaultdict(set)
+    for (port, stage, lab), name in table.items():
+        have[lab].add((port, stage))
+        names[lab].add(name)
+    unsafe = {lab for lab in labels
+              if len(names[lab]) != 1 or not vis.get(lab, set()) <= have[lab]}
+    if unsafe:
+        table = {k: v for k, v in table.items() if k[2] not in unsafe}
+        print(f"  {len(unsafe)} label(s) held: a build that sees them has no "
+              f"proposal, or proposals differ")
+
     banned: set[str] = set()
     for round_ in range(1, 9):
         live = {k: v for k, v in table.items() if k[2] not in banned}

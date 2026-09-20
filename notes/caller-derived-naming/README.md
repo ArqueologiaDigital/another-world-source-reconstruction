@@ -376,3 +376,39 @@ now established by the real checker rather than argued from a heuristic. The
 81 are genuinely entangled: every one of them shares a label with a build
 that has no proposal for it. Freeing them needs proposals for the cartridge
 and GBA builds of the same stages, not a better rule.
+
+#### Why the 81 are blocked: the dependency chain, end to end
+
+A fourth attempt, and this one identifies the mechanism instead of another
+rule of thumb. `visible_to()` uses `undefined_symbols.walk`, which evaluates
+`.if BRANCH` while following `.include`, so its `defs` and `refs` are what a
+build **actually assembles** rather than what its files happen to contain.
+That distinction is the whole point: `_unified/prison/amiga__entry.inc`
+*contains* `DRAW_CV097_AT_X01_Y02` while amiga/PRISON's build never emits it,
+because the text sits in an arm amiga skips. File membership says amiga sees
+it; the walk says it does not.
+
+With the right question — *which builds see this label* — the answer is
+plain:
+
+    DRAW_CV097_AT_X01_Y02   defined in one shared _helpers chunk
+                            seen by amiga, dos and cart
+                            across PRISON, CAVES and CAPSULE
+                            proposed for by msdos/PRISON alone
+
+Renaming it would rewrite a label five other builds rely on, under a name
+only one of them earned. 25 of the 34 labels are held on exactly that test,
+and the oracle drops the rest.
+
+So the chain, which is worth stating because it terminates somewhere
+actionable:
+
+    73 routine families with index gaps      (notes/family-gaps/)
+      -> the validator rejects the cinematic constants derived from them
+      -> cartridge and GBA CAPSULE/CAVES art stays unnamed
+      -> their routines draw placeholders, so they get no proposals
+      -> a shared _helpers label they see cannot be renamed
+      -> 81 routine renames in amiga and msdos stay blocked
+
+The 81 are not blocked by tooling. They are blocked by the family-gap
+backlog, two steps upstream, and closing that is what frees them.
