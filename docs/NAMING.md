@@ -269,8 +269,11 @@ thing or four.
 - `_DUP_<n>` and `_ALT` collision-breakers (`CINEMATIC_ALIEN_GLYPH_28_DUP_1`) are
   the index-suffix smell in another costume. Name the second instance by role.
 
-**The shared bank (`COMMON_VIDEO_NNN`) has no semantic names at all** — 1,021 on
-Amiga, 2,969 references in `_unified`, zero named. Its numbering is worse than
+**The shared bank had no semantic names at all** — 1,021 on Amiga, 2,969
+references in `_unified`, zero named. As of 2026-09-20 it has 58: six figures
+named one render at a time, and 52 applied as a batch once the bank's structure
+was understood (see "What the bank turned out to be", below). 300 offset keys
+remain unnamed, so the paragraph still describes most of it. Its numbering is worse than
 arbitrary: it is the order the disassembler happened to encounter entries across a
 whole `all_levels` run, so level N's header lists every entry seen in levels ≤ N.
 Before these can be named, the emitter must key them by offset (plan item T7) and
@@ -314,6 +317,38 @@ bank offset once names it in every file and on both priority ports. That is
 what the 900 + 247 blocked routines were waiting for. Hand-naming the bank is
 still forbidden until an identification is actually made from a render.
 The emitter half of T7 remains open.
+
+**What the bank turned out to be** (2026-09-20,
+`notes/shared-bank-geometry/`, `notes/shared-bank-naming/`). Not a miscellany:
+**191 of its 352 drawn offsets are drawn at `[HERO_X],[HERO_Y]` and nowhere
+else**, in any stage or port, and 148 only at the actor slot. None are drawn
+at both. It is the hero's sprite sheet plus a generic actor's, which is exactly
+why no stage owns it — the hero is in every stage, so his art cannot live in a
+stage's cinematic bank. `HERO_X` is in `_common_vars.inc`, and §3's scoping
+rule for that file ("means the same thing in every stage and every port") is
+the invariant that makes a subject claim from the draw position sound.
+
+That matters for method, because the levers used elsewhere do not reach here.
+349 of the 352 offsets are drawn from **more than one stage**, so no scene can
+name them and sole-named-drawer yields 1 candidate out of 352. Shape does not
+finish it either: 250 of 352 need a render, and for an articulated figure a
+render shows a figure when the question was *which* figure.
+
+What does finish it is agreement between derivations that never consulted each
+other. `CV_331A` is called walk-left frame 14 by CAPSULE, by CAVES (1-based),
+by PRISON and by a fourth drawer. Requiring **two independent stages and
+unanimity** — bundle and shadow names excluded, `_FOOTSTEP_PHASE_n` read for
+motion but never as an ordinal — clears 59 offsets, and three checks that were
+not used in the derivation corroborate them: the consensus indices are
+cyclically monotone in offset order in every family, body and arm are drawn
+together by the same routine in 25 of 25 frames, and the footstep-phase names
+land exactly where footfalls belong in each cycle.
+
+**The premise is now a standing check, not a one-time one.**
+`notes/shared-bank-naming/bank_name_offset_consistent.py` verifies that every
+shared-bank name denotes exactly one offset in every file — the property that
+pre-T7 `COMMON_VIDEO_NNN` violated 346 times out of 353. Run it after any pass
+that touches the bank.
 
 ## 3. VM variables
 

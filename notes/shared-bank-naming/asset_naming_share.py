@@ -20,8 +20,20 @@ beside the routine-side one. This supplies it.
 
 What is counted
 ---------------
-Per port and stage, every `EQU` whose name is a polygon reference, split by
-whether the name is still a key or has become a description:
+Per port and stage, every `EQU` that names a polygon, split by whether the
+name is still a key or has become a description.
+
+**An asset is identified by use, not by prefix.** A symbol counts if it
+appears as a `video ... offset=<symbol>` operand in the file, or still carries
+one of the placeholder prefixes. Selecting on `^(CINEMATIC|CV|COMMON_VIDEO)_`
+alone, as this did until 2026-09-20, silently *removed* a polygon from the
+population the moment it was named something that did not start with one of
+those — so naming 52 shared-bank offsets dropped the denominator by 360
+(each key is defined in several stages) and moved the headline from 38.9 % to
+40.3 % with the numerator frozen at 3,947. Counting by use instead, the same
+batch reads **3,949/10,147 = 38.9 % before and 4,309/10,147 = 42.5 % after**:
+the numerator carries all of the movement and the denominator does not move
+at all, which is what a coverage metric has to do.
 
   numbered    `CINEMATIC_<digits>` -- disassembler encounter order
   offset-key  `CV_<4 hex>` -- T7's interim port-invariant key, which says
@@ -59,6 +71,7 @@ RE_EQU = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*)\s+EQU\s+0x[0-9A-Fa-f]+")
 RE_NUMBERED = re.compile(r"^CINEMATIC_\d+$")
 RE_OFFKEY = re.compile(r"^CV_[0-9A-F]{4}$")
 RE_POLY = re.compile(r"^(CINEMATIC|CV|COMMON_VIDEO)_")
+RE_USE = re.compile(r"offset=([A-Za-z_][A-Za-z0-9_]*)")
 
 
 def main() -> int:
@@ -77,11 +90,15 @@ def main() -> int:
             if not p.is_file():
                 continue
             c = collections.Counter()
-            for line in p.read_text(errors="replace").splitlines():
+            text = p.read_text(errors="replace")
+            drawn = set(RE_USE.findall(text))
+            for line in text.splitlines():
                 m = RE_EQU.match(line)
-                if not m or not RE_POLY.match(m.group(1)):
+                if not m:
                     continue
                 n = m.group(1)
+                if not (RE_POLY.match(n) or n in drawn):
+                    continue
                 c["assets"] += 1
                 if RE_NUMBERED.match(n) or n.startswith("COMMON_VIDEO_"):
                     c["numbered"] += 1
