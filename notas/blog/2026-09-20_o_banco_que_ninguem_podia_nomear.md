@@ -225,7 +225,10 @@ Três tropeços no caminho, cada um uma armadilha para quem vier depois:
 - O banco compartilhado tem nome pela primeira vez: **52 offsets**, e uma
   explicação estrutural do que ele é.
 - **158 rotinas** saíram do bloqueio T7; 1.407 continuam nele.
-- Camada de assets: **38,9% → 42,5%**, medida por uso.
+- Camada de assets: **38,9% → 42,4%**, medida por uso. (Logo depois dos
+  52 nomes a métrica marcava 42,5%; a fusão dos 43 apelidos, mais adiante
+  nesta mesma sessão, reclassificou dois nomes-marcador como chaves, que é
+  a direção honesta. O número final é este.)
 - Um defeito de medição corrigido em duas cópias, com as três afirmações
   publicadas que ele contaminava re-medidas e corrigidas no mesmo commit.
 - `make test` 29/29 e 29/29 o tempo todo, exceto quando eu o quebrei e ele me
