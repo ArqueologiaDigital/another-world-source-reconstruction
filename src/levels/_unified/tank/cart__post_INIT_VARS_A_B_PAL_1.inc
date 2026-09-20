@@ -105,14 +105,14 @@ DRAW_CIN_186_THEN_CIN_187:
 
 LABEL_1C6E:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_196, x=[0x0f], y=[0x10]
+	video offset=CINEMATIC_TANK_TURRET_HIT_STAMP_ON_BACKDROP, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
 	ret
 
 
 LABEL_1C78:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_193, x=[0x0f], y=[0x10]
+	video offset=CINEMATIC_TANK_TURRET_HIT_STAMP_ADVANCE_SCREEN_STATE, x=[0x0f], y=[0x10]
 	selectVideoPage 0xFF
 	jg [SCREEN_NUM], 0x02, SHARED_RET
 	mov [SCREEN_NUM], 0x0002

@@ -124,7 +124,7 @@ LABEL_072E:
 
 LABEL_0787:
 	break
-	video offset=CINEMATIC_020, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_LESTER_PRONE_BODY, x=[0x01], y=[0x02]
 	jmp LABEL_0787
 LABEL_0790:
 	db 0x11

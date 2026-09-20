@@ -14,7 +14,7 @@ TANK_CANNON_IMPACT_PLUME_LOOP:
 
 LABEL_14E5:
 	selectVideoPage 0x03
-	video offset=CINEMATIC_111, x=[0x42], y=[0x43], zoom=[0x44]
+	video offset=CINEMATIC_TANK_CANNON_IMPACT_SCORCH_TO_BACKGROUND, x=[0x42], y=[0x43], zoom=[0x44]
 	selectVideoPage 0xFF
 
 LABEL_14EF:

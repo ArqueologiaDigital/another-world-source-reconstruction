@@ -72,7 +72,7 @@ LABEL_384E:
 	jmp LABEL_3866
 
 LABEL_3861:
-	video offset=CINEMATIC_505, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BEAM_SINGLE_DOT, x=[0x21], y=[0x27]
 
 LABEL_3866:
 	ret

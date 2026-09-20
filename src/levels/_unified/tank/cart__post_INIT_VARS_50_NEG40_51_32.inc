@@ -65,11 +65,11 @@ TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C:
 
 LABEL_15CD:
 	jne [0xF8], 0x01, LABEL_15D8
-	video offset=CINEMATIC_207, x=[0x3c], y=[0x3d]
+	video offset=CINEMATIC_TANK_AMBIENT_IMPACT_SCAR_CASE_01, x=[0x3c], y=[0x3d]
 
 LABEL_15D8:
 	jl [0xF8], 0x02, TANK_GROUND_DEBRIS_WAIT_LOOP
-	video offset=CINEMATIC_206, x=[0x3c], y=[0x3d]
+	video offset=CINEMATIC_TANK_AMBIENT_IMPACT_SCAR_CASE_02, x=[0x3c], y=[0x3d]
 
 ; `break; if var4F == 0: loop; else sub var4F-=1`. A
 ; counter-based delay — yields a frame and tries again

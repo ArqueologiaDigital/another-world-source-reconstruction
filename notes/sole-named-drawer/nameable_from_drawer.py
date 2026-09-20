@@ -106,7 +106,14 @@ from naming_census import classify                      # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[0].parent))
 from actor_slot import actor_slot_matcher  # noqa: E402
 
-PORTS = {"amiga": "chahi_amiga_1991", "msdos": "dos_1992"}
+# All four branches. The two priority ports are amiga and MS-DOS, but the
+# cartridge and GBA builds gate them: the routine-naming pass cannot rename a
+# label those builds share unless they have a proposal for it too, and 81
+# otherwise-good routine renames were blocked on exactly that. Their
+# cinematic constants are their own -- a per-port bank at per-port offsets --
+# so the sole-named-drawer rule applies to them independently.
+PORTS = {"amiga": "chahi_amiga_1991", "msdos": "dos_1992",
+         "snes_eu": "cartridge_1992", "gba_usa": "gba_2004"}
 STAGES = ["CODE_WHEEL", "INTRO", "LAKE", "PRISON", "CAVES", "TANK",
           "CAPSULE", "ENDING", "PASSCODE"]
 RE_LABEL = re.compile(r"^([A-Za-z_]\w*):")
@@ -351,8 +358,24 @@ def main() -> int:
         SID = {"CODE_WHEEL": 0, "INTRO": 1, "LAKE": 2, "PRISON": 3,
                "CAVES": 4, "TANK": 5, "CAPSULE": 6, "ENDING": 7,
                "PASSCODE": 8}
+        # Rule 6 needs the port's cinematic ROM. snes_eu and gba_usa have no
+        # extracted resources, and slab() raises SystemExit for them -- which
+        # is a BaseException and escaped the handler below, aborting the whole
+        # run once the probe was widened to four branches. Ports without a
+        # ROM are skipped: the check then covers the pairs it can see, which
+        # is the two priority ports, and says so rather than dying.
+        have_rom = set()
+        for port in PORTS:
+            try:
+                slab("cinematic", port, 0)
+                have_rom.add(port)
+            except BaseException:
+                pass
+        skipped_ports = sorted(set(PORTS) - have_rom)
         art: dict[tuple, str] = {}
         for port, stage, const, new in rows:
+            if port not in have_rom:
+                continue
             text2 = (ROOT / "src" / "levels" / PORTS[port]
                      / f"{stage}.asm").read_text(errors="replace")
             off = dict(RE_EQU2.findall(text2)).get(const)
@@ -376,7 +399,10 @@ def main() -> int:
                   f"different names for the same art)")
             for stage, m in sorted(clash):
                 print(f"     {stage}: {' vs '.join(sorted(bym[(stage, m)]))}")
-    except Exception as exc:                     # ROM not extracted
+        if skipped_ports:
+            print(f"\n  (rule 6 covers {', '.join(sorted(have_rom))}; "
+                  f"{', '.join(skipped_ports)} have no extracted ROM)")
+    except BaseException as exc:                 # ROM not extracted
         print(f"\n  (rule 6 not checked: {exc})")
 
     if args.proposals:

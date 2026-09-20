@@ -112,3 +112,35 @@ own chunks and nowhere else.
 Applied: **69 constants**, `make test` 29/29 and 29/29, `undefined_symbols.py`
 clean. 20 of the proposals were rejected by the validator and the sync tool
 skipped them, because a proposal is not an application.
+
+## Widening to all four branches, and a target the checker does not see
+
+The routine-naming pass was losing 81 renames because the cartridge and GBA
+builds share labels with amiga and msdos and had **no proposals of their
+own** — and they had none because this probe only scanned the two priority
+ports. Their cinematic constants are their own bank at their own offsets, so
+the sole-named-drawer rule applies to them independently.
+
+Scanning all four took the probe from 32 nameable to **112**.
+
+Two things had to be fixed to get there:
+
+**Rule 6 must tolerate a missing ROM.** It compares art by `canonical_md5`,
+which needs the port's `cinematic.rom`; snes_eu and gba_usa have no extracted
+resources, and `slab()` raises `SystemExit`, which is a `BaseException` and
+walked straight past the handler — aborting the whole run the moment the
+probe was widened. Ports without a ROM are now skipped and named in the
+output, so the check covers the pairs it can see and says which it cannot.
+
+**`genesis_europe` is a verify target that `undefined_symbols.py` does not
+check.** Applying all seven per-stage batches gave `undefined_symbols` clean
+and `make test` **28/29**: `genesis_europe/CAVES: MISMATCH`. That build is
+assembled from `cartridge_1992`'s source but compared against its own
+binary, and the checker's `BRANCHES` list has four entries that do not
+include it. Re-applying without the cartridge CAVES batch is **29/29 and
+29/29**, so those 18 names are the ones at fault and are held.
+
+Applied: 43 constants across snes_eu CAPSULE, ENDING, INTRO, PRISON, TANK and
+gba_usa INTRO. Held: the 18 cartridge CAVES names, pending a checker that
+covers `genesis_europe` — which is the real fix, since right now only the
+byte gate can see that target and it cannot say *which* symbol moved.

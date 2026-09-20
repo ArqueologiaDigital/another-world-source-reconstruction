@@ -128,48 +128,48 @@ LABEL_6184:
 
 LABEL_6190:
 	jne [0x13], 0x70, LABEL_619C
-	video offset=CINEMATIC_644, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_CASE_70, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_619C:
 	jne [0x13], 0x71, LABEL_61A8
-	video offset=CINEMATIC_643, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_CASE_71, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_61A8:
 	jne [0x13], 0x72, LABEL_61B4
-	video offset=CINEMATIC_642, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_CASE_72, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_61B4:
 	jne [0x13], 0x73, LABEL_61C0
-	video offset=CINEMATIC_641, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_CASE_73, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_61C0:
 	jne [0x13], 0x74, LABEL_61CC
-	video offset=CINEMATIC_640, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_CASE_74, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_61CC:
 	jne [0x13], 0x75, LABEL_61D8
-	video offset=CINEMATIC_639, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_CASE_75, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_61D8:
 	jne [0x13], 0x76, LABEL_61E4
-	video offset=CINEMATIC_638, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_CASE_76, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_61E4:
-	video offset=CINEMATIC_637, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_DONE, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
 
@@ -296,48 +296,48 @@ LABEL_62E5:
 
 LABEL_62F1:
 	jne [0x13], 0x70, LABEL_62FD
-	video offset=CINEMATIC_661, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_CASE_70, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_62FD:
 	jne [0x13], 0x71, LABEL_6309
-	video offset=CINEMATIC_660, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_CASE_71, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6309:
 	jne [0x13], 0x72, LABEL_6315
-	video offset=CINEMATIC_659, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_CASE_72, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6315:
 	jne [0x13], 0x73, LABEL_6321
-	video offset=CINEMATIC_658, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_CASE_73, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6321:
 	jne [0x13], 0x74, LABEL_632D
-	video offset=CINEMATIC_657, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_CASE_74, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_632D:
 	jne [0x13], 0x75, LABEL_6339
-	video offset=CINEMATIC_656, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_CASE_75, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6339:
 	jne [0x13], 0x76, LABEL_6345
-	video offset=CINEMATIC_655, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_CASE_76, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6345:
-	video offset=CINEMATIC_654, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_LEFT_DONE, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
 
