@@ -920,7 +920,7 @@ CAPSULE_HERO_RUN_LEFT_DRAW_0:
 	jmp CAPSULE_HERO_RUN_LEFT_FOOTSTEP_PHASE_1
 
 CAPSULE_HERO_RUN_LEFT_DRAW_0_GUN_LOWERED:
-	video type=0, offset=CV_3630, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 CAPSULE_HERO_RUN_LEFT_FOOTSTEP_PHASE_1:
 	video type=0, offset=CV_11B8, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -934,7 +934,7 @@ CAPSULE_HERO_RUN_LEFT_DRAW_1:
 	jmp DRAW_CV_281
 
 CAPSULE_HERO_RUN_LEFT_DRAW_1_GUN_LOWERED:
-	video type=0, offset=CV_3638, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_281.inc"
 
@@ -944,7 +944,7 @@ CAPSULE_HERO_RUN_LEFT_DRAW_2:
 	jmp DRAW_CV_294
 
 CAPSULE_HERO_RUN_LEFT_DRAW_2_GUN_LOWERED:
-	video type=0, offset=CV_3640, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_294.inc"
 
@@ -954,7 +954,7 @@ CAPSULE_HERO_RUN_LEFT_DRAW_3:
 	jmp DRAW_CV_296
 
 CAPSULE_HERO_RUN_LEFT_DRAW_3_GUN_LOWERED:
-	video type=0, offset=CV_3648, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 DRAW_CV_296:
 	video type=0, offset=CV_13B2, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -976,7 +976,7 @@ CAPSULE_HERO_RUN_LEFT_DRAW_5:
 	jmp CAPSULE_HERO_RUN_LEFT_FOOTSTEP_PHASE_2
 
 CAPSULE_HERO_RUN_LEFT_DRAW_5_GUN_LOWERED:
-	video type=0, offset=CV_3650, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 CAPSULE_HERO_RUN_LEFT_FOOTSTEP_PHASE_2:
 	video type=0, offset=CV_150A, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -990,7 +990,7 @@ CAPSULE_HERO_RUN_LEFT_DRAW_6:
 	jmp DRAW_CV_286
 
 CAPSULE_HERO_RUN_LEFT_DRAW_6_GUN_LOWERED:
-	video type=0, offset=CV_3674, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_286.inc"
 
@@ -1000,7 +1000,7 @@ CAPSULE_HERO_RUN_LEFT_DRAW_7:
 	jmp DRAW_CV_288
 
 CAPSULE_HERO_RUN_LEFT_DRAW_7_GUN_LOWERED:
-	video type=0, offset=CV_3658, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_288.inc"
 
@@ -1010,7 +1010,7 @@ CAPSULE_HERO_RUN_LEFT_DRAW_8:
 	jmp DRAW_CV_290
 
 CAPSULE_HERO_RUN_LEFT_DRAW_8_GUN_LOWERED:
-	video type=0, offset=CV_3660, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_290.inc"
 
@@ -1020,7 +1020,7 @@ CAPSULE_HERO_RUN_LEFT_DRAW_9:
 	jmp DRAW_CV_292
 
 CAPSULE_HERO_RUN_LEFT_DRAW_9_GUN_LOWERED:
-	video type=0, offset=CV_366C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_292.inc"
 LABEL_7DBB:

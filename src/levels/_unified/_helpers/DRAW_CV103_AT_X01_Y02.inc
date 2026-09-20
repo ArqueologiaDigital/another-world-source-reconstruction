@@ -1,2 +1,2 @@
 DRAW_CV103_AT_X01_Y02:
-	video type=0, offset=CV_3660, x=[0x01], y=[0x02], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F08, x=[0x01], y=[0x02], zoom=0x40

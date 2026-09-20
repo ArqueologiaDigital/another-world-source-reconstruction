@@ -551,7 +551,7 @@ PRISON_HERO_RUN_LEFT_DRAW_PHASE_00:
 	jmp LABEL_6F68
 
 LABEL_6F63:
-	video type=0, offset=CV_3630, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 LABEL_6F68:
 	video type=0, offset=CV_11B8, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -565,7 +565,7 @@ PRISON_HERO_RUN_LEFT_DRAW_PHASE_01:
 	jmp DRAW_CV_281
 
 LABEL_6F80:
-	video type=0, offset=CV_3638, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_281.inc"
 
@@ -575,7 +575,7 @@ PRISON_HERO_RUN_LEFT_DRAW_PHASE_02:
 	jmp DRAW_CV_294
 
 LABEL_6F97:
-	video type=0, offset=CV_3640, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_294.inc"
 
@@ -585,7 +585,7 @@ PRISON_HERO_RUN_LEFT_DRAW_PHASE_03:
 	jmp DRAW_CV_296
 
 LABEL_6FAE:
-	video type=0, offset=CV_3648, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 DRAW_CV_296:
 	video type=0, offset=CV_13B2, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -607,7 +607,7 @@ PRISON_HERO_RUN_LEFT_DRAW_PHASE_05:
 	jmp LABEL_6FD9
 
 LABEL_6FD4:
-	video type=0, offset=CV_3650, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 LABEL_6FD9:
 	video type=0, offset=CV_150A, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -621,7 +621,7 @@ PRISON_HERO_RUN_LEFT_DRAW_PHASE_06:
 	jmp DRAW_CV_286
 
 LABEL_6FF1:
-	video type=0, offset=CV_3674, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_286.inc"
 
@@ -631,7 +631,7 @@ PRISON_HERO_RUN_LEFT_DRAW_PHASE_07:
 	jmp DRAW_CV_288
 
 LABEL_7008:
-	video type=0, offset=CV_3658, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_288.inc"
 
@@ -641,7 +641,7 @@ PRISON_HERO_RUN_LEFT_DRAW_PHASE_08:
 	jmp DRAW_CV_290
 
 LABEL_701F:
-	video type=0, offset=CV_3660, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_290.inc"
 
@@ -651,7 +651,7 @@ PRISON_HERO_RUN_LEFT_DRAW_PHASE_09:
 	jmp DRAW_CV_292
 
 LABEL_7036:
-	video type=0, offset=CV_366C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_292.inc"
 

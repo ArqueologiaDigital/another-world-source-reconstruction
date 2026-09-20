@@ -1044,7 +1044,7 @@ CAVES_HERO_RUN_LEFT_DRAW_PHASE_1:
 	jmp LABEL_9CCE
 
 CAVES_HERO_RUN_LEFT_NO_GUN_ARM_PHASE_1:
-	video type=0, offset=CV_3630, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 LABEL_9CCE:
 	video type=0, offset=CV_11B8, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -1058,7 +1058,7 @@ CAVES_HERO_RUN_LEFT_DRAW_PHASE_2:
 	jmp DRAW_CV_281
 
 CAVES_HERO_RUN_LEFT_NO_GUN_ARM_PHASE_2:
-	video type=0, offset=CV_3638, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_281.inc"
 
@@ -1068,7 +1068,7 @@ CAVES_HERO_RUN_LEFT_DRAW_PHASE_3:
 	jmp DRAW_CV_294
 
 CAVES_HERO_RUN_LEFT_NO_GUN_ARM_PHASE_3:
-	video type=0, offset=CV_3640, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_294.inc"
 
@@ -1078,7 +1078,7 @@ CAVES_HERO_RUN_LEFT_DRAW_PHASE_4:
 	jmp DRAW_CV_296
 
 CAVES_HERO_RUN_LEFT_NO_GUN_ARM_PHASE_4:
-	video type=0, offset=CV_3648, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 DRAW_CV_296:
 	video type=0, offset=CV_13B2, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -1100,7 +1100,7 @@ CAVES_HERO_RUN_LEFT_DRAW_PHASE_6:
 	jmp LABEL_9D3F
 
 CAVES_HERO_RUN_LEFT_NO_GUN_ARM_PHASE_6:
-	video type=0, offset=CV_3650, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 LABEL_9D3F:
 	video type=0, offset=CV_150A, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -1114,7 +1114,7 @@ CAVES_HERO_RUN_LEFT_DRAW_PHASE_7:
 	jmp DRAW_CV_286
 
 CAVES_HERO_RUN_LEFT_NO_GUN_ARM_PHASE_7:
-	video type=0, offset=CV_3674, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_286.inc"
 
@@ -1124,7 +1124,7 @@ CAVES_HERO_RUN_LEFT_DRAW_PHASE_8:
 	jmp DRAW_CV_288
 
 CAVES_HERO_RUN_LEFT_NO_GUN_ARM_PHASE_8:
-	video type=0, offset=CV_3658, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_288.inc"
 
@@ -1134,7 +1134,7 @@ CAVES_HERO_RUN_LEFT_DRAW_PHASE_9:
 	jmp DRAW_CV_290
 
 CAVES_HERO_RUN_LEFT_NO_GUN_ARM_PHASE_9:
-	video type=0, offset=CV_3660, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_290.inc"
 
@@ -1144,7 +1144,7 @@ CAVES_HERO_RUN_LEFT_DRAW_PHASE_10:
 	jmp DRAW_CV_292
 
 CAVES_HERO_RUN_LEFT_NO_GUN_ARM_PHASE_10:
-	video type=0, offset=CV_366C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_ARM_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 .include "../_helpers/DRAW_CV_292.inc"
 LABEL_9DA7:

@@ -85,3 +85,43 @@ stages **disagree about**, and the disagreement is over what to call the
 motion, not over which picture it is. The crawl case shows one such
 disagreement can be dissolved by measurement. The jump case shows another
 cannot, at least not from the source — that one needs the game running.
+
+## The run-left arm: nine frames, and a tenth that has no arm
+
+`HERO_RUN_RIGHT_ARM_F00..F09` was named earlier from cross-stage consensus.
+The left counterpart sat unnamed with what looked like a hole at frame 4.
+
+Two stages name every member, independently, and agree nine for nine:
+
+    F00 CAPSULE_HERO_RUN_LEFT_DRAW_0_GUN_LOWERED  CAVES_..._NO_GUN_ARM_PHASE_1   CV_3630
+    F01                             _1_           PHASE_2                        CV_3638
+    F02                             _2_           PHASE_3                        CV_3640
+    F03                             _3_           PHASE_4                        CV_3648
+    F04                     (absent)              (absent)                       —
+    F05                             _5_           PHASE_6                        CV_3650
+    F06                             _6_           PHASE_7                        CV_3674
+    F07                             _7_           PHASE_8                        CV_3658
+    F08                             _8_           PHASE_9                        CV_3660
+    F09                             _9_           PHASE_10                       CV_366C
+
+Note F06: `CV_3674` sits *after* `CV_366C` in the sheet while being frame 6.
+Index order is not offset order here, and it is the two stages agreeing —
+not the offsets — that fixes the numbering.
+
+**Frame 4 is not missing; it has no arm.** The routine exists and the code
+says why:
+
+    CAPSULE_HERO_RUN_LEFT_DRAW_4:
+        je [0x0A], 0x00, DRAW_CV_297     ; gun lowered -> straight to the body
+        call DRAW_CV_279                 ; armed -> the gun arm
+    DRAW_CV_297:
+        video offset=CV_1474             ; the body
+
+Every other frame has a `..._DRAW_n_GUN_LOWERED` label marking where its
+unarmed arm is drawn. Frame 4 has none, because in the unarmed case it draws
+no arm at all — it jumps past that point to the body. The hole in the index
+run is a fact about the animation, not a frame anyone missed, which is what
+NAMING.md §2's rule asks a gap to be explained as.
+
+Applied: `HERO_RUN_LEFT_ARM_F00..F09` less `F04`, nine names. `make test`
+29/29 and 29/29, all nine verified at the offset their key encoded.
