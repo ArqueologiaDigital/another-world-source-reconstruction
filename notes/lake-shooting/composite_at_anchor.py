@@ -8,9 +8,9 @@ That is the right default, and it is why two passes over LAKE misread the same
 group: when the bytecode draws two pictures at the SAME x,y in the same frame,
 looking at them side by side shows two objects where the screen shows one.
 
-    DECOR_AT_305_155_F14_F9_BG:
-        video offset=CINEMATIC_LAKE_REED,                x=[0x32], y=[0x33]
-        video offset=CINEMATIC_DECOR_AT_305_155_F9,      x=[0x32], y=[0x33]
+    REED_SWAY_F0_TO_BACKGROUND:              (was DECOR_AT_305_155_F14_F9_BG)
+        video offset=CINEMATIC_LAKE_REED,          x=[0x32], y=[0x33]
+        video offset=CINEMATIC_LAKE_REED_SWAY_F0,  x=[0x32], y=[0x33]
 
 Rendered apart, that is "a tall solid bar" and "a small angular shape beside a
 vertical line". Rendered at the shared anchor it is one thing, and the note in
@@ -35,14 +35,20 @@ each layer in its own panel at a common origin so the alignment is visible.
 Usage
 -----
     python3 notes/lake-shooting/composite_at_anchor.py \
-        --port amiga --stage 2 \
-        --stack CINEMATIC_LAKE_REED CINEMATIC_DECOR_AT_305_155_F9 \
-        --out /tmp/reed_f9.png
+        --port amiga --stage LAKE \
+        --stack CINEMATIC_LAKE_REED CINEMATIC_LAKE_REED_SWAY_F0 \
+        --out /tmp/reed_f0.png
 
-    python3 notes/lake-shooting/composite_at_anchor.py --port amiga --stage 2 \
+    python3 notes/lake-shooting/composite_at_anchor.py --port amiga --stage LAKE \
         --under CINEMATIC_LAKE_REED \
-        --frames CINEMATIC_DECOR_AT_305_155_F9 CINEMATIC_DECOR_AT_305_155_F10 \
+        --frames CINEMATIC_LAKE_REED_SWAY_F0 CINEMATIC_LAKE_REED_SWAY_F1 \
+                 CINEMATIC_LAKE_REED_SWAY_F2 CINEMATIC_LAKE_REED_SWAY_F3 \
+                 CINEMATIC_LAKE_REED_SWAY_F4 \
         --out /tmp/strip.png
+
+(`--stage` takes a NAME, not a number: the examples above said `--stage 2`,
+which the argument parser rejects. Both examples are run as part of the
+staleness check in ../lake-shooting/README.md.)
 """
 from __future__ import annotations
 
