@@ -160,7 +160,7 @@ LABEL_8169:
 	jmp DRAW_FIGURE_WALK_LEFT_F00
 
 LABEL_817B:
-	video type=0, offset=CV_2D6E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_00, x=[0x07], y=[0x08], zoom=0x40
 
 DRAW_FIGURE_WALK_LEFT_F00:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
@@ -178,7 +178,7 @@ LABEL_818F:
 
 LABEL_81A1:
 	add [0x07], 0x0001
-	video type=0, offset=CV_2D6E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_00, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x07], 0x0001
 
 BEAST_FULL_ANIM_FRAME:
@@ -236,7 +236,7 @@ LABEL_821D:
 	jmp DRAW_FIGURE_WALK_LEFT_F05
 
 LABEL_822F:
-	video type=0, offset=CV_2D66, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_01, x=[0x07], y=[0x08], zoom=0x40
 
 DRAW_FIGURE_WALK_LEFT_F05:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
@@ -253,7 +253,7 @@ LABEL_8243:
 	jmp DRAW_FIGURE_WALK_LEFT_F06
 
 LABEL_8255:
-	video type=0, offset=CV_2D5E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_02, x=[0x07], y=[0x08], zoom=0x40
 
 DRAW_FIGURE_WALK_LEFT_F06:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
@@ -287,7 +287,7 @@ LABEL_828F:
 	jmp DRAW_FIGURE_WALK_LEFT_F08
 
 LABEL_82A1:
-	video type=0, offset=CV_2D56, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_03, x=[0x07], y=[0x08], zoom=0x40
 
 DRAW_FIGURE_WALK_LEFT_F08:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
@@ -304,7 +304,7 @@ LABEL_82B5:
 	jmp DRAW_FIGURE_WALK_LEFT_F09
 
 LABEL_82C7:
-	video type=0, offset=CV_2D56, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_03, x=[0x07], y=[0x08], zoom=0x40
 
 DRAW_FIGURE_WALK_LEFT_F09:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
@@ -323,7 +323,7 @@ LABEL_82E3:
 	jmp DRAW_FIGURE_WALK_LEFT_F10
 
 LABEL_82F5:
-	video type=0, offset=CV_2D5E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_02, x=[0x07], y=[0x08], zoom=0x40
 
 DRAW_FIGURE_WALK_LEFT_F10:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
@@ -341,7 +341,7 @@ LABEL_8309:
 	jmp DRAW_FIGURE_WALK_LEFT_F11
 
 LABEL_8321:
-	video type=0, offset=CV_2D66, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_01, x=[0x07], y=[0x08], zoom=0x40
 
 DRAW_FIGURE_WALK_LEFT_F11:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E

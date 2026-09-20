@@ -1,4 +1,4 @@
 DRAW_CV204_AT_X07_PLUS1_Y08:
 	add [0x07], 0x0001
-	video type=0, offset=CV_2D6E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_00, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x07], 0x0001

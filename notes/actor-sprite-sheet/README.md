@@ -81,3 +81,43 @@ Verified: `make test` 29/29 and 29/29; `undefined_symbols.py` clean;
 the offset their key encoded, and 0 actionable duplicate names; `--sides` and
 `--duplicates` unchanged. Shared-bank offset keys 279 → **239**. Asset layer
 43.6 % → **46.3 %**.
+
+## The limb pieces: named by gait phase, not by frame
+
+The three LIMB families were held above because their index runs have interior
+gaps. The gaps were never missing art — **a limb piece is shared between
+frames**, so it has no single frame number and a frame-indexed scheme cannot
+describe it. `subpiece_poses.py` names them by what they do have.
+
+| piece | shape | phases it serves | | piece | shape | phases |
+|---|---|---|---|---|---|---|
+| `CV_247C` | 3x13/1 | {0, 1} | | `CV_2D6E` | 3x13/1 | {0, 1} |
+| `CV_2474` | 9x19/1 | {5, 11} | | `CV_2D66` | 9x19/1 | {5, 11} |
+| `CV_246C` | 11x17/1 | {6, 10} | | `CV_2464`… | | |
+| `CV_2464` | 11x17/1 | {8, 9} | | (walk-left mirrors it exactly) | | |
+
+The pairs are not arbitrary: in a 16-frame cycle `5 + 11 = 6 + 10 = 16`, the
+two moments symmetric about mid-stride, when the limb is in the same place.
+`{0,1}` and `{8,9}` are the two mid-stance moments of a two-step cycle. And
+both directions use **the same four shapes at the same four phase pairs** —
+an independent reason to believe the grouping is real and not an artefact of
+how the drawers were named.
+
+Named `CV_FIGURE_WALK_<DIR>_LIMB_POSE_00..03`, ordered by ascending first
+phase. `POSE` rather than `F` is the whole point: an `F<n>` would claim a
+frame, and not being one frame is exactly why these were stuck. Four per
+direction, complete 0..3.
+
+**`LIMB`, not `ARM`, deliberately.** Rendered they are bent single-leaf limbs,
+straight at {0,1} and progressively more bent — the same shape family as the
+hero's arm series. But the hero's was *confirmed* an arm by
+`HERO_GUN_ARM_POSE_CASE_02` drawing one of its gun-holding variants, and no
+such confirmation exists here. A similar shape on a different figure is a
+resemblance, not evidence.
+
+**RUN sub-pieces held.** `CV_2548` serves {3,5,6}, `CV_2552` {2,7,8} and
+`CV_255C` {1,8}: three pieces, an overlapping phase, and no coverage of a
+nine-frame cycle. Neither symmetric nor complete, so nothing is proposed and
+the probe prints why.
+
+Total for the actor sheet: **48 names**. `make test` 29/29 and 29/29.

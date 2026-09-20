@@ -13,7 +13,7 @@ LABEL_7C01:
 	jmp LABEL_7C18
 
 LABEL_7C13:
-	video type=0, offset=CV_2D56, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_7C18:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -30,7 +30,7 @@ LABEL_7C27:
 	jmp LABEL_7C3E
 
 LABEL_7C39:
-	video type=0, offset=CV_2D56, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_7C3E:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -49,7 +49,7 @@ LABEL_7C55:
 	jmp LABEL_7C6C
 
 LABEL_7C67:
-	video type=0, offset=CV_2D5E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_7C6C:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -67,7 +67,7 @@ LABEL_7C7B:
 	jmp CAPSULE_HERO_RUN_RIGHT_DRAW_7
 
 LABEL_7C93:
-	video type=0, offset=CV_2D66, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 CAPSULE_HERO_RUN_RIGHT_DRAW_7:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -184,7 +184,7 @@ LABEL_7D70:
 
 CAPSULE_HERO_RUN_LEFT_DRAW_8_GUN_LOWERED:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
-	video type=0, offset=CV_2D66, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call BUDDY_RIGHT_SUBFRAME_3_DISPATCH
@@ -194,7 +194,7 @@ CAPSULE_HERO_RUN_LEFT_DRAW_8_GUN_LOWERED:
 
 LABEL_7DB5:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
-	video type=0, offset=CV_2D66, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=CV_FIGURE_PROFILE_STRIDE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call BUDDY_RIGHT_SUBFRAME_3_DISPATCH

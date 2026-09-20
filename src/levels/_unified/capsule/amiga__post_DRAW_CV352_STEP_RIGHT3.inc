@@ -34,7 +34,7 @@ CAPSULE_INLINE_SET_VAR63_TO_1_L2:
 
 ; Two-frame aim/gun-pose render tick. Calls LABEL_9110
 ; (an angle-update helper), then conditionally draws
-; CV_5F74 + CV_2D6E at HERO position
+; CV_5F74 + CV_FIGURE_WALK_LEFT_LIMB_POSE_00 at HERO position
 ; with zoom 0x40 — gated on var06 vs var30 (angle range)
 ; and var31 bit 1. Mirrors CAVES's LABEL_9B3F.
 CAPSULE_AIM_RENDER_TICK_CV159_CV160:
