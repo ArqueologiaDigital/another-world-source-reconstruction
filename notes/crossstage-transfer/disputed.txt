@@ -1,0 +1,8 @@
+# Names that must not be transferred, whatever the art says.
+# ../render-attempts/README.md records why each is in doubt.
+
+CINEMATIC_BUDDY_SMASHING_WINDOW_F8   # the routine tiles a beam while the
+                                     # polygon claims to be the alien
+                                     # breaking a window; the subject of the
+                                     # art itself is unsettled, so carrying
+                                     # the name spreads the dispute

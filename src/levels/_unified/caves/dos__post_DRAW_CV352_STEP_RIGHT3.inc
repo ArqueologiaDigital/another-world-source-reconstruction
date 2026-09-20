@@ -154,7 +154,7 @@ LABEL_ECE2:
 
 LABEL_ECE3:
 	sub [HERO_X], 0x0004
-	video offset=CINEMATIC_170, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_LIFTOFF, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
 	je [HERO_POS_MASK], 0x00, HERO_RUN_LEFT_STOP_RESUME_WALK
 	break
@@ -242,7 +242,7 @@ LABEL_EDCC:
 	db 0x11
 
 CAVES_INLINE_SET_VAR63_TO_5_L3:
-	video offset=CINEMATIC_170, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_LIFTOFF, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0003
 	je [HERO_POS_MASK], 0x00, LABEL_EDC5
 	break

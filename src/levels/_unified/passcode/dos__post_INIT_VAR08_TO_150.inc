@@ -401,13 +401,13 @@ DRAW_LETTER_G_AT_X23:
 
 DRAW_LETTER_VIA_CIN_DISPATCH:
 	jne [0x06], 0x62, PASSCODE_VALIDATE_KEY_GLYPH_CASE_63
-	video offset=CINEMATIC_038, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_DEL_BUTTON, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_VALIDATE_KEY_GLYPH_CASE_63:
 	jne [0x06], 0x63, PASSCODE_GLYPH_CASE_00
-	video offset=CINEMATIC_037, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_OK_BUTTON, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
