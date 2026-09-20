@@ -27,7 +27,15 @@ Two counter-examples from CAVES, both real:
 So the rule here is deliberately narrow, and it is the narrowness that makes
 the result applicable without a render:
 
-  1. the routine's name ends in `_DRAW` and is semantic;
+  1. the routine's name is semantic and denotes a **subject**, not a
+     mechanism. This was originally "ends in `_DRAW`", which is a strong
+     signal and far too narrow a one: after the routine layer gained 284
+     names from the shared bank, the `_DRAW` form matched **zero** of them,
+     because those are spelled `DRAW_HERO_WALK_RIGHT_F03`. The rule is now
+     the mechanism filter plus the raw-index filter, which is what `_DRAW`
+     was standing in for. `SHARED_RET`, `PRISON_SHOT_STATE_FRAME_DISPATCH_LEFT`
+     and `CAVES_BUDDY_IDLE_HOLD_PHASE_14` all reached the candidate list when
+     the suffix went and are excluded by name-shape, not by hand;
   2. it draws exactly one distinct constant, and that constant is still
      `CINEMATIC_<index>`;
   3. no other routine in the stage draws it;
@@ -105,12 +113,33 @@ RE_V = re.compile(r"video\s+(?:type=\d+,\s*)?offset=([A-Za-z_]\w*)\s*,"
 # otherwise have proposed.
 MECHANISM = ("FILL_PAGE", "RANDOM_DELAY", "PLAY_SOUND", "ENTRY_POINT",
              "SET_VAR", "COPY_", "JUMP_TO", "KILL_CHANNEL", "SETUP_CHAN",
-             "_AT_RET", "FOLD_BODY", "DEDUP", "BLINK_PAGE")
+             "_AT_RET", "FOLD_BODY", "DEDUP", "BLINK_PAGE",
+             # added when rule 1 was widened past the `_DRAW` suffix: these
+             # reached the candidate list and none of them names a picture.
+             "SHARED_RET", "DISPATCH", "_TICK", "_HOLD_PHASE", "DELAY_LOOP",
+             "PRELOAD", "SCROLL_STEP", "PAGE_",
+             # A name that says the routine CHOOSES something is a selector,
+             # not a subject. Caught by the verify-the-shape step rather than
+             # by inspection: PRISON_TELEPORT_UP_POSE_BY_FACING draws a
+             # 6x94 four-leaf vertical sliver -- a beam -- so the picture is
+             # not "a pose selected by facing", it is what the selector
+             # happened to draw.
+             "_BY_FACING", "_BY_STATE", "_SELECT",
+             # KILL_CHANNEL did not catch KILL_ALL_CHANNELS_AND_KILL, which
+             # reached the apply step as CINEMATIC_KILL_ALL_CHANNELS_AND_KILL.
+             "KILL_ALL", "_AND_KILL", "_AND_RET", "_THEN_RET")
 # A routine whose own name carries a raw constant index -- DRAW_CITY_SEQ_435_436,
 # DRAW_CINEMATICS_166_TO_171, DRAW_INTRO_DECOR_337 -- is itself a placeholder
 # under NAMING.md §1, whatever else it says. Deriving constant names from it
 # would copy the placeholder onto the art.
 RE_RAWINDEX = re.compile(r"_\d{3,}(_|$)")
+# A name ending in a raw hex token is the forbidden form of NAMING.md §1, and
+# it arrives here by inheritance: PRISON_LIFT_SHAFT_STRIP_TILT_UPTO_9A and
+# CAVES_BARRIER_BREACH_EVENT_CASE_8A are routine names that carry a literal
+# from their own `jne`, and transferring them would copy an address-shaped
+# suffix onto a picture. Two-digit decimals like `_04` are a family index and
+# are allowed; a token with a hex letter in it is not.
+RE_HEXTAIL = re.compile(r"_[0-9A-F]*[A-F][0-9A-F]*$")
 
 
 # A namer strips the words that describe the routine's plumbing rather than
@@ -184,7 +213,13 @@ def main() -> int:
                 if len(labs) == 1 and classify(next(iter(labs))) == "semantic":
                     pool.append((port, stage, const, next(iter(labs))))
             for lab, body in bodies.items():
-                if not lab.endswith("_DRAW") or classify(lab) != "semantic":
+                if classify(lab) != "semantic":
+                    continue
+                if any(t in lab for t in MECHANISM) or RE_RAWINDEX.search(lab):
+                    skipped["name denotes a mechanism, not a subject"] += 1
+                    continue
+                if RE_HEXTAIL.search(lab):
+                    skipped["name ends in a raw hex token (§1)"] += 1
                     continue
                 seq = [m.group(1) for line in body
                        for m in RE_DRAW.finditer(line)]
@@ -197,7 +232,11 @@ def main() -> int:
                 if any(at_slot(line) for line in body):
                     skipped["draws at the actor slot (#0138)"] += 1
                     continue
-                new = "CINEMATIC_" + lab[: -len("_DRAW")]
+                # derived_base already prepends CINEMATIC_; the `_DRAW`
+                # branch does not, and concatenating both gave
+                # CINEMATIC_CINEMATIC_PRISON_SHOT_BEAM_SINGLE_DOT.
+                new = ("CINEMATIC_" + lab[:-len("_DRAW")]
+                       if lab.endswith("_DRAW") else derived_base(lab))
                 if new in bodies or new in drawn:
                     skipped["derived name already taken"] += 1
                     continue
@@ -292,19 +331,27 @@ def main() -> int:
     for why, n in skipped.items():
         print(f"\n  ({n} skipped: {why})")
     if args.proposals:
-        ev = ("Sole-named-drawer. The routine's name ends in `_DRAW`, it draws "
-              "this one constant and nothing else, and no other routine in the "
-              "stage draws it, so the routine's subject is this polygon's "
-              "subject with no index to invent. Not drawn at `[0x07],[0x08]`, "
-              "so no actor is asserted (#0138).")
-        for port in sorted({r[0] for r in rows}):
+        ev = ("Sole-named-drawer. The routine's name is semantic and denotes "
+              "a subject -- not a mechanism, a selector, a raw index or a hex "
+              "tail -- it draws this one constant and nothing else, and no "
+              "other routine in the stage draws it, so the routine's subject "
+              "is this polygon's subject with no index to invent. Not drawn "
+              "at `[0x07],[0x08]`, so no actor is asserted (#0138).")
+        # One file per (port, STAGE). A combined per-port file is unsafe:
+        # tools/apply_branch_scoped_names.py matches rows by constant number
+        # and takes the stage from its own --stage flag, so a file holding
+        # PASSCODE and PRISON rows together will write PASSCODE's names onto
+        # PRISON's art. Caught in a dry run that offered
+        # CINEMATIC_013 -> CINEMATIC_PASSCODE_ALPHANUM_CODE_CASE_03 for PRISON.
+        for port, stage in sorted({(r[0], r[1]) for r in rows}):
             out = args.proposals.with_name(
-                args.proposals.stem + f"_{port}" + args.proposals.suffix)
+                args.proposals.stem + f"_{port}_{stage}"
+                + args.proposals.suffix)
             with out.open("w") as f:
                 f.write("| constant | proposed name | confidence | evidence |\n")
                 f.write("| --- | --- | --- | --- |\n")
                 for p, s, c, n in rows:
-                    if p == port:
+                    if (p, s) == (port, stage):
                         f.write(f"| {c} | {n} | high | {ev} |\n")
             print(f"\nwrote {out}")
     return 0

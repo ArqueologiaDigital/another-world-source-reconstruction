@@ -684,7 +684,7 @@ PRISON_ADD_VAR2C_TO_VAR22_L0:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PRISON_SHOT_BEAM_SINGLE_DOT:
-	video offset=CINEMATIC_505, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BEAM_SINGLE_DOT, x=[0x21], y=[0x27]
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")

@@ -115,7 +115,7 @@ PRISON_SHOT_BLAST_RIGHT_CASE_76:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PRISON_SHOT_BLAST_FINAL_FRAME_RIGHT:
-	video offset=CINEMATIC_473, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_FINAL_FRAME_RIGHT, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
 
@@ -294,7 +294,7 @@ PRISON_SHOT_BLAST_LEFT_CASE_76:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PRISON_SHOT_BLAST_FINAL_FRAME_LEFT:
-	video offset=CINEMATIC_489, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BLAST_FINAL_FRAME_LEFT, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
 

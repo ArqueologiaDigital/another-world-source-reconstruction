@@ -56,3 +56,59 @@ What remains in the pool needs a render, which is the E3 work these rules
 exist to avoid and cannot replace. The honest read of the table above is that
 naming-without-looking is worth about a sixth of the constants it can see,
 and the rest of the 64% still unnamed will be found by looking at it.
+
+## 2026-09-20: rule 1 widened past the `_DRAW` suffix
+
+The original rule 1 was "the routine's name ends in `_DRAW`". That is a strong
+signal and far too narrow a one. After the routine layer gained 284 names from
+the shared-bank work, the `_DRAW` form matched **zero** of them — those are
+spelled `DRAW_HERO_WALK_RIGHT_F03` — and the probe reported 0 nameable while
+431 constants had exactly one named drawer.
+
+Rule 1 is now "semantic, and denotes a subject", enforced by the filters the
+suffix was standing in for. Each of these was added because a real candidate
+reached the list:
+
+| filter | what it caught |
+|---|---|
+| `MECHANISM` + `SHARED_RET`, `DISPATCH`, `_TICK`, `PAGE_`… | `SHARED_RET`, `PRISON_SHOT_STATE_FRAME_DISPATCH_LEFT` |
+| `KILL_ALL`, `_AND_KILL`, `_AND_RET` | `CINEMATIC_KILL_ALL_CHANNELS_AND_KILL`, which reached the apply step |
+| `_BY_FACING`, `_BY_STATE`, `_SELECT` | `PRISON_TELEPORT_UP_POSE_BY_FACING` — a **selector**, not a subject |
+| `RE_HEXTAIL` | 556 names ending in a raw hex token inherited from the routine's own `jne` literal, which §1 forbids on a constant |
+
+779 → 71 → **69** as those went in.
+
+### Verifying instead of transferring, which caught one
+
+The docstring says to check the derived name against the measured shape. Done
+on a sample, and it earned its keep:
+
+    CINEMATIC_505  ->  PRISON_SHOT_BEAM_SINGLE_DOT      0x1,  1 leaf
+    CINEMATIC_129  ->  BIOMETRIC_SCAN_LINE_SWEEP        1x210, 1 leaf
+    CINEMATIC_775  ->  CAVES_LASER_IMPACT_..._ABOVE_02  17x12, 7 leaves
+    CINEMATIC_553  ->  PRISON_TELEPORT_UP_POSE_BY_FACING 6x94, 4 leaves
+
+The first three corroborate exactly — a "single dot" that measures one pixel,
+a "scan line" that is one unit wide and 210 tall. The fourth is a thin
+vertical sliver, which is a *beam*, under a name that says "pose". That is
+what `_BY_FACING` now excludes.
+
+### Two application hazards, both caught before they landed
+
+**The proposal file must be per stage.** `apply_branch_scoped_names.py`
+matches rows by constant number and takes the stage from its own `--stage`
+flag, so a per-*port* file holding PASSCODE and PRISON rows together offers
+`CINEMATIC_013 -> CINEMATIC_PASSCODE_ALPHANUM_CODE_CASE_03` **for PRISON**.
+Seen in a dry run. The probe now writes one file per (port, stage).
+
+**The `EQU` must follow the use.** The applier renames the canonical `.asm`
+and the shared unified draw sites, but not the `EQU` in a branch's own entry
+chunk. That leaves a shared chunk naming a symbol only the canonical file
+defines: 7 undefined references, verify-unified **26/29**, verify-stages still
+29/29 because each canonical file was self-consistent.
+`../unified-scoping/sync_equ_rename.py` carries the rename into that branch's
+own chunks and nowhere else.
+
+Applied: **69 constants**, `make test` 29/29 and 29/29, `undefined_symbols.py`
+clean. 20 of the proposals were rejected by the validator and the sync tool
+skipped them, because a proposal is not an application.
