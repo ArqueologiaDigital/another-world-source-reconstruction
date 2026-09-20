@@ -305,3 +305,36 @@ Losing 81 to a conservative rule is the right trade while the cheap test is
 wrong in the unsafe direction. Making them nameable means teaching the pass
 which stages include which helper, from the include graph the unified build
 already walks.
+
+#### The include-graph test, attempted and not yet correct
+
+The README above says the way to recover the dropped proposals is to teach
+the pass which stages include which helper, from the include graph the
+unified build already walks. That was tried, using
+`notes/unified-symbol-check/undefined_symbols.walk`, which returns exactly
+the file set a `(branch, stage)` build reads.
+
+For `DRAW_CV_099` it computes what it should:
+
+    helper chunks mentioning it   DRAW_CV_099.inc
+    builds that read them         amiga/CAPSULE, amiga/CAVES, amiga/PRISON
+    builds with a proposal        amiga/CAPSULE, amiga/CAVES, amiga/PRISON
+
+— unanimous, so the label is allowed and its helper is rewritten. That part
+works: after applying, `DRAW_CV_099` is gone from the tree and
+`_helpers/DRAW_CV_099.inc` correctly reads `DRAW_HERO_WALK_LEFT_F00:`.
+
+**It still leaves 24 undefined references and verify-unified at 20/29.** The
+test asks which builds read *the helper*, and a label also lives in branch
+chunks that do not. `DRAW_HERO_WALK_LEFT_F12` ends up defined in the
+cartridge and GBA canonical files and in `_helpers/DRAW_CV_116.inc`, while
+amiga/CAVES references it from
+`caves/amiga__post_DECREMENT_VAR08_BY_D.inc` and cannot see a definition —
+so the reference moved and the definition amiga/CAVES actually uses did not.
+
+The right test is therefore not "which builds read the helper" but "for every
+build, is the label's definition and every reference renamed together" —
+which means resolving definitions per build through the same graph, not just
+membership. Reverted; the conservative rule stands and the 69 names it
+applied are unaffected. Recorded here so the next attempt starts from the
+counterexample rather than from the idea.
