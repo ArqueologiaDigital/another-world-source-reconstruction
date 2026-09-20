@@ -1242,7 +1242,7 @@ CV_36D2		EQU 0x36D2
 CV_5C54		EQU 0x5C54
 CV_3858		EQU 0x3858
 CV_15DC		EQU 0x15DC
-ADDR_AT_09F6		EQU 0x09F6
+CV_09F6		EQU 0x09F6
 
 
 	org 0x0000
@@ -23306,7 +23306,7 @@ LABEL_E40F:
 
 STEP_DRAW_CV352_LEFT4_RIGHT1:
 	sub [HERO_X], 0x0004
-	video type=0, offset=ADDR_AT_09F6, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_09F6, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
 	break
 
@@ -23423,7 +23423,7 @@ LABEL_E53F:
 
 DRAW_CV352_STEP_RIGHT3:
 	add [HERO_X], 0x0000
-	video type=0, offset=ADDR_AT_09F6, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=CV_09F6, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0003
 	break
 

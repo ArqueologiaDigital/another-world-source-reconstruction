@@ -31,6 +31,35 @@ branches, `_unified` chunks and `.asm.in` templates:
      offset its old key encoded. This is how a batch already applied gets
      verified after the fact.
 
+  4. **The other direction: one offset, one name.** Checks 1-3 all ask whether
+     a *name* denotes one offset. They cannot see the opposite failure, where
+     one offset is referred to by several names, and that failure is present:
+     137 of 358 drawn bank offsets carry more than one name. A shared-bank
+     offset is identified here as one drawn by `video type=0`, which selects
+     the video2 bank -- plain `video` selects the per-stage cinematic bank, so
+     the *same numeric offset* legitimately names different pictures in the
+     two and comparing EQU values without that discriminator reports 105
+     "duplicates" that are nothing of the kind.
+
+Two causes, reported separately because only one is actionable:
+
+  - **`COMMON_VIDEO_nnn` in the GBA branch.** T7's re-key covered 225 files
+    and left `foxy_gba_2004_*.asm` alone. That release packages its art
+    differently and has no extracted resource `0x11`, so the old names there
+    are not obviously wrong -- but the offset still has two names tree-wide.
+  - **Address-shaped aliases in the shared `_unified/_helpers/DRAW_CV_*.inc`
+    chunks**: `ADDR_AT_00B4`, `LABEL_0128`, `DELAY_LOOP_VARED_AT_0844`,
+    `HANG_DRAW_CIN_003_AT_125A`, `STATE_VAR12_BIG_DISPATCH_CASE_30_AT_2D4E`
+    and others -- code-label spellings used as polygon operands, which the
+    re-key did not reach. These alias offsets that everywhere else use the
+    key, so the same picture is `CV_00B4` in seventeen files and
+    `ADDR_AT_00B4` in one.
+
+    Merging them is **not** a global token replace: `LABEL_0128` is also a
+    real code label in dos/CAPSULE, and the two uses are unrelated. It has to
+    be done per definition site, with the canonical name proven defined for
+    every branch that reaches the chunk through the include graph.
+
 Signals read
 ------------
 `^<NAME>\\s+EQU\\s+(0x[0-9A-Fa-f]+)` lines under `src/`. Nothing is read from
@@ -108,6 +137,33 @@ def main() -> int:
             print(f"  {x}")
         fail += len(missing) + len(wrong)
 
+    # Check 4: one offset, one name. `video type=0` is the bank discriminator.
+    re_t0 = re.compile(r"\bvideo\s+type=0,\s*offset=([A-Za-z_]\w*)")
+    drawn_t0: set[str] = set()
+    for f in files:
+        drawn_t0 |= set(re_t0.findall(f.read_text(errors="replace")))
+    at_off: dict[str, set] = collections.defaultdict(set)
+    for name in drawn_t0:
+        v = vals.get(name)
+        if v and len(v) == 1:
+            at_off[next(iter(v))].add(name)
+    dup = {o: ns for o, ns in at_off.items() if len(ns) > 1}
+    gba_only = {o for o, ns in dup.items()
+                if len({n for n in ns if not n.startswith("COMMON_VIDEO_")}) == 1}
+    alias = {o: ns for o, ns in dup.items() if o not in gba_only}
+    print(f"\n{len(at_off)} bank offsets are drawn under a name; {len(dup)} "
+          f"carry more than one:")
+    print(f"  {len(gba_only):4d}  a COMMON_VIDEO_nnn survivor in the GBA "
+          f"branch, which T7's re-key did not cover")
+    print(f"  {len(alias):4d}  an address-shaped alias in a shared helper "
+          f"chunk (actionable)")
+    for o, ns in sorted(alias.items())[:40]:
+        extra = sorted(n for n in ns
+                       if not RE_KEY.match(n)
+                       and not n.startswith("COMMON_VIDEO_"))
+        canon = sorted(n for n in ns if RE_KEY.match(n)) or ["(none)"]
+        print(f"      {o:<8} {canon[0]:<26} also: {', '.join(extra)}")
+
     multi = {k: v for k, v in vals.items() if len(v) > 1}
     hero = {k: v for k, v in multi.items() if k.startswith("HERO_")}
     print(f"\n{len(multi)} identifier(s) in the whole tree carry more than one "
@@ -119,6 +175,9 @@ def main() -> int:
 
     if fail:
         print("\nFAIL: a shared-bank name does not denote exactly one offset.")
+        print("(check 4, one-offset-one-name, is reported but not failed on: "
+              "the aliases\npredate this probe and merging them is a separate, "
+              "per-site change.)")
         return 1
     print("\nEvery shared-bank name denotes exactly one offset in every file.")
     return 0

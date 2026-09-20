@@ -222,3 +222,53 @@ names are *compatible*, since a stop animation decelerating through walk frames
 really does draw them. But the shadow EQU itself asserts a specificity its art
 does not have, which is the #0107 failure mode, and it is recorded here for
 whoever revisits the LAKE shadow family.
+
+## One offset, one name — the check that was missing, and 43 aliases
+
+`bank_name_offset_consistent.py` originally asked only whether a *name*
+denotes one offset. It could not see the opposite failure, and the opposite
+failure was there: **137 of 358 drawn bank offsets carried more than one
+name.** Check 4 now asks that direction too.
+
+Identifying a bank reference needs the right discriminator. `video type=0`
+selects the video2 bank; plain `video` selects the per-stage cinematic bank,
+where the *same numeric offset* is a different picture. Comparing EQU values
+without it reports 105 "duplicates" that are nothing of the kind — a real
+cinematic polygon and a real bank polygon that happen to share an offset.
+
+Two causes, and only one was actionable:
+
+- **94→121 `COMMON_VIDEO_nnn` survivors in the GBA branch.** T7's re-key
+  covered 225 files and left `foxy_gba_2004_*.asm` alone. That release
+  packages its art differently and has no extracted resource `0x11`, so the
+  old names there are not obviously wrong, but the offset still has two names
+  tree-wide. Left alone, recorded. (The count *rose* after the merge because
+  more offsets now have a canonical name for it to be compared against.)
+- **43 address-shaped aliases** in shared `_unified/_helpers/*.inc` chunks —
+  `ADDR_AT_00B4`, `LABEL_0128`, `DELAY_LOOP_VARED_AT_0844`,
+  `HANG_DRAW_CIN_003_AT_125A`,
+  `STATE_VAR12_BIG_DISPATCH_CASE_30_AT_2D4E`. Merged by
+  `merge_bank_aliases.py`: 49 operands and 126 definitions, now **0
+  remaining**, `make test` 29/29 and 29/29.
+
+Three things that went wrong on the way, because each is a trap for the next
+person:
+
+1. **Rewriting operands alone gave 240 undefined references.** These aliases
+   are not redundant spellings beside the key — they are branch-guarded
+   stand-ins for the branches where the key is *not* defined. The definition
+   has to move with the operand.
+2. **Restricting the definition rename to `*_equ_aliases.inc` gave 27/29.**
+   The canonical `.asm` files define some of these aliases too, so their
+   operands changed and their definitions did not. `undefined_symbols.py`
+   passed throughout — it checks the unified tree, and these were the
+   per-branch canonical files. Only the byte gate saw it. The restriction had
+   been added out of caution about `LABEL_0128:` being a real code label in
+   `dos/CAPSULE.asm`; matching `<NAME> EQU` rather than `<NAME>:` handles that
+   without it.
+3. **One operand was not naming a picture at all.** In CAPSULE, `LABEL_3640`
+   resolved to the code label `LABEL_3640:`, whose address happens to equal
+   bank offset 0x3640. Nothing defined 0x3640 as art on those branches.
+   `CV_3640 EQU 0x3640` is now declared in `capsule_equ_aliases.inc` under the
+   same branch guard, which emits no bytes and makes the operand name a
+   picture.
