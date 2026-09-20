@@ -9,7 +9,7 @@ PRISON_HERO_KILLED:
 	and [0xF8], 0x00FF
 	jl [0xF8], 0x20, LABEL_3B98
 	sub [0xF8], 0x0020
-	setup channel=0x14, address=LABEL_1023
+	setup channel=0x14, address=PRISON_HERO_DEATH_FLASH
 	jl [0xF8], 0x10, SHARED_RET
 	setup channel=0x14, address=LABEL_103E
 	ret

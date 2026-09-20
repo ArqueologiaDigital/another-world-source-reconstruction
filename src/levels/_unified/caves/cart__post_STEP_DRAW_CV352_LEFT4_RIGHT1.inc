@@ -112,34 +112,34 @@ LABEL_EB60:
 	killChannel
 	break
 	sub [HERO_X], 0x0002
-	call LABEL_9BE0
+	call DRAW_HERO_WALK_RIGHT_F02
 
 LABEL_EB7D:
 	break
 	sub [HERO_X], 0x0002
-	call LABEL_9BCF
+	call DRAW_HERO_WALK_RIGHT_F01
 
 LABEL_EB85:
 	break
 	sub [HERO_X], 0x0002
-	call LABEL_9BBE
+	call DRAW_HERO_WALK_RIGHT_F00
 
 LABEL_EB8D:
 	sub [HERO_X], 0x0001
 	jmp HERO_WALK_RIGHT_LOOP
 	break
 	sub [HERO_X], 0x0002
-	call LABEL_9B4F
+	call DRAW_HERO_WALK_RIGHT_F10
 
 LABEL_EB9C:
 	break
 	sub [HERO_X], 0x0002
-	call LABEL_9AA5
+	call DRAW_HERO_WALK_RIGHT_F09
 
 LABEL_EBA4:
 	break
 	sub [HERO_X], 0x0002
-	call LABEL_9C4F
+	call DRAW_HERO_WALK_RIGHT_F08
 
 LABEL_EBAC:
 	sub [HERO_X], 0x0001

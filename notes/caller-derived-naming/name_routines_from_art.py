@@ -97,7 +97,14 @@ sys.path.insert(0, str(ARCH / "tools"))
 from naming_census import classify                 # noqa: E402
 from find_dead_tail_bytes import analyse           # noqa: E402
 
-PORTS = {"amiga": "chahi_amiga_1991", "msdos": "dos_1992"}
+# All four branches, not just the two priority ones. A label referenced by a
+# chunk every branch reads can only be renamed if every branch has a proposal
+# for it, and scanning only amiga and msdos meant 29 routines were dropped by
+# that rule on every pass -- the same 29, every time. The goal prioritises
+# amiga and MS-DOS; it does not say the other two may be left out of a check
+# that they gate.
+PORTS = {"amiga": "chahi_amiga_1991", "msdos": "dos_1992",
+         "snes_eu": "cartridge_1992", "gba_usa": "gba_2004"}
 STAGES = ["CODE_WHEEL", "INTRO", "LAKE", "PRISON", "CAVES",
           "TANK", "CAPSULE", "ENDING", "PASSCODE"]
 

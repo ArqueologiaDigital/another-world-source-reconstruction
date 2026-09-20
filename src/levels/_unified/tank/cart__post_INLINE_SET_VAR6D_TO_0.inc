@@ -101,7 +101,7 @@ RESET_PAGES_AND_SETUP_CH_0A:
 	killChannel
 	copyVideoPage src=0x03, dst=0x00
 	killChannel
-	setup channel=0x0A, address=LABEL_013D
+	setup channel=0x0A, address=DRAW_CAPSULE_DOME_CLOSING_F3
 
 HANG_DRAW_CIN_223:
 	video offset=CINEMATIC_223, x=160, y=100
@@ -115,14 +115,14 @@ CAPSULE_DOME_CLOSING_F48_REDRAW_LOOP:
 LABEL_013C:
 	db 0x11
 
-LABEL_013D:
+DRAW_CAPSULE_DOME_CLOSING_F3:
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F3, x=81, y=131
 	break
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F3, x=96, y=121
 	break
 	video offset=CINEMATIC_CAPSULE_DOME_CLOSING_F3, x=86, y=127
 	break
-	jmp LABEL_013D
+	jmp DRAW_CAPSULE_DOME_CLOSING_F3
 LABEL_014F:
 	db 0x11
 

@@ -71,7 +71,7 @@ CURSOR_ANIM_DONE_WAIT_RELEASE:
 ; → 0x06C1) — the labels live in cart__entry.inc and
 ; dos__post_SUM_HASH_VARS_TO_VAR_37.inc respectively.
 .if BRANCH == "cartridge_1992"
-JUNK__0467:
+DRAW_PASSCODE_CURSOR:
 	video offset=CINEMATIC_PASSCODE_CURSOR, x=[0x07], y=[0x08]
 	break
 	jmp JUNK__03F5

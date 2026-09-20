@@ -256,3 +256,26 @@ Routine-layer share after both passes: amiga/PRISON 32.8 %, amiga/CAVES
 28.6 % (from 26.3 % at the start of the day), amiga/CAPSULE 27.2 %. Routines
 drawing only identified art 3,441 → 3,298; those drawing nothing but
 placeholders 3,138 → 3,052.
+
+### Scanning all four branches, and the `.asm.in` trap again
+
+Every pass was dropping the **same 29** proposals: a label referenced by a
+chunk that every branch reads can only be renamed if every branch has a
+proposal for it, and the probe scanned only amiga and msdos. The goal
+prioritises those two; it does not say the other two may be left out of a
+check that they gate. Scanning all four took the pass from 43 proposals to
+**127**, of which 120 reuse a name already earned on the same draw-set
+elsewhere — the tree answering its own questions.
+
+That immediately exposed a second gap, and the byte gate is what caught it.
+`JUNK__0467` is *defined* only in `_unified/PASSCODE.asm.in` while
+`cart__entry.inc` references it, so rewriting the reference and not the
+definition left one undefined symbol and verify-unified at **28/29**. The
+applier walked `_unified/<stage>/**/*.inc` and not the stage template — the
+same `.asm.in` omission that cost this project a 27/29 earlier.
+
+The template is now treated as an all-branch file, and the all-branch rule is
+no longer "always drop": such a file is rewritten when **every branch that
+has the label proposes the same new name**, and the label is dropped from the
+pass entirely otherwise. With that, 0 of 127 are dropped: 444 canonical, 144
+chunk and 28 all-branch tokens.

@@ -16,6 +16,13 @@ Where a rename may land
     The convention there is a `__`-separated prefix: `amiga__entry.inc`,
     `dos__post_...`, `cart__...`, `amiga_dos__post_SHARED_RET.inc`. A chunk
     with no prefix is read by every branch.
+  - **`_unified/<STAGE>.asm.in`, the stage template**, which is also read by
+    every branch. Leaving it out is not a cosmetic omission: `JUNK__0467` is
+    *defined* only there while `cart__entry.inc` references it, so a pass
+    that rewrote the reference and not the definition produced one undefined
+    symbol and took verify-unified to 28/29. The byte gate caught it;
+    `undefined_symbols.py` also named it, because this time the breakage was
+    inside the unified tree.
 
 A rename is written to a chunk **only when every branch that reads it agrees
 on the new name for that label**. If amiga proposes a name and msdos does not,
@@ -25,8 +32,10 @@ pass renamed out from under it -- which is the shape of the breakage that took
 verify-unified from 29/29 to 27/29 earlier in this session, found only by the
 byte gate.
 
-**A label referenced by an all-branch chunk is dropped from the pass
-entirely**, not merely skipped in that chunk. Skipping only the chunk is worse
+An all-branch file — no prefix, or the `.asm.in` template — is rewritten only
+when **every** branch that has the label proposes the same new name for it.
+Otherwise the label is **dropped from the pass entirely**, not merely skipped
+in that file. Skipping only the chunk is worse
 than useless: amiga and msdos would rename their canonical copies while the
 shared chunk still names the old spelling, which is a dangling reference the
 pass itself created. There is no proposal for the cartridge and GBA branches
@@ -62,8 +71,10 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve()
 SRC = HERE.parents[2]
-PORTS = {"amiga": "chahi_amiga_1991", "msdos": "dos_1992"}
-PREFIX = {"amiga": "amiga", "msdos": "dos"}
+PORTS = {"amiga": "chahi_amiga_1991", "msdos": "dos_1992",
+         "snes_eu": "cartridge_1992", "gba_usa": "gba_2004"}
+PREFIX = {"amiga": "amiga", "msdos": "dos", "snes_eu": "cart",
+          "gba_usa": "gba"}
 ALL_PREFIXES = {"amiga": "amiga", "dos": "msdos", "cart": "snes_eu",
                 "gba": "gba_usa"}
 
@@ -103,20 +114,37 @@ def main() -> int:
         d = SRC / "src" / "levels" / "_unified" / stage.lower()
         if not d.is_dir():
             continue
-        for f in d.rglob("*.inc"):
-            if readers(f.name) is not None:
+        cands = list(d.rglob("*.inc"))
+        tmpl = SRC / "src" / "levels" / "_unified" / f"{stage}.asm.in"
+        if tmpl.is_file():
+            cands.append(tmpl)
+        for f in cands:
+            if f.suffix == ".inc" and readers(f.name) is not None:
                 continue
-            if re.search(rf"\b{re.escape(lab)}\b",
-                         f.read_text(errors="replace")):
-                universal.add((stage, lab))
-                break
+            if not re.search(rf"\b{re.escape(lab)}\b",
+                             f.read_text(errors="replace")):
+                continue
+            # All-branch file: allowed only if every branch agrees.
+            byport = {p2: n2 for (p2, st2, l2), n2 in table.items()
+                      if st2 == stage and l2 == lab}
+            present = {p2 for p2 in PORTS
+                       if (SRC / "src" / "levels" / PORTS[p2]
+                           / f"{stage}.asm").is_file()
+                       and re.search(
+                           rf"\b{re.escape(lab)}\b",
+                           (SRC / "src" / "levels" / PORTS[p2]
+                            / f"{stage}.asm").read_text(errors="replace"))}
+            if present <= set(byport) and len(set(byport.values())) == 1:
+                continue          # safe to rewrite everywhere
+            universal.add((stage, lab))
+            break
     dropped = [k for k in table if (k[1], k[2]) in universal]
     for k in dropped:
         del table[k]
     if dropped:
-        print(f"  {len(dropped)} proposal(s) dropped: the label is referenced "
-              f"by a chunk every branch reads,\n     and this pass has no "
-              f"proposal for the cartridge or GBA branches")
+        print(f"  {len(dropped)} proposal(s) dropped: the label is "
+              f"referenced by a chunk every branch reads,\n     and at least "
+              f"one of those branches has no proposal for it")
 
     # label -> {port: name} per stage, for the agreement test
     per_stage: dict[str, dict[str, dict[str, str]]] = collections.defaultdict(
@@ -141,23 +169,30 @@ def main() -> int:
         d = SRC / "src" / "levels" / "_unified" / stage.lower()
         if not d.is_dir():
             continue
-        for f in sorted(d.rglob("*.inc")):
+        files = sorted(d.rglob("*.inc"))
+        tmpl = SRC / "src" / "levels" / "_unified" / f"{stage}.asm.in"
+        if tmpl.is_file():
+            files.append(tmpl)
+        for f in files:
             t = f.read_text(errors="replace")
             who = readers(f.name)
             changed = t
             for lab, byport in labs.items():
                 if not re.search(rf"\b{re.escape(lab)}\b", changed):
                     continue
+                if who is None and len(set(byport.values())) == 1:
+                    changed = re.sub(rf"\b{re.escape(lab)}\b",
+                                     next(iter(byport.values())), changed)
+                    written["all-branch file tokens"] += 1
+                    continue
                 if who is None:
                     refused.append(f"{f.name}: read by every branch, "
                                    f"{lab} left alone")
                     continue
                 want = {ALL_PREFIXES[w] for w in who}
-                have = {PORTS[p2] if p2 in PORTS else p2 for p2 in byport}
-                have = {("amiga" if p2 == "amiga" else "msdos")
-                        for p2 in byport}
-                want_ports = {("amiga" if w == "amiga" else
-                               "msdos" if w == "dos" else w) for w in who}
+                back = {v: k for k, v in PREFIX.items()}
+                have = set(byport)
+                want_ports = {back[w] for w in who if w in back}
                 if not want_ports <= have:
                     refused.append(f"{f.name}: read by {sorted(want_ports)} "
                                    f"but only {sorted(have)} propose for "

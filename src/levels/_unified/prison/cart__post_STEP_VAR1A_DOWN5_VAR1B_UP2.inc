@@ -88,12 +88,12 @@ DRAW_CIN_581:
 
 
 	killChannel
-	jne [0x06], 0x00, LABEL_7563
+	jne [0x06], 0x00, DRAW_PRISON_CAGE_BARS_TILT_PLUS
 	video offset=CINEMATIC_079, x=[0x03], y=[0x04]
 	ret
 
 
-LABEL_7563:
+DRAW_PRISON_CAGE_BARS_TILT_PLUS:
 	jne [0x06], 0x01, DRAW_CIN_055_AT_756F
 	video offset=CINEMATIC_PRISON_CAGE_BARS_TILT_PLUS_1, x=[0x03], y=[0x04]
 	ret

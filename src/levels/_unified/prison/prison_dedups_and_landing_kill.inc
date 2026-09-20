@@ -155,7 +155,7 @@ DRAW_CV_074:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_DRAW_CV_074_L0:
 	je [0x0A], 0x00, DRAW_CV_075
-	call GUARDED_DRAW_CV_126
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -165,7 +165,7 @@ PRISON_DRAW_CV_074_L0:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_DRAW_CV_075_L0:
 	je [0x0A], 0x00, DRAW_CV_076
-	call GUARDED_DRAW_CV_126
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -175,7 +175,7 @@ PRISON_DRAW_CV_075_L0:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_DRAW_CV_076_L0:
 	je [0x0A], 0x00, DRAW_CV_077
-	call GUARDED_DRAW_CV_126
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -185,7 +185,7 @@ PRISON_DRAW_CV_076_L0:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_DRAW_CV_077_L0:
 	je [0x0A], 0x00, DRAW_CV_078
-	call GUARDED_DRAW_CV_126
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -203,7 +203,7 @@ PRISON_HERO_WALK_LEFT_DRAW_PHASE_14:
 	jmp DRAW_CV_080
 
 PRISON_DRAW_CV_078_L1:
-	call GUARDED_DRAW_CV_126
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -214,13 +214,13 @@ PRISON_DRAW_CV_078_L1:
 PRISON_DRAW_CV_080_L0:
 	jne [0x0A], 0x00, PRISON_DRAW_CV_080_L1
 	video type=0, offset=HERO_STAND_LEFT_ARM, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	jmp PRISON_DRAW_CV_080_L2
+	jmp DRAW_HERO_STAND_LEFT
 
 PRISON_DRAW_CV_080_L1:
-	call GUARDED_DRAW_CV_126
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
-PRISON_DRAW_CV_080_L2:
-	call PRISON_DRAW_CV_071_L1
+DRAW_HERO_STAND_LEFT:
+	call DRAW_HERO_WATER_DEPTH_LEFT_CASE_00
 	video type=0, offset=HERO_STAND_LEFT_BODY, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
@@ -231,7 +231,7 @@ PRISON_HERO_WALK_LEFT_DRAW_PHASE_00:
 	jmp DRAW_CV_061
 
 PRISON_DRAW_CV_080_L4:
-	call GUARDED_DRAW_CV_126
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -245,7 +245,7 @@ PRISON_HERO_WALK_LEFT_DRAW_PHASE_01:
 	jmp DRAW_CV_063
 
 PRISON_DRAW_CV_061_L1:
-	call GUARDED_DRAW_CV_126
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -259,7 +259,7 @@ PRISON_HERO_WALK_LEFT_DRAW_PHASE_02:
 	jmp DRAW_CV_065
 
 PRISON_DRAW_CV_063_L1:
-	call GUARDED_DRAW_CV_126
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -273,7 +273,7 @@ PRISON_HERO_WALK_LEFT_DRAW_PHASE_03:
 	jmp DRAW_CV_067
 
 PRISON_DRAW_CV_065_L1:
-	call GUARDED_DRAW_CV_126
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -287,7 +287,7 @@ PRISON_HERO_WALK_LEFT_DRAW_PHASE_04:
 	jmp DRAW_CV_069
 
 PRISON_DRAW_CV_067_L1:
-	call GUARDED_DRAW_CV_126
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -297,7 +297,7 @@ PRISON_DRAW_CV_067_L1:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_DRAW_CV_069_L0:
 	je [0x0A], 0x00, DRAW_CV_070
-	call GUARDED_DRAW_CV_126
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -311,7 +311,7 @@ DRAW_CV_070:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_DRAW_CV_070_L0:
 	je [0x0A], 0x00, DRAW_CV_071
-	call GUARDED_DRAW_CV_126
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -320,9 +320,9 @@ PRISON_DRAW_CV_070_L0:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_DRAW_CV_071_L0:
-	call PRISON_DRAW_CV_071_L1
+	call DRAW_HERO_WATER_DEPTH_LEFT_CASE_00
 	je [0x0A], 0x00, DRAW_CV_072
-	call GUARDED_DRAW_CV_126
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -332,7 +332,7 @@ PRISON_DRAW_CV_071_L0:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_DRAW_CV_072_L0:
 	je [0x0A], 0x00, DRAW_CV_073
-	call GUARDED_DRAW_CV_126
+	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -365,7 +365,7 @@ PRISON_DRAW_CV_072_L0:
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
-PRISON_DRAW_CV_297_L0:
+DRAW_HERO_RUN_RIGHT_F00:
 	video type=0, offset=HERO_RUN_RIGHT_BODY_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x00
 	jne [0x0A], 0x00, DRAW_CV_295
@@ -401,7 +401,7 @@ PRISON_HERO_RUN_RIGHT_POSE_04:
 	ret
 
 
-PRISON_DRAW_CV_297_L5:
+DRAW_HERO_RUN_RIGHT_F05:
 	video type=0, offset=HERO_RUN_RIGHT_BODY_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x00
 	jne [0x0A], 0x00, DRAW_CV_295
