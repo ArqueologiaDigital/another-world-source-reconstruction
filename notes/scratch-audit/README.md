@@ -42,13 +42,24 @@ throwaway worktree and re-ran the committed probe:
 and showed the output was **byte-identical** to the scratch file. Sixteen
 files were dismissed that way.
 
-Recurring grounds, by count:
+Recurring grounds, by count -- reproduce with `grounds.py`:
 
-    21  conclusion already in a committed note or a commit diff
-    16  regenerable byte-for-byte from a committed probe
-    15  byte-identical to a sibling already in scratch
+    27  conclusion already in a committed note or a commit diff
+    18  regenerable byte-for-byte from a committed probe
+    10  byte-identical to a sibling already in scratch
     10  the "evidence" column is a hardcoded literal
      3  the filename misattributes the port or the stage
+
+A verdict may give several grounds, so these sum past 41. Six verdicts match
+no keyword at all, so **the tally is a floor**, and `grounds.py` names those
+six rather than hiding them.
+
+An earlier version of this file printed `21 / 16 / 15 / 10 / 3`. That came
+from a shell one-liner that was never committed and used looser substrings --
+`"byte-identical"` where `grounds.py` requires `"byte-identical to"`, and so
+on. Neither tally is more correct; the committed one is the one you can
+check, which is the whole point. The shape of the finding is unchanged: most
+proposals died because the content was already recorded or regenerable.
 
 Three findings that outlived the audit
 --------------------------------------
