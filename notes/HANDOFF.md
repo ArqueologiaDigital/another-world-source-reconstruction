@@ -122,5 +122,27 @@ that is published anywhere without a committed producer; each is superseded:
 | `remeasure.py` | **disposable** | A per-index debugging view of `extent_old` vs `extent`. Superseded by `notes/polygon-extent-correction/what_the_correction_moves.py`, which answers the same question over the whole tree, has `--names` for the per-name view, and is the producer of the figure now quoted in that note. |
 | `_audit*.py` | **disposable, as a class** | Written by workflow subagents during the final preservation sweep — `_audit.py`, `_audit2.py`, `_audit3.py`, `_audit_cov.py` and any later siblings. Each is a one-shot coverage or duplication checker with the scratch path hardcoded, written to answer "is this file's content already in the repo?" for one agent's slice. None is referenced by any committed text and none is the producer of a published number: the committed producer for the proposal-table counts is `notes/naming-proposals/coverage.py`. Expect more of them to appear for as long as the sweep runs; the verdict covers the pattern, not the four instances. |
 
+### The sweep, and its result
+
 Deleting the scratchpad loses nothing that is not either committed or
-reproducible by the command above.
+reproducible by the command above. That is not an impression -- it was
+measured, and the measurement is in `notes/scratch-audit/`:
+
+  * 194 non-render files audited by ten agents, each backed by a second agent
+    told to **refute** its keep-calls.
+  * 41 files proposed for rescue. **All 41 refuted.** `verdicts.md` has the
+    grounds one file at a time.
+  * The strongest refutations checked out the pre-apply tree in a throwaway
+    worktree, re-ran the committed probe, and showed the scratch file was
+    byte-identical to its output. Sixteen went that way.
+
+Three things did come out of it, and all three are fixed in the tree rather
+than rescued: the `--held` flag on `transfer_across_stages.py` (a counted
+hold with no subject sent an agent rummaging in /tmp for a pair HEAD computes
+every run), the corrected per-row-evidence claim in
+`notes/naming-proposals/README.md`, and `coverage.py --quality`.
+
+The lesson generalises past this repo: **a proposal table is a worse record
+than the commit that applied it.** The diff carries the same (constant, name)
+pairs plus the EQU offsets the table omits. The tables were still worth
+keeping, but as the appliers' input, not as the evidence of record.
