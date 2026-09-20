@@ -1,0 +1,10 @@
+# old new -- LAKE routine labels renamed with the constants they draw.
+# All four branches define all of these under the same spelling (checked with
+# `grep -rl` before the rename), so one global substitution is consistent.
+DECOR_AT_327_164_SCENE_RIGHT_LOOP SHOOTER_AIM_HOLD_LOOP
+DECOR_AT_327_164_BLINK_LOOP SHOT_BEAM_SWEEP_LEFT
+DECOR_AT_305_155_F0_LOOP SHOT_MUZZLE_BEAM_LOOP
+LESTER_RISE_LOOP LESTER_KNOCKED_BACK_F0_LOOP
+DECOR_F1_DRIFT_LOOP LESTER_KNOCKED_BACK_F1_LOOP
+DECOR_F2_DRIFT_LOOP LESTER_KNOCKED_BACK_F2_LOOP
+DECOR_F4_HOLD_LOOP LESTER_KNOCKED_BACK_F4_HOLD_LOOP

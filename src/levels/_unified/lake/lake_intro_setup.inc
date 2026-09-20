@@ -111,7 +111,7 @@ LAKE_INTRO_PRE_TRANS_DELAY:
 	copyVideoPage src=0x03, dst=0x00
 	freezeChannels first=0x14, last=0x16
 	setup channel=0x14, address=LESTER_AT_POOL_LOOP
-	setup channel=0x15, address=DECOR_AT_327_164_SCENE_RIGHT_LOOP
+	setup channel=0x15, address=SHOOTER_AIM_HOLD_LOOP
 	deleteChannels first=0x16, last=0x16
 	selectVideoPage 0x00
 	video offset=CINEMATIC_LAKE_SCENE3_DECOR, x=275, y=162

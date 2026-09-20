@@ -54,3 +54,23 @@ a creature, a plant or part of a mechanism, and nothing in the drawer names
 (`DECOR_F9_THEN_F10_F9_BODY`, `DECOR_F11_HOLD_LOOP`) says which. They keep
 the coordinate name, which is now at least attached to a genuinely
 unidentified remainder rather than to Lester falling into a lake.
+
+> ### Correction (see `../lake-shooting/`)
+>
+> **Four of the five lines above are wrong, and the bar table is the reason.**
+> F00, F01..F04 and the two `F327_164` bars are not decor and not leftovers:
+> they are the shooter, the beam and the last four frames of the hero being
+> shot. `shooting_scene_geometry.py` shows it in the operand rather than the
+> picture — F01..F04 are drawn at `x=[HERO_X], y=[HERO_Y]`, contiguous with
+> the `CINEMATIC_LAKE_LESTER_*` frames above them, while the bars sit at the
+> barrel height of a figure at the right screen edge and step leftwards off
+> the screen one span per frame.
+>
+> This pass grouped by *size and drawer label* and called the result decor,
+> but the drawer labels (`DECOR_F1_DRIFT_LOOP`) were coined in the same pass
+> from the same look at the same pictures, so they confirmed nothing. A size
+> table cannot tell decor from a body; the draw slot can, and was not
+> consulted. All eight of those names have been replaced.
+>
+> Only F07..F13 genuinely remain, and now with a measured reason: they draw
+> at `[0x32],[0x33]`, a slot of their own.

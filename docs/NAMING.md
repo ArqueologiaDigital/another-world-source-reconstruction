@@ -221,6 +221,14 @@ misfiled.
 - Never embed screen coordinates. `CINEMATIC_DECOR_AT_305_155_F0` both leaks a
   magic number and breaks frame-index parsing —
   `CINEMATIC_LAKE_DECOR_AT_327_164` parses as family `…AT_327`, frame 164.
+
+  Both examples have since been named, and what they turned out to be is the
+  argument for the rule: the first is the beam at a shooter's muzzle, the
+  second is the shooter. The coordinate had grouped a hero, a gunman and a
+  beam under one family name purely because a draw call put them near each
+  other, and it survived a render because the frames were then read as a
+  group. See `notes/lake-shooting/`. Seven members of that group are still
+  coordinate-named; they draw at `[0x32],[0x33]` and remain unidentified.
 ### When the ports draw different art at the same slot
 
 A polygon constant is one symbol shared by the branches with a per-port value,
