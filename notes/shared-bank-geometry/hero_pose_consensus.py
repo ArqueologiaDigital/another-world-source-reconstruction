@@ -85,6 +85,13 @@ The rules, and why each is there
    forked, gun-holding variants -- which is the cross-check that the geometric
    split found the right thing.
 
+5b. **A frame claimed by two offsets of the same role is rejected, not
+   resolved.** `RUN_RIGHT` frame 8 is claimed by `CV_2364` (40x54, five
+   leaves) and `CV_2380` (41x56, five leaves): two interleaved naming series
+   run through that family and overlap at exactly that frame. Nothing
+   measured says which is right, so both are dropped (#0120: a tool must not
+   pick a winner between two semantic names).
+
 6. **The consensus index is checked against offset order**, not trusted. A
    sprite sheet stores frames consecutively, so within one (motion, direction,
    role) family the consensus indices should be offset order up to a rotation.
@@ -203,7 +210,18 @@ RE_FOOTSTEP = re.compile(r"_FOOTSTEP_PHASE_\d+$")
 # re-based frame ordinal, and until that is explained they stay out and the
 # actor families keep their holes.
 # `_FOOTSTEP_PHASE_<n>` is a footfall counter, excluded earlier by RE_FOOTSTEP.
-RE_INDEX = re.compile(r"_(?:DRAW|F|POSE|DRAW_PHASE|STRIDE_PHASE)_?(\d+)$")
+# A bare `_PHASE_<n>` is a frame ordinal like the rest; its base follows the
+# STAGE (CAPSULE 0, PRISON 0, CAVES 1), measured by phase_base_calibration.py.
+# A terminal word after the digits does not stop them being an ordinal either:
+# BUDDY_WALK_LEFT_DRAW_3_DONE and ACTOR_RUN_RIGHT_PHASE_1_FRAME are frames 3
+# and 1. Anchoring at end-of-string dropped every CAPSULE and PRISON claim in
+# the actor walk-left family, leaving CAVES -- the only 1-based stage -- as
+# its own calibration reference, which is where an index 16 in a 0..15 run
+# came from.
+# `_FOOTSTEP_PHASE_<n>` is a footfall counter, excluded earlier by RE_FOOTSTEP.
+RE_INDEX = re.compile(
+    r"_(?:DRAW_PHASE|STRIDE_PHASE|PHASE|DRAW|POSE|F)_?(\d+)"
+    r"(?:_(?:DONE|RET|FRAME|LOOP))?$")
 RE_MOTION = re.compile(r"_(?:HERO|BUDDY|ACTOR|ALIEN|BEAST)_"
                        r"(WALK|RUN|CRAWL|JUMP|STAND|PRONE|CROUCH|SHOOT|FALL)_"
                        r"(LEFT|RIGHT)_")
@@ -303,9 +321,22 @@ def main() -> int:
 
     # Rule 4b: calibrate each stage's index base against the stage with the
     # most claims in the same (motion, direction).
+    # Rule 5c: (offset, stage) pairs whose own routines disagree about the
+    # frame are shared sub-pieces. They poison the calibration and cannot
+    # carry an ordinal, so they are set aside before anything else.
+    subpiece: set[tuple[str, str]] = set()
+    for cv in sorted(hero, key=lambda c: offs[c]):
+        for stage, routines in sorted(by_stage[cv].items()):
+            seen = {c[2] for r in sorted(routines)
+                    if (c := parse_claim(r)) and c[2] is not None}
+            if len(seen) > 1:
+                subpiece.add((cv, stage))
+
     raw: dict[tuple, dict] = collections.defaultdict(dict)
     for cv in sorted(hero, key=lambda c: offs[c]):
-        for stage, routines in by_stage[cv].items():
+        for stage, routines in sorted(by_stage[cv].items()):
+            if (cv, stage) in subpiece:
+                continue
             for r in sorted(routines):
                 c = parse_claim(r)
                 if c and c[2] is not None:
@@ -342,7 +373,9 @@ def main() -> int:
                 if not c:
                     continue
                 m, d, i = c
-                if i is not None:
+                if (cv, stage) in subpiece:
+                    i = None          # rule 5c: motion and direction only
+                elif i is not None:
                     i -= shift.get((stage, m, d), 0)
                 got.add((m, d, i))
             if got:
@@ -431,20 +464,27 @@ def main() -> int:
             print(f"  {cv}  {why}")
 
     if args.proposals:
-        print("\nproposals (offset -> name), role from measured geometry:")
+        # The role word is not optional: without it the body and the limb of
+        # one frame derive the same name, which is how CV_2FD6 (41x56, five
+        # leaves) and CV_3212 (14x24, one leaf) both came out as
+        # CV_FIGURE_RUN_LEFT_F04. For the actor slot no character is claimed;
+        # see the docstring and #0138.
+        want: dict[str, list] = collections.defaultdict(list)
         for cv, (m, d, i, _n) in sorted(agreed.items(),
                                         key=lambda kv: offs[kv[0]]):
             if i is None:
                 continue
-            if args.subject == "actor":
-                # No character is claimed: see the docstring and #0138. The
-                # role word is not optional -- without it the body and the
-                # limb of one frame derive the same name, which is how
-                # CV_2FD6 (41x56, five leaves) and CV_3212 (14x24, one leaf)
-                # both came out as CV_FIGURE_RUN_LEFT_F04.
-                print(f"{cv} CV_FIGURE_{m}_{d}_{role[cv]}_F{i:02d}")
-            else:
-                print(f"{cv} HERO_{m}_{d}_{role[cv]}_F{i:02d}")
+            stem = (f"CV_FIGURE_{m}_{d}_{role[cv]}_F{i:02d}"
+                    if args.subject == "actor"
+                    else f"HERO_{m}_{d}_{role[cv]}_F{i:02d}")
+            want[stem].append(cv)
+        for stem, cvs in sorted(want.items()):
+            if len(cvs) > 1:                      # rule 5b
+                print(f"# dropped, {len(cvs)} offsets claim it: {stem} "
+                      f"({', '.join(cvs)})")
+        for stem, cvs in sorted(want.items(), key=lambda kv: offs[kv[1][0]]):
+            if len(cvs) == 1:
+                print(f"{cvs[0]} {stem}")
     return 0
 
 

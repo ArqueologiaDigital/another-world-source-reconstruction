@@ -176,7 +176,7 @@ CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_1:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=CV_247C, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=CV_181C, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F00, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_9024
 	call LABEL_8BD5
@@ -195,7 +195,7 @@ LABEL_9028:
 	sub [0x07], 0x0001
 	video type=0, offset=CV_247C, x=[0x07], y=[0x08], zoom=0x40
 	add [0x07], 0x0001
-	video type=0, offset=CV_1866, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F01, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_9052
 	call LABEL_8BD5
@@ -211,7 +211,7 @@ LABEL_9055:
 LABEL_9056:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_18B0, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F02, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_9073
 	call CAVES_DRAW_CV246_AT_X07_Y08_L2
@@ -228,7 +228,7 @@ LABEL_9077:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	play id=0x0055, freq=0x0F, vol=0x14, channel=0x00
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_18FA, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F03, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_909A
 	call CAVES_DRAW_CV246_AT_X07_Y08_L2
@@ -244,7 +244,7 @@ LABEL_909D:
 CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_5:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_1944, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F04, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_90BB
 	call CAVES_DRAW_CV246_AT_X07_Y08_L2
@@ -261,7 +261,7 @@ CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_6:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=CV_2474, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=CV_198E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F05, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_90E1
 	call CAVES_INLINE_DRAW_CV_255_031_L2
@@ -278,7 +278,7 @@ CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_7:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=CV_246C, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=CV_19C4, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F06, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_9107
 	call LABEL_8C10
@@ -295,7 +295,7 @@ CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_8:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=CV_245C, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=CV_1A0E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F07, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_912D
 	call CAVES_DRAW_CV_355_L9
@@ -312,7 +312,7 @@ CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_9:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=CV_2464, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=CV_1D78, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F08, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_9153
 	call LABEL_8C56
@@ -329,7 +329,7 @@ CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_10:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=CV_2464, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=CV_1D9A, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F09, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_9179
 	call LABEL_8C56
@@ -348,7 +348,7 @@ CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_11:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=CV_246C, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=CV_1DBC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F10, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_91A7
 	call CAVES_DRAW_CV_355_L9
@@ -366,7 +366,7 @@ LABEL_91AB:
 	play id=0x0055, freq=0x14, vol=0x14, channel=0x00
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=CV_2474, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=CV_1DDE, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F11, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_91D3
 	call CAVES_DRAW_CV_355_L9
@@ -382,7 +382,7 @@ LABEL_91D6:
 CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_13:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_1E00, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F12, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_91F4
 	call CAVES_DRAW_CV_355_L9
@@ -398,7 +398,7 @@ CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_13_RET:
 CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_14:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_1E22, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F13, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_9215
 	call LABEL_8C10
@@ -414,7 +414,7 @@ CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_14_RET:
 CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_15:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_1E44, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F14, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_9236
 	call CAVES_INLINE_DRAW_CV_255_031_L2
@@ -430,7 +430,7 @@ CAVES_ACTOR_WALK_RIGHT_DRAW_PHASE_15_RET:
 LABEL_923A:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_1E66, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F15, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_HERO_SUBFRAME_3_VAR09
 	je [0x0D], 0x00, LABEL_9257
 	call CAVES_DRAW_CV246_AT_X07_Y08_L2

@@ -123,29 +123,29 @@ CINEMATIC_PTERANODON_BEAK_OPEN_F0		EQU 0x3BA4
 CINEMATIC_PTERANODON_BEAK_OPEN_F1		EQU 0x3BFA
 CINEMATIC_108		EQU 0x000C
 CV_1B14		EQU 0x1B14
-CV_181C		EQU 0x181C
+CV_FIGURE_WALK_RIGHT_BODY_F00		EQU 0x181C
 CV_1A84		EQU 0x1A84
-CV_1866		EQU 0x1866
-CV_18B0		EQU 0x18B0
+CV_FIGURE_WALK_RIGHT_BODY_F01		EQU 0x1866
+CV_FIGURE_WALK_RIGHT_BODY_F02		EQU 0x18B0
 CV_1AB4		EQU 0x1AB4
-CV_18FA		EQU 0x18FA
+CV_FIGURE_WALK_RIGHT_BODY_F03		EQU 0x18FA
 CV_1AE4		EQU 0x1AE4
-CV_1944		EQU 0x1944
-CV_198E		EQU 0x198E
+CV_FIGURE_WALK_RIGHT_BODY_F04		EQU 0x1944
+CV_FIGURE_WALK_RIGHT_BODY_F05		EQU 0x198E
 CV_1B44		EQU 0x1B44
-CV_19C4		EQU 0x19C4
+CV_FIGURE_WALK_RIGHT_BODY_F06		EQU 0x19C4
 CV_1B74		EQU 0x1B74
-CV_1A0E		EQU 0x1A0E
+CV_FIGURE_WALK_RIGHT_BODY_F07		EQU 0x1A0E
 CV_1BA4		EQU 0x1BA4
-CV_1D78		EQU 0x1D78
+CV_FIGURE_WALK_RIGHT_BODY_F08		EQU 0x1D78
 CV_1BD4		EQU 0x1BD4
-CV_1D9A		EQU 0x1D9A
-CV_1DBC		EQU 0x1DBC
-CV_1DDE		EQU 0x1DDE
-CV_1E00		EQU 0x1E00
-CV_1E22		EQU 0x1E22
-CV_1E44		EQU 0x1E44
-CV_1E66		EQU 0x1E66
+CV_FIGURE_WALK_RIGHT_BODY_F09		EQU 0x1D9A
+CV_FIGURE_WALK_RIGHT_BODY_F10		EQU 0x1DBC
+CV_FIGURE_WALK_RIGHT_BODY_F11		EQU 0x1DDE
+CV_FIGURE_WALK_RIGHT_BODY_F12		EQU 0x1E00
+CV_FIGURE_WALK_RIGHT_BODY_F13		EQU 0x1E22
+CV_FIGURE_WALK_RIGHT_BODY_F14		EQU 0x1E44
+CV_FIGURE_WALK_RIGHT_BODY_F15		EQU 0x1E66
 CV_1A54		EQU 0x1A54
 CV_4346		EQU 0x4346
 CV_1C78		EQU 0x1C78
@@ -1068,37 +1068,37 @@ LABEL_0867:
 	db 0x11
 
 DRAW_COMMON_VIDS_148_151_152_153:
-	video type=0, offset=CV_1D78, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F08, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=CV_1D9A, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F09, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=CV_1DBC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F10, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=CV_1DDE, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F11, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=CV_1E00, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F12, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=CV_1E22, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F13, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=CV_1E44, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F14, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=CV_1E66, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F15, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=CV_181C, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F00, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=CV_1866, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F01, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=CV_18B0, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F02, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=CV_18FA, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F03, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=CV_1944, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F04, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=CV_198E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F05, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=CV_19C4, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F06, x=[0x07], y=[0x08], zoom=0x40
 	break
-	video type=0, offset=CV_1A0E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_BODY_F07, x=[0x07], y=[0x08], zoom=0x40
 	break
 	jmp DRAW_COMMON_VIDS_148_151_152_153
 LABEL_08CB:

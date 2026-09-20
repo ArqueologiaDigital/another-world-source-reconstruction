@@ -26,7 +26,7 @@ DEDUP_CAVES_6B_001:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_DRAW_CV204_AT_X07_Y08_L0:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_257A, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F00, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call CAVES_DRAW_CV204_AT_X07_Y08_L1
 	ret
@@ -66,7 +66,7 @@ CAVES_DRAW_CV204_AT_X07_Y08_L2:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_INLINE_DRAW_CV_220_016_L0:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_287E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F06, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call CAVES_INLINE_DRAW_CV_220_016_L1
 	ret
@@ -86,7 +86,7 @@ CAVES_INLINE_DRAW_CV_220_016_L2:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_DRAW_CV224_AT_X07_Y08_L0:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_28F8, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F07, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call CAVES_DRAW_CV224_AT_X07_Y08_L1
 	ret
@@ -106,7 +106,7 @@ CAVES_DRAW_CV224_AT_X07_Y08_L2:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_DRAW_CV224_AT_X07_Y08_L4:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_296E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F08, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call CAVES_INLINE_DRAW_CV_228_018_L0
 	ret
@@ -127,7 +127,7 @@ INLINE_DRAW_CV_228_018:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_INLINE_DRAW_CV_228_018_L2:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2990, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F09, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	add [0x07], 0x0001
 	call CAVES_INLINE_DRAW_CV_228_018_L0
@@ -150,7 +150,7 @@ INLINE_DRAW_CV_220_008:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_INLINE_DRAW_CV_220_017_L0:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_29B2, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F10, x=[0x07], y=[0x08], zoom=0x40
 	call DRAW_BEAST_SUBFRAME_3_VAR09
 	call CAVES_INLINE_DRAW_CV_220_016_L1
 	ret
@@ -370,7 +370,7 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_3_FRAME:
 	add [0x08], 0x0001
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=CV_2552, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=CV_2058, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F02, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, DRAW_CV249_AT_X07_Y08
 	call CAVES_DRAW_CV246_AT_X07_Y08_L2
 	jmp DEDUP_CAVES_5B_007__HELPER
@@ -422,7 +422,7 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_6_FRAME:
 	sub [0x08], 0x0001
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=CV_2548, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=CV_2310, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F05, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, INLINE_DRAW_CV_255_010
 	call CAVES_INLINE_DRAW_CV_255_031_L2
 	jmp DEDUP_CAVES_5B_020
@@ -462,7 +462,7 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_8_FRAME:
 	add [0x08], 0x0001
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
 	video type=0, offset=CV_2552, x=[0x07], y=[0x08], zoom=0x40
-	video type=0, offset=CV_2348, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F07, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, DRAW_CV259_AT_X07_Y08
 	call CAVES_DRAW_CV_355_L9
 	jmp DEDUP_CAVES_5B_007_002
