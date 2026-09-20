@@ -60,6 +60,49 @@ The rules, and why each is there
    role) family the consensus indices should be offset order up to a rotation.
    The probe reports the concordance and refuses a family where it is not.
 
+7. **A draw is credited to the routine whose control flow reaches it**, via
+   `notes/routine-extent/named_routine_draws.py`, not to the nearest preceding
+   label. The first run of this probe used nearest-label and rejected `CV_0358`
+   for having one source when it has three: `PRISON_HERO_STAND_LEFT_DRAW`
+   draws it from a block behind a conditional, which the nearest-label rule
+   files under `LABEL_6DC2`. That bias only ever *loses* sources, so the
+   offsets it accepted stayed sound -- but its rejections did not.
+
+8. **A routine is a source only if it draws at most two distinct shared-bank
+   pictures.** Following control flow (rule 7) reaches further, and that
+   immediately created a failure the nearest-label rule could not have:
+   `PRISON_HERO_STAND_LEFT_TICK` is a per-frame dispatcher that reaches eight
+   walk-left frames, so it began "asserting" STAND about every one of them and
+   turned six settled offsets into disagreements.
+
+   The bound is read off the data rather than picked. Distinct shared-bank
+   pictures per named routine:
+
+       1 picture   182 routines      2 pictures  100      (85.7 % cumulative)
+       3            4                4             3
+       5           12                6             5
+       7            1 (the TICK)     8+           22
+
+   The distribution is bimodal, and the low mode is exactly what a frame is:
+   a body and an arm, drawn together, which `bank_draw_position.py` and the
+   co-draw check established independently. A routine reaching more than that
+   is a dispatcher or a multi-pose loop and is not asserting a pose about any
+   single picture in it.
+
+   The count is over pictures **drawn at the hero's position**, not over
+   `CV_*` symbols. Counting the keys would make the bound decay as the bank
+   gets named: after the first 52 names landed, the TICK's key count fell from
+   seven to two and it came back as a source for the very frames it had just
+   been excluded from. A draw position cannot be renamed.
+
+   It is also taken as the **maximum over every port**, not per file. The same
+   `PRISON_HERO_STAND_LEFT_TICK` reaches 7 hero pictures in msdos/PRISON and
+   only 2 in amiga/PRISON, because the two ports lay the blocks out
+   differently and the amiga walk stops sooner. Judged per file it was
+   excluded on one port and admitted on the other, which let it go on
+   asserting STAND about walk frames. A name that dispatches anywhere is a
+   dispatcher.
+
 Usage
 -----
     python3 notes/shared-bank-geometry/hero_pose_consensus.py
@@ -85,13 +128,16 @@ from polygon_tree import parse_polygon_tree            # noqa: E402
 from polygon_extent import extent                      # noqa: E402
 from naming_census import classify                     # noqa: E402
 from actor_slot import actor_slot_names                # noqa: E402
+sys.path.insert(0, str(HERE.parents[1] / "routine-extent"))
+from named_routine_draws import routine_draws          # noqa: E402
 
 PORTS = {"amiga": "chahi_amiga_1991", "msdos": "dos_1992"}
 STAGES = ["CODE_WHEEL", "INTRO", "LAKE", "PRISON", "CAVES",
           "TANK", "CAPSULE", "ENDING", "PASSCODE"]
 RE_LABEL = re.compile(r"^([A-Za-z_]\w*):")
 RE_EQU = re.compile(r"^(CV_[0-9A-F]{4})\s+EQU\s+(0x[0-9A-Fa-f]+)", re.M)
-RE_DRAW = re.compile(r"offset=(CV_[0-9A-F]{4}),\s*x=(\[?\w+\]?),\s*y=(\[?\w+\]?)")
+RE_DRAW = re.compile(r"offset=(\w+),\s*x=(\[?\w+\]?),\s*y=(\[?\w+\]?)")
+RE_KEY = re.compile(r"^CV_[0-9A-F]{4}$")
 
 # Rule 3: these describe a draw mechanism and carry raw index runs.
 EXCLUDE = re.compile(r"_BUNDLE_|_SHADOW_|_2NDSCR_")
@@ -101,6 +147,8 @@ RE_FOOTSTEP = re.compile(r"_FOOTSTEP_PHASE_\d+$")
 RE_INDEX = re.compile(r"_(?:DRAW|F|POSE|DRAW_PHASE|STRIDE_PHASE)_?(\d+)$")
 RE_MOTION = re.compile(r"_HERO_(WALK|RUN|CRAWL|JUMP|STAND|PRONE|CROUCH)_"
                        r"(LEFT|RIGHT)_")
+# Rule 8; see the module docstring for how this number was chosen.
+MAX_PICTURES_PER_SOURCE = 2
 
 
 def bank() -> bytes:
@@ -117,6 +165,7 @@ def collect():
     pos: dict[str, set] = collections.defaultdict(set)
     by_stage: dict[str, dict[str, set]] = collections.defaultdict(
         lambda: collections.defaultdict(set))
+    drawn_by: dict[tuple, dict] = {}
     for port, br in PORTS.items():
         for stage in STAGES:
             p = SRC / "src" / "levels" / br / f"{stage}.asm"
@@ -126,23 +175,35 @@ def collect():
             xs, ys = actor_slot_names(text)
             for n, v in RE_EQU.findall(text):
                 offs[n] = int(v, 16)
-            cur = None
-            for line in text.splitlines():
-                m = RE_LABEL.match(line)
-                if m:
-                    cur = m.group(1)
-                    continue
-                for cv, x, y in RE_DRAW.findall(line):
-                    bx, by = x.strip("[]"), y.strip("[]")
-                    if bx in xs and by in ys:
-                        pos[cv].add("ACTOR")
-                    elif not x.startswith("["):
-                        pos[cv].add("lit")
-                    else:
-                        pos[cv].add(f"{bx},{by}")
-                    if cur:
-                        by_stage[cv][stage].add(cur)
-    hero = {c for c in pos if pos[c] == {"HERO_X,HERO_Y"}}
+            for cv, x, y in RE_DRAW.findall(text):
+                bx, by = x.strip("[]"), y.strip("[]")
+                if bx in xs and by in ys:
+                    pos[cv].add("ACTOR")
+                elif not x.startswith("["):
+                    pos[cv].add("lit")
+                else:
+                    pos[cv].add(f"{bx},{by}")
+            drawn_by[(port, stage)] = routine_draws(text)
+    hero_art = {c for c, p in pos.items() if p == {"HERO_X,HERO_Y"}}
+    widest: dict[str, int] = collections.Counter()
+    for rds in drawn_by.values():
+        for routine, art in rds.items():
+            n = len({a for a in art if a in hero_art})
+            widest[routine] = max(widest[routine], n)
+    for (_port, stage), rds in drawn_by.items():
+        # Rules 7 and 8: attribution follows control flow, and a routine
+        # reaching more than one frame's worth of hero art is a dispatcher
+        # rather than a source. Counting hero-positioned pictures rather than
+        # CV_ keys keeps the bound from decaying as the bank gets named.
+        for routine, art in rds.items():
+            seen = {a for a in art if a in hero_art}
+            if widest[routine] > MAX_PICTURES_PER_SOURCE:
+                continue
+            for cv in seen:
+                if RE_KEY.match(cv):
+                    by_stage[cv][stage].add(routine)
+    hero = {c for c in pos
+            if pos[c] == {"HERO_X,HERO_Y"} and RE_KEY.match(c)}
     return offs, hero, by_stage
 
 
