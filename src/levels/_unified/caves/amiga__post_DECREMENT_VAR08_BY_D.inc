@@ -816,7 +816,7 @@ LABEL_9AB8:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_114:
-	video type=0, offset=CV_00B4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F10, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -825,7 +825,7 @@ LABEL_9AC7:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_115:
-	video type=0, offset=CV_0128, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F11, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -840,7 +840,7 @@ LABEL_9AE5:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 LABEL_9AEE:
-	video type=0, offset=CV_0234, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F13, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0B, vol=0x22, channel=0x01
 	ret
 
@@ -924,7 +924,7 @@ LABEL_9B9E:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 LABEL_9BA7:
-	video type=0, offset=CV_0814, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x14, vol=0x20, channel=0x01
 	ret
 
@@ -934,7 +934,7 @@ LABEL_9BB3:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_110:
-	video type=0, offset=CV_0844, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -950,7 +950,7 @@ LABEL_9BD4:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_112:
-	video type=0, offset=CV_08A0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 

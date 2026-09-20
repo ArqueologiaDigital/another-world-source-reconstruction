@@ -758,7 +758,7 @@ CAPSULE_HERO_WALK_LEFT_DRAW_13:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_HERO_WALK_LEFT_FOOTSTEP_PHASE_2:
-	video type=0, offset=CV_0234, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F13, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0B, vol=0x22, channel=0x01
 	ret
 
@@ -871,7 +871,7 @@ CAPSULE_HERO_WALK_LEFT_DRAW_5:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV070_PLAY_60_F14_V20_C1:
-	video type=0, offset=CV_0814, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x14, vol=0x20, channel=0x01
 	ret
 

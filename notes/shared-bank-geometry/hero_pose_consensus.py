@@ -196,8 +196,18 @@ RE_KEY = re.compile(r"^CV_[0-9A-F]{4}$")
 
 # Rule 3: these describe a draw mechanism and carry raw index runs.
 EXCLUDE = re.compile(r"_BUNDLE_|_SHADOW_|_2NDSCR_")
-# Rule 4: a footfall counter, not a frame ordinal.
-RE_FOOTSTEP = re.compile(r"_FOOTSTEP_PHASE_\d+$")
+# Rule 4: a number that counts something other than frames. A footfall
+# counter, and a "stop after phase N" whose N is the phase it stops AFTER
+# rather than the frame it draws.
+#
+# The second one is not a nicety. CAVES_HERO_WALK_LEFT_STOP_AFTER_PHASE_10
+# draws the offset CAPSULE calls DRAW_8, so it contributed a difference of +2
+# where every other CAVES claim in that family differs by +1. The pairwise
+# base calibration requires a single constant difference, saw {1, 2}, gave up
+# and left CAVES uncorrected -- and the whole WALK_LEFT family then read as a
+# disagreement between 14 and 15, 0 and 1, 2 and 3, all the way down. One
+# mis-typed source poisons a family, not just its own offset.
+RE_FOOTSTEP = re.compile(r"_(?:FOOTSTEP_PHASE|STOP_AFTER_PHASE)_\d+$")
 # Frame-ordinal spellings actually present in the tree.
 # A bare `_PHASE_<n>` is left out, and the reason is measured rather than
 # assumed. `phase_base_calibration.py` places each such name between
@@ -221,7 +231,7 @@ RE_FOOTSTEP = re.compile(r"_FOOTSTEP_PHASE_\d+$")
 # `_FOOTSTEP_PHASE_<n>` is a footfall counter, excluded earlier by RE_FOOTSTEP.
 RE_INDEX = re.compile(
     r"_(?:DRAW_PHASE|STRIDE_PHASE|PHASE|DRAW|POSE|F)_?(\d+)"
-    r"(?:_(?:DONE|RET|FRAME|LOOP))?$")
+    r"(?:_(?:DONE|RET|FRAME|LOOP|GUN_LOWERED|GUN_RAISED))?$")
 RE_MOTION = re.compile(r"_(?:HERO|BUDDY|ACTOR|ALIEN|BEAST)_"
                        r"(WALK|RUN|CRAWL|JUMP|STAND|PRONE|CROUCH|SHOOT|FALL)_"
                        r"(LEFT|RIGHT)_")

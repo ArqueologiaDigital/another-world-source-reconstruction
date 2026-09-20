@@ -205,3 +205,47 @@ The 52 hero names applied earlier do not depend on any of this: that map was
 built from the co-draw pairing (15/15 and 10/10) and the complete index runs,
 not from `--proposals`, and `bank_name_offset_consistent.py --map
 hero_sprite_sheet.map` still reports all 52 correct.
+
+## 4. Walk-left body: 15 more, after one contaminated source was found
+
+`WALK_LEFT_BODY` had been stuck at 13 of 15 frames, then briefly collapsed to
+7 with a duplicate index 14. The cause was a single mis-typed source.
+
+`CAVES_HERO_WALK_LEFT_STOP_AFTER_PHASE_10` draws the offset CAPSULE calls
+`DRAW_8`. Its 10 is **the phase it stops after**, not the frame it draws — so
+it contributed a difference of +2 where every other CAVES claim in that
+family differs by +1. The pairwise base calibration needs one constant
+difference, saw `{1, 2}`, gave up, and left CAVES uncorrected. The whole
+family then read as a disagreement between 14 and 15, 0 and 1, 2 and 3, all
+the way down.
+
+**One mis-typed source poisons a family, not just its own offset.** Rule 4
+now excludes `_STOP_AFTER_PHASE_<n>` alongside `_FOOTSTEP_PHASE_<n>`, for the
+same reason: the number counts something that is not frames.
+
+### The two absences, both explained
+
+    F00..F08  12x49/10 20x49 24x49 26x49 26x49 22x49/11 18x49/11 14x41/7 14x49/11
+    F09       --
+    F10..F14  24x49/10 26x49 26x49 22x49/10 18x49/10
+
+**F07** (`CV_0874`, 14x41/7) has one naming source, but two other things put
+it there: it is the only offset in the gap between F06 and F08, and it is
+**short** — 41 tall where its family is 49. Walk-*right*'s F07, named earlier
+from the bundle co-draw, is `12x41/5`: also the short frame, in the same slot,
+in the other direction. A property shared by both directions at the same
+index is not a coincidence in a mirrored animation.
+
+**F09** is not a walk frame. `CV_09F6` (15x50/11) is drawn **alone** — with no
+arm, unlike every frame here — by `HERO_WALK_LEFT_ENTRY` *and*
+`HERO_WALK_RIGHT_ENTRY`. It is the direction-neutral standing frame both
+cycles start from, and it is named `HERO_STAND_NEUTRAL_BODY`. The gap at 9 is
+where a shared frame sits, which is what §2 asks a gap to be explained as.
+
+The width curve corroborates the numbering independently: 12, 20, 24, 26, 26,
+22, 18, 14, 14 … 24, 26, 26, 22, 18 — a stride opening and closing twice, for
+a two-step cycle.
+
+Applied: `HERO_WALK_LEFT_BODY_F00..F14` less `F09`, plus
+`HERO_STAND_NEUTRAL_BODY`. 15 names, `make test` 29/29 and 29/29,
+`--duplicates` still one name per picture.

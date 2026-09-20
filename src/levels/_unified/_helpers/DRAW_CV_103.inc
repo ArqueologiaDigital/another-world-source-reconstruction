@@ -1,3 +1,3 @@
 DRAW_CV_103:
-	video type=0, offset=CV_0790, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret

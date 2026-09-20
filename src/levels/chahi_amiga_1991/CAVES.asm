@@ -989,26 +989,26 @@ CV_53E0		EQU 0x53E0
 CV_5400		EQU 0x5400
 CV_5420		EQU 0x5420
 CV_5444		EQU 0x5444
-CV_037C		EQU 0x037C
+HERO_WALK_LEFT_BODY_F00		EQU 0x037C
 CV_332A		EQU 0x332A
-CV_0764		EQU 0x0764
+HERO_WALK_LEFT_BODY_F01		EQU 0x0764
 CV_3332		EQU 0x3332
-CV_0790		EQU 0x0790
+HERO_WALK_LEFT_BODY_F02		EQU 0x0790
 CV_333A		EQU 0x333A
-CV_07BC		EQU 0x07BC
+HERO_WALK_LEFT_BODY_F03		EQU 0x07BC
 CV_3342		EQU 0x3342
-CV_07E8		EQU 0x07E8
+HERO_WALK_LEFT_BODY_F04		EQU 0x07E8
 CV_334A		EQU 0x334A
-CV_0814		EQU 0x0814
-CV_0844		EQU 0x0844
-CV_0874		EQU 0x0874
-CV_08A0		EQU 0x08A0
+HERO_WALK_LEFT_BODY_F05		EQU 0x0814
+HERO_WALK_LEFT_BODY_F06		EQU 0x0844
+HERO_WALK_LEFT_BODY_F07		EQU 0x0874
+HERO_WALK_LEFT_BODY_F08		EQU 0x08A0
 CV_0020		EQU 0x0020
-CV_00B4		EQU 0x00B4
-CV_0128		EQU 0x0128
-CV_01B0		EQU 0x01B0
-CV_0234		EQU 0x0234
-CV_02AC		EQU 0x02AC
+HERO_WALK_LEFT_BODY_F10		EQU 0x00B4
+HERO_WALK_LEFT_BODY_F11		EQU 0x0128
+HERO_WALK_LEFT_BODY_F12		EQU 0x01B0
+HERO_WALK_LEFT_BODY_F13		EQU 0x0234
+HERO_WALK_LEFT_BODY_F14		EQU 0x02AC
 CV_331A		EQU 0x331A
 CV_FIGURE_PROFILE_STRIDE		EQU 0x40EC
 CV_2B0E		EQU 0x2B0E
@@ -1242,7 +1242,7 @@ CV_36D2		EQU 0x36D2
 CV_5C54		EQU 0x5C54
 CV_3858		EQU 0x3858
 CV_15DC		EQU 0x15DC
-CV_09F6		EQU 0x09F6
+HERO_STAND_NEUTRAL_BODY		EQU 0x09F6
 
 
 	org 0x0000
@@ -16226,7 +16226,7 @@ LABEL_9AB8:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_114:
-	video type=0, offset=CV_00B4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F10, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -16235,7 +16235,7 @@ LABEL_9AC7:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_115:
-	video type=0, offset=CV_0128, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F11, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -16244,7 +16244,7 @@ LABEL_9AD6:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_116:
-	video type=0, offset=CV_01B0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F12, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -16253,7 +16253,7 @@ LABEL_9AE5:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 LABEL_9AEE:
-	video type=0, offset=CV_0234, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F13, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0B, vol=0x22, channel=0x01
 	ret
 
@@ -16267,7 +16267,7 @@ LABEL_9B08:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_118:
-	video type=0, offset=CV_02AC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F14, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -16294,7 +16294,7 @@ LABEL_9B39:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_099:
-	video type=0, offset=CV_037C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -16307,7 +16307,7 @@ LABEL_9B50:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_101:
-	video type=0, offset=CV_0764, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -16320,7 +16320,7 @@ LABEL_9B67:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_103:
-	video type=0, offset=CV_0790, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -16333,7 +16333,7 @@ LABEL_9B7E:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_105:
-	video type=0, offset=CV_07BC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -16346,7 +16346,7 @@ LABEL_9B95:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_107:
-	video type=0, offset=CV_07E8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -16355,7 +16355,7 @@ LABEL_9B9E:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 LABEL_9BA7:
-	video type=0, offset=CV_0814, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x14, vol=0x20, channel=0x01
 	ret
 
@@ -16365,7 +16365,7 @@ LABEL_9BB3:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_110:
-	video type=0, offset=CV_0844, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -16375,7 +16375,7 @@ LABEL_9BC2:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_111:
-	video type=0, offset=CV_0874, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -16384,7 +16384,7 @@ LABEL_9BD4:
 	call HERO_GUN_ARM_POSE_LEFT_CASE_01
 
 DRAW_CV_112:
-	video type=0, offset=CV_08A0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -23306,7 +23306,7 @@ LABEL_E40F:
 
 STEP_DRAW_CV352_LEFT4_RIGHT1:
 	sub [HERO_X], 0x0004
-	video type=0, offset=CV_09F6, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_NEUTRAL_BODY, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
 	break
 
@@ -23423,7 +23423,7 @@ LABEL_E53F:
 
 DRAW_CV352_STEP_RIGHT3:
 	add [HERO_X], 0x0000
-	video type=0, offset=CV_09F6, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_NEUTRAL_BODY, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0003
 	break
 

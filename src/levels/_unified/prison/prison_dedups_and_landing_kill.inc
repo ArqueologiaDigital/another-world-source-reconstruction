@@ -190,7 +190,7 @@ PRISON_DRAW_CV_077_L0:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV_078:
-	video type=0, offset=CV_0234, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F13, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -302,7 +302,7 @@ PRISON_DRAW_CV_069_L0:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV_070:
-	video type=0, offset=CV_0814, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_WALK_LEFT_BODY_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
