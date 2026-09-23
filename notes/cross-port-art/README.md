@@ -199,8 +199,11 @@ wrong are all one family, and they are wrong in a shape:
   amiga ..._ZOOM_IN_LEFT_2                        vs  msdos ..._ZOOM_IN_RIGHT_11
 ```
 
-`canonical_md5` on those pairs: **0 same, 27 different**. The sites really are
-aligned; the pictures drawn there are not the same pictures. Which is obvious
+`canonical_md5` disagrees at every one of the 44. The tool's own control
+splits the both-named sites by whether the art matches, and the
+`same art / DISAGREE` bucket is **empty**: every wrong answer is a site where
+the two ports draw different pictures. The sites really are aligned; the
+pictures drawn there are not the same pictures. Which is obvious
 in hindsight -- a chunk is branch-scoped *because* the branches differ in it,
 and two different pictures at the same x, y and zoom pass an argument check
 unchanged.

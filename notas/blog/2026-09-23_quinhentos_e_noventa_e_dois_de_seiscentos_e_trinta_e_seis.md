@@ -80,8 +80,10 @@ assim:
 ```
 
 Numeração invertida e `LEFT`/`RIGHT` trocados. Parece um erro de nomeação de
-alguém — até rodar o `canonical_md5` nesses pares: **0 iguais, 27
-diferentes**.
+alguém — até separar os sítios pelo `canonical_md5`. A sonda divide o próprio
+controle em dois baldes, arte igual e arte diferente, e o balde
+**arte igual / discordam** fica vazio: as 44 respostas erradas estão todas em
+sítios onde as duas versões desenham figuras diferentes.
 
 Os sítios estão alinhados. As figuras desenhadas neles não são as mesmas
 figuras.
@@ -114,7 +116,7 @@ O número que ficou pior — 138 transferíveis viraram 19 — é o número hone
 
 As 44 discordâncias de `PRISON_CUTSCENE_ZOOM_IN_*` são um conflito de verdade,
 não ruído. As duas versões estão numeradas a partir de pontas opostas, com
-`LEFT` e `RIGHT` trocados, `LEFT_n` contra `RIGHT_(13-n)`. A arte difere, então
+`LEFT` e `RIGHT` trocados, `LEFT_n` contra `RIGHT_(13-n)`. A arte difere nos 44, então
 as duas podem estar certas sobre a própria versão — mas ninguém conferiu, e a
 sonda que achou isso é por onde começar.
 
