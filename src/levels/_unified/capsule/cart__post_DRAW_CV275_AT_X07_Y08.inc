@@ -272,7 +272,7 @@ LABEL_82FC:
 	jmp LABEL_8324
 
 LABEL_831F:
-	video type=0, offset=CV_6108, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_8324:
 	add [BUDDY_Y], 0x0001

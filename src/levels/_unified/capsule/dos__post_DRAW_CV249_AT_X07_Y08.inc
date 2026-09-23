@@ -14,7 +14,7 @@ CAPSULE_ACTOR_RUN_RIGHT_DRAW_3:
 	jmp LABEL_8340
 
 LABEL_833B:
-	video type=0, offset=CV_2200, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_8340:
 	sub [BUDDY_Y], 0x0001
@@ -31,7 +31,7 @@ LABEL_8345:
 	jmp LABEL_8369
 
 LABEL_8364:
-	video type=0, offset=CV_2212, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_8369:
 	ret
@@ -48,7 +48,7 @@ CAPSULE_ACTOR_RUN_RIGHT_DRAW_5:
 	jmp LABEL_8392
 
 LABEL_838D:
-	video type=0, offset=CV_2212, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_8392:
 	add [BUDDY_Y], 0x0001
@@ -65,7 +65,7 @@ LABEL_8397:
 	jmp LABEL_83BB
 
 LABEL_83B6:
-	video type=0, offset=CV_2200, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_83BB:
 	ret

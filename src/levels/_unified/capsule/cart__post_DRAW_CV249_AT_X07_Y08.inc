@@ -14,7 +14,7 @@ LABEL_8381:
 	jmp LABEL_83A9
 
 LABEL_83A4:
-	video type=0, offset=CV_2200, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_83A9:
 	sub [BUDDY_Y], 0x0001
@@ -31,7 +31,7 @@ LABEL_83AE:
 	jmp LABEL_83D2
 
 LABEL_83CD:
-	video type=0, offset=CV_2212, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_83D2:
 	ret
@@ -48,7 +48,7 @@ LABEL_83D3:
 	jmp LABEL_83FB
 
 LABEL_83F6:
-	video type=0, offset=CV_2212, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_83FB:
 	add [BUDDY_Y], 0x0001
@@ -65,7 +65,7 @@ LABEL_8400:
 	jmp LABEL_8424
 
 LABEL_841F:
-	video type=0, offset=CV_2200, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_8424:
 	ret

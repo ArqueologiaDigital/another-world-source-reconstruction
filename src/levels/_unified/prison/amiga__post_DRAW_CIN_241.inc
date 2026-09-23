@@ -948,4 +948,4 @@ LABEL_5C00:
 	jmp DEDUP_CAVES_5B_020__HELPER
 
 LABEL_5C29:
-	video type=0, offset=CV_6108, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40

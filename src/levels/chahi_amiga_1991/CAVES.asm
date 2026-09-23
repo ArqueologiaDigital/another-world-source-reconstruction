@@ -1089,23 +1089,23 @@ CV_2A7E		EQU 0x2A7E
 CV_5FBC		EQU 0x5FBC
 CV_2566		EQU 0x2566
 CV_FIGURE_RUN_RIGHT_BODY_F00		EQU 0x1F70
-CV_6108		EQU 0x6108
+CV_FIGURE_RUN_RIGHT_UPPER_POSE_00		EQU 0x6108
 CV_255C		EQU 0x255C
 CV_FIGURE_RUN_RIGHT_BODY_F01		EQU 0x1FE4
-CV_21A8		EQU 0x21A8
+CV_FIGURE_RUN_RIGHT_UPPER_POSE_01		EQU 0x21A8
 CV_2552		EQU 0x2552
 CV_FIGURE_RUN_RIGHT_BODY_F02		EQU 0x2058
-CV_21D6		EQU 0x21D6
+CV_FIGURE_RUN_RIGHT_UPPER_POSE_02		EQU 0x21D6
 CV_2548		EQU 0x2548
 CV_FIGURE_RUN_RIGHT_BODY_F03		EQU 0x20B8
-CV_2200		EQU 0x2200
+CV_FIGURE_RUN_RIGHT_UPPER_POSE_03		EQU 0x2200
 CV_2570		EQU 0x2570
 CV_FIGURE_RUN_RIGHT_BODY_F04		EQU 0x2134
-CV_2212		EQU 0x2212
+CV_FIGURE_RUN_RIGHT_UPPER_POSE_04		EQU 0x2212
 CV_FIGURE_RUN_RIGHT_BODY_F05		EQU 0x2310
 CV_FIGURE_RUN_RIGHT_BODY_F06		EQU 0x232C
 CV_FIGURE_RUN_RIGHT_BODY_F07		EQU 0x2348
-CV_224C		EQU 0x224C
+CV_FIGURE_RUN_RIGHT_UPPER_POSE_05		EQU 0x224C
 CV_2364		EQU 0x2364
 CV_2276		EQU 0x2276
 CV_2380		EQU 0x2380
@@ -4009,13 +4009,13 @@ LABEL_1D69:
 	killChannel
 	video offset=CINEMATIC_261, x=65506, y=114
 	break
-	video type=0, offset=CV_21A8, x=160, y=100, zoom=0x40
-	video type=0, offset=CV_21D6, x=180, y=100, zoom=0x40
-	video type=0, offset=CV_2200, x=200, y=100, zoom=0x40
-	video type=0, offset=CV_2212, x=220, y=100, zoom=0x40
-	video type=0, offset=CV_224C, x=240, y=100, zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_01, x=160, y=100, zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_02, x=180, y=100, zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_03, x=200, y=100, zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_04, x=220, y=100, zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_05, x=240, y=100, zoom=0x40
 	video type=0, offset=CV_2276, x=260, y=100, zoom=0x40
-	video type=0, offset=CV_6108, x=280, y=100, zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_00, x=280, y=100, zoom=0x40
 	break
 	video offset=CINEMATIC_261, x=121, y=118
 	break
@@ -14392,7 +14392,7 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_1_FRAME:
 	jmp DEDUP_CAVES_5B_020__HELPER
 
 LABEL_8927:
-	video type=0, offset=CV_6108, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_00, x=[0x07], y=[0x08], zoom=0x40
 
 DEDUP_CAVES_5B_020__HELPER:
 	add [0x08], 0x0001
@@ -14409,7 +14409,7 @@ LABEL_8931:
 	jmp LABEL_8955
 
 LABEL_8950:
-	video type=0, offset=CV_21A8, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_01, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_8955:
 	ret
@@ -14426,7 +14426,7 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_3_FRAME:
 	jmp DEDUP_CAVES_5B_007__HELPER
 
 LABEL_8979:
-	video type=0, offset=CV_21D6, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_02, x=[0x07], y=[0x08], zoom=0x40
 
 DEDUP_CAVES_5B_007__HELPER:
 	sub [0x08], 0x0001
@@ -14444,7 +14444,7 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_4_FRAME:
 	jmp DEDUP_CAVES_5B_007_001
 
 LABEL_89A6:
-	video type=0, offset=CV_2200, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_03, x=[0x07], y=[0x08], zoom=0x40
 
 DEDUP_CAVES_5B_007_001:
 	sub [0x08], 0x0001
@@ -14461,7 +14461,7 @@ LABEL_89B0:
 	jmp LABEL_89D4
 
 LABEL_89CF:
-	video type=0, offset=CV_2212, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_04, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_89D4:
 	ret
@@ -14478,7 +14478,7 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_6_FRAME:
 	jmp DEDUP_CAVES_5B_020
 
 LABEL_89F8:
-	video type=0, offset=CV_2212, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_04, x=[0x07], y=[0x08], zoom=0x40
 
 DEDUP_CAVES_5B_020:
 	add [0x08], 0x0001
@@ -14495,7 +14495,7 @@ LABEL_8A02:
 	jmp LABEL_8A26
 
 LABEL_8A21:
-	video type=0, offset=CV_2200, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_03, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_8A26:
 	ret
@@ -14512,7 +14512,7 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_8_FRAME:
 	jmp DEDUP_CAVES_5B_007_002
 
 LABEL_8A4A:
-	video type=0, offset=CV_224C, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_05, x=[0x07], y=[0x08], zoom=0x40
 
 DEDUP_CAVES_5B_007_002:
 	sub [0x08], 0x0001
@@ -14548,7 +14548,7 @@ LABEL_8A81:
 	jmp INCREMENT_VAR07_BY_1
 
 LABEL_8AA4:
-	video type=0, offset=CV_6108, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_00, x=[0x07], y=[0x08], zoom=0x40
 
 INCREMENT_VAR07_BY_1:
 	add [0x07], 0x0001

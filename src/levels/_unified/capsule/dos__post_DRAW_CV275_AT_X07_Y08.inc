@@ -272,7 +272,7 @@ CAPSULE_ACTOR_RUN_RIGHT_DRAW_0:
 	jmp LABEL_82BB
 
 LABEL_82B6:
-	video type=0, offset=CV_6108, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_82BB:
 	add [BUDDY_Y], 0x0001

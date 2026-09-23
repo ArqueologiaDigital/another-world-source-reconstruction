@@ -8,7 +8,7 @@ LABEL_5D0A:
 	jmp LABEL_5D2E
 
 LABEL_5D29:
-	video type=0, offset=CV_2200, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_5D2E:
 	ret
@@ -25,4 +25,4 @@ LABEL_5D2F:
 	jmp DEDUP_CAVES_5B_007_002
 
 LABEL_5D52:
-	video type=0, offset=CV_224C, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_05, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40

@@ -1,0 +1,46 @@
+# The actor's upper piece through the right-facing run: 6 poses, 8 frames.
+#
+# Found by ../gun-arm-dispatch/guarded_companions.py. Each run frame draws its
+# already-named body and then guards this piece:
+#
+#   video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F03, x=[0x07], ...
+#   je [0x0D], 0x00, <draws the piece>
+#
+# Note `je ... 0x00`: drawn in the variable's ZERO state, the opposite sense
+# from the hero's `jne [0x0A], 0x00` armed guard, so this is not a gun arm and
+# is not named as one.
+#
+# The frame comes from the art, not from a routine name: a routine drawing
+# exactly one CV_FIGURE_RUN_RIGHT_BODY_F<n> plus a guarded piece fixes the
+# frame. Frames 0..7 are covered with no gap.
+#
+# UPPER, not LIMB, and the difference is measured rather than asserted. Two
+# bands, 12 units apart, with the leaf count agreeing:
+#
+#     top -52.0..-53.5, 2..4 leaves   this series, and the 9-piece
+#                                     walk-right series in README.md
+#     top -39.5..-40.5, exactly 1     the committed CV_FIGURE_WALK_<DIR>_
+#                                     LIMB_POSE_00..03
+#
+# Against a body spanning -56..0, a piece topping out at -52 with a bottom
+# swinging between -24 and -35.5 is attached high and hangs free. That is
+# positional evidence; it is still not called an ARM, because this note
+# reserves that for the actor pending confirmation and a better argument for
+# the same shape is not confirmation.
+#
+# POSE, not F: CV_2200 and CV_2212 each serve two frames, so no member has a
+# single frame number. Ordered by ascending first frame.
+#
+# CV_2276 is held. It belongs to the series by every other sign -- same band,
+# and LABEL_1918 in CAPSULE (live, via `setup channel=0x38`) draws all seven
+# in a row at y=100, x=160..280, spaced 20 apart -- but it is drawn at the
+# actor slot only by unnamed labels with no body frame beside it, so it has no
+# frame and cannot be placed. That row is ascending by offset and disagrees
+# with the frame order (CV_6108 is frame 0 but last), so it groups the series
+# without ordering it.
+CV_6108 CV_FIGURE_RUN_RIGHT_UPPER_POSE_00
+CV_21A8 CV_FIGURE_RUN_RIGHT_UPPER_POSE_01
+CV_21D6 CV_FIGURE_RUN_RIGHT_UPPER_POSE_02
+CV_2200 CV_FIGURE_RUN_RIGHT_UPPER_POSE_03
+CV_2212 CV_FIGURE_RUN_RIGHT_UPPER_POSE_04
+CV_224C CV_FIGURE_RUN_RIGHT_UPPER_POSE_05

@@ -430,7 +430,7 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_6_FRAME:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_255_010:
-	video type=0, offset=CV_2212, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_04, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 
@@ -449,7 +449,7 @@ DEDUP_CAVES_5B_020:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_252_018:
-	video type=0, offset=CV_2200, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_03, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -506,7 +506,7 @@ DEDUP_CAVES_5B_007_003:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_243_012:
-	video type=0, offset=CV_6108, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_00, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 

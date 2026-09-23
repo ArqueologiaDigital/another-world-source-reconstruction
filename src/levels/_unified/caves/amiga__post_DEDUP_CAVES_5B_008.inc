@@ -8,7 +8,7 @@ LABEL_89B0:
 	jmp LABEL_89D4
 
 LABEL_89CF:
-	video type=0, offset=CV_2212, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_04, x=[0x07], y=[0x08], zoom=0x40
 
 LABEL_89D4:
 	ret
@@ -25,4 +25,4 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_6_FRAME:
 	jmp DEDUP_CAVES_5B_020
 
 LABEL_89F8:
-	video type=0, offset=CV_2212, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_04, x=[0x07], y=[0x08], zoom=0x40

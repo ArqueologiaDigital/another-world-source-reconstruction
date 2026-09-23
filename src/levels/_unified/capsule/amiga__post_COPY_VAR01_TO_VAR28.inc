@@ -1370,7 +1370,7 @@ CAPSULE_ACTOR_RUN_RIGHT_DRAW_0:
 	jmp LABEL_69C4
 
 LABEL_69BF:
-	video type=0, offset=CV_6108, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_69C4:
 	add [BUDDY_Y], 0x0001
@@ -1387,7 +1387,7 @@ LABEL_69C9:
 	jmp LABEL_69ED
 
 LABEL_69E8:
-	video type=0, offset=CV_21A8, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_69ED:
 	ret
@@ -1404,7 +1404,7 @@ CAPSULE_ACTOR_RUN_RIGHT_DRAW_2:
 	jmp LABEL_6A16
 
 LABEL_6A11:
-	video type=0, offset=CV_21D6, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_6A16:
 	sub [BUDDY_Y], 0x0001
@@ -1422,7 +1422,7 @@ CAPSULE_ACTOR_RUN_RIGHT_DRAW_3:
 	jmp LABEL_6A43
 
 LABEL_6A3E:
-	video type=0, offset=CV_2200, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_6A43:
 	sub [BUDDY_Y], 0x0001
@@ -1439,7 +1439,7 @@ LABEL_6A48:
 	jmp LABEL_6A6C
 
 LABEL_6A67:
-	video type=0, offset=CV_2212, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_6A6C:
 	ret
@@ -1456,7 +1456,7 @@ CAPSULE_ACTOR_RUN_RIGHT_DRAW_5:
 	jmp LABEL_6A95
 
 LABEL_6A90:
-	video type=0, offset=CV_2212, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_6A95:
 	add [BUDDY_Y], 0x0001
@@ -1473,7 +1473,7 @@ LABEL_6A9A:
 	jmp LABEL_6ABE
 
 LABEL_6AB9:
-	video type=0, offset=CV_2200, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_6ABE:
 	ret
@@ -1490,7 +1490,7 @@ CAPSULE_ACTOR_RUN_RIGHT_DRAW_7:
 	jmp LABEL_6AE7
 
 LABEL_6AE2:
-	video type=0, offset=CV_224C, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_05, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_6AE7:
 	sub [BUDDY_Y], 0x0001
@@ -1526,4 +1526,4 @@ LABEL_6B19:
 	jmp INCREMENT_VAR07_BY_1
 
 LABEL_6B3C:
-	video type=0, offset=CV_6108, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40

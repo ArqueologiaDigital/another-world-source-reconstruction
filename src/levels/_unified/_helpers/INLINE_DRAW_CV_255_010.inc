@@ -1,2 +1,2 @@
 INLINE_DRAW_CV_255_010__HELPER:
-	video type=0, offset=CV_2212, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_04, x=[0x07], y=[0x08], zoom=0x40
