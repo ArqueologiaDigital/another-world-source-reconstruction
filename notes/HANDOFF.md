@@ -28,7 +28,8 @@ As of the last commit:
 | priority-port assets named | 63.8% (6,474/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
-| shared-bank keys still unnamed | 53 of 352 (35 reachable) | `notes/shared-bank-geometry/` |
+| shared-bank keys still unnamed | 53, blocking 302 drawing labels | `shared-bank-geometry/blocked_by_bank.py` |
+| named keys agreeing with their drawers' unanimous claim | 152 of 158 | `shared-bank-geometry/blocked_by_bank.py --claims` |
 | draw-only labels agreeing with their picture | 212, 0 nameable left, 0 contradicting | `label_vs_constant.py` |
 | routines naming a gait and drawing another's sheet | 0 (was 30) | `motion-word-audit/piece_family_vs_label.py` |
 | shot-impact ladders complete | 18 of 18 (3 stages x 2 directions x 3 branches) | `impact_ladder.py` |
@@ -285,25 +286,32 @@ for it whenever two draws share an anchor.
      unchanged. A name making two different motion claims is refused, not
      guessed.
 
-   * **Token-order gap, closed 2026-09-23.** `motion_of` read the motion
-     word immediately BEFORE the direction and nothing else, so 13 names that
-     put every motion word after it yielded no claim at all — including the
-     whole `BUDDY_<DIR>_FIRE_{AIM,RECOIL,RECOVER}_PHASE_<n>` family. It now
-     reads the token immediately AFTER the direction when none precedes it.
-     Strict adjacency both ways, and the strictness is what makes it safe: it
-     takes the 6 BUDDY fire names and the 2 `HERO_<DIR>_CROUCH_KICK_LOOP`,
-     and refuses the other 5 by itself, because
-     `HERO_LEFT_ACTION_JOIN_WALK_OR_STAND` is two claims and
-     `CAPSULE_ACTOR_FACE_LEFT_THEN_RUN` has `THEN` in the adjacent slot — a
-     direction that belongs to facing rather than moving is exactly what must
-     not be read, and adjacency refuses it without being told about `FACE`.
+   * **Token-order: tested 2026-09-23 and REJECTED, after I applied it.**
+     `motion_of` reads the motion word immediately BEFORE the direction, so
+     the 13 names that put every motion word after it yield no claim --
+     including the whole `BUDDY_<DIR>_FIRE_{AIM,RECOIL,RECOVER}_PHASE_<n>`
+     family, five shared-bank keys that 302 drawing labels wait on. I changed
+     it to read the adjacent token after the direction, committed that, and
+     it is wrong.
 
-     It named nothing directly. What it did was make an exclusion principled:
-     `CV_2570` and `CV_3212` now carry **two** claims, `RUN` and `SHOOT`, so
-     `subpiece_poses.py` drops them on the existing one-claim rule instead of
-     on a layout heuristic. `piece_family_vs_label.py`,
-     `crawl_one_cycle_two_labels.py`, `phase_base_calibration.py`,
-     `unreachable_guarded_art.py` and `motion_vs_drawer.py` all still exit 0.
+     All **6** of the BUDDY names it takes draw shared-bank art whose signed
+     bounding box points the OPPOSITE way from the direction in their name:
+     `BUDDY_LEFT_FIRE_RECOVER_PHASE_4` draws `CV_FIGURE_CROUCH_FACING_RIGHT`,
+     spanning x −5.5..+28.0. Six for six is not six errors in the art names;
+     it means `<DIR>` there does not denote the figure's facing. The other 2
+     names draw no bank art. **0 agree with the art, 6 contradict it.**
+
+     So the adjacency requirement in `motion_of` is not an oversight, it is
+     load-bearing. `hero_pose_consensus.py --token-order` is the measurement
+     and the docstring says so.
+
+     Two things the earlier commit `94e7b39c` claims are therefore **wrong**
+     and are corrected here: it says the change "made an exclusion
+     principled" because `CV_2570` and `CV_3212` gained two claims — after
+     the revert they are excluded by `subpiece_poses.py`'s layout cut again,
+     which is where they were — and it reports the dependent probes passing,
+     which they did, because none of them was checking the claim against the
+     art.
 
    * **Vocabulary gap, closed.** `AIM`, `FIRE` and `SHOT` were missing.
      `FIRE` and `SHOT` are one action — the routines containing each draw
@@ -428,7 +436,7 @@ reproduce the 69 / 489 / 396 counts its README quotes.
 
 ### This session's scratch, adjudicated
 
-Six new files. All disposable, and each superseded by something committed in
+Seven new files. All disposable, and each superseded by something committed in
 the same session rather than merely judged unimportant:
 
 | script | verdict | why |
@@ -437,6 +445,14 @@ the same session rather than merely judged unimportant:
 | `first_room.md` | **disposable** | A rejected one-row table — the applier refused it because the name was still on another routine. Its corrected successor is committed as `notes/backdrop-drawer/corrections/03_*`. |
 | `fix_a.md` .. `fix_d.md` | **rescued** | These carried the evidence for four hand-applied corrections quoted in a commit. Committed as `notes/backdrop-drawer/corrections/`, with a README giving the order they must be applied in. |
 | `st_noshape.py` | **rescued as a flag** | It produced the "21 of 27" that `notes/frame-label-siblings/README.md` quotes. Now `sibling_template.py --no-shape`, so the rejected rule stays re-runnable by whoever wants to check the rejection. |
+| `hpc_before.py` | **disposable** | A copy of `hero_pose_consensus.py` taken before editing it, so the edit could be compared. `git show` does that from history, and the edit has since been reverted anyway. It produced no number. |
+| `split.py`, `split2.py`, `dm.py` | **disposable** | Written earlier the same day. The first two are the hand-written predecessors of `notes/proposal-tables/split_by_branch_stage.py`, which was committed to replace exactly them and carries `tests/run.sh`. `dm.py` writes five demotion tables from hardcoded rows — it formats text and measures nothing, and its output is committed as `notes/screen-scope/demote_*.md`. |
+
+The three ad-hoc heredoc measurements this session published *without* a file
+behind them have producers now: `blocked_by_bank.py` for the 53-keys/302-labels
+leverage figure and the 152-of-158 drawer control, and
+`hero_pose_consensus.py --token-order` for the 823/13 split and the six-for-six
+contradiction that rejected the parser change.
 
 The remaining numbers this session published all have committed producers:
 `backdrop_drawer.py` for the 139/139 control, the 0/312 layer audit and the

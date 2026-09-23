@@ -281,12 +281,22 @@ def motion_of(name: str):
     the SAME twelve frames. Under the old adjacency rule the PRISON name
     contributed nothing and the agreement was invisible.
 
-    When no motion word precedes the direction, the token IMMEDIATELY after
-    it is read instead -- `BUDDY_LEFT_FIRE_RECOIL_PHASE_3`. Strict adjacency
-    both ways; see the comment in the body for the five names this refuses.
+    A motion word AFTER the direction is deliberately not read, and
+    `--token-order` is the measurement that says why. 13 names in the tree put
+    every motion word after the direction, and reading the adjacent one looks
+    safe -- it takes the 6 `BUDDY_<DIR>_FIRE_<phase>` names and refuses the
+    ambiguous ones by itself. It is not safe. All 6 draw shared-bank art whose
+    signed bounding box points the OPPOSITE way from the direction token:
+    `BUDDY_LEFT_FIRE_RECOVER_PHASE_4` draws `CV_FIGURE_CROUCH_FACING_RIGHT`,
+    spanning x -5.5..+28.0. Six for six is not an error in the art names, it
+    means `<DIR>` there does not denote the figure's facing, and a rule that
+    reads it as facing produces six wrong claims and no right ones.
+
+    So the adjacency requirement is not an oversight in this parser. It is
+    load-bearing, and this docstring is the place that says so.
 
     Returns None when the name carries no subject, no direction, or no motion
-    word adjacent to the direction. Ambiguity is not resolved by guessing: if two
+    word before the direction. Ambiguity is not resolved by guessing: if two
     DIFFERENT motion words sit immediately before two different directions,
     the name is making two claims and gets none.
     """
@@ -302,24 +312,7 @@ def motion_of(name: str):
         before = [m for m in rest[:i] if m in MOTIONS]
         if before:
             claims.append((before[-1], w))
-        elif i + 1 < len(rest) and rest[i + 1] in MOTIONS:
-            # Nothing before the direction, and the very next token is the
-            # motion: `BUDDY_LEFT_FIRE_RECOIL_PHASE_3`. 13 names in the tree
-            # put every motion word after the direction, and reading them was
-            # costing the whole BUDDY fire family -- five shared-bank keys
-            # that 67 drawing labels wait on.
-            #
-            # STRICT adjacency, the mirror of the rule above, and the
-            # strictness is what makes it safe. It takes the 6 BUDDY
-            # `<DIR>_FIRE_<phase>` names and the 2
-            # `HERO_<DIR>_CROUCH_KICK_LOOP`, and refuses the other 5 by
-            # itself: `HERO_LEFT_ACTION_JOIN_WALK_OR_STAND` is genuinely two
-            # claims and `CAPSULE_ACTOR_FACE_LEFT_THEN_RUN` has `THEN` in the
-            # adjacent slot, so neither yields a motion. A name whose
-            # direction belongs to something else -- facing, not moving -- is
-            # exactly what must not be read, and the adjacency test refuses it
-            # without being told about `FACE`.
-            claims.append((rest[i + 1], w))
+
     if not claims:
         return None
     claims = [(SYNONYM.get(m, m), d) for m, d in claims]
@@ -331,6 +324,101 @@ MAX_PICTURES_PER_SOURCE = 2
 # Set by --subject before collect() runs. A list so it is mutable at module
 # scope without a global statement in every function that reads it.
 SUBJECT = ["hero"]
+
+
+RE_ANY_LBL = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*):\s*$")
+RE_T0 = re.compile(r"^\s*video\s+type=0,\s*offset=([A-Za-z_][A-Za-z0-9_]*)")
+
+
+def token_order():
+    """Why a motion word AFTER the direction is not read. A rejected rule.
+
+    `motion_of` takes the motion word immediately BEFORE the direction. The
+    obvious complaint is that this silently drops every name spelled the other
+    way round, and it does: measured over the whole tree, 823 names put a
+    motion word before a direction and **13** put every one of them after.
+
+    Reading the adjacent one looks safe. It yields the 6
+    `BUDDY_<DIR>_FIRE_{AIM,RECOIL,RECOVER}_PHASE_<n>` names -- five shared-bank
+    keys that 302 drawing labels wait on -- and refuses the ambiguous rest by
+    itself, because `HERO_LEFT_ACTION_JOIN_WALK_OR_STAND` is two claims and
+    `CAPSULE_ACTOR_FACE_LEFT_THEN_RUN` has `THEN` in the adjacent slot.
+
+    It is wrong. Every one of those 6 draws shared-bank art whose signed
+    bounding box points the OPPOSITE way from the direction token in its name.
+    Six for six is not six mistakes in the art names; it means `<DIR>` in
+    `BUDDY_<DIR>_FIRE_*` does not denote the figure's facing, and a rule that
+    reads it as facing produces six wrong claims and no right ones. The other
+    2 names it would take draw no bank art at all.
+
+    The signed bbox is the arbiter here for the same reason it was for the
+    teleport beams and `../lake-shooting/`: a figure facing left extends to
+    the left of its draw anchor, and that is a property of the bytes rather
+    than of anyone's vocabulary.
+    """
+    lvl = ARCH.parent / "another-world-source-reconstruction" / "src" / "levels"
+    if not lvl.is_dir():
+        lvl = Path(__file__).resolve().parents[2] / "src" / "levels"
+    names, body, equ = set(), collections.defaultdict(list), {}
+    for f in sorted(lvl.glob("*/*.asm")):
+        cur = None
+        txt = f.read_text(errors="replace")
+        for n, v in re.findall(r"^(CV_[A-Za-z0-9_]+)\s+EQU\s+(0x[0-9A-Fa-f]+)",
+                               txt, re.M):
+            equ[n] = int(v, 16)
+        for line in txt.splitlines():
+            m = RE_ANY_LBL.match(line)
+            if m:
+                cur = m.group(1)
+                names.add(cur)
+                continue
+            t = RE_T0.match(line)
+            if t and cur:
+                body[cur].append(t.group(1))
+    pre = post = 0
+    after = []
+    for n in sorted(names):
+        tok = n.split("_")
+        si = next((i for i, w in enumerate(tok) if w in SUBJECTS), None)
+        if si is None:
+            continue
+        rest = tok[si + 1:]
+        di = [i for i, w in enumerate(rest) if w in DIRECTIONS]
+        mi = [i for i, w in enumerate(rest) if w in MOTIONS]
+        if not di or not mi:
+            continue
+        if any(m < d for m in mi for d in di):
+            pre += 1
+        elif all(m > d for m in mi for d in di):
+            post += 1
+            if rest[di[0] + 1] in MOTIONS:
+                after.append((n, rest[di[0]], rest[di[0] + 1]))
+    print(f"  {pre} name(s) put a motion word BEFORE a direction -- these are "
+          f"the ones `motion_of` reads")
+    print(f"  {post} put every motion word AFTER it, of which {len(after)} "
+          f"have the motion immediately adjacent\n")
+    b = bank()
+    ok = bad = none = 0
+    for n, direction, motion in after:
+        sides = []
+        for pic in body.get(n, []):
+            if pic not in equ:
+                continue
+            x0, _y0, x1, _y1, _lv = extent(parse_polygon_tree(b, equ[pic]))
+            sides.append("LEFT" if abs(x0) > abs(x1) else "RIGHT")
+        if not sides:
+            none += 1
+            verdict = "draws no bank art"
+        elif all(s == direction for s in sides):
+            ok += 1
+            verdict = "art agrees"
+        else:
+            bad += 1
+            verdict = f"art points {sorted(set(sides))}, the name says {direction}"
+        print(f"  {n:<38}{motion:<8}{verdict}")
+    print(f"\n  {ok} agree with the art, {bad} contradict it, {none} draw no "
+          f"bank art.\n  The rule is rejected; see this function's docstring.")
+    return 0
 
 
 def bank() -> bytes:
@@ -413,8 +501,13 @@ def main() -> int:
     ap.add_argument("--families", action="store_true")
     ap.add_argument("--rejected", action="store_true")
     ap.add_argument("--proposals", action="store_true")
+    ap.add_argument("--token-order", action="store_true",
+                    help="the measurement behind not reading a motion word "
+                         "that follows the direction")
     ap.add_argument("--subject", default="hero", choices=["hero", "actor"])
     args = ap.parse_args()
+    if args.token_order:
+        return token_order()
     SUBJECT[0] = args.subject
 
     offs, hero, by_stage = collect()

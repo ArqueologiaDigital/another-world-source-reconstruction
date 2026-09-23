@@ -412,3 +412,25 @@ CAPSULE and CAVES.
 Twelve names. Held back: `CV_41A8`, `CV_41E0`, `CV_4218` (35x7, 36x10, 28x7 —
 wide and flat, a different thing), `CV_4058`, and the two blinks `CV_5CBC` and
 `CV_5CC4` whose drawers paint nothing else to pair them with.
+
+## `blocked_by_bank.py` — how much waits on the bank
+
+The shared bank is one file, so naming one key names the art in every port.
+That makes the remaining `CV_<OFFSET4>` keys the highest-leverage item left,
+and this measures the leverage rather than guessing:
+
+    53 still-numbered keys drawn in the priority ports
+    302 distinct drawing labels wait on them
+
+— about seven labels per key. It was 57 and 378 before the four
+`CV_FIGURE_RUN_RIGHT_LIMB_POSE_*` names. The dependency is real, not a
+coincidence of spelling: `CAVES_DRAW_CV_355_L2` carries the key's raw index in
+its own name, which `docs/NAMING.md` §1 forbids, and it cannot be fixed until
+the key has a name.
+
+`--claims` is the control on the evidence the neighbouring probes run on: a
+named key whose drawers unanimously say one (motion, direction) should carry
+both in its own name. **152 of 158.** The 6 are printed, and none is a
+contradiction — three names carry no direction at all, two are drawn by crawl
+routines under the name `PRONE_TRANSITION`, and one is a wading pose drawn by
+a walk routine.
