@@ -74,17 +74,55 @@ python3 notes/screen-scope/screen_scope.py --control
 That is what makes it usable as a naming instrument rather than a guess, and
 it is why `../remaining-art/by_anchor.py --proposals` consults it.
 
-## The three it does not reproduce
+## The three it did not reproduce, and what each turned out to be
 
-- **`CAVES_SCREEN_ED_EVENT_PALETTE_FLASH_FRAME`, both ports.** It is installed
-  by a `setup`, so this module gives it top by design — a scheduler thread is
-  reachable under any screen. Its single install site is not ambiguous though,
-  and reading it turned up a real divergence: amiga installs it on the
-  fallthrough of `jne [SCREEN_NUM], 0xED` and **msdos on the fallthrough of
-  `jne [SCREEN_NUM], 0xEE`**. The screen sets confirm it — of CAVES' screen
-  values, all 54 of amiga's are shared with msdos, and msdos has three more,
-  `0x03`, `0x04` and `0xEE`. So msdos has a screen amiga does not, the event
-  lives on it, and the shared label's `SCREEN_ED` is wrong for msdos. Recorded
-  here; not yet corrected.
-- **`CAVES_SCREEN_92_BACKDROP_DRAW`, amiga only.** msdos derives `0x92`;
-  amiga's single caller `LABEL_AF3E` is itself unconstrained. Not yet chased.
+The first clean run left three disagreements. None of them was a limit of the
+method; two were bugs in it and one was a defect in the tree.
+
+**An unreferenced label is not an entry point.** The pass that seeds unreached
+labels as top was seeding *every* one, including data. amiga's
+`CAVES_SCREEN_92_BACKDROP_DRAW` is preceded by
+
+```
+LABEL_D3B8:
+        db 0x78, 0x7A, 0x94, 0x4C, 0x7B, 0x11
+```
+
+which nothing references and which nothing falls into either — the routine
+before it ends in `ret`. Seeding it top sent top straight through the blob
+into the backdrop, so amiga came back unconstrained while msdos, whose
+equivalent gap is real code ending in `killChannel`, came back `0x92`. Seeding
+only labels something mentions fixed it.
+
+Multi-byte blobs are deliberately **not** treated as terminating. Of 1,396 of
+them only 191 even end in a terminating byte, so "it ends in killChannel" is
+not a rule — and assuming termination would make labels look *more* pinned
+than they are, which is the unsafe direction for naming.
+
+**A scheduler thread has no single screen, but its install site does.** A
+routine installed only by `setup` keeps running across screen changes, so top
+is the right answer for the routine. The claim its *name* makes is about where
+it was installed, so `--control` now compares those against the `setup` site
+instead. That resolved amiga's `CAVES_SCREEN_ED_EVENT_PALETTE_FLASH_FRAME`,
+installed on the fallthrough of `jne [SCREEN_NUM], 0xED`.
+
+**One was a real wrong name.** The same routine in msdos and cartridge is
+installed on the fallthrough of `jne [SCREEN_NUM], 0x**EE**`, not 0xED. The
+screen sets corroborate it: of CAVES' screen values all 54 of amiga's are
+shared with msdos, and msdos carries three more — `0x03`, `0x04` and `0xEE`.
+So msdos has a screen amiga does not, the event lives on it, and the shared
+label was true only of amiga. Corrected branch-scoped to
+`CAVES_SCREEN_EE_EVENT_PALETTE_FLASH_FRAME` in both branches.
+
+`--proposals` emits exactly this kind of correction: every routine whose name
+states a screen the dataflow contradicts.
+
+## Where the control stands
+
+```
+python3 notes/screen-scope/screen_scope.py --control
+  48 agree, 0 do not (3 compared against their setup site)
+```
+
+across all four branches, and it exits 0. That is 48 screen assignments a
+person made from other evidence, re-derived from the guards alone.

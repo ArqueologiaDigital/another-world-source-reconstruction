@@ -75,7 +75,10 @@ from pathlib import Path
 HERE = Path(__file__).resolve()
 SRC = HERE.parents[2]
 
-PORTS = {"amiga": "chahi_amiga_1991", "msdos": "dos_1992"}
+# Branch keyed by a short name. The analysis reads only source, never a ROM,
+# so cartridge_1992 and gba_2004 are covered exactly like the priority ports.
+PORTS = {"amiga": "chahi_amiga_1991", "msdos": "dos_1992",
+         "cart": "cartridge_1992", "gba": "gba_2004"}
 STAGES = ("PRISON", "CAVES", "CAPSULE", "LAKE", "TANK", "INTRO", "ENDING")
 
 RE_LBL = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*):\s*$")
@@ -189,9 +192,32 @@ def analyse(lines: list[str]):
         for j, c in succ(i, state[i]):
             push(j, c)
 
-    # Any label never reached is an entry in its own right: seed it top and
-    # run again, so unreferenced routines do not look screen-specific.
-    unseen = [i for n, i in labels.items() if i not in state]
+    # A label the walk never reached is seeded top ONLY if something
+    # mentions it. An unreferenced label cannot be entered except by
+    # fallthrough, which the walk already models, so seeding it is not
+    # caution -- it invents an entry point.
+    #
+    # That distinction is what pinned amiga's CAVES_SCREEN_92_BACKDROP_DRAW.
+    # It is preceded by `LABEL_D3B8: db 0x78, 0x7A, 0x94, 0x4C, 0x7B, 0x11`,
+    # a data blob nothing references and that nothing falls into either (the
+    # routine before it ends in `ret`). Seeding it top sent top straight
+    # through the blob into the backdrop, and the backdrop came back
+    # unconstrained while msdos, whose equivalent gap is real code ending in
+    # `killChannel`, came back 0x92.
+    #
+    # Multi-byte blobs are NOT treated as terminating: of 1,396 of them only
+    # 191 even end in a terminating byte, so "it ends in killChannel" is not
+    # a rule, and assuming termination would make labels look MORE pinned
+    # than they are -- an error in the unsafe direction for naming.
+    mentioned = set()
+    for i, line in enumerate(lines):
+        if RE_LBL.match(line):
+            continue
+        for tok in re.findall(r"[A-Za-z_][A-Za-z0-9_]*", line):
+            if tok in labels:
+                mentioned.add(tok)
+    unseen = [i for n, i in labels.items()
+              if i not in state and n in mentioned]
     if unseen:
         for i in unseen:
             push(i, None)
@@ -201,6 +227,41 @@ def analyse(lines: list[str]):
                 push(j, c)
 
     return {n: state.get(i) for n, i in labels.items()}, at
+
+
+def install_context(lines: list[str], sites: list[int]):
+    """The screen pinned at each `setup` line that installs a routine.
+
+    Re-runs the analysis and reads the context of the *line* rather than of
+    a label, because the install site is usually mid-block: in CAVES it is
+    the fallthrough of `jne [SCREEN_NUM], 0xNN, ...`, a few instructions in.
+    """
+    labels = {}
+    for i, line in enumerate(lines):
+        if m := RE_LBL.match(line):
+            labels[m.group(1)] = i
+    ctx = None
+    for i in sites:
+        # walk back to the nearest enclosing label, then forward, tracking
+        # the one guard form that pins a screen on the fallthrough.
+        j, found = i, None
+        while j >= 0:
+            line = lines[j]
+            if m := RE_COND.match(line):
+                op, var, val, _t = m.groups()
+                if var == SCREEN and val.startswith("0x") and op == "jne":
+                    found = frozenset({int(val, 16)})
+                    break
+                if var == SCREEN and val.startswith("0x") and op == "je":
+                    break
+            if RE_LBL.match(line) and j != i:
+                break
+            j -= 1
+        ctx = found if ctx is None else (
+            None if found is None else ctx | found)
+        if found is None:
+            return None
+    return ctx
 
 
 def load(port: str, stage: str):
@@ -217,32 +278,91 @@ def main() -> int:
     ap.add_argument("--control", action="store_true",
                     help="check the derived screen against the six routines "
                          "whose names already carry one")
+    ap.add_argument("--proposals", action="store_true",
+                    help="emit a correction for every routine whose name "
+                         "states a screen the dataflow contradicts")
     ap.add_argument("--backdrops", action="store_true")
     args = ap.parse_args()
 
     if args.control:
-        bad = ok = 0
+        bad = ok = viasetup = 0
         for port in sorted(PORTS):
             for stage in STAGES:
                 lines = load(port, stage)
                 if lines is None:
                     continue
                 scoped, _at = analyse(lines)
+                # A routine installed only by `setup` is a scheduler
+                # thread, and top is the right answer for it -- it keeps
+                # running across screen changes. Its INSTALL SITE still has
+                # a screen, and that is the fact its name is making a claim
+                # about, so compare against that instead.
+                installed_at = {}
+                for i, line in enumerate(lines):
+                    if m := RE_SETUP.match(line):
+                        installed_at.setdefault(m.group(1), []).append(i)
                 for name, ctx in sorted(scoped.items()):
                     m = re.search(rf"{stage}_SCREEN_([0-9A-F]{{2}})", name)
                     if not m:
                         continue
                     want = int(m.group(1), 16)
+                    via = ""
+                    if ctx is None and name in installed_at:
+                        ctx = install_context(lines, installed_at[name])
+                        via = " (via its setup site)"
+                        viasetup += 1
                     got = ("any" if ctx is None
                            else ", ".join(f"0x{v:02X}" for v in sorted(ctx)))
                     agree = ctx is not None and set(ctx) == {want}
                     ok += agree
                     bad += not agree
                     print(f"  {port:<6}{stage:<9}{name:<44}"
-                          f"name says 0x{want:02X}, dataflow says {got}"
+                          f"name says 0x{want:02X}, dataflow says {got}{via}"
                           f"   {'AGREE' if agree else '**'}")
-        print(f"\n  {ok} agree, {bad} do not")
+        print(f"\n  {ok} agree, {bad} do not "
+              f"({viasetup} compared against their setup site)")
         return 1 if bad else 0
+
+    if args.proposals:
+        by: dict[tuple, list] = {}
+        for port, branch in sorted(PORTS.items()):
+            for stage in STAGES:
+                lines = load(port, stage)
+                if lines is None:
+                    continue
+                scoped, _at = analyse(lines)
+                installed_at: dict[str, list] = {}
+                for i, line in enumerate(lines):
+                    if m := RE_SETUP.match(line):
+                        installed_at.setdefault(m.group(1), []).append(i)
+                for name, ctx in sorted(scoped.items()):
+                    m = re.search(rf"{stage}_SCREEN_([0-9A-F]{{2}})", name)
+                    if not m:
+                        continue
+                    how = "every path that reaches it"
+                    if ctx is None and name in installed_at:
+                        ctx = install_context(lines, installed_at[name])
+                        how = "the `setup` that installs it"
+                    if ctx is None or len(ctx) != 1:
+                        continue
+                    got = next(iter(ctx))
+                    if got == int(m.group(1), 16):
+                        continue
+                    new = name.replace(f"_SCREEN_{m.group(1)}_",
+                                       f"_SCREEN_{got:02X}_")
+                    by.setdefault((branch, stage), []).append(
+                        (name, new, m.group(1), got, how))
+        for (branch, stage), rows in sorted(by.items()):
+            print(f"\n----- {branch} / {stage} -----")
+            print("| routine | proposed name | confidence | evidence |")
+            print("| --- | --- | --- | --- |")
+            for name, new, said, got, how in rows:
+                print(f"| {name} | {new} | high | {how} tests "
+                      f"`[SCREEN_NUM]` and finds 0x{got:02X}, not the "
+                      f"0x{said} the name states |")
+        if not by:
+            print("no routine's name contradicts the derived screen")
+        return 0
 
     stages = [args.stage] if args.stage else list(STAGES)
     for stage in stages:
