@@ -136,6 +136,14 @@ MECHANISM = ("FILL_PAGE", "RANDOM_DELAY", "PLAY_SOUND", "ENTRY_POINT",
              # reached the candidate list and none of them names a picture.
              "SHARED_RET", "DISPATCH", "_TICK", "_HOLD_PHASE", "DELAY_LOOP",
              "PRELOAD", "SCROLL_STEP", "PAGE_",
+             # `_ENTRY` is a position in the control flow, not a subject.
+             # After ../screen-scope/ named 264 <STAGE>_SCREEN_<NN>_ENTRY
+             # routines, this rule offered CINEMATIC_539 ->
+             # CINEMATIC_CAVES_SCREEN_70_ENTRY: a picture named after the
+             # moment it is drawn at. A screen entry draws its backdrop; the
+             # backdrop is not the entry. ENTRY_POINT was already listed and
+             # this is the same word without the suffix.
+             "_ENTRY",
              # A name that says the routine CHOOSES something is a selector,
              # not a subject. Caught by the verify-the-shape step rather than
              # by inspection: PRISON_TELEPORT_UP_POSE_BY_FACING draws a
