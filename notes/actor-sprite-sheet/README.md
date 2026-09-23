@@ -59,10 +59,21 @@ without ambiguity.
 
 ## What was refused
 
-- `CV_FIGURE_RUN_RIGHT_BODY_F08`, claimed by `CV_2364` (40x54/5) **and**
-  `CV_2380` (41x56/5). Two interleaved naming series overlap at exactly that
-  frame and nothing measured says which is right, so **both** are dropped
-  (#0120). The family is applied as 0..7, contiguous.
+- ~~`CV_FIGURE_RUN_RIGHT_BODY_F08`, claimed by `CV_2364` and `CV_2380`…
+  both are dropped (#0120).~~ **Resolved 2026-09-23 — they were never rivals.**
+  `CV_2364` is drawn by `CAPSULE_ACTOR_RUN_RIGHT_DRAW_8` and
+  `CAVES_ACTOR_RUN_RIGHT_PHASE_9`, which are the same frame once the measured
+  base is applied, so two stages agree it is **F08**. `CV_2380` appears in no
+  named routine at all and so made no competing claim; the overlap was an
+  artefact of the attribution, not of the art.
+
+  `CV_2380` is **F09**, and the run cycle is ten frames, not eight. Three
+  lines agree: the stride `0x1C` that runs F05→F06→F07→F08 continues to it
+  unbroken; its width 41.0 matches F04's 41.0, the position its partner five
+  frames earlier occupies; and `run_left_body.map`, named the same day, is a
+  ten-frame cycle whose widths run 28.5, 23.0, 30.5, 39.5, 41.0 **twice** —
+  the same two-half-stride shape. None of that evidence existed when the pair
+  was refused.
 - All three LIMB families: `WALK_RIGHT_LIMB` has only frames 0 and 5,
   `WALK_LEFT_LIMB` 5 and 7, `RUN_RIGHT_LIMB` 0, 1 and 4. Gaps inside a run
   are barred by NAMING.md §2, and these are mostly shared sub-pieces that
