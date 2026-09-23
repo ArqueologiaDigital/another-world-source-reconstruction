@@ -1,31 +1,31 @@
 ANIM_CIN_027_LOOP_VARE8:
-	video offset=CINEMATIC_027, x=137, y=100
+	video offset=CINEMATIC_CAPSULE_ROBED_FIGURE_F0, x=137, y=100
 	break
 	djnz [0xE8], ANIM_CIN_027_LOOP_VARE8
-	video offset=CINEMATIC_028, x=137, y=100
+	video offset=CINEMATIC_CAPSULE_ROBED_FIGURE_F1, x=137, y=100
 	break
-	video offset=CINEMATIC_024, x=137, y=100
+	video offset=CINEMATIC_CAPSULE_ROBED_FIGURE_F2, x=137, y=100
 	break
 	mov [0xE8], 0x0014
-	video offset=CINEMATIC_025, x=137, y=100
+	video offset=CINEMATIC_CAPSULE_ROBED_FIGURE_F3, x=137, y=100
 	break
-	video offset=CINEMATIC_025, x=137, y=102
+	video offset=CINEMATIC_CAPSULE_ROBED_FIGURE_F3, x=137, y=102
 	break
-	video offset=CINEMATIC_025, x=137, y=106
+	video offset=CINEMATIC_CAPSULE_ROBED_FIGURE_F3, x=137, y=106
 	break
-	video offset=CINEMATIC_025, x=137, y=108
+	video offset=CINEMATIC_CAPSULE_ROBED_FIGURE_F3, x=137, y=108
 	break
-	video offset=CINEMATIC_025, x=137, y=112
+	video offset=CINEMATIC_CAPSULE_ROBED_FIGURE_F3, x=137, y=112
 	break
-	video offset=CINEMATIC_025, x=137, y=116
+	video offset=CINEMATIC_CAPSULE_ROBED_FIGURE_F3, x=137, y=116
 	break
-	video offset=CINEMATIC_025, x=137, y=120
+	video offset=CINEMATIC_CAPSULE_ROBED_FIGURE_F3, x=137, y=120
 	killChannel
 
 LABEL_12E0:
-	video offset=CINEMATIC_024, x=66, y=91
-	video offset=CINEMATIC_025, x=95, y=97
-	video offset=CINEMATIC_026, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_ROBED_FIGURE_F2, x=66, y=91
+	video offset=CINEMATIC_CAPSULE_ROBED_FIGURE_F3, x=95, y=97
+	video offset=CINEMATIC_CAPSULE_LIT_PANEL, x=160, y=100
 	break
 	jmp LABEL_12E0
 LABEL_12F0:

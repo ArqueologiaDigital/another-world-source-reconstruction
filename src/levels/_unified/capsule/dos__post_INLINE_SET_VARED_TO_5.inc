@@ -30,56 +30,56 @@ LABEL_1D9A:
 	db 0x11
 
 LABEL_1D9B:
-	video offset=CINEMATIC_375, x=216, y=149
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_WALK_RIGHT_F0, x=216, y=149
 	play id=0x0057, freq=0x14, vol=0x10, channel=0x00
 	break
-	video offset=CINEMATIC_375, x=218, y=149
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_WALK_RIGHT_F0, x=218, y=149
 	break
-	video offset=CINEMATIC_376, x=220, y=149
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_WALK_RIGHT_F1, x=220, y=149
 	break
-	video offset=CINEMATIC_376, x=222, y=149
-	video offset=CINEMATIC_377, x=223, y=149
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_WALK_RIGHT_F1, x=222, y=149
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_STANDING_SMALL, x=223, y=149
 	selectVideoPage 0x00
-	video offset=CINEMATIC_377, x=223, y=148
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_STANDING_SMALL, x=223, y=148
 	selectVideoPage 0xFF
 	killChannel
 
 LABEL_1DC1:
-	video offset=CINEMATIC_375, x=72, y=143
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_WALK_RIGHT_F0, x=72, y=143
 	play id=0x0057, freq=0x14, vol=0x10, channel=0x00
-	video offset=CINEMATIC_372, x=93, y=90
+	video offset=CINEMATIC_CAPSULE_LIT_PANEL, x=93, y=90
 	break
-	video offset=CINEMATIC_375, x=75, y=143
-	video offset=CINEMATIC_372, x=94, y=90
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_WALK_RIGHT_F0, x=75, y=143
+	video offset=CINEMATIC_CAPSULE_LIT_PANEL, x=94, y=90
 	break
-	video offset=CINEMATIC_376, x=77, y=143
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_WALK_RIGHT_F1, x=77, y=143
 	break
-	video offset=CINEMATIC_377, x=79, y=143
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_STANDING_SMALL, x=79, y=143
 	selectVideoPage 0x00
-	video offset=CINEMATIC_377, x=80, y=144
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_STANDING_SMALL, x=80, y=144
 	selectVideoPage 0xFF
 	killChannel
 
 LABEL_1DEB:
-	video offset=CINEMATIC_375, x=213, y=149
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_WALK_RIGHT_F0, x=213, y=149
 	play id=0x0075, freq=0x12, vol=0x18, channel=0x03
 	break
-	video offset=CINEMATIC_375, x=231, y=150
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_WALK_RIGHT_F0, x=231, y=150
 	break
-	video offset=CINEMATIC_375, x=233, y=150
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_WALK_RIGHT_F0, x=233, y=150
 	break
-	video offset=CINEMATIC_376, x=235, y=150
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_WALK_RIGHT_F1, x=235, y=150
 	break
-	video offset=CINEMATIC_376, x=236, y=150
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_WALK_RIGHT_F1, x=236, y=150
 	break
-	video offset=CINEMATIC_377, x=238, y=149
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_STANDING_SMALL, x=238, y=149
 	selectVideoPage 0x00
-	video offset=CINEMATIC_377, x=239, y=149
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_STANDING_SMALL, x=239, y=149
 	selectVideoPage 0xFF
 	killChannel
-	video offset=CINEMATIC_375, x=80, y=148
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_WALK_RIGHT_F0, x=80, y=148
 	selectVideoPage 0x00
-	video offset=CINEMATIC_378, x=89, y=149
+	video offset=CINEMATIC_CAPSULE_TUNIC_FIGURE_STANDING_LARGE, x=89, y=149
 	selectVideoPage 0xFF
 	killChannel
 

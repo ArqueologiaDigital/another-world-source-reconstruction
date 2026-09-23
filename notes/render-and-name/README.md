@@ -177,6 +177,7 @@ checked against the receiving port's own guards.
 | PRISON/CAVES/CAPSULE, nine per stage | (per-port numbers) | `CINEMATIC_HERO_DEATH_{STANDING,KNEELING}_{LEFT,RIGHT}_F0..F2` -- and `HERO_DEATH_F*` renamed to `..._STANDING_LEFT_F*` | high |
 | (msdos only) CAPSULE 708..713 | -- | `CINEMATIC_CAPSULE_CREATURE_WALK_RIGHT_F0..F5`, CAVES' own family's art | high |
 | CAPSULE 034..040 | msdos 380..386 | `CINEMATIC_CAPSULE_LEDGE_{MID_SPAN,FAR_SPAN,FAR_PLATFORM,DISTANT_FIGURE,NEAR_SPAN,FOREGROUND_SLAB,FOREGROUND_SPUR}` | medium |
+| CAPSULE 024..032 | msdos 370..378 | `CINEMATIC_CAPSULE_{TUNIC_FIGURE_WALK_RIGHT_F0,F1,STANDING_SMALL,STANDING_LARGE,ROBED_FIGURE_F0..F3,LIT_PANEL}` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
