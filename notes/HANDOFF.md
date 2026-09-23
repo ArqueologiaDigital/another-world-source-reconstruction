@@ -25,7 +25,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 73.7% (7,482/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 74.2% (7,526/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 73 amiga / 76 msdos of 2,530 / 2,552 named | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 48, blocking 250 drawing labels | `shared-bank-geometry/blocked_by_bank.py` |
@@ -274,11 +274,6 @@ without any judgement at all.
 
 **Held, with what would settle each:**
 
-* `LABEL_3CD9` / `LABEL_3813` in CAVES, 22 constants: an exact mirror pair of
-  11-frame runs, drawn on channel 0x16 alongside the hero's idle. Thin bars at
-  foot level that shorten, extend and then fold into a shallow V. Rendered at
-  palette 0 they are unreadable; the palette its `setup` site runs under has
-  not been traced. **Trace it and re-render** before naming.
 * **Which way is the swimmer's "up"?** The ten frames are now named by the
   measured hair height (`CINEMATIC_CAVES_HERO_SWIM_HEAD_{UP,DOWN}_*`), which
   needed no answer. The question itself is still open: the eight

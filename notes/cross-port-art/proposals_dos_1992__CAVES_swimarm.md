@@ -1,0 +1,26 @@
+
+----- dos_1992 / CAVES -----
+| constant | proposed name | confidence | evidence |
+| --- | --- | --- | --- |
+| CINEMATIC_882 | CINEMATIC_CAVES_HERO_SWIM_ARM_LEFT_F2 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_890 | CINEMATIC_CAVES_HERO_SWIM_ARM_LEFT_F10 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_535 | CINEMATIC_CAVES_HERO_SWIM_ARM_RIGHT_F0 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_884 | CINEMATIC_CAVES_HERO_SWIM_ARM_LEFT_F4 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_880 | CINEMATIC_CAVES_HERO_SWIM_ARM_LEFT_F0 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_540 | CINEMATIC_CAVES_HERO_SWIM_ARM_RIGHT_F5 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_883 | CINEMATIC_CAVES_HERO_SWIM_ARM_LEFT_F3 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_543 | CINEMATIC_CAVES_HERO_SWIM_ARM_RIGHT_F8 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_889 | CINEMATIC_CAVES_HERO_SWIM_ARM_LEFT_F9 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_544 | CINEMATIC_CAVES_HERO_SWIM_ARM_RIGHT_F9 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_536 | CINEMATIC_CAVES_HERO_SWIM_ARM_RIGHT_F1 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_538 | CINEMATIC_CAVES_HERO_SWIM_ARM_RIGHT_F3 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_886 | CINEMATIC_CAVES_HERO_SWIM_ARM_LEFT_F6 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_545 | CINEMATIC_CAVES_HERO_SWIM_ARM_RIGHT_F10 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_888 | CINEMATIC_CAVES_HERO_SWIM_ARM_LEFT_F8 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_537 | CINEMATIC_CAVES_HERO_SWIM_ARM_RIGHT_F2 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_881 | CINEMATIC_CAVES_HERO_SWIM_ARM_LEFT_F1 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_542 | CINEMATIC_CAVES_HERO_SWIM_ARM_RIGHT_F7 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_885 | CINEMATIC_CAVES_HERO_SWIM_ARM_LEFT_F5 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_541 | CINEMATIC_CAVES_HERO_SWIM_ARM_RIGHT_F6 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_887 | CINEMATIC_CAVES_HERO_SWIM_ARM_LEFT_F7 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_539 | CINEMATIC_CAVES_HERO_SWIM_ARM_RIGHT_F4 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
