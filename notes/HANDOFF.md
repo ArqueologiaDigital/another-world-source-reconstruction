@@ -44,6 +44,8 @@ Run these; do not trust the numbers below without re-running them.
     python3 notes/play-and-describe/annotation_queue.py --check    # and its bookkeeping
     node notes/on-screen-priority/seen_unnamed.mjs --names <dump> \
         --romset <dir> --stage-id <N>      # unnamed art ranked by screen time
+    node notes/stage-entry/entry_state.mjs --names <dump> \
+        --romset <dir> --stage-id <N> --screens   # does the stage run at all?
 
 As of the last commit:
 
@@ -83,6 +85,8 @@ As of the last commit:
 | PRISON constant-frames of screen time still unnamed (msdos, cold 400-frame run) | 1874 across 41 constants | `on-screen-priority/seen_unnamed.mjs` |
 | most-seen unnamed PRISON constant vs most-seen named one | 284 frames vs 96 | same, and `--named` |
 | beam-ladder alternate-set slots still numbered | 34 of 36 | `beam-span-ladder/rung_thresholds.py` |
+| stages that draw anything from a cold entry (msdos, 600 frames) | 3 of 7 cold, 7 of 7 seeded | `stage-entry/entry_state.mjs` |
+| SCREEN_NUM values that unlock CAVES without the protection seed | 0 of 28 | same, `--screens` |
 
 ## Held, added 2026-09-23: the beam ladder's second set
 

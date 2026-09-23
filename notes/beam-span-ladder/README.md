@@ -91,6 +91,13 @@ the other two are unified-tree drift, not names (see below).
 What is measured about the alternate set, `rung_thresholds.py` plus the polygon
 renderer, msdos, all three stages:
 
+Reproduce it with the probe committed beside this note:
+
+    node notes/beam-span-ladder/colour_of.mjs --romset <msdos romset> \
+        --level 6 --branch dos_1992 --stage CAPSULE \
+        CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_5 CINEMATIC_673 \
+        CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_5  CINEMATIC_674
+
 | | named set | alternate set |
 | --- | --- | --- |
 | polygons | 1 | 1 |
@@ -132,4 +139,5 @@ alternate-set slots print with names attached:
 Neither is in the naming record. The canonical trees have `CINEMATIC_858` and
 `CINEMATIC_525` in those slots, still numbered. The giveaway is that
 `TELEPORT_UP_BEAM_LEFT` renders as **4 polygons at colour indices 7, 4, 15, 6**,
-which no member of a one-polygon family can be.
+which no member of a one-polygon family can be -- one line of `colour_of.mjs`
+output, with `--level 4 --stage CAVES`.

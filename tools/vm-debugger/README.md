@@ -160,7 +160,7 @@ invisible.
 
 **This section said the wrong thing until 2026-09-23.** It blamed
 `CAVES_SCREEN_ENTRY_DISPATCH` switching on `SCREEN_NUM` (`0x67`) with every
-variable at zero. That is not it: seeding `SCREEN_NUM` with each of 23 values,
+variable at zero. That is not it: seeding `SCREEN_NUM` with each of 28 values,
 0x00 through 0xC0, leaves CAVES drawing exactly nothing, and CAVES ends a
 400-frame run with **zero live threads**, which no dispatch fall-through would
 cause.
@@ -191,6 +191,10 @@ with `notes/on-screen-priority/seen_unnamed.mjs`:
 | CAVES | 0 | 595 |
 | CAPSULE | 0 | 115 |
 | ENDING | 0 | 344 |
+
+Both halves of that table, the thread census and the refuted `SCREEN_NUM`
+explanation come from one committed probe, `notes/stage-entry/entry_state.mjs`
+-- run it with `--screens` for the sweep.
 
 That is half the game, and it includes CAVES and CAPSULE, the two least-named
 stages in the project. INTRO, PRISON and TANK open on a cutscene and were
