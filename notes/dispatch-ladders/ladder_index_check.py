@@ -122,8 +122,19 @@ def main() -> int:
                 unnamed = [c for c in cases if RE_NUM.match(arms[c])]
                 offs = set()
                 for c in cases:
+                    if RE_NUM.match(arms[c]):
+                        continue
+                    # A `_CASE_<hex>` tail is the ladder's own case number in
+                    # HEX, not a decimal family index. Reading it as decimal
+                    # made this checker report PASSCODE's alphanum ladder as a
+                    # MISMATCH purely because `_CASE_10` is case 0x10: the
+                    # "index" 10 minus the case 16 gave -6 where every other
+                    # arm gave 0. That is the checker misreading a name, not
+                    # the name disagreeing with the ladder.
+                    if RE_CASE.match(arms[c]):
+                        continue
                     m = RE_FAM.match(arms[c])
-                    if m and not RE_NUM.match(arms[c]):
+                    if m:
                         offs.add(int(m.group(2)) - c)
                 mismatch = len(offs) > 1
                 note = []

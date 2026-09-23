@@ -158,71 +158,71 @@ CODEWHEEL_DRAW_SYMBOLS_LOOP:
 
 CODEWHEEL_DRAW_PUZZLE_KEY_ALPHANUM:
 	jne [0x05], 0x00, CW_ALPHANUM_CASE_1
-	video offset=CINEMATIC_ALPHANUM_CODE_00, x=[0x2d], y=[0x2e]
+	video offset=CINEMATIC_CODEWHEEL_CODE_N1, x=[0x2d], y=[0x2e]
 
 CW_ALPHANUM_CASE_1:
 	jne [0x05], 0x01, CW_ALPHANUM_CASE_2
-	video offset=CINEMATIC_ALPHANUM_CODE_01, x=[0x2d], y=[0x2e]
+	video offset=CINEMATIC_CODEWHEEL_CODE_N6, x=[0x2d], y=[0x2e]
 
 CW_ALPHANUM_CASE_2:
 	jne [0x05], 0x02, CW_ALPHANUM_CASE_3
-	video offset=CINEMATIC_ALPHANUM_CODE_02, x=[0x2d], y=[0x2e]
+	video offset=CINEMATIC_CODEWHEEL_CODE_N5, x=[0x2d], y=[0x2e]
 
 CW_ALPHANUM_CASE_3:
 	jne [0x05], 0x03, CW_ALPHANUM_CASE_4
-	video offset=CINEMATIC_ALPHANUM_CODE_03, x=[0x2d], y=[0x2e]
+	video offset=CINEMATIC_CODEWHEEL_CODE_N7, x=[0x2d], y=[0x2e]
 
 CW_ALPHANUM_CASE_4:
 	jne [0x05], 0x04, CW_ALPHANUM_CASE_5
-	video offset=CINEMATIC_ALPHANUM_CODE_04, x=[0x2d], y=[0x2e]
+	video offset=CINEMATIC_CODEWHEEL_CODE_N10, x=[0x2d], y=[0x2e]
 
 CW_ALPHANUM_CASE_5:
 	jne [0x05], 0x05, CW_ALPHANUM_CASE_6
-	video offset=CINEMATIC_ALPHANUM_CODE_08, x=[0x2d], y=[0x2e]
+	video offset=CINEMATIC_CODEWHEEL_CODE_O3, x=[0x2d], y=[0x2e]
 
 CW_ALPHANUM_CASE_6:
 	jne [0x05], 0x06, CW_ALPHANUM_CASE_7
-	video offset=CINEMATIC_ALPHANUM_CODE_07, x=[0x2d], y=[0x2e]
+	video offset=CINEMATIC_CODEWHEEL_CODE_O4, x=[0x2d], y=[0x2e]
 
 CW_ALPHANUM_CASE_7:
 	jne [0x05], 0x07, CW_ALPHANUM_CASE_8
-	video offset=CINEMATIC_ALPHANUM_CODE_06, x=[0x2d], y=[0x2e]
+	video offset=CINEMATIC_CODEWHEEL_CODE_O7, x=[0x2d], y=[0x2e]
 
 CW_ALPHANUM_CASE_8:
 	jne [0x05], 0x08, CW_ALPHANUM_CASE_9
-	video offset=CINEMATIC_ALPHANUM_CODE_09, x=[0x2d], y=[0x2e]
+	video offset=CINEMATIC_CODEWHEEL_CODE_U10, x=[0x2d], y=[0x2e]
 
 CW_ALPHANUM_CASE_9:
 	jne [0x05], 0x09, CW_ALPHANUM_CASE_A
-	video offset=CINEMATIC_ALPHANUM_CODE_05, x=[0x2d], y=[0x2e]
+	video offset=CINEMATIC_CODEWHEEL_CODE_G20, x=[0x2d], y=[0x2e]
 
 CW_ALPHANUM_CASE_A:
 	jne [0x05], 0x0A, CW_ALPHANUM_CASE_B
-	video offset=CINEMATIC_ALPHANUM_CODE_10, x=[0x2d], y=[0x2e]
+	video offset=CINEMATIC_CODEWHEEL_CODE_U11, x=[0x2d], y=[0x2e]
 
 CW_ALPHANUM_CASE_B:
 	jne [0x05], 0x0B, CW_ALPHANUM_CASE_C
-	video offset=CINEMATIC_ALPHANUM_CODE_12, x=[0x2d], y=[0x2e]
+	video offset=CINEMATIC_CODEWHEEL_CODE_U15, x=[0x2d], y=[0x2e]
 
 CW_ALPHANUM_CASE_C:
 	jne [0x05], 0x0C, CW_ALPHANUM_CASE_D
-	video offset=CINEMATIC_ALPHANUM_CODE_11, x=[0x2d], y=[0x2e]
+	video offset=CINEMATIC_CODEWHEEL_CODE_I15, x=[0x2d], y=[0x2e]
 
 CW_ALPHANUM_CASE_D:
 	jne [0x05], 0x0D, CW_ALPHANUM_CASE_E
-	video offset=CINEMATIC_ALPHANUM_CODE_13, x=[0x2d], y=[0x2e]
+	video offset=CINEMATIC_CODEWHEEL_CODE_I16, x=[0x2d], y=[0x2e]
 
 CW_ALPHANUM_CASE_E:
 	jne [0x05], 0x0E, CW_ALPHANUM_CASE_F
-	video offset=CINEMATIC_ALPHANUM_CODE_14, x=[0x2d], y=[0x2e]
+	video offset=CINEMATIC_CODEWHEEL_CODE_I19, x=[0x2d], y=[0x2e]
 
 CW_ALPHANUM_CASE_F:
 	jne [0x05], 0x0F, CW_ALPHANUM_CASE_10
-	video offset=CINEMATIC_ALPHANUM_CODE_15, x=[0x2d], y=[0x2e]
+	video offset=CINEMATIC_CODEWHEEL_CODE_I11, x=[0x2d], y=[0x2e]
 
 CW_ALPHANUM_CASE_10:
 	jne [0x05], 0x10, SHARED_RET
-	video offset=CINEMATIC_ALPHANUM_CODE_16, x=[0x2d], y=[0x2e]
+	video offset=CINEMATIC_CODEWHEEL_CODE_K14, x=[0x2d], y=[0x2e]
 	ret
 
 
