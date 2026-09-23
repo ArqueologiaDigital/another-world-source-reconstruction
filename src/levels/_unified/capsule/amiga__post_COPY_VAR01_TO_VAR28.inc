@@ -211,37 +211,37 @@ LABEL_5E83:
 	db 0x11
 
 DRAW_CIN_195:
-	video offset=CINEMATIC_195, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_LEFT_0_0, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 DRAW_CIN_196:
-	video offset=CINEMATIC_196, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_LEFT_0_1, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 DRAW_CIN_197:
-	video offset=CINEMATIC_197, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_LEFT_0_2, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 DRAW_CIN_198:
-	video offset=CINEMATIC_198, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_LEFT_0_3, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 DRAW_CIN_199:
-	video offset=CINEMATIC_199, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_LEFT_0_4, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 DRAW_CIN_178:
-	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_0_5, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_LEFT_0_5, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 DRAW_CIN_200:
-	video offset=CINEMATIC_200, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_LEFT_0_6, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
@@ -271,7 +271,7 @@ DRAW_CIN_191:
 
 
 DRAW_CIN_190:
-	video offset=CINEMATIC_190, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_LEFT_4_3, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
@@ -281,12 +281,12 @@ DRAW_CIN_189:
 
 
 DRAW_CIN_185:
-	video offset=CINEMATIC_185, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_LEFT_7_0, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 DRAW_CIN_186:
-	video offset=CINEMATIC_186, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_LEFT_7_1, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 

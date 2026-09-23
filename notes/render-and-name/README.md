@@ -155,7 +155,7 @@ checked against the receiving port's own guards.
 | TANK 100, 152, 155 | 087, 204, 207 + 126..128, 170..175, 276, 277 | `CINEMATIC_TANK_{FALLING_STREAK,AMBIENT_IMPACT_FLASH,AMBIENT_IMPACT_SCAR,ARENA_WRECK_*,CONSOLE_LAMP_*,CONSOLE_BUTTON_UNLIT,BEAM_VOLLEY_SEGMENT_3,CREATURE_RUN_F9}` | high/medium |
 | CAVES 606, 348, 607, 346, 608..611, 334 | 627, 369, 628, 367, 629..632, 355 | `CINEMATIC_CAVES_{CAVERN_WALL_AND_FLOOR,CAVERN_DOME,SCREEN_91_GLOW_MOUND,RING_OUTLINE,SCREEN_91_COLUMN_0..3,DIAGONAL_GIRDER}` | medium |
 | CAPSULE 212..215, 266..271 | 250..253, 254..257, 259, 260 | `CINEMATIC_CAPSULE_{SEGMENT_BAR_F0..F3,DISCHARGE_FLASH_F0,F1,CHARGE_GLOW_F0..F3}` (first named `BUDDY_*`; corrected, see `../actor-anchors/`) | medium |
-| CAPSULE 174..179, 169, 167 | 022..029, 017, 012, 013 | `CINEMATIC_CAPSULE_FIGURE_POSE_<group>_<index>` (from the dispatcher, see `../pose-dispatch/`) | high |
+| CAPSULE 174..179, 169, 167, 195..200, 185, 186, 190 | 022..029, 017, 012, 013 + left sheet | `CINEMATIC_CAPSULE_FIGURE_POSE_{LEFT,RIGHT}_<group>_<index>` (the facing was added in a follow-up; see `../pose-dispatch/`) | high |
 | PRISON 157..167, 225..239 | (same numbers) | `CINEMATIC_PRISON_FIGURE_POSE_{LEFT,RIGHT}_<g>_<i>` | high |
 | CAVES 015..027, 038..053 | (same numbers) | `CINEMATIC_CAVES_FIGURE_POSE_{LEFT,RIGHT}_<g>_<i>` | high |
 | INTRO 268..276 | 274..282 | `CINEMATIC_FRAGMENTS_RECEDING_F0..F8` | medium |
@@ -408,7 +408,9 @@ amiga's chunk alone, while `cart__entry.inc` has its own `CINEMATIC_167` at a
 different offset that must not move.
 
 After any branch-scoped rename, `grep -rl "<old name>" src/levels/_unified/_helpers/`
-is worth a second.
+is worth a second. It has bitten twice, both times on the same file, and both
+times `undefined_symbols.py` named the file and line before `make test` ran --
+which is the reason for running it first.
 
 ## Group by the anchor a picture is drawn at
 
