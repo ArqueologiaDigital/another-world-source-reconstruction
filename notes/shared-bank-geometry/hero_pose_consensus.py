@@ -234,7 +234,25 @@ RE_INDEX = re.compile(
     r"(?:_(?:DONE|RET|FRAME|LOOP|GUN_LOWERED|GUN_RAISED))?$")
 SUBJECTS = ("HERO", "BUDDY", "ACTOR", "ALIEN", "BEAST")
 MOTIONS = ("WALK", "RUN", "CRAWL", "JUMP", "STAND", "PRONE", "CROUCH",
-           "SHOOT", "FALL")
+           "SHOOT", "FALL", "AIM", "FIRE", "SHOT")
+# Two spellings of one action, normalised so two stages using different words
+# are not read as disagreeing. This is checked, not assumed: the routines
+# containing FIRE and the routines containing SHOT draw exactly the same four
+# hero offsets -- CV_389E, CV_38D2, CV_3ADC, CV_3B10 -- a complete overlap.
+# SHOOT itself appears in NO hero routine name; it was aspirational
+# vocabulary in the old regex, so adopting it as the canonical spelling
+# collides with nothing.
+SYNONYM = {"FIRE": "SHOOT", "SHOT": "SHOOT"}
+# Deliberately NOT added, with reasons, so the next person does not re-derive
+# the same shortlist:
+#   LEAP  (6 names)  draws nothing at the hero anchor, so there is no art to
+#                    attach a claim to and no way to check LEAP == JUMP.
+#   KICK  (2)        two names, unchecked.
+#   RAISE (2)        two names, unchecked, and "gun raise" may be an arm
+#                    state rather than a body motion.
+# GUN, POSE, HOLD, ENTRY, ARM, FACING, INPUT, DIRECTION, WATER, DEPTH,
+# SPRITE, TILT and ACTION all appear before a direction too, and are
+# qualifiers, not motions.
 DIRECTIONS = ("LEFT", "RIGHT")
 # Kept for reference: the original rule, which required motion and direction
 # to be ADJACENT right after the subject. It silently returned nothing for
@@ -282,6 +300,7 @@ def motion_of(name: str):
             claims.append((before[-1], w))
     if not claims:
         return None
+    claims = [(SYNONYM.get(m, m), d) for m, d in claims]
     if len({c[0] for c in claims}) > 1 or len({c[1] for c in claims}) > 1:
         return None
     return claims[0]

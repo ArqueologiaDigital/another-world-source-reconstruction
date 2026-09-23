@@ -88,12 +88,39 @@ for it whenever two draws share an anchor.
      unchanged. A name making two different motion claims is refused, not
      guessed.
 
-   **What actually blocks the remaining 35: the drawers are unnamed.** 28 of
-   35 have no parseable drawer in any stage — not a disagreement, an absence.
-   This is the dependency cycle, and the way through it is the method that
-   worked for the jump sheets: derive motion from **scheduling and geometry**
-   (anchor arithmetic, airborne measurement, figure height) rather than from
-   any name. That is the next lever.
+   * **Vocabulary gap, closed.** `AIM`, `FIRE` and `SHOT` were missing.
+     `FIRE` and `SHOT` are one action — the routines containing each draw
+     exactly the same four offsets — so both normalise to `SHOOT`, which
+     appears in no hero routine name at all. `LEAP` was deliberately left
+     out: it draws nothing at the hero anchor, so there is no art to check
+     `LEAP == JUMP` against.
+
+     Adding them took consensus 7 → **5**, and that is the probe getting
+     more honest, not worse. `CV_17CC` and `CV_1664` were being named CROUCH
+     on the strength of two CAVES routines while CAPSULE's
+     `HERO_GUN_AIM_HOLD_*_LOOP` was silently unparseable. Making it parse
+     converted a false unanimity into a recorded conflict.
+
+   **The AIM-vs-CROUCH conflicts are resolved by measurement**
+   (`pose_height.py`). Against the 15 committed `HERO_WALK_LEFT_BODY` frames
+   (median height 49.0) the disputed offsets are bimodal with an 11-unit gap
+   and nothing in between:
+
+       CV_1664 44.5, CV_17CC 45.0          upright  -- CAVES's CROUCH is wrong
+       CV_3764, CV_39A2, CV_389E,
+       CV_3ADC, CV_1784   33.0..33.5       crouched -- CROUCH is right
+
+   `CV_1784` is the control: both its sources already agreed on CROUCH with
+   no AIM claim against it, and it lands in the crouched mode. Height settles
+   the body and says nothing about the arms, so for the four crouched ones
+   both names are partly right — that is the #0120 intersection, and naming
+   them is the next step.
+
+   **What blocks the rest: the drawers are unnamed.** 28 of 35 have no
+   parseable drawer in any stage — not a disagreement, an absence. The way
+   through is the jump-sheet method: motion from **scheduling and geometry**
+   (anchor arithmetic, `airborne_in_art.py`, `pose_height.py`) rather than
+   from any name.
 4. **60 amiga / 59 msdos pictures with multiple names.** Reported, not
    reconciled, per #0120. 49 have the shape of one family named twice.
 5. ~~**`genesis_europe` is not covered by `undefined_symbols.py`.**~~
