@@ -1,0 +1,33 @@
+# The hero's left-facing run body: 10 frames, complete.
+#
+# The tree already had HERO_RUN_LEFT_ARM_F00..F09 (minus F04) with no body
+# family beside it -- an arm series naming frames whose bodies were still
+# CV_ placeholders. Inverting the usual direction finds them: each named arm
+# frame is co-drawn with exactly ONE unnamed piece, one-to-one across all
+# nine, and those pieces are full figures (45..48 tall, 10..11 leaves, bottom
+# on the ground) drawn at [HERO_X] only.
+#
+# F04 is not in the arm family and was placed by three independent lines that
+# agree, the same "forced by geometry" standard ../actor-sprite-sheet/ used
+# for its two frame-7 gaps:
+#
+#   position   CV_1474 is drawn by DRAW_CV_297, immediately between
+#              DRAW_CV_296 (F03's body, with arm F03) and
+#              CAPSULE_HERO_RUN_LEFT_FOOTSTEP_PHASE_2 (F05's body, arm F05)
+#   offset     0x13B2 +0xC2-> 0x1474 +0x96-> 0x150A fills a double stride;
+#              every other step in the early run is 0xA2..0xAE
+#   geometry   48.0x31.0 with 10 leaves, and it is the ONLY live CV in
+#              0x13B4..0x150A with a body shape
+#
+# It draws no arm at all, which is why HERO_RUN_LEFT_ARM_F04 does not exist:
+# the arm family's gap is a frame with no arm, not a missing name.
+CV_11B8 HERO_RUN_LEFT_BODY_F00
+CV_125A HERO_RUN_LEFT_BODY_F01
+CV_1304 HERO_RUN_LEFT_BODY_F02
+CV_13B2 HERO_RUN_LEFT_BODY_F03
+CV_1474 HERO_RUN_LEFT_BODY_F04
+CV_150A HERO_RUN_LEFT_BODY_F05
+CV_1530 HERO_RUN_LEFT_BODY_F06
+CV_1556 HERO_RUN_LEFT_BODY_F07
+CV_157C HERO_RUN_LEFT_BODY_F08
+CV_15A2 HERO_RUN_LEFT_BODY_F09

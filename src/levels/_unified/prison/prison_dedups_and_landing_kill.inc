@@ -455,7 +455,7 @@ PRISON_HERO_RUN_LEFT_DRAW_PHASE_00:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV108_PLAY_60_F0F_V2A_C0:
-	video type=0, offset=CV_11B8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_BODY_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x00
 	ret
 
@@ -534,7 +534,7 @@ PRISON_HERO_RUN_LEFT_DRAW_PHASE_05:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV098_PLAY_60_F0F_V2A_C0:
-	video type=0, offset=CV_150A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_BODY_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x00
 	ret
 
@@ -603,7 +603,7 @@ PRISON_HERO_RUN_LEFT_DRAW_PHASE_09:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV_106:
-	video type=0, offset=CV_15A2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_BODY_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 

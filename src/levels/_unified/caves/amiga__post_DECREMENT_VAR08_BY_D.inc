@@ -1047,7 +1047,7 @@ CAVES_HERO_RUN_LEFT_NO_GUN_ARM_PHASE_1:
 	video type=0, offset=HERO_RUN_LEFT_ARM_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 LABEL_9CCE:
-	video type=0, offset=CV_11B8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_BODY_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x01
 	ret
 
@@ -1081,7 +1081,7 @@ CAVES_HERO_RUN_LEFT_NO_GUN_ARM_PHASE_4:
 	video type=0, offset=HERO_RUN_LEFT_ARM_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 DRAW_CV_296:
-	video type=0, offset=CV_13B2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_BODY_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -1090,7 +1090,7 @@ LABEL_9D1F:
 	call DRAW_CV_279
 
 DRAW_CV_297:
-	video type=0, offset=CV_1474, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_BODY_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -1103,7 +1103,7 @@ CAVES_HERO_RUN_LEFT_NO_GUN_ARM_PHASE_6:
 	video type=0, offset=HERO_RUN_LEFT_ARM_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 LABEL_9D3F:
-	video type=0, offset=CV_150A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_BODY_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0A, vol=0x2A, channel=0x01
 	ret
 

@@ -1025,7 +1025,7 @@ CAPSULE_HERO_RUN_LEFT_DRAW_0:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_HERO_RUN_LEFT_FOOTSTEP_PHASE_1:
-	video type=0, offset=CV_11B8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_BODY_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0F, vol=0x2A, channel=0x01
 	ret
 
@@ -1104,7 +1104,7 @@ CAPSULE_HERO_RUN_LEFT_DRAW_5:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAPSULE_HERO_RUN_LEFT_FOOTSTEP_PHASE_2:
-	video type=0, offset=CV_150A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_BODY_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	play id=0x0060, freq=0x0A, vol=0x2A, channel=0x01
 	ret
 
@@ -1172,7 +1172,7 @@ CAPSULE_HERO_RUN_LEFT_DRAW_9:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV_106:
-	video type=0, offset=CV_15A2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_LEFT_BODY_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
