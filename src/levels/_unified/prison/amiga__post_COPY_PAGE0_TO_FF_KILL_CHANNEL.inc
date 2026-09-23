@@ -121,10 +121,10 @@ PRISON_BACKDROP_TILE_REPEAT_DOWN:
 	copyVideoPage src=0x80, dst=0x03
 	mov [0x65], 0x0005
 	selectVideoPage 0x03
-	video offset=CINEMATIC_087, x=160, y=100
-	video offset=CINEMATIC_088, x=160, y=100
-	video offset=CINEMATIC_089, x=160, y=100
-	video offset=CINEMATIC_089, x=0, y=100
+	video offset=CINEMATIC_PRISON_DEBRIS_SHARDS_0, x=160, y=100
+	video offset=CINEMATIC_PRISON_DEBRIS_SHARDS_1, x=160, y=100
+	video offset=CINEMATIC_PRISON_DEBRIS_SHARDS_2, x=160, y=100
+	video offset=CINEMATIC_PRISON_DEBRIS_SHARDS_2, x=0, y=100
 	selectVideoPage 0xFF
 	ret
 

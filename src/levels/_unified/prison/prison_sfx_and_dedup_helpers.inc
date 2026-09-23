@@ -539,10 +539,10 @@ FOLD_BODY_104B_22B91458:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_SEQ_085_085_086:
-	video offset=CINEMATIC_085, x=132, y=39
-	video offset=CINEMATIC_085, x=297, y=39
-	video offset=CINEMATIC_086, x=132, y=39
-	video offset=CINEMATIC_086, x=297, y=39
+	video offset=CINEMATIC_PRISON_GRAVEL_TILE_0, x=132, y=39
+	video offset=CINEMATIC_PRISON_GRAVEL_TILE_0, x=297, y=39
+	video offset=CINEMATIC_PRISON_GRAVEL_TILE_1, x=132, y=39
+	video offset=CINEMATIC_PRISON_GRAVEL_TILE_1, x=297, y=39
 	ret
 
 
