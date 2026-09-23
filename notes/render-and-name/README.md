@@ -359,3 +359,21 @@ re-sync and a second commit -- which happened to seven families at once on
 2026-09-23. All nine CAVES runs of seven or more report "this stage only", so
 they may take a stage word; the fourteen-frame `DRAW_CIN_110_BLOCK` run does
 not, and `CINEMATIC_TUMBLING_CHUNK_F0..F13` never carried one.
+
+### `--partners`: the other queue
+
+Some numbered constants are drawn on the line before or after a constant that
+already has a name, at the same anchor, **every time**. That is how
+`CINEMATIC_CAPSULE_FIGURE_WALK_RIGHT_BODY_F0..F4` were found: each sits
+against its own `CV_FIGURE_WALK_RIGHT_UPPER_POSE_*`.
+
+    python3 notes/render-and-name/frame_runs.py --stage CAPSULE --partners
+
+**A companion is not a synonym.** Which of a pair is the subject and which is
+an overlay took a render and two extents to settle -- the numbered one was
+59.5 tall standing on the floor, the named one 30 tall and two paths, floating
+in the torso band. The mode narrows the question and does not answer it.
+
+Its control, run against the tree before that batch, is **4 of 5**: it would
+have offered 334, 335, 336 and 337 and missed 338, whose draws do not all
+share one named neighbour. It under-offers.

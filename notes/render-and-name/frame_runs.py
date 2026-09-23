@@ -156,6 +156,67 @@ def art_by_stage(port: str, branch: str):
     return out
 
 
+def partners(branch: str, stage: str) -> int:
+    """Numbered constants drawn beside exactly one named constant, always.
+
+    `CINEMATIC_334` in CAPSULE is drawn on the line before
+    `CV_FIGURE_WALK_RIGHT_UPPER_POSE_00`, at the same anchor, every time it is
+    drawn -- and so are its four neighbours, each against a different pose of
+    that one family. That pairing is what named them.
+
+    **This is a queue, not a proposal.** A companion is not a synonym: which
+    of the pair is the subject and which is an overlay took a render and two
+    extents to decide (the numbered one was 59.5 tall standing on the floor;
+    the named one was 30 tall, two paths, floating in the torso band). The
+    pairing narrows the question; it does not answer it.
+
+    A constant is listed only when **every** draw of it sits within two lines
+    of the same named constant at the same anchor. One inconsistent site drops
+    it.
+
+    Control, run against the tree as it stood before the batch that this mode
+    is modelled on: it would have offered **4 of the 5** it named --
+    CINEMATIC_334, 335, 336 and 337, each against its own
+    `CV_FIGURE_WALK_RIGHT_UPPER_POSE_*`. It missed `CINEMATIC_338`, whose
+    draws do not all share one named neighbour. So the mode under-offers, and
+    a run whose members it lists only partly is still worth opening.
+    """
+    f = SRC / branch / f"{stage}.asm"
+    if not f.is_file():
+        return 1
+    lines = f.read_text(errors="replace").splitlines()
+    sites = []
+    for i, line in enumerate(lines):
+        m = RE_V.match(line)
+        if m:
+            sites.append((m.group(1), f"{m.group(2).strip()},"
+                                      f"{m.group(3).strip()}", i))
+    near: dict[str, list] = collections.defaultdict(list)
+    for j, (c, a, i) in enumerate(sites):
+        if not RE_NUM.match(c):
+            continue
+        found = []
+        for k in (j - 1, j + 1):
+            if 0 <= k < len(sites):
+                c2, a2, i2 = sites[k]
+                if a2 == a and abs(i2 - i) <= 2 and not RE_NUM.match(c2):
+                    found.append(c2)
+        near[c].append(set(found))
+    rows = []
+    for c, per_site in near.items():
+        common = set.intersection(*per_site) if per_site else set()
+        if len(common) == 1:
+            rows.append((c, next(iter(common)), len(per_site)))
+    rows.sort()
+    print(f"  {len(rows)} still-numbered constant(s) in {branch}/{stage} "
+          f"always drawn beside one named constant\n")
+    for c, p, n in rows:
+        print(f"  {c:<18} {n} draw(s)   beside  {p}")
+    print("\n  A queue, not a proposal: which of a pair is the subject "
+          "still needs the render.")
+    return 0
+
+
 def family_of(name: str) -> str:
     """The name with a trailing index, `_F<n>`, or a two-word tail removed."""
     n = re.sub(r"_F?\d+$", "", name)
@@ -204,6 +265,10 @@ def main() -> int:
     ap.add_argument("--port", default="amiga", choices=sorted(PORTS))
     ap.add_argument("--min", type=int, default=3,
                     help="least still-numbered members to report a run")
+    ap.add_argument("--partners", action="store_true",
+                    help="list still-numbered constants that are ALWAYS drawn "
+                         "beside exactly one named constant, at the same "
+                         "anchor -- a queue, not a proposal")
     ap.add_argument("--stages", action="store_true",
                     help="also report how many stages each run's art appears "
                          "in, so a name is scoped before it is written")
@@ -215,6 +280,8 @@ def main() -> int:
                     help="actor = a variable pair, literal = fixed x and y")
     args = ap.parse_args()
 
+    if args.partners:
+        return partners(PORTS[args.port], args.stage)
     if args.control:
         return control(PORTS[args.port], args.stage, args.min)
 
