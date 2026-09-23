@@ -534,17 +534,17 @@ LABEL_CA7D:
 	video offset=CINEMATIC_CAVES_SCREEN_8F_BACKDROP_LAYER_2, x=160, y=100
 	video offset=CINEMATIC_169, x=126, y=115
 	break
-	video offset=CINEMATIC_596, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F3, x=160, y=100
 	video offset=CINEMATIC_169, x=124, y=79
 	break
-	video offset=CINEMATIC_597, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F4, x=160, y=100
 	video offset=CINEMATIC_169, x=126, y=70
 	break
-	video offset=CINEMATIC_598, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F5, x=160, y=100
 	video offset=CINEMATIC_169, x=126, y=63
 	setup channel=0x02, address=LABEL_CB75
 	break
-	video offset=CINEMATIC_599, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F6, x=160, y=100
 	video offset=CINEMATIC_169, x=125, y=72
 	break
 	play id=0x0074, freq=0x0F, vol=0x40, channel=0x00
@@ -578,14 +578,14 @@ LABEL_CB3E:
 	break
 	video offset=CINEMATIC_CAVES_SCREEN_8F_BACKDROP_LAYER_2, x=160, y=100
 	break
-	video offset=CINEMATIC_596, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_597, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F4, x=160, y=100
 	break
-	video offset=CINEMATIC_598, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F5, x=160, y=100
 	setup channel=0x02, address=LABEL_CB75
 	break
-	video offset=CINEMATIC_599, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F6, x=160, y=100
 	break
 	video offset=CINEMATIC_592, x=160, y=100
 	selectVideoPage 0x00

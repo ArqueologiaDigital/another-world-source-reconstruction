@@ -124,6 +124,7 @@ checked against the receiving port's own guards.
 | PRISON 541..548, 624..628 | (msdos twins) | `CINEMATIC_PRISON_FLEXING_BAND_F0..F5`, `_BAR_PANEL_F0..F4` | medium |
 | CAVES 514..524, 857..867 | (msdos twins) | `CINEMATIC_CAVES_HERO_SWIM_ARM_{RIGHT,LEFT}_F0..F10` | high |
 | CAVES 458..464, 480..490 | (msdos twins) | `CINEMATIC_CAVES_HERO_SWIM_LEGS_{DOWNSWEEP,CYCLE}_F*` | high |
+| CAVES 572..578, 800..805 | (msdos twins) | `CINEMATIC_CAVES_{COLUMN_EMERGE,GROUND_BREACH}_F*` | medium |
 | CAVES 718, 719, 734, 735 | (msdos twins) | `CINEMATIC_CAVES_STALACTITE_CAVERN_{FLOOR,CEILING}_{LEFT,RIGHT}` | high |
 | CAVES 452/453/470/471, 472..474/491..493 | (msdos twins) | `CINEMATIC_CAVES_HERO_SWIM_HEAD_{UP,DOWN}_{RIGHT,LEFT}_*` | high |
 

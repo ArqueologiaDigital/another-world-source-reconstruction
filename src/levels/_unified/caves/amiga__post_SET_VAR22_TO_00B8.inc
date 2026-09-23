@@ -492,34 +492,34 @@ HANG_DRAW_CIN_374:
 	jmp HANG_DRAW_CIN_374
 
 LABEL_C5ED:
-	video offset=CINEMATIC_572, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F0, x=160, y=100
 	break
 	jne [0x6C], 0x03E8, LABEL_C5ED
 	jg [HERO_X], 0x8C, LABEL_C6AE
 	deleteChannels first=0x14, last=0x16
-	video offset=CINEMATIC_572, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F0, x=160, y=100
 	break
 	play id=0x006A, freq=0x0A, vol=0x40, channel=0x00
 	play id=0x006A, freq=0x0A, vol=0x40, channel=0x01
 	play id=0x0074, freq=0x0A, vol=0x40, channel=0x02
 	play id=0x0074, freq=0x0A, vol=0x40, channel=0x03
 	video offset=CINEMATIC_160, x=125, y=153
-	video offset=CINEMATIC_573, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_574, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F2, x=160, y=100
 	video offset=CINEMATIC_169, x=126, y=115
 	break
-	video offset=CINEMATIC_575, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F3, x=160, y=100
 	video offset=CINEMATIC_169, x=124, y=79
 	break
-	video offset=CINEMATIC_576, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F4, x=160, y=100
 	video offset=CINEMATIC_169, x=126, y=70
 	break
-	video offset=CINEMATIC_577, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F5, x=160, y=100
 	video offset=CINEMATIC_169, x=126, y=63
 	setup channel=0x02, address=LABEL_C6E2
 	break
-	video offset=CINEMATIC_578, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F6, x=160, y=100
 	video offset=CINEMATIC_169, x=125, y=72
 	break
 	play id=0x0074, freq=0x0F, vol=0x40, channel=0x00
@@ -547,20 +547,20 @@ LABEL_C5ED:
 	killChannel
 
 LABEL_C6AE:
-	video offset=CINEMATIC_572, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F0, x=160, y=100
 	break
-	video offset=CINEMATIC_573, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_574, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_575, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_576, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F4, x=160, y=100
 	break
-	video offset=CINEMATIC_577, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F5, x=160, y=100
 	setup channel=0x02, address=LABEL_C6E2
 	break
-	video offset=CINEMATIC_578, x=160, y=100
+	video offset=CINEMATIC_CAVES_COLUMN_EMERGE_F6, x=160, y=100
 	break
 	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_2, x=160, y=100
 	selectVideoPage 0x00
