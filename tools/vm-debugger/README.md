@@ -173,6 +173,26 @@ Clicking a row makes that constant's area blink. The highlight re-fills the
 polygons the renderer produced for *that draw* -- not a bounding box and not a
 mask bitmap -- so what blinks is exactly the pixels it painted.
 
+## Does it actually draw anything?
+
+The browser is where this runs, so canvas, panels and clicks are covered by no
+test. Everything underneath is: `tests/smoke_frames.mjs` runs a stage and
+reports how much of the screen is painted and how many distinct constants were
+drawn with no semantic name -- the same count the header badge shows.
+
+400 frames each, amiga, 2026-09-23:
+
+```
+  INTRO    397 painted frames, fullest 99.7%   149 named,  0 unnamed
+  PRISON   398 painted frames, fullest 100%    168 named, 41 unnamed, 307 frames trip "pause on unnamed"
+  TANK     398 painted frames, fullest 99.5%   118 named,  0 unnamed
+```
+
+INTRO and TANK are fully named already, so the badge stays green through both
+and the auto-pause never fires -- which is the check working, not a bug. PRISON
+trips it on 307 of 400 frames across 41 constants, and those are exactly the
+frames worth stopping on.
+
 ## Routine names from a listing with no addresses
 
 `awvm-disasm` emits labels, data and instructions in address order and no
