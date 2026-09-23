@@ -60,7 +60,29 @@ require two phases IN ONE STAGE, which dropped `CV_2566` and `CV_320A`
 
 Not covered
 -----------
-**RUN_LEFT is held.** Its four pieces mirror the right-hand run exactly:
+**`CV_245C` and `CV_2D4E`, which look exactly like a fifth WALK limb pose and
+are not safely one.** They are an exact mirror pair (11x17/1, x spans
+reflected about -0.5, identical y), and each sits one 8-byte step below its
+family's last member -- 0x245C under `..._WALK_RIGHT_LIMB_POSE_03` at 0x2464,
+0x2D4E under the left one at 0x2D56. By the offset rule that is POSE_04 on
+both sides.
+
+The phases say otherwise. The committed family, in descending-offset order,
+serves first phases 0, 5, 6, 8 -- ascending, which is the check the offset
+rule has to pass. `CV_2D4E` is attested at phase **7**, so as POSE_04 it would
+follow phase 8, and by phase it belongs between POSE_02 and POSE_03 where the
+offsets have no room for it.
+
+That is the same disagreement `mirror_exact.py` resolved for RUN_LEFT, without
+the thing that resolved it: there, the right-hand family was already numbered
+and each unnamed key was the exact mirror of a *named* one, so the slot came
+from the mirror and the offsets merely agreed. Here the two mirror only **each
+other**, so there is no named slot to inherit and the offsets are the sole
+evidence -- against a phase that contradicts them. Held.
+
+**RUN_LEFT was held here and is now named** by `../shared-bank-geometry/
+mirror_exact.py`; the paragraph below is kept because it states what the
+mirror had to overcome. Its four pieces mirror the right-hand run exactly:
 identical geometry, identical y, x spans reflected about ~0, the same 10-byte
 step. But read in bank order its first phases are 0, 8, 2, 3, not ascending --
 `CV_3200` is attested at 8 and 9 and never at 1, where its right-hand twin
