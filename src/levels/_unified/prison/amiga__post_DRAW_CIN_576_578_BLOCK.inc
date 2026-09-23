@@ -314,7 +314,7 @@ LABEL_2268:
 	video offset=CINEMATIC_210, x=[0x21], y=[0x22]
 	break
 	call PRISON_BUDDY_EFFECT_ANCHOR_RIGHT
-	video offset=CINEMATIC_200, x=[0x21], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_3, x=[0x21], y=[BUDDY_Y]
 	call LABEL_40D5
 	break
 	jmp LABEL_2543
@@ -343,7 +343,7 @@ LABEL_22A8:
 	video offset=CINEMATIC_199, x=[0x21], y=[0x22]
 	break
 	call PRISON_BUDDY_EFFECT_ANCHOR_LEFT
-	video offset=CINEMATIC_200, x=[0x21], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_3, x=[0x21], y=[BUDDY_Y]
 	call LABEL_40D5
 	break
 	jmp LABEL_2523
@@ -360,7 +360,7 @@ LABEL_2305:
 	jne [SCREEN_NUM], 0x04, LABEL_2319
 	call LABEL_2378
 	je [0x23], 0x00, LABEL_235C
-	video offset=CINEMATIC_202, x=[0x21], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_0, x=[0x21], y=[BUDDY_Y]
 
 LABEL_2319:
 	break
@@ -374,7 +374,7 @@ LABEL_232E:
 	jne [SCREEN_NUM], 0x04, LABEL_2343
 	call LABEL_2378
 	je [0x23], 0x00, LABEL_235C
-	video offset=CINEMATIC_204, x=[0x21], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_1, x=[0x21], y=[BUDDY_Y]
 
 LABEL_2343:
 	break
@@ -392,7 +392,7 @@ LABEL_235C:
 	video offset=CINEMATIC_210, x=[0x21], y=[BUDDY_Y]
 	break
 	call LABEL_2378
-	video offset=CINEMATIC_200, x=[0x21], y=[0x71]
+	video offset=CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_3, x=[0x21], y=[0x71]
 	mov [BUDDY_Y], [0x71]
 	mov [0x10], 0x0004
 	call LABEL_40D5
@@ -436,7 +436,7 @@ PRISON_BUDDY_FLOOR_DESCEND:
 
 LABEL_23CB:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
-	video offset=CINEMATIC_202, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_0, x=[0x21], y=[0x22]
 	ret
 
 
@@ -448,7 +448,7 @@ PRISON_ACTOR_CHARGE_GLOW_FRAME_01:
 
 LABEL_23E3:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
-	video offset=CINEMATIC_204, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_1, x=[0x21], y=[0x22]
 	ret
 
 

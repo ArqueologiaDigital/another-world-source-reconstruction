@@ -25,9 +25,11 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 79.3% (8,046/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 79.5% (8,062/10,147) | `asset_naming_share.py` |
 | `_AMIGA_EXTRA` constants left | **0** of 38 | `amiga-extra-suffix/deconflict_survivors.py` |
 | names sitting on the wrong port's constant | 11 (was 12) | `cross-port-art/name_art_agreement.py` |
+| names the canonical and unified trees disagree about | 452 missing + 544 moved | `tree-name-drift/name_drift.py` |
+| beam-span rungs in the wrong rung | 0 in amiga and msdos, 3 stages | `beam-span-ladder/rung_thresholds.py` |
 | pictures carrying two or more names | 73 amiga / 76 msdos of 2,530 / 2,552 named | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 48, blocking 250 drawing labels | `shared-bank-geometry/blocked_by_bank.py` |
@@ -114,6 +116,18 @@ already-named sites right, and every one of the 44 misses is a site where the
 two ports draw different pictures. Requiring BOTH gates: 552 of 552. See
 `notes/cross-port-art/README.md`, including the 44 `PRISON_CUTSCENE_ZOOM_IN_*`
 disagreements left open.
+
+Those 44 now have a cause. `notes/tree-name-drift/name_drift.py` shows the
+canonical and unified trees defining `CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_4`
+and its siblings at **different offsets** -- 0xCF78 in the unified tree, 0xCA7C
+in `dos_1992/PRISON.asm`. It is not a naming dispute; it is a rename synced to
+one tree and not the other, and 544 names across the repository are in that
+state (plus 452 present in the canonical files and absent from the unified
+tree). Both trees assemble byte-identically, so no gate sees it, and the
+canonical tree is the naming record -- so the drift costs no coverage and the
+fix is a sync pass per stage, not renaming. **Any probe that reads a routine
+from one tree must read its EQU table from the same tree**; doing otherwise
+reported msdos CAVES' whole beam ladder as misplaced when none of it was.
 
 **237 of 889 unified chunk FILENAMES name a label that no longer exists.**
 `notes/unified-scoping/stale_chunk_names.py`. Invisible to `make test`,

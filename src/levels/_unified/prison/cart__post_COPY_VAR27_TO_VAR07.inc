@@ -20,8 +20,8 @@ LABEL_37AE:
 	sub [0x26], [0x21]
 	jl [0x26], 0x7E, LABEL_37DB
 	jge [0x12], 0x2000, LABEL_37CE
-	video offset=CINEMATIC_520, x=[0x21], y=[0x27]
-	video offset=CINEMATIC_521, x=[0x22], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BEAM_SPAN_RIGHT_5, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BEAM_SPAN_LEFT_5, x=[0x22], y=[0x27]
 	jmp LABEL_3866
 
 LABEL_37CE:
@@ -32,8 +32,8 @@ LABEL_37CE:
 LABEL_37DB:
 	jl [0x26], 0x64, LABEL_3802
 	jge [0x12], 0x2000, LABEL_37F5
-	video offset=CINEMATIC_514, x=[0x21], y=[0x27]
-	video offset=CINEMATIC_515, x=[0x22], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BEAM_SPAN_RIGHT_4, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BEAM_SPAN_LEFT_4, x=[0x22], y=[0x27]
 	jmp LABEL_3866
 
 LABEL_37F5:
@@ -43,8 +43,8 @@ LABEL_37F5:
 
 LABEL_3802:
 	jl [0x26], 0x3E, LABEL_3815
-	video offset=CINEMATIC_514, x=[0x21], y=[0x27]
-	video offset=CINEMATIC_515, x=[0x22], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BEAM_SPAN_RIGHT_4, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_BEAM_SPAN_LEFT_4, x=[0x22], y=[0x27]
 	jmp LABEL_3866
 
 LABEL_3815:

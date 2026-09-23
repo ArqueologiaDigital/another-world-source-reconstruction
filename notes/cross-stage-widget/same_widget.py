@@ -55,6 +55,7 @@ Usage
     python3 notes/cross-stage-widget/same_widget.py --port amiga --pairs PRISON:CAPSULE
     python3 notes/cross-stage-widget/same_widget.py --port amiga \
         --show PRISON:CINEMATIC_361,CINEMATIC_362
+    python3 notes/cross-stage-widget/same_widget.py --port amiga --hash 816e097d250f
 
 Run `make extract` in the archaeology repo first if the romsets are absent.
 """
@@ -121,6 +122,8 @@ def main() -> int:
     ap.add_argument("--port", default="amiga", choices=sorted(BRANCH))
     ap.add_argument("--pairs", help="A:B -- only this stage pair")
     ap.add_argument("--show", help="STAGE:NAME,NAME,... -- measurement table only")
+    ap.add_argument("--hash", help="md5 prefix -- every constant in the port "
+                                   "holding this exact drawing, any stage")
     args = ap.parse_args()
 
     data = rom(args.port)
@@ -138,6 +141,20 @@ def main() -> int:
             if not m:
                 print(f"  {n:<44} 0x{tab[n]:04X}  does not parse"); continue
             print(f"  {n:<44} 0x{tab[n]:04X}  {m[1]:>12}  {m[2]:>3} leaf  {m[0][:12]}")
+        return 0
+
+    if args.hash:
+        pre = args.hash.lower()
+        for st in STAGES.values():
+            tab = equs(args.port, st)
+            if not tab:
+                continue
+            slab = data[byname[st] * SLAB:(byname[st] + 1) * SLAB]
+            for n, o in sorted(tab.items(), key=lambda kv: kv[1]):
+                m = measure(slab, o)
+                if m and m[0].startswith(pre):
+                    print(f"  {st:<10} {n:<48} 0x{o:04X}  {m[1]:>12} "
+                          f"{m[2]:>3} leaf  {m[0][:12]}")
         return 0
 
     want = None
