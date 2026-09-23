@@ -313,6 +313,99 @@ def loops():
     return 0
 
 
+RE_CALL = re.compile(r"^\s*call\s+([A-Za-z_][A-Za-z0-9_]*)")
+
+
+def shapes() -> int:
+    """Is there an attested `<owner>_<suffix>` name for this body shape?
+
+    `../bare-ret-tails/` names a placeholder whose body is a bare `ret` after
+    the one routine that jumps to it, because the tree already spells that
+    `<owner>_RET` 174 times. The obvious next question is which OTHER body
+    shapes have such a form, and the answer, measured rather than assumed, is
+    **none of them**.
+
+    For every shape with four or more placeholders in that position, this
+    counts how many already-named labels of the same shape are spelled
+    `<owner>_<something>`. Bare `ret` is the only shape where that count is
+    not zero -- every other row is a flat **0**. The nearest thing to a
+    second is `call+video+call+...`, at 55 of 129, and that is one family
+    ending in `DONE` rather than a convention for the shape.
+
+    The two largest shapes are blocked for reasons of their own:
+
+    * **a body of one `video`** (70 placeholders, 129 named) is
+      `../draw-label-follows-constant/`'s case, waiting on the picture.
+    * **a body of one `call`** (89 placeholders) has no rule to apply. Of the
+      29 named labels in that shape, **29** carry a name unrelated to their
+      callee: `SETUP_HASH_AND_DERIVE_BUCKETS` calls
+      `COPY_HASH_VAR_37_TO_RANGE`, and
+      `CAPSULE_HERO_WALK_LEFT_DRAW_14_GUN_RAISED` calls
+      `HERO_GUN_ARM_POSE_LEFT_CASE_01`. The label says why the call is made,
+      which the call itself does not. Worse, 98 of the 114 single-`call`
+      placeholders call a routine that is **also** a placeholder, so there is
+      nothing there to inherit even if there were a rule.
+
+    So the positional-naming approach is closed, not open: it was worth
+    exactly one slice, that slice is taken, and this is the measurement that
+    says there is no second one.
+    """
+    ph = collections.Counter()
+    named: dict[tuple, collections.Counter] = collections.defaultdict(
+        collections.Counter)
+    call_rel = collections.Counter()
+    sys.path.insert(0, str(SRC / "notes" / "bare-ret-tails"))
+    import owner_ret as O                                    # noqa: E402
+    for br in BRANCHES:
+        for st in ALL_STAGES:
+            lines = read(br, st)
+            if lines is None:
+                continue
+            at, refs = index(lines)
+            for n, i in list(at.items()):
+                own = O.sole_owner(refs, at, n)
+                if own is None:
+                    continue
+                b = tuple(body_ops(lines, i))
+                key = b if len(b) <= 3 else b[:3] + ("...",)
+                if PH.match(n):
+                    if O.usable_owner(own):
+                        ph[key] += 1
+                    if b == ("call",):
+                        m = RE_CALL.match(lines[i + 1])
+                        if m:
+                            call_rel["placeholder, callee named"
+                                     if not PH.match(m.group(1)) else
+                                     "placeholder, callee also a placeholder"] += 1
+                    continue
+                tail = n.rsplit("_", 1)[-1]
+                named[key]["owner-form" if n == f"{own}_{tail}"
+                           else "other"] += 1
+                if b == ("call",):
+                    m = RE_CALL.match(lines[i + 1])
+                    if m:
+                        c = m.group(1)
+                        call_rel["named, == callee" if n == c else
+                                 "named, prefix of the callee or vice versa"
+                                 if c.startswith(n + "_") or n.startswith(c + "_")
+                                 else "named, unrelated to the callee"] += 1
+    print(f"  {'body shape':<34}{'placeholders':>12}{'named, owner-form':>19}"
+          f"{'named, other':>14}")
+    for b, c in sorted(ph.items(), key=lambda kv: -kv[1]):
+        if c < 4:
+            continue
+        a = named.get(b, collections.Counter())
+        print(f"  {'+'.join(b)[:33]:<34}{c:>12}{a['owner-form']:>19}"
+              f"{a['other']:>14}")
+    print("\n  A body of one `call`, the largest shape, has no rule to "
+          "apply:")
+    for k, c in call_rel.most_common():
+        print(f"    {c:>5}  {k}")
+    print("\n  Bare `ret` is the only shape with a non-zero owner-form "
+          "count; see ../bare-ret-tails/.")
+    return 0
+
+
 FORBIDDEN = (
     (re.compile(r"_L\d+$"), "bare fold-local suffix _L<n>"),
     (re.compile(r"FOLD_BODY"), "FOLD_BODY, a consolidation artefact"),
@@ -396,6 +489,10 @@ def main() -> int:
                          "routine, with the role their position gives them")
     ap.add_argument("--frames", action="store_true")
     ap.add_argument("--loops", action="store_true")
+    ap.add_argument("--shapes", action="store_true",
+                    help="per body shape: how many placeholders sit in it, "
+                         "and what the tree already calls labels of that "
+                         "shape in the same position")
     ap.add_argument("--forbidden", action="store_true",
                     help="the lint's forbidden-FORM classes: names that exist "
                          "but break NAMING.md §1, sized and diagnosed")
@@ -405,6 +502,8 @@ def main() -> int:
         return frames()
     if args.loops:
         return loops()
+    if args.shapes:
+        return shapes()
     if args.forbidden:
         return forbidden()
 

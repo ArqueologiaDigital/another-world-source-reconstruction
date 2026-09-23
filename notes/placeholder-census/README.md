@@ -7,6 +7,7 @@
 | | Is a complete `_F` family indexed by order of first appearance? | `... --frames` |
 | | Does a `<STEM>_DONE` label close its loop onto `<STEM>_LOOP`? | `... --loops` |
 | | How big are the lint's forbidden-*form* classes, and what is each blocked on? | `... --forbidden` |
+| | Which body shapes have an attested `<owner>_<suffix>` name? | `... --shapes` |
 
 The asset half of the backlog has a map — `../remaining-art/by_anchor.py`
 sorts still-numbered art by how it is drawn. The label half had none. The lint
@@ -161,3 +162,36 @@ because the *owner's* own name is mechanical — `FILL_PAGE_00_COLOR_08_RET`
 propagates a placeholder rather than removing one. So the 828 are not blocked
 on the positional vocabulary so much as on their owners, and every owner that
 gains a real name frees its tails with it.
+
+## And whether there is a second slice — measured, and there is not
+
+`--shapes` asks the obvious follow-up to `../bare-ret-tails/`: which *other*
+body shapes have an attested `<owner>_<suffix>` form? For every shape with
+four or more placeholders in that position, it counts the already-named labels
+of the same shape spelled that way.
+
+```
+  body shape                        placeholders  named, owner-form  named, other
+  call                                        89                  0            29
+  video                                       70                  0           129
+  call+sub+break+...                          14                  0           143
+  call+add+break+...                          14                  0           144
+  jne+mov                                     10                  0            90
+  jne+mov+mov+...                              9                  0           180
+  call+video+call+...                          7                 55            74
+```
+
+Every row but the last is a flat **0**, and the last is one family ending in
+`DONE`, not a convention for the shape. Bare `ret` was the only slice.
+
+The two largest are blocked for their own reasons. A body of one `video` is
+`../draw-label-follows-constant/`'s case, waiting on the picture. A body of
+one `call` has no rule to apply: of the 29 named labels in that shape, **29**
+carry a name unrelated to their callee — `SETUP_HASH_AND_DERIVE_BUCKETS` calls
+`COPY_HASH_VAR_37_TO_RANGE` — because the label says *why* the call is made,
+which the call does not. And 98 of the 114 single-`call` placeholders call a
+routine that is itself a placeholder, so there is nothing to inherit even if
+there were a rule.
+
+So positional naming is **closed**, not open. It was worth exactly one slice,
+that slice is taken, and this is the measurement that says there is no second.
