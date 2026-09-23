@@ -382,7 +382,7 @@ CAVES_SCREEN_4C_BACKDROP_DRAW:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_CAVES_SCREEN_4C_CAVERN_COLUMNS, x=160, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_4C_CAVERN_ARCH, x=160, y=100
-	video offset=CINEMATIC_355, x=160, y=100
+	video offset=CINEMATIC_CAVES_DIAGONAL_GIRDER, x=160, y=100
 	video offset=CINEMATIC_356, x=31, y=74
 	video offset=CINEMATIC_356, x=293, y=150
 	video offset=CINEMATIC_357, x=97, y=110
@@ -458,11 +458,11 @@ CAVES_SCREEN_4F_BACKDROP_DRAW:
 	fill page=0x00, color=0x02
 	video offset=CINEMATIC_365, x=160, y=100
 	video offset=CINEMATIC_366, x=160, y=100
-	video offset=CINEMATIC_367, x=95, y=150
-	video offset=CINEMATIC_367, x=191, y=40, zoom=0x3b
-	video offset=CINEMATIC_367, x=191, y=40, zoom=0x2f
-	video offset=CINEMATIC_367, x=192, y=42, zoom=0x20
-	video offset=CINEMATIC_367, x=232, y=41, zoom=0x29
+	video offset=CINEMATIC_CAVES_RING_OUTLINE, x=95, y=150
+	video offset=CINEMATIC_CAVES_RING_OUTLINE, x=191, y=40, zoom=0x3b
+	video offset=CINEMATIC_CAVES_RING_OUTLINE, x=191, y=40, zoom=0x2f
+	video offset=CINEMATIC_CAVES_RING_OUTLINE, x=192, y=42, zoom=0x20
+	video offset=CINEMATIC_CAVES_RING_OUTLINE, x=232, y=41, zoom=0x29
 	video offset=CINEMATIC_368, x=196, y=90
 	video offset=CINEMATIC_368, x=197, y=96
 	video offset=CINEMATIC_368, x=196, y=99
@@ -477,7 +477,7 @@ CAVES_SCREEN_4F_BACKDROP_DRAW:
 
 LABEL_D783:
 	fill page=0x00, color=0x00
-	video offset=CINEMATIC_369, x=160, y=100
+	video offset=CINEMATIC_CAVES_CAVERN_DOME, x=160, y=100
 	video offset=CINEMATIC_370, x=160, y=100
 	video offset=CINEMATIC_371, x=160, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_67_BACKDROP_LAYER_0, x=[0xec], y=130, zoom=0x20
@@ -549,31 +549,31 @@ LABEL_D844:
 
 CAVES_SCREEN_91_BACKDROP_DRAW:
 	fill page=0x00, color=0x02
-	video offset=CINEMATIC_627, x=161, y=106
-	video offset=CINEMATIC_369, x=150, y=65522
-	video offset=CINEMATIC_628, x=32, y=102
-	video offset=CINEMATIC_628, x=287, y=102
-	video offset=CINEMATIC_628, x=125, y=101
-	video offset=CINEMATIC_628, x=193, y=101
-	video offset=CINEMATIC_367, x=161, y=143
-	video offset=CINEMATIC_629, x=394, y=100
-	video offset=CINEMATIC_630, x=99, y=100
-	video offset=CINEMATIC_630, x=271, y=100
-	video offset=CINEMATIC_631, x=10, y=100
-	video offset=CINEMATIC_355, x=481, y=65456
+	video offset=CINEMATIC_CAVES_CAVERN_WALL_AND_FLOOR, x=161, y=106
+	video offset=CINEMATIC_CAVES_CAVERN_DOME, x=150, y=65522
+	video offset=CINEMATIC_CAVES_SCREEN_91_GLOW_MOUND, x=32, y=102
+	video offset=CINEMATIC_CAVES_SCREEN_91_GLOW_MOUND, x=287, y=102
+	video offset=CINEMATIC_CAVES_SCREEN_91_GLOW_MOUND, x=125, y=101
+	video offset=CINEMATIC_CAVES_SCREEN_91_GLOW_MOUND, x=193, y=101
+	video offset=CINEMATIC_CAVES_RING_OUTLINE, x=161, y=143
+	video offset=CINEMATIC_CAVES_SCREEN_91_COLUMN_0, x=394, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_91_COLUMN_1, x=99, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_91_COLUMN_1, x=271, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_91_COLUMN_2, x=10, y=100
+	video offset=CINEMATIC_CAVES_DIAGONAL_GIRDER, x=481, y=65456
 	mov [0xF8], [0xB1]
 	and [0xF8], 0x0004
 	jne [0xF8], 0x00, SHARED_RET
-	video offset=CINEMATIC_632, x=3, y=123
+	video offset=CINEMATIC_CAVES_SCREEN_91_COLUMN_3, x=3, y=123
 	ret
 
 
-	video offset=CINEMATIC_632, x=332, y=123
+	video offset=CINEMATIC_CAVES_SCREEN_91_COLUMN_3, x=332, y=123
 	killChannel
 
 LABEL_D89E:
 	fill page=0x00, color=0x02
-	video offset=CINEMATIC_627, x=160, y=100
+	video offset=CINEMATIC_CAVES_CAVERN_WALL_AND_FLOOR, x=160, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_C8_BACKDROP_LAYER_0, x=160, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_C8_BACKDROP_LAYER_1, x=160, y=100
 	ret
@@ -581,7 +581,7 @@ LABEL_D89E:
 
 CAVES_SCREEN_93_BACKDROP_DRAW:
 	fill page=0x00, color=0x02
-	video offset=CINEMATIC_627, x=160, y=100
+	video offset=CINEMATIC_CAVES_CAVERN_WALL_AND_FLOOR, x=160, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_C8_BACKDROP_LAYER_2, x=160, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_C8_BACKDROP_LAYER_1, x=160, y=100
 	ret
@@ -589,15 +589,15 @@ CAVES_SCREEN_93_BACKDROP_DRAW:
 
 CAVES_SCREEN_94_BACKDROP_DRAW:
 	fill page=0x00, color=0x02
-	video offset=CINEMATIC_627, x=160, y=100
+	video offset=CINEMATIC_CAVES_CAVERN_WALL_AND_FLOOR, x=160, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_C8_BACKDROP_LAYER_1, x=160, y=100
 	ret
 
 
 CAVES_SCREEN_95_BACKDROP_DRAW:
 	fill page=0x00, color=0x02
-	video offset=CINEMATIC_627, x=160, y=100
-	video offset=CINEMATIC_627, x=390, y=100
+	video offset=CINEMATIC_CAVES_CAVERN_WALL_AND_FLOOR, x=160, y=100
+	video offset=CINEMATIC_CAVES_CAVERN_WALL_AND_FLOOR, x=390, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_C8_BACKDROP_LAYER_3, x=364, y=107
 	video offset=CINEMATIC_642, x=160, y=100
 	video offset=CINEMATIC_577, x=160, y=100

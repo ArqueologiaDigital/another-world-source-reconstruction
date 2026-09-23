@@ -276,6 +276,23 @@ being corrected. A name that no one has checked costs nothing in the measure and
 everything in the tree. The same question can be asked of any name whose only
 provenance is a mechanical transfer.
 
+**0b. The backdrop composites are the densest targets left, and CAVES,
+CAPSULE and PRISON have never been read with placement.** Ranking each stage's
+routines by how many still-numbered constants they draw finds them:
+
+    chahi/CAVES    9 numbered of 13 draws   CAVES_SCREEN_91_BACKDROP_DRAW
+                   7 of 36                  CAVES_SCREEN_6C_BACKDROP_DRAW
+    chahi/CAPSULE 11 of 11                  LABEL_0ED5
+                   8 of  9                  LABEL_4038
+    chahi/PRISON   8 of  9                  PRISON_INLINE_SUB_VAR22_BY_23_L3
+                   6 of 10                  DRAW_CIN_576_578_BLOCK
+
+`CAVES_SCREEN_91_BACKDROP_DRAW` is done and took nine constants in one batch.
+The recipe is `compose_run.py --progressive --routine <LABEL>` at the palette
+`palette_in_force.py` gives, then check each constant's other draw sites before
+using a `_SCREEN_<NN>_` word -- three of the nine turned out to be shared with
+other screens and took none.
+
 **0b. Keep the render-and-name batches going.** It is the only method still
 producing names on its own: `nameable_from_drawer.py` reports 1,
 `transfer_by_art.py` and `align_draw_sites.py` report 0 after each batch is
