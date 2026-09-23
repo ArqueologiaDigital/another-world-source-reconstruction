@@ -15,6 +15,32 @@ Evidence grades (E0–E4) are defined in
 `another-world-archaeology/SEMANTIC_DISASSEMBLY_PLAN.md` §2 and are used here
 without redefinition. **E1 is operand transcription and does not count as named.**
 
+## Names from a human description
+
+An annotation typed into `tools/vm-debugger/` while the asset's polygons
+blinked is **E3** — the "owner ground truth" arm of it — with one addition
+no render has: the person knows who the character is and what the scene is
+for. It may therefore supply the **subject word** and the actor identity, and
+nothing else. The index still comes from draw order or the ladder rung, the
+family bounds from the EQU run and the routine's draw list, the
+`_SCREEN_<NN>_` component from `notes/screen-scope/screen_scope.py`, and the
+port from `canonical_md5`.
+
+Confidence is capped at `medium` unless a **non-visual** measurement agrees —
+the draw anchor, the run, the rung, the measured extent, the leaf count,
+`canonical_md5`. A person's eye and the agent's own render are the same channel,
+and two lookings agreeing is how `CINEMATIC_DECOR_AT_305_155_*` was got wrong
+twice (§2). A row resting on the sentence alone is `low`, which
+`--min-confidence medium` refuses mechanically. An actor identity that
+contradicts `notes/actor-anchors/anchor_identity.py` is a conflict to report in
+the evidence cell, not a tie to break.
+
+None of this weakens §1: prose invites the forms that section forbids —
+`_AT_<x>_<y>`, `_A`/`_B`, an address in the tail — and
+`make lint-naming-strict STAGE=<X>` is still the gate. The procedure, and the
+bookkeeping that stops a sentence being applied twice or lost, is
+`notes/play-and-describe/README.md`.
+
 ## 1. Routine labels
 
 ### The shape, as it actually is

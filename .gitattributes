@@ -1,0 +1,3 @@
+# Append-only evidence: union is the correct merge, and a textual conflict here
+# would tempt someone into editing lines, which changes their ids.
+tools/vm-debugger/rename_log.jsonl merge=union

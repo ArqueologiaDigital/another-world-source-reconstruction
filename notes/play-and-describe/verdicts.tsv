@@ -1,0 +1,8 @@
+# Annotations that produced no name, and why. NAMED is DERIVED from the
+# annot: tokens in the proposal tables and the names the tree defines --
+# do not duplicate it here. A verdict and a citation are mutually exclusive;
+# annotation_queue.py --check fails on an id carrying both.
+# verdicts: CORROBORATES (agrees with a name already earned), NO_NAME (true,
+# yields no rename), HELD (settled_by required), REJECTED (cannot support a name)
+# id	at	branch/stage	offset	verdict	grounds	settled_by
+ann:cff7052605ce	2026-09-23T20:24:19+0100	chahi_amiga_1991/INTRO	0xAEE2	CORROBORATES	names STORM_PARTICLE's subject from a witness that never read the tree; ../storm-particles/ earned the name as the intersection of amiga's ambient drift and msdos's particle tumble, and the family F00..F04 is already complete in both ports (INTRO.asm:376-380, drawn one per iteration at x=[0x07], y=[0x09] at 1145-1153)	

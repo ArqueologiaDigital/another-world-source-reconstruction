@@ -16,7 +16,9 @@ This serves three things and does nothing clever with any of them:
    canonical tree, which `notes/shared-bank-naming/asset_naming_share.py`
    counts and which `notes/tree-name-drift/name_drift.py` shows the unified tree
    lags.
-3. **An annotation log**, append-only, one JSON object per line.
+3. **An annotation log**, append-only, one JSON object per line. It is
+   committed and never rewritten: an entry's id is the sha1 of its line, so
+   editing a line orphans every proposal row and verdict that cites it.
 
 The log is the point of the whole exercise, and what it mostly carries is not
 names. It is **prose**: a human pointing at a picture on a frame and saying
@@ -58,6 +60,7 @@ Stdlib only: no Flask, no build step, nothing to install.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import mimetypes
 import re
@@ -243,6 +246,24 @@ def label_addresses(branch: str, stage: str, rom: bytes) -> dict:
     return out
 
 
+def annotation_id(line: str) -> str:
+    r"""`ann:` + twelve hex of the sha1 of one raw log line, newline stripped.
+
+    The id the rest of the mechanism cites -- proposal tables as
+    `annot:<id>`, `notes/play-and-describe/verdicts.tsv` and
+    `annotation_queue.py` as `ann:<id>`. It is content-derived on purpose: the
+    only write this server performs is an append, so an existing line never
+    changes, and an id computed here is the same one an agent gets from
+
+        sed -n '<N>p' tools/vm-debugger/rename_log.jsonl | tr -d '\n' | sha1sum
+
+    with no tool and no index file. An edited line therefore gets a new id and
+    its old citations show up as orphans rather than pointing silently at a
+    sentence that is no longer there -- which is why the log is append-only.
+    """
+    return "ann:" + hashlib.sha1(line.encode()).hexdigest()[:12]
+
+
 def guidance() -> str:
     """Every annotation, in order, as one document an agent can read.
 
@@ -256,27 +277,52 @@ def guidance() -> str:
     Grouped by stage, because that is how the naming work is batched, and each
     entry keeps its frame, the routine that drew it and what else was on screen,
     so a claim can be checked rather than taken on trust.
+
+    The document carries the **typed names** too -- `kind:"rename"` and
+    `kind:"bulk_rename"` -- in a subsection of their own per stage. They were
+    left out until 2026-09-23, which hid two thirds of the log from the only two
+    ways it is read. They are not descriptions: a name typed into a box states
+    no grounds, so they are proposals, `low` on their own (`docs/NAMING.md`),
+    and a `bulk_rename` is a convention proposal rather than a batch to apply.
+
+    Every heading carries the entry's `ann:` id, so a row in a proposal table
+    can cite what it was read from.
     """
     if not LOG.is_file():
         return "# No annotations yet.\n"
-    rows = [json.loads(l) for l in LOG.read_text().splitlines() if l.strip()]
+    rows = []
+    for line in LOG.read_text().splitlines():
+        if not line.strip():
+            continue
+        r = json.loads(line)
+        r["_id"] = annotation_id(line)          # from the raw line, not the dict
+        rows.append(r)
     notes = [r for r in rows if r.get("kind") == "annotate" and r.get("text")]
+    typed = [r for r in rows if r.get("kind") in ("rename", "bulk_rename")
+             and r.get("renames")]
     out = ["# What the game is doing, as described at the screen",
            "",
-           f"{len(notes)} annotation(s) from the VM debugger, in the order they",
-           "were made. Each was typed while looking at the frame it names.",
+           f"{len(notes)} description(s) and {len(typed)} typed-name entr"
+           f"{'y' if len(typed) == 1 else 'ies'} from the VM debugger, in the",
+           "order they were made. Each was typed while looking at the frame it",
+           "names. The `ann:` id on a heading is the sha1 of that log line: cite",
+           "it as `annot:<id>` in a proposal table's evidence cell, and see",
+           "`notes/play-and-describe/README.md` for what to do with it.",
            ""]
-    by_stage: dict[str, list] = {}
-    for r in notes:
-        by_stage.setdefault(f"{r.get('branch')}/{r.get('stage')}", []).append(r)
-    for key, group in by_stage.items():
-        out += [f"## {key}", ""]
+    by_stage: dict[str, dict[str, list]] = {}
+    for bucket, group in (("notes", notes), ("typed", typed)):
         for r in group:
+            key = f"{r.get('branch')}/{r.get('stage')}"
+            by_stage.setdefault(key, {"notes": [], "typed": []})[bucket].append(r)
+    for key, slot in by_stage.items():
+        out += [f"## {key}", ""]
+        for r in slot["notes"]:
             tgt = r.get("target") or {}
             name = tgt.get("name") or "?"
             off = tgt.get("offset")
             offs = f"0x{off:04X}" if isinstance(off, int) else "?"
-            out.append(f"### {name}  ({offs}, frame {r.get('frame')})")
+            out.append(f"### {name}  ({offs}, frame {r.get('frame')})"
+                       f"  {r['_id']}")
             if r.get("routine"):
                 out.append(f"drawn by `{r['routine']}`")
             out += ["", r["text"], ""]
@@ -289,6 +335,26 @@ def guidance() -> str:
             if sib:
                 out += ["the same routine also draws: " + ", ".join(
                     f"`{n}`" for n in dict.fromkeys(sib)), ""]
+        if not slot["typed"]:
+            continue
+        out += ["### names typed into the box", "",
+                "Proposals with no stated grounds -- the form takes a name, not",
+                "a sentence -- so none of these is above `low` on its own, and a",
+                "`bulk_rename` is a convention proposal for the owner rather",
+                "than a batch to apply. Same queue as the descriptions.", ""]
+        for r in slot["typed"]:
+            head = f"**{r['_id']}**  frame {r.get('frame')}"
+            if r.get("kind") == "bulk_rename":
+                head += (f", bulk `{r.get('pattern')}` -> "
+                         f"`{r.get('replacement')}`")
+            out += [head, ""]
+            for row in r.get("renames") or []:
+                off = row.get("offset")
+                offs = f"0x{off:04X}" if isinstance(off, int) else "?"
+                bank = "CV " if row.get("kind") == "video2" else ""
+                out.append(f"- `{row.get('from')}` -> `{row.get('to')}`"
+                           f"  ({bank}{offs})")
+            out.append("")
     return "\n".join(out) + "\n"
 
 
@@ -390,9 +456,17 @@ class Handler(BaseHTTPRequestHandler):
             "replacement": payload.get("replacement"),
             "renames": rows,
         }
+        # The id is the sha1 of the whole line, so it cannot be stored *in*
+        # the entry without circularity. Compute it from the bytes just
+        # written, hand it back, and print it: the person at the screen can
+        # then quote `ann:<id>` at an agent without opening the log.
+        line = json.dumps(entry)
         with LOG.open("a") as fh:
-            fh.write(json.dumps(entry) + "\n")
-        return self._json({"ok": True, "kind": kind,
+            fh.write(line + "\n")
+        aid = annotation_id(line)
+        sys.stderr.write(f"queued {aid} -- python3 notes/play-and-describe/"
+                         f"annotation_queue.py --id {aid} --measure\n")
+        return self._json({"ok": True, "kind": kind, "id": aid,
                            "logged": len(rows) or 1, "at": entry["at"]})
 
     def _file(self, p: Path):

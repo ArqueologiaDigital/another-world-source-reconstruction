@@ -54,6 +54,7 @@ help:
 	@echo "  make test-full           core + verify-all (legacy tmp/output tree;"
 	@echo "                           may fail until archaeology #0094 lands)"
 	@echo "  make lint                run all linters (lint-raw, ...)"
+	@echo "  make annotations         what the human described and nobody has named yet"
 	@echo "  make plan                show PLAN.md"
 	@echo "  make clean               wipe build/"
 	@echo ""
@@ -177,6 +178,21 @@ lint-naming-strict:
 # Aggregate lint target. Add new lint rules here.
 .PHONY: lint
 lint: lint-raw lint-naming
+
+# The backlog of sentences typed into tools/vm-debugger/ that nobody has turned
+# into a name yet (notes/play-and-describe/README.md is the procedure). Read-only:
+# it derives every status from the log, the proposal tables and src/levels/, so it
+# holds no state of its own.
+#
+# Deliberately NOT a dependency of `test` or `lint`. `make test` is the byte gate
+# and its worth comes from meaning exactly one thing; a backlog of human notes is
+# not a byte fact, and a naming check that could fail the gate would end up worked
+# around. `annotation_queue.py --check` fails only on inconsistency (an orphaned
+# citation, an id both cited and verdicted), so it is safe to add to `lint` if the
+# owner wants it; until then it runs from HANDOFF's end-of-session sweep.
+.PHONY: annotations
+annotations:
+	@python3 notes/play-and-describe/annotation_queue.py
 
 # Phase 3b: source files with `.if BRANCH == "..."` conditional directives.
 # `make preprocess SRC=path/to/foo.asm.in TARGET=cartridge_1992`
