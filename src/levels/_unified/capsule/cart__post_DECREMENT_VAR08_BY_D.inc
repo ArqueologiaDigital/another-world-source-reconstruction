@@ -431,7 +431,7 @@ LABEL_91CD:
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C54, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_AIM_RIGHT_CHARGE_DOT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 

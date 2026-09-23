@@ -328,15 +328,45 @@ bytes after each**, at `0x5C54` and `0x5C9C`. A pose that blinks a charge dot
 is the one held while the gun charges — an aim, not a shot. So `CV_3A64` is
 `HERO_STAND_AIM_LEFT` and `CV_5C9C` its charge dot.
 
-### Why the other six are held
+### And then the other six, from the fire path
 
-`CV_3A96` (40x49) and `CV_391A` (34x49) are very likely `SHOOT_F0` and `_F1`:
-the crouch family runs AIM 44, SHOOT_F0 44, SHOOT_F1 36, and the left group
-here runs 40, 40, 34 — the same shape. But a width analogy is not the
-charge-dot evidence, and #0120 says not to pick between readings on a
-resemblance.
+The width analogy was never used. Reading the routine that *calls* these
+stubs settles all of them:
 
-The right-facing group (`CV_3858` 40x48, `CV_36D2` 34x48, `CV_15DC` 14x48) has
-no such anchor at all: the right charge dot `CV_5C54` is painted next to
-`CINEMATIC_118`, a cinematic figure, not next to any of them, so the symmetry
-that settles the left does not close on the right.
+```
+LABEL_E87C:                      <- the aim loop
+    break
+    je [HERO_ACTION_POS_MASK], 0x80, LABEL_E8AA
+    call LABEL_99EB              <- HERO_STAND_AIM_LEFT + its charge dot
+    je [HERO_ACTION_POS_MASK], 0x00, LABEL_E87C
+LABEL_E8AA:                      <- the fire button
+    call LABEL_9A15              <- CV_3A96, drawn AT the shot
+    mov [0x21], [HERO_X] / mov [0x27], [HERO_Y]
+    sub [0x21], 0x001E           <- the muzzle, to the LEFT
+    call LABEL_6265              <- the projectile is spawned
+    break
+    call LABEL_99D9              <- CV_391A, the frame after
+```
+
+The right is the same routine mirrored, with `add [0x21], 0x001E`: `CV_3858`
+at the shot, `CV_36D2` after it. The muzzle offset carrying the direction is
+what makes it a reading rather than an inference.
+
+`mirror_match.py` then agrees independently — `CV_3A96`↔`CV_3858` at 0.592
+and `CV_391A`↔`CV_36D2` at 0.530, both inside the 0.520–0.923 band its
+control measures for pairs a person named from other evidence, against 1.768
+and 2.250 for the cross pairings.
+
+`CV_5C54` turned out to be the right aim's charge dot after all: the right
+aim loop is `LABEL_9763`, which draws `CINEMATIC_176` — the right aim pose is
+cinematic art in CAVES, not a bank key — and then blinks `CV_5C54` under the
+identical test. The `CINEMATIC_118` pairing seen in CAPSULE is the same role
+in that stage.
+
+`CV_15DC` is drawn leaving the right aim loop, after `CV_36D2` and
+immediately before `jmp HERO_WALK_RIGHT_LOOP`: 14 wide against the aim's 40,
+the arm back down.
+
+**One of the nine is left.** `CV_367C`, 7x18 with 3 leaves, is a gun-arm
+layer of exactly the shape of every `HERO_GUN_ARM_RIGHT_CASE_*`, and nothing
+says which pose it belongs to.

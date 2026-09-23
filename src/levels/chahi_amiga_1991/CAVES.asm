@@ -1236,12 +1236,12 @@ HERO_WATER_DEPTH_RIGHT_CASE_01		EQU 0x5CD4
 HERO_WATER_DEPTH_RIGHT_CASE_00		EQU 0x5DDC
 HERO_WALK_RIGHT_ARM_F09		EQU 0x3352
 HERO_WALK_RIGHT_ARM_F10		EQU 0x335C
-CV_391A		EQU 0x391A
-CV_3A96		EQU 0x3A96
-CV_36D2		EQU 0x36D2
-CV_5C54		EQU 0x5C54
-CV_3858		EQU 0x3858
-CV_15DC		EQU 0x15DC
+HERO_STAND_SHOOT_LEFT_F1		EQU 0x391A
+HERO_STAND_SHOOT_LEFT_F0		EQU 0x3A96
+HERO_STAND_SHOOT_RIGHT_F1		EQU 0x36D2
+HERO_STAND_AIM_RIGHT_CHARGE_DOT		EQU 0x5C54
+HERO_STAND_SHOOT_RIGHT_F0		EQU 0x3858
+HERO_STAND_GUN_LOWER_RIGHT		EQU 0x15DC
 HERO_STAND_NEUTRAL_BODY		EQU 0x09F6
 
 
@@ -15842,7 +15842,7 @@ DRAW_CIN_151:
 
 
 LABEL_9751:
-	video type=0, offset=CV_36D2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_SHOOT_RIGHT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_175
 	ret
 
@@ -15859,7 +15859,7 @@ LABEL_9763:
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C54, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_AIM_RIGHT_CHARGE_DOT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -15869,7 +15869,7 @@ DRAW_CIN_177:
 
 
 LABEL_978D:
-	video type=0, offset=CV_3858, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_SHOOT_RIGHT_F0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_178
 	ret
 
@@ -16112,7 +16112,7 @@ DRAW_CIN_164:
 
 
 LABEL_99D9:
-	video type=0, offset=CV_391A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_SHOOT_LEFT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_171
 	ret
 
@@ -16139,7 +16139,7 @@ DRAW_CIN_172:
 
 
 LABEL_9A15:
-	video type=0, offset=CV_3A96, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_SHOOT_LEFT_F0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_173
 	ret
 
@@ -24010,7 +24010,7 @@ LABEL_EBF4:
 	call LABEL_9751
 	sub [HERO_X], 0x0002
 	break
-	video type=0, offset=CV_15DC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_GUN_LOWER_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x63], 0x0002
 	mov [0x0A], 0x0004
 	jmp HERO_WALK_RIGHT_LOOP

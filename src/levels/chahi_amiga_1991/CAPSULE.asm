@@ -912,10 +912,10 @@ HERO_WATER_DEPTH_RIGHT_CASE_01		EQU 0x5CD4
 HERO_WATER_DEPTH_RIGHT_CASE_00		EQU 0x5DDC
 HERO_WALK_RIGHT_ARM_F09		EQU 0x3352
 HERO_WALK_RIGHT_ARM_F10		EQU 0x335C
-CV_36D2		EQU 0x36D2
-CV_5C54		EQU 0x5C54
-CV_3858		EQU 0x3858
-CV_15DC		EQU 0x15DC
+HERO_STAND_SHOOT_RIGHT_F1		EQU 0x36D2
+HERO_STAND_AIM_RIGHT_CHARGE_DOT		EQU 0x5C54
+HERO_STAND_SHOOT_RIGHT_F0		EQU 0x3858
+HERO_STAND_GUN_LOWER_RIGHT		EQU 0x15DC
 HERO_STAND_NEUTRAL_BODY		EQU 0x09F6
 
 
@@ -11842,7 +11842,7 @@ LABEL_780D:
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, CAPSULE_NOOP_RET
-	video type=0, offset=CV_5C54, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_AIM_RIGHT_CHARGE_DOT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -14837,7 +14837,7 @@ LABEL_97BD:
 	mov [0x2A], 0x0020
 	call LABEL_5BF6
 	add [HERO_X], 0x0004
-	video type=0, offset=CV_36D2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_SHOOT_RIGHT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
 
 LABEL_97D4:
@@ -14847,10 +14847,10 @@ LABEL_97D4:
 	je [HERO_ACTION_POS_MASK], 0x00, LABEL_97D4
 	break
 	sub [HERO_X], 0x0002
-	video type=0, offset=CV_36D2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_SHOOT_RIGHT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0002
 	break
-	video type=0, offset=CV_15DC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_GUN_LOWER_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x63], 0x0002
 	mov [0x0A], 0x0004
 	jmp HERO_WALK_RIGHT_LOOP
@@ -14860,7 +14860,7 @@ LABEL_9803:
 LABEL_9804:
 	jne [0x0F], 0x00, LABEL_983D
 	add [HERO_X], 0x0002
-	video type=0, offset=CV_3858, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_SHOOT_RIGHT_F0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x21], [HERO_X]
 	mov [0x27], [HERO_Y]
 	add [0x21], 0x001E
@@ -14868,7 +14868,7 @@ LABEL_9804:
 	call LABEL_4487
 	break
 	sub [HERO_X], 0x0001
-	video type=0, offset=CV_36D2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_SHOOT_RIGHT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
 	jne [HERO_ACTION_POS_MASK], 0x80, LABEL_97D4
 	setup channel=0x17, address=LABEL_538C

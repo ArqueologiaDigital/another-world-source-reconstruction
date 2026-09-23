@@ -435,7 +435,7 @@ DRAW_CIN_151:
 
 
 LABEL_9751:
-	video type=0, offset=CV_36D2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_SHOOT_RIGHT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_175
 	ret
 
@@ -452,7 +452,7 @@ LABEL_9763:
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C54, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_AIM_RIGHT_CHARGE_DOT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -462,7 +462,7 @@ DRAW_CIN_177:
 
 
 LABEL_978D:
-	video type=0, offset=CV_3858, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_SHOOT_RIGHT_F0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_178
 	ret
 
@@ -705,7 +705,7 @@ DRAW_CIN_164:
 
 
 LABEL_99D9:
-	video type=0, offset=CV_391A, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_SHOOT_LEFT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_171
 	ret
 
@@ -732,7 +732,7 @@ DRAW_CIN_172:
 
 
 LABEL_9A15:
-	video type=0, offset=CV_3A96, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_SHOOT_LEFT_F0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_173
 	ret
 

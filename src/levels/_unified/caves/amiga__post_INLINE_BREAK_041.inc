@@ -254,7 +254,7 @@ LABEL_EBF4:
 	call LABEL_9751
 	sub [HERO_X], 0x0002
 	break
-	video type=0, offset=CV_15DC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_GUN_LOWER_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x63], 0x0002
 	mov [0x0A], 0x0004
 	jmp HERO_WALK_RIGHT_LOOP

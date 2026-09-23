@@ -1,0 +1,50 @@
+# The hero's standing shot, both directions, read off the fire path.
+#
+# The aim loop and the fire branch make these unambiguous. Left (CAVES):
+#
+#     LABEL_E87C:                      <- the aim loop
+#         break
+#         je [HERO_ACTION_POS_MASK], 0x80, LABEL_E8AA
+#         call LABEL_99EB              <- HERO_STAND_AIM_LEFT + its charge dot
+#         je [HERO_ACTION_POS_MASK], 0x00, LABEL_E87C
+#     LABEL_E8AA:                      <- the fire button
+#         call LABEL_9A15              <- CV_3A96, drawn AT the shot
+#         mov [0x21], [HERO_X] / mov [0x27], [HERO_Y]
+#         sub [0x21], 0x001E           <- the muzzle, to the LEFT
+#         sub [0x27], 0x0027
+#         call LABEL_6265              <- the projectile is spawned
+#         break
+#         call LABEL_99D9              <- CV_391A, the frame after
+#
+# and the right is the same routine mirrored, with `add [0x21], 0x001E`:
+# CV_3858 at the shot, CV_36D2 after it.
+#
+# Two independent checks agree. mirror_match.py scores CV_3A96 against
+# CV_3858 at 0.592 and CV_391A against CV_36D2 at 0.530, both inside the
+# 0.520..0.923 band its control measures for pairs a person named from other
+# evidence, while the cross pairings score 1.768 and 2.250. And the widths
+# reproduce the crouch family exactly -- AIM 44 / F0 44 / F1 36 there,
+# aim 40 / F0 40 / F1 34 here.
+#
+# The F1 frame doubles as the aim-exit frame: CAPSULE's LABEL_97D4 leaves the
+# aim loop through it too. `SHOOT_..._F1` follows the crouch family's own
+# vocabulary for the same role rather than inventing a second word.
+#
+# CV_5C54 is blinked by the right aim loop under the identical test the left
+# one uses, and the dot offsets settle the direction: the crouch dots are
+# 0x5C4C (right) and 0x5C94 (left), and the standing ones sit exactly 8 bytes
+# after each.
+#
+# CV_15DC is drawn on the way out of the right aim loop, after CV_36D2 and
+# immediately before `jmp HERO_WALK_RIGHT_LOOP` -- 14 wide against the aim's
+# 40, the arm back down.
+#
+# Still held: CV_367C, a 7x18 three-leaf gun-arm layer of the same shape as
+# every HERO_GUN_ARM_RIGHT_CASE_*, with nothing to say which pose it belongs
+# to.
+CV_3A96 HERO_STAND_SHOOT_LEFT_F0
+CV_391A HERO_STAND_SHOOT_LEFT_F1
+CV_3858 HERO_STAND_SHOOT_RIGHT_F0
+CV_36D2 HERO_STAND_SHOOT_RIGHT_F1
+CV_5C54 HERO_STAND_AIM_RIGHT_CHARGE_DOT
+CV_15DC HERO_STAND_GUN_LOWER_RIGHT

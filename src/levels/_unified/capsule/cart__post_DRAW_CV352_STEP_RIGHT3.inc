@@ -600,7 +600,7 @@ LABEL_C4F5:
 	mov [0x2A], 0x0020
 	call LABEL_74B2
 	add [HERO_X], 0x0004
-	video type=0, offset=CV_36D2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_SHOOT_RIGHT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
 
 LABEL_C50C:
@@ -610,10 +610,10 @@ LABEL_C50C:
 	je [HERO_ACTION_POS_MASK], 0x00, LABEL_C50C
 	break
 	sub [HERO_X], 0x0002
-	video type=0, offset=CV_36D2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_SHOOT_RIGHT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0002
 	break
-	video type=0, offset=CV_15DC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_GUN_LOWER_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x63], 0x0002
 	mov [0x0A], 0x0004
 	jmp HERO_WALK_RIGHT_LOOP
@@ -623,7 +623,7 @@ LABEL_C53B:
 LABEL_C53C:
 	jne [0x0F], 0x00, LABEL_C575
 	add [HERO_X], 0x0002
-	video type=0, offset=CV_3858, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_SHOOT_RIGHT_F0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x21], [HERO_X]
 	mov [0x27], [HERO_Y]
 	add [0x21], 0x001E
@@ -631,7 +631,7 @@ LABEL_C53C:
 	call LABEL_5BE3
 	break
 	sub [HERO_X], 0x0001
-	video type=0, offset=CV_36D2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_SHOOT_RIGHT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
 	jne [HERO_ACTION_POS_MASK], 0x80, LABEL_C50C
 	setup channel=0x17, address=LABEL_6B2A
