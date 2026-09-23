@@ -177,9 +177,19 @@ def partners(branch: str, stage: str) -> int:
     Control, run against the tree as it stood before the batch that this mode
     is modelled on: it would have offered **4 of the 5** it named --
     CINEMATIC_334, 335, 336 and 337, each against its own
-    `CV_FIGURE_WALK_RIGHT_UPPER_POSE_*`. It missed `CINEMATIC_338`, whose
-    draws do not all share one named neighbour. So the mode under-offers, and
-    a run whose members it lists only partly is still worth opening.
+    `CV_FIGURE_WALK_RIGHT_UPPER_POSE_*`.
+
+    It missed `CINEMATIC_338`, and the reason is worth knowing because it is
+    not what it looks like. 338 *is* paired with `..._POSE_06` at both of its
+    draws. It is dropped because at both it also has `..._POSE_04` two lines
+    **above** -- the previous frame's overlay -- so the neighbour set is two
+    names, not one, and the `len(common) == 1` test fails. A tighter window
+    would fix it and would also lose the pairings that are two lines apart in
+    the other direction.
+
+    So the mode under-offers, and it under-offers on frames in the middle of a
+    dense run. A run whose members it lists only partly is still worth
+    opening.
     """
     f = SRC / branch / f"{stage}.asm"
     if not f.is_file():

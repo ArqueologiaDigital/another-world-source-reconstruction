@@ -375,5 +375,8 @@ an overlay took a render and two extents to settle -- the numbered one was
 in the torso band. The mode narrows the question and does not answer it.
 
 Its control, run against the tree before that batch, is **4 of 5**: it would
-have offered 334, 335, 336 and 337 and missed 338, whose draws do not all
-share one named neighbour. It under-offers.
+have offered 334, 335, 336 and 337 and missed 338. The reason for the miss is
+not the obvious one -- 338 *is* paired with `..._POSE_06` at both its draws,
+but at both it also has the previous frame's `..._POSE_04` two lines above, so
+its neighbour set has two names and the "exactly one" test fails. It
+under-offers, and specifically on frames in the middle of a dense run.
