@@ -281,8 +281,12 @@ def motion_of(name: str):
     the SAME twelve frames. Under the old adjacency rule the PRISON name
     contributed nothing and the agreement was invisible.
 
+    When no motion word precedes the direction, the token IMMEDIATELY after
+    it is read instead -- `BUDDY_LEFT_FIRE_RECOIL_PHASE_3`. Strict adjacency
+    both ways; see the comment in the body for the five names this refuses.
+
     Returns None when the name carries no subject, no direction, or no motion
-    word before the direction. Ambiguity is not resolved by guessing: if two
+    word adjacent to the direction. Ambiguity is not resolved by guessing: if two
     DIFFERENT motion words sit immediately before two different directions,
     the name is making two claims and gets none.
     """
@@ -298,6 +302,24 @@ def motion_of(name: str):
         before = [m for m in rest[:i] if m in MOTIONS]
         if before:
             claims.append((before[-1], w))
+        elif i + 1 < len(rest) and rest[i + 1] in MOTIONS:
+            # Nothing before the direction, and the very next token is the
+            # motion: `BUDDY_LEFT_FIRE_RECOIL_PHASE_3`. 13 names in the tree
+            # put every motion word after the direction, and reading them was
+            # costing the whole BUDDY fire family -- five shared-bank keys
+            # that 67 drawing labels wait on.
+            #
+            # STRICT adjacency, the mirror of the rule above, and the
+            # strictness is what makes it safe. It takes the 6 BUDDY
+            # `<DIR>_FIRE_<phase>` names and the 2
+            # `HERO_<DIR>_CROUCH_KICK_LOOP`, and refuses the other 5 by
+            # itself: `HERO_LEFT_ACTION_JOIN_WALK_OR_STAND` is genuinely two
+            # claims and `CAPSULE_ACTOR_FACE_LEFT_THEN_RUN` has `THEN` in the
+            # adjacent slot, so neither yields a motion. A name whose
+            # direction belongs to something else -- facing, not moving -- is
+            # exactly what must not be read, and the adjacency test refuses it
+            # without being told about `FACE`.
+            claims.append((rest[i + 1], w))
     if not claims:
         return None
     claims = [(SYNONYM.get(m, m), d) for m, d in claims]

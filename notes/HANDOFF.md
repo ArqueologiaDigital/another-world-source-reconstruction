@@ -285,6 +285,26 @@ for it whenever two draws share an anchor.
      unchanged. A name making two different motion claims is refused, not
      guessed.
 
+   * **Token-order gap, closed 2026-09-23.** `motion_of` read the motion
+     word immediately BEFORE the direction and nothing else, so 13 names that
+     put every motion word after it yielded no claim at all — including the
+     whole `BUDDY_<DIR>_FIRE_{AIM,RECOIL,RECOVER}_PHASE_<n>` family. It now
+     reads the token immediately AFTER the direction when none precedes it.
+     Strict adjacency both ways, and the strictness is what makes it safe: it
+     takes the 6 BUDDY fire names and the 2 `HERO_<DIR>_CROUCH_KICK_LOOP`,
+     and refuses the other 5 by itself, because
+     `HERO_LEFT_ACTION_JOIN_WALK_OR_STAND` is two claims and
+     `CAPSULE_ACTOR_FACE_LEFT_THEN_RUN` has `THEN` in the adjacent slot — a
+     direction that belongs to facing rather than moving is exactly what must
+     not be read, and adjacency refuses it without being told about `FACE`.
+
+     It named nothing directly. What it did was make an exclusion principled:
+     `CV_2570` and `CV_3212` now carry **two** claims, `RUN` and `SHOOT`, so
+     `subpiece_poses.py` drops them on the existing one-claim rule instead of
+     on a layout heuristic. `piece_family_vs_label.py`,
+     `crawl_one_cycle_two_labels.py`, `phase_base_calibration.py`,
+     `unreachable_guarded_art.py` and `motion_vs_drawer.py` all still exit 0.
+
    * **Vocabulary gap, closed.** `AIM`, `FIRE` and `SHOT` were missing.
      `FIRE` and `SHOT` are one action — the routines containing each draw
      exactly the same four offsets — so both normalise to `SHOOT`, which
