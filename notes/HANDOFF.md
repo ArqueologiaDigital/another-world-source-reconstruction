@@ -368,6 +368,24 @@ The 69 markdown proposal tables that carried per-name evidence have been
 rescued into `notes/naming-proposals/`, with `coverage.py` beside them to
 reproduce the 69 / 489 / 396 counts its README quotes.
 
+### This session's scratch, adjudicated
+
+Six new files. All disposable, and each superseded by something committed in
+the same session rather than merely judged unimportant:
+
+| script | verdict | why |
+|---|---|---|
+| `peek.py`, `comp.py` | **disposable** | One-off dumps asking "what screen does `screen_scope` give each backdrop composite, and who else draws its layers?" `notes/backdrop-drawer/backdrop_drawer.py` answers both over the whole tree, with a control. |
+| `first_room.md` | **disposable** | A rejected one-row table — the applier refused it because the name was still on another routine. Its corrected successor is committed as `notes/backdrop-drawer/corrections/03_*`. |
+| `fix_a.md` .. `fix_d.md` | **rescued** | These carried the evidence for four hand-applied corrections quoted in a commit. Committed as `notes/backdrop-drawer/corrections/`, with a README giving the order they must be applied in. |
+| `st_noshape.py` | **rescued as a flag** | It produced the "21 of 27" that `notes/frame-label-siblings/README.md` quotes. Now `sibling_template.py --no-shape`, so the rejected rule stays re-runnable by whoever wants to check the rejection. |
+
+The remaining numbers this session published all have committed producers:
+`backdrop_drawer.py` for the 139/139 control, the 0/312 layer audit and the
+42-value `--guards` census; `placeholder_roles.py` for the 7,594 breakdown,
+the 159/159 frame ordering and the 9/16 loop pairing; `sibling_template.py`
+for 127/127.
+
 ### The three scratch scripts, adjudicated
 
 The scratch-artefact hook flagged three `.py` files. None produced a number
