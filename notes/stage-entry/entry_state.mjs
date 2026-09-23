@@ -57,6 +57,9 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { VM, W, H } from "../../tools/vm-debugger/static/vm.js";
 
+const CHECKPOINTS = JSON.parse(readFileSync(
+  new URL("../../tools/vm-debugger/static/checkpoints.json", import.meta.url), "utf8"));
+
 const argv = process.argv.slice(2);
 const arg = (k, d) => { const i = argv.indexOf("--" + k); return i >= 0 ? argv[i + 1] : d; };
 const has = (k) => argv.includes("--" + k);
@@ -81,7 +84,7 @@ const ROMS = { bytecode: rd("bytecode.rom"), cinematic: rd("cinematic.rom"),
                palettes: rd("palettes.rom"), video2: rd("video2.rom") };
 
 function run({ protection, screen }) {
-  const vm = new VM(ROMS);
+  const vm = new VM(ROMS, { checkpoints: CHECKPOINTS });
   vm.setupPart(STAGE_ID, { protection });
   if (screen !== undefined) vm.vars[0x67] = screen;   // SCREEN_NUM
   let painted = 0, draws = 0;

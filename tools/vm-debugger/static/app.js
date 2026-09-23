@@ -21,11 +21,16 @@ const state = {
   cfg: null, branch: null, stage: null, meta: null,
   vm: null, roms: {}, frame: null, sel: null,
   running: false, timer: null, blink: 0,
+  checkpoints: null, paused_on: new Set(),
 };
 
 // ---- boot -------------------------------------------------------------
 const cfg = await (await fetch("/api/config")).json();
 state.cfg = cfg;
+// The per-checkpoint register tables. Without them a stage can be made to draw
+// (the five copy-protection variables) but not to play.
+state.checkpoints = await (await fetch("/static/checkpoints.json")).json()
+  .catch(() => null);
 for (const b of Object.keys(cfg.branches)) {
   $("branch").append(new Option(b, b));
 }
@@ -47,6 +52,36 @@ async function loadRoms(port) {
   };
 }
 
+/** Fill the checkpoint selector for the stage now chosen.
+ *
+ * A checkpoint is a whole register table the reference engine applies when a
+ * level is restarted, and for CAVES the nine of them are nine different rooms.
+ * Seeding only the five copy-protection variables makes a stage draw and not
+ * play -- everything else a real playthrough would have left behind is missing.
+ */
+function fillCheckpoints() {
+  const part = state.cfg.stages[state.stage];
+  const sel = $("checkpoint");
+  const avail = (state.checkpoints ? state.checkpoints.checkpoints : [])
+    .filter((c) => c.part === part);
+  const keep = sel.value;
+  sel.textContent = "";
+  for (const c of avail) {
+    const o = document.createElement("option");
+    o.value = String(c.level);
+    o.textContent = `${c.level}`;
+    sel.append(o);
+  }
+  if (!avail.length) {
+    const o = document.createElement("option");
+    o.value = ""; o.textContent = "none";
+    sel.append(o);
+  }
+  if (avail.some((c) => String(c.level) === keep)) sel.value = keep;
+  sel.disabled = avail.length < 2;
+  return avail;
+}
+
 async function loadStage() {
   pause();
   state.branch = $("branch").value;
@@ -63,11 +98,16 @@ async function loadStage() {
       `(Run \`make extract\` for it in the archaeology repo.)`;
     return;
   }
-  state.vm = new VM(roms);
+  state.vm = new VM(roms, { checkpoints: state.checkpoints });
+  const avail = fillCheckpoints();
+  const want = $("checkpoint").value;
   // Seeded by default: without it four of the eight stages delete all 64
   // threads on entry and draw nothing at all. See VM.PROTECTION_PASS.
-  state.vm.setupPart(state.cfg.stages[state.stage],
-                     { protection: !$("coldboot").checked });
+  state.vm.setupPart(state.cfg.stages[state.stage], {
+    protection: !$("coldboot").checked,
+    checkpoint: want === "" ? undefined : Number(want),
+  });
+  state.paused_on = new Set();
   state.sel = null;
   state.frame = state.vm.runFrame();
   $("hint").textContent =
@@ -234,13 +274,23 @@ function tick() {
   }
   draw();
   if ($("autopause").checked) {
-    const any = state.frame.draws.some((d) => !isNamed(nameOf(d)));
-    if (any) {
+    // Stop once per NEWLY-seen unnamed constant, not once per frame. Stopping
+    // every frame makes `run` look broken: the same asset is usually on screen
+    // for tens of frames in a row, so the old behaviour re-paused instantly and
+    // there was no way to move past it.
+    const fresh = state.frame.draws.find(
+      (d) => !isNamed(nameOf(d)) && !state.paused_on.has(d.kind + d.offset));
+    if (fresh) {
+      state.paused_on.add(fresh.kind + fresh.offset);
       pause();
-      const first = state.frame.draws.find((d) => !isNamed(nameOf(d)));
-      if (first) select(first.seq);
+      select(fresh.seq);
+      const left = new Set(state.frame.draws
+        .filter((d) => !isNamed(nameOf(d)))
+        .map((d) => d.kind + d.offset)).size;
       $("hint").textContent =
-        "paused: this frame draws something with no semantic name.";
+        `paused: ${hex4(fresh.offset)} has no semantic name. ${left} unnamed ` +
+        `on this frame. Describe it below, or press run to go on — this one ` +
+        `will not stop you again.`;
     }
   }
   if (vm.halted) { pause(); $("hint").textContent = "halted on an illegal opcode."; }
@@ -256,6 +306,33 @@ function pause() {
   state.timer = null;
 }
 
+// ---- playing ----------------------------------------------------------
+// Nothing wrote the input variables before this, so the hero never moved
+// however the stage was seeded. The bit order and the six variables are the
+// reference's: see VM.processInput.
+const KEYMAP = {
+  ArrowUp: VM.KEY.UP, ArrowRight: VM.KEY.RIGHT, ArrowDown: VM.KEY.DOWN,
+  ArrowLeft: VM.KEY.LEFT, " ": VM.KEY.ACTION, Enter: VM.KEY.ACTION,
+  w: VM.KEY.UP, d: VM.KEY.RIGHT, s: VM.KEY.DOWN, a: VM.KEY.LEFT,
+};
+function keyBit(e) {
+  if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return 0;
+  return KEYMAP[e.key] || 0;
+}
+addEventListener("keydown", (e) => {
+  const b = keyBit(e);
+  if (!b || !state.vm) return;
+  e.preventDefault();
+  state.vm.keyDown(b);
+});
+addEventListener("keyup", (e) => {
+  const b = keyBit(e);
+  if (!b || !state.vm) return;
+  e.preventDefault();
+  state.vm.keyUp(b);
+});
+
+$("checkpoint").onchange = loadStage;
 $("run").onclick = () => (state.running ? pause() : run());
 $("step").onclick = () => { pause(); tick(); };
 $("reset").onclick = loadStage;

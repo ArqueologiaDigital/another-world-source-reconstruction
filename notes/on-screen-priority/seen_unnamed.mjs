@@ -45,6 +45,14 @@
 //       --romset <romset dir> --stage-id 3 --frames 400
 //   ... --top 40        how many rows to print (default 25)
 //   ... --named         rank the already-NAMED constants instead, as a control
+//   ... --checkpoint N  enter at that checkpoint instead of the stage's first.
+//                       CAVES has nine and they are nine different rooms, so
+//                       what is on screen -- and what is unnamed -- depends on
+//                       which one you ask about.
+//   ... --sweep         run every checkpoint this stage has and merge the
+//                       results. This is the honest answer to "what unnamed art
+//                       does this stage show?", because one checkpoint only ever
+//                       shows one room.
 //   ... --cold          enter the stage with NO copy-protection seeding, which
 //                       is what a fresh boot does and what leaves LAKE, CAVES,
 //                       ENDING and PASSCODE drawing nothing at all
@@ -53,6 +61,9 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { VM } from "../../tools/vm-debugger/static/vm.js";
 
+const CHECKPOINTS = JSON.parse(readFileSync(
+  new URL("../../tools/vm-debugger/static/checkpoints.json", import.meta.url), "utf8"));
+
 const argv = process.argv.slice(2);
 const arg = (k, d) => { const i = argv.indexOf("--" + k); return i >= 0 ? argv[i + 1] : d; };
 const has = (k) => argv.includes("--" + k);
@@ -60,7 +71,8 @@ const NAMES = arg("names"), ROMSET = arg("romset");
 const STAGE_ID = Number(arg("stage-id", "1"));
 const FRAMES = Number(arg("frames", "400"));
 const TOP = Number(arg("top", "25"));
-const WANT_NAMED = has("named"), COLD = has("cold");
+const WANT_NAMED = has("named"), COLD = has("cold"), SWEEP = has("sweep");
+const CHECKPOINT = arg("checkpoint");
 if (!NAMES || !ROMSET) { console.error("need --names and --romset"); process.exit(2); }
 
 const meta = JSON.parse(readFileSync(NAMES, "utf8"));
@@ -82,34 +94,43 @@ function routineAt(pc) {
 }
 
 const rd = (n) => new Uint8Array(readFileSync(join(ROMSET, n)));
-const vm = new VM({
+const ROMS = {
   bytecode: rd("bytecode.rom"), cinematic: rd("cinematic.rom"),
   palettes: rd("palettes.rom"), video2: rd("video2.rom"),
-});
-vm.setupPart(STAGE_ID, { protection: !COLD });
+};
+const probe = new VM(ROMS, { checkpoints: CHECKPOINTS });
+const avail = probe.checkpointsFor(STAGE_ID).map((c) => c.level);
+const runs = COLD ? [undefined]
+  : SWEEP && avail.length ? avail
+  : [CHECKPOINT === undefined ? undefined : Number(CHECKPOINT)];
 
 const seen = new Map();   // key -> {kind, offset, name, frames, first, last, routines, anchors}
 let ran = 0;
-for (let i = 0; i < FRAMES; i++) {
-  const f = vm.runFrame();
-  ran++;
-  const thisFrame = new Set();
-  for (const d of f.draws) {
-    const name = nameOf(d);
-    if (isNamed(name) !== WANT_NAMED) continue;
-    const key = d.kind + hex4(d.offset);
-    let e = seen.get(key);
-    if (!e) {
-      e = { kind: d.kind, offset: d.offset, name, frames: 0, first: i, last: i,
-            routines: new Set(), anchors: new Set() };
-      seen.set(key, e);
+for (const cp of runs) {
+  const vm = new VM(ROMS, { checkpoints: CHECKPOINTS });
+  vm.setupPart(STAGE_ID, { protection: !COLD, checkpoint: cp });
+  for (let i = 0; i < FRAMES; i++) {
+    const f = vm.runFrame();
+    ran++;
+    const thisFrame = new Set();
+    for (const d of f.draws) {
+      const name = nameOf(d);
+      if (isNamed(name) !== WANT_NAMED) continue;
+      const key = d.kind + hex4(d.offset);
+      let e = seen.get(key);
+      if (!e) {
+        e = { kind: d.kind, offset: d.offset, name, frames: 0, first: i, last: i,
+              routines: new Set(), anchors: new Set(), cps: new Set() };
+        seen.set(key, e);
+      }
+      e.last = i;
+      if (cp !== undefined) e.cps.add(cp);
+      e.routines.add(routineAt(d.pc));
+      e.anchors.add(`x:${d.anchor.x} y:${d.anchor.y} z:${d.anchor.zoom}`);
+      if (!thisFrame.has(key)) { e.frames++; thisFrame.add(key); }
     }
-    e.last = i;
-    e.routines.add(routineAt(d.pc));
-    e.anchors.add(`x:${d.anchor.x} y:${d.anchor.y} z:${d.anchor.zoom}`);
-    if (!thisFrame.has(key)) { e.frames++; thisFrame.add(key); }
+    if (vm.halted || vm.pendingPart !== undefined) break;
   }
-  if (vm.halted || vm.pendingPart !== undefined) break;
 }
 
 // A routine the disassembler named HANG_* is an infinite draw loop with no exit:
@@ -121,7 +142,8 @@ for (const e of seen.values())
 const rows = [...seen.values()].sort((a, b) => b.frames - a.frames || a.offset - b.offset);
 const stuck = rows.filter((r) => r.hang).length;
 const total = rows.reduce((s, r) => s + r.frames, 0);
-console.log(`${meta.branch}/${meta.stage}: ${ran} frames run, ` +
+console.log(`${meta.branch}/${meta.stage}: ${ran} frames run over ` +
+            `${runs.length} checkpoint(s)${runs.length > 1 ? " (--sweep)" : ""}, ` +
             `${rows.length} ${WANT_NAMED ? "named" : "still-numbered"} constant(s) drawn, ` +
             `${total} constant-frames of screen time`);
 console.log("");

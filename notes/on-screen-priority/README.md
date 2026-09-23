@@ -63,25 +63,26 @@ nothing whatever, which is not a limitation worth preserving in a debugger.
 
 ## The measurement as of 2026-09-23
 
-    dos_1992/PRISON: 400 frames run, 41 still-numbered constant(s) drawn,
-                     1874 constant-frames of screen time
+    dos_1992/PRISON: 400 frames run over 1 checkpoint(s),
+                     39 still-numbered constant(s) drawn,
+                     1667 constant-frames of screen time
 
     284  71%  CINEMATIC_035  0x23B4  116-399  x:var y:var z:imm  LABEL_795A
-    152  38%  CINEMATIC_017  0x952A  118-399  x:var y:var z:imm  LABEL_1D82 LABEL_1DAC
     140  35%  CINEMATIC_241  0xC4DE  150-399  x:var y:var z:imm  DRAW_CIN_241
     140  35%  CINEMATIC_240  0xC4FA  150-399  x:var y:var z:imm  DRAW_CIN_240
-    121  30%  CINEMATIC_007  0x970A  118-397  x:var y:var z:imm  LABEL_1E55 LABEL_1E7F
+    132  33%  CINEMATIC_017  0x952A  118-394  x:var y:var z:imm  LABEL_1D82
+    124  31%  CINEMATIC_016  0x950E  117-399  x:var y:var z:imm  LABEL_1D6A
 
-Of the 41 still-numbered constants this run drew, 34 have a `var` x, 33 have
-both coordinates from variables, and 7 are `imm/imm` furniture.
+Of the 39, 32 have a `var` x and 31 have both coordinates from variables; 7 are
+`imm/imm` furniture.
 
 **The control matters more than that tally.** `--named` ranks the same stage's
 *named* constants, and its top row --
-`CINEMATIC_PRISON_CAGE_CHAIN_TILT_ZERO` at 0x2190 -- is on screen for 96
-frames, 24% of the run. It is also `x:var y:var`. So "the unnamed art moves" is
-**not** a finding: essentially everything PRISON draws is variable-anchored, and
-a probe that reported the anchor mix as a discovery would be reporting the
-stage's drawing style back to itself.
+`CINEMATIC_PRISON_CAGE_BARS_TILT_ZERO` at 0x0EDA -- is on screen for 96 frames,
+24% of the run. It is also `x:var y:var`. So "the unnamed art moves" is **not**
+a finding: essentially everything PRISON draws is variable-anchored, and a probe
+that reported the anchor mix as a discovery would be reporting the stage's
+drawing style back to itself.
 
 What the control does establish is the gap. The most-seen *named* constant in
 PRISON is on screen 96 frames. `CINEMATIC_035` is on screen **284**, nearly
@@ -89,4 +90,19 @@ three times as long as anything that has a name. The single most visible object
 in the stage is anonymous, and its drawing routine, `LABEL_795A`, is anonymous
 too.
 
-That is the row to work, and finding it took running the game.
+## One checkpoint shows one room, so sweep them
+
+A stage is entered at a checkpoint (`../stage-entry/`), and CAVES has nine of
+them -- nine different rooms. Asking about one is asking about one room, and it
+reads as "this stage has almost no unnamed art left" when the truth is "this
+room does not". `--sweep` runs every checkpoint the stage has and merges:
+
+| stage | first checkpoint only | every checkpoint |
+| --- | --- | --- |
+| PRISON | 39 | 39 (it has one) |
+| CAVES | 5 | **34** |
+| CAPSULE | 13 | **49** |
+
+That is 122 still-numbered constants a player actually sees across the three
+stages that have any, against the 57 a single-checkpoint run reports. **Use
+`--sweep` before concluding a stage is done.**

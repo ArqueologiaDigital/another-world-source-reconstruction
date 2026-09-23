@@ -21,10 +21,16 @@ was most needed.
     stage      cold                     seeded
     LAKE         0 painted,    0 draws    101 painted,  1622 draws
     CAVES        0 painted,    0 draws    595 painted,  1999 draws
-    CAPSULE      0 painted,    0 draws    115 painted,  1479 draws
+    CAPSULE      0 painted,    0 draws    599 painted,  3241 draws
     ENDING       0 painted,    0 draws    344 painted,  1212 draws
 
 INTRO, PRISON and TANK open on a cutscene and are identical either way.
+
+"Seeded" means **a checkpoint's whole register table**, not the five variables
+the protection check reads. Those five make a stage draw; they do not make it
+play, and the difference is measurable -- CAPSULE reaches 12.5% of the screen
+on the five and 68.5% on checkpoint 12's forty-nine. See "A checkpoint is not
+five variables" below.
 
 ## The explanation that was on record, and the two measurements that killed it
 
@@ -69,6 +75,47 @@ because a corrected sentence tells the next person what to believe, and a
 command tells them how to check. The story was plausible, it survived being
 written into a README, and what removed it was one census of live threads
 costing a second to run.
+
+## A checkpoint is not five variables
+
+The five copy-protection variables were derived here from the listing, and they
+are right as far as they go: the reference's own table for the intro,
+`LEVEL_00`, is those five plus `0x54`, and nothing else. Every other level's
+table has **49** registers -- hero position, screen number, the scroll anchor,
+the room's own state -- because a checkpoint is what a real playthrough would
+have left behind, and a stage missing most of that reaches its entry point and
+then behaves like a machine missing most of its memory.
+
+`tools/vm-debugger/static/checkpoints.json` holds all sixteen, transcribed from
+the local Rust engine at `../../../another-world-suite/engine` by
+`tools/vm-debugger/tools/extract_checkpoints.py` -- generated, not typed,
+because 16 x 49 hand-copied numbers is 784 chances to be wrong in a way nothing
+would catch. The parts they cover are this project's stage ids:
+
+| part | stage | checkpoints |
+| --- | --- | --- |
+| 1 | INTRO | 0 |
+| 2 | LAKE | 1 |
+| 3 | PRISON | 2 |
+| 4 | CAVES | 3, 4, 5, 6, 7, 8, 9, 10, 11 |
+| 5 | TANK | 14 |
+| 6 | CAPSULE | 12, 13, 15 |
+
+Registers `0x00..0x3F` are zeroed before a table is applied and `0x40..0xFF`
+are left alone, exactly as the reference's `restart_level` does: a table is a
+delta, not a whole machine state.
+
+CAVES' nine are nine different rooms, and it shows:
+
+    checkpoint  3:  2.5% of the screen at its fullest   (a hang loop)
+    checkpoint  5: 57.3%
+    checkpoint  6: 59.2%
+    checkpoint  9:  6.1%
+
+The first one listed is the default, which is faithful to the reference's
+ordering and is **not** the one that shows the most. Pick one in the debugger's
+header, or use `../on-screen-priority/ --sweep` to ask about all of them at
+once.
 
 ## What this does not fix
 

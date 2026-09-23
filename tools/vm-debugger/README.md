@@ -180,16 +180,18 @@ path latches: it writes `0xF2 = 0x1770`, not `0x0FA0`. `LIKELY_A_COPY_
 PROTECTION_MECHANISM` appears in CAVES, ENDING and PRISON in both priority
 ports, and in msdos's PASSCODE.
 
-**The debugger now seeds those five variables on `setupPart` by default**
-(`VM.PROTECTION_PASS` in `static/vm.js`). The `cold boot` checkbox in the header
-turns it off and reproduces the blank. Measured over 600 frames of `dos_1992`
+**The debugger now applies a whole checkpoint register table on `setupPart`**
+(`static/checkpoints.json`; the five variables above are only the fallback when
+no table is loaded, and they are exactly the reference's own table for the
+intro). The `cold boot` checkbox in the header turns it off and reproduces the
+blank. Measured over 600 frames of `dos_1992`
 with `notes/on-screen-priority/seen_unnamed.mjs`:
 
 | stage | cold | seeded |
 | --- | --- | --- |
 | LAKE | 0 painted frames | 101 |
 | CAVES | 0 | 595 |
-| CAPSULE | 0 | 115 |
+| CAPSULE | 0 | 599 |
 | ENDING | 0 | 344 |
 
 Both halves of that table, the thread census and the refuted `SCREEN_NUM`
@@ -217,12 +219,55 @@ panel shows `SCREEN_NUM` and `HERO_X`, not `[0x67]` and `[0x01]`.
 | `tests/smoke_frames.mjs` | does the pipeline paint, and does the unnamed counter count? |
 | `tests/dump_draws.mjs` | did a change to the VM move any draw? |
 | `tests/check_guidance.py` | does the guidance document carry every entry, with its id? |
+| `tests/check_entry_and_input.mjs` | do the checkpoint tables load, and does input match the reference? |
 
 The last one exists because `guidance()` filtered to `kind == "annotate"` and so
 hid every typed name from both ways the log is read. It takes a candidate
 `server.py` as its one argument, which is how a case here is shown to be real:
 against `160e9524~1` it reports six problems, including the missing rename
 entries and an absent `annotation_id`.
+
+## Starting a stage, and playing it
+
+Two things a debugger needs that a renderer does not.
+
+**Where you arrive.** A stage is entered at a *checkpoint*, and a checkpoint is
+a table of 49 registers the reference engine applies on restart -- hero
+position, screen number, the scroll anchor, the room's state. Seeding only the
+five copy-protection variables makes a stage *draw* and not *play*: CAPSULE
+reaches 12.5% of the screen on the five and 68.5% on checkpoint 12's forty-nine.
+The header has a **checkpoint** selector; CAVES has nine and they are nine
+different rooms, CAPSULE three, the rest one each. The default is the first the
+reference lists, which is faithful and is not the fullest. `notes/stage-entry/`
+has the table and where it comes from.
+
+**The controls.** Click the picture, then:
+
+| key | |
+| --- | --- |
+| arrow keys, or WASD | move |
+| space, or Enter | action |
+
+Nothing wrote the input variables before 2026-09-23, so the hero never moved
+however the stage was seeded. `VM.processInput` publishes the six the scripts
+poll -- `0xFC` left/right, `0xE5` and `0xFB` up/down, `0xFD` the direction mask,
+`0xFA` the action key, `0xFE` the mask with `0x80` while action is held -- once
+per frame, where the reference publishes them.
+`tests/check_entry_and_input.mjs` checks all 32 combinations against the
+reference's own arithmetic.
+
+## "pause on unnamed" stops once per asset, not once per frame
+
+The checkbox stops the run the first time a frame draws a constant with no
+semantic name, selects it, and makes its area blink. It then **remembers that
+one** and will not stop on it again, because an asset is usually on screen for
+tens of consecutive frames and stopping every frame made `run` look broken.
+
+If it never fires, the stage genuinely has none on screen: INTRO, LAKE, TANK and
+ENDING are all at zero. PRISON has 39, CAVES 5 and CAPSULE 13 at their first
+checkpoint -- and 34 and 49 across all of theirs, which is what
+`notes/on-screen-priority/seen_unnamed.mjs --sweep` is for. Ask that probe which
+stage and checkpoint to open before hunting in the UI.
 
 ## What the backend serves
 

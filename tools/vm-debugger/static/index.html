@@ -7,7 +7,8 @@
   <span class="brand">Another World<em>VM debugger</em></span>
   <label>branch <select id="branch"></select></label>
   <label>stage <select id="stage"></select></label>
-  <button id="reset" title="Restart this stage from its entry point">reset</button>
+  <label title="Where in the stage you arrive. CAVES has nine and they are nine different rooms; the registers come from the reference engine's per-checkpoint tables (static/checkpoints.json).">checkpoint <select id="checkpoint"></select></label>
+  <button id="reset" title="Restart this stage from its chosen checkpoint">reset</button>
   <button id="run" class="primary">run</button>
   <button id="step" title="Run exactly one frame">step</button>
   <label class="speed">speed <input id="speed" type="range" min="1" max="60" value="20"></label>
@@ -19,6 +20,7 @@
   <label title="Enter with every variable zero, as a fresh boot does. LAKE, CAVES, ENDING and PASSCODE then delete all 64 threads on entry and draw nothing: see VM.PROTECTION_PASS in static/vm.js.">
     <input type="checkbox" id="coldboot"> cold boot
   </label>
+  <span class="keys" title="Click the screen first so it has focus. Arrow keys move, space or Enter is the action button.">&larr;&uarr;&darr;&rarr; + space</span>
   <span id="unnamed" class="badge">0 unnamed</span>
 </header>
 
@@ -29,8 +31,10 @@
       <canvas id="overlay" width="320" height="200"></canvas>
     </div>
     <p class="hint" id="hint">
-      Pick a stage and press <b>run</b>. Click anything in <b>on screen</b> to make
-      its area blink, then describe it below — you do not have to invent a name.
+      Pick a stage and press <b>run</b>, then click the picture and use the
+      <b>arrow keys</b> and <b>space</b> to play. Click anything in
+      <b>on screen</b> to make its area blink, then describe it below — you do
+      not have to invent a name.
     </p>
 
     <div class="annotate">

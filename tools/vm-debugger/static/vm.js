@@ -44,9 +44,13 @@ export class VM {
   /**
    * @param {object} roms {bytecode, cinematic, palettes, video2, chargen,
    *                       strData, strIndex} as Uint8Array
+   * @param {object} [opts] {checkpoints} -- the parsed static/checkpoints.json.
+   *   Without it the VM can still run, but only from the all-zero state that
+   *   leaves four of the eight stages deleting all 64 threads on entry.
    */
-  constructor(roms) {
+  constructor(roms, opts) {
     this.roms = roms;
+    this.checkpoints = (opts && opts.checkpoints) || null;
     this.cine = new PolygonRenderer(roms.cinematic, roms.palettes);
     this.vid2 = roms.video2
       ? new PolygonRenderer(roms.video2, roms.palettes) : null;
@@ -68,6 +72,10 @@ export class VM {
     this.halted = false;
     this.gameOver = false;
 
+    // Input. `keys` is a bitmask in the reference's order: up 1, right 2,
+    // down 4, left 8, action 16.
+    this.keys = 0;
+
     // per-frame, cleared by runFrame
     this.draws = [];
     this.sounds = [];
@@ -79,14 +87,12 @@ export class VM {
   // ---- setup ---------------------------------------------------------
   /** The five variables the copy-protection check reads, and passing values.
    *
-   * Four stages -- LAKE, CAVES, ENDING and, in msdos, PASSCODE -- run a check
-   * before doing anything, and its failure path is
-   * `deleteChannels first=0x00, last=0x3F`: it deletes all 64 threads and the
-   * stage sits there drawing nothing forever. Entered cold, with every variable
-   * zero, the check always fails, which is why those stages were silent.
-   *
-   * The conditions, read off `LIKELY_A_COPY_PROTECTION_MECHANISM` in
-   * `src/levels/dos_1992/CAVES.asm` (the strictest of the four):
+   * Kept as the FALLBACK for when no checkpoint table is loaded, and as the
+   * documentation of why an unseeded stage is silent. Four stages -- LAKE,
+   * CAVES, ENDING and, in msdos, PASSCODE -- run a check before doing anything,
+   * and its failure path is `deleteChannels first=0x00, last=0x3F`: it deletes
+   * all 64 threads and the stage draws nothing forever. The conditions, off
+   * `LIKELY_A_COPY_PROTECTION_MECHANISM` in `src/levels/dos_1992/CAVES.asm`:
    *
    *     and [0xBC], 0x0010   je [0xBC], 0x00 -> fail    bit 4 of 0xBC set
    *     and [0xF8], 0x0080   je [0xF8], 0x00 -> fail    bit 7 of 0xC6 set
@@ -94,25 +100,44 @@ export class VM {
    *     jne [0xF2], 0x0FA0 -> fail                      0xF2 == 0x0FA0
    *     jne [COPY_PROTECT_TOKEN], 0x21 -> fail          0xDC == 0x21
    *
-   * Note `and [0xBC], 0x0010` writes back into 0xBC, so these are read once and
-   * consumed. The failure path latches: it sets 0xF2 to 0x1770, not 0x0FA0.
+   * `and [0xBC], 0x0010` writes back into 0xBC, so these are read once and
+   * consumed, and the failure path latches: it sets 0xF2 to 0x1770, not 0x0FA0.
    *
-   * This is the answer a real player's code wheel produces, not a bypass of
-   * anything: the values are in the listing, the game is 34 years old, and the
-   * point is to reach the art in a debugger. Measured effect, 600 frames,
-   * dos_1992 (notes/on-screen-priority/): LAKE 0 -> 101 painted frames, CAVES
-   * 0 -> 595, CAPSULE 0 -> 115, ENDING 0 -> 344.
+   * **These five are enough to make a stage DRAW and not enough to make it
+   * PLAY.** The reference engines carry 49 registers per checkpoint, and the
+   * rest are what a real playthrough would have left behind -- hero position,
+   * screen number, the scroll anchor, the room's own state. A stage seeded with
+   * only these five reaches its entry point and then behaves like a machine
+   * missing most of its memory, which is the freeze this project hit before
+   * `checkpoints.json` existed. The check's own table, LEVEL_00, is these five
+   * plus 0x54 -- the intro needs nothing else, which is why they were what an
+   * independent derivation from the listing found.
    */
   static PROTECTION_PASS = { 0xBC: 0x0010, 0xC6: 0x0080, 0xE4: 0x0014,
                              0xF2: 0x0FA0, 0xDC: 0x0021 };
 
-  /** Start a stage: the reference's setupPart -- everything off, thread 0 at 0.
+  /** Which checkpoints exist for a part, in order. [] when none are loaded. */
+  checkpointsFor(part) {
+    if (!this.checkpoints) return [];
+    return this.checkpoints.checkpoints.filter((c) => c.part === (part & 0xF));
+  }
+
+  /** Start a stage: the reference's setupPart, plus a checkpoint's registers.
    *
-   * `opts.protection === false` skips the seeding above and enters truly cold,
-   * which is what the game does on a fresh boot and what leaves four of the
-   * eight stages blank. The default seeds, because a debugger that cannot reach
-   * CAVES or CAPSULE cannot help name them -- they are the two least-named
-   * stages in the project.
+   * `opts.checkpoint` selects one by its `level` number; the default is the
+   * first one listed for this part. CAVES has nine, CAPSULE three, the rest
+   * one each, and they are different rooms -- picking one is picking where in
+   * the stage you arrive.
+   *
+   * Registers 0x00..0x3F are zeroed before the table is applied and
+   * 0x40..0xFF are left alone, exactly as the reference's `restart_level`
+   * does: a checkpoint table is the delta from what the previous part left
+   * behind, not a whole machine state.
+   *
+   * `opts.protection === false` applies nothing at all and enters truly cold,
+   * which is what a fresh boot does and what leaves four of the eight stages
+   * blank. With no table loaded, the five-variable fallback above is used
+   * instead, which is enough to draw and not enough to play.
    */
   setupPart(level, opts) {
     this.level = level & 0xF;
@@ -126,14 +151,66 @@ export class VM {
     this.frame = 0;
     this.halted = false;
     this.gameOver = false;
+    this.keys = 0;
     for (const p of this.pages) p.fill(0);
     this.workPage = 2; this.frontPage = 2; this.backPage = 1;
-    const seed = !opts || opts.protection !== false;
-    if (seed) {
-      for (const [v, val] of Object.entries(VM.PROTECTION_PASS))
-        this.vars[Number(v)] = val;
+
+    const cold = opts && opts.protection === false;
+    let applied = null;
+    if (!cold) {
+      const avail = this.checkpointsFor(this.level);
+      const want = opts && opts.checkpoint;
+      const cp = avail.find((c) => c.level === want) || avail[0];
+      if (cp) {
+        for (let i = 0; i < 0x40; i++) this.vars[i] = 0;
+        for (const [v, val] of Object.entries(cp.registers))
+          this.vars[Number(v)] = val;
+        applied = cp.level;
+      } else {
+        for (const [v, val] of Object.entries(VM.PROTECTION_PASS))
+          this.vars[Number(v)] = val;
+      }
     }
-    this.events.push({ kind: "setupPart", level: this.level, protection: seed });
+    this.checkpoint = applied;
+    this.events.push({ kind: "setupPart", level: this.level,
+                       checkpoint: applied, protection: !cold });
+  }
+
+  // ---- input ----------------------------------------------------------
+  /** up 1, right 2, down 4, left 8, action 16 -- the reference's bit order. */
+  static KEY = { UP: 1, RIGHT: 2, DOWN: 4, LEFT: 8, ACTION: 16 };
+
+  keyDown(bit) { this.keys |= bit; }
+  keyUp(bit) { this.keys &= ~bit; }
+
+  /** Publish the key state into the six variables the scripts poll.
+   *
+   * Called once per frame, before any thread runs, which is where the
+   * reference calls it (at the wrap back to thread 0). Without this the hero
+   * never moves however the stage is seeded: nothing else writes these.
+   *
+   * 0xFC left/right as -1/0/+1, 0xE5 and 0xFB up/down the same, 0xFD a bitmask
+   * of the directions held (right 1, left 2, down 4, up 8), 0xFA the action
+   * key as 0/1, and 0xFE the same mask with 0x80 set while action is held.
+   */
+  processInput() {
+    const K = VM.KEY;
+    let lr = 0, ud = 0, mask = 0;
+    if (this.keys & K.RIGHT) { lr = 1; mask |= 1; }
+    if (this.keys & K.LEFT) { lr = -1; mask |= 2; }
+    if (this.keys & K.DOWN) { ud = 1; mask |= 4; }
+    if (this.keys & K.UP) { ud = -1; mask |= 8; }
+    this.vars[0xFC] = lr;
+    this.vars[0xE5] = ud;
+    this.vars[0xFB] = ud;
+    this.vars[0xFD] = mask;
+    if (this.keys & K.ACTION) {
+      this.vars[0xFA] = 1;
+      this.vars[0xFE] = mask | 0x80;
+    } else {
+      this.vars[0xFA] = 0;
+      this.vars[0xFE] = mask;
+    }
   }
 
   // ---- bytecode access ------------------------------------------------
@@ -159,6 +236,7 @@ export class VM {
   runFrame() {
     this.draws = []; this.sounds = []; this.texts = []; this.events = [];
     this.seq = 0;
+    this.processInput();
 
     for (let i = 0; i < NUM_THREADS; i++) {
       if (this.requestedFreeze[i] !== 0xFF) {

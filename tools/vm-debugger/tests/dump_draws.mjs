@@ -25,11 +25,14 @@
 // The path must be absolute -- it is passed to a dynamic import().
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+
+const CHECKPOINTS = JSON.parse(readFileSync(
+  new URL("../static/checkpoints.json", import.meta.url), "utf8"));
 const VMMOD = process.argv[2], ROMSET = process.argv[3], SID = Number(process.argv[4]);
 const { VM } = await import(VMMOD);
 const rd = (n) => new Uint8Array(readFileSync(join(ROMSET, n)));
 const vm = new VM({ bytecode: rd("bytecode.rom"), cinematic: rd("cinematic.rom"),
-                    palettes: rd("palettes.rom"), video2: rd("video2.rom") });
+                    palettes: rd("palettes.rom"), video2: rd("video2.rom") }, { checkpoints: CHECKPOINTS });
 vm.setupPart(SID);
 for (let i = 0; i < 400; i++) {
   const f = vm.runFrame();

@@ -87,6 +87,8 @@ As of the last commit:
 | beam-ladder alternate-set slots still numbered | 34 of 36 | `beam-span-ladder/rung_thresholds.py` |
 | stages that draw anything from a cold entry (msdos, 600 frames) | 3 of 7 cold, 7 of 7 seeded | `stage-entry/entry_state.mjs` |
 | SCREEN_NUM values that unlock CAVES without the protection seed | 0 of 28 | same, `--screens` |
+| still-numbered constants a player sees, all checkpoints (msdos PRISON+CAVES+CAPSULE) | 122 | `on-screen-priority/seen_unnamed.mjs --sweep` |
+| the same, asking only each stage's first checkpoint | 57 | same, without `--sweep` |
 
 ## Held, added 2026-09-23: the beam ladder's second set
 

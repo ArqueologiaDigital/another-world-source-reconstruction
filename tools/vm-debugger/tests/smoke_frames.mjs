@@ -18,6 +18,9 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { VM, W, H } from "../static/vm.js";
 
+const CHECKPOINTS = JSON.parse(readFileSync(
+  new URL("../static/checkpoints.json", import.meta.url), "utf8"));
+
 const argv = process.argv.slice(2);
 const arg = (k, d) => { const i = argv.indexOf("--" + k); return i >= 0 ? argv[i + 1] : d; };
 const NAMES = arg("names"), ROMSET = arg("romset");
@@ -36,7 +39,7 @@ const rd = (n) => new Uint8Array(readFileSync(join(ROMSET, n)));
 const vm = new VM({
   bytecode: rd("bytecode.rom"), cinematic: rd("cinematic.rom"),
   palettes: rd("palettes.rom"), video2: rd("video2.rom"),
-});
+}, { checkpoints: CHECKPOINTS });
 vm.setupPart(STAGE_ID);
 
 let painted = 0, bestFill = 0, unnamedFrames = 0;
