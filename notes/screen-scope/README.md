@@ -228,3 +228,27 @@ positions 8, 9, 10, 12, 13, 14, 15, 17 — the holes at 11 and 16 are where a
 twice-painted or shared layer sits, and they can never be filled. The guard is
 right to refuse and the holes are meaningful, exactly as in
 `../draw-label-follows-constant/footstep_frames.py`.
+
+### The tile hypothesis, tested and refuted
+
+The largest refused class is "painted twice in the same phase", and the
+obvious reading is that those are **tiles** — one picture stamped repeatedly
+to build a wall or a floor. This project has measured tiling before (a tile
+steps exactly one pixel less than its own routine's step: 15/16, 47/48,
+111/112), so a tile run would be nameable as such.
+
+It is not that. Over every picture painted more than once at a literal anchor
+in one screen's backdrop phase:
+
+```
+ 232  painted once (not in this class)
+  82  painted exactly twice
+  33  painted three or more times, irregular spacing
+   0  painted three or more times with a constant step
+```
+
+Two points always have a "constant step", so the test is vacuous below three
+copies — and above three, **nothing** is regular. The twice-painted ones are
+pairs at offsets like (165, 0) and (-160, 0), which is a mirrored or repeated
+prop, not a run. There is no tiling structure in the backdrop phase to
+exploit, and a twice-painted picture still has no single position.
