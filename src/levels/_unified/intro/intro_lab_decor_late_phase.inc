@@ -3,7 +3,7 @@ DRAW_INTRO_DECOR_318:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_SPARK_LONG_F0, x=176, y=157
 .else
-	video offset=CINEMATIC_318, x=176, y=157
+	video offset=CINEMATIC_EXPERIMENT_SPARK_LONG_F0, x=176, y=157
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
@@ -39,7 +39,7 @@ DRAW_INTRO_DECOR_318:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_SPARK_LONG_F0, x=176, y=157
 .else
-	video offset=CINEMATIC_318, x=176, y=157
+	video offset=CINEMATIC_EXPERIMENT_SPARK_LONG_F0, x=176, y=157
 .endif
 	mov [0x0E], 0x0007
 

@@ -163,6 +163,9 @@ def main() -> int:
     ap.add_argument("--out", type=pathlib.Path, required=True)
     ap.add_argument("--under", nargs="*", default=[],
                     help="offsets drawn BEHIND every frame, in draw order")
+    ap.add_argument("--under-routine",
+                    help="build the backdrop from this routine's own draw list, "
+                         "each layer PLACED at its x, y -- the scene a run plays over")
     ap.add_argument("--frames", nargs="*", default=[],
                     help="offsets of the run, in the order the routine draws them")
     ap.add_argument("--routine",
@@ -182,8 +185,12 @@ def main() -> int:
     if not args.frames and not args.routine:
         raise SystemExit("pass --frames or --routine")
 
+
     args.out.mkdir(parents=True, exist_ok=True)
     under = [p for o in args.under for p in paths(args.renders, o)]
+    if args.under_routine:
+        for _, off, dx, dy in draws_of(args.branch, args.stage, args.under_routine):
+            under += [shift(p, dx, dy) for p in paths(args.renders, off)]
 
     placed: list[tuple[str, str, float, float]] = []   # (label, offset, dx, dy)
     if args.routine:

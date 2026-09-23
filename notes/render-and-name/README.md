@@ -1,5 +1,7 @@
 # Names read off a render
 
+**INTRO is complete in both priority ports: 569/569 amiga, 570/570 msdos.**
+
 **Every name listed here has no independent check behind it.** It was read
 from a rendered picture, at the confidence stated per row, with the measured
 extent and the draw position quoted as the corrective. A rename moves no
@@ -145,6 +147,8 @@ checked against the receiving port's own guards.
 | INTRO 378 | 379 | `CINEMATIC_ACCELERATOR_TUNNEL_VIEW_FAR` (and its old bearer to `..._DEBRIS_LOWER`, all four branches) | high |
 | INTRO 466, 176, 430, 184 | 468, 182, 431, 190 | `CINEMATIC_{LESTER_STANDING_FACING_CAMERA,HOLO_CONSOLE_DOME_LAMP,HOLO_SCREEN_POINTER,HOLO_SCREEN_POINTER_ON_PLATE}` | high/medium |
 | INTRO 543, 555, 559, 560, 563, 564 | 544, 556, 560, 561, 564, 565 | `CINEMATIC_CITY_{GANTRY_AERIALS,ROOFTOP_PEAK,DISTANT_RIDGE,GROUND_PATCH,DARK_PEAK,GANTRY_CABLE}` | medium |
+| INTRO 026, 112, 292, 293, 294 | 031, 117, 298, 299, 300 | `CINEMATIC_{STREET_ROAD_EDGE,LIFT_DOOR_INDICATOR,MACHINE_HULL,MACHINE_STRUTS,MACHINE_STRUT_DETAIL}` | medium |
+| (amiga already named) | INTRO 318, 444, 446, 466 + an LED renumber | `CINEMATIC_EXPERIMENT_SPARK_LONG_F0`, `..._HOLO_CONSOLE_LED_0..4`, `CINEMATIC_LIFT_SHAFT_BAND` | high/medium |
 | INTRO 268..276 | 274..282 | `CINEMATIC_FRAGMENTS_RECEDING_F0..F8` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
