@@ -121,6 +121,7 @@ checked against the receiving port's own guards.
 | CAPSULE CINEMATIC_434..442 | (msdos twins) | `CINEMATIC_CAPSULE_FIGURE_THROW_F0..F8` | medium |
 | CAPSULE CINEMATIC_016..023 | (msdos twins) | `CINEMATIC_CAPSULE_FLYER_F0..F7` | medium |
 | CAPSULE 448..452, 454..458 | msdos: `PROP_UP` only, see below | `CINEMATIC_CAPSULE_FIGURE_{PROP_UP,FLUNG}_F0..F4` | medium |
+| TANK **msdos** 106..118 | amiga has no twin | `CINEMATIC_TANK_ARENA_BLAST_{RIGHT,LEFT}_F*` | medium |
 | PRISON 107..126 | (msdos twins) | `CINEMATIC_PRISON_GREEN_TRACER_F0..F7`, `_TRACER_BURST_{LEFT,RIGHT}_F0..F5` | medium |
 | PRISON 541..548, 624..628 | (msdos twins) | `CINEMATIC_PRISON_FLEXING_BAND_F0..F5`, `_BAR_PANEL_F0..F4` | medium |
 | CAVES 514..524, 857..867 | (msdos twins) | `CINEMATIC_CAVES_HERO_SWIM_ARM_{RIGHT,LEFT}_F0..F10` | high |

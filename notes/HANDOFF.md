@@ -25,7 +25,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 75.2% (7,631/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 75.3% (7,644/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 73 amiga / 76 msdos of 2,530 / 2,552 named | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 48, blocking 250 drawing labels | `shared-bank-geometry/blocked_by_bank.py` |
@@ -239,6 +239,13 @@ for it whenever two draws share an anchor.
 producing names on its own: `nameable_from_drawer.py` reports 1,
 `transfer_by_art.py` and `align_draw_sites.py` report 0 after each batch is
 carried across. PRISON is down from 135 still-numbered pictures >=24x24 to 30.
+
+**msdos/TANK is a separate pool.** Of its 41 still-numbered constants, **35
+have no `canonical_md5` match anywhere in amiga/TANK** -- msdos has art amiga
+does not, so nothing can be carried across and each needs its own render.
+`frame_runs.py --stage TANK --port msdos` is the queue; it has three more runs
+with earned routine names (`TANK_DESTROYED_CUTSCENE_BLAST_ENTRY`,
+`TANK_STAGE_EXIT_CAPSULE_LAUNCH_TO_BATHS`, `DRAW_CIN_6_27_28_AND_RET`).
 
 **Work the runs, not the sizes.** `sheet.py --list` is ordered biggest first
 and that is the wrong order: the biggest things left are screen backdrops,

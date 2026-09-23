@@ -53,52 +53,52 @@ TANK_ARENA_ATTACK_RIGHT_EDGE_REDRAW_LOOP:
 	jmp TANK_ARENA_ATTACK_RIGHT_EDGE_REDRAW_LOOP
 
 TANK_ARENA_ATTACK_BLAST_SEQUENCE:
-	video offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_RIGHT_F0, x=160, y=100
 	play id=0x005B, freq=0x12, vol=0x3F, channel=0x00
 	play id=0x005B, freq=0x12, vol=0x3F, channel=0x01
 	play id=0x005B, freq=0x12, vol=0x3F, channel=0x02
 	play id=0x005B, freq=0x12, vol=0x3F, channel=0x03
 	break
-	video offset=CINEMATIC_107, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_RIGHT_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_108, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_RIGHT_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_107, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_RIGHT_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_109, x=160, y=100
-	video offset=CINEMATIC_110, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_RIGHT_F3, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_LEFT_F0, x=160, y=100
 	play id=0x005B, freq=0x12, vol=0x3F, channel=0x00
 	play id=0x005B, freq=0x12, vol=0x3F, channel=0x01
 	play id=0x005B, freq=0x12, vol=0x3F, channel=0x02
 	play id=0x005B, freq=0x12, vol=0x3F, channel=0x03
 	break
-	video offset=CINEMATIC_107, x=160, y=100
-	video offset=CINEMATIC_111, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_RIGHT_F1, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_LEFT_F1, x=160, y=100
 	play id=0x0059, freq=0x12, vol=0x3F, channel=0x00
 	play id=0x0059, freq=0x14, vol=0x3F, channel=0x01
 	play id=0x0059, freq=0x14, vol=0x3F, channel=0x02
 	play id=0x0059, freq=0x12, vol=0x3F, channel=0x03
 	break
-	video offset=CINEMATIC_108, x=160, y=100
-	video offset=CINEMATIC_112, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_RIGHT_F2, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_LEFT_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_113, x=160, y=100
-	video offset=CINEMATIC_114, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_RIGHT_F4, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_LEFT_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_115, x=160, y=100
-	video offset=CINEMATIC_112, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_RIGHT_F5, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_LEFT_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_116, x=160, y=100
-	video offset=CINEMATIC_117, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_RIGHT_F6, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_LEFT_F4, x=160, y=100
 	break
-	video offset=CINEMATIC_115, x=160, y=100
-	video offset=CINEMATIC_112, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_RIGHT_F5, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_LEFT_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_118, x=160, y=100
-	video offset=CINEMATIC_114, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_RIGHT_F7, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_LEFT_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_115, x=160, y=100
-	video offset=CINEMATIC_112, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_RIGHT_F5, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_BLAST_LEFT_F2, x=160, y=100
 	break
 	jmp TANK_ARENA_ATTACK_FINAL_HIT_UNLESS_ESCAPED
 LABEL_0742:
