@@ -76,3 +76,18 @@ Two false-positive classes are worth knowing, because both were hit:
     `PRISON_CAGE_WITH_HERO_TILT_CASE_*` reports offsets around -65530 because
     its cases are tilt amounts near `0xFFFF`. Still reported, not suppressed:
     the shape of the number is the clue.
+
+## 3. Is there text anywhere else? No.
+
+`decode_text_constants.py` applies the same shape-signature decode to every
+`CINEMATIC_<n>` in all nine stages of both priority ports. **Nothing else
+decodes** — not even partially: no constant outside CODE_WHEEL and PASSCODE
+contains a single character of the 39-signature font.
+
+That is a useful bound rather than a disappointment. It says the two
+code-display stages are the whole of this technique's reach, so the remaining
+numbered constants in PRISON, CAVES and CAPSULE are pictures and will need
+the polygon-layer work the handoff describes, not another clever decode.
+
+Worth re-running when glyphs are added, since the font grows as names land.
+
