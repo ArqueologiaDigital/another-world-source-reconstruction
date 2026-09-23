@@ -63,57 +63,57 @@ LABEL_0DEB:
 	db 0x11
 
 LABEL_0DEC:
-	video offset=CINEMATIC_113, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_TRACER_BURST_LEFT_F0, x=160, y=[0x19]
 	play id=0x005B, freq=0x05, vol=0x0A, channel=0x02
 	break
-	video offset=CINEMATIC_114, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_TRACER_BURST_LEFT_F1, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_115, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_TRACER_BURST_LEFT_F2, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_116, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_TRACER_BURST_LEFT_F3, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_117, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_TRACER_BURST_LEFT_F4, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_118, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_TRACER_BURST_LEFT_F5, x=160, y=[0x19]
 	break
 	jmp LABEL_0DEC
 LABEL_0E19:
 	db 0x11
 
 LABEL_0E1A:
-	video offset=CINEMATIC_107, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_TRACER_BURST_RIGHT_F0, x=160, y=[0x19]
 	play id=0x005B, freq=0x07, vol=0x0A, channel=0x03
 	break
-	video offset=CINEMATIC_108, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_TRACER_BURST_RIGHT_F1, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_109, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_TRACER_BURST_RIGHT_F2, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_110, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_TRACER_BURST_RIGHT_F3, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_111, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_TRACER_BURST_RIGHT_F4, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_112, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_TRACER_BURST_RIGHT_F5, x=160, y=[0x19]
 	break
 	jmp LABEL_0E1A
 LABEL_0E47:
 	db 0x11
 
 LABEL_0E48:
-	video offset=CINEMATIC_119, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_GREEN_TRACER_F0, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_120, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_GREEN_TRACER_F1, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_121, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_GREEN_TRACER_F2, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_122, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_GREEN_TRACER_F3, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_123, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_GREEN_TRACER_F4, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_124, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_GREEN_TRACER_F5, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_125, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_GREEN_TRACER_F6, x=160, y=[0x19]
 	break
-	video offset=CINEMATIC_126, x=160, y=[0x19]
+	video offset=CINEMATIC_PRISON_GREEN_TRACER_F7, x=160, y=[0x19]
 	break
 	jmp LABEL_0E48
 LABEL_0E7B:
