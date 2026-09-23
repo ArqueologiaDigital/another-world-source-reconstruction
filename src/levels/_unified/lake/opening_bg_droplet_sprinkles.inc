@@ -1,4 +1,4 @@
-CV_0020		EQU 0x0020
+CINEMATIC_DROPLET_SPRINKLE_DOT		EQU 0x0020
 
 .if BRANCH in ("cartridge_1992", "dos_1992", "gba_2004")
 CINEMATIC_DROPLET_LARGE		EQU 0xDEE4
@@ -117,14 +117,14 @@ DRAW_4_DROPLETS_LOOP:
 	break
 	add [0x72], 0x0014
 	add [0x73], 0x0010
-	video offset=CV_0020, x=[0x74], y=[0x72]
+	video offset=CINEMATIC_DROPLET_SPRINKLE_DOT, x=[0x74], y=[0x72]
 	sub [0x72], 0x0014
-	video offset=CV_0020, x=[0x75], y=[0x72]
+	video offset=CINEMATIC_DROPLET_SPRINKLE_DOT, x=[0x75], y=[0x72]
 	sub [0x72], 0x0028
-	video offset=CV_0020, x=[0x76], y=[0x72]
-	video offset=CV_0020, x=[0x77], y=[0x73]
+	video offset=CINEMATIC_DROPLET_SPRINKLE_DOT, x=[0x76], y=[0x72]
+	video offset=CINEMATIC_DROPLET_SPRINKLE_DOT, x=[0x77], y=[0x73]
 	sub [0x73], 0x003C
-	video offset=CV_0020, x=[0x78], y=[0x73]
+	video offset=CINEMATIC_DROPLET_SPRINKLE_DOT, x=[0x78], y=[0x73]
 	add [0x72], 0x003C
 	add [0x73], 0x003C
 	je [0x71], 0x01, RESET_DROPLET_72_X_IF_OFFSCREEN

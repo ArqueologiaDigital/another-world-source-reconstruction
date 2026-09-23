@@ -1,3 +1,29 @@
+# The hero's left-facing walk body. F09 was added 2026-09-23; the rest
+# predate this file's header.
+#
+# F09 was missing because its constant was doing two jobs. CV_0020 named
+# BOTH the shared-bank offset 0x0020 (a 49x20 ten-leaf figure) and, in
+# LAKE, the CINEMATIC bank's offset 0x0020 (a 1x0 single dot drawn five
+# times per iteration of DRAW_4_DROPLETS_LOOP). `video type=0` selects the
+# shared bank and plain `video` selects the per-stage cinematic one, so one
+# name covered two unrelated pictures, and dos/LAKE carried TWO
+# `CV_0020 EQU 0x0020` definitions, one in each sense.
+#
+# The droplet sense is now CINEMATIC_DROPLET_SPRINKLE_DOT, which freed the
+# name. Four independent lines put this piece at F09:
+#
+#   declaration  dos/LAKE.asm declared its second CV_0020 EQU directly
+#                between HERO_WALK_LEFT_BODY_F08 and _F10 -- the family's
+#                own ordering puts it in the F09 slot, and the unified
+#                chunk does the same at hero_fall_right_and_drawers.inc
+#   offset       0x0020 sits below 0x00B4 (F10), in the second of the two
+#                offset regions this family occupies
+#   geometry     49.0x20.0 with 10 leaves, the ONLY live CV with a body
+#                shape anywhere below 0x00B4
+#   phase width  F10..F14 widths (23.5, 26.5, 26.0, 22.0, 18.0) repeat
+#                F02..F06 exactly, so F09 must repeat F01's 20.0 -- and
+#                this piece is 20.0 wide
+#
 CV_037C HERO_WALK_LEFT_BODY_F00
 CV_0764 HERO_WALK_LEFT_BODY_F01
 CV_0790 HERO_WALK_LEFT_BODY_F02
@@ -7,6 +33,7 @@ CV_0814 HERO_WALK_LEFT_BODY_F05
 CV_0844 HERO_WALK_LEFT_BODY_F06
 CV_0874 HERO_WALK_LEFT_BODY_F07
 CV_08A0 HERO_WALK_LEFT_BODY_F08
+CV_0020 HERO_WALK_LEFT_BODY_F09
 CV_00B4 HERO_WALK_LEFT_BODY_F10
 CV_0128 HERO_WALK_LEFT_BODY_F11
 CV_01B0 HERO_WALK_LEFT_BODY_F12
