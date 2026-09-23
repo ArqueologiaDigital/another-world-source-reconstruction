@@ -147,7 +147,7 @@ KILL_CHANNEL_LANDING_002:
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
-DRAW_CV_074:
+PRISON_DRAW_HERO_WALK_LEFT_BODY_F09:
 	video type=0, offset=0x0020, x=[0x01], y=[0x02], zoom=0x40
 	ret
 .endif
@@ -593,7 +593,7 @@ PRISON_HERO_RUN_LEFT_DRAW_PHASE_08:
 PRISON_HERO_RUN_LEFT_DRAW_PHASE_09:
 	je [0x0A], 0x00, DRAW_CV105_AT_X01_Y02
 	call DRAW_CV_298
-	jmp DRAW_CV_106
+	jmp PRISON_DRAW_HERO_RUN_LEFT_BODY_F09
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -602,7 +602,7 @@ PRISON_HERO_RUN_LEFT_DRAW_PHASE_09:
 
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
-DRAW_CV_106:
+PRISON_DRAW_HERO_RUN_LEFT_BODY_F09:
 	video type=0, offset=HERO_RUN_LEFT_BODY_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 

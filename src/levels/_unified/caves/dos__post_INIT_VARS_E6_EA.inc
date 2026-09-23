@@ -79,13 +79,13 @@ LABEL_CE86:
 
 DRAW_CIN_387_IF_VAR_E6_VALID:
 	jg [0xE6], 0xFFF9, LABEL_CE95
-	video offset=CINEMATIC_388, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_SCREEN_69_BACKDROP_LAYER_1, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CE95:
 	jne [0xE6], 0xFFFA, LABEL_CEA3
-	video offset=CINEMATIC_387, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_SCREEN_69_BACKDROP_LAYER_0, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
@@ -140,27 +140,27 @@ LABEL_CF03:
 LABEL_CF10:
 	jne [0xE6], 0x03, LABEL_CF23
 	video offset=CINEMATIC_378, x=[0x21], y=[0x22], zoom=[0x23]
-	video offset=CINEMATIC_375, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_SCREEN_68_BACKDROP_LAYER_0, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CF23:
 	jne [0xE6], 0x04, LABEL_CF36
-	video offset=CINEMATIC_377, x=[0x21], y=[0x22], zoom=[0x23]
-	video offset=CINEMATIC_375, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_SCREEN_68_BACKDROP_LAYER_2, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_SCREEN_68_BACKDROP_LAYER_0, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CF36:
 	jg [0xE6], 0x05, DRAW_CIN_374_THEN_CIN_375
-	video offset=CINEMATIC_376, x=[0x21], y=[0x22], zoom=[0x23]
-	video offset=CINEMATIC_375, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_SCREEN_68_BACKDROP_LAYER_1, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_SCREEN_68_BACKDROP_LAYER_0, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 DRAW_CIN_374_THEN_CIN_375:
 	video offset=CINEMATIC_374, x=[0x21], y=[0x22], zoom=[0x23]
-	video offset=CINEMATIC_375, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_SCREEN_68_BACKDROP_LAYER_0, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
@@ -349,7 +349,7 @@ LABEL_D0B5:
 	killChannel
 
 HANG_DRAW_CIN_288:
-	video offset=CINEMATIC_288, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPRAY_LINE_F2, x=160, y=100
 	break
 	jmp HANG_DRAW_CIN_288
 LABEL_D113:
@@ -378,11 +378,11 @@ LABEL_D142:
 LABEL_D146:
 	db 0x11
 
-LABEL_D147:
+CAVES_BUDDY_CRAWLING_BG_HOLD_LOOP:
 	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_1, x=99, y=160
 	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_2, x=192, y=168
 	break
-	jmp LABEL_D147
+	jmp CAVES_BUDDY_CRAWLING_BG_HOLD_LOOP
 LABEL_D153:
 	db 0x11
 
@@ -409,33 +409,33 @@ LABEL_D17B:
 	jg [HERO_Y], 0x78, LABEL_D18D
 	video offset=CINEMATIC_410, x=226, y=87
 	video offset=CINEMATIC_410, x=150, y=27
-	video offset=CINEMATIC_446, x=226, y=136
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F8, x=226, y=136
 
 LABEL_D18D:
 	break
 	jmp LABEL_D17B
 
 LABEL_D191:
-	video offset=CINEMATIC_433, x=184, y=143
-	video offset=CINEMATIC_433, x=278, y=150
-	video offset=CINEMATIC_433, x=80, y=147
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=184, y=143
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=278, y=150
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=80, y=147
 	break
 	jmp LABEL_D191
 LABEL_D1A2:
 	db 0x11
 
 LABEL_D1A3:
-	video offset=CINEMATIC_433, x=79, y=119
-	video offset=CINEMATIC_433, x=279, y=117
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=79, y=119
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=279, y=117
 	break
 	jmp LABEL_D1A3
 LABEL_D1B0:
 	db 0x11
 
 LABEL_D1B1:
-	video offset=CINEMATIC_433, x=230, y=151
-	video offset=CINEMATIC_433, x=270, y=183
-	video offset=CINEMATIC_433, x=77, y=168
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=230, y=151
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=270, y=183
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=77, y=168
 	video offset=CINEMATIC_562, x=265, y=138
 	break
 	jmp LABEL_D1B1
@@ -443,21 +443,21 @@ LABEL_D1C7:
 	db 0x11
 
 HANG_DRAW_CIN_433:
-	video offset=CINEMATIC_433, x=178, y=140
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=178, y=140
 	break
 	jmp HANG_DRAW_CIN_433
 LABEL_D1D0:
 	db 0x11
 
-LABEL_D1D1:
+CAVES_DRAW_CRAWLING_BG_AND_PICK_BY_HERO_X:
 	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_1, x=46, y=139
 	mov [0x42], 0xF060
-	jl [HERO_X], 0x35, LABEL_D1E3
+	jl [HERO_X], 0x35, CAVES_DRAW_CRAWLING_BG_AND_PICK_BY_HERO_X_LOOP
 	mov [0x42], 0x001D
 
-LABEL_D1E3:
+CAVES_DRAW_CRAWLING_BG_AND_PICK_BY_HERO_X_LOOP:
 	break
-	jmp LABEL_D1D1
+	jmp CAVES_DRAW_CRAWLING_BG_AND_PICK_BY_HERO_X
 LABEL_D1E7:
 	db 0x11
 
@@ -486,7 +486,7 @@ DRAW_GANTRY_PLATFORMS_BG:
 	ret
 
 
-LABEL_D22B:
+CAVES_SCREEN_45_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_223, x=160, y=100
 	video offset=CINEMATIC_224, x=160, y=100

@@ -136,13 +136,13 @@ LABEL_2671:
 	selectVideoPage 0xFF
 	break
 	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F15, x=[0x68], y=[0x69]
-	video offset=CINEMATIC_478, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_CHARGED_BLAST_FADE_2, x=[0x68], y=[0x69]
 	break
 	video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F15, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_479, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_CHARGED_BLAST_FADE_1, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_480, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAPSULE_CHARGED_BLAST_FADE_0, x=[0x68], y=[0x69]
 	break
 	video offset=CINEMATIC_CAPSULE_SHOT_IMPACT_BURST_RIGHT_8, x=[0x68], y=[0x69]
 	setup channel=0x01, address=LABEL_3F38
@@ -177,27 +177,27 @@ LABEL_2718:
 	break
 	play id=0x006C, freq=0x14, vol=0x18, channel=0x02
 	video offset=CINEMATIC_421, x=160, y=100
-	video offset=CINEMATIC_422, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_ARCH_WALL_FAR, x=160, y=100
 	break
-	video offset=CINEMATIC_423, x=144, y=127
-	video offset=CINEMATIC_424, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_ARCH_WALL_NEAR, x=144, y=127
+	video offset=CINEMATIC_CAPSULE_SCREEN_4D_BACKDROP_LAYER_3, x=160, y=100
 	break
 	play id=0x006C, freq=0x18, vol=0x18, channel=0x02
-	video offset=CINEMATIC_423, x=143, y=127
-	video offset=CINEMATIC_425, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_ARCH_WALL_NEAR, x=143, y=127
+	video offset=CINEMATIC_CAPSULE_SCREEN_4D_BACKDROP_LAYER_4, x=160, y=100
 	break
-	video offset=CINEMATIC_423, x=142, y=127
+	video offset=CINEMATIC_CAPSULE_ARCH_WALL_NEAR, x=142, y=127
 	play id=0x006C, freq=0x12, vol=0x18, channel=0x01
 	video offset=CINEMATIC_426, x=160, y=100
 	break
-	video offset=CINEMATIC_423, x=142, y=127
+	video offset=CINEMATIC_CAPSULE_ARCH_WALL_NEAR, x=142, y=127
 	play id=0x006C, freq=0x10, vol=0x18, channel=0x02
 	video offset=CINEMATIC_427, x=160, y=100
 	mov [0xF0], 0x000A
 
 LABEL_27B6:
 	break
-	video offset=CINEMATIC_423, x=141, y=127
+	video offset=CINEMATIC_CAPSULE_ARCH_WALL_NEAR, x=141, y=127
 	djnz [0xF0], LABEL_27B6
 	break
 	play id=0x0057, freq=0x10, vol=0x18, channel=0x02
@@ -205,9 +205,9 @@ LABEL_27B6:
 	break
 	video offset=CINEMATIC_429, x=141, y=127
 	break
-	video offset=CINEMATIC_430, x=141, y=127
+	video offset=CINEMATIC_CAPSULE_SCREEN_91_BACKDROP_LAYER_1, x=141, y=127
 	break
-	video offset=CINEMATIC_431, x=141, y=127
+	video offset=CINEMATIC_CAPSULE_SCREEN_91_BACKDROP_LAYER_2, x=141, y=127
 	setup channel=0x0F, address=HANG_DRAW_CIN_433
 	setup channel=0x1D, address=HANG_DRAW_CIN_434
 	selectVideoPage 0x00

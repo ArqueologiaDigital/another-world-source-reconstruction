@@ -434,7 +434,7 @@ LABEL_1258:
 	video offset=CINEMATIC_123, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	add [BUDDY_X], 0x000F
-	video offset=CINEMATIC_124, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_SCREEN_4B_BACKDROP_LAYER_3, x=[BUDDY_X], y=[BUDDY_Y]
 	setup channel=0x13, address=RAMP_VAR1_PLUS_C_9_5_3_BREAKS
 	break
 	add [BUDDY_X], 0x000A

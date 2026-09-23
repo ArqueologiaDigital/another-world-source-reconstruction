@@ -18,7 +18,7 @@ LABEL_8032:
 
 LABEL_8047:
 	mov [0x63], 0x0001
-	call LABEL_86FA
+	call PRISON_SCREEN_ENTRY_DISPATCH
 	call LABEL_86ED
 	setup channel=0x01, address=COPY_PAGE0_TO_FF_KILL_CHANNEL
 	play id=0x0067, freq=0x14, vol=0x40, channel=0x01

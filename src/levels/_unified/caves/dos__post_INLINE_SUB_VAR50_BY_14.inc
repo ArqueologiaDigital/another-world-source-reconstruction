@@ -36,7 +36,7 @@ TRAMP_A2CC:
 LABEL_A2CF:
 	db 0x11
 
-LABEL_A2D0:
+CAVES_SCREEN_25_ENTRY:
 	mov [0x42], 0x001E
 	mov [0x43], 0x0140
 	mov [0x46], 0x0002
@@ -82,7 +82,7 @@ LABEL_A324:
 	and [0xF8], 0x0380
 	add [0x49], [0xF8]
 	setPalette 0x02
-	call LABEL_D22B
+	call CAVES_SCREEN_45_BACKDROP_DRAW
 	call LABEL_5003
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	setup channel=0x01, address=LABEL_34D1
@@ -107,7 +107,7 @@ LABEL_A3A9:
 LABEL_A3BC:
 	db 0x11
 
-LABEL_A3BD:
+CAVES_SCREEN_85_ENTRY:
 	mov [0x42], 0x00C0
 	mov [0x43], 0x0FA0
 	mov [0x46], 0x00C0
@@ -121,7 +121,7 @@ LABEL_A3BD:
 LABEL_A3E3:
 	db 0x11
 
-LABEL_A3E4:
+CAVES_SCREEN_46_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -137,7 +137,7 @@ LABEL_A3E4:
 LABEL_A410:
 	db 0x11
 
-LABEL_A411:
+CAVES_SCREEN_A6_ENTRY:
 	mov [0x42], 0x0050
 	mov [0x43], 0x00E6
 	mov [0x46], 0xF060
@@ -151,7 +151,7 @@ LABEL_A411:
 LABEL_A437:
 	db 0x11
 
-LABEL_A438:
+CAVES_SCREEN_47_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -182,7 +182,7 @@ TRAMP_A490:
 LABEL_A493:
 	db 0x11
 
-LABEL_A494:
+CAVES_SCREEN_67_ENTRY:
 	mov [0x42], 0x0000
 	mov [0x43], 0x0FA0
 	mov [0x46], 0x0000
@@ -203,7 +203,7 @@ LABEL_A494:
 LABEL_A4D6:
 	db 0x11
 
-LABEL_A4D7:
+CAVES_SCREEN_68_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -216,7 +216,7 @@ LABEL_A4D7:
 	mov [0x49], 0x1216
 	setPalette 0x0E
 	mov [0xBE], 0x0003
-	call LABEL_D282
+	call CAVES_SCREEN_68_BACKDROP_DRAW
 	mov [0xF8], [0xB1]
 	and [0xF8], 0x0010
 	play id=0x006A, freq=0x00, vol=0x00, channel=0x02
@@ -232,7 +232,7 @@ LABEL_A528:
 LABEL_A532:
 	db 0x11
 
-LABEL_A533:
+CAVES_SCREEN_6A_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -255,14 +255,14 @@ LABEL_A533:
 	setup channel=0x04, address=LABEL_332B
 	setup channel=0x05, address=LABEL_32A8
 	setup channel=0x06, address=LABEL_3351
-	setup channel=0x07, address=LABEL_32C7
+	setup channel=0x07, address=CAVES_FALLING_STREAK_LOOP
 
 TRAMP_A58F:
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_A592:
 	db 0x11
 
-LABEL_A593:
+CAVES_SCREEN_C9_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -292,7 +292,7 @@ LABEL_A5E1:
 
 LABEL_A5EE:
 	setup channel=0x04, address=LABEL_D079
-	setup channel=0x3B, address=LABEL_D1D1
+	setup channel=0x3B, address=CAVES_DRAW_CRAWLING_BG_AND_PICK_BY_HERO_X
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_A5F9:
 	db 0x11
@@ -313,7 +313,7 @@ LABEL_A5FA:
 LABEL_A627:
 	db 0x11
 
-LABEL_A628:
+CAVES_SCREEN_6D_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -346,7 +346,7 @@ LABEL_A682:
 LABEL_A689:
 	db 0x11
 
-LABEL_A68A:
+CAVES_SCREEN_6E_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -366,7 +366,7 @@ LABEL_A68A:
 LABEL_A6C5:
 	db 0x11
 
-LABEL_A6C6:
+CAVES_SCREEN_87_ENTRY:
 	mov [0x42], 0x006C
 	mov [0x43], 0x0FA0
 	mov [0x46], 0x000A
@@ -375,7 +375,7 @@ LABEL_A6C6:
 	mov [0x41], 0x0078
 	mov [0x44], 0x0043
 	mov [0x45], 0x0000
-	call LABEL_D3A8
+	call CAVES_SCREEN_87_BACKDROP_DRAW
 	setPalette 0x0E
 	call LABEL_D9F8
 	deleteChannels first=0x00, last=0x06
@@ -391,7 +391,7 @@ LABEL_A704:
 LABEL_A70F:
 	db 0x11
 
-LABEL_A710:
+CAVES_SCREEN_88_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -408,7 +408,7 @@ LABEL_A710:
 LABEL_A741:
 	db 0x11
 
-LABEL_A742:
+CAVES_SCREEN_A7_ENTRY:
 	mov [0x42], 0x0004
 	mov [0x43], 0x0FA0
 	mov [0x46], 0x0004
@@ -440,7 +440,7 @@ LABEL_A794:
 LABEL_A7A8:
 	db 0x11
 
-LABEL_A7A9:
+CAVES_SCREEN_A8_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -449,7 +449,7 @@ LABEL_A7A9:
 	mov [0x41], 0x0078
 	mov [0x44], 0x0061
 	mov [0x45], 0x0000
-	call LABEL_D432
+	call CAVES_SCREEN_A8_BACKDROP_DRAW
 	call SETUP_KILL_CHAN_3B_AT_LANDING
 	deleteChannels first=0x00, last=0x06
 	setup channel=0x39, address=LABEL_2961
@@ -461,7 +461,7 @@ LABEL_A7A9:
 LABEL_A7EB:
 	db 0x11
 
-LABEL_A7EC:
+CAVES_SCREEN_A9_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -484,7 +484,7 @@ LABEL_A7EC:
 LABEL_A836:
 	db 0x11
 
-LABEL_A837:
+CAVES_SCREEN_C8_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0x00CC
@@ -502,7 +502,7 @@ LABEL_A837:
 	mov [0x46], 0xF060
 
 LABEL_A874:
-	call LABEL_D446
+	call CAVES_SCREEN_C8_BACKDROP_DRAW
 	call DELETE_GAME_AND_FX_CHANNELS
 	mov [0xF8], [0xB1]
 	and [0xF8], 0x00C0
@@ -521,11 +521,11 @@ LABEL_A8A7:
 	mov [0x68], 0x005E
 	mov [0x69], 0x0000
 	setup channel=0x22, address=CAVES_TRAP_COLUMN_WATCH_SLOT_0_LOOP
-	setup channel=0x23, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
+	setup channel=0x23, address=CAVES_TRAP_COLUMN_SLOT_0_DRAW_LOOP
 	mov [0x6A], 0x0064
 	mov [0x6B], 0xFFFB
 	setup channel=0x24, address=CAVES_TRAP_COLUMN_WATCH_SLOT_1_LOOP
-	setup channel=0x25, address=LABEL_302F
+	setup channel=0x25, address=CAVES_TRAP_COLUMN_SLOT_1_DRAW_LOOP
 	jne [0xF8], 0xC0, LABEL_A8E8
 	mov [0x6C], [0x68]
 	mov [0x6D], 0xFFFE
@@ -553,7 +553,7 @@ LABEL_A8F8:
 	mov [0x44], 0x0069
 	mov [0x45], 0x0000
 	setPalette 0x0F
-	call LABEL_D45A
+	call CAVES_SCREEN_C9_BACKDROP_DRAW
 	call DELETE_GAME_AND_FX_CHANNELS
 	mov [0xF8], [0xB1]
 	and [0xF8], 0x00C0
@@ -598,7 +598,7 @@ LABEL_A9A0:
 LABEL_A9A7:
 	db 0x11
 
-LABEL_A9A8:
+CAVES_SCREEN_CA_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -627,7 +627,7 @@ LABEL_A9EB:
 	add [0x68], 0x000E
 	mov [0x69], 0x002A
 	setup channel=0x22, address=CAVES_TRAP_COLUMN_WATCH_SLOT_0_LOOP
-	setup channel=0x23, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
+	setup channel=0x23, address=CAVES_TRAP_COLUMN_SLOT_0_DRAW_LOOP
 
 LABEL_AA13:
 	setup channel=0x35, address=INLINE_SET_VAR7F_TO_6
@@ -635,7 +635,7 @@ LABEL_AA13:
 LABEL_AA1A:
 	db 0x11
 
-LABEL_AA1B:
+CAVES_SCREEN_CB_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -645,7 +645,7 @@ LABEL_AA1B:
 	mov [0x44], 0x0069
 	mov [0x45], 0x0000
 	setPalette 0x0F
-	call LABEL_D48A
+	call CAVES_SCREEN_CB_BACKDROP_DRAW
 	call DELETE_GAME_AND_FX_CHANNELS
 	setup channel=0x3B, address=LABEL_CBC6
 	mov [0x48], 0x0028
@@ -656,36 +656,36 @@ LABEL_AA1B:
 	mov [0x68], 0x0064
 	mov [0x69], 0x0077
 	setup channel=0x22, address=LABEL_2A4E
-	setup channel=0x23, address=HANG_DRAW_CIN_743_VAR09_GUARD
+	setup channel=0x23, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6A], 0x00C8
 	mov [0x6B], 0x0077
 	setup channel=0x24, address=CAVES_TRAP_SPOT_WATCH_SLOT_1_LOOP
-	setup channel=0x25, address=HANG_DRAW_CIN_743_VAR09_GUARD
+	setup channel=0x25, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6C], 0x00FA
 	mov [0x6D], 0x0077
 	setup channel=0x26, address=CAVES_TRAP_SPOT_WATCH_SLOT_2_LOOP
-	setup channel=0x27, address=HANG_DRAW_CIN_743_VAR09_GUARD
+	setup channel=0x27, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6E], [0x48]
 	add [0x6E], 0x000E
 	mov [0x6F], 0x0032
 	setup channel=0x28, address=CAVES_TRAP_COLUMN_WATCH_SLOT_3_LOOP
-	setup channel=0x29, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
+	setup channel=0x29, address=CAVES_TRAP_COLUMN_SLOT_0_DRAW_LOOP
 	mov [0x70], [0x4A]
 	add [0x70], 0x000E
 	mov [0x71], 0x0025
 	setup channel=0x2A, address=CAVES_TRAP_COLUMN_WATCH_SLOT_4_LOOP
-	setup channel=0x2B, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
+	setup channel=0x2B, address=CAVES_TRAP_COLUMN_SLOT_0_DRAW_LOOP
 	mov [0x72], [0x4C]
 	add [0x72], 0x000E
 	mov [0x73], 0x003D
 	setup channel=0x2C, address=CAVES_TRAP_COLUMN_WATCH_SLOT_5_LOOP
-	setup channel=0x2D, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
+	setup channel=0x2D, address=CAVES_TRAP_COLUMN_SLOT_0_DRAW_LOOP
 	deleteChannels first=0x2C, last=0x2D
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_AACC:
 	db 0x11
 
-LABEL_AACD:
+CAVES_SCREEN_CC_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -701,15 +701,15 @@ LABEL_AACD:
 	mov [0x68], 0x0078
 	mov [0x69], 0x0077
 	setup channel=0x22, address=LABEL_2A4E
-	setup channel=0x23, address=HANG_DRAW_CIN_743_VAR09_GUARD
+	setup channel=0x23, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6A], 0x00A0
 	mov [0x6B], 0x0077
 	setup channel=0x24, address=CAVES_TRAP_SPOT_WATCH_SLOT_1_LOOP
-	setup channel=0x25, address=HANG_DRAW_CIN_743_VAR09_GUARD
+	setup channel=0x25, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6C], 0x00B9
 	mov [0x6D], 0x0077
 	setup channel=0x26, address=CAVES_TRAP_SPOT_WATCH_SLOT_2_LOOP
-	setup channel=0x27, address=HANG_DRAW_CIN_743_VAR09_GUARD
+	setup channel=0x27, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	je [0xB0], 0x03, TRAMP_ABAC
 	mov [HERO_Y], 0x0082
 	mov [0xF8], [0xBD]
@@ -721,7 +721,7 @@ LABEL_AACD:
 	add [0x6E], 0x000E
 	mov [0x6F], 0x0038
 	setup channel=0x28, address=CAVES_TRAP_COLUMN_WATCH_SLOT_3_LOOP
-	setup channel=0x29, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
+	setup channel=0x29, address=CAVES_TRAP_COLUMN_SLOT_0_DRAW_LOOP
 
 LABEL_AB5C:
 	mov [0xF8], [0xBD]
@@ -733,7 +733,7 @@ LABEL_AB5C:
 	add [0x70], 0x000E
 	mov [0x71], 0x0030
 	setup channel=0x2A, address=CAVES_TRAP_COLUMN_WATCH_SLOT_4_LOOP
-	setup channel=0x2B, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
+	setup channel=0x2B, address=CAVES_TRAP_COLUMN_SLOT_0_DRAW_LOOP
 
 LABEL_AB84:
 	mov [0xF8], [0xBD]
@@ -745,14 +745,14 @@ LABEL_AB84:
 	add [0x72], 0x000E
 	mov [0x73], 0x0037
 	setup channel=0x2C, address=CAVES_TRAP_COLUMN_WATCH_SLOT_5_LOOP
-	setup channel=0x2D, address=CAVES_ANIM_CIN_718_719_GUARDED_BY_VAR09
+	setup channel=0x2D, address=CAVES_TRAP_COLUMN_SLOT_0_DRAW_LOOP
 
 TRAMP_ABAC:
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_ABAF:
 	db 0x11
 
-LABEL_ABB0:
+CAVES_SCREEN_AD_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -762,7 +762,7 @@ LABEL_ABB0:
 	mov [0x44], 0x0023
 	mov [0x45], 0x0000
 	setPalette 0x0E
-	call LABEL_D503
+	call CAVES_SCREEN_AD_BACKDROP_DRAW
 	call DELETE_GAME_AND_FX_CHANNELS
 	mov [0xE6], 0x0058
 	setup channel=0x01, address=LABEL_319C
@@ -771,7 +771,7 @@ LABEL_ABB0:
 LABEL_ABE8:
 	db 0x11
 
-LABEL_ABE9:
+CAVES_SCREEN_CD_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -787,13 +787,13 @@ LABEL_ABE9:
 	mov [0x68], 0x0078
 	mov [0x69], 0x0077
 	setup channel=0x22, address=LABEL_2A4E
-	setup channel=0x23, address=HANG_DRAW_CIN_743_VAR09_GUARD
+	setup channel=0x23, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	setup channel=0x3B, address=LABEL_C908
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_AC2C:
 	db 0x11
 
-LABEL_AC2D:
+CAVES_SCREEN_ED_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -825,16 +825,16 @@ LABEL_AC83:
 	mov [0x68], 0x00EA
 	mov [0x69], 0x004F
 	setup channel=0x22, address=LABEL_2A4E
-	setup channel=0x23, address=HANG_DRAW_CIN_743_VAR09_GUARD
+	setup channel=0x23, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6A], 0x0108
 	mov [0x6B], 0x004B
 	setup channel=0x24, address=CAVES_TRAP_SPOT_WATCH_SLOT_1_LOOP
-	setup channel=0x25, address=HANG_DRAW_CIN_743_VAR09_GUARD
+	setup channel=0x25, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_ACAA:
 	db 0x11
 
-LABEL_ACAB:
+CAVES_SCREEN_EE_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0050
 	mov [0x46], 0xF060
@@ -844,7 +844,7 @@ LABEL_ACAB:
 	mov [0x44], 0x0042
 	mov [0x45], 0x0000
 	setPalette 0x0E
-	call LABEL_D577
+	call CAVES_SCREEN_EE_BACKDROP_DRAW
 	call DELETE_GAME_AND_FX_CHANNELS
 	setup channel=0x3E, address=KILL_CHANNEL_LANDING
 	mov [0xF8], [0xB1]
@@ -856,18 +856,18 @@ LABEL_ACE9:
 	mov [0x68], 0x003C
 	mov [0x69], 0x005F
 	setup channel=0x22, address=LABEL_2A4E
-	setup channel=0x23, address=HANG_DRAW_CIN_743_VAR09_GUARD
+	setup channel=0x23, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6A], 0x003C
 	mov [0x6B], 0x005F
 	setup channel=0x24, address=CAVES_TRAP_SPOT_WATCH_SLOT_1_LOOP
-	setup channel=0x25, address=HANG_DRAW_CIN_743_VAR09_GUARD
+	setup channel=0x25, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6C], 0x003C
 	mov [0x6D], 0x005F
 	setup channel=0x26, address=CAVES_TRAP_SPOT_WATCH_SLOT_2_LOOP
-	setup channel=0x27, address=HANG_DRAW_CIN_743_VAR09_GUARD
+	setup channel=0x27, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 
-LABEL_AD1C:
+CAVES_SCREEN_CE_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -884,7 +884,7 @@ LABEL_AD1C:
 	setup channel=0x37, address=INIT_VARS_E6_E7_EB
 	killChannel
 
-LABEL_AD50:
+CAVES_SCREEN_48_ENTRY:
 	mov [0x42], 0x001E
 	mov [0x43], 0x012C
 	mov [0x46], 0xF060
@@ -903,7 +903,7 @@ LABEL_AD50:
 LABEL_AD8A:
 	db 0x11
 
-LABEL_AD8B:
+CAVES_SCREEN_69_ENTRY:
 	setPalette 0x11
 	mov [0xBE], 0x0001
 	mov [0x42], 0x001E
@@ -914,7 +914,7 @@ LABEL_AD8B:
 	mov [0x41], 0x0096
 	mov [0x44], 0x006F
 	mov [0x45], 0x0000
-	call LABEL_D295
+	call CAVES_SCREEN_69_BACKDROP_DRAW
 	call DELETE_GAME_AND_FX_CHANNELS
 	setup channel=0x3B, address=LABEL_D154
 	call LABEL_AE47
@@ -922,7 +922,7 @@ LABEL_AD8B:
 LABEL_ADC2:
 	db 0x11
 
-LABEL_ADC3:
+CAVES_SCREEN_89_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -931,7 +931,7 @@ LABEL_ADC3:
 	mov [0x41], 0x0078
 	mov [0x44], 0x0061
 	mov [0x45], 0x0000
-	call LABEL_D3D7
+	call CAVES_SCREEN_89_BACKDROP_DRAW
 	call LABEL_D9F8
 	deleteChannels first=0x00, last=0x06
 	mov [0xF8], [0xB0]
@@ -945,7 +945,7 @@ LABEL_AE00:
 LABEL_AE07:
 	db 0x11
 
-LABEL_AE08:
+CAVES_SCREEN_49_ENTRY:
 	mov [0x42], 0x001E
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -960,7 +960,7 @@ LABEL_AE08:
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	setup channel=0x3E, address=KILL_CHANNEL_LANDING
 	call LABEL_14BB
-	setup channel=0x3B, address=LABEL_D147
+	setup channel=0x3B, address=CAVES_BUDDY_CRAWLING_BG_HOLD_LOOP
 	call LABEL_AE47
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_AE46:
@@ -974,7 +974,7 @@ LABEL_AE47:
 	ret
 
 
-LABEL_AE5B:
+CAVES_SCREEN_4A_ENTRY:
 	mov [0x42], 0x001E
 	mov [0x43], 0x012C
 	mov [0x46], 0xF060
@@ -986,7 +986,7 @@ LABEL_AE5B:
 	mov [0xBE], 0x0001
 	setPalette 0x06
 	call LABEL_149E
-	call LABEL_D5BF
+	call CAVES_BUDDY_CRAWLING_SCENE_SETUP
 	setup channel=0x21, address=KILL_CHANNEL_LANDING
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	setup channel=0x3C, address=FRAME_PRESENT_RESTORE_PAGE_3_LOOP
@@ -1000,14 +1000,14 @@ LABEL_AE5B:
 	setup channel=0x04, address=CAVES_DROPLET_LOOP
 	setup channel=0x05, address=CAVES_SPRAY_LINE_LOOP
 	setup channel=0x06, address=LABEL_3305
-	setup channel=0x07, address=LABEL_32C7
+	setup channel=0x07, address=CAVES_FALLING_STREAK_LOOP
 
 TRAMP_AEC2:
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_AEC5:
 	db 0x11
 
-LABEL_AEC6:
+CAVES_SCREEN_4B_ENTRY:
 	mov [0x42], 0x001E
 	mov [0x43], 0x012C
 	mov [0x46], 0xF060
@@ -1039,7 +1039,7 @@ LABEL_AF15:
 LABEL_AF24:
 	db 0x11
 
-LABEL_AF25:
+CAVES_SCREEN_4C_ENTRY:
 	mov [0x42], 0x0045
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -1067,7 +1067,7 @@ LABEL_AF74:
 LABEL_AF7B:
 	db 0x11
 
-LABEL_AF7C:
+CAVES_SCREEN_4D_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -1098,7 +1098,7 @@ LABEL_AFD0:
 LABEL_AFD7:
 	db 0x11
 
-LABEL_AFD8:
+CAVES_SCREEN_4E_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -1126,14 +1126,14 @@ LABEL_AFD8:
 	mov [0xAC], 0x0114
 	mov [0xAD], 0x03E8
 	mov [0xAE], [SCREEN_NUM]
-	call LABEL_D701
+	call CAVES_SCREEN_4E_BACKDROP_DRAW
 	call LABEL_5003
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_B049:
 	db 0x11
 
-LABEL_B04A:
+CAVES_SCREEN_4F_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0x0030
@@ -1150,7 +1150,7 @@ LABEL_B04A:
 	mov [0x51], [0x44]
 	mov [0x52], [0x40]
 	setPalette 0x05
-	call LABEL_D737
+	call CAVES_SCREEN_4F_BACKDROP_DRAW
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	setup channel=0x01, address=LABEL_34D1
 	setup channel=0x02, address=INIT_VAR08_FROM_VARE9_VAR09_TO_4
@@ -1161,7 +1161,7 @@ LABEL_B04A:
 LABEL_B0A4:
 	db 0x11
 
-LABEL_B0A5:
+CAVES_SCREEN_50_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0024
 	mov [0x46], 0xF060
@@ -1202,7 +1202,7 @@ LABEL_B120:
 LABEL_B127:
 	db 0x11
 
-LABEL_B128:
+CAVES_SCREEN_8A_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x00C8
 	mov [0x46], 0xF060
@@ -1237,7 +1237,7 @@ CAVES_GROUND_MAP_SCREEN_25_SEGMENT_6:
 	mov [0x44], 0x007D
 	mov [0x45], 0x0000
 	setPalette 0x0C
-	call LABEL_D7B0
+	call CAVES_SCREEN_6F_BACKDROP_DRAW
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	jne [0xB0], 0x03, TRAMP_B1BA
 	mov [0xE6], 0x0066
@@ -1250,7 +1250,7 @@ TRAMP_B1BA:
 LABEL_B1BD:
 	db 0x11
 
-LABEL_B1BE:
+CAVES_SCREEN_70_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -1292,7 +1292,7 @@ LABEL_B22E:
 LABEL_B23F:
 	db 0x11
 
-LABEL_B240:
+CAVES_SCREEN_71_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0119
 	mov [0x46], 0xF060
@@ -1309,7 +1309,7 @@ LABEL_B240:
 LABEL_B270:
 	db 0x11
 
-LABEL_B271:
+CAVES_SCREEN_AF_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0107
 	mov [0x46], 0xF060
@@ -1338,7 +1338,7 @@ TRAMP_B2C3:
 LABEL_B2C6:
 	db 0x11
 
-LABEL_B2C7:
+CAVES_SCREEN_8F_ENTRY:
 	mov [0x42], 0x0043
 	mov [0x43], 0x012C
 	mov [0x46], 0x0043
@@ -1348,13 +1348,13 @@ LABEL_B2C7:
 	mov [0x44], 0x0104
 	mov [0x45], 0x0104
 	setPalette 0x0E
-	call LABEL_D80D
+	call CAVES_SCREEN_8F_BACKDROP_DRAW
 	call DELETE_GAME_AND_FX_CHANNELS
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_B2F3:
 	db 0x11
 
-LABEL_B2F4:
+CAVES_SCREEN_91_ENTRY:
 	mov [0x42], 0xFFEC
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xFFEC
@@ -1386,7 +1386,7 @@ TRAMP_B34D:
 LABEL_B350:
 	db 0x11
 
-LABEL_B351:
+CAVES_SCREEN_92_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -1429,7 +1429,7 @@ LABEL_B3CF:
 LABEL_B3DA:
 	db 0x11
 
-LABEL_B3DB:
+CAVES_SCREEN_93_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -1464,7 +1464,7 @@ LABEL_B3DB:
 LABEL_B44C:
 	db 0x11
 
-LABEL_B44D:
+CAVES_SCREEN_94_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x0FA0
 	mov [0x46], 0xF060
@@ -1493,7 +1493,7 @@ LABEL_B44D:
 LABEL_B4A8:
 	db 0x11
 
-LABEL_B4A9:
+CAVES_SCREEN_95_ENTRY:
 	mov [0x42], 0xF060
 	mov [0x43], 0x00EF
 	mov [0x46], 0xF060
@@ -1503,7 +1503,7 @@ LABEL_B4A9:
 	mov [0x44], 0x00A5
 	mov [0x45], 0x0000
 	setPalette 0x1A
-	call LABEL_D8CA
+	call CAVES_SCREEN_95_BACKDROP_DRAW
 	call DELETE_GAME_CHANS_AND_TEARDOWN
 	call LABEL_46A7
 	call LABEL_46CF
@@ -1513,7 +1513,7 @@ LABEL_B4A9:
 LABEL_B4E3:
 	db 0x11
 
-LABEL_B4E4:
+CAVES_SCREEN_75_ENTRY:
 	mov [0x42], 0x0007
 	mov [0x43], 0x00EF
 	mov [0x46], 0x0007
@@ -1523,7 +1523,7 @@ LABEL_B4E4:
 	mov [0x44], 0x0087
 	mov [0x45], 0x0000
 	setPalette 0x09
-	call LABEL_D8E9
+	call CAVES_SCREEN_75_BACKDROP_DRAW
 	call DELETE_GAME_AND_FX_CHANNELS
 	deleteChannels first=0x14, last=0x16
 	setup channel=0x06, address=LABEL_0520

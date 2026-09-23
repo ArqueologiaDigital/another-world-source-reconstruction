@@ -124,23 +124,23 @@ LABEL_07E9:
 DRAW_CIN_437_439_BLOCK:
 	video offset=CINEMATIC_437, x=160, y=100
 	break
-	video offset=CINEMATIC_438, x=160, y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F0, x=160, y=100
 	break
-	video offset=CINEMATIC_439, x=160, y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_440, x=160, y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_441, x=160, y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_442, x=160, y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F4, x=160, y=100
 	break
-	video offset=CINEMATIC_441, x=160, y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_439, x=160, y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_443, x=160, y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F5, x=160, y=100
 	break
-	video offset=CINEMATIC_438, x=160, y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F0, x=160, y=100
 	break
 	video offset=CINEMATIC_437, x=160, y=100
 

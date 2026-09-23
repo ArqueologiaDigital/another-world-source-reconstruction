@@ -142,12 +142,12 @@ LABEL_253C:
 
 LABEL_253D:
 	sub [HERO_Y], 0x0002
-	video offset=CINEMATIC_669, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_FIGURE_DISINTEGRATION_F8, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_Y], 0x0001
-	video offset=CINEMATIC_670, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_FIGURE_DISINTEGRATION_F9, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_669, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_FIGURE_DISINTEGRATION_F8, x=[HERO_X], y=[HERO_Y]
 	killChannel
 
 LABEL_2557:
@@ -195,7 +195,7 @@ LABEL_25BD:
 LABEL_25D5:
 	jne [0x63], 0x04, LABEL_25A1
 	jmp LABEL_2557
-	video offset=CINEMATIC_669, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_FIGURE_DISINTEGRATION_F8, x=[HERO_X], y=[HERO_Y]
 	setup channel=0x16, address=LABEL_2557
 
 LABEL_25E7:
@@ -246,32 +246,32 @@ LABEL_265A:
 	je [0x63], 0x02, LABEL_26DC
 	break
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_662, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_FIGURE_DISINTEGRATION_F1, x=[HERO_X], y=[HERO_Y]
 	break
 	add [HERO_Y], 0x0001
 	sub [HERO_X], 0x0009
-	video offset=CINEMATIC_663, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_FIGURE_DISINTEGRATION_F2, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0005
 	add [HERO_X], [0x34]
-	video offset=CINEMATIC_664, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_FIGURE_DISINTEGRATION_F3, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0008
 	add [HERO_X], [0x34]
-	video offset=CINEMATIC_665, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_FIGURE_DISINTEGRATION_F4, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_Y], 0x0002
 	sub [HERO_X], 0x0007
 	add [HERO_X], [0x34]
-	video offset=CINEMATIC_666, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_FIGURE_DISINTEGRATION_F5, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0004
-	video offset=CINEMATIC_667, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_FIGURE_DISINTEGRATION_F6, x=[HERO_X], y=[HERO_Y]
 	call LABEL_2752
 	break
 	add [HERO_Y], 0x0002
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_668, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_FIGURE_DISINTEGRATION_F7, x=[HERO_X], y=[HERO_Y]
 	break
 	add [HERO_Y], 0x0001
 	sub [HERO_X], 0x0002
@@ -310,7 +310,7 @@ LABEL_26DC:
 	break
 	add [HERO_Y], 0x0002
 	add [HERO_X], 0x0001
-	video offset=CINEMATIC_661, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_FIGURE_DISINTEGRATION_F0, x=[HERO_X], y=[HERO_Y]
 	break
 	add [HERO_Y], 0x0001
 	add [HERO_X], 0x0002
@@ -357,7 +357,7 @@ CAVES_SCREEN_STEP_UP_ONE_ROW_L3:
 	mov [0xEA], 0x000A
 
 ANIM_CIN_641_LOOP_VAREA:
-	video offset=CINEMATIC_641, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_C8_BACKDROP_LAYER_3, x=160, y=100
 	break
 	djnz [0xEA], ANIM_CIN_641_LOOP_VAREA
 	video offset=CINEMATIC_642, x=160, y=100

@@ -140,28 +140,28 @@ LABEL_0526:
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
 	selectVideoPage 0x00
 	setup channel=0x02, address=LABEL_0692
-	video offset=CINEMATIC_556, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_95_BACKDROP_LAYER_4, x=160, y=100
 	selectVideoPage 0xFF
 	break
 	play id=0x0063, freq=0x1C, vol=0x40, channel=0x02
 	video offset=CINEMATIC_557, x=177, y=115
-	video offset=CINEMATIC_558, x=160, y=107
+	video offset=CINEMATIC_CAVES_SCREEN_95_BACKDROP_LAYER_5, x=160, y=107
 	break
-	video offset=CINEMATIC_558, x=163, y=120
+	video offset=CINEMATIC_CAVES_SCREEN_95_BACKDROP_LAYER_5, x=163, y=120
 	video offset=CINEMATIC_557, x=179, y=126
 	break
-	video offset=CINEMATIC_558, x=165, y=154
+	video offset=CINEMATIC_CAVES_SCREEN_95_BACKDROP_LAYER_5, x=165, y=154
 	video offset=CINEMATIC_557, x=179, y=128
 	break
-	video offset=CINEMATIC_558, x=165, y=165
+	video offset=CINEMATIC_CAVES_SCREEN_95_BACKDROP_LAYER_5, x=165, y=165
 	video offset=CINEMATIC_557, x=178, y=121
 	break
 	play id=0x0063, freq=0x1E, vol=0x20, channel=0x02
-	video offset=CINEMATIC_558, x=166, y=163
+	video offset=CINEMATIC_CAVES_SCREEN_95_BACKDROP_LAYER_5, x=166, y=163
 	video offset=CINEMATIC_557, x=178, y=117
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_558, x=165, y=165
+	video offset=CINEMATIC_CAVES_SCREEN_95_BACKDROP_LAYER_5, x=165, y=165
 	selectVideoPage 0xFF
 	video offset=CINEMATIC_557, x=178, y=110
 	mov [0xE6], 0x000A

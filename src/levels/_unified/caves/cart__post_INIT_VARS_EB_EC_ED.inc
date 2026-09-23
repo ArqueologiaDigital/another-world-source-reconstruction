@@ -69,9 +69,9 @@ LABEL_296A:
 LABEL_2992:
 	break
 	je [SCREEN_NUM], 0x28, LABEL_29DA
-	video offset=CINEMATIC_291, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_DROPLET_F2, x=[HERO_X], y=[HERO_Y]
 	je [0xDB], 0x00, LABEL_29A9
-	video offset=CINEMATIC_293, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_DROPLET_F4, x=[HERO_X], y=[HERO_Y]
 
 LABEL_29A9:
 	break
@@ -91,16 +91,16 @@ LABEL_29C8:
 	db 0x11
 
 LABEL_29C9:
-	video offset=CINEMATIC_292, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_DROPLET_F3, x=[HERO_X], y=[HERO_Y]
 	je [0xDB], 0x00, SHARED_RET
-	video offset=CINEMATIC_293, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_DROPLET_F4, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 LABEL_29DA:
-	video offset=CINEMATIC_288, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_SPRAY_LINE_F2, x=[HERO_X], y=[HERO_Y]
 	je [0xDB], 0x00, LABEL_29EA
-	video offset=CINEMATIC_290, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_DROPLET_F1, x=[HERO_X], y=[HERO_Y]
 
 LABEL_29EA:
 	break
@@ -120,9 +120,9 @@ LABEL_2A09:
 	db 0x11
 
 LABEL_2A0A:
-	video offset=CINEMATIC_289, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_DROPLET_F0, x=[HERO_X], y=[HERO_Y]
 	je [0xDB], 0x00, SHARED_RET
-	video offset=CINEMATIC_290, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_DROPLET_F1, x=[HERO_X], y=[HERO_Y]
 	ret
 
 

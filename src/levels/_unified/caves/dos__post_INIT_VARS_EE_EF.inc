@@ -1,57 +1,57 @@
 LABEL_18BC:
-	video offset=CINEMATIC_444, x=[0xee], y=98
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F6, x=[0xee], y=98
 	sub [0xEE], 0x000A
 	break
 	djnz [0xEF], LABEL_18BC
 	mov [0xEF], 0x0004
 
 CAVES_DROPPED_GUN_SKID_LEFT_PHASE_2:
-	video offset=CINEMATIC_444, x=[0xee], y=99
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F6, x=[0xee], y=99
 	sub [0xEE], 0x0008
 	break
 	djnz [0xEF], CAVES_DROPPED_GUN_SKID_LEFT_PHASE_2
 	mov [0xEF], 0x0004
 
 CAVES_DROPPED_GUN_SKID_LEFT_PHASE_3:
-	video offset=CINEMATIC_444, x=[0xee], y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F6, x=[0xee], y=100
 	sub [0xEE], 0x0006
 	break
 	djnz [0xEF], CAVES_DROPPED_GUN_SKID_LEFT_PHASE_3
 	mov [0xEF], 0x0004
 
 CAVES_DROPPED_GUN_SKID_LEFT_PHASE_4:
-	video offset=CINEMATIC_444, x=[0xee], y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F6, x=[0xee], y=100
 	sub [0xEE], 0x0004
 	break
 	djnz [0xEF], CAVES_DROPPED_GUN_SKID_LEFT_PHASE_4
 	mov [0xEF], 0x0004
 
 CAVES_DROPPED_GUN_SKID_LEFT_PHASE_5:
-	video offset=CINEMATIC_444, x=[0xee], y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F6, x=[0xee], y=100
 	sub [0xEE], 0x0003
 	break
 	djnz [0xEF], CAVES_DROPPED_GUN_SKID_LEFT_PHASE_5
 	mov [0xEF], 0x0004
 
 CAVES_DROPPED_GUN_SKID_LEFT_PHASE_6:
-	video offset=CINEMATIC_444, x=[0xee], y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F6, x=[0xee], y=100
 	sub [0xEE], 0x0002
 	break
 	djnz [0xEF], CAVES_DROPPED_GUN_SKID_LEFT_PHASE_6
 	mov [0xEF], 0x0004
 
 CAVES_DROPPED_GUN_SKID_LEFT_PHASE_7:
-	video offset=CINEMATIC_444, x=[0xee], y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F6, x=[0xee], y=100
 	sub [0xEE], 0x0001
 	break
 	djnz [0xEF], CAVES_DROPPED_GUN_SKID_LEFT_PHASE_7
 	mov [0xEF], 0x0002
 
 LABEL_193A:
-	video offset=CINEMATIC_444, x=[0xee], y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F6, x=[0xee], y=100
 	sub [0xEE], 0x0001
 	break
-	video offset=CINEMATIC_444, x=[0xee], y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F6, x=[0xee], y=100
 	break
 	djnz [0xEF], LABEL_193A
 	jmp INLINE_SET_VAREF_TO_5

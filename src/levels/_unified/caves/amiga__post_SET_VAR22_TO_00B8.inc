@@ -526,13 +526,13 @@ LABEL_C5ED:
 	play id=0x0074, freq=0x0A, vol=0x40, channel=0x01
 	play id=0x0074, freq=0x0C, vol=0x40, channel=0x02
 	play id=0x0074, freq=0x0E, vol=0x40, channel=0x03
-	video offset=CINEMATIC_571, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_2, x=160, y=100
 	video offset=CINEMATIC_160, x=124, y=88
 	break
-	video offset=CINEMATIC_571, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_2, x=160, y=100
 	video offset=CINEMATIC_CAVES_HERO_CROUCH_LEFT, x=124, y=88
 	selectVideoPage 0x00
-	video offset=CINEMATIC_571, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_2, x=160, y=100
 	selectVideoPage 0xFF
 	break
 	video offset=CINEMATIC_CAVES_HERO_CROUCH_LEFT, x=124, y=88
@@ -562,9 +562,9 @@ LABEL_C6AE:
 	break
 	video offset=CINEMATIC_578, x=160, y=100
 	break
-	video offset=CINEMATIC_571, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_2, x=160, y=100
 	selectVideoPage 0x00
-	video offset=CINEMATIC_571, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_2, x=160, y=100
 	selectVideoPage 0xFF
 	killChannel
 

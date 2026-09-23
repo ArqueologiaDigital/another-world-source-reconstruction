@@ -96,6 +96,6 @@ LABEL_75D8:
 	setup channel=0x3A, address=KILL_CHANNEL_LANDING
 	setup channel=0x3F, address=LABEL_871B
 	call LABEL_07FC
-	call LABEL_85F5
+	call PRISON_SCREEN_ENTRY_DISPATCH
 	mov [0x42], 0x00A0
 	killChannel

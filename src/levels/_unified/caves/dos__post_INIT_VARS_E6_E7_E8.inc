@@ -36,7 +36,7 @@ LABEL_06C4:
 	video offset=CINEMATIC_636, x=2, y=185
 	video offset=CINEMATIC_636, x=2, y=194
 	break
-	video offset=CINEMATIC_445, x=3, y=184
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F7, x=3, y=184
 	video offset=CINEMATIC_637, x=3, y=185
 	video offset=CINEMATIC_636, x=2, y=193
 	break

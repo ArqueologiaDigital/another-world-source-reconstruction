@@ -11,7 +11,7 @@ LABEL_CC4A:
 
 
 DRAW_CIN_388:
-	video offset=CINEMATIC_388, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_SCREEN_69_BACKDROP_LAYER_1, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
@@ -99,7 +99,7 @@ HANG_DRAW_CIN_371:
 LABEL_CD24:
 	db 0x11
 
-LABEL_CD25:
+CAVES_DRAW_CRAWLING_BG_AND_PICK_BY_HERO_X:
 	break
 	break
 	break
@@ -120,7 +120,7 @@ LABEL_CD25:
 	break
 	break
 	add [0xE7], 0x0001
-	jmp LABEL_CD25
+	jmp CAVES_DRAW_CRAWLING_BG_AND_PICK_BY_HERO_X
 LABEL_CD48:
 	db 0x11
 

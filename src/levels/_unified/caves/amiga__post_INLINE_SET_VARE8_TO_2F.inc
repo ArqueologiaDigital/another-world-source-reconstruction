@@ -33,7 +33,7 @@ LABEL_3535:
 	selectVideoPage 0x03
 	video offset=CINEMATIC_800, x=160, y=100
 	selectVideoPage 0xFF
-	video offset=CINEMATIC_801, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_ANIM_RIGHT_3, x=160, y=100
 	break
 	video offset=CINEMATIC_802, x=160, y=100
 	break

@@ -93,7 +93,7 @@ LABEL_CD2E:
 	db 0x11
 
 HANG_DRAW_CIN_372:
-	video offset=CINEMATIC_372, x=[0xe7], y=[0xe8], zoom=[0xe9]
+	video offset=CINEMATIC_CAVES_SCREEN_67_BACKDROP_LAYER_0, x=[0xe7], y=[0xe8], zoom=[0xe9]
 	break
 	jmp HANG_DRAW_CIN_372
 LABEL_CD39:

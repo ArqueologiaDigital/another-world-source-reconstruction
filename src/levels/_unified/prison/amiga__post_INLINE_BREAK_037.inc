@@ -12,7 +12,7 @@ LABEL_9738:
 	add [HERO_X], 0x0003
 	video offset=CINEMATIC_PRISON_HERO_CROUCH_DOWN_LEFT, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_188, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_CROUCH_SHOOT_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 
 LABEL_9752:
 	break
@@ -60,7 +60,7 @@ LABEL_97CE:
 	jne [0x0F], 0x00, LABEL_980A
 	add [HERO_X], 0x0003
 	call HANDLE_HORIZ_VAR01_VS_VAR28
-	video offset=CINEMATIC_208, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_CROUCH_SHOOT_RIGHT_F0, x=[HERO_X], y=[HERO_Y]
 	mov [0x21], [HERO_X]
 	mov [0x27], [HERO_Y]
 	add [0x21], 0x001E
@@ -68,7 +68,7 @@ LABEL_97CE:
 	call PRISON_HERO_FIRE_SHOT_RIGHT
 	break
 	sub [HERO_X], 0x0002
-	video offset=CINEMATIC_209, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_CROUCH_SHOOT_RIGHT_F1, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0001
 	jne [HERO_ACTION_POS_MASK], 0x84, LABEL_982D
 	setup channel=0x17, address=PRISON_HERO_GUN_CHARGE_STILL_ENTRY

@@ -76,6 +76,6 @@ LABEL_0739:
 	mov [0xF8], [0xB9]
 	and [0xF8], 0x0080
 	jne [0xF8], 0x00, HANG_DRAW_CIN_591
-	video offset=CINEMATIC_592, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SCREEN_EB_BACKDROP_LAYER_1, x=160, y=100
 	break
 	jmp LABEL_0739

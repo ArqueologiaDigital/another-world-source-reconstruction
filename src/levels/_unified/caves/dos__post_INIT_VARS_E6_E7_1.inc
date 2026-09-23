@@ -25,7 +25,7 @@ LABEL_11C8:
 
 LABEL_11D2:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_209, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SCREEN_45_BACKDROP_LAYER_3, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	ret
 

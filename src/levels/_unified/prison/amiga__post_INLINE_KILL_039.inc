@@ -45,7 +45,7 @@ LABEL_0201:
 	mov [PAUSE_SLICES], 0x0002
 	mov [0xE6], 0x0014
 
-LABEL_020D:
+PRISON_CUTSCENE_ZOOM_HOLD_STAGE_0:
 	break
 	je [0xDB], 0x01, LABEL_0220
 	video offset=CINEMATIC_265, x=160, y=100
@@ -53,7 +53,7 @@ LABEL_020D:
 	video offset=CINEMATIC_273, x=160, y=100
 
 LABEL_0220:
-	djnz [0xE6], LABEL_020D
+	djnz [0xE6], PRISON_CUTSCENE_ZOOM_HOLD_STAGE_0
 	play id=0x0066, freq=0x05, vol=0x20, channel=0x02
 	mov [PAUSE_SLICES], 0x0004
 	mov [0xE6], 0x0007
@@ -85,7 +85,7 @@ PRISON_CUTSCENE_ZOOM_IN_PHASE_01_DONE:
 	djnz [0xE6], LABEL_025F
 	mov [0xE6], 0x0007
 
-LABEL_0288:
+PRISON_CUTSCENE_ZOOM_RAMP_STAGE_1:
 	break
 	add [SCROLL_Y], 0x0002
 	je [0xDB], 0x01, PRISON_CUTSCENE_ZOOM_IN_PHASE_02_DONE
@@ -95,10 +95,10 @@ LABEL_0288:
 	add [0xE7], 0x0001
 
 PRISON_CUTSCENE_ZOOM_IN_PHASE_02_DONE:
-	djnz [0xE6], LABEL_0288
+	djnz [0xE6], PRISON_CUTSCENE_ZOOM_RAMP_STAGE_1
 	mov [0xE6], 0x0007
 
-LABEL_02B1:
+PRISON_CUTSCENE_ZOOM_RAMP_STAGE_2:
 	break
 	add [SCROLL_Y], 0x0002
 	je [0xDB], 0x01, LABEL_02D2
@@ -108,7 +108,7 @@ LABEL_02B1:
 	add [0xE7], 0x0001
 
 LABEL_02D2:
-	djnz [0xE6], LABEL_02B1
+	djnz [0xE6], PRISON_CUTSCENE_ZOOM_RAMP_STAGE_2
 	play id=0x0066, freq=0x16, vol=0x14, channel=0x02
 	mov [0xE6], 0x0007
 
@@ -247,7 +247,7 @@ LABEL_0454:
 	freezeChannels first=0x36, last=0x3B
 	freezeChannels first=0x3D, last=0x3F
 	mov [0x65], 0x0000
-	call LABEL_80AA
+	call PRISON_BACKDROP_TILE_REPEAT_DOWN
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
 	call PRISON_LIFT_LANDING_BACKGROUND_DRAW

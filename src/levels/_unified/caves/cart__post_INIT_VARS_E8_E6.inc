@@ -101,20 +101,20 @@ LABEL_231C:
 	break
 	video offset=CINEMATIC_342, x=[0x68], y=184
 	break
-	video offset=CINEMATIC_343, x=[0x68], y=184
+	video offset=CINEMATIC_CAVES_SCREEN_4E_BACKDROP_LAYER_0, x=[0x68], y=184
 	break
-	video offset=CINEMATIC_343, x=[0x68], y=184
+	video offset=CINEMATIC_CAVES_SCREEN_4E_BACKDROP_LAYER_0, x=[0x68], y=184
 	mov [0x69], 0x00BA
 	mov [0xE6], 0x0001
 
 LABEL_2346:
 	break
-	video offset=CINEMATIC_344, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_SCREEN_4F_BACKDROP_LAYER_0, x=[0x68], y=[0x69]
 	djnz [0xE6], LABEL_2346
 	break
-	video offset=CINEMATIC_345, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_SCREEN_4F_BACKDROP_LAYER_1, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_345, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_SCREEN_4F_BACKDROP_LAYER_1, x=[0x68], y=[0x69]
 	break
 	video offset=CINEMATIC_331, x=[0x68], y=[0x69]
 	mov [0xE6], 0x0005
@@ -127,15 +127,15 @@ LABEL_2366:
 
 LABEL_2374:
 	break
-	video offset=CINEMATIC_344, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_SCREEN_4F_BACKDROP_LAYER_0, x=[0x68], y=[0x69]
 	djnz [0xE6], LABEL_2374
 	mov [0xE6], 0x0008
 
 LABEL_2382:
 	break
-	video offset=CINEMATIC_344, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_SCREEN_4F_BACKDROP_LAYER_0, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_344, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_SCREEN_4F_BACKDROP_LAYER_0, x=[0x68], y=[0x69]
 	add [0x68], 0x0003
 	break
 	video offset=CINEMATIC_346, x=[0x68], y=[0x69]
@@ -153,13 +153,13 @@ LABEL_2382:
 	video offset=CINEMATIC_348, x=[0x68], y=[0x69]
 	add [0x68], 0x0003
 	break
-	video offset=CINEMATIC_349, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_SCREEN_50_BACKDROP_LAYER_1, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_349, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_SCREEN_50_BACKDROP_LAYER_1, x=[0x68], y=[0x69]
 	add [0x68], 0x0003
 	break
-	video offset=CINEMATIC_350, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_SCREEN_50_BACKDROP_LAYER_2, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_350, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_SCREEN_50_BACKDROP_LAYER_2, x=[0x68], y=[0x69]
 	add [0x68], 0x0003
 	djnz [0xE6], LABEL_2382

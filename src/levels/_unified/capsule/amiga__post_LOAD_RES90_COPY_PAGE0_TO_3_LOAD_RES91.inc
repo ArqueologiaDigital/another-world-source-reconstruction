@@ -1,8 +1,8 @@
-LABEL_7F0E:
+CAPSULE_SCREEN_91_BACKDROP_DRAW:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_429, x=160, y=100
-	video offset=CINEMATIC_430, x=160, y=100
-	video offset=CINEMATIC_431, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SCREEN_91_BACKDROP_LAYER_1, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SCREEN_91_BACKDROP_LAYER_2, x=160, y=100
 	video offset=CINEMATIC_FINAL_ESCAPE_LESTER_RUNNING, x=160, y=100
 	ret
 
@@ -22,21 +22,21 @@ DRAW_FINAL_ESCAPE_LESTER_RUNNING_BG:
 	video offset=CINEMATIC_121, x=160, y=100
 	video offset=CINEMATIC_122, x=160, y=100
 	video offset=CINEMATIC_123, x=160, y=100
-	video offset=CINEMATIC_124, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SCREEN_4B_BACKDROP_LAYER_3, x=160, y=100
 	ret
 
 
 LABEL_7F4E:
 	fill page=0x00, color=0x01
-	video offset=CINEMATIC_422, x=160, y=100
-	video offset=CINEMATIC_423, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_ARCH_WALL_FAR, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_ARCH_WALL_NEAR, x=160, y=100
 	video offset=CINEMATIC_123, x=160, y=100
-	video offset=CINEMATIC_424, x=160, y=100
-	video offset=CINEMATIC_425, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SCREEN_4D_BACKDROP_LAYER_3, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SCREEN_4D_BACKDROP_LAYER_4, x=160, y=100
 	ret
 
 
-LABEL_7F66:
+CAPSULE_SCREEN_4C_BACKDROP_DRAW:
 	fill page=0x00, color=0x01
 	video offset=CINEMATIC_146, x=160, y=100
 	video offset=CINEMATIC_147, x=160, y=100
@@ -73,7 +73,7 @@ CAPSULE_BATHS_SCENE_INIT:
 LABEL_7FD6:
 	db 0x11
 
-LABEL_7FD7:
+CAPSULE_SCREEN_4B_ENTRY:
 	mov [0x46], 0xFFFB
 	mov [0x47], 0x0FA0
 	mov [0x42], 0xFFFB
@@ -98,7 +98,7 @@ LABEL_7FD7:
 LABEL_8029:
 	db 0x11
 
-LABEL_802A:
+CAPSULE_SCREEN_4C_ENTRY:
 	mov [0x46], 0xF060
 	mov [0x47], 0x0FA0
 	mov [0x42], 0xF060
@@ -108,14 +108,14 @@ LABEL_802A:
 	mov [0x41], 0x0028
 	mov [0x40], 0x0062
 	setPalette 0x01
-	call LABEL_7F66
+	call CAPSULE_SCREEN_4C_BACKDROP_DRAW
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x07, address=LABEL_130E
 	jmp CAPSULE_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_805A:
 	db 0x11
 
-LABEL_805B:
+CAPSULE_SCREEN_4D_ENTRY:
 	mov [0x46], 0xF060
 	mov [0x47], 0x0FA0
 	mov [0x42], 0xF060
@@ -134,14 +134,14 @@ LABEL_805B:
 LABEL_8093:
 	db 0x11
 
-LABEL_8094:
+CAPSULE_SCREEN_64_ENTRY:
 	deleteChannels first=0x00, last=0x3B
 	deleteChannels first=0x3D, last=0x3F
 	copyVideoPage src=0x03, dst=0x00
 	setup channel=0x04, address=LABEL_0AC4
 	jmp CAPSULE_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 
-LABEL_80A6:
+CAPSULE_SCREEN_91_ENTRY:
 	mov [0x46], 0xF060
 	mov [0x47], 0x0FA0
 	mov [0x42], 0xF060
@@ -151,7 +151,7 @@ LABEL_80A6:
 	mov [0x41], 0x0028
 	mov [0x40], 0x009D
 	setPalette 0x0B
-	call LABEL_7F0E
+	call CAPSULE_SCREEN_91_BACKDROP_DRAW
 	call DELETE_CHANS_0_8_AND_RET
 	mov [0x32], 0x0001
 	deleteChannels first=0x14, last=0x16
@@ -164,7 +164,7 @@ LABEL_80A6:
 LABEL_80F1:
 	db 0x11
 
-LABEL_80F2:
+CAPSULE_SCREEN_92_ENTRY:
 	mov [0x46], 0x005A
 	mov [0x47], 0x011B
 	mov [0x42], 0x005A
@@ -185,7 +185,7 @@ LABEL_80F2:
 LABEL_8132:
 	db 0x11
 
-LABEL_8133:
+CAPSULE_SCREEN_AB_ENTRY:
 	jne [SCREEN_NUM], 0x8A, LABEL_8152
 	deleteChannels first=0x01, last=0x02
 	setup channel=0x08, address=INCREMENT_VAR31
@@ -205,7 +205,7 @@ LABEL_8152:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x4B], 0x7FFF
-	video offset=CINEMATIC_000, x=[0x70], y=93, zoom=0x5a
+	video offset=CINEMATIC_CAPSULE_SCREEN_6A_BACKDROP_LAYER_0, x=[0x70], y=93, zoom=0x5a
 	ret
 
 
@@ -216,7 +216,7 @@ LABEL_8179:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x49], 0x7FFF
-	video offset=CINEMATIC_000, x=[0x6e], y=93, zoom=0x5a
+	video offset=CINEMATIC_CAPSULE_SCREEN_6A_BACKDROP_LAYER_0, x=[0x6e], y=93, zoom=0x5a
 	ret
 
 
@@ -227,7 +227,7 @@ LABEL_819A:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x4D], 0x7FFF
-	video offset=CINEMATIC_000, x=[0x72], y=93, zoom=0x5a
+	video offset=CINEMATIC_CAPSULE_SCREEN_6A_BACKDROP_LAYER_0, x=[0x72], y=93, zoom=0x5a
 	ret
 
 

@@ -18,7 +18,7 @@ LABEL_7F60:
 
 LABEL_7F75:
 	mov [0x63], 0x0001
-	call LABEL_85F5
+	call PRISON_SCREEN_ENTRY_DISPATCH
 	call LABEL_85E8
 	setup channel=0x01, address=COPY_PAGE0_TO_FF_KILL_CHANNEL
 	play id=0x0067, freq=0x14, vol=0x40, channel=0x01

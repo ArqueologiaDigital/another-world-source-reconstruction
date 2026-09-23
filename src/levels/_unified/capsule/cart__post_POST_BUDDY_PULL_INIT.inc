@@ -100,20 +100,20 @@ LABEL_0565:
 LABEL_0586:
 	mov [0xE6], 0x0014
 	mov [0xE7], 0x0028
-	video offset=CINEMATIC_565, x=160, y=[0xe6]
+	video offset=CINEMATIC_CAPSULE_SCREEN_AB_BACKDROP_LAYER_3, x=160, y=[0xe6]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_565, x=160, y=[0xe6]
+	video offset=CINEMATIC_CAPSULE_SCREEN_AB_BACKDROP_LAYER_3, x=160, y=[0xe6]
 
 LABEL_059A:
 	selectVideoPage 0x00
 	add [0xE6], 0x0002
-	video offset=CINEMATIC_566, x=160, y=[0xe6]
+	video offset=CINEMATIC_CAPSULE_SCREEN_AD_BACKDROP_LAYER_0, x=160, y=[0xe6]
 	selectVideoPage 0xFF
 	break
 	djnz [0xE7], LABEL_059A
 	play id=0x0067, freq=0x14, vol=0x40, channel=0x02
 	selectVideoPage 0x00
-	video offset=CINEMATIC_565, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SCREEN_AB_BACKDROP_LAYER_3, x=160, y=100
 	selectVideoPage 0xFF
 	killChannel
 
@@ -128,7 +128,7 @@ LABEL_05BB:
 LABEL_05D3:
 	break
 	jg [HERO_X], 0x0139, LABEL_05BB
-	video offset=CINEMATIC_525, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_SCREEN_91_BACKDROP_LAYER_3, x=160, y=100
 	break
 
 HANG_DRAW_CIN_526:

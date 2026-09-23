@@ -30,7 +30,7 @@ CAVES_TELEPORT_UP_BEAM_DRAW:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_855
-	video offset=CINEMATIC_856, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_LEFT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
@@ -46,7 +46,7 @@ CAVES_TELEPORT_DOWN_BEAM_DRAW:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_853
-	video offset=CINEMATIC_854, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_LEFT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 

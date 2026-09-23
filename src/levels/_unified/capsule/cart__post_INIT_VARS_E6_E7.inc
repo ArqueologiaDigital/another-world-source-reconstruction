@@ -6,19 +6,19 @@ LABEL_0AE3:
 	break
 	video offset=CINEMATIC_617, x=[0xe6], y=[0xe7]
 	break
-	video offset=CINEMATIC_618, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CHARGED_BLAST_SWEEP_NEAR, x=[0xe6], y=[0xe7]
 	break
 	play id=0x0030, freq=0x0A, vol=0x40, channel=0x03
-	video offset=CINEMATIC_619, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAPSULE_CHARGED_BLAST_FADE_8, x=[0xe6], y=[0xe7]
 	break
-	video offset=CINEMATIC_619, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAPSULE_CHARGED_BLAST_FADE_8, x=[0xe6], y=[0xe7]
 	break
-	video offset=CINEMATIC_618, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CHARGED_BLAST_SWEEP_NEAR, x=[0xe6], y=[0xe7]
 	break
-	video offset=CINEMATIC_619, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAPSULE_CHARGED_BLAST_FADE_8, x=[0xe6], y=[0xe7]
 	play id=0x0030, freq=0x20, vol=0x20, channel=0x03
 	break
-	video offset=CINEMATIC_618, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CHARGED_BLAST_SWEEP_NEAR, x=[0xe6], y=[0xe7]
 	break
 	video offset=CINEMATIC_617, x=[0xe6], y=[0xe7]
 	break

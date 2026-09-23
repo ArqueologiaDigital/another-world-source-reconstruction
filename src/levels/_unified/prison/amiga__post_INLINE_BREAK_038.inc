@@ -11,7 +11,7 @@ LABEL_9817:
 	sub [HERO_X], 0x0002
 	video offset=CINEMATIC_PRISON_HERO_CROUCH_DOWN_RIGHT, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_209, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_CROUCH_SHOOT_RIGHT_F1, x=[HERO_X], y=[HERO_Y]
 
 LABEL_982D:
 	break

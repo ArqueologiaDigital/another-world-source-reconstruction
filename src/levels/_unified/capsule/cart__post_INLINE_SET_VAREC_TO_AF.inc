@@ -157,7 +157,7 @@ LABEL_1A1F:
 
 LABEL_1A33:
 	break
-	video offset=CINEMATIC_556, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_SCREEN_A9_BACKDROP_LAYER_1, x=[HERO_X], y=[HERO_Y]
 	je [0xE8], 0x01, LABEL_1A47
 	djnz [0xE6], LABEL_1A33
 	djnz [0xE7], LABEL_1A1B

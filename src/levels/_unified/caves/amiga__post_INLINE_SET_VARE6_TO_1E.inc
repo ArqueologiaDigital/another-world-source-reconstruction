@@ -312,23 +312,23 @@ CAVES_WATERFALL_DRIP_LOOP:
 	mov [0xE8], [0x3D]
 	add [0xE8], 0x008E
 	mov [0xE7], 0x00A6
-	video offset=CINEMATIC_301, x=[0xe8], y=[0xe7]
+	video offset=CINEMATIC_CAVES_WATERFALL_DRIP_F0, x=[0xe8], y=[0xe7]
 	break
-	video offset=CINEMATIC_302, x=[0xe8], y=[0xe7]
+	video offset=CINEMATIC_CAVES_WATERFALL_DRIP_F1, x=[0xe8], y=[0xe7]
 	break
-	video offset=CINEMATIC_303, x=[0xe8], y=[0xe7]
+	video offset=CINEMATIC_CAVES_WATERFALL_DRIP_F2, x=[0xe8], y=[0xe7]
 	break
-	video offset=CINEMATIC_304, x=[0xe8], y=[0xe7]
+	video offset=CINEMATIC_CAVES_WATERFALL_DRIP_F3, x=[0xe8], y=[0xe7]
 	break
-	video offset=CINEMATIC_305, x=[0xe8], y=[0xe7]
+	video offset=CINEMATIC_CAVES_WATERFALL_DRIP_F4, x=[0xe8], y=[0xe7]
 	break
-	video offset=CINEMATIC_306, x=[0xe8], y=[0xe7]
+	video offset=CINEMATIC_CAVES_WATERFALL_DRIP_F5, x=[0xe8], y=[0xe7]
 	break
-	video offset=CINEMATIC_307, x=[0xe8], y=[0xe7]
+	video offset=CINEMATIC_CAVES_WATERFALL_DRIP_F6, x=[0xe8], y=[0xe7]
 	break
-	video offset=CINEMATIC_308, x=[0xe8], y=[0xe7]
+	video offset=CINEMATIC_CAVES_WATERFALL_DRIP_F7, x=[0xe8], y=[0xe7]
 	break
-	video offset=CINEMATIC_309, x=[0xe8], y=[0xe7]
+	video offset=CINEMATIC_CAVES_WATERFALL_DRIP_F8, x=[0xe8], y=[0xe7]
 	mov [0xE8], 0x000A
 
 DELAY_LOOP_VARE8_AT_2084:

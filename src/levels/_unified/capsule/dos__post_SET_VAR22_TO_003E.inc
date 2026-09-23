@@ -1,4 +1,4 @@
-LABEL_A3A3:
+CAPSULE_SCREEN_6A_ENTRY:
 	mov [0x46], 0x0007
 	mov [0x47], 0x0FA0
 	mov [0x42], 0x000A
@@ -8,7 +8,7 @@ LABEL_A3A3:
 	mov [0x41], 0x0028
 	mov [0x40], 0x00AC
 	setPalette 0x01
-	call LABEL_9C16
+	call CAPSULE_SCREEN_6A_BACKDROP_DRAW
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x1B, address=KILL_CHANNEL_LANDING
 	setup channel=0x19, address=KILL_CHANNEL_LANDING

@@ -395,10 +395,10 @@ LABEL_268C:
 CAVES_HERO_FALL_LANDING_AND_SCENE_RESET:
 	break
 	sub [HERO_Y], 0x0018
-	video offset=CINEMATIC_450, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_DOWN_0, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_Y], 0x0002
-	video offset=CINEMATIC_450, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_DOWN_0, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0005
 	call LABEL_D95F
 	setup channel=0x14, address=LABEL_DBA5
@@ -419,29 +419,29 @@ LABEL_26ED:
 	db 0x11
 
 CAVES_HERO_LANDING_SPLASH:
-	video offset=CINEMATIC_438, x=[HERO_X], y=[0x1a]
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F0, x=[HERO_X], y=[0x1a]
 	break
-	video offset=CINEMATIC_439, x=[HERO_X], y=[0x1a]
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F1, x=[HERO_X], y=[0x1a]
 	play id=0x0074, freq=0x14, vol=0x40, channel=0x00
 	break
-	video offset=CINEMATIC_440, x=[HERO_X], y=[0x1a]
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F2, x=[HERO_X], y=[0x1a]
 	play id=0x006C, freq=0x14, vol=0x40, channel=0x01
 	break
-	video offset=CINEMATIC_441, x=[HERO_X], y=[0x1a]
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F3, x=[HERO_X], y=[0x1a]
 	break
-	video offset=CINEMATIC_442, x=[HERO_X], y=[0x1a]
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F4, x=[HERO_X], y=[0x1a]
 	break
 	play id=0x006C, freq=0x14, vol=0x40, channel=0x02
-	video offset=CINEMATIC_443, x=[HERO_X], y=[0x1a]
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F5, x=[HERO_X], y=[0x1a]
 	break
-	video offset=CINEMATIC_444, x=[HERO_X], y=[0x1a]
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F6, x=[HERO_X], y=[0x1a]
 	break
-	video offset=CINEMATIC_445, x=[HERO_X], y=[0x1a]
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F7, x=[HERO_X], y=[0x1a]
 	break
-	video offset=CINEMATIC_446, x=[HERO_X], y=[0x1a]
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F8, x=[HERO_X], y=[0x1a]
 	break
 	play id=0x006C, freq=0x14, vol=0x20, channel=0x01
-	video offset=CINEMATIC_447, x=[HERO_X], y=[0x1a]
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F9, x=[HERO_X], y=[0x1a]
 	break
 	mov [PAUSE_SLICES], 0x0008
 	killChannel

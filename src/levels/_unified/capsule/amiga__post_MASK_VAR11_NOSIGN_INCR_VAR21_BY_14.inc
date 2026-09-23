@@ -5,7 +5,7 @@ LABEL_4D80:
 	and [0xF8], 0x0007
 	jne [0xF8], 0x06, LABEL_4D9A
 	mov [0x13], 0x006F
-	call LABEL_8133
+	call CAPSULE_SCREEN_AB_ENTRY
 
 LABEL_4D9A:
 	mov [0xF8], [0x11]

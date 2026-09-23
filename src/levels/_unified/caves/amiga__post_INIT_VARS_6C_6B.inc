@@ -343,19 +343,19 @@ HERO_DIRECTION_RIGHT_TO_UP_TURN:
 HERO_DIRECTION_DOWN_IDLE_LOOP:
 	mov [0x63], 0x0004
 	mov [0x19], 0x001E
-	video offset=CINEMATIC_450, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_DOWN_0, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_454, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_455, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_DOWN_2, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_456, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_457, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_DOWN_4, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_456, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_455, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_DOWN_2, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_454, x=[HERO_X], y=[HERO_Y]
 	break
@@ -434,21 +434,21 @@ LABEL_3C5D:
 
 HERO_DIRECTION_UP_IDLE_LOOP:
 	mov [0x63], 0x0003
-	video offset=CINEMATIC_475, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_UP_0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_476, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_UP_1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_477, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_UP_2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_478, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_UP_3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_479, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_UP_4, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_478, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_UP_3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_477, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_UP_2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_476, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_UP_1, x=[HERO_X], y=[HERO_Y]
 	break
 	jmp HERO_DIRECTION_UP_IDLE_LOOP
 LABEL_3C95:

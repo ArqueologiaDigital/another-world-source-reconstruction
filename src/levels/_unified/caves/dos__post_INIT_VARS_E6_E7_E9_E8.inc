@@ -51,23 +51,23 @@ LABEL_1282:
 	video offset=CINEMATIC_205, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_2, x=[HERO_X], y=[HERO_Y]
-	video offset=CINEMATIC_206, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_SCREEN_45_BACKDROP_LAYER_0, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_2, x=[HERO_X], y=[HERO_Y]
-	video offset=CINEMATIC_207, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_SCREEN_45_BACKDROP_LAYER_1, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_2, x=[HERO_X], y=[HERO_Y]
-	video offset=CINEMATIC_208, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_SCREEN_45_BACKDROP_LAYER_2, x=[HERO_X], y=[HERO_Y]
 	setup channel=0x3F, address=CAVES_INLINE_SET_VAR01_TO_E_L1
 	break
 	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_2, x=[HERO_X], y=[HERO_Y]
-	video offset=CINEMATIC_208, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_SCREEN_45_BACKDROP_LAYER_2, x=[HERO_X], y=[HERO_Y]
 	mov [0x03], 0x000A
 
 LABEL_1300:
 	break
 	video offset=CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_2, x=[HERO_X], y=[HERO_Y]
-	video offset=CINEMATIC_207, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_SCREEN_45_BACKDROP_LAYER_1, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_1300
 
 LABEL_130E:
@@ -93,7 +93,7 @@ LABEL_1332:
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_209, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SCREEN_45_BACKDROP_LAYER_3, x=[0xe6], y=[0xe7]
 	call CAVES_CHECK_HERO_Y_E7_WITHIN_20PX_BAND
 	selectVideoPage 0xFF
 	break

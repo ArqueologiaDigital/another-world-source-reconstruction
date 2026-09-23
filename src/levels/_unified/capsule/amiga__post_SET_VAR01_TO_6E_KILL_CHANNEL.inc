@@ -88,6 +88,6 @@ LABEL_0BD2:
 	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	call LABEL_15C6
-	call LABEL_8521
+	call CAPSULE_SCREEN_ENTRY_DISPATCH
 	setup channel=0x3F, address=LABEL_866F
 	killChannel

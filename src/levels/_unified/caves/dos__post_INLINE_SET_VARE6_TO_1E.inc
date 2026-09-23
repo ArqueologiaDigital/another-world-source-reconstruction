@@ -90,14 +90,14 @@ DELAY_LOOP_VARE6_AT_1F0B:
 
 LABEL_1F2D:
 	video offset=CINEMATIC_279, x=65506, y=114
-	video offset=CINEMATIC_280, x=65506, y=114
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F0, x=65506, y=114
 	break
 	play id=0x0060, freq=0x14, vol=0x28, channel=0x00
 	video offset=CINEMATIC_279, x=7, y=116
-	video offset=CINEMATIC_281, x=7, y=116
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F1, x=7, y=116
 	break
 	video offset=CINEMATIC_279, x=43, y=120
-	video offset=CINEMATIC_282, x=43, y=120
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F2, x=43, y=120
 	break
 	video offset=CINEMATIC_279, x=75, y=121
 	video offset=CINEMATIC_283, x=75, y=121
@@ -106,22 +106,22 @@ LABEL_1F2D:
 	video offset=CINEMATIC_283, x=124, y=116
 	break
 	video offset=CINEMATIC_279, x=153, y=118
-	video offset=CINEMATIC_282, x=153, y=118
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F2, x=153, y=118
 	break
 	video offset=CINEMATIC_279, x=190, y=120
-	video offset=CINEMATIC_282, x=190, y=120
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F2, x=190, y=120
 	break
 	video offset=CINEMATIC_279, x=223, y=117
-	video offset=CINEMATIC_281, x=223, y=117
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F1, x=223, y=117
 	break
 	video offset=CINEMATIC_279, x=266, y=112
-	video offset=CINEMATIC_280, x=266, y=112
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F0, x=266, y=112
 	break
 	video offset=CINEMATIC_279, x=301, y=114
-	video offset=CINEMATIC_281, x=301, y=114
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F1, x=301, y=114
 	break
 	video offset=CINEMATIC_279, x=331, y=114
-	video offset=CINEMATIC_282, x=331, y=114
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F2, x=331, y=114
 	break
 	killChannel
 	video offset=CINEMATIC_279, x=65506, y=114
@@ -155,16 +155,16 @@ LABEL_1F2D:
 
 LABEL_1FFD:
 	video offset=CINEMATIC_279, x=65506, y=114
-	video offset=CINEMATIC_280, x=65506, y=114
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F0, x=65506, y=114
 	video offset=CINEMATIC_284, x=65506, y=114
 	break
 	play id=0x0055, freq=0x14, vol=0x32, channel=0x02
 	video offset=CINEMATIC_279, x=7, y=116
-	video offset=CINEMATIC_281, x=7, y=116
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F1, x=7, y=116
 	video offset=CINEMATIC_284, x=7, y=116
 	break
 	video offset=CINEMATIC_279, x=43, y=120
-	video offset=CINEMATIC_282, x=43, y=120
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F2, x=43, y=120
 	video offset=CINEMATIC_284, x=43, y=120
 	break
 	video offset=CINEMATIC_279, x=75, y=121
@@ -176,43 +176,43 @@ LABEL_1FFD:
 	video offset=CINEMATIC_284, x=119, y=116
 	break
 	video offset=CINEMATIC_279, x=153, y=118
-	video offset=CINEMATIC_282, x=153, y=118
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F2, x=153, y=118
 	video offset=CINEMATIC_284, x=153, y=118
 	break
 	video offset=CINEMATIC_279, x=190, y=120
-	video offset=CINEMATIC_282, x=190, y=120
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F2, x=190, y=120
 	video offset=CINEMATIC_284, x=190, y=120
 	break
 	video offset=CINEMATIC_279, x=223, y=117
-	video offset=CINEMATIC_281, x=223, y=117
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F1, x=223, y=117
 	video offset=CINEMATIC_284, x=223, y=117
 	break
 	video offset=CINEMATIC_279, x=266, y=112
-	video offset=CINEMATIC_280, x=266, y=112
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F0, x=266, y=112
 	video offset=CINEMATIC_284, x=266, y=112
 	break
 	video offset=CINEMATIC_279, x=301, y=114
-	video offset=CINEMATIC_281, x=301, y=114
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F1, x=301, y=114
 	video offset=CINEMATIC_284, x=301, y=114
 	break
 	video offset=CINEMATIC_279, x=331, y=114
-	video offset=CINEMATIC_282, x=331, y=114
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F2, x=331, y=114
 	video offset=CINEMATIC_284, x=331, y=114
 	break
 	killChannel
 
 LABEL_20A2:
 	video offset=CINEMATIC_279, x=65506, y=114
-	video offset=CINEMATIC_280, x=65506, y=114
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F0, x=65506, y=114
 	video offset=CINEMATIC_285, x=65506, y=114
 	break
 	play id=0x0055, freq=0x12, vol=0x32, channel=0x01
 	video offset=CINEMATIC_279, x=7, y=116
-	video offset=CINEMATIC_281, x=7, y=116
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F1, x=7, y=116
 	video offset=CINEMATIC_285, x=7, y=116
 	break
 	video offset=CINEMATIC_279, x=43, y=120
-	video offset=CINEMATIC_282, x=43, y=120
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F2, x=43, y=120
 	video offset=CINEMATIC_285, x=43, y=120
 	break
 	video offset=CINEMATIC_279, x=75, y=121
@@ -224,75 +224,75 @@ LABEL_20A2:
 	video offset=CINEMATIC_285, x=119, y=116
 	break
 	video offset=CINEMATIC_279, x=153, y=118
-	video offset=CINEMATIC_282, x=153, y=118
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F2, x=153, y=118
 	video offset=CINEMATIC_285, x=153, y=118
 	break
 	video offset=CINEMATIC_279, x=190, y=120
-	video offset=CINEMATIC_282, x=190, y=120
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F2, x=190, y=120
 	video offset=CINEMATIC_285, x=190, y=120
 	break
 	video offset=CINEMATIC_279, x=223, y=117
-	video offset=CINEMATIC_281, x=223, y=117
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F1, x=223, y=117
 	video offset=CINEMATIC_285, x=223, y=117
 	break
 	video offset=CINEMATIC_279, x=266, y=112
-	video offset=CINEMATIC_280, x=266, y=112
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F0, x=266, y=112
 	video offset=CINEMATIC_285, x=266, y=112
 	break
 	video offset=CINEMATIC_279, x=301, y=114
-	video offset=CINEMATIC_281, x=301, y=114
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F1, x=301, y=114
 	video offset=CINEMATIC_285, x=301, y=114
 	break
 	video offset=CINEMATIC_279, x=331, y=114
-	video offset=CINEMATIC_282, x=331, y=114
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F2, x=331, y=114
 	video offset=CINEMATIC_285, x=331, y=114
 	killChannel
 
 LABEL_2146:
 	video offset=CINEMATIC_279, x=65506, y=114
-	video offset=CINEMATIC_280, x=65506, y=114
-	video offset=CINEMATIC_286, x=65506, y=114
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F0, x=65506, y=114
+	video offset=CINEMATIC_CAVES_SPRAY_LINE_F0, x=65506, y=114
 	break
 	play id=0x0055, freq=0x17, vol=0x28, channel=0x00
 	video offset=CINEMATIC_279, x=7, y=116
-	video offset=CINEMATIC_281, x=7, y=116
-	video offset=CINEMATIC_286, x=7, y=116
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F1, x=7, y=116
+	video offset=CINEMATIC_CAVES_SPRAY_LINE_F0, x=7, y=116
 	break
 	video offset=CINEMATIC_279, x=43, y=120
-	video offset=CINEMATIC_282, x=43, y=120
-	video offset=CINEMATIC_286, x=43, y=120
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F2, x=43, y=120
+	video offset=CINEMATIC_CAVES_SPRAY_LINE_F0, x=43, y=120
 	break
 	video offset=CINEMATIC_279, x=75, y=121
 	video offset=CINEMATIC_283, x=75, y=121
-	video offset=CINEMATIC_286, x=75, y=121
+	video offset=CINEMATIC_CAVES_SPRAY_LINE_F0, x=75, y=121
 	break
 	video offset=CINEMATIC_279, x=119, y=116
 	video offset=CINEMATIC_283, x=124, y=116
-	video offset=CINEMATIC_286, x=119, y=116
+	video offset=CINEMATIC_CAVES_SPRAY_LINE_F0, x=119, y=116
 	break
 	video offset=CINEMATIC_279, x=153, y=118
-	video offset=CINEMATIC_282, x=153, y=118
-	video offset=CINEMATIC_286, x=153, y=118
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F2, x=153, y=118
+	video offset=CINEMATIC_CAVES_SPRAY_LINE_F0, x=153, y=118
 	break
 	video offset=CINEMATIC_279, x=190, y=120
-	video offset=CINEMATIC_282, x=190, y=120
-	video offset=CINEMATIC_286, x=190, y=120
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F2, x=190, y=120
+	video offset=CINEMATIC_CAVES_SPRAY_LINE_F0, x=190, y=120
 	break
 	video offset=CINEMATIC_279, x=223, y=117
-	video offset=CINEMATIC_281, x=223, y=117
-	video offset=CINEMATIC_286, x=223, y=117
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F1, x=223, y=117
+	video offset=CINEMATIC_CAVES_SPRAY_LINE_F0, x=223, y=117
 	break
 	video offset=CINEMATIC_279, x=266, y=112
-	video offset=CINEMATIC_280, x=266, y=112
-	video offset=CINEMATIC_286, x=266, y=112
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F0, x=266, y=112
+	video offset=CINEMATIC_CAVES_SPRAY_LINE_F0, x=266, y=112
 	break
 	video offset=CINEMATIC_279, x=301, y=114
-	video offset=CINEMATIC_281, x=301, y=114
-	video offset=CINEMATIC_286, x=301, y=114
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F1, x=301, y=114
+	video offset=CINEMATIC_CAVES_SPRAY_LINE_F0, x=301, y=114
 	break
 	video offset=CINEMATIC_279, x=331, y=114
-	video offset=CINEMATIC_282, x=331, y=114
-	video offset=CINEMATIC_286, x=331, y=114
+	video offset=CINEMATIC_CAVES_FALLING_STREAK_F2, x=331, y=114
+	video offset=CINEMATIC_CAVES_SPRAY_LINE_F0, x=331, y=114
 	killChannel
 
 LABEL_21EA:

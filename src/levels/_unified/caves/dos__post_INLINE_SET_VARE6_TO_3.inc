@@ -6,14 +6,14 @@ LABEL_03BD:
 	djnz [0xE6], LABEL_03BD
 	video offset=CINEMATIC_568, x=123, y=172
 	break
-	video offset=CINEMATIC_569, x=123, y=172
+	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_0, x=123, y=172
 	break
-	video offset=CINEMATIC_570, x=123, y=172
+	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_1, x=123, y=172
 	mov [0xE6], 0x0002
 
 LABEL_03E0:
 	break
-	video offset=CINEMATIC_571, x=123, y=172
+	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_2, x=123, y=172
 	djnz [0xE6], LABEL_03E0
 	break
 	video offset=CINEMATIC_572, x=123, y=172
@@ -114,11 +114,11 @@ LABEL_04F7:
 LABEL_04F8:
 	video offset=CINEMATIC_458, x=109, y=188
 	video offset=CINEMATIC_359, x=32, y=141
-	video offset=CINEMATIC_433, x=78, y=110
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=78, y=110
 	video offset=CINEMATIC_359, x=134, y=142
 	video offset=CINEMATIC_359, x=38, y=141
 	video offset=CINEMATIC_359, x=77, y=141
-	video offset=CINEMATIC_433, x=135, y=123
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=135, y=123
 	video offset=CINEMATIC_458, x=111, y=63
 	video offset=CINEMATIC_565, x=160, y=100
 	break
@@ -230,13 +230,13 @@ LABEL_0631:
 	break
 	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_2, x=159, y=92
 	jge [0x04], 0x4000, LABEL_0641
-	video offset=CINEMATIC_586, x=179, y=176
+	video offset=CINEMATIC_CAVES_SCREEN_89_BACKDROP_LAYER_1, x=179, y=176
 
 LABEL_0641:
 	break
 	video offset=CINEMATIC_CAVES_SCREEN_88_BACKDROP_2, x=159, y=90
 	jge [0x04], 0x4000, LABEL_0651
-	video offset=CINEMATIC_585, x=178, y=175
+	video offset=CINEMATIC_CAVES_SCREEN_89_BACKDROP_LAYER_0, x=178, y=175
 
 LABEL_0651:
 	break

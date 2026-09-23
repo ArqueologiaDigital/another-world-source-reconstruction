@@ -39,11 +39,11 @@ LABEL_3742:
 	break
 	video offset=CINEMATIC_818, x=160, y=100
 	break
-	video offset=CINEMATIC_819, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_ANIM_LEFT_3, x=160, y=100
 	break
 	video offset=CINEMATIC_820, x=160, y=100
 	break
-	video offset=CINEMATIC_819, x=160, y=100
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_ANIM_LEFT_3, x=160, y=100
 	selectVideoPage 0x03
 	video offset=CINEMATIC_821, x=169, y=136
 	video offset=CINEMATIC_821, x=169, y=160

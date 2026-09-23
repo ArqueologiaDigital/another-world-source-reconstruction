@@ -1,6 +1,6 @@
 LABEL_0207:
 	jne [0x10], [SCREEN_NUM], LABEL_0222
-	video offset=CINEMATIC_124, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_SCREEN_4B_BACKDROP_LAYER_3, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_344, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_125, x=[BUDDY_X], y=[BUDDY_Y]
 	play id=0x005E, freq=0x1C, vol=0x40, channel=0x02
@@ -41,7 +41,7 @@ LABEL_0280:
 
 LABEL_028C:
 	jne [0x10], [SCREEN_NUM], LABEL_02C1
-	video offset=CINEMATIC_124, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_SCREEN_4B_BACKDROP_LAYER_3, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_344, x=[BUDDY_X], y=[BUDDY_Y]
 	video offset=CINEMATIC_125, x=[BUDDY_X], y=[BUDDY_Y]
 	play id=0x005E, freq=0x1C, vol=0x40, channel=0x02

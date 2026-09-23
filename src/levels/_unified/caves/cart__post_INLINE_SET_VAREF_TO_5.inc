@@ -1,12 +1,12 @@
 ANIM_CIN_444_LOOP_VAREF:
-	video offset=CINEMATIC_444, x=103, y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F6, x=103, y=100
 	break
 	djnz [0xEF], ANIM_CIN_444_LOOP_VAREF
 	mov [0xEF], 0x0005
 
 LABEL_1915:
-	video offset=CINEMATIC_444, x=103, y=100
-	video offset=CINEMATIC_445, x=105, y=174
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F6, x=103, y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F7, x=105, y=174
 	break
 	djnz [0xEF], LABEL_1915
 	jmp INLINE_SET_VAREF_TO_5
@@ -29,7 +29,7 @@ LABEL_1926:
 	video offset=CINEMATIC_449, x=340, y=[HERO_Y]
 	break
 	sub [HERO_X], 0x000A
-	video offset=CINEMATIC_450, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_DOWN_0, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x000A
 	video offset=CINEMATIC_451, x=[HERO_X], y=[HERO_Y]

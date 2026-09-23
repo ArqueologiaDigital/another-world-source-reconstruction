@@ -1,0 +1,25 @@
+# Backdrop painters in CAPSULE -- dos_1992
+
+Derived by notes/backdrop-drawer/backdrop_drawer.py.
+
+| routine | proposed name | confidence | evidence |
+| --- | --- | --- | --- |
+| LABEL_9E0B | CAPSULE_SCREEN_2A_BACKDROP_DRAW | high | draws 3 picture(s), of which 1 are already named for screen 0x2A (`CINEMATIC_CAPSULE_SCREEN_2A_BACKDROP_LAYER_0`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9C16 | CAPSULE_SCREEN_6A_BACKDROP_DRAW | high | draws 2 picture(s), of which 1 are already named for screen 0x6A (`CINEMATIC_CAPSULE_SCREEN_6A_BACKDROP_LAYER_0`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9E37 | CAPSULE_SCREEN_6C_BACKDROP_DRAW | high | draws 7 picture(s), of which 2 are already named for screen 0x6C (`CINEMATIC_CAPSULE_SCREEN_6C_BACKDROP_LAYER_5`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9E85 | CAPSULE_SCREEN_6E_BACKDROP_DRAW | high | draws 1 picture(s), of which 1 are already named for screen 0x6E (`CINEMATIC_CAPSULE_SCREEN_6E_BACKDROP_LAYER_0`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9CA7 | CAPSULE_SCREEN_8A_BACKDROP_DRAW | high | draws 1 picture(s), of which 1 are already named for screen 0x8A (`CINEMATIC_CAPSULE_SCREEN_8A_BACKDROP_LAYER_0`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9CD7 | CAPSULE_SCREEN_8B_BACKDROP_DRAW | high | draws 2 picture(s), of which 2 are already named for screen 0x8B (`CINEMATIC_CAPSULE_SCREEN_8B_BACKDROP_LAYER_0`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9CE3 | CAPSULE_SCREEN_8C_BACKDROP_DRAW | high | draws 3 picture(s), of which 3 are already named for screen 0x8C (`CINEMATIC_CAPSULE_SCREEN_8C_BACKDROP_LAYER_0`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9E8D | CAPSULE_SCREEN_8D_BACKDROP_DRAW | high | draws 1 picture(s), of which 1 are already named for screen 0x8D (`CINEMATIC_CAPSULE_SCREEN_8D_BACKDROP_LAYER_0`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9E95 | CAPSULE_SCREEN_8E_BACKDROP_DRAW | high | draws 1 picture(s), of which 1 are already named for screen 0x8E (`CINEMATIC_CAPSULE_SCREEN_8E_BACKDROP_LAYER_0`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9C3E | CAPSULE_SCREEN_91_BACKDROP_DRAW | high | draws 4 picture(s), of which 3 are already named for screen 0x91 (`CINEMATIC_CAPSULE_SCREEN_91_BACKDROP_LAYER_1`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9CBF | CAPSULE_SCREEN_A9_BACKDROP_DRAW | high | draws 2 picture(s), of which 1 are already named for screen 0xA9 (`CINEMATIC_CAPSULE_SCREEN_A9_BACKDROP_LAYER_1`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9CAF | CAPSULE_SCREEN_AA_BACKDROP_DRAW | high | draws 3 picture(s), of which 2 are already named for screen 0xAA (`CINEMATIC_CAPSULE_SCREEN_AA_BACKDROP_LAYER_0`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9EA5 | CAPSULE_SCREEN_AD_BACKDROP_DRAW | high | draws 2 picture(s), of which 2 are already named for screen 0xAD (`CINEMATIC_CAPSULE_SCREEN_AD_BACKDROP_LAYER_0`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9C9F | CAPSULE_SCREEN_C8_BACKDROP_DRAW | high | draws 1 picture(s), of which 1 are already named for screen 0xC8 (`CINEMATIC_CAPSULE_SCREEN_C8_BACKDROP_LAYER_0`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9CF3 | CAPSULE_SCREEN_CA_BACKDROP_DRAW | high | draws 2 picture(s), of which 2 are already named for screen 0xCA (`CINEMATIC_CAPSULE_SCREEN_CA_BACKDROP_LAYER_0`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9EB1 | CAPSULE_SCREEN_CD_BACKDROP_DRAW | high | draws 1 picture(s), of which 1 are already named for screen 0xCD (`CINEMATIC_CAPSULE_SCREEN_CD_BACKDROP_LAYER_0`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9D0B | CAPSULE_SCREEN_EB_BACKDROP_DRAW | high | draws 4 picture(s), of which 1 are already named for screen 0xEB (`CINEMATIC_CAPSULE_SCREEN_EB_BACKDROP_LAYER_1`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9ECE | CAPSULE_SCREEN_ED_BACKDROP_DRAW | high | draws 1 picture(s), of which 1 are already named for screen 0xED (`CINEMATIC_CAPSULE_SCREEN_ED_BACKDROP_LAYER_0`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |
+| LABEL_9E9D | CAPSULE_SCREEN_EE_BACKDROP_DRAW | high | draws 1 picture(s), of which 1 are already named for screen 0xEE (`CINEMATIC_CAPSULE_SCREEN_EE_BACKDROP_LAYER_0`), and the `[SCREEN_NUM]` dataflow independently pins the routine to that same screen |

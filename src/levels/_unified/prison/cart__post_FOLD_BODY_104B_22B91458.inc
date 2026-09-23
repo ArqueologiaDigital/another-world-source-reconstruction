@@ -42,13 +42,13 @@ LABEL_4BC6:
 	call LABEL_82D1
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	video offset=CINEMATIC_428, x=160, y=100
-	video offset=CINEMATIC_429, x=160, y=100
-	video offset=CINEMATIC_430, x=160, y=100
+	video offset=CINEMATIC_PRISON_CELL_BLOCK_GIRDERS, x=160, y=100
+	video offset=CINEMATIC_PRISON_CELL_BLOCK_DEBRIS, x=160, y=100
+	video offset=CINEMATIC_PRISON_CELL_BLOCK_FLOOR, x=160, y=100
 	video offset=CINEMATIC_305, x=160, y=100
-	video offset=CINEMATIC_431, x=160, y=100
-	video offset=CINEMATIC_432, x=160, y=100
-	video offset=CINEMATIC_433, x=160, y=100
+	video offset=CINEMATIC_PRISON_CELL_ROW_BARS, x=160, y=100
+	video offset=CINEMATIC_PRISON_SCREEN_04_BACKDROP_LAYER_13, x=160, y=100
+	video offset=CINEMATIC_PRISON_SCREEN_04_BACKDROP_LAYER_14, x=160, y=100
 	ret
 
 
@@ -56,10 +56,10 @@ LABEL_4BEF:
 	call LABEL_82D1
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	video offset=CINEMATIC_448, x=160, y=100
-	video offset=CINEMATIC_449, x=160, y=100
-	video offset=CINEMATIC_450, x=160, y=100
-	video offset=CINEMATIC_451, x=160, y=100
+	video offset=CINEMATIC_PRISON_SCREEN_24_BACKDROP_LAYER_8, x=160, y=100
+	video offset=CINEMATIC_PRISON_SCREEN_24_BACKDROP_LAYER_9, x=160, y=100
+	video offset=CINEMATIC_PRISON_SCREEN_24_BACKDROP_LAYER_10, x=160, y=100
+	video offset=CINEMATIC_PRISON_SCREEN_24_BACKDROP_LAYER_11, x=160, y=100
 	ret
 
 
@@ -68,10 +68,10 @@ LABEL_4C08:
 	call LABEL_82D1
 	selectVideoPage 0x00
 	copyVideoPage src=0x03, dst=0x00
-	video offset=CINEMATIC_434, x=160, y=100
-	video offset=CINEMATIC_435, x=160, y=100
-	video offset=CINEMATIC_436, x=160, y=100
-	video offset=CINEMATIC_437, x=160, y=100
+	video offset=CINEMATIC_PRISON_SCREEN_23_BACKDROP_LAYER_8, x=160, y=100
+	video offset=CINEMATIC_PRISON_SCREEN_23_BACKDROP_LAYER_9, x=160, y=100
+	video offset=CINEMATIC_PRISON_SCREEN_23_BACKDROP_LAYER_10, x=160, y=100
+	video offset=CINEMATIC_PRISON_SCREEN_23_BACKDROP_LAYER_11, x=160, y=100
 	ret
 
 

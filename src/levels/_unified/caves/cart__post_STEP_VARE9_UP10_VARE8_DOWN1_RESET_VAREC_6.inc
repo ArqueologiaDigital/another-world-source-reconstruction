@@ -37,7 +37,7 @@ DRAW_CIN_273:
 
 
 DRAW_CIN_274:
-	video offset=CINEMATIC_274, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_CAVES_SCREEN_49_BACKDROP_LAYER_0, x=[0x21], y=[0x22]
 	ret
 
 

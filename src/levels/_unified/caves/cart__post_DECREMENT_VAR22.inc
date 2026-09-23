@@ -20,7 +20,7 @@ LABEL_7218:
 
 LABEL_7219:
 	jne [0x27], 0x03, LABEL_722E
-	video offset=CINEMATIC_856, x=[0x21], y=[0x26]
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_LEFT, x=[0x21], y=[0x26]
 	call LABEL_724B
 	sub [0x22], 0x0001
 	jmp DECREMENT_VAR22
@@ -32,7 +32,7 @@ LABEL_722E:
 	jmp DECREMENT_VAR22
 
 LABEL_723F:
-	video offset=CINEMATIC_854, x=[0x21], y=[0x26]
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_LEFT, x=[0x21], y=[0x26]
 	call LABEL_724B
 	jmp DECREMENT_VAR22
 LABEL_724A:

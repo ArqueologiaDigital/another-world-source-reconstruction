@@ -14,7 +14,7 @@ LABEL_9949:
 	jne [0x0F], 0x00, LABEL_9985
 	sub [HERO_X], 0x0003
 	call HANDLE_HORIZ_VAR01_VS_VAR28
-	video offset=CINEMATIC_189, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_CROUCH_SHOOT_LEFT_F0, x=[HERO_X], y=[HERO_Y]
 	mov [0x21], [HERO_X]
 	mov [0x27], [HERO_Y]
 	sub [0x21], 0x001E
@@ -22,7 +22,7 @@ LABEL_9949:
 	call PRISON_HERO_FIRE_SHOT_LEFT
 	break
 	add [HERO_X], 0x0002
-	video offset=CINEMATIC_188, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_CROUCH_SHOOT_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
 	jne [HERO_ACTION_POS_MASK], 0x84, LABEL_99AC
 	setup channel=0x17, address=PRISON_HERO_GUN_CHARGE_ENTRY

@@ -1296,7 +1296,7 @@ ENTRY_POINT_OF_CAVES:
 	call INIT_AI_VARS_AT_280_10
 	call LABEL_43A5
 	call LABEL_1456
-	setup channel=0x14, address=LABEL_39E3
+	setup channel=0x14, address=HERO_DIRECTION_LEFT_IDLE_ENTRY
 	setup channel=0x15, address=LABEL_3A26
 	setup channel=0x14, address=LABEL_EA2E
 	setup channel=0x15, address=KILL_CHANNEL_LANDING
@@ -2804,10 +2804,10 @@ LABEL_1011:
 	break
 	video offset=CINEMATIC_679, x=160, y=100, zoom=0xfa
 
-LABEL_1098:
+CAVES_BURST_CHUNKS_FINAL_HOLD_LOOP:
 	break
 	video offset=CINEMATIC_677, x=120, y=100, zoom=0xff
-	jmp LABEL_1098
+	jmp CAVES_BURST_CHUNKS_FINAL_HOLD_LOOP
 LABEL_10A2:
 	db 0x11
 
@@ -4408,7 +4408,7 @@ LABEL_21C3:
 LABEL_21C7:
 	db 0x11
 
-LABEL_21C8:
+CAVES_WATERFALL_DRIP_LOOP:
 	call SETUP_HASH_AND_DERIVE_BUCKETS
 	mov [0xE8], [0x3D]
 	add [0xE8], 0x008E
@@ -4435,7 +4435,7 @@ LABEL_21C8:
 LABEL_220F:
 	break
 	djnz [0xE8], LABEL_220F
-	jmp LABEL_21C8
+	jmp CAVES_WATERFALL_DRIP_LOOP
 	killChannel
 	mov [0xE6], 0x0000
 	mov [0xE7], 0x0000
@@ -5010,7 +5010,7 @@ LABEL_27F5:
 	break
 	add [HERO_Y], 0x000D
 	video offset=CINEMATIC_169, x=[HERO_X], y=[HERO_Y]
-	jmp LABEL_2830
+	jmp CAVES_HERO_FALL_LANDING_AND_SCENE_RESET
 
 LABEL_2817:
 	video offset=CINEMATIC_167, x=[HERO_X], y=[HERO_Y]
@@ -5021,7 +5021,7 @@ LABEL_2817:
 	add [HERO_Y], 0x000D
 	video offset=CINEMATIC_167, x=[HERO_X], y=[HERO_Y]
 
-LABEL_2830:
+CAVES_HERO_FALL_LANDING_AND_SCENE_RESET:
 	break
 	sub [HERO_Y], 0x0018
 	video offset=CINEMATIC_472, x=[HERO_X], y=[HERO_Y]
@@ -5043,11 +5043,11 @@ LABEL_2830:
 
 LABEL_2874:
 	break
-	jmp LABEL_3D7B
+	jmp HERO_DIRECTION_DOWN_IDLE_LOOP
 LABEL_2878:
 	db 0x11
 
-LABEL_2879:
+CAVES_HERO_LANDING_SPLASH:
 	video offset=CINEMATIC_460, x=[HERO_X], y=[0x1a]
 	break
 	video offset=CINEMATIC_461, x=[HERO_X], y=[0x1a]
@@ -5221,7 +5221,7 @@ LABEL_2A2C:
 LABEL_2A2D:
 	je [0x09], 0x01, LABEL_3222
 	je [0x09], 0x02, LABEL_31B8
-	je [0x09], 0x00, LABEL_31A8
+	je [0x09], 0x00, DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	killChannel
 
 CAVES_TRAP_SPOT_WATCH_SLOT_1_LOOP:
@@ -5750,7 +5750,7 @@ RESET_VAR09_AND_INCR_VAR08_BY_2:
 
 
 DISPATCH_VAR09_OR_KILL_CHAN:
-	je [0x09], 0x01, LABEL_30B6
+	je [0x09], 0x01, DRAW_CAVES_FIGURE_DISINTEGRATION
 	je [0x09], 0x02, LABEL_3085
 	killChannel
 
@@ -5876,7 +5876,7 @@ LABEL_30AC:
 LABEL_30B5:
 	db 0x11
 
-LABEL_30B6:
+DRAW_CAVES_FIGURE_DISINTEGRATION:
 	video offset=CINEMATIC_672, x=[0x07], y=[0x08]
 	song id=0x0BDD, delay=0x0000, pos=0x00
 	or [0x04], 0x4000
@@ -5973,11 +5973,11 @@ LABEL_3180:
 LABEL_31A7:
 	db 0x11
 
-LABEL_31A8:
+DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0:
 	jne [0x09], 0x00, LABEL_2A2D
 	video offset=CINEMATIC_734, x=[0x07], y=[0x08]
 	break
-	jmp LABEL_31A8
+	jmp DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 LABEL_31B7:
 	db 0x11
 
@@ -6056,7 +6056,7 @@ LABEL_328C:
 LABEL_32AA:
 	db 0x11
 
-LABEL_32AB:
+CAVES_FALLING_STREAK_LOOP:
 	video offset=CINEMATIC_CAVES_WATERFALL_BG, x=56, y=110
 	video offset=CINEMATIC_301, x=58, y=115
 	break
@@ -6066,11 +6066,11 @@ LABEL_32AB:
 	video offset=CINEMATIC_302, x=56, y=110
 	video offset=CINEMATIC_302, x=59, y=114
 	break
-	jmp LABEL_32AB
+	jmp CAVES_FALLING_STREAK_LOOP
 LABEL_32C9:
 	db 0x11
 
-LABEL_32CA:
+CAVES_SPRAY_LINE_LOOP:
 	video offset=CINEMATIC_306, x=130, y=100
 	video offset=CINEMATIC_307, x=230, y=100
 	break
@@ -6080,7 +6080,7 @@ LABEL_32CA:
 	video offset=CINEMATIC_307, x=130, y=100
 	video offset=CINEMATIC_306, x=230, y=100
 	break
-	jmp LABEL_32CA
+	jmp CAVES_SPRAY_LINE_LOOP
 LABEL_32E8:
 	db 0x11
 
@@ -6153,7 +6153,7 @@ LABEL_3389:
 	djnz [0xEF], LABEL_3389
 	jmp LABEL_3335
 
-LABEL_3391:
+CAVES_DROPLET_LOOP:
 	mov [0xEC], 0x0039
 	mov [0xED], 0x0014
 	call SETUP_HASH_AND_DERIVE_BUCKETS
@@ -6174,7 +6174,7 @@ LABEL_3391:
 LABEL_33C6:
 	break
 	djnz [0xEC], LABEL_33C6
-	jmp LABEL_3391
+	jmp CAVES_DROPLET_LOOP
 LABEL_33CE:
 	db 0x11
 
@@ -6801,7 +6801,7 @@ LABEL_39BE:
 	djnz [0x6B], LABEL_39BE
 	killChannel
 
-LABEL_39E3:
+HERO_DIRECTION_LEFT_IDLE_ENTRY:
 	mov [0x63], 0x0001
 	video offset=CINEMATIC_810, x=[HERO_X], y=[HERO_Y]
 	break
@@ -6823,7 +6823,7 @@ HERO_DIRECTION_LEFT_IDLE_LOOP:
 	break
 	video offset=CINEMATIC_811, x=[HERO_X], y=[HERO_Y]
 	break
-	jmp LABEL_39E3
+	jmp HERO_DIRECTION_LEFT_IDLE_ENTRY
 
 LABEL_3A26:
 	video offset=CINEMATIC_870, x=[HERO_X], y=[HERO_Y]
@@ -6858,7 +6858,7 @@ LABEL_3A6C:
 LABEL_3A75:
 	db 0x11
 
-LABEL_3A76:
+HERO_DIRECTION_DOWN_TO_LEFT_TURN:
 	mov [0x63], 0x0064
 	video offset=CINEMATIC_493, x=[HERO_X], y=[HERO_Y]
 	mov [0x19], 0x0000
@@ -6872,59 +6872,59 @@ LABEL_3A76:
 	mov [0x63], 0x0001
 	setup channel=0x16, address=LABEL_3A26
 	break
-	jmp LABEL_39E3
+	jmp HERO_DIRECTION_LEFT_IDLE_ENTRY
 
 START_HERO_DIRECTION_LEFT_TO_DOWN_TURN:
-	setup channel=0x15, address=LABEL_3B29
+	setup channel=0x15, address=HERO_DIRECTION_LEFT_TO_DOWN_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
 START_HERO_DIRECTION_LEFT_TO_UP_TURN:
-	setup channel=0x15, address=LABEL_3B93
+	setup channel=0x15, address=HERO_DIRECTION_LEFT_TO_UP_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
 START_HERO_DIRECTION_RIGHT_TO_DOWN_TURN:
-	setup channel=0x15, address=LABEL_3C6B
+	setup channel=0x15, address=HERO_DIRECTION_RIGHT_TO_DOWN_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
 START_HERO_DIRECTION_RIGHT_TO_UP_TURN:
-	setup channel=0x15, address=LABEL_3D42
+	setup channel=0x15, address=HERO_DIRECTION_RIGHT_TO_UP_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
 START_HERO_DIRECTION_DOWN_TO_RIGHT_TURN:
-	setup channel=0x15, address=LABEL_3BCD
+	setup channel=0x15, address=HERO_DIRECTION_DOWN_TO_RIGHT_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
 START_HERO_DIRECTION_UP_TO_RIGHT_TURN:
-	setup channel=0x15, address=LABEL_3D11
+	setup channel=0x15, address=HERO_DIRECTION_UP_TO_RIGHT_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
 START_HERO_DIRECTION_DOWN_TO_LEFT_TURN:
-	setup channel=0x15, address=LABEL_3A76
+	setup channel=0x15, address=HERO_DIRECTION_DOWN_TO_LEFT_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
 
 
 START_HERO_DIRECTION_UP_TO_LEFT_TURN:
-	setup channel=0x15, address=LABEL_3B62
+	setup channel=0x15, address=HERO_DIRECTION_UP_TO_LEFT_TURN
 	mov [0x63], 0x0064
 	setup channel=0x16, address=KILL_CHANNEL_LANDING
 	ret
@@ -6944,7 +6944,7 @@ START_HERO_DIRECTION_RIGHT_TO_LEFT_TURN:
 	ret
 
 
-LABEL_3B29:
+HERO_DIRECTION_LEFT_TO_DOWN_TURN:
 	mov [0x63], 0x0068
 	video offset=CINEMATIC_491, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0014
@@ -6960,9 +6960,9 @@ LABEL_3B29:
 	mov [0x63], 0x0004
 	setup channel=0x16, address=LABEL_3E21
 	break
-	jmp LABEL_3D7B
+	jmp HERO_DIRECTION_DOWN_IDLE_LOOP
 
-LABEL_3B62:
+HERO_DIRECTION_UP_TO_LEFT_TURN:
 	mov [0x63], 0x0064
 	video offset=CINEMATIC_515, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x000A
@@ -6976,9 +6976,9 @@ LABEL_3B62:
 	mov [0x63], 0x0001
 	setup channel=0x16, address=LABEL_3A26
 	break
-	jmp LABEL_39E3
+	jmp HERO_DIRECTION_LEFT_IDLE_ENTRY
 
-LABEL_3B93:
+HERO_DIRECTION_LEFT_TO_UP_TURN:
 	mov [0x63], 0x0067
 	video offset=CINEMATIC_513, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0014
@@ -6994,11 +6994,11 @@ LABEL_3B93:
 	mov [0x63], 0x0003
 	setup channel=0x16, address=LABEL_3DB6
 	break
-	jmp LABEL_3E71
+	jmp HERO_DIRECTION_UP_IDLE_LOOP
 LABEL_3BCC:
 	db 0x11
 
-LABEL_3BCD:
+HERO_DIRECTION_DOWN_TO_RIGHT_TURN:
 	mov [0x63], 0x0064
 	video offset=CINEMATIC_475, x=[HERO_X], y=[HERO_Y]
 	mov [0x19], 0x0000
@@ -7012,7 +7012,7 @@ LABEL_3BCD:
 	mov [0x63], 0x0002
 	setup channel=0x16, address=LABEL_3EEC
 	break
-	jmp LABEL_3EA9
+	jmp HERO_DIRECTION_RIGHT_IDLE_ENTRY
 
 HERO_DIRECTION_LEFT_TO_RIGHT_TURN:
 	mov [0x63], 0x0064
@@ -7046,9 +7046,9 @@ HERO_DIRECTION_LEFT_TO_RIGHT_TURN:
 	mov [0x63], 0x0002
 	setup channel=0x16, address=LABEL_3EEC
 	break
-	jmp LABEL_3EA9
+	jmp HERO_DIRECTION_RIGHT_IDLE_ENTRY
 
-LABEL_3C6B:
+HERO_DIRECTION_RIGHT_TO_DOWN_TURN:
 	mov [0x63], 0x0068
 	video offset=CINEMATIC_473, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0019
@@ -7064,7 +7064,7 @@ LABEL_3C6B:
 	mov [0x63], 0x0004
 	setup channel=0x16, address=LABEL_3E21
 	break
-	jmp LABEL_3D7B
+	jmp HERO_DIRECTION_DOWN_IDLE_LOOP
 
 HERO_DIRECTION_RIGHT_TO_LEFT_TURN:
 	mov [0x63], 0x0064
@@ -7098,9 +7098,9 @@ HERO_DIRECTION_RIGHT_TO_LEFT_TURN:
 	mov [0x63], 0x0001
 	setup channel=0x16, address=LABEL_3A26
 	break
-	jmp LABEL_39E3
+	jmp HERO_DIRECTION_LEFT_IDLE_ENTRY
 
-LABEL_3D11:
+HERO_DIRECTION_UP_TO_RIGHT_TURN:
 	mov [0x63], 0x0064
 	video offset=CINEMATIC_496, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x000A
@@ -7114,9 +7114,9 @@ LABEL_3D11:
 	mov [0x63], 0x0002
 	setup channel=0x16, address=LABEL_3EEC
 	break
-	jmp LABEL_3EA9
+	jmp HERO_DIRECTION_RIGHT_IDLE_ENTRY
 
-LABEL_3D42:
+HERO_DIRECTION_RIGHT_TO_UP_TURN:
 	mov [0x63], 0x0067
 	video offset=CINEMATIC_494, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0014
@@ -7132,9 +7132,9 @@ LABEL_3D42:
 	mov [0x63], 0x0003
 	setup channel=0x16, address=LABEL_3DB6
 	break
-	jmp LABEL_3E71
+	jmp HERO_DIRECTION_UP_IDLE_LOOP
 
-LABEL_3D7B:
+HERO_DIRECTION_DOWN_IDLE_LOOP:
 	mov [0x63], 0x0004
 	mov [0x19], 0x001E
 	video offset=CINEMATIC_472, x=[HERO_X], y=[HERO_Y]
@@ -7153,7 +7153,7 @@ LABEL_3D7B:
 	break
 	video offset=CINEMATIC_476, x=[HERO_X], y=[HERO_Y]
 	break
-	jmp LABEL_3D7B
+	jmp HERO_DIRECTION_DOWN_IDLE_LOOP
 
 LABEL_3DB6:
 	video offset=CINEMATIC_502, x=[HERO_X], y=[HERO_Y]
@@ -7226,7 +7226,7 @@ LABEL_3E4A:
 LABEL_3E70:
 	db 0x11
 
-LABEL_3E71:
+HERO_DIRECTION_UP_IDLE_LOOP:
 	mov [0x63], 0x0003
 	video offset=CINEMATIC_497, x=[HERO_X], y=[HERO_Y]
 	break
@@ -7244,11 +7244,11 @@ LABEL_3E71:
 	break
 	video offset=CINEMATIC_498, x=[HERO_X], y=[HERO_Y]
 	break
-	jmp LABEL_3E71
+	jmp HERO_DIRECTION_UP_IDLE_LOOP
 LABEL_3EA8:
 	db 0x11
 
-LABEL_3EA9:
+HERO_DIRECTION_RIGHT_IDLE_ENTRY:
 	mov [0x63], 0x0002
 	video offset=CINEMATIC_531, x=[HERO_X], y=[HERO_Y]
 	break
@@ -7270,7 +7270,7 @@ HERO_DIRECTION_RIGHT_IDLE_LOOP:
 	break
 	video offset=CINEMATIC_532, x=[HERO_X], y=[HERO_Y]
 	break
-	jmp LABEL_3EA9
+	jmp HERO_DIRECTION_RIGHT_IDLE_ENTRY
 
 LABEL_3EEC:
 	video offset=CINEMATIC_536, x=[HERO_X], y=[HERO_Y]
@@ -17490,7 +17490,7 @@ CAVES_SCREEN_45_ENTRY:
 	and [0xF8], 0x0380
 	add [0x49], [0xF8]
 	setPalette 0x02
-	call LABEL_D2B0
+	call CAVES_SCREEN_45_BACKDROP_DRAW
 	call LABEL_4ECA
 	call DELETE_CHANS_0_8_AND_HELPER
 	setup channel=0x01, address=LABEL_34B5
@@ -17605,7 +17605,7 @@ CAVES_SCREEN_67_ENTRY:
 	mov [0x45], 0x0000
 	setPalette 0x0E
 	mov [0xBE], 0x0003
-	call LABEL_D2ED
+	call CAVES_SCREEN_67_BACKDROP_DRAW
 	call DELETE_CHANS_0_8_AND_HELPER
 	deleteChannels first=0x22, last=0x28
 	setup channel=0x37, address=SET_VARE6_TO_64_KILL_CHANNEL
@@ -17629,7 +17629,7 @@ CAVES_SCREEN_68_ENTRY:
 	mov [0x49], 0x1216
 	setPalette 0x0E
 	mov [0xBE], 0x0003
-	call LABEL_D307
+	call CAVES_SCREEN_68_BACKDROP_DRAW
 	mov [0xF8], [0xB1]
 	and [0xF8], 0x0010
 	play id=0x006A, freq=0x00, vol=0x00, channel=0x02
@@ -17668,7 +17668,7 @@ CAVES_SCREEN_6A_ENTRY:
 	setup channel=0x04, address=LABEL_330F
 	setup channel=0x05, address=LABEL_328C
 	setup channel=0x06, address=LABEL_3335
-	setup channel=0x07, address=LABEL_32AB
+	setup channel=0x07, address=CAVES_FALLING_STREAK_LOOP
 
 LABEL_A526:
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
@@ -17714,7 +17714,7 @@ LABEL_A59A:
 
 LABEL_A59D:
 	setup channel=0x04, address=LABEL_D0A2
-	setup channel=0x3B, address=LABEL_D256
+	setup channel=0x3B, address=CAVES_DRAW_CRAWLING_BG_AND_PICK_BY_HERO_X
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_A5A8:
 	db 0x11
@@ -17799,7 +17799,7 @@ CAVES_SCREEN_87_ENTRY:
 	mov [0x41], 0x0078
 	mov [0x44], 0x0043
 	mov [0x45], 0x0000
-	call LABEL_D42D
+	call CAVES_SCREEN_87_BACKDROP_DRAW
 	setPalette 0x0E
 	call LABEL_DA7E
 	deleteChannels first=0x00, last=0x06
@@ -17873,7 +17873,7 @@ CAVES_SCREEN_A8_ENTRY:
 	mov [0x41], 0x0078
 	mov [0x44], 0x0061
 	mov [0x45], 0x0000
-	call LABEL_D4BD
+	call CAVES_SCREEN_A8_BACKDROP_DRAW
 	call SETUP_KILL_CHAN_3B_AT_LANDING
 	deleteChannels first=0x00, last=0x06
 	setup channel=0x39, address=LABEL_2928
@@ -17926,7 +17926,7 @@ CAVES_SCREEN_C8_ENTRY:
 	mov [0x46], 0xF060
 
 LABEL_A82C:
-	call LABEL_D4D1
+	call CAVES_SCREEN_C8_BACKDROP_DRAW
 	call DELETE_GAME_AND_FX_CHANNELS
 	mov [0xF8], [0xB1]
 	and [0xF8], 0x00C0
@@ -17977,7 +17977,7 @@ CAVES_SCREEN_C9_ENTRY:
 	mov [0x44], 0x0069
 	mov [0x45], 0x0000
 	setPalette 0x0F
-	call LABEL_D4E5
+	call CAVES_SCREEN_C9_BACKDROP_DRAW
 	call DELETE_GAME_AND_FX_CHANNELS
 	mov [0xF8], [0xB1]
 	and [0xF8], 0x00C0
@@ -18069,7 +18069,7 @@ CAVES_SCREEN_CB_ENTRY:
 	mov [0x44], 0x0069
 	mov [0x45], 0x0000
 	setPalette 0x0F
-	call LABEL_D515
+	call CAVES_SCREEN_CB_BACKDROP_DRAW
 	call DELETE_GAME_AND_FX_CHANNELS
 	setup channel=0x3B, address=LABEL_CBB1
 	mov [0x48], 0x0028
@@ -18080,15 +18080,15 @@ CAVES_SCREEN_CB_ENTRY:
 	mov [0x68], 0x0064
 	mov [0x69], 0x0077
 	setup channel=0x22, address=LABEL_2A1B
-	setup channel=0x23, address=LABEL_31A8
+	setup channel=0x23, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6A], 0x00C8
 	mov [0x6B], 0x0077
 	setup channel=0x24, address=CAVES_TRAP_SPOT_WATCH_SLOT_1_LOOP
-	setup channel=0x25, address=LABEL_31A8
+	setup channel=0x25, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6C], 0x00FA
 	mov [0x6D], 0x0077
 	setup channel=0x26, address=CAVES_TRAP_SPOT_WATCH_SLOT_2_LOOP
-	setup channel=0x27, address=LABEL_31A8
+	setup channel=0x27, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6E], [0x48]
 	add [0x6E], 0x000E
 	mov [0x6F], 0x0032
@@ -18125,15 +18125,15 @@ CAVES_SCREEN_CC_ENTRY:
 	mov [0x68], 0x0078
 	mov [0x69], 0x0077
 	setup channel=0x22, address=LABEL_2A1B
-	setup channel=0x23, address=LABEL_31A8
+	setup channel=0x23, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6A], 0x00A0
 	mov [0x6B], 0x0077
 	setup channel=0x24, address=CAVES_TRAP_SPOT_WATCH_SLOT_1_LOOP
-	setup channel=0x25, address=LABEL_31A8
+	setup channel=0x25, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6C], 0x00B9
 	mov [0x6D], 0x0077
 	setup channel=0x26, address=CAVES_TRAP_SPOT_WATCH_SLOT_2_LOOP
-	setup channel=0x27, address=LABEL_31A8
+	setup channel=0x27, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	je [0xB0], 0x03, LABEL_AB64
 	mov [HERO_Y], 0x0082
 	mov [0xF8], [0xBD]
@@ -18186,7 +18186,7 @@ CAVES_SCREEN_AD_ENTRY:
 	mov [0x44], 0x0023
 	mov [0x45], 0x0000
 	setPalette 0x0E
-	call LABEL_D58E
+	call CAVES_SCREEN_AD_BACKDROP_DRAW
 	call DELETE_GAME_AND_FX_CHANNELS
 	mov [0xE6], 0x0058
 	setup channel=0x01, address=LABEL_3180
@@ -18211,7 +18211,7 @@ CAVES_SCREEN_CD_ENTRY:
 	mov [0x68], 0x0078
 	mov [0x69], 0x0077
 	setup channel=0x22, address=LABEL_2A1B
-	setup channel=0x23, address=LABEL_31A8
+	setup channel=0x23, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	setup channel=0x3B, address=LABEL_C8ED
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_ABE4:
@@ -18227,7 +18227,7 @@ CAVES_SCREEN_ED_ENTRY:
 	mov [0x44], 0x0042
 	mov [0x45], 0x0000
 	setPalette 0x0E
-	call LABEL_D5C6
+	call CAVES_SCREEN_ED_BACKDROP_DRAW
 	call DELETE_GAME_AND_FX_CHANNELS
 	mov [0xF8], [0xB1]
 	and [0xF8], 0x0004
@@ -18249,11 +18249,11 @@ LABEL_AC3B:
 	mov [0x68], 0x00EA
 	mov [0x69], 0x004F
 	setup channel=0x22, address=LABEL_2A1B
-	setup channel=0x23, address=LABEL_31A8
+	setup channel=0x23, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6A], 0x0108
 	mov [0x6B], 0x004B
 	setup channel=0x24, address=CAVES_TRAP_SPOT_WATCH_SLOT_1_LOOP
-	setup channel=0x25, address=LABEL_31A8
+	setup channel=0x25, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_AC62:
 	db 0x11
@@ -18280,15 +18280,15 @@ LABEL_ACA1:
 	mov [0x68], 0x003C
 	mov [0x69], 0x005F
 	setup channel=0x22, address=LABEL_2A1B
-	setup channel=0x23, address=LABEL_31A8
+	setup channel=0x23, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6A], 0x003C
 	mov [0x6B], 0x005F
 	setup channel=0x24, address=CAVES_TRAP_SPOT_WATCH_SLOT_1_LOOP
-	setup channel=0x25, address=LABEL_31A8
+	setup channel=0x25, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	mov [0x6C], 0x003C
 	mov [0x6D], 0x005F
 	setup channel=0x26, address=CAVES_TRAP_SPOT_WATCH_SLOT_2_LOOP
-	setup channel=0x27, address=LABEL_31A8
+	setup channel=0x27, address=DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 
 CAVES_SCREEN_CE_ENTRY:
@@ -18340,7 +18340,7 @@ CAVES_SCREEN_69_ENTRY:
 	mov [0x41], 0x0096
 	mov [0x44], 0x006F
 	mov [0x45], 0x0000
-	call LABEL_D31A
+	call CAVES_SCREEN_69_BACKDROP_DRAW
 	call DELETE_GAME_AND_FX_CHANNELS
 	setup channel=0x3B, address=LABEL_D197
 	call LABEL_AE09
@@ -18357,7 +18357,7 @@ CAVES_SCREEN_89_ENTRY:
 	mov [0x41], 0x0078
 	mov [0x44], 0x0061
 	mov [0x45], 0x0000
-	call LABEL_D45C
+	call CAVES_SCREEN_89_BACKDROP_DRAW
 	call LABEL_DA7E
 	deleteChannels first=0x00, last=0x06
 	mov [0xF8], [0xB0]
@@ -18386,7 +18386,7 @@ CAVES_SCREEN_49_ENTRY:
 	call DELETE_CHANS_0_8_AND_HELPER
 	setup channel=0x3E, address=KILL_CHANNEL_LANDING
 	call LABEL_1456
-	setup channel=0x3B, address=LABEL_D180
+	setup channel=0x3B, address=CAVES_BUDDY_CRAWLING_BG_HOLD_LOOP
 	call LABEL_AE09
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_AE08:
@@ -18412,7 +18412,7 @@ CAVES_SCREEN_4A_ENTRY:
 	mov [0xBE], 0x0001
 	setPalette 0x06
 	call LABEL_1439
-	call LABEL_D64A
+	call CAVES_BUDDY_CRAWLING_SCENE_SETUP
 	setup channel=0x21, address=KILL_CHANNEL_LANDING
 	call DELETE_CHANS_0_8_AND_HELPER
 	setup channel=0x3C, address=FRAME_PRESENT_RESTORE_PAGE_3_LOOP
@@ -18423,10 +18423,10 @@ CAVES_SCREEN_4A_ENTRY:
 	setup channel=0x01, address=INIT_VARS_E6_E7
 	setup channel=0x02, address=INLINE_SET_VARE8_TO_8
 	setup channel=0x03, address=INIT_VARS_EA_EB
-	setup channel=0x04, address=LABEL_3391
-	setup channel=0x05, address=LABEL_32CA
+	setup channel=0x04, address=CAVES_DROPLET_LOOP
+	setup channel=0x05, address=CAVES_SPRAY_LINE_LOOP
 	setup channel=0x06, address=LABEL_32E9
-	setup channel=0x07, address=LABEL_32AB
+	setup channel=0x07, address=CAVES_FALLING_STREAK_LOOP
 
 LABEL_AE84:
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
@@ -18459,7 +18459,7 @@ LABEL_AEC1:
 	setup channel=0x21, address=LABEL_2287
 
 LABEL_AEDA:
-	setup channel=0x04, address=LABEL_21C8
+	setup channel=0x04, address=CAVES_WATERFALL_DRIP_LOOP
 	setup channel=0x01, address=LABEL_21B1
 	setup channel=0x3B, address=CAVES_WATERFALL_BACKDROP_HOLD_LOOP
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
@@ -18553,7 +18553,7 @@ CAVES_SCREEN_4E_ENTRY:
 	mov [0xAC], 0x0114
 	mov [0xAD], 0x03E8
 	mov [0xAE], [SCREEN_NUM]
-	call LABEL_D78C
+	call CAVES_SCREEN_4E_BACKDROP_DRAW
 	call LABEL_4ECA
 	call DELETE_CHANS_0_8_AND_HELPER
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
@@ -18578,7 +18578,7 @@ CAVES_SCREEN_4F_ENTRY:
 	mov [0x51], [0x44]
 	mov [0x52], [0x40]
 	setPalette 0x05
-	call LABEL_D7C2
+	call CAVES_SCREEN_4F_BACKDROP_DRAW
 	call DELETE_CHANS_0_8_AND_HELPER
 	setup channel=0x01, address=LABEL_34B5
 	setup channel=0x02, address=INIT_VAR08_FROM_VARE9_VAR09_TO_4
@@ -18668,7 +18668,7 @@ CAVES_SCREEN_6F_ENTRY:
 	mov [0x44], 0x007D
 	mov [0x45], 0x0000
 	setPalette 0x0C
-	call LABEL_D83B
+	call CAVES_SCREEN_6F_BACKDROP_DRAW
 	call DELETE_CHANS_0_8_AND_HELPER
 	jne [0xB0], 0x03, LABEL_B194
 	mov [0xE6], 0x0066
@@ -18790,7 +18790,7 @@ CAVES_SCREEN_8F_ENTRY:
 	mov [0x44], 0x0104
 	mov [0x45], 0x0104
 	setPalette 0x0E
-	call LABEL_D898
+	call CAVES_SCREEN_8F_BACKDROP_DRAW
 	call DELETE_GAME_AND_FX_CHANNELS
 	jmp CAVES_REPAINT_BACKDROP_IF_SCREEN_CHANGED
 LABEL_B2ED:
@@ -18947,7 +18947,7 @@ CAVES_SCREEN_95_ENTRY:
 	mov [0x44], 0x00A5
 	mov [0x45], 0x0000
 	setPalette 0x1A
-	call LABEL_D958
+	call CAVES_SCREEN_95_BACKDROP_DRAW
 	call DELETE_CHANS_0_8_AND_HELPER
 	call LABEL_46A7
 	call LABEL_46CF
@@ -21389,7 +21389,7 @@ LABEL_CB8C:
 	deleteChannels first=0x14, last=0x16
 	mov [0x1A], 0x0086
 	setup channel=0x15, address=LABEL_27CE
-	setup channel=0x38, address=LABEL_2879
+	setup channel=0x38, address=CAVES_HERO_LANDING_SPLASH
 	killChannel
 
 LABEL_CBB1:
@@ -21412,7 +21412,7 @@ LABEL_CBCD:
 	deleteChannels first=0x14, last=0x16
 	mov [0x1A], 0x0056
 	setup channel=0x15, address=LABEL_27CE
-	setup channel=0x38, address=LABEL_2879
+	setup channel=0x38, address=CAVES_HERO_LANDING_SPLASH
 	killChannel
 
 INIT_VARS_EB_47:
@@ -22024,7 +22024,7 @@ LABEL_D17B:
 LABEL_D17F:
 	db 0x11
 
-LABEL_D180:
+CAVES_BUDDY_CRAWLING_BG_HOLD_LOOP:
 	video offset=CINEMATIC_296, x=99, y=160
 	video offset=CINEMATIC_297, x=193, y=168
 	jl [HERO_Y], 0x8F, LABEL_D192
@@ -22032,7 +22032,7 @@ LABEL_D180:
 
 LABEL_D192:
 	break
-	jmp LABEL_D180
+	jmp CAVES_BUDDY_CRAWLING_BG_HOLD_LOOP
 LABEL_D196:
 	db 0x11
 
@@ -22121,7 +22121,7 @@ LABEL_D24D:
 LABEL_D255:
 	db 0x11
 
-LABEL_D256:
+CAVES_DRAW_CRAWLING_BG_AND_PICK_BY_HERO_X:
 	video offset=CINEMATIC_296, x=46, y=139
 	mov [0x42], 0xF060
 	jl [HERO_X], 0x35, DRAW_CAVES_FIRST_ROOM_BG
@@ -22134,7 +22134,7 @@ LABEL_D256:
 ; setPage3 backdrop
 DRAW_CAVES_FIRST_ROOM_BG:
 	break
-	jmp LABEL_D256
+	jmp CAVES_DRAW_CRAWLING_BG_AND_PICK_BY_HERO_X
 LABEL_D26C:
 	db 0x11
 
@@ -22163,7 +22163,7 @@ DRAW_GANTRY_PLATFORMS_BG:
 	ret
 
 
-LABEL_D2B0:
+CAVES_SCREEN_45_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_SCREEN_45_BACKDROP_LAYER_0, x=160, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_45_BACKDROP_LAYER_1, x=160, y=100
@@ -22199,7 +22199,7 @@ COPY_PAGE0_TO_3_LOAD_RES45:
 	ret
 
 
-LABEL_D2ED:
+CAVES_SCREEN_67_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_SCREEN_67_BACKDROP_LAYER_0, x=160, y=100
 	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=160, y=100
@@ -22211,7 +22211,7 @@ LABEL_D2ED:
 	ret
 
 
-LABEL_D307:
+CAVES_SCREEN_68_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_SCREEN_68_BACKDROP_LAYER_0, x=160, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_68_BACKDROP_LAYER_1, x=160, y=100
@@ -22220,7 +22220,7 @@ LABEL_D307:
 	ret
 
 
-LABEL_D31A:
+CAVES_SCREEN_69_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_SCREEN_69_BACKDROP_LAYER_0, x=160, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_69_BACKDROP_LAYER_1, x=160, y=100
@@ -22303,7 +22303,7 @@ CAVES_SCREEN_6E_BACKDROP_DRAW:
 	ret
 
 
-LABEL_D42D:
+CAVES_SCREEN_87_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_0, x=160, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_1, x=160, y=100
@@ -22322,7 +22322,7 @@ CAVES_SCREEN_88_BACKDROP_DRAW:
 	ret
 
 
-LABEL_D45C:
+CAVES_SCREEN_89_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_SCREEN_89_BACKDROP_LAYER_0, x=160, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_89_BACKDROP_LAYER_1, x=160, y=100
@@ -22361,7 +22361,7 @@ DRAW_CIN_639:
 	ret
 
 
-LABEL_D4BD:
+CAVES_SCREEN_A8_BACKDROP_DRAW:
 	fill page=0x00, color=0x09
 	video offset=CINEMATIC_CAVES_SCREEN_A8_BACKDROP_LAYER_0, x=155, y=100
 	video offset=CINEMATIC_646, x=155, y=100
@@ -22374,7 +22374,7 @@ LABEL_D4C9:
 	ret
 
 
-LABEL_D4D1:
+CAVES_SCREEN_C8_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_649, x=160, y=100
 	video offset=CINEMATIC_650, x=160, y=100
@@ -22383,7 +22383,7 @@ LABEL_D4D1:
 	ret
 
 
-LABEL_D4E5:
+CAVES_SCREEN_C9_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_SCREEN_C9_BACKDROP_LAYER_0, x=160, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_C9_BACKDROP_LAYER_1, x=160, y=100
@@ -22402,7 +22402,7 @@ CAVES_SCREEN_CA_BACKDROP_DRAW:
 	ret
 
 
-LABEL_D515:
+CAVES_SCREEN_CB_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_730, x=160, y=100
 	video offset=CINEMATIC_731, x=160, y=100
@@ -22446,7 +22446,7 @@ LABEL_D57E:
 	ret
 
 
-LABEL_D58E:
+CAVES_SCREEN_AD_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_SCREEN_AD_BACKDROP_LAYER_0, x=160, y=100
 	video offset=CINEMATIC_607, x=327, y=146
@@ -22467,7 +22467,7 @@ DRAW_STALACTITE_CAVERN_BG:
 	ret
 
 
-LABEL_D5C6:
+CAVES_SCREEN_ED_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_750, x=160, y=100
 	video offset=CINEMATIC_751, x=160, y=100
@@ -22515,7 +22515,7 @@ DRAW_WATERFALL_LEFT_STAIRS_BG:
 LABEL_D649:
 	db 0x11
 
-LABEL_D64A:
+CAVES_BUDDY_CRAWLING_SCENE_SETUP:
 	fill page=0x00, color=0x00
 	fill page=0x03, color=0x00
 	load id=0x0043
@@ -22619,7 +22619,7 @@ LABEL_D6FA:
 	ret
 
 
-LABEL_D78C:
+CAVES_SCREEN_4E_BACKDROP_DRAW:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_CAVES_SCREEN_4E_BACKDROP_LAYER_0, x=160, y=100
 	video offset=CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG, x=47, y=153
@@ -22636,7 +22636,7 @@ LABEL_D78C:
 	ret
 
 
-LABEL_D7C2:
+CAVES_SCREEN_4F_BACKDROP_DRAW:
 	fill page=0x00, color=0x02
 	video offset=CINEMATIC_CAVES_SCREEN_4F_BACKDROP_LAYER_0, x=160, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_4F_BACKDROP_LAYER_1, x=160, y=100
@@ -22671,7 +22671,7 @@ LABEL_D80E:
 	ret
 
 
-LABEL_D83B:
+CAVES_SCREEN_6F_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=160, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_1, x=160, y=100
@@ -22702,7 +22702,7 @@ LABEL_D873:
 	ret
 
 
-LABEL_D898:
+CAVES_SCREEN_8F_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_CAVES_SCREEN_8F_BACKDROP_LAYER_0, x=160, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_8F_BACKDROP_LAYER_1, x=160, y=100
@@ -22777,7 +22777,7 @@ LABEL_D94C:
 	ret
 
 
-LABEL_D958:
+CAVES_SCREEN_95_BACKDROP_DRAW:
 	fill page=0x00, color=0x02
 	video offset=CINEMATIC_618, x=160, y=100
 	video offset=CINEMATIC_618, x=390, y=100

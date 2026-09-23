@@ -162,19 +162,19 @@ LABEL_0524:
 DELAY_LOOP_VARE6_AT_053B:
 	break
 	djnz [0xE6], DELAY_LOOP_VARE6_AT_053B
-	video offset=CINEMATIC_569, x=159, y=50
+	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_0, x=159, y=50
 	break
-	video offset=CINEMATIC_570, x=159, y=55
+	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_1, x=159, y=55
 	break
-	video offset=CINEMATIC_571, x=159, y=65
+	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_2, x=159, y=65
 	break
-	video offset=CINEMATIC_570, x=159, y=85
+	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_1, x=159, y=85
 	break
-	video offset=CINEMATIC_569, x=159, y=92
+	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_0, x=159, y=92
 	break
-	video offset=CINEMATIC_570, x=159, y=92
+	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_1, x=159, y=92
 	break
-	video offset=CINEMATIC_571, x=159, y=92
+	video offset=CINEMATIC_CAVES_SCREEN_87_BACKDROP_LAYER_2, x=159, y=92
 
 LABEL_0562:
 	break
@@ -265,7 +265,7 @@ LABEL_0644:
 	video offset=CINEMATIC_627, x=2, y=185
 	video offset=CINEMATIC_627, x=2, y=194
 	break
-	video offset=CINEMATIC_445, x=3, y=184
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F7, x=3, y=184
 	video offset=CINEMATIC_628, x=3, y=185
 	video offset=CINEMATIC_627, x=2, y=193
 	break

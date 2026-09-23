@@ -51,7 +51,7 @@ GUARDED_DRAW_CIN_589_801:
 	jne [SCREEN_NUM], [0x09], SHARED_RET
 	selectVideoPage 0x00
 	video offset=CINEMATIC_589, x=[0x07], y=[0x08]
-	video offset=CINEMATIC_801, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_ANIM_RIGHT_3, x=[0x07], y=[0x08]
 	selectVideoPage 0xFF
 	add [0x07], 0x000B
 	call LABEL_3604
@@ -63,7 +63,7 @@ LABEL_35EF:
 	jne [SCREEN_NUM], [0x09], SHARED_RET
 	selectVideoPage 0x03
 	video offset=CINEMATIC_589, x=[0x07], y=[0x08]
-	video offset=CINEMATIC_801, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_LASER_IMPACT_ANIM_RIGHT_3, x=[0x07], y=[0x08]
 	selectVideoPage 0xFF
 	ret
 

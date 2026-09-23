@@ -30,14 +30,14 @@ LABEL_40E2:
 
 LABEL_4115:
 	break
-	video offset=CINEMATIC_720, x=100, y=[0xe6], zoom=0x20
+	video offset=CINEMATIC_CAVES_SCREEN_CB_BACKDROP_LAYER_2, x=100, y=[0xe6], zoom=0x20
 	add [0xE6], 0x0006
 	add [0xE7], 0x0008
 	djnz [0xEB], LABEL_4115
 	selectVideoPage 0x00
-	video offset=CINEMATIC_720, x=100, y=[0xe6], zoom=0x20
+	video offset=CINEMATIC_CAVES_SCREEN_CB_BACKDROP_LAYER_2, x=100, y=[0xe6], zoom=0x20
 	video offset=CINEMATIC_637, x=147, y=101, zoom=0x20
-	video offset=CINEMATIC_720, x=206, y=107
+	video offset=CINEMATIC_CAVES_SCREEN_CB_BACKDROP_LAYER_2, x=206, y=107
 	video offset=CINEMATIC_637, x=153, y=114
 	video offset=CINEMATIC_637, x=194, y=86
 	selectVideoPage 0xFF

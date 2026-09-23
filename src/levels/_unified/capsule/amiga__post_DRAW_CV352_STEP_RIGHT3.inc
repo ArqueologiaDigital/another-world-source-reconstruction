@@ -282,7 +282,7 @@ LABEL_9453:
 	sub [HERO_X], 0x0001
 	call LABEL_5BF6
 	sub [HERO_X], 0x0003
-	video offset=CINEMATIC_115, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_STAND_SHOOT_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0001
 
 LABEL_946E:
@@ -292,7 +292,7 @@ LABEL_946E:
 	je [HERO_ACTION_POS_MASK], 0x00, LABEL_946E
 	break
 	add [HERO_X], 0x0002
-	video offset=CINEMATIC_115, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_STAND_SHOOT_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0002
 	break
 	video offset=CINEMATIC_117, x=[HERO_X], y=[HERO_Y]
@@ -305,7 +305,7 @@ LABEL_949D:
 LABEL_949E:
 	jne [0x0F], 0x00, LABEL_94D7
 	sub [HERO_X], 0x0002
-	video offset=CINEMATIC_116, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_STAND_SHOOT_LEFT_F0, x=[HERO_X], y=[HERO_Y]
 	mov [0x21], [HERO_X]
 	mov [0x27], [HERO_Y]
 	sub [0x21], 0x001E
@@ -313,7 +313,7 @@ LABEL_949E:
 	call LABEL_440F
 	break
 	add [HERO_X], 0x0001
-	video offset=CINEMATIC_115, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_STAND_SHOOT_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
 	jne [HERO_ACTION_POS_MASK], 0x80, LABEL_946E
 	setup channel=0x17, address=LABEL_5338

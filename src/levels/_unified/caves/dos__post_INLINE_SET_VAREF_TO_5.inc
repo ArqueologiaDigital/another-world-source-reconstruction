@@ -1,12 +1,12 @@
 ANIM_CIN_444_LOOP_VAREF:
-	video offset=CINEMATIC_444, x=103, y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F6, x=103, y=100
 	break
 	djnz [0xEF], ANIM_CIN_444_LOOP_VAREF
 	mov [0xEF], 0x0005
 
 LABEL_1962:
-	video offset=CINEMATIC_444, x=103, y=100
-	video offset=CINEMATIC_445, x=105, y=174
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F6, x=103, y=100
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F7, x=105, y=174
 	break
 	djnz [0xEF], LABEL_1962
 	jmp INLINE_SET_VAREF_TO_5
@@ -20,18 +20,18 @@ LABEL_1973:
 	mov [0x50], 0x0FA0
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x01
 	play id=0x005E, freq=0x1C, vol=0x40, channel=0x02
-	video offset=CINEMATIC_447, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F9, x=[HERO_X], y=[HERO_Y]
 	video offset=CINEMATIC_448, x=330, y=[HERO_Y]
 	break
 	sub [HERO_X], 0x000A
-	video offset=CINEMATIC_447, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F9, x=[HERO_X], y=[HERO_Y]
 	video offset=CINEMATIC_448, x=340, y=[HERO_Y]
 	break
 	sub [HERO_X], 0x000A
 	video offset=CINEMATIC_449, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x000A
-	video offset=CINEMATIC_450, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_IDLE_DOWN_0, x=[HERO_X], y=[HERO_Y]
 	setup channel=0x02, address=INIT_VARS_EE_EF
 	mov [0x0A], 0x0000
 	break

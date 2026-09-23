@@ -103,7 +103,7 @@ GUN_ZONE_TICK_LOOP_RESTART:
 LABEL_80A9:
 	db 0x11
 
-LABEL_80AA:
+PRISON_BACKDROP_TILE_REPEAT_DOWN:
 	je [0x65], 0x05, SHARED_RET
 	fill page=0x03, color=0x00
 	fill page=0x00, color=0x00
@@ -129,7 +129,7 @@ LABEL_80AA:
 	ret
 
 
-LABEL_80F5:
+PRISON_SCREEN_01_ENTRY:
 	setup channel=0x3B, address=GUN_ZONE_TICK_LOOP
 	mov [0x42], 0x00BC
 	mov [0x43], 0x0FA0

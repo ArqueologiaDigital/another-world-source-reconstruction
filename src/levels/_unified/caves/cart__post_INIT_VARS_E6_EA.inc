@@ -105,7 +105,7 @@ LABEL_CEAF:
 
 DRAW_CIN_387_IF_VAR_E6_VALID:
 	jg [0xE6], 0xFFF9, LABEL_CEBE
-	video offset=CINEMATIC_387, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_SCREEN_69_BACKDROP_LAYER_0, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
@@ -165,27 +165,27 @@ LABEL_CF2C:
 
 LABEL_CF39:
 	jne [0xE6], 0x03, LABEL_CF4C
-	video offset=CINEMATIC_377, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_SCREEN_68_BACKDROP_LAYER_2, x=[0x21], y=[0x22], zoom=[0x23]
 	video offset=CINEMATIC_374, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CF4C:
 	jne [0xE6], 0x04, LABEL_CF5F
-	video offset=CINEMATIC_376, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_SCREEN_68_BACKDROP_LAYER_1, x=[0x21], y=[0x22], zoom=[0x23]
 	video offset=CINEMATIC_374, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CF5F:
 	jg [0xE6], 0x05, DRAW_CIN_373_THEN_CIN_374
-	video offset=CINEMATIC_375, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_SCREEN_68_BACKDROP_LAYER_0, x=[0x21], y=[0x22], zoom=[0x23]
 	video offset=CINEMATIC_374, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 DRAW_CIN_373_THEN_CIN_374:
-	video offset=CINEMATIC_373, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_SCREEN_67_BACKDROP_LAYER_1, x=[0x21], y=[0x22], zoom=[0x23]
 	video offset=CINEMATIC_374, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
@@ -375,7 +375,7 @@ LABEL_D0DE:
 	killChannel
 
 HANG_DRAW_CIN_287:
-	video offset=CINEMATIC_287, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPRAY_LINE_F1, x=160, y=100
 	break
 	jmp HANG_DRAW_CIN_287
 LABEL_D13C:
@@ -451,7 +451,7 @@ LABEL_D1CA:
 	jg [HERO_X], 0x0106, LABEL_D1EA
 	mov [0x46], [HERO_X]
 	sub [0x46], 0x0032
-	video offset=CINEMATIC_447, x=225, y=83
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F9, x=225, y=83
 
 LABEL_D1EA:
 	jl [0xA1], 0x00, LABEL_D1F6
@@ -466,33 +466,33 @@ LABEL_D202:
 	jge [0xA8], 0x00, LABEL_D212
 
 LABEL_D20E:
-	video offset=CINEMATIC_446, x=163, y=63
+	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F8, x=163, y=63
 
 LABEL_D212:
 	break
 	jmp LABEL_D1CA
 
 LABEL_D216:
-	video offset=CINEMATIC_433, x=184, y=143
-	video offset=CINEMATIC_433, x=278, y=150
-	video offset=CINEMATIC_433, x=80, y=147
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=184, y=143
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=278, y=150
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=80, y=147
 	break
 	jmp LABEL_D216
 LABEL_D227:
 	db 0x11
 
 LABEL_D228:
-	video offset=CINEMATIC_433, x=79, y=119
-	video offset=CINEMATIC_433, x=279, y=117
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=79, y=119
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=279, y=117
 	break
 	jmp LABEL_D228
 LABEL_D235:
 	db 0x11
 
 LABEL_D236:
-	video offset=CINEMATIC_433, x=230, y=151
-	video offset=CINEMATIC_433, x=270, y=183
-	video offset=CINEMATIC_433, x=77, y=168
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=230, y=151
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=270, y=183
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=77, y=168
 	video offset=CINEMATIC_564, x=265, y=138
 	break
 	jmp LABEL_D236
@@ -500,7 +500,7 @@ LABEL_D24C:
 	db 0x11
 
 HANG_DRAW_CIN_433:
-	video offset=CINEMATIC_433, x=178, y=140
+	video offset=CINEMATIC_CAVES_SCREEN_6F_BACKDROP_LAYER_0, x=178, y=140
 	break
 	jmp HANG_DRAW_CIN_433
 LABEL_D255:

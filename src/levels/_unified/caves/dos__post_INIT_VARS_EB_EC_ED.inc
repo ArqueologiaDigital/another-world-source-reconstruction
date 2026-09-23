@@ -68,7 +68,7 @@ LABEL_29A3:
 LABEL_29C5:
 	break
 	je [SCREEN_NUM], 0x28, LABEL_2A0D
-	video offset=CINEMATIC_292, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_DROPLET_F3, x=[HERO_X], y=[HERO_Y]
 	je [0xDB], 0x00, LABEL_29DC
 	video offset=CINEMATIC_294, x=[HERO_X], y=[HERO_Y]
 
@@ -90,16 +90,16 @@ LABEL_29FB:
 	db 0x11
 
 LABEL_29FC:
-	video offset=CINEMATIC_293, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_DROPLET_F4, x=[HERO_X], y=[HERO_Y]
 	je [0xDB], 0x00, SHARED_RET
 	video offset=CINEMATIC_294, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 LABEL_2A0D:
-	video offset=CINEMATIC_289, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_DROPLET_F0, x=[HERO_X], y=[HERO_Y]
 	je [0xDB], 0x00, LABEL_2A1D
-	video offset=CINEMATIC_291, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_DROPLET_F2, x=[HERO_X], y=[HERO_Y]
 
 LABEL_2A1D:
 	break
@@ -119,9 +119,9 @@ LABEL_2A3C:
 	db 0x11
 
 LABEL_2A3D:
-	video offset=CINEMATIC_290, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_DROPLET_F1, x=[HERO_X], y=[HERO_Y]
 	je [0xDB], 0x00, SHARED_RET
-	video offset=CINEMATIC_291, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_DROPLET_F2, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
@@ -138,7 +138,7 @@ LABEL_2A5F:
 CAVES_DISPATCH_BY_VAR09_THEN_KILL_CHAN:
 	je [0x09], 0x01, LABEL_323E
 	je [0x09], 0x02, LABEL_31D4
-	je [0x09], 0x00, HANG_DRAW_CIN_743_VAR09_GUARD
+	je [0x09], 0x00, DRAW_CAVES_COLLAPSE_SEGMENTED_BAR_F0
 	killChannel
 
 CAVES_TRAP_SPOT_WATCH_SLOT_1_LOOP:

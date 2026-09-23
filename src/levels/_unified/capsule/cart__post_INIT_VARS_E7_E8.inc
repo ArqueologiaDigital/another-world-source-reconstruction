@@ -9,16 +9,16 @@ DELAY_LOOP_VARE8:
 	break
 	add [0xE7], 0x000F
 	play id=0x0075, freq=0x0A, vol=0x40, channel=0x02
-	video offset=CINEMATIC_612, x=[0xe7], y=[0x40]
+	video offset=CINEMATIC_CAPSULE_SCREEN_ED_BACKDROP_LAYER_0, x=[0xe7], y=[0x40]
 	add [0xE7], 0x0002
 	mov [0xE8], 0x0005
 
 LABEL_0788:
 	break
 	add [0xE7], 0x0001
-	video offset=CINEMATIC_613, x=[0xe7], y=[0x40]
+	video offset=CINEMATIC_CAPSULE_SCREEN_EE_BACKDROP_LAYER_0, x=[0xe7], y=[0x40]
 	djnz [0xE8], LABEL_0788
 	selectVideoPage 0x00
-	video offset=CINEMATIC_613, x=[0xe7], y=[0x40]
+	video offset=CINEMATIC_CAPSULE_SCREEN_EE_BACKDROP_LAYER_0, x=[0xe7], y=[0x40]
 	selectVideoPage 0xFF
 	killChannel

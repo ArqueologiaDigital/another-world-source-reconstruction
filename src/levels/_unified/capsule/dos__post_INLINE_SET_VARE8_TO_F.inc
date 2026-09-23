@@ -186,11 +186,11 @@ LABEL_25A7:
 	break
 	video offset=CINEMATIC_419, x=142, y=127
 	play id=0x006C, freq=0x12, vol=0x18, channel=0x01
-	video offset=CINEMATIC_422, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_ARCH_WALL_FAR, x=160, y=100
 	break
 	video offset=CINEMATIC_419, x=142, y=127
 	play id=0x006C, freq=0x10, vol=0x18, channel=0x02
-	video offset=CINEMATIC_423, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_ARCH_WALL_NEAR, x=160, y=100
 	mov [0xF0], 0x000A
 
 LABEL_2645:
@@ -199,9 +199,9 @@ LABEL_2645:
 	djnz [0xF0], LABEL_2645
 	break
 	play id=0x0057, freq=0x10, vol=0x18, channel=0x02
-	video offset=CINEMATIC_424, x=141, y=127
+	video offset=CINEMATIC_CAPSULE_SCREEN_4D_BACKDROP_LAYER_3, x=141, y=127
 	break
-	video offset=CINEMATIC_425, x=141, y=127
+	video offset=CINEMATIC_CAPSULE_SCREEN_4D_BACKDROP_LAYER_4, x=141, y=127
 	break
 	video offset=CINEMATIC_426, x=141, y=127
 	break
@@ -224,7 +224,7 @@ HANG_DRAW_CIN_429:
 	jmp HANG_DRAW_CIN_429
 
 HANG_DRAW_CIN_430:
-	video offset=CINEMATIC_430, x=141, y=127
+	video offset=CINEMATIC_CAPSULE_SCREEN_91_BACKDROP_LAYER_1, x=141, y=127
 	break
 	jmp HANG_DRAW_CIN_430
 	killChannel

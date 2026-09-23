@@ -35,7 +35,7 @@ LABEL_47A5:
 
 LABEL_47F5:
 	jne [0x10], [SCREEN_NUM], INCREMENT_VAR07_BY_4
-	video offset=CINEMATIC_344, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_SCREEN_4F_BACKDROP_LAYER_0, x=[0x07], y=[0x08]
 	ret
 
 
@@ -59,11 +59,11 @@ LABEL_4819:
 
 LABEL_4825:
 	jne [0x10], [SCREEN_NUM], SHARED_RET
-	video offset=CINEMATIC_349, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_SCREEN_50_BACKDROP_LAYER_1, x=[0x07], y=[0x08]
 	ret
 
 
 LABEL_4831:
 	jne [0x10], [SCREEN_NUM], SHARED_RET
-	video offset=CINEMATIC_350, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_SCREEN_50_BACKDROP_LAYER_2, x=[0x07], y=[0x08]
 	ret
