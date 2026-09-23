@@ -20,13 +20,15 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 58.9% (5,976/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 59.6% (6,049/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 77 of 352 (59 reachable) | `notes/shared-bank-geometry/` |
 | draw-only labels agreeing with their picture | 212, 0 nameable left, 0 contradicting | `label_vs_constant.py` |
 | routines naming a gait and drawing another's sheet | 0 (was 30) | `motion-word-audit/piece_family_vs_label.py` |
 | shot-impact ladders complete | 18 of 18 (3 stages x 2 directions x 3 branches) | `impact_ladder.py` |
+| routines whose name states a screen the guards confirm | 303 of 303 | `screen-scope/screen_scope.py --control` |
+| per-screen entry routines named | 257 of 274, 0 nameable left | `screen-scope/screen_entry.py` |
 
 ## Added 2026-09-23
 
@@ -55,6 +57,16 @@ named in another stage ~38, art named in the other port for the same stage 22.
 What remains is **1,655 pictures numbered in *both* priority ports with
 identical art** — 667 CAVES, 511 PRISON, 403 CAPSULE — which nothing in the
 call graph distinguishes.
+
+**The screen blocker is solved.** `notes/screen-scope/screen_scope.py`
+derives which `[SCREEN_NUM]` value a routine is reachable under, by forward
+dataflow on the guards, and `--control` re-derives **303 of 303** screen
+assignments that names already state. Two things came out of it: 69 backdrop
+layers named `<STAGE>_SCREEN_<NN>_BACKDROP_LAYER_<i>`, and 264 per-screen
+routines named `<STAGE>_SCREEN_<NN>_ENTRY` plus their nine dispatchers. It
+also found one wrong name (msdos and cartridge install the CAVES palette-flash
+event on screen 0xEE, not the 0xED the shared label claimed) and can find more
+with `--proposals`.
 
 **So start from `notes/remaining-art/by_anchor.py`**, which sorts that backlog
 by how each picture is anchored, because the classes need different evidence:
