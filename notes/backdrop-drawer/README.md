@@ -287,3 +287,41 @@ claimed screen does draw them. They are not wrong, only not exclusive.
 After the demotion the audit is clean: 0 of 312, with 281 confirmed by a
 painter on the claimed screen and 31 left alone because a routine that draws
 them cannot be pinned.
+
+## What a blocked stack actually looks like — CAVES screen 0x6C
+
+The "185 of 186 blocked" above is an aggregate, and aggregates are easy to
+read as "almost worked". One screen, rendered and then traced, shows what the
+blockage is:
+
+`CAVES_SCREEN_6C_BACKDROP_DRAW` makes **36 draws from 10 distinct pictures**.
+
+```
+  [0]  CINEMATIC_335   ALSO drawn by CAVES_SCREEN_4C_ and 4D_BACKDROP_DRAW
+  [1,2,4] CINEMATIC_395   ALSO by DRAW_CIN_415_416_FRAGMENTS
+  [3]  CINEMATIC_406   exclusive, painted once
+  [5..15]  CINEMATIC_336   11 times here, ALSO on screens 0x4C and 0x4D
+  [16..19] CINEMATIC_407   4 times here, exclusive
+  [20] CINEMATIC_408   exclusive, painted once
+  [21] CINEMATIC_409   exclusive, painted once
+  [22..25] CINEMATIC_410   4 times here, exclusive
+  [26..34] CINEMATIC_275   9 times here, ALSO on screens 0x4C and 0x4D
+  [35] CINEMATIC_411   exclusive, painted once
+```
+
+Six of the ten are exclusive to this painter, so they *are* screen 0x6C's own
+art. The scheme still cannot name them, for two independent reasons:
+
+* **`_LAYER_<i>` indexes a draw position, and four of the six have no single
+  position.** `CINEMATIC_407` is painted at 16, 17, 18 and 19. There is no
+  honest `<i>`.
+* **The four painted once are at positions 3, 20, 21 and 35.** Naming those
+  gives a family indexed 3, 20, 21, 35 — holes everywhere, which
+  `docs/NAMING.md` §2 bars, and rightly: the missing indices are real layers,
+  just ones this screen shares.
+
+So the layer backlog is not waiting on evidence. Screen 0x6C's six pictures
+are pinned to one screen and one painter already. It is waiting on a **name
+shape** that can say "screen 0x6C's own scenery, the thing painted eleven
+times across the floor" without claiming a stack position. That is a
+convention decision, and this is what it would be deciding about.
