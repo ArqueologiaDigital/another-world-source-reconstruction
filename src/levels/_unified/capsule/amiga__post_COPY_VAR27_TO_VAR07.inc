@@ -20,8 +20,8 @@ LABEL_4346:
 	sub [0x26], [0x21]
 	jl [0x26], 0x7E, CAPSULE_SHOT_BEAM_SPAN_DRAW_FROM_64
 	jge [0x12], 0x2000, LABEL_4366
-	video offset=CINEMATIC_528, x=[0x21], y=[0x27]
-	video offset=CINEMATIC_529, x=[0x22], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_5, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_5, x=[0x22], y=[0x27]
 	jmp LABEL_43FE
 
 LABEL_4366:
@@ -72,7 +72,7 @@ CAPSULE_SHOT_BEAM_SPAN_DRAW_FROM_02:
 	jmp LABEL_43FE
 
 LABEL_43F9:
-	video offset=CINEMATIC_513, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SINGLE_DOT, x=[0x21], y=[0x27]
 
 LABEL_43FE:
 	ret

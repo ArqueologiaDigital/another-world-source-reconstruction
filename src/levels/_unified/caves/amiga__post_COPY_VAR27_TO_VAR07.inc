@@ -20,8 +20,8 @@ LABEL_619C:
 	sub [0x26], [0x21]
 	jl [0x26], 0x7E, CAVES_LASER_BOLT_SPAN_FROM_64
 	jge [0x12], 0x2000, LABEL_61BC
-	video offset=CINEMATIC_837, x=[0x21], y=[0x27]
-	video offset=CINEMATIC_838, x=[0x22], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_RIGHT_5, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAVES_LASER_BOLT_SPAN_LEFT_5, x=[0x22], y=[0x27]
 	jmp LABEL_6254
 
 LABEL_61BC:

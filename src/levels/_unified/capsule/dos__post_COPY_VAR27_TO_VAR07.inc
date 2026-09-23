@@ -20,8 +20,8 @@ LABEL_5A9B:
 	sub [0x26], [0x21]
 	jl [0x26], 0x7E, CAPSULE_SHOT_BEAM_SPAN_DRAW_FROM_64
 	jge [0x12], 0x2000, LABEL_5ABB
-	video offset=CINEMATIC_675, x=[0x21], y=[0x27]
-	video offset=CINEMATIC_676, x=[0x22], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_5, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_5, x=[0x22], y=[0x27]
 	jmp LABEL_5B53
 
 LABEL_5ABB:
@@ -72,7 +72,7 @@ LABEL_5B3B:
 	jmp LABEL_5B53
 
 LABEL_5B4E:
-	video offset=CINEMATIC_660, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SINGLE_DOT, x=[0x21], y=[0x27]
 
 LABEL_5B53:
 	ret

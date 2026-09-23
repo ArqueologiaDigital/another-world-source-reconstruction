@@ -168,6 +168,7 @@ checked against the receiving port's own guards.
 | PRISON 384; CAPSULE 258/259 **and amiga's misnamed `SCREEN_6A_BACKDROP_LAYER_0`** | (same numbers) | `CINEMATIC_{PRISON,CAPSULE}_CHARGE_BLAST`, six rows over two stages and three branches | medium |
 | PRISON 200..204 | (same numbers) | `CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_0..3` (202, 204, 201, 200 -- phase order is not constant order) | high |
 | PRISON 514, 515, 520, 521 | (same numbers) | `CINEMATIC_PRISON_SHOT_BEAM_SPAN_{RIGHT,LEFT}_{4,5}`, three branches -- see `../beam-span-ladder/` | high |
+| CAVES 837, 838, 822 / CAPSULE 528, 529, 513 | msdos 861, 862, 846 / 675, 676, 660 | `CINEMATIC_CAVES_LASER_BOLT_{SPAN_RIGHT_5,SPAN_LEFT_5,SINGLE_DOT}` and the `CAPSULE_SHOT_BEAM_*` three | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
