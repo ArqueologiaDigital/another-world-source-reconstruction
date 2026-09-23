@@ -1,7 +1,8 @@
 # Names read off a render
 
-**INTRO is complete in both priority ports (569/569 amiga, 570/570 msdos), and
-amiga/ENDING is complete (133/133).**
+**Complete in both priority ports: INTRO (569/569, 570/570), LAKE, TANK (224/224,
+279/279). amiga/ENDING is complete (133/133); msdos/ENDING's last three are
+unreachable bytes -- see `../unnamed-reachability/`.**
 
 **Every name listed here has no independent check behind it.** It was read
 from a rendered picture, at the confidence stated per row, with the measured
@@ -151,6 +152,7 @@ checked against the receiving port's own guards.
 | INTRO 026, 112, 292, 293, 294 | 031, 117, 298, 299, 300 | `CINEMATIC_{STREET_ROAD_EDGE,LIFT_DOOR_INDICATOR,MACHINE_HULL,MACHINE_STRUTS,MACHINE_STRUT_DETAIL}` | medium |
 | (amiga already named) | INTRO 318, 444, 446, 466 + an LED renumber | `CINEMATIC_EXPERIMENT_SPARK_LONG_F0`, `..._HOLO_CONSOLE_LED_0..4`, `CINEMATIC_LIFT_SHAFT_BAND` | high/medium |
 | ENDING 008..012, 019, 024, 038..041 | (same numbers) | `CINEMATIC_ENDING_{TERRACE,TERRACE_LIGHTS,PTERANODON_PERCHED,LESTER_ARRIVAL_F0,F1,LESTER_PRONE_F6,ALIEN_HEAD,CLOUD_SKY_PAGE3_F4..F6,CLOUD_BANK}` | high/medium |
+| TANK 100, 152, 155 | 087, 204, 207 + 126..128, 170..175, 276, 277 | `CINEMATIC_TANK_{FALLING_STREAK,AMBIENT_IMPACT_FLASH,AMBIENT_IMPACT_SCAR,ARENA_WRECK_*,CONSOLE_LAMP_*,CONSOLE_BUTTON_UNLIT,BEAM_VOLLEY_SEGMENT_3,CREATURE_RUN_F9}` | high/medium |
 | INTRO 268..276 | 274..282 | `CINEMATIC_FRAGMENTS_RECEDING_F0..F8` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,

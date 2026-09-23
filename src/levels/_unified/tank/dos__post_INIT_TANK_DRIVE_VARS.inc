@@ -82,7 +82,7 @@ LABEL_13EA:
 	sub [0x52], 0x0002
 	video offset=CINEMATIC_042, x=[0x52], y=[0x53], zoom=[0x54]
 	break
-	video offset=CINEMATIC_277, x=[0x52], y=[0x53], zoom=[0x54]
+	video offset=CINEMATIC_TANK_CREATURE_RUN_F9, x=[0x52], y=[0x53], zoom=[0x54]
 	break
 	video offset=CINEMATIC_045, x=[0x52], y=[0x53], zoom=[0x54]
 	break

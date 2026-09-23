@@ -240,7 +240,7 @@ TANK_CONSOLE_ALL_SWITCHES_BLINK_LOOP:
 	break
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_175, x=43, y=40
+	video offset=CINEMATIC_TANK_CONSOLE_BUTTON_UNLIT, x=43, y=40
 	selectVideoPage 0xFF
 	break
 	break
@@ -286,18 +286,18 @@ TANK_CONSOLE_BUTTON_ACTION_CASE_0E:
 
 TANK_CONSOLE_BUTTON_ACTION_CASE_08:
 	jne [0x59], 0x08, TANK_CONSOLE_BUTTON_ACTION_CASE_09
-	video offset=CINEMATIC_171, x=35, y=43
-	video offset=CINEMATIC_174, x=39, y=45
+	video offset=CINEMATIC_TANK_CONSOLE_LAMP_RED_OFF, x=35, y=43
+	video offset=CINEMATIC_TANK_CONSOLE_LAMP_GREEN_OFF, x=39, y=45
 	selectVideoPage 0x00
 	je [0x71], 0x00, TANK_CONSOLE_UPPER_RED_LAMP_ON
-	video offset=CINEMATIC_171, x=35, y=31
+	video offset=CINEMATIC_TANK_CONSOLE_LAMP_RED_OFF, x=35, y=31
 	selectVideoPage 0xFF
 	mov [0x71], 0x0000
 	ret
 
 
 TANK_CONSOLE_UPPER_RED_LAMP_ON:
-	video offset=CINEMATIC_172, x=35, y=31
+	video offset=CINEMATIC_TANK_CONSOLE_LAMP_RED_LIT, x=35, y=31
 	selectVideoPage 0xFF
 	mov [0x71], 0x0001
 	ret
@@ -307,14 +307,14 @@ TANK_CONSOLE_BUTTON_ACTION_CASE_09:
 	jne [0x59], 0x09, TANK_CONSOLE_BUTTON_ACTION_CASE_0B
 	selectVideoPage 0x00
 	je [0x74], 0x00, TANK_CONSOLE_UPPER_GREEN_LAMP_ON
-	video offset=CINEMATIC_171, x=39, y=33
+	video offset=CINEMATIC_TANK_CONSOLE_LAMP_RED_OFF, x=39, y=33
 	mov [0x74], 0x0000
 	selectVideoPage 0xFF
 	ret
 
 
 TANK_CONSOLE_UPPER_GREEN_LAMP_ON:
-	video offset=CINEMATIC_170, x=39, y=33
+	video offset=CINEMATIC_TANK_CONSOLE_LAMP_GREEN_LIT, x=39, y=33
 	mov [0x74], 0x0001
 	selectVideoPage 0xFF
 	ret
@@ -336,14 +336,14 @@ TANK_CONSOLE_BUTTON_ACTION_CASE_10:
 	jne [0x59], 0x10, TANK_CONSOLE_BUTTON_ACTION_CASE_11
 	selectVideoPage 0x00
 	je [0x72], 0x00, TANK_CONSOLE_LOWER_RED_LAMP_ON
-	video offset=CINEMATIC_171, x=35, y=37
+	video offset=CINEMATIC_TANK_CONSOLE_LAMP_RED_OFF, x=35, y=37
 	selectVideoPage 0xFF
 	mov [0x72], 0x0000
 	ret
 
 
 TANK_CONSOLE_LOWER_RED_LAMP_ON:
-	video offset=CINEMATIC_172, x=35, y=37
+	video offset=CINEMATIC_TANK_CONSOLE_LAMP_RED_LIT, x=35, y=37
 	selectVideoPage 0xFF
 	mov [0x72], 0x0001
 	ret
@@ -353,14 +353,14 @@ TANK_CONSOLE_BUTTON_ACTION_CASE_11:
 	jne [0x59], 0x11, TANK_CONSOLE_BUTTON_ACTION_CASE_13
 	selectVideoPage 0x00
 	je [0x75], 0x00, TANK_CONSOLE_LOWER_GREEN_LAMP_ON
-	video offset=CINEMATIC_171, x=39, y=39
+	video offset=CINEMATIC_TANK_CONSOLE_LAMP_RED_OFF, x=39, y=39
 	selectVideoPage 0xFF
 	mov [0x75], 0x0000
 	ret
 
 
 TANK_CONSOLE_LOWER_GREEN_LAMP_ON:
-	video offset=CINEMATIC_170, x=39, y=39
+	video offset=CINEMATIC_TANK_CONSOLE_LAMP_GREEN_LIT, x=39, y=39
 	selectVideoPage 0xFF
 	mov [0x75], 0x0001
 	ret
@@ -396,7 +396,7 @@ TANK_CONSOLE_BUTTON_ACTION_CASE_18:
 
 
 	selectVideoPage 0x00
-	video offset=CINEMATIC_172, x=39, y=29
+	video offset=CINEMATIC_TANK_CONSOLE_LAMP_RED_LIT, x=39, y=29
 	selectVideoPage 0xFF
 	jg [SCREEN_NUM], 0x05, SHARED_RET
 	mov [SCREEN_NUM], 0x0005

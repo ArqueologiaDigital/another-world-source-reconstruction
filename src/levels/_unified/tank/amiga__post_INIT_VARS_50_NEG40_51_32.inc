@@ -55,13 +55,13 @@ TANK_AMBIENT_RANDOM_DELAY_PLAY_SOUND_8C:
 	and [0x3D], 0x001F
 	add [0x3D], 0x005A
 	play id=0x008C, freq=0x19, vol=0x0D, channel=0x00
-	video offset=CINEMATIC_152, x=[0x3c], y=[0x3d]
+	video offset=CINEMATIC_TANK_AMBIENT_IMPACT_FLASH, x=[0x3c], y=[0x3d]
 	selectVideoPage 0x03
 	call TANK_RANDOM_HASH_ADVANCE
 	mov [0xF8], [0x64]
 	and [0xF8], 0x0003
 	jne [0xF8], 0x00, TANK_AMBIENT_IMPACT_SCAR_CASE_01
-	video offset=CINEMATIC_155, x=[0x3c], y=[0x3d]
+	video offset=CINEMATIC_TANK_AMBIENT_IMPACT_SCAR, x=[0x3c], y=[0x3d]
 
 TANK_AMBIENT_IMPACT_SCAR_CASE_01:
 	jne [0xF8], 0x01, TANK_AMBIENT_IMPACT_SCAR_CASE_02

@@ -28,22 +28,22 @@ TANK_DESTROYED_CUTSCENE_BLAST_ENTRY:
 	killChannel
 
 TANK_ARENA_STAMP_WRECK_LEFT_ONTO_BACKDROP:
-	video offset=CINEMATIC_126, x=110, y=150
+	video offset=CINEMATIC_TANK_ARENA_WRECK_BASE, x=110, y=150
 	selectVideoPage 0x00
-	video offset=CINEMATIC_127, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_WRECK_LEFT, x=160, y=100
 	selectVideoPage 0xFF
 	selectVideoPage 0x03
-	video offset=CINEMATIC_127, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_WRECK_LEFT, x=160, y=100
 	selectVideoPage 0xFF
 	killChannel
 
 TANK_ARENA_STAMP_WRECK_CENTRE_ONTO_BACKDROP:
-	video offset=CINEMATIC_126, x=155, y=151
+	video offset=CINEMATIC_TANK_ARENA_WRECK_BASE, x=155, y=151
 	selectVideoPage 0x00
-	video offset=CINEMATIC_128, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_WRECK_CENTRE, x=160, y=100
 	selectVideoPage 0xFF
 	selectVideoPage 0x03
-	video offset=CINEMATIC_128, x=160, y=100
+	video offset=CINEMATIC_TANK_ARENA_WRECK_CENTRE, x=160, y=100
 	selectVideoPage 0xFF
 	killChannel
 

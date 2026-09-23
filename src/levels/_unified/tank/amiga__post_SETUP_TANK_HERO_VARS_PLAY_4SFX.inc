@@ -26,11 +26,11 @@ LABEL_0100:
 	db 0x11
 
 LABEL_0101:
-	video offset=CINEMATIC_100, x=81, y=131
+	video offset=CINEMATIC_TANK_FALLING_STREAK, x=81, y=131
 	break
-	video offset=CINEMATIC_100, x=96, y=121
+	video offset=CINEMATIC_TANK_FALLING_STREAK, x=96, y=121
 	break
-	video offset=CINEMATIC_100, x=86, y=127
+	video offset=CINEMATIC_TANK_FALLING_STREAK, x=86, y=127
 	break
 	jmp LABEL_0101
 TANK_DRAW_CIN_087_THREE_VARYING_POSITIONS:
