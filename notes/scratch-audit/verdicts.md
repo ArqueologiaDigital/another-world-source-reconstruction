@@ -177,7 +177,7 @@ it rather than asserting it in general.
 
 | file | why it is disposable |
 |---|---|
-| `hpc_before.py` (571 lines) | the pre-revert `hero_pose_consensus.py`, with the widened `motion_of`. It is **in git**: `5c38114b` added the widening, `cd353829` reverted it with the measurement that killed it. `git show 5c38114b:notes/shared-bank-geometry/hero_pose_consensus.py` is this file. The measurement itself survives as the committed `--token-order` mode |
+| `hpc_before.py` (571 lines) | the pre-revert `hero_pose_consensus.py`, with the widened `motion_of`. Disposable, but **not for the reason first given here** — see the correction below |
 | `st_noshape.py` | the looser grouping that was rejected. It is a **committed mode**: `sibling_template.py --no-shape` |
 | `scope_fix.py` | an older copy of `notes/unified-scoping/scope_fix.py`, which is committed and tracked |
 | `_audit.py`, `_audit2.py`, `_audit3.py`, `_audit_cov.py`, `_audit_pairs.py`, `_cmp.py`, `_cmp2.py`, `_global.py`, `_global2.py` | the ad-hoc machinery of the **first** scratch sweep, superseded by `preserve_scratch_audit.js` beside this file, which is the committed version of that workflow and produced the verdicts above |
@@ -203,3 +203,50 @@ The recipe is one command, and the palette is the part that matters:
 
 where `<P>` is the palette the routine under study sets, not 0. PRISON's wake
 closeup reads as a blue eye at palette 0 and as a brown-irised face at 0x0B.
+
+
+## Correction, 2026-09-23: `hpc_before.py`
+
+The row above said `git show 5c38114b:notes/shared-bank-geometry/hero_pose_consensus.py`
+**is** that file. It is not. The two blobs differ:
+
+    git show 5c38114b:notes/shared-bank-geometry/hero_pose_consensus.py | md5sum
+        5fa363df1f12ffe5bed74a5dba8aacc6
+    md5sum <scratchpad>/hpc_before.py
+        b61ed605fa78dfeb7cf910c070caeeba
+
+The scratch copy carries 21 lines that commit does not: the `SYNONYM` map
+folding `FIRE` and `SHOT` into `SHOOT`, the check behind it (the routines
+containing `FIRE` and the routines containing `SHOT` draw exactly the same four
+hero offsets -- `CV_389E`, `CV_38D2`, `CV_3ADC`, `CV_3B10`, a complete overlap),
+and a list of terms deliberately *not* added -- `LEAP`, `KICK`, `RAISE` -- with
+a reason for each, written so the next person does not re-derive the shortlist.
+
+The verdict still stands, and the right grounds are simpler. Diff the scratch
+copy against **HEAD** rather than against that commit:
+
+    diff <scratchpad>/hpc_before.py notes/shared-bank-geometry/hero_pose_consensus.py
+
+115 lines differ and **every one of them is on the committed side**: zero lines
+are unique to scratch. The committed probe is a strict superset -- it has the
+`SYNONYM` block, the four offsets, the rejected shortlist, *and* the
+`--token-order` mode and the expanded docstring that the revert added. The
+scratch file is an ancestor of what is in the tree, not a fork of it.
+
+The same check re-run over the other two substantial scripts, for the same
+reason:
+
+    st_noshape.py   3 line(s) unique to scratch, 21 to the repo
+    scope_fix.py    1 line unique to scratch,    50 to the repo
+
+and the unique lines are a hardcoded absolute path, an older wording of one doc
+line, an older spelling of the grouping expression that
+`sibling_template.py --no-shape` now carries as a flag, and an older one-line
+docstring. Nothing of substance.
+
+**The lesson is about the audit, not the files.** A verdict of "disposable" is
+a claim, and this one cited a commit hash that did not hold it. Citing an
+ancestor commit *feels* like proof and is not: the content had moved forward,
+so the pointer was both wrong and unnecessary. The check that settles the
+question asks only one thing -- **is there a line here that is not in the
+tree?** -- and it is one `diff` against HEAD.
