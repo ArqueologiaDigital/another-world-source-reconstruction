@@ -185,6 +185,7 @@ checked against the receiving port's own guards.
 | CAVES 310..316 | msdos 331..337 | `CINEMATIC_CAVES_CREATURE_IDLE_F0..F3` and `..._IDLE_COLLARED_F0..F2` -- 17 leaves against 12, the hoop | medium |
 | PRISON 093..096 | (same numbers) | `CINEMATIC_PRISON_LIFT_SHAFT_STRIP_LOWER_0..3` | medium |
 | CAVES 022..025, 027 | (same numbers) | `CINEMATIC_CAVES_FIGURE_POSE_RIGHT_0_{1,2,3,4,6}` -- dispatcher and art agreeing | high |
+| (msdos only) CAPSULE 094, 096, 101..107 + 11 corrections | -- | the two CAPSULE pose sheets were the wrong way round; see `correction_dos_1992__CAPSULE_pose_sheets.md` | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that

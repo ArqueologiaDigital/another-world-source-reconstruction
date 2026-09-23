@@ -46,37 +46,37 @@ LABEL_84CB:
 
 
 DRAW_ALIEN_POSE_0_0:
-	video offset=CINEMATIC_101, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_RIGHT_0_0, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 DRAW_ALIEN_POSE_0_1:
-	video offset=CINEMATIC_102, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_RIGHT_0_1, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 DRAW_ALIEN_POSE_0_2:
-	video offset=CINEMATIC_103, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_RIGHT_0_2, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 DRAW_ALIEN_POSE_0_3:
-	video offset=CINEMATIC_104, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_RIGHT_0_3, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 DRAW_ALIEN_POSE_0_4:
-	video offset=CINEMATIC_105, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_RIGHT_0_4, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 DRAW_ALIEN_POSE_0_6:
-	video offset=CINEMATIC_106, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_RIGHT_0_6, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 DRAW_ALIEN_POSE_0_7:
-	video offset=CINEMATIC_107, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_RIGHT_0_7, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
@@ -101,7 +101,7 @@ DRAW_CIN_097:
 
 
 DRAW_CIN_096:
-	video offset=CINEMATIC_096, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_RIGHT_4_1, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
@@ -111,7 +111,7 @@ DRAW_ALIEN_POSE_5:
 
 
 DRAW_CIN_094:
-	video offset=CINEMATIC_094, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_RIGHT_7_1, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 

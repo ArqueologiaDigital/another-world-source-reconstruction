@@ -25,9 +25,9 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 82.3% (8,355/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 82.4% (8,364/10,147) | `asset_naming_share.py` |
 | `_AMIGA_EXTRA` constants left | **0** of 38 | `amiga-extra-suffix/deconflict_survivors.py` |
-| names sitting on the wrong port's constant | 11 (was 12) | `cross-port-art/name_art_agreement.py` |
+| names sitting on the wrong port's constant | 5 (was 12) | `cross-port-art/name_art_agreement.py` |
 | names the canonical and unified trees disagree about | 452 missing + 544 moved | `tree-name-drift/name_drift.py` |
 | beam-span rungs in the wrong rung | 0 in amiga and msdos, 3 stages | `beam-span-ladder/rung_thresholds.py` |
 | backdrop layer names their own DRAW routine does not draw | 3 of 256 (62 more screens have no named painter) | `backdrop-layer-audit/layer_claims.py` |
@@ -129,6 +129,18 @@ canonical tree is the naming record -- so the drift costs no coverage and the
 fix is a sync pass per stage, not renaming. **Any probe that reads a routine
 from one tree must read its EQU table from the same tree**; doing otherwise
 reported msdos CAVES' whole beam ladder as misplaced when none of it was.
+
+**`LEFT` and `RIGHT` may be the wrong axis for the pose sheets.** Every stage
+has two sprite dispatchers and the tree calls their sheets `..._FIGURE_POSE_-
+LEFT_*` and `..._RIGHT_*`. msdos CAPSULE names its two
+`DRAW_HERO_SPRITE_BY_VAR09_0E` and `DRAW_ALIEN_SPRITE_BY_VAR09_0E`, and the
+measurements side with the labels: amiga's `CAPSULE_FIGURE_POSE_LEFT_0_1` is
+**4 leaves** and its `RIGHT_0_1` is **5**. Two drawings of one figure mirrored
+have the same leaf count -- that is the whole basis of
+`notes/mirror-families/` -- so these are two different figures, not one facing
+two ways. Correcting it touches three stages and both ports and wants its own
+pass; the per-slot `canonical_md5` map it needs is already tabulated in
+`notes/render-and-name/correction_dos_1992__CAPSULE_pose_sheets.md`.
 
 **`CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F0` is not left-facing.** `LABEL_24CF`
 draws it once *before* the branch that chooses direction, and both the left and
