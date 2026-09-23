@@ -324,3 +324,35 @@ asserted. Same reasoning as `old_queue.py` above.
 Everything else added to the scratchpad this round is output: per-stage
 `n_<STAGE>.json` name dumps from `server.py --dump`, and draw dumps from
 `tools/vm-debugger/tests/dump_draws.mjs`. Both recipes are committed.
+
+
+## Sweep, 2026-09-23 (fourth pass, the MAME-reference round)
+
+**Promoted:** nothing new needed promoting. The quoted claim from this round --
+"four of the five assertions fail against the previous rasteriser" -- is
+reproducible from the committed check itself: `tests/check_fill.mjs` takes a
+path to a candidate `vm.js` as its argument, and its header carries the two
+`git show` lines that produce one. That is the third tool here to grow that
+argument, after `tests/run.sh`'s `$1` and `check_guidance.py`'s.
+
+**Disposable:**
+
+- `mameref/` -- seven files extracted with `git show origin/anotherworld:<path>`
+  from the local MAME checkout at `../mame`. Read-only reference material, not
+  a measurement, and re-extractable with one command; the exact paths are named
+  in the commit messages and in `tools/vm-debugger/README.md`.
+- `ab2.mjs`, `ablate.mjs` -- an ablation harness that ran the VM with each new
+  fill behaviour disabled in turn, to find which of the three caused CAVES to
+  drop. It required temporarily patching `vm.js` with a global switch, which was
+  removed afterwards. Its *answer* is committed -- the blend/copy modes, named
+  in `tools/vm-debugger/README.md` and in the per-checkpoint table in
+  `notes/stage-entry/README.md` -- and the technique does not generalise past
+  this one question.
+- `modes.mjs` -- counted polygons by fill mode per stage (CAVES 984 blend, 786
+  degenerate). The 984 is quoted in a blog draft; it is one line of
+  `polys.filter(p => p.raw === 0x10).length` over a run and needs no tool, and
+  the *claim* that rests on it -- that blend polygons were being painted opaque
+  -- is held by `tests/check_fill.mjs`, which is the artefact that matters.
+- `check_fill_old.mjs` -- a sed-patched copy of the check, made obsolete by the
+  argument the committed check now takes.
+- `oldfill/`, `prevm/` -- `git show` output.

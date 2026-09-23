@@ -36,8 +36,21 @@
 //
 // Run it
 //   node tools/vm-debugger/tests/check_fill.mjs
+//   node tools/vm-debugger/tests/check_fill.mjs <an absolute path to a vm.js>
+//
+// The second form is how a case here is shown to be real rather than asserted,
+// the same convention `notes/play-and-describe/tests/run.sh` uses for its `$1`
+// and `check_guidance.py` for its argument. Against the rasteriser as of
+// `0d09f1e6~1`, four of the five assertions fail -- everything but the solid
+// one, which is why nobody noticed for three sessions:
+//
+//     git show 0d09f1e6~1:tools/vm-debugger/static/vm.js       > /tmp/old/vm.js
+//     git show 0d09f1e6~1:tools/vm-debugger/static/polygons.js > /tmp/old/polygons.js
+//     node tools/vm-debugger/tests/check_fill.mjs /tmp/old/vm.js
 
-import { fillPolygonInto, W, H } from "../static/vm.js";
+const MOD = process.argv[2]
+  || new URL("../static/vm.js", import.meta.url).href;
+const { fillPolygonInto, W, H } = await import(MOD);
 
 const bad = [];
 const want = (c, why) => { if (!c) bad.push(why); };
