@@ -25,7 +25,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 74.2% (7,526/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 74.5% (7,562/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 73 amiga / 76 msdos of 2,530 / 2,552 named | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 48, blocking 250 drawing labels | `shared-bank-geometry/blocked_by_bank.py` |
@@ -285,11 +285,6 @@ without any judgement at all.
   with `[0x2A] = 0x05` and left with `[0x19] = 0x00`, symmetrically.
   **What would settle it:** what the game does to `[HERO_Y]` while the hero
   holds each of the two vertical poses.
-* `CINEMATIC_458`..`464` in CAVES, from `LABEL_3C0E`: two thin curved strokes
-  that spread apart, flatten and close again while the pair moves from above
-  the anchor to below it. Two paths is not enough to say what a pair of curves
-  is. **Find another routine that draws them**, or a frame where a third path
-  appears.
 * `CINEMATIC_134` and `CINEMATIC_280` in PRISON: white bodies in blue edges,
   five paths, the `XRAY_FLASH` treatment and the lunge's 34.0 height, but
   neither width nor signed box matches the lunge. **Find the pose they

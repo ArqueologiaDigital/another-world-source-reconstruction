@@ -123,6 +123,7 @@ checked against the receiving port's own guards.
 | PRISON 107..126 | (msdos twins) | `CINEMATIC_PRISON_GREEN_TRACER_F0..F7`, `_TRACER_BURST_{LEFT,RIGHT}_F0..F5` | medium |
 | PRISON 541..548, 624..628 | (msdos twins) | `CINEMATIC_PRISON_FLEXING_BAND_F0..F5`, `_BAR_PANEL_F0..F4` | medium |
 | CAVES 514..524, 857..867 | (msdos twins) | `CINEMATIC_CAVES_HERO_SWIM_ARM_{RIGHT,LEFT}_F0..F10` | high |
+| CAVES 458..464, 480..490 | (msdos twins) | `CINEMATIC_CAVES_HERO_SWIM_LEGS_{DOWNSWEEP,CYCLE}_F*` | high |
 | CAVES 718, 719, 734, 735 | (msdos twins) | `CINEMATIC_CAVES_STALACTITE_CAVERN_{FLOOR,CEILING}_{LEFT,RIGHT}` | high |
 | CAVES 452/453/470/471, 472..474/491..493 | (msdos twins) | `CINEMATIC_CAVES_HERO_SWIM_HEAD_{UP,DOWN}_{RIGHT,LEFT}_*` | high |
 
@@ -386,3 +387,17 @@ not the obvious one -- 338 *is* paired with `..._POSE_06` at both its draws,
 but at both it also has the previous frame's `..._POSE_04` two lines above, so
 its neighbour set has two names and the "exactly one" test fails. It
 under-offers, and specifically on frames in the middle of a dense run.
+
+### Composite before you judge a sliver
+
+Three CAVES runs -- 22 arm frames and 18 leg frames -- sat in the handoff's
+held list as "unreadable at palette 0". They were not unreadable; they were
+being looked at **alone**. Each is one or two untextured paths a few pixels
+across, and each is drawn on its own channel *over* a figure another channel
+draws.
+
+Composited over `CINEMATIC_CAVES_HERO_IDLE_RIGHT_0` at palette 0x05 they
+resolve immediately into an arm stroking and two legs kicking. The rule that
+follows: when a run's pictures are one or two paths and its routine is set up
+with `setup channel=...` beside another draw channel, **render it over what
+that other channel draws** before concluding it cannot be read.

@@ -1,0 +1,22 @@
+
+----- dos_1992 / CAVES -----
+| constant | proposed name | confidence | evidence |
+| --- | --- | --- | --- |
+| CINEMATIC_507 | CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F6 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_503 | CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F2 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_481 | CINEMATIC_CAVES_HERO_SWIM_LEGS_DOWNSWEEP_F2 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_485 | CINEMATIC_CAVES_HERO_SWIM_LEGS_DOWNSWEEP_F6 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_510 | CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F9 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_502 | CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F1 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_504 | CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F3 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_509 | CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F8 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_482 | CINEMATIC_CAVES_HERO_SWIM_LEGS_DOWNSWEEP_F3 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_483 | CINEMATIC_CAVES_HERO_SWIM_LEGS_DOWNSWEEP_F4 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_505 | CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F4 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_501 | CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F0 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_506 | CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F5 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_511 | CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F10 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_508 | CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F7 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_479 | CINEMATIC_CAVES_HERO_SWIM_LEGS_DOWNSWEEP_F0 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_480 | CINEMATIC_CAVES_HERO_SWIM_LEGS_DOWNSWEEP_F1 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_484 | CINEMATIC_CAVES_HERO_SWIM_LEGS_DOWNSWEEP_F5 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |

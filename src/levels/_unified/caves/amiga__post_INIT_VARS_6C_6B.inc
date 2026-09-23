@@ -362,27 +362,27 @@ HERO_DIRECTION_DOWN_IDLE_LOOP:
 	jmp HERO_DIRECTION_DOWN_IDLE_LOOP
 
 LABEL_3BA3:
-	video offset=CINEMATIC_480, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_481, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_482, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_483, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_484, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F4, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_485, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F5, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_486, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F6, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_487, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F7, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_488, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F8, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_489, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F9, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_490, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_CYCLE_F10, x=[HERO_X], y=[HERO_Y]
 	break
 	jmp LABEL_3BA3
 LABEL_3BE8:
@@ -402,19 +402,19 @@ LABEL_3BE9:
 	jmp LABEL_3C37
 
 LABEL_3C0E:
-	video offset=CINEMATIC_458, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_DOWNSWEEP_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_459, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_DOWNSWEEP_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_460, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_DOWNSWEEP_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_461, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_DOWNSWEEP_F3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_462, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_DOWNSWEEP_F4, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_463, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_DOWNSWEEP_F5, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_464, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_LEGS_DOWNSWEEP_F6, x=[HERO_X], y=[HERO_Y]
 
 LABEL_3C37:
 	break
