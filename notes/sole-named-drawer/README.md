@@ -321,3 +321,32 @@ nothing in the call graph distinguishes them — which is what
 `tools/nameable_backlog.py` means by "the `real` column is the work". They need
 the polygon layer: geometry, anchors and rendering, the methods in
 `../shared-bank-geometry/` and `../lake-shooting/`, one scene at a time.
+
+## Rule 3 relaxed to ignore placeholder drawers — refuted, 0 of 4
+
+Rule 3 refuses a picture that more than one routine draws. The obvious
+complaint is that a **placeholder** drawer says nothing about the subject, so
+it should not veto a semantic one. Relaxing it that way offers 16 names,
+including a clean-looking seven-member
+`CINEMATIC_PRISON_ACTOR_CHARGE_GLOW_FRAME_*` family and six
+`CINEMATIC_CAVES_CREATURE_WALK_RIGHT_PHASE_*`.
+
+Tested against constants that are **already named** in exactly that
+configuration — one semantic drawer that draws nothing else, plus one or more
+`LABEL_` stubs — the derived name is right **0 times out of 4** with this
+module's own filters applied, and 2 of 13 with only `naming_census.classify`.
+
+The misses all say the same thing:
+
+```
+PRISON_HERO_RUN_RIGHT_TURN_PRELUDE    draws  CINEMATIC_HERO_LIFTOFF
+CAVES_BURST_CHUNKS_FINAL_HOLD_LOOP    draws  CINEMATIC_CAVES_BURST_CHUNKS_F0
+PRISON_HERO_CROUCH_LEFT_ENTRY         draws  CINEMATIC_PRISON_HERO_CROUCH_DOWN_LEFT
+```
+
+The routine is named for a **moment in an animation** — the prelude, the final
+hold, the entry — and the art is named for a **thing**. They are different
+kinds of name, and this module's premise is that sometimes they coincide.
+Where a second drawer exists at all, they mostly do not.
+
+So rule 3 stays as it is, and the 16 candidates stay numbered.
