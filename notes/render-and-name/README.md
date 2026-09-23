@@ -335,3 +335,11 @@ The anchor does not separate the two cases: 8 of 13 actor-slot runs are one
 family against 3 of 6 literal ones, and the body-and-limb splits are at actor
 slots. So a run is a **candidate to look at**, not a family, and the render
 still decides.
+
+`--stages` answers the other question a namer should ask first: does this art
+exist in another stage? Naming a run `CAVES_...` and finding an hour later
+that the same `canonical_md5` is in PRISON and CAPSULE costs a rescope, a
+re-sync and a second commit -- which happened to seven families at once on
+2026-09-23. All nine CAVES runs of seven or more report "this stage only", so
+they may take a stage word; the fourteen-frame `DRAW_CIN_110_BLOCK` run does
+not, and `CINEMATIC_TUMBLING_CHUNK_F0..F13` never carried one.

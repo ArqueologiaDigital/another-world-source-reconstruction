@@ -69,11 +69,16 @@ Usage
 from __future__ import annotations
 
 import argparse
+import collections
 import re
 import sys
 from pathlib import Path
 
-SRC = Path(__file__).resolve().parents[2] / "src" / "levels"
+ROOT = Path(__file__).resolve().parents[2]
+SRC = ROOT / "src" / "levels"
+STAGE_ID = {"CODE_WHEEL": 0, "INTRO": 1, "LAKE": 2, "PRISON": 3, "CAVES": 4,
+            "TANK": 5, "CAPSULE": 6, "ENDING": 7, "PASSCODE": 8}
+RE_EQU = re.compile(r"^(CINEMATIC_\w+)\s+EQU\s+(0x[0-9A-Fa-f]+)", re.M)
 PORTS = {"amiga": "chahi_amiga_1991", "msdos": "dos_1992"}
 RE_NUM = re.compile(r"^CINEMATIC_\d+$")
 RE_LBL = re.compile(r"^([A-Za-z_]\w*):\s*$")
@@ -117,6 +122,37 @@ def runs(branch: str, stage: str):
             flush()
             anchor = None
     flush()
+    return out
+
+
+def art_by_stage(port: str, branch: str):
+    """stage -> {canonical_md5: constant}, for every stage this branch ships.
+
+    Naming a run `CAVES_...` and discovering an hour later that the same art
+    is in PRISON and CAPSULE costs a rescope, a re-sync and a second commit.
+    That happened on 2026-09-23 to seven families at once. The check is cheap
+    and belongs before the name, so `--stages` runs it here.
+    """
+    sys.path.insert(0, str(ROOT / "notes" / "polygon-extent-correction"))
+    sys.path.insert(0, str(ROOT.parent / "another-world-archaeology" / "tools"))
+    from polygon_tree import parse_polygon_tree, canonical_md5
+    from extent_matches_renderer import slab
+    out = {}
+    for stage, sid in STAGE_ID.items():
+        f = SRC / branch / f"{stage}.asm"
+        if not f.is_file():
+            continue
+        try:
+            bank = slab("cinematic", port, sid)
+        except SystemExit:
+            continue
+        t = {}
+        for n, v in RE_EQU.findall(f.read_text(errors="replace")):
+            try:
+                t[canonical_md5(parse_polygon_tree(bank, int(v, 16)))] = n
+            except Exception:
+                pass
+        out[stage] = t
     return out
 
 
@@ -168,6 +204,9 @@ def main() -> int:
     ap.add_argument("--port", default="amiga", choices=sorted(PORTS))
     ap.add_argument("--min", type=int, default=3,
                     help="least still-numbered members to report a run")
+    ap.add_argument("--stages", action="store_true",
+                    help="also report how many stages each run's art appears "
+                         "in, so a name is scoped before it is written")
     ap.add_argument("--control", action="store_true",
                     help="of the runs whose members are ALL named, how many "
                          "carry one family prefix?")
@@ -192,6 +231,8 @@ def main() -> int:
         rows.append((len(num), label, anchor, members, num))
     rows.sort(reverse=True)
 
+    tabs = art_by_stage(args.port, PORTS[args.port]) if args.stages else None
+
     print(f"  {len(rows)} run(s) in {args.port}/{args.stage} with at least "
           f"{args.min} still-numbered member(s)\n")
     for n, label, anchor, members, num in rows:
@@ -201,6 +242,18 @@ def main() -> int:
                          if RE_NUM.match(m) else "<named>")
         print(f"  {n:>3} numbered   at {anchor:<22} {label}")
         print(f"        {' '.join(order)}")
+        if tabs is not None:
+            here = tabs.get(args.stage, {})
+            mine = {m: k for k, v in here.items() if (m := v) in num}
+            elsewhere = collections.Counter()
+            for st, t in tabs.items():
+                if st == args.stage:
+                    continue
+                elsewhere[st] += sum(1 for k, v in here.items()
+                                     if v in num and k in t)
+            hits = [f"{st} {c}/{len(num)}" for st, c in elsewhere.items() if c]
+            print(f"        same art in: {', '.join(hits) if hits else
+                                         'this stage only'}")
     total = sum(n for n, *_ in rows)
     print(f"\n  {total} still-numbered picture(s) sit in a run, "
           f"{len(set(m for _n, _l, _a, _m, num in rows for m in num))} "
