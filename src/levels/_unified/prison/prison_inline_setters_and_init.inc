@@ -463,43 +463,43 @@ PRISON_DRAW_CIN_280_TO_281_2F_AT_75ED3E60_L2:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_284_BLOCK_95B:
-	video offset=CINEMATIC_284, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_285, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_286, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_287, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_288, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F4, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_289, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F5, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_290, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F6, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_291, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F7, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_292, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F8, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_293, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F9, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_294, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F10, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_295, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F11, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_296, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F12, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_297, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F13, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_296, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F12, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_296, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F12, x=[HERO_X], y=[HERO_Y]
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PRISON_DRAW_CIN_284_BLOCK_95B_L0:
 	break
-	video offset=CINEMATIC_295, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F11, x=[HERO_X], y=[HERO_Y]
 	jmp PRISON_DRAW_CIN_284_BLOCK_95B_L0
 PRISON_DRAW_CIN_284_BLOCK_95B_L1:
 	db 0x11

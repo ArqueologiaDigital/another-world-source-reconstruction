@@ -18,7 +18,8 @@ generalises it.
 The filters, and how much each removes
 --------------------------------------
 Matching alone gives 49 candidates on amiga and 46 on msdos. Most are not
-usable and the reasons are worth the counts:
+usable and the reasons are worth the counts. (These counts are from
+2026-09-19 and the tree has moved; re-run rather than cite them.)
 
   36 / 34  **the name carries another stage's prefix.**
            `CINEMATIC_CAVES_TELEPORT_DOWN_BEAM` moved into PRISON asserts
@@ -42,6 +43,34 @@ that moved. `prison_step_draws_and_breaks.inc` naming `CINEMATIC_555` is the
 case that found this: verify-unified 27/29 with two undefined references,
 while verify-stages stayed 29/29 because each canonical file was internally
 consistent.
+
+**The check reads the guard, not the filename (fixed 2026-09-23).** An
+unprefixed chunk is *read* by every branch, but the lines inside it are
+usually fenced:
+
+    .if BRANCH in ("chahi_amiga_1991", "dos_1992")
+    DRAW_CIN_284_BLOCK_95B:
+            video offset=CINEMATIC_284, x=[HERO_X], y=[HERO_Y]
+
+Judging by the filename alone held **36 constants** that no other branch ever
+compiles -- PRISON's 28 copies of `CINEMATIC_TUMBLING_CHUNK_*` and CAVES' 8 of
+`CINEMATIC_WIDE_FLASH_*`. `guarded_branches()` now walks the `.if` / `.elif` /
+`.endif` nesting down to the line and returns the branch set in force.
+
+The two cases are one command apart:
+
+    python3 notes/crossstage-transfer/transfer_across_stages.py --guards CINEMATIC_284
+    #   prison/prison_inline_setters_and_init.inc:466
+    #       SHARED chunk -> compiled for: chahi_amiga_1991, dos_1992
+
+    python3 notes/crossstage-transfer/transfer_across_stages.py --guards CINEMATIC_008
+    #   caves/caves_inline_setters_and_init.inc:570
+    #       SHARED chunk -> compiled for: cartridge_1992, chahi_amiga_1991, dos_1992
+
+284 is safe for the priority ports and 008 is not, and the 8 CAVES ones stay
+held. The control is the gate itself: after renaming the 28, `make test` was
+29/29 on **both** halves. A wrong guard walk would have shown up exactly as
+the 27/29-unified-with-29/29-canonical split described above.
 
 A name on `disputed.txt` is skipped whatever its evidence:
 `CINEMATIC_BUDDY_SMASHING_WINDOW_F8` is recorded in
@@ -92,12 +121,102 @@ EVIDENCE = (
     "target.")
 
 
+PRIORITY = {"chahi_amiga_1991", "dos_1992"}
+RE_IF = re.compile(r'^\.(if|elif|endif)\b(.*)$')
+RE_BRANCHNAME = re.compile(r'"([a-z_0-9]+)"')
+
+
+def guarded_branches(lines: list[str], i: int) -> set | None:
+    """Which branches compile line `i`? None means "every branch".
+
+    A chunk with no `__` in its name is read by every branch, but the lines
+    INSIDE it are usually fenced:
+
+        .if BRANCH in ("chahi_amiga_1991", "dos_1992")
+        DRAW_CIN_284_BLOCK_95B:
+                video offset=CINEMATIC_284, x=[HERO_X], y=[HERO_Y]
+
+    Judging such a reference by its file alone calls it all-branch and holds
+    the constant. Measured 2026-09-23 that was **36 constants** -- PRISON's 28
+    copies of the tumbling chunk and CAVES' 8 of the wide flash -- every one
+    of them fenced to amiga and dos, with the other branches drawing their own
+    copies from their own `cart__*` and `gba__*` chunks.
+
+    This walks the `.if` / `.elif` / `.endif` nesting down to the line and
+    returns the branch set in force, or None where nothing fences it.
+    """
+    stack: list = []
+    for n, line in enumerate(lines):
+        if n >= i:
+            break
+        m = RE_IF.match(line.strip())
+        if not m:
+            continue
+        kind, rest = m.group(1), m.group(2)
+        if kind == "endif":
+            if stack:
+                stack.pop()
+            continue
+        names = set(RE_BRANCHNAME.findall(rest))
+        if kind == "elif" and stack:
+            stack.pop()
+        stack.append(names or None)
+    out = None
+    for s_ in stack:
+        if s_ is None:
+            continue
+        out = s_ if out is None else (out & s_)
+    return out
+
+
+def reaches_other_branches(f, const: str) -> bool:
+    """Does any line of `f` naming `const` compile for a non-priority branch?"""
+    lines = f.read_text(errors="replace").splitlines()
+    pat = re.compile(rf"\b{re.escape(const)}\b")
+    for i, line in enumerate(lines):
+        if not pat.search(line):
+            continue
+        g = guarded_branches(lines, i)
+        if g is None or (g - PRIORITY):
+            return True
+    return False
+
+
+def show_guards(const: str) -> int:
+    root = SRC / "src" / "levels" / "_unified"
+    pat = re.compile(rf"\b{re.escape(const)}\b")
+    n = 0
+    for f in sorted(root.rglob("*.inc")):
+        lines = f.read_text(errors="replace").splitlines()
+        for i, line in enumerate(lines):
+            if not pat.search(line):
+                continue
+            g = guarded_branches(lines, i)
+            own = "__" in f.name
+            scope = ("every branch" if g is None else
+                     ", ".join(sorted(g)) if g else "(empty guard)")
+            print(f"  {f.relative_to(root)}:{i + 1}")
+            print(f"      {'branch chunk ' if own else 'SHARED chunk '}"
+                  f"-> compiled for: {scope}")
+            n += 1
+    print(f"\n  {n} reference(s). A SHARED chunk line compiled for anything "
+          f"outside\n  {sorted(PRIORITY)} is what holds the constant.")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--proposals", type=Path)
+    ap.add_argument("--guards", metavar="CONST",
+                    help="print, for every shared chunk naming this constant, "
+                         "the branch set that compiles the line -- the check "
+                         "the all-branch hold is made on")
     ap.add_argument("--held", action="store_true",
                     help="name every held candidate, not just count it")
     args = ap.parse_args()
+
+    if args.guards:
+        return show_guards(args.guards)
 
     disputed = set()
     if DISPUTED.is_file():
@@ -164,9 +283,7 @@ def main() -> int:
                 continue
             arms = SRC / "src" / "levels" / "_unified" / stage.lower()
             shared = [f for f in arms.rglob("*.inc")] if arms.is_dir() else []
-            if any("__" not in f.name
-                   and re.search(rf"\b{re.escape(k)}\b",
-                                 f.read_text(errors="replace"))
+            if any(not "__" in f.name and reaches_other_branches(f, k)
                    for f in shared):
                 held.append((f"{port}: referenced from an all-branch chunk", port, stage, k, name))
                 why[f"{port}: referenced from an all-branch chunk"] += 1
