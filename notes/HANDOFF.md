@@ -601,6 +601,11 @@ without any judgement at all.
 rejected". Check for `applied`. It cost two silent no-ops this session; see
 `notes/render-and-name/README.md`.
 
+**An actor anchor says *the same actor*, never *which* actor.** `[BUDDY_X]`
+and `[HERO_X]` are contradicted by earned names in CAPSULE -- 20 conflicts,
+`notes/actor-anchors/anchor_identity.py`. Group by the anchor, name with the
+neutral `FIGURE` the stage already uses, and record the anchor as evidence.
+
 **A chained rename can never be branch-scoped across branches that share a
 unified arm.** The INTRO walk renumber needed three attempts;
 `notes/render-and-name/README.md` records both failures and the numbers that
