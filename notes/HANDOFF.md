@@ -25,7 +25,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 65.0% (6,598/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 67.2% (6,822/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 48, blocking 250 drawing labels | `shared-bank-geometry/blocked_by_bank.py` |
@@ -45,6 +45,53 @@ As of the last commit:
 | bare-`ret` tails named `<owner>_RET` | 174 exact + 10 refined of 198, 0 nameable left | `bare-ret-tails/owner_ret.py --control` |
 | limb-pose indices reproduced from the bank layout | 16 of 16 | `actor-sprite-sheet/subpiece_poses.py --control` |
 | named LEFT/RIGHT pairs that are an exact mirror (≤2 leaves) | 42 of 42 | `shared-bank-geometry/mirror_exact.py --control` |
+
+## Added 2026-09-23, later session
+
+**PRISON's wake closeup, the figure it cuts to, and six more groups.** 76
+pictures named across both priority ports from renders, all listed in
+`notes/render-and-name/README.md` with their confidence. Two of the groups are
+**ladders, not animations** -- chains of `jg [var], N` picking one picture for
+the current value of a variable the driver moves up *and* down, so draw order
+does not exist and the rung is the index. `notes/render-and-name/ladder_rungs.py`
+reads the rungs out of the bytecode and compares two branches on rung count and
+threshold, never on constant spelling.
+
+**A name that meant two things, and the branch whose art cannot be measured.**
+The pupil ladder has seven rungs; the three names it already carried were
+rungs 2, 6 and 7 numbered 0, 1 and 2. Renumbering forced the cartridge branch
+to follow, and cartridge art **cannot be rendered at all** -- archaeology
+#0106 is open and there is no `cinematic.rom` for it. Those seven names rest
+on the rung, and `proposals_cartridge_1992__PRISON.md` says so in its first
+paragraph. `ladder_rungs.py --diff` went FAIL/3 -> PASS/0 across that fix.
+
+**Two tool defects, both of which corrupted the tree before being caught.**
+
+* `apply_cinematic_renames.py`'s `collides()` treated a *rejected* row as
+  freeing its name, so re-running an applied renumber admitted exactly one row
+  and would have defined one name at two offsets. `retiring` is now a
+  fixpoint; two fixtures in `tools/tests/`, one that must reject and one that
+  must accept.
+* `sync_equ_rename.py` rewrote sequentially, so a renumber ate its own output.
+  Fixed to one simultaneous pass (`--self-test` reproduces the failure) -- and
+  the fix introduced a worse bug, because **a rename table is not idempotent
+  and cannot be made so**: after `682 -> PUPIL_0` and `PUPIL_0 -> PUPIL_1`
+  land, the tree is indistinguishable from the state before a second run. Only
+  the history differs. `applied_rows.tsv` now records it. **Write one table
+  file per batch.**
+
+**`align_draw_sites.py`: two bridges, because one was 6.9% wrong.** When one
+`canonical_md5` maps to several constants in a port, the hash cannot say which
+is which -- fourteen of one scene's nineteen were unreachable by art alone.
+Pairing by draw site inside the unified tree's own chunk pairs got 592 of 636
+already-named sites right, and every one of the 44 misses is a site where the
+two ports draw different pictures. Requiring BOTH gates: 552 of 552. See
+`notes/cross-port-art/README.md`, including the 44 `PRISON_CUTSCENE_ZOOM_IN_*`
+disagreements left open.
+
+**237 of 889 unified chunk FILENAMES name a label that no longer exists.**
+`notes/unified-scoping/stale_chunk_names.py`. Invisible to `make test`,
+because `.include` resolves by filename. Open work.
 
 ## Added 2026-09-23
 
@@ -187,6 +234,27 @@ art. `notes/lake-shooting/composite_at_anchor.py` exists to fix that; reach
 for it whenever two draws share an anchor.
 
 ## Open work, roughly in order of value
+
+**0. Keep the render-and-name batches going.** It is the only method still
+producing names: `nameable_from_drawer.py` reports 1, `transfer_by_art.py`
+reports 0, `align_draw_sites.py` reports 0 after each batch is carried across.
+PRISON is down from 135 still-numbered pictures >=24x24 to about 70; CAVES and
+CAPSULE are untouched this session. The loop that works:
+
+    python3 notes/render-and-name/sheet.py --stage PRISON --list
+    # pick a routine that draws several of them; read its body
+    # render its bank at the palette THAT ROUTINE sets, not palette 0
+    # compose the layers in draw order and look
+    # write ONE proposal table per batch, then:
+    (archaeology) python3 tools/apply_branch_scoped_names.py --stage S \
+        --branch B --min-confidence medium --apply --proposals <table>
+    python3 notes/unified-scoping/sync_equ_rename.py <table> S B --shared --apply
+    python3 notes/cross-port-art/transfer_by_art.py --proposals > <dos table>
+    # ... apply + sync that too, then undefined_symbols.py and make test
+
+The palette matters. PRISON's wake closeup reads as a blue eye at palette 0
+and as a brown-irised face at 0x0B, which is what the scene sets two lines
+before the first draw.
 
 0a. **Naming from a render is live, under explicit approval, and has its own
    directory.** `notes/render-and-name/` holds every name derived by looking
