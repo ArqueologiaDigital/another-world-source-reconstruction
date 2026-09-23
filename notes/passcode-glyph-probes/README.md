@@ -263,12 +263,31 @@ frame-index parsing because there is no underscore before them —
 
 ### What is still unnamed, and why
 
-    CINEMATIC_023   the one font glyph whose PICTURE differs between ports --
-                    msdos's is T, amiga's is U. One shared name cannot
-                    describe both (#0120); it needs a branch-scoped name.
+    (CINEMATIC_023  RESOLVED -- see below. It is T in both ports.)
     CINEMATIC_055   24.5x26.0, 4 leaves -- not a glyph, not decoded here
     CINEMATIC_056   70.0x15.0 amiga / 222.0x11.0 msdos, 1 leaf -- a rule or
                     bar, and its size differs by port
     CINEMATIC_057   msdos only, 18.0x18.0
     CINEMATIC_058   msdos only, a 0x1 degenerate line
+
+### `CINEMATIC_023` resolved: it is T in both ports
+
+The first reading was that msdos's copy is `T` and amiga's is `U`, needing a
+branch-scoped name. That was wrong, and it was wrong because it applied
+amiga's ladder *without* the one-place shift the same section documents.
+
+With the shift applied both ladders agree: msdos value `0x1D` is T and selects
+this constant directly; amiga value `0x1E` is T under the shift and selects it
+too. The font's own completeness confirms it independently — after naming
+everything else, digits 0-9 were complete and letters A..Z were complete
+**except T**, with `CINEMATIC_023` the single remaining font-range constant.
+One hole, one candidate.
+
+The two ports do hold different pictures here, and it is the only one of the
+36 font constants that does. That needs no branch scoping: a shared name with
+per-port values is exactly for this. The name is the role, the value is that
+port's art.
+
+**The font is complete: 10 digits and 26 letters, base-36.**
+PASSCODE 23.7% → **96.6%** (amiga), 93.4% (msdos).
 

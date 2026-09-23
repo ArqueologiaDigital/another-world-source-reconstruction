@@ -200,7 +200,7 @@ PASSCODE_LETTER_T_CASE_1D:
 
 PASSCODE_LETTER_U_CASE_1E:
 	jne [0x06], 0x1E, PASSCODE_LETTER_V_CASE_1F
-	video offset=CINEMATIC_023, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_T, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
