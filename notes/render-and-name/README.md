@@ -602,6 +602,33 @@ days precisely because there was no renderer in between.
 The palette is the routine's own. Rendering this run at palette 0 gives black
 on black, and the table above would be a table of zeroes.
 
+## `crop_to_extent.py` -- look at the art, not at the page around it
+
+`awvm-render-polygons` writes one 320x200 page per constant, anchored where the
+engine would draw it, which for most art is nowhere near the middle. Cropping to
+the centre cuts the subject in half: a first look at `CINEMATIC_233` used
+`x[128,194] y[68,140]` and showed a leg and a shoe, because the figure is at
+`x[132,168] y[44,100]`.
+
+    python3 notes/render-and-name/crop_to_extent.py --renders DIR \
+        --branch chahi_amiga_1991 --stage CAVES --out TIGHT CINEMATIC_233 ...
+    magick montage -density 700 -background "#707080" -tile 5x2 -geometry +5+5 \
+        TIGHT/*.svg out.png
+
+It reads each render's own path coordinates and writes a tight SVG. Two modes
+beyond that, both of which this directory needed more than once:
+
+- `--over C` stacks each constant on `C` first, which is the "composite before
+  you judge a sliver" rule as a flag: the hair frames are unreadable alone and
+  obvious over the body they are drawn on.
+- `--at X,Y` offsets by `(X-160, Y-100)` instead of cropping to self, so a
+  scene's pieces land where its routine puts them -- how the eleven-figure row
+  and the seven-piece wide shot were read.
+
+It never touches the ROM. The renders are the input, which is the rule
+`../polygon-extent-correction/` settled: when the question is what something
+looks like, measure the drawn thing.
+
 ## A picture placed by many routines is a kit, and takes no screen word
 
 `LABEL_C433` in CAVES is twenty-one draws with no `break` between them, then one
