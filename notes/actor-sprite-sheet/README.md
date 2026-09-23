@@ -104,7 +104,15 @@ an independent reason to believe the grouping is real and not an artefact of
 how the drawers were named.
 
 Named `CV_FIGURE_WALK_<DIR>_LIMB_POSE_00..03`, ordered by ascending first
-phase. `POSE` rather than `F` is the whole point: an `F<n>` would claim a
+phase. **Independently checked** by `verify_limb_phases.py`, which uses no
+routine name at all: where a routine draws exactly one
+`CV_FIGURE_WALK_<DIR>_BODY_F<n>` and also a limb, the body frame fixes the
+frame number. All four right-facing poses come back exactly — `[0,1]`,
+`[5,11]`, `[6,10]`, `[8,9]`, no extra frame — so the mid-stride symmetry is
+not an artefact of how the drawers were named. The four left-facing poses are
+**unobserved** by that signal, not confirmed; their claim still rests on the
+drawer names alone, and the probe reports that rather than counting them as
+passing. `POSE` rather than `F` is the whole point: an `F<n>` would claim a
 frame, and not being one frame is exactly why these were stuck. Four per
 direction, complete 0..3.
 
