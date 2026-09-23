@@ -28,12 +28,12 @@ HERO_FLOOR_STEP_UP_DRAW_BY_FACING:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_305
-	video offset=CINEMATIC_TELEPORT_UP_BEAM, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_LEFT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_CIN_305:
-	video offset=CINEMATIC_305, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
@@ -44,12 +44,12 @@ HERO_FLOOR_STEP_DOWN_DRAW_BY_FACING:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_303
-	video offset=CINEMATIC_304, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_LEFT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_CIN_303:
-	video offset=CINEMATIC_303, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 

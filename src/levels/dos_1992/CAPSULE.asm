@@ -113,10 +113,10 @@ CINEMATIC_085		EQU 0x5B1C
 CINEMATIC_086		EQU 0x5B68
 CINEMATIC_087		EQU 0x5BA4
 CINEMATIC_088		EQU 0x5BE4
-CINEMATIC_089		EQU 0x157C
-CINEMATIC_090		EQU 0x36B0
-CINEMATIC_091		EQU 0x1538
-CINEMATIC_TELEPORT_UP_BEAM		EQU 0x369C
+CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT		EQU 0x157C
+CINEMATIC_TELEPORT_DOWN_BEAM_LEFT		EQU 0x36B0
+CINEMATIC_TELEPORT_UP_BEAM_RIGHT		EQU 0x1538
+CINEMATIC_TELEPORT_UP_BEAM_LEFT		EQU 0x369C
 CINEMATIC_093		EQU 0xA624
 CINEMATIC_094		EQU 0x4616
 CINEMATIC_095		EQU 0x3A84
@@ -2399,21 +2399,21 @@ LABEL_0D62:
 	video offset=CINEMATIC_298, x=[HERO_X], y=[HERO_Y]
 	video offset=CINEMATIC_304, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_091, x=[HERO_X], y=100
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=100
 	break
-	video offset=CINEMATIC_091, x=[HERO_X], y=60
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=60
 	break
-	video offset=CINEMATIC_091, x=[HERO_X], y=20
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=20
 	break
-	video offset=CINEMATIC_091, x=[HERO_X], y=65516
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=65516
 	break
 	mov [0x32], 0x0001
 	mov [HERO_Y], 0xFFD8
 	break
 	mov [0x32], 0x0001
-	video offset=CINEMATIC_091, x=[HERO_X], y=150
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=150
 	break
-	video offset=CINEMATIC_091, x=[HERO_X], y=100
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=100
 	mov [HERO_Y], [0x40]
 	setup channel=0x16, address=LABEL_B666
 	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
@@ -16357,13 +16357,13 @@ HERO_FLOOR_STEP_UP_ENTRY:
 	sub [HERO_Y], 0x0050
 	mov [0x32], 0x0001
 	jne [SCREEN_NUM], 0xAA, LABEL_97D6
-	video offset=CINEMATIC_089, x=[HERO_X], y=160
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=160
 	break
-	video offset=CINEMATIC_089, x=[HERO_X], y=200
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=200
 	break
 
 LABEL_97D6:
-	video offset=CINEMATIC_089, x=[HERO_X], y=240
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=240
 	mov [HERO_Y], 0x012C
 	setup channel=0x17, address=KILL_CHANNEL_LANDING
 	break
@@ -16375,13 +16375,13 @@ LABEL_97D6:
 	break
 	je [SCREEN_NUM], 0xCE, INIT_VARS_03_32_02
 	mov [0x32], 0x0001
-	video offset=CINEMATIC_089, x=[HERO_X], y=77
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=77
 	mov [HERO_Y], [0x52]
 	break
 	mov [0x32], 0x0001
-	video offset=CINEMATIC_089, x=[HERO_X], y=146
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=146
 	break
-	video offset=CINEMATIC_089, x=[HERO_X], y=189
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=189
 	mov [HERO_Y], [0x52]
 	setup channel=0x1A, address=LABEL_9774
 	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
@@ -16408,27 +16408,27 @@ LABEL_9856:
 	sub [HERO_Y], 0x0064
 	je [SCREEN_NUM], 0xAA, LABEL_986E
 	mov [0x32], 0x0001
-	video offset=CINEMATIC_091, x=[HERO_X], y=115
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=115
 	break
 
 LABEL_986E:
 	mov [0x32], 0x0001
-	video offset=CINEMATIC_091, x=[HERO_X], y=60
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=60
 	setup channel=0x17, address=KILL_CHANNEL_LANDING
 	break
 	mov [0x0F], 0x0000
 	mov [0x32], 0x0001
-	video offset=CINEMATIC_091, x=[HERO_X], y=65529
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=65529
 	break
 	mov [HERO_Y], [0x51]
 	break
 	je [SCREEN_NUM], 0xCE, INIT_VARS_03_32_02_1
-	video offset=CINEMATIC_091, x=[HERO_X], y=180
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=180
 	jne [SCREEN_NUM], 0xAA, LABEL_98AC
 	break
-	video offset=CINEMATIC_091, x=[HERO_X], y=130
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=130
 	break
-	video offset=CINEMATIC_091, x=[HERO_X], y=70
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=70
 
 LABEL_98AC:
 	mov [HERO_Y], [0x51]
@@ -16439,7 +16439,7 @@ LABEL_98B6:
 	mov [0x63], 0x0064
 	sub [HERO_Y], 0x001E
 	mov [0x32], 0x0001
-	video offset=CINEMATIC_089, x=[HERO_X], y=240
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=240
 	mov [HERO_Y], 0x012C
 	break
 	setup channel=0x17, address=KILL_CHANNEL_LANDING
@@ -16451,11 +16451,11 @@ LABEL_98B6:
 	break
 	mov [HERO_X], 0x0036
 	mov [0x32], 0x0009
-	video offset=CINEMATIC_089, x=[HERO_X], y=40
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=40
 	mov [HERO_Y], [0x52]
 	break
 	mov [0x32], 0x0009
-	video offset=CINEMATIC_089, x=[HERO_X], y=80
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=80
 	mov [HERO_Y], [0x52]
 	setup channel=0x1A, address=LABEL_9774
 	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
@@ -16464,16 +16464,16 @@ LABEL_9905:
 	mov [0x63], 0x0064
 	sub [HERO_Y], 0x0064
 	mov [0x32], 0x0001
-	video offset=CINEMATIC_091, x=[HERO_X], y=40
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=40
 	break
 	mov [0x32], 0x0001
-	video offset=CINEMATIC_091, x=[HERO_X], y=65524
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=65524
 	break
 	mov [HERO_Y], [0x51]
 	break
 	mov [0x32], 0x0009
 	mov [HERO_X], 0x0029
-	video offset=CINEMATIC_091, x=[HERO_X], y=180
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=180
 	mov [HERO_Y], [0x51]
 	setup channel=0x1A, address=CAPSULE_SHELVE_BACKDROP_TO_PAGE3_L1
 	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
@@ -16484,16 +16484,16 @@ INIT_VARS_03_32_02_1:
 	mov [HERO_Y], 0x00DC
 
 LABEL_9949:
-	video offset=CINEMATIC_091, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=[HERO_Y]
 	add [SCROLL_Y], 0x0000
 	sub [HERO_Y], 0x0028
 	break
 	djnz [0x03], LABEL_9949
-	video offset=CINEMATIC_091, x=[HERO_X], y=65516
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=65516
 	break
 	mov [HERO_Y], [0x51]
 	break
-	video offset=CINEMATIC_091, x=[HERO_X], y=180
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=180
 	mov [HERO_Y], [0x51]
 	setup channel=0x1A, address=CAPSULE_SHELVE_BACKDROP_TO_PAGE3_L1
 	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
@@ -16506,24 +16506,24 @@ INIT_VARS_03_32_02:
 	mov [HERO_Y], 0x0000
 
 LABEL_9982:
-	video offset=CINEMATIC_089, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=[HERO_Y]
 	add [HERO_Y], 0x0028
 	break
 	djnz [0x03], LABEL_9982
-	video offset=CINEMATIC_089, x=[HERO_X], y=240
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=240
 	break
 	mov [0x32], 0x0001
-	video offset=CINEMATIC_089, x=[HERO_X], y=280
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=280
 	break
 	mov [HERO_Y], [0x52]
 	break
 	mov [0x32], 0x0001
-	video offset=CINEMATIC_089, x=[HERO_X], y=77
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=77
 	break
 	mov [0x32], 0x0001
-	video offset=CINEMATIC_089, x=[HERO_X], y=146
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=146
 	break
-	video offset=CINEMATIC_089, x=[HERO_X], y=189
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=189
 	mov [HERO_Y], [0x52]
 	setup channel=0x1A, address=LABEL_9774
 	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
@@ -16532,12 +16532,12 @@ HERO_FLOOR_STEP_UP_DRAW_BY_FACING:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_091
-	video offset=CINEMATIC_TELEPORT_UP_BEAM, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_LEFT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_CIN_091:
-	video offset=CINEMATIC_091, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
@@ -16548,12 +16548,12 @@ HERO_FLOOR_STEP_DOWN_DRAW_BY_FACING:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_089
-	video offset=CINEMATIC_090, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_LEFT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_CIN_089:
-	video offset=CINEMATIC_089, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 

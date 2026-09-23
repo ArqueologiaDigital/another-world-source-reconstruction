@@ -1,30 +1,23 @@
-# The CAVES trap columns -- chahi_amiga_1991
+# The teleport beams in CAVES -- chahi_amiga_1991
 
-The CAVES trap columns. `CAVES_TRAP_COLUMN_WATCH_SLOT_0_LOOP` and
-`..._SLOT_1_LOOP` are already named, and each is installed immediately before
-its own draw thread on the next channel -- 0x22/0x23 for slot 0 and 0x24/0x25
-for slot 1 -- after that slot's position variables are set. The thread draws
-its frames in order at `[0x07],[0x08]`, each guarded by `jne [0x09], 0x00` so
-the whole animation aborts when the column is cleared.
+The teleport beams, both facings. `PRISON_TELEPORT_UP_POSE_BY_FACING` picks
+between two pictures on `[0x04] & 0x0010`, and the signed bounding boxes show
+they are a mirror pair: the left one spans x -4.0..+1.5 and the right one
+-1.5..+5.0, reflected about +0.5, with identical y. The DOWN pair mirrors the
+same way at y -108.0..-27.5.
 
-The two slots use entirely different art: zero frames shared by
-`canonical_md5`, 8 frames for slot 0 and 6 for slot 1. All three branches
-have the identical structure at different constant numbers, and amiga and
-msdos agree frame for frame.
+The left-facing pictures were already named, inconsistently -- UP as
+`CINEMATIC_TELEPORT_UP_BEAM` with no facing, DOWN as
+`CINEMATIC_CAVES_TELEPORT_DOWN_BEAM` in CAVES only and numbered elsewhere.
+All four members now carry their facing, so the bare name no longer implies
+there is only one.
+
+Every member was matched by `canonical_md5` across three stages and both
+priority ports, never by index.
 
 | constant | proposed name | confidence | evidence |
 | --- | --- | --- | --- |
-| CINEMATIC_697 | CINEMATIC_CAVES_TRAP_COLUMN_SLOT_0_F0 | high | frame 0 of the 8 that `LABEL_2DAC` draws in order at `[0x07],[0x08]`, the thread set up on channel 0x23 right after `CAVES_TRAP_COLUMN_WATCH_SLOT_0_LOOP` |
-| CINEMATIC_698 | CINEMATIC_CAVES_TRAP_COLUMN_SLOT_0_F1 | high | frame 1 of the 8 that `LABEL_2DAC` draws in order at `[0x07],[0x08]`, the thread set up on channel 0x23 right after `CAVES_TRAP_COLUMN_WATCH_SLOT_0_LOOP` |
-| CINEMATIC_699 | CINEMATIC_CAVES_TRAP_COLUMN_SLOT_0_F2 | high | frame 2 of the 8 that `LABEL_2DAC` draws in order at `[0x07],[0x08]`, the thread set up on channel 0x23 right after `CAVES_TRAP_COLUMN_WATCH_SLOT_0_LOOP` |
-| CINEMATIC_700 | CINEMATIC_CAVES_TRAP_COLUMN_SLOT_0_F3 | high | frame 3 of the 8 that `LABEL_2DAC` draws in order at `[0x07],[0x08]`, the thread set up on channel 0x23 right after `CAVES_TRAP_COLUMN_WATCH_SLOT_0_LOOP` |
-| CINEMATIC_701 | CINEMATIC_CAVES_TRAP_COLUMN_SLOT_0_F4 | high | frame 4 of the 8 that `LABEL_2DAC` draws in order at `[0x07],[0x08]`, the thread set up on channel 0x23 right after `CAVES_TRAP_COLUMN_WATCH_SLOT_0_LOOP` |
-| CINEMATIC_702 | CINEMATIC_CAVES_TRAP_COLUMN_SLOT_0_F5 | high | frame 5 of the 8 that `LABEL_2DAC` draws in order at `[0x07],[0x08]`, the thread set up on channel 0x23 right after `CAVES_TRAP_COLUMN_WATCH_SLOT_0_LOOP` |
-| CINEMATIC_703 | CINEMATIC_CAVES_TRAP_COLUMN_SLOT_0_F6 | high | frame 6 of the 8 that `LABEL_2DAC` draws in order at `[0x07],[0x08]`, the thread set up on channel 0x23 right after `CAVES_TRAP_COLUMN_WATCH_SLOT_0_LOOP` |
-| CINEMATIC_704 | CINEMATIC_CAVES_TRAP_COLUMN_SLOT_0_F7 | high | frame 7 of the 8 that `LABEL_2DAC` draws in order at `[0x07],[0x08]`, the thread set up on channel 0x23 right after `CAVES_TRAP_COLUMN_WATCH_SLOT_0_LOOP` |
-| CINEMATIC_691 | CINEMATIC_CAVES_TRAP_COLUMN_SLOT_1_F0 | high | frame 0 of the 6 that `LABEL_2E0C` draws in order at `[0x07],[0x08]`, the thread set up on channel 0x25 right after `CAVES_TRAP_COLUMN_WATCH_SLOT_1_LOOP` |
-| CINEMATIC_692 | CINEMATIC_CAVES_TRAP_COLUMN_SLOT_1_F1 | high | frame 1 of the 6 that `LABEL_2E0C` draws in order at `[0x07],[0x08]`, the thread set up on channel 0x25 right after `CAVES_TRAP_COLUMN_WATCH_SLOT_1_LOOP` |
-| CINEMATIC_693 | CINEMATIC_CAVES_TRAP_COLUMN_SLOT_1_F2 | high | frame 2 of the 6 that `LABEL_2E0C` draws in order at `[0x07],[0x08]`, the thread set up on channel 0x25 right after `CAVES_TRAP_COLUMN_WATCH_SLOT_1_LOOP` |
-| CINEMATIC_694 | CINEMATIC_CAVES_TRAP_COLUMN_SLOT_1_F3 | high | frame 3 of the 6 that `LABEL_2E0C` draws in order at `[0x07],[0x08]`, the thread set up on channel 0x25 right after `CAVES_TRAP_COLUMN_WATCH_SLOT_1_LOOP` |
-| CINEMATIC_695 | CINEMATIC_CAVES_TRAP_COLUMN_SLOT_1_F4 | high | frame 4 of the 6 that `LABEL_2E0C` draws in order at `[0x07],[0x08]`, the thread set up on channel 0x25 right after `CAVES_TRAP_COLUMN_WATCH_SLOT_1_LOOP` |
-| CINEMATIC_696 | CINEMATIC_CAVES_TRAP_COLUMN_SLOT_1_F5 | high | frame 5 of the 6 that `LABEL_2E0C` draws in order at `[0x07],[0x08]`, the thread set up on channel 0x25 right after `CAVES_TRAP_COLUMN_WATCH_SLOT_1_LOOP` |
+| CINEMATIC_TELEPORT_UP_BEAM | CINEMATIC_TELEPORT_UP_BEAM_LEFT | high | matched by canonical_md5 to the left-facing arm of the teleport-up pair; its signed bbox is x -4.0..+1.5 (biased left of the draw anchor), the mirror of its partner |
+| CINEMATIC_855 | CINEMATIC_TELEPORT_UP_BEAM_RIGHT | high | matched by canonical_md5 to the right-facing arm of the teleport-up pair; its signed bbox is x -1.5..+5.0 (biased right of the draw anchor), the mirror of its partner |
+| CINEMATIC_CAVES_TELEPORT_DOWN_BEAM | CINEMATIC_TELEPORT_DOWN_BEAM_LEFT | high | matched by canonical_md5 to the left-facing arm of the teleport-down pair; its signed bbox is x -4.0..+1.5 (biased left of the draw anchor), the mirror of its partner |
+| CINEMATIC_853 | CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT | high | matched by canonical_md5 to the right-facing arm of the teleport-down pair; its signed bbox is x -1.5..+5.0 (biased right of the draw anchor), the mirror of its partner |

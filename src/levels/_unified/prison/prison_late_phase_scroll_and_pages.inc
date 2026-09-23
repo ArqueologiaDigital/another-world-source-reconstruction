@@ -153,7 +153,7 @@ PRISON_TELEPORT_LOWER_PAD_SETTLE_LOOP:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_552:
-	video offset=CINEMATIC_552, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
@@ -167,13 +167,13 @@ PRISON_TELEPORT_DOWN_POSE_BY_FACING:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_550
-	video offset=CINEMATIC_551, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_LEFT, x=[HERO_X], y=[HERO_Y]
 	ret
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_550:
-	video offset=CINEMATIC_550, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 

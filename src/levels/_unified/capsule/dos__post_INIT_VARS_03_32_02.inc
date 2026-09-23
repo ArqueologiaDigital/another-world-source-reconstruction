@@ -1,22 +1,22 @@
 LABEL_9982:
-	video offset=CINEMATIC_089, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=[HERO_Y]
 	add [HERO_Y], 0x0028
 	break
 	djnz [0x03], LABEL_9982
-	video offset=CINEMATIC_089, x=[HERO_X], y=240
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=240
 	break
 	mov [0x32], 0x0001
-	video offset=CINEMATIC_089, x=[HERO_X], y=280
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=280
 	break
 	mov [HERO_Y], [0x52]
 	break
 	mov [0x32], 0x0001
-	video offset=CINEMATIC_089, x=[HERO_X], y=77
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=77
 	break
 	mov [0x32], 0x0001
-	video offset=CINEMATIC_089, x=[HERO_X], y=146
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=146
 	break
-	video offset=CINEMATIC_089, x=[HERO_X], y=189
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=189
 	mov [HERO_Y], [0x52]
 	setup channel=0x1A, address=LABEL_9774
 	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4
@@ -25,12 +25,12 @@ HERO_FLOOR_STEP_UP_DRAW_BY_FACING:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_091
-	video offset=CINEMATIC_TELEPORT_UP_BEAM, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_LEFT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_CIN_091:
-	video offset=CINEMATIC_091, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
@@ -41,12 +41,12 @@ HERO_FLOOR_STEP_DOWN_DRAW_BY_FACING:
 	mov [0xF8], [0x04]
 	and [0xF8], 0x0010
 	jne [0xF8], 0x00, DRAW_CIN_089
-	video offset=CINEMATIC_090, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_LEFT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
 DRAW_CIN_089:
-	video offset=CINEMATIC_089, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 

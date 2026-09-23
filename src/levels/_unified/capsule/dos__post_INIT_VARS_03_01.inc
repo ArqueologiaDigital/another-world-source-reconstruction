@@ -53,21 +53,21 @@ LABEL_0D62:
 	video offset=CINEMATIC_298, x=[HERO_X], y=[HERO_Y]
 	video offset=CINEMATIC_304, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_091, x=[HERO_X], y=100
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=100
 	break
-	video offset=CINEMATIC_091, x=[HERO_X], y=60
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=60
 	break
-	video offset=CINEMATIC_091, x=[HERO_X], y=20
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=20
 	break
-	video offset=CINEMATIC_091, x=[HERO_X], y=65516
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=65516
 	break
 	mov [0x32], 0x0001
 	mov [HERO_Y], 0xFFD8
 	break
 	mov [0x32], 0x0001
-	video offset=CINEMATIC_091, x=[HERO_X], y=150
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=150
 	break
-	video offset=CINEMATIC_091, x=[HERO_X], y=100
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=100
 	mov [HERO_Y], [0x40]
 	setup channel=0x16, address=LABEL_B666
 	jmp CAPSULE_HERO_WALK_DECIDE_BY_VAR04_BIT_4

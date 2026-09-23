@@ -9,6 +9,8 @@ Run these; do not trust the numbers below without re-running them.
 
     make test                                            # the byte gate
     python3 notes/unified-symbol-check/undefined_symbols.py
+    # after ANY branch-scoped rename, before make test:
+    python3 notes/unified-scoping/sync_equ_rename.py <table.md> <STAGE> <branch> --apply
     python3 notes/shared-bank-naming/asset_naming_share.py
     python3 notes/crossstage-duplicates/one_picture_many_names.py
     python3 notes/laser-impact-anim/impact_ladder.py
@@ -20,7 +22,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 63.3% (6,426/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 63.5% (6,442/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 77 of 352 (59 reachable) | `notes/shared-bank-geometry/` |

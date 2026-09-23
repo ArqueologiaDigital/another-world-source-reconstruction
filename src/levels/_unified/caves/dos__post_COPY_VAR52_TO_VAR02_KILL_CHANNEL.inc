@@ -35,7 +35,7 @@ CAVES_TELEPORT_UP_BEAM_DRAW:
 
 
 DRAW_CIN_878:
-	video offset=CINEMATIC_878, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_UP_BEAM_RIGHT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
@@ -51,7 +51,7 @@ CAVES_TELEPORT_DOWN_BEAM_DRAW:
 
 
 DRAW_CIN_876:
-	video offset=CINEMATIC_876, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TELEPORT_DOWN_BEAM_RIGHT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
