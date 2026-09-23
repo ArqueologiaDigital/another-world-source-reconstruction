@@ -63,11 +63,22 @@ checked against the receiving port's own guards.
 | CINEMATIC_340 | CINEMATIC_361 | `..._SCREEN_4D_ARCHES` | medium |
 | CINEMATIC_332 | CINEMATIC_353 | `..._SCREEN_4C_CAVERN_COLUMNS` | medium |
 | CINEMATIC_333 | CINEMATIC_354 | `..._SCREEN_4C_CAVERN_ARCH` | medium |
+| CINEMATIC_279 | CINEMATIC_300 | `CINEMATIC_CAVES_WATERFALL` | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
 screen's own backdrop painter and by nothing else. `CINEMATIC_340` is the one
 that is not a column: two arch silhouettes springing from pillars.
+
+`CINEMATIC_CAVES_WATERFALL` is the one name here that three things agree on.
+The picture is 818 paths of dense vertical streaks in horizontal bands.
+`DRAW_WATERFALL_BG_FOUR_PASS` draws **this constant and nothing else**, four
+times at x=161 y=61, x=161 y=62, x=161 y=60 and x=160 y=62 across two video
+pages -- the one-pixel offsets that give the routine its `FOUR_PASS` name.
+`../sole-named-drawer/` cannot reach it, because rule 3 refuses a picture two
+routines draw; the second here is `CAVES_BUDDY_CRAWLING_SCENE_SETUP`, painting
+it full-screen as that scene's background, and the two agree. Looking is what
+shows they agree.
 
 ## What was looked at and deliberately not named
 
