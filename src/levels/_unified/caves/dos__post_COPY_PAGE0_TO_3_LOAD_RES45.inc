@@ -135,12 +135,12 @@ CAVES_SCREEN_89_BACKDROP_DRAW:
 
 CAVES_SCREEN_8A_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
-	video offset=CINEMATIC_610, x=161, y=100
-	video offset=CINEMATIC_611, x=161, y=99
+	video offset=CINEMATIC_CAVES_SCREEN_8A_CAVERN_WALL, x=161, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_8A_CAVERN_RIDGE, x=161, y=99
 	selectVideoPage 0x03
 	fill page=0x03, color=0x00
-	video offset=CINEMATIC_610, x=160, y=100
-	video offset=CINEMATIC_611, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_8A_CAVERN_WALL, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_8A_CAVERN_RIDGE, x=160, y=100
 	ret
 
 
@@ -148,9 +148,9 @@ LABEL_D3FC:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_643, x=160, y=100
 	video offset=CINEMATIC_644, x=160, y=100
-	video offset=CINEMATIC_645, x=256, y=167, zoom=0x20
-	video offset=CINEMATIC_646, x=244, y=170, zoom=0x20
-	video offset=CINEMATIC_647, x=135, y=202, zoom=0x40
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_MEDIUM, x=256, y=167, zoom=0x20
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_SMALL, x=244, y=170, zoom=0x20
+	video offset=CINEMATIC_CAVES_SCREEN_AD_BACKDROP_FIELD_SMALL, x=135, y=202, zoom=0x40
 	copyVideoPage src=0x00, dst=0x03
 	mov [0xF8], [0xB1]
 	and [0xF8], 0x0008
@@ -167,13 +167,13 @@ DRAW_CIN_648:
 CAVES_SCREEN_A8_BACKDROP_DRAW:
 	fill page=0x00, color=0x09
 	video offset=CINEMATIC_655, x=155, y=100
-	video offset=CINEMATIC_656, x=155, y=100
+	video offset=CINEMATIC_CAVES_SHAFT_COLUMN, x=155, y=100
 	ret
 
 
 CAVES_SCREEN_A9_BACKDROP_DRAW:
 	fill page=0x00, color=0x09
-	video offset=CINEMATIC_656, x=25, y=100
+	video offset=CINEMATIC_CAVES_SHAFT_COLUMN, x=25, y=100
 	ret
 
 
@@ -191,8 +191,8 @@ CAVES_SCREEN_C9_BACKDROP_DRAW:
 	video offset=CINEMATIC_CAVES_COLLAPSE_SEGMENTED_BAR_F2, x=160, y=100
 	video offset=CINEMATIC_CAVES_HERO_COLLAPSE_F2, x=160, y=100
 	video offset=CINEMATIC_CAVES_COLLAPSE_SEGMENTED_BAR_F3, x=160, y=100
-	video offset=CINEMATIC_645, x=130, y=57
-	video offset=CINEMATIC_646, x=39, y=51, zoom=0x20
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_MEDIUM, x=130, y=57
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_SMALL, x=39, y=51, zoom=0x20
 	video offset=CINEMATIC_CAVES_HERO_COLLAPSE_F3, x=27, y=47, zoom=0x20
 	ret
 
@@ -222,13 +222,13 @@ CAVES_SCREEN_CC_BACKDROP_DRAW:
 	video offset=CINEMATIC_CAVES_LASER_BLAST_6, x=160, y=100
 	jne [0xB0], 0x03, SHARED_RET
 	setPalette 0x10
-	video offset=CINEMATIC_646, x=49, y=115
-	video offset=CINEMATIC_645, x=8, y=96
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_SMALL, x=49, y=115
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_MEDIUM, x=8, y=96
 	video offset=CINEMATIC_CAVES_HERO_COLLAPSE_F3, x=28, y=110
-	video offset=CINEMATIC_645, x=68, y=115
-	video offset=CINEMATIC_646, x=9, y=80
-	video offset=CINEMATIC_646, x=6, y=99
-	video offset=CINEMATIC_645, x=15, y=120, zoom=0x2a
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_MEDIUM, x=68, y=115
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_SMALL, x=9, y=80
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_SMALL, x=6, y=99
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_MEDIUM, x=15, y=120, zoom=0x2a
 	video offset=CINEMATIC_CAVES_HERO_COLLAPSE_F3, x=65526, y=66
 	ret
 
@@ -253,8 +253,8 @@ CAVES_SCREEN_AD_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_657, x=160, y=100
 	video offset=CINEMATIC_CAVES_SCREEN_92_BACKDROP_LAYER_1, x=327, y=146
-	video offset=CINEMATIC_647, x=239, y=137
-	video offset=CINEMATIC_647, x=243, y=180
+	video offset=CINEMATIC_CAVES_SCREEN_AD_BACKDROP_FIELD_SMALL, x=239, y=137
+	video offset=CINEMATIC_CAVES_SCREEN_AD_BACKDROP_FIELD_SMALL, x=243, y=180
 	jne [0xB0], 0x03, SHARED_RET
 	video offset=CINEMATIC_CAVES_HERO_IDLE_DOWN_4, x=131, y=217, zoom=0x40
 	ret
@@ -393,7 +393,7 @@ CAVES_SCREEN_4C_BACKDROP_DRAW:
 	video offset=CINEMATIC_CAVES_DRIFT_MOTE, x=35, y=103
 	video offset=CINEMATIC_CAVES_DRIFT_MOTE, x=218, y=152
 	video offset=CINEMATIC_CAVES_DRIFT_MOTE, x=93, y=77
-	video offset=CINEMATIC_358, x=161, y=96
+	video offset=CINEMATIC_CAVES_GLOW_STONE, x=161, y=96
 	video offset=CINEMATIC_CAVES_BUDDY_CRAWLING_BG_0, x=59, y=96
 	ret
 
@@ -430,10 +430,10 @@ CAVES_SCREEN_4D_BACKDROP_DRAW:
 	video offset=CINEMATIC_CAVES_DRIFT_MOTE, x=123, y=173
 	video offset=CINEMATIC_CAVES_DRIFT_MOTE, x=137, y=187
 	video offset=CINEMATIC_CAVES_DRIFT_MOTE, x=124, y=192
-	video offset=CINEMATIC_363, x=197, y=154
-	video offset=CINEMATIC_358, x=302, y=141
-	video offset=CINEMATIC_358, x=209, y=129
-	video offset=CINEMATIC_358, x=6, y=57
+	video offset=CINEMATIC_CAVES_SCREEN_4D_ROCK_CORNER, x=197, y=154
+	video offset=CINEMATIC_CAVES_GLOW_STONE, x=302, y=141
+	video offset=CINEMATIC_CAVES_GLOW_STONE, x=209, y=129
+	video offset=CINEMATIC_CAVES_GLOW_STONE, x=6, y=57
 	ret
 
 

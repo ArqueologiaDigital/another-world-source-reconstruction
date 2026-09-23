@@ -159,6 +159,7 @@ checked against the receiving port's own guards.
 | PRISON 157..167, 225..239 | (same numbers) | `CINEMATIC_PRISON_FIGURE_POSE_{LEFT,RIGHT}_<g>_<i>` | high |
 | CAVES 015..027, 038..053 | (same numbers) | `CINEMATIC_CAVES_FIGURE_POSE_{LEFT,RIGHT}_<g>_<i>` | high |
 | CAVES 275, 335, 336, 395, 406, 407, 411 | 296, 356, 357, 416, 427, 428, 432 | `CINEMATIC_CAVES_{DRIFT_MOTE,ROCK_ARC_LARGE,ROCK_FLECK,LEDGE_SEGMENT}` + three `SCREEN_6C_*` | medium |
+| CAVES 624, 625, 708, 436, 596, 636, 589, 590, 634, 337, 342 | 645, 646, 729, 457, 617, 647, 610, 611, 656, 358, 363 | `CINEMATIC_CAVES_{FALLING_ROCK_SMALL,MEDIUM,LARGE,BACKDROP_FIELD_*,SCREEN_8A_CAVERN_*,SHAFT_COLUMN,GLOW_STONE}` | high/medium |
 | INTRO 268..276 | 274..282 | `CINEMATIC_FRAGMENTS_RECEDING_F0..F8` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,

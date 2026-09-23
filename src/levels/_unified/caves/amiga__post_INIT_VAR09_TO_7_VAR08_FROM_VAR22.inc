@@ -29,17 +29,17 @@ LABEL_2A7C:
 
 
 HANG_DRAW_CIN_625:
-	video offset=CINEMATIC_625, x=[0x74], y=[0x75]
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_SMALL, x=[0x74], y=[0x75]
 	break
 	jmp HANG_DRAW_CIN_625
 
 HANG_DRAW_CIN_624:
-	video offset=CINEMATIC_624, x=[0x77], y=[0x78]
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_MEDIUM, x=[0x77], y=[0x78]
 	break
 	jmp HANG_DRAW_CIN_624
 
 HANG_DRAW_CIN_708:
-	video offset=CINEMATIC_708, x=[0x7a], y=[0x7b]
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_LARGE, x=[0x7a], y=[0x7b]
 	break
 	jmp HANG_DRAW_CIN_708
 LABEL_2AB0:
@@ -47,13 +47,13 @@ LABEL_2AB0:
 
 CAVES_FALLING_ROCK_SMALL_DRAW:
 	jg [0x09], 0x07, LABEL_2AC9
-	video offset=CINEMATIC_625, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_SMALL, x=[0x07], y=[0x08]
 	ret
 
 
 CAVES_FALLING_ROCK_MEDIUM_DRAW:
 	jg [0x09], 0x07, LABEL_2AC9
-	video offset=CINEMATIC_624, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_MEDIUM, x=[0x07], y=[0x08]
 	ret
 
 
@@ -64,7 +64,7 @@ LABEL_2AC9:
 
 CAVES_FALLING_ROCK_LARGE_DRAW:
 	jg [0x09], 0x07, LABEL_2AE4
-	video offset=CINEMATIC_708, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_LARGE, x=[0x07], y=[0x08]
 	ret
 
 
@@ -76,12 +76,12 @@ LABEL_2AE4:
 LABEL_2AF3:
 	jne [0x09], 0x08, LABEL_2B20
 	sub [0x08], 0x0008
-	video offset=CINEMATIC_624, x=[0x07], y=[0x08], zoom=0x20
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_MEDIUM, x=[0x07], y=[0x08], zoom=0x20
 	sub [0x07], 0x000A
-	video offset=CINEMATIC_708, x=[0x07], y=[0x08], zoom=0x20
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_LARGE, x=[0x07], y=[0x08], zoom=0x20
 	add [0x08], 0x0008
 	add [0x07], 0x0014
-	video offset=CINEMATIC_625, x=[0x07], y=[0x08], zoom=0x20
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_SMALL, x=[0x07], y=[0x08], zoom=0x20
 	sub [0x07], 0x000A
 	ret
 
@@ -89,38 +89,38 @@ LABEL_2AF3:
 LABEL_2B20:
 	jne [0x09], 0x09, LABEL_2B4D
 	sub [0x08], 0x000A
-	video offset=CINEMATIC_624, x=[0x07], y=[0x08], zoom=0x20
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_MEDIUM, x=[0x07], y=[0x08], zoom=0x20
 	add [0x08], 0x000A
 	sub [0x07], 0x0011
-	video offset=CINEMATIC_708, x=[0x07], y=[0x08], zoom=0x20
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_LARGE, x=[0x07], y=[0x08], zoom=0x20
 	add [0x07], 0x0022
-	video offset=CINEMATIC_625, x=[0x07], y=[0x08], zoom=0x20
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_SMALL, x=[0x07], y=[0x08], zoom=0x20
 	sub [0x07], 0x0011
 	ret
 
 
 LABEL_2B4D:
 	jne [0x09], 0x0A, LABEL_2B7A
-	video offset=CINEMATIC_624, x=[0x07], y=[0x08], zoom=0x20
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_MEDIUM, x=[0x07], y=[0x08], zoom=0x20
 	sub [0x07], 0x0014
 	add [0x08], 0x0001
-	video offset=CINEMATIC_708, x=[0x07], y=[0x08], zoom=0x20
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_LARGE, x=[0x07], y=[0x08], zoom=0x20
 	sub [0x08], 0x0001
 	add [0x07], 0x0028
-	video offset=CINEMATIC_625, x=[0x07], y=[0x08], zoom=0x20
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_SMALL, x=[0x07], y=[0x08], zoom=0x20
 	sub [0x07], 0x0014
 	ret
 
 
 LABEL_2B7A:
 	jl [0x09], 0x0B, SHARED_RET
-	video offset=CINEMATIC_624, x=[0x07], y=[0x08], zoom=0x20
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_MEDIUM, x=[0x07], y=[0x08], zoom=0x20
 	sub [0x07], 0x001E
 	add [0x08], 0x0007
-	video offset=CINEMATIC_708, x=[0x07], y=[0x08], zoom=0x20
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_LARGE, x=[0x07], y=[0x08], zoom=0x20
 	sub [0x08], 0x0007
 	add [0x07], 0x0032
-	video offset=CINEMATIC_625, x=[0x07], y=[0x08], zoom=0x20
+	video offset=CINEMATIC_CAVES_FALLING_ROCK_SMALL, x=[0x07], y=[0x08], zoom=0x20
 	sub [0x07], 0x0014
 	ret
 
