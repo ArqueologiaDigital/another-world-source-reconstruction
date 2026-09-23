@@ -35,6 +35,10 @@ Usage
     python3 notes/unified-scoping/sync_equ_rename.py <table.md> <STAGE> <branch>
     python3 notes/unified-scoping/sync_equ_rename.py ... --apply
 
+Renames in one table are applied **simultaneously**
+(`rename_simultaneously`), so a renumber -- where a new name is also an
+old name -- is safe in whatever order the table lists its rows.
+
 Afterwards, always:
 
     python3 notes/unified-symbol-check/undefined_symbols.py
@@ -53,13 +57,80 @@ PREFIX = {"chahi_amiga_1991": "amiga", "dos_1992": "dos",
           "cartridge_1992": "cart", "gba_2004": "gba"}
 
 
+def rename_simultaneously(text: str, live: list[tuple[str, str]]
+                          ) -> tuple[str, int]:
+    """One pass, so a renumber cannot eat its own output.
+
+    Applying the pairs one `re.subn` at a time is only correct when no new
+    name is also an old name. A renumber is exactly the case where that
+    fails: `CINEMATIC_682 -> ..._PUPIL_0` followed by `..._PUPIL_0 ->
+    ..._PUPIL_1` renames the constant this same table just created, and both
+    the old `_0` and the new one land on `_1`.
+
+    That is not hypothetical. This file previously did the sequential thing
+    and a CINEMATIC_272 shift left `LEFT_4` defined twice, at 0xCA7C and
+    0xCA04, which `verify_unified.py` caught only because the duplicate
+    happened to move bytes. The work-around on record -- order the shifts
+    descending and put new names last -- works but has to be remembered by
+    every caller, and a proposal table's row order is documentation, not a
+    place to encode a tool's defect.
+
+    Alternatives are tried longest-first so a name that is another's prefix
+    cannot shadow it.
+    """
+    if not live:
+        return text, 0
+    mapping = dict(live)
+    alts = "|".join(re.escape(o) for o in
+                    sorted(mapping, key=len, reverse=True))
+    return re.subn(rf"\b(?:{alts})\b", lambda m: mapping[m.group(0)], text)
+
+
+def self_test() -> int:
+    """The PRISON pupil renumber, as a table that is hostile on purpose.
+
+    `CINEMATIC_682` claims `PUPIL_0` in the same table where `PUPIL_0`
+    becomes `PUPIL_1` and `PUPIL_1` becomes `PUPIL_5`. Run row by row in
+    table order, every one of those three ends up spelled `PUPIL_5`. The
+    signal read is the rewritten text: each of the four source spellings must
+    survive as a distinct destination spelling, and the substitution count
+    must equal the number of tokens present.
+    """
+    P = "CINEMATIC_PRISON_WAKE_CLOSEUP_PUPIL_"
+    text = f"{P}2 {P}1 {P}0 CINEMATIC_682"
+    live = [("CINEMATIC_682", f"{P}0"), (f"{P}0", f"{P}1"),
+            (f"{P}1", f"{P}5"), (f"{P}2", f"{P}6")]
+    got, n = rename_simultaneously(text, live)
+    want = f"{P}6 {P}5 {P}1 {P}0"
+    ok = got == want and n == 4
+    print(f"  in   {text}")
+    print(f"  out  {got}   ({n} substitution(s))")
+    print(f"  want {want}   (4)")
+
+    seq = text
+    for old, name in live:
+        seq = re.sub(rf"\b{re.escape(old)}\b", name, seq)
+    print(f"\n  what row-by-row would have produced:\n  {seq}")
+    print(f"\n  {'PASS' if ok else 'FAIL'}: simultaneous rename of a "
+          f"renumber table")
+    return 0 if ok else 1
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("table", type=Path)
-    ap.add_argument("stage")
-    ap.add_argument("branch", choices=sorted(PREFIX))
+    ap.add_argument("table", type=Path, nargs="?")
+    ap.add_argument("stage", nargs="?")
+    ap.add_argument("branch", nargs="?", choices=sorted(PREFIX))
     ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--self-test", action="store_true",
+                    help="renumber control: does one table that both frees "
+                         "and claims a name land every row on its own name?")
     args = ap.parse_args()
+
+    if args.self_test:
+        return self_test()
+    if not (args.table and args.stage and args.branch):
+        ap.error("table, stage and branch are required without --self-test")
 
     pairs = []
     for line in args.table.read_text().splitlines():
@@ -89,11 +160,7 @@ def main() -> int:
         if head is None or pre not in head.split("_"):
             continue
         t = f.read_text(errors="replace")
-        new = t
-        n = 0
-        for old, name in live:
-            new, k = re.subn(rf"\b{re.escape(old)}\b", name, new)
-            n += k
+        new, n = rename_simultaneously(t, live)
         if n:
             total += n
             touched += 1

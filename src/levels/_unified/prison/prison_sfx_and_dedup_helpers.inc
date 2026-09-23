@@ -751,9 +751,9 @@ DRAW_CIN_683_TO_685_3F_AT_1EB7324B:
 	setPalette 0x0B
 	selectVideoPage 0x00
 	fill page=0x00, color=0x04
-	video offset=CINEMATIC_683, x=160, y=100
-	video offset=CINEMATIC_684, x=160, y=100
-	video offset=CINEMATIC_685, x=160, y=100
+	video offset=CINEMATIC_PRISON_WAKE_CLOSEUP_FACE_HALF_0, x=160, y=100
+	video offset=CINEMATIC_PRISON_WAKE_CLOSEUP_FACE_HALF_1, x=160, y=100
+	video offset=CINEMATIC_PRISON_WAKE_CLOSEUP_IRIS_STRIATIONS, x=160, y=100
 	copyVideoPage src=0x00, dst=0xFF
 	selectVideoPage 0xFF
 	mov [0x1A], 0x00A0

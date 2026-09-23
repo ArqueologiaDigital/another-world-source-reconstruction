@@ -49,7 +49,7 @@ limit that cost a 27/29 elsewhere this week: `undefined_symbols.py` checks the
 **unified** tree only, so a breakage confined to the canonical `.asm` files
 passes it and is caught by the byte gate alone.
 
-## `sync_equ_rename.py` rewrites in sequence, not simultaneously
+## `sync_equ_rename.py` rewrote in sequence -- fixed 2026-09-23
 
 `apply_branch_scoped_names.py` renames the canonical `.asm` **simultaneously**,
 which is what lets a permutation work: its docstring records the case of
@@ -69,7 +69,35 @@ CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_4 defined 2 times, 2 DIFFERENT values
 The canonical file was right and the unified tree was wrong, so `make test`
 caught it as 28/29 on the unified half only.
 
-**The rule: put the shift rows first and in descending index order, and the
-rows introducing new names last.** Then no rule ever sees a name a previous
-rule produced. Both PRISON tables in `../render-and-name/` are written that
-way, and say so at the top.
+The rule that followed from this was **put the shift rows first and in
+descending index order, and the rows introducing new names last** -- then no
+rule ever sees a name a previous rule produced.
+
+### That rule is withdrawn; the tool was fixed instead
+
+A proposal table's row order is documentation. Encoding a tool's defect in it
+means every future table has to be written defensively by someone who
+remembers this page, and the failure when they don't is silent in the
+canonical half.
+
+`sync_equ_rename.py` now does one pass with a single alternation over all the
+old names (`rename_simultaneously`), so every row lands on its own name in
+whatever order the table lists them. Alternatives are tried longest-first so
+a name that is another's prefix cannot shadow it.
+
+The control is in the file and reproduces the failure:
+
+```
+python3 notes/unified-scoping/sync_equ_rename.py --self-test
+```
+
+It feeds in the PRISON pupil renumber -- `CINEMATIC_682` claiming `PUPIL_0`
+in the same table where `PUPIL_0` becomes `PUPIL_1` and `PUPIL_1` becomes
+`PUPIL_5` -- and prints both what the tool produces and what row-by-row would
+have produced. Row-by-row collapses three constants onto `PUPIL_5`. PASS is:
+four source spellings, four distinct destination spellings, four
+substitutions.
+
+Tables in `../render-and-name/` no longer need the ordering caveat. The
+PRISON eye batch of 2026-09-23 is the first renumber written in plain reading
+order and synced without one.

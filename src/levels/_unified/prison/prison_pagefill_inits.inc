@@ -12,7 +12,7 @@ INIT_VARS_16_17:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PRISON_WAKE_CLOSEUP_PUPIL_WIDEST:
-	video offset=CINEMATIC_PRISON_WAKE_CLOSEUP_PUPIL_2, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_WAKE_CLOSEUP_PUPIL_6, x=[0x1a], y=[0x1b]
 .endif
 
 .if BRANCH == "chahi_amiga_1991"
@@ -23,7 +23,7 @@ PRISON_WAKE_CLOSEUP_PUPIL_WIDEST:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 INLINE_DRAW_CIN_659_AT_160_100:
-	video offset=CINEMATIC_659, x=160, y=100
+	video offset=CINEMATIC_PRISON_WAKE_CLOSEUP_EYELID_17, x=160, y=100
 .endif
 
 .if BRANCH == "chahi_amiga_1991"

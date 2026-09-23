@@ -73,6 +73,10 @@ checked against the receiving port's own guards.
 | CINEMATIC_391..399 | (msdos twins) | `CINEMATIC_PRISON_BUDDY_TYPING_ARM_{LEFT,RIGHT}_F0..F3` + `_FIGURE_BASE` | high |
 | CINEMATIC_370, 379..385 | (msdos twins) | `CINEMATIC_CAPSULE_HERO_CRAWL_F0..F7` | high |
 | CINEMATIC_366..378 (9) | (msdos twins) | `CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F0..F8` | high |
+| CINEMATIC_683, 684, 685 | (msdos twins) | `CINEMATIC_PRISON_WAKE_CLOSEUP_FACE_HALF_0`, `_HALF_1`, `_IRIS_STRIATIONS` | high |
+| CINEMATIC_656, 658 | (msdos twins) | `CINEMATIC_PRISON_WAKE_CLOSEUP_PUPIL_BASE`, `_EYE_GLINT` | high |
+| CINEMATIC_682, 680, 679, 678 + a renumber of `_PUPIL_0/1/2` | (msdos + cartridge twins) | `CINEMATIC_PRISON_WAKE_CLOSEUP_PUPIL_0..6` | high |
+| CINEMATIC_659..676 (18) | (msdos twins) | `CINEMATIC_PRISON_WAKE_CLOSEUP_EYELID_0..17` | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
@@ -230,3 +234,31 @@ extents support: height and right edge, measured across the run. Whether the
 figure is holding something, and what, is a further claim the pictures do not
 settle at this size, and the session already has a list of names refused for
 exactly that reason.
+
+## Ladder families, and the one probe in this directory with a control
+
+Most of what is named here is an animation: a routine plays frames in order
+and the frame index is draw order. The PRISON wake closeup is not. Its two
+picture families are **ladders** -- `jg [0x15], N` / `jg [0x16], N` chains
+that pick one picture for the current value of a variable the driver moves up
+*and* down. Draw order does not exist; what does is the rung.
+
+`ladder_rungs.py` reads those rungs out of the bytecode, and is the only
+script in this directory that produces a checkable number rather than a
+picture to look at:
+
+    python3 notes/render-and-name/ladder_rungs.py --stage PRISON --var 0x15
+    python3 notes/render-and-name/ladder_rungs.py --stage PRISON --var 0x16 \
+        --diff chahi_amiga_1991 cartridge_1992
+
+`--diff` judges two branches on rung count and threshold, never on constant
+spelling -- once one branch is renamed the spellings differ by construction.
+It additionally fails a rung where both branches carry a semantic name and the
+two names disagree, which is hazard #0118. It found three such rungs when this
+batch renumbered amiga and msdos and left cartridge behind, and it is the
+artefact that says the cartridge fix worked: FAIL, 3 disagree -> PASS, 0.
+
+That check is what the cartridge names rest on, because the cartridge art
+**cannot be measured** -- archaeology #0106 is open and no `cinematic.rom`
+exists for it. See `proposals_cartridge_1992__PRISON.md`, which says so in its
+first paragraph.
