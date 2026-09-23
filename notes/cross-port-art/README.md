@@ -128,5 +128,25 @@ constant and are not inside a conditional"*), and the warning was missed
 because the apply loop grepped only for `applied;`. The constant was renamed
 back and the probe now refuses the whole class: a constant drawn from a
 chunk with no `<port>__` filename prefix is skipped, which is **560** of
-them. Renaming one needs every branch at once, and that needs cartridge's
-art, which needs a ROM it does not have.
+them.
+
+### What that guard actually costs, and why it is not merely cautious
+
+560 skipped sounds expensive and is not. Of those, exactly **one** was
+nameable — `CINEMATIC_555` itself. The rest either have no bank match, are
+not readable in both priority ports, or already carry a name.
+
+And the guard is not just caution. Among the shared-chunk constants, **21
+hold different art in amiga and msdos** despite every branch executing the
+same draw line. A first measurement over PRISON, CAVES and CAPSULE alone
+found 201 of 201 agreeing, which would have supported extending a global
+rename to cartridge on the reasoning that ports do not diverge on shared
+lines. Widening it to all nine stages shows they do. The inference would have
+been wrong, and the guard blocks it for a reason rather than for tidiness.
+
+Renaming one of these needs every branch at once, and that needs cartridge's
+art. The cartridge romsets carry `bytecode.rom` but no `cinematic.rom`, so
+its polygons are genuinely unextracted — unlike `gba_2004`, whose cinematic
+bank **is** readable (65,536 bytes via `slab("cinematic", "gba_usa", n)`) and
+which every art-based probe here could include, though it is not a priority
+port.
