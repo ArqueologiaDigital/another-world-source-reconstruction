@@ -164,14 +164,14 @@ LABEL_1925:
 
 LABEL_1939:
 	break
-	video offset=CINEMATIC_547, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_FLUNG_F0, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [0x15], 0x000C
 	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_RIGHT_1, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_CAPSULE_SHOT_BEAM_SPAN_LEFT_1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_548, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_FLUNG_F3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_549, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_FLUNG_F4, x=[HERO_X], y=[HERO_Y]
 	killChannel

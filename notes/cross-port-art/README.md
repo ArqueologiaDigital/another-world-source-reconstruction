@@ -280,3 +280,29 @@ python3 notes/cross-port-art/colour_blind_hashes.py \
     --branch chahi_amiga_1991 --stage INTRO --renders <dir>
 ```
 
+## A name is transferable only if it describes the picture
+
+`transfer_by_art.py` reasons about art: same `canonical_md5`, same stage,
+other port has a name, so take it. That is right for a name that says what a
+picture *is*, and wrong for one that says what a port's bytecode *does with
+it*.
+
+It reported 11 transferable names into dos/CAPSULE. Four were
+`..._FIGURE_FLUNG_F*`, which describe a figure, and were taken. Seven were
+`..._FIGURE_POSE_<g>_<i>`, which record the slot **that port's own dispatcher**
+selects the picture with (`../pose-dispatch/`). msdos already has its own
+constants in those slots, named from its own dispatcher; taking the transfer
+would have put one name on two pictures in one stage.
+
+The tool cannot see the difference -- by art the match is real. The rule
+belongs with the reader:
+
+> Transfer a name only if it describes the picture. A dispatch index, a screen
+> number and a draw position do not.
+
+The same batch also shows the tool's other blind spot, in the other direction.
+The five-member `FLUNG` run matched on four; `CINEMATIC_517` has no hash twin,
+so a transfer alone would have left `{0, 1, 3, 4}` -- a family with a hole. The
+routines align position for position, which supplies the fifth. **Check the
+run, not just the rows the tool offers.**
+
