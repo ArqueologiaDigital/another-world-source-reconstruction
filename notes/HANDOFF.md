@@ -81,9 +81,22 @@ for it whenever two draws share an anchor.
    are an error, same value is a warning, because 30 same-value redundancies
    are already in the tree and failing on them would make the probe useless
    as a pre-`make test` gate. See `--redundant`.
-6. **Jump sheets held** (13 frames per direction): CAVES says JUMP,
-   LAKE/CAPSULE say WALK/RUN for identical X steps, and neither writes
-   `HERO_Y`. Needs a tiebreak that is not the existing names.
+6. ~~**Jump sheets held**~~ **— resolved 2026-09-23, and the reasoning
+   recorded here was wrong.** "Neither writes `HERO_Y`" is true; the
+   inference that they are therefore not jumps is not. The anchor is the
+   ground reference, and the lift is drawn **inside the sprite**:
+   `notes/shared-bank-geometry/airborne_in_art.py` measures each frame's
+   bottom edge and finds the feet leave the ground for frames 6..7 of the
+   12-frame sheet and 1..4 of the 9-frame one, against a modal ground level
+   of +0.5. Fifteen committed `HERO_WALK_LEFT_BODY` frames show no airborne
+   frame at all, which is the control.
+
+   There was also far less disagreement than this entry claimed. CAVES
+   (`HERO_JUMP_*_FROM_STAND`) and PRISON (`PRISON_HERO_WALK_JUMP_*`) draw the
+   **same twelve CV offsets in the same order** with the same net X
+   displacement (±57), and both names say JUMP. They differ only in how they
+   describe the approach. The 9-frame `*_FROM_RUN` / `*_RUN_JUMP_*` pair
+   agrees the same way and does write `HERO_Y` three times.
 7. **34 non-`CINEMATIC_` identifiers still embed coordinates**, mostly
    `SHOW_TEXT_*_AT_x_y` where the coordinate *is* the argument. Different
    question from the one just closed; decide whether the rule applies.
