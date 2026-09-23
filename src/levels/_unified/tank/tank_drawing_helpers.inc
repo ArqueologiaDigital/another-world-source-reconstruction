@@ -13,9 +13,9 @@ TANK_BACKDROP_SWAY_CYCLE_INIT:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_6_27_28_AND_RET:
-	video offset=CINEMATIC_006, x=160, y=100
-	video offset=CINEMATIC_027, x=160, y=100
-	video offset=CINEMATIC_028, x=160, y=100
+	video offset=CINEMATIC_TANK_TWO_BAND_BACKDROP, x=160, y=100
+	video offset=CINEMATIC_TANK_ARCH_ROW, x=160, y=100
+	video offset=CINEMATIC_TANK_WRECKAGE, x=160, y=100
 	ret
 
 
@@ -29,7 +29,7 @@ DRAW_CIN_6_27_28_AND_RET:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_6_AND_RET:
-	video offset=CINEMATIC_006, x=160, y=100
+	video offset=CINEMATIC_TANK_TWO_BAND_BACKDROP, x=160, y=100
 	ret
 
 

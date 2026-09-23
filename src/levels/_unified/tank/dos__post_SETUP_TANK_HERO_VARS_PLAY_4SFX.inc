@@ -426,23 +426,23 @@ LABEL_051F:
 	db 0x11
 
 TANK_STAGE_EXIT_CAPSULE_LAUNCH_TO_BATHS:
-	video offset=CINEMATIC_129, x=[0x6f], y=[0x6c], zoom=[0x6a]
-	video offset=CINEMATIC_130, x=[0x6f], y=[0x6c], zoom=[0x6a]
+	video offset=CINEMATIC_TANK_LAUNCH_PLUME_F0, x=[0x6f], y=[0x6c], zoom=[0x6a]
+	video offset=CINEMATIC_TANK_LAUNCH_BASE_BAR, x=[0x6f], y=[0x6c], zoom=[0x6a]
 	break
-	video offset=CINEMATIC_131, x=[0x6f], y=[0x6c], zoom=[0x6a]
-	video offset=CINEMATIC_130, x=[0x6f], y=[0x6c], zoom=[0x6a]
+	video offset=CINEMATIC_TANK_LAUNCH_PLUME_F1, x=[0x6f], y=[0x6c], zoom=[0x6a]
+	video offset=CINEMATIC_TANK_LAUNCH_BASE_BAR, x=[0x6f], y=[0x6c], zoom=[0x6a]
 	break
-	video offset=CINEMATIC_132, x=[0x6f], y=[0x6c], zoom=[0x6a]
-	video offset=CINEMATIC_130, x=[0x6f], y=[0x6c], zoom=[0x6a]
+	video offset=CINEMATIC_TANK_LAUNCH_PLUME_F2, x=[0x6f], y=[0x6c], zoom=[0x6a]
+	video offset=CINEMATIC_TANK_LAUNCH_BASE_BAR, x=[0x6f], y=[0x6c], zoom=[0x6a]
 	break
-	video offset=CINEMATIC_133, x=[0x6f], y=[0x6c], zoom=[0x6a]
-	video offset=CINEMATIC_130, x=[0x6f], y=[0x6c], zoom=[0x6a]
+	video offset=CINEMATIC_TANK_LAUNCH_PLUME_F3, x=[0x6f], y=[0x6c], zoom=[0x6a]
+	video offset=CINEMATIC_TANK_LAUNCH_BASE_BAR, x=[0x6f], y=[0x6c], zoom=[0x6a]
 	break
-	video offset=CINEMATIC_134, x=[0x6f], y=[0x6c], zoom=[0x6a]
-	video offset=CINEMATIC_130, x=[0x6f], y=[0x6c], zoom=[0x6a]
+	video offset=CINEMATIC_TANK_LAUNCH_PLUME_F4, x=[0x6f], y=[0x6c], zoom=[0x6a]
+	video offset=CINEMATIC_TANK_LAUNCH_BASE_BAR, x=[0x6f], y=[0x6c], zoom=[0x6a]
 	break
-	video offset=CINEMATIC_131, x=[0x6f], y=[0x6c], zoom=[0x6a]
-	video offset=CINEMATIC_130, x=[0x6f], y=[0x6c], zoom=[0x6a]
+	video offset=CINEMATIC_TANK_LAUNCH_PLUME_F1, x=[0x6f], y=[0x6c], zoom=[0x6a]
+	video offset=CINEMATIC_TANK_LAUNCH_BASE_BAR, x=[0x6f], y=[0x6c], zoom=[0x6a]
 	break
 	jmp TANK_STAGE_EXIT_CAPSULE_LAUNCH_TO_BATHS
 LABEL_0571:
