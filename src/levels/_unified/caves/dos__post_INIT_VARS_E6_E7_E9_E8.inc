@@ -88,7 +88,7 @@ LABEL_1332:
 	selectVideoPage 0x00
 	mov [0xE9], 0xFFFF
 	play id=0x0057, freq=0x19, vol=0x20, channel=0x02
-	video offset=CINEMATIC_191, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F0, x=[0xe6], y=[0xe7]
 	call CAVES_CHECK_HERO_Y_E7_WITHIN_20PX_BAND
 	selectVideoPage 0xFF
 	break
@@ -98,21 +98,21 @@ LABEL_1332:
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_210, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F2, x=[0xe6], y=[0xe7]
 	call CAVES_CHECK_HERO_Y_E7_WITHIN_20PX_BAND
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_211, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F3, x=[0xe6], y=[0xe7]
 	call CAVES_CHECK_HERO_Y_E7_WITHIN_20PX_BAND
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_212, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F4, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_213, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F5, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	jmp LABEL_1401
 

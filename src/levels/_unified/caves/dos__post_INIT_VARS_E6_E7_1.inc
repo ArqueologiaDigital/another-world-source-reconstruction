@@ -18,7 +18,7 @@ LABEL_11B3:
 
 LABEL_11C8:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_191, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F0, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	ret
 
@@ -32,27 +32,27 @@ LABEL_11D2:
 
 LABEL_11DC:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_210, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F2, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	ret
 
 
 LABEL_11E6:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_211, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F3, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	ret
 
 
 LABEL_11F0:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_212, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F4, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	ret
 
 
 LABEL_11FA:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_213, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F5, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	ret

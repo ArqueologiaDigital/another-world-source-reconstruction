@@ -218,12 +218,12 @@ CINEMATIC_190		EQU 0x4D54
 CINEMATIC_191		EQU 0xCD2A
 CINEMATIC_192		EQU 0xCD42
 CINEMATIC_193		EQU 0xCD5E
-CINEMATIC_194		EQU 0xCD7E
-CINEMATIC_195		EQU 0xCDA0
-CINEMATIC_196		EQU 0xCDEE
-CINEMATIC_197		EQU 0xCE56
-CINEMATIC_198		EQU 0xCEB8
-CINEMATIC_199		EQU 0xCE7A
+CINEMATIC_CAVES_SHATTER_F0		EQU 0xCD7E
+CINEMATIC_CAVES_SHATTER_F1		EQU 0xCDA0
+CINEMATIC_CAVES_SHATTER_F2		EQU 0xCDEE
+CINEMATIC_CAVES_SHATTER_F3		EQU 0xCE56
+CINEMATIC_CAVES_SHATTER_F4		EQU 0xCEB8
+CINEMATIC_CAVES_SHATTER_F5		EQU 0xCE7A
 CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_0		EQU 0x6636
 CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_1		EQU 0x6682
 CINEMATIC_CAVES_GANTRY_PLATFORMS_BG_2		EQU 0x66DA
@@ -667,7 +667,7 @@ CINEMATIC_CAVES_SCREEN_C8_BACKDROP_LAYER_1		EQU 0x721E
 CINEMATIC_CAVES_SCREEN_C8_BACKDROP_LAYER_2		EQU 0xA242
 CINEMATIC_CAVES_SCREEN_C8_BACKDROP_LAYER_3		EQU 0xEC9C
 CINEMATIC_642		EQU 0xA2FA
-CINEMATIC_643		EQU 0x9F44
+CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F0		EQU 0x9F44
 CINEMATIC_644		EQU 0xBBFC
 CINEMATIC_645		EQU 0xBC40
 CINEMATIC_646		EQU 0xBCB0
@@ -675,12 +675,12 @@ CINEMATIC_647		EQU 0xBD1C
 CINEMATIC_648		EQU 0xBD88
 CINEMATIC_649		EQU 0xBDDC
 CINEMATIC_650		EQU 0xBE1C
-CINEMATIC_651		EQU 0x9FB6
-CINEMATIC_652		EQU 0xA006
-CINEMATIC_653		EQU 0xA076
-CINEMATIC_654		EQU 0xA0E2
-CINEMATIC_655		EQU 0xA14E
-CINEMATIC_656		EQU 0xA1A2
+CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F1		EQU 0x9FB6
+CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F2		EQU 0xA006
+CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F3		EQU 0xA076
+CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F4		EQU 0xA0E2
+CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F5		EQU 0xA14E
+CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F6		EQU 0xA1A2
 CINEMATIC_657		EQU 0xA1E2
 CINEMATIC_658		EQU 0xA34E
 CINEMATIC_659		EQU 0xA36C
@@ -2881,27 +2881,27 @@ LABEL_11B6:
 LABEL_11B7:
 	selectVideoPage 0x00
 	play id=0x0057, freq=0x19, vol=0x10, channel=0x02
-	video offset=CINEMATIC_194, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F0, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_195, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F1, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_196, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F2, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_197, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F3, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_198, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F4, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_199, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F5, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 
@@ -2923,40 +2923,40 @@ LABEL_11F9:
 LABEL_121D:
 	jle [0xE8], 0x06, LABEL_11B7
 	selectVideoPage 0x00
-	video offset=CINEMATIC_194, x=[0xe6], y=[0xe7]
-	video offset=CINEMATIC_199, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F0, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F5, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_195, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F1, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_194, x=[0xe6], y=[0xe7]
-	video offset=CINEMATIC_196, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F0, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F2, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_195, x=[0xe6], y=[0xe7]
-	video offset=CINEMATIC_197, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F1, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F3, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_196, x=[0xe6], y=[0xe7]
-	video offset=CINEMATIC_198, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F2, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F4, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	jg [0xE8], 0x04, LABEL_121D
 	selectVideoPage 0x00
-	video offset=CINEMATIC_197, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F3, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_198, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F4, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_199, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F5, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 
 LABEL_128C:
@@ -4538,12 +4538,12 @@ LABEL_23B2:
 
 LABEL_23CC:
 	add [HERO_Y], 0x0004
-	video offset=CINEMATIC_643, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F0, x=[HERO_X], y=[HERO_Y]
 	call LABEL_25C7
 	break
 	je [HERO_POS_JUMP_DOWN], 0x01, LABEL_23CC
 	add [HERO_Y], 0x0003
-	video offset=CINEMATIC_643, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F0, x=[HERO_X], y=[HERO_Y]
 	call LABEL_25C7
 	break
 	add [HERO_Y], 0x0002
@@ -4553,9 +4553,9 @@ LABEL_23F3:
 	db 0x11
 
 LABEL_23FC:
-	video offset=CINEMATIC_643, x=198, y=43
+	video offset=CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F0, x=198, y=43
 	break
-	video offset=CINEMATIC_643, x=198, y=44
+	video offset=CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F0, x=198, y=44
 	mov [HERO_X], 0x00C6
 	mov [HERO_Y], 0x002D
 	mov [0x03], 0x0001
@@ -4563,7 +4563,7 @@ LABEL_23FC:
 	break
 
 LABEL_2416:
-	video offset=CINEMATIC_643, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F0, x=[HERO_X], y=[HERO_Y]
 	call LABEL_25C7
 	break
 	je [0x63], 0x01, CAVES_SHAFT_DESCENT_STAGE_CASE_01
@@ -4574,7 +4574,7 @@ LABEL_2416:
 LABEL_2432:
 	jne [0x63], 0x03, LABEL_244A
 	jl [HERO_Y], 0x14, LABEL_2416
-	video offset=CINEMATIC_643, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F0, x=[HERO_X], y=[HERO_Y]
 	setup channel=0x16, address=LABEL_23B2
 	jmp LABEL_245C
 
@@ -4629,31 +4629,31 @@ CAVES_SHAFT_DESCENT_STAGE_CASE_06:
 	mov [0x19], 0x001E
 
 LABEL_24CF:
-	video offset=CINEMATIC_643, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F0, x=[HERO_X], y=[HERO_Y]
 	je [0x63], 0x02, LABEL_2551
 	break
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_651, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 	break
 	add [HERO_Y], 0x0001
 	sub [HERO_X], 0x0009
-	video offset=CINEMATIC_652, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F2, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0005
 	add [HERO_X], [0x34]
-	video offset=CINEMATIC_653, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F3, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0008
 	add [HERO_X], [0x34]
-	video offset=CINEMATIC_654, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F4, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_Y], 0x0002
 	sub [HERO_X], 0x0007
 	add [HERO_X], [0x34]
-	video offset=CINEMATIC_655, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F5, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0004
-	video offset=CINEMATIC_656, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F6, x=[HERO_X], y=[HERO_Y]
 	call LABEL_25C7
 	break
 	add [HERO_Y], 0x0002
@@ -4663,7 +4663,7 @@ LABEL_24CF:
 	add [HERO_Y], 0x0001
 	sub [HERO_X], 0x0002
 	add [HERO_X], [0x35]
-	video offset=CINEMATIC_643, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F0, x=[HERO_X], y=[HERO_Y]
 	break
 	add [0x03], 0x0001
 	jmp LABEL_2416
@@ -4702,7 +4702,7 @@ LABEL_2551:
 	add [HERO_Y], 0x0001
 	add [HERO_X], 0x0002
 	sub [HERO_X], [0x35]
-	video offset=CINEMATIC_643, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F0, x=[HERO_X], y=[HERO_Y]
 	break
 	jmp LABEL_2416
 

@@ -56,27 +56,27 @@ LABEL_11B6:
 LABEL_11B7:
 	selectVideoPage 0x00
 	play id=0x0057, freq=0x19, vol=0x10, channel=0x02
-	video offset=CINEMATIC_194, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F0, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_195, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F1, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_196, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F2, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_197, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F3, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_198, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F4, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_199, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F5, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 
@@ -98,40 +98,40 @@ LABEL_11F9:
 LABEL_121D:
 	jle [0xE8], 0x06, LABEL_11B7
 	selectVideoPage 0x00
-	video offset=CINEMATIC_194, x=[0xe6], y=[0xe7]
-	video offset=CINEMATIC_199, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F0, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F5, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_195, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F1, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_194, x=[0xe6], y=[0xe7]
-	video offset=CINEMATIC_196, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F0, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F2, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_195, x=[0xe6], y=[0xe7]
-	video offset=CINEMATIC_197, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F1, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F3, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_196, x=[0xe6], y=[0xe7]
-	video offset=CINEMATIC_198, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F2, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F4, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	jg [0xE8], 0x04, LABEL_121D
 	selectVideoPage 0x00
-	video offset=CINEMATIC_197, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F3, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_198, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F4, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_199, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAVES_SHATTER_F5, x=[0xe6], y=[0xe7]
 	selectVideoPage 0xFF
 
 LABEL_128C:
