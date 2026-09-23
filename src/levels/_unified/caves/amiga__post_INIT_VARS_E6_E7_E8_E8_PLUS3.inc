@@ -90,58 +90,58 @@ LABEL_07C8:
 
 LABEL_07FD:
 	break
-	video offset=CINEMATIC_239, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F0, x=160, y=100
 	break
-	video offset=CINEMATIC_240, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_241, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_242, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_243, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F4, x=160, y=100
 	break
-	video offset=CINEMATIC_244, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F5, x=160, y=100
 	break
-	video offset=CINEMATIC_245, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F6, x=160, y=100
 	break
-	video offset=CINEMATIC_244, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F5, x=160, y=100
 	break
-	video offset=CINEMATIC_243, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F4, x=160, y=100
 	break
-	video offset=CINEMATIC_242, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_241, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_240, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_239, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F0, x=160, y=100
 	break
 	jmp LABEL_07FD
 LABEL_0842:
 	db 0x11
 
 DRAW_CIN_437_439_BLOCK:
-	video offset=CINEMATIC_416, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_1_F0, x=160, y=100
 	break
-	video offset=CINEMATIC_417, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_1_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_418, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_1_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_419, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_1_F4, x=160, y=100
 	break
-	video offset=CINEMATIC_420, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_1_F5, x=160, y=100
 	break
-	video offset=CINEMATIC_421, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_1_F6, x=160, y=100
 	break
-	video offset=CINEMATIC_420, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_1_F5, x=160, y=100
 	break
-	video offset=CINEMATIC_418, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_1_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_422, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_1_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_417, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_1_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_416, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_1_F0, x=160, y=100
 
 LABEL_0879:
 	break

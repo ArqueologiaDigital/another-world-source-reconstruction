@@ -90,7 +90,7 @@ LABEL_07E9:
 
 LABEL_081E:
 	break
-	video offset=CINEMATIC_257, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F0, x=160, y=100
 	break
 	video offset=CINEMATIC_CAVES_SCREEN_46_BACKDROP_0, x=160, y=100
 	break
@@ -98,15 +98,15 @@ LABEL_081E:
 	break
 	video offset=CINEMATIC_CAVES_SCREEN_46_BACKDROP_2, x=160, y=100
 	break
-	video offset=CINEMATIC_261, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F4, x=160, y=100
 	break
-	video offset=CINEMATIC_262, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F5, x=160, y=100
 	break
-	video offset=CINEMATIC_263, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F6, x=160, y=100
 	break
-	video offset=CINEMATIC_262, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F5, x=160, y=100
 	break
-	video offset=CINEMATIC_261, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F4, x=160, y=100
 	break
 	video offset=CINEMATIC_CAVES_SCREEN_46_BACKDROP_2, x=160, y=100
 	break
@@ -114,14 +114,14 @@ LABEL_081E:
 	break
 	video offset=CINEMATIC_CAVES_SCREEN_46_BACKDROP_0, x=160, y=100
 	break
-	video offset=CINEMATIC_257, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_0_F0, x=160, y=100
 	break
 	jmp LABEL_081E
 LABEL_0863:
 	db 0x11
 
 DRAW_CIN_437_439_BLOCK:
-	video offset=CINEMATIC_437, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_1_F0, x=160, y=100
 	break
 	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F0, x=160, y=100
 	break
@@ -141,7 +141,7 @@ DRAW_CIN_437_439_BLOCK:
 	break
 	video offset=CINEMATIC_CAVES_LANDING_SPLASH_F0, x=160, y=100
 	break
-	video offset=CINEMATIC_437, x=160, y=100
+	video offset=CINEMATIC_CAVES_SPINNING_SPIKE_1_F0, x=160, y=100
 
 LABEL_089A:
 	break
