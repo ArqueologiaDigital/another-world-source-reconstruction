@@ -25,6 +25,9 @@
 //   * the anchor is how x and y reached the op: `var` (a variable, so something
 //     else computes the position), `imm` (a literal in the bytecode) or a mix.
 //     A var-anchored draw is a moving object; an imm-anchored one is furniture.
+//   * a row is marked STUCK when every routine drawing it is a HANG_* -- an
+//     infinite draw loop the disassembler already identified. Its frame count
+//     measures the VM sitting still, not the game showing the art.
 //
 // Caveat, and it is the whole limitation: the VM enters the stage with no state
 // carried from a real playthrough, so a scene gated on a variable a previous
@@ -109,7 +112,14 @@ for (let i = 0; i < FRAMES; i++) {
   if (vm.halted || vm.pendingPart !== undefined) break;
 }
 
+// A routine the disassembler named HANG_* is an infinite draw loop with no exit:
+// the stage is STUCK there, so its screen time measures the VM sitting still,
+// not the game showing the art. Kept in the table and marked, never silently
+// dropped -- CAVES entered this way spends every frame in HANG_DRAW_CIN_222.
+for (const e of seen.values())
+  e.hang = [...e.routines].every((r) => r.startsWith("HANG_"));
 const rows = [...seen.values()].sort((a, b) => b.frames - a.frames || a.offset - b.offset);
+const stuck = rows.filter((r) => r.hang).length;
 const total = rows.reduce((s, r) => s + r.frames, 0);
 console.log(`${meta.branch}/${meta.stage}: ${ran} frames run, ` +
             `${rows.length} ${WANT_NAMED ? "named" : "still-numbered"} constant(s) drawn, ` +
@@ -123,8 +133,12 @@ for (const r of rows.slice(0, TOP)) {
     `${String(r.frames).padStart(6)}  ${pct}%  ` +
     `${(r.name || "(no EQU)").padEnd(24)} ${hex4(r.offset)}  ` +
     `${String(r.first).padStart(4)}-${String(r.last).padEnd(4)}  ` +
-    `${[...r.anchors].join(",").padEnd(21)} ${rt.slice(0, 2).join(" ")}` +
+    `${[...r.anchors].join(",").padEnd(21)} ${r.hang ? "STUCK " : ""}${rt.slice(0, 2).join(" ")}` +
     (rt.length > 2 ? ` +${rt.length - 2}` : ""));
 }
 if (rows.length > TOP) console.log(`... ${rows.length - TOP} more (--top)`);
+if (stuck) console.log(
+  `\n${stuck} row(s) marked STUCK: drawn only by a HANG_* routine, an infinite ` +
+  `draw loop with\nno exit. Their frame counts measure the VM sitting still, ` +
+  `not the game showing them.`);
 process.exit(0);

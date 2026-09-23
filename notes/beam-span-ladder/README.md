@@ -78,3 +78,58 @@ msdos CAPSULE's, and amiga CAPSULE's and amiga CAVES' rung 5. Cartridge
 CAPSULE's `SPAN_LEFT_4` and `SPAN_RIGHT_4` are drawn at its **rung 0** and its
 below-ladder fallback, which the routine shows without any ROM; that pair wants
 correcting before its ladder is completed.
+
+## Held: the second set at the top two rungs, 34 constants, no name in any port
+
+The ladder's two longest rungs each carry **two** pairs, chosen by
+`jge [0x12], 0x2000`. One pair is named in each stage —
+`PRISON_SHOT_BEAM_SPAN_*`, `CAVES_LASER_BOLT_SPAN_*`,
+`CAPSULE_SHOT_BEAM_SPAN_*` — and the other pair is numbered. That is 3 stages x
+3 ports x 2 rungs x 2 sides = **36 slots, and 34 of them are still numbered**;
+the other two are unified-tree drift, not names (see below).
+
+What is measured about the alternate set, `rung_thresholds.py` plus the polygon
+renderer, msdos, all three stages:
+
+| | named set | alternate set |
+| --- | --- | --- |
+| polygons | 1 | 1 |
+| width at rung 5 / rung 4 | 126 / 62 | 126 / 62 |
+| height | 1 | 1 |
+| **colour index** | **15** | **13** |
+
+It holds without exception across PRISON (`CINEMATIC_516..519`), CAVES
+(`857..860`) and CAPSULE (`671..674`). The two sets are **the same line in a
+different colour**, and in the tree the difference is one bit: the child
+descriptor's `0x8000` flag, which decides whether an explicit colour byte
+follows or the caller's colour is inherited.
+
+**What is not known is what the colour means**, and that is the whole of what
+stands between these 34 constants and a name. `[0x12]` is not the span — the
+span is `[0x26] = [0x22] - [0x21]`. `[0x12]` carries a small magnitude in its
+low bits (`and [0x12], 0x1FFF` then `jl [0x12], 0x08` then `shr` by 3) with bit
+0x2000 packed in as a flag beside it, and the sites that set the flag do not
+agree across stages: msdos/CAPSULE sets it at `LABEL_0DE4`, immediately after
+`mov [BUDDY_X], 0x000F`, while msdos/CAVES sets `mov [0x12], 0x2010` right after
+`CAVES_BEAST_PER_FRAME_TICK`. Buddy in one stage and the beast in the other is
+not one subject, so no subject word is earned.
+
+**What would settle it:** someone firing in `tools/vm-debugger/` and saying what
+changes about the beam when it changes colour. This is the exact shape of
+question `notes/play-and-describe/` exists for — a fact about what the player
+sees, which no measurement in this directory can reach. Until then: held, not
+guessed.
+
+### Two rows that look named and are not
+
+`rung_thresholds.py` resolves names in the tree the routine came from, which is
+the unified tree, and the unified tree lags (`../tree-name-drift/`). So two
+alternate-set slots print with names attached:
+
+    msdos/CAVES    rung 4 left   CINEMATIC_TELEPORT_UP_BEAM_LEFT
+    amiga/CAPSULE  rung 4 left   CINEMATIC_CAPSULE_SCREEN_91_BACKDROP_LAYER_3
+
+Neither is in the naming record. The canonical trees have `CINEMATIC_858` and
+`CINEMATIC_525` in those slots, still numbered. The giveaway is that
+`TELEPORT_UP_BEAM_LEFT` renders as **4 polygons at colour indices 7, 4, 15, 6**,
+which no member of a one-polygon family can be.
