@@ -7,6 +7,8 @@
 | | Where the layers are still numbered, do the two ports agree? | `... --pairs` |
 | | Can a named painter's still-numbered layers be named? | `... --layers` |
 | | Which existing layer names claim a screen nothing connects them to? | `... --audit-layers` |
+| | Which screen values does one branch guard on and another never? | `... --guards` |
+| `corrections/` | the four hand-applied corrections the control forced, as tables | see that directory's README |
 | `proposals_<branch>__<STAGE>.md` | the tables `apply_routine_renames.py` consumes | `... --proposals \| python3 notes/proposal-tables/split_by_branch_stage.py --out notes/backdrop-drawer --header routine` |
 | `demotions/` | the table `apply_branch_scoped_names.py --demote` consumes | `... --audit-layers --proposals \| python3 notes/proposal-tables/split_by_branch_stage.py --out notes/backdrop-drawer/demotions` |
 
@@ -160,6 +162,20 @@ once**; msdos compares it to both. The two ports number this screen
 differently. The amiga routine is now `CAPSULE_SCREEN_4C_BACKDROP_DRAW`, the
 value its own port actually uses. Anything of this shape must be re-checked
 with `--control` after an `align_branch_names --merge`.
+
+`--guards` is that measurement, kept runnable because the commit quotes it,
+and it shows the case is a class rather than an accident: **42** screen values
+across the three big stages are guarded by at least one branch and by not
+another. PRISON and CAVES agree completely (11 of 11 and 54 of 54 of amiga's
+values are also msdos', at shift zero); CAPSULE does not — amiga guards 32
+distinct values, msdos 59, and only 26 are shared.
+
+It also records a guess that failed. The disagreeing CAPSULE values look like
+a constant offset — amiga 0x4C against msdos 0x6C, 0x4D against 0x6D, 0x49
+against 0x69, all 0x20 apart, which is one row of the 32-column screen grid.
+They are not: no shift beats shift zero in any stage. msdos CAPSULE simply has
+screens amiga does not, the same thing `../cross-port-art/` already records
+for CAVES.
 
 ### Four routines whose layers claim a screen the dataflow denies
 

@@ -295,6 +295,73 @@ def equ_position(port: str, stage: str) -> dict:
     return {n: i for i, n in enumerate(rows)}
 
 
+def guards() -> int:
+    """Where the four branches disagree about what to call a screen.
+
+    `align_branch_names.py` carries a routine name across ports by aligned
+    instruction stream, which is right for a routine name and wrong for one
+    holding a screen NUMBER. It backported msdos'
+    `CAPSULE_SCREEN_6C_BACKDROP_DRAW` onto the aligned amiga routine, and the
+    control caught it. This is the measurement that settled which port was
+    right, kept runnable because the commit quotes it: a value one port never
+    compares `[SCREEN_NUM]` against is not a screen that port has.
+    """
+    print("  screen values one branch guards on and another never does:\n")
+    print(f"  {'stage':<10}{'value':<8}" +
+          "".join(f"{p:>8}" for p in AUDIT_PORTS))
+    n = 0
+    for stage in STAGE_ID:
+        counts: dict[str, dict] = {}
+        for port, branch in AUDIT_PORTS.items():
+            f = SRC / "src" / "levels" / branch / f"{stage}.asm"
+            c = collections.Counter()
+            if f.is_file():
+                for m in re.finditer(r"\[SCREEN_NUM\],\s*(0x[0-9A-Fa-f]+)",
+                                     f.read_text(errors="replace")):
+                    c[int(m.group(1), 16)] += 1
+            counts[port] = c
+        present = [p for p in AUDIT_PORTS if counts[p]]
+        for v in sorted({v for p in present for v in counts[p]}):
+            seen = [counts[p][v] for p in present]
+            if 0 in seen and any(seen):
+                n += 1
+                print(f"  {stage:<10}0x{v:02X}    " +
+                      "".join(f"{counts[p][v]:>8}" if p in present
+                              else f"{'-':>8}" for p in AUDIT_PORTS))
+    print(f"\n  {n} value(s) guarded by at least one branch and not by "
+          f"another. A name carrying one of these is branch-scoped, whatever "
+          f"`align_branch_names.py` thinks.\n")
+
+    # A tested guess, kept because it failed. The disagreeing CAPSULE values
+    # look like a constant offset -- amiga 0x4C against msdos 0x6C, 0x4D
+    # against 0x6D, 0x49 against 0x69 -- which would mean the ports number the
+    # same grid from a different row, 0x20 being one row of the 32-column grid
+    # `docs/` measures. They do not: no shift beats shift zero anywhere.
+    print("  is the difference a constant shift of the screen grid?\n")
+    print(f"  {'stage':<10}{'amiga':>7}{'msdos':>7}{'shared':>8}"
+          f"   best shift other than 0")
+    for stage in STAGE_ID:
+        g = {}
+        for port in ("amiga", "msdos"):
+            f = SRC / "src" / "levels" / AUDIT_PORTS[port] / f"{stage}.asm"
+            g[port] = {int(m, 16) for m in re.findall(
+                r"\[SCREEN_NUM\],\s*0x([0-9A-Fa-f]+)",
+                f.read_text(errors="replace"))} if f.is_file() else set()
+        a, m = g["amiga"], g["msdos"]
+        if not a or not m:
+            continue
+        best = max(((len({v + d for v in a} & m), d)
+                    for d in range(-0x60, 0x61) if d), default=(0, 0))
+        print(f"  {stage:<10}{len(a):>7}{len(m):>7}{len(a & m):>8}"
+              f"   {best[1]:+#06x} hits {best[0]}/{len(a)}, against "
+              f"{len(a & m)}/{len(a)} at shift 0")
+    print("\n  No shift wins. CAPSULE simply is not the same set of screens "
+          "in the two ports -- amiga guards 32 distinct values, msdos 59 --"
+          "\n  which is the same thing `../cross-port-art/` records for "
+          "CAVES, where msdos has three screens amiga does not.")
+    return 0
+
+
 def audit_layers(data, as_proposals: bool) -> int:
     """Which `..._SCREEN_<NN>_BACKDROP_LAYER_<i>` names claim the wrong screen?
 
@@ -474,8 +541,15 @@ def main() -> int:
     ap.add_argument("--layers", action="store_true",
                     help="name the still-numbered layers of the routines that "
                          "now carry a screen")
+    ap.add_argument("--guards", action="store_true",
+                    help="how many times each port compares [SCREEN_NUM] to "
+                         "each value, per stage -- the measurement that says "
+                         "a screen number belongs to one port")
     ap.add_argument("--proposals", action="store_true")
     args = ap.parse_args()
+
+    if args.guards:
+        return guards()
 
     wide = args.control or args.audit_layers
     data = {}

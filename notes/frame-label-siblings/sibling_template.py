@@ -85,6 +85,10 @@ RE_V = re.compile(r"^\s*video\s+(?:type=\d+,\s*)?offset=([A-Za-z_]\w*)")
 RE_END = re.compile(r"^\s*(ret\s*$|jmp\s|db 0x11\s*$)")
 RE_F = re.compile(r"^(.*)_F(\d{1,2})$")
 RE_TAIL = re.compile(r"^(.*?)_(\d{1,2})$")
+# --no-shape flips this. Kept as a module-level switch so the rejected rule
+# stays runnable: a rule turned down by measurement should be re-runnable by
+# whoever wants to check the measurement.
+SHAPE = [True]
 STAGES = ("PRISON", "CAVES", "CAPSULE", "LAKE", "TANK", "INTRO", "ENDING",
           "CODE_WHEEL", "PASSCODE")
 
@@ -197,7 +201,8 @@ def collect():
                 k = one_frame(pics)
                 if k is None:
                     continue
-                groups[(k[0], shape)].append((lab, k[1]))
+                groups[(k[0], shape if SHAPE[0] else ())].append(
+                    (lab, k[1]))
             yield branch, path, groups, taken
 
 
@@ -206,8 +211,13 @@ def main() -> int:
     ap.add_argument("--control", action="store_true",
                     help="hide each named sibling in turn and check the "
                          "template derived from the rest reproduces its name")
+    ap.add_argument("--no-shape", action="store_true",
+                    help="group siblings by family alone, dropping the body "
+                         "shape from the key -- the looser rule this module "
+                         "rejected; run it with --control to see why")
     ap.add_argument("--proposals", action="store_true")
     args = ap.parse_args()
+    SHAPE[0] = not args.no_shape
 
     if args.control:
         ok = bad = 0
