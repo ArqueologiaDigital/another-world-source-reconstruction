@@ -47,36 +47,36 @@ LABEL_079A:
 	break
 	video offset=CINEMATIC_CAVES_HERO_STAND_AIM_LEFT, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_254, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_TAKE_AIM_LEFT_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_253, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_TAKE_AIM_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_251, x=[HERO_X], y=[HERO_Y]
-	video offset=CINEMATIC_252, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_TAKE_AIM_LEFT_F0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_HAIR_AT_REST, x=[HERO_X], y=[HERO_Y]
 	mov [0x32], 0x0009
 	sub [HERO_Y], 0x0001
 
 LABEL_07C4:
 	break
-	video offset=CINEMATIC_251, x=[HERO_X], y=[HERO_Y]
-	video offset=CINEMATIC_264, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_TAKE_AIM_LEFT_F0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_HAIR_BLOWING_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_251, x=[HERO_X], y=[HERO_Y]
-	video offset=CINEMATIC_265, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_TAKE_AIM_LEFT_F0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_HAIR_BLOWING_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_251, x=[HERO_X], y=[HERO_Y]
-	video offset=CINEMATIC_266, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_TAKE_AIM_LEFT_F0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_HAIR_BLOWING_F2, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_07C4
 LABEL_07E8:
 	db 0x11
 
 LABEL_07E9:
-	video offset=CINEMATIC_251, x=[HERO_X], y=[HERO_Y]
-	video offset=CINEMATIC_252, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_TAKE_AIM_LEFT_F0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_HAIR_AT_REST, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_253, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_TAKE_AIM_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_254, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_TAKE_AIM_LEFT_F2, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_CAVES_HERO_STAND_AIM_LEFT, x=[HERO_X], y=[HERO_Y]
 	break

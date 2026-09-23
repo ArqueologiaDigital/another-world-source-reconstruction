@@ -173,6 +173,7 @@ checked against the receiving port's own guards.
 | CAVES 033, 035, 036, 037 | (same numbers) | `CINEMATIC_SHIELD_DEPLOY_PHASE_0..3`, bare like CAVES' own `SHIELD_DECAY` family | high |
 | CAVES 749..751, 008..011 | msdos 774..776, 008..011 | `CINEMATIC_CAVES_SUPERBLAST_BEAM_TILE_0..2` and `CINEMATIC_WIDE_FLASH_F0..F3` (the flash also cartridge -- shared routine) | high |
 | CAVES 261..268 / CAPSULE 129..136 | msdos 279..286 / 440..447 | `CINEMATIC_CROWD_FIGURE_{UPPER,BODY_0..3,CLOAK_F0..F2}` -- a row of eleven, two stages, two ports | high |
+| CAVES 233..236, 246..248 | msdos 251..254, 264..266 | `CINEMATIC_CAVES_HERO_{TAKE_AIM_LEFT_F0..F2,HAIR_AT_REST,HAIR_BLOWING_F0..F2}` | high/medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
