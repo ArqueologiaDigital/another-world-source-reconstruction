@@ -207,6 +207,23 @@ into the next stage; or set variables by hand in the state panel. The variable
 names come from `src/levels/_common_vars.inc` and the stage's own file, so the
 panel shows `SCREEN_NUM` and `HERO_X`, not `[0x67]` and `[0x01]`.
 
+## The checks
+
+| file | question it answers |
+| --- | --- |
+| `tests/compare_render.mjs` | does the JS polygon renderer agree with the Rust reference? |
+| `tests/check_draw_offsets.mjs` | is every offset the VM draws one the disassembler recorded? |
+| `tests/check_label_addresses.mjs` | does every `setup channel` land on a computed label? |
+| `tests/smoke_frames.mjs` | does the pipeline paint, and does the unnamed counter count? |
+| `tests/dump_draws.mjs` | did a change to the VM move any draw? |
+| `tests/check_guidance.py` | does the guidance document carry every entry, with its id? |
+
+The last one exists because `guidance()` filtered to `kind == "annotate"` and so
+hid every typed name from both ways the log is read. It takes a candidate
+`server.py` as its one argument, which is how a case here is shown to be real:
+against `160e9524~1` it reports six problems, including the missing rename
+entries and an absent `annotation_id`.
+
 ## What the backend serves
 
 | route | what |
