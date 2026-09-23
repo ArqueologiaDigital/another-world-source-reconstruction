@@ -300,9 +300,9 @@ LABEL_2263:
 
 LESTER_WALKING_TOWARDS_CAMERA_ANIMATION:
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_466, x=160, y=111, zoom=[0x04]
+	video offset=CINEMATIC_LESTER_STANDING_FACING_CAMERA, x=160, y=111, zoom=[0x04]
 .else
-	video offset=CINEMATIC_468, x=160, y=111, zoom=[0x04]
+	video offset=CINEMATIC_LESTER_STANDING_FACING_CAMERA, x=160, y=111, zoom=[0x04]
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
@@ -350,9 +350,9 @@ LESTER_WALKING_TOWARDS_CAMERA_ANIMATION:
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_466, x=160, y=111, zoom=[0x04]
+	video offset=CINEMATIC_LESTER_STANDING_FACING_CAMERA, x=160, y=111, zoom=[0x04]
 .else
-	video offset=CINEMATIC_468, x=160, y=111, zoom=[0x04]
+	video offset=CINEMATIC_LESTER_STANDING_FACING_CAMERA, x=160, y=111, zoom=[0x04]
 .endif
 	break
 	video offset=CINEMATIC_LESTER_WALKING_TOWARDS_CAMERA_F7, x=160, y=111, zoom=[0x04]

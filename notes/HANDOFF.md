@@ -595,6 +595,20 @@ not.
 
 ## Checked this session, and what is still held
 
+**Two more INTRO singletons, held.** `CINEMATIC_026` (amiga 0x0900) is
+**254.0x14.0 in a single path** -- one long shallow pale wedge -- drawn at
+`x=42, y=120` by `PARKED_CAR_HOLD` and by the loop that draws
+`CAR_DRIVING_AWAY_FROM_CAMERA_F0` and `CAR_TAIL_LIGHT_PAIR`. A single flat
+quadrilateral a quarter of a screen wide could be a kerb, a road deck, a
+distant wall or a haze band, and the scene does not narrow it.
+
+`CINEMATIC_112` (amiga 0xC3E0) is **3.0x6.0 in 5 paths**, all shades of red,
+drawn five times by five consecutive hold-loops in the lift scene at
+`y=65527, 65530, 65529, 65531, 65534` -- that is **-9, -6, -7, -5, -2** read as
+signed, so a 6-pixel-tall mark stepping down into view from above the top edge.
+What would settle both: whether this VM treats a `video` y as signed, which the
+renderer answers and nothing in these notes has yet asked it.
+
 **INTRO's city composite, six constants, held.** `INTRO_SCENE_INIT_PARTICLES`
 draws 51 pictures at its own `setPalette 0x01`, and six of them are still
 numbers: `543` (0x0B8E, 49.0x14.0, 12 paths, drawn once at **x=357** -- off the

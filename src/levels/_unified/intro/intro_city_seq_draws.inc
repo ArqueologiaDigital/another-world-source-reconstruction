@@ -1,8 +1,8 @@
 DRAW_CIN_190_LOOP:
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_184, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_HOLO_SCREEN_POINTER_ON_PLATE, x=[0x03], y=[0x04]
 .else
-	video offset=CINEMATIC_190, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_HOLO_SCREEN_POINTER_ON_PLATE, x=[0x03], y=[0x04]
 .endif
 	break
 	jmp DRAW_CIN_190_LOOP
@@ -19,9 +19,9 @@ LABEL_119E:
 
 DRAW_CIN_431_LOOP:
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_430, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_HOLO_SCREEN_POINTER, x=[0x03], y=[0x04]
 .else
-	video offset=CINEMATIC_431, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_HOLO_SCREEN_POINTER, x=[0x03], y=[0x04]
 .endif
 	break
 	jmp DRAW_CIN_431_LOOP
