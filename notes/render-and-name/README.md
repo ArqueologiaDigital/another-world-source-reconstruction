@@ -118,6 +118,7 @@ checked against the receiving port's own guards.
 | CAPSULE CINEMATIC_125..128 | (msdos twins; CAVES held) | `CINEMATIC_WIDE_FLASH_F0..F3` | medium |
 | CAPSULE CINEMATIC_334..338 | (msdos twins) | `CINEMATIC_CAPSULE_FIGURE_WALK_RIGHT_BODY_F0..F4` | high |
 | CAPSULE 345..350, 354, 415..419 | (msdos twins) | `CINEMATIC_CAPSULE_{PRONE,KNEELING}_FIGURE_{0,1}_F*` | medium |
+| CAPSULE CINEMATIC_434..442 | (msdos twins) | `CINEMATIC_CAPSULE_FIGURE_THROW_F0..F8` | medium |
 | CAVES 718, 719, 734, 735 | (msdos twins) | `CINEMATIC_CAVES_STALACTITE_CAVERN_{FLOOR,CEILING}_{LEFT,RIGHT}` | high |
 | CAVES 452/453/470/471, 472..474/491..493 | (msdos twins) | `CINEMATIC_CAVES_HERO_SWIM_HEAD_{UP,DOWN}_{RIGHT,LEFT}_*` | high |
 

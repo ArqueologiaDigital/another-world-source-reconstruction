@@ -2,28 +2,28 @@ ANIM_CIN_526_LOOP_VAR29:
 	video offset=CINEMATIC_526, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	djnz [0x29], ANIM_CIN_526_LOOP_VAR29
-	video offset=CINEMATIC_527, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_THROW_F0, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_528, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_THROW_F1, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_529, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_THROW_F2, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_530, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_THROW_F3, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_531, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_THROW_F4, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_532, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_THROW_F5, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_533, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_THROW_F6, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_534, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_THROW_F7, x=[BUDDY_X], y=[BUDDY_Y]
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x01
 	play id=0x0079, freq=0x19, vol=0x40, channel=0x00
 	add [BUDDY_X], 0x0007
 	setup channel=0x14, address=LABEL_1887
 	mov [0x29], 0x0014
 	break
-	video offset=CINEMATIC_535, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_THROW_F8, x=[BUDDY_X], y=[BUDDY_Y]
 	add [BUDDY_X], 0x0008
 
 LABEL_19C3:
