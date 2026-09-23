@@ -466,7 +466,7 @@ export class VM {
     if (kind === "video2") this.cine.setLevel(this.level);
 
     const page = this.pages[this.workPage];
-    for (const p of polys) fillPolygonInto(page, p);
+    for (const p of polys) fillPolygonInto(page, p, undefined, this.pages[0]);
 
     this.draws.push({
       seq: this.seq++, kind, offset, x, y, zoom,
@@ -499,24 +499,120 @@ export class VM {
  * `canonical_md5` both come from the polygon tree -- so this affects what the
  * screen looks like and nothing that is written down.
  */
-export function fillPolygonInto(page, poly, colorOverride) {
+/** Paint one polygon into a page, the way the game paints it.
+ *
+ * A line-for-line port of MAME's `another_world_vm_state::fillPolygon`
+ * (felipesanches/mame, branch `anotherworld`,
+ * `src/mame/video/anotherworld_vm.cpp`), which matches Fabien Sanglard's
+ * interpreter and therefore the original.
+ *
+ * **This replaced an even-odd scanline fill that had never been checked
+ * against anything.** `tests/compare_render.mjs` compares polygon GEOMETRY --
+ * colour, point count, coordinates -- against the Rust tool's SVG output, and
+ * an SVG is not rasterised, so nothing in this repository had ever tested the
+ * step from polygons to pixels. The old README line calling the difference
+ * "up to one pixel" was a guess, not a measurement.
+ *
+ * Three things the scanline fill got wrong and this does not:
+ *
+ *   1. **The walk.** The game walks two edges at once, from the ends of the
+ *      point list inwards, in 16.16 fixed point, with `cpt1 |= 0x7FFF` and
+ *      `cpt2 |= 0x8000` before each span so the two sides round outwards. An
+ *      even-odd fill with rounded endpoints is a different shape, not a
+ *      shifted one.
+ *   2. **Colour 0x10 and above.** Below 0x10 is a solid colour. Exactly 0x10
+ *      BLENDS -- each pixel becomes `(what is there & 7) | 8`, which is the
+ *      game's transparency. Above 0x10 COPIES FROM PAGE 0, which is how the
+ *      backdrop shows through a cut-out. The old fill wrote a solid index for
+ *      all three, so every masked and blended polygon was painted opaque.
+ *   3. **The degenerate point.** A four-point polygon with zero width and one
+ *      row of height is one pixel, not a lozenge (see `polygons.js`).
+ *
+ * @param {Uint8Array} page   the page being drawn into
+ * @param {object} poly       one entry from PolygonRenderer.draw()
+ * @param {number} [colorOverride] force a solid index -- the blink overlay
+ *   uses this, and it deliberately bypasses blend and page-0 copy so that
+ *   highlighting an asset shows its full footprint.
+ * @param {Uint8Array} [page0] page 0, needed for the copy mode. Without it a
+ *   copy-mode polygon is skipped rather than painted wrong.
+ */
+export function fillPolygonInto(page, poly, colorOverride, page0) {
   const pts = poly.points;
-  if (pts.length < 3) return;
-  let ymin = Infinity, ymax = -Infinity;
-  for (const [, y] of pts) { if (y < ymin) ymin = y; if (y > ymax) ymax = y; }
-  const y0 = Math.max(0, Math.ceil(ymin)), y1 = Math.min(H - 1, Math.floor(ymax));
-  const ci = colorOverride !== undefined ? colorOverride : poly.index;
-  const idx = ci === undefined ? 0 : ci;
-  for (let y = y0; y <= y1; y++) {
-    const xs = [];
-    for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) {
-      const [xi, yi] = pts[i], [xj, yj] = pts[j];
-      if ((yi > y) !== (yj > y)) xs.push(xi + (y - yi) / (yj - yi) * (xj - xi));
+  if (!pts || pts.length < 3) return;
+
+  const solid = colorOverride !== undefined;
+  const raw = poly.raw === undefined ? (poly.index || 0) : poly.raw;
+  // 0 solid, 1 blend, 2 copy from page 0
+  const mode = solid ? 0 : raw < 0x10 ? 0 : raw === 0x10 ? 1 : 2;
+  if (mode === 2 && !page0) return;
+  const ci = solid ? colorOverride : raw & 0x0F;
+
+  const put = (y, x1, x2) => {
+    const row = y * W;
+    if (x1 > x2) { const t = x1; x1 = x2; x2 = t; }
+    for (let x = x1; x <= x2; x++) {
+      if (mode === 0) page[row + x] = ci;
+      else if (mode === 1) page[row + x] = (page[row + x] & 7) | 8;
+      else page[row + x] = page0[row + x];
     }
-    xs.sort((a, b) => a - b);
-    for (let k = 0; k + 1 < xs.length; k += 2) {
-      const a = Math.max(0, Math.round(xs[k])), b = Math.min(W - 1, Math.round(xs[k + 1]));
-      for (let x = a; x <= b; x++) page[y * W + x] = idx;
+  };
+
+  if (poly.degenerate) {
+    const x = Math.round(poly.anchorX), y = Math.round(poly.anchorY);
+    if (x >= 0 && x < W && y >= 0 && y < H) put(y, x, x);
+    return;
+  }
+
+  let ymin = Infinity, ymax = -Infinity, xmin = Infinity, xmax = -Infinity;
+  for (const [x, y] of pts) {
+    if (y < ymin) ymin = y; if (y > ymax) ymax = y;
+    if (x < xmin) xmin = x; if (x > xmax) xmax = x;
+  }
+  if (xmin >= W || xmax < 0 || ymin >= H || ymax < 0) return;
+
+  // `calcStep`: 0x4000/dy as an integer, times dx, times 4. The integer
+  // division is the whole character of the edge walk and must not become a
+  // float divide.
+  const calcStep = (p1, p2) => {
+    const dy = Math.round(p2[1]) - Math.round(p1[1]);
+    const v = dy > 0 ? Math.trunc(0x4000 / dy) : 0x4000;
+    return [Math.trunc((Math.round(p2[0]) - Math.round(p1[0])) * v) * 4, dy];
+  };
+
+  let hliney = Math.round(ymin);
+  let n = pts.length;
+  let i = 0, j = n - 1;
+  let cpt2 = Math.round(pts[i][0]) * 65536;
+  let cpt1 = Math.round(pts[j][0]) * 65536;
+  i++; j--;
+
+  for (;;) {
+    n -= 2;
+    if (n === 0) return;
+    const [step1, h1] = calcStep(pts[j + 1], pts[j]);
+    const [step2] = calcStep(pts[i - 1], pts[i]);
+    let h = h1;
+    i++; j--;
+    cpt1 = (cpt1 & ~0xFFFF) | 0x7FFF;
+    cpt2 = (cpt2 & ~0xFFFF) | 0x8000;
+    if (h === 0) {
+      cpt1 += step1;
+      cpt2 += step2;
+    } else {
+      for (; h !== 0; --h) {
+        if (hliney >= 0) {
+          let x1 = Math.floor(cpt1 / 65536), x2 = Math.floor(cpt2 / 65536);
+          if (x1 <= W - 1 && x2 >= 0) {
+            if (x1 < 0) x1 = 0;
+            if (x2 > W - 1) x2 = W - 1;
+            put(hliney, x1, x2);
+          }
+        }
+        cpt1 += step1;
+        cpt2 += step2;
+        hliney++;
+        if (hliney > H - 1) return;
+      }
     }
   }
 }

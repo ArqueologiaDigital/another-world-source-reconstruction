@@ -99,21 +99,30 @@ export class PolygonRenderer {
       px[i] = cx - bboxW / 2 + dx;
       py[i] = cy - bboxH / 2 + dy;
     }
-    // A four-point polygon that is really a line gets bumped to a two-pixel
-    // lozenge so it is visible. The reference does this; `polygon_extent.py`
-    // documents that it is why the renderer reports thin art wider than the
-    // polygon extent does.
+    // The GAME's rule, from MAME's fillPolygon and Fabien Sanglard's
+    // interpreter before it: a four-point polygon with zero width and one row
+    // of height is a single PIXEL, not a shape. `awvm-render-polygons` instead
+    // bumps it into a two-pixel lozenge so it shows up in an SVG, and
+    // `polygon_extent.py` documents that as why the renderer reports thin art
+    // wider than the extent does. Both are kept: the bumped points, so the
+    // geometry still matches the Rust tool that every measurement in `notes/`
+    // came from, and the flag, so the rasteriser can do what the game does.
+    const degenerate = bboxW === 0 && bboxH === 1 && n === 4;
     if (n === 4 && px[0] === px[3] && px[1] === px[2]
                 && py[0] === py[3] && py[1] === py[2]) {
       px[2] += 2; px[3] += 2;
     }
     const points = new Array(n);
     for (let i = 0; i < n; i++) points[i] = [px[i], py[i]];
-    // `index` is what the video page actually stores -- the palette is applied
-    // when the page is displayed, not when it is drawn. `color` is carried too
-    // because the Rust renderer's SVG writer emits rgb and the comparison test
-    // checks against that.
-    out.push({ color: rgb, index: color % 16, points });
+    // `index` is what the video page actually stores for an ordinary colour --
+    // the palette is applied when the page is displayed, not when it is drawn.
+    // `raw` is the UNMASKED colour byte, which the rasteriser needs: below
+    // 0x10 is a solid colour, exactly 0x10 blends with what is already there,
+    // and above 0x10 copies from page 0. `color` is carried too because the
+    // Rust renderer's SVG writer emits rgb and the comparison test checks
+    // against that.
+    out.push({ color: rgb, index: color % 16, raw: color, points,
+               degenerate, anchorX: cx, anchorY: cy });
   }
 
   readAndDrawHierarchy(palette, zoom, pgcX, pgcY, out) {

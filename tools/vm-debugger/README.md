@@ -80,6 +80,36 @@ discarded worktree or a fresh clone takes the whole session with it. Never edit
 or reorder a line afterwards: the id is the hash of the line, and rewriting one
 orphans every table and verdict that cites it.
 
+## The rasteriser, and what used to be wrong with it
+
+`fillPolygonInto` in `static/vm.js` is a port of MAME's
+`another_world_vm_state::fillPolygon` (felipesanches/mame, branch
+`anotherworld`), which matches Fabien Sanglard's interpreter and the original:
+two edges walked inwards from the ends of the point list, in 16.16 fixed point,
+with `cpt1 |= 0x7FFF` and `cpt2 |= 0x8000` so the sides round outwards.
+
+Before 2026-09-23 it was an even-odd scanline fill, and **nothing had ever
+tested it**. `tests/compare_render.mjs` compares polygon *geometry* against
+`awvm-render-polygons`, which emits SVG; an SVG is not rasterised, so the step
+from polygons to pixels was unchecked in both directions. What was wrong was not
+edge rounding:
+
+- **colour exactly 0x10 blends** -- each covered pixel becomes
+  `(what is there & 7) | 8`;
+- **colour above 0x10 copies from page 0** -- this is how a cut-out lets the
+  backdrop through.
+
+Both were being painted as opaque blocks. `CINEMATIC_222`, the constant with the
+most screen time in CAVES, is colour 0x11: a **cut-out**, drawn for three
+sessions as a solid 50x40 rectangle. Fixing it moved CAVES checkpoints 9 and 10
+from 6.1% of the screen to 27.7%, because blend polygons had been overwriting
+what they were meant to tint.
+
+The blink overlay deliberately ignores all of this and paints a solid colour, so
+highlighting an asset shows its whole footprint even when the asset is a mask --
+otherwise the assets hardest to recognise would be the ones that highlight
+invisibly.
+
 ## What it does not do
 
 **It does not rename anything in the tree.** Renaming is here -- one asset, or
@@ -220,6 +250,7 @@ panel shows `SCREEN_NUM` and `HERO_X`, not `[0x67]` and `[0x01]`.
 | `tests/dump_draws.mjs` | did a change to the VM move any draw? |
 | `tests/check_guidance.py` | does the guidance document carry every entry, with its id? |
 | `tests/check_entry_and_input.mjs` | do the checkpoint tables load, and does input match the reference? |
+| `tests/check_fill.mjs` | does the rasteriser blend, copy and round the way the game's does? |
 
 The last one exists because `guidance()` filtered to `kind == "annotate"` and so
 hid every typed name from both ways the log is read. It takes a candidate

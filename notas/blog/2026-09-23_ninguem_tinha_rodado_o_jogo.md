@@ -147,10 +147,19 @@ motivo pelo qual a anotação é **evidência**, e não uma ordem de renomeaçã
 
 ## O que ele não faz
 
-Ele não substitui o emulador de referência. A pintura de polígonos usa
-preenchimento por varredura par-ímpar, que difere do caminhamento de duas
-arestas do original em até um pixel na borda — bom o suficiente para reconhecer
-e apontar, não para comparar byte a byte. Não há áudio. E ele entra na fase a
+Ele não substitui o emulador de referência. Não há áudio.
+
+*(Correção, mais tarde no mesmo dia: este parágrafo dizia que a pintura de
+polígonos usava varredura par-ímpar e diferia do original "em até um pixel na
+borda". As duas metades estavam erradas. A primeira era verdade e deixou de
+ser: o preenchimento agora é uma porta do `fillPolygon` do MAME, com o
+caminhamento de duas arestas em ponto fixo. A segunda nunca foi medida —* nada
+*neste projeto testava o passo de polígonos para pixels, porque o teste de
+renderização compara **geometria** contra um SVG, e SVG não é rasterizado. O
+erro real não era de um pixel: as cores 0x10 e acima, que são mistura e recorte,
+eram pintadas como blocos opacos. `CINEMATIC_222`, a constante com mais tempo de
+tela da fase CAVES, é cor 0x11 — um recorte por onde o cenário aparece — e
+estava sendo desenhada como um retângulo sólido de 50 por 40.)* E ele entra na fase a
 frio, sem o estado que uma partida real traria de trás, o que faz algumas cenas
 começarem de um jeito que o jogo nunca mostra.
 

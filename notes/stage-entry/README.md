@@ -108,24 +108,33 @@ delta, not a whole machine state.
 CAVES' nine are nine different rooms, and `--checkpoints` shows it
 (msdos, 400 frames):
 
-    checkpoint  3:  395 painted, fullest   2.5%,  1329 draw(s), 16 live
-    checkpoint  4:  399 painted, fullest  48.2%,  5185 draw(s), 17 live
-    checkpoint  5:  399 painted, fullest  57.3%,  1573 draw(s),  9 live
-    checkpoint  6:  399 painted, fullest  59.2%,  1198 draw(s),  7 live
-    checkpoint  7:  399 painted, fullest  45.6%,  3189 draw(s),  9 live
-    checkpoint  8:  399 painted, fullest  54.5%,  2431 draw(s), 18 live
-    checkpoint  9:  399 painted, fullest   6.1%,  1595 draw(s), 15 live
-    checkpoint 10:  399 painted, fullest   6.1%,  1595 draw(s), 15 live
+    checkpoint  3:    0 painted, fullest   0.5%,  1329 draw(s), 16 live
+    checkpoint  4:  399 painted, fullest  47.5%,  5185 draw(s), 17 live
+    checkpoint  5:  399 painted, fullest  55.4%,  1573 draw(s),  9 live
+    checkpoint  6:  399 painted, fullest  59.3%,  1198 draw(s),  7 live
+    checkpoint  7:  399 painted, fullest  45.4%,  3189 draw(s),  9 live
+    checkpoint  8:  399 painted, fullest  54.6%,  2431 draw(s), 18 live
+    checkpoint  9:  399 painted, fullest  27.7%,  1595 draw(s), 15 live
+    checkpoint 10:  399 painted, fullest  27.7%,  1595 draw(s), 15 live
     checkpoint 11:  399 painted, fullest  18.4%,  2786 draw(s), 13 live
 
-and CAPSULE's three: 68.5%, 24.8%, 12.9%.
+and CAPSULE's three: 66.0%, 24.8%, 12.9%.
 
 The first one listed is the default, which is faithful to the reference's
-ordering and is **the worst of the nine to look at** -- a hang loop over 2.5% of
-the screen. Checkpoints 9 and 10 are identical on every column, which is worth
-knowing before treating them as two places. Pick one in the debugger's header,
-or use `../on-screen-priority/ --sweep` to ask all of them about unnamed art at
-once.
+ordering and is **the worst of the nine to look at** -- it ends up in a hang
+loop whose only drawing is a cut-out over an empty page 0, so it paints
+essentially nothing. Checkpoints 9 and 10 are identical on every column, which
+is worth knowing before treating them as two places. Pick one in the debugger's
+header, or use `../on-screen-priority/ --sweep` to ask all of them about unnamed
+art at once.
+
+**These numbers moved on 2026-09-23** when the rasteriser was replaced by a port
+of MAME's (`tools/vm-debugger/README.md`, "The rasteriser"). Checkpoints 9 and
+10 were reported at 6.1% and are 27.7%: blend polygons had been painted as
+opaque blocks, overwriting what they were meant to tint. Checkpoint 3 was
+reported at 2.5% and is 0.5%, for the opposite reason -- what it draws is
+colour 0x11, a cut-out, and a cut-out over an empty page 0 is correctly
+invisible.
 
 ## What this does not fix
 
