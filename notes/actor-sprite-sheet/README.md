@@ -158,15 +158,39 @@ independently, forming an arc that does not depend on any name — 18 at frame
 0, narrowing to 7 at frames 6 and 7, back to 17 at frame 15, with `f2`/`f14`
 both 15 and `f4`/`f12` both 11.
 
-**Not yet named, and the reason is specific.** Coverage is 13 of 16 frames —
-1, 3 and 11 are missing — and five pieces serve a single frame where the
-symmetry predicts a partner. `5 + 11 = 16` but nothing here serves 11, so
-either frame 11's piece is drawn directly rather than through a `call` (and
-so is invisible to `--shared`), or the pair is genuinely two near-identical
-pictures. Until that is settled the phase sets are incomplete, and the
-existing hold criteria — a piece serving other than two phases, phases not
-symmetric about mid-stride — correctly refuse them. The next step is to find
-what draws frames 1, 3 and 11.
+**Not yet named, and the reason is now specific.** The series is **closed at
+nine pieces**: every one of the eight (port, stage) pairs that draws any of
+them draws the same nine, and no stage adds a tenth. So the symmetry becomes
+a prediction. Pairs summing to 16 are (1,15), (2,14), (3,13), (4,12), (5,11),
+(6,10), (7,9), with 0 and 8 self-paired, and the three singletons land exactly
+on the partners of the three frames CAPSULE never labels:
+
+    CV_1A54 {15}  predicts also frame 1
+    CV_1AE4 {13}  predicts also frame 3
+    CV_1B44  {5}  predicts also frame 11
+
+CAPSULE has 13 walk-right frame labels — 0, 2, 4..10, 12..15 — and no
+`DRAW_1`, `DRAW_3` or `DRAW_11` at all, so the gap is in the *labelling*, not
+in the art.
+
+**The prediction could not be confirmed, and that is the current state.**
+PRISON does carry `DRAW_FIGURE_WALK_RIGHT_F01`, `_F03` and `_F11`, which look
+like exactly the missing partners. They are not: all three call
+`DRAW_PRISON_HERO_SPRITE_BY_VAR09_0E`, a runtime dispatch on var09, and draw
+no piece of this series statically. CAVES draws the same nine pieces under
+the same `[0xF6]` guard, but its callers are unnamed labels and carry no
+frame number — item 2 of `../HANDOFF.md`, the dependency chain.
+
+So the phase sets stay incomplete for a reason that is no longer "we have not
+looked": the frames that would complete them are selected at run time in the
+one stage that labels them. The existing hold criteria correctly refuse the
+family. What would settle it is naming CAVES's walk-right frame routines,
+which is the same blocker as everything else in that column.
+
+The one anomaly worth recording: `CV_1BA4` serves {7} and `CV_1BD4` serves
+{8, 9}, but 7 and 9 are a symmetric pair. Either the pairing breaks at
+mid-stance or one of those two assignments is wrong; nothing measured here
+says which.
 
 `CV_3B44`, `CV_3B96` and `CV_3BE8` also surface, at 6 leaves and serving
 three frames each. They are a different series and are not analysed here.
