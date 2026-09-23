@@ -25,7 +25,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 63.6% (6,449/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 63.6% (6,450/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 77 of 352 (59 reachable) | `notes/shared-bank-geometry/` |
@@ -182,6 +182,29 @@ art. `notes/lake-shooting/composite_at_anchor.py` exists to fix that; reach
 for it whenever two draws share an anchor.
 
 ## Open work, roughly in order of value
+
+0. **The two halves now both have a map, and the maps say different things.**
+
+   The art half: `notes/remaining-art/by_anchor.py`. The label half, new on
+   2026-09-23: `notes/placeholder-census/placeholder_roles.py`, 7,594
+   placeholders in the three big stages sorted by how control reaches them.
+
+   What the label census says is that the label half is **not** mostly a
+   judgement problem. 2,360 placeholders unblock in chains as their jumpers
+   get names and need nothing else; 828 are a position inside a routine that
+   already has a name, and the only thing stopping those is that the role
+   vocabulary would have to be invented — a decision about the project's
+   naming rather than a measurement, so it is written down and left for the
+   owner. Deciding it one way unblocks 828 labels in an afternoon.
+
+   What the art half says is the opposite. `backdrop-drawer --layers` refuses
+   185 of 186 candidates because the art is **shared between screens**, and
+   `--audit-layers` shows the 312 layer names already in the tree are clean.
+   That remainder is not waiting on a convention; it is waiting on a name
+   that does not claim one screen, which nothing in `docs/NAMING.md` provides
+   yet.
+
+   Both of those are one decision each. They are worth more than any probe.
 
 0a. **Art family gaps, two of three explained.** `HERO_RUN_LEFT_ARM` is
    missing F04 because that frame draws no arm (`run_left_body.map`), and
