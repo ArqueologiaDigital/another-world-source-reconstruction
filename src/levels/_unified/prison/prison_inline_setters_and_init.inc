@@ -600,7 +600,7 @@ PRISON_ACTOR_SLOT_WRITEBACK_PREP:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_BUDDY_FIGURE_BASE:
-	video offset=CINEMATIC_393, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_BUDDY_FIGURE_BASE, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 

@@ -70,6 +70,7 @@ checked against the receiving port's own guards.
 | CINEMATIC_203, 190..195 | (msdos twins) | `CINEMATIC_PRISON_ACTOR_CHARGE_GLOW_F0..F6` | medium |
 | CINEMATIC_634 | (msdos twin) | `CINEMATIC_PRISON_PRISONER_BEHIND_BARS` | high |
 | CINEMATIC_636 | (msdos twin) | `CINEMATIC_PRISON_CELL_BARS` | high |
+| CINEMATIC_391..399 | (msdos twins) | `CINEMATIC_PRISON_BUDDY_TYPING_ARM_{LEFT,RIGHT}_F0..F3` + `_FIGURE_BASE` | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
@@ -175,3 +176,21 @@ one is just legible.
 and nothing else, where the path count says the same thing the picture does.
 `LABEL_4EE9` draws both twenty times under a `djnz` seeded to 0x14, at two
 variable x anchors -- a pan across a row of cells.
+
+## The typing animation, where the signed bbox did the separating
+
+`BUDDY_HACK_SECOND_TYPING_LOOP` draws one right arm and one left arm over a
+body base on each `break`, five frames in all. The nine pictures are eight
+one-path elongated forms and one torso — enough to see it is a figure at a
+keyboard, not enough to say which arm is which.
+
+The signed bounding box says it without reference to draw order: four span
+positive x, four negative, and **all four left arms share the same left edge
+at −17.5** — one shoulder with the forearm at four angles. The right arms
+likewise cluster at +2..+4.
+
+Indices are order of first appearance in that routine, which
+`../placeholder-census/ --frames` reproduces 159 times out of 159 for a
+complete family drawn by one routine. All nine sit at `[BUDDY_X],[BUDDY_Y]`,
+the actor slot, so **#0138** applies and the names come from the art rather
+than the scene.

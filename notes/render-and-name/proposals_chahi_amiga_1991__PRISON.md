@@ -21,3 +21,28 @@ that `docs/NAMING.md` §2 bars. The mapping is
 | --- | --- | --- | --- |
 | CINEMATIC_634 | CINEMATIC_PRISON_PRISONER_BEHIND_BARS | high | 278x360, 49 paths: a human figure in profile -- rounded head with hair, neck, sloping shoulders, a bent arm -- seen through **five vertical bars** that run the full height. The clearest silhouette in this stage, and the only one here that resolves as a person rather than a mass. Drawn by `LABEL_4EE9` at `x=[0x14], y=100`, twenty times under a `djnz [0x15]` seeded to 0x14, alongside CINEMATIC_635 and CINEMATIC_636 at a second variable x -- a panning shot across a row of cells |
 | CINEMATIC_636 | CINEMATIC_PRISON_CELL_BARS | high | 158x205, **three paths**: three tall vertical bars and nothing else. The path count and the extent say the same thing the picture does. Drawn by `LABEL_4EE9` at `x=[0x17], y=100`, the second of the two anchors that routine pans, and it is the bar layer for that cell as CINEMATIC_634 carries its own |
+# PRISON: the buddy typing, read from a render
+
+`BUDDY_HACK_SECOND_TYPING_LOOP` draws one right arm and one left arm over a
+body base on each `break`, five frames in all, at `[BUDDY_X],[BUDDY_Y]` --
+the actor slot, so per **#0138** these names come from the art and not from
+the scene the pictures appear in.
+
+The signed bounding box separates the two arms without reference to draw
+order: four span positive x, four negative, and all four left arms share the
+same left edge at **-17.5** -- one shoulder with the forearm at four angles.
+Indices are order of first appearance in that routine, the convention
+`../placeholder-census/ --frames` reproduces 159 times out of 159 for a
+complete family drawn by one routine.
+
+| constant | proposed name | confidence | evidence |
+| --- | --- | --- | --- |
+| CINEMATIC_393 | CINEMATIC_PRISON_BUDDY_FIGURE_BASE | high | 22x29, one path: a torso, wider at the shoulders and hips than at the waist. It is the sole picture of `DRAW_BUDDY_FIGURE_BASE`, which the typing loop `call`s once per frame after laying both arms down, so it is the body the arms are composited onto |
+| CINEMATIC_391 | CINEMATIC_PRISON_BUDDY_TYPING_ARM_RIGHT_F0 | high | 6x25, one path, spans x +3.0..+9.0 -- right of the anchor. First right arm drawn in the loop |
+| CINEMATIC_394 | CINEMATIC_PRISON_BUDDY_TYPING_ARM_RIGHT_F1 | high | 8x22, one path, spans +2.0..+10.0. Second right arm |
+| CINEMATIC_395 | CINEMATIC_PRISON_BUDDY_TYPING_ARM_RIGHT_F2 | high | 6x16, one path, spans +4.0..+10.0. Third right arm |
+| CINEMATIC_397 | CINEMATIC_PRISON_BUDDY_TYPING_ARM_RIGHT_F3 | high | 7x16, one path, spans +2.5..+9.5. Fourth right arm, and the one held for the last two frames |
+| CINEMATIC_392 | CINEMATIC_PRISON_BUDDY_TYPING_ARM_LEFT_F0 | high | 9x25, one path, spans -17.5..-8.5 -- left of the anchor, sharing the -17.5 shoulder edge with the other three. First left arm, held across the first two frames |
+| CINEMATIC_396 | CINEMATIC_PRISON_BUDDY_TYPING_ARM_LEFT_F1 | high | 13x21, one path, spans -17.5..-4.5. Second left arm, the one reaching furthest in |
+| CINEMATIC_398 | CINEMATIC_PRISON_BUDDY_TYPING_ARM_LEFT_F2 | high | 7x17, one path, spans -17.5..-10.5. Third left arm |
+| CINEMATIC_399 | CINEMATIC_PRISON_BUDDY_TYPING_ARM_LEFT_F3 | high | 9x14, one path, spans -17.5..-8.5. Fourth left arm |
