@@ -282,7 +282,8 @@ problems.
   is how each of the six new fixtures was shown to fail against the old probe.
 - `insert.py` -- a one-off text edit to `docs/NAMING.md`. The result is
   committed; the script has no second use.
-- `r1.py`..`r4.py`, `m1.py`..`m6.py`, `ref_queue.py`, `rooted_queue.py` -- the
+- `r1.py`, `r2.py`, `r3.py`, `r4.py`, `m1.py`, `m2.py`, `m3.py`, `m4.py`,
+  `m5.py`, `m6.py`, `ref_queue.py`, `rooted_queue.py` -- the
   verifying agents' drafts and one deliberate reference implementation of the
   queue, written to exercise the harness rather than to be kept. Every finding
   they produced is now a sealed fixture in
@@ -356,3 +357,27 @@ argument, after `tests/run.sh`'s `$1` and `check_guidance.py`'s.
 - `check_fill_old.mjs` -- a sed-patched copy of the check, made obsolete by the
   argument the committed check now takes.
 - `oldfill/`, `prevm/` -- `git show` output.
+
+
+## The sweep is a check now, and it caught this file on its first run
+
+`covered.py` in this directory answers one question: **is every script in a
+scratchpad named in this file?** Not whether the verdict is right -- "disposable
+because it is one `git show`" is a claim only a person can make -- but whether a
+verdict exists at all. The failure it exists for is silence: a script nobody
+ruled on either way reads exactly like a settled one when the sweep is prose.
+
+    python3 notes/scratch-audit/covered.py <scratchpad dir>
+
+Two things make it usable rather than noisy. It skips any file whose content is
+**already a blob git has**, asked with `cat-file --batch-check`, which removes
+the whole working copies of the repository that accumulate under a scratchpad
+and every `git show` taken to diff a change against its predecessor -- 145 of
+187 files on the run that motivated it. And it reports names too generic to
+match on, like `run.sh`, separately rather than passing them.
+
+On its first run it failed on six: `m2.py`, `m3.py`, `m4.py`, `m5.py`, `r2.py`
+and `r3.py`. The verdict above had written them as `r1.py`..`r4.py`,
+`m1.py`..`m6.py`, which reads as covering them and does not name them. That is
+the exact failure the check is for, found in the text that introduced it, and
+the fix was to spell all twelve out.

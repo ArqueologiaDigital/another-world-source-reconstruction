@@ -10,6 +10,25 @@ not a sweep, so this is the sweep, written down.
 The answer was **no: 41 files were proposed for rescue and all 41 were
 refuted.** `verdicts.md` has the grounds, one entry per file.
 
+What is checked mechanically
+----------------------------
+| file | question it answers | command |
+| --- | --- | --- |
+| `covered.py` | Is every script in a scratchpad named in `verdicts.md`? | `python3 notes/scratch-audit/covered.py <scratchpad dir>` |
+
+It checks for **silence**, not for correctness: a verdict of "disposable because
+it is one `git show`" is a claim only a person can make, and this only asks that
+the claim exists. A script nobody has ruled on either way reads exactly like a
+settled one when the sweep is a prose exercise, and that is the way this goes
+wrong at the end of a long session.
+
+It skips any file whose content is already a blob git has, which removes the
+working copies of the repository that accumulate under a scratchpad and every
+`git show` taken to diff a change against its predecessor -- 145 of 187 files
+on the run that motivated it. On its first run it failed on six scripts that
+`verdicts.md` had written as `r1.py..r4.py`, `m1.py..m6.py`: a range reads as
+covering them and does not name them.
+
 How it was run
 --------------
 `preserve_scratch_audit.js` is the workflow script, committed because it
