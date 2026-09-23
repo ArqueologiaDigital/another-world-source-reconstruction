@@ -130,17 +130,20 @@ fix is a sync pass per stage, not renaming. **Any probe that reads a routine
 from one tree must read its EQU table from the same tree**; doing otherwise
 reported msdos CAVES' whole beam ladder as misplaced when none of it was.
 
-**`LEFT` and `RIGHT` may be the wrong axis for the pose sheets.** Every stage
-has two sprite dispatchers and the tree calls their sheets `..._FIGURE_POSE_-
-LEFT_*` and `..._RIGHT_*`. msdos CAPSULE names its two
-`DRAW_HERO_SPRITE_BY_VAR09_0E` and `DRAW_ALIEN_SPRITE_BY_VAR09_0E`, and the
-measurements side with the labels: amiga's `CAPSULE_FIGURE_POSE_LEFT_0_1` is
-**4 leaves** and its `RIGHT_0_1` is **5**. Two drawings of one figure mirrored
-have the same leaf count -- that is the whole basis of
-`notes/mirror-families/` -- so these are two different figures, not one facing
-two ways. Correcting it touches three stages and both ports and wants its own
-pass; the per-slot `canonical_md5` map it needs is already tabulated in
-`notes/render-and-name/correction_dos_1992__CAPSULE_pose_sheets.md`.
+**`LEFT` and `RIGHT` are the right axis for the pose sheets -- an open item
+that was wrong and is now closed.** It was raised on a measurement: amiga's
+`CAPSULE_FIGURE_POSE_LEFT_0_1` is 4 leaves and its `RIGHT_0_1` is 5, and a
+reflection keeps its leaf count. Rendering both sheets at palette 14 settles it
+the other way. They are close-up alien heads in profile, and the two rows face
+opposite ways -- the dark wedge over the crown points up-right through the LEFT
+sheet and up-left through the RIGHT one, feature for feature.
+
+The inference was the unsound step, not the measurement. These are
+hand-authored polygon sprites, not programmatic reflections, so the two facings
+of one head are drawn twice and need not agree leaf for leaf. What follows for
+`notes/mirror-families/`: an equal leaf count is how that probe **finds** a
+mirror, not a property every mirror has. It has precision, not recall, and its
+README now says so.
 
 **`CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F0` is not left-facing.** `LABEL_24CF`
 draws it once *before* the branch that chooses direction, and both the left and

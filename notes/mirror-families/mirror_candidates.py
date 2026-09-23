@@ -8,12 +8,18 @@ same **reflected**, and a reflection is the commonest thing a stage holds twice:
 every walk, every aim, every death has a left and a right, and again and again
 one of the two was named and the other left numbered.
 
-A mirrored frame is not the same polygon tree, but it is the same drawing turned
-over, so it keeps two properties exactly:
+A mirrored frame is not the same polygon tree. Where the artist *reflected* the
+drawing it keeps two properties exactly:
 
   * the **leaf count** -- reflecting changes no polygon's existence;
   * the **height**, and the width to within the half-pixel the renderer's
     rounding can move.
+
+Where the artist drew the second facing **by hand** it keeps neither, and this
+probe cannot see those: amiga's `CAPSULE_FIGURE_POSE_LEFT_0_1` is 4 leaves and
+its `RIGHT_0_1` is 5, and rendered they are one alien head in profile facing two
+ways. So what follows is precision, not recall -- a family this does not report
+may still have a twin.
 
 So: for every still-numbered constant, look for named constants in the same
 stage and port with the same leaf count and an extent within tolerance. Report

@@ -7,10 +7,17 @@ same **reflected**, and a reflection is the commonest thing a stage holds twice:
 every walk, every aim, every death has a left and a right, and again and again
 one of the two was named and the other left numbered.
 
-A mirrored frame is not the same polygon tree, but it keeps two properties
-exactly: the **leaf count**, because reflecting removes no polygon, and the
-**height**, with the width to within the half-pixel the renderer's rounding can
-move.
+A mirrored frame is not the same polygon tree. *Where the artist reflected the
+drawing*, it keeps two properties exactly: the **leaf count**, because
+reflecting removes no polygon, and the **height**, with the width to within the
+half-pixel the renderer's rounding can move.
+
+**Where the artist drew the second facing by hand, it does not**, and this
+probe cannot see those at all. amiga's `CAPSULE_FIGURE_POSE_LEFT_0_1` is 4
+leaves and its `RIGHT_0_1` is 5; rendered, they are one alien head in profile
+facing two ways, drawn twice. So the leaf count is how this finds a mirror, not
+a property every mirror has: **precision, not recall**. A family it does not
+report may still have a twin.
 
     python3 notes/mirror-families/mirror_candidates.py
     python3 notes/mirror-families/mirror_candidates.py --port msdos --stage CAPSULE
