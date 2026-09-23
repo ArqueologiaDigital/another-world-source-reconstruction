@@ -46,7 +46,7 @@ LABEL_5092:
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
 	setup channel=0x01, address=LABEL_4DE8
 	setup channel=0x02, address=INIT_VARS_16_17
-	setup channel=0x03, address=LABEL_4EDA
+	setup channel=0x03, address=PRISON_WAKE_CLOSEUP_DRAW_FRAME
 	killChannel
 
 LABEL_50CC:

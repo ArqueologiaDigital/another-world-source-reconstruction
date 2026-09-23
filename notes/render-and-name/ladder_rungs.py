@@ -65,7 +65,8 @@ RE_LBL = re.compile(r"^([A-Za-z_]\w*):\s*$")
 RE_VID = re.compile(r"^\s*video\s+(?:type=\d+,\s*)?offset=([A-Za-z_]\w*),")
 
 
-def rungs(branch: str, stage: str, var: str) -> list[tuple[str, str]]:
+def rungs(branch: str, stage: str, var: str,
+          with_label: bool = False) -> list[tuple]:
     """(threshold, constant) for every rung of every `jg [var], N` ladder.
 
     The last rung of a ladder has no `jg` of its own -- it is the block the
@@ -77,7 +78,7 @@ def rungs(branch: str, stage: str, var: str) -> list[tuple[str, str]]:
         return []
     jg = re.compile(rf"^\s*jg\s+\[{var}\],\s*(0x[0-9A-Fa-f]+),\s*(\w+)")
     lines = f.read_text(errors="replace").splitlines()
-    out: list[tuple[str, str]] = []
+    out: list[tuple] = []
     pending: str | None = None
     tail_targets: set[str] = set()
     at_label: str | None = None
@@ -94,11 +95,13 @@ def rungs(branch: str, stage: str, var: str) -> list[tuple[str, str]]:
         v = RE_VID.match(line)
         if v:
             if pending is not None:
-                out.append((pending, v.group(1)))
+                out.append((pending, v.group(1), at_label)
+                           if with_label else (pending, v.group(1)))
                 pending = None
             elif at_label in tail_targets and out:
                 # the block the last `jg` of a ladder jumps to: the `else`
-                out.append(("else", v.group(1)))
+                out.append(("else", v.group(1), at_label)
+                           if with_label else ("else", v.group(1)))
                 tail_targets.discard(at_label)
             continue
         if line.strip() and not line.startswith(("\t", " ")):
@@ -116,7 +119,22 @@ def main() -> int:
     ap.add_argument("--stage", required=True)
     ap.add_argument("--var", required=True, help="e.g. 0x15")
     ap.add_argument("--diff", nargs=2, metavar=("A", "B"))
+    ap.add_argument("--labels", metavar="BRANCH",
+                    help="report the label that heads each rung, for naming "
+                         "the branch targets the ladder jumps to")
     args = ap.parse_args()
+
+    if args.labels:
+        r = rungs(args.labels, args.stage, args.var, with_label=True)
+        print(f"  {len(r)} rung(s) on [{args.var}] in "
+              f"{args.labels}/{args.stage}\n")
+        print(f"  {'rung':<6}{'reached when':<16}{'label heading it':<46}"
+              f"draws")
+        for i, (t, c, lab) in enumerate(r):
+            when = (f"[{args.var}] <= {t}" if t != "else"
+                    else f"[{args.var}] above")
+            print(f"  {i:<6}{when:<16}{lab or '(fall-through)':<46}{c}")
+        return 0
 
     if args.diff:
         a, b = (rungs(x, args.stage, args.var) for x in args.diff)

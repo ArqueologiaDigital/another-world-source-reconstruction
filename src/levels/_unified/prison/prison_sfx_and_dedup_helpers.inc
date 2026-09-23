@@ -747,7 +747,7 @@ PRISON_DRAW_CIN_229_TO_632_2F_AT_1C4A817A_L1:
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
-DRAW_CIN_683_TO_685_3F_AT_1EB7324B:
+PRISON_WAKE_CLOSEUP_PAINT_BACKDROP:
 	setPalette 0x0B
 	selectVideoPage 0x00
 	fill page=0x00, color=0x04

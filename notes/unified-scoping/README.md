@@ -101,3 +101,59 @@ substitutions.
 Tables in `../render-and-name/` no longer need the ordering caveat. The
 PRISON eye batch of 2026-09-23 is the first renumber written in plain reading
 order and synced without one.
+
+## The sync also carries routine labels now (2026-09-23)
+
+`sync_equ_rename.py` began as a constants tool: it filed a rename as live only
+when the canonical `.asm` defined the new name as `NAME  EQU 0x....`. Handed a
+routine table from `apply_routine_renames.py` it parsed **zero rows** and said
+`no rows`, which reads like a format error rather than what it was -- a filter
+that could not see a label.
+
+Adoption is now `NAME  EQU` **or** `NAME:`. The rule behind it is unchanged
+and is the point of the filter: a proposal the validator rejected must not
+reach the unified tree through the sync, so only a name the canonical file has
+actually taken is rewritten.
+
+### `--shared`, and the one thing it will not touch
+
+Branch-prefixed chunks (`amiga__*.inc`) are safe to rewrite from one branch's
+table, because the branch is known. Shared chunks are not, and until now the
+sync simply left them, so a routine renamed in all four canonical files kept
+its old spelling in `prison_pagefill_inits.inc`.
+
+`--shared` handles them under one rule: rewrite a pair only when **no**
+branch's canonical `.asm` still defines the old name. While any branch still
+calls the routine by its old spelling, the shared chunk keeps it and the pair
+is reported as held.
+
+One class is refused outright, whatever that rule says: a bare
+`LABEL_<hex>` address placeholder. Those are per-branch by construction --
+amiga's `LABEL_4E09` is the eyelid rung at `[0x15] <= 0x12` and dos's
+`LABEL_4E09` is the pupil rung at `[0x16] <= 0x04`, in the same scene -- so
+one branch's table cannot say what the token means to the other readers of a
+shared chunk. The prefixed pass renames them, where the branch is known.
+
+On the PRISON wake closeup this was 22 address labels refused and 2 eligible,
+both content-derived names (`DRAW_CIN_683_TO_685_3F_AT_1EB7324B`,
+`INLINE_DRAW_CIN_659_AT_160_100`) -- which is exactly why those two were in a
+shared chunk in the first place.
+
+## Chunk FILENAMES go stale and nothing fixes them
+
+`stale_chunk_names.py` measures it. A chunk is filed as
+`<prefix>__post_<LABEL>.inc` after the label it follows, and no rename touches
+the filename:
+
+```
+  prison           257      89     34.6%
+  tank              52      41     78.8%
+  passcode           8       8    100.0%
+  237 of 889 chunk file(s) name a label that is defined nowhere  (27%)
+```
+
+This is invisible to `make test` -- `.include` resolves by filename -- so it
+has accumulated silently across every routine rename the project has applied.
+It is not the residue of any one batch. **Open work**: a pass that renames the
+file and its `.include` line together, and a check that keeps it from
+recurring.

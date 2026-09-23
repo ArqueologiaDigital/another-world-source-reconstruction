@@ -53,6 +53,8 @@ import sys
 from pathlib import Path
 
 SRC = Path(__file__).resolve().parents[2] / "src" / "levels"
+RE_IDENT = re.compile(r"[A-Za-z_]\w*")
+RE_ADDR_LABEL = re.compile(r"LABEL_[0-9A-Fa-f]{4}")
 PREFIX = {"chahi_amiga_1991": "amiga", "dos_1992": "dos",
           "cartridge_1992": "cart", "gba_2004": "gba"}
 
@@ -116,12 +118,83 @@ def self_test() -> int:
     return 0 if ok else 1
 
 
+def adopted(name: str, canonical: str) -> bool:
+    """Has the canonical `.asm` actually taken this name?
+
+    Constants are adopted as `NAME  EQU 0x....` and routines as `NAME:`.
+    Either counts; nothing else does. This is the "a proposal is not an
+    application" rule -- a row the validator rejected must not be able to
+    reach the unified tree through the sync -- and it has to cover labels
+    now that `apply_routine_renames.py` feeds tables through here too.
+    """
+    return bool(re.search(rf"^{re.escape(name)}(\s+EQU\b|:)", canonical,
+                          re.M))
+
+
+def stage_branches(stage: str) -> list[str]:
+    return [b for b in PREFIX if (SRC / b / f"{stage}.asm").is_file()]
+
+
+def shared_pass(stage: str, live: list[tuple[str, str]], apply: bool
+                ) -> int:
+    """Rewrite the chunks no branch prefix claims.
+
+    A shared chunk is read by several branches, so renaming a token there is
+    only safe once **every** branch has moved off the old spelling. The test
+    is exactly that: the old name is defined in no branch's canonical `.asm`
+    for this stage, and the new name is defined in at least one. While any
+    branch still calls the routine by its old name, the shared chunk keeps
+    it and this pass reports the pair as held.
+    """
+    canon = {b: (SRC / b / f"{stage}.asm").read_text(errors="replace")
+             for b in stage_branches(stage)}
+    ready, held, refused = [], [], []
+    for old, name in live:
+        if RE_ADDR_LABEL.fullmatch(old):
+            # A bare address label is per-branch BY CONSTRUCTION: amiga's
+            # LABEL_4E09 is the eyelid rung at [0x15] <= 0x12 and dos's
+            # LABEL_4E09 is the pupil rung at [0x16] <= 0x04. One branch's
+            # table cannot say what such a token means to the other readers
+            # of a shared chunk, so this pass never touches one. The
+            # branch-prefixed pass above renames them, where the branch is
+            # known.
+            refused.append(old)
+        elif any(adopted(old, t) for t in canon.values()):
+            held.append(old)
+        elif any(adopted(name, t) for t in canon.values()):
+            ready.append((old, name))
+    d = SRC / "_unified" / stage.lower()
+    total = touched = 0
+    for f in sorted(d.rglob("*.inc")):
+        if "__" in f.name:
+            continue
+        t = f.read_text(errors="replace")
+        new, n = rename_simultaneously(t, ready)
+        if n:
+            total += n
+            touched += 1
+            if apply:
+                f.write_text(new)
+    print(f"  shared chunks: {len(ready)} pair(s) ready, {len(held)} held "
+          f"because a branch still defines the old name")
+    for h in held:
+        print(f"      held: {h}")
+    if refused:
+        print(f"      {len(refused)} address label(s) never eligible here")
+    print(f"  {'rewrote' if apply else 'would rewrite'} {total} token(s) in "
+          f"{touched} shared chunk(s)")
+    return total
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("table", type=Path, nargs="?")
     ap.add_argument("stage", nargs="?")
     ap.add_argument("branch", nargs="?", choices=sorted(PREFIX))
     ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--shared", action="store_true",
+                    help="also rewrite the chunks no branch prefix claims, "
+                         "for the pairs every branch has moved off")
     ap.add_argument("--self-test", action="store_true",
                     help="renumber control: does one table that both frees "
                          "and claims a name land every row on its own name?")
@@ -137,7 +210,11 @@ def main() -> int:
         if not line.startswith("|"):
             continue
         cols = [c.strip() for c in line.split("|")]
-        if len(cols) > 3 and cols[1].startswith("CINEMATIC_"):
+        # Constants AND routine labels: `adopted()` below is the real guard,
+        # and restricting the parse to CINEMATIC_ silently returned "no rows"
+        # for a routine table rather than saying the format was wrong.
+        if len(cols) > 3 and RE_IDENT.fullmatch(cols[1]) \
+                and RE_IDENT.fullmatch(cols[2]):
             pairs.append((cols[1], cols[2]))
     if not pairs:
         print("no rows")
@@ -145,8 +222,7 @@ def main() -> int:
 
     canon = SRC / args.branch / f"{args.stage}.asm"
     text = canon.read_text(errors="replace")
-    live = [(o, n) for o, n in pairs
-            if re.search(rf"^{re.escape(n)}\s+EQU", text, re.M)]
+    live = [(o, n) for o, n in pairs if adopted(n, text)]
     print(f"{len(live)} of {len(pairs)} proposal(s) actually applied in "
           f"{canon.name}")
     if not live:
@@ -168,6 +244,8 @@ def main() -> int:
                 f.write_text(new)
     print(f"{'rewrote' if args.apply else 'would rewrite'} {total} token(s) "
           f"in {touched} {pre}-only chunk(s)")
+    if args.shared:
+        shared_pass(args.stage, live, args.apply)
     if not args.apply:
         print("(dry run)")
     return 0

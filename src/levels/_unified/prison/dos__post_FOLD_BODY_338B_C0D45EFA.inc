@@ -44,9 +44,9 @@ LABEL_4F92:
 	video offset=CINEMATIC_635, x=[0x17], y=100
 	video offset=CINEMATIC_PRISON_CELL_BARS, x=[0x17], y=100
 	setup channel=0x3C, address=BLIT_PAGE_00_TO_FF_AND_BREAK
-	setup channel=0x01, address=DRAW_CIN_683_TO_685_3F_AT_1EB7324B
+	setup channel=0x01, address=PRISON_WAKE_CLOSEUP_PAINT_BACKDROP
 	setup channel=0x02, address=INIT_VARS_16_17
-	setup channel=0x03, address=PRISON_DRAW_CIN_656_AND_682_OR_VARIANT_PER_VAR16
+	setup channel=0x03, address=PRISON_WAKE_CLOSEUP_DRAW_FRAME
 	killChannel
 
 LABEL_4FCC:

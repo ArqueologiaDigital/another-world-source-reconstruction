@@ -262,3 +262,20 @@ That check is what the cartridge names rest on, because the cartridge art
 **cannot be measured** -- archaeology #0106 is open and no `cinematic.rom`
 exists for it. See `proposals_cartridge_1992__PRISON.md`, which says so in its
 first paragraph.
+
+## `routines/` -- the labels, generated rather than written
+
+Twenty of the twenty-four labels in the wake closeup are ladder rungs, and the
+only honest name for a rung is its own guard: the arm handles `[var] <= N`, so
+it is `..._UPTO_<N>`. Twenty of those transcribed by hand is how a threshold
+gets copied wrong.
+
+`routines/generate.py` reads them off the disassembly through
+`ladder_rungs.py` instead, and writes the three proposal tables. The check is
+that `apply_routine_renames.py` re-derives every guard independently, from the
+routine's own first line, and rejects any row where the two disagree. It took
+all 72 rows across three branches with 0 rejected.
+
+Four rows per table are not rungs and carry hand-written evidence: the
+backdrop painter, the frame routine, the join after the pupil ladder, and the
+frame tail.
