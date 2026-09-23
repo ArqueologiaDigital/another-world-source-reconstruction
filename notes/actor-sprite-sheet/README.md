@@ -121,3 +121,52 @@ nine-frame cycle. Neither symmetric nor complete, so nothing is proposed and
 the probe prints why.
 
 Total for the actor sheet: **48 names**. `make test` 29/29 and 29/29.
+
+## A second shared series, above the walk body — `--shared`
+
+`hero_pose_consensus.collect()` credits a picture to a routine only when
+**exactly one** named routine reaches it (rule 7). That is right for a frame
+claim, and it means a picture used by frames 2 and 14 has no unique reacher
+and gets nothing. Measured: **69 of the 100 remaining actor-slot offsets have
+no routine attributed at all.** Being shared is what hides them — and being
+shared is exactly what makes them poseable rather than frame-indexable, so
+the information rule 7 discards is the information this file needs.
+
+It is recoverable without weakening rule 7, because the frame routines name
+themselves on the label they return to:
+
+    LABEL_6D5E:
+        call LABEL_6C74                      <- draws the shared piece
+    CAPSULE_BUDDY_WALK_RIGHT_DRAW_0_RET:     <- says which frame that was
+
+`subpiece_poses.py --shared` follows that and recovers a nine-piece series
+sitting **above** the walk-right body — 2 leaves, 30..33 tall, bottom 20..23
+units above the anchor, where the already-named 57-tall 5-leaf
+`CV_FIGURE_WALK_RIGHT_BODY_F*` is the lower body:
+
+| piece | geom | frames | | piece | geom | frames |
+|---|---|---|---|---|---|---|
+| `CV_1A54` | 17x31/2 | {15} | | `CV_1B44` | 8x33/2 | {5} |
+| `CV_1A84` | 18x30/2 | {0} | | `CV_1B74` | 7x33/2 | **{6, 10}** |
+| `CV_1AB4` | 15x31/2 | **{2, 14}** | | `CV_1BA4` | 7x33/2 | {7} |
+| `CV_1AE4` | 13x32/2 | {13} | | `CV_1BD4` | 9x33/2 | **{8, 9}** |
+| `CV_1B14` | 11x33/2 | **{4, 12}** | | | | |
+
+The same structure as the limbs above: `2+14 = 4+12 = 6+10 = 16`, the moments
+symmetric about mid-stride, and `{8,9}` the mid-stance pair. Width confirms it
+independently, forming an arc that does not depend on any name — 18 at frame
+0, narrowing to 7 at frames 6 and 7, back to 17 at frame 15, with `f2`/`f14`
+both 15 and `f4`/`f12` both 11.
+
+**Not yet named, and the reason is specific.** Coverage is 13 of 16 frames —
+1, 3 and 11 are missing — and five pieces serve a single frame where the
+symmetry predicts a partner. `5 + 11 = 16` but nothing here serves 11, so
+either frame 11's piece is drawn directly rather than through a `call` (and
+so is invisible to `--shared`), or the pair is genuinely two near-identical
+pictures. Until that is settled the phase sets are incomplete, and the
+existing hold criteria — a piece serving other than two phases, phases not
+symmetric about mid-stride — correctly refuse them. The next step is to find
+what draws frames 1, 3 and 11.
+
+`CV_3B44`, `CV_3B96` and `CV_3BE8` also surface, at 6 leaves and serving
+three frames each. They are a different series and are not analysed here.

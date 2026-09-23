@@ -60,6 +60,7 @@ from __future__ import annotations
 
 import argparse
 import collections
+import re
 import sys
 from pathlib import Path
 
@@ -76,10 +77,114 @@ BASE = {"CAPSULE": 0, "PRISON": 0, "CAVES": 1}
 CYCLE = 16
 
 
+RE_LBL = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*):")
+RE_CALL = re.compile(r"^\s*call\s+([A-Za-z_][A-Za-z0-9_]*)")
+RE_T0 = re.compile(r"video type=0, offset=(CV_[0-9A-F]{4})")
+RE_RET = re.compile(r"^[A-Za-z_]*_(WALK|RUN)_(RIGHT|LEFT)_DRAW_(\d+)_RET:")
+
+
+def shared_pieces(stage_text: str, stage: str):
+    """{piece: {(motion, direction, frame)}} for pieces reached by a `call`.
+
+    `hero_pose_consensus.collect()` attributes a picture to a routine only
+    when exactly ONE named routine reaches it (rule 7). That is right for a
+    frame claim and it makes shared sub-pieces invisible: 69 of the 100
+    actor-slot offsets have no routine attributed at all, because a piece
+    used by frames 2 and 14 has no unique reacher.
+
+    Being shared is exactly what makes a piece poseable rather than
+    frame-indexable, so the information rule 7 discards -- the SET of frames
+    a piece serves -- is the information this module needs. It is recoverable
+    without weakening rule 7, because the frame routines name themselves on
+    the label they return to:
+
+        LABEL_6D5E:
+            call LABEL_6C74                      <- draws the shared piece
+        CAPSULE_BUDDY_WALK_RIGHT_DRAW_0_RET:     <- says which frame that was
+
+    So: for each `call` to a routine whose first type=0 draw is a CV_ piece,
+    look ahead a few lines for a `..._DRAW_<n>_RET:` label and credit the
+    piece with that frame. The frame number is the machine's, not the
+    disassembler's, which is the same argument `../gun-arm-dispatch/` makes
+    for reading a switch case.
+    """
+    lines = stage_text.splitlines()
+    first: dict[str, str] = {}
+    cur = None
+    for line in lines:
+        m = RE_LBL.match(line)
+        if m:
+            cur = m.group(1)
+            continue
+        d = RE_T0.search(line)
+        if d and cur and cur not in first:
+            first[cur] = d.group(1)
+
+    out: dict[str, set] = collections.defaultdict(set)
+    for i, line in enumerate(lines):
+        c = RE_CALL.match(line)
+        if not c or c.group(1) not in first:
+            continue
+        for j in range(i + 1, min(i + 8, len(lines))):
+            m = RE_RET.match(lines[j])
+            if m:
+                frame = int(m.group(3)) - BASE.get(stage, 0)
+                out[first[c.group(1)]].add((m.group(1), m.group(2), frame))
+                break
+    return out
+
+
+def report_shared() -> int:
+    PORTS = {"amiga": "chahi_amiga_1991", "msdos": "dos_1992"}
+    SRC = HERE.parents[2] / "src" / "levels"
+    agg: dict[str, set] = collections.defaultdict(set)
+    for port, br in PORTS.items():
+        for stage in BASE:
+            f = SRC / br / f"{stage}.asm"
+            if not f.is_file():
+                continue
+            for cv, fr in shared_pieces(f.read_text(errors="replace"),
+                                        stage).items():
+                agg[cv] |= fr
+    if not agg:
+        print("no call-reached shared pieces found")
+        return 0
+
+    b = H.bank()
+    H.SUBJECT[0] = "actor"
+    offs, _art, _by = H.collect()
+    print(f"{len(agg)} piece(s) reached by a `call` from a named frame, with "
+          f"the frames each serves.\nBase applied per stage "
+          f"({', '.join(f'{k} {v}' for k, v in BASE.items())}).\n")
+    print(f"  {'piece':<9}{'geom':>11}  {'motion dir':<12}{'frames':<26}"
+          f"pairs summing to {CYCLE}")
+    for cv in sorted(agg, key=lambda c: offs.get(c, 0)):
+        rows = sorted(agg[cv])
+        mds = {(m, d) for m, d, _ in rows}
+        frames = sorted({fr for _m, _d, fr in rows})
+        if cv in offs:
+            x0, y0, x1, y1, lv = extent(parse_polygon_tree(b, offs[cv]))
+            geom = f"{x1 - x0:.0f}x{y1 - y0:.0f}/{lv}"
+        else:
+            geom = "?"
+        pairs = sorted({(a, c) for a in frames for c in frames
+                        if a < c and a + c == CYCLE})
+        md = "/".join(f"{m} {d}" for m, d in sorted(mds))
+        print(f"  {cv:<9}{geom:>11}  {md:<12}{str(frames):<26}"
+              f"{pairs if pairs else ''}")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--proposals", action="store_true")
+    ap.add_argument("--shared", action="store_true",
+                    help="report pieces rule 7 hides because several named "
+                         "frames reach them")
     args = ap.parse_args()
+
+    if args.shared:
+        return report_shared()
 
     H.SUBJECT[0] = "actor"
     offs, art, by_stage = H.collect()
