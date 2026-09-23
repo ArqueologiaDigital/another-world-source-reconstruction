@@ -37,9 +37,18 @@ de que esses nomes existem. Quando uma dirige a renomeação, a outra é a
 conferência.
 
 O controle roda sobre as rotinas que já tinham nome antes de tudo isso:
-**84 concordam, 0 discordam.**
+**139 concordam, 0 discordam** — e essa contagem inclui as versões de cartucho
+e de GBA, que não são alvo de batismo aqui (os romsets delas não trazem banco
+de figuras extraído, então nada neste módulo consegue medir a arte delas) mas
+carregam 33 nomes de pintor que a ferramenta de alinhamento empurrou das
+versões prioritárias. Depois do caso 0x4C/0x6C mais abaixo, cada um desses 33
+teve de ser reconferido contra as guardas da própria versão. Os 33 passam.
 
-Resultado: **63 pintores de fundo batizados.**
+Resultado: **85 pintores de fundo batizados**, em três passadas — batizar um
+pintor dá uma tela àquela rotina, o que deixa a passada seguinte casar um par
+entre versões que antes não resolvia, então rodei até parar de render. Eram
+**20 rótulos de pintor no começo do dia, são 106 agora**, em 64 telas
+distintas.
 
 ## O guarda que só apareceu depois de eu errar
 
@@ -160,6 +169,58 @@ A sonda recusa e conta o motivo:
 | 4 | as camadas e o fluxo discordam |
 | 1 | o fluxo não consegue fixar |
 
-Os 23 são o resto aproveitável: rotinas onde o fluxo sabe a tela, as camadas
-ainda são numeradas e a outra versão não confirma. Uma fonte só não basta, e
-não basta mesmo — este texto tem três correções que provam isso.
+Os 6 restantes são o resto aproveitável: rotinas onde o fluxo sabe a tela, as
+camadas ainda são numeradas e a outra versão não confirma. Uma fonte só não
+basta, e não basta mesmo — este texto tem três correções que provam isso.
+
+## Mais dois defeitos meus, achados porque a saída era pequena demais
+
+O nível cruzado entre versões casava **zero** pares, e "0 pares" tinha cara de
+achado sobre o jogo. Era defeito: a impressão digital da arte eram 512 bytes
+crus lidos a partir do offset, mas um polígono é mais curto que isso, então a
+maior parte do hash era a arte que por acaso vinha depois no banco — que
+difere entre versões por construção. Usando o md5 canônico da árvore
+analisada, que é o que o resto do projeto usa exatamente para isso, 0 pares
+viram 6.
+
+E um corpo de rotina passava do próprio `ret`. Eu terminava o corpo no rótulo
+seguinte, e a fase CAPSULE do MS-DOS tem dois desenhos depois de um `ret` sem
+rótulo nenhum na frente:
+
+```
+LABEL_9C52:
+        fill page=0x00, color=0x08
+        video offset=CINEMATIC_522, ...
+        video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F1, ...
+        ...
+        ret
+                                          <- nenhum rótulo aqui
+        video offset=CINEMATIC_CAPSULE_SCREEN_92_BACKDROP_LAYER_5, ...
+        video offset=CINEMATIC_CAPSULE_SCREEN_92_BACKDROP_LAYER_6, ...
+```
+
+Essas duas camadas eram a **única** ligação daquela rotina com uma tela, e ela
+não consegue alcançá-las. O corpo agora termina no primeiro `ret`, `jmp` ou
+`db 0x11` — os três opcodes que o desmontador já lista como terminadores.
+
+## A auditoria dos nomes de camada que já existiam
+
+A mesma evidência, virada para os 312 nomes de camada já na árvore, sob a
+pergunta mais fraca que ainda afirma alguma coisa: **pelo menos uma rotina que
+desenha a figura tem de estar na tela que o nome reivindica**. Uma rotina que
+o fluxo não consegue fixar não conta nem a favor nem contra.
+
+Isso é de propósito mais fraco que a regra dos nomes novos, que também exige
+exclusividade. Uma figura compartilhada por duas telas é defensável nesta
+auditoria e indefensável naquela regra, e a diferença é o ponto: **rebaixar um
+nome precisa de prova de que ele está errado, não de ausência de prova de que
+está certo.**
+
+**2 de 312 falharam**, e falharam de forma categórica:
+`CINEMATIC_CAVES_SCREEN_ED_BACKDROP_LAYER_1` e `_2` são pintadas por cinco
+rotinas nas telas 0xCB, 0xEE, 0xCD, 0xCC e 0xCE, nenhuma delas 0xED — enquanto
+`CAVES_SCREEN_ED_BACKDROP_DRAW`, que existe, não pinta nenhuma das duas.
+Voltaram a ser `CINEMATIC_739` e `CINEMATIC_740`, as posições delas na tabela
+de EQU. Essa convenção foi conferida em vez de suposta: das 908 linhas
+CINEMATIC EQU do CAVES em MS-DOS, **0** das que ainda carregam número
+discordam da própria posição. A auditoria agora fecha em 0 de 312.
