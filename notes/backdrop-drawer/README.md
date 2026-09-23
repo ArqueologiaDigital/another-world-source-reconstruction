@@ -5,6 +5,7 @@
 | `backdrop_drawer.py` | Which screen's backdrop does this routine paint? | `python3 notes/backdrop-drawer/backdrop_drawer.py` |
 | | Do both sources reproduce the screen of every routine already named for one? | `... --control` |
 | | Where the layers are still numbered, do the two ports agree? | `... --pairs` |
+| | Can a named painter's still-numbered layers be named? | `... --layers` |
 | | | `... --proposals` |
 | `proposals_<branch>__<STAGE>.md` | the tables `apply_routine_renames.py` consumes | regenerate with `--proposals \| python3 notes/proposal-tables/split_by_branch_stage.py --out notes/backdrop-drawer --header routine` |
 
@@ -127,3 +128,44 @@ painted by three routines at three different `y` anchors (198, 151, 187),
 compares `[SCREEN_NUM]` to 0xAB at all. Those names are very likely wrong.
 Demoting them is a separate change with its own evidence, not a side effect of
 this one.
+
+## The layers behind the painters: a measured zero
+
+With 84 painters carrying a screen, `--layers` asks the obvious follow-up —
+can their still-numbered layers now be named
+`CINEMATIC_<STAGE>_SCREEN_<NN>_BACKDROP_LAYER_<i>`? The answer today is **no,
+for all 137 of them**, and the reason is worth writing down because it is the
+real shape of what is left.
+
+A layer may take a screen's name only if that painter and nothing else paints
+it, and its index must be its draw position in the stack. Those two together
+mean the whole stack must be owned: a stack with one shared position would be
+named 0, 1, 3, 4, and `docs/NAMING.md` §2 bars a family with a hole.
+
+I first assumed `_BACKDROP_LAYER` was exempt from §2 — a hole there means
+"this position is shared", not "a frame is missing" — and that the tree
+already contained such families. **It does not.** Of 140 `_BACKDROP_LAYER`
+families across all branches, **0** have a gap, against 12 gapped families
+among the other 610. There was no exception to discover, so the rule applies
+as written.
+
+Two things the applier refused confirm the diagnosis rather than contradict
+it:
+
+- msdos CAVES already defines `CINEMATIC_CAVES_SCREEN_ED_BACKDROP_LAYER_{0,1,2}`
+  for polygons that `CAVES_SCREEN_ED_BACKDROP_DRAW` does not paint at all —
+  they are drawn from eleven sites at five different anchors. Those names
+  already claim an exclusivity they do not have.
+- amiga CAPSULE screen 0x4C owns positions 0, 1, 3 and 4 and shares position 2
+  (`CINEMATIC_123`) with two other painters.
+
+So the layer backlog is blocked on **shared art**, not on missing evidence.
+Either those layers get a name that does not claim one screen — which needs a
+scheme this project does not yet have — or they stay numbered.
+
+### A guess that failed, recorded as such
+
+If a shared layer were a tall scroll strip, the screens sharing it would be a
+column: numbers differing by 0x20, one row in the 32-column grid. They are
+not. The two-screen cases differ by 0x01, 0x1E and 0x42, and most shared
+layers are also painted by routines with no screen at all. There is no strip.

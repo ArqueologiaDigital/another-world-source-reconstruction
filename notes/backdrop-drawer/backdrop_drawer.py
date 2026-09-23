@@ -219,6 +219,85 @@ def art_key(port, stage, sid, pics):
     return "|".join(sorted(parts))
 
 
+def layers(data, as_proposals: bool) -> int:
+    """Name a painter's still-numbered layers, once the painter has a screen.
+
+    63 routines gained a screen in this module's first pass, and a layer one of
+    them paints is that screen's backdrop layer at the position the machine
+    draws it. Two restrictions do all the work:
+
+    * the layer must be painted by **that routine and nothing else** in the
+      stage. `../remaining-art/` states the rule from the case that forced it:
+      CAVES screens 0x92 and 0x93 share their base and their top layer and
+      differ in one, so the two shared ones belong to neither screen. 104
+      layers are shared that way.
+    * the index is the **draw position** in the painter's body, so the name
+      says where in the stack the layer goes.
+
+    Those two together mean the whole stack must be exclusive or none of it
+    can be named. A stack with a shared position would be named 0, 1, 3, 4 and
+    `docs/NAMING.md` §2 bars a family with a hole in its index run.
+
+    I first assumed `_BACKDROP_LAYER` was exempt from §2, on the grounds that
+    a hole there means "shared position" rather than "missing frame", and that
+    the tree already contained such families. It does not: of **140**
+    `_BACKDROP_LAYER` families across all branches, **0** have a gap, against
+    12 gapped families among the other 610. The exception was not there to
+    discover, so the rule is applied as written and a stack with any shared
+    position is left alone entirely.
+
+    A tested guess that failed
+    --------------------------
+    If a shared layer were a tall scroll strip, the screens sharing it would
+    be a column -- numbers differing by 0x20, one row in the 32-column grid
+    `docs/` measures. They are not. The two-screen cases differ by 0x01, 0x1E
+    and 0x42, and most shared layers are also painted by routines with no
+    screen at all. There is no strip; they are just shared art.
+    """
+    out: dict[tuple, list] = collections.defaultdict(list)
+    held = collections.Counter()
+    for (port, stage), (rows, drawn_by) in sorted(data.items()):
+        for r in rows:
+            m = RE_DRAWER.match(r["label"])
+            if not m or m.group(1) != stage or not r["backdroplike"]:
+                continue
+            screen = m.group(2)
+            bad = [p for p in r["pics"]
+                   if drawn_by[p] != {r["label"]} or r["pics"].count(p) != 1]
+            if bad:
+                held["the stack has a position it does not own, so naming the "
+                     "rest would leave a hole (NAMING.md §2)"] += len(
+                         [p for p in r["pics"]
+                          if re.match(r"^CINEMATIC_\d+$", p)])
+                continue
+            for i, pic in enumerate(r["pics"]):
+                if not re.match(r"^CINEMATIC_\d+$", pic):
+                    continue
+                new = (f"CINEMATIC_{stage}_SCREEN_{screen}_BACKDROP"
+                       f"_LAYER_{i}")
+                out[(PORTS[port], stage)].append(
+                    (pic, new, r["label"], i, len(r["pics"])))
+    if not as_proposals:
+        n = sum(len(v) for v in out.values())
+        print(f"{n} still-numbered layer(s) nameable\n")
+        for k, v in sorted(out.items()):
+            print(f"  {k[0]:<20}{k[1]:<9}{len(v):>4}")
+        print()
+        for why, c in held.most_common():
+            print(f"  held: {c:>4}  {why}")
+        return 0
+    for (branch, stage), rows in sorted(out.items()):
+        print(f"\n----- {branch} / {stage} -----")
+        print("| constant | proposed name | confidence | evidence |")
+        print("| --- | --- | --- | --- |")
+        for pic, new, lab, i, n in sorted(rows, key=lambda t: t[1]):
+            print(f"| {pic} | {new} | high | `{lab}` paints this screen's "
+                  f"backdrop and draws this picture at position {i} of {n}; "
+                  f"no other routine in the stage draws it, so it belongs to "
+                  f"that backdrop and to no other |")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--control", action="store_true",
@@ -227,6 +306,9 @@ def main() -> int:
     ap.add_argument("--pairs", action="store_true",
                     help="show the cross-port matching used where a routine's "
                          "layers are all still numbered")
+    ap.add_argument("--layers", action="store_true",
+                    help="name the still-numbered layers of the routines that "
+                         "now carry a screen")
     ap.add_argument("--proposals", action="store_true")
     args = ap.parse_args()
 
@@ -319,6 +401,9 @@ def main() -> int:
         agree = sum(1 for _s, _m, f in pair_rows if len(f) == 1)
         print(f"\n  {len(pair_rows)} pair(s), {agree} agree")
         return 0 if agree == len(pair_rows) else 1
+
+    if args.layers:
+        return layers(data, args.proposals)
 
     props: dict[tuple, list] = collections.defaultdict(list)
     held = collections.Counter()
