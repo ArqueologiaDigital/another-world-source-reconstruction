@@ -304,3 +304,33 @@ all 72 rows across three branches with 0 rejected.
 Four rows per table are not rungs and carry hand-written evidence: the
 backdrop painter, the frame routine, the join after the pupil ladder, and the
 frame tail.
+
+## `frame_runs.py` -- the work queue, and how far to trust it
+
+`sheet.py` lists what is left biggest first, and that is the wrong order to
+work in. A 438x248 screen backdrop drawn six times across two screens is one
+of the hardest things in a stage to name honestly; a run of eight pictures
+drawn one per `break` at one anchor is one of the easiest, because the routine
+states the frame order itself and the extents then have a motion to agree or
+disagree with.
+
+`frame_runs.py` finds the second kind: consecutive `video` lines sharing an
+anchor, separated by nothing that can bring control in from elsewhere. Every
+PRISON batch here that earned `high` came from such a run -- the cage landing
+(5), the falling debris (8), the blast (9), the cloaked figure (19) -- and
+they were found by reading the file by hand.
+
+    python3 notes/render-and-name/frame_runs.py --stage CAVES --min 4
+    python3 notes/render-and-name/frame_runs.py --stage PRISON --control --min 4
+
+**The control says 11 of 19.** Of the PRISON runs whose members are now all
+named, eleven carry one family prefix and eight do not -- and the eight are
+right to. `FILL_AND_DRAW_CIN_24_28` is a run of five that is a screen
+*composition*: a pillar, a grating, a highlight pass, a shadow pass, a corner.
+`GUN_PICKUP_SCENE` is a backdrop, a gun and an indicator.
+`DRAW_CIN_137_138_BLOCK` is a debris animation and the deposits it leaves.
+
+The anchor does not separate the two cases: 8 of 13 actor-slot runs are one
+family against 3 of 6 literal ones, and the body-and-limb splits are at actor
+slots. So a run is a **candidate to look at**, not a family, and the render
+still decides.
