@@ -105,6 +105,10 @@ def main() -> int:
     ap.add_argument("--port", default="amiga", choices=["amiga", "msdos"])
     ap.add_argument("--list", action="store_true",
                     help="screens with still-numbered layers, most first")
+    ap.add_argument("--composite", action="store_true",
+                    help="also draw the layers at their real anchors, as a "
+                         "panel above the grid -- the arrangement is most of "
+                         "what identifies a shape")
     ap.add_argument("--out", type=Path)
     args = ap.parse_args()
 
@@ -138,11 +142,49 @@ def main() -> int:
     lab, seq = hit[0]
     layers = list(dict.fromkeys(seq))
 
+    # (constant, x, y) for the literal-anchored draws this entry reaches,
+    # so the composite puts each shape where the screen puts it.
+    anchors: list[tuple[str, int, int]] = []
+    if args.composite:
+        body = B.bodies(lines)
+        rv = re.compile(r"^\s*video\s+offset=([A-Za-z_][A-Za-z0-9_]*),"
+                        r"\s*x=(-?\d+),\s*y=(-?\d+)")
+        rc = re.compile(r"^\s*call\s+([A-Za-z_][A-Za-z0-9_]*)")
+        rs = re.compile(r"^\s*setup\s")
+        rcond = re.compile(r"^\s*(je|jne|jl|jle|jg|jge)\s")
+
+        def walk(name, depth=0, seen=None):
+            seen = seen or set()
+            if name in seen or depth > 3:
+                return []
+            seen = seen | {name}
+            out = []
+            for line in body.get(name, []):
+                if m := rv.match(line):
+                    out.append((m.group(1), int(m.group(2)),
+                                int(m.group(3))))
+                elif c := rc.match(line):
+                    out += walk(c.group(1), depth + 1, seen)
+            return out
+
+        for line in body.get(lab, []):
+            if rs.match(line) or rcond.match(line):
+                break
+            if m := rv.match(line):
+                anchors.append((m.group(1), int(m.group(2)), int(m.group(3))))
+            elif c := rc.match(line):
+                anchors += walk(c.group(1), 1)
+
     bank = slab("cinematic", args.port, STAGE_ID[args.stage])
     cols = min(5, max(1, math.ceil(math.sqrt(len(layers)))))
     rows_n = math.ceil(len(layers) / cols)
     W = cols * (TILE_W + PAD) + PAD
-    H = rows_n * (TILE_H + CAPTION + PAD) + PAD + 24
+    COMP_H = 0
+    comp_scale = 1.0
+    if args.composite and anchors:
+        comp_scale = min(2.0, (W - 2 * PAD) / 320)
+        COMP_H = int(200 * comp_scale) + PAD + 14
+    H = rows_n * (TILE_H + CAPTION + PAD) + PAD + 24 + COMP_H
     surf = cairo.ImageSurface(cairo.FORMAT_ARGB32, W, H)
     ctx = cairo.Context(surf)
     ctx.set_source_rgb(0.09, 0.09, 0.10)
@@ -154,9 +196,43 @@ def main() -> int:
     ctx.show_text(f"{args.port}/{args.stage} screen 0x{want} -- {lab} -- "
                   f"{len(layers)} layer(s), in paint order")
 
+    if COMP_H:
+        ctx.set_source_rgb(0.0, 0.0, 0.0)
+        ctx.rectangle(PAD, 24, int(320 * comp_scale), int(200 * comp_scale))
+        ctx.fill()
+        ctx.save()
+        ctx.translate(PAD, 24)
+        ctx.scale(comp_scale, comp_scale)
+        ctx.rectangle(0, 0, 320, 200)
+        ctx.clip()
+        for const, ax, ay in anchors:
+            if const not in equ:
+                continue
+            r = polygon_render.Renderer(bank,
+                                        polygon_render.synthetic_palette())
+            r.render(equ[const], color=0xFF,
+                     zoom=polygon_render.DEFAULT_ZOOM,
+                     x=float(ax), y=float(ay))
+            for path in r.paths:
+                if not path.points:
+                    continue
+                cr, cg, cb = path.color
+                ctx.set_source_rgb(cr / 255, cg / 255, cb / 255)
+                ctx.move_to(*path.points[0])
+                for x, y in path.points[1:]:
+                    ctx.line_to(x, y)
+                ctx.close_path()
+                ctx.fill()
+        ctx.restore()
+        ctx.set_source_rgb(0.55, 0.55, 0.6)
+        ctx.set_font_size(11)
+        ctx.move_to(PAD, 24 + int(200 * comp_scale) + 11)
+        ctx.show_text(f"composite of {len(anchors)} draw(s) at their own "
+                      f"anchors")
+
     for i, const in enumerate(layers):
         cx = PAD + (i % cols) * (TILE_W + PAD)
-        cy = 24 + PAD + (i // cols) * (TILE_H + CAPTION + PAD)
+        cy = 24 + COMP_H + PAD + (i // cols) * (TILE_H + CAPTION + PAD)
         ctx.set_source_rgb(0.16, 0.16, 0.18)
         ctx.rectangle(cx, cy, TILE_W, TILE_H)
         ctx.fill()

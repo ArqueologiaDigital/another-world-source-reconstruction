@@ -4,6 +4,7 @@
 | --- | --- | --- |
 | `contact_sheet.py` | What does every layer of a screen look like, in one image? | `python3 notes/scene-reading/contact_sheet.py --stage PRISON --screen 65` |
 | | Which screens still have unnamed layers, worst first? | `... --stage PRISON --list` |
+| | …with the layers also drawn at their real anchors | `... --screen 4D --composite` |
 
 ## Why
 
@@ -67,3 +68,48 @@ It is a small class. The finding that matters is the shape of the blind spot:
 **a backdrop can be built by page operations that no polygon-level probe will
 ever attribute**, and any future count of "pictures that make up a screen"
 has to reckon with `copyVideoPage` and `SCROLL_Y`.
+
+## `--composite`, and what it settled and did not
+
+The grid shows each shape; `--composite` draws them at their real anchors into
+a 320x200 panel above it. The arrangement is most of what identifies a shape,
+and having both in one image means one look does the work of the composite and
+the six single renders that naming PRISON screen 0x04 took.
+
+It is self-contained, which the archaeology repo's `render_scene_composite.py`
+is not: that one reads pre-rendered SVGs from a directory you have to build
+first, and it wants the **painter** routine rather than the entry.
+
+### Worked example: CAPSULE screen 0x4D
+
+```
+python3 notes/scene-reading/contact_sheet.py --stage CAPSULE --screen 4D --composite
+```
+
+Five layers, all at `x=160, y=100` — stacked depth, not tiled:
+
+| | constant | extent | paths | |
+| --- | --- | --- | --- | --- |
+| 0 | `CINEMATIC_422` | 299x234 | 17 | arched wall, the back pass |
+| 1 | `CINEMATIC_423` | 323x234 | 22 | arched wall, the front pass |
+| 2 | `CINEMATIC_123` | 292x5 | 64 | a thin horizontal strip across the middle |
+| 3 | `CINEMATIC_424` | 242x207 | 19 | sparse thin spikes and dots |
+| 4 | `CINEMATIC_425` | 240x88 | 14 | the same, lower |
+
+**No names were applied from this.** What the sheet settles is the *structure*
+— two architectural passes at different depths, a strip between them, two
+sparse detail layers in front — and that is worth recording. What it does not
+settle is what the arches depict, and between a colonnade, a cavern mouth and
+a row of cell arches the render is genuinely ambiguous. Naming them would be
+guessing at the fiction, which is the failure this project has recorded twice
+over LAKE.
+
+The positional scheme already describes these correctly and is blocked only by
+`CINEMATIC_123`: it is painted in three screens' phases (0x4B, 0x4C, 0x4D), so
+it belongs to none of them, and the hole it leaves at index 2 makes the whole
+screen's family non-contiguous. That is the same shape as the footstep holes
+in `../draw-label-follows-constant/` — the gap is the information, and the
+applier is right to refuse.
+
+So the honest reading of this screen is: **structure recorded, names withheld,
+and the reason is in the art rather than in the tooling.**
