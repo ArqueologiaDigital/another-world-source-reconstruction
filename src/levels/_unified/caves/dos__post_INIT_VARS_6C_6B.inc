@@ -71,11 +71,11 @@ LABEL_3A8B:
 
 HERO_DIRECTION_DOWN_TO_LEFT_TURN:
 	mov [0x63], 0x0064
-	video offset=CINEMATIC_492, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_HEAD_UP_LEFT_1, x=[HERO_X], y=[HERO_Y]
 	mov [0x19], 0x0000
 	mov [0x2A], 0x000A
 	break
-	video offset=CINEMATIC_491, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_HEAD_UP_LEFT_0, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x000F
 	break
 	video offset=CINEMATIC_HERO_SWIM_PITCH_LEFT_0, x=[HERO_X], y=[HERO_Y]
@@ -161,11 +161,11 @@ HERO_DIRECTION_LEFT_TO_DOWN_TURN:
 	mov [0x2A], 0x0014
 	mov [0x19], 0x000F
 	break
-	video offset=CINEMATIC_491, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_HEAD_UP_LEFT_0, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x000A
 	mov [0x19], 0x0019
 	break
-	video offset=CINEMATIC_492, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_HEAD_UP_LEFT_1, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0005
 	mov [0x19], 0x001E
 	mov [0x63], 0x0004
@@ -175,7 +175,7 @@ HERO_DIRECTION_LEFT_TO_DOWN_TURN:
 
 HERO_DIRECTION_UP_TO_LEFT_TURN:
 	mov [0x63], 0x0064
-	video offset=CINEMATIC_514, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_HEAD_DOWN_LEFT_2, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x000A
 	mov [0x19], 0x0000
 	break
@@ -199,7 +199,7 @@ HERO_DIRECTION_LEFT_TO_UP_TURN:
 	mov [0x2A], 0x000A
 	mov [0x19], 0x000F
 	break
-	video offset=CINEMATIC_514, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_HEAD_DOWN_LEFT_2, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0005
 	mov [0x19], 0x0014
 	mov [0x63], 0x0003
@@ -211,11 +211,11 @@ LABEL_3BE2:
 
 HERO_DIRECTION_DOWN_TO_RIGHT_TURN:
 	mov [0x63], 0x0064
-	video offset=CINEMATIC_474, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_HEAD_UP_RIGHT_1, x=[HERO_X], y=[HERO_Y]
 	mov [0x19], 0x0000
 	mov [0x2A], 0x000A
 	break
-	video offset=CINEMATIC_473, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_HEAD_UP_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x000F
 	break
 	video offset=CINEMATIC_HERO_SWIM_PITCH_RIGHT_0, x=[HERO_X], y=[HERO_Y]
@@ -265,11 +265,11 @@ HERO_DIRECTION_RIGHT_TO_DOWN_TURN:
 	mov [0x2A], 0x0019
 	mov [0x19], 0x000F
 	break
-	video offset=CINEMATIC_473, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_HEAD_UP_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x000A
 	mov [0x19], 0x0019
 	break
-	video offset=CINEMATIC_474, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_HEAD_UP_RIGHT_1, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0005
 	mov [0x19], 0x001E
 	mov [0x63], 0x0004
@@ -313,14 +313,14 @@ HERO_DIRECTION_RIGHT_TO_LEFT_TURN:
 
 HERO_DIRECTION_UP_TO_RIGHT_TURN:
 	mov [0x63], 0x0064
-	video offset=CINEMATIC_495, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_HEAD_DOWN_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x000A
 	mov [0x19], 0x0000
 	break
-	video offset=CINEMATIC_494, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_HEAD_DOWN_RIGHT_1, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0014
 	break
-	video offset=CINEMATIC_493, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_HEAD_DOWN_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0019
 	mov [0x63], 0x0002
 	setup channel=0x16, address=LABEL_3F02
@@ -329,15 +329,15 @@ HERO_DIRECTION_UP_TO_RIGHT_TURN:
 
 HERO_DIRECTION_RIGHT_TO_UP_TURN:
 	mov [0x63], 0x0067
-	video offset=CINEMATIC_493, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_HEAD_DOWN_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0014
 	mov [0x19], 0x000A
 	break
-	video offset=CINEMATIC_494, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_HEAD_DOWN_RIGHT_1, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x000A
 	mov [0x19], 0x000F
 	break
-	video offset=CINEMATIC_495, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_SWIM_HEAD_DOWN_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0005
 	mov [0x19], 0x0014
 	mov [0x63], 0x0003

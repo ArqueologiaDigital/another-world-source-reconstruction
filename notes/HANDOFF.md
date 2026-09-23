@@ -25,7 +25,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 72.3% (7,332/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 72.5% (7,352/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 73 amiga / 76 msdos of 2,530 / 2,552 named | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 48, blocking 250 drawing labels | `shared-bank-geometry/blocked_by_bank.py` |
@@ -279,13 +279,17 @@ without any judgement at all.
   foot level that shorten, extend and then fold into a shallow V. Rendered at
   palette 0 they are unreadable; the palette its `setup` site runs under has
   not been traced. **Trace it and re-render** before naming.
-* The ten `HERO_DIRECTION_*_TURN` frames in CAVES -- 452, 453, 470, 471,
-  472, 473, 474, 491, 492, 493. The poses are legible and the mirror pairs
-  exact, but `HERO_DIRECTION_UP_TO_RIGHT_TURN` draws `474` first and `474` is
-  the frame with the head at the **bottom**. Either those earned routine names
-  are inverted or the reading is, and choosing is #0120. **What would settle
-  it:** whether `[0x19]` and `[0x2A]`, which all eight routines write, are the
-  vertical and horizontal speed components, and their sign.
+* **Which way is the swimmer's "up"?** The ten frames are now named by the
+  measured hair height (`CINEMATIC_CAVES_HERO_SWIM_HEAD_{UP,DOWN}_*`), which
+  needed no answer. The question itself is still open: the eight
+  `HERO_DIRECTION_*_TURN` routines name it the other way round --
+  `HERO_DIRECTION_UP_TO_RIGHT_TURN` draws `474`, the hair-lowest frame, first.
+  `[0x19]` and `[0x2A]` were checked and do **not** settle it: `[0x19]`
+  offsets a copy of `[HERO_Y]` and `[0x2A]` offsets `[HERO_X]`, so they are
+  the vertical and horizontal extents, but both vertical poses are reached
+  with `[0x2A] = 0x05` and left with `[0x19] = 0x00`, symmetrically.
+  **What would settle it:** what the game does to `[HERO_Y]` while the hero
+  holds each of the two vertical poses.
 * `CINEMATIC_458`..`464` in CAVES, from `LABEL_3C0E`: two thin curved strokes
   that spread apart, flatten and close again while the pair moves from above
   the anchor to below it. Two paths is not enough to say what a pair of curves
