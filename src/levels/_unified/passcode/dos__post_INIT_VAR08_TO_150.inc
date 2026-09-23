@@ -305,97 +305,97 @@ BLINK_LETTER_DISPATCHER:
 	je [0x06], 0x63, PASSCODE_GLYPH_DIGIT_2
 	jne [0xDB], 0x00, DRAW_LETTER_2_DISPATCH_BY_X
 	jne [0x06], 0x01, PASSCODE_GLYPH_DIGIT_2
-	video offset=CINEMATIC_054, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_DIGIT_1, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_GLYPH_DIGIT_2:
 	jne [0x06], 0x02, PASSCODE_GLYPH_DIGIT_3
-	video offset=CINEMATIC_053, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_DIGIT_2, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_GLYPH_DIGIT_3:
 	jne [0x06], 0x03, PASSCODE_GLYPH_DIGIT_4
-	video offset=CINEMATIC_052, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_DIGIT_3, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_GLYPH_DIGIT_4:
 	jne [0x06], 0x04, PASSCODE_GLYPH_DIGIT_5
-	video offset=CINEMATIC_051, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_DIGIT_4, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_GLYPH_DIGIT_5:
 	jne [0x06], 0x05, PASSCODE_GLYPH_DIGIT_6
-	video offset=CINEMATIC_050, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_DIGIT_5, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_GLYPH_DIGIT_6:
 	jne [0x06], 0x06, PASSCODE_GLYPH_DIGIT_7
-	video offset=CINEMATIC_049, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_DIGIT_6, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_GLYPH_DIGIT_7:
 	jne [0x06], 0x07, PASSCODE_GLYPH_DIGIT_8
-	video offset=CINEMATIC_048, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_DIGIT_7, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_GLYPH_DIGIT_8:
 	jne [0x06], 0x08, PASSCODE_GLYPH_DIGIT_9
-	video offset=CINEMATIC_047, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_DIGIT_8, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_GLYPH_DIGIT_9:
 	jne [0x06], 0x09, PASSCODE_GLYPH_LETTER_A
-	video offset=CINEMATIC_046, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_DIGIT_9, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_GLYPH_LETTER_A:
 	jne [0x06], 0x0A, PASSCODE_LETTER_B_CASE_0B
-	video offset=CINEMATIC_045, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_A, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_B_CASE_0B:
 	jne [0x06], 0x0B, PASSCODE_LETTER_C_CASE_0C
-	video offset=CINEMATIC_044, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_B, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_C_CASE_0C:
 	jne [0x06], 0x0C, PASSCODE_LETTER_D_CASE_0D
-	video offset=CINEMATIC_043, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_C, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_D_CASE_0D:
 	jne [0x06], 0x0D, PASSCODE_LETTER_E_CASE_0E
-	video offset=CINEMATIC_042, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_D, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_E_CASE_0E:
 	jne [0x06], 0x0E, DRAW_LETTER_F_AT_X23
-	video offset=CINEMATIC_041, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_E, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 DRAW_LETTER_F_AT_X23:
 	jne [0x06], 0x0F, DRAW_LETTER_G_AT_X23
-	video offset=CINEMATIC_040, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_F, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 DRAW_LETTER_G_AT_X23:
 	jne [0x06], 0x10, DRAW_LETTER_VIA_CIN_DISPATCH
-	video offset=CINEMATIC_039, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_G, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
@@ -419,73 +419,73 @@ PASSCODE_GLYPH_CASE_00:
 
 PASSCODE_LETTER_H_CASE_11:
 	jne [0x06], 0x11, PASSCODE_LETTER_I_CASE_12
-	video offset=CINEMATIC_035, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_H, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_I_CASE_12:
 	jne [0x06], 0x12, PASSCODE_LETTER_J_CASE_13
-	video offset=CINEMATIC_034, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_I, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_J_CASE_13:
 	jne [0x06], 0x13, PASSCODE_LETTER_K_CASE_14
-	video offset=CINEMATIC_033, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_J, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_K_CASE_14:
 	jne [0x06], 0x14, PASSCODE_LETTER_L_CASE_15
-	video offset=CINEMATIC_032, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_K, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_L_CASE_15:
 	jne [0x06], 0x15, PASSCODE_LETTER_M_CASE_16
-	video offset=CINEMATIC_031, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_L, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_M_CASE_16:
 	jne [0x06], 0x16, PASSCODE_LETTER_N_CASE_17
-	video offset=CINEMATIC_030, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_M, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_N_CASE_17:
 	jne [0x06], 0x17, PASSCODE_LETTER_O_CASE_18
-	video offset=CINEMATIC_029, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_N, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_O_CASE_18:
 	jne [0x06], 0x18, PASSCODE_LETTER_P_CASE_19
-	video offset=CINEMATIC_028, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_O, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_P_CASE_19:
 	jne [0x06], 0x19, PASSCODE_LETTER_Q_CASE_1A
-	video offset=CINEMATIC_027, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_P, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_Q_CASE_1A:
 	jne [0x06], 0x1A, PASSCODE_LETTER_R_CASE_1B
-	video offset=CINEMATIC_026, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_Q, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_R_CASE_1B:
 	jne [0x06], 0x1B, PASSCODE_LETTER_S_CASE_1C
-	video offset=CINEMATIC_025, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_R, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_S_CASE_1C:
 	jne [0x06], 0x1C, PASSCODE_LETTER_T_CASE_1D
-	video offset=CINEMATIC_024, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_S, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
@@ -497,43 +497,43 @@ PASSCODE_LETTER_T_CASE_1D:
 
 PASSCODE_LETTER_U_CASE_1E:
 	jne [0x06], 0x1E, PASSCODE_LETTER_V_CASE_1F
-	video offset=CINEMATIC_022, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_U, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_V_CASE_1F:
 	jne [0x06], 0x1F, PASSCODE_LETTER_W_CASE_20
-	video offset=CINEMATIC_021, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_V, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_W_CASE_20:
 	jne [0x06], 0x20, PASSCODE_LETTER_X_CASE_21
-	video offset=CINEMATIC_020, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_W, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_X_CASE_21:
 	jne [0x06], 0x21, PASSCODE_LETTER_Y_CASE_22
-	video offset=CINEMATIC_019, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_X, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_Y_CASE_22:
 	jne [0x06], 0x22, PASSCODE_LETTER_Z_CASE_23
-	video offset=CINEMATIC_018, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_Y, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_LETTER_Z_CASE_23:
 	jne [0x06], 0x23, PASSCODE_GLYPH_PAST_Z_CASE_24
-	video offset=CINEMATIC_017, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_Z, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
 PASSCODE_GLYPH_PAST_Z_CASE_24:
 	jne [0x06], 0x24, SHARED_RET
-	video offset=CINEMATIC_017, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_LETTER_Z, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 

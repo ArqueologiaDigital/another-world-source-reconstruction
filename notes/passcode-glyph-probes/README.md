@@ -174,3 +174,58 @@ Stage 8 is PASSCODE; CODE_WHEEL is stage 0, for the comparison against
 `CINEMATIC_ALIEN_GLYPH_*` (offsets 0x0188, 0x01CA, 0x0200, 0x0246, 0x0288,
 0x02C2, 0x031E, 0x0364, 0x03C4, 0x0414, 0x0462, 0x04BA, 0x0516, 0x055A, 0x05A6,
 0x0604, 0x067C).
+
+## 2026-09-23: the FONT is named — 34 glyphs — and the amiga ladder is off by one
+
+This file spent two passes on the seventeen `[0x05]` constants and said the
+missing piece was "which characters each string spells". The answer came from
+the *other* ladder, the one this file had already identified and set aside:
+
+> `[0x06]` … drives `PASSCODE_GLYPH_DIGIT_2`..`_9`, `PASSCODE_GLYPH_LETTER_A`
+> and the rest (PASSCODE.asm:823+). **That** is the character→glyph map.
+
+It is, and it is machine-readable. Each arm guards `jne [0x06], 0x<v>` and
+draws one constant, so value → constant is read off the switch, and the
+encoding is fixed by the arms' own guards: digits at values 1..9, letters at
+`0x0A`..`0x23`, hence *letter index = value − 9*.
+
+**Rendered at 1:1, all 35 glyphs read as exactly the character that mapping
+predicts** — digits 1–9, letters A–Z, a chunky 5×7 pixel font. That is the
+render-before-naming rule satisfied against a prediction rather than a guess,
+which is what this stage's earlier passes lacked.
+
+Named `CINEMATIC_PASSCODE_FONT_DIGIT_1..9` and
+`CINEMATIC_PASSCODE_FONT_LETTER_A..Z`, 34 of 35. PASSCODE's asset share goes
+**23.7% → 81.4%** (amiga) and 63.9% → 78.7% (msdos).
+
+### The amiga ladder is shifted by one from N to Z
+
+Comparing the two ports' ladders value by value, they agree on `0`..`M` and
+diverge from `N`:
+
+    value  char   amiga           msdos
+     0x16   M     CINEMATIC_030   CINEMATIC_030
+     0x17   N     CINEMATIC_030   CINEMATIC_029     <- amiga repeats M
+     0x18   O     CINEMATIC_029   CINEMATIC_028
+     …
+     0x23   Z     CINEMATIC_018   CINEMATIC_017
+
+Amiga draws the **M** picture for N and then lags one glyph behind for every
+letter through Z. Checked by `canonical_md5`, not by eye: 24 of 37 values draw
+the same picture in both ports and the 13 from N to Z do not.
+
+The art itself is not divergent — 35 of the 36 font constants hold the same
+picture in both ports — so naming the constants by the letter they DEPICT is
+correct for both, and that is what was done. The shift is a property of the
+amiga *ladder*, not of its font.
+
+**`CINEMATIC_023` is held.** It is the one font constant whose picture really
+does differ between ports: msdos's is the `T` glyph, amiga's is the `U`. One
+shared name cannot describe both, and #0120 bars picking. It needs a
+branch-scoped name.
+
+Whether the amiga shift is a bug in the original release or a mis-derived
+`_CASE_<n>` tail in the routine names is **not settled here**. The routine
+names are identical in both ports, so one set of them is wrong about its own
+port; which set needs evidence this pass did not gather.
+
