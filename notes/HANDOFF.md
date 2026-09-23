@@ -571,26 +571,35 @@ without any judgement at all.
    `SHOW_TEXT_*_AT_x_y` where the coordinate *is* the argument. Different
    question from the one just closed; decide whether the rule applies.
 
-## Held this session, with what would settle each
+## Checked this session, and what is still held
 
-**`CINEMATIC_ACCELERATOR_TUNNEL_RECEDE_F0..F6` may not recede.** Drawn by the
-routine right after the pulse run, at palette **0x15**, and rendered there they
-are black shards around **cyan and white** cores that open outward into a white
-ring -- F0 is a crescent on black, F6 an open ring. That is a different set of
-pictures from the salmon-cored pulse and it does not obviously shrink. What
-would settle it is the same measurement that settled the pulse:
-`compose_run.py --renders <pal 0x15 dir> --frames 8E48 8EB0 9084 91F8 9328 944C 9550
---track '#00ffff'` over whatever the routine has on page 0 at that moment, and
-whether the boxes converge or grow. The name is earned from elsewhere, so it
-was left alone rather than guessed at.
+**`CINEMATIC_ACCELERATOR_TUNNEL_RECEDE_F0..F6` does recede -- checked, name
+stands.** Drawn by the routine right after the pulse run, at palette **0x15**,
+where they are black shards around cyan and white cores. Measured rather than
+eyeballed:
+
+    python3 notes/render-and-name/compose_run.py --renders <pal 0x15 dir> \
+        --out <dir> --frames 8E48 8EB0 9084 91F8 9328 944C 9550
+
+    F0 386.0x242.0 (4 paths)   F1 218.0x142.0 (15)  F2 232.0x123.5 (15)
+    F3 140.5x129.5 (14)        F4 136.0x103.5 (13)  F5 111.0x102.5 (12)
+    F6 108.0x104.0 (6)
+
+386x242 down to 108x104, monotone but for F1->F2 (wider, shorter) and a flat
+F5->F6. Unlike the pulse it does **not** close to a point: it stops at
+108x104 centred near 170,74, and the routine then redraws F6 at `zoom=0x50`
+and jumps away. So this is a separate seven-frame recede that halts, not the
+same collapse, and `RECEDE` describes it.
 
 **`CINEMATIC_LESTER_SEATED_AT_HOLO_CONSOLE_F0_AMIGA_EXTRA` is not a seated
-figure.** amiga 0xF2B6 / dos 0xF228, `e843eb2c0435`. At palette 0x16 it renders
-as a **two-path magenta ⊥ about 3x4**, drawn three times at 137,64 / 143,73 /
-149,83 -- a marker stepping down and to the right, not a person. Its verdict is
-`KEPT`, so the displacement was right and the base word is simply wrong for it;
-it needs a name from its own draw site, which is `DRAW_INTRO_DECOR_*` territory
-and was not opened this session.
+figure.** amiga 0xF2B6 / dos 0xF228, `e843eb2c0435`. **22.5x15.5, 3 paths, all
+`#970030` dark red**: a 2x15 vertical bar, a 14x1 horizontal bar running left
+from its foot, and a 9x4 diagonal rising right from the same foot -- an axis
+corner with a stroke through it. Drawn three times, at 137,64 then 143,73 then
+149,83, stepping down and to the right. Its verdict is `KEPT`, so the
+displacement was right and only the base word is wrong; it needs a name from
+its own draw site, which is `DRAW_INTRO_DECOR_*` territory and was not opened
+this session.
 
 ## Things that are wrong or fragile, so you do not rediscover them
 
