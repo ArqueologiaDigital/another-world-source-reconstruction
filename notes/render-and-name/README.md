@@ -178,6 +178,7 @@ checked against the receiving port's own guards.
 | (msdos only) CAPSULE 708..713 | -- | `CINEMATIC_CAPSULE_CREATURE_WALK_RIGHT_F0..F5`, CAVES' own family's art | high |
 | CAPSULE 034..040 | msdos 380..386 | `CINEMATIC_CAPSULE_LEDGE_{MID_SPAN,FAR_SPAN,FAR_PLATFORM,DISTANT_FIGURE,NEAR_SPAN,FOREGROUND_SLAB,FOREGROUND_SPUR}` | medium |
 | CAPSULE 024..032 | msdos 370..378 | `CINEMATIC_CAPSULE_{TUNIC_FIGURE_WALK_RIGHT_F0,F1,STANDING_SMALL,STANDING_LARGE,ROBED_FIGURE_F0..F3,LIT_PANEL}` | medium |
+| CAVES 380..385, 580, 737, 747 | msdos 401..406, 601, 758, 767 | `CINEMATIC_CAVES_{STALACTITE_0..4,STALAGMITE_STUB,CAVERN_PILLARS_NARROW,WIDE}` -- a kit, 61 placements over 18 routines | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
@@ -599,6 +600,28 @@ days precisely because there was no renderer in between.
 
 The palette is the routine's own. Rendering this run at palette 0 gives black
 on black, and the table above would be a table of zeroes.
+
+## A picture placed by many routines is a kit, and takes no screen word
+
+`LABEL_C433` in CAVES is twenty-one draws with no `break` between them, then one
+`break` and a `jmp` back to the top: the whole thing repainted every frame. Six
+constants, twenty-one placements, and composited it is a screen full of
+tapering spikes.
+
+The temptation is a screen name, and it is wrong. Those same five spikes are
+placed by **eighteen** routines between them, 61 times in all. Nothing about
+them belongs to one screen. What separates them is size, and size is measured:
+9.0, 11.0, 11.0, 15.0, 19.0 wide. So they take an index on increasing width,
+ties broken on height -- the rule `CINEMATIC_CAVES_FALLING_ROCK_{SMALL,MEDIUM,
+LARGE}` was already named under.
+
+The counter-case is in the same routine. `CINEMATIC_747` is drawn **once**, at
+`160, 100`, by that routine and nowhere else, and that is the backdrop slot. One
+placement by one routine is a layer; sixty placements by eighteen is a kit.
+
+> Count the routines before choosing the word. A screen word on a kit piece is
+> the same error as `SCREEN_6A_BACKDROP_LAYER_0` on a 26-pixel blob, arrived at
+> from the other direction.
 
 ## A routine that draws N pieces at fixed positions is a shot assembling itself
 

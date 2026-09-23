@@ -257,13 +257,13 @@ LABEL_C390:
 LABEL_C391:
 	jg [HERO_Y], 0x78, LABEL_C3B8
 	jg [HERO_X], 0x82, LABEL_C3AD
-	video offset=CINEMATIC_380, x=97, y=32
-	video offset=CINEMATIC_380, x=108, y=21
-	video offset=CINEMATIC_580, x=74, y=27
-	video offset=CINEMATIC_380, x=29, y=21
+	video offset=CINEMATIC_CAVES_STALACTITE_3, x=97, y=32
+	video offset=CINEMATIC_CAVES_STALACTITE_3, x=108, y=21
+	video offset=CINEMATIC_CAVES_STALACTITE_4, x=74, y=27
+	video offset=CINEMATIC_CAVES_STALACTITE_3, x=29, y=21
 
 LABEL_C3AD:
-	video offset=CINEMATIC_380, x=161, y=23
+	video offset=CINEMATIC_CAVES_STALACTITE_3, x=161, y=23
 	video offset=CINEMATIC_384, x=206, y=7
 	jmp LABEL_C3BC
 
@@ -281,15 +281,15 @@ LABEL_C3C1:
 	video offset=CINEMATIC_379, x=192, y=140
 	jg [HERO_Y], 0x96, LABEL_C3DF
 	video offset=CINEMATIC_384, x=258, y=31
-	video offset=CINEMATIC_382, x=127, y=39
-	video offset=CINEMATIC_385, x=144, y=74
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=127, y=39
+	video offset=CINEMATIC_CAVES_STALACTITE_2, x=144, y=74
 	jmp LABEL_C3EF
 
 LABEL_C3DF:
-	video offset=CINEMATIC_380, x=78, y=144
-	video offset=CINEMATIC_381, x=104, y=171
-	video offset=CINEMATIC_382, x=110, y=140
-	video offset=CINEMATIC_383, x=111, y=162
+	video offset=CINEMATIC_CAVES_STALACTITE_3, x=78, y=144
+	video offset=CINEMATIC_CAVES_STALAGMITE_STUB, x=104, y=171
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=110, y=140
+	video offset=CINEMATIC_CAVES_STALACTITE_1, x=111, y=162
 
 LABEL_C3EF:
 	break
@@ -299,8 +299,8 @@ LABEL_C3F3:
 
 LABEL_C3F4:
 	jg [HERO_X], 0x46, LABEL_C405
-	video offset=CINEMATIC_380, x=29, y=142
-	video offset=CINEMATIC_380, x=39, y=123
+	video offset=CINEMATIC_CAVES_STALACTITE_3, x=29, y=142
+	video offset=CINEMATIC_CAVES_STALACTITE_3, x=39, y=123
 	jmp LABEL_C42E
 
 LABEL_C405:
@@ -308,9 +308,9 @@ LABEL_C405:
 	video offset=CINEMATIC_384, x=100, y=121
 	video offset=CINEMATIC_584, x=162, y=131
 	jl [HERO_X], 0xC0, LABEL_C42E
-	video offset=CINEMATIC_380, x=208, y=128
-	video offset=CINEMATIC_580, x=222, y=119
-	video offset=CINEMATIC_380, x=231, y=118
+	video offset=CINEMATIC_CAVES_STALACTITE_3, x=208, y=128
+	video offset=CINEMATIC_CAVES_STALACTITE_4, x=222, y=119
+	video offset=CINEMATIC_CAVES_STALACTITE_3, x=231, y=118
 	jmp LABEL_C42E
 
 LABEL_C429:
@@ -323,27 +323,27 @@ LABEL_C432:
 	db 0x11
 
 LABEL_C433:
-	video offset=CINEMATIC_580, x=85, y=105
-	video offset=CINEMATIC_382, x=102, y=99
-	video offset=CINEMATIC_382, x=94, y=88
-	video offset=CINEMATIC_382, x=107, y=102
-	video offset=CINEMATIC_382, x=116, y=95
-	video offset=CINEMATIC_382, x=151, y=86
-	video offset=CINEMATIC_382, x=178, y=115
-	video offset=CINEMATIC_382, x=272, y=39
-	video offset=CINEMATIC_385, x=53, y=131
-	video offset=CINEMATIC_385, x=137, y=135
-	video offset=CINEMATIC_385, x=141, y=135
-	video offset=CINEMATIC_385, x=135, y=133
-	video offset=CINEMATIC_385, x=195, y=143
-	video offset=CINEMATIC_383, x=104, y=138
-	video offset=CINEMATIC_383, x=206, y=145
-	video offset=CINEMATIC_383, x=213, y=144
-	video offset=CINEMATIC_380, x=261, y=41
-	video offset=CINEMATIC_382, x=246, y=27
-	video offset=CINEMATIC_382, x=239, y=24
-	video offset=CINEMATIC_382, x=233, y=27
-	video offset=CINEMATIC_747, x=160, y=100
+	video offset=CINEMATIC_CAVES_STALACTITE_4, x=85, y=105
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=102, y=99
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=94, y=88
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=107, y=102
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=116, y=95
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=151, y=86
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=178, y=115
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=272, y=39
+	video offset=CINEMATIC_CAVES_STALACTITE_2, x=53, y=131
+	video offset=CINEMATIC_CAVES_STALACTITE_2, x=137, y=135
+	video offset=CINEMATIC_CAVES_STALACTITE_2, x=141, y=135
+	video offset=CINEMATIC_CAVES_STALACTITE_2, x=135, y=133
+	video offset=CINEMATIC_CAVES_STALACTITE_2, x=195, y=143
+	video offset=CINEMATIC_CAVES_STALACTITE_1, x=104, y=138
+	video offset=CINEMATIC_CAVES_STALACTITE_1, x=206, y=145
+	video offset=CINEMATIC_CAVES_STALACTITE_1, x=213, y=144
+	video offset=CINEMATIC_CAVES_STALACTITE_3, x=261, y=41
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=246, y=27
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=239, y=24
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=233, y=27
+	video offset=CINEMATIC_CAVES_CAVERN_PILLARS_NARROW, x=160, y=100
 	break
 	jmp LABEL_C433
 LABEL_C48D:
@@ -357,20 +357,20 @@ LABEL_C496:
 	db 0x11
 
 LABEL_C497:
-	video offset=CINEMATIC_381, x=22, y=124
-	video offset=CINEMATIC_383, x=98, y=107
-	video offset=CINEMATIC_580, x=117, y=74
-	video offset=CINEMATIC_380, x=29, y=85
-	video offset=CINEMATIC_385, x=146, y=103
-	video offset=CINEMATIC_381, x=152, y=116
-	video offset=CINEMATIC_385, x=173, y=104
-	video offset=CINEMATIC_383, x=253, y=103
-	video offset=CINEMATIC_382, x=155, y=63
-	video offset=CINEMATIC_382, x=270, y=69
-	video offset=CINEMATIC_382, x=235, y=61
-	video offset=CINEMATIC_382, x=130, y=69
-	video offset=CINEMATIC_382, x=137, y=67
-	video offset=CINEMATIC_737, x=160, y=100
+	video offset=CINEMATIC_CAVES_STALAGMITE_STUB, x=22, y=124
+	video offset=CINEMATIC_CAVES_STALACTITE_1, x=98, y=107
+	video offset=CINEMATIC_CAVES_STALACTITE_4, x=117, y=74
+	video offset=CINEMATIC_CAVES_STALACTITE_3, x=29, y=85
+	video offset=CINEMATIC_CAVES_STALACTITE_2, x=146, y=103
+	video offset=CINEMATIC_CAVES_STALAGMITE_STUB, x=152, y=116
+	video offset=CINEMATIC_CAVES_STALACTITE_2, x=173, y=104
+	video offset=CINEMATIC_CAVES_STALACTITE_1, x=253, y=103
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=155, y=63
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=270, y=69
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=235, y=61
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=130, y=69
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=137, y=67
+	video offset=CINEMATIC_CAVES_CAVERN_PILLARS_WIDE, x=160, y=100
 	break
 	jmp LABEL_C497
 LABEL_C4D4:
@@ -382,20 +382,20 @@ LABEL_C4D5:
 	jg [HERO_Y], 0x78, LABEL_C51A
 	jg [HERO_X], 0x64, LABEL_C4F7
 	jl [HERO_X], 0x3C, LABEL_C51A
-	video offset=CINEMATIC_380, x=71, y=54
+	video offset=CINEMATIC_CAVES_STALACTITE_3, x=71, y=54
 	jmp LABEL_C51A
 
 LABEL_C4F7:
 	jg [HERO_X], 0xAC, LABEL_C50C
 	video offset=CINEMATIC_717, x=130, y=53
-	video offset=CINEMATIC_382, x=144, y=54
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=144, y=54
 	video offset=CINEMATIC_710, x=160, y=43
 	jmp LABEL_C51A
 
 LABEL_C50C:
 	jg [HERO_X], 0xF1, LABEL_C51A
-	video offset=CINEMATIC_382, x=187, y=60
-	video offset=CINEMATIC_383, x=226, y=102
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=187, y=60
+	video offset=CINEMATIC_CAVES_STALACTITE_1, x=226, y=102
 
 LABEL_C51A:
 	break
@@ -411,8 +411,8 @@ LABEL_C51F:
 
 LABEL_C532:
 	jg [HERO_X], 0xAC, LABEL_C543
-	video offset=CINEMATIC_381, x=114, y=130
-	video offset=CINEMATIC_383, x=165, y=169
+	video offset=CINEMATIC_CAVES_STALAGMITE_STUB, x=114, y=130
+	video offset=CINEMATIC_CAVES_STALACTITE_1, x=165, y=169
 	jmp LABEL_C55B
 
 LABEL_C543:
@@ -421,11 +421,11 @@ LABEL_C543:
 	jmp LABEL_C55B
 
 LABEL_C550:
-	video offset=CINEMATIC_385, x=245, y=159
+	video offset=CINEMATIC_CAVES_STALACTITE_2, x=245, y=159
 	jmp LABEL_C55B
 
 LABEL_C557:
-	video offset=CINEMATIC_382, x=253, y=15
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=253, y=15
 
 LABEL_C55B:
 	break
@@ -438,27 +438,27 @@ LABEL_C560:
 	jg [HERO_X], 0xD1, LABEL_C581
 	jl [HERO_X], 0x69, LABEL_C5B5
 	video offset=CINEMATIC_711, x=131, y=58
-	video offset=CINEMATIC_383, x=167, y=62
-	video offset=CINEMATIC_580, x=197, y=31
+	video offset=CINEMATIC_CAVES_STALACTITE_1, x=167, y=62
+	video offset=CINEMATIC_CAVES_STALACTITE_4, x=197, y=31
 	jmp LABEL_C5B5
 
 LABEL_C581:
 	jg [HERO_X], 0x0118, LABEL_C5B5
 	video offset=CINEMATIC_710, x=228, y=51
-	video offset=CINEMATIC_381, x=235, y=76
-	video offset=CINEMATIC_383, x=243, y=67
-	video offset=CINEMATIC_385, x=255, y=62
-	video offset=CINEMATIC_382, x=271, y=25
+	video offset=CINEMATIC_CAVES_STALAGMITE_STUB, x=235, y=76
+	video offset=CINEMATIC_CAVES_STALACTITE_1, x=243, y=67
+	video offset=CINEMATIC_CAVES_STALACTITE_2, x=255, y=62
+	video offset=CINEMATIC_CAVES_STALACTITE_0, x=271, y=25
 	jmp LABEL_C5B5
 
 LABEL_C5A0:
 	jg [HERO_X], 0xA0, LABEL_C5B1
-	video offset=CINEMATIC_383, x=77, y=165
+	video offset=CINEMATIC_CAVES_STALACTITE_1, x=77, y=165
 	video offset=CINEMATIC_709, x=128, y=193
 	jmp LABEL_C5B5
 
 LABEL_C5B1:
-	video offset=CINEMATIC_381, x=226, y=159
+	video offset=CINEMATIC_CAVES_STALAGMITE_STUB, x=226, y=159
 
 LABEL_C5B5:
 	break
@@ -477,10 +477,10 @@ LABEL_C5CE:
 	db 0x11
 
 LABEL_C5CF:
-	video offset=CINEMATIC_380, x=46, y=65
+	video offset=CINEMATIC_CAVES_STALACTITE_3, x=46, y=65
 	video offset=CINEMATIC_631, x=268, y=18
 	video offset=CINEMATIC_632, x=177, y=18
-	video offset=CINEMATIC_580, x=69, y=67
+	video offset=CINEMATIC_CAVES_STALACTITE_4, x=69, y=67
 	break
 	jmp LABEL_C5CF
 LABEL_C5E4:
