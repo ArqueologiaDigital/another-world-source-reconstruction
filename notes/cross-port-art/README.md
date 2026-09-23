@@ -231,3 +231,52 @@ noise: the ports are named from opposite ends of the family with `LEFT` and
 `RIGHT` swapped, `LEFT_n` against `RIGHT_(13-n)`. The art differs, so both may
 be right about their own port -- but nobody has checked, and this is where to
 start.
+
+## What `canonical_md5` cannot see: colour
+
+`tools/polygon_tree.py` builds a solid polygon as
+`("solid", bbox_w, bbox_h, [(x, y), ...])` -- **no colour field**. Only a group
+*child* carries one, as its `color_override`. So two solids of the same shape
+in different colours have the same hash, and every tool here that says
+"identical art" is saying "identical shape".
+
+`colour_blind_hashes.py` measures how much that costs. amiga/INTRO,
+569 constants:
+
+```
+  556 distinct canonical_md5, 0 unparseable
+  COLLIDING   4 hash(es) held by more than one constant
+  RECOLOURED  3 of those draw in more than one colour set
+```
+
+Small, but concentrated exactly where it hurts. One hash, `afafd0dda5fb`, is
+held by **ten** constants -- every 2.0x1.0 one-path mark in the stage -- and
+the renderer gives them ten different fills:
+
+```
+  CINEMATIC_348 / 349 / 350 / 351        #204464 #103054 #305474 #102044
+  CINEMATIC_124, CINEMATIC_131           #ebcb00
+  ..._HOLO_CONSOLE_DOT_RISE_FAST         #fbfb74
+  ..._LAB_DOOR_SCENE_LAMP                #fbfba7
+  ..._PARTICLE_LAB_HOLO_CONSOLE_LED_3/4  #870000 #b78700
+```
+
+The rule that follows:
+
+> A `canonical_md5` match carries a name across ports only when the picture has
+> something to be identical *about*. For a two-pixel mark it has nothing, and
+> the match must come from the offset and the draw site instead.
+
+That is how `CINEMATIC_LAB_DOOR_SCENE_LAMP` was carried -- same constant name,
+same offset 0x06CC, same single draw at `x=96, y=131` in the same loop -- and
+`proposals_dos_1992__INTRO_collision_leftovers.md` says so in its evidence
+column rather than claiming a hash it could not rely on.
+
+Run it after rendering the stage at any palette; the comparison is between
+constants at the *same* palette, so which one does not matter:
+
+```
+python3 notes/cross-port-art/colour_blind_hashes.py \
+    --branch chahi_amiga_1991 --stage INTRO --renders <dir>
+```
+
