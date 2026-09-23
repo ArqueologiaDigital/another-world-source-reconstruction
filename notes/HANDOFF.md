@@ -20,7 +20,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 59.6% (6,049/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 60.8% (6,174/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 77 of 352 (59 reachable) | `notes/shared-bank-geometry/` |
@@ -58,6 +58,13 @@ What remains is **1,655 pictures numbered in *both* priority ports with
 identical art** — 667 CAVES, 511 PRISON, 403 CAPSULE — which nothing in the
 call graph distinguishes.
 
+**The compounding does not happen, twice measured.** Naming 264 routines
+freed 2 constants (both bad, both filtered); naming 231 constants freed 0
+draw-only labels. The two layers are not a chain — the 465 draw-only labels
+wait on pictures drawn by *one-picture stubs*, and the pictures being named
+now are painted inside multi-draw composites. Do not plan work on the
+assumption that one layer unlocks the other.
+
 **The screen blocker is solved.** `notes/screen-scope/screen_scope.py`
 derives which `[SCREEN_NUM]` value a routine is reachable under, by forward
 dataflow on the guards, and `--control` re-derives **303 of 303** screen
@@ -67,6 +74,13 @@ routines named `<STAGE>_SCREEN_<NN>_ENTRY` plus their nine dispatchers. It
 also found one wrong name (msdos and cartridge install the CAVES palette-flash
 event on screen 0xEE, not the 0xED the shared label claimed) and can find more
 with `--proposals`.
+
+`screen-scope/backdrop_phase.py` then named **231** more: everything a screen
+entry paints before its first `setup`, indexed by position in that sequence.
+It refuses far more than it names, and correctly — 590 pictures are painted
+twice in one phase and so have no single position, 296 appear in several
+screens' phases, and 107 are blocked permanently by the family-gap guard
+because the holes are exactly those shared and twice-painted layers.
 
 **So start from `notes/remaining-art/by_anchor.py`**, which sorts that backlog
 by how each picture is anchored, because the classes need different evidence:
