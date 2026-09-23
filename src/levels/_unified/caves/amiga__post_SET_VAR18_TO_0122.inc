@@ -14,18 +14,18 @@ LABEL_DDA6:
 
 LABEL_DDB4:
 	add [HERO_X], 0x000A
-	video offset=CINEMATIC_451, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_494, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_RIGHT_1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_495, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_496, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_RIGHT_3, x=[HERO_X], y=[HERO_Y]
 	play id=0x006C, freq=0x14, vol=0x40, channel=0x01
 	break
-	video offset=CINEMATIC_497, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_RIGHT_4, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_498, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_RIGHT_5, x=[HERO_X], y=[HERO_Y]
 	mov [0x63], 0x0002
 	mov [0x05], 0x0000
 	mov [PAUSE_SLICES], 0x0004
@@ -49,18 +49,18 @@ LABEL_DE10:
 	mov [HERO_X], 0x005A
 	mov [HERO_Y], 0x007D
 	sub [HERO_X], 0x000A
-	video offset=CINEMATIC_469, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_LEFT_0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_499, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_LEFT_1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_500, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_LEFT_2, x=[HERO_X], y=[HERO_Y]
 	break
 	play id=0x006C, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_501, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_LEFT_3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_502, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_LEFT_4, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_503, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_LEFT_5, x=[HERO_X], y=[HERO_Y]
 	mov [0x05], 0x0000
 	mov [0x63], 0x0001
 	mov [PAUSE_SLICES], 0x0004

@@ -78,7 +78,7 @@ HERO_DIRECTION_DOWN_TO_LEFT_TURN:
 	video offset=CINEMATIC_491, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x000F
 	break
-	video offset=CINEMATIC_490, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_LEFT_0, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0019
 	mov [0x63], 0x0001
 	setup channel=0x16, address=LABEL_3A3C
@@ -157,7 +157,7 @@ START_HERO_DIRECTION_RIGHT_TO_LEFT_TURN:
 
 HERO_DIRECTION_LEFT_TO_DOWN_TURN:
 	mov [0x63], 0x0068
-	video offset=CINEMATIC_490, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_LEFT_0, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0014
 	mov [0x19], 0x000F
 	break
@@ -218,7 +218,7 @@ HERO_DIRECTION_DOWN_TO_RIGHT_TURN:
 	video offset=CINEMATIC_473, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x000F
 	break
-	video offset=CINEMATIC_472, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0019
 	mov [0x63], 0x0002
 	setup channel=0x16, address=LABEL_3F02
@@ -261,7 +261,7 @@ HERO_DIRECTION_LEFT_TO_RIGHT_TURN:
 
 HERO_DIRECTION_RIGHT_TO_DOWN_TURN:
 	mov [0x63], 0x0068
-	video offset=CINEMATIC_472, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 	mov [0x2A], 0x0019
 	mov [0x19], 0x000F
 	break

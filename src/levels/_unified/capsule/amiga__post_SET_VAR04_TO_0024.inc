@@ -192,15 +192,15 @@ SETUP_CHAN_0F_AT_RET:
 
 
 LABEL_8988:
-	video offset=CINEMATIC_324, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_RISING_SPECKS_0, x=[0x1a], y=[0x1b]
 	break
-	video offset=CINEMATIC_325, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_RISING_SPECKS_1, x=[0x1a], y=[0x1b]
 	break
-	video offset=CINEMATIC_326, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_RISING_SPECKS_2, x=[0x1a], y=[0x1b]
 	break
-	video offset=CINEMATIC_327, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_RISING_SPECKS_3, x=[0x1a], y=[0x1b]
 	break
-	video offset=CINEMATIC_328, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_RISING_SPECKS_4, x=[0x1a], y=[0x1b]
 	killChannel
 
 SET_VAR18_TO_010E:
@@ -224,17 +224,17 @@ LABEL_89C4:
 
 LABEL_89D2:
 	add [HERO_X], 0x000A
-	video offset=CINEMATIC_308, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_RIGHT_0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_309, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_RIGHT_1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_310, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_RIGHT_2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_311, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_RIGHT_3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_312, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_RIGHT_4, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_313, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_RIGHT_5, x=[HERO_X], y=[HERO_Y]
 	mov [0x63], 0x0002
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x32], 0x0000
@@ -257,17 +257,17 @@ LABEL_8A24:
 	mov [HERO_X], 0x005A
 	mov [HERO_Y], 0x007D
 	sub [HERO_X], 0x000A
-	video offset=CINEMATIC_314, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_LEFT_0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_315, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_LEFT_1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_316, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_LEFT_2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_317, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_LEFT_3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_318, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_LEFT_4, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_319, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_RISE_FROM_PRONE_LEFT_5, x=[HERO_X], y=[HERO_Y]
 	mov [0x63], 0x0001
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x32], 0x0000
