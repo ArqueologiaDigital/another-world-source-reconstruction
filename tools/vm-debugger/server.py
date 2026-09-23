@@ -485,6 +485,18 @@ class Handler(BaseHTTPRequestHandler):
         # written, hand it back, and print it: the person at the screen can
         # then quote `ann:<id>` at an agent without opening the log.
         line = json.dumps(entry)
+        # An id is the sha1 of the line, so the same line twice is one id
+        # twice -- and the log is append-only, which makes that unfixable
+        # afterwards. Reachable without trying: `at` has one-second resolution
+        # and the Save handlers are async with no button disable, so a
+        # double-click inside one second posts the identical payload. Refuse it
+        # here, where it can still be refused.
+        if LOG.is_file():
+            prev = LOG.read_text().rstrip("\n").rsplit("\n", 1)[-1]
+            if prev == line:
+                return self._json({"ok": False, "kind": kind,
+                                   "error": "identical to the last entry; "
+                                            "not appended"}, code=409)
         with LOG.open("a") as fh:
             fh.write(line + "\n")
         aid = annotation_id(line)

@@ -261,6 +261,104 @@ out="first $before, after the append $after, second line $second"
     && verdict stable "" \
     || verdict stable "id moved under append, or --check exit $rc"
 
+# ---------------------------------------------------------------------------
+# The five cases below were written from an adversarial review of this
+# mechanism on 2026-09-23. Each one is a way the bookkeeping was measured to
+# break silently -- reporting success while losing a sentence -- so each one
+# is a fixture before it is a fix.
+
+# missing -- no log at all. The failure this catches is the nastiest of the
+# set, because it is invisible: zero pending out of no log and zero pending out
+# of a finished queue printed the same string, so "I am not reading the
+# evidence" looked exactly like "there is no work to do".
+r=$(root missing)
+verdicts "$r" </dev/null
+seal "$r"
+probe "$r" --check
+expect missing 1 "does not exist" "not an empty queue"
+probe "$r"
+expect missing/queue 0 "not found" "NOT an empty queue"
+
+# denominator -- a log that exists and is fully consumed must say so WITH the
+# count it was computed from. A bare zero is what made `missing` invisible.
+r=$(root denominator)
+storm tumbleweed > "$r/tools/vm-debugger/rename_log.jsonl"
+a=$(aid "$r/tools/vm-debugger/rename_log.jsonl" 1)
+verdicts "$r" <<EOF
+ann:$a	2026-09-23T20:24:19+0100	chahi_amiga_1991/INTRO	0xAEE2	NO_NAME	the family is already complete	
+EOF
+seal "$r"
+probe "$r"
+expect denominator 0 "1 annotation(s), all consumed"
+
+# collision -- the applier REJECTED the row, because the stage already uses
+# that name for a polygon at another offset. The rejected row left the old
+# name in place. Asking only "is the new name defined?" reads this as done and
+# drops the sentence off the queue with no trace, which is exactly the class
+# PROPOSED exists to catch.
+r=$(root collision)
+column > "$r/tools/vm-debugger/rename_log.jsonl"
+a=$(aid "$r/tools/vm-debugger/rename_log.jsonl" 1)
+verdicts "$r" </dev/null
+table "$r" "$a" collide
+{ printf 'CINEMATIC_411\t\tEQU 0x7B52\n'
+  printf 'CINEMATIC_412\t\tEQU 0x7B65\n'
+  printf 'CINEMATIC_CAVES_TRAP_COLUMN_F00\t\tEQU 0x9999\n'
+} > "$r/src/levels/chahi_amiga_1991/CAVES.asm"
+seal "$r"
+probe "$r" --check
+expect collision 1 "ann:$a" PROPOSED
+probe "$r" --all
+expect collision/queue 0 PROPOSED
+
+# dupline -- one sentence logged twice, byte for byte: a double-clicked Save
+# inside the `at` field's one-second resolution. Two identical lines yield one
+# id twice, and calling that a hash collision gives advice nobody can follow,
+# since the only remedy would be deleting a line and the log is append-only.
+r=$(root dupline)
+storm tumbleweed > "$r/tools/vm-debugger/rename_log.jsonl"
+storm tumbleweed >> "$r/tools/vm-debugger/rename_log.jsonl"
+verdicts "$r" </dev/null
+seal "$r"
+probe "$r" --check
+expect dupline 1 "SAME line" "server-side"
+
+# noapplier -- a row whose column one is a routine label. Nothing applies it:
+# apply_branch_scoped_names.py admits only CINEMATIC_*, so the row is neither
+# applied nor rejected nor mentioned, and the tempting repair is a byte-neutral
+# `sed -i` that `make test` cannot see. A name from a human sentence would then
+# reach src/levels/ with no applier, no validator and no collision check.
+r=$(root noapplier)
+column > "$r/tools/vm-debugger/rename_log.jsonl"
+a=$(aid "$r/tools/vm-debugger/rename_log.jsonl" 1)
+verdicts "$r" </dev/null
+{ printf '# CAVES: the trap columns\n\n'
+  printf '| old | new | confidence | evidence |\n'
+  printf '|---|---|---|---|\n'
+  printf '| CAVES_TRAP_COLUMN_DRAW_LOOP | CAVES_CEILING_TRAP_DRAW_LOOP | medium | annot:%s frame 118 |\n' "$a"
+} > "$r/notes/play-and-describe/proposals_chahi_amiga_1991__CAVES_label.md"
+asm "$r" undefined
+seal "$r"
+probe "$r" --check
+expect noapplier 1 "not a CINEMATIC_* constant" "its own applier"
+
+# conflict -- an id carrying BOTH a written verdict and a live proposal row.
+# Reporting the verdict hides the unapplied row from the queue and from
+# --summary, which is what HANDOFF quotes, so only --check ever saw it.
+r=$(root conflict)
+column > "$r/tools/vm-debugger/rename_log.jsonl"
+a=$(aid "$r/tools/vm-debugger/rename_log.jsonl" 1)
+verdicts "$r" <<EOF
+ann:$a	2026-09-23T20:31:02+0100	chahi_amiga_1991/CAVES	0x7B65	NO_NAME	the family is already complete	
+EOF
+table "$r" "$a" both2
+asm "$r" undefined
+seal "$r"
+probe "$r" --all
+expect conflict 0 CONFLICT
+probe "$r" --check
+expect conflict/check 1 "BOTH"
+
 # documented -- the id notes/play-and-describe/README.md and this repo's
 # CLAUDE.md both quote, recomputed from the log the debugger actually wrote.
 # Not a fixture: it is the assertion that the log in the tree has not been

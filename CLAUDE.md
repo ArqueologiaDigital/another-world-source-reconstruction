@@ -22,8 +22,13 @@ probe in `notes/` reasons from geometry, control flow or bank layout, and none
 of them can say what a scene is *about*.
 
     make annotations      # python3 notes/play-and-describe/annotation_queue.py
+    python3 notes/play-and-describe/annotation_queue.py --check
 
-Run it when you pick up naming work, before choosing what to name.
+Run both when you pick up naming work, before choosing what to name. The
+first is the queue; the second is the only thing that can see a proposal row
+citing a sentence that no longer exists, or one written and never applied.
+A queue of unread notes is a backlog and never a failure, so `--check`
+failing always means the bookkeeping is wrong, not that there is work.
 
 ## An annotation is evidence, not an instruction to rename
 

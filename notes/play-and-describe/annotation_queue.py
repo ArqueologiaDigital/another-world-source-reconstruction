@@ -147,7 +147,7 @@ STAGES = ("CODE_WHEEL", "INTRO", "LAKE", "PRISON", "CAVES", "TANK",
           "CAPSULE", "ENDING", "PASSCODE")
 VERDICT_KINDS = ("CORROBORATES", "NO_NAME", "HELD", "REJECTED")
 DERIVED = ("PROPOSED", "OPEN", "AMENDED", "NAMED")
-QUEUE_STATUSES = ("PROPOSED", "AMENDED", "OPEN")
+QUEUE_STATUSES = ("CONFLICT", "PROPOSED", "AMENDED", "OPEN")
 
 RE_TOKEN = re.compile(r"annot:([0-9a-f]{12})")
 # Deliberately no stricter than `apply_cinematic_renames.py`'s RE_ROW: that one
@@ -464,18 +464,45 @@ class Tree:
         self.src = root / "src" / "levels"
         self.verdicts = root / "notes" / "play-and-describe" / "verdicts.tsv"
 
+    @property
+    def log_missing(self) -> bool:
+        """A missing log and a fully-consumed one both yield zero pending rows.
+
+        They mean opposite things -- "I am not reading the evidence" against
+        "there is no work to do" -- so absence is its own fact, and every zero
+        this tool prints is printed with the count it came from.
+
+        Read on demand rather than stored: a Tree is built before its files
+        exist in `--self-test` and in `tests/run.sh`, and a snapshot taken at
+        construction would report a log that is there as missing.
+        """
+        return not self.log.is_file()
+
 
 class Index:
     def __init__(self, tree: Tree):
         self.tree = tree
         self.asm = Asm(tree.src)
         self.entries = load_log(tree.log)
+        self.raw = ([ln for ln in tree.log.read_text().splitlines() if ln.strip()]
+                    if tree.log.is_file() else [])
+        if len(self.raw) != len(self.entries):     # a skipped half-written tail
+            self.raw = self.raw[:len(self.entries)]
         self.order = {a: i for i, (a, _) in enumerate(self.entries)}
         self.by_aid = dict(self.entries)
-        seen: dict[str, int] = {}
-        for a, _ in self.entries:
-            seen[a] = seen.get(a, 0) + 1
-        self.collisions = sorted(a for a, n in seen.items() if n > 1)
+        # Two ids can coincide two ways and they need opposite handling. The
+        # same LINE logged twice -- a double-clicked Save, one second apart or
+        # less -- is one sentence recorded twice: collapse it. Two DIFFERENT
+        # lines sharing twelve hex is a real collision and must stop the run.
+        # Failing on the first would be unfixable advice, since the only
+        # remedy is deleting a line and the log is append-only.
+        seen: dict[str, list[str]] = {}
+        for (a, _), raw in zip(self.entries, self.raw):
+            seen.setdefault(a, []).append(raw)
+        self.duplicates = sorted(a for a, ls in seen.items()
+                                 if len(ls) > 1 and len(set(ls)) == 1)
+        self.collisions = sorted(a for a, ls in seen.items()
+                                 if len(set(ls)) > 1)
         self.cites, self.tokens = scan_markdown(tree.notes)
         self.verds = verdicts(tree.verdicts)
         self.by_cite: dict[str, list[Cite]] = {}
@@ -483,11 +510,25 @@ class Index:
             entry = self.by_aid.get(c.aid) or {}
             c.branch = c.branch or entry.get("branch")
             c.stage = c.stage or entry.get("stage")
-            c.defined = self.asm.defines(c.new, c.branch, c.stage)
+            # NOT just "the new name exists in the .asm". `apply_cinematic_
+            # renames.py` REJECTS a row whose new name is already used for a
+            # polygon at another offset, and a rejected row left the old name
+            # in place -- so `defines(new)` alone reads a rejection as done and
+            # drops the sentence off the queue with no trace. A rename that
+            # landed removes the old name; one that did not, did not. Both
+            # halves, therefore. (Anchoring on the annotation's own offset was
+            # the other candidate and is wrong here: one sentence legitimately
+            # names a whole family, so most rows are about a different
+            # constant than the one that was clicked.)
+            c.defined = (self.asm.defines(c.new, c.branch, c.stage)
+                         and not self.asm.defines(c.old, c.branch, c.stage))
             self.by_cite.setdefault(c.aid, []).append(c)
         settled = set(self.by_cite) | set(self.verds)
+        # Sorted by log order, oldest first: iterating a set here made the
+        # AMENDED representative depend on PYTHONHASHSEED, which HANDOFF.md
+        # records as a fixed defect with a standing rule against repeating it.
         self.settled_keys = {}
-        for a in settled:
+        for a in sorted(settled, key=lambda x: self.order.get(x, 1 << 30)):
             e = self.by_aid.get(a)
             if e:
                 self.settled_keys.setdefault(
@@ -498,9 +539,15 @@ class Index:
 def status(a: str, ix: Index) -> str:
     """The status of one annotation, derived where the tree can carry it."""
     row = ix.verds.get(a)
+    rows = ix.by_cite.get(a)
+    if row and rows:
+        # Both. One of the two is stale, and reporting the verdict would hide
+        # an unapplied row from the queue and from --summary, which is what
+        # HANDOFF quotes. Neither answer is right, so say so in the listing
+        # rather than only in --check.
+        return "CONFLICT"
     if row:
         return row["verdict"]
-    rows = ix.by_cite.get(a)
     if rows:
         return "NAMED" if all(c.defined for c in rows) else "PROPOSED"
     e = ix.by_aid.get(a) or {}
@@ -603,14 +650,34 @@ def print_queue(ix: Index, args) -> int:
     rows = select(ix, args)
     for a in rows:
         print(queue_line(a, ix))
+    if ix.tree.log_missing:
+        print(f"  {ix.tree.log} not found -- this is NOT an empty queue.\n"
+              f"  Nothing here read any evidence. Check --root, or that the "
+              f"log is committed.")
     if not rows:
-        print("  nothing queued." if not (args.all or args.id)
-              else "  no annotation matches.")
+        if args.all or args.id:
+            print("  no annotation matches.")
+        else:
+            # Never a bare zero: a zero pending out of zero annotations and a
+            # zero out of forty mean opposite things.
+            n = len(ix.entries)
+            print(f"  nothing queued ({n} annotation(s), all consumed)."
+                  if n else "  nothing queued (the log holds 0 annotations).")
     n_prop = sum(1 for a in rows if ix.status[a] == "PROPOSED")
     if n_prop:
         print(f"\n  {n_prop} PROPOSED: a row cites the id and the tree does "
               f"not define its name.\n  That is a rejected row or a "
               f"half-applied batch, and no gate can see it. Start there.")
+    n_conf = sum(1 for a in rows if ix.status[a] == "CONFLICT")
+    if n_conf:
+        print(f"\n  {n_conf} CONFLICT: the id carries a written verdict AND a "
+              f"proposal row.\n  One of the two is stale; --check names which "
+              f"file. Settle it before anything else.")
+    if rows:
+        # The tool is what is in the agent's hand at this moment; the pointer
+        # should not depend on their having read CLAUDE.md's third section.
+        print("\n  next: --id <ann:...> --measure, then the procedure in "
+              "notes/play-and-describe/README.md")
     return 0
 
 
@@ -733,6 +800,20 @@ def measure(a: str, ix: Index) -> int:
 
 def add_verdict(ix: Index, a: str, kind: str, grounds: str,
                 settled_by: str) -> int:
+    # Step 0 of the procedure, enforced rather than asked for: a verdict row
+    # cites an id that is the sha1 of a log line, so writing one against an
+    # uncommitted log records a pointer into a file only this machine has.
+    dirty = log_dirty(ix.tree)
+    if dirty:
+        print("refusing: rename_log.jsonl has uncommitted lines, and a "
+              "verdict cites an id\n  computed from them. An id from a file "
+              "only this machine has is not a shared\n  identity. Commit the "
+              "log alone and unedited first:\n"
+              "    git add tools/vm-debugger/rename_log.jsonl && git commit",
+              file=sys.stderr)
+        for line in dirty.splitlines():
+            print(f"      {line}", file=sys.stderr)
+        return 2
     kind = kind.upper()
     if kind not in VERDICT_KINDS:
         print(f"  unknown verdict `{kind}`: one of "
@@ -790,6 +871,33 @@ def check(ix: Index) -> int:
     """Two-way consistency. A backlog is never a failure."""
     bad: list[str] = []
     rel = lambda p: p.relative_to(ix.tree.root)  # noqa: E731
+
+    if ix.tree.log_missing:
+        bad.append(f"{ix.tree.log} does not exist. This is not an empty "
+                   f"queue -- it is\n      no evidence read at all, and a "
+                   f"PASS here would mean the opposite of what it says.")
+    for a in ix.duplicates:
+        n = sum(1 for x, _ in ix.entries if x == a)
+        bad.append(f"{a} appears {n} times as the SAME line -- one sentence "
+                   f"logged twice.\n      Not a collision and not repairable "
+                   f"by editing (the log is append-only):\n      the fix is "
+                   f"server-side, refusing an append identical to the last "
+                   f"line.")
+    # A row this reads that no applier can act on is the gate being bypassed:
+    # the agent sees a green apply, the label is untouched, and the tempting
+    # repair is a byte-neutral `sed -i` that `make test` cannot see.
+    for a, cites in sorted(ix.by_cite.items()):
+        for c in cites:
+            if not re.match(r"^CINEMATIC_\w+$", c.old or ""):
+                bad.append(
+                    f"{rel(c.path)}:{c.line}: `{c.old}` is not a "
+                    f"CINEMATIC_* constant, and\n      "
+                    f"apply_branch_scoped_names.py admits nothing else in "
+                    f"column one -- it will not\n      apply this row, nor "
+                    f"reject it, nor mention it. A routine label or a CV_* "
+                    f"key\n      needs its own applier and its own gate; it "
+                    f"does not belong in a table that\n      cites an "
+                    f"annotation. See the README, \"What this is not\".")
 
     for a, path, n in ix.tokens:
         if a not in ix.by_aid:

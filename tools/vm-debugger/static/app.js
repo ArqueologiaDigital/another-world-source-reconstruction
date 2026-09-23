@@ -292,22 +292,38 @@ function context() {
   };
 }
 
-$("annosave").onclick = async () => {
+// Disable the button for the length of the POST. A second click before the
+// first reply lands posts the identical payload, and since an entry's id is
+// the sha1 of its line, the same line twice is the same id twice -- in an
+// append-only file, which makes it unfixable afterwards. The server refuses a
+// byte-identical append as well; this is the half that stops the user seeing
+// an error they did not cause.
+async function whileSaving(id, fn) {
+  const b = $(id);
+  if (b.disabled) return;
+  b.disabled = true;
+  try { await fn(); } finally { b.disabled = false; }
+}
+
+$("annosave").onclick = () => whileSaving("annosave", async () => {
   const text = $("annotext").value.trim();
   if (!text) return;
   const res = await post({ kind: "annotate", text, ...context() });
-  $("annostatus").textContent = res.ok ? `saved ${res.at}` : `error: ${res.error}`;
+  $("annostatus").textContent = res.ok
+    ? `saved ${res.at}  ${res.id || ""}` : `error: ${res.error}`;
   if (res.ok) $("annotext").value = "";
-};
+});
 
-$("rn-save").onclick = async () => {
+$("rn-save").onclick = () => whileSaving("rn-save", async () => {
   const d = state.frame.draws.find((x) => x.seq === state.sel);
   const to = $("rn-to").value.trim();
   if (!d || !to) return;
   const res = await post({ kind: "rename", ...context(),
     renames: [{ kind: d.kind, offset: d.offset, from: nameOf(d), to }] });
-  $("annostatus").textContent = res.ok ? `rename logged ${res.at}` : `error: ${res.error}`;
-};
+  $("annostatus").textContent = res.ok
+    ? `rename logged ${res.at}  ${res.id || ""}` : `error: ${res.error}`;
+  if (res.ok) $("rn-to").value = "";
+});
 
 function bulkMatches() {
   const pat = $("bulk-pat").value.trim(), rep = $("bulk-rep").value;
@@ -335,14 +351,15 @@ $("bulk-prev").onclick = () => {
   $("bulk-save").disabled = rows.length === 0;
   $("annostatus").textContent = `${rows.length} name(s) match`;
 };
-$("bulk-save").onclick = async () => {
+$("bulk-save").onclick = () => whileSaving("bulk-save", async () => {
   const rows = bulkMatches();
   if (!rows.length) return;
   const res = await post({ kind: "bulk_rename", ...context(),
     pattern: $("bulk-pat").value.trim(), replacement: $("bulk-rep").value,
     renames: rows });
   $("annostatus").textContent = res.ok
-    ? `${res.logged} rename(s) logged ${res.at}` : `error: ${res.error}`;
-};
+    ? `${res.logged} rename(s) logged ${res.at}  ${res.id || ""}`
+    : `error: ${res.error}`;
+});
 
 await loadStage();
