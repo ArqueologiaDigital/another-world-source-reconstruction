@@ -289,25 +289,25 @@ LABEL_10EC:
 	db 0x11
 
 LABEL_10ED:
-	video offset=CINEMATIC_249, x=160, y=100
-	video offset=CINEMATIC_250, x=164, y=100
-	video offset=CINEMATIC_251, x=168, y=100
-	video offset=CINEMATIC_252, x=172, y=100
+	video offset=CINEMATIC_CAVES_DASH_COLUMN_0, x=160, y=100
+	video offset=CINEMATIC_CAVES_DASH_COLUMN_1, x=164, y=100
+	video offset=CINEMATIC_CAVES_DASH_COLUMN_2, x=168, y=100
+	video offset=CINEMATIC_CAVES_DASH_COLUMN_3, x=172, y=100
 	break
-	video offset=CINEMATIC_250, x=160, y=100
-	video offset=CINEMATIC_251, x=164, y=100
-	video offset=CINEMATIC_252, x=168, y=100
-	video offset=CINEMATIC_249, x=172, y=100
+	video offset=CINEMATIC_CAVES_DASH_COLUMN_1, x=160, y=100
+	video offset=CINEMATIC_CAVES_DASH_COLUMN_2, x=164, y=100
+	video offset=CINEMATIC_CAVES_DASH_COLUMN_3, x=168, y=100
+	video offset=CINEMATIC_CAVES_DASH_COLUMN_0, x=172, y=100
 	break
-	video offset=CINEMATIC_251, x=160, y=100
-	video offset=CINEMATIC_252, x=164, y=100
-	video offset=CINEMATIC_249, x=168, y=100
-	video offset=CINEMATIC_250, x=172, y=100
+	video offset=CINEMATIC_CAVES_DASH_COLUMN_2, x=160, y=100
+	video offset=CINEMATIC_CAVES_DASH_COLUMN_3, x=164, y=100
+	video offset=CINEMATIC_CAVES_DASH_COLUMN_0, x=168, y=100
+	video offset=CINEMATIC_CAVES_DASH_COLUMN_1, x=172, y=100
 	break
-	video offset=CINEMATIC_252, x=160, y=100
-	video offset=CINEMATIC_249, x=164, y=100
-	video offset=CINEMATIC_250, x=168, y=100
-	video offset=CINEMATIC_251, x=172, y=100
+	video offset=CINEMATIC_CAVES_DASH_COLUMN_3, x=160, y=100
+	video offset=CINEMATIC_CAVES_DASH_COLUMN_0, x=164, y=100
+	video offset=CINEMATIC_CAVES_DASH_COLUMN_1, x=168, y=100
+	video offset=CINEMATIC_CAVES_DASH_COLUMN_2, x=172, y=100
 	break
 	jmp LABEL_10ED
 LABEL_1134:

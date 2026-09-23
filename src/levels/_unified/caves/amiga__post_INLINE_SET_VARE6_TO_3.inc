@@ -1,24 +1,24 @@
 LABEL_03A4:
 	video offset=CINEMATIC_044, x=113, y=194
-	video offset=CINEMATIC_545, x=123, y=172
+	video offset=CINEMATIC_CAVES_TORCH_BEARER_F0, x=123, y=172
 	video offset=CINEMATIC_546, x=97, y=138
 	break
 	djnz [0xE6], LABEL_03A4
-	video offset=CINEMATIC_547, x=123, y=172
+	video offset=CINEMATIC_CAVES_TORCH_BEARER_F1, x=123, y=172
 	break
-	video offset=CINEMATIC_548, x=123, y=172
+	video offset=CINEMATIC_CAVES_TORCH_BEARER_F2, x=123, y=172
 	break
-	video offset=CINEMATIC_549, x=123, y=172
+	video offset=CINEMATIC_CAVES_TORCH_BEARER_F3, x=123, y=172
 	mov [0xE6], 0x0002
 
 LABEL_03C7:
 	break
-	video offset=CINEMATIC_550, x=123, y=172
+	video offset=CINEMATIC_CAVES_TORCH_BEARER_F4, x=123, y=172
 	djnz [0xE6], LABEL_03C7
 	break
-	video offset=CINEMATIC_551, x=123, y=172
+	video offset=CINEMATIC_CAVES_TORCH_BEARER_F5, x=123, y=172
 	break
-	video offset=CINEMATIC_552, x=123, y=172
+	video offset=CINEMATIC_CAVES_TORCH_BEARER_F6, x=123, y=172
 	mov [HERO_X], 0x005C
 	mov [HERO_Y], 0x00AC
 	mov [0x63], 0x0002
@@ -27,13 +27,13 @@ LABEL_03C7:
 	setup channel=0x38, address=LABEL_0507
 	mov [0x32], 0x0000
 	break
-	video offset=CINEMATIC_553, x=123, y=172
+	video offset=CINEMATIC_CAVES_TORCH_BEARER_F7, x=123, y=172
 	break
-	video offset=CINEMATIC_553, x=123, y=172
+	video offset=CINEMATIC_CAVES_TORCH_BEARER_F7, x=123, y=172
 	break
-	video offset=CINEMATIC_553, x=123, y=172
+	video offset=CINEMATIC_CAVES_TORCH_BEARER_F7, x=123, y=172
 	break
-	video offset=CINEMATIC_553, x=123, y=172
+	video offset=CINEMATIC_CAVES_TORCH_BEARER_F7, x=123, y=172
 	call LABEL_12DE
 	call LABEL_4407
 	killChannel
