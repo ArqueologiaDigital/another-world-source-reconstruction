@@ -54,56 +54,56 @@ LABEL_4FCC:
 	add [0x14], [0x15]
 	add [0x14], [0x15]
 	add [0x14], [0x15]
-	video offset=CINEMATIC_637, x=172, y=110, zoom=[0x14]
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_NECK_0, x=172, y=110, zoom=[0x14]
 	sub [0x14], [0x15]
-	video offset=CINEMATIC_638, x=183, y=40, zoom=[0x14]
-	video offset=CINEMATIC_639, x=88, y=146, zoom=[0x14]
-	video offset=CINEMATIC_640, x=289, y=148, zoom=[0x14]
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_HEAD_0, x=183, y=40, zoom=[0x14]
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_ARM_LEFT_0, x=88, y=146, zoom=[0x14]
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_ARM_RIGHT_0, x=289, y=148, zoom=[0x14]
 	mov [0x14], 0x0040
 	add [0x14], [0x15]
 	add [0x14], [0x15]
-	video offset=CINEMATIC_641, x=172, y=110, zoom=[0x14]
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_NECK_1, x=172, y=110, zoom=[0x14]
 	sub [0x14], [0x15]
-	video offset=CINEMATIC_642, x=182, y=40, zoom=[0x14]
-	video offset=CINEMATIC_643, x=88, y=147, zoom=[0x14]
-	video offset=CINEMATIC_644, x=289, y=147, zoom=[0x14]
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_HEAD_1, x=182, y=40, zoom=[0x14]
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_ARM_LEFT_1, x=88, y=147, zoom=[0x14]
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_ARM_RIGHT_1, x=289, y=147, zoom=[0x14]
 	mov [0x14], 0x0040
 	sub [0x14], [0x15]
-	video offset=CINEMATIC_645, x=171, y=110, zoom=[0x14]
-	video offset=CINEMATIC_646, x=182, y=40, zoom=[0x14]
-	video offset=CINEMATIC_647, x=88, y=146, zoom=[0x14]
-	video offset=CINEMATIC_648, x=289, y=147, zoom=[0x14]
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_NECK_2, x=171, y=110, zoom=[0x14]
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_HEAD_2, x=182, y=40, zoom=[0x14]
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_ARM_LEFT_2, x=88, y=146, zoom=[0x14]
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_ARM_RIGHT_2, x=289, y=147, zoom=[0x14]
 	mov [0x14], 0x0040
 	add [0x14], [0x15]
-	video offset=CINEMATIC_649, x=272, y=133, zoom=[0x14]
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_ARM_RIGHT_EDGE_0, x=272, y=133, zoom=[0x14]
 	sub [0x14], [0x15]
 	sub [0x14], [0x15]
 	sub [0x14], [0x15]
 	sub [0x14], [0x15]
 	sub [0x14], [0x15]
-	video offset=CINEMATIC_650, x=272, y=133, zoom=[0x14]
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_ARM_RIGHT_EDGE_1, x=272, y=133, zoom=[0x14]
 	jne [0x15], 0x00, LABEL_5067
-	video offset=CINEMATIC_655, x=160, y=100
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_FACE_DETAIL_0, x=160, y=100
 	jmp LABEL_5098
 
 LABEL_5067:
 	jne [0x15], 0x01, LABEL_5074
-	video offset=CINEMATIC_654, x=160, y=100
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_FACE_DETAIL_1, x=160, y=100
 	jmp LABEL_5098
 
 LABEL_5074:
 	jne [0x15], 0x02, LABEL_5081
-	video offset=CINEMATIC_653, x=160, y=100
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_FACE_DETAIL_2, x=160, y=100
 	jmp LABEL_5098
 
 LABEL_5081:
 	jne [0x15], 0x03, LABEL_508E
-	video offset=CINEMATIC_652, x=160, y=100
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_FACE_DETAIL_3, x=160, y=100
 	jmp LABEL_5098
 
 LABEL_508E:
 	jne [0x15], 0x04, LABEL_5098
-	video offset=CINEMATIC_651, x=160, y=100
+	video offset=CINEMATIC_PRISON_WAKE_FIGURE_FACE_DETAIL_4, x=160, y=100
 
 LABEL_5098:
 	break

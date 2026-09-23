@@ -157,3 +157,40 @@ has accumulated silently across every routine rename the project has applied.
 It is not the residue of any one batch. **Open work**: a pass that renames the
 file and its `.include` line together, and a check that keeps it from
 recurring.
+
+## The journal: a rename table is not idempotent, and cannot be made so
+
+Making the sync simultaneous (above) removed the ordering trap for a *fresh*
+table. It introduced a worse one for a table run twice.
+
+Once `CINEMATIC_682 -> ..._PUPIL_0` and `..._PUPIL_0 -> ..._PUPIL_1` have
+been applied, the tree looks exactly as it would have before a second run of
+the same rows: `_PUPIL_0` is defined, `_PUPIL_1` is defined. **No test on the
+end state can tell "fresh" from "already done"** -- the end states are
+identical and only the history differs. Every local guard tried here fails one
+case or the other.
+
+It happened the same afternoon. The proposals file had grown a new section, so
+re-running it was the ordinary thing to do, and the renumber rows in its old
+section fired again. PRISON's amiga pupil ladder came out
+
+```
+  _1, _5, _6, _3, _4, _5
+```
+
+against the dos arm's correct `_0, _1, _2, _3, _4, _5`. Both backstops worked:
+`undefined_symbols.py` reported two symbols defined twice with different
+values, and `make test` went to **28/29 on the unified half with the canonical
+half still at 29/29** -- the exact signature described further up this page.
+`git checkout -- src/levels/_unified/prison/` undid it.
+
+So the history is recorded. `applied_rows.tsv` beside this file holds one line
+per `(branch, stage, old, new)` the tool has written; a row already there is
+skipped, and reported. `--again` forces it, for repairing a tree and nothing
+else. `--record-only` adopts a table applied before the journal existed,
+without touching a file.
+
+**And write one table file per batch.** The journal makes a re-run inert
+rather than destructive, but a file that accumulates sections is a file whose
+old sections keep being offered to every tool that reads it. The PRISON eye
+batch and the PRISON figure batch are in separate files for that reason.

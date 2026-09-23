@@ -77,6 +77,10 @@ checked against the receiving port's own guards.
 | CINEMATIC_656, 658 | (msdos twins) | `CINEMATIC_PRISON_WAKE_CLOSEUP_PUPIL_BASE`, `_EYE_GLINT` | high |
 | CINEMATIC_682, 680, 679, 678 + a renumber of `_PUPIL_0/1/2` | (msdos + cartridge twins) | `CINEMATIC_PRISON_WAKE_CLOSEUP_PUPIL_0..6` | high |
 | CINEMATIC_659..676 (18) | (msdos twins) | `CINEMATIC_PRISON_WAKE_CLOSEUP_EYELID_0..17` | high |
+| CINEMATIC_638, 642, 646 | (msdos twins) | `CINEMATIC_PRISON_WAKE_FIGURE_HEAD_0..2` | high |
+| CINEMATIC_651..655 | (msdos twins) | `CINEMATIC_PRISON_WAKE_FIGURE_FACE_DETAIL_0..4` | high |
+| CINEMATIC_637, 641, 645 | (msdos twins) | `CINEMATIC_PRISON_WAKE_FIGURE_NECK_0..2` | medium |
+| CINEMATIC_639/643/647, 640/644/648, 649/650 | (msdos twins) | `CINEMATIC_PRISON_WAKE_FIGURE_ARM_{LEFT,RIGHT}_0..2`, `_ARM_RIGHT_EDGE_0..1` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that

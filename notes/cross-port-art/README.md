@@ -150,3 +150,81 @@ its polygons are genuinely unextracted — unlike `gba_2004`, whose cinematic
 bank **is** readable (65,536 bytes via `slab("cinematic", "gba_usa", n)`) and
 which every art-based probe here could include, though it is not a priority
 port.
+
+## `align_draw_sites.py` -- when one md5 holds several constants
+
+`transfer_by_art.py` refuses a picture whose `canonical_md5` maps to more than
+one constant in a port, and it is right to: the hash cannot say which is
+which. That is not a corner case. PRISON's wake-up scene stores the head, the
+neck and each arm **three times over**, byte for byte identical, so that one
+pass of the draw routine can put the same shape on screen at three zoom
+levels:
+
+```
+  (183,40)   CINEMATIC_638 641 645   all canonical_md5 2d66cda0
+```
+
+Fourteen of that scene's nineteen constants were unreachable by art alone.
+
+The second bridge is position. Where the two ports run the same program, the
+n-th `video` instruction in one is the n-th in the other. This is **not**
+naming from the index -- #0107 is about the bank index inside
+`CINEMATIC_<n>`, which the ports assign independently -- but it needs its own
+proof, twice over, and the second proof is the point of this entry.
+
+### The scope is chunk pairs, not files
+
+A whole-file gate fails in every stage. Measured 2026-09-23:
+
+```
+  PRISON   1420 draw sites vs 1480      CAPSULE  1473 vs 2026
+  CAVES    2346 vs 2485                 TANK      572 vs  693
+```
+
+even in PRISON, which `docs/NAMING.md` calls one of the three stages that are
+"wholly identical". What does line up is the unified tree's own pairing:
+`amiga__post_X.inc` and `dos__post_X.inc` are the two branches' arms of one
+region. PRISON has 88 such pairs; 39 of them carry draw sites that match in
+count and in every argument.
+
+### The control refuted the first version
+
+Gate the transfer on the alignment alone and run it against the sites where
+**both** ports are already named, and it gets 592 of 636 right. The 44 it gets
+wrong are all one family, and they are wrong in a shape:
+
+```
+  amiga CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_0  vs  msdos ..._ZOOM_IN_RIGHT_13
+  amiga ..._ZOOM_IN_LEFT_1                        vs  msdos ..._ZOOM_IN_RIGHT_12
+  amiga ..._ZOOM_IN_LEFT_2                        vs  msdos ..._ZOOM_IN_RIGHT_11
+```
+
+`canonical_md5` on those pairs: **0 same, 27 different**. The sites really are
+aligned; the pictures drawn there are not the same pictures. Which is obvious
+in hindsight -- a chunk is branch-scoped *because* the branches differ in it,
+and two different pictures at the same x, y and zoom pass an argument check
+unchanged.
+
+A 6.9% error rate is not a naming method. So the tool requires **both**
+bridges: the site must align and `canonical_md5` must agree.
+
+```
+  552 of 552 aligned-and-same-art site(s) re-derive the name a person wrote
+  193 aligned site(s) refused because the art differs
+   44 of those would have been wrong
+```
+
+Neither bridge is sufficient alone. The alignment resolves what the hash
+cannot distinguish; the hash catches what the alignment cannot see.
+
+A name carrying a screen number, or a `_BACKDROP_LAYER_<n>` paint position, is
+refused here whatever the gates say -- `transfer_by_art.py` has the check for
+those and this tool does not.
+
+### Still open
+
+The 44 `PRISON_CUTSCENE_ZOOM_IN_*` disagreements are a real conflict, not
+noise: the ports are named from opposite ends of the family with `LEFT` and
+`RIGHT` swapped, `LEFT_n` against `RIGHT_(13-n)`. The art differs, so both may
+be right about their own port -- but nobody has checked, and this is where to
+start.

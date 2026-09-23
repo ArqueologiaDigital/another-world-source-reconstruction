@@ -118,6 +118,52 @@ def self_test() -> int:
     return 0 if ok else 1
 
 
+JOURNAL = Path(__file__).resolve().parent / "applied_rows.tsv"
+
+
+def load_journal() -> dict[tuple[str, str], set]:
+    """Every (old -> new) this tool has written, per (branch, stage).
+
+    A rename table is not idempotent and cannot be made so. Once
+    `CINEMATIC_682 -> ..._PUPIL_0` and `..._PUPIL_0 -> ..._PUPIL_1` have been
+    applied, the tree looks EXACTLY as it would before a second run of the
+    same rows -- `..._PUPIL_0` is defined, `..._PUPIL_1` is defined -- so no
+    test on the end state can tell "fresh" from "already done". The end
+    states are identical; only the history differs.
+
+    On 2026-09-23 a second run over a proposals file that had grown a new
+    section re-applied the renumber rows in its old section, and the amiga
+    arm of PRISON's pupil ladder came out as
+    `_1, _5, _6, _3, _4, _5`. `undefined_symbols.py` caught it as two symbols
+    defined twice with different values, and `make test` as 28/29 on the
+    unified half with the canonical half still at 29/29.
+
+    So the history is recorded. A row is applied once per (branch, stage) and
+    skipped afterwards unless `--again` says otherwise.
+    """
+    out: dict[tuple[str, str], set] = {}
+    if not JOURNAL.is_file():
+        return out
+    for line in JOURNAL.read_text().splitlines():
+        if not line.strip() or line.startswith("#"):
+            continue
+        br, st, old, new = line.split("\t")
+        out.setdefault((br, st), set()).add((old, new))
+    return out
+
+
+def record_journal(branch: str, stage: str,
+                   live: list[tuple[str, str]]) -> None:
+    head = ("" if JOURNAL.is_file() else
+            "# rows sync_equ_rename.py has applied, one per line.\n"
+            "# branch\tstage\told\tnew   -- see load_journal()\n")
+    with JOURNAL.open("a") as fh:
+        if head:
+            fh.write(head)
+        for old, new in live:
+            fh.write(f"{branch}\t{stage}\t{old}\t{new}\n")
+
+
 def adopted(name: str, canonical: str) -> bool:
     """Has the canonical `.asm` actually taken this name?
 
@@ -192,6 +238,12 @@ def main() -> int:
     ap.add_argument("stage", nargs="?")
     ap.add_argument("branch", nargs="?", choices=sorted(PREFIX))
     ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--record-only", action="store_true",
+                    help="write the journal without touching a file, to "
+                         "adopt a table applied before the journal existed")
+    ap.add_argument("--again", action="store_true",
+                    help="re-apply rows the journal says are already done; "
+                         "needed only to repair a tree, never in normal use")
     ap.add_argument("--shared", action="store_true",
                     help="also rewrite the chunks no branch prefix claims, "
                          "for the pairs every branch has moved off")
@@ -223,6 +275,16 @@ def main() -> int:
     canon = SRC / args.branch / f"{args.stage}.asm"
     text = canon.read_text(errors="replace")
     live = [(o, n) for o, n in pairs if adopted(n, text)]
+
+    done = load_journal()
+    key = (args.branch, args.stage)
+    already = [(o, n) for o, n in live if (o, n) in done.get(key, set())]
+    if already and not args.again:
+        live = [(o, n) for o, n in live if (o, n) not in done.get(key, set())]
+        print(f"  skipping {len(already)} row(s) this table already applied "
+              f"to {args.branch}/{args.stage}; --again to force")
+        for o, n in already[:6]:
+            print(f"      done before: {o} -> {n}")
     print(f"{len(live)} of {len(pairs)} proposal(s) actually applied in "
           f"{canon.name}")
     if not live:
@@ -240,12 +302,16 @@ def main() -> int:
         if n:
             total += n
             touched += 1
-            if args.apply:
+            if args.apply and not args.record_only:
                 f.write_text(new)
     print(f"{'rewrote' if args.apply else 'would rewrite'} {total} token(s) "
           f"in {touched} {pre}-only chunk(s)")
     if args.shared:
-        shared_pass(args.stage, live, args.apply)
+        shared_pass(args.stage, live, args.apply and not args.record_only)
+    if (args.apply or args.record_only) and live:
+        record_journal(args.branch, args.stage, live)
+        print(f"  journalled {len(live)} row(s) for "
+              f"{args.branch}/{args.stage}")
     if not args.apply:
         print("(dry run)")
     return 0
