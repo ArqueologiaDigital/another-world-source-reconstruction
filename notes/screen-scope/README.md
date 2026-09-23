@@ -3,7 +3,9 @@
 | file | question it answers | command |
 | --- | --- | --- |
 | `screen_scope.py` | For every label in a stage, which values of `[SCREEN_NUM]` can it be entered under? | `python3 notes/screen-scope/screen_scope.py --stage CAVES` |
-| | Does the derivation agree with the routines a human already named for a screen? | `... --control` |
+| | Does the derivation agree with every routine whose name states a screen? | `... --control` |
+| | Which routines state a screen the dataflow contradicts? | `... --proposals` |
+| `screen_entry.py` | Which routines are a stage's per-screen entry points, and which chain dispatches them? | `python3 notes/screen-scope/screen_entry.py` |
 
 ## Why
 
@@ -126,3 +128,43 @@ python3 notes/screen-scope/screen_scope.py --control
 
 across all four branches, and it exits 0. That is 48 screen assignments a
 person made from other evidence, re-derived from the guards alone.
+
+## Using it: the per-screen entry routines
+
+Pinning a label to a screen says *which screen*, not *what it is*. For one
+shape it says both.
+
+Each big stage has a chain of `je [SCREEN_NUM], 0xNN, T` lines whose targets
+all do the same four things: write the camera bounds `[0x40]..[0x47]`, tear
+down the previous screen's channels, `setPalette`, and install the new
+screen's threads before drawing its backdrop. That is a screen transition,
+and each target is one screen's entry.
+
+The classification is measured. Across every chain of four or more
+consecutive `je [SCREEN_NUM]` lines in the tree, the fraction of targets
+writing a bounds variable is either **all of them or essentially none** —
+nine chains at 11/11, 50/50, 7/7, 11/11, 51/51, 41/41, 11/11, 51/51, 41/41,
+and the rest at 1/33, 0/11, 0/8, 0/6. There is no middle, so the 90% threshold
+this module uses is the same as any other. Teardown and palette corroborate
+without being required: on the nine, 274 of 274 targets write bounds, 271 tear
+down channels, 265 set a palette.
+
+Reassuringly, the two chains that already had human names —
+`CAVES_GROUND_MAP_DISPATCH` and `CAPSULE_FLOOR_LEVEL_SELECT_BY_HEIGHT` — fall
+on the negative side. They dispatch on the screen for other reasons and are
+not screen entries, exactly as their names say.
+
+```
+<STAGE>_SCREEN_<NN>_ENTRY          each target, NN from its own `je`
+<STAGE>_SCREEN_ENTRY_DISPATCH      the chain's owning label
+```
+
+`NN` is the machine's screen number, read from the comparison that selects the
+routine. A target is proposed only when `screen_scope.py` *independently*
+pins it to that one screen, so the `je` and the whole-graph reachability have
+to agree — 17 of the 274 failed that and were held back.
+
+**264 applied** on 2026-09-23. Afterwards `screen_entry.py` reports 257 of 274
+already named and nothing nameable, and `--control` rises from 48 to **303
+agree, 0 do not**, because every new name carries a screen the dataflow can
+check.
