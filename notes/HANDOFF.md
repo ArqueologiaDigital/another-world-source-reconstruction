@@ -26,7 +26,7 @@ As of the last commit:
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
 | priority-port assets named | 76.0% (7,708/10,147) | `asset_naming_share.py` |
-| `_AMIGA_EXTRA` constants left | 24 of 38; 2 wrong flips undone, 12 renamed from renders | `amiga-extra-suffix/deconflict_survivors.py` |
+| `_AMIGA_EXTRA` constants left | **0** of 38 | `amiga-extra-suffix/deconflict_survivors.py` |
 | pictures carrying two or more names | 73 amiga / 76 msdos of 2,530 / 2,552 named | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 48, blocking 250 drawing labels | `shared-bank-geometry/blocked_by_bank.py` |
@@ -260,19 +260,21 @@ for it whenever two draws share an anchor.
 
 ## Open work, roughly in order of value
 
-**0a. 23 names that a collision handed out, each one render from a verdict.**
-`amiga-extra-suffix/deconflict_survivors.py --verdict KEPT` lists them. Each is
-a polygon that never earned its base word; it only ever collided with something
-that did, and the collision handler renamed *it* rather than judging the
-pictures. `asset_naming_share.py` counts all 35 as named. Two of the 38 have
-already been proved wrong this way and the same method finishes the rest:
-render the constant at its routine's palette and either confirm the base word
-or replace it. `EXPERIMENT_LIGHTNING_F23..F28_AMIGA_EXTRA` was the first batch
-worked this way and the base word did not survive: they are a second
-accelerator-tunnel pulse, now `..._PULSE_FAR_F0..F5`. That is 2 wrong flips and
-12 wrong labels out of 38 so far, and **the share does not move when one is
-fixed** -- `asset_naming_share.py` counted them as named all along, which is
-what makes this list worth working.
+**0a. Done: the `_AMIGA_EXTRA` list is empty.** 38 constants, every one
+rendered at the palette `render-and-name/palette_in_force.py` reports for its
+drawing routine. Two were wrong flips and went back; twelve more had a base
+word the render refused and were renamed; the rest were the two pulse-far and
+soda runs and one shared lamp. Of the twelve, four turned out to complete
+families already in the tree with a slot missing -- a 12-byte sheet stride whose
+only two gaps were the two suffixed constants, three pictures sharing a bounding
+box to the half-pixel, a four-corner 22-byte stride with one corner unnamed, and
+a four-tile scroll loop two of whose tiles were still numbers.
+
+The lesson generalises past this list: **`asset_naming_share.py` counted all 38
+as named throughout**, so the percentage never moved while fourteen names were
+being corrected. A name that no one has checked costs nothing in the measure and
+everything in the tree. The same question can be asked of any name whose only
+provenance is a mechanical transfer.
 
 **0b. Keep the render-and-name batches going.** It is the only method still
 producing names on its own: `nameable_from_drawer.py` reports 1,

@@ -134,6 +134,7 @@ checked against the receiving port's own guards.
 | CAVES 452/453/470/471, 472..474/491..493 | (msdos twins) | `CINEMATIC_CAVES_HERO_SWIM_HEAD_{UP,DOWN}_{RIGHT,LEFT}_*` | high |
 | INTRO 243, 246, 247, 250..260 | 249, 252, 253, 256..266 | `CINEMATIC_ACCELERATOR_TUNNEL_{VIEW_NEAR,PULSE_NEAR_F0..F14}` | high |
 | INTRO `EXPERIMENT_LIGHTNING_F23..F28_AMIGA_EXTRA` | (same names) | `CINEMATIC_ACCELERATOR_TUNNEL_PULSE_FAR_F0..F5` | high |
+| INTRO 12 `_AMIGA_EXTRA` leftovers + 505, 506 | 10 twins | `..._SODA_CAN_F{3,7}`, `HOLO_SCREEN_PANEL_FRAME_F0`, `..._CUBE_CORNER_BOTTOM_RIGHT`, `LIFT_SHAFT_SCROLL_BAND_F0..F3`, `LAB_AUTH_CRT_OVERLAY_STAMP`, `LAB_DOOR_SCENE_LAMP`, `LESTER_STANDING_BACK_TO_CAMERA`, `BIOMETRIC_SCANNER_CONSOLE_DETAIL`, `SODA_SCENE_BACKDROP`, `HOLO_CONSOLE_ROOM_BACKDROP` | high/medium |
 | INTRO 268..276 | 274..282 | `CINEMATIC_FRAGMENTS_RECEDING_F0..F8` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
@@ -337,6 +338,29 @@ all 72 rows across three branches with 0 rejected.
 Four rows per table are not rungs and carry hand-written evidence: the
 backdrop painter, the frame routine, the join after the pupil ladder, and the
 frame tail.
+
+## `palette_in_force.py` -- the first thing to get right
+
+Rendering at the wrong palette has cost this directory a whole run: a batch sat
+in the held list as "unreadable" because it had been rendered at palette 0
+instead of the 0x16 its own routine sets. The palette was being found by
+reading the listing backwards by hand, once per batch.
+
+```
+$ python3 notes/render-and-name/palette_in_force.py --branch chahi_amiga_1991 \
+      --stage INTRO --const CINEMATIC_LIFT_DOORS_OPENING_F33_AMIGA_EXTRA
+      routine  LIFT_SHAFT_SCROLL_LOOP  (line 3234), draw at line 3236
+      PRECEDING    0x06  = --palette 6   (line 3132) -- file order, not control flow
+```
+
+It reports up to three sources and never conflates them: a `setPalette` **in
+the same routine** before the draw, a `setup channel=..., address=SET_PALETTE_*`
+**installed** by it, and the nearest `setPalette` **preceding in file order**,
+which is a guess and says so. When two agree, that agreement is the check --
+it is what settled 0x18 for `FILL_PAGE_FF_COLOR_8_ONCE`.
+
+`--all-suffixed` does a whole batch at once, and both hex and decimal are
+printed because the bytecode is written in hex and the renderer takes decimal.
 
 ## `compose_run.py` -- looking at a frame where the engine puts it
 
