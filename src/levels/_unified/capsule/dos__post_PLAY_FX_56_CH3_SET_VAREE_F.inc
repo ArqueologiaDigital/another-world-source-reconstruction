@@ -56,11 +56,11 @@ LABEL_09FB:
 	break
 	break
 	break
-	video offset=CINEMATIC_231, x=176, y=90
+	video offset=CINEMATIC_CAPSULE_DIAGONAL_TRAIL_F2, x=176, y=90
 	break
-	video offset=CINEMATIC_229, x=211, y=125
+	video offset=CINEMATIC_CAPSULE_DIAGONAL_TRAIL_F0, x=211, y=125
 	break
-	video offset=CINEMATIC_231, x=114, y=28
+	video offset=CINEMATIC_CAPSULE_DIAGONAL_TRAIL_F2, x=114, y=28
 	break
 	break
 	jmp LABEL_09FB

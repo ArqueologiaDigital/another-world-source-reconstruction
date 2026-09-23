@@ -27,23 +27,23 @@ LABEL_181A:
 	db 0x11
 
 LABEL_181B:
-	video offset=CINEMATIC_125, x=160, y=[0xe7]
+	video offset=CINEMATIC_WIDE_FLASH_F0, x=160, y=[0xe7]
 	break
-	video offset=CINEMATIC_126, x=160, y=[0xe7]
+	video offset=CINEMATIC_WIDE_FLASH_F1, x=160, y=[0xe7]
 	break
-	video offset=CINEMATIC_127, x=160, y=[0xe7]
+	video offset=CINEMATIC_WIDE_FLASH_F2, x=160, y=[0xe7]
 	break
-	video offset=CINEMATIC_128, x=160, y=[0xe7]
+	video offset=CINEMATIC_WIDE_FLASH_F3, x=160, y=[0xe7]
 	killChannel
 
 LABEL_1833:
-	video offset=CINEMATIC_125, x=160, y=[0xe8]
+	video offset=CINEMATIC_WIDE_FLASH_F0, x=160, y=[0xe8]
 	break
-	video offset=CINEMATIC_126, x=160, y=[0xe8]
+	video offset=CINEMATIC_WIDE_FLASH_F1, x=160, y=[0xe8]
 	break
-	video offset=CINEMATIC_127, x=160, y=[0xe8]
+	video offset=CINEMATIC_WIDE_FLASH_F2, x=160, y=[0xe8]
 	break
-	video offset=CINEMATIC_128, x=160, y=[0xe8]
+	video offset=CINEMATIC_WIDE_FLASH_F3, x=160, y=[0xe8]
 	killChannel
 	mov [0xE6], 0x001E
 

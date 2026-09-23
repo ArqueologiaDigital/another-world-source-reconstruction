@@ -254,23 +254,23 @@ LABEL_16B8:
 	jmp LABEL_16B8
 
 LABEL_171F:
-	video offset=CINEMATIC_229, x=[0xea], y=157
+	video offset=CINEMATIC_CAPSULE_DIAGONAL_TRAIL_F0, x=[0xea], y=157
 	play id=0x0052, freq=0x1C, vol=0x40, channel=0x01
 	break
-	video offset=CINEMATIC_230, x=[0xea], y=157
+	video offset=CINEMATIC_CAPSULE_DIAGONAL_TRAIL_F1, x=[0xea], y=157
 	break
-	video offset=CINEMATIC_231, x=[0xea], y=157
+	video offset=CINEMATIC_CAPSULE_DIAGONAL_TRAIL_F2, x=[0xea], y=157
 	break
-	video offset=CINEMATIC_232, x=[0xea], y=157
+	video offset=CINEMATIC_CAPSULE_DIAGONAL_TRAIL_F3, x=[0xea], y=157
 	killChannel
 
 LABEL_173D:
-	video offset=CINEMATIC_229, x=[0xeb], y=157
+	video offset=CINEMATIC_CAPSULE_DIAGONAL_TRAIL_F0, x=[0xeb], y=157
 	play id=0x0052, freq=0x18, vol=0x40, channel=0x00
 	break
-	video offset=CINEMATIC_230, x=[0xeb], y=157
+	video offset=CINEMATIC_CAPSULE_DIAGONAL_TRAIL_F1, x=[0xeb], y=157
 	break
-	video offset=CINEMATIC_231, x=[0xeb], y=157
+	video offset=CINEMATIC_CAPSULE_DIAGONAL_TRAIL_F2, x=[0xeb], y=157
 	break
-	video offset=CINEMATIC_232, x=[0xeb], y=157
+	video offset=CINEMATIC_CAPSULE_DIAGONAL_TRAIL_F3, x=[0xeb], y=157
 	killChannel

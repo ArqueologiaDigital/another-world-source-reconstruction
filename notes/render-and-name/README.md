@@ -114,6 +114,8 @@ checked against the receiving port's own guards.
 | CAPSULE CINEMATIC_388..393 | (msdos twins) | `CINEMATIC_CAPSULE_BEAM_ENDS_F0..F5` | medium |
 | CAPSULE CINEMATIC_400..406 | amiga only, see below | `CINEMATIC_CAPSULE_BEAM_COLUMN_F0..F6` | medium |
 | CAPSULE CINEMATIC_356..365 | (msdos twins) | `CINEMATIC_CAPSULE_DISTANT_WALK_F0..F9` | high |
+| CAPSULE CINEMATIC_407..410 | (msdos twins) | `CINEMATIC_CAPSULE_DIAGONAL_TRAIL_F0..F3` | medium |
+| CAPSULE CINEMATIC_125..128 | (msdos twins; CAVES held) | `CINEMATIC_WIDE_FLASH_F0..F3` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
