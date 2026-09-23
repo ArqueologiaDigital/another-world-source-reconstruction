@@ -67,10 +67,20 @@ for it whenever two draws share an anchor.
    why they stalled.
 4. **60 amiga / 59 msdos pictures with multiple names.** Reported, not
    reconciled, per #0120. 49 have the shape of one family named twice.
-5. **`genesis_europe` is not covered by `undefined_symbols.py`.** Its
-   `BRANCHES` list has four entries and genesis is a real verify target. This
-   has already bitten once: a rename passed the probe and moved bytes for
-   genesis. Fix is a one-line list edit plus a re-run.
+5. ~~**`genesis_europe` is not covered by `undefined_symbols.py`.**~~
+   **Wrong — checked 2026-09-23 and corrected.** `BRANCH` is only ever
+   compared against the four branch directory names; `snes_eu` and
+   `genesis_europe` are two verify TARGETS built from one branch,
+   `cartridge_1992`, and they assemble identical text. The four-entry list
+   already covers all five targets.
+
+   The rename that did move genesis bytes was a **redefinition** — two EQUs
+   for one name — and the probe was blind to it for a different reason:
+   `defs` was a `set`, so a symbol defined twice looked exactly like a symbol
+   defined once. That check now exists. It grades severity: different values
+   are an error, same value is a warning, because 30 same-value redundancies
+   are already in the tree and failing on them would make the probe useless
+   as a pre-`make test` gate. See `--redundant`.
 6. **Jump sheets held** (13 frames per direction): CAVES says JUMP,
    LAKE/CAPSULE say WALK/RUN for identical X steps, and neither writes
    `HERO_Y`. Needs a tiebreak that is not the existing names.

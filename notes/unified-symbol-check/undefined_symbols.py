@@ -25,9 +25,28 @@ The per-branch walk is the point: a name defined only inside
 for everyone else, which is precisely the failure this exists to catch and is
 invisible to any whole-file grep.
 
+What it checks
+--------------
+Two opposite failures, both of which assemble silently:
+
+  * a reference with **no** definition in that branch's view;
+  * a symbol defined **more than once** in that view. `defs` used to be a
+    plain set, so a redefinition was invisible here -- and one really did
+    slip through, two EQUs for the same name in `cart__entry.inc`, moving the
+    cartridge target's bytes while this probe reported everything defined.
+    Same value or different, both are reported; different values are the ones
+    that move bytes.
+
+A note on branches: `BRANCH` is only ever compared against the four branch
+directory names. `snes_eu` and `genesis_europe` are two verify TARGETS built
+from one branch, `cartridge_1992`, and they assemble identical text -- so
+walking the four branches already covers all five targets. An earlier note
+claimed genesis_europe was uncovered; it is not, and the real gap was the
+missing redefinition check above.
+
 Exit status
 -----------
-1 if any branch references an undefined symbol, 0 otherwise. Run it after any
+1 if any branch has an undefined reference or a redefinition, 0 otherwise. Run it after any
 rename that touches the unified tree, BEFORE `make test` -- it localises in
 seconds what the byte gate only flags in aggregate.
 
@@ -54,7 +73,7 @@ RE_IF = re.compile(r'^\s*\.if\s+(.*)$')
 RE_ELIF = re.compile(r'^\s*\.elif\s+(.*)$')
 RE_ELSE = re.compile(r'^\s*\.else\b')
 RE_END = re.compile(r'^\s*\.endif\b')
-RE_EQU = re.compile(r'^\s*([A-Za-z_][A-Za-z0-9_]*)\s+EQU\b')
+RE_EQU = re.compile(r'^\s*([A-Za-z_][A-Za-z0-9_]*)\s+EQU\b(.*)$')
 RE_LBL = re.compile(r'^([A-Za-z_][A-Za-z0-9_]*):')
 RE_REF = re.compile(r'(?:offset=|address=|\b(?:jmp|call|je|jne|jg|jge|jl|jle|'
                     r'djnz|setvec)\s+(?:\[[^\]]*\]\s*,\s*[^,]+,\s*)?)'
@@ -80,7 +99,18 @@ def cond(expr: str, br: str) -> bool:
     return True
 
 
-def walk(path: Path, br: str, seen: set, defs: set, refs: dict):
+def walk(path: Path, br: str, seen: set, defs: set, refs: dict,
+         sites: dict | None = None):
+    """`sites` collects EVERY definition, not just the set of names.
+
+    `defs` is a set, so a symbol defined twice looks exactly like a symbol
+    defined once and this probe reported nothing. That is not hypothetical:
+    a rename once left two `CINEMATIC_CAVES_WATERFALL_LEFT_STAIRS_BG` EQUs in
+    `cart__entry.inc`, the cartridge target's bytes moved, verify dropped to
+    28/29, and this probe said "every symbol is defined" -- correctly, and
+    uselessly. A redefinition is the opposite failure from a missing
+    definition and needs its own signal.
+    """
     if not path.is_file() or path in seen:
         return
     seen.add(path)
@@ -107,15 +137,20 @@ def walk(path: Path, br: str, seen: set, defs: set, refs: dict):
             continue
         m = RE_INC.match(line)
         if m:
-            walk((path.parent / m.group(1)).resolve(), br, seen, defs, refs)
+            walk((path.parent / m.group(1)).resolve(), br, seen, defs, refs, sites)
             continue
         m = RE_EQU.match(line)
         if m:
             defs.add(m.group(1))
+            if sites is not None:
+                sites.setdefault(m.group(1), []).append(
+                    (path.name, n, m.group(2).strip()))
             continue
         m = RE_LBL.match(line)
         if m:
             defs.add(m.group(1))
+            if sites is not None:
+                sites.setdefault(m.group(1), []).append((path.name, n, None))
             continue
         for sym in RE_REF.findall(line):
             if not BUILTIN.match(sym):
@@ -125,10 +160,14 @@ def walk(path: Path, br: str, seen: set, defs: set, refs: dict):
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--stage", action="append")
+    ap.add_argument("--redundant", action="store_true",
+                    help="list the same-value duplicate "
+                         "definitions, not just count them")
     args = ap.parse_args()
     stages = args.stage or STAGES
 
     bad = 0
+    redundant = 0
     for stage in stages:
         top = UNI / f"{stage}.asm.in"
         if not top.is_file():
@@ -137,7 +176,30 @@ def main() -> int:
             if not (SRC / br / f"{stage}.asm").is_file():
                 continue
             defs, refs = set(), {}
-            walk(top, br, set(), defs, refs)
+            sites: dict = {}
+            walk(top, br, set(), defs, refs, sites)
+            dupes = sorted((s, v) for s, v in sites.items() if len(v) > 1)
+            for sym, where in dupes:
+                vals = {w[2] for w in where}
+                # Different values MOVE BYTES -- that is the historical bug
+                # and it is an error. Same value does not move a byte today,
+                # but it is the state that bug starts from: rename one twin
+                # and miss the other and the values diverge. Warn, do not
+                # fail, or this probe stops being usable as a pre-`make test`
+                # gate over the 30 redundancies already in the tree.
+                if len(vals) > 1:
+                    bad += 1
+                    tag = f"ERROR: {len(vals)} DIFFERENT values"
+                else:
+                    redundant += 1
+                    if not args.redundant:
+                        continue
+                    tag = "redundant: same value twice"
+                print(f"\n{stage} / {br}: {sym} defined "
+                      f"{len(where)} times, {tag}")
+                for f, ln, val in where:
+                    print(f"    {f}:{ln}" + (f"   EQU {val}" if val else
+                                             "   (label)"))
             missing = sorted(s for s in refs if s not in defs)
             if missing:
                 bad += len(missing)
@@ -147,10 +209,17 @@ def main() -> int:
                     print(f"    {s:<46} first referenced {f}:{n}")
                 if len(missing) > 12:
                     print(f"    ... and {len(missing) - 12} more")
-    print("\n" + (f"{bad} undefined reference(s) -- these assemble silently "
-                  f"and move bytes" if bad else
+    if redundant:
+        print(f"\n{redundant} symbol(s) are defined twice with the SAME "
+              f"value. No byte moves today; rename one twin and miss the "
+              f"other and one will.\n"
+              f"    python3 notes/unified-symbol-check/undefined_symbols.py "
+              f"--redundant")
+    print("\n" + (f"{bad} problem(s) -- these assemble silently and move "
+                  f"bytes" if bad else
                   "Every symbol referenced in the unified tree is defined for "
-                  "the branch that reads it."))
+                  "the branch that reads it, and no definition disagrees with "
+                  "a twin."))
     return 1 if bad else 0
 
 
