@@ -48,10 +48,31 @@ that the cartridge baseline is reached through a *relative* root and only
 resolves from the archaeology repo. Run cartridge appliers from there. The
 message now says which case it hit.
 
-**Still open from this pass:** the 465 draw-only labels whose picture is still
-unnamed — each becomes free the moment its constant is named, so the asset
-work unlocks the routine work. Re-run `label_vs_constant.py` after any asset
-batch.
+**Every drawer-side seam is now measured and worth 0.** The ledger is in
+`notes/sole-named-drawer/README.md`: sole named drawer 0, the one-hop through
+an unnamed stub 0, the same hop for `--animations` 0, dispatch ladders 19, art
+named in another stage ~38, art named in the other port for the same stage 22.
+What remains is **1,655 pictures numbered in *both* priority ports with
+identical art** — 667 CAVES, 511 PRISON, 403 CAPSULE — which nothing in the
+call graph distinguishes.
+
+**So start from `notes/remaining-art/by_anchor.py`**, which sorts that backlog
+by how each picture is anchored, because the classes need different evidence:
+1152 at a fixed literal `x,y` (scenery, the class with no method yet), 1534 at
+an actor/prop slot, 788 at the hero slot, 228 mixed.
+
+**The one concrete lead inside it:** 42 routines are `fill` + layers at one
+anchor — backdrops. Six already carry their screen in the label, and
+`by_anchor.py --proposals` turns that into names for the layers exclusive to
+that screen (4 applied 2026-09-23). The other 36 need the screen, which is a
+multi-hop reachability problem: the label's hex token is **not** the screen
+(0 of 54 match a `[SCREEN_NUM]` guard), the call site does not carry it, and
+there is no single dispatcher — `[SCREEN_NUM]` is compared 182 times across 52
+values in CAVES alone. Solving that unlocks the largest class.
+
+**Also still open:** the 465 draw-only labels whose picture is unnamed — each
+becomes free the moment its constant is named, so the asset work unlocks the
+routine work. Re-run `label_vs_constant.py` after any asset batch.
 
 ## The method that worked, in one paragraph
 
