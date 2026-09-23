@@ -5,6 +5,7 @@
 | file | question it answers | command |
 | --- | --- | --- |
 | `label_vs_constant.py` | Which labels do nothing but draw one already-named picture, and so can take its name? And which semantic labels disagree with the picture they draw? | `python3 notes/draw-label-follows-constant/label_vs_constant.py` |
+| `footstep_frames.py` | The label families this pass created have interior gaps. What is in the holes? | `python3 notes/draw-label-follows-constant/footstep_frames.py` |
 
 `--proposals` emits one `apply_routine_renames.py` table per (branch, stage);
 `--branches` limits the scan.
@@ -142,3 +143,50 @@ walk frame that both finish on the same shadow — and they cannot both take its
 name. Choosing between them is not this module's call (#0120), so neither is
 proposed and both are listed under "the derived name is not free". The same
 applies when the derived name already exists in the file.
+
+## The gaps this pass created, and why they stay
+
+Applying the 210 renames took `../family-gaps/routine_family_gaps.py` from the
+73 gapped routine families `../HANDOFF.md` recorded to **86**. 21 of the new
+families have an interior gap:
+
+```
+CAVES_DRAW_HERO_RUN_LEFT_BODY_<n>    1 2 3 4 _ 6 7 8 9     (no 0, no 5)
+CAVES_DRAW_HERO_WALK_LEFT_BODY_<n>   0 1 2 3 4 _ 6 ... 12 _ 14
+CAVES_DRAW_LASER_IMPACT_ANIM_RIGHT   0 _ _ 3
+```
+
+`docs/NAMING.md` bars gaps in a family's index run, so this needs an answer,
+and the answer is **not** to renumber them densely. These indices are
+*inherited* from the constant each label draws, never assigned by a namer.
+Renumbering would make `CAVES_DRAW_HERO_RUN_LEFT_BODY_4` draw frame 6 — which
+is exactly the off-by-one that `../laser-impact-anim/` exists to document.
+
+`footstep_frames.py` asks what is actually in the holes, and the answer is the
+same one every time:
+
+```
+amiga  CAVES  RUN   stubs [1, 2, 3, 4, 6, 7, 8, 9]
+                    excluded {0: 'play 0x0060', 5: 'play 0x0060'}
+amiga  CAVES  WALK  stubs [0..4, 6..12, 14]
+                    excluded {5: 'play 0x0060', 13: 'play 0x0060'}
+```
+
+Every excluded frame plays sound `0x0060`, and nothing else is ever in a hole.
+That is the footstep: the run cycle steps on frames **0 and 5** of ten — the
+same pair `../actor-sprite-sheet/` derived independently from the gait geometry
+— and the walk cycle on **5 and 13** of fifteen. Two steps per cycle, evenly
+spaced, both gaits, both ports.
+
+So the gaps are not missing names. They are where the foot lands, and the rule
+that made them is what makes them visible. The probe exits 1 if a hole ever
+turns out to be a frame whose drawer does *not* play a sound, because then this
+reasoning would no longer cover it.
+
+One asymmetry, reported and not explained: `PRISON/WALK` has no exclusions in
+either port. All fifteen frames are pure draws, and PRISON's walking hero makes
+no footstep sound where CAVES' and CAPSULE's do.
+
+The `LASER_IMPACT` families are the other shape — only the frames that sat
+behind a fallthrough label ever had a stub to rename, so 0 and 3 are simply the
+two that existed.
