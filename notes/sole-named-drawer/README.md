@@ -212,3 +212,52 @@ which now reports **75 skipped: name ends in a comparison threshold, not an
 index**, and is left with 4 proposals — all four themselves arms of a CAPSULE
 ladder named `_PHASE_1` and `_PHASE_4` with no 2 or 3, which is the same shape
 of hole and is treated in `../laser-impact-anim/`.
+
+## `--hop`: a lever that looked worth 93 names and is worth 0
+
+The main rule needs the sole drawer to carry a semantic name. Counting what it
+turns away, the largest class by far is a sole drawer that is an **unnamed
+stub** — a bare `LABEL_<hex>` that draws one picture and rets. If such a stub
+has exactly one reference and that reference is a named routine, the name
+looks like it should hop across the `call`:
+
+```
+CAVES_SHAFT_DESCENT_STAGE_CASE_06:
+        ...
+        call LABEL_2693
+LABEL_2693:
+        video offset=CINEMATIC_674, ...
+```
+
+Counted that way there are **93** of them, and every one is wrong.
+
+The direct rule gets two conditions for free that the hop has to ask for
+explicitly, and both were being skipped:
+
+**The stub must draw one picture.** A constant having a single drawer does not
+give that. `LABEL_2693` above is the sole drawer of `CINEMATIC_674`, `675`,
+`676`, `677` *and* `678` — one stub, five pictures, one caller. Without the
+test, all five collected the same name, and the first run of `--hop` proposed
+`CINEMATIC_CAVES_SHAFT_DESCENT_STAGE_CASE_06` twenty-one times.
+
+**The caller must put one picture on screen.** A routine that delegates to
+three stubs draws three pictures, and handing each of them the caller's name
+gives one name to a family.
+
+With both tests in, in msdos/CAVES: 18 candidates pass the naive test, 9 are
+rejected because the stub draws more than one picture, 9 because the caller
+puts more than one on screen, and **0 survive**. Tree-wide the same: 42 and
+89 rejected, 0 proposed.
+
+```
+python3 notes/sole-named-drawer/nameable_from_drawer.py --hop
+```
+
+The code is kept rather than deleted because the negative result is the useful
+part: the stub indirection is not an untapped seam, it is mostly *one stub
+serving a whole run of frames*, and a run needs the ladder or sequence
+treatment in `../laser-impact-anim/`, not a name copied across one `call`.
+
+This is also why the scouting number and the real number differ by 93. A count
+taken before the exclusivity conditions are written down is a count of
+candidates, not of names.

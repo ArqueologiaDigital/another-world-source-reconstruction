@@ -186,6 +186,22 @@ RE_HEXTAIL = re.compile(r"_[0-9A-F]*[A-F][0-9A-F]*$")
 # numbers and "over" is compositing, not comparison.
 RE_THRESHOLD = re.compile(r"_(ABOVE|UPTO|BELOW)_[0-9A-F]+$")
 
+# --hop: the sole drawer is an unnamed stub, and the stub has one named
+# caller. 250 pictures have a semantic sole drawer and are handled by the
+# main rule; 2,383 have a sole drawer that is an unnamed stub, and of those
+# 93 have exactly one reference and it is semantic.
+#
+# The hop needs a condition the direct rule gets for free. The direct rule
+# requires the namer to draw exactly ONE numbered constant, which is what
+# makes the name a name for that picture. A caller that delegates to three
+# stubs draws three pictures, and giving each of them the caller's name
+# would hand one name to a family. So the caller must reach exactly one
+# stub, counting its own draws too: the picture it ends up with must be the
+# only picture it puts on screen.
+RE_REF = re.compile(r"\b(?:call|jmp|je|jne|jl|jle|jg|jge)\s+"
+                    r"(?:\[[^\]]+\],\s*[^,]+,\s*)?"
+                    r"([A-Za-z_][A-Za-z0-9_]*)\s*$")
+
 
 # A namer strips the words that describe the routine's plumbing rather than
 # its subject, so the derived constant base is not the routine name verbatim.
@@ -234,6 +250,11 @@ def main() -> int:
                     help="the second, weaker rule: a named routine whose "
                          "WHOLE draw set is unnamed and exclusive to it, "
                          "split by whether the anchor is fixed")
+    ap.add_argument("--hop", action="store_true",
+                    help="also name a picture whose sole drawer is an "
+                         "unnamed stub with exactly one reference, and that "
+                         "reference is a semantic routine reaching no other "
+                         "stub")
     ap.add_argument("--proposals", type=Path)
     ap.add_argument("--port", action="append", choices=sorted(PORTS))
     args = ap.parse_args()
@@ -277,6 +298,50 @@ def main() -> int:
             for const, labs in drawn.items():
                 if len(labs) == 1 and classify(next(iter(labs))) == "semantic":
                     pool.append((port, stage, const, next(iter(labs))))
+
+            # stub -> the labels that reference it, and caller -> stubs it
+            # reaches, so the "reaches exactly one stub" test is cheap.
+            refs: dict[str, set[str]] = collections.defaultdict(set)
+            for lab, body in bodies.items():
+                for line in body:
+                    if m := RE_REF.search(line):
+                        refs[m.group(1)].add(lab)
+            hop: dict[str, tuple[str, str]] = {}
+            reaches: dict[str, set[str]] = collections.defaultdict(set)
+            if args.hop:
+                for const, labs in drawn.items():
+                    if len(labs) != 1:
+                        continue
+                    stub = next(iter(labs))
+                    if classify(stub) == "semantic":
+                        continue
+                    callers = refs.get(stub, set())
+                    if len(callers) != 1:
+                        continue
+                    caller = next(iter(callers))
+                    if classify(caller) != "semantic":
+                        continue
+                    # The stub must draw ONE picture. A constant having a
+                    # single drawer does not give this: CAVES' LABEL_2693 is
+                    # the sole drawer of CINEMATIC_674..678, so without this
+                    # test all five collected the one caller's name.
+                    stub_draws = {m.group(1)
+                                  for line in bodies.get(stub, [])
+                                  for m in RE_DRAW.finditer(line)}
+                    if len(stub_draws) != 1:
+                        skipped["hop: the stub draws more than one "
+                                "picture"] += 1
+                        continue
+                    hop[const] = (stub, caller)
+                    reaches[caller].add(stub)
+                for const, (stub, caller) in list(hop.items()):
+                    own = [m.group(1)
+                           for line in bodies.get(caller, [])
+                           for m in RE_DRAW.finditer(line)]
+                    if len(reaches[caller]) != 1 or own:
+                        del hop[const]
+                        skipped["hop: the caller puts more than one picture "
+                                "on screen"] += 1
             for lab, body in bodies.items():
                 if classify(lab) != "semantic":
                     continue
@@ -308,6 +373,39 @@ def main() -> int:
                        if lab.endswith("_DRAW") else derived_base(lab))
                 if new in bodies or new in drawn or new in equ_names:
                     skipped["derived name already taken"] += 1
+                    continue
+                rows.append((port, stage, const, new))
+
+            # Two constants in one stage must never collect one derived
+            # name. The exclusivity tests should make that impossible; this
+            # catches it if a future rule loosens one of them.
+            here = collections.Counter(
+                n for prt, stg, _c, n in rows if (prt, stg) == (port, stage))
+
+            for const, (stub, caller) in sorted(hop.items()):
+                if any(t in caller for t in MECHANISM) or \
+                        RE_RAWINDEX.search(caller):
+                    skipped["name denotes a mechanism, not a subject"] += 1
+                    continue
+                if RE_HEXTAIL.search(caller):
+                    skipped["name ends in a raw hex token (§1)"] += 1
+                    continue
+                if RE_THRESHOLD.search(caller):
+                    skipped["name ends in a comparison threshold, not an "
+                            "index"] += 1
+                    continue
+                if any(at_slot(line) for line in bodies.get(stub, [])):
+                    skipped["draws at the actor slot (#0138)"] += 1
+                    continue
+                new = ("CINEMATIC_" + caller[:-len("_DRAW")]
+                       if caller.endswith("_DRAW") else derived_base(caller))
+                if new in bodies or new in drawn or new in equ_names:
+                    skipped["derived name already taken"] += 1
+                    continue
+                here[new] += 1
+                if here[new] > 1:
+                    skipped["two pictures would collect one derived "
+                            "name"] += 1
                     continue
                 rows.append((port, stage, const, new))
 
