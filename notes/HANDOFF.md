@@ -82,6 +82,23 @@ As of the last commit:
 | annotations nobody has opened | 0 | same |
 | PRISON constant-frames of screen time still unnamed (msdos, cold 400-frame run) | 1874 across 41 constants | `on-screen-priority/seen_unnamed.mjs` |
 | most-seen unnamed PRISON constant vs most-seen named one | 284 frames vs 96 | same, and `--named` |
+| beam-ladder alternate-set slots still numbered | 34 of 36 | `beam-span-ladder/rung_thresholds.py` |
+
+## Held, added 2026-09-23: the beam ladder's second set
+
+34 constants across PRISON, CAVES and CAPSULE in three ports, all the alternate
+pair at the ladder's two longest rungs, chosen by `jge [0x12], 0x2000`. Measured:
+same single polygon, same widths (126 and 62), one pixel tall, differing only in
+colour index -- 15 for the named set, 13 for these -- without exception in all
+three msdos stages.
+
+**What would settle it:** what the colour change means to a player. `[0x12]` is
+not the span, its low bits carry a small magnitude and 0x2000 is a flag packed
+beside them, and the sites setting the flag disagree between stages (CAPSULE
+after `mov [BUDDY_X], 0x000F`, CAVES after `CAVES_BEAST_PER_FRAME_TICK`), so no
+subject word is earned from the listing. Someone firing in
+`tools/vm-debugger/` and describing what changes would settle all 34 at once.
+Full measurement in `notes/beam-span-ladder/README.md`.
 
 ## Added 2026-09-23, INTRO session
 
