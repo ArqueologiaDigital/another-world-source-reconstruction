@@ -25,7 +25,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 69.1% (7,016/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 70.2% (7,120/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 73 amiga / 76 msdos of 2,530 / 2,552 named | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 48, blocking 250 drawing labels | `shared-bank-geometry/blocked_by_bank.py` |
@@ -236,10 +236,23 @@ for it whenever two draws share an anchor.
 ## Open work, roughly in order of value
 
 **0. Keep the render-and-name batches going.** It is the only method still
-producing names: `nameable_from_drawer.py` reports 1, `transfer_by_art.py`
-reports 0, `align_draw_sites.py` reports 0 after each batch is carried across.
-PRISON is down from 135 still-numbered pictures >=24x24 to about 70; CAVES and
-CAPSULE are untouched this session. The loop that works:
+producing names on its own: `nameable_from_drawer.py` reports 1,
+`transfer_by_art.py` and `align_draw_sites.py` report 0 after each batch is
+carried across. PRISON is down from 135 still-numbered pictures >=24x24 to 30.
+
+**Work the runs, not the sizes.** `sheet.py --list` is ordered biggest first
+and that is the wrong order: the biggest things left are screen backdrops,
+which are the hardest to name honestly. `frame_runs.py` finds what a routine
+plays as a straight-line animation, which is where every `high` this session
+came from:
+
+    python3 notes/render-and-name/frame_runs.py --stage CAVES --min 4 --stages
+
+`--stages` reports whether the run's art is in another stage, so the name gets
+its scope **before** it is written. Its control is `11 of 19` -- read the
+module docstring before trusting a run to be one family.
+
+The loop that works:
 
     python3 notes/render-and-name/sheet.py --stage PRISON --list
     # pick a routine that draws several of them; read its body
@@ -252,9 +265,29 @@ CAPSULE are untouched this session. The loop that works:
     python3 notes/cross-port-art/transfer_by_art.py --proposals > <dos table>
     # ... apply + sync that too, then undefined_symbols.py and make test
 
-The palette matters. PRISON's wake closeup reads as a blue eye at palette 0
-and as a brown-irised face at 0x0B, which is what the scene sets two lines
-before the first draw.
+The palette matters, twice over. PRISON's wake closeup reads as a blue eye at
+palette 0 and as a brown-irised face at 0x0B, which is what the scene sets two
+lines before the first draw. CAVES' `CINEMATIC_CAVES_CRACK_SPREAD_*` is a
+monochrome scribble at palette 0 and resolves at 0x05 into two populations --
+dark slivers and white-in-blue flashes -- that the fill counts then separate
+without any judgement at all.
+
+**Held, with what would settle each:**
+
+* `LABEL_3CD9` / `LABEL_3813` in CAVES, 22 constants: an exact mirror pair of
+  11-frame runs, drawn on channel 0x16 alongside the hero's idle. Thin bars at
+  foot level that shorten, extend and then fold into a shallow V. Rendered at
+  palette 0 they are unreadable; the palette its `setup` site runs under has
+  not been traced. **Trace it and re-render** before naming.
+* `CINEMATIC_134` and `CINEMATIC_280` in PRISON: white bodies in blue edges,
+  five paths, the `XRAY_FLASH` treatment and the lunge's 34.0 height, but
+  neither width nor signed box matches the lunge. **Find the pose they
+  flash.**
+* PRISON's 28 copies of `CINEMATIC_TUMBLING_CHUNK_*`:
+  `transfer_across_stages.py` holds them as "referenced from an all-branch
+  chunk". Renaming for the priority ports alone would leave cartridge and gba
+  defining the old spelling under a chunk they share. **Needs all four
+  branches at once**, and cartridge art cannot be rendered (#0106).
 
 0a. **Naming from a render is live, under explicit approval, and has its own
    directory.** `notes/render-and-name/` holds every name derived by looking
