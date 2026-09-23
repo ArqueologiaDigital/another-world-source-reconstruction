@@ -284,3 +284,59 @@ assumed:
 | `HERO_RUN_LEFT_ARM` | F04 | that frame draws no arm when unarmed |
 
 `make test` 29/29 and 29/29 after each.
+
+## The standing aim pose, and the six still held
+
+Nine of the 77 shared-bank keys still called `CV_<hex>` are drawn at
+`[HERO_X],[HERO_Y]`, so they are the hero. Two are 0x1 single points; the
+other seven are figures. `unknown_vs_named_sheet.py` renders all of them in
+one grid beside named hero pieces of comparable height, and what they are is
+not in doubt as a class:
+
+```
+CV_15DC  14x48/11     CV_36D2  34x48/12     CV_3858  40x48/12
+CV_391A  34x49/12     CV_3A64  40x49/12     CV_3A96  40x49/12
+CV_367C   7x18/3
+```
+
+48–49 tall where a crouch is 33–34 (`pose_height.py` measured 49.0 upright
+against 33.0 crouched), and 34–40 wide where `HERO_STAND_ARMED_*` is 16. So:
+**standing, arm extended** — the standing counterpart of the already-named
+`HERO_CROUCH_AIM_*` and `HERO_CROUCH_SHOOT_*`. `CV_367C` at 7x18 with 3 leaves
+is a separate gun-arm layer, the same shape as every
+`HERO_GUN_ARM_RIGHT_CASE_*` (8x17/3, 6x17/3, 8x18/3).
+
+Every routine that draws them is a placeholder, so `hero_pose_consensus.py`
+reports 0 of 9 with two stages agreeing — there is no name anywhere to
+inherit. One is settled anyway, by structure:
+
+```
+LABEL_99EB:
+        video type=0, offset=CV_3A64, ...
+        je [0xBE], 0x03, DRAW_CIN_172
+        jg [0x06], [0x30], SHARED_RET
+        mov [0xF8], [0x31]
+        and [0xF8], 0x0004          <- the charge blink
+        je [0xF8], 0x00, SHARED_RET
+        video type=0, offset=CV_5C9C, ...
+```
+
+That is exactly how `HERO_CROUCH_AIM_LEFT` pairs with
+`HERO_CROUCH_AIM_LEFT_CHARGE_DOT`, and the offsets corroborate it: the crouch
+dots are `0x5C4C` (right) and `0x5C94` (left), and these two sit **exactly 8
+bytes after each**, at `0x5C54` and `0x5C9C`. A pose that blinks a charge dot
+is the one held while the gun charges — an aim, not a shot. So `CV_3A64` is
+`HERO_STAND_AIM_LEFT` and `CV_5C9C` its charge dot.
+
+### Why the other six are held
+
+`CV_3A96` (40x49) and `CV_391A` (34x49) are very likely `SHOOT_F0` and `_F1`:
+the crouch family runs AIM 44, SHOOT_F0 44, SHOOT_F1 36, and the left group
+here runs 40, 40, 34 — the same shape. But a width analogy is not the
+charge-dot evidence, and #0120 says not to pick between readings on a
+resemblance.
+
+The right-facing group (`CV_3858` 40x48, `CV_36D2` 34x48, `CV_15DC` 14x48) has
+no such anchor at all: the right charge dot `CV_5C54` is painted next to
+`CINEMATIC_118`, a cinematic figure, not next to any of them, so the symmetry
+that settles the left does not close on the right.

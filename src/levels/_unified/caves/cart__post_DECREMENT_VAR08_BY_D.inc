@@ -735,13 +735,13 @@ DRAW_CIN_171:
 
 
 LABEL_9CC0:
-	video type=0, offset=CV_3A64, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_AIM_LEFT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_172
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C9C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_AIM_LEFT_CHARGE_DOT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 

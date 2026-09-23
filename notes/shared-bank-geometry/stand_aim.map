@@ -1,0 +1,37 @@
+# The hero's standing aim pose, and its charge dot.
+#
+# Nine of the 77 unnamed shared-bank keys are drawn at [HERO_X],[HERO_Y].
+# Seven are figures; unknown_vs_named_sheet.py renders them beside named
+# hero pieces of comparable height and they are plainly the standing
+# counterpart of the already-named crouch aim/shoot family: 48-49 tall where
+# a crouch is 33-34 (pose_height.py measured 49.0 upright, 33.0 crouched),
+# and 34-40 wide where HERO_STAND_ARMED_* is 16 -- standing, arm extended.
+#
+# Only one of them is settled by structure rather than by resemblance, and
+# only that one is named here.
+#
+# CV_3A64's drawer paints it and then, under the same blink test the crouch
+# aim uses --
+#
+#     jg [0x06], [0x30], SHARED_RET
+#     mov [0xF8], [0x31]
+#     and [0xF8], 0x0004
+#     je [0xF8], 0x00, SHARED_RET
+#     video type=0, offset=CV_5C9C, ...
+#
+# -- paints CV_5C9C, a 0x1 single-point piece. That is exactly how
+# HERO_CROUCH_AIM_LEFT pairs with HERO_CROUCH_AIM_LEFT_CHARGE_DOT, and the
+# offsets corroborate it: the crouch dots are 0x5C4C (right) and 0x5C94
+# (left), and these two sit exactly 8 bytes after each, 0x5C54 and 0x5C9C.
+# A pose that blinks a charge dot is the one being held while the gun
+# charges, which is the aim and not a shot.
+#
+# Held back, with the reasoning in ../shared-bank-geometry/README.md:
+#   CV_3A96 40x49 and CV_391A 34x49 are very likely SHOOT_F0 and _F1 by the
+#   crouch family's width pattern (AIM 44, F0 44, F1 36), but a width
+#   analogy is not the charge-dot evidence and #0120 says not to pick.
+#   CV_3858, CV_36D2, CV_15DC are the right-facing group and the right
+#   charge dot CV_5C54 pairs with a CINEMATIC_ figure, not with any of them,
+#   so the symmetry that settles the left does not close on the right.
+CV_3A64 HERO_STAND_AIM_LEFT
+CV_5C9C HERO_STAND_AIM_LEFT_CHARGE_DOT
