@@ -111,5 +111,38 @@ screen's family non-contiguous. That is the same shape as the footstep holes
 in `../draw-label-follows-constant/` — the gap is the information, and the
 applier is right to refuse.
 
-So the honest reading of this screen is: **structure recorded, names withheld,
-and the reason is in the art rather than in the tooling.**
+So the honest reading of this screen is: **structure recorded, most names
+withheld, and the reason is in the art rather than in the tooling.**
+
+### What the tree's own vocabulary then settled
+
+Two of the five were nameable after all, and what settled them was not the
+render — it was the names already next door. Screen 0x4B calls
+`DRAW_FINAL_ESCAPE_LESTER_RUNNING_BG` and screen 0x4C installs
+`BUDDY_SMASHING_WINDOW_ANIMATION`, and a prior dossier
+(`another-world-archaeology/docs/.../big-three-singletons/dossiers/amiga_CAPSULE`)
+records the three painters as one family. So the locale is known, and the two
+large layers are what the render plainly shows — a wall of rounded arches,
+painted twice at one anchor, back pass then front:
+
+```
+CINEMATIC_422  299x234, 17 paths  ->  CINEMATIC_CAPSULE_ARCH_WALL_FAR
+CINEMATIC_423  323x234, 22 paths  ->  CINEMATIC_CAPSULE_ARCH_WALL_NEAR
+```
+
+No story is claimed: the name says arched wall, and far/near is the paint
+order. `CINEMATIC_123`, `424` and `425` stay numbered.
+
+### And it closed a loop from earlier in the session
+
+Looking for msdos' twins **by `canonical_md5` rather than by index** turned up
+`CINEMATIC_478` and `CINEMATIC_479` — the very constants that forced the
+blast-fade revert (`36139804`), where msdos' 478/479/480 were known only as
+"unrelated art" drawn by `JUNK__9DD7` and `LABEL_9DF3`. They are the arched
+wall. msdos' *own* `CINEMATIC_422`/`423` in CAPSULE are 100x19 and 12x2 and
+have nothing to do with it, which is hazard #0107 in miniature and exactly
+why the index must never be the bridge.
+
+So both ports carry the same two names on different numbers, applied
+branch-scoped. `cartridge_1992` draws these constants too but has no extracted
+ROM, so its art cannot be checked and it was left alone.
