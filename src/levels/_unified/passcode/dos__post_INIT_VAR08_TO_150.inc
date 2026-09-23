@@ -413,7 +413,7 @@ PASSCODE_VALIDATE_KEY_GLYPH_CASE_63:
 
 PASSCODE_GLYPH_CASE_00:
 	jne [0x06], 0x00, PASSCODE_LETTER_H_CASE_11
-	video offset=CINEMATIC_036, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_FONT_DIGIT_0, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 

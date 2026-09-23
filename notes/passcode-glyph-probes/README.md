@@ -229,3 +229,46 @@ Whether the amiga shift is a bug in the original release or a mis-derived
 names are identical in both ports, so one set of them is wrong about its own
 port; which set needs evidence this pass did not gather.
 
+## The seventeen strings are decoded — mechanically, not by eye
+
+This file's whole subject was the seventeen `[0x05]` constants, and it ended
+saying the missing piece was "which characters each string spells … not a
+guess from a magnified thumbnail". With the font named, that is a lookup.
+
+Each string constant is a **group whose children are inlined 5×7 character
+sub-groups** — not references to the font constants, so `canonical_md5` does
+not match them. Normalising each child's leaf set to its own bounding box
+gives a shape signature that does: 34 named glyphs produce 34 distinct
+signatures with no collisions, and every character in every string matches
+exactly one. Characters are ordered by their x offset within the group.
+
+    N11  N16  N15  N17  N20  G10
+    O17  O14  O13  U20  U1   I5
+    U5   I6   I9   I1   K
+
+Rendered at 1:1 the strings read as exactly that, so the decode is confirmed
+the way NAMING.md asks — against a prediction, not as the source of one.
+
+Three characters initially came back unmatched and all three were the same
+glyph, `CINEMATIC_036` — the constant the ladder arm guarded `jne [0x06],
+0x00` draws. Value 0 completes the encoding as **base-36**: 0-9 then A-Z.
+Rendered, it is a slashed zero. Named `CINEMATIC_PASSCODE_FONT_DIGIT_0`.
+
+Named `CINEMATIC_PASSCODE_CODE_<text>`. The trailing digits are safe from
+frame-index parsing because there is no underscore before them —
+`…_CODE_N11` is not `…_CODE_N` frame 11, which is exactly the distinction
+`CINEMATIC_LAKE_DECOR_AT_327_164` fell foul of.
+
+**PASSCODE: 23.7% → 94.9% (amiga), 91.8% (msdos).**
+
+### What is still unnamed, and why
+
+    CINEMATIC_023   the one font glyph whose PICTURE differs between ports --
+                    msdos's is T, amiga's is U. One shared name cannot
+                    describe both (#0120); it needs a branch-scoped name.
+    CINEMATIC_055   24.5x26.0, 4 leaves -- not a glyph, not decoded here
+    CINEMATIC_056   70.0x15.0 amiga / 222.0x11.0 msdos, 1 leaf -- a rule or
+                    bar, and its size differs by port
+    CINEMATIC_057   msdos only, 18.0x18.0
+    CINEMATIC_058   msdos only, a 0x1 degenerate line
+

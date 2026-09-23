@@ -307,7 +307,7 @@ BLINK_LETTER_DISPATCHER:
 
 DRAW_LETTER_VIA_CIN_DISPATCH:
 	jne [0x06], 0x62, PASSCODE_VALIDATE_KEY_GLYPH_CASE_63
-	video offset=CINEMATIC_001, x=[0x07], y=[0x08], zoom=[0x04]
+	video offset=CINEMATIC_PASSCODE_CODE_I1, x=[0x07], y=[0x08], zoom=[0x04]
 	ret
 
 
@@ -322,7 +322,7 @@ SHARED_RET:
 
 
 	killChannel
-	video offset=CINEMATIC_004, x=160, y=100
+	video offset=CINEMATIC_PASSCODE_CODE_I5, x=160, y=100
 
 BLITTER_LOOP_COPY_PAGE_00:
 	blitFramebuffer 0xFF
