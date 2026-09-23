@@ -73,36 +73,36 @@ LABEL_6105:
 	jge [0x13], 0x64, LABEL_6151
 	jle [0x13], 0x03, LABEL_6133
 	jle [0x13], 0x05, LABEL_6121
-	video offset=CINEMATIC_652, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_HIT_BURST_RIGHT_5, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
 
 
 LABEL_6121:
 	jle [0x13], 0x04, DRAW_CIN_650
-	video offset=CINEMATIC_651, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_HIT_BURST_RIGHT_4, x=[0x21], y=[0x27]
 	ret
 
 
 DRAW_CIN_650:
-	video offset=CINEMATIC_650, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_HIT_BURST_RIGHT_3, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6133:
 	jle [0x13], 0x02, LABEL_613F
-	video offset=CINEMATIC_649, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_HIT_BURST_RIGHT_2, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_613F:
 	jle [0x13], 0x01, DRAW_CIN_647
-	video offset=CINEMATIC_648, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_HIT_BURST_RIGHT_1, x=[0x21], y=[0x27]
 	ret
 
 
 DRAW_CIN_647:
-	video offset=CINEMATIC_647, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_HIT_BURST_RIGHT_0, x=[0x21], y=[0x27]
 	ret
 
 
@@ -241,36 +241,36 @@ LABEL_6266:
 	jge [0x13], 0x64, LABEL_62B2
 	jle [0x13], 0x03, LABEL_6294
 	jle [0x13], 0x05, LABEL_6282
-	video offset=CINEMATIC_668, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_HIT_BURST_LEFT_5, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
 
 
 LABEL_6282:
 	jle [0x13], 0x04, DRAW_CIN_666
-	video offset=CINEMATIC_667, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_HIT_BURST_LEFT_4, x=[0x21], y=[0x27]
 	ret
 
 
 DRAW_CIN_666:
-	video offset=CINEMATIC_666, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_HIT_BURST_LEFT_3, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_6294:
 	jle [0x13], 0x02, LABEL_62A0
-	video offset=CINEMATIC_665, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_HIT_BURST_LEFT_2, x=[0x21], y=[0x27]
 	ret
 
 
 LABEL_62A0:
 	jle [0x13], 0x01, DRAW_CIN_663
-	video offset=CINEMATIC_664, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_HIT_BURST_LEFT_1, x=[0x21], y=[0x27]
 	ret
 
 
 DRAW_CIN_663:
-	video offset=CINEMATIC_663, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_CAPSULE_SHOT_HIT_BURST_LEFT_0, x=[0x21], y=[0x27]
 	ret
 
 

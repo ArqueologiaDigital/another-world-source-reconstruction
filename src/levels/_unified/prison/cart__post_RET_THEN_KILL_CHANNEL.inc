@@ -73,7 +73,7 @@ LABEL_3D0F:
 	jge [0x13], 0x64, LABEL_3D5B
 	jle [0x13], 0x03, LABEL_3D3D
 	jle [0x13], 0x05, LABEL_3D2B
-	video offset=CINEMATIC_488, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_HIT_BURST_RIGHT_5, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
 
@@ -240,7 +240,7 @@ LABEL_3E6C:
 	jge [0x13], 0x64, LABEL_3EB8
 	jle [0x13], 0x03, LABEL_3E9A
 	jle [0x13], 0x05, LABEL_3E88
-	video offset=CINEMATIC_504, x=[0x21], y=[0x27]
+	video offset=CINEMATIC_PRISON_SHOT_HIT_BURST_LEFT_5, x=[0x21], y=[0x27]
 	mov [0x13], 0xFFFE
 	ret
 

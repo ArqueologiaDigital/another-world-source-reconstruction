@@ -184,3 +184,71 @@ stem it proposes nothing there and says so, rather than picking (#0120).
 That is what lets `cartridge_1992`, which has no extracted ROM and so gets no
 geometry check at all, still be named correctly: its ladder is evaluated from
 its own source, and the stem comes from its amiga and msdos siblings.
+
+## A false "the bytes moved" that cost an hour
+
+Applying the `cartridge_1992` tables from this repo made
+`apply_branch_scoped_names.py` print, for all three stages:
+
+```
+REVERTED: genesis_europe/PRISON no longer byte-matches after renaming;
+a constant rename must be byte-neutral
+```
+
+That is a serious claim — a rename that moves bytes means a symbol went
+dangling — and it was false. Doing the same two renames by hand and running
+`make verify-stages` gave **29/29** with `PRISON OK (1 target(s):
+genesis_europe)`.
+
+The cause is a working directory. The applier ends with
+
+```python
+want = expected_bytes(port, args.stage)
+ok = want is not None and assembles_to_expected(...)
+if not ok:  # revert, print "no longer byte-matches"
+```
+
+and `expected_bytes` returns `None` when the port's baseline image is absent.
+The two cartridge ports reach theirs through a **relative** root —
+`work/f15f23e1e0fa8d827c4b045d7ce3cf90/romset/bytecode.rom` — while `amiga` and
+`msdos` use absolute roots under the archaeology repo. The Makefile does `cd
+$(ARCHAEOLOGY)` before calling `verify_stage.py`; running the applier by hand
+from the source repo does not, so the cartridge baseline silently vanished and
+"cannot check" was reported as "does not match". amiga and msdos could never
+show the bug, which is why it surfaced only on the third branch.
+
+Measured from each cwd, with `expected_bytes` over every (port, stage):
+
+| cwd | pairs with a baseline | pairs without |
+| --- | --- | --- |
+| `another-world-archaeology` | 29 | 0 |
+| `another-world-source-reconstruction` | 20 | 9 |
+
+The 9 are the cartridge ports: `snes_eu` 2 and `genesis_europe` 7.
+
+`apply_branch_scoped_names.py` now separates the two cases and says which it
+hit, naming the missing root and, when the root is relative, where to run from.
+Reproduce the corrected message with:
+
+```
+python3 ../another-world-archaeology/tools/apply_branch_scoped_names.py \
+    --stage PRISON --branch cartridge_1992 \
+    --proposals notes/laser-impact-anim/proposals_cartridge_1992__PRISON.md --apply
+```
+
+run from *this* repo — it reverts, and now says `no baseline for
+genesis_europe/PRISON ... this is NOT a byte mismatch`.
+
+## Result
+
+All 18 ladder positions — three stages, two directions, three branches — carry
+a complete 0..5 family whose index is the timer value minus one, and
+`impact_ladder.py` exits 0 on the lot. 58 constants were renamed in total: 24
+in CAVES for the two priority ports, 32 more across PRISON/CAVES/CAPSULE to fix
+the index base and fill the missing sixth frame, and 26 in `cartridge_1992`.
+`gba_2004` has no such ladder and was not touched.
+
+The unified tree needed `../unified-scoping/sync_equ_rename.py` three times for
+cartridge (4, 18 and 24 tokens in two `cart__` chunks each) and twice for
+PRISON in the priority ports, because the applier leaves a chunk that is
+branch-specific by *filename* rather than by `.if` alone.
