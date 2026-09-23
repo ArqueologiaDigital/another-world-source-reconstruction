@@ -125,6 +125,10 @@ def anchor_kind(x: str, y: str) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--proposals", action="store_true",
+                    help="name the layers of a backdrop composite whose "
+                         "label carries the screen, where the layer is drawn "
+                         "by that composite and nothing else")
     ap.add_argument("--backdrops", action="store_true",
                     help="list the fill + N full-screen layers routines")
     args = ap.parse_args()
@@ -132,6 +136,7 @@ def main() -> int:
     draws = collections.Counter()
     distinct: dict[str, set] = collections.defaultdict(set)
     backdrops = []
+    sites: dict[tuple, set] = collections.defaultdict(set)
 
     for port, branch in PORTS.items():
         for stage, sid in STAGE_ID.items():
@@ -172,8 +177,44 @@ def main() -> int:
                     k = anchor_kind(v.group(2), v.group(3))
                     draws[k] += 1
                     distinct[k].add((port, stage, const))
+                    sites[(port, stage, const)].add(cur)
                     run.append((const, (v.group(2).strip(),
                                         v.group(3).strip())))
+
+    if args.proposals:
+        # A composite's label may carry the screen -- CAVES_SCREEN_92_
+        # BACKDROP_DRAW. Its layers are then that screen's backdrop, in the
+        # order the machine draws them. Only a layer drawn by this composite
+        # and NOTHING else can take the name: screens 0x92 and 0x93 share
+        # their base and their top layer and differ in one, so the shared two
+        # belong to neither screen and are left numbered.
+        by: dict[tuple, list] = {}
+        for port, stage, lab, consts, _big in sorted(backdrops):
+            m = re.search(r"SCREEN_([0-9A-F]{2})", lab or "")
+            if not m:
+                continue
+            for i, const in enumerate(consts):
+                if not RE_NUM.match(const):
+                    continue
+                if sites[(port, stage, const)] != {lab}:
+                    continue
+                branch = PORTS[port]
+                new = (f"CINEMATIC_{stage}_SCREEN_{m.group(1)}_BACKDROP"
+                       f"_LAYER_{i}")
+                by.setdefault((branch, stage), []).append(
+                    (const, new, lab, i, len(consts)))
+        for (branch, stage), rows in sorted(by.items()):
+            print(f"\n----- {branch} / {stage} -----")
+            print("| constant | proposed name | confidence | evidence |")
+            print("| --- | --- | --- | --- |")
+            for const, new, lab, i, n in rows:
+                print(f"| {const} | {new} | high | `{lab}` is `fill` then "
+                      f"{n} pictures at one anchor then `ret`, and draws this "
+                      f"one {i + 1}{'st' if i == 0 else 'nd' if i == 1 else 'rd' if i == 2 else 'th'} "
+                      f"of the {n}; no other routine in the stage draws it, "
+                      f"so it belongs to that screen's backdrop and to no "
+                      f"other |")
+        return 0
 
     if args.backdrops:
         print(f"{len(backdrops)} routine(s) are `fill` + layers at one "

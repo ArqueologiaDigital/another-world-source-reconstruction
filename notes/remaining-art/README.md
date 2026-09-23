@@ -67,3 +67,35 @@ values in CAVES alone**, scattered as guards through the stage.
 So attaching a screen to a backdrop is a multi-hop reachability problem
 through unnamed labels. That is the next piece of real work, and it unlocks
 the largest class that has no method yet.
+
+## Where a composite already carries its screen
+
+Six of the 42 have the screen in the label already — `CAVES_SCREEN_92_
+BACKDROP_DRAW` and kin. Where that is so, the layers are that screen's
+backdrop in the order the machine draws them, and `--proposals` names them
+`CINEMATIC_<STAGE>_SCREEN_<NN>_BACKDROP_LAYER_<i>`.
+
+Only a layer drawn by that composite **and nothing else** may take the name,
+and that restriction does most of the work here. Screens 0x92 and 0x93 in
+CAVES are three layers each and share two of them:
+
+```
+CAVES_SCREEN_92_BACKDROP_DRAW   606  617  618
+CAVES_SCREEN_93_BACKDROP_DRAW   606  619  618
+```
+
+`606` (438x248, the full-screen base) and `618` (391x29, a strip across the
+top) belong to both screens and to neither name; `606` is drawn by three more
+routines besides. Only the middle layer distinguishes the two screens —
+`617` at 306x14 for 0x92 and `619` at 314x63 for 0x93, each drawn by its own
+composite and by nothing else in the stage.
+
+So four names, applied branch-scoped because the symbols differ per port
+(amiga `617`/`619`, msdos `638`/`640`) while the art is identical in both,
+`canonical_md5` agreeing on all four pairs. `make test` 29/29 and 29/29,
+`undefined_symbols.py` clean, and `--proposals` now prints nothing.
+
+Four is a small number, and it is the honest size of what this rule can reach
+until more composites carry their screen. The rule is worth having written
+down because it scales the moment the reachability work above lands: every
+composite that gains a screen name hands its exclusive layers over for free.
