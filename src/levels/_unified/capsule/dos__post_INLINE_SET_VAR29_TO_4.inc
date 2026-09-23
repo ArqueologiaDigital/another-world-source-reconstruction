@@ -1,20 +1,20 @@
 LABEL_11B2:
 	video offset=CINEMATIC_CAPSULE_SCREEN_4B_BACKDROP_LAYER_3, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_125, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_KNEELING_FIGURE_0_F0, x=[BUDDY_X], y=[BUDDY_Y]
 	play id=0x005E, freq=0x1C, vol=0x40, channel=0x01
 	break
-	video offset=CINEMATIC_126, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_125, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_PRONE_FIGURE_0_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_KNEELING_FIGURE_0_F0, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_127, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_128, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_PRONE_FIGURE_0_F2, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_KNEELING_FIGURE_0_F1, x=[BUDDY_X], y=[BUDDY_Y]
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x00
 	break
-	video offset=CINEMATIC_129, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_128, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_PRONE_FIGURE_0_F3, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_KNEELING_FIGURE_0_F1, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_126, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_125, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_PRONE_FIGURE_0_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_KNEELING_FIGURE_0_F0, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	djnz [0x29], LABEL_11B2
 	sub [0xEF], 0x0001
@@ -30,21 +30,21 @@ LABEL_11B2:
 	mov [0x29], 0x0004
 
 LABEL_121F:
-	video offset=CINEMATIC_237, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_133, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_PRONE_FIGURE_1_F0, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_KNEELING_FIGURE_1_F0, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_238, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_133, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_PRONE_FIGURE_1_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_KNEELING_FIGURE_1_F0, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_239, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_240, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_PRONE_FIGURE_1_F2, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_KNEELING_FIGURE_1_F1, x=[BUDDY_X], y=[BUDDY_Y]
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x00
 	break
-	video offset=CINEMATIC_241, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_240, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_PRONE_FIGURE_1_F3, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_KNEELING_FIGURE_1_F1, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_238, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_133, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_PRONE_FIGURE_1_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_KNEELING_FIGURE_1_F0, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	djnz [0x29], LABEL_121F
 	video offset=CINEMATIC_242, x=[BUDDY_X], y=[BUDDY_Y]
@@ -71,7 +71,7 @@ LABEL_127C:
 	killChannel
 
 LABEL_129C:
-	video offset=CINEMATIC_133, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_KNEELING_FIGURE_1_F0, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	mov [0x12], 0x0038
 	mov [0x29], [HERO_X]

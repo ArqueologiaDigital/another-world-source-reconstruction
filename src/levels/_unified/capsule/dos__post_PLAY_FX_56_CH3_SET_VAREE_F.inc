@@ -29,19 +29,19 @@ DELAY_LOOP_VAREE_AT_09B4:
 
 LABEL_09BC:
 	mov [0xEB], 0x00A0
-	video offset=CINEMATIC_237, x=[0xeb], y=[0x40]
+	video offset=CINEMATIC_CAPSULE_PRONE_FIGURE_1_F0, x=[0xeb], y=[0x40]
 	video offset=CINEMATIC_593, x=[0xeb], y=[0x40]
 	break
-	video offset=CINEMATIC_238, x=[0xeb], y=[0x40]
+	video offset=CINEMATIC_CAPSULE_PRONE_FIGURE_1_F1, x=[0xeb], y=[0x40]
 	video offset=CINEMATIC_593, x=[0xeb], y=[0x40]
 	break
-	video offset=CINEMATIC_239, x=[0xeb], y=[0x40]
+	video offset=CINEMATIC_CAPSULE_PRONE_FIGURE_1_F2, x=[0xeb], y=[0x40]
 	video offset=CINEMATIC_594, x=[0xeb], y=[0x40]
 	break
-	video offset=CINEMATIC_241, x=[0xeb], y=[0x40]
+	video offset=CINEMATIC_CAPSULE_PRONE_FIGURE_1_F3, x=[0xeb], y=[0x40]
 	video offset=CINEMATIC_594, x=[0xeb], y=[0x40]
 	break
-	video offset=CINEMATIC_238, x=[0xeb], y=[0x40]
+	video offset=CINEMATIC_CAPSULE_PRONE_FIGURE_1_F1, x=[0xeb], y=[0x40]
 	video offset=CINEMATIC_594, x=[0xeb], y=[0x40]
 	break
 	jmp LABEL_09BC
