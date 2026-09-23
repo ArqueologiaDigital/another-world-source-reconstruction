@@ -51,13 +51,13 @@ LAB_DOOR_LEAVES_PARTING_LOOP:
 	sub [0x01], 0x0014
 	add [0x02], 0x0014
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_121, x=160, y=[0x01]
-	video offset=CINEMATIC_122, x=160, y=[0x02]
+	video offset=CINEMATIC_LAB_DOOR_LEAF_UPPER, x=160, y=[0x01]
+	video offset=CINEMATIC_LAB_DOOR_LEAF_LOWER, x=160, y=[0x02]
 	video offset=CINEMATIC_LESTER_STANDING_BACK_TO_CAMERA, x=160, y=111, zoom=[0x04]
 	je [MUS_MARK], 0x10, MUS_10_FORCE_KILL_CHANNELS
 .else
-	video offset=CINEMATIC_126, x=160, y=[0x01]
-	video offset=CINEMATIC_127, x=160, y=[0x02]
+	video offset=CINEMATIC_LAB_DOOR_LEAF_UPPER, x=160, y=[0x01]
+	video offset=CINEMATIC_LAB_DOOR_LEAF_LOWER, x=160, y=[0x02]
 	video offset=CINEMATIC_LESTER_STANDING_BACK_TO_CAMERA, x=160, y=111, zoom=[0x04]
 	je [MUS_MARK], 0x10, PARALLAX_LOOP_BREAK_AND_DJNZ
 .endif
@@ -210,11 +210,11 @@ LABEL_21E0:
 
 LAB_DOOR_LEAVES_REDRAW_LOOP:
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_121, x=160, y=[0x01]
-	video offset=CINEMATIC_122, x=160, y=[0x02]
+	video offset=CINEMATIC_LAB_DOOR_LEAF_UPPER, x=160, y=[0x01]
+	video offset=CINEMATIC_LAB_DOOR_LEAF_LOWER, x=160, y=[0x02]
 .else
-	video offset=CINEMATIC_126, x=160, y=[0x01]
-	video offset=CINEMATIC_127, x=160, y=[0x02]
+	video offset=CINEMATIC_LAB_DOOR_LEAF_UPPER, x=160, y=[0x01]
+	video offset=CINEMATIC_LAB_DOOR_LEAF_LOWER, x=160, y=[0x02]
 .endif
 	break
 	jmp LAB_DOOR_LEAVES_REDRAW_LOOP

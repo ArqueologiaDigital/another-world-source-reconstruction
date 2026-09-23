@@ -100,11 +100,11 @@ DRIFT_VAR4_PLUS_9_FOR_20X:
 	copyVideoPage src=0x03, dst=0x00
 	selectVideoPage 0x00
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_121, x=160, y=100
-	video offset=CINEMATIC_122, x=160, y=100
+	video offset=CINEMATIC_LAB_DOOR_LEAF_UPPER, x=160, y=100
+	video offset=CINEMATIC_LAB_DOOR_LEAF_LOWER, x=160, y=100
 .else
-	video offset=CINEMATIC_126, x=160, y=100
-	video offset=CINEMATIC_127, x=160, y=100
+	video offset=CINEMATIC_LAB_DOOR_LEAF_UPPER, x=160, y=100
+	video offset=CINEMATIC_LAB_DOOR_LEAF_LOWER, x=160, y=100
 .endif
 	selectVideoPage 0xFF
 	fill page=0xFF, color=0x09
