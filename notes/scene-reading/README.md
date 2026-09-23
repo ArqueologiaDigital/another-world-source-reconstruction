@@ -146,3 +146,43 @@ why the index must never be the bridge.
 So both ports carry the same two names on different numbers, applied
 branch-scoped. `cartridge_1992` draws these constants too but has no extracted
 ROM, so its art cannot be checked and it was left alone.
+
+## `composed_of.py` — a picture that is N copies of another picture
+
+Rendering CAVES screen 0x6C showed a scatter of small two-part specks across
+the cavern floor and, in the tile beside it, a single speck of the same shape.
+That is checkable without deciding what a speck depicts:
+
+```
+CINEMATIC_336 has 2 leaf shapes -- one 4x1, one 0x1.
+CINEMATIC_407 has 38 leaves: 19 of each, every one byte-identical.
+```
+
+`CINEMATIC_407` **is** 19 copies of `CINEMATIC_336`.
+
+Asked plainly tree-wide the question is useless: **4,736** pairs, because a
+one-leaf unit divides anything built from that leaf — `CINEMATIC_093` alone
+"decomposes" into ten different 1-leaf constants at once, three of them
+already named for unrelated things. Two filters fix it: the composite must
+have exactly one candidate unit (245 have several), and the unit must have two
+or more distinct leaf shapes (3 more fall there).
+
+That leaves **2**, the same pair seen from both ports:
+
+```
+amiga CAVES   CINEMATIC_407 = 19 x CINEMATIC_336
+msdos CAVES   CINEMATIC_428 = 19 x CINEMATIC_357
+```
+
+Both members of both are still numbered, so this names nothing today. It is
+committed because the relation is exact and because naming either member names
+its partner for free — worth knowing before someone names one in isolation.
+
+### And what the render did not license
+
+The 336 speck renders as a wide cap over a narrow stem, which reads
+irresistibly as a mushroom. It is a **4x2** glyph of two leaves, a 4x1 bar and
+a 0x1 mark, magnified to fill a tile. `../shared-bank-geometry/
+bank_filmstrip.py` records three earlier wrong readings in this project from
+exactly that — "a 1x12 speck read as a band" — so the shape word is not taken
+here. The composition is measured; the subject is not.
