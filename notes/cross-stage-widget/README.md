@@ -85,3 +85,23 @@ stay numbered until a draw site separates them.
 
 513 is the other refusal: `0.0x1.0`, **one leaf**. A single-point tree is the
 weakest possible identity and the colour-blindness note applies at full force.
+
+## `--min-leaf`, because one-leaf matches are mostly noise
+
+The full amiga scan returns 154 identities and most of them are one hash,
+`afafd0dda5fb`: a 0.0x1.0 single point, held by `DRIFTING_PARTICLE_0..3`,
+`HOLO_CONSOLE_DOT_RISE_FAST`, `LAB_AUTH_DOT`, `LAB_DOOR_SCENE_LAMP`,
+`DROPLET_FALL_TRAIL` and half a dozen more. Every pairing of those with every
+numbered dot in another stage is reported, and none of it is a name.
+
+`--min-leaf 3` cuts it to a queue a person can read. What survives is the real
+work: on 2026-09-23 the six-frame `CAVES_CREATURE_WALK_RIGHT_F0..F5`, held
+unnamed by msdos CAPSULE as 708..713, went in on one such row.
+
+## `--hash`
+
+    python3 notes/cross-stage-widget/same_widget.py --port amiga --hash 816e097d250f
+
+Every constant in the port holding one exact drawing, any stage. It is how the
+beam-span ladder turned out to be the same art in PRISON, CAVES and CAPSULE, and
+how a family's copies are found once one member has been identified anywhere.

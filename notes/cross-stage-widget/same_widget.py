@@ -124,6 +124,12 @@ def main() -> int:
     ap.add_argument("--show", help="STAGE:NAME,NAME,... -- measurement table only")
     ap.add_argument("--hash", help="md5 prefix -- every constant in the port "
                                    "holding this exact drawing, any stage")
+    ap.add_argument("--min-leaf", type=int, default=1,
+                    help="skip matches with fewer leaves than this. The hash is "
+                         "colour-blind, so a one- or two-leaf shape matches many "
+                         "unrelated marks -- `afafd0dda5fb`, a single point, is "
+                         "held by a dozen distinct INTRO names. Raising this to 3 "
+                         "cuts that noise out of a work queue.")
     args = ap.parse_args()
 
     data = rom(args.port)
@@ -178,6 +184,8 @@ def main() -> int:
             for an, ao, ae, al in av:
                 for bn, bo, be, bl in bv:
                     # one side still a number, the other carrying one name
+                    if al < args.min_leaf or bl < args.min_leaf:
+                        continue
                     if RE_NUM.match(an) and not RE_NUM.match(bn):
                         rows.append((a, an, ao, b, bn, bo, ae, al, h))
                     elif RE_NUM.match(bn) and not RE_NUM.match(an):
