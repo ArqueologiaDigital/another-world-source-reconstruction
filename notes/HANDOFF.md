@@ -1,7 +1,7 @@
 # Handoff — semantic labelling of the disassembly
 
-Written 2026-09-20 at the end of a long session. Everything below is either
-in git or named as disposable. Both repos are clean.
+Written 2026-09-20, updated 2026-09-23. Everything below is either in git or
+named as disposable. Both repos are clean.
 
 ## Where things stand, measured
 
@@ -11,6 +11,8 @@ Run these; do not trust the numbers below without re-running them.
     python3 notes/unified-symbol-check/undefined_symbols.py
     python3 notes/shared-bank-naming/asset_naming_share.py
     python3 notes/crossstage-duplicates/one_picture_many_names.py
+    python3 notes/laser-impact-anim/impact_ladder.py
+    python3 notes/draw-label-follows-constant/label_vs_constant.py
 
 As of the last commit:
 
@@ -18,10 +20,37 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 58.6% (5,945/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 58.9% (5,976/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 77 of 352 (59 reachable) | `notes/shared-bank-geometry/` |
+| draw-only labels agreeing with their picture | 212, 0 nameable left, 0 contradicting | `label_vs_constant.py` |
+| shot-impact ladders complete | 18 of 18 (3 stages x 2 directions x 3 branches) | `impact_ladder.py` |
+
+## Added 2026-09-23
+
+**The shot-impact burst is one effect drawn from three stages.** PRISON, CAVES
+and CAPSULE each run a six-frame flash off a binary search on the timer
+`[0x13]`, and `canonical_md5` says all six frames are the same art in all three
+stages and both priority ports. All 18 ladder positions now carry a complete
+`_0.._5` family. `notes/laser-impact-anim/`.
+
+**A label ending in a threshold is not a frame index.** `..._ABOVE_04` is an
+interior node of that search, entered for timer values {4,5}, drawing the frame
+for 5. `nameable_from_drawer.py` was inheriting those onto constants; it now
+rejects `_ABOVE_/_UPTO_/_BELOW_<n>` (75 skipped, proposals 28 -> 4) and the
+README records why `_OVER_<n>` is excluded from that rule.
+
+**"Cannot check" was printing as "does not match".** `apply_branch_scoped_names`
+reverted every cartridge rename claiming the bytes moved, when the truth was
+that the cartridge baseline is reached through a *relative* root and only
+resolves from the archaeology repo. Run cartridge appliers from there. The
+message now says which case it hit.
+
+**Still open from this pass:** the 465 draw-only labels whose picture is still
+unnamed — each becomes free the moment its constant is named, so the asset
+work unlocks the routine work. Re-run `label_vs_constant.py` after any asset
+batch.
 
 ## The method that worked, in one paragraph
 
