@@ -3,6 +3,7 @@
 | file | question it answers | command |
 | --- | --- | --- |
 | `motion_vs_drawer.py` | Which named pictures carry a motion word that **no** routine drawing them shares? | `python3 notes/motion-word-audit/motion_vs_drawer.py` |
+| `piece_family_vs_label.py` | Which routines name one gait while every figure piece they draw comes from another gait's sheet? | `python3 notes/motion-word-audit/piece_family_vs_label.py` |
 
 `--pairs` summarises by (picture motion, drawer motion); `--pair RUN WALK`
 lists one class.
@@ -31,7 +32,8 @@ Over both priority ports, 2026-09-23:
   107    ** every drawer names a different motion
 ```
 
-The 107 sort by pairing:
+The 107 sort by pairing (as first measured; RUN/WALK is 2 after the correction
+below, and the total 97):
 
 | picture says | drawer says | times |
 | --- | --- | --- |
@@ -90,7 +92,7 @@ JUMP/WALK, 33 of them, are `../actor-sprite-sheet/`'s finding: the jump sheets
 are driven from the run and walk loops and the lift is drawn rather than
 written to `HERO_Y`.
 
-## The one class left open
+## The one class that was left open, and how it closed
 
 RUN/WALK, and not the LAKE row in it — `HERO_SHADOW_RUN_RIGHT_0` is drawn by
 `HERO_WALK_RIGHT_LOOP` once, on the same exit-transition pattern. It is
@@ -104,11 +106,49 @@ CV_FIGURE_RUN_LEFT_BODY_F07  drawn only by PRISON_ACTOR_WALK_LEFT_PHASE_7_DONE
 CV_FIGURE_RUN_LEFT_BODY_F08  drawn only by PRISON_ACTOR_WALK_LEFT_PHASE_8_DONE
 ```
 
-The frame index and the phase index agree every time, so this is one animation
-under two conventions rather than a misattribution — the class `../HANDOFF.md`
-already tracks. Settling it needs what settled FALL-versus-WALK: **pixels of
-travel per frame**, a run being the faster one. Not done here, and deliberately
-not guessed here.
+The frame index and the phase index agree every time, so this was one animation
+under two conventions rather than a misattribution.
+
+It did not need travel-per-frame in the end. `piece_family_vs_label.py` settles
+it without a name contest, by asking which **sheet** the pieces come from — and
+those sheets were named from geometry in `../shared-bank-geometry/` and
+`../actor-sprite-sheet/`, independently of any stage's label conventions.
+
+The three stages that animate this actor split cleanly except for one:
+
+```
+amiga/CAVES     RUN  PHASE -> RUN  (30)     WALK PHASE -> WALK (19)
+amiga/CAPSULE   RUN  DRAW  -> RUN  (30)
+amiga/PRISON    RUN  POSE  -> RUN  (6)      WALK POSE  -> WALK (46)
+                WALK PHASE -> RUN (10) + WALK (19)      <- mixed
+```
+
+CAVES draws the same two sequences and keeps them apart. PRISON's
+`WALK ... PHASE` family holds both — the *same 19* WALK draws, and 10 more
+that are pure RUN. The 19 matching exactly is the corroboration: PRISON is not
+using a different scheme, it has ten labels in the wrong half of its own. And
+the routine is literally the same code in all three stages: same shape, same
+`sub [<actor>_Y], 0x0001`, same `CV_320A` fallback, same two draws.
+
+The ten, identical in all three branches that have them, none drawing a piece
+from more than one family:
+
+```
+PRISON_ACTOR_WALK_LEFT_PHASE_{0,3,5,7,8}_DONE  ->  ..._RUN_LEFT_PHASE_{...}_DONE
+PRISON_BUDDY_WALK_LEFT_PHASE_{0,3,5,7,8}       ->  ..._RUN_LEFT_PHASE_{...}
+```
+
+each drawing a `CV_FIGURE_RUN_LEFT_BODY_F<nn>` together with a
+`CV_FIGURE_RUN_LEFT_UPPER_POSE_<nn>` — a body and an upper from the run sheet,
+under a label that said walk. Applied to all three branches, 30 renames.
+
+Afterwards `piece_family_vs_label.py` reports **0** and exits 0, and this
+module's RUN/WALK class fell from 12 to 2. The 2 that remain are the LAKE
+exit-transition rows, which are the code being correct.
+
+Unlike the drawer comparison, the piece comparison **does** fail the build when
+it finds something, because it has no benign explanation: a body and an upper
+from one sheet is what the routine draws, not what it exits into.
 
 ## The 547 that name no motion at all
 
