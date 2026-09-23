@@ -100,6 +100,8 @@ checked against the receiving port's own guards.
 | CINEMATIC_365, 376 | (msdos twins) | `CINEMATIC_PRISON_XRAY_FLASH_{LEFT,RIGHT}` | high |
 | CINEMATIC_366/367, 377/378 | (msdos twins) | `CINEMATIC_PRISON_XRAY_SKELETON_{LEFT,RIGHT}_{LIT,DARK}` | high |
 | CINEMATIC_563 | (msdos twin) | `CINEMATIC_PRISON_HERO_STAND_AIM_RIGHT` | high |
+| CINEMATIC_556, 561, 560, 567 | (msdos twins) | `CINEMATIC_PRISON_HERO_{STAND,ARM_OUT}_{LEFT,RIGHT}` | high |
+| CINEMATIC_222, 213 | (msdos twins) | `CINEMATIC_PRISON_HERO_LUNGE_{LEFT,RIGHT}` | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that

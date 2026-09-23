@@ -11,15 +11,15 @@ LABEL_92A2:
 	jne [0x0A], 0x00, LABEL_9259
 	sub [HERO_X], 0x0004
 	call HANDLE_HORIZ_VAR01_VS_VAR28
-	video offset=CINEMATIC_560, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_ARM_OUT_LEFT, x=[HERO_X], y=[HERO_Y]
 	break
 	add [HERO_X], 0x0001
-	video offset=CINEMATIC_560, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_ARM_OUT_LEFT, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
 
 LABEL_92C9:
 	break
-	video offset=CINEMATIC_560, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_ARM_OUT_LEFT, x=[HERO_X], y=[HERO_Y]
 	je [HERO_ACTION_POS_MASK], 0x88, LABEL_92C9
 	break
 	add [HERO_X], 0x0002

@@ -51,14 +51,14 @@ DRAW_CIN_187_TO_222_2F_AT_8E66E193:
 	video offset=CINEMATIC_PRISON_HERO_CROUCH_DOWN_LEFT, x=[HERO_X], y=[HERO_Y]
 	break
 	add [HERO_X], 0x0001
-	video offset=CINEMATIC_222, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_LUNGE_LEFT, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
 .endif
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PRISON_DRAW_CIN_187_TO_222_2F_AT_8E66E193_L0:
 	break
-	video offset=CINEMATIC_222, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_LUNGE_LEFT, x=[HERO_X], y=[HERO_Y]
 	je [HERO_ACTION_POS_MASK], 0x84, PRISON_DRAW_CIN_187_TO_222_2F_AT_8E66E193_L0
 	add [HERO_X], 0x0002
 	break
@@ -75,7 +75,7 @@ DRAW_CIN_212_TO_213_2F_AT_6B0D0A47:
 	video offset=CINEMATIC_PRISON_HERO_CROUCH_DOWN_RIGHT, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_213, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_LUNGE_RIGHT, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0001
 .endif
 

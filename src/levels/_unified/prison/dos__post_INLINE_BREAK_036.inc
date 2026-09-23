@@ -11,15 +11,15 @@ LABEL_97F2:
 	call HANDLE_HORIZ_VAR01_VS_VAR28
 	jne [0x0A], 0x00, LABEL_97AC
 	add [HERO_X], 0x0004
-	video offset=CINEMATIC_567, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_ARM_OUT_RIGHT, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_567, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_ARM_OUT_RIGHT, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0001
 
 LABEL_9819:
 	break
-	video offset=CINEMATIC_567, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_ARM_OUT_RIGHT, x=[HERO_X], y=[HERO_Y]
 	je [HERO_ACTION_POS_MASK], 0x88, LABEL_9819
 	break
 	sub [HERO_X], 0x0002
@@ -36,15 +36,15 @@ LABEL_983B:
 	jne [0x0A], 0x00, LABEL_9949
 	sub [HERO_X], 0x0004
 	call HANDLE_HORIZ_VAR01_VS_VAR28
-	video offset=CINEMATIC_556, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_STAND_LEFT, x=[HERO_X], y=[HERO_Y]
 	break
 	add [HERO_X], 0x0001
-	video offset=CINEMATIC_556, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_STAND_LEFT, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
 
 LABEL_9862:
 	break
-	video offset=CINEMATIC_556, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_STAND_LEFT, x=[HERO_X], y=[HERO_Y]
 	je [HERO_ACTION_POS_MASK], 0x84, LABEL_9862
 	break
 	add [HERO_X], 0x0002
@@ -61,15 +61,15 @@ LABEL_9884:
 	jne [0x0A], 0x00, LABEL_9A28
 	call HANDLE_HORIZ_VAR01_VS_VAR28
 	add [HERO_X], 0x0004
-	video offset=CINEMATIC_561, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_STAND_RIGHT, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_561, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_STAND_RIGHT, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0001
 
 LABEL_98AB:
 	break
-	video offset=CINEMATIC_561, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_STAND_RIGHT, x=[HERO_X], y=[HERO_Y]
 	je [HERO_ACTION_POS_MASK], 0x84, LABEL_98AB
 	break
 	sub [HERO_X], 0x0002

@@ -1,6 +1,6 @@
 LABEL_9922:
 	break
-	video offset=CINEMATIC_213, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_LUNGE_RIGHT, x=[HERO_X], y=[HERO_Y]
 	je [HERO_ACTION_POS_MASK], 0x84, LABEL_9922
 	sub [HERO_X], 0x0002
 	break
