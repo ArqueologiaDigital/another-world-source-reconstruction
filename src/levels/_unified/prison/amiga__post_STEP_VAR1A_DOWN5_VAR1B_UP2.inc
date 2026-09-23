@@ -1,89 +1,89 @@
 LABEL_72F2:
 	jne [0x06], 0x00, LABEL_72FE
-	video offset=CINEMATIC_595, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_CHAIN_TILT_ZERO, x=[0x03], y=[0x04]
 	ret
 
 
 LABEL_72FE:
 	jne [0x06], 0x01, LABEL_730A
-	video offset=CINEMATIC_594, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_CHAIN_TILT_PLUS_1, x=[0x03], y=[0x04]
 	ret
 
 
 LABEL_730A:
 	jne [0x06], 0x02, LABEL_7316
-	video offset=CINEMATIC_593, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_CHAIN_TILT_PLUS_2, x=[0x03], y=[0x04]
 	ret
 
 
 LABEL_7316:
 	jne [0x06], 0x03, LABEL_7322
-	video offset=CINEMATIC_592, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_CHAIN_TILT_PLUS_3, x=[0x03], y=[0x04]
 	ret
 
 
 LABEL_7322:
 	jne [0x06], 0x04, LABEL_732E
-	video offset=CINEMATIC_591, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_CHAIN_TILT_PLUS_4, x=[0x03], y=[0x04]
 	ret
 
 
 LABEL_732E:
 	jne [0x06], 0x05, LABEL_733A
-	video offset=CINEMATIC_590, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_CHAIN_TILT_PLUS_5, x=[0x03], y=[0x04]
 	ret
 
 
 LABEL_733A:
 	jne [0x06], 0x06, LABEL_7346
-	video offset=CINEMATIC_589, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_CHAIN_TILT_PLUS_6, x=[0x03], y=[0x04]
 	ret
 
 
 LABEL_7346:
 	jl [0x06], 0x07, LABEL_7352
-	video offset=CINEMATIC_588, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_CHAIN_TILT_PLUS_7, x=[0x03], y=[0x04]
 	ret
 
 
 LABEL_7352:
 	jne [0x06], 0xFFFF, LABEL_735F
-	video offset=CINEMATIC_587, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_CHAIN_TILT_MINUS_1, x=[0x03], y=[0x04]
 	ret
 
 
 LABEL_735F:
 	jne [0x06], 0xFFFE, LABEL_736C
-	video offset=CINEMATIC_586, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_CHAIN_TILT_MINUS_2, x=[0x03], y=[0x04]
 	ret
 
 
 LABEL_736C:
 	jne [0x06], 0xFFFD, LABEL_7379
-	video offset=CINEMATIC_585, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_CHAIN_TILT_MINUS_3, x=[0x03], y=[0x04]
 	ret
 
 
 LABEL_7379:
 	jne [0x06], 0xFFFC, LABEL_7386
-	video offset=CINEMATIC_584, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_CHAIN_TILT_MINUS_4, x=[0x03], y=[0x04]
 	ret
 
 
 LABEL_7386:
 	jne [0x06], 0xFFFB, LABEL_7393
-	video offset=CINEMATIC_583, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_CHAIN_TILT_MINUS_5, x=[0x03], y=[0x04]
 	ret
 
 
 LABEL_7393:
 	jne [0x06], 0xFFFA, DRAW_CIN_581
-	video offset=CINEMATIC_582, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_CHAIN_TILT_MINUS_6, x=[0x03], y=[0x04]
 	ret
 
 
 DRAW_CIN_581:
-	video offset=CINEMATIC_581, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_CHAIN_TILT_MINUS_7, x=[0x03], y=[0x04]
 	ret
 
 
