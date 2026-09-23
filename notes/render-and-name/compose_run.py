@@ -94,6 +94,60 @@ def box(ps, fill=None):
     return (max(xs) - min(xs), max(ys) - min(ys), min(xs), max(xs), min(ys), max(ys))
 
 
+RE_EQU = re.compile(r"^(CINEMATIC_[A-Za-z0-9_]+)\s+EQU\s+(0x[0-9A-Fa-f]+)\s*$", re.M)
+RE_LABEL = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*):\s*$")
+RE_DRAW = re.compile(r"video offset=(\S+?),\s*x=(-?\d+|\[[^\]]+\]),"
+                     r"\s*y=(-?\d+|\[[^\]]+\])")
+SRC = pathlib.Path(__file__).resolve().parents[2] / "src" / "levels"
+
+
+def signed(v: int) -> int:
+    return v - 0x10000 if v >= 0x8000 else v
+
+
+def draws_of(branch: str, stage: str, routine: str):
+    """Every literal draw in `routine`, as (label, offset-hex, dx, dy).
+
+    A draw with a variable coordinate cannot be placed and is skipped, with a
+    note, rather than guessed at.
+    """
+    text = (SRC / branch / f"{stage}.asm").read_text()
+    equ = {n: int(v, 16) for n, v in RE_EQU.findall(text)}
+    out, inside, skipped = [], False, 0
+    for line in text.splitlines():
+        m = RE_LABEL.match(line)
+        if m:
+            if inside and m.group(1) != routine:
+                break
+            inside = m.group(1) == routine
+            continue
+        if not inside:
+            continue
+        d = RE_DRAW.search(line)
+        if not d:
+            continue
+        name, x, y = d.groups()
+        if x.startswith("[") or y.startswith("[") or name not in equ:
+            skipped += 1
+            continue
+        out.append((name.replace("CINEMATIC_", ""), f"{equ[name]:04X}",
+                    signed(int(x)) - 160.0, signed(int(y)) - 100.0))
+    if skipped:
+        print(f"  ({skipped} draw(s) skipped: a variable coordinate or an "
+              f"unresolved name)")
+    return out
+
+
+def shift(path: tuple[str, str], dx: float, dy: float) -> tuple[str, str]:
+    """Translate one (fill, d) pair by (dx, dy)."""
+    if dx == 0 and dy == 0:
+        return path
+    fill, d = path
+    def mv(m):
+        return f"{float(m.group(1)) + dx:.3f} {float(m.group(2)) + dy:.3f}"
+    return (fill, re.sub(r"(-?[\d.]+)\s+(-?[\d.]+)", mv, d))
+
+
 def svg(body: list[tuple[str, str]], bg: str) -> str:
     return ('<svg xmlns="http://www.w3.org/2000/svg" width="320" height="200" '
             'viewBox="0 0 320 200">\n'
@@ -109,8 +163,13 @@ def main() -> int:
     ap.add_argument("--out", type=pathlib.Path, required=True)
     ap.add_argument("--under", nargs="*", default=[],
                     help="offsets drawn BEHIND every frame, in draw order")
-    ap.add_argument("--frames", nargs="+", required=True,
+    ap.add_argument("--frames", nargs="*", default=[],
                     help="offsets of the run, in the order the routine draws them")
+    ap.add_argument("--routine",
+                    help="instead of --frames: take the draw list from this routine "
+                         "in --branch/--stage, and PLACE each layer at its own x, y")
+    ap.add_argument("--branch", default="chahi_amiga_1991")
+    ap.add_argument("--stage", default="INTRO")
     ap.add_argument("--track", nargs="*", default=[],
                     help="fill colours to measure separately, e.g. '#fb7474'")
     ap.add_argument("--progressive", action="store_true",
@@ -120,8 +179,18 @@ def main() -> int:
                     help="colour behind everything; only visible where nothing draws")
     args = ap.parse_args()
 
+    if not args.frames and not args.routine:
+        raise SystemExit("pass --frames or --routine")
+
     args.out.mkdir(parents=True, exist_ok=True)
     under = [p for o in args.under for p in paths(args.renders, o)]
+
+    placed: list[tuple[str, str, float, float]] = []   # (label, offset, dx, dy)
+    if args.routine:
+        placed = draws_of(args.branch, args.stage, args.routine)
+        if not placed:
+            raise SystemExit(f"no literal draws found in {args.routine}")
+        args.frames = [o for _, o, _, _ in placed]
 
     head = "  f   offset   whole picture                                 paths"
     for c in args.track:
@@ -131,11 +200,15 @@ def main() -> int:
     trail = list(under)
     for i, off in enumerate(args.frames):
         ps = paths(args.renders, off)
+        if placed:
+            _, _, dx, dy = placed[i]
+            ps = [shift(p, dx, dy) for p in ps]
         trail += ps
         body = list(trail) if args.progressive else under + ps
         (args.out / f"frame{i:02d}.svg").write_text(svg(body, args.bg))
         w = box(ps)
-        line = (f"  F{i:<2} 0x{off.upper():<6} {w[0]:6.1f}x{w[1]:6.1f}  "
+        tag = placed[i][0][:26] if placed else f"F{i}"
+        line = (f"  {tag:<26} 0x{off.upper():<6} {w[0]:6.1f}x{w[1]:6.1f}  "
                 f"x[{w[2]:7.1f},{w[3]:7.1f}] y[{w[4]:6.1f},{w[5]:6.1f}]  {len(ps):>3}")
         for c in args.track:
             b = box(ps, c)

@@ -138,12 +138,13 @@ checked against the receiving port's own guards.
 | INTRO 517, 518 | 523, 129 | `CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F2, F3` (+ a four-branch renumber of F3..F6 to F4..F7) | high |
 | INTRO 121, 122 | 126, 127 | `CINEMATIC_LAB_DOOR_LEAF_{UPPER,LOWER}` | high |
 | INTRO 107..111 | 112..116 | `CINEMATIC_LIFT_{DOOR_LEAF_LEFT,DOOR_LEAF_RIGHT,SCENE_FIXED_OVERLAY,SHAFT_MARKER_MOVING,SHAFT_MARKER_FIXED}` | high/medium |
-| INTRO 166, 171..174, 104, 105 | (msdos twins) | `CINEMATIC_PARTICLE_LAB_{WALLS_AND_FLOOR,CONSOLE_DESK,CHAIR,FLOOR_LITTER,HIGHLIGHTS}`, `CINEMATIC_CARPARK_PILLAR_{HIGHLIGHT,SEAM}` | high/medium |
+| INTRO 166, 171..174, 104, 105 | (msdos twins) | `CINEMATIC_PARTICLE_LAB_{WALLS_AND_FLOOR,CONSOLE_DESK,CHAIR,FLOOR_LITTER,HIGHLIGHTS}`, `CINEMATIC_CARPARK_{WALL_SHADOW,DOORWAY_DIVIDER}` (corrected; first named as `PILLAR_{HIGHLIGHT,SEAM}` from an unplaced composite) | high |
 | INTRO 348..351 | 349..352 | `CINEMATIC_DRIFTING_PARTICLE_0..3` | high |
 | INTRO 124, 131, 447, 126, 127 | 130, 137, 448, 132, 133 | `CINEMATIC_{HOLO_CONSOLE_DOT_RISE_SLOW,LAB_AUTH_DOT,HOLO_CONSOLE_RISING_BAR,LAB_AUTH_CRT_READOUT_ROWS,LAB_AUTH_CRT_SOLID_ICON}` | high/medium |
 | INTRO 528, 530..533 | 529, 531..534 | `CINEMATIC_LIFT_{INTERIOR,DOORWAY_PANEL_LIT,DOORWAY_PANEL_SHADE,DOORWAY_SEAM,SHAFT_LATTICE}` | high/medium |
 | INTRO 378 | 379 | `CINEMATIC_ACCELERATOR_TUNNEL_VIEW_FAR` (and its old bearer to `..._DEBRIS_LOWER`, all four branches) | high |
 | INTRO 466, 176, 430, 184 | 468, 182, 431, 190 | `CINEMATIC_{LESTER_STANDING_FACING_CAMERA,HOLO_CONSOLE_DOME_LAMP,HOLO_SCREEN_POINTER,HOLO_SCREEN_POINTER_ON_PLATE}` | high/medium |
+| INTRO 543, 555, 559, 560, 563, 564 | 544, 556, 560, 561, 564, 565 | `CINEMATIC_CITY_{GANTRY_AERIALS,ROOFTOP_PEAK,DISTANT_RIDGE,GROUND_PATCH,DARK_PEAK,GANTRY_CABLE}` | medium |
 | INTRO 268..276 | 274..282 | `CINEMATIC_FRAGMENTS_RECEDING_F0..F8` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
@@ -377,6 +378,35 @@ it. The rule the two failures give:
 The byte gate caught the first failure and `undefined_symbols.py` caught the
 second, which is the division of labour `notes/HANDOFF.md` describes: run the
 symbol check *before* `make test`.
+
+## A composite has to be placed, or it is not a composite
+
+`compose_run.py` draws every layer at the renderer's own anchor, (160, 100).
+A background routine does not: each `video` carries its own `x, y`. Reading a
+composite without placing its layers cost two wrong names and one wrongly
+abandoned scene in a single session:
+
+- INTRO's 51-layer city scene piled up into nothing and was filed as
+  unreadable. Placed, it is a night cityscape and all six of its numbered
+  layers were nameable.
+- `CINEMATIC_104` was named `..._PILLAR_HIGHLIGHT` because unplaced it sat
+  inside a run of narrowing pillar shades. Placed, it is at x[98.5, 135.5] and
+  the pillar is at x[210.5, 277.5] -- 88 pixels and a doorway apart. The widths
+  really do narrow, 65, 67, 59, 47, 37, which is what made the wrong reading
+  convincing.
+
+`--routine <LABEL>` reads the draw list out of the branch's `.asm`, resolves
+each `EQU` and translates every layer by `(draw_x - 160, draw_y - 100)`:
+
+```
+python3 notes/render-and-name/compose_run.py --renders <dir> --out <dir> \
+    --progressive --routine DRAW_CARPARK_ENTRANCE_COMPOSITE
+```
+
+`on_screen_box.py` answers the same question for one constant at all of its
+draw sites, and prints whether each lands on the page, straddles an edge or
+misses. Coordinates are read as signed in both -- see
+`../coordinate-signedness/`.
 
 ## `cartridge_1992` applies have to be run from the archaeology repo
 
