@@ -1216,14 +1216,14 @@ CV_6010		EQU 0x6010
 CV_4058		EQU 0x4058
 CV_5CCC		EQU 0x5CCC
 CV_4416		EQU 0x4416
-CV_1600		EQU 0x1600
+HERO_CROUCH_DOWN_RIGHT		EQU 0x1600
 HERO_CROUCH_SHOOT_RIGHT_F1		EQU 0x38D2
 HERO_CROUCH_AIM_RIGHT		EQU 0x3764
 HERO_CROUCH_AIM_RIGHT_CHARGE_DOT		EQU 0x5C4C
 HERO_CROUCH_SHOOT_RIGHT_F0		EQU 0x389E
 HERO_STAND_ARMED_RIGHT		EQU 0x1664
-CV_61B0		EQU 0x61B0
-CV_17A8		EQU 0x17A8
+HERO_CROUCH_RIGHT		EQU 0x61B0
+HERO_CROUCH_DOWN_LEFT		EQU 0x17A8
 HERO_CROUCH_SHOOT_LEFT_F1		EQU 0x3B10
 HERO_CROUCH_SHOOT_LEFT_F0		EQU 0x3ADC
 HERO_STAND_ARMED_LEFT		EQU 0x17CC
@@ -12804,7 +12804,7 @@ LABEL_7905:
 	play id=0x0079, freq=0x14, vol=0x40, channel=0x01
 
 ANIM_CV_332_LOOP_VAR03:
-	video type=0, offset=CV_61B0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	djnz [0x03], ANIM_CV_332_LOOP_VAR03
 
@@ -24094,7 +24094,7 @@ LABEL_ECF1:
 	sub [HERO_X], 0x0001
 	call LABEL_7B5E
 	add [HERO_X], 0x0003
-	video type=0, offset=CV_17A8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_DOWN_LEFT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	call LABEL_998B
 
@@ -24123,7 +24123,7 @@ HERO_CROUCH_ENTER_LEFT:
 
 HERO_CROUCH_DOWN_LEFT_STEP:
 	add [HERO_X], 0x0002
-	video type=0, offset=CV_17A8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_DOWN_LEFT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	video type=0, offset=HERO_CROUCH_LEFT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
@@ -24170,7 +24170,7 @@ LABEL_EDC6:
 	mov [0x2A], 0x0020
 	call LABEL_7B5E
 	sub [HERO_X], 0x0002
-	video type=0, offset=CV_1600, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_DOWN_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	call LABEL_9703
 
@@ -24199,13 +24199,13 @@ HERO_CROUCH_ENTER_RIGHT:
 
 HERO_CROUCH_DOWN_RIGHT_STEP:
 	sub [HERO_X], 0x0002
-	video type=0, offset=CV_1600, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_DOWN_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_61B0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 HERO_CROUCH_HOLD_RIGHT_LOOP:
 	break
-	video type=0, offset=CV_61B0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [HERO_POS_JUMP_DOWN], 0x01, HERO_CROUCH_HOLD_RIGHT_LOOP
 	break
 	add [HERO_X], 0x0002

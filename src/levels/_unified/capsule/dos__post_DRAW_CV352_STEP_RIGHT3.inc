@@ -703,7 +703,7 @@ LABEL_C529:
 	sub [HERO_X], 0x0001
 	call LABEL_7449
 	add [HERO_X], 0x0003
-	video type=0, offset=CV_17A8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_DOWN_LEFT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	video type=0, offset=HERO_CROUCH_SHOOT_LEFT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
@@ -762,7 +762,7 @@ LABEL_C5CD:
 	mov [0x2A], 0x0020
 	call LABEL_7449
 	sub [HERO_X], 0x0002
-	video type=0, offset=CV_1600, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_DOWN_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	video type=0, offset=HERO_CROUCH_SHOOT_RIGHT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 

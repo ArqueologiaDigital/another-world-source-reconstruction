@@ -10,7 +10,7 @@ LABEL_ECF1:
 	sub [HERO_X], 0x0001
 	call LABEL_7B5E
 	add [HERO_X], 0x0003
-	video type=0, offset=CV_17A8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_DOWN_LEFT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	call LABEL_998B
 
@@ -39,7 +39,7 @@ HERO_CROUCH_ENTER_LEFT:
 
 HERO_CROUCH_DOWN_LEFT_STEP:
 	add [HERO_X], 0x0002
-	video type=0, offset=CV_17A8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_DOWN_LEFT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	video type=0, offset=HERO_CROUCH_LEFT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 

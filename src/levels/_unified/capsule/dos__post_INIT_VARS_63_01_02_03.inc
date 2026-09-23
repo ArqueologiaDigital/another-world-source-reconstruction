@@ -55,7 +55,7 @@ ANIM_CIN_581_LOOP_VAR03:
 	mov [0x03], 0x000A
 
 LABEL_065B:
-	video type=0, offset=CV_61B0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	djnz [0x03], LABEL_065B
 	break
 	mov [0x63], 0x0002

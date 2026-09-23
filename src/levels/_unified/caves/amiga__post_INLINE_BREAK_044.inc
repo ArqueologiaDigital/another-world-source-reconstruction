@@ -9,7 +9,7 @@ LABEL_EDC6:
 	mov [0x2A], 0x0020
 	call LABEL_7B5E
 	sub [HERO_X], 0x0002
-	video type=0, offset=CV_1600, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_DOWN_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	call LABEL_9703
 
@@ -38,13 +38,13 @@ HERO_CROUCH_ENTER_RIGHT:
 
 HERO_CROUCH_DOWN_RIGHT_STEP:
 	sub [HERO_X], 0x0002
-	video type=0, offset=CV_1600, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_DOWN_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_61B0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 HERO_CROUCH_HOLD_RIGHT_LOOP:
 	break
-	video type=0, offset=CV_61B0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [HERO_POS_JUMP_DOWN], 0x01, HERO_CROUCH_HOLD_RIGHT_LOOP
 	break
 	add [HERO_X], 0x0002

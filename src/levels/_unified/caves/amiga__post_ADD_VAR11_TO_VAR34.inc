@@ -225,7 +225,7 @@ LABEL_7905:
 	play id=0x0079, freq=0x14, vol=0x40, channel=0x01
 
 ANIM_CV_332_LOOP_VAR03:
-	video type=0, offset=CV_61B0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	djnz [0x03], ANIM_CV_332_LOOP_VAR03
 

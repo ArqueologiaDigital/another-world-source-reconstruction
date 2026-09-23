@@ -212,7 +212,7 @@ LABEL_5A6C:
 	mov [0x03], 0x0003
 
 ANIM_CV_332_LOOP_VAR03:
-	video type=0, offset=CV_61B0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	djnz [0x03], ANIM_CV_332_LOOP_VAR03
 

@@ -393,7 +393,7 @@ CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L36:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 HERO_CROUCH_DOWN_LEFT_STEP:
 	add [HERO_X], 0x0002
-	video type=0, offset=CV_17A8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_DOWN_LEFT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	video type=0, offset=HERO_CROUCH_LEFT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 .endif
@@ -442,15 +442,15 @@ CAVES_STEP_DRAW_CV336_THEN_CV340_L2:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 HERO_CROUCH_DOWN_RIGHT_STEP:
 	sub [HERO_X], 0x0002
-	video type=0, offset=CV_1600, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_DOWN_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_61B0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 HERO_CROUCH_HOLD_RIGHT_LOOP:
 	break
-	video type=0, offset=CV_61B0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [HERO_POS_JUMP_DOWN], 0x01, HERO_CROUCH_HOLD_RIGHT_LOOP
 	break
 	add [HERO_X], 0x0002

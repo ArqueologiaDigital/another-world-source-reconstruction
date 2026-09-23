@@ -10,7 +10,7 @@ LABEL_F36E:
 	sub [HERO_X], 0x0001
 	call CAVES_STEP_DRAW_CV336_THEN_CV340_L4
 	add [HERO_X], 0x0003
-	video type=0, offset=CV_17A8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_DOWN_LEFT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	call LABEL_9CE9
 

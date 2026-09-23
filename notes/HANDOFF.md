@@ -18,10 +18,10 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 57.5% (5,833/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 57.6% (5,845/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
-| shared-bank keys still unnamed | 82 of 352 (64 reachable) | `notes/shared-bank-geometry/` |
+| shared-bank keys still unnamed | 79 of 352 (61 reachable) | `notes/shared-bank-geometry/` |
 
 ## The method that worked, in one paragraph
 
@@ -78,9 +78,9 @@ for it whenever two draws share an anchor.
    role name. `notes/shared-bank-geometry/unreachable_guarded_art.py`
    re-checks it and exits 1 if any draw is ever found outside the guard.
 
-   **The real remaining count is therefore 64, not 82.**
+   **The real remaining count is therefore 61, not 79.**
 
-3. **82 shared-bank keys** (`notes/shared-bank-geometry/`). 113 are
+3. **79 shared-bank keys** (`notes/shared-bank-geometry/`). 113 are
    actor-slot offsets, blocked by #0138 for *who* they draw but nameable by
    *pose*. The RUN sub-pieces are neither symmetric nor complete, which is
    why they stalled. 50 are hero-art, of which the consensus engine can

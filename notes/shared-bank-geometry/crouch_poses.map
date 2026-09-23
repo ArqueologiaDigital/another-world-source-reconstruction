@@ -1,0 +1,26 @@
+# The hero's crouch, completing a mirror that was half-named.
+#
+# armed_poses.map named HERO_CROUCH_LEFT from CAVES's crouch routines but
+# left the right-facing side alone. The two routines are exact mirrors, and
+# reading them side by side shows what was missing:
+#
+#   HERO_CROUCH_DOWN_LEFT_STEP:      CV_17A8 -> HERO_CROUCH_LEFT (x2)
+#   HERO_CROUCH_DOWN_RIGHT_STEP:     CV_1600 -> CV_61B0          (x2)
+#   HERO_CROUCH_HOLD_LEFT_LOOP:      HERO_CROUCH_LEFT, HERO_STAND_ARMED_LEFT
+#   HERO_CROUCH_HOLD_RIGHT_LOOP:     CV_61B0,          HERO_STAND_ARMED_RIGHT
+#
+# So CV_61B0 occupies, on the right, exactly the position HERO_CROUCH_LEFT
+# occupies on the left -- in two different routines -- and CV_17A8 / CV_1600
+# are the transition frame each STEP routine draws before settling.
+#
+# The heights confirm the reading without reference to any name. Each
+# direction descends through the same three stages:
+#
+#   left    45.0 stand armed  ->  38.0 crouching down  ->  33.0 crouched
+#   right   44.5 stand armed  ->  37.5 crouching down  ->  32.5 crouched
+#
+# all at 11 leaves, all drawn at [HERO_X]. CV_61B0 has one other draw at a
+# literal x=297, which reuses the pose rather than contradicting it.
+CV_17A8 HERO_CROUCH_DOWN_LEFT
+CV_1600 HERO_CROUCH_DOWN_RIGHT
+CV_61B0 HERO_CROUCH_RIGHT
