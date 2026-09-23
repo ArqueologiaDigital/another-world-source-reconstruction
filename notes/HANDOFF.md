@@ -68,6 +68,18 @@ for it whenever two draws share an anchor.
 2. **81 routine renames blocked by a dependency chain**: family gaps → cart
    and GBA art unnamed → no proposals → a shared `_helpers` label that cannot
    be renamed for one branch alone. Breaking any link unblocks the rest.
+2a. **18 of the remaining shared-bank keys are unreachable, not unnamed.**
+   `CV_5F74..CV_5FFC` pair one-to-one with the named
+   `CV_FIGURE_WALK_<DIR>_UPPER_POSE_00..08` and are drawn only behind
+   `jg [0xF6], 0x00`. `[0xF6]` is written nine times across all four
+   branches and every write is `mov [0xF6], 0x0001`; nothing sets it to
+   zero, and every stage containing the guard also contains the write. So
+   all 180 guards jump and all 162 draws are dead. Per #0126 they take no
+   role name. `notes/shared-bank-geometry/unreachable_guarded_art.py`
+   re-checks it and exits 1 if any draw is ever found outside the guard.
+
+   **The real remaining count is therefore 94, not 112.**
+
 3. **112 shared-bank keys** (`notes/shared-bank-geometry/`). 113 are
    actor-slot offsets, blocked by #0138 for *who* they draw but nameable by
    *pose*. The RUN sub-pieces are neither symmetric nor complete, which is
