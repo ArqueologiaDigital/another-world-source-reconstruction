@@ -481,7 +481,7 @@ DRAW_CIN_034:
 
 LABEL_796B:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2A7E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_08, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=CV_5FBC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
@@ -489,7 +489,7 @@ LABEL_796B:
 
 CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L1:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2AC6, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=CV_5FC4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
@@ -497,7 +497,7 @@ CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L1:
 
 CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L4:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2B0E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -506,7 +506,7 @@ CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L4:
 
 CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L7:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2B56, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=CV_5FD4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
@@ -514,7 +514,7 @@ CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L7:
 
 CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L10:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2B9E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -523,7 +523,7 @@ CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L10:
 
 CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L15:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2BE6, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -532,7 +532,7 @@ CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L15:
 
 CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L20:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2C2E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_05, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -541,7 +541,7 @@ CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L20:
 
 LABEL_7A46:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2C76, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_06, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -550,7 +550,7 @@ LABEL_7A46:
 
 LABEL_7A67:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2CBE, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_07, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW

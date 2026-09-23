@@ -18,10 +18,10 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 53.7% (5,448/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 54.2% (5,502/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
-| shared-bank keys still unnamed | 141 of 352 | `notes/shared-bank-geometry/` |
+| shared-bank keys still unnamed | 132 of 352 | `notes/shared-bank-geometry/` |
 
 ## The method that worked, in one paragraph
 
@@ -61,7 +61,7 @@ for it whenever two draws share an anchor.
 2. **81 routine renames blocked by a dependency chain**: family gaps → cart
    and GBA art unnamed → no proposals → a shared `_helpers` label that cannot
    be renamed for one branch alone. Breaking any link unblocks the rest.
-3. **141 shared-bank keys** (`notes/shared-bank-geometry/`). 113 are
+3. **132 shared-bank keys** (`notes/shared-bank-geometry/`). 113 are
    actor-slot offsets, blocked by #0138 for *who* they draw but nameable by
    *pose*. The RUN sub-pieces are neither symmetric nor complete, which is
    why they stalled. 50 are hero-art, of which the consensus engine can

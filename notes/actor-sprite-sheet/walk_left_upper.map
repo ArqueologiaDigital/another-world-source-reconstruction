@@ -1,0 +1,37 @@
+# The actor's upper piece through the left-facing walk: 9 poses, 16 frames.
+#
+# Same class as run_right_upper.map, found the same way: a routine drawing
+# exactly one CV_FIGURE_WALK_LEFT_BODY_F<n> also draws (or calls one level
+# into) the piece, so the frame comes from the already-named art rather than
+# from any routine label. Frames 0..15 are covered with NO gap, which is what
+# separates this from every family README.md holds.
+#
+# All nine sit at top -53.0..-53.5 with 2 leaves -- the UPPER band measured in
+# run_right_upper.map, twelve units above the LIMB band (-39.5..-40.5, one
+# leaf) that the committed CV_FIGURE_WALK_<DIR>_LIMB_POSE_00..03 occupy.
+#
+# The gait symmetry is textbook, and it is the check rather than the source:
+#
+#     {2,14} {3,13} {4,12} {5,11} {6,10}   all sum to 16, the moments
+#                                          either side of mid-stride
+#     {0,1} and {8,9}                      the two mid-stance pairs of a
+#                                          two-step cycle
+#     {7} and {15}                         singletons whose predicted
+#                                          partners, 9 and 1, are absorbed
+#                                          into those stance pairs
+#
+# Offsets run CV_2A7E..CV_2CBE at a uniform stride of 0x48, and the nine are
+# drawn ONLY at the actor slot ([0x07] / [BUDDY_X]) -- no literal-position
+# use, so none of the second-role ambiguity that holds CV_2276 next door.
+#
+# POSE, not F: seven of the nine serve two frames. Ordered by ascending first
+# frame. Not called an ARM, for the reason README.md gives.
+CV_2AC6 CV_FIGURE_WALK_LEFT_UPPER_POSE_00
+CV_2B0E CV_FIGURE_WALK_LEFT_UPPER_POSE_01
+CV_2B56 CV_FIGURE_WALK_LEFT_UPPER_POSE_02
+CV_2B9E CV_FIGURE_WALK_LEFT_UPPER_POSE_03
+CV_2BE6 CV_FIGURE_WALK_LEFT_UPPER_POSE_04
+CV_2C2E CV_FIGURE_WALK_LEFT_UPPER_POSE_05
+CV_2C76 CV_FIGURE_WALK_LEFT_UPPER_POSE_06
+CV_2CBE CV_FIGURE_WALK_LEFT_UPPER_POSE_07
+CV_2A7E CV_FIGURE_WALK_LEFT_UPPER_POSE_08

@@ -42,7 +42,7 @@ DRAW_CIN_058:
 
 LABEL_7FFF:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2A7E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_08, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=CV_5FBC, x=[0x07], y=[0x08], zoom=0x40
@@ -50,7 +50,7 @@ LABEL_7FFF:
 
 LABEL_801C:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2AC6, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_00, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=CV_5FC4, x=[0x07], y=[0x08], zoom=0x40
@@ -58,7 +58,7 @@ LABEL_801C:
 
 LABEL_8039:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2B0E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_01, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	sub [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
@@ -67,7 +67,7 @@ LABEL_8039:
 
 LABEL_805A:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2B56, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_02, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=CV_5FD4, x=[0x07], y=[0x08], zoom=0x40
@@ -75,7 +75,7 @@ LABEL_805A:
 
 LABEL_8077:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2B9E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_03, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	add [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
@@ -84,7 +84,7 @@ LABEL_8077:
 
 LABEL_8098:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2BE6, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_04, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	add [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
@@ -93,7 +93,7 @@ LABEL_8098:
 
 LABEL_80B9:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2C2E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_05, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	add [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
@@ -102,7 +102,7 @@ LABEL_80B9:
 
 LABEL_80DA:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2C76, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_06, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	add [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
@@ -111,7 +111,7 @@ LABEL_80DA:
 
 LABEL_80FB:
 	jg [0x09], 0x03FF, SHARED_RET
-	video type=0, offset=CV_2CBE, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_UPPER_POSE_07, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	add [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_BEAST_SUBFRAME_2_VAR09_LOW
