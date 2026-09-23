@@ -218,13 +218,13 @@ LABEL_826F:
 
 
 CAPSULE_DRAW_CV246_AT_X07_Y08_L2:
-	video type=0, offset=CV_3B44, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0x13], [0x30], DRAW_CIN_112_113_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_CIN_112_113_VAR09_LOW
-	video type=0, offset=CV_5CA4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_00_CHARGE_BLINK, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_112_113_VAR09_LOW
 
 LABEL_829E:
@@ -235,23 +235,23 @@ LABEL_829E:
 
 
 LABEL_82AA:
-	video type=0, offset=CV_3B96, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0x13], [0x30], DRAW_CIN_112_113_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_CIN_112_113_VAR09_LOW
-	video type=0, offset=CV_5CAC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_01_CHARGE_BLINK, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_112_113_VAR09_LOW
 
 CAPSULE_DRAW_CV261_AT_X07_Y08_L2:
-	video type=0, offset=CV_3BE8, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0x13], [0x30], DRAW_CIN_112_113_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_CIN_112_113_VAR09_LOW
-	video type=0, offset=CV_5CB4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_02_CHARGE_BLINK, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_112_113_VAR09_LOW
 
 CAPSULE_DRAW_CV259_AT_X07_Y08_L2:

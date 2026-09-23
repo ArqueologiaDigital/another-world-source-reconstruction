@@ -234,12 +234,12 @@ CAVES_DRAW_CV224_AT_X07_Y08_L3:
 
 
 CAVES_INLINE_DRAW_CV_220_016_L3:
-	video type=0, offset=CV_3C3A, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_00, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C5C, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_00_CHARGE_BLINK, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 
@@ -251,22 +251,22 @@ CAVES_BUDDY_DRAW_CV306_X_MINUS_1:
 
 
 CAVES_BUDDY_DRAW_CV306_OVERLAY_BAR31_BIT2:
-	video type=0, offset=CV_3C66, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_01, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C64, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_01_CHARGE_BLINK, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 
 DRAW_CV_304_THEN_305:
-	video type=0, offset=CV_3C92, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_02, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C6C, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_02_CHARGE_BLINK, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 

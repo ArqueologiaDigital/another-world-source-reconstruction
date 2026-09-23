@@ -1,0 +1,51 @@
+# The actor's armed upper and limb layers, and their charge blinks.
+#
+# A gait frame picks its top layer on [0x0D]:
+#
+#     CAPSULE_ACTOR_RUN_RIGHT_DRAW_2:
+#         video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F02, ...
+#         je [0x0D], 0x00, LABEL_6A11
+#         call LABEL_691B                              <- armed
+#         jmp LABEL_6A16
+#     LABEL_6A11:
+#         video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_02, ...   <- unarmed
+#
+# So each of these is the armed substitute for an already-named layer, and
+# the geometry says the same thing: armed is unarmed plus the gun.
+#
+#     CV_3B44  19x23  6 leaves   for CV_FIGURE_WALK_RIGHT_UPPER_POSE_00  18x30  2
+#     CV_3C3A  12x23  2 leaves   for CV_FIGURE_WALK_LEFT_LIMB_POSE_03    11x17  1
+#
+# The right-facing three replace UPPER layers and the left-facing three
+# replace LIMB layers, which is why their leaf counts differ; the names
+# follow the layer each substitutes for rather than being forced to match.
+#
+# None is the armed form of ONE frame: each substitutes across four to eight
+# walk and run frames, so like the shared sub-pieces in subpiece_poses.py
+# they take a POSE ordinal and not an F index. The ordinal is a measured
+# ordering, not a chosen one -- ascending offset is descending arm height,
+# in both directions:
+#
+#     right  CV_3B44 h23   CV_3B96 h20   CV_3BE8 h16
+#     left   CV_3C3A h23   CV_3C66 h20   CV_3C92 h14
+#
+# Each is paired with one 0x1 single-point piece from the blink array at
+# 0x5C5C..0x5CB4, drawn under the same `and [0xF8], 0x0004` test that gates
+# every other *_CHARGE_BLINK in the bank, and the pairing is identical in
+# CAPSULE and CAVES.
+#
+# Held: CV_41A8, CV_41E0, CV_4218 (35x7, 36x10, 28x7 -- wide and flat, a
+# different thing), CV_4058, and the two blinks CV_5CBC and CV_5CC4 whose
+# drawers paint nothing else.
+CV_3B44 CV_FIGURE_GUN_UPPER_RIGHT_POSE_00
+CV_3B96 CV_FIGURE_GUN_UPPER_RIGHT_POSE_01
+CV_3BE8 CV_FIGURE_GUN_UPPER_RIGHT_POSE_02
+CV_3C3A CV_FIGURE_GUN_LIMB_LEFT_POSE_00
+CV_3C66 CV_FIGURE_GUN_LIMB_LEFT_POSE_01
+CV_3C92 CV_FIGURE_GUN_LIMB_LEFT_POSE_02
+CV_5CA4 CV_FIGURE_GUN_UPPER_RIGHT_POSE_00_CHARGE_BLINK
+CV_5CAC CV_FIGURE_GUN_UPPER_RIGHT_POSE_01_CHARGE_BLINK
+CV_5CB4 CV_FIGURE_GUN_UPPER_RIGHT_POSE_02_CHARGE_BLINK
+CV_5C5C CV_FIGURE_GUN_LIMB_LEFT_POSE_00_CHARGE_BLINK
+CV_5C64 CV_FIGURE_GUN_LIMB_LEFT_POSE_01_CHARGE_BLINK
+CV_5C6C CV_FIGURE_GUN_LIMB_LEFT_POSE_02_CHARGE_BLINK

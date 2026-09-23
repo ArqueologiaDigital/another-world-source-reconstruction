@@ -234,12 +234,12 @@ LABEL_7F34:
 
 
 LABEL_7F40:
-	video type=0, offset=CV_3C3A, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_00, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C5C, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_00_CHARGE_BLINK, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 
@@ -251,22 +251,22 @@ LABEL_7F5E:
 
 
 LABEL_7F6A:
-	video type=0, offset=CV_3C66, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_01, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C64, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_01_CHARGE_BLINK, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 
 LABEL_7F88:
-	video type=0, offset=CV_3C92, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_02, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C6C, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_02_CHARGE_BLINK, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 

@@ -390,12 +390,12 @@ LABEL_78A0:
 
 
 CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L22:
-	video type=0, offset=CV_3C3A, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C5C, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_00_CHARGE_BLINK, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
 
@@ -407,22 +407,22 @@ CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L18:
 
 
 CAPSULE_DRAW_CV204_AT_X07_PLUS1_Y08_L13:
-	video type=0, offset=CV_3C66, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C64, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_01_CHARGE_BLINK, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
 
 DRAW_CV_304_THEN_305:
-	video type=0, offset=CV_3C92, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C6C, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_02_CHARGE_BLINK, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
 

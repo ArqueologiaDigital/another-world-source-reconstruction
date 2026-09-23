@@ -370,3 +370,45 @@ the arm back down.
 **One of the nine is left.** `CV_367C`, 7x18 with 3 leaves, is a gun-arm
 layer of exactly the shape of every `HERO_GUN_ARM_RIGHT_CASE_*`, and nothing
 says which pose it belongs to.
+
+## The actor's armed layers, read off the [0x0D] branch
+
+The hero slot was nine keys. The actor slot is 65, and the same method opens
+it: a gait frame picks its top layer on `[0x0D]`.
+
+```
+CAPSULE_ACTOR_RUN_RIGHT_DRAW_2:
+        video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F02, ...
+        je [0x0D], 0x00, LABEL_6A11
+        call LABEL_691B                                      <- armed
+        jmp LABEL_6A16
+LABEL_6A11:
+        video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_02, ...   <- unarmed
+```
+
+So every one of these is the **armed substitute for an already-named layer**,
+and the geometry says the same: armed is unarmed plus the gun.
+
+| armed | | unarmed it substitutes for | |
+| --- | --- | --- | --- |
+| `CV_3B44` | 19x23, 6 leaves | `CV_FIGURE_WALK_RIGHT_UPPER_POSE_00` | 18x30, 2 |
+| `CV_3C3A` | 12x23, 2 leaves | `CV_FIGURE_WALK_LEFT_LIMB_POSE_03` | 11x17, 1 |
+
+The right-facing three replace **UPPER** layers and the left-facing three
+replace **LIMB** layers, which is why their leaf counts differ — the names
+follow the layer each substitutes for rather than being forced to match.
+
+**None is the armed form of one frame.** Each substitutes across four to eight
+walk *and* run frames, so like the shared sub-pieces in `subpiece_poses.py`
+they take a `POSE` ordinal rather than an `F` index. The ordinal is measured,
+not chosen: ascending offset is descending arm height, in both directions —
+right 23, 20, 16 and left 23, 20, 14.
+
+Each is paired with one 0x1 single-point piece from the blink array at
+0x5C5C..0x5CB4, drawn under the same `and [0xF8], 0x0004` test that gates
+every other `*_CHARGE_BLINK` in the bank, and the pairing is identical in
+CAPSULE and CAVES.
+
+Twelve names. Held back: `CV_41A8`, `CV_41E0`, `CV_4218` (35x7, 36x10, 28x7 —
+wide and flat, a different thing), `CV_4058`, and the two blinks `CV_5CBC` and
+`CV_5CC4` whose drawers paint nothing else to pair them with.

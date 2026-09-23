@@ -384,12 +384,12 @@ LABEL_5FCC:
 
 
 LABEL_5FD8:
-	video type=0, offset=CV_3C3A, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C5C, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_00_CHARGE_BLINK, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
 
@@ -401,22 +401,22 @@ LABEL_5FF6:
 
 
 LABEL_6002:
-	video type=0, offset=CV_3C66, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C64, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_01_CHARGE_BLINK, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
 
 LABEL_6020:
-	video type=0, offset=CV_3C92, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C6C, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_02_CHARGE_BLINK, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	ret
 
 
@@ -1316,13 +1316,13 @@ LABEL_690F:
 
 
 LABEL_691B:
-	video type=0, offset=CV_3B44, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0x13], [0x30], DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=CV_5CA4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_00_CHARGE_BLINK, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_693E:
@@ -1333,23 +1333,23 @@ LABEL_693E:
 
 
 LABEL_694A:
-	video type=0, offset=CV_3B96, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0x13], [0x30], DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=CV_5CAC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_01_CHARGE_BLINK, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_696D:
-	video type=0, offset=CV_3BE8, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0x13], [0x30], DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=CV_5CB4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_02_CHARGE_BLINK, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_6990:

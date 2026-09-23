@@ -1189,18 +1189,18 @@ HERO_RUN_LEFT_ARM_F03		EQU 0x3648
 HERO_RUN_LEFT_BODY_F03		EQU 0x13B2
 HERO_RUN_LEFT_BODY_F04		EQU 0x1474
 CV_1C78		EQU 0x1C78
-CV_3B44		EQU 0x3B44
-CV_5CA4		EQU 0x5CA4
-CV_3C92		EQU 0x3C92
-CV_5C6C		EQU 0x5C6C
-CV_3C66		EQU 0x3C66
-CV_5C64		EQU 0x5C64
-CV_3C3A		EQU 0x3C3A
-CV_5C5C		EQU 0x5C5C
-CV_3B96		EQU 0x3B96
-CV_5CAC		EQU 0x5CAC
-CV_3BE8		EQU 0x3BE8
-CV_5CB4		EQU 0x5CB4
+CV_FIGURE_GUN_UPPER_RIGHT_POSE_00		EQU 0x3B44
+CV_FIGURE_GUN_UPPER_RIGHT_POSE_00_CHARGE_BLINK		EQU 0x5CA4
+CV_FIGURE_GUN_LIMB_LEFT_POSE_02		EQU 0x3C92
+CV_FIGURE_GUN_LIMB_LEFT_POSE_02_CHARGE_BLINK		EQU 0x5C6C
+CV_FIGURE_GUN_LIMB_LEFT_POSE_01		EQU 0x3C66
+CV_FIGURE_GUN_LIMB_LEFT_POSE_01_CHARGE_BLINK		EQU 0x5C64
+CV_FIGURE_GUN_LIMB_LEFT_POSE_00		EQU 0x3C3A
+CV_FIGURE_GUN_LIMB_LEFT_POSE_00_CHARGE_BLINK		EQU 0x5C5C
+CV_FIGURE_GUN_UPPER_RIGHT_POSE_01		EQU 0x3B96
+CV_FIGURE_GUN_UPPER_RIGHT_POSE_01_CHARGE_BLINK		EQU 0x5CAC
+CV_FIGURE_GUN_UPPER_RIGHT_POSE_02		EQU 0x3BE8
+CV_FIGURE_GUN_UPPER_RIGHT_POSE_02_CHARGE_BLINK		EQU 0x5CB4
 CV_41A8		EQU 0x41A8
 CV_5C74		EQU 0x5C74
 CV_41E0		EQU 0x41E0
@@ -13406,12 +13406,12 @@ LABEL_7F34:
 
 
 LABEL_7F40:
-	video type=0, offset=CV_3C3A, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_00, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C5C, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_00_CHARGE_BLINK, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 
@@ -13423,22 +13423,22 @@ LABEL_7F5E:
 
 
 LABEL_7F6A:
-	video type=0, offset=CV_3C66, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_01, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C64, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_01_CHARGE_BLINK, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 
 LABEL_7F88:
-	video type=0, offset=CV_3C92, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_02, x=[0x07], y=[0x08], zoom=0x40
 	jg [0x13], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C6C, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_LIMB_LEFT_POSE_02_CHARGE_BLINK, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 
@@ -14338,13 +14338,13 @@ LABEL_8877:
 
 
 LABEL_8883:
-	video type=0, offset=CV_3B44, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_00, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=CV_5CA4, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_00_CHARGE_BLINK, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_88A6:
@@ -14355,23 +14355,23 @@ LABEL_88A6:
 
 
 LABEL_88B2:
-	video type=0, offset=CV_3B96, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_01, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=CV_5CAC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_01_CHARGE_BLINK, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_88D5:
-	video type=0, offset=CV_3BE8, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_02, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=CV_5CB4, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_02_CHARGE_BLINK, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_88F8:

@@ -883,13 +883,13 @@ LABEL_8877:
 
 
 LABEL_8883:
-	video type=0, offset=CV_3B44, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_00, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=CV_5CA4, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_00_CHARGE_BLINK, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_88A6:
@@ -900,23 +900,23 @@ LABEL_88A6:
 
 
 LABEL_88B2:
-	video type=0, offset=CV_3B96, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_01, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=CV_5CAC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_01_CHARGE_BLINK, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_88D5:
-	video type=0, offset=CV_3BE8, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_02, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0x13], [0x30], DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
-	video type=0, offset=CV_5CB4, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_GUN_UPPER_RIGHT_POSE_02_CHARGE_BLINK, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_88F8:
