@@ -325,3 +325,29 @@ are pinned to one screen and one painter already. It is waiting on a **name
 shape** that can say "screen 0x6C's own scenery, the thing painted eleven
 times across the floor" without claiming a stack position. That is a
 convention decision, and this is what it would be deciding about.
+
+### The tree spells the same case two ways, which is the decision to make
+
+Before calling the above a convention *decision*, I checked whether the
+convention already exists. It half does, and the half is the problem.
+
+CAVES names a screen whose whole backdrop is one exclusive picture with **no
+index at all**:
+
+```
+CINEMATIC_CAVES_SCREEN_6E_BACKDROP      one draw, one picture, exclusive
+CINEMATIC_CAVES_SCREEN_71_BACKDROP      one draw, one picture, exclusive
+```
+
+CAPSULE spells the identical situation `_BACKDROP_LAYER_0` — screens 0x2A,
+0x6E, 0x8A, 0x8D, 0x8E, 0xC8, 0xCD, 0xED and 0xEE, every one a single
+exclusive picture carrying a layer index it does not need. Asking "does the
+un-indexed shape reproduce the names already written?" gives **4 of 13**, and
+the 9 misses are all CAPSULE.
+
+It yields nothing either way: every painter whose whole stack is one exclusive
+picture is already named, in one spelling or the other. What it establishes is
+that the un-indexed form is not a convention waiting to be extended, it is one
+stage's habit — so a name shape for screen-owned art that makes no position
+claim has to be *chosen*, not found. That is the decision, and the nine
+CAPSULE names are what it would also tidy.
