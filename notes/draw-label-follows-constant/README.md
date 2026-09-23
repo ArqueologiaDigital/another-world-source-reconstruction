@@ -79,9 +79,9 @@ DRAW_CV108_PLAY_60_F0F_V2A_C1:
 makes a noise, so the body must now contain *nothing* but the one draw and the
 `ret` — which is why the count is 210 and not 223.
 
-## What it finds
+## What it found, and what is left
 
-Measured 2026-09-23:
+Before applying anything, on 2026-09-23:
 
 ```
 793 label(s) whose body draws exactly one picture and rets
@@ -93,9 +93,27 @@ Measured 2026-09-23:
       1  label already agrees
 ```
 
-The 210 break down 83 `chahi_amiga_1991`, 81 `dos_1992`, 46 `cartridge_1992`,
-and the forms being retired are `DRAW_CV_<n>`, `LABEL_<hex>` and
-`DRAW_CIN_<n>`.
+The 210 broke down 83 `chahi_amiga_1991`, 81 `dos_1992`, 46
+`cartridge_1992`, and the forms retired were `DRAW_CV_<n>`, `LABEL_<hex>` and
+`DRAW_CIN_<n>`. All 210 were applied with
+`tools/apply_routine_renames.py`, in 9 per-(branch, stage) batches, and the
+same command now reports:
+
+```
+793 label(s) whose body draws exactly one picture and rets
+
+    465  constant still unnamed
+    212  label already agrees
+    116  label semantic and shares a subject word
+```
+
+Nothing nameable is left, and no label contradicts its picture anywhere in the
+tree. The remaining 465 are waiting on the *picture* to be named, which is the
+asset half of the job rather than this one.
+
+Re-running this probe is the read-back for a batch of these renames: it derives
+the expected name from the constant each label draws, so a rename that landed
+on the wrong label shows up as a label that no longer agrees.
 
 ## The word-overlap test is a prompt, not a verdict
 
