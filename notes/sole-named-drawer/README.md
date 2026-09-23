@@ -261,3 +261,63 @@ treatment in `../laser-impact-anim/`, not a name copied across one `call`.
 This is also why the scouting number and the real number differ by 93. A count
 taken before the exclusivity conditions are written down is a count of
 candidates, not of names.
+
+### The same hop applied to `--animations`, also 0
+
+If one stub serving a run of frames is not a name-hop, it might still be an
+*animation* — a named routine whose whole on-screen output is one stub drawing
+N consecutive unnamed constants would give `<caller>_F0..F<N-1>`. That is the
+`--animations` rule reaching one level deeper, and `--animations` badly needs
+it: of the 51 fixed-anchor routines it finds today, almost none are in
+PRISON, CAVES or CAPSULE, because in those stages the draws sit behind labels.
+
+Measured over both priority ports, it yields **0**, and the rejections say why:
+
+```
+  726  stub's art is not exclusive to it
+  211  no single named caller
+    4  the caller draws elsewhere too
+    1  the caller's name is a mechanism
+```
+
+726 to 211 is the shape of the answer. These labels are not private helpers
+with their own picture; they are shared, and a picture reached from two places
+cannot take the name of one of them.
+
+The motivating example turned out not to be a stub at all:
+
+```
+CAVES_SHAFT_DESCENT_STAGE_CASE_06:
+        jne [0x03], 0x06, LABEL_2693
+        mov [0x34], 0xFFF7
+        ...
+LABEL_2693:                              <- reached by FALLTHROUGH, not a call
+        video offset=CINEMATIC_664, x=[HERO_X], y=[HERO_Y]
+        je [0x63], 0x02, LABEL_2715
+        break
+        sub [HERO_X], 0x0001
+        video offset=CINEMATIC_672, x=[HERO_X], y=[HERO_Y]
+```
+
+It is a long sequence body with `break`s between frames, drawing at the hero
+slot — the hero descending the shaft. `#0138` would have refused it anyway.
+
+## The ledger of levers, and what each is worth today
+
+Every mechanical seam into the remaining art, measured rather than assumed:
+
+| lever | yield | why |
+| --- | --- | --- |
+| sole **named** drawer (the main rule) | 0 | all applied 2026-09-23 |
+| sole drawer is a stub, one named caller (`--hop`) | 0 | stub draws a run, or caller draws several |
+| the same hop for `--animations` | 0 | 726 of the stubs' art is not exclusive |
+| a `[0x13]`-style dispatch ladder | 19 | the six big ones were named 2026-09-23 |
+| identical art already named in another **stage** | ~38 | and the role must be re-stemmed per stage |
+| identical art already named in the other **port**, same stage | 22 | the two ports are already well synchronised |
+| numbered in **both** ports with identical art | **1,655** | neither port has a name; no drawer-side evidence exists |
+
+The last row is the work. 667 in CAVES, 511 in PRISON, 403 in CAPSULE, and
+nothing in the call graph distinguishes them — which is what
+`tools/nameable_backlog.py` means by "the `real` column is the work". They need
+the polygon layer: geometry, anchors and rendering, the methods in
+`../shared-bank-geometry/` and `../lake-shooting/`, one scene at a time.
