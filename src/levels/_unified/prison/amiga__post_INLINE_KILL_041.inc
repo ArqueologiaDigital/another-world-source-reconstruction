@@ -42,7 +42,7 @@ LABEL_6A8D:
 
 
 LABEL_6AAB:
-	video offset=CINEMATIC_563, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_STAND_AIM_RIGHT, x=[HERO_X], y=[HERO_Y]
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004

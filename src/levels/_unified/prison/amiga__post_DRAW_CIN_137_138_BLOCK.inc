@@ -49,22 +49,22 @@ LABEL_10D4:
 
 LABEL_10D5:
 	jne [0x10], [SCREEN_NUM], LABEL_105E
-	video offset=CINEMATIC_376, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_XRAY_FLASH_RIGHT, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jne [0x10], [SCREEN_NUM], LABEL_105E
-	video offset=CINEMATIC_377, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_XRAY_SKELETON_RIGHT_LIT, x=[BUDDY_X], y=[BUDDY_Y]
 	mov [0x29], 0x0014
 
 LABEL_10F0:
 	break
 	jne [0x10], [SCREEN_NUM], LABEL_105E
-	video offset=CINEMATIC_378, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_XRAY_SKELETON_RIGHT_DARK, x=[BUDDY_X], y=[BUDDY_Y]
 	jge [0x11], 0x4000, LABEL_1107
 	djnz [0x29], LABEL_10F0
 
 LABEL_1107:
 	break
-	video offset=CINEMATIC_377, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_XRAY_SKELETON_RIGHT_LIT, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jmp LABEL_105E
 LABEL_1111:
@@ -73,20 +73,20 @@ LABEL_1111:
 	db 0x07, 0x08, 0x06, 0x07, 0x10, 0x5E, 0x11
 
 LABEL_1128:
-	video offset=CINEMATIC_365, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_XRAY_FLASH_LEFT, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_366, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_XRAY_SKELETON_LEFT_LIT, x=[BUDDY_X], y=[BUDDY_Y]
 	mov [0x29], 0x0014
 
 LABEL_1137:
 	break
-	video offset=CINEMATIC_367, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_XRAY_SKELETON_LEFT_DARK, x=[BUDDY_X], y=[BUDDY_Y]
 	jge [0x11], 0x4000, LABEL_1148
 	djnz [0x29], LABEL_1137
 
 LABEL_1148:
 	break
-	video offset=CINEMATIC_366, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_XRAY_SKELETON_LEFT_LIT, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jmp LABEL_105E
 LABEL_1152:
