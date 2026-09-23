@@ -57,8 +57,9 @@ STAGE_ID = {"CODE_WHEEL": 0, "INTRO": 1, "LAKE": 2, "PRISON": 3, "CAVES": 4,
             "TANK": 5, "CAPSULE": 6, "ENDING": 7, "PASSCODE": 8}
 
 RE_EQU = re.compile(r"^(\w+)\s+EQU\s+(0x[0-9A-Fa-f]+)\s*$")
+RE_VAR = re.compile(r"^(\w+)\s+EQU\s+0x([0-9A-Fa-f]{2})\s*$")
 RE_LABEL = re.compile(r"^(\w+):")
-RE_NUMBERED = re.compile(r"^CINEMATIC_\d+$|^VIDEO2_\d+$")
+RE_NUMBERED = re.compile(r"^CINEMATIC_\d+$|^CV_[0-9A-F]{4}$")
 
 
 def names_for(branch: str, stage: str) -> dict:
@@ -68,6 +69,13 @@ def names_for(branch: str, stage: str) -> dict:
     instruction carries and what the debugger has in hand at draw time. Two
     constants at one offset (the tree has ~30 such twins, see
     `undefined_symbols.py --redundant`) both land in `aliases`.
+
+    The two namespaces are `CINEMATIC_*` for the stage's own 64 KiB slab and
+    `CV_*` for the shared bank -- which the disassembly spells
+    `video type=0, offset=CV_...` and `notes/shared-bank-naming/` calls the
+    shared bank. A still-unnamed shared-bank key is spelled `CV_<offset in
+    hex>`, e.g. `CV_5FBC`, which is why the numbered-form test has to know
+    about both shapes.
     """
     f = ROOT / "src" / "levels" / branch / f"{stage}.asm"
     if not f.is_file():
@@ -81,7 +89,7 @@ def names_for(branch: str, stage: str) -> dict:
         if m:
             name, off = m.group(1), m.group(2).upper().replace("0X", "0x")
             tgt = (cinematic if name.startswith("CINEMATIC_")
-                   else video2 if name.startswith("VIDEO2_") else None)
+                   else video2 if name.startswith("CV_") else None)
             if tgt is None:
                 continue
             if off in tgt and tgt[off] != name:
@@ -97,7 +105,27 @@ def names_for(branch: str, stage: str) -> dict:
             labels.setdefault(m.group(1), m.group(1))
     return {"branch": branch, "stage": stage, "stage_id": STAGE_ID.get(stage),
             "cinematic": cinematic, "video2": video2, "aliases": aliases,
-            "labels": sorted(labels)}
+            "labels": sorted(labels), "vars": var_names(branch, stage)}
+
+
+def var_names(branch: str, stage: str) -> dict:
+    """VM variable number -> the name the disassembly gives it.
+
+    Two sources, the per-stage file winning: `src/levels/_common_vars.inc` for
+    the ones every stage shares (`HERO_X`, `SCREEN_NUM`, `PAUSE_SLICES`) and the
+    stage's own `.asm` for the rest. A two-hex-digit EQU is a variable; anything
+    wider is a polygon offset or an address.
+    """
+    out: dict[str, str] = {}
+    for f in (ROOT / "src" / "levels" / "_common_vars.inc",
+              ROOT / "src" / "levels" / branch / f"{stage}.asm"):
+        if not f.is_file():
+            continue
+        for line in f.read_text(errors="replace").splitlines():
+            m = RE_VAR.match(line)
+            if m and not m.group(1).startswith(("CINEMATIC_", "CV_")):
+                out[str(int(m.group(2), 16))] = m.group(1)
+    return out
 
 
 class Handler(BaseHTTPRequestHandler):
