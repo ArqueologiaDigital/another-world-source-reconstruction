@@ -65,15 +65,15 @@ LABEL_7685:
 	break
 	add [0x04], 0x0020
 	play id=0x0063, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_080, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_LANDING_F0, x=[0x03], y=[0x04]
 	break
 	add [0x04], 0x0016
 	setPalette 0x02
-	video offset=CINEMATIC_081, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_LANDING_F1, x=[0x03], y=[0x04]
 	break
 	play id=0x0064, freq=0x14, vol=0x40, channel=0x02
 	selectVideoPage 0x00
-	video offset=CINEMATIC_082, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_LANDING_F2, x=[0x03], y=[0x04]
 	selectVideoPage 0xFF
 	call LABEL_1C8E
 	setup channel=0x11, address=DRAW_CIN_569_TO_572_6F_AT_F8680E45
@@ -81,11 +81,11 @@ LABEL_7685:
 	setup channel=0x35, address=DRAW_CIN_540_543_WITH_SFX_57
 	setup channel=0x15, address=SETUP_VARS_01_B0_02_B6_06_C7_28_FROM_01
 	mov [PAUSE_SLICES], 0x0004
-	video offset=CINEMATIC_083, x=[0x03], y=[0x04]
+	video offset=CINEMATIC_PRISON_CAGE_LANDING_F3, x=[0x03], y=[0x04]
 	mov [0x1A], [0x03]
 	mov [0x1B], [0x04]
 	break
-	video offset=CINEMATIC_084, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_CAGE_LANDING_F4, x=[0x1a], y=[0x1b]
 	setup channel=0x14, address=DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB
 	setup channel=0x22, address=PRISON_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
 	setup channel=0x23, address=INLINE_SUB_VAR08_INIT_VAR29
