@@ -99,6 +99,8 @@ sys.path.insert(0, str(SRC / "notes" / "polygon-extent-correction"))
 from polygon_tree import parse_polygon_tree                  # noqa: E402
 from polygon_extent import extent                            # noqa: E402
 from extent_matches_renderer import slab                     # noqa: E402
+sys.path.insert(0, str(SRC / "notes" / "screen-scope"))
+import screen_scope                                          # noqa: E402
 
 PORTS = {"amiga": "chahi_amiga_1991", "msdos": "dos_1992"}
 STAGE_ID = {"PRISON": 3, "CAVES": 4, "CAPSULE": 6}
@@ -188,32 +190,49 @@ def main() -> int:
         # and NOTHING else can take the name: screens 0x92 and 0x93 share
         # their base and their top layer and differ in one, so the shared two
         # belong to neither screen and are left numbered.
+        # The screen comes from the label when it carries one, and otherwise
+        # from ../screen-scope/, which derives it by forward dataflow on the
+        # [SCREEN_NUM] guards and is validated against the 32 routines whose
+        # names already state a screen (29 agree; see that module).
+        scope: dict[tuple, dict] = {}
+        for port in PORTS:
+            for stage in STAGE_ID:
+                lines = screen_scope.load(port, stage)
+                if lines is not None:
+                    scope[(port, stage)] = screen_scope.analyse(lines)[0]
+
         by: dict[tuple, list] = {}
         for port, stage, lab, consts, _big in sorted(backdrops):
             m = re.search(r"SCREEN_([0-9A-F]{2})", lab or "")
-            if not m:
-                continue
+            if m:
+                screen, how = m.group(1), "its own label"
+            else:
+                ctx = scope.get((port, stage), {}).get(lab)
+                if ctx is None or len(ctx) != 1:
+                    continue
+                screen = f"{next(iter(ctx)):02X}"
+                how = ("every path that reaches it has already tested "
+                       "`[SCREEN_NUM]` and found this value")
             for i, const in enumerate(consts):
                 if not RE_NUM.match(const):
                     continue
                 if sites[(port, stage, const)] != {lab}:
                     continue
                 branch = PORTS[port]
-                new = (f"CINEMATIC_{stage}_SCREEN_{m.group(1)}_BACKDROP"
+                new = (f"CINEMATIC_{stage}_SCREEN_{screen}_BACKDROP"
                        f"_LAYER_{i}")
                 by.setdefault((branch, stage), []).append(
-                    (const, new, lab, i, len(consts)))
+                    (const, new, lab, i, len(consts), how))
         for (branch, stage), rows in sorted(by.items()):
             print(f"\n----- {branch} / {stage} -----")
             print("| constant | proposed name | confidence | evidence |")
             print("| --- | --- | --- | --- |")
-            for const, new, lab, i, n in rows:
+            for const, new, lab, i, n, how in rows:
                 print(f"| {const} | {new} | high | `{lab}` is `fill` then "
                       f"{n} pictures at one anchor then `ret`, and draws this "
-                      f"one {i + 1}{'st' if i == 0 else 'nd' if i == 1 else 'rd' if i == 2 else 'th'} "
-                      f"of the {n}; no other routine in the stage draws it, "
-                      f"so it belongs to that screen's backdrop and to no "
-                      f"other |")
+                      f"one at position {i} of {n}; no other routine in the "
+                      f"stage draws it, so it belongs to that backdrop and to "
+                      f"no other. The screen comes from {how} |")
         return 0
 
     if args.backdrops:
