@@ -477,3 +477,33 @@ slot is what the name asserts, and three independent things now fix it.
 `CV_2276` came with the same batch: an exact mirror of
 `CV_FIGURE_RUN_LEFT_UPPER_POSE_06`, sitting at 0x2276 immediately above
 `..._RIGHT_UPPER_POSE_05` at 0x224C, continuing that family's ascending run.
+
+### `--same-signature`, and the control that stopped a name
+
+Two keys share a *signature* when their group box and the multiset of their
+leaf sizes are equal — the same parts in a box of the same size. It looks like
+what two adjacent frames of one animation would share. It is not: **of 48
+consecutive pairs in named `_F` families, 0 share a leaf-shape multiset.** A
+cycle redraws its parts between frames rather than moving them.
+
+Six groups contain both a numbered and a named key, and one of them is very
+tempting. `CV_4324` shares a signature with `CV_FIGURE_CROUCH_FACING_LEFT`,
+has three of its five children at identical positions with identical vertices,
+and is drawn only by `BUDDY_RIGHT_FIRE_RECOIL_PHASE_3` where the named one is
+drawn by `BUDDY_RIGHT_FIRE_AIM_PHASE_1` and `..._RECOVER_PHASE_4` — the same
+`BUDDY_<D>` token, differing only in the phase word. `CV_42BA` pairs with
+`CV_FIGURE_CROUCH_FACING_RIGHT` the same way.
+
+The obvious name is `..._RECOIL`, and it is not available. That word comes
+from the same label family whose direction token `hero_pose_consensus.py
+--token-order` shows wrong **six times out of six**. Having discredited
+`<DIR>` in those labels this session, taking `RECOIL` from them on trust is
+not something I can do. Held, reported, and the association recorded so the
+next reader starts from it rather than rediscovering it.
+
+The art was rendered and looked at first, per the standing
+render-before-naming convention: all four are a crouching figure in profile
+built from the same five parts. The render is what prompted the measurement
+and it is not what decided it — the two "facings" are **not** mirror images
+(group boxes 158x157 against 98x157, child positions unrelated), which the
+thumbnails alone would not have told me.
