@@ -189,6 +189,7 @@ checked against the receiving port's own guards.
 | -- | -- | `CAVES_HERO_ARM_OUT_LEFT_F0` -> `..._REST`, and `LEFT_F1..F7` renumbered to `F0..F6` | high |
 | PRISON 581..595 | (same numbers) | `CINEMATIC_PRISON_CAGE_CHAIN_TILT_{ZERO,PLUS_1..7,MINUS_1..7}` -- a fifteen-way dispatch on a signed tilt | high |
 | CAPSULE 074..077 | msdos 420..423 | `CINEMATIC_CAPSULE_DEBRIS_SETTLE_F0..F3` -- 28, 18, 12, 3 leaves | medium |
+| CAVES 353..367 | msdos 374..388 | `CINEMATIC_CAVES_BULLET_ANGLE_{MINUS_7..MINUS_1,ZERO,PLUS_1..PLUS_6}` and `..._BULLET_GLINT` | high/medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
@@ -637,6 +638,33 @@ beyond that, both of which this directory needed more than once:
 It never touches the ROM. The renders are the input, which is the rule
 `../polygon-extent-correction/` settled: when the question is what something
 looks like, measure the drawn thing.
+
+## A symmetric size ladder on a signed variable is one object at many angles
+
+Two batches this session had the same shape, found by two different probes, and
+between them they name 29 constants.
+
+The tell is a **size that falls to a minimum and climbs back**, on a dispatch
+whose test values run `0, 1, ... n, 0xFFFF, 0xFFFE, ...`:
+
+    PRISON cage chain   width   3  5  9 10 12 17 21   and the same at -1 .. -7
+    CAVES bullet       height   8  8  6  6  4  4  3  3  4  4  6  6  8  8
+
+One dimension moves and the other does not -- the chain's foot stays at
+x~155.5 while its top swings, the bullet's width stays at 6 or 7 while its
+height collapses and returns. That is a rigid object turning, and the dispatch
+value is the angle.
+
+Three things follow every time:
+
+- **The index is the dispatch value**, so the family is `..._MINUS_n`,
+  `..._ZERO`, `..._PLUS_n`, matching `CINEMATIC_PRISON_CAGE_BARS_TILT_*` which
+  the tree already had in that form.
+- **The ends are guards, not equalities.** `jg [0xE6], 0xFFF9` catches every
+  value at -7 or below, so `_MINUS_7` names the arm rather than one angle, and
+  the table says so.
+- **A companion drawn on only one half of the sweep is a separate thing.**
+  `CINEMATIC_354` appears beside the bullet at +3 to +6 and at no other angle.
 
 ## A contiguous run of numbered constants in the bank is one family
 

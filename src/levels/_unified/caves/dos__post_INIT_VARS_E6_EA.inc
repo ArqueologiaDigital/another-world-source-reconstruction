@@ -91,55 +91,55 @@ LABEL_CE95:
 
 LABEL_CEA3:
 	jne [0xE6], 0xFFFB, LABEL_CEB1
-	video offset=CINEMATIC_386, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_MINUS_5, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CEB1:
 	jne [0xE6], 0xFFFC, LABEL_CEBF
-	video offset=CINEMATIC_385, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_MINUS_4, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CEBF:
 	jne [0xE6], 0xFFFD, LABEL_CECD
-	video offset=CINEMATIC_384, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_MINUS_3, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CECD:
 	jne [0xE6], 0xFFFE, LABEL_CEDB
-	video offset=CINEMATIC_383, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_MINUS_2, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CEDB:
 	jne [0xE6], 0xFFFF, LABEL_CEE9
-	video offset=CINEMATIC_382, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_MINUS_1, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CEE9:
 	jne [0xE6], 0x00, LABEL_CEF6
-	video offset=CINEMATIC_381, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_ZERO, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CEF6:
 	jne [0xE6], 0x01, LABEL_CF03
-	video offset=CINEMATIC_380, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_PLUS_1, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CF03:
 	jne [0xE6], 0x02, LABEL_CF10
-	video offset=CINEMATIC_379, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_PLUS_2, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CF10:
 	jne [0xE6], 0x03, LABEL_CF23
-	video offset=CINEMATIC_378, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_PLUS_3, x=[0x21], y=[0x22], zoom=[0x23]
 	video offset=CINEMATIC_CAVES_SCREEN_68_BACKDROP_LAYER_0, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
@@ -159,7 +159,7 @@ LABEL_CF36:
 
 
 DRAW_CIN_374_THEN_CIN_375:
-	video offset=CINEMATIC_374, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_PLUS_6, x=[0x21], y=[0x22], zoom=[0x23]
 	video offset=CINEMATIC_CAVES_SCREEN_68_BACKDROP_LAYER_0, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 

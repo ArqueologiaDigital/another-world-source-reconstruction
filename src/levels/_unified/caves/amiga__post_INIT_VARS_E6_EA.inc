@@ -79,88 +79,88 @@ LABEL_C9E0:
 
 DRAW_CIN_387_IF_VAR_E6_VALID:
 	jg [0xE6], 0xFFF9, LABEL_C9EF
-	video offset=CINEMATIC_367, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_MINUS_7, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_C9EF:
 	jne [0xE6], 0xFFFA, LABEL_C9FD
-	video offset=CINEMATIC_366, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_MINUS_6, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_C9FD:
 	jne [0xE6], 0xFFFB, LABEL_CA0B
-	video offset=CINEMATIC_365, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_MINUS_5, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CA0B:
 	jne [0xE6], 0xFFFC, LABEL_CA19
-	video offset=CINEMATIC_364, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_MINUS_4, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CA19:
 	jne [0xE6], 0xFFFD, LABEL_CA27
-	video offset=CINEMATIC_363, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_MINUS_3, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CA27:
 	jne [0xE6], 0xFFFE, LABEL_CA35
-	video offset=CINEMATIC_362, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_MINUS_2, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CA35:
 	jne [0xE6], 0xFFFF, LABEL_CA43
-	video offset=CINEMATIC_361, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_MINUS_1, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CA43:
 	jne [0xE6], 0x00, LABEL_CA50
-	video offset=CINEMATIC_360, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_ZERO, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CA50:
 	jne [0xE6], 0x01, LABEL_CA5D
-	video offset=CINEMATIC_359, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_PLUS_1, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CA5D:
 	jne [0xE6], 0x02, LABEL_CA6A
-	video offset=CINEMATIC_358, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_PLUS_2, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CA6A:
 	jne [0xE6], 0x03, LABEL_CA7D
-	video offset=CINEMATIC_357, x=[0x21], y=[0x22], zoom=[0x23]
-	video offset=CINEMATIC_354, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_PLUS_3, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_GLINT, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CA7D:
 	jne [0xE6], 0x04, LABEL_CA90
-	video offset=CINEMATIC_356, x=[0x21], y=[0x22], zoom=[0x23]
-	video offset=CINEMATIC_354, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_PLUS_4, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_GLINT, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 LABEL_CA90:
 	jg [0xE6], 0x05, DRAW_CIN_353_THEN_CIN_354
-	video offset=CINEMATIC_355, x=[0x21], y=[0x22], zoom=[0x23]
-	video offset=CINEMATIC_354, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_PLUS_5, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_GLINT, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
 DRAW_CIN_353_THEN_CIN_354:
-	video offset=CINEMATIC_353, x=[0x21], y=[0x22], zoom=[0x23]
-	video offset=CINEMATIC_354, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_ANGLE_PLUS_6, x=[0x21], y=[0x22], zoom=[0x23]
+	video offset=CINEMATIC_CAVES_BULLET_GLINT, x=[0x21], y=[0x22], zoom=[0x23]
 	ret
 
 
