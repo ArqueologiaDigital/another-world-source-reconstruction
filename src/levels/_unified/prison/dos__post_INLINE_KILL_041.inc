@@ -32,12 +32,12 @@ LABEL_6B39:
 
 
 LABEL_6B3A:
-	video offset=CINEMATIC_206, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_CROUCH_AIM_RIGHT, x=[HERO_X], y=[HERO_Y]
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video offset=CINEMATIC_207, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_CROUCH_AIM_RIGHT_CHARGE_DOT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
@@ -47,7 +47,7 @@ LABEL_6B58:
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video offset=CINEMATIC_564, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_STAND_AIM_RIGHT_CHARGE_DOT, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
@@ -82,7 +82,7 @@ LABEL_6BA6:
 LABEL_6BA7:
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video offset=CINEMATIC_220, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_WALK_RIGHT_ARM_F09, x=[HERO_X], y=[HERO_Y]
 	ret
 
 
@@ -133,7 +133,7 @@ HERO_GUN_ARM_POSE_CASE_04:
 PRISON_HERO_WALK_RIGHT_POSE_04:
 	video type=0, offset=HERO_WALK_RIGHT_BODY_F10, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, GUARDED_DRAW_CV_159
-	video offset=CINEMATIC_221, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_WALK_RIGHT_ARM_F10, x=[HERO_X], y=[HERO_Y]
 	ret
 
 

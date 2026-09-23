@@ -1,11 +1,11 @@
 DRAW_CIN_694_695_PROGRESSIVE:
-	video offset=CINEMATIC_694, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_CRAWL_POSE_02, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
 	break
-	video offset=CINEMATIC_695, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_CRAWL_POSE_01, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0004
 	break
-	video offset=CINEMATIC_695, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_CRAWL_POSE_01, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0003
 	break
 	video offset=CINEMATIC_696, x=[HERO_X], y=[HERO_Y]
@@ -14,13 +14,13 @@ DRAW_CIN_694_695_PROGRESSIVE:
 	video offset=CINEMATIC_696, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
 	break
-	video offset=CINEMATIC_695, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_CRAWL_POSE_01, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
 	mov [0x03], 0x0028
 
 LABEL_3BA9:
 	break
-	video offset=CINEMATIC_422, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_PRONE_TRANSITION_RIGHT_F04, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_3BA9
 LABEL_3BB2:
 	db 0x11

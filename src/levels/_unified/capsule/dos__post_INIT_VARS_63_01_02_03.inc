@@ -60,9 +60,9 @@ LABEL_065B:
 	break
 	mov [0x63], 0x0002
 	call SET_VAR04_TO_0020
-	video offset=CINEMATIC_073, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_CROUCH_DOWN_RIGHT, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_074, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_STAND_ARMED_RIGHT, x=[HERO_X], y=[HERO_Y]
 	jmp HERO_WALK_RIGHT_LOOP
 LABEL_067A:
 	db 0x11

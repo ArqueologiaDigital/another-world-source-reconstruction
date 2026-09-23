@@ -282,21 +282,21 @@ LABEL_04BB:
 	add [HERO_Y], 0x0020
 	video offset=CINEMATIC_415, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_212, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_CROUCH_DOWN_RIGHT, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_211, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_STAND_ARMED_RIGHT, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_418, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_PRONE_TRANSITION_RIGHT_F00, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_419, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_PRONE_TRANSITION_RIGHT_F01, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_420, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_PRONE_TRANSITION_RIGHT_F02, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_421, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_PRONE_TRANSITION_RIGHT_F03, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_422, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_PRONE_TRANSITION_RIGHT_F04, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_423, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_PRONE_TRANSITION_RIGHT_F05, x=[HERO_X], y=[HERO_Y]
 	setup channel=0x00, address=LABEL_0180
 	break
 	jmp LABEL_8B32

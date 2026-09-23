@@ -48,7 +48,7 @@ PRISON_HERO_WALK_RIGHT_TURN_PRELUDE:
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_187_TO_222_2F_AT_8E66E193:
 	sub [HERO_X], 0x0004
-	video offset=CINEMATIC_187, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_CROUCH_DOWN_LEFT, x=[HERO_X], y=[HERO_Y]
 	break
 	add [HERO_X], 0x0001
 	video offset=CINEMATIC_222, x=[HERO_X], y=[HERO_Y]
@@ -72,7 +72,7 @@ PRISON_DRAW_CIN_187_TO_222_2F_AT_8E66E193_L0:
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_212_TO_213_2F_AT_6B0D0A47:
 	add [HERO_X], 0x0004
-	video offset=CINEMATIC_212, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_HERO_CROUCH_DOWN_RIGHT, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0001
 	video offset=CINEMATIC_213, x=[HERO_X], y=[HERO_Y]

@@ -665,7 +665,7 @@ GUARDED_DRAW_CIN_342:
 
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	video offset=CINEMATIC_689, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_690, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_CV_FIGURE_FRONT_STANCE_WIDE, x=[BUDDY_X], y=[BUDDY_Y]
 	call JUNK__65D0
 	ret
 

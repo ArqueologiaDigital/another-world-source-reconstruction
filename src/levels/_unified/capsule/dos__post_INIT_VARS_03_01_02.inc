@@ -1,12 +1,12 @@
 ANIM_CIN_078_LOOP_VAR03_AT_3AB0:
-	video offset=CINEMATIC_078, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_CROUCH_LEFT, x=[HERO_X], y=[HERO_Y]
 	break
 	djnz [0x03], ANIM_CIN_078_LOOP_VAR03_AT_3AB0
 	mov [0x63], 0x0001
 	call SET_VAR04_TO_0020
 	video offset=CINEMATIC_076, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_077, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_STAND_ARMED_LEFT, x=[HERO_X], y=[HERO_Y]
 	jmp HERO_WALK_LEFT_LOOP
 	killChannel
 	mov [0x29], 0x0008

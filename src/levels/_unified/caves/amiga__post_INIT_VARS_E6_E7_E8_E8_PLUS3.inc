@@ -43,9 +43,9 @@ LABEL_0778:
 	db 0x11
 
 LABEL_0779:
-	video offset=CINEMATIC_238, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_STAND_SHOOT_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_237, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_STAND_AIM_LEFT, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_236, x=[HERO_X], y=[HERO_Y]
 	break
@@ -78,9 +78,9 @@ LABEL_07C8:
 	break
 	video offset=CINEMATIC_236, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_237, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_STAND_AIM_LEFT, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_238, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_STAND_SHOOT_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_174, x=[HERO_X], y=[HERO_Y]
 	mov [0x63], 0x0001

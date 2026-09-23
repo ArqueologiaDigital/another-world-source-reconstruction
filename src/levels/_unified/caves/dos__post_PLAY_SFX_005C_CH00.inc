@@ -106,13 +106,13 @@ LABEL_6A6E:
 
 
 	killChannel
-	video offset=CINEMATIC_893, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_CRAWL_POSE_02, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
 	break
-	video offset=CINEMATIC_894, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_CRAWL_POSE_01, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0004
 	break
-	video offset=CINEMATIC_894, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_CRAWL_POSE_01, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0003
 	break
 	video offset=CINEMATIC_895, x=[HERO_X], y=[HERO_Y]
@@ -121,13 +121,13 @@ LABEL_6A6E:
 	video offset=CINEMATIC_895, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
 	break
-	video offset=CINEMATIC_894, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_CRAWL_POSE_01, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
 	mov [0x03], 0x0028
 
 LABEL_6AAF:
 	break
-	video offset=CINEMATIC_896, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_PRONE_TRANSITION_RIGHT_F04, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_6AAF
 LABEL_6AB8:
 	db 0x11

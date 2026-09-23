@@ -30,10 +30,10 @@ LABEL_393D:
 	break
 	play id=0x0060, freq=0x14, vol=0x40, channel=0x02
 	video offset=CINEMATIC_278, x=283, y=98
-	video offset=CINEMATIC_074, x=260, y=120
+	video offset=CINEMATIC_CAPSULE_HERO_STAND_ARMED_RIGHT, x=260, y=120
 	break
 	video offset=CINEMATIC_276, x=283, y=98
-	video offset=CINEMATIC_073, x=261, y=121
+	video offset=CINEMATIC_CAPSULE_HERO_CROUCH_DOWN_RIGHT, x=261, y=121
 	break
 	setup channel=0x04, address=HANG_DRAW_CIN_287
 	play id=0x0060, freq=0x18, vol=0x20, channel=0x02
@@ -49,7 +49,7 @@ LABEL_393D:
 	video offset=CINEMATIC_079, x=291, y=86
 	break
 	play id=0x0060, freq=0x14, vol=0x20, channel=0x02
-	video offset=CINEMATIC_073, x=297, y=98
+	video offset=CINEMATIC_CAPSULE_HERO_CROUCH_DOWN_RIGHT, x=297, y=98
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x03], 0x0003
 
@@ -62,9 +62,9 @@ LABEL_39B1:
 	mov [0x63], 0x0002
 	call SET_VAR04_TO_0020
 	mov [HERO_X], 0x012A
-	video offset=CINEMATIC_073, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_CROUCH_DOWN_RIGHT, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_074, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_STAND_ARMED_RIGHT, x=[HERO_X], y=[HERO_Y]
 	jmp HERO_WALK_RIGHT_LOOP
 LABEL_39D9:
 	db 0x11

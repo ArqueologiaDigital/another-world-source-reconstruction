@@ -555,12 +555,12 @@ LABEL_CA7D:
 	video offset=CINEMATIC_160, x=124, y=88
 	break
 	video offset=CINEMATIC_592, x=160, y=100
-	video offset=CINEMATIC_166, x=124, y=88
+	video offset=CINEMATIC_CAVES_HERO_CROUCH_LEFT, x=124, y=88
 	selectVideoPage 0x00
 	video offset=CINEMATIC_592, x=160, y=100
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_166, x=124, y=88
+	video offset=CINEMATIC_CAVES_HERO_CROUCH_LEFT, x=124, y=88
 	break
 	video offset=CINEMATIC_160, x=124, y=88
 	mov [0xAF], 0x0058

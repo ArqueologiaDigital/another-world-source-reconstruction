@@ -39,39 +39,39 @@ LABEL_17B3:
 	call LABEL_42CD
 	break
 	sub [HERO_X], 0x000E
-	video offset=CINEMATIC_431, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_PRONE_TRANSITION_LEFT_F04, x=[HERO_X], y=[HERO_Y]
 	play id=0x0060, freq=0x14, vol=0x40, channel=0x01
 	break
 	sub [HERO_X], 0x0005
-	video offset=CINEMATIC_431, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_PRONE_TRANSITION_LEFT_F04, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0004
-	video offset=CINEMATIC_431, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_PRONE_TRANSITION_LEFT_F04, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0003
-	video offset=CINEMATIC_431, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_PRONE_TRANSITION_LEFT_F04, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0003
-	video offset=CINEMATIC_431, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_PRONE_TRANSITION_LEFT_F04, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0003
-	video offset=CINEMATIC_431, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_PRONE_TRANSITION_LEFT_F04, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0002
-	video offset=CINEMATIC_431, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_PRONE_TRANSITION_LEFT_F04, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_431, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_PRONE_TRANSITION_LEFT_F04, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_431, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_PRONE_TRANSITION_LEFT_F04, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_431, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_PRONE_TRANSITION_LEFT_F04, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0001
 
 LABEL_1877:
 	break
-	video offset=CINEMATIC_431, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAVES_HERO_PRONE_TRANSITION_LEFT_F04, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_1877
 LABEL_1880:
 	db 0x11

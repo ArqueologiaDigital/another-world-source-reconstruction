@@ -4,6 +4,7 @@
 | --- | --- | --- |
 | `transfer_by_art.py` | Which pictures are named in one priority port and still numbered in the other? | `python3 notes/cross-port-art/transfer_by_art.py` |
 | `name_art_agreement.py` | Does a name shared by both ports sit on the **same picture** in each? | `python3 notes/cross-port-art/name_art_agreement.py` |
+| `bank_copy_in_stage.py` | Which still-numbered cinematic constants are a stage's own copy of art the shared bank already names? | `python3 notes/cross-port-art/bank_copy_in_stage.py` |
 
 `docs/NAMING.md` records hazard #0107: the two releases index their art
 differently, so a name moved **by index** lands on whatever the other port
@@ -93,3 +94,39 @@ shared name is the role and the per-port value is that port's art.
 Telling the two apart is why the report names the *counterpart* rather than
 just the mismatch. A defect has a twin somewhere in the other port; a
 divergence does not.
+
+## A third axis: the stage's own copy of bank art
+
+Cross-port and cross-stage matching were both tried. **Cinematic against
+shared bank** was not, and it is the largest of the three.
+
+`../substitute-layers/fire_frames.py` found PRISON and CAPSULE drawing the
+hero's shot from their own cinematic banks with art byte-identical to the
+shared-bank pieces. The name did not have to be re-derived — it was read off
+the `canonical_md5` match. That generalises: of the still-numbered cinematic
+constants that are actually drawn, **91 are byte-identical to exactly one
+named shared-bank picture**, most of them in PRISON.
+
+The name transfers because the bank names describe a *pose* —
+`HERO_CROUCH_DOWN_LEFT`, `CV_FIGURE_GUN_UPPER_RIGHT_POSE_00`. A
+byte-identical picture is that pose whatever the stage does with it. The
+stage prefix keeps the two apart: `CINEMATIC_PRISON_HERO_CROUCH_DOWN_LEFT` is
+PRISON's copy and the bare `HERO_CROUCH_DOWN_LEFT` is the bank's.
+
+**90 applied**, taking priority-port assets from 62.2% to 63.1%.
+
+### The one that had to be put back, and the guard it earned
+
+`CINEMATIC_555` in PRISON is drawn from
+`prison/prison_step_draws_and_breaks.inc`, which `PRISON.asm.in` includes
+**unconditionally** — so every branch reads that draw line. Renaming the EQU
+in amiga and msdos left their copies of the symbol undefined and took
+verify-unified to **27/29**.
+
+The applier warns about this (*"N shared draw line(s) reference a renamed
+constant and are not inside a conditional"*), and the warning was missed
+because the apply loop grepped only for `applied;`. The constant was renamed
+back and the probe now refuses the whole class: a constant drawn from a
+chunk with no `<port>__` filename prefix is skipped, which is **560** of
+them. Renaming one needs every branch at once, and that needs cartridge's
+art, which needs a ROM it does not have.
