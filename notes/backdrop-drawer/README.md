@@ -223,6 +223,14 @@ families across all branches, **0** have a gap, against 12 gapped families
 among the other 610. There was no exception to discover, so the rule applies
 as written.
 
+One exception is allowed, and it is the one that yielded the single name: a
+position the routine does not own does **not** block the stack if it already
+carries this screen's own layer name at that index, because then the run has
+no hole there and the ownership question was settled when that name was
+given. `CAPSULE_SCREEN_6A_BACKDROP_DRAW` is `fill`, then
+`CINEMATIC_CAPSULE_SCREEN_6A_BACKDROP_LAYER_0`, then one numbered picture;
+that picture is now `..._LAYER_1`.
+
 Two things the applier refused confirm the diagnosis rather than contradict
 it:
 

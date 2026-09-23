@@ -491,13 +491,23 @@ def layers(data, as_proposals: bool) -> int:
             if not m or m.group(1) != stage or not r["backdroplike"]:
                 continue
             screen = m.group(2)
-            bad = [p for p in r["pics"]
-                   if drawn_by[p] != {r["label"]} or r["pics"].count(p) != 1]
+            # A position the routine does not own blocks the whole stack --
+            # unless it already carries THIS screen's layer name at THIS
+            # index, in which case the run has no hole there and the
+            # ownership question was settled when that name was given.
+            bad = []
+            for i, p in enumerate(r["pics"]):
+                if drawn_by[p] == {r["label"]} and r["pics"].count(p) == 1:
+                    continue
+                if p == (f"CINEMATIC_{stage}_SCREEN_{screen}_BACKDROP"
+                         f"_LAYER_{i}"):
+                    continue
+                bad.append(p)
             if bad:
-                held["the stack has a position it does not own, so naming the "
-                     "rest would leave a hole (NAMING.md §2)"] += len(
-                         [p for p in r["pics"]
-                          if re.match(r"^CINEMATIC_\d+$", p)])
+                held["the stack has a position it does not own, so naming "
+                     "the rest would leave a hole (NAMING.md §2)"] += len(
+                         {p for p in r["pics"]
+                          if re.match(r"^CINEMATIC_\d+$", p)})
                 continue
             for i, pic in enumerate(r["pics"]):
                 if not re.match(r"^CINEMATIC_\d+$", pic):
