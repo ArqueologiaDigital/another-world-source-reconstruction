@@ -73,21 +73,27 @@ for it whenever two draws share an anchor.
 3a. **`hero_pose_consensus.py` cannot see most of its evidence.** Two
    mechanical reasons, both measured and neither yet fixed:
 
-   * **Rule 8 discards any routine drawing 3+ pictures** as a dispatcher.
-     The bound came from a real bimodal distribution — a frame is a body and
-     an arm — but it is applied per *routine* when the evidence only supports
-     it per *frame*. All 28 routines that exceed it draw at most **one**
-     picture per frame across 9 or 12 frames: they are animations, not
-     dispatchers. Bounding pictures-per-frame instead of per-routine would
-     admit them.
-   * **`RE_MOTION` requires motion and direction to be adjacent** after the
-     subject token, so `PRISON_HERO_WALK_JUMP_LEFT` and
-     `HERO_CROUCH_ARMED_LEFT_...` do not parse at all. Measured over 759
-     hero-labelled routines: 344 are adjacent and parse, ~25 have tokens in
-     between, and 17 carry two motion words. For those 17 the action is the
-     motion word **immediately before the direction** (`WALK_JUMP_LEFT` →
-     JUMP, `RUN_LEFT_EXIT_TO_WALK_LEFT` → RUN); the earlier words are the
-     approach.
+   * ~~Rule 8 discards any routine drawing 3+ pictures as a dispatcher.~~
+     **Measured and NOT worth changing.** The criticism is real — the bound
+     is applied per *routine* where the evidence only supports it per
+     *frame*, and all 28 routines that exceed it draw at most one picture per
+     frame — but after the jump sheets were named, **zero** unresolved hero
+     offsets are blocked by it, and none of their drawers draws more than one
+     picture per frame. Changing it would gain nothing. Left as is.
+   * ~~`RE_MOTION` requires motion and direction to be adjacent.~~ **Fixed.**
+     `motion_of()` now reads the motion word **immediately before the
+     direction**; earlier motion words are the approach. Consensus went 5 → 7
+     (the two new ones are the `HERO_CROUCH_ARMED_LEFT_...` pair the
+     adjacency rule could not parse) with the five previous results
+     unchanged. A name making two different motion claims is refused, not
+     guessed.
+
+   **What actually blocks the remaining 35: the drawers are unnamed.** 28 of
+   35 have no parseable drawer in any stage — not a disagreement, an absence.
+   This is the dependency cycle, and the way through it is the method that
+   worked for the jump sheets: derive motion from **scheduling and geometry**
+   (anchor arithmetic, airborne measurement, figure height) rather than from
+   any name. That is the next lever.
 4. **60 amiga / 59 msdos pictures with multiple names.** Reported, not
    reconciled, per #0120. 49 have the shape of one family named twice.
 5. ~~**`genesis_europe` is not covered by `undefined_symbols.py`.**~~
