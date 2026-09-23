@@ -148,34 +148,34 @@ BUDDY_SMASHING_WINDOW_ANIMATION:
 	killChannel
 
 LABEL_25A7:
-	video offset=CINEMATIC_405, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_RAIN_F0, x=160, y=100
 	play id=0x006B, freq=0x0A, vol=0x40, channel=0x01
 	break
-	video offset=CINEMATIC_406, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_FALLING_MASS_F0, x=160, y=100
 	play id=0x006B, freq=0x1C, vol=0x40, channel=0x02
 	break
-	video offset=CINEMATIC_407, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_FALLING_MASS_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_408, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_FALLING_MASS_F2, x=160, y=100
 	play id=0x006B, freq=0x0A, vol=0x40, channel=0x01
 	break
-	video offset=CINEMATIC_409, x=160, y=100
-	video offset=CINEMATIC_410, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_FALLING_MASS_F3, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_RAIN_F1, x=160, y=100
 	play id=0x0055, freq=0x10, vol=0x20, channel=0x03
 	break
-	video offset=CINEMATIC_411, x=160, y=100
-	video offset=CINEMATIC_412, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_FALLING_MASS_LANDED_F0, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_RAIN_F2, x=160, y=100
 	play id=0x006B, freq=0x14, vol=0x40, channel=0x02
 	break
-	video offset=CINEMATIC_413, x=160, y=100
-	video offset=CINEMATIC_414, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_FALLING_MASS_LANDED_F1, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_RAIN_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_415, x=160, y=100
-	video offset=CINEMATIC_416, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_FALLING_MASS_LANDED_F2, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_RAIN_F4, x=160, y=100
 	break
 	play id=0x006C, freq=0x14, vol=0x18, channel=0x02
-	video offset=CINEMATIC_417, x=160, y=100
-	video offset=CINEMATIC_418, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_FALLING_MASS_LANDED_F3, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_RAIN_F5, x=160, y=100
 	break
 	video offset=CINEMATIC_419, x=144, y=127
 	video offset=CINEMATIC_420, x=160, y=100

@@ -109,6 +109,8 @@ checked against the receiving port's own guards.
 | CAVES CINEMATIC_504..508 | (msdos + amiga CAPSULE twins) | `CINEMATIC_RISING_SPECKS_0..4` | medium |
 | CAVES CINEMATIC_194..199 | (msdos twins) | `CINEMATIC_CAVES_SHATTER_F0..F5` | medium |
 | CAVES 643, 651..656 | (msdos twins) | `CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F0..F6` | medium |
+| CAPSULE CINEMATIC_051..058 | (msdos twins) | `CINEMATIC_CAPSULE_FIGURE_DISSOLVE_F0..F6`, `_FIGURE_UPRIGHT` | medium |
+| CAPSULE CINEMATIC_059..072 | (msdos twins) | `CINEMATIC_CAPSULE_{FALLING_MASS,FALLING_MASS_LANDED,DEBRIS_RAIN}_*` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that

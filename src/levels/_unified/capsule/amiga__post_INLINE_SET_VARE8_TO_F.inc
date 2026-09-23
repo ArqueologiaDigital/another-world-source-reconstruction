@@ -96,34 +96,34 @@ LABEL_130E:
 	killChannel
 
 LABEL_13B1:
-	video offset=CINEMATIC_059, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_RAIN_F0, x=160, y=100
 	play id=0x006B, freq=0x0A, vol=0x40, channel=0x01
 	break
-	video offset=CINEMATIC_060, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_FALLING_MASS_F0, x=160, y=100
 	play id=0x006B, freq=0x1C, vol=0x40, channel=0x02
 	break
-	video offset=CINEMATIC_061, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_FALLING_MASS_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_062, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_FALLING_MASS_F2, x=160, y=100
 	play id=0x006B, freq=0x0A, vol=0x40, channel=0x01
 	break
-	video offset=CINEMATIC_063, x=160, y=100
-	video offset=CINEMATIC_064, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_FALLING_MASS_F3, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_RAIN_F1, x=160, y=100
 	play id=0x0055, freq=0x10, vol=0x20, channel=0x03
 	break
-	video offset=CINEMATIC_065, x=160, y=100
-	video offset=CINEMATIC_066, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_FALLING_MASS_LANDED_F0, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_RAIN_F2, x=160, y=100
 	play id=0x006B, freq=0x14, vol=0x40, channel=0x02
 	break
-	video offset=CINEMATIC_067, x=160, y=100
-	video offset=CINEMATIC_068, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_FALLING_MASS_LANDED_F1, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_RAIN_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_069, x=160, y=100
-	video offset=CINEMATIC_070, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_FALLING_MASS_LANDED_F2, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_RAIN_F4, x=160, y=100
 	break
 	play id=0x006C, freq=0x14, vol=0x18, channel=0x02
-	video offset=CINEMATIC_071, x=160, y=100
-	video offset=CINEMATIC_072, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_FALLING_MASS_LANDED_F3, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_RAIN_F5, x=160, y=100
 	break
 	video offset=CINEMATIC_073, x=144, y=127
 	video offset=CINEMATIC_074, x=160, y=100

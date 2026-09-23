@@ -1,0 +1,26 @@
+
+----- dos_1992 / CAPSULE -----
+| constant | proposed name | confidence | evidence |
+| --- | --- | --- | --- |
+| CINEMATIC_401 | CINEMATIC_CAPSULE_FIGURE_DISSOLVE_F4 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_405 | CINEMATIC_CAPSULE_DEBRIS_RAIN_F0 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_416 | CINEMATIC_CAPSULE_DEBRIS_RAIN_F4 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_409 | CINEMATIC_CAPSULE_FALLING_MASS_F3 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_402 | CINEMATIC_CAPSULE_FIGURE_DISSOLVE_F5 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_398 | CINEMATIC_CAPSULE_FIGURE_DISSOLVE_F1 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_415 | CINEMATIC_CAPSULE_FALLING_MASS_LANDED_F2 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_400 | CINEMATIC_CAPSULE_FIGURE_DISSOLVE_F3 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_399 | CINEMATIC_CAPSULE_FIGURE_DISSOLVE_F2 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_404 | CINEMATIC_CAPSULE_FIGURE_UPRIGHT | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_418 | CINEMATIC_CAPSULE_DEBRIS_RAIN_F5 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_408 | CINEMATIC_CAPSULE_FALLING_MASS_F2 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_406 | CINEMATIC_CAPSULE_FALLING_MASS_F0 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_413 | CINEMATIC_CAPSULE_FALLING_MASS_LANDED_F1 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_403 | CINEMATIC_CAPSULE_FIGURE_DISSOLVE_F6 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_411 | CINEMATIC_CAPSULE_FALLING_MASS_LANDED_F0 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_407 | CINEMATIC_CAPSULE_FALLING_MASS_F1 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_412 | CINEMATIC_CAPSULE_DEBRIS_RAIN_F2 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_410 | CINEMATIC_CAPSULE_DEBRIS_RAIN_F1 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_417 | CINEMATIC_CAPSULE_FALLING_MASS_LANDED_F3 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_414 | CINEMATIC_CAPSULE_DEBRIS_RAIN_F3 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_397 | CINEMATIC_CAPSULE_FIGURE_DISSOLVE_F0 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
