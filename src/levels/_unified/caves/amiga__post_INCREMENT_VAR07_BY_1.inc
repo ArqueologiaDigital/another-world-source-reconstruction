@@ -95,7 +95,7 @@ DRAW_CIN_018:
 
 
 DRAW_CIN_017:
-	video offset=CINEMATIC_017, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FIGURE_POSE_RIGHT_4_1, x=[0x07], y=[0x08]
 	ret
 
 
@@ -105,7 +105,7 @@ DRAW_HERO_POSE_5:
 
 
 DRAW_CIN_015:
-	video offset=CINEMATIC_015, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FIGURE_POSE_RIGHT_7_1, x=[0x07], y=[0x08]
 	ret
 
 

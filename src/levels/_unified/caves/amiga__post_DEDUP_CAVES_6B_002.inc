@@ -61,37 +61,37 @@ LABEL_7DEB:
 	db 0x11
 
 DRAW_BEAST_POSE_0_0:
-	video offset=CINEMATIC_048, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FIGURE_POSE_LEFT_0_0, x=[0x07], y=[0x08]
 	ret
 
 
 DRAW_BEAST_POSE_0_1:
-	video offset=CINEMATIC_049, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FIGURE_POSE_LEFT_0_1, x=[0x07], y=[0x08]
 	ret
 
 
 DRAW_BEAST_POSE_0_2:
-	video offset=CINEMATIC_050, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FIGURE_POSE_LEFT_0_2, x=[0x07], y=[0x08]
 	ret
 
 
 DRAW_BEAST_POSE_0_3:
-	video offset=CINEMATIC_051, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FIGURE_POSE_LEFT_0_3, x=[0x07], y=[0x08]
 	ret
 
 
 DRAW_BEAST_POSE_0_4:
-	video offset=CINEMATIC_052, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FIGURE_POSE_LEFT_0_4, x=[0x07], y=[0x08]
 	ret
 
 
 DRAW_BEAST_POSE_0_5:
-	video offset=CINEMATIC_026, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FIGURE_POSE_LEFT_0_5, x=[0x07], y=[0x08]
 	ret
 
 
 DRAW_BEAST_POSE_0_6:
-	video offset=CINEMATIC_053, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FIGURE_POSE_LEFT_0_6, x=[0x07], y=[0x08]
 	ret
 
 
@@ -121,7 +121,7 @@ DRAW_CIN_044:
 
 
 DRAW_CIN_043:
-	video offset=CINEMATIC_043, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FIGURE_POSE_LEFT_4_3, x=[0x07], y=[0x08]
 	ret
 
 
@@ -131,12 +131,12 @@ DRAW_CIN_042:
 
 
 DRAW_CIN_038:
-	video offset=CINEMATIC_038, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FIGURE_POSE_LEFT_7_0, x=[0x07], y=[0x08]
 	ret
 
 
 DRAW_CIN_039:
-	video offset=CINEMATIC_039, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FIGURE_POSE_LEFT_7_1, x=[0x07], y=[0x08]
 	ret
 
 

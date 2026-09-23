@@ -260,6 +260,17 @@ for it whenever two draws share an anchor.
 
 ## Open work, roughly in order of value
 
+**0a-bis. The sprite dispatchers are the cheapest names left.** Every stage
+with an actor has one or two routines beginning
+`mov [0xF8], [0x09]; shr [0xF8], 4`, dispatching on an `[0x0E]` group and that
+high nibble to one-line draw routines. `notes/pose-dispatch/pose_index.py`
+reads the mapping and checks each (dispatcher, group, index) is unique. No
+render, no palette, no judgement -- 54 constants in one batch across PRISON and
+CAVES, and 19 in CAPSULE before that. What the callers of each dispatcher say
+(`..._ACTOR_*_LEFT_*` against `..._ACTOR_*_RIGHT_*`) is what distinguishes the
+two sheets; their own labels say BUDDY, HERO and BEAST for what is one actor
+turned around.
+
 **0a. Done: the `_AMIGA_EXTRA` list is empty.** 38 constants, every one
 rendered at the palette `render-and-name/palette_in_force.py` reports for its
 drawing routine. Two were wrong flips and went back; twelve more had a base
