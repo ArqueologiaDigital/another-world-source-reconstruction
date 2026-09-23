@@ -52,7 +52,7 @@ LABEL_C153:
 LABEL_C16C:
 	jne [SCREEN_NUM], 0x28, LABEL_C181
 	selectVideoPage 0x00
-	video offset=CINEMATIC_779, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_48_BACKDROP_LAYER_0, x=160, y=100
 	selectVideoPage 0xFF
 	play id=0x005A, freq=0x0A, vol=0x40, channel=0x00
 	ret

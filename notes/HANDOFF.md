@@ -30,6 +30,7 @@ As of the last commit:
 | names sitting on the wrong port's constant | 11 (was 12) | `cross-port-art/name_art_agreement.py` |
 | names the canonical and unified trees disagree about | 452 missing + 544 moved | `tree-name-drift/name_drift.py` |
 | beam-span rungs in the wrong rung | 0 in amiga and msdos, 3 stages | `beam-span-ladder/rung_thresholds.py` |
+| backdrop layer names their own DRAW routine does not draw | 3 of 256 (62 more screens have no named painter) | `backdrop-layer-audit/layer_claims.py` |
 | pictures carrying two or more names | 73 amiga / 76 msdos of 2,530 / 2,552 named | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 48, blocking 250 drawing labels | `shared-bank-geometry/blocked_by_bank.py` |
