@@ -279,6 +279,13 @@ without any judgement at all.
   foot level that shorten, extend and then fold into a shallow V. Rendered at
   palette 0 they are unreadable; the palette its `setup` site runs under has
   not been traced. **Trace it and re-render** before naming.
+* The ten `HERO_DIRECTION_*_TURN` frames in CAVES -- 452, 453, 470, 471,
+  472, 473, 474, 491, 492, 493. The poses are legible and the mirror pairs
+  exact, but `HERO_DIRECTION_UP_TO_RIGHT_TURN` draws `474` first and `474` is
+  the frame with the head at the **bottom**. Either those earned routine names
+  are inverted or the reading is, and choosing is #0120. **What would settle
+  it:** whether `[0x19]` and `[0x2A]`, which all eight routines write, are the
+  vertical and horizontal speed components, and their sign.
 * `CINEMATIC_458`..`464` in CAVES, from `LABEL_3C0E`: two thin curved strokes
   that spread apart, flatten and close again while the pair moves from above
   the anchor to below it. Two paths is not enough to say what a pair of curves

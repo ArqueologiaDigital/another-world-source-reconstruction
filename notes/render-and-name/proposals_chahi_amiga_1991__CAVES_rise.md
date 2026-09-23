@@ -1,3 +1,9 @@
+> **Superseded on the subject word, 2026-09-23.** Every extent and every
+> mirror claim below still holds and so does the scope. The figure is a
+> swimmer, not a body on a floor, and these names are now
+> `CINEMATIC_HERO_SWIM_PITCH_{RIGHT,LEFT}_0..5`. See
+> `correction_swim_pitch.md` for what changed the reading.
+
 # CAVES: getting up off the ground, both facings, and no stage word
 
 Two routines, `LABEL_DDB4` and `LABEL_DE10`, each draw six pictures one per

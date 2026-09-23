@@ -105,7 +105,7 @@ checked against the receiving port's own guards.
 | CAVES CINEMATIC_110..123 | (msdos + CAPSULE twins) | `CINEMATIC_TUMBLING_CHUNK_F0..F13` | high |
 | CAVES CINEMATIC_239..245, 416..422 | (msdos twins) | `CINEMATIC_CAVES_SPINNING_SPIKE_{0,1}_F0..F6` | medium |
 | CAVES CINEMATIC_213..222 | (msdos twins) | `CINEMATIC_CAVES_CRACK_SPREAD_F0..F9` | medium |
-| CAVES 451/494..498, 469/499..503 | (msdos + amiga CAPSULE twins) | `CINEMATIC_HERO_RISE_FROM_PRONE_{RIGHT,LEFT}_0..5` | high |
+| CAVES 451/494..498, 469/499..503 | (msdos + amiga CAPSULE twins) | `CINEMATIC_HERO_SWIM_PITCH_{RIGHT,LEFT}_0..5` | high (**renamed**, see `correction_swim_pitch.md`) |
 | CAVES CINEMATIC_504..508 | (msdos + amiga CAPSULE twins) | `CINEMATIC_RISING_SPECKS_0..4` | medium |
 | CAVES CINEMATIC_194..199 | (msdos twins) | `CINEMATIC_CAVES_SHATTER_F0..F5` | medium |
 | CAVES 643, 651..656 | (msdos twins) | `CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F0..F6` | medium |
