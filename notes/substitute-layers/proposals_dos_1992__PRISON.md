@@ -1,0 +1,14 @@
+# Hero fire frames in PRISON -- dos_1992
+
+Derived by notes/substitute-layers/fire_frames.py: the frame drawn at the shot and the frame after it, with the name read off the shared bank piece each matches by canonical_md5.
+
+| constant | proposed name | confidence | evidence |
+| --- | --- | --- | --- |
+| CINEMATIC_559 | CINEMATIC_PRISON_HERO_STAND_SHOOT_LEFT_F0 | high | drawn at the shot, immediately before the muzzle is set and `PRISON_HERO_FIRE_SHOT_LEFT` spawns the projectile; the muzzle offset `sub [0x21], 0x001E` puts the shot to the left, and its `canonical_md5` equals the shared bank's `HERO_STAND_SHOOT_LEFT_F0` |
+| CINEMATIC_558 | CINEMATIC_PRISON_HERO_STAND_SHOOT_LEFT_F1 | high | drawn immediately after `PRISON_HERO_FIRE_SHOT_LEFT` spawns the projectile, the frame the hero returns through; the muzzle offset `sub [0x21], 0x001E` puts the shot to the left, and its `canonical_md5` equals the shared bank's `HERO_STAND_SHOOT_LEFT_F1` |
+| CINEMATIC_566 | CINEMATIC_PRISON_HERO_STAND_SHOOT_RIGHT_F0 | high | drawn at the shot, immediately before the muzzle is set and `PRISON_HERO_FIRE_SHOT_RIGHT` spawns the projectile; the muzzle offset `add [0x21], 0x001E` puts the shot to the right, and its `canonical_md5` equals the shared bank's `HERO_STAND_SHOOT_RIGHT_F0` |
+| CINEMATIC_565 | CINEMATIC_PRISON_HERO_STAND_SHOOT_RIGHT_F1 | high | drawn immediately after `PRISON_HERO_FIRE_SHOT_RIGHT` spawns the projectile, the frame the hero returns through; the muzzle offset `add [0x21], 0x001E` puts the shot to the right, and its `canonical_md5` equals the shared bank's `HERO_STAND_SHOOT_RIGHT_F1` |
+| CINEMATIC_189 | CINEMATIC_PRISON_HERO_CROUCH_SHOOT_LEFT_F0 | high | drawn at the shot, immediately before the muzzle is set and `PRISON_HERO_FIRE_SHOT_LEFT` spawns the projectile; the muzzle offset `sub [0x21], 0x001E` puts the shot to the left, and its `canonical_md5` equals the shared bank's `HERO_CROUCH_SHOOT_LEFT_F0` |
+| CINEMATIC_188 | CINEMATIC_PRISON_HERO_CROUCH_SHOOT_LEFT_F1 | high | drawn immediately after `PRISON_HERO_FIRE_SHOT_LEFT` spawns the projectile, the frame the hero returns through; the muzzle offset `sub [0x21], 0x001E` puts the shot to the left, and its `canonical_md5` equals the shared bank's `HERO_CROUCH_SHOOT_LEFT_F1` |
+| CINEMATIC_208 | CINEMATIC_PRISON_HERO_CROUCH_SHOOT_RIGHT_F0 | high | drawn at the shot, immediately before the muzzle is set and `PRISON_HERO_FIRE_SHOT_RIGHT` spawns the projectile; the muzzle offset `add [0x21], 0x001E` puts the shot to the right, and its `canonical_md5` equals the shared bank's `HERO_CROUCH_SHOOT_RIGHT_F0` |
+| CINEMATIC_209 | CINEMATIC_PRISON_HERO_CROUCH_SHOOT_RIGHT_F1 | high | drawn immediately after `PRISON_HERO_FIRE_SHOT_RIGHT` spawns the projectile, the frame the hero returns through; the muzzle offset `add [0x21], 0x001E` puts the shot to the right, and its `canonical_md5` equals the shared bank's `HERO_CROUCH_SHOOT_RIGHT_F1` |

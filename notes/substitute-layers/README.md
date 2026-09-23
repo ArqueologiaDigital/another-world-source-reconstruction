@@ -59,3 +59,43 @@ case by `canonical_md5`, geometry reading as one blast (widths 2, 10, 19, 28,
 applied branch-scoped to all three branches with the index taken from the case
 value — 0x81 is frame 0. 27 renames. Re-reading the ladder afterwards, every
 case in every branch maps to `FADE_<case - 0x81>`.
+
+## The fire frames, found by their muzzle
+
+`fire_frames.py` looks for one shape wherever it occurs:
+
+```
+video offset=<F0>, ...               <- drawn AT the shot
+mov [0x21], [HERO_X]
+mov [0x27], [HERO_Y]
+sub [0x21], 0x001E                   <- the muzzle, left of the hero
+call <spawn the projectile>
+break
+video offset=<F1>, ...               <- the frame after
+```
+
+The **muzzle offset carries the direction** — `sub` puts the shot to the
+hero's left, `add` to the right — so the direction is read rather than
+guessed from which way a sprite appears to face.
+
+It finds 24 such sites, and **9 of them were already named** before the probe
+existed: the `HERO_STAND_SHOOT_*` applied from
+`../shared-bank-geometry/stand_shoot.map` and the pre-existing
+`HERO_CROUCH_SHOOT_*`. Re-deriving nine correct namings is the control.
+
+The other 15 are per-stage cinematic art rather than bank pieces, and they do
+not need their geometry re-read either: each one's `canonical_md5` **equals a
+named bank piece**, so the name is read off the match. That also keeps stand
+and crouch apart with no height threshold —
+`HERO_CROUCH_SHOOT_LEFT_F0` is 44x34 and `HERO_STAND_SHOOT_LEFT_F0` is 40x49,
+and the md5 says which without one.
+
+20 applied across the two priority ports: all eight of PRISON's, in both
+stand and crouch and both directions, and CAPSULE's left pair. The port shift
+shows plainly in that last one — amiga's is `CINEMATIC_116`/`115` and msdos'
+is `CINEMATIC_329`/`328`, and msdos' own 116/115 is 40x60 art with nothing to
+do with it.
+
+`cartridge_1992`'s five sites are found but not named: it has no extracted
+ROM, so the md5 that carries the name cannot be computed, and its constant
+numbers are not evidence.
