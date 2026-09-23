@@ -145,17 +145,6 @@ of one head are drawn twice and need not agree leaf for leaf. What follows for
 mirror, not a property every mirror has. It has precision, not recall, and its
 README now says so.
 
-**`CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F0` is not left-facing.** `LABEL_24CF`
-draws it once *before* the branch that chooses direction, and both the left and
-the right loop draw it again at their end before jumping to `LABEL_2416`. It is
-the rest pose the cycle starts and finishes on. Correcting it means renumbering
-`LEFT_F1..F7` down to `F0..F6` and renaming F0 to `..._REST` -- a chained rename,
-so it wants its own pass, and the frame-for-frame correspondence it needs is
-already tabulated in
-`notes/render-and-name/proposals_chahi_amiga_1991__CAVES_armout.md`. The
-right-hand family was therefore indexed on its own routine order, 0 to 6, and
-both families are gapless today.
-
 **237 of 889 unified chunk FILENAMES name a label that no longer exists.**
 `notes/unified-scoping/stale_chunk_names.py`. Invisible to `make test`,
 because `.include` resolves by filename. Open work.
