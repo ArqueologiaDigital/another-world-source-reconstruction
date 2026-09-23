@@ -127,7 +127,40 @@ an hour earlier in the same session by `../render-and-name/`, before the CAVES
 and CAPSULE copies were found. Dropping one's own scope is cheaper than
 arguing about someone else's.
 
-This does **not** license re-prefixing. A name whose stage word is part of the
-*subject* — `CINEMATIC_CAVES_FIRST_ROOM_BG` — stays held, and the rule here
-only applies when the same art is named in one stage and unnamed in others,
-and nothing in the base names a place.
+### Three conditions, and I found the second two by nearly breaking them
+
+Written as "art in three stages, so drop the stage word", the rule produces
+wrong names. Run over the whole tree it offered thirteen, and only one was
+safe. The other twelve fail on one of these:
+
+1. **The stage word must not be part of the subject.**
+   `CINEMATIC_CAVES_FIRST_ROOM_BG` names a place; stripping `CAVES_` leaves a
+   claim about no room in particular.
+
+2. **The name must not carry a screen number.** This is the one that would
+   have done real damage. The rule offered
+
+   ```
+   PRISON  CINEMATIC_384  ->  CINEMATIC_SCREEN_6A_BACKDROP_LAYER_0
+   CAVES   CINEMATIC_134  ->  CINEMATIC_SCREEN_6A_BACKDROP_LAYER_0
+   ```
+
+   from `CINEMATIC_CAPSULE_SCREEN_6A_BACKDROP_LAYER_0`. A screen number is
+   per stage **and** per port — this session already had to fix
+   `CAPSULE_SCREEN_6C_BACKDROP_DRAW` because amiga numbers that screen 0x4C
+   and never guards on 0x6C. `SCREEN_6A` with no stage is a number with
+   nothing to index into. Three of the thirteen were this shape.
+
+3. **The prefix being dropped must not be an earned name.** The charge glow
+   qualified because the `PRISON_` on it was mine, from an hour earlier.
+   `CINEMATIC_PRISON_SUPERBLAST_BEAM_TILE_0` and
+   `CINEMATIC_PRISON_SHOT_BEAM_SINGLE_DOT` are someone else's, and rescoping
+   them is a separate argument from naming the unnamed copies. Held.
+
+The one that survived all three, `CINEMATIC_752` ->
+`CINEMATIC_BUDDY_SMASHING_WINDOW_F8`, this module already holds under "art
+matches two or more names", which is its own #0118 guard and is right.
+
+So the net effect of the third way, beyond the charge glow, is **zero further
+names** — and the conditions above are why, written down so the rule is not
+reapplied from its one-line form.
