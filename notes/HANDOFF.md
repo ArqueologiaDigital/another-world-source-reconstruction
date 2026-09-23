@@ -25,7 +25,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 81.9% (8,307/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 82.0% (8,323/10,147) | `asset_naming_share.py` |
 | `_AMIGA_EXTRA` constants left | **0** of 38 | `amiga-extra-suffix/deconflict_survivors.py` |
 | names sitting on the wrong port's constant | 11 (was 12) | `cross-port-art/name_art_agreement.py` |
 | names the canonical and unified trees disagree about | 452 missing + 544 moved | `tree-name-drift/name_drift.py` |
@@ -129,6 +129,17 @@ canonical tree is the naming record -- so the drift costs no coverage and the
 fix is a sync pass per stage, not renaming. **Any probe that reads a routine
 from one tree must read its EQU table from the same tree**; doing otherwise
 reported msdos CAVES' whole beam ladder as misplaced when none of it was.
+
+**`CINEMATIC_CAVES_HERO_ARM_OUT_LEFT_F0` is not left-facing.** `LABEL_24CF`
+draws it once *before* the branch that chooses direction, and both the left and
+the right loop draw it again at their end before jumping to `LABEL_2416`. It is
+the rest pose the cycle starts and finishes on. Correcting it means renumbering
+`LEFT_F1..F7` down to `F0..F6` and renaming F0 to `..._REST` -- a chained rename,
+so it wants its own pass, and the frame-for-frame correspondence it needs is
+already tabulated in
+`notes/render-and-name/proposals_chahi_amiga_1991__CAVES_armout.md`. The
+right-hand family was therefore indexed on its own routine order, 0 to 6, and
+both families are gapless today.
 
 **237 of 889 unified chunk FILENAMES name a label that no longer exists.**
 `notes/unified-scoping/stale_chunk_names.py`. Invisible to `make test`,

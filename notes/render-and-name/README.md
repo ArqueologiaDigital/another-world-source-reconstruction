@@ -181,6 +181,7 @@ checked against the receiving port's own guards.
 | CAVES 380..385, 580, 737, 747 | msdos 401..406, 601, 758, 767 | `CINEMATIC_CAVES_{STALACTITE_0..4,STALAGMITE_STUB,CAVERN_PILLARS_NARROW,WIDE}` -- a kit, 61 placements over 18 routines | medium |
 | CAVES 212, 276, 277, 389, 437 | msdos 229, 297, 298, 410, 458 | `CINEMATIC_CAVES_{STEPPED_SLOPE_0,1,SLANTED_SLAB,WALL_TILE,PLAIN_BLOCK}` -- from `../scenery-kit/` | medium |
 | CAVES 545..553, 249..252 | msdos 566..574, 267..270 | `CINEMATIC_CAVES_TORCH_BEARER_F0..F7` and `..._DASH_COLUMN_0..3` | medium |
+| CAVES 644..650, 657 | msdos 665..671, 678 | `CINEMATIC_CAVES_HERO_ARM_OUT_RIGHT_F0..F6` and `..._LEFT_F7` | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
