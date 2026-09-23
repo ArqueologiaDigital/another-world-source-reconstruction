@@ -101,7 +101,7 @@ LABEL_57CE:
 	call CAPSULE_PROJECTILE_TICK_FROM_VAR5A_5B_5C
 
 LABEL_5837:
-	video offset=CINEMATIC_258, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x96
+	video offset=CINEMATIC_CAPSULE_CHARGE_BLAST, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x96
 	play id=0x005B, freq=0x02, vol=0x40, channel=0x03
 	play id=0x005B, freq=0x14, vol=0x40, channel=0x02
 	play id=0x005B, freq=0x02, vol=0x40, channel=0x01

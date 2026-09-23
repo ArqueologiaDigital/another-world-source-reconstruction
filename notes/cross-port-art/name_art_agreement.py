@@ -11,41 +11,61 @@ index** lands on whatever the other port happens to keep at that number.
 This checks every such pair by `canonical_md5` and reports the ones that
 disagree.
 
-What it found, 2026-09-23
--------------------------
+What it found
+-------------
+First run, 2026-09-23: `2064 same / 10 different`. Six of the ten were defects,
+all in INTRO -- msdos' named constant held art amiga called by a bare number,
+and amiga's art sat on a *different* msdos number two to twelve indices away.
+That consistent offset is the signature of a transfer done on the number. One
+row, `CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F2`, was the same fault seen
+from both sides at once: the two ports' `CINEMATIC_517` held each other's art.
+
+Those six were fixed. Re-run at the end of the same day, after several thousand
+more names had landed:
+
 ```
-2064  same art in both ports
-  10  ** DIFFERENT art under one name
+   2878  same art in both ports
+     11  ** name on the wrong constant
+      9  different art, no counterpart -- per-port divergence
 ```
 
-Ten, and they are two different things.
+**The count goes up as naming proceeds, and that is the point** -- this is a
+standing audit, not a one-off. Re-run it after every batch. The numbers in this
+docstring are a record of two runs, not a target.
 
-**Six are defects, all in INTRO.** For each, msdos' named constant holds art
-that amiga calls by a bare number, and amiga's art sits on a *different* msdos
-number, a couple of indices away:
+How a name gets onto the wrong constant
+---------------------------------------
+The mechanism was established on 2026-09-23 by working one row,
+`CINEMATIC_CAPSULE_SCREEN_6A_BACKDROP_LAYER_0`
+(`notes/render-and-name/correction_capsule_6a_layer0.md`). msdos' constant is
+a 459.0x232.5 backdrop in 54 leaves; amiga's constant of the same name is a
+26.0x22.0 blob in 3, drawn at an actor anchor.
 
-| name | msdos' holder is amiga's | amiga's art is msdos' |
-| --- | --- | --- |
-| `CINEMATIC_LIFT_SCENE_BG` | `CINEMATIC_533` | `CINEMATIC_535` |
-| `CINEMATIC_LIFT_SCENE_VIEW` | `CINEMATIC_528` | `CINEMATIC_530` |
-| `CINEMATIC_ACCELERATOR_TUNNEL_VIEW_FAR` | `CINEMATIC_378` | `CINEMATIC_380` |
-| `CINEMATIC_ACCELERATOR_TUNNEL_VIEW_NEAR` | `CINEMATIC_243` | `CINEMATIC_255` |
-| `CINEMATIC_PARTICLE_LAB_HOLO_CONSOLE` | `CINEMATIC_171` | `CINEMATIC_183` |
-| `CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F2` | `CINEMATIC_517` | `CINEMATIC_517` |
+The proposal that earned the name was right. The **apply** was global instead
+of `--branch dos_1992`, and the three ports' entry files are parallel by index,
+line for line:
 
-The consistent two-to-twelve index offset is the signature of a transfer done
-on the number. The last row is the same fault seen from both sides at once: the
-two ports' `CINEMATIC_517` hold each other's art.
+    amiga__entry.inc:643   CINEMATIC_000   EQU 0x3E1C
+    dos__entry.inc:643     CINEMATIC_000   EQU 0xF9A8
+    cart__entry.inc:643    CINEMATIC_000   EQU 0xDBD4
 
-**Four are not defects.** In CAPSULE and PASSCODE the art of the amiga name is
-absent from msdos entirely and vice versa, so the two ports genuinely drew
-different pictures for one role. That is the documented case where a shared
-name is the role and the per-port value is that port's art — the name is right
-in both.
+so one global rename of `CINEMATIC_000` put msdos' name on all three ports'
+index 0. That is #0107 arriving through the applier rather than through a
+proposal, and it is invisible to every other check: the bytes do not move, no
+symbol goes undefined, and the lint sees a well-formed name.
 
-Telling them apart is the point of reporting the *counterpart* rather than
-just the mismatch: a defect has a twin somewhere in the other port, a
-divergence does not.
+> A numbered constant is a per-port index. Renaming one is **never** a global
+> operation unless the art has been shown identical in every branch it touches.
+
+The tell, once you know to look for it, is a **one-member family**: amiga had
+`SCREEN_6A_BACKDROP_LAYER_0` and no `LAYER_1`, because the sibling row in the
+same batch *was* branch-scoped correctly.
+
+Telling defects from divergences is the point of reporting the *counterpart*
+rather than just the mismatch: a defect has a twin somewhere in the other port,
+a divergence does not. The 6A row is the third shape -- amiga's art has a
+counterpart (msdos' `CINEMATIC_258`) while msdos' named constant has none in
+amiga, because amiga simply never drew that backdrop.
 
 Pass/fail
 ---------

@@ -283,7 +283,7 @@ CINEMATIC_255		EQU 0x32C4
 CINEMATIC_256		EQU 0x331C
 CINEMATIC_257		EQU 0x32F0
 CINEMATIC_258		EQU 0x33D6
-CINEMATIC_259		EQU 0x3536
+CINEMATIC_CAPSULE_CHARGE_BLAST		EQU 0x3536
 CINEMATIC_260		EQU 0x338E
 CINEMATIC_261		EQU 0x33BA
 CINEMATIC_262		EQU 0x36BE
@@ -9594,7 +9594,7 @@ LABEL_57BE:
 	call LABEL_5959
 
 LABEL_5827:
-	video offset=CINEMATIC_259, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x96
+	video offset=CINEMATIC_CAPSULE_CHARGE_BLAST, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x96
 	play id=0x005B, freq=0x02, vol=0x40, channel=0x03
 	play id=0x005B, freq=0x14, vol=0x40, channel=0x02
 	play id=0x005B, freq=0x02, vol=0x40, channel=0x01
@@ -18548,7 +18548,7 @@ LABEL_B1AE:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x4B], 0x7FFF
-	video offset=CINEMATIC_259, x=[0x70], y=93, zoom=0x5a
+	video offset=CINEMATIC_CAPSULE_CHARGE_BLAST, x=[0x70], y=93, zoom=0x5a
 	ret
 
 
@@ -18559,7 +18559,7 @@ LABEL_B1D5:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x49], 0x7FFF
-	video offset=CINEMATIC_259, x=[0x6e], y=93, zoom=0x5a
+	video offset=CINEMATIC_CAPSULE_CHARGE_BLAST, x=[0x6e], y=93, zoom=0x5a
 	ret
 
 
@@ -18570,7 +18570,7 @@ LABEL_B1F6:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x4D], 0x7FFF
-	video offset=CINEMATIC_259, x=[0x72], y=93, zoom=0x5a
+	video offset=CINEMATIC_CAPSULE_CHARGE_BLAST, x=[0x72], y=93, zoom=0x5a
 	ret
 
 

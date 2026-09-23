@@ -205,7 +205,7 @@ LABEL_8152:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x4B], 0x7FFF
-	video offset=CINEMATIC_CAPSULE_SCREEN_6A_BACKDROP_LAYER_0, x=[0x70], y=93, zoom=0x5a
+	video offset=CINEMATIC_CAPSULE_CHARGE_BLAST, x=[0x70], y=93, zoom=0x5a
 	ret
 
 
@@ -216,7 +216,7 @@ LABEL_8179:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x49], 0x7FFF
-	video offset=CINEMATIC_CAPSULE_SCREEN_6A_BACKDROP_LAYER_0, x=[0x6e], y=93, zoom=0x5a
+	video offset=CINEMATIC_CAPSULE_CHARGE_BLAST, x=[0x6e], y=93, zoom=0x5a
 	ret
 
 
@@ -227,7 +227,7 @@ LABEL_819A:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x4D], 0x7FFF
-	video offset=CINEMATIC_CAPSULE_SCREEN_6A_BACKDROP_LAYER_0, x=[0x72], y=93, zoom=0x5a
+	video offset=CINEMATIC_CAPSULE_CHARGE_BLAST, x=[0x72], y=93, zoom=0x5a
 	ret
 
 

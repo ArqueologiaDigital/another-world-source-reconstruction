@@ -231,6 +231,13 @@ given. `CAPSULE_SCREEN_6A_BACKDROP_DRAW` is `fill`, then
 `CINEMATIC_CAPSULE_SCREEN_6A_BACKDROP_LAYER_0`, then one numbered picture;
 that picture is now `..._LAYER_1`.
 
+(Both names are **msdos and cartridge only**. amiga once carried a
+`..._LAYER_0` too and should not have: the rename that gave it was applied
+globally rather than per branch, and amiga's index-0 constant is a 26x22 blob,
+not a backdrop. It is now `CINEMATIC_CAPSULE_CHARGE_BLAST` --
+`../render-and-name/correction_capsule_6a_layer0.md`. The one-member family
+was the symptom.)
+
 Two things the applier refused confirm the diagnosis rather than contradict
 it:
 

@@ -164,6 +164,8 @@ checked against the receiving port's own guards.
 | CAPSULE (msdos only) 547, 516, 517, 548, 549 | -- | `CINEMATIC_CAPSULE_FIGURE_FLUNG_F0..F4` (transfer + draw position) | high |
 | INTRO 268..276 | 274..282 | `CINEMATIC_FRAGMENTS_RECEDING_F0..F8` | medium |
 | PRISON 361..364, 380..383 | (same numbers) | `CINEMATIC_PRISON_{SEGMENT_BAR_F0..F3,DISCHARGE_FLASH_F0,F1,CHARGE_GLOW_F0,F1}` (amiga, msdos **and cartridge** -- the routine is shared) | high |
+| PRISON 385, 386 | (same numbers) | `CINEMATIC_PRISON_CHARGE_GLOW_F2, F3` -- closes the family | high |
+| PRISON 384; CAPSULE 258/259 **and amiga's misnamed `SCREEN_6A_BACKDROP_LAYER_0`** | (same numbers) | `CINEMATIC_{PRISON,CAPSULE}_CHARGE_BLAST`, six rows over two stages and three branches | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
