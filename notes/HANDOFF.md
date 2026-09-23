@@ -20,7 +20,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 60.8% (6,174/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 60.8% (6,171/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 77 of 352 (59 reachable) | `notes/shared-bank-geometry/` |
@@ -75,7 +75,7 @@ also found one wrong name (msdos and cartridge install the CAVES palette-flash
 event on screen 0xEE, not the 0xED the shared label claimed) and can find more
 with `--proposals`.
 
-`screen-scope/backdrop_phase.py` then named **231** more: everything a screen
+`screen-scope/backdrop_phase.py` then named **226** more: everything a screen
 entry paints before its first `setup`, indexed by position in that sequence.
 It refuses far more than it names, and correctly — 590 pictures are painted
 twice in one phase and so have no single position, 296 appear in several
