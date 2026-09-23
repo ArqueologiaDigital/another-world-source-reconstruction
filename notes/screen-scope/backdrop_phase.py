@@ -16,7 +16,9 @@ go down. This names them.
     CINEMATIC_<STAGE>_SCREEN_<NN>_BACKDROP_LAYER_<i>
 
 `i` is the position in that sequence: the machine's own order, not an index a
-namer chose. A picture is named only when it is in the backdrop phase of
+namer chose. The sequence ends at the first `setup` **or the first conditional
+jump**, because a draw that a branch can skip is not part of the backdrop --
+see `RE_COND` for the two entries that made that rule necessary. A picture is named only when it is in the backdrop phase of
 **exactly one** screen; 72 of 288 appear in two or more and are left numbered,
 because a shared layer belongs to no single screen (the same reason screens
 0x92 and 0x93 kept their shared base numbered in `../remaining-art/`).
@@ -72,6 +74,18 @@ RE_V = re.compile(r"^\s*video\s+(?:type=\d+,\s*)?offset="
                   r"([A-Za-z_][A-Za-z0-9_]*)")
 RE_CALL = re.compile(r"^\s*call\s+([A-Za-z_][A-Za-z0-9_]*)")
 RE_SETUP = re.compile(r"^\s*setup\s")
+# A draw after a conditional jump is not unconditionally painted, so it is
+# not a backdrop layer. CAVES_SCREEN_68_ENTRY does
+#     je [0xF8], 0x00, LABEL_A1C3      ([0xF8] = [0xB1] & 0x0010, a progress
+#     video offset=..., x=160, y=100    flag)
+# and CAPSULE_SCREEN_8D_ENTRY does `jl [HERO_X], 0x00, ...` before its draw,
+# which depends on the side the hero entered from. Both are state overlays
+# painted in the backdrop phase, not layers of the backdrop, and both were
+# named before this guard existed -- 5 names across three branches, since
+# corrected. The phase is truncated at the first conditional: that costs only
+# those 5 (286 of the 291 applied layer names had no conditional before them)
+# and it cannot overclaim.
+RE_COND = re.compile(r"^\s*(je|jne|jl|jle|jg|jge)\s")
 RE_NUM = re.compile(r"^CINEMATIC_\d+$")
 RE_ENTRY = re.compile(r"^([A-Z_]+)_SCREEN_([0-9A-F]{2})_ENTRY$")
 RE_LAYER = re.compile(r"^CINEMATIC_([A-Z_]+)_SCREEN_([0-9A-F]{2})"
@@ -113,7 +127,7 @@ def phases(lines):
             continue
         seq = []
         for line in body[lab]:
-            if RE_SETUP.match(line):
+            if RE_SETUP.match(line) or RE_COND.match(line):
                 break
             if v := RE_V.match(line):
                 seq.append(v.group(1))

@@ -184,8 +184,36 @@ CINEMATIC_<STAGE>_SCREEN_<NN>_BACKDROP_LAYER_<i>
 ```
 
 `i` is the position in that sequence — the machine's order, not one a namer
-chose. **231 applied** on 2026-09-23, taking priority-port assets from 59.6%
-to **60.8%**.
+chose. The sequence ends at the first `setup` **or the first conditional
+jump**: a draw a branch can skip is not part of the backdrop. **226 applied**
+on 2026-09-23, taking priority-port assets from 59.6% to **60.8%**.
+
+### The conditional guard, added after five wrong names
+
+The first version truncated only at `setup`, and it named five state overlays
+as backdrop layers across three branches:
+
+```
+CAVES_SCREEN_68_ENTRY:
+        ...
+        je [0xF8], 0x00, LABEL_A1C3        <- [0xF8] = [0xB1] & 0x0010
+        video offset=..., x=160, y=100        a progress flag
+
+CAPSULE_SCREEN_8D_ENTRY:
+        ...
+        jl [HERO_X], 0x00, LABEL_A8CA      <- which side the hero entered from
+        video offset=..., x=160, y=100
+```
+
+Both are painted in the backdrop phase and both are skippable, so neither is a
+layer of the backdrop. They were demoted back to their indices and the phase
+now ends at the first conditional. That costs only those five — 286 of the 291
+had no conditional before them — and it cannot overclaim.
+
+This was found by rendering a screen to look at it, which is worth recording:
+`PRISON_SCREEN_04_ENTRY` turned out to draw `CINEMATIC_BUDDY_HACKING_SECURITY_
+DOOR` behind two guards, and that named constant sitting in the middle of what
+the probe called a backdrop is what gave the rule away.
 
 ### Why this index, and not the composite's
 
