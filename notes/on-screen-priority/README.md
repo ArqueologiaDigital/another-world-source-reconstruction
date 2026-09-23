@@ -46,14 +46,20 @@ bought by the same investigation.
 
 ## The limitation, which is the whole caveat
 
-The VM enters the stage **cold** — no variables carried in from a real
-playthrough. A scene gated on a variable an earlier stage set will not run, and
-its art will not appear in this list. So:
+The VM enters the stage with no variables carried in from a real playthrough. A
+scene gated on a variable an earlier stage set will not run, and its art will
+not appear in this list. So:
 
 > **Absence from this list is not evidence. Presence is.**
 
 Never read a zero here as "nothing looks at this". Read it as "this run did not
 reach it".
+
+The five copy-protection variables **are** seeded, by `setupPart` — without them
+LAKE, CAVES, ENDING and PASSCODE delete all 64 threads on entry and draw
+nothing whatever, which is not a limitation worth preserving in a debugger.
+`--cold` turns the seeding off and reproduces the blank; `VM.PROTECTION_PASS` in
+`tools/vm-debugger/static/vm.js` says which variables and why.
 
 ## The measurement as of 2026-09-23
 

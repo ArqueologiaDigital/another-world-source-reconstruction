@@ -63,6 +63,11 @@ is append-only.** Editing a line gives it a new id and orphans every table and
 verdict that cited the old one -- reported by `--check` rather than silently
 pointing at a sentence that no longer exists.
 
+Nothing is called consumed out of a log only one machine has, either: while
+`rename_log.jsonl` is dirty the queue says so at the top and `--check` fails if
+any id is NAMED or verdicted. Commit the log first, alone and unedited -- step
+0 of `README.md`.
+
 Signal read
 -----------
 The queue line is status, id, branch/stage, frame, the target's current name
@@ -114,8 +119,10 @@ and, with that same command, every other invocation there is:
     --check                        exit 1, naming the offender
     --summary                      the counts HANDOFF.md quotes
     --self-test                    do the transitions still hold?
+    --root <dir>                   read a different repository (fixtures)
 
-`make annotations` is the first of those.
+`make annotations` is the first of those, and
+`sh notes/play-and-describe/tests/run.sh` is the other half of `--self-test`.
 
 Exit codes: 0 ok, 1 a `--check` or `--self-test` failure, 2 usage. A backlog is
 never a failure -- a queue of unread human notes is not a defect.
@@ -178,6 +185,12 @@ FORBIDDEN = [
      " (#0073)"),
     (re.compile(r"(_[AB]|_VARIANT_[0-9]+)$"),
      "`_A`/`_B`/`_VARIANT_<n>` distinguishes by nothing"),
+    # `apply_cinematic_renames.py`'s own RE_COORD. A person typing at the
+    # screen has the click's x,y in front of them, so this is the form prose
+    # invites most: `CINEMATIC_DECOR_AT_305_155_*` was grouped by where it is
+    # drawn and held a hero, a gunman, a beam and a reed under one name.
+    (re.compile(r"_AT_\d+|_\d{2,3}_\d{2,3}(_|$)"),
+     "the name embeds the position it was drawn at, not what it is"),
 ]
 
 VERDICT_HEADER = (
@@ -245,10 +258,28 @@ def hexoff(off) -> str:
     return f"0x{off:04X}" if isinstance(off, int) else "?"
 
 
+def renamed_pairs(entry: dict) -> list[tuple]:
+    """(old, new) per row of a `rename` / `bulk_rename` entry.
+
+    `static/app.js:305` posts `from`/`to`; nothing validates the payload
+    server-side, and `old`/`new` is the other spelling in circulation. Both are
+    read, because a typed name this failed to see would be a name the queue
+    never flags against `docs/NAMING.md` -- and a name with no stated grounds
+    is the entry kind most likely to need flagging.
+    """
+    out = []
+    for r in (entry.get("renames") or []):
+        if not isinstance(r, dict):
+            continue
+        new = r.get("to") or r.get("new")
+        if new:
+            out.append((r.get("from") or r.get("old"), new))
+    return out
+
+
 def typed_names(entry: dict) -> list[str]:
     """The names a `rename` / `bulk_rename` entry typed into the box."""
-    return [r.get("to") for r in (entry.get("renames") or [])
-            if isinstance(r, dict) and r.get("to")]
+    return [new for _, new in renamed_pairs(entry)]
 
 
 # --- the proposal tables ------------------------------------------------
@@ -535,8 +566,7 @@ def queue_line(a: str, ix: Index) -> str:
             or tgt.get("name") or "?")
     said = first_clause(e.get("text") or "")
     if not said:
-        pairs = [f"{r.get('from')} -> {r.get('to')}"
-                 for r in (e.get("renames") or []) if isinstance(r, dict)]
+        pairs = [f"{old} -> {new}" for old, new in renamed_pairs(e)]
         said = f"{e.get('kind')}: " + "; ".join(pairs[:2])
         if len(pairs) > 2:
             said += f" (+{len(pairs) - 2} more)"
@@ -609,9 +639,8 @@ def measure(a: str, ix: Index) -> int:
         print(wrap(e["text"]))
     else:
         print("  (none: this entry is a typed name, not a description)")
-    for r in (e.get("renames") or []):
-        if isinstance(r, dict):
-            print(f"  typed: {r.get('from')} -> {r.get('to')}")
+    for old, new in renamed_pairs(e):
+        print(f"  typed: {old} -> {new}")
     for flag in flags_for(a, ix):
         print(f"  [{flag}]")
 
@@ -887,6 +916,8 @@ def _self_test_git() -> bool:
                 print(f"\n  git {cmd[0]} failed in the fixture; "
                       f"step 0's check was NOT run")
                 return True
+        print("\n  step 0: the same tree committed, then with one line "
+              "appended and not committed:")
         sys.stdout.flush()
         clean = check(Index(tree))
         with tree.log.open("a") as fh:
@@ -903,7 +934,7 @@ def _self_test_git() -> bool:
         return (clean, dirty) == (0, 1)
 
 
-def self_test() -> int:
+def self_test(root: Path = ROOT) -> int:
     """Does each transition still hold when the tree underneath moves?
 
     Same shape as `sync_equ_rename.py --self-test`: a fixture built to be
@@ -919,18 +950,23 @@ def self_test() -> int:
     verdict actually written and read back, since an assertion is the only
     state here a tree cannot correct.
 
-    `tests/run.sh` drives the same fixture through the CLI. This runs it
-    in-process so a fresh clone needs no shell, and additionally re-derives
-    every id in any `*.jsonl` fixture that directory holds.
+    The division with `tests/run.sh`, which is the other half and not a
+    duplicate: that harness seals a whole fixture repository with `git` and
+    drives `--check` through the CLI, one fixture per way the bookkeeping is
+    known to break, asserting the exit code and the id in the message. This
+    asserts what it does not touch -- the four statuses the queue derives, the
+    refusals `--verdict` owes, and a verdict written and read back -- in
+    process, so a fresh clone needs no shell and no `git` to know the probe is
+    sound.
     """
     import tempfile
     ok = True
     with tempfile.TemporaryDirectory() as tmp:
-        root = Path(tmp)
-        (root / "tools" / "vm-debugger").mkdir(parents=True)
-        (root / "notes" / "play-and-describe").mkdir(parents=True)
-        (root / "src" / "levels" / "chahi_amiga_1991").mkdir(parents=True)
-        tree = Tree(root)
+        fx = Path(tmp)
+        (fx / "tools" / "vm-debugger").mkdir(parents=True)
+        (fx / "notes" / "play-and-describe").mkdir(parents=True)
+        (fx / "src" / "levels" / "chahi_amiga_1991").mkdir(parents=True)
+        tree = Tree(fx)
 
         def entry(off, name, frame):
             return {"at": "2026-09-23T20:24:19+0100", "kind": "annotate",
@@ -951,7 +987,7 @@ def self_test() -> int:
         (tree.src / "chahi_amiga_1991" / "PRISON.asm").write_text(
             "CINEMATIC_PRISON_LANDED EQU 0x1000\n"
             "CINEMATIC_102           EQU 0x2000\n")
-        (root / "notes" / "play-and-describe"
+        (fx / "notes" / "play-and-describe"
          / "proposals_chahi_amiga_1991__PRISON_selftest.md").write_text(
             "| old | new | confidence | evidence |\n|---|---|---|---|\n"
             f"| CINEMATIC_101 | CINEMATIC_PRISON_LANDED | medium | 0x1000; "
@@ -975,6 +1011,8 @@ def self_test() -> int:
                   f"{'ok' if got == expect else 'FAIL'}")
             ok &= got == expect
 
+        print("\n  the fixture is built to fail --check; that failure, "
+              "quoted:")
         sys.stdout.flush()
         rc = check(ix)
         print(f"\n  --check on the fixture: exit {rc} "
@@ -1008,27 +1046,32 @@ def self_test() -> int:
 
     ok &= _self_test_git()
 
+    # The published id, recomputed from the log this repository committed.
+    # Not a fixture: it is the assertion that no line has been rewritten under
+    # the citations already pointing into it. Only ever asked of this repo --
+    # under --root there is no published value to check against.
     real = Tree(ROOT)
     first = ([ln for ln in real.log.read_text().splitlines() if ln.strip()][:1]
              if real.log.is_file() else [])
-    if first:
+    if first and root == ROOT:
         got = aid(first[0])
         print(f"\n  the committed log's first line -> {got}  "
               f"{'ok' if got == 'ann:cff7052605ce' else 'FAIL'}"
               f"  (published: ann:cff7052605ce)")
         ok &= got == "ann:cff7052605ce"
+    elif root != ROOT:
+        print(f"\n  --root {root}: the published id is this repo's own, "
+              f"not checked")
 
-    fixtures = sorted((HERE / "tests").glob("*.jsonl")) \
-        if (HERE / "tests").is_dir() else []
-    for f in fixtures:
-        got = load_log(f)
-        uniq = len({a for a, _ in got})
-        print(f"  tests/{f.name}: {len(got)} line(s), {uniq} distinct id(s)")
-        ok &= uniq == len(got)
+    if (HERE / "tests" / "run.sh").is_file():
+        print("  and `sh notes/play-and-describe/tests/run.sh` for the other "
+              "half:\n  every way --check is known to break, one sealed "
+              "fixture repository each")
 
+    tail = ", and the published id" if (first and root == ROOT) else ""
     print(f"\n  {'PASS' if ok else 'FAIL'}: five status transitions, four "
-          f"refusals, one verdict written and read back, step 0's dirty-log "
-          f"gate,\n  and the published id")
+          f"refusals, one verdict written and read back,\n  step 0's "
+          f"dirty-log gate{tail}")
     return 0 if ok else 1
 
 
@@ -1038,6 +1081,12 @@ def main() -> int:
     ap = argparse.ArgumentParser(
         description=__doc__.split("\n")[0],
         formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--root", type=Path, default=ROOT,
+                    help="the repository to read: the log, the proposal "
+                         "tables, src/levels/ and verdicts.tsv all come from "
+                         "here, and nothing outside it is read. "
+                         "`tests/run.sh` drives whole fixture repositories "
+                         "past the probe with it")
     ap.add_argument("--all", action="store_true",
                     help="every annotation, not just the unacted-on ones")
     ap.add_argument("--stage", choices=sorted(STAGES))
@@ -1061,13 +1110,13 @@ def main() -> int:
     args = ap.parse_args()
 
     if args.self_test:
-        return self_test()
+        return self_test(args.root.resolve())
     if args.id and not args.id.startswith("ann:"):
         args.id = "ann:" + args.id
     if args.measure and not args.id:
         ap.error("--measure needs --id")
 
-    ix = Index(Tree(ROOT))
+    ix = Index(Tree(args.root.resolve()))
 
     if args.verdict:
         a, kind = args.verdict

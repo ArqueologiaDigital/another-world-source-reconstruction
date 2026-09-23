@@ -64,7 +64,10 @@ async function loadStage() {
     return;
   }
   state.vm = new VM(roms);
-  state.vm.setupPart(state.cfg.stages[state.stage]);
+  // Seeded by default: without it four of the eight stages delete all 64
+  // threads on entry and draw nothing at all. See VM.PROTECTION_PASS.
+  state.vm.setupPart(state.cfg.stages[state.stage],
+                     { protection: !$("coldboot").checked });
   state.sel = null;
   state.frame = state.vm.runFrame();
   $("hint").textContent =

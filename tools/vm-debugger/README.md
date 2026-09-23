@@ -157,17 +157,50 @@ invisible.
 
 ## Stages that draw nothing when started cold
 
-LAKE, CAVES, CAPSULE and ENDING run their entry point and then stop with no live
-threads. That is the game, not the VM: `ENTRY_POINT_OF_CAVES` ends in
-`call CAVES_SCREEN_ENTRY_DISPATCH`, which switches on `SCREEN_NUM` (`0x67`), and
-a stage entered cold has every variable at zero, so the dispatch falls through.
-INTRO, PRISON and TANK open on a cutscene and need nothing.
+**This section said the wrong thing until 2026-09-23.** It blamed
+`CAVES_SCREEN_ENTRY_DISPATCH` switching on `SCREEN_NUM` (`0x67`) with every
+variable at zero. That is not it: seeding `SCREEN_NUM` with each of 23 values,
+0x00 through 0xC0, leaves CAVES drawing exactly nothing, and CAVES ends a
+400-frame run with **zero live threads**, which no dispatch fall-through would
+cause.
 
-Two ways round it, both in the UI: let INTRO run and follow the `bankSwitch`
-into the next stage, which carries the state the scripts expect; or set the
-variables by hand in the state panel -- `SCREEN_NUM` first. The variable names
-come from `src/levels/_common_vars.inc` and the stage's own file, so the panel
-shows `SCREEN_NUM` and `HERO_X`, not `[0x67]` and `[0x01]`.
+The real cause is `LIKELY_A_COPY_PROTECTION_MECHANISM`, and its failure path is
+`deleteChannels first=0x00, last=0x3F` -- it deletes all 64 threads. The check
+reads five variables:
+
+    and [0xBC], 0x0010   je [0xBC], 0x00 -> fail     bit 4 of 0xBC set
+    and [0xF8], 0x0080   je [0xF8], 0x00 -> fail     bit 7 of 0xC6 set
+    and [0xF8], 0x003C   jne [0xF8], 0x14 -> fail    0xE4 & 0x3C == 0x14
+    jne [0xF2], 0x0FA0 -> fail                       0xF2 == 0x0FA0
+    jne [COPY_PROTECT_TOKEN], 0x21 -> fail           0xDC == 0x21
+
+Entered cold every one of those is zero, so it always fails, and the failure
+path latches: it writes `0xF2 = 0x1770`, not `0x0FA0`. `LIKELY_A_COPY_
+PROTECTION_MECHANISM` appears in CAVES, ENDING and PRISON in both priority
+ports, and in msdos's PASSCODE.
+
+**The debugger now seeds those five variables on `setupPart` by default**
+(`VM.PROTECTION_PASS` in `static/vm.js`). The `cold boot` checkbox in the header
+turns it off and reproduces the blank. Measured over 600 frames of `dos_1992`
+with `notes/on-screen-priority/seen_unnamed.mjs`:
+
+| stage | cold | seeded |
+| --- | --- | --- |
+| LAKE | 0 painted frames | 101 |
+| CAVES | 0 | 595 |
+| CAPSULE | 0 | 115 |
+| ENDING | 0 | 344 |
+
+That is half the game, and it includes CAVES and CAPSULE, the two least-named
+stages in the project. INTRO, PRISON and TANK open on a cutscene and were
+unaffected either way.
+
+It remains true that a stage entered this way carries no state from a real
+playthrough, so a scene gated on a variable an earlier stage set will not run.
+Two ways round that, both in the UI: let INTRO run and follow the `bankSwitch`
+into the next stage; or set variables by hand in the state panel. The variable
+names come from `src/levels/_common_vars.inc` and the stage's own file, so the
+panel shows `SCREEN_NUM` and `HERO_X`, not `[0x67]` and `[0x01]`.
 
 ## What the backend serves
 

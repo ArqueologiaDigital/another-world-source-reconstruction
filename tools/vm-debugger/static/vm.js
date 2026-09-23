@@ -77,8 +77,44 @@ export class VM {
   }
 
   // ---- setup ---------------------------------------------------------
-  /** Start a stage: the reference's setupPart -- everything off, thread 0 at 0. */
-  setupPart(level) {
+  /** The five variables the copy-protection check reads, and passing values.
+   *
+   * Four stages -- LAKE, CAVES, ENDING and, in msdos, PASSCODE -- run a check
+   * before doing anything, and its failure path is
+   * `deleteChannels first=0x00, last=0x3F`: it deletes all 64 threads and the
+   * stage sits there drawing nothing forever. Entered cold, with every variable
+   * zero, the check always fails, which is why those stages were silent.
+   *
+   * The conditions, read off `LIKELY_A_COPY_PROTECTION_MECHANISM` in
+   * `src/levels/dos_1992/CAVES.asm` (the strictest of the four):
+   *
+   *     and [0xBC], 0x0010   je [0xBC], 0x00 -> fail    bit 4 of 0xBC set
+   *     and [0xF8], 0x0080   je [0xF8], 0x00 -> fail    bit 7 of 0xC6 set
+   *     and [0xF8], 0x003C   jne [0xF8], 0x14 -> fail   0xE4 & 0x3C == 0x14
+   *     jne [0xF2], 0x0FA0 -> fail                      0xF2 == 0x0FA0
+   *     jne [COPY_PROTECT_TOKEN], 0x21 -> fail          0xDC == 0x21
+   *
+   * Note `and [0xBC], 0x0010` writes back into 0xBC, so these are read once and
+   * consumed. The failure path latches: it sets 0xF2 to 0x1770, not 0x0FA0.
+   *
+   * This is the answer a real player's code wheel produces, not a bypass of
+   * anything: the values are in the listing, the game is 34 years old, and the
+   * point is to reach the art in a debugger. Measured effect, 600 frames,
+   * dos_1992 (notes/on-screen-priority/): LAKE 0 -> 101 painted frames, CAVES
+   * 0 -> 595, CAPSULE 0 -> 115, ENDING 0 -> 344.
+   */
+  static PROTECTION_PASS = { 0xBC: 0x0010, 0xC6: 0x0080, 0xE4: 0x0014,
+                             0xF2: 0x0FA0, 0xDC: 0x0021 };
+
+  /** Start a stage: the reference's setupPart -- everything off, thread 0 at 0.
+   *
+   * `opts.protection === false` skips the seeding above and enters truly cold,
+   * which is what the game does on a fresh boot and what leaves four of the
+   * eight stages blank. The default seeds, because a debugger that cannot reach
+   * CAVES or CAPSULE cannot help name them -- they are the two least-named
+   * stages in the project.
+   */
+  setupPart(level, opts) {
     this.level = level & 0xF;
     this.cine.setLevel(this.level);
     this.pc.fill(INACTIVE);
@@ -92,7 +128,12 @@ export class VM {
     this.gameOver = false;
     for (const p of this.pages) p.fill(0);
     this.workPage = 2; this.frontPage = 2; this.backPage = 1;
-    this.events.push({ kind: "setupPart", level: this.level });
+    const seed = !opts || opts.protection !== false;
+    if (seed) {
+      for (const [v, val] of Object.entries(VM.PROTECTION_PASS))
+        this.vars[Number(v)] = val;
+    }
+    this.events.push({ kind: "setupPart", level: this.level, protection: seed });
   }
 
   // ---- bytecode access ------------------------------------------------

@@ -9,7 +9,7 @@
 // debugger would label it with whatever name happened to live there.
 //
 // The disassembler already wrote down every offset the stage draws: they are
-// the `CINEMATIC_* EQU` and `VIDEO2_* EQU` lines of
+// the `EQU` lines of
 // `src/levels/<branch>/<STAGE>.asm`. So run the VM and check that **every
 // offset it draws is one of them**. A decoding bug puts the offset somewhere
 // the disassembler never recorded, and this says so.
@@ -40,12 +40,22 @@ if (!ROMSET) { console.error("need --romset <dir>"); process.exit(2); }
 
 const asm = readFileSync(join(ROOT, "src/levels", BRANCH, STAGE + ".asm"), "utf8");
 const known = { cinematic: new Set(), video2: new Set() };
+// Which bank a constant is in comes from its DRAW SITE, not its name.
+// `video type=0, offset=NAME` is the shared bank, `video offset=NAME` the
+// stage's own slab. Sorting by prefix misses every shared-bank constant that
+// has been renamed out of `CV_*` into a real name -- dos_1992/CAVES draws 192
+// of those, e.g. HERO_CRAWL_POSE_09 -- and reports them as offsets the
+// disassembler never recorded, which is exactly backwards.
+const bank = new Map();
+for (const m of asm.matchAll(/^\tvideo (type=0, )?offset=(\w+)/gm))
+  bank.set(m[2], m[1] ? "video2" : "cinematic");
 for (const line of asm.split("\n")) {
-  const m = /^(CINEMATIC_\w+|CV_\w+)\s+EQU\s+(0x[0-9A-Fa-f]+)\s*$/.exec(line);
+  const m = /^(\w+)\s+EQU\s+(0x[0-9A-Fa-f]+)\s*$/.exec(line);
   if (!m) continue;
-  // `CV_*` is the shared bank -- the disassembly spells those draws
-  // `video type=0, offset=CV_...`, and an unnamed key is `CV_<hex offset>`.
-  (m[1].startsWith("CV_") ? known.video2 : known.cinematic).add(parseInt(m[2], 16));
+  const where = bank.get(m[1]) ||
+    (m[1].startsWith("CV_") ? "video2"
+     : m[1].startsWith("CINEMATIC_") ? "cinematic" : null);
+  if (where) known[where].add(parseInt(m[2], 16));
 }
 
 const rd = (n) => new Uint8Array(readFileSync(join(ROMSET, n)));

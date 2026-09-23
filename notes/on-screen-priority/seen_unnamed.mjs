@@ -26,10 +26,15 @@
 //     else computes the position), `imm` (a literal in the bytecode) or a mix.
 //     A var-anchored draw is a moving object; an imm-anchored one is furniture.
 //
-// Caveat, and it is the whole limitation: the VM enters the stage COLD, with no
-// state carried from a real playthrough, so a scene gated on a variable a
-// previous stage set will not run and its art will not appear here. Absence from
-// this list is not evidence; presence is.
+// Caveat, and it is the whole limitation: the VM enters the stage with no state
+// carried from a real playthrough, so a scene gated on a variable a previous
+// stage set will not run and its art will not appear here. Absence from this
+// list is not evidence; presence is.
+//
+// The copy-protection variables ARE seeded by default (VM.PROTECTION_PASS in
+// static/vm.js says which and why), because without them four of the eight
+// stages delete all 64 threads on entry and draw nothing whatsoever. `--cold`
+// turns that off and reproduces the blank.
 //
 // Run it
 //   python3 tools/vm-debugger/server.py --dump dos_1992 PRISON > /tmp/n.json
@@ -37,6 +42,9 @@
 //       --romset <romset dir> --stage-id 3 --frames 400
 //   ... --top 40        how many rows to print (default 25)
 //   ... --named         rank the already-NAMED constants instead, as a control
+//   ... --cold          enter the stage with NO copy-protection seeding, which
+//                       is what a fresh boot does and what leaves LAKE, CAVES,
+//                       ENDING and PASSCODE drawing nothing at all
 
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -49,7 +57,7 @@ const NAMES = arg("names"), ROMSET = arg("romset");
 const STAGE_ID = Number(arg("stage-id", "1"));
 const FRAMES = Number(arg("frames", "400"));
 const TOP = Number(arg("top", "25"));
-const WANT_NAMED = has("named");
+const WANT_NAMED = has("named"), COLD = has("cold");
 if (!NAMES || !ROMSET) { console.error("need --names and --romset"); process.exit(2); }
 
 const meta = JSON.parse(readFileSync(NAMES, "utf8"));
@@ -75,7 +83,7 @@ const vm = new VM({
   bytecode: rd("bytecode.rom"), cinematic: rd("cinematic.rom"),
   palettes: rd("palettes.rom"), video2: rd("video2.rom"),
 });
-vm.setupPart(STAGE_ID);
+vm.setupPart(STAGE_ID, { protection: !COLD });
 
 const seen = new Map();   // key -> {kind, offset, name, frames, first, last, routines, anchors}
 let ran = 0;

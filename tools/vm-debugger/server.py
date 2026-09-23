@@ -82,6 +82,7 @@ STAGE_ID = {"CODE_WHEEL": 0, "INTRO": 1, "LAKE": 2, "PRISON": 3, "CAVES": 4,
 
 RE_EQU = re.compile(r"^(\w+)\s+EQU\s+(0x[0-9A-Fa-f]+)\s*$")
 RE_VAR = re.compile(r"^(\w+)\s+EQU\s+0x([0-9A-Fa-f]{2})\s*$")
+RE_DRAW = re.compile(r"^\tvideo (type=0, )?offset=(\w+)", re.M)
 RE_LABEL = re.compile(r"^(\w+):")
 RE_NUMBERED = re.compile(r"^CINEMATIC_\d+$|^CV_[0-9A-F]{4}$")
 
@@ -100,6 +101,17 @@ def names_for(branch: str, stage: str) -> dict:
     shared bank. A still-unnamed shared-bank key is spelled `CV_<offset in
     hex>`, e.g. `CV_5FBC`, which is why the numbered-form test has to know
     about both shapes.
+
+    **Which bank a constant belongs to is read off its DRAW SITE, not its
+    prefix.** Sorting by prefix was wrong and the unnamed counter paid for it: a
+    great many shared-bank constants have been renamed out of `CV_*` into real
+    names -- `HERO_CRAWL_POSE_09`, `HERO_PRONE_TRANSITION_LEFT_F00` -- and
+    `dos_1992/CAVES.asm` alone draws 192 art constants whose names begin with
+    neither prefix. Dropped by the prefix rule, every one of them reached the
+    debugger as "no EQU" and was **counted as unnamed while already being
+    named**. So: `video type=0, offset=NAME` puts NAME in the shared bank,
+    `video offset=NAME` puts it in the stage's slab, and the prefix rule is kept
+    only for constants this stage defines but never draws.
     """
     f = ROOT / "src" / "levels" / branch / f"{stage}.asm"
     if not f.is_file():
@@ -108,12 +120,24 @@ def names_for(branch: str, stage: str) -> dict:
     video2: dict[str, str] = {}
     aliases: dict[str, list[str]] = {}
     labels: dict[str, str] = {}
-    for line in f.read_text(errors="replace").splitlines():
+    text = f.read_text(errors="replace")
+
+    # Pass 1: which bank does each drawn constant come from? The draw site says
+    # so outright, and it is the only thing that does.
+    bank: dict[str, str] = {}
+    for m in RE_DRAW.finditer(text):
+        bank[m.group(2)] = "video2" if m.group(1) else "cinematic"
+
+    for line in text.splitlines():
         m = RE_EQU.match(line)
         if m:
             name, off = m.group(1), m.group(2).upper().replace("0X", "0x")
-            tgt = (cinematic if name.startswith("CINEMATIC_")
-                   else video2 if name.startswith("CV_") else None)
+            where = bank.get(name)
+            if where is None:                       # never drawn here
+                where = ("cinematic" if name.startswith("CINEMATIC_")
+                         else "video2" if name.startswith("CV_") else None)
+            tgt = (cinematic if where == "cinematic"
+                   else video2 if where == "video2" else None)
             if tgt is None:
                 continue
             if off in tgt and tgt[off] != name:
