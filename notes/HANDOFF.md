@@ -25,7 +25,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 75.8% (7,690/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 76.0% (7,708/10,147) | `asset_naming_share.py` |
 | `_AMIGA_EXTRA` collisions that went the wrong way | 2 of 38, both now undone | `amiga-extra-suffix/deconflict_survivors.py` |
 | pictures carrying two or more names | 73 amiga / 76 msdos of 2,530 / 2,552 named | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
@@ -590,6 +590,25 @@ F5->F6. Unlike the pulse it does **not** close to a point: it stops at
 108x104 centred near 170,74, and the routine then redraws F6 at `zoom=0x50`
 and jumps away. So this is a separate seven-frame recede that halts, not the
 same collapse, and `RECEDE` describes it.
+
+**`CINEMATIC_292..294` / dos `298..300` -- a mass that comes apart, subject
+unknown.** Drawn once each by `BLINK_PAGE_FF_3X_LOOP`, which is a generated
+name in both branches, and with no `canonical_md5` twin anywhere in either
+priority port. At palette 0x18: `292` is one contiguous blue mass 217.5x99.5
+in 22 paths with a stepped top, low on the screen at y[84.5, 184.0]; `293` is
+161.0x73.5 in **29** paths, narrow vertical splinters along a baseline; `294`
+is 63.0x93.5 in 17 paths, a small block and a scatter of specks. Area falls
+21,641 -> 11,833 -> 5,890 while the path count rises then collapses, which is
+a break-up and not a recede.
+
+What is missing is the subject. The routine draws each frame onto **page 0**,
+over whatever is standing there, and what is standing there is
+`CINEMATIC_LESTER_TUMBLING_TOWARDS_CAMERA_F14`; composited that way the mass
+sits on a pale band inside a near-full-screen dark shape, which locates it but
+does not identify it. What would settle it is the page-0 history rather than
+its last frame -- which of the fifteen `..._TOWARDS_CAMERA` frames are still
+on page 0 when the blink starts, since nothing clears that page between them.
+Named nothing rather than guess.
 
 **`CINEMATIC_LESTER_SEATED_AT_HOLO_CONSOLE_F0_AMIGA_EXTRA` is not a seated
 figure.** amiga 0xF2B6 / dos 0xF228, `e843eb2c0435`. **22.5x15.5, 3 paths, all

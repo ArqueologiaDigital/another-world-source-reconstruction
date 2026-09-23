@@ -133,6 +133,7 @@ checked against the receiving port's own guards.
 | CAVES 718, 719, 734, 735 | (msdos twins) | `CINEMATIC_CAVES_STALACTITE_CAVERN_{FLOOR,CEILING}_{LEFT,RIGHT}` | high |
 | CAVES 452/453/470/471, 472..474/491..493 | (msdos twins) | `CINEMATIC_CAVES_HERO_SWIM_HEAD_{UP,DOWN}_{RIGHT,LEFT}_*` | high |
 | INTRO 243, 246, 247, 250..260 | 249, 252, 253, 256..266 | `CINEMATIC_ACCELERATOR_TUNNEL_{VIEW_NEAR,PULSE_F0..F14}` | high |
+| INTRO 268..276 | 274..282 | `CINEMATIC_FRAGMENTS_RECEDING_F0..F8` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that

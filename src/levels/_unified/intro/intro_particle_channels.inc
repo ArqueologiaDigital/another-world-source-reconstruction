@@ -50,9 +50,9 @@ CINEMATIC_EXPERIMENT_LIGHTNING_F25		EQU 0xAA58
 CINEMATIC_EXPERIMENT_LIGHTNING_F26		EQU 0xAADE
 CINEMATIC_EXPERIMENT_LIGHTNING_F27		EQU 0xAB50
 CINEMATIC_EXPERIMENT_LIGHTNING_F28		EQU 0xAB9E
-CINEMATIC_274		EQU 0xD280
-CINEMATIC_275		EQU 0xD2FC
-CINEMATIC_276		EQU 0xD374
+CINEMATIC_FRAGMENTS_RECEDING_F6		EQU 0xD280
+CINEMATIC_FRAGMENTS_RECEDING_F7		EQU 0xD2FC
+CINEMATIC_FRAGMENTS_RECEDING_F8		EQU 0xD374
 CINEMATIC_LESTER_TUMBLING_TOWARDS_CAMERA_F0		EQU 0xD3A4
 CINEMATIC_LESTER_TUMBLING_TOWARDS_CAMERA_F1		EQU 0xD3C4
 CINEMATIC_LESTER_TUMBLING_TOWARDS_CAMERA_F2		EQU 0xD400
@@ -101,15 +101,15 @@ CINEMATIC_EXPERIMENT_LIGHTNING_F25		EQU 0xA9CA
 CINEMATIC_EXPERIMENT_LIGHTNING_F26		EQU 0xAA50
 CINEMATIC_EXPERIMENT_LIGHTNING_F27		EQU 0xAAC2
 CINEMATIC_EXPERIMENT_LIGHTNING_F28		EQU 0xAB10
-CINEMATIC_274		EQU 0xCF1A
-CINEMATIC_275		EQU 0xCFC2
-CINEMATIC_276		EQU 0xD032
-CINEMATIC_277		EQU 0xD0A2
-CINEMATIC_278		EQU 0xD112
-CINEMATIC_279		EQU 0xD182
-CINEMATIC_280		EQU 0xD1F2
-CINEMATIC_281		EQU 0xD26E
-CINEMATIC_282		EQU 0xD2E6
+CINEMATIC_FRAGMENTS_RECEDING_F0		EQU 0xCF1A
+CINEMATIC_FRAGMENTS_RECEDING_F1		EQU 0xCFC2
+CINEMATIC_FRAGMENTS_RECEDING_F2		EQU 0xD032
+CINEMATIC_FRAGMENTS_RECEDING_F3		EQU 0xD0A2
+CINEMATIC_FRAGMENTS_RECEDING_F4		EQU 0xD112
+CINEMATIC_FRAGMENTS_RECEDING_F5		EQU 0xD182
+CINEMATIC_FRAGMENTS_RECEDING_F6		EQU 0xD1F2
+CINEMATIC_FRAGMENTS_RECEDING_F7		EQU 0xD26E
+CINEMATIC_FRAGMENTS_RECEDING_F8		EQU 0xD2E6
 CINEMATIC_LESTER_TUMBLING_TOWARDS_CAMERA_F0		EQU 0xD316
 CINEMATIC_LESTER_TUMBLING_TOWARDS_CAMERA_F1		EQU 0xD336
 CINEMATIC_LESTER_TUMBLING_TOWARDS_CAMERA_F2		EQU 0xD372
@@ -378,64 +378,64 @@ FILL_PAGE_FF_COLOR_8_ONCE:
 	djnz [0x01], FILL_PAGE_FF_COLOR_8_ONCE
 	setup channel=0x04, address=SET_PALETTE_18
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_268, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F0, x=160, y=100
 .else
-	video offset=CINEMATIC_274, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F0, x=160, y=100
 .endif
 	play id=0x002C, freq=0x14, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_269, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F1, x=160, y=100
 .else
-	video offset=CINEMATIC_275, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F1, x=160, y=100
 .endif
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_270, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F2, x=160, y=100
 .else
-	video offset=CINEMATIC_276, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F2, x=160, y=100
 .endif
 	play id=0x002C, freq=0x14, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_271, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F3, x=160, y=100
 .else
-	video offset=CINEMATIC_277, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F3, x=160, y=100
 .endif
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_272, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F4, x=160, y=100
 .else
-	video offset=CINEMATIC_278, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F4, x=160, y=100
 .endif
 	play id=0x000E, freq=0x14, vol=0x3F, channel=0x02
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_273, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F5, x=160, y=100
 .else
-	video offset=CINEMATIC_279, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F5, x=160, y=100
 .endif
 	play id=0x000A, freq=0x05, vol=0x3F, channel=0x00
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_274, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F6, x=160, y=100
 .else
-	video offset=CINEMATIC_280, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F6, x=160, y=100
 .endif
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x01
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_275, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F7, x=160, y=100
 .else
-	video offset=CINEMATIC_281, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F7, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_276, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F8, x=160, y=100
 .else
-	video offset=CINEMATIC_282, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F8, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
@@ -596,79 +596,79 @@ INTRO_EFFECT_CHANNELS_FADE_AND_TEARDOWN:
 	djnz [0x01], INTRO_EFFECT_CHANNELS_FADE_AND_TEARDOWN
 	play id=0x0003, freq=0x14, vol=0x12, channel=0x03
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_268, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F0, x=160, y=100
 .else
-	video offset=CINEMATIC_274, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F0, x=160, y=100
 .endif
 	break
 	play id=0x0003, freq=0x14, vol=0x10, channel=0x03
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_269, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F1, x=160, y=100
 .else
-	video offset=CINEMATIC_275, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F1, x=160, y=100
 .endif
 	break
 	play id=0x0003, freq=0x14, vol=0x0E, channel=0x03
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_270, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F2, x=160, y=100
 .else
-	video offset=CINEMATIC_276, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F2, x=160, y=100
 .endif
 	play id=0x000E, freq=0x02, vol=0x32, channel=0x03
 	break
 	play id=0x0003, freq=0x14, vol=0x0C, channel=0x03
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_271, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F3, x=160, y=100
 .else
-	video offset=CINEMATIC_277, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F3, x=160, y=100
 .endif
 	play id=0x000E, freq=0x05, vol=0x32, channel=0x02
 	break
 	play id=0x0003, freq=0x14, vol=0x0A, channel=0x03
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_272, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F4, x=160, y=100
 .else
-	video offset=CINEMATIC_278, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F4, x=160, y=100
 .endif
 	play id=0x000E, freq=0x01, vol=0x3F, channel=0x00
 	break
 	play id=0x0003, freq=0x14, vol=0x08, channel=0x03
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_273, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F5, x=160, y=100
 .else
-	video offset=CINEMATIC_279, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F5, x=160, y=100
 .endif
 	break
 	play id=0x0003, freq=0x14, vol=0x06, channel=0x03
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_274, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F6, x=160, y=100
 .else
-	video offset=CINEMATIC_280, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F6, x=160, y=100
 .endif
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	play id=0x000E, freq=0x06, vol=0x3F, channel=0x01
 	break
 	play id=0x0003, freq=0x14, vol=0x04, channel=0x03
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_275, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F7, x=160, y=100
 .else
-	video offset=CINEMATIC_281, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F7, x=160, y=100
 .endif
 	break
 	setPalette 0x18
 	play id=0x0003, freq=0x14, vol=0x02, channel=0x03
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_276, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F8, x=160, y=100
 .else
-	video offset=CINEMATIC_282, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F8, x=160, y=100
 .endif
 	break
 	setPalette 0x1A
 	play id=0x000E, freq=0x00, vol=0x3F, channel=0x03
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_276, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F8, x=160, y=100
 .else
-	video offset=CINEMATIC_282, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F8, x=160, y=100
 .endif
 	break
 	setup channel=0x14, address=KILL_CHANNEL_ROUTINE

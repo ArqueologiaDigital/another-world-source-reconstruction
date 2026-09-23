@@ -289,15 +289,15 @@ CINEMATIC_ACCELERATOR_TUNNEL_RECEDE_F3		EQU 0x91F8
 CINEMATIC_ACCELERATOR_TUNNEL_RECEDE_F4		EQU 0x9328
 CINEMATIC_ACCELERATOR_TUNNEL_RECEDE_F5		EQU 0x944C
 CINEMATIC_ACCELERATOR_TUNNEL_RECEDE_F6		EQU 0x9550
-CINEMATIC_268		EQU 0xCFA8
-CINEMATIC_269		EQU 0xD050
-CINEMATIC_270		EQU 0xD0C0
-CINEMATIC_271		EQU 0xD130
-CINEMATIC_272		EQU 0xD1A0
-CINEMATIC_273		EQU 0xD210
-CINEMATIC_274		EQU 0xD280
-CINEMATIC_275		EQU 0xD2FC
-CINEMATIC_276		EQU 0xD374
+CINEMATIC_FRAGMENTS_RECEDING_F0		EQU 0xCFA8
+CINEMATIC_FRAGMENTS_RECEDING_F1		EQU 0xD050
+CINEMATIC_FRAGMENTS_RECEDING_F2		EQU 0xD0C0
+CINEMATIC_FRAGMENTS_RECEDING_F3		EQU 0xD130
+CINEMATIC_FRAGMENTS_RECEDING_F4		EQU 0xD1A0
+CINEMATIC_FRAGMENTS_RECEDING_F5		EQU 0xD210
+CINEMATIC_FRAGMENTS_RECEDING_F6		EQU 0xD280
+CINEMATIC_FRAGMENTS_RECEDING_F7		EQU 0xD2FC
+CINEMATIC_FRAGMENTS_RECEDING_F8		EQU 0xD374
 CINEMATIC_LESTER_TUMBLING_TOWARDS_CAMERA_F0		EQU 0xD3A4
 CINEMATIC_LESTER_TUMBLING_TOWARDS_CAMERA_F1		EQU 0xD3C4
 CINEMATIC_LESTER_TUMBLING_TOWARDS_CAMERA_F2		EQU 0xD400
@@ -1352,30 +1352,30 @@ FILL_PAGE_FF_COLOR_8_ONCE:
 	break
 	djnz [0x01], FILL_PAGE_FF_COLOR_8_ONCE
 	setup channel=0x04, address=SET_PALETTE_18
-	video offset=CINEMATIC_268, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F0, x=160, y=100
 	play id=0x002C, freq=0x14, vol=0x3F, channel=0x03
 	break
-	video offset=CINEMATIC_269, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F1, x=160, y=100
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x03
 	break
-	video offset=CINEMATIC_270, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F2, x=160, y=100
 	play id=0x002C, freq=0x14, vol=0x3F, channel=0x03
 	break
-	video offset=CINEMATIC_271, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F3, x=160, y=100
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x03
 	break
-	video offset=CINEMATIC_272, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F4, x=160, y=100
 	play id=0x000E, freq=0x14, vol=0x3F, channel=0x02
 	break
-	video offset=CINEMATIC_273, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F5, x=160, y=100
 	play id=0x000A, freq=0x05, vol=0x3F, channel=0x00
 	break
-	video offset=CINEMATIC_274, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F6, x=160, y=100
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x01
 	break
-	video offset=CINEMATIC_275, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F7, x=160, y=100
 	break
-	video offset=CINEMATIC_276, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F8, x=160, y=100
 	break
 	video offset=CINEMATIC_LESTER_TUMBLING_TOWARDS_CAMERA_F0, x=160, y=100
 	break
@@ -1459,41 +1459,41 @@ INTRO_EFFECT_CHANNELS_FADE_AND_TEARDOWN:
 	break
 	djnz [0x01], INTRO_EFFECT_CHANNELS_FADE_AND_TEARDOWN
 	play id=0x0003, freq=0x14, vol=0x12, channel=0x03
-	video offset=CINEMATIC_268, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F0, x=160, y=100
 	break
 	play id=0x0003, freq=0x14, vol=0x10, channel=0x03
-	video offset=CINEMATIC_269, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F1, x=160, y=100
 	break
 	play id=0x0003, freq=0x14, vol=0x0E, channel=0x03
-	video offset=CINEMATIC_270, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F2, x=160, y=100
 	play id=0x000E, freq=0x02, vol=0x32, channel=0x03
 	break
 	play id=0x0003, freq=0x14, vol=0x0C, channel=0x03
-	video offset=CINEMATIC_271, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F3, x=160, y=100
 	play id=0x000E, freq=0x05, vol=0x32, channel=0x02
 	break
 	play id=0x0003, freq=0x14, vol=0x0A, channel=0x03
-	video offset=CINEMATIC_272, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F4, x=160, y=100
 	play id=0x000E, freq=0x01, vol=0x3F, channel=0x00
 	break
 	play id=0x0003, freq=0x14, vol=0x08, channel=0x03
-	video offset=CINEMATIC_273, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F5, x=160, y=100
 	break
 	play id=0x0003, freq=0x14, vol=0x06, channel=0x03
-	video offset=CINEMATIC_274, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F6, x=160, y=100
 	setup channel=0x04, address=KILL_CHANNEL_ROUTINE
 	play id=0x000E, freq=0x06, vol=0x3F, channel=0x01
 	break
 	play id=0x0003, freq=0x14, vol=0x04, channel=0x03
-	video offset=CINEMATIC_275, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F7, x=160, y=100
 	break
 	setPalette 0x18
 	play id=0x0003, freq=0x14, vol=0x02, channel=0x03
-	video offset=CINEMATIC_276, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F8, x=160, y=100
 	break
 	setPalette 0x1A
 	play id=0x000E, freq=0x00, vol=0x3F, channel=0x03
-	video offset=CINEMATIC_276, x=160, y=100
+	video offset=CINEMATIC_FRAGMENTS_RECEDING_F8, x=160, y=100
 	break
 	setup channel=0x14, address=KILL_CHANNEL_ROUTINE
 	setup channel=0x15, address=KILL_CHANNEL_ROUTINE
