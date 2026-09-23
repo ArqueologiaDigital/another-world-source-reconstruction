@@ -222,41 +222,41 @@ LABEL_48EE:
 	db 0x11
 
 DRAW_CIN_110_BLOCK:
-	video offset=CINEMATIC_110, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_111, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_112, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_113, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_114, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F4, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_115, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F5, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_116, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F6, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_117, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F7, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_118, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F8, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_119, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F9, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_120, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F10, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_121, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F11, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_122, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F12, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_123, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F13, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_122, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F12, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_122, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F12, x=[HERO_X], y=[HERO_Y]
 
 LABEL_494E:
 	break
-	video offset=CINEMATIC_121, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F11, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_494E
 LABEL_4957:
 	db 0x11

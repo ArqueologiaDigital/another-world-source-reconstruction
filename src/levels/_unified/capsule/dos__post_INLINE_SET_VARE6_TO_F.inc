@@ -473,29 +473,29 @@ LABEL_4064:
 	break
 	video offset=CINEMATIC_CAPSULE_WINDOW_SMASH_FIGURE_6, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_167, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F6, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_168, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F7, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_169, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F8, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_170, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F9, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_171, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F10, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_172, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F11, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_173, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F12, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_174, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F13, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_173, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F12, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_173, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F12, x=[HERO_X], y=[HERO_Y]
 
 LABEL_40C3:
 	break
-	video offset=CINEMATIC_172, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_TUMBLING_CHUNK_F11, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_40C3
 LABEL_40CC:
 	db 0x11
