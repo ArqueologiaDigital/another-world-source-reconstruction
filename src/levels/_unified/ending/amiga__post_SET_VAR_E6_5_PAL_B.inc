@@ -44,9 +44,9 @@ ENDING_DRAW_STARS_BG_PLAY_SOUND_08:
 	selectVideoPage 0x00
 	play id=0x0008, freq=0x05, vol=0x20, channel=0x00
 	play id=0x0008, freq=0x07, vol=0x30, channel=0x01
-	video offset=CINEMATIC_008, x=160, y=100
-	video offset=CINEMATIC_009, x=160, y=100
-	video offset=CINEMATIC_010, x=160, y=100
+	video offset=CINEMATIC_ENDING_TERRACE, x=160, y=100
+	video offset=CINEMATIC_ENDING_TERRACE_LIGHTS, x=160, y=100
+	video offset=CINEMATIC_ENDING_PTERANODON_PERCHED, x=160, y=100
 	selectVideoPage 0xFF
 	mov [PAUSE_SLICES], 0x0004
 	mov [0x03], 0x000A
@@ -58,11 +58,11 @@ LESTER_PRONE_ARRIVAL_DELAY:
 	break
 	djnz [0x03], LESTER_PRONE_ARRIVAL_DELAY
 	setup channel=0x05, address=PTERANODON_HEAD_RAISE_ANIM
-	video offset=CINEMATIC_011, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_ARRIVAL_F0, x=[0x01], y=[0x02]
 	play id=0x0008, freq=0x0A, vol=0x16, channel=0x00
 	play id=0x0057, freq=0x14, vol=0x20, channel=0x02
 	break
-	video offset=CINEMATIC_012, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_ARRIVAL_F1, x=[0x01], y=[0x02]
 	break
 	video offset=CINEMATIC_ENDING_LESTER_PRONE_F0, x=[0x01], y=[0x02]
 	break
@@ -119,7 +119,7 @@ LESTER_PRONE_CYCLE_SLOWDOWN_LOOP:
 	add [PAUSE_SLICES], 0x0002
 	djnz [0x03], LESTER_PRONE_DRAW_THEN_CREDITS_MUSIC_CUE
 	mov [PAUSE_SLICES], 0x0006
-	video offset=CINEMATIC_019, x=[0x01], y=[0x02]
+	video offset=CINEMATIC_ENDING_LESTER_PRONE_F6, x=[0x01], y=[0x02]
 	setup channel=0x14, address=ALIEN_ARRIVAL_POSITION_INIT
 
 LESTER_PRONE_BODY_LOOP:

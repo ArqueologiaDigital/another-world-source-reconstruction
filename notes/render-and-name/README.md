@@ -1,6 +1,7 @@
 # Names read off a render
 
-**INTRO is complete in both priority ports: 569/569 amiga, 570/570 msdos.**
+**INTRO is complete in both priority ports (569/569 amiga, 570/570 msdos), and
+amiga/ENDING is complete (133/133).**
 
 **Every name listed here has no independent check behind it.** It was read
 from a rendered picture, at the confidence stated per row, with the measured
@@ -149,6 +150,7 @@ checked against the receiving port's own guards.
 | INTRO 543, 555, 559, 560, 563, 564 | 544, 556, 560, 561, 564, 565 | `CINEMATIC_CITY_{GANTRY_AERIALS,ROOFTOP_PEAK,DISTANT_RIDGE,GROUND_PATCH,DARK_PEAK,GANTRY_CABLE}` | medium |
 | INTRO 026, 112, 292, 293, 294 | 031, 117, 298, 299, 300 | `CINEMATIC_{STREET_ROAD_EDGE,LIFT_DOOR_INDICATOR,MACHINE_HULL,MACHINE_STRUTS,MACHINE_STRUT_DETAIL}` | medium |
 | (amiga already named) | INTRO 318, 444, 446, 466 + an LED renumber | `CINEMATIC_EXPERIMENT_SPARK_LONG_F0`, `..._HOLO_CONSOLE_LED_0..4`, `CINEMATIC_LIFT_SHAFT_BAND` | high/medium |
+| ENDING 008..012, 019, 024, 038..041 | (same numbers) | `CINEMATIC_ENDING_{TERRACE,TERRACE_LIGHTS,PTERANODON_PERCHED,LESTER_ARRIVAL_F0,F1,LESTER_PRONE_F6,ALIEN_HEAD,CLOUD_SKY_PAGE3_F4..F6,CLOUD_BANK}` | high/medium |
 | INTRO 268..276 | 274..282 | `CINEMATIC_FRAGMENTS_RECEDING_F0..F8` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,

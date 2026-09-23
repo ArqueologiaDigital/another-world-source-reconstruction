@@ -110,21 +110,21 @@ ENDING_DRAW_STARS_PAGE3_CIN_004_L0:
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_STARS_CIN_38_39_40_5_6:
 	video offset=CINEMATIC_ENDING_CLOUD_SKY_PAGE3_F2, x=126, y=25
-	video offset=CINEMATIC_038, x=133, y=102, zoom=0x20
-	video offset=CINEMATIC_038, x=129, y=114, zoom=0x20
-	video offset=CINEMATIC_038, x=114, y=126, zoom=0x20
+	video offset=CINEMATIC_ENDING_CLOUD_SKY_PAGE3_F4, x=133, y=102, zoom=0x20
+	video offset=CINEMATIC_ENDING_CLOUD_SKY_PAGE3_F4, x=129, y=114, zoom=0x20
+	video offset=CINEMATIC_ENDING_CLOUD_SKY_PAGE3_F4, x=114, y=126, zoom=0x20
 	video offset=CINEMATIC_ENDING_CLOUD_SKY_PAGE3_F2, x=91, y=8, zoom=0x20
-	video offset=CINEMATIC_039, x=16, y=114
-	video offset=CINEMATIC_039, x=74, y=177, zoom=0x20
-	video offset=CINEMATIC_040, x=78, y=166
+	video offset=CINEMATIC_ENDING_CLOUD_SKY_PAGE3_F5, x=16, y=114
+	video offset=CINEMATIC_ENDING_CLOUD_SKY_PAGE3_F5, x=74, y=177, zoom=0x20
+	video offset=CINEMATIC_ENDING_CLOUD_SKY_PAGE3_F6, x=78, y=166
 	video offset=CINEMATIC_ENDING_CLOUD_SKY_PAGE3_F1, x=283, y=175
 	video offset=CINEMATIC_ENDING_CLOUD_SKY_PAGE3_F1, x=294, y=183
 	video offset=CINEMATIC_ENDING_CLOUD_SKY_PAGE3_F1, x=58, y=185
 	video offset=CINEMATIC_ENDING_CLOUD_SKY_PAGE3_F1, x=5, y=170
-	video offset=CINEMATIC_041, x=197, y=160, zoom=0x20
-	video offset=CINEMATIC_041, x=61, y=169
-	video offset=CINEMATIC_041, x=300, y=28
-	video offset=CINEMATIC_041, x=202, y=86, zoom=0x30
+	video offset=CINEMATIC_ENDING_CLOUD_BANK, x=197, y=160, zoom=0x20
+	video offset=CINEMATIC_ENDING_CLOUD_BANK, x=61, y=169
+	video offset=CINEMATIC_ENDING_CLOUD_BANK, x=300, y=28
+	video offset=CINEMATIC_ENDING_CLOUD_BANK, x=202, y=86, zoom=0x30
 	ret
 
 
