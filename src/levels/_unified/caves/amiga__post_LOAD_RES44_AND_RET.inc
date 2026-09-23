@@ -76,12 +76,12 @@ CAVES_SCREEN_6C_BACKDROP_DRAW:
 	video offset=CINEMATIC_407, x=107, y=108
 	video offset=CINEMATIC_407, x=150, y=169
 	video offset=CINEMATIC_407, x=130, y=142
-	video offset=CINEMATIC_408, x=160, y=100
-	video offset=CINEMATIC_409, x=160, y=100
-	video offset=CINEMATIC_410, x=83, y=165
-	video offset=CINEMATIC_410, x=136, y=165
-	video offset=CINEMATIC_410, x=233, y=165
-	video offset=CINEMATIC_410, x=293, y=165
+	video offset=CINEMATIC_CAVES_SCREEN_6C_CAVERN_COLUMNS, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_6C_CAVERN_COLUMN_LARGE, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_6C_STALAGMITE, x=83, y=165
+	video offset=CINEMATIC_CAVES_SCREEN_6C_STALAGMITE, x=136, y=165
+	video offset=CINEMATIC_CAVES_SCREEN_6C_STALAGMITE, x=233, y=165
+	video offset=CINEMATIC_CAVES_SCREEN_6C_STALAGMITE, x=293, y=165
 	video offset=CINEMATIC_275, x=91, y=153
 	video offset=CINEMATIC_275, x=28, y=153
 	video offset=CINEMATIC_275, x=59, y=153
@@ -350,8 +350,8 @@ DRAW_BUDDY_CRAWLING_BG:
 
 CAVES_SCREEN_4C_BACKDROP_DRAW:
 	fill page=0x00, color=0x08
-	video offset=CINEMATIC_332, x=160, y=100
-	video offset=CINEMATIC_333, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_4C_CAVERN_COLUMNS, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_4C_CAVERN_ARCH, x=160, y=100
 	video offset=CINEMATIC_334, x=160, y=100
 	video offset=CINEMATIC_335, x=31, y=74
 	video offset=CINEMATIC_335, x=293, y=150
@@ -370,8 +370,8 @@ CAVES_SCREEN_4C_BACKDROP_DRAW:
 
 CAVES_SCREEN_4D_BACKDROP_DRAW:
 	fill page=0x00, color=0x08
-	video offset=CINEMATIC_340, x=160, y=100
-	video offset=CINEMATIC_341, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_4D_ARCHES, x=160, y=100
+	video offset=CINEMATIC_CAVES_SCREEN_4D_CAVERN_COLUMNS, x=160, y=100
 	video offset=CINEMATIC_275, x=214, y=153
 	video offset=CINEMATIC_275, x=248, y=153
 	video offset=CINEMATIC_275, x=310, y=153
