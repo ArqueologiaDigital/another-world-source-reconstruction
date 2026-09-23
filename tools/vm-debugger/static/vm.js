@@ -174,31 +174,32 @@ export class VM {
       const lo = this.fetch();
       const offset = (((op & 0x7F) << 8) | lo) * 2;
       const x = this.fetch(), y = this.fetch();
-      return this.video("cinematic", offset, x, y, 0x40, pcAt);
+      return this.video("cinematic", offset, x, y, 0x40, pcAt,
+                        { x: "imm", y: "imm", zoom: "imm" });
     }
     if (op & 0x40) {                       // full video
       const o1 = this.fetch(), o2 = this.fetch();
       const offset = (((o1 & 0x7F) << 8) | o2) * 2;
 
-      let x = this.fetch();
+      let x = this.fetch(), ax = "imm";
       if ((op & 0x20) === 0) {
         if ((op & 0x10) === 0) x = (x << 8) | this.fetch();
-        else x = this.vars[x];
+        else { x = this.vars[x]; ax = "var"; }
       } else if (op & 0x10) x += 0x100;
 
-      let y;
+      let y, ay = "imm";
       if ((op & 8) === 0) {
         if ((op & 4) === 0) { y = this.fetch(); y = (y << 8) | this.fetch(); }
-        else y = this.vars[this.fetch()];
+        else { y = this.vars[this.fetch()]; ay = "var"; }
       } else y = this.fetch();
 
-      let zoom = 0x40;
+      let zoom = 0x40, az = "imm";
       if ((op & 2) === 0) {
-        if (op & 1) zoom = this.vars[this.fetch()];
+        if (op & 1) { zoom = this.vars[this.fetch()]; az = "var"; }
       } else if ((op & 1) === 0) zoom = this.fetch();
 
       const kind = (op & 3) === 3 ? "video2" : "cinematic";
-      return this.video(kind, offset, x, y, zoom, pcAt);
+      return this.video(kind, offset, x, y, zoom, pcAt, { x: ax, y: ay, zoom: az });
     }
 
     switch (op) {
@@ -329,7 +330,11 @@ export class VM {
   }
 
   // ---- video -----------------------------------------------------------
-  video(kind, offset, x, y, zoom, pcAt) {
+  // `anchor` is {x, y, zoom} with each field "var" | "imm", recovered from the
+  // opcode bits by the caller. It changes nothing about the drawing; it is the
+  // one fact about a draw that cannot be recovered from the record afterwards,
+  // and notes/on-screen-priority/ ranks on it.
+  video(kind, offset, x, y, zoom, pcAt, anchor) {
     const r = kind === "video2" ? this.vid2 : this.cine;
     if (!r) return;
     if (kind === "video2") r.setLevel(0);
@@ -348,6 +353,7 @@ export class VM {
       seq: this.seq++, kind, offset, x, y, zoom,
       palette: this.palette, thread: this.thread, pc: pcAt,
       page: this.workPage, polys,
+      anchor: anchor || { x: "imm", y: "imm", zoom: "imm" },
     });
   }
 
