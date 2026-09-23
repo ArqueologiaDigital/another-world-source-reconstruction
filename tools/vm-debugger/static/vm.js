@@ -387,6 +387,12 @@ export class VM {
       case 0x0F: {                                              // copyVideoPage
         let src = this.fetch(); const dst = this.pageIndex(this.fetch());
         let vscroll = 0;
+        // `srcPageId &= 0xBF` happens INSIDE the test in the reference, so bit
+        // 6 is cleared before the branch is chosen and stays cleared for the
+        // page lookup. Testing `src & 0x80` without clearing it sends 0x41
+        // through `pageIndex` as an unknown id (page 0) where the reference
+        // reads page 1.
+        if (src < 0xFE) src &= 0xBF;
         if (src >= 0xFE || !(src & 0x80)) {
           src = this.pageIndex(src);
         } else {
@@ -398,7 +404,6 @@ export class VM {
       }
       case 0x10: {                                              // blitFramebuffer
         const id = this.fetch();
-        this.vars[VAR.PAUSE_SLICES] = this.vars[VAR.PAUSE_SLICES]; // pacing is the host's
         if (id !== 0xFE) {
           if (id === 0xFF) { const t = this.frontPage; this.frontPage = this.backPage; this.backPage = t; }
           else this.frontPage = this.pageIndex(id);
@@ -476,29 +481,30 @@ export class VM {
     });
   }
 
+  /** Copy one page to another, optionally scrolled vertically.
+   *
+   * The scrolled form copies a BAND and leaves the rest of the destination
+   * alone -- it does not blank it. Writing zeros into the uncovered rows, which
+   * is what this did before, erases whatever the destination already held and
+   * shows as a black bar sliding across a scrolling scene.
+   *
+   * A scroll outside -199..199 copies nothing at all, which is the reference's
+   * guard and not an optimisation: `SCROLL_Y` is a signed variable and a wild
+   * value must do nothing rather than something arbitrary.
+   */
   copyPage(src, dst, vscroll) {
     const s = this.pages[src], d = this.pages[dst];
     if (src === dst) return;
     if (!vscroll) { d.set(s); return; }
-    const off = vscroll * W;
-    for (let i = 0; i < W * H; i++) {
-      const j = i + off;
-      d[i] = (j >= 0 && j < W * H) ? s[j] : 0;
-    }
+    if (vscroll < -199 || vscroll > 199) return;
+    let h = H, srcY0 = 0, dstY0 = 0;
+    if (vscroll < 0) { h += vscroll; srcY0 = -vscroll; }
+    else { h -= vscroll; dstY0 = vscroll; }
+    for (let y = 0; y < h; y++)
+      d.set(s.subarray((srcY0 + y) * W, (srcY0 + y) * W + W), (dstY0 + y) * W);
   }
 }
 
-/**
- * Scanline fill of one polygon into a 320x200 index buffer.
- *
- * The GEOMETRY here is exact -- `tests/compare_render.mjs` checks every point
- * against `awvm-render-polygons`. The RASTERISATION is a standard even-odd
- * scanline fill rather than the reference VM's two-edge walk, so a shape's
- * outermost pixel can land one across from what the original hardware drew.
- * Nothing in `notes/` is measured off rasterised pixels -- extents and
- * `canonical_md5` both come from the polygon tree -- so this affects what the
- * screen looks like and nothing that is written down.
- */
 /** Paint one polygon into a page, the way the game paints it.
  *
  * A line-for-line port of MAME's `another_world_vm_state::fillPolygon`

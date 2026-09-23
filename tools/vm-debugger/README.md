@@ -105,6 +105,19 @@ sessions as a solid 50x40 rectangle. Fixing it moved CAVES checkpoints 9 and 10
 from 6.1% of the screen to 27.7%, because blend polygons had been overwriting
 what they were meant to tint.
 
+Two page operations diverged from the reference as well, found by reading the
+same file:
+
+- `copyVideoPage` clears bit 6 of the source id **inside** the test that chooses
+  the branch, so the cleared value is what the page lookup then uses. Testing
+  bit 7 without clearing bit 6 sends source `0x41` through as an unknown id --
+  page 0 -- where the reference reads page 1.
+- a **scrolled** page copy moves a band and leaves the rest of the destination
+  alone. Zeroing the uncovered rows, which is what this did, erases whatever the
+  destination held and shows as a black bar sliding across a scrolling scene. A
+  scroll outside -199..199 copies nothing at all, which is a guard rather than
+  an optimisation: `SCROLL_Y` is signed and a wild value must do nothing.
+
 The blink overlay deliberately ignores all of this and paints a solid colour, so
 highlighting an asset shows its whole footprint even when the asset is a mask --
 otherwise the assets hardest to recognise would be the ones that highlight
