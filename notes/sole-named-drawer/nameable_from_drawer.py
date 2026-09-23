@@ -162,6 +162,30 @@ UNIFIED_PREFIX = {"chahi_amiga_1991": "amiga", "dos_1992": "dos",
 # are allowed; a token with a hex letter in it is not.
 RE_HEXTAIL = re.compile(r"_[0-9A-F]*[A-F][0-9A-F]*$")
 
+# A name ending in a THRESHOLD token is the same inheritance bug that
+# RE_HEXTAIL catches, except the token is decimal and so looks exactly like a
+# family index. `CAVES_LASER_IMPACT_ANIM_RIGHT_ABOVE_04` is not frame 4: it is
+# the arm of a binary search over the impact timer, entered for timer values
+# {4,5}, and the picture it draws is the one for value 5. Copying the label's
+# number onto the art gets the frame off by one and records a comparison
+# threshold where an index belongs -- and it names only the arms that happen to
+# carry a label, leaving the rest behind `DRAW_CIN_<n>` fallthroughs, which
+# shows up downstream as a family with a hole in it. That hole was how this was
+# found; see ../laser-impact-anim/README.md.
+#
+# Measured over the whole tree: of the 36 distinct labels ending _ABOVE_<n>,
+# _UPTO_<n> or _BELOW_<n>, 34 are directly the target of an inequality
+# (`jg`/`jl`/`jge`/`jle`) on the variable their ladder switches on. The two
+# that are not -- PRISON_LIFT_SHAFT_STRIP_TILT_UPTO_16, reached by `call`, and
+# PRISON_SCREEN_FLOOR_Y_LOOKUP_UPTO_04, reached by `jne` -- are arms of those
+# same ladders and carry a threshold inherited from a sibling, so they are no
+# more a frame index than the rest.
+#
+# `_OVER_<n>` is deliberately NOT in this set. All four of its labels are
+# CREDITS_SCROLL_RENDER_PAGE_80_OVER_83 and kin, where 80 and 83 are page
+# numbers and "over" is compositing, not comparison.
+RE_THRESHOLD = re.compile(r"_(ABOVE|UPTO|BELOW)_[0-9A-F]+$")
+
 
 # A namer strips the words that describe the routine's plumbing rather than
 # its subject, so the derived constant base is not the routine name verbatim.
@@ -261,6 +285,10 @@ def main() -> int:
                     continue
                 if RE_HEXTAIL.search(lab):
                     skipped["name ends in a raw hex token (§1)"] += 1
+                    continue
+                if RE_THRESHOLD.search(lab):
+                    skipped["name ends in a comparison threshold, not an "
+                            "index"] += 1
                     continue
                 seq = [m.group(1) for line in body
                        for m in RE_DRAW.finditer(line)]

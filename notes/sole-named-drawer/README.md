@@ -169,3 +169,46 @@ With that fixed the cartridge CAVES batch applies cleanly: **29/29 and
 29/29**, no duplicate `EQU` in the cart arms, `--duplicates` still one name
 per picture. The `genesis_europe` checker gap is real and still worth closing
 — it is why only the byte gate caught this — but it was not the cause.
+
+## A fourth filter: a threshold is not an index
+
+The probe offered these, and every one was wrong:
+
+```
+amiga/CAVES  CINEMATIC_777  ->  CINEMATIC_CAVES_LASER_IMPACT_ANIM_RIGHT_ABOVE_04
+```
+
+The indices it produced ran `01, 02, 04`. The hole at `03` was the tell.
+`CAVES_LASER_IMPACT_ANIM_RIGHT_ABOVE_04` is an arm of a binary search over the
+impact timer `[0x13]`: it is entered for timer values 4 and 5, and the picture
+drawn at the label is the one for value **5**. So the inherited name is off by
+one *and* it records a comparison threshold where a frame index belongs. The
+three pictures that got no proposal were not missing art — they sit behind
+`DRAW_CIN_<n>` fallthrough labels with no name to inherit. The gap was in the
+labels, never in the animation. `../laser-impact-anim/` has the full reading
+and the twelve names it earned instead.
+
+This is the same inheritance bug `RE_HEXTAIL` already caught, except the token
+is decimal and therefore looks exactly like a family index, so the existing
+filter could not see it.
+
+Measured over the whole tree: of the **36** distinct labels ending `_ABOVE_<n>`,
+`_UPTO_<n>` or `_BELOW_<n>`, **34** are directly the target of an inequality on
+the variable their ladder switches on. The two that are not —
+`PRISON_LIFT_SHAFT_STRIP_TILT_UPTO_16` (reached by `call`) and
+`PRISON_SCREEN_FLOOR_Y_LOOKUP_UPTO_04` (reached by `jne`) — are arms of those
+same ladders carrying a threshold inherited from a sibling, so they are no more
+an index than the rest. `RE_THRESHOLD` rejects all three tails.
+
+`_OVER_<n>` is deliberately **not** in that set. All four of its labels are
+`CREDITS_SCROLL_RENDER_PAGE_80_OVER_83` and kin, where `80` and `83` are page
+numbers and "over" is compositing, not comparison. Reproduce with:
+
+```
+python3 notes/sole-named-drawer/nameable_from_drawer.py
+```
+
+which now reports **75 skipped: name ends in a comparison threshold, not an
+index**, and is left with 4 proposals — all four themselves arms of a CAPSULE
+ladder named `_PHASE_1` and `_PHASE_4` with no 2 or 3, which is the same shape
+of hole and is treated in `../laser-impact-anim/`.
