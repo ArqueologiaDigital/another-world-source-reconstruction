@@ -84,10 +84,10 @@ LABEL_12B4:
 STATE_VAR12_BIG_DISPATCH_CASE_38:
 	call CAPSULE_BUDDY_PER_FRAME_TICK
 	break
-	video offset=CINEMATIC_113, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_WALK_RIGHT_BODY_F0, x=[BUDDY_X], y=[BUDDY_Y]
 	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
-	video offset=CINEMATIC_114, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_WALK_RIGHT_BODY_F1, x=[BUDDY_X], y=[BUDDY_Y]
 	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	play id=0x005E, freq=0x11, vol=0x40, channel=0x01
 	setup channel=0x37, address=LABEL_130E
@@ -100,7 +100,7 @@ STATE_VAR12_BIG_DISPATCH_CASE_38:
 	video offset=CINEMATIC_CAPSULE_HERO_STAND_SHOOT_LEFT_F0, x=[BUDDY_X], y=[BUDDY_Y]
 	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
-	video offset=CINEMATIC_117, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_WALK_RIGHT_BODY_F4, x=[BUDDY_X], y=[BUDDY_Y]
 	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_06, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
 	mov [0x29], 0x000A
