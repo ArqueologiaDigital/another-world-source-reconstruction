@@ -54,6 +54,10 @@ reproduces the table in `proposals_chahi_amiga_1991__INTRO_pulse.md`, writes
 `--under` it composites over flat grey, which is still the right thing for a
 run that has no backdrop.
 
+`--progressive` changes what each frame SVG holds: frame N becomes layers 0..N
+drawn together rather than layer N alone. That is what a background composite
+routine does, and it is the only way to see what a layer contributes.
+
 Turning the SVGs into something viewable is one line and deliberately not done
 here, so the tool has no image-library dependency:
 
@@ -109,6 +113,9 @@ def main() -> int:
                     help="offsets of the run, in the order the routine draws them")
     ap.add_argument("--track", nargs="*", default=[],
                     help="fill colours to measure separately, e.g. '#fb7474'")
+    ap.add_argument("--progressive", action="store_true",
+                    help="each frame is drawn OVER the ones before it, which is "
+                         "what a background composite actually does")
     ap.add_argument("--bg", default="#909090",
                     help="colour behind everything; only visible where nothing draws")
     args = ap.parse_args()
@@ -125,7 +132,8 @@ def main() -> int:
     for i, off in enumerate(args.frames):
         ps = paths(args.renders, off)
         trail += ps
-        (args.out / f"frame{i:02d}.svg").write_text(svg(under + ps, args.bg))
+        body = list(trail) if args.progressive else under + ps
+        (args.out / f"frame{i:02d}.svg").write_text(svg(body, args.bg))
         w = box(ps)
         line = (f"  F{i:<2} 0x{off.upper():<6} {w[0]:6.1f}x{w[1]:6.1f}  "
                 f"x[{w[2]:7.1f},{w[3]:7.1f}] y[{w[4]:6.1f},{w[5]:6.1f}]  {len(ps):>3}")

@@ -138,6 +138,7 @@ checked against the receiving port's own guards.
 | INTRO 517, 518 | 523, 129 | `CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F2, F3` (+ a four-branch renumber of F3..F6 to F4..F7) | high |
 | INTRO 121, 122 | 126, 127 | `CINEMATIC_LAB_DOOR_LEAF_{UPPER,LOWER}` | high |
 | INTRO 107..111 | 112..116 | `CINEMATIC_LIFT_{DOOR_LEAF_LEFT,DOOR_LEAF_RIGHT,SCENE_FIXED_OVERLAY,SHAFT_MARKER_MOVING,SHAFT_MARKER_FIXED}` | high/medium |
+| INTRO 166, 171..174, 104, 105 | (msdos twins) | `CINEMATIC_PARTICLE_LAB_{WALLS_AND_FLOOR,CONSOLE_DESK,CHAIR,FLOOR_LITTER,HIGHLIGHTS}`, `CINEMATIC_CARPARK_PILLAR_{HIGHLIGHT,SEAM}` | high/medium |
 | INTRO 268..276 | 274..282 | `CINEMATIC_FRAGMENTS_RECEDING_F0..F8` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
