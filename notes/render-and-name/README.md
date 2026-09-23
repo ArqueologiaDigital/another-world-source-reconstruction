@@ -71,6 +71,7 @@ checked against the receiving port's own guards.
 | CINEMATIC_634 | (msdos twin) | `CINEMATIC_PRISON_PRISONER_BEHIND_BARS` | high |
 | CINEMATIC_636 | (msdos twin) | `CINEMATIC_PRISON_CELL_BARS` | high |
 | CINEMATIC_391..399 | (msdos twins) | `CINEMATIC_PRISON_BUDDY_TYPING_ARM_{LEFT,RIGHT}_F0..F3` + `_FIGURE_BASE` | high |
+| CINEMATIC_370, 379..385 | (msdos twins) | `CINEMATIC_CAPSULE_HERO_CRAWL_F0..F7` | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
@@ -194,3 +195,24 @@ Indices are order of first appearance in that routine, which
 complete family drawn by one routine. All nine sit at `[BUDDY_X],[BUDDY_Y]`,
 the actor slot, so **#0138** applies and the names come from the art rather
 than the scene.
+
+## The crawl, where the usual direction test had to be refused
+
+Eight frames of a prone figure, 54-56 long, the body rising and falling —
+11.5, 12.5, 11.5, 10.5, 9.5, 8.5, 9.5, 11.5 — and eight distinct
+`canonical_md5`s, so eight real frames.
+
+The name carries **no direction**, for two reasons that point the same way.
+`HERO_CRAWL_LEFT_LOOP` does `sub [HERO_X]` and plays 370, 379, 380, 381, 382,
+383; `HERO_CRAWL_RIGHT_LOOP` does `add [HERO_X]` and plays 370, 385, 384, 383,
+382, 381. One cycle read forwards and backwards — the travel direction is in
+the routine's arithmetic, not in the art.
+
+And the signed bounding box, which settled facing for the teleport beams, the
+run limbs and the typing arms, is **refused here**. It is the same for all
+eight (x −44.5..+11.0, mass left), and that test assumes the draw anchor is
+where a standing figure's feet meet the ground. A prone figure's anchor is not
+that. This project already has one recorded case of an argument that was right
+once and wrong when its embedded assumption did not travel —
+`notas/blog/2026-09-23_o_mesmo_argumento_certo_e_depois_errado.md` — and this
+would have been the second.

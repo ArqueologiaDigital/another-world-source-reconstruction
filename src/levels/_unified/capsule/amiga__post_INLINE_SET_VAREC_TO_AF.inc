@@ -46,37 +46,37 @@ LABEL_080B:
 	jmp HERO_CRAWL_RIGHT_LOOP
 
 HERO_CRAWL_LEFT_LOOP:
-	video offset=CINEMATIC_370, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_CRAWL_F7, x=[HERO_X], y=[HERO_Y]
 	break
 	je [HERO_ACTION], 0x01, LABEL_0518
 	je [HERO_POS_LEFT_RIGHT], 0x01, HERO_CRAWL_RIGHT_LOOP
 	je [HERO_POS_LEFT_RIGHT], 0x00, HERO_CRAWL_LEFT_LOOP
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_379, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_CRAWL_F0, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_380, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_CRAWL_F1, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_381, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_CRAWL_F2, x=[HERO_X], y=[HERO_Y]
 	break
 	mov [0xE6], 0x0006
 
 ANIM_CIN_382_LOOP_VARE6_AT_0860:
-	video offset=CINEMATIC_382, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_CRAWL_F3, x=[HERO_X], y=[HERO_Y]
 	break
 	djnz [0xE6], ANIM_CIN_382_LOOP_VARE6_AT_0860
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_383, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_CRAWL_F4, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_384, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_CRAWL_F5, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0001
-	video offset=CINEMATIC_385, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_CRAWL_F6, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [HERO_X], 0x0002
-	video offset=CINEMATIC_370, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_CRAWL_F7, x=[HERO_X], y=[HERO_Y]
 	break
 	jmp HERO_CRAWL_LEFT_LOOP
 
