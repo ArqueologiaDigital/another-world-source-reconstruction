@@ -590,6 +590,24 @@ not.
 
 ## Checked this session, and what is still held
 
+**INTRO's city composite, six constants, held.** `INTRO_SCENE_INIT_PARTICLES`
+draws 51 pictures at its own `setPalette 0x01`, and six of them are still
+numbers: `543` (0x0B8E, 49.0x14.0, 12 paths, drawn once at **x=357** -- off the
+right edge of a 320-wide page), `555` (0x0A54, 6.0x6.0, 1 path, drawn four
+times along y=123), `559` (0x0B36, 249.0x22.0, **1 path**), `560` (0x0CE4,
+102.0x7.5, 15 paths), `563` (0x0DCA, 72.0x22.0, 1 path) and `564` (0x0E02,
+120.0x12.0, 1 path).
+
+Rendered progressively over the other 45 with `compose_run.py --progressive`
+the scene does not resolve into anything nameable -- a dark blue panel, a
+lattice below it, diagonal members -- and single-path wedges 249 and 120 pixels
+wide could be a skyline, a shadow or a cloud. Its named neighbours are all
+`CITY_*`, so the vocabulary is there; the picture has to be legible before the
+words can be attached. **What would settle it:** the one draw at `x=357`. A
+picture placed entirely off a 320-wide page is either scrolled into view later
+or the page is wider than assumed, and which of those is true changes the
+reading of the whole composite.
+
 **`CINEMATIC_ACCELERATOR_TUNNEL_RECEDE_F0..F6` does recede -- checked, name
 stands.** Drawn by the routine right after the pulse run, at palette **0x15**,
 where they are black shards around cyan and white cores. Measured rather than
