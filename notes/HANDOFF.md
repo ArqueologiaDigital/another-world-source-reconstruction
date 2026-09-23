@@ -38,6 +38,7 @@ As of the last commit:
 | painters whose two sources agree on the screen | 139 of 139, all four branches | `backdrop-drawer/backdrop_drawer.py --control` |
 | layer names claiming a screen nothing connects them to | 0 of 312 | `backdrop-drawer/backdrop_drawer.py --audit-layers` |
 | placeholder labels in PRISON/CAVES/CAPSULE, both ports | 7,594 of 14,503, classified by how control reaches them | `placeholder-census/placeholder_roles.py` |
+| names that exist and break NAMING.md §1 | 1,238 `_L<n>` + 153 others, all four branches | `placeholder-census/placeholder_roles.py --forbidden` |
 | complete `_F` families indexed by order of first appearance | 159 of 159 | `placeholder-census/placeholder_roles.py --frames` |
 | frame labels reproduced from their siblings' template | 127 of 127, 0 nameable left | `frame-label-siblings/sibling_template.py --control` |
 

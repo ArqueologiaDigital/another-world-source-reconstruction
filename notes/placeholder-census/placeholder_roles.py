@@ -313,6 +313,82 @@ def loops():
     return 0
 
 
+FORBIDDEN = (
+    (re.compile(r"_L\d+$"), "bare fold-local suffix _L<n>"),
+    (re.compile(r"FOLD_BODY"), "FOLD_BODY, a consolidation artefact"),
+    (re.compile(r"DEDUP"), "DEDUP, a consolidation artefact"),
+    (re.compile(r"__HELPER"), "__HELPER, a placeholder suffix (#0093)"),
+)
+
+
+def forbidden() -> int:
+    """Names that exist and break `docs/NAMING.md` §1, sized and diagnosed.
+
+    These looked like the cheap half of the label backlog: a name that is the
+    wrong *shape* needs no knowledge of what the code does, only a rewrite.
+    **They are not.** `_L<n>` is the largest class by a wide margin, and it is
+    a uniquifier, not a description:
+
+        CAVES_INIT_VARS_6D_71_70_L7:   break / add [0x6E], 0x0292 / ...
+        CAVES_INIT_VARS_6D_71_70_L11:  break / add [0x6E], 0x07AA / ...
+
+    Two different routines that the mechanical namer gave the same base, with
+    a counter appended to keep them apart. Dropping the suffix would collide;
+    keeping it is meaningless. What is actually wrong is the **base** --
+    `INIT_VARS_6D_71_70` describes which variables are written, not what for
+    -- and fixing that needs the same understanding the rest of the backlog
+    needs. The suffix is a symptom.
+
+    The draw-shaped ones (`PRISON_DRAW_CIN<n>_AT_X<x>_Y<y>_L<k>`) are blocked
+    one step further along: they are `../draw-label-follows-constant/`'s case,
+    waiting on the picture they draw to be named first.
+
+    So this is a census entry and not a task. It is here so the next reader
+    does not spend an hour discovering the same thing.
+    """
+    per: dict[str, collections.Counter] = collections.defaultdict(
+        collections.Counter)
+    shapes: dict[str, collections.Counter] = collections.defaultdict(
+        collections.Counter)
+    ALL_BRANCHES = ("chahi_amiga_1991", "dos_1992", "cartridge_1992",
+                    "gba_2004")
+    for branch in ALL_BRANCHES:
+        for stage in ALL_STAGES:
+            lines = read(branch, stage)
+            if lines is None:
+                continue
+            for l in lines:
+                m = RE_LBL.match(l)
+                if not m:
+                    continue
+                n = m.group(1)
+                for rx, label in FORBIDDEN:
+                    if rx.search(n):
+                        per[label][branch] += 1
+                        shapes[label][re.sub(r"\d+", "#", n)] += 1
+    # Counted as label DEFINITIONS per branch. The totals reproduce
+    # `lint_naming.py`'s own figures exactly -- 1238 for `_L<n>`, 93 for
+    # DEDUP -- so the two are measuring the same population and the split is
+    # only there to show where it sits. `gba_2004` ships none of these
+    # because it ships only the four short stages.
+    print("  label definitions that break NAMING.md §1, per branch:\n")
+    print(f"  {'class':<44}" + "".join(f"{b.split('_')[0]:>10}"
+                                       for b in ALL_BRANCHES) + f"{'all':>8}")
+    for _rx, label in FORBIDDEN:
+        tot = sum(per[label].values())
+        print(f"  {label:<44}" +
+              "".join(f"{per[label][b]:>10}" for b in ALL_BRANCHES) +
+              f"{tot:>8}")
+    print("\n  the commonest shapes of the largest class, over all "
+          "branches:\n")
+    for shape, c in shapes["bare fold-local suffix _L<n>"].most_common(8):
+        print(f"    {c:>4}  {shape}")
+    print("\n  This is a census entry, not a task -- see the docstring. The "
+          "suffix is a\n  uniquifier on a base that is itself mechanical, so "
+          "the fix needs what the\n  rest of the backlog needs.")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--roles", action="store_true",
@@ -320,12 +396,17 @@ def main() -> int:
                          "routine, with the role their position gives them")
     ap.add_argument("--frames", action="store_true")
     ap.add_argument("--loops", action="store_true")
+    ap.add_argument("--forbidden", action="store_true",
+                    help="the lint's forbidden-FORM classes: names that exist "
+                         "but break NAMING.md §1, sized and diagnosed")
     args = ap.parse_args()
 
     if args.frames:
         return frames()
     if args.loops:
         return loops()
+    if args.forbidden:
+        return forbidden()
 
     tot, internal = census()
     if args.roles:

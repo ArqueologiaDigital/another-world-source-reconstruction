@@ -6,6 +6,7 @@
 | | Of the ones internal to a named routine, what role does the position give them? | `... --roles` |
 | | Is a complete `_F` family indexed by order of first appearance? | `... --frames` |
 | | Does a `<STEM>_DONE` label close its loop onto `<STEM>_LOOP`? | `... --loops` |
+| | How big are the lint's forbidden-*form* classes, and what is each blocked on? | `... --forbidden` |
 
 The asset half of the backlog has a map — `../remaining-art/by_anchor.py`
 sorts still-numbered art by how it is drawn. The label half had none. The lint
@@ -104,3 +105,42 @@ The three classes that are not the 828 are each blocked on something real:
 - **1,690 entry points.** A `call` or `setup` target is a routine in its own
   right, and naming it needs what it *does* — the same problem the art half
   has.
+
+## The forbidden-form classes, which looked cheap and are not
+
+`--forbidden` sizes the names that exist and break `docs/NAMING.md` §1. Its
+totals reproduce `lint_naming.py`'s own figures exactly, so the two measure
+the same population:
+
+| class | amiga | msdos | cartridge | gba | all |
+| --- | --- | --- | --- | --- | --- |
+| bare fold-local suffix `_L<n>` | 255 | 525 | 458 | 0 | **1,238** |
+| `DEDUP`, a consolidation artefact | 31 | 31 | 31 | 0 | 93 |
+| `FOLD_BODY`, a consolidation artefact | 13 | 14 | 11 | 0 | 38 |
+| `__HELPER`, a placeholder suffix (#0093) | 8 | 8 | 6 | 0 | 22 |
+
+These look like the cheap half of the label backlog: a name that is the wrong
+*shape* needs no knowledge of what the code does, only a rewrite. They are
+not.
+
+`_L<n>` is a **uniquifier**, not a description:
+
+```
+CAVES_INIT_VARS_6D_71_70_L7:   break / add [0x6E], 0x0292 / ...
+CAVES_INIT_VARS_6D_71_70_L11:  break / add [0x6E], 0x07AA / ...
+```
+
+Two different routines that the mechanical namer gave the same base, with a
+counter appended to keep them apart. Dropping the suffix collides; keeping it
+is meaningless. What is actually wrong is the **base** —
+`INIT_VARS_6D_71_70` says which variables are written, not what for — and
+fixing that needs exactly the understanding the rest of the backlog needs.
+The suffix is a symptom.
+
+The draw-shaped ones — `PRISON_DRAW_CIN<n>_AT_X<x>_Y<y>_L<k>`, 44 of them —
+are blocked one step further along: they are
+`../draw-label-follows-constant/`'s case, waiting on the picture they draw to
+be named first.
+
+So this is a census entry and not a task, written down so the next reader does
+not spend an hour discovering the same thing.
