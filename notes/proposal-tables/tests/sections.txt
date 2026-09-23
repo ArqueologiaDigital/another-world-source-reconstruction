@@ -1,0 +1,9 @@
+----- chahi_amiga_1991 / PRISON -----
+| routine | proposed name | confidence | evidence |
+| --- | --- | --- | --- |
+| A_WALK_0 | A_RUN_0 | high | draws the run sheet |
+| A_WALK_3 | A_RUN_3 | high | draws the run sheet |
+----- dos_1992 / CAVES -----
+| routine | proposed name | confidence | evidence |
+| --- | --- | --- | --- |
+| B_WALK_0 | B_RUN_0 | high | draws the run sheet |
