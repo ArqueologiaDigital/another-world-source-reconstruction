@@ -606,8 +606,20 @@ distant wall or a haze band, and the scene does not narrow it.
 drawn five times by five consecutive hold-loops in the lift scene at
 `y=65527, 65530, 65529, 65531, 65534` -- that is **-9, -6, -7, -5, -2** read as
 signed, so a 6-pixel-tall mark stepping down into view from above the top edge.
-What would settle both: whether this VM treats a `video` y as signed, which the
-renderer answers and nothing in these notes has yet asked it.
+What would settle the second is whether a 16-bit `video` y is signed, and the
+toolchain has now been asked. It is **not** treated as signed anywhere in it:
+`AnotherWorld_VMTools/awvm/src/disasm.rs:686-692` reads the two bytes into a
+`u32` and formats that decimal, which is where `65527` in the listing comes
+from, and `awvm/src/polygons.rs:180` parses the string straight back and
+renders at `y = 65527.0`. So awvm places this mark far below the page and the
+listing agrees with it.
+
+That is a self-consistent toolchain, not a verdict on the hardware: the
+reference VM keeps polygon coordinates in `int16_t`, where the same two bytes
+are -9 and the mark enters from the top. The two readings put the picture in
+opposite places, so the question is which the 1991 engine did -- and answering
+it needs the engine, not these notes. Until then `CINEMATIC_112` has no
+position, and a name that implies one would be a guess.
 
 **INTRO's city composite, six constants, held.** `INTRO_SCENE_INIT_PARTICLES`
 draws 51 pictures at its own `setPalette 0x01`, and six of them are still
