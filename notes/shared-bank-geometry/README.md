@@ -434,3 +434,46 @@ both in its own name. **152 of 158.** The 6 are printed, and none is a
 contradiction — three names carry no direction at all, two are drawn by crawl
 routines under the name `PRONE_TRANSITION`, and one is a wading pose drawn by
 a walk routine.
+
+## `mirror_exact.py` — a yes/no mirror where the scored one could not decide
+
+`mirror_match.py` pairs facings by a similarity score and its own control
+fails where it matters: a wrong aim-vs-shoot pairing scores 0.451 against true
+pairs at 0.520-0.923. This asks a narrower question and gets a clean answer.
+
+Two pieces are an **exact mirror** when leaf count, width, top edge and bottom
+edge all match and the x spans are reflected about one axis within half a unit
+of the draw anchor. Every named key containing `_LEFT`/`_RIGHT` whose flip also
+exists is a test case:
+
+| leaves | exact mirror | not |
+| --- | --- | --- |
+| 1 (limb) | 8 | **0** |
+| 2 (body) | 24 | **0** |
+| 3 | 2 | 2 |
+| 4 | 0 | 2 |
+| 5 (body) | 28 | 26 |
+
+Exact for simple pieces, unreliable for complex bodies, where the two facings
+are drawn at different widths rather than reflected —
+`CV_FIGURE_WALK_RIGHT_BODY_F00` spans −17.0..+15.5 against its twin's
+−16.5..+17.0. `--max-leaves` bounds it; the default of 2 is where the control
+is exact.
+
+A flipped *name* is only right if the families correspond member by member,
+and they do: the committed `CV_FIGURE_WALK_{LEFT,RIGHT}_LIMB_POSE_00..03`
+pairs are exact mirrors **at the same index, 4 for 4**.
+
+**5 named**, and one of them overturns an earlier hold of mine.
+`../actor-sprite-sheet/subpiece_poses.py` held RUN_LEFT because `CV_3200` is
+attested at phases 8 and 9 and never at 1, where its right-hand twin is
+attested at both — so bank order and phase order disagreed and I would not
+place it on the mirror alone. The mirror is no longer *alone*: it is exact,
+one-to-one, at a leaf count where the control has no failures, and it agrees
+with the descending-offset order that `subpiece_poses.py --control` reproduces
+16 times out of 16. The phase attestation says *when* a piece is drawn; the
+slot is what the name asserts, and three independent things now fix it.
+
+`CV_2276` came with the same batch: an exact mirror of
+`CV_FIGURE_RUN_LEFT_UPPER_POSE_06`, sitting at 0x2276 immediately above
+`..._RIGHT_UPPER_POSE_05` at 0x224C, continuing that family's ascending run.

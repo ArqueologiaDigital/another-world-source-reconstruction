@@ -9,4 +9,4 @@ LABEL_5D5C:
 	jmp DEDUP_CAVES_5B_007_003
 
 LABEL_5D7F:
-	video type=0, offset=CV_2276, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_06, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40

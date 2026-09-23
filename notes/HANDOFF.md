@@ -25,10 +25,10 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 63.8% (6,474/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 64.1% (6,504/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
-| shared-bank keys still unnamed | 53, blocking 302 drawing labels | `shared-bank-geometry/blocked_by_bank.py` |
+| shared-bank keys still unnamed | 48, blocking 250 drawing labels | `shared-bank-geometry/blocked_by_bank.py` |
 | named keys agreeing with their drawers' unanimous claim | 152 of 158 | `shared-bank-geometry/blocked_by_bank.py --claims` |
 | draw-only labels agreeing with their picture | 212, 0 nameable left, 0 contradicting | `label_vs_constant.py` |
 | routines naming a gait and drawing another's sheet | 0 (was 30) | `motion-word-audit/piece_family_vs_label.py` |
@@ -43,7 +43,8 @@ As of the last commit:
 | complete `_F` families indexed by order of first appearance | 159 of 159 | `placeholder-census/placeholder_roles.py --frames` |
 | frame labels reproduced from their siblings' template | 127 of 127, 0 nameable left | `frame-label-siblings/sibling_template.py --control` |
 | bare-`ret` tails named `<owner>_RET` | 174 exact + 10 refined of 198, 0 nameable left | `bare-ret-tails/owner_ret.py --control` |
-| limb-pose indices reproduced from the bank layout | 12 of 12 | `actor-sprite-sheet/subpiece_poses.py --control` |
+| limb-pose indices reproduced from the bank layout | 16 of 16 | `actor-sprite-sheet/subpiece_poses.py --control` |
+| named LEFT/RIGHT pairs that are an exact mirror (≤2 leaves) | 42 of 42 | `shared-bank-geometry/mirror_exact.py --control` |
 
 ## Added 2026-09-23
 
@@ -253,12 +254,14 @@ for it whenever two draws share an anchor.
    sum of **9**. Every RUN piece was reported "not symmetric about
    mid-stride" when all of them are. The sum is derived per family now, the
    order comes from the bank layout with the phases checking it, and
-   `CV_FIGURE_RUN_RIGHT_LIMB_POSE_00..03` is named. **RUN_LEFT is still
-   held** and the reason is specific: its four pieces mirror the right-hand
-   run exactly, but `CV_3200` is attested at phases 8 and 9 and never at 1,
-   where its twin `CV_255C` is attested at both — so its bank position and
-   its phases disagree, and one precedent family is too thin to override a
-   phase. A named left-hand drawer at phase 1 settles it.
+   `CV_FIGURE_RUN_RIGHT_LIMB_POSE_00..03` is named. **RUN_LEFT was held and is now named**, by
+   `mirror_exact.py`. I held it because `CV_3200` is attested at phases 8 and
+   9 and never at 1 where its twin is attested at both, so bank order and
+   phase order disagreed and the mirror was the only thing placing it. The
+   mirror is no longer alone: it is exact and one-to-one at a leaf count
+   where the control has 0 failures in 32, and it agrees with the
+   descending-offset order the layout control reproduces 16 of 16. The phase
+   says *when* a piece is drawn; the slot is what the name asserts.
 
    Formerly-77 text follows. 113 are
    actor-slot offsets, blocked by #0138 for *who* they draw but nameable by

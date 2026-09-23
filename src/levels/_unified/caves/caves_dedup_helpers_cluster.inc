@@ -258,7 +258,7 @@ CAVES_INLINE_DRAW_CV_272_013_L1:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_272_003_001:
-	video type=0, offset=CV_31EC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_03, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 .if BRANCH == "cartridge_1992"
@@ -269,7 +269,7 @@ INLINE_DRAW_CV_272_003_001:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_272_003_002:
-	video type=0, offset=CV_31EC, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_03, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -290,7 +290,7 @@ CAVES_ACTOR_RUN_LEFT_PHASE_8_FRAME:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_269_024_001:
-	video type=0, offset=CV_31F6, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_02, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -312,7 +312,7 @@ CAVES_ACTOR_RUN_LEFT_PHASE_9_FRAME:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_269_024_002:
-	video type=0, offset=CV_31F6, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_02, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
@@ -333,7 +333,7 @@ CAVES_INLINE_DRAW_CV_269_026_L1:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_266_005:
-	video type=0, offset=CV_3200, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_01, x=[0x07], y=[0x08], zoom=0x40
 .endif
 
 .if BRANCH == "cartridge_1992"

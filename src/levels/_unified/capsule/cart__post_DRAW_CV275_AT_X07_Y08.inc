@@ -13,7 +13,7 @@ LABEL_8056:
 	jmp LABEL_8071
 
 CAPSULE_ACTOR_RUN_LEFT_DRAW_8:
-	video type=0, offset=CV_31EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_8071:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -30,7 +30,7 @@ LABEL_8081:
 	jmp LABEL_8098
 
 LABEL_8093:
-	video type=0, offset=CV_31EC, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_8098:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -48,7 +48,7 @@ LABEL_80A4:
 	jmp LABEL_80C5
 
 LABEL_80C0:
-	video type=0, offset=CV_31F6, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_80C5:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -66,7 +66,7 @@ LABEL_80D5:
 	jmp LABEL_80F0
 
 LABEL_80EB:
-	video type=0, offset=CV_31F6, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_80F0:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
@@ -83,7 +83,7 @@ LABEL_8100:
 	jmp LABEL_8117
 
 LABEL_8112:
-	video type=0, offset=CV_3200, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 
 LABEL_8117:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E

@@ -9,4 +9,4 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_9_FRAME:
 	jmp DEDUP_CAVES_5B_007_003
 
 LABEL_8A77:
-	video type=0, offset=CV_2276, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_06, x=[0x07], y=[0x08], zoom=0x40

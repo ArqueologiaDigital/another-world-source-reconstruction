@@ -280,7 +280,7 @@ LABEL_2B3B:
 	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_03, x=200, y=100, zoom=0x40
 	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_04, x=220, y=100, zoom=0x40
 	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_05, x=240, y=100, zoom=0x40
-	video type=0, offset=CV_2276, x=260, y=100, zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_06, x=260, y=100, zoom=0x40
 	video type=0, offset=CV_FIGURE_RUN_RIGHT_UPPER_POSE_00, x=280, y=100, zoom=0x40
 	break
 	video offset=CINEMATIC_440, x=121, y=118
