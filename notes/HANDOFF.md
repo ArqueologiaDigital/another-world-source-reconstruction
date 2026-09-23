@@ -54,6 +54,13 @@ for it whenever two draws share an anchor.
 
 ## Open work, roughly in order of value
 
+0a. **Art family gaps, two of three explained.** `HERO_RUN_LEFT_ARM` is
+   missing F04 because that frame draws no arm (`run_left_body.map`), and
+   `HERO_WALK_LEFT_ARM` is missing F05..F13 for the same reason, verified
+   three ways in `notes/shared-bank-geometry/walk_left_arm_gap.md` --
+   including that the offsets those pieces would occupy are already held by
+   `HERO_WALK_RIGHT_ARM_F09..F12`. Neither is outstanding naming work.
+
 1. **72 of 73 routine family gaps** (`notes/family-gaps/`). 17 of them are
    "one animation under two conventions" and need a decision that overrides
    an earned name — that is a judgement call, not a measurement, and it has
