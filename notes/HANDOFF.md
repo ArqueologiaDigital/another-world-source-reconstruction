@@ -18,10 +18,10 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 50.8% (5,154/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 52.6% (5,336/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
-| shared-bank keys still unnamed | 189 of 352 | `notes/shared-bank-geometry/` |
+| shared-bank keys still unnamed | 163 of 352 | `notes/shared-bank-geometry/` |
 
 ## The method that worked, in one paragraph
 
@@ -61,10 +61,33 @@ for it whenever two draws share an anchor.
 2. **81 routine renames blocked by a dependency chain**: family gaps → cart
    and GBA art unnamed → no proposals → a shared `_helpers` label that cannot
    be renamed for one branch alone. Breaking any link unblocks the rest.
-3. **189 shared-bank keys** (`notes/shared-bank-geometry/`). 148 are
+3. **163 shared-bank keys** (`notes/shared-bank-geometry/`). 113 are
    actor-slot offsets, blocked by #0138 for *who* they draw but nameable by
    *pose*. The RUN sub-pieces are neither symmetric nor complete, which is
-   why they stalled.
+   why they stalled. 50 are hero-art, of which the consensus engine can
+   reach 5 — see the next item for why so few.
+
+   The 26 jump frames came out of this pool on 2026-09-23 once item 6 was
+   resolved (`jump_left.map`, `jump_right.map`).
+
+3a. **`hero_pose_consensus.py` cannot see most of its evidence.** Two
+   mechanical reasons, both measured and neither yet fixed:
+
+   * **Rule 8 discards any routine drawing 3+ pictures** as a dispatcher.
+     The bound came from a real bimodal distribution — a frame is a body and
+     an arm — but it is applied per *routine* when the evidence only supports
+     it per *frame*. All 28 routines that exceed it draw at most **one**
+     picture per frame across 9 or 12 frames: they are animations, not
+     dispatchers. Bounding pictures-per-frame instead of per-routine would
+     admit them.
+   * **`RE_MOTION` requires motion and direction to be adjacent** after the
+     subject token, so `PRISON_HERO_WALK_JUMP_LEFT` and
+     `HERO_CROUCH_ARMED_LEFT_...` do not parse at all. Measured over 759
+     hero-labelled routines: 344 are adjacent and parse, ~25 have tokens in
+     between, and 17 carry two motion words. For those 17 the action is the
+     motion word **immediately before the direction** (`WALK_JUMP_LEFT` →
+     JUMP, `RUN_LEFT_EXIT_TO_WALK_LEFT` → RUN); the earlier words are the
+     approach.
 4. **60 amiga / 59 msdos pictures with multiple names.** Reported, not
    reconciled, per #0120. 49 have the shape of one family named twice.
 5. ~~**`genesis_europe` is not covered by `undefined_symbols.py`.**~~

@@ -14,50 +14,50 @@ LABEL_EFE2:
 LABEL_EFE3:
 	mov [0x63], 0x0064
 	je [HERO_POS_MASK], 0x09, LABEL_F157
-	video type=0, offset=CV_52C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_52E0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_5300, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	call SET_VAR04_TO_0024
-	video type=0, offset=CV_5320, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0005
 	break
-	video type=0, offset=CV_5340, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0007
 	break
-	video type=0, offset=CV_5360, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x000D
 	break
-	video type=0, offset=CV_5380, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x000C
 	mov [0x34], 0xFFFE
 	sub [HERO_X], 0x000F
 	call CAVES_SCREEN_STEP_UP_ONE_ROW_L4
 	break
 	add [HERO_X], 0x000F
-	video type=0, offset=CV_53C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0002
 	sub [HERO_X], 0x000F
 	break
 	add [HERO_X], 0x000F
-	video type=0, offset=CV_53E0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0007
 	call SET_VAR04_TO_0020
 	sub [HERO_X], 0x000C
 	break
 	add [HERO_X], 0x000C
-	video type=0, offset=CV_5400, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F10, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0004
 	sub [HERO_X], 0x0007
 	play id=0x0060, freq=0x14, vol=0x40, channel=0x01
 	break
 	add [HERO_X], 0x0007
-	video type=0, offset=CV_5420, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F11, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0007
 	break
-	video type=0, offset=CV_5444, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F12, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	mov [0x63], 0x0001
 	jmp LABEL_EB60
@@ -77,29 +77,29 @@ LABEL_F0AA:
 	je [HERO_POS_MASK], 0x09, LABEL_F21E
 	setup channel=0x15, address=KILL_CHANNEL_LANDING
 	call SET_VAR04_TO_0024
-	video type=0, offset=CV_5360, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x000D
 	sub [HERO_Y], 0x0002
 	break
-	video type=0, offset=CV_5380, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x000C
 	break
-	video type=0, offset=CV_53A0, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	sub [HERO_X], 0x000C
-	add [HERO_Y], 0x0001
-	break
-	video type=0, offset=CV_53A0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x000C
 	add [HERO_Y], 0x0001
 	break
-	video type=0, offset=CV_53C0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	sub [HERO_X], 0x000C
+	add [HERO_Y], 0x0001
+	break
+	video type=0, offset=HERO_JUMP_LEFT_F08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x34], 0xFFFB
 	sub [HERO_X], 0x000F
 	call CAVES_SCREEN_STEP_UP_ONE_ROW_L4
 	sub [HERO_X], 0x0002
 	break
 	add [HERO_X], 0x000F
-	video type=0, offset=CV_53E0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0007
 	call SET_VAR04_TO_0020
 	sub [HERO_X], 0x000C
@@ -109,15 +109,15 @@ LABEL_F0AA:
 	sub [HERO_X], 0x0005
 	je [HERO_ACTION], 0x01, LABEL_EDE0
 	add [HERO_X], 0x0005
-	video type=0, offset=CV_5400, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F10, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0004
 	sub [HERO_X], 0x0007
 	break
 	add [HERO_X], 0x0007
-	video type=0, offset=CV_5420, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F11, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0007
 	break
-	video type=0, offset=CV_5444, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_LEFT_F12, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	mov [0x63], 0x0001
 	jmp LABEL_EB60
@@ -127,50 +127,50 @@ LABEL_F156:
 LABEL_F157:
 	mov [0x63], 0x0064
 	je [HERO_POS_MASK], 0x0A, LABEL_EFE3
-	video type=0, offset=CV_4D98, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_4DE4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_4E30, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	call SET_VAR04_TO_0034
-	video type=0, offset=CV_4E7C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0005
 	break
-	video type=0, offset=CV_4EC8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0007
 	break
-	video type=0, offset=CV_4F14, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x000D
 	break
-	video type=0, offset=CV_4F68, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x000C
 	mov [0x34], 0x0002
 	add [HERO_X], 0x000F
 	call CAVES_SCREEN_STEP_UP_ONE_ROW_L4
 	break
 	sub [HERO_X], 0x000F
-	video type=0, offset=CV_500C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0002
 	add [HERO_X], 0x000F
 	break
 	sub [HERO_X], 0x000F
-	video type=0, offset=CV_5058, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0007
 	call SET_VAR04_TO_0030
 	add [HERO_X], 0x000C
 	break
 	sub [HERO_X], 0x000C
-	video type=0, offset=CV_50A8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F10, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0004
 	add [HERO_X], 0x0007
 	play id=0x0060, freq=0x14, vol=0x40, channel=0x01
 	break
 	sub [HERO_X], 0x0007
-	video type=0, offset=CV_50F8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F11, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0007
 	break
-	video type=0, offset=CV_514C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F12, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	mov [0x63], 0x0002
 	jmp LABEL_ED20
@@ -190,29 +190,29 @@ LABEL_F21E:
 	je [HERO_POS_MASK], 0x0A, LABEL_F0AA
 	call SET_VAR04_TO_0034
 	setup channel=0x15, address=KILL_CHANNEL_LANDING
-	video type=0, offset=CV_4F14, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x000D
 	sub [HERO_Y], 0x0002
 	break
-	video type=0, offset=CV_4F68, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x000C
 	break
-	video type=0, offset=CV_4FBC, x=[HERO_X], y=[HERO_Y], zoom=0x40
-	add [HERO_X], 0x000C
-	add [HERO_Y], 0x0001
-	break
-	video type=0, offset=CV_4FBC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x000C
 	add [HERO_Y], 0x0001
 	break
-	video type=0, offset=CV_500C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F07, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	add [HERO_X], 0x000C
+	add [HERO_Y], 0x0001
+	break
+	video type=0, offset=HERO_JUMP_RIGHT_F08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x34], 0x0005
 	add [HERO_X], 0x000F
 	call CAVES_SCREEN_STEP_UP_ONE_ROW_L4
 	add [HERO_X], 0x0002
 	break
 	sub [HERO_X], 0x000F
-	video type=0, offset=CV_5058, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0007
 	call SET_VAR04_TO_0030
 	add [HERO_X], 0x000C
@@ -222,15 +222,15 @@ LABEL_F21E:
 	add [HERO_X], 0x0005
 	je [HERO_ACTION], 0x01, LABEL_EECE
 	sub [HERO_X], 0x0005
-	video type=0, offset=CV_50A8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F10, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0004
 	add [HERO_X], 0x0007
 	break
 	sub [HERO_X], 0x0007
-	video type=0, offset=CV_50F8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F11, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0007
 	break
-	video type=0, offset=CV_514C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_JUMP_RIGHT_F12, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	mov [0x63], 0x0002
 	jmp LABEL_ED20

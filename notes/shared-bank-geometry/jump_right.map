@@ -1,0 +1,20 @@
+# The hero's right-facing jump sheet: 13 frames, shared bank.
+#
+# Mirror of jump_left.map in structure, not in art: none of these 13 pictures
+# is byte-identical to any left-facing one, so the sheet is drawn twice rather
+# than reused. Index is the play order of HERO_JUMP_RIGHT_FROM_STAND (CAVES)
+# and PRISON_HERO_WALK_JUMP_RIGHT (PRISON); ascending offset order agrees.
+# F07 is reached only by the from-run entry, as on the left.
+CV_4D98 HERO_JUMP_RIGHT_F00
+CV_4DE4 HERO_JUMP_RIGHT_F01
+CV_4E30 HERO_JUMP_RIGHT_F02
+CV_4E7C HERO_JUMP_RIGHT_F03
+CV_4EC8 HERO_JUMP_RIGHT_F04
+CV_4F14 HERO_JUMP_RIGHT_F05
+CV_4F68 HERO_JUMP_RIGHT_F06
+CV_4FBC HERO_JUMP_RIGHT_F07
+CV_500C HERO_JUMP_RIGHT_F08
+CV_5058 HERO_JUMP_RIGHT_F09
+CV_50A8 HERO_JUMP_RIGHT_F10
+CV_50F8 HERO_JUMP_RIGHT_F11
+CV_514C HERO_JUMP_RIGHT_F12

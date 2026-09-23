@@ -1,0 +1,25 @@
+# The hero's left-facing jump sheet: 13 frames, shared bank.
+#
+# Index is the play order of HERO_JUMP_LEFT_FROM_STAND (CAVES) and
+# PRISON_HERO_WALK_JUMP_LEFT (PRISON), which draw the same twelve offsets in
+# the same order; ascending offset order agrees, which is the check.
+# F07 is drawn only by the from-run entry (HERO_JUMP_LEFT_FROM_RUN /
+# PRISON_HERO_RUN_JUMP_LEFT), which holds it for two frames -- it is the deep
+# part of the arc a standing hop never reaches.
+#
+# Airborne frames by airborne_in_art.py (bottom edge above the +0.5 modal
+# ground level): F06 at -7.0 and F08 at -3.5 for the standing hop; the
+# running jump is airborne across F05..F08.
+CV_52C0 HERO_JUMP_LEFT_F00
+CV_52E0 HERO_JUMP_LEFT_F01
+CV_5300 HERO_JUMP_LEFT_F02
+CV_5320 HERO_JUMP_LEFT_F03
+CV_5340 HERO_JUMP_LEFT_F04
+CV_5360 HERO_JUMP_LEFT_F05
+CV_5380 HERO_JUMP_LEFT_F06
+CV_53A0 HERO_JUMP_LEFT_F07
+CV_53C0 HERO_JUMP_LEFT_F08
+CV_53E0 HERO_JUMP_LEFT_F09
+CV_5400 HERO_JUMP_LEFT_F10
+CV_5420 HERO_JUMP_LEFT_F11
+CV_5444 HERO_JUMP_LEFT_F12
