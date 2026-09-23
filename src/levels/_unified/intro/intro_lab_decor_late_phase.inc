@@ -77,25 +77,25 @@ EXPERIMENT_SPARK_CYCLE_SHORT_BURST:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_SPARK_SHORT_F0, x=134, y=166
 .else
-	video offset=CINEMATIC_325, x=134, y=166
+	video offset=CINEMATIC_EXPERIMENT_SPARK_SHORT_F0, x=134, y=166
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_SPARK_SHORT_F1, x=134, y=170
 .else
-	video offset=CINEMATIC_326, x=134, y=170
+	video offset=CINEMATIC_EXPERIMENT_SPARK_SHORT_F1, x=134, y=170
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_SPARK_SHORT_F2, x=134, y=169
 .else
-	video offset=CINEMATIC_327, x=134, y=169
+	video offset=CINEMATIC_EXPERIMENT_SPARK_SHORT_F2, x=134, y=169
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_EXPERIMENT_SPARK_SHORT_F3, x=134, y=169
 .else
-	video offset=CINEMATIC_328, x=134, y=169
+	video offset=CINEMATIC_EXPERIMENT_SPARK_SHORT_F3, x=134, y=169
 .endif
 	jmp DRAW_INTRO_DECOR_318
 LABEL_0BDE:
@@ -388,7 +388,7 @@ INTRO_COMPOSE_PAGE3_THEN_RECEDE_DOWN_ACCELERATOR_TUNNEL:
 .if BRANCH == "chahi_amiga_1991"
 	video offset=CINEMATIC_LESTER_SEATED_AT_HOLO_CONSOLE_F1, x=160, y=100
 .else
-	video offset=CINEMATIC_254, x=160, y=100
+	video offset=CINEMATIC_LESTER_SEATED_AT_HOLO_CONSOLE_F1, x=160, y=100
 .endif
 	play id=0x002C, freq=0x14, vol=0x3F, channel=0x03
 	break
