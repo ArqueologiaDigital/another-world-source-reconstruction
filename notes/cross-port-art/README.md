@@ -22,6 +22,26 @@ It caught three, one of them sharp: amiga's `CINEMATIC_424` is drawn on screen
 **0x4D**, and msdos' name for that picture says `SCREEN_6D`. Transferring on
 art alone would have written the wrong screen into the tree.
 
+### What it will not transfer, and the one thing left blocked
+
+A `_BACKDROP_LAYER_<i>` name is **never** transferred. That index is the
+position in the receiving port's *own* paint sequence, computed by
+`../screen-scope/backdrop_phase.py` from that port's entry routine, and it is
+not a property of the picture. msdos proves it: amiga's
+`CAVES_SCREEN_ED_BACKDROP_LAYER_5` and `_6` are msdos'
+`CAVES_SCREEN_EE_BACKDROP_LAYER_4` and `_5` — a different screen *and* a
+different position, because msdos has a screen amiga does not. Nine names were
+held back on that rule.
+
+After it, six remain transferable and all six are one family:
+`CINEMATIC_BUDDY_SMASHING_WINDOW_F0..F4` and `F8` in CAPSULE. The applier
+refuses them as a new family-index gap, which is a guard doing its job on a
+case it reads slightly wrong — **amiga's own family has exactly the same
+shape**: it has F0, F1, F2, F3, F4 and F8, and no F5, F6 or F7 at all. So the
+transfer would reproduce a family the tree already accepts, not invent a
+gapped one. Left unapplied rather than worked around; the fix belongs in the
+guard, not in a bypass.
+
 ## And the audit that came out of it
 
 The transfer probe kept proposing names the applier refused as *already in

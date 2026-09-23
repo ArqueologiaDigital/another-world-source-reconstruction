@@ -24,6 +24,12 @@ three CAVES screens amiga does not. So a name matching `_SCREEN_<NN>_` is only
 transferred when the receiving port draws the picture on that same screen,
 checked through `../screen-scope/`; otherwise it is reported and held.
 
+A `_BACKDROP_LAYER_<i>` name is never transferred at all: that index is the
+position in the *receiving* port's own paint sequence and has to be earned
+there. amiga's `CAVES_SCREEN_ED_BACKDROP_LAYER_5` and `_6` are msdos'
+`CAVES_SCREEN_EE_BACKDROP_LAYER_4` and `_5` -- a different screen *and* a
+different position, because msdos has a screen amiga does not.
+
 A picture whose md5 appears more than once in either port is skipped too --
 two constants holding one picture make the correspondence ambiguous, and
 choosing between them is not this module's call (#0120).
@@ -63,6 +69,14 @@ RE_EQU = re.compile(r"^(CINEMATIC_[A-Za-z0-9_]+)\s+EQU\s+(0x[0-9A-Fa-f]+)",
                     re.M)
 RE_NUM = re.compile(r"^CINEMATIC_\d+$")
 RE_SCREEN = re.compile(r"_SCREEN_([0-9A-F]{2})_")
+# A `_BACKDROP_LAYER_<i>` index is the position in THAT PORT'S OWN paint
+# sequence, computed by ../screen-scope/backdrop_phase.py from that port's
+# entry routine. It is not a property of the picture, so it cannot ride along
+# with the art. msdos proves it: amiga's CAVES_SCREEN_ED_BACKDROP_LAYER_5 and
+# _6 correspond to msdos' CAVES_SCREEN_EE_BACKDROP_LAYER_4 and _5 -- a
+# different screen AND a different position, because msdos has a screen amiga
+# does not. Such a name must be earned from the receiving port's own phase.
+RE_POSITIONAL = re.compile(r"_BACKDROP_LAYER_\d+$")
 RE_LBL = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*):\s*$")
 RE_V = re.compile(r"^\s*video\s+(?:type=\d+,\s*)?offset="
                   r"([A-Za-z_][A-Za-z0-9_]*)")
@@ -129,6 +143,10 @@ def scan():
             giver, taker = (a, m) if nm else (m, a)
             tport = "msdos" if nm else "amiga"
             gport = "amiga" if nm else "msdos"
+            if RE_POSITIONAL.search(giver):
+                stats["name is a paint position, not a property of the "
+                      "art"] += 1
+                continue
             sm = RE_SCREEN.search(giver)
             if sm:
                 for p in (gport, tport):
