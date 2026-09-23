@@ -359,6 +359,29 @@ expect conflict 0 CONFLICT
 probe "$r" --check
 expect conflict/check 1 "BOTH"
 
+# amended -- a second sentence about a target already ruled on. The status must
+# name the earlier id AND its outcome, which is what the README promises;
+# without it the agent has to hunt the first annotation by hand. The
+# representative is also the place an unsorted set iteration made the output
+# depend on PYTHONHASHSEED, so this case is run twice under different seeds.
+r=$(root amended)
+column > "$r/tools/vm-debugger/rename_log.jsonl"
+printf '{"at": "2026-09-23T21:02:11+0100", "kind": "annotate", "branch": "chahi_amiga_1991", "stage": "CAVES", "frame": 140, "target": {"kind": "cinematic", "offset": 31589, "name": "CINEMATIC_412"}, "routine": "CAVES_TRAP_COLUMN_DRAW_LOOP", "routine_draws": [], "on_screen": [], "text": "it crushes whatever is under it", "pattern": null, "replacement": null, "renames": []}\n' \
+    >> "$r/tools/vm-debugger/rename_log.jsonl"
+a=$(aid "$r/tools/vm-debugger/rename_log.jsonl" 1)
+verdicts "$r" <<EOF
+ann:$a	2026-09-23T20:31:02+0100	chahi_amiga_1991/CAVES	0x7B65	NO_NAME	the family is already complete	
+EOF
+asm "$r" undefined
+seal "$r"
+probe "$r" --all
+expect amended 0 "AMENDED($a,NO_NAME)"
+out=$(PYTHONHASHSEED=1 python3 "$queue" --root "$r" --all 2>&1; \
+      PYTHONHASHSEED=9 python3 "$queue" --root "$r" --all 2>&1) && rc=0 || rc=$?
+n=$(printf '%s\n' "$out" | grep -c "AMENDED($a,NO_NAME)")
+[ "$n" = 2 ] && verdict amended/seeded "" \
+    || verdict amended/seeded "the representative moved with PYTHONHASHSEED"
+
 # documented -- the id notes/play-and-describe/README.md and this repo's
 # CLAUDE.md both quote, recomputed from the log the debugger actually wrote.
 # Not a fixture: it is the assertion that the log in the tree has not been

@@ -617,7 +617,16 @@ def queue_line(a: str, ix: Index) -> str:
         said = f"{e.get('kind')}: " + "; ".join(pairs[:2])
         if len(pairs) > 2:
             said += f" (+{len(pairs) - 2} more)"
-    return (f"{ix.status[a]:<12} {a}  "
+    st = ix.status[a]
+    if st == "AMENDED":
+        # The README promises the earlier outcome is printed beside it, and
+        # without it the agent has to hunt the first annotation by hand.
+        e0 = ix.by_aid[a]
+        key = (e0.get("branch"), e0.get("stage"), off)
+        other = ix.settled_keys.get(key)
+        if other and other != a:
+            st = f"AMENDED({other[4:]},{ix.status.get(other, '?')})"
+    return (f"{st:<12} {a}  "
             f"{e.get('branch')}/{e.get('stage')}  f{e.get('frame')}  "
             f"{name} {hexoff(off)}  \"{said}\"  "
             f"[{'; '.join(flags_for(a, ix))}]")

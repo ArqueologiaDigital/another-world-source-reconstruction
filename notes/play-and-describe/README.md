@@ -315,6 +315,12 @@ can only be re-read, and separating them is what makes the index checkable.
     python3 notes/unified-scoping/sync_equ_rename.py <table> <S> <B> --shared --apply
     python3 notes/cross-port-art/transfer_by_art.py --proposals > notes/play-and-describe/proposals_<other>__<S>_<tag>.md
     # then apply + sync that one too; carry by ART, never by the sentence
+    # AND put `annot:<id>` into each carried row's evidence cell by hand, after
+    # the canonical_md5 that carried it: `carried by canonical_md5 <hash> from
+    # annot:<id>`. The generator writes a fixed evidence cell with no token, so
+    # without this the second port's name -- which exists only because a person
+    # described the picture -- is invisible to `grep -rn "annot:<id>" notes/`
+    # and the queue's second hop never checks that it landed.
     python3 notes/unified-symbol-check/undefined_symbols.py
     make test
     make lint-naming-strict STAGE=<S>
@@ -396,6 +402,34 @@ not a name; the writer hedges it themself, and `notes/storm-particles/` earned
 agreeing with a name two ports' own labels disagreed about is the strongest
 control this channel has produced, and it is worth exactly as much as the fact
 that it changed nothing.
+
+## What NAMED does not certify
+
+NAMED means the tree defines the proposed name and no longer defines the old
+one. It does **not** mean `apply_branch_scoped_names.py` is what put it there.
+A rename moves no bytes, so nothing separates a gated apply from a `sed -i`, and
+that is a real hole rather than a pedantic one: it is the only way a name from a
+human sentence could reach `src/levels/**` with no validator and no collision
+check behind it.
+
+The obvious fix does not work here, and the measurement is worth recording so
+nobody builds it twice. `notes/unified-scoping/applied_rows.tsv` is a 2173-row
+journal of what was applied, and demanding a journal row for every NAMED looked
+like the third hop. It is not: the journal is written by `sync_equ_rename.py`,
+which step 7 needs only when the branch-scoped applier has not already reached
+the unified tree, so a correctly-gated rename is routinely absent from it. The
+two `CINEMATIC_PRISON_CAGE_*_TILT_ZERO` renames of 2026-09-23 went through the
+applier and the byte gate and appear nowhere in the journal; separately, 48 of
+its first 400 rows name constants the tree no longer defines, having been
+renamed again since. A check built on it would cry wolf on the prescribed path
+and stay silent on the hand-edit, which is worse than no check.
+
+So this is held, and the cover is social rather than mechanical: the proposal
+table is committed before the apply, the table is what review reads, and a name
+in the tree with no table behind it is visible to `git log -S`. If a mechanical
+third hop is ever wanted, the thing to build is a journal the **branch-scoped
+applier itself** writes, not a reinterpretation of one written for another
+purpose.
 
 ## What this is not
 
