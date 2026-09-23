@@ -16,6 +16,8 @@ Run these; do not trust the numbers below without re-running them.
     python3 notes/laser-impact-anim/impact_ladder.py
     python3 notes/draw-label-follows-constant/label_vs_constant.py
     python3 notes/backdrop-drawer/backdrop_drawer.py --control
+    python3 notes/frame-label-siblings/sibling_template.py --control
+    python3 notes/placeholder-census/placeholder_roles.py
 
 As of the last commit:
 
@@ -35,6 +37,9 @@ As of the last commit:
 | backdrop painters named | 64 distinct / 106 labels (was 10 / 20), 0 nameable left | `backdrop-drawer/backdrop_drawer.py` |
 | painters whose two sources agree on the screen | 139 of 139, all four branches | `backdrop-drawer/backdrop_drawer.py --control` |
 | layer names claiming a screen nothing connects them to | 0 of 312 | `backdrop-drawer/backdrop_drawer.py --audit-layers` |
+| placeholder labels in PRISON/CAVES/CAPSULE, both ports | 7,594 of 14,503, classified by how control reaches them | `placeholder-census/placeholder_roles.py` |
+| complete `_F` families indexed by order of first appearance | 159 of 159 | `placeholder-census/placeholder_roles.py --frames` |
+| frame labels reproduced from their siblings' template | 127 of 127, 0 nameable left | `frame-label-siblings/sibling_template.py --control` |
 
 ## Added 2026-09-23
 
