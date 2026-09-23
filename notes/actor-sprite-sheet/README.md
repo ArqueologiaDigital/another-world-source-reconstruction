@@ -134,9 +134,21 @@ hero's arm series. But the hero's was *confirmed* an arm by
 such confirmation exists here. A similar shape on a different figure is a
 resemblance, not evidence.
 
-**RUN sub-pieces held.** `CV_2548` serves {3,5,6}, `CV_2552` {2,7,8} and
-`CV_255C` {1,8}: three pieces, an overlapping phase, and no coverage of a
-nine-frame cycle. Neither symmetric nor complete, so nothing is proposed and
+**RUN sub-pieces held — re-measured 2026-09-23, and still held.** The phase
+sets changed once the run cycle was corrected from eight frames to ten (see
+the resolved F08/F09 entry above), so the old reading `CV_255C {1,8}` is now
+`{1,9}`. Current sets, over the full ten-frame cycle:
+
+    CV_2566 {0}      CV_255C {1,9}    CV_2552 {2,7,8}
+    CV_2548 {3,5,6}  CV_2570 {4}
+
+Coverage **is** now complete, 0..9 with no gap, which the earlier note could
+not say. It is still not nameable, for two reasons the correction makes
+clearer rather than removes: `CV_2552` and `CV_2548` each serve **three**
+phases, not the two a symmetric pair would; and the five mix two bands --
+`CV_2548` and `CV_2570` top out at -52.0 while `CV_2566`, `CV_255C` and
+`CV_2552` sit at -41.5, -39.5 and -36.0. A set spanning two attachment bands
+is not one series. So nothing is proposed and
 the probe prints why.
 
 Total for the actor sheet: **48 names**. `make test` 29/29 and 29/29.
