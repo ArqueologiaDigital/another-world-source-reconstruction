@@ -142,6 +142,7 @@ checked against the receiving port's own guards.
 | INTRO 348..351 | 349..352 | `CINEMATIC_DRIFTING_PARTICLE_0..3` | high |
 | INTRO 124, 131, 447, 126, 127 | 130, 137, 448, 132, 133 | `CINEMATIC_{HOLO_CONSOLE_DOT_RISE_SLOW,LAB_AUTH_DOT,HOLO_CONSOLE_RISING_BAR,LAB_AUTH_CRT_READOUT_ROWS,LAB_AUTH_CRT_SOLID_ICON}` | high/medium |
 | INTRO 528, 530..533 | 529, 531..534 | `CINEMATIC_LIFT_{INTERIOR,DOORWAY_PANEL_LIT,DOORWAY_PANEL_SHADE,DOORWAY_SEAM,SHAFT_LATTICE}` | high/medium |
+| INTRO 378 | 379 | `CINEMATIC_ACCELERATOR_TUNNEL_VIEW_FAR` (and its old bearer to `..._DEBRIS_LOWER`, all four branches) | high |
 | INTRO 268..276 | 274..282 | `CINEMATIC_FRAGMENTS_RECEDING_F0..F8` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
@@ -375,6 +376,31 @@ it. The rule the two failures give:
 The byte gate caught the first failure and `undefined_symbols.py` caught the
 second, which is the division of labour `notes/HANDOFF.md` describes: run the
 symbol check *before* `make test`.
+
+## `cartridge_1992` applies have to be run from the archaeology repo
+
+`apply_branch_scoped_names.py --branch cartridge_1992` verifies the rename by
+re-assembling, and cartridge's baseline path is **relative**, so from this repo
+it cannot find it and quietly undoes the write:
+
+```
+  REVERTED: no baseline for snes_eu/INTRO, so the rename could not be checked
+  -- this is NOT a byte mismatch. cartridge root work/<hash> is missing; its
+  root is relative, so run this from the archaeology repo
+```
+
+It still prints "N proposed, 0 rejected" above that line, so a `grep -E
+"proposed|applied"` shows a batch that looks fine and changed nothing. That
+happened twice in one session here before it was noticed. Run cartridge applies
+with the archaeology repo as the working directory:
+
+```
+cd ../another-world-archaeology
+python3 tools/apply_branch_scoped_names.py --stage INTRO --branch cartridge_1992 \
+    --proposals ../another-world-source-reconstruction/notes/render-and-name/<file>.md --apply
+```
+
+and always check for `applied`, not for the absence of `rejected`.
 
 ## `palette_in_force.py` -- the first thing to get right
 

@@ -579,6 +579,11 @@ without any judgement at all.
 
 ## A rule learned the hard way this session
 
+**`cartridge_1992` applies must run with the archaeology repo as cwd**, or
+`apply_branch_scoped_names.py` reverts them while still printing "N proposed, 0
+rejected". Check for `applied`. It cost two silent no-ops this session; see
+`notes/render-and-name/README.md`.
+
 **A chained rename can never be branch-scoped across branches that share a
 unified arm.** The INTRO walk renumber needed three attempts;
 `notes/render-and-name/README.md` records both failures and the numbers that
