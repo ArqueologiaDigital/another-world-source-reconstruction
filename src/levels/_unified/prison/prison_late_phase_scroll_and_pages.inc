@@ -30,12 +30,12 @@ DRAW_CIN_090_TO_104_3F_AT_8C208B32:
 	copyVideoPage src=0x03, dst=0x00
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_090, x=160, y=100
-	video offset=CINEMATIC_091, x=160, y=100
+	video offset=CINEMATIC_PRISON_LIFT_LANDING_VAULT_HALF_0, x=160, y=100
+	video offset=CINEMATIC_PRISON_LIFT_LANDING_VAULT_HALF_1, x=160, y=100
 	selectVideoPage 0xFF
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_104, x=200, y=100
+	video offset=CINEMATIC_PRISON_LIFT_LANDING_SLOPE, x=200, y=100
 	selectVideoPage 0xFF
 	killChannel
 .endif
@@ -43,7 +43,7 @@ DRAW_CIN_090_TO_104_3F_AT_8C208B32:
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L0:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_PRISON_LIFT_LANDING_WALL_PANEL, x=160, y=100
 	call PRISON_LIFT_LANDING_DRAW_BUDDY_IF_SCREEN_05
 	selectVideoPage 0xFF
 	killChannel
@@ -55,14 +55,14 @@ PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L2:
 
 PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L3:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_PRISON_LIFT_LANDING_WALL_PANEL, x=160, y=100
 	call PRISON_LIFT_LANDING_DRAW_BUDDY_IF_SCREEN_25
 	selectVideoPage 0xFF
 	killChannel
 
 PRISON_DRAW_CIN_090_TO_104_3F_AT_8C208B32_L5:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_106, x=160, y=100
+	video offset=CINEMATIC_PRISON_LIFT_LANDING_WALL_PANEL, x=160, y=100
 	call PRISON_LIFT_LANDING_DRAW_BUDDY_IF_SCREEN_45
 	selectVideoPage 0xFF
 	killChannel

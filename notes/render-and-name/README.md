@@ -86,6 +86,8 @@ checked against the receiving port's own guards.
 | CINEMATIC_032, 033, 034 | (msdos twins) | `CINEMATIC_PRISON_WALL_{HIGHLIGHTS,SHADOW_BANDS,CORNER_SHADOW}` | medium |
 | CINEMATIC_085, 086 | (msdos twins) | `CINEMATIC_PRISON_GRAVEL_TILE_0..1` | high |
 | CINEMATIC_087, 088, 089 | (msdos twins) | `CINEMATIC_PRISON_DEBRIS_SHARDS_0..2` | medium |
+| CINEMATIC_090, 091 | (msdos twins) | `CINEMATIC_PRISON_LIFT_LANDING_VAULT_HALF_0..1` | high |
+| CINEMATIC_104, 106, 092 | (msdos twins) | `CINEMATIC_PRISON_LIFT_LANDING_{SLOPE,WALL_PANEL,COLUMN}` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
