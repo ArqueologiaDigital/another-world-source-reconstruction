@@ -154,19 +154,19 @@ LABEL_15E4:
 	break
 	video offset=CINEMATIC_202, x=160, y=94
 	break
-	video offset=CINEMATIC_203, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_ENDS_F0, x=160, y=100
 	break
-	video offset=CINEMATIC_204, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_ENDS_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_205, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_ENDS_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_206, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_ENDS_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_207, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_ENDS_F4, x=160, y=100
 	break
-	video offset=CINEMATIC_208, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_ENDS_F5, x=160, y=100
 	selectVideoPage 0x00
-	video offset=CINEMATIC_208, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_ENDS_F5, x=160, y=100
 	selectVideoPage 0xFF
 	setup channel=0x04, address=LABEL_1639
 	killChannel

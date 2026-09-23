@@ -216,19 +216,19 @@ LABEL_0600:
 	break
 	or [0x73], 0x4000
 	killChannel
-	video offset=CINEMATIC_400, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_COLUMN_F0, x=160, y=100
 	break
-	video offset=CINEMATIC_401, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_COLUMN_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_402, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_COLUMN_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_403, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_COLUMN_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_404, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_COLUMN_F4, x=160, y=100
 	break
-	video offset=CINEMATIC_405, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_COLUMN_F5, x=160, y=100
 	selectVideoPage 0x00
-	video offset=CINEMATIC_406, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_COLUMN_F6, x=160, y=100
 	selectVideoPage 0xFF
 	killChannel
 
@@ -247,19 +247,19 @@ LABEL_0636:
 	break
 	video offset=CINEMATIC_387, x=160, y=94
 	break
-	video offset=CINEMATIC_388, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_ENDS_F0, x=160, y=100
 	break
-	video offset=CINEMATIC_389, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_ENDS_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_390, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_ENDS_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_391, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_ENDS_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_392, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_ENDS_F4, x=160, y=100
 	break
-	video offset=CINEMATIC_393, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_ENDS_F5, x=160, y=100
 	selectVideoPage 0x00
-	video offset=CINEMATIC_393, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_BEAM_ENDS_F5, x=160, y=100
 	selectVideoPage 0xFF
 	setup channel=0x04, address=LABEL_068B
 	killChannel
