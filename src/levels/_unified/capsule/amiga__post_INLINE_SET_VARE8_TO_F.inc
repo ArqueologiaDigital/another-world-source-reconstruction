@@ -126,19 +126,19 @@ LABEL_13B1:
 	video offset=CINEMATIC_CAPSULE_DEBRIS_RAIN_F5, x=160, y=100
 	break
 	video offset=CINEMATIC_073, x=144, y=127
-	video offset=CINEMATIC_074, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_SETTLE_F0, x=160, y=100
 	break
 	play id=0x006C, freq=0x18, vol=0x18, channel=0x02
 	video offset=CINEMATIC_073, x=143, y=127
-	video offset=CINEMATIC_075, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_SETTLE_F1, x=160, y=100
 	break
 	video offset=CINEMATIC_073, x=142, y=127
 	play id=0x006C, freq=0x12, vol=0x18, channel=0x01
-	video offset=CINEMATIC_076, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_SETTLE_F2, x=160, y=100
 	break
 	video offset=CINEMATIC_073, x=142, y=127
 	play id=0x006C, freq=0x10, vol=0x18, channel=0x02
-	video offset=CINEMATIC_077, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_SETTLE_F3, x=160, y=100
 	mov [0xF0], 0x000A
 
 LABEL_144F:

@@ -188,6 +188,7 @@ checked against the receiving port's own guards.
 | (msdos only) CAPSULE 094, 096, 101..107 + 11 corrections | -- | the two CAPSULE pose sheets were the wrong way round; see `correction_dos_1992__CAPSULE_pose_sheets.md` | high |
 | -- | -- | `CAVES_HERO_ARM_OUT_LEFT_F0` -> `..._REST`, and `LEFT_F1..F7` renumbered to `F0..F6` | high |
 | PRISON 581..595 | (same numbers) | `CINEMATIC_PRISON_CAGE_CHAIN_TILT_{ZERO,PLUS_1..7,MINUS_1..7}` -- a fifteen-way dispatch on a signed tilt | high |
+| CAPSULE 074..077 | msdos 420..423 | `CINEMATIC_CAPSULE_DEBRIS_SETTLE_F0..F3` -- 28, 18, 12, 3 leaves | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
@@ -638,6 +639,8 @@ It never touches the ROM. The renders are the input, which is the rule
 looks like, measure the drawn thing.
 
 ## A contiguous run of numbered constants in the bank is one family
+
+(Now a probe: `../bank-locality/offset_runs.py`.)
 
 The bank lays an animation's frames out together. Sorting a stage's EQU table by
 offset and reading off the runs of still-numbered constants between named ones

@@ -178,11 +178,11 @@ LABEL_25A7:
 	video offset=CINEMATIC_CAPSULE_DEBRIS_RAIN_F5, x=160, y=100
 	break
 	video offset=CINEMATIC_419, x=144, y=127
-	video offset=CINEMATIC_420, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_SETTLE_F0, x=160, y=100
 	break
 	play id=0x006C, freq=0x18, vol=0x18, channel=0x02
 	video offset=CINEMATIC_419, x=143, y=127
-	video offset=CINEMATIC_421, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_DEBRIS_SETTLE_F1, x=160, y=100
 	break
 	video offset=CINEMATIC_419, x=142, y=127
 	play id=0x006C, freq=0x12, vol=0x18, channel=0x01
