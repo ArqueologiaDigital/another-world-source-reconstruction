@@ -132,6 +132,7 @@ checked against the receiving port's own guards.
 | CAVES 143..147, 283..285, 403..405, 534..536 | (msdos twins) | `CINEMATIC_CAVES_{SWINGING_LIMB,BAR_CLUSTER,TWIN_LAMP_BRACKET,RIPPLE_LINE}_F*` | medium |
 | CAVES 718, 719, 734, 735 | (msdos twins) | `CINEMATIC_CAVES_STALACTITE_CAVERN_{FLOOR,CEILING}_{LEFT,RIGHT}` | high |
 | CAVES 452/453/470/471, 472..474/491..493 | (msdos twins) | `CINEMATIC_CAVES_HERO_SWIM_HEAD_{UP,DOWN}_{RIGHT,LEFT}_*` | high |
+| INTRO 243, 246, 247, 250..260 | 249, 252, 253, 256..266 | `CINEMATIC_ACCELERATOR_TUNNEL_{VIEW_NEAR,PULSE_F0..F14}` | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
@@ -334,6 +335,42 @@ all 72 rows across three branches with 0 rejected.
 Four rows per table are not rungs and carry hand-written evidence: the
 backdrop painter, the frame routine, the join after the pupil ladder, and the
 frame tail.
+
+## `compose_run.py` -- looking at a frame where the engine puts it
+
+The composite rule in this file said *what* to do and left the doing to a
+one-off heredoc each time. `compose_run.py` is that heredoc, kept.
+
+Given the renderer's output it writes one SVG per frame with a chosen set of
+offsets drawn behind it, plus a `trail.svg` with every frame at once, and
+prints the measurement that decides whether a run is one animation:
+
+```
+$ python3 notes/render-and-name/compose_run.py --renders <dir> --out <dir> \
+      --under 3052 EA1C EA30 \
+      --frames 887C 8890 8958 8A24 8AE0 8B90 8C04 8C68 8CD8 8D4A 8DA0 \
+               8DF0 8E10 8E30 8E3E \
+      --track '#fb7474' '#fbdbb7'
+  F0  0x887C    398.0x 227.0  ...    4  125.0x84.0  93.0x57.0
+  ...
+  F14 0x8E3E      2.0x   3.0  ...    1        -         -
+  first 398.0x227.0  ->  last 2.0x3.0
+  last frame's box: x[166.0, 168.0] y[82.5, 85.5]
+```
+
+`--track` is the part worth explaining. A run's outer box can shrink for
+boring reasons; a **fill colour** that carries through the run at shrinking
+sizes is the same object seen smaller. On the INTRO pulse the salmon core
+going 125x84, 42x24, 32x17, 21x10, 12x6, 7x5 is what proved the fifteen
+pictures were one thing -- and it is what caught two frames wearing other
+subjects' names, because their cores interpolated their neighbours' exactly.
+
+It reads the renderer's SVG rather than the ROM on purpose:
+`../polygon-extent-correction/` records a measurement bug that lived for eight
+days precisely because there was no renderer in between.
+
+The palette is the routine's own. Rendering this run at palette 0 gives black
+on black, and the table above would be a table of zeroes.
 
 ## `frame_runs.py` -- the work queue, and how far to trust it
 
