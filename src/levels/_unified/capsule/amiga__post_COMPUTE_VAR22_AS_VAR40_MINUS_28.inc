@@ -3,7 +3,7 @@ CAPSULE_SHIELD_DEPLOY_AT_LEFT_EDGE:
 	video offset=CINEMATIC_098, x=5, y=[0x22]
 	break
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
-	video offset=CINEMATIC_099, x=10, y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F0, x=10, y=[0x22]
 	break
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
 	video offset=CINEMATIC_100, x=15, y=[0x22]
@@ -22,7 +22,7 @@ CAPSULE_SHIELD_DEPLOY_AT_RIGHT_EDGE:
 	video offset=CINEMATIC_098, x=315, y=[0x22]
 	break
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
-	video offset=CINEMATIC_099, x=307, y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F0, x=307, y=[0x22]
 	break
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
 	video offset=CINEMATIC_100, x=303, y=[0x22]
@@ -159,7 +159,7 @@ LABEL_53E2:
 	break
 	je [HERO_ACTION], 0x00, LABEL_5435
 	call CAPSULE_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
-	video offset=CINEMATIC_099, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F0, x=[0x21], y=[0x22]
 	break
 	je [HERO_ACTION], 0x00, LABEL_5435
 	call CAPSULE_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
@@ -167,7 +167,7 @@ LABEL_53E2:
 	break
 	je [HERO_ACTION], 0x00, LABEL_5435
 	call CAPSULE_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
-	video offset=CINEMATIC_099, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F0, x=[0x21], y=[0x22]
 	add [0x0F], 0x0004
 	jl [0x0F], 0x14, LABEL_53E2
 	break
@@ -215,29 +215,29 @@ LABEL_54A8:
 
 LABEL_54A9:
 	call CAPSULE_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
-	video offset=CINEMATIC_101, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F1, x=[0x21], y=[0x22]
 	play id=0x0059, freq=0x14, vol=0x40, channel=0x01
 	break
 	call CAPSULE_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
-	video offset=CINEMATIC_102, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F2, x=[0x21], y=[0x22]
 
 LABEL_54C0:
 	break
 	call LABEL_52A8
-	video offset=CINEMATIC_103, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F3, x=[0x21], y=[0x22]
 	jne [HERO_POS_LEFT_RIGHT], 0x00, LABEL_5505
 	je [HERO_ACTION], 0x00, LABEL_5505
 	break
 	call LABEL_52A8
-	video offset=CINEMATIC_104, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F4, x=[0x21], y=[0x22]
 	je [HERO_ACTION], 0x00, LABEL_5505
 	break
 	call LABEL_52A8
-	video offset=CINEMATIC_105, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F5, x=[0x21], y=[0x22]
 	je [HERO_ACTION], 0x00, LABEL_5505
 	break
 	call LABEL_52A8
-	video offset=CINEMATIC_106, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F6, x=[0x21], y=[0x22]
 	je [HERO_ACTION], 0x00, LABEL_5505
 	jmp LABEL_54C0
 

@@ -22,29 +22,29 @@ LABEL_7317:
 
 LABEL_7318:
 	call CAVES_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
-	video offset=CINEMATIC_068, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F1, x=[0x21], y=[0x22]
 	play id=0x0059, freq=0x14, vol=0x40, channel=0x01
 	break
 	call CAVES_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
-	video offset=CINEMATIC_069, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F2, x=[0x21], y=[0x22]
 
 LABEL_732F:
 	break
 	call PROJECT_POS_VAR04_OR_CALL_A189
-	video offset=CINEMATIC_070, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F3, x=[0x21], y=[0x22]
 	jne [HERO_POS_LEFT_RIGHT], 0x00, LABEL_7374
 	je [HERO_ACTION], 0x00, LABEL_7374
 	break
 	call PROJECT_POS_VAR04_OR_CALL_A189
-	video offset=CINEMATIC_071, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F4, x=[0x21], y=[0x22]
 	je [HERO_ACTION], 0x00, LABEL_7374
 	break
 	call PROJECT_POS_VAR04_OR_CALL_A189
-	video offset=CINEMATIC_072, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F5, x=[0x21], y=[0x22]
 	je [HERO_ACTION], 0x00, LABEL_7374
 	break
 	call PROJECT_POS_VAR04_OR_CALL_A189
-	video offset=CINEMATIC_073, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F6, x=[0x21], y=[0x22]
 	je [HERO_ACTION], 0x00, LABEL_7374
 	jmp LABEL_732F
 

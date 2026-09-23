@@ -105,3 +105,29 @@ earned earlier the same day. The hero dies in every stage.
 
 Remaining held by that guard: 2 groups per port, where not every branch
 defines the name.
+
+## The third way with a stage-prefixed name: drop the prefix
+
+This module holds a transfer whose source name carries another stage's
+prefix — 36 amiga and 34 msdos candidates — because "stripping `CAVES_` and
+re-prefixing would invent a name nobody earned". That is right about
+re-prefixing and it leaves a third option unconsidered.
+
+If the art is byte-identical in **three** stages, it is not stage-specific,
+and the stage word in any of its names is wrong rather than merely
+untransferable. The fix is to remove it, which invents nothing.
+
+The seven actor charge-glow frames are that case: identical `canonical_md5` in
+PRISON, CAVES and CAPSULE, in both priority ports — 42 constants, exactly one
+per frame per stage per port. They are now
+`CINEMATIC_ACTOR_CHARGE_GLOW_F0..F6` everywhere, with no stage word.
+
+The `PRISON_` prefix they briefly carried was not earned either: it was given
+an hour earlier in the same session by `../render-and-name/`, before the CAVES
+and CAPSULE copies were found. Dropping one's own scope is cheaper than
+arguing about someone else's.
+
+This does **not** license re-prefixing. A name whose stage word is part of the
+*subject* — `CINEMATIC_CAVES_FIRST_ROOM_BG` — stays held, and the rule here
+only applies when the same art is named in one stage and unnamed in others,
+and nothing in the base names a place.

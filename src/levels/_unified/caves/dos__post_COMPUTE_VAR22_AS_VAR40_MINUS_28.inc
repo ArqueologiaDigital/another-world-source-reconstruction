@@ -3,7 +3,7 @@ LABEL_73C9:
 	video offset=CINEMATIC_033, x=5, y=[0x22]
 	break
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
-	video offset=CINEMATIC_034, x=10, y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F0, x=10, y=[0x22]
 	break
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
 	video offset=CINEMATIC_035, x=15, y=[0x22]
@@ -22,7 +22,7 @@ LABEL_73FD:
 	video offset=CINEMATIC_033, x=315, y=[0x22]
 	break
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
-	video offset=CINEMATIC_034, x=307, y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F0, x=307, y=[0x22]
 	break
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
 	video offset=CINEMATIC_035, x=303, y=[0x22]
@@ -164,7 +164,7 @@ LABEL_7587:
 	break
 	je [HERO_ACTION], 0x00, LABEL_75E1
 	call CAVES_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
-	video offset=CINEMATIC_034, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F0, x=[0x21], y=[0x22]
 	break
 	je [HERO_ACTION], 0x00, LABEL_75E1
 	call CAVES_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
@@ -172,7 +172,7 @@ LABEL_7587:
 	break
 	je [HERO_ACTION], 0x00, LABEL_75E1
 	call CAVES_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
-	video offset=CINEMATIC_034, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F0, x=[0x21], y=[0x22]
 	add [0x0F], 0x0004
 	jl [0x0F], 0x14, LABEL_7587
 	break
