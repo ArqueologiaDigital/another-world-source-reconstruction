@@ -116,6 +116,7 @@ checked against the receiving port's own guards.
 | CAPSULE CINEMATIC_356..365 | (msdos twins) | `CINEMATIC_CAPSULE_DISTANT_WALK_F0..F9` | high |
 | CAPSULE CINEMATIC_407..410 | (msdos twins) | `CINEMATIC_CAPSULE_DIAGONAL_TRAIL_F0..F3` | medium |
 | CAPSULE CINEMATIC_125..128 | (msdos twins; CAVES held) | `CINEMATIC_WIDE_FLASH_F0..F3` | medium |
+| CAVES 718, 719, 734, 735 | (msdos twins) | `CINEMATIC_CAVES_STALACTITE_CAVERN_{FLOOR,CEILING}_{LEFT,RIGHT}` | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
