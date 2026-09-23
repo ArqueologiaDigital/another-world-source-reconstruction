@@ -59,7 +59,7 @@ identical art** — 667 CAVES, 511 PRISON, 403 CAPSULE — which nothing in the
 call graph distinguishes.
 
 **The compounding does not happen, twice measured.** Naming 264 routines
-freed 2 constants (both bad, both filtered); naming 231 constants freed 0
+freed 2 constants (both bad, both filtered); naming 226 constants freed 0
 draw-only labels. The two layers are not a chain — the 465 draw-only labels
 wait on pictures drawn by *one-picture stubs*, and the pictures being named
 now are painted inside multi-draw composites. Do not plan work on the
