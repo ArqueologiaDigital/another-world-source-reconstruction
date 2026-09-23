@@ -120,21 +120,21 @@ DRAW_CIN_169:
 
 
 PRISON_ACTOR_WALK_RIGHT_DRAW_PHASE_00_RET:
-	video type=0, offset=CV_1A54, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_08, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, DISPATCH_VAR09_LOW_NIBBLE
 	video type=0, offset=CV_5F74, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DISPATCH_VAR09_LOW_NIBBLE
 
 LABEL_604E:
-	video type=0, offset=CV_1A84, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, DISPATCH_VAR09_LOW_NIBBLE
 	video type=0, offset=CV_5F7C, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DISPATCH_VAR09_LOW_NIBBLE
 
 LABEL_6064:
-	video type=0, offset=CV_1AB4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0001
 	jg [0xF6], 0x00, DISPATCH_VAR09_LOW_NIBBLE
@@ -142,14 +142,14 @@ LABEL_6064:
 	jmp DISPATCH_VAR09_LOW_NIBBLE
 
 LABEL_607E:
-	video type=0, offset=CV_1AE4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, DISPATCH_VAR09_LOW_NIBBLE
 	video type=0, offset=CV_5F8C, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DISPATCH_VAR09_LOW_NIBBLE
 
 PRISON_ACTOR_WALK_RIGHT_DRAW_PHASE_07_RET:
-	video type=0, offset=CV_1B14, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0001
 	jg [0xF6], 0x00, DISPATCH_VAR09_LOW_NIBBLE
@@ -157,7 +157,7 @@ PRISON_ACTOR_WALK_RIGHT_DRAW_PHASE_07_RET:
 	jmp DISPATCH_VAR09_LOW_NIBBLE
 
 LABEL_60AE:
-	video type=0, offset=CV_1B44, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0001
 	jg [0xF6], 0x00, DISPATCH_VAR09_LOW_NIBBLE
@@ -165,7 +165,7 @@ LABEL_60AE:
 	jmp DISPATCH_VAR09_LOW_NIBBLE
 
 LABEL_60C8:
-	video type=0, offset=CV_1B74, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_05, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0002
 	jg [0xF6], 0x00, DISPATCH_VAR09_LOW_NIBBLE
@@ -173,7 +173,7 @@ LABEL_60C8:
 	jmp DISPATCH_VAR09_LOW_NIBBLE
 
 LABEL_60E2:
-	video type=0, offset=CV_1BA4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_06, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0002
 	jg [0xF6], 0x00, DISPATCH_VAR09_LOW_NIBBLE
@@ -181,7 +181,7 @@ LABEL_60E2:
 	jmp DISPATCH_VAR09_LOW_NIBBLE
 
 LABEL_60FC:
-	video type=0, offset=CV_1BD4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_07, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0002
 	jg [0xF6], 0x00, DISPATCH_VAR09_LOW_NIBBLE

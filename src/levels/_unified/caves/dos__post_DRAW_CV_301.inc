@@ -104,21 +104,21 @@ DRAW_CIN_032:
 
 
 CAVES_DRAW_CV_355_L10:
-	video type=0, offset=CV_1A54, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_08, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=CV_5F74, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_8F3A:
-	video type=0, offset=CV_1A84, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_00, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=CV_5F7C, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_8F50:
-	video type=0, offset=CV_1AB4, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_01, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	add [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -126,14 +126,14 @@ LABEL_8F50:
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_8F6A:
-	video type=0, offset=CV_1AE4, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_02, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=CV_5F8C, x=[0x07], y=[0x08], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_8F80:
-	video type=0, offset=CV_1B14, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_03, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	sub [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -141,7 +141,7 @@ LABEL_8F80:
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_8F9A:
-	video type=0, offset=CV_1B44, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_04, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	sub [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -149,7 +149,7 @@ LABEL_8F9A:
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_8FB4:
-	video type=0, offset=CV_1B74, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_05, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	sub [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -157,7 +157,7 @@ LABEL_8FB4:
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_8FCE:
-	video type=0, offset=CV_1BA4, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_06, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	sub [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -165,7 +165,7 @@ LABEL_8FCE:
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_8FE8:
-	video type=0, offset=CV_1BD4, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_07, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	sub [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW

@@ -124,23 +124,23 @@ CINEMATIC_ENDING_CLOSEUP_ZOOM_TARGET		EQU 0x43CC
 CINEMATIC_PTERANODON_BEAK_OPEN_F0		EQU 0x4728
 CINEMATIC_PTERANODON_BEAK_OPEN_F1		EQU 0x477E
 CINEMATIC_108		EQU 0x000C
-CV_1B14		EQU 0x1B14
+CV_FIGURE_WALK_RIGHT_UPPER_POSE_03		EQU 0x1B14
 CV_FIGURE_WALK_RIGHT_BODY_F00		EQU 0x181C
-CV_1A84		EQU 0x1A84
+CV_FIGURE_WALK_RIGHT_UPPER_POSE_00		EQU 0x1A84
 CV_FIGURE_WALK_RIGHT_BODY_F01		EQU 0x1866
 CV_FIGURE_WALK_RIGHT_BODY_F02		EQU 0x18B0
-CV_1AB4		EQU 0x1AB4
+CV_FIGURE_WALK_RIGHT_UPPER_POSE_01		EQU 0x1AB4
 CV_FIGURE_WALK_RIGHT_BODY_F03		EQU 0x18FA
-CV_1AE4		EQU 0x1AE4
+CV_FIGURE_WALK_RIGHT_UPPER_POSE_02		EQU 0x1AE4
 CV_FIGURE_WALK_RIGHT_BODY_F04		EQU 0x1944
 CV_FIGURE_WALK_RIGHT_BODY_F05		EQU 0x198E
-CV_1B44		EQU 0x1B44
+CV_FIGURE_WALK_RIGHT_UPPER_POSE_04		EQU 0x1B44
 CV_FIGURE_WALK_RIGHT_BODY_F06		EQU 0x19C4
-CV_1B74		EQU 0x1B74
+CV_FIGURE_WALK_RIGHT_UPPER_POSE_05		EQU 0x1B74
 CV_FIGURE_WALK_RIGHT_BODY_F07		EQU 0x1A0E
-CV_1BA4		EQU 0x1BA4
+CV_FIGURE_WALK_RIGHT_UPPER_POSE_06		EQU 0x1BA4
 CV_FIGURE_WALK_RIGHT_BODY_F08		EQU 0x1D78
-CV_1BD4		EQU 0x1BD4
+CV_FIGURE_WALK_RIGHT_UPPER_POSE_07		EQU 0x1BD4
 CV_FIGURE_WALK_RIGHT_BODY_F09		EQU 0x1D9A
 CV_FIGURE_WALK_RIGHT_BODY_F10		EQU 0x1DBC
 CV_FIGURE_WALK_RIGHT_BODY_F11		EQU 0x1DDE
@@ -148,7 +148,7 @@ CV_FIGURE_WALK_RIGHT_BODY_F12		EQU 0x1E00
 CV_FIGURE_WALK_RIGHT_BODY_F13		EQU 0x1E22
 CV_FIGURE_WALK_RIGHT_BODY_F14		EQU 0x1E44
 CV_FIGURE_WALK_RIGHT_BODY_F15		EQU 0x1E66
-CV_1A54		EQU 0x1A54
+CV_FIGURE_WALK_RIGHT_UPPER_POSE_08		EQU 0x1A54
 CV_4346		EQU 0x4346
 CV_1C78		EQU 0x1C78
 
@@ -1022,37 +1022,37 @@ LABEL_08B7:
 ; ... — so the figure swings or rotates out and back, the
 ; classic "hero raises arms / takes a bow" gesture pattern.
 DRAW_COMMON_VIDS_149_141_137_10:
-	video type=0, offset=CV_1BD4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_07, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
-	video type=0, offset=CV_1B74, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_05, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
-	video type=0, offset=CV_1B44, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
-	video type=0, offset=CV_1B14, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
-	video type=0, offset=CV_1AE4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
-	video type=0, offset=CV_1AB4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
-	video type=0, offset=CV_1A54, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_08, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
-	video type=0, offset=CV_1A54, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_08, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
-	video type=0, offset=CV_1A84, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
-	video type=0, offset=CV_1A84, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
-	video type=0, offset=CV_1AB4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
-	video type=0, offset=CV_1AE4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
-	video type=0, offset=CV_1B14, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
-	video type=0, offset=CV_1B44, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
-	video type=0, offset=CV_1B74, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_05, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
-	video type=0, offset=CV_1BA4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_06, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	break
 	jmp DRAW_COMMON_VIDS_149_141_137_10
 LABEL_091B:
@@ -1079,7 +1079,7 @@ ENDING_X_SLIDE_RIGHT_PLUS3_DJNZ_THEN_ACCEL:
 	video offset=CINEMATIC_108, x=160, y=100
 	video type=0, offset=CV_1C78, x=160, y=100, zoom=0x40
 	video type=0, offset=CV_4346, x=160, y=100, zoom=0x40
-	video type=0, offset=CV_1A54, x=160, y=100, zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_08, x=160, y=100, zoom=0x40
 	killChannel
 
 ENDING_CLOUD_SKY_BACKDROP_PAGE_0:

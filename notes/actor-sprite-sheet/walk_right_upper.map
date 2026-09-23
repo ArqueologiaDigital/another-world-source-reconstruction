@@ -1,0 +1,44 @@
+# The actor's upper piece through the right-facing walk: 9 poses, 16 frames.
+#
+# The mirror of walk_left_upper.map in structure, NOT in art: 0 of the 9 are
+# byte-identical to their left-facing counterpart, so the sheet is drawn twice
+# and the two series are independent evidence of the same gait structure --
+# the argument README.md already makes for the LIMB pieces.
+#
+# All nine sit at top -53.0..-53.5 with 2 leaves: the UPPER band.
+#
+# Index corresponds to walk-left, so POSE_nn is the same gait moment in both
+# directions. Both series order the same way -- ascending offset with the
+# LOWEST offset last -- and under that rule the two line up nine for nine:
+#
+#   idx  LEFT     frames     RIGHT    observed
+#   00   CV_2AC6  {0,1}      CV_1A84  {0}       (frame 1 unobserved)
+#   01   CV_2B0E  {2,14}     CV_1AB4  {2,14}
+#   02   CV_2B56  {3,13}     CV_1AE4  {13}      (frame 3 unobserved)
+#   03   CV_2B9E  {4,12}     CV_1B14  {4,12}
+#   04   CV_2BE6  {5,11}     CV_1B44  {5}       (frame 11 unobserved)
+#   05   CV_2C2E  {6,10}     CV_1B74  {6,10}
+#   06   CV_2C76  {7}        CV_1BA4  {7}
+#   07   CV_2CBE  {8,9}      CV_1BD4  {8,9}
+#   08   CV_2A7E  {15}       CV_1A54  {15}
+#
+# Every right-side observation is a SUBSET of its left twin's frame set, six
+# of nine match exactly, and the three that fall short are short by exactly
+# frames 1, 3 and 11 -- which CAPSULE never labels at all (it has 13
+# walk-right frame labels and no DRAW_1, DRAW_3 or DRAW_11). So the shortfall
+# is in the labelling, not the art, and the left twin supplies what the right
+# cannot show. Those three memberships are PREDICTED, not observed, and this
+# comment is the record of that.
+#
+# CV_1A54 has a second use: ENDING composites it with CV_1C78 and CV_4346 at
+# x=160, y=100 to assemble a static figure, in dos_1992 and cartridge_1992.
+# That reuses the pose rather than contradicting it.
+CV_1A84 CV_FIGURE_WALK_RIGHT_UPPER_POSE_00
+CV_1AB4 CV_FIGURE_WALK_RIGHT_UPPER_POSE_01
+CV_1AE4 CV_FIGURE_WALK_RIGHT_UPPER_POSE_02
+CV_1B14 CV_FIGURE_WALK_RIGHT_UPPER_POSE_03
+CV_1B44 CV_FIGURE_WALK_RIGHT_UPPER_POSE_04
+CV_1B74 CV_FIGURE_WALK_RIGHT_UPPER_POSE_05
+CV_1BA4 CV_FIGURE_WALK_RIGHT_UPPER_POSE_06
+CV_1BD4 CV_FIGURE_WALK_RIGHT_UPPER_POSE_07
+CV_1A54 CV_FIGURE_WALK_RIGHT_UPPER_POSE_08

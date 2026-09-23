@@ -1,19 +1,19 @@
 LABEL_5F35:
-	video type=0, offset=CV_1A54, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_08, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, DRAW_CIN_169_IF_VAR09_EQ_1
 	video type=0, offset=CV_5F74, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_169_IF_VAR09_EQ_1
 
 LABEL_5F4B:
-	video type=0, offset=CV_1A84, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, DRAW_CIN_169_IF_VAR09_EQ_1
 	video type=0, offset=CV_5F7C, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_169_IF_VAR09_EQ_1
 
 LABEL_5F61:
-	video type=0, offset=CV_1AB4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_CIN_169_IF_VAR09_EQ_1
@@ -21,14 +21,14 @@ LABEL_5F61:
 	jmp DRAW_CIN_169_IF_VAR09_EQ_1
 
 LABEL_5F7B:
-	video type=0, offset=CV_1AE4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, DRAW_CIN_169_IF_VAR09_EQ_1
 	video type=0, offset=CV_5F8C, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_CIN_169_IF_VAR09_EQ_1
 
 LABEL_5F91:
-	video type=0, offset=CV_1B14, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_CIN_169_IF_VAR09_EQ_1
@@ -36,7 +36,7 @@ LABEL_5F91:
 	jmp DRAW_CIN_169_IF_VAR09_EQ_1
 
 LABEL_5FAB:
-	video type=0, offset=CV_1B44, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_CIN_169_IF_VAR09_EQ_1
@@ -44,7 +44,7 @@ LABEL_5FAB:
 	jmp DRAW_CIN_169_IF_VAR09_EQ_1
 
 LABEL_5FC5:
-	video type=0, offset=CV_1B74, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_05, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_CIN_169_IF_VAR09_EQ_1
@@ -52,7 +52,7 @@ LABEL_5FC5:
 	jmp DRAW_CIN_169_IF_VAR09_EQ_1
 
 LABEL_5FDF:
-	video type=0, offset=CV_1BA4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_06, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_CIN_169_IF_VAR09_EQ_1
@@ -60,7 +60,7 @@ LABEL_5FDF:
 	jmp DRAW_CIN_169_IF_VAR09_EQ_1
 
 LABEL_5FF9:
-	video type=0, offset=CV_1BD4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_07, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_CIN_169_IF_VAR09_EQ_1

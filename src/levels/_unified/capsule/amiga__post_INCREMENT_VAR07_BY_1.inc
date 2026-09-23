@@ -151,21 +151,21 @@ DRAW_CIN_184:
 
 
 LABEL_6C5E:
-	video type=0, offset=CV_1A54, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_08, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=CV_5F74, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_6C74:
-	video type=0, offset=CV_1A84, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=CV_5F7C, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_6C8A:
-	video type=0, offset=CV_1AB4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	add [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -173,14 +173,14 @@ LABEL_6C8A:
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_6CA4:
-	video type=0, offset=CV_1AE4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
 	video type=0, offset=CV_5F8C, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_6CBA:
-	video type=0, offset=CV_1B14, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -188,7 +188,7 @@ LABEL_6CBA:
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 CAPSULE_PROJECTILE_UPDATE_AFTER_50_TICKS:
-	video type=0, offset=CV_1B44, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0001
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -196,7 +196,7 @@ CAPSULE_PROJECTILE_UPDATE_AFTER_50_TICKS:
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_6CEE:
-	video type=0, offset=CV_1B74, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_05, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -204,7 +204,7 @@ LABEL_6CEE:
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_6D08:
-	video type=0, offset=CV_1BA4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_06, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
@@ -212,7 +212,7 @@ LABEL_6D08:
 	jmp DRAW_HERO_SUBFRAME_2_VAR09_LOW
 
 LABEL_6D22:
-	video type=0, offset=CV_1BD4, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_07, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	mov [0xF5], [BUDDY_X]
 	sub [0xF5], 0x0002
 	jg [0xF6], 0x00, DRAW_HERO_SUBFRAME_2_VAR09_LOW
