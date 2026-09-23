@@ -25,7 +25,8 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 75.5% (7,662/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 75.8% (7,690/10,147) | `asset_naming_share.py` |
+| `_AMIGA_EXTRA` collisions that went the wrong way | 2 of 38, both now undone | `amiga-extra-suffix/deconflict_survivors.py` |
 | pictures carrying two or more names | 73 amiga / 76 msdos of 2,530 / 2,552 named | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 48, blocking 250 drawing labels | `shared-bank-geometry/blocked_by_bank.py` |
@@ -45,6 +46,30 @@ As of the last commit:
 | bare-`ret` tails named `<owner>_RET` | 174 exact + 10 refined of 198, 0 nameable left | `bare-ret-tails/owner_ret.py --control` |
 | limb-pose indices reproduced from the bank layout | 16 of 16 | `actor-sprite-sheet/subpiece_poses.py --control` |
 | named LEFT/RIGHT pairs that are an exact mirror (≤2 leaves) | 42 of 42 | `shared-bank-geometry/mirror_exact.py --control` |
+
+## Added 2026-09-23, INTRO session
+
+**A fifteen-frame pulse, and two names caught wearing frames of it.**
+`INTRO_COMPOSE_PAGE3_THEN_RECEDE_DOWN_ACCELERATOR_TUNNEL` draws fifteen
+pictures one per `break`; dos calls the same routine
+`ACCELERATOR_TUNNEL_PULSE_SHRINKS_TO_POINT`, which supplied the family word.
+Composited over the tunnel the routine itself copies to page 0, the run shrinks
+398x227 to 2x3 onto the vanishing point with one salmon-over-cream core
+carrying through. `CINEMATIC_LESTER_SEATED_AT_HOLO_CONSOLE_F1` (0x8958) and
+`CINEMATIC_ACCELERATOR_TUNNEL_VIEW_NEAR` (0x8A24) were frames F2 and F3 of it.
+Sixteen amiga/msdos pairs, sixteen distinct `canonical_md5`, sixteen matches.
+`notes/render-and-name/compose_run.py` is the recipe.
+
+**`_AMIGA_EXTRA` is a collision record, not a name.**
+`apply_tree_canonical_renames.py:157` invents the suffix to evict whichever
+polygon already held a name a cross-port transfer wanted; the incoming name won
+every time and neither picture was ever looked at. It does not even mean
+amiga-only -- 17 of amiga's 19 are defined in dos too.
+`notes/amiga-extra-suffix/deconflict_survivors.py` asks a branch that was not
+party to each collision: **KEPT 35, RESTORE 2, NO_ART 1**. The two RESTORE rows
+were `LESTER_SEATED_AT_HOLO_CONSOLE_F1_AMIGA_EXTRA` in amiga and dos and are
+fixed. gba can only vote on INTRO, and only because its slab is calibrated
+(67 agreements to 0) rather than assumed.
 
 ## Added 2026-09-23, later session
 
@@ -235,7 +260,17 @@ for it whenever two draws share an anchor.
 
 ## Open work, roughly in order of value
 
-**0. Keep the render-and-name batches going.** It is the only method still
+**0a. 35 names that a collision handed out, each one render from a verdict.**
+`amiga-extra-suffix/deconflict_survivors.py --verdict KEPT` lists them. Each is
+a polygon that never earned its base word; it only ever collided with something
+that did, and the collision handler renamed *it* rather than judging the
+pictures. `asset_naming_share.py` counts all 35 as named. Two of the 38 have
+already been proved wrong this way and the same method finishes the rest:
+render the constant at its routine's palette and either confirm the base word
+or replace it. `EXPERIMENT_LIGHTNING_F23..F28_AMIGA_EXTRA` are six consecutive
+frames of one run and are the obvious first batch.
+
+**0b. Keep the render-and-name batches going.** It is the only method still
 producing names on its own: `nameable_from_drawer.py` reports 1,
 `transfer_by_art.py` and `align_draw_sites.py` report 0 after each batch is
 carried across. PRISON is down from 135 still-numbered pictures >=24x24 to 30.
@@ -535,6 +570,27 @@ without any judgement at all.
 7. **34 non-`CINEMATIC_` identifiers still embed coordinates**, mostly
    `SHOW_TEXT_*_AT_x_y` where the coordinate *is* the argument. Different
    question from the one just closed; decide whether the rule applies.
+
+## Held this session, with what would settle each
+
+**`CINEMATIC_ACCELERATOR_TUNNEL_RECEDE_F0..F6` may not recede.** Drawn by the
+routine right after the pulse run, at palette **0x15**, and rendered there they
+are black shards around **cyan and white** cores that open outward into a white
+ring -- F0 is a crescent on black, F6 an open ring. That is a different set of
+pictures from the salmon-cored pulse and it does not obviously shrink. What
+would settle it is the same measurement that settled the pulse:
+`compose_run.py --renders <pal 0x15 dir> --frames 8E48 8EB0 9084 91F8 9328 944C 9550
+--track '#00ffff'` over whatever the routine has on page 0 at that moment, and
+whether the boxes converge or grow. The name is earned from elsewhere, so it
+was left alone rather than guessed at.
+
+**`CINEMATIC_LESTER_SEATED_AT_HOLO_CONSOLE_F0_AMIGA_EXTRA` is not a seated
+figure.** amiga 0xF2B6 / dos 0xF228, `e843eb2c0435`. At palette 0x16 it renders
+as a **two-path magenta ⊥ about 3x4**, drawn three times at 137,64 / 143,73 /
+149,83 -- a marker stepping down and to the right, not a person. Its verdict is
+`KEPT`, so the displacement was right and the base word is simply wrong for it;
+it needs a name from its own draw site, which is `DRAW_INTRO_DECOR_*` territory
+and was not opened this session.
 
 ## Things that are wrong or fragile, so you do not rediscover them
 
