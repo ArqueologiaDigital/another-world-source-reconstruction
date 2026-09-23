@@ -413,24 +413,24 @@ PRISON_CAGE_WITH_HERO_TILT_LEFT_LIMIT_DONE:
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_540_543_WITH_SFX_57:
 	video offset=CINEMATIC_540, x=[0x1a], y=[0x1b]
-	video offset=CINEMATIC_541, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_FLEXING_BAND_F0, x=[0x1a], y=[0x1b]
 	break
 	play id=0x0057, freq=0x1C, vol=0x40, channel=0x02
 	video offset=CINEMATIC_542, x=[0x1a], y=[0x1b]
-	video offset=CINEMATIC_543, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_FLEXING_BAND_F1, x=[0x1a], y=[0x1b]
 	break
 	video offset=CINEMATIC_544, x=[0x1a], y=[0x1b]
-	video offset=CINEMATIC_545, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_FLEXING_BAND_F2, x=[0x1a], y=[0x1b]
 	break
-	video offset=CINEMATIC_546, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_FLEXING_BAND_F3, x=[0x1a], y=[0x1b]
 	break
-	video offset=CINEMATIC_547, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_FLEXING_BAND_F4, x=[0x1a], y=[0x1b]
 	break
-	video offset=CINEMATIC_548, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_FLEXING_BAND_F5, x=[0x1a], y=[0x1b]
 	break
-	video offset=CINEMATIC_547, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_FLEXING_BAND_F4, x=[0x1a], y=[0x1b]
 	break
-	video offset=CINEMATIC_548, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_FLEXING_BAND_F5, x=[0x1a], y=[0x1b]
 	killChannel
 .endif
 

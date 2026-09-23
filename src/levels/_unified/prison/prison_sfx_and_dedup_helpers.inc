@@ -699,28 +699,28 @@ PRISON_FILL_AND_DRAW_CIN_24_28_L0:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_624_TO_628_5F_AT_499AFE0A:
-	video offset=CINEMATIC_624, x=160, y=100
+	video offset=CINEMATIC_PRISON_BAR_PANEL_F0, x=160, y=100
 	break
-	video offset=CINEMATIC_625, x=160, y=100
+	video offset=CINEMATIC_PRISON_BAR_PANEL_F1, x=160, y=100
 	break
-	video offset=CINEMATIC_626, x=160, y=100
+	video offset=CINEMATIC_PRISON_BAR_PANEL_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_627, x=160, y=100
+	video offset=CINEMATIC_PRISON_BAR_PANEL_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_628, x=160, y=100
+	video offset=CINEMATIC_PRISON_BAR_PANEL_F4, x=160, y=100
 	killChannel
 .endif
 
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_628_TO_625_4F_AT_2F47D6D0:
-	video offset=CINEMATIC_628, x=160, y=100
+	video offset=CINEMATIC_PRISON_BAR_PANEL_F4, x=160, y=100
 	break
-	video offset=CINEMATIC_627, x=160, y=100
+	video offset=CINEMATIC_PRISON_BAR_PANEL_F3, x=160, y=100
 	break
-	video offset=CINEMATIC_626, x=160, y=100
+	video offset=CINEMATIC_PRISON_BAR_PANEL_F2, x=160, y=100
 	break
-	video offset=CINEMATIC_625, x=160, y=100
+	video offset=CINEMATIC_PRISON_BAR_PANEL_F1, x=160, y=100
 	break
 .endif
 

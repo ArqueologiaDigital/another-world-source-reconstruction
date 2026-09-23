@@ -1,5 +1,5 @@
 HANG_DRAW_CIN_624:
-	video offset=CINEMATIC_624, x=160, y=100
+	video offset=CINEMATIC_PRISON_BAR_PANEL_F0, x=160, y=100
 	break
 	jmp HANG_DRAW_CIN_624
 LABEL_4C17:
