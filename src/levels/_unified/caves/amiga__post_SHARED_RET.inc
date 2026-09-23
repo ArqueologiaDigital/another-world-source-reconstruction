@@ -596,7 +596,7 @@ LABEL_85B3:
 
 CAVES_ACTOR_RUN_LEFT_PHASE_1_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2D76, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F00, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_815E
 	add [0x08], 0x0001
 	ret
@@ -613,7 +613,7 @@ LABEL_85DA:
 
 LABEL_85DF:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2E0A, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F01, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_811C
 	ret
 
@@ -630,7 +630,7 @@ LABEL_8601:
 
 CAVES_ACTOR_RUN_LEFT_PHASE_3_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2E9E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F02, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_8127
 	sub [0x08], 0x0001
 	ret
@@ -648,7 +648,7 @@ LABEL_862C:
 
 CAVES_ACTOR_RUN_LEFT_PHASE_4_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2F3A, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F03, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_8132
 	sub [0x08], 0x0001
 	ret
@@ -665,7 +665,7 @@ LABEL_8653:
 
 LABEL_8658:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2FD6, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F04, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_813D
 	ret
 
@@ -682,7 +682,7 @@ LABEL_867A:
 
 CAVES_ACTOR_RUN_LEFT_PHASE_6_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_304A, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F05, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_813D
 	add [0x08], 0x0001
 	ret
@@ -699,7 +699,7 @@ LABEL_86A1:
 
 LABEL_86A6:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_3066, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F06, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_8132
 	ret
 
@@ -716,7 +716,7 @@ LABEL_86C8:
 
 CAVES_ACTOR_RUN_LEFT_PHASE_8_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_3082, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F07, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_8148
 	sub [0x08], 0x0001
 	ret
@@ -734,7 +734,7 @@ LABEL_86F3:
 
 CAVES_ACTOR_RUN_LEFT_PHASE_9_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_309E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F08, x=[0x07], y=[0x08], zoom=0x40
 	call LABEL_8153
 	sub [0x08], 0x0001
 	ret
@@ -751,7 +751,7 @@ LABEL_871A:
 
 LABEL_871F:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_30BA, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F09, x=[0x07], y=[0x08], zoom=0x40
 	add [0x07], 0x0001
 	call LABEL_815E
 	sub [0x07], 0x0001

@@ -1,0 +1,41 @@
+# The actor's left-facing run body: 10 frames, complete.
+#
+# The counterpart of the already-named CV_FIGURE_RUN_RIGHT_BODY_F00..F07,
+# and drawn separately rather than mirrored -- none of these ten is
+# byte-identical to any right-facing body.
+#
+# Six frames come straight from the routine names, and the two stages agree
+# once the measured base is applied (CAPSULE 0, CAVES 1):
+#
+#   CAPSULE_ACTOR_RUN_LEFT_DRAW_0,2,3,5,7,8
+#   CAVES_ACTOR_RUN_LEFT_PHASE_1,3,4,6,8,9   -> the same frames 0,2,3,5,7,8
+#
+# Both stages omit 1, 4, 6 and 9, so the gap is in the labelling. The four
+# were placed by the same "forced by geometry" standard README.md used for
+# its frame-7 gaps -- in each offset gap there is EXACTLY ONE live piece with
+# a body shape (5 leaves, 54..58 tall, top -56):
+#
+#   F01 CV_2E0A   F04 CV_2FD6   F06 CV_3066   F09 CV_30BA
+#
+# and the cycle's own arithmetic confirms all four. The widths run
+#
+#   F00..F04   28.5  23.0  30.5  39.5  41.0
+#   F05..F09   28.5  23.0  30.5  39.5  41.0
+#
+# two identical half-strides, with each placed frame landing on the width its
+# partner five frames away already had. Offsets are strictly ascending across
+# all ten, in frame order.
+#
+# Reachability was checked before naming, after CV_5F74..CV_5FFC turned out
+# to be art behind an always-true guard: all three gap-filled pieces are
+# drawn six times each at the actor slot and none sits behind such a guard.
+CV_2D76 CV_FIGURE_RUN_LEFT_BODY_F00
+CV_2E0A CV_FIGURE_RUN_LEFT_BODY_F01
+CV_2E9E CV_FIGURE_RUN_LEFT_BODY_F02
+CV_2F3A CV_FIGURE_RUN_LEFT_BODY_F03
+CV_2FD6 CV_FIGURE_RUN_LEFT_BODY_F04
+CV_304A CV_FIGURE_RUN_LEFT_BODY_F05
+CV_3066 CV_FIGURE_RUN_LEFT_BODY_F06
+CV_3082 CV_FIGURE_RUN_LEFT_BODY_F07
+CV_309E CV_FIGURE_RUN_LEFT_BODY_F08
+CV_30BA CV_FIGURE_RUN_LEFT_BODY_F09

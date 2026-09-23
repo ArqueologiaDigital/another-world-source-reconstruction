@@ -1029,7 +1029,7 @@ LABEL_664B:
 
 CAPSULE_ACTOR_RUN_LEFT_DRAW_0_DONE:
 	call LABEL_5DE8
-	video type=0, offset=CV_2D76, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61F6
 	add [BUDDY_Y], 0x0001
 	ret
@@ -1046,7 +1046,7 @@ LABEL_6672:
 
 LABEL_6677:
 	call LABEL_5DE8
-	video type=0, offset=CV_2E0A, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61B4
 	ret
 
@@ -1063,7 +1063,7 @@ LABEL_6699:
 
 CAPSULE_ACTOR_RUN_LEFT_DRAW_2_DONE:
 	call LABEL_5DE8
-	video type=0, offset=CV_2E9E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61BF
 	sub [BUDDY_Y], 0x0001
 	ret
@@ -1081,7 +1081,7 @@ LABEL_66C4:
 
 CAPSULE_ACTOR_RUN_LEFT_DRAW_3_DONE:
 	call LABEL_5DE8
-	video type=0, offset=CV_2F3A, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61CA
 	sub [BUDDY_Y], 0x0001
 	ret
@@ -1098,7 +1098,7 @@ LABEL_66EB:
 
 LABEL_66F0:
 	call LABEL_5DE8
-	video type=0, offset=CV_2FD6, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61D5
 	ret
 
@@ -1115,7 +1115,7 @@ LABEL_6712:
 
 CAPSULE_ACTOR_RUN_LEFT_DRAW_5_DONE:
 	call LABEL_5DE8
-	video type=0, offset=CV_304A, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F05, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61D5
 	add [BUDDY_Y], 0x0001
 	ret
@@ -1132,7 +1132,7 @@ LABEL_6739:
 
 LABEL_673E:
 	call LABEL_5DE8
-	video type=0, offset=CV_3066, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F06, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61CA
 	ret
 
@@ -1149,7 +1149,7 @@ LABEL_6760:
 
 CAPSULE_ACTOR_RUN_LEFT_DRAW_7_DONE:
 	call LABEL_5DE8
-	video type=0, offset=CV_3082, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F07, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61E0
 	sub [BUDDY_Y], 0x0001
 	ret
@@ -1167,7 +1167,7 @@ LABEL_678B:
 
 CAPSULE_ACTOR_RUN_LEFT_DRAW_8_DONE:
 	call LABEL_5DE8
-	video type=0, offset=CV_309E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F08, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_61EB
 	sub [BUDDY_Y], 0x0001
 	ret
@@ -1184,7 +1184,7 @@ LABEL_67B2:
 
 LABEL_67B7:
 	call LABEL_5DE8
-	video type=0, offset=CV_30BA, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F09, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_X], 0x0001
 	call LABEL_61F6
 	sub [BUDDY_X], 0x0001

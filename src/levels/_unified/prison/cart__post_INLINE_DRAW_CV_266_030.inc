@@ -1,6 +1,6 @@
 PRISON_INLINE_DRAW_CV_269_026_L2:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_30BA, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F09, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_X], 0x0001
 	call PRISON_DRAW_CV263_AT_X07_Y08_L1
 	sub [BUDDY_X], 0x0001

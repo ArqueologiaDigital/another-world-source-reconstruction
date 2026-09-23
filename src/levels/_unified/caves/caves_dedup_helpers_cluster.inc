@@ -192,7 +192,7 @@ INLINE_DRAW_CV_216_027:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_INLINE_DRAW_CV_266_005_L0:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2E0A, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F01, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_INLINE_DRAW_CV_266_005_L1
 	ret
 
@@ -212,7 +212,7 @@ CAVES_ACTOR_RUN_LEFT_PHASE_3_FRAME:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_ACTOR_RUN_LEFT_PHASE_3_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2E9E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F02, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_INLINE_DRAW_CV_269_024_L0
 	sub [0x08], 0x0001
 	ret
@@ -233,7 +233,7 @@ CAVES_ACTOR_RUN_LEFT_PHASE_4_FRAME:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_ACTOR_RUN_LEFT_PHASE_4_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2F3A, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F03, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_INLINE_DRAW_CV_272_013_L0
 	sub [0x08], 0x0001
 	ret
@@ -275,7 +275,7 @@ INLINE_DRAW_CV_272_003_002:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_INLINE_DRAW_CV_272_015_L0:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_3066, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F06, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_INLINE_DRAW_CV_272_013_L0
 	ret
 
@@ -296,7 +296,7 @@ INLINE_DRAW_CV_269_024_001:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_ACTOR_RUN_LEFT_PHASE_8_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_3082, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F07, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_INLINE_DRAW_CV_269_025_L1
 	sub [0x08], 0x0001
 	ret
@@ -318,7 +318,7 @@ INLINE_DRAW_CV_269_024_002:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 CAVES_ACTOR_RUN_LEFT_PHASE_9_DONE:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_309E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F08, x=[0x07], y=[0x08], zoom=0x40
 	call CAVES_INLINE_DRAW_CV_269_026_L0
 	sub [0x08], 0x0001
 	ret

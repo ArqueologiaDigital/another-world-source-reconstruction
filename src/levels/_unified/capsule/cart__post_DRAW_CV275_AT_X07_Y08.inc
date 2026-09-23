@@ -1,6 +1,6 @@
 CAPSULE_DRAW_CV263_AT_X07_Y08_L15:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2FD6, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_7AA9
 	ret
 
@@ -17,7 +17,7 @@ CAPSULE_ACTOR_RUN_LEFT_DRAW_8:
 
 LABEL_8071:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_304A, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F05, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_7AA9
 	add [BUDDY_Y], 0x0001
 	ret
@@ -34,7 +34,7 @@ LABEL_8093:
 
 LABEL_8098:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_3066, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F06, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call CAPSULE_DRAW_CV263_AT_X07_Y08_L13
 	ret
 
@@ -52,7 +52,7 @@ LABEL_80C0:
 
 LABEL_80C5:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_3082, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F07, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_7AB4
 	sub [BUDDY_Y], 0x0001
 	ret
@@ -70,7 +70,7 @@ LABEL_80EB:
 
 LABEL_80F0:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_309E, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F08, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	call LABEL_7ABF
 	sub [BUDDY_Y], 0x0001
 	ret
@@ -87,7 +87,7 @@ LABEL_8112:
 
 LABEL_8117:
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_30BA, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F09, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	add [BUDDY_X], 0x0001
 	call CAPSULE_DRAW_CV263_AT_X07_Y08_L1
 	sub [BUDDY_X], 0x0001
