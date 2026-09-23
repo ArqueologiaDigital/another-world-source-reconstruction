@@ -134,15 +134,15 @@ LABEL_0930:
 	video offset=CINEMATIC_447, x=[HERO_X], y=[HERO_Y]
 	djnz [0xE6], LABEL_0930
 	mov [0xE8], 0x0000
-	video offset=CINEMATIC_448, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_PROP_UP_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_449, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_PROP_UP_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_450, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_PROP_UP_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_451, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_PROP_UP_F3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_452, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_PROP_UP_F4, x=[HERO_X], y=[HERO_Y]
 	mov [0xE7], 0x0002
 
 SET_VARE6_TO_A:
@@ -164,14 +164,14 @@ LABEL_0977:
 
 LABEL_098B:
 	break
-	video offset=CINEMATIC_454, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_FLUNG_F0, x=[HERO_X], y=[HERO_Y]
 	break
 	sub [0x15], 0x000C
-	video offset=CINEMATIC_455, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_FLUNG_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_456, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_FLUNG_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_457, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_FLUNG_F3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_458, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_FLUNG_F4, x=[HERO_X], y=[HERO_Y]
 	killChannel

@@ -134,15 +134,15 @@ LABEL_18DE:
 	video offset=CINEMATIC_540, x=[HERO_X], y=[HERO_Y]
 	djnz [0xE6], LABEL_18DE
 	mov [0xE8], 0x0000
-	video offset=CINEMATIC_541, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_PROP_UP_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_542, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_PROP_UP_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_543, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_PROP_UP_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_544, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_PROP_UP_F3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_545, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_PROP_UP_F4, x=[HERO_X], y=[HERO_Y]
 	mov [0xE7], 0x0002
 
 LABEL_190D:
