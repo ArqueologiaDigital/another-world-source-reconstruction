@@ -20,7 +20,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 60.8% (6,171/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 60.9% (6,179/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 77 of 352 (59 reachable) | `notes/shared-bank-geometry/` |
@@ -95,6 +95,20 @@ multi-hop reachability problem: the label's hex token is **not** the screen
 (0 of 54 match a `[SCREEN_NUM]` guard), the call site does not carry it, and
 there is no single dispatcher — `[SCREEN_NUM]` is compared 182 times across 52
 values in CAVES alone. Solving that unlocks the largest class.
+
+**The render-and-look method is now set up and demonstrated.**
+`notes/prison-cell-block/README.md` names PRISON screen 0x04 end to end and
+carries the recipe, including the two tool conventions that cost an hour:
+`render_scene_composite.py` wants the **painter** routine, not the entry (the
+entry composites 3 draws and looks empty), and `polygon_render_png.py` wants
+the extracted 64 KB slab with the raw EQU value, not `cinematic.rom` with
+`3 * 0x10000 + equ`, which silently renders nothing.
+
+Every screen entry is now named, so the next screen is
+`<STAGE>_SCREEN_<NN>_ENTRY` -> its painter -> composite -> per-layer renders.
+The rate is **four names per screen** against roughly fifty screens a stage,
+three of the seven layers held back because a render can mislead. That is the
+honest cost, and it is why every mechanical seam was exhausted first.
 
 **Also still open:** the 465 draw-only labels whose picture is unnamed — each
 becomes free the moment its constant is named, so the asset work unlocks the
