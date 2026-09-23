@@ -25,7 +25,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 80.0% (8,118/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 80.3% (8,151/10,147) | `asset_naming_share.py` |
 | `_AMIGA_EXTRA` constants left | **0** of 38 | `amiga-extra-suffix/deconflict_survivors.py` |
 | names sitting on the wrong port's constant | 11 (was 12) | `cross-port-art/name_art_agreement.py` |
 | names the canonical and unified trees disagree about | 452 missing + 544 moved | `tree-name-drift/name_drift.py` |

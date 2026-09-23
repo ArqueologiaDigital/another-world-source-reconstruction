@@ -172,6 +172,7 @@ checked against the receiving port's own guards.
 | CAVES 076..079, 130..136 | (same numbers) | `CINEMATIC_CAVES_{SEGMENT_BAR_F0..F3,DISCHARGE_FLASH_F0,F1,CHARGE_GLOW_F0..F3,CHARGE_BLAST}`, three branches -- eleven of eleven identical to CAPSULE's | high |
 | CAVES 033, 035, 036, 037 | (same numbers) | `CINEMATIC_SHIELD_DEPLOY_PHASE_0..3`, bare like CAVES' own `SHIELD_DECAY` family | high |
 | CAVES 749..751, 008..011 | msdos 774..776, 008..011 | `CINEMATIC_CAVES_SUPERBLAST_BEAM_TILE_0..2` and `CINEMATIC_WIDE_FLASH_F0..F3` (the flash also cartridge -- shared routine) | high |
+| CAVES 261..268 / CAPSULE 129..136 | msdos 279..286 / 440..447 | `CINEMATIC_CROWD_FIGURE_{UPPER,BODY_0..3,CLOAK_F0..F2}` -- a row of eleven, two stages, two ports | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
@@ -653,7 +654,46 @@ but at both it also has the previous frame's `..._POSE_04` two lines above, so
 its neighbour set has two names and the "exactly one" test fails. It
 under-offers, and specifically on frames in the middle of a dense run.
 
-### Composite before you judge a sliver
+### A run that repeats at eleven fixed positions is a row, not an animation
+
+`frame_runs.py` reported the same three-constant run eleven times in CAVES, once
+per position, and the temptation is to read eleven runs. It is one:
+`LABEL_1F82` is thirty-three draws with a `break` between each triple, at
+
+    x = -30, 7, 43, 75, 119, 153, 190, 223, 266, 301, 331
+    y = 114, 116, 120, 121, 116, 118, 120, 117, 112, 114, 114
+
+-- eleven figures standing along the floor. The middle constant of each triple
+takes one of **four** values, dealt out so the row is not uniform, and the third
+is the same for the whole row.
+
+Two things follow, and both are general:
+
+**Compose one instance, not the run.** `compose_run.py` over the whole routine
+produces a screen where the last-drawn dark piece covers everything. Picking one
+position's three frames and stacking only those gave a figure legible at once:
+a head in profile with an eye, a cloak over the back, a bar held diagonally.
+
+    # one instance of the row, at its sixth position
+    python3 - <<'EOF'
+    ...take the three frame svg(s) compose_run.py wrote for that position,
+       concatenate their <path> elements over one <rect>, and rasterise:
+    EOF
+    magick -density 600 -background "#303040" one.svg -crop 700x900+700+700 +repage one.png
+
+**The frame order is the install order, not the number.** Four routines paint
+the identical row; one draws the bare figure and three add one cloak each:
+
+    setup channel=0x36, address=LABEL_1E39   ; draws 266
+    setup channel=0x38, address=LABEL_1F82   ; draws 268
+    setup channel=0x3A, address=LABEL_1EDE   ; draws 267
+
+so `F1` is 268 and `F2` is 267. CAPSULE, msdos CAVES and msdos CAPSULE each
+install their own three on the same three channels in the same sequence, which
+is four independent confirmations -- and four chances to have read `F1` off the
+constant number instead.
+
+## Composite before you judge a sliver
 
 Three CAVES runs -- 22 arm frames and 18 leg frames -- sat in the handoff's
 held list as "unreadable at palette 0". They were not unreadable; they were
