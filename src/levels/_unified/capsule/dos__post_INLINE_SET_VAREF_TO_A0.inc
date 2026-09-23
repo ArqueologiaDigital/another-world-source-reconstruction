@@ -99,24 +99,24 @@ LABEL_22C7:
 	killChannel
 
 LABEL_22F4:
-	video offset=CINEMATIC_362, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAPSULE_FLYER_F0, x=[0xe6], y=[0xe7]
 	play id=0x006C, freq=0x14, vol=0x18, channel=0x01
 	break
-	video offset=CINEMATIC_363, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAPSULE_FLYER_F1, x=[0xe6], y=[0xe7]
 	break
-	video offset=CINEMATIC_364, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAPSULE_FLYER_F2, x=[0xe6], y=[0xe7]
 	break
-	video offset=CINEMATIC_365, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAPSULE_FLYER_F3, x=[0xe6], y=[0xe7]
 	break
-	video offset=CINEMATIC_366, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAPSULE_FLYER_F4, x=[0xe6], y=[0xe7]
 	break
-	video offset=CINEMATIC_367, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAPSULE_FLYER_F5, x=[0xe6], y=[0xe7]
 	break
-	video offset=CINEMATIC_368, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAPSULE_FLYER_F6, x=[0xe6], y=[0xe7]
 	break
-	video offset=CINEMATIC_369, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAPSULE_FLYER_F7, x=[0xe6], y=[0xe7]
 	break
-	video offset=CINEMATIC_369, x=[0xe6], y=[0xe7]
+	video offset=CINEMATIC_CAPSULE_FLYER_F7, x=[0xe6], y=[0xe7]
 	break
 	jmp LABEL_22F4
 LABEL_2333:
