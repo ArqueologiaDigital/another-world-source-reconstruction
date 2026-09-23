@@ -16,27 +16,27 @@ LABEL_103D:
 LABEL_103E:
 	jne [0x10], [SCREEN_NUM], LABEL_10A0
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_367, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FALLING_DEBRIS_F0, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jne [0x10], [SCREEN_NUM], LABEL_10A0
-	video offset=CINEMATIC_368, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FALLING_DEBRIS_F1, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jne [0x10], [SCREEN_NUM], LABEL_10A0
-	video offset=CINEMATIC_369, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FALLING_DEBRIS_F2, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jne [0x10], [SCREEN_NUM], LABEL_10A0
-	video offset=CINEMATIC_370, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FALLING_DEBRIS_F3, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jne [0x10], [SCREEN_NUM], LABEL_10A0
-	video offset=CINEMATIC_371, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FALLING_DEBRIS_F4, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jne [0x10], [SCREEN_NUM], LABEL_10A0
-	video offset=CINEMATIC_372, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FALLING_DEBRIS_F5, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jne [0x10], [SCREEN_NUM], LABEL_10A0
-	video offset=CINEMATIC_373, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FALLING_DEBRIS_F6, x=[BUDDY_X], y=[BUDDY_Y]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_374, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FALLING_DEBRIS_F7, x=[BUDDY_X], y=[BUDDY_Y]
 	selectVideoPage 0xFF
 
 LABEL_10A0:
