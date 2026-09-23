@@ -36,3 +36,11 @@ Derived by notes/cross-port-art/transfer_by_art.py.
 | CINEMATIC_347 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F2 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
 | CINEMATIC_346 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F1 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
 | CINEMATIC_344 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F0 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+# Names carried from amiga by art identity in CAVES -- dos_1992
+
+Derived by notes/cross-port-art/transfer_by_art.py.
+
+| constant | proposed name | confidence | evidence |
+| --- | --- | --- | --- |
+| CINEMATIC_423 | CINEMATIC_CAVES_WALL_BREACH_STRAND | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_444 | CINEMATIC_CAVES_DROPPED_GUN | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |

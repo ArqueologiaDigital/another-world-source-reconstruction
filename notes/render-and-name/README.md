@@ -65,6 +65,9 @@ checked against the receiving port's own guards.
 | CINEMATIC_333 | CINEMATIC_354 | `..._SCREEN_4C_CAVERN_ARCH` | medium |
 | CINEMATIC_279 | CINEMATIC_300 | `CINEMATIC_CAVES_WATERFALL` | high |
 | CINEMATIC_323, 325, 326, 327, 328, 329 | CINEMATIC_344, 346..350 | `CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F0..F5` | high |
+| CINEMATIC_402 | (msdos twin) | `CINEMATIC_CAVES_WALL_BREACH_STRAND` | high |
+| CINEMATIC_423 | (msdos twin) | `CINEMATIC_CAVES_DROPPED_GUN` | medium |
+| CINEMATIC_203, 190..195 | (msdos twins) | `CINEMATIC_PRISON_ACTOR_CHARGE_GLOW_F0..F6` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
@@ -116,3 +119,33 @@ anchor.
 `CREATURE` rather than `BEAST` because the routines drawing *this* art say so,
 and the render agrees it is a creature. The tree's `DRAW_BEAST_POSE_*`
 routines draw 10x10 pictures, which are not this.
+
+## Seven agreeing routines is not one routine
+
+`../sole-named-drawer/README.md` records a relaxation of its rule 3 that this
+session tested and refuted: where a picture has **one** semantic drawer plus
+some placeholder stubs, deriving the picture's name from that routine is right
+**0 times out of 4**, because the routine is named for a moment in an
+animation — `_ENTRY`, `_PRELUDE`, `_FINAL_HOLD` — and the art is named for a
+thing.
+
+Three of the names above lean on routine names anyway, and the difference is
+worth stating rather than glossing:
+
+* `CINEMATIC_402` is drawn 35 times and **every one** comes from
+  `CAVES_WALL_BREACH_STRAND_SWAY_PHASE_1..7`, which draw it and nothing else.
+  Seven separately written names agreeing about one picture is not one name.
+  And the measurement agrees with the word independently: **1x20**, one unit
+  wide and twenty tall, which is a strand and little else.
+* `CINEMATIC_423` has the same seven-routine agreement
+  (`CAVES_DROPPED_GUN_SKID_LEFT_PHASE_1..7`), and 16x4 is consistent with an
+  object lying down. The render is **not** evidence here: at 16x4 the tile is
+  a magnified sliver, and reading one of those is how this project got a
+  "band" out of a 1x12 speck. Medium, and the row says why.
+* The seven charge-glow frames have seven agreeing routines *and* a render
+  that orders them: 5x6, 6x8, 12x8, 12x12, 12x14, then 12x12 and 12x14, all
+  two paths. `GLOW` is supported by the shape; `CHARGE` comes from the
+  routines. Medium.
+
+None of the three is a routine naming a moment. That is the line the
+refutation drew, and it is the line these stay on.

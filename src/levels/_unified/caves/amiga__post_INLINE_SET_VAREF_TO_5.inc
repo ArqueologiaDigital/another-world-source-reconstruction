@@ -1,11 +1,11 @@
 ANIM_CIN_423_LOOP_VAREF:
-	video offset=CINEMATIC_423, x=103, y=100
+	video offset=CINEMATIC_CAVES_DROPPED_GUN, x=103, y=100
 	break
 	djnz [0xEF], ANIM_CIN_423_LOOP_VAREF
 	mov [0xEF], 0x0005
 
 LABEL_17A2:
-	video offset=CINEMATIC_423, x=103, y=100
+	video offset=CINEMATIC_CAVES_DROPPED_GUN, x=103, y=100
 	video offset=CINEMATIC_424, x=105, y=174
 	break
 	djnz [0xEF], LABEL_17A2

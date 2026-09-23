@@ -38,3 +38,9 @@ that its tile labels are designed to prevent.
 | CINEMATIC_327 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F3 | high | as above; the sole picture of `CAVES_CREATURE_WALK_RIGHT_PHASE_4` |
 | CINEMATIC_328 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F4 | high | as above; the sole picture of `CAVES_CREATURE_WALK_RIGHT_PHASE_5` |
 | CINEMATIC_329 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F5 | high | as above; the sole picture of `CAVES_CREATURE_WALK_RIGHT_PHASE_6` |
+# CAVES batch 5 -- one picture, seven routines agreeing
+
+| constant | proposed name | confidence | evidence |
+| --- | --- | --- | --- |
+| CINEMATIC_402 | CINEMATIC_CAVES_WALL_BREACH_STRAND | high | **1x20**, twenty paths -- one unit wide and twenty tall, which is a strand and cannot be much else. Drawn 35 times, every one of them from `CAVES_WALL_BREACH_STRAND_SWAY_PHASE_1` through `_7`, and those seven routines draw this picture and nothing else. Seven separately written names agreeing on the subject, and the measured extent agreeing with the word |
+| CINEMATIC_423 | CINEMATIC_CAVES_DROPPED_GUN | medium | 16x4, two paths: small, flat and wide, an object lying down rather than standing. Drawn 11 times, seven of them from `CAVES_DROPPED_GUN_SKID_LEFT_PHASE_1` through `_7`, which draw this picture and nothing else and put it at successive positions -- the skid their name describes. The subject rests on those seven agreeing, not on the render: at 16x4 the tile is a magnified sliver and `../shared-bank-geometry/bank_filmstrip.py` records what reading one of those costs |

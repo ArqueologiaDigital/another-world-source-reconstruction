@@ -1,28 +1,28 @@
 LABEL_4565:
 	play id=0x0059, freq=0x14, vol=0x40, channel=0x00
 	call PRISON_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
-	video offset=CINEMATIC_190, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_PRISON_ACTOR_CHARGE_GLOW_F1, x=[0x21], y=[0x22]
 	break
 	call PRISON_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
-	video offset=CINEMATIC_191, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_PRISON_ACTOR_CHARGE_GLOW_F2, x=[0x21], y=[0x22]
 
 LABEL_457C:
 	break
 	call PROJECT_POS_BY_VAR04_OR_807B
-	video offset=CINEMATIC_192, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_PRISON_ACTOR_CHARGE_GLOW_F3, x=[0x21], y=[0x22]
 	jne [HERO_POS_LEFT_RIGHT], 0x00, LABEL_45C1
 	je [HERO_ACTION], 0x00, LABEL_45C1
 	break
 	call PROJECT_POS_BY_VAR04_OR_807B
-	video offset=CINEMATIC_193, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_PRISON_ACTOR_CHARGE_GLOW_F4, x=[0x21], y=[0x22]
 	je [HERO_ACTION], 0x00, LABEL_45C1
 	break
 	call PROJECT_POS_BY_VAR04_OR_807B
-	video offset=CINEMATIC_194, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_PRISON_ACTOR_CHARGE_GLOW_F5, x=[0x21], y=[0x22]
 	je [HERO_ACTION], 0x00, LABEL_45C1
 	break
 	call PROJECT_POS_BY_VAR04_OR_807B
-	video offset=CINEMATIC_195, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_PRISON_ACTOR_CHARGE_GLOW_F6, x=[0x21], y=[0x22]
 	je [HERO_ACTION], 0x00, LABEL_45C1
 	jmp LABEL_457C
 
