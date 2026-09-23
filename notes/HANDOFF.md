@@ -42,6 +42,7 @@ As of the last commit:
 | names that exist and break NAMING.md §1 | 1,238 `_L<n>` + 153 others, all four branches | `placeholder-census/placeholder_roles.py --forbidden` |
 | complete `_F` families indexed by order of first appearance | 159 of 159 | `placeholder-census/placeholder_roles.py --frames` |
 | frame labels reproduced from their siblings' template | 127 of 127, 0 nameable left | `frame-label-siblings/sibling_template.py --control` |
+| bare-`ret` tails named `<owner>_RET` | 174 exact + 10 refined of 198, 0 nameable left | `bare-ret-tails/owner_ret.py --control` |
 | limb-pose indices reproduced from the bank layout | 12 of 12 | `actor-sprite-sheet/subpiece_poses.py --control` |
 
 ## Added 2026-09-23

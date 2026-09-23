@@ -30,6 +30,9 @@ The 828 are the tractable ones. A placeholder jumped to only from inside a
 routine that already has a name is a *position* in that routine, and a
 position can be named without knowing what any art depicts.
 
+One slice of the 828 did not need an invented vocabulary after all, and
+`../bare-ret-tails/` took it — see below.
+
 ## Why this is a census and not a renamer
 
 Their roles sort cleanly — 629 forward-jump targets with a real body, 127
@@ -37,7 +40,7 @@ backward targets (loop heads), 44 two-instruction tails, 28 bare `ret` — and
 549 of the 649 owning routines have exactly one, so `<OWNER>_<ROLE>` would
 need no index.
 
-The role *vocabulary* is the problem. Measured over the labels already named
+The role *vocabulary* is the problem for the other 800. Measured over the labels already named
 in each of those positions, the final token is a content word or a phase
 number far more often than a positional one: of 3,384 named forward-conditional
 targets, 67 end in `DONE` and 58 in `RET`; of 433 named backward targets, 38
@@ -144,3 +147,17 @@ be named first.
 
 So this is a census entry and not a task, written down so the next reader does
 not spend an hour discovering the same thing.
+
+## The one slice that did not need an invented vocabulary
+
+For a label whose entire body is a bare `ret`, reached only from inside one
+named routine, `<owner>_RET` is what the tree already does: **174** labels
+spell it exactly that way and 10 more drop a trailing qualifier, against 14
+spelled otherwise, of which `TRIVIAL_RET` and `SHARED_RET` are tails several
+routines fall into. `../bare-ret-tails/` applies it.
+
+It yielded **6** names, and the shortfall is the useful part: 34 are held
+because the *owner's* own name is mechanical — `FILL_PAGE_00_COLOR_08_RET`
+propagates a placeholder rather than removing one. So the 828 are not blocked
+on the positional vocabulary so much as on their owners, and every owner that
+gains a real name frees its tails with it.
