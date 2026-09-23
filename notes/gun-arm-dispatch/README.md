@@ -165,3 +165,60 @@ record itself.
 So the dispatch method is exhausted at 21 names across two variables, and the
 148 stay where they were: nameable by pose, but only from a render, one at a
 time.
+
+## The other shape the same idea takes — `guarded_companions.py`
+
+The two switches above are one form. The commoner form is a guard inline in a
+frame routine:
+
+    CAPSULE_HERO_RUN_RIGHT_DRAW_8:
+        video type=0, offset=HERO_RUN_RIGHT_BODY_F08, x=[HERO_X], ...
+        jne [0x0A], 0x00, DRAW_CV_265        <- a companion, only when armed
+
+What makes this usable where the routine names are placeholders — which is
+most of what is left — is that **the frame number comes from the art, not the
+label**. `HERO_RUN_RIGHT_BODY_F08` was named from separate evidence, so a
+routine drawing exactly one member of a named `*_BODY_F<n>` family plus a
+guarded piece fixes that piece's frame without trusting any routine name.
+
+It found two families.
+
+**The hero's run-right gun arm — named,** see `run_right_gun_arm.map`. Five
+pieces covering frames 0..9 with no gap, guarded on `[0x0A]`, the same
+weapon-state variable the two switches above run on. That is the first
+limb-class family in the project with complete coverage, which is why it could
+be applied where every family in `../actor-sprite-sheet/` is held.
+
+**The actor's run-right companion — found, measured, deliberately not named.**
+Six pieces covering frames 0..7 with no gap, guarded `je [0x0D], 0x00` — note
+the *opposite* sense from the hero's, so whatever `[0x0D]` is, these are drawn
+in its zero state and calling them a gun arm would be wrong.
+
+    CV_6108  {0}    CV_21A8 {1}    CV_21D6 {2}
+    CV_2200  {3,6}  CV_2212 {4,5}  CV_224C {7}
+
+They share a top edge at −52.0..−52.5 while their bottoms vary from −24 to
+−35.5, against a body spanning −56 to 0. A fixed attachment point with a
+swinging free end is what an arm looks like, and that is positional evidence
+rather than the shape resemblance `../actor-sprite-sheet/` rightly refused.
+
+Three things stop a name anyway, and all three are about the word, not the
+grouping:
+
+1. `RUN_RIGHT_LIMB` is **already taken** by a family that note holds —
+   `CV_2548` {3,5,6}, `CV_2552` {2,7,8}, `CV_255C` {1,8}, a different set of
+   pieces with no common top edge. Two series under one name would be worse
+   than none.
+2. That note reserved `ARM` for the actor pending confirmation, and
+   overriding a documented decision needs better than a new argument for the
+   same shape.
+3. A seventh piece, `CV_2276`, belongs to the series by every sign except the
+   one that matters here: it is drawn at the actor slot by unnamed labels with
+   no body frame beside it, so it has no frame evidence and cannot be placed.
+
+A live contact sheet settles that the seven are one series and nothing else.
+`LABEL_1918` in CAPSULE, reachable via `setup channel=0x38`, draws all seven
+in a row at y=100, x=160..280, spaced exactly 20 apart, in ascending offset
+order. It disagrees with the frame ordering — `CV_6108` is frame 0 but last
+in the row — so it groups the series without ordering it.
+
