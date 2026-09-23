@@ -507,3 +507,34 @@ built from the same five parts. The render is what prompted the measurement
 and it is not what decided it — the two "facings" are **not** mirror images
 (group boxes 158x157 against 98x157, child positions unrelated), which the
 thumbnails alone would not have told me.
+
+### The six charge dots, held for the same reason
+
+`--same-signature` also groups `CV_5C74`, `CV_5C7C`, `CV_5C84` with
+`CV_FIGURE_GUN_LIMB_LEFT_POSE_{01,02}_CHARGE_BLINK`, and `CV_5CBC`,
+`CV_5CC4`, `CV_5CCC` with the `GUN_UPPER_RIGHT` ones. Each is a 0x1 mark — a
+single dot — and the six unnamed ones mirror each other exactly, position for
+position:
+
+```
+  0x5C74  (-22.0,-38.5)      0x5CBC  (+22.0,-38.5)
+  0x5C7C  (-21.0,-39.5)      0x5CC4  (+21.0,-39.5)
+  0x5C84  (-11.0,-28.5)      0x5CCC  (+11.0,-28.5)
+```
+
+They continue their blocks' 8-byte offset runs directly below the named
+dots. Three things say no anyway:
+
+* they mirror only **each other**, so there is no named slot to inherit — the
+  same reason `CV_245C`/`CV_2D4E` are held;
+* their positions do not continue the named series. The left-hand named dots
+  sit at x −7, −7, −6 and y −51.5, −48.5, −46.5; these sit at −22, −21, −11
+  and y −38.5, −39.5, −28.5. That is a different set of positions, not the
+  next steps of one trajectory;
+* every routine that draws them is a placeholder or a mechanical name, so
+  there is no drawer evidence either.
+
+Worth noting for whoever picks this up: the tree already mirrors
+`..._GUN_LIMB_LEFT_...` against `..._GUN_UPPER_RIGHT_...`, two different part
+words for what the geometry says is one mirrored pair. That inconsistency is
+upstream of these six and would have to be settled first.
