@@ -154,6 +154,7 @@ checked against the receiving port's own guards.
 | ENDING 008..012, 019, 024, 038..041 | (same numbers) | `CINEMATIC_ENDING_{TERRACE,TERRACE_LIGHTS,PTERANODON_PERCHED,LESTER_ARRIVAL_F0,F1,LESTER_PRONE_F6,ALIEN_HEAD,CLOUD_SKY_PAGE3_F4..F6,CLOUD_BANK}` | high/medium |
 | TANK 100, 152, 155 | 087, 204, 207 + 126..128, 170..175, 276, 277 | `CINEMATIC_TANK_{FALLING_STREAK,AMBIENT_IMPACT_FLASH,AMBIENT_IMPACT_SCAR,ARENA_WRECK_*,CONSOLE_LAMP_*,CONSOLE_BUTTON_UNLIT,BEAM_VOLLEY_SEGMENT_3,CREATURE_RUN_F9}` | high/medium |
 | CAVES 606, 348, 607, 346, 608..611, 334 | 627, 369, 628, 367, 629..632, 355 | `CINEMATIC_CAVES_{CAVERN_WALL_AND_FLOOR,CAVERN_DOME,SCREEN_91_GLOW_MOUND,RING_OUTLINE,SCREEN_91_COLUMN_0..3,DIAGONAL_GIRDER}` | medium |
+| CAPSULE 212..215, 266..271 | 250..253, 254..257, 259, 260 | `CINEMATIC_BUDDY_{SEGMENT_BAR_F0..F3,DISCHARGE_FLASH_F0,F1,CHARGE_GLOW_F0..F3}` | medium |
 | INTRO 268..276 | 274..282 | `CINEMATIC_FRAGMENTS_RECEDING_F0..F8` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
@@ -387,6 +388,28 @@ it. The rule the two failures give:
 The byte gate caught the first failure and `undefined_symbols.py` caught the
 second, which is the division of labour `notes/HANDOFF.md` describes: run the
 symbol check *before* `make test`.
+
+## Group by the anchor a picture is drawn at
+
+A `video` whose x and y are a named pair of variables says whose picture it is
+before anything is rendered. CAPSULE draws its companion at
+`[BUDDY_X], [BUDDY_Y]`, and **73 of amiga/CAPSULE's still-numbered constants
+are drawn at exactly that anchor** -- a 302-constant stage narrowed to a pool
+whose subject is already known.
+
+```
+grep -o "offset=CINEMATIC_[0-9]*, x=\[BUDDY_X\], y=\[BUDDY_Y\]" \
+    src/levels/chahi_amiga_1991/CAPSULE.asm | sort -u
+```
+
+Grouping that pool by routine then gives the cycles directly, and the first ten
+came out in one batch. The same query works for any anchor the disassembly has
+already named -- `[HERO_X]`, `[0x21],[0x22]` (the actor, which
+`ACTOR_CHARGE_GLOW_*` is drawn at), `[BUDDY_X],[BUDDY_Y]`.
+
+It also gives cross-port matching a second method when the hash fails: msdos's
+`LABEL_570A` draws its four bar frames in the same slots as amiga's
+`LABEL_3FF8`, which matched three constants whose art differs between the ports.
 
 ## A composite has to be placed, or it is not a composite
 
