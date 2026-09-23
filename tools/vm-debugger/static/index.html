@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Another World — VM debugger</title>
+<link rel="stylesheet" href="/static/style.css">
+
+<header>
+  <span class="brand">Another World<em>VM debugger</em></span>
+  <label>branch <select id="branch"></select></label>
+  <label>stage <select id="stage"></select></label>
+  <button id="reset" title="Restart this stage from its entry point">reset</button>
+  <button id="run" class="primary">run</button>
+  <button id="step" title="Run exactly one frame">step</button>
+  <label class="speed">speed <input id="speed" type="range" min="1" max="60" value="20"></label>
+  <span id="frame" class="frame">frame 0</span>
+  <span class="grow"></span>
+  <label class="autopause" title="Stop the moment a frame draws anything that has no semantic name">
+    <input type="checkbox" id="autopause"> pause on unnamed
+  </label>
+  <span id="unnamed" class="badge">0 unnamed</span>
+</header>
+
+<main>
+  <section class="screen">
+    <div class="canvaswrap">
+      <canvas id="screen" width="320" height="200"></canvas>
+      <canvas id="overlay" width="320" height="200"></canvas>
+    </div>
+    <p class="hint" id="hint">
+      Pick a stage and press <b>run</b>. Click anything in <b>on screen</b> to make
+      its area blink, then describe it below — you do not have to invent a name.
+    </p>
+
+    <div class="annotate">
+      <h2>describe what you are looking at</h2>
+      <p class="sub" id="annotarget">nothing selected</p>
+      <textarea id="annotext" rows="5" placeholder="e.g. this is Buddy stuck in a tunnel while crawling. He is struggling to move further down because there is a ring in the way, and he is moving the ring with his hands as if trying to get rid of the obstruction."></textarea>
+      <div class="row">
+        <button id="annosave" class="primary" disabled>save annotation</button>
+        <span class="sub" id="annostatus"></span>
+      </div>
+      <p class="sub">
+        Saved to the log with the frame, the routine that drew it and everything
+        else on screen. An agent turns one description into names for the whole
+        sequence — <code>/api/guidance</code> reads the log back as one document.
+      </p>
+    </div>
+
+    <details class="rename">
+      <summary>rename directly (logged, never applied to the tree)</summary>
+      <div class="row">
+        <input id="rn-to" placeholder="CINEMATIC_..." size="42">
+        <button id="rn-save" disabled>rename selected</button>
+      </div>
+      <div class="row">
+        <input id="bulk-pat" placeholder="pattern, e.g. CAVES_ROCK" size="18">
+        <span>→</span>
+        <input id="bulk-rep" placeholder="replacement" size="18">
+        <button id="bulk-prev">preview</button>
+        <button id="bulk-save" disabled>rename all matching</button>
+      </div>
+      <ul id="bulk-list" class="bulk"></ul>
+    </details>
+  </section>
+
+  <aside>
+    <section>
+      <h2>on screen <span id="drawcount" class="sub"></span></h2>
+      <ul id="draws" class="draws"></ul>
+    </section>
+    <section>
+      <h2>threads</h2>
+      <ul id="threads" class="threads"></ul>
+    </section>
+    <section>
+      <h2>state</h2>
+      <p class="sub">Type a value to poke it. A stage entered cold has every
+        variable at zero, which is why <code>SCREEN_NUM</code> often has to be
+        set before anything draws.</p>
+      <ul id="vars" class="vars"></ul>
+    </section>
+    <section>
+      <h2>events</h2>
+      <ul id="events" class="events"></ul>
+    </section>
+  </aside>
+</main>
+
+<script type="module" src="/static/app.js"></script>

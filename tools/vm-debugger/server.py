@@ -16,15 +16,36 @@ This serves three things and does nothing clever with any of them:
    canonical tree, which `notes/shared-bank-naming/asset_naming_share.py`
    counts and which `notes/tree-name-drift/name_drift.py` shows the unified tree
    lags.
-3. **A rename log**, append-only, one JSON object per line.
+3. **An annotation log**, append-only, one JSON object per line.
 
-The log is the point of the whole exercise. A rename typed into the debugger is
-NOT applied to the tree here: applying a name is what
-`apply_branch_scoped_names.py` is for, and it has a validator with a
-family-gap rule, a collision check and a byte gate behind it, none of which a
-web form should be allowed to skip. What the log carries is a human saying what
-a picture *is*, with the frame they said it on -- guidance for an agent to turn
-into a proposal table with evidence, the same as any other batch.
+The log is the point of the whole exercise, and what it mostly carries is not
+names. It is **prose**: a human pointing at a picture on a frame and saying
+what is happening in it --
+
+    "this is Buddy stuck in a tunnel while crawling. He is clearly struggling
+     to move further down because there is a ring in the way, and he is moving
+     the ring with his hands as if trying to get rid of the obstruction"
+
+-- which is worth far more than a name typed into a box, for two reasons.
+
+**One annotation names a whole family.** The entry records which routine issued
+the draw, and "all the frames of that sequence" is exactly "the other draws in
+that routine" -- the same grouping `notes/render-and-name/frame_runs.py` works
+from. An agent reads the sentence above, finds the run, and names every frame of
+it with evidence, which is a job a rename box cannot do.
+
+**Concatenated, the annotations are a description of the game.** Every entry is
+tied to a stage, a frame and the constants on screen at that moment, so reading
+the log end to end -- `GET /api/guidance`, or `--export` -- gives an agent
+something no probe in `notes/` can produce: what the scenes *are*. Naming has
+been done from geometry and control flow; this is the only channel through which
+a person who has played the game can say what they are looking at.
+
+Renaming is still here, single and by pattern, and is logged the same way. But a
+rename typed into the debugger is NOT applied to the tree: applying a name is
+what `apply_branch_scoped_names.py` is for, and behind it sit a family-gap rule,
+a collision check, `undefined_symbols.py` and the byte gate -- none of which a
+web form should be allowed to skip.
 
 Usage
 -----
@@ -128,6 +149,149 @@ def var_names(branch: str, stage: str) -> dict:
     return out
 
 
+# --- address -> label ---------------------------------------------------
+# The listing has no address column: `awvm-disasm` emits labels, data and
+# instructions in address order and nothing else. But the order is enough.
+# Walk the bytecode from 0 computing each instruction's length, walk the
+# listing's instruction lines in step, and every label lands on the address of
+# the instruction that follows it.
+#
+# This is what turns a thread's raw pc into the routine it is in -- which is
+# what makes an annotation actionable, because "all the frames of that
+# sequence" is exactly "the other draws in that routine", the same grouping
+# `notes/render-and-name/frame_runs.py` works from.
+#
+# Self-checking: `vm.js` reports every `setup channel=N, address=A` it
+# executes, and every such A must be a key in this map. The test asserts it.
+
+RE_DB = re.compile(r"^\s*db\s+(.*)$")
+RE_INSTR = re.compile(r"^\s+\S")
+
+
+def _instr_len(rom: bytes, base: int, pc: int) -> int:
+    """Length in bytes of the instruction at `pc`, by the same encodings
+    `awvm/src/disasm.rs` decodes. Kept in this order so the two can be diffed."""
+    op = rom[base + pc]
+    if op & 0x80:
+        return 4                                  # compact video
+    if op & 0x40:                                 # full video
+        n = 3                                     # opcode + 2 offset bytes
+        n += 1                                    # x
+        if not op & 0x20:
+            n += 1 if not op & 0x10 else 0        # 16-bit literal x
+        n += 1                                    # y
+        if not op & 8 and not op & 4:
+            n += 1                                # 16-bit literal y
+        if not op & 2:
+            if op & 1:
+                n += 1                            # zoom from a variable
+        elif not op & 1:
+            n += 1                                # immediate zoom
+        return n
+    fixed = {0x00: 4, 0x01: 3, 0x02: 3, 0x03: 4, 0x04: 3, 0x05: 1, 0x06: 1,
+             0x07: 3, 0x08: 4, 0x09: 4, 0x0B: 3, 0x0C: 4, 0x0D: 2, 0x0E: 3,
+             0x0F: 3, 0x10: 2, 0x11: 1, 0x12: 6, 0x13: 3, 0x14: 4, 0x15: 4,
+             0x16: 4, 0x17: 4, 0x18: 6, 0x19: 3, 0x1A: 6, 0x1B: 1}
+    if op == 0x0A:                                # conditional jump, variable
+        sub = rom[base + pc + 1]
+        return 6 if sub & 0x80 else (7 if sub & 0x40 else 6)
+    return fixed.get(op, 1)
+
+
+def label_addresses(branch: str, stage: str, rom: bytes) -> dict:
+    """label -> address, by walking listing order against bytecode order."""
+    f = ROOT / "src" / "levels" / branch / f"{stage}.asm"
+    sid = STAGE_ID.get(stage)
+    if not f.is_file() or sid is None or not rom:
+        return {}
+    base = sid * 0x10000
+    pc = 0
+    pending: list[str] = []
+    out: dict[str, int] = {}
+    for line in f.read_text(errors="replace").splitlines():
+        code = line.split(";", 1)[0].rstrip()
+        if not code.strip():
+            continue
+        m = RE_LABEL.match(code)
+        if m:
+            pending.append(m.group(1))
+            continue
+        head = code.strip()
+        if RE_EQU.match(head) or head.startswith((".", "#")):
+            continue
+        # `org` sets the cursor rather than emitting bytes. Missing this put
+        # every label three bytes late: the listing opens with `org 0x0000`,
+        # which was being counted as whatever instruction sits at 0.
+        if head.startswith("org "):
+            for name in pending:
+                out.setdefault(name, pc)
+            pending = []
+            pc = int(head.split()[1], 0)
+            continue
+        if not RE_INSTR.match(code):
+            continue
+        for name in pending:
+            out.setdefault(name, pc)
+        pending = []
+        m = RE_DB.match(code)
+        if m:
+            pc += len([b for b in m.group(1).split(",") if b.strip()])
+            continue
+        if pc >= 0x10000:
+            break
+        pc += _instr_len(rom, base, pc)
+    return out
+
+
+def guidance() -> str:
+    """Every annotation, in order, as one document an agent can read.
+
+    The user's point, and it is a good one: any single annotation names one
+    family, but *concatenated* they are a description of the game. Nothing else
+    in this repository can produce that. Every probe in `notes/` reasons from
+    geometry, control flow or bank layout; none of them has ever been able to
+    say what a scene is about. A person who has played the game can, and this is
+    the channel.
+
+    Grouped by stage, because that is how the naming work is batched, and each
+    entry keeps its frame, the routine that drew it and what else was on screen,
+    so a claim can be checked rather than taken on trust.
+    """
+    if not LOG.is_file():
+        return "# No annotations yet.\n"
+    rows = [json.loads(l) for l in LOG.read_text().splitlines() if l.strip()]
+    notes = [r for r in rows if r.get("kind") == "annotate" and r.get("text")]
+    out = ["# What the game is doing, as described at the screen",
+           "",
+           f"{len(notes)} annotation(s) from the VM debugger, in the order they",
+           "were made. Each was typed while looking at the frame it names.",
+           ""]
+    by_stage: dict[str, list] = {}
+    for r in notes:
+        by_stage.setdefault(f"{r.get('branch')}/{r.get('stage')}", []).append(r)
+    for key, group in by_stage.items():
+        out += [f"## {key}", ""]
+        for r in group:
+            tgt = r.get("target") or {}
+            name = tgt.get("name") or "?"
+            off = tgt.get("offset")
+            offs = f"0x{off:04X}" if isinstance(off, int) else "?"
+            out.append(f"### {name}  ({offs}, frame {r.get('frame')})")
+            if r.get("routine"):
+                out.append(f"drawn by `{r['routine']}`")
+            out += ["", r["text"], ""]
+            others = [d.get("name") for d in (r.get("on_screen") or [])
+                      if d.get("name") and d.get("offset") != off]
+            if others:
+                out += ["on screen with it: " + ", ".join(
+                    f"`{n}`" for n in dict.fromkeys(others)), ""]
+            sib = [d.get("name") for d in (r.get("routine_draws") or [])]
+            if sib:
+                out += ["the same routine also draws: " + ", ".join(
+                    f"`{n}`" for n in dict.fromkeys(sib)), ""]
+    return "\n".join(out) + "\n"
+
+
 class Handler(BaseHTTPRequestHandler):
     romsets: Path = Path()
 
@@ -167,7 +331,15 @@ class Handler(BaseHTTPRequestHandler):
             return self._send(200, p.read_bytes(), "application/octet-stream")
         if path.startswith("/api/names/"):
             _, _, _, branch, stage = path.split("/", 4)
-            return self._json(names_for(branch, stage))
+            out = names_for(branch, stage)
+            port = BRANCH_PORT.get(branch)
+            rom = self.romsets / (port or "") / "romset" / "bytecode.rom"
+            addrs = label_addresses(branch, stage,
+                                    rom.read_bytes() if rom.is_file() else b"")
+            out["labels"] = addrs
+            out["by_address"] = {str(a): n for n, a in
+                                 sorted(addrs.items(), key=lambda kv: -kv[1])}
+            return self._json(out)
         if path == "/api/config":
             return self._json({
                 "branches": {b: p for b, p in BRANCH_PORT.items()
@@ -176,6 +348,9 @@ class Handler(BaseHTTPRequestHandler):
                 "stages": STAGE_ID,
                 "romsets": str(self.romsets),
             })
+        if path == "/api/guidance":
+            return self._send(200, guidance().encode(),
+                              "text/plain; charset=utf-8")
         if path == "/api/renames":
             if not LOG.is_file():
                 return self._json([])
@@ -191,24 +366,34 @@ class Handler(BaseHTTPRequestHandler):
             payload = json.loads(self.rfile.read(n) or b"{}")
         except json.JSONDecodeError as exc:
             return self._json({"error": f"bad json: {exc}"}, 400)
+        kind = payload.get("kind", "rename")
         rows = payload.get("renames") or []
-        if not rows:
+        text = (payload.get("text") or "").strip()
+        if kind == "annotate" and not text:
+            return self._json({"error": "an annotation needs text"}, 400)
+        if kind != "annotate" and not rows:
             return self._json({"error": "no renames in payload"}, 400)
         entry = {
             "at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+            "kind": kind,
             "branch": payload.get("branch"),
             "stage": payload.get("stage"),
-            "mode": payload.get("mode", "single"),
+            "frame": payload.get("frame"),
+            # what the human was pointing at, and what else was on screen with
+            # it -- the context an agent needs to find the rest of the sequence
+            "target": payload.get("target"),
+            "routine": payload.get("routine"),
+            "routine_draws": payload.get("routine_draws"),
+            "on_screen": payload.get("on_screen"),
+            "text": text,
             "pattern": payload.get("pattern"),
             "replacement": payload.get("replacement"),
-            "note": payload.get("note", ""),
-            "frame": payload.get("frame"),
-            "on_screen": payload.get("on_screen"),
             "renames": rows,
         }
         with LOG.open("a") as fh:
             fh.write(json.dumps(entry) + "\n")
-        return self._json({"ok": True, "logged": len(rows), "at": entry["at"]})
+        return self._json({"ok": True, "kind": kind,
+                           "logged": len(rows) or 1, "at": entry["at"]})
 
     def _file(self, p: Path):
         if not p.is_file():
@@ -226,8 +411,25 @@ def main() -> int:
     ap.add_argument("--romsets", default=str(
         ROOT.parent / "another-world-archaeology" / "tmp" / "output"),
         help="directory holding <port>/romset/*.rom")
+    ap.add_argument("--export", action="store_true",
+                    help="print the annotation log as one readable document "
+                         "and exit -- what /api/guidance serves")
+    ap.add_argument("--dump", nargs=2, metavar=("BRANCH", "STAGE"),
+                    help="print the names+labels JSON for one stage and exit, "
+                         "which is what tests/check_label_addresses.mjs reads")
     args = ap.parse_args()
     Handler.romsets = Path(args.romsets).resolve()
+    if args.export:
+        print(guidance(), end="")
+        return 0
+    if args.dump:
+        branch, stage = args.dump
+        out = names_for(branch, stage)
+        rp = Handler.romsets / (BRANCH_PORT.get(branch) or "") / "romset" / "bytecode.rom"
+        out["labels"] = label_addresses(branch, stage,
+                                        rp.read_bytes() if rp.is_file() else b"")
+        print(json.dumps(out))
+        return 0
     if not Handler.romsets.is_dir():
         print(f"romsets not found: {Handler.romsets}\n"
               f"run `make extract` in the archaeology repo, or pass --romsets",

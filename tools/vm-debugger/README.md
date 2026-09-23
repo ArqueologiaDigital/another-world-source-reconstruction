@@ -17,17 +17,45 @@ picture.
 
 Stdlib Python only, no build step, no install.
 
+## The workflow: describe, don't name
+
+The thing to type here is **not a name**. It is a sentence:
+
+> this is Buddy stuck in a tunnel while crawling. He is clearly struggling to
+> move further down because there is a ring in the way, and he is moving the
+> ring with his hands as if trying to get rid of the obstruction
+
+Click the asset in **on screen**, watch its area blink so you are sure you have
+the right one, and describe what is happening. That is worth more than a name
+typed into a box, for two reasons.
+
+**One description names a whole family.** The log entry records the routine that
+issued the draw, and "all the frames of that sequence" is exactly "the other
+draws in that routine" -- the same grouping
+`notes/render-and-name/frame_runs.py` works from, and it is stored in the entry
+as `routine_draws`. An agent reads the sentence, finds the run, and names every
+frame of it with the evidence a proposal table needs. A rename box cannot do
+that.
+
+**Concatenated, the annotations are a description of the game.**
+
+    curl http://127.0.0.1:8017/api/guidance
+    python3 tools/vm-debugger/server.py --export
+
+Every probe in `notes/` reasons from geometry, control flow or bank layout. Not
+one of them has ever been able to say what a scene is *about*. A person who has
+played the game can, and this is the only channel through which that reaches the
+naming effort. Read end to end, the log is the game's semantics in the words of
+someone who watched it happen.
+
 ## What it does not do
 
-**It does not rename anything in the tree.** A rename typed here is appended to
+**It does not rename anything in the tree.** Renaming is here -- one asset, or
+all names matching a pattern, with a preview -- and both are appended to
 `rename_log.jsonl` and nothing else. Applying a name is what
 `apply_branch_scoped_names.py` is for, and behind it sit a family-gap rule, a
-collision check, `undefined_symbols.py` and the byte gate -- none of which a web
+collision check, `undefined_symbols.py` and the byte gate; none of which a web
 form should be allowed to skip.
-
-What the log carries is a **human saying what a picture is, with the frame they
-said it on**. That is guidance for an agent to turn into a proposal table with
-evidence, exactly like any other batch in `notes/render-and-name/`.
 
 ## Why there is a VM in here at all
 
@@ -118,9 +146,52 @@ shows `SCREEN_NUM` and `HERO_X`, not `[0x67]` and `[0x01]`.
 | `/api/rom/<port>/<file>` | a ROM slab file, straight from the archaeology repo |
 | `/api/names/<branch>/<stage>` | offset -> semantic name, from `src/levels/<branch>/<STAGE>.asm` |
 | `/api/renames` | the log so far |
-| `POST /api/rename` | append one entry to the log |
+| `POST /api/rename` | append one entry to the log: `annotate`, `rename` or `bulk_rename` |
+| `/api/guidance` | the annotations concatenated into one readable document |
 
 Names come from the **canonical** tree, which is what
 `notes/shared-bank-naming/asset_naming_share.py` counts. The unified tree lags
 it by 452 missing and 544 moved names (`notes/tree-name-drift/`), so reading the
 canonical files is the only way the debugger's labels match the record.
+
+
+## The panels
+
+| panel | what it shows |
+| --- | --- |
+| **on screen** | every distinct constant this frame drew: its name in green, or its number in red when it still has none, with the offset, the bank (`CV` for the shared one), the thread and how many times it was drawn |
+| **threads** | every live channel, its pc, and the routine that pc sits in; frozen ones dimmed |
+| **state** | the VM variables the disassembly has names for, editable -- poke `SCREEN_NUM` to reach a stage's scenes |
+| **events** | what the frame did besides draw: thread setups, freezes, page blits, bank switches, and any illegal opcode |
+
+The counter in the header is the number of distinct constants on the current
+frame with no semantic name, and **pause on unnamed** stops the moment a frame
+draws one and selects it. That turns the debugger into a way of walking the game
+until it shows you something nobody has named yet.
+
+Clicking a row makes that constant's area blink. The highlight re-fills the
+polygons the renderer produced for *that draw* -- not a bounding box and not a
+mask bitmap -- so what blinks is exactly the pixels it painted.
+
+## Routine names from a listing with no addresses
+
+`awvm-disasm` emits labels, data and instructions in address order and no
+address column. `label_addresses` in `server.py` recovers them by walking the
+bytecode's instruction lengths in step with the listing's instruction lines.
+
+That walk is only as good as its length table, and a wrong length anywhere
+shifts every label after it -- silently, because a shifted label is still a
+plausible name. The first run put every label three bytes late: `org 0x0000` was
+being counted as an instruction.
+
+So it is checked. Every `setup channel=N, address=A` the VM executes targets a
+label, because that is what the disassembler declared them from, and
+`tests/check_label_addresses.mjs` requires every such address to be a computed
+label address:
+
+```
+  INTRO    335 labels,  12 setups   every address is a label address
+  PRISON  2113 labels,  35 setups   every address is a label address
+  TANK     224 labels,  49 setups   every address is a label address
+  CAVES   2917 labels,  15 setups   every address is a label address
+```

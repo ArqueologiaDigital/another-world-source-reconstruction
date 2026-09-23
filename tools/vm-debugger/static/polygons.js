@@ -109,7 +109,11 @@ export class PolygonRenderer {
     }
     const points = new Array(n);
     for (let i = 0; i < n; i++) points[i] = [px[i], py[i]];
-    out.push({ color: rgb, points });
+    // `index` is what the video page actually stores -- the palette is applied
+    // when the page is displayed, not when it is drawn. `color` is carried too
+    // because the Rust renderer's SVG writer emits rgb and the comparison test
+    // checks against that.
+    out.push({ color: rgb, index: color % 16, points });
   }
 
   readAndDrawHierarchy(palette, zoom, pgcX, pgcY, out) {
