@@ -13,14 +13,14 @@ GUN_PICKUP_SCENE:
 	break
 	mov [0x0A], 0x0001
 	selectVideoPage 0x00
-	video offset=CINEMATIC_172, x=253, y=181
+	video offset=CINEMATIC_PRISON_GUN_ON_GROUND, x=253, y=181
 	selectVideoPage 0xFF
 	unfreezeChannels first=0x00, last=0x3A
 	copyVideoPage src=0x00, dst=0x03
 	fill page=0x00, color=0x05
 	selectVideoPage 0x00
-	video offset=CINEMATIC_173, x=160, y=100
-	video offset=CINEMATIC_174, x=160, y=100
+	video offset=CINEMATIC_PRISON_GUN_CLOSEUP_BACKDROP_0, x=160, y=100
+	video offset=CINEMATIC_PRISON_GUN_CLOSEUP_BACKDROP_1, x=160, y=100
 	video offset=CINEMATIC_THE_GUN, x=160, y=100
 	selectVideoPage 0xFF
 	mov [PAUSE_SLICES], 0x0001
@@ -34,49 +34,49 @@ GUN_PICKUP_SCENE:
 	setPalette 0x12
 	break
 	setPalette 0x06
-	video offset=CINEMATIC_176, x=160, y=100
+	video offset=CINEMATIC_PRISON_GUN_INDICATOR_DARK, x=160, y=100
 	break
 	fill page=0x00, color=0x05
 	selectVideoPage 0x00
-	video offset=CINEMATIC_173, x=160, y=100
-	video offset=CINEMATIC_174, x=160, y=100
+	video offset=CINEMATIC_PRISON_GUN_CLOSEUP_BACKDROP_0, x=160, y=100
+	video offset=CINEMATIC_PRISON_GUN_CLOSEUP_BACKDROP_1, x=160, y=100
 	selectVideoPage 0xFF
-	video offset=CINEMATIC_176, x=160, y=100
+	video offset=CINEMATIC_PRISON_GUN_INDICATOR_DARK, x=160, y=100
 	break
 	mov [PAUSE_SLICES], 0x0004
 	mov [0xC8], 0x0005
 
 GUN_FLICKER_HOLD_177:
 	video offset=CINEMATIC_THE_GUN, x=160, y=100
-	video offset=CINEMATIC_177, x=160, y=100
+	video offset=CINEMATIC_PRISON_GUN_INDICATOR_LIT, x=160, y=100
 	break
 	djnz [0xC8], GUN_FLICKER_HOLD_177
 	mov [0xC8], 0x0005
 
 GUN_FLICKER_HOLD_176:
 	video offset=CINEMATIC_THE_GUN, x=160, y=100
-	video offset=CINEMATIC_176, x=160, y=100
+	video offset=CINEMATIC_PRISON_GUN_INDICATOR_DARK, x=160, y=100
 	break
 	djnz [0xC8], GUN_FLICKER_HOLD_176
 	mov [0xC8], 0x0005
 
 GUN_FLICKER_FINAL_HOLD:
 	video offset=CINEMATIC_THE_GUN, x=160, y=100
-	video offset=CINEMATIC_177, x=160, y=100
+	video offset=CINEMATIC_PRISON_GUN_INDICATOR_LIT, x=160, y=100
 	break
 	djnz [0xC8], GUN_FLICKER_FINAL_HOLD
 	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F0, x=160, y=100
-	video offset=CINEMATIC_177, x=160, y=100
+	video offset=CINEMATIC_PRISON_GUN_INDICATOR_LIT, x=160, y=100
 	break
 	play id=0x0055, freq=0x14, vol=0x40, channel=0x00
 	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F1, x=160, y=100
-	video offset=CINEMATIC_176, x=160, y=100
+	video offset=CINEMATIC_PRISON_GUN_INDICATOR_DARK, x=160, y=100
 	break
 	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F2, x=160, y=100
-	video offset=CINEMATIC_176, x=160, y=100
+	video offset=CINEMATIC_PRISON_GUN_INDICATOR_DARK, x=160, y=100
 	break
 	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F3, x=160, y=100
-	video offset=CINEMATIC_176, x=160, y=100
+	video offset=CINEMATIC_PRISON_GUN_INDICATOR_DARK, x=160, y=100
 	break
 	video offset=CINEMATIC_LESTER_HAND_GRABBING_GUN_F4, x=160, y=100
 	break
