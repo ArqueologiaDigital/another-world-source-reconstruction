@@ -55,7 +55,7 @@ PRISON_HERO_CRAWL_LEFT_START:
 
 LABEL_8C35:
 	break
-	video type=0, offset=CV_48D8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0003
 	break
 	jmp PRISON_HERO_CRAWL_RIGHT_STOP

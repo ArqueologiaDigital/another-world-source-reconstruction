@@ -1,0 +1,41 @@
+# The hero's crawl: 11 poses, used in BOTH directions.
+#
+# Direction is deliberately absent from these names, and that is a finding
+# rather than caution. `crawl_one_cycle_two_labels.py` showed CAVES indexes
+# one cycle forwards as HERO_CRAWL_LEFT_PHASE_n and backwards as
+# HERO_CRAWL_RIGHT_PHASE_(15-n) -- six pieces claimed both ways, the two
+# phase numbers summing to exactly 15 every time.
+#
+# That left open whether one labeling was simply wrong. The anchor arithmetic
+# settles it: every LEFT routine moves HERO_X NEGATIVELY (-1..-4) and every
+# RIGHT routine moves it POSITIVELY (+1..+4). Both directions are real
+# animations, and they draw the same eleven pictures. So the art is
+# direction-neutral and a LEFT or RIGHT in its name would be false half the
+# time.
+#
+# POSE, not F: a piece is phase n crawling left and phase 15-n crawling
+# right, so no member has a single frame number.
+#
+# The index is the LEFT cycle's own phase order, rebased from 2..12 to 0..10,
+# where phases 11 and 12 are the RIGHT-only pieces mapped through
+# left = 15 - right. Read off the machine's numbering, not assigned. It
+# independently reproduces the rotation this bank uses elsewhere -- ascending
+# offset with the LOWEST offset last, the same rule as
+# ../actor-sprite-sheet/walk_left_upper.map and walk_right_upper.map:
+#
+#   0x47DC 0x485C 0x48D8 0x4954 0x49B0 0x4A04 0x4A6C 0x4ACC 0x4B4C 0x4BC4
+#   then 0x4754
+#
+# Geometry is one class: 13.0..15.5 tall, 13.0..19.0 wide, 5..9 leaves, all
+# drawn at [HERO_X] only, none behind a guard.
+CV_47DC HERO_CRAWL_POSE_00
+CV_485C HERO_CRAWL_POSE_01
+CV_48D8 HERO_CRAWL_POSE_02
+CV_4954 HERO_CRAWL_POSE_03
+CV_49B0 HERO_CRAWL_POSE_04
+CV_4A04 HERO_CRAWL_POSE_05
+CV_4A6C HERO_CRAWL_POSE_06
+CV_4ACC HERO_CRAWL_POSE_07
+CV_4B4C HERO_CRAWL_POSE_08
+CV_4BC4 HERO_CRAWL_POSE_09
+CV_4754 HERO_CRAWL_POSE_10

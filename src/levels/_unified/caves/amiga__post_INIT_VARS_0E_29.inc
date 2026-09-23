@@ -299,7 +299,7 @@ LABEL_1681:
 	sub [HERO_X], 0x0005
 	break
 	mov [0x0A], 0x0001
-	video type=0, offset=CV_485C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0003
 	break
 	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40

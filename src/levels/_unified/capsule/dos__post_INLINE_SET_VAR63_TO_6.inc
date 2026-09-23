@@ -51,7 +51,7 @@ LABEL_B82F:
 
 CAPSULE_WALK_RIGHT_DRAW_CV142_MULTISTEP_L5:
 	break
-	video type=0, offset=CV_48D8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0003
 	break
 	jmp HERO_WALK_RIGHT_STOP_TO_GUN_READY

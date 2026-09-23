@@ -1,6 +1,6 @@
 PRISON_HERO_CRAWL_RIGHT_STOP:
 	jne [0xB6], 0x00, LABEL_8C98
-	video type=0, offset=CV_485C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0003
 	break
 	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -19,7 +19,7 @@ LABEL_8C97:
 	db 0x11
 
 LABEL_8C98:
-	video type=0, offset=CV_485C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	je [HERO_ACTION_POS_MASK], 0x05, LABEL_8CAE
 	je [HERO_ACTION_POS_MASK], 0x06, PRISON_HERO_CRAWL_LEFT_PHASE_00
@@ -28,75 +28,75 @@ LABEL_8CAD:
 	db 0x11
 
 LABEL_8CAE:
-	video type=0, offset=CV_485C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0002
 	break
 	je [HERO_POS_MASK], 0x06, PRISON_HERO_CRAWL_LEFT_PHASE_01
 
 PRISON_HERO_ACTION_POS_5_DRAW_CV163_THEN_HERO_POS_6:
 	jne [HERO_ACTION_POS_MASK], 0x05, PRISON_HERO_CRAWL_RIGHT_STOP
-	video type=0, offset=CV_47DC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	je [HERO_POS_MASK], 0x06, LABEL_8E52
 
 PRISON_HERO_CRAWL_RIGHT_PHASE_02:
 	jne [HERO_ACTION_POS_MASK], 0x05, PRISON_HERO_CRAWL_RIGHT_STOP
-	video type=0, offset=CV_4754, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_10, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
 	break
 	je [HERO_POS_MASK], 0x06, LABEL_8F24
 
 PRISON_HERO_CRAWL_RIGHT_PHASE_03:
 	jne [HERO_ACTION_POS_MASK], 0x05, PRISON_HERO_CRAWL_RIGHT_STOP
-	video type=0, offset=CV_4BC4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0002
 	break
 	je [HERO_POS_MASK], 0x06, PRISON_HERO_CRAWL_LEFT_PHASE_04
 
 PRISON_HERO_CRAWL_RIGHT_PHASE_04:
 	jne [HERO_ACTION_POS_MASK], 0x05, PRISON_HERO_CRAWL_RIGHT_STOP
-	video type=0, offset=CV_4B4C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0004
 	break
 	je [HERO_POS_MASK], 0x06, PRISON_HERO_CRAWL_LEFT_PHASE_05
 
 PRISON_HERO_WALK_RIGHT_PHASE_05:
-	video type=0, offset=CV_4ACC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [HERO_ACTION_POS_MASK], 0x05, WALK_RIGHT_DRAW_CV142_MULTISTEP
 	add [HERO_X], 0x0003
 	break
 	je [HERO_POS_MASK], 0x06, PRISON_HERO_CRAWL_LEFT_PHASE_06
 
 PRISON_HERO_WALK_RIGHT_PHASE_06:
-	video type=0, offset=CV_4A6C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [HERO_ACTION_POS_MASK], 0x05, WALK_RIGHT_DRAW_CV142_MULTISTEP
 	add [HERO_X], 0x0002
 	break
 	je [HERO_POS_MASK], 0x06, PRISON_HERO_CRAWL_LEFT_PHASE_07
 
 PRISON_HERO_WALK_RIGHT_PHASE_07:
-	video type=0, offset=CV_4A04, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [HERO_ACTION_POS_MASK], 0x05, WALK_RIGHT_DRAW_CV142_MULTISTEP
 	add [HERO_X], 0x0001
 	break
 	je [HERO_POS_MASK], 0x06, PRISON_HERO_CRAWL_LEFT_PHASE_08
 
 PRISON_HERO_WALK_RIGHT_PHASE_08:
-	video type=0, offset=CV_49B0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [HERO_ACTION_POS_MASK], 0x05, LABEL_8C35
 	add [HERO_X], 0x0002
 	break
 	je [HERO_POS_MASK], 0x06, PRISON_HERO_CRAWL_LEFT_PHASE_09
 
 PRISON_HERO_WALK_RIGHT_PHASE_09:
-	video type=0, offset=CV_4954, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [HERO_ACTION_POS_MASK], 0x05, LABEL_8C35
 	add [HERO_X], 0x0003
 	break
 	je [HERO_POS_MASK], 0x06, PRISON_HERO_CRAWL_LEFT_PHASE_10
 
 LABEL_8D80:
-	video type=0, offset=CV_48D8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0002
 	break
 	je [HERO_POS_MASK], 0x06, PRISON_HERO_CRAWL_LEFT_PHASE_00
@@ -130,7 +130,7 @@ LABEL_8DD8:
 
 LABEL_8DD9:
 	break
-	video type=0, offset=CV_4ACC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0003
 	break
 	jmp PRISON_HERO_CRAWL_LEFT_STOP

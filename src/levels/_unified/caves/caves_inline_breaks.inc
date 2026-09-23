@@ -56,7 +56,7 @@ HERO_INPUT_RUN_RIGHT_DISPATCH:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 HERO_PRONE_RISE_RIGHT:
 	je [SCREEN_NUM], 0x25, CAVES_WALK_RIGHT_DRAW_CV142_MULTISTEP_L1
-	video type=0, offset=CV_485C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0003
 	break
 	video type=0, offset=HERO_PRONE_TRANSITION_RIGHT_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -75,7 +75,7 @@ CAVES_WALK_RIGHT_DRAW_CV142_MULTISTEP_L2:
 	db 0x11
 
 CAVES_WALK_RIGHT_DRAW_CV142_MULTISTEP_L1:
-	video type=0, offset=CV_485C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	je [HERO_ACTION_POS_MASK], 0x05, CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L9
 	je [HERO_ACTION_POS_MASK], 0x06, CAVES_HERO_CRAWL_LEFT_PHASE_3
@@ -84,75 +84,75 @@ CAVES_WALK_RIGHT_DRAW_CV142_MULTISTEP_L3:
 	db 0x11
 
 CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L9:
-	video type=0, offset=CV_485C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0002
 	break
 	je [HERO_POS_MASK], 0x06, CAVES_HERO_CRAWL_LEFT_PHASE_2
 
 CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L7:
 	jne [HERO_ACTION_POS_MASK], 0x05, HERO_PRONE_RISE_RIGHT
-	video type=0, offset=CV_47DC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	je [HERO_POS_MASK], 0x06, CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L5
 
 CAVES_HERO_CRAWL_RIGHT_PHASE_3:
 	jne [HERO_ACTION_POS_MASK], 0x05, HERO_PRONE_RISE_RIGHT
-	video type=0, offset=CV_4754, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_10, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
 	break
 	je [HERO_POS_MASK], 0x06, CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L26
 
 CAVES_HERO_CRAWL_RIGHT_PHASE_4:
 	jne [HERO_ACTION_POS_MASK], 0x05, HERO_PRONE_RISE_RIGHT
-	video type=0, offset=CV_4BC4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0002
 	break
 	je [HERO_POS_MASK], 0x06, CAVES_HERO_CRAWL_LEFT_PHASE_10
 
 CAVES_HERO_CRAWL_RIGHT_PHASE_5:
 	jne [HERO_ACTION_POS_MASK], 0x05, HERO_PRONE_RISE_RIGHT
-	video type=0, offset=CV_4B4C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0004
 	break
 	je [HERO_POS_MASK], 0x06, CAVES_HERO_CRAWL_LEFT_PHASE_9
 
 CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L22:
-	video type=0, offset=CV_4ACC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [HERO_ACTION_POS_MASK], 0x05, WALK_RIGHT_DRAW_CV142_MULTISTEP
 	add [HERO_X], 0x0003
 	break
 	je [HERO_POS_MASK], 0x06, CAVES_HERO_CRAWL_LEFT_PHASE_8
 
 CAVES_HERO_CRAWL_RIGHT_PHASE_7:
-	video type=0, offset=CV_4A6C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [HERO_ACTION_POS_MASK], 0x05, WALK_RIGHT_DRAW_CV142_MULTISTEP
 	add [HERO_X], 0x0002
 	break
 	je [HERO_POS_MASK], 0x06, CAVES_HERO_CRAWL_LEFT_PHASE_7
 
 CAVES_HERO_CRAWL_RIGHT_PHASE_8:
-	video type=0, offset=CV_4A04, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [HERO_ACTION_POS_MASK], 0x05, WALK_RIGHT_DRAW_CV142_MULTISTEP
 	add [HERO_X], 0x0001
 	break
 	je [HERO_POS_MASK], 0x06, CAVES_HERO_CRAWL_LEFT_PHASE_6
 
 CAVES_HERO_CRAWL_RIGHT_PHASE_9:
-	video type=0, offset=CV_49B0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [HERO_ACTION_POS_MASK], 0x05, CAVES_WALK_RIGHT_DRAW_CV142_MULTISTEP_L4
 	add [HERO_X], 0x0002
 	break
 	je [HERO_POS_MASK], 0x06, CAVES_HERO_CRAWL_LEFT_PHASE_5
 
 CAVES_HERO_CRAWL_RIGHT_PHASE_10:
-	video type=0, offset=CV_4954, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [HERO_ACTION_POS_MASK], 0x05, CAVES_WALK_RIGHT_DRAW_CV142_MULTISTEP_L4
 	add [HERO_X], 0x0003
 	break
 	je [HERO_POS_MASK], 0x06, CAVES_HERO_CRAWL_LEFT_PHASE_4
 
 CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L11:
-	video type=0, offset=CV_48D8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0002
 	break
 	je [HERO_POS_MASK], 0x06, CAVES_HERO_CRAWL_LEFT_PHASE_3
@@ -183,7 +183,7 @@ CAVES_WALK_RIGHT_DRAW_CV142_MULTISTEP_L5:
 
 CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L19:
 	break
-	video type=0, offset=CV_4ACC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0003
 	break
 	jmp HERO_PRONE_RISE_LEFT
@@ -193,7 +193,7 @@ CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L19:
 STEP_LEFT4_DRAW_CV140_LEFT4:
 	sub [HERO_X], 0x0004
 	break
-	video type=0, offset=CV_485C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0004
 	break
 .endif
@@ -201,7 +201,7 @@ STEP_LEFT4_DRAW_CV140_LEFT4:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 HERO_PRONE_RISE_LEFT:
 	je [SCREEN_NUM], 0x25, HERO_PRONE_IDLE_LEFT_LOOP
-	video type=0, offset=CV_4BC4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0003
 	break
 	video type=0, offset=HERO_PRONE_TRANSITION_LEFT_F04, x=[HERO_X], y=[HERO_Y], zoom=0x40
@@ -220,7 +220,7 @@ CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L3:
 	db 0x11
 
 HERO_PRONE_IDLE_LEFT_LOOP:
-	video type=0, offset=CV_4BC4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	je [HERO_ACTION_POS_MASK], 0x05, CAVES_HERO_CRAWL_RIGHT_PHASE_4
 	je [HERO_ACTION_POS_MASK], 0x06, CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L5
@@ -229,61 +229,61 @@ CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L6:
 	db 0x11
 
 CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L5:
-	video type=0, offset=CV_4754, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_10, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
 	je [HERO_POS_MASK], 0x05, CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L7
 
 CAVES_HERO_CRAWL_LEFT_PHASE_2:
 	jne [HERO_ACTION_POS_MASK], 0x06, HERO_PRONE_RISE_LEFT
-	video type=0, offset=CV_47DC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0002
 	break
 	je [HERO_POS_MASK], 0x05, CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L9
 
 CAVES_HERO_CRAWL_LEFT_PHASE_3:
 	jne [HERO_ACTION_POS_MASK], 0x06, HERO_PRONE_RISE_LEFT
-	video type=0, offset=CV_485C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0002
 	break
 	je [HERO_POS_MASK], 0x05, CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L11
 
 CAVES_HERO_CRAWL_LEFT_PHASE_4:
-	video type=0, offset=CV_48D8, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [HERO_ACTION_POS_MASK], 0x06, STEP_LEFT4_DRAW_CV140_LEFT4
 	sub [HERO_X], 0x0003
 	break
 	je [HERO_POS_MASK], 0x05, CAVES_HERO_CRAWL_RIGHT_PHASE_10
 
 CAVES_HERO_CRAWL_LEFT_PHASE_5:
-	video type=0, offset=CV_4954, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [HERO_ACTION_POS_MASK], 0x06, STEP_LEFT4_DRAW_CV140_LEFT4
 	sub [HERO_X], 0x0002
 	break
 	je [HERO_POS_MASK], 0x05, CAVES_HERO_CRAWL_RIGHT_PHASE_9
 
 CAVES_HERO_CRAWL_LEFT_PHASE_6:
-	video type=0, offset=CV_49B0, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [HERO_ACTION_POS_MASK], 0x06, STEP_LEFT4_DRAW_CV140_LEFT4
 	sub [HERO_X], 0x0001
 	break
 	je [HERO_POS_MASK], 0x05, CAVES_HERO_CRAWL_RIGHT_PHASE_8
 
 CAVES_HERO_CRAWL_LEFT_PHASE_7:
-	video type=0, offset=CV_4A04, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_05, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [HERO_ACTION_POS_MASK], 0x06, CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L19
 	sub [HERO_X], 0x0002
 	break
 	je [HERO_POS_MASK], 0x05, CAVES_HERO_CRAWL_RIGHT_PHASE_7
 
 CAVES_HERO_CRAWL_LEFT_PHASE_8:
-	video type=0, offset=CV_4A6C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_06, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [HERO_ACTION_POS_MASK], 0x06, CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L19
 	sub [HERO_X], 0x0003
 	break
 	je [HERO_POS_MASK], 0x05, CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L22
 
 CAVES_HERO_CRAWL_LEFT_PHASE_9:
-	video type=0, offset=CV_4ACC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_07, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [HERO_ACTION_POS_MASK], 0x06, CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L19
 	sub [HERO_X], 0x0004
 	break
@@ -291,14 +291,14 @@ CAVES_HERO_CRAWL_LEFT_PHASE_9:
 
 CAVES_HERO_CRAWL_LEFT_PHASE_10:
 	jne [HERO_ACTION_POS_MASK], 0x06, HERO_PRONE_RISE_LEFT
-	video type=0, offset=CV_4B4C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_08, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0002
 	break
 	je [HERO_POS_MASK], 0x05, CAVES_HERO_CRAWL_RIGHT_PHASE_4
 
 CAVES_STEP_LEFT4_DRAW_CV140_LEFT4_L26:
 	jne [HERO_ACTION_POS_MASK], 0x06, HERO_PRONE_RISE_LEFT
-	video type=0, offset=CV_4BC4, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_09, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
 	break
 	je [HERO_POS_MASK], 0x05, CAVES_HERO_CRAWL_RIGHT_PHASE_3

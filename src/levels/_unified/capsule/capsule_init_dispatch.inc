@@ -358,7 +358,7 @@ CAPSULE_INIT_VAR2B_2C_FROM_VAR01_VAR29_10_L14:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_CV139_AT_X01_Y02:
-	video type=0, offset=CV_4754, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CRAWL_POSE_10, x=[HERO_X], y=[HERO_Y], zoom=0x40
 .endif
 
 .if BRANCH == "cartridge_1992"
