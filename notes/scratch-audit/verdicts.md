@@ -168,3 +168,38 @@ Regenerable end to end. The five old->new pairs are verbatim in git: `git show e
 
 The one datum that looked genuinely unrecorded turns out to be live. I patched a throwaway copy of the committed notes/crossstage-transfer/transfer_across_stages.py to print the held names instead of only counting them, ran it against the CURRENT tree, and it emits `HELD-ALLBRANCH amiga/PRISON CINEMATIC_555 -> CINEMATIC_HERO_FALL_PRELUDE_FRAME` (and the msdos twin). The fact is computed from HEAD by the committed probe; it is suppressed at line 156-157 only because the held branch increments a counter and drops the name. The fix is a two-line change to that script so `--proposals` or the held report names them -- a repo change, not a rescue. Meanwhile row 2 (CINEMATIC_568 -> CINEMATIC_HERO_LIFTOFF) is verbatim in notes/crossstage-transfer/README.md's 'The 9'; 5 of the 7 xs/ files regenerate byte-identically from `git checkout 126dc80c -- notes/crossstage-transfer/; git checkout 126dc80c^ -- src; transfer_across_stages.py --proposals DIR`, and the two PRISON ones regenerate minus exactly the CINEMATIC_555 row; and this file is byte-identical to xs/xstage_msdos_PRISON.md (md5 a0135bb8), so it is not an amiga record.
 
+
+# Sweep of 2026-09-23 (later session): the 18 `.py` files
+
+A second long session left eighteen Python files in the scratchpad. Every one
+is disposable, and each line below names the committed thing that supersedes
+it rather than asserting it in general.
+
+| file | why it is disposable |
+|---|---|
+| `hpc_before.py` (571 lines) | the pre-revert `hero_pose_consensus.py`, with the widened `motion_of`. It is **in git**: `5c38114b` added the widening, `cd353829` reverted it with the measurement that killed it. `git show 5c38114b:notes/shared-bank-geometry/hero_pose_consensus.py` is this file. The measurement itself survives as the committed `--token-order` mode |
+| `st_noshape.py` | the looser grouping that was rejected. It is a **committed mode**: `sibling_template.py --no-shape` |
+| `scope_fix.py` | an older copy of `notes/unified-scoping/scope_fix.py`, which is committed and tracked |
+| `_audit.py`, `_audit2.py`, `_audit3.py`, `_audit_cov.py`, `_audit_pairs.py`, `_cmp.py`, `_cmp2.py`, `_global.py`, `_global2.py` | the ad-hoc machinery of the **first** scratch sweep, superseded by `preserve_scratch_audit.js` beside this file, which is the committed version of that workflow and produced the verdicts above |
+| `split.py`, `split2.py` | one-shot splitters. Their **outputs** are committed: `notes/laser-impact-anim/` and `notes/draw-label-follows-constant/` hold the per-branch proposal tables they wrote |
+| `dm.py` | a hardcoded list of four demotion rows. The rows are in the tree and in the commit that applied them |
+| `comp.py`, `peek.py`, `remeasure.py` | one-shot readers over `by_anchor.py`, `screen_scope.py` and `polygon_extent.py`, all three committed. Nothing in them is a measurement; they print what those modules already compute |
+
+**Nothing from this session's numbers depends on a scratch file.** The probes
+that produced the figures quoted in this session's commits are all committed
+and named in them: `render-and-name/ladder_rungs.py`,
+`render-and-name/frame_runs.py`, `render-and-name/routines/generate.py`,
+`cross-port-art/align_draw_sites.py`, `unified-scoping/stale_chunk_names.py`,
+`unified-scoping/sync_equ_rename.py --self-test`, and the two fixtures in
+`another-world-archaeology/tools/tests/`.
+
+The renders under the scratchpad (`p2/`, `p6/`, `p7/`, `p11/`, `c0/`, `c5/`,
+and the montages in `eye/`) are **regenerable and deliberately not committed**.
+The recipe is one command, and the palette is the part that matters:
+
+    awvm-render-polygons --port amiga --stage <N> \
+        --romset another-world-archaeology/tmp/output/amiga/romset \
+        --bank cinematic --out <dir> --palette <P>
+
+where `<P>` is the palette the routine under study sets, not 0. PRISON's wake
+closeup reads as a blue eye at palette 0 and as a brown-irised face at 0x0B.

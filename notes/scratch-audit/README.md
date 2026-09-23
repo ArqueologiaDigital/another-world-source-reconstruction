@@ -85,3 +85,17 @@ It read the 194 non-render files. It did **not** examine the 46,991 SVGs,
 1,089 PNGs, 19 PPMs or 146 unpacked `.bin` resources, which are covered by the
 regeneration recipes in `../HANDOFF.md` rather than by inspection. A verdict of
 "disposable" here means "recoverable or already recorded", never "worthless".
+
+## The 2026-09-23 sweep
+
+`verdicts.md` gained a second section: eighteen `.py` files from a later
+session, all disposable, each with the committed thing that supersedes it. Two
+of them are worth knowing about because they look like lost evidence and are
+not: `hpc_before.py` is the pre-revert `hero_pose_consensus.py` and lives in
+git at `5c38114b`, and `st_noshape.py` is the rejected looser grouping, which
+is a committed **mode** (`sibling_template.py --no-shape`) rather than a
+deleted file.
+
+It also records why the render directories are not committed and the one
+command that regenerates them -- including the part that is easy to get wrong,
+which is the palette.
