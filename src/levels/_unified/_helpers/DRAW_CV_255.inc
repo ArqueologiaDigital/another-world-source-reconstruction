@@ -1,3 +1,3 @@
 DRAW_CV_255:
-	video type=0, offset=CV_3558, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_GUN_ARM_POSE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret

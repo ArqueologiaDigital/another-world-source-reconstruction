@@ -1040,12 +1040,12 @@ CV_4346		EQU 0x4346
 CV_4368		EQU 0x4368
 CV_3A64		EQU 0x3A64
 CV_5C9C		EQU 0x5C9C
-CV_3542		EQU 0x3542
-CV_3558		EQU 0x3558
-CV_34FE		EQU 0x34FE
+HERO_RUN_RIGHT_GUN_ARM_POSE_00		EQU 0x3542
+HERO_RUN_RIGHT_GUN_ARM_POSE_01		EQU 0x3558
+HERO_RUN_RIGHT_GUN_ARM_POSE_04		EQU 0x34FE
 CV_367C		EQU 0x367C
-CV_352C		EQU 0x352C
-CV_356E		EQU 0x356E
+HERO_RUN_RIGHT_GUN_ARM_POSE_02		EQU 0x352C
+HERO_RUN_RIGHT_GUN_ARM_POSE_03		EQU 0x356E
 CV_3B44		EQU 0x3B44
 CV_5CA4		EQU 0x5CA4
 CV_3C92		EQU 0x3C92
@@ -16047,27 +16047,27 @@ DRAW_CV_073:
 
 
 DRAW_CV_300:
-	video type=0, offset=CV_356E, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_GUN_ARM_POSE_03, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 DRAW_CV_299:
-	video type=0, offset=CV_352C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_GUN_ARM_POSE_02, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 DRAW_CV_295:
-	video type=0, offset=CV_3542, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_GUN_ARM_POSE_00, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 DRAW_CV_296:
-	video type=0, offset=CV_3558, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_GUN_ARM_POSE_01, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
 DRAW_CV_297:
-	video type=0, offset=CV_34FE, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_RUN_RIGHT_GUN_ARM_POSE_04, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 

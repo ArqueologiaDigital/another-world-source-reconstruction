@@ -1,0 +1,34 @@
+# The hero's gun arm during the right-facing run: 5 poses, 10 frames.
+#
+# Each run frame draws its body and then guards the arm on the weapon state:
+#
+#   CAPSULE_HERO_RUN_RIGHT_DRAW_8:
+#       video type=0, offset=HERO_RUN_RIGHT_BODY_F08, x=[HERO_X], ...
+#       jne [0x0A], 0x00, DRAW_CV_265          <- the arm, only when armed
+#
+# [0x0A] is the same weapon-state variable the two standing switches in this
+# directory run on (HERO_GUN_ARM_{LEFT,RIGHT}_CASE_01..04), so "gun arm" is
+# the variable's own meaning rather than a guess from the shape.
+#
+# The body family HERO_RUN_RIGHT_BODY_F00..F09 is already named, and a routine
+# drawing exactly one of those plus a guarded arm fixes the frame without
+# reference to any routine name. Frames 0..9 are covered with no gap:
+#
+#   CV_3542  frames {0, 5, 6}      CV_356E  frames {3, 4}
+#   CV_3558  frames {1, 7}         CV_34FE  frames {8, 9}
+#   CV_352C  frames {2}
+#
+# POSE, not F: an arm shared between frames has no single frame number, which
+# is the same reason ../actor-sprite-sheet/ names its limb pieces by pose.
+# Ordered by ascending first frame, that directory's convention.
+#
+# Geometry is one coherent series: 16.5..17.5 tall, 7..9 wide, 3 leaves,
+# bottom 24..27 units above the anchor -- shoulder height, not the ground.
+#
+# LEFT has no counterpart here: no left-facing run frame guards an arm on
+# [0x0A] in any scanned stage. Not named, because not found.
+CV_3542 HERO_RUN_RIGHT_GUN_ARM_POSE_00
+CV_3558 HERO_RUN_RIGHT_GUN_ARM_POSE_01
+CV_352C HERO_RUN_RIGHT_GUN_ARM_POSE_02
+CV_356E HERO_RUN_RIGHT_GUN_ARM_POSE_03
+CV_34FE HERO_RUN_RIGHT_GUN_ARM_POSE_04
