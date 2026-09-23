@@ -50,27 +50,27 @@ DRAW_HERO_POSE_0_0:
 
 
 DRAW_HERO_POSE_0_1:
-	video offset=CINEMATIC_174, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_0_1, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 DRAW_HERO_POSE_0_2:
-	video offset=CINEMATIC_175, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_0_2, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 DRAW_HERO_POSE_0_3:
-	video offset=CINEMATIC_176, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_0_3, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 DRAW_HERO_POSE_0_4:
-	video offset=CINEMATIC_177, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_0_4, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
 DRAW_HERO_POSE_0_6:
-	video offset=CINEMATIC_179, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_0_6, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
@@ -95,7 +95,7 @@ DRAW_CIN_170:
 
 
 DRAW_CIN_169:
-	video offset=CINEMATIC_169, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_4_1, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 

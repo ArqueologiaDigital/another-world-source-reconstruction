@@ -155,6 +155,7 @@ checked against the receiving port's own guards.
 | TANK 100, 152, 155 | 087, 204, 207 + 126..128, 170..175, 276, 277 | `CINEMATIC_TANK_{FALLING_STREAK,AMBIENT_IMPACT_FLASH,AMBIENT_IMPACT_SCAR,ARENA_WRECK_*,CONSOLE_LAMP_*,CONSOLE_BUTTON_UNLIT,BEAM_VOLLEY_SEGMENT_3,CREATURE_RUN_F9}` | high/medium |
 | CAVES 606, 348, 607, 346, 608..611, 334 | 627, 369, 628, 367, 629..632, 355 | `CINEMATIC_CAVES_{CAVERN_WALL_AND_FLOOR,CAVERN_DOME,SCREEN_91_GLOW_MOUND,RING_OUTLINE,SCREEN_91_COLUMN_0..3,DIAGONAL_GIRDER}` | medium |
 | CAPSULE 212..215, 266..271 | 250..253, 254..257, 259, 260 | `CINEMATIC_CAPSULE_{SEGMENT_BAR_F0..F3,DISCHARGE_FLASH_F0,F1,CHARGE_GLOW_F0..F3}` (first named `BUDDY_*`; corrected, see `../actor-anchors/`) | medium |
+| CAPSULE 174..179, 169, 167 | 022..029, 017, 012, 013 | `CINEMATIC_CAPSULE_FIGURE_POSE_<group>_<index>` (from the dispatcher, see `../pose-dispatch/`) | high |
 | INTRO 268..276 | 274..282 | `CINEMATIC_FRAGMENTS_RECEDING_F0..F8` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
@@ -388,6 +389,24 @@ it. The rule the two failures give:
 The byte gate caught the first failure and `undefined_symbols.py` caught the
 second, which is the division of labour `notes/HANDOFF.md` describes: run the
 symbol check *before* `make test`.
+
+## `_unified/_helpers/` is invisible to the branch-scoped applier
+
+`apply_branch_scoped_names.py` rewrites a branch's `.asm` and the lines the
+unified tree emits **for that branch's arms**. A chunk in
+`src/levels/_unified/_helpers/` is neither: it is a separate file pulled in by
+an `.include`, and a rename leaves its references dangling.
+
+That happened once here. Renaming amiga's `CINEMATIC_167` left
+`_helpers/DRAW_CIN_167.inc` pointing at a name that no longer existed, and the
+gate said so immediately -- `undefined_symbols.py` named the file and line, and
+`verify_unified.py` went 29/29 to **28/29**. The fix is a one-line edit to the
+helper, but only after checking who includes it: this one is included by
+amiga's chunk alone, while `cart__entry.inc` has its own `CINEMATIC_167` at a
+different offset that must not move.
+
+After any branch-scoped rename, `grep -rl "<old name>" src/levels/_unified/_helpers/`
+is worth a second.
 
 ## Group by the anchor a picture is drawn at
 

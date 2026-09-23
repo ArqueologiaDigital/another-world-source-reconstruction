@@ -236,7 +236,7 @@ DRAW_CIN_199:
 
 
 DRAW_CIN_178:
-	video offset=CINEMATIC_178, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_FIGURE_POSE_0_5, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 
