@@ -140,6 +140,15 @@ for it whenever two draws share an anchor.
    through is the jump-sheet method: motion from **scheduling and geometry**
    (anchor arithmetic, `airborne_in_art.py`, `pose_height.py`) rather than
    from any name.
+3b. **Six of the eight consensus "disagreements" are one artefact.** CAVES
+   indexes a single crawl cycle forwards as `HERO_CRAWL_LEFT_PHASE_n` and
+   backwards as `HERO_CRAWL_RIGHT_PHASE_(15-n)` — six pieces claimed in both
+   directions, and the two phase numbers sum to exactly 15 every time.
+   `notes/shared-bank-geometry/crawl_one_cycle_two_labels.py` re-checks it
+   and exits 1 if the sum ever stops being constant. The two directions are
+   therefore not independent sources. Which labeling is right is NOT settled
+   and needs anchor arithmetic or a render.
+
 4. **60 amiga / 59 msdos pictures with multiple names.** Reported, not
    reconciled, per #0120. 49 have the shape of one family named twice.
 5. ~~**`genesis_europe` is not covered by `undefined_symbols.py`.**~~
