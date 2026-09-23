@@ -416,7 +416,7 @@ LABEL_99D7:
 
 
 CAVES_STEP_DRAW_CV336_THEN_CV340_L7:
-	video type=0, offset=CV_38D2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_SHOOT_RIGHT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_149
 	ret
 
@@ -427,13 +427,13 @@ DRAW_CIN_149:
 
 
 LABEL_99EA:
-	video type=0, offset=CV_3764, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_AIM_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_150
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C4C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_AIM_RIGHT_CHARGE_DOT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -443,7 +443,7 @@ DRAW_CIN_150:
 
 
 CAVES_STEP_DRAW_CV336_THEN_CV340_L5:
-	video type=0, offset=CV_389E, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_SHOOT_RIGHT_F0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_151
 	ret
 
@@ -686,7 +686,7 @@ DRAW_HERO_WALK_RIGHT_F08:
 
 
 LABEL_9C60:
-	video type=0, offset=CV_3B10, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_SHOOT_LEFT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_162
 	ret
 
@@ -697,13 +697,13 @@ DRAW_CIN_162:
 
 
 LABEL_9C72:
-	video type=0, offset=CV_39A2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_AIM_LEFT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_163
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C94, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_AIM_LEFT_CHARGE_DOT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -713,7 +713,7 @@ DRAW_CIN_163:
 
 
 LABEL_9C9C:
-	video type=0, offset=CV_3ADC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_SHOOT_LEFT_F0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	je [0xBE], 0x03, DRAW_CIN_164
 	ret
 

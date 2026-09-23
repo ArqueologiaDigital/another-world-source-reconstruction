@@ -21,7 +21,7 @@ HERO_CROUCH_ARMED_RIGHT_LOOP:
 	je [HERO_POS_MASK], 0x04, HERO_CROUCH_ARMED_RIGHT_LOOP
 	break
 	add [HERO_X], 0x0002
-	video type=0, offset=CV_1664, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_ARMED_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x63], 0x0002
 	mov [0x0A], 0x0003
 	jmp HERO_WALK_RIGHT_LOOP
@@ -48,7 +48,7 @@ HERO_CROUCH_HOLD_RIGHT_LOOP:
 	je [HERO_POS_JUMP_DOWN], 0x01, HERO_CROUCH_HOLD_RIGHT_LOOP
 	break
 	add [HERO_X], 0x0002
-	video type=0, offset=CV_1664, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_ARMED_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x63], 0x0002
 	jmp HERO_WALK_RIGHT_LOOP
 LABEL_EE51:

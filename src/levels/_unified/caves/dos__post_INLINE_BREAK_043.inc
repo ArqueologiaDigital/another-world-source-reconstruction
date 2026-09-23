@@ -22,7 +22,7 @@ HERO_CROUCH_ARMED_LEFT_LOOP:
 	je [HERO_ACTION_POS_MASK], 0x04, HERO_CROUCH_ARMED_LEFT_LOOP
 	break
 	sub [HERO_X], 0x0002
-	video type=0, offset=CV_17CC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_ARMED_LEFT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x63], 0x0001
 	mov [0x0A], 0x0003
 	jmp HERO_WALK_LEFT_LOOP

@@ -18,10 +18,10 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 52.6% (5,336/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 53.1% (5,391/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
-| shared-bank keys still unnamed | 163 of 352 | `notes/shared-bank-geometry/` |
+| shared-bank keys still unnamed | 152 of 352 | `notes/shared-bank-geometry/` |
 
 ## The method that worked, in one paragraph
 
@@ -61,7 +61,7 @@ for it whenever two draws share an anchor.
 2. **81 routine renames blocked by a dependency chain**: family gaps → cart
    and GBA art unnamed → no proposals → a shared `_helpers` label that cannot
    be renamed for one branch alone. Breaking any link unblocks the rest.
-3. **163 shared-bank keys** (`notes/shared-bank-geometry/`). 113 are
+3. **152 shared-bank keys** (`notes/shared-bank-geometry/`). 113 are
    actor-slot offsets, blocked by #0138 for *who* they draw but nameable by
    *pose*. The RUN sub-pieces are neither symmetric nor complete, which is
    why they stalled. 50 are hero-art, of which the consensus engine can
@@ -114,7 +114,7 @@ for it whenever two draws share an anchor.
    no AIM claim against it, and it lands in the crouched mode. Height settles
    the body and says nothing about the arms, so for the four crouched ones
    both names are partly right — that is the #0120 intersection, and naming
-   them is the next step.
+   them is the next step. **Done** — `armed_poses.map`, 11 offsets.
 
    **What blocks the rest: the drawers are unnamed.** 28 of 35 have no
    parseable drawer in any stage — not a disagreement, an absence. The way

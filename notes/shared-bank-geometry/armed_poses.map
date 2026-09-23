@@ -1,0 +1,39 @@
+# The hero's armed poses in the shared bank: 11 offsets.
+#
+# These are the offsets where CAPSULE and CAVES described the same picture
+# differently -- CAPSULE "gun aim hold", CAVES "crouch armed" -- which
+# hero_pose_consensus.py reported as a conflict and #0120 forbids a tool
+# resolving by preference. Two measurements settle it instead:
+#
+#   pose_height.py  against the 15 committed HERO_WALK_LEFT_BODY frames
+#                   (median height 49.0). The disputed offsets are bimodal
+#                   with an 11-unit gap: 44.5..45.0 upright, 33.0..33.5
+#                   crouched. CV_1784, where both sources already agreed on
+#                   CROUCH, lands in the crouched mode and is the control.
+#
+#   width           16..18 units with the arms in, 35..45.5 with the gun
+#                   arm extended. The same split, independently.
+#
+# So the body posture (upright vs crouched) is measured, and "armed" is what
+# both stages' names assert -- the #0120 intersection rather than a winner.
+#
+# Upright, arms in, both stages assert a weapon.
+CV_17CC HERO_STAND_ARMED_LEFT
+CV_1664 HERO_STAND_ARMED_RIGHT
+# Crouched, arms in, no weapon asserted by either name.
+CV_1784 HERO_CROUCH_LEFT
+# Crouched, gun arm extended, drawn with the charge indicator below.
+# The drawer is CAPSULE_HERO_AIM_HOLD_<dir>_DRAW_LOW_CHARGE_BLINK; the dot is
+# a 1x0 degenerate line at bottom -21.5, i.e. at gun height, co-drawn in the
+# same frame as the body with no `break` between them.
+CV_39A2 HERO_CROUCH_AIM_LEFT
+CV_3764 HERO_CROUCH_AIM_RIGHT
+CV_5C94 HERO_CROUCH_AIM_LEFT_CHARGE_DOT
+CV_5C4C HERO_CROUCH_AIM_RIGHT_CHARGE_DOT
+# Crouched, firing. Two frames per direction, drawn in this order by
+# HERO_FIRE_SHOT_FACING_<dir>; ascending offset order agrees. The wider frame
+# is first -- arm fully extended at the shot, narrower as it recoils.
+CV_3ADC HERO_CROUCH_SHOOT_LEFT_F0
+CV_3B10 HERO_CROUCH_SHOOT_LEFT_F1
+CV_389E HERO_CROUCH_SHOOT_RIGHT_F0
+CV_38D2 HERO_CROUCH_SHOOT_RIGHT_F1

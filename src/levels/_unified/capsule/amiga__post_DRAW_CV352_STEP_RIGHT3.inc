@@ -626,7 +626,7 @@ HERO_FIRE_SHOT_FACING_LEFT:
 	jne [0x0F], 0x00, LABEL_98C8
 	sub [HERO_X], 0x0003
 	call LABEL_5BF6
-	video type=0, offset=CV_3ADC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_SHOOT_LEFT_F0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x21], [HERO_X]
 	mov [0x27], [HERO_Y]
 	sub [0x21], 0x001E
@@ -634,7 +634,7 @@ HERO_FIRE_SHOT_FACING_LEFT:
 	call LABEL_440F
 	break
 	add [HERO_X], 0x0002
-	video type=0, offset=CV_3B10, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_SHOOT_LEFT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	add [HERO_X], 0x0001
 	jne [HERO_ACTION_POS_MASK], 0x84, HERO_GUN_AIM_HOLD_LEFT_LOOP
 	setup channel=0x17, address=LABEL_5338
@@ -656,7 +656,7 @@ LABEL_98D5:
 	add [HERO_X], 0x0003
 	video type=0, offset=CV_17A8, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_3B10, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_SHOOT_LEFT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 HERO_GUN_AIM_HOLD_LEFT_LOOP:
 	break
@@ -666,7 +666,7 @@ HERO_GUN_AIM_HOLD_LEFT_LOOP:
 	je [HERO_ACTION_POS_MASK], 0x04, HERO_GUN_AIM_HOLD_LEFT_LOOP
 	break
 	sub [HERO_X], 0x0002
-	video type=0, offset=CV_17CC, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_ARMED_LEFT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x63], 0x0001
 	mov [0x0A], 0x0003
 	jmp HERO_WALK_LEFT_LOOP
@@ -686,7 +686,7 @@ HERO_FIRE_SHOT_FACING_RIGHT:
 	jne [0x0F], 0x00, LABEL_996C
 	add [HERO_X], 0x0003
 	call LABEL_5BF6
-	video type=0, offset=CV_389E, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_SHOOT_RIGHT_F0, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x21], [HERO_X]
 	mov [0x27], [HERO_Y]
 	add [0x21], 0x001E
@@ -694,7 +694,7 @@ HERO_FIRE_SHOT_FACING_RIGHT:
 	call LABEL_4487
 	break
 	sub [HERO_X], 0x0002
-	video type=0, offset=CV_38D2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_SHOOT_RIGHT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	sub [HERO_X], 0x0001
 	jne [HERO_ACTION_POS_MASK], 0x84, HERO_GUN_AIM_HOLD_RIGHT_LOOP
 	setup channel=0x17, address=LABEL_538C
@@ -715,7 +715,7 @@ LABEL_9979:
 	sub [HERO_X], 0x0002
 	video type=0, offset=CV_1600, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	break
-	video type=0, offset=CV_38D2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_SHOOT_RIGHT_F1, x=[HERO_X], y=[HERO_Y], zoom=0x40
 
 HERO_GUN_AIM_HOLD_RIGHT_LOOP:
 	break
@@ -725,7 +725,7 @@ HERO_GUN_AIM_HOLD_RIGHT_LOOP:
 	je [HERO_POS_MASK], 0x04, HERO_GUN_AIM_HOLD_RIGHT_LOOP
 	break
 	add [HERO_X], 0x0002
-	video type=0, offset=CV_1664, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_ARMED_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	mov [0x63], 0x0002
 	mov [0x0A], 0x0003
 	jmp HERO_WALK_RIGHT_LOOP

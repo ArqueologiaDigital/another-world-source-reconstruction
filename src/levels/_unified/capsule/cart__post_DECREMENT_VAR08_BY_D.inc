@@ -416,12 +416,12 @@ LABEL_91AE:
 
 
 LABEL_91AF:
-	video type=0, offset=CV_3764, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_AIM_RIGHT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C4C, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_AIM_RIGHT_CHARGE_DOT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
@@ -624,12 +624,12 @@ LABEL_93BA:
 
 
 LABEL_93CB:
-	video type=0, offset=CV_39A2, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_AIM_LEFT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, SHARED_RET
-	video type=0, offset=CV_5C94, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_CROUCH_AIM_LEFT_CHARGE_DOT, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
