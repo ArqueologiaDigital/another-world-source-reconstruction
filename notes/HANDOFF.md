@@ -25,7 +25,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 64.1% (6,504/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 65.0% (6,598/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 48, blocking 250 drawing labels | `shared-bank-geometry/blocked_by_bank.py` |
@@ -187,6 +187,21 @@ art. `notes/lake-shooting/composite_at_anchor.py` exists to fix that; reach
 for it whenever two draws share an anchor.
 
 ## Open work, roughly in order of value
+
+0a. **Naming from a render is live, under explicit approval, and has its own
+   directory.** `notes/render-and-name/` holds every name derived by looking
+   at the art, each row carrying a stated confidence and its evidence. Those
+   names have **no independent check**: a rename moves no bytes, so `make
+   test` cannot catch one being wrong. They are grouped so they can be
+   audited or reverted as a set. `sheet.py` is the looking tool; its tiles
+   carry the measured extent, the draw count and screen y, and the drawing
+   routines, because the risk is not failing to look but believing a
+   magnified thumbnail — `CINEMATIC_336` renders as a perfect toadstool and
+   is four pixels wide.
+
+   What it bought beyond the names: a **subject** name has no index and no
+   family, so the `_BACKDROP_LAYER_<i>` problem that blocks 185 of 186 layers
+   simply does not apply to it.
 
 0. **The two halves now both have a map, and the maps say different things.**
 
