@@ -34,6 +34,14 @@ draws use it, and which **named** constants are drawn there. Then it flags the
 contradictions: a constant whose own name contains HERO drawn at a BUDDY anchor,
 or vice versa.
 
+A stage only spells a variable `HERO_X` if its own file defines that EQU, and
+they do not agree: CAVES defines `HERO_X` but not `BUDDY_X` and then draws 403
+times at a raw `[0x07]`; ENDING defines `BUDDY_X` but not `HERO_X` and draws 73
+times at `[0x01]`. The scan normalises `0x01/0x02/0x07/0x08` to the canonical
+names before grouping, because without that it silently reports those stages as
+using one actor only -- which it did, and which produced a wrong conclusion
+before the spelling was checked.
+
 Run it
 ------
     python3 notes/actor-anchors/anchor_identity.py
@@ -53,7 +61,13 @@ STAGES = ["CODE_WHEEL", "INTRO", "LAKE", "PRISON", "CAVES", "TANK",
 
 RE_DRAW = re.compile(
     r"video\s+(?:type=\d+,\s*)?offset=(CINEMATIC_[A-Za-z0-9_]+),"
-    r"\s*x=\[([A-Za-z_][A-Za-z0-9_]*)\],\s*y=\[([A-Za-z_][A-Za-z0-9_]*)\]")
+    r"\s*x=\[([A-Za-z_0-9][A-Za-z0-9_]*)\],\s*y=\[([A-Za-z_0-9][A-Za-z0-9_]*)\]")
+RE_VAR_EQU = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*)\s+EQU\s+(0x[0-9A-Fa-f]{2})\s*$", re.M)
+# The same VM variable is spelled `HERO_X` in some stages and `[0x01]` in others,
+# because a stage only gets the symbol if that stage's file defines it. CAVES has
+# 403 draws at a raw `[0x07]` and no `BUDDY_X` EQU at all. Any query over anchors
+# has to normalise, or it silently misses them -- this one did, once.
+CANON = {"0x01": "HERO_X", "0x02": "HERO_Y", "0x07": "BUDDY_X", "0x08": "BUDDY_Y"}
 RE_LABEL = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*):\s*$")
 RE_NUMBERED = re.compile(r"^CINEMATIC_\d+$")
 
@@ -62,7 +76,16 @@ def scan(branch: str, stage: str):
     f = SRC / branch / f"{stage}.asm"
     if not f.is_file():
         return None
-    lines = f.read_text().splitlines()
+    text = f.read_text()
+    lines = text.splitlines()
+    local = {v: n for n, v in RE_VAR_EQU.findall(text)}
+
+    def canon(v: str) -> str:
+        """Spell a variable the same way whatever the stage happens to call it."""
+        if v.startswith("0x"):
+            key = "0x" + v[2:].lower().zfill(2)
+            return local.get(key) or CANON.get(key) or v
+        return v
     anchors: dict[tuple[str, str], collections.Counter] = collections.defaultdict(
         collections.Counter)
     routine_anchor: dict[str, set[tuple[str, str]]] = collections.defaultdict(set)
@@ -76,6 +99,7 @@ def scan(branch: str, stage: str):
         if not d:
             continue
         const, xv, yv = d.groups()
+        xv, yv = canon(xv), canon(yv)
         anchors[(xv, yv)][const] += 1
         if cur:
             routine_anchor[cur].add((xv, yv))
