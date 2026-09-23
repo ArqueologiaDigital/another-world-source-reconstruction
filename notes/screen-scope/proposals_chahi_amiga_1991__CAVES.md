@@ -1,6 +1,6 @@
 # Backdrop phase layers in CAVES -- chahi_amiga_1991
 
-Derived by notes/screen-scope/backdrop_phase.py.
+x
 
 | constant | proposed name | confidence | evidence |
 | --- | --- | --- | --- |
@@ -8,8 +8,6 @@ Derived by notes/screen-scope/backdrop_phase.py.
 | CINEMATIC_408 | CINEMATIC_CAVES_SCREEN_6C_BACKDROP_LAYER_20 | high | `CAVES_SCREEN_6C_ENTRY` paints it at position 20 of the sequence it draws before its first `setup`, i.e. before anything is animating; no other screen's entry paints it |
 | CINEMATIC_409 | CINEMATIC_CAVES_SCREEN_6C_BACKDROP_LAYER_21 | high | `CAVES_SCREEN_6C_ENTRY` paints it at position 21 of the sequence it draws before its first `setup`, i.e. before anything is animating; no other screen's entry paints it |
 | CINEMATIC_411 | CINEMATIC_CAVES_SCREEN_6C_BACKDROP_LAYER_35 | high | `CAVES_SCREEN_6C_ENTRY` paints it at position 35 of the sequence it draws before its first `setup`, i.e. before anything is animating; no other screen's entry paints it |
-| CINEMATIC_537 | CINEMATIC_CAVES_SCREEN_70_BACKDROP_LAYER_0 | high | `CAVES_SCREEN_70_ENTRY` paints it at position 0 of the sequence it draws before its first `setup`, i.e. before anything is animating; no other screen's entry paints it |
-| CINEMATIC_539 | CINEMATIC_CAVES_SCREEN_70_BACKDROP_LAYER_3 | high | `CAVES_SCREEN_70_ENTRY` paints it at position 3 of the sequence it draws before its first `setup`, i.e. before anything is animating; no other screen's entry paints it |
 | CINEMATIC_608 | CINEMATIC_CAVES_SCREEN_91_BACKDROP_LAYER_7 | high | `CAVES_SCREEN_91_ENTRY` paints it at position 7 of the sequence it draws before its first `setup`, i.e. before anything is animating; no other screen's entry paints it |
 | CINEMATIC_610 | CINEMATIC_CAVES_SCREEN_91_BACKDROP_LAYER_10 | high | `CAVES_SCREEN_91_ENTRY` paints it at position 10 of the sequence it draws before its first `setup`, i.e. before anything is animating; no other screen's entry paints it |
 | CINEMATIC_334 | CINEMATIC_CAVES_SCREEN_91_BACKDROP_LAYER_11 | high | `CAVES_SCREEN_91_ENTRY` paints it at position 11 of the sequence it draws before its first `setup`, i.e. before anything is animating; no other screen's entry paints it |

@@ -1,6 +1,6 @@
 # Backdrop phase layers in CAPSULE -- cartridge_1992
 
-Derived by notes/screen-scope/backdrop_phase.py.
+x
 
 | constant | proposed name | confidence | evidence |
 | --- | --- | --- | --- |

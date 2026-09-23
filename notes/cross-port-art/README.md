@@ -33,14 +33,25 @@ not a property of the picture. msdos proves it: amiga's
 different position, because msdos has a screen amiga does not. Nine names were
 held back on that rule.
 
-After it, six remain transferable and all six are one family:
-`CINEMATIC_BUDDY_SMASHING_WINDOW_F0..F4` and `F8` in CAPSULE. The applier
-refuses them as a new family-index gap, which is a guard doing its job on a
-case it reads slightly wrong — **amiga's own family has exactly the same
-shape**: it has F0, F1, F2, F3, F4 and F8, and no F5, F6 or F7 at all. So the
-transfer would reproduce a family the tree already accepts, not invent a
-gapped one. Left unapplied rather than worked around; the fix belongs in the
-guard, not in a bypass.
+After it, six remained: `CINEMATIC_BUDDY_SMASHING_WINDOW_F0..F4` and `F8` in
+CAPSULE, refused by the applier as a new family-index gap. That was a guard
+doing its job on a case it read slightly wrong — **amiga's own family has
+exactly that shape**, F0 through F4 and F8 with no F5, F6 or F7 anywhere,
+because the 1991 release has frames the 1992 ports dropped. Transferring it
+reproduces a family the tree already accepts.
+
+The fix went into the guard rather than round it
+(`another-world-archaeology`, `apply_cinematic_renames.py`): the gaps a
+proposal is judged against now include those of the **same family name in the
+other branches of the stage**. Reproducing a sibling's shape is not inventing
+a gap. The existing `inherited` mechanism could not cover this — it only fires
+when every proposed member comes from one source family at the same index, and
+a transfer's sources are bare `CINEMATIC_<n>` constants.
+
+Cross-port transfers then went **6 -> 0**, and the fix reached further than
+this directory: `../screen-scope/backdrop_phase.py`'s permanently-blocked
+batches went **107 -> 70**, because several of those families exist in a
+sibling branch with the same holes.
 
 ## And the audit that came out of it
 
