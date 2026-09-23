@@ -447,12 +447,12 @@ LABEL_21BB:
 	break
 	video offset=CINEMATIC_324, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_310, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_F0, x=[0x68], y=[0x69]
 	mov [0xE6], 0x0005
 
 CAVES_BUDDY_ARRIVAL_HOLD_PHASE_3:
 	break
-	video offset=CINEMATIC_314, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_F1, x=[0x68], y=[0x69]
 	djnz [0xE6], CAVES_BUDDY_ARRIVAL_HOLD_PHASE_3
 	mov [0xE6], 0x0005
 

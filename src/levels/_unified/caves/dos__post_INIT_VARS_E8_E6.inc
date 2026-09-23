@@ -116,12 +116,12 @@ HERO_DIRECTION_STATE_FROM_INPUT:
 	break
 	video offset=CINEMATIC_CAVES_SCREEN_4F_BACKDROP_LAYER_1, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_331, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_F0, x=[0x68], y=[0x69]
 	mov [0xE6], 0x0005
 
 CAVES_BUDDY_ARRIVAL_HOLD_PHASE_3:
 	break
-	video offset=CINEMATIC_335, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_F1, x=[0x68], y=[0x69]
 	djnz [0xE6], CAVES_BUDDY_ARRIVAL_HOLD_PHASE_3
 	mov [0xE6], 0x0005
 

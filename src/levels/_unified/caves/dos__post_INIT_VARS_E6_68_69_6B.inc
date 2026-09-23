@@ -1,93 +1,93 @@
 LABEL_242F:
 	break
 	mov [0x69], 0x00BA
-	video offset=CINEMATIC_331, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_F0, x=[0x68], y=[0x69]
 	djnz [0xE6], LABEL_242F
 	mov [0xE6], 0x000A
 	setup channel=0x03, address=KILL_CHANNEL_LANDING
 
 CAVES_BUDDY_IDLE_HOLD_PHASE_2:
 	break
-	video offset=CINEMATIC_332, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_COLLARED_F0, x=[0x68], y=[0x69]
 	djnz [0xE6], CAVES_BUDDY_IDLE_HOLD_PHASE_2
 	mov [0xE6], 0x0005
 
 LABEL_2453:
 	break
-	video offset=CINEMATIC_333, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_COLLARED_F1, x=[0x68], y=[0x69]
 	djnz [0xE6], LABEL_2453
 	mov [0xE6], 0x0006
 
 CAVES_BUDDY_IDLE_HOLD_PHASE_4:
 	break
-	video offset=CINEMATIC_332, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_COLLARED_F0, x=[0x68], y=[0x69]
 	djnz [0xE6], CAVES_BUDDY_IDLE_HOLD_PHASE_4
 	mov [0xE6], 0x0005
 
 CAVES_BUDDY_IDLE_HOLD_PHASE_5:
 	break
-	video offset=CINEMATIC_333, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_COLLARED_F1, x=[0x68], y=[0x69]
 	djnz [0xE6], CAVES_BUDDY_IDLE_HOLD_PHASE_5
 	mov [0xE6], 0x0005
 
 CAVES_BUDDY_IDLE_HOLD_PHASE_6:
 	break
-	video offset=CINEMATIC_332, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_COLLARED_F0, x=[0x68], y=[0x69]
 	djnz [0xE6], CAVES_BUDDY_IDLE_HOLD_PHASE_6
 	mov [0xE6], 0x0005
 
 CAVES_BUDDY_IDLE_HOLD_PHASE_7:
 	break
-	video offset=CINEMATIC_334, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_COLLARED_F2, x=[0x68], y=[0x69]
 	djnz [0xE6], CAVES_BUDDY_IDLE_HOLD_PHASE_7
 	mov [0xE6], 0x0005
 
 CAVES_SHAFT_DESCENT_STAGE_CASE_04:
 	break
-	video offset=CINEMATIC_332, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_COLLARED_F0, x=[0x68], y=[0x69]
 	djnz [0xE6], CAVES_SHAFT_DESCENT_STAGE_CASE_04
 	mov [0xE6], 0x0005
 
 CAVES_BUDDY_IDLE_HOLD_PHASE_9:
 	break
-	video offset=CINEMATIC_334, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_COLLARED_F2, x=[0x68], y=[0x69]
 	djnz [0xE6], CAVES_BUDDY_IDLE_HOLD_PHASE_9
 	mov [0xE6], 0x0005
 
 LABEL_24B5:
 	break
-	video offset=CINEMATIC_332, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_COLLARED_F0, x=[0x68], y=[0x69]
 	djnz [0xE6], LABEL_24B5
 	mov [0xE6], 0x0005
 	setup channel=0x03, address=HANG_DRAW_CIN_351
 
 CAVES_BUDDY_IDLE_HOLD_PHASE_11:
 	break
-	video offset=CINEMATIC_331, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_F0, x=[0x68], y=[0x69]
 	djnz [0xE6], CAVES_BUDDY_IDLE_HOLD_PHASE_11
 	mov [0xE6], 0x0006
 
 CAVES_BUDDY_IDLE_HOLD_PHASE_12:
 	break
-	video offset=CINEMATIC_335, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_F1, x=[0x68], y=[0x69]
 	djnz [0xE6], CAVES_BUDDY_IDLE_HOLD_PHASE_12
 	mov [0xE6], 0x0005
 
 CAVES_BUDDY_IDLE_HOLD_PHASE_13:
 	break
-	video offset=CINEMATIC_336, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_F2, x=[0x68], y=[0x69]
 	djnz [0xE6], CAVES_BUDDY_IDLE_HOLD_PHASE_13
 	mov [0xE6], 0x0005
 
 CAVES_BUDDY_IDLE_HOLD_PHASE_14:
 	break
-	video offset=CINEMATIC_337, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_F3, x=[0x68], y=[0x69]
 	djnz [0xE6], CAVES_BUDDY_IDLE_HOLD_PHASE_14
 	mov [0xE6], 0x0014
 
 LABEL_24FF:
 	break
-	video offset=CINEMATIC_335, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_IDLE_F1, x=[0x68], y=[0x69]
 	djnz [0xE6], LABEL_24FF
 	jmp INIT_VARS_E6_68_69_6B
 LABEL_250C:
