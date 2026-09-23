@@ -163,6 +163,7 @@ checked against the receiving port's own guards.
 | CAPSULE 096..098, 100, 123, 146..149 | 062..064, 066, 434, 457..460 | `CINEMATIC_SHIELD_DEPLOY_PHASE_0..3`, `CINEMATIC_CAPSULE_{ARCADE_CORNICE,SCREEN_4C_*}` | high/medium |
 | CAPSULE (msdos only) 547, 516, 517, 548, 549 | -- | `CINEMATIC_CAPSULE_FIGURE_FLUNG_F0..F4` (transfer + draw position) | high |
 | INTRO 268..276 | 274..282 | `CINEMATIC_FRAGMENTS_RECEDING_F0..F8` | medium |
+| PRISON 361..364, 380..383 | (same numbers) | `CINEMATIC_PRISON_{SEGMENT_BAR_F0..F3,DISCHARGE_FLASH_F0,F1,CHARGE_GLOW_F0,F1}` (amiga, msdos **and cartridge** -- the routine is shared) | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
@@ -395,6 +396,32 @@ it. The rule the two failures give:
 The byte gate caught the first failure and `undefined_symbols.py` caught the
 second, which is the division of labour `notes/HANDOFF.md` describes: run the
 symbol check *before* `make test`.
+
+## A shared ROUTINE forces a name into a branch you cannot render
+
+The rule above is about renumbers. This is the same fault line reached from the
+other side, and it cost a red `undefined_symbols.py` on an otherwise clean
+batch.
+
+PRISON's charge widget is drawn by `prison_var2f_state_machine.inc`, which
+carries **no `.if BRANCH` arm at all** -- one body, read by every port. Naming
+amiga's and msdos's eight constants therefore renamed *cartridge's* references
+too, while `cart__entry.inc` still defined the old numbers:
+
+    PRISON / cartridge_1992: 8 undefined symbol(s)
+        CINEMATIC_PRISON_CHARGE_GLOW_F0   first referenced ...:390
+
+The fix is one more proposal table, and the interesting part is what it may
+claim. Cartridge art is unrenderable (#0106), so no drawing was compared. What
+the shared body settles is exactly the **slot**: cartridge's constant is the one
+drawn at that point in that cycle, at cartridge's own bank offset. That is a
+`medium` row with the reason written into it, not a `high` row borrowed from
+amiga -- and if a later pass can render the cartridge bank and finds different
+art in a slot, the name to fix is cartridge's, not amiga's.
+
+> Before scoping a batch to the priority ports, grep the routine for `.if`. A
+> draw line with no arm above it belongs to every branch, and every branch then
+> needs the definition.
 
 ## `_unified/_helpers/` is invisible to the branch-scoped applier
 
