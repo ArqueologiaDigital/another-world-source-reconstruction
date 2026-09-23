@@ -18,10 +18,10 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 57.6% (5,845/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 57.7% (5,859/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
-| shared-bank keys still unnamed | 79 of 352 (61 reachable) | `notes/shared-bank-geometry/` |
+| shared-bank keys still unnamed | 77 of 352 (59 reachable) | `notes/shared-bank-geometry/` |
 
 ## The method that worked, in one paragraph
 
@@ -78,9 +78,9 @@ for it whenever two draws share an anchor.
    role name. `notes/shared-bank-geometry/unreachable_guarded_art.py`
    re-checks it and exits 1 if any draw is ever found outside the guard.
 
-   **The real remaining count is therefore 61, not 79.**
+   **The real remaining count is therefore 59, not 77.**
 
-3. **79 shared-bank keys** (`notes/shared-bank-geometry/`). 113 are
+3. **77 shared-bank keys** (`notes/shared-bank-geometry/`). 113 are
    actor-slot offsets, blocked by #0138 for *who* they draw but nameable by
    *pose*. The RUN sub-pieces are neither symmetric nor complete, which is
    why they stalled. 50 are hero-art, of which the consensus engine can
@@ -140,6 +140,14 @@ for it whenever two draws share an anchor.
    through is the jump-sheet method: motion from **scheduling and geometry**
    (anchor arithmetic, `airborne_in_art.py`, `pose_height.py`) rather than
    from any name.
+3c. **Half-named mirrors are invisible in every count**, so they have their
+   own check: `notes/shared-bank-geometry/half_named_mirrors.py`. It asks,
+   for each named piece containing `_LEFT`/`_RIGHT`, whether the flipped name
+   exists. It found `HERO_CROUCH_RIGHT` and `HERO_STAND_RIGHT_{BODY,ARM}`.
+   16 of the 20 remaining entries are adjudicated absences with a recorded
+   reason; **4 are open**, the three `HERO_GUN_ARM_LEFT_CASE_0n_CHARGE_BLINK`
+   and one CINEMATIC scenario name.
+
 3b. **Six of the eight consensus "disagreements" are one artefact.** CAVES
    indexes a single crawl cycle forwards as `HERO_CRAWL_LEFT_PHASE_n` and
    backwards as `HERO_CRAWL_RIGHT_PHASE_(15-n)` — six pieces claimed in both

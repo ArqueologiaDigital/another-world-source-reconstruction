@@ -1,0 +1,26 @@
+# The hero's right-facing stand: the other half of a named mirror.
+#
+# Found by a sweep for named pieces whose opposite-direction twin is NOT
+# named -- the generalisation of the crouch case in crouch_poses.map, where
+# a half-named mirror turned out to be invisible in every count.
+#
+# HERO_STAND_LEFT_BODY and HERO_STAND_LEFT_ARM were named; nothing was named
+# HERO_STAND_RIGHT_*. The mirror is LABEL_7955 in CAPSULE, and it has the
+# same three components in the same order as the left-facing routine:
+#
+#   left                                   right (LABEL_7955)
+#   call DRAW_HERO_WATER_DEPTH_LEFT_...    call DRAW_HERO_WATER_DEPTH_RIGHT_...
+#   video HERO_STAND_LEFT_BODY             video CV_0F90
+#   jne [0x0A] -> HERO_GUN_ARM_POSE_LEFT   jne [0x0A] -> HERO_GUN_ARM_POSE_
+#   video HERO_STAND_LEFT_ARM              video CV_338E
+#
+# Geometry confirms the pairing without reference to the routine:
+#
+#   HERO_STAND_LEFT_BODY  41.0 tall, 6 leaves, top -40.5
+#   CV_0F90               41.0 tall, 6 leaves, top -40.5
+#   HERO_STAND_LEFT_ARM   15.0 tall, 1 leaf,   top -35.5
+#   CV_338E               16.0 tall, 1 leaf,   top -35.0
+#
+# Both drawn at [HERO_X] only, neither behind a guard.
+CV_0F90 HERO_STAND_RIGHT_BODY
+CV_338E HERO_STAND_RIGHT_ARM

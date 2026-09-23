@@ -167,9 +167,9 @@ PRISON_HERO_WALK_RIGHT_POSE_14:
 
 PRISON_DRAW_CIN_422_WITH_POS_STEP_AT_C7A1BFCB_L2:
 	call LABEL_6AC9
-	video type=0, offset=CV_0F90, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_RIGHT_BODY, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	jne [0x0A], 0x00, HERO_GUN_ARM_POSE_CASE_01
-	video type=0, offset=CV_338E, x=[HERO_X], y=[HERO_Y], zoom=0x40
+	video type=0, offset=HERO_STAND_RIGHT_ARM, x=[HERO_X], y=[HERO_Y], zoom=0x40
 	ret
 
 
