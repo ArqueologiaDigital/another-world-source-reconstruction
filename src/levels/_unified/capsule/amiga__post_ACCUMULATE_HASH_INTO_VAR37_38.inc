@@ -412,31 +412,31 @@ LABEL_2A56:
 
 LABEL_2A64:
 	add [HERO_X], 0x0003
-	video offset=CINEMATIC_260, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_KNEELING_LEFT_F0, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0002
 	break
-	video offset=CINEMATIC_261, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_KNEELING_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
 	break
-	video offset=CINEMATIC_262, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_KNEELING_LEFT_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_261, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_KNEELING_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_2B61
 LABEL_2A8A:
 	db 0x11
 
 LABEL_2A8B:
 	sub [HERO_X], 0x0003
-	video offset=CINEMATIC_230, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_KNEELING_RIGHT_F0, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0002
 	break
-	video offset=CINEMATIC_231, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_KNEELING_RIGHT_F1, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0001
 	mov [0x03], 0x0003
 
 LABEL_2AA6:
 	break
-	video offset=CINEMATIC_232, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_KNEELING_RIGHT_F2, x=[HERO_X], y=[HERO_Y]
 	djnz [0x03], LABEL_2AA6
 	setup channel=0x15, address=LABEL_2AC6
 	mov [0x03], 0x0003
@@ -490,25 +490,25 @@ LABEL_2B2E:
 	db 0x11
 
 LABEL_2B2F:
-	video offset=CINEMATIC_HERO_DEATH_F0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_LEFT_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_HERO_DEATH_F1, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_HERO_DEATH_F2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_LEFT_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_HERO_DEATH_F1, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_2B61
 LABEL_2B49:
 	db 0x11
 
 LABEL_2B4A:
-	video offset=CINEMATIC_243, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_RIGHT_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_244, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_RIGHT_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_245, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_RIGHT_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_244, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_RIGHT_F1, x=[HERO_X], y=[HERO_Y]
 
 LABEL_2B61:
 	selectVideoPage 0x00
@@ -534,13 +534,13 @@ LABEL_2B61:
 	video offset=CINEMATIC_BLAST_DEBRIS_SETTLED_1, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0xFF
 	killChannel
-	video offset=CINEMATIC_243, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_RIGHT_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_244, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_RIGHT_F1, x=[HERO_X], y=[HERO_Y]
 
 LABEL_2BB2:
 	break
-	video offset=CINEMATIC_245, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_RIGHT_F2, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_2BB2
 LABEL_2BBB:
 	db 0x11, 0x54, 0x14, 0xB1, 0x07, 0x08, 0x06, 0x54

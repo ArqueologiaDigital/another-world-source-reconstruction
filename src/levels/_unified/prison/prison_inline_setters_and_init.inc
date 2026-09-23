@@ -419,15 +419,15 @@ DRAW_CIN_132_TO_133_2F_AT_BB9185F0:
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PRISON_DRAW_CIN_132_TO_133_2F_AT_BB9185F0_L0:
 	add [HERO_X], 0x0003
-	video offset=CINEMATIC_134, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_KNEELING_LEFT_F0, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0002
 	break
-	video offset=CINEMATIC_135, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_KNEELING_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 	add [HERO_X], 0x0001
 	break
-	video offset=CINEMATIC_136, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_KNEELING_LEFT_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_135, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_KNEELING_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 	jmp DRAW_CIN_137_138_BLOCK
 PRISON_DRAW_CIN_132_TO_133_2F_AT_BB9185F0_L1:
 	db 0x11
@@ -436,10 +436,10 @@ PRISON_DRAW_CIN_132_TO_133_2F_AT_BB9185F0_L1:
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_280_TO_281_2F_AT_75ED3E60:
 	sub [HERO_X], 0x0003
-	video offset=CINEMATIC_280, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_KNEELING_RIGHT_F0, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0002
 	break
-	video offset=CINEMATIC_281, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_KNEELING_RIGHT_F1, x=[HERO_X], y=[HERO_Y]
 	sub [HERO_X], 0x0001
 	mov [0x03], 0x0003
 .endif
@@ -447,7 +447,7 @@ DRAW_CIN_280_TO_281_2F_AT_75ED3E60:
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 PRISON_DRAW_CIN_280_TO_281_2F_AT_75ED3E60_L0:
 	break
-	video offset=CINEMATIC_282, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_KNEELING_RIGHT_F2, x=[HERO_X], y=[HERO_Y]
 	djnz [0x03], PRISON_DRAW_CIN_280_TO_281_2F_AT_75ED3E60_L0
 	setup channel=0x15, address=DRAW_CIN_284_BLOCK_95B
 	mov [0x03], 0x0003
@@ -505,13 +505,13 @@ PRISON_DRAW_CIN_284_BLOCK_95B_L1:
 	db 0x11
 
 PRISON_HERO_DEATH_FLASH:
-	video offset=CINEMATIC_HERO_DEATH_F0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_LEFT_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_HERO_DEATH_F1, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_HERO_DEATH_F2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_LEFT_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_HERO_DEATH_F1, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_LEFT_F1, x=[HERO_X], y=[HERO_Y]
 	jmp DRAW_CIN_137_138_BLOCK
 PRISON_DRAW_CIN_284_BLOCK_95B_L3:
 	db 0x11
@@ -519,13 +519,13 @@ PRISON_DRAW_CIN_284_BLOCK_95B_L3:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_146_TO_147_4F_AT_8AA18039:
-	video offset=CINEMATIC_146, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_RIGHT_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_147, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_RIGHT_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_148, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_RIGHT_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_147, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_RIGHT_F1, x=[HERO_X], y=[HERO_Y]
 .endif
 
 
@@ -554,9 +554,9 @@ DRAW_CIN_137_138_BLOCK:
 	video offset=CINEMATIC_BLAST_DEBRIS_SETTLED_1, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0xFF
 	killChannel
-	video offset=CINEMATIC_146, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_RIGHT_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_147, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_RIGHT_F1, x=[HERO_X], y=[HERO_Y]
 .endif
 
 .if BRANCH == "chahi_amiga_1991"

@@ -1,6 +1,6 @@
 LABEL_103E:
 	break
-	video offset=CINEMATIC_148, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_DEATH_STANDING_RIGHT_F2, x=[HERO_X], y=[HERO_Y]
 	jmp LABEL_103E
 LABEL_1047:
 	db 0x11, 0x54, 0x35, 0x54, 0x07, 0x08, 0x06, 0x54
