@@ -52,6 +52,9 @@
 //   ... --frames N     how long to run (default 600)
 //   ... --screens      also sweep SCREEN_NUM 0x00..0xC0 with no seeding, and
 //                      report whether ANY value makes the stage draw
+//   ... --checkpoints  report every checkpoint this stage has, separately.
+//                      CAVES has nine and they are nine different rooms, so
+//                      "the stage runs" is not one number
 
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -83,24 +86,26 @@ const rd = (n) => new Uint8Array(readFileSync(join(ROMSET, n)));
 const ROMS = { bytecode: rd("bytecode.rom"), cinematic: rd("cinematic.rom"),
                palettes: rd("palettes.rom"), video2: rd("video2.rom") };
 
-function run({ protection, screen }) {
+function run({ protection, screen, checkpoint }) {
   const vm = new VM(ROMS, { checkpoints: CHECKPOINTS });
-  vm.setupPart(STAGE_ID, { protection });
+  vm.setupPart(STAGE_ID, { protection, checkpoint });
   if (screen !== undefined) vm.vars[0x67] = screen;   // SCREEN_NUM
-  let painted = 0, draws = 0;
+  let painted = 0, draws = 0, best = 0;
   for (let i = 0; i < FRAMES; i++) {
     const f = vm.runFrame();
     draws += f.draws.length;
     const page = vm.pages[vm.frontPage];
     let nz = 0;
     for (let p = 0; p < W * H; p++) if (page[p]) nz++;
-    if (nz / (W * H) > 0.02) painted++;
+    const fill = nz / (W * H);
+    if (fill > best) best = fill;
+    if (fill > 0.02) painted++;
     if (vm.halted || vm.pendingPart !== undefined) break;
   }
   const live = [];
   for (let t = 0; t < 64; t++)
     if (vm.pc[t] !== 0xFFFF) live.push([t, vm.pc[t], vm.frozen[t]]);
-  return { painted, draws, live };
+  return { painted, draws, live, best };
 }
 
 const cold = run({ protection: false });
@@ -123,6 +128,28 @@ for (const [t, pc, fr] of cold.live.slice(0, 8))
 for (const [t, pc, fr] of seeded.live.slice(0, 8))
   console.log(`      seeded thread ${t.toString(16).padStart(2, "0")} pc=${pc}` +
               `${fr ? " frozen" : ""}  ${routineAt(pc)}`);
+
+if (has("checkpoints")) {
+  // "Does the stage run?" is not one number when the stage has nine entries.
+  // The fullest screen each one reaches is the cheapest thing that separates a
+  // room worth opening from a hang loop.
+  const probe = new VM(ROMS, { checkpoints: CHECKPOINTS });
+  const avail = probe.checkpointsFor(STAGE_ID);
+  if (!avail.length) console.log("  no checkpoint table for this part");
+  for (const c of avail) {
+    const r = run({ protection: true, checkpoint: c.level });
+    console.log(`  checkpoint ${String(c.level).padStart(2)}: ` +
+                `${String(r.painted).padStart(4)} painted, fullest ` +
+                `${(r.best * 100).toFixed(1).padStart(5)}%, ` +
+                `${String(r.draws).padStart(5)} draw(s), ` +
+                `${r.live.length} live thread(s)`);
+  }
+  if (avail.length > 1)
+    console.log("  The first listed is the default and is faithful to the " +
+                "reference's ordering;\n  it is not the one that shows the " +
+                "most. ../on-screen-priority/ --sweep asks\n  all of them " +
+                "about unnamed art at once.");
+}
 
 if (has("screens")) {
   // The explanation that was on record until 2026-09-23. Kept as a mode rather

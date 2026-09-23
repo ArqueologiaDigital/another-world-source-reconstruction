@@ -105,16 +105,26 @@ Registers `0x00..0x3F` are zeroed before a table is applied and `0x40..0xFF`
 are left alone, exactly as the reference's `restart_level` does: a table is a
 delta, not a whole machine state.
 
-CAVES' nine are nine different rooms, and it shows:
+CAVES' nine are nine different rooms, and `--checkpoints` shows it
+(msdos, 400 frames):
 
-    checkpoint  3:  2.5% of the screen at its fullest   (a hang loop)
-    checkpoint  5: 57.3%
-    checkpoint  6: 59.2%
-    checkpoint  9:  6.1%
+    checkpoint  3:  395 painted, fullest   2.5%,  1329 draw(s), 16 live
+    checkpoint  4:  399 painted, fullest  48.2%,  5185 draw(s), 17 live
+    checkpoint  5:  399 painted, fullest  57.3%,  1573 draw(s),  9 live
+    checkpoint  6:  399 painted, fullest  59.2%,  1198 draw(s),  7 live
+    checkpoint  7:  399 painted, fullest  45.6%,  3189 draw(s),  9 live
+    checkpoint  8:  399 painted, fullest  54.5%,  2431 draw(s), 18 live
+    checkpoint  9:  399 painted, fullest   6.1%,  1595 draw(s), 15 live
+    checkpoint 10:  399 painted, fullest   6.1%,  1595 draw(s), 15 live
+    checkpoint 11:  399 painted, fullest  18.4%,  2786 draw(s), 13 live
+
+and CAPSULE's three: 68.5%, 24.8%, 12.9%.
 
 The first one listed is the default, which is faithful to the reference's
-ordering and is **not** the one that shows the most. Pick one in the debugger's
-header, or use `../on-screen-priority/ --sweep` to ask about all of them at
+ordering and is **the worst of the nine to look at** -- a hang loop over 2.5% of
+the screen. Checkpoints 9 and 10 are identical on every column, which is worth
+knowing before treating them as two places. Pick one in the debugger's header,
+or use `../on-screen-priority/ --sweep` to ask all of them about unnamed art at
 once.
 
 ## What this does not fix
