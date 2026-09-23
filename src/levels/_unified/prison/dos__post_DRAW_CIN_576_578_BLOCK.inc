@@ -977,16 +977,16 @@ LABEL_2888:
 
 LABEL_289B:
 	break
-	video offset=CINEMATIC_426, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_CROUCHED_F0, x=[BUDDY_X], y=[BUDDY_Y]
 	djnz [0x29], LABEL_289B
 	break
-	video offset=CINEMATIC_427, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_CROUCHED_F1, x=[BUDDY_X], y=[BUDDY_Y]
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x01
 	mov [0x29], 0x0003
 
 LABEL_28B5:
 	break
-	video offset=CINEMATIC_427, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_CROUCHED_F1, x=[BUDDY_X], y=[BUDDY_Y]
 	djnz [0x29], LABEL_28B5
 	mov [0x29], 0x0002
 	jmp LABEL_289B

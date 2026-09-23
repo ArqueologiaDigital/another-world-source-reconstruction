@@ -61,24 +61,24 @@ INLINE_SET_VARF1_TO_64:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_406_408_BLOCK:
-	video offset=CINEMATIC_406, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F0, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_407, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F1, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_408, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F2, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_409, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F3, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_409, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F3, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_408, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F2, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_409, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F3, x=[BUDDY_X], y=[BUDDY_Y]
 	selectVideoPage 0x00
 	video offset=CINEMATIC_410, x=160, y=100
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_411, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F4, x=[BUDDY_X], y=[BUDDY_Y]
 .endif
 
 .if BRANCH == "chahi_amiga_1991"
