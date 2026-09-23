@@ -24,3 +24,15 @@ Derived by notes/cross-port-art/transfer_by_art.py.
 | constant | proposed name | confidence | evidence |
 | --- | --- | --- | --- |
 | CINEMATIC_300 | CINEMATIC_CAVES_WATERFALL | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+# Names carried from amiga by art identity in CAVES -- dos_1992
+
+Derived by notes/cross-port-art/transfer_by_art.py.
+
+| constant | proposed name | confidence | evidence |
+| --- | --- | --- | --- |
+| CINEMATIC_350 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F5 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_348 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F3 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_349 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F4 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_347 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F2 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_346 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F1 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |
+| CINEMATIC_344 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F0 | high | the other priority port draws a picture with the same `canonical_md5` in this same stage and has already earned this name for it; matched on the art, never on the index |

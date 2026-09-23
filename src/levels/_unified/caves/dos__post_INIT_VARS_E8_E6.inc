@@ -138,19 +138,19 @@ LABEL_23BB:
 	video offset=CINEMATIC_CAVES_SCREEN_4F_BACKDROP_LAYER_0, x=[0x68], y=[0x69]
 	add [0x68], 0x0003
 	break
-	video offset=CINEMATIC_346, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F1, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_346, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F1, x=[0x68], y=[0x69]
 	add [0x68], 0x0003
 	break
-	video offset=CINEMATIC_347, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F2, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_347, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F2, x=[0x68], y=[0x69]
 	add [0x68], 0x0002
 	break
-	video offset=CINEMATIC_348, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F3, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_348, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F3, x=[0x68], y=[0x69]
 	add [0x68], 0x0003
 	break
 	video offset=CINEMATIC_CAVES_SCREEN_50_BACKDROP_LAYER_1, x=[0x68], y=[0x69]

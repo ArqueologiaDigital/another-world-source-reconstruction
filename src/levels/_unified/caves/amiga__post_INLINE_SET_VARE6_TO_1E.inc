@@ -440,7 +440,7 @@ LABEL_2191:
 
 LABEL_21BB:
 	break
-	video offset=CINEMATIC_323, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F0, x=[0x68], y=[0x69]
 	djnz [0xE6], LABEL_21BB
 	break
 	video offset=CINEMATIC_324, x=[0x68], y=[0x69]
@@ -458,39 +458,39 @@ CAVES_BUDDY_ARRIVAL_HOLD_PHASE_3:
 
 CAVES_BUDDY_ARRIVAL_HOLD_PHASE_4:
 	break
-	video offset=CINEMATIC_323, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F0, x=[0x68], y=[0x69]
 	djnz [0xE6], CAVES_BUDDY_ARRIVAL_HOLD_PHASE_4
 	mov [0xE6], 0x0008
 
 LABEL_21F7:
 	break
-	video offset=CINEMATIC_323, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F0, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_323, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F0, x=[0x68], y=[0x69]
 	add [0x68], 0x0003
 	break
-	video offset=CINEMATIC_325, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F1, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_325, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F1, x=[0x68], y=[0x69]
 	add [0x68], 0x0003
 	break
-	video offset=CINEMATIC_326, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F2, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_326, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F2, x=[0x68], y=[0x69]
 	add [0x68], 0x0002
 	break
-	video offset=CINEMATIC_327, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F3, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_327, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F3, x=[0x68], y=[0x69]
 	add [0x68], 0x0003
 	break
-	video offset=CINEMATIC_328, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F4, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_328, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F4, x=[0x68], y=[0x69]
 	add [0x68], 0x0003
 	break
-	video offset=CINEMATIC_329, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F5, x=[0x68], y=[0x69]
 	break
-	video offset=CINEMATIC_329, x=[0x68], y=[0x69]
+	video offset=CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F5, x=[0x68], y=[0x69]
 	add [0x68], 0x0003
 	djnz [0xE6], LABEL_21F7

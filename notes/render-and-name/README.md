@@ -64,6 +64,7 @@ checked against the receiving port's own guards.
 | CINEMATIC_332 | CINEMATIC_353 | `..._SCREEN_4C_CAVERN_COLUMNS` | medium |
 | CINEMATIC_333 | CINEMATIC_354 | `..._SCREEN_4C_CAVERN_ARCH` | medium |
 | CINEMATIC_279 | CINEMATIC_300 | `CINEMATIC_CAVES_WATERFALL` | high |
+| CINEMATIC_323, 325, 326, 327, 328, 329 | CINEMATIC_344, 346..350 | `CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F0..F5` | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
@@ -92,3 +93,26 @@ shows they agree.
 * `CINEMATIC_718`, `CINEMATIC_719`, `CINEMATIC_734` — ledges and floors,
   each shared between two screens, so no screen scope is available and the
   subject alone does not distinguish them from each other.
+
+## The walk cycle, and the check that had to come before naming six of it
+
+Rendered in phase order, `CINEMATIC_323`, `325`, `326`, `327`, `328` and `329`
+are a four-legged creature in profile facing right — head high at the right,
+body sloping down to the left — differing frame to frame in leg position. Each
+is the sole picture of `CAVES_CREATURE_WALK_RIGHT_PHASE_1..6`, whose bodies
+are one `video` and a `ret`.
+
+The render alone would have got the count wrong. The six bounding boxes pair
+up exactly — 51x30, 56x30 and 67x30, twice each — and the paired tiles look
+identical at tile scale, which reads as three pictures alternating rather than
+six frames. They are **six distinct `canonical_md5`s**. The legs differ; the
+boxes do not. Six frames.
+
+All six are drawn at `x=[0x07], y=[0x08]`, the actor slot, so **#0138**
+applies: the name is read from the art and not inferred from the scene the
+picture appears in. That is the one thing looking is allowed to do at that
+anchor.
+
+`CREATURE` rather than `BEAST` because the routines drawing *this* art say so,
+and the render agrees it is a creature. The tree's `DRAW_BEAST_POSE_*`
+routines draw 10x10 pictures, which are not this.

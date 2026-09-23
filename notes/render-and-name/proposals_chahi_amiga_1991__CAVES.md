@@ -28,3 +28,13 @@ that its tile labels are designed to prevent.
 | constant | proposed name | confidence | evidence |
 | --- | --- | --- | --- |
 | CINEMATIC_279 | CINEMATIC_CAVES_WATERFALL | high | 198x200, 818 paths: dense vertical streaks hanging in horizontal bands, the silhouette of falling water. Two sources agree with the picture. `DRAW_WATERFALL_BG_FOUR_PASS` draws **this constant and nothing else**, four times at x=161 y=61, x=161 y=62, x=161 y=60 and x=160 y=62 across two video pages -- the one-pixel offsets that give the routine its `FOUR_PASS` name. Its other drawer, `CAVES_BUDDY_CRAWLING_SCENE_SETUP`, paints it full-screen at x=160, y=100 as that scene's background. `../sole-named-drawer/` cannot reach it because rule 3 refuses a picture two routines draw; here both routines agree |
+# CAVES batch 4 -- a walk cycle read from a render
+
+| constant | proposed name | confidence | evidence |
+| --- | --- | --- | --- |
+| CINEMATIC_323 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F0 | high | rendered together in phase order, the six are a four-legged creature in profile facing right, the head high at the right and the body sloping down to the left, differing frame to frame in leg position. Six **distinct** `canonical_md5`s, so six real frames and not three alternating -- the bounding boxes pair up (51x30, 56x30, 67x30, twice each) but the art does not. This one is the sole picture of `CAVES_CREATURE_WALK_RIGHT_PHASE_1`, whose body is one `video` and a `ret`. Drawn at `x=[0x07], y=[0x08]`, the actor slot, so per #0138 the name is read from the art and not inferred from any scene |
+| CINEMATIC_325 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F1 | high | as above; the sole picture of `CAVES_CREATURE_WALK_RIGHT_PHASE_2` |
+| CINEMATIC_326 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F2 | high | as above; the sole picture of `CAVES_CREATURE_WALK_RIGHT_PHASE_3` |
+| CINEMATIC_327 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F3 | high | as above; the sole picture of `CAVES_CREATURE_WALK_RIGHT_PHASE_4` |
+| CINEMATIC_328 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F4 | high | as above; the sole picture of `CAVES_CREATURE_WALK_RIGHT_PHASE_5` |
+| CINEMATIC_329 | CINEMATIC_CAVES_CREATURE_WALK_RIGHT_F5 | high | as above; the sole picture of `CAVES_CREATURE_WALK_RIGHT_PHASE_6` |
