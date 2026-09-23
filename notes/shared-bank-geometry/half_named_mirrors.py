@@ -27,6 +27,11 @@ the project has instances of each:
     draws no arm.
   * **the cycles differ in length** -- `CV_FIGURE_RUN_LEFT_UPPER_POSE_06`
     has no right-facing twin because that cycle has one fewer pose.
+  * **the direction word is not a facing** --
+    `CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_RIGHT_0..7` is a complete family
+    naming a place, "the second screen to the right", so flipping the word
+    produces a name nothing should have. A pure false positive of the
+    heuristic, and the only way to tell is to read the name.
 
 So the list is a worklist, not an error report, and every entry needs the
 same treatment: find the mirror routine, compare its components in order,
@@ -55,6 +60,11 @@ KNOWN = {
        "absence, run_right_gun_arm.map (no left-facing guard on [0x0A])"
        for n in range(0, 5)},
     "CV_FIGURE_RUN_RIGHT_UPPER_POSE_06": "cycle length differs, 6 vs 7 poses",
+    **{f"HERO_GUN_ARM_LEFT_CASE_{n:02d}_CHARGE_BLINK":
+       "absence: the left switch blinks only at case 4"
+       for n in (1, 2, 3)},
+    "CINEMATIC_SCENARIO_2ND_SCREEN_TO_THE_LEFT_2":
+        "false positive: RIGHT here is a location, not a facing",
 }
 
 

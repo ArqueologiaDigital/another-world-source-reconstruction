@@ -144,9 +144,11 @@ for it whenever two draws share an anchor.
    own check: `notes/shared-bank-geometry/half_named_mirrors.py`. It asks,
    for each named piece containing `_LEFT`/`_RIGHT`, whether the flipped name
    exists. It found `HERO_CROUCH_RIGHT` and `HERO_STAND_RIGHT_{BODY,ARM}`.
-   16 of the 20 remaining entries are adjudicated absences with a recorded
-   reason; **4 are open**, the three `HERO_GUN_ARM_LEFT_CASE_0n_CHARGE_BLINK`
-   and one CINEMATIC scenario name.
+   **All 20 entries are now adjudicated and none is open.** The three
+   `HERO_GUN_ARM_LEFT_CASE_0n_CHARGE_BLINK` are absences — the left switch
+   draws a blink only at case 4, against four on the right — and the
+   CINEMATIC scenario name is a false positive, since "right" there names a
+   place rather than a facing.
 
 3b. **Six of the eight consensus "disagreements" are one artefact.** CAVES
    indexes a single crawl cycle forwards as `HERO_CRAWL_LEFT_PHASE_n` and
