@@ -159,13 +159,13 @@ LABEL_2F29:
 	break
 	video offset=CINEMATIC_CAVES_HERO_IDLE_RIGHT_4, x=160, y=[0xe6]
 	break
-	video offset=CINEMATIC_535, x=160, y=[0xe6]
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F1, x=160, y=[0xe6]
 	break
-	video offset=CINEMATIC_535, x=160, y=[0xe6]
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F1, x=160, y=[0xe6]
 	break
-	video offset=CINEMATIC_536, x=160, y=[0xe6]
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F2, x=160, y=[0xe6]
 	break
-	video offset=CINEMATIC_536, x=160, y=[0xe6]
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F2, x=160, y=[0xe6]
 	break
 	jmp LABEL_2F29
 LABEL_2F50:
@@ -176,13 +176,13 @@ LABEL_2F51:
 	break
 	video offset=CINEMATIC_CAVES_HERO_IDLE_RIGHT_4, x=157, y=54
 	break
-	video offset=CINEMATIC_535, x=157, y=54
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F1, x=157, y=54
 	break
-	video offset=CINEMATIC_535, x=157, y=54
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F1, x=157, y=54
 	break
-	video offset=CINEMATIC_536, x=157, y=54
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F2, x=157, y=54
 	break
-	video offset=CINEMATIC_536, x=157, y=54
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F2, x=157, y=54
 	break
 	jmp LABEL_2F51
 LABEL_2F72:
@@ -193,13 +193,13 @@ LABEL_2F73:
 	break
 	video offset=CINEMATIC_CAVES_HERO_IDLE_RIGHT_4, x=140, y=[0xe6]
 	break
-	video offset=CINEMATIC_535, x=140, y=[0xe6]
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F1, x=140, y=[0xe6]
 	break
-	video offset=CINEMATIC_535, x=140, y=[0xe6]
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F1, x=140, y=[0xe6]
 	break
-	video offset=CINEMATIC_536, x=140, y=[0xe6]
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F2, x=140, y=[0xe6]
 	break
-	video offset=CINEMATIC_536, x=140, y=[0xe6]
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F2, x=140, y=[0xe6]
 	break
 	jmp LABEL_2F73
 LABEL_2F9A:
@@ -322,13 +322,13 @@ LABEL_30DC:
 	add [0xEE], [0x3E]
 
 LABEL_30E6:
-	video offset=CINEMATIC_283, x=[0xee], y=100
+	video offset=CINEMATIC_CAVES_BAR_CLUSTER_F0, x=[0xee], y=100
 	break
-	video offset=CINEMATIC_284, x=[0xee], y=100
+	video offset=CINEMATIC_CAVES_BAR_CLUSTER_F1, x=[0xee], y=100
 	break
-	video offset=CINEMATIC_283, x=[0xee], y=100
+	video offset=CINEMATIC_CAVES_BAR_CLUSTER_F0, x=[0xee], y=100
 	break
-	video offset=CINEMATIC_285, x=[0xee], y=100
+	video offset=CINEMATIC_CAVES_BAR_CLUSTER_F2, x=[0xee], y=100
 	break
 	jmp LABEL_30E6
 LABEL_3101:
@@ -340,13 +340,13 @@ LABEL_3102:
 	add [0xEE], [0x3E]
 
 LABEL_310C:
-	video offset=CINEMATIC_283, x=[0xee], y=89
+	video offset=CINEMATIC_CAVES_BAR_CLUSTER_F0, x=[0xee], y=89
 	break
-	video offset=CINEMATIC_284, x=[0xee], y=89
+	video offset=CINEMATIC_CAVES_BAR_CLUSTER_F1, x=[0xee], y=89
 	break
-	video offset=CINEMATIC_283, x=[0xee], y=89
+	video offset=CINEMATIC_CAVES_BAR_CLUSTER_F0, x=[0xee], y=89
 	break
-	video offset=CINEMATIC_285, x=[0xee], y=89
+	video offset=CINEMATIC_CAVES_BAR_CLUSTER_F2, x=[0xee], y=89
 	break
 	jmp LABEL_310C
 LABEL_3127:
@@ -356,9 +356,9 @@ LABEL_3128:
 	mov [0xEF], 0x004B
 	call SETUP_HASH_AND_DERIVE_BUCKETS
 	add [0xEF], [0x3B]
-	video offset=CINEMATIC_283, x=[0xef], y=75
+	video offset=CINEMATIC_CAVES_BAR_CLUSTER_F0, x=[0xef], y=75
 	break
-	video offset=CINEMATIC_284, x=[0xef], y=75
+	video offset=CINEMATIC_CAVES_BAR_CLUSTER_F1, x=[0xef], y=75
 	break
 	video offset=CINEMATIC_390, x=[0xef], y=75
 	break
@@ -369,10 +369,10 @@ LABEL_3128:
 	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=[0xef], y=80
 	break
 	video offset=CINEMATIC_392, x=[0xef], y=120
-	video offset=CINEMATIC_284, x=[0xef], y=65
+	video offset=CINEMATIC_CAVES_BAR_CLUSTER_F1, x=[0xef], y=65
 	break
 	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=[0xef], y=140
-	video offset=CINEMATIC_284, x=[0xef], y=60
+	video offset=CINEMATIC_CAVES_BAR_CLUSTER_F1, x=[0xef], y=60
 	break
 	video offset=CINEMATIC_CAVES_FIRST_ROOM_BG_F0, x=[0xef], y=200
 	break

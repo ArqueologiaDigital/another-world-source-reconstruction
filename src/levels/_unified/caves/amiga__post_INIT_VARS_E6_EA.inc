@@ -165,11 +165,11 @@ DRAW_CIN_353_THEN_CIN_354:
 
 
 LABEL_CAB0:
-	video offset=CINEMATIC_403, x=169, y=94
+	video offset=CINEMATIC_CAVES_TWIN_LAMP_BRACKET_F0, x=169, y=94
 	break
-	video offset=CINEMATIC_404, x=169, y=94
+	video offset=CINEMATIC_CAVES_TWIN_LAMP_BRACKET_F1, x=169, y=94
 	break
-	video offset=CINEMATIC_405, x=169, y=94
+	video offset=CINEMATIC_CAVES_TWIN_LAMP_BRACKET_F2, x=169, y=94
 	break
 	jmp LABEL_CAB0
 LABEL_CAC2:
@@ -275,18 +275,18 @@ LABEL_CB92:
 	db 0x11
 
 DRAW_CIN_424_426_VERTICAL:
-	video offset=CINEMATIC_403, x=169, y=94
+	video offset=CINEMATIC_CAVES_TWIN_LAMP_BRACKET_F0, x=169, y=94
 	break
-	video offset=CINEMATIC_404, x=169, y=110
+	video offset=CINEMATIC_CAVES_TWIN_LAMP_BRACKET_F1, x=169, y=110
 	break
-	video offset=CINEMATIC_405, x=169, y=130
+	video offset=CINEMATIC_CAVES_TWIN_LAMP_BRACKET_F2, x=169, y=130
 	break
-	video offset=CINEMATIC_403, x=169, y=154
+	video offset=CINEMATIC_CAVES_TWIN_LAMP_BRACKET_F0, x=169, y=154
 	video offset=CINEMATIC_134, x=144, y=147
 	play id=0x005B, freq=0x14, vol=0x40, channel=0x03
 	break
 	play id=0x005B, freq=0x14, vol=0x40, channel=0x02
-	video offset=CINEMATIC_404, x=169, y=180
+	video offset=CINEMATIC_CAVES_TWIN_LAMP_BRACKET_F1, x=169, y=180
 	video offset=CINEMATIC_134, x=178, y=173
 	break
 	video offset=CINEMATIC_401, x=169, y=178

@@ -91,14 +91,14 @@ LABEL_1640:
 	killChannel
 
 LABEL_1661:
-	video offset=CINEMATIC_143, x=[0x78], y=[0x79]
+	video offset=CINEMATIC_CAVES_SWINGING_LIMB_F0, x=[0x78], y=[0x79]
 	mov [PAUSE_SLICES], 0x0004
-	video offset=CINEMATIC_144, x=[0x78], y=[0x79]
+	video offset=CINEMATIC_CAVES_SWINGING_LIMB_F1, x=[0x78], y=[0x79]
 	break
-	video offset=CINEMATIC_145, x=[0x78], y=[0x79]
-	video offset=CINEMATIC_146, x=[0x78], y=[0x79]
+	video offset=CINEMATIC_CAVES_SWINGING_LIMB_F2, x=[0x78], y=[0x79]
+	video offset=CINEMATIC_CAVES_SWINGING_LIMB_F3, x=[0x78], y=[0x79]
 	break
-	video offset=CINEMATIC_147, x=[0x78], y=[0x79]
+	video offset=CINEMATIC_CAVES_SWINGING_LIMB_F4, x=[0x78], y=[0x79]
 	setup channel=0x16, address=SETUP_CHAN_14_BY_VAR63
 	break
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x01

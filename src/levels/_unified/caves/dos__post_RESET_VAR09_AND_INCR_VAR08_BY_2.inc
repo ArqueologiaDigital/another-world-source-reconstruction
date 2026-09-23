@@ -168,51 +168,51 @@ LABEL_3151:
 	db 0x11
 
 LABEL_3152:
-	video offset=CINEMATIC_555, x=160, y=[0xe6]
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F0, x=160, y=[0xe6]
 	break
-	video offset=CINEMATIC_555, x=160, y=[0xe6]
-	break
-	video offset=CINEMATIC_CAVES_SCREEN_95_BACKDROP_LAYER_4, x=160, y=[0xe6]
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F0, x=160, y=[0xe6]
 	break
 	video offset=CINEMATIC_CAVES_SCREEN_95_BACKDROP_LAYER_4, x=160, y=[0xe6]
 	break
-	video offset=CINEMATIC_557, x=160, y=[0xe6]
+	video offset=CINEMATIC_CAVES_SCREEN_95_BACKDROP_LAYER_4, x=160, y=[0xe6]
 	break
-	video offset=CINEMATIC_557, x=160, y=[0xe6]
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F2, x=160, y=[0xe6]
+	break
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F2, x=160, y=[0xe6]
 	break
 	jmp LABEL_3152
 LABEL_3179:
 	db 0x11
 
 LABEL_317A:
-	video offset=CINEMATIC_555, x=157, y=54
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F0, x=157, y=54
 	break
-	video offset=CINEMATIC_555, x=157, y=54
-	break
-	video offset=CINEMATIC_CAVES_SCREEN_95_BACKDROP_LAYER_4, x=157, y=54
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F0, x=157, y=54
 	break
 	video offset=CINEMATIC_CAVES_SCREEN_95_BACKDROP_LAYER_4, x=157, y=54
 	break
-	video offset=CINEMATIC_557, x=157, y=54
+	video offset=CINEMATIC_CAVES_SCREEN_95_BACKDROP_LAYER_4, x=157, y=54
 	break
-	video offset=CINEMATIC_557, x=157, y=54
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F2, x=157, y=54
+	break
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F2, x=157, y=54
 	break
 	jmp LABEL_317A
 LABEL_319B:
 	db 0x11
 
 LABEL_319C:
-	video offset=CINEMATIC_555, x=140, y=[0xe6]
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F0, x=140, y=[0xe6]
 	break
-	video offset=CINEMATIC_555, x=140, y=[0xe6]
-	break
-	video offset=CINEMATIC_CAVES_SCREEN_95_BACKDROP_LAYER_4, x=140, y=[0xe6]
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F0, x=140, y=[0xe6]
 	break
 	video offset=CINEMATIC_CAVES_SCREEN_95_BACKDROP_LAYER_4, x=140, y=[0xe6]
 	break
-	video offset=CINEMATIC_557, x=140, y=[0xe6]
+	video offset=CINEMATIC_CAVES_SCREEN_95_BACKDROP_LAYER_4, x=140, y=[0xe6]
 	break
-	video offset=CINEMATIC_557, x=140, y=[0xe6]
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F2, x=140, y=[0xe6]
+	break
+	video offset=CINEMATIC_CAVES_RIPPLE_LINE_F2, x=140, y=[0xe6]
 	break
 	jmp LABEL_319C
 LABEL_31C3:
