@@ -135,6 +135,7 @@ checked against the receiving port's own guards.
 | INTRO 243, 246, 247, 250..260 | 249, 252, 253, 256..266 | `CINEMATIC_ACCELERATOR_TUNNEL_{VIEW_NEAR,PULSE_NEAR_F0..F14}` | high |
 | INTRO `EXPERIMENT_LIGHTNING_F23..F28_AMIGA_EXTRA` | (same names) | `CINEMATIC_ACCELERATOR_TUNNEL_PULSE_FAR_F0..F5` | high |
 | INTRO 12 `_AMIGA_EXTRA` leftovers + 505, 506 | 10 twins | `..._SODA_CAN_F{3,7}`, `HOLO_SCREEN_PANEL_FRAME_F0`, `..._CUBE_CORNER_BOTTOM_RIGHT`, `LIFT_SHAFT_SCROLL_BAND_F0..F3`, `LAB_AUTH_CRT_OVERLAY_STAMP`, `LAB_DOOR_SCENE_LAMP`, `LESTER_STANDING_BACK_TO_CAMERA`, `BIOMETRIC_SCANNER_CONSOLE_DETAIL`, `SODA_SCENE_BACKDROP`, `HOLO_CONSOLE_ROOM_BACKDROP` | high/medium |
+| INTRO 517, 518 | 523, 129 | `CINEMATIC_LESTER_WALKING_AWAY_FROM_CAMERA_F2, F3` (+ a four-branch renumber of F3..F6 to F4..F7) | high |
 | INTRO 268..276 | 274..282 | `CINEMATIC_FRAGMENTS_RECEDING_F0..F8` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
@@ -338,6 +339,36 @@ all 72 rows across three branches with 0 rejected.
 Four rows per table are not rungs and carry hand-written evidence: the
 backdrop painter, the frame routine, the join after the pupil ladder, and the
 frame tail.
+
+## A renumber that touches a shared draw line is global, not branch-scoped
+
+The walk-family renumber took three attempts and the two failures are worth
+keeping, because nothing in the proposal tables predicted either.
+
+**Attempt 1, amiga and msdos only.** `verify_unified.py` went 29/29 to
+**25/29**. `LESTER_WALKING_AWAY_FROM_CAMERA_FRAME_CYCLE`'s draws of F3, F4 and
+F5 are shared lines, outside any `.if BRANCH` arm, because every branch draws
+the same frame there. Moving what the name means in two branches and not the
+other two moves those lines' bytes.
+
+**Attempt 2, branch-scoped for all four.** `undefined_symbols.py`: 6 problems,
+three of them "defined 2 times, 2 DIFFERENT values". dos, cartridge and gba
+share **one `.else` arm**, so a branch-scoped run applied the *chained* shift
+F3->F4->F5->F6->F7 to that one arm three times. 0x42A8 came out as F5, and two
+constants both ended up F7.
+
+**What worked:** the uniform part as one global rename
+(`apply_cinematic_renames.py`, no `--branch`), then the per-branch part after
+it. The rule the two failures give:
+
+> A rename is branch-scoped only if every line it touches is inside that
+> branch's own arm. A chained rename -- where a row's target is another row's
+> source -- must be applied **once**, so it can never be branch-scoped across
+> branches that share an arm.
+
+The byte gate caught the first failure and `undefined_symbols.py` caught the
+second, which is the division of labour `notes/HANDOFF.md` describes: run the
+symbol check *before* `make test`.
 
 ## `palette_in_force.py` -- the first thing to get right
 

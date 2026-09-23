@@ -577,6 +577,17 @@ without any judgement at all.
    `SHOW_TEXT_*_AT_x_y` where the coordinate *is* the argument. Different
    question from the one just closed; decide whether the rule applies.
 
+## A rule learned the hard way this session
+
+**A chained rename can never be branch-scoped across branches that share a
+unified arm.** The INTRO walk renumber needed three attempts;
+`notes/render-and-name/README.md` records both failures and the numbers that
+exposed them (verify-unified 25/29, then 6 undefined-symbol problems). The
+working shape is: the uniform part globally with
+`apply_cinematic_renames.py`, then the per-branch remainder. Run
+`undefined_symbols.py` before `make test` -- it caught what the byte gate did
+not.
+
 ## Checked this session, and what is still held
 
 **`CINEMATIC_ACCELERATOR_TUNNEL_RECEDE_F0..F6` does recede -- checked, name
