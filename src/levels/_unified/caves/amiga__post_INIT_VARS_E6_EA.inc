@@ -356,7 +356,7 @@ LABEL_CC67:
 
 LABEL_CC68:
 	video offset=CINEMATIC_338, x=114, y=140
-	video offset=CINEMATIC_276, x=91, y=146
+	video offset=CINEMATIC_CAVES_STEPPED_SLOPE_1, x=91, y=146
 	video offset=CINEMATIC_338, x=242, y=145
 	break
 	jmp LABEL_CC68
@@ -365,11 +365,11 @@ LABEL_CC78:
 
 LABEL_CC79:
 	video offset=CINEMATIC_338, x=181, y=144
-	video offset=CINEMATIC_276, x=121, y=203, zoom=0x40
+	video offset=CINEMATIC_CAVES_STEPPED_SLOPE_1, x=121, y=203, zoom=0x40
 	video offset=CINEMATIC_338, x=262, y=145
 	video offset=CINEMATIC_338, x=85, y=145
 	jl [HERO_Y], 0xD2, LABEL_CC96
-	video offset=CINEMATIC_277, x=203, y=208, zoom=0x40
+	video offset=CINEMATIC_CAVES_SLANTED_SLAB, x=203, y=208, zoom=0x40
 
 LABEL_CC96:
 	break
@@ -378,8 +378,8 @@ LABEL_CC9A:
 	db 0x11
 
 CAVES_BUDDY_CRAWLING_BG_HOLD_LOOP:
-	video offset=CINEMATIC_276, x=99, y=160
-	video offset=CINEMATIC_277, x=192, y=168
+	video offset=CINEMATIC_CAVES_STEPPED_SLOPE_1, x=99, y=160
+	video offset=CINEMATIC_CAVES_SLANTED_SLAB, x=192, y=168
 	break
 	jmp CAVES_BUDDY_CRAWLING_BG_HOLD_LOOP
 LABEL_CCA7:
@@ -387,11 +387,11 @@ LABEL_CCA7:
 
 LABEL_CCA8:
 	jg [HERO_Y], 0x65, LABEL_CCC2
-	video offset=CINEMATIC_389, x=112, y=69
-	video offset=CINEMATIC_277, x=37, y=31
-	video offset=CINEMATIC_277, x=149, y=11
-	video offset=CINEMATIC_389, x=59, y=15
-	video offset=CINEMATIC_277, x=76, y=76
+	video offset=CINEMATIC_CAVES_STEPPED_SLOPE_0, x=112, y=69
+	video offset=CINEMATIC_CAVES_SLANTED_SLAB, x=37, y=31
+	video offset=CINEMATIC_CAVES_SLANTED_SLAB, x=149, y=11
+	video offset=CINEMATIC_CAVES_STEPPED_SLOPE_0, x=59, y=15
+	video offset=CINEMATIC_CAVES_SLANTED_SLAB, x=76, y=76
 
 LABEL_CCC2:
 	break
@@ -406,8 +406,8 @@ LABEL_CCCE:
 
 LABEL_CCCF:
 	jg [HERO_Y], 0x78, LABEL_CCE1
-	video offset=CINEMATIC_389, x=226, y=87
-	video offset=CINEMATIC_389, x=150, y=27
+	video offset=CINEMATIC_CAVES_STEPPED_SLOPE_0, x=226, y=87
+	video offset=CINEMATIC_CAVES_STEPPED_SLOPE_0, x=150, y=27
 	video offset=CINEMATIC_425, x=226, y=136
 
 LABEL_CCE1:
@@ -449,7 +449,7 @@ LABEL_CD24:
 	db 0x11
 
 CAVES_DRAW_CRAWLING_BG_AND_PICK_BY_HERO_X:
-	video offset=CINEMATIC_276, x=46, y=139
+	video offset=CINEMATIC_CAVES_STEPPED_SLOPE_1, x=46, y=139
 	mov [0x42], 0xF060
 	jl [HERO_X], 0x35, DRAW_CAVES_FIRST_ROOM_BG
 	mov [0x42], 0x001D

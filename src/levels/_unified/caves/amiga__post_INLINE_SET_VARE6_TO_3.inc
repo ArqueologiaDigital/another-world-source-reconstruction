@@ -112,14 +112,14 @@ LABEL_04DE:
 	db 0x11
 
 LABEL_04DF:
-	video offset=CINEMATIC_437, x=109, y=188
+	video offset=CINEMATIC_CAVES_WALL_TILE, x=109, y=188
 	video offset=CINEMATIC_338, x=32, y=141
 	video offset=CINEMATIC_412, x=78, y=110
 	video offset=CINEMATIC_338, x=134, y=142
 	video offset=CINEMATIC_338, x=38, y=141
 	video offset=CINEMATIC_338, x=77, y=141
 	video offset=CINEMATIC_412, x=135, y=123
-	video offset=CINEMATIC_437, x=111, y=63
+	video offset=CINEMATIC_CAVES_WALL_TILE, x=111, y=63
 	video offset=CINEMATIC_544, x=160, y=100
 	break
 	jmp LABEL_04DF

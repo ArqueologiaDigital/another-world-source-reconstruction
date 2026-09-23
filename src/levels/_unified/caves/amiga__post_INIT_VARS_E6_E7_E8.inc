@@ -18,9 +18,9 @@ LABEL_0686:
 	killChannel
 
 LABEL_0692:
-	video offset=CINEMATIC_437, x=179, y=31
-	video offset=CINEMATIC_437, x=179, y=62
-	video offset=CINEMATIC_437, x=179, y=93
+	video offset=CINEMATIC_CAVES_WALL_TILE, x=179, y=31
+	video offset=CINEMATIC_CAVES_WALL_TILE, x=179, y=62
+	video offset=CINEMATIC_CAVES_WALL_TILE, x=179, y=93
 	break
 	jmp LABEL_0692
 LABEL_06A2:

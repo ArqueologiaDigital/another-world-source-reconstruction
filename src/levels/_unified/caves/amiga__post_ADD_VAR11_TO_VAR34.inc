@@ -133,13 +133,13 @@ KILL_CHAN_AT_7830:
 	killChannel
 
 DRAW_CIN_212_THEN_CIN_212:
-	video offset=CINEMATIC_212, x=320, y=184
-	video offset=CINEMATIC_212, x=16, y=184
+	video offset=CINEMATIC_CAVES_PLAIN_BLOCK, x=320, y=184
+	video offset=CINEMATIC_CAVES_PLAIN_BLOCK, x=16, y=184
 	ret
 
 
 LABEL_783B:
-	video offset=CINEMATIC_212, x=160, y=19
+	video offset=CINEMATIC_CAVES_PLAIN_BLOCK, x=160, y=19
 	break
 	jl [HERO_Y], 0x64, LABEL_783B
 	killChannel

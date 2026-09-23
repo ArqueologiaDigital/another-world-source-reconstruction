@@ -179,6 +179,7 @@ checked against the receiving port's own guards.
 | CAPSULE 034..040 | msdos 380..386 | `CINEMATIC_CAPSULE_LEDGE_{MID_SPAN,FAR_SPAN,FAR_PLATFORM,DISTANT_FIGURE,NEAR_SPAN,FOREGROUND_SLAB,FOREGROUND_SPUR}` | medium |
 | CAPSULE 024..032 | msdos 370..378 | `CINEMATIC_CAPSULE_{TUNIC_FIGURE_WALK_RIGHT_F0,F1,STANDING_SMALL,STANDING_LARGE,ROBED_FIGURE_F0..F3,LIT_PANEL}` | medium |
 | CAVES 380..385, 580, 737, 747 | msdos 401..406, 601, 758, 767 | `CINEMATIC_CAVES_{STALACTITE_0..4,STALAGMITE_STUB,CAVERN_PILLARS_NARROW,WIDE}` -- a kit, 61 placements over 18 routines | medium |
+| CAVES 212, 276, 277, 389, 437 | msdos 229, 297, 298, 410, 458 | `CINEMATIC_CAVES_{STEPPED_SLOPE_0,1,SLANTED_SLAB,WALL_TILE,PLAIN_BLOCK}` -- from `../scenery-kit/` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that

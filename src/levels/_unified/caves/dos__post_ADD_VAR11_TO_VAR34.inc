@@ -133,14 +133,14 @@ KILL_CHAN_AT_7B88:
 	killChannel
 
 LABEL_7B89:
-	video offset=CINEMATIC_229, x=320, y=184
-	video offset=CINEMATIC_229, x=16, y=184
+	video offset=CINEMATIC_CAVES_PLAIN_BLOCK, x=320, y=184
+	video offset=CINEMATIC_CAVES_PLAIN_BLOCK, x=16, y=184
 	call LABEL_2BCB
 	ret
 
 
 LABEL_7B96:
-	video offset=CINEMATIC_229, x=160, y=19
+	video offset=CINEMATIC_CAVES_PLAIN_BLOCK, x=160, y=19
 	call LABEL_2BCB
 	break
 	jl [HERO_Y], 0x64, LABEL_7B96

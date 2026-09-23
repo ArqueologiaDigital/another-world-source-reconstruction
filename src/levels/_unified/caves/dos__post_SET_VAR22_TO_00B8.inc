@@ -402,7 +402,7 @@ LABEL_C964:
 	db 0x11
 
 LABEL_C965:
-	video offset=CINEMATIC_458, x=286, y=27
+	video offset=CINEMATIC_CAVES_WALL_TILE, x=286, y=27
 	video offset=CINEMATIC_CAVES_HERO_COLLAPSE_F4, x=66, y=143
 	jg [HERO_Y], 0x78, LABEL_C9AA
 	jg [HERO_X], 0x64, LABEL_C987
@@ -624,15 +624,15 @@ LABEL_CBA1:
 	killChannel
 
 LABEL_CBC6:
-	video offset=CINEMATIC_458, x=104, y=43
-	video offset=CINEMATIC_458, x=201, y=45
+	video offset=CINEMATIC_CAVES_WALL_TILE, x=104, y=43
+	video offset=CINEMATIC_CAVES_WALL_TILE, x=201, y=45
 	break
 	jmp LABEL_CBC6
 
 LABEL_CBD2:
-	video offset=CINEMATIC_458, x=104, y=40
-	video offset=CINEMATIC_458, x=149, y=32
-	video offset=CINEMATIC_458, x=194, y=41
+	video offset=CINEMATIC_CAVES_WALL_TILE, x=104, y=40
+	video offset=CINEMATIC_CAVES_WALL_TILE, x=149, y=32
+	video offset=CINEMATIC_CAVES_WALL_TILE, x=194, y=41
 	break
 	jmp LABEL_CBD2
 
