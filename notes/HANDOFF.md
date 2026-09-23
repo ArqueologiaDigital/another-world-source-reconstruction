@@ -20,7 +20,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 61.1% (6,203/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 63.1% (6,398/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 77 of 352 (59 reachable) | `notes/shared-bank-geometry/` |
@@ -57,6 +57,23 @@ named in another stage ~38, art named in the other port for the same stage 22.
 What remains is **1,655 pictures numbered in *both* priority ports with
 identical art** — 667 CAVES, 511 PRISON, 403 CAPSULE — which nothing in the
 call graph distinguishes.
+
+**The method that worked, stated once.** Everything that moved after the
+mechanical seams ran out came from one idea: *the control flow and the art
+identity around a picture identify it when the picture itself cannot.* Six
+probes, each with a control:
+
+| probe | what it reads | control |
+| --- | --- | --- |
+| `screen-scope/screen_scope.py` | forward dataflow on `[SCREEN_NUM]` | re-derives 303 of 303 human screen assignments |
+| `screen-scope/screen_entry.py` | the chain whose targets write the camera bounds | the two already-named chains fall on the negative side |
+| `substitute-layers/alternative_of.py` | the branch that picks between a named and an unnamed picture | — |
+| `substitute-layers/fire_frames.py` | the muzzle offset's sign | re-derives 9 already-correct namings |
+| `shared-bank-geometry/mirror_match.py` | point sets flipped in x | **fails** on aim-vs-shoot; used only where the gap is wide |
+| `cross-port-art/bank_copy_in_stage.py` | `canonical_md5` against named bank art | 21 shared-chunk constants differing proves the guard needed |
+
+Rendering, by contrast, produced one screen's names in a whole round and a
+bug in my own rule. Reach for the control flow first.
 
 **The compounding does not happen, twice measured.** Naming 264 routines
 freed 2 constants (both bad, both filtered); naming 226 constants freed 0
