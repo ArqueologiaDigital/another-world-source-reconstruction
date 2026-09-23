@@ -66,3 +66,10 @@ Those 56 are the remainder of the 63 labels whose whole body is one frame of
 one family. They are not blocked on evidence about the art; they are blocked
 on there being no convention in that file to copy. A person naming one of
 their siblings unblocks the rest.
+
+Pooling siblings across branches — the same stage and family in amiga, msdos,
+cartridge and GBA together — was tried, on the theory that one port might have
+named what another left numbered. The control survives it (124 reproduced, 0
+not) and it yields **0** extra proposals: these families have no named drawer
+in *any* branch. Not adopted, since a wider pool with no yield is only a wider
+surface for a mistake.
