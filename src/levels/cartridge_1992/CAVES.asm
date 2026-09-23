@@ -31,10 +31,10 @@ CINEMATIC_004		EQU 0xB812
 CINEMATIC_005		EQU 0xB88A
 CINEMATIC_006		EQU 0xB832
 CINEMATIC_007		EQU 0xB852
-CINEMATIC_008		EQU 0xADDE
-CINEMATIC_009		EQU 0xAE0C
-CINEMATIC_010		EQU 0xAE20
-CINEMATIC_011		EQU 0xAE40
+CINEMATIC_WIDE_FLASH_F0		EQU 0xADDE
+CINEMATIC_WIDE_FLASH_F1		EQU 0xAE0C
+CINEMATIC_WIDE_FLASH_F2		EQU 0xAE20
+CINEMATIC_WIDE_FLASH_F3		EQU 0xAE40
 CINEMATIC_012		EQU 0xCF04
 CINEMATIC_013		EQU 0x47A8
 CINEMATIC_014		EQU 0xD63A
@@ -100,10 +100,10 @@ CINEMATIC_072		EQU 0x1B8C
 CINEMATIC_073		EQU 0x1B98
 CINEMATIC_074		EQU 0x35F8
 CINEMATIC_075		EQU 0x35C8
-CINEMATIC_076		EQU 0x32E0
-CINEMATIC_077		EQU 0x3392
-CINEMATIC_078		EQU 0x33A8
-CINEMATIC_079		EQU 0x33C0
+CINEMATIC_CAVES_SEGMENT_BAR_F0		EQU 0x32E0
+CINEMATIC_CAVES_SEGMENT_BAR_F1		EQU 0x3392
+CINEMATIC_CAVES_SEGMENT_BAR_F2		EQU 0x33A8
+CINEMATIC_CAVES_SEGMENT_BAR_F3		EQU 0x33C0
 CINEMATIC_080		EQU 0x3CA2
 CINEMATIC_081		EQU 0x3D1A
 CINEMATIC_082		EQU 0x2DCE
@@ -154,13 +154,13 @@ CINEMATIC_126		EQU 0x3C62
 CINEMATIC_127		EQU 0x3A58
 CINEMATIC_128		EQU 0x3ABC
 CINEMATIC_129		EQU 0x3B24
-CINEMATIC_130		EQU 0x330E
-CINEMATIC_131		EQU 0x3366
-CINEMATIC_132		EQU 0x333A
-CINEMATIC_133		EQU 0x3420
-CINEMATIC_134		EQU 0x3580
-CINEMATIC_135		EQU 0x33D8
-CINEMATIC_136		EQU 0x3404
+CINEMATIC_CAVES_DISCHARGE_FLASH_F0		EQU 0x330E
+CINEMATIC_CAVES_DISCHARGE_FLASH_F1		EQU 0x3366
+CINEMATIC_CAVES_CHARGE_GLOW_F0		EQU 0x333A
+CINEMATIC_CAVES_CHARGE_GLOW_F1		EQU 0x3420
+CINEMATIC_CAVES_CHARGE_BLAST		EQU 0x3580
+CINEMATIC_CAVES_CHARGE_GLOW_F2		EQU 0x33D8
+CINEMATIC_CAVES_CHARGE_GLOW_F3		EQU 0x3404
 CINEMATIC_137		EQU 0x3634
 CINEMATIC_138		EQU 0x3604
 CINEMATIC_139		EQU 0x409A
@@ -4066,27 +4066,27 @@ CAVES_INLINE_SET_VAR01_TO_E_L0:
 	killChannel
 
 CAVES_INLINE_SET_VAR01_TO_E_L2:
-	video offset=CINEMATIC_008, x=160, y=[0xe7]
+	video offset=CINEMATIC_WIDE_FLASH_F0, x=160, y=[0xe7]
 	break
 	setPalette 0x0D
 	play id=0x0052, freq=0x0A, vol=0x40, channel=0x02
-	video offset=CINEMATIC_009, x=160, y=[0xe7]
+	video offset=CINEMATIC_WIDE_FLASH_F1, x=160, y=[0xe7]
 	break
 	setPalette 0x08
-	video offset=CINEMATIC_010, x=160, y=[0xe7]
+	video offset=CINEMATIC_WIDE_FLASH_F2, x=160, y=[0xe7]
 	break
-	video offset=CINEMATIC_011, x=160, y=[0xe7]
+	video offset=CINEMATIC_WIDE_FLASH_F3, x=160, y=[0xe7]
 	killChannel
 
 CAVES_INLINE_SET_VAR01_TO_E_L3:
-	video offset=CINEMATIC_008, x=160, y=[0xe8]
+	video offset=CINEMATIC_WIDE_FLASH_F0, x=160, y=[0xe8]
 	break
 	play id=0x0052, freq=0x14, vol=0x40, channel=0x02
-	video offset=CINEMATIC_009, x=160, y=[0xe8]
+	video offset=CINEMATIC_WIDE_FLASH_F1, x=160, y=[0xe8]
 	break
-	video offset=CINEMATIC_010, x=160, y=[0xe8]
+	video offset=CINEMATIC_WIDE_FLASH_F2, x=160, y=[0xe8]
 	break
-	video offset=CINEMATIC_011, x=160, y=[0xe8]
+	video offset=CINEMATIC_WIDE_FLASH_F3, x=160, y=[0xe8]
 	killChannel
 
 LABEL_1E16:
@@ -10596,57 +10596,57 @@ LABEL_606D:
 LABEL_606E:
 	call ADVANCE_VAR0D_RESTORE_STATE
 	sub [0x08], 0x000A
-	video offset=CINEMATIC_076, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_SEGMENT_BAR_F0, x=[0x07], y=[0x08]
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	sub [0x08], 0x0006
-	video offset=CINEMATIC_077, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_SEGMENT_BAR_F1, x=[0x07], y=[0x08]
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
-	video offset=CINEMATIC_078, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_SEGMENT_BAR_F2, x=[0x07], y=[0x08]
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	sub [0x08], 0x0001
-	video offset=CINEMATIC_079, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_SEGMENT_BAR_F3, x=[0x07], y=[0x08]
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
 	sub [0x08], 0x0002
-	video offset=CINEMATIC_078, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_SEGMENT_BAR_F2, x=[0x07], y=[0x08]
 	mov [0x29], 0x0001
 
 LABEL_60AE:
 	call LABEL_623B
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
-	video offset=CINEMATIC_077, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_SEGMENT_BAR_F1, x=[0x07], y=[0x08]
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
-	video offset=CINEMATIC_078, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_SEGMENT_BAR_F2, x=[0x07], y=[0x08]
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
-	video offset=CINEMATIC_079, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_SEGMENT_BAR_F3, x=[0x07], y=[0x08]
 	break
 	call ADVANCE_VAR0D_RESTORE_STATE
-	video offset=CINEMATIC_076, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_SEGMENT_BAR_F0, x=[0x07], y=[0x08]
 	djnz [0x29], LABEL_60AE
 	break
 	call LABEL_62B1
 	play id=0x0059, freq=0x14, vol=0x20, channel=0x02
-	video offset=CINEMATIC_130, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_DISCHARGE_FLASH_F0, x=[0x07], y=[0x08]
 	break
 	call LABEL_62B1
 	play id=0x0059, freq=0x16, vol=0x20, channel=0x00
-	video offset=CINEMATIC_131, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_DISCHARGE_FLASH_F1, x=[0x07], y=[0x08]
 	break
 	call LABEL_62B1
-	video offset=CINEMATIC_132, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_CHARGE_GLOW_F0, x=[0x07], y=[0x08]
 	break
 	call LABEL_62B1
 	sub [0x08], 0x0003
-	video offset=CINEMATIC_133, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_CHARGE_GLOW_F1, x=[0x07], y=[0x08]
 	break
 	call LABEL_62B1
-	video offset=CINEMATIC_132, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_CHARGE_GLOW_F0, x=[0x07], y=[0x08]
 	mov [0x29], 0x000A
 
 LABEL_611A:
@@ -10663,34 +10663,34 @@ LABEL_6138:
 	break
 	call LABEL_62B1
 	je [0x09], 0x01, LABEL_61A1
-	video offset=CINEMATIC_135, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_CHARGE_GLOW_F2, x=[0x07], y=[0x08]
 	break
 	call LABEL_62B1
 	je [0x09], 0x01, LABEL_61A1
-	video offset=CINEMATIC_136, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_CHARGE_GLOW_F3, x=[0x07], y=[0x08]
 	break
 	call LABEL_62B1
 	je [0x09], 0x01, LABEL_61A1
-	video offset=CINEMATIC_133, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_CHARGE_GLOW_F1, x=[0x07], y=[0x08]
 	break
 	call LABEL_62B1
 	je [0x09], 0x01, LABEL_61A1
 	sub [0x08], 0x0001
-	video offset=CINEMATIC_133, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_CHARGE_GLOW_F1, x=[0x07], y=[0x08]
 	break
 	call LABEL_62B1
 	je [0x09], 0x01, LABEL_61A1
-	video offset=CINEMATIC_136, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_CHARGE_GLOW_F3, x=[0x07], y=[0x08]
 	break
 	call LABEL_62B1
 	je [0x09], 0x01, LABEL_61A1
-	video offset=CINEMATIC_135, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_CHARGE_GLOW_F2, x=[0x07], y=[0x08]
 	djnz [0x29], LABEL_611A
 	break
 	call LABEL_62B1
 
 LABEL_61A1:
-	video offset=CINEMATIC_134, x=[0x07], y=[0x08], zoom=0x96
+	video offset=CINEMATIC_CAVES_CHARGE_BLAST, x=[0x07], y=[0x08], zoom=0x96
 	play id=0x005B, freq=0x14, vol=0x40, channel=0x02
 	play id=0x005B, freq=0x07, vol=0x40, channel=0x00
 	mov [0x2B], 0x0FA0
@@ -20834,7 +20834,7 @@ LABEL_C5B5:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x49], 0x7FFF
-	video offset=CINEMATIC_134, x=[0x68], y=73, zoom=0x5a
+	video offset=CINEMATIC_CAVES_CHARGE_BLAST, x=[0x68], y=73, zoom=0x5a
 	ret
 
 
@@ -20846,7 +20846,7 @@ LABEL_C5DA:
 	add [0x21], 0x0010
 	add [0x27], 0x0014
 	mov [0x4D], 0x7FFF
-	video offset=CINEMATIC_134, x=[0x72], y=93, zoom=0x5a
+	video offset=CINEMATIC_CAVES_CHARGE_BLAST, x=[0x72], y=93, zoom=0x5a
 	ret
 
 
@@ -20859,7 +20859,7 @@ LABEL_C601:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x4B], 0x7FFF
-	video offset=CINEMATIC_134, x=[0x70], y=93, zoom=0x5a
+	video offset=CINEMATIC_CAVES_CHARGE_BLAST, x=[0x70], y=93, zoom=0x5a
 	ret
 
 
@@ -20871,7 +20871,7 @@ LABEL_C62C:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x49], 0x7FFF
-	video offset=CINEMATIC_134, x=[0x6e], y=93, zoom=0x5a
+	video offset=CINEMATIC_CAVES_CHARGE_BLAST, x=[0x6e], y=93, zoom=0x5a
 	ret
 
 
@@ -20883,7 +20883,7 @@ LABEL_C651:
 	add [0x21], 0x0010
 	add [0x27], 0x0028
 	mov [0x4D], 0x7FFF
-	video offset=CINEMATIC_134, x=[0x72], y=93, zoom=0x5a
+	video offset=CINEMATIC_CAVES_CHARGE_BLAST, x=[0x72], y=93, zoom=0x5a
 	ret
 
 
@@ -21923,12 +21923,12 @@ DRAW_CIN_424_426_VERTICAL:
 	video offset=CINEMATIC_426, x=169, y=130
 	break
 	video offset=CINEMATIC_424, x=169, y=154
-	video offset=CINEMATIC_134, x=144, y=147
+	video offset=CINEMATIC_CAVES_CHARGE_BLAST, x=144, y=147
 	play id=0x005B, freq=0x14, vol=0x40, channel=0x03
 	break
 	play id=0x005B, freq=0x14, vol=0x40, channel=0x02
 	video offset=CINEMATIC_425, x=169, y=180
-	video offset=CINEMATIC_134, x=178, y=173
+	video offset=CINEMATIC_CAVES_CHARGE_BLAST, x=178, y=173
 	break
 	video offset=CINEMATIC_422, x=169, y=178
 	break

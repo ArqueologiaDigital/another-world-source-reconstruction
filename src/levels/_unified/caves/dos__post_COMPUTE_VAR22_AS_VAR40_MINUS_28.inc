@@ -1,16 +1,16 @@
 LABEL_73C9:
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
-	video offset=CINEMATIC_033, x=5, y=[0x22]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_0, x=5, y=[0x22]
 	break
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
 	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F0, x=10, y=[0x22]
 	break
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
-	video offset=CINEMATIC_035, x=15, y=[0x22]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_1, x=15, y=[0x22]
 	break
-	video offset=CINEMATIC_036, x=16, y=[0x40]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_2, x=16, y=[0x40]
 	break
-	video offset=CINEMATIC_037, x=17, y=[0x40]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_3, x=17, y=[0x40]
 	mov [0x21], 0x0011
 	mov [0x08], [0x40]
 	mov [0x10], [SCREEN_NUM]
@@ -19,17 +19,17 @@ LABEL_73C9:
 
 LABEL_73FD:
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
-	video offset=CINEMATIC_033, x=315, y=[0x22]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_0, x=315, y=[0x22]
 	break
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
 	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F0, x=307, y=[0x22]
 	break
 	call COMPUTE_VAR22_AS_VAR40_MINUS_28
-	video offset=CINEMATIC_035, x=303, y=[0x22]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_1, x=303, y=[0x22]
 	break
-	video offset=CINEMATIC_036, x=300, y=[0x40]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_2, x=300, y=[0x40]
 	break
-	video offset=CINEMATIC_037, x=299, y=[0x40]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_3, x=299, y=[0x40]
 	mov [0x21], 0x012B
 	mov [0x08], [0x40]
 	mov [0x10], [SCREEN_NUM]
@@ -160,7 +160,7 @@ LABEL_7587:
 	je [HERO_ACTION], 0x00, LABEL_75E1
 	je [HERO_POS_JUMP_DOWN], 0xFFFF, LABEL_75E1
 	call CAVES_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
-	video offset=CINEMATIC_033, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_0, x=[0x21], y=[0x22]
 	break
 	je [HERO_ACTION], 0x00, LABEL_75E1
 	call CAVES_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
@@ -168,7 +168,7 @@ LABEL_7587:
 	break
 	je [HERO_ACTION], 0x00, LABEL_75E1
 	call CAVES_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
-	video offset=CINEMATIC_035, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_1, x=[0x21], y=[0x22]
 	break
 	je [HERO_ACTION], 0x00, LABEL_75E1
 	call CAVES_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
@@ -180,12 +180,12 @@ LABEL_7587:
 
 LABEL_75E1:
 	call CAVES_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
-	video offset=CINEMATIC_036, x=[0x21], y=[HERO_Y]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_2, x=[0x21], y=[HERO_Y]
 
 LABEL_75E9:
 	break
 	call CAVES_HERO_POS_TO_PROJECTILE_OFFSET_SETUP
-	video offset=CINEMATIC_037, x=[0x21], y=[HERO_Y]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_3, x=[0x21], y=[HERO_Y]
 	play id=0x0058, freq=0x14, vol=0x40, channel=0x01
 	jge [SCREEN_NUM], 0xC8, LABEL_760E
 	sub [0x06], 0x000A

@@ -126,7 +126,7 @@ LABEL_5203:
 	video offset=CINEMATIC_067, x=[0x21], y=[0x22]
 	break
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_037, x=[0x21], y=[0x08]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_3, x=[0x21], y=[0x08]
 	call LABEL_7087
 	break
 	jmp LABEL_5650
@@ -153,7 +153,7 @@ LABEL_5243:
 	video offset=CINEMATIC_066, x=[0x21], y=[0x22]
 	break
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_037, x=[0x21], y=[0x08]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_3, x=[0x21], y=[0x08]
 	call LABEL_7087
 	break
 	jmp LABEL_5630
@@ -169,7 +169,7 @@ LABEL_5294:
 	jne [SCREEN_NUM], 0x04, LABEL_52A8
 	call LABEL_5307
 	je [0x23], 0x00, LABEL_52EB
-	video offset=CINEMATIC_033, x=[0x21], y=[0x08]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_0, x=[0x21], y=[0x08]
 
 LABEL_52A8:
 	break
@@ -183,7 +183,7 @@ LABEL_52BD:
 	jne [SCREEN_NUM], 0x04, LABEL_52D2
 	call LABEL_5307
 	je [0x23], 0x00, LABEL_52EB
-	video offset=CINEMATIC_035, x=[0x21], y=[0x08]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_1, x=[0x21], y=[0x08]
 
 LABEL_52D2:
 	break
@@ -201,7 +201,7 @@ LABEL_52EB:
 	video offset=CINEMATIC_067, x=[0x21], y=[0x08]
 	break
 	call LABEL_5307
-	video offset=CINEMATIC_037, x=[0x21], y=[0x71]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_3, x=[0x21], y=[0x71]
 	mov [0x08], [0x71]
 	mov [0x10], 0x0004
 	call LABEL_7087
@@ -275,7 +275,7 @@ LABEL_536F:
 LABEL_53A9:
 	jne [SCREEN_NUM], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_033, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_0, x=[0x21], y=[0x22]
 	break
 	jne [SCREEN_NUM], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
@@ -283,7 +283,7 @@ LABEL_53A9:
 	break
 	jne [SCREEN_NUM], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_035, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_1, x=[0x21], y=[0x22]
 	break
 	jne [SCREEN_NUM], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
@@ -357,7 +357,7 @@ LABEL_546A:
 LABEL_54B1:
 	jne [SCREEN_NUM], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_033, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_0, x=[0x21], y=[0x22]
 	break
 	jne [SCREEN_NUM], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
@@ -365,7 +365,7 @@ LABEL_54B1:
 	break
 	jne [SCREEN_NUM], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
-	video offset=CINEMATIC_035, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_1, x=[0x21], y=[0x22]
 	break
 	jne [SCREEN_NUM], [0x10], JUMP_TO_LABEL_5630
 	call COMPUTE_OFFSET_VAR21_22
@@ -399,7 +399,7 @@ LABEL_54F5:
 LABEL_5535:
 	jne [SCREEN_NUM], [0x10], JUMP_TO_LABEL_5650
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_033, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_0, x=[0x21], y=[0x22]
 	break
 	jne [SCREEN_NUM], [0x10], JUMP_TO_LABEL_5650
 	call COMPUTE_OFFSET_PLUS21_MINUS22
@@ -407,7 +407,7 @@ LABEL_5535:
 	break
 	jne [SCREEN_NUM], [0x10], JUMP_TO_LABEL_5650
 	call COMPUTE_OFFSET_PLUS21_MINUS22
-	video offset=CINEMATIC_035, x=[0x21], y=[0x22]
+	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_1, x=[0x21], y=[0x22]
 	break
 	jne [SCREEN_NUM], [0x10], JUMP_TO_LABEL_5650
 	call COMPUTE_OFFSET_PLUS21_MINUS22

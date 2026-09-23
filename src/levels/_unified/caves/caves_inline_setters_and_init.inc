@@ -554,27 +554,27 @@ CAVES_INLINE_SET_VAR01_TO_E_L0:
 	killChannel
 
 CAVES_INLINE_SET_VAR01_TO_E_L2:
-	video offset=CINEMATIC_008, x=160, y=[0xe7]
+	video offset=CINEMATIC_WIDE_FLASH_F0, x=160, y=[0xe7]
 	break
 	setPalette 0x0D
 	play id=0x0052, freq=0x0A, vol=0x40, channel=0x02
-	video offset=CINEMATIC_009, x=160, y=[0xe7]
+	video offset=CINEMATIC_WIDE_FLASH_F1, x=160, y=[0xe7]
 	break
 	setPalette 0x08
-	video offset=CINEMATIC_010, x=160, y=[0xe7]
+	video offset=CINEMATIC_WIDE_FLASH_F2, x=160, y=[0xe7]
 	break
-	video offset=CINEMATIC_011, x=160, y=[0xe7]
+	video offset=CINEMATIC_WIDE_FLASH_F3, x=160, y=[0xe7]
 	killChannel
 
 CAVES_INLINE_SET_VAR01_TO_E_L3:
-	video offset=CINEMATIC_008, x=160, y=[0xe8]
+	video offset=CINEMATIC_WIDE_FLASH_F0, x=160, y=[0xe8]
 	break
 	play id=0x0052, freq=0x14, vol=0x40, channel=0x02
-	video offset=CINEMATIC_009, x=160, y=[0xe8]
+	video offset=CINEMATIC_WIDE_FLASH_F1, x=160, y=[0xe8]
 	break
-	video offset=CINEMATIC_010, x=160, y=[0xe8]
+	video offset=CINEMATIC_WIDE_FLASH_F2, x=160, y=[0xe8]
 	break
-	video offset=CINEMATIC_011, x=160, y=[0xe8]
+	video offset=CINEMATIC_WIDE_FLASH_F3, x=160, y=[0xe8]
 	killChannel
 
 HANG_DRAW_CIN_012:

@@ -169,6 +169,9 @@ checked against the receiving port's own guards.
 | PRISON 200..204 | (same numbers) | `CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_0..3` (202, 204, 201, 200 -- phase order is not constant order) | high |
 | PRISON 514, 515, 520, 521 | (same numbers) | `CINEMATIC_PRISON_SHOT_BEAM_SPAN_{RIGHT,LEFT}_{4,5}`, three branches -- see `../beam-span-ladder/` | high |
 | CAVES 837, 838, 822 / CAPSULE 528, 529, 513 | msdos 861, 862, 846 / 675, 676, 660 | `CINEMATIC_CAVES_LASER_BOLT_{SPAN_RIGHT_5,SPAN_LEFT_5,SINGLE_DOT}` and the `CAPSULE_SHOT_BEAM_*` three | high |
+| CAVES 076..079, 130..136 | (same numbers) | `CINEMATIC_CAVES_{SEGMENT_BAR_F0..F3,DISCHARGE_FLASH_F0,F1,CHARGE_GLOW_F0..F3,CHARGE_BLAST}`, three branches -- eleven of eleven identical to CAPSULE's | high |
+| CAVES 033, 035, 036, 037 | (same numbers) | `CINEMATIC_SHIELD_DEPLOY_PHASE_0..3`, bare like CAVES' own `SHIELD_DECAY` family | high |
+| CAVES 749..751, 008..011 | msdos 774..776, 008..011 | `CINEMATIC_CAVES_SUPERBLAST_BEAM_TILE_0..2` and `CINEMATIC_WIDE_FLASH_F0..F3` (the flash also cartridge -- shared routine) | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that

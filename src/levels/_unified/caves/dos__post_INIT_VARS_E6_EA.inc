@@ -282,12 +282,12 @@ DRAW_CIN_424_426_VERTICAL:
 	video offset=CINEMATIC_CAVES_TWIN_LAMP_BRACKET_F2, x=169, y=130
 	break
 	video offset=CINEMATIC_CAVES_TWIN_LAMP_BRACKET_F0, x=169, y=154
-	video offset=CINEMATIC_134, x=144, y=147
+	video offset=CINEMATIC_CAVES_CHARGE_BLAST, x=144, y=147
 	play id=0x005B, freq=0x14, vol=0x40, channel=0x03
 	break
 	play id=0x005B, freq=0x14, vol=0x40, channel=0x02
 	video offset=CINEMATIC_CAVES_TWIN_LAMP_BRACKET_F1, x=169, y=180
-	video offset=CINEMATIC_134, x=178, y=173
+	video offset=CINEMATIC_CAVES_CHARGE_BLAST, x=178, y=173
 	break
 	video offset=CINEMATIC_422, x=169, y=178
 	break
