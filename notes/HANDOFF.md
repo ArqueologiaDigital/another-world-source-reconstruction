@@ -122,8 +122,8 @@ Those 44 now have a cause. `notes/tree-name-drift/name_drift.py` shows the
 canonical and unified trees defining `CINEMATIC_PRISON_CUTSCENE_ZOOM_IN_LEFT_4`
 and its siblings at **different offsets** -- 0xCF78 in the unified tree, 0xCA7C
 in `dos_1992/PRISON.asm`. It is not a naming dispute; it is a rename synced to
-one tree and not the other, and 544 names across the repository are in that
-state (plus 452 present in the canonical files and absent from the unified
+one tree and not the other, and 574 names across the repository are in that
+state (plus 450 present in the canonical files and absent from the unified
 tree). Both trees assemble byte-identically, so no gate sees it, and the
 canonical tree is the naming record -- so the drift costs no coverage and the
 fix is a sync pass per stage, not renaming. **Any probe that reads a routine
