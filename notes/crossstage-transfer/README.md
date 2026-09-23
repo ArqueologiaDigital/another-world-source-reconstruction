@@ -161,6 +161,34 @@ The one that survived all three, `CINEMATIC_752` ->
 `CINEMATIC_BUDDY_SMASHING_WINDOW_F8`, this module already holds under "art
 matches two or more names", which is its own #0118 guard and is right.
 
-So the net effect of the third way, beyond the charge glow, is **zero further
+So the net effect of the third way, beyond the charge glow, was **zero further
 names** — and the conditions above are why, written down so the rule is not
 reapplied from its one-line form.
+
+### 2026-09-23: the same three conditions, 96 names
+
+That "zero" was a fact about the tree at the time, not about the rule. A later
+session named seven PRISON families from renders -- falling debris, blast
+debris and its deposits, a blast mark, the x-ray flash and skeleton in both
+facings, a hero aim pose -- and `canonical_md5` then matched every one of them
+in **CAVES and CAPSULE**, both priority ports.
+
+Twenty-four names, all three conditions met:
+
+1. Falling debris, a blast mark, an x-ray flash and an aim pose name no place.
+2. None carries a screen number. The three `CAPSULE_SCREEN_*_BACKDROP_LAYER`
+   and one `CAVES_SCREEN_EE_BACKDROP_LAYER` candidates in the same held list
+   fail on this and stayed held.
+3. The `PRISON_` being dropped was the same session's own, hours old --
+   exactly the charge glow's situation. `CINEMATIC_PRISON_SHOT_BEAM_SINGLE_DOT`
+   is in the same list, passes 1 and 2, and **stayed held** because its prefix
+   is somebody else's.
+
+Dropping the word in PRISON unblocked 96 constants in CAVES and CAPSULE across
+both ports, applied in the same session. Assets went 67.2% to 69.1%, and
+`one_picture_many_names.py` was unchanged at 73 amiga / 76 msdos while the
+named-picture count rose from 2,482 to 2,530 -- the transfer added no new
+name to any picture that already had one.
+
+The tables are in `xstage_2026-09-23/` and the rescope in
+`rescope_<branch>__PRISON.md`.

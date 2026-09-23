@@ -513,25 +513,25 @@ LABEL_2B4A:
 LABEL_2B61:
 	selectVideoPage 0x00
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_234, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_MARK, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_235, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_DEBRIS_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_236, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_DEBRIS_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_237, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_DEBRIS_F2, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_238, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_DEBRIS_SETTLED_0, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_239, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_DEBRIS_F3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_240, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_DEBRIS_F4, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_241, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_DEBRIS_F5, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_242, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_DEBRIS_SETTLED_1, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0xFF
 	killChannel
 	video offset=CINEMATIC_243, x=[HERO_X], y=[HERO_Y]
@@ -551,27 +551,27 @@ LABEL_2BD2:
 	or [0x11], 0x4000
 	jne [0x10], [SCREEN_NUM], CAPSULE_ACTOR_ANIM_END_PARK_THREAD
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x00
-	video offset=CINEMATIC_219, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_FALLING_DEBRIS_F0, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jne [0x10], [SCREEN_NUM], CAPSULE_ACTOR_ANIM_END_PARK_THREAD
-	video offset=CINEMATIC_220, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_FALLING_DEBRIS_F1, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jne [0x10], [SCREEN_NUM], CAPSULE_ACTOR_ANIM_END_PARK_THREAD
-	video offset=CINEMATIC_221, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_FALLING_DEBRIS_F2, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jne [0x10], [SCREEN_NUM], CAPSULE_ACTOR_ANIM_END_PARK_THREAD
-	video offset=CINEMATIC_222, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_FALLING_DEBRIS_F3, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jne [0x10], [SCREEN_NUM], CAPSULE_ACTOR_ANIM_END_PARK_THREAD
-	video offset=CINEMATIC_223, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_FALLING_DEBRIS_F4, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jne [0x10], [SCREEN_NUM], CAPSULE_ACTOR_ANIM_END_PARK_THREAD
-	video offset=CINEMATIC_224, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_FALLING_DEBRIS_F5, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jne [0x10], [SCREEN_NUM], CAPSULE_ACTOR_ANIM_END_PARK_THREAD
-	video offset=CINEMATIC_225, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_FALLING_DEBRIS_F6, x=[BUDDY_X], y=[BUDDY_Y]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_226, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_FALLING_DEBRIS_F7, x=[BUDDY_X], y=[BUDDY_Y]
 	selectVideoPage 0xFF
 
 CAPSULE_ACTOR_ANIM_END_PARK_THREAD:
@@ -590,22 +590,22 @@ LABEL_2C4C:
 
 LABEL_2C4D:
 	jne [0x10], [SCREEN_NUM], LABEL_2BD2
-	video offset=CINEMATIC_227, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_XRAY_FLASH_RIGHT, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jne [0x10], [SCREEN_NUM], LABEL_2BD2
-	video offset=CINEMATIC_228, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_XRAY_SKELETON_RIGHT_LIT, x=[BUDDY_X], y=[BUDDY_Y]
 	mov [0x29], 0x0014
 
 LABEL_2C68:
 	break
 	jne [0x10], [SCREEN_NUM], LABEL_2BD2
-	video offset=CINEMATIC_229, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_XRAY_SKELETON_RIGHT_DARK, x=[BUDDY_X], y=[BUDDY_Y]
 	jge [0x11], 0x4000, LABEL_2C7F
 	djnz [0x29], LABEL_2C68
 
 LABEL_2C7F:
 	break
-	video offset=CINEMATIC_228, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_XRAY_SKELETON_RIGHT_LIT, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jmp LABEL_2BD2
 LABEL_2C89:
@@ -614,20 +614,20 @@ LABEL_2C89:
 	db 0x07, 0x08, 0x06, 0x07, 0x2B, 0xD2, 0x11
 
 LABEL_2CA0:
-	video offset=CINEMATIC_216, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_XRAY_FLASH_LEFT, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_217, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_XRAY_SKELETON_LEFT_LIT, x=[BUDDY_X], y=[BUDDY_Y]
 	mov [0x29], 0x0014
 
 LABEL_2CAF:
 	break
-	video offset=CINEMATIC_218, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_XRAY_SKELETON_LEFT_DARK, x=[BUDDY_X], y=[BUDDY_Y]
 	jge [0x11], 0x4000, LABEL_2CC0
 	djnz [0x29], LABEL_2CAF
 
 LABEL_2CC0:
 	break
-	video offset=CINEMATIC_217, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_XRAY_SKELETON_LEFT_LIT, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	jmp LABEL_2BD2
 LABEL_2CCA:

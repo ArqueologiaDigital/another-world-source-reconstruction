@@ -532,26 +532,26 @@ DRAW_CIN_146_TO_147_4F_AT_8AA18039:
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_137_138_BLOCK:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_PRISON_BLAST_MARK, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_MARK, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0xFF
 	play id=0x005A, freq=0x14, vol=0x40, channel=0x00
 	break
-	video offset=CINEMATIC_PRISON_BLAST_DEBRIS_F0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_DEBRIS_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_PRISON_BLAST_DEBRIS_F1, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_DEBRIS_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_PRISON_BLAST_DEBRIS_F2, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_DEBRIS_F2, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_PRISON_BLAST_DEBRIS_SETTLED_0, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_DEBRIS_SETTLED_0, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_PRISON_BLAST_DEBRIS_F3, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_DEBRIS_F3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_PRISON_BLAST_DEBRIS_F4, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_DEBRIS_F4, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_PRISON_BLAST_DEBRIS_F5, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_DEBRIS_F5, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0x00
-	video offset=CINEMATIC_PRISON_BLAST_DEBRIS_SETTLED_1, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_BLAST_DEBRIS_SETTLED_1, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0xFF
 	killChannel
 	video offset=CINEMATIC_146, x=[HERO_X], y=[HERO_Y]

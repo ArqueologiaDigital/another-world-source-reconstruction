@@ -25,8 +25,8 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 67.2% (6,822/10,147) | `asset_naming_share.py` |
-| pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
+| priority-port assets named | 69.1% (7,016/10,147) | `asset_naming_share.py` |
+| pictures carrying two or more names | 73 amiga / 76 msdos of 2,530 / 2,552 named | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 48, blocking 250 drawing labels | `shared-bank-geometry/blocked_by_bank.py` |
 | named keys agreeing with their drawers' unanimous claim | 152 of 158 | `shared-bank-geometry/blocked_by_bank.py --claims` |

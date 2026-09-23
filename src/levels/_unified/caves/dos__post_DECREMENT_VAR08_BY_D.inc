@@ -465,7 +465,7 @@ DRAW_CIN_175:
 
 
 LABEL_9AC1:
-	video offset=CINEMATIC_176, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_HERO_STAND_AIM_RIGHT, x=[HERO_X], y=[HERO_Y]
 	je [0xBE], 0x03, DRAW_CIN_177
 	jg [0x06], [0x30], SHARED_RET
 	mov [0xF8], [0x31]

@@ -26,19 +26,19 @@ LABEL_071F:
 	selectVideoPage 0xFF
 	break
 	sub [0xE9], 0x000C
-	video offset=CINEMATIC_217, x=[0xe9], y=[0x40]
+	video offset=CINEMATIC_FALLING_DEBRIS_F0, x=[0xe9], y=[0x40]
 	break
-	video offset=CINEMATIC_218, x=[0xe9], y=[0x40]
+	video offset=CINEMATIC_FALLING_DEBRIS_F1, x=[0xe9], y=[0x40]
 	break
-	video offset=CINEMATIC_219, x=[0xe9], y=[0x40]
+	video offset=CINEMATIC_FALLING_DEBRIS_F2, x=[0xe9], y=[0x40]
 	break
-	video offset=CINEMATIC_220, x=[0xe9], y=[0x40]
+	video offset=CINEMATIC_FALLING_DEBRIS_F3, x=[0xe9], y=[0x40]
 	break
-	video offset=CINEMATIC_221, x=[0xe9], y=[0x40]
+	video offset=CINEMATIC_FALLING_DEBRIS_F4, x=[0xe9], y=[0x40]
 	break
-	video offset=CINEMATIC_222, x=[0xe9], y=[0x40]
+	video offset=CINEMATIC_FALLING_DEBRIS_F5, x=[0xe9], y=[0x40]
 	break
-	video offset=CINEMATIC_223, x=[0xe9], y=[0x40]
+	video offset=CINEMATIC_FALLING_DEBRIS_F6, x=[0xe9], y=[0x40]
 	break
-	video offset=CINEMATIC_224, x=[0xe9], y=[0x40]
+	video offset=CINEMATIC_FALLING_DEBRIS_F7, x=[0xe9], y=[0x40]
 	killChannel
