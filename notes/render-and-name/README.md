@@ -104,6 +104,7 @@ checked against the receiving port's own guards.
 | CINEMATIC_222, 213 | (msdos twins) | `CINEMATIC_PRISON_HERO_LUNGE_{LEFT,RIGHT}` | high |
 | CAVES CINEMATIC_110..123 | (msdos + CAPSULE twins) | `CINEMATIC_TUMBLING_CHUNK_F0..F13` | high |
 | CAVES CINEMATIC_239..245, 416..422 | (msdos twins) | `CINEMATIC_CAVES_SPINNING_SPIKE_{0,1}_F0..F6` | medium |
+| CAVES CINEMATIC_213..222 | (msdos twins) | `CINEMATIC_CAVES_CRACK_SPREAD_F0..F9` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that

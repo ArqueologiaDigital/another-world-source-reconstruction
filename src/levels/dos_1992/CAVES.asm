@@ -255,16 +255,16 @@ CINEMATIC_227		EQU 0x29EA
 CINEMATIC_228		EQU 0x1D78
 CINEMATIC_229		EQU 0xD600
 CINEMATIC_230		EQU 0xFB9A
-CINEMATIC_231		EQU 0xE006
-CINEMATIC_232		EQU 0xE05A
-CINEMATIC_233		EQU 0xE0C6
-CINEMATIC_234		EQU 0xE13A
-CINEMATIC_235		EQU 0xE1AE
-CINEMATIC_236		EQU 0xE232
-CINEMATIC_237		EQU 0xE2BE
-CINEMATIC_238		EQU 0xE342
-CINEMATIC_239		EQU 0xE3DE
-CINEMATIC_240		EQU 0xE476
+CINEMATIC_CAVES_CRACK_SPREAD_F0		EQU 0xE006
+CINEMATIC_CAVES_CRACK_SPREAD_F1		EQU 0xE05A
+CINEMATIC_CAVES_CRACK_SPREAD_F2		EQU 0xE0C6
+CINEMATIC_CAVES_CRACK_SPREAD_F3		EQU 0xE13A
+CINEMATIC_CAVES_CRACK_SPREAD_F4		EQU 0xE1AE
+CINEMATIC_CAVES_CRACK_SPREAD_F5		EQU 0xE232
+CINEMATIC_CAVES_CRACK_SPREAD_F6		EQU 0xE2BE
+CINEMATIC_CAVES_CRACK_SPREAD_F7		EQU 0xE342
+CINEMATIC_CAVES_CRACK_SPREAD_F8		EQU 0xE3DE
+CINEMATIC_CAVES_CRACK_SPREAD_F9		EQU 0xE476
 CINEMATIC_241		EQU 0xD65E
 CINEMATIC_242		EQU 0xD8B6
 CINEMATIC_243		EQU 0xD756
@@ -2150,31 +2150,31 @@ LABEL_08A5:
 LABEL_08A6:
 	break
 	break
-	video offset=CINEMATIC_231, x=[0xed], y=[0xee]
+	video offset=CINEMATIC_CAVES_CRACK_SPREAD_F0, x=[0xed], y=[0xee]
 	play id=0x0059, freq=0x08, vol=0x40, channel=0x00
 	break
-	video offset=CINEMATIC_232, x=[0xed], y=[0xee]
+	video offset=CINEMATIC_CAVES_CRACK_SPREAD_F1, x=[0xed], y=[0xee]
 	break
 	play id=0x006F, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_233, x=[0xed], y=[0xee]
+	video offset=CINEMATIC_CAVES_CRACK_SPREAD_F2, x=[0xed], y=[0xee]
 	break
 	play id=0x005B, freq=0x0A, vol=0x40, channel=0x02
-	video offset=CINEMATIC_234, x=[0xed], y=[0xee]
+	video offset=CINEMATIC_CAVES_CRACK_SPREAD_F3, x=[0xed], y=[0xee]
 	break
-	video offset=CINEMATIC_235, x=[0xed], y=[0xee]
+	video offset=CINEMATIC_CAVES_CRACK_SPREAD_F4, x=[0xed], y=[0xee]
 	break
 	play id=0x0058, freq=0x14, vol=0x40, channel=0x03
-	video offset=CINEMATIC_236, x=[0xed], y=[0xee]
+	video offset=CINEMATIC_CAVES_CRACK_SPREAD_F5, x=[0xed], y=[0xee]
 	break
-	video offset=CINEMATIC_237, x=[0xed], y=[0xee]
+	video offset=CINEMATIC_CAVES_CRACK_SPREAD_F6, x=[0xed], y=[0xee]
 	break
 	play id=0x0058, freq=0x14, vol=0x20, channel=0x00
-	video offset=CINEMATIC_238, x=[0xed], y=[0xee]
+	video offset=CINEMATIC_CAVES_CRACK_SPREAD_F7, x=[0xed], y=[0xee]
 	break
-	video offset=CINEMATIC_239, x=[0xed], y=[0xee]
+	video offset=CINEMATIC_CAVES_CRACK_SPREAD_F8, x=[0xed], y=[0xee]
 	mov [0x32], 0x0000
 	break
-	video offset=CINEMATIC_240, x=[0xed], y=[0xee]
+	video offset=CINEMATIC_CAVES_CRACK_SPREAD_F9, x=[0xed], y=[0xee]
 	setup channel=0x14, address=LABEL_07E9
 	killChannel
 
