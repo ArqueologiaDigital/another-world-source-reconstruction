@@ -25,6 +25,7 @@ As of the last commit:
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 77 of 352 (59 reachable) | `notes/shared-bank-geometry/` |
 | draw-only labels agreeing with their picture | 212, 0 nameable left, 0 contradicting | `label_vs_constant.py` |
+| routines naming a gait and drawing another's sheet | 0 (was 30) | `motion-word-audit/piece_family_vs_label.py` |
 | shot-impact ladders complete | 18 of 18 (3 stages x 2 directions x 3 branches) | `impact_ladder.py` |
 
 ## Added 2026-09-23
@@ -90,10 +91,21 @@ for it whenever two draws share an anchor.
    including that the offsets those pieces would occupy are already held by
    `HERO_WALK_RIGHT_ARM_F09..F12`. Neither is outstanding naming work.
 
-1. **72 of 73 routine family gaps** (`notes/family-gaps/`). 17 of them are
-   "one animation under two conventions" and need a decision that overrides
-   an earned name — that is a judgement call, not a measurement, and it has
-   been deferred each time.
+1. **Routine family gaps: 86, not the 73 recorded here before** (`notes/
+   family-gaps/routine_family_gaps.py`). The count rose because the 210
+   draw-label renames of 2026-09-23 created 47 new `<STAGE>_DRAW_*` families,
+   21 of them with an interior gap. Those 21 are **not** outstanding work:
+   their indices are inherited from the constant each label draws, and
+   `notes/draw-label-follows-constant/footstep_frames.py` shows every hole
+   holds a drawer that also does `play id=0x0060` — the footstep. The run
+   cycle steps on frames 0 and 5 of ten, the walk cycle on 5 and 13 of
+   fifteen. Renumbering them densely would put the wrong frame on the name.
+
+   The "one animation under two conventions" class is **closed**: it was
+   PRISON's ten `ACTOR/BUDDY_WALK_LEFT_PHASE_{0,3,5,7,8}` labels drawing the
+   run sheet, settled by `notes/motion-word-audit/piece_family_vs_label.py`
+   without overriding any earned name — the pieces decide, and they were named
+   from geometry independently of any stage's label conventions.
 2. **81 routine renames blocked by a dependency chain**: family gaps → cart
    and GBA art unnamed → no proposals → a shared `_helpers` label that cannot
    be renamed for one branch alone. Breaking any link unblocks the rest.

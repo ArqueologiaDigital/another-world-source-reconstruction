@@ -208,13 +208,57 @@ dois nomes estão certos, um é o mecanismo e o outro o assunto; e `HERO` e
 **um** caso na árvore inteira: o `CAVES_DRAW_HERO_IDLE_LEFT_1` de cima, que já
 tinha sido resolvido pelo `md5`.
 
+## A cauda da cauda: dez rótulos que diziam a marcha errada
+
+Aplicar os 210 nomes deixou duas perguntas, e as duas se responderam sozinhas.
+
+A primeira: um rótulo semântico pode discordar da figura que desenha? Medindo
+sobre o vocabulário de marcha, 107 figuras nomeadas não dividem nenhuma
+palavra com quem as desenha — e quase todas são o **código estando certo**,
+por um motivo estrutural: *um laço desenha a pose para a qual ele sai*.
+`HERO_CROUCH_HOLD_LEFT_LOOP` desenha o agachamento enquanto gira e desenha
+`HERO_STAND_ARMED_LEFT` uma vez, na saída, antes de `jmp HERO_WALK_LEFT_LOOP`
+— o herói se levantando. Os dois nomes estão certos e nunca vão dividir uma
+palavra.
+
+Sobrou uma classe: cinco quadros `CV_FIGURE_RUN_LEFT_BODY_F<nn>` desenhados só
+por `PRISON_ACTOR_WALK_LEFT_PHASE_<n>_DONE`. Dois nomes, uma animação, e
+nenhum jeito de escolher vencedor pelos nomes. Quem decidiu não foi um nome:
+foi **de qual folha vêm as peças**, e essas folhas foram batizadas por
+geometria, sem consultar convenção de rótulo de fase nenhuma. As três fases
+que animam esse ator se separam limpo, menos uma:
+
+```
+CAVES     RUN  PHASE -> RUN  (30)     WALK PHASE -> WALK (19)
+CAPSULE   RUN  DRAW  -> RUN  (30)
+PRISON    WALK PHASE -> RUN (10) + WALK (19)     <- misturado
+```
+
+Os **mesmos 19** desenhos WALK em PRISON e em CAVES é a corroboração: PRISON
+não usa outro esquema, tem dez rótulos na metade errada do seu próprio. E a
+rotina é literalmente o mesmo código nas três fases. Dez renomeações por
+versão, trinta no total, e a sonda passou de 30 achados para 0.
+
+A segunda pergunta: os 210 nomes novos criaram **21 famílias com buraco**, e a
+norma proíbe buraco. Renumerar densamente seria o erro da manhã de novo — o
+índice é herdado da constante, não atribuído, então `..._RUN_LEFT_BODY_4`
+passaria a desenhar o quadro 6. Então a pergunta certa é o que está no buraco.
+Sempre a mesma coisa: `play id=0x0060`. É a **passada**. O ciclo de corrida
+pisa nos quadros 0 e 5 de dez — o mesmo par que a geometria da marcha já tinha
+dado por outro caminho — e o de caminhada nos quadros 5 e 13 de quinze. Dois
+passos por ciclo, igualmente espaçados, nas duas marchas e nas duas versões.
+
+Os buracos não eram nomes faltando. Eram onde o pé encosta no chão, e a regra
+que os abriu — uma figura não nomeia uma rotina que também faz barulho — é o
+que os tornou visíveis.
+
 ## O saldo
 
 58 constantes renomeadas nas escadas de impacto, 18 de 18 posições completas
-com família `_0.._5`, 210 rótulos passando a dizer que figura desenham, e três
-ferramentas consertadas: a que herdava limiares como índice (75 pulados,
-propostas de 28 para 4), a que confundia "não consegui conferir" com "não
-bate", e a minha própria, quatro vezes.
+com família `_0.._5`, 210 rótulos passando a dizer que figura desenham, 30
+rótulos de marcha corrigidos, e três ferramentas consertadas: a que herdava
+limiares como índice (75 pulados, propostas de 28 para 4), a que confundia
+"não consegui conferir" com "não bate", e a minha própria, quatro vezes.
 
 Assets nas versões prioritárias: 58,6% → 58,9%. Um avanço pequeno, e não é
 onde está o valor do dia — o valor está em que **duas** afirmações falsas
