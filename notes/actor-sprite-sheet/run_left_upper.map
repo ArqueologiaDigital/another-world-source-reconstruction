@@ -1,0 +1,32 @@
+# The actor's upper piece through the left-facing run: 7 poses, 10 frames.
+#
+# Found once CV_FIGURE_RUN_LEFT_BODY_F00..F09 existed to key against -- the
+# same inversion that has driven every family here: a routine drawing exactly
+# one named body frame also draws the companion, so the frame comes from the
+# art rather than from a routine label.
+#
+# All seven sit at top -52.0..-52.5 with 2..4 leaves: the UPPER band measured
+# in run_right_upper.map, twelve units above the LIMB band. Frames 0..9 are
+# covered with no gap.
+#
+# The gait symmetry is internally consistent and is the check, not the source.
+# In a ten-frame cycle indexed 0..9 the symmetric partners are i and 9-i:
+#
+#     {0,9}  {3,6}  {4,5}     all sum to 9
+#     {1} {2} {7} {8}         singletons whose partners 8, 7, 2, 1 are
+#                             served by the other singletons
+#
+# Reachability was checked before naming: 6 draws each, all at the actor slot,
+# none behind a guard. That check exists because CV_5F74..CV_5FFC looked like
+# a perfect family and turned out to be dead -- see
+# ../shared-bank-geometry/unreachable_guarded_art.py.
+#
+# Ordered by ascending first frame. Not called an ARM, for the reason
+# README.md gives.
+CV_61A2 CV_FIGURE_RUN_LEFT_UPPER_POSE_00
+CV_3116 CV_FIGURE_RUN_LEFT_UPPER_POSE_01
+CV_3124 CV_FIGURE_RUN_LEFT_UPPER_POSE_02
+CV_316E CV_FIGURE_RUN_LEFT_UPPER_POSE_03
+CV_3180 CV_FIGURE_RUN_LEFT_UPPER_POSE_04
+CV_31A8 CV_FIGURE_RUN_LEFT_UPPER_POSE_05
+CV_31CA CV_FIGURE_RUN_LEFT_UPPER_POSE_06

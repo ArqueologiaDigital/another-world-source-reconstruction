@@ -119,37 +119,37 @@ LABEL_80FB:
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_811C:
-	video type=0, offset=CV_3116, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_UPPER_POSE_01, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_8127:
-	video type=0, offset=CV_3124, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_UPPER_POSE_02, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_8132:
-	video type=0, offset=CV_316E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_UPPER_POSE_03, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_813D:
-	video type=0, offset=CV_3180, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_UPPER_POSE_04, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_8148:
-	video type=0, offset=CV_31A8, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_UPPER_POSE_05, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_8153:
-	video type=0, offset=CV_31CA, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_UPPER_POSE_06, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
 LABEL_815E:
-	video type=0, offset=CV_61A2, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_UPPER_POSE_00, x=[0x07], y=[0x08], zoom=0x40
 	mov [0xF5], [0x07]
 	jmp DRAW_BEAST_SUBFRAME_2_VAR09_LOW
 
