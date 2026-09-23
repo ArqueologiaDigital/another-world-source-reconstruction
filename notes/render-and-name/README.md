@@ -175,6 +175,8 @@ checked against the receiving port's own guards.
 | CAVES 261..268 / CAPSULE 129..136 | msdos 279..286 / 440..447 | `CINEMATIC_CROWD_FIGURE_{UPPER,BODY_0..3,CLOAK_F0..F2}` -- a row of eleven, two stages, two ports | high |
 | CAVES 233..236, 246..248 | msdos 251..254, 264..266 | `CINEMATIC_CAVES_HERO_{TAKE_AIM_LEFT_F0..F2,HAIR_AT_REST,HAIR_BLOWING_F0..F2}` | high/medium |
 | PRISON/CAVES/CAPSULE, nine per stage | (per-port numbers) | `CINEMATIC_HERO_DEATH_{STANDING,KNEELING}_{LEFT,RIGHT}_F0..F2` -- and `HERO_DEATH_F*` renamed to `..._STANDING_LEFT_F*` | high |
+| (msdos only) CAPSULE 708..713 | -- | `CINEMATIC_CAPSULE_CREATURE_WALK_RIGHT_F0..F5`, CAVES' own family's art | high |
+| CAPSULE 034..040 | msdos 380..386 | `CINEMATIC_CAPSULE_LEDGE_{MID_SPAN,FAR_SPAN,FAR_PLATFORM,DISTANT_FIGURE,NEAR_SPAN,FOREGROUND_SLAB,FOREGROUND_SPUR}` | medium |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
@@ -596,6 +598,28 @@ days precisely because there was no renderer in between.
 
 The palette is the routine's own. Rendering this run at palette 0 gives black
 on black, and the table above would be a table of zeroes.
+
+## A routine that draws N pieces at fixed positions is a shot assembling itself
+
+`by_anchor.py` puts 1,152 distinct still-numbered pictures in the "fixed literal
+x,y" class and calls it the one with no method. There is one, and it is the same
+move as the crowd row above: **composite progressively and look**.
+
+`LABEL_0ED5` in CAPSULE draws seven constants at fixed positions with a `break`
+between each, so the picture builds one piece per frame. Alone, each is an
+orange-rimmed grey quadrilateral and unnameable. Stacked in order at their
+authored coordinates they are a wide shot -- a ledge receding to a vanishing
+point, a platform at its far end with an eight-pixel figure on it, two slabs
+closing the foreground -- and every piece gets a name from where it sits in the
+assembly.
+
+Two tells worth carrying forward:
+
+- **The odd one out is the subject.** Six of the seven were two- or three-leaf
+  slabs; the seventh was four leaves at 7.5x8.5, and it was the figure.
+- **`selectVideoPage 0x00` around a single draw marks the backdrop.** That
+  figure is painted into page 0 alone, which is what a scene paints when the
+  thing is part of the picture rather than animated over it.
 
 ## `frame_runs.py` -- the work queue, and how far to trust it
 

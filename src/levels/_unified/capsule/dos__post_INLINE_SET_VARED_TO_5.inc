@@ -116,11 +116,11 @@ LABEL_1E7D:
 	db 0x11
 
 LABEL_1E7E:
-	video offset=CINEMATIC_382, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_LEDGE_FAR_PLATFORM, x=160, y=100
 	break
 	video offset=CINEMATIC_396, x=160, y=100
 	selectVideoPage 0x00
-	video offset=CINEMATIC_383, x=188, y=100, zoom=[0xe8]
+	video offset=CINEMATIC_CAPSULE_LEDGE_DISTANT_FIGURE, x=188, y=100, zoom=[0xe8]
 	add [0xE8], 0x000A
 	selectVideoPage 0xFF
 	jl [0xE8], 0xA0, CAPSULE_KILLCHAN_OR_SET_ACTION_MASK_BIT_2
@@ -128,20 +128,20 @@ LABEL_1E7E:
 	killChannel
 
 LABEL_1EA0:
-	video offset=CINEMATIC_380, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_LEDGE_MID_SPAN, x=160, y=100
 	break
-	video offset=CINEMATIC_381, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_LEDGE_FAR_SPAN, x=160, y=100
 	break
-	video offset=CINEMATIC_382, x=78, y=84
+	video offset=CINEMATIC_CAPSULE_LEDGE_FAR_PLATFORM, x=78, y=84
 	selectVideoPage 0x00
-	video offset=CINEMATIC_383, x=107, y=84
+	video offset=CINEMATIC_CAPSULE_LEDGE_DISTANT_FIGURE, x=107, y=84
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_384, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_LEDGE_NEAR_SPAN, x=160, y=100
 	break
-	video offset=CINEMATIC_385, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_LEDGE_FOREGROUND_SLAB, x=160, y=100
 	break
-	video offset=CINEMATIC_386, x=160, y=100
+	video offset=CINEMATIC_CAPSULE_LEDGE_FOREGROUND_SPUR, x=160, y=100
 	break
 	killChannel
 	video offset=CINEMATIC_387, x=160, y=100
