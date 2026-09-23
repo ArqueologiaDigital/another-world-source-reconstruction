@@ -19,7 +19,7 @@ LABEL_5CD7:
 	play id=0x0055, freq=0x1C, vol=0x0A, channel=0x01
 	sub [BUDDY_Y], 0x0001
 	call DRAW_PRISON_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2548, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_LIMB_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F05, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_5D00
 	call LABEL_5BA2

@@ -18,7 +18,7 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_6_FRAME:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	sub [0x08], 0x0001
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2548, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_LIMB_POSE_03, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F05, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, LABEL_89F8
 	call LABEL_88A6

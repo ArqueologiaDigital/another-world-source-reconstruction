@@ -369,7 +369,7 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_3_FRAME:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	add [0x08], 0x0001
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2552, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_LIMB_POSE_02, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F02, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, DRAW_CV249_AT_X07_Y08
 	call CAVES_DRAW_CV246_AT_X07_Y08_L2
@@ -421,7 +421,7 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_6_FRAME:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	sub [0x08], 0x0001
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2548, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_LIMB_POSE_03, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F05, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, INLINE_DRAW_CV_255_010
 	call CAVES_INLINE_DRAW_CV_255_031_L2
@@ -461,7 +461,7 @@ CAVES_ACTOR_RUN_RIGHT_PHASE_8_FRAME:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	add [0x08], 0x0001
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2552, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_LIMB_POSE_02, x=[0x07], y=[0x08], zoom=0x40
 	video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F07, x=[0x07], y=[0x08], zoom=0x40
 	je [0x0D], 0x00, DRAW_CV259_AT_X07_Y08
 	call CAVES_DRAW_CV_355_L9

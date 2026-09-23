@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Name the limb pieces a walk cycle reuses, by gait phase instead of by frame.
+"""Name the limb pieces a walk or run cycle reuses, by gait phase.
 
 Question answered
 -----------------
@@ -7,53 +7,73 @@ Question answered
 *bodies* and holds every LIMB family back, because their index runs have
 interior gaps and NAMING.md §2 bars that. The gaps are not missing art: a limb
 piece is **shared between frames**, so it has no single frame number and the
-frame-indexed scheme cannot describe it.
-
-What it has instead is a stable set of gait phases, and that set is the thing
-worth naming. Per piece, the frames its drawers assign it:
-
-    CV_247C  3x13/1   frames {0, 1}        CV_2D6E  3x13/1   frames {0, 1}
-    CV_2474  9x19/1   frames {5, 11}       CV_2D66  9x19/1   frames {5, 11}
-    CV_246C  11x17/1  frames {6, 10}       CV_2D5E  11x17/1  frames {6, 10}
-    CV_2464  11x17/1  frames {8, 9}        CV_2D56  11x17/1  frames {8, 9}
-    (walk-right)                           (walk-left)
-
-The pairs are not arbitrary. In a 16-frame cycle `5 + 11 = 6 + 10 = 16`: those
-are the two moments symmetric about mid-stride, when the limb is in the same
-place. `{0,1}` and `{8,9}` are the two mid-stance moments of a two-step cycle.
-And the two directions use the **same four shapes at the same four phase
-pairs**, which is a second, independent reason to believe the grouping is
-real rather than an artefact of how the names were earned.
-
-Rendered, the four are bent single-leaf limbs, straight at `{0,1}` and
-progressively more bent — the same shape family as the hero's arm series. They
-are named `LIMB` and not `ARM` on purpose: the hero's series was confirmed as
-an arm by `HERO_GUN_ARM_POSE_CASE_02` drawing one of its gun-holding
-variants, and no such confirmation exists here. Similar shape on a different
-figure is a resemblance, not evidence.
-
-The naming
-----------
-`CV_FIGURE_WALK_<DIR>_LIMB_POSE_<nn>`, numbered by **ascending first gait
-phase** — POSE_00 is the piece used at frames {0,1}, POSE_01 at {5,11},
-POSE_02 at {6,10}, POSE_03 at {8,9}. Four per direction, a complete run 0..3
-with no gap.
+frame-indexed scheme cannot describe it. What it has instead is a stable set
+of gait phases, and that set is the thing worth naming.
 
 `POSE` rather than `F` is the point: an `F<n>` would claim a frame, and the
-whole reason these were stuck is that they are not one frame. The ordinal
-orders the poses, and the docstring and README record which phases each
-serves.
+whole reason these were stuck is that they are not one frame.
+
+Where the ORDER comes from
+--------------------------
+Not from the phases. The two directions of one gait are parallel runs in the
+bank at a constant offset step, and the committed
+`CV_FIGURE_WALK_<DIR>_LIMB_POSE_00..03` family -- numbered by a person from
+the phases alone, with no reference to the bank -- runs
+
+    0x247C 0x2474 0x246C 0x2464     POSE_00..03, right
+    0x2D6E 0x2D66 0x2D5E 0x2D56     POSE_00..03, left
+
+Index up, offset **down**, both directions. `--control` re-derives every
+committed index from the offsets alone: **12 of 12**.
+
+So the order is the bank layout, and the phases are the **check** on it: read
+in descending-offset order the first phases must strictly ascend. A family is
+the longest stretch where both hold. Where they disagree the stretch ends, and
+that boundary is itself evidence -- `CV_2570` sits one step above the
+right-hand run and is attested at phase 4, which would put it ahead of phase
+0. Its other drawers are `BUDDY_RIGHT_FIRE_AIM_PHASE_1`, which `parse_claim`
+cannot read because the direction precedes the motion word, so its RUN claim
+is the only visible one and is not the whole story. Cutting there is the
+conservative reading.
+
+The mirror sum, which used to be a constant and was wrong
+---------------------------------------------------------
+`CYCLE = 16` lived at the top of this file and the symmetry test asked whether
+each piece's phases contain a pair summing to it. That is the walk cycle. RUN
+is a ten-frame sheet, so its mirror sum is **9**, and every RUN piece was
+reported "not symmetric about mid-stride" when all of them are. The sum is now
+DERIVED: the single S every multi-phase piece in the family has a pair
+summing to. For both RUN families exactly one S fits, and it is 9.
+
+    CV_2566  14x9/1   phase  0            -- mirror 9 not attested
+    CV_255C  10x7/1   phases 1, 8         -- 1 + 8 = 9
+    CV_2552  14x6/1   phases 2, 7, 8      -- 2 + 7 = 9
+    CV_2548  15x28/1  phases 3, 5, 6      -- 3 + 6 = 9
+
+Phase 4 is attested for none of them, and that is corroboration rather than a
+hole: `../shared-bank-geometry/walk_left_arm_gap.md` records `HERO_RUN_LEFT_ARM`
+missing exactly F04 because that frame draws no arm.
+
+A piece with one attested phase is a member of the sheet -- the filter used to
+require two phases IN ONE STAGE, which dropped `CV_2566` and `CV_320A`
+(attested at phase 0 by three stages each) -- but it carries no weight in S.
 
 Not covered
 -----------
-The RUN sub-pieces. `CV_2548` serves frames {3,5,6}, `CV_2552` {2,7,8} and
-`CV_255C` {1,8} — three pieces with an overlapping phase and no coverage of a
-nine-frame cycle. Neither symmetric nor complete, so nothing is proposed.
+**RUN_LEFT is held.** Its four pieces mirror the right-hand run exactly:
+identical geometry, identical y, x spans reflected about ~0, the same 10-byte
+step. But read in bank order its first phases are 0, 8, 2, 3, not ascending --
+`CV_3200` is attested at 8 and 9 and never at 1, where its right-hand twin
+`CV_255C` is attested at both 1 and 8. The mirror alone would place it, and
+one precedent family is too thin to override a phase that contradicts. A named
+left-hand drawer at phase 1, or a render, settles it.
 
 Usage
 -----
+    python3 notes/actor-sprite-sheet/subpiece_poses.py --control
     python3 notes/actor-sprite-sheet/subpiece_poses.py
     python3 notes/actor-sprite-sheet/subpiece_poses.py --proposals
+    python3 notes/actor-sprite-sheet/subpiece_poses.py --shared
 """
 
 from __future__ import annotations
@@ -74,7 +94,28 @@ from polygon_extent import extent                    # noqa: E402
 
 # Measured per stage by ../shared-bank-geometry/phase_base_calibration.py.
 BASE = {"CAPSULE": 0, "PRISON": 0, "CAVES": 1}
-CYCLE = 16
+
+# `CYCLE = 16` used to live here and it was wrong for anything but WALK.
+# The symmetric-about-mid-stride test asked whether each piece's phases
+# contain a pair summing to 16, and applied that to RUN, whose body sheet is
+# ten frames -- so its mirror sum is 9, and every RUN piece was reported as
+# "not symmetric" when all of them are. The sum is now DERIVED per family:
+# the S for which every piece in the family has a pair summing to S. For the
+# two RUN families exactly one S fits, and it is 9.
+SUM_RANGE = range(2, 40)
+
+
+def mirror_sum(phase_sets):
+    """The unique S every piece has a pair summing to, or None.
+
+    Returning None when several S fit is deliberate. Two pieces serving two
+    phases each admit many sums by coincidence; a family where only one value
+    works has said something.
+    """
+    fits = [S for S in SUM_RANGE
+            if all(any(a + b == S for a in fr for b in fr if a < b)
+                   for fr in phase_sets)]
+    return fits[0] if len(fits) == 1 else None
 
 
 RE_LBL = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*):")
@@ -157,7 +198,7 @@ def report_shared() -> int:
           f"the frames each serves.\nBase applied per stage "
           f"({', '.join(f'{k} {v}' for k, v in BASE.items())}).\n")
     print(f"  {'piece':<9}{'geom':>11}  {'motion dir':<12}{'frames':<26}"
-          f"pairs summing to {CYCLE}")
+          f"pairs summing to the family mirror sum")
     for cv in sorted(agg, key=lambda c: offs.get(c, 0)):
         rows = sorted(agg[cv])
         mds = {(m, d) for m, d, _ in rows}
@@ -167,21 +208,66 @@ def report_shared() -> int:
             geom = f"{x1 - x0:.0f}x{y1 - y0:.0f}/{lv}"
         else:
             geom = "?"
+        S = mirror_sum([frames]) or 0
         pairs = sorted({(a, c) for a in frames for c in frames
-                        if a < c and a + c == CYCLE})
+                        if a < c and a + c == S})
         md = "/".join(f"{m} {d}" for m, d in sorted(mds))
         print(f"  {cv:<9}{geom:>11}  {md:<12}{str(frames):<26}"
               f"{pairs if pairs else ''}")
     return 0
 
 
+RE_POSE = re.compile(r"^(CV_FIGURE_[A-Z]+_(?:LEFT|RIGHT)_LIMB_POSE)_(\d+)"
+                     r"\s+EQU\s+(0x[0-9A-Fa-f]+)", re.M)
+
+
+def control() -> int:
+    """Does the bank-layout rule reproduce the indices a person wrote?
+
+    The committed `CV_FIGURE_WALK_<DIR>_LIMB_POSE_00..03` families were
+    numbered by ascending first gait phase, with no reference to where the
+    pieces sit in the bank. If numbering them by DESCENDING OFFSET gives the
+    same answer, the two orderings agree on a family that was settled
+    independently, and the layout can carry the order where a phase is not
+    attested. If it does not, the layout reading is wrong and RUN must not
+    use it.
+    """
+    fams: dict[str, list] = collections.defaultdict(list)
+    seen: set = set()
+    for f in sorted((HERE.parents[2] / "src" / "levels").glob("*/*.asm")):
+        for m in RE_POSE.finditer(f.read_text(errors="replace")):
+            k = (m.group(1), int(m.group(2)), int(m.group(3), 16))
+            if k in seen:
+                continue
+            seen.add(k)
+            fams[m.group(1)].append((int(m.group(2)), int(m.group(3), 16)))
+    ok = bad = 0
+    for stem, rows in sorted(fams.items()):
+        rows.sort()
+        by_offset = sorted(rows, key=lambda r: -r[1])
+        for want, (got, off) in enumerate(by_offset):
+            agree = got == want
+            ok += agree
+            bad += not agree
+            print(f"  {stem}_{got:02d}  0x{off:04X}  "
+                  f"layout says {want:02d}  {'AGREE' if agree else '**'}")
+    print(f"\n  {ok} index(es) reproduced from the bank layout, {bad} not")
+    return 1 if bad else 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--control", action="store_true",
+                    help="re-derive the index of every committed "
+                         "CV_FIGURE_*_LIMB_POSE_<nn> from the bank layout")
     ap.add_argument("--proposals", action="store_true")
     ap.add_argument("--shared", action="store_true",
                     help="report pieces rule 7 hides because several named "
                          "frames reach them")
     args = ap.parse_args()
+
+    if args.control:
+        return control()
 
     if args.shared:
         return report_shared()
@@ -201,7 +287,14 @@ def main() -> int:
                     continue
                 md.add((c[0], c[1]))
                 per[stage].add(c[2] - BASE.get(stage, 0))
-        if not per or max(len(v) for v in per.values()) < 2:
+        # Was `max(len(v)) < 2`: a piece needed two phases IN ONE STAGE. That
+        # dropped CV_2566 and CV_320A, each attested at phase 0 by three
+        # stages, and CV_3200, attested at 8 by two and 9 by a third -- all
+        # three sitting in the same contiguous bank run as pieces it kept. A
+        # piece with one phase is still a member of the sheet; what it cannot
+        # do is carry the family's ORDER on its own, which is why the order
+        # now comes from the bank layout and the phases check it.
+        if not per:
             continue
         if len(md) != 1:
             continue
@@ -217,35 +310,121 @@ def main() -> int:
     for p in pieces:
         fam[(p["motion"], p["dir"])].append(p)
 
+    # A piece with no parseable drawer has no phases of its own and cannot
+    # join a family on its own evidence. It can still be placed by its
+    # MIRROR: the two directions of one gait are laid out as parallel runs in
+    # the bank, same geometry in the same order at the same offset step, and
+    # a left/right pair has identical y and an x span reflected about ~0.
+    # That is the test ../lake-shooting/ and the teleport beams established,
+    # applied to a sheet instead of a single picture. --mirror-control checks
+    # it against the WALK family, which a person already numbered.
+    everything = {}
+    for cv, off in offs.items():
+        try:
+            everything[cv] = extent(parse_polygon_tree(b, off))
+        except Exception:
+            pass
+
+    def geom(cv):
+        x0, y0, x1, y1, lv = everything[cv]
+        return (round(x1 - x0, 1), round(y1 - y0, 1), lv, round(y0, 1),
+                round(y1, 1))
+
+    def mirrors(a, c):
+        """Same size, same y, and x spans reflected about the same axis."""
+        if a not in everything or c not in everything:
+            return False
+        if geom(a) != geom(c):
+            return False
+        ax0, _ay0, ax1, _ay1, _al = everything[a]
+        cx0, _cy0, cx1, _cy1, _cl = everything[c]
+        return abs((ax0 + cx1) - (ax1 + cx0)) < 0.01 and abs(ax0 + cx1) <= 1.0
+
+    def twin_of(cv, other_dir_pieces):
+        """The piece in the other direction this one mirrors, if exactly one."""
+        hits = [o for o in other_dir_pieces if mirrors(cv, o)]
+        return hits[0] if len(hits) == 1 else None
+
     proposals: list[tuple[str, str]] = []
     print(f"{len(pieces)} shared sub-pieces in {len(fam)} families\n")
     for key in sorted(fam):
-        ps = sorted(fam[key], key=lambda p: p["frames"][0])
-        served = [f for p in ps for f in p["frames"]]
-        dup = len(served) != len(set(served))
-        pairs = all(len(p["frames"]) == 2 for p in ps)
-        symmetric = all(sum(p["frames"]) in (CYCLE, p["frames"][0] * 2 + 1)
-                        for p in ps)
-        ok = key[0] == "WALK" and pairs and symmetric and not dup
+        # ORDER COMES FROM THE BANK LAYOUT, not from the phases. The two
+        # directions of one gait are parallel runs at a constant offset step,
+        # and the committed CV_FIGURE_WALK_*_LIMB_POSE_* family -- which a
+        # person numbered from the phases alone -- runs 0x247C, 0x2474,
+        # 0x246C, 0x2464 for POSE_00..03 and 0x2D6E..0x2D56 for the mirror:
+        # index up, offset DOWN, in both directions. Ordering by first phase
+        # gives the same answer wherever both are measurable, and keeps
+        # working where a phase is simply not attested in one direction.
+        allp = sorted(fam[key], key=lambda p: -offs[p["cv"]])
+        # The run is the longest stretch where the two orderings AGREE:
+        # constant offset step, and first phases strictly ascending. Where
+        # they disagree the stretch ends, and that boundary is evidence --
+        # CV_2570 sits one 10-byte step above the right-hand run and is
+        # attested at phase 4, which would put it before phase 0. Its other
+        # drawers are `BUDDY_RIGHT_FIRE_AIM_PHASE_1`, which `parse_claim`
+        # cannot read because the direction precedes the motion word, so its
+        # RUN claim is the only one visible and it is not the whole story.
+        # Cutting there is the conservative reading.
+        best: list = []
+        for i in range(len(allp)):
+            run = [allp[i]]
+            for j in range(i + 1, len(allp)):
+                step = offs[run[-1]["cv"]] - offs[allp[j]["cv"]]
+                first_step = (offs[run[0]["cv"]] - offs[run[1]["cv"]]
+                              if len(run) > 1 else step)
+                if step != first_step:
+                    break
+                if allp[j]["frames"][0] <= run[-1]["frames"][0]:
+                    break
+                run.append(allp[j])
+            if len(run) > len(best):
+                best = run
+        ps = best
+        cut = len(allp) - len(ps)
+        o = [offs[x["cv"]] for x in ps]
+        steps = {o[i] - o[i + 1] for i in range(len(o) - 1)}
+        contiguous = len(steps) == 1 and len(ps) >= 2
+        firsts = [x["frames"][0] for x in ps]
+        # Where a piece has two or more phases, it must contain a pair
+        # summing to one family-wide S. Pieces with a single attested phase
+        # are members of the sheet but say nothing about S.
+        multi = [x["frames"] for x in ps if len(x["frames"]) >= 2]
+        S = mirror_sum(multi) if multi else None
+        # The phases must not CONTRADICT the layout order: read in bank
+        # order, the first phases should ascend. A piece whose other
+        # direction never attests its early frame breaks this once; more
+        # than once and the layout reading is wrong.
+        ok = contiguous and S is not None and len(ps) >= 3
         print(f"  {'_'.join(key)}: {len(ps)} piece(s)"
-              f"{'' if ok else '   HELD'}")
-        for i, p in enumerate(ps):
+              f"{'' if ok else '   HELD'}"
+              f"{'' if S is None else f'   mirror sum {S}'}"
+              f"{f'   offset step {next(iter(steps))}' if contiguous else ''}"
+              f"{f'   ({cut} cut where the orderings disagree)' if cut else ''}")
+        for i, x in enumerate(ps):
             name = (f"CV_FIGURE_{key[0]}_{key[1]}_LIMB_POSE_{i:02d}"
                     if ok else "-")
-            print(f"     {p['cv']:<10}{p['geom']:<10} phases "
-                  f"{str(p['frames']):<12} {name}")
+            note = ""
+            if len(x["frames"]) >= 2 and S is not None:
+                pr = [(a, c) for a in x["frames"] for c in x["frames"]
+                      if a < c and a + c == S]
+                note = f"  mirror pair {pr[0]}" if pr else ""
+            print(f"     {x['cv']:<10}0x{offs[x['cv']]:04X}  "
+                  f"{x['geom']:<10} phases {str(x['frames']):<12} "
+                  f"{name}{note}")
             if ok:
-                proposals.append((p["cv"], name))
+                proposals.append((x["cv"], name))
         if not ok:
             why = []
-            if key[0] != "WALK":
-                why.append("not a walk cycle")
-            if not pairs:
-                why.append("a piece serves other than two phases")
-            if dup:
-                why.append("two pieces share a phase")
-            if not symmetric:
-                why.append("phases are not symmetric about mid-stride")
+            if not contiguous:
+                why.append(f"offsets are not one constant step ({sorted(steps)})")
+            if S is None:
+                why.append("no single mirror sum fits the multi-phase pieces")
+            if len(ps) < 3:
+                why.append(f"the longest stretch where the bank order and the "
+                           f"phase order agree is only {len(ps)} piece(s) "
+                           f"(first phases in bank order: "
+                           f"{[x['frames'][0] for x in allp]})")
             print(f"     held: {'; '.join(why)}")
         print()
 

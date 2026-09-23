@@ -179,7 +179,7 @@ LABEL_5DB0:
 	play id=0x0055, freq=0x19, vol=0x0A, channel=0x01
 	sub [BUDDY_Y], 0x0001
 	call DRAW_PRISON_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2566, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_LIMB_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, INLINE_DRAW_CV_243_012__HELPER
 	call PRISON_INLINE_DRAW_CV_255_010_L2

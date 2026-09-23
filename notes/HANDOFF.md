@@ -25,10 +25,10 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 63.6% (6,450/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 63.8% (6,474/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
-| shared-bank keys still unnamed | 77 of 352 (59 reachable) | `notes/shared-bank-geometry/` |
+| shared-bank keys still unnamed | 53 of 352 (35 reachable) | `notes/shared-bank-geometry/` |
 | draw-only labels agreeing with their picture | 212, 0 nameable left, 0 contradicting | `label_vs_constant.py` |
 | routines naming a gait and drawing another's sheet | 0 (was 30) | `motion-word-audit/piece_family_vs_label.py` |
 | shot-impact ladders complete | 18 of 18 (3 stages x 2 directions x 3 branches) | `impact_ladder.py` |
@@ -41,6 +41,7 @@ As of the last commit:
 | names that exist and break NAMING.md §1 | 1,238 `_L<n>` + 153 others, all four branches | `placeholder-census/placeholder_roles.py --forbidden` |
 | complete `_F` families indexed by order of first appearance | 159 of 159 | `placeholder-census/placeholder_roles.py --frames` |
 | frame labels reproduced from their siblings' template | 127 of 127, 0 nameable left | `frame-label-siblings/sibling_template.py --control` |
+| limb-pose indices reproduced from the bank layout | 12 of 12 | `actor-sprite-sheet/subpiece_poses.py --control` |
 
 ## Added 2026-09-23
 
@@ -244,7 +245,20 @@ for it whenever two draws share an anchor.
 
    **The real remaining count is therefore 59, not 77.**
 
-3. **77 shared-bank keys** (`notes/shared-bank-geometry/`). 113 are
+3. **53 shared-bank keys** (`notes/shared-bank-geometry/`), down from 77 on
+   2026-09-23 when `subpiece_poses.py` was fixed: it hardcoded `CYCLE = 16`,
+   the walk cycle, and applied it to RUN, whose ten-frame sheet has a mirror
+   sum of **9**. Every RUN piece was reported "not symmetric about
+   mid-stride" when all of them are. The sum is derived per family now, the
+   order comes from the bank layout with the phases checking it, and
+   `CV_FIGURE_RUN_RIGHT_LIMB_POSE_00..03` is named. **RUN_LEFT is still
+   held** and the reason is specific: its four pieces mirror the right-hand
+   run exactly, but `CV_3200` is attested at phases 8 and 9 and never at 1,
+   where its twin `CV_255C` is attested at both — so its bank position and
+   its phases disagree, and one precedent family is too thin to override a
+   phase. A named left-hand drawer at phase 1 settles it.
+
+   Formerly-77 text follows. 113 are
    actor-slot offsets, blocked by #0138 for *who* they draw but nameable by
    *pose*. The RUN sub-pieces are neither symmetric nor complete, which is
    why they stalled. 50 are hero-art, of which the consensus engine can

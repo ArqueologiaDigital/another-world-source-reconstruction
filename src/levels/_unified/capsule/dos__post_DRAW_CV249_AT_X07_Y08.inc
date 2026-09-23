@@ -7,7 +7,7 @@ CAPSULE_ACTOR_RUN_RIGHT_DRAW_3:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	add [BUDDY_Y], 0x0001
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2548, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_LIMB_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_833B
 	call LABEL_8206
@@ -41,7 +41,7 @@ CAPSULE_ACTOR_RUN_RIGHT_DRAW_5:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	sub [BUDDY_Y], 0x0001
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2548, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_LIMB_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F05, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_838D
 	call CAPSULE_BUDDY_DRAW_CV310_AT_BUDDY_X_PLUS_1
@@ -58,7 +58,7 @@ LABEL_8392:
 LABEL_8397:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2548, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_LIMB_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F06, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, LABEL_83B6
 	call CAPSULE_BUDDY_DRAW_CV310_AT_BUDDY_X_PLUS_1
@@ -76,7 +76,7 @@ CAPSULE_ACTOR_RUN_RIGHT_DRAW_7:
 	play id=0x0055, freq=0x14, vol=0x14, channel=0x00
 	add [BUDDY_Y], 0x0001
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2552, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_LIMB_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F07, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
 	je [0x0D], 0x00, DRAW_CV259_AT_X07_Y08
 	call CAPSULE_DRAW_CV261_AT_X07_Y08_L2
