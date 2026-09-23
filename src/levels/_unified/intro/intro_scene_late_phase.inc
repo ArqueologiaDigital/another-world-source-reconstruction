@@ -151,11 +151,11 @@ INTRO_DOT_PAIR_CROSSING_SWEEP_STEP_LOOP:
 
 INTRO_DOT_PAIR_CROSSING_SWEEP_HOLD_LOOP:
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_124, x=[0x06], y=16
-	video offset=CINEMATIC_124, x=[0x07], y=18
+	video offset=CINEMATIC_HOLO_CONSOLE_DOT_RISE_SLOW, x=[0x06], y=16
+	video offset=CINEMATIC_HOLO_CONSOLE_DOT_RISE_SLOW, x=[0x07], y=18
 .else
-	video offset=CINEMATIC_130, x=[0x06], y=16
-	video offset=CINEMATIC_130, x=[0x07], y=18
+	video offset=CINEMATIC_HOLO_CONSOLE_DOT_RISE_SLOW, x=[0x06], y=16
+	video offset=CINEMATIC_HOLO_CONSOLE_DOT_RISE_SLOW, x=[0x07], y=18
 .endif
 	break
 	djnz [0x09], INTRO_DOT_PAIR_CROSSING_SWEEP_HOLD_LOOP
@@ -186,9 +186,9 @@ LAB_DOOR_SCENE_LAMP_SWAP_HOLD:
 	djnz [0x05], LAB_DOOR_SCENE_LAMP_SWAP_HOLD
 	selectVideoPage 0x00
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_124, x=96, y=131
+	video offset=CINEMATIC_HOLO_CONSOLE_DOT_RISE_SLOW, x=96, y=131
 .else
-	video offset=CINEMATIC_130, x=96, y=131
+	video offset=CINEMATIC_HOLO_CONSOLE_DOT_RISE_SLOW, x=96, y=131
 .endif
 	selectVideoPage 0xFF
 	mov [0x05], 0x0004
