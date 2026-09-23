@@ -68,6 +68,8 @@ checked against the receiving port's own guards.
 | CINEMATIC_402 | (msdos twin) | `CINEMATIC_CAVES_WALL_BREACH_STRAND` | high |
 | CINEMATIC_423 | (msdos twin) | `CINEMATIC_CAVES_DROPPED_GUN` | medium |
 | CINEMATIC_203, 190..195 | (msdos twins) | `CINEMATIC_PRISON_ACTOR_CHARGE_GLOW_F0..F6` | medium |
+| CINEMATIC_634 | (msdos twin) | `CINEMATIC_PRISON_PRISONER_BEHIND_BARS` | high |
+| CINEMATIC_636 | (msdos twin) | `CINEMATIC_PRISON_CELL_BARS` | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
@@ -96,6 +98,17 @@ shows they agree.
 * `CINEMATIC_718`, `CINEMATIC_719`, `CINEMATIC_734` — ledges and floors,
   each shared between two screens, so no screen scope is available and the
   subject alone does not distinguish them from each other.
+* `CINEMATIC_575`, `576`, `577`, `578` — four pictures, all 170-171 tall,
+  each a rocky mound with a small railed structure on top, the mound
+  narrowing and the structure growing across the four. That reads as one
+  object approached, or as four different formations, and nothing decides
+  between them: all four are drawn twice at x=160, y=100 with no named
+  drawer. Subject and ordering are both guesses, so neither is taken.
+* `CINEMATIC_635` — drawn in the same breath as the two cell-scene names
+  below, at the bars' own anchor, so "the second prisoner" is the obvious
+  reading. Its silhouette is a blocky mass with one small protrusion on top:
+  no limbs, no head profile, nothing that resolves as a person the way
+  `CINEMATIC_634` does. A bunk would look the same. Held.
 
 ## The walk cycle, and the check that had to come before naming six of it
 
@@ -149,3 +162,16 @@ worth stating rather than glossing:
 
 None of the three is a routine naming a moment. That is the line the
 refutation drew, and it is the line these stay on.
+
+## The one that needed no argument
+
+`CINEMATIC_634` is 278x360 and 49 paths, and it is a human figure in profile
+-- rounded head with hair, neck, sloping shoulders, a bent arm -- seen through
+five vertical bars running the full height. Every other name in this file
+needed the extent or the draw position or a routine to corroborate it. This
+one is just legible.
+
+`CINEMATIC_636` beside it is 158x205 in **three paths**: three vertical bars
+and nothing else, where the path count says the same thing the picture does.
+`LABEL_4EE9` draws both twenty times under a `djnz` seeded to 0x14, at two
+variable x anchors -- a pan across a row of cells.
