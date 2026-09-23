@@ -6,8 +6,12 @@
 | | Do both sources reproduce the screen of every routine already named for one? | `... --control` |
 | | Where the layers are still numbered, do the two ports agree? | `... --pairs` |
 | | Can a named painter's still-numbered layers be named? | `... --layers` |
-| | | `... --proposals` |
-| `proposals_<branch>__<STAGE>.md` | the tables `apply_routine_renames.py` consumes | regenerate with `--proposals \| python3 notes/proposal-tables/split_by_branch_stage.py --out notes/backdrop-drawer --header routine` |
+| | Which existing layer names claim a screen nothing connects them to? | `... --audit-layers` |
+| `proposals_<branch>__<STAGE>.md` | the tables `apply_routine_renames.py` consumes | `... --proposals \| python3 notes/proposal-tables/split_by_branch_stage.py --out notes/backdrop-drawer --header routine` |
+| `demotions/` | the table `apply_branch_scoped_names.py --demote` consumes | `... --audit-layers --proposals \| python3 notes/proposal-tables/split_by_branch_stage.py --out notes/backdrop-drawer/demotions` |
+
+`--control` and `--audit-layers` read all four branches; every other mode
+reads only the two priority ports.
 
 ## The gap this closes
 
@@ -18,7 +22,11 @@ painters were still `LABEL_CDB2`, `JUNK__9DD7`,
 raw hex tail `docs/NAMING.md` §1 forbids — while every picture in their bodies
 already said, by name, which screen they were painting.
 
-63 painters named. The name was one hop from where it was needed.
+85 painters named, in three passes — naming a painter gives the routine a
+screen, which lets the next pass match a cross-port pair that could not
+resolve before, so it was run to a fixed point. **20 painter labels at the
+start of the day, 106 now**, across 64 distinct screens. The name was one hop
+from where it was needed.
 
 ## The two sources
 
@@ -32,19 +40,69 @@ A routine is proposed only when both agree:
 They share no input. Source 1 reads names a person wrote from the art; source
 2 reads `je`/`jne` guards and was never told the names exist.
 
+Where a routine's layers are all still numbered, source 1 has nothing to say,
+and the routine is proposed only if the **other port** derives the same screen
+for the routine painting byte-identical art — two separate disassemblies, same
+answer. `--pairs` shows that matching: **6 pairs, 6 agree.**
+
 `--control` re-derives NN for every routine already named
-`<STAGE>_SCREEN_<NN>_BACKDROP_DRAW`, from both sources: **84 agree, 0 do not.**
+`<STAGE>_SCREEN_<NN>_BACKDROP_DRAW`, from both sources: **139 agree, 0 do
+not**, and that count includes the cartridge and GBA trees. Those two are not
+naming targets here — their romsets ship no extracted cinematic bank, so
+nothing in this module can measure their art — but they carry 33 painter names
+that `align_branch_names.py` pushed across from the priority ports, and after
+the 0x4C/0x6C case below every one of those had to be re-checked against its
+own port's guards. All 33 hold.
+
+## Two bugs in this module, both found by its own output being too small
+
+**The cross-port tier matched nothing**, and "0 pairs" looked like a finding
+about the game. It was a bug: `art_key` hashed 512 raw bytes from each offset,
+but a polygon is shorter than that, so most of the hash was whatever art
+happened to follow it in the bank — which differs between ports by
+construction. Hashing the parsed tree with `canonical_md5`, which is what the
+rest of the project uses for exactly this, turns 0 pairs into 6.
+
+**A body ran past its own `ret`.** `bodies()` ended a label at the next label,
+and msdos CAPSULE has two draws sitting after a `ret` with no label in front
+of them:
+
+```
+LABEL_9C52:
+        fill page=0x00, color=0x08
+        video offset=CINEMATIC_522, ...
+        video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F1, ...
+        ...
+        ret
+                                          <- no label here
+        video offset=CINEMATIC_CAPSULE_SCREEN_92_BACKDROP_LAYER_5, ...
+        video offset=CINEMATIC_CAPSULE_SCREEN_92_BACKDROP_LAYER_6, ...
+```
+
+Those two layers were `LABEL_9C52`'s **only** claim to a screen, and it cannot
+reach them. A body now ends at the first of `ret`, `jmp` or `db 0x11` — the
+three opcodes `redisasm_db.py` already lists as terminating. The routine is
+still named for screen 0x92, but now on the dataflow plus the other port,
+which is evidence it actually has.
 
 ## What it refuses, and why each guard earned its place
 
 | held | why |
 | --- | --- |
-| 2468 | the name is already earned — a descriptive name someone derived from the art is never displaced (#0120) |
-| 2170 | not a backdrop painter |
-| 23 | only the dataflow pins it; nothing confirms |
-| 4 | its named pictures do not all point at one screen — two screens' layers, or a backdrop layer beside a picture that claims no screen |
-| 4 | its layers and the dataflow disagree — see below |
-| 1 | the dataflow cannot pin it |
+| ~2465 | the name is already earned — a descriptive name someone derived from the art is never displaced (#0120) |
+| ~2160 | not a backdrop painter |
+| 6 | only the dataflow pins it; nothing confirms |
+| 6 | its layers and the dataflow disagree — see below |
+| 2 | the dataflow cannot pin it |
+| 0 | its named layers point at two different screens |
+
+A picture named descriptively — `CINEMATIC_CAPSULE_ARCH_WALL_FAR` — claims no
+screen. It is not evidence for one and not evidence against one either, so it
+must not veto the layers that do claim one: a backdrop is allowed to contain a
+named prop, and `DRAW_BUDDY_CRAWLING_BG` is the project's own precedent for a
+figure inside a backdrop composite. Only a **second positive claim** is a
+contradiction. Treating "claims nothing" as a contradiction cost three
+painters until it was fixed.
 
 **"Not a backdrop painter"** is the guard that matters most, and it was added
 after the probe got it wrong. A backdrop is scenery: every layer at a literal
@@ -169,3 +227,39 @@ If a shared layer were a tall scroll strip, the screens sharing it would be a
 column: numbers differing by 0x20, one row in the 32-column grid. They are
 not. The two-screen cases differ by 0x01, 0x1E and 0x42, and most shared
 layers are also painted by routines with no screen at all. There is no strip.
+
+## Auditing the layer names that already existed
+
+`--audit-layers` turns the same evidence on the 312 layer names already in the
+tree across all four branches, under the weakest rule that asserts anything: **at least one routine
+that draws the picture must be on the screen the name claims** — by its own
+name or by the dataflow. A routine the dataflow cannot pin counts neither way,
+so a picture drawn from even one unpinned routine is left alone.
+
+That is deliberately weaker than the rule governing *new* layer names, which
+also demands exclusivity. A picture shared between two screens is defensible
+under this audit and indefensible under that rule, and the difference is the
+point: demoting a name needs proof it is wrong, not absence of proof that it
+is right.
+
+**2 of 312 failed**, and they failed flatly:
+
+```
+CINEMATIC_CAVES_SCREEN_ED_BACKDROP_LAYER_1   claims 0xED
+CINEMATIC_CAVES_SCREEN_ED_BACKDROP_LAYER_2   claims 0xED
+    painted by CAVES_SCREEN_CB_BACKDROP_DRAW (0xCB), CAVES_SCREEN_EE_BACKDROP_DRAW
+    (0xEE), DRAW_STALACTITE_CAVERN_BG (0xCD), LABEL_D49E (0xCC), LABEL_D4DF (0xCE)
+```
+
+Five painters on five screens and not one of them 0xED, while
+`CAVES_SCREEN_ED_BACKDROP_DRAW` — which does exist — paints neither. Both are
+back to `CINEMATIC_739` and `CINEMATIC_740`, their EQU table positions. That
+convention is checked rather than assumed: of msdos CAVES's 908 CINEMATIC EQU
+rows, 0 of the ones still carrying a number disagree with their position.
+
+The 0x8F and 0xAB cases above survive this audit, because a routine on the
+claimed screen does draw them. They are not wrong, only not exclusive.
+
+After the demotion the audit is clean: 0 of 312, with 281 confirmed by a
+painter on the claimed screen and 31 left alone because a routine that draws
+them cannot be pinned.

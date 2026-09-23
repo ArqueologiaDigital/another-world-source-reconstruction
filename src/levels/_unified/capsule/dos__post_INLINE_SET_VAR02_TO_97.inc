@@ -323,7 +323,7 @@ CAPSULE_SCREEN_6D_ENTRY:
 	mov [0x40], 0x0062
 	play id=0x0066, freq=0x07, vol=0x08, channel=0x03
 	setPalette 0x01
-	call LABEL_9E59
+	call CAPSULE_SCREEN_6D_BACKDROP_DRAW
 	call DELETE_CHANS_0_8_AND_RET
 	mov [0xF8], [0xB9]
 	and [0xF8], 0x0010
@@ -498,7 +498,7 @@ CAPSULE_SCREEN_92_ENTRY:
 	mov [0x41], 0x0028
 	mov [0x40], 0x009D
 	setPalette 0x0C
-	call LABEL_9C52
+	call CAPSULE_SCREEN_92_BACKDROP_DRAW
 	call DELETE_CHANS_0_8_AND_RET
 	setup channel=0x16, address=HERO_CRAWL_LEFT_LOOP
 	mov [HERO_X], 0x00A0

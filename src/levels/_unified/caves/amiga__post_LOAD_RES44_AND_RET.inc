@@ -54,7 +54,7 @@ DRAW_CIN_415_416_FRAGMENTS:
 	ret
 
 
-LABEL_CE3D:
+CAVES_SCREEN_6C_BACKDROP_DRAW:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_335, x=134, y=103
 	video offset=CINEMATIC_395, x=6, y=90
@@ -135,7 +135,7 @@ CAVES_SCREEN_89_BACKDROP_DRAW:
 	ret
 
 
-LABEL_CF2D:
+CAVES_SCREEN_8A_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_589, x=161, y=100
 	video offset=CINEMATIC_590, x=161, y=99
@@ -172,7 +172,7 @@ CAVES_SCREEN_A8_BACKDROP_DRAW:
 	ret
 
 
-LABEL_CF83:
+CAVES_SCREEN_A9_BACKDROP_DRAW:
 	fill page=0x00, color=0x09
 	video offset=CINEMATIC_634, x=25, y=100
 	ret
@@ -215,7 +215,7 @@ CAVES_SCREEN_CB_BACKDROP_DRAW:
 	ret
 
 
-LABEL_CFE3:
+CAVES_SCREEN_CC_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_719, x=160, y=100
 	video offset=CINEMATIC_718, x=160, y=100
@@ -234,7 +234,7 @@ LABEL_CFE3:
 	ret
 
 
-LABEL_D024:
+CAVES_SCREEN_CE_BACKDROP_DRAW:
 	fill page=0x00, color=0x00
 	video offset=CINEMATIC_719, x=160, y=100
 	video offset=CINEMATIC_718, x=160, y=100
@@ -348,7 +348,7 @@ DRAW_BUDDY_CRAWLING_BG:
 	ret
 
 
-LABEL_D14E:
+CAVES_SCREEN_4C_BACKDROP_DRAW:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_332, x=160, y=100
 	video offset=CINEMATIC_333, x=160, y=100
@@ -368,7 +368,7 @@ LABEL_D14E:
 	ret
 
 
-LABEL_D18F:
+CAVES_SCREEN_4D_BACKDROP_DRAW:
 	fill page=0x00, color=0x08
 	video offset=CINEMATIC_340, x=160, y=100
 	video offset=CINEMATIC_341, x=160, y=100
@@ -517,7 +517,7 @@ CAVES_SCREEN_71_BACKDROP_DRAW:
 	ret
 
 
-LABEL_D36C:
+CAVES_SCREEN_91_BACKDROP_DRAW:
 	fill page=0x00, color=0x02
 	video offset=CINEMATIC_606, x=161, y=106
 	video offset=CINEMATIC_348, x=150, y=65522
@@ -557,7 +557,7 @@ CAVES_SCREEN_93_BACKDROP_DRAW:
 	ret
 
 
-LABEL_D3DE:
+CAVES_SCREEN_94_BACKDROP_DRAW:
 	fill page=0x00, color=0x02
 	video offset=CINEMATIC_606, x=160, y=100
 	video offset=CINEMATIC_618, x=160, y=100

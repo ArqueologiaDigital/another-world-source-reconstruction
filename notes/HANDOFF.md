@@ -23,7 +23,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 63.5% (6,447/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 63.6% (6,449/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 77 of 352 (59 reachable) | `notes/shared-bank-geometry/` |
@@ -32,8 +32,9 @@ As of the last commit:
 | shot-impact ladders complete | 18 of 18 (3 stages x 2 directions x 3 branches) | `impact_ladder.py` |
 | routines whose name states a screen the guards confirm | 303 of 303 | `screen-scope/screen_scope.py --control` |
 | per-screen entry routines named | 257 of 274, 0 nameable left | `screen-scope/screen_entry.py` |
-| backdrop painters named | 52 distinct / 84 labels (was 10 / 20), 0 nameable left | `backdrop-drawer/backdrop_drawer.py` |
-| painters whose two sources agree on the screen | 84 of 84 | `backdrop-drawer/backdrop_drawer.py --control` |
+| backdrop painters named | 64 distinct / 106 labels (was 10 / 20), 0 nameable left | `backdrop-drawer/backdrop_drawer.py` |
+| painters whose two sources agree on the screen | 139 of 139, all four branches | `backdrop-drawer/backdrop_drawer.py --control` |
+| layer names claiming a screen nothing connects them to | 0 of 312 | `backdrop-drawer/backdrop_drawer.py --audit-layers` |
 
 ## Added 2026-09-23
 

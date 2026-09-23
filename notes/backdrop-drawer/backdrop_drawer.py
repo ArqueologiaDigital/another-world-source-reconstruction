@@ -76,17 +76,29 @@ sys.path.insert(0, str(SRC / "notes" / "screen-scope"))
 sys.path.insert(0, str(SRC.parent / "another-world-archaeology" / "tools"))
 sys.path.insert(0, str(SRC / "notes" / "polygon-extent-correction"))
 import screen_scope                                          # noqa: E402
-from polygon_tree import parse_polygon_tree                  # noqa: E402
+from polygon_tree import parse_polygon_tree, canonical_md5   # noqa: E402
 from polygon_extent import extent                            # noqa: E402
 from extent_matches_renderer import slab                     # noqa: E402
 
 PORTS = {"amiga": "chahi_amiga_1991", "msdos": "dos_1992"}
+# The cartridge and GBA trees carry painter names that `align_branch_names.py`
+# pushed across from the priority ports. A screen NUMBER does not travel --
+# amiga CAPSULE calls a screen 0x4C that msdos calls 0x6C -- so those names
+# have to be checked against each port's OWN guards. --control and
+# --audit-layers therefore run over these too. They are not naming targets
+# here: the cartridge romsets ship no extracted cinematic bank, so nothing in
+# this module can measure their art.
+AUDIT_PORTS = dict(PORTS, cart="cartridge_1992", gba="gba_2004")
 STAGE_ID = {"PRISON": 3, "CAVES": 4, "CAPSULE": 6}
 
 RE_LBL = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*):\s*$")
 RE_V = re.compile(r"^\s*video\s+(?:type=(\d+),\s*)?offset="
                   r"([A-Za-z_][A-Za-z0-9_]*),\s*x=([^,]+),\s*y=([^,\s]+)")
 RE_WIPE = re.compile(r"^\s*(fill|copyVideoPage)\s")
+# redisasm_db.py: TERMINATING_OPCODES = {0x05 ret, 0x07 jmp, 0x11 killChannel}.
+# Everything after one of these, up to the next label, is unreachable from the
+# label above it.
+RE_END = re.compile(r"^\s*(ret\s*$|jmp\s|db 0x11\s*$)")
 RE_EQU = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*)\s+EQU\s+(0x[0-9A-Fa-f]+)", re.M)
 
 # A generated label states how the disassembler found it, not what it does.
@@ -107,10 +119,27 @@ def layer_screen(name: str, stage: str):
 def bodies(lines):
     """{label: (pictures drawn, all anchors literal?, wipes the page?)}.
 
-    A label's body runs to the next label, so a routine that falls through
-    into the next one is credited only with its own draws. That is the
-    conservative reading: crediting a fall-through target's layers would let
-    one screen's stack contaminate the label before it.
+    A label's body runs to the next label **or to the first terminating
+    opcode**, whichever comes first, so a routine that falls through into the
+    next one is credited only with its own draws. Both halves of that were
+    forced by a case:
+
+        LABEL_9C52:
+                fill page=0x00, color=0x08
+                video offset=CINEMATIC_522, ...
+                video offset=CINEMATIC_BUDDY_SMASHING_WINDOW_F1, ...
+                ...
+                ret
+                                                  <- no label here
+                video offset=CINEMATIC_CAPSULE_SCREEN_92_BACKDROP_LAYER_5, ...
+                video offset=CINEMATIC_CAPSULE_SCREEN_92_BACKDROP_LAYER_6, ...
+                ret
+
+    Stopping only at the next label credited `LABEL_9C52` with two layers it
+    cannot reach, and those two were its ONLY claim to a screen -- the probe
+    would have named a routine that draws the buddy smashing a window after
+    the backdrop of screen 0x92. `redisasm_db.py` already lists the three
+    opcodes that end a routine; this uses the same three.
 
     The two flags are what separate a backdrop painter from any other routine
     that happens to run under a screen guard. A backdrop is scenery: every
@@ -124,6 +153,7 @@ def bodies(lines):
     out: dict[str, list] = {}
     lit: dict[str, bool] = {}
     wipe: dict[str, bool] = {}
+    done: dict[str, bool] = {}
     cur = None
     for line in lines:
         if m := RE_LBL.match(line):
@@ -131,8 +161,12 @@ def bodies(lines):
             out.setdefault(cur, [])
             lit.setdefault(cur, True)
             wipe.setdefault(cur, False)
+            done.setdefault(cur, False)
             continue
-        if cur is None:
+        if cur is None or done.get(cur):
+            continue
+        if RE_END.match(line):
+            done[cur] = True
             continue
         if RE_WIPE.match(line):
             wipe[cur] = True
@@ -146,11 +180,23 @@ def bodies(lines):
 
 
 def full_screen_set(port: str, stage: str, sid: int):
-    """The pictures in this stage's bank that cover the whole 240x160 view."""
-    f = SRC / "src" / "levels" / PORTS[port] / f"{stage}.asm"
+    """The pictures in this stage's bank that cover the whole 240x160 view.
+
+    Empty when the port ships no extracted cinematic bank, which is the
+    cartridge case. `backdroplike` then falls back to "literal anchors and a
+    page wipe", which is strictly narrower, so an audited port can only be
+    judged on routines that clear the page first. That is stated rather than
+    hidden: a cartridge painter with no `fill` is simply not looked at.
+    """
+    f = SRC / "src" / "levels" / AUDIT_PORTS[port] / f"{stage}.asm"
+    if not f.is_file():
+        return set()
+    try:
+        bank = slab("cinematic", port, sid)
+    except BaseException:
+        return set()
     equ = {n: int(v, 16)
            for n, v in RE_EQU.findall(f.read_text(errors="replace"))}
-    bank = slab("cinematic", port, sid)
     out = set()
     for name, off in equ.items():
         try:
@@ -184,19 +230,25 @@ def analyse_port_stage(port: str, stage: str):
         # clears the page first or paints something that covers it.
         backdroplike = literal and (wipes or any(p in big for p in pics))
         # Source 1: what this routine's own already-named layers say.
+        # A picture named descriptively -- CINEMATIC_CAPSULE_ARCH_WALL_FAR --
+        # claims no screen. It is not evidence for one and it is not evidence
+        # against one either, so it must not veto the layers that do claim
+        # one: a backdrop is allowed to contain a named prop. Only a SECOND
+        # positive claim is a contradiction.
         claims = {layer_screen(p, stage) for p in pics
                   if not re.match(r"^(CINEMATIC_\d+|CV_[0-9A-F]{4})$", p)}
-        if claims and None not in claims and len(claims) == 1:
-            by_layers = next(iter(claims))
-        else:
-            by_layers = None
+        positive = {c for c in claims if c is not None}
+        by_layers = next(iter(positive)) if len(positive) == 1 else None
         # Source 2: the dataflow on [SCREEN_NUM].
         ctx = scoped.get(lab)
         by_flow = next(iter(ctx)) if ctx is not None and len(ctx) == 1 else None
         rows.append({"label": lab, "pics": pics, "layers": by_layers,
-                     "flow": by_flow, "mixed": len(claims) > 1,
+                     "flow": by_flow, "mixed": len(positive) > 1,
                      "backdroplike": backdroplike})
     return rows, drawn_by
+
+
+_ART_CACHE: dict = {}
 
 
 def art_key(port, stage, sid, pics):
@@ -206,17 +258,127 @@ def art_key(port, stage, sid, pics):
     other, so it must not depend on a name: the ports index their cinematic
     banks differently (hazard #0107) and a name moved by index lands on
     unrelated art. The bytes are the bridge, as everywhere else.
+
+    The first version hashed 512 raw bytes from each offset, which matched
+    **nothing** -- the polygon is shorter than that, so the hash was mostly
+    whatever art happened to follow it in the bank, and that differs between
+    ports by construction. It reported "0 pairs" and looked like a finding.
+    `canonical_md5` hashes the parsed polygon tree instead, which is what the
+    rest of the project uses for exactly this reason.
     """
-    f = SRC / "src" / "levels" / PORTS[port] / f"{stage}.asm"
-    equ = {n: int(v, 16) for n, v in RE_EQU.findall(f.read_text(errors="replace"))}
-    bank = slab("cinematic", port, sid)
-    parts = []
-    for p in pics:
-        if p not in equ:
-            return None
-        off = equ[p]
-        parts.append(hashlib.md5(bank[off:off + 512]).hexdigest()[:12])
-    return "|".join(sorted(parts))
+    key = (port, stage)
+    if key not in _ART_CACHE:
+        f = SRC / "src" / "levels" / PORTS[port] / f"{stage}.asm"
+        equ = {n: int(v, 16)
+               for n, v in RE_EQU.findall(f.read_text(errors="replace"))}
+        bank = slab("cinematic", port, sid)
+        md: dict[str, str] = {}
+        for name, off in equ.items():
+            try:
+                md[name] = canonical_md5(parse_polygon_tree(bank, off))
+            except Exception:
+                pass
+        _ART_CACHE[key] = md
+    md = _ART_CACHE[key]
+    if any(p not in md for p in pics):
+        return None
+    return "|".join(sorted(md[p] for p in pics))
+
+
+def equ_position(port: str, stage: str) -> dict:
+    """{constant: its row number in the stage's CINEMATIC EQU table}."""
+    f = SRC / "src" / "levels" / AUDIT_PORTS[port] / f"{stage}.asm"
+    if not f.is_file():
+        return {}
+    rows = re.findall(r"^(CINEMATIC_[A-Za-z0-9_]+)\s+EQU\s+0x[0-9A-Fa-f]+",
+                      f.read_text(errors="replace"), re.M)
+    return {n: i for i, n in enumerate(rows)}
+
+
+def audit_layers(data, as_proposals: bool) -> int:
+    """Which `..._SCREEN_<NN>_BACKDROP_LAYER_<i>` names claim the wrong screen?
+
+    The name asserts that the picture is part of screen NN's backdrop. The
+    weakest check that asserts anything: **at least one routine that draws it
+    must be on screen NN**, where "on screen NN" means the routine's own name
+    says so or `../screen-scope/`'s dataflow pins it there. If every routine
+    that paints the picture is demonstrably on some other screen, the name is
+    making a claim about a screen nothing connects it to.
+
+    This is deliberately weaker than the rule that governs *new* layer names,
+    which also requires exclusivity. A picture shared between two screens has
+    a defensible name under this audit and an indefensible one under that
+    rule, and the difference is the point: demoting a name needs proof it is
+    wrong, not absence of proof that it is right.
+
+    A routine the dataflow cannot pin counts as neither for nor against, so a
+    layer drawn from even one unpinned routine is left alone.
+
+    Demoting, not renaming
+    ----------------------
+    A demoted name goes back to `CINEMATIC_<index>`, and the index
+    `apply_branch_scoped_names.py --demote` insists on is the constant's
+    position in the stage's EQU table. That convention is checked here rather
+    than assumed: across msdos CAVES, of the 908 CINEMATIC EQU rows, **0** of
+    the ones still carrying a number disagree with their table position.
+    """
+    out: dict[tuple, list] = collections.defaultdict(list)
+    held = collections.Counter()
+    for (port, stage), (rows, drawn_by) in sorted(data.items()):
+        where: dict[str, int | None] = {}
+        for r in rows:
+            m = RE_DRAWER.match(r["label"])
+            if m and m.group(1) == stage:
+                where[r["label"]] = int(m.group(2), 16)
+            else:
+                where[r["label"]] = r["flow"]
+        seen: set[str] = set()
+        for r in rows:
+            for pic in r["pics"]:
+                if pic in seen:
+                    continue
+                seen.add(pic)
+                want = layer_screen(pic, stage)
+                if want is None or "_BACKDROP_LAYER_" not in pic:
+                    continue
+                painters = sorted(drawn_by[pic])
+                got = [where.get(l) for l in painters]
+                if any(g is None for g in got):
+                    held["a routine that draws it cannot be pinned"] += 1
+                    continue
+                if want in got:
+                    held["a routine that draws it is on that screen"] += 1
+                    continue
+                pos = equ_position(port, stage).get(pic)
+                out[(AUDIT_PORTS[port], stage)].append(
+                    (pic, want, painters, got, pos))
+    if not as_proposals:
+        n = sum(len(v) for v in out.values())
+        print(f"{n} layer name(s) claim a screen no routine that draws them "
+              f"is on\n")
+        for (branch, stage), rows in sorted(out.items()):
+            for pic, want, painters, got, _pos in rows:
+                seen_s = ", ".join(f"{l}=0x{g:02X}"
+                                   for l, g in zip(painters, got))
+                print(f"  {branch:<18}{stage:<9}{pic}")
+                print(f"      claims 0x{want:02X}; painted only by {seen_s}")
+        print()
+        for why, c in held.most_common():
+            print(f"  held: {c:>4}  {why}")
+        return 0
+    for (branch, stage), rows in sorted(out.items()):
+        print(f"\n----- {branch} / {stage} -----")
+        print("| constant | proposed name | confidence | evidence |")
+        print("| --- | --- | --- | --- |")
+        for pic, want, painters, got, pos in sorted(rows):
+            seen_s = "; ".join(f"`{l}` is on screen 0x{g:02X}"
+                               for l, g in zip(painters, got))
+            print(f"| {pic} | CINEMATIC_{pos} | high | the name claims screen "
+                  f"0x{want:02X}, and every routine that draws this picture "
+                  f"is on another screen: {seen_s}. Nothing connects the "
+                  f"picture to 0x{want:02X}, so it goes back to its EQU table "
+                  f"position {pos} |")
+    return 0
 
 
 def layers(data, as_proposals: bool) -> int:
@@ -306,14 +468,18 @@ def main() -> int:
     ap.add_argument("--pairs", action="store_true",
                     help="show the cross-port matching used where a routine's "
                          "layers are all still numbered")
+    ap.add_argument("--audit-layers", action="store_true",
+                    help="find layer names claiming a screen no routine that "
+                         "draws them is on")
     ap.add_argument("--layers", action="store_true",
                     help="name the still-numbered layers of the routines that "
                          "now carry a screen")
     ap.add_argument("--proposals", action="store_true")
     args = ap.parse_args()
 
+    wide = args.control or args.audit_layers
     data = {}
-    for port in PORTS:
+    for port in (AUDIT_PORTS if wide else PORTS):
         for stage in STAGE_ID:
             data[(port, stage)] = analyse_port_stage(port, stage)
 
@@ -339,6 +505,12 @@ def main() -> int:
                       f"   {'AGREE' if agree else '**'}")
         print(f"\n  {ok} agree, {bad} do not")
         return 1 if bad else 0
+
+    if args.audit_layers:
+        return audit_layers(data, args.proposals)
+
+    if args.layers:
+        return layers(data, args.proposals)
 
     # Routines whose layers are all still numbered: match across ports by art.
     unnamed_art: dict[tuple, list] = collections.defaultdict(list)
@@ -402,9 +574,6 @@ def main() -> int:
         print(f"\n  {len(pair_rows)} pair(s), {agree} agree")
         return 0 if agree == len(pair_rows) else 1
 
-    if args.layers:
-        return layers(data, args.proposals)
-
     props: dict[tuple, list] = collections.defaultdict(list)
     held = collections.Counter()
     disagree: list = []
@@ -424,7 +593,7 @@ def main() -> int:
                      f"{earned_elsewhere[(port, stage, lab)]}"] += 1
                 continue
             if r["mixed"]:
-                held["its named pictures do not all point at one screen"] += 1
+                held["its named layers point at two different screens"] += 1
                 continue
             src = []
             if r["layers"] is not None and r["flow"] is not None:
