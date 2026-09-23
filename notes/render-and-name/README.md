@@ -72,6 +72,7 @@ checked against the receiving port's own guards.
 | CINEMATIC_636 | (msdos twin) | `CINEMATIC_PRISON_CELL_BARS` | high |
 | CINEMATIC_391..399 | (msdos twins) | `CINEMATIC_PRISON_BUDDY_TYPING_ARM_{LEFT,RIGHT}_F0..F3` + `_FIGURE_BASE` | high |
 | CINEMATIC_370, 379..385 | (msdos twins) | `CINEMATIC_CAPSULE_HERO_CRAWL_F0..F7` | high |
+| CINEMATIC_366..378 (9) | (msdos twins) | `CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F0..F8` | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
@@ -216,3 +217,16 @@ that. This project already has one recorded case of an argument that was right
 once and wrong when its embedded assumption did not travel —
 `notas/blog/2026-09-23_o_mesmo_argumento_certo_e_depois_errado.md` — and this
 would have been the second.
+
+## What the arm-raise names do not claim
+
+Nine frames of the same prone body as the crawl — same left edge at −44.5,
+and the routine ends by drawing two crawl frames — with the arm reaching to
++18.5, then lifting to 23.5 tall while drawing back in, then settling.
+
+In F6 through F8 there is a blocky shape at the end of the arm that looks
+like a held object. **No name here claims one.** `ARM_RAISE` is what the
+extents support: height and right edge, measured across the run. Whether the
+figure is holding something, and what, is a further claim the pictures do not
+settle at this size, and the session already has a list of names refused for
+exactly that reason.

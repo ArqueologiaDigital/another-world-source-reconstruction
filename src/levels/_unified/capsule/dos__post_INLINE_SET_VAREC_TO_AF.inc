@@ -35,13 +35,13 @@ DELAY_LOOP_VAREC_AT_179F:
 	killChannel
 
 LABEL_17B9:
-	video offset=CINEMATIC_181, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F4, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_182, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_183, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_184, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F1, x=[HERO_X], y=[HERO_Y]
 	break
 	jmp HERO_CRAWL_RIGHT_LOOP
 

@@ -132,17 +132,17 @@ LABEL_0517:
 	db 0x11
 
 LABEL_0518:
-	video offset=CINEMATIC_371, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F0, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_369, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F1, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_368, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F2, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_367, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F3, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_366, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F4, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_372, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F5, x=[HERO_X], y=[HERO_Y]
 	break
 	jl [HERO_X], 0x0107, LABEL_080B
 	jg [0xB7], 0x01, LABEL_080B
@@ -152,17 +152,17 @@ LABEL_0518:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_373, x=160, y=100
 	selectVideoPage 0xFF
-	video offset=CINEMATIC_374, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F6, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_397, x=160, y=100
-	video offset=CINEMATIC_376, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F7, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0x00
 	video offset=CINEMATIC_398, x=160, y=100
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_378, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F8, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_367, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F3, x=[HERO_X], y=[HERO_Y]
 	setup channel=0x01, address=LABEL_05C5
 	break
 	jmp HERO_CRAWL_LEFT_LOOP
@@ -173,17 +173,17 @@ LABEL_058A:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_373, x=163, y=100
 	selectVideoPage 0xFF
-	video offset=CINEMATIC_374, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F6, x=[HERO_X], y=[HERO_Y]
 	break
 	video offset=CINEMATIC_375, x=160, y=100
-	video offset=CINEMATIC_376, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F7, x=[HERO_X], y=[HERO_Y]
 	selectVideoPage 0x00
 	video offset=CINEMATIC_377, x=160, y=100
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_378, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F8, x=[HERO_X], y=[HERO_Y]
 	break
-	video offset=CINEMATIC_367, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_CAPSULE_HERO_PRONE_ARM_RAISE_F3, x=[HERO_X], y=[HERO_Y]
 	setup channel=0x01, address=LABEL_0636
 	break
 	jmp HERO_CRAWL_LEFT_LOOP
