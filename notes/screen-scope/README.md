@@ -6,6 +6,7 @@
 | | Does the derivation agree with every routine whose name states a screen? | `... --control` |
 | | Which routines state a screen the dataflow contradicts? | `... --proposals` |
 | `screen_entry.py` | Which routines are a stage's per-screen entry points, and which chain dispatches them? | `python3 notes/screen-scope/screen_entry.py` |
+| `backdrop_phase.py` | Which pictures does a screen paint before anything starts animating, and in what order? | `python3 notes/screen-scope/backdrop_phase.py` |
 
 ## Why
 
@@ -168,3 +169,62 @@ to agree — 17 of the 274 failed that and were held back.
 already named and nothing nameable, and `--control` rises from 48 to **303
 agree, 0 do not**, because every new name carries a screen the dataflow can
 check.
+
+## Using it again: the backdrop phase
+
+Every `<STAGE>_SCREEN_<NN>_ENTRY` has the same shape — bounds, teardown,
+`setPalette`, **paint**, then `setup` the threads that animate the screen. The
+first `setup` is the line between static and moving: nothing drawn before it
+is animated by anything, because nothing is running yet. So the pictures an
+entry draws before that line, directly or through routines it calls, are the
+screen's painted background, in the order they go down.
+
+```
+CINEMATIC_<STAGE>_SCREEN_<NN>_BACKDROP_LAYER_<i>
+```
+
+`i` is the position in that sequence — the machine's order, not one a namer
+chose. **231 applied** on 2026-09-23, taking priority-port assets from 59.6%
+to **60.8%**.
+
+### Why this index, and not the composite's
+
+`../remaining-art/by_anchor.py` had already named 73 layers by their position
+inside a `fill`-led composite. The two orders come from different places — one
+counts draws inside a single routine, the other the whole phase across several
+— and they agree in **57 of 60** cases where both exist. That is an
+independent check on both.
+
+The 3 that disagree are screens where the entry paints something outside the
+composite, so the composite's internal index is not the phase position:
+`CAPSULE_SCREEN_4B` (composite 2, phase 3) and `CAPSULE_SCREEN_6D` (0 and 1,
+phases 7 and 8). Phase position is defined for every painted picture and the
+composite index only for those inside a composite, so those three were
+renumbered and the whole tree is on one scheme.
+
+### What it refuses, and why that is right
+
+```
+590  painted twice in the same phase
+296  in several screens' backdrop phase
+291  already correct
+107  still numbered, nameable but blocked
+ 50  named something else, left alone
+```
+
+**Painted twice** is the largest class and it is a refusal, not a gap in the
+method: CAPSULE screen 0x92 paints `CINEMATIC_557` at positions 1 *and* 6, so
+it has no single position and cannot take a position-indexed name. Same shape
+as a limb piece shared between frames in `../actor-sprite-sheet/` — what is
+shared has no index. This was caught by the applier seeing fewer rows than the
+proposal files contained, not by the probe.
+
+**In several screens' phase** is the same argument across screens, and the
+same one that kept screens 0x92 and 0x93 from claiming their shared base.
+
+The remaining **107** are blocked permanently by the family-gap guard, and a
+second pass confirms it yields nothing more. PRISON screen 0x04 proposes
+positions 8, 9, 10, 12, 13, 14, 15, 17 — the holes at 11 and 16 are where a
+twice-painted or shared layer sits, and they can never be filled. The guard is
+right to refuse and the holes are meaningful, exactly as in
+`../draw-label-follows-constant/footstep_frames.py`.
