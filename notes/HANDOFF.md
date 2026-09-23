@@ -20,7 +20,7 @@ As of the last commit:
 |---|---|---|
 | byte gate | 29/29 stages, 29/29 unified | `make test` |
 | undefined symbols in the unified tree | 0 | `undefined_symbols.py` |
-| priority-port assets named | 63.1% (6,398/10,147) | `asset_naming_share.py` |
+| priority-port assets named | 63.3% (6,426/10,147) | `asset_naming_share.py` |
 | pictures carrying two or more names | 60 amiga / 59 msdos | `one_picture_many_names.py` |
 | coordinate-embedding `CINEMATIC_*` names | **0** | `grep -rhoE '\bCINEMATIC_[A-Za-z0-9_]*_AT_[0-9]+_[0-9]+'` |
 | shared-bank keys still unnamed | 77 of 352 (59 reachable) | `notes/shared-bank-geometry/` |
@@ -74,6 +74,16 @@ probes, each with a control:
 
 Rendering, by contrast, produced one screen's names in a whole round and a
 bug in my own rule. Reach for the control flow first.
+
+**The standing population, measured.** `notes/substitute-layers/draw_threads.py`
+finds **126** unnamed threads whose whole body is a run of three or more
+still-numbered draws — the shape of an animation. Exactly **4** sit beside a
+named, non-mechanism routine in their `setup` block; the CAVES trap columns
+were one such case and yielded 42 names. The other **122** have no naming
+anchor at all. They are a characterised population, not a lead: each is a
+short animation at a known slot, needing recognition, which is the render
+problem. One worked example of that difficulty is recorded in the probe
+rather than guessed at.
 
 **The compounding does not happen, twice measured.** Naming 264 routines
 freed 2 constants (both bad, both filtered); naming 226 constants freed 0
