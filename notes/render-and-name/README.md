@@ -92,6 +92,9 @@ checked against the receiving port's own guards.
 | CINEMATIC_368..375 | (msdos twins) | `CINEMATIC_PRISON_FALLING_DEBRIS_F0..F7` | high |
 | CINEMATIC_138..140, 142..144 | (msdos twins) | `CINEMATIC_PRISON_BLAST_DEBRIS_F0..F5` | high |
 | CINEMATIC_141, 145, 137 | (msdos twins) | `CINEMATIC_PRISON_BLAST_DEBRIS_SETTLED_0..1`, `_BLAST_MARK` | high / medium |
+| CINEMATIC_596..614 (19) | (msdos twins) | `CINEMATIC_PRISON_CLOAKED_FIGURE_F0..F18` | medium |
+| CINEMATIC_616/618/620/622 | (msdos twins) | `CINEMATIC_PRISON_STANDING_FIGURE_F0..F3` | high |
+| CINEMATIC_615/617/619/621/623 | (msdos twins) | `CINEMATIC_PRISON_STANDING_FIGURE_ARM_F0..F4` | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that
