@@ -372,102 +372,102 @@ INTRO_COMPOSE_PAGE3_THEN_RECEDE_DOWN_ACCELERATOR_TUNNEL:
 	setPalette 0x16
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F0, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F0, x=160, y=100
 .else
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F0, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F0, x=160, y=100
 .endif
 	play id=0x002C, freq=0x14, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F1, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F1, x=160, y=100
 .else
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F1, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F1, x=160, y=100
 .endif
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F2, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F2, x=160, y=100
 .else
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F2, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F2, x=160, y=100
 .endif
 	play id=0x002C, freq=0x14, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F3, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F3, x=160, y=100
 .else
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F3, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F3, x=160, y=100
 .endif
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F4, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F4, x=160, y=100
 .else
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F4, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F4, x=160, y=100
 .endif
 	play id=0x002C, freq=0x14, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F5, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F5, x=160, y=100
 .else
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F5, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F5, x=160, y=100
 .endif
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F6, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F6, x=160, y=100
 .else
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F6, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F6, x=160, y=100
 .endif
 	play id=0x002C, freq=0x14, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F7, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F7, x=160, y=100
 .else
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F7, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F7, x=160, y=100
 .endif
 	play id=0x002C, freq=0x0A, vol=0x3F, channel=0x03
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F8, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F8, x=160, y=100
 .else
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F8, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F8, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F9, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F9, x=160, y=100
 .else
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F9, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F9, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F10, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F10, x=160, y=100
 .else
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F10, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F10, x=160, y=100
 .endif
 	break
 	play id=0x000A, freq=0x14, vol=0x3F, channel=0x03
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F11, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F11, x=160, y=100
 .else
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F11, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F11, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F12, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F12, x=160, y=100
 .else
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F12, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F12, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F13, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F13, x=160, y=100
 .else
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F13, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F13, x=160, y=100
 .endif
 	break
 .if BRANCH == "chahi_amiga_1991"
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F14, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F14, x=160, y=100
 .else
-	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_F14, x=160, y=100
+	video offset=CINEMATIC_ACCELERATOR_TUNNEL_PULSE_NEAR_F14, x=160, y=100
 .endif
 	break
 	play id=0x000E, freq=0x02, vol=0x3F, channel=0x03
