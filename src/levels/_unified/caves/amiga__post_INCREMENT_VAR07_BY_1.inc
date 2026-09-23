@@ -50,27 +50,27 @@ DRAW_HERO_POSE_0_0:
 
 
 DRAW_HERO_POSE_0_1:
-	video offset=CINEMATIC_022, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FIGURE_POSE_RIGHT_0_1, x=[0x07], y=[0x08]
 	ret
 
 
 DRAW_HERO_POSE_0_2:
-	video offset=CINEMATIC_023, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FIGURE_POSE_RIGHT_0_2, x=[0x07], y=[0x08]
 	ret
 
 
 DRAW_HERO_POSE_0_3:
-	video offset=CINEMATIC_024, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FIGURE_POSE_RIGHT_0_3, x=[0x07], y=[0x08]
 	ret
 
 
 DRAW_HERO_POSE_0_4:
-	video offset=CINEMATIC_025, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FIGURE_POSE_RIGHT_0_4, x=[0x07], y=[0x08]
 	ret
 
 
 DRAW_HERO_POSE_0_6:
-	video offset=CINEMATIC_027, x=[0x07], y=[0x08]
+	video offset=CINEMATIC_CAVES_FIGURE_POSE_RIGHT_0_6, x=[0x07], y=[0x08]
 	ret
 
 
