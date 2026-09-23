@@ -113,6 +113,7 @@ checked against the receiving port's own guards.
 | CAPSULE CINEMATIC_059..072 | (msdos twins) | `CINEMATIC_CAPSULE_{FALLING_MASS,FALLING_MASS_LANDED,DEBRIS_RAIN}_*` | medium |
 | CAPSULE CINEMATIC_388..393 | (msdos twins) | `CINEMATIC_CAPSULE_BEAM_ENDS_F0..F5` | medium |
 | CAPSULE CINEMATIC_400..406 | amiga only, see below | `CINEMATIC_CAPSULE_BEAM_COLUMN_F0..F6` | medium |
+| CAPSULE CINEMATIC_356..365 | (msdos twins) | `CINEMATIC_CAPSULE_DISTANT_WALK_F0..F9` | high |
 
 The recurring motif is a ceiling band with columns flaring where they meet it,
 one such structure per screen, each drawn once at x=160, y=100 by that

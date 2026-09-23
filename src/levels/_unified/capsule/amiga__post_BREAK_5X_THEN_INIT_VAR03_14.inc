@@ -296,52 +296,52 @@ LABEL_06B6:
 LABEL_06DA:
 	mov [0xE8], 0x00B4
 	mov [0xE9], 0x0064
-	video offset=CINEMATIC_356, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F0, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_356, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F0, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_356, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F0, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_356, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F0, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_357, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F1, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_357, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F1, x=[0xe8], y=[0xe9]
 	break
 	setup channel=0x07, address=INLINE_SET_VAREC_TO_AF
 
 LABEL_070A:
-	video offset=CINEMATIC_358, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F2, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_358, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F2, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_359, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F3, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_359, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F3, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_360, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F4, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_360, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F4, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_361, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F5, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_361, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F5, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_362, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F6, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_362, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F6, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_363, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F7, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_363, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F7, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_364, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F8, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_364, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F8, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_365, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F9, x=[0xe8], y=[0xe9]
 	break
-	video offset=CINEMATIC_365, x=[0xe8], y=[0xe9]
+	video offset=CINEMATIC_CAPSULE_DISTANT_WALK_F9, x=[0xe8], y=[0xe9]
 	break
 	add [0xE8], 0x000D
 	jmp LABEL_070A
