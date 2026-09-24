@@ -382,6 +382,25 @@ n=$(printf '%s\n' "$out" | grep -c "AMENDED($a,NO_NAME)")
 [ "$n" = 2 ] && verdict amended/seeded "" \
     || verdict amended/seeded "the representative moved with PYTHONHASHSEED"
 
+# teaser -- the queue line must not cut a sentence before its subject arrives.
+# An annotation reading "i dont understand why, but this seems to be the
+# bounding box of lester's body" was ruled REJECTED on the strength of a line
+# truncated at that comma. The procedure says to --measure before believing the
+# queue, and it still does; a teaser that REVERSES a sentence's meaning is a
+# trap rather than a teaser.
+r=$(root teaser)
+printf '{"at": "2026-09-25T00:00:00+0100", "kind": "annotate", "branch": "chahi_amiga_1991", "stage": "CAVES", "frame": 6924, "target": {"kind": "cinematic", "offset": 31589, "name": "CINEMATIC_412"}, "routine": "R", "routine_draws": [], "on_screen": [], "text": "i dont understand why, but this seems to be the bounding box of the lift car", "pattern": null, "replacement": null, "renames": []}\n' \
+    > "$r/tools/vm-debugger/rename_log.jsonl"
+verdicts "$r" </dev/null
+asm "$r" undefined
+seal "$r"
+probe "$r" --all
+expect teaser 0 "bounding box"
+case $out in
+    *"i dont understand why\""*) verdict teaser/cut "the line stops at the comma" ;;
+    *) verdict teaser/cut "" ;;
+esac
+
 # documented -- the id notes/play-and-describe/README.md and this repo's
 # CLAUDE.md both quote, recomputed from the log the debugger actually wrote.
 # Not a fixture: it is the assertion that the log in the tree has not been

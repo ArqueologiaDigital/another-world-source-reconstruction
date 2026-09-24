@@ -571,16 +571,35 @@ def log_dirty(tree: Tree):
 
 # --- the queue ----------------------------------------------------------
 
+# A clause break that is followed by one of these is not where a sentence
+# starts saying something. "i dont understand why, BUT this seems to be the
+# bounding box of lester's body" loses its whole subject at the comma, and a
+# queue line is what an agent reads before deciding whether to open an entry.
+CONTINUES = ("but ", "although ", "though ", "however ", "and ", "so ",
+             "yet ", "because ", "since ", "while ", "perhaps ", "maybe ")
+
+
 def first_clause(text: str, width: int = 68) -> str:
-    """The first clause, for a one-line queue entry. Never a summary."""
+    """The first clause, for a one-line queue entry. Never a summary.
+
+    Two rules, and the second was bought the hard way: an annotation was ruled
+    REJECTED on the strength of a line that had been cut at a comma, throwing
+    away the subject that followed it. The queue line is a teaser and the
+    procedure says to `--measure` before believing it, but a teaser that
+    reverses a sentence's meaning is a trap rather than a teaser.
+    """
     t = " ".join((text or "").split())
     if not t:
         return ""
     cut = len(t)
     for sep in (" -- ", ". ", "; ", ", "):
         i = t.find(sep)
-        if 0 < i < cut:
-            cut = i
+        if not 0 < i < cut:
+            continue
+        rest = t[i + len(sep):].lstrip().lower()
+        if any(rest.startswith(c) for c in CONTINUES):
+            continue          # the sentence has not started yet
+        cut = i
     t = t[:cut]
     if len(t) > width:
         t = t[:width].rsplit(" ", 1)[0] + "..."

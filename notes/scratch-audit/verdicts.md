@@ -356,7 +356,7 @@ argument, after `tests/run.sh`'s `$1` and `check_guidance.py`'s.
   -- is held by `tests/check_fill.mjs`, which is the artefact that matters.
 - `check_fill_old.mjs` -- a sed-patched copy of the check, made obsolete by the
   argument the committed check now takes.
-- `oldfill/`, `prevm/` -- `git show` output.
+- `oldfill/`, `prevm/`, `pre_teaser_queue.py` -- `git show` output.
 
 
 ## The sweep is a check now, and it caught this file on its first run
