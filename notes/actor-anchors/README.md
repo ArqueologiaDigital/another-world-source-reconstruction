@@ -10,6 +10,11 @@ see below.
 
 ## What contradicts it
 
+| file | question it answers |
+| --- | --- |
+| `anchor_identity.py` | Does an anchor's own name agree with the names drawn at it? |
+| `shared_actor_art.py` | Two characters stand in one anchor slot -- do they share any art? |
+
 `anchor_identity.py` lists every anchor that is a pair of named variables, the
 named constants drawn there, and any name whose own actor word disagrees with
 the anchor's:
@@ -155,6 +160,11 @@ Three measurements, taken after that sentence, against `dos_1992/PRISON.asm`:
 | buddy-region constants whose `canonical_md5` matches a guard-region one | **0** of 10 against 111 |
 | `CV_*` constants drawn at both `HERO_X` and `BUDDY_X` | **0** |
 
+    python3 notes/actor-anchors/shared_actor_art.py \
+        --branch dos_1992 --stage PRISON --anchor BUDDY \
+        --scene guard:8800-10100 --scene buddy:3600-3800 \
+        --cross-anchor HERO,BUDDY
+
 So the resemblance is in the artwork and **not** in the assets: the two are
 drawn from entirely separate constants with entirely different polygon trees,
 and the shared bank is not serving both from one figure either. The slot reading
@@ -186,7 +196,11 @@ characters share a stage: an actor word is admissible from the SCENE a draw
 belongs to, and from nothing else. Not the anchor, not the render, and not a
 neighbouring label that has the word already. The shared bank shows what the
 discipline looks like when it is kept -- all 104 `CV_*` names in this stage are
-`CV_FIGURE_*`, generic, with no actor word claimed by any of them.
+`CV_FIGURE_*`, generic, with no actor word claimed by any of them:
+
+    grep -oP '^CV_\w+(?=\s+EQU)' src/levels/dos_1992/PRISON.asm \
+      | grep -oP '^CV_[A-Z]+' | sort | uniq -c
+    #   104 CV_FIGURE
 
 ### Why nothing was renamed from these sentences
 
