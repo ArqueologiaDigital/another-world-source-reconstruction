@@ -165,16 +165,16 @@ BIT_EXTRACT_FROM_VAR24_TO_VAR25:
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_569_TO_572_6F_AT_F8680E45:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_569, x=160, y=100
+	video offset=CINEMATIC_PRISON_BACKGROUND_DOORWAY_BACKDROP, x=160, y=100
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_570, x=228, y=175
+	video offset=CINEMATIC_PRISON_BACKGROUND_GUARD_RUN_F0, x=228, y=175
 	break
-	video offset=CINEMATIC_571, x=232, y=175
-	video offset=CINEMATIC_572, x=160, y=100
+	video offset=CINEMATIC_PRISON_BACKGROUND_GUARD_RUN_F3, x=232, y=175
+	video offset=CINEMATIC_PRISON_BACKGROUND_DOORWAY_POST, x=160, y=100
 	break
-	video offset=CINEMATIC_573, x=245, y=175
-	video offset=CINEMATIC_572, x=160, y=100
+	video offset=CINEMATIC_PRISON_BACKGROUND_GUARD_RUN_F4, x=245, y=175
+	video offset=CINEMATIC_PRISON_BACKGROUND_DOORWAY_POST, x=160, y=100
 	killChannel
 .endif
 
@@ -182,20 +182,20 @@ DRAW_CIN_569_TO_572_6F_AT_F8680E45:
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_570_574_BLOCK:
 	mov [0x57], 0x0002
-	video offset=CINEMATIC_574, x=239, y=175
-	video offset=CINEMATIC_572, x=160, y=100
+	video offset=CINEMATIC_PRISON_BACKGROUND_GUARD_RUN_F2, x=239, y=175
+	video offset=CINEMATIC_PRISON_BACKGROUND_DOORWAY_POST, x=160, y=100
 	break
-	video offset=CINEMATIC_570, x=230, y=175
-	video offset=CINEMATIC_574, x=230, y=175
-	video offset=CINEMATIC_572, x=160, y=100
+	video offset=CINEMATIC_PRISON_BACKGROUND_GUARD_RUN_F0, x=230, y=175
+	video offset=CINEMATIC_PRISON_BACKGROUND_GUARD_RUN_F2, x=230, y=175
+	video offset=CINEMATIC_PRISON_BACKGROUND_DOORWAY_POST, x=160, y=100
 	break
-	video offset=CINEMATIC_570, x=228, y=175
+	video offset=CINEMATIC_PRISON_BACKGROUND_GUARD_RUN_F0, x=228, y=175
 	break
-	video offset=CINEMATIC_575, x=227, y=175
+	video offset=CINEMATIC_PRISON_BACKGROUND_GUARD_RUN_F1, x=227, y=175
 	break
-	video offset=CINEMATIC_575, x=226, y=175
+	video offset=CINEMATIC_PRISON_BACKGROUND_GUARD_RUN_F1, x=226, y=175
 	selectVideoPage 0x00
-	video offset=CINEMATIC_575, x=226, y=175
+	video offset=CINEMATIC_PRISON_BACKGROUND_GUARD_RUN_F1, x=226, y=175
 	selectVideoPage 0xFF
 	killChannel
 .endif

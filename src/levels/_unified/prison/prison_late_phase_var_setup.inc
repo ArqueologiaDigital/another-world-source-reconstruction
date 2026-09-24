@@ -412,14 +412,14 @@ PRISON_CAGE_WITH_HERO_TILT_LEFT_LIMIT_DONE:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_540_543_WITH_SFX_57:
-	video offset=CINEMATIC_540, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_CAGE_DEBRIS_NEAR_F0, x=[0x1a], y=[0x1b]
 	video offset=CINEMATIC_PRISON_FLEXING_BAND_F0, x=[0x1a], y=[0x1b]
 	break
 	play id=0x0057, freq=0x1C, vol=0x40, channel=0x02
-	video offset=CINEMATIC_542, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_CAGE_DEBRIS_NEAR_F1, x=[0x1a], y=[0x1b]
 	video offset=CINEMATIC_PRISON_FLEXING_BAND_F1, x=[0x1a], y=[0x1b]
 	break
-	video offset=CINEMATIC_544, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_CAGE_DEBRIS_NEAR_F2, x=[0x1a], y=[0x1b]
 	video offset=CINEMATIC_PRISON_FLEXING_BAND_F2, x=[0x1a], y=[0x1b]
 	break
 	video offset=CINEMATIC_PRISON_FLEXING_BAND_F3, x=[0x1a], y=[0x1b]
@@ -558,10 +558,10 @@ PRISON_DRAW_CIN_092_L13:
 	call PRISON_LIFT_LANDING_IN_VIEW_FROM_2968
 	call PRISON_LIFT_SHAFT_SCROLL_WRAP_BLIT
 	call PRISON_DRAW_CIN_092_L3
-	video offset=CINEMATIC_102, x=[HERO_X], y=[HERO_Y]
-	video offset=CINEMATIC_103, x=160, y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_LIFT_HERO_SILHOUETTE, x=[HERO_X], y=[HERO_Y]
+	video offset=CINEMATIC_PRISON_LIFT_CAR_FLOOR, x=160, y=[HERO_Y]
 	je [0x11], 0x00, SHARED_RET
-	video offset=CINEMATIC_131, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_LIFT_BUDDY_SILHOUETTE, x=[BUDDY_X], y=[BUDDY_Y]
 	ret
 
 

@@ -183,7 +183,7 @@ LABEL_7AE8:
 	mov [0x17], 0x0000
 	mov [0x18], 0x0000
 	selectVideoPage 0x03
-	video offset=CINEMATIC_130, x=160, y=100
+	video offset=CINEMATIC_PRISON_LIFT_CAR_BODY, x=160, y=100
 	selectVideoPage 0xFF
 	call PRISON_LIFT_MOVE_STEP
 	jmp LABEL_7C8B
