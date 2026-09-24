@@ -78,10 +78,10 @@ As of the last commit:
 | bare-`ret` tails named `<owner>_RET` | 174 exact + 10 refined of 198, 0 nameable left | `bare-ret-tails/owner_ret.py --control` |
 | limb-pose indices reproduced from the bank layout | 16 of 16 | `actor-sprite-sheet/subpiece_poses.py --control` |
 | named LEFT/RIGHT pairs that are an exact mirror (≤2 leaves) | 42 of 42 | `shared-bank-geometry/mirror_exact.py --control` |
-| annotations logged | 1 | `play-and-describe/annotation_queue.py --summary` |
-| annotations turned into names | 0 | same |
-| annotations with a written verdict | 1 | same |
-| annotations nobody has opened | 0 | same |
+| annotations logged | 47 | `play-and-describe/annotation_queue.py --summary` |
+| annotations turned into names | 5 | same |
+| annotations with a written verdict | 8 | same |
+| annotations nobody has opened | 34 | same |
 | PRISON constant-frames of screen time still unnamed (msdos, cold 400-frame run) | 1874 across 41 constants | `on-screen-priority/seen_unnamed.mjs` |
 | most-seen unnamed PRISON constant vs most-seen named one | 284 frames vs 96 | same, and `--named` |
 | beam-ladder alternate-set slots still numbered | 34 of 36 | `beam-span-ladder/rung_thresholds.py` |
@@ -89,6 +89,35 @@ As of the last commit:
 | SCREEN_NUM values that unlock CAVES without the protection seed | 0 of 28 | same, `--screens` |
 | still-numbered constants a player sees, all checkpoints (msdos PRISON+CAVES+CAPSULE) | 122 | `on-screen-priority/seen_unnamed.mjs --sweep` |
 | the same, asking only each stage's first checkpoint | 57 | same, without `--sweep` |
+
+## The annotation backlog, 2026-09-25
+
+46 annotations arrived from one real PRISON playthrough, frames 118 to 7094 --
+the first time this log has held anything but a cold entry. Five are turned into
+names (the guard's gun, `notes/play-and-describe/proposals_*_gun_arc.md`), seven
+have written verdicts, and **34 are still open**. Run `make annotations`.
+
+The clusters still open, so nobody re-derives the grouping:
+
+- **the main guard, limb by limb** -- CINEMATIC_633 body, 342 full body, 240 and
+  168 red belt, 241 and 169 shoulder, 231 and 228 head, 629 right arm with the
+  gun, 573 going away, plus CV_2D4E right arm and CV_245C left arm. The two
+  `CV_*` ones have **no applier** (`apply_cinematic_renames.py` matches
+  `CINEMATIC_*` only), so they need `notes/shared-bank-geometry/` or a hold.
+- **background miners** -- 006, 008, 018.
+- **Buddy** -- 035 sitting in the cage, 438 and 440 waking from it, 441 arm
+  tapping Lester's back, 447 arm pointing.
+- **the falling cage** -- 549 bottom part at rest, 542 chunk flying out of frame.
+- **a background guard entering** -- 574, 570.
+- **the lift** -- 103 floor, 130 the car's full rectangle, 133/152/154/155/156
+  sparkles (all five HELD, see verdicts.tsv for what would settle them).
+- **unclear** -- 162 "not sure here..", 305 "the floor", and two REJECTED for
+  "i dont understand why", which leave a pointer rather than nothing.
+
+Note `CINEMATIC_035` is in that list, and `notes/on-screen-priority/` had it as
+the single most-seen unnamed constant in the stage at 284 of 400 frames. The
+sentence for it is "this is buddy sitting down inside the cage", which is the
+subject word that probe could never have produced.
 
 ## Held, added 2026-09-23: the beam ladder's second set
 
