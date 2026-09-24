@@ -135,6 +135,59 @@ adjudicate. What it does mean is that the actor word in any PRISON name anchored
 on `BUDDY_*` needs the scene it is drawn in, not the anchor, and an audit should
 start from the two line ranges above.
 
+### Then the same person said the species is one
+
+> "Buddy and the guards are of the same species. They are all aliens of this
+> world. So they look similar and that may be a source of confusion when
+> labeling assets."
+
+That is a fact about the fiction, and it has a mechanical consequence: **for
+this cast, looking cannot tell you who.** `docs/NAMING.md` grade E3 asks for
+render-before-naming and this directory's whole subject is that the anchor
+cannot substitute for it -- but between two aliens of one species, a render
+cannot either. The scene can, and nothing else here can.
+
+Three measurements, taken after that sentence, against `dos_1992/PRISON.asm`:
+
+| question | answer |
+|---|---|
+| constants drawn at `[BUDDY_X],[BUDDY_Y]` in both regions | **0** of 299 |
+| buddy-region constants whose `canonical_md5` matches a guard-region one | **0** of 10 against 111 |
+| `CV_*` constants drawn at both `HERO_X` and `BUDDY_X` | **0** |
+
+So the resemblance is in the artwork and **not** in the assets: the two are
+drawn from entirely separate constants with entirely different polygon trees,
+and the shared bank is not serving both from one figure either. The slot reading
+above survives this and is strengthened by it -- two characters, two disjoint
+sets of art, one anchor.
+
+What it costs is the ability to check the actor word by looking, for every name
+in this class.
+
+### Where the word actually came from, which is worse than a bad look
+
+The nine `CINEMATIC_PRISON_BUDDY_*` names were not read off a picture. Their
+evidence cells in `../render-and-name/` are geometric and compositional --
+"22x29, one path: a torso, wider at the shoulders and hips than at the waist",
+"9x25, spans -17.5..-8.5, sharing the -17.5 shoulder edge with the other three".
+Sound work, every row.
+
+The actor word came from the routine they are drawn by, and that table says so
+in as many words: *"It is the sole picture of `DRAW_BUDDY_FIGURE_BASE`"*.
+
+So `BUDDY` rode in from a pre-existing label, through a chain of derivations
+each of which was about geometry and none of which was about the actor. No step
+tested the word, because no step was for testing the word -- and the species
+fact says the one check that would have felt decisive, rendering it and looking,
+could not have caught it either.
+
+**The rule this leaves**, for PRISON and anywhere else two same-species
+characters share a stage: an actor word is admissible from the SCENE a draw
+belongs to, and from nothing else. Not the anchor, not the render, and not a
+neighbouring label that has the word already. The shared bank shows what the
+discipline looks like when it is kept -- all 104 `CV_*` names in this stage are
+`CV_FIGURE_*`, generic, with no actor word claimed by any of them.
+
 ### Why nothing was renamed from these sentences
 
 The rule in `docs/NAMING.md` is that an actor word the person used enters a name
