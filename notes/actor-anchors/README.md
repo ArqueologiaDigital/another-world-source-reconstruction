@@ -94,3 +94,53 @@ then draws 73 times at `[0x01]`. A scan that groups on the spelling reports
 those stages as single-actor, which is how the first version of this probe
 missed CAVES entirely and nearly produced the opposite conclusion.
 `anchor_identity.py` now normalises `0x01/0x02/0x07/0x08` before grouping.
+
+## 2026-09-25: a person who played the game says the PRISON slot holds two
+
+The note above argues from the tree that an anchor does not identify an actor.
+A play session has now supplied the other kind of evidence, and it agrees --
+from someone who had never read any of this.
+
+Annotating `dos_1992/PRISON` frame by frame, the same person called the figure
+drawn at `[BUDDY_X],[BUDDY_Y]`:
+
+| frames | what they called it | constants |
+| --- | --- | --- |
+| 118 - 2546 | **the main guard** | 633, 342, 240, 241, 168, 169, 162, 231, 228, 227, 629 |
+| 3073 - 3136 | **Buddy** | 438, 440, 441, 447 |
+
+with sentences that leave no doubt which they meant -- "full body of the main
+guard, standing with his back to the camera right after removing and storing his
+cloak" against "buddy's right arm while tapping lester's back/shoulder".
+
+The two sets are drawn from two separate regions of the bytecode:
+
+    guard set   PRISON.asm:8849 - 10045
+    Buddy set   PRISON.asm:3631 -  3757
+
+and the changeover falls at the cage collapse, which the same session annotates
+at frames 3069-3075 -- the gun knocked away (`..._GUARD_GUN_KNOCKED_F0..F5`),
+the debris passing the camera, the wreck at rest, and then "frame of buddy
+starting to wake up from the fallen cage" at 3073.
+
+**So `BUDDY_X`/`BUDDY_Y` in PRISON is a slot, and the scene decides who stands
+in it.** That is this directory's thesis, stated by a witness instead of a probe.
+
+### What it puts in question
+
+`dos_1992/PRISON.asm` defines **9** `CINEMATIC_PRISON_BUDDY_*` constants and
+**98** routine labels containing `BUDDY`. None of them is retracted here --
+nothing above shows any particular one is wrong, and this is not the place to
+adjudicate. What it does mean is that the actor word in any PRISON name anchored
+on `BUDDY_*` needs the scene it is drawn in, not the anchor, and an audit should
+start from the two line ranges above.
+
+### Why nothing was renamed from these sentences
+
+The rule in `docs/NAMING.md` is that an actor word the person used enters a name
+only where that stage's already-earned names use it at that anchor. Here they
+do -- `DRAW_PRISON_BUDDY_POSE_3` draws `CINEMATIC_231`, which the person calls
+the guard's head -- so the person and the tree **disagree about the same
+constant**. `#0120` says not to pick between earned names, so the eleven guard
+constants are held, one verdict each in
+`../play-and-describe/verdicts.tsv`, with this section as what would settle them.

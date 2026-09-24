@@ -79,9 +79,9 @@ As of the last commit:
 | limb-pose indices reproduced from the bank layout | 16 of 16 | `actor-sprite-sheet/subpiece_poses.py --control` |
 | named LEFT/RIGHT pairs that are an exact mirror (≤2 leaves) | 42 of 42 | `shared-bank-geometry/mirror_exact.py --control` |
 | annotations logged | 47 | `play-and-describe/annotation_queue.py --summary` |
-| annotations turned into names | 5 | same |
-| annotations with a written verdict | 8 | same |
-| annotations nobody has opened | 34 | same |
+| annotations turned into names | 15 | same |
+| annotations with a written verdict | 17 | same |
+| annotations nobody has opened | 15 | same |
 | PRISON constant-frames of screen time still unnamed (msdos, cold 400-frame run) | 1874 across 41 constants | `on-screen-priority/seen_unnamed.mjs` |
 | most-seen unnamed PRISON constant vs most-seen named one | 284 frames vs 96 | same, and `--named` |
 | beam-ladder alternate-set slots still numbered | 34 of 36 | `beam-span-ladder/rung_thresholds.py` |
@@ -92,32 +92,39 @@ As of the last commit:
 
 ## The annotation backlog, 2026-09-25
 
-46 annotations arrived from one real PRISON playthrough, frames 118 to 7094 --
-the first time this log has held anything but a cold entry. Five are turned into
-names (the guard's gun, `notes/play-and-describe/proposals_*_gun_arc.md`), seven
-have written verdicts, and **34 are still open**. Run `make annotations`.
+46 annotations arrived from one real PRISON playthrough, frames 118 to 7094.
+**23 constants and 7 routines are named from them**, 16 are held with grounds,
+and **15 are still open**. Run `make annotations`.
 
-The clusters still open, so nobody re-derives the grouping:
+Named: the guard's gun arc (6), the lift car, its floor and the two silhouettes
+riding in it (4), the cage debris and the wreck at rest (4), the background
+runner's cycle with its doorway post and backdrop (7), the cell block floor (1),
+plus the seven routines in `notes/routines-from-annotations/`.
 
-- **the main guard, limb by limb** -- CINEMATIC_633 body, 342 full body, 240 and
-  168 red belt, 241 and 169 shoulder, 231 and 228 head, 629 right arm with the
-  gun, 573 going away, plus CV_2D4E right arm and CV_245C left arm. The two
-  `CV_*` ones have **no applier** (`apply_cinematic_renames.py` matches
-  `CINEMATIC_*` only), so they need `notes/shared-bank-geometry/` or a hold.
-- **background miners** -- 006, 008, 018.
-- **Buddy** -- 035 sitting in the cage, 438 and 440 waking from it, 441 arm
-  tapping Lester's back, 447 arm pointing.
-- **the falling cage** -- 549 bottom part at rest, 542 chunk flying out of frame.
-- **a background guard entering** -- 574, 570.
-- **the lift** -- 103 floor, 130 the car's full rectangle, 133/152/154/155/156
-  sparkles (all five HELD, see verdicts.tsv for what would settle them).
-- **unclear** -- 162 "not sure here..", 305 "the floor", and two REJECTED for
-  "i dont understand why", which leave a pointer rather than nothing.
+**Held, and it is the session's biggest finding**: eleven "the main guard"
+annotations are drawn at `[BUDDY_X],[BUDDY_Y]`, where the tree's earned routine
+names say Buddy -- and the same person calls that anchor Buddy from frame 3073
+on, after the cage falls. `notes/actor-anchors/README.md` section "2026-09-25"
+has it in full. Five lift "sparkles" are held separately.
 
-Note `CINEMATIC_035` is in that list, and `notes/on-screen-priority/` had it as
-the single most-seen unnamed constant in the stage at 284 of 400 frames. The
-sentence for it is "this is buddy sitting down inside the cage", which is the
-subject word that probe could never have produced.
+Still open, so nobody re-derives the grouping:
+
+- **background miners** -- 006, 008, 018, part of a chain 006-009 and 017-020
+  drawn at `[0x24],[0x25]` through `INCREMENT_VAR27_AND_DISPATCH`. The family
+  bounds need that dispatcher; the person also distinguishes "another background
+  miner", so there may be two figures in one slot.
+- **Buddy after the cage** -- 438, 440 waking, 441 arm tapping Lester, 447 arm
+  pointing. Nameable, and deliberately left with the guard set until the scene
+  boundary above is drawn, since they share its anchor.
+- **the guard undressing** -- 633 and 342 are in the held set; the two
+  *already-named* constants the person describes at frames 138 and 144,
+  `CINEMATIC_PRISON_STANDING_FIGURE_ARM_F1` ("the cloak being held") and
+  `CINEMATIC_PRISON_BAR_PANEL_F0` ("the box it is stored in"), are earned names
+  the person reads differently -- report, do not adjudicate.
+- **the shared bank** -- CV_2D4E, CV_245C, CV_4346 and
+  CV_FIGURE_WALK_RIGHT_UPPER_POSE_06 have **no applier**
+  (`apply_cinematic_renames.py` matches `CINEMATIC_*` only).
+- **the laser** -- 630, "laser ray when the gun is shot upwards".
 
 ## Held, added 2026-09-23: the beam ladder's second set
 
