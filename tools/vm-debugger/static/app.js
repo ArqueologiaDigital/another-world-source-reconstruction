@@ -22,7 +22,25 @@ const state = {
   vm: null, roms: {}, frame: null, sel: null,
   running: false, timer: null, blink: 0,
   checkpoints: null, paused_on: new Set(),
+  // Constants described THIS SESSION. They stop counting as unnamed and stop
+  // tripping the auto-pause, because the work on them is done even though the
+  // tree does not know it yet -- a name reaches src/levels/ through a proposal
+  // table and an applier, which is minutes or days away, and until then the
+  // counter would keep pointing at assets already dealt with.
+  //
+  // Deliberately NOT persisted. A reload asks the question again, and by then
+  // the answer may have come from the source: if the name landed, the constant
+  // is named and drops out for real; if it did not, it is unnamed again and
+  // rightly so. Session memory is the honest lifetime for "I have looked at
+  // this", and anything longer would be a second naming record competing with
+  // the tree.
+  described: new Set(),
+  version: null, watch: null,
 };
+
+const keyOf = (d) => d.kind + d.offset;
+/** Named in the tree, or described here since the page loaded. */
+const settled = (d) => isNamed(nameOf(d)) || state.described.has(keyOf(d));
 
 // ---- boot -------------------------------------------------------------
 const cfg = await (await fetch("/api/config")).json();
@@ -108,6 +126,8 @@ async function loadStage() {
     checkpoint: want === "" ? undefined : Number(want),
   });
   state.paused_on = new Set();
+  state.described = new Set();   // a different stage is a different backlog
+  state.version = null;          // re-baseline, do not announce a reload
   state.sel = null;
   state.frame = state.vm.runFrame();
   $("hint").textContent =
@@ -196,10 +216,18 @@ function paintPanels() {
     if (!seen.has(k)) seen.set(k, { d, n: 0 });
     seen.get(k).n++;
   }
-  const unnamed = [...seen.values()].filter(({ d }) => !isNamed(nameOf(d)));
+  const rows = [...seen.values()];
+  const unnamed = rows.filter(({ d }) => !settled(d));
+  const described = rows.filter(
+    ({ d }) => !isNamed(nameOf(d)) && state.described.has(keyOf(d)));
   $("drawcount").textContent = `${seen.size} distinct, ${f.draws.length} draw(s)`;
   const badge = $("unnamed");
-  badge.textContent = `${unnamed.length} unnamed`;
+  badge.textContent = `${unnamed.length} unnamed` +
+    (described.length ? ` (+${described.length} described)` : "");
+  badge.title = described.length
+    ? `${described.length} on this frame have no name in the tree yet but were ` +
+      `described in this session, so they are not counted. A reload asks again.`
+    : "constants on this frame with no semantic name";
   badge.classList.toggle("clean", unnamed.length === 0);
 
   const ul = $("draws"); ul.textContent = "";
@@ -208,7 +236,9 @@ function paintPanels() {
     const li = document.createElement("li");
     li.className = state.sel === d.seq ? "sel" : "";
     li.innerHTML =
-      `<span class="nm ${isNamed(name) ? "ok" : "un"}">${name || hex4(d.offset)}</span>` +
+      `<span class="nm ${isNamed(name) ? "ok"
+          : state.described.has(keyOf(d)) ? "said" : "un"}">` +
+      `${name || hex4(d.offset)}</span>` +
       `<span class="off">${d.kind === "video2" ? "CV " : ""}${hex4(d.offset)}` +
       `${n > 1 ? " ×" + n : ""} t${d.thread}</span>`;
     li.onclick = () => select(d.seq);
@@ -279,14 +309,14 @@ function tick() {
     // for tens of frames in a row, so the old behaviour re-paused instantly and
     // there was no way to move past it.
     const fresh = state.frame.draws.find(
-      (d) => !isNamed(nameOf(d)) && !state.paused_on.has(d.kind + d.offset));
+      (d) => !settled(d) && !state.paused_on.has(keyOf(d)));
     if (fresh) {
-      state.paused_on.add(fresh.kind + fresh.offset);
       pause();
       select(fresh.seq);
+      state.paused_on.add(keyOf(fresh));
       const left = new Set(state.frame.draws
-        .filter((d) => !isNamed(nameOf(d)))
-        .map((d) => d.kind + d.offset)).size;
+        .filter((d) => !settled(d))
+        .map(keyOf)).size;
       $("hint").textContent =
         `paused: ${hex4(fresh.offset)} has no semantic name. ${left} unnamed ` +
         `on this frame. Describe it below, or press run to go on — this one ` +
@@ -304,6 +334,63 @@ function pause() {
   state.running = false; $("run").textContent = "run";
   if (state.timer) clearInterval(state.timer);
   state.timer = null;
+}
+
+/** The selected constant has now been written about; stop counting it. */
+function markDescribed() {
+  const d = state.frame && state.frame.draws.find((x) => x.seq === state.sel);
+  if (!d) return;
+  state.described.add(keyOf(d));
+  paintPanels();
+}
+
+// ---- watching the listing ----------------------------------------------
+/**
+ * Re-read the stage's names when its `.asm` changes on disk.
+ *
+ * Applying a batch of names rewrites `src/levels/<branch>/<STAGE>.asm` while
+ * this page is open, and until now the only way to see them was a reload --
+ * which throws away the run, the position in the stage and everything
+ * described so far. The VM does not depend on the names at all, so nothing has
+ * to restart: swap `state.meta` and repaint.
+ *
+ * `/api/names-version/...` is a stat(), so polling it every two seconds costs
+ * nothing; the names payload itself is only fetched when the token moves.
+ */
+async function pollNames() {
+  if (!state.branch || !state.stage) return;
+  let v;
+  try {
+    v = (await (await fetch(
+      `/api/names-version/${state.branch}/${state.stage}`)).json()).version;
+  } catch { return; }                       // server gone; try again next tick
+  if (!v || v === state.version) return;
+  const first = state.version === null;
+  state.version = v;
+  if (first) return;
+  const meta = await (await fetch(
+    `/api/names/${state.branch}/${state.stage}`)).json();
+  if (meta.error) return;
+  const before = state.frame
+    ? new Set(state.frame.draws.filter((d) => !isNamed(nameOf(d))).map(keyOf))
+    : new Set();
+  state.meta = meta;   // routineAt() reads state.meta.labels, so this is all
+  const after = state.frame
+    ? new Set(state.frame.draws.filter((d) => !isNamed(nameOf(d))).map(keyOf))
+    : new Set();
+  let gained = 0;
+  for (const k of before) if (!after.has(k)) gained++;
+  // A constant the tree NOW names no longer needs this session's memory of
+  // having been described: it is named for real, and keeping the note would
+  // hide the name later being reverted. Only keys that were unnamed on this
+  // frame and are not any more qualify -- a key absent from both sets is
+  // simply not on screen right now, and forgetting those would lose the
+  // session's work every time the poll ran.
+  for (const k of before) if (!after.has(k)) state.described.delete(k);
+  paintPanels();
+  $("hint").textContent =
+    `${state.stage}.asm changed on disk — names reloaded` +
+    (gained ? `, ${gained} constant(s) on this frame just got a name.` : ".");
 }
 
 // ---- playing ----------------------------------------------------------
@@ -388,7 +475,10 @@ $("annosave").onclick = () => whileSaving("annosave", async () => {
   const res = await post({ kind: "annotate", text, ...context() });
   $("annostatus").textContent = res.ok
     ? `saved ${res.at}  ${res.id || ""}` : `error: ${res.error}`;
-  if (res.ok) $("annotext").value = "";
+  if (res.ok) {
+    $("annotext").value = "";
+    markDescribed();
+  }
 });
 
 $("rn-save").onclick = () => whileSaving("rn-save", async () => {
@@ -399,7 +489,7 @@ $("rn-save").onclick = () => whileSaving("rn-save", async () => {
     renames: [{ kind: d.kind, offset: d.offset, from: nameOf(d), to }] });
   $("annostatus").textContent = res.ok
     ? `rename logged ${res.at}  ${res.id || ""}` : `error: ${res.error}`;
-  if (res.ok) $("rn-to").value = "";
+  if (res.ok) { $("rn-to").value = ""; markDescribed(); }
 });
 
 function bulkMatches() {
@@ -440,3 +530,7 @@ $("bulk-save").onclick = () => whileSaving("bulk-save", async () => {
 });
 
 await loadStage();
+
+// Two seconds is a stat() per tick. See pollNames.
+state.watch = setInterval(pollNames, 2000);
+pollNames();

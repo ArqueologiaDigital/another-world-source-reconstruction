@@ -87,6 +87,26 @@ RE_LABEL = re.compile(r"^(\w+):")
 RE_NUMBERED = re.compile(r"^CINEMATIC_\d+$|^CV_[0-9A-F]{4}$")
 
 
+def asm_version(branch: str, stage: str) -> str:
+    """A cheap token that changes when the stage's listing changes.
+
+    `names_for` already re-reads the file on every request, so a re-fetch has
+    always picked up an edit. What was missing was a way to know an edit had
+    happened without paying for that fetch: the names payload for a big stage is
+    tens of kilobytes and the browser would have to poll it.
+
+    mtime in nanoseconds and size, which is what every file watcher starts from.
+    It can miss an edit that preserves both, which no editor produces and which
+    would in any case be corrected by the next real edit or a reload.
+    """
+    f = ROOT / "src" / "levels" / branch / f"{stage}.asm"
+    try:
+        st = f.stat()
+    except OSError:
+        return "missing"
+    return f"{st.st_mtime_ns}-{st.st_size}"
+
+
 def names_for(branch: str, stage: str) -> dict:
     """Every EQU and label the stage defines, split by what it names.
 
@@ -419,6 +439,13 @@ class Handler(BaseHTTPRequestHandler):
             if not p.is_file():
                 return self._json({"error": f"missing {p}"}, 404)
             return self._send(200, p.read_bytes(), "application/octet-stream")
+        if path.startswith("/api/names-version/"):
+            # Deliberately a stat() and not a read. The point of this route is
+            # that a browser can ask it every couple of seconds without cost,
+            # so that editing an .asm in another window updates the names here
+            # without a reload and without restarting the VM.
+            _, _, _, branch, stage = path.split("/", 4)
+            return self._json({"version": asm_version(branch, stage)})
         if path.startswith("/api/names/"):
             _, _, _, branch, stage = path.split("/", 4)
             out = names_for(branch, stage)
@@ -429,6 +456,7 @@ class Handler(BaseHTTPRequestHandler):
             out["labels"] = addrs
             out["by_address"] = {str(a): n for n, a in
                                  sorted(addrs.items(), key=lambda kv: -kv[1])}
+            out["version"] = asm_version(branch, stage)
             return self._json(out)
         if path == "/api/config":
             return self._json({

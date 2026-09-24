@@ -264,6 +264,7 @@ panel shows `SCREEN_NUM` and `HERO_X`, not `[0x67]` and `[0x01]`.
 | `tests/check_guidance.py` | does the guidance document carry every entry, with its id? |
 | `tests/check_entry_and_input.mjs` | do the checkpoint tables load, and does input match the reference? |
 | `tests/check_fill.mjs` | does the rasteriser blend, copy and round the way the game's does? |
+| `tests/check_watch_and_described.py` | does the server notice a listing change, and cheaply? |
 
 The last one exists because `guidance()` filtered to `kind == "annotate"` and so
 hid every typed name from both ways the log is read. It takes a candidate
@@ -299,6 +300,40 @@ poll -- `0xFC` left/right, `0xE5` and `0xFB` up/down, `0xFD` the direction mask,
 per frame, where the reference publishes them.
 `tests/check_entry_and_input.mjs` checks all 32 combinations against the
 reference's own arithmetic.
+
+## The listing is re-read while the page is open
+
+Applying a batch of names rewrites `src/levels/<branch>/<STAGE>.asm` under a
+running debugger. Until 2026-09-25 the only way to see them was F5, which throws
+away the run, the position in the stage and everything described so far.
+
+The page now polls `/api/names-version/<branch>/<stage>` every two seconds and
+re-fetches the names **only when that token moves**. The token is `mtime_ns` and
+size, so a poll is a `stat()`: measured by `tests/check_watch_and_described.py`,
+200 of them cost 1.6 ms against 23.6 ms for a single names parse. Nothing
+restarts -- the VM never reads the names -- so `state.meta` is swapped and the
+panels repaint, and the hint says how many constants on the current frame just
+got a name.
+
+## Describing something takes it off the counter, for this session
+
+A constant you have written about stops counting as unnamed and stops tripping
+the auto-pause. The work on it is done; the tree will not know for minutes or
+days, and until then the counter would keep pointing at assets already dealt
+with. It shows amber with a ✎ in the draw list, and the badge reads
+`3 unnamed (+2 described)` so the two are never confused.
+
+**This is not persisted, on purpose.** A reload asks the question again, and by
+then the answer may have come from the source: if the name landed, the constant
+is named and drops out for real; if it did not, it is unnamed again and rightly
+so. Session memory is the honest lifetime for "I have looked at this" -- longer
+would be a second naming record competing with the tree, which is the one thing
+this tool must not become. Changing stage clears it too: a different stage is a
+different backlog.
+
+When a poll finds that a described constant has been named in the source, the
+session note is dropped, so a later revert of that name shows up as unnamed
+again rather than being masked.
 
 ## "pause on unnamed" stops once per asset, not once per frame
 

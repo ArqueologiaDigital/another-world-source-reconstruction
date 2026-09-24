@@ -76,3 +76,9 @@ ul { list-style: none; margin: 0; padding: 0; }
 .events li { color: var(--dim); font-size: 12px; }
 .draws, .threads, .events { max-height: 16rem; overflow: auto; }
 .vars { max-height: 14rem; overflow: auto; }
+
+/* A constant with no name in the tree that has been described in this session.
+   Not "done" -- the tree still does not know -- but not work outstanding
+   either, so it reads as neither the red of unnamed nor the blue of named. */
+.nm.said { color: #d29922; }
+.nm.said::after { content: " ✎"; opacity: .7; }
