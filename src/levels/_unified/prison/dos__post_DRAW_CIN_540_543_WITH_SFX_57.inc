@@ -122,6 +122,6 @@ LABEL_78B4:
 	killChannel
 	call LABEL_711F
 	call PRISON_CAGE_SWING_TILT_OFFSET_DISPATCH
-	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_CAGE_BUDDY_SEATED, x=[0x1a], y=[0x1b]
 	call LABEL_739F
 	ret

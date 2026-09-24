@@ -51,7 +51,7 @@ LABEL_7685:
 	add [0x04], 0x0010
 	sub [0x06], 0x0003
 	call PRISON_CAGE_SWING_TILT_OFFSET_DISPATCH
-	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_CAGE_BUDDY_SEATED, x=[0x1a], y=[0x1b]
 	call LABEL_7473
 	break
 	play id=0x0063, freq=0x14, vol=0x0A, channel=0x01
@@ -59,7 +59,7 @@ LABEL_7685:
 	add [0x04], 0x0016
 	sub [0x06], 0x0003
 	call PRISON_CAGE_SWING_TILT_OFFSET_DISPATCH
-	video offset=CINEMATIC_035, x=[0x1a], y=[0x1b]
+	video offset=CINEMATIC_PRISON_CAGE_BUDDY_SEATED, x=[0x1a], y=[0x1b]
 	call LABEL_7473
 	deleteChannels first=0x21, last=0x24
 	break
