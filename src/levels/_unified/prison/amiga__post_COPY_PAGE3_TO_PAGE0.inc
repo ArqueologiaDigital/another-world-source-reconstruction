@@ -1,7 +1,7 @@
 LABEL_8149:
 	selectVideoPage 0x00
 	jne [0x0A], 0x00, LABEL_8155
-	video offset=CINEMATIC_274, x=251, y=175
+	video offset=CINEMATIC_PRISON_GUARD_GUN_KNOCKED_F5, x=251, y=175
 
 LABEL_8155:
 	video offset=CINEMATIC_PRISON_CAGE_LANDING_F2, x=181, y=146

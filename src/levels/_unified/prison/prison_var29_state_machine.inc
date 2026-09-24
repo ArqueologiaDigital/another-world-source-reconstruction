@@ -203,29 +203,29 @@ DRAW_CIN_570_574_BLOCK:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_576_578_BLOCK:
-	video offset=CINEMATIC_576, x=215, y=131
+	video offset=CINEMATIC_PRISON_GUARD_GUN_KNOCKED_F0, x=215, y=131
 	break
-	video offset=CINEMATIC_577, x=227, y=141
+	video offset=CINEMATIC_PRISON_GUARD_GUN_KNOCKED_F1, x=227, y=141
 	break
 	mov [0x31], 0x0000
-	video offset=CINEMATIC_578, x=231, y=158
+	video offset=CINEMATIC_PRISON_GUARD_GUN_KNOCKED_F2, x=231, y=158
 	break
-	video offset=CINEMATIC_579, x=239, y=175
+	video offset=CINEMATIC_PRISON_GUARD_GUN_KNOCKED_F3, x=239, y=175
 	break
-	video offset=CINEMATIC_578, x=243, y=174
+	video offset=CINEMATIC_PRISON_GUARD_GUN_KNOCKED_F2, x=243, y=174
 	break
 	play id=0x0060, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_274, x=245, y=175
+	video offset=CINEMATIC_PRISON_GUARD_GUN_KNOCKED_F5, x=245, y=175
 	mov [0x31], 0x0000
 	break
-	video offset=CINEMATIC_580, x=247, y=175
+	video offset=CINEMATIC_PRISON_GUARD_GUN_KNOCKED_F4, x=247, y=175
 	break
 	play id=0x0060, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_274, x=249, y=175
+	video offset=CINEMATIC_PRISON_GUARD_GUN_KNOCKED_F5, x=249, y=175
 	break
-	video offset=CINEMATIC_274, x=250, y=175
+	video offset=CINEMATIC_PRISON_GUARD_GUN_KNOCKED_F5, x=250, y=175
 	selectVideoPage 0x00
-	video offset=CINEMATIC_274, x=251, y=175
+	video offset=CINEMATIC_PRISON_GUARD_GUN_KNOCKED_F5, x=251, y=175
 	selectVideoPage 0xFF
 	killChannel
 .endif
