@@ -185,14 +185,14 @@ LABEL_2158:
 	break
 	setPalette 0x0F
 	play id=0x0052, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_630, x=[ACTOR_X], y=110
+	video offset=CINEMATIC_PRISON_SHOT_UP_BEAM_F0, x=[ACTOR_X], y=110
 	call LABEL_567F
 	break
 	setPalette 0x02
-	video offset=CINEMATIC_631, x=[ACTOR_X], y=80
+	video offset=CINEMATIC_PRISON_SHOT_UP_BEAM_F1, x=[ACTOR_X], y=80
 	call GUARDED_DRAW_CIN_338_339
 	break
-	video offset=CINEMATIC_630, x=[ACTOR_X], y=65516
+	video offset=CINEMATIC_PRISON_SHOT_UP_BEAM_F0, x=[ACTOR_X], y=65516
 	call GUARDED_DRAW_CIN_242_243
 	je [0x57], 0x02, LABEL_2053
 	setup channel=0x11, address=DRAW_CIN_570_574_BLOCK
