@@ -50,7 +50,7 @@
 
 const MOD = process.argv[2]
   || new URL("../static/vm.js", import.meta.url).href;
-const { fillPolygonInto, W, H } = await import(MOD);
+const { fillPolygonInto, W, H, VM } = await import(MOD);
 
 const bad = [];
 const want = (c, why) => { if (!c) bad.push(why); };
@@ -124,6 +124,34 @@ const square = (x, y, w, h, raw) => ({
   want(at(q, 105, 55) === 9, "a forced colour on a blend polygon blended instead");
 }
 
+// 6. a scrolled page copy moves a BAND and leaves the rest of the destination
+// alone. This is the code path PRISON's lift runs on: PRISON_LIFT_MOVE_STEP does
+// `add [SCROLL_Y], 0x0010` or `sub` by the same, and the whole scene going up or
+// down IS that offset reaching copyVideoPage -- there is no car that moves.
+// Zeroing the uncovered rows, which this did before the MAME port, is a black
+// bar sliding across exactly that scene.
+{
+  const vm = Object.create(VM.prototype);
+  vm.pages = [new Uint8Array(W * H), new Uint8Array(W * H)];
+  vm.pages[0].fill(7);                       // source: all 7
+  vm.pages[1].fill(3);                       // destination: all 3
+  vm.copyPage(0, 1, 10);                     // scroll down by 10 rows
+  const d = vm.pages[1];
+  want(d[10 * W + 5] === 7, "the scrolled band did not arrive");
+  want(d[5] === 3,
+       `row 5 of the destination is ${d[5]}, want the 3 it already held -- ` +
+       `zeroing the uncovered rows is a black bar sliding across the lift`);
+  want(d[(H - 1) * W] === 7, "the band is shorter than it should be");
+
+  const wild = Object.create(VM.prototype);
+  wild.pages = [new Uint8Array(W * H), new Uint8Array(W * H)];
+  wild.pages[0].fill(7);
+  wild.pages[1].fill(3);
+  wild.copyPage(0, 1, 500);                  // outside -199..199
+  want(count(wild.pages[1], 3) === W * H,
+       "a scroll beyond +-199 must copy nothing, not something arbitrary");
+}
+
 if (bad.length) {
   console.log(`FAIL: ${bad.length} problem(s)`);
   for (const b of bad) console.log(`  * ${b}`);
@@ -132,5 +160,6 @@ if (bad.length) {
 console.log("PASS: solid fills its box and nothing else; 0x10 blends to " +
             "(n & 7) | 8;\n      above 0x10 copies page 0 and is skipped " +
             "without one; a degenerate\n      polygon is one pixel; a forced " +
-            "colour is always solid.");
+            "colour is always solid; and a scrolled\n      page copy moves a " +
+            "band without blanking the rest -- which is the lift.");
 process.exit(0);

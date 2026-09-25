@@ -1,11 +1,11 @@
 ANIM_CIN_438_LOOP_VAR29:
-	video offset=CINEMATIC_438, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_BUDDY_RISE_F0, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	djnz [0x29], ANIM_CIN_438_LOOP_VAR29
 	add [BUDDY_Y], 0x0005
-	video offset=CINEMATIC_439, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_BUDDY_RISE_F1, x=[BUDDY_X], y=[BUDDY_Y]
 	break
-	video offset=CINEMATIC_440, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_BUDDY_RISE_F2, x=[BUDDY_X], y=[BUDDY_Y]
 	mov [0x0E], 0x0001
 	mov [0x29], 0x0003
 
@@ -74,7 +74,7 @@ LABEL_1A37:
 	add [BUDDY_X], 0x0003
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_441, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_BUDDY_ARM_TAP, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
 	video offset=CINEMATIC_442, x=[BUDDY_X], y=[BUDDY_Y]
@@ -103,7 +103,7 @@ LABEL_1A37:
 	video offset=CINEMATIC_442, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_441, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_BUDDY_ARM_TAP, x=[BUDDY_X], y=[BUDDY_Y]
 	mov [0x29], 0x0008
 
 LABEL_1AC1:
@@ -112,7 +112,7 @@ LABEL_1AC1:
 	djnz [0x29], LABEL_1AC1
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_441, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_BUDDY_ARM_TAP, x=[BUDDY_X], y=[BUDDY_Y]
 	play id=0x0073, freq=0x14, vol=0x30, channel=0x01
 	break
 	call GUARDED_HERO_ANIM_CV_291
@@ -125,16 +125,16 @@ LABEL_1AC1:
 	video offset=CINEMATIC_446, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_447, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_BUDDY_ARM_POINT_RIGHT, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_447, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_BUDDY_ARM_POINT_RIGHT, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
 	video offset=CINEMATIC_442, x=[BUDDY_X], y=[BUDDY_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_441, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_BUDDY_ARM_TAP, x=[BUDDY_X], y=[BUDDY_Y]
 	mov [0x29], 0x0003
 
 LABEL_1B1B:
