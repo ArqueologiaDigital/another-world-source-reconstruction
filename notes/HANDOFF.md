@@ -79,9 +79,9 @@ As of the last commit:
 | limb-pose indices reproduced from the bank layout | 16 of 16 | `actor-sprite-sheet/subpiece_poses.py --control` |
 | named LEFT/RIGHT pairs that are an exact mirror (≤2 leaves) | 42 of 42 | `shared-bank-geometry/mirror_exact.py --control` |
 | annotations logged | 47 | `play-and-describe/annotation_queue.py --summary` |
-| annotations turned into names | 15 | same |
-| annotations with a written verdict | 17 | same |
-| annotations nobody has opened | 15 | same |
+| annotations turned into names | 34 | same |
+| annotations with a written verdict | 13 | same |
+| annotations nobody has opened | 0 | same |
 | PRISON constant-frames of screen time still unnamed (msdos, cold 400-frame run) | 1874 across 41 constants | `on-screen-priority/seen_unnamed.mjs` |
 | most-seen unnamed PRISON constant vs most-seen named one | 284 frames vs 96 | same, and `--named` |
 | beam-ladder alternate-set slots still numbered | 34 of 36 | `beam-span-ladder/rung_thresholds.py` |
@@ -90,42 +90,30 @@ As of the last commit:
 | still-numbered constants a player sees, all checkpoints (msdos PRISON+CAVES+CAPSULE) | 122 | `on-screen-priority/seen_unnamed.mjs --sweep` |
 | the same, asking only each stage's first checkpoint | 57 | same, without `--sweep` |
 
-## The annotation backlog, 2026-09-25
+## The annotation backlog, 2026-09-25: worked to zero
 
 46 annotations arrived from one real PRISON playthrough, frames 118 to 7094.
-**23 constants and 7 routines are named from them**, 16 are held with grounds,
-and **15 are still open**. Run `make annotations`.
+**Every one is now either a name or a written verdict; none is unopened.**
 
-Named: the guard's gun arc (6), the lift car, its floor and the two silhouettes
-riding in it (4), the cage debris and the wreck at rest (4), the background
-runner's cycle with its doorway post and backdrop (7), the cell block floor (1),
-plus the seven routines in `notes/routines-from-annotations/`.
+    34 turned into names          11 held, with grounds and what would settle each
+     2 corroborate an existing name
 
-**Held, and it is the session's biggest finding**: eleven "the main guard"
-annotations are drawn at `[ACTOR_X],[ACTOR_Y]` (renamed from `BUDDY_*` on
-2026-09-25), where the tree's earned routine
-names say Buddy -- and the same person calls that anchor Buddy from frame 3073
-on, after the cage falls. `notes/actor-anchors/README.md` section "2026-09-25"
-has it in full. Five lift "sparkles" are held separately.
+What they bought, in the tree: the guard's gun arc (6), the lift car with its
+floor and two silhouettes (4), the cage debris and wreck (4), the background
+runner's cycle with its doorway pieces (7), the cell-block floor, Buddy seated in
+the cage and his rise and two arms (6), the belt pair, the last six leaves of the
+left pose dispatcher, the upward shot (3), **twenty background-miner frames**, the
+cloak family corrected off `ARM` (5), and three shared-bank keys -- plus 24
+routines across `notes/routines-from-annotations/` and the two lift and shot
+routines.
 
-Still open, so nobody re-derives the grouping:
-
-- **background miners** -- 006, 008, 018, part of a chain 006-009 and 017-020
-  drawn at `[0x24],[0x25]` through `INCREMENT_VAR27_AND_DISPATCH`. The family
-  bounds need that dispatcher; the person also distinguishes "another background
-  miner", so there may be two figures in one slot.
-- **Buddy after the cage** -- 438, 440 waking, 441 arm tapping Lester, 447 arm
-  pointing. Nameable, and deliberately left with the guard set until the scene
-  boundary above is drawn, since they share its anchor.
-- **the guard undressing** -- 633 and 342 are in the held set; the two
-  *already-named* constants the person describes at frames 138 and 144,
-  `CINEMATIC_PRISON_STANDING_FIGURE_ARM_F1` ("the cloak being held") and
-  `CINEMATIC_PRISON_BAR_PANEL_F0` ("the box it is stored in"), are earned names
-  the person reads differently -- report, do not adjudicate.
-- **the shared bank** -- CV_2D4E, CV_245C, CV_4346 and
-  CV_FIGURE_WALK_RIGHT_UPPER_POSE_06 have **no applier**
-  (`apply_cinematic_renames.py` matches `CINEMATIC_*` only).
-- **the laser** -- 630, "laser ray when the gun is shot upwards".
+**The eleven holds are one question and two leftovers.** Ten are the actor-word
+question: the person says "the main guard" and the tree draws at
+`[ACTOR_X],[ACTOR_Y]`, which `notes/actor-anchors/` establishes is a scheduler's
+working register re-tasked across stages, across scenes and even within one
+thread. Settling those means drawing scene boundaries, not measuring more art.
+The eleventh is `CINEMATIC_PRISON_BAR_PANEL_F0`, where two renders disagree and
+the geometry discriminates nothing -- its verdict names the two probes that would.
 
 ## Held, added 2026-09-23: the beam ladder's second set
 

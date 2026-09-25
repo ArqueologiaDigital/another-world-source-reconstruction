@@ -53,8 +53,9 @@ a figure leaving a 19-frame cloaked family, standing revealed, with a
 -> 7.0 -> 6.0 and rising off the floor as its bottom edge goes -0.5 -> -9.0.
 
 One polygon, held at the side, gathered upward, in the frames right after a cloak
-comes off, reaching the ground where no arm does. The person says it twice --
-`ann:6ad46d113d30` on `CINEMATIC_633`: "as if he's undressing his 'cape' prior to
+comes off, reaching the ground where no arm does. The person says it twice, the second time on `CINEMATIC_633`, whose own
+annotation stays held for the actor-word question and is therefore quoted below
+rather than cited: "as if he's undressing his 'cape' prior to
 starting a work shift".
 
 CLOAK is the subject word from the annotation; the stem, the pairing and the
@@ -63,7 +64,7 @@ belong to. No actor word is taken.
 
 | old | new | confidence | evidence |
 |---|---|---|---|
-| CINEMATIC_PRISON_STANDING_FIGURE_ARM_F0 | CINEMATIC_PRISON_STANDING_FIGURE_CLOAK_F0 | high | 0x5262, ONE leaf, 17.0x25.0 at x[-13.5,3.5] y[-25.5,-0.5] -- the lowest 43% of a figure that stands y[-58.0,+1.0], beginning below where a hanging hand ends, so not an arm; drawn immediately before STANDING_FIGURE_F0 so it lies behind the body, in the frames right after the 19-frame CLOAKED_FIGURE family ends; widest of the five; annot:6ad46d113d30 "as if he's undressing his 'cape'" |
+| CINEMATIC_PRISON_STANDING_FIGURE_ARM_F0 | CINEMATIC_PRISON_STANDING_FIGURE_CLOAK_F0 | high | 0x5262, ONE leaf, 17.0x25.0 at x[-13.5,3.5] y[-25.5,-0.5] -- the lowest 43% of a figure that stands y[-58.0,+1.0], beginning below where a hanging hand ends, so not an arm; drawn immediately before STANDING_FIGURE_F0 so it lies behind the body, in the frames right after the 19-frame CLOAKED_FIGURE family ends; widest of the five; and the same session's sentence on CINEMATIC_633 -- still held, so quoted here and deliberately not cited -- says "as if he's undressing his 'cape' prior to starting a work shift" |
 | CINEMATIC_PRISON_STANDING_FIGURE_ARM_F1 | CINEMATIC_PRISON_STANDING_FIGURE_CLOAK_F1 | high | 0x527A, one leaf, 13.0x28.0 at y[-29.0,-1.0]; second of the five, paired with STANDING_FIGURE_F1; annot:625b42e22a04 frame 138, "this seems to be the cloak while being held by the guard while storing it" |
 | CINEMATIC_PRISON_STANDING_FIGURE_ARM_F2 | CINEMATIC_PRISON_STANDING_FIGURE_CLOAK_F2 | high | 0x5292, one leaf, 12.0x27.0 at y[-28.5,-1.5]; third of the five, paired with STANDING_FIGURE_F2 |
 | CINEMATIC_PRISON_STANDING_FIGURE_ARM_F3 | CINEMATIC_PRISON_STANDING_FIGURE_CLOAK_F3 | high | 0x52AA, one leaf, 7.0x24.0 at y[-28.0,-4.0]; fourth, paired with STANDING_FIGURE_F3, and the bottom edge has lifted 3.5px off the floor |
