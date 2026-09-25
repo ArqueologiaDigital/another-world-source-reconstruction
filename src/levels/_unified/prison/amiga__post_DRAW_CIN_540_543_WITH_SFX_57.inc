@@ -6,7 +6,7 @@ LABEL_76EA:
 	db 0x11
 
 HANG_DRAW_CIN_275:
-	video offset=CINEMATIC_275, x=181, y=146
+	video offset=CINEMATIC_PRISON_CAGE_WRECK_FLOOR_PIECE, x=181, y=146
 	break
 	jmp HANG_DRAW_CIN_275
 

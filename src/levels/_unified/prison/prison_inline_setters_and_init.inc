@@ -241,8 +241,8 @@ PRISON_DRAW_CIN_319_TO_319_4F_AT_9E666694_L1:
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_318_TO_318_2F_AT_93A8CE70:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_318, x=225, y=50
-	video offset=CINEMATIC_318, x=278, y=50
+	video offset=CINEMATIC_PRISON_CELL_INDICATOR_LAMP, x=225, y=50
+	video offset=CINEMATIC_PRISON_CELL_INDICATOR_LAMP, x=278, y=50
 	selectVideoPage 0xFF
 .endif
 
@@ -259,7 +259,7 @@ INLINE_SET_VARE6_TO_50:
 PRISON_INLINE_SET_VARE6_TO_50_L0:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_457, x=84, y=[0xe6]
-	video offset=CINEMATIC_186, x=82, y=[0xe6]
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=82, y=[0xe6]
 	selectVideoPage 0xFF
 	add [0xE6], 0x0002
 	break
@@ -269,7 +269,7 @@ PRISON_INLINE_SET_VARE6_TO_50_L0:
 
 PRISON_INLINE_SET_VARE6_TO_50_L1:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_186, x=84, y=[0xe6]
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=84, y=[0xe6]
 	video offset=CINEMATIC_457, x=82, y=[0xe6]
 	selectVideoPage 0xFF
 	add [0xE6], 0x0002

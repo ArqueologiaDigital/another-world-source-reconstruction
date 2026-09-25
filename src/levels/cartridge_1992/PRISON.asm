@@ -213,7 +213,7 @@ CINEMATIC_LESTER_HAND_GRABBING_GUN_F4		EQU 0xB2EE
 CINEMATIC_LESTER_HAND_GRABBING_GUN_F5		EQU 0xB3D2
 CINEMATIC_LESTER_HAND_GRABBING_GUN_F6		EQU 0xB4AC
 CINEMATIC_LESTER_HAND_GRABBING_GUN_F7		EQU 0xB542
-CINEMATIC_186		EQU 0x0068
+CINEMATIC_PRISON_PIXEL_GLINT		EQU 0x0068
 CINEMATIC_187		EQU 0x0AD0
 CINEMATIC_188		EQU 0x3C3C
 CINEMATIC_189		EQU 0x3C08
@@ -2138,19 +2138,19 @@ LABEL_0B62:
 LABEL_0B74:
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_186, x=101, y=158
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=101, y=158
 	video offset=CINEMATIC_457, x=105, y=154
 	selectVideoPage 0xFF
 	break
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_186, x=103, y=156
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=103, y=156
 	video offset=CINEMATIC_457, x=101, y=158
 	selectVideoPage 0xFF
 	break
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_186, x=105, y=154
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=105, y=154
 	video offset=CINEMATIC_457, x=103, y=156
 	selectVideoPage 0xFF
 	break
@@ -2165,13 +2165,13 @@ LABEL_0BA2:
 	break
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_186, x=110, y=166
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=110, y=166
 	video offset=CINEMATIC_703, x=109, y=167
 	selectVideoPage 0xFF
 	break
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_186, x=108, y=167
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=108, y=167
 	video offset=CINEMATIC_703, x=110, y=166
 	selectVideoPage 0xFF
 	break
@@ -2186,7 +2186,7 @@ INLINE_SET_VARE6_TO_50:
 PRISON_INLINE_SET_VARE6_TO_50_L0:
 	selectVideoPage 0x00
 	video offset=CINEMATIC_457, x=84, y=[0xe6]
-	video offset=CINEMATIC_186, x=82, y=[0xe6]
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=82, y=[0xe6]
 	selectVideoPage 0xFF
 	add [0xE6], 0x0002
 	break
@@ -2196,7 +2196,7 @@ PRISON_INLINE_SET_VARE6_TO_50_L0:
 
 PRISON_INLINE_SET_VARE6_TO_50_L1:
 	selectVideoPage 0x00
-	video offset=CINEMATIC_186, x=84, y=[0xe6]
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=84, y=[0xe6]
 	video offset=CINEMATIC_457, x=82, y=[0xe6]
 	selectVideoPage 0xFF
 	add [0xE6], 0x0002
@@ -2282,7 +2282,7 @@ LABEL_0CA1:
 	mov [0xE9], 0x0008
 
 LABEL_0CAA:
-	video offset=CINEMATIC_186, x=145, y=100
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=145, y=100
 	break
 	djnz [0xE9], LABEL_0CAA
 	jmp INLINE_SET_VARE9_TO_8
@@ -14496,9 +14496,9 @@ GUN_ZONE_TICK_LOOP:
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, GUN_PICKUP_SCENE
-	video offset=CINEMATIC_186, x=258, y=181
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=258, y=181
 	jl [HERO_X], 0xFA, GUN_PICKUP_SCENE
-	video offset=CINEMATIC_186, x=257, y=181
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=257, y=181
 
 GUN_PICKUP_SCENE:
 	jl [HERO_X], 0xF0, GUN_ZONE_TICK_LOOP_RESTART

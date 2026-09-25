@@ -7,7 +7,7 @@ GUN_ZONE_TICK_LOOP:
 	mov [0xF8], [0x31]
 	and [0xF8], 0x0004
 	je [0xF8], 0x00, GUN_PICKUP_SCENE
-	video offset=CINEMATIC_186, x=258, y=181
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=258, y=181
 
 ; per-tick state-machine top
 ; checking if hero is in

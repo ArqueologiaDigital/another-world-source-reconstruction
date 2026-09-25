@@ -19,19 +19,19 @@ LABEL_0ADA:
 LABEL_0AEC:
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_186, x=101, y=158
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=101, y=158
 	video offset=CINEMATIC_457, x=105, y=154
 	selectVideoPage 0xFF
 	break
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_186, x=103, y=156
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=103, y=156
 	video offset=CINEMATIC_457, x=101, y=158
 	selectVideoPage 0xFF
 	break
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_186, x=105, y=154
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=105, y=154
 	video offset=CINEMATIC_457, x=103, y=156
 	selectVideoPage 0xFF
 	break
@@ -46,13 +46,13 @@ LABEL_0B1A:
 	break
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_186, x=110, y=166
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=110, y=166
 	video offset=CINEMATIC_703, x=109, y=167
 	selectVideoPage 0xFF
 	break
 	break
 	selectVideoPage 0x00
-	video offset=CINEMATIC_186, x=108, y=167
+	video offset=CINEMATIC_PRISON_PIXEL_GLINT, x=108, y=167
 	video offset=CINEMATIC_703, x=110, y=166
 	selectVideoPage 0xFF
 	break
