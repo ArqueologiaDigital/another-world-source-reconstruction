@@ -81,7 +81,7 @@ LABEL_6810:
 LABEL_683F:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_PRISON_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_4346, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_STAND_BODY, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	sub [ACTOR_Y], 0x000D
 	call LABEL_5337
 	add [ACTOR_Y], 0x000D
@@ -102,7 +102,7 @@ LABEL_6859:
 
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_PRISON_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_4346, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_STAND_BODY, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	sub [ACTOR_Y], 0x000D
 	call LABEL_5397
 	add [ACTOR_Y], 0x000D
@@ -112,7 +112,7 @@ LABEL_6859:
 LABEL_6895:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_PRISON_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_4346, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_STAND_BODY, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	sub [ACTOR_Y], 0x000D
 	call LABEL_5365
 	add [ACTOR_Y], 0x000D
@@ -122,7 +122,7 @@ LABEL_6895:
 GUARDED_HERO_ANIM_CV_291:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_PRISON_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_4346, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_STAND_BODY, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	ret
 
 

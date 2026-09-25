@@ -81,7 +81,7 @@ LABEL_9640:
 LABEL_966F:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_4346, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_STAND_BODY, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x000D
 	call CAVES_DRAW_CV_355_L1
 	add [0x08], 0x000D
@@ -102,7 +102,7 @@ LABEL_9689:
 
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_4346, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_STAND_BODY, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x000D
 	call CAVES_DRAW_CV_355_L5
 	add [0x08], 0x000D
@@ -112,7 +112,7 @@ LABEL_9689:
 LABEL_96C5:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_4346, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_STAND_BODY, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x000D
 	call CAVES_DRAW_CV_355_L3
 	add [0x08], 0x000D
@@ -121,7 +121,7 @@ LABEL_96C5:
 
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_4346, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_STAND_BODY, x=[0x07], y=[0x08], zoom=0x40
 	ret
 
 

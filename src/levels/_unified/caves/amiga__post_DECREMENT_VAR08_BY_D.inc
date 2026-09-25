@@ -81,7 +81,7 @@ LABEL_936B:
 LABEL_939A:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_4346, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_STAND_BODY, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x000D
 	call LABEL_7EAC
 	add [0x08], 0x000D
@@ -109,7 +109,7 @@ LABEL_93D6:
 LABEL_93F0:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_4346, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_STAND_BODY, x=[0x07], y=[0x08], zoom=0x40
 	sub [0x08], 0x000D
 	call LABEL_7EDA
 	add [0x08], 0x000D

@@ -161,7 +161,7 @@ LABEL_0941:
 	killChannel
 	video offset=CINEMATIC_108, x=160, y=100
 	video type=0, offset=CV_1C78, x=160, y=100, zoom=0x40
-	video type=0, offset=CV_4346, x=160, y=100, zoom=0x40
+	video type=0, offset=CV_FIGURE_STAND_BODY, x=160, y=100, zoom=0x40
 	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_08, x=160, y=100, zoom=0x40
 	killChannel
 

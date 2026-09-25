@@ -75,3 +75,21 @@ is composited onto, so it takes `BODY` like the walk bodies it measures with.
 The person names Lester. That is not in the name, for the reason the whole bank
 is generic: one shared-bank picture serves every port and, here, more than one
 figure.
+
+
+## The rows, in the form the queue can read
+
+`annotation_queue.py` derives "consumed" from `annot:<id>` tokens in proposal
+**rows** plus the name being defined in the tree. A `.map` file has two columns
+and no evidence cell, so a shared-bank name applied from one could never be
+marked consumed however well it was argued -- the annotation would sit OPEN
+forever beside a constant that already carries its name.
+
+This table is the citation, in the four columns the scanner parses. It is a
+record rather than an input: the map above is what `apply_bank_names.py` reads.
+
+| old | new | confidence | evidence |
+|---|---|---|---|
+| CV_2D4E | CV_FIGURE_WALK_LEFT_LIMB_POSE_04 | high | 0x2D4E, 11.0x17.0 in ONE leaf at x[-11.5,-0.5] y[-39.5,-22.5] -- the mirror of the box CV_FIGURE_WALK_RIGHT_LIMB_POSE_02 occupies, in the left-facing family; fills the phase-07 gap in the left limb run whose neighbours are `_02` (INLINE_DRAW_CV_220_008) and `_03` (INLINE_DRAW_CV_228_018), selected there by `je [0x0D], 0x00`; `_04` because the family indexes distinct limb pictures and `_00.._03` are committed; annot:c96a942281e4 frame 183, "right arm of the guard, while he's walking to the left" -- the guard reading is recorded here and not in the name |
+| CV_245C | CV_FIGURE_WALK_RIGHT_LIMB_POSE_04 | high | 0x245C, 11.0x17.0 in ONE leaf at x[-0.5,10.5] y[-39.5,-22.5] -- the same bounding box, leaf count and y-band as CV_FIGURE_WALK_RIGHT_LIMB_POSE_02, a different picture in an identical envelope; drawn immediately before CV_FIGURE_WALK_RIGHT_BODY_F07 in PRISON_ACTOR_WALK_RIGHT_DRAW_PHASE_07, filling the gap in the run _00,_01,_02,?,_03,_03,_02,_01 across phases 00,05,06,07,08,09,10,11; annot:4824c77baf8a frame 220, "left arm of the guard slightly tilted forwards while the guard walks to the right" |
+| CV_4346 | CV_FIGURE_STAND_BODY | high | 0x4346, 30.5x57.0 in 5 leaves at y[-56.0,1.0] -- the same height, y-band and leaf count as CV_FIGURE_WALK_LEFT_BODY_F00's 33.5x57.0, three pixels narrower, so a full standing figure and not a limb; four draw sites, three of them followed by `sub [ACTOR_Y], 0x000D` and a call laying an upper layer thirteen pixels higher, with the head dispatcher running first; belongs to no walk cycle, none of its sites being a numbered phase; annot:7f8c38c5271b frame 3114, "lester's body" -- Lester is not in the name because one shared-bank picture serves more than one figure |

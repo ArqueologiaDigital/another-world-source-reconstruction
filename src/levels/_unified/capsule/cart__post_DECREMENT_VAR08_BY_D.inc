@@ -81,7 +81,7 @@ LABEL_8E17:
 LABEL_8E46:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_4346, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_STAND_BODY, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	sub [ACTOR_Y], 0x000D
 	call LABEL_7818
 	add [ACTOR_Y], 0x000D
@@ -102,7 +102,7 @@ LABEL_8E60:
 
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_4346, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_STAND_BODY, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	sub [ACTOR_Y], 0x000D
 	call LABEL_7878
 	add [ACTOR_Y], 0x000D
@@ -112,7 +112,7 @@ LABEL_8E60:
 LABEL_8E9C:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_4346, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_STAND_BODY, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	sub [ACTOR_Y], 0x000D
 	call LABEL_7846
 	add [ACTOR_Y], 0x000D
@@ -121,7 +121,7 @@ LABEL_8E9C:
 
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_ALIEN_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_4346, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_STAND_BODY, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	ret
 
 

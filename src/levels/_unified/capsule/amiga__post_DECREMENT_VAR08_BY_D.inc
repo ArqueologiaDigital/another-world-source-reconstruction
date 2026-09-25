@@ -81,7 +81,7 @@ BUDDY_RIGHT_FIRE_RECOIL_PHASE_3:
 LABEL_7486:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_4346, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_STAND_BODY, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	sub [ACTOR_Y], 0x000D
 	call LABEL_5F44
 	add [ACTOR_Y], 0x000D
@@ -109,7 +109,7 @@ LABEL_74C2:
 LABEL_74DC:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_4346, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_STAND_BODY, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	sub [ACTOR_Y], 0x000D
 	call LABEL_5F72
 	add [ACTOR_Y], 0x000D

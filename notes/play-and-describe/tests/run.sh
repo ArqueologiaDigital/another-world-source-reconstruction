@@ -401,6 +401,28 @@ case $out in
     *) verdict teaser/cut "" ;;
 esac
 
+# bankrow -- a CV_* row in a citing table is legitimate: the shared bank has an
+# applier of its own, notes/shared-bank-naming/apply_bank_names.py, which renames
+# globally because the bank is one file byte-identical across ports. --check
+# refused these until 2026-09-25 and rejected three correctly-argued rows; the
+# rule was right and its list of appliers was short by one. A routine label still
+# has no applier and is still refused, which `noapplier` above holds.
+r=$(root bankrow)
+column > "$r/tools/vm-debugger/rename_log.jsonl"
+a=$(aid "$r/tools/vm-debugger/rename_log.jsonl" 1)
+verdicts "$r" </dev/null
+{ printf '# CAVES: a shared-bank row\n\n'
+  printf '| old | new | confidence | evidence |\n'
+  printf '|---|---|---|---|\n'
+  printf '| CV_1234 | CV_FIGURE_TRAP_LIMB_POSE_04 | high | annot:%s frame 118 |\n' "$a"
+} > "$r/notes/play-and-describe/proposals_chahi_amiga_1991__CAVES_bank.md"
+{ printf 'CINEMATIC_411\t\tEQU 0x7B52\n'
+  printf 'CV_FIGURE_TRAP_LIMB_POSE_04\t\tEQU 0x1234\n'
+} > "$r/src/levels/chahi_amiga_1991/CAVES.asm"
+seal "$r"
+probe "$r" --check
+expect bankrow 0
+
 # documented -- the id notes/play-and-describe/README.md and this repo's
 # CLAUDE.md both quote, recomputed from the log the debugger actually wrote.
 # Not a fixture: it is the assertion that the log in the tree has not been

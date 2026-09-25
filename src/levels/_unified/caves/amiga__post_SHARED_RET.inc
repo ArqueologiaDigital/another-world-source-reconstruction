@@ -270,7 +270,7 @@ LABEL_8269:
 	jmp DRAW_FIGURE_WALK_LEFT_F07
 
 LABEL_827B:
-	video type=0, offset=CV_2D4E, x=[0x07], y=[0x08], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_04, x=[0x07], y=[0x08], zoom=0x40
 
 DRAW_FIGURE_WALK_LEFT_F07:
 	call DRAW_BEAST_SPRITE_BY_VAR09_0E

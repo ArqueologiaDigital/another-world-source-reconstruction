@@ -921,7 +921,16 @@ def check(ix: Index) -> int:
     # repair is a byte-neutral `sed -i` that `make test` cannot see.
     for a, cites in sorted(ix.by_cite.items()):
         for c in cites:
-            if not re.match(r"^CINEMATIC_\w+$", c.old or ""):
+            # CINEMATIC_* has apply_branch_scoped_names.py behind it and CV_*
+            # has notes/shared-bank-naming/apply_bank_names.py, which renames
+            # globally because the bank is one file. Anything else -- a routine
+            # label above all -- has no applier that reads a table of this shape,
+            # and a row nothing can act on is the gate being bypassed.
+            #
+            # CV_* was refused here until 2026-09-25, which rejected three
+            # correctly-argued shared-bank rows. The rule was right and its list
+            # was short by one applier.
+            if not re.match(r"^(CINEMATIC|CV)_\w+$", c.old or ""):
                 bad.append(
                     f"{rel(c.path)}:{c.line}: `{c.old}` is not a "
                     f"CINEMATIC_* constant, and\n      "
