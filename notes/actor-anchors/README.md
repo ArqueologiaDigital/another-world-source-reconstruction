@@ -382,3 +382,46 @@ What was NOT renamed: `CAPSULE_BUDDY_DRAW_CV310_AT_ACTOR_X_PLUS_1` keeps its
 `CAPSULE_BUDDY_` prefix. That is an actor claim about a routine, and this
 directory takes no position on any particular one of them -- only on the fact
 that the anchor cannot be the reason for it.
+
+
+## 2026-09-25: the uniform is a field in the actor record
+
+Working the held annotations turned up the rest of the mechanism, and it answers
+the owner's question about the belt and the shoulder marking better than a name
+would have.
+
+`[0x09]` is **word 5 of the eight-word actor record** -- the context loops load
+it from `0x6D`, `0x75` and `0x7D` (`PRISON.asm:3101, 3125, 3149`) and write it
+back alongside X and Y. Its **low nibble selects appearance overlays**, and the
+disassembler had already written the fact into the routine names:
+
+    DRAW_CIN_240_IF_VAR09_EQ_1:            PRISON.asm:9617
+        mov [0xF8], [0x09]
+        and [0xF8], 0x000F
+        je  [0xF8], 0x01, DRAW_CIN_240     <- the red belt
+        ret
+
+Six such gates sit in the actor draw phases, all testing nibble == 1:
+
+    9486  PRISON_DRAW_CIN_226_L0        -> DRAW_CIN_352
+    9498  PRISON_DRAW_CIN_352_L0        -> DRAW_CIN_169_WITH_POS_STEP_...
+    9619  DRAW_CIN_240_IF_VAR09_EQ_1    -> CINEMATIC_240   the belt, facing one way
+    9631  DRAW_CIN_241_IF_VAR09_EQ_1    -> CINEMATIC_241   the shoulder marking
+    10868 DRAW_CIN_168_IF_VAR09_EQ_1    -> CINEMATIC_168   the belt, facing the other
+    10880 DRAW_CIN_169_IF_VAR09_EQ_1    -> CINEMATIC_169   the shoulder, the other way
+
+So the belt and the shoulder marking are **not one character's props**. They are
+painted on *any* actor whose record carries nibble 1, on any screen, in any
+thread -- an appearance class, stored per actor and rotated through the working
+registers with everything else.
+
+The person who annotated them guessed at this from the picture alone: *"shoulder
+of the guard. seems to have something in red in it. Maybe a symbol of his
+military rank."* A rank marking is exactly what a per-actor appearance field
+holding a small integer is, and it is the reading the bytecode supports.
+
+**Why this settles the naming question rather than answering it.** A name for
+`CINEMATIC_240` may say BELT, and may say which way it faces, because both are
+measured. It may not say GUARD: the constant belongs to an appearance class, and
+which characters are in that class is a separate question this does not answer.
+`CINEMATIC_PRISON_FIGURE_BELT_*` is what the evidence carries.
