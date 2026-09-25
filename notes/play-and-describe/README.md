@@ -503,3 +503,29 @@ annotation means withdrawing the hold first, in the same commit.
 The cost was 19 agents and 2.2M tokens for two applied names. That is the right
 trade when the alternative is a wrong name in a tree where `make test` cannot
 see one.
+
+
+## A third thing PROPOSED can mean, found 2026-09-25
+
+`--check` calls a citing row PROPOSED when the tree does not define its name, and
+the README says that is "a rejected row, or a half-applied batch". A second play
+session produced a third case: a row **superseded** by a later, better one.
+
+Two arm constants were named `..._BUDDY_ARM_TAP` and `..._BUDDY_ARM_POINT_RIGHT`
+while the middles of both runs were still numbered, so there was no run to index
+against. Five more sentences closed both runs and a later table gave all seven
+their positions -- at which point the two original rows cited names the tree no
+longer defined, and `--check` failed on them exactly as it would on a rejected
+row.
+
+**The state is not being added, and that is the point.** What makes a superseded
+row indistinguishable from a half-applied one is the same thing that makes
+PROPOSED worth having: the check knows only that a cited name is absent from the
+tree, and it must refuse to guess which of the three reasons applies. The fix is
+editorial -- update the `new` column of the superseded row to the final name,
+leave its evidence alone because the evidence was right, and say in the table that
+it was superseded and by what.
+
+The alternative would be a `SUPERSEDED` verdict, and it would be worse: an id
+would then carry both a verdict and a citation, which `--check` refuses for a good
+reason, and a reader would have to trust a label instead of reading two tables.

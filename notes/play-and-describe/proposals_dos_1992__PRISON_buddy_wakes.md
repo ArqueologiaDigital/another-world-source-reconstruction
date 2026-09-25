@@ -47,5 +47,21 @@ the direction the pointing sentence gives and the walkthrough confirms.
 | CINEMATIC_438 | CINEMATIC_PRISON_BUDDY_RISE_F0 | high | 0x8A2E, held ten frames by `mov [0x29], 0x000A` + `djnz` at the head of ANIM_CIN_438_LOOP_VAR29; 39.0x35.0, the widest and lowest of the three; annot:48092eb64dcc frame 3073, "buddy starting to wake up from the fallen cage" |
 | CINEMATIC_439 | CINEMATIC_PRISON_BUDDY_RISE_F1 | high | 0x2A88, drawn after `add [BUDDY_Y], 0x0005`; 33.0x48.0, between F0 and F2 on both axes. No annotation of its own: it is the middle of a three-frame rise whose ends are annotated |
 | CINEMATIC_440 | CINEMATIC_PRISON_BUDDY_RISE_F2 | high | 0x2AE8, last of the three; 27.0x56.0, the narrowest and tallest -- upright -- and 27.0 is the width CINEMATIC_PRISON_LIFT_BUDDY_SILHOUETTE gives Buddy (29.0) against Lester's 15.0; annot:3f4ea0707174 frame 3084, "buddy waking up from the fallen cage" |
-| CINEMATIC_441 | CINEMATIC_PRISON_BUDDY_ARM_TAP | high | 0x8BAE, 24.0x21.0 in 4 leaves, drawn over the body laid down by PRISON_BUDDY_SIMPLE_DRAW_CIN164_167_CV291 at PRISON.asm:3706 and again at 3744, with `play id=0x0073, freq=0x14, vol=0x30` fired on the second; a compact limb, not a figure; annot:120e9175b6a3 frame 3114, "buddy's right arm while tapping lester's back/shoulder" |
-| CINEMATIC_447 | CINEMATIC_PRISON_BUDDY_ARM_POINT_RIGHT | high | 0x882A, 35.0x11.5 in 6 leaves -- three times wider than tall, an arm held out straight, against the tap's compact 24.0x21.0; drawn twice at the end of the same sequence, in which the routine adds 0x0003 to BUDDY_X twice and calls PRISON_ACTOR_WALK_RIGHT_DRAW_PHASE_06, so the figure is moving right; annot:8a0eb8f7128f frame 3136, "pointing forward -- to the right -- as if indicating that lester must following him that way" |
+| CINEMATIC_441 | CINEMATIC_PRISON_BUDDY_ARM_TAP_F0 | high | 0x8BAE, 24.0x21.0 in 4 leaves, drawn over the body laid down by PRISON_BUDDY_SIMPLE_DRAW_CIN164_167_CV291 at PRISON.asm:3706 and again at 3744, with `play id=0x0073, freq=0x14, vol=0x30` fired on the second; a compact limb, not a figure; annot:120e9175b6a3 frame 3114, "buddy's right arm while tapping lester's back/shoulder" |
+| CINEMATIC_447 | CINEMATIC_PRISON_BUDDY_ARM_POINT_RIGHT_F2 | high | 0x882A, 35.0x11.5 in 6 leaves -- three times wider than tall, an arm held out straight, against the tap's compact 24.0x21.0; drawn twice at the end of the same sequence, in which the routine adds 0x0003 to BUDDY_X twice and calls PRISON_ACTOR_WALK_RIGHT_DRAW_PHASE_06, so the figure is moving right; annot:8a0eb8f7128f frame 3136, "pointing forward -- to the right -- as if indicating that lester must following him that way" |
+
+## Superseded, 2026-09-25 (second session)
+
+The two arm rows above originally proposed `..._BUDDY_ARM_TAP` and
+`..._BUDDY_ARM_POINT_RIGHT` without an index, because the middles of both runs
+were still numbered and there was no run to index against. Five more sentences
+closed both runs, and `proposals_*__PRISON_buddy_arms.md` gave all seven their
+positions: these two are `_TAP_F0` and `_POINT_RIGHT_F2`.
+
+The `new` column here is updated to the final names so the citations still
+resolve; the evidence is untouched, because it was right. **The mechanism had no
+word for this.** `annotation_queue.py --check` reported both as PROPOSED -- "a
+rejected row, or a half-applied batch" -- and it was neither: it was a row
+superseded by a better one. What makes that indistinguishable from a real
+half-apply is exactly what makes PROPOSED worth having, so the state is not being
+added; the note is.
