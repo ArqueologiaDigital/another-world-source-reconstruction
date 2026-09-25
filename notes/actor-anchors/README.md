@@ -290,3 +290,76 @@ should travel:
 - `--scarcity` is the reason to expect all of this rather than treat it as a
   quirk, and it is worth re-running before assuming any low-numbered variable
   means one thing.
+
+
+## 2026-09-25, later still: it is a scheduler, and the thread does not save you
+
+The owner narrowed the question: is the variable repurposed **within a single
+scene**, and specifically, is `BUDDY_X` carrying the guard's movements? Yes, and
+the tree names the mechanism itself -- somebody labelled these routines before
+any of this came up and the words were sitting there:
+
+    PRISON_ACTOR_CONTEXT_LOAD_SLOT0_LOOP:
+        call PRISON_ACTOR_SLOT0_FLOOR_Y_CASE_25
+        mov [BUDDY_X], [0x68]      mov [BUDDY_Y], [0x69]
+        mov [0x10],    [0x6A]      mov [0x11],    [0x6B]
+        mov [0x09],    [0x6D]      mov [0x12],    [0x6C]
+        mov [0x13],    [0x6E]      mov [0x29],    [0x6F]
+        call SPLIT_VAR09_BITS_INTO_VAR0D
+        break
+        jmp PRISON_ACTOR_CONTEXT_LOAD_SLOT0_LOOP
+
+    PRISON_ACTOR_CONTEXT_ROTATE_INTO_SLOT1_LOOP:
+        call PRISON_ACTOR_SLOT_WRITEBACK_PREP
+        mov [0x68], [BUDDY_X]      ... writes the whole set back ...
+        mov [BUDDY_X], [0x70]      ... then loads the next slot ...
+
+**`[0x07]` and `[0x08]` are the working registers of a cooperative actor
+scheduler.** Three actor records of eight words each live at `0x68`, `0x70` and
+`0x78`; a thread writes its record back, loads the next, runs one frame's worth
+of logic, `break`s, and repeats. `PRISON_ACTOR_CONTEXT_COMMIT_SLOT2_LOOP` closes
+the chain by writing back without loading.
+
+The record layout, read off the loads:
+
+    +0 X   +1 Y   +2 [0x10]   +3 [0x11]   +4 [0x12]   +5 [0x09]   +6 [0x13]   +7 [0x29]
+
+How many actors run is per scene, from the `setup channel` lines: the guard
+scene at `PRISON.asm:8882` installs two of them, on channels 0x21 and 0x24; the
+cage scene at 13500 installs three, on 0x22, 0x24 and 0x26.
+
+So `BUDDY_X` does not name Buddy's X. It names **the current actor's** X, and
+which actor is current is a property of the thread and the moment.
+
+### And the thread is not the answer either
+
+The obvious next move is to identify the actor by the thread, since
+`tools/vm-debugger/` records one on every draw and therefore on every
+annotation. Grouping the 46 PRISON annotations by thread does separate the cast
+cleanly -- 3 and 4 are the background miners, 17 the background runner, 18 the
+gun, 20 Buddy in the cage, 52 the cage wreck and later the lift, 56 and 57 the
+lift sparkles -- and then it fails on the one that matters:
+
+    thread 35   f136    "full body of the main guard, standing with his back..."
+    thread 35   f2546   "right arm of the guard point a gun upwards"
+    thread 35   f3073   "frame of buddy starting to wake up from the fallen cage"
+    thread 35   f3136   "buddy's right arm pointing forward -- to the right"
+
+**One thread, one slot, two characters**, with the changeover at the cage
+collapse. The slot is re-occupied, so neither the variable nor the thread
+identifies the actor.
+
+### The rule, now with its mechanism
+
+This directory's rule is unchanged and now has a reason rather than a warning
+behind it: **an actor word comes from the scene.** Three levels of re-tasking
+sit under that sentence --
+
+1. across stages: all nine draw with `0x07`, three name it;
+2. across scenes in one stage: six anchor clusters in PRISON, no shared art;
+3. across time in one thread: slot re-occupied at the cage collapse.
+
+-- and one consequence worth stating plainly. `BUDDY_X` and `BUDDY_Y` are
+**misnamed**, not merely ambiguous. `ACTOR_X`/`ACTOR_Y` is what the scheduler
+says they are. That is 1008 references in PRISON, 1043 in CAPSULE and 57 in
+ENDING, so it is the owner's call and not a change to make in passing.
