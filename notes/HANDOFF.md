@@ -102,7 +102,8 @@ runner's cycle with its doorway post and backdrop (7), the cell block floor (1),
 plus the seven routines in `notes/routines-from-annotations/`.
 
 **Held, and it is the session's biggest finding**: eleven "the main guard"
-annotations are drawn at `[BUDDY_X],[BUDDY_Y]`, where the tree's earned routine
+annotations are drawn at `[ACTOR_X],[ACTOR_Y]` (renamed from `BUDDY_*` on
+2026-09-25), where the tree's earned routine
 names say Buddy -- and the same person calls that anchor Buddy from frame 3073
 on, after the cage falls. `notes/actor-anchors/README.md` section "2026-09-25"
 has it in full. Five lift "sparkles" are held separately.
@@ -137,7 +138,7 @@ three msdos stages.
 **What would settle it:** what the colour change means to a player. `[0x12]` is
 not the span, its low bits carry a small magnitude and 0x2000 is a flag packed
 beside them, and the sites setting the flag disagree between stages (CAPSULE
-after `mov [BUDDY_X], 0x000F`, CAVES after `CAVES_BEAST_PER_FRAME_TICK`), so no
+after `mov [ACTOR_X], 0x000F`, CAVES after `CAVES_BEAST_PER_FRAME_TICK`), so no
 subject word is earned from the listing. Someone firing in
 `tools/vm-debugger/` and describing what changes would settle all 34 at once.
 Full measurement in `notes/beam-span-ladder/README.md`.
@@ -734,7 +735,7 @@ without any judgement at all.
 rejected". Check for `applied`. It cost two silent no-ops this session; see
 `notes/render-and-name/README.md`.
 
-**An actor anchor says *the same actor*, never *which* actor.** `[BUDDY_X]`
+**An actor anchor says *the same actor*, never *which* actor.** `[ACTOR_X]`
 and `[HERO_X]` are contradicted by earned names in CAPSULE -- 20 conflicts,
 `notes/actor-anchors/anchor_identity.py`. Group by the anchor, name with the
 neutral `FIGURE` the stage already uses, and record the anchor as evidence.

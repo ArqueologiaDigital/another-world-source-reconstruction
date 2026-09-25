@@ -392,7 +392,7 @@ Convention: `<ROLE>_<QUALIFIER>`, and it already works — the 15 engine aliases
 **Scoping rule.** A name belongs in `_common_vars.inc` only if it means the same
 thing in every stage and every port. Anything stage-variant belongs in the
 registry's per-stage `variable_aliases` instead. Today that holds 5 names
-(`HERO_X`, `HERO_Y`, `BUDDY_X`, `BUDDY_Y`, `COUNTER`) against 218 distinct
+(`HERO_X`, `HERO_Y`, `ACTOR_X`, `ACTOR_Y`, `COUNTER`) against 218 distinct
 variable ids in use, so 20 names cover 28 % of references.
 
 A label may not embed a raw variable number once that number has an alias. 78

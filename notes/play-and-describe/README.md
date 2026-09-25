@@ -376,7 +376,7 @@ draw list is read from the `.asm`.
 measured this and declined to encode actor identity from anchors at all; its
 probe reports 72 conflicts between a name's own actor word and the anchor it is
 drawn at. A person who has played the game names the companion with complete
-confidence and no access to `[BUDDY_X]`. The word is recorded in the evidence
+confidence and no access to `[ACTOR_X]`. The word is recorded in the evidence
 cell; it enters the name only where that stage's earned names already use it at
 that anchor.
 

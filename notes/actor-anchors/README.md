@@ -363,3 +363,22 @@ sit under that sentence --
 **misnamed**, not merely ambiguous. `ACTOR_X`/`ACTOR_Y` is what the scheduler
 says they are. That is 1008 references in PRISON, 1043 in CAPSULE and 57 in
 ENDING, so it is the owner's call and not a change to make in passing.
+
+
+## Outcome, 2026-09-25: the variable was renamed
+
+`BUDDY_X` and `BUDDY_Y` are now `ACTOR_X` and `ACTOR_Y`, 16,564 references
+across PRISON, CAPSULE and ENDING in every branch that defines them, both trees
+and the `.asm.in` sources. `make test` PASS.
+
+**The argument above is left in its original wording on purpose.** It is the
+record of how the conclusion was reached, and it was reached while the variable
+was still called `BUDDY_X`; rewriting the evidence to use the name the evidence
+produced would make it unreadable as an argument. The same applies to the
+proposal tables under `../render-and-name/` and `../naming-proposals/` that quote
+`[BUDDY_X],[BUDDY_Y]` in their evidence cells, and to the blog drafts.
+
+What was NOT renamed: `CAPSULE_BUDDY_DRAW_CV310_AT_ACTOR_X_PLUS_1` keeps its
+`CAPSULE_BUDDY_` prefix. That is an actor claim about a routine, and this
+directory takes no position on any particular one of them -- only on the fact
+that the anchor cannot be the reason for it.
