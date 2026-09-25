@@ -613,7 +613,12 @@ def flags_for(a: str, ix: Index) -> list[str]:
         or tgt.get("name") or ""
     out = ["still numbered" if RE_NUMBERED.match(name) else "already named"]
     if name.startswith("CV_") or tgt.get("kind") == "video2":
-        out.append("SHARED BANK - no applier "
+        # NOT "no applier": notes/shared-bank-naming/apply_bank_names.py exists
+        # for exactly this, and renames globally because the bank is one file
+        # byte-identical across ports. Saying there is none sent a naming pass
+        # past three nameable constants.
+        out.append("SHARED BANK - apply with "
+                   "notes/shared-bank-naming/apply_bank_names.py --map "
                    "(apply_cinematic_renames.py matches CINEMATIC_* only)")
     for typed in typed_names(e):
         for rx, why in FORBIDDEN:

@@ -1,0 +1,9 @@
+# Shared-bank names earned from a play session's annotations, 2026-09-25.
+# Applied with:
+#   python3 notes/shared-bank-naming/apply_bank_names.py \
+#       --map notes/shared-bank-naming/from-annotations/2026-09-25_prison.map --apply
+# The bank is one file, byte-identical across ports, so these rename globally.
+# Grounds per line are in README.md beside this file.
+CV_2D4E   CV_FIGURE_WALK_LEFT_LIMB_POSE_04
+CV_245C   CV_FIGURE_WALK_RIGHT_LIMB_POSE_04
+CV_4346   CV_FIGURE_STAND_BODY
