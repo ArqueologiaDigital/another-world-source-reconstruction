@@ -67,7 +67,7 @@ RE_VAR_EQU = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*)\s+EQU\s+(0x[0-9A-Fa-f]{2})\s
 # because a stage only gets the symbol if that stage's file defines it. CAVES has
 # 403 draws at a raw `[0x07]` and no `BUDDY_X` EQU at all. Any query over anchors
 # has to normalise, or it silently misses them -- this one did, once.
-CANON = {"0x01": "HERO_X", "0x02": "HERO_Y", "0x07": "BUDDY_X", "0x08": "BUDDY_Y"}
+CANON = {"0x01": "HERO_X", "0x02": "HERO_Y", "0x07": "ACTOR_X", "0x08": "ACTOR_Y"}
 RE_LABEL = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*):\s*$")
 RE_NUMBERED = re.compile(r"^CINEMATIC_\d+$")
 

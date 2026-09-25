@@ -36,7 +36,7 @@ they found and this measures it.
 
 Run it
     python3 notes/actor-anchors/shared_actor_art.py \
-        --branch dos_1992 --stage PRISON --anchor BUDDY \
+        --branch dos_1992 --stage PRISON --anchor ACTOR \
         --scene guard:8800-10100 --scene buddy:3600-3800
     ... --cross-anchor HERO,BUDDY   # constants drawn at BOTH anchors
     ... --romset <dir>              # default: msdos, for canonical_md5
@@ -85,8 +85,8 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--branch", required=True)
     ap.add_argument("--stage", required=True)
-    ap.add_argument("--anchor", default="BUDDY",
-                    help="the variable stem: BUDDY means BUDDY_X/BUDDY_Y")
+    ap.add_argument("--anchor", default="ACTOR",
+                    help="the variable stem: ACTOR means ACTOR_X/ACTOR_Y")
     ap.add_argument("--scene", action="append", default=[],
                     metavar="NAME:FIRST-LAST",
                     help="a scene, as a line range in the .asm")

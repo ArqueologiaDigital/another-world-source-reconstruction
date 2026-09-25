@@ -115,7 +115,11 @@ RE_DRAW = re.compile(r"^\s*video\s+type=0,\s*offset=(\w+),\s*x=\[(\w+)\]")
 # Which draw slot a switch has to use to count. Default: the hero's own
 # position. The actor slot (#0138) is opt-in via --at, because a name derived
 # there may describe the pose but never the character.
-SLOTS = {"hero": {"HERO_X"}, "actor": {"0x07", "BUDDY_X"}}
+# BUDDY_X was renamed ACTOR_X on 2026-09-25 (it is the actor scheduler's
+# working register, not Buddy's -- notes/actor-anchors/). Both spellings
+# stay here: this probe is run against older checkouts too, and a set that
+# silently matches nothing is the failure this directory exists to avoid.
+SLOTS = {"hero": {"HERO_X"}, "actor": {"0x07", "ACTOR_X", "BUDDY_X"}}
 RE_RET = re.compile(r"^\s*(ret|break|jmp)\b")
 
 

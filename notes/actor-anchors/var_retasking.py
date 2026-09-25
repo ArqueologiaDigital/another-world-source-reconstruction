@@ -3,7 +3,7 @@
 
 Question answered
 -----------------
-A name like `BUDDY_X` on a VM variable is a claim, and the interpreter makes no
+A name like `ACTOR_X` on a VM variable is a claim, and the interpreter makes no
 such claim: it has 256 signed words and the bytecode puts whatever it likes in
 them. If a stage names `0x07` after a character while another stage uses the same
 word to position falling debris, then the name is **stage-local** -- true where it
@@ -32,7 +32,7 @@ one- or two-digit value for variable names (art constants are four digits),
 `video ... x=[..], y=[..]` for anchor reads.
 
 Run it
-    python3 notes/actor-anchors/var_retasking.py --var BUDDY_X
+    python3 notes/actor-anchors/var_retasking.py --var ACTOR_X
     python3 notes/actor-anchors/var_retasking.py --var 0x07 --stage PRISON
     python3 notes/actor-anchors/var_retasking.py --scarcity
 """
@@ -82,7 +82,7 @@ def clusters(lines: list[int], gap: int = 400):
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--branch", default="dos_1992")
-    ap.add_argument("--var", help="a name like BUDDY_X, or a number like 0x07")
+    ap.add_argument("--var", help="a name like ACTOR_X, or a number like 0x07")
     ap.add_argument("--stage", help="restrict the within-stage report")
     ap.add_argument("--scarcity", action="store_true")
     a = ap.parse_args()
