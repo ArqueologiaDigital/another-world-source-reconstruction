@@ -157,11 +157,21 @@ def main() -> int:
     total = 0
     for k in keys[1:]:
         same = [(n, inv[x]) for n, x in hashes[k].items() if x and x in inv]
-        total += len(same)
-        print(f"  scene {k} constants whose ART matches one in {first}: "
-              f"{len(same)}")
-        for n, others in same:
+        # A constant drawn in both scenes matches ITSELF, which is not art
+        # shared between two subjects -- it is one asset appearing twice. Only a
+        # match to a DIFFERENT constant says two subjects were drawn from one
+        # picture, so the two cases are counted apart.
+        selfm = [(n, o) for n, o in same if o == [n]]
+        cross = [(n, o) for n, o in same if o != [n]]
+        total += len(cross)
+        print(f"  scene {k} constants whose ART matches a DIFFERENT one in "
+              f"{first}: {len(cross)}")
+        for n, others in cross:
             print(f"      {n} == {', '.join(others)}")
+        if selfm:
+            print(f"      (plus {len(selfm)} constant(s) drawn in both scenes: "
+                  f"{', '.join(n for n, _ in selfm[:4])}"
+                  f"{' ...' if len(selfm) > 4 else ''})")
     if total == 0:
         print("\n  No shared art. Two characters, two sets of pictures, one\n"
               "  anchor -- so an actor word is admissible, but only from the\n"

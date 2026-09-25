@@ -14,6 +14,7 @@ see below.
 | --- | --- |
 | `anchor_identity.py` | Does an anchor's own name agree with the names drawn at it? |
 | `shared_actor_art.py` | Two characters stand in one anchor slot -- do they share any art? |
+| `var_retasking.py` | Does a VM variable mean the same thing everywhere it is used? |
 
 `anchor_identity.py` lists every anchor that is a pair of named variables, the
 named constants drawn there, and any name whose own actor word disagrees with
@@ -211,3 +212,81 @@ the guard's head -- so the person and the tree **disagree about the same
 constant**. `#0120` says not to pick between earned names, so the eleven guard
 constants are held, one verdict each in
 `../play-and-describe/verdicts.tsv`, with this section as what would settle them.
+
+
+## 2026-09-25, later: the variable is re-tasked, and here is the size of it
+
+The owner asked the question this note had been circling: are `BUDDY_X` and
+`BUDDY_Y` used for other characters, perhaps because the VM is short of
+variables? Both halves are yes, and the second half is measurable.
+
+    python3 notes/actor-anchors/var_retasking.py --var BUDDY_X
+    python3 notes/actor-anchors/var_retasking.py --scarcity
+
+### The variable is `0x07`, and every stage draws with it
+
+`BUDDY_X` is `0x07` and `BUDDY_Y` is `0x08` -- **low** numbers, which in this VM
+is scratch space. Of the nine stages in `dos_1992`, three name it and all nine
+draw with it:
+
+| stage | names `0x07` | raw `[0x07]` uses | draws anchored on it |
+| --- | --- | ---: | ---: |
+| PRISON | `BUDDY_X` | 0 | 465 |
+| CAPSULE | `BUDDY_X` | 0 | 467 |
+| ENDING | `BUDDY_X` | 0 | 51 |
+| CAVES | — | 790 | 425 |
+| CODE_WHEEL | — | 68 | 47 |
+| PASSCODE | — | 70 | 43 |
+| TANK | — | 24 | 13 |
+| INTRO | — | 16 | 5 |
+| LAKE | — | 54 | 2 |
+
+INTRO, CODE_WHEEL and PASSCODE draw hundreds of pictures positioned by `0x07`
+in stages where **Buddy does not exist** -- he is introduced in PRISON. The
+clearest single case is the first annotation this project ever received:
+`CINEMATIC_STORM_PARTICLE_F00..F04` are drawn at `x=[0x07], y=[0x09]` in INTRO.
+The same word that positions Buddy in three stages positions wind-blown debris
+in the first.
+
+So `BUDDY_X` is a **stage-local alias**. It is asserted only in the three stages
+where Buddy appears, which is the right discipline; it says nothing about `0x07`
+anywhere else, and reading it as a global fact is how art gets attributed to the
+wrong actor.
+
+### Scarcity is real, which is the reason to expect this
+
+Distinct VM variables each stage touches, of 256:
+
+    CAVES 188   PRISON 183   CAPSULE 180   LAKE 155   TANK 101
+    CODE_WHEEL 84   PASSCODE 52   INTRO 21   ENDING 14      UNION 216
+
+The three big stages each consume about seventy per cent of the register file
+and the game as a whole touches 216 of 256. A machine that full has to reuse
+words, and the low numbers are exactly where a compiler-less codebase puts its
+scratch.
+
+### And it is re-tasked WITHIN a stage, six times over
+
+`var_retasking.py --stage PRISON` groups the writes and the anchored draws into
+line clusters. PRISON has 212 writes to `0x07` in 8 clusters and 465 anchored
+draws in **6**:
+
+    2686-3766   5217-5226   6289-6381   8809-8942   9396-11769   14021
+
+Feeding those six to `shared_actor_art.py` gives 49, 2, 10, 33, 208 and 1
+constants, and **no two of them share a picture**: the only constants appearing
+in more than one cluster are two drawn in both, not two constants drawn from one
+asset. Six groups of subjects, one register.
+
+### What this changes
+
+Nothing is retracted, and the rule this directory already reached is the right
+one -- an actor word comes from the scene. What changes is how far the suspicion
+should travel:
+
+- a variable NAME is evidence about the stage that asserts it and nowhere else;
+- inside a stage, a name on a variable is still not evidence about which scene
+  a draw belongs to, because the same word serves six of them here;
+- `--scarcity` is the reason to expect all of this rather than treat it as a
+  quirk, and it is worth re-running before assuming any low-numbered variable
+  means one thing.
