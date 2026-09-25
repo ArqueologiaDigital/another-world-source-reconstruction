@@ -6,10 +6,10 @@ LABEL_4CB8:
 	db 0x11
 
 LABEL_4CB9:
-	mov [BUDDY_X], 0x0118
-	mov [BUDDY_Y], 0x00B6
+	mov [ACTOR_X], 0x0118
+	mov [ACTOR_Y], 0x00B6
 	mov [PAUSE_SLICES], 0x0007
-	video offset=CINEMATIC_633, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_633, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	jmp LABEL_4CB9
 LABEL_4CCE:

@@ -1,6 +1,6 @@
 LABEL_3276:
-	mov [0x21], [BUDDY_X]
-	mov [0x27], [BUDDY_Y]
+	mov [0x21], [ACTOR_X]
+	mov [0x27], [ACTOR_Y]
 	sub [0x27], 0x000B
 	mov [0x22], [0x21]
 	add [0x21], 0x0028
@@ -11,17 +11,17 @@ LABEL_3276:
 
 
 LABEL_3293:
-	mov [0x21], [BUDDY_X]
+	mov [0x21], [ACTOR_X]
 	mov [0x22], [HERO_X]
-	mov [0x27], [BUDDY_Y]
+	mov [0x27], [ACTOR_Y]
 	call LABEL_4644
 	ret
 
 
 LABEL_32A0:
 	call LABEL_32E6
-	mov [0x22], [BUDDY_X]
-	mov [0x27], [BUDDY_Y]
+	mov [0x22], [ACTOR_X]
+	mov [0x27], [ACTOR_Y]
 	call LABEL_4644
 	ret
 
@@ -38,14 +38,14 @@ PRISON_DEDUP_PRISON_5B_023_L1:
 	call PRISON_HERO_FRONT_X_BY_FACING
 	mov [0x29], [HERO_X]
 	mov [HERO_X], [0x22]
-	mov [0x27], [BUDDY_Y]
+	mov [0x27], [ACTOR_Y]
 	call LABEL_4644
 	mov [HERO_X], [0x29]
 	ret
 
 
 LABEL_32E6:
-	mov [0x21], [BUDDY_X]
+	mov [0x21], [ACTOR_X]
 	jge [0x2B], 0x1000, INCREMENT_VAR21_BY_F
 	sub [0x21], 0x000F
 	ret

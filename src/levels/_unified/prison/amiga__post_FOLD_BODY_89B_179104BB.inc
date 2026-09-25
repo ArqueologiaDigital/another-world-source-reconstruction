@@ -1,11 +1,11 @@
 ANIM_CIN_438_LOOP_VAR29:
-	video offset=CINEMATIC_PRISON_BUDDY_RISE_F0, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_BUDDY_RISE_F0, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	djnz [0x29], ANIM_CIN_438_LOOP_VAR29
-	add [BUDDY_Y], 0x0005
-	video offset=CINEMATIC_PRISON_BUDDY_RISE_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	add [ACTOR_Y], 0x0005
+	video offset=CINEMATIC_PRISON_BUDDY_RISE_F1, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_PRISON_BUDDY_RISE_F2, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_BUDDY_RISE_F2, x=[ACTOR_X], y=[ACTOR_Y]
 	mov [0x0E], 0x0001
 	mov [0x29], 0x0003
 
@@ -32,14 +32,14 @@ LABEL_19ED:
 	djnz [0x29], LABEL_19ED
 	break
 	call LABEL_6201
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_342
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_338_339
 	call AND_VAR11_WITH_EFFF
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	mov [0x29], 0x0008
 	mov [0x0E], 0x0004
 
@@ -49,14 +49,14 @@ LABEL_1A18:
 	djnz [0x29], LABEL_1A18
 	break
 	call LABEL_5661
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_342
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	break
 	call LABEL_61E0
 	call INLINE_OR_VAR11_WITH_1000
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	mov [0x29], 0x0003
 
 LABEL_1A3F:
@@ -65,45 +65,45 @@ LABEL_1A3F:
 	djnz [0x29], LABEL_1A3F
 	break
 	call PRISON_ACTOR_WALK_RIGHT_DRAW_PHASE_04
-	add [BUDDY_X], 0x0003
+	add [ACTOR_X], 0x0003
 	break
 	call PRISON_ACTOR_WALK_RIGHT_DRAW_PHASE_05
-	add [BUDDY_X], 0x0003
+	add [ACTOR_X], 0x0003
 	break
 	call PRISON_ACTOR_WALK_RIGHT_DRAW_PHASE_06
-	add [BUDDY_X], 0x0003
+	add [ACTOR_X], 0x0003
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_PRISON_BUDDY_ARM_TAP, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_BUDDY_ARM_TAP, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_442, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_442, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_443, x=[BUDDY_X], y=[BUDDY_Y]
-	break
-	call GUARDED_HERO_ANIM_CV_291
-	play id=0x0060, freq=0x0F, vol=0x40, channel=0x00
-	video offset=CINEMATIC_444, x=[BUDDY_X], y=[BUDDY_Y]
-	break
-	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_443, x=[BUDDY_X], y=[BUDDY_Y]
-	break
-	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_442, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_443, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
 	play id=0x0060, freq=0x0F, vol=0x40, channel=0x00
-	video offset=CINEMATIC_444, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_444, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_443, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_443, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_442, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_442, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_PRISON_BUDDY_ARM_TAP, x=[BUDDY_X], y=[BUDDY_Y]
+	play id=0x0060, freq=0x0F, vol=0x40, channel=0x00
+	video offset=CINEMATIC_444, x=[ACTOR_X], y=[ACTOR_Y]
+	break
+	call GUARDED_HERO_ANIM_CV_291
+	video offset=CINEMATIC_443, x=[ACTOR_X], y=[ACTOR_Y]
+	break
+	call GUARDED_HERO_ANIM_CV_291
+	video offset=CINEMATIC_442, x=[ACTOR_X], y=[ACTOR_Y]
+	break
+	call GUARDED_HERO_ANIM_CV_291
+	video offset=CINEMATIC_PRISON_BUDDY_ARM_TAP, x=[ACTOR_X], y=[ACTOR_Y]
 	mov [0x29], 0x0008
 
 LABEL_1AC9:
@@ -112,29 +112,29 @@ LABEL_1AC9:
 	djnz [0x29], LABEL_1AC9
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_PRISON_BUDDY_ARM_TAP, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_BUDDY_ARM_TAP, x=[ACTOR_X], y=[ACTOR_Y]
 	play id=0x0073, freq=0x14, vol=0x30, channel=0x01
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_445, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_445, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_445, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_445, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_446, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_446, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_PRISON_BUDDY_ARM_POINT_RIGHT, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_BUDDY_ARM_POINT_RIGHT, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_PRISON_BUDDY_ARM_POINT_RIGHT, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_BUDDY_ARM_POINT_RIGHT, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_442, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_442, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call GUARDED_HERO_ANIM_CV_291
-	video offset=CINEMATIC_PRISON_BUDDY_ARM_TAP, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_BUDDY_ARM_TAP, x=[ACTOR_X], y=[ACTOR_Y]
 	mov [0x29], 0x0003
 
 LABEL_1B23:

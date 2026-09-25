@@ -10,7 +10,7 @@ LABEL_2EFC:
 
 
 LABEL_2F1E:
-	jg [BUDDY_X], 0x8C, LABEL_2F2D
+	jg [ACTOR_X], 0x8C, LABEL_2F2D
 	mov [0x29], 0x00AA
 	mov [0x2F], 0x0001
 	ret
@@ -27,6 +27,6 @@ LABEL_2F2D:
 LABEL_2F3F:
 	mov [0xF8], [HERO_X]
 	sub [0xF8], 0x000A
-	jl [BUDDY_X], [0xF8], SET_VARS_29_2F
+	jl [ACTOR_X], [0xF8], SET_VARS_29_2F
 	add [0xF8], 0x0014
-	jl [BUDDY_X], [0xF8], SHARED_RET
+	jl [ACTOR_X], [0xF8], SHARED_RET

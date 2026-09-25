@@ -1,8 +1,8 @@
 LABEL_5D5F:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
 	call DRAW_PRISON_HERO_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_2570, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
-	video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_2570, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_RIGHT_BODY_F04, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	je [0x0D], 0x00, INLINE_DRAW_CV_255_010__HELPER
 	call PRISON_BUDDY_DRAW_CIN_170_THEN_169_IF_BAR31_3
 	jmp PRISON_INLINE_DRAW_CV_255_010_L0

@@ -151,8 +151,8 @@ LABEL_79DB:
 	call PRISON_HERO_STAND_LEFT_DRAW
 	mov [0x11], 0x0000
 	jne [0x6A], [SCREEN_NUM], LABEL_7A1D
-	mov [BUDDY_X], [0x68]
-	mov [BUDDY_Y], [0x69]
+	mov [ACTOR_X], [0x68]
+	mov [ACTOR_Y], [0x69]
 	mov [0x0E], 0x0000
 	mov [0x0D], 0x0000
 	mov [0x10], [0x6A]

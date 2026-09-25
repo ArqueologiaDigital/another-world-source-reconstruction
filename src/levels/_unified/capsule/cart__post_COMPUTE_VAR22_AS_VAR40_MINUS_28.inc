@@ -13,7 +13,7 @@ LABEL_69BB:
 	break
 	video offset=CINEMATIC_062, x=17, y=[0x40]
 	mov [0x21], 0x0011
-	mov [BUDDY_Y], [0x40]
+	mov [ACTOR_Y], [0x40]
 	mov [0x10], [SCREEN_NUM]
 	call LABEL_6675
 	killChannel
@@ -33,7 +33,7 @@ LABEL_69F2:
 	break
 	video offset=CINEMATIC_062, x=299, y=[0x40]
 	mov [0x21], 0x0122
-	mov [BUDDY_Y], [0x40]
+	mov [ACTOR_Y], [0x40]
 	mov [0x10], [SCREEN_NUM]
 	call LABEL_6675
 	killChannel

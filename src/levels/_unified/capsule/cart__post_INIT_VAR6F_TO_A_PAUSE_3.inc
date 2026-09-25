@@ -90,12 +90,12 @@ LABEL_383E:
 LABEL_3856:
 	mov [PAUSE_SLICES], 0x0004
 	jne [SCREEN_NUM], [0x6A], LABEL_3865
-	video offset=CINEMATIC_284, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_284, x=[ACTOR_X], y=[ACTOR_Y]
 
 LABEL_3865:
 	break
 	jne [SCREEN_NUM], [0x6A], LABEL_3871
-	video offset=CINEMATIC_283, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_283, x=[ACTOR_X], y=[ACTOR_Y]
 
 LABEL_3871:
 	break

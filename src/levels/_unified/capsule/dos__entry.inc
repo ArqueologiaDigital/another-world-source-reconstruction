@@ -1801,14 +1801,14 @@ LABEL_013A:
 	db 0x11
 
 LABEL_013B:
-	mov [BUDDY_X], 0x002B
-	add [BUDDY_X], 0x0001
+	mov [ACTOR_X], 0x002B
+	add [ACTOR_X], 0x0001
 	call LABEL_8967
 	break
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	call LABEL_8976
 	break
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	call LABEL_8994
 	break
 	call LABEL_8985
@@ -1853,9 +1853,9 @@ LABEL_01A6:
 	break
 	call LABEL_8967
 	break
-	add [BUDDY_X], 0x0018
-	video offset=CINEMATIC_282, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_316, x=[BUDDY_X], y=[BUDDY_Y]
+	add [ACTOR_X], 0x0018
+	video offset=CINEMATIC_282, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_316, x=[ACTOR_X], y=[ACTOR_Y]
 	call LABEL_0165
 	jne [0x21], 0x00, LABEL_02C1
 	setup channel=0x23, address=LABEL_01D3
@@ -1863,11 +1863,11 @@ LABEL_01A6:
 	killChannel
 
 LABEL_01D3:
-	add [BUDDY_X], 0x0002
+	add [ACTOR_X], 0x0002
 	jmp LABEL_01E8
-	add [BUDDY_Y], 0x0004
-	video offset=CINEMATIC_123, x=[BUDDY_X], y=[BUDDY_Y]
-	sub [BUDDY_Y], 0x0004
+	add [ACTOR_Y], 0x0004
+	video offset=CINEMATIC_123, x=[ACTOR_X], y=[ACTOR_Y]
+	sub [ACTOR_Y], 0x0004
 	break
 
 LABEL_01E8:

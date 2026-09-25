@@ -1,77 +1,77 @@
 LABEL_129F:
-	video offset=CINEMATIC_125, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_126, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_125, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_126, x=[ACTOR_X], y=[ACTOR_Y]
 	play id=0x005E, freq=0x1C, vol=0x40, channel=0x01
 	break
-	video offset=CINEMATIC_127, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_126, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_127, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_126, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_128, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_129, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_128, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_129, x=[ACTOR_X], y=[ACTOR_Y]
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x00
 	break
-	video offset=CINEMATIC_130, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_129, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_130, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_129, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_127, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_126, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_127, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_126, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	djnz [0x29], LABEL_129F
 	sub [0xEF], 0x0001
 	jl [0xEF], 0x00, LABEL_1369
-	video offset=CINEMATIC_234, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_234, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_235, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_235, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_236, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_236, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_237, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_237, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	mov [0x29], 0x0004
 
 LABEL_130C:
-	video offset=CINEMATIC_238, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_134, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_238, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_134, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_239, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_134, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_239, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_134, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_240, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_241, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_240, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_241, x=[ACTOR_X], y=[ACTOR_Y]
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x00
 	break
-	video offset=CINEMATIC_242, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_241, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_242, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_241, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_239, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_134, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_239, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_134, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	djnz [0x29], LABEL_130C
-	video offset=CINEMATIC_243, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_243, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_133, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_133, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_132, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_132, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_131, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_131, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	jmp INLINE_SET_VAR29_TO_4
 LABEL_1368:
 	db 0x11
 
 LABEL_1369:
-	video offset=CINEMATIC_131, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_131, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_132, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_132, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	play id=0x0075, freq=0x0A, vol=0x40, channel=0x01
-	video offset=CINEMATIC_133, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_133, x=[ACTOR_X], y=[ACTOR_Y]
 	setup channel=0x23, address=LABEL_142B
 	setup channel=0x25, address=LABEL_1389
 	killChannel
 
 LABEL_1389:
-	video offset=CINEMATIC_134, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_134, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	mov [0x12], 0x0038
 	mov [0x29], [HERO_X]
@@ -84,24 +84,24 @@ LABEL_13A1:
 STATE_VAR12_BIG_DISPATCH_CASE_38:
 	call CAPSULE_BUDDY_PER_FRAME_TICK
 	break
-	video offset=CINEMATIC_114, x=[BUDDY_X], y=[BUDDY_Y]
-	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video offset=CINEMATIC_114, x=[ACTOR_X], y=[ACTOR_Y]
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_00, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	break
-	video offset=CINEMATIC_CAPSULE_HERO_STAND_SHOOT_LEFT_F1, x=[BUDDY_X], y=[BUDDY_Y]
-	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video offset=CINEMATIC_CAPSULE_HERO_STAND_SHOOT_LEFT_F1, x=[ACTOR_X], y=[ACTOR_Y]
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_01, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	play id=0x005E, freq=0x11, vol=0x40, channel=0x01
 	setup channel=0x37, address=LABEL_13FB
 	deleteChannels first=0x14, last=0x16
 	break
-	add [BUDDY_X], 0x0002
-	video offset=CINEMATIC_CAPSULE_HERO_STAND_SHOOT_LEFT_F0, x=[BUDDY_X], y=[BUDDY_Y]
-	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	add [ACTOR_X], 0x0002
+	video offset=CINEMATIC_CAPSULE_HERO_STAND_SHOOT_LEFT_F0, x=[ACTOR_X], y=[ACTOR_Y]
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_03, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	break
-	video offset=CINEMATIC_117, x=[BUDDY_X], y=[BUDDY_Y]
-	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video offset=CINEMATIC_117, x=[ACTOR_X], y=[ACTOR_Y]
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_04, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	break
-	video offset=CINEMATIC_118, x=[BUDDY_X], y=[BUDDY_Y]
-	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_06, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video offset=CINEMATIC_118, x=[ACTOR_X], y=[ACTOR_Y]
+	video type=0, offset=CV_FIGURE_WALK_RIGHT_UPPER_POSE_06, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	break
 	mov [0x29], 0x000A
 	mov [0x2F], 0x0018
@@ -127,14 +127,14 @@ LABEL_13FB:
 
 LABEL_142B:
 	or [0x11], 0x0200
-	video offset=CINEMATIC_135, x=[BUDDY_X], y=[BUDDY_Y]
-	add [BUDDY_Y], 0x000C
+	video offset=CINEMATIC_135, x=[ACTOR_X], y=[ACTOR_Y]
+	add [ACTOR_Y], 0x000C
 	break
-	video offset=CINEMATIC_135, x=[BUDDY_X], y=[BUDDY_Y]
-	add [BUDDY_Y], 0x0010
+	video offset=CINEMATIC_135, x=[ACTOR_X], y=[ACTOR_Y]
+	add [ACTOR_Y], 0x0010
 	break
-	video offset=CINEMATIC_135, x=[BUDDY_X], y=[BUDDY_Y]
-	add [BUDDY_Y], 0x0012
+	video offset=CINEMATIC_135, x=[ACTOR_X], y=[ACTOR_Y]
+	add [ACTOR_Y], 0x0012
 	break
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x01
 	jmp LABEL_1796

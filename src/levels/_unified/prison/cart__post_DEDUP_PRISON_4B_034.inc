@@ -94,7 +94,7 @@ LABEL_7D70:
 	video offset=CINEMATIC_102, x=[HERO_X], y=[HERO_Y]
 	video offset=CINEMATIC_103, x=160, y=[HERO_Y]
 	je [0x11], 0x00, SHARED_RET
-	video offset=CINEMATIC_131, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_131, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 

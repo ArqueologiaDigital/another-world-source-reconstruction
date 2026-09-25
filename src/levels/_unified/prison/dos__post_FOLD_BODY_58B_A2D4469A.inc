@@ -78,7 +78,7 @@ LABEL_2B0A:
 	jl [SCREEN_NUM], 0x03, LABEL_2B51
 	mov [0x10], 0x0001
 	call COPY_HASH_AND_SPLIT_VAR38_3F_3E
-	mov [BUDDY_X], [0x3F]
+	mov [ACTOR_X], [0x3F]
 	mov [0x12], 0x6010
 	mov [0x0E], 0x0000
 	mov [0x0D], 0x0001

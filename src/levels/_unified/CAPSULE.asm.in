@@ -1,7 +1,7 @@
 HERO_X		EQU 0x01
 HERO_Y		EQU 0x02
-BUDDY_X		EQU 0x07
-BUDDY_Y		EQU 0x08
+ACTOR_X		EQU 0x07
+ACTOR_Y		EQU 0x08
 CACHED_SCREEN_NUM	EQU 0x66
 ; STAGE CAPSULE: alien city, capsule ride, escape sequences.
 ;

@@ -1,7 +1,7 @@
 LABEL_14B0:
 	call LABEL_88DA
-	mov [BUDDY_X], [0x68]
-	mov [BUDDY_Y], [0x69]
+	mov [ACTOR_X], [0x68]
+	mov [ACTOR_Y], [0x69]
 	mov [0x10], [0x6A]
 	mov [0x11], [0x6B]
 	mov [0x09], [0x6D]
@@ -16,16 +16,16 @@ LABEL_14D2:
 
 LABEL_14D3:
 	call PRISON_ACTOR_SLOT_WRITEBACK_PREP
-	mov [0x68], [BUDDY_X]
-	mov [0x69], [BUDDY_Y]
+	mov [0x68], [ACTOR_X]
+	mov [0x69], [ACTOR_Y]
 	mov [0x6A], [0x10]
 	mov [0x6B], [0x11]
 	mov [0x6D], [0x09]
 	mov [0x6C], [0x12]
 	mov [0x6E], [0x13]
 	mov [0x6F], [0x29]
-	mov [BUDDY_X], [0x70]
-	mov [BUDDY_Y], [0x71]
+	mov [ACTOR_X], [0x70]
+	mov [ACTOR_Y], [0x71]
 	mov [0x10], [0x72]
 	mov [0x11], [0x73]
 	mov [0x09], [0x75]
@@ -40,16 +40,16 @@ LABEL_150D:
 
 BUDDY_HACK_FIRST_TYPING_LOOP:
 	call PRISON_ACTOR_SLOT_WRITEBACK_PREP
-	mov [0x70], [BUDDY_X]
-	mov [0x71], [BUDDY_Y]
+	mov [0x70], [ACTOR_X]
+	mov [0x71], [ACTOR_Y]
 	mov [0x72], [0x10]
 	mov [0x73], [0x11]
 	mov [0x75], [0x09]
 	mov [0x74], [0x12]
 	mov [0x76], [0x13]
 	mov [0x77], [0x29]
-	mov [BUDDY_X], [0x78]
-	mov [BUDDY_Y], [0x79]
+	mov [ACTOR_X], [0x78]
+	mov [ACTOR_Y], [0x79]
 	mov [0x10], [0x7A]
 	mov [0x11], [0x7B]
 	mov [0x09], [0x7D]
@@ -64,8 +64,8 @@ LABEL_1548:
 
 LABEL_1549:
 	call PRISON_ACTOR_SLOT_WRITEBACK_PREP
-	mov [0x78], [BUDDY_X]
-	mov [0x79], [BUDDY_Y]
+	mov [0x78], [ACTOR_X]
+	mov [0x79], [ACTOR_Y]
 	mov [0x7A], [0x10]
 	mov [0x7B], [0x11]
 	mov [0x7D], [0x09]
@@ -79,18 +79,18 @@ LABEL_1568:
 
 DRAW_BUDDY_FIGURE_BASE:
 	jg [HERO_X], 0xEB, DRAW_BUDDY_HACKING_SECURITY_DOOR
-	video offset=CINEMATIC_393, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_393, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
 DRAW_BUDDY_HACKING_SECURITY_DOOR:
-	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
 BUDDY_HACK_FIRST_INIT_AND_STEP_RIGHT:
 	call PRISON_ACTOR_WALK_RIGHT_DRAW_PHASE_02
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	mov [0x29], 0x0005
 
 BUDDY_HACK_FIRST_PREPARE_LOOP:
@@ -100,60 +100,60 @@ BUDDY_HACK_FIRST_PREPARE_LOOP:
 	break
 	call GUARDED_DRAW_CIN_342
 	selectVideoPage 0x00
-	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_390, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_BUDDY_HACKING_SECURITY_DOOR, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_390, x=[ACTOR_X], y=[ACTOR_Y]
 	selectVideoPage 0xFF
 	mov [0x29], 0x000F
 
 LABEL_15A4:
 	break
-	video offset=CINEMATIC_391, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_392, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_391, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_392, x=[ACTOR_X], y=[ACTOR_Y]
 	call DRAW_BUDDY_FIGURE_BASE
 	djnz [0x29], LABEL_15A4
 	break
-	video offset=CINEMATIC_394, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_392, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_394, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_392, x=[ACTOR_X], y=[ACTOR_Y]
 	call DRAW_BUDDY_FIGURE_BASE
 	break
-	video offset=CINEMATIC_395, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_392, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_395, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_392, x=[ACTOR_X], y=[ACTOR_Y]
 	call DRAW_BUDDY_FIGURE_BASE
 	mov [0x29], 0x0014
 
 LABEL_15D6:
 	break
-	video offset=CINEMATIC_397, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_397, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_396, x=[ACTOR_X], y=[ACTOR_Y]
 	call DRAW_BUDDY_FIGURE_BASE
 	djnz [0x29], LABEL_15D6
 	break
-	video offset=CINEMATIC_395, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_395, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_396, x=[ACTOR_X], y=[ACTOR_Y]
 	call DRAW_BUDDY_FIGURE_BASE
 	break
-	video offset=CINEMATIC_400, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_400, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_396, x=[ACTOR_X], y=[ACTOR_Y]
 	call DRAW_BUDDY_FIGURE_BASE
 	break
-	video offset=CINEMATIC_401, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_393, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_401, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_396, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_393, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_402, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_402, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_396, x=[ACTOR_X], y=[ACTOR_Y]
 	call DRAW_BUDDY_FIGURE_BASE
 	mov [0x29], 0x0020
 
 LABEL_1626:
 	break
-	video offset=CINEMATIC_403, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_392, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_403, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_392, x=[ACTOR_X], y=[ACTOR_Y]
 	call DRAW_BUDDY_FIGURE_BASE
 	djnz [0x29], LABEL_1626
 	break
-	video offset=CINEMATIC_404, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_396, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_404, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_396, x=[ACTOR_X], y=[ACTOR_Y]
 	call DRAW_BUDDY_FIGURE_BASE
 	selectVideoPage 0x00
 	video offset=CINEMATIC_405, x=160, y=[0x44]

@@ -1,6 +1,6 @@
 CAPSULE_INLINE_COPY_VAR22_TO_VAR08_L1:
-	mov [0x21], [BUDDY_X]
-	mov [0x22], [BUDDY_Y]
+	mov [0x21], [ACTOR_X]
+	mov [0x22], [ACTOR_Y]
 	mov [0x23], 0x0000
 	mov [0x24], [SCREEN_NUM]
 	mov [0x25], [0x35]
@@ -15,15 +15,15 @@ CAPSULE_INLINE_COPY_VAR22_TO_VAR08_L1:
 
 
 LABEL_7345:
-	mov [0x21], [BUDDY_X]
-	mov [0x22], [BUDDY_Y]
+	mov [0x21], [ACTOR_X]
+	mov [0x22], [ACTOR_Y]
 	mov [0x23], 0x0000
-	jl [BUDDY_X], 0xC3, LABEL_7359
+	jl [ACTOR_X], 0xC3, LABEL_7359
 	mov [0x22], 0x00D2
 
 LABEL_7359:
 	call CAPSULE_FLOOR_LEVEL_SELECT_BY_HEIGHT
-	mov [BUDDY_Y], [0x22]
+	mov [ACTOR_Y], [0x22]
 	ret
 
 

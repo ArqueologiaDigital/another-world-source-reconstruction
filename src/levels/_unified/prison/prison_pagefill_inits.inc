@@ -67,7 +67,7 @@ SET_PAL_07_FILL_TWO_PAGES_86243111:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_BUDDY_POSE_0_0:
-	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_0_0, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_0_0, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -76,7 +76,7 @@ DRAW_PRISON_BUDDY_POSE_0_0:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_BUDDY_POSE_0_1:
-	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_0_1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_0_1, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -85,7 +85,7 @@ DRAW_PRISON_BUDDY_POSE_0_1:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_BUDDY_POSE_0_2:
-	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_0_2, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_0_2, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -94,7 +94,7 @@ DRAW_PRISON_BUDDY_POSE_0_2:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_BUDDY_POSE_0_3:
-	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_0_3, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_0_3, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -103,7 +103,7 @@ DRAW_PRISON_BUDDY_POSE_0_3:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_235:
-	video offset=CINEMATIC_235, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_235, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -112,7 +112,7 @@ DRAW_CIN_235:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_234:
-	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_1_1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_1_1, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -121,7 +121,7 @@ DRAW_CIN_234:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_233:
-	video offset=CINEMATIC_233, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_233, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -130,7 +130,7 @@ DRAW_CIN_233:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_232:
-	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_2_1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_2_1, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -139,7 +139,7 @@ DRAW_CIN_232:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_BUDDY_POSE_3:
-	video offset=CINEMATIC_231, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_231, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -148,7 +148,7 @@ DRAW_PRISON_BUDDY_POSE_3:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_230:
-	video offset=CINEMATIC_230, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_230, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -157,7 +157,7 @@ DRAW_CIN_230:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_229:
-	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_4_1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_4_1, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -166,7 +166,7 @@ DRAW_CIN_229:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_BUDDY_POSE_5:
-	video offset=CINEMATIC_228, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_228, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -175,7 +175,7 @@ DRAW_PRISON_BUDDY_POSE_5:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_225:
-	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_7_0, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_7_0, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -184,7 +184,7 @@ DRAW_CIN_225:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_226:
-	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_7_1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_7_1, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -200,7 +200,7 @@ PRISON_DRAW_CIN_226_L0:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_352:
-	video offset=CINEMATIC_352, x=[0xf5], y=[BUDDY_Y]
+	video offset=CINEMATIC_352, x=[0xf5], y=[ACTOR_Y]
 	ret
 
 
@@ -216,11 +216,11 @@ PRISON_DRAW_CIN_352_L0:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_169_WITH_POS_STEP_AT_B673C5FF:
-	add [BUDDY_Y], 0x000D
-	sub [BUDDY_X], 0x0002
-	video offset=CINEMATIC_169, x=[BUDDY_X], y=[BUDDY_Y]
-	add [BUDDY_X], 0x0002
-	sub [BUDDY_Y], 0x000D
+	add [ACTOR_Y], 0x000D
+	sub [ACTOR_X], 0x0002
+	video offset=CINEMATIC_169, x=[ACTOR_X], y=[ACTOR_Y]
+	add [ACTOR_X], 0x0002
+	sub [ACTOR_Y], 0x000D
 	ret
 
 
@@ -244,7 +244,7 @@ SHARED_RET:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_240:
-	video offset=CINEMATIC_240, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_240, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -256,7 +256,7 @@ DRAW_CIN_240:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_241:
-	video offset=CINEMATIC_241, x=[0xf5], y=[BUDDY_Y]
+	video offset=CINEMATIC_241, x=[0xf5], y=[ACTOR_Y]
 	ret
 
 
@@ -275,7 +275,7 @@ DRAW_CIN_241:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_ACTOR_WALK_LEFT_POSE_00_DONE:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F00, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L1
 	ret
@@ -295,7 +295,7 @@ PRISON_ACTOR_WALK_LEFT_POSE_01:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_ACTOR_WALK_LEFT_POSE_01_DONE:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F01, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L1
 	ret
@@ -308,7 +308,7 @@ PRISON_ACTOR_WALK_LEFT_DRAW_PHASE_02:
 
 PRISON_ACTOR_WALK_LEFT_POSE_02_DONE:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F02, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L4
 	ret
@@ -322,7 +322,7 @@ PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L5:
 
 PRISON_ACTOR_WALK_LEFT_POSE_03_DONE:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F03, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L7
 	ret
@@ -335,7 +335,7 @@ PRISON_ACTOR_WALK_LEFT_DRAW_PHASE_04:
 
 PRISON_ACTOR_WALK_LEFT_POSE_04_DONE:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F04, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call PRISON_DRAW_CV204_AT_X07_PLUS1_Y08_L10
 	ret
@@ -355,7 +355,7 @@ PRISON_ACTOR_WALK_LEFT_POSE_05:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_ACTOR_WALK_LEFT_POSE_05_DONE:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F05, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F05, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call PRISON_INLINE_DRAW_CV_216_027_L0
 	ret
@@ -375,7 +375,7 @@ PRISON_ACTOR_WALK_LEFT_POSE_06:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_ACTOR_WALK_LEFT_POSE_06_DONE:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F06, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F06, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call PRISON_INLINE_DRAW_CV_220_008_L0
 	ret
@@ -395,7 +395,7 @@ PRISON_ACTOR_WALK_LEFT_POSE_07:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_ACTOR_WALK_LEFT_POSE_07_DONE:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F07, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F07, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call PRISON_DRAW_CV224_AT_X07_Y08_L1
 	ret
@@ -415,7 +415,7 @@ PRISON_ACTOR_WALK_LEFT_POSE_08:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_ACTOR_WALK_LEFT_POSE_08_DONE:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F08, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F08, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call PRISON_INLINE_DRAW_CV_228_020_L0
 	ret
@@ -430,17 +430,17 @@ PRISON_ACTOR_WALK_LEFT_POSE_09:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_228_018:
-	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_03, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 DRAW_FIGURE_WALK_LEFT_F09:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F09, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F09, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	call PRISON_INLINE_DRAW_CV_228_020_L0
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	ret
 
 
@@ -453,13 +453,13 @@ PRISON_ACTOR_WALK_LEFT_POSE_10:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_220_008:
-	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_02, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_ACTOR_WALK_LEFT_POSE_10_DONE:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F10, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_BODY_F10, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call DRAW_CIN_240_IF_VAR09_EQ_1
 	call PRISON_INLINE_DRAW_CV_220_008_L0
 	ret
@@ -475,7 +475,7 @@ PRISON_INLINE_DRAW_CV_220_009_L1:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_216_027:
-	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_WALK_LEFT_LIMB_POSE_01, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 .endif
 
 .if BRANCH == "cartridge_1992"
@@ -491,9 +491,9 @@ INLINE_DRAW_CV_216_027:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_ACTOR_WALK_LEFT_PHASE_0_DONE:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F00, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F00, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call PRISON_DRAW_CV263_AT_X07_Y08_L1
-	add [BUDDY_Y], 0x0001
+	add [ACTOR_Y], 0x0001
 	ret
 
 
@@ -511,14 +511,14 @@ PRISON_ACTOR_RUN_LEFT_POSE_01:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_DRAW_CV263_AT_X07_Y08_L4:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F01, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call PRISON_INLINE_DRAW_CV_266_029_L0
 	ret
 
 
 PRISON_INLINE_DRAW_CV_266_029_L1:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
-	add [BUDDY_Y], 0x0001
+	add [ACTOR_Y], 0x0001
 	je [0x0D], 0x00, INLINE_DRAW_CV_269_024__HELPER
 	call DRAW_CIN_242_THEN_243
 	jmp PRISON_INLINE_DRAW_CV_266_029_L2
@@ -531,15 +531,15 @@ PRISON_INLINE_DRAW_CV_266_029_L1:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_INLINE_DRAW_CV_266_029_L2:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F02, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call PRISON_INLINE_DRAW_CV_269_024_L0
-	sub [BUDDY_Y], 0x0001
+	sub [ACTOR_Y], 0x0001
 	ret
 
 
 PRISON_BUDDY_WALK_LEFT_PHASE_3:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
-	add [BUDDY_Y], 0x0001
+	add [ACTOR_Y], 0x0001
 	je [0x0D], 0x00, INLINE_DRAW_CV_272_003__HELPER
 	call DRAW_CIN_242_THEN_243
 	jmp PRISON_ACTOR_WALK_LEFT_PHASE_3_DONE
@@ -552,9 +552,9 @@ PRISON_BUDDY_WALK_LEFT_PHASE_3:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_ACTOR_WALK_LEFT_PHASE_3_DONE:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F03, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call PRISON_INLINE_DRAW_CV_272_003_L0
-	sub [BUDDY_Y], 0x0001
+	sub [ACTOR_Y], 0x0001
 	ret
 
 
@@ -572,14 +572,14 @@ PRISON_ACTOR_RUN_LEFT_POSE_04:
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_DRAW_CV275_AT_X07_Y08_L0:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F04, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F04, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call PRISON_DRAW_CV275_AT_X07_Y08_L1
 	ret
 
 
 PRISON_BUDDY_WALK_LEFT_PHASE_5:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
-	sub [BUDDY_Y], 0x0001
+	sub [ACTOR_Y], 0x0001
 	je [0x0D], 0x00, INLINE_DRAW_CV_272_003_001
 	call PRISON_DRAW_CV263_AT_X07_Y08_L3
 	jmp PRISON_ACTOR_WALK_LEFT_PHASE_5_DONE
@@ -587,15 +587,15 @@ PRISON_BUDDY_WALK_LEFT_PHASE_5:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_272_003_001:
-	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_03, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_ACTOR_WALK_LEFT_PHASE_5_DONE:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F05, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F05, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call PRISON_DRAW_CV275_AT_X07_Y08_L1
-	add [BUDDY_Y], 0x0001
+	add [ACTOR_Y], 0x0001
 	ret
 
 
@@ -608,20 +608,20 @@ PRISON_INLINE_DRAW_CV_272_004_L0:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_272_003_002:
-	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_03, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_03, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_INLINE_DRAW_CV_272_004_L1:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F06, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F06, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call PRISON_INLINE_DRAW_CV_272_003_L0
 	ret
 
 
 PRISON_BUDDY_WALK_LEFT_PHASE_7:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
-	add [BUDDY_Y], 0x0001
+	add [ACTOR_Y], 0x0001
 	je [0x0D], 0x00, INLINE_DRAW_CV_269_024_001
 	call PRISON_INLINE_DRAW_CV_220_008_L2
 	jmp PRISON_ACTOR_WALK_LEFT_PHASE_7_DONE
@@ -629,21 +629,21 @@ PRISON_BUDDY_WALK_LEFT_PHASE_7:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_269_024_001:
-	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_02, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_ACTOR_WALK_LEFT_PHASE_7_DONE:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F07, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F07, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call PRISON_INLINE_DRAW_CV_269_025_L1
-	sub [BUDDY_Y], 0x0001
+	sub [ACTOR_Y], 0x0001
 	ret
 
 
 PRISON_BUDDY_WALK_LEFT_PHASE_8:
 	jne [SCREEN_NUM], [0x10], SHARED_RET
-	add [BUDDY_Y], 0x0001
+	add [ACTOR_Y], 0x0001
 	je [0x0D], 0x00, INLINE_DRAW_CV_269_024_002
 	call PRISON_DRAW_CV224_AT_X07_Y08_L3
 	jmp PRISON_ACTOR_WALK_LEFT_PHASE_8_DONE
@@ -651,15 +651,15 @@ PRISON_BUDDY_WALK_LEFT_PHASE_8:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_269_024_002:
-	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_02, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_02, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 .endif
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 PRISON_ACTOR_WALK_LEFT_PHASE_8_DONE:
 	call DRAW_PRISON_BUDDY_SPRITE_BY_VAR09_0E
-	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F08, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_BODY_F08, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 	call PRISON_INLINE_DRAW_CV_269_026_L0
-	sub [BUDDY_Y], 0x0001
+	sub [ACTOR_Y], 0x0001
 	ret
 
 
@@ -672,7 +672,7 @@ PRISON_INLINE_DRAW_CV_269_026_L1:
 
 .if BRANCH in ("cartridge_1992", "dos_1992")
 INLINE_DRAW_CV_266_005:
-	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_01, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x40
+	video type=0, offset=CV_FIGURE_RUN_LEFT_LIMB_POSE_01, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x40
 .endif
 
 .if BRANCH == "cartridge_1992"

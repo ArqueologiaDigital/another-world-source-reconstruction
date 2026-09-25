@@ -5,28 +5,28 @@ DELAY_LOOP_VARF1:
 	killChannel
 
 DRAW_CIN_406_408_BLOCK:
-	video offset=CINEMATIC_406, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_406, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_407, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_407, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_408, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_408, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_409, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_409, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_409, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_409, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_408, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_408, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_409, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_409, x=[ACTOR_X], y=[ACTOR_Y]
 	selectVideoPage 0x00
 	video offset=CINEMATIC_410, x=160, y=100
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_411, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_411, x=[ACTOR_X], y=[ACTOR_Y]
 
 LABEL_198A:
 	break
-	video offset=CINEMATIC_412, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_412, x=[ACTOR_X], y=[ACTOR_Y]
 	jg [HERO_X], 0xA0, LABEL_198A
 	jl [HERO_X], 0x91, LABEL_198A
 	mov [0xB6], 0x0001
@@ -37,42 +37,42 @@ LABEL_198A:
 	setup channel=0x14, address=LABEL_0501
 	setup channel=0x16, address=LABEL_0DB0
 	break
-	video offset=CINEMATIC_411, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_411, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_409, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_409, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_408, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_408, x=[ACTOR_X], y=[ACTOR_Y]
 	selectVideoPage 0x00
 	video offset=CINEMATIC_413, x=160, y=36
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_407, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_407, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_64ED
 	break
 	call LABEL_5811
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_342
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	break
 	call LABEL_6390
 	call INLINE_OR_VAR11_WITH_1000
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	break
 
 LABEL_19F8:
 	call PRISON_ACTOR_WALK_RIGHT_DRAW_PHASE_02
 	break
 	jmp LABEL_19F8
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_342
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_338_339
 	call AND_VAR11_WITH_EFFF
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	break
 	mov [0x2F], 0x0018
 	mov [0x29], 0xFFF0

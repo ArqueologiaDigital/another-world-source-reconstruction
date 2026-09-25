@@ -1,6 +1,6 @@
 LABEL_5AF6:
-	mov [0x21], [BUDDY_X]
-	mov [0x22], [BUDDY_Y]
+	mov [0x21], [ACTOR_X]
+	mov [0x22], [ACTOR_Y]
 	mov [0x23], 0x0000
 	mov [0x24], [SCREEN_NUM]
 	mov [SCREEN_NUM], [0x10]

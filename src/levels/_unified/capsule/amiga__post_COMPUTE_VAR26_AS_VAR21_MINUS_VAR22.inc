@@ -1,6 +1,6 @@
 LABEL_3F4C:
-	mov [0x21], [BUDDY_X]
-	mov [0x27], [BUDDY_Y]
+	mov [0x21], [ACTOR_X]
+	mov [0x27], [ACTOR_Y]
 	sub [0x27], 0x000B
 	mov [0x22], [0x21]
 	add [0x21], 0x0028
@@ -11,9 +11,9 @@ LABEL_3F4C:
 
 
 LABEL_3F69:
-	mov [0x21], [BUDDY_X]
+	mov [0x21], [ACTOR_X]
 	mov [0x22], [HERO_X]
-	mov [0x27], [BUDDY_Y]
+	mov [0x27], [ACTOR_Y]
 	call LABEL_5595
 	ret
 
@@ -28,7 +28,7 @@ LABEL_3F76:
 LABEL_3F99:
 	call LABEL_3FBC
 	mov [0x22], [HERO_X]
-	mov [0x27], [BUDDY_Y]
+	mov [0x27], [ACTOR_Y]
 	call LABEL_5595
 	ret
 
@@ -38,14 +38,14 @@ CAPSULE_SET_VAR2F_TO_000D_L1:
 	call CAPSULE_INCREMENT_VAR21_BY_F_L0
 	mov [0x29], [HERO_X]
 	mov [HERO_X], [0x22]
-	mov [0x27], [BUDDY_Y]
+	mov [0x27], [ACTOR_Y]
 	call LABEL_5595
 	mov [HERO_X], [0x29]
 	ret
 
 
 LABEL_3FBC:
-	mov [0x21], [BUDDY_X]
+	mov [0x21], [ACTOR_X]
 	jge [0x2B], 0x1000, INCREMENT_VAR21_BY_F
 	sub [0x21], 0x000F
 	ret

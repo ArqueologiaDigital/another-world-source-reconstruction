@@ -1,9 +1,9 @@
 PRISON_BUDDY_PATROL_TURN_TO_FACE_LEFT_ENTRY:
 	call LABEL_6201
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	break
 	call LABEL_61E0
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	break
 	call GUARDED_HERO_ANIM_CV_009
 	break
@@ -11,7 +11,7 @@ PRISON_BUDDY_PATROL_TURN_TO_FACE_LEFT_ENTRY:
 	sub [HERO_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_242_243
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_242_243
 	break
@@ -21,18 +21,18 @@ LABEL_1FCB:
 
 PRISON_BUDDY_PATROL_TURN_TO_FACE_RIGHT_ENTRY:
 	call LABEL_5661
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_338_339
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_242_243
 	break
 	call GUARDED_DRAW_CIN_342
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	break
 	call GUARDED_HERO_ANIM_CV_009
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	break
 	call GUARDED_HERO_ANIM_CV_009
 	break
@@ -43,10 +43,10 @@ LABEL_1FF7:
 LABEL_1FF8:
 	mov [0x29], 0x0002
 	call LABEL_5661
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_338_339
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	break
 	mov [0x29], 0x000A
 	mov [0x0E], 0x0002
@@ -75,10 +75,10 @@ LABEL_203F:
 LABEL_2040:
 	call LABEL_5661
 	mov [0x0E], 0x0005
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_338_339
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 
 LABEL_2053:
 	break
@@ -185,14 +185,14 @@ LABEL_2158:
 	break
 	setPalette 0x0F
 	play id=0x0052, freq=0x14, vol=0x40, channel=0x01
-	video offset=CINEMATIC_630, x=[BUDDY_X], y=110
+	video offset=CINEMATIC_630, x=[ACTOR_X], y=110
 	call LABEL_567F
 	break
 	setPalette 0x02
-	video offset=CINEMATIC_631, x=[BUDDY_X], y=80
+	video offset=CINEMATIC_631, x=[ACTOR_X], y=80
 	call GUARDED_DRAW_CIN_338_339
 	break
-	video offset=CINEMATIC_630, x=[BUDDY_X], y=65516
+	video offset=CINEMATIC_630, x=[ACTOR_X], y=65516
 	call GUARDED_DRAW_CIN_242_243
 	je [0x57], 0x02, LABEL_2053
 	setup channel=0x11, address=DRAW_CIN_570_574_BLOCK
@@ -228,11 +228,11 @@ LABEL_21CB:
 
 LABEL_21CC:
 	call LABEL_61E0
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	break
 	mov [0x0E], 0x0001
 	call GUARDED_HERO_ANIM_CV_009
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	break
 	mov [0x0D], 0x0001
 	mov [0x0E], 0x0000
@@ -248,12 +248,12 @@ LABEL_21F4:
 	call GUARDED_DRAW_CIN_342
 	break
 	mov [0x0E], 0x0000
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	call GUARDED_DRAW_CIN_242_243
 	break
 
 LABEL_220C:
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	mov [0x0D], 0x0001
 	mov [0x0E], 0x0003
 	call GUARDED_DRAW_CIN_338_339
@@ -266,8 +266,8 @@ LABEL_2227:
 
 PRISON_BUDDY_EFFECT_ANCHOR_LEFT:
 	call LABEL_628E
-	mov [0x21], [BUDDY_X]
-	mov [0x22], [BUDDY_Y]
+	mov [0x21], [ACTOR_X]
+	mov [0x22], [ACTOR_Y]
 	sub [0x21], 0x0023
 	sub [0x22], 0x0026
 	ret
@@ -275,8 +275,8 @@ PRISON_BUDDY_EFFECT_ANCHOR_LEFT:
 
 PRISON_BUDDY_EFFECT_ANCHOR_RIGHT:
 	call LABEL_652F
-	mov [0x21], [BUDDY_X]
-	mov [0x22], [BUDDY_Y]
+	mov [0x21], [ACTOR_X]
+	mov [0x22], [ACTOR_Y]
 	add [0x21], 0x0023
 	sub [0x22], 0x0026
 	ret
@@ -314,7 +314,7 @@ LABEL_2268:
 	video offset=CINEMATIC_210, x=[0x21], y=[0x22]
 	break
 	call PRISON_BUDDY_EFFECT_ANCHOR_RIGHT
-	video offset=CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_3, x=[0x21], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_3, x=[0x21], y=[ACTOR_Y]
 	call LABEL_40D5
 	break
 	jmp LABEL_2543
@@ -343,7 +343,7 @@ LABEL_22A8:
 	video offset=CINEMATIC_199, x=[0x21], y=[0x22]
 	break
 	call PRISON_BUDDY_EFFECT_ANCHOR_LEFT
-	video offset=CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_3, x=[0x21], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_3, x=[0x21], y=[ACTOR_Y]
 	call LABEL_40D5
 	break
 	jmp LABEL_2523
@@ -360,28 +360,28 @@ LABEL_2305:
 	jne [SCREEN_NUM], 0x04, LABEL_2319
 	call LABEL_2378
 	je [0x23], 0x00, LABEL_235C
-	video offset=CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_0, x=[0x21], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_0, x=[0x21], y=[ACTOR_Y]
 
 LABEL_2319:
 	break
 	jne [SCREEN_NUM], 0x04, LABEL_232E
 	call LABEL_2378
 	je [0x23], 0x00, LABEL_235C
-	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F0, x=[0x21], y=[BUDDY_Y]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F0, x=[0x21], y=[ACTOR_Y]
 
 LABEL_232E:
 	break
 	jne [SCREEN_NUM], 0x04, LABEL_2343
 	call LABEL_2378
 	je [0x23], 0x00, LABEL_235C
-	video offset=CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_1, x=[0x21], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_1, x=[0x21], y=[ACTOR_Y]
 
 LABEL_2343:
 	break
 	jne [SCREEN_NUM], 0x04, LABEL_2358
 	call LABEL_2378
 	je [0x23], 0x00, LABEL_235C
-	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F0, x=[0x21], y=[BUDDY_Y]
+	video offset=CINEMATIC_ACTOR_CHARGE_GLOW_F0, x=[0x21], y=[ACTOR_Y]
 
 LABEL_2358:
 	break
@@ -389,18 +389,18 @@ LABEL_2358:
 
 LABEL_235C:
 	call LABEL_2378
-	video offset=CINEMATIC_210, x=[0x21], y=[BUDDY_Y]
+	video offset=CINEMATIC_210, x=[0x21], y=[ACTOR_Y]
 	break
 	call LABEL_2378
 	video offset=CINEMATIC_PRISON_SHIELD_DEPLOY_PHASE_3, x=[0x21], y=[0x71]
-	mov [BUDDY_Y], [0x71]
+	mov [ACTOR_Y], [0x71]
 	mov [0x10], 0x0004
 	call LABEL_40D5
 	killChannel
 
 LABEL_2378:
-	mov [BUDDY_Y], [0x71]
-	sub [BUDDY_Y], 0x0028
+	mov [ACTOR_Y], [0x71]
+	sub [ACTOR_Y], 0x0028
 	mov [0x21], [0x33]
 	mov [0x23], 0x0001
 	jg [0x33], 0x14, LABEL_2391
@@ -415,7 +415,7 @@ LABEL_2391:
 
 
 LABEL_239D:
-	je [BUDDY_Y], [0x52], PRISON_BUDDY_FLOOR_ASCEND
+	je [ACTOR_Y], [0x52], PRISON_BUDDY_FLOOR_ASCEND
 	jmp PRISON_BUDDY_FLOOR_DESCEND
 
 LABEL_23A6:
@@ -426,11 +426,11 @@ LABEL_23A6:
 	jmp LABEL_25A5
 
 PRISON_BUDDY_FLOOR_DESCEND:
-	mov [BUDDY_Y], [0x52]
-	sub [BUDDY_Y], 0x001E
+	mov [ACTOR_Y], [0x52]
+	sub [ACTOR_Y], 0x001E
 	call LABEL_6282
 	break
-	mov [BUDDY_Y], [0x52]
+	mov [ACTOR_Y], [0x52]
 	call LABEL_6282
 	jmp LABEL_23A6
 
@@ -489,11 +489,11 @@ PRISON_ACTOR_CHARGE_GLOW_FRAME_08:
 
 
 PRISON_BUDDY_FLOOR_ASCEND:
-	mov [BUDDY_Y], [0x51]
-	add [BUDDY_Y], 0x001E
+	mov [ACTOR_Y], [0x51]
+	add [ACTOR_Y], 0x001E
 	call LABEL_6276
 	break
-	mov [BUDDY_Y], [0x51]
+	mov [ACTOR_Y], [0x51]
 	call LABEL_6276
 	jmp LABEL_23A6
 LABEL_244B:
@@ -701,12 +701,12 @@ LABEL_2619:
 
 LABEL_261A:
 	mov [0x2F], 0x0001
-	jg [0x29], [BUDDY_X], LABEL_25F9
+	jg [0x29], [ACTOR_X], LABEL_25F9
 	mov [0x2F], 0x0002
 	jmp LABEL_25F9
 
 LABEL_262B:
-	jg [0x29], [BUDDY_X], PRISON_ACTOR_FACE_RIGHT_THEN_RUN_RIGHT
+	jg [0x29], [ACTOR_X], PRISON_ACTOR_FACE_RIGHT_THEN_RUN_RIGHT
 	jmp PRISON_ACTOR_FACE_LEFT_THEN_RUN_LEFT
 LABEL_2634:
 	db 0x11, 0x01, 0xF8, 0x11, 0x0A, 0x44, 0xF8, 0x20
@@ -724,8 +724,8 @@ LABEL_2663:
 	break
 	call LABEL_63C9
 	djnz [0x29], LABEL_2663
-	mov [0x21], [BUDDY_X]
-	mov [0x27], [BUDDY_Y]
+	mov [0x21], [ACTOR_X]
+	mov [0x27], [ACTOR_Y]
 	mov [0x22], 0x4008
 	call PRISON_INLINE_SUB_VAR22_BY_23_L10
 	break
@@ -787,8 +787,8 @@ LABEL_273E:
 
 PRISON_BUDDY_FIRE_SHOT_LEFT:
 	call LABEL_6439
-	mov [0x21], [BUDDY_X]
-	mov [0x27], [BUDDY_Y]
+	mov [0x21], [ACTOR_X]
+	mov [0x27], [ACTOR_Y]
 	sub [0x21], 0x0028
 	sub [0x27], 0x0036
 	call PRISON_DRAW_CIN505_AT_X21_Y27_L4
@@ -817,8 +817,8 @@ LABEL_2770:
 
 LABEL_2781:
 	jne [SCREEN_NUM], [0x10], LABEL_2798
-	mov [0x21], [BUDDY_X]
-	mov [0x27], [BUDDY_Y]
+	mov [0x21], [ACTOR_X]
+	mov [0x27], [ACTOR_Y]
 	sub [0x21], 0x0028
 	sub [0x27], 0x0029
 	call PRISON_DRAW_CIN505_AT_X21_Y27_L4
@@ -849,8 +849,8 @@ LABEL_27B5:
 
 LABEL_27C6:
 	jne [SCREEN_NUM], [0x10], LABEL_27DD
-	mov [0x21], [BUDDY_X]
-	mov [0x27], [BUDDY_Y]
+	mov [0x21], [ACTOR_X]
+	mov [0x27], [ACTOR_Y]
 	sub [0x21], 0x0019
 	sub [0x27], 0x001E
 	call PRISON_DRAW_CIN505_AT_X21_Y27_L4
@@ -892,24 +892,24 @@ LABEL_2854:
 
 LABEL_2867:
 	break
-	video offset=CINEMATIC_PRISON_FIGURE_CROUCHED_F0, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_CROUCHED_F0, x=[ACTOR_X], y=[ACTOR_Y]
 	djnz [0x29], LABEL_2867
 	break
-	video offset=CINEMATIC_PRISON_FIGURE_CROUCHED_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_CROUCHED_F1, x=[ACTOR_X], y=[ACTOR_Y]
 	play id=0x005E, freq=0x14, vol=0x40, channel=0x01
 	mov [0x29], 0x0003
 
 LABEL_2881:
 	break
-	video offset=CINEMATIC_PRISON_FIGURE_CROUCHED_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_CROUCHED_F1, x=[ACTOR_X], y=[ACTOR_Y]
 	djnz [0x29], LABEL_2881
 	mov [0x29], 0x0002
 	jmp LABEL_2867
 
 PRISON_BUDDY_FIRE_SHOT_RIGHT:
 	call LABEL_668F
-	mov [0x21], [BUDDY_X]
-	mov [0x27], [BUDDY_Y]
+	mov [0x21], [ACTOR_X]
+	mov [0x27], [ACTOR_Y]
 	add [0x21], 0x0028
 	sub [0x27], 0x0036
 	call PRISON_DRAW_CIN505_AT_X21_Y27_L5
@@ -938,8 +938,8 @@ LABEL_28C3:
 
 LABEL_28D4:
 	jne [SCREEN_NUM], [0x10], LABEL_28EB
-	mov [0x21], [BUDDY_X]
-	mov [0x27], [BUDDY_Y]
+	mov [0x21], [ACTOR_X]
+	mov [0x27], [ACTOR_Y]
 	add [0x21], 0x0028
 	sub [0x27], 0x0029
 	call PRISON_DRAW_CIN505_AT_X21_Y27_L5
@@ -970,8 +970,8 @@ LABEL_2908:
 
 LABEL_2919:
 	jne [SCREEN_NUM], [0x10], LABEL_2930
-	mov [0x21], [BUDDY_X]
-	mov [0x27], [BUDDY_Y]
+	mov [0x21], [ACTOR_X]
+	mov [0x27], [ACTOR_Y]
 	add [0x21], 0x0019
 	sub [0x27], 0x001E
 	call PRISON_DRAW_CIN505_AT_X21_Y27_L5
@@ -1016,14 +1016,14 @@ LABEL_297F:
 
 PRISON_BUDDY_TURN_TO_FACE_LEFT:
 	call LABEL_6201
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_342
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_338_339
 	call AND_VAR11_WITH_EFFF
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 
 PRISON_ACTOR_HOLD_POSE_AFTER_TURN_LEFT:
 	break
@@ -1036,14 +1036,14 @@ LABEL_29AA:
 
 PRISON_BUDDY_TURN_TO_FACE_RIGHT:
 	call LABEL_5661
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_342
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	break
 	call LABEL_61E0
 	call INLINE_OR_VAR11_WITH_1000
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 
 PRISON_ACTOR_HOLD_POSE_AFTER_TURN_RIGHT:
 	break

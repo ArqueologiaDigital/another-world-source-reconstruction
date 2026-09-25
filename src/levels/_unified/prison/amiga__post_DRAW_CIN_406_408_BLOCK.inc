@@ -1,6 +1,6 @@
 LABEL_18FA:
 	break
-	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F5, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F5, x=[ACTOR_X], y=[ACTOR_Y]
 	jl [HERO_X], 0x8C, LABEL_18FA
 	jl [HERO_X], 0x91, LABEL_18FA
 	mov [0xB6], 0x0001
@@ -10,28 +10,28 @@ LABEL_18FA:
 	setup channel=0x14, address=LABEL_04BB
 	setup channel=0x16, address=LABEL_0D48
 	break
-	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F4, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F4, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F3, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F3, x=[ACTOR_X], y=[ACTOR_Y]
 	break
-	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F2, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F2, x=[ACTOR_X], y=[ACTOR_Y]
 	selectVideoPage 0x00
 	video offset=CINEMATIC_413, x=160, y=36
 	selectVideoPage 0xFF
 	break
-	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_LIFTING_BAR_F1, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_633D
 	break
 	call LABEL_5661
-	sub [BUDDY_X], 0x0001
+	sub [ACTOR_X], 0x0001
 	break
 	call GUARDED_DRAW_CIN_342
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	break
 	call LABEL_61E0
 	call INLINE_OR_VAR11_WITH_1000
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	break
 
 LABEL_1964:

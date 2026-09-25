@@ -1,7 +1,7 @@
 ; Cellmate (BUDDY) animation frames CIN_157..169 — 13 single-frame
 ; draw routines used by the var-29 / var-2F state machine to render
 ; the cellmate buddy at his current screen position
-; (BUDDY_X / BUDDY_Y, the per-stage var aliases for 0x07 / 0x08).
+; (ACTOR_X / ACTOR_Y, the per-stage var aliases for 0x07 / 0x08).
 ;
 ; Frames are emitted in byte-address order: 164, 165, 166, 167,
 ; 163, 162, 161, 160, 159, 158, 157, 168, 169 — NOT numerical
@@ -16,7 +16,7 @@
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_HERO_POSE_0_0:
-	video offset=CINEMATIC_PRISON_FIGURE_POSE_RIGHT_0_0, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_RIGHT_0_0, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -25,7 +25,7 @@ DRAW_PRISON_HERO_POSE_0_0:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_HERO_POSE_0_1:
-	video offset=CINEMATIC_PRISON_FIGURE_POSE_RIGHT_0_1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_RIGHT_0_1, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -34,7 +34,7 @@ DRAW_PRISON_HERO_POSE_0_1:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_HERO_POSE_0_2:
-	video offset=CINEMATIC_PRISON_FIGURE_POSE_RIGHT_0_2, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_RIGHT_0_2, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -43,7 +43,7 @@ DRAW_PRISON_HERO_POSE_0_2:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_HERO_POSE_0_3:
-	video offset=CINEMATIC_PRISON_FIGURE_POSE_RIGHT_0_3, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_RIGHT_0_3, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -52,7 +52,7 @@ DRAW_PRISON_HERO_POSE_0_3:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_HERO_POSE_1:
-	video offset=CINEMATIC_163, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_163, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -61,7 +61,7 @@ DRAW_PRISON_HERO_POSE_1:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_HERO_POSE_2:
-	video offset=CINEMATIC_162, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_162, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -70,7 +70,7 @@ DRAW_PRISON_HERO_POSE_2:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_HERO_POSE_3:
-	video offset=CINEMATIC_161, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_161, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -79,7 +79,7 @@ DRAW_PRISON_HERO_POSE_3:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_160:
-	video offset=CINEMATIC_160, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_160, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -88,7 +88,7 @@ DRAW_CIN_160:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_159:
-	video offset=CINEMATIC_PRISON_FIGURE_POSE_RIGHT_4_1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_RIGHT_4_1, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -97,7 +97,7 @@ DRAW_CIN_159:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_HERO_POSE_5:
-	video offset=CINEMATIC_158, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_158, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -106,7 +106,7 @@ DRAW_PRISON_HERO_POSE_5:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_157:
-	video offset=CINEMATIC_PRISON_FIGURE_POSE_RIGHT_7_1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_RIGHT_7_1, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -125,7 +125,7 @@ DRAW_CIN_168_IF_VAR09_EQ_1:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_168:
-	video offset=CINEMATIC_168, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_168, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -137,7 +137,7 @@ DRAW_CIN_168:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_169:
-	video offset=CINEMATIC_169, x=[0xf5], y=[BUDDY_Y]
+	video offset=CINEMATIC_169, x=[0xf5], y=[ACTOR_Y]
 	ret
 
 

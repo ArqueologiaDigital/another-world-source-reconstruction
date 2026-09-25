@@ -7,56 +7,56 @@ LABEL_3FF7:
 
 LABEL_3FF8:
 	call LABEL_41D4
-	sub [BUDDY_Y], 0x000A
-	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F0, x=[BUDDY_X], y=[BUDDY_Y]
+	sub [ACTOR_Y], 0x000A
+	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F0, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_41D4
-	sub [BUDDY_Y], 0x0006
-	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	sub [ACTOR_Y], 0x0006
+	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F1, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_41D4
-	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F2, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F2, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_41D4
-	sub [BUDDY_Y], 0x0001
-	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F3, x=[BUDDY_X], y=[BUDDY_Y]
+	sub [ACTOR_Y], 0x0001
+	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F3, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_41D4
-	sub [BUDDY_Y], 0x0002
-	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F2, x=[BUDDY_X], y=[BUDDY_Y]
+	sub [ACTOR_Y], 0x0002
+	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F2, x=[ACTOR_X], y=[ACTOR_Y]
 	mov [0x29], 0x0001
 
 LABEL_4038:
 	call LABEL_41AD
 	break
 	call LABEL_41D4
-	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F1, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_41D4
-	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F2, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F2, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_41D4
-	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F3, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F3, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_41D4
-	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F0, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_SEGMENT_BAR_F0, x=[ACTOR_X], y=[ACTOR_Y]
 	djnz [0x29], LABEL_4038
 	break
 	call LABEL_4223
-	video offset=CINEMATIC_CAPSULE_DISCHARGE_FLASH_F0, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_DISCHARGE_FLASH_F0, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_4223
-	video offset=CINEMATIC_CAPSULE_DISCHARGE_FLASH_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_DISCHARGE_FLASH_F1, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_4223
-	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F0, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F0, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_4223
-	sub [BUDDY_Y], 0x0003
-	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	sub [ACTOR_Y], 0x0003
+	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F1, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_4223
-	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F0, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F0, x=[ACTOR_X], y=[ACTOR_Y]
 	mov [0x29], 0x000A
 
 LABEL_4098:
@@ -73,34 +73,34 @@ LABEL_40B6:
 	break
 	call LABEL_4223
 	je [0x09], 0x01, LABEL_411F
-	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F2, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F2, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_4223
 	je [0x09], 0x01, LABEL_411F
-	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F3, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F3, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_4223
 	je [0x09], 0x01, LABEL_411F
-	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F1, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_4223
 	je [0x09], 0x01, LABEL_411F
-	sub [BUDDY_Y], 0x0001
-	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	sub [ACTOR_Y], 0x0001
+	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F1, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_4223
 	je [0x09], 0x01, LABEL_411F
-	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F3, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F3, x=[ACTOR_X], y=[ACTOR_Y]
 	break
 	call LABEL_4223
 	je [0x09], 0x01, LABEL_411F
-	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F2, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_CHARGE_GLOW_F2, x=[ACTOR_X], y=[ACTOR_Y]
 	djnz [0x29], LABEL_4098
 	break
 	call LABEL_4223
 
 LABEL_411F:
-	video offset=CINEMATIC_CAPSULE_CHARGE_BLAST, x=[BUDDY_X], y=[BUDDY_Y], zoom=0x96
+	video offset=CINEMATIC_CAPSULE_CHARGE_BLAST, x=[ACTOR_X], y=[ACTOR_Y], zoom=0x96
 	mov [0x2B], 0x0FA0
 	call LABEL_41AD
 	break
@@ -193,7 +193,7 @@ LABEL_41D4:
 	mov [0x2B], [0x5B]
 	mov [0x29], [0x5C]
 	call LABEL_4272
-	mov [0x5A], [BUDDY_X]
+	mov [0x5A], [ACTOR_X]
 	mov [0x5B], [0x2B]
 	ret
 
@@ -204,7 +204,7 @@ LABEL_41F1:
 	mov [0x2B], [0x5E]
 	mov [0x29], [0x5F]
 	call LABEL_4272
-	mov [0x5D], [BUDDY_X]
+	mov [0x5D], [ACTOR_X]
 	mov [0x5E], [0x2B]
 	ret
 
@@ -215,7 +215,7 @@ LABEL_420A:
 	mov [0x2B], [0x61]
 	mov [0x29], [0x62]
 	call LABEL_4272
-	mov [0x60], [BUDDY_X]
+	mov [0x60], [ACTOR_X]
 	mov [0x61], [0x2B]
 
 LABEL_4222:
@@ -229,7 +229,7 @@ LABEL_4223:
 	mov [0x2B], [0x5B]
 	mov [0x29], [0x5C]
 	call LABEL_429C
-	mov [0x5A], [BUDDY_X]
+	mov [0x5A], [ACTOR_X]
 	mov [0x5B], [0x2B]
 	ret
 
@@ -240,7 +240,7 @@ LABEL_4240:
 	mov [0x2B], [0x5E]
 	mov [0x29], [0x5F]
 	call LABEL_429C
-	mov [0x5D], [BUDDY_X]
+	mov [0x5D], [ACTOR_X]
 	mov [0x5E], [0x2B]
 	ret
 
@@ -251,7 +251,7 @@ LABEL_4259:
 	mov [0x2B], [0x61]
 	mov [0x29], [0x62]
 	call LABEL_429C
-	mov [0x60], [BUDDY_X]
+	mov [0x60], [ACTOR_X]
 	mov [0x61], [0x2B]
 
 LABEL_4271:

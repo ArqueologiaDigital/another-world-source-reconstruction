@@ -53,8 +53,8 @@ LABEL_7C3C:
 	mov [0x68], 0x0073
 
 LABEL_7C4C:
-	mov [BUDDY_X], [0x68]
-	mov [BUDDY_Y], [0x69]
+	mov [ACTOR_X], [0x68]
+	mov [ACTOR_Y], [0x69]
 	mov [0x0E], 0x0000
 	mov [0x0D], 0x0000
 	mov [0x10], [SCREEN_NUM]

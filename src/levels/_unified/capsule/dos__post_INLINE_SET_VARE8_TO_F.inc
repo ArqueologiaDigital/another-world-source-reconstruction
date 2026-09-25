@@ -62,7 +62,7 @@ LABEL_24A3:
 
 LABEL_24B6:
 	mov [0x2F], 0x001F
-	jg [BUDDY_X], 0x78, SHARED_RET
+	jg [ACTOR_X], 0x78, SHARED_RET
 	mov [0x2F], 0x0019
 	mov [0x29], 0x0096
 	ret
@@ -79,7 +79,7 @@ LABEL_24C9:
 
 LABEL_24E2:
 	mov [0x2F], 0x0012
-	jg [BUDDY_X], 0xA0, SHARED_RET
+	jg [ACTOR_X], 0xA0, SHARED_RET
 	mov [0x2F], 0x0019
 	mov [0x29], 0x00BA
 	ret
@@ -295,7 +295,7 @@ LABEL_2729:
 	call CAPSULE_BUDDY_IDLE_LEFT_DRAW_1
 	break
 	djnz [0x29], LABEL_2729
-	mov [0xF8], [BUDDY_X]
+	mov [0xF8], [ACTOR_X]
 	sub [0xF8], [HERO_X]
 	jl [0xF8], 0x64, LABEL_2750
 	call LABEL_5423

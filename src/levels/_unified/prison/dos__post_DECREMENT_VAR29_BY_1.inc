@@ -4,7 +4,7 @@ PRISON_FILL_AND_DRAW_CIN_24_28_L2:
 
 LABEL_1BC4:
 	break
-	jg [BUDDY_X], 0xFA, LABEL_1BC4
+	jg [ACTOR_X], 0xFA, LABEL_1BC4
 	mov [0x0E], 0x0000
 	mov [0x29], 0x0005
 
@@ -12,14 +12,14 @@ LABEL_1BD3:
 	break
 	call LABEL_1B38
 	jg [0x15], 0x14, LABEL_1C0A
-	jg [BUDDY_X], 0xC8, LABEL_1BD3
+	jg [ACTOR_X], 0xC8, LABEL_1BD3
 	setup channel=0x23, address=PRISON_BUDDY_PATROL_TURN_TO_FACE_RIGHT_ENTRY
 
 LABEL_1BE7:
 	break
 	call LABEL_1B38
 	jg [0x15], 0x14, LABEL_1BFF
-	jl [BUDDY_X], 0x010E, LABEL_1BE7
+	jl [ACTOR_X], 0x010E, LABEL_1BE7
 	setup channel=0x23, address=PRISON_BUDDY_PATROL_TURN_TO_FACE_LEFT_ENTRY
 	jmp LABEL_1BD3
 
@@ -34,7 +34,7 @@ LABEL_1C0A:
 
 LABEL_1C12:
 	break
-	jg [BUDDY_X], 0xC8, LABEL_1C12
+	jg [ACTOR_X], 0xC8, LABEL_1C12
 	setup channel=0x23, address=LABEL_2038
 
 LABEL_1C1D:

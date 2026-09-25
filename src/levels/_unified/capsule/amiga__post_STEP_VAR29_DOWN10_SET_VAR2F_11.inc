@@ -46,7 +46,7 @@ LABEL_3DD0:
 STATE_VAR12_BIG_DISPATCH_CASE_20:
 	mov [0x2F], 0x0019
 	mov [0x29], 0x010E
-	jg [BUDDY_X], [0x29], SHARED_RET
+	jg [ACTOR_X], [0x29], SHARED_RET
 	mov [0x2F], 0x001D
 	mov [0x12], 0x0048
 	ret

@@ -12,7 +12,7 @@ CAPSULE_SHIELD_DEPLOY_AT_LEFT_EDGE:
 	break
 	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_3, x=17, y=[0x40]
 	mov [0x21], 0x0011
-	mov [BUDDY_Y], [0x40]
+	mov [ACTOR_Y], [0x40]
 	mov [0x10], [SCREEN_NUM]
 	call LABEL_4EFE
 	killChannel
@@ -31,7 +31,7 @@ CAPSULE_SHIELD_DEPLOY_AT_RIGHT_EDGE:
 	break
 	video offset=CINEMATIC_SHIELD_DEPLOY_PHASE_3, x=299, y=[0x40]
 	mov [0x21], 0x0122
-	mov [BUDDY_Y], [0x40]
+	mov [ACTOR_Y], [0x40]
 	mov [0x10], [SCREEN_NUM]
 	call LABEL_4EFE
 	killChannel

@@ -1,3 +1,3 @@
 DRAW_CIN_168:
-	video offset=CINEMATIC_168, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_168, x=[ACTOR_X], y=[ACTOR_Y]
 	ret

@@ -134,24 +134,24 @@ LABEL_9D9F:
 	video offset=CINEMATIC_600, x=212, y=15
 	call LABEL_3708
 	mov [0x10], [SCREEN_NUM]
-	mov [BUDDY_Y], [0x40]
-	mov [BUDDY_X], 0x0064
+	mov [ACTOR_Y], [0x40]
+	mov [ACTOR_X], 0x0064
 	mov [0x09], 0x0001
 	call CAPSULE_BUDDY_PER_FRAME_TICK
 	mov [0x09], 0x0033
-	mov [BUDDY_X], 0x0050
+	mov [ACTOR_X], 0x0050
 	call CAPSULE_BUDDY_PER_FRAME_TICK
 	mov [0x09], 0x0001
-	mov [BUDDY_X], 0x046A
+	mov [ACTOR_X], 0x046A
 	call CAPSULE_BUDDY_PER_FRAME_TICK
 	mov [0x09], 0x0001
-	mov [BUDDY_X], 0x0032
+	mov [ACTOR_X], 0x0032
 	call CAPSULE_BUDDY_PER_FRAME_TICK
 	mov [0x09], 0x0001
-	mov [BUDDY_X], 0x005A
+	mov [ACTOR_X], 0x005A
 	call CAPSULE_BUDDY_PER_FRAME_TICK
 	mov [0x09], 0x0033
-	mov [BUDDY_X], 0x047E
+	mov [ACTOR_X], 0x047E
 	call CAPSULE_BUDDY_PER_FRAME_TICK
 	ret
 

@@ -10,76 +10,76 @@ ANIM_CIN_078_LOOP_VAR03_AT_3AB0:
 	jmp HERO_WALK_LEFT_LOOP
 	killChannel
 	mov [0x29], 0x0008
-	mov [BUDDY_X], 0x012C
-	mov [BUDDY_Y], 0x000A
+	mov [ACTOR_X], 0x012C
+	mov [ACTOR_Y], 0x000A
 
 LABEL_3ADC:
 	break
 	call LABEL_3B29
 	break
 	call LABEL_3B29
-	add [BUDDY_X], 0x0003
+	add [ACTOR_X], 0x0003
 	break
 	call LABEL_3B35
 	break
 	call LABEL_3B35
-	add [BUDDY_X], 0x0003
+	add [ACTOR_X], 0x0003
 	break
 	call LABEL_3B41
 	break
 	call LABEL_3B41
-	add [BUDDY_X], 0x0002
+	add [ACTOR_X], 0x0002
 	break
 	call LABEL_3B4D
 	break
 	call LABEL_3B4D
-	add [BUDDY_X], 0x0003
+	add [ACTOR_X], 0x0003
 	break
 	call LABEL_3B59
 	break
 	call LABEL_3B59
-	add [BUDDY_X], 0x0003
+	add [ACTOR_X], 0x0003
 	break
 	call LABEL_3B65
 	break
 	call LABEL_3B65
-	add [BUDDY_X], 0x0003
+	add [ACTOR_X], 0x0003
 	djnz [0x29], LABEL_3ADC
 	killChannel
 
 LABEL_3B29:
 	jne [0x10], [SCREEN_NUM], SHARED_RET
-	video offset=CINEMATIC_CAPSULE_CREATURE_WALK_RIGHT_F0, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_CREATURE_WALK_RIGHT_F0, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
 LABEL_3B35:
 	jne [0x10], [SCREEN_NUM], SHARED_RET
-	video offset=CINEMATIC_CAPSULE_CREATURE_WALK_RIGHT_F1, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_CREATURE_WALK_RIGHT_F1, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
 LABEL_3B41:
 	jne [0x10], [SCREEN_NUM], SHARED_RET
-	video offset=CINEMATIC_CAPSULE_CREATURE_WALK_RIGHT_F2, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_CREATURE_WALK_RIGHT_F2, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
 LABEL_3B4D:
 	jne [0x10], [SCREEN_NUM], SHARED_RET
-	video offset=CINEMATIC_CAPSULE_CREATURE_WALK_RIGHT_F3, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_CREATURE_WALK_RIGHT_F3, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
 LABEL_3B59:
 	jne [0x10], [SCREEN_NUM], SHARED_RET
-	video offset=CINEMATIC_CAPSULE_CREATURE_WALK_RIGHT_F4, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_CREATURE_WALK_RIGHT_F4, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
 LABEL_3B65:
 	jne [0x10], [SCREEN_NUM], SHARED_RET
-	video offset=CINEMATIC_CAPSULE_CREATURE_WALK_RIGHT_F5, x=[BUDDY_X], y=[BUDDY_Y]
+	video offset=CINEMATIC_CAPSULE_CREATURE_WALK_RIGHT_F5, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 

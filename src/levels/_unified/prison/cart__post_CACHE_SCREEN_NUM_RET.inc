@@ -20,42 +20,42 @@ LABEL_88F8:
 
 
 LABEL_8903:
-	mov [BUDDY_X], [0x68]
-	mov [BUDDY_Y], [0x69]
+	mov [ACTOR_X], [0x68]
+	mov [ACTOR_Y], [0x69]
 	mov [0x10], [0x6A]
 	call LABEL_8943
-	mov [0x68], [BUDDY_X]
-	mov [0x69], [BUDDY_Y]
+	mov [0x68], [ACTOR_X]
+	mov [0x69], [ACTOR_Y]
 	mov [0x6A], [0x10]
-	mov [BUDDY_X], [0x70]
-	mov [BUDDY_Y], [0x71]
+	mov [ACTOR_X], [0x70]
+	mov [ACTOR_Y], [0x71]
 	mov [0x10], [0x72]
 	call LABEL_8943
-	mov [0x70], [BUDDY_X]
-	mov [0x71], [BUDDY_Y]
+	mov [0x70], [ACTOR_X]
+	mov [0x71], [ACTOR_Y]
 	mov [0x72], [0x10]
-	mov [BUDDY_X], [0x78]
-	mov [BUDDY_Y], [0x79]
+	mov [ACTOR_X], [0x78]
+	mov [ACTOR_Y], [0x79]
 	mov [0x10], [0x7A]
 	call LABEL_8943
-	mov [0x78], [BUDDY_X]
-	mov [0x79], [BUDDY_Y]
+	mov [0x78], [ACTOR_X]
+	mov [0x79], [ACTOR_Y]
 	mov [0x7A], [0x10]
 	ret
 
 
 LABEL_8943:
 	jg [HERO_X], 0x0A, SHARED_RET
-	jg [BUDDY_X], 0x28, LABEL_895A
+	jg [ACTOR_X], 0x28, LABEL_895A
 	jne [0x10], [SCREEN_NUM], LABEL_895A
-	mov [BUDDY_X], 0x002A
+	mov [ACTOR_X], 0x002A
 	ret
 
 
 LABEL_895A:
-	jl [BUDDY_X], 0x0140, SHARED_RET
+	jl [ACTOR_X], 0x0140, SHARED_RET
 	add [0x10], 0x0001
 	jne [0x10], [SCREEN_NUM], DECREMENT_VAR10_BY_1
 	je [0x10], 0x04, DECREMENT_VAR10_BY_1
-	mov [BUDDY_X], 0x002A
+	mov [ACTOR_X], 0x002A
 	ret

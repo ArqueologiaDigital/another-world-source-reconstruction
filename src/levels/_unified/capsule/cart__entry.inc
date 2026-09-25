@@ -1833,14 +1833,14 @@ LABEL_01A7:
 	db 0x11
 
 LABEL_01A8:
-	mov [BUDDY_X], 0x002B
-	add [BUDDY_X], 0x0001
+	mov [ACTOR_X], 0x002B
+	add [ACTOR_X], 0x0001
 	call LABEL_89D0
 	break
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	call LABEL_89DF
 	break
-	add [BUDDY_X], 0x0001
+	add [ACTOR_X], 0x0001
 	call LABEL_89FD
 	break
 	call LABEL_89EE
@@ -1885,9 +1885,9 @@ LABEL_0213:
 	break
 	call LABEL_89D0
 	break
-	add [BUDDY_X], 0x0018
-	video offset=CINEMATIC_283, x=[BUDDY_X], y=[BUDDY_Y]
-	video offset=CINEMATIC_317, x=[BUDDY_X], y=[BUDDY_Y]
+	add [ACTOR_X], 0x0018
+	video offset=CINEMATIC_283, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_317, x=[ACTOR_X], y=[ACTOR_Y]
 	call LABEL_01D2
 	jne [0x21], 0x00, LABEL_032E
 	setup channel=0x23, address=LABEL_0240
@@ -1895,11 +1895,11 @@ LABEL_0213:
 	killChannel
 
 LABEL_0240:
-	add [BUDDY_X], 0x0002
+	add [ACTOR_X], 0x0002
 	jmp LABEL_0255
-	add [BUDDY_Y], 0x0004
-	video offset=CINEMATIC_CAPSULE_SCREEN_4B_BACKDROP_LAYER_3, x=[BUDDY_X], y=[BUDDY_Y]
-	sub [BUDDY_Y], 0x0004
+	add [ACTOR_Y], 0x0004
+	video offset=CINEMATIC_CAPSULE_SCREEN_4B_BACKDROP_LAYER_3, x=[ACTOR_X], y=[ACTOR_Y]
+	sub [ACTOR_Y], 0x0004
 	break
 
 LABEL_0255:

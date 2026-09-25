@@ -688,7 +688,7 @@ LABEL_ACAC:
 	call LABEL_3708
 	call GUARDED_DRAW_CV_304_305
 	call LABEL_3708
-	mov [BUDDY_X], 0x0064
+	mov [ACTOR_X], 0x0064
 	call LABEL_8C7F
 	setup channel=0x23, address=KILL_CHANNEL_LANDING
 	setup channel=0x25, address=KILL_CHANNEL_LANDING
@@ -703,7 +703,7 @@ LABEL_AD30:
 	jne [0xF8], 0x00, LABEL_AD52
 	call LABEL_34EE
 	call LABEL_3740
-	mov [BUDDY_X], 0x000F
+	mov [ACTOR_X], 0x000F
 	call CAPSULE_BUDDY_PER_FRAME_TICK
 	setup channel=0x27, address=KILL_CHANNEL_LANDING
 

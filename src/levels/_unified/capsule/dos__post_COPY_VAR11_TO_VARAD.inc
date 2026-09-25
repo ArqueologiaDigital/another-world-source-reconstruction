@@ -56,7 +56,7 @@ LABEL_666C:
 	mov [0x22], 0x0096
 	mov [0x26], [0x10]
 	play id=0x0058, freq=0x14, vol=0x40, channel=0x00
-	jg [BUDDY_Y], [0x41], CAPSULE_ACTOR_RUN_LEFT_DRAW_2
+	jg [ACTOR_Y], [0x41], CAPSULE_ACTOR_RUN_LEFT_DRAW_2
 	or [0x26], 0x8000
 
 CAPSULE_ACTOR_RUN_LEFT_DRAW_2:

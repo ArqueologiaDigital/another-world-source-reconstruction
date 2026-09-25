@@ -436,8 +436,8 @@ LABEL_36A3:
 
 
 LABEL_3708:
-	mov [BUDDY_X], [0x70]
-	mov [BUDDY_Y], [0x71]
+	mov [ACTOR_X], [0x70]
+	mov [ACTOR_Y], [0x71]
 	mov [0x10], [0x72]
 	mov [0x11], [0x73]
 	mov [0x09], [0x75]
@@ -449,8 +449,8 @@ LABEL_3708:
 
 
 CAPSULE_ACTOR_IDLE_AFTER_HIGH_SHOT_LEFT_LOOP:
-	mov [BUDDY_X], [0x68]
-	mov [BUDDY_Y], [0x69]
+	mov [ACTOR_X], [0x68]
+	mov [ACTOR_Y], [0x69]
 	mov [0x10], [0x6A]
 	mov [0x11], [0x6B]
 	mov [0x09], [0x6D]
@@ -462,8 +462,8 @@ CAPSULE_ACTOR_IDLE_AFTER_HIGH_SHOT_LEFT_LOOP:
 
 
 LABEL_3740:
-	mov [BUDDY_X], [0x78]
-	mov [BUDDY_Y], [0x79]
+	mov [ACTOR_X], [0x78]
+	mov [ACTOR_Y], [0x79]
 	mov [0x10], [0x7A]
 	mov [0x11], [0x7B]
 	mov [0x09], [0x7D]
