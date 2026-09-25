@@ -125,7 +125,7 @@ DRAW_CIN_168_IF_VAR09_EQ_1:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_168:
-	video offset=CINEMATIC_168, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_BELT_RIGHT, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 

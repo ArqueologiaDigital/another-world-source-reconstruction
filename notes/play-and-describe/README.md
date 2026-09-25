@@ -460,3 +460,46 @@ prose.
 `apply_branch_scoped_names.py`, behind which sit the family-gap rule, the
 collision check, `undefined_symbols.py` and the byte gate. An annotation is
 evidence; it is not an instruction to rename.
+
+
+## What an adversarial pass over eleven names looked like, 2026-09-25
+
+Six agents derived names for the eleven constants held over the actor-slot
+question, and thirteen independent verifiers were told to refute each row and to
+default to refuted when unsure. **Ten of thirteen rows fell**, and the shape of
+the failures is worth keeping, because none of them was a misread picture.
+
+| refuted on | rows |
+| --- | --- |
+| the actor word only, everything else re-measured clean | 4 |
+| the family stem (a committed family already owns the constant) | 3 |
+| the name's shape (direction component, index, or wording) | 2 |
+| a procedural blocker: the id already carried a written verdict | 1 |
+
+Four things this taught that a single pass would not have:
+
+**A split verdict is itself evidence.** The belt is a mirror pair. One verifier
+could not refute `GUARD_BELT_LEFT`; another refuted `GUARD_BELT_RIGHT` on the
+single word GUARD. Every other component of both rows re-measured identically.
+Two independent attempts disagreeing about one word, on two halves of one
+object, settles that the word is not established -- which no amount of further
+argument from either side would have.
+
+**Verifiers found errors the deriver made in its own favour.** One re-counted
+call sites as 20 and 23 where the deriver said 18 and 26, and log rows as 15
+where the deriver said 30. All undercounts, none changing a conclusion, all
+reported anyway.
+
+**They also found the deriver underselling itself.** The same verifier showed
+the Buddy-exclusion was semantic rather than statistical: in frames where the
+belt is on screen, the human's own sentences place both same-species
+alternatives in the cage simultaneously.
+
+**And they caught a rule of ours that we had walked into.** Two rows were
+mechanically blocked because their annotation already carried a HELD verdict,
+and `--check` refuses an id that is both cited and ruled on. Naming a held
+annotation means withdrawing the hold first, in the same commit.
+
+The cost was 19 agents and 2.2M tokens for two applied names. That is the right
+trade when the alternative is a wrong name in a tree where `make test` cannot
+see one.

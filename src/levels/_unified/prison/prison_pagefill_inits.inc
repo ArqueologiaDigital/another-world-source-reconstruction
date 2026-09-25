@@ -244,7 +244,7 @@ SHARED_RET:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_240:
-	video offset=CINEMATIC_240, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_BELT_LEFT, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
