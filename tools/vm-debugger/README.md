@@ -116,7 +116,24 @@ same file:
   alone. Zeroing the uncovered rows, which is what this did, erases whatever the
   destination held and shows as a black bar sliding across a scrolling scene. A
   scroll outside -199..199 copies nothing at all, which is a guard rather than
-  an optimisation: `SCROLL_Y` is signed and a wild value must do nothing.
+  an optimisation: `SCROLL_Y` is signed and a wild value must do nothing. **And
+  the old one scrolled the wrong way**: it read `s[i + off]` into `d[i]`, moving
+  the content up where the reference moves it down.
+
+### The scene those two were breaking
+
+PRISON's lift is that code path and nothing else. `PRISON_LIFT_MOVE_STEP` is four
+lines -- `add [SCROLL_Y], 0x0010` one way, `sub` the same the other, chosen on
+`[0x63]` -- so **the whole scene going up or down IS that offset reaching
+`copyVideoPage`**. There is no car that moves: the car is drawn once at the
+literal (160,100) with `SCROLL_Y` zeroed, and the shaft slides behind it.
+
+So the lift was wrong two ways before the port -- scrolling in the opposite
+direction, and blanking the rows the band did not cover.
+`tests/check_fill.mjs` holds all three properties as assertions: the band
+arrives, the uncovered rows keep what they held, and a scroll beyond ±199 copies
+nothing. All three fail against the previous version, which now fails seven of
+its assertions rather than four.
 
 The blink overlay deliberately ignores all of this and paints a solid colour, so
 highlighting an asset shows its whole footprint even when the asset is a mask --
