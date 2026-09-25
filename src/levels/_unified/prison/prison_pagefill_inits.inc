@@ -103,7 +103,7 @@ DRAW_PRISON_BUDDY_POSE_0_3:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_235:
-	video offset=CINEMATIC_235, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_1_OTHER, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -121,7 +121,7 @@ DRAW_CIN_234:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_233:
-	video offset=CINEMATIC_233, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_2_OTHER, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -139,7 +139,7 @@ DRAW_CIN_232:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_BUDDY_POSE_3:
-	video offset=CINEMATIC_231, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_3_ANY, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -148,7 +148,7 @@ DRAW_PRISON_BUDDY_POSE_3:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_CIN_230:
-	video offset=CINEMATIC_230, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_4_OTHER, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
@@ -166,7 +166,7 @@ DRAW_CIN_229:
 
 .if BRANCH in ("chahi_amiga_1991", "dos_1992")
 DRAW_PRISON_BUDDY_POSE_5:
-	video offset=CINEMATIC_228, x=[ACTOR_X], y=[ACTOR_Y]
+	video offset=CINEMATIC_PRISON_FIGURE_POSE_LEFT_5_ANY, x=[ACTOR_X], y=[ACTOR_Y]
 	ret
 
 
