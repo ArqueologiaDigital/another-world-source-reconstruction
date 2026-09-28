@@ -430,9 +430,24 @@ Hashing every file in that backup against this repository's object store:
 
 and the four are `dos_1992/CODE_WHEEL.bin`, `dos_1992/TANK.bin`,
 `chahi_amiga_1991/LAKE.bin` and `chahi_amiga_1991/INTRO.bin` -- **assembler
-output, not source**. The `.asm` produces them and `make verify-stages` rebuilds
-and compares them against the original ROMs, 29 of 29, which is the whole point
-of the byte gate. Derived by definition.
+output, not source**.
+
+I first wrote that down as an argument: the `.asm` produces them, so they are
+derived by definition. That is reasoning, not a measurement, and the rule here is
+to name the artefact. So I ran `make verify-stages` (29/29) and md5'd what it
+built against the backup copies:
+
+    dos_1992/CODE_WHEEL.bin        7608474c0da1   identical
+    dos_1992/TANK.bin              61645f8c2c73   identical
+    chahi_amiga_1991/LAKE.bin      d740d2954bc9   identical
+    chahi_amiga_1991/INTRO.bin     ec0eda627a1f   identical
+
+Four identical, zero differing, zero not produced. **Disposable**, and now that
+is a fact rather than an inference. To redo the check:
+
+    make verify-stages
+    md5sum src/levels/dos_1992/CODE_WHEEL.bin src/levels/dos_1992/TANK.bin \
+           src/levels/chahi_amiga_1991/LAKE.bin src/levels/chahi_amiga_1991/INTRO.bin
 
 The remaining `.asm` files in `/tmp` are this session's own sealed test fixtures
 (`amendfix/`, `collide/`, `dupfix/`, built by
