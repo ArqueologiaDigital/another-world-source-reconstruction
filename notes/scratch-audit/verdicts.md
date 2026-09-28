@@ -382,3 +382,37 @@ and `r3.py`. The verdict above had written them as `r1.py`..`r4.py`,
 `m1.py`..`m6.py`, which reads as covering them and does not name them. That is
 the exact failure the check is for, found in the text that introduced it, and
 the fix was to spell all twelve out.
+
+
+## Sweep, 2026-09-28 (shutdown sweep, the naming sessions)
+
+`covered.py` failed on six scripts, all from the 2026-09-25 naming passes between
+01:40 and 01:58: `poly.mjs`, `bbox.mjs`, `bbox.py`, `bbox2.py`, `leaves.py`,
+`leafcheck.py`.
+
+**Promoted, as one tool rather than six:** `notes/measure_constants.py`. All six
+were attempts at the same thing -- print a constant's offset, bounding box, leaf
+count and `canonical_md5` -- which is the number set nearly every proposal table
+in `notes/` quotes. The library behind it was always committed; the *invocation*
+never was, so it was retyped as a shell heredoc a dozen times in one session and
+vanished each time. A table's numbers could be reproduced only by someone who
+knew to write the call. It is written once now, takes names or a `--pattern`, and
+handles the `CV_*` bank as well as a stage slab. Verified against the published
+figures for the belt pair, the Buddy arm runs and `CV_FIGURE_STAND_BODY`.
+
+**Disposable, and why:**
+
+- `p_one.md`, `p_three.md`, `probe_table.md` -- superseded proposal drafts. The
+  committed tables carry better names than these do (`..._POSE_LEFT_3_ANY`
+  against their `..._POSE_LEFT_3`), so keeping them would preserve a worse
+  version of an argument that is already in git.
+- `prison_cin.bin` -- a 64 KiB stage slab, one Python slice from `cinematic.rom`:
+  `rom[3*0x10000:4*0x10000]`. The recipe is in every probe that reads a stage.
+- `r_342.png`, `r_633.png`, `r_cf0.png`, `r_cf16.png`, `r_cf18.png`, `r_sf0.png`,
+  `sf0.png` -- renders. The working rules exempt regenerable corpora provided the
+  recipe is committed, and it is: `awvm-render-polygons` with the command in
+  `notes/render-and-name/README.md`.
+- `arm_old.py`, `pre_bankrow.py`, `pre_teaser_queue.py`, `old_queue.py`,
+  `old_server.py`, `oldfill/`, `prevm/` -- `git show` output, one command each,
+  and three committed checks now take a candidate file as an argument so the
+  comparisons they served are reproducible without them.
