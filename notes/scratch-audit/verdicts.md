@@ -416,3 +416,29 @@ figures for the belt pair, the Buddy arm runs and `CV_FIGURE_STAND_BODY`.
   `old_server.py`, `oldfill/`, `prevm/` -- `git show` output, one command each,
   and three committed checks now take a candidate file as an argument so the
   comparisons they served are reproducible without them.
+
+
+### The /tmp backups from earlier sessions, checked 2026-09-28
+
+The shutdown sweep also looked outside the scratchpad, because `/tmp` held 348
+`.asm` files and a 17 MB `levels_backup_2618539/` from sessions before this one.
+Hashing every file in that backup against this repository's object store:
+
+    1259 files, 1254 distinct blobs
+    1250 already blobs in git
+       4 not
+
+and the four are `dos_1992/CODE_WHEEL.bin`, `dos_1992/TANK.bin`,
+`chahi_amiga_1991/LAKE.bin` and `chahi_amiga_1991/INTRO.bin` -- **assembler
+output, not source**. The `.asm` produces them and `make verify-stages` rebuilds
+and compares them against the original ROMs, 29 of 29, which is the whole point
+of the byte gate. Derived by definition.
+
+The remaining `.asm` files in `/tmp` are this session's own sealed test fixtures
+(`amendfix/`, `collide/`, `dupfix/`, built by
+`notes/play-and-describe/tests/run.sh` on every run and deleted at exit unless
+`KEEP=1`) and `_regen/` intermediates from a reassembly experiment.
+
+**So nothing outside git was lost by the shutdown.** Worth writing down because
+the check is cheap -- one `git cat-file --batch-check` over hashed files -- and
+"is this backup still needed?" is otherwise answered by keeping it forever.
